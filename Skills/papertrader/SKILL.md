@@ -11,7 +11,7 @@ metadata:
     config:
       - key: papertrader.sheet_id
         description: Google Sheets spreadsheet ID used as the registry
-        default: "[DA DEFINIRE]"
+        default: "[DEFINE]"
         prompt: PaperTrader Google Sheets spreadsheet ID
       - key: papertrader.mode
         description: Trading mode; remain in PAPER until acceptance gates pass
@@ -23,11 +23,11 @@ metadata:
         prompt: Operational time zone
       - key: papertrader.broker
         description: Broker or broker adapter identifier
-        default: "[DA DEFINIRE]"
+        default: "[DEFINE]"
         prompt: Paper-trading broker or adapter
       - key: papertrader.market_data_source
         description: Authoritative market and options data source
-        default: "[DA DEFINIRE]"
+        default: "[DEFINE]"
         prompt: Market-data and options-data source
 ---
 # PaperTrader Skill
@@ -56,7 +56,7 @@ Before performing an operational workflow, verify:
 1. `papertrader.mode` is `PAPER`, unless a separately approved live release exists.
 2. The target spreadsheet ID is configured and accessible.
 3. The spreadsheet time zone is `Europe/Rome`, unless explicitly changed.
-4. Broker/API and market-data sources are configured; unresolved `[DA DEFINIRE]` values block broker-bound actions.
+4. Broker/API and market-data sources are configured; unresolved `[DEFINE]` values block broker-bound actions.
 5. The global kill switch state is known.
 6. Current broker account, open-order, and position data can be reconciled.
 7. A fresh quote and authoritative instrument metadata are available.
@@ -251,7 +251,7 @@ State:
 - whether the request was analysis-only or broker-bound;
 - deterministic risk result;
 - operation count before submission;
-- any unresolved `[DA DEFINIRE]` values;
+- any unresolved `[DEFINE]` values;
 - order and reconciliation identifiers when applicable;
 - explicit uncertainty and option-specific risk.
 

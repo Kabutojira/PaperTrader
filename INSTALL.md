@@ -9,8 +9,8 @@ This guide installs the PaperTrader skill for Hermes Agent without enabling live
 - Bash for the helper installer
 - Python 3.10 or newer
 - Access to the PaperTrader Google Sheet
-- A paper-trading broker account or simulator: `[DA DEFINIRE]`
-- A market-data/options-data source: `[DA DEFINIRE]`
+- A paper-trading broker account or simulator: `[DEFINE]`
+- A market-data/options-data source: `[DEFINE]`
 
 Verify the local tools:
 
@@ -87,11 +87,11 @@ The skill declares these settings:
 
 | Key | Initial value |
 |---|---|
-| `papertrader.sheet_id` | `[DA DEFINIRE]` |
+| `papertrader.sheet_id` | `[DEFINE]` |
 | `papertrader.mode` | `PAPER` |
 | `papertrader.timezone` | `Europe/Rome` |
-| `papertrader.broker` | `[DA DEFINIRE]` |
-| `papertrader.market_data_source` | `[DA DEFINIRE]` |
+| `papertrader.broker` | `[DEFINE]` |
+| `papertrader.market_data_source` | `[DEFINE]` |
 
 Run the Hermes migration/configuration flow:
 
@@ -118,20 +118,20 @@ Required controls:
 4. Protect formula and runtime-control columns from manual edits.
 5. Ensure `Operazioni`, `Tesi`, `Storico Giornaliero`, and `Eventi_Errori` are treated as append-only logs.
 
-Authentication implementation: `[DA DEFINIRE]`.
+Authentication implementation: `[DEFINE]`.
 
 ## 7. Configure market data and broker adapters
 
 Before any order workflow is enabled, define:
 
 ```text
-Broker/API                         [DA DEFINIRE]
-Market-data/options-data source    [DA DEFINIRE]
-Account/equity source of truth     [DA DEFINIRE]
-Idempotency support                [DA DEFINIRE]
-Order-status reconciliation        [DA DEFINIRE]
-Margin preview                     [DA DEFINIRE]
-Market calendar/session source     [DA DEFINIRE]
+Broker/API                         [DEFINE]
+Market-data/options-data source    [DEFINE]
+Account/equity source of truth     [DEFINE]
+Idempotency support                [DEFINE]
+Order-status reconciliation        [DEFINE]
+Margin preview                     [DEFINE]
+Market calendar/session source     [DEFINE]
 ```
 
 The adapter must verify option contract metadata and must return authoritative order and fill identifiers.
@@ -166,7 +166,7 @@ Do not enable live mode until all of the following are true:
 - option expiration, exercise, assignment, and pin-risk procedures tested;
 - at least 30 paper-trading sessions completed;
 - at least 100 order lifecycles completed;
-- explicit human approval of every `[DA DEFINIRE]` risk parameter.
+- explicit human approval of every `[DEFINE]` risk parameter.
 
 ## 10. Uninstall the local skill
 

@@ -137,4 +137,4 @@ Reset requires full reconciliation, an operator identity, a reason, a timestamp,
 
 ## Release gate
 
-Live trading is blocked until the paper test plan passes, all `[DA DEFINIRE]` values are approved, and a separate live-release decision documents capital, limits, credentials, monitoring, rollback, and incident response.
+Live trading is blocked until the paper test plan passes, all `[DEFINE]` values are approved, and a separate live-release decision documents capital, limits, credentials, monitoring, rollback, and incident response.

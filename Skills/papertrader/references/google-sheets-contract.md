@@ -19,7 +19,7 @@ Stores static limits and runtime health. Required settings include:
 - option DTE, spread, and open-interest limits;
 - account equity, cash, margin, P&L, heartbeat, and connection state.
 
-Any safety-critical `[DA DEFINIRE]` value blocks new exposure.
+Any safety-critical `[DEFINE]` value blocks new exposure.
 
 ### `Dati_Mercato`
 

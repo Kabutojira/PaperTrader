@@ -18,7 +18,7 @@ When a model conclusion conflicts with verified market data, broker state, sprea
 - Operate in `PAPER` mode.
 - Keep the global kill switch active until readiness checks pass.
 - Require human approval while the system is being built and commissioned.
-- Treat every `[DA DEFINIRE]` value as unresolved and blocking when it affects order submission or risk.
+- Treat every `[DEFINE]` value as unresolved and blocking when it affects order submission or risk.
 - Use `Europe/Rome` for the trading-day boundary unless configuration explicitly changes it.
 
 ## Required workflow
@@ -142,5 +142,5 @@ A task affecting trading behavior is complete only when:
 - no secret was added;
 - documentation and schema versions agree;
 - paper-mode behavior is verified;
-- unresolved assumptions are marked `[DA DEFINIRE]`;
+- unresolved assumptions are marked `[DEFINE]`;
 - the change does not imply guaranteed profitability.

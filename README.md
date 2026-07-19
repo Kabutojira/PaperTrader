@@ -8,10 +8,10 @@ PaperTrader is a safety-first paper-trading workspace designed for **Hermes Agen
 
 This repository is an implementation scaffold. The following integrations are intentionally unresolved:
 
-- Broker/API: `[DA DEFINIRE]`
-- Market-data and options-data source: `[DA DEFINIRE]`
-- Google Sheets authentication method: `[DA DEFINIRE]`
-- Initial capital and risk limits: `[DA DEFINIRE]`
+- Broker/API: `[DEFINE]`
+- Market-data and options-data source: `[DEFINE]`
+- Google Sheets authentication method: `[DEFINE]`
+- Initial capital and risk limits: `[DEFINE]`
 
 The default operating posture is:
 
@@ -47,7 +47,7 @@ Deterministic risk gate
   - kill switch
         |
         v
-Broker adapter [DA DEFINIRE]
+Broker adapter [DEFINE]
         |
         v
 Order/fill reconciliation
