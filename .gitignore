@@ -1,0 +1,29 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*service-account*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Hermes local state
+.hermes/
+
+# Runtime output
+*.log
+.cache/
+tmp/
+
+# Editors and OS
+.DS_Store
+.idea/
+.vscode/

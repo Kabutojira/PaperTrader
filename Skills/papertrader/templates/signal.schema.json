@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:papertrader:signal:1.0",
+  "title": "PaperTrader qualitative signal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "as_of",
+    "instrument",
+    "thesis",
+    "signal",
+    "analysis",
+    "data_quality"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 128
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "instrument": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instrument_key",
+        "ticker",
+        "type",
+        "underlying",
+        "call_put",
+        "strike",
+        "expiration",
+        "multiplier"
+      ],
+      "properties": {
+        "instrument_key": {"type": "string", "minLength": 3, "maxLength": 256},
+        "ticker": {"type": "string", "minLength": 1, "maxLength": 64},
+        "type": {"enum": ["AZIONE", "OPZIONE"]},
+        "underlying": {"type": "string", "minLength": 1, "maxLength": 32},
+        "call_put": {"type": ["string", "null"], "enum": ["CALL", "PUT", null]},
+        "strike": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "expiration": {"type": ["string", "null"], "format": "date"},
+        "multiplier": {"type": "integer", "minimum": 1}
+      }
+    },
+    "thesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["thesis_id", "summary", "trigger", "invalidation", "horizon"],
+      "properties": {
+        "thesis_id": {"type": "string", "minLength": 3, "maxLength": 128},
+        "summary": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "trigger": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "invalidation": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "horizon": {"type": "string", "minLength": 1, "maxLength": 128}
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action",
+        "side",
+        "order_type",
+        "reference_price",
+        "limit_price",
+        "levels_basis",
+        "stop_loss",
+        "target",
+        "valid_until"
+      ],
+      "properties": {
+        "action": {"enum": ["NO_TRADE", "OPEN_LONG", "OPEN_SHORT", "CLOSE", "REDUCE", "INCREASE"]},
+        "side": {"enum": ["BUY", "SELL", "NONE"]},
+        "order_type": {"enum": ["MARKET", "LIMIT", "STOP", "STOP_LIMIT", "NONE"]},
+        "reference_price": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "limit_price": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "levels_basis": {"type": ["string", "null"], "enum": ["STRUMENTO", "SOTTOSTANTE", null]},
+        "stop_loss": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "target": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "valid_until": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["base_case", "bull_case", "bear_case", "key_risks", "confidence"],
+      "properties": {
+        "base_case": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "bull_case": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "bear_case": {"type": "string", "minLength": 1, "maxLength": 2000},
+        "key_risks": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {"type": "string", "minLength": 1, "maxLength": 500}
+        },
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "data_quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["price_timestamp", "missing_fields", "warnings"],
+      "properties": {
+        "price_timestamp": {"type": "string", "format": "date-time"},
+        "missing_fields": {"type": "array", "maxItems": 50, "items": {"type": "string"}},
+        "warnings": {"type": "array", "maxItems": 20, "items": {"type": "string"}}
+      }
+    }
+  }
+}
