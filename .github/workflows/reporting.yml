@@ -90,7 +90,7 @@ jobs:
       final_sha: ${{ steps.outcome.outputs.final_sha }}
     steps:
       - name: Check out current default-branch state without persisted credentials
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: ${{ inputs.target_branch || github.event.repository.default_branch }}
           fetch-depth: 0
