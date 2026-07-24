@@ -17,6 +17,10 @@ relevant evidence, and structured source history. Write the one relationship pag
 Use the CLI to upsert or reject the relationship and to enqueue a bounded follow-up. Do not create
 a strategy, signal, order, or accounting entry.
 
+Use `papertrader research relationship upsert --request <json>` for an accepted or rejected edge,
+`papertrader issue record --request <json>` for issues, and
+`papertrader queue enqueue --request <json>` for the optional follow-up.
+
 ## Required input
 
 Require `operation_id`, `relationship_id`, `idea_id`, `security_id`, objective, freshness boundary,
@@ -46,11 +50,13 @@ Never bypass immutable identities, CLI validation, or the paper-only boundary.
 
 Write completed allowed changes, then a schema-valid `agent_result.json` that records whether the
 edge was accepted, updated, or rejected and cites the mechanism evidence.
+Write it last with the exact sorted file delta and canonical command-audit entries.
 
 ## Verification
 
-Confirm exact endpoint IDs, relationship uniqueness, all causal fields, index/log updates, CLI
-schema validation, strict wiki lint, result validation, and changed paths.
+Before the manifest, confirm exact endpoint IDs, relationship uniqueness, all causal fields,
+index/log updates, CLI schema validation, and strict wiki lint. Make the manifest conform to the
+result schema, write it last, and let the parent validate the exact changed paths.
 
 ## Failure policy
 

@@ -136,9 +136,9 @@ class Operation:
         if len(skills) != len(set(skills)):
             raise QueueError(f"operation {operation_id} has duplicate skill names")
         required_skills = {"llm-wiki", OPERATION_SKILLS[operation_type]}
-        if not required_skills.issubset(skills):
+        if set(skills) != required_skills:
             raise QueueError(
-                f"operation {operation_id} must include skills {sorted(required_skills)}"
+                f"operation {operation_id} must include exactly skills {sorted(required_skills)}"
             )
         if row["entity_type"] != OPERATION_ENTITY_TYPES[operation_type] or not row["entity_id"]:
             raise QueueError(f"operation {operation_id} requires entity_type and entity_id")
@@ -944,6 +944,8 @@ def fail_attempt(
     operation_id: str,
     run_id: str,
     error: str,
+    result_path: str = "",
+    result_summary: str = "",
     now: datetime | None = None,
 ) -> str:
     """Release one failed claim for retry or terminate after the final attempt."""
@@ -953,6 +955,12 @@ def fail_attempt(
     reason = " ".join(error.split())[:1000]
     if not reason:
         raise QueueError("failed attempt requires an error")
+    if bool(result_path) != bool(result_summary):
+        raise QueueError("failed result path and summary must be provided together")
+    if result_path:
+        expected_result = PurePosixPath("data", "runs", run_id, operation_id, "agent_result.json")
+        if PurePosixPath(result_path) != expected_result:
+            raise QueueError(f"invalid failed result path: {result_path!r}")
     with _queue_lock(repository_root):
         active = _recover_archived(repository_root, _read_active(repository_root))
         operation = next(
@@ -969,6 +977,8 @@ def fail_attempt(
                 operation,
                 terminal_status="failed",
                 completed_at=instant,
+                result_path=result_path,
+                result_summary=result_summary,
                 terminal_reason=f"retry_exhausted:{reason}",
             )
             return "failed"

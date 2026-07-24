@@ -29,7 +29,7 @@ from papertrader.models import (
     RiskPosition,
     RiskState,
 )
-from papertrader.orders import create_paper_order, create_signal
+from papertrader.orders import cancel_paper_order, create_paper_order, create_signal
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.risk import assess_order_risk, option_max_loss
 from papertrader.tables import append_unique, contract_by_name, read_table, write_table
@@ -256,6 +256,47 @@ def test_limit_touch_uses_limit_without_worse_slippage(sandbox_settings: Setting
     )
 
     assert fill is not None and fill.fill_price == Decimal("100")
+
+
+def test_pending_paper_order_cancellation_never_mutates_accounting(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    strategy_id = "strategy_cancel"
+    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id)
+    reference = _reference(price="100", as_of=START)
+    signal_id, _ = create_signal(
+        sandbox_repository,
+        sandbox_settings,
+        strategy_id=strategy_id,
+        signal_type="open",
+        rationale="Open only if the candidate remains valid.",
+        market_data_as_of=START - timedelta(minutes=10),
+        run_id="run-cancel",
+        now=START,
+    )
+    order_id, _, _ = create_paper_order(
+        sandbox_repository,
+        sandbox_settings,
+        signal_id=signal_id,
+        strategy_id=strategy_id,
+        legs=(_leg(action="buy", side="long"),),
+        references=(reference,),
+        risk_state=build_risk_state(sandbox_repository, (reference,), as_of=START),
+        run_id="run-cancel",
+        now=START,
+    )
+    cash_before = read_table(sandbox_repository, "cash_ledger")
+
+    cancel_paper_order(sandbox_repository, order_id)
+
+    assert read_table(sandbox_repository, "orders")[0]["status"] == "cancelled"
+    assert read_table(sandbox_repository, "signals")[0]["status"] == "cancelled"
+    assert read_table(sandbox_repository, "executions") == []
+    assert read_table(sandbox_repository, "portfolio") == []
+    assert read_table(sandbox_repository, "cash_ledger") == cash_before
+    with pytest.raises(RuntimeError, match="is not pending"):
+        cancel_paper_order(sandbox_repository, order_id)
 
 
 def test_quote_mid_requires_fresh_post_signal_bid_ask(sandbox_settings: Settings) -> None:

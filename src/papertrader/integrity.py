@@ -5,12 +5,14 @@ from __future__ import annotations
 import csv
 import json
 import os
+import re
 import subprocess
 from collections.abc import Iterable, Mapping
 from pathlib import Path, PurePosixPath
 from typing import cast
 
 import yaml
+from jsonschema import Draft202012Validator, FormatChecker
 from jsonschema.validators import validator_for
 
 from papertrader.config import ConfigurationError, Settings, load_settings
@@ -56,6 +58,8 @@ REQUIRED_LAYOUT = (
 RAW_WIKI_EXTENSIONS = frozenset({".md", ".txt", ".pdf", ".png", ".jpg", ".jpeg", ".webp"})
 RUN_ARTIFACT_EXTENSIONS = frozenset({".json", ".md"})
 LOG_EXTENSIONS = frozenset({".ndjson", ".txt"})
+SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+ULID = re.compile(r"^[0-9A-HJKMNP-TV-Z]{26}$")
 
 
 class ContractError(ValueError):
@@ -277,6 +281,69 @@ def validate_layout(repository_root: Path) -> list[str]:
     return errors
 
 
+def validate_agent_run_artifacts(repository_root: Path) -> list[str]:
+    """Validate every retained agent manifest and every history reference to one."""
+
+    errors: list[str] = []
+    schema_path = repository_root / "schemas" / "agent_result.schema.json"
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        return [f"cannot load agent result schema: {exc}"]
+    seen: set[str] = set()
+    for path in sorted((repository_root / "data" / "runs").glob("*/*/agent_result.json")):
+        relative = path.relative_to(repository_root).as_posix()
+        parts = path.relative_to(repository_root).parts
+        if (
+            len(parts) != 5
+            or not SAFE_RUN_ID.fullmatch(parts[2])
+            or not ULID.fullmatch(parts[3])
+            or path.is_symlink()
+        ):
+            errors.append(f"invalid agent result path: {relative}")
+            continue
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot read agent result {relative}: {exc}")
+            continue
+        schema_errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+        errors.extend(f"agent result {relative}: {error.message}" for error in schema_errors)
+        if isinstance(value, dict) and value.get("operation_id") != parts[3]:
+            errors.append(f"agent result identity does not match path: {relative}")
+        seen.add(relative)
+    try:
+        history = read_csv_contract_rows(repository_root, "operations_history")
+    except (ContractError, OSError, ValueError) as exc:
+        return [*errors, f"cannot validate agent history result paths: {exc}"]
+    for row in history:
+        result_path = row["result_path"]
+        if result_path and result_path not in seen:
+            errors.append(f"history references a missing agent result: {result_path}")
+    return errors
+
+
+def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, str]]:
+    """Read a canonical table locally without importing the circular table module."""
+
+    contract = next(
+        (candidate for candidate in load_csv_contracts(repository_root) if candidate.name == name),
+        None,
+    )
+    if contract is None:
+        raise ContractError(f"unknown CSV contract: {name}")
+    path = repository_root.joinpath(*contract.path.parts)
+    with path.open("r", encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        if reader.fieldnames != list(contract.columns):
+            raise ContractError(f"header mismatch for {contract.path}")
+        rows = list(reader)
+    if any(None in row for row in rows):
+        raise ContractError(f"surplus values in {contract.path}")
+    return rows
+
+
 def validate_integrity(repository_root: Path, environment: Mapping[str, str]) -> list[str]:
     """Run repository contracts plus deterministic queue/accounting checks."""
 
@@ -294,6 +361,7 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     errors.extend(validate_csv_files(repository_root))
     errors.extend(validate_json_schemas(repository_root))
     errors.extend(validate_skills(repository_root))
+    errors.extend(validate_agent_run_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
     from papertrader.orders import validate_order_state
     from papertrader.portfolio import reconcile_portfolio

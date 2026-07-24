@@ -17,6 +17,9 @@ payload, structured identities, and evidence sources. Write one idea page plus n
 links. Use the CLI for issues and bounded security or relationship follow-ups. Do not hand-edit any
 CSV or create a strategy directly.
 
+The only structured mutations allowed are `papertrader issue record --request <json>` and
+`papertrader queue enqueue --request <json>`.
+
 ## Required input
 
 Require `operation_id`, `idea_id`, `seed_claim`, objective, source references, freshness boundary,
@@ -46,11 +49,13 @@ ticker as identity, manufacture certainty, or let prose bypass CLI validation.
 
 Write completed changes and then a schema-valid `agent_result.json` with evidence, exact files,
 created operation IDs, commands, and checks. Do not emit deferred proposals.
+Write the manifest last; use a sorted exact file delta and canonical command receipts.
 
 ## Verification
 
-Confirm one idea ID, no duplicate page, causal links rather than bare associations, review date,
-provenance, index/log updates, strict wiki lint, result validation, and allowed paths.
+Before the manifest, confirm one idea ID, no duplicate page, causal links rather than bare
+associations, review date, provenance, index/log updates, and strict wiki lint. Make the manifest
+schema-conformant, write it last, and let the parent validate allowed paths and the exact delta.
 
 ## Failure policy
 

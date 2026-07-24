@@ -111,6 +111,25 @@ def test_enqueue_rejects_multiline_prompt_before_writing_state(
     assert list((sandbox_repository / "data" / "operations" / "payloads").glob("*.json")) == []
 
 
+def test_queue_rejects_unrequested_extra_agent_skills(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _enqueue(
+        sandbox_repository,
+        sandbox_settings,
+        entity_id="sec_extra_skill",
+        catalyst="skill-boundary",
+    )
+    rows = read_table(sandbox_repository, "operations_todo")
+    rows[0]["skill_names"] += "|untrusted-extra-skill"
+    write_table(sandbox_repository, "operations_todo", rows)
+
+    assert any(
+        "must include exactly skills" in error for error in validate_queue(sandbox_repository)
+    )
+
+
 def test_claim_orders_by_priority_then_creation_time_and_allows_only_one_live_lease(
     sandbox_repository: Path,
     sandbox_settings: Settings,

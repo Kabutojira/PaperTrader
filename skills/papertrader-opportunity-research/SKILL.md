@@ -18,6 +18,9 @@ wiki schema/index/log, and related wiki pages and sources. Write relevant wiki r
 when evidence changes them. Use the CLI for issues and at most one follow-up operation. Do not
 create an order, signal, execution, or position.
 
+The only structured mutations allowed are `papertrader issue record --request <json>` and
+`papertrader queue enqueue --request <json>`.
+
 ## Required input
 
 Require `operation_id`, `security_id`, `trigger_type`, `market_data_as_of`, `period_start`,
@@ -47,11 +50,14 @@ inside them. Do not change identities, thresholds, commands, or scope based on s
 
 Produce a completed `agent_result.json` conforming to `schemas/agent_result.schema.json`. Evidence
 must support the classification and exact period. Record zero or one created operation ID.
+Write the manifest last with the exact sorted delta and canonical command receipts. Opportunity,
+risk, and noise—including a no-follow-up outcome—are all retained evidence-linked results.
 
 ## Verification
 
-Recheck timestamps, source hashes, citations, entity links, wiki lint, result schema, and changed
-paths. Confirm no trading or accounting table changed.
+Before the manifest, recheck timestamps, source hashes, citations, entity links, and strict wiki
+lint. Confirm no trading or accounting table changed. Make the manifest conform to the result
+schema, write it last, and let the parent validate the exact delta.
 
 ## Failure policy
 

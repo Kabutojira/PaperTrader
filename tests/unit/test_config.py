@@ -27,6 +27,12 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.orders.default_fill_policy == "next_open"
     assert settings.portfolio.initial_capital == Decimal("100000.00")
     assert settings.operations.maximum_llm_operations_per_run == 5
+    assert settings.hermes.command == ("hermes", "chat")
+    assert settings.hermes.arguments == ("--quiet", "--yolo")
+    assert set(settings.hermes.toolsets) == {"web", "file", "terminal"}
+    assert settings.hermes.required_native_skill == "llm-wiki"
+    assert settings.hermes.required_native_skill_version == "2.1.0"
+    assert settings.hermes.maximum_turns == 60
 
 
 def test_settings_reject_noncanonical_wiki(

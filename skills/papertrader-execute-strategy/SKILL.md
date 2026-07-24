@@ -19,10 +19,16 @@ Invoke only deterministic project CLI commands to create/cancel a paper order an
 Do not hand-edit any CSV, fill, execution, cash entry, portfolio, performance, or Telegram state.
 Write only this operation's result artifact and permitted wiki explanation when necessary.
 
+Use `papertrader order create --request <json>` for a pending paper order and
+`papertrader order cancel --request <json>` for an existing pending order. Use the issue CLI only
+for a bounded repository issue. Never invoke `fills process`, accounting, portfolio rebuild, or a
+real-execution command from this skill.
+
 ## Required input
 
 Require `operation_id`, `strategy_id`, `signal_id`, action (`open`, `reduce`, `close`, `roll`, or
-`cancel`), requested fill policy, evaluation timestamp, market-data timestamp, and complete leg
+`cancel`), evaluation timestamp, and market-data timestamp. A cancellation requires the immutable
+pending `order_id`. Every other action requires the requested fill policy and complete leg
 identity. Options require provider contract ID, type, expiry, strike, multiplier, quantity,
 currency, and a fresh bid/ask source.
 
@@ -30,8 +36,10 @@ currency, and a fresh bid/ask source.
 
 1. Orient with the strategy's linked research and verify immutable IDs and current statuses.
 2. Decide whether the evidence, thesis, timing, signal, and invalidation still support the action.
-3. If not, record a supported skip/cancel disposition through the CLI.
-4. If yes, invoke the deterministic order applier with explicit parameters. Let it validate cash,
+3. If a pending order must be cancelled, invoke the deterministic cancel command; otherwise retain
+   an evidence-linked skip without mutating order state.
+4. If the action still warrants an order, invoke the deterministic order applier with explicit
+   parameters. Let it validate cash,
    exposure, concentration, shorts, option premium/liquidity, expiry, price freshness, and limits.
 5. Leave accepted orders pending under `next_open`, `limit_touch`, or eligible `quote_mid`; never
    invent an immediate fill or backfill a pre-signal price.
@@ -55,12 +63,14 @@ ledger edits.
 Write a schema-valid `agent_result.json` only after the deterministic command completes or fails.
 Record the decision, order ID if created, evidence, exact commands, changed files reported by the
 CLI, and validation checks. Never list a fill unless deterministic fill processing created it.
+Write the manifest last and make `commands_run` match the canonical command-audit receipts exactly.
 
 ## Verification
 
-Run strategy/signal/leg validation, freshness and risk checks, order idempotency, result-schema and
-changed-path validation, then strict portfolio reconciliation if accounting changed. Confirm the
-agent received no deployment, Telegram, GitHub write, or brokerage secret.
+Before the manifest, run strategy/signal/leg validation, freshness and risk checks, order
+idempotency, and strict portfolio reconciliation. Confirm accounting did not change and the agent
+received no deployment, Telegram, GitHub write, or brokerage secret. Make the manifest
+schema-conformant, write it last, and let the parent validate its schema and exact delta.
 
 ## Failure policy
 

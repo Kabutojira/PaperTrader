@@ -70,7 +70,7 @@ Golden, property, unit, and full-cycle replay tests cover no-look-ahead fills, o
 cooldowns, recovery, reconciliation, and idempotence. The complete Step 2 validation gate passes
 locally.
 
-## Step 3 — Integrate Hermes and reusable project skills
+## Step 3 — Integrate Hermes and reusable project skills — Complete (2026-07-24)
 
 Configure Hermes for GitHub Actions and local execution. Set `WIKI_PATH` to `data/wiki`, register `skills/` as an external skill directory, verify the native `llm-wiki` skill before each run, and always invoke Hermes with `--yolo`.
 
@@ -88,12 +88,22 @@ Agents may edit allowlisted wiki files directly and use the project CLI to updat
 
 **Exit criteria**
 
-- Hermes completes one seeded operation with `--yolo` in a credential-free container.
-- Codex or another local harness can run the same skill against a local checkout.
-- Operations run strictly one at a time.
-- The agent performs permitted changes before writing its result manifest.
-- Invalid, stale, malicious, or out-of-scope writes fail the validation gate.
-- A no-opportunity or no-strategy outcome is retained as an evidence-linked terminal result.
+- [x] Hermes completes one seeded operation with `--yolo` in a credential-free container.
+- [x] Codex or another local harness can run the same skill against a local checkout.
+- [x] Operations run strictly one at a time.
+- [x] The agent performs permitted changes before writing its result manifest.
+- [x] Invalid, stale, malicious, or out-of-scope writes fail the validation gate.
+- [x] A no-opportunity or no-strategy outcome is retained as an evidence-linked terminal result.
+
+Implemented a digest-pinned, isolated Hermes boundary with explicit bundled-skill synchronization,
+native `llm-wiki` version and content-hash checks before and after each operation, exact controller
+and operation skill selection, mandatory `--yolo`, and one-operation execution bounds. Added
+actual-change manifest validation, content and command audit chains, request-file binding,
+path/symlink/source-hash and prompt-injection defenses, validated research-state commands,
+deterministic order cancellation, evidence-linked no-op terminal results, local-run documentation,
+and unit and integration coverage. The hermetic seeded-operation test exercises the complete
+one-shot subprocess boundary; a live provider-backed run still requires an inference-only API key
+and was intentionally not invoked by the offline test suite.
 
 ## Step 4 — Assemble GitHub workflows, reporting, and publication
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import configparser
 import os
+import re
 import shlex
 from collections.abc import Mapping
 from dataclasses import dataclass
@@ -132,6 +133,20 @@ class ClassifierSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class HermesSettings:
+    """Pinned one-shot Hermes invocation and credential-forwarding policy."""
+
+    command: tuple[str, ...]
+    arguments: tuple[str, ...]
+    toolsets: tuple[str, ...]
+    required_native_skill: str
+    required_native_skill_version: str
+    inference_environment: tuple[str, ...]
+    maximum_turns: int
+    timeout_seconds: int
+
+
+@dataclass(frozen=True, slots=True)
 class Settings:
     """Validated repository settings used by every deterministic subsystem."""
 
@@ -146,6 +161,7 @@ class Settings:
     orders: OrderSettings
     operations: OperationSettings
     classifier: ClassifierSettings
+    hermes: HermesSettings
 
 
 def find_repository_root(start: Path | None = None) -> Path:
@@ -408,6 +424,49 @@ def _load_runtime_settings(
     return market, indicators, portfolio, risk, orders, operations, classifier
 
 
+def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
+    """Validate the non-interactive Hermes command without accepting shell syntax."""
+
+    command = tuple(shlex.split(parser.get("hermes", "command")))
+    arguments = tuple(shlex.split(parser.get("hermes", "arguments")))
+    toolsets = _csv_values(parser, "hermes", "toolsets")
+    required_skill = parser.get("hermes", "require_native_skill").strip()
+    required_version = parser.get("hermes", "native_skill_version").strip()
+    inference_environment = _csv_values(parser, "hermes", "inference_environment")
+    if command != ("hermes", "chat"):
+        raise ConfigurationError("hermes.command must be exactly the hermes chat entry point")
+    if arguments != ("--quiet", "--yolo"):
+        raise ConfigurationError("hermes.arguments must be exactly --quiet --yolo")
+    if set(toolsets) != {"file", "terminal", "web"}:
+        raise ConfigurationError("hermes.toolsets must be exactly web,file,terminal")
+    if required_skill != "llm-wiki" or not required_version:
+        raise ConfigurationError("Hermes must require a versioned native llm-wiki skill")
+    forbidden_names = {
+        "GITHUB_TOKEN",
+        "GH_TOKEN",
+        "TELEGRAM_BOT_TOKEN",
+        "ACTIONS_ID_TOKEN_REQUEST_TOKEN",
+        "ACTIONS_RUNTIME_TOKEN",
+    }
+    if any(
+        not re.fullmatch(r"[A-Z][A-Z0-9_]*", name)
+        or name in forbidden_names
+        or any(marker in name for marker in ("BROKER", "DEPLOY", "TELEGRAM", "GITHUB"))
+        for name in inference_environment
+    ):
+        raise ConfigurationError("hermes.inference_environment contains a forbidden name")
+    return HermesSettings(
+        command=command,
+        arguments=arguments,
+        toolsets=toolsets,
+        required_native_skill=required_skill,
+        required_native_skill_version=required_version,
+        inference_environment=inference_environment,
+        maximum_turns=_positive_int(parser, "hermes", "maximum_turns"),
+        timeout_seconds=_positive_int(parser, "hermes", "timeout_seconds"),
+    )
+
+
 def _load_settings_unchecked(
     repository_root: Path | None = None,
     environ: Mapping[str, str] | None = None,
@@ -447,6 +506,7 @@ def _load_settings_unchecked(
     market, indicators, portfolio, risk, orders, operations, classifier = _load_runtime_settings(
         parser
     )
+    hermes = _load_hermes_settings(parser)
 
     return Settings(
         config=parser,
@@ -460,6 +520,7 @@ def _load_settings_unchecked(
         orders=orders,
         operations=operations,
         classifier=classifier,
+        hermes=hermes,
     )
 
 

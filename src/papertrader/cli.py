@@ -7,10 +7,17 @@ import json
 import os
 import sys
 from collections.abc import Mapping, Sequence
+from dataclasses import asdict
 from datetime import date, datetime
 from decimal import Decimal
 from pathlib import Path
 
+from papertrader.agent_runner import (
+    configure_hermes_home,
+    preflight_hermes,
+    run_one_operation,
+)
+from papertrader.command_audit import audit_context, record_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
 from papertrader.execution import ensure_initial_capital, process_order_fill
@@ -32,10 +39,16 @@ from papertrader.models import (
     ReferencePrice,
 )
 from papertrader.opportunity import process_opportunity_transitions
-from papertrader.orders import create_paper_order, create_signal, leg_from_mapping
+from papertrader.orders import (
+    cancel_paper_order,
+    create_paper_order,
+    create_signal,
+    leg_from_mapping,
+)
 from papertrader.performance import update_performance
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.queue import (
+    OPERATION_SKILLS,
     RunBudget,
     block_operation,
     claim_next,
@@ -47,6 +60,13 @@ from papertrader.queue import (
     validate_queue,
 )
 from papertrader.reports import NarrativeItem, generate_daily_report
+from papertrader.repository_state import snapshot_repository
+from papertrader.research import (
+    record_source,
+    upsert_relationship,
+    upsert_security,
+    upsert_strategy,
+)
 from papertrader.utils import (
     CanonicalValueError,
     parse_iso_date,
@@ -112,10 +132,12 @@ def _parser() -> argparse.ArgumentParser:
     signal_create = signal_commands.add_parser("create")
     signal_create.add_argument("--request", type=Path, required=True)
 
-    order = commands.add_parser("order", help="create a normalized pending paper order")
+    order = commands.add_parser("order", help="create or cancel a normalized paper order")
     order_commands = order.add_subparsers(dest="order_command", required=True)
     order_create = order_commands.add_parser("create")
     order_create.add_argument("--request", type=Path, required=True)
+    order_cancel = order_commands.add_parser("cancel")
+    order_cancel.add_argument("--request", type=Path, required=True)
 
     fills = commands.add_parser("fills", help="process eligible deterministic paper fills")
     fills_commands = fills.add_subparsers(dest="fills_command", required=True)
@@ -145,6 +167,16 @@ def _parser() -> argparse.ArgumentParser:
     issue_resolve = issue_commands.add_parser("resolve")
     issue_resolve.add_argument("--request", type=Path, required=True)
 
+    research = commands.add_parser("research", help="update validated structured research state")
+    research_commands = research.add_subparsers(dest="research_command", required=True)
+    for research_name in ("source", "security", "relationship", "strategy"):
+        research_group = research_commands.add_parser(research_name)
+        action = "record" if research_name == "source" else "upsert"
+        research_action = research_group.add_subparsers(
+            dest="research_action", required=True
+        ).add_parser(action)
+        research_action.add_argument("--request", type=Path, required=True)
+
     report = commands.add_parser("report", help="generate the canonical daily report")
     report_commands = report.add_subparsers(dest="report_command", required=True)
     report_generate = report_commands.add_parser("generate")
@@ -152,6 +184,23 @@ def _parser() -> argparse.ArgumentParser:
 
     logs = commands.add_parser("logs", help="regenerate human-readable log views")
     logs.add_subparsers(dest="logs_command", required=True).add_parser("tail")
+
+    agent = commands.add_parser("agent", help="configure and run one credential-scrubbed agent")
+    agent_commands = agent.add_subparsers(dest="agent_command", required=True)
+    agent_configure = agent_commands.add_parser("configure")
+    agent_configure.add_argument("--hermes-home", type=Path, required=True)
+    agent_configure.add_argument("--replace-unmanaged", action="store_true")
+    agent_preflight = agent_commands.add_parser("preflight")
+    agent_preflight.add_argument("--hermes-home", type=Path, required=True)
+    agent_preflight.add_argument(
+        "--operation-type", default="wiki_ingest", choices=sorted(OPERATION_SKILLS)
+    )
+    agent_run = agent_commands.add_parser("run")
+    agent_run.add_argument("--hermes-home", type=Path, required=True)
+    agent_run.add_argument("--run-id", required=True)
+    agent_run.add_argument("--operation-id")
+    agent_run.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
+    agent_run.add_argument("--estimated-cost", default="0")
 
     whitelist = commands.add_parser(
         "runtime-whitelist", help="validate automated runtime commit paths"
@@ -176,12 +225,24 @@ def _print_result(name: str, errors: Sequence[str]) -> int:
 
 def _request_object(repository_root: Path, request_path: Path) -> Mapping[str, object]:
     path = request_path if request_path.is_absolute() else repository_root / request_path
-    resolved = path.resolve()
+    lexical = path.absolute()
+    try:
+        relative = lexical.relative_to(repository_root.resolve())
+    except ValueError as exc:
+        raise CanonicalValueError("request JSON must be inside the repository") from exc
+    if ".." in relative.parts:
+        raise CanonicalValueError("request JSON path traversal is forbidden")
+    current = repository_root.resolve()
+    for part in relative.parts:
+        current /= part
+        if current.is_symlink():
+            raise CanonicalValueError(f"request JSON must not traverse a symlink: {request_path}")
+    resolved = lexical.resolve()
     try:
         resolved.relative_to(repository_root.resolve())
     except ValueError as exc:
         raise CanonicalValueError("request JSON must be inside the repository") from exc
-    if resolved.is_symlink() or not resolved.is_file():
+    if not resolved.is_file():
         raise CanonicalValueError(f"request JSON does not exist: {request_path}")
     value = json.loads(resolved.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
@@ -381,6 +442,8 @@ def _run_queue_command(
                 operation_id=_text(raw, "operation_id"),
                 run_id=_text(raw, "run_id"),
                 error=_text(raw, "error"),
+                result_path=_text(raw, "result_path", default=""),
+                result_summary=_text(raw, "result_summary", default=""),
             )
         )
     elif command == "block":
@@ -423,6 +486,13 @@ def _run_structured_command(
         print(json.dumps({"signal_id": signal_id, "created": created}, sort_keys=True))
         return 0
     if arguments.command == "order":
+        if arguments.order_command == "cancel":
+            if set(raw) != {"order_id"}:
+                raise CanonicalValueError("order cancel request requires exactly order_id")
+            order_id = _text(raw, "order_id")
+            cancel_paper_order(repository_root, order_id)
+            print(json.dumps({"order_id": order_id, "status": "cancelled"}, sort_keys=True))
+            return 0
         references = tuple(_reference(value) for value in _sequence(raw, "references"))
         now = _timestamp(raw, "now", required=False) or utc_now()
         risk_state = build_risk_state(repository_root, references, as_of=now)
@@ -559,71 +629,137 @@ def _run_structured_command(
     raise CanonicalValueError(f"unhandled structured command: {arguments.command}")
 
 
-def main(argv: Sequence[str] | None = None) -> int:
-    """Run one command after enforcing repository and paper-only startup settings."""
+def _run_research_command(
+    arguments: argparse.Namespace, repository_root: Path, settings: Settings
+) -> int:
+    raw = _request_object(repository_root, arguments.request)
+    if arguments.research_command == "source":
+        history_id, changed = record_source(repository_root, raw)
+        print(json.dumps({"source_history_id": history_id, "changed": changed}, sort_keys=True))
+    elif arguments.research_command == "security":
+        print(json.dumps({"changed": upsert_security(repository_root, settings, raw)}))
+    elif arguments.research_command == "relationship":
+        print(json.dumps({"changed": upsert_relationship(repository_root, raw)}))
+    elif arguments.research_command == "strategy":
+        print(json.dumps({"changed": upsert_strategy(repository_root, settings, raw)}))
+    else:
+        raise CanonicalValueError(f"unhandled research command: {arguments.research_command}")
+    return 0
 
-    arguments = _parser().parse_args(argv)
+
+def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> int:
+    if arguments.command == "schema":
+        errors = validate_csv_files(root)
+        errors.extend(validate_json_schemas(root))
+        return _print_result("schema", errors)
+    if arguments.command == "integrity":
+        return _print_result("integrity", validate_integrity(root, os.environ))
+    if arguments.command == "wiki":
+        return _print_result("wiki", lint_wiki(settings.paths.wiki))
+    if arguments.command == "market":
+        return _print_result("market", update_market_data(root, settings))
+    if arguments.command == "indicators":
+        previous, current, indicator_errors = update_indicators(root, settings)
+        if not indicator_errors and arguments.classify_opportunities:
+            bars = {security_id: read_price_cache(root, security_id) for security_id in current}
+            process_opportunity_transitions(
+                root,
+                settings,
+                previous,
+                current,
+                bars,
+            )
+        return _print_result("indicators", indicator_errors)
+    if arguments.command == "queue":
+        return _run_queue_command(arguments, root, settings)
+    if arguments.command == "research":
+        return _run_research_command(arguments, root, settings)
+    if arguments.command == "agent":
+        home = arguments.hermes_home.absolute()
+        if arguments.agent_command == "configure":
+            path = configure_hermes_home(
+                root,
+                home,
+                replace_unmanaged=arguments.replace_unmanaged,
+            )
+            print(path)
+            return 0
+        if arguments.agent_command == "preflight":
+            report = preflight_hermes(
+                root,
+                settings,
+                home,
+                operation_type=arguments.operation_type,
+                environment=os.environ,
+            )
+            print(json.dumps(asdict(report), sort_keys=True))
+            return 0
+        disposition = run_one_operation(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            hermes_home=home,
+            environment=os.environ,
+            operation_id=arguments.operation_id,
+            operation_type=arguments.operation_type,
+            estimated_cost=required_decimal(arguments.estimated_cost, label="estimated_cost"),
+        )
+        print(disposition)
+        return 0
+    if arguments.command == "portfolio" and arguments.portfolio_command == "reconcile":
+        return _print_result("portfolio", reconcile_portfolio(root))
+    if arguments.command == "performance":
+        row = update_performance(root, settings, run_id=arguments.run_id)
+        print(json.dumps(row, sort_keys=True))
+        return 0
+    if arguments.command == "logs":
+        regenerate_log_tail(root)
+        return _print_result("logs", [])
+    if arguments.command in {
+        "account",
+        "signal",
+        "order",
+        "fills",
+        "portfolio",
+        "corporate-actions",
+        "issue",
+        "report",
+    }:
+        return _run_structured_command(arguments, root, settings)
+    if arguments.command == "runtime-whitelist":
+        paths = tuple(arguments.paths)
+        if arguments.staged or arguments.base_ref:
+            if paths:
+                raise ValueError("explicit paths cannot be combined with Git diff options")
+            paths = changed_paths_from_git(
+                root,
+                staged=arguments.staged,
+                base_ref=arguments.base_ref,
+                head_ref=arguments.head_ref,
+            )
+        if not paths:
+            raise ValueError("provide paths, --staged, or --base-ref")
+        return _print_result("runtime-whitelist", validate_runtime_paths(paths))
+    return _print_result("command", ["unhandled command"])
+
+
+def main(argv: Sequence[str] | None = None) -> int:
+    """Run one command and emit an operation-scoped CLI audit receipt when requested."""
+
+    raw_arguments = tuple(argv) if argv is not None else tuple(sys.argv[1:])
+    arguments = _parser().parse_args(raw_arguments)
+    root: Path | None = None
+    context = None
+    before = None
+    started_at = utc_now()
+    exit_code = 2
     try:
         root = find_repository_root(arguments.repository)
+        context = audit_context(root, os.environ)
+        if context is not None:
+            before = snapshot_repository(root)
         settings = load_settings(root, os.environ)
-        if arguments.command == "schema":
-            errors = validate_csv_files(root)
-            errors.extend(validate_json_schemas(root))
-            return _print_result("schema", errors)
-        if arguments.command == "integrity":
-            return _print_result("integrity", validate_integrity(root, os.environ))
-        if arguments.command == "wiki":
-            return _print_result("wiki", lint_wiki(settings.paths.wiki))
-        if arguments.command == "market":
-            return _print_result("market", update_market_data(root, settings))
-        if arguments.command == "indicators":
-            previous, current, indicator_errors = update_indicators(root, settings)
-            if not indicator_errors and arguments.classify_opportunities:
-                bars = {security_id: read_price_cache(root, security_id) for security_id in current}
-                process_opportunity_transitions(
-                    root,
-                    settings,
-                    previous,
-                    current,
-                    bars,
-                )
-            return _print_result("indicators", indicator_errors)
-        if arguments.command == "queue":
-            return _run_queue_command(arguments, root, settings)
-        if arguments.command == "portfolio" and arguments.portfolio_command == "reconcile":
-            return _print_result("portfolio", reconcile_portfolio(root))
-        if arguments.command == "performance":
-            row = update_performance(root, settings, run_id=arguments.run_id)
-            print(json.dumps(row, sort_keys=True))
-            return 0
-        if arguments.command == "logs":
-            regenerate_log_tail(root)
-            return _print_result("logs", [])
-        if arguments.command in {
-            "account",
-            "signal",
-            "order",
-            "fills",
-            "portfolio",
-            "corporate-actions",
-            "issue",
-            "report",
-        }:
-            return _run_structured_command(arguments, root, settings)
-        if arguments.command == "runtime-whitelist":
-            paths = tuple(arguments.paths)
-            if arguments.staged or arguments.base_ref:
-                if paths:
-                    raise ValueError("explicit paths cannot be combined with Git diff options")
-                paths = changed_paths_from_git(
-                    root,
-                    staged=arguments.staged,
-                    base_ref=arguments.base_ref,
-                    head_ref=arguments.head_ref,
-                )
-            if not paths:
-                raise ValueError("provide paths, --staged, or --base-ref")
-            return _print_result("runtime-whitelist", validate_runtime_paths(paths))
+        exit_code = _dispatch(arguments, root, settings)
     except (
         CanonicalValueError,
         ConfigurationError,
@@ -633,5 +769,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         ValueError,
     ) as exc:
         print(f"ERROR [{arguments.command}] {exc}", file=sys.stderr)
-        return 2
-    return _print_result("command", ["unhandled command"])
+        exit_code = 2
+    if context is not None and root is not None and before is not None:
+        try:
+            record_command(
+                root,
+                context,
+                arguments=raw_arguments,
+                exit_code=exit_code,
+                started_at=started_at,
+                completed_at=utc_now(),
+                before=before,
+                after=snapshot_repository(root),
+            )
+        except (OSError, RuntimeError, ValueError, json.JSONDecodeError) as exc:
+            print(f"ERROR [command-audit] {exc}", file=sys.stderr)
+            return 2
+    return exit_code

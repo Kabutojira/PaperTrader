@@ -1,4 +1,4 @@
-name: Reusable LLM contract preflight
+name: Reusable sequential Hermes operation
 
 on:
   workflow_call:
@@ -14,15 +14,19 @@ on:
         default: ""
         type: string
       max_operations:
-        description: Maximum sequential operations
+        description: Must be one; callers repeat this workflow sequentially
         required: false
         default: "1"
         type: string
       dry_run:
-        description: Validate contracts without running Hermes
+        description: Run native/project skill preflight without inference
         required: false
         default: true
         type: boolean
+    secrets:
+      OPENROUTER_API_KEY:
+        description: Inference-only credential; never forwarded to agent tools
+        required: false
   workflow_dispatch:
     inputs:
       operation_id:
@@ -36,12 +40,12 @@ on:
         default: ""
         type: string
       max_operations:
-        description: Maximum sequential operations
+        description: Must be one; operations never fan out
         required: false
         default: "1"
         type: string
       dry_run:
-        description: Validate contracts without running Hermes
+        description: Run native/project skill preflight without inference
         required: false
         default: true
         type: boolean
@@ -50,18 +54,65 @@ permissions:
   contents: read
 
 jobs:
-  preflight:
+  hermes:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    container:
+      image: nousresearch/hermes-agent@sha256:a6ce64e2038867885c2c90f6602425e6e70293d5e6d952a0e603a99265e01c40
+      options: --user 0:0
     env:
+      HERMES_HOME: /tmp/papertrader-hermes
       PAPER_TRADING_ONLY: "true"
       WIKI_PATH: ${{ github.workspace }}/data/wiki
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
+          fetch-depth: 0
           persist-credentials: false
-      - run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+      - name: Install pinned project runner
+        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
       - run: uv sync --locked --all-groups
-      - run: uv run papertrader integrity --strict
-      - name: Confirm Step 1 boundary
-        run: test "${{ inputs.dry_run }}" = "true"
+      - name: Validate one-operation selection
+        env:
+          MAX_OPERATIONS: ${{ inputs.max_operations }}
+        run: test "$MAX_OPERATIONS" = "1"
+      - name: Configure isolated Hermes profile
+        run: >-
+          uv run papertrader agent configure
+          --hermes-home "$HERMES_HOME"
+          --replace-unmanaged
+      - name: Synchronize bundled native skills into the isolated profile
+        run: hermes skills opt-in --sync
+      - name: Preflight native llm-wiki and project skills
+        env:
+          OPERATION_TYPE: ${{ inputs.operation_type }}
+        run: |
+          selected_type="${OPERATION_TYPE:-wiki_ingest}"
+          uv run papertrader agent preflight \
+            --hermes-home "$HERMES_HOME" \
+            --operation-type "$selected_type"
+      - name: Validate repository before inference
+        run: uv run papertrader integrity --strict
+      - name: Run exactly one Hermes operation with YOLO enforced by config
+        if: ${{ !inputs.dry_run }}
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPERATION_ID: ${{ inputs.operation_id }}
+          OPERATION_TYPE: ${{ inputs.operation_type }}
+          PAPERTRADER_RUN_ID: gha-${{ github.run_id }}-${{ github.run_attempt }}
+        run: |
+          if [ -z "$OPENROUTER_API_KEY" ]; then
+            echo "OPENROUTER_API_KEY is required for a non-dry Hermes run" >&2
+            exit 1
+          fi
+          arguments=(agent run --hermes-home "$HERMES_HOME" --run-id "$PAPERTRADER_RUN_ID")
+          if [ -n "$OPERATION_ID" ]; then
+            arguments+=(--operation-id "$OPERATION_ID")
+          fi
+          if [ -n "$OPERATION_TYPE" ]; then
+            arguments+=(--operation-type "$OPERATION_TYPE")
+          fi
+          uv run papertrader "${arguments[@]}"

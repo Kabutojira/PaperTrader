@@ -1,0 +1,138 @@
+from __future__ import annotations
+
+import json
+import subprocess
+import sys
+from collections.abc import Mapping, Sequence
+from datetime import UTC, datetime
+from pathlib import Path
+
+from papertrader.agent_runner import configure_hermes_home, run_one_operation
+from papertrader.config import Settings
+from papertrader.queue import enqueue_operation
+from papertrader.tables import read_table
+
+NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = tmp_path / "hermes"
+    configure_hermes_home(sandbox_repository, home)
+    native = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
+    native.parent.mkdir(parents=True)
+    native.write_text(
+        "---\nname: llm-wiki\ndescription: Native.\nversion: 2.1.0\n---\n# Wiki\n",
+        encoding="utf-8",
+    )
+    operation_id, _ = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="opportunity_research",
+        entity_type="opportunity",
+        entity_id="opp-integration",
+        dedupe_key="opportunity_research:opp-integration:fixture:2026-07-24",
+        prompt="Classify one bounded integration trigger.",
+        inputs={
+            "security_id": "sec-integration",
+            "trigger_type": "volume_anomaly",
+            "market_data_as_of": "2026-07-24T10:00:00Z",
+            "period_start": "2026-07-23",
+            "period_end": "2026-07-24",
+        },
+        source="integration-test",
+        now=NOW,
+    )
+
+    def fake_hermes(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        run_id = environment["PAPERTRADER_AUDIT_RUN_ID"]
+        selected_operation = environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+        artifact = cwd / "data" / "runs" / run_id / selected_operation
+        request = artifact / "issue-request.json"
+        request.write_text(
+            json.dumps(
+                {
+                    "severity": "warning",
+                    "title": "Opportunity lacks a current primary source",
+                    "description": "The move is retained as noise pending primary evidence.",
+                    "owner": "research",
+                    "related_run_id": run_id,
+                    "related_operation_id": selected_operation,
+                }
+            ),
+            encoding="utf-8",
+        )
+        audited = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "papertrader",
+                "--repository",
+                str(cwd),
+                "issue",
+                "record",
+                "--request",
+                str(request),
+            ],
+            cwd=cwd,
+            env=dict(environment),
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        assert audited.returncode == 0, audited.stderr
+        issue_id = audited.stdout.strip()
+        audit = json.loads((artifact / "command_audit.json").read_text(encoding="utf-8"))
+        command_receipt = audit["entries"][0]["command"]
+        manifest = {
+            "operation_id": selected_operation,
+            "status": "succeeded",
+            "summary": "The move was noise; one missing-evidence issue was retained.",
+            "evidence": [
+                {
+                    "source": "normalized integration fixture",
+                    "claim": "No primary evidence linked the move to a maintained thesis.",
+                    "observed_at": "2026-07-24T10:00:00Z",
+                }
+            ],
+            "files_changed": [
+                "data/issues.md",
+                f"data/runs/{run_id}/{selected_operation}/issue-request.json",
+                "data/tables/issues.csv",
+            ],
+            "operations_created": [],
+            "issues_recorded": [issue_id],
+            "daily_report_items": [],
+            "commands_run": [command_receipt],
+            "validation": {"passed": True, "checks": ["evidence-linked no-follow-up"]},
+        }
+        (artifact / "agent_result.json").write_text(
+            json.dumps(manifest, sort_keys=True), encoding="utf-8"
+        )
+        return subprocess.CompletedProcess(command, 0, "completed", "")
+
+    assert (
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="integration-1",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=fake_hermes,
+        )
+        == "succeeded"
+    )
+    assert read_table(sandbox_repository, "operations_todo") == []
+    history = read_table(sandbox_repository, "operations_history")
+    assert history[0]["terminal_status"] == "succeeded"
+    assert history[0]["result_path"].endswith("/agent_result.json")

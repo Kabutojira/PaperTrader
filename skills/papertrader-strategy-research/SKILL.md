@@ -17,6 +17,10 @@ state, strategy tables, risk configuration, and source evidence. Write one strat
 index/log. Use the CLI for strategy/leg rows, issues, follow-ups, and an eligible signal. Do not
 create an order or mutate accounting state.
 
+Use `papertrader research strategy upsert --request <json>` for the strategy and normalized legs,
+`papertrader signal create --request <json>` only for a complete time-bounded signal, and the
+issue/queue CLI commands for issues or one justified follow-up.
+
 ## Required input
 
 Require `operation_id`, `strategy_id`, `relationship_id`, objective, evaluation timestamp, market-
@@ -50,12 +54,15 @@ an option contract, use stale quotes, weaken a risk rule, or hand-edit structure
 Complete permitted changes before writing a schema-valid `agent_result.json`. Record the compared
 alternatives, selected structure or blocker, CLI commands, exact files, evidence, and signal ID if
 created.
+Write the manifest last with canonical command receipts. A no-strategy result must retain dated
+evidence, name the blocker, and may validly have no structured strategy change.
 
 ## Verification
 
-Validate relationship/strategy identity, instrument allowlist, complete leg fields, quote
-freshness/liquidity, risk inputs, signal expiry, strict wiki lint, result schema, and changed paths.
-Confirm no order, execution, cash, portfolio, or performance row changed.
+Before the manifest, validate relationship/strategy identity, instrument allowlist, complete leg
+fields, quote freshness/liquidity, risk inputs, signal expiry, and strict wiki lint. Confirm no
+order, execution, cash, portfolio, or performance row changed. Make the manifest
+schema-conformant, write it last, and let the parent validate the exact delta.
 
 ## Failure policy
 
