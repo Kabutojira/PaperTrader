@@ -1,0 +1,25 @@
+name: Pages source preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_pages:
+        description: Reserved for the Step 4 deployment workflow
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: npm ci --prefix site --ignore-scripts
+      - run: npm run check --prefix site
+      - run: npm run build --prefix site

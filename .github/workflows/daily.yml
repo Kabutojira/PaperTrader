@@ -1,0 +1,48 @@
+name: Daily scaffold preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation_id:
+        description: Optional immutable operation ID
+        required: false
+        default: ""
+        type: string
+      operation_type:
+        description: Optional supported operation type
+        required: false
+        default: ""
+        type: string
+      max_operations:
+        description: Maximum sequential operations
+        required: false
+        default: "1"
+        type: string
+      dry_run:
+        description: Validate without runtime state changes
+        required: false
+        default: true
+        type: boolean
+      publish_pages:
+        description: Publish Pages after a successful commit
+        required: false
+        default: false
+        type: boolean
+      send_telegram:
+        description: Send the committed daily report
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: papertrader-write
+  cancel-in-progress: false
+
+jobs:
+  scaffold-preflight:
+    uses: ./.github/workflows/reusable-non-llm.yml
+    with:
+      dry_run: true

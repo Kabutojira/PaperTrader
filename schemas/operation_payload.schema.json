@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/operation_payload.schema.json",
+  "title": "PaperTrader operation payload",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "payload_version",
+    "operation_id",
+    "operation_type",
+    "entity_type",
+    "entity_id",
+    "objective",
+    "inputs"
+  ],
+  "properties": {
+    "payload_version": { "const": 1 },
+    "operation_id": { "$ref": "#/$defs/ulid" },
+    "operation_type": {
+      "type": "string",
+      "enum": [
+        "wiki_ingest",
+        "opportunity_research",
+        "idea_research",
+        "security_research",
+        "relationship_research",
+        "strategy_research",
+        "execute_strategy"
+      ]
+    },
+    "entity_type": {
+      "type": "string",
+      "enum": ["source", "opportunity", "idea", "security", "relationship", "strategy"]
+    },
+    "entity_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "objective": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "inputs": { "type": "object" },
+    "source_refs": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 2000 },
+      "uniqueItems": true
+    }
+  },
+  "allOf": [
+    {
+      "oneOf": [
+        {
+          "properties": {
+            "operation_type": { "const": "wiki_ingest" },
+            "inputs": {
+              "type": "object",
+              "required": ["source_path", "source_hash"],
+              "properties": {
+                "source_path": { "$ref": "#/$defs/repository_path" },
+                "source_hash": { "$ref": "#/$defs/sha256" }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "opportunity_research" },
+            "inputs": {
+              "type": "object",
+              "required": [
+                "security_id",
+                "trigger_type",
+                "market_data_as_of",
+                "period_start",
+                "period_end"
+              ],
+              "properties": {
+                "security_id": { "type": "string", "minLength": 1 },
+                "trigger_type": { "type": "string", "minLength": 1 },
+                "market_data_as_of": { "type": "string", "format": "date-time" },
+                "period_start": { "type": "string", "format": "date" },
+                "period_end": { "type": "string", "format": "date" }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "idea_research" },
+            "inputs": {
+              "type": "object",
+              "required": ["idea_id", "seed_claim"],
+              "properties": {
+                "idea_id": { "type": "string", "minLength": 1 },
+                "seed_claim": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "security_research" },
+            "inputs": {
+              "type": "object",
+              "required": ["security_id"],
+              "properties": {
+                "security_id": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "relationship_research" },
+            "inputs": {
+              "type": "object",
+              "required": ["relationship_id", "idea_id", "security_id"],
+              "properties": {
+                "relationship_id": { "type": "string", "minLength": 1 },
+                "idea_id": { "type": "string", "minLength": 1 },
+                "security_id": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "strategy_research" },
+            "inputs": {
+              "type": "object",
+              "required": ["strategy_id", "relationship_id"],
+              "properties": {
+                "strategy_id": { "type": "string", "minLength": 1 },
+                "relationship_id": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "execute_strategy" },
+            "inputs": {
+              "type": "object",
+              "required": ["strategy_id", "signal_id", "action"],
+              "properties": {
+                "strategy_id": { "type": "string", "minLength": 1 },
+                "signal_id": { "type": "string", "minLength": 1 },
+                "action": {
+                  "type": "string",
+                  "enum": ["open", "reduce", "close", "roll", "cancel"]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "$defs": {
+    "ulid": {
+      "type": "string",
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    }
+  }
+}

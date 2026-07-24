@@ -1,0 +1,1 @@
+execution_id,order_id,leg_id,executed_at,security_id,provider_contract_id,side,quantity,fill_price,contract_multiplier,fees,currency,fx_rate_to_base,cash_effect,source_bar_time,run_id

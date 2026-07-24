@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PAPER_TRADING_ONLY: "true"
+      WIKI_PATH: ${{ github.workspace }}/data/wiki
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install pinned uv bootstrap
+        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+      - name: Install locked Python dependencies
+        run: uv sync --locked --all-groups
+      - name: Lint Python
+        run: uv run ruff check .
+      - name: Check Python formatting
+        run: uv run ruff format --check .
+      - name: Type-check Python
+        run: uv run mypy src
+      - name: Validate schemas
+        run: uv run papertrader schema validate --strict
+      - name: Run tests
+        run: uv run pytest
+      - name: Run integrity checks
+        run: uv run papertrader integrity --strict
+      - name: Lint wiki
+        run: uv run papertrader wiki lint --strict
+      - name: Reconcile empty scaffold
+        run: uv run papertrader portfolio reconcile --strict
+      - name: Install locked Quartz dependencies
+        run: npm ci --prefix site --ignore-scripts
+      - name: Check Quartz source configuration
+        run: npm run check --prefix site

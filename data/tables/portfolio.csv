@@ -1,0 +1,1 @@
+position_id,security_id,provider_contract_id,instrument_type,side,quantity,average_cost,currency,current_price,market_value_base,unrealized_pnl_base,realized_pnl_base,opened_at,last_mark_at,strategy_ids

@@ -1,0 +1,363 @@
+version: 1
+contracts:
+  securities:
+    path: data/tables/securities.csv
+    columns:
+      - security_id
+      - issuer_id
+      - company_name
+      - instrument_name
+      - instrument_type
+      - ticker
+      - exchange_code
+      - venue_mic
+      - provider_symbol
+      - broker_symbol
+      - currency
+      - country
+      - sector
+      - industry
+      - status
+      - watchlist_reason
+      - research_summary
+      - research_page
+      - last_research_at
+      - next_review_at
+      - created_at
+      - updated_at
+      - source
+  relationships:
+    path: data/tables/relationships.csv
+    columns:
+      - relationship_id
+      - idea_id
+      - security_id
+      - relationship_type
+      - direction
+      - mechanism
+      - sensitivity
+      - confidence
+      - catalyst
+      - invalidation
+      - status
+      - research_page
+      - last_reviewed_at
+      - next_review_at
+      - created_at
+      - updated_at
+  strategies:
+    path: data/tables/strategies.csv
+    columns:
+      - strategy_id
+      - idea_id
+      - security_id
+      - relationship_id
+      - name
+      - status
+      - direction
+      - instrument_type
+      - thesis
+      - entry_rule
+      - exit_rule
+      - invalidation
+      - risk_budget_pct
+      - not_before
+      - expires_at
+      - research_page
+      - created_at
+      - updated_at
+  strategy_legs:
+    path: data/tables/strategy_legs.csv
+    columns:
+      - strategy_id
+      - leg_id
+      - action
+      - side
+      - instrument_type
+      - security_id
+      - provider_contract_id
+      - option_type
+      - expiry
+      - strike
+      - quantity
+      - contract_multiplier
+      - order_type
+      - limit_price
+      - currency
+  signals:
+    path: data/tables/signals.csv
+    columns:
+      - signal_id
+      - strategy_id
+      - signal_type
+      - created_at
+      - expires_at
+      - status
+      - rationale
+      - market_data_as_of
+      - order_request_path
+      - telegram_sent_at
+      - run_id
+  orders:
+    path: data/tables/orders.csv
+    columns:
+      - order_id
+      - signal_id
+      - strategy_id
+      - created_at
+      - status
+      - fill_policy
+      - not_before
+      - expires_at
+      - order_type
+      - limit_price
+      - slippage_bps
+      - fee_model
+      - currency
+      - run_id
+  order_legs:
+    path: data/tables/order_legs.csv
+    columns:
+      - order_id
+      - leg_id
+      - action
+      - side
+      - instrument_type
+      - security_id
+      - provider_contract_id
+      - option_type
+      - expiry
+      - strike
+      - quantity
+      - contract_multiplier
+      - limit_price
+      - currency
+  executions:
+    path: data/tables/executions.csv
+    append_only: true
+    columns:
+      - execution_id
+      - order_id
+      - leg_id
+      - executed_at
+      - security_id
+      - provider_contract_id
+      - side
+      - quantity
+      - fill_price
+      - contract_multiplier
+      - fees
+      - currency
+      - fx_rate_to_base
+      - cash_effect
+      - source_bar_time
+      - run_id
+  cash_ledger:
+    path: data/tables/cash_ledger.csv
+    append_only: true
+    columns:
+      - cash_entry_id
+      - occurred_at
+      - entry_type
+      - reference_id
+      - currency
+      - amount
+      - fx_rate_to_base
+      - base_amount
+      - run_id
+      - notes
+  portfolio:
+    path: data/tables/portfolio.csv
+    generated: true
+    columns:
+      - position_id
+      - security_id
+      - provider_contract_id
+      - instrument_type
+      - side
+      - quantity
+      - average_cost
+      - currency
+      - current_price
+      - market_value_base
+      - unrealized_pnl_base
+      - realized_pnl_base
+      - opened_at
+      - last_mark_at
+      - strategy_ids
+  performance_daily:
+    path: data/tables/performance_daily.csv
+    generated: true
+    columns:
+      - date
+      - base_currency
+      - cash_base
+      - market_value_base
+      - equity_base
+      - gross_exposure_base
+      - net_exposure_base
+      - realized_pnl_base
+      - unrealized_pnl_base
+      - daily_pnl_base
+      - daily_return_pct
+      - cumulative_return_pct
+      - run_id
+      - generated_at
+  source_registry:
+    path: data/tables/source_registry.csv
+    columns:
+      - source_id
+      - url
+      - canonical_url
+      - source_type
+      - title
+      - publisher
+      - license
+      - status
+      - content_hash
+      - first_seen_at
+      - last_checked_at
+      - last_changed_at
+      - related_entity_ids
+  source_history:
+    path: data/tables/source_history.csv
+    append_only: true
+    columns:
+      - source_history_id
+      - source_id
+      - checked_at
+      - status
+      - http_status
+      - content_hash
+      - changed
+      - excerpt
+      - summary
+      - run_id
+  issues:
+    path: data/tables/issues.csv
+    columns:
+      - issue_id
+      - status
+      - severity
+      - title
+      - description
+      - owner
+      - first_seen_at
+      - last_seen_at
+      - related_run_id
+      - related_operation_id
+      - resolution
+      - resolved_at
+  runs:
+    path: data/tables/runs.csv
+    append_only: true
+    columns:
+      - run_id
+      - started_at
+      - completed_at
+      - status
+      - trigger
+      - operation_count
+      - model_budget_limit
+      - model_budget_used
+      - commit_sha
+      - summary
+  operations_todo:
+    path: data/operations/operations_TODO.csv
+    columns: &operation_columns
+      - operation_id
+      - created_at
+      - updated_at
+      - status
+      - priority
+      - operation_type
+      - entity_type
+      - entity_id
+      - not_before
+      - deadline
+      - depends_on
+      - dedupe_key
+      - freshness_days
+      - skill_names
+      - prompt
+      - payload_path
+      - source
+      - attempt_count
+      - max_attempts
+      - claimed_by_run_id
+      - lease_expires_at
+      - last_error
+  operations_history:
+    path: data/operations/operations_history.csv
+    append_only: true
+    columns:
+      - operation_id
+      - created_at
+      - updated_at
+      - status
+      - priority
+      - operation_type
+      - entity_type
+      - entity_id
+      - not_before
+      - deadline
+      - depends_on
+      - dedupe_key
+      - freshness_days
+      - skill_names
+      - prompt
+      - payload_path
+      - source
+      - attempt_count
+      - max_attempts
+      - claimed_by_run_id
+      - lease_expires_at
+      - last_error
+      - terminal_status
+      - completed_at
+      - result_path
+      - result_summary
+      - terminal_reason
+  market_latest:
+    path: data/market/latest.csv
+    generated: true
+    columns:
+      - security_id
+      - provider_symbol
+      - price_date
+      - retrieved_at
+      - open
+      - high
+      - low
+      - close
+      - adjusted_close
+      - volume
+      - currency
+      - source
+      - status
+      - error
+  indicators:
+    path: data/market/indicators.csv
+    generated: true
+    columns:
+      - security_id
+      - as_of_date
+      - calculated_at
+      - observation_count
+      - sma_20
+      - sma_50
+      - sma_200
+      - rsi_14
+      - bollinger_mid
+      - bollinger_upper
+      - bollinger_lower
+      - macd
+      - macd_signal
+      - macd_histogram
+      - return_1d
+      - return_5d
+      - return_20d
+      - volume_zscore
+      - volatility_20d
+      - trigger_state
+      - source_price_hash

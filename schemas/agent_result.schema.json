@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/agent_result.schema.json",
+  "title": "PaperTrader completed agent operation result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "operation_id",
+    "status",
+    "summary",
+    "evidence",
+    "files_changed",
+    "operations_created",
+    "issues_recorded",
+    "daily_report_items",
+    "commands_run",
+    "validation"
+  ],
+  "properties": {
+    "operation_id": { "$ref": "#/$defs/ulid" },
+    "status": {
+      "type": "string",
+      "enum": ["succeeded", "skipped", "blocked", "failed"]
+    },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/evidence" },
+      "maxItems": 100
+    },
+    "files_changed": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/repository_path" },
+      "uniqueItems": true
+    },
+    "operations_created": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ulid" },
+      "uniqueItems": true
+    },
+    "issues_recorded": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 128 },
+      "uniqueItems": true
+    },
+    "daily_report_items": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 2000 }
+    },
+    "commands_run": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 4000 }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["passed", "checks"],
+      "properties": {
+        "passed": { "type": "boolean" },
+        "checks": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 1000 }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "ulid": {
+      "type": "string",
+      "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$"
+    },
+    "repository_path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))[A-Za-z0-9._/-]+$"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source", "claim"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1, "maxLength": 1000 },
+        "claim": { "type": "string", "minLength": 1, "maxLength": 4000 },
+        "url": { "type": "string", "format": "uri", "maxLength": 2000 },
+        "observed_at": { "type": "string", "format": "date-time" },
+        "source_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}

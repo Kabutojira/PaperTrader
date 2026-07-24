@@ -22,7 +22,7 @@ Implement PaperTrader as a public Git-native, Hermes-maintained paper-trading sy
 - Issues remain entirely in `data/tables/issues.csv` and `data/issues.md`; there is no GitHub Issues synchronization.
 - Every GitHub workflow supports manual execution with `workflow_dispatch`.
 
-## Step 1 — Scaffold repository contracts
+## Step 1 — Scaffold repository contracts — Complete (2026-07-24)
 
 Create the repository layout from `AGENTS.md`, including package configuration, CLI skeleton, `config.ini`, atomic I/O helpers, CSV and JSON schemas, Hermes-native wiki structure, project skills, tests, and Quartz source configuration.
 
@@ -30,11 +30,16 @@ Initialize `data/wiki/SCHEMA.md`, `data/wiki/index.md`, `data/wiki/log.md`, requ
 
 **Exit criteria**
 
-- A clean checkout installs from pinned dependencies.
-- Every canonical CSV exists with the exact schema-defined header.
-- Hermes and a local harness can discover the project skills.
-- `WIKI_PATH` resolves to `data/wiki`.
-- CI runs formatting, typing, schema validation, unit tests, and wiki lint.
+- [x] A clean checkout installs from pinned dependencies.
+- [x] Every canonical CSV exists with the exact schema-defined header.
+- [x] Hermes and a local harness can discover the project skills.
+- [x] `WIKI_PATH` resolves to `data/wiki`.
+- [x] CI runs formatting, typing, schema validation, unit tests, and wiki lint.
+
+Implemented the paper-only CLI and configuration boundary, atomic writers, schema and integrity
+validators, runtime commit whitelist, canonical empty data state, Hermes-native wiki, eight
+sequential project skills, pinned Python and Quartz dependencies, workflow scaffolds, and Step 1
+tests. The full Step 1 validation gate passes locally.
 
 ## Step 2 — Build deterministic market, queue, and accounting core
 

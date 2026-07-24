@@ -1,0 +1,1 @@
+operation_id,created_at,updated_at,status,priority,operation_type,entity_type,entity_id,not_before,deadline,depends_on,dedupe_key,freshness_days,skill_names,prompt,payload_path,source,attempt_count,max_attempts,claimed_by_run_id,lease_expires_at,last_error,terminal_status,completed_at,result_path,result_summary,terminal_reason

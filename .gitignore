@@ -14,6 +14,9 @@ __pycache__/
 venv/
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # Hermes local state
 .hermes/
@@ -22,6 +25,12 @@ venv/
 *.log
 .cache/
 tmp/
+
+# Quartz build/install output
+site/node_modules/
+site/quartz/
+site/.quartz-cache/
+site/public/
 
 # Editors and OS
 .DS_Store

@@ -1,0 +1,67 @@
+name: Reusable LLM contract preflight
+
+on:
+  workflow_call:
+    inputs:
+      operation_id:
+        description: Optional immutable operation ID
+        required: false
+        default: ""
+        type: string
+      operation_type:
+        description: Optional supported operation type
+        required: false
+        default: ""
+        type: string
+      max_operations:
+        description: Maximum sequential operations
+        required: false
+        default: "1"
+        type: string
+      dry_run:
+        description: Validate contracts without running Hermes
+        required: false
+        default: true
+        type: boolean
+  workflow_dispatch:
+    inputs:
+      operation_id:
+        description: Optional immutable operation ID
+        required: false
+        default: ""
+        type: string
+      operation_type:
+        description: Optional supported operation type
+        required: false
+        default: ""
+        type: string
+      max_operations:
+        description: Maximum sequential operations
+        required: false
+        default: "1"
+        type: string
+      dry_run:
+        description: Validate contracts without running Hermes
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PAPER_TRADING_ONLY: "true"
+      WIKI_PATH: ${{ github.workspace }}/data/wiki
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+      - run: uv sync --locked --all-groups
+      - run: uv run papertrader integrity --strict
+      - name: Confirm Step 1 boundary
+        run: test "${{ inputs.dry_run }}" = "true"
