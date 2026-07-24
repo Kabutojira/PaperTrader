@@ -36,6 +36,19 @@ IMMUTABLE_SECURITY_FIELDS = (
     "provider_symbol",
     "currency",
 )
+WATCHLIST_SECURITY_FIELDS = (
+    "company_name",
+    "instrument_name",
+    "instrument_type",
+    "ticker",
+    "exchange_code",
+    "venue_mic",
+    "provider_symbol",
+    "currency",
+    "country",
+    "sector",
+    "industry",
+)
 
 
 class ResearchStateError(RuntimeError):
@@ -117,6 +130,117 @@ def _replace_row(
     output.sort(key=lambda candidate: candidate[key])
     write_table(repository_root, table, output)
     return True
+
+
+def import_watchlist(
+    repository_root: Path,
+    settings: Settings,
+    raw: Mapping[str, object],
+    *,
+    now: datetime | None = None,
+) -> dict[str, object]:
+    """Atomically add identity-only securities without inventing research state."""
+
+    if set(raw) != {"watchlist_reason", "source", "securities"}:
+        raise ResearchStateError(
+            "watchlist import requires exactly watchlist_reason, source, and securities"
+        )
+    watchlist_reason = raw["watchlist_reason"]
+    source = raw["source"]
+    securities = raw["securities"]
+    if not isinstance(watchlist_reason, str) or not watchlist_reason.strip():
+        raise ResearchStateError("watchlist_reason must be a non-empty string")
+    if not isinstance(source, str):
+        raise ResearchStateError("watchlist source must be a string")
+    parsed_source = urlsplit(source.strip())
+    if parsed_source.scheme not in {"http", "https"} or not parsed_source.netloc:
+        raise ResearchStateError("watchlist source must be an HTTP(S) URL")
+    if not isinstance(securities, list) or not securities:
+        raise ResearchStateError("watchlist securities must be a non-empty list")
+
+    existing = read_table(repository_root, "securities")
+    output = [dict(row) for row in existing]
+    by_provider_identity = {
+        (row["provider_symbol"], row["venue_mic"], row["currency"]): row for row in output
+    }
+    seen_provider_identities: set[tuple[str, str, str]] = set()
+    created_ids: list[str] = []
+    unchanged_ids: list[str] = []
+    instant = format_timestamp(ensure_utc(now or utc_now()).replace(microsecond=0))
+
+    for index, value in enumerate(securities, start=1):
+        if not isinstance(value, Mapping):
+            raise ResearchStateError(f"watchlist security {index} must be an object")
+        fields = _exact_strings(
+            value,
+            WATCHLIST_SECURITY_FIELDS,
+            label=f"watchlist security {index}",
+        )
+        _required(fields, WATCHLIST_SECURITY_FIELDS, label=f"watchlist security {index}")
+        if fields["instrument_type"] not in settings.risk.allowed_instruments:
+            raise ResearchStateError(f"watchlist security {index} instrument_type is not allowed")
+        if fields["venue_mic"] not in settings.risk.allowed_exchanges:
+            raise ResearchStateError(f"watchlist security {index} venue_mic is not allowed")
+        if fields["currency"] not in settings.risk.allowed_currencies:
+            raise ResearchStateError(f"watchlist security {index} currency is not allowed")
+        if not re.fullmatch(r"[A-Z0-9]{4}", fields["venue_mic"]):
+            raise ResearchStateError(f"watchlist security {index} venue_mic is invalid")
+        if not re.fullmatch(r"[A-Z]{3}", fields["currency"]):
+            raise ResearchStateError(f"watchlist security {index} currency is invalid")
+        if not re.fullmatch(r"[A-Z]{2}", fields["country"]):
+            raise ResearchStateError(f"watchlist security {index} country is invalid")
+
+        provider_identity = (
+            fields["provider_symbol"],
+            fields["venue_mic"],
+            fields["currency"],
+        )
+        if provider_identity in seen_provider_identities:
+            raise ResearchStateError(
+                f"watchlist contains duplicate provider identity: {provider_identity!r}"
+            )
+        seen_provider_identities.add(provider_identity)
+        previous = by_provider_identity.get(provider_identity)
+        if previous is not None:
+            unchanged_ids.append(previous["security_id"])
+            continue
+
+        issuer_id = stable_id("issuer", fields["company_name"].casefold())
+        security_id = stable_id(
+            "security",
+            fields["provider_symbol"],
+            fields["venue_mic"],
+            fields["currency"],
+            fields["instrument_type"],
+        )
+        row = {
+            "security_id": security_id,
+            "issuer_id": issuer_id,
+            **fields,
+            "broker_symbol": "",
+            "status": "watchlist",
+            "watchlist_reason": " ".join(watchlist_reason.split()),
+            "research_summary": "",
+            "research_page": "",
+            "last_research_at": "",
+            "next_review_at": "",
+            "created_at": instant,
+            "updated_at": instant,
+            "source": source.strip(),
+        }
+        output.append(row)
+        by_provider_identity[provider_identity] = row
+        created_ids.append(security_id)
+
+    if created_ids:
+        output.sort(key=lambda row: row["security_id"])
+        write_table(repository_root, "securities", output)
+    return {
+        "created": len(created_ids),
+        "created_security_ids": sorted(created_ids),
+        "unchanged": len(unchanged_ids),
+        "unchanged_security_ids": sorted(unchanged_ids),
+    }
 
 
 def upsert_security(

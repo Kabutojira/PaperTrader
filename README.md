@@ -83,6 +83,9 @@ The Step 2 core owns every numeric and structured state transition:
   `research relationship upsert`, and `research strategy upsert` are the only agent-facing routes
   for their structured research tables. They preserve immutable identities and require linked wiki
   pages to exist before the CSV state changes.
+- `papertrader watchlist import --request <json>` atomically adds identity-only securities with
+  deterministic IDs. It leaves research fields empty until a bounded security-research operation
+  creates the linked wiki page and evidence-backed summary.
 
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,

@@ -64,6 +64,7 @@ from papertrader.queue import (
 from papertrader.reports import NarrativeItem, generate_daily_report
 from papertrader.repository_state import snapshot_repository
 from papertrader.research import (
+    import_watchlist,
     record_source,
     upsert_relationship,
     upsert_security,
@@ -191,6 +192,11 @@ def _parser() -> argparse.ArgumentParser:
             dest="research_action", required=True
         ).add_parser(action)
         research_action.add_argument("--request", type=Path, required=True)
+
+    watchlist = commands.add_parser("watchlist", help="manage identity-only monitored securities")
+    watchlist_commands = watchlist.add_subparsers(dest="watchlist_command", required=True)
+    watchlist_import = watchlist_commands.add_parser("import")
+    watchlist_import.add_argument("--request", type=Path, required=True)
 
     report = commands.add_parser("report", help="generate the canonical daily report")
     report_commands = report.add_subparsers(dest="report_command", required=True)
@@ -753,6 +759,10 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         return _run_queue_command(arguments, root, settings)
     if arguments.command == "research":
         return _run_research_command(arguments, root, settings)
+    if arguments.command == "watchlist":
+        raw = _request_object(root, arguments.request)
+        print(json.dumps(import_watchlist(root, settings, raw), sort_keys=True))
+        return 0
     if arguments.command == "agent":
         home = arguments.hermes_home.absolute()
         if arguments.agent_command == "configure":

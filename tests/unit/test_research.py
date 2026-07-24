@@ -8,6 +8,7 @@ import pytest
 from papertrader.config import Settings
 from papertrader.research import (
     ResearchStateError,
+    import_watchlist,
     record_source,
     upsert_relationship,
     upsert_security,
@@ -16,6 +17,72 @@ from papertrader.research import (
 from papertrader.tables import read_table, write_table
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def _watchlist_security() -> dict[str, object]:
+    return {
+        "company_name": "Watchlist Example S.p.A.",
+        "instrument_name": "Watchlist Example ordinary shares",
+        "instrument_type": "equity",
+        "ticker": "WCH",
+        "exchange_code": "MIL",
+        "venue_mic": "XMIL",
+        "provider_symbol": "WCH.MI",
+        "currency": "EUR",
+        "country": "IT",
+        "sector": "Industrials",
+        "industry": "Components",
+    }
+
+
+def _watchlist_request() -> dict[str, object]:
+    return {
+        "watchlist_reason": "User-requested monitoring; research pending.",
+        "source": "https://finance.yahoo.com/",
+        "securities": [_watchlist_security()],
+    }
+
+
+def test_watchlist_import_is_atomic_idempotent_and_does_not_invent_research(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    first = import_watchlist(
+        sandbox_repository,
+        sandbox_settings,
+        _watchlist_request(),
+        now=NOW,
+    )
+    assert first["created"] == 1
+    assert first["unchanged"] == 0
+
+    row = read_table(sandbox_repository, "securities")[0]
+    assert row["ticker"] == "WCH"
+    assert row["status"] == "watchlist"
+    assert row["research_summary"] == ""
+    assert row["research_page"] == ""
+    assert row["last_research_at"] == ""
+    assert row["next_review_at"] == ""
+
+    second = import_watchlist(
+        sandbox_repository,
+        sandbox_settings,
+        _watchlist_request(),
+        now=NOW + timedelta(days=1),
+    )
+    assert second["created"] == 0
+    assert second["unchanged"] == 1
+    assert read_table(sandbox_repository, "securities") == [row]
+
+    duplicate = _watchlist_request()
+    duplicate["securities"] = [_watchlist_security(), _watchlist_security()]
+    with pytest.raises(ResearchStateError, match="duplicate provider identity"):
+        import_watchlist(
+            sandbox_repository,
+            sandbox_settings,
+            duplicate,
+            now=NOW + timedelta(days=2),
+        )
+    assert read_table(sandbox_repository, "securities") == [row]
 
 
 def _security_request() -> dict[str, object]:
