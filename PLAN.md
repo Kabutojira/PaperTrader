@@ -41,7 +41,7 @@ validators, runtime commit whitelist, canonical empty data state, Hermes-native 
 sequential project skills, pinned Python and Quartz dependencies, workflow scaffolds, and Step 1
 tests. The full Step 1 validation gate passes locally.
 
-## Step 2 — Build deterministic market, queue, and accounting core
+## Step 2 — Build deterministic market, queue, and accounting core — Complete (2026-07-24)
 
 Implement:
 
@@ -55,12 +55,20 @@ Implement:
 
 **Exit criteria**
 
-- Repeated runs are idempotent.
-- Price files never contain a bar older than the one-year retention boundary.
-- One indicator transition creates at most one opportunity within its cooldown.
-- The cheap LLM is the final decision maker for whether a validated `data/wiki/inbox/` packet creates `wiki_ingest`.
-- A signal cannot mutate the portfolio before a valid deterministic fill.
-- Equity, short, and option reference-output tests reconcile cash and P/L exactly.
+- [x] Repeated runs are idempotent.
+- [x] Price files never contain a bar older than the one-year retention boundary.
+- [x] One indicator transition creates at most one opportunity within its cooldown.
+- [x] The cheap LLM is the final decision maker for whether a validated `data/wiki/inbox/` packet creates `wiki_ingest`.
+- [x] A signal cannot mutate the portfolio before a valid deterministic fill.
+- [x] Equity, short, and option reference-output tests reconcile cash and P/L exactly.
+
+Implemented normalized yfinance market retrieval, exchange calendars, rolling price caches,
+durable corporate actions, pinned TA-Lib indicators, transition-aware candidate packets and
+classifier decisions, a leased sequential queue, Decimal-safe risk and paper execution, immutable
+execution/cash ledgers, generated portfolio/performance/report views, issues, and structured logs.
+Golden, property, unit, and full-cycle replay tests cover no-look-ahead fills, options and FX,
+cooldowns, recovery, reconciliation, and idempotence. The complete Step 2 validation gate passes
+locally.
 
 ## Step 3 — Integrate Hermes and reusable project skills
 

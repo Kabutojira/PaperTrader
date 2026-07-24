@@ -14,7 +14,7 @@ import yaml
 from jsonschema.validators import validator_for
 
 from papertrader.config import ConfigurationError, Settings, load_settings
-from papertrader.models import CsvContract
+from papertrader.models import CsvContract, DynamicCsvContract
 
 EXPECTED_SKILLS = (
     "papertrader-controller",
@@ -115,6 +115,44 @@ def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
     return tuple(contracts)
 
 
+def load_dynamic_csv_contracts(repository_root: Path) -> tuple[DynamicCsvContract, ...]:
+    """Load glob-based CSV contracts such as per-security rolling price files."""
+
+    contract_path = repository_root / "schemas" / "csv_contracts.yaml"
+    raw = yaml.safe_load(contract_path.read_text(encoding="utf-8"))
+    root = _mapping(raw, "csv contract document")
+    entries = _mapping(root.get("dynamic_contracts", {}), "dynamic_contracts")
+    contracts: list[DynamicCsvContract] = []
+    for raw_name, raw_entry in entries.items():
+        if not isinstance(raw_name, str):
+            raise ContractError("dynamic contract names must be strings")
+        entry = _mapping(raw_entry, f"dynamic contract {raw_name}")
+        raw_glob = entry.get("glob")
+        raw_columns = entry.get("columns")
+        if not isinstance(raw_glob, str):
+            raise ContractError(f"dynamic contract {raw_name} glob must be a string")
+        glob_path = PurePosixPath(raw_glob)
+        if (
+            glob_path.is_absolute()
+            or ".." in glob_path.parts
+            or not glob_path.parts
+            or glob_path.parts[0] != "data"
+            or not raw_glob.endswith(".csv")
+        ):
+            raise ContractError(
+                f"dynamic contract {raw_name} glob must be repository-local under data/"
+            )
+        if not isinstance(raw_columns, list) or not all(
+            isinstance(column, str) and column for column in raw_columns
+        ):
+            raise ContractError(f"dynamic contract {raw_name} columns must be non-empty strings")
+        columns = cast(list[str], raw_columns)
+        if len(columns) != len(set(columns)):
+            raise ContractError(f"dynamic contract {raw_name} contains duplicate columns")
+        contracts.append(DynamicCsvContract(name=raw_name, glob=raw_glob, columns=tuple(columns)))
+    return tuple(contracts)
+
+
 def validate_csv_files(repository_root: Path) -> list[str]:
     """Return errors for missing canonical CSVs or headers that differ byte-for-field."""
 
@@ -141,6 +179,24 @@ def validate_csv_files(repository_root: Path) -> list[str]:
                 f"header mismatch for {contract.path}: expected {list(contract.columns)!r}, "
                 f"got {header!r}"
             )
+    try:
+        dynamic_contracts = load_dynamic_csv_contracts(repository_root)
+    except (ContractError, OSError, yaml.YAMLError) as exc:
+        errors.append(f"cannot load dynamic CSV contracts: {exc}")
+        return errors
+    for dynamic_contract in dynamic_contracts:
+        for path in sorted(repository_root.glob(dynamic_contract.glob)):
+            try:
+                with path.open("r", encoding="utf-8", newline="") as handle:
+                    header = next(csv.reader(handle), None)
+            except (OSError, UnicodeError, csv.Error) as exc:
+                errors.append(f"cannot read {path.relative_to(repository_root)}: {exc}")
+                continue
+            if header != list(dynamic_contract.columns):
+                errors.append(
+                    f"header mismatch for {path.relative_to(repository_root)}: "
+                    f"expected {list(dynamic_contract.columns)!r}, got {header!r}"
+                )
     return errors
 
 
@@ -222,7 +278,7 @@ def validate_layout(repository_root: Path) -> list[str]:
 
 
 def validate_integrity(repository_root: Path, environment: Mapping[str, str]) -> list[str]:
-    """Run every repository-level Step 1 integrity check."""
+    """Run repository contracts plus deterministic queue/accounting checks."""
 
     errors: list[str] = []
     try:
@@ -238,6 +294,14 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     errors.extend(validate_csv_files(repository_root))
     errors.extend(validate_json_schemas(repository_root))
     errors.extend(validate_skills(repository_root))
+    # Imported lazily because canonical table access resolves contracts from this module.
+    from papertrader.orders import validate_order_state
+    from papertrader.portfolio import reconcile_portfolio
+    from papertrader.queue import validate_queue
+
+    errors.extend(validate_queue(repository_root))
+    errors.extend(validate_order_state(repository_root))
+    errors.extend(reconcile_portfolio(repository_root))
     return errors
 
 

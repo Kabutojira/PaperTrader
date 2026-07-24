@@ -1,4 +1,21 @@
 version: 1
+dynamic_contracts:
+  price_cache:
+    glob: data/market/prices/*.csv
+    columns:
+      - date
+      - open
+      - high
+      - low
+      - close
+      - adjusted_close
+      - volume
+      - dividends
+      - stock_splits
+      - currency
+      - provider_symbol
+      - retrieved_at
+      - source
 contracts:
   securities:
     path: data/tables/securities.csv
@@ -166,6 +183,19 @@ contracts:
       - base_amount
       - run_id
       - notes
+  corporate_actions:
+    path: data/market/corporate_actions.csv
+    append_only: true
+    columns:
+      - corporate_action_id
+      - security_id
+      - action_date
+      - action_type
+      - value
+      - currency
+      - source
+      - source_price_hash
+      - recorded_at
   portfolio:
     path: data/tables/portfolio.csv
     generated: true

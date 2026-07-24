@@ -1,0 +1,23 @@
+{
+  "as_of_date": "2026-07-08",
+  "bollinger_lower": "99.83589803",
+  "bollinger_mid": "102.675",
+  "bollinger_upper": "105.51410197",
+  "calculated_at": "2026-07-24T22:00:00Z",
+  "macd": "1.73096425",
+  "macd_histogram": "-0.01651194",
+  "macd_signal": "1.74747618",
+  "observation_count": "220",
+  "return_1d": "0.00334608",
+  "return_20d": "0.04897551",
+  "return_5d": "0.01010587",
+  "rsi_14": "84.7830643",
+  "security_id": "sec_a",
+  "sma_20": "102.675",
+  "sma_200": "80.1735",
+  "sma_50": "98.923",
+  "source_price_hash": "9c787f436e543ce23ec1891ef9ae02f20847fe80b081cb3de50b611e1ea556d1",
+  "trigger_state": "rsi_overbought",
+  "volatility_20d": "0.03868665",
+  "volume_zscore": "1.53840053"
+}

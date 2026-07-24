@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import re
 from collections.abc import Mapping
+from datetime import date
 from pathlib import Path, PurePosixPath
 
 import yaml
+
+from papertrader.atomic_io import atomic_write_text
 
 WIKILINK_PATTERN = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\]]+)?\]\]")
 FENCED_BLOCK_PATTERN = re.compile(r"```.*?```", re.DOTALL)
@@ -133,3 +136,64 @@ def lint_wiki(wiki_root: Path) -> list[str]:
         if key not in index_links:
             errors.append(f"{key}.md: page is missing from index.md")
     return errors
+
+
+def _replace_frontmatter_date(text: str, value: date) -> str:
+    """Update the required frontmatter date without reformatting the page body."""
+
+    replacement = f'updated: "{value.isoformat()}"'
+    updated, count = re.subn(
+        r'^updated: "\d{4}-\d{2}-\d{2}"$', replacement, text, count=1, flags=re.M
+    )
+    if count != 1:
+        raise WikiFormatError("page must contain one quoted updated frontmatter date")
+    return updated
+
+
+def register_wiki_page(
+    wiki_root: Path,
+    *,
+    page_key: str,
+    label: str,
+    section: str,
+    event: str,
+    event_date: date,
+) -> None:
+    """Idempotently catalog a generated page and append a dated wiki-log entry."""
+
+    if not page_key or ".." in PurePosixPath(page_key).parts or page_key.startswith("/"):
+        raise WikiFormatError(f"invalid wiki page key: {page_key!r}")
+    index_path = wiki_root / "index.md"
+    index_text = index_path.read_text(encoding="utf-8")
+    link = f"- [[{page_key}|{label}]]"
+    if link not in index_text:
+        heading = f"## {section}\n"
+        if heading not in index_text:
+            index_text = index_text.rstrip() + f"\n\n{heading}\n{link}\n"
+        else:
+            start = index_text.index(heading) + len(heading)
+            end = index_text.find("\n## ", start)
+            end = len(index_text) if end == -1 else end
+            body = index_text[start:end]
+            body = re.sub(r"\n?No [^.]+\.\n?", "\n", body).strip("\n")
+            links = sorted({*body.splitlines(), link})
+            replacement = heading + "\n" + "\n".join(links) + "\n"
+            index_text = index_text[: start - len(heading)] + replacement + index_text[end:]
+        index_text = _replace_frontmatter_date(index_text, event_date)
+        atomic_write_text(index_path, index_text, allowed_root=wiki_root)
+
+    log_path = wiki_root / "log.md"
+    log_text = log_path.read_text(encoding="utf-8")
+    entry = f"- {event}"
+    if entry not in log_text:
+        heading = f"## {event_date.isoformat()}"
+        if heading in log_text:
+            insert_at = log_text.find("\n## ", log_text.index(heading) + len(heading))
+            insert_at = len(log_text) if insert_at == -1 else insert_at
+            block = log_text[log_text.index(heading) : insert_at].rstrip()
+            updated_block = block + "\n\n" + entry + "\n"
+            log_text = log_text[: log_text.index(heading)] + updated_block + log_text[insert_at:]
+        else:
+            log_text = log_text.rstrip() + f"\n\n{heading}\n\n{entry}\n"
+        log_text = _replace_frontmatter_date(log_text, event_date)
+        atomic_write_text(log_path, log_text, allowed_root=wiki_root)

@@ -23,6 +23,27 @@ checkout's `skills` directory. A local agentic harness can read the same `SKILL.
 and must follow `AGENTS.md`, use the project CLI for structured state, and run operations
 sequentially.
 
+## Deterministic core
+
+The Step 2 core owns every numeric and structured state transition:
+
+- `papertrader market update` retrieves normalized yfinance daily bars, applies exchange
+  calendars, and maintains the 365-day price cache and durable corporate-action ledger.
+- `papertrader indicators update --classify-opportunities` calculates the pinned TA-Lib
+  indicators, writes candidate inbox packets, asks the configured cheap classifier for an
+  `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.
+- `papertrader queue prepare`, `queue claim`, and the terminal queue commands enforce one live
+  lease, dependencies, cooldowns, bounded retries, terminal history, and run budgets.
+- `papertrader signal create`, `order create`, and `fills process` accept repository-local JSON
+  request files. Signals and pending orders do not affect accounting; only an eligible
+  deterministic paper fill appends executions and cash entries.
+- `papertrader portfolio reconcile --strict` replays append-only ledgers, verifies cash links and
+  exact Decimal arithmetic, and checks the generated portfolio against canonical state.
+
+Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
+paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,
+`corporate_actions.csv`, operation history, and run history are append-only.
+
 ## Validation
 
 ```bash

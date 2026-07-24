@@ -22,10 +22,11 @@ def _schema_validator(repository_root: Path, name: str):  # type: ignore[no-unty
 def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> None:
     contracts = load_csv_contracts(repository_root)
 
-    assert len(contracts) == 19
+    assert len(contracts) == 20
     assert validate_csv_files(repository_root) == []
     assert {contract.name for contract in contracts} == {
         "cash_ledger",
+        "corporate_actions",
         "executions",
         "indicators",
         "issues",

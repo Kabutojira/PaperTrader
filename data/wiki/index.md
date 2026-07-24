@@ -19,6 +19,10 @@ PaperTrader is a paper-only investment research and simulation wiki.
 - [[SCHEMA|Wiki schema]]
 - [[log|Research log]]
 
+## Inbox
+
+No candidate packets yet.
+
 ## Ideas
 
 No idea pages yet.

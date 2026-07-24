@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
@@ -20,6 +21,12 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.paper_trading_only is True
     assert settings.paths.wiki == (repository_root / "data" / "wiki").resolve()
     assert settings.hermes_external_skill_dirs == ((repository_root / "skills").resolve(),)
+    assert settings.market_data.price_retention_days == 365
+    assert settings.market_data.minimum_sma_200_observations == 200
+    assert settings.indicators.sma_periods == (20, 50, 200)
+    assert settings.orders.default_fill_policy == "next_open"
+    assert settings.portfolio.initial_capital == Decimal("100000.00")
+    assert settings.operations.maximum_llm_operations_per_run == 5
 
 
 def test_settings_reject_noncanonical_wiki(
@@ -33,3 +40,22 @@ def test_settings_reject_noncanonical_wiki(
 
 def test_repository_root_discovery_from_nested_path(repository_root: Path) -> None:
     assert find_repository_root(repository_root / "data" / "wiki") == repository_root
+
+
+def test_settings_reject_contract_incompatible_price_retention(
+    sandbox_repository: Path,
+    paper_environment: dict[str, str],
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(
+        path.read_text(encoding="utf-8").replace(
+            "price_retention_days = 365", "price_retention_days = 364"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigurationError, match="exactly 365"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
