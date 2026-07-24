@@ -121,7 +121,11 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Install pinned project runner
-        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          version: "0.8.17"
+          enable-cache: "false"
+          github-token: ""
       - name: Install locked Python dependencies
         run: uv sync --locked --all-groups
       - name: Establish immutable runtime identities

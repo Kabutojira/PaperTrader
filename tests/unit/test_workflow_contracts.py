@@ -16,6 +16,7 @@ WORKFLOW_NAMES = {
 }
 FULL_SHA_ACTION = re.compile(r"^[^@\s]+@[0-9a-f]{40}$")
 PINNED_CONTAINER = re.compile(r"^[^@\s]+@sha256:[0-9a-f]{64}$")
+SETUP_UV_ACTION = "astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9"
 
 
 def _workflow(path: Path) -> dict[str, object]:
@@ -120,6 +121,22 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "TELEGRAM" not in runtime_text
     assert "github.token" in commit_text
     assert "OPENROUTER_API_KEY" not in commit_text
+
+
+def test_hermes_runtime_bootstraps_uv_without_container_pip(repository_root: Path) -> None:
+    workflow = _workflow(repository_root / ".github" / "workflows" / "reusable-llm.yml")
+    runtime = workflow["jobs"]["runtime"]
+    install = next(
+        step for step in runtime["steps"] if step["name"] == "Install pinned project runner"
+    )
+
+    assert install["uses"] == SETUP_UV_ACTION
+    assert install["with"] == {
+        "version": "0.8.17",
+        "enable-cache": "false",
+        "github-token": "",
+    }
+    assert "python3 -m pip" not in yaml.safe_dump(runtime)
 
 
 def test_reporting_failure_state_and_pages_deployment_use_post_commit_boundaries(
