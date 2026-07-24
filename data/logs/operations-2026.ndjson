@@ -1,1 +1,2 @@
-
+{"data":{"source_sha":"ba58ce962dbd942339c413548f8641f4e0dabbb1","trigger":"workflow_dispatch"},"event_id":"event_3db9c32ada7a7e1757ce","event_type":"daily_run_started","message":"Started sequential deterministic daily preparation.","occurred_at":"2026-07-24T21:51:21Z","operation_id":"","run_id":"gha-30129065584-1"}
+{"data":{"operation_count":0,"report_path":"data/wiki/daily-reports/daily-report_20260724.md"},"event_id":"event_c3cde3ea1552edc2692b","event_type":"daily_run_completed","message":"Completed deterministic daily run with status succeeded.","occurred_at":"2026-07-24T21:51:25Z","operation_id":"","run_id":"gha-30129065584-1"}

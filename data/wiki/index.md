@@ -41,4 +41,4 @@ No strategy pages yet.
 
 ## Daily reports
 
-No daily reports yet.
+- [[daily-reports/daily-report_20260724|Daily report 2026-07-24]]

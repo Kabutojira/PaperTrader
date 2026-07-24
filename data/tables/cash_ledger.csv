@@ -1,1 +1,2 @@
 cash_entry_id,occurred_at,entry_type,reference_id,currency,amount,fx_rate_to_base,base_amount,run_id,notes
+cash_1d85dc44518ea7cc1ff6,2026-07-24T21:51:21Z,initial_capital,,EUR,100000,1,100000,gha-30129065584-1,Configured initial paper capital

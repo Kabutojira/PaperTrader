@@ -1,0 +1,16 @@
+{
+  "completed_at": "2026-07-24T21:51:25Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260724.md",
+  "run_id": "gha-30129065584-1",
+  "source_sha": "ba58ce962dbd942339c413548f8641f4e0dabbb1",
+  "started_at": "2026-07-24T21:51:21Z",
+  "status": "succeeded",
+  "trigger": "workflow_dispatch"
+}
