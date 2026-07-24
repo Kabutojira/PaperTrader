@@ -1,0 +1,16 @@
+{
+  "completed_at": "2026-07-24T22:30:40Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260724.md",
+  "run_id": "gha-30131099054-1",
+  "source_sha": "b9f9a000684fd18b4eab3f01b3a1e3ebefb3c356",
+  "started_at": "2026-07-24T22:30:35Z",
+  "status": "succeeded",
+  "trigger": "schedule"
+}
