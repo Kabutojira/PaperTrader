@@ -2,11 +2,12 @@
 
 from __future__ import annotations
 
+import json
 import re
 from collections.abc import Sequence
 from dataclasses import dataclass
 from datetime import date, datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 import yaml
 
@@ -60,6 +61,33 @@ def _wiki_changes(wiki_root: Path, report_date: date) -> tuple[str, ...]:
     return tuple(changes)
 
 
+def _run_wiki_changes(repository_root: Path, run_id: str) -> tuple[str, ...]:
+    """Return maintained wiki pages changed by this run even across UTC dates."""
+
+    changes: set[str] = set()
+    run_directory = repository_root / "data" / "runs" / run_id
+    for path in sorted(run_directory.glob("*/agent_result.json")):
+        try:
+            result = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise CanonicalValueError(f"cannot read run result {path.name}: {exc}") from exc
+        raw_paths = result.get("files_changed") if isinstance(result, dict) else None
+        if not isinstance(raw_paths, list) or not all(
+            isinstance(raw_path, str) for raw_path in raw_paths
+        ):
+            raise CanonicalValueError(f"run result has invalid files_changed: {path}")
+        for raw_path in raw_paths:
+            relative = PurePosixPath(raw_path)
+            if (
+                len(relative.parts) >= 4
+                and relative.parts[:2] == ("data", "wiki")
+                and relative.parts[2] not in {"_archive", "_meta", "daily-reports", "inbox", "raw"}
+                and relative.suffix == ".md"
+            ):
+                changes.add(PurePosixPath(*relative.parts[2:]).with_suffix("").as_posix())
+    return tuple(sorted(changes))
+
+
 def _validate_narratives(items: Sequence[NarrativeItem]) -> tuple[NarrativeItem, ...]:
     validated: list[NarrativeItem] = []
     for item in items:
@@ -104,10 +132,14 @@ def generate_daily_report(
     narratives = _validate_narratives(narrative_items)
     latest = read_table(repository_root, "market_latest")
     orders = [
-        row for row in read_table(repository_root, "orders") if _today(row["created_at"], day)
+        row
+        for row in read_table(repository_root, "orders")
+        if row["run_id"] == run_id or _today(row["created_at"], day)
     ]
     executions = [
-        row for row in read_table(repository_root, "executions") if _today(row["executed_at"], day)
+        row
+        for row in read_table(repository_root, "executions")
+        if row["run_id"] == run_id or _today(row["executed_at"], day)
     ]
     portfolio = read_table(repository_root, "portfolio")
     performance = next(
@@ -121,11 +153,18 @@ def generate_daily_report(
     history = [
         row
         for row in read_table(repository_root, "operations_history")
-        if _today(row["completed_at"], day)
+        if row["claimed_by_run_id"] == run_id or _today(row["completed_at"], day)
     ]
     active_operations = read_table(repository_root, "operations_todo")
     issues = [row for row in read_table(repository_root, "issues") if row["status"] == "open"]
-    wiki_changes = _wiki_changes(repository_root / "data" / "wiki", day)
+    wiki_changes = tuple(
+        sorted(
+            {
+                *_wiki_changes(repository_root / "data" / "wiki", day),
+                *_run_wiki_changes(repository_root, run_id),
+            }
+        )
+    )
     lines = [
         "---",
         f'title: "PaperTrader daily report — {day.isoformat()}"',

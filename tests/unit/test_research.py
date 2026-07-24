@@ -13,7 +13,7 @@ from papertrader.research import (
     upsert_security,
     upsert_strategy,
 )
-from papertrader.tables import read_table
+from papertrader.tables import read_table, write_table
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
@@ -218,6 +218,89 @@ def test_relationship_and_strategy_upserts_are_idempotent_across_run_times(
     )
     assert read_table(sandbox_repository, "strategy_legs")[0]["quantity"] == "12"
     assert read_table(sandbox_repository, "strategies")[0]["updated_at"] == "2026-07-26T12:00:00Z"
+
+
+def test_strategy_replay_does_not_regress_execution_owned_active_status(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _wiki_page(sandbox_repository)
+    _entity_page(sandbox_repository, "ideas", "idea_example", "Idea")
+    _entity_page(sandbox_repository, "relationships", "relationship_example", "Relationship")
+    _entity_page(sandbox_repository, "strategies", "strategy_example", "Strategy")
+    assert upsert_security(
+        sandbox_repository,
+        sandbox_settings,
+        _security_request(),
+        now=NOW,
+    )
+    relationship = {
+        "relationship_id": "relationship_example",
+        "idea_id": "idea_example",
+        "security_id": "sec_example",
+        "relationship_type": "beneficiary",
+        "direction": "positive",
+        "mechanism": "Demand expansion raises addressable revenue.",
+        "sensitivity": "medium",
+        "confidence": "medium",
+        "catalyst": "Verified customer adoption.",
+        "invalidation": "Demand does not translate into orders.",
+        "status": "accepted",
+        "research_page": "data/wiki/relationships/relationship_example.md",
+        "last_reviewed_at": "2026-07-24T12:00:00Z",
+        "next_review_at": "2026-08-24T12:00:00Z",
+    }
+    assert upsert_relationship(sandbox_repository, relationship, now=NOW)
+    strategy = {
+        "strategy": {
+            "strategy_id": "strategy_example",
+            "idea_id": "idea_example",
+            "security_id": "sec_example",
+            "relationship_id": "relationship_example",
+            "name": "Example long equity",
+            "status": "ready",
+            "direction": "long",
+            "instrument_type": "equity",
+            "thesis": "Evidence supports a bounded long candidate.",
+            "entry_rule": "Enter after the next eligible session opens.",
+            "exit_rule": "Exit at fair value or review deadline.",
+            "invalidation": "Orders fail to confirm demand.",
+            "risk_budget_pct": "1",
+            "not_before": "",
+            "expires_at": "",
+            "research_page": "data/wiki/strategies/strategy_example.md",
+        },
+        "legs": [
+            {
+                "leg_id": "leg_1",
+                "action": "buy",
+                "side": "long",
+                "instrument_type": "equity",
+                "security_id": "sec_example",
+                "provider_contract_id": "",
+                "option_type": "",
+                "expiry": "",
+                "strike": "",
+                "quantity": "10",
+                "contract_multiplier": "1",
+                "order_type": "market",
+                "limit_price": "",
+                "currency": "EUR",
+            }
+        ],
+    }
+    assert upsert_strategy(sandbox_repository, sandbox_settings, strategy, now=NOW)
+    rows = read_table(sandbox_repository, "strategies")
+    rows[0]["status"] = "active"
+    write_table(sandbox_repository, "strategies", rows)
+
+    assert not upsert_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        strategy,
+        now=NOW + timedelta(days=1),
+    )
+    assert read_table(sandbox_repository, "strategies")[0]["status"] == "active"
 
 
 def test_source_registry_rejects_stale_observations_and_replays_exactly(

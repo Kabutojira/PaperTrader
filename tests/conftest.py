@@ -27,7 +27,7 @@ def sandbox_repository(repository_root: Path, tmp_path: Path) -> Path:
 
     target = tmp_path / "PaperTrader"
     target.mkdir()
-    for name in ("AGENTS.md", "PLAN.md", "config.ini"):
+    for name in (".gitattributes", "AGENTS.md", "PLAN.md", "config.ini"):
         shutil.copy2(repository_root / name, target / name)
     for name in ("schemas", "data", "skills"):
         shutil.copytree(repository_root / name, target / name)

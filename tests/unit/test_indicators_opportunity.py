@@ -23,6 +23,7 @@ from papertrader.opportunity import (
     validate_classifier_decision,
 )
 from papertrader.tables import read_table, write_table
+from papertrader.utils import content_hash
 from papertrader.wiki import lint_wiki
 
 
@@ -268,6 +269,22 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
     assert classifier.calls == 2
     assert first[0].decision is not None
     assert second[0].created is False
+    wiki_ingest = next(
+        (
+            row
+            for row in read_table(sandbox_repository, "operations_todo")
+            if row["operation_type"] == "wiki_ingest"
+        ),
+        None,
+    )
+    if decision == "ingest":
+        assert wiki_ingest is not None
+        payload = json.loads(
+            (sandbox_repository / wiki_ingest["payload_path"]).read_text(encoding="utf-8")
+        )
+        assert payload["inputs"]["source_hash"] == content_hash(first[0].path.read_bytes())
+    else:
+        assert wiki_ingest is None
     assert {row["operation_type"] for row in read_table(sandbox_repository, "operations_todo")} == (
         expected_types
     )

@@ -120,7 +120,7 @@ def test_runtime_bundle_stages_and_rejects_non_whitelisted_changes(
         agents.read_text(encoding="utf-8") + "\nunsafe runtime edit\n", encoding="utf-8"
     )
 
-    with pytest.raises(PublicationError, match="runtime path is not allowed: AGENTS.md"):
+    with pytest.raises(PublicationError, match=r"runtime path is not allowed: AGENTS\.md"):
         create_runtime_bundle(
             sandbox_repository,
             tmp_path / "bundle",

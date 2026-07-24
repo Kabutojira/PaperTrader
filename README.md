@@ -122,6 +122,10 @@ The `[classifier]` command and model are deployment settings for the cheap inbox
 are intentionally left blank, candidate packets remain blocked with a recorded issue;
 deterministic code never substitutes a heuristic ingestion decision.
 
+See the [operating runbook](docs/OPERATIONS.md) for queue examples, local skill execution, manual
+workflow dispatch, configuration changes, failed-run recovery, replay by run ID, publication
+retry, and project-skill maintenance.
+
 ## Validation
 
 ```bash

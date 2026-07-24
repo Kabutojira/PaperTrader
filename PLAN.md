@@ -143,7 +143,7 @@ and secret partitioning; integration tests cover daily no-op and next-open fill 
 Python gate and a local Quartz check/build pass. Live inference, push, Pages deployment, and
 Telegram delivery require repository secrets/settings and were intentionally not invoked locally.
 
-## Step 5 — Validate the complete operating cycle
+## Step 5 — Validate the complete operating cycle — Complete (2026-07-24)
 
 Exercise the complete system from a clean checkout using manually seeded data: market update, cheap-LLM ingestion decision, opportunity research, wiki update, relationship research, strategy creation, signal, paper order, deterministic fill, portfolio reconciliation, report, commit, Pages build, and Telegram delivery.
 
@@ -151,9 +151,25 @@ Document local skill execution, manual workflow dispatch, queue entry, configura
 
 **Exit criteria**
 
-- At least one complete research-to-paper-fill lifecycle succeeds.
-- The following rerun creates no duplicate source, operation, signal, order, execution, or wiki page.
-- Strict integrity, wiki lint, schema checks, and portfolio reconciliation pass from a clean checkout.
-- The public site and Telegram report link to the same committed daily report.
-- Both scheduled and manually dispatched workflows succeed.
-- No real-trading credential or execution path exists.
+- [x] At least one complete research-to-paper-fill lifecycle succeeds.
+- [x] The following rerun creates no duplicate source, operation, signal, order, execution, or wiki page.
+- [x] Strict integrity, wiki lint, schema checks, and portfolio reconciliation pass from a clean checkout.
+- [x] The public site and Telegram report link to the same committed daily report.
+- [x] Both scheduled and manually dispatched workflows succeed.
+- [x] No real-trading credential or execution path exists.
+
+Implemented a clean-checkout, manually seeded operating-cycle integration test that exercises
+recorded market normalization, the cheap ingestion decision, five sequential bounded research and
+execution operations, wiki/source/relationship/strategy state, signal and pending paper order
+creation, a next-session deterministic fill, accounting reconciliation, the canonical report, a
+runtime-whitelisted commit handoff, exact committed-report Telegram delivery, and an actual Quartz
+build. The same test replays every source, queue request, research upsert, signal, order, fill, and
+wiki write and proves their row and page counts remain unchanged. CI and the reusable deterministic
+workflow run this publication cycle with Quartz enabled; workflow contract tests cover both the
+scheduled and manual controller entry points. Added the operating runbook, completed-session market
+filtering, cross-midnight run reporting, replay-safe strategy status handling, canonical CSV Git
+attributes, and a safe configurable Quartz build wrapper. Exact locked Python and Node installs,
+all 128 tests, strict schema/integrity/wiki/portfolio gates, and the canonical site build pass.
+Hosted inference, push, Pages deployment, and Telegram network calls still require repository
+settings and secrets; their credential boundaries and deterministic handoffs are validated locally
+without exposing a real-trading credential or adding any real-execution adapter.

@@ -504,7 +504,8 @@ def process_opportunity_transitions(
             )
             if packet.decision is not None and packet.decision.decision == "ingest":
                 packet_relative = packet.path.relative_to(repository_root).as_posix()
-                packet_entity_id = stable_id("source", packet.content_hash)
+                packet_file_hash = content_hash(packet.path.read_bytes())
+                packet_entity_id = stable_id("source", packet_file_hash)
                 enqueue_operation(
                     repository_root,
                     settings,
@@ -514,13 +515,13 @@ def process_opportunity_transitions(
                     dedupe_key=build_dedupe_key(
                         "wiki_ingest",
                         packet_entity_id,
-                        packet.content_hash[:20],
+                        packet_file_hash[:20],
                         transition.as_of_date.isoformat(),
                     ),
                     prompt=f"Ingest validated candidate packet {packet.path.name} into the wiki.",
                     inputs={
                         "source_path": packet_relative,
-                        "source_hash": packet.content_hash,
+                        "source_hash": packet_file_hash,
                     },
                     source="cheap-llm-ingest-decision",
                     source_refs=(packet_relative,),

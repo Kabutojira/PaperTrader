@@ -304,12 +304,20 @@ def _integer(raw: Mapping[str, object], key: str, *, default: int | None = None)
     return value
 
 
-def _timestamp(raw: Mapping[str, object], key: str, *, required: bool = True) -> datetime | None:
+def _timestamp(
+    raw: Mapping[str, object],
+    key: str,
+    *,
+    required: bool = True,
+    allow_now: bool = False,
+) -> datetime | None:
     value = raw.get(key)
     if (value is None or value == "") and not required:
         return None
     if not isinstance(value, str):
         raise CanonicalValueError(f"request field {key} must be an ISO timestamp")
+    if allow_now and value == "now":
+        return utc_now().replace(microsecond=0)
     return parse_timestamp(value)
 
 
@@ -437,8 +445,8 @@ def _run_queue_command(
             priority=_integer(raw, "priority", default=50),
             freshness_days=_integer(raw, "freshness_days", default=0),
             depends_on=dependencies,
-            not_before=_timestamp(raw, "not_before", required=False),
-            deadline=_timestamp(raw, "deadline", required=False),
+            not_before=_timestamp(raw, "not_before", required=False, allow_now=True),
+            deadline=_timestamp(raw, "deadline", required=False, allow_now=True),
             source_refs=source_refs,
             max_attempts=_integer(
                 raw,

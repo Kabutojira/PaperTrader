@@ -53,6 +53,10 @@ jobs:
           cache-dependency-path: site/package-lock.json
       - name: Install locked Quartz dependencies
         run: npm ci --prefix site --ignore-scripts
+      - name: Validate the complete seeded publication cycle
+        env:
+          PAPERTRADER_VALIDATE_QUARTZ: "true"
+        run: uv run pytest tests/integration/test_complete_operating_cycle.py
       - name: Check and build the canonical Quartz source
         run: |
           npm run check --prefix site

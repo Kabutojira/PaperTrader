@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import tomllib
 from pathlib import Path
 
 from jsonschema.validators import validator_for
@@ -99,3 +100,25 @@ def test_operation_payload_requires_type_specific_input(repository_root: Path) -
     assert list(validator.iter_errors(payload)) == []
     payload["inputs"] = {}
     assert list(validator.iter_errors(payload))
+
+
+def test_distribution_has_no_real_execution_dependency_or_adapter(repository_root: Path) -> None:
+    project = tomllib.loads((repository_root / "pyproject.toml").read_text(encoding="utf-8"))
+    dependencies = {
+        item.split("[", maxsplit=1)[0].split("=", maxsplit=1)[0].lower()
+        for item in project["project"]["dependencies"]
+    }
+    real_execution_packages = {
+        "alpaca-py",
+        "ccxt",
+        "ibapi",
+        "ib-insync",
+        "oandapyv20",
+        "robin-stocks",
+    }
+
+    assert dependencies.isdisjoint(real_execution_packages)
+    assert not any((repository_root / "src" / "papertrader").glob("*broker*"))
+    config = (repository_root / "config.ini").read_text(encoding="utf-8")
+    assert "paper_trading_only = true" in config
+    assert "allow_real_orders = false" in config

@@ -427,6 +427,20 @@ def upsert_strategy(
     ]
     if (
         previous
+        and previous["status"] in {"active", "closed", "expired"}
+        and values["status"] in {"draft", "researching", "ready"}
+    ):
+        unchanged_research = all(
+            previous[field] == values[field] for field in input_columns if field != "status"
+        )
+        if unchanged_research and current_strategy_legs == leg_rows:
+            return False
+        raise ResearchStateError(
+            f"strategy update would regress lifecycle status {previous['status']} to "
+            f"{values['status']}"
+        )
+    if (
+        previous
         and all(previous[field] == values[field] for field in input_columns)
         and current_strategy_legs == leg_rows
     ):

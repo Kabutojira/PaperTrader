@@ -507,6 +507,8 @@ def update_market_data(
     errors: list[str] = []
     for identity in load_security_identities(repository_root):
         previous = read_price_cache(repository_root, identity.security_id)
+        calendar_name = settings.market_data.calendar_for(identity.venue_mic)
+        expected = latest_completed_session(calendar_name, retrieved_at)
         start = (
             previous[-1].date - timedelta(days=7)
             if previous
@@ -522,10 +524,15 @@ def update_market_data(
                 incoming = normalize_history(
                     frame,
                     identity,
-                    calendar_name=settings.market_data.calendar_for(identity.venue_mic),
+                    calendar_name=calendar_name,
                     retrieved_at=retrieved_at,
                     source=selected_provider.name,
                 )
+                incoming = tuple(bar for bar in incoming if bar.date <= expected)
+                if not incoming:
+                    raise MarketDataError(
+                        f"provider returned no completed session through {expected}"
+                    )
                 break
             except Exception as exc:  # provider libraries expose several runtime error types
                 failure = f"{type(exc).__name__}: {exc}"
@@ -559,9 +566,6 @@ def update_market_data(
             source_price_hash=price_content_hash(merged),
         )
         newest = merged[-1]
-        expected = latest_completed_session(
-            settings.market_data.calendar_for(identity.venue_mic), retrieved_at
-        )
         status = "ok" if newest.date >= expected else "stale"
         if status == "stale":
             errors.append(
