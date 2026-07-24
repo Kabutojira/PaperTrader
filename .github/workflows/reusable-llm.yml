@@ -107,7 +107,6 @@ jobs:
     env:
       HERMES_HOME: /tmp/papertrader-hermes
       PAPER_TRADING_ONLY: "true"
-      WIKI_PATH: ${{ github.workspace }}/data/wiki
     outputs:
       artifact_name: ${{ steps.identities.outputs.artifact_name }}
       base_sha: ${{ steps.identities.outputs.base_sha }}
@@ -120,6 +119,11 @@ jobs:
           ref: ${{ inputs.target_branch || github.event.repository.default_branch }}
           fetch-depth: 0
           persist-credentials: false
+      - name: Establish the container workspace boundary
+        run: |
+          workspace="$(pwd -P)"
+          git config --system --add safe.directory "$workspace"
+          echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"
       - name: Install pinned project runner
         uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
         with:
@@ -131,7 +135,8 @@ jobs:
       - name: Establish immutable runtime identities
         id: identities
         run: |
-          echo "base_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          base_sha="$(git rev-parse --verify 'HEAD^{commit}')"
+          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
           echo "run_id=gha-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
           echo "artifact_name=papertrader-runtime-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
       - name: Configure an isolated Hermes profile
@@ -139,6 +144,8 @@ jobs:
           uv run papertrader agent configure
           --hermes-home "$HERMES_HOME"
           --replace-unmanaged
+      - name: Hand the isolated profile to the Hermes user
+        run: chown -R hermes:hermes "$HERMES_HOME"
       - name: Synchronize bundled native skills into the isolated profile
         run: hermes skills opt-in --sync
       - name: Preflight native llm-wiki and the selected project skill

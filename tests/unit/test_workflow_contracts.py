@@ -103,7 +103,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert runtime["permissions"] == {"contents": "read"}
     assert commit["permissions"] == {"contents": "write"}
     assert runtime["env"]["PAPER_TRADING_ONLY"] == "true"
-    assert runtime["env"]["WIKI_PATH"] == "${{ github.workspace }}/data/wiki"
+    assert "WIKI_PATH" not in runtime["env"]
     assert "hermes skills opt-in --sync" in text
     assert "agent preflight" in text
     assert "agent run-batch" in text
@@ -121,6 +121,23 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "TELEGRAM" not in runtime_text
     assert "github.token" in commit_text
     assert "OPENROUTER_API_KEY" not in commit_text
+
+
+def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
+    repository_root: Path,
+) -> None:
+    workflow = _workflow(repository_root / ".github" / "workflows" / "reusable-llm.yml")
+    runtime = workflow["jobs"]["runtime"]
+    steps = {step["name"]: step for step in runtime["steps"]}
+    boundary = steps["Establish the container workspace boundary"]["run"]
+    identities = steps["Establish immutable runtime identities"]["run"]
+    handoff = steps["Hand the isolated profile to the Hermes user"]["run"]
+
+    assert 'workspace="$(pwd -P)"' in boundary
+    assert 'git config --system --add safe.directory "$workspace"' in boundary
+    assert 'echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"' in boundary
+    assert "git rev-parse --verify 'HEAD^{commit}'" in identities
+    assert handoff == 'chown -R hermes:hermes "$HERMES_HOME"'
 
 
 def test_hermes_runtime_bootstraps_uv_without_container_pip(repository_root: Path) -> None:
