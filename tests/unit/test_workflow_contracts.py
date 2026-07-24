@@ -101,6 +101,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
 
     assert PINNED_CONTAINER.fullmatch(runtime["container"]["image"])
     assert runtime["permissions"] == {"contents": "read"}
+    assert runtime["defaults"]["run"]["shell"] == "bash"
     assert commit["permissions"] == {"contents": "write"}
     assert runtime["env"]["PAPER_TRADING_ONLY"] == "true"
     assert "WIKI_PATH" not in runtime["env"]

@@ -104,6 +104,9 @@ jobs:
     container:
       image: nousresearch/hermes-agent@sha256:a6ce64e2038867885c2c90f6602425e6e70293d5e6d952a0e603a99265e01c40
       options: --user 0:0
+    defaults:
+      run:
+        shell: bash
     env:
       HERMES_HOME: /tmp/papertrader-hermes
       PAPER_TRADING_ONLY: "true"
