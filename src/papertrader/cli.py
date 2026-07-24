@@ -20,6 +20,7 @@ from papertrader.agent_runner import (
 from papertrader.command_audit import audit_context, record_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
+from papertrader.daily import execute_agent_batch, finalize_daily_run, prepare_daily_run
 from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
 from papertrader.integrity import (
@@ -47,6 +48,7 @@ from papertrader.orders import (
 )
 from papertrader.performance import update_performance
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
+from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.queue import (
     OPERATION_SKILLS,
     RunBudget,
@@ -67,6 +69,7 @@ from papertrader.research import (
     upsert_security,
     upsert_strategy,
 )
+from papertrader.telegram import deliver_committed_report
 from papertrader.utils import (
     CanonicalValueError,
     parse_iso_date,
@@ -97,6 +100,18 @@ def _parser() -> argparse.ArgumentParser:
     market = commands.add_parser("market", help="retrieve and normalize market state")
     market_commands = market.add_subparsers(dest="market_command", required=True)
     market_commands.add_parser("update")
+
+    daily = commands.add_parser("daily", help="run sequential deterministic daily phases")
+    daily_commands = daily.add_subparsers(dest="daily_command", required=True)
+    daily_prepare = daily_commands.add_parser("prepare")
+    daily_prepare.add_argument("--run-id", required=True)
+    daily_prepare.add_argument("--trigger", required=True)
+    daily_prepare.add_argument("--source-sha", required=True)
+    daily_prepare.add_argument("--offline", action="store_true")
+    daily_prepare.add_argument("--skip-classifier", action="store_true")
+    daily_finalize = daily_commands.add_parser("finalize")
+    daily_finalize.add_argument("--run-id", required=True)
+    daily_finalize.add_argument("--github-report-url", required=True)
 
     indicator = commands.add_parser("indicators", help="calculate deterministic indicators")
     indicator_commands = indicator.add_subparsers(dest="indicator_command", required=True)
@@ -201,6 +216,31 @@ def _parser() -> argparse.ArgumentParser:
     agent_run.add_argument("--operation-id")
     agent_run.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
     agent_run.add_argument("--estimated-cost", default="0")
+    agent_batch = agent_commands.add_parser("run-batch")
+    agent_batch.add_argument("--hermes-home", type=Path, required=True)
+    agent_batch.add_argument("--run-id", required=True)
+    agent_batch.add_argument("--max-operations", type=int, required=True)
+    agent_batch.add_argument("--operation-id")
+    agent_batch.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
+
+    telegram = commands.add_parser("telegram", help="deliver an exact committed report")
+    telegram_commands = telegram.add_subparsers(dest="telegram_command", required=True)
+    telegram_deliver = telegram_commands.add_parser("deliver")
+    telegram_deliver.add_argument("--commit-sha", required=True)
+    telegram_deliver.add_argument("--report-path", required=True)
+    telegram_deliver.add_argument("--repository-url", required=True)
+    telegram_deliver.add_argument("--run-id", required=True)
+
+    workflow = commands.add_parser("workflow", help="handoff validated runtime patches")
+    workflow_commands = workflow.add_subparsers(dest="workflow_command", required=True)
+    bundle = workflow_commands.add_parser("bundle")
+    bundle_commands = bundle.add_subparsers(dest="bundle_command", required=True)
+    bundle_create = bundle_commands.add_parser("create")
+    bundle_create.add_argument("--output-directory", type=Path, required=True)
+    bundle_create.add_argument("--run-id", required=True)
+    bundle_create.add_argument("--base-sha", required=True)
+    bundle_apply = bundle_commands.add_parser("apply")
+    bundle_apply.add_argument("--bundle-directory", type=Path, required=True)
 
     whitelist = commands.add_parser(
         "runtime-whitelist", help="validate automated runtime commit paths"
@@ -658,6 +698,37 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         return _print_result("wiki", lint_wiki(settings.paths.wiki))
     if arguments.command == "market":
         return _print_result("market", update_market_data(root, settings))
+    if arguments.command == "daily":
+        if arguments.daily_command == "prepare":
+            daily_preparation = prepare_daily_run(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                trigger=arguments.trigger,
+                source_sha=arguments.source_sha,
+                retrieve_market=not arguments.offline,
+                classify_opportunities=not arguments.skip_classifier,
+            )
+            print(
+                json.dumps(
+                    {
+                        "run_id": daily_preparation.run_id,
+                        "started_at": daily_preparation.started_at.isoformat(),
+                        "errors": daily_preparation.errors,
+                        "queue_dispositions": daily_preparation.queue_dispositions,
+                    },
+                    sort_keys=True,
+                )
+            )
+            return 0
+        daily_finalization = finalize_daily_run(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            github_report_url=arguments.github_report_url,
+        )
+        print(json.dumps(asdict(daily_finalization), sort_keys=True))
+        return 0
     if arguments.command == "indicators":
         previous, current, indicator_errors = update_indicators(root, settings)
         if not indicator_errors and arguments.classify_opportunities:
@@ -694,6 +765,28 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             )
             print(json.dumps(asdict(report), sort_keys=True))
             return 0
+        if arguments.agent_command == "run-batch":
+            batch_result = execute_agent_batch(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                hermes_home=home,
+                environment=os.environ,
+                maximum_operations=arguments.max_operations,
+                operation_id=arguments.operation_id,
+                operation_type=arguments.operation_type,
+            )
+            print(
+                json.dumps(
+                    {
+                        "operation_count": batch_result.operation_count,
+                        "estimated_model_budget_used": str(batch_result.estimated_cost_used),
+                        "outcomes": [asdict(outcome) for outcome in batch_result.outcomes],
+                    },
+                    sort_keys=True,
+                )
+            )
+            return 0
         disposition = run_one_operation(
             root,
             settings,
@@ -705,6 +798,43 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             estimated_cost=required_decimal(arguments.estimated_cost, label="estimated_cost"),
         )
         print(disposition)
+        return 0
+    if arguments.command == "telegram":
+        delivery_result = deliver_committed_report(
+            root,
+            settings,
+            commit_sha=arguments.commit_sha,
+            report_path=arguments.report_path,
+            repository_url=arguments.repository_url,
+            run_id=arguments.run_id,
+            token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
+            chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+        )
+        print(json.dumps(asdict(delivery_result), sort_keys=True))
+        return 0
+    if arguments.command == "workflow":
+        if arguments.bundle_command == "create":
+            bundle = create_runtime_bundle(
+                root,
+                arguments.output_directory,
+                run_id=arguments.run_id,
+                base_sha=arguments.base_sha,
+            )
+        else:
+            bundle = apply_runtime_bundle(root, arguments.bundle_directory)
+        print(
+            json.dumps(
+                {
+                    "base_sha": bundle.base_sha,
+                    "run_id": bundle.run_id,
+                    "patch_sha256": bundle.patch_sha256,
+                    "changed": bundle.changed,
+                    "changed_paths": bundle.changed_paths,
+                    "report_path": bundle.report_path,
+                },
+                sort_keys=True,
+            )
+        )
         return 0
     if arguments.command == "portfolio" and arguments.portfolio_command == "reconcile":
         return _print_result("portfolio", reconcile_portfolio(root))

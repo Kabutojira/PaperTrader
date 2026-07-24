@@ -1,0 +1,173 @@
+name: Post-commit Telegram delivery
+
+on:
+  workflow_call:
+    inputs:
+      commit_sha:
+        description: Commit containing the canonical report
+        required: true
+        type: string
+      report_path:
+        description: Canonical report path within the commit
+        required: true
+        type: string
+      run_id:
+        description: Runtime run ID linked to delivery state
+        required: true
+        type: string
+      send_telegram:
+        description: Deliver the report and persist a retryable failure issue
+        required: false
+        default: false
+        type: boolean
+      target_branch:
+        description: Branch receiving delivery issue-state commits
+        required: false
+        default: ""
+        type: string
+      serialized_by_caller:
+        description: Caller already holds the papertrader-write concurrency group
+        required: false
+        default: false
+        type: boolean
+    secrets:
+      TELEGRAM_BOT_TOKEN:
+        description: Telegram bot credential exposed only to the delivery step
+        required: false
+      TELEGRAM_CHAT_ID:
+        description: Destination chat identifier exposed only to the delivery step
+        required: false
+    outputs:
+      final_sha:
+        description: Branch SHA after any delivery issue-state commit
+        value: ${{ jobs.delivery.outputs.final_sha }}
+      delivery_status:
+        description: sent, failed, or skipped
+        value: ${{ jobs.delivery.outputs.delivery_status }}
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: Commit containing the canonical report
+        required: true
+        type: string
+      report_path:
+        description: Canonical daily report path
+        required: true
+        type: string
+      run_id:
+        description: Runtime run ID linked to delivery state
+        required: true
+        type: string
+      send_telegram:
+        description: Deliver the report
+        required: false
+        default: true
+        type: boolean
+      target_branch:
+        description: Branch receiving delivery issue-state commits
+        required: false
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ inputs.serialized_by_caller && format('papertrader-delivery-{0}', github.run_id) || 'papertrader-write' }}
+  cancel-in-progress: false
+
+jobs:
+  delivery:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      PAPER_TRADING_ONLY: "true"
+      WIKI_PATH: ${{ github.workspace }}/data/wiki
+    outputs:
+      delivery_status: ${{ steps.deliver.outputs.status || steps.skipped.outputs.status }}
+      final_sha: ${{ steps.outcome.outputs.final_sha }}
+    steps:
+      - name: Check out current default-branch state without persisted credentials
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          ref: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install pinned project runner
+        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+      - name: Install locked Python dependencies
+        run: uv sync --locked --all-groups
+      - name: Deliver the exact committed canonical report
+        id: deliver
+        if: ${{ inputs.send_telegram }}
+        env:
+          REPORT_COMMIT: ${{ inputs.commit_sha }}
+          REPORT_PATH: ${{ inputs.report_path }}
+          REPORT_RUN_ID: ${{ inputs.run_id }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          result_file="${RUNNER_TEMP}/telegram-result.json"
+          uv run papertrader telegram deliver \
+            --commit-sha "$REPORT_COMMIT" \
+            --report-path "$REPORT_PATH" \
+            --repository-url "https://github.com/${GITHUB_REPOSITORY}" \
+            --run-id "$REPORT_RUN_ID" > "$result_file"
+          status=$(python3 -c 'import json, os, pathlib; print(json.loads((pathlib.Path(os.environ["RUNNER_TEMP"]) / "telegram-result.json").read_text())["status"])')
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+      - name: Mark disabled delivery as skipped
+        id: skipped
+        if: ${{ !inputs.send_telegram }}
+        run: echo "status=skipped" >> "$GITHUB_OUTPUT"
+      - name: Validate and stage retryable delivery state
+        id: state
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git add --all -- data
+          uv run papertrader runtime-whitelist validate --staged
+          uv run papertrader integrity --strict
+          uv run papertrader wiki lint --strict
+          uv run papertrader portfolio reconcile --strict
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Commit delivery failure or resolution state
+        id: commit
+        if: ${{ steps.state.outputs.changed == 'true' }}
+        env:
+          REPORT_COMMIT: ${{ inputs.commit_sha }}
+        run: |
+          git config user.name "papertrader-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(delivery): record Telegram status ${REPORT_COMMIT:0:12}"
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Rebase and validate delivery state
+        id: rebase
+        if: ${{ steps.state.outputs.changed == 'true' }}
+        env:
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          git fetch --no-tags origin "$TARGET_BRANCH"
+          git rebase "origin/${TARGET_BRANCH}"
+          uv run papertrader integrity --strict
+          uv run papertrader runtime-whitelist validate \
+            --base-ref "origin/${TARGET_BRANCH}" \
+            --head-ref HEAD
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Push delivery state without exposing credentials earlier
+        if: ${{ steps.state.outputs.changed == 'true' }}
+        env:
+          PAPERTRADER_GIT_TOKEN: ${{ github.token }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          git config --local credential.helper '!f() { if test "$1" = get; then echo username=x-access-token; echo "password=$PAPERTRADER_GIT_TOKEN"; fi; }; f'
+          git push "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${TARGET_BRANCH}"
+          git config --local --unset-all credential.helper
+      - name: Publish delivery outputs
+        id: outcome
+        env:
+          DELIVERY_SHA: ${{ steps.rebase.outputs.commit_sha }}
+        run: echo "final_sha=${DELIVERY_SHA:-$(git rev-parse HEAD)}" >> "$GITHUB_OUTPUT"

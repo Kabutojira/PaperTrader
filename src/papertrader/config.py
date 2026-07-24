@@ -147,6 +147,15 @@ class HermesSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class TelegramSettings:
+    """Bounded post-commit Telegram delivery policy without credentials."""
+
+    maximum_attempts: int
+    timeout_seconds: int
+    message_limit: int
+
+
+@dataclass(frozen=True, slots=True)
 class Settings:
     """Validated repository settings used by every deterministic subsystem."""
 
@@ -162,6 +171,7 @@ class Settings:
     operations: OperationSettings
     classifier: ClassifierSettings
     hermes: HermesSettings
+    telegram: TelegramSettings
 
 
 def find_repository_root(start: Path | None = None) -> Path:
@@ -467,6 +477,21 @@ def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
     )
 
 
+def _load_telegram_settings(parser: configparser.ConfigParser) -> TelegramSettings:
+    """Load transport limits while keeping bot credentials outside config.ini."""
+
+    settings = TelegramSettings(
+        maximum_attempts=_positive_int(parser, "telegram", "maximum_attempts"),
+        timeout_seconds=_positive_int(parser, "telegram", "timeout_seconds"),
+        message_limit=_positive_int(parser, "telegram", "message_limit"),
+    )
+    if settings.maximum_attempts > 10:
+        raise ConfigurationError("telegram.maximum_attempts must be <= 10")
+    if settings.message_limit > 4096:
+        raise ConfigurationError("telegram.message_limit must be <= 4096")
+    return settings
+
+
 def _load_settings_unchecked(
     repository_root: Path | None = None,
     environ: Mapping[str, str] | None = None,
@@ -507,6 +532,7 @@ def _load_settings_unchecked(
         parser
     )
     hermes = _load_hermes_settings(parser)
+    telegram = _load_telegram_settings(parser)
 
     return Settings(
         config=parser,
@@ -521,6 +547,7 @@ def _load_settings_unchecked(
         operations=operations,
         classifier=classifier,
         hermes=hermes,
+        telegram=telegram,
     )
 
 

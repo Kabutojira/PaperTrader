@@ -131,6 +131,32 @@ class HermesExecution:
     completed_at: datetime
 
 
+@dataclass(frozen=True, slots=True)
+class AgentOperationOutcome:
+    """One terminal agent decision within a bounded sequential batch."""
+
+    operation_id: str
+    status: str
+
+
+@dataclass(frozen=True, slots=True)
+class AgentBatchResult:
+    """Auditable count and deterministic cost reservation for one controller batch."""
+
+    outcomes: tuple[AgentOperationOutcome, ...]
+    maximum_operations: int
+    maximum_cost: Decimal
+    estimated_cost_per_operation: Decimal
+
+    @property
+    def operation_count(self) -> int:
+        return len(self.outcomes)
+
+    @property
+    def estimated_cost_used(self) -> Decimal:
+        return self.estimated_cost_per_operation * self.operation_count
+
+
 Executor = Callable[[Sequence[str], Path, Mapping[str, str], int], subprocess.CompletedProcess[str]]
 
 
@@ -761,35 +787,18 @@ def run_claimed_operation(
     return validation
 
 
-def run_one_operation(
+def _run_claimed_and_disposition(
     repository_root: Path,
     settings: Settings,
+    operation: Operation,
     *,
     run_id: str,
     hermes_home: Path,
     environment: Mapping[str, str],
-    operation_id: str | None = None,
-    operation_type: str | None = None,
-    estimated_cost: Decimal = Decimal("0"),
     executor: Executor = _subprocess_executor,
 ) -> str:
-    """Prepare, claim, execute, validate, and disposition one operation only."""
+    """Execute and terminalize one already claimed operation."""
 
-    prepare_queue(repository_root)
-    budget = RunBudget(
-        maximum_operations=1, maximum_cost=settings.operations.maximum_model_budget_usd_per_run
-    )
-    operation = claim_next(
-        repository_root,
-        settings,
-        run_id=run_id,
-        budget=budget,
-        estimated_cost=estimated_cost,
-        operation_id=operation_id,
-        operation_type=operation_type,
-    )
-    if operation is None:
-        return "no_operation"
     try:
         validation = run_claimed_operation(
             repository_root,
@@ -850,7 +859,108 @@ def run_one_operation(
     return status
 
 
+def run_one_operation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    hermes_home: Path,
+    environment: Mapping[str, str],
+    operation_id: str | None = None,
+    operation_type: str | None = None,
+    estimated_cost: Decimal = Decimal("0"),
+    executor: Executor = _subprocess_executor,
+) -> str:
+    """Prepare, claim, execute, validate, and disposition one operation only."""
+
+    prepare_queue(repository_root)
+    budget = RunBudget(
+        maximum_operations=1, maximum_cost=settings.operations.maximum_model_budget_usd_per_run
+    )
+    operation = claim_next(
+        repository_root,
+        settings,
+        run_id=run_id,
+        budget=budget,
+        estimated_cost=estimated_cost,
+        operation_id=operation_id,
+        operation_type=operation_type,
+    )
+    if operation is None:
+        return "no_operation"
+    return _run_claimed_and_disposition(
+        repository_root,
+        settings,
+        operation,
+        run_id=run_id,
+        hermes_home=hermes_home,
+        environment=environment,
+        executor=executor,
+    )
+
+
+def run_sequential_operations(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    hermes_home: Path,
+    environment: Mapping[str, str],
+    maximum_operations: int,
+    operation_id: str | None = None,
+    operation_type: str | None = None,
+    estimated_cost_per_operation: Decimal | None = None,
+    executor: Executor = _subprocess_executor,
+) -> AgentBatchResult:
+    """Run a bounded batch while retaining one shared count and cost budget."""
+
+    configured_maximum = settings.operations.maximum_llm_operations_per_run
+    maximum_cost = settings.operations.maximum_model_budget_usd_per_run
+    if maximum_operations < 0 or maximum_operations > configured_maximum:
+        raise AgentRunError(f"maximum_operations must be between 0 and {configured_maximum}")
+    estimate = estimated_cost_per_operation
+    if estimate is None:
+        estimate = maximum_cost / Decimal(configured_maximum)
+    if estimate < 0 or estimate * maximum_operations > maximum_cost:
+        raise AgentRunError("estimated operation cost exceeds the configured run budget")
+    if maximum_operations == 0:
+        return AgentBatchResult((), 0, maximum_cost, estimate)
+
+    prepare_queue(repository_root)
+    budget = RunBudget(maximum_operations=maximum_operations, maximum_cost=maximum_cost)
+    outcomes: list[AgentOperationOutcome] = []
+    while budget.can_reserve(estimate):
+        operation = claim_next(
+            repository_root,
+            settings,
+            run_id=run_id,
+            budget=budget,
+            estimated_cost=estimate,
+            operation_id=operation_id,
+            operation_type=operation_type,
+        )
+        if operation is None:
+            break
+        status = _run_claimed_and_disposition(
+            repository_root,
+            settings,
+            operation,
+            run_id=run_id,
+            hermes_home=hermes_home,
+            environment=environment,
+            executor=executor,
+        )
+        budget.charge(estimate, reserved_cost=estimate)
+        outcomes.append(AgentOperationOutcome(operation.operation_id, status))
+        if operation_id is not None or status == "failed":
+            break
+        prepare_queue(repository_root)
+    return AgentBatchResult(tuple(outcomes), maximum_operations, maximum_cost, estimate)
+
+
 __all__ = [
+    "AgentBatchResult",
+    "AgentOperationOutcome",
     "AgentRunError",
     "HermesPreflight",
     "SkillIdentity",
@@ -861,5 +971,6 @@ __all__ = [
     "prompt_injection_flags",
     "run_claimed_operation",
     "run_one_operation",
+    "run_sequential_operations",
     "sanitized_hermes_environment",
 ]

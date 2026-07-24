@@ -1,6 +1,8 @@
-name: Daily scaffold preflight
+name: Serialized daily PaperTrader run
 
 on:
+  schedule:
+    - cron: "17 21 * * 1-5"
   workflow_dispatch:
     inputs:
       operation_id:
@@ -14,22 +16,22 @@ on:
         default: ""
         type: string
       max_operations:
-        description: Maximum sequential operations
+        description: Maximum operations executed sequentially
         required: false
         default: "1"
         type: string
       dry_run:
-        description: Validate without runtime state changes
+        description: Exercise all validation without inference, commit, or delivery
         required: false
         default: true
         type: boolean
       publish_pages:
-        description: Publish Pages after a successful commit
+        description: Build and deploy Pages after the committed run
         required: false
         default: false
         type: boolean
       send_telegram:
-        description: Send the committed daily report
+        description: Deliver the exact committed canonical report
         required: false
         default: false
         type: boolean
@@ -42,7 +44,44 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  scaffold-preflight:
-    uses: ./.github/workflows/reusable-non-llm.yml
+  runtime:
+    uses: ./.github/workflows/reusable-llm.yml
+    permissions:
+      contents: write
     with:
-      dry_run: true
+      operation_id: ${{ inputs.operation_id || '' }}
+      operation_type: ${{ inputs.operation_type || '' }}
+      max_operations: ${{ github.event_name == 'schedule' && '5' || inputs.max_operations }}
+      dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      target_branch: ${{ github.event.repository.default_branch }}
+      trigger: ${{ github.event_name }}
+      serialized_by_caller: true
+    secrets:
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+
+  delivery:
+    needs: runtime
+    uses: ./.github/workflows/reporting.yml
+    permissions:
+      contents: write
+    with:
+      commit_sha: ${{ needs.runtime.outputs.commit_sha }}
+      report_path: ${{ needs.runtime.outputs.report_path }}
+      run_id: ${{ needs.runtime.outputs.run_id }}
+      send_telegram: ${{ github.event_name == 'schedule' || (!inputs.dry_run && inputs.send_telegram) }}
+      target_branch: ${{ github.event.repository.default_branch }}
+      serialized_by_caller: true
+    secrets:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
+  pages:
+    needs: [runtime, delivery]
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    with:
+      ref: ${{ needs.delivery.outputs.final_sha || needs.runtime.outputs.commit_sha }}
+      publish_pages: ${{ github.event_name == 'schedule' || (!inputs.dry_run && inputs.publish_pages) }}

@@ -33,6 +33,9 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.hermes.required_native_skill == "llm-wiki"
     assert settings.hermes.required_native_skill_version == "2.1.0"
     assert settings.hermes.maximum_turns == 60
+    assert settings.telegram.maximum_attempts == 3
+    assert settings.telegram.timeout_seconds == 15
+    assert settings.telegram.message_limit == 4096
 
 
 def test_settings_reject_noncanonical_wiki(

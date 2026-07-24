@@ -105,7 +105,7 @@ and unit and integration coverage. The hermetic seeded-operation test exercises 
 one-shot subprocess boundary; a live provider-backed run still requires an inference-only API key
 and was intentionally not invoked by the offline test suite.
 
-## Step 4 — Assemble GitHub workflows, reporting, and publication
+## Step 4 — Assemble GitHub workflows, reporting, and publication — Complete (2026-07-24)
 
 Implement `ci.yml`, `daily.yml`, deterministic, LLM, Pages, and reporting workflows. Every workflow must expose `workflow_dispatch`; reusable workflows may also expose `workflow_call`.
 
@@ -126,12 +126,22 @@ Manual inputs must include bounded operation selection and debugging controls su
 
 **Exit criteria**
 
-- Scheduled and manual runs use the same code paths and validation gates.
-- No LLM operation runs in parallel with another.
-- Empty runs do not create empty commits.
-- A runtime commit fails if it includes a non-whitelisted path.
-- Telegram failure is recorded and retryable without corrupting repository state.
-- GitHub Pages renders the canonical wiki and daily reports.
+- [x] Scheduled and manual runs use the same code paths and validation gates.
+- [x] No LLM operation runs in parallel with another.
+- [x] Empty runs do not create empty commits.
+- [x] A runtime commit fails if it includes a non-whitelisted path.
+- [x] Telegram failure is recorded and retryable without corrupting repository state.
+- [x] GitHub Pages renders the canonical wiki and daily reports.
+
+Implemented a schema-backed daily run controller, shared sequential Hermes count/cost budget,
+market-session-aware fill finalization, deterministic accounting/report publication, and exact
+committed-report Telegram delivery with Markdown escaping, bounded retries, redaction, and a
+durable resume cursor. The workflow graph uses digest/SHA-pinned dependencies, isolated runtime,
+commit, delivery, and Pages boundaries, a hash-verified runtime patch handoff, post-rebase
+whitelist validation, and no-empty-commit behavior. Contract tests exercise workflow permissions
+and secret partitioning; integration tests cover daily no-op and next-open fill cycles; the full
+Python gate and a local Quartz check/build pass. Live inference, push, Pages deployment, and
+Telegram delivery require repository secrets/settings and were intentionally not invoked locally.
 
 ## Step 5 — Validate the complete operating cycle
 

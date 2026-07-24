@@ -139,6 +139,32 @@ def latest_completed_session(calendar_name: str, now: datetime) -> date:
     return cast(date, completed[-1].date())
 
 
+def session_open(calendar_name: str, session_date: date) -> datetime:
+    """Return one exchange session's canonical UTC open timestamp."""
+
+    calendar = _calendar(calendar_name)
+    try:
+        value = calendar.session_open(session_date)
+    except (KeyError, ValueError) as exc:
+        raise MarketDataError(
+            f"{session_date.isoformat()} is not a session in {calendar_name}"
+        ) from exc
+    return cast(datetime, value.to_pydatetime()).astimezone(UTC)
+
+
+def session_close(calendar_name: str, session_date: date) -> datetime:
+    """Return one exchange session's canonical UTC close timestamp."""
+
+    calendar = _calendar(calendar_name)
+    try:
+        value = calendar.session_close(session_date)
+    except (KeyError, ValueError) as exc:
+        raise MarketDataError(
+            f"{session_date.isoformat()} is not a session in {calendar_name}"
+        ) from exc
+    return cast(datetime, value.to_pydatetime()).astimezone(UTC)
+
+
 def load_security_identities(repository_root: Path) -> tuple[SecurityIdentity, ...]:
     """Load monitored identities and reject ticker-only or path-unsafe records."""
 

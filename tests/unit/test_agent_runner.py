@@ -14,6 +14,7 @@ from papertrader.agent_runner import (
     configure_hermes_home,
     prompt_injection_flags,
     run_one_operation,
+    run_sequential_operations,
     sanitized_hermes_environment,
 )
 from papertrader.config import Settings
@@ -145,6 +146,71 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     history = read_table(sandbox_repository, "operations_history")
     assert history[0]["operation_id"] == operation_id
     assert history[0]["terminal_status"] == "succeeded"
+
+
+def test_shared_budget_batch_runs_two_operations_strictly_sequentially(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, tmp_path)
+    first = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    second, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="opportunity_research",
+        entity_type="opportunity",
+        entity_id="opp-sec-example-volume",
+        dedupe_key="opportunity_research:opp-sec-example-volume:fixture:2026-07-24",
+        prompt="Classify one deterministic volume transition.",
+        inputs={
+            "security_id": "sec-example",
+            "trigger_type": "volume_anomaly",
+            "market_data_as_of": "2026-07-24T10:00:00Z",
+            "period_start": "2026-07-01",
+            "period_end": "2026-07-24",
+        },
+        source="test",
+        now=NOW,
+    )
+    assert created
+    invocations: list[str] = []
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        operation_id = environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+        assert operation_id not in invocations
+        invocations.append(operation_id)
+        result_path = (
+            cwd
+            / "data"
+            / "runs"
+            / environment["PAPERTRADER_AUDIT_RUN_ID"]
+            / operation_id
+            / "agent_result.json"
+        )
+        result_path.write_text(json.dumps(_result(operation_id)), encoding="utf-8")
+        return subprocess.CompletedProcess(command, 0, "completed", "")
+
+    batch = run_sequential_operations(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="batch-1",
+        hermes_home=home,
+        environment={"PATH": "/usr/bin"},
+        maximum_operations=2,
+        executor=execute,
+    )
+
+    assert batch.operation_count == 2
+    assert set(invocations) == {first, second}
+    assert batch.estimated_cost_used <= batch.maximum_cost
+    assert read_table(sandbox_repository, "operations_todo") == []
 
 
 def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_prompt(

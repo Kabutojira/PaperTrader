@@ -21,7 +21,7 @@ jobs:
       WIKI_PATH: ${{ github.workspace }}/data/wiki
     steps:
       - name: Check out without persisted credentials
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
       - name: Install pinned uv bootstrap
@@ -44,7 +44,15 @@ jobs:
         run: uv run papertrader wiki lint --strict
       - name: Reconcile empty scaffold
         run: uv run papertrader portfolio reconcile --strict
+      - name: Use pinned Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+        with:
+          node-version: "24.4.1"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
       - name: Install locked Quartz dependencies
         run: npm ci --prefix site --ignore-scripts
       - name: Check Quartz source configuration
         run: npm run check --prefix site
+      - name: Build the canonical Quartz wiki
+        run: npm run build --prefix site

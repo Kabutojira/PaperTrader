@@ -88,6 +88,40 @@ Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomi
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,
 `corporate_actions.csv`, operation history, and run history are append-only.
 
+## Daily automation and publication
+
+The scheduled controller in `.github/workflows/daily.yml` uses one serialized path for both cron
+and manual runs. It prepares market and queue state, executes at most the configured number of
+Hermes operations one at a time, processes eligible paper fills, rebuilds accounting, writes the
+canonical daily report, and runs the complete validation gate. Manual runs expose
+`operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and
+`send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
+or delivery.
+
+Hermes and the commit boundary are separate jobs. The credential-free runtime exports a
+hash-bound binary patch containing only runtime-whitelisted paths. A clean checkout at the exact
+base commit verifies and applies that patch, repeats the gate, rebases, validates the rebased diff,
+and pushes only when a non-empty validated change exists. The GitHub write token is introduced
+only for that final push. The post-commit jobs then:
+
+- build the wiki and its canonical daily reports from an exact commit with Quartz;
+- deploy the verified `site/public` artifact when Pages publication is enabled;
+- read the exact committed report with `git show` and send it to Telegram in escaped, bounded
+  chunks;
+- retain a failed Telegram chunk cursor in the repository issue ledger so a later dispatch of
+  `reporting.yml` can resume delivery without rolling back the runtime commit.
+
+Repository setup requires an inference-only `OPENROUTER_API_KEY` for non-dry Hermes runs and
+`TELEGRAM_BOT_TOKEN` plus `TELEGRAM_CHAT_ID` when delivery is enabled. Configure GitHub Pages to
+use **GitHub Actions** as its source, and enable repository secret scanning. These secrets are not
+placed in the Hermes profile or passed to validation, build, or commit steps. A deployment can be
+retried independently by manually dispatching `pages.yml` with the committed SHA. Telegram can be
+retried by dispatching `reporting.yml` with the same `commit_sha`, `report_path`, and `run_id`.
+
+The `[classifier]` command and model are deployment settings for the cheap inbox decision. If they
+are intentionally left blank, candidate packets remain blocked with a recorded issue;
+deterministic code never substitutes a heuristic ingestion decision.
+
 ## Validation
 
 ```bash

@@ -17,6 +17,8 @@ from papertrader.market_data import (
     merge_price_bars,
     normalize_history,
     read_price_cache,
+    session_close,
+    session_open,
     update_market_data,
 )
 from papertrader.models import PriceBar, SecurityIdentity
@@ -127,6 +129,11 @@ def test_normalize_history_rejects_invalid_ohlc() -> None:
             retrieved_at=datetime(2026, 7, 24, 22, tzinfo=UTC),
             source="fake",
         )
+
+
+def test_market_session_boundaries_are_canonical_utc() -> None:
+    assert session_open("XETR", date(2026, 7, 24)) == datetime(2026, 7, 24, 7, tzinfo=UTC)
+    assert session_close("XETR", date(2026, 7, 24)) == datetime(2026, 7, 24, 15, 30, tzinfo=UTC)
 
 
 @given(st.lists(st.integers(min_value=0, max_value=800), min_size=1, unique=True))

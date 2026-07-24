@@ -1,17 +1,17 @@
-name: Reusable deterministic validation
+name: Reusable deterministic validation gate
 
 on:
   workflow_call:
     inputs:
       dry_run:
-        description: Do not publish or mutate external state
+        description: Retained for a uniform reusable-workflow interface
         required: false
         default: true
         type: boolean
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Do not publish or mutate external state
+        description: Run the deterministic validation gate only
         required: false
         default: true
         type: boolean
@@ -22,16 +22,38 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
       PAPER_TRADING_ONLY: "true"
       WIKI_PATH: ${{ github.workspace }}/data/wiki
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check out without persisted credentials
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           persist-credentials: false
-      - run: python3 -m pip install --disable-pip-version-check uv==0.8.17
-      - run: uv sync --locked --all-groups
-      - run: uv run papertrader integrity --strict
-      - run: uv run papertrader wiki lint --strict
-      - run: uv run papertrader portfolio reconcile --strict
+      - name: Install pinned project runner
+        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+      - name: Install locked Python dependencies
+        run: uv sync --locked --all-groups
+      - name: Run the complete Python and repository gate
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run mypy src
+          uv run papertrader schema validate --strict
+          uv run pytest
+          uv run papertrader integrity --strict
+          uv run papertrader wiki lint --strict
+          uv run papertrader portfolio reconcile --strict
+      - name: Use pinned Node.js
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+        with:
+          node-version: "24.4.1"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install locked Quartz dependencies
+        run: npm ci --prefix site --ignore-scripts
+      - name: Check and build the canonical Quartz source
+        run: |
+          npm run check --prefix site
+          npm run build --prefix site

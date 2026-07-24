@@ -324,6 +324,61 @@ def validate_agent_run_artifacts(repository_root: Path) -> list[str]:
     return errors
 
 
+def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
+    """Validate retained daily/batch manifests and their canonical report links."""
+
+    errors: list[str] = []
+    validators: dict[str, Draft202012Validator] = {}
+    for name in ("daily_run", "agent_batch"):
+        path = repository_root / "schemas" / f"{name}.schema.json"
+        try:
+            schema = json.loads(path.read_text(encoding="utf-8"))
+            validators[name] = Draft202012Validator(schema, format_checker=FormatChecker())
+        except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+            return [f"cannot load {name} schema: {exc}"]
+    daily_by_run: dict[str, Mapping[str, object]] = {}
+    batch_runs: set[str] = set()
+    for name in ("daily_run", "agent_batch"):
+        for path in sorted((repository_root / "data" / "runs").glob(f"*/{name}.json")):
+            relative = path.relative_to(repository_root).as_posix()
+            run_id = path.parent.name
+            if not SAFE_RUN_ID.fullmatch(run_id) or path.is_symlink():
+                errors.append(f"invalid {name} path: {relative}")
+                continue
+            try:
+                value = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError) as exc:
+                errors.append(f"cannot read {name} {relative}: {exc}")
+                continue
+            schema_errors = sorted(
+                validators[name].iter_errors(value), key=lambda error: list(error.path)
+            )
+            errors.extend(f"{name} {relative}: {error.message}" for error in schema_errors)
+            if not isinstance(value, dict) or value.get("run_id") != run_id:
+                errors.append(f"{name} identity does not match path: {relative}")
+                continue
+            if name == "daily_run":
+                daily_by_run[run_id] = value
+            else:
+                batch_runs.add(run_id)
+    for run_id, manifest in daily_by_run.items():
+        status = manifest.get("status")
+        report_path = manifest.get("report_path")
+        if status in {"succeeded", "degraded"}:
+            if run_id not in batch_runs:
+                errors.append(f"completed daily run lacks agent batch: {run_id}")
+            if not isinstance(report_path, str) or not (repository_root / report_path).is_file():
+                errors.append(f"completed daily run lacks canonical report: {run_id}")
+    try:
+        run_rows = read_csv_contract_rows(repository_root, "runs")
+    except (ContractError, OSError, ValueError) as exc:
+        return [*errors, f"cannot validate daily run history: {exc}"]
+    for row in run_rows:
+        if row["run_id"] not in daily_by_run:
+            errors.append(f"run history references a missing daily manifest: {row['run_id']}")
+    return errors
+
+
 def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, str]]:
     """Read a canonical table locally without importing the circular table module."""
 
@@ -362,6 +417,7 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     errors.extend(validate_json_schemas(repository_root))
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))
+    errors.extend(validate_daily_run_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
     from papertrader.orders import validate_order_state
     from papertrader.portfolio import reconcile_portfolio
@@ -422,7 +478,7 @@ def changed_paths_from_git(
 
     if staged and base_ref is not None:
         raise ValueError("--staged and --base-ref are mutually exclusive")
-    command = ["git", "diff", "--name-only", "--diff-filter=ACMRTUXB", "-z"]
+    command = ["git", "diff", "--name-only", "--diff-filter=ACDMRTUXB", "-z"]
     if staged:
         command.append("--cached")
     elif base_ref is not None:

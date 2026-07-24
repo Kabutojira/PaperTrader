@@ -1,4 +1,4 @@
-name: Reusable sequential Hermes operation
+name: Reusable sequential PaperTrader runtime
 
 on:
   workflow_call:
@@ -14,19 +14,47 @@ on:
         default: ""
         type: string
       max_operations:
-        description: Must be one; callers repeat this workflow sequentially
+        description: Maximum operations executed sequentially
         required: false
         default: "1"
         type: string
       dry_run:
-        description: Run native/project skill preflight without inference
+        description: Exercise the runtime without inference, commit, or push
         required: false
         default: true
         type: boolean
+      target_branch:
+        description: Default branch receiving a validated runtime commit
+        required: false
+        default: ""
+        type: string
+      trigger:
+        description: Machine-readable run trigger
+        required: false
+        default: workflow_dispatch
+        type: string
+      serialized_by_caller:
+        description: Caller already holds the papertrader-write concurrency group
+        required: false
+        default: false
+        type: boolean
     secrets:
       OPENROUTER_API_KEY:
-        description: Inference-only credential; never forwarded to agent tools
+        description: Inference-only credential forwarded solely to Hermes
         required: false
+    outputs:
+      commit_sha:
+        description: Validated runtime commit, or the unchanged base SHA
+        value: ${{ jobs.commit.outputs.commit_sha }}
+      changed:
+        description: Whether the runtime patch contained repository changes
+        value: ${{ jobs.commit.outputs.changed }}
+      report_path:
+        description: Canonical daily report path
+        value: ${{ jobs.commit.outputs.report_path }}
+      run_id:
+        description: Immutable workflow run ID
+        value: ${{ jobs.runtime.outputs.run_id }}
   workflow_dispatch:
     inputs:
       operation_id:
@@ -40,26 +68,39 @@ on:
         default: ""
         type: string
       max_operations:
-        description: Must be one; operations never fan out
+        description: Maximum operations executed sequentially
         required: false
         default: "1"
         type: string
       dry_run:
-        description: Run native/project skill preflight without inference
+        description: Exercise the runtime without inference, commit, or push
         required: false
         default: true
         type: boolean
+      target_branch:
+        description: Branch receiving a validated runtime commit
+        required: false
+        default: ""
+        type: string
+      trigger:
+        description: Machine-readable run trigger
+        required: false
+        default: workflow_dispatch
+        type: string
 
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ inputs.serialized_by_caller && format('papertrader-runtime-{0}', github.run_id) || 'papertrader-write' }}
+  cancel-in-progress: false
+
 jobs:
-  hermes:
+  runtime:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
-    defaults:
-      run:
-        shell: bash
+    timeout-minutes: 120
+    permissions:
+      contents: read
     container:
       image: nousresearch/hermes-agent@sha256:a6ce64e2038867885c2c90f6602425e6e70293d5e6d952a0e603a99265e01c40
       options: --user 0:0
@@ -67,26 +108,36 @@ jobs:
       HERMES_HOME: /tmp/papertrader-hermes
       PAPER_TRADING_ONLY: "true"
       WIKI_PATH: ${{ github.workspace }}/data/wiki
+    outputs:
+      artifact_name: ${{ steps.identities.outputs.artifact_name }}
+      base_sha: ${{ steps.identities.outputs.base_sha }}
+      report_path: ${{ steps.bundle.outputs.report_path }}
+      run_id: ${{ steps.identities.outputs.run_id }}
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Check out the target branch without persisted credentials
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
+          ref: ${{ inputs.target_branch || github.event.repository.default_branch }}
           fetch-depth: 0
           persist-credentials: false
       - name: Install pinned project runner
         run: python3 -m pip install --disable-pip-version-check uv==0.8.17
-      - run: uv sync --locked --all-groups
-      - name: Validate one-operation selection
-        env:
-          MAX_OPERATIONS: ${{ inputs.max_operations }}
-        run: test "$MAX_OPERATIONS" = "1"
-      - name: Configure isolated Hermes profile
+      - name: Install locked Python dependencies
+        run: uv sync --locked --all-groups
+      - name: Establish immutable runtime identities
+        id: identities
+        run: |
+          echo "base_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "run_id=gha-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=papertrader-runtime-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+      - name: Configure an isolated Hermes profile
         run: >-
           uv run papertrader agent configure
           --hermes-home "$HERMES_HOME"
           --replace-unmanaged
       - name: Synchronize bundled native skills into the isolated profile
         run: hermes skills opt-in --sync
-      - name: Preflight native llm-wiki and project skills
+      - name: Preflight native llm-wiki and the selected project skill
         env:
           OPERATION_TYPE: ${{ inputs.operation_type }}
         run: |
@@ -94,21 +145,32 @@ jobs:
           uv run papertrader agent preflight \
             --hermes-home "$HERMES_HOME" \
             --operation-type "$selected_type"
-      - name: Validate repository before inference
-        run: uv run papertrader integrity --strict
-      - name: Run exactly one Hermes operation with YOLO enforced by config
-        if: ${{ !inputs.dry_run }}
+      - name: Prepare deterministic market, indicators, actions, and queue state
         env:
+          BASE_SHA: ${{ steps.identities.outputs.base_sha }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+          RUN_TRIGGER: ${{ inputs.trigger }}
+        run: |
+          arguments=(daily prepare --run-id "$RUN_ID" --trigger "$RUN_TRIGGER" --source-sha "$BASE_SHA")
+          if [ "$DRY_RUN" = "true" ]; then
+            arguments+=(--offline --skip-classifier)
+          fi
+          uv run papertrader "${arguments[@]}"
+      - name: Execute due Hermes operations strictly one at a time
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          MAX_OPERATIONS: ${{ inputs.max_operations }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPERATION_ID: ${{ inputs.operation_id }}
           OPERATION_TYPE: ${{ inputs.operation_type }}
-          PAPERTRADER_RUN_ID: gha-${{ github.run_id }}-${{ github.run_attempt }}
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
-          if [ -z "$OPENROUTER_API_KEY" ]; then
-            echo "OPENROUTER_API_KEY is required for a non-dry Hermes run" >&2
-            exit 1
+          selected_max="$MAX_OPERATIONS"
+          if [ "$DRY_RUN" = "true" ]; then
+            selected_max=0
           fi
-          arguments=(agent run --hermes-home "$HERMES_HOME" --run-id "$PAPERTRADER_RUN_ID")
+          arguments=(agent run-batch --hermes-home "$HERMES_HOME" --run-id "$RUN_ID" --max-operations "$selected_max")
           if [ -n "$OPERATION_ID" ]; then
             arguments+=(--operation-id "$OPERATION_ID")
           fi
@@ -116,3 +178,140 @@ jobs:
             arguments+=(--operation-type "$OPERATION_TYPE")
           fi
           uv run papertrader "${arguments[@]}"
+      - name: Finalize fills, portfolio, performance, and canonical report
+        env:
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          report_name="daily-report_$(date -u +%Y%m%d).md"
+          report_url="https://github.com/${GITHUB_REPOSITORY}/blob/${TARGET_BRANCH}/data/wiki/daily-reports/${report_name}"
+          uv run papertrader daily finalize --run-id "$RUN_ID" --github-report-url "$report_url"
+      - name: Run the complete runtime validation gate
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run mypy src
+          uv run pytest
+          uv run papertrader integrity --strict
+          uv run papertrader wiki lint --strict
+          uv run papertrader portfolio reconcile --strict
+      - name: Create the whitelisted runtime patch bundle
+        id: bundle
+        env:
+          BASE_SHA: ${{ steps.identities.outputs.base_sha }}
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+        run: |
+          bundle_dir="${RUNNER_TEMP}/papertrader-runtime-bundle"
+          uv run papertrader workflow bundle create \
+            --output-directory "$bundle_dir" \
+            --run-id "$RUN_ID" \
+            --base-sha "$BASE_SHA"
+          report_path=$(python3 -c 'import json, os, pathlib; print(json.loads((pathlib.Path(os.environ["RUNNER_TEMP"]) / "papertrader-runtime-bundle" / "runtime_manifest.json").read_text())["report_path"])')
+          echo "report_path=$report_path" >> "$GITHUB_OUTPUT"
+      - name: Upload the hash-verified runtime bundle
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
+        with:
+          name: ${{ steps.identities.outputs.artifact_name }}
+          path: ${{ runner.temp }}/papertrader-runtime-bundle
+          if-no-files-found: error
+          retention-days: 1
+
+  commit:
+    needs: runtime
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    env:
+      PAPER_TRADING_ONLY: "true"
+      WIKI_PATH: ${{ github.workspace }}/data/wiki
+    outputs:
+      changed: ${{ steps.outcome.outputs.changed }}
+      commit_sha: ${{ steps.outcome.outputs.commit_sha }}
+      report_path: ${{ needs.runtime.outputs.report_path }}
+    steps:
+      - name: Check out the exact runtime base without persisted credentials
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          ref: ${{ needs.runtime.outputs.base_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install pinned project runner
+        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
+      - name: Install locked Python dependencies
+        run: uv sync --locked --all-groups
+      - name: Download the runtime bundle with artifact digest verification
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: ${{ needs.runtime.outputs.artifact_name }}
+          path: ${{ runner.temp }}/papertrader-runtime-bundle
+      - name: Apply the exact validated runtime patch
+        run: >-
+          uv run papertrader workflow bundle apply
+          --bundle-directory "${RUNNER_TEMP}/papertrader-runtime-bundle"
+      - name: Re-run validation in the commit boundary
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run mypy src
+          uv run pytest
+          uv run papertrader integrity --strict
+          uv run papertrader wiki lint --strict
+          uv run papertrader portfolio reconcile --strict
+          uv run papertrader runtime-whitelist validate --staged
+      - name: Create a runtime commit only when the patch is non-empty
+        id: commit
+        if: ${{ !inputs.dry_run }}
+        env:
+          RUN_ID: ${{ needs.runtime.outputs.run_id }}
+        run: |
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "papertrader-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(runtime): publish daily run ${RUN_ID}"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Rebase the runtime commit and repeat strict validation
+        id: rebase
+        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' }}
+        env:
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          git fetch --no-tags origin "$TARGET_BRANCH"
+          git rebase "origin/${TARGET_BRANCH}"
+          uv run papertrader integrity --strict
+          uv run papertrader wiki lint --strict
+          uv run papertrader portfolio reconcile --strict
+          uv run papertrader runtime-whitelist validate \
+            --base-ref "origin/${TARGET_BRANCH}" \
+            --head-ref HEAD
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Push only from the post-agent credentialed boundary
+        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' }}
+        env:
+          PAPERTRADER_GIT_TOKEN: ${{ github.token }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          git config --local credential.helper '!f() { if test "$1" = get; then echo username=x-access-token; echo "password=$PAPERTRADER_GIT_TOKEN"; fi; }; f'
+          git push "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${TARGET_BRANCH}"
+          git config --local --unset-all credential.helper
+      - name: Publish commit outputs
+        id: outcome
+        env:
+          BASE_SHA: ${{ needs.runtime.outputs.base_sha }}
+          COMMIT_SHA: ${{ steps.commit.outputs.commit_sha }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          REBASED_SHA: ${{ steps.rebase.outputs.commit_sha }}
+          RUNTIME_CHANGED: ${{ steps.commit.outputs.changed }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "commit_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=${RUNTIME_CHANGED:-false}" >> "$GITHUB_OUTPUT"
+            echo "commit_sha=${REBASED_SHA:-${COMMIT_SHA:-$BASE_SHA}}" >> "$GITHUB_OUTPUT"
+          fi
