@@ -20,7 +20,12 @@ from papertrader.agent_runner import (
 from papertrader.command_audit import audit_context, record_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
-from papertrader.daily import execute_agent_batch, finalize_daily_run, prepare_daily_run
+from papertrader.daily import (
+    execute_agent_batch,
+    finalize_daily_run,
+    prepare_daily_run,
+    record_local_agent_outcome,
+)
 from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
 from papertrader.integrity import (
@@ -31,6 +36,10 @@ from papertrader.integrity import (
     validate_runtime_paths,
 )
 from papertrader.issues import record_issue, resolve_issue
+from papertrader.local_harness import (
+    finish_local_harness_operation,
+    start_local_harness_operation,
+)
 from papertrader.logs import regenerate_log_tail
 from papertrader.market_data import read_price_cache, update_market_data
 from papertrader.models import (
@@ -229,6 +238,18 @@ def _parser() -> argparse.ArgumentParser:
     agent_batch.add_argument("--max-operations", type=int, required=True)
     agent_batch.add_argument("--operation-id")
     agent_batch.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
+    agent_harness = agent_commands.add_parser(
+        "harness", help="run one operation through a local agentic harness"
+    )
+    harness_commands = agent_harness.add_subparsers(dest="harness_command", required=True)
+    harness_start = harness_commands.add_parser("start")
+    harness_start.add_argument("--run-id", required=True)
+    harness_start.add_argument("--operation-id")
+    harness_start.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
+    harness_start.add_argument("--estimated-cost", default="0")
+    harness_finish = harness_commands.add_parser("finish")
+    harness_finish.add_argument("--run-id", required=True)
+    harness_finish.add_argument("--operation-id", required=True)
 
     telegram = commands.add_parser("telegram", help="deliver an exact committed report")
     telegram_commands = telegram.add_subparsers(dest="telegram_command", required=True)
@@ -772,6 +793,35 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(json.dumps(import_watchlist(root, settings, raw), sort_keys=True))
         return 0
     if arguments.command == "agent":
+        if arguments.agent_command == "harness":
+            if arguments.harness_command == "start":
+                started = start_local_harness_operation(
+                    root,
+                    settings,
+                    run_id=arguments.run_id,
+                    operation_id=arguments.operation_id,
+                    operation_type=arguments.operation_type,
+                    estimated_cost=required_decimal(
+                        arguments.estimated_cost, label="estimated_cost"
+                    ),
+                )
+                print("null" if started is None else json.dumps(asdict(started), sort_keys=True))
+                return 0
+            finished = finish_local_harness_operation(
+                root,
+                run_id=arguments.run_id,
+                operation_id=arguments.operation_id,
+            )
+            if (root / "data" / "runs" / arguments.run_id / "daily_run.json").is_file():
+                record_local_agent_outcome(
+                    root,
+                    settings,
+                    run_id=arguments.run_id,
+                    operation_id=arguments.operation_id,
+                    status=finished.status,
+                )
+            print(json.dumps(asdict(finished), sort_keys=True))
+            return 0
         home = arguments.hermes_home.absolute()
         if arguments.agent_command == "configure":
             path = configure_hermes_home(
@@ -920,7 +970,10 @@ def main(argv: Sequence[str] | None = None) -> int:
     exit_code = 2
     try:
         root = find_repository_root(arguments.repository)
-        context = audit_context(root, os.environ)
+        local_harness_boundary = (
+            arguments.command == "agent" and arguments.agent_command == "harness"
+        )
+        context = None if local_harness_boundary else audit_context(root, os.environ)
         if context is not None:
             before = snapshot_repository(root)
         settings = load_settings(root, os.environ)

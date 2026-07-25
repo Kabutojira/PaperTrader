@@ -302,6 +302,70 @@ def execute_agent_batch(
     return result
 
 
+def record_local_agent_outcome(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    operation_id: str,
+    status: str,
+    now: datetime | None = None,
+) -> None:
+    """Append one validated local-harness outcome to a prepared daily run."""
+
+    manifest = _load_object(_daily_manifest_path(repository_root, run_id))
+    if manifest.get("run_id") != run_id or manifest.get("status") != "prepared":
+        raise DailyRunError("local harness outcome requires this run's prepared daily manifest")
+    if status not in {"succeeded", "skipped", "blocked", "failed"}:
+        raise DailyRunError(f"invalid local harness status: {status}")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    path = _batch_path(repository_root, run_id)
+    if path.exists():
+        document = _load_object(path)
+        raw_outcomes = document.get("outcomes")
+        if not isinstance(raw_outcomes, list) or not all(
+            isinstance(outcome, dict) for outcome in raw_outcomes
+        ):
+            raise DailyRunError("existing agent batch outcomes are invalid")
+        outcomes = [dict(outcome) for outcome in raw_outcomes]
+        existing = next(
+            (outcome for outcome in outcomes if outcome.get("operation_id") == operation_id),
+            None,
+        )
+        if existing is not None:
+            if existing.get("status") != status:
+                raise DailyRunError("local harness outcome conflicts with the recorded status")
+            return
+        maximum = document.get("maximum_operations")
+        if isinstance(maximum, bool) or not isinstance(maximum, int):
+            raise DailyRunError("existing agent batch maximum is invalid")
+        if len(outcomes) >= maximum:
+            raise DailyRunError("local harness operation count exceeds the daily run budget")
+        outcomes.append({"operation_id": operation_id, "status": status})
+        updated = {
+            **document,
+            "completed_at": format_timestamp(instant),
+            "operation_count": len(outcomes),
+            "outcomes": outcomes,
+        }
+    else:
+        updated = {
+            "agent_batch_version": 1,
+            "run_id": run_id,
+            "started_at": format_timestamp(instant),
+            "completed_at": format_timestamp(instant),
+            "maximum_operations": settings.operations.maximum_llm_operations_per_run,
+            "maximum_model_budget": decimal_text(
+                settings.operations.maximum_model_budget_usd_per_run
+            ),
+            "estimated_cost_per_operation": "0",
+            "operation_count": 1,
+            "estimated_model_budget_used": "0",
+            "outcomes": [{"operation_id": operation_id, "status": status}],
+        }
+    atomic_write_json(path, updated, allowed_root=repository_root)
+
+
 def _research_narratives(repository_root: Path, run_id: str) -> tuple[NarrativeItem, ...]:
     run_directory = _run_directory(repository_root, run_id)
     narratives: list[NarrativeItem] = []

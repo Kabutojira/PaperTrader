@@ -23,12 +23,158 @@ checkout's `skills` directory. A local agentic harness can read the same `SKILL.
 and must follow `AGENTS.md`, use the project CLI for structured state, and run operations
 sequentially.
 
-## Hermes and local harness execution
+## Run an operation from Codex instead of Hermes
 
-Step 3 uses a dedicated Hermes profile and one controller process per operation. The controller
-preloads native `llm-wiki`, `papertrader-controller`, and the selected operation skill; enables
-only the `web`, `file`, and `terminal` toolsets; and invokes `hermes chat` with `--yolo`. Delegation,
-messaging, memory, hooks, MCP servers, worktrees, and background fan-out are disabled.
+The local harness boundary lets an existing Codex shell execute the repository skills without
+starting Hermes or decrypting Hermes OAuth state. It still claims one queue row, records a
+content-addressed baseline outside the checkout, audits structured CLI writes, validates the exact
+result, and owns the terminal queue transition.
+
+Prepare a daily run and start one already-enqueued operation:
+
+```bash
+RUN_ID="local-$(date -u +%Y%m%dT%H%M%SZ)"
+OPERATION_ID="<operation ULID>"
+BASE_SHA="$(git rev-parse HEAD)"
+
+uv run papertrader daily prepare \
+  --run-id "$RUN_ID" \
+  --trigger local \
+  --source-sha "$BASE_SHA" \
+  --offline \
+  --skip-classifier
+
+uv run papertrader agent harness start \
+  --run-id "$RUN_ID" \
+  --operation-id "$OPERATION_ID"
+```
+
+The `--offline --skip-classifier` flags make the example reproducible without market or classifier
+network access. Omit them when you want the normal daily market retrieval and configured inbox
+classification phases.
+
+The start command returns the payload, trusted controller prompt, exact controller/operation skill
+paths, result path, and command-audit path. In the Codex shell, read those files completely and
+perform exactly one operation. For every agent-side `papertrader` command, set the returned audit
+context:
+
+```bash
+export PAPERTRADER_AUDIT_RUN_ID="$RUN_ID"
+export PAPERTRADER_AUDIT_OPERATION_ID="$OPERATION_ID"
+export PAPERTRADER_AUDIT_PATH="data/runs/$RUN_ID/$OPERATION_ID/command_audit.json"
+```
+
+Write `data/runs/$RUN_ID/$OPERATION_ID/agent_result.json` last. Then let the deterministic
+controller validate and terminalize the operation, and finish the daily phases:
+
+```bash
+unset PAPERTRADER_AUDIT_RUN_ID PAPERTRADER_AUDIT_OPERATION_ID PAPERTRADER_AUDIT_PATH
+
+uv run papertrader agent harness finish \
+  --run-id "$RUN_ID" \
+  --operation-id "$OPERATION_ID"
+
+REPORT_DATE="$(date -u +%Y%m%d)"
+uv run papertrader daily finalize \
+  --run-id "$RUN_ID" \
+  --github-report-url \
+  "https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_${REPORT_DATE}.md"
+```
+
+When `daily prepare` exists for the run ID, `harness finish` also records the validated outcome in
+that run's sequential agent batch. Omit the daily prepare/finalize commands for a standalone
+single-operation debug run. A failed finish writes a validation report, records a repository-local
+issue, and applies the bounded retry policy; it never silently marks invalid work complete. Run
+artifacts are immutable, so fix the cause and use a new `RUN_ID` for a bounded retry rather than
+deleting or overwriting the failed attempt.
+
+## Add an investment idea
+
+Adding an idea means queueing one bounded `idea_research` operation; it does not create an
+unresearched wiki stub or skip directly to a strategy. Put the substantial seed in repository JSON:
+
+```bash
+mkdir -p data/operations/requests
+editor data/operations/requests/idea-grid-flexibility.json
+```
+
+```json
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_grid_flexibility",
+  "dedupe_key": "idea_research:idea_grid_flexibility:manual:2026-07",
+  "prompt": "Research one grid-flexibility investment idea.",
+  "inputs": {
+    "idea_id": "idea_grid_flexibility",
+    "seed_claim": "Load growth and constrained grids may reward selected flexibility suppliers."
+  },
+  "source": "manual",
+  "priority": 50,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [],
+  "max_attempts": 3
+}
+```
+
+```bash
+uv run papertrader queue enqueue \
+  --request data/operations/requests/idea-grid-flexibility.json
+uv run papertrader queue prepare
+uv run papertrader queue validate
+```
+
+The enqueue output contains the immutable operation ULID to pass to `agent harness start`.
+
+## Add a security
+
+Security addition is deterministic and identity-only. It does not invent a thesis or valuation:
+
+```bash
+mkdir -p data/operations/requests
+editor data/operations/requests/security-enphase.json
+```
+
+```json
+{
+  "watchlist_reason": "Candidate beneficiary of solar-plus-storage normalization; research pending.",
+  "source": "https://investor.enphase.com/",
+  "securities": [
+    {
+      "company_name": "Enphase Energy, Inc.",
+      "instrument_name": "Enphase Energy, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "ENPH",
+      "exchange_code": "NMS",
+      "venue_mic": "XNAS",
+      "provider_symbol": "ENPH",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Technology",
+      "industry": "Solar"
+    }
+  ]
+}
+```
+
+```bash
+uv run papertrader watchlist import \
+  --request data/operations/requests/security-enphase.json
+```
+
+Use the returned immutable `security_id` in a separately enqueued `security_research` operation.
+Ticker text alone is never an identity, and a new `watchlist` row is not monitored for trading
+until validated research changes its status to `watching` or `active`.
+
+## Hermes execution
+
+GitHub Actions uses a dedicated Hermes profile and one controller process per operation. The
+controller preloads native `llm-wiki`, `papertrader-controller`, and the selected operation skill;
+enables only the `web`, `file`, and `terminal` toolsets; and invokes `hermes chat` with `--yolo`.
+Delegation, messaging, memory, hooks, MCP servers, worktrees, and background fan-out are disabled.
 
 Use a dedicated `HERMES_HOME`; configuration intentionally refuses to overwrite a normal personal
 profile unless `--replace-unmanaged` is explicit. The native `llm-wiki` skill must already exist
@@ -50,12 +196,6 @@ The subprocess receives repository paths, safe process settings, and the isolate
 `auth.json`. Its provider is fixed to `openai-codex`, while the model remains configurable in
 `config.ini`. No inference API key, GitHub, Telegram, deployment, brokerage, Actions OIDC, age
 identity, or runtime token is forwarded.
-
-A local harness such as Codex uses the same contract without inventing alternate instructions:
-read `papertrader-controller/SKILL.md` and exactly one operation `SKILL.md`, claim one queue row,
-make wiki edits directly, invoke only the documented `papertrader` structured commands, write the
-schema-valid completed-change manifest last, and run the validation gate below. Never use a
-sub-agent or process a second operation in the same run.
 
 Every agent-side project command creates an operation-scoped receipt in
 `data/runs/<run_id>/<operation_id>/command_audit.json`. Post-run validation compares a
@@ -133,6 +273,34 @@ deterministic code never substitutes a heuristic ingestion decision.
 See the [operating runbook](docs/OPERATIONS.md) for queue examples, local skill execution, manual
 workflow dispatch, configuration changes, failed-run recovery, replay by run ID, publication
 retry, and project-skill maintenance.
+
+## Development architecture
+
+PaperTrader separates deterministic state ownership from agent judgment. The repository is the
+database, every durable mutation is reviewable in Git, and no component has a real-order adapter.
+
+```text
+request JSON -> validated queue -> one claimed operation -> Hermes or local Codex harness
+             -> completed edits + agent_result.json -> deterministic result validator
+             -> terminal history -> fills/accounting/report -> write-controlled Git boundary
+```
+
+| Layer | Owns | Main implementation |
+| --- | --- | --- |
+| Contracts and policy | CSV/JSON schemas, IDs, limits, paths, paper-only settings | `AGENTS.md`, `schemas/`, `config.ini`, `src/papertrader/config.py` |
+| Deterministic state | Queue transitions, market data, indicators, orders, fills, ledgers, portfolio, reports | `src/papertrader/*.py` through the `papertrader` CLI |
+| Agent judgment | Research synthesis, causal theses, bounded follow-ups, strategy decisions | `skills/papertrader-*/SKILL.md` plus native `llm-wiki` in Hermes |
+| Agent boundary | One-operation claim, prompt construction, CLI receipts, exact delta/result validation | `agent_runner.py`, `local_harness.py`, `command_audit.py`, `result_validator.py` |
+| Persistence | Canonical research/runtime state and immutable history | `data/` |
+| Automation | Read-only inference, validated artifact handoff, sole write-enabled commit job | `.github/workflows/reusable-llm.yml` |
+| Publication | Canonical report, Quartz Pages, post-commit Telegram delivery | `reports.py`, `site/`, `reporting.yml`, `pages.yml` |
+
+Structured CSVs must never be hand-edited by an agent. Wiki Markdown is the agent's direct write
+surface within the selected skill scope; request-bearing CLI commands are the only route to
+structured state. `agent_result.json` describes changes already made and is written last. The
+validator compares it with a pre-run content snapshot, command receipts, queue/issue identities,
+the runtime whitelist, strict wiki lint, integrity, and accounting reconciliation before the queue
+can advance.
 
 ## Validation
 

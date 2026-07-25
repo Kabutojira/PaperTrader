@@ -102,8 +102,8 @@ actual-change manifest validation, content and command audit chains, request-fil
 path/symlink/source-hash and prompt-injection defenses, validated research-state commands,
 deterministic order cancellation, evidence-linked no-op terminal results, local-run documentation,
 and unit and integration coverage. The hermetic seeded-operation test exercises the complete
-one-shot subprocess boundary; a live provider-backed run still requires an inference-only API key
-and was intentionally not invoked by the offline test suite.
+one-shot subprocess boundary; a live provider-backed run requires the configured OpenAI Codex
+OAuth state and was intentionally not invoked by the offline test suite.
 
 ## Step 4 — Assemble GitHub workflows, reporting, and publication — Complete (2026-07-24)
 
@@ -203,3 +203,44 @@ focused coverage for wrong identities, invalid ciphertext, no-op refreshes, stag
 secret partitioning, serialization, and cleanup. The repository ciphertext is present but remains
 opaque to local validation; a hosted non-dry inference and push still require the repository's
 configured `OPENAI_OAUTH_SECRET` and were not invoked from the development checkout.
+
+The 2026-07-25 follow-up corrected the pinned age release assertion to the binary's exact
+`v1.3.1` output after verifying the official archive against the pinned SHA-256 checksum.
+
+## Step 7 — Add the local Codex harness and execute a researched idea — Complete (2026-07-25)
+
+Add a first-class two-phase boundary for running one repository skill from an existing Codex shell
+without Hermes. Preserve the same queue claim, skill identity, command receipt, exact-delta,
+manifest-last, post-run validation, and deterministic terminal-transition contracts. Connect a
+validated local result to the normal daily finalization path and document copyable idea/security
+commands and the implementation architecture.
+
+Exercise that path with the user-supplied solar, storage, and grid-flexibility reset. Retain dated
+primary evidence, explicit confirmation and invalidation tests, immutable entity identities, and
+only bounded follow-up work; do not force a strategy or paper order without security-specific
+valuation and risk evidence.
+
+**Exit criteria**
+
+- [x] `agent harness start` claims at most one operation, records project-skill identities, and
+  stores its content-addressed baseline in a private temporary file outside the repository.
+- [x] `agent harness finish` validates the exact result and command receipts before the controller
+  applies a queue transition; controller artifacts and out-of-scope changes fail closed.
+- [x] A prepared local daily run receives the validated outcome and completes the same deterministic
+  accounting, report, integrity, wiki, and portfolio phases as the hosted path.
+- [x] README and the operating runbook contain copyable local Codex, idea-enqueue, and
+  security-identity commands plus a concise development architecture.
+- [x] The solar/storage/grid-flexibility idea is maintained with a dated evidence dashboard,
+  measurable monitoring gates, contrary evidence, confidence, and a concrete review date.
+- [x] Fluence, Atkore, and Enphase research is queued by immutable security ID; no unsupported
+  relationship, strategy, signal, order, or fill is created.
+- [x] Formatting, lint, typing, all 155 tests, strict schema/integrity/wiki/portfolio checks, and
+  workflow contract validation pass locally.
+
+Implemented the local harness CLI and private baseline lifecycle, shared project-skill preflight,
+daily batch recording, controller-artifact protections, and safe read-only queue validation. The
+first deliberately retained attempt exposed a missing read-only command classification; the
+follow-up regression fix passed and the bounded retry completed. The successful daily run
+`local-20260725-solar-reset-02` generated the canonical 2026-07-25 report with zero orders or fills
+and three ready security-research follow-ups. All validation gates pass without network-dependent
+inference or any real-execution path.

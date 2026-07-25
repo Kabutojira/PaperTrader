@@ -179,7 +179,13 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
         return False
     command = parts[1:]
     read_only = (
-        command[:2] in {("schema", "validate"), ("wiki", "lint"), ("portfolio", "reconcile")}
+        command[:2]
+        in {
+            ("portfolio", "reconcile"),
+            ("queue", "validate"),
+            ("schema", "validate"),
+            ("wiki", "lint"),
+        }
         or command[:1] == ("integrity",)
         or command[:2] == ("runtime-whitelist", "validate")
     )
@@ -453,7 +459,9 @@ def validate_agent_result(
     created = set(delta.created)
     reserved = {
         f"data/runs/{run_id}/{operation.operation_id}/controller_prompt.md",
+        f"data/runs/{run_id}/{operation.operation_id}/harness_preflight.json",
         f"data/runs/{run_id}/{operation.operation_id}/hermes_preflight.json",
+        f"data/runs/{run_id}/{operation.operation_id}/validation_report.json",
     }
     touched_reserved = sorted(reserved.intersection(delta.changed))
     if touched_reserved:

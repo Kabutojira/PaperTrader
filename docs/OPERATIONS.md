@@ -75,7 +75,77 @@ replace `OPENAI_OAUTH_SECRET`, re-encrypt from a freshly authenticated profile t
 recipient, verify it, and commit the replacement ciphertext. Never run an interactive login flow
 inside GitHub Actions.
 
-## Run a project skill locally
+## Run one operation from a local Codex shell
+
+Use the two-phase local harness boundary when Codex is already running in the checkout. It does
+not invoke Hermes and does not need `OPENAI_OAUTH_SECRET`. First prepare the daily deterministic
+state and claim one previously enqueued operation:
+
+```bash
+RUN_ID="local-$(date -u +%Y%m%dT%H%M%SZ)"
+OPERATION_ID="<operation ULID>"
+
+uv run papertrader daily prepare \
+  --run-id "$RUN_ID" \
+  --trigger local \
+  --source-sha "$(git rev-parse HEAD)" \
+  --offline \
+  --skip-classifier
+uv run papertrader agent harness start \
+  --run-id "$RUN_ID" \
+  --operation-id "$OPERATION_ID"
+```
+
+Keep `--offline --skip-classifier` for a repository-only debug run. Omit them to execute normal
+market retrieval and the configured classifier before claiming the operation.
+
+`harness start` fails if another operation is running. It writes a trusted controller prompt and
+skill-content identities under `data/runs/<run-id>/<operation-id>/`, then stores the full
+content-addressed validation baseline in a private temporary file outside the repository. Read the
+returned controller prompt, controller skill, selected operation skill, payload, wiki schema,
+complete index, and recent log before editing anything.
+
+Agent-side structured commands need operation-scoped receipts:
+
+```bash
+export PAPERTRADER_AUDIT_RUN_ID="$RUN_ID"
+export PAPERTRADER_AUDIT_OPERATION_ID="$OPERATION_ID"
+export PAPERTRADER_AUDIT_PATH="data/runs/$RUN_ID/$OPERATION_ID/command_audit.json"
+```
+
+Use those variables only while executing the selected skill's allowed `papertrader` commands.
+Make direct Markdown edits only where the skill permits, perform its checks, and write
+`agent_result.json` last. Then return control to the deterministic boundary:
+
+```bash
+unset PAPERTRADER_AUDIT_RUN_ID PAPERTRADER_AUDIT_OPERATION_ID PAPERTRADER_AUDIT_PATH
+uv run papertrader agent harness finish \
+  --run-id "$RUN_ID" \
+  --operation-id "$OPERATION_ID"
+
+REPORT_DATE="$(date -u +%Y%m%d)"
+uv run papertrader daily finalize \
+  --run-id "$RUN_ID" \
+  --github-report-url \
+  "https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_${REPORT_DATE}.md"
+```
+
+`harness finish` reconstructs the baseline and validates the exact delta, result schema, allowed
+paths and commands, immutable request receipts, newly created operations/issues, manifest-last
+ordering, integrity, wiki, and portfolio. Only then does it complete, skip, block, or fail the
+queue row. If the run was prepared by `daily prepare`, it also appends the outcome to the daily
+agent batch so `daily finalize` can run. A validation failure records its report and issue and
+uses the normal bounded retry policy. Let an expired abandoned claim recover through
+`papertrader queue release-expired`; do not manufacture a completion request.
+
+Every run artifact directory is immutable. After fixing a validation failure, use a new `RUN_ID`
+for the retry and retain the failed run as audit evidence; do not delete, rename, or overwrite it.
+
+For a standalone skill debug, omit `daily prepare` and `daily finalize`; start and finish still
+enforce exactly one operation. Never start a second Codex agent or process another row before the
+first finish returns.
+
+## Run one operation through local Hermes
 
 Use a dedicated Hermes profile and process one operation at a time:
 
@@ -94,9 +164,7 @@ uv run papertrader agent run \
 
 The native `llm-wiki` skill, `papertrader-controller`, and exactly one operation skill are loaded.
 Hermes is always invoked with `--yolo`; the path allowlist, command receipts, result schema, and
-post-run validation replace interactive approval. A local harness such as Codex must read those
-same skill files, must not delegate to a sub-agent, and must use the project CLI for structured
-state.
+post-run validation replace interactive approval.
 
 ## Enqueue bounded work
 
@@ -135,6 +203,18 @@ uv run papertrader queue validate
 The CLI converts `now` to a concrete UTC timestamp, validates the operation payload, creates an
 immutable ULID and payload, and applies exact deduplication. Never paste a long prompt or nested
 payload directly into a CSV cell.
+
+An idea enters the system through this `idea_research` queue command. It becomes a maintained wiki
+page only after the selected skill supplies evidence, mechanism, catalysts, invalidation,
+confidence, and a review date. It cannot create a strategy directly.
+
+Add a security identity separately with `papertrader watchlist import --request <json>`. The
+request requires one HTTP(S) identity source, one watchlist reason, and each security's company and
+instrument names, instrument type, ticker, exchange code, venue MIC, provider symbol, currency,
+country, sector, and industry. The command returns a stable `security_id` and leaves research
+fields blank. Queue a bounded `security_research` operation with that ID before promoting the row
+to `watching` or `active`. See the complete copyable idea and security request examples in the
+README.
 
 ## Dispatch GitHub workflows
 
