@@ -212,6 +212,11 @@ def accrue_dividends(
         if action_type != "dividend":
             continue
         action_date = occurred_at.date()
+        eligible_quantities = {
+            side: quantities.get((security_id, side), Decimal("0")) for side in ("long", "short")
+        }
+        if not any(quantity > 0 for quantity in eligible_quantities.values()):
+            continue
         currency = event_row["currency"]
         fx_rate = (
             Decimal("1")
@@ -220,8 +225,7 @@ def accrue_dividends(
         )
         if fx_rate is None or fx_rate <= 0:
             raise CanonicalValueError(f"missing dividend FX rate for {currency} on {action_date}")
-        for side in ("long", "short"):
-            quantity = quantities.get((security_id, side), Decimal("0"))
+        for side, quantity in eligible_quantities.items():
             if quantity <= 0:
                 continue
             amount = quantity * value * (Decimal("1") if side == "long" else Decimal("-1"))

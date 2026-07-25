@@ -923,6 +923,42 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
     assert reconcile_portfolio(sandbox_repository) == []
 
 
+def test_unheld_foreign_dividend_does_not_require_an_fx_rate(
+    sandbox_repository: Path,
+) -> None:
+    append_unique(
+        sandbox_repository,
+        "corporate_actions",
+        [
+            {
+                "corporate_action_id": stable_id(
+                    "action", "unheld_security", date(2026, 7, 23), "dividend"
+                ),
+                "security_id": "unheld_security",
+                "action_date": "2026-07-23",
+                "action_type": "dividend",
+                "value": "0.5",
+                "currency": "USD",
+                "source": "fixture",
+                "source_price_hash": "c" * 64,
+                "recorded_at": "2026-07-23T22:00:00Z",
+            }
+        ],
+        key_columns=("corporate_action_id",),
+    )
+
+    assert (
+        accrue_dividends(
+            sandbox_repository,
+            through=date(2026, 7, 23),
+            fx_rates_to_base={},
+            base_currency="EUR",
+            run_id="run-unheld-action",
+        )
+        == 0
+    )
+
+
 @given(
     quantity=st.integers(min_value=1, max_value=1000),
     price_cents=st.integers(min_value=1, max_value=100000),
