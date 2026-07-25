@@ -188,7 +188,8 @@ def test_age_install_is_version_and_checksum_pinned(repository_root: Path) -> No
     assert "/releases/download/v1.3.1/age-v1.3.1-linux-amd64.tar.gz" in script
     assert "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377" in script
     assert "sha256sum --check --status" in script
-    assert 'test "$(age --version)" = "1.3.1"' in script
+    assert 'test "$(age --version)" = "v1.3.1"' in script
+    assert 'test "$(age-keygen --version)" = "v1.3.1"' in script
 
 
 def test_hermes_runtime_establishes_container_paths_and_profile_ownership(

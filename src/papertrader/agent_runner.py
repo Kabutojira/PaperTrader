@@ -99,7 +99,7 @@ FORBIDDEN_ENVIRONMENT_MARKERS = (
 
 
 class AgentRunError(RuntimeError):
-    """Raised when preflight, Hermes, or post-run validation fails closed."""
+    """Raised when agent preflight, execution, or post-run validation fails closed."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -203,6 +203,24 @@ def _skill_identity(path: Path, *, display_root: Path) -> SkillIdentity:
         relative_path=relative_path,
         sha256=content_hash(path.read_bytes()),
     )
+
+
+def project_skill_identities(
+    repository_root: Path, operation_type: str
+) -> tuple[SkillIdentity, SkillIdentity]:
+    """Return the validated controller and one selected operation skill identity."""
+
+    try:
+        operation_skill_name = OPERATION_SKILLS[operation_type]
+    except KeyError as exc:
+        raise AgentRunError(f"unsupported agent operation type: {operation_type}") from exc
+    controller_path = repository_root / "skills" / "papertrader-controller" / "SKILL.md"
+    operation_path = repository_root / "skills" / operation_skill_name / "SKILL.md"
+    controller = _skill_identity(controller_path, display_root=repository_root)
+    operation_skill = _skill_identity(operation_path, display_root=repository_root)
+    if controller.name != "papertrader-controller" or operation_skill.name != operation_skill_name:
+        raise AgentRunError("project skill folder and frontmatter names do not match")
+    return controller, operation_skill
 
 
 def _managed_config(settings: Settings) -> dict[str, object]:
@@ -421,16 +439,7 @@ def preflight_hermes(
         raise AgentRunError("HERMES_HOME must be outside the repository")
     config_hash = _validate_managed_config(repository_root, settings, home)
     native = _native_skill(settings, home)
-    try:
-        operation_skill_name = OPERATION_SKILLS[operation_type]
-    except KeyError as exc:
-        raise AgentRunError(f"unsupported Hermes operation type: {operation_type}") from exc
-    controller_path = repository_root / "skills" / "papertrader-controller" / "SKILL.md"
-    operation_path = repository_root / "skills" / operation_skill_name / "SKILL.md"
-    controller = _skill_identity(controller_path, display_root=repository_root)
-    operation_skill = _skill_identity(operation_path, display_root=repository_root)
-    if controller.name != "papertrader-controller" or operation_skill.name != operation_skill_name:
-        raise AgentRunError("project skill folder and frontmatter names do not match")
+    controller, operation_skill = project_skill_identities(repository_root, operation_type)
     if (
         check_command
         and shutil.which(settings.hermes.command[0], path=environment.get("PATH")) is None
@@ -1001,6 +1010,7 @@ __all__ = [
     "configure_hermes_home",
     "hermes_command",
     "preflight_hermes",
+    "project_skill_identities",
     "prompt_injection_flags",
     "run_claimed_operation",
     "run_one_operation",
