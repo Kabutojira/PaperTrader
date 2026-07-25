@@ -1,0 +1,36 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-25T09:22:54Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-25T09:22:53Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-25T09:22:54Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-25T09:22:54Z"
+    }
+  ],
+  "operation_id": "01KYC8N4FGZWVX9ABGDSRTT465",
+  "run_id": "local-20260725-solar-reset-02"
+}

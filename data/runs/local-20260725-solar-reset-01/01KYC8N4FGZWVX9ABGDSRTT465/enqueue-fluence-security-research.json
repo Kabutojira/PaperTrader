@@ -1,0 +1,24 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_a9eb9838940ef5ceaa0c",
+  "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:solar-storage-reset:2026-07-25",
+  "prompt": "Research Fluence Energy as a bounded storage-system exposure to the solar, storage, and grid-flexibility reset.",
+  "inputs": {
+    "security_id": "security_a9eb9838940ef5ceaa0c",
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "research_focus": "Validate immutable identity, backlog quality, gross margin, working-capital conversion, warranty exposure, liquidity, valuation, and explicit invalidation."
+  },
+  "source": "idea_research:01KYC8N4FGZWVX9ABGDSRTT465",
+  "priority": 65,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms",
+    "https://www.eia.gov/todayinEnergy/detail.php?id=67205",
+    "https://www.iea.org/reports/electricity-2026/flexibility"
+  ],
+  "max_attempts": 3
+}

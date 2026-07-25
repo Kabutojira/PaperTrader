@@ -1,0 +1,58 @@
+{
+  "operation_id": "01KYC8N4FGZWVX9ABGDSRTT465",
+  "status": "succeeded",
+  "summary": "Completed the solar, storage, and grid-flexibility idea research as a conditional survivor-selection thesis. Added a measurable monitoring scorecard for demand conversion, unit economics, cash, balance-sheet resilience, policy, and competitive position, and bound the three already queued Fluence, Atkore, and Enphase security-research follow-ups to their immutable operation IDs. No relationship, strategy, signal, or paper order is justified until security-specific evidence and valuation are complete.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Electricity 2026 executive summary",
+      "claim": "Forecast electricity demand growth and the large grid-connection backlog support the physical demand mechanism, but forecasts and queue applications are not realised supplier revenue.",
+      "url": "https://www.iea.org/reports/electricity-2026/executive-summary"
+    },
+    {
+      "source": "US Energy Information Administration, Today in Energy",
+      "claim": "Developers planned material 2026 US solar and battery capacity alongside natural-gas additions, supporting both the clean-capacity opportunity and the dispatchable-generation hedge.",
+      "url": "https://www.eia.gov/todayinEnergy/detail.php?id=67205",
+      "observed_at": "2026-02-20T00:00:00Z"
+    },
+    {
+      "source": "Canadian Solar first-quarter 2026 results",
+      "claim": "Strong storage shipment growth coexisted with weaker module volume, inventory-related operating cash use, and a material one-time gross-margin benefit, making cash conversion and normalised margin explicit confirmation gates.",
+      "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces"
+    },
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "Higher electrical sales coexisted with lower adjusted EBITDA margin and negative free cash flow, supporting separate volume, pricing, and cash-conversion tests.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx"
+    },
+    {
+      "source": "Board of Governors of the Federal Reserve System",
+      "claim": "The 3.5%-3.75% federal funds target range leaves financing-sensitive demand without a clear low-rate confirmation.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "observed_at": "2026-06-17T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Completed the solar, storage, and grid-flexibility reset idea with measurable confirmation gates; Fluence, Atkore, and Enphase remain bounded security-research follow-ups, with no strategy or paper order yet justified."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Re-read the immutable idea payload and existing evidence-linked idea page.",
+      "Kept one immutable idea identity and did not create a duplicate page.",
+      "Added measurable strengthening and warning evidence for each confirmation gate.",
+      "Verified the three candidate securities and follow-ups by immutable security and operation IDs.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

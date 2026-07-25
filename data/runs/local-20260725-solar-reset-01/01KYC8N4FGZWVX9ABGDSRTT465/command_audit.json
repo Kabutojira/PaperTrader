@@ -1,0 +1,195 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-fluence-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYC90CTRHWYDVQMT790DA7AQ.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "5a9de1a6b651213ea10e5abcc443a9934a0728b5b4af7c0181bbb9b0e731289c",
+            1246,
+            384
+          ],
+          "before": [
+            "file",
+            "6eb2e592db579a93e217c5f6bc051cfe8034ba739d5973580aa92d626c02fa25",
+            746,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "f7646f566dd915f0ae04c96d022c0697cd4b8f9fd8957321fa6a640f0a94ffe8",
+            918,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYC90CTRHWYDVQMT790DA7AQ.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-fluence-security-research.json",
+      "completed_at": "2026-07-25T09:16:55Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "01dc502067f65388cfb3d2ff3c9246756e99e13657a0fa0aa2540050e8bfd056",
+          1121,
+          436
+        ],
+        "path": "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-fluence-security-research.json"
+      },
+      "started_at": "2026-07-25T09:16:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-atkore-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYC90DT035FQWCYXR8JWET0T.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "b4477f8f1b5066d2121c9e6d964006b95003af25f07346b0c22f626d01676a98",
+            1749,
+            384
+          ],
+          "before": [
+            "file",
+            "5a9de1a6b651213ea10e5abcc443a9934a0728b5b4af7c0181bbb9b0e731289c",
+            1246,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "f99099fd978113368db46f4168ec3d2f7892e0bd86e7dd4813d7679ab7fb05f8",
+            903,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYC90DT035FQWCYXR8JWET0T.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-atkore-security-research.json",
+      "completed_at": "2026-07-25T09:16:56Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "01bd75127fc9854a1d9f8e8411a5014e44c5f904e8f0655759c2c05612df0c69",
+          1106,
+          436
+        ],
+        "path": "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-atkore-security-research.json"
+      },
+      "started_at": "2026-07-25T09:16:56Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-enphase-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYC90ES8HBK3K6DHZD275J74.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a85b05687d954d7a52829485632bcc065f8d4b8fba2ef9bfe988b563d490a784",
+            2273,
+            384
+          ],
+          "before": [
+            "file",
+            "b4477f8f1b5066d2121c9e6d964006b95003af25f07346b0c22f626d01676a98",
+            1749,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "d90422977a69dfb78172d901c527b7b8a77c78d5956fb76d8448daddcfb529f3",
+            954,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYC90ES8HBK3K6DHZD275J74.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-enphase-security-research.json",
+      "completed_at": "2026-07-25T09:16:57Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "1d73610b3210dc2bf3f593ac5bbb1d8623c715d10440b5830bc47400179c85e5",
+          1157,
+          436
+        ],
+        "path": "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-enphase-security-research.json"
+      },
+      "started_at": "2026-07-25T09:16:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-25T09:17:09Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-25T09:17:09Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-25T09:17:09Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-25T09:17:09Z"
+    }
+  ],
+  "operation_id": "01KYC8N4FGZWVX9ABGDSRTT465",
+  "run_id": "local-20260725-solar-reset-01"
+}

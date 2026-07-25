@@ -6,7 +6,7 @@ tags:
   - meta
   - index
 created: "2026-07-24"
-updated: "2026-07-24"
+updated: "2026-07-25"
 provenance: repository-contract
 ---
 
@@ -25,7 +25,7 @@ No candidate packets yet.
 
 ## Ideas
 
-No idea pages yet.
+- [[ideas/idea_solar_storage_grid_flexibility_reset|Solar, storage, and grid-flexibility reset]]
 
 ## Securities
 
@@ -42,3 +42,4 @@ No strategy pages yet.
 ## Daily reports
 
 - [[daily-reports/daily-report_20260724|Daily report 2026-07-24]]
+- [[daily-reports/daily-report_20260725|Daily report 2026-07-25]]

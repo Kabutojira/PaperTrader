@@ -1,0 +1,28 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_solar_storage_grid_flexibility_reset",
+  "dedupe_key": "idea_research:idea_solar_storage_grid_flexibility_reset:user-seed:2026-07-25",
+  "prompt": "Research the solar, storage, and grid-flexibility reset as one bounded investment idea.",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "seed_claim": "After rate, inventory, and module-price pressure, electric-load growth and grid constraints may support selected solar, storage, electrification, and power-management survivors if project margins, financing, and cash conversion normalize. Track load growth, congestion, storage deployment and duration, residential financing rates, solar policy, module pricing, utility capital expenditure, and data-centre demand. Candidate value-chain exposures include modules and inverters, battery systems and optimization software, electrical equipment and conduit, power semiconductors, and fossil-generation substitutes or hedges. Confirmation requires normalized rates and inventories, healthy backlog conversion, accelerating grid capital expenditure, and share gains; invalidation includes persistent oversupply and pricing pressure, adverse policy or trade shifts, warranty or working-capital drains, and fossil alternatives remaining cheaper or faster."
+  },
+  "source": "user",
+  "priority": 70,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.iea.org/reports/electricity-2026/executive-summary",
+    "https://www.iea.org/reports/electricity-2026/grids",
+    "https://www.iea.org/reports/electricity-2026/flexibility",
+    "https://www.eia.gov/todayinEnergy/detail.php?id=67205",
+    "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+    "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms",
+    "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces",
+    "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx"
+  ],
+  "max_attempts": 3
+}

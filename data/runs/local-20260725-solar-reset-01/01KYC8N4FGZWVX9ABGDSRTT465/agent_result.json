@@ -1,0 +1,89 @@
+{
+  "operation_id": "01KYC8N4FGZWVX9ABGDSRTT465",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked solar, storage, and grid-flexibility idea. The research supports a conditional survivor-selection thesis rather than a broad sector call: demand and grid constraints are constructive, but supplier margins, cash conversion, financing, policy, and oversupply remain decisive gates. Enqueued three bounded security-research operations for existing immutable Fluence, Atkore, and Enphase identities; no relationship, strategy, signal, or paper order was created because security-specific valuation and causal evidence are not yet complete.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Electricity 2026 executive summary",
+      "claim": "The IEA forecasts global electricity demand growth of about 3.6% annually from 2026 through 2030, forecasts almost 2% annual US growth with data centres contributing around half of the increase, and reports more than 2,500 GW of projects stalled in connection queues.",
+      "url": "https://www.iea.org/reports/electricity-2026/executive-summary"
+    },
+    {
+      "source": "US Energy Information Administration, Today in Energy",
+      "claim": "Developers planned 86 GW of US utility-scale capacity additions for 2026, including 43.4 GW of solar, 24 GW of batteries, and 6.3 GW of natural gas; planned capacity was treated as a forecast rather than realised deployment.",
+      "url": "https://www.eia.gov/todayinEnergy/detail.php?id=67205",
+      "observed_at": "2026-02-20T00:00:00Z"
+    },
+    {
+      "source": "International Energy Agency Photovoltaic Power Systems Programme",
+      "claim": "PV deployment continued to grow rapidly in 2025, while persistent manufacturing overcapacity pressured module prices and margins, supporting a selective rather than sector-wide thesis.",
+      "url": "https://iea-pvps.org/trends_reports/trends-2025/"
+    },
+    {
+      "source": "Board of Governors of the Federal Reserve System",
+      "claim": "The Federal Reserve kept the federal funds target range at 3.5%-3.75% and described inflation as elevated, leaving financing-sensitive demand without a clear low-rate confirmation.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "observed_at": "2026-06-17T00:00:00Z"
+    },
+    {
+      "source": "Internal Revenue Service, Working Families Tax Cuts",
+      "claim": "The residential clean-energy credit is unavailable for expenditures after 31 December 2025, and prohibited-foreign-entity rules affect several clean-energy credits, creating company-specific policy and sourcing risk.",
+      "url": "https://www.irs.gov/newsroom/working-families-tax-cuts"
+    },
+    {
+      "source": "Canadian Solar first-quarter 2026 results",
+      "claim": "Canadian Solar reported sharply lower module shipments, strong storage shipment growth, and operating cash use as inventory rose; its reported gross margin included a material tariff-refund benefit, illustrating the gap between deployment growth and normalised economics.",
+      "url": "https://investors.canadiansolar.com/news-releases/news-release-details/canadian-solar-reports-first-quarter-2026-results-and-announces"
+    },
+    {
+      "source": "Enphase Energy first-quarter 2026 results",
+      "claim": "Enphase reported sequentially and annually lower revenue while remaining free-cash-flow positive with substantial liquidity, making channel recovery and cash resilience appropriate security-research tests.",
+      "url": "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-reports-financial-results-first-quarter-2026/"
+    },
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "Atkore reported higher electrical sales but lower adjusted EBITDA margin and negative free cash flow as input costs outpaced pricing, showing that grid-related volume growth does not by itself establish shareholder economics.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYC90CTRHWYDVQMT790DA7AQ.json",
+    "data/operations/payloads/01KYC90DT035FQWCYXR8JWET0T.json",
+    "data/operations/payloads/01KYC90ES8HBK3K6DHZD275J74.json",
+    "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-atkore-security-research.json",
+    "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-enphase-security-research.json",
+    "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-fluence-security-research.json",
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYC90CTRHWYDVQMT790DA7AQ",
+    "01KYC90DT035FQWCYXR8JWET0T",
+    "01KYC90ES8HBK3K6DHZD275J74"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched the solar, storage, and grid-flexibility reset as a conditional survivor-selection idea; queued bounded Fluence, Atkore, and Enphase research, with no strategy or paper order until security-specific evidence and valuation are complete."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-fluence-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-atkore-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-enphase-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and selected immutable payload.",
+      "Searched existing wiki and structured security identities to avoid duplicate ideas and ticker-only associations.",
+      "Created exactly one idea page with mechanism, dated evidence, contrary evidence, confirmation gates, invalidation, confidence, and a concrete review date.",
+      "Updated the complete wiki index and append-only research log.",
+      "Enqueued only individually bounded security research through audited project CLI commands.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

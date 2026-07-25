@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYC90CTRHWYDVQMT790DA7AQ.json",
+    "data/operations/payloads/01KYC90DT035FQWCYXR8JWET0T.json",
+    "data/operations/payloads/01KYC90ES8HBK3K6DHZD275J74.json",
+    "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-atkore-security-research.json",
+    "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-enphase-security-research.json",
+    "data/runs/local-20260725-solar-reset-01/01KYC8N4FGZWVX9ABGDSRTT465/enqueue-fluence-security-research.json",
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-25T09:19:09Z",
+  "errors": [
+    "command audit entry 3 is outside the operation skill scope"
+  ],
+  "harness": "local",
+  "operation_id": "01KYC8N4FGZWVX9ABGDSRTT465",
+  "passed": false,
+  "run_id": "local-20260725-solar-reset-01",
+  "validation_version": 1
+}

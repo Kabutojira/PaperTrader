@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-25T09:23:24Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYC8N4FGZWVX9ABGDSRTT465",
+  "passed": true,
+  "run_id": "local-20260725-solar-reset-02",
+  "validation_version": 1
+}

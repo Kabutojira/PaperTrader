@@ -1,0 +1,24 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_f2b9760d847b2ba59324",
+  "dedupe_key": "security_research:security_f2b9760d847b2ba59324:solar-storage-reset:2026-07-25",
+  "prompt": "Research Enphase Energy as a bounded residential-solar and power-management exposure to the solar, storage, and grid-flexibility reset.",
+  "inputs": {
+    "security_id": "security_f2b9760d847b2ba59324",
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "research_focus": "Validate immutable identity, channel inventory, financing and policy sensitivity, product mix, cash resilience, valuation, and explicit invalidation."
+  },
+  "source": "idea_research:01KYC8N4FGZWVX9ABGDSRTT465",
+  "priority": 60,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-reports-financial-results-first-quarter-2026/",
+    "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+    "https://www.irs.gov/newsroom/working-families-tax-cuts"
+  ],
+  "max_attempts": 3
+}

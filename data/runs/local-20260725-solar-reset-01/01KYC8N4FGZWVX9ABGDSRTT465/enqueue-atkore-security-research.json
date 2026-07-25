@@ -1,0 +1,24 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_22c2b9d782a62d7a9b86",
+  "dedupe_key": "security_research:security_22c2b9d782a62d7a9b86:solar-storage-reset:2026-07-25",
+  "prompt": "Research Atkore as a bounded electrical-infrastructure exposure to the solar, storage, and grid-flexibility reset.",
+  "inputs": {
+    "security_id": "security_22c2b9d782a62d7a9b86",
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "research_focus": "Validate immutable identity, electrical demand, pricing versus input costs, margins, free cash flow, valuation, and explicit invalidation."
+  },
+  "source": "idea_research:01KYC8N4FGZWVX9ABGDSRTT465",
+  "priority": 60,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+    "https://www.iea.org/reports/electricity-2026/executive-summary",
+    "https://www.iea.org/reports/electricity-2026/grids"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,16 @@
+{
+  "completed_at": "2026-07-25T09:24:01Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 1,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260725.md",
+  "run_id": "local-20260725-solar-reset-02",
+  "source_sha": "e899f83af8db9bf9eb336e42c2eff75b6020470f",
+  "started_at": "2026-07-25T09:22:16Z",
+  "status": "succeeded",
+  "trigger": "local"
+}
