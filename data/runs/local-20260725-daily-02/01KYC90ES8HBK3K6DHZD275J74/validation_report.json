@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYCG64CRX4A3ZVG0TZA0P39S.json",
+    "data/runs/local-20260725-daily-02/01KYC90ES8HBK3K6DHZD275J74/enqueue-relationship.json",
+    "data/runs/local-20260725-daily-02/01KYC90ES8HBK3K6DHZD275J74/upsert-security.json",
+    "data/tables/securities.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "completed_at": "2026-07-25T11:23:05Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYC90ES8HBK3K6DHZD275J74",
+  "passed": true,
+  "run_id": "local-20260725-daily-02",
+  "validation_version": 1
+}

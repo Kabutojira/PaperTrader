@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_solar_storage_grid_atkr",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "relationship_id": "relationship_solar_storage_grid_atkr",
+    "security_id": "security_22c2b9d782a62d7a9b86"
+  },
+  "objective": "Validate one causal relationship from the solar, storage, and grid-flexibility reset to Atkore.",
+  "operation_id": "01KYCFZV78NFR2S9QCPT4B2VWQ",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/securities/security_22c2b9d782a62d7a9b86.md",
+    "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm"
+  ]
+}

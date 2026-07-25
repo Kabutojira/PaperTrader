@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_solar_storage_grid_flnc",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "relationship_id": "relationship_solar_storage_grid_flnc",
+    "security_id": "security_a9eb9838940ef5ceaa0c"
+  },
+  "objective": "Validate one causal relationship from the solar, storage, and grid-flexibility reset to Fluence Energy.",
+  "operation_id": "01KYCFPT58ZKCYEEYE4B721NCX",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
+    "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms",
+    "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm"
+  ]
+}

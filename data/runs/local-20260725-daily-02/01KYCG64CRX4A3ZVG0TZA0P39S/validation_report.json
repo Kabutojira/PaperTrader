@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260725-daily-02/01KYCG64CRX4A3ZVG0TZA0P39S/upsert-relationship.json",
+    "data/tables/relationships.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_solar_storage_grid_enph.md"
+  ],
+  "completed_at": "2026-07-25T11:34:09Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYCG64CRX4A3ZVG0TZA0P39S",
+  "passed": true,
+  "run_id": "local-20260725-daily-02",
+  "validation_version": 1
+}

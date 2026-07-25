@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_solar_storage_grid_enph",
+  "idea_id": "idea_solar_storage_grid_flexibility_reset",
+  "security_id": "security_f2b9760d847b2ba59324",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "A recovery in residential solar financing, installer health, channel inventory, and storage adoption directly raises demand for Enphase microinverters, batteries, gateways, and energy-management software; shareholder benefit depends on margin, cash, warranty, tariff, and policy quality.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "US sell-through stabilises without inventory growth, battery shipments recover, tariff-adjusted margin holds, and normalised free cash flow remains positive.",
+  "invalidation": "Financing and lost incentives keep demand structurally lower, inventory requires discounting, safe-harbour commitments do not become installations, or tariffs, warranties, and purchase obligations impair returns and cash.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_solar_storage_grid_enph.md",
+  "last_reviewed_at": "2026-07-25T11:31:47Z",
+  "next_review_at": "2026-08-15T11:31:47Z"
+}

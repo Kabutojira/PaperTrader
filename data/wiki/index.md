@@ -29,11 +29,14 @@ No candidate packets yet.
 
 ## Securities
 
-No security pages yet.
+- [[securities/security_22c2b9d782a62d7a9b86|Atkore Inc. common stock]]
+- [[securities/security_f2b9760d847b2ba59324|Enphase Energy, Inc. common stock]]
+- [[securities/security_a9eb9838940ef5ceaa0c|Fluence Energy, Inc. Class A common stock]]
 
 ## Relationships
 
-No relationship pages yet.
+- [[relationships/relationship_solar_storage_grid_atkr|Solar, storage, and grid-flexibility reset to Atkore]]
+- [[relationships/relationship_solar_storage_grid_enph|Solar, storage, and grid-flexibility reset to Enphase Energy]]
 
 ## Strategies
 

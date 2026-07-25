@@ -1,1 +1,5 @@
 corporate_action_id,security_id,action_date,action_type,value,currency,source,source_price_hash,recorded_at
+action_6bcedf40a4d533853223,security_22c2b9d782a62d7a9b86,2025-08-19,dividend,0.33,USD,yfinance,146900df8f2831e7e1647f1a1da2d08154b6cab3da39db3c326b9a619e4002f7,2026-07-25T11:28:04Z
+action_15eb1d5c3d1ba485efe9,security_22c2b9d782a62d7a9b86,2025-12-05,dividend,0.33,USD,yfinance,146900df8f2831e7e1647f1a1da2d08154b6cab3da39db3c326b9a619e4002f7,2026-07-25T11:28:04Z
+action_032b10d83291666cb4d6,security_22c2b9d782a62d7a9b86,2026-02-17,dividend,0.33,USD,yfinance,146900df8f2831e7e1647f1a1da2d08154b6cab3da39db3c326b9a619e4002f7,2026-07-25T11:28:04Z
+action_b5be151122e862c0c113,security_22c2b9d782a62d7a9b86,2026-05-19,dividend,0.33,USD,yfinance,146900df8f2831e7e1647f1a1da2d08154b6cab3da39db3c326b9a619e4002f7,2026-07-25T11:28:04Z

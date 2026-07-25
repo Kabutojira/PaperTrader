@@ -1,0 +1,23 @@
+{
+  "security_id": "security_a9eb9838940ef5ceaa0c",
+  "issuer_id": "issuer_8ba72d606a1056f95d91",
+  "company_name": "Fluence Energy, Inc.",
+  "instrument_name": "Fluence Energy, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "FLNC",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "FLNC",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Utilities",
+  "industry": "Utilities - Renewable",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Record storage backlog and improving quarterly margin are offset by first-half cash burn, project-cost revisions, and unproven full-year profitability; monitor with no strategy until cash conversion and valuation are supportable.",
+  "research_page": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
+  "last_research_at": "2026-07-25T11:12:48Z",
+  "next_review_at": "2026-08-15T11:12:48Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm"
+}

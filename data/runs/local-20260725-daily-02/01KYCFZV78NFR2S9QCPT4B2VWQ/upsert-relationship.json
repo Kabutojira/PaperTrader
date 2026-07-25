@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_solar_storage_grid_atkr",
+  "idea_id": "idea_solar_storage_grid_flexibility_reset",
+  "security_id": "security_22c2b9d782a62d7a9b86",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Electric-load growth, data-centre construction, utility capital expenditure, and grid constraints increase demand for Atkore electrical raceway, conduit, and cable-management products; shareholder benefit depends on pricing catching input costs and volume converting to free cash flow.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Electrical volume remains positive while pricing catches input inflation, segment margin recovers, and operating cash flow turns sustainably positive.",
+  "invalidation": "Electrical demand fails to produce segment volume or input costs, competition, project delays, and working capital prevent adequate margin and free-cash-flow conversion.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_solar_storage_grid_atkr.md",
+  "last_reviewed_at": "2026-07-25T11:29:47Z",
+  "next_review_at": "2026-08-15T11:29:47Z"
+}

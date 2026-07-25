@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYCFZV78NFR2S9QCPT4B2VWQ",
+  "status": "succeeded",
+  "summary": "Accepted one causal beneficiary relationship from the solar, storage, and grid-flexibility reset to Atkore with medium sensitivity and confidence. Electrical segment volume growth demonstrates actual exposure, but input costs have outrun pricing, segment margins compressed, cash conversion is negative, and post-divestiture normalised earnings and fair value remain unresolved. No strategy-research follow-up was queued because thematic demand alone does not satisfy valuation, timing, or cash-conversion gates.",
+  "evidence": [
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "Electrical sales rose 8.1% to USD 532.5 million with a USD 28.4 million volume contribution, establishing observable exposure to electrical-infrastructure demand.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-05-06T00:00:00Z"
+    },
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "USD 82.1 million of higher input costs exceeded the USD 10.2 million selling-price benefit, and Electrical adjusted EBITDA margin declined from 18.5% to 14.0%, so demand has not yet improved economics.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-05-06T00:00:00Z"
+    },
+    {
+      "source": "Atkore SEC Form 10-Q for 27 March 2026",
+      "claim": "Six-month operating cash flow was negative USD 27.2 million and cash of USD 442.3 million was below roughly USD 760.6 million of debt carrying value, preserving a material cash-conversion and balance-sheet condition on the edge.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm",
+      "observed_at": "2026-05-06T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260725-daily-02/01KYCFZV78NFR2S9QCPT4B2VWQ/upsert-relationship.json",
+    "data/tables/relationships.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_solar_storage_grid_atkr.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the solar/storage/grid-flexibility to Atkore relationship with medium sensitivity and confidence: electrical volume confirms the causal demand link, but pricing lag, margin compression, negative cash conversion, and no supportable fair value block strategy research."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260725-daily-02/01KYCFZV78NFR2S9QCPT4B2VWQ/upsert-relationship.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the exact idea, security, and relationship IDs and found no equivalent existing edge.",
+      "Accepted the relationship from reported product and segment-volume evidence rather than ticker correlation.",
+      "Recorded direction, sensitivity, confidence, catalyst, invalidation, and contrary evidence.",
+      "Applied structured relationship state only through the audited relationship upsert command.",
+      "Did not enqueue strategy research because valuation, margin, cash-conversion, and timing gates are incomplete.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

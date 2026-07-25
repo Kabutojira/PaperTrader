@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYC90DT035FQWCYXR8JWET0T",
+  "status": "succeeded",
+  "summary": "Researched Atkore as one immutable electrical-infrastructure security. Electrical volume growth supports the grid and data-centre demand link, but input-cost inflation materially exceeded pricing, margins compressed, six-month operating cash flow turned negative, and portfolio changes obscure normalised earnings. Updated the security to watching and queued one bounded relationship review; no valuation or strategy is supportable without a fresh mark and evidence of margin and cash recovery.",
+  "evidence": [
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "For the quarter ended 27 March 2026, net sales rose 4.2% to USD 731.4 million and Electrical sales rose 8.1%, but consolidated gross margin fell to 18.6% and adjusted EBITDA declined 30.4% to USD 81.1 million.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-05-06T00:00:00Z"
+    },
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "Quarterly input costs increased by USD 82.1 million while selling prices contributed USD 10.2 million; management maintained fiscal-2026 adjusted EBITDA guidance of USD 340-360 million.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-05-06T00:00:00Z"
+    },
+    {
+      "source": "Atkore SEC Form 10-Q for 27 March 2026",
+      "claim": "Six-month operating cash flow was negative USD 27.2 million, cash was USD 442.3 million, debt carrying value was about USD 760.6 million, and a USD 136.5 million litigation settlement reduced financial flexibility.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm",
+      "observed_at": "2026-05-06T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYCFZV78NFR2S9QCPT4B2VWQ.json",
+    "data/runs/local-20260725-daily-02/01KYC90DT035FQWCYXR8JWET0T/enqueue-relationship.json",
+    "data/runs/local-20260725-daily-02/01KYC90DT035FQWCYXR8JWET0T/upsert-security.json",
+    "data/tables/securities.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_22c2b9d782a62d7a9b86.md"
+  ],
+  "operations_created": [
+    "01KYCFZV78NFR2S9QCPT4B2VWQ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Atkore moved to watching: electrical volume supports the grid and data-centre link, but input-cost inflation exceeded pricing, margins and cash conversion deteriorated, no fresh deterministic mark exists, and no supportable valuation or strategy is available; one causal relationship review was queued."
+  ],
+  "commands_run": [
+    "papertrader research security upsert --request data/runs/local-20260725-daily-02/01KYC90DT035FQWCYXR8JWET0T/upsert-security.json",
+    "papertrader queue enqueue --request data/runs/local-20260725-daily-02/01KYC90DT035FQWCYXR8JWET0T/enqueue-relationship.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable ATKR/XNYS/USD/equity identity against the existing security row and SEC filing.",
+      "Created exactly one maintained security page with thesis, contrary evidence, catalysts, invalidation, confidence, and review date.",
+      "Documented why no current valuation range or strategy is supportable.",
+      "Updated structured security state only through the audited security upsert command.",
+      "Enqueued one bounded relationship review through the audited queue command.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

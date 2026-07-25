@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYC90CTRHWYDVQMT790DA7AQ",
+  "status": "succeeded",
+  "summary": "Researched Fluence Energy as one immutable storage-system security. Record backlog, higher deployment, and improved quarterly margin support a causal grid-storage exposure, but first-half operating cash use, project-cost revisions, thin adjusted EBITDA guidance, warranty exposure, and the absence of a fresh deterministic mark prevent a supportable valuation or strategy. Updated the security to watching and queued one bounded relationship review.",
+  "evidence": [
+    {
+      "source": "Fluence Energy fiscal second-quarter 2026 results",
+      "claim": "For the quarter ended 31 March 2026, Fluence reported USD 464.9 million revenue, 10.0% GAAP gross margin, a USD 29.2 million net loss, USD 5.6 billion backlog, and USD 900 million of management-defined liquidity while reaffirming fiscal-2026 guidance.",
+      "url": "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms",
+      "observed_at": "2026-05-06T00:00:00Z"
+    },
+    {
+      "source": "Fluence Energy SEC Form 10-Q for 31 March 2026",
+      "claim": "First-half operating cash use was USD 347.9 million and company-defined free-cash-flow use was USD 285.4 million; management attributed gross-margin pressure to US project cost increases, delays, and scope revisions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm",
+      "observed_at": "2026-05-12T00:00:00Z"
+    },
+    {
+      "source": "Fluence Energy SEC Form 10-Q warranty note",
+      "claim": "At 31 March 2026, gross warranty liabilities were USD 54.8 million and net liabilities after expected supplier recoveries were USD 28.8 million; actual failure and replacement costs remain estimation risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm",
+      "observed_at": "2026-05-12T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYCFPT58ZKCYEEYE4B721NCX.json",
+    "data/runs/local-20260725-daily-02/01KYC90CTRHWYDVQMT790DA7AQ/enqueue-relationship.json",
+    "data/runs/local-20260725-daily-02/01KYC90CTRHWYDVQMT790DA7AQ/upsert-security.json",
+    "data/tables/securities.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "operations_created": [
+    "01KYCFPT58ZKCYEEYE4B721NCX"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Fluence Energy moved to watching: storage backlog and quarterly margin improved, but first-half cash burn, project-cost revisions, warranty exposure, no fresh deterministic mark, and no supportable valuation block a strategy; one causal relationship review was queued."
+  ],
+  "commands_run": [
+    "papertrader research security upsert --request data/runs/local-20260725-daily-02/01KYC90CTRHWYDVQMT790DA7AQ/upsert-security.json",
+    "papertrader queue enqueue --request data/runs/local-20260725-daily-02/01KYC90CTRHWYDVQMT790DA7AQ/enqueue-relationship.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable FLNC/XNAS/USD/equity identity against the existing security row and SEC filing.",
+      "Created exactly one maintained security page with thesis, contrary evidence, catalysts, invalidation, confidence, and review date.",
+      "Documented why no current valuation range or strategy is supportable.",
+      "Updated structured security state only through the audited security upsert command.",
+      "Enqueued one bounded relationship review through the audited queue command.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

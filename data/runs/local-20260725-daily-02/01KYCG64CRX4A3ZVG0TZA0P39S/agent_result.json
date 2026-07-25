@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYCG64CRX4A3ZVG0TZA0P39S",
+  "status": "succeeded",
+  "summary": "Accepted one causal beneficiary relationship from the solar, storage, and grid-flexibility reset to Enphase Energy with high sensitivity and medium confidence. Its microinverter, battery, and energy-management products provide direct exposure and its net-cash position and positive free cash flow support survivor quality, but US sell-through, battery shipments, and revenue remain reset while financing, policy, tariffs, and inventory obligations are unresolved. No strategy-research follow-up was queued because demand, normalised economics, valuation, and timing gates are incomplete.",
+  "evidence": [
+    {
+      "source": "Enphase fiscal first-quarter 2026 results",
+      "claim": "Enphase shipped 1.41 million microinverters and 103.1 MWh of batteries, demonstrating direct solar-and-storage exposure, but US sell-through fell 48% sequentially and 18% year over year.",
+      "url": "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-reports-financial-results-first-quarter-2026/",
+      "observed_at": "2026-04-28T00:00:00Z"
+    },
+    {
+      "source": "Enphase SEC Form 10-Q for 31 March 2026",
+      "claim": "Cash and investments of USD 930.6 million exceeded USD 572.5 million of debt, while inventory of USD 290.7 million and approximately USD 275.0 million of component purchase obligations preserve an inventory-risk condition.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm",
+      "observed_at": "2026-04-28T00:00:00Z"
+    },
+    {
+      "source": "IRS Working Families Tax Cuts summary and Federal Reserve statement",
+      "claim": "The residential clean-energy credit is unavailable for expenditures after 31 December 2025 and the federal-funds target remained 3.5%-3.75% on 17 June 2026, directly linking policy and financing to residential adoption risk.",
+      "url": "https://www.irs.gov/newsroom/working-families-tax-cuts",
+      "observed_at": "2026-07-25T11:31:47Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260725-daily-02/01KYCG64CRX4A3ZVG0TZA0P39S/upsert-relationship.json",
+    "data/tables/relationships.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_solar_storage_grid_enph.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the solar/storage/grid-flexibility to Enphase relationship with high sensitivity and medium confidence: product exposure, net cash, and free cash flow pass, but shrinking US demand, policy and financing headwinds, inventory obligations, and no supportable fair value block strategy research."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260725-daily-02/01KYCG64CRX4A3ZVG0TZA0P39S/upsert-relationship.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the exact idea, security, and relationship IDs and found no equivalent existing edge.",
+      "Accepted the relationship from reported product and shipment evidence rather than ticker correlation.",
+      "Recorded direction, sensitivity, confidence, catalyst, invalidation, and contrary evidence.",
+      "Applied structured relationship state only through the audited relationship upsert command.",
+      "Did not enqueue strategy research because demand, normalised economics, valuation, and timing gates are incomplete.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

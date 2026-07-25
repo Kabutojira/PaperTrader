@@ -1,0 +1,16 @@
+{
+  "completed_at": "2026-07-25T11:35:26Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 5,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260725.md",
+  "run_id": "local-20260725-daily-02",
+  "source_sha": "2d70becd018762de51b0f4276cbd319dc9a6fdad",
+  "started_at": "2026-07-25T11:09:27Z",
+  "status": "succeeded",
+  "trigger": "local"
+}

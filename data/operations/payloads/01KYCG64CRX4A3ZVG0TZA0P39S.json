@@ -1,0 +1,21 @@
+{
+  "entity_id": "relationship_solar_storage_grid_enph",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "relationship_id": "relationship_solar_storage_grid_enph",
+    "security_id": "security_f2b9760d847b2ba59324"
+  },
+  "objective": "Validate one causal relationship from the solar, storage, and grid-flexibility reset to Enphase Energy.",
+  "operation_id": "01KYCG64CRX4A3ZVG0TZA0P39S",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+    "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-reports-financial-results-first-quarter-2026/",
+    "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+    "https://www.irs.gov/newsroom/working-families-tax-cuts",
+    "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm"
+  ]
+}
