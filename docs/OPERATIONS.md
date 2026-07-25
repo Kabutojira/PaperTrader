@@ -15,9 +15,65 @@ export WIKI_PATH="$PWD/data/wiki"
 uv sync --locked --all-groups
 ```
 
-Keep provider credentials in the parent process or the GitHub secret store. Only inference
-credentials may cross into Hermes. GitHub write, Telegram, deployment, and brokerage credentials
-must not.
+The main inference provider is `openai-codex`. GitHub Actions restores only the encrypted OAuth
+state described below. GitHub write, Telegram, deployment, brokerage credentials, API-key
+fallbacks, and the age private identity must never enter the Hermes process.
+
+## Seed and maintain OpenAI Codex OAuth
+
+Use a dedicated Hermes profile so the seeded file contains PaperTrader's Codex OAuth state rather
+than unrelated provider credentials. Authenticate interactively outside GitHub Actions, for
+example with `hermes profile create papertrader`, followed by `hermes -p papertrader model` and the
+OpenAI Codex OAuth choice. Hermes stores the default profile at `~/.hermes/auth.json` and a named
+profile at `~/.hermes/profiles/<profile-name>/auth.json`.
+
+Generate one age identity and derive its public recipient:
+
+```bash
+install -d -m 700 "$HOME/.config/papertrader"
+age-keygen -o "$HOME/.config/papertrader/openai-oauth.agekey"
+age-keygen -y "$HOME/.config/papertrader/openai-oauth.agekey"
+```
+
+Set the complete `AGE-SECRET-KEY-1...` identity as the repository secret without putting it on a
+command line, then encrypt the dedicated profile's authenticated state to the exact repository
+path:
+
+```bash
+gh secret set OPENAI_OAUTH_SECRET < "$HOME/.config/papertrader/openai-oauth.agekey"
+recipient="$(age-keygen -y "$HOME/.config/papertrader/openai-oauth.agekey")"
+install -d .papertrader/credentials
+age --encrypt \
+  --recipient "$recipient" \
+  --output .papertrader/credentials/openai-oauth-auth.json.age \
+  "$HOME/.hermes/profiles/papertrader/auth.json"
+```
+
+For a default Hermes profile, use `$HOME/.hermes/auth.json` as the source. Verify the ciphertext
+without printing its contents, and remove the temporary plaintext unconditionally:
+
+```bash
+verify_file="$(mktemp)"
+trap 'rm -f "$verify_file"' EXIT
+age --decrypt \
+  --identity "$HOME/.config/papertrader/openai-oauth.agekey" \
+  --output "$verify_file" \
+  .papertrader/credentials/openai-oauth-auth.json.age
+cmp -s "$HOME/.hermes/profiles/papertrader/auth.json" "$verify_file"
+```
+
+Commit only `.papertrader/credentials/openai-oauth-auth.json.age`. Never commit `auth.json`, the
+age identity, the verification file, or a pre-run snapshot. Non-dry runs decrypt into the isolated
+Hermes home, detect byte changes after all operations, re-encrypt only on change, verify the new
+ciphertext, and remove plaintext under `if: always()`. An unchanged OAuth file creates no
+ciphertext-only commit.
+
+If OpenAI revokes the grant or Hermes no longer recognizes it, authenticate the dedicated local
+profile again, re-encrypt its fresh `auth.json` with the same public recipient, replace the exact
+repository ciphertext, and commit it. To rotate the encryption identity, generate a new identity,
+replace `OPENAI_OAUTH_SECRET`, re-encrypt from a freshly authenticated profile to the new public
+recipient, verify it, and commit the replacement ciphertext. Never run an interactive login flow
+inside GitHub Actions.
 
 ## Run a project skill locally
 

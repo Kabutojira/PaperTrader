@@ -438,6 +438,8 @@ def is_runtime_path_allowed(raw_path: str) -> bool:
     if any(part in {"", ".", ".."} for part in raw_parts):
         return False
     path = PurePosixPath(raw_path)
+    if path == PurePosixPath(".papertrader/credentials/openai-oauth-auth.json.age"):
+        return True
     if path.is_absolute() or not path.parts or path.parts[0] != "data":
         return False
 

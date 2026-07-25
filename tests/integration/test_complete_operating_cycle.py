@@ -793,7 +793,7 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert len(read_table(sandbox_repository, "operations_todo")) >= 2
 
     home = tmp_path / "hermes"
-    configure_hermes_home(sandbox_repository, home)
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
     native = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
     native.parent.mkdir(parents=True)
     native.write_text(

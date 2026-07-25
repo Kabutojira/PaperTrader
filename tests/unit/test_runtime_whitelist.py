@@ -20,6 +20,7 @@ from papertrader.integrity import is_runtime_path_allowed, validate_runtime_path
         "data/logs/operations-2026.ndjson",
         "data/logs/log.txt",
         "data/issues.md",
+        ".papertrader/credentials/openai-oauth-auth.json.age",
     ],
 )
 def test_allowed_runtime_paths(path: str) -> None:
@@ -40,6 +41,10 @@ def test_allowed_runtime_paths(path: str) -> None:
         "/data/tables/securities.csv",
         "data\\tables\\securities.csv",
         "site/public/index.html",
+        ".papertrader/credentials/auth.json",
+        ".papertrader/credentials/openai-oauth.agekey",
+        ".papertrader/credentials/other.json.age",
+        ".papertrader/credentials/subdir/openai-oauth-auth.json.age",
     ],
 )
 def test_disallowed_runtime_paths(path: str) -> None:

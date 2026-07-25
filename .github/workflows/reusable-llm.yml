@@ -39,8 +39,8 @@ on:
         default: false
         type: boolean
     secrets:
-      OPENROUTER_API_KEY:
-        description: Inference-only credential forwarded solely to Hermes
+      OPENAI_OAUTH_SECRET:
+        description: age private identity used only by runtime credential steps
         required: false
     outputs:
       commit_sha:
@@ -55,6 +55,9 @@ on:
       run_id:
         description: Immutable workflow run ID
         value: ${{ jobs.runtime.outputs.run_id }}
+      oauth_changed:
+        description: Whether refreshed encrypted OpenAI OAuth state was committed
+        value: ${{ jobs.commit.outputs.oauth_changed }}
   workflow_dispatch:
     inputs:
       operation_id:
@@ -113,6 +116,9 @@ jobs:
     outputs:
       artifact_name: ${{ steps.identities.outputs.artifact_name }}
       base_sha: ${{ steps.identities.outputs.base_sha }}
+      oauth_artifact_name: ${{ steps.identities.outputs.oauth_artifact_name }}
+      oauth_changed: ${{ steps.oauth.outputs.changed || 'false' }}
+      oauth_sha256: ${{ steps.oauth.outputs.sha256 }}
       report_path: ${{ steps.bundle.outputs.report_path }}
       run_id: ${{ steps.identities.outputs.run_id }}
     steps:
@@ -142,15 +148,87 @@ jobs:
           echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
           echo "run_id=gha-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
           echo "artifact_name=papertrader-runtime-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+          echo "oauth_artifact_name=papertrader-oauth-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
+      - name: Determine whether OAuth restoration is required
+        id: oauth_contract
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          MAX_OPERATIONS: ${{ inputs.max_operations }}
+        run: |
+          case "$MAX_OPERATIONS" in
+            ""|*[!0-9]*)
+              echo "::error::max_operations must be a non-negative integer"
+              exit 1
+              ;;
+          esac
+          oauth_required=false
+          if [ "$DRY_RUN" != "true" ] && [ "$MAX_OPERATIONS" -gt 0 ]; then
+            oauth_required=true
+          fi
+          echo "oauth_required=$oauth_required" >> "$GITHUB_OUTPUT"
       - name: Configure an isolated Hermes profile
         run: >-
           uv run papertrader agent configure
           --hermes-home "$HERMES_HOME"
           --replace-unmanaged
+      - name: Install checksum-verified age 1.3.1
+        if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
+        run: |
+          age_archive="$RUNNER_TEMP/age-v1.3.1-linux-amd64.tar.gz"
+          curl --fail --location --proto '=https' --tlsv1.2 \
+            --output "$age_archive" \
+            "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-linux-amd64.tar.gz"
+          echo "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377  $age_archive" \
+            | sha256sum --check --status
+          tar --extract --gzip --file "$age_archive" --directory "$RUNNER_TEMP"
+          install -m 755 "$RUNNER_TEMP/age/age" /usr/local/bin/age
+          install -m 755 "$RUNNER_TEMP/age/age-keygen" /usr/local/bin/age-keygen
+          test "$(age --version)" = "1.3.1"
+          test "$(age-keygen --version)" = "1.3.1"
+      - name: Restore encrypted OpenAI OAuth state
+        id: restore_oauth
+        if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
+        env:
+          OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
+        run: |
+          set -euo pipefail
+          CIPHERTEXT="$GITHUB_WORKSPACE/.papertrader/credentials/openai-oauth-auth.json.age"
+          IDENTITY_FILE="$RUNNER_TEMP/openai-oauth.agekey"
+          AUTH_FILE="$HERMES_HOME/auth.json"
+          AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"
+
+          if ! test -s "$CIPHERTEXT"; then
+            echo "::error::Missing .papertrader/credentials/openai-oauth-auth.json.age"
+            exit 1
+          fi
+          if ! test -n "${OPENAI_OAUTH_SECRET:-}"; then
+            echo "::error::OPENAI_OAUTH_SECRET is required for non-dry openai-codex inference"
+            exit 1
+          fi
+
+          install -m 600 /dev/null "$IDENTITY_FILE"
+          printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$IDENTITY_FILE"
+
+          age --decrypt \
+            --identity "$IDENTITY_FILE" \
+            --output "$AUTH_FILE" \
+            "$CIPHERTEXT"
+
+          chmod 600 "$AUTH_FILE"
+          python3 -c 'import json,sys; value=json.load(open(sys.argv[1], encoding="utf-8")); assert isinstance(value, dict)' "$AUTH_FILE"
+          cp "$AUTH_FILE" "$AUTH_BEFORE"
+          chmod 600 "$AUTH_BEFORE"
       - name: Hand the isolated profile to the Hermes user
         run: chown -R hermes:hermes "$HERMES_HOME"
       - name: Synchronize bundled native skills into the isolated profile
         run: hermes skills opt-in --sync
+      - name: Preflight OpenAI Codex OAuth without exposing credential state
+        if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
+        run: |
+          if ! hermes auth status openai-codex > /dev/null 2>&1; then
+            echo "::error::Hermes does not recognize the restored openai-codex OAuth credential"
+            exit 1
+          fi
       - name: Preflight native llm-wiki and the selected project skill
         env:
           OPERATION_TYPE: ${{ inputs.operation_type }}
@@ -175,7 +253,6 @@ jobs:
         env:
           DRY_RUN: ${{ inputs.dry_run }}
           MAX_OPERATIONS: ${{ inputs.max_operations }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPERATION_ID: ${{ inputs.operation_id }}
           OPERATION_TYPE: ${{ inputs.operation_type }}
           RUN_ID: ${{ steps.identities.outputs.run_id }}
@@ -229,9 +306,69 @@ jobs:
           path: ${{ runner.temp }}/papertrader-runtime-bundle
           if-no-files-found: error
           retention-days: 1
+      - name: Encrypt refreshed OpenAI OAuth state when changed
+        id: oauth
+        if: ${{ always() && steps.oauth_contract.outputs.oauth_required == 'true' && steps.restore_oauth.outcome == 'success' }}
+        run: |
+          set -euo pipefail
+          IDENTITY_FILE="$RUNNER_TEMP/openai-oauth.agekey"
+          AUTH_FILE="$HERMES_HOME/auth.json"
+          AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"
+          AUTH_VERIFY="$RUNNER_TEMP/openai-oauth-auth.verify.json"
+          REFRESHED_CIPHERTEXT="$RUNNER_TEMP/openai-oauth-auth.json.age"
+          ARTIFACT_ROOT="$RUNNER_TEMP/papertrader-oauth-artifact"
+          ARTIFACT_FILE="$ARTIFACT_ROOT/.papertrader/credentials/openai-oauth-auth.json.age"
+
+          test -s "$IDENTITY_FILE"
+          test -s "$AUTH_BEFORE"
+          test -s "$AUTH_FILE"
+          python3 -c 'import json,sys; value=json.load(open(sys.argv[1], encoding="utf-8")); assert isinstance(value, dict)' "$AUTH_FILE"
+          if cmp -s "$AUTH_BEFORE" "$AUTH_FILE"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          AGE_RECIPIENT="$(age-keygen -y "$IDENTITY_FILE")"
+          test -n "$AGE_RECIPIENT"
+          age --encrypt \
+            --recipient "$AGE_RECIPIENT" \
+            --output "$REFRESHED_CIPHERTEXT" \
+            "$AUTH_FILE"
+          age --decrypt \
+            --identity "$IDENTITY_FILE" \
+            --output "$AUTH_VERIFY" \
+            "$REFRESHED_CIPHERTEXT"
+          cmp -s "$AUTH_FILE" "$AUTH_VERIFY"
+          test -s "$REFRESHED_CIPHERTEXT"
+
+          mkdir -p "$(dirname "$ARTIFACT_FILE")"
+          install -m 600 "$REFRESHED_CIPHERTEXT" "$ARTIFACT_FILE"
+          ciphertext_sha256="$(sha256sum "$REFRESHED_CIPHERTEXT" | cut -d ' ' -f 1)"
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+          echo "sha256=$ciphertext_sha256" >> "$GITHUB_OUTPUT"
+      - name: Upload only the refreshed OAuth ciphertext
+        if: ${{ always() && steps.oauth.outputs.changed == 'true' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: ${{ steps.identities.outputs.oauth_artifact_name }}
+          path: ${{ runner.temp }}/papertrader-oauth-artifact
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+      - name: Remove all plaintext OAuth credential material
+        if: ${{ always() }}
+        run: |
+          rm -f \
+            "$HERMES_HOME/auth.json" \
+            "$RUNNER_TEMP/openai-oauth.agekey" \
+            "$RUNNER_TEMP/openai-oauth-auth.before.json" \
+            "$RUNNER_TEMP/openai-oauth-auth.verify.json" \
+            "$RUNNER_TEMP/openai-oauth-auth.json.age"
+          rm -rf "$RUNNER_TEMP/papertrader-oauth-artifact"
 
   commit:
     needs: runtime
+    if: ${{ always() }}
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     permissions:
@@ -242,12 +379,13 @@ jobs:
     outputs:
       changed: ${{ steps.outcome.outputs.changed }}
       commit_sha: ${{ steps.outcome.outputs.commit_sha }}
+      oauth_changed: ${{ steps.outcome.outputs.oauth_changed }}
       report_path: ${{ needs.runtime.outputs.report_path }}
     steps:
       - name: Check out the exact runtime base without persisted credentials
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
-          ref: ${{ needs.runtime.outputs.base_sha }}
+          ref: ${{ needs.runtime.outputs.base_sha || inputs.target_branch || github.event.repository.default_branch }}
           fetch-depth: 0
           persist-credentials: false
       - name: Install pinned project runner
@@ -255,15 +393,35 @@ jobs:
       - name: Install locked Python dependencies
         run: uv sync --locked --all-groups
       - name: Download the runtime bundle with artifact digest verification
+        if: ${{ needs.runtime.result == 'success' }}
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: ${{ needs.runtime.outputs.artifact_name }}
           path: ${{ runner.temp }}/papertrader-runtime-bundle
       - name: Apply the exact validated runtime patch
+        if: ${{ needs.runtime.result == 'success' }}
         run: >-
           uv run papertrader workflow bundle apply
           --bundle-directory "${RUNNER_TEMP}/papertrader-runtime-bundle"
+      - name: Download the refreshed OAuth ciphertext with artifact digest verification
+        if: ${{ needs.runtime.outputs.oauth_changed == 'true' }}
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+        with:
+          name: ${{ needs.runtime.outputs.oauth_artifact_name }}
+          path: ${{ runner.temp }}/papertrader-oauth-artifact
+      - name: Validate and stage only the refreshed OAuth ciphertext
+        if: ${{ needs.runtime.outputs.oauth_changed == 'true' }}
+        env:
+          OAUTH_SHA256: ${{ needs.runtime.outputs.oauth_sha256 }}
+        run: |
+          uv run papertrader workflow oauth-artifact apply \
+            --artifact-directory "$RUNNER_TEMP/papertrader-oauth-artifact" \
+            --expected-sha256 "$OAUTH_SHA256"
+          test ! -e "$RUNNER_TEMP/papertrader-oauth-artifact/auth.json"
+          test ! -e ".papertrader/credentials/auth.json"
+          git add -- .papertrader/credentials/openai-oauth-auth.json.age
       - name: Re-run validation in the commit boundary
+        if: ${{ needs.runtime.result == 'success' }}
         run: |
           uv run ruff check .
           uv run ruff format --check .
@@ -273,11 +431,18 @@ jobs:
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
           uv run papertrader runtime-whitelist validate --staged
-      - name: Create a runtime commit only when the patch is non-empty
+      - name: Validate credential-only staging after a runtime failure
+        if: ${{ needs.runtime.result != 'success' && needs.runtime.outputs.oauth_changed == 'true' }}
+        run: |
+          staged_paths="$(git diff --cached --name-only --diff-filter=ACDMRTUXB)"
+          test "$staged_paths" = ".papertrader/credentials/openai-oauth-auth.json.age"
+          uv run papertrader runtime-whitelist validate --staged
+      - name: Create a commit only when validated state changed
         id: commit
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && (needs.runtime.result == 'success' || needs.runtime.outputs.oauth_changed == 'true') }}
         env:
           RUN_ID: ${{ needs.runtime.outputs.run_id }}
+          RUNTIME_RESULT: ${{ needs.runtime.result }}
         run: |
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -286,10 +451,14 @@ jobs:
           fi
           git config user.name "papertrader-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore(runtime): publish daily run ${RUN_ID}"
+          if [ "$RUNTIME_RESULT" = "success" ]; then
+            git commit -m "chore(runtime): publish daily run ${RUN_ID}"
+          else
+            git commit -m "chore(auth): persist refreshed OpenAI OAuth state"
+          fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-      - name: Rebase the runtime commit and repeat strict validation
+      - name: Rebase the validated commit
         id: rebase
         if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' }}
         env:
@@ -297,13 +466,28 @@ jobs:
         run: |
           git fetch --no-tags origin "$TARGET_BRANCH"
           git rebase "origin/${TARGET_BRANCH}"
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Repeat strict validation after a successful runtime rebase
+        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' && needs.runtime.result == 'success' }}
+        env:
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
           uv run papertrader integrity --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
           uv run papertrader runtime-whitelist validate \
             --base-ref "origin/${TARGET_BRANCH}" \
             --head-ref HEAD
-          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Repeat credential-only validation after a failed runtime rebase
+        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' && needs.runtime.result != 'success' }}
+        env:
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          changed_paths="$(git diff --name-only --diff-filter=ACDMRTUXB "origin/${TARGET_BRANCH}..HEAD")"
+          test "$changed_paths" = ".papertrader/credentials/openai-oauth-auth.json.age"
+          uv run papertrader runtime-whitelist validate \
+            --base-ref "origin/${TARGET_BRANCH}" \
+            --head-ref HEAD
       - name: Push only from the post-agent credentialed boundary
         if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' }}
         env:
@@ -321,11 +505,15 @@ jobs:
           DRY_RUN: ${{ inputs.dry_run }}
           REBASED_SHA: ${{ steps.rebase.outputs.commit_sha }}
           RUNTIME_CHANGED: ${{ steps.commit.outputs.changed }}
+          OAUTH_CHANGED: ${{ needs.runtime.outputs.oauth_changed }}
         run: |
+          base_sha="${BASE_SHA:-$(git rev-parse HEAD)}"
           if [ "$DRY_RUN" = "true" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "commit_sha=$BASE_SHA" >> "$GITHUB_OUTPUT"
+            echo "commit_sha=$base_sha" >> "$GITHUB_OUTPUT"
+            echo "oauth_changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=${RUNTIME_CHANGED:-false}" >> "$GITHUB_OUTPUT"
-            echo "commit_sha=${REBASED_SHA:-${COMMIT_SHA:-$BASE_SHA}}" >> "$GITHUB_OUTPUT"
+            echo "commit_sha=${REBASED_SHA:-${COMMIT_SHA:-$base_sha}}" >> "$GITHUB_OUTPUT"
+            echo "oauth_changed=${OAUTH_CHANGED:-false}" >> "$GITHUB_OUTPUT"
           fi

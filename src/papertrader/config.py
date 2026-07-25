@@ -134,10 +134,12 @@ class ClassifierSettings:
 
 @dataclass(frozen=True, slots=True)
 class HermesSettings:
-    """Pinned one-shot Hermes invocation and credential-forwarding policy."""
+    """Pinned one-shot Hermes invocation and OAuth-only provider policy."""
 
     command: tuple[str, ...]
     arguments: tuple[str, ...]
+    provider: str
+    model: str
     toolsets: tuple[str, ...]
     required_native_skill: str
     required_native_skill_version: str
@@ -439,14 +441,23 @@ def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
 
     command = tuple(shlex.split(parser.get("hermes", "command")))
     arguments = tuple(shlex.split(parser.get("hermes", "arguments")))
+    provider = parser.get("hermes", "provider").strip()
+    model = parser.get("hermes", "model").strip()
     toolsets = _csv_values(parser, "hermes", "toolsets")
     required_skill = parser.get("hermes", "require_native_skill").strip()
     required_version = parser.get("hermes", "native_skill_version").strip()
-    inference_environment = _csv_values(parser, "hermes", "inference_environment")
+    raw_inference_environment = parser.get("hermes", "inference_environment").strip()
+    inference_environment = (
+        _csv_values(parser, "hermes", "inference_environment") if raw_inference_environment else ()
+    )
     if command != ("hermes", "chat"):
         raise ConfigurationError("hermes.command must be exactly the hermes chat entry point")
     if arguments != ("--quiet", "--yolo"):
         raise ConfigurationError("hermes.arguments must be exactly --quiet --yolo")
+    if provider != "openai-codex":
+        raise ConfigurationError("hermes.provider must be exactly openai-codex")
+    if not model or any(character.isspace() for character in model):
+        raise ConfigurationError("hermes.model must be one non-empty model identifier")
     if set(toolsets) != {"file", "terminal", "web"}:
         raise ConfigurationError("hermes.toolsets must be exactly web,file,terminal")
     if required_skill != "llm-wiki" or not required_version:
@@ -465,9 +476,15 @@ def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
         for name in inference_environment
     ):
         raise ConfigurationError("hermes.inference_environment contains a forbidden name")
+    if inference_environment:
+        raise ConfigurationError(
+            "hermes.inference_environment must be empty for openai-codex OAuth"
+        )
     return HermesSettings(
         command=command,
         arguments=arguments,
+        provider=provider,
+        model=model,
         toolsets=toolsets,
         required_native_skill=required_skill,
         required_native_skill_version=required_version,

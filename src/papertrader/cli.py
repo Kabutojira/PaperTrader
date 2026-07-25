@@ -39,6 +39,7 @@ from papertrader.models import (
     PositionMark,
     ReferencePrice,
 )
+from papertrader.oauth_credentials import apply_oauth_ciphertext_artifact
 from papertrader.opportunity import process_opportunity_transitions
 from papertrader.orders import (
     cancel_paper_order,
@@ -247,6 +248,13 @@ def _parser() -> argparse.ArgumentParser:
     bundle_create.add_argument("--base-sha", required=True)
     bundle_apply = bundle_commands.add_parser("apply")
     bundle_apply.add_argument("--bundle-directory", type=Path, required=True)
+    oauth_artifact = workflow_commands.add_parser(
+        "oauth-artifact", help="apply one verified encrypted OAuth artifact"
+    )
+    oauth_commands = oauth_artifact.add_subparsers(dest="oauth_artifact_command", required=True)
+    oauth_apply = oauth_commands.add_parser("apply")
+    oauth_apply.add_argument("--artifact-directory", type=Path, required=True)
+    oauth_apply.add_argument("--expected-sha256", required=True)
 
     whitelist = commands.add_parser(
         "runtime-whitelist", help="validate automated runtime commit paths"
@@ -768,6 +776,7 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         if arguments.agent_command == "configure":
             path = configure_hermes_home(
                 root,
+                settings,
                 home,
                 replace_unmanaged=arguments.replace_unmanaged,
             )
@@ -831,28 +840,36 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(json.dumps(asdict(delivery_result), sort_keys=True))
         return 0
     if arguments.command == "workflow":
-        if arguments.bundle_command == "create":
-            bundle = create_runtime_bundle(
-                root,
-                arguments.output_directory,
-                run_id=arguments.run_id,
-                base_sha=arguments.base_sha,
+        if arguments.workflow_command == "bundle":
+            if arguments.bundle_command == "create":
+                bundle = create_runtime_bundle(
+                    root,
+                    arguments.output_directory,
+                    run_id=arguments.run_id,
+                    base_sha=arguments.base_sha,
+                )
+            else:
+                bundle = apply_runtime_bundle(root, arguments.bundle_directory)
+            print(
+                json.dumps(
+                    {
+                        "base_sha": bundle.base_sha,
+                        "run_id": bundle.run_id,
+                        "patch_sha256": bundle.patch_sha256,
+                        "changed": bundle.changed,
+                        "changed_paths": bundle.changed_paths,
+                        "report_path": bundle.report_path,
+                    },
+                    sort_keys=True,
+                )
             )
         else:
-            bundle = apply_runtime_bundle(root, arguments.bundle_directory)
-        print(
-            json.dumps(
-                {
-                    "base_sha": bundle.base_sha,
-                    "run_id": bundle.run_id,
-                    "patch_sha256": bundle.patch_sha256,
-                    "changed": bundle.changed,
-                    "changed_paths": bundle.changed_paths,
-                    "report_path": bundle.report_path,
-                },
-                sort_keys=True,
+            path = apply_oauth_ciphertext_artifact(
+                root,
+                arguments.artifact_directory,
+                expected_sha256=arguments.expected_sha256,
             )
-        )
+            print(path.relative_to(root).as_posix())
         return 0
     if arguments.command == "portfolio" and arguments.portfolio_command == "reconcile":
         return _print_result("portfolio", reconcile_portfolio(root))

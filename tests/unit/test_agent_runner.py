@@ -25,9 +25,9 @@ from papertrader.tables import read_table
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
 
-def _hermes_home(repository: Path, tmp_path: Path) -> Path:
+def _hermes_home(repository: Path, settings: Settings, tmp_path: Path) -> Path:
     home = tmp_path / "hermes-profile"
-    configure_hermes_home(repository, home)
+    configure_hermes_home(repository, settings, home)
     skill = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
     skill.parent.mkdir(parents=True)
     skill.write_text(
@@ -88,7 +88,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, tmp_path)
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
     operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
     captured: dict[str, object] = {}
 
@@ -121,7 +121,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
         hermes_home=home,
         environment={
             "PATH": "/usr/bin",
-            "OPENROUTER_API_KEY": "model-only",
+            "OPENROUTER_API_KEY": "must-not-pass",
             "GITHUB_TOKEN": "must-not-pass",
             "TELEGRAM_BOT_TOKEN": "must-not-pass",
         },
@@ -133,12 +133,14 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     command = captured["command"]
     assert isinstance(command, tuple)
     assert "--yolo" in command
+    assert command[command.index("--provider") + 1] == "openai-codex"
+    assert command[command.index("--model") + 1] == "gpt-5.3-codex"
     assert command.count("--skills") == 3
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
     assert command[command.index("--max-turns") + 1] == "60"
     child_environment = captured["environment"]
     assert isinstance(child_environment, dict)
-    assert child_environment["OPENROUTER_API_KEY"] == "model-only"
+    assert "OPENROUTER_API_KEY" not in child_environment
     assert "GITHUB_TOKEN" not in child_environment
     assert "TELEGRAM_BOT_TOKEN" not in child_environment
     assert child_environment["HERMES_YOLO_MODE"] == "1"
@@ -153,7 +155,7 @@ def test_shared_budget_batch_runs_two_operations_strictly_sequentially(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, tmp_path)
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
     first = _enqueue_opportunity(sandbox_repository, sandbox_settings)
     second, created = enqueue_operation(
         sandbox_repository,
@@ -251,7 +253,7 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, tmp_path)
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
 
     sanitized = sanitized_hermes_environment(
         sandbox_repository,
@@ -268,29 +270,29 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
         operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
     )
 
-    assert sanitized["OPENAI_API_KEY"] == "inference"
+    assert "OPENAI_API_KEY" not in sanitized
     assert "ACTIONS_RUNTIME_TOKEN" not in sanitized
     assert "BROKER_API_TOKEN" not in sanitized
     assert "GH_TOKEN" not in sanitized
 
 
 def test_configure_refuses_to_replace_an_unmanaged_profile(
-    sandbox_repository: Path, tmp_path: Path
+    sandbox_repository: Path, sandbox_settings: Settings, tmp_path: Path
 ) -> None:
     home = tmp_path / "personal-hermes"
     home.mkdir()
     (home / "config.yaml").write_text("model: personal\n", encoding="utf-8")
 
     with pytest.raises(AgentRunError, match="unmanaged Hermes profile"):
-        configure_hermes_home(sandbox_repository, home)
+        configure_hermes_home(sandbox_repository, sandbox_settings, home)
 
 
 def test_configure_writes_an_assignment_free_managed_environment(
-    sandbox_repository: Path, tmp_path: Path
+    sandbox_repository: Path, sandbox_settings: Settings, tmp_path: Path
 ) -> None:
     home = tmp_path / "managed-hermes"
 
-    configure_hermes_home(sandbox_repository, home)
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
 
     lines = (home / ".env").read_text(encoding="utf-8").splitlines()
     assert lines
@@ -298,14 +300,34 @@ def test_configure_writes_an_assignment_free_managed_environment(
 
 
 def test_configure_rejects_credentials_added_to_a_managed_profile(
-    sandbox_repository: Path, tmp_path: Path
+    sandbox_repository: Path, sandbox_settings: Settings, tmp_path: Path
 ) -> None:
     home = tmp_path / "managed-hermes"
-    configure_hermes_home(sandbox_repository, home)
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
     (home / ".env").write_text("OPENROUTER_API_KEY=secret\n", encoding="utf-8")
 
-    with pytest.raises(AgentRunError, match="contains credentials"):
-        configure_hermes_home(sandbox_repository, home)
+    with pytest.raises(AgentRunError, match="contains environment credentials"):
+        configure_hermes_home(sandbox_repository, sandbox_settings, home)
+
+
+def test_configure_preserves_restored_oauth_state(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = tmp_path / "managed-hermes"
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
+    auth = home / "auth.json"
+    oauth_state = b'{"active_provider":"openai-codex","version":1}\n'
+    auth.write_bytes(oauth_state)
+    auth.chmod(0o600)
+
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
+
+    assert auth.read_bytes() == oauth_state
+    config = (home / "config.yaml").read_text(encoding="utf-8")
+    assert "provider: openai-codex" in config
+    assert "default: gpt-5.3-codex" in config
 
 
 def test_postrun_native_skill_mutation_fails_closed(
@@ -313,7 +335,7 @@ def test_postrun_native_skill_mutation_fails_closed(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, tmp_path)
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
     operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
 
     def execute(
@@ -353,7 +375,7 @@ def test_wiki_ingest_source_path_cannot_read_outside_allowed_source_data(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, tmp_path)
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
     operation_id, _ = enqueue_operation(
         sandbox_repository,
         sandbox_settings,
@@ -392,7 +414,7 @@ def test_wiki_ingest_source_hash_is_verified_before_hermes(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, tmp_path)
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
     packet = sandbox_repository / "data" / "wiki" / "inbox" / "source-packet.md"
     packet.write_text("Untrusted source packet.\n", encoding="utf-8")
     operation_id, _ = enqueue_operation(

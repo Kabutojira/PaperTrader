@@ -160,9 +160,12 @@ Scheduled and manually dispatched runtime workflows may commit only these paths 
 - canonical and generated CSV files under `data/**/*.csv`, including the rolling one-year price cache in `data/market/prices/`;
 - operation payloads, run manifests, and validation results under `data/operations/` and `data/runs/` with extensions `.json` or `.md`;
 - structured and human-readable logs under `data/logs/` with extensions `.ndjson` or `.txt`;
-- `data/issues.md`.
+- `data/issues.md`;
+- the single age-encrypted OAuth state file `.papertrader/credentials/openai-oauth-auth.json.age`.
 
 The runtime workflow must fail before commit if any changed path is outside this whitelist. It must never commit `.env` files, credentials, Hermes home/profile data, model caches, virtual environments, temporary files, or generated `site/public/` output. Development commits made by a human or a local agentic harness may also modify source code, schemas, skills, tests, workflow definitions, configuration templates, and site source files.
+The encrypted OAuth path is the only credential-state exception: plaintext `auth.json`, age private
+identities, snapshots, and every other file under `.papertrader/credentials/` remain forbidden.
 
 ## Canonical data contracts
 
@@ -432,7 +435,10 @@ This file is a manifest of changes already completed, not a list of changes awai
 - Preflight the bundled native `llm-wiki` skill on every run, record its version/content hash in the run artifact, and fail with an actionable issue if it is unavailable. Do not silently replace it with an unrelated wiki implementation.
 - Set checkout `persist-credentials: false`.
 - Do not export `GITHUB_TOKEN`, Telegram secrets, or deployment credentials into the Hermes step.
-- Always invoke Hermes with `--yolo`; there is no interactive approver. Keep the Hermes process credential-free and enforce the post-run path whitelist, schema checks, and diff validator.
+- Always invoke Hermes with `--yolo`; there is no interactive approver. Give Hermes only its
+  isolated, restored `auth.json`; never give it the age identity, GitHub write token, Telegram
+  secret, deployment credential, or an API-key fallback. Enforce the post-run path whitelist,
+  schema checks, and diff validator.
 - Do not run LLM workflows on pull requests from forks or other untrusted GitHub events.
 - Reject symlinks and path traversal in agent results.
 

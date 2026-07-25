@@ -2,6 +2,8 @@ name: CI
 
 on:
   push:
+    paths-ignore:
+      - .papertrader/credentials/openai-oauth-auth.json.age
   pull_request:
   workflow_dispatch:
 

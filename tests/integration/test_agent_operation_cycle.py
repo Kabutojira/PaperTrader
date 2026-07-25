@@ -21,7 +21,7 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
     tmp_path: Path,
 ) -> None:
     home = tmp_path / "hermes"
-    configure_hermes_home(sandbox_repository, home)
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
     native = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
     native.parent.mkdir(parents=True)
     native.write_text(

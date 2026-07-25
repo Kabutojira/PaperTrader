@@ -16,9 +16,9 @@ from papertrader.queue import enqueue_operation
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
 
-def _home(repository: Path, tmp_path: Path) -> Path:
+def _home(repository: Path, settings: Settings, tmp_path: Path) -> Path:
     home = tmp_path / "hermes"
-    configure_hermes_home(repository, home)
+    configure_hermes_home(repository, settings, home)
     skill = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
     skill.parent.mkdir(parents=True)
     skill.write_text(
@@ -98,7 +98,7 @@ def test_out_of_scope_source_write_fails_closed(
     tmp_path: Path,
 ) -> None:
     operation_id = _enqueue(sandbox_repository, sandbox_settings)
-    home = _home(sandbox_repository, tmp_path)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
 
     def change(root: Path) -> None:
         path = root / "src" / "papertrader" / "malicious.py"
@@ -123,7 +123,7 @@ def test_stale_unchanged_file_in_manifest_fails_closed(
     tmp_path: Path,
 ) -> None:
     operation_id = _enqueue(sandbox_repository, sandbox_settings)
-    home = _home(sandbox_repository, tmp_path)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
 
     with pytest.raises(AgentRunError, match="stale or incomplete"):
         run_one_operation(
@@ -143,7 +143,7 @@ def test_symlink_write_fails_closed(
     tmp_path: Path,
 ) -> None:
     operation_id = _enqueue(sandbox_repository, sandbox_settings)
-    home = _home(sandbox_repository, tmp_path)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
 
     def change(root: Path) -> None:
         (root / "data" / "wiki" / "ideas" / "evil.md").symlink_to("../index.md")
@@ -166,7 +166,7 @@ def test_audited_request_cannot_change_after_structured_command(
     tmp_path: Path,
 ) -> None:
     operation_id = _enqueue(sandbox_repository, sandbox_settings)
-    home = _home(sandbox_repository, tmp_path)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
 
     def execute(
         command: Sequence[str],

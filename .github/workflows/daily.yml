@@ -57,7 +57,7 @@ jobs:
       trigger: ${{ github.event_name }}
       serialized_by_caller: true
     secrets:
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
 
   delivery:
     needs: runtime

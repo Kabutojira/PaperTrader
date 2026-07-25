@@ -116,12 +116,79 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "git rebase" in text
     assert "git diff --cached --quiet" in text
     assert "--yolo" not in text  # validated config and runner argv own this flag
-    assert set(workflow["on"]["workflow_call"]["secrets"]) == {"OPENROUTER_API_KEY"}
-    assert "secrets.OPENROUTER_API_KEY" in runtime_text
+    assert set(workflow["on"]["workflow_call"]["secrets"]) == {"OPENAI_OAUTH_SECRET"}
+    assert "secrets.OPENAI_OAUTH_SECRET" in runtime_text
     assert "github.token" not in runtime_text
     assert "TELEGRAM" not in runtime_text
     assert "github.token" in commit_text
-    assert "OPENROUTER_API_KEY" not in commit_text
+    assert "OPENAI_OAUTH_SECRET" not in commit_text
+    assert "OPENROUTER_API_KEY" not in text
+
+
+def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(
+    repository_root: Path,
+) -> None:
+    path = repository_root / ".github" / "workflows" / "reusable-llm.yml"
+    workflow = _workflow(path)
+    runtime = workflow["jobs"]["runtime"]
+    commit = workflow["jobs"]["commit"]
+    steps = {step["name"]: step for step in runtime["steps"]}
+    restore = steps["Restore encrypted OpenAI OAuth state"]
+    persist = steps["Encrypt refreshed OpenAI OAuth state when changed"]
+    upload = steps["Upload only the refreshed OAuth ciphertext"]
+    cleanup = steps["Remove all plaintext OAuth credential material"]
+
+    assert "OPENAI_OAUTH_SECRET" not in workflow.get("env", {})
+    assert "OPENAI_OAUTH_SECRET" not in runtime["env"]
+    assert "OPENAI_OAUTH_SECRET" not in commit["env"]
+    assert restore["env"] == {"OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}"}
+    assert "steps.oauth_contract.outputs.oauth_required == 'true'" in restore["if"]
+    assert "inputs.dry_run" not in restore["env"]
+    assert 'test -s "$CIPHERTEXT"' in restore["run"]
+    assert 'test -n "${OPENAI_OAUTH_SECRET:-}"' in restore["run"]
+    assert "age --decrypt" in restore["run"]
+    assert 'AUTH_FILE="$HERMES_HOME/auth.json"' in restore["run"]
+    assert 'AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"' in restore["run"]
+    assert "hermes auth status openai-codex > /dev/null 2>&1" in yaml.safe_dump(runtime)
+
+    assert "always()" in persist["if"]
+    assert 'cmp -s "$AUTH_BEFORE" "$AUTH_FILE"' in persist["run"]
+    assert 'age-keygen -y "$IDENTITY_FILE"' in persist["run"]
+    assert "age --encrypt" in persist["run"]
+    assert 'cmp -s "$AUTH_FILE" "$AUTH_VERIFY"' in persist["run"]
+    assert upload["with"]["retention-days"] == "1"
+    assert upload["with"]["include-hidden-files"] == "true"
+    assert upload["with"]["path"] == "${{ runner.temp }}/papertrader-oauth-artifact"
+    assert "always()" in cleanup["if"]
+    for required_path in (
+        "$HERMES_HOME/auth.json",
+        "$RUNNER_TEMP/openai-oauth.agekey",
+        "$RUNNER_TEMP/openai-oauth-auth.before.json",
+        "$RUNNER_TEMP/openai-oauth-auth.verify.json",
+        "$RUNNER_TEMP/openai-oauth-auth.json.age",
+    ):
+        assert required_path in cleanup["run"]
+
+    assert commit["if"] == "${{ always() }}"
+    assert "needs.runtime.result != 'success'" in yaml.safe_dump(commit)
+    assert "chore(auth): persist refreshed OpenAI OAuth state" in path.read_text(encoding="utf-8")
+    assert ".papertrader/credentials/openai-oauth-auth.json.age" in yaml.safe_dump(commit)
+    assert "$HERMES_HOME/auth.json" not in yaml.safe_dump(commit)
+    assert "openai-oauth.agekey" not in yaml.safe_dump(commit)
+
+
+def test_age_install_is_version_and_checksum_pinned(repository_root: Path) -> None:
+    workflow = _workflow(repository_root / ".github" / "workflows" / "reusable-llm.yml")
+    runtime = workflow["jobs"]["runtime"]
+    install = next(
+        step for step in runtime["steps"] if step["name"] == "Install checksum-verified age 1.3.1"
+    )
+    script = install["run"]
+
+    assert "/releases/download/v1.3.1/age-v1.3.1-linux-amd64.tar.gz" in script
+    assert "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377" in script
+    assert "sha256sum --check --status" in script
+    assert 'test "$(age --version)" = "1.3.1"' in script
 
 
 def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
@@ -139,6 +206,23 @@ def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
     assert 'echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"' in boundary
     assert "git rev-parse --verify 'HEAD^{commit}'" in identities
     assert handoff == 'chown -R hermes:hermes "$HERMES_HOME"'
+
+
+def test_daily_forwards_only_oauth_secret_and_auth_only_pushes_do_not_retrigger_ci(
+    repository_root: Path,
+) -> None:
+    daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
+    runtime = daily["jobs"]["runtime"]
+    assert runtime["secrets"] == {"OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}"}
+    assert daily["concurrency"] == {
+        "group": "papertrader-write",
+        "cancel-in-progress": "false",
+    }
+
+    ci = _workflow(repository_root / ".github" / "workflows" / "ci.yml")
+    assert ci["on"]["push"]["paths-ignore"] == [
+        ".papertrader/credentials/openai-oauth-auth.json.age"
+    ]
 
 
 def test_hermes_runtime_bootstraps_uv_without_container_pip(repository_root: Path) -> None:

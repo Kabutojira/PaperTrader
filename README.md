@@ -46,10 +46,10 @@ uv run papertrader agent run \
   --run-id local-20260724-01
 ```
 
-The subprocess receives repository paths, safe process settings, and only explicitly configured
-inference-provider environment variables. GitHub, Telegram, deployment, brokerage, Actions OIDC,
-and runtime tokens are never forwarded. Provider credentials must come from the parent process,
-not files in the dedicated Hermes profile.
+The subprocess receives repository paths, safe process settings, and the isolated profile's
+`auth.json`. Its provider is fixed to `openai-codex`, while the model remains configurable in
+`config.ini`. No inference API key, GitHub, Telegram, deployment, brokerage, Actions OIDC, age
+identity, or runtime token is forwarded.
 
 A local harness such as Codex uses the same contract without inventing alternate instructions:
 read `papertrader-controller/SKILL.md` and exactly one operation `SKILL.md`, claim one queue row,
@@ -101,11 +101,14 @@ canonical daily report, and runs the complete validation gate. Manual runs expos
 `send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
 or delivery.
 
-Hermes and the commit boundary are separate jobs. The credential-free runtime exports a
-hash-bound binary patch containing only runtime-whitelisted paths. A clean checkout at the exact
-base commit verifies and applies that patch, repeats the gate, rebases, validates the rebased diff,
-and pushes only when a non-empty validated change exists. The GitHub write token is introduced
-only for that final push. The post-commit jobs then:
+Hermes and the commit boundary are separate jobs. The read-only runtime decrypts the repository's
+age-encrypted OpenAI Codex OAuth state into its isolated Hermes home, then exports a hash-bound
+binary runtime patch and, only after a token refresh, a separate ciphertext-only artifact. A clean
+checkout at the exact base commit verifies and applies the allowed artifacts, repeats the gate,
+rebases, validates the rebased diff, and pushes only when a non-empty validated change exists. If
+inference fails after a refresh, the commit boundary discards all runtime data and may commit only
+the exact encrypted OAuth file. The GitHub write token is introduced only for that final push, and
+the write job never receives the OAuth secret or plaintext. The post-commit jobs then:
 
 - build the wiki and its canonical daily reports from an exact commit with Quartz;
 - deploy the verified `site/public` artifact when Pages publication is enabled;
@@ -114,12 +117,14 @@ only for that final push. The post-commit jobs then:
 - retain a failed Telegram chunk cursor in the repository issue ledger so a later dispatch of
   `reporting.yml` can resume delivery without rolling back the runtime commit.
 
-Repository setup requires an inference-only `OPENROUTER_API_KEY` for non-dry Hermes runs and
-`TELEGRAM_BOT_TOKEN` plus `TELEGRAM_CHAT_ID` when delivery is enabled. Configure GitHub Pages to
-use **GitHub Actions** as its source, and enable repository secret scanning. These secrets are not
-placed in the Hermes profile or passed to validation, build, or commit steps. A deployment can be
-retried independently by manually dispatching `pages.yml` with the committed SHA. Telegram can be
-retried by dispatching `reporting.yml` with the same `commit_sha`, `report_path`, and `run_id`.
+Repository setup requires `OPENAI_OAUTH_SECRET` and the matching
+`.papertrader/credentials/openai-oauth-auth.json.age` for non-dry Hermes runs; no OpenAI or
+OpenRouter API key is needed for the main path. Delivery additionally requires
+`TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. Configure GitHub Pages to use **GitHub Actions** as its
+source, and enable repository secret scanning. See the operating runbook for OAuth seeding,
+verification, rotation, and revoked-grant recovery. A deployment can be retried independently by
+manually dispatching `pages.yml` with the committed SHA. Telegram can be retried by dispatching
+`reporting.yml` with the same `commit_sha`, `report_path`, and `run_id`.
 
 The `[classifier]` command and model are deployment settings for the cheap inbox decision. If they
 are intentionally left blank, candidate packets remain blocked with a recorded issue;

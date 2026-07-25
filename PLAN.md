@@ -173,3 +173,33 @@ all 128 tests, strict schema/integrity/wiki/portfolio gates, and the canonical s
 Hosted inference, push, Pages deployment, and Telegram network calls still require repository
 settings and secrets; their credential boundaries and deterministic handoffs are validated locally
 without exposing a real-trading credential or adding any real-execution adapter.
+
+## Step 6 — Persist OpenAI Codex OAuth state as age ciphertext — Complete (2026-07-24)
+
+Replace the main Hermes API-key path with the `openai-codex` OAuth provider while retaining the
+read-only runtime and sole write-enabled commit boundary. Restore `auth.json` only inside the
+isolated Hermes home, persist refreshes as one verified age ciphertext artifact, and permit a
+credential-only commit after a failed inference without admitting agent-generated data.
+
+**Exit criteria**
+
+- [x] The managed Hermes config and one-shot command force `openai-codex` with a configurable,
+  non-empty model and no API-key fallback.
+- [x] Non-dry runs restore the exact repository ciphertext with `OPENAI_OAUTH_SECRET`; dry runs do
+  not require, decrypt, re-encrypt, upload, or commit OAuth state.
+- [x] Changed OAuth plaintext is re-encrypted and byte-verified; unchanged plaintext produces no
+  randomized ciphertext churn.
+- [x] Runtime failures can cross the write boundary with only the exact encrypted credential path,
+  while the failed runtime remains the workflow result.
+- [x] Plaintext, private identities, snapshots, symlinks, path traversal, extra artifact files, and
+  broad credential-directory writes fail closed.
+- [x] Workflow contracts, disposable-age cryptographic tests, the complete Python suite, strict
+  integrity/wiki/accounting gates, formatting, lint, and typing pass locally.
+
+Implemented checksum-pinned age installation, isolated restore/status/refresh/cleanup steps, an
+exact ciphertext artifact validator, failure-safe commit/rebase behavior, repository ignore and
+binary-diff controls, an auth-only CI path filter, operator seeding/recovery documentation, and
+focused coverage for wrong identities, invalid ciphertext, no-op refreshes, staging isolation,
+secret partitioning, serialization, and cleanup. The repository ciphertext is present but remains
+opaque to local validation; a hosted non-dry inference and push still require the repository's
+configured `OPENAI_OAUTH_SECRET` and were not invoked from the development checkout.

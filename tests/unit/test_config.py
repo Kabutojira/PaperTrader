@@ -29,6 +29,9 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.operations.maximum_llm_operations_per_run == 5
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
+    assert settings.hermes.provider == "openai-codex"
+    assert settings.hermes.model == "gpt-5.3-codex"
+    assert settings.hermes.inference_environment == ()
     assert set(settings.hermes.toolsets) == {"web", "file", "terminal"}
     assert settings.hermes.required_native_skill == "llm-wiki"
     assert settings.hermes.required_native_skill_version == "2.1.0"
@@ -49,6 +52,25 @@ def test_settings_reject_noncanonical_wiki(
 
 def test_repository_root_discovery_from_nested_path(repository_root: Path) -> None:
     assert find_repository_root(repository_root / "data" / "wiki") == repository_root
+
+
+def test_settings_reject_api_key_fallback_for_main_hermes_provider(
+    sandbox_repository: Path,
+    paper_environment: dict[str, str],
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(
+        path.read_text(encoding="utf-8").replace(
+            "inference_environment =", "inference_environment = OPENAI_API_KEY"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigurationError, match="must be empty for openai-codex OAuth"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
 
 
 def test_settings_reject_contract_incompatible_price_retention(

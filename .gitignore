@@ -6,6 +6,10 @@
 *.key
 *credentials*.json
 *service-account*.json
+.papertrader/credentials/*.json
+.papertrader/credentials/*.agekey
+.papertrader/credentials/*.key
+.papertrader/credentials/*.tmp
 
 # Python
 __pycache__/
