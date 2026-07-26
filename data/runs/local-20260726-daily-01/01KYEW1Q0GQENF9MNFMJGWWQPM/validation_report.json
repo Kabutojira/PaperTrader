@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEXGRW037QRDKA4V5N79PVR.json",
+    "data/runs/local-20260726-daily-01/01KYEW1Q0GQENF9MNFMJGWWQPM/enqueue-rtx-security-research.json",
+    "data/wiki/ideas/idea_defense_aerospace.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T09:55:07Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1Q0GQENF9MNFMJGWWQPM",
+  "passed": true,
+  "run_id": "local-20260726-daily-01",
+  "validation_version": 1
+}

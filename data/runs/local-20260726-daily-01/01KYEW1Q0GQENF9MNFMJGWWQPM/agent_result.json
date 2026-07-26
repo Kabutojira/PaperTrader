@@ -1,0 +1,69 @@
+{
+  "operation_id": "01KYEW1Q0GQENF9MNFMJGWWQPM",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked defense and aerospace replenishment idea. European budget and investment forecasts plus RTX's current defense backlog, volume, margin, and cash conversion confirm the demand cycle, but appropriations, production, contract execution, commercial-engine liabilities, and valuation remain decisive. Enqueued one bounded RTX review; no relationship, strategy, signal, or paper order was created.",
+  "evidence": [
+    {
+      "source": "European Defence Agency, Defence Data 2025-2026",
+      "claim": "EU member-state defense spending reached EUR 418 billion in 2025 and is projected at EUR 454 billion in 2026, with investment at 36% of expenditure and R&D rising to EUR 20 billion.",
+      "url": "https://eda.europa.eu/news-and-events/news/2026/07/16/eu-defence-spending---418-billion-in-2025--projected-to--454-billion-in-2026",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "European Defence Agency, Defence Data 2025-2026",
+      "claim": "Collaborative procurement represented only 24% of equipment spending, identifying fragmentation as a concrete constraint on scale and supplier conversion.",
+      "url": "https://eda.europa.eu/news-and-events/news/2026/07/16/eu-defence-spending---418-billion-in-2025--projected-to--454-billion-in-2026",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "RTX second-quarter 2026 results",
+      "claim": "RTX reported sales up 14%, adjusted EPS up 21%, USD 2.9 billion of free cash flow, and a USD 289 billion backlog including USD 119 billion of defense work, and raised full-year guidance.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-23T00:00:00Z"
+    },
+    {
+      "source": "RTX second-quarter 2026 results",
+      "claim": "Raytheon segment sales rose 18% and operating profit 29%, driven by land and air defense, naval, and air-and-space systems including Patriot, Standard Missile, and AMRAAM.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-23T00:00:00Z"
+    },
+    {
+      "source": "RTX second-quarter 2026 results",
+      "claim": "RTX identifies government-priority changes, program execution, export approvals, supplier constraints, product safety, and the Pratt powder-metal issue among material risks, so combined backlog cannot be treated as guaranteed cash.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-23T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEXGRW037QRDKA4V5N79PVR.json",
+    "data/runs/local-20260726-daily-01/01KYEW1Q0GQENF9MNFMJGWWQPM/enqueue-rtx-security-research.json",
+    "data/wiki/ideas/idea_defense_aerospace.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYEXGRW037QRDKA4V5N79PVR"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched defense and aerospace replenishment: budgets and RTX conversion confirm demand, but procurement, contracts, engine liabilities, and valuation block a strategy; queued one bounded RTX review."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1Q0GQENF9MNFMJGWWQPM/enqueue-rtx-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and immutable operation payload.",
+      "Searched existing wiki and structured security identities to avoid duplicate ideas and ticker-only associations.",
+      "Created exactly one idea page with current primary evidence, mechanism, procurement and contract-conversion gates, contrary evidence, invalidation, confidence, and a review date.",
+      "Updated the complete wiki index and append-only research log.",
+      "Enqueued one bounded security review through the audited project CLI.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

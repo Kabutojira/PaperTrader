@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_wide_bandgap_power_semiconductors",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "AI power density; 800 VDC power trees; EV charging; traction platforms; renewable and grid inverters; design wins; 150-to-200mm transitions; packaging; yield; utilisation; Chinese capacity.",
+    "idea_id": "idea_wide_bandgap_power_semiconductors",
+    "invalidation": "Silicon closes the gap, architecture adoption slips, capacity outruns demand, qualification delays, Chinese supply compresses prices, yields disappoint, or capital intensity prevents free cash flow.",
+    "seed_claim": "Higher AI rack power and 800-900 volt EV, charging, and inverter architectures may drive selective SiC and GaN content, but yield, utilisation, pricing, and balance sheets determine value creation.",
+    "supporting_evidence": "The seed requires qualified suppliers to translate efficiency and power-density benefits into content, utilisation, margin, and multi-quarter revenue visibility.",
+    "value_chain": "Integrated SiC and GaN substrate, epitaxy, device, and module producers; reliability and yield-test equipment; packaging; AI power integrators; data centres; EVs; chargers; inverters; legacy silicon and weak pure-play counterviews."
+  },
+  "objective": "Research one SiC and GaN power-semiconductor adoption investment idea.",
+  "operation_id": "01KYEW20S0QVQ7H3AMGG7MSFFF",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

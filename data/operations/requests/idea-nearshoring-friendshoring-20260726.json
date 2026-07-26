@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_nearshoring_friendshoring_manufacturing",
+  "dedupe_key": "idea_research:idea_nearshoring_friendshoring_manufacturing:user-seed:2026-07-26",
+  "prompt": "Research one nearshoring and regional manufacturing-capacity investment idea.",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "seed_claim": "Mexico, North America, India, and selected Southeast Asia may convert tariffs, resilience rules, and incentives into measurable factory, industrial-real-estate, logistics, EMS, and automation demand.",
+    "drivers": "USMCA review; rules of origin; tariffs and China+1; continuity mandates; Mexico-U.S. trade; India PLI; electronics, auto, pharma, and AI hardware; labour, infrastructure, rates, FX, and capex cycles.",
+    "value_chain": "Mexican industrial real estate and utilities; cross-border rail and intermodal; EMS in Mexico, India, and Southeast Asia; automation, connectors, sensors, and local components; shipping and China-centric hedges.",
+    "supporting_evidence": "The seed requires projects to become occupancy, rent spreads, rail volume, EMS utilisation, and automation orders within 6-12 months.",
+    "invalidation": "Capex slows, trade rules disrupt, infrastructure and security delay ramps, incentives disappoint, valuations are full, or Asia remains more competitive."
+  },
+  "source": "user:2026-07-26",
+  "priority": 69,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

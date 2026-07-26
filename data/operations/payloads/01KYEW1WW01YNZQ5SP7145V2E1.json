@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_macro_hedge_gold",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "Federal Reserve policy; inflation; real yields; geopolitics; central-bank demand; mine costs.",
+    "idea_id": "idea_macro_hedge_gold",
+    "invalidation": "Higher real yields, faster disinflation, gold mean reversion, cost or tax inflation, or operational setbacks.",
+    "seed_claim": "With inflation above target and geopolitical uncertainty elevated, profitable low-cost gold miners may provide a portfolio hedge while generating cash.",
+    "supporting_evidence": "The seed cites the June 2026 Federal Reserve target range and Newmont record first-quarter free cash flow and net cash.",
+    "value_chain": "Gold; gold miners; precious-metal equities."
+  },
+  "objective": "Research one gold-miner macro-hedge investment idea.",
+  "operation_id": "01KYEW1WW01YNZQ5SP7145V2E1",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_c5a9e460d3350284d157",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_energy_refining",
+    "research_focus": "Validate identity, Q2 realized regional margins, utilization, sustaining and turnaround costs, working capital, capital returns, balance-sheet risk, valuation, and invalidation.",
+    "security_id": "security_c5a9e460d3350284d157"
+  },
+  "objective": "Research Valero after its 2026 second-quarter release as a bounded refining-margin exposure.",
+  "operation_id": "01KYEXAGNREGCP02XCC9VBV80V",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investorvalero.com/news/news-details/2026/Valero-Energy-Corporation-to-Announce-Second-Quarter-2026-Earnings-Results-on-July-30-2026/default.aspx",
+    "https://investorvalero.com/news/news-details/2026/Valero-Energy-Reports-First-Quarter-2026-Results/default.aspx",
+    "https://www.iea.org/reports/oil-market-report-july-2026"
+  ]
+}

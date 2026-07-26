@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_digital_finance_crypto_rails",
+  "dedupe_key": "idea_research:idea_digital_finance_crypto_rails:user-seed:2026-07-26",
+  "prompt": "Research one digital-finance and crypto-rails investment idea.",
+  "inputs": {
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "seed_claim": "Stablecoins, tokenisation, continuous markets, and embedded finance may favour compliant platforms with distribution, custody, funding, and payment rails.",
+    "drivers": "Crypto adoption; stablecoin settlement; tokenisation; activity; embedded payments; deposit funding; retirement and advisory cross-sell; regulation.",
+    "value_chain": "Crypto exchanges and custody; payments; brokerages; digital banks; bitcoin-treasury vehicles; emerging-market payment rails.",
+    "supporting_evidence": "The seed requires assets, activity, compliant legitimacy, cross-sell, and recurring revenue to compound while acquisition cost falls.",
+    "invalidation": "Crypto activity reverses, regulation restricts products, take rates compress, credit losses rise, or leveraged capital structures magnify drawdowns."
+  },
+  "source": "user:2026-07-26",
+  "priority": 60,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

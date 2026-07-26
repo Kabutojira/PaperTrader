@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_critical_minerals_lithium",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "EV and storage demand; LFP and carbonate mix; Chinese lepidolite and project restarts; inventories; contract versus spot pricing; capex and financing; sodium-ion; recycling; chemistry efficiency; permitting and industrial policy.",
+    "idea_id": "idea_critical_minerals_lithium",
+    "invalidation": "Chinese supply restarts, lepidolite expansion, sodium-ion, recycling, or rapid project financing can restore surplus; contract lags, leverage, policy, and commissioning risk can overwhelm spot upside.",
+    "seed_claim": "The 2026 lithium rebound may be cyclical near term, while a durable late-decade shortage remains plausible as stationary storage diversifies demand and prior underinvestment slows supply.",
+    "supporting_evidence": "The seed cites IEA supply-gap risk, storage growth, and delayed investment, with ALB, SQM, LAC, RIO, and SGML as operating or optionality hypotheses.",
+    "value_chain": "Hard-rock and brine miners; lithium converters; development projects; diversified miners; battery and storage manufacturers; sodium-ion and recycling substitutes."
+  },
+  "objective": "Research one critical-minerals lithium-cycle investment idea.",
+  "operation_id": "01KYEW1P1806TDCR55AFSABYDJ",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_cybersecurity_geopolitical_continuity",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "State-linked threats; critical-infrastructure targeting; AI-augmented attacks; NIS2 and DORA; cloud, SASE, identity, and OT adoption; board focus; platform consolidation; valuation discipline.",
+    "idea_id": "idea_cybersecurity_geopolitical_continuity",
+    "invalidation": "Expectations are already priced, bundling wins, AI defence commoditises, budgets slow, vendor trust events occur, or regulated customers recover rather than absorb costs.",
+    "seed_claim": "Cybersecurity spending is shifting from discretionary IT hygiene toward geopolitical, regulatory, and operational-continuity infrastructure.",
+    "supporting_evidence": "The seed identifies CRWD, PANW, FTNT, ZS, OKTA, CACI, PLTR, and CEG as hypotheses and requires ARR, billings, RPO, awards, margins, and free cash flow to validate the shift.",
+    "value_chain": "Endpoint and XDR; firewall and SASE; identity; threat intelligence; OT and managed services; integrators; government, utility, industrial, and enterprise customers."
+  },
+  "objective": "Research one cybersecurity resilience and continuity investment idea.",
+  "operation_id": "01KYEW1Q0GN3WGVBQ9VGBGKHQ0",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

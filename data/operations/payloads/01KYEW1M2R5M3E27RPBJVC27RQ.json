@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_commercial_space_infrastructure",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "Launch cadence and cost; defence and civil budgets; constellation replenishment; satellite communications; Earth-observation subscriptions; lunar contracts; sovereign demand.",
+    "idea_id": "idea_commercial_space_infrastructure",
+    "invalidation": "Launch or mission failure, schedule slips, fixed-price losses, capital intensity, funding needs, or customer concentration.",
+    "seed_claim": "Reusable launch, proliferated constellations, defence procurement, and a possible public SpaceX may create a listed stack spanning launch, spacecraft, lunar logistics, Earth data, and sensors.",
+    "supporting_evidence": "The seed requires cadence and reuse to lower cost, backlog conversion, recurring connectivity and data, reliable missions, and government-supported scale.",
+    "value_chain": "Launch providers; satellite and spacecraft systems; lunar logistics; Earth-observation data; defence sensors and mission systems."
+  },
+  "objective": "Research one commercial-space infrastructure and geospatial-data investment idea.",
+  "operation_id": "01KYEW1M2R5M3E27RPBJVC27RQ",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

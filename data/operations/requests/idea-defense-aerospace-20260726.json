@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_defense_aerospace",
+  "dedupe_key": "idea_research:idea_defense_aerospace:user-seed:2026-07-26",
+  "prompt": "Research one European rearmament and allied replenishment investment idea.",
+  "inputs": {
+    "idea_id": "idea_defense_aerospace",
+    "seed_claim": "European rearmament and persistent allied replenishment may create a multi-year demand tailwind for missiles, air defence, engines, and sensors.",
+    "drivers": "EU defence budgets; munitions replenishment; allied burden sharing; supply-chain capacity; geopolitical risk.",
+    "value_chain": "Defence primes; aerospace suppliers; missiles; radars; engines.",
+    "supporting_evidence": "The seed cites estimated 2026 EU defence spending of EUR 454 billion, investment of EUR 163 billion, and RTX backlog and outlook evidence.",
+    "invalidation": "Budget execution delays, ceasefires, procurement reform, cost overruns, or fixed-price contract pressure."
+  },
+  "source": "user:2026-07-26",
+  "priority": 76,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

@@ -1,0 +1,68 @@
+{
+  "operation_id": "01KYEW1SY8ZG1BX6YQGV4SBQ28",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked crude-product dislocation and refining-margin idea. The IEA confirms four-year-high cracks as crude recovered faster than refinery and product supply, and Valero's first quarter demonstrates current margin and cash conversion. The duration is event-dependent and Valero's next result is not yet available, so its bounded review is deferred until 30 July. No relationship, strategy, signal, or paper order was created.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Oil Market Report July 2026",
+      "claim": "The IEA reported refined-product cracks and margins at four-year highs in early July as crude supplies recovered and prices fell while product markets stayed tight.",
+      "url": "https://www.iea.org/reports/oil-market-report-july-2026",
+      "observed_at": "2026-07-10T00:00:00Z"
+    },
+    {
+      "source": "International Energy Agency, Oil Market Report July 2026",
+      "claim": "June refinery runs remained 6 million barrels per day below the prior year, but the IEA expects runs to rebound by 3.1 million barrels per day in 2027, defining a clear normalization risk.",
+      "url": "https://www.iea.org/reports/oil-market-report-july-2026",
+      "observed_at": "2026-07-10T00:00:00Z"
+    },
+    {
+      "source": "Valero first-quarter 2026 results",
+      "claim": "Valero reported USD 1.8 billion of refining operating income, 2.9 million barrels per day of throughput, and USD 1.6 billion of adjusted operating cash flow against USD 430 million of attributable capital investment.",
+      "url": "https://investorvalero.com/news/news-details/2026/Valero-Energy-Reports-First-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-04-30T00:00:00Z"
+    },
+    {
+      "source": "Valero first-quarter 2026 SEC exhibit",
+      "claim": "Valero's reference margins showed strong diesel cracks but mixed gasoline cracks and higher renewable-fuel obligations, demonstrating that the dislocation is product- and region-specific.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026028602/a3312026exh9901earningsrel.htm"
+    },
+    {
+      "source": "Valero second-quarter 2026 reporting notice",
+      "claim": "Valero scheduled its second-quarter results for 30 July 2026, after this operation, so current-quarter margin capture cannot yet be assumed.",
+      "url": "https://investorvalero.com/news/news-details/2026/Valero-Energy-Corporation-to-Announce-Second-Quarter-2026-Earnings-Results-on-July-30-2026/default.aspx",
+      "observed_at": "2026-06-02T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEXAGNREGCP02XCC9VBV80V.json",
+    "data/runs/local-20260726-daily-01/01KYEW1SY8ZG1BX6YQGV4SBQ28/enqueue-vlo-security-research.json",
+    "data/wiki/ideas/idea_energy_refining.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYEXAGNREGCP02XCC9VBV80V"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched refining margins: the crude-product dislocation is confirmed but likely temporary; queued Valero research after its 30 July result, with no strategy before current margin, cash, maintenance, and valuation evidence."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1SY8ZG1BX6YQGV4SBQ28/enqueue-vlo-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and immutable operation payload.",
+      "Searched existing wiki and structured security identities to avoid duplicate ideas and ticker-only associations.",
+      "Created exactly one idea page with current primary evidence, mechanism, product and regional distinctions, confirmation gates, invalidation, confidence, and a review date.",
+      "Updated the complete wiki index and append-only research log.",
+      "Enqueued one bounded post-earnings security review through the audited project CLI.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

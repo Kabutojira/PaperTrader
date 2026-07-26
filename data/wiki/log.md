@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-07-25"
+updated: "2026-07-26"
 provenance: repository-contract
 ---
 
@@ -57,3 +57,27 @@ This log is append-only. Rotate it by year only after the configured line thresh
   gates block strategy research.
 
 - Generated canonical [[daily-reports/daily-report_20260725]] for run `local-20260725-daily-02`.
+
+## 2026-07-26
+
+- Created [[ideas/idea_ai_infrastructure_power]] with a confirmed physical bottleneck thesis,
+  current supplier evidence, explicit valuation and backlog-conversion gates, and bounded GE
+  Vernova, Eaton, and Vertiv security-research candidates.
+
+- Created [[ideas/idea_critical_minerals_copper]] with a conditional late-decade scarcity thesis,
+  explicit supply-response and recycling counterweights, and bounded Southern Copper, Freeport,
+  and Rio Tinto security-research candidates.
+
+- Created [[ideas/idea_critical_minerals_lithium]] with a confirmed cyclical recovery, a
+  conditional late-decade shortage thesis, and bounded Albemarle, SQM, Lithium Americas, and Sigma
+  Lithium security-research candidates.
+
+- Created [[ideas/idea_energy_refining]] with a confirmed but event-dependent crude-product
+  dislocation, explicit normalization gates, and one Valero review deferred until its scheduled
+  second-quarter release.
+
+- Created [[ideas/idea_defense_aerospace]] with confirmed European budget and RTX backlog
+  evidence, explicit procurement and contract-conversion gates, and one bounded RTX security
+  review.
+
+- Generated canonical [[daily-reports/daily-report_20260726]] for run `local-20260726-daily-01`.

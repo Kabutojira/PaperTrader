@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "Inference; sovereign AI; custom silicon; 800G and 1.6T networking; advanced nodes and packaging; cloud; power availability; enterprise-agent monetisation.",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "invalidation": "Capex overbuild, custom silicon and competition compress returns, power delays deployment, export controls bind, or enterprise ROI remains weak.",
+    "seed_claim": "AI spending is broadening from accelerators into networking, memory, lithography, foundry, cloud, and software, but winners must convert deployment into recurring revenue and free cash flow after power, depreciation, and competition.",
+    "supporting_evidence": "The seed requires utilisation, pricing, and AI revenue to outgrow depreciation while networking, advanced-node, and software bottlenecks retain economics.",
+    "value_chain": "Semiconductor equipment and foundries; networking; accelerators and edge chips; hyperscaler cloud; AI infrastructure operators; enterprise software."
+  },
+  "objective": "Research one AI compute, networking, and hyperscaler-monetisation investment idea.",
+  "operation_id": "01KYEW1G5RTVF1RFR5WD9JS2VE",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

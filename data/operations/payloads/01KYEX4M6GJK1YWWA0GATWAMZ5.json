@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_4627aea1bf7d8943d3d8",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "research_focus": "Validate identity, cash conversion, receivable collection, debt, offtake prepayments, ramp execution, expansion funding, valuation, and invalidation.",
+    "security_id": "security_4627aea1bf7d8943d3d8"
+  },
+  "objective": "Research Sigma Lithium as a bounded high-torque producer exposure to the lithium cycle.",
+  "operation_id": "01KYEX4M6GJK1YWWA0GATWAMZ5",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-3.htm"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_cable_broadband_convergence",
+  "dedupe_key": "idea_research:idea_cable_broadband_convergence:user-seed:2026-07-26",
+  "prompt": "Research one cable-broadband convergence and leveraged-FCF investment idea.",
+  "inputs": {
+    "idea_id": "idea_cable_broadband_convergence",
+    "seed_claim": "U.S. cable operators may defend fixed broadband through mobile convergence, simpler pricing, rural expansion, and upgrades, with convex equity upside and material leverage risk.",
+    "drivers": "Fixed-wireless and fibre competition; mobile penetration; churn and pricing; rural passings; DOCSIS; capex; refinancing; M&A synergies and deleveraging.",
+    "value_chain": "CHTR, CMCSA, CABO, and OPTU-like cable operators; TMUS, T, and VZ hedges; cable equipment and software; telecom credit.",
+    "supporting_evidence": "The seed requires slower internet losses, lower churn from mobile attach, maturing capex, and credible synergy and deleveraging progress.",
+    "invalidation": "Fixed wireless and fibre take durable share, ARPU weakens, capex and refinancing remain high, or merger dilution, preferred payments, and integration absorb free cash flow."
+  },
+  "source": "user:2026-07-26",
+  "priority": 62,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

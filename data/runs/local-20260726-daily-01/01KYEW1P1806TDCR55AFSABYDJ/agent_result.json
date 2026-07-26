@@ -1,0 +1,85 @@
+{
+  "operation_id": "01KYEW1P1806TDCR55AFSABYDJ",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked lithium-cycle idea. Primary evidence confirms a 2025-to-2026 price and demand recovery, but the late-decade shortage remains conditional because the projected gap improved and supply restarts, recycling, chemistry, financing, and commissioning can restore balance. Operating and development-stage exposures carry materially different risks. Enqueued Albemarle, SQM, Lithium Americas, and Sigma Lithium reviews; no relationship, strategy, signal, or paper order was created.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Global Critical Minerals Outlook 2026",
+      "claim": "The IEA reports lithium prices more than doubled during the rebound through early 2026, demand grew about 25% annually over the prior two years, and lithium specialists cut investment about 40% in 2025.",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "International Energy Agency, Global Critical Minerals Outlook 2026 outlook",
+      "claim": "The IEA projects lithium demand rising more than threefold by 2040 and a persistent but improved 2035 supply gap, making late-decade scarcity plausible rather than certain.",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/outlook",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "Albemarle first-quarter 2026 results",
+      "claim": "Albemarle reported sales up 33%, including Energy Storage volume up 14% and price up 51%, while adjusted EBITDA rose 148% to USD 664 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+      "observed_at": "2026-05-06T00:00:00Z"
+    },
+    {
+      "source": "SQM first-quarter 2026 results",
+      "claim": "SQM reported 69 thousand tonnes of lithium-equivalent sales, a roughly 95% increase in realized lithium price, and lithium contributing 75% of consolidated gross profit.",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+      "observed_at": "2026-05-26T00:00:00Z"
+    },
+    {
+      "source": "Lithium Americas first-quarter 2026 Form 10-Q",
+      "claim": "Lithium Americas had about USD 1.2 billion of cash and restricted cash, had capitalized USD 1.3 billion on Thacker Pass, targeted late-2027 mechanical completion, and expects no operating revenue before a 2028 ramp; it also disclosed ATM equity issuance.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm"
+    },
+    {
+      "source": "Sigma Lithium first-quarter 2026 filing",
+      "claim": "Sigma Lithium reported USD 42 million of revenue and a 39.5% adjusted EBITDA margin, but quarter-end cash of USD 3.9 million, negative operating cash flow, and USD 134 million of debt.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEX3STRX4SBXKQD09V6SRZW.json",
+    "data/operations/payloads/01KYEX44JGREN4TYKGXMMJSM67.json",
+    "data/operations/payloads/01KYEX4CCGQ7TJF2RHQ8HENTRG.json",
+    "data/operations/payloads/01KYEX4M6GJK1YWWA0GATWAMZ5.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-alb-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-lac-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-sgml-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-sqm-security-research.json",
+    "data/wiki/ideas/idea_critical_minerals_lithium.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYEX3STRX4SBXKQD09V6SRZW",
+    "01KYEX44JGREN4TYKGXMMJSM67",
+    "01KYEX4CCGQ7TJF2RHQ8HENTRG",
+    "01KYEX4M6GJK1YWWA0GATWAMZ5"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched the lithium cycle: the rebound is confirmed but durable scarcity is conditional; queued Albemarle, SQM, Lithium Americas, and Sigma Lithium reviews, with no strategy before cash, funding, commissioning, and valuation checks."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-alb-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-sqm-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-lac-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-sgml-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and immutable operation payload.",
+      "Searched existing wiki and structured security identities to avoid duplicate ideas and ticker-only associations.",
+      "Created exactly one idea page with current primary evidence, cyclical and structural mechanisms, confirmation gates, contrary evidence, invalidation, confidence, and a review date.",
+      "Updated the complete wiki index and append-only research log.",
+      "Enqueued only individually bounded security research through audited project CLI commands.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

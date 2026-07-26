@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_precision_biology_healthcare_automation",
+  "dedupe_key": "idea_research:idea_precision_biology_healthcare_automation:user-seed:2026-07-26",
+  "prompt": "Research one precision-biology and healthcare-automation investment idea.",
+  "inputs": {
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "seed_claim": "Synthetic biology, AI discovery, diagnostics, and robotic procedures may compress discovery, diagnosis, and treatment cycles, but translation, reimbursement, burn rate, and productivity proof determine value.",
+    "drivers": "AI discovery; synthetic-DNA cost curves; biopharma R&D; clinical validation; diagnostics volumes; robotic procedures; reimbursement; lab automation.",
+    "value_chain": "AI-native biotech; synthetic-DNA suppliers; biofoundries; diagnostics and CRO services; surgical robotics; cellular-agriculture vehicles.",
+    "supporting_evidence": "The seed requires faster or better candidate generation and procedure outcomes, recurring consumables or data revenue, and clinical or partner milestones.",
+    "invalidation": "Clinical failure, weak productivity, cash burn and dilution, reimbursement pressure, or slow adoption."
+  },
+  "source": "user:2026-07-26",
+  "priority": 58,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

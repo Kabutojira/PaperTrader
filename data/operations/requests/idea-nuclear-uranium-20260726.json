@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_nuclear_uranium",
+  "dedupe_key": "idea_research:idea_nuclear_uranium:user-seed:2026-07-26",
+  "prompt": "Research one nuclear fuel-cycle bottleneck investment idea.",
+  "inputs": {
+    "idea_id": "idea_nuclear_uranium",
+    "seed_claim": "Nuclear expansion is exposing bottlenecks in uranium mining, conversion, and enrichment, giving strategically positioned contracted suppliers potential leverage.",
+    "drivers": "Reactor restarts and new builds; energy security; conversion and enrichment bottlenecks; long-term contracting; supply concentration.",
+    "value_chain": "Uranium miners; conversion and enrichment; nuclear fuel services.",
+    "supporting_evidence": "The seed cites IEA fuel-cycle concentration and tight conversion capacity plus Cameco's nine-year India contract for nearly 22 million pounds beginning in 2027.",
+    "invalidation": "Project restarts, secondary supply, policy delays, contract-price lag, or operational disruptions."
+  },
+  "source": "user:2026-07-26",
+  "priority": 75,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

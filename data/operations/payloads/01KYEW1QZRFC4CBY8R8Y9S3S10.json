@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_digital_attention_gaming_ecosystems",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "Engagement and hours; creator supply; subscriptions and pricing; advertising yield; commerce; gaming and PC refresh; consumer-brand demand.",
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "invalidation": "Attention fragments, safety and regulatory costs rise, royalties or platform fees cap margins, or consumer demand and brand relevance fade.",
+    "seed_claim": "Platforms and brands with durable engagement, creators, subscriptions, advertising, and recognisable IP may compound monetisation and margins, subject to safety, content economics, fashion cycles, and competition.",
+    "supporting_evidence": "The seed requires engagement and monetisation to rise together, creator ecosystems to deepen, pricing to stick, and operating leverage to expand free cash flow.",
+    "value_chain": "Social and video platforms; music and audio subscriptions; gaming and creator platforms; peripherals; consumer brands monetising digital attention."
+  },
+  "objective": "Research one digital-attention, gaming, and consumer-ecosystem investment idea.",
+  "operation_id": "01KYEW1QZRFC4CBY8R8Y9S3S10",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

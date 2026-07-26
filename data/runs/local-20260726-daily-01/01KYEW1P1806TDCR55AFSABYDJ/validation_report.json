@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEX3STRX4SBXKQD09V6SRZW.json",
+    "data/operations/payloads/01KYEX44JGREN4TYKGXMMJSM67.json",
+    "data/operations/payloads/01KYEX4CCGQ7TJF2RHQ8HENTRG.json",
+    "data/operations/payloads/01KYEX4M6GJK1YWWA0GATWAMZ5.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-alb-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-lac-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-sgml-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1P1806TDCR55AFSABYDJ/enqueue-sqm-security-research.json",
+    "data/wiki/ideas/idea_critical_minerals_lithium.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T09:48:42Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1P1806TDCR55AFSABYDJ",
+  "passed": true,
+  "run_id": "local-20260726-daily-01",
+  "validation_version": 1
+}

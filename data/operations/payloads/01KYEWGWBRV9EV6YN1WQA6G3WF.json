@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_cb88f9154cfeaa15e878",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, Q2 organic orders, power and cooling content, working capital, customer concentration, valuation, and explicit invalidation.",
+    "security_id": "security_cb88f9154cfeaa15e878"
+  },
+  "objective": "Research Vertiv after its 2026 second-quarter release as a bounded data-centre power and cooling exposure.",
+  "operation_id": "01KYEWGWBRV9EV6YN1WQA6G3WF",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx",
+    "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-First-Quarter-with-Diluted-EPS-Growth-of-136-Adjusted-Diluted-EPS-Growth-of-83-Raises-Full-Year-Guidance/default.aspx"
+  ]
+}

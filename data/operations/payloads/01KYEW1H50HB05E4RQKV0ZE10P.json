@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_ai_native_drug_discovery",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "Pharma patent cliffs; platform funding and M&A; compute and wet-lab co-innovation; FDA AI credibility framework; multimodal data; computational chemistry; antibody discovery; licensing economics.",
+    "idea_id": "idea_ai_native_drug_discovery",
+    "invalidation": "Clinical translation remains unproven, cash burn and dilution dominate, pharma captures economics, wet-lab and regulatory validation stay slow, or platform revenue remains lumpy.",
+    "seed_claim": "Automated labs, proprietary biological and chemical datasets, foundation models, and computational chemistry may compress target and molecule discovery while pharma productivity pressure increases partnership demand.",
+    "supporting_evidence": "The seed requires clinical or partnership readouts to show cycle-time or success-rate gains and material milestones, platform revenue, pipeline value, or M&A optionality.",
+    "value_chain": "Accelerated compute and software; proprietary datasets; automated labs; RXRX, SDGR, ABCL, and TEM-like platforms; large-pharma customers; legacy CRO and research-model substitutes."
+  },
+  "objective": "Research one AI-native drug-discovery platform investment idea.",
+  "operation_id": "01KYEW1H50HB05E4RQKV0ZE10P",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

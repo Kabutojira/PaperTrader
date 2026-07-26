@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_sovereign_small_drone_supply_chains",
+  "dedupe_key": "idea_research:idea_sovereign_small_drone_supply_chains:user-seed:2026-07-26",
+  "prompt": "Research one sovereign trusted small-drone supply-chain investment idea.",
+  "inputs": {
+    "idea_id": "idea_sovereign_small_drone_supply_chains",
+    "seed_claim": "Battlefield attrition, civil UAS adoption, and trusted-supplier policies may redirect procurement toward allied drone platforms and critical components, with Ukrainian designs offering industrialisation potential.",
+    "drivers": "Military attrition; public-safety and industrial adoption; U.S. and EU trusted-supplier rules; Chinese dependence; Ukrainian innovation; financing, certification, and scale.",
+    "value_chain": "Small-UAS manufacturers; motors, batteries, and power electronics; flight controllers, sensors, communications, autonomy software; electronics manufacturing; defence and civil procurement.",
+    "supporting_evidence": "The seed requires funded multi-year U.S./EU procurement, Drone Alliance orders, industrialised Ukrainian designs, and rising allied-component share without cost or performance loss.",
+    "invalidation": "Chinese cost and ecosystem advantages persist, allied components remain dependent on China, procurement fragments, BVLOS approvals lag, or commoditisation prevents durable margins."
+  },
+  "source": "user:2026-07-26",
+  "priority": 73,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

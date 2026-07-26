@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_humanoid_robotics_embodied_ai_components",
+  "dedupe_key": "idea_research:idea_humanoid_robotics_embodied_ai_components:user-seed:2026-07-26",
+  "prompt": "Research one embodied-AI and humanoid component-supply-chain investment idea.",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "seed_claim": "Humanoids, broader robotics, and drones may increase demand for precision motion, sensors, edge compute, batteries, copper wiring, and rare-earth magnets, but paid multi-site economics and supplier materiality remain unproven.",
+    "drivers": "Physical-AI progress; labour scarcity; automation; defence and civil drones; falling component costs; trusted supply chains; material constraints; safety, uptime, maintenance, and fixed-automation competition.",
+    "value_chain": "Actuators, motors, reducers, bearings, sensors, connectors, edge AI, power semiconductors, batteries, copper, NdPr magnets, integrators, and automation substitutes.",
+    "supporting_evidence": "The seed requires pilots to become repeat orders and qualified component suppliers to show recurring material revenue and pricing power.",
+    "invalidation": "Humanoids remain pilots, drones commoditise, Asia retains sourcing, per-unit material intensity falls, and supplier margins fade despite unit growth."
+  },
+  "source": "user:2026-07-26",
+  "priority": 72,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

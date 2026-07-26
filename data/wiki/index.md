@@ -6,7 +6,7 @@ tags:
   - meta
   - index
 created: "2026-07-24"
-updated: "2026-07-25"
+updated: "2026-07-26"
 provenance: repository-contract
 ---
 
@@ -25,6 +25,11 @@ No candidate packets yet.
 
 ## Ideas
 
+- [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]]
+- [[ideas/idea_critical_minerals_copper|Critical minerals and structural copper scarcity]]
+- [[ideas/idea_critical_minerals_lithium|Critical minerals and the lithium cycle]]
+- [[ideas/idea_energy_refining|Crude-product dislocation and refining margins]]
+- [[ideas/idea_defense_aerospace|Defense and aerospace replenishment cycle]]
 - [[ideas/idea_solar_storage_grid_flexibility_reset|Solar, storage, and grid-flexibility reset]]
 
 ## Securities
@@ -46,3 +51,4 @@ No strategy pages yet.
 
 - [[daily-reports/daily-report_20260724|Daily report 2026-07-24]]
 - [[daily-reports/daily-report_20260725|Daily report 2026-07-25]]
+- [[daily-reports/daily-report_20260726|Daily report 2026-07-26]]

@@ -1,0 +1,195 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-gev-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYEWG8TRCR9WEYGVJR57TY33.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a408876f338247d9ded1610917eb5e9c80980b017163a24828e1a0375055e16e",
+            11311,
+            384
+          ],
+          "before": [
+            "file",
+            "4b7ea77d49eecc88b7fe8a9362b4f8873687aa872d3f692c1a0fd6dc9984b104",
+            10828,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "67fcd20e70efb3466f54a3ab76d1876cb81d74f4df022c7748f32a332ca62e10",
+            765,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYEWG8TRCR9WEYGVJR57TY33.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-gev-security-research.json",
+      "completed_at": "2026-07-26T09:36:07Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "cfccfd9ec8b8708e4abea452dea0fa3c6add507cf704a6e114a7b27a9c27dc92",
+          968,
+          436
+        ],
+        "path": "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-gev-security-research.json"
+      },
+      "started_at": "2026-07-26T09:36:07Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-eaton-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYEWGHM033E1KJ2PA8Q3TDQ0.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "9cf86521ba7babe59b31d13c80ee7ee5ad5d55f76d50e4796464500242d2b445",
+            11783,
+            384
+          ],
+          "before": [
+            "file",
+            "a408876f338247d9ded1610917eb5e9c80980b017163a24828e1a0375055e16e",
+            11311,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "9cc0ddcbd1cf95c168630c1f7bde27eedafba0a6902bdcbc002e2da9bf317022",
+            826,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYEWGHM033E1KJ2PA8Q3TDQ0.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-eaton-security-research.json",
+      "completed_at": "2026-07-26T09:36:16Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "4a1b595c63226d707a7c05836bdcf196d1e9520482b094da3f1b65618b9527da",
+          1029,
+          436
+        ],
+        "path": "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-eaton-security-research.json"
+      },
+      "started_at": "2026-07-26T09:36:15Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-vertiv-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYEWGWBRV9EV6YN1WQA6G3WF.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "edbc03b8520219d83335db91937394c82ded2f1ad3715a349ad3218168a95799",
+            12276,
+            384
+          ],
+          "before": [
+            "file",
+            "9cf86521ba7babe59b31d13c80ee7ee5ad5d55f76d50e4796464500242d2b445",
+            11783,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "8e04f801a3883ab3fe8410a3d8d0ed3e34c2be5e647b7febaa93f6bf2c1892e2",
+            980,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYEWGWBRV9EV6YN1WQA6G3WF.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-vertiv-security-research.json",
+      "completed_at": "2026-07-26T09:36:27Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "6e9c2ab927034d6f38beefe0d310a9bc0696ce06e15a961a3743bdd41c7b4ab1",
+          1200,
+          436
+        ],
+        "path": "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-vertiv-security-research.json"
+      },
+      "started_at": "2026-07-26T09:36:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-26T09:37:05Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T09:37:05Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-26T09:37:12Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T09:37:12Z"
+    }
+  ],
+  "operation_id": "01KYEW1H506K269RHDNW896SBS",
+  "run_id": "local-20260726-daily-01"
+}

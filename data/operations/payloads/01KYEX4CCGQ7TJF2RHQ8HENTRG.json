@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_fb87fac302a5446a1ced",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "research_focus": "Validate identity, Thacker Pass cost-to-complete, financing conditions, dilution, schedule, commissioning, offtake economics, valuation, and invalidation.",
+    "security_id": "security_fb87fac302a5446a1ced"
+  },
+  "objective": "Research Lithium Americas as a bounded development-stage exposure to the lithium cycle.",
+  "operation_id": "01KYEX4CCGQ7TJF2RHQ8HENTRG",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/global-critical-minerals-outlook-2026/outlook",
+    "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm"
+  ]
+}

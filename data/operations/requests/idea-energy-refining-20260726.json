@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_energy_refining",
+  "dedupe_key": "idea_research:idea_energy_refining:user-seed:2026-07-26",
+  "prompt": "Research one crude-surplus and refining-tightness investment idea.",
+  "inputs": {
+    "idea_id": "idea_energy_refining",
+    "seed_claim": "Crude markets may move toward surplus while gasoline, diesel, and refinery capacity remain tight, allowing refiners to benefit from elevated product cracks even if crude softens.",
+    "drivers": "Middle East flows; refinery outages; attacks on Russian infrastructure; product inventories; seasonal demand; crude-product dislocation.",
+    "value_chain": "Refiners; crack spreads; gasoline and diesel; crude oil.",
+    "supporting_evidence": "The seed cites IEA four-year-high product cracks and margins plus a rebound in VLO first-quarter refining income.",
+    "invalidation": "Rapid refinery restarts, weaker product demand, normalising crack spreads, or higher regulatory costs."
+  },
+  "source": "user:2026-07-26",
+  "priority": 77,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

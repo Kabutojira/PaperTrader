@@ -1,0 +1,21 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEWV6E87TW53X6C8W4J8NS1.json",
+    "data/operations/payloads/01KYEWVF7GCY0D75RABAF3EAQ5.json",
+    "data/operations/payloads/01KYEWVS00ZH6QVA0V3KPEYBR0.json",
+    "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-fcx-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-rio-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-scco-security-research.json",
+    "data/wiki/ideas/idea_critical_minerals_copper.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T09:43:50Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1N20F504PJ682M9WBF37",
+  "passed": true,
+  "run_id": "local-20260726-daily-01",
+  "validation_version": 1
+}

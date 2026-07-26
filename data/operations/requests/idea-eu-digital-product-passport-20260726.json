@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_eu_digital_product_passport",
+  "dedupe_key": "idea_research:idea_eu_digital_product_passport:user-seed:2026-07-26",
+  "prompt": "Research one EU Digital Product Passport infrastructure investment idea.",
+  "inputs": {
+    "idea_id": "idea_eu_digital_product_passport",
+    "seed_claim": "EU Digital Product Passports may create a multi-year partly non-discretionary buildout in product identity, data carriers, lifecycle data, enterprise integration, and compliance services.",
+    "drivers": "ESPR and Batteries Regulation; 2027 battery deadline; delegated acts; traceability; registry and API standards; compliance budgets; RFID and QR adoption; enterprise data quality; cybersecurity and interoperability.",
+    "value_chain": "Digital identification and labels; RFID, QR, NFC, and scanners; ERP, master-data, and PLM software; compliance services; regulated manufacturers, importers, marketplaces, recyclers, and repair networks.",
+    "supporting_evidence": "The seed states that the central registry and testing environment are live and the first mandatory battery-passport deadline is 2027-02-18.",
+    "invalidation": "Rules slip, open standards commoditise the stack, manufacturers build in-house, data quality delays rollout, or revenue remains immaterial."
+  },
+  "source": "user:2026-07-26",
+  "priority": 70,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

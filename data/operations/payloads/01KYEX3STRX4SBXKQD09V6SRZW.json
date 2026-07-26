@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_66cdcf90aac0d83e76f3",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "research_focus": "Validate identity, normalized Energy Storage margins, realized-price sensitivity, cash conversion, capex, leverage, valuation, and invalidation.",
+    "security_id": "security_66cdcf90aac0d83e76f3"
+  },
+  "objective": "Research Albemarle as a bounded operating-producer exposure to the lithium cycle.",
+  "operation_id": "01KYEX3STRX4SBXKQD09V6SRZW",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/global-critical-minerals-outlook-2026/market-overview",
+    "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm"
+  ]
+}

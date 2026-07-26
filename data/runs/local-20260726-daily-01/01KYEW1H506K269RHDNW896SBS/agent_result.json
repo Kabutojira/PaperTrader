@@ -1,0 +1,75 @@
+{
+  "operation_id": "01KYEW1H506K269RHDNW896SBS",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked AI infrastructure and power-bottleneck idea. Current IEA and issuer evidence confirms concentrated load growth and strong supplier orders, margins, and cash conversion, but valuation, customer concentration, capacity additions, and backlog conversion keep the investment conclusion security-specific. Enqueued bounded GE Vernova, Eaton, and post-Q2 Vertiv research; no relationship, strategy, signal, or paper order was created.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Key Questions on Energy and AI",
+      "claim": "The IEA's April 2026 central case projects data-centre electricity use rising from about 485 TWh in 2025 to 950 TWh in 2030, with AI-focused facilities tripling consumption, while near-term bottlenecks constrain more aggressive scenarios.",
+      "url": "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary",
+      "observed_at": "2026-04-16T00:00:00Z"
+    },
+    {
+      "source": "International Energy Agency, Energy and AI",
+      "claim": "The IEA estimates around 20% of planned data-centre projects could face delays unless grid risks are addressed and emphasizes the concentrated local impact of data-centre load.",
+      "url": "https://www.iea.org/reports/energy-and-ai/executive-summary"
+    },
+    {
+      "source": "GE Vernova second-quarter 2026 results",
+      "claim": "GE Vernova reported USD 24.2 billion of orders, a USD 13.0 billion sequential backlog increase, USD 176 billion total backlog, USD 5.1 billion free cash flow, and more than USD 5 billion of year-to-date data-centre orders.",
+      "url": "https://www.gevernova.com/news/taxonomy/term/9674",
+      "observed_at": "2026-07-22T00:00:00Z"
+    },
+    {
+      "source": "Eaton first-quarter 2026 earnings presentation",
+      "claim": "Eaton reported backlog growth of 44% in Electrical Americas and 73% in Electrical Global, with Electrical Americas data-centre orders up about 240%.",
+      "url": "https://www.eaton.com/content/dam/eaton/company/investor-relations/quarterly-earnings/filings/2026/q1/q1-2026-analyst-presentation.pdf"
+    },
+    {
+      "source": "Vertiv first-quarter 2026 results",
+      "claim": "Vertiv reported 30% sales growth, a 430-basis-point increase in adjusted operating margin to 20.8%, and USD 653 million of adjusted free cash flow; its next quarterly release was scheduled after this review.",
+      "url": "https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-First-Quarter-with-Diluted-EPS-Growth-of-136-Adjusted-Diluted-EPS-Growth-of-83-Raises-Full-Year-Guidance/default.aspx",
+      "observed_at": "2026-04-22T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEWG8TRCR9WEYGVJR57TY33.json",
+    "data/operations/payloads/01KYEWGHM033E1KJ2PA8Q3TDQ0.json",
+    "data/operations/payloads/01KYEWGWBRV9EV6YN1WQA6G3WF.json",
+    "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-eaton-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-gev-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-vertiv-security-research.json",
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYEWG8TRCR9WEYGVJR57TY33",
+    "01KYEWGHM033E1KJ2PA8Q3TDQ0",
+    "01KYEWGWBRV9EV6YN1WQA6G3WF"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched AI infrastructure and power bottlenecks: physical demand and supplier order conversion are confirmed, but valuation and backlog-quality gates block a strategy; queued GE Vernova, Eaton, and Vertiv research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-gev-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-eaton-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-vertiv-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and immutable operation payload.",
+      "Searched existing wiki and structured security identities to avoid duplicate ideas and ticker-only associations.",
+      "Created exactly one idea page with current primary evidence, mechanism, confirmation gates, contrary evidence, invalidation, confidence, and a concrete review date.",
+      "Updated the complete wiki index and append-only research log.",
+      "Enqueued only bounded security research through audited project CLI commands, deferring Vertiv until its scheduled second-quarter release.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

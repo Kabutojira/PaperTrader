@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_59304f90c440def31dc5",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_defense_aerospace",
+    "research_focus": "Validate identity; separate Raytheon, Pratt & Whitney, and Collins; test funded defense backlog, awards, margins, free-cash-flow normalization, engine liabilities, capital allocation, valuation, and invalidation.",
+    "security_id": "security_59304f90c440def31dc5"
+  },
+  "objective": "Research RTX as a bounded missiles, air-defense, engines, and sensors exposure to the allied replenishment cycle.",
+  "operation_id": "01KYEXGRW037QRDKA4V5N79PVR",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://eda.europa.eu/news-and-events/news/2026/07/16/eu-defence-spending---418-billion-in-2025--projected-to--454-billion-in-2026",
+    "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results"
+  ]
+}

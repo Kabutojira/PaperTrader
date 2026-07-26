@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_4b61970aa8f574446819",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, segment backlog quality, turbine-slot economics, electrification margins, cash normalization, valuation, and explicit invalidation.",
+    "security_id": "security_4b61970aa8f574446819"
+  },
+  "objective": "Research GE Vernova as a bounded generation and grid-equipment exposure to AI power bottlenecks.",
+  "operation_id": "01KYEWG8TRCR9WEYGVJR57TY33",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.gevernova.com/news/taxonomy/term/9674",
+    "https://www.iea.org/reports/key-questions-on-energy-and-ai/executive-summary"
+  ]
+}

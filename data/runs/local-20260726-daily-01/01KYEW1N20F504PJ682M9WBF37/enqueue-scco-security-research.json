@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_6ad1af8d10d6276a0221",
+  "dedupe_key": "security_research:security_6ad1af8d10d6276a0221:copper-scarcity:2026-07-26",
+  "prompt": "Research Southern Copper as a bounded low-cost producer exposure to structural copper scarcity.",
+  "inputs": {
+    "security_id": "security_6ad1af8d10d6276a0221",
+    "idea_id": "idea_critical_minerals_copper",
+    "research_focus": "Validate identity, reserve life, cost curve, by-product credits, project execution, jurisdiction, capital allocation, valuation, and invalidation."
+  },
+  "source": "idea_research:01KYEW1N20F504PJ682M9WBF37",
+  "priority": 67,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf",
+    "https://www.iea.org/reports/global-critical-minerals-outlook-2026/outlook"
+  ],
+  "max_attempts": 3
+}

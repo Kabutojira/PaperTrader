@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_2dbe878dfc899d7ee867",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "research_focus": "Validate identity, Grasberg recovery, Americas growth, unit costs, cash sensitivity, Indonesian terms, valuation, and invalidation.",
+    "security_id": "security_2dbe878dfc899d7ee867"
+  },
+  "objective": "Research Freeport-McMoRan as a bounded high-beta producer exposure to structural copper scarcity.",
+  "operation_id": "01KYEWVF7GCY0D75RABAF3EAQ5",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.fcx.com/investors/news-releases./default.aspx",
+    "https://www.sec.gov/Archives/edgar/data/831259/000083125926000025/fcx-20260331.htm"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_9d4049ed6669a52815d6",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "research_focus": "Validate identity, contract-price transmission, Chile partnership and royalty economics, capacity, diversification, valuation, and invalidation.",
+    "security_id": "security_9d4049ed6669a52815d6"
+  },
+  "objective": "Research the SQM ADS as a bounded brine-producer exposure to the lithium cycle.",
+  "operation_id": "01KYEX44JGREN4TYKGXMMJSM67",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+    "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEWG8TRCR9WEYGVJR57TY33.json",
+    "data/operations/payloads/01KYEWGHM033E1KJ2PA8Q3TDQ0.json",
+    "data/operations/payloads/01KYEWGWBRV9EV6YN1WQA6G3WF.json",
+    "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-eaton-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-gev-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1H506K269RHDNW896SBS/enqueue-vertiv-security-research.json",
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T09:38:38Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1H506K269RHDNW896SBS",
+  "passed": true,
+  "run_id": "local-20260726-daily-01",
+  "validation_version": 1
+}

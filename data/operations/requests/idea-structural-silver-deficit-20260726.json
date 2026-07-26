@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_structural_silver_deficit",
+  "dedupe_key": "idea_research:idea_structural_silver_deficit:user-seed:2026-07-26",
+  "prompt": "Research one structural silver-deficit investment idea.",
+  "inputs": {
+    "idea_id": "idea_structural_silver_deficit",
+    "seed_claim": "Structural silver deficits and falling available inventories may create upside asymmetry in metal exposure, low-cost producers, and streamers, with photovoltaic thrifting and substitution as key offsets.",
+    "drivers": "Industrial demand from electronics, AI hardware, EVs, grid, and PV; investment flows; constrained mine supply; recycling; real rates; USD; precious-metals risk appetite.",
+    "value_chain": "PAAS, AG, HL and other producers; WPM streamers; SLV physical exposure; PV, EV, grid, and electronics users; silver-light CdTe substitutes such as FSLR.",
+    "supporting_evidence": "The seed requires persistent deficits, tightening bullion liquidity, investment inflows, and free-cash-flow conversion at low-AISC miners and streamers.",
+    "invalidation": "PV thrifting, recycling, investment outflows, higher real yields or USD, hedging, mining costs, jurisdiction, capex, or valuation."
+  },
+  "source": "user:2026-07-26",
+  "priority": 65,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

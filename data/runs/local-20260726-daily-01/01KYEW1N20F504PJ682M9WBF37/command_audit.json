@@ -1,0 +1,195 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-scco-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYEWV6E87TW53X6C8W4J8NS1.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "763403fe2a25e7ee1d62397621d7f77069afd87cb2f4ff9ec8c6106e3d85aabd",
+            12370,
+            384
+          ],
+          "before": [
+            "file",
+            "87d952e37b2144d5cfb094e4c0f7805e4dae16bbee39e696938e94b2750cffb5",
+            11892,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "b4d207a314031c294b66d0a63658539ee50977d3167b932432f5dfeb5cd0eb3e",
+            779,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYEWV6E87TW53X6C8W4J8NS1.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-scco-security-research.json",
+      "completed_at": "2026-07-26T09:42:05Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "b344c469bb785b29d9fddd391a940c2bcc5d7741d4f7efac1bc80b51e538eb67",
+          978,
+          436
+        ],
+        "path": "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-scco-security-research.json"
+      },
+      "started_at": "2026-07-26T09:42:05Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-fcx-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYEWVF7GCY0D75RABAF3EAQ5.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "1d4a1d0376b80cf0c2492abfa0b072fcaf61d55a2844721d2a034e81f19bf541",
+            12850,
+            384
+          ],
+          "before": [
+            "file",
+            "763403fe2a25e7ee1d62397621d7f77069afd87cb2f4ff9ec8c6106e3d85aabd",
+            12370,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "768ef6caa48b8e34a45ec1b9f1e451d610f52c7e05e287789115e8cd3877d410",
+            768,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYEWVF7GCY0D75RABAF3EAQ5.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-fcx-security-research.json",
+      "completed_at": "2026-07-26T09:42:14Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "6d18f5fcd3e6549693de1c7cafc84cfb59b73faf026c5c9d406a73a7fe938c35",
+          967,
+          436
+        ],
+        "path": "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-fcx-security-research.json"
+      },
+      "started_at": "2026-07-26T09:42:14Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-rio-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYEWVS00ZH6QVA0V3KPEYBR0.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "8a7b825679580a78f1efb9f551ad748d78dbfeb14622e74c3d25b62fd0f5a06e",
+            13332,
+            384
+          ],
+          "before": [
+            "file",
+            "1d4a1d0376b80cf0c2492abfa0b072fcaf61d55a2844721d2a034e81f19bf541",
+            12850,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "7fe8dabeb9af48b95fe893c885fddcb01a6c0a45f6ccafda6d79591d37ef2b39",
+            831,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYEWVS00ZH6QVA0V3KPEYBR0.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-rio-security-research.json",
+      "completed_at": "2026-07-26T09:42:24Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "382e70bfe4be3e9a17a3d8b3819aec7f519b7721de8f5692ea2d6daf3215aee1",
+          1030,
+          436
+        ],
+        "path": "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-rio-security-research.json"
+      },
+      "started_at": "2026-07-26T09:42:24Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-26T09:42:43Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T09:42:43Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-26T09:42:51Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T09:42:51Z"
+    }
+  ],
+  "operation_id": "01KYEW1N20F504PJ682M9WBF37",
+  "run_id": "local-20260726-daily-01"
+}

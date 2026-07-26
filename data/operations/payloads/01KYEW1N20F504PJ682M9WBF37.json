@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_critical_minerals_copper",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "Grid and data-centre investment; EVs and electrification; declining grades; long mine lead times; project capex and permitting; concentrate availability and treatment charges; China demand; recycling and aluminium substitution.",
+    "idea_id": "idea_critical_minerals_copper",
+    "invalidation": "Recycling, aluminium substitution, faster permitting, project restarts, weak China demand, or demand destruction from high prices could compress scarcity and downstream margins.",
+    "seed_claim": "Structural copper scarcity is a concentrate, cathode-availability, and capital-discipline thesis rather than a perpetual spot-price thesis; low-cost miners and electrical OEMs with pricing power are the cleanest beneficiaries.",
+    "supporting_evidence": "The seed cites an IEA potential supply shortfall near 25% by 2035 and benchmark treatment charges near zero, with SCCO, FCX, ETN, GEV, and VRT as hypotheses.",
+    "value_chain": "Copper miners and concentrate producers; smelters and refiners; grid and electrical OEMs; EPC builders; copper-intensive industrial customers; substitutes and hedges."
+  },
+  "objective": "Research one critical-minerals copper-scarcity investment idea.",
+  "operation_id": "01KYEW1N20F504PJ682M9WBF37",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

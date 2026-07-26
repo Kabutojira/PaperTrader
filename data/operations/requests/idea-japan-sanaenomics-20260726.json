@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_japan_sanaenomics_strategic_investment",
+  "dedupe_key": "idea_research:idea_japan_sanaenomics_strategic_investment:user-seed:2026-07-26",
+  "prompt": "Research one Japan strategic-investment value-chain idea without assuming the political premise.",
+  "inputs": {
+    "idea_id": "idea_japan_sanaenomics_strategic_investment",
+    "seed_claim": "A proposed Takaichi-era Japanese strategic-investment framework may support selective rerating and earnings upgrades across strategic industrial domains if roadmaps become funded procurement and orders.",
+    "drivers": "Strategic autonomy; semiconductors and AI; shipbuilding and defence; power; quantum, space, and fusion; multi-year budgets; governance; wages; asset allocation; yen and JGB yields.",
+    "value_chain": "Semiconductor equipment and test; defence and shipbuilding; power equipment; robotics, automation, and digital infrastructure; Tokyo Electron, Advantest, Mitsubishi Heavy, Kawasaki Heavy, Hitachi, and broad-Japan hedges.",
+    "supporting_evidence": "The seed asserts 17 strategic domains and requires policy roadmaps to become budget allocations, procurement, backlog, margin mix, and earnings revisions.",
+    "invalidation": "The political premise is wrong or changes, budgets dilute, projects fail to become orders, capacity constrains delivery, JGB or yen moves impair valuation, or expectations already price the policy."
+  },
+  "source": "user:2026-07-26",
+  "priority": 66,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

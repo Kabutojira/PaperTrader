@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "drivers": "AI adoption; data-centre build-outs; grid connection delays; transformer and gas-turbine shortages; utility capital expenditure.",
+    "idea_id": "idea_ai_infrastructure_power",
+    "invalidation": "Efficiency gains, slower AI capital expenditure, permitting delays, or over-ordering could unwind backlog and compress valuation multiples.",
+    "seed_claim": "Data-centre electricity demand is accelerating faster than grid, transformer, and turbine capacity, creating a multi-year backlog opportunity with high valuation risk.",
+    "supporting_evidence": "The seed cites an IEA base case in which data-centre electricity use more than doubles by 2030 and current order and backlog growth at GEV and ETN.",
+    "value_chain": "Grid equipment; gas turbines; electrical distribution; data-centre cooling and power."
+  },
+  "objective": "Research one AI infrastructure and power bottleneck investment idea.",
+  "operation_id": "01KYEW1H506K269RHDNW896SBS",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "user-provided investment seed dated 2026-07-26"
+  ]
+}

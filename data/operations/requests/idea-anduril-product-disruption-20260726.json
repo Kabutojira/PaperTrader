@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_anduril_product_company_disruption",
+  "dedupe_key": "idea_research:idea_anduril_product_company_disruption:user-seed:2026-07-26",
+  "prompt": "Research one Anduril defence product-company and future-IPO investment idea.",
+  "inputs": {
+    "idea_id": "idea_anduril_product_company_disruption",
+    "seed_claim": "Anduril may represent a defence product-company model shift through privately funded R&D, retained IP, off-the-shelf systems, reusable Lattice autonomy, and Arsenal manufacturing, but public exposure remains indirect before an IPO.",
+    "drivers": "Allied rearmament; affordable autonomous mass; acquisition reform; founder alignment; talent; patient private capital; retained IP; software reuse; manufacturing scale; Ukraine and Indo-Pacific lessons; export and budget constraints.",
+    "value_chain": "Defence product companies; autonomy software; autonomous systems; counter-UAS; attritable weapons; software-defined manufacturing; tactical compute, sensors, communications; listed partners and legacy-prime substitutes.",
+    "supporting_evidence": "The seed requires funded programs, audited growth, repeat production, recurring software or service economics, credible IPO preparation, and material pull-through for listed partners such as PLTR, ACHR, or suppliers.",
+    "invalidation": "Founder or governance risk, scaling failure, network access mistaken for demand, bespoke requirements, inventory and capital risk, program delays, safety failures, cash burn, concentration, or excessive private valuation."
+  },
+  "source": "user:2026-07-26",
+  "priority": 71,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["user-provided investment seed dated 2026-07-26"],
+  "max_attempts": 3
+}

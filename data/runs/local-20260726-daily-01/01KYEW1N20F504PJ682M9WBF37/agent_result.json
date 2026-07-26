@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KYEW1N20F504PJ682M9WBF37",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked structural copper-scarcity idea. The IEA still projects a material 2035 shortfall, but the gap narrowed as projects advanced, copper investment rose, and recycling offers a real balancing mechanism. Producer evidence supports low-cost operating leverage while also exposing disruption, input-cost, jurisdiction, and capital-intensity risks. Enqueued bounded Southern Copper, Freeport-McMoRan, and Rio Tinto reviews; no relationship, strategy, signal, or paper order was created.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Global Critical Minerals Outlook 2026",
+      "claim": "The IEA projects a roughly 25% copper supply gap in 2035, narrowed from about 30% as projects advanced, and projects copper demand adding about 7 million tonnes by 2040.",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/outlook",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "International Energy Agency, Global Critical Minerals Outlook 2026 executive summary",
+      "claim": "Copper-focused investment rose 8% in 2025 and secondary supply could roughly double its contribution by 2040, demonstrating meaningful supply-response and recycling counterweights.",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "Freeport-McMoRan first-quarter 2026 Form 10-Q",
+      "claim": "Freeport reported treatment charges of USD 2 million versus USD 28 million a year earlier, while its Grasberg ramp delay and higher energy and sulfuric-acid costs demonstrated operational and input-cost offsets to copper pricing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000025/fcx-20260331.htm"
+    },
+    {
+      "source": "Freeport-McMoRan 2026 news releases",
+      "claim": "Freeport's second-quarter release reported USD 2.048 billion of operating cash flow and USD 1.104 billion of capital expenditure while it continued Grasberg restoration and brownfield work.",
+      "url": "https://investors.fcx.com/investors/news-releases./default.aspx",
+      "observed_at": "2026-07-23T00:00:00Z"
+    },
+    {
+      "source": "Southern Copper first-quarter 2026 results",
+      "claim": "Southern Copper reported net earnings of USD 1.577 billion, up 67%, and cash cost after by-product credits of negative USD 0.11 per copper pound.",
+      "url": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf",
+      "observed_at": "2026-04-28T00:00:00Z"
+    },
+    {
+      "source": "Rio Tinto second-quarter 2026 production results",
+      "claim": "Rio Tinto reported first-half copper-equivalent production up 3%, including more than 30% copper growth at Oyu Tolgoi as the project ramped.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results",
+      "observed_at": "2026-07-15T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYEWV6E87TW53X6C8W4J8NS1.json",
+    "data/operations/payloads/01KYEWVF7GCY0D75RABAF3EAQ5.json",
+    "data/operations/payloads/01KYEWVS00ZH6QVA0V3KPEYBR0.json",
+    "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-fcx-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-rio-security-research.json",
+    "data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-scco-security-research.json",
+    "data/wiki/ideas/idea_critical_minerals_copper.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYEWV6E87TW53X6C8W4J8NS1",
+    "01KYEWVF7GCY0D75RABAF3EAQ5",
+    "01KYEWVS00ZH6QVA0V3KPEYBR0"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched structural copper scarcity: the 2035 gap remains material but is narrowing as projects, investment, and recycling respond; queued Southern Copper, Freeport, and Rio Tinto reviews, with no strategy before cost, execution, valuation, and jurisdiction checks."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-scco-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-fcx-security-research.json",
+    "papertrader queue enqueue --request data/runs/local-20260726-daily-01/01KYEW1N20F504PJ682M9WBF37/enqueue-rio-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and immutable operation payload.",
+      "Searched existing wiki and structured security identities to avoid duplicate ideas and ticker-only associations.",
+      "Created exactly one idea page with current primary evidence, mechanism, supply-response counterweights, confirmation gates, invalidation, confidence, and a review date.",
+      "Updated the complete wiki index and append-only research log.",
+      "Enqueued only bounded security research through audited project CLI commands.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

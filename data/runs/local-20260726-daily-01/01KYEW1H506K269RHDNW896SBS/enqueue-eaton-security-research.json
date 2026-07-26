@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_18a3ab0ee6086ee85d0f",
+  "dedupe_key": "security_research:security_18a3ab0ee6086ee85d0f:ai-power-bottleneck:2026-07-26",
+  "prompt": "Research Eaton as a bounded electrical-distribution exposure to AI power bottlenecks.",
+  "inputs": {
+    "security_id": "security_18a3ab0ee6086ee85d0f",
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, data-centre order concentration, backlog conversion, electrical margins, capacity investment, valuation, and explicit invalidation."
+  },
+  "source": "idea_research:01KYEW1H506K269RHDNW896SBS",
+  "priority": 68,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.eaton.com/content/dam/eaton/company/investor-relations/quarterly-earnings/filings/2026/q1/q1-2026-analyst-presentation.pdf",
+    "https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai"
+  ],
+  "max_attempts": 3
+}

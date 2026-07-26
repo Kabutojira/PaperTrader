@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_1c055eb9b2bb1f5a8ff2",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "research_focus": "Validate identity, Oyu Tolgoi ramp economics, copper earnings materiality, portfolio diversification, capital allocation, valuation, and invalidation.",
+    "security_id": "security_1c055eb9b2bb1f5a8ff2"
+  },
+  "objective": "Research Rio Tinto's sponsored ADR as a bounded diversified exposure to structural copper scarcity.",
+  "operation_id": "01KYEWVS00ZH6QVA0V3KPEYBR0",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary",
+    "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results"
+  ]
+}
