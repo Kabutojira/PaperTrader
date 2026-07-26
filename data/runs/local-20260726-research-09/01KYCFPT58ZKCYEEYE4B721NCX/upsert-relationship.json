@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_solar_storage_grid_flnc",
+  "idea_id": "idea_solar_storage_grid_flexibility_reset",
+  "security_id": "security_a9eb9838940ef5ceaa0c",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Load growth, renewable penetration, grid congestion, and reliability needs increase demand for Fluence storage systems, services, and optimization software; shareholder benefit depends on project margin, working-capital, warranty, and financing conversion.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Backlog converts at stable or rising normalized gross margin, adjusted EBITDA guidance is delivered, and operating cash flow turns sustainably positive.",
+  "invalidation": "Storage deployment or backlog weakens, project costs and competition compress margins, working capital remains structurally negative, warranties or trade rules raise costs, or financing dilutes returns.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_solar_storage_grid_flnc.md",
+  "last_reviewed_at": "2026-07-26T19:00:00Z",
+  "next_review_at": "2026-08-15T12:00:00Z"
+}

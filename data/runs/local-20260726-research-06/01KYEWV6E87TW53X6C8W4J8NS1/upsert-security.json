@@ -1,0 +1,9 @@
+{
+  "security_id": "security_6ad1af8d10d6276a0221", "issuer_id": "issuer_4a82928ad9dfe58ec4f2",
+  "company_name": "Southern Copper Corporation", "instrument_name": "Southern Copper Corporation common stock",
+  "instrument_type": "equity", "ticker": "SCCO", "exchange_code": "NYQ", "venue_mic": "XNYS", "provider_symbol": "SCCO", "broker_symbol": "", "currency": "USD", "country": "US", "sector": "Basic Materials", "industry": "Copper", "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Long reserve life and strong cash generation are offset by lower copper output, by-product-sensitive costs, jurisdiction, project, and valuation risk.",
+  "research_page": "data/wiki/securities/security_6ad1af8d10d6276a0221.md", "last_research_at": "2026-07-26T18:23:00Z", "next_review_at": "2026-08-15T12:00:00Z",
+  "source": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf"
+}

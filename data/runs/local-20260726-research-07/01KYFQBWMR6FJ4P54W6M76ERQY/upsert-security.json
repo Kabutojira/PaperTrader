@@ -1,0 +1,7 @@
+{
+  "security_id": "security_cc4dcb8f002b61dffe00", "issuer_id": "issuer_02f43c813513608bb99c", "company_name": "Parrot S.A.", "instrument_name": "Parrot S.A. ordinary shares", "instrument_type": "equity",
+  "ticker": "PARRO.PA", "exchange_code": "PAR", "venue_mic": "XPAR", "provider_symbol": "PARRO.PA", "broker_symbol": "", "currency": "EUR", "country": "FR", "sector": "Technology", "industry": "Communication Equipment", "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Micro-drone growth is material, but valuation, order concentration, component provenance, and durable cash conversion remain unresolved.",
+  "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md", "last_research_at": "2026-07-26T18:55:00Z", "next_review_at": "2026-08-07T12:00:00Z", "source": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf"
+}

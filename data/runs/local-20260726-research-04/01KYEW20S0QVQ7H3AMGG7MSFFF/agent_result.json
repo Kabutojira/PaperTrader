@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYEW20S0QVQ7H3AMGG7MSFFF",
+  "status": "succeeded",
+  "summary": "Created one wide-bandgap power-semiconductor idea. NVIDIA's 800 VDC ecosystem and DOE evidence support the engineering mechanism, while production timing, qualification, yield, utilization, pricing, packaging, capital intensity, and silicon competition block a broad supplier conclusion. No unverified ticker association or strategy was created.",
+  "evidence": [
+    {
+      "source": "NVIDIA 800 VDC architecture",
+      "claim": "NVIDIA's next-generation architecture reduces current, copper, cable bulk, and conversion stages and is intended to migrate gradually from existing systems.",
+      "url": "https://www.nvidia.com/en-us/data-center/technologies/800-vdc-architecture/"
+    },
+    {
+      "source": "Infineon 800 VDC reference designs",
+      "claim": "Infineon introduced 650 V GaN intermediate-bus reference designs for plus-or-minus 400 V and 800 V AI-server systems in 2026.",
+      "url": "https://www.infineon.com/ja/technology-news/2026/infpss202603-067",
+      "observed_at": "2026-05-14T00:00:00Z"
+    },
+    {
+      "source": "US Department of Energy power-electronics R&D",
+      "claim": "DOE identifies higher efficiency and operating temperature as WBG advantages while treating cost, reliability, packaging, and integration as necessary development work.",
+      "url": "https://www.energy.gov/cmei/vehicles/power-electronics-research-and-development"
+    },
+    {
+      "source": "DOE SK Siltron project",
+      "claim": "DOE closed a USD 544 million loan for SiC wafer capacity, confirming EV adoption and capacity expansion that may also create oversupply risk.",
+      "url": "https://www.energy.gov/edf/sk-siltron"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched SiC and GaN adoption: architecture and physics are credible, but supplier qualification, utilization, pricing, capital intensity, and valuation block a strategy."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page with architecture, device, capacity, and countervailing evidence.",
+      "Separated technical adoption from supplier free-cash-flow economics.",
+      "Avoided an unverified direct-supplier identity and broad-chip proxy.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

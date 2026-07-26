@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4b61970aa8f574446819",
+  "issuer_id": "issuer_7bca479f6eb8c69f3ffb",
+  "company_name": "GE Vernova Inc.",
+  "instrument_name": "GE Vernova Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "GEV",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "GEV",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Record power and electrification backlog is converting into margin and cash, but a fresh mark and normalized downside valuation are required before a strategy.",
+  "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+  "last_research_at": "2026-07-26T18:19:07Z",
+  "next_review_at": "2026-10-22T12:00:00Z",
+  "source": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial"
+}

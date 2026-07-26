@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260726-research-09/01KYCFPT58ZKCYEEYE4B721NCX/upsert-relationship.json",
+    "data/tables/relationships.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_solar_storage_grid_flnc.md"
+  ],
+  "completed_at": "2026-07-26T18:58:32Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYCFPT58ZKCYEEYE4B721NCX",
+  "passed": true,
+  "run_id": "local-20260726-research-09",
+  "validation_version": 1
+}

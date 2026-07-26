@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_c120e9f26ebb6159adf9",
+  "dedupe_key": "security_research:security_c120e9f26ebb6159adf9:physical-ai-automation:2026-07-26",
+  "prompt": "Research ABB as a bounded industrial-robotics and physical-AI enablement exposure.",
+  "inputs": {
+    "security_id": "security_c120e9f26ebb6159adf9",
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "research_focus": "Validate identity, segment exposure, RobotStudio monetization, installed-base services, orders, margins, cash conversion, portfolio changes, valuation, and invalidation."
+  },
+  "source": "idea_research:01KYEW1TXG5E19GYSSCNBG00PA",
+  "priority": 65,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world",
+    "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years"
+  ],
+  "max_attempts": 3
+}

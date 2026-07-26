@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFXFKB04HSHKYVSPNGXVJX0.json",
+    "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/enqueue-albemarle-q2-review.json"
+  ],
+  "completed_at": "2026-07-26T19:13:24Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYFWWE20AG7NT0YKY1YZRJBP",
+  "passed": true,
+  "run_id": "local-20260726-cron-02",
+  "validation_version": 1
+}

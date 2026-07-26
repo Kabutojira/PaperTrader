@@ -1,0 +1,33 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-26T18:41:19Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 5,
+  "operation_count": 5,
+  "outcomes": [
+    {
+      "operation_id": "01KYEWVS00ZH6QVA0V3KPEYBR0",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYEX4CCGQ7TJF2RHQ8HENTRG",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYEX4M6GJK1YWWA0GATWAMZ5",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYFQBWMR6FJ4P54W6M76ERQY",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYFQN7F8BKSSMGH81567597W",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-20260726-research-07",
+  "started_at": "2026-07-26T18:32:07Z"
+}

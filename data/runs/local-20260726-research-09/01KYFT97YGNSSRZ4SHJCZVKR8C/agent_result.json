@@ -1,0 +1,12 @@
+{
+  "operation_id": "01KYFT97YGNSSRZ4SHJCZVKR8C", "status": "succeeded",
+  "summary": "Researched Intuitive Surgical as one immutable healthcare-automation exposure. Procedure, installed-base, recurring consumables, GAAP profit, and cash growth strongly validate the mechanism, while clinical, tariff, supply, competition, and valuation gates remain. Updated it to high-confidence watching with no strategy absent a current downside valuation.",
+  "evidence": [
+    {"source": "Intuitive Surgical Q2 2026 earnings", "claim": "Combined procedures grew 16%, installed da Vinci systems 12%, instruments and accessories revenue 18%, total revenue 19%, and GAAP operating income to USD 972 million; cash and investments were USD 8.63 billion.", "url": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6", "observed_at": "2026-07-16T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-09/01KYFT97YGNSSRZ4SHJCZVKR8C/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_1f9cce545ede94cd6349.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Intuitive Surgical is high-confidence watching: recurring utilization economics are strong, but no current downside valuation supports a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-09/01KYFT97YGNSSRZ4SHJCZVKR8C/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable ISRG/XNAS/USD/common-stock identity.", "Created one maintained page separating procedure economics from clinical and valuation claims.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

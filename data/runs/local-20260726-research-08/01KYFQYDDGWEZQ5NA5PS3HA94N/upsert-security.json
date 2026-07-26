@@ -1,0 +1,7 @@
+{
+  "security_id": "security_bdc2f87dadf134760c3a", "issuer_id": "issuer_7273af0280c612edebab", "company_name": "Palantir Technologies Inc.", "instrument_name": "Palantir Technologies Inc. Class A common stock", "instrument_type": "equity",
+  "ticker": "PLTR", "exchange_code": "NMS", "venue_mic": "XNAS", "provider_symbol": "PLTR", "broker_symbol": "", "currency": "USD", "country": "US", "sector": "Technology", "industry": "Software - Infrastructure", "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Exceptional growth and margins, but Anduril-linked revenue is undisclosed and no dilution-adjusted downside valuation supports a strategy.",
+  "research_page": "data/wiki/securities/security_bdc2f87dadf134760c3a.md", "last_research_at": "2026-07-26T18:45:00Z", "next_review_at": "2026-08-14T12:00:00Z", "source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000028/pltr-20260331.htm"
+}

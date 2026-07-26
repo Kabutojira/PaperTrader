@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFS0VYR0TMJ57HFP2EGF6JJ", "status": "succeeded",
+  "summary": "Researched Recursion as one immutable clinical-stage AI-drug platform. Early clinical milestones and lower burn are positive, but revenue is immaterial versus spend, translation remains unproven, additional capital is likely, and data obligations can consume cash or equity. Updated it to low-confidence watching with no strategy.",
+  "evidence": [
+    {"source": "Recursion Q1 2026 results", "claim": "Cash was USD 665 million, revenue USD 6.5 million, net loss USD 117.5 million, and operating cash use USD 81.1 million; management guides to runway into early 2028 and reported early program milestones.", "url": "https://ir.recursion.com/news-releases/news-release-details/recursion-reports-first-quarter-financial-results-and-provides", "observed_at": "2026-05-06T00:00:00Z"},
+    {"source": "Recursion Q1 2026 Form 10-Q", "claim": "The filing says additional capital will likely be required and discloses up to USD 160 million of Tempus payments in cash or equity.", "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000078/rxrx-20260331.htm", "observed_at": "2026-05-06T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-08/01KYFS0VYR0TMJ57HFP2EGF6JJ/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_ed7d5b616a196969c815.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Recursion remains low-confidence watching: early clinical milestones and lower burn do not yet overcome translation, funding, and dilution risk."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-08/01KYFS0VYR0TMJ57HFP2EGF6JJ/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable RXRX/XNAS/USD/Class-A identity.", "Created one maintained page separating development observations from clinical proof.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

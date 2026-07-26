@@ -1,0 +1,89 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-research-02/01KYEW1ZSR3SX043Q8E8J8S172/enqueue-parrot-security-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYFQBWMR6FJ4P54W6M76ERQY.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "3fb733b27d97f72827ba7bc3d9a73b4e06710c3b04621d208a3fe19687098b39",
+            14335,
+            384
+          ],
+          "before": [
+            "file",
+            "427db789fcd6c9cf7b6c0c20e1ad3dc3aaa30336f4f5f665a72aee21ebd20e85",
+            13867,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "88b646790652f7133cea8ebcb652cc84fcebabf7b6fa5f67822c5f3fd996daf5",
+            892,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYFQBWMR6FJ4P54W6M76ERQY.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-research-02/01KYEW1ZSR3SX043Q8E8J8S172/enqueue-parrot-security-research.json",
+      "completed_at": "2026-07-26T17:25:36Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "32d1c192b01d28b02ac3de70ccc37d306a407c08a475152f276e1a5b826d0bd5",
+          1096,
+          436
+        ],
+        "path": "data/runs/local-20260726-research-02/01KYEW1ZSR3SX043Q8E8J8S172/enqueue-parrot-security-research.json"
+      },
+      "started_at": "2026-07-26T17:25:35Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-26T17:26:21Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T17:26:21Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-26T17:26:32Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T17:26:32Z"
+    }
+  ],
+  "operation_id": "01KYEW1ZSR3SX043Q8E8J8S172",
+  "run_id": "local-20260726-research-02"
+}

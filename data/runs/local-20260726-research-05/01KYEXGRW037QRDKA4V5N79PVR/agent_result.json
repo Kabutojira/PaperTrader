@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYEXGRW037QRDKA4V5N79PVR",
+  "status": "succeeded",
+  "summary": "Researched RTX as one immutable aerospace and defence security, separating Collins, Pratt & Whitney, and Raytheon. Current results show defence and commercial demand converting into margins and cash, while engine liabilities, contract risk, cyclicality, and absent normalized valuation block a strategy. Updated the security to watching without follow-up work.",
+  "evidence": [
+    {
+      "source": "RTX Q2 2026 results",
+      "claim": "RTX reported USD 24.7 billion sales, USD 289 billion backlog, USD 2.9 billion free cash flow, and margin expansion across all three segments.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-23T00:00:00Z"
+    },
+    {
+      "source": "RTX Q2 2026 results",
+      "claim": "Raytheon sales grew 18% on air-defence, naval, Patriot, Standard Missile, and AMRAAM volume; Pratt and Collins also grew with different margin and cycle exposures.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-23T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260726-research-05/01KYEXGRW037QRDKA4V5N79PVR/upsert-security.json",
+    "data/tables/securities.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RTX moved to watching: Raytheon, Pratt, and Collins converted demand into margin and cash growth, but engine, contract, cycle, and valuation gates block a strategy."
+  ],
+  "commands_run": [
+    "papertrader research security upsert --request data/runs/local-20260726-research-05/01KYEXGRW037QRDKA4V5N79PVR/upsert-security.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated immutable RTX/XNYS/USD/equity identity against the existing row and issuer release.",
+      "Created exactly one maintained security page with segment economics, contrary evidence, catalysts, invalidation, confidence, and review date.",
+      "Documented why no current valuation range or strategy is supportable.",
+      "Updated structured security state only through the audited security upsert command.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

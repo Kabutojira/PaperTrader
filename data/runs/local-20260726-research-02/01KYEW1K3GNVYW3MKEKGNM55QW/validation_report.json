@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFQYDDGWEZQ5NA5PS3HA94N.json",
+    "data/runs/local-20260726-research-02/01KYEW1K3GNVYW3MKEKGNM55QW/enqueue-palantir-security-research.json",
+    "data/wiki/ideas/idea_anduril_product_company_disruption.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T17:37:32Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1K3GNVYW3MKEKGNM55QW",
+  "passed": true,
+  "run_id": "local-20260726-research-02",
+  "validation_version": 1
+}

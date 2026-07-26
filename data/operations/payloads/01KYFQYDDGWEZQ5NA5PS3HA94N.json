@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_bdc2f87dadf134760c3a",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_anduril_product_company_disruption",
+    "research_focus": "Validate identity, Anduril-linked revenue materiality, defence contract concentration, organic growth, margins, cash conversion, dilution, valuation, and proxy invalidation.",
+    "security_id": "security_bdc2f87dadf134760c3a"
+  },
+  "objective": "Research Palantir as a bounded public proxy for Anduril-linked defence software and manufacturing activity.",
+  "operation_id": "01KYFQYDDGWEZQ5NA5PS3HA94N",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.army.mil/article/291074/u_s_army_awards_enterprise_contract_for_it_commercial_solutions",
+    "https://www.palantir.com/warpspeed/"
+  ]
+}

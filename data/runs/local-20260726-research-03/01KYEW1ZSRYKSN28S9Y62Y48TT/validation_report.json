@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_structural_silver_deficit.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T17:59:40Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1ZSRYKSN28S9Y62Y48TT",
+  "passed": true,
+  "run_id": "local-20260726-research-03",
+  "validation_version": 1
+}

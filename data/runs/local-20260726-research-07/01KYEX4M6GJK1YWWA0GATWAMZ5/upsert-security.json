@@ -1,0 +1,7 @@
+{
+  "security_id": "security_4627aea1bf7d8943d3d8", "issuer_id": "issuer_e012f2de036ed7a1d738", "company_name": "Sigma Lithium Corporation", "instrument_name": "Sigma Lithium Corporation common shares", "instrument_type": "equity",
+  "ticker": "SGML", "exchange_code": "NCM", "venue_mic": "XNAS", "provider_symbol": "SGML", "broker_symbol": "", "currency": "USD", "country": "CA", "sector": "Basic Materials", "industry": "Other Industrial Metals & Mining", "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Profit did not convert to cash; low liquidity, negative working capital, debt, lower output, receivables, and control weaknesses keep Sigma low-confidence watching.",
+  "research_page": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md", "last_research_at": "2026-07-26T18:30:38Z", "next_review_at": "2026-08-31T12:00:00Z", "source": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm"
+}

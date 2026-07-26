@@ -1,0 +1,23 @@
+{
+  "security_id": "security_18a3ab0ee6086ee85d0f",
+  "issuer_id": "issuer_f95d7e49ebda3ca93218",
+  "company_name": "Eaton Corporation plc",
+  "instrument_name": "Eaton Corporation plc ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "ETN",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ETN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "IE",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Electrical and data-centre orders are converting at strong margins, but concentration, acquisitions, cash conversion, and absent valuation keep Eaton at watching.",
+  "research_page": "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+  "last_research_at": "2026-07-26T18:23:00Z",
+  "next_review_at": "2026-08-04T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm"
+}

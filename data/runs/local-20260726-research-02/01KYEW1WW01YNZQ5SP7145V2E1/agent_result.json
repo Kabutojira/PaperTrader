@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYEW1WW01YNZQ5SP7145V2E1",
+  "status": "succeeded",
+  "summary": "Created one gold and cash-generative-miner macro-hedge idea using current Federal Reserve, industry-demand, and Newmont evidence. Gold's hedge role and miner cash generation are supported, but real yields, mean reversion, operating costs, jurisdiction, and valuation prevent a strategy or ticker-only follow-up.",
+  "evidence": [
+    {
+      "source": "Federal Reserve June 2026 FOMC statement",
+      "claim": "The FOMC held its target range at 3.5%-3.75% and said inflation remained elevated relative to its 2% objective.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm",
+      "observed_at": "2026-06-17T00:00:00Z"
+    },
+    {
+      "source": "World Gold Council Q1 2026 Gold Demand Trends",
+      "claim": "First-quarter demand reached 1,231 tonnes, central banks bought 244 tonnes net, and recycling rose 5% amid record prices.",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q1-2026",
+      "observed_at": "2026-04-29T00:00:00Z"
+    },
+    {
+      "source": "Newmont first-quarter 2026 results",
+      "claim": "Newmont reported USD 3.1 billion of free cash flow and a USD 3.2 billion net-cash position.",
+      "url": "https://www.newmont.com/investors/news-release/news-details/2026/Newmont-Generates-Record-Quarterly-Earnings-and-Free-Cash-Flow-Reports-First-Quarter-2026-Results-and-Announces-Increased-Share-Repurchase-Authorization/default.aspx",
+      "observed_at": "2026-04-23T00:00:00Z"
+    },
+    {
+      "source": "Newmont second-quarter 2026 results",
+      "claim": "Newmont reported USD 2.2 billion of second-quarter free cash flow and USD 3.4 billion of net cash while retaining full-year guidance.",
+      "url": "https://www.newmont.com/investors/news-release/news-details/2026/Newmont-Reports-Robust-Second-Quarter-2026-Results-Remains-on-Track-to-Achieve-Full-Year-Guidance/default.aspx",
+      "observed_at": "2026-07-23T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_macro_hedge_gold.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched gold and miners as a macro hedge: diversification and cash generation are supported, but real-yield, mean-reversion, cost, jurisdiction, identity, and valuation gates block a strategy."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page and separated physical-gold exposure from miner operating risk.",
+      "Used dated policy, demand, and issuer evidence with explicit contrary evidence and invalidation.",
+      "Set confidence and a concrete review date and avoided an unverified ticker association.",
+      "Updated the wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

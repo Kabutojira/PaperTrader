@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_8472507d7d320aa388a7",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_cybersecurity_geopolitical_continuity",
+    "research_focus": "Validate identity, post-incident retention, net-new ARR, platform adoption, GAAP margins, free cash flow, stock compensation, valuation, catalysts, and invalidation.",
+    "security_id": "security_8472507d7d320aa388a7"
+  },
+  "objective": "Research CrowdStrike as a bounded cybersecurity resilience and continuity exposure.",
+  "operation_id": "01KYFRW7GRGCMP8VNVERTSPXGH",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://ir.crowdstrike.com/",
+    "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "operation_id": "01KYEW1RZ04V1TGS2N013P04YK",
+  "status": "succeeded",
+  "summary": "Created one digital-finance and crypto-rails idea. Enacted stablecoin law, regulatory guidance, and platform activity support infrastructure adoption, while cycle, rates, take rates, custody, security, regulation, stock compensation, and normalized GAAP earnings remain material gates. Enqueued one bounded Coinbase review; no relationship or strategy was created.",
+  "evidence": [
+    {
+      "source": "Congress.gov S.1582",
+      "claim": "The GENIUS Act became law in July 2025 and established permitted issuers, one-to-one liquid reserves, redemption and monthly disclosure requirements, and AML coverage.",
+      "url": "https://www.congress.gov/bill/119th-congress/senate-bill/1582",
+      "observed_at": "2025-07-18T00:00:00Z"
+    },
+    {
+      "source": "Federal Reserve stablecoin analysis",
+      "claim": "The Federal Reserve identifies cross-border potential while retaining conversion-cost, regulation, compliance, and bank-intermediation constraints.",
+      "url": "https://www.federalreserve.gov/econres/notes/feds-notes/payment-stablecoins-and-cross-border-payments-benefits-and-implications-for-monetary-policy-implementation-20260330.html",
+      "observed_at": "2026-03-30T00:00:00Z"
+    },
+    {
+      "source": "SEC statement on tokenized securities",
+      "claim": "SEC staff distinguished issuer-sponsored, custodial, and synthetic tokenized-security structures without removing securities and custody obligations.",
+      "url": "https://www.sec.gov/newsroom/speeches-statements/corp-fin-statement-tokenized-securities-012826-statement-tokenized-securities",
+      "observed_at": "2026-01-28T00:00:00Z"
+    },
+    {
+      "source": "Coinbase Q1 2026 results",
+      "claim": "Coinbase reported stablecoin and Base scale alongside a USD 394.1 million GAAP loss and USD 303.3 million adjusted EBITDA.",
+      "url": "https://investor.coinbase.com/news/news-details/2026/Coinbase-Q1-Financial-Results-Show-Resilient-Financial-Performance-Driven-by-New-All-Time-High-Crypto-Trading-Volume-Market-Share/default.aspx",
+      "observed_at": "2026-05-07T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFSX760QYGFQA241FA89VF5.json",
+    "data/runs/local-20260726-research-04/01KYEW1RZ04V1TGS2N013P04YK/enqueue-coinbase-security-research.json",
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFSX760QYGFQA241FA89VF5"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched digital-finance rails: law and usage support adoption, but cyclicality, rates, custody, take rates, regulation, and dilution block a strategy; queued Coinbase research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-04/01KYEW1RZ04V1TGS2N013P04YK/enqueue-coinbase-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page with legal, regulatory, operating, and countervailing evidence.",
+      "Separated regulated-rail adoption from normalized platform earnings.",
+      "Used Coinbase's immutable identity and enqueued one bounded review through the audited CLI.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

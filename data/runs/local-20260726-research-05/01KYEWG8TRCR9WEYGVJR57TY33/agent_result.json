@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYEWG8TRCR9WEYGVJR57TY33",
+  "status": "succeeded",
+  "summary": "Researched GE Vernova as one immutable power and grid-equipment security. Q2 2026 orders, backlog, margin expansion, and cash conversion confirm the operating exposure, but no fresh deterministic mark or normalized downside-aware valuation supports a strategy. Updated the security to watching without creating follow-up work.",
+  "evidence": [
+    {
+      "source": "GE Vernova Q2 2026 results",
+      "claim": "Orders were USD 24.2 billion, backlog reached USD 176 billion, revenue was USD 11.1 billion, adjusted EBITDA margin was 11.3%, and free cash flow was USD 5.1 billion.",
+      "url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial",
+      "observed_at": "2026-07-22T00:00:00Z"
+    },
+    {
+      "source": "GE Vernova Q2 2026 results",
+      "claim": "Gas equipment backlog and reservations reached 116 GW and data-centre orders exceeded USD 5 billion year to date; full-year free-cash-flow guidance rose to USD 11.5-12.5 billion.",
+      "url": "https://www.gevernova.com/news/articles/ge-vernova-releases-second-quarter-2026-financial-results",
+      "observed_at": "2026-07-22T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260726-research-05/01KYEWG8TRCR9WEYGVJR57TY33/upsert-security.json",
+    "data/tables/securities.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "GE Vernova moved to watching: record backlog, margin, and cash evidence confirm the power bottleneck, but no fresh validated mark or normalized downside valuation supports a paper strategy."
+  ],
+  "commands_run": [
+    "papertrader research security upsert --request data/runs/local-20260726-research-05/01KYEWG8TRCR9WEYGVJR57TY33/upsert-security.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated immutable GEV/XNYS/USD/equity identity against the existing row and issuer release.",
+      "Created exactly one maintained security page with thesis, contrary evidence, catalysts, invalidation, confidence, and review date.",
+      "Documented why no current valuation range or strategy is supportable.",
+      "Updated structured security state only through the audited security upsert command.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

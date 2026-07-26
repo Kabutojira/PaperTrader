@@ -1,0 +1,29 @@
+{
+  "completed_at": "2026-07-26T18:50:10Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 5,
+  "preparation_errors": [
+    "security_18a3ab0ee6086ee85d0f: price cache is empty",
+    "security_1c055eb9b2bb1f5a8ff2: price cache is empty",
+    "security_2dbe878dfc899d7ee867: price cache is empty",
+    "security_4627aea1bf7d8943d3d8: price cache is empty",
+    "security_4b61970aa8f574446819: price cache is empty",
+    "security_59304f90c440def31dc5: price cache is empty",
+    "security_66cdcf90aac0d83e76f3: price cache is empty",
+    "security_6ad1af8d10d6276a0221: price cache is empty",
+    "security_9d4049ed6669a52815d6: price cache is empty",
+    "security_c120e9f26ebb6159adf9: price cache is empty",
+    "security_cc4dcb8f002b61dffe00: price cache is empty",
+    "security_fb87fac302a5446a1ced: price cache is empty"
+  ],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260726.md",
+  "run_id": "local-20260726-research-08",
+  "source_sha": "5ad1dc7094607d2a65e03d5aa1d00ff8dc29ef20",
+  "started_at": "2026-07-26T18:41:33Z",
+  "status": "degraded",
+  "trigger": "local-research"
+}

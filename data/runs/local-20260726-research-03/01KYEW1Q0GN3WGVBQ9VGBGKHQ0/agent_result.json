@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYEW1Q0GN3WGVBQ9VGBGKHQ0",
+  "status": "succeeded",
+  "summary": "Created one cybersecurity resilience and continuity idea. State-linked threats and regulatory duties support durable demand, while platform bundling, implementation timing, vendor trust, dilution, and valuation remain material counterweights. Enqueued one bounded CrowdStrike review; no relationship or strategy was created.",
+  "evidence": [
+    {
+      "source": "CISA joint advisory AA25-239A",
+      "claim": "State-sponsored actors targeted telecommunications, government, transportation, and military infrastructure networks.",
+      "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-239a",
+      "observed_at": "2025-09-03T00:00:00Z"
+    },
+    {
+      "source": "European Commission NIS2 overview",
+      "claim": "NIS2 applies risk-management and reporting duties across 18 critical sectors and introduces management accountability.",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/nis2-directive"
+    },
+    {
+      "source": "CrowdStrike fiscal-Q1 2027 results",
+      "claim": "CrowdStrike reported USD 5.51 billion ending ARR, USD 256 million net-new ARR, and USD 468 million free cash flow.",
+      "url": "https://ir.crowdstrike.com/",
+      "observed_at": "2026-06-03T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFRW7GRGCMP8VNVERTSPXGH.json",
+    "data/runs/local-20260726-research-03/01KYEW1Q0GN3WGVBQ9VGBGKHQ0/enqueue-crowdstrike-security-research.json",
+    "data/wiki/ideas/idea_cybersecurity_geopolitical_continuity.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFRW7GRGCMP8VNVERTSPXGH"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched cybersecurity continuity: threat and regulatory demand are durable, but trust, consolidation, dilution, and valuation block a strategy; queued CrowdStrike research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-03/01KYEW1Q0GN3WGVBQ9VGBGKHQ0/enqueue-crowdstrike-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page with causal mechanism, dated primary evidence, counterweights, confidence, and review date.",
+      "Used CrowdStrike's immutable identity and enqueued one bounded review through the audited CLI.",
+      "Updated the wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

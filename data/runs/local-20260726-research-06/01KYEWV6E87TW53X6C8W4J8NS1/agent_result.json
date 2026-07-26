@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYEWV6E87TW53X6C8W4J8NS1", "status": "succeeded",
+  "summary": "Researched Southern Copper as one immutable producer. Long reserve life, low credited cost, margins, and cash generation support the copper exposure; lower production, by-product dependence, jurisdiction, project execution, and absent commodity-normalized valuation block a strategy. Updated it to watching.",
+  "evidence": [
+    {"source": "Southern Copper Q1 2026 results", "claim": "Sales were USD 4.25 billion, adjusted EBITDA margin 63.8%, operating cash flow USD 1.69 billion, copper production fell 4%, and credited cash cost was negative USD 0.11/lb.", "url": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf", "observed_at": "2026-04-28T00:00:00Z"},
+    {"source": "Southern Copper March 2026 presentation", "claim": "The company reports 51.1 Mt contained copper reserves and a large multi-project pipeline in Peru and Mexico.", "url": "https://southerncoppercorp.com/wp-content/uploads/2026/03/pp260213.pdf"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-06/01KYEWV6E87TW53X6C8W4J8NS1/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_6ad1af8d10d6276a0221.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Southern Copper moved to watching: strong reserves and cash are offset by lower production, by-product-sensitive costs, jurisdiction, execution, and valuation gates; no strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-06/01KYEWV6E87TW53X6C8W4J8NS1/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable SCCO/XNYS/USD/equity identity.", "Created one maintained page with normalized-valuation limitations.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

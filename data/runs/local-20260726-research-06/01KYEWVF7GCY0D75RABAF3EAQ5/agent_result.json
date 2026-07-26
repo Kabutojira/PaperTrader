@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYEWVF7GCY0D75RABAF3EAQ5", "status": "succeeded",
+  "summary": "Researched Freeport-McMoRan as one immutable copper producer. High realized prices and margins supported cash, while copper production remained lower during Grasberg recovery. Indonesian terms, minority interests, capex, volume normalization, and absent valuation block a strategy. Updated it to watching.",
+  "evidence": [
+    {"source": "Freeport Q2 2026 results", "claim": "Copper production was 786 million pounds, sales 710 million pounds, realized price USD 6.17/lb, unit net cash cost USD 1.97/lb, operating cash flow USD 2.0 billion, and capex USD 1.1 billion.", "url": "https://investors.fcx.com/investors/news-releases./default.aspx", "observed_at": "2026-07-23T00:00:00Z"},
+    {"source": "Freeport Q1 2026 Form 10-Q", "claim": "Grasberg restoration and Indonesian operating rights remain material operational and jurisdictional variables.", "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000025/fcx-20260331.htm", "observed_at": "2026-05-08T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-06/01KYEWVF7GCY0D75RABAF3EAQ5/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_2dbe878dfc899d7ee867.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Freeport moved to watching: copper-price leverage and cash are strong, but Grasberg recovery, Indonesian terms, capex, minority interests, and valuation gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-06/01KYEWVF7GCY0D75RABAF3EAQ5/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable FCX/XNYS/USD/equity identity.", "Created one maintained page with volume and valuation limitations.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

@@ -1,0 +1,43 @@
+{
+  "operation_id": "01KYEW1WW0GW20E98KH16K9RBK",
+  "status": "succeeded",
+  "summary": "Validated the completed nearshoring and friendshoring manufacturing-capacity research after the prior controller-released attempt. The maintained idea contains current North American review, Indian incentive, and Mexico capacity evidence, and the bounded Ternium follow-up already exists. No duplicate operation or additional state change was created.",
+  "evidence": [
+    {
+      "source": "USTR USMCA joint-review consultation",
+      "claim": "The 1 July 2026 joint review explicitly covers North America's investment climate, competitiveness, and economic security.",
+      "url": "https://www.ustr.gov/about/policy-offices/press-office/press-releases/2025/september/ustr-seeks-public-comment-joint-review-usmca",
+      "observed_at": "2025-09-16T00:00:00Z"
+    },
+    {
+      "source": "Invest India electronics overview",
+      "claim": "India maintains production-linked support for electronics localization and production.",
+      "url": "https://www.investindia.gov.in/sector/electronic-products"
+    },
+    {
+      "source": "Ternium Pesqueria project",
+      "claim": "Ternium is building a USD 3.2 billion, 2.6-million-ton steel mill in Mexico designed for USMCA regional supply.",
+      "url": "https://investors.ternium.com/featured-stories/new-steel-slab-mill-in-pesqueria-nuevo-leon-mexico/"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Validated the completed nearshoring research and its existing bounded Ternium follow-up without creating duplicate state."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Re-read the immutable operation context and maintained idea.",
+      "Confirmed the idea page includes mechanism, evidence, contrary evidence, confidence, and review date.",
+      "Confirmed the bounded Ternium follow-up already exists and did not enqueue a duplicate.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

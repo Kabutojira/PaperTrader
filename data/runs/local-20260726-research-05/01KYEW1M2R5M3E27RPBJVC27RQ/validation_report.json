@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFT25CG14QEN1CHQ1FE893C.json",
+    "data/runs/local-20260726-research-05/01KYEW1M2R5M3E27RPBJVC27RQ/enqueue-rocket-lab-security-research.json",
+    "data/wiki/ideas/idea_commercial_space_infrastructure.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:13:17Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1M2R5M3E27RPBJVC27RQ",
+  "passed": true,
+  "run_id": "local-20260726-research-05",
+  "validation_version": 1
+}

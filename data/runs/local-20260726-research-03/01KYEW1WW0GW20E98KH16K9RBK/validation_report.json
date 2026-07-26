@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFRGZ5GDS9K83KQB9Q240MT.json",
+    "data/runs/local-20260726-research-03/01KYEW1WW0GW20E98KH16K9RBK/enqueue-ternium-security-research.json",
+    "data/wiki/ideas/idea_nearshoring_friendshoring_manufacturing.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T17:46:52Z",
+  "errors": [
+    "commands_run does not exactly match deterministic CLI audit receipts"
+  ],
+  "harness": "local",
+  "operation_id": "01KYEW1WW0GW20E98KH16K9RBK",
+  "passed": false,
+  "run_id": "local-20260726-research-03",
+  "validation_version": 1
+}

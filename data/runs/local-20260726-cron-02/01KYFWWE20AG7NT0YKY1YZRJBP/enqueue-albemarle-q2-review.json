@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_66cdcf90aac0d83e76f3",
+  "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:q2-2026:2026-08-06",
+  "prompt": "Reassess Albemarle after its 2026 second-quarter release following the July oversold transition.",
+  "inputs": {
+    "security_id": "security_66cdcf90aac0d83e76f3",
+    "idea_id": "idea_critical_minerals_lithium",
+    "research_focus": "Test realized lithium pricing, volume, cash conversion, leverage, preferred-stock dilution, updated guidance, valuation, catalysts, and invalidation after Q2 2026 results."
+  },
+  "source": "opportunity_research:01KYFWWE20AG7NT0YKY1YZRJBP",
+  "priority": 69,
+  "freshness_days": 0,
+  "depends_on": [],
+  "not_before": "2026-08-06T12:00:00Z",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
+    "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx"
+  ],
+  "max_attempts": 3
+}

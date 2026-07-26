@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KYEW1YTG6S2CSRQ4R774P9AH",
+  "status": "succeeded",
+  "summary": "Created one precision-biology and healthcare-automation idea using FDA controls and current Intuitive operating evidence. Measurable surgical automation is separated from unproven broad clinical-success claims. Enqueued one bounded Intuitive Surgical review; no strategy was created.",
+  "evidence": [
+    {
+      "source": "FDA good AI practice",
+      "claim": "FDA principles require context-specific, risk-based validation, representative data, monitoring, and lifecycle management for AI in drug development.",
+      "url": "https://www.fda.gov/about-fda/artificial-intelligence-drug-development/guiding-principles-good-ai-practice-drug-development"
+    },
+    {
+      "source": "FDA computer-assisted surgical systems",
+      "claim": "Robotically assisted systems remain surgeon-controlled and subject to safety, training, and postmarket monitoring.",
+      "url": "https://www.fda.gov/medical-devices/surgery-devices/computer-assisted-surgical-systems"
+    },
+    {
+      "source": "Intuitive Q2 2026 results",
+      "claim": "Intuitive reported about 16% combined procedure growth, 19% revenue growth, 11,710 installed da Vinci systems, and USD 1.73 billion of instruments and accessories revenue.",
+      "url": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6",
+      "observed_at": "2026-07-16T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFT97YGNSSRZ4SHJCZVKR8C.json",
+    "data/runs/local-20260726-research-05/01KYEW1YTG6S2CSRQ4R774P9AH/enqueue-intuitive-security-research.json",
+    "data/wiki/ideas/idea_precision_biology_healthcare_automation.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": ["01KYFT97YGNSSRZ4SHJCZVKR8C"],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched precision biology and healthcare automation: surgical utilization is measurable, but broad clinical-success uplift remains unproven; queued Intuitive Surgical."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-05/01KYEW1YTG6S2CSRQ4R774P9AH/enqueue-intuitive-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read required controller context and payload.",
+      "Created exactly one evidence-linked idea with causal gates and a review date.",
+      "Used Intuitive Surgical's immutable identity for one bounded follow-up.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_cable_broadband_convergence.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:06:08Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1M2R5GJW7RHH8X5ST57W",
+  "passed": true,
+  "run_id": "local-20260726-research-04",
+  "validation_version": 1
+}

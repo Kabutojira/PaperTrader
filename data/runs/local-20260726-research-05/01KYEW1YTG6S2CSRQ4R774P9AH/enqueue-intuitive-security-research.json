@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_1f9cce545ede94cd6349",
+  "dedupe_key": "security_research:security_1f9cce545ede94cd6349:precision-healthcare-automation:2026-07-26",
+  "prompt": "Research Intuitive Surgical as a bounded healthcare-automation exposure.",
+  "inputs": {
+    "security_id": "security_1f9cce545ede94cd6349",
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "research_focus": "Validate identity, procedure and installed-base growth, recurring instrument economics, competition, hospital budgets, safety, margins, cash conversion, valuation, catalysts, and invalidation."
+  },
+  "source": "idea_research:01KYEW1YTG6S2CSRQ4R774P9AH",
+  "priority": 64,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6",
+    "https://www.fda.gov/medical-devices/surgery-devices/computer-assisted-surgical-systems"
+  ],
+  "max_attempts": 3
+}

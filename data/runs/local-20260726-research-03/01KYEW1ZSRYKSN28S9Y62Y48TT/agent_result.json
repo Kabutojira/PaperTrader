@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KYEW1ZSRYKSN28S9Y62Y48TT",
+  "status": "succeeded",
+  "summary": "Created one structural silver-deficit idea. A sixth annual deficit and above-ground inventory draw are supported, but current evidence also shows PV thrifting, substitution, increased recycling, and investment-flow sensitivity. No unverified ticker association, relationship, or strategy was created.",
+  "evidence": [
+    {
+      "source": "World Silver Survey 2026",
+      "claim": "The survey projects a sixth annual deficit and a cumulative 2021-2026 deficit of 762.1 million ounces while expecting the imbalance to moderate.",
+      "url": "https://silverinstitute.org/wp-content/uploads/2026/04/World-Silver-Survey-2026.pdf"
+    },
+    {
+      "source": "Silver Institute 2026 outlook",
+      "claim": "The outlook forecasts a 67-million-ounce deficit and 20% physical-investment growth, alongside 2% lower industrial fabrication, PV thrifting and substitution, and recycling above 200 million ounces.",
+      "url": "https://silverinstitute.org/global-silver-investment-to-remain-strong-in-2026-against-the-backdrop-of-a-sixth-consecutive-annual-market-deficit/",
+      "observed_at": "2026-02-10T00:00:00Z"
+    },
+    {
+      "source": "USGS Mineral Commodity Summaries 2026",
+      "claim": "USGS estimates 2025 US silver use at 25% electrical and electronics, 15% photovoltaics, and 18% net physical investment, with 77% net import reliance.",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf",
+      "observed_at": "2026-02-06T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_structural_silver_deficit.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Confirmed the silver deficit but retained PV substitution, recycling, investment-flow, and issuer-execution gates; no strategy or unverified ticker follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page with supply-demand mechanism, dated evidence, contrary evidence, confidence, and review date.",
+      "Separated direct metal exposure from miner, streamer, and downstream-user economics.",
+      "Avoided unverified ticker identities and direct strategy creation.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

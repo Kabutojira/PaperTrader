@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_7ca095d63423c55a90e3",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_commercial_space_infrastructure",
+    "research_focus": "Validate identity, revenue mix, backlog quality, launch reliability, Neutron schedule, fixed-price risk, cash burn, dilution, valuation, catalysts, and invalidation.",
+    "security_id": "security_7ca095d63423c55a90e3"
+  },
+  "objective": "Research Rocket Lab as a bounded commercial-space infrastructure exposure.",
+  "operation_id": "01KYFT25CG14QEN1CHQ1FE893C",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-first-quarter-2026-financial-results",
+    "https://www.ssc.spaceforce.mil/about-us/race-to-resilience"
+  ]
+}

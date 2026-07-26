@@ -1,0 +1,46 @@
+{
+  "operation_id": "01KYEW1QZRFC4CBY8R8Y9S3S10",
+  "status": "succeeded",
+  "summary": "Created one digital-attention, gaming, and consumer-ecosystem idea using current Roblox filings. Engagement, bookings, and cash generation are real, while safety headwinds, creator costs, deferred revenue, and dilution remain gates. Enqueued one bounded Roblox review; no strategy was created.",
+  "evidence": [
+    {
+      "source": "Roblox Q1 2026 shareholder letter",
+      "claim": "Roblox reported 39% revenue growth, 43% bookings growth, 132 million DAUs, 43% hours growth, and USD 596 million free cash flow, but reduced full-year guidance for safety headwinds.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm",
+      "observed_at": "2026-04-30T00:00:00Z"
+    },
+    {
+      "source": "Roblox 2025 Form 10-K",
+      "claim": "Roblox reported USD 1.13 billion stock compensation and disclosed that safety changes can affect engagement, retention, revenue, and bookings.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000131509826000024/rblx-20251231.htm"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFTC4Q8B9B52BS1XZKPWVYD.json",
+    "data/runs/local-20260726-research-05/01KYEW1QZRFC4CBY8R8Y9S3S10/enqueue-roblox-security-research.json",
+    "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": ["01KYFTC4Q8B9B52BS1XZKPWVYD"],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched digital attention and gaming: engagement and cash generation coexist with safety and dilution risks; queued Roblox."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-05/01KYEW1QZRFC4CBY8R8Y9S3S10/enqueue-roblox-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read required controller context and payload.",
+      "Created exactly one evidence-linked idea with causal gates and a review date.",
+      "Used Roblox's immutable identity for one bounded follow-up.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

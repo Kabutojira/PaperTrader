@@ -1,0 +1,69 @@
+{
+  "operation_id": "01KYEW1TXG5E19GYSSCNBG00PA",
+  "status": "succeeded",
+  "summary": "Created one embodied-AI and humanoid component-supply-chain idea. Scaled industrial automation and enabling platforms are evidenced, but repeat humanoid deployments, uptime, supplier materiality, and margins remain unproven. Enqueued one bounded ABB review; no relationship or strategy was created.",
+  "evidence": [
+    {
+      "source": "International Federation of Robotics, World Robotics 2025",
+      "claim": "IFR counted 542,000 industrial robot installations in 2024 and 4.664 million robots in operation, confirming a scaled conventional automation base.",
+      "url": "https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years",
+      "observed_at": "2025-09-25T00:00:00Z"
+    },
+    {
+      "source": "International Federation of Robotics humanoid position paper",
+      "claim": "IFR distinguishes the humanoid vision from present deployment reality and highlights opportunities and limitations.",
+      "url": "https://ifr.org/ifr-press-releases/news/humanoid-robots-vision-and-reality-paper-published-by-ifr",
+      "observed_at": "2025-08-14T00:00:00Z"
+    },
+    {
+      "source": "NVIDIA physical-AI ecosystem release",
+      "claim": "ABB, FANUC, Yaskawa, KUKA, and humanoid developers are integrating NVIDIA simulation, model, and edge-compute tooling across an installed base exceeding two million industrial robots.",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world",
+      "observed_at": "2026-03-16T00:00:00Z"
+    },
+    {
+      "source": "NVIDIA Halos for Robotics",
+      "claim": "NVIDIA introduced a robotics safety stack with Agility as the first humanoid partner, underscoring certification as a deployment gate.",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai",
+      "observed_at": "2026-06-22T00:00:00Z"
+    },
+    {
+      "source": "MP Materials first-quarter 2026 results",
+      "claim": "MP reported commercial US magnet production and USD 21.1 million of Magnetics revenue, without separating robotics demand.",
+      "url": "https://investors.mpmaterials.com/investor-news/news-details/2026/MP-Materials-Reports-First-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-05-07T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFQN7F8BKSSMGH81567597W.json",
+    "data/runs/local-20260726-research-02/01KYEW1TXG5E19GYSSCNBG00PA/enqueue-abb-security-research.json",
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFQN7F8BKSSMGH81567597W"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched embodied AI and humanoid components: industrial automation is scaled, but humanoid deployment economics and component materiality remain unproven; queued ABB research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-02/01KYEW1TXG5E19GYSSCNBG00PA/enqueue-abb-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page separating conventional automation evidence from humanoid assumptions.",
+      "Documented component channels, deployment gates, contrary evidence, confidence, and review date.",
+      "Used ABB's immutable security identity and enqueued one bounded review through the audited CLI.",
+      "Updated the wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

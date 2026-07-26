@@ -1,0 +1,10 @@
+{
+  "operation_id": "01KYEWVS00ZH6QVA0V3KPEYBR0", "status": "succeeded",
+  "summary": "Researched Rio Tinto's sponsored ADR as one immutable diversified miner. Oyu Tolgoi growth and costs improved, but quarterly copper output declined, iron ore dominates, large projects compete for capital, and half-year financials and valuation remain pending. Updated it to watching without a strategy.",
+  "evidence": [{"source": "Rio Tinto Q2 2026 production results", "claim": "Oyu Tolgoi H1 output rose 31% and cost guidance improved to USD 0.30-0.50/lb, while group Q2 copper output fell 7% year over year and full-year guidance was unchanged.", "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results", "observed_at": "2026-07-15T00:00:00Z"}],
+  "files_changed": ["data/runs/local-20260726-research-07/01KYEWVS00ZH6QVA0V3KPEYBR0/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Rio Tinto ADR moved to watching: Oyu Tolgoi is improving, but group copper, portfolio mix, project capital, pending financials, and valuation gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-07/01KYEWVS00ZH6QVA0V3KPEYBR0/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable RIO/XNYS/USD/sponsored-ADR identity.", "Created one maintained page with portfolio and valuation limitations.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

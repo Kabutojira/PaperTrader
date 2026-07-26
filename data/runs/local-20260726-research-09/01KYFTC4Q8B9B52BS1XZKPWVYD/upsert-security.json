@@ -1,0 +1,7 @@
+{
+  "security_id": "security_c9a37d277445869a8809", "issuer_id": "issuer_2cfe7452981883bfe840", "company_name": "Roblox Corporation", "instrument_name": "Roblox Corporation Class A common stock", "instrument_type": "equity",
+  "ticker": "RBLX", "exchange_code": "NYQ", "venue_mic": "XNYS", "provider_symbol": "RBLX", "broker_symbol": "", "currency": "USD", "country": "US", "sector": "Communication Services", "industry": "Electronic Gaming & Multimedia", "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Engagement, bookings, and cash are strong, but safety headwinds, creator costs, GAAP losses, dilution, and valuation block a strategy.",
+  "research_page": "data/wiki/securities/security_c9a37d277445869a8809.md", "last_research_at": "2026-07-26T19:25:00Z", "next_review_at": "2026-08-14T12:00:00Z", "source": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm"
+}

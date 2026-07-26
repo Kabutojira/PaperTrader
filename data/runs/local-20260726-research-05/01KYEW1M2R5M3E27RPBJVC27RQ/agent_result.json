@@ -1,0 +1,23 @@
+{
+  "operation_id": "01KYEW1M2R5M3E27RPBJVC27RQ",
+  "status": "succeeded",
+  "summary": "Created one commercial-space infrastructure idea using funded defence, NASA procurement, and Rocket Lab operating evidence. Mission reliability, fixed-price execution, cash burn, dilution, concentration, and recurring revenue remain gates. Enqueued one bounded Rocket Lab review; no strategy was created.",
+  "evidence": [
+    {"source": "US Space Force", "claim": "Space Force funded proliferated architectures and about USD 1.75 billion of accelerated tracking awards.", "url": "https://www.spaceforce.mil/News/Tag/302603/space-development-agency/", "observed_at": "2026-07-14T00:00:00Z"},
+    {"source": "NASA CLPS", "claim": "NASA reports 17 delivery awards and more than 60 payloads under a USD 2.6 billion ceiling while explicitly accepting mission risk.", "url": "https://www.nasa.gov/commercial-lunar-payload-services/"},
+    {"source": "Rocket Lab Q1 2026 results", "claim": "Rocket Lab reported USD 200.3 million revenue, 38.2% GAAP gross margin, USD 2.2 billion backlog, and more than 70 contracted missions.", "url": "https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-first-quarter-2026-financial-results", "observed_at": "2026-05-07T00:00:00Z"}
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFT25CG14QEN1CHQ1FE893C.json",
+    "data/runs/local-20260726-research-05/01KYEW1M2R5M3E27RPBJVC27RQ/enqueue-rocket-lab-security-research.json",
+    "data/wiki/ideas/idea_commercial_space_infrastructure.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": ["01KYFT25CG14QEN1CHQ1FE893C"],
+  "issues_recorded": [],
+  "daily_report_items": ["Researched commercial space: funded demand and backlog are real, but mission, contract, burn, dilution, and concentration risks block a strategy; queued Rocket Lab."],
+  "commands_run": ["papertrader queue enqueue --request data/runs/local-20260726-research-05/01KYEW1M2R5M3E27RPBJVC27RQ/enqueue-rocket-lab-security-research.json", "papertrader queue validate", "papertrader wiki lint --strict"],
+  "validation": {"passed": true, "checks": ["Read required controller context and payload.", "Created exactly one evidence-linked idea with gates and review date.", "Used Rocket Lab's immutable identity for one bounded follow-up.", "papertrader queue validate passed.", "papertrader wiki lint --strict passed."]}
+}

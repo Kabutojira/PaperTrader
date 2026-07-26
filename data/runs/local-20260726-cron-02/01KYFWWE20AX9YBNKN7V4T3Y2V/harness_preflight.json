@@ -1,0 +1,21 @@
+{
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "9219e80c6f41fc05264e8b14fb482c9f7d8d958f0e317b9f34204162e5c8125f",
+    "version": "repository"
+  },
+  "harness": "local",
+  "operation_id": "01KYFWWE20AX9YBNKN7V4T3Y2V",
+  "operation_skill": {
+    "name": "papertrader-opportunity-research",
+    "path": "skills/papertrader-opportunity-research/SKILL.md",
+    "sha256": "a56cd533451de5a81da7115fe8907740ae8295baa9292a57ea2213b76b47ca8d",
+    "version": "repository"
+  },
+  "operation_type": "opportunity_research",
+  "preflight_version": 1,
+  "prompt_injection_flags": [],
+  "run_id": "local-20260726-cron-02",
+  "sequential": true
+}

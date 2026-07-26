@@ -1,0 +1,67 @@
+{
+  "operation_id": "01KYEW1ZSR3SX043Q8E8J8S172",
+  "status": "succeeded",
+  "summary": "Created one sovereign small-drone and trusted-component supply-chain idea. Funded EU and UK demand plus US trusted-supplier policy support recurring procurement, while component dependence, commoditisation, civil regulation, and margin conversion remain unresolved. Enqueued one bounded Parrot review; no relationship or strategy was created.",
+  "evidence": [
+    {
+      "source": "European Commission EU-Ukraine Drone Alliance launch",
+      "claim": "The Commission launched an 18-member alliance to support joint ventures and accelerate EU-Ukrainian drone and counter-drone production.",
+      "url": "https://defence-industry-space.ec.europa.eu/commission-launches-eu-ukraine-drone-alliance-boost-drone-counter-drone-technology-2026-07-17_en",
+      "observed_at": "2026-07-17T00:00:00Z"
+    },
+    {
+      "source": "European External Action Service Drone Deal",
+      "claim": "The EU disbursed EUR 1 billion for Ukrainian drone capabilities and agreed to promote joint EU-Ukraine production by the end of 2026.",
+      "url": "https://www.eeas.europa.eu/delegations/ukraine/eu-launches-ukraine-defence-industrial-partnership-drone-deal-and-disburses-eur1-billion-drones_en",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "UK Ministry of Defence 2026 drone packages",
+      "claim": "The UK announced at least 120,000 drones in April and funding for 150,000 Ukrainian-produced drones in June.",
+      "url": "https://www.gov.uk/government/news/uk-announces-biggest-ever-drone-package-for-ukraine-to-push-back-putin"
+    },
+    {
+      "source": "US Executive Order 14307",
+      "claim": "US policy directs agencies to prioritize US-manufactured drones, secure component supply chains, and expand access to trusted Blue UAS products.",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/06/unleashing-american-drone-dominance/",
+      "observed_at": "2025-06-06T00:00:00Z"
+    },
+    {
+      "source": "Federal Aviation Administration Part 107 overview",
+      "claim": "Standard small-UAS operations generally still require visual line of sight, constraining routine advanced civil deployment.",
+      "url": "https://www.faa.gov/newsroom/small-unmanned-aircraft-systems-uas-regulations-part-107"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFQBWMR6FJ4P54W6M76ERQY.json",
+    "data/runs/local-20260726-research-02/01KYEW1ZSR3SX043Q8E8J8S172/enqueue-parrot-security-research.json",
+    "data/wiki/ideas/idea_sovereign_small_drone_supply_chains.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFQBWMR6FJ4P54W6M76ERQY"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched sovereign small-drone supply chains: funded demand and trusted-supplier policy are real, but localization, unit economics, regulation, and margins block a strategy; queued Parrot research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-02/01KYEW1ZSR3SX043Q8E8J8S172/enqueue-parrot-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page with primary procurement, policy, industrialization, and regulatory evidence.",
+      "Used the existing immutable Parrot identity rather than ticker text.",
+      "Enqueued one bounded security review through the audited project CLI.",
+      "Updated the wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

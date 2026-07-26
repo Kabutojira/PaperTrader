@@ -1,0 +1,7 @@
+{
+  "security_id": "security_1f9cce545ede94cd6349", "issuer_id": "issuer_98d3ab01583161cae27f", "company_name": "Intuitive Surgical, Inc.", "instrument_name": "Intuitive Surgical, Inc. common stock", "instrument_type": "equity",
+  "ticker": "ISRG", "exchange_code": "NMS", "venue_mic": "XNAS", "provider_symbol": "ISRG", "broker_symbol": "", "currency": "USD", "country": "US", "sector": "Healthcare", "industry": "Medical Instruments & Supplies", "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Procedure, installed-base, recurring revenue, profit, and cash growth validate automation; valuation remains the strategy gate.",
+  "research_page": "data/wiki/securities/security_1f9cce545ede94cd6349.md", "last_research_at": "2026-07-26T19:20:00Z", "next_review_at": "2026-10-30T12:00:00Z", "source": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6"
+}

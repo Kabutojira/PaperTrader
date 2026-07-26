@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_ed7d5b616a196969c815",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_ai_native_drug_discovery",
+    "research_focus": "Validate identity, platform-derived clinical evidence, partnership economics, revenue quality, cash burn, runway, dilution, valuation, catalysts, and invalidation.",
+    "security_id": "security_ed7d5b616a196969c815"
+  },
+  "objective": "Research Recursion as a bounded AI-native drug-discovery platform exposure.",
+  "operation_id": "01KYFS0VYR0TMJ57HFP2EGF6JJ",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://ir.recursion.com/news-releases/news-release-details/recursion-reports-first-quarter-financial-results-and-provides",
+    "https://www.fda.gov/news-events/press-announcements/fda-proposes-framework-advance-credibility-ai-models-used-drug-and-biological-product-submissions"
+  ]
+}

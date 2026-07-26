@@ -1,0 +1,36 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-26T18:02:01Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T18:02:01Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-26T18:02:02Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T18:02:02Z"
+    }
+  ],
+  "operation_id": "01KYEW20S0QVQ7H3AMGG7MSFFF",
+  "run_id": "local-20260726-research-04"
+}

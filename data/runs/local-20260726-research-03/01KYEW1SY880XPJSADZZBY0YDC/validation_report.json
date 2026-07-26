@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_eu_digital_product_passport.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T17:41:39Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1SY880XPJSADZZBY0YDC",
+  "passed": true,
+  "run_id": "local-20260726-research-03",
+  "validation_version": 1
+}

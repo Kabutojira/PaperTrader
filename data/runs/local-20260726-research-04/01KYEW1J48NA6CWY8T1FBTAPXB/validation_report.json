@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:04:28Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1J48NA6CWY8T1FBTAPXB",
+  "passed": true,
+  "run_id": "local-20260726-research-04",
+  "validation_version": 1
+}

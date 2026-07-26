@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260726-research-08/01KYFQYDDGWEZQ5NA5PS3HA94N/upsert-security.json",
+    "data/tables/securities.csv",
+    "data/wiki/index.md",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+  ],
+  "completed_at": "2026-07-26T18:43:27Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYFQYDDGWEZQ5NA5PS3HA94N",
+  "passed": true,
+  "run_id": "local-20260726-research-08",
+  "validation_version": 1
+}

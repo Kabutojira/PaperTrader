@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFQBWMR6FJ4P54W6M76ERQY.json",
+    "data/runs/local-20260726-research-02/01KYEW1ZSR3SX043Q8E8J8S172/enqueue-parrot-security-research.json",
+    "data/wiki/ideas/idea_sovereign_small_drone_supply_chains.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T17:27:35Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1ZSR3SX043Q8E8J8S172",
+  "passed": true,
+  "run_id": "local-20260726-research-02",
+  "validation_version": 1
+}

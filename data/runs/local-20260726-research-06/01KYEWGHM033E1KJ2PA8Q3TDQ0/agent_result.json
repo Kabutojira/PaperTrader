@@ -1,0 +1,15 @@
+{
+  "operation_id": "01KYEWGHM033E1KJ2PA8Q3TDQ0",
+  "status": "succeeded",
+  "summary": "Researched Eaton as one immutable electrical-distribution security. Data-centre orders, electrical backlog, revenue, and margins confirm demand, while concentration, acquisitions, working capital, and absent normalized valuation block a strategy. Updated Eaton to watching without follow-up work.",
+  "evidence": [
+    {"source": "Eaton Q1 2026 results", "claim": "Electrical Americas sales rose 20%, rolling orders rose 42% organically, backlog rose 44%, and data-centre orders rose about 240%.", "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html", "observed_at": "2026-05-05T00:00:00Z"},
+    {"source": "Eaton Q1 2026 Form 10-Q", "claim": "Eaton reported USD 7.45 billion sales and higher receivables and inventory after closing major acquisitions.", "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm", "observed_at": "2026-05-05T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-06/01KYEWGHM033E1KJ2PA8Q3TDQ0/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": ["Eaton moved to watching: electrical and data-centre demand is converting, but concentration, acquisition, working-capital, and valuation gates block a paper strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-06/01KYEWGHM033E1KJ2PA8Q3TDQ0/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable ETN/XNYS/USD/equity identity.", "Created one maintained security page with valuation limitations and review date.", "Updated structured state only through the audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

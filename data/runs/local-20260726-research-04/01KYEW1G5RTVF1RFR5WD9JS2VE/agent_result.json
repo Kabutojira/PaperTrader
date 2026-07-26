@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYEW1G5RTVF1RFR5WD9JS2VE",
+  "status": "succeeded",
+  "summary": "Created one AI compute, networking, and hyperscaler-monetization idea. Current networking, foundry, capex, and cloud evidence confirms broad infrastructure demand and some monetization, while depreciation, power, custom silicon, concentration, competition, and valuation remain decisive. Enqueued one bounded Arista review; no relationship or strategy was created.",
+  "evidence": [
+    {
+      "source": "Arista Q1 2026 results",
+      "claim": "Arista reported USD 2.709 billion revenue, 35.1% year-over-year growth, and USD 1.69 billion operating cash flow.",
+      "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx"
+    },
+    {
+      "source": "TSMC Q2 2026 results",
+      "claim": "TSMC reported USD 40.2 billion revenue, 67.7% gross margin, and 60.3% operating margin with higher third-quarter revenue guidance.",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2026/q2",
+      "observed_at": "2026-07-16T00:00:00Z"
+    },
+    {
+      "source": "Alphabet 2025 Q4 earnings call",
+      "claim": "Alphabet guided to USD 175-185 billion of 2026 capex and warned that depreciation and data-centre energy costs will rise, while disclosing enterprise AI monetization and serving-cost improvement.",
+      "url": "https://abc.xyz/investor/events/event-details/2026/2025-Q4-Earnings-Call-2026-Dr_C033hS6/default.aspx"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFSRZE85ST4GZ93NHE4QDYX.json",
+    "data/runs/local-20260726-research-04/01KYEW1G5RTVF1RFR5WD9JS2VE/enqueue-arista-security-research.json",
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFSRZE85ST4GZ93NHE4QDYX"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched AI compute and networking: demand and monetization are visible, but depreciation, power, concentration, custom silicon, and valuation block a strategy; queued Arista research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-04/01KYEW1G5RTVF1RFR5WD9JS2VE/enqueue-arista-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page spanning supplier demand and downstream return-on-capital evidence.",
+      "Documented utilization, pricing, depreciation, power, competition, concentration, confidence, and review gates.",
+      "Used Arista's immutable identity and enqueued one bounded review through the audited CLI.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

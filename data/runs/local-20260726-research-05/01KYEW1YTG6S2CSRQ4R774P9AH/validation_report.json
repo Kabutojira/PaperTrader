@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFT97YGNSSRZ4SHJCZVKR8C.json",
+    "data/runs/local-20260726-research-05/01KYEW1YTG6S2CSRQ4R774P9AH/enqueue-intuitive-security-research.json",
+    "data/wiki/ideas/idea_precision_biology_healthcare_automation.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:17:02Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1YTG6S2CSRQ4R774P9AH",
+  "passed": true,
+  "run_id": "local-20260726-research-05",
+  "validation_version": 1
+}

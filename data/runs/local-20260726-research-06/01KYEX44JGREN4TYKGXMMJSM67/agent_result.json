@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYEX44JGREN4TYKGXMMJSM67", "status": "succeeded",
+  "summary": "Researched the SQM ADS as one immutable lithium security. Lithium price and volume recovery is strong, while Chilean state take, partnership attribution, permits, international ramp, debt, and absent normalized valuation block a strategy. Updated it to watching.",
+  "evidence": [
+    {"source": "SQM Q1 2026 Form 6-K release", "claim": "Revenue was USD 1.76 billion, adjusted EBITDA USD 837 million, lithium volume 69 thousand tonnes LCE, and realized Chilean lithium price about USD 17.8/kg.", "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm", "observed_at": "2026-05-26T00:00:00Z"},
+    {"source": "SQM Q1 2026 Form 6-K release", "claim": "Nova Andino contributed more than USD 530 million to the Chilean state while Salar Futuro and Kwinana still face permitting and ramp gates.", "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm", "observed_at": "2026-05-26T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-06/01KYEX44JGREN4TYKGXMMJSM67/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_9d4049ed6669a52815d6.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["SQM ADS moved to watching: price and volume recovery is strong, but state take, partnership, permitting, ramp, debt, and valuation gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-06/01KYEX44JGREN4TYKGXMMJSM67/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable SQM/XNYS/USD/ADS identity.", "Created one maintained page with partnership and valuation limitations.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

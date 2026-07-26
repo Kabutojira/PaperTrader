@@ -1,0 +1,7 @@
+{
+  "security_id": "security_2dbe878dfc899d7ee867", "issuer_id": "issuer_5076f0e0e1dd7cc8bca7", "company_name": "Freeport-McMoRan Inc.", "instrument_name": "Freeport-McMoRan Inc. common stock", "instrument_type": "equity",
+  "ticker": "FCX", "exchange_code": "NYQ", "venue_mic": "XNYS", "provider_symbol": "FCX", "broker_symbol": "", "currency": "USD", "country": "US", "sector": "Basic Materials", "industry": "Copper", "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Copper-price leverage and cash are strong, but Grasberg volume recovery, Indonesian terms, capex, minority interests, and normalized valuation keep Freeport at watching.",
+  "research_page": "data/wiki/securities/security_2dbe878dfc899d7ee867.md", "last_research_at": "2026-07-26T18:23:00Z", "next_review_at": "2026-10-23T12:00:00Z", "source": "https://investors.fcx.com/investors/news-releases./default.aspx"
+}

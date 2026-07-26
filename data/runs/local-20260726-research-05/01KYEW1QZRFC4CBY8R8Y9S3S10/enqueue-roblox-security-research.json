@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_c9a37d277445869a8809",
+  "dedupe_key": "security_research:security_c9a37d277445869a8809:digital-attention:2026-07-26",
+  "prompt": "Research Roblox as a bounded creator-platform and digital-attention exposure.",
+  "inputs": {
+    "security_id": "security_c9a37d277445869a8809",
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "research_focus": "Validate identity, engagement and bookings durability, cohort and creator economics, safety headwinds, free-cash-flow quality, dilution, valuation, catalysts, and invalidation."
+  },
+  "source": "idea_research:01KYEW1QZRFC4CBY8R8Y9S3S10",
+  "priority": 64,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm",
+    "https://www.sec.gov/Archives/edgar/data/1315098/000131509826000024/rblx-20251231.htm"
+  ],
+  "max_attempts": 3
+}

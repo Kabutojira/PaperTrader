@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_macro_hedge_gold.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T17:22:48Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1WW01YNZQ5SP7145V2E1",
+  "passed": true,
+  "run_id": "local-20260726-research-02",
+  "validation_version": 1
+}

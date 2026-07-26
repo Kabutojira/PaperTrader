@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYFWWE20VFS02GS517HNPRB7",
+  "status": "succeeded",
+  "summary": "Classified RTX's 2026-07-24 Bollinger-band breakout as a fundamental opportunity signal, but not an actionable strategy. The 13.35% observation-period rise and band breakout align with the issuer's July 23 results, broad segment growth, margin expansion, large backlog, and raised outlook. No follow-up was created because the current security research already incorporates that release and a normalized downside valuation remains absent.",
+  "evidence": [
+    {
+      "source": "PaperTrader RTX Bollinger transition packet",
+      "claim": "From 2026-06-25 through 2026-07-24, adjusted close rose 13.3501% to USD 211.50 and finished about 1.7294% above the upper Bollinger band; the source-price hash is fixed in the packet.",
+      "url": "data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae.md",
+      "observed_at": "2026-07-26T19:02:00Z"
+    },
+    {
+      "source": "RTX Q2 2026 results",
+      "claim": "On 2026-07-23 RTX reported 14% sales growth, USD 2.9 billion of company-defined free cash flow, USD 289 billion of backlog, margin expansion across all three segments, and higher full-year sales, adjusted-EPS, and free-cash-flow guidance.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-26T19:11:00Z"
+    },
+    {
+      "source": "European Defence Agency 2026 spending update",
+      "claim": "The EDA projected EU defence spending of EUR 454 billion in 2026, supporting the demand backdrop while not resolving company-specific valuation and execution risk.",
+      "url": "https://eda.europa.eu/news-and-events/news/2026/07/16/eu-defence-spending---418-billion-in-2025--projected-to--454-billion-in-2026",
+      "observed_at": "2026-07-26T19:11:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RTX's Bollinger breakout was classified as fundamental opportunity evidence after strong Q2 results and raised guidance, but no strategy was proposed without a normalized downside valuation."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Verified immutable RTX/XNYS/USD identity and exact 2026-06-25 through 2026-07-24 source-bar window.",
+      "Matched the deterministic breakout and source-price hash to the reviewed inbox packet.",
+      "Matched the sharp late-window move to the issuer's time-matched Q2 release and raised outlook.",
+      "Confirmed the current security page already contains the material primary evidence and no position or active strategy exists.",
+      "Created no redundant follow-up because the remaining blocker is valuation, not missing research.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

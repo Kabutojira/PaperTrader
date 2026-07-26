@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYEX3STRX4SBXKQD09V6SRZW", "status": "succeeded",
+  "summary": "Researched Albemarle as one immutable lithium producer. Pricing, volume, cash flow, and leverage improved, but management's wide commodity scenarios, contract lag, capex, preferred dilution, and absent probability-weighted valuation block a strategy. Updated it to watching.",
+  "evidence": [
+    {"source": "Albemarle Q1 2026 release", "claim": "Sales rose 33%, Energy Storage sales 70%, adjusted EBITDA 148%, and free cash flow was USD 248 million.", "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm", "observed_at": "2026-05-06T00:00:00Z"},
+    {"source": "Albemarle Q1 2026 release", "claim": "Company 2026 adjusted EBITDA scenarios range from USD 0.9-1.0 billion at about USD 10/kg LCE to USD 4.2-4.4 billion at about USD 30/kg.", "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm", "observed_at": "2026-05-06T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-06/01KYEX3STRX4SBXKQD09V6SRZW/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Albemarle moved to watching: lithium and balance-sheet recovery is real, but commodity sensitivity, contract lag, capex, dilution, and valuation gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-06/01KYEX3STRX4SBXKQD09V6SRZW/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable ALB/XNYS/USD/equity identity.", "Created one maintained page with scenario sensitivity and review date.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

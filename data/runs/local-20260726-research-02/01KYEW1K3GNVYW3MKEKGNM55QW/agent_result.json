@@ -1,0 +1,67 @@
+{
+  "operation_id": "01KYEW1K3GNVYW3MKEKGNM55QW",
+  "status": "succeeded",
+  "summary": "Created one Anduril defence product-company and future-IPO idea. Enterprise procurement and production awards validate parts of the model, but Anduril remains private without public audited economics, governance, or an IPO filing. Enqueued one bounded Palantir proxy review; no direct exposure, relationship, or strategy was asserted.",
+  "evidence": [
+    {
+      "source": "US Army enterprise contract announcement",
+      "claim": "The Army consolidated more than 120 separate Anduril procurement actions into one enterprise contract for commercially available technologies.",
+      "url": "https://www.army.mil/article/291074/u_s_army_awards_enterprise_contract_for_it_commercial_solutions",
+      "observed_at": "2026-03-13T00:00:00Z"
+    },
+    {
+      "source": "US Department of Defense FY2026 weapons book",
+      "claim": "Anduril and General Atomics are named Collaborative Combat Aircraft primes in a program with USD 804.4 million of FY2026 funding.",
+      "url": "https://comptroller.defense.gov/Portals/45/Documents/defbudget/FY2026/FY2026_Weapons.pdf"
+    },
+    {
+      "source": "Anduril Barracuda production agreement",
+      "claim": "A 2026 framework targets at least 3,000 systems over three years and at least 1,000 annual deliveries, supported by private and public production-capacity investment.",
+      "url": "https://www.anduril.com/news/anduril-department-of-war-sign-production-agreement-for-surface-launched-barracuda-500m",
+      "observed_at": "2026-05-13T00:00:00Z"
+    },
+    {
+      "source": "Anduril Series F announcement",
+      "claim": "Anduril raised USD 1.5 billion at a USD 14 billion valuation in 2024 to fund the planned Arsenal-1 manufacturing platform.",
+      "url": "https://www.anduril.com/news/anduril-raises-usd1-5-billion-to-rebuild-the-arsenal-of-democracy",
+      "observed_at": "2024-08-07T00:00:00Z"
+    },
+    {
+      "source": "Palantir Warp Speed and TITAN materials",
+      "claim": "Palantir identifies Anduril as a manufacturing customer and TITAN ecosystem partner, but does not quantify Anduril-related revenue.",
+      "url": "https://www.palantir.com/warpspeed/"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFQYDDGWEZQ5NA5PS3HA94N.json",
+    "data/runs/local-20260726-research-02/01KYEW1K3GNVYW3MKEKGNM55QW/enqueue-palantir-security-research.json",
+    "data/wiki/ideas/idea_anduril_product_company_disruption.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFQYDDGWEZQ5NA5PS3HA94N"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched Anduril's product-company model: procurement validation is material, but private financials, production conversion, governance, and IPO valuation block direct action; queued Palantir proxy research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-02/01KYEW1K3GNVYW3MKEKGNM55QW/enqueue-palantir-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page and separated product-model evidence from founder and capital-network narrative.",
+      "Documented funded programs, production targets, private capital risk, IPO evidence requirements, invalidation, confidence, and review date.",
+      "Used Palantir's immutable identity and enqueued one bounded proxy review through the audited CLI.",
+      "Updated the wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

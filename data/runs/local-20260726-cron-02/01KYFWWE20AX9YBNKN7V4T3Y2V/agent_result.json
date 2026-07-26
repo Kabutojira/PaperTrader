@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYFWWE20AX9YBNKN7V4T3Y2V",
+  "status": "succeeded",
+  "summary": "Classified Lithium Americas' 2026-07-24 oversold-RSI transition as fundamental and commodity risk, not a contrarian opportunity. The 26.45% observation-period decline occurred without a material issuer project update and leaves a pre-revenue, construction-stage equity exposed to lithium pricing, remaining capex, conditional funding, warrants, dilution, commissioning, and schedule risk. No follow-up was created because the current security review already defines those gates and the next evidence checkpoint is a substantive construction disclosure.",
+  "evidence": [
+    {
+      "source": "PaperTrader Lithium Americas RSI transition packet",
+      "claim": "From 2026-06-25 through 2026-07-24, adjusted close fell 26.4545% to USD 2.8315 and deterministic RSI entered oversold territory at 24.36; the source-price hash is fixed in the packet.",
+      "url": "data/wiki/inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910.md",
+      "observed_at": "2026-07-26T19:02:00Z"
+    },
+    {
+      "source": "Lithium Americas Q1 2026 results",
+      "claim": "The latest operating update confirms Thacker Pass remains in major construction with late-2027 mechanical completion targeted, most project capex still ahead, and execution dependent on project funding, cost control, qualification, commissioning, and lithium prices.",
+      "url": "https://www.lithiumamericas.com/news/news-details/2026/Lithium-Americas-Reports-First-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-07-26T19:15:00Z"
+    },
+    {
+      "source": "Lithium Americas 2026 capex guidance",
+      "claim": "The issuer guided to USD 1.3-1.6 billion of 2026 Thacker Pass capex and disclosed tariff, labor, procurement, commissioning, financing, and commodity-price sensitivities; an oversold indicator does not resolve these common-equity risks.",
+      "url": "https://www.lithiumamericas.com/news/news-details/2026/Lithium-Americas-Provides-a-Project-Update-and-2026-Capex-Guidance-for-Thacker-Pass/default.aspx",
+      "observed_at": "2026-07-26T19:15:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Lithium Americas' oversold signal was classified as risk, not a buy: the pre-revenue equity still depends on capex, funding, dilution, commissioning, and lithium-price outcomes."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Verified immutable LAC/XNYS/USD identity and exact 2026-06-25 through 2026-07-24 source-bar window.",
+      "Matched the deterministic RSI transition and source-price hash to the reviewed inbox packet.",
+      "Checked issuer and SEC disclosures in the observation window and found no material project update that de-risks the decline.",
+      "Confirmed no position or active strategy exists and created no redundant follow-up.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

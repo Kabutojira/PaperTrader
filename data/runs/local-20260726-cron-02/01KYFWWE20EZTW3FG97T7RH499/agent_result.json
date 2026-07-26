@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYFWWE20EZTW3FG97T7RH499",
+  "status": "succeeded",
+  "summary": "Classified Ternium's 2026-07-24 Bollinger-band breakout as noise rather than a new opportunity. The deterministic move was modest, the latest close was only slightly above the upper band, no material issuer release matched the observation window, and the already-current thesis still lacks normalized free-cash-flow and downside-valuation support. No follow-up was created.",
+  "evidence": [
+    {
+      "source": "PaperTrader Ternium indicator transition packet",
+      "claim": "From 2026-06-25 through 2026-07-24, adjusted close rose 4.6507% to USD 47.48 and finished about 0.3792% above the upper Bollinger band; the source-price hash is fixed in the candidate packet.",
+      "url": "data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee.md",
+      "observed_at": "2026-07-26T19:02:00Z"
+    },
+    {
+      "source": "Ternium investor-relations press-release index",
+      "claim": "The issuer's release index showed no results, financing, operating, or transaction announcement during the 2026-06-25 to 2026-07-24 observation window; the only listed July release was the 2025 sustainability report.",
+      "url": "https://investors.ternium.com/press-releases/",
+      "observed_at": "2026-07-26T19:06:00Z"
+    },
+    {
+      "source": "Ternium Q1 2026 interim financial statements",
+      "claim": "The latest primary financial evidence still identifies tariff and USMCA uncertainty, large Pesqueria investment, and working-capital and financing demands that require operating confirmation rather than a technical-price trigger.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000034/a2026marternium6-k.htm",
+      "observed_at": "2026-07-26T19:06:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ternium's modest Bollinger breakout was classified as noise: no time-matched primary catalyst or new fundamental evidence cleared the existing cash-conversion and valuation gates."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Verified immutable TX/XNYS/USD identity and exact 2026-06-25 through 2026-07-24 source-bar window.",
+      "Matched the deterministic trigger and source-price hash to the reviewed inbox packet.",
+      "Checked current primary issuer and SEC evidence for a time-matched catalyst and found none.",
+      "Confirmed no position or active strategy exists and created no follow-up operation.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

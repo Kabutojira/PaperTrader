@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFT25CG14QEN1CHQ1FE893C", "status": "succeeded",
+  "summary": "Researched Rocket Lab as one immutable commercial-space exposure. Revenue, gross margin, backlog, and launch breadth validate demand, while Neutron remains pre-flight, operations consume cash, liquidity relied on ATM issuance, and contract, acquisition, dilution, and valuation risks block a strategy. Updated it to medium-confidence watching.",
+  "evidence": [
+    {"source": "Rocket Lab Q1 2026 results", "claim": "Revenue was USD 200 million, GAAP gross margin 38.2%, backlog above USD 2.2 billion, and the manifest above 70 missions; Q2 guidance still expected an adjusted EBITDA loss and roughly 629 million basic shares including preferred.", "url": "https://investors.rocketlabcorp.com/news-releases/news-release-details/rocket-lab-announces-first-quarter-2026-financial-results", "observed_at": "2026-05-07T00:00:00Z"},
+    {"source": "Rocket Lab Q1 2026 Form 10-Q", "claim": "Operating cash use was USD 50 million and net ATM proceeds USD 446 million; stock compensation was USD 28 million.", "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm", "observed_at": "2026-05-07T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-09/01KYFT25CG14QEN1CHQ1FE893C/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_7ca095d63423c55a90e3.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Rocket Lab remains watching: backlog and operating growth are offset by Neutron, burn, contract-quality, acquisition, dilution, and valuation risk."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-09/01KYFT25CG14QEN1CHQ1FE893C/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable RKLB/XNAS/USD/common-stock identity.", "Created one maintained page with backlog, Neutron, financing, and dilution limits.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

@@ -1,0 +1,10 @@
+{
+  "operation_id": "01KYEX4CCGQ7TJF2RHQ8HENTRG", "status": "succeeded",
+  "summary": "Researched Lithium Americas as one immutable development-stage security. Thacker Pass has strategic funding and construction progress, but remaining cost, conditional financing, offtake attribution, warrants, dilution, commissioning, and lithium-price risks block a strategy. Updated it to watching.",
+  "evidence": [{"source": "Lithium Americas Q1 2026 Form 10-Q", "claim": "USD 1.14 billion of a USD 2.93 billion technical-report capex estimate was spent; completion targets late 2027 and ramp 2028, while cash is partly restricted and equity/warrant dilution is material.", "url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm", "observed_at": "2026-05-13T00:00:00Z"}],
+  "files_changed": ["data/runs/local-20260726-research-07/01KYEX4CCGQ7TJF2RHQ8HENTRG/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_fb87fac302a5446a1ced.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Lithium Americas moved to watching: Thacker Pass is progressing, but completion, financing, dilution, commissioning, and lithium-price gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-07/01KYEX4CCGQ7TJF2RHQ8HENTRG/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable LAC/XNYS/USD/common-share identity.", "Created one maintained page with financing and dilution limits.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_59304f90c440def31dc5",
+  "issuer_id": "issuer_7e0bd218f603cf838669",
+  "company_name": "RTX Corporation",
+  "instrument_name": "RTX Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "RTX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RTX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Defense and commercial backlog is converting into margins and cash, but engine liabilities, contract risk, and absent normalized valuation keep RTX at watching.",
+  "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+  "last_research_at": "2026-07-26T18:19:07Z",
+  "next_review_at": "2026-10-23T12:00:00Z",
+  "source": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results"
+}

@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYEW1SY880XPJSADZZBY0YDC",
+  "status": "succeeded",
+  "summary": "Created one EU Digital Product Passport compliance-infrastructure idea. The live registry, harmonized standards, and 18 February 2027 battery deadline confirm a multi-year regulatory buildout, while decentralized storage, open standards, transition periods, and unproven vendor materiality block a security follow-up or strategy.",
+  "evidence": [
+    {
+      "source": "European Commission DPP Registry launch",
+      "claim": "The Commission launched the registry and testing environment on 20 July 2026, with central metadata registration and decentralized product-data storage.",
+      "url": "https://single-market-economy.ec.europa.eu/news/digital-product-passport-registry-now-live-2026-07-20_en",
+      "observed_at": "2026-07-20T00:00:00Z"
+    },
+    {
+      "source": "EU Batteries Regulation Article 77",
+      "claim": "EV, light-transport, and industrial batteries above 2 kWh require an electronic passport from 18 February 2027.",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1694013980794&uri=CELEX%3A32023R1542"
+    },
+    {
+      "source": "European Commission DPP timeline",
+      "claim": "The indicative product rollout spans steel, energy-related products, textiles, tyres, aluminium, furniture, mattresses, and ICT through 2029, with transition periods after delegated acts.",
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport_en"
+    },
+    {
+      "source": "European Commission economic-operator guidance",
+      "claim": "Manufacturers, importers, distributors, marketplaces, and other operators remain responsible for data, carriers, registration, and lifecycle accuracy.",
+      "url": "https://single-market-economy.ec.europa.eu/single-market/digital-product-passport/economic-operators_en"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_eu_digital_product_passport.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched EU Digital Product Passports: the registry and battery deadline are live, but open standards, transition timing, data quality, and vendor materiality block a strategy."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page with the legal deadline, registry architecture, rollout schedule, value chain, invalidation, confidence, and review date.",
+      "Distinguished mandatory compliance from unproven vendor economics and avoided ticker-only associations.",
+      "Updated the wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

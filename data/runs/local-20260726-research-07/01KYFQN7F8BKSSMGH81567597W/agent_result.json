@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFQN7F8BKSSMGH81567597W", "status": "succeeded",
+  "summary": "Researched ABB as one immutable OTC ADR. Group orders, margins, and cash conversion are strong, but the contracted Robotics divestment removes durable physical-AI exposure; undisclosed RobotStudio monetization and unresolved post-transaction valuation block a strategy. Updated it to medium-confidence watching.",
+  "evidence": [
+    {"source": "ABB Q2 2026 results", "claim": "Orders were USD 12.0 billion, revenue USD 9.5 billion, operational EBITA margin 20.2%, and continuing-operations cash flow USD 1.3 billion; ABB still anticipated approximately USD 4.8 billion net Robotics proceeds in H2 2026.", "url": "https://global.abb/group/en/investors/quarterly-results", "observed_at": "2026-07-16T00:00:00Z"},
+    {"source": "ABB Robotics divestment", "claim": "SoftBank agreed to acquire Robotics for USD 5.375 billion; the unit represented about 7% of 2024 revenue and a 12.1% operational EBITA margin.", "url": "https://www.abb.com/global/en/news/129685/abb-to-divest-robotics-division-to-softbank-group", "observed_at": "2025-10-08T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-07/01KYFQN7F8BKSSMGH81567597W/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_c120e9f26ebb6159adf9.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["ABB remains watching: strong operations are offset by the pending Robotics disposal, which removes durable physical-AI exposure; no post-deal valuation supports a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-07/01KYFQN7F8BKSSMGH81567597W/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable ABBNY/XOTC/USD/ADR identity.", "Created one maintained page separating temporary Robotics exposure from continuing ABB economics.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

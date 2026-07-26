@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFRW7GRGCMP8VNVERTSPXGH", "status": "succeeded",
+  "summary": "Researched CrowdStrike as one immutable cybersecurity exposure. ARR, cross-sell, and cash conversion validate resilient demand, while the GAAP/non-GAAP cost gap, outage liabilities, dilution, recent split, and absent downside valuation block a strategy. Updated it to medium-confidence watching.",
+  "evidence": [
+    {"source": "CrowdStrike fiscal Q1 2027 results", "claim": "Revenue was USD 1.39 billion, ARR USD 5.51 billion, net-new ARR USD 256 million, operating cash flow USD 591 million, and free cash flow USD 468 million; GAAP operating loss was USD 31 million.", "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-reports-first-quarter-fiscal-year-2027-financial/", "observed_at": "2026-06-03T00:00:00Z"},
+    {"source": "CrowdStrike fiscal Q1 2027 Form 10-Q", "claim": "The filing retains July 19 incident, litigation, product reliability, competition, renewal, and equity-compensation risks.", "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm", "observed_at": "2026-06-05T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-08/01KYFRW7GRGCMP8VNVERTSPXGH/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_8472507d7d320aa388a7.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["CrowdStrike remains watching: resilient ARR and cash growth are offset by outage, excluded-cost, dilution, split-adjustment, and valuation gates."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-08/01KYFRW7GRGCMP8VNVERTSPXGH/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable CRWD/XNAS/USD/Class-A identity.", "Created one maintained page with ARR-definition, incident, GAAP-cost, split, and dilution limits.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

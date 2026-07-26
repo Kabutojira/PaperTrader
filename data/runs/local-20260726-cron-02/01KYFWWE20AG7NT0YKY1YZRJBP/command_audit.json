@@ -1,0 +1,118 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/enqueue-albemarle-q2-review.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYFXFKB04HSHKYVSPNGXVJX0.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "730aff791b253d5ea29ebd365060af7340ef04f5664d489dc9f79be9e2489383",
+            2734,
+            384
+          ],
+          "before": [
+            "file",
+            "16c64432c8d3f9cb359d815481331b36c9d2d7cafc49f99028de8c77301e2d25",
+            2257,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "85e82debff126fcea35bdeef59e9ddbe0158d2fd4dfe0ac8cd64561bf76f4ba6",
+            924,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYFXFKB04HSHKYVSPNGXVJX0.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/enqueue-albemarle-q2-review.json",
+      "completed_at": "2026-07-26T19:12:28Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "f698c504ca91bc7ab7425694a3929825180d715a3f6bc6900bba854955e64865",
+          1138,
+          436
+        ],
+        "path": "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/enqueue-albemarle-q2-review.json"
+      },
+      "started_at": "2026-07-26T19:12:28Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-26T19:12:36Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:12:35Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-26T19:12:36Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:12:36Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-26T19:12:37Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:12:37Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-26T19:12:38Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:12:38Z"
+    }
+  ],
+  "operation_id": "01KYFWWE20AG7NT0YKY1YZRJBP",
+  "run_id": "local-20260726-cron-02"
+}

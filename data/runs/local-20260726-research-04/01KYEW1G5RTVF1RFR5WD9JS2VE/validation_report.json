@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFSRZE85ST4GZ93NHE4QDYX.json",
+    "data/runs/local-20260726-research-04/01KYEW1G5RTVF1RFR5WD9JS2VE/enqueue-arista-security-research.json",
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:08:21Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1G5RTVF1RFR5WD9JS2VE",
+  "passed": true,
+  "run_id": "local-20260726-research-04",
+  "validation_version": 1
+}

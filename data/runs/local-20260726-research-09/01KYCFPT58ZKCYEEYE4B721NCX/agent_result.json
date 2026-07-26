@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYCFPT58ZKCYEEYE4B721NCX", "status": "succeeded",
+  "summary": "Validated one causal relationship from the solar, storage, and grid-flexibility idea to Fluence. Storage deployments directly drive its products and backlog, supporting high positive sensitivity, but thin project margins and deeply negative operating cash conversion make shareholder benefit conditional. Accepted the edge at medium confidence and did not escalate to strategy research.",
+  "evidence": [
+    {"source": "Fluence fiscal Q2 2026 results", "claim": "Backlog reached USD 5.6 billion and storage backlog 10.1 GW; quarterly GAAP gross margin was 10.0% and management retained positive adjusted EBITDA guidance.", "url": "https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms", "observed_at": "2026-05-11T00:00:00Z"},
+    {"source": "Fluence fiscal Q2 2026 Form 10-Q", "claim": "First-half operating cash use was USD 347.9 million, with convertible debt, supplier finance, warranty, project, and restricted-cash exposures.", "url": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm", "observed_at": "2026-05-11T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-09/01KYCFPT58ZKCYEEYE4B721NCX/upsert-relationship.json", "data/tables/relationships.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/relationships/relationship_solar_storage_grid_flnc.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Accepted the high-sensitivity, medium-confidence Fluence storage edge; backlog validates exposure, but margin and operating cash conversion block strategy escalation."],
+  "commands_run": ["papertrader research relationship upsert --request data/runs/local-20260726-research-09/01KYCFPT58ZKCYEEYE4B721NCX/upsert-relationship.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable idea and security endpoints.", "Recorded one accepted causal edge with explicit conditional shareholder mechanism.", "Created no strategy because cash and valuation gates failed.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

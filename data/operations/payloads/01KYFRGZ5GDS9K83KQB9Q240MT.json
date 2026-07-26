@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_2c779e81c27b78c556bb",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "research_focus": "Validate identity, Pesqueria commissioning, customer qualifications, regional demand, utilization, steel-cycle sensitivity, capex, leverage, cash conversion, valuation, and invalidation.",
+    "security_id": "security_2c779e81c27b78c556bb"
+  },
+  "objective": "Research Ternium as a bounded Mexico and North American nearshoring capacity exposure.",
+  "operation_id": "01KYFRGZ5GDS9K83KQB9Q240MT",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://investors.ternium.com/featured-stories/new-steel-slab-mill-in-pesqueria-nuevo-leon-mexico/",
+    "https://www.ustr.gov/about/policy-offices/press-office/press-releases/2025/september/ustr-seeks-public-comment-joint-review-usmca"
+  ]
+}

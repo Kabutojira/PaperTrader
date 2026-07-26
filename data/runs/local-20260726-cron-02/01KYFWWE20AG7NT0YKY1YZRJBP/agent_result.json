@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYFWWE20AG7NT0YKY1YZRJBP",
+  "status": "succeeded",
+  "summary": "Classified Albemarle's 2026-07-24 oversold-RSI transition as unresolved commodity and earnings risk, not a buy signal. The 18.47% observation-period decline coincided with lithium-price repricing, while the issuer supplied no new operating result during the window and Q1 sensitivity remained dominated by lithium price, contract lag, capital needs, and dilution. Enqueued one post-Q2 security review for 2026-08-06.",
+  "evidence": [
+    {
+      "source": "PaperTrader Albemarle RSI transition packet",
+      "claim": "From 2026-06-25 through 2026-07-24, adjusted close fell 18.4686% to USD 115.00 and deterministic RSI entered oversold territory; the source-price hash is fixed in the packet.",
+      "url": "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
+      "observed_at": "2026-07-26T19:02:00Z"
+    },
+    {
+      "source": "Albemarle Q1 2026 earnings release",
+      "claim": "Management's published 2026 scenarios show very large EBITDA sensitivity to lithium price, while realized-price lags, capex, debt, and mandatory-convertible dilution remain material to common equity.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+      "observed_at": "2026-07-26T19:10:00Z"
+    },
+    {
+      "source": "Albemarle Q2 2026 release schedule",
+      "claim": "The issuer scheduled Q2 results for 2026-08-05, providing a near-term primary checkpoint for realized pricing, volume, cash conversion, leverage, and guidance after the oversold transition.",
+      "url": "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx",
+      "observed_at": "2026-07-26T19:10:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFXFKB04HSHKYVSPNGXVJX0.json",
+    "data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/enqueue-albemarle-q2-review.json"
+  ],
+  "operations_created": [
+    "01KYFXFKB04HSHKYVSPNGXVJX0"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Albemarle's oversold signal remains commodity and earnings risk rather than a buy; a bounded post-Q2 review is scheduled for August 6."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-cron-02/01KYFWWE20AG7NT0YKY1YZRJBP/enqueue-albemarle-q2-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Verified immutable ALB/XNYS/USD identity and exact 2026-06-25 through 2026-07-24 source-bar window.",
+      "Matched the deterministic RSI transition and source-price hash to the reviewed inbox packet.",
+      "Separated an oversold technical state from evidence of fundamental normalization.",
+      "Created exactly one event-bounded post-Q2 security review through the audited queue CLI.",
+      "Confirmed no position, signal, order, or active strategy was created.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

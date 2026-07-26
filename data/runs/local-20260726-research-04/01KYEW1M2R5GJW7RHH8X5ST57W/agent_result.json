@@ -1,0 +1,50 @@
+{
+  "operation_id": "01KYEW1M2R5GJW7RHH8X5ST57W",
+  "status": "succeeded",
+  "summary": "Created one cable-broadband convergence and leveraged-FCF idea. Mobile adoption is real, but current Charter and Comcast evidence does not establish broad fixed-broadband stabilization; Charter's EBITDA, FCF, and leverage remain adverse gates. No unverified ticker association, relationship, or strategy was created.",
+  "evidence": [
+    {
+      "source": "Charter Q2 2026 results",
+      "claim": "Charter added 406,000 mobile lines but lost 172,000 internet customers, while revenue fell 1.7%, adjusted EBITDA fell 4.3%, and free cash flow fell 7.4% to USD 969 million.",
+      "url": "https://ir.charter.com/news-releases/news-release-details/charter-announces-second-quarter-2026-results",
+      "observed_at": "2026-07-24T00:00:00Z"
+    },
+    {
+      "source": "Charter Q2 2026 results",
+      "claim": "Charter ended the quarter with USD 93.8 billion principal debt and USD 509 million cash.",
+      "url": "https://ir.charter.com/news-releases/news-release-details/charter-announces-second-quarter-2026-results",
+      "observed_at": "2026-07-24T00:00:00Z"
+    },
+    {
+      "source": "Comcast Q2 2026 results",
+      "claim": "Comcast reported year-over-year improvement in broadband losses and record 448,000 wireless additions, reaching 10.2 million lines.",
+      "url": "https://www.cmcsa.com/node/45906",
+      "observed_at": "2026-07-23T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_cable_broadband_convergence.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched cable convergence: mobile lines are growing, but broadband, EBITDA, FCF, leverage, and merger risks block a stabilization strategy."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page using current primary operating and balance-sheet evidence.",
+      "Separated mobile adoption from fixed-broadband stabilization and per-share FCF conversion.",
+      "Documented leverage, refinancing, merger, competition, confidence, and review gates.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

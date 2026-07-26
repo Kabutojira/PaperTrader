@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFSX760QYGFQA241FA89VF5.json",
+    "data/runs/local-20260726-research-04/01KYEW1RZ04V1TGS2N013P04YK/enqueue-coinbase-security-research.json",
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:10:41Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1RZ04V1TGS2N013P04YK",
+  "passed": true,
+  "run_id": "local-20260726-research-04",
+  "validation_version": 1
+}

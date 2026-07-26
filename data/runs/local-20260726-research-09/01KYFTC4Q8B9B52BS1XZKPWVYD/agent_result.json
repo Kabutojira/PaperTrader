@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFTC4Q8B9B52BS1XZKPWVYD", "status": "succeeded",
+  "summary": "Researched Roblox as one immutable creator-platform exposure. Engagement, payer, bookings, and cash growth validate the ecosystem, while safety changes lowered guidance, creator and trust costs rose, GAAP losses persist, dilution continues, and no downside valuation supports a strategy. Updated it to medium-confidence watching.",
+  "evidence": [
+    {"source": "Roblox Q1 2026 shareholder letter", "claim": "DAUs grew 35%, hours 43%, bookings 43%, and free cash flow 40%; safety headwinds reduced full-year bookings guidance to 8–12%, while DevEx and trust/safety expenses rose 50% and 47% and fully diluted shares reached 749 million.", "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm", "observed_at": "2026-05-07T00:00:00Z"},
+    {"source": "Roblox 2025 Form 10-K", "claim": "The filing establishes safety, content, creator, stock-compensation, regulatory, and platform risks underlying the current operating evidence.", "url": "https://www.sec.gov/Archives/edgar/data/1315098/000131509826000024/rblx-20251231.htm", "observed_at": "2026-02-12T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-09/01KYFTC4Q8B9B52BS1XZKPWVYD/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_c9a37d277445869a8809.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Roblox remains watching: strong engagement and cash growth are offset by a safety-led growth reset, creator costs, losses, dilution, and valuation risk."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-09/01KYFTC4Q8B9B52BS1XZKPWVYD/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable RBLX/XNYS/USD/Class-A identity.", "Created one maintained page reconciling engagement, deferrals, safety, creator costs, and dilution.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

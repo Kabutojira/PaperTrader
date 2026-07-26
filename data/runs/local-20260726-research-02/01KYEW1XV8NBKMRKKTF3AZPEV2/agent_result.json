@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYEW1XV8NBKMRKKTF3AZPEV2",
+  "status": "succeeded",
+  "summary": "Created one evidence-linked nuclear and uranium fuel-cycle idea. Current IEA evidence supports concentrated mining, conversion, and enrichment capacity, while Cameco contracting demonstrates long-duration demand. Supply response, operational execution, contract lag, and valuation block a strategy; no ticker-only follow-up was created.",
+  "evidence": [
+    {
+      "source": "International Energy Agency, Global Critical Minerals Outlook 2026",
+      "claim": "The IEA identifies conversion as the most immediate nuclear-fuel bottleneck and reports that the top three countries account for nearly three-quarters of uranium mining and about 70% of conversion and enrichment capacity.",
+      "url": "https://www.iea.org/reports/global-critical-minerals-outlook-2026/executive-summary"
+    },
+    {
+      "source": "International Energy Agency, Global Energy Review 2026",
+      "claim": "The IEA reports 78 GW of nuclear capacity under construction across 15 countries and ten construction starts totaling 12.2 GW in 2025.",
+      "url": "https://www.iea.org/reports/global-energy-review-2026/technology-nuclear"
+    },
+    {
+      "source": "Cameco India uranium supply agreement",
+      "claim": "Cameco agreed to supply India nearly 22 million pounds over 2027-2035 on market-related terms with an estimated CAD 2.6 billion contract value.",
+      "url": "https://www.cameco.com/sites/default/files/documents/Cameco_Signs_Long-Term_Uranium_Supply_Agreement_with_India.pdf",
+      "observed_at": "2026-03-02T00:00:00Z"
+    },
+    {
+      "source": "Cameco first-quarter 2026 results",
+      "claim": "Cameco disclosed average annual committed uranium deliveries above 28 million pounds for 2026-2030 and unchanged operating guidance, while emphasizing quarterly delivery variability.",
+      "url": "https://www.cameco.com/media/news/cameco-reports-2026-first-quarter-results",
+      "observed_at": "2026-05-05T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_nuclear_uranium.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched nuclear and uranium fuel-cycle bottlenecks: concentration and long-term demand are supported, but contract conversion, operating reliability, supply response, and valuation block a strategy."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete wiki schema, index, recent log, controller skill, idea-research skill, and immutable operation payload.",
+      "Searched the wiki and structured identities to avoid a duplicate idea and ticker-only association.",
+      "Created exactly one idea page with primary evidence, causal mechanism, value chain, confirmation gates, contrary evidence, invalidation, confidence, and review date.",
+      "Updated the complete wiki index and append-only log.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

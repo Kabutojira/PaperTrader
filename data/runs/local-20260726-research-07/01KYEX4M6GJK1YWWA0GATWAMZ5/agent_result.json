@@ -1,0 +1,10 @@
+{
+  "operation_id": "01KYEX4M6GJK1YWWA0GATWAMZ5", "status": "succeeded",
+  "summary": "Researched Sigma Lithium as one immutable producer. Headline profit and margin did not convert to cash; low liquidity, negative working capital, debt, lower output, receivable collection, supplier disputes, and ineffective controls block a strategy. Updated it to low-confidence watching.",
+  "evidence": [{"source": "Sigma Q1 2026 MD&A", "claim": "Revenue was USD 42.3 million and adjusted EBITDA USD 16.7 million, but operating cash flow was negative USD 2.7 million, cash USD 3.9 million, negative working capital USD 144.5 million, and internal controls ineffective.", "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm", "observed_at": "2026-05-15T00:00:00Z"}],
+  "files_changed": ["data/runs/local-20260726-research-07/01KYEX4M6GJK1YWWA0GATWAMZ5/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_4627aea1bf7d8943d3d8.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Sigma Lithium remains low-confidence watching: weak liquidity, negative working capital, cash conversion, output, receivable, and control risks block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-07/01KYEX4M6GJK1YWWA0GATWAMZ5/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable SGML/XNAS/USD/common-share identity.", "Created one maintained page with liquidity and control limitations.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

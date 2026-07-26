@@ -1,0 +1,41 @@
+{
+  "operation_id": "01KYFWWE20571YGGDAV45A1F68",
+  "status": "succeeded",
+  "summary": "Classified RTX's 2026-07-24 overbought-RSI transition as entry risk, not a short thesis. RSI reached 73.21 after a 13.35% observation-period rise that was fundamentally supported by strong Q2 results and raised guidance. With no position, no active strategy, and no normalized downside valuation, the signal argues against chasing rather than for a paper trade. No follow-up was created.",
+  "evidence": [
+    {
+      "source": "PaperTrader RTX RSI transition packet",
+      "claim": "From 2026-06-25 through 2026-07-24, adjusted close rose 13.3501% to USD 211.50 and the deterministic RSI entered overbought territory at 73.21; the source-price hash is fixed in the packet.",
+      "url": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5.md",
+      "observed_at": "2026-07-26T19:02:00Z"
+    },
+    {
+      "source": "RTX Q2 2026 results",
+      "claim": "The time-matched July 23 release supports the move with broad organic growth, margin expansion, USD 289 billion of backlog, USD 2.9 billion of company-defined free cash flow, and raised guidance, so overbought momentum alone does not establish a bearish fundamental case.",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results",
+      "observed_at": "2026-07-26T19:13:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RTX's RSI-overbought transition was classified as entry risk rather than a short: Q2 fundamentals support momentum, but valuation is missing and chasing is not justified."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Verified immutable RTX/XNYS/USD identity and exact 2026-06-25 through 2026-07-24 source-bar window.",
+      "Matched the deterministic RSI transition and source-price hash to the reviewed inbox packet.",
+      "Distinguished a technically stretched entry from a bearish fundamental thesis using the time-matched issuer release.",
+      "Confirmed no position or active strategy exists and created no duplicate follow-up after the paired breakout review.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

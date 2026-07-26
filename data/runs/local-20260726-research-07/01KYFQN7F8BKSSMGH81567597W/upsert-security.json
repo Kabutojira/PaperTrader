@@ -1,0 +1,7 @@
+{
+  "security_id": "security_c120e9f26ebb6159adf9", "issuer_id": "issuer_e60cfde16e515ef00e35", "company_name": "ABB Ltd", "instrument_name": "ABB Ltd sponsored ADR", "instrument_type": "equity",
+  "ticker": "ABBNY", "exchange_code": "PNK", "venue_mic": "XOTC", "provider_symbol": "ABBNY", "broker_symbol": "", "currency": "USD", "country": "CH", "sector": "Industrials", "industry": "Electrical Equipment & Parts", "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Strong automation economics, but the pending Robotics sale removes durable physical-AI exposure and post-deal valuation is unresolved.",
+  "research_page": "data/wiki/securities/security_c120e9f26ebb6159adf9.md", "last_research_at": "2026-07-26T19:05:00Z", "next_review_at": "2026-10-27T12:00:00Z", "source": "https://global.abb/group/en/investors/quarterly-results"
+}

@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_cc4dcb8f002b61dffe00",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_sovereign_small_drone_supply_chains",
+    "research_focus": "Validate identity, product and customer mix, trusted-supplier qualifications, order materiality, component origin, gross margin, cash runway, valuation, and invalidation.",
+    "security_id": "security_cc4dcb8f002b61dffe00"
+  },
+  "objective": "Research Parrot as a bounded European trusted small-drone supply-chain exposure.",
+  "operation_id": "01KYFQBWMR6FJ4P54W6M76ERQY",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://defence-industry-space.ec.europa.eu/commission-launches-eu-ukraine-drone-alliance-boost-drone-and-counter-drone-technology-2026-07-17_en",
+    "https://www.whitehouse.gov/presidential-actions/2025/06/unleashing-american-drone-dominance/"
+  ]
+}

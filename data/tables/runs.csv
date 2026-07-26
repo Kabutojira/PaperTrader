@@ -4,3 +4,12 @@ gha-30131099054-1,2026-07-24T22:30:35Z,2026-07-24T22:30:40Z,succeeded,schedule,0
 local-20260725-solar-reset-02,2026-07-25T09:22:16Z,2026-07-25T09:24:01Z,succeeded,local,1,5,0,,Daily run succeeded; 1 agent operations; 0 pending-order dispositions.
 local-20260725-daily-02,2026-07-25T11:09:27Z,2026-07-25T11:35:26Z,succeeded,local,5,5,0,,Daily run succeeded; 5 agent operations; 0 pending-order dispositions.
 local-20260726-daily-01,2026-07-26T09:28:43Z,2026-07-26T09:55:23Z,succeeded,local,5,5,0,,Daily run succeeded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-02,2026-07-26T17:17:56Z,2026-07-26T17:38:12Z,succeeded,local-research,5,5,0,,Daily run succeeded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-03,2026-07-26T17:38:39Z,2026-07-26T18:00:09Z,succeeded,local-research,5,5,0,,Daily run succeeded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-04,2026-07-26T18:00:35Z,2026-07-26T18:10:54Z,succeeded,local-research,5,5,0,,Daily run succeeded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-05,2026-07-26T18:11:23Z,2026-07-26T18:22:12Z,succeeded,local-research,5,5,0,,Daily run succeeded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-06,2026-07-26T18:23:00Z,2026-07-26T18:30:30Z,degraded,local-research,5,5,0,,Daily run degraded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-07,2026-07-26T18:30:38Z,2026-07-26T18:41:24Z,degraded,local-research,5,5,0,,Daily run degraded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-08,2026-07-26T18:41:33Z,2026-07-26T18:50:10Z,degraded,local-research,5,5,0,,Daily run degraded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-research-09,2026-07-26T18:50:24Z,2026-07-26T18:58:39Z,degraded,local-research,5,5,0,,Daily run degraded; 5 agent operations; 0 pending-order dispositions.
+local-20260726-cron-02,2026-07-26T19:02:00Z,2026-07-26T19:15:41Z,degraded,local,5,5,0,,Daily run degraded; 5 agent operations; 0 pending-order dispositions.

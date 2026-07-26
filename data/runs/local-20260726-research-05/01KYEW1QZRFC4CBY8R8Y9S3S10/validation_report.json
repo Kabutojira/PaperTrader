@@ -1,0 +1,17 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFTC4Q8B9B52BS1XZKPWVYD.json",
+    "data/runs/local-20260726-research-05/01KYEW1QZRFC4CBY8R8Y9S3S10/enqueue-roblox-security-research.json",
+    "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-07-26T18:18:34Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYEW1QZRFC4CBY8R8Y9S3S10",
+  "passed": true,
+  "run_id": "local-20260726-research-05",
+  "validation_version": 1
+}

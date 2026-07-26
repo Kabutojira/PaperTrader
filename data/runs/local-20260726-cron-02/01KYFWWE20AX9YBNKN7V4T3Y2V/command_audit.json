@@ -1,0 +1,65 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-26T19:14:27Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:14:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-26T19:14:28Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:14:28Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-26T19:14:29Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:14:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-26T19:14:30Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-26T19:14:30Z"
+    }
+  ],
+  "operation_id": "01KYFWWE20AX9YBNKN7V4T3Y2V",
+  "run_id": "local-20260726-cron-02"
+}

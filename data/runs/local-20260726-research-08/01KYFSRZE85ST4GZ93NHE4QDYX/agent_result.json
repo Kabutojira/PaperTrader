@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFSRZE85ST4GZ93NHE4QDYX", "status": "succeeded",
+  "summary": "Researched Arista as one immutable AI-networking exposure. Revenue, GAAP margins, cash conversion, product cadence, and liquidity strongly validate the mechanism, while customer and merchant-silicon concentration, qualification, commitments, architecture competition, and absent downside valuation block a strategy. Updated it to high-confidence watching.",
+  "evidence": [
+    {"source": "Arista Q1 2026 results", "claim": "Revenue was USD 2.71 billion, up 35%, GAAP operating margin 42.7%, operating cash flow USD 1.69 billion, with current 800G, 1.6T and liquid-cooled AI-network products.", "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx", "observed_at": "2026-05-05T00:00:00Z"},
+    {"source": "Arista Q1 2026 Form 10-Q", "claim": "Cash and marketable assets were about USD 10.7 billion; the filing identifies large-customer, AI-Ethernet adoption, merchant-silicon, supply, acceptance, and non-cancellable commitment risks.", "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm", "observed_at": "2026-05-08T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-08/01KYFSRZE85ST4GZ93NHE4QDYX/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_6f9a1450edceb9307c9a.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Arista is high-confidence watching: operating evidence validates AI networking, but concentration, architecture, supply, commitments, and valuation gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-08/01KYFSRZE85ST4GZ93NHE4QDYX/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable ANET/XNYS/USD/common-stock identity.", "Created one maintained page with architecture, concentration, supply, and valuation gates.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

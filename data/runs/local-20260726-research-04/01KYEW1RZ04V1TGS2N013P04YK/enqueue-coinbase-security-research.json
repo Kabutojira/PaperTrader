@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_37ddcbdaad296ad831f2",
+  "dedupe_key": "security_research:security_37ddcbdaad296ad831f2:crypto-rails:2026-07-26",
+  "prompt": "Research Coinbase as a bounded regulated digital-finance and crypto-rails exposure.",
+  "inputs": {
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "research_focus": "Validate identity, normalized transaction and recurring revenue, stablecoin economics, assets and activity, custody and cyber risk, regulation, stock compensation, cash conversion, valuation, and invalidation."
+  },
+  "source": "idea_research:01KYEW1RZ04V1TGS2N013P04YK",
+  "priority": 65,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://investor.coinbase.com/news/news-details/2026/Coinbase-Q1-Financial-Results-Show-Resilient-Financial-Performance-Driven-by-New-All-Time-High-Crypto-Trading-Volume-Market-Share/default.aspx",
+    "https://www.congress.gov/bill/119th-congress/senate-bill/1582"
+  ],
+  "max_attempts": 3
+}

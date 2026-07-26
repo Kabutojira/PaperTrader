@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KYEW1J48NA6CWY8T1FBTAPXB",
+  "status": "succeeded",
+  "summary": "Created one AI-native SMB financial operating-system idea. Incumbent distribution and ecosystem growth support the mechanism, while agent attribution, free substitutes, portability, trust, inference cost, fraud, credit, and compliance remain unresolved. No generic-fintech proxy, relationship, or strategy was created.",
+  "evidence": [
+    {
+      "source": "Intuit fiscal-Q3 2026 results",
+      "claim": "Intuit reported USD 3.3 billion of Global Business Solutions revenue, 15% growth, and 19% Online Ecosystem revenue growth while describing an AI-driven expert strategy.",
+      "url": "https://investors.intuit.com/_assets/_f37007585b7b2da938ae125d087cc0c8/intuit/news/2026-05-20_Intuit_Reports_Strong_Third_Quarter_Results_and_1312.pdf",
+      "observed_at": "2026-05-20T00:00:00Z"
+    },
+    {
+      "source": "IRS 2026 Free File",
+      "claim": "Eight guided-software partners offered free filing for eligible taxpayers, with free fillable forms available regardless of income.",
+      "url": "https://www.irs.gov/newsroom/use-irs-free-file-to-conveniently-file-your-return-at-no-cost",
+      "observed_at": "2026-01-09T00:00:00Z"
+    },
+    {
+      "source": "CFPB personal financial data rights",
+      "claim": "A court stayed compliance dates for the US personal financial data-rights rule while amendments remained under consideration.",
+      "url": "https://www.consumerfinance.gov/compliance/compliance-resources/other-applicable-requirements/personal-financial-data-rights/"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched AI-native SMB finance systems: incumbent data and distribution help, but agent attribution, trust, cost, substitutes, credit, and portability block a strategy."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page and separated system-of-record advantage from generic agent interfaces.",
+      "Documented measurable adoption, unit-economics, trust, substitute, credit, and regulatory gates.",
+      "Avoided an unverified direct identity and a generic fintech proxy.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

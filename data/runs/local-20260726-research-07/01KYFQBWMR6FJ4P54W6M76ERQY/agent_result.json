@@ -1,0 +1,13 @@
+{
+  "operation_id": "01KYFQBWMR6FJ4P54W6M76ERQY", "status": "succeeded",
+  "summary": "Researched Parrot as one immutable European small-drone exposure. Micro-UAV growth and institutional procurement are material, but component provenance, customer and order concentration, durable cash conversion, and valuation remain unresolved; updated it to medium-confidence watching with no strategy.",
+  "evidence": [
+    {"source": "Parrot Q1 2026 revenue", "claim": "Revenue was EUR 27.9 million, up 52%, with professional micro-UAV revenue EUR 21.3 million, up 102%; management described the quarter as slightly profitable without cash consumption and noted longer component lead times.", "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf", "observed_at": "2026-05-20T00:00:00Z"},
+    {"source": "Parrot 2025 annual results", "claim": "2025 revenue was EUR 79.8 million and operations broke even in the second half.", "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf", "observed_at": "2026-03-27T00:00:00Z"}
+  ],
+  "files_changed": ["data/runs/local-20260726-research-07/01KYFQBWMR6FJ4P54W6M76ERQY/upsert-security.json", "data/tables/securities.csv", "data/wiki/index.md", "data/wiki/log.md", "data/wiki/securities/security_cc4dcb8f002b61dffe00.md"],
+  "operations_created": [], "issues_recorded": [],
+  "daily_report_items": ["Parrot remains medium-confidence watching: micro-drone demand is converting, but provenance, concentration, cash-conversion, and valuation gates block a strategy."],
+  "commands_run": ["papertrader research security upsert --request data/runs/local-20260726-research-07/01KYFQBWMR6FJ4P54W6M76ERQY/upsert-security.json", "papertrader schema validate --strict", "papertrader queue validate", "papertrader wiki lint --strict", "papertrader integrity --strict"],
+  "validation": {"passed": true, "checks": ["Validated immutable PARRO.PA/XPAR/EUR/ordinary-share identity.", "Created one maintained page with explicit order, provenance, cash, and valuation gates.", "Updated structured state only through audited CLI.", "Strict schema, queue, wiki, and integrity checks passed."]}
+}

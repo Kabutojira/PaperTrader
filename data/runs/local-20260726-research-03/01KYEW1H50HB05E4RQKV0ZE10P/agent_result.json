@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYEW1H50HB05E4RQKV0ZE10P",
+  "status": "succeeded",
+  "summary": "Created one AI-native drug-discovery platform idea. Regulatory engagement, pharma investment, and early platform-derived clinical programs confirm adoption, but repeat clinical translation, revenue quality, cash burn, dilution, and partner economics remain unresolved. Enqueued one bounded Recursion review; no relationship or strategy was created.",
+  "evidence": [
+    {
+      "source": "FDA AI credibility framework",
+      "claim": "FDA proposed a context-specific risk-based framework after reviewing more than 500 drug and biologic submissions with AI components from 2016 through 2023.",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-proposes-framework-advance-credibility-ai-models-used-drug-and-biological-product-submissions",
+      "observed_at": "2025-01-06T00:00:00Z"
+    },
+    {
+      "source": "Lilly-NVIDIA co-innovation lab",
+      "claim": "The companies committed up to USD 1 billion over five years to connect AI models with automated wet-lab experimentation.",
+      "url": "https://investor.lilly.com/news-releases/news-release-details/nvidia-and-lilly-announce-co-innovation-ai-lab-reinvent-drug",
+      "observed_at": "2026-01-12T00:00:00Z"
+    },
+    {
+      "source": "Recursion first-quarter 2026 results",
+      "claim": "Recursion reported early clinical proof points, USD 6.5 million collaboration revenue, less than USD 390 million expected 2026 operating cash burn, and runway into early 2028.",
+      "url": "https://ir.recursion.com/news-releases/news-release-details/recursion-reports-first-quarter-financial-results-and-provides",
+      "observed_at": "2026-05-06T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYFS0VYR0TMJ57HFP2EGF6JJ.json",
+    "data/runs/local-20260726-research-03/01KYEW1H50HB05E4RQKV0ZE10P/enqueue-recursion-security-research.json",
+    "data/wiki/ideas/idea_ai_native_drug_discovery.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [
+    "01KYFS0VYR0TMJ57HFP2EGF6JJ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Researched AI-native drug discovery: adoption is real, but clinical translation, lumpy economics, burn, and dilution block a strategy; queued Recursion research."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260726-research-03/01KYEW1H50HB05E4RQKV0ZE10P/enqueue-recursion-security-research.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Created exactly one idea page separating adoption and discovery speed from clinical success.",
+      "Documented clinical, regulatory, economic, financing, contrary-evidence, and review gates.",
+      "Used Recursion's immutable identity and enqueued one bounded review through the audited CLI.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

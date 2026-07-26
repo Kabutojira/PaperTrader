@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYEW1VWRX2P69EQM4KM1BM52",
+  "status": "succeeded",
+  "summary": "Created one Japan strategic-investment value-chain idea after verifying the Takaichi government's 17-field framework, multi-year mechanisms, initial roadmaps, and AI/semiconductor support. Funded order attribution, delivery capacity, yen, JGB yields, export controls, and valuation remain decisive. No unverified ticker association or strategy was created.",
+  "evidence": [
+    {
+      "source": "Prime Minister's December 2025 press conference",
+      "claim": "The government identified 17 strategic sectors and eight cross-cutting issues, proposed multi-year funding and procurement mechanisms, and allocated JPY 6.4 trillion of initial supplementary funding.",
+      "url": "https://japan.kantei.go.jp/104/statement/202512/17kaiken.html",
+      "observed_at": "2025-12-17T00:00:00Z"
+    },
+    {
+      "source": "METI AI and semiconductor framework",
+      "claim": "Japan targets more than JPY 10 trillion of public support through FY2030 to induce more than JPY 50 trillion of public-private investment over ten years.",
+      "url": "https://www.meti.go.jp/policy/mono_info_service/ai_semiconductor_frame/ai_semiconductor_frame.html"
+    },
+    {
+      "source": "Council for Japan's Growth Strategy",
+      "claim": "The March 2026 council selected key products and technologies and presented initial public-private investment roadmaps.",
+      "url": "https://japan.kantei.go.jp/105/actions/202603/10seichyou.html",
+      "observed_at": "2026-03-10T00:00:00Z"
+    },
+    {
+      "source": "Japan Ministry of Defense budget",
+      "claim": "The ministry publishes enacted FY2026 capability and procurement budget detail that can be tested against issuer orders.",
+      "url": "https://www.mod.go.jp/en/d_act/d_budget/index.html"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_japan_sanaenomics_strategic_investment.md",
+    "data/wiki/index.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Confirmed Japan's 17-field strategic-investment framework, but funded issuer orders, delivery, macro factors, and valuation still block a trade and ticker-only follow-up."
+  ],
+  "commands_run": [
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the required controller context, immutable payload, complete index, and recent log.",
+      "Verified rather than assumed the political premise using current Japanese government sources.",
+      "Created exactly one idea page with transmission mechanism, evidence, gates, invalidation, confidence, and review date.",
+      "Avoided unverified ticker identities and direct strategy creation.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}
