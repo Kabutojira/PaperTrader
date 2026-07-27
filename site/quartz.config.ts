@@ -10,7 +10,7 @@ const config: QuartzConfig = {
     analytics: null,
     locale: "en-US",
     baseUrl: process.env.PAPERTRADER_BASE_URL,
-    ignorePatterns: ["**/.gitkeep", "inbox", "_archive"],
+    ignorePatterns: ["**/.gitkeep", "_archive"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "local",

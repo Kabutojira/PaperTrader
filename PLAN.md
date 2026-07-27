@@ -1116,3 +1116,16 @@ A fresh pinned-container run then completed exactly one operation with exit code
 `succeeded` result. The controller accepted the manifest with no validation errors, including the
 repository diff, command audit, distinct corrected request artifacts, strict schema/queue/wiki/
 integrity checks, and unchanged accounting state.
+
+## GitHub Pages link-integrity follow-up — Complete (2026-07-27)
+
+The deployed Pages artifact contained 15 dead internal references from the homepage, wiki log, and
+daily report to five canonical `inbox/` packets. Those Markdown packets were public and linked from
+the complete wiki catalog, but Quartz excluded the entire folder from its emitted artifact. Quartz
+now publishes `inbox/` while continuing to exclude `_archive/` and `.gitkeep` files.
+
+Every site build now runs a deterministic post-build link check across generated HTML `href` and
+`src` attributes. It understands extensionless Quartz routes, directory indexes, assets, and both
+root and project GitHub Pages base URLs; same-host links that escape the configured project subpath
+or resolve to missing artifacts fail the build. The rebuilt canonical wiki emits all five packet
+targets and passes the link check with no dead internal links.

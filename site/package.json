@@ -11,6 +11,7 @@
     "prepare-engine": "node prepare-quartz.mjs",
     "prebuild": "npm run prepare-engine",
     "build": "node build-quartz.mjs",
+    "postbuild": "python3 ../scripts/check_site_links.py",
     "check": "npm run prepare-engine && tsc --noEmit && prettier quartz.config.ts quartz.layout.ts prepare-quartz.mjs build-quartz.mjs index.d.ts globals.d.ts --check"
   },
   "dependencies": {

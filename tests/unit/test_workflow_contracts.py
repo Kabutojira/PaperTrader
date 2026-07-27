@@ -345,6 +345,7 @@ def test_quartz_and_dependency_update_sources_are_immutable(repository_root: Pat
     package = json.loads((repository_root / "site" / "package.json").read_text(encoding="utf-8"))
     dependency = package["dependencies"]["@jackyzha0/quartz"]
 
+    assert package["scripts"]["postbuild"] == "python3 ../scripts/check_site_links.py"
     assert "4923affa7722dfc751f1074348e6dad214fe0c08" in dependency
     assert dependency.startswith("https://github.com/jackyzha0/quartz/archive/")
     assert (repository_root / "site" / "package-lock.json").is_file()
