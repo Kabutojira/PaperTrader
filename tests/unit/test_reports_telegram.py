@@ -48,7 +48,13 @@ def test_daily_report_matches_reference_and_registers_one_canonical_page(
     assert path.read_text(encoding="utf-8") == expected
     index = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
     log = (sandbox_repository / "data" / "wiki" / "log.md").read_text(encoding="utf-8")
-    assert index.count("[[daily-reports/daily-report_20260724") == 1
+    report_catalog = index.split("## Daily reports", maxsplit=1)[1]
+    assert report_catalog.count("[[daily-reports/daily-report_20260724") == 1
+    assert index.count("<!-- papertrader-current-results:start -->") == 1
+    assert index.count("<!-- papertrader-current-results:end -->") == 1
+    assert index.index("## Current results") < index.index("## Meta")
+    assert "No current performance snapshot is available." in index
+    assert "No completed research suggestions are available yet." in index
     assert log.count("Generated canonical [[daily-reports/daily-report_20260724]]") == 1
     assert lint_wiki(sandbox_repository / "data" / "wiki") == []
 

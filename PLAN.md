@@ -1129,3 +1129,18 @@ Every site build now runs a deterministic post-build link check across generated
 root and project GitHub Pages base URLs; same-host links that escape the configured project subpath
 or resolve to missing artifacts fail the build. The rebuilt canonical wiki emits all five packet
 targets and passes the link check with no dead internal links.
+
+## Results-first Quartz homepage — Complete (2026-07-27)
+
+The canonical wiki index now starts with a deterministic current-results block before the content
+catalog. It links the latest daily report, shows the newest generated cash, equity, exposure,
+realized and unrealized P/L, daily and cumulative return snapshot, and lists every current paper
+position with marks and valuation. An all-cash portfolio is stated explicitly rather than implied
+by an empty table.
+
+The same block shows the three newest successful or skipped operation-history conclusions with
+bounded summaries and links to maintained entity pages where available. Daily report generation
+refreshes the block after registering the new report, and `papertrader wiki refresh-homepage`
+provides an idempotent deterministic rebuild from canonical tables and history. The current live
+index has been regenerated, strict wiki lint passes, and Quartz renders the results before the Meta
+and catalog sections with no broken generated-site links.

@@ -23,6 +23,29 @@ def test_cli_validation_commands_pass(monkeypatch, repository_root: Path) -> Non
     assert main([*prefix, "portfolio", "reconcile", "--strict"]) == 0
 
 
+def test_cli_refreshes_results_first_wiki_homepage(
+    monkeypatch,  # type: ignore[no-untyped-def]
+    sandbox_repository: Path,
+) -> None:
+    _set_paper_environment(monkeypatch, sandbox_repository)
+
+    assert (
+        main(
+            [
+                "--repository",
+                str(sandbox_repository),
+                "wiki",
+                "refresh-homepage",
+            ]
+        )
+        == 0
+    )
+    homepage = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
+    assert homepage.index("## Current results") < homepage.index("## Meta")
+    assert "No canonical daily report is available yet." in homepage
+    assert "No open paper positions" in homepage
+
+
 def test_cli_strict_allocation_readiness_fails_for_unbackfilled_universe(
     monkeypatch, repository_root: Path
 ) -> None:  # type: ignore[no-untyped-def]

@@ -7,6 +7,7 @@ import re
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import date, datetime
+from html import escape
 from pathlib import Path, PurePosixPath
 
 import yaml
@@ -17,6 +18,11 @@ from papertrader.utils import CanonicalValueError, ensure_utc, parse_timestamp, 
 from papertrader.wiki import register_wiki_page
 
 RUN_ID_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+DAILY_REPORT_STEM_PATTERN = re.compile(r"^daily-report_(\d{4})(\d{2})(\d{2})$")
+HOME_RESULTS_START = "<!-- papertrader-current-results:start -->"
+HOME_RESULTS_END = "<!-- papertrader-current-results:end -->"
+HOME_SUGGESTION_LIMIT = 3
+HOME_SUGGESTION_MAX_CHARS = 400
 
 
 @dataclass(frozen=True, slots=True)
@@ -124,6 +130,215 @@ def _allocation_summary(repository_root: Path, run_id: str) -> Mapping[str, obje
     ):
         raise CanonicalValueError("allocation summary identity is invalid")
     return value
+
+
+def _markdown_text(value: str) -> str:
+    """Render canonical data as inert one-line Markdown text."""
+
+    normalized = " ".join(value.split())
+    escaped = escape(normalized, quote=False).replace("\\", "\\\\")
+    return re.sub(r"([`*_\[\]])", r"\\\1", escaped)
+
+
+def _wikilink_label(value: str) -> str:
+    return " ".join(value.split()).replace("|", " / ").replace("[", "").replace("]", "")
+
+
+def _summary_excerpt(value: str) -> str:
+    normalized = " ".join(value.split())
+    if len(normalized) <= HOME_SUGGESTION_MAX_CHARS:
+        return normalized
+    clipped = normalized[: HOME_SUGGESTION_MAX_CHARS - 3].rsplit(" ", maxsplit=1)[0]
+    return f"{clipped}..."
+
+
+def _security_references(
+    repository_root: Path,
+) -> tuple[Path, Mapping[str, Mapping[str, str]]]:
+    wiki_root = repository_root / "data" / "wiki"
+    securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
+    return wiki_root, securities
+
+
+def _entity_reference(
+    wiki_root: Path,
+    securities: Mapping[str, Mapping[str, str]],
+    *,
+    entity_type: str,
+    entity_id: str,
+    aliased: bool = True,
+) -> str:
+    prefixes = {
+        "idea": "ideas",
+        "relationship": "relationships",
+        "security": "securities",
+        "strategy": "strategies",
+    }
+    prefix = prefixes.get(entity_type)
+    if entity_type == "security" and entity_id in securities:
+        security = securities[entity_id]
+        ticker = f" ({security['ticker']})" if security["ticker"] else ""
+        label = _wikilink_label(f"{security['company_name']}{ticker}")
+    else:
+        label = _wikilink_label(entity_id)
+    safe_entity_id = re.fullmatch(r"[A-Za-z0-9_.:-]+", entity_id) is not None
+    if prefix and safe_entity_id:
+        page = wiki_root / prefix / f"{entity_id}.md"
+        if page.is_file() and not page.is_symlink():
+            link = f"[[{prefix}/{entity_id}]]"
+            return f"[[{prefix}/{entity_id}|{label}]]" if aliased else f"{link} - {label}"
+    if safe_entity_id:
+        return f"`{entity_id}`"
+    return _markdown_text(entity_id)
+
+
+def _latest_report_page_key(wiki_root: Path) -> tuple[str, date] | None:
+    candidates: list[tuple[str, date]] = []
+    for path in sorted((wiki_root / "daily-reports").glob("daily-report_*.md")):
+        if path.is_symlink() or not path.is_file():
+            continue
+        match = DAILY_REPORT_STEM_PATTERN.fullmatch(path.stem)
+        if match is None:
+            continue
+        report_date = date(*(int(value) for value in match.groups()))
+        candidates.append((f"daily-reports/{path.stem}", report_date))
+    return (
+        max(candidates, key=lambda candidate: (candidate[1], candidate[0])) if candidates else None
+    )
+
+
+def _homepage_portfolio_lines(repository_root: Path) -> list[str]:
+    performance_rows = read_table(repository_root, "performance_daily")
+    performance = (
+        max(
+            performance_rows,
+            key=lambda row: (row["date"], row["generated_at"], row["run_id"]),
+        )
+        if performance_rows
+        else None
+    )
+    portfolio = sorted(read_table(repository_root, "portfolio"), key=lambda row: row["position_id"])
+    wiki_root, securities = _security_references(repository_root)
+    lines = ["### Current portfolio", ""]
+    if performance is None:
+        lines.append("No current performance snapshot is available.")
+        base_currency = "base"
+    else:
+        base_currency = performance["base_currency"]
+        lines.extend(
+            [
+                f"Snapshot date: **{performance['date']}**",
+                "",
+                "| Cash | Equity | Gross exposure | Realized P/L | Unrealized P/L | "
+                "Daily return | Cumulative return |",
+                "| ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+                f"| {performance['cash_base']} {base_currency} | "
+                f"{performance['equity_base']} {base_currency} | "
+                f"{performance['gross_exposure_base']} {base_currency} | "
+                f"{performance['realized_pnl_base']} {base_currency} | "
+                f"{performance['unrealized_pnl_base']} {base_currency} | "
+                f"{performance['daily_return_pct']}% | "
+                f"{performance['cumulative_return_pct']}% |",
+            ]
+        )
+    lines.append("")
+    if not portfolio:
+        lines.append("No open paper positions; the portfolio is currently held in cash.")
+        return lines
+    lines.extend(
+        [
+            "| Security | Instrument | Side | Quantity | Average cost | Mark | "
+            f"Market value ({base_currency}) | Unrealized P/L ({base_currency}) |",
+            "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for row in portfolio:
+        security = _entity_reference(
+            wiki_root,
+            securities,
+            entity_type="security",
+            entity_id=row["security_id"],
+            aliased=False,
+        )
+        lines.append(
+            f"| {_cell(security)} | {_cell(row['instrument_type'])} | {_cell(row['side'])} | "
+            f"{_cell(row['quantity'])} | {_cell(row['average_cost'])} {_cell(row['currency'])} | "
+            f"{_cell(row['current_price'])} {_cell(row['currency'])} | "
+            f"{_cell(row['market_value_base'])} | {_cell(row['unrealized_pnl_base'])} |"
+        )
+    return lines
+
+
+def _homepage_suggestion_lines(repository_root: Path) -> list[str]:
+    history = [
+        row
+        for row in read_table(repository_root, "operations_history")
+        if row["terminal_status"] in {"succeeded", "skipped"} and row["result_summary"].strip()
+    ]
+    history.sort(key=lambda row: (row["completed_at"], row["operation_id"]), reverse=True)
+    wiki_root, securities = _security_references(repository_root)
+    lines = ["### Latest suggestions and research conclusions", ""]
+    for row in history[:HOME_SUGGESTION_LIMIT]:
+        entity = _entity_reference(
+            wiki_root,
+            securities,
+            entity_type=row["entity_type"],
+            entity_id=row["entity_id"],
+        )
+        operation = _markdown_text(row["operation_type"].replace("_", " "))
+        completed = _markdown_text(row["completed_at"])
+        summary = _markdown_text(_summary_excerpt(row["result_summary"]))
+        lines.append(f"- **{completed} — {operation} for {entity}:** {summary}")
+    if len(lines) == 2:
+        lines.append("No completed research suggestions are available yet.")
+    return lines
+
+
+def refresh_wiki_homepage(repository_root: Path, *, report_date: date | None = None) -> Path:
+    """Regenerate the results-first block in the canonical wiki homepage."""
+
+    wiki_root = repository_root / "data" / "wiki"
+    index_path = wiki_root / "index.md"
+    index_text = index_path.read_text(encoding="utf-8")
+    latest_report = _latest_report_page_key(wiki_root)
+    effective_date = report_date or (latest_report[1] if latest_report else None)
+    lines = [HOME_RESULTS_START, "## Current results", ""]
+    if latest_report:
+        page_key, latest_date = latest_report
+        lines.append(f"Latest full result: [[{page_key}|Daily report {latest_date.isoformat()}]].")
+    else:
+        lines.append("No canonical daily report is available yet.")
+    lines.extend(["", *_homepage_portfolio_lines(repository_root), ""])
+    lines.extend(_homepage_suggestion_lines(repository_root))
+    lines.extend(["", HOME_RESULTS_END])
+    block = "\n".join(lines)
+
+    start_count = index_text.count(HOME_RESULTS_START)
+    end_count = index_text.count(HOME_RESULTS_END)
+    if start_count != end_count or start_count > 1:
+        raise CanonicalValueError("wiki homepage has an incomplete generated-results block")
+    if start_count == 1:
+        start = index_text.index(HOME_RESULTS_START)
+        end = index_text.index(HOME_RESULTS_END, start) + len(HOME_RESULTS_END)
+        updated = index_text[:start] + block + index_text[end:]
+    else:
+        anchor = "\n## Meta\n"
+        if anchor not in index_text:
+            raise CanonicalValueError("wiki homepage is missing the Meta section")
+        updated = index_text.replace(anchor, f"\n{block}\n\n## Meta\n", 1)
+    if effective_date is not None:
+        updated, count = re.subn(
+            r'^updated: "\d{4}-\d{2}-\d{2}"$',
+            f'updated: "{effective_date.isoformat()}"',
+            updated,
+            count=1,
+            flags=re.M,
+        )
+        if count != 1:
+            raise CanonicalValueError("wiki homepage must contain one updated frontmatter date")
+    if updated != index_text:
+        atomic_write_text(index_path, updated, allowed_root=wiki_root)
+    return index_path
 
 
 def generate_daily_report(
@@ -453,4 +668,5 @@ def generate_daily_report(
         event=f"Generated canonical [[daily-reports/{path.stem}]] for run `{run_id}`.",
         event_date=day,
     )
+    refresh_wiki_homepage(repository_root, report_date=day)
     return path

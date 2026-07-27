@@ -869,6 +869,14 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert f"[[ideas/{IDEA_ID}]]" in report_text
     assert f"[[relationships/{RELATIONSHIP_ID}]]" in report_text
     assert f"[[strategies/{STRATEGY_ID}]]" in report_text
+    homepage_text = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
+    assert homepage_text.index("## Current results") < homepage_text.index("## Meta")
+    assert "### Current portfolio" in homepage_text
+    assert f"[[securities/{SECURITY_ID}" in homepage_text
+    assert "### Latest suggestions and research conclusions" in homepage_text
+    assert (
+        "The validated paper order remains pending until the next eligible open." in homepage_text
+    )
 
     counts_before_replay = {
         name: len(read_table(sandbox_repository, name))

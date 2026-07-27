@@ -14,6 +14,29 @@ provenance: repository-contract
 
 PaperTrader is a paper-only investment research and simulation wiki.
 
+<!-- papertrader-current-results:start -->
+## Current results
+
+Latest full result: [[daily-reports/daily-report_20260727|Daily report 2026-07-27]].
+
+### Current portfolio
+
+Snapshot date: **2026-07-27**
+
+| Cash | Equity | Gross exposure | Realized P/L | Unrealized P/L | Daily return | Cumulative return |
+| ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 100000 EUR | 100000 EUR | 0 EUR | 0 EUR | 0 EUR | 0% | 0% |
+
+No open paper positions; the portfolio is currently held in cash.
+
+### Latest suggestions and research conclusions
+
+- **2026-07-27T13:35:45Z — security research for [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical, Inc. (ISRG)]]:** Revalidated Intuitive Surgical with current registered Q2 2026 issuer evidence and a fresh 2026-07-24 market mark. Procedure growth, recurring revenue, GAAP earnings, cash, balance-sheet strength, and liquidity support a high-confidence baseline assessment. A 12-month USD 274.20 downside case and USD 365.60 base case imply -18.4% and +8.8% from USD 336.05, so limited margin of safety blocks...
+- **2026-07-26T19:15:02Z — opportunity research for `opportunity_8d74739527390c26b6f3`:** Classified Lithium Americas' 2026-07-24 oversold-RSI transition as fundamental and commodity risk, not a contrarian opportunity. The 26.45% observation-period decline occurred without a material issuer project update and leaves a pre-revenue, construction-stage equity exposed to lithium pricing, remaining capex, conditional funding, warrants, dilution, commissioning, and schedule risk. No...
+- **2026-07-26T19:13:24Z — opportunity research for `opportunity_f60263cf67647ec0820f`:** Classified Albemarle's 2026-07-24 oversold-RSI transition as unresolved commodity and earnings risk, not a buy signal. The 18.47% observation-period decline coincided with lithium-price repricing, while the issuer supplied no new operating result during the window and Q1 sensitivity remained dominated by lithium price, contract lag, capital needs, and dilution. Enqueued one post-Q2 security...
+
+<!-- papertrader-current-results:end -->
+
 ## Meta
 
 - [[SCHEMA|Wiki schema]]

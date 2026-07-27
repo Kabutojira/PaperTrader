@@ -76,7 +76,7 @@ from papertrader.queue import (
     release_expired_leases,
     validate_queue,
 )
-from papertrader.reports import NarrativeItem, generate_daily_report
+from papertrader.reports import NarrativeItem, generate_daily_report, refresh_wiki_homepage
 from papertrader.repository_state import snapshot_repository
 from papertrader.research import (
     import_watchlist,
@@ -113,6 +113,7 @@ def _parser() -> argparse.ArgumentParser:
     wiki = commands.add_parser("wiki", help="work with the research wiki")
     wiki_commands = wiki.add_subparsers(dest="wiki_command", required=True)
     wiki_commands.add_parser("lint").add_argument("--strict", action="store_true")
+    wiki_commands.add_parser("refresh-homepage")
 
     market = commands.add_parser("market", help="retrieve and normalize market state")
     market_commands = market.add_subparsers(dest="market_command", required=True)
@@ -756,7 +757,11 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
     if arguments.command == "integrity":
         return _print_result("integrity", validate_integrity(root, os.environ))
     if arguments.command == "wiki":
-        return _print_result("wiki", lint_wiki(settings.paths.wiki))
+        if arguments.wiki_command == "lint":
+            return _print_result("wiki", lint_wiki(settings.paths.wiki))
+        path = refresh_wiki_homepage(root)
+        print(path.relative_to(root).as_posix())
+        return 0
     if arguments.command == "market":
         return _print_result("market", update_market_data(root, settings))
     if arguments.command == "daily":
