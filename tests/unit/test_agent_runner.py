@@ -134,7 +134,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert isinstance(command, tuple)
     assert "--yolo" in command
     assert command[command.index("--provider") + 1] == "openai-codex"
-    assert command[command.index("--model") + 1] == "gpt-5.3-codex"
+    assert command[command.index("--model") + 1] == "gpt-5.6-sol"
     assert command.count("--skills") == 3
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
     assert command[command.index("--max-turns") + 1] == "60"
@@ -327,7 +327,7 @@ def test_configure_preserves_restored_oauth_state(
     assert auth.read_bytes() == oauth_state
     config = (home / "config.yaml").read_text(encoding="utf-8")
     assert "provider: openai-codex" in config
-    assert "default: gpt-5.3-codex" in config
+    assert "default: gpt-5.6-sol" in config
 
 
 def test_postrun_native_skill_mutation_fails_closed(

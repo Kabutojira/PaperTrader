@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 import json
+import os
 import re
+import subprocess
 from pathlib import Path
 
+import pytest
 import yaml
 
 WORKFLOW_NAMES = {
@@ -149,7 +152,10 @@ def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(
     assert "age --decrypt" in restore["run"]
     assert 'AUTH_FILE="$HERMES_HOME/auth.json"' in restore["run"]
     assert 'AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"' in restore["run"]
-    assert "hermes auth status openai-codex > /dev/null 2>&1" in yaml.safe_dump(runtime)
+    preflight = steps["Preflight OpenAI Codex OAuth without exposing credential state"]
+    assert "hermes auth status openai-codex 2>/dev/null" in preflight["run"]
+    assert '"openai-codex: logged in"' in preflight["run"]
+    assert "unset oauth_status" in preflight["run"]
 
     assert "always()" in persist["if"]
     assert 'cmp -s "$AUTH_BEFORE" "$AUTH_FILE"' in persist["run"]
@@ -175,6 +181,66 @@ def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(
     assert ".papertrader/credentials/openai-oauth-auth.json.age" in yaml.safe_dump(commit)
     assert "$HERMES_HOME/auth.json" not in yaml.safe_dump(commit)
     assert "openai-oauth.agekey" not in yaml.safe_dump(commit)
+
+
+@pytest.mark.parametrize(
+    ("status_output", "hermes_exit", "expected_exit"),
+    [
+        ("openai-codex: logged in\n  client_id: private-test-account\n", 0, 0),
+        (
+            "openai-codex: logged out (No Codex credentials stored.)\n"
+            "  client_id: private-test-account\n",
+            0,
+            1,
+        ),
+        ("", 1, 1),
+    ],
+)
+def test_openai_oauth_preflight_requires_logged_in_status_without_leaking_details(
+    repository_root: Path,
+    tmp_path: Path,
+    status_output: str,
+    hermes_exit: int,
+    expected_exit: int,
+) -> None:
+    workflow = _workflow(repository_root / ".github" / "workflows" / "reusable-llm.yml")
+    runtime = workflow["jobs"]["runtime"]
+    preflight = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Preflight OpenAI Codex OAuth without exposing credential state"
+    )
+    fake_bin = tmp_path / "bin"
+    fake_bin.mkdir()
+    fake_hermes = fake_bin / "hermes"
+    fake_hermes.write_text(
+        "#!/usr/bin/env bash\n"
+        'test "$*" = "auth status openai-codex" || exit 99\n'
+        "printf '%s' \"$FAKE_HERMES_STATUS\"\n"
+        'exit "$FAKE_HERMES_EXIT"\n',
+        encoding="utf-8",
+    )
+    fake_hermes.chmod(0o755)
+    environment = os.environ.copy()
+    environment.update(
+        {
+            "FAKE_HERMES_EXIT": str(hermes_exit),
+            "FAKE_HERMES_STATUS": status_output,
+            "PATH": f"{fake_bin}:{environment['PATH']}",
+        }
+    )
+
+    completed = subprocess.run(
+        ["bash", "--noprofile", "--norc", "-e", "-o", "pipefail", "-c", preflight["run"]],
+        check=False,
+        capture_output=True,
+        text=True,
+        env=environment,
+    )
+
+    assert completed.returncode == expected_exit
+    assert "private-test-account" not in completed.stdout
+    assert "private-test-account" not in completed.stderr
 
 
 def test_age_install_is_version_and_checksum_pinned(repository_root: Path) -> None:

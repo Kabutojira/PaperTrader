@@ -207,6 +207,11 @@ configured `OPENAI_OAUTH_SECRET` and were not invoked from the development check
 The 2026-07-25 follow-up corrected the pinned age release assertion to the binary's exact
 `v1.3.1` output after verifying the official archive against the pinned SHA-256 checksum.
 
+The 2026-07-27 follow-up corrected the OAuth preflight for Hermes v0.19.0, whose
+`hermes auth status openai-codex` command exits successfully even when it reports `logged out`.
+The workflow now requires the exact non-sensitive `logged in` status line without logging the
+remaining status details, and the configured Codex OAuth model is `gpt-5.6-sol`.
+
 ## Step 7 — Add the local Codex harness and execute a researched idea — Complete (2026-07-25)
 
 Add a first-class two-phase boundary for running one repository skill from an existing Codex shell

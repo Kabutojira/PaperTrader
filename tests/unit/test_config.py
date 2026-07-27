@@ -30,7 +30,7 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
     assert settings.hermes.provider == "openai-codex"
-    assert settings.hermes.model == "gpt-5.3-codex"
+    assert settings.hermes.model == "gpt-5.6-sol"
     assert settings.hermes.inference_environment == ()
     assert set(settings.hermes.toolsets) == {"web", "file", "terminal"}
     assert settings.hermes.required_native_skill == "llm-wiki"

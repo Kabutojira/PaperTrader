@@ -225,10 +225,18 @@ jobs:
       - name: Preflight OpenAI Codex OAuth without exposing credential state
         if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
         run: |
-          if ! hermes auth status openai-codex > /dev/null 2>&1; then
-            echo "::error::Hermes does not recognize the restored openai-codex OAuth credential"
+          set -euo pipefail
+          if ! oauth_status="$(hermes auth status openai-codex 2>/dev/null)"; then
+            echo "::error::Hermes could not inspect the restored openai-codex OAuth credential"
             exit 1
           fi
+          oauth_status_line="${oauth_status%%$'\n'*}"
+          unset oauth_status
+          if [ "$oauth_status_line" != "openai-codex: logged in" ]; then
+            echo "::error::Restored auth.json contains no usable openai-codex OAuth credential; re-authenticate and replace the ciphertext"
+            exit 1
+          fi
+          unset oauth_status_line
       - name: Preflight native llm-wiki and the selected project skill
         env:
           OPERATION_TYPE: ${{ inputs.operation_type }}
