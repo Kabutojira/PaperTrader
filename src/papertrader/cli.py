@@ -17,6 +17,7 @@ from papertrader.agent_runner import (
     preflight_hermes,
     run_one_operation,
 )
+from papertrader.allocation import plan_allocation
 from papertrader.command_audit import audit_context, record_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
@@ -76,6 +77,7 @@ from papertrader.repository_state import snapshot_repository
 from papertrader.research import (
     import_watchlist,
     record_source,
+    upsert_assessment,
     upsert_relationship,
     upsert_security,
     upsert_strategy,
@@ -181,6 +183,11 @@ def _parser() -> argparse.ArgumentParser:
     performance_update = performance_commands.add_parser("update")
     performance_update.add_argument("--run-id", required=True)
 
+    allocation = commands.add_parser("allocation", help="plan bounded baseline allocation")
+    allocation_commands = allocation.add_subparsers(dest="allocation_command", required=True)
+    allocation_plan = allocation_commands.add_parser("plan")
+    allocation_plan.add_argument("--run-id", required=True)
+
     actions = commands.add_parser("corporate-actions", help="apply durable paper cash actions")
     action_commands = actions.add_subparsers(dest="action_command", required=True)
     action_accrue = action_commands.add_parser("accrue")
@@ -195,7 +202,7 @@ def _parser() -> argparse.ArgumentParser:
 
     research = commands.add_parser("research", help="update validated structured research state")
     research_commands = research.add_subparsers(dest="research_command", required=True)
-    for research_name in ("source", "security", "relationship", "strategy"):
+    for research_name in ("source", "security", "assessment", "relationship", "strategy"):
         research_group = research_commands.add_parser(research_name)
         action = "record" if research_name == "source" else "upsert"
         research_action = research_group.add_subparsers(
@@ -721,6 +728,8 @@ def _run_research_command(
         print(json.dumps({"source_history_id": history_id, "changed": changed}, sort_keys=True))
     elif arguments.research_command == "security":
         print(json.dumps({"changed": upsert_security(repository_root, settings, raw)}))
+    elif arguments.research_command == "assessment":
+        print(json.dumps({"changed": upsert_assessment(repository_root, settings, raw)}))
     elif arguments.research_command == "relationship":
         print(json.dumps({"changed": upsert_relationship(repository_root, raw)}))
     elif arguments.research_command == "strategy":
@@ -926,6 +935,10 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
     if arguments.command == "performance":
         row = update_performance(root, settings, run_id=arguments.run_id)
         print(json.dumps(row, sort_keys=True))
+        return 0
+    if arguments.command == "allocation":
+        result = plan_allocation(root, settings, run_id=arguments.run_id)
+        print(json.dumps(asdict(result), sort_keys=True))
         return 0
     if arguments.command == "logs":
         regenerate_log_tail(root)

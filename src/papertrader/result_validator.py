@@ -139,9 +139,10 @@ def _path_allowed_for_operation(operation_type: str, raw_path: str, *, created: 
     if operation_type == "idea_research":
         return _is_wiki_path(path, frozenset({"ideas"}))
     if operation_type == "security_research":
-        return raw_path == "data/tables/securities.csv" or _is_wiki_path(
-            path, frozenset({"securities"})
-        )
+        return raw_path in {
+            "data/tables/securities.csv",
+            "data/tables/security_assessments.csv",
+        } or _is_wiki_path(path, frozenset({"securities"}))
     if operation_type == "relationship_research":
         return raw_path == "data/tables/relationships.csv" or _is_wiki_path(
             path, frozenset({"relationships"})
@@ -196,6 +197,8 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
     if command[:3] == ("research", "source", "record"):
         return operation_type == "wiki_ingest"
     if command[:3] == ("research", "security", "upsert"):
+        return operation_type == "security_research"
+    if command[:3] == ("research", "assessment", "upsert"):
         return operation_type == "security_research"
     if command[:3] == ("research", "relationship", "upsert"):
         return operation_type == "relationship_research"
@@ -513,6 +516,15 @@ def validate_agent_result(
         errors.append(f"{status} result requires evidence")
     if operation.operation_type in {"opportunity_research", "strategy_research"} and not evidence:
         errors.append(f"{operation.operation_type} result must be evidence-linked")
+    if (
+        operation.operation_type == "security_research"
+        and status == "succeeded"
+        and not any(
+            row["security_id"] == operation.entity_id and row["run_id"] == run_id
+            for row in read_table(repository_root, "security_assessments")
+        )
+    ):
+        errors.append("completed security research requires this run's comparable assessment")
     validation = result.get("validation")
     if status in {"succeeded", "skipped"} and (
         not isinstance(validation, dict) or validation.get("passed") is not True

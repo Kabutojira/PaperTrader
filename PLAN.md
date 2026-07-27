@@ -249,3 +249,832 @@ follow-up regression fix passed and the bounded retry completed. The successful 
 `local-20260725-solar-reset-02` generated the canonical 2026-07-25 report with zero orders or fills
 and three ready security-research follow-ups. All validation gates pass without network-dependent
 inference or any real-execution path.
+
+# Step 8 — Add opportunity-cost-aware portfolio allocation
+
+## Goal
+
+Prevent PaperTrader from remaining indefinitely at 100% cash whenever no security passes the full high-conviction screening threshold.
+
+Add a separate **baseline allocation sleeve** that invests a bounded portion of available cash in the strongest acceptable candidates, while preserving the existing high-conviction research, strategy, signal, risk, order, fill, and accounting workflow.
+
+Cash remains a valid portfolio allocation rather than an error condition. The allocator must compare candidate securities against the configured cash hurdle and may retain more cash whenever evidence quality, diversification, valuation, market data, or risk constraints are insufficient.
+
+## Fixed architecture decisions
+
+* Do not weaken the existing high-conviction security or strategy gate.
+* Divide portfolio exposure into:
+
+  * `conviction`: positions originating from securities that pass the complete strategy gate;
+  * `baseline`: smaller positions selected primarily through relative ranking and opportunity-cost management.
+* Only securities with fresh research, a defensible valuation range, adequate liquidity, and no hard blocker may enter the baseline sleeve.
+* Securities failing because of missing evidence, unsupported valuation, solvency risk, accounting uncertainty, stale prices, stale FX, identity ambiguity, or thesis invalidation remain ineligible.
+* Agent research may produce evidence-backed assessment inputs, but deterministic code owns:
+
+  * score aggregation;
+  * candidate filtering;
+  * ranking;
+  * portfolio sizing;
+  * caps;
+  * cash-reserve enforcement;
+  * target generation;
+  * quantity calculation;
+  * order-risk enforcement.
+* The allocation engine does not create executions, fills, cash entries, or portfolio rows.
+* Allocation targets enqueue normal `strategy_research` work and continue through the existing signal, `execute_strategy`, order, fill, and reconciliation pipeline.
+* Baseline positions must be traceable to an immutable allocation plan.
+* All structured mutations use the project CLI.
+* Roll out first in `report_only` mode and activate paper allocation only after deterministic and integration tests pass.
+
+## Step 8.1 — Add comparable assessments and complete market inputs
+
+### Configuration
+
+Add an `[allocation]` section to `config.ini` and the matching typed configuration in `src/papertrader/config.py`.
+
+Initial defaults:
+
+```ini
+[allocation]
+mode = report_only
+
+target_invested_pct = 60
+minimum_cash_reserve_pct = 25
+
+maximum_baseline_sleeve_pct = 30
+maximum_baseline_position_pct = 5
+maximum_sector_pct = 20
+maximum_theme_pct = 20
+
+cash_hurdle_score = 60
+minimum_confidence = medium
+minimum_diversified_candidates = 6
+maximum_assessment_age_days = 30
+
+maximum_deployment_per_run_pct = 15
+minimum_trade_pct = 1
+rebalance_band_pct = 1
+```
+
+Supported modes:
+
+* `disabled`
+* `report_only`
+* `active`
+
+All percentages must use `Decimal`, remain within `[0, 100]`, and satisfy cross-field validation:
+
+* cash reserve must be below 100%;
+* baseline sleeve must not exceed target invested exposure;
+* baseline position size must not exceed the existing single-position limit;
+* deployment per run must not exceed the daily-turnover limit;
+* minimum trade size must not exceed the baseline position cap.
+
+### Security assessment contract
+
+Add:
+
+```text
+data/tables/security_assessments.csv
+```
+
+Columns:
+
+```text
+security_id
+assessed_at
+expires_at
+eligibility
+confidence
+thesis_score
+business_quality_score
+balance_sheet_score
+valuation_score
+timing_score
+liquidity_score
+risk_penalty
+downside_pct
+base_upside_pct
+valuation_horizon_months
+hard_blockers
+soft_gaps
+evidence_refs
+run_id
+```
+
+Canonical values:
+
+```text
+eligibility = ineligible | baseline | conviction
+confidence  = low | medium | high
+```
+
+Scores and penalties must be integer decimal text within `0–100`.
+
+`downside_pct` and `base_upside_pct` may be negative but must be finite decimal text. `valuation_horizon_months` must be a positive integer.
+
+Add:
+
+```bash
+papertrader research assessment upsert --request <json>
+```
+
+The command must:
+
+* validate the exact request schema;
+* require an existing immutable `security_id`;
+* require fresh evidence references;
+* reject future-dated assessments;
+* reject expiration before assessment;
+* validate score ranges;
+* validate canonical blocker and gap values;
+* prevent an older assessment from replacing a newer one;
+* write only through the canonical table layer;
+* be idempotent for an identical retry.
+
+### Hard blockers
+
+Use canonical machine-readable blocker values, including:
+
+```text
+identity_uncertain
+research_stale
+valuation_unsupported
+market_data_stale
+fx_unavailable
+liquidity_insufficient
+solvency_risk
+accounting_uncertain
+thesis_invalidated
+instrument_unsupported
+exchange_unsupported
+currency_unsupported
+```
+
+A non-empty hard-blocker set always forces `eligibility=ineligible`.
+
+### Soft gaps
+
+Canonical soft-gap examples:
+
+```text
+margin_of_safety_below_target
+timing_unfavorable
+catalyst_missing
+valuation_not_compelling
+confidence_medium
+concentration_sensitive
+cyclical_normalization_uncertain
+```
+
+Soft gaps may reduce rank or position size but do not automatically disqualify the security.
+
+### Deterministic aggregate score
+
+Add a pure scoring function:
+
+```text
+raw_score =
+    thesis_score            × 0.25
+  + business_quality_score  × 0.20
+  + balance_sheet_score     × 0.15
+  + valuation_score         × 0.25
+  + timing_score            × 0.10
+  + liquidity_score         × 0.05
+```
+
+Apply confidence:
+
+```text
+high   = 1.00
+medium = 0.80
+low    = 0.50
+```
+
+Then calculate:
+
+```text
+effective_score =
+    raw_score × confidence_multiplier − risk_penalty
+```
+
+Candidate edge over cash:
+
+```text
+candidate_edge = max(effective_score − cash_hurdle_score, 0)
+```
+
+All calculations must use deterministic `Decimal` arithmetic with documented rounding.
+
+### Security research skill
+
+Update `skills/papertrader-security-research/SKILL.md`.
+
+Every completed security research operation must either:
+
+1. write a complete current assessment; or
+2. write an ineligible assessment with explicit hard blockers.
+
+The skill must not leave a researched security with no comparable disposition.
+
+A baseline-eligible assessment requires:
+
+* current primary evidence;
+* supportable downside and base-case valuation;
+* explicit horizon;
+* liquidity review;
+* balance-sheet review;
+* confidence;
+* invalidation conditions;
+* fresh market data;
+* no hard blocker.
+
+### Foreign-exchange market data
+
+Extend the deterministic market-data layer to maintain fresh FX rates for every allowed non-base currency.
+
+Add committed rolling FX data under:
+
+```text
+data/market/fx/<currency>_<base_currency>.csv
+```
+
+The daily controller must provide `fx_rate_to_base` for:
+
+* open foreign-currency positions;
+* pending foreign-currency orders;
+* candidate allocation sizing;
+* portfolio marks;
+* risk references;
+* fees and cash effects.
+
+A missing or stale FX rate must exclude a new candidate and defer an existing foreign-currency order without corrupting accounting state.
+
+### Exit criteria
+
+* [ ] Every researched security has a current comparable assessment or an explicit ineligible assessment.
+* [x] Hard blockers deterministically exclude a security.
+* [x] Assessment updates are idempotent and reject older data.
+* [x] Score aggregation produces exact reproducible `Decimal` results.
+* [x] All allowed currencies can produce fresh base-currency market references.
+* [x] Foreign-currency positions and pending orders no longer fail merely because their currency differs from the portfolio base currency.
+* [x] Existing high-conviction research behavior remains valid.
+* [x] Schema, integrity, lint, typing, and focused assessment/FX tests pass.
+
+## Step 8.2 — Implement the deterministic allocation engine and order guards
+
+### Allocation engine
+
+Add:
+
+```text
+src/papertrader/allocation.py
+```
+
+Add the CLI command:
+
+```bash
+papertrader allocation plan --run-id <run_id>
+```
+
+The engine must read:
+
+* reconciled accounting replay;
+* current portfolio marks;
+* cash and equity;
+* open and pending exposure;
+* current strategies and their sleeves;
+* securities;
+* fresh assessments;
+* accepted idea-security relationships;
+* sector and theme exposure;
+* allocation settings.
+
+It must never read generated allocation output as authoritative input.
+
+### Generated allocation targets
+
+Add:
+
+```text
+data/tables/allocation_targets.csv
+```
+
+Mark it as a generated table.
+
+Columns:
+
+```text
+allocation_plan_id
+run_id
+as_of
+security_id
+strategy_id
+sleeve
+rank
+effective_score
+candidate_edge
+current_weight_pct
+pending_weight_pct
+target_weight_pct
+target_value_base
+delta_value_base
+disposition
+reason
+assessment_as_of
+```
+
+Canonical dispositions:
+
+```text
+open
+increase
+hold
+reduce
+close
+excluded
+below_minimum_trade
+```
+
+Add append-only history:
+
+```text
+data/tables/allocation_history.csv
+```
+
+The history row must preserve the finalized target and reason for every candidate considered in each allocation plan.
+
+### Deployment budget
+
+Calculate:
+
+```text
+cash_reserve =
+    equity × minimum_cash_reserve_pct / 100
+
+available_cash =
+    max(cash − committed_pending_cash − cash_reserve, 0)
+
+target_exposure_gap =
+    max(
+        equity × target_invested_pct / 100
+        − current_gross_exposure
+        − pending_gross_exposure,
+        0
+    )
+
+remaining_baseline_capacity =
+    max(
+        equity × maximum_baseline_sleeve_pct / 100
+        − current_baseline_exposure
+        − pending_baseline_exposure,
+        0
+    )
+
+deployment_limit =
+    equity × maximum_deployment_per_run_pct / 100
+
+deployment_budget =
+    min(
+        available_cash,
+        target_exposure_gap,
+        remaining_baseline_capacity,
+        deployment_limit
+    )
+```
+
+### Candidate filtering
+
+A security is baseline eligible only when:
+
+* assessment eligibility is `baseline` or `conviction`;
+* assessment is not expired or older than the configured age;
+* confidence meets the configured minimum;
+* hard blockers are empty;
+* effective score exceeds the cash hurdle;
+* base-case upside is positive;
+* downside is finite and explicitly assessed;
+* market and FX inputs are fresh;
+* security status permits monitoring or trading;
+* exchange, currency, and instrument are allowed;
+* a current accepted relationship or equivalent evidence-linked thesis exists.
+
+### Diversification rule
+
+The allocator must not concentrate the full baseline sleeve into too few candidates.
+
+Define:
+
+```text
+diversification_factor =
+    min(
+        eligible_candidate_count
+        / minimum_diversified_candidates,
+        1
+    )
+```
+
+Then:
+
+```text
+diversified_budget =
+    deployment_budget × diversification_factor
+```
+
+The per-position cap remains authoritative, so fewer eligible securities naturally leave more capital in cash.
+
+### Weight allocation
+
+Allocate the diversified budget proportionally to positive candidate edge.
+
+Use deterministic capped redistribution:
+
+1. calculate each candidate’s provisional share from candidate edge;
+2. apply the baseline position cap;
+3. apply total security exposure cap;
+4. apply sector cap;
+5. apply theme cap;
+6. apply currency cap when configured;
+7. redistribute remaining budget among uncapped candidates;
+8. repeat until no budget can be allocated without violating a constraint;
+9. round target quantities downward so the cash reserve cannot be breached.
+
+The algorithm must be deterministic regardless of input-row ordering.
+
+Ties must be broken by immutable `security_id`.
+
+### Existing positions
+
+The allocator may control only positions linked exclusively to baseline strategies.
+
+For baseline positions:
+
+* a still-eligible candidate may be held or resized;
+* a candidate inside the rebalance band produces `hold`;
+* a hard blocker, expired assessment, or thesis invalidation produces target weight zero;
+* a lower rank may produce a reduction;
+* a position may be closed when its capital has a better eligible use.
+
+The allocator must not automatically reduce or close a conviction position. Conviction positions remain governed by their strategy signals and risk rules.
+
+### Queue handoff
+
+In `active` mode, a non-zero material target delta must enqueue a normal `strategy_research` operation.
+
+The payload must include:
+
+```json
+{
+  "mode": "baseline_allocation",
+  "allocation_plan_id": "<immutable plan id>",
+  "security_id": "<security id>",
+  "strategy_id": "<stable baseline strategy id>",
+  "current_weight_pct": "<decimal>",
+  "target_weight_pct": "<decimal>",
+  "maximum_weight_pct": "<decimal>",
+  "selection_rank": "<integer>",
+  "effective_score": "<decimal>",
+  "assessment_as_of": "<UTC timestamp>"
+}
+```
+
+Use a stable baseline strategy identity per security so repeated plans update one strategy rather than creating unlimited strategies.
+
+Queue requests must use deterministic dedupe keys containing the strategy, allocation plan, and desired disposition.
+
+In `report_only` mode, write targets and history but enqueue no strategy, signal, or execution work.
+
+### Strategy metadata
+
+Extend `strategies.csv` with:
+
+```text
+sleeve
+allocation_plan_id
+```
+
+Canonical sleeve values:
+
+```text
+conviction
+baseline
+```
+
+Existing strategies migrate to `conviction`.
+
+A baseline strategy must retain the allocation plan that most recently established its target.
+
+### Order guards
+
+Strengthen `papertrader order create`.
+
+Before an order is accepted:
+
+* submitted legs must match the canonical strategy legs;
+* the strategy must be orderable;
+* strategy `risk_budget_pct` must be enforced against current equity;
+* a baseline strategy must have a current allocation target;
+* the allocation plan must not be stale;
+* projected baseline exposure must not exceed its target plus rounding tolerance;
+* the baseline position cap must be enforced;
+* the minimum cash reserve must remain intact;
+* current pending orders must be included;
+* concentration, turnover, gross exposure, and existing risk limits must still pass.
+
+Deterministic code must calculate equity quantity from target value and fresh reference price.
+
+The LLM may recommend structure and explain the decision, but it must not choose an unconstrained final quantity.
+
+### Exit criteria
+
+* [x] Allocation results are identical for identical inputs regardless of row ordering.
+* [x] Total target exposure never exceeds the configured limits.
+* [x] Target cash never falls below the minimum reserve.
+* [x] Baseline exposure never exceeds the baseline sleeve cap.
+* [x] Per-security, sector, theme, turnover, and gross-exposure caps are enforced.
+* [x] Fewer eligible candidates result in partial deployment rather than forced concentration.
+* [x] Hard-blocked securities receive zero target allocation.
+* [x] Conviction positions are not managed by the baseline allocator.
+* [x] Pending orders are included in projected cash and exposure.
+* [x] Strategy risk budgets and canonical legs are enforced at order creation.
+* [x] `report_only` mode cannot create operations, signals, orders, fills, or accounting changes.
+* [x] Unit, property, and golden allocation tests pass.
+
+## Step 8.3 — Integrate baseline strategy research and execution
+
+### Strategy research skill
+
+Update `skills/papertrader-strategy-research/SKILL.md` to support:
+
+```text
+mode = conviction | baseline_allocation
+```
+
+For baseline allocation, require:
+
+* valid allocation-plan identity;
+* current target weight;
+* current assessment;
+* fresh price and FX inputs;
+* explicit soft gaps;
+* explicit reason the security did not qualify as a conviction strategy;
+* thesis;
+* downside case;
+* base case;
+* invalidation;
+* review date;
+* exit conditions;
+* target-size limit.
+
+The strategy page must explain why the candidate is preferable to retaining that portion of the portfolio in cash.
+
+A baseline strategy must use equity in the first implementation. Options, shorts, leverage, and multi-leg structures remain reserved for conviction strategies.
+
+The skill may create a signal only when:
+
+* the allocation plan remains current;
+* target delta exceeds the minimum-trade threshold;
+* no new hard blocker exists;
+* market and FX data remain fresh;
+* all normalized strategy fields are complete.
+
+### Execute-strategy skill
+
+Update `skills/papertrader-execute-strategy/SKILL.md`.
+
+For a baseline action, the skill must:
+
+* read the latest allocation target;
+* verify the plan has not been superseded;
+* use the deterministic target quantity;
+* refuse any quantity above the target;
+* preserve the minimum cash reserve;
+* create only the action indicated by the target:
+
+  * `open`;
+  * `increase`;
+  * `reduce`;
+  * `close`;
+  * `hold`.
+* skip without mutation when the target is within the rebalance band.
+
+The deterministic order command remains the final authority.
+
+### Controller and result validation
+
+Update the controller skill and result validator so allocation-linked strategy operations may change only:
+
+* the relevant strategy page;
+* strategy and strategy-leg state through the CLI;
+* one eligible signal through the CLI;
+* bounded issue and follow-up state;
+* the operation result artifact.
+
+They may not directly change:
+
+* allocation targets;
+* allocation history;
+* portfolio;
+* cash;
+* executions;
+* fills;
+* performance.
+
+### Exit criteria
+
+* [x] Baseline strategy research uses the same evidence and identity boundaries as conviction research.
+* [x] Baseline strategies explicitly document their lower-conviction status.
+* [x] Baseline strategies are equity-only.
+* [x] No agent can override the deterministic target quantity.
+* [x] Superseded allocation plans cannot create new orders.
+* [x] Hold targets create no signal or order churn.
+* [x] Reduce and close targets use the normal signal and execution lifecycle.
+* [x] Existing conviction strategy behavior and tests remain unchanged.
+* [x] Skill preflight, manifest validation, command auditing, and changed-path validation pass.
+
+## Step 8.4 — Add daily orchestration, reporting, and staged activation
+
+### Daily sequence
+
+Extend the daily controller to execute:
+
+1. initialize accounting;
+2. update securities and FX market data;
+3. update indicators and opportunity packets;
+4. run bounded sequential research operations;
+5. process previously eligible pending orders;
+6. accrue actions and rebuild the reconciled portfolio;
+7. update performance;
+8. generate the current allocation plan;
+9. enqueue baseline strategy work only when allocation mode is `active`;
+10. prepare the queue for the next run;
+11. generate the daily report;
+12. run strict validation and publication.
+
+Allocation planning occurs after fills and portfolio rebuild so it uses the final reconciled end-of-run state.
+
+New allocation work normally executes in the next daily run. Do not combine fresh assessment, allocation, strategy creation, signal creation, order creation, and fill into one uncontrolled operation chain.
+
+### Daily report
+
+Add an allocation section showing:
+
+```text
+Allocation mode
+Cash
+Minimum cash reserve
+Current invested exposure
+Target invested exposure
+Current conviction exposure
+Current baseline exposure
+Maximum baseline exposure
+Deployment budget
+Capital allocated this plan
+Capital left unallocated
+Eligible candidate count
+Excluded candidate count
+```
+
+Candidate table:
+
+```text
+Rank
+Security
+Sleeve
+Effective score
+Current weight
+Pending weight
+Target weight
+Delta
+Disposition
+Reason
+Assessment date
+```
+
+The report must explicitly state why cash remains unallocated, including:
+
+* insufficient eligible candidates;
+* candidate scores below cash hurdle;
+* hard blockers;
+* stale assessments;
+* stale prices or FX;
+* concentration caps;
+* deployment limit;
+* turnover limit;
+* minimum-trade threshold.
+
+### Shadow rollout
+
+#### Phase A — Report only
+
+Run at least five completed daily cycles with:
+
+```ini
+mode = report_only
+```
+
+Requirements:
+
+* no allocation-generated queue rows;
+* no allocation-generated signals or orders;
+* stable results for identical inputs;
+* no cash-reserve or concentration violations;
+* reports explain every unallocated amount;
+* strict reconciliation passes.
+
+#### Phase B — Active paper allocation
+
+Enable:
+
+```ini
+mode = active
+```
+
+Initially retain:
+
+```text
+maximum_baseline_sleeve_pct = 30
+maximum_baseline_position_pct = 5
+maximum_deployment_per_run_pct = 15
+minimum_cash_reserve_pct = 25
+```
+
+Review these only through explicit configuration changes after observing paper performance and behavior. Do not let an agent modify the limits.
+
+### Required tests
+
+Add focused tests for:
+
+* assessment schema and lifecycle;
+* hard and soft blockers;
+* score aggregation;
+* FX freshness and conversion;
+* no eligible candidates;
+* one eligible candidate;
+* fewer than minimum diversified candidates;
+* tied candidate scores;
+* capped proportional redistribution;
+* sector and theme concentration;
+* existing conviction exposure;
+* existing baseline exposure;
+* pending orders;
+* stale plans;
+* stale assessments;
+* minimum trade threshold;
+* reserve enforcement;
+* strategy risk-budget enforcement;
+* canonical strategy-leg matching;
+* report-only non-mutation;
+* baseline open, increase, hold, reduce, and close;
+* deterministic reruns;
+* full daily integration from 100% cash to staged baseline exposure.
+
+Add property tests proving:
+
+```text
+cash_after_targets >= required_cash_reserve
+baseline_exposure <= maximum_baseline_sleeve
+security_exposure <= maximum_single_position
+sum(target_values) <= deployment_budget
+targets are deterministic under input permutation
+all excluded or hard-blocked candidates have target zero
+```
+
+### Reference integration scenario
+
+Using €100,000 initial paper equity, no positions, no pending orders, at least six eligible candidates, and the initial configuration:
+
+* required cash reserve: at least €25,000;
+* maximum baseline sleeve: €30,000;
+* maximum position: €5,000;
+* maximum first-run deployment: €15,000;
+* first active plan allocates no more than €15,000;
+* subsequent plans may increase baseline exposure toward €30,000;
+* unused capital remains cash until conviction strategies or additional eligible baseline candidates are available.
+
+The exact selected securities must depend only on current assessments and deterministic ranking, not on hard-coded ticker preferences.
+
+## Definition of done
+
+* [x] PaperTrader distinguishes conviction and baseline portfolio exposure.
+* [x] The existing screening threshold is not weakened.
+* [x] Cash is an explicit portfolio alternative with a configurable hurdle and reserve.
+* [ ] Every researched security has a comparable current assessment or an explicit blocker.
+* [x] Foreign-currency securities can be marked, sized, risk-checked, filled, and reconciled with fresh FX data.
+* [x] The allocation engine is deterministic, Decimal-safe, idempotent, and order-independent.
+* [x] Allocation sizing is owned by code rather than the LLM.
+* [x] Baseline orders cannot exceed their allocation targets or strategy risk budgets.
+* [x] Baseline allocation cannot bypass existing risk, order, fill, accounting, or reconciliation boundaries.
+* [ ] Report-only mode proves the workflow without creating trading state.
+* [x] The daily report explains both invested and intentionally uninvested cash.
+* [x] A clean-checkout integration cycle can move from 100% cash to staged diversified baseline paper exposure.
+* [x] A repeated cycle creates no duplicate assessment, allocation plan, strategy, signal, order, execution, or history record.
+* [x] Formatting, lint, strict typing, schemas, integrity, wiki lint, all tests, portfolio reconciliation, and workflow contract validation pass.
+* [x] No real-order adapter, brokerage credential, or real-execution path is introduced.
+
+## Step 8 implementation status — 2026-07-27
+
+The deterministic implementation, contracts, skills, daily integration, reference output, and
+validation gates are complete. Versioned configuration remains in `report_only`. Operational
+completion still requires evidence-backed assessment backfill for the existing researched
+watchlist and five completed shadow daily cycles before a human may consider Phase B activation.

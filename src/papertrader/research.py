@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import re
 from collections.abc import Mapping, Sequence
-from datetime import datetime
+from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
@@ -27,6 +27,45 @@ from papertrader.utils import (
 SAFE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 STRATEGY_STATUSES = frozenset(
     {"draft", "researching", "ready", "active", "paused", "closed", "rejected", "expired"}
+)
+STRATEGY_SLEEVES = frozenset({"conviction", "baseline"})
+ASSESSMENT_ELIGIBILITY = frozenset({"ineligible", "baseline", "conviction"})
+ASSESSMENT_CONFIDENCE = frozenset({"low", "medium", "high"})
+ASSESSMENT_SCORE_FIELDS = (
+    "thesis_score",
+    "business_quality_score",
+    "balance_sheet_score",
+    "valuation_score",
+    "timing_score",
+    "liquidity_score",
+    "risk_penalty",
+)
+HARD_BLOCKERS = frozenset(
+    {
+        "identity_uncertain",
+        "research_stale",
+        "valuation_unsupported",
+        "market_data_stale",
+        "fx_unavailable",
+        "liquidity_insufficient",
+        "solvency_risk",
+        "accounting_uncertain",
+        "thesis_invalidated",
+        "instrument_unsupported",
+        "exchange_unsupported",
+        "currency_unsupported",
+    }
+)
+SOFT_GAPS = frozenset(
+    {
+        "margin_of_safety_below_target",
+        "timing_unfavorable",
+        "catalyst_missing",
+        "valuation_not_compelling",
+        "confidence_medium",
+        "concentration_sensitive",
+        "cyclical_normalization_uncertain",
+    }
 )
 IMMUTABLE_SECURITY_FIELDS = (
     "issuer_id",
@@ -130,6 +169,119 @@ def _replace_row(
     output.sort(key=lambda candidate: candidate[key])
     write_table(repository_root, table, output)
     return True
+
+
+def _canonical_set(value: str, allowed: frozenset[str], *, label: str) -> tuple[str, ...]:
+    values = tuple(part for part in value.split("|") if part)
+    if values != tuple(sorted(set(values))):
+        raise ResearchStateError(f"{label} must be sorted, unique, and pipe-delimited")
+    unknown = sorted(set(values) - allowed)
+    if unknown:
+        raise ResearchStateError(f"{label} contains non-canonical values: {unknown}")
+    return values
+
+
+def _validate_evidence_refs(
+    repository_root: Path,
+    values: str,
+    *,
+    assessed_at: datetime,
+    maximum_age: timedelta,
+) -> tuple[str, ...]:
+    references = tuple(part for part in values.split("|") if part)
+    if not references or references != tuple(sorted(set(references))):
+        raise ResearchStateError("assessment.evidence_refs must be sorted, unique source IDs")
+    registry = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+    for reference in references:
+        source = registry.get(reference)
+        if source is None:
+            raise ResearchStateError(f"assessment evidence source is not registered: {reference}")
+        checked = parse_timestamp(source["last_checked_at"])
+        if checked is None or checked > assessed_at or assessed_at - checked > maximum_age:
+            raise ResearchStateError(f"assessment evidence source is not fresh: {reference}")
+        if source["status"] not in {"available", "ok", "current"}:
+            raise ResearchStateError(f"assessment evidence source is unavailable: {reference}")
+    return references
+
+
+def upsert_assessment(
+    repository_root: Path,
+    settings: Settings,
+    raw: Mapping[str, object],
+    *,
+    now: datetime | None = None,
+) -> bool:
+    """Insert or replace one current comparable security assessment."""
+
+    columns = contract_by_name(repository_root, "security_assessments").columns
+    values = _exact_strings(raw, columns, label="assessment")
+    _required(
+        values,
+        tuple(field for field in columns if field not in {"hard_blockers", "soft_gaps"}),
+        label="assessment",
+    )
+    _identifier(values["security_id"], label="security_id")
+    if not any(
+        row["security_id"] == values["security_id"]
+        for row in read_table(repository_root, "securities")
+    ):
+        raise ResearchStateError("assessment references an unknown security_id")
+    if values["eligibility"] not in ASSESSMENT_ELIGIBILITY:
+        raise ResearchStateError("assessment eligibility is not canonical")
+    if values["confidence"] not in ASSESSMENT_CONFIDENCE:
+        raise ResearchStateError("assessment confidence is not canonical")
+    for field in ASSESSMENT_SCORE_FIELDS:
+        score = required_decimal(values[field], label=field)
+        if score != score.to_integral_value() or not Decimal("0") <= score <= Decimal("100"):
+            raise ResearchStateError(f"assessment.{field} must be integer decimal text in 0-100")
+        values[field] = decimal_text(score)
+    for field in ("downside_pct", "base_upside_pct"):
+        value = required_decimal(values[field], label=field)
+        values[field] = decimal_text(value)
+    try:
+        horizon = int(values["valuation_horizon_months"])
+    except ValueError as exc:
+        raise ResearchStateError("valuation_horizon_months must be a positive integer") from exc
+    if horizon <= 0 or values["valuation_horizon_months"] != str(horizon):
+        raise ResearchStateError("valuation_horizon_months must be a positive integer")
+    blockers = _canonical_set(values["hard_blockers"], HARD_BLOCKERS, label="hard_blockers")
+    _canonical_set(values["soft_gaps"], SOFT_GAPS, label="soft_gaps")
+    if blockers and values["eligibility"] != "ineligible":
+        raise ResearchStateError("a hard blocker forces eligibility=ineligible")
+    if values["eligibility"] == "ineligible" and not blockers:
+        raise ResearchStateError("an ineligible assessment requires an explicit hard blocker")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    values["assessed_at"] = _canonical_timestamp(values["assessed_at"], label="assessed_at")
+    values["expires_at"] = _canonical_timestamp(values["expires_at"], label="expires_at")
+    assessed = parse_timestamp(values["assessed_at"])
+    expires = parse_timestamp(values["expires_at"])
+    assert assessed is not None and expires is not None
+    if assessed > instant:
+        raise ResearchStateError("assessment must not be future-dated")
+    if expires <= assessed:
+        raise ResearchStateError("assessment expiration must follow assessment time")
+    _validate_evidence_refs(
+        repository_root,
+        values["evidence_refs"],
+        assessed_at=assessed,
+        maximum_age=timedelta(days=settings.allocation.maximum_assessment_age_days),
+    )
+    _identifier(values["run_id"], label="run_id")
+    rows = read_table(repository_root, "security_assessments")
+    previous = next((row for row in rows if row["security_id"] == values["security_id"]), None)
+    if previous is not None:
+        previous_assessed = parse_timestamp(previous["assessed_at"])
+        assert previous_assessed is not None
+        if assessed < previous_assessed:
+            raise ResearchStateError("assessment update is older than current assessment state")
+        if assessed == previous_assessed and previous != values:
+            raise ResearchStateError("assessment timestamp conflicts with existing assessment")
+    return _replace_row(
+        repository_root,
+        "security_assessments",
+        values,
+        key="security_id",
+    )
 
 
 def import_watchlist(
@@ -472,10 +624,20 @@ def upsert_strategy(
     input_columns = tuple(
         column for column in columns if column not in {"created_at", "updated_at"}
     )
-    values = _exact_strings(raw["strategy"], input_columns, label="strategy")
+    strategy_request = dict(raw["strategy"])
+    instant_dt = ensure_utc(now or utc_now()).replace(microsecond=0)
+    # Preserve the pre-Step-8 conviction request shape while storing explicit sleeve metadata.
+    if "sleeve" not in strategy_request and "allocation_plan_id" not in strategy_request:
+        strategy_request["sleeve"] = "conviction"
+        strategy_request["allocation_plan_id"] = ""
+    values = _exact_strings(strategy_request, input_columns, label="strategy")
     _required(
         values,
-        tuple(column for column in input_columns if column not in {"not_before", "expires_at"}),
+        tuple(
+            column
+            for column in input_columns
+            if column not in {"allocation_plan_id", "not_before", "expires_at"}
+        ),
         label="strategy",
     )
     for field in ("strategy_id", "idea_id", "security_id", "relationship_id"):
@@ -488,6 +650,64 @@ def upsert_strategy(
     if not Decimal("0") < risk_budget <= Decimal("100"):
         raise ResearchStateError("strategy risk_budget_pct must be within (0, 100]")
     values["risk_budget_pct"] = decimal_text(risk_budget)
+    if values["sleeve"] not in STRATEGY_SLEEVES:
+        raise ResearchStateError("strategy sleeve must be conviction or baseline")
+    if values["sleeve"] == "conviction" and values["allocation_plan_id"]:
+        raise ResearchStateError("conviction strategy must not reference an allocation plan")
+    if values["sleeve"] == "baseline":
+        _identifier(values["allocation_plan_id"], label="allocation_plan_id")
+        if values["instrument_type"] != "equity" or values["direction"] != "long":
+            raise ResearchStateError("baseline strategies must be long equity")
+        from papertrader.allocation import baseline_strategy_id
+
+        if values["strategy_id"] != baseline_strategy_id(values["security_id"]):
+            raise ResearchStateError("baseline strategy_id is not the stable security identity")
+        target = next(
+            (
+                row
+                for row in read_table(repository_root, "allocation_targets")
+                if row["strategy_id"] == values["strategy_id"]
+            ),
+            None,
+        )
+        if (
+            target is None
+            or target["allocation_plan_id"] != values["allocation_plan_id"]
+            or target["security_id"] != values["security_id"]
+        ):
+            raise ResearchStateError("baseline strategy requires its current allocation target")
+        target_time = parse_timestamp(target["as_of"])
+        assert target_time is not None
+        if (
+            target_time > instant_dt
+            or instant_dt - target_time > settings.market_data.stale_price_after
+        ):
+            raise ResearchStateError("baseline strategy allocation plan is stale or future-dated")
+        assessment = next(
+            (
+                row
+                for row in read_table(repository_root, "security_assessments")
+                if row["security_id"] == values["security_id"]
+            ),
+            None,
+        )
+        if (
+            assessment is None
+            or assessment["assessed_at"] != target["assessment_as_of"]
+            or target["disposition"] not in {"open", "increase", "reduce", "close"}
+        ):
+            raise ResearchStateError(
+                "baseline strategy requires the unchanged material plan assessment"
+            )
+        if target["disposition"] in {"open", "increase"} and (
+            assessment["hard_blockers"]
+            or assessment["eligibility"] not in {"baseline", "conviction"}
+        ):
+            raise ResearchStateError("blocked assessment cannot increase baseline exposure")
+        if risk_budget > settings.allocation.maximum_baseline_position_pct:
+            raise ResearchStateError(
+                "baseline strategy risk budget exceeds the sleeve position cap"
+            )
     values["not_before"] = _canonical_timestamp(
         values["not_before"], label="not_before", allow_empty=True
     )
@@ -519,6 +739,17 @@ def upsert_strategy(
     if not all(isinstance(value, dict) for value in raw_legs):
         raise ResearchStateError("every strategy leg must be an object")
     parsed = [_strategy_leg(value) for value in raw_legs if isinstance(value, dict)]
+    if values["sleeve"] == "baseline":
+        if len(parsed) != 1:
+            raise ResearchStateError("baseline strategy requires exactly one equity leg")
+        baseline_leg = parsed[0][0]
+        if (
+            baseline_leg.instrument_type != "equity"
+            or baseline_leg.side != "long"
+            or baseline_leg.action != "buy"
+            or baseline_leg.security_id != values["security_id"]
+        ):
+            raise ResearchStateError("baseline strategy leg must open its own long equity")
     if values["status"] in {"ready", "active"} and not parsed:
         raise ResearchStateError("ready or active strategy requires at least one normalized leg")
     leg_ids = [leg.leg_id for leg, _ in parsed]
@@ -569,7 +800,7 @@ def upsert_strategy(
         and current_strategy_legs == leg_rows
     ):
         return False
-    instant = format_timestamp(ensure_utc(now or utc_now()).replace(microsecond=0))
+    instant = format_timestamp(instant_dt)
     row = {
         **values,
         "created_at": previous["created_at"] if previous else instant,
@@ -708,8 +939,13 @@ def record_source(
 
 
 __all__ = [
+    "ASSESSMENT_CONFIDENCE",
+    "ASSESSMENT_ELIGIBILITY",
+    "HARD_BLOCKERS",
+    "SOFT_GAPS",
     "ResearchStateError",
     "record_source",
+    "upsert_assessment",
     "upsert_relationship",
     "upsert_security",
     "upsert_strategy",

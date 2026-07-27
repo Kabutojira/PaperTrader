@@ -14,6 +14,7 @@ from papertrader.logs import regenerate_log_tail
 EMPTY_DATA_DIRECTORIES = (
     "logs",
     "market/prices",
+    "market/fx",
     "market/snapshots",
     "operations/payloads",
     "operations/prompts",

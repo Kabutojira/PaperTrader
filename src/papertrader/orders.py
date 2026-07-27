@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
+from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from datetime import datetime
-from decimal import Decimal
+from decimal import ROUND_DOWN, Decimal
 from pathlib import Path, PurePosixPath
 
 from papertrader.config import Settings
@@ -194,6 +195,252 @@ def leg_row(order_id: str, leg: OrderLegSpec) -> dict[str, str]:
     }
 
 
+def _leg_identity(leg: OrderLegSpec) -> tuple[object, ...]:
+    """Return immutable structure fields; action and quantity remain lifecycle-specific."""
+
+    return (
+        leg.leg_id,
+        leg.side,
+        leg.instrument_type,
+        leg.security_id,
+        leg.provider_contract_id,
+        leg.option_type,
+        leg.expiry,
+        leg.strike,
+        leg.contract_multiplier,
+        leg.currency,
+    )
+
+
+def _require_canonical_strategy_legs(
+    repository_root: Path,
+    strategy_id: str,
+    signal_type: str,
+    legs: Sequence[OrderLegSpec],
+) -> None:
+    rows = [
+        row
+        for row in read_table(repository_root, "strategy_legs")
+        if row["strategy_id"] == strategy_id
+    ]
+    if not rows:
+        raise OrderError(f"strategy {strategy_id} has no canonical legs")
+    canonical = tuple(sorted((leg_from_row(row) for row in rows), key=lambda leg: leg.leg_id))
+    supplied = tuple(sorted(legs, key=lambda leg: leg.leg_id))
+    if tuple(_leg_identity(leg) for leg in canonical) != tuple(
+        _leg_identity(leg) for leg in supplied
+    ):
+        raise OrderError("submitted legs differ from canonical strategy leg identities")
+    if signal_type == "cancel":
+        raise OrderError("a cancellation signal cannot create a new order")
+    for left, right in zip(canonical, supplied, strict=True):
+        expected_action = left.action
+        if signal_type in {"reduce", "close"}:
+            expected_action = "sell" if left.action == "buy" else "buy"
+        if right.action != expected_action:
+            raise OrderError("submitted leg actions differ from the signal lifecycle")
+
+
+def _reference_map(
+    references: Sequence[ReferencePrice],
+) -> dict[tuple[str, str], ReferencePrice]:
+    result = {
+        (reference.security_id, reference.provider_contract_id): reference
+        for reference in references
+    }
+    if len(result) != len(references):
+        raise OrderError("duplicate order references")
+    return result
+
+
+def _opening_notional(
+    legs: Sequence[OrderLegSpec], references: Sequence[ReferencePrice]
+) -> Decimal:
+    by_identity = _reference_map(references)
+    total = Decimal("0")
+    for leg in legs:
+        opens = (leg.side == "long" and leg.action == "buy") or (
+            leg.side == "short" and leg.action == "sell"
+        )
+        if not opens:
+            continue
+        reference = by_identity.get((leg.security_id, leg.provider_contract_id))
+        if reference is None:
+            raise OrderError(f"missing reference for strategy risk budget leg {leg.leg_id}")
+        total += (
+            leg.quantity * leg.contract_multiplier * reference.price * reference.fx_rate_to_base
+        )
+    return total
+
+
+def _require_sleeve_isolation(
+    repository_root: Path,
+    strategy: Mapping[str, str],
+    legs: Sequence[OrderLegSpec],
+) -> None:
+    """Prevent aggregated positions from mixing baseline and conviction ownership."""
+
+    strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
+    target_sleeve = strategy["sleeve"]
+    identities = {(leg.security_id, leg.provider_contract_id) for leg in legs}
+    for position in read_table(repository_root, "portfolio"):
+        identity = (position["security_id"], position["provider_contract_id"])
+        if identity not in identities:
+            continue
+        for strategy_id in (part for part in position["strategy_ids"].split("|") if part):
+            owner = strategies.get(strategy_id)
+            if owner is None:
+                raise OrderError(f"portfolio position references missing strategy {strategy_id}")
+            if owner["sleeve"] != target_sleeve:
+                raise OrderError("an instrument position cannot mix allocation sleeves")
+    pending_orders = {
+        row["order_id"]: row
+        for row in read_table(repository_root, "orders")
+        if row["status"] in {"pending", "partially_filled"}
+    }
+    for row in read_table(repository_root, "order_legs"):
+        pending_order = pending_orders.get(row["order_id"])
+        if pending_order is None:
+            continue
+        if (row["security_id"], row["provider_contract_id"]) not in identities:
+            continue
+        owner = strategies.get(pending_order["strategy_id"])
+        if owner is None:
+            raise OrderError(
+                f"pending order references missing strategy {pending_order['strategy_id']}"
+            )
+        if owner["sleeve"] != target_sleeve:
+            raise OrderError("pending instrument exposure cannot mix allocation sleeves")
+
+
+def _pending_strategy_quantity(
+    repository_root: Path, strategy_id: str, security_id: str
+) -> Decimal:
+    pending_orders = {
+        row["order_id"]
+        for row in read_table(repository_root, "orders")
+        if row["strategy_id"] == strategy_id and row["status"] in {"pending", "partially_filled"}
+    }
+    executed: defaultdict[tuple[str, str], Decimal] = defaultdict(Decimal)
+    for row in read_table(repository_root, "executions"):
+        if row["order_id"] in pending_orders:
+            executed[(row["order_id"], row["leg_id"])] += required_decimal(
+                row["quantity"], label="executed pending quantity"
+            )
+    quantity = Decimal("0")
+    for row in read_table(repository_root, "order_legs"):
+        if row["order_id"] not in pending_orders or row["security_id"] != security_id:
+            continue
+        leg = leg_from_row(row)
+        remaining = leg.quantity - executed[(row["order_id"], row["leg_id"])]
+        if remaining <= 0:
+            continue
+        opening = (leg.side == "long" and leg.action == "buy") or (
+            leg.side == "short" and leg.action == "sell"
+        )
+        quantity += remaining if opening else -remaining
+    return quantity
+
+
+def _require_baseline_target(
+    repository_root: Path,
+    settings: Settings,
+    strategy: Mapping[str, str],
+    signal_type: str,
+    legs: Sequence[OrderLegSpec],
+    references: Sequence[ReferencePrice],
+    risk_state: RiskState,
+    *,
+    now: datetime,
+) -> None:
+    from papertrader.allocation import latest_allocation_target
+
+    target = latest_allocation_target(repository_root, strategy["strategy_id"])
+    if target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
+        raise OrderError("baseline strategy has no current allocation target")
+    plan_time = parse_timestamp(target["as_of"])
+    assert plan_time is not None
+    if plan_time > now or now - plan_time > settings.market_data.stale_price_after:
+        raise OrderError("baseline allocation plan is stale or future-dated")
+    if len(legs) != 1 or legs[0].instrument_type != "equity" or legs[0].side != "long":
+        raise OrderError("baseline allocation supports one long equity leg")
+    disposition = target["disposition"]
+    expected_signal = {
+        "open": "open",
+        "increase": "open",
+        "reduce": "reduce",
+        "close": "close",
+    }.get(disposition)
+    if expected_signal is None or signal_type != expected_signal:
+        raise OrderError("baseline order differs from its current allocation disposition")
+    assessment = next(
+        (
+            row
+            for row in read_table(repository_root, "security_assessments")
+            if row["security_id"] == strategy["security_id"]
+        ),
+        None,
+    )
+    if assessment is None or assessment["assessed_at"] != target["assessment_as_of"]:
+        raise OrderError("baseline order assessment is missing or superseded")
+    if disposition in {"open", "increase"} and (
+        assessment["hard_blockers"] or assessment["eligibility"] not in {"baseline", "conviction"}
+    ):
+        raise OrderError("blocked assessment cannot increase baseline exposure")
+    leg = legs[0]
+    reference = _reference_map(references).get((leg.security_id, leg.provider_contract_id))
+    if reference is None:
+        raise OrderError("baseline order lacks its fresh equity reference")
+    unit_value = reference.price * reference.fx_rate_to_base * leg.contract_multiplier
+    if unit_value <= 0:
+        raise OrderError("baseline order unit value must be positive")
+    target_value = required_decimal(target["target_value_base"], label="baseline target value")
+    risk_budget = required_decimal(strategy["risk_budget_pct"], label="strategy risk budget")
+    if disposition in {"open", "increase"} and target_value > (
+        risk_state.equity_base * risk_budget / Decimal("100")
+    ):
+        raise OrderError("baseline target exceeds the strategy risk budget")
+    target_quantity = (target_value / unit_value).to_integral_value(rounding=ROUND_DOWN)
+    current_quantity = sum(
+        (
+            position.quantity
+            for position in risk_state.positions
+            if position.security_id == leg.security_id
+            and position.provider_contract_id == leg.provider_contract_id
+            and position.side == "long"
+        ),
+        Decimal("0"),
+    )
+    pending_quantity = _pending_strategy_quantity(
+        repository_root, strategy["strategy_id"], leg.security_id
+    )
+    required_delta = target_quantity - current_quantity - pending_quantity
+    expected_action = "buy" if required_delta > 0 else "sell"
+    if required_delta == 0:
+        raise OrderError("baseline allocation target requires no order")
+    if leg.action != expected_action or leg.quantity != abs(required_delta):
+        raise OrderError("baseline order quantity is not the deterministic target quantity")
+    if required_decimal(target["target_weight_pct"], label="baseline target weight") > (
+        settings.allocation.maximum_baseline_position_pct
+    ):
+        raise OrderError("baseline target exceeds the configured position cap")
+    plan_rows = read_table(repository_root, "allocation_targets")
+    if any(row["allocation_plan_id"] != target["allocation_plan_id"] for row in plan_rows):
+        raise OrderError("current allocation targets contain multiple plans")
+    planned_baseline = sum(
+        (
+            required_decimal(row["target_value_base"], label="baseline plan target")
+            for row in plan_rows
+            if row["sleeve"] == "baseline"
+        ),
+        Decimal("0"),
+    )
+    if planned_baseline > (
+        risk_state.equity_base * settings.allocation.maximum_baseline_sleeve_pct / Decimal("100")
+    ):
+        raise OrderError("allocation plan exceeds the baseline sleeve cap")
+
+
 def create_signal(
     repository_root: Path,
     settings: Settings,
@@ -264,6 +511,43 @@ def create_signal(
         raise OrderError("signal expiry must follow creation")
     if strategy["status"] not in {"ready", "active"}:
         raise OrderError(f"strategy {strategy_id} is not ready or active")
+    if strategy["sleeve"] == "baseline":
+        from papertrader.allocation import latest_allocation_target
+
+        target = latest_allocation_target(repository_root, strategy_id)
+        if (
+            target is None
+            or target["allocation_plan_id"] != strategy["allocation_plan_id"]
+            or target["disposition"] not in {"open", "increase", "reduce", "close"}
+        ):
+            raise OrderError("baseline signal requires a material current allocation target")
+        expected_signal = {
+            "open": "open",
+            "increase": "open",
+            "reduce": "reduce",
+            "close": "close",
+        }[target["disposition"]]
+        if signal_type != expected_signal:
+            raise OrderError("baseline signal type differs from its allocation disposition")
+        plan_time = parse_timestamp(target["as_of"])
+        assert plan_time is not None
+        if instant - plan_time > settings.market_data.stale_price_after or plan_time > instant:
+            raise OrderError("baseline allocation plan is stale or future-dated")
+        assessment = next(
+            (
+                row
+                for row in read_table(repository_root, "security_assessments")
+                if row["security_id"] == strategy["security_id"]
+            ),
+            None,
+        )
+        if assessment is None or assessment["assessed_at"] != target["assessment_as_of"]:
+            raise OrderError("baseline signal assessment is missing or superseded")
+        if target["disposition"] in {"open", "increase"} and (
+            assessment["hard_blockers"]
+            or assessment["eligibility"] not in {"baseline", "conviction"}
+        ):
+            raise OrderError("blocked assessment cannot increase baseline exposure")
     rows.append(row)
     rows.sort(key=lambda candidate: candidate["signal_id"])
     write_table(repository_root, "signals", rows)
@@ -415,6 +699,30 @@ def create_paper_order(
     strategy = next((row for row in strategies if row["strategy_id"] == strategy_id), None)
     if strategy is None or strategy["status"] not in {"ready", "active"}:
         raise OrderError(f"strategy {strategy_id} is not orderable")
+    if strategy["sleeve"] not in {"conviction", "baseline"}:
+        raise OrderError(f"strategy {strategy_id} has an invalid sleeve")
+    _require_sleeve_isolation(repository_root, strategy, normalized_legs)
+    _require_canonical_strategy_legs(
+        repository_root,
+        strategy_id,
+        signal["signal_type"],
+        normalized_legs,
+    )
+    opening_notional = _opening_notional(normalized_legs, references)
+    risk_budget = required_decimal(strategy["risk_budget_pct"], label="strategy risk budget")
+    if opening_notional > risk_state.equity_base * risk_budget / Decimal("100"):
+        raise OrderError("order exceeds the strategy risk budget")
+    if strategy["sleeve"] == "baseline":
+        _require_baseline_target(
+            repository_root,
+            settings,
+            strategy,
+            signal["signal_type"],
+            normalized_legs,
+            references,
+            risk_state,
+            now=instant,
+        )
     venues = {
         row["security_id"]: row["venue_mic"] for row in read_table(repository_root, "securities")
     }
@@ -428,6 +736,12 @@ def create_paper_order(
         activates_new_strategy=strategy["status"] != "active",
     )
     require_risk_approval(assessment)
+    if strategy["sleeve"] == "baseline":
+        required_reserve = (
+            risk_state.equity_base * settings.allocation.minimum_cash_reserve_pct / Decimal("100")
+        )
+        if assessment.projected_cash_base < required_reserve:
+            raise OrderError("baseline order would breach the minimum cash reserve")
     # Legs are written first so a crash cannot expose a fillable order without its full leg set.
     all_leg_rows = [row for row in all_leg_rows if row["order_id"] != order_id]
     all_leg_rows.extend(expected_leg_rows)

@@ -99,6 +99,26 @@ class RiskSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class AllocationSettings:
+    """Opportunity-cost hurdle, reserve, and baseline-sleeve limits."""
+
+    mode: str
+    target_invested_pct: Decimal
+    minimum_cash_reserve_pct: Decimal
+    maximum_baseline_sleeve_pct: Decimal
+    maximum_baseline_position_pct: Decimal
+    maximum_sector_pct: Decimal
+    maximum_theme_pct: Decimal
+    cash_hurdle_score: Decimal
+    minimum_confidence: str
+    minimum_diversified_candidates: int
+    maximum_assessment_age_days: int
+    maximum_deployment_per_run_pct: Decimal
+    minimum_trade_pct: Decimal
+    rebalance_band_pct: Decimal
+
+
+@dataclass(frozen=True, slots=True)
 class OrderSettings:
     """Paper-order fill, slippage, fee, and expiry policy."""
 
@@ -169,6 +189,7 @@ class Settings:
     indicators: IndicatorSettings
     portfolio: PortfolioSettings
     risk: RiskSettings
+    allocation: AllocationSettings
     orders: OrderSettings
     operations: OperationSettings
     classifier: ClassifierSettings
@@ -278,6 +299,7 @@ def _load_runtime_settings(
     IndicatorSettings,
     PortfolioSettings,
     RiskSettings,
+    AllocationSettings,
     OrderSettings,
     OperationSettings,
     ClassifierSettings,
@@ -393,6 +415,87 @@ def _load_runtime_settings(
         raise ConfigurationError(f"allowed exchanges lack calendars: {missing_calendars}")
     if portfolio.base_currency not in risk.allowed_currencies:
         raise ConfigurationError("portfolio.base_currency must be an allowed risk currency")
+    allocation = AllocationSettings(
+        mode=_choice(
+            parser,
+            "allocation",
+            "mode",
+            frozenset({"disabled", "report_only", "active"}),
+        ),
+        target_invested_pct=_decimal(
+            parser, "allocation", "target_invested_pct", maximum=Decimal("100")
+        ),
+        minimum_cash_reserve_pct=_decimal(
+            parser, "allocation", "minimum_cash_reserve_pct", maximum=Decimal("100")
+        ),
+        maximum_baseline_sleeve_pct=_decimal(
+            parser,
+            "allocation",
+            "maximum_baseline_sleeve_pct",
+            maximum=Decimal("100"),
+        ),
+        maximum_baseline_position_pct=_decimal(
+            parser,
+            "allocation",
+            "maximum_baseline_position_pct",
+            maximum=Decimal("100"),
+        ),
+        maximum_sector_pct=_decimal(
+            parser, "allocation", "maximum_sector_pct", maximum=Decimal("100")
+        ),
+        maximum_theme_pct=_decimal(
+            parser, "allocation", "maximum_theme_pct", maximum=Decimal("100")
+        ),
+        cash_hurdle_score=_decimal(
+            parser, "allocation", "cash_hurdle_score", maximum=Decimal("100")
+        ),
+        minimum_confidence=_choice(
+            parser,
+            "allocation",
+            "minimum_confidence",
+            frozenset({"low", "medium", "high"}),
+        ),
+        minimum_diversified_candidates=_positive_int(
+            parser, "allocation", "minimum_diversified_candidates"
+        ),
+        maximum_assessment_age_days=_positive_int(
+            parser, "allocation", "maximum_assessment_age_days"
+        ),
+        maximum_deployment_per_run_pct=_decimal(
+            parser,
+            "allocation",
+            "maximum_deployment_per_run_pct",
+            maximum=Decimal("100"),
+        ),
+        minimum_trade_pct=_decimal(
+            parser, "allocation", "minimum_trade_pct", maximum=Decimal("100")
+        ),
+        rebalance_band_pct=_decimal(
+            parser, "allocation", "rebalance_band_pct", maximum=Decimal("100")
+        ),
+    )
+    if allocation.minimum_cash_reserve_pct >= Decimal("100"):
+        raise ConfigurationError("allocation.minimum_cash_reserve_pct must be below 100")
+    if allocation.maximum_baseline_sleeve_pct > allocation.target_invested_pct:
+        raise ConfigurationError(
+            "allocation.maximum_baseline_sleeve_pct must not exceed target_invested_pct"
+        )
+    if allocation.target_invested_pct > risk.maximum_total_gross_exposure_pct:
+        raise ConfigurationError(
+            "allocation.target_invested_pct must not exceed the total gross-exposure limit"
+        )
+    if allocation.maximum_baseline_position_pct > risk.maximum_single_position_pct:
+        raise ConfigurationError(
+            "allocation.maximum_baseline_position_pct must not exceed the single-position limit"
+        )
+    if allocation.maximum_deployment_per_run_pct > risk.maximum_daily_turnover_pct:
+        raise ConfigurationError(
+            "allocation.maximum_deployment_per_run_pct must not exceed daily turnover"
+        )
+    if allocation.minimum_trade_pct > allocation.maximum_baseline_position_pct:
+        raise ConfigurationError(
+            "allocation.minimum_trade_pct must not exceed the baseline position cap"
+        )
     orders = OrderSettings(
         default_fill_policy=_choice(
             parser,
@@ -433,7 +536,7 @@ def _load_runtime_settings(
     )
     if bool(classifier.command) != bool(classifier.model):
         raise ConfigurationError("classifier.command and classifier.model must be set together")
-    return market, indicators, portfolio, risk, orders, operations, classifier
+    return market, indicators, portfolio, risk, allocation, orders, operations, classifier
 
 
 def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
@@ -545,9 +648,16 @@ def _load_settings_unchecked(
             "Hermes skills.external_dirs must include the repository skills path"
         )
 
-    market, indicators, portfolio, risk, orders, operations, classifier = _load_runtime_settings(
-        parser
-    )
+    (
+        market,
+        indicators,
+        portfolio,
+        risk,
+        allocation,
+        orders,
+        operations,
+        classifier,
+    ) = _load_runtime_settings(parser)
     hermes = _load_hermes_settings(parser)
     telegram = _load_telegram_settings(parser)
 
@@ -560,6 +670,7 @@ def _load_settings_unchecked(
         indicators=indicators,
         portfolio=portfolio,
         risk=risk,
+        allocation=allocation,
         orders=orders,
         operations=operations,
         classifier=classifier,

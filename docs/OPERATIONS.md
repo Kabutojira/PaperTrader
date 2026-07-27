@@ -216,6 +216,46 @@ fields blank. Queue a bounded `security_research` operation with that ID before 
 to `watching` or `active`. See the complete copyable idea and security request examples in the
 README.
 
+## Run and review baseline allocation
+
+Every completed `security_research` operation must write a current comparable assessment through:
+
+```bash
+uv run papertrader research assessment upsert \
+  --request data/runs/<run-id>/<operation-id>/assessment-request.json
+```
+
+The request must use the exact `security_assessments.csv` columns, registered fresh `source_id`
+references, canonical scores/blockers/gaps, UTC timestamps, and the current run ID. An unsupported
+valuation or other hard failure is represented by `eligibility=ineligible` and an explicit hard
+blocker; do not omit the assessment.
+
+Generate a plan only after accounting has reconciled:
+
+```bash
+uv run papertrader portfolio reconcile --strict
+uv run papertrader allocation plan --run-id "allocation-$(date -u +%Y%m%dT%H%M%SZ)"
+```
+
+Inspect `data/tables/allocation_targets.csv` and the matching
+`data/runs/<run-id>/allocation_plan.json`. The immutable audit rows are in
+`data/tables/allocation_history.csv`. Never hand-edit these files. The initial mode is
+`report_only`, which must produce no allocation-generated queue rows, signals, orders, or
+accounting changes. Observe at least five completed shadow daily cycles before changing the
+versioned mode to `active`.
+
+In active mode, material target deltas enqueue ordinary sequential `strategy_research` work for
+the next run. Baseline strategies remain long-equity only, must retain the current allocation-plan
+ID, and can trade only the deterministic whole-share delta. A superseded/stale plan, changed hard
+blocker, stale price/FX rate, reserve breach, risk-budget breach, canonical-leg mismatch, or target
+overrun fails closed. `hold` and below-minimum-trade targets create no signal or order.
+Baseline and conviction orders may not share one instrument identity; close or cancel the existing
+sleeve exposure before opening the other sleeve so portfolio ownership remains deterministic.
+
+Committed FX rates are stored at `data/market/fx/<currency>_<base_currency>.csv` and refreshed by
+the normal market phase for every allowed non-base currency. Missing or stale FX excludes a new
+candidate and defers an existing foreign order. Do not enter a manual substitute rate.
+
 ## Dispatch GitHub workflows
 
 The scheduled and manual controller use the same reusable runtime. Start with a dry run:
@@ -254,6 +294,8 @@ Important coupled checks include:
 - indicator periods versus minimum observation counts;
 - risk percentages versus initial capital and gross exposure;
 - instrument, exchange, and currency allowlists;
+- allocation mode, cash hurdle/reserve, diversification, deployment, position, sector, and theme
+  limits, including their cross-checks against risk limits;
 - operation count and model-cost limits;
 - fill expiry, price staleness, slippage, fees, and option quote freshness;
 - classifier command/model presence as a pair.

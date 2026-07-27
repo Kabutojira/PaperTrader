@@ -71,6 +71,18 @@ class PriceBar:
 
 
 @dataclass(frozen=True, slots=True)
+class FxRate:
+    """One committed daily conversion rate from local currency into base currency."""
+
+    date: date
+    currency: str
+    base_currency: str
+    rate_to_base: Decimal
+    retrieved_at: datetime
+    source: str
+
+
+@dataclass(frozen=True, slots=True)
 class IndicatorSnapshot:
     """Latest deterministic indicator values for one security."""
 

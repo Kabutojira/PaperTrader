@@ -21,6 +21,8 @@ operation's artifacts under `data/runs/<run_id>/<operation_id>/`. Never hand-edi
 accounting ledger, generated view, or another operation's artifacts.
 Treat `controller_prompt.md`, `hermes_preflight.json`, `hermes_run.json`,
 `command_audit.json`, and `validation_report.json` as controller-owned and immutable.
+Treat `data/tables/allocation_targets.csv` and `data/tables/allocation_history.csv` as
+deterministic-controller-owned and immutable to every routed agent skill.
 
 ## Required input
 
@@ -38,6 +40,8 @@ skill plus native `llm-wiki`; the parent controller separately preloads this con
    selected operation skill once without sub-agents or concurrent commands.
 4. Use `papertrader` commands for structured state. The controller records each invocation and its
    exact content delta in `command_audit.json`; report those canonical commands in `commands_run`.
+   Allocation-linked strategy work may change only its strategy page, CLI-owned strategy/leg row,
+   one eligible CLI-owned signal, bounded issue/follow-up state, and this operation's result.
 5. Perform all permitted edits and checks before atomically writing `agent_result.json` last.
 6. Stop after the manifest exists. The deterministic parent validates the exact before/after delta,
    CLI receipts, changed paths, profile identity, structured state, and result, then owns the
@@ -65,9 +69,11 @@ path exactly once in sorted repository-relative order.
 ## Verification
 
 Run the checks required by the routed skill before writing the manifest and make the manifest
-conform to the result schema. Do not run another agent-side command after the atomic manifest
-write. The parent controller then validates the written result schema, exact changed paths, command
-receipts, profile identity, and operation history before recording the terminal disposition.
+conform to the result schema. Confirm no routed operation changed allocation targets/history,
+portfolio, cash, executions, fills, or performance. Do not run another agent-side command after
+the atomic manifest write. The parent controller then validates the written result schema, exact
+changed paths, command receipts, profile identity, and operation history before recording the
+terminal disposition.
 
 ## Failure policy
 

@@ -12,8 +12,26 @@ import pytest
 from papertrader.agent_runner import AgentRunError, configure_hermes_home, run_one_operation
 from papertrader.config import Settings
 from papertrader.queue import enqueue_operation
+from papertrader.result_validator import _path_allowed_for_operation
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
+    protected = (
+        "data/tables/allocation_targets.csv",
+        "data/tables/allocation_history.csv",
+    )
+    for operation_type in ("security_research", "strategy_research", "execute_strategy"):
+        assert all(
+            not _path_allowed_for_operation(operation_type, path, created=False)
+            for path in protected
+        )
+    assert _path_allowed_for_operation(
+        "security_research",
+        "data/tables/security_assessments.csv",
+        created=False,
+    )
 
 
 def _home(repository: Path, settings: Settings, tmp_path: Path) -> Path:
@@ -44,6 +62,22 @@ def _enqueue(repository: Path, settings: Settings) -> str:
             "period_start": "2026-07-01",
             "period_end": "2026-07-24",
         },
+        source="test",
+        now=NOW,
+    )
+    return operation_id
+
+
+def _enqueue_security(repository: Path, settings: Settings) -> str:
+    operation_id, _ = enqueue_operation(
+        repository,
+        settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec-test",
+        dedupe_key="security_research:sec-test:fixture:2026-07-24",
+        prompt="Research one bounded security.",
+        inputs={"security_id": "sec-test"},
         source="test",
         now=NOW,
     )
@@ -114,6 +148,26 @@ def test_out_of_scope_source_write_fails_closed(
             environment={"PATH": "/usr/bin"},
             operation_id=operation_id,
             executor=_executor_with_change(change, ["src/papertrader/malicious.py"]),
+        )
+
+
+def test_completed_security_research_without_assessment_fails_closed(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    operation_id = _enqueue_security(sandbox_repository, sandbox_settings)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
+
+    with pytest.raises(AgentRunError, match="requires this run's comparable assessment"):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="missing-assessment",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=_executor_with_change(lambda root: None, []),
         )
 
 

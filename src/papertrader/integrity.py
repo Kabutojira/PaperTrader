@@ -403,8 +403,9 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     """Run repository contracts plus deterministic queue/accounting checks."""
 
     errors: list[str] = []
+    settings: Settings | None = None
     try:
-        settings: Settings = load_settings(repository_root, environment)
+        settings = load_settings(repository_root, environment)
         if not settings.paths.wiki.is_dir():
             errors.append(f"WIKI_PATH does not exist: {settings.paths.wiki}")
         for skill_dir in settings.hermes_external_skill_dirs:
@@ -419,12 +420,17 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
+    from papertrader.allocation import validate_allocation_state
+    from papertrader.market_data import validate_fx_data
     from papertrader.orders import validate_order_state
     from papertrader.portfolio import reconcile_portfolio
     from papertrader.queue import validate_queue
 
     errors.extend(validate_queue(repository_root))
     errors.extend(validate_order_state(repository_root))
+    if settings is not None:
+        errors.extend(validate_allocation_state(repository_root, settings))
+        errors.extend(validate_fx_data(repository_root, settings))
     errors.extend(reconcile_portfolio(repository_root))
     return errors
 

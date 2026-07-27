@@ -14,14 +14,21 @@ from hypothesis import strategies as st
 from papertrader.config import Settings
 from papertrader.market_data import (
     MarketDataError,
+    fx_rates_for_actions,
+    latest_fx_rate,
+    merge_fx_rates,
     merge_price_bars,
+    normalize_fx_history,
     normalize_history,
+    read_fx_cache,
     read_price_cache,
     session_close,
     session_open,
+    update_fx_data,
     update_market_data,
+    write_fx_cache,
 )
-from papertrader.models import PriceBar, SecurityIdentity
+from papertrader.models import FxRate, PriceBar, SecurityIdentity
 from papertrader.tables import read_table, write_table
 
 
@@ -167,6 +174,139 @@ def test_merge_preserves_existing_bar_for_timestamp_only_refresh() -> None:
     assert unchanged == (original,)
     assert corrected[0].retrieved_at == refreshed.retrieved_at
     assert corrected[0].close == Decimal("100.5")
+
+
+def test_fx_cache_is_decimal_fresh_and_forward_fills_actions(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    retrieved = datetime(2026, 7, 24, 22, tzinfo=UTC)
+    rates = (
+        FxRate(date(2026, 7, 23), "USD", "EUR", Decimal("0.85"), retrieved, "fixture"),
+        FxRate(date(2026, 7, 24), "USD", "EUR", Decimal("0.86"), retrieved, "fixture"),
+    )
+    write_fx_cache(sandbox_repository, "USD", "EUR", rates)
+
+    assert read_fx_cache(sandbox_repository, "USD", "EUR") == rates
+    assert latest_fx_rate(
+        sandbox_repository,
+        "USD",
+        "EUR",
+        now=retrieved,
+        maximum_age=sandbox_settings.market_data.stale_price_after,
+    ) == Decimal("0.86")
+    assert latest_fx_rate(
+        sandbox_repository,
+        "EUR",
+        "EUR",
+        now=retrieved,
+        maximum_age=sandbox_settings.market_data.stale_price_after,
+    ) == Decimal("1")
+    action_rates = fx_rates_for_actions(
+        sandbox_repository,
+        ("USD",),
+        "EUR",
+        through=date(2026, 7, 26),
+    )
+    assert action_rates[("USD", date(2026, 7, 25))] == Decimal("0.86")
+    assert action_rates[("USD", date(2026, 7, 26))] == Decimal("0.86")
+    with pytest.raises(MarketDataError, match="stale FX"):
+        latest_fx_rate(
+            sandbox_repository,
+            "USD",
+            "EUR",
+            now=retrieved + timedelta(hours=37),
+            maximum_age=sandbox_settings.market_data.stale_price_after,
+        )
+
+
+def test_fx_merge_refreshes_latest_observation_even_when_rate_is_unchanged() -> None:
+    first_retrieval = datetime(2026, 7, 24, 20, tzinfo=UTC)
+    refreshed_at = first_retrieval + timedelta(hours=24)
+    original = FxRate(
+        date(2026, 7, 24),
+        "USD",
+        "EUR",
+        Decimal("0.86"),
+        first_retrieval,
+        "fixture",
+    )
+    refreshed = replace(original, retrieved_at=refreshed_at)
+
+    merged = merge_fx_rates((original,), (refreshed,), retention_days=365)
+
+    assert merged == (refreshed,)
+
+
+class _FakeFxProvider:
+    name = "yfinance"
+
+    def __init__(self) -> None:
+        self.calls: list[tuple[str, str]] = []
+
+    def fx_history(
+        self,
+        currency: str,
+        base_currency: str,
+        *,
+        start: date,
+        end: date,
+    ) -> pd.DataFrame:
+        del start, end
+        self.calls.append((currency, base_currency))
+        return pd.DataFrame(
+            {"Close": [Decimal("0.75"), Decimal("0.76")]},
+            index=pd.DatetimeIndex(["2026-07-23", "2026-07-24"]),
+        )
+
+
+def test_fx_update_covers_every_allowed_non_base_currency_sequentially(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    provider = _FakeFxProvider()
+
+    errors = update_fx_data(
+        sandbox_repository,
+        sandbox_settings,
+        provider=provider,
+        now=datetime(2026, 7, 24, 22, tzinfo=UTC),
+        sleeper=lambda _: None,
+    )
+
+    expected = [(currency, "EUR") for currency in ("AUD", "GBP", "USD")]
+    assert errors == ()
+    assert provider.calls == expected
+    assert all(read_fx_cache(sandbox_repository, currency, "EUR") for currency, _ in expected)
+
+
+def test_normalize_fx_history_rejects_invalid_and_future_rates() -> None:
+    now = datetime(2026, 7, 24, 22, tzinfo=UTC)
+    frame = pd.DataFrame(
+        {"Close": [Decimal("0.90"), Decimal("0.91")]},
+        index=pd.DatetimeIndex(["2026-07-24", "2026-07-25"]),
+    )
+
+    rates = normalize_fx_history(
+        frame,
+        "USD",
+        "EUR",
+        retrieved_at=now,
+        source="fixture",
+    )
+
+    assert [(rate.date, rate.rate_to_base) for rate in rates] == [
+        (date(2026, 7, 24), Decimal("0.90"))
+    ]
+    invalid = pd.DataFrame({"Close": [Decimal("0")]}, index=pd.DatetimeIndex(["2026-07-24"]))
+    with pytest.raises(MarketDataError, match="non-positive FX"):
+        normalize_fx_history(
+            invalid,
+            "USD",
+            "EUR",
+            retrieved_at=now,
+            source="fixture",
+        )
 
 
 class _FakeProvider:

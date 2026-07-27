@@ -6,11 +6,11 @@ import json
 import re
 from collections.abc import Mapping
 from dataclasses import dataclass
-from datetime import datetime
-from decimal import Decimal
+from datetime import datetime, timedelta
 from pathlib import Path
 
 from papertrader.agent_runner import AgentBatchResult, Executor, run_sequential_operations
+from papertrader.allocation import AllocationError, plan_allocation
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
 from papertrader.corporate_actions import accrue_dividends
@@ -21,6 +21,8 @@ from papertrader.logs import append_event, record_completed_run
 from papertrader.market_data import (
     MarketDataProvider,
     daily_bar_to_market_bar,
+    fx_rates_for_actions,
+    latest_fx_rate,
     read_price_cache,
     session_close,
     session_open,
@@ -412,38 +414,57 @@ def _base_equity_market_inputs(
         for row in read_table(repository_root, "order_legs")
         if row["order_id"] in pending_order_ids
     ]
-    required_equities = {
+    open_equities = {
         position.security_id for position in open_positions if position.instrument_type == "equity"
-    } | {leg.security_id for leg in pending_legs if leg.instrument_type == "equity"}
+    }
+    pending_equities = {leg.security_id for leg in pending_legs if leg.instrument_type == "equity"}
+    required_equities = open_equities | pending_equities
     if any(position.instrument_type == "option" for position in open_positions):
         raise DailyRunError("fresh option marks are required for open option positions")
     securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
     references: list[ReferencePrice] = []
     marks: list[PositionMark] = []
     bars: list[MarketBar] = []
-    positioned_ids = {position.security_id for position in open_positions}
     for security_id in sorted(required_equities):
         identity = securities.get(security_id)
         if identity is None:
             raise DailyRunError(f"market input references unknown security {security_id}")
-        if identity["currency"] != settings.portfolio.base_currency:
-            if security_id in positioned_ids:
-                raise DailyRunError(f"fresh FX mark is required for open position {security_id}")
-            continue
-        cached = read_price_cache(repository_root, security_id)
-        if not cached:
-            raise DailyRunError(f"price cache is empty for required security {security_id}")
-        calendar_name = settings.market_data.calendar_for(identity["venue_mic"])
-        latest = cached[-1]
-        marked_at = session_close(calendar_name, latest.date)
-        if marked_at > now:
-            raise DailyRunError(f"latest bar for {security_id} closes in the future")
+        try:
+            cached = read_price_cache(repository_root, security_id)
+            if not cached:
+                raise DailyRunError(f"price cache is empty for required security {security_id}")
+            calendar_name = settings.market_data.calendar_for(identity["venue_mic"])
+            latest = cached[-1]
+            retrieval_age = now - ensure_utc(latest.retrieved_at)
+            if (
+                retrieval_age < timedelta(0)
+                or retrieval_age > settings.market_data.stale_price_after
+            ):
+                raise DailyRunError(f"price cache is stale for required security {security_id}")
+            marked_at = session_close(calendar_name, latest.date)
+            if marked_at > now:
+                raise DailyRunError(f"latest bar for {security_id} closes in the future")
+            fx_rate = latest_fx_rate(
+                repository_root,
+                identity["currency"],
+                settings.portfolio.base_currency,
+                now=now,
+                maximum_age=settings.market_data.stale_price_after,
+            )
+        except RuntimeError as exc:
+            if security_id not in open_equities:
+                # Pending orders are deferred below when their reference is absent. Open
+                # positions still fail closed because accounting cannot be rebuilt unmarked.
+                continue
+            raise DailyRunError(
+                f"fresh market/FX mark is required for {security_id}: {exc}"
+            ) from exc
         reference = ReferencePrice(
             security_id=security_id,
             provider_contract_id="",
             price=latest.close,
             currency=latest.currency,
-            fx_rate_to_base=Decimal("1"),
+            fx_rate_to_base=fx_rate,
             as_of=marked_at,
         )
         references.append(reference)
@@ -453,7 +474,7 @@ def _base_equity_market_inputs(
                 provider_contract_id="",
                 price=latest.close,
                 currency=latest.currency,
-                fx_rate_to_base=Decimal("1"),
+                fx_rate_to_base=fx_rate,
                 marked_at=marked_at,
             )
         )
@@ -462,7 +483,7 @@ def _base_equity_market_inputs(
                 security_id,
                 bar,
                 session_open=session_open(calendar_name, bar.date),
-                fx_rate_to_base=Decimal("1"),
+                fx_rate_to_base=fx_rate,
             )
             for bar in cached
         )
@@ -489,11 +510,21 @@ def _process_pending_orders(
         key=lambda row: (row["created_at"], row["order_id"]),
     ):
         legs = [leg_from_row(row) for row in leg_rows if row["order_id"] == order["order_id"]]
-        foreign = sorted(
-            {leg.currency for leg in legs if leg.currency != settings.portfolio.base_currency}
+        reference_keys = {
+            (reference.security_id, reference.provider_contract_id) for reference in references
+        }
+        missing_equity_references = sorted(
+            {
+                leg.security_id
+                for leg in legs
+                if leg.instrument_type == "equity"
+                and (leg.security_id, leg.provider_contract_id) not in reference_keys
+            }
         )
-        if foreign:
-            error = f"missing fresh FX for order {order['order_id']}: {','.join(foreign)}"
+        if missing_equity_references:
+            error = f"order {order['order_id']} lacks fresh market/FX references for " + ",".join(
+                missing_equity_references
+            )
             _record_phase_issue(
                 repository_root,
                 run_id=run_id,
@@ -501,7 +532,7 @@ def _process_pending_orders(
                 error=error,
                 now=now,
             )
-            outcomes.append(f"{order['order_id']}:deferred:missing_fx")
+            outcomes.append(f"{order['order_id']}:deferred:market_or_fx_unavailable")
             continue
         try:
             risk_state = build_risk_state(repository_root, references, as_of=now)
@@ -579,7 +610,12 @@ def finalize_daily_run(
         accrue_dividends(
             repository_root,
             through=instant.date(),
-            fx_rates_to_base={},
+            fx_rates_to_base=fx_rates_for_actions(
+                repository_root,
+                tuple(row["currency"] for row in read_table(repository_root, "securities")),
+                settings.portfolio.base_currency,
+                through=instant.date(),
+            ),
             base_currency=settings.portfolio.base_currency,
             run_id=run_id,
         )
@@ -590,6 +626,10 @@ def finalize_daily_run(
     if reconciliation_errors:
         raise DailyRunError("; ".join(reconciliation_errors))
     update_performance(repository_root, settings, run_id=run_id, generated_at=instant)
+    try:
+        plan_allocation(repository_root, settings, run_id=run_id, now=instant)
+    except (AllocationError, CanonicalValueError) as exc:
+        raise DailyRunError(f"allocation planning failed closed: {exc}") from exc
     prepare_queue(repository_root, now=instant)
     raw_outcomes = batch.get("outcomes", [])
     if not isinstance(raw_outcomes, list):

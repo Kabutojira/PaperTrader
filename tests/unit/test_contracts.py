@@ -23,9 +23,11 @@ def _schema_validator(repository_root: Path, name: str):  # type: ignore[no-unty
 def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> None:
     contracts = load_csv_contracts(repository_root)
 
-    assert len(contracts) == 20
+    assert len(contracts) == 23
     assert validate_csv_files(repository_root) == []
     assert {contract.name for contract in contracts} == {
+        "allocation_history",
+        "allocation_targets",
         "cash_ledger",
         "corporate_actions",
         "executions",
@@ -41,6 +43,7 @@ def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> N
         "relationships",
         "runs",
         "securities",
+        "security_assessments",
         "signals",
         "source_history",
         "source_registry",
@@ -55,6 +58,8 @@ def test_append_only_and_generated_contract_flags(repository_root: Path) -> None
     assert contracts["executions"].append_only
     assert contracts["cash_ledger"].append_only
     assert contracts["operations_history"].append_only
+    assert contracts["allocation_history"].append_only
+    assert contracts["allocation_targets"].generated
     assert contracts["portfolio"].generated
     assert not contracts["portfolio"].append_only
 
@@ -100,6 +105,52 @@ def test_operation_payload_requires_type_specific_input(repository_root: Path) -
     assert list(validator.iter_errors(payload)) == []
     payload["inputs"] = {}
     assert list(validator.iter_errors(payload))
+
+
+def test_operation_payload_accepts_bounded_baseline_allocation_and_hold(
+    repository_root: Path,
+) -> None:
+    validator = _schema_validator(repository_root, "operation_payload.schema.json")
+    baseline = {
+        "payload_version": 1,
+        "operation_id": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        "operation_type": "strategy_research",
+        "entity_type": "strategy",
+        "entity_id": "strategy_baseline",
+        "objective": "Research one deterministic baseline target.",
+        "inputs": {
+            "mode": "baseline_allocation",
+            "allocation_plan_id": "allocation_plan_example",
+            "strategy_id": "strategy_baseline",
+            "relationship_id": "relationship_example",
+            "security_id": "sec_example",
+            "current_weight_pct": "0",
+            "target_weight_pct": "2.5",
+            "maximum_weight_pct": "5",
+            "selection_rank": 1,
+            "effective_score": "80",
+            "assessment_as_of": "2026-07-24T12:00:00Z",
+            "disposition": "open",
+        },
+    }
+    hold = {
+        "payload_version": 1,
+        "operation_id": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        "operation_type": "execute_strategy",
+        "entity_type": "strategy",
+        "entity_id": "strategy_baseline",
+        "objective": "Confirm a baseline hold without order churn.",
+        "inputs": {
+            "strategy_id": "strategy_baseline",
+            "signal_id": "signal_baseline",
+            "action": "hold",
+        },
+    }
+
+    assert list(validator.iter_errors(baseline)) == []
+    assert list(validator.iter_errors(hold)) == []
+    del baseline["inputs"]["allocation_plan_id"]
+    assert list(validator.iter_errors(baseline))
 
 
 def test_distribution_has_no_real_execution_dependency_or_adapter(repository_root: Path) -> None:

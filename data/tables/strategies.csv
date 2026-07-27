@@ -1,1 +1,1 @@
-strategy_id,idea_id,security_id,relationship_id,name,status,direction,instrument_type,thesis,entry_rule,exit_rule,invalidation,risk_budget_pct,not_before,expires_at,research_page,created_at,updated_at
+strategy_id,idea_id,security_id,relationship_id,name,status,direction,instrument_type,thesis,entry_rule,exit_rule,invalidation,risk_budget_pct,sleeve,allocation_plan_id,not_before,expires_at,research_page,created_at,updated_at

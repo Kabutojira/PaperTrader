@@ -207,8 +207,9 @@ operations/issues, and runs strict integrity, wiki, and portfolio checks before 
 
 The Step 2 core owns every numeric and structured state transition:
 
-- `papertrader market update` retrieves normalized yfinance daily bars, applies exchange
-  calendars, and maintains the 365-day price cache and durable corporate-action ledger.
+- `papertrader market update` retrieves normalized yfinance daily bars and every allowed
+  non-base FX pair, applies exchange calendars, and maintains committed 365-day price/FX caches
+  plus the durable corporate-action ledger.
 - `papertrader indicators update --classify-opportunities` calculates the pinned TA-Lib
   indicators, writes candidate inbox packets, asks the configured cheap classifier for an
   `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.
@@ -219,24 +220,71 @@ The Step 2 core owns every numeric and structured state transition:
   deterministic paper fill appends executions and cash entries.
 - `papertrader portfolio reconcile --strict` replays append-only ledgers, verifies cash links and
   exact Decimal arithmetic, and checks the generated portfolio against canonical state.
-- `papertrader research source record`, `research security upsert`,
+- `papertrader research source record`, `research security upsert`, `research assessment upsert`,
   `research relationship upsert`, and `research strategy upsert` are the only agent-facing routes
   for their structured research tables. They preserve immutable identities and require linked wiki
   pages to exist before the CSV state changes.
+- `papertrader allocation plan --run-id <run-id>` scores fresh comparable assessments against
+  cash, applies reserve/deployment/position/sector/theme/diversification limits, and writes current
+  generated targets plus immutable allocation history. It never creates a signal, order, or fill.
 - `papertrader watchlist import --request <json>` atomically adds identity-only securities with
   deterministic IDs. It leaves research fields empty until a bounded security-research operation
   creates the linked wiki page and evidence-backed summary.
 
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,
-`corporate_actions.csv`, operation history, and run history are append-only.
+`corporate_actions.csv`, allocation history, operation history, and run history are append-only.
+
+## Opportunity-cost-aware allocation
+
+Security research now ends with one comparable assessment in
+`data/tables/security_assessments.csv`. The operation records its evidence-backed component scores,
+confidence, downside/base upside, valuation horizon, soft gaps, and either an eligible disposition
+or explicit hard blockers. Agents must write it through a repository request file:
+
+```bash
+uv run papertrader research assessment upsert \
+  --request data/runs/<run-id>/<operation-id>/assessment-request.json
+```
+
+After fills, portfolio rebuild, reconciliation, and performance, the daily controller runs the
+allocator. It compares positive risk-adjusted candidate edge with the configured cash hurdle and
+keeps cash whenever candidates or capacity are insufficient. To inspect the same deterministic
+plan locally:
+
+```bash
+RUN_ID="allocation-$(date -u +%Y%m%dT%H%M%SZ)"
+uv run papertrader allocation plan --run-id "$RUN_ID"
+```
+
+The initial `[allocation]` mode is `report_only`. In that mode the command writes only generated
+`allocation_targets.csv`, append-only `allocation_history.csv`, and its run summary; it cannot add
+queue work, strategies, signals, orders, executions, or accounting entries. Review at least five
+completed shadow cycles before a human changes the versioned mode to `active`. Active mode enqueues
+normal, sequential `strategy_research` work only for material baseline deltas. Baseline strategies
+are long equity, retain the immutable plan ID, and proceed through the existing signal, order,
+fill, and reconciliation boundaries. Deterministic order guards own final share quantity, cash
+reserve, cumulative target risk-budget, canonical-leg, and concentration enforcement. A single
+instrument position cannot mix baseline and conviction ownership because the generated portfolio
+cannot safely attribute an aggregated quantity to two sleeves.
+
+`capital_unallocated_base` is the remaining gap to the configured invested-exposure target after
+the current plan, not merely unused one-run deployment budget. The plan artifact and daily report
+list the binding reserve, sleeve, deployment, diversification, candidate, and rounding constraints
+that intentionally leave it in cash.
+
+FX caches live at `data/market/fx/<currency>_<base_currency>.csv`. A missing or stale rate excludes
+a new allocation candidate and defers a pending foreign-currency order; it never substitutes a
+rate or mutates accounting. Current targets are generated state and agents must never edit either
+allocation table directly.
 
 ## Daily automation and publication
 
 The scheduled controller in `.github/workflows/daily.yml` uses one serialized path for both cron
 and manual runs. It prepares market and queue state, executes at most the configured number of
-Hermes operations one at a time, processes eligible paper fills, rebuilds accounting, writes the
-canonical daily report, and runs the complete validation gate. Manual runs expose
+Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
+accounting, generates the allocation plan, writes the canonical daily report, and runs the
+complete validation gate. Manual runs expose
 `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and
 `send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
 or delivery.
@@ -282,13 +330,14 @@ database, every durable mutation is reviewable in Git, and no component has a re
 ```text
 request JSON -> validated queue -> one claimed operation -> Hermes or local Codex harness
              -> completed edits + agent_result.json -> deterministic result validator
-             -> terminal history -> fills/accounting/report -> write-controlled Git boundary
+             -> terminal history -> fills/accounting -> allocation plan -> report
+             -> write-controlled Git boundary
 ```
 
 | Layer | Owns | Main implementation |
 | --- | --- | --- |
 | Contracts and policy | CSV/JSON schemas, IDs, limits, paths, paper-only settings | `AGENTS.md`, `schemas/`, `config.ini`, `src/papertrader/config.py` |
-| Deterministic state | Queue transitions, market data, indicators, orders, fills, ledgers, portfolio, reports | `src/papertrader/*.py` through the `papertrader` CLI |
+| Deterministic state | Queue, market/FX data, allocation, orders, fills, ledgers, portfolio, reports | `src/papertrader/*.py` through the `papertrader` CLI |
 | Agent judgment | Research synthesis, causal theses, bounded follow-ups, strategy decisions | `skills/papertrader-*/SKILL.md` plus native `llm-wiki` in Hermes |
 | Agent boundary | One-operation claim, prompt construction, CLI receipts, exact delta/result validation | `agent_runner.py`, `local_harness.py`, `command_audit.py`, `result_validator.py` |
 | Persistence | Canonical research/runtime state and immutable history | `data/` |

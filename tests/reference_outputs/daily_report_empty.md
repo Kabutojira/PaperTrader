@@ -44,7 +44,15 @@ No performance snapshot was generated for this date.
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: |
 | — | — | — | — | 0 | — | 0 | 0 |
 
-## 4. Research operations and dispositions
+## 4. Opportunity-cost-aware allocation
+
+No allocation plan was generated for this run.
+
+| Rank | Security | Sleeve | Effective score | Current weight | Pending weight | Target weight | Delta | Disposition | Reason | Assessment date |
+| ---: | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
+| — | — | baseline | — | 0% | 0% | 0% | 0 | no candidates | — | — |
+
+## 5. Research operations and dispositions
 
 | Operation | Type | Entity | Disposition | Reason |
 | --- | --- | --- | --- | --- |
@@ -54,17 +62,17 @@ No performance snapshot was generated for this date.
 
 - No material market move required a research follow-up. Evidence: `data/market/latest.csv`.
 
-## 5. New or changed research entities
+## 6. New or changed research entities
 
 No maintained research pages changed today.
 
-## 6. Risks, blockers, and scheduled follow-ups
+## 7. Risks, blockers, and scheduled follow-ups
 
 No open issues.
 
 No scheduled follow-up operations.
 
-## 7. Links
+## 8. Links
 
 - [[index|Wiki index]]
 - GitHub report: https://github.com/example/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260724.md

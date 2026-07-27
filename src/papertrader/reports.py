@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import re
-from collections.abc import Sequence
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path, PurePosixPath
@@ -105,6 +105,27 @@ def _validate_narratives(items: Sequence[NarrativeItem]) -> tuple[NarrativeItem,
     return tuple(validated)
 
 
+def _allocation_summary(repository_root: Path, run_id: str) -> Mapping[str, object] | None:
+    path = repository_root / "data" / "runs" / run_id / "allocation_plan.json"
+    if not path.exists():
+        return None
+    if path.is_symlink() or not path.is_file():
+        raise CanonicalValueError("allocation summary must be a regular run artifact")
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CanonicalValueError(f"cannot read allocation summary: {exc}") from exc
+    if (
+        not isinstance(value, dict)
+        or value.get("allocation_plan_version") != 1
+        or value.get("run_id") != run_id
+        or not isinstance(value.get("unallocated_reasons"), list)
+        or not all(isinstance(reason, str) and reason for reason in value["unallocated_reasons"])
+    ):
+        raise CanonicalValueError("allocation summary identity is invalid")
+    return value
+
+
 def generate_daily_report(
     repository_root: Path,
     *,
@@ -156,6 +177,10 @@ def generate_daily_report(
         if row["claimed_by_run_id"] == run_id or _today(row["completed_at"], day)
     ]
     active_operations = read_table(repository_root, "operations_todo")
+    allocation_summary = _allocation_summary(repository_root, run_id)
+    allocation_targets = [
+        row for row in read_table(repository_root, "allocation_targets") if row["run_id"] == run_id
+    ]
     issues = [row for row in read_table(repository_root, "issues") if row["status"] == "open"]
     wiki_changes = tuple(
         sorted(
@@ -275,7 +300,89 @@ def generate_daily_report(
     lines.extend(
         [
             "",
-            "## 4. Research operations and dispositions",
+            "## 4. Opportunity-cost-aware allocation",
+            "",
+        ]
+    )
+    if allocation_summary is None:
+        lines.append("No allocation plan was generated for this run.")
+    else:
+        base_currency = performance["base_currency"] if performance else "base currency"
+        lines.extend(
+            [
+                f"- Allocation mode: `{allocation_summary['mode']}`",
+                f"- Cash: {allocation_summary['cash_base']} {base_currency}",
+                "- Minimum cash reserve: "
+                f"{allocation_summary['minimum_cash_reserve_base']} {base_currency}",
+                "- Current invested exposure: "
+                f"{allocation_summary['current_gross_exposure_base']} {base_currency}",
+                "- Target invested exposure: "
+                f"{allocation_summary['target_invested_exposure_base']} {base_currency}",
+                "- Current conviction exposure: "
+                f"{allocation_summary['current_conviction_exposure_base']} {base_currency}",
+                "- Current baseline exposure: "
+                f"{allocation_summary['current_baseline_exposure_base']} {base_currency}",
+                "- Maximum baseline exposure: "
+                f"{allocation_summary['maximum_baseline_exposure_base']} {base_currency}",
+                f"- Deployment budget: {allocation_summary['deployment_budget_base']} "
+                f"{base_currency}",
+                f"- Capital allocated this plan: {allocation_summary['capital_allocated_base']} "
+                f"{base_currency}",
+                f"- Capital left unallocated: {allocation_summary['capital_unallocated_base']} "
+                f"{base_currency}",
+                f"- Eligible candidate count: {allocation_summary['eligible_candidate_count']}",
+                f"- Excluded candidate count: {allocation_summary['excluded_candidate_count']}",
+            ]
+        )
+        unallocated = str(allocation_summary["capital_unallocated_base"])
+        if unallocated not in {"0", "0.0", "0.00"}:
+            summary_reasons = allocation_summary["unallocated_reasons"]
+            assert isinstance(summary_reasons, list)
+            reasons = sorted(
+                {str(reason) for reason in summary_reasons}
+                | {
+                    reason
+                    for row in allocation_targets
+                    for reason in row["reason"].split("|")
+                    if reason not in {"", "above_cash_hurdle", "target_unchanged"}
+                }
+            )
+            if not allocation_targets:
+                reasons.append("insufficient_eligible_candidates")
+            lines.extend(
+                [
+                    "",
+                    "Cash remains unallocated because: "
+                    + ", ".join(f"`{reason}`" for reason in sorted(set(reasons))),
+                ]
+            )
+    lines.extend(
+        [
+            "",
+            "| Rank | Security | Sleeve | Effective score | Current weight | Pending weight | "
+            "Target weight | Delta | Disposition | Reason | Assessment date |",
+            "| ---: | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |",
+        ]
+    )
+    lines.extend(
+        (
+            f"| {_cell(row['rank'])} | {_cell(row['security_id'])} | {_cell(row['sleeve'])} | "
+            f"{_cell(row['effective_score'])} | {_cell(row['current_weight_pct'])}% | "
+            f"{_cell(row['pending_weight_pct'])}% | {_cell(row['target_weight_pct'])}% | "
+            f"{_cell(row['delta_value_base'])} | {_cell(row['disposition'])} | "
+            f"{_cell(row['reason'])} | {_cell(row['assessment_as_of'])} |"
+            for row in sorted(
+                allocation_targets,
+                key=lambda value: (int(value["rank"] or "999999"), value["security_id"]),
+            )
+        )
+        if allocation_targets
+        else ["| — | — | baseline | — | 0% | 0% | 0% | 0 | no candidates | — | — |"]
+    )
+    lines.extend(
+        [
+            "",
+            "## 5. Research operations and dispositions",
             "",
             "| Operation | Type | Entity | Disposition | Reason |",
             "| --- | --- | --- | --- | --- |",
@@ -296,13 +403,13 @@ def generate_daily_report(
         for item in narratives:
             references = ", ".join(f"`{reference}`" for reference in item.evidence_refs)
             lines.append(f"- {item.text} Evidence: {references}.")
-    lines.extend(["", "## 5. New or changed research entities", ""])
+    lines.extend(["", "## 6. New or changed research entities", ""])
     lines.extend(
         [f"- [[{page_key}]]" for page_key in wiki_changes]
         if wiki_changes
         else ["No maintained research pages changed today."]
     )
-    lines.extend(["", "## 6. Risks, blockers, and scheduled follow-ups", ""])
+    lines.extend(["", "## 7. Risks, blockers, and scheduled follow-ups", ""])
     if issues:
         lines.extend(
             f"- `{row['severity']}` **{row['issue_id']}** — {row['title']}" for row in issues
@@ -323,7 +430,7 @@ def generate_daily_report(
     lines.extend(
         [
             "",
-            "## 7. Links",
+            "## 8. Links",
             "",
             "- [[index|Wiki index]]",
             f"- GitHub report: {github_report_url or 'not published yet'}",

@@ -81,6 +81,8 @@ def _strategy_row(strategy_id: str) -> dict[str, str]:
         "exit_rule": "Fixture exit.",
         "invalidation": "Fixture invalidation.",
         "risk_budget_pct": "1",
+        "sleeve": "conviction",
+        "allocation_plan_id": "",
         "not_before": "",
         "expires_at": "",
         "research_page": "",
@@ -147,9 +149,37 @@ def _leg(
     )
 
 
-def _setup_strategy(repository: Path, settings: Settings, strategy_id: str) -> None:
+def _setup_strategy(
+    repository: Path,
+    settings: Settings,
+    strategy_id: str,
+    leg: OrderLegSpec,
+) -> None:
     write_table(repository, "securities", [_security_row()])
     write_table(repository, "strategies", [_strategy_row(strategy_id)])
+    write_table(
+        repository,
+        "strategy_legs",
+        [
+            {
+                "strategy_id": strategy_id,
+                "leg_id": leg.leg_id,
+                "action": leg.action,
+                "side": leg.side,
+                "instrument_type": leg.instrument_type,
+                "security_id": leg.security_id,
+                "provider_contract_id": leg.provider_contract_id,
+                "option_type": leg.option_type,
+                "expiry": leg.expiry.isoformat() if leg.expiry else "",
+                "strike": str(leg.strike) if leg.strike is not None else "",
+                "quantity": str(leg.quantity),
+                "contract_multiplier": str(leg.contract_multiplier),
+                "order_type": "market",
+                "limit_price": "",
+                "currency": leg.currency,
+            }
+        ],
+    )
     ensure_initial_capital(
         repository,
         settings,
@@ -263,7 +293,8 @@ def test_pending_paper_order_cancellation_never_mutates_accounting(
     sandbox_settings: Settings,
 ) -> None:
     strategy_id = "strategy_cancel"
-    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id)
+    leg = _leg(action="buy", side="long")
+    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id, leg)
     reference = _reference(price="100", as_of=START)
     signal_id, _ = create_signal(
         sandbox_repository,
@@ -280,7 +311,7 @@ def test_pending_paper_order_cancellation_never_mutates_accounting(
         sandbox_settings,
         signal_id=signal_id,
         strategy_id=strategy_id,
-        legs=(_leg(action="buy", side="long"),),
+        legs=(leg,),
         references=(reference,),
         risk_state=build_risk_state(sandbox_repository, (reference,), as_of=START),
         run_id="run-cancel",
@@ -424,7 +455,6 @@ def test_reference_accounting_scenarios_reconcile_exactly(
     scenario: str,
 ) -> None:
     strategy_id = f"strategy_{scenario}"
-    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id)
     if scenario == "equity":
         leg = _leg(action="buy", side="long")
         order_reference = _reference(price="100", as_of=START)
@@ -499,6 +529,7 @@ def test_reference_accounting_scenarios_reconcile_exactly(
             ),
         )
         policy = "quote_mid"
+    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id, leg)
     signal_id, _ = create_signal(
         sandbox_repository,
         sandbox_settings,
@@ -563,8 +594,8 @@ def test_exact_replay_repairs_interrupted_fill_without_duplicate_state(
     sandbox_settings: Settings,
 ) -> None:
     strategy_id = "strategy_recovery"
-    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id)
     leg = _leg(action="buy", side="long")
+    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id, leg)
     order_reference = _reference(price="100", as_of=START)
     signal_id, _ = create_signal(
         sandbox_repository,
@@ -686,8 +717,8 @@ def test_partial_close_preserves_average_cost_and_realizes_decimal_pnl(
     sandbox_settings: Settings,
 ) -> None:
     strategy_id = "strategy_partial"
-    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id)
     opening_leg = _leg(action="buy", side="long")
+    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id, opening_leg)
     opening_reference = _reference(price="100", as_of=START)
     opening_signal, _ = create_signal(
         sandbox_repository,
@@ -804,8 +835,8 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
     sandbox_settings: Settings,
 ) -> None:
     strategy_id = "strategy_actions"
-    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id)
     leg = _leg(action="buy", side="long")
+    _setup_strategy(sandbox_repository, sandbox_settings, strategy_id, leg)
     opening_reference = _reference(price="100", as_of=START)
     signal_id, _ = create_signal(
         sandbox_repository,

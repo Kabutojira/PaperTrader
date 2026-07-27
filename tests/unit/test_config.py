@@ -26,6 +26,12 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.indicators.sma_periods == (20, 50, 200)
     assert settings.orders.default_fill_policy == "next_open"
     assert settings.portfolio.initial_capital == Decimal("100000.00")
+    assert settings.allocation.mode == "report_only"
+    assert settings.allocation.target_invested_pct == Decimal("60")
+    assert settings.allocation.minimum_cash_reserve_pct == Decimal("25")
+    assert settings.allocation.maximum_baseline_sleeve_pct == Decimal("30")
+    assert settings.allocation.maximum_baseline_position_pct == Decimal("5")
+    assert settings.allocation.minimum_confidence == "medium"
     assert settings.operations.maximum_llm_operations_per_run == 5
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
@@ -86,6 +92,59 @@ def test_settings_reject_contract_incompatible_price_retention(
     )
 
     with pytest.raises(ConfigurationError, match="exactly 365"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
+
+
+@pytest.mark.parametrize(
+    ("old", "new", "message"),
+    [
+        (
+            "minimum_cash_reserve_pct = 25",
+            "minimum_cash_reserve_pct = 100",
+            "must be below 100",
+        ),
+        (
+            "maximum_baseline_sleeve_pct = 30",
+            "maximum_baseline_sleeve_pct = 61",
+            "must not exceed target_invested_pct",
+        ),
+        (
+            "maximum_baseline_position_pct = 5",
+            "maximum_baseline_position_pct = 11",
+            "must not exceed the single-position limit",
+        ),
+        (
+            "maximum_total_gross_exposure_pct = 100",
+            "maximum_total_gross_exposure_pct = 59",
+            "target_invested_pct must not exceed the total gross-exposure limit",
+        ),
+        (
+            "maximum_deployment_per_run_pct = 15",
+            "maximum_deployment_per_run_pct = 21",
+            "must not exceed daily turnover",
+        ),
+        (
+            "minimum_trade_pct = 1",
+            "minimum_trade_pct = 6",
+            "must not exceed the baseline position cap",
+        ),
+        ("mode = report_only", "mode = automatic", "allocation.mode"),
+    ],
+)
+def test_settings_reject_unsafe_allocation_cross_limits(
+    sandbox_repository: Path,
+    paper_environment: dict[str, str],
+    old: str,
+    new: str,
+    message: str,
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(path.read_text(encoding="utf-8").replace(old, new), encoding="utf-8")
+
+    with pytest.raises(ConfigurationError, match=message):
         load_settings(
             sandbox_repository,
             paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},

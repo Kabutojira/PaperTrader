@@ -1,0 +1,1523 @@
+"""Deterministic opportunity-cost-aware baseline allocation planning.
+
+The planner produces research targets only. It never creates a signal, order, fill,
+execution, cash entry, position, or performance row. Decimal scores are rounded to two
+places with bankers' rounding; positive monetary targets are rounded down to cents and
+then down to whole equity units so neither deployment nor reserve limits can be exceeded.
+"""
+
+from __future__ import annotations
+
+import re
+from collections import defaultdict
+from collections.abc import Mapping, Sequence
+from dataclasses import asdict, dataclass
+from datetime import datetime, timedelta
+from decimal import ROUND_DOWN, ROUND_HALF_EVEN, Decimal
+from pathlib import Path
+
+from papertrader.atomic_io import atomic_write_json
+from papertrader.config import Settings
+from papertrader.market_data import MarketDataError, latest_fx_rate, read_price_cache
+from papertrader.portfolio import reconcile_portfolio, replay_accounting
+from papertrader.queue import enqueue_operation
+from papertrader.tables import append_unique, read_table, write_table
+from papertrader.utils import (
+    CanonicalValueError,
+    content_hash,
+    decimal_text,
+    ensure_utc,
+    format_timestamp,
+    parse_timestamp,
+    required_decimal,
+    stable_id,
+    utc_now,
+)
+
+SCORE_QUANTUM = Decimal("0.01")
+MONEY_QUANTUM = Decimal("0.01")
+ONE_HUNDRED = Decimal("100")
+CONFIDENCE_MULTIPLIERS = {
+    "high": Decimal("1"),
+    "medium": Decimal("0.8"),
+    "low": Decimal("0.5"),
+}
+CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
+SCORE_WEIGHTS = {
+    "thesis_score": Decimal("0.25"),
+    "business_quality_score": Decimal("0.20"),
+    "balance_sheet_score": Decimal("0.15"),
+    "valuation_score": Decimal("0.25"),
+    "timing_score": Decimal("0.10"),
+    "liquidity_score": Decimal("0.05"),
+}
+ELIGIBLE_ASSESSMENTS = frozenset({"baseline", "conviction"})
+ELIGIBLE_SECURITY_STATUSES = frozenset({"active", "watching"})
+ALLOCATABLE_DISPOSITIONS = frozenset({"open", "increase", "reduce", "close"})
+SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+
+
+class AllocationError(RuntimeError):
+    """Raised when authoritative inputs cannot produce a safe allocation plan."""
+
+
+@dataclass(frozen=True, slots=True)
+class AssessmentScore:
+    """Reproducible comparable score and edge over holding cash."""
+
+    raw_score: Decimal
+    effective_score: Decimal
+    candidate_edge: Decimal
+
+
+@dataclass(frozen=True, slots=True)
+class AllocationPlanResult:
+    """Serializable summary of one finalized allocation plan."""
+
+    allocation_plan_id: str
+    run_id: str
+    as_of: str
+    mode: str
+    equity_base: str
+    cash_base: str
+    minimum_cash_reserve_base: str
+    current_gross_exposure_base: str
+    target_invested_exposure_base: str
+    current_conviction_exposure_base: str
+    current_baseline_exposure_base: str
+    maximum_baseline_exposure_base: str
+    pending_gross_exposure_base: str
+    deployment_budget_base: str
+    diversified_budget_base: str
+    capital_allocated_base: str
+    capital_unallocated_base: str
+    unallocated_reasons: tuple[str, ...]
+    eligible_candidate_count: int
+    excluded_candidate_count: int
+    target_count: int
+    operations_created: tuple[str, ...]
+
+
+@dataclass(slots=True)
+class _Candidate:
+    security_id: str
+    security: Mapping[str, str]
+    assessment: Mapping[str, str] | None
+    relationship_id: str
+    themes: tuple[str, ...]
+    score: AssessmentScore
+    price: Decimal | None
+    fx_rate: Decimal | None
+    assessment_at: datetime | None
+    eligible: bool
+    reasons: list[str]
+    rank: int = 0
+    allocation: Decimal = Decimal("0")
+
+    @property
+    def unit_value_base(self) -> Decimal | None:
+        if self.price is None or self.fx_rate is None:
+            return None
+        return self.price * self.fx_rate
+
+
+@dataclass(frozen=True, slots=True)
+class _PortfolioExposure:
+    current_total: Mapping[str, Decimal]
+    current_baseline: Mapping[str, Decimal]
+    current_conviction: Mapping[str, Decimal]
+    sector_total: Mapping[str, Decimal]
+    theme_total: Mapping[str, Decimal]
+    baseline_total: Decimal
+    conviction_total: Decimal
+    gross_total: Decimal
+
+
+@dataclass(frozen=True, slots=True)
+class _PendingExposure:
+    gross_total: Decimal
+    committed_cash: Decimal
+    total_by_security: Mapping[str, Decimal]
+    baseline_by_security: Mapping[str, Decimal]
+    conviction_by_security: Mapping[str, Decimal]
+    sector_total: Mapping[str, Decimal]
+    theme_total: Mapping[str, Decimal]
+    baseline_total: Decimal
+    unpriced: bool
+
+
+def _rounded_score(value: Decimal) -> Decimal:
+    return value.quantize(SCORE_QUANTUM, rounding=ROUND_HALF_EVEN)
+
+
+def _money(value: Decimal) -> Decimal:
+    if value <= 0:
+        return Decimal("0")
+    return value.quantize(MONEY_QUANTUM, rounding=ROUND_DOWN)
+
+
+def _percentage(value: Decimal, equity: Decimal) -> Decimal:
+    if equity <= 0:
+        return Decimal("0")
+    return _rounded_score(value / equity * ONE_HUNDRED)
+
+
+def score_assessment(
+    assessment: Mapping[str, object], cash_hurdle_score: Decimal
+) -> AssessmentScore:
+    """Calculate weighted, confidence-adjusted score and positive cash edge."""
+
+    if not cash_hurdle_score.is_finite() or not Decimal("0") <= cash_hurdle_score <= ONE_HUNDRED:
+        raise AllocationError("cash hurdle must be finite and within 0-100")
+    raw = Decimal("0")
+    for field, weight in SCORE_WEIGHTS.items():
+        value = required_decimal(assessment[field], label=field)  # type: ignore[arg-type]
+        if value != value.to_integral_value() or not Decimal("0") <= value <= ONE_HUNDRED:
+            raise AllocationError(f"{field} must be an integer score within 0-100")
+        raw += value * weight
+    confidence = assessment.get("confidence")
+    if not isinstance(confidence, str) or confidence not in CONFIDENCE_MULTIPLIERS:
+        raise AllocationError("assessment confidence is not canonical")
+    penalty = required_decimal(assessment["risk_penalty"], label="risk_penalty")  # type: ignore[arg-type]
+    if penalty != penalty.to_integral_value() or not Decimal("0") <= penalty <= ONE_HUNDRED:
+        raise AllocationError("risk_penalty must be an integer score within 0-100")
+    rounded_raw = _rounded_score(raw)
+    effective = _rounded_score(raw * CONFIDENCE_MULTIPLIERS[confidence] - penalty)
+    edge = _rounded_score(max(effective - cash_hurdle_score, Decimal("0")))
+    return AssessmentScore(rounded_raw, effective, edge)
+
+
+def calculate_assessment_score(
+    assessment: Mapping[str, object], cash_hurdle_score: Decimal
+) -> AssessmentScore:
+    """Compatibility name for callers that describe the score as an aggregate."""
+
+    return score_assessment(assessment, cash_hurdle_score)
+
+
+def baseline_strategy_id(security_id: str) -> str:
+    """Return the stable one-baseline-strategy identity for a security."""
+
+    if not security_id or any(marker in security_id for marker in "|\r\n"):
+        raise AllocationError("security_id is not safe for baseline strategy identity")
+    return stable_id("strategy", "baseline", security_id)
+
+
+def _current_relationships(
+    repository_root: Path, now: datetime
+) -> tuple[dict[str, tuple[Mapping[str, str], ...]], dict[str, str]]:
+    by_security: dict[str, list[Mapping[str, str]]] = defaultdict(list)
+    relationship_by_id: dict[str, str] = {}
+    for row in read_table(repository_root, "relationships"):
+        if row["status"] != "accepted":
+            continue
+        reviewed = parse_timestamp(row["last_reviewed_at"], allow_empty=True)
+        next_review = parse_timestamp(row["next_review_at"], allow_empty=True)
+        if reviewed is None or next_review is None or reviewed > now or next_review <= now:
+            continue
+        by_security[row["security_id"]].append(row)
+        relationship_by_id[row["relationship_id"]] = row["idea_id"]
+    return (
+        {
+            security_id: tuple(sorted(rows, key=lambda row: row["relationship_id"]))
+            for security_id, rows in by_security.items()
+        },
+        relationship_by_id,
+    )
+
+
+def _themes_for_security(
+    security_id: str,
+    relationships: Mapping[str, Sequence[Mapping[str, str]]],
+) -> tuple[str, ...]:
+    return tuple(sorted({row["idea_id"] for row in relationships.get(security_id, ())}))
+
+
+def _strategy_sleeves(repository_root: Path) -> dict[str, str]:
+    sleeves: dict[str, str] = {}
+    for row in read_table(repository_root, "strategies"):
+        sleeve = row["sleeve"]
+        if sleeve not in {"conviction", "baseline"}:
+            raise AllocationError(f"strategy {row['strategy_id']} has invalid sleeve {sleeve!r}")
+        sleeves[row["strategy_id"]] = sleeve
+    return sleeves
+
+
+def _portfolio_exposure(
+    repository_root: Path,
+    securities: Mapping[str, Mapping[str, str]],
+    relationships: Mapping[str, Sequence[Mapping[str, str]]],
+    strategy_sleeves: Mapping[str, str],
+) -> _PortfolioExposure:
+    current_total: defaultdict[str, Decimal] = defaultdict(Decimal)
+    current_baseline: defaultdict[str, Decimal] = defaultdict(Decimal)
+    current_conviction: defaultdict[str, Decimal] = defaultdict(Decimal)
+    sector_total: defaultdict[str, Decimal] = defaultdict(Decimal)
+    theme_total: defaultdict[str, Decimal] = defaultdict(Decimal)
+    for row in read_table(repository_root, "portfolio"):
+        security_id = row["security_id"]
+        value = abs(required_decimal(row["market_value_base"], label="portfolio market value"))
+        current_total[security_id] += value
+        security = securities.get(security_id)
+        if security is not None:
+            sector_total[security["sector"] or "unclassified"] += value
+        for theme in _themes_for_security(security_id, relationships):
+            theme_total[theme] += value
+        strategy_ids = tuple(part for part in row["strategy_ids"].split("|") if part)
+        exclusively_baseline = bool(strategy_ids) and all(
+            strategy_sleeves.get(strategy_id) == "baseline" for strategy_id in strategy_ids
+        )
+        if exclusively_baseline:
+            current_baseline[security_id] += value
+        else:
+            current_conviction[security_id] += value
+    baseline_total = sum(current_baseline.values(), Decimal("0"))
+    conviction_total = sum(current_conviction.values(), Decimal("0"))
+    return _PortfolioExposure(
+        current_total=dict(current_total),
+        current_baseline=dict(current_baseline),
+        current_conviction=dict(current_conviction),
+        sector_total=dict(sector_total),
+        theme_total=dict(theme_total),
+        baseline_total=baseline_total,
+        conviction_total=conviction_total,
+        gross_total=sum(current_total.values(), Decimal("0")),
+    )
+
+
+def _fresh_price_and_fx(
+    repository_root: Path,
+    settings: Settings,
+    security: Mapping[str, str],
+    *,
+    now: datetime,
+) -> tuple[Decimal, Decimal]:
+    bars = read_price_cache(repository_root, security["security_id"])
+    if not bars:
+        raise AllocationError("market_data_missing")
+    latest = bars[-1]
+    if latest.currency != security["currency"]:
+        raise AllocationError("market_data_identity_mismatch")
+    age = now - ensure_utc(latest.retrieved_at)
+    if age < timedelta(0) or age > settings.market_data.stale_price_after:
+        raise AllocationError("market_data_stale")
+    latest_rows = {row["security_id"]: row for row in read_table(repository_root, "market_latest")}
+    latest_state = latest_rows.get(security["security_id"])
+    if latest_state is not None and latest_state["status"] != "ok":
+        raise AllocationError("market_data_not_ok")
+    try:
+        fx_rate = latest_fx_rate(
+            repository_root,
+            security["currency"],
+            settings.portfolio.base_currency,
+            now=now,
+            maximum_age=settings.market_data.stale_price_after,
+        )
+    except MarketDataError as exc:
+        raise AllocationError("fx_unavailable") from exc
+    return latest.close, fx_rate
+
+
+def _candidate(
+    repository_root: Path,
+    settings: Settings,
+    security: Mapping[str, str],
+    assessment: Mapping[str, str] | None,
+    relationships: Mapping[str, Sequence[Mapping[str, str]]],
+    *,
+    now: datetime,
+) -> _Candidate:
+    reasons: list[str] = []
+    if assessment is None:
+        score = AssessmentScore(Decimal("0"), Decimal("0"), Decimal("0"))
+        reasons.append("assessment_missing")
+        assessed_at = None
+    else:
+        try:
+            score = score_assessment(assessment, settings.allocation.cash_hurdle_score)
+        except (AllocationError, CanonicalValueError, KeyError) as exc:
+            raise AllocationError(
+                f"invalid assessment for {security['security_id']}: {exc}"
+            ) from exc
+        assessed_at = parse_timestamp(assessment["assessed_at"])
+        expires_at = parse_timestamp(assessment["expires_at"])
+        assert assessed_at is not None and expires_at is not None
+        if assessment["eligibility"] not in ELIGIBLE_ASSESSMENTS:
+            reasons.append("assessment_ineligible")
+        age = now - assessed_at
+        if (
+            age < timedelta(0)
+            or age > timedelta(days=settings.allocation.maximum_assessment_age_days)
+            or expires_at <= now
+        ):
+            reasons.append("assessment_stale")
+        confidence = assessment["confidence"]
+        if (
+            confidence not in CONFIDENCE_RANK
+            or CONFIDENCE_RANK[confidence] < CONFIDENCE_RANK[settings.allocation.minimum_confidence]
+        ):
+            reasons.append("confidence_below_minimum")
+        blockers = tuple(part for part in assessment["hard_blockers"].split("|") if part)
+        if blockers:
+            reasons.append(f"hard_blocker:{','.join(blockers)}")
+        if score.candidate_edge <= 0:
+            reasons.append("score_below_cash_hurdle")
+        if required_decimal(assessment["base_upside_pct"], label="base_upside_pct") <= 0:
+            reasons.append("base_upside_not_positive")
+        required_decimal(assessment["downside_pct"], label="downside_pct")
+    if security["status"] not in ELIGIBLE_SECURITY_STATUSES:
+        reasons.append("security_status_not_orderable")
+    if security["instrument_type"] != "equity":
+        reasons.append("instrument_unsupported")
+    if security["instrument_type"] not in settings.risk.allowed_instruments:
+        reasons.append("instrument_not_allowed")
+    if security["venue_mic"] not in settings.risk.allowed_exchanges:
+        reasons.append("exchange_not_allowed")
+    if security["currency"] not in settings.risk.allowed_currencies:
+        reasons.append("currency_not_allowed")
+    current_relationships = relationships.get(security["security_id"], ())
+    if not current_relationships:
+        reasons.append("relationship_missing_or_stale")
+    price: Decimal | None = None
+    fx_rate: Decimal | None = None
+    try:
+        price, fx_rate = _fresh_price_and_fx(
+            repository_root,
+            settings,
+            security,
+            now=now,
+        )
+    except AllocationError as exc:
+        reasons.append(str(exc))
+    return _Candidate(
+        security_id=security["security_id"],
+        security=security,
+        assessment=assessment,
+        relationship_id=(
+            current_relationships[0]["relationship_id"] if current_relationships else ""
+        ),
+        themes=_themes_for_security(security["security_id"], relationships),
+        score=score,
+        price=price,
+        fx_rate=fx_rate,
+        assessment_at=assessed_at,
+        eligible=not reasons,
+        reasons=sorted(set(reasons)),
+    )
+
+
+def _pending_exposure(
+    repository_root: Path,
+    settings: Settings,
+    securities: Mapping[str, Mapping[str, str]],
+    relationships: Mapping[str, Sequence[Mapping[str, str]]],
+    strategy_sleeves: Mapping[str, str],
+    *,
+    now: datetime,
+) -> _PendingExposure:
+    orders = {
+        row["order_id"]: row
+        for row in read_table(repository_root, "orders")
+        if row["status"] in {"pending", "partially_filled"}
+    }
+    executed: defaultdict[tuple[str, str], Decimal] = defaultdict(Decimal)
+    for row in read_table(repository_root, "executions"):
+        if row["order_id"] in orders:
+            executed[(row["order_id"], row["leg_id"])] += required_decimal(
+                row["quantity"], label="executed pending quantity"
+            )
+    gross = Decimal("0")
+    committed_cash = Decimal("0")
+    total_by_security: defaultdict[str, Decimal] = defaultdict(Decimal)
+    baseline_by_security: defaultdict[str, Decimal] = defaultdict(Decimal)
+    conviction_by_security: defaultdict[str, Decimal] = defaultdict(Decimal)
+    sector_total: defaultdict[str, Decimal] = defaultdict(Decimal)
+    theme_total: defaultdict[str, Decimal] = defaultdict(Decimal)
+    baseline_total = Decimal("0")
+    unpriced = False
+    charged_orders: set[str] = set()
+    for row in sorted(
+        (row for row in read_table(repository_root, "order_legs") if row["order_id"] in orders),
+        key=lambda row: (row["order_id"], row["leg_id"]),
+    ):
+        order = orders[row["order_id"]]
+        quantity = (
+            required_decimal(row["quantity"], label="pending quantity")
+            - executed[(row["order_id"], row["leg_id"])]
+        )
+        if quantity <= 0:
+            continue
+        multiplier = required_decimal(row["contract_multiplier"], label="pending multiplier")
+        security = securities.get(row["security_id"])
+        if security is None:
+            unpriced = True
+            continue
+        price: Decimal | None = None
+        fx_rate: Decimal | None = None
+        if row["instrument_type"] == "equity":
+            try:
+                price, fx_rate = _fresh_price_and_fx(repository_root, settings, security, now=now)
+            except AllocationError:
+                unpriced = True
+        else:
+            raw_limit = row["limit_price"] or order["limit_price"]
+            if raw_limit:
+                price = required_decimal(raw_limit, label="pending option limit")
+                try:
+                    fx_rate = latest_fx_rate(
+                        repository_root,
+                        row["currency"],
+                        settings.portfolio.base_currency,
+                        now=now,
+                        maximum_age=settings.market_data.stale_price_after,
+                    )
+                except MarketDataError:
+                    unpriced = True
+            else:
+                unpriced = True
+        if price is None or fx_rate is None:
+            continue
+        value = quantity * multiplier * price * fx_rate
+        sleeve = strategy_sleeves.get(order["strategy_id"], "conviction")
+        opening = (row["side"] == "long" and row["action"] == "buy") or (
+            row["side"] == "short" and row["action"] == "sell"
+        )
+        signed = abs(value) if opening else -abs(value)
+        gross += signed
+        total_by_security[row["security_id"]] += signed
+        sector_total[security["sector"] or "unclassified"] += signed
+        for theme in _themes_for_security(row["security_id"], relationships):
+            theme_total[theme] += signed
+        if sleeve == "baseline":
+            baseline_by_security[row["security_id"]] += signed
+            baseline_total += signed
+        else:
+            conviction_by_security[row["security_id"]] += signed
+        if row["action"] == "buy":
+            committed_cash += value
+        if row["order_id"] not in charged_orders:
+            charged_orders.add(row["order_id"])
+            committed_cash += settings.orders.fixed_fee
+        committed_cash += abs(value) * settings.orders.variable_fee_bps / Decimal("10000")
+    return _PendingExposure(
+        gross_total=gross,
+        committed_cash=committed_cash,
+        total_by_security=dict(total_by_security),
+        baseline_by_security=dict(baseline_by_security),
+        conviction_by_security=dict(conviction_by_security),
+        sector_total=dict(sector_total),
+        theme_total=dict(theme_total),
+        baseline_total=baseline_total,
+        unpriced=unpriced,
+    )
+
+
+def _candidate_capacity(
+    candidate: _Candidate,
+    settings: Settings,
+    equity: Decimal,
+    portfolio: _PortfolioExposure,
+    pending: _PendingExposure,
+    sector_used: Mapping[str, Decimal],
+    theme_used: Mapping[str, Decimal],
+) -> Decimal:
+    security_id = candidate.security_id
+    current_baseline = portfolio.current_baseline.get(security_id, Decimal("0"))
+    pending_baseline = pending.baseline_by_security.get(security_id, Decimal("0"))
+    baseline_position_room = (
+        equity * settings.allocation.maximum_baseline_position_pct / ONE_HUNDRED
+        - current_baseline
+        - pending_baseline
+        - candidate.allocation
+    )
+    total_security_room = (
+        equity * settings.risk.maximum_single_position_pct / ONE_HUNDRED
+        - portfolio.current_total.get(security_id, Decimal("0"))
+        - pending.total_by_security.get(security_id, Decimal("0"))
+        - candidate.allocation
+    )
+    sector = candidate.security["sector"] or "unclassified"
+    sector_room = equity * settings.allocation.maximum_sector_pct / ONE_HUNDRED - sector_used.get(
+        sector, Decimal("0")
+    )
+    rooms = [baseline_position_room, total_security_room, sector_room]
+    rooms.extend(
+        equity * settings.allocation.maximum_theme_pct / ONE_HUNDRED
+        - theme_used.get(theme, Decimal("0"))
+        for theme in candidate.themes
+    )
+    return _money(max(min(rooms), Decimal("0")))
+
+
+def _allocate_capped(
+    candidates: Sequence[_Candidate],
+    settings: Settings,
+    equity: Decimal,
+    budget: Decimal,
+    portfolio: _PortfolioExposure,
+    pending: _PendingExposure,
+) -> Decimal:
+    """Apply edge-proportional capped redistribution independent of input order."""
+
+    remaining = _money(budget)
+    sector_used: defaultdict[str, Decimal] = defaultdict(Decimal, portfolio.sector_total)
+    theme_used: defaultdict[str, Decimal] = defaultdict(Decimal, portfolio.theme_total)
+    for key, value in pending.sector_total.items():
+        sector_used[key] += value
+    for key, value in pending.theme_total.items():
+        theme_used[key] += value
+    ordered = sorted(candidates, key=lambda item: (-item.score.candidate_edge, item.security_id))
+    while remaining >= MONEY_QUANTUM:
+        capacities = {
+            candidate.security_id: _candidate_capacity(
+                candidate,
+                settings,
+                equity,
+                portfolio,
+                pending,
+                sector_used,
+                theme_used,
+            )
+            for candidate in ordered
+        }
+        active = [
+            candidate for candidate in ordered if capacities[candidate.security_id] >= MONEY_QUANTUM
+        ]
+        if not active:
+            break
+        edge_total = sum((candidate.score.candidate_edge for candidate in active), Decimal("0"))
+        if edge_total <= 0:
+            break
+        proposals: dict[str, Decimal] = {}
+        for candidate in active:
+            share = _money(remaining * candidate.score.candidate_edge / edge_total)
+            proposals[candidate.security_id] = min(share, capacities[candidate.security_id])
+        if not any(value >= MONEY_QUANTUM for value in proposals.values()):
+            first = active[0]
+            proposals[first.security_id] = min(MONEY_QUANTUM, capacities[first.security_id])
+        # Scale simultaneous proposals at shared sector and theme boundaries.
+        groups: list[tuple[str, str, Decimal]] = []
+        for sector in sorted(
+            {candidate.security["sector"] or "unclassified" for candidate in active}
+        ):
+            room = max(
+                equity * settings.allocation.maximum_sector_pct / ONE_HUNDRED - sector_used[sector],
+                Decimal("0"),
+            )
+            groups.append(("sector", sector, room))
+        for theme in sorted({theme for candidate in active for theme in candidate.themes}):
+            room = max(
+                equity * settings.allocation.maximum_theme_pct / ONE_HUNDRED - theme_used[theme],
+                Decimal("0"),
+            )
+            groups.append(("theme", theme, room))
+        for kind, group, room in groups:
+            members = [
+                candidate
+                for candidate in active
+                if (
+                    (kind == "sector" and (candidate.security["sector"] or "unclassified") == group)
+                    or (kind == "theme" and group in candidate.themes)
+                )
+            ]
+            proposed = sum(
+                (proposals[candidate.security_id] for candidate in members), Decimal("0")
+            )
+            if proposed <= room or proposed <= 0:
+                continue
+            factor = room / proposed
+            for candidate in members:
+                proposals[candidate.security_id] = _money(proposals[candidate.security_id] * factor)
+        progress = sum(proposals.values(), Decimal("0"))
+        if progress <= 0:
+            break
+        if progress > remaining:
+            raise AllocationError("capped allocation exceeded remaining deployment budget")
+        for candidate in active:
+            addition = proposals[candidate.security_id]
+            candidate.allocation += addition
+            sector_used[candidate.security["sector"] or "unclassified"] += addition
+            for theme in candidate.themes:
+                theme_used[theme] += addition
+        remaining = _money(remaining - progress)
+    return _money(budget - remaining)
+
+
+def _cap_final_targets(
+    targets: dict[str, Decimal],
+    candidates: Mapping[str, _Candidate],
+    settings: Settings,
+    equity: Decimal,
+    portfolio: _PortfolioExposure,
+    pending: _PendingExposure,
+) -> None:
+    """Reduce lowest-ranked baseline targets until every shared cap is satisfied."""
+
+    for security_id in sorted(targets):
+        baseline_cap = equity * settings.allocation.maximum_baseline_position_pct / ONE_HUNDRED
+        fixed_security_exposure = (
+            portfolio.current_total.get(security_id, Decimal("0"))
+            - portfolio.current_baseline.get(security_id, Decimal("0"))
+            + pending.total_by_security.get(security_id, Decimal("0"))
+            - pending.baseline_by_security.get(security_id, Decimal("0"))
+        )
+        total_room = max(
+            equity * settings.risk.maximum_single_position_pct / ONE_HUNDRED
+            - fixed_security_exposure,
+            Decimal("0"),
+        )
+        targets[security_id] = min(targets[security_id], baseline_cap, total_room)
+
+    def reduce_group(member_ids: Sequence[str], excess: Decimal) -> None:
+        for security_id in sorted(
+            member_ids,
+            key=lambda value: (
+                candidates[value].rank if candidates[value].rank else 10**9,
+                value,
+            ),
+            reverse=True,
+        ):
+            reduction = min(targets[security_id], excess)
+            targets[security_id] -= reduction
+            excess -= reduction
+            if excess <= 0:
+                return
+
+    sectors = sorted(
+        {candidate.security["sector"] or "unclassified" for candidate in candidates.values()}
+    )
+    for sector in sectors:
+        members = [
+            security_id
+            for security_id, candidate in candidates.items()
+            if (candidate.security["sector"] or "unclassified") == sector
+        ]
+        current_baseline = sum(
+            (portfolio.current_baseline.get(security_id, Decimal("0")) for security_id in members),
+            Decimal("0"),
+        )
+        pending_baseline = sum(
+            (
+                pending.baseline_by_security.get(security_id, Decimal("0"))
+                for security_id in members
+            ),
+            Decimal("0"),
+        )
+        fixed_exposure = (
+            portfolio.sector_total.get(sector, Decimal("0"))
+            + pending.sector_total.get(sector, Decimal("0"))
+            - current_baseline
+            - pending_baseline
+        )
+        excess = (
+            fixed_exposure
+            + sum((targets[value] for value in members), Decimal("0"))
+            - (equity * settings.allocation.maximum_sector_pct / ONE_HUNDRED)
+        )
+        if excess > 0:
+            reduce_group(members, excess)
+    for theme in sorted({theme for candidate in candidates.values() for theme in candidate.themes}):
+        members = [
+            security_id
+            for security_id, candidate in candidates.items()
+            if theme in candidate.themes
+        ]
+        current_baseline = sum(
+            (portfolio.current_baseline.get(security_id, Decimal("0")) for security_id in members),
+            Decimal("0"),
+        )
+        pending_baseline = sum(
+            (
+                pending.baseline_by_security.get(security_id, Decimal("0"))
+                for security_id in members
+            ),
+            Decimal("0"),
+        )
+        fixed_exposure = (
+            portfolio.theme_total.get(theme, Decimal("0"))
+            + pending.theme_total.get(theme, Decimal("0"))
+            - current_baseline
+            - pending_baseline
+        )
+        excess = (
+            fixed_exposure
+            + sum((targets[value] for value in members), Decimal("0"))
+            - (equity * settings.allocation.maximum_theme_pct / ONE_HUNDRED)
+        )
+        if excess > 0:
+            reduce_group(members, excess)
+    sleeve_excess = sum(targets.values(), Decimal("0")) - (
+        equity * settings.allocation.maximum_baseline_sleeve_pct / ONE_HUNDRED
+    )
+    if sleeve_excess > 0:
+        reduce_group(tuple(targets), sleeve_excess)
+
+
+def _row_reason(
+    candidate: _Candidate,
+    *,
+    disposition: str,
+    diversified: bool,
+    deployment_budget: Decimal,
+) -> str:
+    reasons = list(candidate.reasons)
+    if candidate.eligible:
+        reasons.append("above_cash_hurdle")
+        if disposition == "below_minimum_trade":
+            reasons.append("minimum_trade_threshold")
+        if not diversified:
+            reasons.append("insufficient_diversification")
+        if candidate.allocation == 0 and disposition in {"hold", "below_minimum_trade"}:
+            reasons.append(
+                "deployment_budget_exhausted" if deployment_budget == 0 else "concentration_cap"
+            )
+    return "|".join(sorted(set(reasons))) or "target_unchanged"
+
+
+def _build_rows(
+    candidates: Sequence[_Candidate],
+    settings: Settings,
+    equity: Decimal,
+    portfolio: _PortfolioExposure,
+    pending: _PendingExposure,
+    *,
+    plan_id: str,
+    run_id: str,
+    as_of: datetime,
+    deployment_budget: Decimal,
+    diversified: bool,
+) -> list[dict[str, str]]:
+    by_id = {candidate.security_id: candidate for candidate in candidates}
+    targets: dict[str, Decimal] = {}
+    for candidate in candidates:
+        current = portfolio.current_baseline.get(candidate.security_id, Decimal("0"))
+        pending_value = pending.baseline_by_security.get(candidate.security_id, Decimal("0"))
+        if not candidate.eligible:
+            targets[candidate.security_id] = Decimal("0")
+            continue
+        desired = max(current + pending_value + candidate.allocation, Decimal("0"))
+        unit = candidate.unit_value_base
+        if unit is None or unit <= 0:
+            targets[candidate.security_id] = Decimal("0")
+            continue
+        quantity = (desired / unit).to_integral_value(rounding=ROUND_DOWN)
+        targets[candidate.security_id] = quantity * unit
+    _cap_final_targets(targets, by_id, settings, equity, portfolio, pending)
+    rows: list[dict[str, str]] = []
+    minimum_trade = equity * settings.allocation.minimum_trade_pct / ONE_HUNDRED
+    rebalance_band = settings.allocation.rebalance_band_pct
+    for candidate in sorted(candidates, key=lambda item: item.security_id):
+        current = portfolio.current_baseline.get(candidate.security_id, Decimal("0"))
+        pending_value = pending.baseline_by_security.get(candidate.security_id, Decimal("0"))
+        target = max(targets[candidate.security_id], Decimal("0"))
+        delta = target - current - pending_value
+        delta_weight = abs(_percentage(delta, equity))
+        current_and_pending = current + pending_value
+        if not candidate.eligible:
+            if current_and_pending <= 0:
+                disposition = "excluded"
+            else:
+                disposition = "close"
+                target = Decimal("0")
+                delta = -current_and_pending
+        elif abs(delta) < MONEY_QUANTUM:
+            disposition = "hold"
+            target = max(current_and_pending, Decimal("0"))
+            delta = Decimal("0")
+        elif current_and_pending <= 0 and abs(delta) < minimum_trade:
+            disposition = "below_minimum_trade"
+            target = Decimal("0")
+            delta = Decimal("0")
+        elif delta_weight <= rebalance_band:
+            disposition = "hold"
+            target = max(current_and_pending, Decimal("0"))
+            delta = Decimal("0")
+        elif abs(delta) < minimum_trade:
+            disposition = "below_minimum_trade"
+            target = max(current_and_pending, Decimal("0"))
+            delta = Decimal("0")
+        elif delta > 0:
+            disposition = "open" if current_and_pending <= 0 else "increase"
+        elif target <= 0:
+            disposition = "close"
+        else:
+            disposition = "reduce"
+        rows.append(
+            {
+                "allocation_plan_id": plan_id,
+                "run_id": run_id,
+                "as_of": format_timestamp(as_of),
+                "security_id": candidate.security_id,
+                "strategy_id": baseline_strategy_id(candidate.security_id),
+                "sleeve": "baseline",
+                "rank": str(candidate.rank) if candidate.rank else "",
+                "effective_score": decimal_text(candidate.score.effective_score),
+                "candidate_edge": decimal_text(candidate.score.candidate_edge),
+                "current_weight_pct": decimal_text(_percentage(current, equity)),
+                "pending_weight_pct": decimal_text(_percentage(pending_value, equity)),
+                "target_weight_pct": decimal_text(_percentage(target, equity)),
+                "target_value_base": decimal_text(target),
+                "delta_value_base": decimal_text(delta),
+                "disposition": disposition,
+                "reason": _row_reason(
+                    candidate,
+                    disposition=disposition,
+                    diversified=diversified,
+                    deployment_budget=deployment_budget,
+                ),
+                "assessment_as_of": (
+                    format_timestamp(candidate.assessment_at) if candidate.assessment_at else ""
+                ),
+            }
+        )
+    return rows
+
+
+def _enqueue_targets(
+    repository_root: Path,
+    settings: Settings,
+    candidates: Mapping[str, _Candidate],
+    rows: Sequence[Mapping[str, str]],
+    *,
+    now: datetime,
+) -> tuple[str, ...]:
+    created_ids: list[str] = []
+    strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
+    for row in sorted(rows, key=lambda value: value["security_id"]):
+        if row["disposition"] not in ALLOCATABLE_DISPOSITIONS:
+            continue
+        candidate = candidates[row["security_id"]]
+        existing_strategy = strategies.get(row["strategy_id"])
+        relationship_id = candidate.relationship_id or (
+            existing_strategy["relationship_id"] if existing_strategy is not None else ""
+        )
+        if not relationship_id or candidate.assessment is None:
+            continue
+        inputs = {
+            "mode": "baseline_allocation",
+            "allocation_plan_id": row["allocation_plan_id"],
+            "security_id": row["security_id"],
+            "strategy_id": row["strategy_id"],
+            "relationship_id": relationship_id,
+            "current_weight_pct": row["current_weight_pct"],
+            "target_weight_pct": row["target_weight_pct"],
+            "maximum_weight_pct": decimal_text(settings.allocation.maximum_baseline_position_pct),
+            "selection_rank": int(row["rank"] or "0"),
+            "effective_score": row["effective_score"],
+            "assessment_as_of": row["assessment_as_of"],
+            "disposition": row["disposition"],
+        }
+        operation_id, created = enqueue_operation(
+            repository_root,
+            settings,
+            operation_type="strategy_research",
+            entity_type="strategy",
+            entity_id=row["strategy_id"],
+            dedupe_key=(
+                f"strategy_research:{row['strategy_id']}:"
+                f"{row['allocation_plan_id']}:{row['disposition']}"
+            ),
+            prompt=(
+                f"Research the bounded baseline allocation target for {row['security_id']} "
+                f"from plan {row['allocation_plan_id']}."
+            ),
+            inputs=inputs,
+            source=f"deterministic-allocation:{row['allocation_plan_id']}",
+            priority=55,
+            freshness_days=0,
+            source_refs=tuple(
+                part for part in candidate.assessment["evidence_refs"].split("|") if part
+            ),
+            now=now,
+        )
+        if created:
+            created_ids.append(operation_id)
+    return tuple(sorted(created_ids))
+
+
+def plan_allocation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    now: datetime | None = None,
+) -> AllocationPlanResult:
+    """Generate one immutable baseline target plan from authoritative current state."""
+
+    if not SAFE_RUN_ID.fullmatch(run_id):
+        raise AllocationError(f"invalid allocation run_id: {run_id!r}")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    reconciliation_errors = reconcile_portfolio(repository_root)
+    if reconciliation_errors:
+        raise AllocationError(
+            "portfolio must reconcile before allocation: " + ";".join(reconciliation_errors)
+        )
+    replay = replay_accounting(repository_root)
+    securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
+    assessments = {
+        row["security_id"]: row for row in read_table(repository_root, "security_assessments")
+    }
+    relationships, _ = _current_relationships(repository_root, instant)
+    strategy_sleeves = _strategy_sleeves(repository_root)
+    portfolio = _portfolio_exposure(
+        repository_root,
+        securities,
+        relationships,
+        strategy_sleeves,
+    )
+    pending = _pending_exposure(
+        repository_root,
+        settings,
+        securities,
+        relationships,
+        strategy_sleeves,
+        now=instant,
+    )
+    equity = replay.cash_base + sum(
+        (
+            required_decimal(row["market_value_base"], label="portfolio market value")
+            for row in read_table(repository_root, "portfolio")
+        ),
+        Decimal("0"),
+    )
+    if equity <= 0:
+        raise AllocationError("allocation requires positive reconciled equity")
+    candidate_ids = (
+        set(assessments) | set(portfolio.current_baseline) | set(pending.baseline_by_security)
+    )
+    unknown = sorted(candidate_ids - set(securities))
+    if unknown:
+        raise AllocationError(f"allocation state references unknown securities: {unknown}")
+    candidates = [
+        _candidate(
+            repository_root,
+            settings,
+            securities[security_id],
+            assessments.get(security_id),
+            relationships,
+            now=instant,
+        )
+        for security_id in sorted(candidate_ids)
+    ]
+    for candidate in candidates:
+        if portfolio.current_conviction.get(candidate.security_id, Decimal("0")) > 0:
+            candidate.reasons.append("conviction_exposure_present")
+            candidate.eligible = False
+        if pending.conviction_by_security.get(candidate.security_id, Decimal("0")) != 0:
+            candidate.reasons.append("conviction_pending_exposure")
+            candidate.eligible = False
+    missing_baseline_assessments = sorted(
+        candidate.security_id
+        for candidate in candidates
+        if candidate.assessment is None
+        and (
+            portfolio.current_baseline.get(candidate.security_id, Decimal("0")) > 0
+            or pending.baseline_by_security.get(candidate.security_id, Decimal("0")) != 0
+        )
+    )
+    if missing_baseline_assessments:
+        raise AllocationError(
+            "baseline exposure lacks a required assessment: "
+            + ",".join(missing_baseline_assessments)
+        )
+    eligible = sorted(
+        (candidate for candidate in candidates if candidate.eligible),
+        key=lambda candidate: (-candidate.score.effective_score, candidate.security_id),
+    )
+    for rank, candidate in enumerate(eligible, start=1):
+        candidate.rank = rank
+    cash_reserve = equity * settings.allocation.minimum_cash_reserve_pct / ONE_HUNDRED
+    available_cash = max(replay.cash_base - pending.committed_cash - cash_reserve, Decimal("0"))
+    target_exposure_gap = max(
+        equity * settings.allocation.target_invested_pct / ONE_HUNDRED
+        - portfolio.gross_total
+        - pending.gross_total,
+        Decimal("0"),
+    )
+    remaining_baseline = max(
+        equity * settings.allocation.maximum_baseline_sleeve_pct / ONE_HUNDRED
+        - portfolio.baseline_total
+        - pending.baseline_total,
+        Decimal("0"),
+    )
+    deployment_limit = equity * settings.allocation.maximum_deployment_per_run_pct / ONE_HUNDRED
+    deployment_budget = _money(
+        min(available_cash, target_exposure_gap, remaining_baseline, deployment_limit)
+    )
+    if pending.unpriced:
+        deployment_budget = Decimal("0")
+        for candidate in eligible:
+            candidate.reasons.append("pending_exposure_unpriced")
+    diversification_factor = min(
+        Decimal(len(eligible)) / Decimal(settings.allocation.minimum_diversified_candidates),
+        Decimal("1"),
+    )
+    diversified_budget = _money(deployment_budget * diversification_factor)
+    if settings.allocation.mode != "disabled" and eligible and diversified_budget > 0:
+        _allocate_capped(
+            eligible,
+            settings,
+            equity,
+            diversified_budget,
+            portfolio,
+            pending,
+        )
+    input_identity = {
+        "run_id": run_id,
+        "as_of": format_timestamp(instant),
+        "mode": settings.allocation.mode,
+        "accounting": {
+            "cash_base": decimal_text(replay.cash_base),
+            "equity_base": decimal_text(equity),
+            "current_gross_exposure_base": decimal_text(portfolio.gross_total),
+            "current_baseline_exposure_base": decimal_text(portfolio.baseline_total),
+            "current_conviction_exposure_base": decimal_text(portfolio.conviction_total),
+            "pending_gross_exposure_base": decimal_text(pending.gross_total),
+            "pending_baseline_exposure_base": decimal_text(pending.baseline_total),
+            "pending_committed_cash_base": decimal_text(pending.committed_cash),
+            "deployment_budget_base": decimal_text(deployment_budget),
+            "diversified_budget_base": decimal_text(diversified_budget),
+        },
+        "policy": {
+            "target_invested_pct": decimal_text(settings.allocation.target_invested_pct),
+            "minimum_cash_reserve_pct": decimal_text(settings.allocation.minimum_cash_reserve_pct),
+            "maximum_baseline_sleeve_pct": decimal_text(
+                settings.allocation.maximum_baseline_sleeve_pct
+            ),
+            "maximum_baseline_position_pct": decimal_text(
+                settings.allocation.maximum_baseline_position_pct
+            ),
+            "maximum_sector_pct": decimal_text(settings.allocation.maximum_sector_pct),
+            "maximum_theme_pct": decimal_text(settings.allocation.maximum_theme_pct),
+            "cash_hurdle_score": decimal_text(settings.allocation.cash_hurdle_score),
+            "minimum_confidence": settings.allocation.minimum_confidence,
+            "minimum_diversified_candidates": settings.allocation.minimum_diversified_candidates,
+            "maximum_assessment_age_days": settings.allocation.maximum_assessment_age_days,
+            "maximum_deployment_per_run_pct": decimal_text(
+                settings.allocation.maximum_deployment_per_run_pct
+            ),
+            "minimum_trade_pct": decimal_text(settings.allocation.minimum_trade_pct),
+            "rebalance_band_pct": decimal_text(settings.allocation.rebalance_band_pct),
+            "maximum_single_position_pct": decimal_text(settings.risk.maximum_single_position_pct),
+            "maximum_total_gross_exposure_pct": decimal_text(
+                settings.risk.maximum_total_gross_exposure_pct
+            ),
+        },
+        "candidate_inputs": [
+            {
+                "security_id": candidate.security_id,
+                "relationship_id": candidate.relationship_id,
+                "themes": list(candidate.themes),
+                "price": decimal_text(candidate.price) if candidate.price is not None else "",
+                "fx_rate": (
+                    decimal_text(candidate.fx_rate) if candidate.fx_rate is not None else ""
+                ),
+                "effective_score": decimal_text(candidate.score.effective_score),
+                "candidate_edge": decimal_text(candidate.score.candidate_edge),
+                "eligible": candidate.eligible,
+                "reasons": sorted(set(candidate.reasons)),
+                "rank": candidate.rank,
+                "allocation": decimal_text(candidate.allocation),
+            }
+            for candidate in sorted(candidates, key=lambda value: value.security_id)
+        ],
+        "securities": [dict(securities[key]) for key in sorted(candidate_ids)],
+        "assessments": [dict(assessments[key]) for key in sorted(assessments)],
+        "portfolio": read_table(repository_root, "portfolio"),
+        "orders": read_table(repository_root, "orders"),
+        "order_legs": read_table(repository_root, "order_legs"),
+        "relationships": [dict(row) for key in sorted(relationships) for row in relationships[key]],
+    }
+    plan_id = stable_id("allocation_plan", content_hash(input_identity))
+    rows = _build_rows(
+        candidates,
+        settings,
+        equity,
+        portfolio,
+        pending,
+        plan_id=plan_id,
+        run_id=run_id,
+        as_of=instant,
+        deployment_budget=deployment_budget,
+        diversified=(len(eligible) >= settings.allocation.minimum_diversified_candidates),
+    )
+    if settings.allocation.mode == "disabled":
+        rows = []
+    write_table(repository_root, "allocation_targets", rows)
+    if rows:
+        append_unique(
+            repository_root,
+            "allocation_history",
+            rows,
+            key_columns=("allocation_plan_id", "security_id"),
+        )
+    operations_created: tuple[str, ...] = ()
+    if settings.allocation.mode == "active":
+        operations_created = _enqueue_targets(
+            repository_root,
+            settings,
+            {candidate.security_id: candidate for candidate in candidates},
+            rows,
+            now=instant,
+        )
+    capital_allocated = sum(
+        (
+            max(required_decimal(row["delta_value_base"], label="allocation delta"), Decimal("0"))
+            for row in rows
+        ),
+        Decimal("0"),
+    )
+    capital_unallocated = max(target_exposure_gap - capital_allocated, Decimal("0"))
+    unallocated_reasons: set[str] = set()
+    if capital_unallocated > 0:
+        if settings.allocation.mode == "disabled":
+            unallocated_reasons.add("allocation_disabled")
+        if not eligible:
+            unallocated_reasons.add("insufficient_eligible_candidates")
+        if len(eligible) < settings.allocation.minimum_diversified_candidates:
+            unallocated_reasons.add("insufficient_diversification")
+        if eligible:
+            if available_cash < target_exposure_gap:
+                unallocated_reasons.add("minimum_cash_reserve_or_pending_cash")
+            if remaining_baseline < target_exposure_gap:
+                unallocated_reasons.add("baseline_sleeve_cap")
+            if deployment_limit < min(available_cash, target_exposure_gap, remaining_baseline):
+                unallocated_reasons.add("deployment_limit")
+        if capital_allocated < diversified_budget:
+            unallocated_reasons.add("candidate_or_rounding_constraints")
+    result = AllocationPlanResult(
+        allocation_plan_id=plan_id,
+        run_id=run_id,
+        as_of=format_timestamp(instant),
+        mode=settings.allocation.mode,
+        equity_base=decimal_text(equity),
+        cash_base=decimal_text(replay.cash_base),
+        minimum_cash_reserve_base=decimal_text(cash_reserve),
+        current_gross_exposure_base=decimal_text(portfolio.gross_total),
+        target_invested_exposure_base=decimal_text(
+            equity * settings.allocation.target_invested_pct / ONE_HUNDRED
+        ),
+        current_conviction_exposure_base=decimal_text(portfolio.conviction_total),
+        current_baseline_exposure_base=decimal_text(portfolio.baseline_total),
+        maximum_baseline_exposure_base=decimal_text(
+            equity * settings.allocation.maximum_baseline_sleeve_pct / ONE_HUNDRED
+        ),
+        pending_gross_exposure_base=decimal_text(pending.gross_total),
+        deployment_budget_base=decimal_text(deployment_budget),
+        diversified_budget_base=decimal_text(diversified_budget),
+        capital_allocated_base=decimal_text(capital_allocated),
+        capital_unallocated_base=decimal_text(capital_unallocated),
+        unallocated_reasons=tuple(sorted(unallocated_reasons)),
+        eligible_candidate_count=len(eligible),
+        excluded_candidate_count=len(candidates) - len(eligible),
+        target_count=len(rows),
+        operations_created=operations_created,
+    )
+    run_directory = repository_root / "data" / "runs" / run_id
+    if run_directory.is_symlink():
+        raise AllocationError("allocation run directory must not be a symlink")
+    run_directory.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(
+        run_directory / "allocation_plan.json",
+        {"allocation_plan_version": 1, **asdict(result)},
+        allowed_root=repository_root,
+    )
+    return result
+
+
+def latest_allocation_target(repository_root: Path, strategy_id: str) -> Mapping[str, str] | None:
+    """Return a strategy's target only from the current generated plan."""
+
+    matches = [
+        row
+        for row in read_table(repository_root, "allocation_targets")
+        if row["strategy_id"] == strategy_id
+    ]
+    if len(matches) > 1:
+        raise AllocationError(f"strategy has duplicate current allocation targets: {strategy_id}")
+    return matches[0] if matches else None
+
+
+def validate_allocation_state(repository_root: Path, settings: Settings) -> list[str]:
+    """Validate assessment, strategy-sleeve, target, and immutable-plan relationships."""
+
+    from papertrader.research import (
+        ASSESSMENT_ELIGIBILITY,
+        HARD_BLOCKERS,
+        SOFT_GAPS,
+    )
+
+    errors: list[str] = []
+    try:
+        securities = {row["security_id"] for row in read_table(repository_root, "securities")}
+        sources = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+        assessments = read_table(repository_root, "security_assessments")
+        targets = read_table(repository_root, "allocation_targets")
+        history = read_table(repository_root, "allocation_history")
+        strategies = read_table(repository_root, "strategies")
+        strategy_legs = read_table(repository_root, "strategy_legs")
+        portfolio = read_table(repository_root, "portfolio")
+        orders = read_table(repository_root, "orders")
+        order_legs = read_table(repository_root, "order_legs")
+    except (CanonicalValueError, OSError) as exc:
+        return [str(exc)]
+    seen_assessments: set[str] = set()
+    for row in assessments:
+        security_id = row["security_id"]
+        if security_id in seen_assessments:
+            errors.append(f"duplicate security assessment: {security_id}")
+        seen_assessments.add(security_id)
+        if security_id not in securities:
+            errors.append(f"assessment references missing security: {security_id}")
+        try:
+            score_assessment(row, settings.allocation.cash_hurdle_score)
+            assessed = parse_timestamp(row["assessed_at"])
+            expires = parse_timestamp(row["expires_at"])
+            assert assessed is not None and expires is not None
+            if row["assessed_at"] != format_timestamp(assessed) or row[
+                "expires_at"
+            ] != format_timestamp(expires):
+                errors.append(f"assessment timestamps are not canonical: {security_id}")
+            if expires <= assessed:
+                errors.append(f"assessment expiration does not follow assessment: {security_id}")
+            blockers = tuple(part for part in row["hard_blockers"].split("|") if part)
+            gaps = tuple(part for part in row["soft_gaps"].split("|") if part)
+            if row["eligibility"] not in ASSESSMENT_ELIGIBILITY:
+                errors.append(f"assessment eligibility is invalid: {security_id}")
+            if blockers != tuple(sorted(set(blockers))) or set(blockers) - HARD_BLOCKERS:
+                errors.append(f"assessment hard blockers are invalid: {security_id}")
+            if gaps != tuple(sorted(set(gaps))) or set(gaps) - SOFT_GAPS:
+                errors.append(f"assessment soft gaps are invalid: {security_id}")
+            if bool(blockers) != (row["eligibility"] == "ineligible"):
+                errors.append(f"assessment hard-blocker disposition is inconsistent: {security_id}")
+            required_decimal(row["downside_pct"], label="downside_pct")
+            required_decimal(row["base_upside_pct"], label="base_upside_pct")
+            horizon = int(row["valuation_horizon_months"])
+            if horizon <= 0 or row["valuation_horizon_months"] != str(horizon):
+                raise ValueError("non-positive horizon")
+            if not SAFE_RUN_ID.fullmatch(row["run_id"]):
+                raise ValueError("unsafe run ID")
+            evidence = tuple(part for part in row["evidence_refs"].split("|") if part)
+            if not evidence or evidence != tuple(sorted(set(evidence))):
+                raise ValueError("invalid evidence references")
+            for source_id in evidence:
+                source = sources.get(source_id)
+                if source is None:
+                    raise ValueError(f"unregistered evidence {source_id}")
+                checked = parse_timestamp(source["last_checked_at"])
+                first_seen = parse_timestamp(source["first_seen_at"])
+                changed = parse_timestamp(source["last_changed_at"])
+                if (
+                    checked is None
+                    or first_seen is None
+                    or changed is None
+                    or first_seen > assessed
+                    or changed > assessed
+                    or (
+                        checked <= assessed
+                        and assessed - checked
+                        > timedelta(days=settings.allocation.maximum_assessment_age_days)
+                    )
+                    or source["status"] not in {"available", "ok", "current"}
+                ):
+                    raise ValueError(f"unavailable or stale evidence {source_id}")
+        except (AllocationError, CanonicalValueError, ValueError) as exc:
+            errors.append(f"invalid assessment {security_id}: {exc}")
+    strategy_by_id: dict[str, Mapping[str, str]] = {}
+    for row in strategies:
+        if row["strategy_id"] in strategy_by_id:
+            errors.append(f"duplicate strategy: {row['strategy_id']}")
+        strategy_by_id[row["strategy_id"]] = row
+        if row["sleeve"] not in {"conviction", "baseline"}:
+            errors.append(f"strategy has invalid sleeve: {row['strategy_id']}")
+        if row["sleeve"] == "conviction" and row["allocation_plan_id"]:
+            errors.append(f"conviction strategy references allocation plan: {row['strategy_id']}")
+        if row["sleeve"] == "baseline" and (
+            not row["allocation_plan_id"]
+            or row["strategy_id"] != baseline_strategy_id(row["security_id"])
+        ):
+            errors.append(f"baseline strategy identity is invalid: {row['strategy_id']}")
+        if row["sleeve"] == "baseline":
+            if row["security_id"] not in seen_assessments:
+                errors.append(f"baseline strategy lacks assessment: {row['strategy_id']}")
+            try:
+                risk_budget = required_decimal(
+                    row["risk_budget_pct"], label="baseline strategy risk budget"
+                )
+                if risk_budget > settings.allocation.maximum_baseline_position_pct:
+                    raise ValueError("risk budget exceeds baseline position cap")
+            except (CanonicalValueError, ValueError) as exc:
+                errors.append(f"invalid baseline strategy {row['strategy_id']}: {exc}")
+            legs = [leg for leg in strategy_legs if leg["strategy_id"] == row["strategy_id"]]
+            if len(legs) != 1 or any(
+                leg["action"] != "buy"
+                or leg["side"] != "long"
+                or leg["instrument_type"] != "equity"
+                or leg["security_id"] != row["security_id"]
+                for leg in legs
+            ):
+                errors.append(f"baseline strategy legs are invalid: {row['strategy_id']}")
+    sleeves_by_identity: defaultdict[tuple[str, str], set[str]] = defaultdict(set)
+    for row in portfolio:
+        identity = (row["security_id"], row["provider_contract_id"])
+        for strategy_id in (part for part in row["strategy_ids"].split("|") if part):
+            strategy = strategy_by_id.get(strategy_id)
+            if strategy is None:
+                errors.append(f"portfolio position references missing strategy: {strategy_id}")
+                continue
+            sleeves_by_identity[identity].add(strategy["sleeve"])
+    pending_orders = {
+        row["order_id"]: row for row in orders if row["status"] in {"pending", "partially_filled"}
+    }
+    for row in order_legs:
+        order = pending_orders.get(row["order_id"])
+        if order is None:
+            continue
+        strategy = strategy_by_id.get(order["strategy_id"])
+        if strategy is None:
+            errors.append(f"pending order references missing strategy: {order['strategy_id']}")
+            continue
+        sleeves_by_identity[(row["security_id"], row["provider_contract_id"])].add(
+            strategy["sleeve"]
+        )
+    for identity, sleeves in sorted(sleeves_by_identity.items()):
+        if len(sleeves) > 1:
+            errors.append(f"instrument exposure mixes allocation sleeves: {identity!r}")
+    plan_ids = {row["allocation_plan_id"] for row in targets}
+    if len(plan_ids) > 1:
+        errors.append("current allocation targets contain multiple plans")
+    seen_targets: set[str] = set()
+    target_plan_identity: set[tuple[str, str, str]] = set()
+    for row in targets:
+        security_id = row["security_id"]
+        if security_id in seen_targets:
+            errors.append(f"duplicate current allocation target: {security_id}")
+        seen_targets.add(security_id)
+        if security_id not in securities:
+            errors.append(f"allocation target references missing security: {security_id}")
+        if row["strategy_id"] != baseline_strategy_id(security_id) or row["sleeve"] != "baseline":
+            errors.append(f"allocation target strategy identity is invalid: {security_id}")
+        try:
+            as_of = parse_timestamp(row["as_of"])
+            assert as_of is not None
+            if row["as_of"] != format_timestamp(as_of):
+                raise ValueError("non-canonical plan timestamp")
+            if not SAFE_RUN_ID.fullmatch(row["allocation_plan_id"]) or not SAFE_RUN_ID.fullmatch(
+                row["run_id"]
+            ):
+                raise ValueError("unsafe plan or run ID")
+            if row["rank"] and int(row["rank"]) <= 0:
+                raise ValueError("rank is not positive")
+            target_plan_identity.add((row["allocation_plan_id"], row["run_id"], row["as_of"]))
+        except (CanonicalValueError, ValueError) as exc:
+            errors.append(f"invalid allocation target identity {security_id}: {exc}")
+        if row["disposition"] not in {
+            "open",
+            "increase",
+            "hold",
+            "reduce",
+            "close",
+            "excluded",
+            "below_minimum_trade",
+        }:
+            errors.append(f"allocation target disposition is invalid: {security_id}")
+        try:
+            target_weight = required_decimal(row["target_weight_pct"], label="target weight")
+            target_value = required_decimal(row["target_value_base"], label="target value")
+            current_weight = required_decimal(row["current_weight_pct"], label="current weight")
+            required_decimal(row["pending_weight_pct"], label="pending weight")
+            required_decimal(row["delta_value_base"], label="target delta")
+            required_decimal(row["effective_score"], label="effective score")
+            edge = required_decimal(row["candidate_edge"], label="candidate edge")
+            if (
+                target_weight < 0
+                or target_weight > settings.allocation.maximum_baseline_position_pct
+                or target_value < 0
+                or current_weight < 0
+                or edge < 0
+            ):
+                raise ValueError("target numeric limit")
+        except (CanonicalValueError, ValueError) as exc:
+            errors.append(f"invalid allocation target {security_id}: {exc}")
+    if len(target_plan_identity) > 1:
+        errors.append("current allocation targets do not share one plan identity")
+    seen_history: set[tuple[str, str]] = set()
+    for row in history:
+        key = (row["allocation_plan_id"], row["security_id"])
+        if key in seen_history:
+            errors.append(f"duplicate allocation history row: {key!r}")
+        seen_history.add(key)
+        try:
+            if row["security_id"] not in securities:
+                raise ValueError("missing security")
+            if (
+                row["strategy_id"] != baseline_strategy_id(row["security_id"])
+                or row["sleeve"] != "baseline"
+            ):
+                raise ValueError("invalid strategy identity")
+            if not SAFE_RUN_ID.fullmatch(row["allocation_plan_id"]) or not SAFE_RUN_ID.fullmatch(
+                row["run_id"]
+            ):
+                raise ValueError("unsafe plan or run ID")
+            as_of = parse_timestamp(row["as_of"])
+            assert as_of is not None
+            if row["as_of"] != format_timestamp(as_of):
+                raise ValueError("non-canonical timestamp")
+            if row["rank"] and int(row["rank"]) <= 0:
+                raise ValueError("invalid rank")
+            if row["disposition"] not in {
+                "open",
+                "increase",
+                "hold",
+                "reduce",
+                "close",
+                "excluded",
+                "below_minimum_trade",
+            }:
+                raise ValueError("invalid disposition")
+            target_weight = required_decimal(
+                row["target_weight_pct"], label="history target weight"
+            )
+            target_value = required_decimal(row["target_value_base"], label="history target value")
+            edge = required_decimal(row["candidate_edge"], label="history edge")
+            for field in (
+                "effective_score",
+                "current_weight_pct",
+                "pending_weight_pct",
+                "delta_value_base",
+            ):
+                required_decimal(row[field], label=f"history {field}")
+            if (
+                target_weight < 0
+                or target_weight > settings.allocation.maximum_baseline_position_pct
+                or target_value < 0
+                or edge < 0
+            ):
+                raise ValueError("numeric limit")
+            assessment_as_of = parse_timestamp(row["assessment_as_of"], allow_empty=True)
+            if assessment_as_of is not None and row["assessment_as_of"] != format_timestamp(
+                assessment_as_of
+            ):
+                raise ValueError("non-canonical assessment timestamp")
+        except (AllocationError, CanonicalValueError, ValueError) as exc:
+            errors.append(f"invalid allocation history {key!r}: {exc}")
+    current_history = {(row["allocation_plan_id"], row["security_id"]): row for row in history}
+    for row in targets:
+        if current_history.get((row["allocation_plan_id"], row["security_id"])) != row:
+            errors.append(
+                f"current allocation target lacks identical immutable history: {row['security_id']}"
+            )
+    return errors
+
+
+__all__ = [
+    "AllocationError",
+    "AllocationPlanResult",
+    "AssessmentScore",
+    "baseline_strategy_id",
+    "calculate_assessment_score",
+    "latest_allocation_target",
+    "plan_allocation",
+    "score_assessment",
+    "validate_allocation_state",
+]

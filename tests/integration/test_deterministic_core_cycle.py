@@ -80,6 +80,8 @@ def _strategy() -> dict[str, str]:
         "exit_rule": "Exit outside this fixture.",
         "invalidation": "The fixture fails validation.",
         "risk_budget_pct": "1",
+        "sleeve": "conviction",
+        "allocation_plan_id": "",
         "not_before": "",
         "expires_at": "",
         "research_page": "",
@@ -177,6 +179,29 @@ def test_complete_core_cycle_is_replay_safe(
         contract_multiplier=Decimal("1"),
         limit_price=None,
         currency="USD",
+    )
+    write_table(
+        sandbox_repository,
+        "strategy_legs",
+        [
+            {
+                "strategy_id": "strategy_cycle",
+                "leg_id": leg.leg_id,
+                "action": leg.action,
+                "side": leg.side,
+                "instrument_type": leg.instrument_type,
+                "security_id": leg.security_id,
+                "provider_contract_id": leg.provider_contract_id,
+                "option_type": leg.option_type,
+                "expiry": "",
+                "strike": "",
+                "quantity": "10",
+                "contract_multiplier": "1",
+                "order_type": "market",
+                "limit_price": "",
+                "currency": leg.currency,
+            }
+        ],
     )
     order_reference = _reference(prices[-1].close, NOW)
     order_id, order_created, _ = create_paper_order(

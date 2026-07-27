@@ -16,7 +16,7 @@ import yfinance as yf  # type: ignore[import-untyped]
 
 from papertrader.atomic_io import atomic_write_csv
 from papertrader.config import Settings
-from papertrader.models import MarketBar, PriceBar, SecurityIdentity
+from papertrader.models import FxRate, MarketBar, PriceBar, SecurityIdentity
 from papertrader.tables import read_csv, read_table, write_table
 from papertrader.utils import (
     CanonicalValueError,
@@ -45,7 +45,16 @@ PRICE_COLUMNS = (
     "retrieved_at",
     "source",
 )
+FX_COLUMNS = (
+    "date",
+    "currency",
+    "base_currency",
+    "rate_to_base",
+    "retrieved_at",
+    "source",
+)
 SAFE_SECURITY_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+ISO_CURRENCY = re.compile(r"^[A-Z]{3}$")
 
 
 class MarketDataError(RuntimeError):
@@ -67,6 +76,22 @@ class MarketDataProvider(Protocol):
         """Return provider-native daily history with actions."""
 
 
+class FxMarketDataProvider(Protocol):
+    """Injectable provider boundary for one daily currency pair."""
+
+    name: str
+
+    def fx_history(
+        self,
+        currency: str,
+        base_currency: str,
+        *,
+        start: date,
+        end: date,
+    ) -> pd.DataFrame:
+        """Return provider-native daily rates expressed in base currency."""
+
+
 class YFinanceProvider:
     """Thin yfinance adapter; all provider values are normalized after retrieval."""
 
@@ -86,6 +111,27 @@ class YFinanceProvider:
             interval="1d",
             auto_adjust=False,
             actions=True,
+            repair=True,
+            raise_errors=True,
+        )
+
+    def fx_history(
+        self,
+        currency: str,
+        base_currency: str,
+        *,
+        start: date,
+        end: date,
+    ) -> pd.DataFrame:
+        """Retrieve a direct currency-to-base conversion pair from yfinance."""
+
+        ticker = yf.Ticker(f"{currency}{base_currency}=X")
+        return ticker.history(
+            start=start.isoformat(),
+            end=end.isoformat(),
+            interval="1d",
+            auto_adjust=False,
+            actions=False,
             repair=True,
             raise_errors=True,
         )
@@ -460,6 +506,265 @@ def price_content_hash(bars: Sequence[PriceBar]) -> str:
     return content_hash(values)
 
 
+def _currency(value: str, *, label: str) -> str:
+    if not ISO_CURRENCY.fullmatch(value):
+        raise MarketDataError(f"{label} must be an uppercase ISO currency: {value!r}")
+    return value
+
+
+def fx_cache_path(repository_root: Path, currency: str, base_currency: str) -> Path:
+    """Return the canonical committed rolling FX cache path."""
+
+    source = _currency(currency, label="currency")
+    target = _currency(base_currency, label="base_currency")
+    if source == target:
+        raise MarketDataError("base currency does not require an FX cache")
+    return repository_root / "data" / "market" / "fx" / f"{source}_{target}.csv"
+
+
+def _validate_fx_rate(rate: FxRate) -> None:
+    _currency(rate.currency, label="currency")
+    _currency(rate.base_currency, label="base_currency")
+    if rate.currency == rate.base_currency:
+        raise MarketDataError("FX cache currencies must differ")
+    if not rate.rate_to_base.is_finite() or rate.rate_to_base <= 0:
+        raise MarketDataError(f"non-positive FX rate on {rate.date}")
+    ensure_utc(rate.retrieved_at)
+    if not rate.source or any(marker in rate.source for marker in "\r\n"):
+        raise MarketDataError(f"FX rate lacks a source on {rate.date}")
+
+
+def fx_rate_row(rate: FxRate) -> dict[str, str]:
+    """Serialize a daily FX conversion using canonical decimal and UTC text."""
+
+    _validate_fx_rate(rate)
+    return {
+        "date": rate.date.isoformat(),
+        "currency": rate.currency,
+        "base_currency": rate.base_currency,
+        "rate_to_base": decimal_text(rate.rate_to_base),
+        "retrieved_at": format_timestamp(rate.retrieved_at),
+        "source": rate.source,
+    }
+
+
+def _fx_rate_from_row(row: Mapping[str, str]) -> FxRate:
+    retrieved_at = parse_timestamp(row["retrieved_at"])
+    assert retrieved_at is not None
+    rate = FxRate(
+        date=parse_iso_date(row["date"]),
+        currency=row["currency"],
+        base_currency=row["base_currency"],
+        rate_to_base=required_decimal(row["rate_to_base"], label="rate_to_base"),
+        retrieved_at=retrieved_at,
+        source=row["source"],
+    )
+    _validate_fx_rate(rate)
+    return rate
+
+
+def read_fx_cache(repository_root: Path, currency: str, base_currency: str) -> tuple[FxRate, ...]:
+    """Read one currency conversion cache, or return no rates when unseeded."""
+
+    path = fx_cache_path(repository_root, currency, base_currency)
+    if not path.exists():
+        return ()
+    rates = tuple(_fx_rate_from_row(row) for row in read_csv(path, FX_COLUMNS))
+    expected = (currency, base_currency)
+    if any((rate.currency, rate.base_currency) != expected for rate in rates):
+        raise MarketDataError(f"FX cache identity differs from path {path.name}")
+    if any(rates[index - 1].date >= rates[index].date for index in range(1, len(rates))):
+        raise MarketDataError("FX cache must be strictly ascending and deduplicated")
+    return rates
+
+
+def write_fx_cache(
+    repository_root: Path,
+    currency: str,
+    base_currency: str,
+    rates: Sequence[FxRate],
+) -> None:
+    """Atomically replace one validated rolling FX cache."""
+
+    path = fx_cache_path(repository_root, currency, base_currency)
+    for rate in rates:
+        _validate_fx_rate(rate)
+        if (rate.currency, rate.base_currency) != (currency, base_currency):
+            raise MarketDataError("FX rate identity differs from cache path")
+    if any(rates[index - 1].date >= rates[index].date for index in range(1, len(rates))):
+        raise MarketDataError("FX cache must be strictly ascending and deduplicated")
+    atomic_write_csv(
+        path,
+        FX_COLUMNS,
+        (fx_rate_row(rate) for rate in rates),
+        allowed_root=repository_root,
+    )
+
+
+def merge_fx_rates(
+    existing: Sequence[FxRate],
+    incoming: Sequence[FxRate],
+    *,
+    retention_days: int,
+) -> tuple[FxRate, ...]:
+    """Merge daily conversion rates and retain one rolling calendar year."""
+
+    if retention_days <= 0:
+        raise CanonicalValueError("FX retention must be positive")
+    all_rates = [*existing, *incoming]
+    for rate in all_rates:
+        _validate_fx_rate(rate)
+    identities = {(rate.currency, rate.base_currency) for rate in all_rates}
+    if len(identities) > 1:
+        raise MarketDataError("FX cache contains mixed currency identities")
+    by_date: dict[date, FxRate] = {}
+    for rate in existing:
+        if rate.date in by_date:
+            raise MarketDataError(f"existing FX cache contains duplicate date {rate.date}")
+        by_date[rate.date] = rate
+    incoming_dates: set[date] = set()
+    newest_incoming = max((rate.date for rate in incoming), default=None)
+    for rate in incoming:
+        if rate.date in incoming_dates:
+            raise MarketDataError(f"incoming FX rates contain duplicate date {rate.date}")
+        incoming_dates.add(rate.date)
+        previous = by_date.get(rate.date)
+        by_date[rate.date] = (
+            previous
+            if previous
+            and previous.rate_to_base == rate.rate_to_base
+            and rate.date != newest_incoming
+            else rate
+        )
+    if not by_date:
+        return ()
+    newest = max(by_date)
+    cutoff = newest - timedelta(days=retention_days)
+    return tuple(by_date[value] for value in sorted(by_date) if value >= cutoff)
+
+
+def normalize_fx_history(
+    frame: pd.DataFrame,
+    currency: str,
+    base_currency: str,
+    *,
+    retrieved_at: datetime,
+    source: str,
+) -> tuple[FxRate, ...]:
+    """Normalize direct provider closes into currency-to-base Decimal rates."""
+
+    source_currency = _currency(currency, label="currency")
+    target_currency = _currency(base_currency, label="base_currency")
+    if source_currency == target_currency:
+        raise MarketDataError("cannot normalize an identity FX pair")
+    if frame.empty:
+        raise MarketDataError(f"provider returned no FX rates for {currency}/{base_currency}")
+    if isinstance(frame.columns, pd.MultiIndex):
+        frame = frame.copy()
+        frame.columns = frame.columns.get_level_values(0)
+    if "Close" not in frame.columns:
+        raise MarketDataError("provider FX history is missing Close")
+    instant = ensure_utc(retrieved_at)
+    by_date: dict[date, FxRate] = {}
+    for raw_index, row in frame.iterrows():
+        try:
+            rate_date = pd.Timestamp(raw_index).date()
+        except (TypeError, ValueError) as exc:
+            raise MarketDataError(f"invalid provider FX date index: {raw_index!r}") from exc
+        if rate_date.weekday() >= 5 or rate_date > instant.date():
+            continue
+        if rate_date in by_date:
+            raise MarketDataError(f"provider returned duplicate FX date {rate_date}")
+        value = _provider_decimal(row["Close"], label="FX Close")
+        if value <= 0:
+            raise MarketDataError(f"provider returned non-positive FX rate on {rate_date}")
+        by_date[rate_date] = FxRate(
+            date=rate_date,
+            currency=source_currency,
+            base_currency=target_currency,
+            rate_to_base=value,
+            retrieved_at=instant,
+            source=source,
+        )
+    if not by_date:
+        raise MarketDataError(f"provider returned no valid FX rates for {currency}/{base_currency}")
+    return tuple(by_date[value] for value in sorted(by_date))
+
+
+def latest_fx_rate(
+    repository_root: Path,
+    currency: str,
+    base_currency: str,
+    *,
+    now: datetime,
+    maximum_age: timedelta,
+) -> Decimal:
+    """Return one fresh local-to-base rate, failing closed when missing or stale."""
+
+    if currency == base_currency:
+        return Decimal("1")
+    rates = read_fx_cache(repository_root, currency, base_currency)
+    if not rates:
+        raise MarketDataError(f"missing FX cache for {currency}/{base_currency}")
+    latest = rates[-1]
+    age = ensure_utc(now) - ensure_utc(latest.retrieved_at)
+    if age < timedelta(0) or age > maximum_age:
+        raise MarketDataError(f"stale FX cache for {currency}/{base_currency}")
+    return latest.rate_to_base
+
+
+def fx_rates_for_actions(
+    repository_root: Path,
+    currencies: Sequence[str],
+    base_currency: str,
+    *,
+    through: date | None = None,
+) -> dict[tuple[str, date], Decimal]:
+    """Expand committed daily FX caches for deterministic corporate-action replay."""
+
+    output: dict[tuple[str, date], Decimal] = {}
+    for currency in sorted(set(currencies)):
+        if currency == base_currency:
+            continue
+        rates = read_fx_cache(repository_root, currency, base_currency)
+        if not rates:
+            continue
+        final_date = through or rates[-1].date
+        by_date = {rate.date: rate.rate_to_base for rate in rates}
+        current_rate: Decimal | None = None
+        cursor = rates[0].date
+        while cursor <= final_date:
+            current_rate = by_date.get(cursor, current_rate)
+            if current_rate is not None:
+                output[(currency, cursor)] = current_rate
+            cursor += timedelta(days=1)
+    return output
+
+
+def validate_fx_data(repository_root: Path, settings: Settings) -> list[str]:
+    """Validate every committed FX cache identity and Decimal rate sequence."""
+
+    errors: list[str] = []
+    directory = repository_root / "data" / "market" / "fx"
+    for path in sorted(directory.glob("*.csv")):
+        stem = path.stem.split("_")
+        if len(stem) != 2:
+            errors.append(f"invalid FX cache filename: {path.name}")
+            continue
+        currency, base_currency = stem
+        if base_currency != settings.portfolio.base_currency:
+            errors.append(f"FX cache has wrong base currency: {path.name}")
+            continue
+        if currency not in settings.risk.allowed_currencies or currency == base_currency:
+            errors.append(f"FX cache has unsupported currency: {path.name}")
+            continue
+        try:
+            read_fx_cache(repository_root, currency, base_currency)
+        except (CanonicalValueError, MarketDataError, OSError) as exc:
+            errors.append(f"invalid FX cache {path.name}: {exc}")
+    return errors
+
+
 def _latest_row(
     identity: SecurityIdentity,
     bar: PriceBar | None,
@@ -485,6 +790,66 @@ def _latest_row(
         "status": status,
         "error": " ".join(error.split()),
     }
+
+
+def update_fx_data(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    provider: FxMarketDataProvider | None = None,
+    now: datetime | None = None,
+    sleeper: Callable[[float], None] = time.sleep,
+) -> tuple[str, ...]:
+    """Retrieve every allowed non-base conversion pair sequentially."""
+
+    selected_provider = provider or YFinanceProvider()
+    if selected_provider.name != settings.market_data.provider:
+        raise MarketDataError(
+            f"configured provider is {settings.market_data.provider}, got {selected_provider.name}"
+        )
+    instant = ensure_utc(now or utc_now())
+    base_currency = settings.portfolio.base_currency
+    errors: list[str] = []
+    for currency in sorted(set(settings.risk.allowed_currencies) - {base_currency}):
+        previous = read_fx_cache(repository_root, currency, base_currency)
+        start = (
+            previous[-1].date - timedelta(days=7)
+            if previous
+            else instant.date() - timedelta(days=settings.market_data.price_retention_days + 10)
+        )
+        end = instant.date() + timedelta(days=1)
+        incoming: tuple[FxRate, ...] = ()
+        failure = ""
+        for attempt in range(1, settings.market_data.retrieval_retries + 1):
+            try:
+                frame = selected_provider.fx_history(
+                    currency,
+                    base_currency,
+                    start=start,
+                    end=end,
+                )
+                incoming = normalize_fx_history(
+                    frame,
+                    currency,
+                    base_currency,
+                    retrieved_at=instant,
+                    source=selected_provider.name,
+                )
+                break
+            except Exception as exc:  # provider libraries expose varied runtime errors
+                failure = f"{type(exc).__name__}: {exc}"
+                if attempt < settings.market_data.retrieval_retries:
+                    sleeper(float(2 ** (attempt - 1)))
+        if not incoming:
+            errors.append(f"FX {currency}/{base_currency}: {failure}")
+            continue
+        merged = merge_fx_rates(
+            previous,
+            incoming,
+            retention_days=settings.market_data.price_retention_days,
+        )
+        write_fx_cache(repository_root, currency, base_currency, merged)
+    return tuple(errors)
 
 
 def update_market_data(
@@ -583,6 +948,17 @@ def update_market_data(
             )
         )
     write_table(repository_root, "market_latest", latest_rows)
+    fx_method = getattr(selected_provider, "fx_history", None)
+    if callable(fx_method):
+        errors.extend(
+            update_fx_data(
+                repository_root,
+                settings,
+                provider=cast(FxMarketDataProvider, selected_provider),
+                now=retrieved_at,
+                sleeper=sleeper,
+            )
+        )
     return tuple(errors)
 
 
