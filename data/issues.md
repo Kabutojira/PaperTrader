@@ -10,3 +10,4 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_8063efca3ea5402f7588** — Daily preparation degraded: security_cc4dcb8f002b61dffe00 | 2026-07-27T22:30:44Z | deterministic-controller |  |
 | warning | **issue_9141a7a5538fd458f54f** — Telegram delivery failed: d3c816d22ba7ec5bb52ac8278b8f231f68dace74 | 2026-07-24T22:33:25Z | delivery |  |
 | warning | **issue_9b4cbf2dec47a2d5f28b** — Daily preparation degraded: security_9d4049ed6669a52815d6 | 2026-07-27T22:30:44Z | deterministic-controller |  |
+| warning | **issue_d86e39a339fa322f40f1** — Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75 | 2026-07-27T23:18:54Z | delivery |  |
