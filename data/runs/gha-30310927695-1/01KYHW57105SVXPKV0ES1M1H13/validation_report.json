@@ -1,0 +1,24 @@
+{
+  "changed_paths": [
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-earnings-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-earnings.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v3.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v4.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-security-anet-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6f9a1450edceb9307c9a.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW57105SVXPKV0ES1M1H13",
+  "passed": true,
+  "run_id": "gha-30310927695-1",
+  "validation_version": 1
+}

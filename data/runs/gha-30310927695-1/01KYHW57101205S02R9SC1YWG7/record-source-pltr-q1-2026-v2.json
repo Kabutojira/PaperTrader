@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pltr_q1_2026_earnings",
+  "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm",
+  "source_type": "issuer-release",
+  "title": "Palantir Q1 2026 earnings release",
+  "publisher": "Palantir Technologies Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "8bb61e349de9184f719690ca3fa8ced024c879327c7859369cad587c847ae0e2",
+  "related_entity_ids": "idea_anduril_product_company_disruption|security_bdc2f87dadf134760c3a",
+  "checked_at": "2026-07-27T22:36:09Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q1 2026 revenue was USD 1.633 billion, GAAP operating margin was 46%, cash from operations was USD 899 million, and full-year revenue guidance was raised to USD 7.650-7.662 billion.",
+  "summary": "Palantir reported exceptional Q1 growth, GAAP profitability and cash generation, raised 2026 guidance, and USD 8.0 billion of cash and short-term Treasury securities; stock compensation and diluted shares remain material valuation inputs.",
+  "run_id": "gha-30310927695-1"
+}

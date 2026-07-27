@@ -1,0 +1,70 @@
+{
+  "operation_id": "01KYHW57103C5W6MMF3SR497D7",
+  "status": "succeeded",
+  "summary": "Revalidated GE Vernova with current SEC-filed Q2 2026 evidence, a fresh USD 996.57 market mark, and current USD/EUR data. Record orders, USD 176 billion backlog, margin expansion, cash generation, and net liquidity confirm direct power-bottleneck exposure. A bounded 12-month sensitivity gives USD 571.58 downside and USD 1,016.02 base values, implying -42.6% and +2.0%; the medium-confidence baseline assessment is uncompetitive with cash, so no conviction strategy follow-up was created.",
+  "evidence": [
+    {
+      "source": "GE Vernova Q2 2026 earnings release filed with the SEC",
+      "claim": "Q2 orders were USD 24.2 billion, backlog reached USD 176 billion, revenue was USD 11.1 billion, adjusted EBITDA was USD 1.2 billion, and free cash flow was USD 5.1 billion. Management raised 2026 revenue guidance to USD 45.5-46.5 billion and free-cash-flow guidance to USD 11.5-12.5 billion while retaining approximately USD 400 million of Wind EBITDA losses.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+      "observed_at": "2026-07-27T22:41:18Z",
+      "source_hash": "b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b"
+    },
+    {
+      "source": "GE Vernova Q2 2026 Form 10-Q",
+      "claim": "At June 30, cash and restricted cash were USD 13.120 billion, long-term borrowings were USD 2.794 billion, and Q2 diluted weighted-average shares were 270 million. The filing defines backlog as remaining performance obligations excluding orders cancellable without substantive penalty and identifies working capital as a material contributor to free cash flow.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm",
+      "observed_at": "2026-07-27T22:41:18Z",
+      "source_hash": "6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "GEV closed at USD 996.5700073242188 on 2026-07-27 with volume 3,280,330, and the USD/EUR rate was 0.8792999982833862 for 2026-07-27; both retrievals had status ok or current timestamps at 2026-07-27T22:30:44Z.",
+      "observed_at": "2026-07-27T22:30:44Z"
+    },
+    {
+      "source": "Bounded 12-month free-cash-flow sensitivity",
+      "claim": "Using 270 million diluted shares and USD 10.326 billion of net cash, an USD 8.0 billion normalized free-cash-flow downside case at 18x gives USD 571.58 per share (-42.6%), while an USD 11.0 billion base case at 24x gives USD 1,016.02 (+2.0%) versus the current mark. Base upside is below the configured 20% margin-of-safety requirement."
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/record-source-gev-q2-2026-10q.json",
+    "data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/record-source-gev-q2-2026-earnings.json",
+    "data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/upsert-assessment-gev-refresh.json",
+    "data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/upsert-security-gev-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "GE Vernova was revalidated with current Q2 issuer evidence and a fresh USD 996.57 mark. Record backlog and cash conversion confirm the operating thesis, but the bounded 12-month downside and base values are USD 571.58 and USD 1,016.02, so it remains medium-confidence watching with no conviction strategy follow-up."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/record-source-gev-q2-2026-earnings.json",
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/record-source-gev-q2-2026-10q.json",
+    "papertrader research security upsert --request data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/upsert-security-gev-refresh.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57103C5W6MMF3SR497D7/upsert-assessment-gev-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the payload, live lease, preflight identities for llm-wiki 2.1.0 plus the controller and security-research skills, and the immutable GEV/XNYS/USD/equity identity.",
+      "Confirmed exactly one matching security row with no duplicate immutable or provider identity.",
+      "Fetched, hashed, and registered the SEC-filed Q2 earnings release and Form 10-Q through two immutable source CLI requests; both evidence records are current for the assessment.",
+      "Confirmed fresh 2026-07-27 GEV market data and USD/EUR data with deterministic retrieval status ok.",
+      "Wrote exactly one current baseline assessment for this run with explicit component scores, risk penalty, downside, base upside, 12-month horizon, canonical soft gaps, and two registered evidence references.",
+      "Strict schema validation, queue validation, wiki lint, and integrity checks all returned OK.",
+      "No strategy was enqueued because the 2.0% base upside fails the configured 20% margin-of-safety threshold and the effective comparable score is below the cash hurdle.",
+      "No allocation target/history, order, fill, execution, cash, portfolio, or performance state was changed."
+    ]
+  }
+}

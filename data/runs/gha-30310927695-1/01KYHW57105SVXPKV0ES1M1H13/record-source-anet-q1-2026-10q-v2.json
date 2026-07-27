@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm",
+  "source_type": "filing",
+  "title": "Arista Networks Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "f71bc98384b0e63b1d0e2c175081998f089ecbd16740d46c311416f79ae801d8",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-07-27T23:10:54Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, 2026, cash and cash equivalents were USD 2.7895 billion and marketable securities were USD 9.5637 billion; diluted weighted-average shares were 1.2738 billion and non-cancellable purchase commitments remained a disclosed risk.",
+  "summary": "The filing confirms Arista's balance-sheet liquidity, diluted share base, customer concentration, supply commitments and competitive risks used in the bounded valuation and risk review.",
+  "run_id": "gha-30310927695-1"
+}

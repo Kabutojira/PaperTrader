@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rio_q2_2026_production",
+  "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results",
+  "canonical_url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results",
+  "source_type": "issuer_release",
+  "title": "Rio Tinto releases second quarter 2026 production results",
+  "publisher": "Rio Tinto plc",
+  "license": "",
+  "status": "available",
+  "content_hash": "05e4e506f3c5282f67b1b38172ebb850ad3bed928fcc1fea804b2fe3057abee8",
+  "related_entity_ids": "idea_critical_minerals_copper|security_1c055eb9b2bb1f5a8ff2",
+  "checked_at": "2026-07-27T22:59:15Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Rio Tinto reported a 3% year-over-year increase in first-half copper-equivalent production, 31% growth at Oyu Tolgoi, Q2 consolidated copper production of 213 kt down 7% year over year and sequentially, and unchanged 2026 copper guidance of 800-870 kt.",
+  "summary": "The issuer production release supplies current operating evidence for Rio Tinto's diversified commodity exposure, Oyu Tolgoi ramp, copper costs, quarterly copper output, and unchanged production guidance.",
+  "run_id": "gha-30310927695-1"
+}

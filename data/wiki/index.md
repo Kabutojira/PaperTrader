@@ -31,9 +31,9 @@ No open paper positions; the portfolio is currently held in cash.
 
 ### Latest suggestions and research conclusions
 
-- **2026-07-27T15:39:57Z — security research for [[securities/security_c9a37d277445869a8809|Roblox Corporation (RBLX)]]:** Revalidated Roblox with freshly registered Q1 2026 issuer evidence, a fresh USD 47.55 market mark, and current USD/EUR data. Engagement, bookings, and cash generation remain strong, but safety-driven guidance reductions, creator and infrastructure costs, GAAP losses, and dilution constrain value. A bounded 12-month free-cash-flow scenario gives USD 25.23 downside and USD 38.80 base values,...
-- **2026-07-27T14:12:09Z — opportunity research for `opportunity_1c07342ea13d0d8dc54b`:** Classified Enphase Energy's 25 June–24 July 2026 lower-Bollinger transition as risk, not a validated opportunity. The deterministic 22.262229% decline is material to the existing demand-reset thesis, but the lower-band breach is marginal, current issuer product releases do not explain the move, and no supportable fair-value range exists. Updated the maintained security research and created no...
-- **2026-07-27T14:06:24Z — opportunity research for `opportunity_faaa156712c5800ea197`:** Queue triage disposition
+- **2026-07-27T23:13:59Z — security research for [[securities/security_6f9a1450edceb9307c9a|Arista Networks, Inc. (ANET)]]:** Revalidated Arista Networks with registered Q1 2026 issuer and SEC evidence, a fresh USD 170.76 market mark, and current USD/EUR data. Revenue growth, margins, cash generation, and liquidity remain strong, but a bounded 12-month sensitivity gives USD 110.81 downside value (-35.1%) and USD 174.56 base value (+2.2%). The current comparable assessment is medium-confidence baseline eligible; no...
+- **2026-07-27T23:04:25Z — security research for [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto plc (RIO)]]:** Revalidated Rio Tinto's sponsored ADR with freshly registered Q2 2026 issuer production evidence, a fresh USD 91.95 market mark, and current USD/EUR data. Oyu Tolgoi's 31% first-half production growth and lower unit-cost guidance support the copper mechanism, but Q2 group copper output fell 7%, iron ore remains a major driver, and 29 July half-year financials were not yet available. Without...
+- **2026-07-27T22:56:26Z — security research for [[securities/security_a9eb9838940ef5ceaa0c|Fluence Energy, Inc. (FLNC)]]:** Revalidated Fluence Energy with current SEC-filed fiscal Q2 2026 evidence, a fresh USD 13.51 market mark, and current USD/EUR data. USD 5.6 billion of backlog confirms direct storage exposure, but 10.0% GAAP gross margin, first-half operating cash use of USD 347.9 million, project concentration, and thin adjusted-EBITDA guidance constrain quality. A bounded 12-month revenue sensitivity gives...
 
 <!-- papertrader-current-results:end -->
 
@@ -48,7 +48,9 @@ No open paper positions; the portfolio is currently held in cash.
 - [\[ENPH\] Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
+- [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101)
 - [\[SGML\] RSI oversold](inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee)

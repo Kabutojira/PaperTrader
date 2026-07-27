@@ -1,0 +1,23 @@
+{
+  "security_id": "security_6f9a1450edceb9307c9a",
+  "issuer_id": "issuer_29ad971dc8b75eac1b79",
+  "company_name": "Arista Networks, Inc.",
+  "instrument_name": "Arista Networks, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ANET",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ANET",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Computer Hardware",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "AI-networking growth, margins, cash and liquidity are strong, but concentration and an 18.3x current EV/revenue run-rate leave little valuation support.",
+  "research_page": "data/wiki/securities/security_6f9a1450edceb9307c9a.md",
+  "last_research_at": "2026-07-27T23:08:22Z",
+  "next_review_at": "2026-08-14T12:00:00Z",
+  "source": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx"
+}

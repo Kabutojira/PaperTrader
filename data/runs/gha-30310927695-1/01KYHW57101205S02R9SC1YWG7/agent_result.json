@@ -1,0 +1,71 @@
+{
+  "operation_id": "01KYHW57101205S02R9SC1YWG7",
+  "status": "succeeded",
+  "summary": "Revalidated Palantir with current registered Q1 2026 issuer evidence, a fresh USD 131.53 market mark, and one comparable baseline assessment. Growth, margins, cash generation, liquidity, and balance-sheet strength are exceptional, but a bounded 12-month sensitivity gives USD 58.32 downside and USD 106.71 base values, both below the mark. Anduril-linked economics remain undisclosed, so Palantir remains medium-confidence watching and no strategy follow-up was created.",
+  "evidence": [
+    {
+      "source": "Palantir Q1 2026 earnings release",
+      "claim": "Q1 revenue was USD 1.633 billion, GAAP operating margin was 46%, operating cash flow was USD 899 million, adjusted free cash flow was USD 925 million, full-year revenue guidance was USD 7.650-7.662 billion, and cash plus short-term U.S. Treasury securities was USD 8.0 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm",
+      "observed_at": "2026-07-27T22:36:09Z",
+      "source_hash": "8bb61e349de9184f719690ca3fa8ced024c879327c7859369cad587c847ae0e2"
+    },
+    {
+      "source": "data/market/latest.csv",
+      "claim": "The deterministic PLTR paper mark was USD 131.52999877929688 for 2026-07-27 with retrieval status ok at 2026-07-27T22:30:44Z.",
+      "observed_at": "2026-07-27T22:30:44Z"
+    },
+    {
+      "source": "Palantir Q1 2026 Form 10-Q and bounded valuation sensitivity",
+      "claim": "Using 2.570924 billion diluted shares, USD 6.383511 billion net liquid assets, the USD 7.656 billion 2026 revenue-guidance midpoint, and explicit 2027 growth/multiple assumptions produced USD 58.32 downside value (-55.7%) and USD 106.71 base value (-18.9%) over 12 months.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000028/pltr-20260331.htm",
+      "observed_at": "2026-07-27T22:34:03Z",
+      "source_hash": "7e7fc66795c66881af41d491aca1a6b8a6a0559109bd68c44ec100a063a32b70"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/record-source-pltr-q1-2026-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/record-source-pltr-q1-2026.json",
+    "data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh.json",
+    "data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/upsert-security-pltr-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Palantir was revalidated with current issuer evidence and a fresh USD 131.53 mark. Exceptional growth and liquidity do not offset valuation: the bounded 12-month downside and base values are USD 58.32 and USD 106.71, so it remains medium-confidence watching with no strategy follow-up."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/record-source-pltr-q1-2026.json",
+    "papertrader research security upsert --request data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/upsert-security-pltr-refresh.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/record-source-pltr-q1-2026-v2.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the payload, live lease, preflight skill identities, immutable PLTR/XNAS/USD/equity identity, and duplicate-provider identity constraints.",
+      "Registered the retained SEC evidence through the source CLI and confirmed final source first-seen, changed, and checked timestamps precede or equal the current assessment timestamp.",
+      "Confirmed fresh 2026-07-27 PLTR market data and USD/EUR data with deterministic retrieval status ok.",
+      "Wrote exactly one current baseline assessment with explicit scores, downside, base upside, horizon, soft gaps, evidence reference, and run ID.",
+      "The first strict integrity check exposed source first-seen ordering; immutable v2 source and assessment requests repaired it, and the final strict schema, queue, wiki, and integrity checks all returned OK.",
+      "No strategy operation was enqueued because valuation and timing are unfavorable and the causal relationship is not current.",
+      "No allocation, order, fill, execution, cash, portfolio, or performance state was changed."
+    ]
+  }
+}

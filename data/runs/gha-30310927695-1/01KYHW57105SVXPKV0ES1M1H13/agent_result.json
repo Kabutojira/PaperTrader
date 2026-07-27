@@ -1,0 +1,85 @@
+{
+  "operation_id": "01KYHW57105SVXPKV0ES1M1H13",
+  "status": "succeeded",
+  "summary": "Revalidated Arista Networks with registered Q1 2026 issuer and SEC evidence, a fresh USD 170.76 market mark, and current USD/EUR data. Revenue growth, margins, cash generation, and liquidity remain strong, but a bounded 12-month sensitivity gives USD 110.81 downside value (-35.1%) and USD 174.56 base value (+2.2%). The current comparable assessment is medium-confidence baseline eligible; no conviction strategy was queued because concentration and valuation gaps remain.",
+  "evidence": [
+    {
+      "source": "Arista Networks Q1 2026 financial results",
+      "claim": "Q1 revenue was USD 2.709 billion, up 35.1% year over year; GAAP operating margin was 42.7%, net income was USD 1.0229 billion, operating cash flow was USD 1.6935 billion, and Q2 revenue guidance was approximately USD 2.8 billion.",
+      "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx",
+      "observed_at": "2026-07-27T23:10:54Z",
+      "source_hash": "3b04c2cc6144cab31685863f73a63c39c7565d3906898f1ab5fe166e89a6b753"
+    },
+    {
+      "source": "Arista Networks Q1 2026 Form 10-Q",
+      "claim": "At 31 March 2026, cash and cash equivalents were USD 2.7895 billion, marketable securities were USD 9.5637 billion, and diluted weighted-average shares were 1.2738 billion; the filing also documents customer concentration and non-cancellable purchase commitments.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm",
+      "observed_at": "2026-07-27T23:10:54Z",
+      "source_hash": "f71bc98384b0e63b1d0e2c175081998f089ecbd16740d46c311416f79ae801d8"
+    },
+    {
+      "source": "data/market/latest.csv and bounded valuation sensitivity",
+      "claim": "The deterministic 2026-07-27 ANET mark was USD 170.75999450683594 with status ok. Using a USD 11.2 billion revenue run-rate, USD 12.3532 billion cash and securities, 1.2738 billion diluted shares, 15%/25% growth, and 10x/15x enterprise-value-to-revenue multiples produced USD 110.81 downside and USD 174.56 base values over 12 months.",
+      "observed_at": "2026-07-27T22:30:44Z"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv",
+      "claim": "The 2026-07-27 USD/EUR rate was 0.8792999982833862 with a 2026-07-27T22:30:44Z retrieval timestamp.",
+      "observed_at": "2026-07-27T22:30:44Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-earnings-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-earnings.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v3.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v4.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh.json",
+    "data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-security-anet-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6f9a1450edceb9307c9a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Arista Networks was revalidated with current primary evidence and a fresh USD 170.76 mark. Strong AI-networking growth, margins and liquidity do not overcome valuation: bounded 12-month downside and base values are USD 110.81 and USD 174.56, so it remains medium-confidence baseline eligible with no conviction strategy follow-up."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-earnings.json",
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-security-anet-refresh.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v2.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-earnings-v2.json",
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q-v2.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh-v4.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the payload, sole running operation, live lease, preflight skill identities, and immutable ANET/XNYS/USD/equity identity.",
+      "Registered both retained primary sources through the research source CLI and confirmed their final first-seen, changed, and checked timestamps precede the current assessment.",
+      "Confirmed fresh 2026-07-27 ANET price and USD/EUR state with deterministic retrieval status ok.",
+      "Wrote exactly one current baseline assessment with canonical scores, explicit downside and base upside, a 12-month horizon, sorted soft gaps, registered evidence references, and the current run ID.",
+      "Initial assessment requests failed closed on a non-canonical and then unsorted soft-gap set; immutable corrected requests repaired those errors. The first integrity run exposed missing source changed timestamps; immutable v2 source requests and a later assessment repaired the ordering.",
+      "Final strict schema validation, queue validation, wiki lint, and integrity checks all returned OK.",
+      "No conviction strategy operation was enqueued because margin of safety is inadequate and the related causal relationship is not current; baseline strategy work remains allocator-owned.",
+      "The command audit contains no allocation, order, fill, execution, cash, portfolio, or performance mutation."
+    ]
+  }
+}

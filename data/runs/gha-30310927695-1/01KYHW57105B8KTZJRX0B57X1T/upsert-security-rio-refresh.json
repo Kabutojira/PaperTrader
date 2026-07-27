@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1c055eb9b2bb1f5a8ff2",
+  "issuer_id": "issuer_3f384e36fe805b0fcbea",
+  "company_name": "Rio Tinto plc",
+  "instrument_name": "Rio Tinto plc sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "RIO",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RIO",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "GB",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Oyu Tolgoi ramp and costs improved, but diversified commodity exposure, lower Q2 copper output, and pending half-year financials leave valuation unsupported.",
+  "research_page": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+  "last_research_at": "2026-07-27T22:59:15Z",
+  "next_review_at": "2026-07-30T12:00:00Z",
+  "source": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results"
+}

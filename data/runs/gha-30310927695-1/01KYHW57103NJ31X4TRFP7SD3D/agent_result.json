@@ -1,0 +1,73 @@
+{
+  "operation_id": "01KYHW57103NJ31X4TRFP7SD3D",
+  "status": "succeeded",
+  "summary": "Revalidated Fluence Energy with current SEC-filed fiscal Q2 2026 evidence, a fresh USD 13.51 market mark, and current USD/EUR data. USD 5.6 billion of backlog confirms direct storage exposure, but 10.0% GAAP gross margin, first-half operating cash use of USD 347.9 million, project concentration, and thin adjusted-EBITDA guidance constrain quality. A bounded 12-month revenue sensitivity gives USD 7.35 downside and USD 14.73 base values, implying -45.6% and +9.1%; the medium-confidence baseline assessment is uncompetitive with cash, so no conviction strategy follow-up was created.",
+  "evidence": [
+    {
+      "source": "Fluence Energy fiscal Q2 2026 earnings release filed with the SEC",
+      "claim": "Fluence reported fiscal Q2 revenue of USD 464.9 million, a 10.0% GAAP gross margin, USD 5.6 billion of backlog, and approximately USD 2.0 billion of fiscal-year order intake through 6 May. Management reaffirmed fiscal-2026 revenue guidance of USD 3.2-3.6 billion and adjusted-EBITDA guidance of USD 40-60 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm",
+      "observed_at": "2026-07-27T22:51:54Z",
+      "source_hash": "c86ed5e861ea998d79ab5ae649bd751761886a9694e239e61b0db1e3d6dec00b"
+    },
+    {
+      "source": "Fluence Energy fiscal Q2 2026 Form 10-Q",
+      "claim": "At 31 March 2026, unrestricted cash was USD 387.3 million, cash including restricted cash was USD 412.9 million, convertible notes were USD 391.7 million, and six-month operating cash outflow was USD 347.9 million. As of 1 May, 132.811 million Class A shares and 51.499 million Class B-1 shares were outstanding; the top three customers represented approximately 45% of first-half revenue.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm",
+      "observed_at": "2026-07-27T22:51:54Z",
+      "source_hash": "99f23f41442d515e65f02320320fa97bbb62ea261a4717d1c47e74d69a2f01bc"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "FLNC closed at USD 13.510000228881836 on 2026-07-27 with volume 8,423,118, and the USD/EUR rate was 0.8792999982833862 for 2026-07-27; both were retrieved at 2026-07-27T22:30:44Z and market status was ok.",
+      "observed_at": "2026-07-27T22:30:44Z"
+    },
+    {
+      "source": "Bounded 12-month revenue sensitivity",
+      "claim": "Using the USD 3.4 billion fiscal-2026 revenue-guidance midpoint, 184.310685 million Class A plus Class B-1 economic interests, and USD -4.408 million of net cash before restricted cash, a 0.4x revenue downside case gives USD 7.35 per share (-45.6%) and a 0.8x base case gives USD 14.73 (+9.1%) versus the current mark. Base upside is below the configured 20% margin-of-safety requirement."
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-10q.json",
+    "data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-earnings.json",
+    "data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh-v2.json",
+    "data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh.json",
+    "data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/upsert-security-flnc-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Fluence Energy was revalidated with current fiscal Q2 issuer evidence and a fresh USD 13.51 mark. Backlog confirms direct storage exposure, but thin margins and cash use constrain quality; bounded 12-month downside and base values are USD 7.35 and USD 14.73, so it remains medium-confidence watching with no conviction strategy follow-up."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-10q.json",
+    "papertrader research source record --request data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-earnings.json",
+    "papertrader research security upsert --request data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/upsert-security-flnc-refresh.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh.json",
+    "papertrader research assessment upsert --request data/runs/gha-30310927695-1/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the payload, live lease, preflight identities for llm-wiki 2.1.0 plus the controller and security-research skills, and the immutable FLNC/XNAS/USD/equity identity.",
+      "Confirmed exactly one matching security row and provider symbol, with no duplicate immutable or provider identity.",
+      "Fetched, hashed, and registered the SEC-filed fiscal Q2 earnings release and Form 10-Q through immutable source CLI requests; both evidence records are current for the assessment.",
+      "Confirmed fresh 2026-07-27 FLNC market data and USD/EUR data from deterministic caches.",
+      "Wrote exactly one current baseline assessment for this run with explicit component scores, risk penalty, downside, base upside, 12-month horizon, canonical soft gaps, and two registered evidence references.",
+      "The first immutable assessment request failed closed because its soft-gap set was not canonically sorted; a uniquely named v2 request corrected the ordering without modifying the first request.",
+      "Strict schema validation, queue validation, wiki lint, and integrity checks all returned OK.",
+      "No conviction strategy was enqueued because 9.1% base upside fails the configured 20% margin-of-safety threshold and downside is asymmetric.",
+      "No allocation target/history, order, fill, execution, cash, portfolio, or performance state was changed."
+    ]
+  }
+}

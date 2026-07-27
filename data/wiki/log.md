@@ -329,3 +329,43 @@ This log is append-only. Rotate it by year only after the configured line thresh
   medium-confidence security remains watching and uncompetitive with cash; no strategy was queued.
 
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30280283355-1`.
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b]] (b275f066a05b).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b]] as `ingest`: Material bullish indicator transition: price broke above the upper Bollinger Band after a 16.2% period return and strengthened signal.
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb]] (a6de68653afb).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb]] as `ingest`: Material RSI overbought transition with strength increase and a 16.2% period return merits durable wiki review.
+
+- Revalidated [[securities/security_bdc2f87dadf134760c3a|Palantir]] with freshly registered Q1
+  2026 issuer evidence, a current market mark, and one comparable assessment. Growth, margins,
+  cash generation, and liquidity are exceptional, but a bounded 12-month scenario indicates 55.7%
+  downside and 18.9% base-case downside; medium-confidence Palantir remains watching and no
+  strategy was queued.
+
+- Revalidated [[securities/security_4b61970aa8f574446819|GE Vernova]] with registered Q2 2026
+  issuer evidence, a current market mark and USD/EUR rate, and one comparable assessment. Record
+  orders, backlog, margins, cash and liquidity confirm the power-bottleneck exposure, but a bounded
+  12-month sensitivity indicates 42.6% downside and only 2.0% base upside; medium-confidence GE
+  Vernova remains watching and no strategy was queued.
+
+- Revalidated [[securities/security_a9eb9838940ef5ceaa0c|Fluence Energy]] with registered fiscal
+  Q2 2026 issuer evidence, a current market mark and USD/EUR rate, and one comparable assessment.
+  Backlog confirms direct storage exposure, but thin margins and first-half cash use remain central;
+  a bounded 12-month sensitivity indicates 45.6% downside and only 9.1% base upside, so
+  medium-confidence Fluence remains watching and no conviction strategy was queued.
+
+- Revalidated [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] with current registered Q2
+  2026 production evidence, a fresh USD 91.95 ADR mark, and current USD/EUR data. Oyu Tolgoi's ramp
+  and lower cost guidance support the copper thesis, but diversified commodity exposure, lower Q2
+  copper output, and financial results pending on 29 July leave valuation unsupported. The current
+  medium-confidence assessment is ineligible and no strategy was queued.
+
+- Revalidated [[securities/security_6f9a1450edceb9307c9a|Arista Networks]] with registered Q1 2026
+  issuer and SEC evidence, a fresh USD 170.76 mark, and current USD/EUR data. AI-networking growth,
+  margins, cash generation and liquidity remain strong, but a bounded 12-month sensitivity indicates
+  35.1% downside and only 2.2% base upside. The medium-confidence assessment is baseline eligible,
+  but no conviction strategy was queued because valuation and concentration gaps remain.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30310927695-1`.

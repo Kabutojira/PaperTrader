@@ -1,0 +1,18 @@
+{
+  "source_id": "source_flnc_q2_2026_earnings",
+  "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm",
+  "source_type": "issuer_release",
+  "title": "Fluence Energy fiscal Q2 2026 earnings release",
+  "publisher": "Fluence Energy, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "c86ed5e861ea998d79ab5ae649bd751761886a9694e239e61b0db1e3d6dec00b",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_a9eb9838940ef5ceaa0c",
+  "checked_at": "2026-07-27T22:51:54Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fluence reported fiscal Q2 revenue of USD 464.9 million, backlog of USD 5.6 billion, and reaffirmed fiscal-2026 revenue guidance of USD 3.2-3.6 billion and adjusted EBITDA guidance of USD 40-60 million.",
+  "summary": "The SEC-filed issuer release supplies the latest reported backlog, order intake, quarterly margin and full-year revenue and adjusted-EBITDA guidance used in the thesis and valuation sensitivity.",
+  "run_id": "gha-30310927695-1"
+}

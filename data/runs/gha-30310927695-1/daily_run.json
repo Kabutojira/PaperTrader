@@ -1,0 +1,22 @@
+{
+  "completed_at": "2026-07-27T23:14:02Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "5",
+  "operation_count": 5,
+  "preparation_errors": [
+    "security_2dbe878dfc899d7ee867: MarketDataError: invalid OHLC range on 2026-07-27 for security_2dbe878dfc899d7ee867",
+    "security_9d4049ed6669a52815d6: MarketDataError: invalid OHLC range on 2026-07-27 for security_9d4049ed6669a52815d6",
+    "security_cc4dcb8f002b61dffe00: MarketDataError: invalid OHLC range on 2026-07-27 for security_cc4dcb8f002b61dffe00"
+  ],
+  "queue_dispositions": [
+    "01KYJV7BH0Q06M0ZSGE26MF1AE:skipped:freshness_cooldown:01KYFWWE20VFS02GS517HNPRB7"
+  ],
+  "report_path": "data/wiki/daily-reports/daily-report_20260727.md",
+  "run_id": "gha-30310927695-1",
+  "source_sha": "91882ac59103f8b530c984f7b30b693c87a8dc97",
+  "started_at": "2026-07-27T22:30:44Z",
+  "status": "degraded",
+  "trigger": "schedule"
+}

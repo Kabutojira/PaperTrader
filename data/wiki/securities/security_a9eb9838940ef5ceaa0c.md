@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-25"
-updated: "2026-07-25"
-provenance: "Fluence fiscal Q2 2026 results; SEC Form 10-Q for 2026-03-31"
+updated: "2026-07-27"
+provenance: "source_flnc_q2_2026_earnings; source_flnc_q2_2026_10q"
 security_id: security_a9eb9838940ef5ceaa0c
 issuer_id: issuer_8ba72d606a1056f95d91
 confidence: medium
@@ -34,11 +34,13 @@ software. Revenue is project-heavy and recognised as systems progress toward com
 quality, procurement, construction estimates, commissioning, and milestone cash flows matter more
 than headline order intake alone.
 
-For the quarter ended 31 March 2026, Fluence reported USD 464.9 million of revenue, a 10.0% GAAP
-gross margin, an 11.1% adjusted gross margin, a USD 29.2 million net loss, and negative USD 9.4
-million adjusted EBITDA. Backlog reached USD 5.6 billion and year-to-date order intake through
-6 May reached roughly USD 2.0 billion. Management reaffirmed fiscal-2026 revenue guidance of
-USD 3.2-3.6 billion and adjusted EBITDA guidance of USD 40-60 million.
+The latest reported primary evidence remains the quarter ended 31 March 2026. Fluence reported
+USD 464.9 million of revenue, a 10.0% GAAP gross margin, an 11.1% adjusted gross margin, a USD 29.2
+million net loss, and negative USD 9.4 million adjusted EBITDA. Backlog reached USD 5.6 billion and
+year-to-date order intake through 6 May reached roughly USD 2.0 billion. Management reaffirmed
+fiscal-2026 revenue guidance of USD 3.2-3.6 billion and adjusted EBITDA guidance of USD 40-60
+million. The release and filing were re-fetched from the SEC on 27 July 2026; they do not yet prove
+the second-half conversion required by that guidance.
 
 The balance-sheet and cash evidence is less settled. Cash including restricted cash was USD 412.9
 million at 31 March, while the first six months used USD 347.9 million of operating cash and
@@ -66,17 +68,20 @@ and first-half cash use shows that volume and bookings have not yet become self-
 | Gross warranty liability was USD 54.8 million and net liability after supplier recoveries was USD 28.8 million. | Supplier-backed recoveries reduce but do not eliminate product and execution exposure. |
 | Fiscal-2026 guidance calls for positive adjusted EBITDA. | A useful milestone, but it is non-GAAP guidance and remains to be delivered. |
 
-Primary evidence: [Fluence fiscal Q2 2026 results](https://ir.fluenceenergy.com/news-releases/news-release-details/fluence-energy-inc-reports-second-quarter-2026-results-reaffirms)
+Primary evidence: [Fluence fiscal Q2 2026 results filed with the SEC](https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm)
 and the [SEC Form 10-Q for 31 March 2026](https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm).
 
 ## Valuation
 
-No supportable valuation range is recorded. The repository has no fresh deterministic market mark
-for this newly researched security, GAAP earnings and free cash flow are negative, and backlog
-margin/timing are insufficiently observable. Applying a revenue multiple would manufacture
-precision around project economics that have not stabilised. A later valuation should use a fresh
-mark, diluted share count, net debt including restricted cash treatment, and scenario-tested
-normalised EBITDA and free cash flow.
+The 27 July 2026 deterministic close is USD 13.51. The filing shows 132.811 million Class A shares
+and 51.499 million Class B-1 economic interests at 1 May, USD 387.3 million of unrestricted cash,
+and USD 391.7 million of convertible notes. Because earnings and free cash flow remain negative, a
+12-month revenue-multiple sensitivity is more honest than an earnings target but remains
+low-confidence: applying 0.4x and 0.8x to the USD 3.4 billion guidance midpoint, adding net cash,
+and dividing by 184.311 million economic interests gives USD 7.35 downside and USD 14.73 base
+values. These imply **45.6% downside** and only **9.1% base upside**. The range is a bounded
+sensitivity, not false precision: project margins, cancellations, working capital, dilution, and
+the treatment of restricted cash can move value materially.
 
 ## Catalysts and confirmation
 
@@ -95,7 +100,8 @@ raise project costs; or additional capital is required on unattractive terms.
 
 ## Disposition
 
-Status: **watching** with **medium** confidence. Research again by **2026-08-15** after the next
-earnings update or sooner after a guidance, tariff, project-cost, or liquidity change. No strategy
-or paper signal is proposed because there is no current deterministic mark or supportable valuation
-range and cash conversion remains unproven.
+Status: **watching** with **medium** confidence and **baseline** assessment eligibility. Research
+again by **2026-08-15** after the next earnings update or sooner after a guidance, tariff,
+project-cost, or liquidity change. No conviction strategy or paper signal is justified: 9.1% base
+upside fails the configured 20% margin-of-safety threshold, downside is asymmetric, and cash
+conversion remains unproven. Fluence is therefore uncompetitive with cash at the current mark.

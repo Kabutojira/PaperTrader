@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_q2_2026_earnings",
+  "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+  "source_type": "issuer-release",
+  "title": "GE Vernova Q2 2026 earnings release",
+  "publisher": "GE Vernova Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_4b61970aa8f574446819",
+  "checked_at": "2026-07-27T22:41:18Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 orders were USD 24.2 billion, backlog was USD 176 billion, and free cash flow was USD 5.1 billion; 2026 free-cash-flow guidance rose to USD 11.5-12.5 billion.",
+  "summary": "GE Vernova reported record Power and Electrification demand, margin expansion and cash generation, raised 2026 revenue and free-cash-flow guidance, and retained an approximately USD 400 million Wind EBITDA-loss outlook.",
+  "run_id": "gha-30310927695-1"
+}

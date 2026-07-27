@@ -1,0 +1,18 @@
+{
+  "source_id": "source_flnc_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm",
+  "source_type": "filing",
+  "title": "Fluence Energy fiscal Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "99f23f41442d515e65f02320320fa97bbb62ea261a4717d1c47e74d69a2f01bc",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_a9eb9838940ef5ceaa0c",
+  "checked_at": "2026-07-27T22:51:54Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, 2026, cash and restricted cash were USD 412.9 million, convertible notes were USD 391.7 million, and six-month operating cash outflow was USD 347.9 million.",
+  "summary": "The quarterly filing supplies current balance-sheet, cash-flow, economic-share-count, revenue, margin, concentration and backlog-quality evidence for the security assessment.",
+  "run_id": "gha-30310927695-1"
+}

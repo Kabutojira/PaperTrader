@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_q1_2026_earnings",
+  "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx",
+  "canonical_url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx",
+  "source_type": "issuer-release",
+  "title": "Arista Networks Q1 2026 financial results",
+  "publisher": "Arista Networks, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "3b04c2cc6144cab31685863f73a63c39c7565d3906898f1ab5fe166e89a6b753",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-07-27T23:10:54Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 revenue was USD 2.709 billion, up 35.1% year over year; GAAP operating margin was 42.7%, operating cash flow was USD 1.6935 billion, and Q2 revenue guidance was approximately USD 2.8 billion.",
+  "summary": "Arista reported strong Q1 growth, margins and cash generation, supported by AI and cloud networking demand, while guiding to approximately USD 2.8 billion of Q2 revenue.",
+  "run_id": "gha-30310927695-1"
+}
