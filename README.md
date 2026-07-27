@@ -227,6 +227,10 @@ The Step 2 core owns every numeric and structured state transition:
 - `papertrader allocation plan --run-id <run-id>` scores fresh comparable assessments against
   cash, applies reserve/deployment/position/sector/theme/diversification limits, and writes current
   generated targets plus immutable allocation history. It never creates a signal, order, or fill.
+- `papertrader allocation maintain --run-id <run-id> [--backfill]` enqueues stable assessment and
+  canonical idea-relationship refresh work for researched securities. `allocation readiness
+  --strict` reports coverage and fails until evidence, assessments, relationships, and backfill
+  terminal states are activation-ready.
 - `papertrader watchlist import --request <json>` atomically adds identity-only securities with
   deterministic IDs. It leaves research fields empty until a bounded security-research operation
   creates the linked wiki page and evidence-backed summary.
@@ -257,11 +261,12 @@ RUN_ID="allocation-$(date -u +%Y%m%dT%H%M%SZ)"
 uv run papertrader allocation plan --run-id "$RUN_ID"
 ```
 
-The initial `[allocation]` mode is `report_only`. In that mode the command writes only generated
-`allocation_targets.csv`, append-only `allocation_history.csv`, and its run summary; it cannot add
-queue work, strategies, signals, orders, executions, or accounting entries. Review at least five
-completed shadow cycles before a human changes the versioned mode to `active`. Active mode enqueues
-normal, sequential `strategy_research` work only for material baseline deltas. Baseline strategies
+The versioned `[allocation]` mode is `active`; the operator explicitly waived the original five
+live shadow cycles. Use `report_only` for a non-handoff diagnostic run: it writes only generated
+`allocation_targets.csv`, append-only `allocation_history.csv`, and its run summary. Active mode
+enqueues normal, sequential `strategy_research` work only for material baseline deltas whose
+assessment and relationship gates pass. Missing readiness retains cash rather than forcing a
+trade. Baseline strategies
 are long equity, retain the immutable plan ID, and proceed through the existing signal, order,
 fill, and reconciliation boundaries. Deterministic order guards own final share quantity, cash
 reserve, cumulative target risk-budget, canonical-leg, and concentration enforcement. A single

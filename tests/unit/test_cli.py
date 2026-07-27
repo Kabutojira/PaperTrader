@@ -23,6 +23,25 @@ def test_cli_validation_commands_pass(monkeypatch, repository_root: Path) -> Non
     assert main([*prefix, "portfolio", "reconcile", "--strict"]) == 0
 
 
+def test_cli_strict_allocation_readiness_fails_for_unbackfilled_universe(
+    monkeypatch, repository_root: Path
+) -> None:  # type: ignore[no-untyped-def]
+    _set_paper_environment(monkeypatch, repository_root)
+
+    assert (
+        main(
+            [
+                "--repository",
+                str(repository_root),
+                "allocation",
+                "readiness",
+                "--strict",
+            ]
+        )
+        == 1
+    )
+
+
 def test_cli_fails_closed_without_paper_environment(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
     monkeypatch.delenv("PAPER_TRADING_ONLY", raising=False)
     monkeypatch.setenv("WIKI_PATH", str(repository_root / "data" / "wiki"))

@@ -22,7 +22,9 @@ mutate accounting state.
 
 Use `papertrader research strategy upsert --request <json>` for the strategy and normalized legs,
 `papertrader signal create --request <json>` only for a complete time-bounded signal, and the
-issue/queue CLI commands for issues or one justified follow-up.
+issue/queue CLI commands for issues or a justified follow-up. Every created baseline signal must
+enqueue exactly one `execute_strategy` operation for the same strategy and signal before the
+result manifest is written.
 
 ## Required input
 
@@ -53,7 +55,8 @@ assessment timestamp, and disposition from the deterministic payload.
    trade threshold, the assessment must be unchanged, and the signal action must match `open`,
    `increase`, `reduce`, or `close`. A hard blocker forbids increased exposure but may require the
    plan's risk-reducing `reduce`/`close`; a `hold` creates no signal. A signal is not an order or
-   fill.
+   fill. If a baseline signal is created, immediately enqueue exactly one matching
+   `execute_strategy` follow-up whose payload binds the strategy ID, signal ID, and action.
 
 ## Source hierarchy
 

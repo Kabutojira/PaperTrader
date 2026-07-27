@@ -12,7 +12,9 @@ from hypothesis import settings as hypothesis_settings
 from hypothesis import strategies as st
 
 from papertrader.allocation import (
+    allocation_readiness,
     baseline_strategy_id,
+    maintain_allocation_research,
     plan_allocation,
     score_assessment,
     validate_allocation_state,
@@ -218,6 +220,169 @@ def _seed_candidates(
 
 def _settings(settings: Settings, **changes: object) -> Settings:
     return replace(settings, allocation=replace(settings.allocation, **changes))
+
+
+def _maintained_security_page(
+    repository: Path, security: dict[str, str], idea_id: str
+) -> dict[str, str]:
+    page = f"data/wiki/securities/{security['security_id']}.md"
+    idea_page = repository / "data" / "wiki" / "ideas" / f"{idea_id}.md"
+    if not idea_page.exists():
+        atomic_write_text(
+            idea_page,
+            f"---\ntitle: {idea_id}\ntype: idea\nstatus: maintained\n---\n\n# {idea_id}\n",
+            allowed_root=repository,
+        )
+    atomic_write_text(
+        repository / page,
+        (
+            f"---\ntitle: {security['company_name']}\ntype: security\nstatus: maintained\n"
+            f"---\n\n# {security['company_name']}\n\n[[ideas/{idea_id}]]\n"
+        ),
+        allowed_root=repository,
+    )
+    return {**security, "research_page": page}
+
+
+def test_maintenance_backfill_is_stable_and_relationships_depend_on_security_refresh(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    researched = [
+        _maintained_security_page(sandbox_repository, _security(index), f"idea_{index:02d}")
+        for index in range(2)
+    ]
+    write_table(sandbox_repository, "securities", [*researched, _security(2)])
+
+    first = maintain_allocation_research(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-backfill",
+        backfill=True,
+        now=NOW,
+    )
+    assert first.researched_security_count == 2
+    assert first.relationship_pair_count == 2
+    assert len(first.security_operations) == 2
+    assert len(first.relationship_operations) == 2
+    assert len(first.operations_created) == 4
+    rows = {row["operation_id"]: row for row in read_table(sandbox_repository, "operations_todo")}
+    for operation_id in first.relationship_operations:
+        relationship = rows[operation_id]
+        dependency = relationship["depends_on"]
+        assert dependency in first.security_operations
+        assert rows[dependency]["entity_id"] in relationship["prompt"]
+
+    repeated = maintain_allocation_research(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-backfill-repeat",
+        backfill=True,
+        now=NOW,
+    )
+    assert repeated.operations_created == ()
+    assert repeated.security_operations == first.security_operations
+    assert repeated.relationship_operations == first.relationship_operations
+
+
+def test_maintenance_refresh_lead_enqueues_near_expiry_assessment(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    security = _maintained_security_page(sandbox_repository, _security(0), "idea_00")
+    write_table(sandbox_repository, "securities", [security])
+    write_table(sandbox_repository, "source_registry", [_source(0)])
+    assessment = _assessment(0)
+    assessment["expires_at"] = "2026-07-30T21:00:00Z"
+    upsert_assessment(sandbox_repository, sandbox_settings, assessment, now=NOW)
+    write_table(sandbox_repository, "relationships", [_relationship(0)])
+
+    result = maintain_allocation_research(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-refresh",
+        now=NOW,
+    )
+    assert len(result.security_operations) == 1
+    assert result.relationship_operations == ()
+
+
+def test_readiness_requires_current_assessment_evidence_relationship_and_finished_backfill(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    security = _maintained_security_page(sandbox_repository, _security(0), "idea_00")
+    write_table(sandbox_repository, "securities", [security])
+    missing = allocation_readiness(sandbox_repository, sandbox_settings, now=NOW)
+    assert not missing.ready
+    assert missing.researched_security_count == 1
+    assert "assessment_missing:sec_00" in missing.errors
+
+    write_table(sandbox_repository, "source_registry", [_source(0)])
+    upsert_assessment(sandbox_repository, sandbox_settings, _assessment(0), now=NOW)
+    write_table(sandbox_repository, "relationships", [_relationship(0)])
+    ready = allocation_readiness(sandbox_repository, sandbox_settings, now=NOW)
+    assert ready.ready
+    assert ready.current_assessment_count == 1
+    assert ready.fresh_evidence_assessment_count == 1
+    assert ready.current_relationship_pair_count == 1
+
+    rejected_relationship = _relationship(0)
+    rejected_relationship["status"] = "rejected"
+    write_table(sandbox_repository, "relationships", [rejected_relationship])
+    rejected = allocation_readiness(sandbox_repository, sandbox_settings, now=NOW)
+    assert "rejected_relationship_unreconciled:relationship_00" in rejected.errors
+
+    reconciled_assessment = _assessment(
+        0,
+        eligibility="ineligible",
+        hard_blockers="valuation_unsupported",
+        assessed_at="2026-07-24T22:00:00Z",
+    )
+    upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        reconciled_assessment,
+        now=NOW,
+    )
+    reconciled = allocation_readiness(sandbox_repository, sandbox_settings, now=NOW)
+    assert reconciled.ready
+
+    maintain_allocation_research(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-readiness-backfill",
+        backfill=True,
+        now=NOW,
+    )
+    active = allocation_readiness(sandbox_repository, sandbox_settings, now=NOW)
+    assert not active.ready
+    assert any(error.startswith("backfill_operation_active:") for error in active.errors)
+
+
+def test_allocation_plans_researched_security_without_assessment_only(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    ensure_initial_capital(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="researched-universe-seed",
+        occurred_at=NOW - timedelta(hours=1),
+    )
+    researched = _maintained_security_page(sandbox_repository, _security(0), "idea_00")
+    write_table(sandbox_repository, "securities", [researched, _security(1)])
+
+    result = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="researched-universe",
+        now=NOW,
+    )
+    rows = read_table(sandbox_repository, "allocation_targets")
+    assert result.target_count == 1
+    assert [row["security_id"] for row in rows] == ["sec_00"]
+    assert "assessment_missing" in rows[0]["reason"]
 
 
 def test_score_aggregation_is_exact_decimal_and_cash_aware() -> None:

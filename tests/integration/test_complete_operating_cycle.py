@@ -5,6 +5,7 @@ import os
 import subprocess
 import sys
 from collections.abc import Mapping, Sequence
+from dataclasses import replace
 from datetime import date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -780,7 +781,10 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     initial_provider = _RecordedProvider(_market_frame(session_dates))
     preparation = prepare_daily_run(
         sandbox_repository,
-        sandbox_settings,
+        replace(
+            sandbox_settings,
+            allocation=replace(sandbox_settings.allocation, mode="disabled"),
+        ),
         run_id=RUN_ID,
         trigger="integration",
         source_sha=base_sha,

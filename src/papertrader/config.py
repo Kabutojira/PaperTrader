@@ -113,6 +113,7 @@ class AllocationSettings:
     minimum_confidence: str
     minimum_diversified_candidates: int
     maximum_assessment_age_days: int
+    research_refresh_lead_days: int
     maximum_deployment_per_run_pct: Decimal
     minimum_trade_pct: Decimal
     rebalance_band_pct: Decimal
@@ -460,6 +461,9 @@ def _load_runtime_settings(
         ),
         maximum_assessment_age_days=_positive_int(
             parser, "allocation", "maximum_assessment_age_days"
+        ),
+        research_refresh_lead_days=_positive_int(
+            parser, "allocation", "research_refresh_lead_days"
         ),
         maximum_deployment_per_run_pct=_decimal(
             parser,

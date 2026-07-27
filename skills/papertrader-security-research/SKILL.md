@@ -15,10 +15,12 @@ current security row or explicit creation identity, and a bounded research objec
 Read the wiki schema/index/log, the one security row, related ideas/relationships/strategies,
 market/FX marks, structured source records, and evidence. Write the one security page and
 necessary index/log changes. Update `securities.csv`, `security_assessments.csv`, issues, and
-follow-up operations only through the CLI. Never touch allocation targets/history, ledgers,
+source registry/history metadata, issues, and follow-up operations only through the CLI. Raw
+articles remain outside this skill's write scope. Never touch allocation targets/history, ledgers,
 orders, fills, portfolio, or performance.
 
-Use `papertrader research security upsert --request <json>` for the security row,
+Use `papertrader research source record --request <json>` for every retained evidence source,
+`papertrader research security upsert --request <json>` for the security row,
 `papertrader research assessment upsert --request <json>` for its comparable assessment,
 `papertrader issue record --request <json>` for issues, and
 `papertrader queue enqueue --request <json>` for a justified follow-up.
@@ -35,7 +37,8 @@ horizon, expiration, explicit blocker/gap sets, and the current run ID.
 
 1. Orient with schema, index, recent log, and all pages linked to the security.
 2. Validate issuer/instrument/venue/currency/provider identity and search for duplicates.
-3. Research business and instrument economics from current primary evidence.
+3. Research business and instrument economics from current primary evidence, then register the
+   bounded source metadata through the source CLI before referencing it from an assessment.
 4. State thesis, contrary evidence, catalysts, risks, and invalidation.
 5. Produce a supportable downside and base-case valuation with dated inputs and an explicit
    horizon, or record `valuation_unsupported`; never invent a price target.

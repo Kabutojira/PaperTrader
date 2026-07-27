@@ -11,8 +11,14 @@ import pytest
 
 from papertrader.agent_runner import AgentRunError, configure_hermes_home, run_one_operation
 from papertrader.config import Settings
-from papertrader.queue import enqueue_operation
-from papertrader.result_validator import _path_allowed_for_operation
+from papertrader.queue import Operation, enqueue_operation
+from papertrader.result_validator import (
+    _baseline_signal_followup_errors,
+    _command_allowed,
+    _path_allowed_for_operation,
+    _security_assessment_result_errors,
+)
+from papertrader.tables import read_table, write_table
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
@@ -31,6 +37,15 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "security_research",
         "data/tables/security_assessments.csv",
         created=False,
+    )
+    for source_path in (
+        "data/tables/source_registry.csv",
+        "data/tables/source_history.csv",
+    ):
+        assert _path_allowed_for_operation("security_research", source_path, created=False)
+    assert _command_allowed(
+        "security_research",
+        {"argv": ["papertrader", "research", "source", "record"]},
     )
 
 
@@ -169,6 +184,146 @@ def test_completed_security_research_without_assessment_fails_closed(
             operation_id=operation_id,
             executor=_executor_with_change(lambda root: None, []),
         )
+
+
+def test_skipped_security_research_without_current_assessment_fails_closed(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    paper_environment: dict[str, str],
+) -> None:
+    operation_id = _enqueue_security(sandbox_repository, sandbox_settings)
+    row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+    operation = Operation.from_row(row)
+
+    errors = _security_assessment_result_errors(
+        sandbox_repository,
+        operation=operation,
+        status="skipped",
+        run_id="skipped-assessment",
+        environment={
+            **paper_environment,
+            "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
+        },
+    )
+    assert errors == ["skipped security research requires an existing current assessment"]
+
+
+def test_baseline_signal_requires_one_exact_execute_strategy_followup(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    strategy_id = "strategy_baseline_test"
+    strategy_operation_id, _ = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="strategy_research",
+        entity_type="strategy",
+        entity_id=strategy_id,
+        dedupe_key="strategy_research:strategy_baseline_test:plan:test",
+        prompt="Review one baseline strategy target.",
+        inputs={"strategy_id": strategy_id, "relationship_id": "relationship_test"},
+        source="test",
+        now=NOW,
+    )
+    operation = Operation.from_row(
+        next(
+            row
+            for row in read_table(sandbox_repository, "operations_todo")
+            if row["operation_id"] == strategy_operation_id
+        )
+    )
+    write_table(
+        sandbox_repository,
+        "strategies",
+        [
+            {
+                "strategy_id": strategy_id,
+                "idea_id": "idea_test",
+                "security_id": "sec-test",
+                "relationship_id": "relationship_test",
+                "name": "Baseline test",
+                "status": "ready",
+                "direction": "long",
+                "instrument_type": "equity",
+                "thesis": "Fixture",
+                "entry_rule": "Fixture",
+                "exit_rule": "Fixture",
+                "invalidation": "Fixture",
+                "risk_budget_pct": "1",
+                "sleeve": "baseline",
+                "allocation_plan_id": "allocation_plan_test",
+                "not_before": "",
+                "expires_at": "",
+                "research_page": "data/wiki/strategies/strategy_baseline_test.md",
+                "created_at": "2026-07-24T12:00:00Z",
+                "updated_at": "2026-07-24T12:00:00Z",
+            }
+        ],
+    )
+    signal_id = "signal_baseline_test"
+    write_table(
+        sandbox_repository,
+        "signals",
+        [
+            {
+                "signal_id": signal_id,
+                "strategy_id": strategy_id,
+                "signal_type": "open",
+                "created_at": "2026-07-24T12:00:00Z",
+                "expires_at": "2026-07-25T12:00:00Z",
+                "status": "ready",
+                "rationale": "Fixture",
+                "market_data_as_of": "2026-07-24T12:00:00Z",
+                "order_request_path": "",
+                "telegram_sent_at": "",
+                "run_id": "baseline-followup",
+            }
+        ],
+    )
+    rows_before = {
+        row["operation_id"]: row for row in read_table(sandbox_repository, "operations_todo")
+    }
+    assert _baseline_signal_followup_errors(
+        sandbox_repository,
+        run_id="baseline-followup",
+        operation=operation,
+        created_operation_ids=set(),
+        operation_rows_after=rows_before,
+    ) == [
+        "baseline signal requires exactly one matching execute_strategy follow-up: "
+        "signal_baseline_test"
+    ]
+
+    execute_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="execute_strategy",
+        entity_type="strategy",
+        entity_id=strategy_id,
+        dedupe_key="execute_strategy:strategy_baseline_test:signal_baseline_test",
+        prompt="Review the baseline paper signal for execution.",
+        inputs={"strategy_id": strategy_id, "signal_id": signal_id, "action": "open"},
+        source="strategy-research:test",
+        now=NOW,
+    )
+    assert created
+    rows_after = {
+        row["operation_id"]: row for row in read_table(sandbox_repository, "operations_todo")
+    }
+    assert (
+        _baseline_signal_followup_errors(
+            sandbox_repository,
+            run_id="baseline-followup",
+            operation=operation,
+            created_operation_ids={execute_id},
+            operation_rows_after=rows_after,
+        )
+        == []
+    )
 
 
 def test_stale_unchanged_file_in_manifest_fails_closed(

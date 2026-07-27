@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import shutil
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -82,10 +83,13 @@ def sandbox_repository(repository_root: Path, tmp_path: Path) -> Path:
 
 @pytest.fixture
 def sandbox_settings(sandbox_repository: Path) -> Settings:
-    return load_settings(
+    settings = load_settings(
         sandbox_repository,
         {
             "PAPER_TRADING_ONLY": "true",
             "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
         },
     )
+    # Most deterministic fixtures exercise report generation without operation handoff.
+    # Default-active behavior is asserted separately against the versioned config.
+    return replace(settings, allocation=replace(settings.allocation, mode="report_only"))

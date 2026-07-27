@@ -14,7 +14,7 @@ from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta
 from decimal import ROUND_DOWN, ROUND_HALF_EVEN, Decimal
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
@@ -55,6 +55,10 @@ ELIGIBLE_ASSESSMENTS = frozenset({"baseline", "conviction"})
 ELIGIBLE_SECURITY_STATUSES = frozenset({"active", "watching"})
 ALLOCATABLE_DISPOSITIONS = frozenset({"open", "increase", "reduce", "close"})
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+CANONICAL_IDEA_LINK = re.compile(r"\[\[ideas/([a-z][a-z0-9_-]{0,127})\]\]")
+CURRENT_SOURCE_STATUSES = frozenset({"available", "ok", "current"})
+ALLOCATION_MAINTENANCE_SOURCE = "deterministic-allocation-maintenance"
+ALLOCATION_BACKFILL_SOURCE = "deterministic-allocation-backfill"
 
 
 class AllocationError(RuntimeError):
@@ -96,6 +100,34 @@ class AllocationPlanResult:
     excluded_candidate_count: int
     target_count: int
     operations_created: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class AllocationMaintenanceResult:
+    """Operations deterministically requested for the maintained research universe."""
+
+    run_id: str
+    as_of: str
+    backfill: bool
+    researched_security_count: int
+    relationship_pair_count: int
+    security_operations: tuple[str, ...]
+    relationship_operations: tuple[str, ...]
+    operations_created: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class AllocationReadinessResult:
+    """Machine-readable activation coverage and strict readiness errors."""
+
+    as_of: str
+    ready: bool
+    researched_security_count: int
+    current_assessment_count: int
+    fresh_evidence_assessment_count: int
+    relationship_pair_count: int
+    current_relationship_pair_count: int
+    errors: tuple[str, ...]
 
 
 @dataclass(slots=True)
@@ -201,6 +233,377 @@ def baseline_strategy_id(security_id: str) -> str:
     if not security_id or any(marker in security_id for marker in "|\r\n"):
         raise AllocationError("security_id is not safe for baseline strategy identity")
     return stable_id("strategy", "baseline", security_id)
+
+
+def _researched_securities(repository_root: Path) -> tuple[Mapping[str, str], ...]:
+    """Return the maintained universe: canonical securities with a research page."""
+
+    return tuple(
+        sorted(
+            (row for row in read_table(repository_root, "securities") if row["research_page"]),
+            key=lambda row: row["security_id"],
+        )
+    )
+
+
+def _canonical_idea_links(repository_root: Path, security: Mapping[str, str]) -> tuple[str, ...]:
+    """Extract only exact canonical idea wikilinks from one maintained security page."""
+
+    relative = PurePosixPath(security["research_page"])
+    if (
+        relative.is_absolute()
+        or ".." in relative.parts
+        or len(relative.parts) != 4
+        or relative.parts[:3] != ("data", "wiki", "securities")
+        or relative.suffix != ".md"
+    ):
+        raise AllocationError(
+            f"researched security has invalid research_page: {security['security_id']}"
+        )
+    page = repository_root.joinpath(*relative.parts)
+    if page.is_symlink() or not page.is_file():
+        raise AllocationError(f"researched security page is unavailable: {security['security_id']}")
+    idea_ids = tuple(sorted(set(CANONICAL_IDEA_LINK.findall(page.read_text(encoding="utf-8")))))
+    for idea_id in idea_ids:
+        idea_page = repository_root / "data" / "wiki" / "ideas" / f"{idea_id}.md"
+        if idea_page.is_symlink() or not idea_page.is_file():
+            raise AllocationError(
+                f"security {security['security_id']} links missing canonical idea {idea_id}"
+            )
+    return idea_ids
+
+
+def _assessment_readiness_errors(
+    assessment: Mapping[str, str],
+    sources: Mapping[str, Mapping[str, str]],
+    settings: Settings,
+    *,
+    now: datetime,
+) -> tuple[str, ...]:
+    """Return current-assessment and registered-evidence errors at one instant."""
+
+    security_id = assessment["security_id"]
+    errors: list[str] = []
+    try:
+        assessed = parse_timestamp(assessment["assessed_at"])
+        expires = parse_timestamp(assessment["expires_at"])
+        assert assessed is not None and expires is not None
+        maximum_age = timedelta(days=settings.allocation.maximum_assessment_age_days)
+        if assessed > now or now - assessed > maximum_age or expires <= now:
+            errors.append(f"assessment_stale:{security_id}")
+        evidence = tuple(part for part in assessment["evidence_refs"].split("|") if part)
+        if not evidence or evidence != tuple(sorted(set(evidence))):
+            errors.append(f"assessment_evidence_invalid:{security_id}")
+        for source_id in evidence:
+            source = sources.get(source_id)
+            if source is None:
+                errors.append(f"assessment_evidence_unregistered:{security_id}:{source_id}")
+                continue
+            checked = parse_timestamp(source["last_checked_at"])
+            if (
+                checked is None
+                or checked > now
+                or now - checked > maximum_age
+                or source["status"] not in CURRENT_SOURCE_STATUSES
+            ):
+                errors.append(f"assessment_evidence_stale:{security_id}:{source_id}")
+    except (CanonicalValueError, KeyError, TypeError):
+        errors.append(f"assessment_invalid:{security_id}")
+    return tuple(sorted(set(errors)))
+
+
+def _relationship_is_current(row: Mapping[str, str], now: datetime) -> bool:
+    try:
+        reviewed = parse_timestamp(row["last_reviewed_at"])
+        next_review = parse_timestamp(row["next_review_at"])
+    except (CanonicalValueError, KeyError):
+        return False
+    return bool(
+        reviewed is not None
+        and next_review is not None
+        and reviewed <= now
+        and next_review > now
+        and row["status"] in {"accepted", "rejected"}
+    )
+
+
+def maintain_allocation_research(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    backfill: bool = False,
+    now: datetime | None = None,
+) -> AllocationMaintenanceResult:
+    """Enqueue missing or near-expiry assessment and canonical relationship work."""
+
+    if not SAFE_RUN_ID.fullmatch(run_id):
+        raise AllocationError(f"invalid allocation maintenance run_id: {run_id!r}")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    lead = timedelta(days=settings.allocation.research_refresh_lead_days)
+    researched = _researched_securities(repository_root)
+    assessments = {
+        row["security_id"]: row for row in read_table(repository_root, "security_assessments")
+    }
+    sources = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+    relationship_rows = read_table(repository_root, "relationships")
+    by_pair: defaultdict[tuple[str, str], list[Mapping[str, str]]] = defaultdict(list)
+    for row in relationship_rows:
+        by_pair[(row["idea_id"], row["security_id"])].append(row)
+    source = ALLOCATION_BACKFILL_SOURCE if backfill else ALLOCATION_MAINTENANCE_SOURCE
+    security_operations: dict[str, str] = {}
+    relationship_operations: list[str] = []
+    created_ids: list[str] = []
+    relationship_pair_count = 0
+
+    for security in researched:
+        security_id = security["security_id"]
+        assessment = assessments.get(security_id)
+        refresh = backfill or assessment is None
+        assessment_marker = "missing"
+        if assessment is not None:
+            assessment_marker = assessment["assessed_at"]
+            try:
+                assessed = parse_timestamp(assessment["assessed_at"])
+                expires = parse_timestamp(assessment["expires_at"])
+                assert assessed is not None and expires is not None
+                effective_expiry = min(
+                    expires,
+                    assessed + timedelta(days=settings.allocation.maximum_assessment_age_days),
+                )
+                for source_id in (part for part in assessment["evidence_refs"].split("|") if part):
+                    source_row = sources.get(source_id)
+                    if source_row is None:
+                        refresh = True
+                        continue
+                    checked = parse_timestamp(source_row["last_checked_at"])
+                    if checked is None or source_row["status"] not in CURRENT_SOURCE_STATUSES:
+                        refresh = True
+                        continue
+                    effective_expiry = min(
+                        effective_expiry,
+                        checked + timedelta(days=settings.allocation.maximum_assessment_age_days),
+                    )
+                refresh = refresh or effective_expiry <= instant + lead
+            except (CanonicalValueError, KeyError):
+                refresh = True
+        if refresh:
+            cycle = "backfill-v1" if backfill else assessment_marker
+            operation_id, created = enqueue_operation(
+                repository_root,
+                settings,
+                operation_type="security_research",
+                entity_type="security",
+                entity_id=security_id,
+                dedupe_key=f"security_research:{security_id}:allocation-maintenance:{cycle}",
+                prompt=(
+                    f"Revalidate {security_id} with current primary evidence and write one "
+                    "comparable allocation assessment."
+                ),
+                inputs={
+                    "security_id": security_id,
+                    "maintenance_mode": "backfill" if backfill else "refresh",
+                    "assessment_state": assessment_marker,
+                    "research_page": security["research_page"],
+                },
+                source=source,
+                priority=75 if backfill else 65,
+                freshness_days=0,
+                source_refs=(
+                    tuple(part for part in assessment["evidence_refs"].split("|") if part)
+                    if assessment is not None
+                    else ()
+                ),
+                now=instant,
+            )
+            security_operations[security_id] = operation_id
+            if created:
+                created_ids.append(operation_id)
+
+        for idea_id in _canonical_idea_links(repository_root, security):
+            relationship_pair_count += 1
+            matches = sorted(
+                by_pair.get((idea_id, security_id), ()), key=lambda row: row["relationship_id"]
+            )
+            if len(matches) > 1:
+                raise AllocationError(
+                    f"multiple relationships exist for canonical pair {idea_id}:{security_id}"
+                )
+            relationship = matches[0] if matches else None
+            review = backfill or relationship is None
+            relationship_marker = "missing"
+            if relationship is not None:
+                relationship_marker = relationship["last_reviewed_at"] or "unreviewed"
+                review = review or not _relationship_is_current(relationship, instant)
+                try:
+                    next_review = parse_timestamp(relationship["next_review_at"], allow_empty=True)
+                    review = review or next_review is None or next_review <= instant + lead
+                except CanonicalValueError:
+                    review = True
+            if not review:
+                continue
+            relationship_id = (
+                relationship["relationship_id"]
+                if relationship is not None
+                else stable_id("relationship", idea_id, security_id)
+            )
+            cycle = "backfill-v1" if backfill else relationship_marker
+            dependency = security_operations.get(security_id)
+            operation_id, created = enqueue_operation(
+                repository_root,
+                settings,
+                operation_type="relationship_research",
+                entity_type="relationship",
+                entity_id=relationship_id,
+                dedupe_key=(
+                    f"relationship_research:{relationship_id}:allocation-maintenance:{cycle}"
+                ),
+                prompt=(
+                    f"Review the canonical relationship from {idea_id} to {security_id} and "
+                    "accept or reject it with current evidence."
+                ),
+                inputs={
+                    "relationship_id": relationship_id,
+                    "idea_id": idea_id,
+                    "security_id": security_id,
+                    "maintenance_mode": "backfill" if backfill else "refresh",
+                },
+                source=source,
+                priority=70 if backfill else 60,
+                freshness_days=0,
+                depends_on=(dependency,) if dependency else (),
+                source_refs=(
+                    tuple(part for part in assessment["evidence_refs"].split("|") if part)
+                    if assessment is not None
+                    else ()
+                ),
+                now=instant,
+            )
+            relationship_operations.append(operation_id)
+            if created:
+                created_ids.append(operation_id)
+
+    return AllocationMaintenanceResult(
+        run_id=run_id,
+        as_of=format_timestamp(instant),
+        backfill=backfill,
+        researched_security_count=len(researched),
+        relationship_pair_count=relationship_pair_count,
+        security_operations=tuple(sorted(security_operations.values())),
+        relationship_operations=tuple(sorted(set(relationship_operations))),
+        operations_created=tuple(sorted(created_ids)),
+    )
+
+
+def allocation_readiness(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    now: datetime | None = None,
+) -> AllocationReadinessResult:
+    """Report whether the maintained universe satisfies activation invariants."""
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    researched = _researched_securities(repository_root)
+    assessments = {
+        row["security_id"]: row for row in read_table(repository_root, "security_assessments")
+    }
+    sources = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+    relationship_rows = read_table(repository_root, "relationships")
+    by_pair: defaultdict[tuple[str, str], list[Mapping[str, str]]] = defaultdict(list)
+    for row in relationship_rows:
+        by_pair[(row["idea_id"], row["security_id"])].append(row)
+    errors: list[str] = []
+    current_assessments = 0
+    fresh_evidence = 0
+    current_relationships = 0
+    relationship_pairs = 0
+
+    for security in researched:
+        security_id = security["security_id"]
+        assessment = assessments.get(security_id)
+        assessment_errors: tuple[str, ...] = ()
+        if assessment is None:
+            errors.append(f"assessment_missing:{security_id}")
+        else:
+            assessment_errors = _assessment_readiness_errors(
+                assessment, sources, settings, now=instant
+            )
+            errors.extend(assessment_errors)
+            if not any(
+                error.startswith(("assessment_stale:", "assessment_invalid:"))
+                for error in assessment_errors
+            ):
+                current_assessments += 1
+            if not assessment_errors:
+                fresh_evidence += 1
+
+        accepted_current = False
+        for idea_id in _canonical_idea_links(repository_root, security):
+            relationship_pairs += 1
+            matches = sorted(
+                by_pair.get((idea_id, security_id), ()), key=lambda row: row["relationship_id"]
+            )
+            if len(matches) != 1:
+                errors.append(f"relationship_missing_or_ambiguous:{idea_id}:{security_id}")
+                continue
+            relationship = matches[0]
+            if not _relationship_is_current(relationship, instant):
+                errors.append(f"relationship_stale:{relationship['relationship_id']}")
+                continue
+            current_relationships += 1
+            accepted_current = accepted_current or relationship["status"] == "accepted"
+            if relationship["status"] == "rejected" and assessment is not None:
+                reviewed = parse_timestamp(relationship["last_reviewed_at"])
+                assessed = parse_timestamp(assessment["assessed_at"])
+                assert reviewed is not None and assessed is not None
+                if assessment["eligibility"] != "ineligible" or assessed < reviewed:
+                    errors.append(
+                        f"rejected_relationship_unreconciled:{relationship['relationship_id']}"
+                    )
+        if (
+            assessment is not None
+            and assessment["eligibility"] in ELIGIBLE_ASSESSMENTS
+            and not accepted_current
+        ):
+            errors.append(f"eligible_assessment_lacks_relationship:{security_id}")
+
+    backfill_active = [
+        row
+        for row in read_table(repository_root, "operations_todo")
+        if row["source"] == ALLOCATION_BACKFILL_SOURCE
+    ]
+    errors.extend(
+        f"backfill_operation_active:{row['operation_id']}:{row['status']}"
+        for row in backfill_active
+    )
+    latest_backfill: dict[tuple[str, str], Mapping[str, str]] = {}
+    for row in read_table(repository_root, "operations_history"):
+        if row["source"] != ALLOCATION_BACKFILL_SOURCE:
+            continue
+        key = (row["operation_type"], row["entity_id"])
+        previous = latest_backfill.get(key)
+        if previous is None or (row["completed_at"], row["operation_id"]) > (
+            previous["completed_at"],
+            previous["operation_id"],
+        ):
+            latest_backfill[key] = row
+    errors.extend(
+        f"backfill_operation_failed:{row['operation_id']}"
+        for row in latest_backfill.values()
+        if row["terminal_status"] == "failed"
+    )
+    canonical_errors = tuple(sorted(set(errors)))
+    return AllocationReadinessResult(
+        as_of=format_timestamp(instant),
+        ready=not canonical_errors,
+        researched_security_count=len(researched),
+        current_assessment_count=current_assessments,
+        fresh_evidence_assessment_count=fresh_evidence,
+        relationship_pair_count=relationship_pairs,
+        current_relationship_pair_count=current_relationships,
+        errors=canonical_errors,
+    )
 
 
 def _current_relationships(
@@ -982,8 +1385,12 @@ def plan_allocation(
     )
     if equity <= 0:
         raise AllocationError("allocation requires positive reconciled equity")
+    researched_ids = {row["security_id"] for row in _researched_securities(repository_root)}
     candidate_ids = (
-        set(assessments) | set(portfolio.current_baseline) | set(pending.baseline_by_security)
+        researched_ids
+        | set(assessments)
+        | set(portfolio.current_baseline)
+        | set(pending.baseline_by_security)
     )
     unknown = sorted(candidate_ids - set(securities))
     if unknown:
@@ -1093,6 +1500,7 @@ def plan_allocation(
             "minimum_confidence": settings.allocation.minimum_confidence,
             "minimum_diversified_candidates": settings.allocation.minimum_diversified_candidates,
             "maximum_assessment_age_days": settings.allocation.maximum_assessment_age_days,
+            "research_refresh_lead_days": settings.allocation.research_refresh_lead_days,
             "maximum_deployment_per_run_pct": decimal_text(
                 settings.allocation.maximum_deployment_per_run_pct
             ),

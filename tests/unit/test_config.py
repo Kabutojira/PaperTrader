@@ -26,12 +26,13 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.indicators.sma_periods == (20, 50, 200)
     assert settings.orders.default_fill_policy == "next_open"
     assert settings.portfolio.initial_capital == Decimal("100000.00")
-    assert settings.allocation.mode == "report_only"
+    assert settings.allocation.mode == "active"
     assert settings.allocation.target_invested_pct == Decimal("60")
     assert settings.allocation.minimum_cash_reserve_pct == Decimal("25")
     assert settings.allocation.maximum_baseline_sleeve_pct == Decimal("30")
     assert settings.allocation.maximum_baseline_position_pct == Decimal("5")
     assert settings.allocation.minimum_confidence == "medium"
+    assert settings.allocation.research_refresh_lead_days == 7
     assert settings.operations.maximum_llm_operations_per_run == 5
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
@@ -131,7 +132,7 @@ def test_settings_reject_contract_incompatible_price_retention(
             "minimum_trade_pct = 6",
             "must not exceed the baseline position cap",
         ),
-        ("mode = report_only", "mode = automatic", "allocation.mode"),
+        ("mode = active", "mode = automatic", "allocation.mode"),
     ],
 )
 def test_settings_reject_unsafe_allocation_cross_limits(

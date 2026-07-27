@@ -1065,7 +1065,8 @@ The exact selected securities must depend only on current assessments and determ
 * [x] Allocation sizing is owned by code rather than the LLM.
 * [x] Baseline orders cannot exceed their allocation targets or strategy risk budgets.
 * [x] Baseline allocation cannot bypass existing risk, order, fill, accounting, or reconciliation boundaries.
-* [ ] Report-only mode proves the workflow without creating trading state.
+* [x] Report-only mode is deterministically covered without creating trading state; the operator
+  explicitly waived five live shadow cycles for this rollout.
 * [x] The daily report explains both invested and intentionally uninvested cash.
 * [x] A clean-checkout integration cycle can move from 100% cash to staged diversified baseline paper exposure.
 * [x] A repeated cycle creates no duplicate assessment, allocation plan, strategy, signal, order, execution, or history record.
@@ -1075,6 +1076,21 @@ The exact selected securities must depend only on current assessments and determ
 ## Step 8 implementation status — 2026-07-27
 
 The deterministic implementation, contracts, skills, daily integration, reference output, and
-validation gates are complete. Versioned configuration remains in `report_only`. Operational
-completion still requires evidence-backed assessment backfill for the existing researched
-watchlist and five completed shadow daily cycles before a human may consider Phase B activation.
+validation gates are complete. Security research may now register bounded source metadata and is
+required to leave a current evidence-backed assessment even when skipped. Allocation maintenance
+derives its universe from canonical researched security pages, enqueues stable assessment and
+relationship refresh work, and exposes strict readiness coverage. Allocation reports include
+researched securities that lack assessments while excluding identity-only watchlist rows.
+
+The operator explicitly waived the original five-live-cycle shadow requirement. Accordingly, the
+versioned default is `active` without changing the 25% cash reserve, 30% baseline sleeve, 5%
+position cap, or 15% per-run deployment limit. Active mode remains fail-closed: a security without
+a current registered-evidence assessment and current accepted relationship receives a zero target,
+so activation cannot force an investment.
+
+The repository's 24-security live assessment/source/relationship backfill remains an operational
+data task rather than a code-completion shortcut. It must be processed sequentially through the
+configured inference harness; no score or valuation may be inferred from legacy prose. Strict
+`allocation readiness` remains red until that evidence-backed work and every backfill terminal
+state are complete. Hosted inference, publish, push, and Telegram delivery still require their
+configured external credential and post-commit boundaries.

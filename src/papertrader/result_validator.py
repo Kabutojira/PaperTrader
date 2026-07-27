@@ -9,12 +9,13 @@ from pathlib import Path, PurePosixPath
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from papertrader.config import ConfigurationError, load_settings
 from papertrader.integrity import is_runtime_path_allowed, validate_integrity
 from papertrader.portfolio import reconcile_portfolio
 from papertrader.queue import Operation
 from papertrader.repository_state import RepositoryDelta, RepositorySnapshot
 from papertrader.tables import read_table
-from papertrader.utils import parse_timestamp
+from papertrader.utils import parse_timestamp, utc_now
 from papertrader.wiki import lint_wiki
 
 WIKI_RESEARCH_DOMAINS = frozenset(
@@ -142,6 +143,8 @@ def _path_allowed_for_operation(operation_type: str, raw_path: str, *, created: 
         return raw_path in {
             "data/tables/securities.csv",
             "data/tables/security_assessments.csv",
+            "data/tables/source_registry.csv",
+            "data/tables/source_history.csv",
         } or _is_wiki_path(path, frozenset({"securities"}))
     if operation_type == "relationship_research":
         return raw_path == "data/tables/relationships.csv" or _is_wiki_path(
@@ -195,7 +198,7 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
     if command[:2] in {("issue", "record"), ("queue", "enqueue")}:
         return True
     if command[:3] == ("research", "source", "record"):
-        return operation_type == "wiki_ingest"
+        return operation_type in {"wiki_ingest", "security_research"}
     if command[:3] == ("research", "security", "upsert"):
         return operation_type == "security_research"
     if command[:3] == ("research", "assessment", "upsert"):
@@ -436,6 +439,108 @@ def _issue_rows(repository_root: Path) -> dict[str, dict[str, str]]:
     return {row["issue_id"]: row for row in read_table(repository_root, "issues")}
 
 
+def _security_assessment_result_errors(
+    repository_root: Path,
+    *,
+    operation: Operation,
+    status: object,
+    run_id: str,
+    environment: Mapping[str, str],
+) -> list[str]:
+    if operation.operation_type != "security_research" or status not in {"succeeded", "skipped"}:
+        return []
+    assessment = next(
+        (
+            row
+            for row in read_table(repository_root, "security_assessments")
+            if row["security_id"] == operation.entity_id
+        ),
+        None,
+    )
+    if assessment is None:
+        if status == "succeeded":
+            return ["completed security research requires this run's comparable assessment"]
+        return ["skipped security research requires an existing current assessment"]
+    if status == "succeeded" and assessment["run_id"] != run_id:
+        return ["completed security research requires this run's comparable assessment"]
+    try:
+        settings = load_settings(repository_root, environment)
+        from papertrader.allocation import _assessment_readiness_errors
+
+        freshness_errors = _assessment_readiness_errors(
+            assessment,
+            {row["source_id"]: row for row in read_table(repository_root, "source_registry")},
+            settings,
+            now=utc_now().replace(microsecond=0),
+        )
+    except ConfigurationError as exc:
+        return [f"cannot validate security assessment freshness: {exc}"]
+    if freshness_errors:
+        prefix = "completed" if status == "succeeded" else "skipped"
+        return [
+            f"{prefix} security research requires fresh registered assessment evidence: "
+            + ",".join(freshness_errors)
+        ]
+    return []
+
+
+def _baseline_signal_followup_errors(
+    repository_root: Path,
+    *,
+    run_id: str,
+    operation: Operation,
+    created_operation_ids: set[str],
+    operation_rows_after: Mapping[str, Mapping[str, str]],
+) -> list[str]:
+    if operation.operation_type != "strategy_research":
+        return []
+    strategy = next(
+        (
+            row
+            for row in read_table(repository_root, "strategies")
+            if row["strategy_id"] == operation.entity_id
+        ),
+        None,
+    )
+    if strategy is None or strategy["sleeve"] != "baseline":
+        return []
+    signals = [
+        row
+        for row in read_table(repository_root, "signals")
+        if row["strategy_id"] == operation.entity_id and row["run_id"] == run_id
+    ]
+    errors: list[str] = []
+    for signal in signals:
+        matches = [
+            row
+            for operation_id, row in operation_rows_after.items()
+            if operation_id in created_operation_ids
+            and row["operation_type"] == "execute_strategy"
+            and row["entity_id"] == operation.entity_id
+        ]
+        exact: list[Mapping[str, str]] = []
+        for row in matches:
+            payload_path = repository_root.joinpath(*PurePosixPath(row["payload_path"]).parts)
+            try:
+                payload = json.loads(payload_path.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError):
+                continue
+            inputs = payload.get("inputs") if isinstance(payload, dict) else None
+            if (
+                isinstance(inputs, dict)
+                and inputs.get("strategy_id") == operation.entity_id
+                and inputs.get("signal_id") == signal["signal_id"]
+                and inputs.get("action") == signal["signal_type"]
+            ):
+                exact.append(row)
+        if len(exact) != 1:
+            errors.append(
+                "baseline signal requires exactly one matching execute_strategy follow-up: "
+                f"{signal['signal_id']}"
+            )
+    return errors
+
+
 def validate_agent_result(
     repository_root: Path,
     *,
@@ -518,13 +623,19 @@ def validate_agent_result(
         errors.append(f"{operation.operation_type} result must be evidence-linked")
     if (
         operation.operation_type == "security_research"
-        and status == "succeeded"
-        and not any(
-            row["security_id"] == operation.entity_id and row["run_id"] == run_id
-            for row in read_table(repository_root, "security_assessments")
-        )
+        and status == "skipped"
+        and "data/tables/security_assessments.csv" in changed_paths
     ):
-        errors.append("completed security research requires this run's comparable assessment")
+        errors.append("skipped security research must preserve its existing current assessment")
+    errors.extend(
+        _security_assessment_result_errors(
+            repository_root,
+            operation=operation,
+            status=status,
+            run_id=run_id,
+            environment=environment,
+        )
+    )
     validation = result.get("validation")
     if status in {"succeeded", "skipped"} and (
         not isinstance(validation, dict) or validation.get("passed") is not True
@@ -538,6 +649,15 @@ def validate_agent_result(
             f"reported={sorted(reported_operations)!r}, actual={sorted(created_operations)!r}"
         )
     operation_rows_after = _operation_rows(repository_root)
+    errors.extend(
+        _baseline_signal_followup_errors(
+            repository_root,
+            run_id=run_id,
+            operation=operation,
+            created_operation_ids=created_operations,
+            operation_rows_after=operation_rows_after,
+        )
+    )
     altered_existing_operations = sorted(
         operation_id
         for operation_id, row in operation_rows_before.items()

@@ -5,6 +5,7 @@ from datetime import UTC, date, datetime
 from decimal import Decimal
 from pathlib import Path
 
+from papertrader.atomic_io import atomic_write_text
 from papertrader.config import Settings
 from papertrader.daily import execute_agent_batch, finalize_daily_run, prepare_daily_run
 from papertrader.execution import ensure_initial_capital
@@ -17,6 +18,98 @@ from papertrader.tables import read_table, write_table
 from papertrader.wiki import lint_wiki
 
 NOW = datetime(2026, 7, 24, 22, tzinfo=UTC)
+
+
+def test_daily_preparation_enqueues_allocation_maintenance_sequentially(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    idea_id = "idea_daily_maintenance"
+    security_id = "sec_daily_maintenance"
+    atomic_write_text(
+        sandbox_repository / "data" / "wiki" / "ideas" / f"{idea_id}.md",
+        "---\ntitle: Daily maintenance idea\ntype: idea\nstatus: maintained\n---\n\n# Idea\n",
+        allowed_root=sandbox_repository,
+    )
+    research_page = f"data/wiki/securities/{security_id}.md"
+    atomic_write_text(
+        sandbox_repository / research_page,
+        (
+            "---\ntitle: Daily maintenance security\ntype: security\nstatus: maintained\n"
+            f"---\n\n# Security\n\n[[ideas/{idea_id}]]\n"
+        ),
+        allowed_root=sandbox_repository,
+    )
+    write_table(
+        sandbox_repository,
+        "securities",
+        [
+            {
+                "security_id": security_id,
+                "issuer_id": "issuer_daily_maintenance",
+                "company_name": "Daily Maintenance SE",
+                "instrument_name": "Daily Maintenance common stock",
+                "instrument_type": "equity",
+                "ticker": "DMT",
+                "exchange_code": "XETR",
+                "venue_mic": "XETR",
+                "provider_symbol": "DMT.DE",
+                "broker_symbol": "",
+                "currency": "EUR",
+                "country": "DE",
+                "sector": "Industrials",
+                "industry": "Testing",
+                "status": "watching",
+                "watchlist_reason": "Daily maintenance fixture.",
+                "research_summary": "Daily maintenance fixture.",
+                "research_page": research_page,
+                "last_research_at": "2026-07-20T00:00:00Z",
+                "next_review_at": "2026-08-20T00:00:00Z",
+                "created_at": "2026-07-20T00:00:00Z",
+                "updated_at": "2026-07-20T00:00:00Z",
+                "source": "fixture",
+            }
+        ],
+    )
+    write_price_cache(
+        sandbox_repository,
+        security_id,
+        (
+            PriceBar(
+                date=NOW.date(),
+                open=Decimal("100"),
+                high=Decimal("101"),
+                low=Decimal("99"),
+                close=Decimal("100"),
+                adjusted_close=Decimal("100"),
+                volume=1000,
+                dividends=Decimal("0"),
+                stock_splits=Decimal("0"),
+                currency="EUR",
+                provider_symbol="DMT.DE",
+                retrieved_at=NOW,
+                source="fixture",
+            ),
+        ),
+    )
+
+    preparation = prepare_daily_run(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="daily-allocation-maintenance",
+        trigger="integration",
+        source_sha="b" * 40,
+        now=NOW,
+        retrieve_market=False,
+        classify_opportunities=False,
+    )
+    assert preparation.errors == ()
+    rows = read_table(sandbox_repository, "operations_todo")
+    assert [row["operation_type"] for row in rows] == [
+        "security_research",
+        "relationship_research",
+    ]
+    assert rows[1]["depends_on"] == rows[0]["operation_id"]
 
 
 def test_empty_daily_cycle_generates_one_reconciled_canonical_report(

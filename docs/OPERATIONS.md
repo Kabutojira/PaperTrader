@@ -233,16 +233,25 @@ blocker; do not omit the assessment.
 Generate a plan only after accounting has reconciled:
 
 ```bash
+uv run papertrader allocation maintain \
+  --run-id "allocation-maintenance-$(date -u +%Y%m%dT%H%M%SZ)" --backfill
+uv run papertrader allocation readiness --strict
 uv run papertrader portfolio reconcile --strict
 uv run papertrader allocation plan --run-id "allocation-$(date -u +%Y%m%dT%H%M%SZ)"
 ```
 
+Omit `--backfill` during ordinary maintenance; daily preparation already does this in
+`report_only` and `active` modes. Backfill and agent execution remain sequential, in configured
+batches of at most five. Readiness covers only securities with a non-empty canonical
+`research_page`; identity-only watchlist rows are intentionally excluded.
+
 Inspect `data/tables/allocation_targets.csv` and the matching
 `data/runs/<run-id>/allocation_plan.json`. The immutable audit rows are in
-`data/tables/allocation_history.csv`. Never hand-edit these files. The initial mode is
-`report_only`, which must produce no allocation-generated queue rows, signals, orders, or
-accounting changes. Observe at least five completed shadow daily cycles before changing the
-versioned mode to `active`.
+`data/tables/allocation_history.csv`. Never hand-edit these files. The versioned mode is `active`;
+the operator explicitly waived the original five-live-cycle shadow requirement. A diagnostic
+`report_only` run must still produce no allocation-generated queue rows, signals, orders, or
+accounting changes. Active mode does not override readiness: missing or stale evidence,
+assessments, relationships, prices, or FX leaves the affected target at zero and retains cash.
 
 In active mode, material target deltas enqueue ordinary sequential `strategy_research` work for
 the next run. Baseline strategies remain long-equity only, must retain the current allocation-plan

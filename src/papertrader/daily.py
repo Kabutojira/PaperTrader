@@ -10,7 +10,11 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 from papertrader.agent_runner import AgentBatchResult, Executor, run_sequential_operations
-from papertrader.allocation import AllocationError, plan_allocation
+from papertrader.allocation import (
+    AllocationError,
+    maintain_allocation_research,
+    plan_allocation,
+)
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
 from papertrader.corporate_actions import accrue_dividends
@@ -200,6 +204,21 @@ def prepare_daily_run(
             for packet in packets
             if packet.decision is None
         )
+    maintenance_dispositions: tuple[str, ...] = ()
+    if settings.allocation.mode in {"report_only", "active"}:
+        try:
+            maintenance = maintain_allocation_research(
+                repository_root,
+                settings,
+                run_id=run_id,
+                now=instant,
+            )
+            maintenance_dispositions = tuple(
+                f"allocation_maintenance:{operation_id}"
+                for operation_id in maintenance.operations_created
+            )
+        except (AllocationError, CanonicalValueError) as exc:
+            errors.append(f"allocation maintenance failed closed: {exc}")
     for error in errors:
         _record_phase_issue(
             repository_root,
@@ -208,7 +227,11 @@ def prepare_daily_run(
             error=error,
             now=instant,
         )
-    queue_dispositions = (*release_dispositions, *prepare_queue(repository_root, now=instant))
+    queue_dispositions = (
+        *release_dispositions,
+        *maintenance_dispositions,
+        *prepare_queue(repository_root, now=instant),
+    )
     atomic_write_json(
         manifest_path,
         {

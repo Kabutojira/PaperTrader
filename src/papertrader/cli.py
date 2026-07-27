@@ -17,7 +17,11 @@ from papertrader.agent_runner import (
     preflight_hermes,
     run_one_operation,
 )
-from papertrader.allocation import plan_allocation
+from papertrader.allocation import (
+    allocation_readiness,
+    maintain_allocation_research,
+    plan_allocation,
+)
 from papertrader.command_audit import audit_context, record_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
@@ -187,6 +191,11 @@ def _parser() -> argparse.ArgumentParser:
     allocation_commands = allocation.add_subparsers(dest="allocation_command", required=True)
     allocation_plan = allocation_commands.add_parser("plan")
     allocation_plan.add_argument("--run-id", required=True)
+    allocation_maintain = allocation_commands.add_parser("maintain")
+    allocation_maintain.add_argument("--run-id", required=True)
+    allocation_maintain.add_argument("--backfill", action="store_true")
+    allocation_readiness_command = allocation_commands.add_parser("readiness")
+    allocation_readiness_command.add_argument("--strict", action="store_true")
 
     actions = commands.add_parser("corporate-actions", help="apply durable paper cash actions")
     action_commands = actions.add_subparsers(dest="action_command", required=True)
@@ -937,9 +946,22 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(json.dumps(row, sort_keys=True))
         return 0
     if arguments.command == "allocation":
-        result = plan_allocation(root, settings, run_id=arguments.run_id)
-        print(json.dumps(asdict(result), sort_keys=True))
-        return 0
+        if arguments.allocation_command == "plan":
+            plan_result = plan_allocation(root, settings, run_id=arguments.run_id)
+            print(json.dumps(asdict(plan_result), sort_keys=True))
+            return 0
+        elif arguments.allocation_command == "maintain":
+            maintenance_result = maintain_allocation_research(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                backfill=arguments.backfill,
+            )
+            print(json.dumps(asdict(maintenance_result), sort_keys=True))
+            return 0
+        readiness = allocation_readiness(root, settings)
+        print(json.dumps(asdict(readiness), sort_keys=True))
+        return int(arguments.strict and not readiness.ready)
     if arguments.command == "logs":
         regenerate_log_tail(root)
         return _print_result("logs", [])
