@@ -2,7 +2,7 @@
 
 ## Project mission
 
-PaperTrader is a public, Git-native paper-trading research system. It monitors securities, maintains an interlinked investment wiki, converts research into explicit strategies, simulates trades, measures results, and publishes a daily report.
+PaperTrader is a public, Git-native paper-trading research system. It monitors securities, maintains an interlinked investment wiki, converts research into explicit strategies, simulates trades, measures results, and publishes a daily report plus an investor-facing decision dashboard and copyable model portfolio.
 
 The repository is the source of truth. Any legacy data import is a separate, one-time manual activity and is outside this project specification. No component may place a real financial order.
 
@@ -15,6 +15,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 - Configure Hermes with `WIKI_PATH=${GITHUB_WORKSPACE}/data/wiki` and add `${GITHUB_WORKSPACE}/skills` to Hermes `skills.external_dirs`. Local agentic harnesses, including Codex, may also read and execute the same project skills.
 - Process every operation sequentially. Parallel agents, parallel operation execution, and agent fan-out are permanently out of scope.
 - Use Quartz to render the Markdown wiki to GitHub Pages.
+- Publish one deterministic decision snapshot per completed daily run and derive every investor-facing page and download from that snapshot.
 
 ## Non-negotiable invariants
 
@@ -33,6 +34,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 13. **Dates and numbers are canonical.** Use UTC ISO-8601 timestamps, ISO dates, ISO currency codes, ISO 10383 MICs, and decimal-safe money calculations. Display-time conversion may use `Europe/Rome`.
 14. **Generated files are reproducible.** A clean checkout plus pinned dependencies must regenerate all views and reports from canonical data.
 15. **Execution is sequential.** The controller claims and completes at most one LLM operation at a time. No workflow matrix, background agent, sub-agent fan-out, or parallel agent execution is allowed.
+16. **Published advice is derived and one-way.** The decision snapshot, model-portfolio export, investor pages, and browser-only scaler are generated views. They may project reconciled holdings and validated pending orders but may never become inputs to allocation, orders, fills, cash, positions, or performance.
 
 ## Repository layout
 
@@ -62,6 +64,9 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── execution.py
 │   ├── portfolio.py
 │   ├── performance.py
+│   ├── allocation.py
+│   ├── advice.py
+│   ├── investor_pages.py
 │   ├── corporate_actions.py
 │   ├── reports.py
 │   ├── telegram.py
@@ -69,9 +74,11 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   └── integrity.py
 ├── scripts/
 │   ├── papertrader
-│   └── build_site.py
+│   ├── build_site.py
+│   └── check_site_links.py
 ├── schemas/
 │   ├── agent_result.schema.json
+│   ├── decision_snapshot.schema.json
 │   ├── operation_payload.schema.json
 │   └── csv_contracts.yaml
 ├── skills/
@@ -98,6 +105,11 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   │   ├── comparisons/
 │   │   ├── queries/
 │   │   ├── daily-reports/
+│   │   ├── research-catalog.md
+│   │   ├── model-portfolio.md
+│   │   ├── signals.md
+│   │   ├── performance.md
+│   │   ├── system-status.md
 │   │   ├── _meta/
 │   │   └── _archive/
 │   ├── tables/
@@ -112,6 +124,9 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   │   ├── cash_ledger.csv
 │   │   ├── portfolio.csv
 │   │   ├── performance_daily.csv
+│   │   ├── security_assessments.csv
+│   │   ├── allocation_targets.csv
+│   │   ├── allocation_history.csv
 │   │   ├── source_registry.csv
 │   │   ├── source_history.csv
 │   │   ├── issues.csv
@@ -124,11 +139,16 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── market/
 │   │   ├── prices/
 │   │   │   └── <security_id>.csv
+│   │   ├── fx/
 │   │   ├── latest.csv
 │   │   ├── indicators.csv
 │   │   └── snapshots/
 │   ├── runs/
 │   │   └── <run_id>/<operation_id>/
+│   ├── published/
+│   │   ├── decision_snapshot.json
+│   │   ├── model_portfolio.csv
+│   │   └── actionable_signals.csv
 │   ├── logs/
 │   │   ├── operations-YYYY.ndjson
 │   │   └── log.txt
@@ -141,6 +161,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 ├── site/
 │   ├── package.json
 │   ├── package-lock.json
+│   ├── papertrader/
 │   ├── quartz.config.ts
 │   └── quartz.layout.ts
 └── .github/workflows/
@@ -148,6 +169,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
     ├── daily.yml
     ├── reusable-non-llm.yml
     ├── reusable-llm.yml
+    ├── reporting.yml
     └── pages.yml
 ```
 
@@ -159,6 +181,7 @@ Scheduled and manually dispatched runtime workflows may commit only these paths 
 - lawfully storable wiki source assets under `data/wiki/raw/` with extensions `.md`, `.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`, or `.webp`;
 - canonical and generated CSV files under `data/**/*.csv`, including the rolling one-year price cache in `data/market/prices/`;
 - operation payloads, run manifests, and validation results under `data/operations/` and `data/runs/` with extensions `.json` or `.md`;
+- the generated publication snapshot `data/published/decision_snapshot.json` and generated CSV exports under `data/published/`;
 - structured and human-readable logs under `data/logs/` with extensions `.ndjson` or `.txt`;
 - `data/issues.md`;
 - the single age-encrypted OAuth state file `.papertrader/credentials/openai-oauth-auth.json.age`.
@@ -266,6 +289,24 @@ position_id,security_id,provider_contract_id,instrument_type,side,quantity,avera
 
 Rebuild this file from the ledgers during every deterministic run and fail if reconciliation does not balance.
 
+### Generated investor decision publication
+
+Each completed daily run writes one immutable `data/runs/<run_id>/decision_snapshot.json` that
+validates against `schemas/decision_snapshot.schema.json`, then atomically refreshes these latest
+publication views:
+
+- `data/published/decision_snapshot.json`;
+- `data/published/model_portfolio.csv`;
+- `data/published/actionable_signals.csv`.
+
+The snapshot joins only canonical state as of the completed run. It distinguishes filled holdings,
+validated non-terminal orders, allocation candidates, and research alerts; an allocation target is
+not an actionable signal. Current and approved target weights must each reconcile to 100%, with one
+explicit cash row. Copy-ready rows require a canonical live order and legs. The browser scaler is
+local-only, rounds eligible long-equity quantities down to whole shares, and never writes state or
+contacts a broker or server. `papertrader advice validate --strict` must prove the snapshot identity,
+immutable run artifact, CSV projections, source-state hashes, and reconciliation before publication.
+
 ## Operation queue contract
 
 `operations_TODO.csv` is the active, human-editable queue. Never delete a row until its complete original request and terminal result have been atomically appended to `operations_history.csv`.
@@ -311,7 +352,7 @@ Keep the allowed set small and explicit.
 - Orient using `SCHEMA.md`, `index.md`, and recent wiki `log.md`.
 - Capture only legally storable source material.
 - Update existing pages before creating duplicates.
-- Preserve provenance, contradictions, confidence, wikilinks, index entries, and wiki log entries.
+- Preserve provenance, contradictions, confidence, wikilinks, research-catalog entries, and wiki log entries.
 - Enqueue justified follow-up operations through the project CLI and record them in the agent result manifest.
 
 ### `opportunity_research`
@@ -447,11 +488,11 @@ This file is a manifest of changes already completed, not a list of changes awai
 The wiki follows Hermes Agent's native `llm-wiki` conventions:
 
 - `SCHEMA.md` defines domain folders, page frontmatter, tags, thresholds, source rules, and contradiction handling.
-- `index.md` is the complete content catalog.
+- `index.md` is the results-first investor homepage and links to `research-catalog.md`, the complete maintained content catalog.
 - `log.md` is append-only and rotates by year after the configured threshold.
 - `raw/` is immutable after ingestion.
 - Every maintained page has frontmatter, provenance, a confidence level where needed, and meaningful wikilinks.
-- Every operation first reads `SCHEMA.md`, `index.md`, and the most recent wiki-log entries.
+- Every operation first reads `SCHEMA.md`, `index.md`, `research-catalog.md`, and the most recent wiki-log entries.
 - Every run executes wiki lint for broken links, orphans, invalid frontmatter, unknown tags, stale pages, contradictions, source drift, and oversized pages.
 
 The `inbox/`, `ideas/`, `securities/`, `relationships/`, and `strategies/` folders are allowed PaperTrader specializations defined in `SCHEMA.md`. `inbox/` contains candidate change packets awaiting the cheap-LLM ingestion decision; it is not part of immutable `raw/`.
@@ -470,6 +511,7 @@ Quartz and Telegram consume that same file.
 - Store provider symbols explicitly and record retrieval timestamps and errors.
 - Pin yfinance and TA-Lib versions in `uv.lock` and use a pinned build container.
 - Normalize corporate actions, time zones, market calendars, splits, dividends, and adjusted/unadjusted prices.
+- Exclude provider rows newer than the latest completed exchange session before validation. If yfinance reports an open or close outside its own high/low envelope, deterministic normalization may widen only that envelope to the provider-reported OHLC extrema and must mark the repaired bar source; other invalid ranges fail closed.
 - Require at least 200 valid daily observations before calculating or acting on a 200-day moving average; otherwise mark the indicator unavailable.
 - Calculate RSI, Bollinger Bands, SMA, MACD, returns, volume anomaly, and volatility in deterministic code.
 - Indicator thresholds come from `config.ini`; do not hard-code them in skills.
@@ -549,7 +591,7 @@ Do not repeat incorrect example math. Percentage return is `(current_value - cos
 ### Telegram
 
 - Send the canonical daily report after a successful commit.
-- Escape Telegram Markdown correctly and split messages that exceed Telegram limits.
+- Send Telegram Rich Markdown with preserved headings, lists, emphasis, code, and links, and split messages without breaking formatting when they exceed Telegram limits.
 - Include the committed GitHub URL.
 - Telegram failure must not roll back a successful repository commit; record it as an issue and retry in a bounded later run.
 
@@ -564,8 +606,8 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
 3. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
 4. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
 5. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.
-6. Generate the final daily report and Quartz content.
-7. Run the full test and validation gate.
+6. Generate and strictly validate the immutable decision snapshot, CSV exports, investor pages, final daily report, and Quartz content.
+7. Run the full test and validation gate, including `papertrader advice validate --strict`.
 8. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
 9. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
 
@@ -603,6 +645,8 @@ Required coverage:
 - next-open and limit-touch fill policies with no look-ahead;
 - cash/portfolio/execution reconciliation property tests;
 - deterministic daily-report reference-output tests;
+- decision-snapshot identity, source-state, projection, tamper, stale-order, and CSV reference tests;
+- investor dashboard escaping, copy/scaling safety, and exact published-artifact tests;
 - Telegram escaping and message splitting;
 - wiki frontmatter, links, index, provenance, tag, and log lint;
 - workflow YAML lint and secret-boundary checks.
@@ -615,8 +659,10 @@ uv run ruff format --check .
 uv run mypy src
 uv run pytest
 uv run papertrader integrity --strict
+uv run papertrader advice validate --strict
 uv run papertrader wiki lint --strict
 uv run papertrader portfolio reconcile --strict
+cd site && npm run check && PAPERTRADER_BASE_URL=localhost npm run build
 ```
 
 all pass.
@@ -646,6 +692,6 @@ PaperTrader version 1 is done when a clean scheduled run can:
 6. fill the order only under the configured market-data policy;
 7. reconcile executions, cash, portfolio, and performance exactly;
 8. update and lint the wiki;
-9. publish a correct daily report and Quartz site;
-10. commit changes and send the committed report to Telegram;
-11. rerun without duplicating work, signals, orders, executions, sources, or wiki pages.
+9. publish a reconciled decision snapshot, explicit model-portfolio stance, copyable exports, daily report, and Quartz dashboard from one snapshot identity;
+10. commit changes and send the committed investor brief to Telegram;
+11. rerun without duplicating work, signals, orders, executions, sources, wiki pages, or publication artifacts.

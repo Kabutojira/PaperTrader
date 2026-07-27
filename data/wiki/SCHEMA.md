@@ -46,8 +46,8 @@ max_page_bytes: 100000
 # PaperTrader wiki schema
 
 This wiki follows Hermes Agent's native `llm-wiki` conventions and the repository rules in
-`AGENTS.md`. Orient every operation with this page, the complete [[index]], and the latest entries
-in `log.md`.
+`AGENTS.md`. Orient every operation with this page, the results-first [[index]], the complete
+[[research-catalog]], and the latest entries in `log.md`.
 
 ## Domains
 
@@ -71,8 +71,8 @@ in `log.md`.
 Every maintained Markdown page outside `raw/` has all fields listed in `required_frontmatter`.
 Use only tags listed in `known_tags`. `provenance` identifies repository state or source IDs; it
 does not replace evidence citations. Use immutable IDs in filenames and frontmatter whenever an
-entity has one. Add every maintained page to `index.md` and append a dated entry to `log.md` for
-each knowledge change.
+entity has one. Add every maintained page to `research-catalog.md` through the normal registration
+path and append a dated entry to `log.md` for each knowledge change.
 
 ## Sources and contradictions
 

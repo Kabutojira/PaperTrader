@@ -14,9 +14,9 @@ Require a `security_id`, exact period, trigger type, and UTC market-data timesta
 ## Allowed scope
 
 Read the relevant market CSVs, security identity row, positions, strategies, operation history,
-wiki schema/index/log, and related wiki pages and sources. Write relevant wiki research pages only
-when evidence changes them. Use the CLI for issues and at most one follow-up operation. Do not
-create an order, signal, execution, or position.
+wiki schema/homepage/catalog/log, and related wiki pages and sources. Write relevant wiki research
+pages only when evidence changes them. Use the CLI for issues and at most one follow-up operation.
+Do not create an order, signal, execution, or position.
 
 The only structured mutations allowed are `papertrader issue record --request <json>` and
 `papertrader queue enqueue --request <json>`.
@@ -28,7 +28,8 @@ Require `operation_id`, `security_id`, `trigger_type`, `market_data_as_of`, `per
 
 ## Procedure
 
-1. Orient with the wiki schema, index, recent log, and existing entity pages.
+1. Orient with the wiki schema, results-first homepage, complete research catalog, recent log, and
+   existing entity pages.
 2. Verify immutable identity, source-bar timestamps, period endpoints, and trigger transition.
 3. State what moved and calculate no numbers the deterministic indicator output already owns.
 4. Seek current primary-source evidence for the move; distinguish evidence from inference.

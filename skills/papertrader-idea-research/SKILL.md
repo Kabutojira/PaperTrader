@@ -12,10 +12,10 @@ finish any permitted change before returning; never batch unrelated themes.
 
 ## Allowed scope
 
-Read wiki schema/index/log, relevant idea, concept, security, and relationship pages, the selected
-payload, structured identities, and evidence sources. Write one idea page plus necessary index/log
-links. Use the CLI for issues and bounded security or relationship follow-ups. Do not hand-edit any
-CSV or create a strategy directly.
+Read wiki schema/homepage/catalog/log, relevant idea, concept, security, and relationship pages,
+the selected payload, structured identities, and evidence sources. Write one idea page plus
+necessary catalog/log links. Use the CLI for issues and bounded security or relationship
+follow-ups. Do not hand-edit any CSV or create a strategy directly.
 
 The only structured mutations allowed are `papertrader issue record --request <json>` and
 `papertrader queue enqueue --request <json>`.
@@ -27,12 +27,13 @@ and any related immutable entity IDs. The idea ID must remain unchanged on updat
 
 ## Procedure
 
-1. Read the wiki schema, complete index, recent log, and native wiki instructions.
+1. Read the wiki schema, results-first homepage, complete research catalog, recent log, and native
+   wiki instructions.
 2. Search claims, mechanisms, aliases, links, and IDs to avoid a duplicate idea.
 3. Evaluate the mechanism and affected value chain using dated evidence.
 4. State beneficiaries and harmed entities as hypotheses, not unexplained ticker associations.
 5. Define catalysts, invalidation, contrary evidence, confidence, and a concrete next review date.
-6. Update or create exactly one idea page, then update index and append the log.
+6. Update or create exactly one idea page, then update the research catalog and append the log.
 7. Enqueue only individually bounded security or relationship research justified by evidence.
 
 ## Source hierarchy
@@ -54,7 +55,7 @@ Write the manifest last; use a sorted exact file delta and canonical command rec
 ## Verification
 
 Before the manifest, confirm one idea ID, no duplicate page, causal links rather than bare
-associations, review date, provenance, index/log updates, and strict wiki lint. Make the manifest
+associations, review date, provenance, catalog/log updates, and strict wiki lint. Make the manifest
 schema-conformant, write it last, and let the parent validate allowed paths and the exact delta.
 
 ## Failure policy

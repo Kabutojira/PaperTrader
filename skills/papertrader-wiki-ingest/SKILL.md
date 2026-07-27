@@ -13,10 +13,10 @@ input is an inbox packet.
 
 ## Allowed scope
 
-Read the selected source, `data/wiki/SCHEMA.md`, `index.md`, recent `log.md`, relevant wiki pages,
-and source registry/history rows. Write allowlisted wiki Markdown and lawful assets under
-`data/wiki/raw/`. Use the project CLI for source rows, issues, and follow-up operations. Do not
-hand-edit CSVs or touch trading/accounting state.
+Read the selected source, `data/wiki/SCHEMA.md`, `index.md`, `research-catalog.md`, recent
+`log.md`, relevant wiki pages, and source registry/history rows. Write allowlisted wiki Markdown
+and lawful assets under `data/wiki/raw/`. Use the project CLI for source rows, issues, and
+follow-up operations. Do not hand-edit CSVs or touch trading/accounting state.
 
 The structured commands allowed here are `papertrader research source record --request <json>`,
 `papertrader issue record --request <json>`, and `papertrader queue enqueue --request <json>`.
@@ -29,13 +29,14 @@ match the payload.
 
 ## Procedure
 
-1. Read the wiki schema, complete index, recent log entries, and native `llm-wiki` instructions.
+1. Read the wiki schema, results-first homepage, complete research catalog, recent log entries,
+   and native `llm-wiki` instructions.
 2. Verify source identity, hash, storage rights, and any inbox classifier decision.
 3. Search titles, immutable IDs, aliases, URLs, and claims before selecting an existing page.
 4. Extract facts, dates, uncertainty, contradictions, and short lawful excerpts. Preserve source
    metadata and never copy a complete copyrighted article.
 5. Update existing pages first; create at most the pages necessary for this one source. Maintain
-   provenance, confidence, wikilinks, index entries, and an append-only log entry.
+   provenance, confidence, wikilinks, catalog entries, and an append-only log entry.
 6. Enqueue only bounded, justified follow-ups through the CLI, then write the completed result.
 
 ## Source hierarchy
@@ -61,7 +62,7 @@ Write the manifest last and copy each canonical project command from the command
 ## Verification
 
 Before the manifest, run source-hash validation and `papertrader wiki lint --strict`. Confirm
-`index.md` catalogs every maintained page and `log.md` records this change. Make the manifest
+`research-catalog.md` catalogs every maintained page and `log.md` records this change. Make the manifest
 conform to the result schema, write it last, and leave schema/delta validation to the parent.
 
 ## Failure policy

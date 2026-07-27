@@ -103,7 +103,7 @@ market retrieval and the configured classifier before claiming the operation.
 skill-content identities under `data/runs/<run-id>/<operation-id>/`, then stores the full
 content-addressed validation baseline in a private temporary file outside the repository. Read the
 returned controller prompt, controller skill, selected operation skill, payload, wiki schema,
-complete index, and recent log before editing anything.
+results-first homepage, complete research catalog, and recent log before editing anything.
 
 Agent-side structured commands need operation-scoped receipts:
 
@@ -265,6 +265,25 @@ Committed FX rates are stored at `data/market/fx/<currency>_<base_currency>.csv`
 the normal market phase for every allowed non-base currency. Missing or stale FX excludes a new
 candidate and defers an existing foreign order. Do not enter a manual substitute rate.
 
+## Validate the investor decision publication
+
+Every completed daily run writes one immutable decision snapshot and refreshes the latest JSON and
+CSV exports, investor pages, daily report, and Telegram brief from that same identity. The
+publication is a derived projection and must never be used as input to allocation, trading, or
+accounting.
+
+```bash
+uv run papertrader advice refresh --run-id <completed-run-id>
+uv run papertrader advice validate --strict
+```
+
+Inspect `data/published/decision_snapshot.json`, `model_portfolio.csv`, and
+`actionable_signals.csv`. Filled holdings, validated pending orders, allocation candidates, and
+research alerts are distinct states; only a canonical live paper order may be copy ready. The
+model-portfolio scaler runs locally in the browser and is illustrative—it does not submit an order
+or persist the entered notional. Never overwrite an existing run snapshot with different state;
+create and complete a new daily run instead.
+
 ## Dispatch GitHub workflows
 
 The scheduled and manual controller use the same reusable runtime. Start with a dry run:
@@ -340,7 +359,7 @@ controller run:
 1. Read `daily_run.json` for the base SHA/report and `agent_batch.json` for ordered outcomes.
 2. Resolve each outcome through `operations_history.csv`, then inspect its immutable
    `payload_path`, `result_path`, command audit, and validation report.
-3. Run strict integrity, wiki, and portfolio checks against the retained checkout.
+3. Run strict integrity, advice, wiki, and portfolio checks against the retained checkout.
 4. Dispatch a new dry run targeted at the original `operation_id`; use a new workflow/run ID.
 5. Execute normally only if needed. Exact source hashes and dedupe keys make an already-completed
    source, operation, signal, order, fill, or wiki registration a no-op rather than a duplicate.
@@ -354,8 +373,9 @@ PAPERTRADER_VALIDATE_QUARTZ=true \
 
 It starts from canonical empty data plus one manually seeded security, then validates market
 normalization, cheap classification, five sequential agent operations, research graph creation,
-signal/order/fill accounting, a second idempotent pass, clean-checkout commit handoff, an exact
-committed Telegram report, and a Quartz build from that same report.
+signal/order/fill accounting, a reconciled decision snapshot and investor dashboard, a second
+idempotent pass, clean-checkout commit handoff, an exact committed Telegram report, and a Quartz
+build from that same report.
 
 ## Add or revise a project skill
 

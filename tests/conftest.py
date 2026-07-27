@@ -69,7 +69,7 @@ def sandbox_repository(repository_root: Path, tmp_path: Path) -> Path:
         target / "data" / "wiki" / "SCHEMA.md",
     )
     wiki_seed = repository_root / "tests" / "fixtures" / "repository_seed" / "wiki"
-    for name in ("index.md", "log.md"):
+    for name in ("index.md", "research-catalog.md", "log.md"):
         shutil.copy2(wiki_seed / name, target / "data" / "wiki" / name)
 
     for contract in load_csv_contracts(target):

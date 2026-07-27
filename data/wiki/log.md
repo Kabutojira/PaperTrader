@@ -331,3 +331,6 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30280283355-1`.
 
 - Published investor decision snapshot `decision_7eae4d9fa5380e578266`.
+
+- Aligned the wiki orientation contract so agents use the results-first [[index]] together with
+  the complete [[research-catalog]].

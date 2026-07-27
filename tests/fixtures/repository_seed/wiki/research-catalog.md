@@ -1,20 +1,16 @@
 ---
-title: PaperTrader wiki index
-type: meta
+title: PaperTrader research catalog
+type: research-catalog
 status: maintained
 tags:
-  - meta
-  - index
+  - research
+  - research-catalog
 created: "2026-07-24"
 updated: "2026-07-24"
 provenance: repository-contract
 ---
 
-# PaperTrader wiki
-
-PaperTrader is a paper-only investment research and simulation wiki.
-
-- [[research-catalog|Research catalog]]
+# Research catalog
 
 ## Meta
 

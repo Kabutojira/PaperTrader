@@ -372,7 +372,9 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
     assert "title: '[EXM] RSI overbought'" in packet_text
     assert "# [EXM] RSI overbought" in packet_text
     assert "- Security: [[securities/sec_a|EXM — Example common stock]] (`sec_a`)" in packet_text
-    index = sandbox_settings.paths.wiki.joinpath("index.md").read_text(encoding="utf-8")
-    assert f"[\\[EXM\\] RSI overbought](inbox/{first[0].path.stem})" in index
+    catalog = sandbox_settings.paths.wiki.joinpath("research-catalog.md").read_text(
+        encoding="utf-8"
+    )
+    assert f"[\\[EXM\\] RSI overbought](inbox/{first[0].path.stem})" in catalog
     assert f"classifier_decision: {decision}" in packet_text
     assert lint_wiki(sandbox_settings.paths.wiki) == []

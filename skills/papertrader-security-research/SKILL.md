@@ -12,12 +12,12 @@ current security row or explicit creation identity, and a bounded research objec
 
 ## Allowed scope
 
-Read the wiki schema/index/log, the one security row, related ideas/relationships/strategies,
-market/FX marks, structured source records, and evidence. Write the one security page and
-necessary index/log changes. Update `securities.csv`, `security_assessments.csv`, issues, and
-source registry/history metadata, issues, and follow-up operations only through the CLI. Raw
-articles remain outside this skill's write scope. Never touch allocation targets/history, ledgers,
-orders, fills, portfolio, or performance.
+Read the wiki schema/homepage/catalog/log, the one security row, related
+ideas/relationships/strategies, market/FX marks, structured source records, and evidence. Write
+the one security page and necessary catalog/log changes. Update `securities.csv`,
+`security_assessments.csv`, source registry/history metadata, issues, and follow-up operations only
+through the CLI. Raw articles remain outside this skill's write scope. Never touch allocation
+targets/history, ledgers, orders, fills, portfolio, or performance.
 
 Use `papertrader research source record --request <json>` for every retained evidence source,
 `papertrader research security upsert --request <json>` for the security row,
@@ -37,7 +37,8 @@ horizon, expiration, explicit blocker/gap sets, and the current run ID.
 
 ## Procedure
 
-1. Orient with schema, index, recent log, and all pages linked to the security.
+1. Orient with schema, the results-first homepage, complete research catalog, recent log, and all
+   pages linked to the security.
 2. Validate issuer/instrument/venue/currency/provider identity and search for duplicates.
 3. Research business and instrument economics from current primary evidence, then register the
    bounded source metadata through the source CLI before referencing it from an assessment.
@@ -46,7 +47,7 @@ horizon, expiration, explicit blocker/gap sets, and the current run ID.
    horizon, or record `valuation_unsupported`; never invent a price target.
 6. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
    configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
-7. Set confidence and next review date, update the wiki page/index/log, and use the security CLI
+7. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
    upsert for the short structured row summary.
 8. Before completing, use the assessment CLI to write exactly one current comparable result:
    `baseline`/`conviction` only with fresh evidence, supportable valuation and no blocker, or

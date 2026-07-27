@@ -12,10 +12,10 @@ native `llm-wiki` and existing idea/security identities. Never infer identity fr
 
 ## Allowed scope
 
-Read wiki schema/index/log, the linked idea and security pages, the relationship row/page,
-relevant evidence, and structured source history. Write the one relationship page plus index/log.
-Use the CLI to upsert or reject the relationship and to enqueue a bounded follow-up. Do not create
-a strategy, signal, order, or accounting entry.
+Read wiki schema/homepage/catalog/log, the linked idea and security pages, the relationship
+row/page, relevant evidence, and structured source history. Write the one relationship page plus
+catalog/log. Use the CLI to upsert or reject the relationship and to enqueue a bounded follow-up.
+Do not create a strategy, signal, order, or accounting entry.
 
 Use `papertrader research relationship upsert --request <json>` for an accepted or rejected edge,
 `papertrader issue record --request <json>` for issues, and
@@ -28,12 +28,13 @@ and evidence references. All three IDs must agree with existing structured state
 
 ## Procedure
 
-1. Orient with wiki contracts, recent log, and both endpoint pages.
+1. Orient with wiki contracts, the results-first homepage, complete research catalog, recent log,
+   and both endpoint pages.
 2. Validate IDs and search for an existing equivalent edge.
 3. Test the causal mechanism from idea to security economics; do not accept correlation alone.
 4. State direction, sensitivity, confidence, catalysts, invalidation, and contrary evidence.
 5. Reject weak or non-causal associations rather than forcing them into the graph.
-6. Update the relationship page/index/log and apply structured state through the CLI.
+6. Update the relationship page/catalog/log and apply structured state through the CLI.
 7. Enqueue at most one next research operation when the accepted edge justifies it.
 
 ## Source hierarchy
@@ -55,7 +56,7 @@ Write it last with the exact sorted file delta and canonical command-audit entri
 ## Verification
 
 Before the manifest, confirm exact endpoint IDs, relationship uniqueness, all causal fields,
-index/log updates, CLI schema validation, and strict wiki lint. Make the manifest conform to the
+catalog/log updates, CLI schema validation, and strict wiki lint. Make the manifest conform to the
 result schema, write it last, and let the parent validate the exact changed paths.
 
 ## Failure policy

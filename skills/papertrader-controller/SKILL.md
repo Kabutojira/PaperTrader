@@ -36,8 +36,9 @@ skill plus native `llm-wiki`; the parent controller separately preloads this con
    with a live lease and validated payload. Do not perform a queue lifecycle transition.
 2. Confirm the preflight artifact identifies the native `llm-wiki`, controller, and selected
    operation skill by version and content hash.
-3. Orient with `SCHEMA.md`, the complete wiki index, and the recent wiki log, then execute the
-   selected operation skill once without sub-agents or concurrent commands.
+3. Orient with `SCHEMA.md`, the results-first `index.md`, the complete `research-catalog.md`, and
+   the recent wiki log, then execute the selected operation skill once without sub-agents or
+   concurrent commands.
 4. Use `papertrader` commands for structured state. The controller records each invocation and its
    exact content delta in `command_audit.json`; report those canonical commands in `commands_run`.
    Treat every JSON request artifact as immutable after its first CLI invocation. A correction or

@@ -14,11 +14,11 @@ the current immutable allocation plan and matching security assessment.
 
 ## Allowed scope
 
-Read wiki schema/index/log, the linked idea/security/relationship pages, market and indicator
-state, read-only allocation targets/history, strategy tables, risk configuration, and source
-evidence. Write one strategy page plus index/log. Use the CLI for strategy/leg rows, issues,
-follow-ups, and an eligible signal. Do not change allocation targets/history, create an order, or
-mutate accounting state.
+Read wiki schema/homepage/catalog/log, the linked idea/security/relationship pages, market and
+indicator state, read-only allocation targets/history, strategy tables, risk configuration, and
+source evidence. Write one strategy page plus catalog/log. Use the CLI for strategy/leg rows,
+issues, follow-ups, and an eligible signal. Do not change allocation targets/history, create an
+order, or mutate accounting state.
 
 Use `papertrader research strategy upsert --request <json>` for the strategy and normalized legs,
 `papertrader signal create --request <json>` only for a complete time-bounded signal, and the
@@ -36,7 +36,8 @@ assessment timestamp, and disposition from the deterministic payload.
 
 ## Procedure
 
-1. Orient with wiki contracts, recent log, and linked research.
+1. Orient with wiki contracts, the results-first homepage, complete research catalog, recent log,
+   and linked research.
 2. Revalidate thesis, relationship, valuation/timing evidence, liquidity, invalidation, assessment,
    current allocation-plan identity, and price/FX freshness.
 3. In `conviction` mode, compare long, short, equity, call, put, and bounded multi-leg alternatives
@@ -48,7 +49,7 @@ assessment timestamp, and disposition from the deterministic payload.
    choose or enlarge the deterministic target quantity.
 5. Select a structure or document the blocking factor. Define entry, exit, expiry, sizing inputs,
    risk budget, required evidence, and every normalized leg.
-6. Update the strategy page/index/log and apply strategy state through the CLI. A baseline strategy
+6. Update the strategy page/catalog/log and apply strategy state through the CLI. A baseline strategy
    must use the stable per-security strategy ID, `sleeve=baseline`, and current allocation-plan ID.
 7. Create a time-bounded signal through the CLI only when all required fields and fresh evidence
    are present. In baseline mode, the plan must still be current, its delta must exceed the minimum
