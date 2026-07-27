@@ -138,6 +138,26 @@ def test_normalize_history_rejects_invalid_ohlc() -> None:
         )
 
 
+def test_normalize_history_repairs_yfinance_ohlc_envelope_with_audit_marker() -> None:
+    frame = _frame()
+    frame["High"] = frame["High"].astype(float)
+    frame.loc[pd.Timestamp("2026-07-24"), "High"] = 103.5
+    frame.loc[pd.Timestamp("2026-07-24"), "Close"] = 104
+    identity = SecurityIdentity("sec_a", "EXM", "XNYS", "USD", "equity")
+
+    bars = normalize_history(
+        frame,
+        identity,
+        calendar_name="XNYS",
+        retrieved_at=datetime(2026, 7, 24, 22, tzinfo=UTC),
+        source="yfinance",
+    )
+
+    assert bars[-1].high == Decimal("104")
+    assert bars[-1].low == Decimal("101")
+    assert bars[-1].source == "yfinance:ohlc-envelope-repair"
+
+
 def test_market_session_boundaries_are_canonical_utc() -> None:
     assert session_open("XETR", date(2026, 7, 24)) == datetime(2026, 7, 24, 7, tzinfo=UTC)
     assert session_close("XETR", date(2026, 7, 24)) == datetime(2026, 7, 24, 15, 30, tzinfo=UTC)
@@ -376,6 +396,26 @@ def test_market_update_excludes_an_in_progress_session(
     assert errors == ()
     assert read_price_cache(sandbox_repository, "sec_a")[-1].date == date(2026, 7, 23)
     assert read_table(sandbox_repository, "market_latest")[0]["price_date"] == "2026-07-23"
+
+
+def test_market_update_discards_invalid_in_progress_bar_before_validation(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    write_table(sandbox_repository, "securities", [_security_row()])
+    frame = _frame()
+    frame.loc[pd.Timestamp("2026-07-24"), "High"] = 1
+
+    errors = update_market_data(
+        sandbox_repository,
+        sandbox_settings,
+        provider=_FakeProvider(frame),
+        now=datetime(2026, 7, 24, 16, tzinfo=UTC),
+        sleeper=lambda _: None,
+    )
+
+    assert errors == ()
+    assert read_price_cache(sandbox_repository, "sec_a")[-1].date == date(2026, 7, 23)
 
 
 def test_failed_retrieval_retries_and_does_not_write_price_cache(

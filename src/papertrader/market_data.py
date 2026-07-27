@@ -261,6 +261,7 @@ def normalize_history(
     calendar_name: str,
     retrieved_at: datetime,
     source: str,
+    completed_through: date | None = None,
 ) -> tuple[PriceBar, ...]:
     """Convert provider-native history to validated, session-aligned Decimal bars."""
 
@@ -286,7 +287,9 @@ def normalize_history(
     by_date: dict[date, PriceBar] = {}
     normalized_retrieved_at = ensure_utc(retrieved_at)
     for (_, row), bar_date in zip(frame.iterrows(), index_dates, strict=True):
-        if bar_date not in sessions:
+        if bar_date not in sessions or (
+            completed_through is not None and bar_date > completed_through
+        ):
             continue
         if bar_date in by_date:
             raise MarketDataError(
@@ -304,8 +307,19 @@ def normalize_history(
         )
         if min(open_price, high, low, close, adjusted) <= 0:
             raise MarketDataError(f"non-positive price on {bar_date} for {identity.security_id}")
+        bar_source = source
         if high < max(open_price, low, close) or low > min(open_price, high, close):
-            raise MarketDataError(f"invalid OHLC range on {bar_date} for {identity.security_id}")
+            if source != YFinanceProvider.name or high < low:
+                raise MarketDataError(
+                    f"invalid OHLC range on {bar_date} for {identity.security_id}"
+                )
+            # Yahoo can publish a daily high/low envelope that temporarily omits
+            # its own reported opening or closing auction. Those prices are still
+            # observed provider values, so widen only the envelope and retain an
+            # explicit repair marker for auditability.
+            high = max(open_price, high, low, close)
+            low = min(open_price, high, low, close)
+            bar_source = f"{source}:ohlc-envelope-repair"
         if raw_volume < 0 or raw_volume != raw_volume.to_integral_value():
             raise MarketDataError(f"invalid volume on {bar_date} for {identity.security_id}")
         if dividends < 0 or splits < 0:
@@ -323,7 +337,7 @@ def normalize_history(
             currency=identity.currency,
             provider_symbol=identity.provider_symbol,
             retrieved_at=normalized_retrieved_at,
-            source=source,
+            source=bar_source,
         )
     if not by_date:
         raise MarketDataError(f"provider returned no valid sessions for {identity.security_id}")
@@ -892,8 +906,8 @@ def update_market_data(
                     calendar_name=calendar_name,
                     retrieved_at=retrieved_at,
                     source=selected_provider.name,
+                    completed_through=expected,
                 )
-                incoming = tuple(bar for bar in incoming if bar.date <= expected)
                 if not incoming:
                     raise MarketDataError(
                         f"provider returned no completed session through {expected}"
@@ -944,7 +958,7 @@ def update_market_data(
                 retrieved_at=retrieved_at,
                 status=status,
                 error="" if status == "ok" else errors[-1],
-                source=selected_provider.name,
+                source=newest.source,
             )
         )
     write_table(repository_root, "market_latest", latest_rows)
