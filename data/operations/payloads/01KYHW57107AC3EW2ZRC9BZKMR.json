@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_4627aea1bf7d8943d3d8",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md",
+    "security_id": "security_4627aea1bf7d8943d3d8"
+  },
+  "objective": "Revalidate security_4627aea1bf7d8943d3d8 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYHW57107AC3EW2ZRC9BZKMR",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

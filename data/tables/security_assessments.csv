@@ -1,1 +1,2 @@
 security_id,assessed_at,expires_at,eligibility,confidence,thesis_score,business_quality_score,balance_sheet_score,valuation_score,timing_score,liquidity_score,risk_penalty,downside_pct,base_upside_pct,valuation_horizon_months,hard_blockers,soft_gaps,evidence_refs,run_id
+security_1f9cce545ede94cd6349,2026-07-27T13:32:49Z,2026-08-26T13:32:49Z,baseline,high,85,90,95,45,45,95,8,-18.4,8.8,12,,margin_of_safety_below_target|valuation_not_compelling,source_isrg_q2_2026_earnings,gha-30270310504-1

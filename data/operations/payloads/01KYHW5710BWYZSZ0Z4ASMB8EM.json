@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_ad2f37b49980dbc73a08",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_ad2f37b49980dbc73a08",
+    "security_id": "security_fb87fac302a5446a1ced"
+  },
+  "objective": "Review the canonical relationship from idea_critical_minerals_lithium to security_fb87fac302a5446a1ced and accept or reject it with current evidence.",
+  "operation_id": "01KYHW5710BWYZSZ0Z4ASMB8EM",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

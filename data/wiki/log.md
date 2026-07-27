@@ -277,3 +277,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 ## 2026-07-27
 
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `local-20260727T092114Z`.
+
+- Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with registered Q2
+  primary evidence and a current market mark. Strong utilization, recurring revenue, balance-sheet
+  strength, and liquidity support baseline eligibility, while a bounded 12-month valuation shows
+  limited base upside and an 18.4% downside case, blocking conviction treatment.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30270310504-1`.

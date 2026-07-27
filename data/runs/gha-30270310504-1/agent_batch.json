@@ -1,0 +1,17 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-27T13:35:45Z",
+  "estimated_cost_per_operation": "1",
+  "estimated_model_budget_used": "1",
+  "maximum_model_budget": "5",
+  "maximum_operations": 1,
+  "operation_count": 1,
+  "outcomes": [
+    {
+      "operation_id": "01KYHW571007ZFM5FZV8G4M1W4",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "gha-30270310504-1",
+  "started_at": "2026-07-27T13:28:06Z"
+}

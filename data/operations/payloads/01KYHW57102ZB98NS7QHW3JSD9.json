@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_297f9e36fb4e93a808e8",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_commercial_space_infrastructure",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_297f9e36fb4e93a808e8",
+    "security_id": "security_7ca095d63423c55a90e3"
+  },
+  "objective": "Review the canonical relationship from idea_commercial_space_infrastructure to security_7ca095d63423c55a90e3 and accept or reject it with current evidence.",
+  "operation_id": "01KYHW57102ZB98NS7QHW3JSD9",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

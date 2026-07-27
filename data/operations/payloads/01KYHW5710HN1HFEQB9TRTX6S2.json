@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_2dbe878dfc899d7ee867",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+    "security_id": "security_2dbe878dfc899d7ee867"
+  },
+  "objective": "Revalidate security_2dbe878dfc899d7ee867 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYHW5710HN1HFEQB9TRTX6S2",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

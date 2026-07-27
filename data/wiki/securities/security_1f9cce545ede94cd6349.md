@@ -4,8 +4,8 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-26"
-provenance: "Intuitive Surgical Q2 2026 earnings release"
+updated: "2026-07-27"
+provenance: source_isrg_q2_2026_earnings
 security_id: security_1f9cce545ede94cd6349
 issuer_id: issuer_98d3ab01583161cae27f
 confidence: high
@@ -50,10 +50,18 @@ Primary evidence: [Intuitive Surgical Q2 2026 earnings](https://investor.intuiti
 
 ## Valuation, catalysts, and risks
 
-No entry valuation is recorded without a validated current mark. A model must use diluted shares,
-separate placements, leases, procedures, consumables and service economics, normalize tariff refunds,
-expense stock compensation, and stress hospital capital budgets, procedure growth, reimbursement,
-competition, recalls, training, safety, regulation, and sole-source supply.
+The validated 2026-07-24 close is USD 336.05. First-half 2026 GAAP diluted EPS was USD 4.57, so a
+simple annualized run rate is USD 9.14 and the mark is 36.8 times that run rate. A 12-month downside
+case of 30 times the run rate is USD 274.20, or 18.4% below the mark; a base case of 40 times is USD
+365.60, or 8.8% above it. This bounded range is supportable for relative allocation, but the base
+upside is below the configured 20% margin-of-safety target and is not compelling enough for a
+conviction strategy. The range must be refreshed after Q3 rather than treated as a perpetual
+multiple.
+
+The model uses GAAP earnings, including stock compensation, and must continue to separate placements,
+leases, procedures, consumables and service economics, normalize one-time tariff refunds, and stress
+hospital capital budgets, procedure growth, reimbursement, competition, recalls, training, safety,
+regulation, and sole-source supply.
 
 Catalysts are sustained procedure growth, da Vinci 5 utilization, Ion adoption, recurring-revenue
 growth, and margin resilience. Invalidate if clinical or safety evidence weakens, utilization slows,
@@ -62,5 +70,8 @@ constraints compress margins, or valuation requires implausible procedure growth
 
 ## Disposition
 
-Status: **watching**, confidence **high**. Review by **2026-10-30** after Q3 results. No strategy is
-proposed solely because a current mark and downside-aware valuation are absent.
+Status: **watching**, confidence **high**. Review by **2026-10-30** after Q3 results. The current
+comparable assessment is **baseline eligible**, not conviction eligible: business quality,
+balance-sheet strength, and liquidity are strong, while limited base upside and an 18.4% downside
+case keep valuation as the principal soft gap. Baseline strategy work, if any, belongs to the
+deterministic allocator.

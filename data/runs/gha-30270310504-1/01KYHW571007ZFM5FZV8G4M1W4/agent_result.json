@@ -1,0 +1,65 @@
+{
+  "operation_id": "01KYHW571007ZFM5FZV8G4M1W4",
+  "status": "succeeded",
+  "summary": "Revalidated Intuitive Surgical with current registered Q2 2026 issuer evidence and a fresh 2026-07-24 market mark. Procedure growth, recurring revenue, GAAP earnings, cash, balance-sheet strength, and liquidity support a high-confidence baseline assessment. A 12-month USD 274.20 downside case and USD 365.60 base case imply -18.4% and +8.8% from USD 336.05, so limited margin of safety blocks conviction treatment. No strategy follow-up was enqueued because baseline strategy work belongs to the deterministic allocator.",
+  "evidence": [
+    {
+      "source": "Intuitive Surgical Q2 2026 earnings release",
+      "claim": "Q2 combined procedures grew approximately 16%, revenue reached USD 2.89 billion, first-half GAAP diluted EPS was USD 4.57, and quarter-end cash, cash equivalents, and investments were USD 8.63 billion.",
+      "url": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6",
+      "observed_at": "2026-07-16T00:00:00Z",
+      "source_hash": "a9c30d489f845097283c20ad93121a2e85d7f0948c000592707f0ca1cf0330c3"
+    },
+    {
+      "source": "PaperTrader deterministic market cache",
+      "claim": "ISRG closed at USD 336.05 on 2026-07-24 with volume 3,438,080; the USD/EUR rate was 0.878600001335144 on 2026-07-27. Both records were available for the assessment freshness checks."
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/record-source-isrg-q2-2026-v2.json",
+    "data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/record-source-isrg-q2-2026.json",
+    "data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-assessment-isrg-refresh-v2.json",
+    "data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-assessment-isrg-refresh.json",
+    "data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-security-isrg-refresh-v2.json",
+    "data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-security-isrg-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1f9cce545ede94cd6349.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Surgical is high-confidence baseline eligible: procedure and recurring-revenue economics are strong, but a bounded 12-month valuation offers only 8.8% base upside with 18.4% downside, below the conviction margin-of-safety target."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/record-source-isrg-q2-2026.json",
+    "papertrader research security upsert --request data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-security-isrg-refresh.json",
+    "papertrader research security upsert --request data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-security-isrg-refresh-v2.json",
+    "papertrader research assessment upsert --request data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-assessment-isrg-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research source record --request data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/record-source-isrg-q2-2026-v2.json",
+    "papertrader research assessment upsert --request data/runs/gha-30270310504-1/01KYHW571007ZFM5FZV8G4M1W4/upsert-assessment-isrg-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Immutable ISRG/XNAS/USD/equity identity passed the security upsert duplicate check.",
+      "The Q2 issuer release was fetched successfully, hashed, and registered with a fresh immutable source-history observation before the final assessment.",
+      "The final assessment is current through 2026-08-26, evidence-linked to this run, and has no hard blocker; its deterministic raw score is 74 and effective score is 66 after an 8-point risk penalty.",
+      "The latest ISRG market mark and USD/EUR record were fresh for the last eligible market session and available to the assessment.",
+      "An initial security request was rejected for extra controller-owned timestamp fields and a first integrity run exposed source/assessment ordering; both were corrected with new immutable v2 request files.",
+      "Final strict schema validation, queue validation, wiki lint, and integrity checks passed.",
+      "No allocation target/history, order, execution, cash, portfolio, fill, or performance file changed."
+    ]
+  }
+}

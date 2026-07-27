@@ -1,0 +1,18 @@
+{
+  "source_id": "source_isrg_q2_2026_earnings",
+  "url": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6",
+  "canonical_url": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6",
+  "source_type": "issuer-release",
+  "title": "Intuitive announces second-quarter 2026 earnings",
+  "publisher": "Intuitive Surgical, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "a9c30d489f845097283c20ad93121a2e85d7f0948c000592707f0ca1cf0330c3",
+  "related_entity_ids": "idea_precision_biology_healthcare_automation|security_1f9cce545ede94cd6349",
+  "checked_at": "2026-07-27T13:32:49Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "First-half 2026 GAAP diluted EPS was $4.57; Q2 procedures grew approximately 16% and cash, cash equivalents, and investments ended at $8.63 billion.",
+  "summary": "The issuer reported Q2 procedure and installed-base growth, expanding recurring instrument revenue, first-half GAAP earnings, strong liquidity, and a tariff-sensitive 2026 outlook.",
+  "run_id": "gha-30270310504-1"
+}
