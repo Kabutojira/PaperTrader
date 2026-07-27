@@ -23,17 +23,17 @@ on:
       dry_run:
         description: Exercise all validation without inference, commit, or delivery
         required: false
-        default: true
+        default: false
         type: boolean
       publish_pages:
         description: Build and deploy Pages after the committed run
         required: false
-        default: false
+        default: true
         type: boolean
       send_telegram:
         description: Deliver the exact committed canonical report
         required: false
-        default: false
+        default: true
         type: boolean
 
 permissions:
