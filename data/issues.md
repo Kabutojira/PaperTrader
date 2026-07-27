@@ -8,6 +8,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_1681e7daa698c45f8006** — Daily preparation degraded: security_2dbe878dfc899d7ee867 | 2026-07-27T14:24:43Z | deterministic-controller |  |
 | warning | **issue_4183021e1363fc3aa642** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae.md | 2026-07-26T19:02:00Z | deterministic-controller |  |
 | warning | **issue_4b309fbac75c644b6dc5** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101.md | 2026-07-27T14:06:24Z | deterministic-controller |  |
+| warning | **issue_7c3336b8354d9c076ebc** — Telegram delivery failed: 798017b585f7de9127a798eb52aac52052f72786 | 2026-07-27T14:35:55Z | delivery |  |
 | warning | **issue_9141a7a5538fd458f54f** — Telegram delivery failed: d3c816d22ba7ec5bb52ac8278b8f231f68dace74 | 2026-07-24T22:33:25Z | delivery |  |
 | warning | **issue_9b4cbf2dec47a2d5f28b** — Daily preparation degraded: security_9d4049ed6669a52815d6 | 2026-07-27T14:24:43Z | deterministic-controller |  |
 | warning | **issue_a3c2febb69c6663ae333** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e.md | 2026-07-27T14:06:24Z | deterministic-controller |  |
