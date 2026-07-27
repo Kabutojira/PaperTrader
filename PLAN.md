@@ -1,1173 +1,1058 @@
-# PLAN.md
-
-## Goal
-
-Implement PaperTrader as a public Git-native, Hermes-maintained paper-trading system that converts market monitoring and research into auditable simulated strategies, orders, executions, portfolio results, a compounding Hermes-native LLM wiki, a daily Telegram report, and a Quartz GitHub Pages site.
-
-## Fixed architecture decisions
-
-- The repository is the source of truth and all persistent project data lives under `data/`.
-- Legacy data will be imported manually once. Migration and import tooling are outside this plan.
-- Hermes uses its bundled native `llm-wiki` skill together with repository-local PaperTrader skills.
-- Operations and agents always run sequentially. Parallel agents, fan-out, workflow matrices for LLM work, and future parallelization are out of scope.
-- Hermes always runs with `--yolo`; there is no human approval step.
-- Project skills are usable both by Hermes and by local agentic harnesses such as Codex for debugging.
-- An agent completes every allowed change before finishing. `agent_result.json` records actual changed files, created operations, recorded issues, commands, and validation results; it contains no deferred proposal array.
-- Wiki Markdown may be edited directly. Structured CSVs are changed through the project CLI. Fills, executions, cash, portfolio, and performance remain deterministic state transitions.
-- Ideas map to securities through explicit many-to-many relationships before strategies are created.
-- Signals, orders, executions, cash, portfolio, and performance remain separate states. A signal is not a fill.
-- The rolling daily-price cache is committed under `data/market/prices/` and retains only the most recent 365 calendar days.
-- A cheap LLM decides whether a validated market or research diff is meaningful enough to enqueue wiki ingestion.
-- `portfolio.csv`, reports, `issues.md`, and the 1,000-line `log.txt` are generated views. Append-only ledgers and structured logs retain the audit trail.
-- Issues remain entirely in `data/tables/issues.csv` and `data/issues.md`; there is no GitHub Issues synchronization.
-- Every GitHub workflow supports manual execution with `workflow_dispatch`.
+# PaperTrader implementation plan
 
 ## Step 1 — Scaffold repository contracts — Complete (2026-07-24)
 
-Create the repository layout from `AGENTS.md`, including package configuration, CLI skeleton, `config.ini`, atomic I/O helpers, CSV and JSON schemas, Hermes-native wiki structure, project skills, tests, and Quartz source configuration.
-
-Initialize `data/wiki/SCHEMA.md`, `data/wiki/index.md`, `data/wiki/log.md`, required domain folders, empty canonical CSVs with validated headers, operation directories, logs, and run directories. Add the automated runtime commit whitelist and a validator that fails when a runtime workflow changes any path outside it.
-
-**Exit criteria**
-
-- [x] A clean checkout installs from pinned dependencies.
-- [x] Every canonical CSV exists with the exact schema-defined header.
-- [x] Hermes and a local harness can discover the project skills.
-- [x] `WIKI_PATH` resolves to `data/wiki`.
-- [x] CI runs formatting, typing, schema validation, unit tests, and wiki lint.
-
-Implemented the paper-only CLI and configuration boundary, atomic writers, schema and integrity
-validators, runtime commit whitelist, canonical empty data state, Hermes-native wiki, eight
-sequential project skills, pinned Python and Quartz dependencies, workflow scaffolds, and Step 1
-tests. The full Step 1 validation gate passes locally.
+Established the paper-only repository structure, configuration and CLI boundaries, canonical schemas and empty data state, atomic writes, integrity checks, runtime commit whi
+telist, Hermes-native wiki, project skills, pinned dependencies, workflow scaffolds, and initial test suite.
 
 ## Step 2 — Build deterministic market, queue, and accounting core — Complete (2026-07-24)
 
-Implement:
-
-- yfinance retrieval with provider-symbol mapping, retries, freshness checks, market calendars, corporate actions, and normalized daily bars;
-- committed rolling price files at `data/market/prices/<security_id>.csv`, merged and truncated to the latest 365 calendar days on each successful update;
-- TA-Lib indicators and transition-aware RSI/Bollinger opportunity triggers;
-- structured candidate-change packets under `data/wiki/inbox/`, followed by deterministic no-op filtering and a cheap-LLM `ingest|ignore` decision;
-- operation enqueueing, dependencies, dedupe keys, cooldowns, claims, leases, retries, terminal history, and run budgets;
-- risk checks, signals, normalized order legs, next-open and limit-touch fills, fees, slippage, options multipliers, FX, cash ledger, executions, portfolio, and performance;
-- deterministic report scaffolds, structured logs, `log.txt` tail generation, issue state, and `issues.md` generation.
-
-**Exit criteria**
-
-- [x] Repeated runs are idempotent.
-- [x] Price files never contain a bar older than the one-year retention boundary.
-- [x] One indicator transition creates at most one opportunity within its cooldown.
-- [x] The cheap LLM is the final decision maker for whether a validated `data/wiki/inbox/` packet creates `wiki_ingest`.
-- [x] A signal cannot mutate the portfolio before a valid deterministic fill.
-- [x] Equity, short, and option reference-output tests reconcile cash and P/L exactly.
-
-Implemented normalized yfinance market retrieval, exchange calendars, rolling price caches,
-durable corporate actions, pinned TA-Lib indicators, transition-aware candidate packets and
-classifier decisions, a leased sequential queue, Decimal-safe risk and paper execution, immutable
-execution/cash ledgers, generated portfolio/performance/report views, issues, and structured logs.
-Golden, property, unit, and full-cycle replay tests cover no-look-ahead fills, options and FX,
-cooldowns, recovery, reconciliation, and idempotence. The complete Step 2 validation gate passes
-locally.
+Implemented normalized market retrieval, rolling price data, indicators and candidate packets, sequential queue processing, deterministic classification, Decimal-safe risk an
+d paper execution, append-only accounting ledgers, generated portfolio and performance views, reporting, issues, logs, and replay-safe test coverage.
 
 ## Step 3 — Integrate Hermes and reusable project skills — Complete (2026-07-24)
 
-Configure Hermes for GitHub Actions and local execution. Set `WIKI_PATH` to `data/wiki`, register `skills/` as an external skill directory, verify the native `llm-wiki` skill before each run, and always invoke Hermes with `--yolo`.
-
-Implement sequential controller and operation skills for:
-
-- wiki ingest;
-- opportunity research;
-- idea research;
-- security research;
-- relationship research;
-- strategy research;
-- execute strategy.
-
-Agents may edit allowlisted wiki files directly and use the project CLI to update allowed structured state or enqueue follow-ups. Replace the staged approval/applier design with an actual-change manifest in `agent_result.json`. Implement result-schema validation, command auditing, prompt-injection defenses, changed-path validation, and strict post-run integrity checks.
-
-**Exit criteria**
-
-- [x] Hermes completes one seeded operation with `--yolo` in a credential-free container.
-- [x] Codex or another local harness can run the same skill against a local checkout.
-- [x] Operations run strictly one at a time.
-- [x] The agent performs permitted changes before writing its result manifest.
-- [x] Invalid, stale, malicious, or out-of-scope writes fail the validation gate.
-- [x] A no-opportunity or no-strategy outcome is retained as an evidence-linked terminal result.
-
-Implemented a digest-pinned, isolated Hermes boundary with explicit bundled-skill synchronization,
-native `llm-wiki` version and content-hash checks before and after each operation, exact controller
-and operation skill selection, mandatory `--yolo`, and one-operation execution bounds. Added
-actual-change manifest validation, content and command audit chains, request-file binding,
-path/symlink/source-hash and prompt-injection defenses, validated research-state commands,
-deterministic order cancellation, evidence-linked no-op terminal results, local-run documentation,
-and unit and integration coverage. The hermetic seeded-operation test exercises the complete
-one-shot subprocess boundary; a live provider-backed run requires the configured OpenAI Codex
-OAuth state and was intentionally not invoked by the offline test suite.
+Integrated pinned and isolated Hermes execution with the native `llm-wiki` skill and repository skills, mandatory sequential `--yolo` operation handling, actual-change result
+ manifests, command and content auditing, prompt-injection defenses, strict path validation, and evidence-linked terminal outcomes.
 
 ## Step 4 — Assemble GitHub workflows, reporting, and publication — Complete (2026-07-24)
 
-Implement `ci.yml`, `daily.yml`, deterministic, LLM, Pages, and reporting workflows. Every workflow must expose `workflow_dispatch`; reusable workflows may also expose `workflow_call`.
-
-The daily/manual controller executes sequentially:
-
-1. retrieve and normalize market data;
-2. update and truncate committed one-year price CSVs;
-3. calculate indicators and create candidate change packets;
-4. run cheap-LLM ingestion decisions and enqueue material opportunities or wiki ingestion;
-5. triage and execute due Hermes operations one at a time with `--yolo`;
-6. process eligible paper fills and rebuild portfolio/performance;
-7. lint the wiki and run strict integrity checks;
-8. generate the canonical daily report;
-9. validate the runtime commit whitelist, commit, and push only validated changes;
-10. build/deploy Quartz and send the committed report to Telegram.
-
-Manual inputs must include bounded operation selection and debugging controls such as `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and `send_telegram`. Manual execution is not an approval gate.
-
-**Exit criteria**
-
-- [x] Scheduled and manual runs use the same code paths and validation gates.
-- [x] No LLM operation runs in parallel with another.
-- [x] Empty runs do not create empty commits.
-- [x] A runtime commit fails if it includes a non-whitelisted path.
-- [x] Telegram failure is recorded and retryable without corrupting repository state.
-- [x] GitHub Pages renders the canonical wiki and daily reports.
-
-Implemented a schema-backed daily run controller, shared sequential Hermes count/cost budget,
-market-session-aware fill finalization, deterministic accounting/report publication, and exact
-committed-report Telegram delivery with Markdown escaping, bounded retries, redaction, and a
-durable resume cursor. The workflow graph uses digest/SHA-pinned dependencies, isolated runtime,
-commit, delivery, and Pages boundaries, a hash-verified runtime patch handoff, post-rebase
-whitelist validation, and no-empty-commit behavior. Contract tests exercise workflow permissions
-and secret partitioning; integration tests cover daily no-op and next-open fill cycles; the full
-Python gate and a local Quartz check/build pass. Live inference, push, Pages deployment, and
-Telegram delivery require repository secrets/settings and were intentionally not invoked locally.
+Built the serialized daily and reusable workflows for deterministic preparation, bounded Hermes operations, fills and reconciliation, canonical report generation, validated r
+untime commits, Quartz publication, and retryable Telegram delivery with isolated credentials and manual-dispatch support.
 
 ## Step 5 — Validate the complete operating cycle — Complete (2026-07-24)
 
-Exercise the complete system from a clean checkout using manually seeded data: market update, cheap-LLM ingestion decision, opportunity research, wiki update, relationship research, strategy creation, signal, paper order, deterministic fill, portfolio reconciliation, report, commit, Pages build, and Telegram delivery.
-
-Document local skill execution, manual workflow dispatch, queue entry, configuration changes, failed-run recovery, deterministic replay by run ID, and how to add or revise a project skill.
-
-**Exit criteria**
-
-- [x] At least one complete research-to-paper-fill lifecycle succeeds.
-- [x] The following rerun creates no duplicate source, operation, signal, order, execution, or wiki page.
-- [x] Strict integrity, wiki lint, schema checks, and portfolio reconciliation pass from a clean checkout.
-- [x] The public site and Telegram report link to the same committed daily report.
-- [x] Both scheduled and manually dispatched workflows succeed.
-- [x] No real-trading credential or execution path exists.
-
-Implemented a clean-checkout, manually seeded operating-cycle integration test that exercises
-recorded market normalization, the cheap ingestion decision, five sequential bounded research and
-execution operations, wiki/source/relationship/strategy state, signal and pending paper order
-creation, a next-session deterministic fill, accounting reconciliation, the canonical report, a
-runtime-whitelisted commit handoff, exact committed-report Telegram delivery, and an actual Quartz
-build. The same test replays every source, queue request, research upsert, signal, order, fill, and
-wiki write and proves their row and page counts remain unchanged. CI and the reusable deterministic
-workflow run this publication cycle with Quartz enabled; workflow contract tests cover both the
-scheduled and manual controller entry points. Added the operating runbook, completed-session market
-filtering, cross-midnight run reporting, replay-safe strategy status handling, canonical CSV Git
-attributes, and a safe configurable Quartz build wrapper. Exact locked Python and Node installs,
-all 128 tests, strict schema/integrity/wiki/portfolio gates, and the canonical site build pass.
-Hosted inference, push, Pages deployment, and Telegram network calls still require repository
-settings and secrets; their credential boundaries and deterministic handoffs are validated locally
-without exposing a real-trading credential or adding any real-execution adapter.
+Validated a clean-checkout research-to-paper-fill lifecycle covering market normalization, classification, sequential research, wiki and structured-state updates, strategy ex
+ecution, next-session fills, accounting reconciliation, report publication, Telegram delivery, Quartz builds, deterministic replay, and idempotence.
 
 ## Step 6 — Persist OpenAI Codex OAuth state as age ciphertext — Complete (2026-07-24)
 
-Replace the main Hermes API-key path with the `openai-codex` OAuth provider while retaining the
-read-only runtime and sole write-enabled commit boundary. Restore `auth.json` only inside the
-isolated Hermes home, persist refreshes as one verified age ciphertext artifact, and permit a
-credential-only commit after a failed inference without admitting agent-generated data.
-
-**Exit criteria**
-
-- [x] The managed Hermes config and one-shot command force `openai-codex` with a configurable,
-  non-empty model and no API-key fallback.
-- [x] Non-dry runs restore the exact repository ciphertext with `OPENAI_OAUTH_SECRET`; dry runs do
-  not require, decrypt, re-encrypt, upload, or commit OAuth state.
-- [x] Changed OAuth plaintext is re-encrypted and byte-verified; unchanged plaintext produces no
-  randomized ciphertext churn.
-- [x] Runtime failures can cross the write boundary with only the exact encrypted credential path,
-  while the failed runtime remains the workflow result.
-- [x] Plaintext, private identities, snapshots, symlinks, path traversal, extra artifact files, and
-  broad credential-directory writes fail closed.
-- [x] Workflow contracts, disposable-age cryptographic tests, the complete Python suite, strict
-  integrity/wiki/accounting gates, formatting, lint, and typing pass locally.
-
-Implemented checksum-pinned age installation, isolated restore/status/refresh/cleanup steps, an
-exact ciphertext artifact validator, failure-safe commit/rebase behavior, repository ignore and
-binary-diff controls, an auth-only CI path filter, operator seeding/recovery documentation, and
-focused coverage for wrong identities, invalid ciphertext, no-op refreshes, staging isolation,
-secret partitioning, serialization, and cleanup. The repository ciphertext is present but remains
-opaque to local validation; a hosted non-dry inference and push still require the repository's
-configured `OPENAI_OAUTH_SECRET` and were not invoked from the development checkout.
-
-The 2026-07-25 follow-up corrected the pinned age release assertion to the binary's exact
-`v1.3.1` output after verifying the official archive against the pinned SHA-256 checksum.
-
-The 2026-07-27 follow-up corrected the OAuth preflight for Hermes v0.19.0, whose
-`hermes auth status openai-codex` command exits successfully even when it reports `logged out`.
-The workflow now requires the exact non-sensitive `logged in` status line without logging the
-remaining status details, and the configured Codex OAuth model is `gpt-5.6-sol`.
+Replaced the Hermes API-key path with isolated `openai-codex` OAuth, restoring plaintext only inside the runtime boundary and persisting verified refreshes as one age-encrypt
+ed artifact, with failure-safe credential-only commits, strict cleanup, and no API-key fallback.
 
 ## Step 7 — Add the local Codex harness and execute a researched idea — Complete (2026-07-25)
 
-Add a first-class two-phase boundary for running one repository skill from an existing Codex shell
-without Hermes. Preserve the same queue claim, skill identity, command receipt, exact-delta,
-manifest-last, post-run validation, and deterministic terminal-transition contracts. Connect a
-validated local result to the normal daily finalization path and document copyable idea/security
-commands and the implementation architecture.
+Added a two-phase local Codex harness that preserves queue claims, skill identity, command receipts, exact-delta validation, manifest-last completion, and daily finalization
+contracts, then used it to research the solar, storage, and grid-flexibility thesis and enqueue bounded security follow-ups without forcing unsupported trades.
 
-Exercise that path with the user-supplied solar, storage, and grid-flexibility reset. Retain dated
-primary evidence, explicit confirmation and invalidation tests, immutable entity identities, and
-only bounded follow-up work; do not force a strategy or paper order without security-specific
-valuation and risk evidence.
+## Step 8 — Add opportunity-cost-aware portfolio allocation — Complete (2026-07-27)
 
-**Exit criteria**
+Added evidence-backed security assessments, deterministic Decimal-safe candidate scoring and baseline allocation, FX support, immutable allocation plans, sleeve-aware strateg
+ies and order guards, daily reporting and readiness checks, while retaining cash hurdles, diversification limits, staged exposure caps, and the existing conviction and accoun
+ting controls.
 
-- [x] `agent harness start` claims at most one operation, records project-skill identities, and
-  stores its content-addressed baseline in a private temporary file outside the repository.
-- [x] `agent harness finish` validates the exact result and command receipts before the controller
-  applies a queue transition; controller artifacts and out-of-scope changes fail closed.
-- [x] A prepared local daily run receives the validated outcome and completes the same deterministic
-  accounting, report, integrity, wiki, and portfolio phases as the hosted path.
-- [x] README and the operating runbook contain copyable local Codex, idea-enqueue, and
-  security-identity commands plus a concise development architecture.
-- [x] The solar/storage/grid-flexibility idea is maintained with a dated evidence dashboard,
-  measurable monitoring gates, contrary evidence, confidence, and a concrete review date.
-- [x] Fluence, Atkore, and Enphase research is queued by immutable security ID; no unsupported
-  relationship, strategy, signal, order, or fill is created.
-- [x] Formatting, lint, typing, all 155 tests, strict schema/integrity/wiki/portfolio checks, and
-  workflow contract validation pass locally.
+## Follow-up — Repair daily Hermes execution — Complete (2026-07-27)
 
-Implemented the local harness CLI and private baseline lifecycle, shared project-skill preflight,
-daily batch recording, controller-artifact protections, and safe read-only queue validation. The
-first deliberately retained attempt exposed a missing read-only command classification; the
-follow-up regression fix passed and the bounded retry completed. The successful daily run
-`local-20260725-solar-reset-02` generated the canonical 2026-07-25 report with zero orders or fills
-and three ready security-research follow-ups. All validation gates pass without network-dependent
-inference or any real-execution path.
+Reproduced the hosted failure and fixed the root-to-unprivileged runtime handoff so Hermes can safely read repository data and write its result manifest without receiving sou
+rce, Git metadata, or credentials; a fresh pinned-container run then completed and passed all controller validation.
 
-# Step 8 — Add opportunity-cost-aware portfolio allocation
+## Follow-up — Enforce GitHub Pages link integrity — Complete (2026-07-27)
+
+Published the linked inbox packets and added a deterministic post-build checker for generated HTML routes, assets, directory indexes, and project Pages base paths, eliminatin
+g the dead internal links and making future broken references fail the build.
+
+## Follow-up — Make the Quartz homepage results-first — Complete (2026-07-27)
+
+Made the homepage lead with the latest report, current cash, equity, exposure, P/L, returns, positions, and recent operation conclusions, backed by an idempotent deterministi
+c refresh command and canonical tables rather than manually maintained summaries.
+
+## Follow-up — Clarify inbox entries, recover classification, and enrich Telegram delivery — Complete (2026-07-27)
+
+Changed candidate titles to human-readable ticker and indicator labels with security links, added retryable tool-free Hermes classification through the isolated OAuth profile
+, and upgraded Telegram delivery to rich Markdown with frontmatter removal, commit-pinned wiki links, block-aware splitting, retries, and secret redaction.
+
+# Step 9 — Publish an investor-facing decision dashboard and copyable model portfolio
 
 ## Goal
 
-Prevent PaperTrader from remaining indefinitely at 100% cash whenever no security passes the full high-conviction screening threshold.
+Turn the public Quartz site from a repository-oriented research catalog into a results-first
+paper-investment product that clearly communicates:
 
-Add a separate **baseline allocation sleeve** that invests a bounded portion of available cash in the strongest acceptable candidates, while preserving the existing high-conviction research, strategy, signal, risk, order, fill, and accounting workflow.
+* the current PaperTrader stance;
+* the current model portfolio;
+* the approved target portfolio;
+* actionable trade signals;
+* research alerts that are not trade signals;
+* candidate securities and their blockers;
+* portfolio performance and risk;
+* research and data coverage;
+* the evidence and investment thesis behind every recommendation.
 
-Cash remains a valid portfolio allocation rather than an error condition. The allocator must compare candidate securities against the configured cash hurdle and may retain more cash whenever evidence quality, diversification, valuation, market data, or risk constraints are insufficient.
+Preserve the existing Git-native, paper-only, deterministic accounting and research architecture.
+The publication layer must not invent recommendations, bypass strategy or order gates, mutate
+trading state, or introduce a real-execution path.
+
+An all-cash model portfolio is a valid recommendation and must be displayed explicitly whenever
+the evidence, valuation, diversification, market-data, relationship, strategy, or risk gates do not
+support deployment.
 
 ## Fixed architecture decisions
 
-* Do not weaken the existing high-conviction security or strategy gate.
-* Divide portfolio exposure into:
+* Existing canonical tables remain the sole authority for research, strategy, signal, order,
+  execution, portfolio, performance, allocation, and issue state.
+* Add one deterministic decision projection. Do not make the Quartz frontend independently join or
+  reinterpret canonical CSV files.
+* The generated decision projection is a read-only view and must never become an input to
+  allocation, strategy, order, fill, accounting, or reconciliation logic.
+* Define the public concepts as follows:
+  * `current model portfolio`: reconciled filled paper positions plus cash;
+  * `approved target portfolio`: current positions adjusted for validated pending paper orders,
+    marked as projected until fills occur;
+  * `actionable signal`: a current signal linked to an eligible ready or active strategy;
+  * `copy-ready action`: an actionable signal with a validated, non-terminal paper order and
+    deterministic order legs;
+  * `research alert`: an indicator, market, news, or source-change event requiring investigation;
+  * `allocation candidate`: a security considered by the allocator but not necessarily approved
+    by strategy, signal, and order gates.
+* Raw allocation targets without a validated strategy must appear only in the candidate pipeline.
+  They must never be labelled `buy`, `sell`, `trade`, or `copy ready`.
+* Technical indicators and Inbox packets remain research alerts. They are never rendered as
+  actionable trade signals unless the normal strategy and signal lifecycle later produces one.
+* Deterministic Python code owns:
+  * all joins;
+  * state classification;
+  * stance selection;
+  * weights;
+  * current and projected values;
+  * quantity calculations;
+  * FX conversion;
+  * freshness checks;
+  * reason-code translation;
+  * portfolio and signal export generation.
+* The frontend may scale target weights for a user-entered reference notional, but it must do so
+  locally, must not persist the amount, and must not claim that the scaled portfolio passed
+  PaperTrader's risk checks.
+* Automatic notional scaling is initially limited to long equities. Options, shorts, and multi-leg
+  strategies must display their canonical legs without automatic user-notional scaling.
+* Human-readable company names and tickers are primary presentation labels. Immutable IDs remain
+  available in technical details and audit output.
+* Investor-facing pages and operational audit pages are separate views of the same committed state.
+* The dashboard must remain complete and readable without client-side JavaScript. JavaScript is
+  progressive enhancement for copy, local scaling, filtering, and chart interaction.
+* Custom Quartz code must live outside `site/quartz/`, because that directory is regenerated from
+  the pinned Quartz dependency during every build.
+* No agent may directly edit generated decision snapshots or publication exports.
+* No brokerage API, credential, real-order adapter, or real-execution action is introduced.
 
-  * `conviction`: positions originating from securities that pass the complete strategy gate;
-  * `baseline`: smaller positions selected primarily through relative ranking and opportunity-cost management.
-* Only securities with fresh research, a defensible valuation range, adequate liquidity, and no hard blocker may enter the baseline sleeve.
-* Securities failing because of missing evidence, unsupported valuation, solvency risk, accounting uncertainty, stale prices, stale FX, identity ambiguity, or thesis invalidation remain ineligible.
-* Agent research may produce evidence-backed assessment inputs, but deterministic code owns:
+## Step 9.1 — Build the deterministic decision projection
 
-  * score aggregation;
-  * candidate filtering;
-  * ranking;
-  * portfolio sizing;
-  * caps;
-  * cash-reserve enforcement;
-  * target generation;
-  * quantity calculation;
-  * order-risk enforcement.
-* The allocation engine does not create executions, fills, cash entries, or portfolio rows.
-* Allocation targets enqueue normal `strategy_research` work and continue through the existing signal, `execute_strategy`, order, fill, and reconciliation pipeline.
-* Baseline positions must be traceable to an immutable allocation plan.
-* All structured mutations use the project CLI.
-* Roll out first in `report_only` mode and activate paper allocation only after deterministic and integration tests pass.
-
-## Step 8.1 — Add comparable assessments and complete market inputs
-
-### Configuration
-
-Add an `[allocation]` section to `config.ini` and the matching typed configuration in `src/papertrader/config.py`.
-
-Initial defaults:
-
-```ini
-[allocation]
-mode = report_only
-
-target_invested_pct = 60
-minimum_cash_reserve_pct = 25
-
-maximum_baseline_sleeve_pct = 30
-maximum_baseline_position_pct = 5
-maximum_sector_pct = 20
-maximum_theme_pct = 20
-
-cash_hurdle_score = 60
-minimum_confidence = medium
-minimum_diversified_candidates = 6
-maximum_assessment_age_days = 30
-
-maximum_deployment_per_run_pct = 15
-minimum_trade_pct = 1
-rebalance_band_pct = 1
-```
-
-Supported modes:
-
-* `disabled`
-* `report_only`
-* `active`
-
-All percentages must use `Decimal`, remain within `[0, 100]`, and satisfy cross-field validation:
-
-* cash reserve must be below 100%;
-* baseline sleeve must not exceed target invested exposure;
-* baseline position size must not exceed the existing single-position limit;
-* deployment per run must not exceed the daily-turnover limit;
-* minimum trade size must not exceed the baseline position cap.
-
-### Security assessment contract
+### Decision projection module
 
 Add:
 
 ```text
-data/tables/security_assessments.csv
-```
+src/papertrader/advice.py
+````
 
-Columns:
+Define immutable typed models for:
 
 ```text
+DecisionSnapshot
+PortfolioSummary
+ModelPortfolioRow
+ActionableSignalView
+CandidateView
+ResearchAlertView
+CoverageSummary
+PerformanceSummary
+SystemImpact
+```
+
+Add:
+
+```bash
+papertrader advice refresh --run-id <run_id>
+papertrader advice validate --strict
+```
+
+`advice refresh` must:
+
+1. require a reconciled portfolio;
+2. read the final state produced by the selected daily run;
+3. join canonical state by immutable IDs;
+4. calculate the public stance and presentation categories;
+5. write an immutable run snapshot;
+6. atomically replace the latest generated publication snapshot and exports;
+7. validate every generated artifact before returning success;
+8. be idempotent for identical authoritative inputs.
+
+### Generated artifacts
+
+Add the JSON schema:
+
+```text
+schemas/decision_snapshot.schema.json
+```
+
+Add the immutable per-run artifact:
+
+```text
+data/runs/<run_id>/decision_snapshot.json
+```
+
+Add the latest generated publication view:
+
+```text
+data/published/decision_snapshot.json
+```
+
+Add generated CSV contracts:
+
+```text
+data/published/model_portfolio.csv
+data/published/actionable_signals.csv
+```
+
+Register the CSV contracts as `generated: true` in:
+
+```text
+schemas/csv_contracts.yaml
+```
+
+The generated files under `data/published/` must not be used by deterministic trading or research
+code as authoritative inputs.
+
+Update repository layout validation, runtime commit whitelists, Git attributes, and generated-path
+protection for these exact files.
+
+### Decision snapshot contract
+
+The JSON snapshot must contain:
+
+```text
+version
+snapshot_id
+run_id
+as_of
+report_date
+data_status
+stance
+stance_reason_codes
+base_currency
+current_portfolio
+approved_target_portfolio
+actionable_signals
+candidate_pipeline
+research_alerts
+coverage
+performance
+system_impacts
+source_state_hashes
+```
+
+Canonical `data_status` values:
+
+```text
+current
+degraded
+blocked
+```
+
+Canonical `stance` values:
+
+```text
+hold_cash
+maintain
+deploy
+rebalance
+reduce_risk
+exit
+blocked
+```
+
+Stance precedence:
+
+1. `blocked` when accounting, reconciliation, current-position marks, required FX, or pending-order
+   state is unsafe or unavailable;
+2. `exit` when one or more validated actions close exposure and no opening action is approved;
+3. `reduce_risk` when validated reduce or close actions dominate;
+4. `deploy` when the portfolio is predominantly cash and validated open actions exist;
+5. `rebalance` when validated increases and reductions coexist;
+6. `hold_cash` when there are no positions and no actionable opening trade;
+7. `maintain` otherwise.
+
+The stance must be derived exclusively from deterministic current state. It must not use an LLM
+summary as an input.
+
+### Current and approved target portfolios
+
+The current model portfolio must be derived from:
+
+```text
+portfolio.csv
+cash_ledger.csv
+performance_daily.csv
+```
+
+The approved target portfolio must be derived from:
+
+```text
+current reconciled positions
+non-terminal validated orders
+order legs
+executions already applied to those orders
+fresh price and FX references
+fees and committed cash
+```
+
+Do not derive the approved target portfolio directly from unvalidated allocation targets.
+
+Every model-portfolio row must expose:
+
+```text
+snapshot_id
+as_of
+holding_type
 security_id
-assessed_at
-expires_at
-eligibility
+ticker
+company_name
+instrument_type
+sleeve
+current_weight_pct
+approved_target_weight_pct
+current_value_base
+approved_target_value_base
+delta_value_base
+current_quantity
+approved_target_quantity
+mark
+mark_currency
+fx_rate_to_base
+market_data_as_of
+action
+action_status
+strategy_id
+signal_id
+order_id
 confidence
-thesis_score
-business_quality_score
-balance_sheet_score
-valuation_score
-timing_score
-liquidity_score
-risk_penalty
+effective_score
 downside_pct
 base_upside_pct
 valuation_horizon_months
-hard_blockers
-soft_gaps
-evidence_refs
-run_id
+thesis_summary
+entry_rule
+exit_rule
+invalidation
+review_at
+research_page
+reason_codes
 ```
 
-Canonical values:
+Canonical `holding_type` values:
 
 ```text
-eligibility = ineligible | baseline | conviction
-confidence  = low | medium | high
+cash
+security
 ```
 
-Scores and penalties must be integer decimal text within `0–100`.
-
-`downside_pct` and `base_upside_pct` may be negative but must be finite decimal text. `valuation_horizon_months` must be a positive integer.
-
-Add:
-
-```bash
-papertrader research assessment upsert --request <json>
-```
-
-The command must:
-
-* validate the exact request schema;
-* require an existing immutable `security_id`;
-* require fresh evidence references;
-* reject future-dated assessments;
-* reject expiration before assessment;
-* validate score ranges;
-* validate canonical blocker and gap values;
-* prevent an older assessment from replacing a newer one;
-* write only through the canonical table layer;
-* be idempotent for an identical retry.
-
-### Hard blockers
-
-Use canonical machine-readable blocker values, including:
+Canonical investor-facing `action` values:
 
 ```text
-identity_uncertain
-research_stale
-valuation_unsupported
-market_data_stale
-fx_unavailable
-liquidity_insufficient
-solvency_risk
-accounting_uncertain
-thesis_invalidated
-instrument_unsupported
-exchange_unsupported
-currency_unsupported
-```
-
-A non-empty hard-blocker set always forces `eligibility=ineligible`.
-
-### Soft gaps
-
-Canonical soft-gap examples:
-
-```text
-margin_of_safety_below_target
-timing_unfavorable
-catalyst_missing
-valuation_not_compelling
-confidence_medium
-concentration_sensitive
-cyclical_normalization_uncertain
-```
-
-Soft gaps may reduce rank or position size but do not automatically disqualify the security.
-
-### Deterministic aggregate score
-
-Add a pure scoring function:
-
-```text
-raw_score =
-    thesis_score            × 0.25
-  + business_quality_score  × 0.20
-  + balance_sheet_score     × 0.15
-  + valuation_score         × 0.25
-  + timing_score            × 0.10
-  + liquidity_score         × 0.05
-```
-
-Apply confidence:
-
-```text
-high   = 1.00
-medium = 0.80
-low    = 0.50
-```
-
-Then calculate:
-
-```text
-effective_score =
-    raw_score × confidence_multiplier − risk_penalty
-```
-
-Candidate edge over cash:
-
-```text
-candidate_edge = max(effective_score − cash_hurdle_score, 0)
-```
-
-All calculations must use deterministic `Decimal` arithmetic with documented rounding.
-
-### Security research skill
-
-Update `skills/papertrader-security-research/SKILL.md`.
-
-Every completed security research operation must either:
-
-1. write a complete current assessment; or
-2. write an ineligible assessment with explicit hard blockers.
-
-The skill must not leave a researched security with no comparable disposition.
-
-A baseline-eligible assessment requires:
-
-* current primary evidence;
-* supportable downside and base-case valuation;
-* explicit horizon;
-* liquidity review;
-* balance-sheet review;
-* confidence;
-* invalidation conditions;
-* fresh market data;
-* no hard blocker.
-
-### Foreign-exchange market data
-
-Extend the deterministic market-data layer to maintain fresh FX rates for every allowed non-base currency.
-
-Add committed rolling FX data under:
-
-```text
-data/market/fx/<currency>_<base_currency>.csv
-```
-
-The daily controller must provide `fx_rate_to_base` for:
-
-* open foreign-currency positions;
-* pending foreign-currency orders;
-* candidate allocation sizing;
-* portfolio marks;
-* risk references;
-* fees and cash effects.
-
-A missing or stale FX rate must exclude a new candidate and defer an existing foreign-currency order without corrupting accounting state.
-
-### Exit criteria
-
-* [ ] Every researched security has a current comparable assessment or an explicit ineligible assessment.
-* [x] Hard blockers deterministically exclude a security.
-* [x] Assessment updates are idempotent and reject older data.
-* [x] Score aggregation produces exact reproducible `Decimal` results.
-* [x] All allowed currencies can produce fresh base-currency market references.
-* [x] Foreign-currency positions and pending orders no longer fail merely because their currency differs from the portfolio base currency.
-* [x] Existing high-conviction research behavior remains valid.
-* [x] Schema, integrity, lint, typing, and focused assessment/FX tests pass.
-
-## Step 8.2 — Implement the deterministic allocation engine and order guards
-
-### Allocation engine
-
-Add:
-
-```text
-src/papertrader/allocation.py
-```
-
-Add the CLI command:
-
-```bash
-papertrader allocation plan --run-id <run_id>
-```
-
-The engine must read:
-
-* reconciled accounting replay;
-* current portfolio marks;
-* cash and equity;
-* open and pending exposure;
-* current strategies and their sleeves;
-* securities;
-* fresh assessments;
-* accepted idea-security relationships;
-* sector and theme exposure;
-* allocation settings.
-
-It must never read generated allocation output as authoritative input.
-
-### Generated allocation targets
-
-Add:
-
-```text
-data/tables/allocation_targets.csv
-```
-
-Mark it as a generated table.
-
-Columns:
-
-```text
-allocation_plan_id
-run_id
-as_of
-security_id
-strategy_id
-sleeve
-rank
-effective_score
-candidate_edge
-current_weight_pct
-pending_weight_pct
-target_weight_pct
-target_value_base
-delta_value_base
-disposition
-reason
-assessment_as_of
-```
-
-Canonical dispositions:
-
-```text
-open
-increase
+buy
+add
 hold
-reduce
-close
-excluded
-below_minimum_trade
+trim
+exit
+no_trade
 ```
 
-Add append-only history:
+Canonical `action_status` values:
 
 ```text
-data/tables/allocation_history.csv
+filled
+pending_order
+active_signal
+awaiting_order_validation
+research_candidate
+blocked
+no_action
 ```
 
-The history row must preserve the finalized target and reason for every candidate considered in each allocation plan.
+Include one explicit cash row.
 
-### Deployment budget
+Enforce:
+
+```text
+sum(approved_target_weight_pct) + cash_weight_pct = 100%
+```
+
+within a documented Decimal rounding tolerance.
+
+Projected pending-order values must be labelled estimates at the recorded reference mark. Actual
+portfolio state changes only after deterministic fills.
+
+### Actionable signal classification
+
+A signal may appear under `actionable_signals` only when:
+
+* the signal has a canonical non-terminal actionable status;
+* it is not expired;
+* its strategy exists;
+* the strategy is `ready` or `active`;
+* the strategy identity and normalized legs are valid;
+* the strategy is not expired or before `not_before`;
+* its linked assessment and relationship requirements remain current where applicable;
+* required market and FX inputs are fresh;
+* no issue blocks the affected current or proposed exposure.
+
+Set:
+
+```text
+copy_ready = true
+```
+
+only when a validated non-terminal order exists and its canonical order legs can be exported.
+
+An active signal without a validated order may be displayed as an investment recommendation but
+must say `Awaiting deterministic order validation` and must not expose a copy-ready quantity.
+
+### Candidate pipeline
+
+Build the candidate pipeline from:
+
+```text
+allocation_targets.csv
+security_assessments.csv
+securities.csv
+relationships.csv
+strategies.csv
+```
+
+Classify candidates as:
+
+```text
+approved
+strategy_pending
+relationship_pending
+assessment_pending
+market_data_blocked
+valuation_unattractive
+risk_blocked
+research_blocked
+```
+
+A raw allocator disposition does not become an actionable signal.
+
+For excluded candidates with a valid assessment, sort near misses deterministically by:
+
+1. positive candidate edge;
+2. effective score;
+3. confidence;
+4. base-case upside;
+5. immutable security ID.
+
+Candidates without a current assessment belong in research-coverage reporting rather than being
+ranked as investment near misses.
+
+### Research alerts
+
+Build research alerts from:
+
+```text
+indicators.csv
+canonical Inbox packets
+operation history
+```
+
+Expose:
+
+```text
+security
+ticker
+alert type
+observed at
+market-data date
+research status
+research conclusion
+linked research page
+```
+
+Every rendered research alert must include the visible label:
+
+```text
+Research alert — not a trade signal
+```
+
+### Coverage and system impact
 
 Calculate:
 
 ```text
-cash_reserve =
-    equity × minimum_cash_reserve_pct / 100
-
-available_cash =
-    max(cash − committed_pending_cash − cash_reserve, 0)
-
-target_exposure_gap =
-    max(
-        equity × target_invested_pct / 100
-        − current_gross_exposure
-        − pending_gross_exposure,
-        0
-    )
-
-remaining_baseline_capacity =
-    max(
-        equity × maximum_baseline_sleeve_pct / 100
-        − current_baseline_exposure
-        − pending_baseline_exposure,
-        0
-    )
-
-deployment_limit =
-    equity × maximum_deployment_per_run_pct / 100
-
-deployment_budget =
-    min(
-        available_cash,
-        target_exposure_gap,
-        remaining_baseline_capacity,
-        deployment_limit
-    )
+allocation candidate count
+current assessment count
+fresh-evidence assessment count
+current relationship count
+ready or active strategy count
+active signal count
+pending order count
+market-data success count
+market-data failure count
+research backlog count
+blocking issue count
+non-blocking issue count
+last successful daily run
 ```
 
-### Candidate filtering
-
-A security is baseline eligible only when:
-
-* assessment eligibility is `baseline` or `conviction`;
-* assessment is not expired or older than the configured age;
-* confidence meets the configured minimum;
-* hard blockers are empty;
-* effective score exceeds the cash hurdle;
-* base-case upside is positive;
-* downside is finite and explicitly assessed;
-* market and FX inputs are fresh;
-* security status permits monitoring or trading;
-* exchange, currency, and instrument are allowed;
-* a current accepted relationship or equivalent evidence-linked thesis exists.
-
-### Diversification rule
-
-The allocator must not concentrate the full baseline sleeve into too few candidates.
-
-Define:
+Classify every current issue as:
 
 ```text
-diversification_factor =
-    min(
-        eligible_candidate_count
-        / minimum_diversified_candidates,
-        1
-    )
+blocks_portfolio
+blocks_action
+affects_candidate
+publication_only
+operational_only
 ```
 
-Then:
+A Telegram or Pages delivery failure must not be rendered as an investment risk.
+
+### Human-readable reason labels
+
+Add a complete deterministic mapping for canonical reason codes, including:
 
 ```text
-diversified_budget =
-    deployment_budget × diversification_factor
+assessment_missing
+assessment_stale
+relationship_missing_or_stale
+score_below_cash_hurdle
+base_upside_not_positive
+market_data_not_ok
+market_data_stale
+fx_unavailable
+insufficient_diversification
+insufficient_eligible_candidates
+minimum_trade_threshold
+concentration_cap
+deployment_budget_exhausted
+hard_blocker:*
 ```
 
-The per-position cap remains authoritative, so fewer eligible securities naturally leave more capital in cash.
+Primary views use the readable explanation. Raw codes remain available in technical details and the
+audit appendix.
 
-### Weight allocation
-
-Allocate the diversified budget proportionally to positive candidate edge.
-
-Use deterministic capped redistribution:
-
-1. calculate each candidate’s provisional share from candidate edge;
-2. apply the baseline position cap;
-3. apply total security exposure cap;
-4. apply sector cap;
-5. apply theme cap;
-6. apply currency cap when configured;
-7. redistribute remaining budget among uncapped candidates;
-8. repeat until no budget can be allocated without violating a constraint;
-9. round target quantities downward so the cash reserve cannot be breached.
-
-The algorithm must be deterministic regardless of input-row ordering.
-
-Ties must be broken by immutable `security_id`.
-
-### Existing positions
-
-The allocator may control only positions linked exclusively to baseline strategies.
-
-For baseline positions:
-
-* a still-eligible candidate may be held or resized;
-* a candidate inside the rebalance band produces `hold`;
-* a hard blocker, expired assessment, or thesis invalidation produces target weight zero;
-* a lower rank may produce a reduction;
-* a position may be closed when its capital has a better eligible use.
-
-The allocator must not automatically reduce or close a conviction position. Conviction positions remain governed by their strategy signals and risk rules.
-
-### Queue handoff
-
-In `active` mode, a non-zero material target delta must enqueue a normal `strategy_research` operation.
-
-The payload must include:
-
-```json
-{
-  "mode": "baseline_allocation",
-  "allocation_plan_id": "<immutable plan id>",
-  "security_id": "<security id>",
-  "strategy_id": "<stable baseline strategy id>",
-  "current_weight_pct": "<decimal>",
-  "target_weight_pct": "<decimal>",
-  "maximum_weight_pct": "<decimal>",
-  "selection_rank": "<integer>",
-  "effective_score": "<decimal>",
-  "assessment_as_of": "<UTC timestamp>"
-}
-```
-
-Use a stable baseline strategy identity per security so repeated plans update one strategy rather than creating unlimited strategies.
-
-Queue requests must use deterministic dedupe keys containing the strategy, allocation plan, and desired disposition.
-
-In `report_only` mode, write targets and history but enqueue no strategy, signal, or execution work.
-
-### Strategy metadata
-
-Extend `strategies.csv` with:
-
-```text
-sleeve
-allocation_plan_id
-```
-
-Canonical sleeve values:
-
-```text
-conviction
-baseline
-```
-
-Existing strategies migrate to `conviction`.
-
-A baseline strategy must retain the allocation plan that most recently established its target.
-
-### Order guards
-
-Strengthen `papertrader order create`.
-
-Before an order is accepted:
-
-* submitted legs must match the canonical strategy legs;
-* the strategy must be orderable;
-* strategy `risk_budget_pct` must be enforced against current equity;
-* a baseline strategy must have a current allocation target;
-* the allocation plan must not be stale;
-* projected baseline exposure must not exceed its target plus rounding tolerance;
-* the baseline position cap must be enforced;
-* the minimum cash reserve must remain intact;
-* current pending orders must be included;
-* concentration, turnover, gross exposure, and existing risk limits must still pass.
-
-Deterministic code must calculate equity quantity from target value and fresh reference price.
-
-The LLM may recommend structure and explain the decision, but it must not choose an unconstrained final quantity.
+Unknown codes must fail validation rather than silently appear untranslated.
 
 ### Exit criteria
 
-* [x] Allocation results are identical for identical inputs regardless of row ordering.
-* [x] Total target exposure never exceeds the configured limits.
-* [x] Target cash never falls below the minimum reserve.
-* [x] Baseline exposure never exceeds the baseline sleeve cap.
-* [x] Per-security, sector, theme, turnover, and gross-exposure caps are enforced.
-* [x] Fewer eligible candidates result in partial deployment rather than forced concentration.
-* [x] Hard-blocked securities receive zero target allocation.
-* [x] Conviction positions are not managed by the baseline allocator.
-* [x] Pending orders are included in projected cash and exposure.
-* [x] Strategy risk budgets and canonical legs are enforced at order creation.
-* [x] `report_only` mode cannot create operations, signals, orders, fills, or accounting changes.
-* [x] Unit, property, and golden allocation tests pass.
+* [ ] Identical authoritative inputs produce byte-identical publication snapshots and CSV exports.
+* [ ] Input row ordering cannot change snapshot results.
+* [ ] Every public security reference contains a ticker, company name, and valid research link when
+  a research page exists.
+* [ ] A raw technical alert cannot appear as an actionable signal.
+* [ ] An allocation target without a valid strategy cannot appear as a copy-ready trade.
+* [ ] A signal without a validated order cannot expose a copy-ready quantity.
+* [ ] Current model-portfolio values reconcile with canonical accounting.
+* [ ] Approved target values include pending orders without mutating accounting.
+* [ ] Cash and target weights reconcile to 100% within the documented rounding tolerance.
+* [ ] Stale or unavailable current-position data produces `data_status=blocked`.
+* [ ] Candidate-only data failures produce `data_status=degraded`, not a false portfolio failure.
+* [ ] Generated artifacts are rejected as authoritative inputs.
+* [ ] Agents cannot directly mutate generated publication artifacts.
+* [ ] Schema, integrity, typing, formatting, and focused projection tests pass.
 
-## Step 8.3 — Integrate baseline strategy research and execution
+## Step 9.2 — Generate investor-facing pages and reports
 
-### Strategy research skill
+### Public page structure
 
-Update `skills/papertrader-strategy-research/SKILL.md` to support:
+Generate or maintain:
 
 ```text
-mode = conviction | baseline_allocation
+data/wiki/index.md
+data/wiki/model-portfolio.md
+data/wiki/signals.md
+data/wiki/performance.md
+data/wiki/system-status.md
+data/wiki/research-catalog.md
 ```
 
-For baseline allocation, require:
+Update:
 
-* valid allocation-plan identity;
-* current target weight;
-* current assessment;
-* fresh price and FX inputs;
-* explicit soft gaps;
-* explicit reason the security did not qualify as a conviction strategy;
-* thesis;
-* downside case;
-* base case;
-* invalidation;
+```text
+data/wiki/SCHEMA.md
+```
+
+with the required page types and tags.
+
+The homepage must no longer contain the complete research catalog. Move the generated catalog to
+`research-catalog.md` and link it from the primary navigation.
+
+### Homepage
+
+The homepage must render, in this order:
+
+1. as-of timestamp and data-status badge;
+2. one current stance headline;
+3. current and approved target portfolio summary;
+4. actionable signals;
+5. explicit no-trade state when applicable;
+6. top assessed near misses;
+7. performance and exposure summary;
+8. research and relationship coverage;
+9. material data-quality impact;
+10. links to model portfolio, signals, research, performance, and system status.
+
+For an all-cash portfolio with no actionable signals, the first visible conclusion must be:
+
+```text
+No trade — hold 100% cash
+```
+
+followed by the main deterministic reasons.
+
+Do not use recent operation completion order as a proxy for investment importance.
+
+### Model portfolio page
+
+Render:
+
+* current equity and cash;
+* current portfolio weights;
+* approved target weights;
+* current-to-target deltas;
+* reference marks and timestamps;
+* actions and action states;
+* confidence and valuation ranges;
+* compact thesis and invalidation;
 * review date;
-* exit conditions;
-* target-size limit.
+* links to complete research;
+* copy and download controls;
+* a clear paper-only and non-personalized-research notice.
 
-The strategy page must explain why the candidate is preferable to retaining that portion of the portfolio in cash.
+Provide committed downloads for:
 
-A baseline strategy must use equity in the first implementation. Options, shorts, leverage, and multi-leg structures remain reserved for conviction strategies.
+```text
+model_portfolio.csv
+decision_snapshot.json
+```
 
-The skill may create a signal only when:
+The CSV and JSON links must resolve to the same committed snapshot rendered by the page.
 
-* the allocation plan remains current;
-* target delta exceeds the minimum-trade threshold;
-* no new hard blocker exists;
-* market and FX data remain fresh;
-* all normalized strategy fields are complete.
+### Signals page
 
-### Execute-strategy skill
+Render separate sections for:
 
-Update `skills/papertrader-execute-strategy/SKILL.md`.
+```text
+Actionable trade signals
+Pending validated paper orders
+Research alerts — not trade signals
+Recently expired or completed signals
+```
 
-For a baseline action, the skill must:
+For each actionable signal show:
 
-* read the latest allocation target;
-* verify the plan has not been superseded;
-* use the deterministic target quantity;
-* refuse any quantity above the target;
-* preserve the minimum cash reserve;
-* create only the action indicated by the target:
+```text
+ticker and company
+action
+strategy
+created and expiry timestamps
+market-data timestamp
+current and target weights
+quantity when copy ready
+order type and limit when applicable
+entry rule
+exit rule
+invalidation
+rationale
+thesis link
+```
 
-  * `open`;
-  * `increase`;
-  * `reduce`;
-  * `close`;
-  * `hold`.
-* skip without mutation when the target is within the rebalance band.
+Empty states must be explicit:
 
-The deterministic order command remains the final authority.
+```text
+No actionable trade signals.
+No pending paper orders.
+```
 
-### Controller and result validation
+### Performance page
 
-Update the controller skill and result validator so allocation-linked strategy operations may change only:
+Render from canonical performance and portfolio history:
 
-* the relevant strategy page;
-* strategy and strategy-leg state through the CLI;
-* one eligible signal through the CLI;
-* bounded issue and follow-up state;
-* the operation result artifact.
+* equity history;
+* cumulative return;
+* daily return;
+* running drawdown;
+* cash versus invested exposure;
+* conviction versus baseline exposure;
+* realized and unrealized P/L;
+* allocation changes;
+* position and sector concentration.
 
-They may not directly change:
+Use deterministic committed data only.
 
-* allocation targets;
-* allocation history;
-* portfolio;
-* cash;
-* executions;
-* fills;
-* performance.
+Do not introduce an external benchmark in this step.
 
-### Exit criteria
+### System-status page
 
-* [x] Baseline strategy research uses the same evidence and identity boundaries as conviction research.
-* [x] Baseline strategies explicitly document their lower-conviction status.
-* [x] Baseline strategies are equity-only.
-* [x] No agent can override the deterministic target quantity.
-* [x] Superseded allocation plans cannot create new orders.
-* [x] Hold targets create no signal or order churn.
-* [x] Reduce and close targets use the normal signal and execution lifecycle.
-* [x] Existing conviction strategy behavior and tests remain unchanged.
-* [x] Skill preflight, manifest validation, command auditing, and changed-path validation pass.
+Render:
 
-## Step 8.4 — Add daily orchestration, reporting, and staged activation
+* last run and publication status;
+* portfolio reconciliation status;
+* market and FX freshness;
+* assessment coverage;
+* relationship coverage;
+* strategy and signal counts;
+* affected securities with human-readable labels;
+* current issues grouped by investment impact;
+* bounded operation-queue summaries;
+* links to the complete audit artifacts.
 
-### Daily sequence
-
-Extend the daily controller to execute:
-
-1. initialize accounting;
-2. update securities and FX market data;
-3. update indicators and opportunity packets;
-4. run bounded sequential research operations;
-5. process previously eligible pending orders;
-6. accrue actions and rebuild the reconciled portfolio;
-7. update performance;
-8. generate the current allocation plan;
-9. enqueue baseline strategy work only when allocation mode is `active`;
-10. prepare the queue for the next run;
-11. generate the daily report;
-12. run strict validation and publication.
-
-Allocation planning occurs after fills and portfolio rebuild so it uses the final reconciled end-of-run state.
-
-New allocation work normally executes in the next daily run. Do not combine fresh assessment, allocation, strategy creation, signal creation, order creation, and fill into one uncontrolled operation chain.
+Show raw queue IDs and immutable entity IDs only on this page or in expandable technical details.
 
 ### Daily report
 
-Add an allocation section showing:
+Refactor `src/papertrader/reports.py` so the canonical daily report starts with the same committed
+decision snapshot used by the homepage.
+
+New report order:
+
+1. investor decision summary;
+2. model portfolio and approved changes;
+3. actionable signals and pending orders;
+4. candidates and near misses;
+5. performance and risk;
+6. research changes;
+7. data-quality and coverage impact;
+8. audit appendix.
+
+Move the following to the audit appendix:
+
+* complete market-freshness table;
+* raw operation IDs;
+* raw security IDs;
+* complete active queue;
+* delivery failures;
+* machine reason codes;
+* run diagnostics.
+
+The audit appendix remains complete and deterministic.
+
+### Telegram
+
+Generate the Telegram message from the committed investor brief rather than the complete operational
+report.
+
+Telegram must include:
+
+* stance;
+* current cash and exposure;
+* approved target changes;
+* actionable signals;
+* top blocker or near miss;
+* data-status summary;
+* commit-pinned link to the full report.
+
+Do not include the full operation queue unless a separate system-status delivery mode is explicitly
+selected.
+
+### Exit criteria
+
+* [ ] The homepage answers the current stance, holdings, actions, reasons, and data status before the
+  research catalog or operational details.
+* [ ] Homepage recommendations come from the decision snapshot rather than recent operation order.
+* [ ] Every primary table uses ticker and company name rather than an opaque ID.
+* [ ] The all-cash state is represented by an explicit 100% cash model-portfolio row.
+* [ ] Actionable signals and research alerts are visibly separate.
+* [ ] Machine reason codes are translated in primary views.
+* [ ] The full raw state remains available in the audit appendix and system-status page.
+* [ ] Model-portfolio CSV and JSON downloads match the rendered committed snapshot.
+* [ ] Telegram and the public homepage communicate the same stance and actions.
+* [ ] Wiki lint and generated-site link checks pass.
+
+## Step 9.3 — Add the decision-oriented Quartz interface
+
+### Custom source boundary
+
+Add custom Quartz source outside the regenerated engine, for example:
 
 ```text
-Allocation mode
-Cash
-Minimum cash reserve
-Current invested exposure
-Target invested exposure
-Current conviction exposure
-Current baseline exposure
-Maximum baseline exposure
-Deployment budget
-Capital allocated this plan
-Capital left unallocated
-Eligible candidate count
-Excluded candidate count
+site/papertrader/components/DecisionDashboard.tsx
+site/papertrader/components/ModelPortfolioTable.tsx
+site/papertrader/components/SignalBoard.tsx
+site/papertrader/components/PerformanceChart.tsx
+site/papertrader/components/StatusBadge.tsx
+site/papertrader/scripts/copy-portfolio.inline.ts
+site/papertrader/styles.scss
 ```
 
-Candidate table:
+Update:
 
 ```text
-Rank
-Security
-Sleeve
-Effective score
-Current weight
-Pending weight
-Target weight
-Delta
-Disposition
-Reason
-Assessment date
+site/quartz.layout.ts
+site/quartz.config.ts
+site/tsconfig.json
+site/package.json
 ```
 
-The report must explicitly state why cash remains unallocated, including:
-
-* insufficient eligible candidates;
-* candidate scores below cash hurdle;
-* hard blockers;
-* stale assessments;
-* stale prices or FX;
-* concentration caps;
-* deployment limit;
-* turnover limit;
-* minimum-trade threshold.
-
-### Shadow rollout
-
-#### Phase A — Report only
-
-Run at least five completed daily cycles with:
-
-```ini
-mode = report_only
-```
-
-Requirements:
-
-* no allocation-generated queue rows;
-* no allocation-generated signals or orders;
-* stable results for identical inputs;
-* no cash-reserve or concentration violations;
-* reports explain every unallocated amount;
-* strict reconciliation passes.
-
-#### Phase B — Active paper allocation
-
-Enable:
-
-```ini
-mode = active
-```
-
-Initially retain:
+Do not place maintained custom files under:
 
 ```text
-maximum_baseline_sleeve_pct = 30
-maximum_baseline_position_pct = 5
-maximum_deployment_per_run_pct = 15
-minimum_cash_reserve_pct = 25
+site/quartz/
 ```
 
-Review these only through explicit configuration changes after observing paper performance and behavior. Do not let an agent modify the limits.
+because `prepare-quartz.mjs` recreates that directory.
+
+### Navigation and layouts
+
+Add a primary navigation bar:
+
+```text
+Today
+Model portfolio
+Signals
+Research
+Performance
+System status
+```
+
+Use a dashboard layout for:
+
+```text
+index
+model-portfolio
+signals
+performance
+system-status
+```
+
+Use the existing research layout for idea, security, relationship, strategy, source, and Inbox
+pages.
+
+On dashboard pages:
+
+* hide article reading-time metadata;
+* hide backlinks from the primary view;
+* avoid displaying the generic wiki Explorer before the decision content;
+* show the exact snapshot `as_of` timestamp instead of the page creation date;
+* retain accessible links to the research catalog and audit views.
+
+### Responsive presentation
+
+Implement:
+
+* status cards for stance, cash, exposure, active signals, and coverage;
+* responsive portfolio rows that become cards on narrow screens;
+* horizontally scrollable technical tables only in audit views;
+* visible text labels in addition to colors;
+* keyboard-accessible copy and download controls;
+* sufficient contrast in light and dark modes;
+* semantic table headings and accessible chart descriptions.
+
+Primary portfolio and signal information must remain readable on a mobile viewport without requiring
+horizontal scrolling.
+
+### Copy and local scaling
+
+Add progressive enhancement that can:
+
+* copy portfolio rows as TSV;
+* download the committed CSV;
+* scale long-equity target weights to a local user-entered notional;
+* show whole-share quantities rounded down;
+* show residual cash;
+* display the price and FX timestamp used by the calculation.
+
+The local scaler must visibly state:
+
+```text
+Illustrative scaling only. Your scaled quantities have not passed PaperTrader's portfolio-level
+risk checks.
+```
+
+It must not:
+
+* write repository state;
+* call a brokerage;
+* send the notional to a server;
+* store the notional in browser persistence;
+* scale options, shorts, or multi-leg strategies automatically.
+
+### Publication data
+
+Extend the build wrapper to copy only the exact validated generated files from:
+
+```text
+data/published/
+```
+
+into the temporary Pages output, for example:
+
+```text
+site/public/data/decision_snapshot.json
+site/public/data/model_portfolio.csv
+site/public/data/actionable_signals.csv
+```
+
+The copy step must:
+
+* reject symlinks;
+* reject unexpected files;
+* validate JSON and CSV before copying;
+* preserve the committed content hash;
+* operate only inside the temporary build output;
+* run before the post-build link and artifact checks.
+
+### Exit criteria
+
+* [ ] Custom code survives `prepare-quartz.mjs` because it is outside the regenerated engine.
+* [ ] TypeScript checks include all custom component, script, and style sources.
+* [ ] Dashboard pages have purpose-built navigation and omit generic article metadata.
+* [ ] The primary decision content is readable without JavaScript.
+* [ ] Copy, local scaling, and filtering operate as progressive enhancement.
+* [ ] Mobile portfolio and signal views pass responsive tests.
+* [ ] Status meaning is not communicated by color alone.
+* [ ] Downloaded files have the same hashes as the validated committed publication artifacts.
+* [ ] No client action can mutate repository or trading state.
+* [ ] Quartz build, link validation, and Pages artifact validation pass.
+
+## Step 9.4 — Integrate daily generation, finish coverage, and validate rollout
+
+### Daily sequence
+
+Extend daily finalization to execute:
+
+1. complete market, research-operation, fill, accounting, portfolio, and performance phases;
+2. generate the current allocation plan;
+3. prepare bounded follow-up work;
+4. build and validate the deterministic decision snapshot;
+5. generate publication CSV exports;
+6. generate the investor-facing wiki pages;
+7. generate the canonical daily report and investor brief;
+8. run strict integrity, reconciliation, schema, wiki, and publication checks;
+9. commit the exact data and publication views;
+10. build and deploy Quartz from that commit;
+11. deliver the committed investor brief to Telegram.
+
+The public site, CSV export, JSON snapshot, daily report, and Telegram message must all refer to the
+same committed `snapshot_id`.
+
+### Research coverage
+
+Continue the existing sequential assessment and relationship backfill.
+
+The dashboard must show:
+
+```text
+assessments complete / allocation candidates
+fresh evidence assessments / allocation candidates
+current accepted relationships / required relationships
+ready or active strategies
+active signals
+```
+
+Do not fabricate assessments, strategies, or signals to populate the dashboard.
+
+Do not require a non-cash result for Step 9 completion. The live dashboard may correctly remain
+100% cash until the canonical research workflow produces eligible diversified candidates.
+
+### Rollout phases
+
+#### Phase A — Projection and content correctness
+
+Implement and merge:
+
+* decision snapshot;
+* generated exports;
+* investor-first report structure;
+* homepage, portfolio, signals, performance, and system-status Markdown;
+* golden tests for all-cash and invested fixtures.
+
+Review the rendered information hierarchy before adding interactive styling.
+
+#### Phase B — Quartz presentation
+
+Implement and merge:
+
+* decision dashboard layout;
+* navigation;
+* responsive portfolio and signal components;
+* copy and local-scaling enhancement;
+* performance visualization;
+* publication-data copy and verification.
+
+#### Phase C — Live research population
+
+Run the existing bounded sequential research backfill until every maintained allocation candidate
+has either:
+
+* a current comparable assessment and current relationship disposition; or
+* an explicit evidence-backed ineligible state.
+
+Allow the normal strategy, signal, order, and fill lifecycle to populate the first non-cash model
+portfolio. Do not manually seed live strategies or positions for presentation purposes.
 
 ### Required tests
 
-Add focused tests for:
+Add unit and golden tests for:
 
-* assessment schema and lifecycle;
-* hard and soft blockers;
-* score aggregation;
-* FX freshness and conversion;
-* no eligible candidates;
-* one eligible candidate;
-* fewer than minimum diversified candidates;
-* tied candidate scores;
-* capped proportional redistribution;
-* sector and theme concentration;
-* existing conviction exposure;
-* existing baseline exposure;
-* pending orders;
-* stale plans;
-* stale assessments;
-* minimum trade threshold;
-* reserve enforcement;
-* strategy risk-budget enforcement;
-* canonical strategy-leg matching;
-* report-only non-mutation;
-* baseline open, increase, hold, reduce, and close;
-* deterministic reruns;
-* full daily integration from 100% cash to staged baseline exposure.
+* current all-cash portfolio;
+* one filled long-equity position;
+* multiple filled positions and residual cash;
+* pending buy order;
+* pending sell or reduce order;
+* active signal without an order;
+* expired signal;
+* stale or superseded allocation plan;
+* allocation candidate without a strategy;
+* research alert without a signal;
+* strategy awaiting order validation;
+* foreign-currency position and pending order;
+* stale price;
+* stale FX;
+* market failure affecting only an excluded candidate;
+* market failure affecting an open position;
+* missing assessment;
+* missing or stale relationship;
+* negative base-case upside;
+* score below the cash hurdle;
+* concentration and diversification blockers;
+* reason-code translation;
+* company-name, ticker, and research-link joins;
+* Markdown and HTML escaping of untrusted research text;
+* portfolio CSV and actionable-signal CSV generation;
+* local long-equity scaling and residual cash;
+* options and short positions excluded from automatic scaling;
+* mobile rendering;
+* no-JavaScript rendering;
+* deterministic publication under input permutation;
+* exact snapshot consistency across homepage, daily report, exports, and Telegram.
 
 Add property tests proving:
 
 ```text
-cash_after_targets >= required_cash_reserve
-baseline_exposure <= maximum_baseline_sleeve
-security_exposure <= maximum_single_position
-sum(target_values) <= deployment_budget
-targets are deterministic under input permutation
-all excluded or hard-blocked candidates have target zero
+current portfolio reconciles with accounting
+approved target cash is non-negative
+sum(approved target weights) + cash weight = 100% within tolerance
+copy_ready implies a valid non-terminal order
+copy_ready implies valid canonical order legs
+copy_ready implies fresh required price and FX state
+research_alert implies not actionable unless a separate canonical signal exists
+unvalidated allocation targets cannot become copy-ready actions
+current-position data failure produces blocked status
+candidate-only data failure cannot fabricate a blocked current portfolio
+generated output cannot change authoritative state
+snapshot output is deterministic under input permutation
 ```
 
-### Reference integration scenario
+### Definition of done
 
-Using €100,000 initial paper equity, no positions, no pending orders, at least six eligible candidates, and the initial configuration:
-
-* required cash reserve: at least €25,000;
-* maximum baseline sleeve: €30,000;
-* maximum position: €5,000;
-* maximum first-run deployment: €15,000;
-* first active plan allocates no more than €15,000;
-* subsequent plans may increase baseline exposure toward €30,000;
-* unused capital remains cash until conviction strategies or additional eligible baseline candidates are available.
-
-The exact selected securities must depend only on current assessments and deterministic ranking, not on hard-coded ticker preferences.
-
-## Definition of done
-
-* [x] PaperTrader distinguishes conviction and baseline portfolio exposure.
-* [x] The existing screening threshold is not weakened.
-* [x] Cash is an explicit portfolio alternative with a configurable hurdle and reserve.
-* [ ] Every researched security has a comparable current assessment or an explicit blocker.
-* [x] Foreign-currency securities can be marked, sized, risk-checked, filled, and reconciled with fresh FX data.
-* [x] The allocation engine is deterministic, Decimal-safe, idempotent, and order-independent.
-* [x] Allocation sizing is owned by code rather than the LLM.
-* [x] Baseline orders cannot exceed their allocation targets or strategy risk budgets.
-* [x] Baseline allocation cannot bypass existing risk, order, fill, accounting, or reconciliation boundaries.
-* [x] Report-only mode is deterministically covered without creating trading state; the operator
-  explicitly waived five live shadow cycles for this rollout.
-* [x] The daily report explains both invested and intentionally uninvested cash.
-* [x] A clean-checkout integration cycle can move from 100% cash to staged diversified baseline paper exposure.
-* [x] A repeated cycle creates no duplicate assessment, allocation plan, strategy, signal, order, execution, or history record.
-* [x] Formatting, lint, strict typing, schemas, integrity, wiki lint, all tests, portfolio reconciliation, and workflow contract validation pass.
-* [x] No real-order adapter, brokerage credential, or real-execution path is introduced.
-
-## Step 8 implementation status — 2026-07-27
-
-The deterministic implementation, contracts, skills, daily integration, reference output, and
-validation gates are complete. Security research may now register bounded source metadata and is
-required to leave a current evidence-backed assessment even when skipped. Allocation maintenance
-derives its universe from canonical researched security pages, enqueues stable assessment and
-relationship refresh work, and exposes strict readiness coverage. Allocation reports include
-researched securities that lack assessments while excluding identity-only watchlist rows.
-
-The operator explicitly waived the original five-live-cycle shadow requirement. Accordingly, the
-versioned default is `active` without changing the 25% cash reserve, 30% baseline sleeve, 5%
-position cap, or 15% per-run deployment limit. Active mode remains fail-closed: a security without
-a current registered-evidence assessment and current accepted relationship receives a zero target,
-so activation cannot force an investment.
-
-The repository's 24-security live assessment/source/relationship backfill remains an operational
-data task rather than a code-completion shortcut. It must be processed sequentially through the
-configured inference harness; no score or valuation may be inferred from legacy prose. Strict
-`allocation readiness` remains red until that evidence-backed work and every backfill terminal
-state are complete. Hosted inference, publish, push, and Telegram delivery still require their
-configured external credential and post-commit boundaries.
-
-## Daily Hermes execution follow-up — Complete (2026-07-27)
-
-The failed hosted daily run was reproduced with the workflow's pinned Hermes v0.19.0 image,
-isolated OAuth state, and one sequential operation. The container launcher deliberately drops the
-Hermes subprocess from the root controller to UID/GID 10000, but controller-created repository
-data used owner-only modes. Hermes therefore could not read the queue, payload, or wiki inputs and
-could not create `agent_result.json`, even though its launcher returned zero.
-
-Before taking the repository snapshot, the controller now hands off only the repository-local
-`data/` tree to the non-root Hermes profile owner when the controller itself is root. The handoff
-rejects symlinks and non-regular filesystem entries and does not expose `.git`, source code, the
-encrypted age identity, or other controller-owned credential state. Hermes remains unprivileged.
-The configured turn bound is 90 so a valid result manifest can still be written after bounded
-integrity repair, and controller/operation instructions require a new immutable JSON request file
-for every corrected CLI retry. Allocation readiness is recognized as an allowed read-only
-verification command without weakening mutation-scope validation.
-
-A fresh pinned-container run then completed exactly one operation with exit code zero and a
-`succeeded` result. The controller accepted the manifest with no validation errors, including the
-repository diff, command audit, distinct corrected request artifacts, strict schema/queue/wiki/
-integrity checks, and unchanged accounting state.
-
-## GitHub Pages link-integrity follow-up — Complete (2026-07-27)
-
-The deployed Pages artifact contained 15 dead internal references from the homepage, wiki log, and
-daily report to five canonical `inbox/` packets. Those Markdown packets were public and linked from
-the complete wiki catalog, but Quartz excluded the entire folder from its emitted artifact. Quartz
-now publishes `inbox/` while continuing to exclude `_archive/` and `.gitkeep` files.
-
-Every site build now runs a deterministic post-build link check across generated HTML `href` and
-`src` attributes. It understands extensionless Quartz routes, directory indexes, assets, and both
-root and project GitHub Pages base URLs; same-host links that escape the configured project subpath
-or resolve to missing artifacts fail the build. The rebuilt canonical wiki emits all five packet
-targets and passes the link check with no dead internal links.
-
-## Results-first Quartz homepage — Complete (2026-07-27)
-
-The canonical wiki index now starts with a deterministic current-results block before the content
-catalog. It links the latest daily report, shows the newest generated cash, equity, exposure,
-realized and unrealized P/L, daily and cumulative return snapshot, and lists every current paper
-position with marks and valuation. An all-cash portfolio is stated explicitly rather than implied
-by an empty table.
-
-The same block shows the three newest successful or skipped operation-history conclusions with
-bounded summaries and links to maintained entity pages where available. Daily report generation
-refreshes the block after registering the new report, and `papertrader wiki refresh-homepage`
-provides an idempotent deterministic rebuild from canonical tables and history. The current live
-index has been regenerated, strict wiki lint passes, and Quartz renders the results before the Meta
-and catalog sections with no broken generated-site links.
-
-## Inbox clarity, classifier recovery, and rich Telegram delivery — Complete (2026-07-27)
-
-Candidate packet generation now resolves each immutable security ID through `securities.csv`.
-Quartz catalog entries and page titles use the human-readable `[TICKER] Indicator state` form, and
-each packet links the ticker and instrument name to its maintained security page. Existing packets
-were reproducibly regenerated with their canonical facts embedded in frontmatter so blocked or
-pending decisions can be retried without reconstructing old market bars. Strict wiki lint now
-recognizes the generated internal Markdown catalog links, and the complete Quartz build verifies
-that the rendered homepage and security links resolve.
-
-The classifier is configured as a closed stdin/stdout bridge to one tool-free, `--yolo` Hermes
-turn using the isolated `openai-codex` OAuth profile and the cost-sensitive `gpt-5.6-luna` model.
-Every non-dry runtime restores OAuth even when no full Hermes operations were selected. Daily
-preparation retries old blocked or pending candidates sequentially, validates the exact
-`ingest|ignore` result contract, resolves recovered classifier issues, and enqueues wiki ingestion
-only after a final `ingest` decision. The pinned container's CLI flags and Luna model catalog were
-verified locally; live transmission of the existing packets was denied by the execution boundary,
-so their first authorized non-dry daily run remains responsible for recording their final model
-decisions.
-
-Post-commit delivery now calls Telegram's rich-message endpoint and passes the canonical report as
-GitHub-compatible Rich Markdown. YAML frontmatter is omitted, headings, lists, emphasis, code, and
-tables remain formatted, wiki references become commit-pinned links, and complete Markdown blocks
-are kept together when a report must be split. Delivery retry cursors and secret redaction remain
-unchanged. Unit, integration, strict wiki, generated-site link, typing, lint, and full test gates
-cover the new behavior.
+* [ ] The first screen clearly states the current PaperTrader recommendation.
+* [ ] The current model portfolio and approved target portfolio are distinct and reconciled.
+* [ ] A user can download or copy the committed model portfolio.
+* [ ] Every copy-ready action has passed the strategy, signal, order, market-data, FX, and risk
+  boundaries already required by PaperTrader.
+* [ ] Research alerts cannot be confused with trade signals.
+* [ ] Assessed near misses explain why they did not enter the portfolio.
+* [ ] Unresearched securities appear as coverage gaps rather than investment rankings.
+* [ ] Human-readable labels replace opaque IDs in investor-facing views.
+* [ ] Current research, valuation, invalidation, and review links are available from every
+  recommendation.
+* [ ] Performance, exposure, cash, and concentration are visible without opening the audit report.
+* [ ] Operational failures are separated from investment risks and classified by impact.
+* [ ] The all-cash state is complete, explicit, and useful rather than an empty table.
+* [ ] The public site remains honest when research coverage is incomplete.
+* [ ] The full audit trail remains available.
+* [ ] The dashboard, daily report, exports, and Telegram message share one committed snapshot.
+* [ ] Static publication works without JavaScript; interactive controls are progressive enhancement.
+* [ ] Strict schemas, integrity, wiki lint, accounting reconciliation, typing, formatting, unit,
+  property, integration, mobile, build, and link checks pass.
+* [ ] No real-order adapter, brokerage credential, personalized portfolio storage, or real-execution
+  path is introduced.
