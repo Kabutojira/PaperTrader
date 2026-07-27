@@ -9,9 +9,11 @@ created: '2026-07-27'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 9327af26235b643c494c5fd7a9173540374c046dc880e1db7cb50d502b55dd41
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: A strengthened Bollinger-above-upper trigger with a 4.25% monthly
+  return is a material indicator transition for the tracked security.
+related_entity_ids:
+- security_2c779e81c27b78c556bb
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2c779e81c27b78c556bb
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: A strengthened Bollinger-above-upper trigger with a 4.25% monthly return is a material indicator transition for the tracked security.

@@ -1,2 +1,3 @@
 security_id,assessed_at,expires_at,eligibility,confidence,thesis_score,business_quality_score,balance_sheet_score,valuation_score,timing_score,liquidity_score,risk_penalty,downside_pct,base_upside_pct,valuation_horizon_months,hard_blockers,soft_gaps,evidence_refs,run_id
 security_1f9cce545ede94cd6349,2026-07-27T13:32:49Z,2026-08-26T13:32:49Z,baseline,high,85,90,95,45,45,95,8,-18.4,8.8,12,,margin_of_safety_below_target|valuation_not_compelling,source_isrg_q2_2026_earnings,gha-30270310504-1
+security_c9a37d277445869a8809,2026-07-27T15:37:00Z,2026-08-26T15:37:00Z,baseline,medium,70,65,85,25,30,90,15,-46.9,-18.4,12,,confidence_medium|margin_of_safety_below_target|timing_unfavorable|valuation_not_compelling,source_rblx_q1_2026_shareholder_letter,gha-30280283355-1

@@ -6,12 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-26'
-updated: '2026-07-26'
+updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 7a832eb2d5ae5b8f4cae292bfd040ca3b801804796c85a7a3b193dc539a0282d
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: 'Material transition: price rose 13.35% over the period and entered
+  a Bollinger-above-upper trigger.'
+related_entity_ids:
+- security_59304f90c440def31dc5
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_59304f90c440def31dc5
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: Material transition: price rose 13.35% over the period and entered a Bollinger-above-upper trigger.

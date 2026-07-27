@@ -9,9 +9,11 @@ created: '2026-07-27'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 48b7e8fa112e9acb813457a37f2b7e6a601f00724953b59592fe67cb986ae522
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 22% decline with a new Bollinger-band breach merits durable
+  review.
+related_entity_ids:
+- security_f2b9760d847b2ba59324
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_f2b9760d847b2ba59324
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: Material 22% decline with a new Bollinger-band breach merits durable review.

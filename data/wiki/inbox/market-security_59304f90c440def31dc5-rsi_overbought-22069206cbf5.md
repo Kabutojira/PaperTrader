@@ -6,12 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-26'
-updated: '2026-07-26'
+updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 22069206cbf52bc8f3c469dedb9daedf3a24d8d906960dfc34ec4146ab485e32
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 13.35% period return with a newly entered RSI-overbought
+  transition merits durable wiki review.
+related_entity_ids:
+- security_59304f90c440def31dc5
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_59304f90c440def31dc5
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: Material 13.35% period return with a newly entered RSI-overbought transition merits durable wiki review.

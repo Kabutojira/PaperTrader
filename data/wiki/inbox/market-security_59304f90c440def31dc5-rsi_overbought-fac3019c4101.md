@@ -9,9 +9,11 @@ created: '2026-07-27'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: fac3019c410117ed77dfd518e8be9b7da6a00a6a9c1f0043faca1c96c8fb706e
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material one-month strengthening with a 14.0% return and an overbought
+  RSI transition merits durable security-context documentation.
+related_entity_ids:
+- security_59304f90c440def31dc5
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_59304f90c440def31dc5
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: Material one-month strengthening with a 14.0% return and an overbought RSI transition merits durable security-context documentation.

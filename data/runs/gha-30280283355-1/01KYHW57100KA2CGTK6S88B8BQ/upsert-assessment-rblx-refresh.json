@@ -1,0 +1,21 @@
+{
+  "security_id": "security_c9a37d277445869a8809",
+  "assessed_at": "2026-07-27T15:35:10Z",
+  "expires_at": "2026-08-26T15:35:10Z",
+  "eligibility": "baseline",
+  "confidence": "medium",
+  "thesis_score": "70",
+  "business_quality_score": "65",
+  "balance_sheet_score": "85",
+  "valuation_score": "25",
+  "timing_score": "30",
+  "liquidity_score": "90",
+  "risk_penalty": "15",
+  "downside_pct": "-46.9",
+  "base_upside_pct": "-18.4",
+  "valuation_horizon_months": "12",
+  "hard_blockers": "",
+  "soft_gaps": "confidence_medium|margin_of_safety_below_target|timing_unfavorable|valuation_not_compelling",
+  "evidence_refs": "source_rblx_q1_2026_shareholder_letter",
+  "run_id": "gha-30280283355-1"
+}

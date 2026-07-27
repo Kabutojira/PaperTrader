@@ -6,12 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-26'
-updated: '2026-07-26'
+updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 3a01ce587beec1c9b7aea4164a151b4caa356b7b03e0e59058bf9539c0d76ab9
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: A new Bollinger-above-upper transition with a 4.65% period return
+  is a material market signal for the security.
+related_entity_ids:
+- security_2c779e81c27b78c556bb
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2c779e81c27b78c556bb
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: A new Bollinger-above-upper transition with a 4.65% period return is a material market signal for the security.

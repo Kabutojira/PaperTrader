@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rblx_q1_2026_shareholder_letter",
+  "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm",
+  "source_type": "issuer-release",
+  "title": "Roblox Q1 2026 shareholder letter",
+  "publisher": "Roblox Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "74abbaa419c5913026836470fa3932bf94d55516c38162e610b51921c5c21d08",
+  "related_entity_ids": "idea_digital_attention_gaming_ecosystems|security_c9a37d277445869a8809",
+  "checked_at": "2026-07-27T15:37:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q1 2026 operating cash flow was USD 629 million, free cash flow was USD 596 million, total cash and investments were USD 6.2 billion, and fully diluted shares were 749 million.",
+  "summary": "The issuer reported strong Q1 engagement, bookings and cash generation, but reduced 2026 bookings and free-cash-flow growth expectations because of safety headwinds while creator, trust, infrastructure and dilution costs remained material.",
+  "run_id": "gha-30280283355-1"
+}

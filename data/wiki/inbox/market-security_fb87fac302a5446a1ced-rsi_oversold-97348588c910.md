@@ -6,12 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-26'
-updated: '2026-07-26'
+updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 97348588c9107e9f7287470be7711e96c4c411be63fd2196422a2c2e2f4fc42e
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material RSI-oversold transition following a 26.45% decline over
+  the observed period warrants durable wiki review.
+related_entity_ids:
+- security_fb87fac302a5446a1ced
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_fb87fac302a5446a1ced
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: Material RSI-oversold transition following a 26.45% decline over the observed period warrants durable wiki review.

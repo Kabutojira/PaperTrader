@@ -304,3 +304,28 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30274861908-1`.
 
 - Refreshed human-readable inbox labels and security links.
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee]] as `ingest`: A new Bollinger-above-upper transition with a 4.65% period return is a material market signal for the security.
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b]] as `ingest`: A strengthened Bollinger-above-upper trigger with a 4.25% monthly return is a material indicator transition for the tracked security.
+
+- Classified [[inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e]] as `ingest`: Material 20.7% decline with a newly entered RSI-oversold condition merits durable review.
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae]] as `ingest`: Material transition: price rose 13.35% over the period and entered a Bollinger-above-upper trigger.
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5]] as `ingest`: Material 13.35% period return with a newly entered RSI-overbought transition merits durable wiki review.
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101]] as `ingest`: Material one-month strengthening with a 14.0% return and an overbought RSI transition merits durable security-context documentation.
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752]] as `ingest`: Material 18.5% decline with a newly entered RSI-oversold condition merits durable wiki review.
+
+- Classified [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e]] as `ingest`: Material 22% decline with a new Bollinger-band breach merits durable review.
+
+- Classified [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910]] as `ingest`: Material RSI-oversold transition following a 26.45% decline over the observed period warrants durable wiki review.
+
+- Revalidated [[securities/security_c9a37d277445869a8809|Roblox]] with freshly registered Q1 2026
+  issuer evidence, a current market mark and USD/EUR rate, and one comparable assessment. A bounded
+  12-month free-cash-flow scenario indicates 46.9% downside and 18.4% base-case downside, so the
+  medium-confidence security remains watching and uncompetitive with cash; no strategy was queued.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30280283355-1`.

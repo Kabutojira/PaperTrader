@@ -9,9 +9,11 @@ created: '2026-07-27'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: e0b5f3290c6e511ee50fc76f63e53b17fc60c3aec032fcdac7a978ad7b1c1b39
-classifier_decision: blocked
-classifier_reason: classifier.command is not configured
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 20.7% decline with a newly entered RSI-oversold condition
+  merits durable review.
+related_entity_ids:
+- security_4627aea1bf7d8943d3d8
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_4627aea1bf7d8943d3d8
@@ -43,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier.command is not configured
+- Decision: `ingest`
+- Reason: Material 20.7% decline with a newly entered RSI-oversold condition merits durable review.

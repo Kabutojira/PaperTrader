@@ -7,43 +7,43 @@ tags:
 created: "2026-07-27"
 updated: "2026-07-27"
 provenance: deterministic-report-generator
-run_id: "gha-30274861908-1"
+run_id: "gha-30280283355-1"
 ---
 
 # PaperTrader daily report — 2026-07-27
 
 ## 1. Run status and data freshness
 
-- Run: `gha-30274861908-1`
+- Run: `gha-30280283355-1`
 - Status: `degraded`
-- Generated (UTC): `2026-07-27T14:30:26Z`
+- Generated (UTC): `2026-07-27T15:39:59Z`
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| security_18a3ab0ee6086ee85d0f | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_1c055eb9b2bb1f5a8ff2 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_1f9cce545ede94cd6349 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_22c2b9d782a62d7a9b86 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_2c779e81c27b78c556bb | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_2dbe878dfc899d7ee867 | 2026-07-24 | 2026-07-27T14:24:43Z | error | MarketDataError: invalid OHLC range on 2026-07-27 for security_2dbe878dfc899d7ee867 |
-| security_37ddcbdaad296ad831f2 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_4627aea1bf7d8943d3d8 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_4b61970aa8f574446819 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_59304f90c440def31dc5 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_66cdcf90aac0d83e76f3 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_6ad1af8d10d6276a0221 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_6f9a1450edceb9307c9a | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_7ca095d63423c55a90e3 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_8472507d7d320aa388a7 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_9d4049ed6669a52815d6 | 2026-07-24 | 2026-07-27T14:24:43Z | error | MarketDataError: invalid OHLC range on 2026-07-27 for security_9d4049ed6669a52815d6 |
-| security_a9eb9838940ef5ceaa0c | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_bdc2f87dadf134760c3a | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_c120e9f26ebb6159adf9 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_c9a37d277445869a8809 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_cc4dcb8f002b61dffe00 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_ed7d5b616a196969c815 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_f2b9760d847b2ba59324 | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
-| security_fb87fac302a5446a1ced | 2026-07-24 | 2026-07-27T14:24:43Z | ok | — |
+| security_18a3ab0ee6086ee85d0f | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_1c055eb9b2bb1f5a8ff2 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_1f9cce545ede94cd6349 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_22c2b9d782a62d7a9b86 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_2c779e81c27b78c556bb | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_2dbe878dfc899d7ee867 | 2026-07-24 | 2026-07-27T15:31:12Z | error | MarketDataError: invalid OHLC range on 2026-07-27 for security_2dbe878dfc899d7ee867 |
+| security_37ddcbdaad296ad831f2 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_4627aea1bf7d8943d3d8 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_4b61970aa8f574446819 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_59304f90c440def31dc5 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_66cdcf90aac0d83e76f3 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_6ad1af8d10d6276a0221 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_6f9a1450edceb9307c9a | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_7ca095d63423c55a90e3 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_8472507d7d320aa388a7 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_9d4049ed6669a52815d6 | 2026-07-24 | 2026-07-27T15:31:12Z | error | MarketDataError: invalid OHLC range on 2026-07-27 for security_9d4049ed6669a52815d6 |
+| security_a9eb9838940ef5ceaa0c | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_bdc2f87dadf134760c3a | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_c120e9f26ebb6159adf9 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_c9a37d277445869a8809 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_cc4dcb8f002b61dffe00 | 2026-07-27 | 2026-07-27T15:31:12Z | ok | — |
+| security_ed7d5b616a196969c815 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_f2b9760d847b2ba59324 | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
+| security_fb87fac302a5446a1ced | 2026-07-24 | 2026-07-27T15:31:12Z | ok | — |
 
 ## 2. Orders and executions
 
@@ -90,7 +90,7 @@ run_id: "gha-30274861908-1"
 - Eligible candidate count: 0
 - Excluded candidate count: 24
 
-Cash remains unallocated because: `assessment_missing`, `insufficient_diversification`, `insufficient_eligible_candidates`, `market_data_not_ok`, `relationship_missing_or_stale`
+Cash remains unallocated because: `assessment_missing`, `base_upside_not_positive`, `insufficient_diversification`, `insufficient_eligible_candidates`, `market_data_not_ok`, `relationship_missing_or_stale`, `score_below_cash_hurdle`
 
 | Rank | Security | Sleeve | Effective score | Current weight | Pending weight | Target weight | Delta | Disposition | Reason | Assessment date |
 | ---: | --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- | --- |
@@ -113,7 +113,7 @@ Cash remains unallocated because: `assessment_missing`, `insufficient_diversific
 | — | security_a9eb9838940ef5ceaa0c | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing | — |
 | — | security_bdc2f87dadf134760c3a | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing\|relationship_missing_or_stale | — |
 | — | security_c120e9f26ebb6159adf9 | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing\|relationship_missing_or_stale | — |
-| — | security_c9a37d277445869a8809 | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing\|relationship_missing_or_stale | — |
+| — | security_c9a37d277445869a8809 | baseline | 30.6 | 0% | 0% | 0% | 0 | excluded | base_upside_not_positive\|relationship_missing_or_stale\|score_below_cash_hurdle | 2026-07-27T15:37:00Z |
 | — | security_cc4dcb8f002b61dffe00 | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing\|relationship_missing_or_stale | — |
 | — | security_ed7d5b616a196969c815 | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing\|relationship_missing_or_stale | — |
 | — | security_f2b9760d847b2ba59324 | baseline | 0 | 0% | 0% | 0% | 0 | excluded | assessment_missing | — |
@@ -127,34 +127,33 @@ Cash remains unallocated because: `assessment_missing`, `insufficient_diversific
 | 01KYHYBWR02MKG5ZAA14RJA67V | opportunity_research | opportunity_a43652ddf2bcb897b05e | skipped | freshness_cooldown:01KYFWWE20EZTW3FG97T7RH499 |
 | 01KYHYBWR0T5ZYN0Q2J4MJWX3X | opportunity_research | opportunity_faaa156712c5800ea197 | skipped | freshness_cooldown:01KYFWWE20571YGGDAV45A1F68 |
 | 01KYHYBWR00D5T9ND9VBJPW9F7 | opportunity_research | opportunity_1c07342ea13d0d8dc54b | succeeded | agent_result:succeeded |
+| 01KYHW57100KA2CGTK6S88B8BQ | security_research | security_c9a37d277445869a8809 | succeeded | agent_result:succeeded |
 
 ### Evidence-linked narrative
 
-- Sigma Lithium opportunity research was blocked because the 14:06:24Z oversold-RSI source snapshot was superseded before claim: the canonical 14:24:43Z refresh changed the 2026-07-24 close from USD 9.63 to USD 9.84, moved RSI(14) from 29.1237529 to 30.23638328, and removed the rsi_oversold trigger. Evidence: `301592c165694b81b3e31cbfef1c19bd3defd70841d3e62a522974a8dfeeda17`, `daa0405c2076e7a8f4d724e05f77b3abe5089e46182406c7b386f3b362484a62`, `data/operations/operations_TODO.csv`, `data/tables/securities.csv and data/wiki/securities/security_4627aea1bf7d8943d3d8.md`.
+- Roblox has a medium-confidence baseline assessment but is uncompetitive with cash: a bounded 12-month scenario indicates 46.9% downside and 18.4% base-case downside from the current mark, while safety headwinds and dilution remain material. Evidence: `PaperTrader deterministic market and FX caches`, `https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm`.
 
 ## 6. New or changed research entities
 
+- [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee]]
 - [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b]]
 - [[inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e]]
+- [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae]]
+- [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5]]
 - [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752]]
 - [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e]]
+- [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910]]
 - [[securities/security_1f9cce545ede94cd6349]]
+- [[securities/security_c9a37d277445869a8809]]
 - [[securities/security_f2b9760d847b2ba59324]]
 
 ## 7. Risks, blockers, and scheduled follow-ups
 
-- `warning` **issue_112dbc198a16c17e54e7** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e.md
 - `warning` **issue_1681e7daa698c45f8006** — Daily preparation degraded: security_2dbe878dfc899d7ee867
-- `warning` **issue_4183021e1363fc3aa642** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae.md
-- `warning` **issue_4b309fbac75c644b6dc5** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101.md
+- `warning` **issue_7c3336b8354d9c076ebc** — Telegram delivery failed: 798017b585f7de9127a798eb52aac52052f72786
 - `warning` **issue_9141a7a5538fd458f54f** — Telegram delivery failed: d3c816d22ba7ec5bb52ac8278b8f231f68dace74
 - `warning` **issue_9b4cbf2dec47a2d5f28b** — Daily preparation degraded: security_9d4049ed6669a52815d6
-- `warning` **issue_a3c2febb69c6663ae333** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e.md
-- `warning` **issue_b9bb38b0435eee030308** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee.md
-- `warning` **issue_c035ba6451c092224a7f** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910.md
-- `warning` **issue_c74225aa581c50e9a829** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5.md
-- `warning` **issue_d759882b3af9c8ff2505** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md
-- `warning` **issue_e6aff19b80293e0c91cd** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b.md
 
 ### Active operation queue
 
@@ -196,8 +195,7 @@ Cash remains unallocated because: `assessment_missing`, `insufficient_diversific
 - `waiting` 01KYHW5710VH8HSMT8N209A500 — relationship_research for `relationship_250194f6a9e3a1817632`
 - `ready` 01KYHW5710RKVS0S8HF233BBTR — security_research for `security_c120e9f26ebb6159adf9`
 - `waiting` 01KYHW5710X7RTKPR6BKG7S9YA — relationship_research for `relationship_afac7205cd7e09800edf`
-- `ready` 01KYHW57100KA2CGTK6S88B8BQ — security_research for `security_c9a37d277445869a8809`
-- `waiting` 01KYHW57104SC0RP9HX81QSW7K — relationship_research for `relationship_d9c8f578040386a487be`
+- `ready` 01KYHW57104SC0RP9HX81QSW7K — relationship_research for `relationship_d9c8f578040386a487be`
 - `ready` 01KYHW5710WP98V55QRM5RBXSQ — security_research for `security_cc4dcb8f002b61dffe00`
 - `waiting` 01KYHW5710J70PNSC8E3ET3904 — relationship_research for `relationship_7e9fd9486e494dd05bb5`
 - `ready` 01KYHW5710ENZ9WVA185W24RGA — security_research for `security_ed7d5b616a196969c815`
@@ -207,6 +205,15 @@ Cash remains unallocated because: `assessment_missing`, `insufficient_diversific
 - `ready` 01KYHW5710GCKR1DK8EH3ECASN — security_research for `security_fb87fac302a5446a1ced`
 - `waiting` 01KYHW5710BWYZSZ0Z4ASMB8EM — relationship_research for `relationship_ad2f37b49980dbc73a08`
 - `blocked` 01KYHYBWR02F32H3VYKHJWJS2S — opportunity_research for `opportunity_0985d882fffd8547f839`
+- `ready` 01KYJ375G0AV63H4YP5TXQN6QM — wiki_ingest for `source_1272c9af68af3c39b32e`
+- `ready` 01KYJ375G0WMPK21QK0P3N740K — wiki_ingest for `source_41b6971c55327a48da17`
+- `ready` 01KYJ375G0CK6TQJZ3Y927QK2P — wiki_ingest for `source_88641b43d89ee178051e`
+- `ready` 01KYJ375G0T6R7K6CFXQ41FRK3 — wiki_ingest for `source_d73911b42ea0e59df247`
+- `ready` 01KYJ375G07WRVDAAGCMTAMJAX — wiki_ingest for `source_5392f8ab153edf73d1e7`
+- `ready` 01KYJ375G0GN464TRX7KH9748R — wiki_ingest for `source_e4822bd4b442ff51063d`
+- `ready` 01KYJ375G06AA8K2J4SVCQZED7 — wiki_ingest for `source_960b91fa563fb8a926b9`
+- `ready` 01KYJ375G0WQ2JSDXYADZJ3P0Y — wiki_ingest for `source_ec7e0dc0a1e4897e9ed2`
+- `ready` 01KYJ375G0QD57AA4FJQ9FEQC8 — wiki_ingest for `source_fae2a4af713687d5cc2b`
 
 ## 8. Links
 
