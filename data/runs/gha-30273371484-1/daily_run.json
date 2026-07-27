@@ -1,0 +1,26 @@
+{
+  "completed_at": "2026-07-27T14:12:11Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "1",
+  "operation_count": 1,
+  "preparation_errors": [
+    "classifier blocked for data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b.md",
+    "classifier blocked for data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e.md",
+    "classifier blocked for data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101.md",
+    "classifier blocked for data/wiki/inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e.md",
+    "security_2dbe878dfc899d7ee867: MarketDataError: invalid OHLC range on 2026-07-27 for security_2dbe878dfc899d7ee867",
+    "security_9d4049ed6669a52815d6: MarketDataError: invalid OHLC range on 2026-07-27 for security_9d4049ed6669a52815d6"
+  ],
+  "queue_dispositions": [
+    "01KYHYBWR02MKG5ZAA14RJA67V:skipped:freshness_cooldown:01KYFWWE20EZTW3FG97T7RH499",
+    "01KYHYBWR0T5ZYN0Q2J4MJWX3X:skipped:freshness_cooldown:01KYFWWE20571YGGDAV45A1F68"
+  ],
+  "report_path": "data/wiki/daily-reports/daily-report_20260727.md",
+  "run_id": "gha-30273371484-1",
+  "source_sha": "7f303acfdf196f62f9e98461765b83271a122611",
+  "started_at": "2026-07-27T14:06:24Z",
+  "status": "degraded",
+  "trigger": "workflow_dispatch"
+}

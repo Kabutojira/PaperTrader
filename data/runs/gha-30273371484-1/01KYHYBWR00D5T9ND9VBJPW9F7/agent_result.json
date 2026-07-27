@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Enphase Energy's 22.262229% 25 June–24 July decline and marginal lower-Bollinger breach were classified as risk, not a validated opportunity; current issuer product releases do not explain the move, and queued security revalidation will assess the imminent Q2 evidence."
+  ],
+  "evidence": [
+    {
+      "claim": "For immutable security_f2b9760d847b2ba59324, the entered transition covers 2026-06-25 through 2026-07-24: adjusted close USD 36.70000076293945, period return -0.2226222945424699012423885593, lower Bollinger band USD 36.71606402, strength 0.0004374994294540943008193392947, previous strength zero, and 252 observations through the endpoint.",
+      "observed_at": "2026-07-27T14:06:24Z",
+      "source": "data/wiki/inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e.md and canonical market cache",
+      "source_hash": "92c3146da6c6940e7d58b99f1f18861956acbac2fcbdcbfbfe909be3e9df0c96"
+    },
+    {
+      "claim": "The 7 July issuer release scheduled second-quarter 2026 financial results for 28 July 2026; no Q2 financial results were available during the trigger period.",
+      "observed_at": "2026-07-07T00:00:00Z",
+      "source": "Enphase Energy Q2 2026 results-call announcement",
+      "url": "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-announces-conference-call-review-second-12"
+    },
+    {
+      "claim": "The 13 July issuer release announced an IQ9N microinverter product rollout in Australia and New Zealand, not a demand, margin, cash-flow, or guidance update explaining the share-price decline.",
+      "observed_at": "2026-07-13T00:00:00Z",
+      "source": "Enphase Energy IQ9N Australia and New Zealand issuer release",
+      "url": "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-expands-iq9n-microinverters-gan-technology"
+    },
+    {
+      "claim": "The 16 July issuer release highlighted IQ EV Charger 2 safety and reliability in Europe, but disclosed no financial change that explains the trigger-period move.",
+      "observed_at": "2026-07-16T00:00:00Z",
+      "source": "Enphase Energy IQ EV Charger 2 Europe issuer release",
+      "url": "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-highlights-safety-and-reliability-iq-ev-charger-2"
+    },
+    {
+      "claim": "The 21 July issuer release announced backup and expandable-storage capability for existing European IQ Battery customers, but disclosed no demand, margin, cash-flow, or guidance change explaining the decline.",
+      "observed_at": "2026-07-21T00:00:00Z",
+      "source": "Enphase Energy European battery-upgrade issuer release",
+      "url": "https://investor.enphase.com/news-releases/news-release-details/enphase-energy-unlocks-backup-and-expandable-storage-existing-iq"
+    },
+    {
+      "claim": "Queued operation 01KYHW5710EB6CDPT0EF3CX9MM already provides the single bounded security revalidation follow-up for security_f2b9760d847b2ba59324, so this operation did not enqueue a duplicate.",
+      "observed_at": "2026-07-27T14:06:41Z",
+      "source": "data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHYBWR00D5T9ND9VBJPW9F7",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Classified Enphase Energy's 25 June–24 July 2026 lower-Bollinger transition as risk, not a validated opportunity. The deterministic 22.262229% decline is material to the existing demand-reset thesis, but the lower-band breach is marginal, current issuer product releases do not explain the move, and no supportable fair-value range exists. Updated the maintained security research and created no follow-up because a bounded security revalidation is already queued for the imminent Q2 evidence.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected queue row is running, claimed by gha-30273371484-1, and leased through 2026-07-27T14:36:41Z.",
+      "Confirmed immutable ENPH/XNAS/USD/equity identity and a valid 2026-07-24 endpoint with 252 cached observations.",
+      "Recomputed the canonical economic-content hash as 92c3146da6c6940e7d58b99f1f18861956acbac2fcbdcbfbfe909be3e9df0c96.",
+      "Distinguished time-matched issuer evidence from inference and tested the move against the maintained thesis, relationship, strategies, and portfolio; no strategy, signal, order, or position exists for this security.",
+      "Created no duplicate follow-up because operation 01KYHW5710EB6CDPT0EF3CX9MM is already queued for bounded security revalidation.",
+      "Strict schema, queue, wiki, and integrity checks passed.",
+      "Only the maintained security page and append-only wiki log were changed by this operation; no trading, accounting, allocation, portfolio, cash, execution, fill, or performance state was changed."
+    ],
+    "passed": true
+  }
+}

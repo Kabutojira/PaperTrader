@@ -284,3 +284,19 @@ This log is append-only. Rotate it by year only after the configured line thresh
   limited base upside and an 18.4% downside case, blocking conviction treatment.
 
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30270310504-1`.
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b]] (9327af26235b).
+
+- Created candidate packet [[inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e]] (e0b5f3290c6e).
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101]] (fac3019c4101).
+
+- Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e]] (48b7e8fa112e).
+
+- Reviewed the 25 June–24 July 2026 lower-Bollinger transition for
+  [[securities/security_f2b9760d847b2ba59324|Enphase Energy]] as **risk**: the deterministic
+  22.262229% decline is material to the demand-reset thesis, but the band breach is marginal and
+  current issuer product releases do not explain the move. No new follow-up was created because a
+  bounded security revalidation is already queued for the imminent Q2 evidence.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30273371484-1`.
