@@ -54,7 +54,11 @@ from papertrader.models import (
     ReferencePrice,
 )
 from papertrader.oauth_credentials import apply_oauth_ciphertext_artifact
-from papertrader.opportunity import process_opportunity_transitions
+from papertrader.opportunity import (
+    process_opportunity_transitions,
+    refresh_candidate_packet_display,
+    retry_unclassified_candidate_packets,
+)
 from papertrader.orders import (
     cancel_paper_order,
     create_paper_order,
@@ -114,6 +118,11 @@ def _parser() -> argparse.ArgumentParser:
     wiki_commands = wiki.add_subparsers(dest="wiki_command", required=True)
     wiki_commands.add_parser("lint").add_argument("--strict", action="store_true")
     wiki_commands.add_parser("refresh-homepage")
+    wiki_commands.add_parser("refresh-inbox")
+
+    classifier = commands.add_parser("classifier", help="run bounded inbox classification")
+    classifier_commands = classifier.add_subparsers(dest="classifier_command", required=True)
+    classifier_commands.add_parser("retry")
 
     market = commands.add_parser("market", help="retrieve and normalize market state")
     market_commands = market.add_subparsers(dest="market_command", required=True)
@@ -759,8 +768,27 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
     if arguments.command == "wiki":
         if arguments.wiki_command == "lint":
             return _print_result("wiki", lint_wiki(settings.paths.wiki))
-        path = refresh_wiki_homepage(root)
-        print(path.relative_to(root).as_posix())
+        if arguments.wiki_command == "refresh-homepage":
+            path = refresh_wiki_homepage(root)
+            print(path.relative_to(root).as_posix())
+            return 0
+        candidate_paths = refresh_candidate_packet_display(root, settings)
+        print(json.dumps([path.relative_to(root).as_posix() for path in candidate_paths]))
+        return 0
+    if arguments.command == "classifier":
+        packets = retry_unclassified_candidate_packets(root, settings)
+        print(
+            json.dumps(
+                [
+                    {
+                        "path": packet.path.relative_to(root).as_posix(),
+                        "decision": packet.decision.decision if packet.decision else "blocked",
+                    }
+                    for packet in packets
+                ],
+                sort_keys=True,
+            )
+        )
         return 0
     if arguments.command == "market":
         return _print_result("market", update_market_data(root, settings))

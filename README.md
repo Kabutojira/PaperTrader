@@ -305,8 +305,8 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 
 - build the wiki and its canonical daily reports from an exact commit with Quartz;
 - deploy the verified `site/public` artifact when Pages publication is enabled;
-- read the exact committed report with `git show` and send it to Telegram in escaped, bounded
-  chunks;
+- read the exact committed report with `git show` and send it as bounded Telegram Rich Markdown,
+  preserving headings, lists, tables, code, emphasis, and commit-pinned wiki links;
 - retain a failed Telegram chunk cursor in the repository issue ledger so a later dispatch of
   `reporting.yml` can resume delivery without rolling back the runtime commit.
 
@@ -319,9 +319,10 @@ verification, rotation, and revoked-grant recovery. A deployment can be retried 
 manually dispatching `pages.yml` with the committed SHA. Telegram can be retried by dispatching
 `reporting.yml` with the same `commit_sha`, `report_path`, and `run_id`.
 
-The `[classifier]` command and model are deployment settings for the cheap inbox decision. If they
-are intentionally left blank, candidate packets remain blocked with a recorded issue;
-deterministic code never substitutes a heuristic ingestion decision.
+The `[classifier]` command is the repository bridge to a tool-free, one-shot Hermes turn using the
+isolated OpenAI Codex OAuth profile. It defaults to the cost-sensitive `gpt-5.6-luna` model, emits
+only the closed `ingest|ignore` JSON contract, and retries previously pending or blocked packets on
+the next non-dry daily run. Deterministic code never substitutes a heuristic ingestion decision.
 
 See the [operating runbook](docs/OPERATIONS.md) for queue examples, local skill execution, manual
 workflow dispatch, configuration changes, failed-run recovery, replay by run ID, publication

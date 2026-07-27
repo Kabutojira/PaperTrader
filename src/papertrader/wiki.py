@@ -11,7 +11,8 @@ import yaml
 
 from papertrader.atomic_io import atomic_write_text
 
-WIKILINK_PATTERN = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\]]+)?\]\]")
+WIKILINK_PATTERN = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|[^\n]*?)?\]\]")
+MARKDOWN_LINK_PATTERN = re.compile(r"\[[^\n]*?\]\(([^)\s]+)\)")
 FENCED_BLOCK_PATTERN = re.compile(r"```.*?```", re.DOTALL)
 
 
@@ -130,6 +131,15 @@ def lint_wiki(wiki_root: Path) -> list[str]:
                 errors.append(f"{relative}: broken or ambiguous wikilink [[{target}]]")
             else:
                 resolved_links.setdefault(key, set()).add(resolved)
+        if key == "index":
+            for target in MARKDOWN_LINK_PATTERN.findall(body_without_code):
+                if target.startswith(("#", "http://", "https://", "mailto:", "tel:")):
+                    continue
+                resolved = _resolve_link(target, key, page_keys, keys_by_stem)
+                if resolved is None:
+                    errors.append(f"{relative}: broken or ambiguous Markdown link ({target})")
+                else:
+                    resolved_links.setdefault(key, set()).add(resolved)
 
     index_links = resolved_links.get("index", set())
     for key in sorted(page_keys.difference({"index"})):
@@ -165,7 +175,20 @@ def register_wiki_page(
         raise WikiFormatError(f"invalid wiki page key: {page_key!r}")
     index_path = wiki_root / "index.md"
     index_text = index_path.read_text(encoding="utf-8")
-    link = f"- [[{page_key}|{label}]]"
+    if label.startswith("["):
+        escaped_label = label.replace("[", r"\[").replace("]", r"\]")
+        link = f"- [{escaped_label}]({page_key})"
+    else:
+        link = f"- [[{page_key}|{label}]]"
+    existing_wikilink = rf"^- \[\[{re.escape(page_key)}(?:\|[^\n]*?)?\]\]\n?"
+    existing_markdown = rf"^- \[[^\n]*?\]\({re.escape(page_key)}\)\n?"
+    existing_pattern = re.compile(
+        f"(?:{existing_wikilink}|{existing_markdown})",
+        flags=re.MULTILINE,
+    )
+    matches = tuple(existing_pattern.finditer(index_text))
+    if matches and any(match.group(0).rstrip() != link for match in matches):
+        index_text = existing_pattern.sub("", index_text)
     if link not in index_text:
         heading = f"## {section}\n"
         if heading not in index_text:

@@ -1144,3 +1144,30 @@ refreshes the block after registering the new report, and `papertrader wiki refr
 provides an idempotent deterministic rebuild from canonical tables and history. The current live
 index has been regenerated, strict wiki lint passes, and Quartz renders the results before the Meta
 and catalog sections with no broken generated-site links.
+
+## Inbox clarity, classifier recovery, and rich Telegram delivery — Complete (2026-07-27)
+
+Candidate packet generation now resolves each immutable security ID through `securities.csv`.
+Quartz catalog entries and page titles use the human-readable `[TICKER] Indicator state` form, and
+each packet links the ticker and instrument name to its maintained security page. Existing packets
+were reproducibly regenerated with their canonical facts embedded in frontmatter so blocked or
+pending decisions can be retried without reconstructing old market bars. Strict wiki lint now
+recognizes the generated internal Markdown catalog links, and the complete Quartz build verifies
+that the rendered homepage and security links resolve.
+
+The classifier is configured as a closed stdin/stdout bridge to one tool-free, `--yolo` Hermes
+turn using the isolated `openai-codex` OAuth profile and the cost-sensitive `gpt-5.6-luna` model.
+Every non-dry runtime restores OAuth even when no full Hermes operations were selected. Daily
+preparation retries old blocked or pending candidates sequentially, validates the exact
+`ingest|ignore` result contract, resolves recovered classifier issues, and enqueues wiki ingestion
+only after a final `ingest` decision. The pinned container's CLI flags and Luna model catalog were
+verified locally; live transmission of the existing packets was denied by the execution boundary,
+so their first authorized non-dry daily run remains responsible for recording their final model
+decisions.
+
+Post-commit delivery now calls Telegram's rich-message endpoint and passes the canonical report as
+GitHub-compatible Rich Markdown. YAML frontmatter is omitted, headings, lists, emphasis, code, and
+tables remain formatted, wiki references become commit-pinned links, and complete Markdown blocks
+are kept together when a report must be split. Delivery retry cursors and secret redaction remain
+unchanged. Unit, integration, strict wiki, generated-site link, typing, lint, and full test gates
+cover the new behavior.

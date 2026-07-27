@@ -20,11 +20,12 @@ from papertrader.opportunity import (
     ClassifierError,
     detect_transitions,
     process_opportunity_transitions,
+    retry_unclassified_candidate_packets,
     validate_classifier_decision,
 )
 from papertrader.tables import read_table, write_table
 from papertrader.utils import content_hash
-from papertrader.wiki import lint_wiki
+from papertrader.wiki import lint_wiki, register_wiki_page
 
 
 def _bars(count: int, *, start: date = date(2025, 12, 1)) -> tuple[PriceBar, ...]:
@@ -197,6 +198,55 @@ class _Classifier:
         return ClassifierDecision(self.decision, "Bounded test decision.", ())
 
 
+class _UnavailableClassifier:
+    def classify(self, candidate: Mapping[str, object]) -> ClassifierDecision:
+        raise ClassifierError("temporary classifier outage")
+
+
+def test_blocked_candidate_is_retried_to_a_final_decision(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    bars = _bars(220)
+    current = _snapshot(
+        as_of=bars[-1].date,
+        rsi=Decimal("80"),
+        trigger_state=("rsi_overbought",),
+        source_hash="c" * 64,
+    )
+    write_table(sandbox_repository, "securities", [_security_row()])
+    now = datetime(2026, 7, 24, 22, tzinfo=UTC)
+
+    blocked = process_opportunity_transitions(
+        sandbox_repository,
+        sandbox_settings,
+        {},
+        {"sec_a": current},
+        {"sec_a": bars},
+        classifier=_UnavailableClassifier(),
+        now=now,
+    )
+    retried = retry_unclassified_candidate_packets(
+        sandbox_repository,
+        sandbox_settings,
+        classifier=_Classifier("ignore"),
+        now=now + timedelta(minutes=1),
+    )
+    repeated = retry_unclassified_candidate_packets(
+        sandbox_repository,
+        sandbox_settings,
+        classifier=_Classifier("ingest"),
+        now=now + timedelta(minutes=2),
+    )
+
+    assert blocked[0].decision is None
+    assert retried[0].decision is not None
+    assert retried[0].decision.decision == "ignore"
+    assert repeated == ()
+    assert "classifier_decision: ignore" in retried[0].path.read_text(encoding="utf-8")
+    assert lint_wiki(sandbox_settings.paths.wiki) == []
+
+
 @pytest.mark.parametrize(
     ("decision", "expected_types"),
     [
@@ -217,7 +267,30 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
         trigger_state=("rsi_overbought",),
         source_hash="c" * 64,
     )
-    write_table(sandbox_repository, "securities", [_security_row()])
+    security = _security_row()
+    security["research_page"] = "data/wiki/securities/sec_a.md"
+    write_table(sandbox_repository, "securities", [security])
+    security_page = sandbox_settings.paths.wiki / "securities" / "sec_a.md"
+    security_page.write_text(
+        "---\n"
+        "title: Example common stock\n"
+        "type: security\n"
+        "status: maintained\n"
+        "tags: [security, research]\n"
+        'created: "2026-07-24"\n'
+        'updated: "2026-07-24"\n'
+        "provenance: fixture\n"
+        "---\n\n# Example common stock\n",
+        encoding="utf-8",
+    )
+    register_wiki_page(
+        sandbox_settings.paths.wiki,
+        page_key="securities/sec_a",
+        label="Example common stock",
+        section="Securities",
+        event="Created fixture security page.",
+        event_date=date(2026, 7, 24),
+    )
     classifier = _Classifier(decision)
     now = datetime(2026, 7, 24, 22, tzinfo=UTC)
 
@@ -296,5 +369,10 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
         == 1
     )
     packet_text = first[0].path.read_text(encoding="utf-8")
+    assert "title: '[EXM] RSI overbought'" in packet_text
+    assert "# [EXM] RSI overbought" in packet_text
+    assert "- Security: [[securities/sec_a|EXM — Example common stock]] (`sec_a`)" in packet_text
+    index = sandbox_settings.paths.wiki.joinpath("index.md").read_text(encoding="utf-8")
+    assert f"[\\[EXM\\] RSI overbought](inbox/{first[0].path.stem})" in index
     assert f"classifier_decision: {decision}" in packet_text
     assert lint_wiki(sandbox_settings.paths.wiki) == []

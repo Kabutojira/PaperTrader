@@ -267,12 +267,15 @@ def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
     boundary = steps["Establish the container workspace boundary"]["run"]
     identities = steps["Establish immutable runtime identities"]["run"]
     handoff = steps["Hand the isolated profile to the Hermes user"]["run"]
+    oauth_contract = steps["Determine whether OAuth restoration is required"]["run"]
 
     assert 'workspace="$(pwd -P)"' in boundary
     assert 'git config --system --add safe.directory "$workspace"' in boundary
     assert 'echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"' in boundary
     assert "git rev-parse --verify 'HEAD^{commit}'" in identities
     assert handoff == 'chown -R hermes:hermes "$HERMES_HOME"'
+    assert 'if [ "$DRY_RUN" != "true" ]; then' in oauth_contract
+    assert '&& [ "$MAX_OPERATIONS" -gt 0 ]' not in oauth_contract
 
 
 def test_daily_forwards_only_oauth_secret_and_auth_only_pushes_do_not_retrigger_ci(

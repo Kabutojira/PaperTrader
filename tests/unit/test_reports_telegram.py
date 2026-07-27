@@ -1,18 +1,26 @@
 from __future__ import annotations
 
+import json
 import subprocess
+import urllib.parse
+import urllib.request
 from collections.abc import Mapping
+from dataclasses import replace
 from datetime import UTC, date, datetime
 from pathlib import Path
+
+import pytest
 
 from papertrader.config import Settings
 from papertrader.reports import NarrativeItem, generate_daily_report
 from papertrader.tables import read_table
 from papertrader.telegram import (
     TelegramDeliveryError,
+    UrllibTelegramTransport,
     deliver_committed_report,
     escape_markdown_v2,
     split_message,
+    telegram_messages,
 )
 from papertrader.wiki import lint_wiki
 
@@ -75,6 +83,62 @@ def test_telegram_markdown_escaping_and_bounded_lossless_splitting() -> None:
     assert all(not chunk.endswith("\\") for chunk in escaped_chunks[:-1])
 
 
+def test_telegram_builds_one_rich_markdown_report_with_linked_wiki_pages() -> None:
+    commit = "a" * 40
+    committed_url = (
+        "https://github.com/example/PaperTrader/blob/"
+        f"{commit}/data/wiki/daily-reports/daily-report_20260724.md"
+    )
+    report = (
+        "---\ntitle: Example\n---\n\n# Daily report\n\n"
+        "## Portfolio\n\n- **Cash:** `100000 EUR`\n- [[securities/sec_a|EXM]]\n"
+    )
+
+    messages = telegram_messages(report, committed_url=committed_url)
+
+    assert len(messages) == 1
+    assert messages[0].startswith("# Daily report")
+    assert "title: Example" not in messages[0]
+    assert "**Cash:** `100000 EUR`" in messages[0]
+    assert (
+        f"[EXM](https://github.com/example/PaperTrader/blob/{commit}/data/wiki/securities/sec_a.md)"
+    ) in messages[0]
+    assert messages[0].endswith(f"[View the committed report]({committed_url})")
+
+
+def test_telegram_transport_calls_rich_message_endpoint(monkeypatch: pytest.MonkeyPatch) -> None:
+    requests: list[urllib.request.Request] = []
+
+    class Response:
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b'{"ok":true}'
+
+    def urlopen(request: urllib.request.Request, *, timeout: int) -> Response:
+        assert timeout == 15
+        requests.append(request)
+        return Response()
+
+    monkeypatch.setattr(urllib.request, "urlopen", urlopen)
+    rich_message = json.dumps({"markdown": "# Formatted"})
+
+    response = UrllibTelegramTransport().send(
+        "test-token",
+        {"chat_id": "-123", "rich_message": rich_message},
+        timeout_seconds=15,
+    )
+
+    assert response == {"ok": True}
+    assert requests[0].full_url.endswith("/bottest-token/sendRichMessage")
+    payload = urllib.parse.parse_qs(requests[0].data.decode("utf-8"))
+    assert payload == {"chat_id": ["-123"], "rich_message": [rich_message]}
+
+
 class _FakeTelegram:
     def __init__(self, events: list[Mapping[str, object] | BaseException]) -> None:
         self.events = events
@@ -124,6 +188,10 @@ def test_telegram_failure_is_redacted_persisted_and_resumed(
     sandbox_settings: Settings,
 ) -> None:
     commit_sha, report_path = _commit_report(sandbox_repository)
+    bounded_settings = replace(
+        sandbox_settings,
+        telegram=replace(sandbox_settings.telegram, message_limit=100),
+    )
     failed_transport = _FakeTelegram(
         [
             {"ok": True},
@@ -135,7 +203,7 @@ def test_telegram_failure_is_redacted_persisted_and_resumed(
 
     failed = deliver_committed_report(
         sandbox_repository,
-        sandbox_settings,
+        bounded_settings,
         commit_sha=commit_sha,
         report_path=report_path,
         repository_url="https://github.com/example/PaperTrader",
@@ -149,6 +217,9 @@ def test_telegram_failure_is_redacted_persisted_and_resumed(
 
     assert failed.status == "failed"
     assert failed.chunks_sent == 1
+    assert failed_transport.calls[0]["chat_id"] == "-123"
+    first_message = json.loads(failed_transport.calls[0]["rich_message"])
+    assert first_message["markdown"].startswith("# PaperTrader daily report")
     assert "secret-token" not in failed.error
     issue = next(
         row
@@ -162,7 +233,7 @@ def test_telegram_failure_is_redacted_persisted_and_resumed(
     retry_transport = _FakeTelegram([])
     sent = deliver_committed_report(
         sandbox_repository,
-        sandbox_settings,
+        bounded_settings,
         commit_sha=commit_sha,
         report_path=report_path,
         repository_url="https://github.com/example/PaperTrader",

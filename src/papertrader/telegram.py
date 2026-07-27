@@ -25,6 +25,11 @@ COMMIT_SHA = re.compile(r"^[0-9a-f]{40}$")
 CHAT_ID = re.compile(r"^(?:-?[0-9]{1,20}|@[A-Za-z0-9_]{5,32})$")
 REPORT_PATH = re.compile(r"^data/wiki/daily-reports/daily-report_[0-9]{8}\.md$")
 REPOSITORY_URL = re.compile(r"^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+COMMITTED_REPORT_URL = re.compile(
+    r"^(https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40})/"
+    r"data/wiki/daily-reports/daily-report_[0-9]{8}\.md$"
+)
+WIKI_LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\n]*?))?\]\]")
 
 
 class TelegramDeliveryError(RuntimeError):
@@ -44,7 +49,7 @@ class TelegramTransport(Protocol):
 
 
 class UrllibTelegramTransport:
-    """Send one form-encoded message using only the Python standard library."""
+    """Send one form-encoded rich message using only the Python standard library."""
 
     def send(
         self,
@@ -53,7 +58,7 @@ class UrllibTelegramTransport:
         *,
         timeout_seconds: int,
     ) -> Mapping[str, object]:
-        endpoint = f"https://api.telegram.org/bot{token}/sendMessage"
+        endpoint = f"https://api.telegram.org/bot{token}/sendRichMessage"
         request = urllib.request.Request(
             endpoint,
             data=urllib.parse.urlencode(payload).encode("utf-8"),
@@ -137,26 +142,63 @@ def split_message(value: str, *, limit: int = 4096) -> tuple[str, ...]:
     return tuple(chunks)
 
 
-def _link_url(value: str) -> str:
-    return value.replace("\\", "\\\\").replace(")", "\\)")
+def _report_markdown(report: str, *, committed_url: str) -> str:
+    if report.startswith("---\n") and "\n---\n" in report[4:]:
+        _, report = report[4:].split("\n---\n", maxsplit=1)
+    report = report.strip()
+    match = COMMITTED_REPORT_URL.fullmatch(committed_url)
+    if match is None:
+        raise CanonicalValueError("committed report URL is not canonical")
+    wiki_base = f"{match.group(1)}/data/wiki"
+
+    def replace_wikilink(link: re.Match[str]) -> str:
+        target = link.group(1).strip().removesuffix(".md")
+        if not target or ".." in Path(target).parts or target.startswith("/"):
+            return link.group(0)
+        label = (link.group(2) or Path(target).name).strip()
+        label = label.replace("[", "\\[").replace("]", "\\]")
+        url = f"{wiki_base}/{urllib.parse.quote(target, safe='/')}.md"
+        return f"[{label}]({url})"
+
+    report = WIKI_LINK.sub(replace_wikilink, report)
+    return f"{report}\n\n[View the committed report]({committed_url})"
+
+
+def _split_rich_markdown(value: str, *, limit: int) -> tuple[str, ...]:
+    """Pack complete Markdown blocks so formatting never spans Telegram messages."""
+
+    if limit <= 0:
+        raise ValueError("message limit must be positive")
+    blocks = re.split(r"\n{2,}", value)
+    chunks: list[str] = []
+    current = ""
+    for block in blocks:
+        if not block:
+            continue
+        candidates = (block,) if len(block) <= limit else split_message(block, limit=limit)
+        for candidate in candidates:
+            separator = "\n\n" if current else ""
+            if len(current) + len(separator) + len(candidate) <= limit:
+                current += separator + candidate
+                continue
+            if current:
+                chunks.append(current)
+            current = candidate
+    if current:
+        chunks.append(current)
+    return tuple(chunks) or ("",)
 
 
 def telegram_messages(
     report: str,
     *,
     committed_url: str,
-    limit: int = 4096,
+    limit: int = 32768,
 ) -> tuple[str, ...]:
-    """Build one linked header plus escaped chunks of the canonical report."""
+    """Build bounded GitHub-compatible Markdown for Telegram rich messages."""
 
-    header = (
-        f"*{escape_markdown_v2('PaperTrader daily report')}*\n"
-        f"[{escape_markdown_v2('Committed report')}]({_link_url(committed_url)})"
-    )
-    if len(header) > limit:
-        raise CanonicalValueError("Telegram message limit is too small for the report link")
-    body = split_message(escape_markdown_v2(report), limit=limit)
-    return (header, *body)
+    markdown = _report_markdown(report, committed_url=committed_url)
+    return _split_rich_markdown(markdown, limit=limit)
 
 
 def _committed_report(
@@ -263,9 +305,11 @@ def deliver_committed_report(
                         token,
                         {
                             "chat_id": chat_id,
-                            "text": messages[index],
-                            "parse_mode": "MarkdownV2",
-                            "disable_web_page_preview": "true",
+                            "rich_message": json.dumps(
+                                {"markdown": messages[index]},
+                                ensure_ascii=False,
+                                separators=(",", ":"),
+                            ),
                         },
                         timeout_seconds=settings.telegram.timeout_seconds,
                     )

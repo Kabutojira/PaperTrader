@@ -302,3 +302,5 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30273371484-1`.
 
 - Generated canonical [[daily-reports/daily-report_20260727]] for run `gha-30274861908-1`.
+
+- Refreshed human-readable inbox labels and security links.

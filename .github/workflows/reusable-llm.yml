@@ -162,7 +162,7 @@ jobs:
               ;;
           esac
           oauth_required=false
-          if [ "$DRY_RUN" != "true" ] && [ "$MAX_OPERATIONS" -gt 0 ]; then
+          if [ "$DRY_RUN" != "true" ]; then
             oauth_required=true
           fi
           echo "oauth_required=$oauth_required" >> "$GITHUB_OUTPUT"

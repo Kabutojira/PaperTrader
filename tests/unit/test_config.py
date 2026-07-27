@@ -34,6 +34,8 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.allocation.minimum_confidence == "medium"
     assert settings.allocation.research_refresh_lead_days == 7
     assert settings.operations.maximum_llm_operations_per_run == 5
+    assert settings.classifier.command == ("python", "-m", "papertrader.classifier_command")
+    assert settings.classifier.model == "gpt-5.6-luna"
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
     assert settings.hermes.provider == "openai-codex"
@@ -45,7 +47,7 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.hermes.maximum_turns == 90
     assert settings.telegram.maximum_attempts == 3
     assert settings.telegram.timeout_seconds == 15
-    assert settings.telegram.message_limit == 4096
+    assert settings.telegram.message_limit == 32768
 
 
 def test_settings_reject_noncanonical_wiki(

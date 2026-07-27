@@ -611,8 +611,8 @@ def _load_telegram_settings(parser: configparser.ConfigParser) -> TelegramSettin
     )
     if settings.maximum_attempts > 10:
         raise ConfigurationError("telegram.maximum_attempts must be <= 10")
-    if settings.message_limit > 4096:
-        raise ConfigurationError("telegram.message_limit must be <= 4096")
+    if settings.message_limit > 32768:
+        raise ConfigurationError("telegram.message_limit must be <= 32768")
     return settings
 
 

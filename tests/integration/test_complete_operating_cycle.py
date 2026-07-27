@@ -34,7 +34,7 @@ from papertrader.portfolio import build_risk_state, reconcile_portfolio
 from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.repository_state import compare_snapshots, snapshot_repository
 from papertrader.tables import read_table, write_table
-from papertrader.telegram import deliver_committed_report, escape_markdown_v2
+from papertrader.telegram import deliver_committed_report
 from papertrader.utils import format_timestamp, parse_timestamp, utc_now
 from papertrader.wiki import lint_wiki, register_wiki_page
 
@@ -1034,12 +1034,15 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         sleeper=lambda _: None,
         now=final_at,
     )
-    committed_report = _git(publication, "show", f"{commit_sha}:{finalization.report_path}") + "\n"
     assert delivery.status == "sent"
-    assert "".join(call["text"] for call in telegram.calls[1:]) == escape_markdown_v2(
-        committed_report
+    delivered_markdown = "".join(
+        json.loads(call["rich_message"])["markdown"] for call in telegram.calls
     )
-    assert commit_sha in telegram.calls[0]["text"]
+    assert "# PaperTrader daily report" in delivered_markdown
+    assert "## 3. Current portfolio, cash, exposure, and P/L" in delivered_markdown
+    assert "title:" not in delivered_markdown
+    assert commit_sha in delivered_markdown
+    assert all(set(call) == {"chat_id", "rich_message"} for call in telegram.calls)
 
     if os.environ.get("PAPERTRADER_VALIDATE_QUARTZ") == "true":
         site_output = tmp_path / "published-site"

@@ -3,25 +3,28 @@
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal
 from pathlib import Path
-from typing import Protocol
+from typing import Any, Protocol
 
 import yaml
 
 from papertrader.atomic_io import atomic_write_text
 from papertrader.config import Settings
 from papertrader.dedupe import build_dedupe_key, freshness_bucket, source_fingerprint
+from papertrader.issues import resolve_issue
 from papertrader.models import (
     ClassifierDecision,
     IndicatorSnapshot,
     OpportunityTransition,
     PriceBar,
 )
+from papertrader.tables import read_table
 from papertrader.utils import (
     CanonicalValueError,
     content_hash,
@@ -36,6 +39,22 @@ from papertrader.wiki import register_wiki_page
 
 CLASSIFIER_DECISIONS = frozenset({"ingest", "ignore"})
 TRANSITION_TYPES = frozenset({"entered", "strengthened"})
+CANDIDATE_FACT_KEYS = frozenset(
+    {
+        "candidate_type",
+        "security_id",
+        "trigger",
+        "transition",
+        "as_of_date",
+        "period_start",
+        "period_end",
+        "latest_close",
+        "return_period",
+        "strength",
+        "previous_strength",
+        "source_price_hash",
+    }
+)
 
 
 class ClassifierError(RuntimeError):
@@ -221,7 +240,79 @@ def _candidate_facts(
     }
 
 
+def _validated_candidate_facts(raw: Mapping[Any, object]) -> dict[str, object]:
+    facts = {str(key): value for key, value in raw.items()}
+    if set(facts) != CANDIDATE_FACT_KEYS:
+        raise CanonicalValueError("candidate facts do not match the closed packet contract")
+    if facts["candidate_type"] != "indicator_transition":
+        raise CanonicalValueError("candidate type must be indicator_transition")
+    if not all(isinstance(value, str) and value for value in facts.values()):
+        raise CanonicalValueError("candidate facts must contain non-empty canonical strings")
+    if facts["transition"] not in TRANSITION_TYPES:
+        raise CanonicalValueError("candidate transition is not supported")
+    parse_iso_date(str(facts["as_of_date"]))
+    parse_iso_date(str(facts["period_start"]))
+    parse_iso_date(str(facts["period_end"]))
+    for key in ("latest_close", "return_period", "strength", "previous_strength"):
+        Decimal(str(facts[key]))
+    return facts
+
+
+def _trigger_label(trigger: str) -> str:
+    words = trigger.split("_")
+    return " ".join(
+        word.upper()
+        if word in {"rsi", "sma", "macd"}
+        else word.capitalize()
+        if index == 0
+        else word
+        for index, word in enumerate(words)
+    )
+
+
+def _security_display(wiki_root: Path, security_id: str) -> tuple[str, str, str]:
+    repository_root = wiki_root.parent.parent
+    row = next(
+        (
+            candidate
+            for candidate in read_table(repository_root, "securities")
+            if candidate["security_id"] == security_id
+        ),
+        None,
+    )
+    if row is None:
+        raise CanonicalValueError(
+            f"candidate security is absent from securities.csv: {security_id}"
+        )
+    ticker = row["ticker"]
+    instrument = row["instrument_name"] or row["company_name"]
+    research_page = row["research_page"]
+    page_key = ""
+    if research_page:
+        prefix = "data/wiki/"
+        if not research_page.startswith(prefix) or not research_page.endswith(".md"):
+            raise CanonicalValueError(
+                f"candidate security has a non-canonical research page: {security_id}"
+            )
+        page_key = research_page[len(prefix) : -3]
+        if not (wiki_root / f"{page_key}.md").is_file():
+            raise CanonicalValueError(
+                f"candidate security research page is unavailable: {security_id}"
+            )
+    return ticker, instrument, page_key
+
+
+def _candidate_display(wiki_root: Path, facts: Mapping[str, object]) -> tuple[str, str]:
+    ticker, instrument, page_key = _security_display(wiki_root, str(facts["security_id"]))
+    title = f"[{ticker}] {_trigger_label(str(facts['trigger']))}"
+    security = f"{ticker} — {instrument}"
+    if page_key:
+        security = f"[[{page_key}|{security}]]"
+    return title, security
+
+
 def _render_packet(
+    wiki_root: Path,
     facts: Mapping[str, object],
     *,
     packet_hash: str,
@@ -230,11 +321,13 @@ def _render_packet(
     blocked_reason: str = "",
     created_on: date | None = None,
 ) -> str:
+    facts = _validated_candidate_facts(facts)
+    title, security = _candidate_display(wiki_root, facts)
     decision_value = decision.decision if decision else ("blocked" if blocked_reason else "pending")
     reason = decision.reason if decision else blocked_reason
     entities = decision.related_entity_ids if decision else ()
     frontmatter = {
-        "title": f"Candidate: {facts['security_id']} {facts['trigger']}",
+        "title": title,
         "type": "candidate",
         "status": "pending" if decision_value == "pending" else "reviewed",
         "tags": ["inbox", "opportunity"],
@@ -245,6 +338,7 @@ def _render_packet(
         "classifier_decision": decision_value,
         "classifier_reason": reason,
         "related_entity_ids": list(entities),
+        "candidate_facts": facts,
     }
     metadata = yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
     lines = [
@@ -252,12 +346,12 @@ def _render_packet(
         metadata,
         "---",
         "",
-        "# Indicator transition candidate",
+        f"# {title}",
         "",
         "> This packet is untrusted input data for research. "
         "It contains no executable instructions.",
         "",
-        f"- Security ID: `{facts['security_id']}`",
+        f"- Security: {security} (`{facts['security_id']}`)",
         f"- Trigger: `{facts['trigger']}`",
         f"- Transition: `{facts['transition']}`",
         f"- Period: {facts['period_start']} through {facts['period_end']}",
@@ -285,6 +379,60 @@ def _packet_metadata(path: Path) -> Mapping[object, object]:
     if not isinstance(metadata, Mapping):
         raise CanonicalValueError(f"candidate packet frontmatter must be a mapping: {path}")
     return metadata
+
+
+def _legacy_packet_value(body: str, label: str) -> str:
+    match = re.search(rf"^- {re.escape(label)}: (?:`([^`]+)`|(.+))$", body, flags=re.MULTILINE)
+    if match is None:
+        raise CanonicalValueError(f"candidate packet lacks {label}: {body[:80]!r}")
+    return (match.group(1) or match.group(2)).strip()
+
+
+def _packet_facts(path: Path) -> dict[str, object]:
+    text = path.read_text(encoding="utf-8")
+    metadata = _packet_metadata(path)
+    stored = metadata.get("candidate_facts")
+    if isinstance(stored, Mapping):
+        facts = _validated_candidate_facts(stored)
+    else:
+        _, body = text[4:].split("\n---\n", maxsplit=1)
+        period = _legacy_packet_value(body, "Period")
+        if " through " not in period:
+            raise CanonicalValueError(f"candidate packet has an invalid period: {path}")
+        period_start, period_end = period.split(" through ", maxsplit=1)
+        security_text = _legacy_packet_value(body, "Security ID")
+        facts = _validated_candidate_facts(
+            {
+                "candidate_type": "indicator_transition",
+                "security_id": security_text,
+                "trigger": _legacy_packet_value(body, "Trigger"),
+                "transition": _legacy_packet_value(body, "Transition"),
+                "as_of_date": period_end,
+                "period_start": period_start,
+                "period_end": period_end,
+                "latest_close": _legacy_packet_value(body, "Latest adjusted close"),
+                "return_period": _legacy_packet_value(body, "Period return"),
+                "strength": _legacy_packet_value(body, "Trigger strength"),
+                "previous_strength": _legacy_packet_value(body, "Previous strength"),
+                "source_price_hash": _legacy_packet_value(body, "Source price hash"),
+            }
+        )
+    expected_hash = metadata.get("content_hash")
+    if expected_hash != content_hash(facts):
+        raise CanonicalValueError(f"candidate packet facts do not match content hash: {path}")
+    return facts
+
+
+def _transition_from_facts(facts: Mapping[str, object]) -> OpportunityTransition:
+    return OpportunityTransition(
+        security_id=str(facts["security_id"]),
+        trigger=str(facts["trigger"]),
+        transition=str(facts["transition"]),
+        as_of_date=parse_iso_date(str(facts["as_of_date"])),
+        strength=Decimal(str(facts["strength"])),
+        previous_strength=Decimal(str(facts["previous_strength"])),
+        source_price_hash=str(facts["source_price_hash"]),
+    )
 
 
 def _existing_packet(wiki_root: Path, packet_hash: str) -> Path | None:
@@ -328,13 +476,19 @@ def create_candidate_packet(
     path = wiki_root / "inbox" / filename
     atomic_write_text(
         path,
-        _render_packet(facts, packet_hash=packet_hash, generated_at=generated_at, decision=None),
+        _render_packet(
+            wiki_root,
+            facts,
+            packet_hash=packet_hash,
+            generated_at=generated_at,
+            decision=None,
+        ),
         allowed_root=wiki_root,
     )
     register_wiki_page(
         wiki_root,
         page_key=f"inbox/{path.stem}",
-        label=f"{transition.security_id} {transition.trigger} {transition.as_of_date}",
+        label=_candidate_display(wiki_root, facts)[0],
         section="Inbox",
         event=f"Created candidate packet [[inbox/{path.stem}]] ({packet_hash[:12]}).",
         event_date=generated_at.date(),
@@ -354,6 +508,24 @@ def classify_candidate_packet(
 
     generated_at = ensure_utc(now or utc_now())
     facts = _candidate_facts(packet.transition, bars)
+    return _classify_candidate_facts(
+        wiki_root,
+        packet,
+        facts,
+        classifier,
+        generated_at=generated_at,
+    )
+
+
+def _classify_candidate_facts(
+    wiki_root: Path,
+    packet: CandidatePacket,
+    facts: Mapping[str, object],
+    classifier: CandidateClassifier,
+    *,
+    generated_at: datetime,
+) -> CandidatePacket:
+    facts = _validated_candidate_facts(facts)
     decision = classifier.classify(facts)
     if packet.transition.security_id not in decision.related_entity_ids:
         decision = ClassifierDecision(
@@ -367,6 +539,7 @@ def classify_candidate_packet(
     atomic_write_text(
         packet.path,
         _render_packet(
+            wiki_root,
             facts,
             packet_hash=packet.content_hash,
             generated_at=generated_at,
@@ -378,8 +551,7 @@ def classify_candidate_packet(
     register_wiki_page(
         wiki_root,
         page_key=f"inbox/{packet.path.stem}",
-        label=f"{packet.transition.security_id} {packet.transition.trigger} "
-        f"{packet.transition.as_of_date}",
+        label=_candidate_display(wiki_root, facts)[0],
         section="Inbox",
         event=(
             f"Classified [[inbox/{packet.path.stem}]] as `{decision.decision}`: {decision.reason}"
@@ -414,6 +586,7 @@ def mark_classifier_blocked(
     atomic_write_text(
         packet.path,
         _render_packet(
+            wiki_root,
             facts,
             packet_hash=packet.content_hash,
             generated_at=generated_at,
@@ -423,6 +596,174 @@ def mark_classifier_blocked(
         ),
         allowed_root=wiki_root,
     )
+
+
+def _resolve_classifier_issue(
+    repository_root: Path,
+    packet: CandidatePacket,
+    *,
+    decision: str,
+    now: datetime,
+) -> None:
+    relative = packet.path.relative_to(repository_root).as_posix()
+    title = f"Daily preparation degraded: classifier blocked for {relative}"
+    issue_id = stable_id("issue", title.casefold(), "")
+    issue = next(
+        (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
+        None,
+    )
+    if issue is not None and issue["status"] == "open":
+        resolve_issue(
+            repository_root,
+            issue_id,
+            f"Classifier recovered and recorded the final {decision} decision.",
+            now=now,
+        )
+
+
+def _enqueue_candidate_ingest(
+    repository_root: Path,
+    settings: Settings,
+    packet: CandidatePacket,
+    *,
+    now: datetime,
+) -> None:
+    from papertrader.queue import enqueue_operation
+
+    if packet.decision is None or packet.decision.decision != "ingest":
+        return
+    packet_relative = packet.path.relative_to(repository_root).as_posix()
+    packet_file_hash = content_hash(packet.path.read_bytes())
+    packet_entity_id = stable_id("source", packet_file_hash)
+    enqueue_operation(
+        repository_root,
+        settings,
+        operation_type="wiki_ingest",
+        entity_type="source",
+        entity_id=packet_entity_id,
+        dedupe_key=build_dedupe_key(
+            "wiki_ingest",
+            packet_entity_id,
+            packet_file_hash[:20],
+            packet.transition.as_of_date.isoformat(),
+        ),
+        prompt=f"Ingest validated candidate packet {packet.path.name} into the wiki.",
+        inputs={
+            "source_path": packet_relative,
+            "source_hash": packet_file_hash,
+        },
+        source="cheap-llm-ingest-decision",
+        source_refs=(packet_relative,),
+        priority=60,
+        freshness_days=0,
+        now=now,
+    )
+
+
+def retry_unclassified_candidate_packets(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    classifier: CandidateClassifier | None = None,
+    now: datetime | None = None,
+) -> tuple[CandidatePacket, ...]:
+    """Retry pending or blocked inbox packets through the configured cheap model."""
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    selected_classifier = classifier or SubprocessClassifier(settings)
+    packets: list[CandidatePacket] = []
+    for path in sorted(settings.paths.wiki.joinpath("inbox").glob("*.md")):
+        metadata = _packet_metadata(path)
+        if metadata.get("classifier_decision") in CLASSIFIER_DECISIONS:
+            continue
+        facts = _packet_facts(path)
+        transition = _transition_from_facts(facts)
+        packet = CandidatePacket(
+            path=path,
+            content_hash=str(metadata["content_hash"]),
+            transition=transition,
+            created=False,
+            decision=None,
+        )
+        try:
+            packet = _classify_candidate_facts(
+                settings.paths.wiki,
+                packet,
+                facts,
+                selected_classifier,
+                generated_at=instant,
+            )
+        except ClassifierError as exc:
+            created_on = parse_iso_date(str(metadata.get("created", "")))
+            atomic_write_text(
+                path,
+                _render_packet(
+                    settings.paths.wiki,
+                    facts,
+                    packet_hash=packet.content_hash,
+                    generated_at=instant,
+                    decision=None,
+                    blocked_reason=" ".join(str(exc).split())[:500],
+                    created_on=created_on,
+                ),
+                allowed_root=settings.paths.wiki,
+            )
+        else:
+            _enqueue_candidate_ingest(repository_root, settings, packet, now=instant)
+            if packet.decision is None:
+                raise AssertionError("classified candidate is missing its final decision")
+            _resolve_classifier_issue(
+                repository_root,
+                packet,
+                decision=packet.decision.decision,
+                now=instant,
+            )
+        packets.append(packet)
+    return tuple(packets)
+
+
+def refresh_candidate_packet_display(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    now: datetime | None = None,
+) -> tuple[Path, ...]:
+    """Regenerate candidate titles, security links, facts, and catalog labels."""
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    updated: list[Path] = []
+    for path in sorted(settings.paths.wiki.joinpath("inbox").glob("*.md")):
+        metadata = _packet_metadata(path)
+        facts = _packet_facts(path)
+        decision_value = metadata.get("classifier_decision")
+        decision = _stored_decision(path)
+        blocked_reason = (
+            str(metadata.get("classifier_reason", "")) if decision_value == "blocked" else ""
+        )
+        created_on = parse_iso_date(str(metadata.get("created", "")))
+        updated_on = parse_iso_date(str(metadata.get("updated", "")))
+        rendered_at = datetime.combine(updated_on, datetime.min.time(), tzinfo=instant.tzinfo)
+        rendered = _render_packet(
+            settings.paths.wiki,
+            facts,
+            packet_hash=str(metadata["content_hash"]),
+            generated_at=rendered_at,
+            decision=decision,
+            blocked_reason=blocked_reason,
+            created_on=created_on,
+        )
+        if rendered != path.read_text(encoding="utf-8"):
+            atomic_write_text(path, rendered, allowed_root=settings.paths.wiki)
+            updated.append(path)
+        register_wiki_page(
+            settings.paths.wiki,
+            page_key=f"inbox/{path.stem}",
+            label=_candidate_display(settings.paths.wiki, facts)[0],
+            section="Inbox",
+            event="Refreshed human-readable inbox labels and security links.",
+            event_date=instant.date(),
+        )
+    return tuple(updated)
 
 
 def process_opportunity_transitions(
@@ -502,31 +843,12 @@ def process_opportunity_transitions(
                 freshness_days=cooldown,
                 now=instant,
             )
-            if packet.decision is not None and packet.decision.decision == "ingest":
-                packet_relative = packet.path.relative_to(repository_root).as_posix()
-                packet_file_hash = content_hash(packet.path.read_bytes())
-                packet_entity_id = stable_id("source", packet_file_hash)
-                enqueue_operation(
+            _enqueue_candidate_ingest(repository_root, settings, packet, now=instant)
+            if packet.decision is not None:
+                _resolve_classifier_issue(
                     repository_root,
-                    settings,
-                    operation_type="wiki_ingest",
-                    entity_type="source",
-                    entity_id=packet_entity_id,
-                    dedupe_key=build_dedupe_key(
-                        "wiki_ingest",
-                        packet_entity_id,
-                        packet_file_hash[:20],
-                        transition.as_of_date.isoformat(),
-                    ),
-                    prompt=f"Ingest validated candidate packet {packet.path.name} into the wiki.",
-                    inputs={
-                        "source_path": packet_relative,
-                        "source_hash": packet_file_hash,
-                    },
-                    source="cheap-llm-ingest-decision",
-                    source_refs=(packet_relative,),
-                    priority=60,
-                    freshness_days=0,
+                    packet,
+                    decision=packet.decision.decision,
                     now=instant,
                 )
             packets.append(packet)

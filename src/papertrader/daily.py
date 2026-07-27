@@ -33,7 +33,11 @@ from papertrader.market_data import (
     update_market_data,
 )
 from papertrader.models import MarketBar, PositionMark, ReferencePrice
-from papertrader.opportunity import CandidateClassifier, process_opportunity_transitions
+from papertrader.opportunity import (
+    CandidateClassifier,
+    process_opportunity_transitions,
+    retry_unclassified_candidate_packets,
+)
 from papertrader.orders import leg_from_row
 from papertrader.performance import update_performance
 from papertrader.portfolio import (
@@ -187,10 +191,16 @@ def prepare_daily_run(
     )
     errors.extend(indicator_errors)
     if classify_opportunities:
+        retried_packets = retry_unclassified_candidate_packets(
+            repository_root,
+            settings,
+            classifier=classifier,
+            now=instant,
+        )
         bars = {
             security_id: read_price_cache(repository_root, security_id) for security_id in current
         }
-        packets = process_opportunity_transitions(
+        new_packets = process_opportunity_transitions(
             repository_root,
             settings,
             previous,
@@ -201,7 +211,7 @@ def prepare_daily_run(
         )
         errors.extend(
             f"classifier blocked for {packet.path.relative_to(repository_root).as_posix()}"
-            for packet in packets
+            for packet in (*retried_packets, *new_packets)
             if packet.decision is None
         )
     maintenance_dispositions: tuple[str, ...] = ()

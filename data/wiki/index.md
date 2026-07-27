@@ -44,15 +44,15 @@ No open paper positions; the portfolio is currently held in cash.
 
 ## Inbox
 
-- [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee|security_2c779e81c27b78c556bb bollinger_above_upper 2026-07-24]]
-- [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b|security_2c779e81c27b78c556bb bollinger_above_upper 2026-07-24]]
-- [[inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e|security_4627aea1bf7d8943d3d8 rsi_oversold 2026-07-24]]
-- [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae|security_59304f90c440def31dc5 bollinger_above_upper 2026-07-24]]
-- [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5|security_59304f90c440def31dc5 rsi_overbought 2026-07-24]]
-- [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101|security_59304f90c440def31dc5 rsi_overbought 2026-07-24]]
-- [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752|security_66cdcf90aac0d83e76f3 rsi_oversold 2026-07-24]]
-- [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e|security_f2b9760d847b2ba59324 bollinger_below_lower 2026-07-24]]
-- [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910|security_fb87fac302a5446a1ced rsi_oversold 2026-07-24]]
+- [\[ALB\] RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752)
+- [\[ENPH\] Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
+- [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
+- [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101)
+- [\[SGML\] RSI oversold](inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e)
+- [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee)
+- [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b)
 
 ## Ideas
 
