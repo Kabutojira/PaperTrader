@@ -6,7 +6,7 @@ tags:
   - meta
   - index
 created: "2026-07-24"
-updated: "2026-07-26"
+updated: "2026-07-27"
 provenance: repository-contract
 ---
 
@@ -97,3 +97,4 @@ No strategy pages yet.
 - [[daily-reports/daily-report_20260724|Daily report 2026-07-24]]
 - [[daily-reports/daily-report_20260725|Daily report 2026-07-25]]
 - [[daily-reports/daily-report_20260726|Daily report 2026-07-26]]
+- [[daily-reports/daily-report_20260727|Daily report 2026-07-27]]
