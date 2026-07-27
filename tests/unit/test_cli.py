@@ -1,9 +1,13 @@
 from __future__ import annotations
 
 import json
+from datetime import UTC, datetime
 from pathlib import Path
 
+from papertrader.advice import refresh_advice
 from papertrader.cli import main
+from papertrader.config import Settings
+from papertrader.execution import ensure_initial_capital
 from papertrader.tables import read_table
 from papertrader.utils import parse_timestamp
 
@@ -26,8 +30,22 @@ def test_cli_validation_commands_pass(monkeypatch, repository_root: Path) -> Non
 def test_cli_refreshes_results_first_wiki_homepage(
     monkeypatch,  # type: ignore[no-untyped-def]
     sandbox_repository: Path,
+    sandbox_settings: Settings,
 ) -> None:
     _set_paper_environment(monkeypatch, sandbox_repository)
+    as_of = datetime(2026, 7, 24, 12, tzinfo=UTC)
+    ensure_initial_capital(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="homepage-test",
+        occurred_at=as_of,
+    )
+    refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="homepage-test",
+        as_of=as_of,
+    )
 
     assert (
         main(
@@ -41,9 +59,9 @@ def test_cli_refreshes_results_first_wiki_homepage(
         == 0
     )
     homepage = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
-    assert homepage.index("## Current results") < homepage.index("## Meta")
-    assert "No canonical daily report is available yet." in homepage
-    assert "No open paper positions" in homepage
+    assert homepage.index("No trade — hold 100% cash") < homepage.index("## Explore")
+    assert "**No actionable trade signals.**" in homepage
+    assert "| Cash | 100% | 100% |" in homepage
 
 
 def test_cli_strict_allocation_readiness_fails_for_unbackfilled_universe(

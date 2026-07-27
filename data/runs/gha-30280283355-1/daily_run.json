@@ -12,6 +12,7 @@
   "queue_dispositions": [],
   "report_path": "data/wiki/daily-reports/daily-report_20260727.md",
   "run_id": "gha-30280283355-1",
+  "snapshot_id": "decision_7eae4d9fa5380e578266",
   "source_sha": "900feaa83f71e92a046244c8fa0a9a6e949f5079",
   "started_at": "2026-07-27T15:31:12Z",
   "status": "degraded",

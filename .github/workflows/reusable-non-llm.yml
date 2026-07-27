@@ -43,6 +43,7 @@ jobs:
           uv run papertrader schema validate --strict
           uv run pytest
           uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
       - name: Use pinned Node.js

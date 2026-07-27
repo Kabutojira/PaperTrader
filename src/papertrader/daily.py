@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 
+from papertrader.advice import AdviceError, refresh_advice
 from papertrader.agent_runner import AgentBatchResult, Executor, run_sequential_operations
 from papertrader.allocation import (
     AllocationError,
@@ -87,6 +88,7 @@ class DailyFinalization:
     run_id: str
     status: str
     report_path: str
+    snapshot_id: str
     operation_count: int
     fill_outcomes: tuple[str, ...]
 
@@ -261,6 +263,7 @@ def prepare_daily_run(
             "model_budget_used": "0",
             "fill_outcomes": [],
             "report_path": "",
+            "snapshot_id": "",
         },
         allowed_root=repository_root,
     )
@@ -701,6 +704,15 @@ def finalize_daily_run(
             f"{len(fill_outcomes)} pending-order dispositions."
         ),
     )
+    try:
+        decision_snapshot = refresh_advice(
+            repository_root,
+            settings,
+            run_id=run_id,
+            as_of=instant,
+        )
+    except (AdviceError, CanonicalValueError) as exc:
+        raise DailyRunError(f"decision publication failed closed: {exc}") from exc
     report = generate_daily_report(
         repository_root,
         run_id=run_id,
@@ -719,6 +731,7 @@ def finalize_daily_run(
         "model_budget_used": decimal_text(used),
         "fill_outcomes": list(fill_outcomes),
         "report_path": report_path,
+        "snapshot_id": decision_snapshot.snapshot_id,
     }
     atomic_write_json(manifest_path, completed_manifest, allowed_root=repository_root)
     append_event(
@@ -733,6 +746,7 @@ def finalize_daily_run(
         run_id=run_id,
         status=status,
         report_path=report_path,
+        snapshot_id=decision_snapshot.snapshot_id,
         operation_count=operation_count,
         fill_outcomes=fill_outcomes,
     )

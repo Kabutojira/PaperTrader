@@ -52,6 +52,10 @@
     "report_path": {
       "type": "string",
       "pattern": "^(?:|data/wiki/daily-reports/daily-report_[0-9]{8}\\.md)$"
+    },
+    "snapshot_id": {
+      "type": "string",
+      "pattern": "^(?:|decision_[0-9a-f]{20})$"
     }
   },
   "$defs": {

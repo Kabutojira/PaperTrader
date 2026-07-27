@@ -30,6 +30,8 @@ COMMITTED_REPORT_URL = re.compile(
     r"data/wiki/daily-reports/daily-report_[0-9]{8}\.md$"
 )
 WIKI_LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\n]*?))?\]\]")
+INVESTOR_BRIEF_START = "<!-- papertrader-investor-brief:start -->"
+INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
 
 
 class TelegramDeliveryError(RuntimeError):
@@ -145,6 +147,14 @@ def split_message(value: str, *, limit: int = 4096) -> tuple[str, ...]:
 def _report_markdown(report: str, *, committed_url: str) -> str:
     if report.startswith("---\n") and "\n---\n" in report[4:]:
         _, report = report[4:].split("\n---\n", maxsplit=1)
+    start_count = report.count(INVESTOR_BRIEF_START)
+    end_count = report.count(INVESTOR_BRIEF_END)
+    if start_count != end_count or start_count > 1:
+        raise CanonicalValueError("committed report has invalid investor-brief markers")
+    if start_count == 1:
+        start = report.index(INVESTOR_BRIEF_START) + len(INVESTOR_BRIEF_START)
+        end = report.index(INVESTOR_BRIEF_END, start)
+        report = report[start:end]
     report = report.strip()
     match = COMMITTED_REPORT_URL.fullmatch(committed_url)
     if match is None:

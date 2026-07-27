@@ -295,53 +295,19 @@ def _homepage_suggestion_lines(repository_root: Path) -> list[str]:
 
 
 def refresh_wiki_homepage(repository_root: Path, *, report_date: date | None = None) -> Path:
-    """Regenerate the results-first block in the canonical wiki homepage."""
+    """Regenerate every investor view from the latest validated decision snapshot."""
 
-    wiki_root = repository_root / "data" / "wiki"
-    index_path = wiki_root / "index.md"
-    index_text = index_path.read_text(encoding="utf-8")
-    latest_report = _latest_report_page_key(wiki_root)
-    effective_date = report_date or (latest_report[1] if latest_report else None)
-    lines = [HOME_RESULTS_START, "## Current results", ""]
-    if latest_report:
-        page_key, latest_date = latest_report
-        lines.append(f"Latest full result: [[{page_key}|Daily report {latest_date.isoformat()}]].")
-    else:
-        lines.append("No canonical daily report is available yet.")
-    lines.extend(["", *_homepage_portfolio_lines(repository_root), ""])
-    lines.extend(_homepage_suggestion_lines(repository_root))
-    lines.extend(["", HOME_RESULTS_END])
-    block = "\n".join(lines)
+    from papertrader.advice import load_published_snapshot
+    from papertrader.investor_pages import refresh_investor_pages
 
-    start_count = index_text.count(HOME_RESULTS_START)
-    end_count = index_text.count(HOME_RESULTS_END)
-    if start_count != end_count or start_count > 1:
-        raise CanonicalValueError("wiki homepage has an incomplete generated-results block")
-    if start_count == 1:
-        start = index_text.index(HOME_RESULTS_START)
-        end = index_text.index(HOME_RESULTS_END, start) + len(HOME_RESULTS_END)
-        updated = index_text[:start] + block + index_text[end:]
-    else:
-        anchor = "\n## Meta\n"
-        if anchor not in index_text:
-            raise CanonicalValueError("wiki homepage is missing the Meta section")
-        updated = index_text.replace(anchor, f"\n{block}\n\n## Meta\n", 1)
-    if effective_date is not None:
-        updated, count = re.subn(
-            r'^updated: "\d{4}-\d{2}-\d{2}"$',
-            f'updated: "{effective_date.isoformat()}"',
-            updated,
-            count=1,
-            flags=re.M,
-        )
-        if count != 1:
-            raise CanonicalValueError("wiki homepage must contain one updated frontmatter date")
-    if updated != index_text:
-        atomic_write_text(index_path, updated, allowed_root=wiki_root)
-    return index_path
+    snapshot = load_published_snapshot(repository_root)
+    if report_date is not None and snapshot.report_date != report_date.isoformat():
+        raise CanonicalValueError("homepage report date differs from the decision snapshot")
+    refresh_investor_pages(repository_root, snapshot)
+    return repository_root / "data" / "wiki" / "index.md"
 
 
-def generate_daily_report(
+def _generate_legacy_daily_report(
     repository_root: Path,
     *,
     run_id: str,
@@ -396,7 +362,16 @@ def generate_daily_report(
     allocation_targets = [
         row for row in read_table(repository_root, "allocation_targets") if row["run_id"] == run_id
     ]
-    issues = [row for row in read_table(repository_root, "issues") if row["status"] == "open"]
+    issues = []
+    for row in read_table(repository_root, "issues"):
+        first_seen = parse_timestamp(row["first_seen_at"])
+        resolved = parse_timestamp(row["resolved_at"], allow_empty=True)
+        if (
+            first_seen is not None
+            and first_seen <= instant
+            and (resolved is None or resolved > instant)
+        ):
+            issues.append(row)
     wiki_changes = tuple(
         sorted(
             {
@@ -648,6 +623,323 @@ def generate_daily_report(
             "## 8. Links",
             "",
             "- [[index|Wiki index]]",
+            f"- GitHub report: {github_report_url or 'not published yet'}",
+            "",
+        ]
+    )
+    path = (
+        repository_root
+        / "data"
+        / "wiki"
+        / "daily-reports"
+        / f"daily-report_{day.strftime('%Y%m%d')}.md"
+    )
+    atomic_write_text(path, "\n".join(lines), allowed_root=repository_root)
+    register_wiki_page(
+        repository_root / "data" / "wiki",
+        page_key=f"daily-reports/{path.stem}",
+        label=f"Daily report {day.isoformat()}",
+        section="Daily reports",
+        event=f"Generated canonical [[daily-reports/{path.stem}]] for run `{run_id}`.",
+        event_date=day,
+    )
+    refresh_wiki_homepage(repository_root, report_date=day)
+    return path
+
+
+def generate_daily_report(
+    repository_root: Path,
+    *,
+    run_id: str,
+    run_status: str,
+    report_date: date | None = None,
+    narrative_items: Sequence[NarrativeItem] = (),
+    github_report_url: str = "",
+    generated_at: datetime | None = None,
+) -> Path:
+    """Generate the investor-first report and complete deterministic audit appendix."""
+
+    from papertrader.advice import load_published_snapshot, reason_label
+    from papertrader.investor_pages import investor_report_sections
+
+    instant = ensure_utc(generated_at or utc_now()).replace(microsecond=0)
+    normalized_status = " ".join(run_status.split())
+    if not RUN_ID_PATTERN.fullmatch(run_id):
+        raise CanonicalValueError(f"invalid report run_id: {run_id!r}")
+    if not normalized_status or len(normalized_status) > 64:
+        raise CanonicalValueError("report run status must contain 1 to 64 characters")
+    if github_report_url and (
+        not github_report_url.startswith("https://github.com/")
+        or any(marker in github_report_url for marker in "\r\n")
+    ):
+        raise CanonicalValueError("GitHub report URL must be an HTTPS github.com URL")
+    snapshot = load_published_snapshot(repository_root, expected_run_id=run_id)
+    day = report_date or instant.date()
+    if snapshot.report_date != day.isoformat() or snapshot.as_of != instant.isoformat().replace(
+        "+00:00", "Z"
+    ):
+        raise CanonicalValueError("daily report time differs from its decision snapshot")
+    narratives = _validate_narratives(narrative_items)
+    latest = read_table(repository_root, "market_latest")
+    orders = [
+        row
+        for row in read_table(repository_root, "orders")
+        if row["run_id"] == run_id or _today(row["created_at"], day)
+    ]
+    executions = [
+        row
+        for row in read_table(repository_root, "executions")
+        if row["run_id"] == run_id or _today(row["executed_at"], day)
+    ]
+    history = [
+        row
+        for row in read_table(repository_root, "operations_history")
+        if row["claimed_by_run_id"] == run_id or _today(row["completed_at"], day)
+    ]
+    active_operations = read_table(repository_root, "operations_todo")
+    allocation_summary = _allocation_summary(repository_root, run_id)
+    allocation_targets = [
+        row for row in read_table(repository_root, "allocation_targets") if row["run_id"] == run_id
+    ]
+    issues = []
+    for row in read_table(repository_root, "issues"):
+        first_seen = parse_timestamp(row["first_seen_at"])
+        resolved = parse_timestamp(row["resolved_at"], allow_empty=True)
+        if (
+            first_seen is not None
+            and first_seen <= instant
+            and (resolved is None or resolved > instant)
+        ):
+            issues.append(row)
+    wiki_changes = tuple(
+        sorted(
+            {
+                *_wiki_changes(repository_root / "data" / "wiki", day),
+                *_run_wiki_changes(repository_root, run_id),
+            }
+        )
+    )
+    lines = [
+        "---",
+        f'title: "PaperTrader daily report — {day.isoformat()}"',
+        "type: daily-report",
+        "status: maintained",
+        "tags:",
+        "  - daily-report",
+        f'created: "{day.isoformat()}"',
+        f'updated: "{day.isoformat()}"',
+        "provenance: deterministic-report-generator",
+        f'run_id: "{run_id}"',
+        f'snapshot_id: "{snapshot.snapshot_id}"',
+        "---",
+        "",
+        f"# PaperTrader daily report — {day.isoformat()}",
+        "",
+        *investor_report_sections(snapshot),
+        "",
+        "## 6. Research changes",
+        "",
+    ]
+    if narratives:
+        lines.extend(["### Evidence-linked narrative", ""])
+        for item in narratives:
+            references = ", ".join(f"`{reference}`" for reference in item.evidence_refs)
+            lines.append(f"- {_markdown_text(item.text)} Evidence: {references}.")
+        lines.append("")
+    lines.extend(
+        [f"- [[{page_key}]]" for page_key in wiki_changes]
+        if wiki_changes
+        else ["No maintained research pages changed during this run."]
+    )
+    coverage = snapshot.coverage
+    lines.extend(
+        [
+            "",
+            "## 7. Data-quality and coverage impact",
+            "",
+            f"- Data status: **{_markdown_text(snapshot.data_status)}**",
+            f"- Assessments: {coverage.current_assessment_count}/"
+            f"{coverage.allocation_candidate_count}",
+            f"- Fresh-evidence assessments: {coverage.fresh_evidence_assessment_count}/"
+            f"{coverage.allocation_candidate_count}",
+            f"- Current accepted relationships: {coverage.current_relationship_count}/"
+            f"{coverage.required_relationship_count}",
+            f"- Ready or active strategies: {coverage.ready_or_active_strategy_count}",
+            f"- Active signals: {coverage.active_signal_count}",
+            f"- Pending orders: {coverage.pending_order_count}",
+            f"- Market-data success/failure: {coverage.market_data_success_count}/"
+            f"{coverage.market_data_failure_count}",
+            f"- Research alerts (not trade signals): {len(snapshot.research_alerts)}",
+            "",
+        ]
+    )
+    if snapshot.system_impacts:
+        lines.extend(["### Current system impacts", ""])
+        for impact in snapshot.system_impacts:
+            affected = (
+                f" — {_markdown_text(impact.ticker)} {_markdown_text(impact.company_name)}"
+                if impact.ticker
+                else ""
+            )
+            lines.append(
+                f"- **{_markdown_text(impact.impact.replace('_', ' '))}**{affected}: "
+                f"{_markdown_text(impact.title)}"
+            )
+    else:
+        lines.append("No current system impacts.")
+    lines.extend(
+        [
+            "",
+            "## 8. Audit appendix",
+            "",
+            "### Run diagnostics",
+            "",
+            f"- Run ID: `{run_id}`",
+            f"- Run status: `{normalized_status}`",
+            f"- Generated (UTC): `{snapshot.as_of}`",
+            f"- Decision snapshot: `{snapshot.snapshot_id}`",
+            "",
+            "### Complete market freshness",
+            "",
+            "| Security ID | Price date | Retrieved at | Status | Error |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+    )
+    lines.extend(
+        (
+            f"| {_cell(row['security_id'])} | {_cell(row['price_date'])} | "
+            f"{_cell(row['retrieved_at'])} | {_cell(row['status'])} | "
+            f"{_cell(row['error'])} |"
+            for row in latest
+        )
+        if latest
+        else ["| — | — | — | no monitored securities | — |"]
+    )
+    lines.extend(
+        [
+            "",
+            "### Orders and executions",
+            "",
+            "| Order ID | Strategy ID | Fill policy | Status | Created |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+    )
+    lines.extend(
+        (
+            f"| {_cell(row['order_id'])} | {_cell(row['strategy_id'])} | "
+            f"{_cell(row['fill_policy'])} | {_cell(row['status'])} | "
+            f"{_cell(row['created_at'])} |"
+            for row in orders
+        )
+        if orders
+        else ["| — | — | — | no orders | — |"]
+    )
+    lines.extend(
+        [
+            "",
+            "| Execution ID | Order ID | Security ID | Side | Quantity | Fill | Fees |",
+            "| --- | --- | --- | --- | ---: | ---: | ---: |",
+        ]
+    )
+    lines.extend(
+        (
+            f"| {_cell(row['execution_id'])} | {_cell(row['order_id'])} | "
+            f"{_cell(row['security_id'])} | {_cell(row['side'])} | "
+            f"{_cell(row['quantity'])} | {_cell(row['fill_price'])} "
+            f"{_cell(row['currency'])} | {_cell(row['fees'])} |"
+            for row in executions
+        )
+        if executions
+        else ["| — | — | — | — | 0 | no executions | 0 |"]
+    )
+    lines.extend(["", "### Allocation audit", ""])
+    if allocation_summary is None:
+        lines.append("No allocation plan was generated for this run.")
+    else:
+        lines.extend(
+            [
+                f"- Plan ID: `{allocation_summary['allocation_plan_id']}`",
+                f"- Mode: `{allocation_summary['mode']}`",
+                f"- Deployment budget: {allocation_summary['deployment_budget_base']} "
+                f"{snapshot.base_currency}",
+                f"- Capital allocated: {allocation_summary['capital_allocated_base']} "
+                f"{snapshot.base_currency}",
+                f"- Capital unallocated: {allocation_summary['capital_unallocated_base']} "
+                f"{snapshot.base_currency}",
+            ]
+        )
+    lines.extend(
+        [
+            "",
+            "| Rank | Security ID | Target weight | Disposition | Machine reasons |",
+            "| ---: | --- | ---: | --- | --- |",
+        ]
+    )
+    lines.extend(
+        (
+            f"| {_cell(row['rank'])} | {_cell(row['security_id'])} | "
+            f"{_cell(row['target_weight_pct'])}% | {_cell(row['disposition'])} | "
+            f"{_cell(row['reason'])} |"
+            for row in sorted(
+                allocation_targets,
+                key=lambda value: (int(value["rank"] or "999999"), value["security_id"]),
+            )
+        )
+        if allocation_targets
+        else ["| — | — | 0% | no candidates | — |"]
+    )
+    lines.extend(
+        [
+            "",
+            "### Research-operation audit",
+            "",
+            "| Operation ID | Type | Entity ID | Disposition | Machine reason |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+    )
+    lines.extend(
+        (
+            f"| {_cell(row['operation_id'])} | {_cell(row['operation_type'])} | "
+            f"{_cell(row['entity_id'])} | {_cell(row['terminal_status'])} | "
+            f"{_cell(row['terminal_reason'])} |"
+            for row in history
+        )
+        if history
+        else ["| — | — | — | no completed operations | — |"]
+    )
+    lines.extend(["", "### Complete active queue", ""])
+    lines.extend(
+        (
+            f"- `{row['status']}` `{row['operation_id']}` — `{row['operation_type']}` "
+            f"for `{row['entity_id']}`"
+            for row in active_operations
+        )
+        if active_operations
+        else ["No scheduled follow-up operations."]
+    )
+    lines.extend(["", "### Open issues and delivery failures", ""])
+    lines.extend(
+        (
+            f"- `{row['severity']}` **`{row['issue_id']}`** — {_markdown_text(row['title'])}: "
+            f"{_markdown_text(row['description'])}"
+            for row in issues
+        )
+        if issues
+        else ["No open issues."]
+    )
+    lines.extend(["", "### Machine decision provenance", ""])
+    for code in snapshot.stance_reason_codes:
+        lines.append(f"- `{code}` — {_markdown_text(reason_label(code))}")
+    lines.extend(f"- `{name}`: `{digest}`" for name, digest in snapshot.source_state_hashes.items())
+    lines.extend(
+        [
+            "",
+            "### Links",
+            "",
+            "- [[index|Investor dashboard]]",
+            "- [[model-portfolio|Model portfolio]]",
+            "- [[signals|Signals]]",
+            "- [[system-status|System status]]",
             f"- GitHub report: {github_report_url or 'not published yet'}",
             "",
         ]

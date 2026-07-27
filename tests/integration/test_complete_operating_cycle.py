@@ -842,6 +842,12 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         )
         == ()
     )
+    _, _, final_indicator_errors = update_indicators(
+        sandbox_repository,
+        sandbox_settings,
+        now=final_at,
+    )
+    assert final_indicator_errors == ()
     report_name = f"daily-report_{fill_session.strftime('%Y%m%d')}.md"
     finalization = finalize_daily_run(
         sandbox_repository,
@@ -870,13 +876,15 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert f"[[relationships/{RELATIONSHIP_ID}]]" in report_text
     assert f"[[strategies/{STRATEGY_ID}]]" in report_text
     homepage_text = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
-    assert homepage_text.index("## Current results") < homepage_text.index("## Meta")
-    assert "### Current portfolio" in homepage_text
-    assert f"[[securities/{SECURITY_ID}" in homepage_text
-    assert "### Latest suggestions and research conclusions" in homepage_text
-    assert (
-        "The validated paper order remains pending until the next eligible open." in homepage_text
+    assert homepage_text.index("Maintain the current model portfolio") < homepage_text.index(
+        "## Explore"
     )
+    assert "## Current and approved target portfolio" in homepage_text
+    assert "OCY — Operating Cycle SE" in homepage_text
+    assert f"strategies/{STRATEGY_ID}" in homepage_text
+    assert "**No actionable trade signals.**" in homepage_text
+    assert finalization.snapshot_id in homepage_text
+    assert finalization.snapshot_id in report_text
 
     counts_before_replay = {
         name: len(read_table(sandbox_repository, name))
@@ -1038,8 +1046,10 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     delivered_markdown = "".join(
         json.loads(call["rich_message"])["markdown"] for call in telegram.calls
     )
-    assert "# PaperTrader daily report" in delivered_markdown
-    assert "## 3. Current portfolio, cash, exposure, and P/L" in delivered_markdown
+    assert "# Maintain the current model portfolio" in delivered_markdown
+    assert "## Approved target changes" in delivered_markdown
+    assert "## Complete active queue" not in delivered_markdown
+    assert finalization.snapshot_id in delivered_markdown
     assert "title:" not in delivered_markdown
     assert commit_sha in delivered_markdown
     assert all(set(call) == {"chat_id", "rich_message"} for call in telegram.calls)
@@ -1063,5 +1073,18 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         html = site_output / "daily-reports" / report.with_suffix(".html").name
         assert html.is_file()
         assert RUN_ID in html.read_text(encoding="utf-8")
+        homepage_html = (site_output / "index.html").read_text(encoding="utf-8")
+        assert (
+            "No trade" in homepage_html or "Maintain the current model portfolio" in homepage_html
+        )
+        assert 'class="papertrader-nav"' in homepage_html
+        for publication_name in (
+            "decision_snapshot.json",
+            "model_portfolio.csv",
+            "actionable_signals.csv",
+        ):
+            assert (site_output / "data" / publication_name).read_bytes() == (
+                publication / "data" / "published" / publication_name
+            ).read_bytes()
 
     assert _git(publication, "status", "--porcelain") == ""

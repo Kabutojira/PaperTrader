@@ -131,7 +131,7 @@ def lint_wiki(wiki_root: Path) -> list[str]:
                 errors.append(f"{relative}: broken or ambiguous wikilink [[{target}]]")
             else:
                 resolved_links.setdefault(key, set()).add(resolved)
-        if key == "index":
+        if key in {"index", "research-catalog"}:
             for target in MARKDOWN_LINK_PATTERN.findall(body_without_code):
                 if target.startswith(("#", "http://", "https://", "mailto:", "tel:")):
                     continue
@@ -141,9 +141,16 @@ def lint_wiki(wiki_root: Path) -> list[str]:
                 else:
                     resolved_links.setdefault(key, set()).add(resolved)
 
-    index_links = resolved_links.get("index", set())
+    reachable = {"index"}
+    pending = ["index"]
+    while pending:
+        source = pending.pop()
+        for target in resolved_links.get(source, set()):
+            if target not in reachable:
+                reachable.add(target)
+                pending.append(target)
     for key in sorted(page_keys.difference({"index"})):
-        if key not in index_links:
+        if key not in reachable:
             errors.append(f"{key}.md: page is missing from index.md")
     return errors
 
@@ -173,7 +180,10 @@ def register_wiki_page(
 
     if not page_key or ".." in PurePosixPath(page_key).parts or page_key.startswith("/"):
         raise WikiFormatError(f"invalid wiki page key: {page_key!r}")
-    index_path = wiki_root / "index.md"
+    research_catalog_path = wiki_root / "research-catalog.md"
+    index_path = (
+        research_catalog_path if research_catalog_path.is_file() else wiki_root / "index.md"
+    )
     index_text = index_path.read_text(encoding="utf-8")
     if label.startswith("["):
         escaped_label = label.replace("[", r"\[").replace("]", r"\]")

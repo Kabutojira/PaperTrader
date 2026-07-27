@@ -1,5 +1,18 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg";
 import * as Component from "./quartz/components";
+import { QuartzComponentProps } from "./quartz/components/types";
+import DecisionNavigation from "./papertrader/components/DecisionNavigation";
+
+const dashboardPages = new Set([
+  "index",
+  "model-portfolio",
+  "signals",
+  "performance",
+  "system-status",
+]);
+
+const isDashboardPage = (page: QuartzComponentProps): boolean =>
+  dashboardPages.has(page.fileData.slug ?? "");
 
 const repository = process.env.GITHUB_REPOSITORY;
 const repositoryUrl = repository
@@ -8,7 +21,7 @@ const repositoryUrl = repository
 
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [DecisionNavigation()],
   afterBody: [],
   footer: Component.Footer({
     links: {
@@ -23,9 +36,18 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    Component.ConditionalRender({
+      component: Component.ArticleTitle(),
+      condition: (page) => !isDashboardPage(page),
+    }),
+    Component.ConditionalRender({
+      component: Component.ContentMeta(),
+      condition: (page) => !isDashboardPage(page),
+    }),
+    Component.ConditionalRender({
+      component: Component.TagList(),
+      condition: (page) => !isDashboardPage(page),
+    }),
   ],
   left: [
     Component.PageTitle(),
@@ -37,11 +59,20 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.ConditionalRender({
+      component: Component.Explorer(),
+      condition: (page) => !isDashboardPage(page),
+    }),
   ],
   right: [
-    Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.ConditionalRender({
+      component: Component.DesktopOnly(Component.TableOfContents()),
+      condition: (page) => !isDashboardPage(page),
+    }),
+    Component.ConditionalRender({
+      component: Component.Backlinks(),
+      condition: (page) => !isDashboardPage(page),
+    }),
   ],
 };
 

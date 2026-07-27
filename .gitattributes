@@ -1,2 +1,4 @@
 *.csv text eol=crlf whitespace=-cr-at-eol
+data/published/decision_snapshot.json text eol=lf
+data/runs/*/decision_snapshot.json text eol=lf
 .papertrader/credentials/*.age binary

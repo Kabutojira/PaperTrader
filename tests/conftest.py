@@ -19,6 +19,7 @@ EMPTY_DATA_DIRECTORIES = (
     "market/snapshots",
     "operations/payloads",
     "operations/prompts",
+    "published",
     "runs",
     "tables",
     "wiki/_archive",

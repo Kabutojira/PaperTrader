@@ -6,7 +6,7 @@ tags:
   - meta
   - schema
 created: "2026-07-24"
-updated: "2026-07-24"
+updated: "2026-07-27"
 provenance: repository-contract
 required_frontmatter:
   - title
@@ -19,21 +19,27 @@ required_frontmatter:
 known_tags:
   - comparison
   - concept
+  - dashboard
   - daily-report
   - idea
   - inbox
   - index
   - log
   - meta
+  - model-portfolio
   - opportunity
   - query
   - relationship
   - research
+  - research-catalog
   - risk
   - schema
   - security
   - source
+  - signals
   - strategy
+  - performance
+  - system-status
 max_page_bytes: 100000
 ---
 
@@ -54,6 +60,10 @@ in `log.md`.
 - `strategies/` holds explicit paper strategies and their evidence requirements.
 - `comparisons/` and `queries/` hold bounded cross-entity analysis.
 - `daily-reports/` holds the single canonical daily report for each ISO date.
+- `index.md`, `model-portfolio.md`, `signals.md`, `performance.md`, and `system-status.md`
+  are deterministic investor-facing views of the latest decision snapshot.
+- `research-catalog.md` is the complete maintained content catalog linked from the results-first
+  homepage.
 - `_meta/` holds generated wiki metadata; `_archive/` holds retired maintained pages.
 
 ## Page contract

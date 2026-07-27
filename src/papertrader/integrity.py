@@ -44,6 +44,7 @@ REQUIRED_SKILL_SECTIONS = (
 REQUIRED_LAYOUT = (
     "config.ini",
     "schemas/agent_result.schema.json",
+    "schemas/decision_snapshot.schema.json",
     "schemas/operation_payload.schema.json",
     "schemas/csv_contracts.yaml",
     "data/wiki/SCHEMA.md",
@@ -52,6 +53,8 @@ REQUIRED_LAYOUT = (
     "data/operations/operations_TODO.csv",
     "data/operations/operations_history.csv",
     "data/logs/log.txt",
+    "data/published/actionable_signals.csv",
+    "data/published/model_portfolio.csv",
     "data/issues.md",
 )
 
@@ -369,6 +372,33 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
                 errors.append(f"completed daily run lacks agent batch: {run_id}")
             if not isinstance(report_path, str) or not (repository_root / report_path).is_file():
                 errors.append(f"completed daily run lacks canonical report: {run_id}")
+            snapshot_id = manifest.get("snapshot_id")
+            if isinstance(snapshot_id, str) and snapshot_id:
+                snapshot_path = (
+                    repository_root / "data" / "runs" / run_id / "decision_snapshot.json"
+                )
+                if snapshot_path.is_symlink() or not snapshot_path.is_file():
+                    errors.append(f"completed daily run lacks its decision snapshot: {run_id}")
+                else:
+                    try:
+                        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+                    except (OSError, json.JSONDecodeError) as exc:
+                        errors.append(f"cannot read daily decision snapshot {run_id}: {exc}")
+                    else:
+                        if not isinstance(snapshot, dict) or (
+                            snapshot.get("snapshot_id") != snapshot_id
+                            or snapshot.get("run_id") != run_id
+                            or snapshot.get("as_of") != manifest.get("completed_at")
+                        ):
+                            errors.append(f"daily decision snapshot identity mismatch: {run_id}")
+                if isinstance(report_path, str) and (repository_root / report_path).is_file():
+                    try:
+                        report = (repository_root / report_path).read_text(encoding="utf-8")
+                    except (OSError, UnicodeError) as exc:
+                        errors.append(f"cannot read daily report {run_id}: {exc}")
+                    else:
+                        if f'snapshot_id: "{snapshot_id}"' not in report:
+                            errors.append(f"daily report snapshot identity mismatch: {run_id}")
     try:
         run_rows = read_csv_contract_rows(repository_root, "runs")
     except (ContractError, OSError, ValueError) as exc:
@@ -420,6 +450,7 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
+    from papertrader.advice import validate_advice
     from papertrader.allocation import validate_allocation_state
     from papertrader.market_data import validate_fx_data
     from papertrader.orders import validate_order_state
@@ -431,6 +462,7 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     if settings is not None:
         errors.extend(validate_allocation_state(repository_root, settings))
         errors.extend(validate_fx_data(repository_root, settings))
+    errors.extend(validate_advice(repository_root))
     errors.extend(reconcile_portfolio(repository_root))
     return errors
 
@@ -452,6 +484,8 @@ def is_runtime_path_allowed(raw_path: str) -> bool:
     if path.suffix == ".csv":
         return True
     if path == PurePosixPath("data/issues.md"):
+        return True
+    if path == PurePosixPath("data/published/decision_snapshot.json"):
         return True
     if len(path.parts) >= 3 and path.parts[1] == "wiki":
         if path.suffix == ".md":

@@ -1,0 +1,283 @@
+.papertrader-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--lightgray);
+  background: color-mix(in srgb, var(--light) 94%, var(--secondary));
+}
+
+.papertrader-brand {
+  display: flex;
+  flex-direction: column;
+  color: var(--dark);
+  font-weight: 750;
+  line-height: 1.05;
+  text-decoration: none;
+
+  small {
+    margin-top: 0.25rem;
+    color: var(--darkgray);
+    font-size: 0.72rem;
+    font-weight: 550;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+}
+
+.papertrader-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.3rem;
+
+  a {
+    border-radius: 999px;
+    color: var(--darkgray);
+    padding: 0.45rem 0.7rem;
+    font-size: 0.88rem;
+    font-weight: 620;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus-visible,
+  a.active {
+    color: var(--dark);
+    background: var(--highlight);
+    outline-offset: 2px;
+  }
+
+  a.active::before {
+    content: "●";
+    margin-right: 0.35rem;
+    color: var(--secondary);
+    font-size: 0.7em;
+  }
+}
+
+.decision-cards,
+.model-portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.decision-card,
+.portfolio-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--light) 97%, var(--secondary));
+  box-shadow: 0 0.2rem 0.9rem rgb(0 0 0 / 5%);
+}
+
+.decision-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+
+  strong {
+    font-size: 1.08rem;
+    line-height: 1.25;
+  }
+}
+
+.decision-card-label {
+  color: var(--darkgray);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.portfolio-card h3 {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+}
+
+.portfolio-card-values {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+
+  div {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 1fr) auto;
+    gap: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--lightgray);
+  }
+
+  dt {
+    color: var(--darkgray);
+  }
+
+  dd {
+    margin: 0;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+}
+
+.portfolio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.7rem;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
+
+  label {
+    width: 100%;
+    color: var(--darkgray);
+    font-weight: 650;
+  }
+
+  input,
+  button,
+  .button-link {
+    min-height: 2.65rem;
+    box-sizing: border-box;
+    border: 1px solid var(--gray);
+    border-radius: 0.45rem;
+    background: var(--light);
+    color: var(--dark);
+    padding: 0.55rem 0.75rem;
+    font: inherit;
+  }
+
+  button,
+  .button-link {
+    cursor: pointer;
+    font-weight: 650;
+    text-decoration: none;
+  }
+
+  button:hover,
+  button:focus-visible,
+  .button-link:hover,
+  .button-link:focus-visible {
+    border-color: var(--secondary);
+    background: var(--highlight);
+    outline-offset: 2px;
+  }
+}
+
+.scaler-notice {
+  padding: 0.75rem 1rem;
+  border-left: 0.3rem solid var(--tertiary);
+  background: color-mix(in srgb, var(--light) 92%, var(--tertiary));
+}
+
+#scaled-portfolio {
+  overflow-x: auto;
+
+  table {
+    min-width: 42rem;
+  }
+}
+
+.performance-chart {
+  display: block;
+  width: 100%;
+  max-height: 19rem;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border: 1px solid var(--lightgray);
+  border-radius: 0.75rem;
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--light) 97%, var(--secondary));
+}
+
+body:is(
+  [data-slug="index"],
+  [data-slug="model-portfolio"],
+  [data-slug="signals"],
+  [data-slug="performance"],
+  [data-slug="system-status"]
+) {
+  .page > #quartz-body {
+    grid-template:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer" / minmax(14rem, 17rem) minmax(0, 1fr);
+  }
+
+  .sidebar.right {
+    display: none;
+  }
+}
+
+article:has(.decision-cards),
+article:has(.model-portfolio-grid),
+article:has(.performance-chart) {
+  table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  body:is(
+      [data-slug="index"],
+      [data-slug="model-portfolio"],
+      [data-slug="signals"],
+      [data-slug="performance"],
+      [data-slug="system-status"]
+    )
+    .page
+    > #quartz-body {
+    grid-template:
+      "grid-sidebar-left"
+      "grid-header"
+      "grid-center"
+      "grid-footer" / minmax(0, 1fr);
+  }
+
+  .papertrader-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .papertrader-nav {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .papertrader-nav a {
+    padding: 0.42rem 0.58rem;
+  }
+
+  .decision-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .model-portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-controls {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .portfolio-controls input,
+  .portfolio-controls button,
+  .portfolio-controls .button-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .decision-cards {
+    grid-template-columns: 1fr;
+  }
+}

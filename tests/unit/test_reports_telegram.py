@@ -11,7 +11,9 @@ from pathlib import Path
 
 import pytest
 
+from papertrader.advice import refresh_advice
 from papertrader.config import Settings
+from papertrader.execution import ensure_initial_capital
 from papertrader.reports import NarrativeItem, generate_daily_report
 from papertrader.tables import read_table
 from papertrader.telegram import (
@@ -28,6 +30,7 @@ from papertrader.wiki import lint_wiki
 def test_daily_report_matches_reference_and_registers_one_canonical_page(
     sandbox_repository: Path,
     repository_root: Path,
+    sandbox_settings: Settings,
 ) -> None:
     generated_at = datetime(2026, 7, 24, 22, tzinfo=UTC)
     arguments = {
@@ -46,6 +49,18 @@ def test_daily_report_matches_reference_and_registers_one_canonical_page(
         ),
         "generated_at": generated_at,
     }
+    ensure_initial_capital(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-report",
+        occurred_at=generated_at,
+    )
+    snapshot = refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-report",
+        as_of=generated_at,
+    )
 
     path = generate_daily_report(sandbox_repository, **arguments)
     generate_daily_report(sandbox_repository, **arguments)
@@ -56,13 +71,10 @@ def test_daily_report_matches_reference_and_registers_one_canonical_page(
     assert path.read_text(encoding="utf-8") == expected
     index = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
     log = (sandbox_repository / "data" / "wiki" / "log.md").read_text(encoding="utf-8")
-    report_catalog = index.split("## Daily reports", maxsplit=1)[1]
-    assert report_catalog.count("[[daily-reports/daily-report_20260724") == 1
-    assert index.count("<!-- papertrader-current-results:start -->") == 1
-    assert index.count("<!-- papertrader-current-results:end -->") == 1
-    assert index.index("## Current results") < index.index("## Meta")
-    assert "No current performance snapshot is available." in index
-    assert "No completed research suggestions are available yet." in index
+    assert index.count("[[daily-reports/daily-report_20260724") == 1
+    assert index.count(snapshot.snapshot_id) == 1
+    assert "No trade — hold 100% cash" in index
+    assert "**No actionable trade signals.**" in index
     assert log.count("Generated canonical [[daily-reports/daily-report_20260724]]") == 1
     assert lint_wiki(sandbox_repository / "data" / "wiki") == []
 
@@ -104,6 +116,36 @@ def test_telegram_builds_one_rich_markdown_report_with_linked_wiki_pages() -> No
         f"[EXM](https://github.com/example/PaperTrader/blob/{commit}/data/wiki/securities/sec_a.md)"
     ) in messages[0]
     assert messages[0].endswith(f"[View the committed report]({committed_url})")
+
+
+def test_telegram_uses_only_the_committed_investor_brief_when_marked() -> None:
+    commit = "b" * 40
+    committed_url = (
+        "https://github.com/example/PaperTrader/blob/"
+        f"{commit}/data/wiki/daily-reports/daily-report_20260724.md"
+    )
+    report = (
+        "---\ntitle: Example\n---\n\n# Full daily report\n\n"
+        "<!-- papertrader-investor-brief:start -->\n"
+        "# No trade — hold 100% cash\n\n"
+        "- **Snapshot:** `decision_0123456789abcdefabcd`\n"
+        "- [[model-portfolio|Model portfolio]]\n"
+        "<!-- papertrader-investor-brief:end -->\n\n"
+        "## Complete active queue\n\n- `operation_secret`\n"
+    )
+
+    messages = telegram_messages(report, committed_url=committed_url)
+    delivered = "".join(messages)
+
+    assert delivered.startswith("# No trade — hold 100% cash")
+    assert "decision_0123456789abcdefabcd" in delivered
+    assert "Complete active queue" not in delivered
+    assert "operation_secret" not in delivered
+    assert (
+        f"[Model portfolio](https://github.com/example/PaperTrader/blob/{commit}/"
+        "data/wiki/model-portfolio.md)"
+    ) in delivered
+    assert delivered.endswith(f"[View the committed report]({committed_url})")
 
 
 def test_telegram_transport_calls_rich_message_endpoint(monkeypatch: pytest.MonkeyPatch) -> None:

@@ -5,6 +5,7 @@ from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
+from papertrader.advice import refresh_advice
 from papertrader.config import Settings
 from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
@@ -243,6 +244,12 @@ def test_complete_core_cycle_is_replay_safe(
         now=fill_time,
     )
     assert status == "filled"
+    refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-cycle",
+        as_of=fill_time,
+    )
     report = generate_daily_report(
         sandbox_repository,
         run_id="run-cycle",

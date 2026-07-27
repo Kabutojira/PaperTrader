@@ -12,6 +12,7 @@ from datetime import date, datetime
 from decimal import Decimal
 from pathlib import Path
 
+from papertrader.advice import refresh_advice, validate_advice
 from papertrader.agent_runner import (
     configure_hermes_home,
     preflight_hermes,
@@ -90,6 +91,7 @@ from papertrader.research import (
     upsert_security,
     upsert_strategy,
 )
+from papertrader.tables import read_table
 from papertrader.telegram import deliver_committed_report
 from papertrader.utils import (
     CanonicalValueError,
@@ -206,6 +208,12 @@ def _parser() -> argparse.ArgumentParser:
     allocation_maintain.add_argument("--backfill", action="store_true")
     allocation_readiness_command = allocation_commands.add_parser("readiness")
     allocation_readiness_command.add_argument("--strict", action="store_true")
+
+    advice = commands.add_parser("advice", help="publish the investor decision projection")
+    advice_commands = advice.add_subparsers(dest="advice_command", required=True)
+    advice_refresh = advice_commands.add_parser("refresh")
+    advice_refresh.add_argument("--run-id", required=True)
+    advice_commands.add_parser("validate").add_argument("--strict", action="store_true")
 
     actions = commands.add_parser("corporate-actions", help="apply durable paper cash actions")
     action_commands = actions.add_subparsers(dest="action_command", required=True)
@@ -710,6 +718,15 @@ def _run_structured_command(
             )
         return 0
     if arguments.command == "report":
+        run_id = _text(raw, "run_id")
+        generated_at = _timestamp(raw, "generated_at", required=False)
+        completed = [row for row in read_table(repository_root, "runs") if row["run_id"] == run_id]
+        if len(completed) != 1:
+            raise CanonicalValueError("report run is not present exactly once in run history")
+        if generated_at is None:
+            generated_at = parse_timestamp(completed[0]["completed_at"])
+        if generated_at is None:
+            raise CanonicalValueError("report run has no completed timestamp")
         narrative_values = _sequence(raw, "narrative_items")
         narratives: list[NarrativeItem] = []
         for value in narrative_values:
@@ -723,15 +740,22 @@ def _run_structured_command(
                     ),
                 )
             )
+        refresh_advice(
+            repository_root,
+            settings,
+            run_id=run_id,
+            as_of=generated_at,
+        )
         path = generate_daily_report(
             repository_root,
-            run_id=_text(raw, "run_id"),
+            run_id=run_id,
             run_status=_text(raw, "run_status"),
             report_date=(
                 parse_iso_date(_text(raw, "report_date")) if raw.get("report_date") else None
             ),
             narrative_items=narratives,
             github_report_url=_text(raw, "github_report_url", default=""),
+            generated_at=generated_at,
         )
         print(path.relative_to(repository_root).as_posix())
         return 0
@@ -995,6 +1019,12 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         readiness = allocation_readiness(root, settings)
         print(json.dumps(asdict(readiness), sort_keys=True))
         return int(arguments.strict and not readiness.ready)
+    if arguments.command == "advice":
+        if arguments.advice_command == "refresh":
+            snapshot = refresh_advice(root, settings, run_id=arguments.run_id)
+            print(json.dumps(asdict(snapshot), sort_keys=True))
+            return 0
+        return _print_result("advice", validate_advice(root, strict=arguments.strict))
     if arguments.command == "logs":
         regenerate_log_tail(root)
         return _print_result("logs", [])

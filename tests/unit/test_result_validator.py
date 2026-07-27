@@ -27,6 +27,9 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
     protected = (
         "data/tables/allocation_targets.csv",
         "data/tables/allocation_history.csv",
+        "data/published/decision_snapshot.json",
+        "data/published/model_portfolio.csv",
+        "data/published/actionable_signals.csv",
     )
     for operation_type in ("security_research", "strategy_research", "execute_strategy"):
         assert all(

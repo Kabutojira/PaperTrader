@@ -161,6 +161,17 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
     )
     assert manifest["status"] == "succeeded"
     assert manifest["report_path"] == finalization.report_path
+    assert manifest["snapshot_id"] == finalization.snapshot_id
+    snapshot = json.loads(
+        (sandbox_repository / "data" / "published" / "decision_snapshot.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert snapshot["snapshot_id"] == finalization.snapshot_id
+    assert snapshot["run_id"] == preparation.run_id
+    assert finalization.snapshot_id in (sandbox_repository / finalization.report_path).read_text(
+        encoding="utf-8"
+    )
     assert lint_wiki(sandbox_repository / "data" / "wiki") == []
     environment = {
         "PAPER_TRADING_ONLY": "true",

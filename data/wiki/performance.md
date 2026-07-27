@@ -1,0 +1,48 @@
+---
+title: "PaperTrader performance and risk"
+type: performance
+status: maintained
+tags:
+  - performance
+created: "2026-07-27"
+updated: "2026-07-27"
+provenance: deterministic-decision-projection
+snapshot_id: "decision_7eae4d9fa5380e578266"
+as_of: "2026-07-27T15:39:59Z"
+---
+
+# Performance and risk
+
+**Snapshot `decision_7eae4d9fa5380e578266` · As of `2026-07-27T15:39:59Z`**
+
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-24 to 2026-07-27; latest equity 100000."><title>Model equity history</title><desc>Equity history from 2026-07-24 to 2026-07-27; latest equity 100000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 33.33,45.00 66.67,45.00 100.00,45.00" /></svg>
+
+| Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
+| ---: | ---: | ---: | ---: | ---: |
+| 0% | 0% | 0% | 0 EUR | 0 EUR |
+
+## Exposure and concentration
+
+- Cash: 100%
+- Invested exposure: 0%
+- Conviction exposure: 0 EUR
+- Baseline exposure: 0 EUR
+- Largest position: 0%
+- Largest sector: 0%
+
+## Approved allocation changes
+
+No approved allocation changes.
+
+## Committed history
+
+| Date | Equity | Cash | Gross exposure | Daily return | Cumulative return | Drawdown |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2026-07-24 | 100000 | 100000 | 0 | 0% | 0% | 0% |
+| 2026-07-25 | 100000 | 100000 | 0 | 0% | 0% | 0% |
+| 2026-07-26 | 100000 | 100000 | 0 | 0% | 0% | 0% |
+| 2026-07-27 | 100000 | 100000 | 0 | 0% | 0% | 0% |
+
+No external benchmark is used.
+
+[[index|Back to today's decision]]

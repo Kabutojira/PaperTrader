@@ -291,6 +291,77 @@ contracts:
       - cumulative_return_pct
       - run_id
       - generated_at
+  published_model_portfolio:
+    path: data/published/model_portfolio.csv
+    generated: true
+    columns:
+      - snapshot_id
+      - as_of
+      - holding_type
+      - security_id
+      - ticker
+      - company_name
+      - instrument_type
+      - sleeve
+      - current_weight_pct
+      - approved_target_weight_pct
+      - current_value_base
+      - approved_target_value_base
+      - delta_value_base
+      - current_quantity
+      - approved_target_quantity
+      - mark
+      - mark_currency
+      - fx_rate_to_base
+      - market_data_as_of
+      - action
+      - action_status
+      - strategy_id
+      - signal_id
+      - order_id
+      - confidence
+      - effective_score
+      - downside_pct
+      - base_upside_pct
+      - valuation_horizon_months
+      - thesis_summary
+      - entry_rule
+      - exit_rule
+      - invalidation
+      - review_at
+      - research_page
+      - reason_codes
+  published_actionable_signals:
+    path: data/published/actionable_signals.csv
+    generated: true
+    columns:
+      - snapshot_id
+      - as_of
+      - signal_id
+      - strategy_id
+      - order_id
+      - security_id
+      - ticker
+      - company_name
+      - action
+      - action_status
+      - copy_ready
+      - quantity
+      - order_type
+      - limit_price
+      - currency
+      - created_at
+      - expires_at
+      - market_data_as_of
+      - current_weight_pct
+      - approved_target_weight_pct
+      - strategy_name
+      - entry_rule
+      - exit_rule
+      - invalidation
+      - rationale
+      - research_page
+      - reason_codes
   source_registry:
     path: data/tables/source_registry.csv
     columns:

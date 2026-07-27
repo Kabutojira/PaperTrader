@@ -131,6 +131,7 @@ jobs:
           git add --all -- data
           uv run papertrader runtime-whitelist validate --staged
           uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
           echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -153,6 +154,7 @@ jobs:
           git fetch --no-tags origin "$TARGET_BRANCH"
           git rebase "origin/${TARGET_BRANCH}"
           uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
           uv run papertrader runtime-whitelist validate \
             --base-ref "origin/${TARGET_BRANCH}" \
             --head-ref HEAD

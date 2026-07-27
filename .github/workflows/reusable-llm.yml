@@ -292,6 +292,7 @@ jobs:
           uv run mypy src
           uv run pytest
           uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
       - name: Create the whitelisted runtime patch bundle
@@ -436,6 +437,7 @@ jobs:
           uv run mypy src
           uv run pytest
           uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
           uv run papertrader runtime-whitelist validate --staged
@@ -481,6 +483,7 @@ jobs:
           TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
         run: |
           uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
           uv run papertrader runtime-whitelist validate \

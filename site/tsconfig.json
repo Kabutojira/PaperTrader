@@ -20,6 +20,8 @@
     "globals.d.ts",
     "quartz.config.ts",
     "quartz.layout.ts",
+    "papertrader/**/*.ts",
+    "papertrader/**/*.tsx",
     "quartz/**/*.ts",
     "quartz/**/*.tsx"
   ]

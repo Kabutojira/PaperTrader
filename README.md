@@ -283,13 +283,45 @@ a new allocation candidate and defers a pending foreign-currency order; it never
 rate or mutates accounting. Current targets are generated state and agents must never edit either
 allocation table directly.
 
+## Investor decision publication
+
+The public Quartz homepage is a results-first paper-investment dashboard. One deterministic
+projection in `src/papertrader/advice.py` joins the reconciled account, validated pending orders,
+signals, allocation candidates, research alerts, performance, coverage, and issues. The projection
+does not feed allocation, orders, fills, or accounting back into the system.
+
+```bash
+uv run papertrader advice refresh --run-id <completed-run-id>
+uv run papertrader advice validate --strict
+```
+
+Each refresh writes an immutable `data/runs/<run-id>/decision_snapshot.json` and atomically updates
+the latest validated publication files:
+
+- `data/published/decision_snapshot.json`;
+- `data/published/model_portfolio.csv`;
+- `data/published/actionable_signals.csv`.
+
+The same snapshot generates the Today, Model portfolio, Signals, Performance, System status, and
+Research catalog pages plus the investor-first daily report and Telegram brief. Allocation targets
+without a valid strategy remain candidates, indicator transitions remain visibly labelled research
+alerts, and only a validated non-terminal paper order can be copy ready. An all-cash conclusion is
+published explicitly as `No trade — hold 100% cash`.
+
+The model-portfolio page works without JavaScript and provides committed CSV/JSON downloads.
+Progressive enhancement can copy rows as TSV and scale long-equity target weights to a notional in
+browser memory. It rounds down to whole shares, reports residual cash and the reference mark/FX
+timestamp, does not persist the notional, and never contacts a broker or server. The scaled result
+is illustrative and has not passed PaperTrader's portfolio-level risk checks.
+
 ## Daily automation and publication
 
 The scheduled controller in `.github/workflows/daily.yml` uses one serialized path for both cron
 and manual runs. It prepares market and queue state, executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
-accounting, generates the allocation plan, writes the canonical daily report, and runs the
-complete validation gate. Manual runs expose
+accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
+investor pages, writes the canonical daily report, and runs the complete validation gate. Manual
+runs expose
 `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and
 `send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
 or delivery.
@@ -305,8 +337,8 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 
 - build the wiki and its canonical daily reports from an exact commit with Quartz;
 - deploy the verified `site/public` artifact when Pages publication is enabled;
-- read the exact committed report with `git show` and send it as bounded Telegram Rich Markdown,
-  preserving headings, lists, tables, code, emphasis, and commit-pinned wiki links;
+- read the exact committed report with `git show` and send its investor brief as bounded Telegram
+  Rich Markdown, preserving headings, lists, code, emphasis, and commit-pinned wiki links;
 - retain a failed Telegram chunk cursor in the repository issue ledger so a later dispatch of
   `reporting.yml` can resume delivery without rolling back the runtime commit.
 
@@ -336,19 +368,19 @@ database, every durable mutation is reviewable in Git, and no component has a re
 ```text
 request JSON -> validated queue -> one claimed operation -> Hermes or local Codex harness
              -> completed edits + agent_result.json -> deterministic result validator
-             -> terminal history -> fills/accounting -> allocation plan -> report
-             -> write-controlled Git boundary
+             -> terminal history -> fills/accounting -> allocation plan -> decision snapshot
+             -> investor pages/report -> write-controlled Git boundary
 ```
 
 | Layer | Owns | Main implementation |
 | --- | --- | --- |
 | Contracts and policy | CSV/JSON schemas, IDs, limits, paths, paper-only settings | `AGENTS.md`, `schemas/`, `config.ini`, `src/papertrader/config.py` |
-| Deterministic state | Queue, market/FX data, allocation, orders, fills, ledgers, portfolio, reports | `src/papertrader/*.py` through the `papertrader` CLI |
+| Deterministic state | Queue, market/FX data, allocation, orders, fills, ledgers, portfolio, advice projection, reports | `src/papertrader/*.py` through the `papertrader` CLI |
 | Agent judgment | Research synthesis, causal theses, bounded follow-ups, strategy decisions | `skills/papertrader-*/SKILL.md` plus native `llm-wiki` in Hermes |
 | Agent boundary | One-operation claim, prompt construction, CLI receipts, exact delta/result validation | `agent_runner.py`, `local_harness.py`, `command_audit.py`, `result_validator.py` |
 | Persistence | Canonical research/runtime state and immutable history | `data/` |
 | Automation | Read-only inference, validated artifact handoff, sole write-enabled commit job | `.github/workflows/reusable-llm.yml` |
-| Publication | Canonical report, Quartz Pages, post-commit Telegram delivery | `reports.py`, `site/`, `reporting.yml`, `pages.yml` |
+| Publication | Decision snapshot/exports, investor pages, canonical report, Quartz Pages, post-commit Telegram brief | `advice.py`, `investor_pages.py`, `reports.py`, `site/`, `reporting.yml`, `pages.yml` |
 
 Structured CSVs must never be hand-edited by an agent. Wiki Markdown is the agent's direct write
 surface within the selected skill scope; request-bearing CLI commands are the only route to
@@ -365,8 +397,10 @@ uv run ruff format --check .
 uv run mypy src
 uv run pytest
 uv run papertrader integrity --strict
+uv run papertrader advice validate --strict
 uv run papertrader wiki lint --strict
 uv run papertrader portfolio reconcile --strict
+cd site && npm run check && PAPERTRADER_BASE_URL=localhost npm run build
 ```
 
 Validate paths staged for an automated runtime commit with:
