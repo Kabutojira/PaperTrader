@@ -1,0 +1,53 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Sigma Lithium opportunity research was blocked because the 14:06:24Z oversold-RSI source snapshot was superseded before claim: the canonical 14:24:43Z refresh changed the 2026-07-24 close from USD 9.63 to USD 9.84, moved RSI(14) from 29.1237529 to 30.23638328, and removed the rsi_oversold trigger."
+  ],
+  "evidence": [
+    {
+      "claim": "The candidate packet records an entered rsi_oversold transition for immutable security_4627aea1bf7d8943d3d8 over 2026-06-25 through 2026-07-24, with adjusted close USD 9.630000114440918, period return -0.2074073731036204934670989592, trigger strength 0.02920823666666666666666666667, and source price hash 301592c165694b81b3e31cbfef1c19bd3defd70841d3e62a522974a8dfeeda17.",
+      "observed_at": "2026-07-27T14:06:24Z",
+      "source": "data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e.md",
+      "source_hash": "301592c165694b81b3e31cbfef1c19bd3defd70841d3e62a522974a8dfeeda17"
+    },
+    {
+      "claim": "Before this operation was claimed, the canonical 252-bar cache was refreshed for the same 2026-07-24 endpoint. The adjusted close became USD 9.84, the recomputed economic-content hash became daa0405c2076e7a8f4d724e05f77b3abe5089e46182406c7b386f3b362484a62, RSI(14) became 30.23638328, and trigger_state became empty. The configured oversold threshold is 30, so the required transition is not present in current canonical state.",
+      "observed_at": "2026-07-27T14:24:43Z",
+      "source": "data/market/prices/security_4627aea1bf7d8943d3d8.csv, data/market/indicators.csv, and config.ini",
+      "source_hash": "daa0405c2076e7a8f4d724e05f77b3abe5089e46182406c7b386f3b362484a62"
+    },
+    {
+      "claim": "The queue row was marked running for run gha-30274861908-1 at 2026-07-27T14:25:09Z with a lease through 2026-07-27T14:55:09Z, after the 14:24:43Z canonical refresh. The required source hash was therefore already stale at claim time.",
+      "observed_at": "2026-07-27T14:25:09Z",
+      "source": "data/operations/operations_TODO.csv"
+    },
+    {
+      "claim": "The immutable identity remains SGML / XNAS / USD / equity and is not the blocker; the maintained research page already classifies Sigma Lithium as low-confidence watching with liquidity, working-capital, debt, production, receivables, control, and funding risks and no strategy.",
+      "observed_at": "2026-07-27T14:28:19Z",
+      "source": "data/tables/securities.csv and data/wiki/securities/security_4627aea1bf7d8943d3d8.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYHYBWR02F32H3VYKHJWJS2S",
+  "operations_created": [],
+  "status": "blocked",
+  "summary": "Blocked this Sigma Lithium opportunity review because its required oversold-RSI source snapshot was superseded before the operation was claimed. The canonical refresh changed the endpoint bar and source hash, lifted RSI(14) above the configured oversold threshold, and removed the trigger. Classifying the stale transition as opportunity, risk, or noise would violate the source-hash and transition checks. No wiki, queue, trading, accounting, allocation, portfolio, cash, execution, fill, or performance state was changed, and no follow-up was enqueued.",
+  "validation": {
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and exactly one running row claimed by gha-30274861908-1 with a live lease.",
+      "Confirmed the preflight hashes for the repository controller and opportunity skill and the preloaded native llm-wiki identity.",
+      "Confirmed immutable SGML/XNAS/USD/equity identity and a valid 2026-07-24 endpoint with 252 cached observations.",
+      "Recomputed the canonical economic-content hash as daa0405c2076e7a8f4d724e05f77b3abe5089e46182406c7b386f3b362484a62 and confirmed it does not match the packet hash 301592c165694b81b3e31cbfef1c19bd3defd70841d3e62a522974a8dfeeda17.",
+      "Confirmed the refreshed RSI(14) is 30.23638328 against the configured oversold threshold of 30 and current trigger_state is empty.",
+      "Strict schema, queue, wiki, and integrity checks passed.",
+      "No routed-operation file was changed; no issue, follow-up, trading, accounting, allocation, portfolio, cash, execution, fill, or performance state was changed."
+    ],
+    "passed": true
+  }
+}

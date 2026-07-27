@@ -1,0 +1,19 @@
+{
+  "completed_at": "2026-07-27T14:30:26Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "1",
+  "operation_count": 1,
+  "preparation_errors": [
+    "security_2dbe878dfc899d7ee867: MarketDataError: invalid OHLC range on 2026-07-27 for security_2dbe878dfc899d7ee867",
+    "security_9d4049ed6669a52815d6: MarketDataError: invalid OHLC range on 2026-07-27 for security_9d4049ed6669a52815d6"
+  ],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260727.md",
+  "run_id": "gha-30274861908-1",
+  "source_sha": "f8c774424480a48ce46e04ca2c6bd0ca60e81534",
+  "started_at": "2026-07-27T14:24:43Z",
+  "status": "degraded",
+  "trigger": "workflow_dispatch"
+}
