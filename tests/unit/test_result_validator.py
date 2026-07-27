@@ -47,6 +47,10 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "security_research",
         {"argv": ["papertrader", "research", "source", "record"]},
     )
+    assert _command_allowed(
+        "security_research",
+        {"argv": ["papertrader", "allocation", "readiness"]},
+    )
 
 
 def _home(repository: Path, settings: Settings, tmp_path: Path) -> Path:

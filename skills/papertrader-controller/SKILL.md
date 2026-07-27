@@ -40,6 +40,8 @@ skill plus native `llm-wiki`; the parent controller separately preloads this con
    selected operation skill once without sub-agents or concurrent commands.
 4. Use `papertrader` commands for structured state. The controller records each invocation and its
    exact content delta in `command_audit.json`; report those canonical commands in `commands_run`.
+   Treat every JSON request artifact as immutable after its first CLI invocation. A correction or
+   changed retry must use a new uniquely named request file; never edit or overwrite the prior file.
    Allocation-linked strategy work may change only its strategy page, CLI-owned strategy/leg row,
    one eligible CLI-owned signal, bounded issue/follow-up state, and this operation's result.
 5. Perform all permitted edits and checks before atomically writing `agent_result.json` last.

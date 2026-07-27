@@ -1094,3 +1094,25 @@ configured inference harness; no score or valuation may be inferred from legacy 
 `allocation readiness` remains red until that evidence-backed work and every backfill terminal
 state are complete. Hosted inference, publish, push, and Telegram delivery still require their
 configured external credential and post-commit boundaries.
+
+## Daily Hermes execution follow-up — Complete (2026-07-27)
+
+The failed hosted daily run was reproduced with the workflow's pinned Hermes v0.19.0 image,
+isolated OAuth state, and one sequential operation. The container launcher deliberately drops the
+Hermes subprocess from the root controller to UID/GID 10000, but controller-created repository
+data used owner-only modes. Hermes therefore could not read the queue, payload, or wiki inputs and
+could not create `agent_result.json`, even though its launcher returned zero.
+
+Before taking the repository snapshot, the controller now hands off only the repository-local
+`data/` tree to the non-root Hermes profile owner when the controller itself is root. The handoff
+rejects symlinks and non-regular filesystem entries and does not expose `.git`, source code, the
+encrypted age identity, or other controller-owned credential state. Hermes remains unprivileged.
+The configured turn bound is 90 so a valid result manifest can still be written after bounded
+integrity repair, and controller/operation instructions require a new immutable JSON request file
+for every corrected CLI retry. Allocation readiness is recognized as an allowed read-only
+verification command without weakening mutation-scope validation.
+
+A fresh pinned-container run then completed exactly one operation with exit code zero and a
+`succeeded` result. The controller accepted the manifest with no validation errors, including the
+repository diff, command audit, distinct corrected request artifacts, strict schema/queue/wiki/
+integrity checks, and unchanged accounting state.

@@ -189,6 +189,7 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
             ("queue", "validate"),
             ("schema", "validate"),
             ("wiki", "lint"),
+            ("allocation", "readiness"),
         }
         or command[:1] == ("integrity",)
         or command[:2] == ("runtime-whitelist", "validate")

@@ -24,6 +24,8 @@ Use `papertrader research source record --request <json>` for every retained evi
 `papertrader research assessment upsert --request <json>` for its comparable assessment,
 `papertrader issue record --request <json>` for issues, and
 `papertrader queue enqueue --request <json>` for a justified follow-up.
+Once any request JSON has been passed to the CLI, it is immutable. Write a new uniquely named JSON
+artifact before retrying with corrected or changed content.
 
 ## Required input
 
