@@ -933,3 +933,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_3121381750419423c35d`.
 
 - Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-33`.
+
+- Ingested
+  [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b|the
+  scheduled-run RTX upper-Bollinger packet]] into
+  [[securities/security_59304f90c440def31dc5|the maintained RTX review]]. Its 16.19% return and
+  strengthened trigger corroborate near-term entry risk; the small strength difference from the
+  existing 27 July packet reflects a distinct deterministic price snapshot and does not change the
+  valuation, timing, or paper-trade disposition. No redundant follow-up was created.
+
+- Published investor decision snapshot `decision_420b3864086b1c654369`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `gha-30347797513-1`.

@@ -5,7 +5,7 @@ status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
 updated: "2026-07-28"
-provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; deterministic market cache"
+provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; source_b2d45bca8d0a249be557; deterministic market cache"
 security_id: security_59304f90c440def31dc5
 issuer_id: issuer_7e0bd218f603cf838669
 confidence: medium
@@ -29,7 +29,9 @@ strengthening]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c
 RSI strengthening]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb|scheduled-run
 RSI reconciliation]], [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae|upper-Bollinger entry]],
 and [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70|27 July
-upper-Bollinger strengthening]].
+upper-Bollinger strengthening]], plus its
+[[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b|scheduled-run
+reconciliation]].
 
 ## Business economics
 
@@ -117,6 +119,13 @@ measurement window and refreshed bars make those strength values distinct from t
 packet rather than replacements for it. The observation corroborates stronger near-term momentum
 and entry risk, but still supplies no price explanation, separate catalyst, intrinsic-value evidence,
 short thesis, or paper-trade support; the fundamental and valuation gates remain controlling.
+
+The scheduled-run upper-Bollinger packet reconciled that same 26 June–27 July window and USD 218.42
+close with the same **16.19%** return. It measured trigger strength at 0.0271 from 0.0215, modestly
+below the earlier 0.0286 observation because the deterministic source-price snapshot had a different
+hash. As with the parallel RSI reconciliation, this is corroborating measurement variation rather
+than a new catalyst or contradictory market conclusion. It does not alter the valuation, timing, or
+paper-trade disposition.
 
 ## Catalysts and invalidation
 

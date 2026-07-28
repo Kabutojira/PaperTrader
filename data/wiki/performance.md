@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3121381750419423c35d"
-as_of: "2026-07-28T09:37:49Z"
+snapshot_id: "decision_420b3864086b1c654369"
+as_of: "2026-07-28T09:50:10Z"
 ---
 
 # Performance and risk
 
-**Snapshot `decision_3121381750419423c35d` · As of `2026-07-28T09:37:49Z`**
+**Snapshot `decision_420b3864086b1c654369` · As of `2026-07-28T09:50:10Z`**
 
 <svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-24 to 2026-07-28; latest equity 100000."><title>Model equity history</title><desc>Equity history from 2026-07-24 to 2026-07-28; latest equity 100000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 25.00,45.00 50.00,45.00 75.00,45.00 100.00,45.00" /></svg>
 
@@ -32,7 +32,7 @@ as_of: "2026-07-28T09:37:49Z"
 
 ## Approved allocation changes
 
-- **[ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9):** Buy from 0% to 4.393255%
+- **[ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9):** Buy from 0% to 4.395254%
 
 ## Committed history
 

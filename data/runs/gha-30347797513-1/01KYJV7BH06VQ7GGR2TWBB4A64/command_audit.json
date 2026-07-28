@@ -1,0 +1,24 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/__w/PaperTrader/PaperTrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /__w/PaperTrader/PaperTrader wiki lint --strict",
+      "completed_at": "2026-07-28T09:48:13Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T09:48:13Z"
+    }
+  ],
+  "operation_id": "01KYJV7BH06VQ7GGR2TWBB4A64",
+  "run_id": "gha-30347797513-1"
+}

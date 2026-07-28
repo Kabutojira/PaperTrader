@@ -7,8 +7,8 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-report-generator
-run_id: "local-20260728-daily-all-33"
-snapshot_id: "decision_3121381750419423c35d"
+run_id: "gha-30347797513-1"
+snapshot_id: "decision_420b3864086b1c654369"
 ---
 
 # PaperTrader daily report — 2026-07-28
@@ -19,16 +19,16 @@ snapshot_id: "decision_3121381750419423c35d"
 # Deploy approved paper capital
 
 - **Data status:** Degraded — review coverage and data gaps
-- **As of:** `2026-07-28T09:37:49Z`
-- **Snapshot:** `decision_3121381750419423c35d`
+- **As of:** `2026-07-28T09:50:10Z`
+- **Snapshot:** `decision_420b3864086b1c654369`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
-- **Approved target cash:** 95604.41 EUR (95.606745%)
+- **Approved target cash:** 95602.41 EUR (95.604746%)
 - **Actionable signals:** 2
 
 ## Approved target changes
 
-- **ISRG:** Buy to 4.393255% (paper estimate)
+- **ISRG:** Buy to 4.395254% (paper estimate)
 
 ## Actionable signals
 
@@ -49,13 +49,13 @@ snapshot_id: "decision_3121381750419423c35d"
 - Current equity: 100000 EUR
 - Current cash: 100000 EUR (100%)
 - Current gross exposure: 0 EUR
-- Approved target cash: 95604.41 EUR (95.606745%)
+- Approved target cash: 95602.41 EUR (95.604746%)
 - Pending-order targets are estimates at the snapshot mark; only fills change accounting.
 
 | Holding | Sleeve | Current weight | Approved target | Current value | Target value | Action | State |
 | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
-| Cash | cash | 100% | 95.606745% | 100000  | 95604.41  | Trim | Pending validated paper order |
-| [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9) | baseline | 0% | 4.393255% | 0  | 4393.15  | Buy | Pending validated paper order |
+| Cash | cash | 100% | 95.604746% | 100000  | 95602.41  | Trim | Pending validated paper order |
+| [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9) | baseline | 0% | 4.395254% | 0  | 4395.15  | Buy | Pending validated paper order |
 
 ## 3. Actionable signals and pending orders
 
@@ -99,6 +99,10 @@ snapshot_id: "decision_3121381750419423c35d"
 
 
 ## 6. Research changes
+
+### Evidence-linked narrative
+
+- Ingested RTX's validated scheduled-run 2026-07-27 strengthened upper-Bollinger packet. The USD 218.42 close, 16.19% 26 June–27 July gain, and strength increase to 0.0271 from 0.0215 corroborate near-term entry risk but do not explain the move, establish intrinsic value, or support a paper trade; no follow-up was created because existing fundamental, relationship, valuation, and timing gates remain controlling. Evidence: `data/wiki/log.md`, `data/wiki/securities/security_59304f90c440def31dc5.md`, `e50a23bbd188c468fe875438c36aca2ebd3537e1a26368dfd0cf5ea1b258edc1`.
 
 - [[model-portfolio]]
 - [[performance]]
@@ -159,39 +163,39 @@ snapshot_id: "decision_3121381750419423c35d"
 
 ### Run diagnostics
 
-- Run ID: `local-20260728-daily-all-33`
+- Run ID: `gha-30347797513-1`
 - Run status: `succeeded`
-- Generated (UTC): `2026-07-28T09:37:49Z`
-- Decision snapshot: `decision_3121381750419423c35d`
+- Generated (UTC): `2026-07-28T09:50:10Z`
+- Decision snapshot: `decision_420b3864086b1c654369`
 
 ### Complete market freshness
 
 | Security ID | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| security_18a3ab0ee6086ee85d0f | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_1c055eb9b2bb1f5a8ff2 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_1f9cce545ede94cd6349 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_22c2b9d782a62d7a9b86 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_2c779e81c27b78c556bb | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_2dbe878dfc899d7ee867 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_37ddcbdaad296ad831f2 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_4627aea1bf7d8943d3d8 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_4b61970aa8f574446819 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_59304f90c440def31dc5 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_66cdcf90aac0d83e76f3 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_6ad1af8d10d6276a0221 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_6f9a1450edceb9307c9a | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_7ca095d63423c55a90e3 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_8472507d7d320aa388a7 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_9d4049ed6669a52815d6 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_a9eb9838940ef5ceaa0c | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_bdc2f87dadf134760c3a | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_c120e9f26ebb6159adf9 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_c9a37d277445869a8809 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_cc4dcb8f002b61dffe00 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_ed7d5b616a196969c815 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_f2b9760d847b2ba59324 | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
-| security_fb87fac302a5446a1ced | 2026-07-27 | 2026-07-27T20:55:09Z | ok | — |
+| security_18a3ab0ee6086ee85d0f | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_1c055eb9b2bb1f5a8ff2 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_1f9cce545ede94cd6349 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_22c2b9d782a62d7a9b86 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_2c779e81c27b78c556bb | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_2dbe878dfc899d7ee867 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_37ddcbdaad296ad831f2 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_4627aea1bf7d8943d3d8 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_4b61970aa8f574446819 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_59304f90c440def31dc5 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_66cdcf90aac0d83e76f3 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_6ad1af8d10d6276a0221 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_6f9a1450edceb9307c9a | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_7ca095d63423c55a90e3 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_8472507d7d320aa388a7 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_9d4049ed6669a52815d6 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_a9eb9838940ef5ceaa0c | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_bdc2f87dadf134760c3a | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_c120e9f26ebb6159adf9 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_c9a37d277445869a8809 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_cc4dcb8f002b61dffe00 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_ed7d5b616a196969c815 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_f2b9760d847b2ba59324 | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
+| security_fb87fac302a5446a1ced | 2026-07-27 | 2026-07-28T09:44:43Z | ok | — |
 
 ### Orders and executions
 
@@ -207,15 +211,15 @@ snapshot_id: "decision_3121381750419423c35d"
 
 ### Allocation audit
 
-- Plan ID: `allocation_plan_1090db96103f13437795`
+- Plan ID: `allocation_plan_68a79e2403e006a805e4`
 - Mode: `active`
 - Deployment budget: 15000 EUR
 - Capital allocated: 0 EUR
-- Capital unallocated: 55606.85186299546379433569002 EUR
+- Capital unallocated: 55604.85358124487924398683131 EUR
 
 | Rank | Security ID | Target weight | Disposition | Machine reasons |
 | ---: | --- | ---: | --- | --- |
-| 1 | security_1f9cce545ede94cd6349 | 4.39% | hold | above_cash_hurdle\|insufficient_diversification |
+| 1 | security_1f9cce545ede94cd6349 | 4.4% | hold | above_cash_hurdle\|insufficient_diversification |
 | — | security_18a3ab0ee6086ee85d0f | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
 | — | security_1c055eb9b2bb1f5a8ff2 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
 | — | security_22c2b9d782a62d7a9b86 | 0% | excluded | score_below_cash_hurdle |
@@ -315,13 +319,13 @@ snapshot_id: "decision_3121381750419423c35d"
 | 01KYKWP08RY8ST1TENJRN7EY4A | strategy_research | strategy_bd005fc3733b1475b6f9 | succeeded | agent_result:succeeded |
 | 01KYKX54MRDBWHGFKQERB0YG2Q | execute_strategy | strategy_bd005fc3733b1475b6f9 | succeeded | agent_result:succeeded |
 | 01KYJV7BH02PK4VT3WTS7SQQ61 | wiki_ingest | source_ad511f12b8de63d3a443 | failed | retry_exhausted:agent_validation_failed:issue_bd977249cf9b37fa11b6 |
+| 01KYJV7BH06VQ7GGR2TWBB4A64 | wiki_ingest | source_b2d45bca8d0a249be557 | succeeded | agent_result:succeeded |
 
 ### Complete active queue
 
 - `waiting` `01KYEWGWBRV9EV6YN1WQA6G3WF` — `security_research` for `security_cb88f9154cfeaa15e878`
 - `waiting` `01KYEXAGNREGCP02XCC9VBV80V` — `security_research` for `security_c5a9e460d3350284d157`
 - `waiting` `01KYFXFKB04HSHKYVSPNGXVJX0` — `security_research` for `security_66cdcf90aac0d83e76f3`
-- `ready` `01KYJV7BH06VQ7GGR2TWBB4A64` — `wiki_ingest` for `source_b2d45bca8d0a249be557`
 
 ### Open issues and delivery failures
 
@@ -330,27 +334,27 @@ snapshot_id: "decision_3121381750419423c35d"
 ### Machine decision provenance
 
 - `validated_open_actions` — Validated opening paper actions are pending.
-- `allocation_targets`: `6309effdc15d56112abe91688ba0d8ba8e4cfb9b779f21f224ef8f1da90da996`
+- `allocation_targets`: `a3fe344419f7542c06a9b1bdbce7b62ec7764cf6d242546a86c001d2bc0f7ed0`
 - `cash_ledger`: `01818c9c63f8b80fdf927abba96e6553d53e28f4e491dcc0201a06f4f4cbc8d1`
 - `configuration`: `6bfbcfa74f10e7c26fb5d945f6c4e0e7748c06714ce07d22e70a46ae67973c83`
 - `csv_contracts`: `006db7fd09c8f810fa6b0be26cd8e4dbd772b3f76b60957660c996d239f16115`
 - `decision_schema`: `af6b26a6dbd262948e4e20bb45ac0f948268dcd7d2e761e5942bdd1b2cd6c68b`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `fx_aud_eur`: `864a5a889ba1a00e99f4452c13d1e13aa2e8ccd07dbd4a51a3d6a67826bb42c4`
-- `fx_gbp_eur`: `ed630d4aa0575ebc9b49dc47600b307b562f4da85553806e46844cd83c520ba5`
-- `fx_usd_eur`: `cca01ec6551258350b6a1c1d4ca1a2c1a42a0b6573c0d80aa526f7b1149f7a1d`
-- `indicators`: `8441fa114ec18bccef932641d54ccb02daf2f94fb899ee6d7b73f20edb62c690`
+- `fx_aud_eur`: `1f79826aa9a2489de5dbdf072169de74d0ea3fe475405aec5973b5682c205597`
+- `fx_gbp_eur`: `fb2159d12bf199294707a1a884f53a4f3a3451523d32c1f8a2019a54d958cdf5`
+- `fx_usd_eur`: `81f02ff9bc4a604d8b6088204ddab5c5b4c266c565b5dfda0c7d6e6d950f929c`
+- `indicators`: `330d1b35bb6869ce6d57c7e7d37b59626721611312c4d5cc91670b5cae7693bc`
 - `issues`: `351982958049e367de6a219954f445b1df1367f833402df848131c550cccdea9`
-- `market_latest`: `41e1bae1941968c1f65af4de19c5fcb696549e2f98e01c9f651cd66f74f4f204`
+- `market_latest`: `3409421b85c2b1d924845994b03149c7dd41076ba78908a9ae596037dbe06e27`
 - `operation_payloads`: `95bf40ed57e590ffbbfb19ef93b519f0dea5ba6cd1e9e159881d1835e880a57b`
-- `operations_history`: `adf0034496c4801f9bc3b747de2d01b18780bc6648b88f5f5d944d714576c674`
-- `operations_todo`: `5efcfa3a4375ca973759b6a7abd275676ac592416795c3b0f10c32134389a372`
+- `operations_history`: `04124a7411609a2c1f718d63c0a9db53dbecf0e280a0725244efbd5045f2a331`
+- `operations_todo`: `828f7b0116d0ba35a02d07e54632ceccd90f5feebe1731f938732fd86c077747`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
 - `orders`: `d0f2ee8739f8fa1dc4bc541d3afc4e2ff1ec0257c65bb748e905adfbcd6e1a34`
 - `performance_daily`: `81ec42c1bc37f53e0efe95e0b4784faf3c6ff024d1858f72221b88cc1d6feca9`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `392b56955048368279eb1b760300ca93ba0f7a7c6f1589a9fe99c844f0d1601a`
-- `runs`: `b7cf9860f84ba577e19a18605b069162a1f58d0164382bdbc1bf7f1182bdbcf8`
+- `runs`: `3e6b967a873005e1ddd73d32a4229955091005109f31875f4f7e31db096d4373`
 - `securities`: `eae80093281bb39b825157ccb07d8c58a09b5228464f4fedc701118b91c76cd2`
 - `security_assessments`: `a6bc3581e9ce6e6be6ed94a60aa0c2c791f84c0dc5f57b7fb63dbf9deb67ec75`
 - `signals`: `b0ba7fe72e4ae3dcc4d4aa432b31d631ac633135add41d1d8ea563a652b86a78`
@@ -365,4 +369,4 @@ snapshot_id: "decision_3121381750419423c35d"
 - [[model-portfolio|Model portfolio]]
 - [[signals|Signals]]
 - [[system-status|System status]]
-- GitHub report: https://github.com/kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260728.md
+- GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260728.md

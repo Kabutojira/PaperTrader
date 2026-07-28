@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3121381750419423c35d"
-as_of: "2026-07-28T09:37:49Z"
+snapshot_id: "decision_420b3864086b1c654369"
+as_of: "2026-07-28T09:50:10Z"
 ---
 
 # PaperTrader
 
-**As of `2026-07-28T09:37:49Z` · Data status: Degraded — review coverage and data gaps**
+**As of `2026-07-28T09:50:10Z` · Data status: Degraded — review coverage and data gaps**
 
 ## Deploy approved paper capital
 
@@ -27,12 +27,12 @@ Paper-only model output for research and simulation; it is not personalized inve
 
 ## Current and approved target portfolio
 
-Current equity is **100000 EUR** with **100% cash**. The approved target retains **95.606745% cash**.
+Current equity is **100000 EUR** with **100% cash**. The approved target retains **95.604746% cash**.
 
 | Holding | Current | Approved target | Action |
 | --- | ---: | ---: | --- |
-| Cash | 100% | 95.606745% | Trim |
-| [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9) | 0% | 4.393255% | Buy |
+| Cash | 100% | 95.604746% | Trim |
+| [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9) | 0% | 4.395254% | Buy |
 
 ## Actionable trade signals
 
