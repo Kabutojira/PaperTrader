@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYMRZHT03CWVF3S9FZ1X3MSW",
+  "status": "skipped",
+  "summary": "Skipped under exact_fresh_duplicate: the payload is semantically identical, apart from operation_id, to successful operation 01KYMEMXQGA1QK8JVEHY3EY6MN completed at 2026-07-28T14:53:48Z. That operation revalidated the same immutable idea-security edge against the same registered Q1 2026 Eaton filing and refreshed the canonical relationship. The edge remains uniquely accepted with positive direction, high sensitivity, medium confidence, and next review at 2026-08-04T12:00:00Z; no newer payload evidence justifies timestamp-only wiki or structured-state churn.",
+  "evidence": [
+    {
+      "source": "data/runs/gha-30369855939-1/01KYMEMXQGA1QK8JVEHY3EY6MN/agent_result.json",
+      "claim": "The immediately preceding successful relationship review used the same objective, maintenance mode, immutable relationship, idea, security, and source reference; it accepted the edge with high positive sensitivity and medium confidence and created no strategy or follow-up.",
+      "observed_at": "2026-07-28T14:53:48Z",
+      "source_hash": "33ee189df13bf81ef42113003bf3761a489cdf586b21f1e96f9e98a5112c46b3"
+    },
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "Exactly one canonical relationship_id row and one equivalent beneficiary edge bind relationship_87b95f713a902d531f2f to idea_ai_infrastructure_power and security_18a3ab0ee6086ee85d0f. It is accepted, positive, high sensitivity, medium confidence, last reviewed at 2026-07-28T14:49:41Z, and next due at 2026-08-04T12:00:00Z.",
+      "observed_at": "2026-07-28T14:49:41Z"
+    },
+    {
+      "source": "source_etn_q1_2026_10q",
+      "claim": "The current payload cites the same sole registered source as the prior review. Repository source history contains no newer observation: the SEC-filed Eaton Q1 2026 Form 10-Q remains registered as available with the same content hash.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm",
+      "observed_at": "2026-07-27T23:28:42Z",
+      "source_hash": "fffc172f0b3e45e0add279ce31bd3201a3b8c04f406f1f48cbafc7ea46363384"
+    },
+    {
+      "source": "data/wiki/relationships/relationship_87b95f713a902d531f2f.md",
+      "claim": "The maintained page already records the exact endpoint IDs, accepted disposition, causal mechanism, sensitivity, confidence, catalysts, invalidation, contrary evidence, source provenance, allocation-maintenance refresh, and no-strategy gate.",
+      "source_hash": "f073970ee5002567fffdff878d1af821cafd695658e19923255d0aa12da12006"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true; exactly one queue row was running, matched the requested relationship operation, was claimed by gha-30378447463-1, and had a live lease through 2026-07-28T17:00:10Z at the final prerequisite check.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the supplied operation, relationship, idea, security, objective, maintenance mode, and source reference.",
+      "The preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; all three SHA-256 values matched their loaded skill files, sequential and yolo were true, and no injection flags were present.",
+      "The current payload was semantically identical to the prior successful payload after excluding only operation_id; the prior result artifact SHA-256 was verified and neither payload path was a symlink.",
+      "The immutable endpoint IDs matched the canonical relationship row and maintained idea, security, and relationship pages; exactly one relationship ID row and one equivalent beneficiary edge exist.",
+      "The accepted edge already contains relationship type, positive direction, causal mechanism, high sensitivity, medium confidence, catalyst, invalidation, status, research page, and current review timestamps.",
+      "Registered source source_etn_q1_2026_10q retained its SEC URL and SHA-256, source history had no newer observation, and the payload supplied no newer evidence.",
+      "research-catalog.md already registers the relationship; exact-fresh-duplicate handling required no relationship page, catalog, log, structured-state, issue, or follow-up write.",
+      "papertrader schema validate --strict returned OK [schema], papertrader queue validate returned OK [queue], and papertrader wiki lint --strict returned OK [wiki].",
+      "tests/unit/test_research.py passed 7 tests; pytest emitted only the pre-existing cache-permission warning.",
+      "command_audit.json contains exactly the three canonical validation command strings in commands_run, all with exit code zero and no changed paths.",
+      "Git status before and after the operation showed no changes to allocation targets/history, strategies, signals, orders, order legs, executions, cash, portfolio, performance, fills, issues, or maintained wiki content."
+    ]
+  }
+}

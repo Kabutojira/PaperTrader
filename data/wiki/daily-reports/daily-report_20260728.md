@@ -7,8 +7,8 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-report-generator
-run_id: "gha-30369855939-1"
-snapshot_id: "decision_2b8c46732c054433b992"
+run_id: "gha-30378447463-1"
+snapshot_id: "decision_354ef91a8bfe15f68e1f"
 ---
 
 # PaperTrader daily report — 2026-07-28
@@ -19,9 +19,9 @@ snapshot_id: "decision_2b8c46732c054433b992"
 # No trade — hold 100% cash
 
 - **Investment data:** Current
-- **Operations:** Attention required
-- **As of:** `2026-07-28T14:53:50Z`
-- **Snapshot:** `decision_2b8c46732c054433b992`
+- **Operations:** Current
+- **As of:** `2026-07-28T16:35:54Z`
+- **Snapshot:** `decision_354ef91a8bfe15f68e1f`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 10000 EUR (100%)
@@ -86,10 +86,6 @@ No pending paper orders.
 
 ## 6. Research changes
 
-### Evidence-linked narrative
-
-- Revalidated the medium-confidence, high-sensitivity positive beneficiary relationship from AI infrastructure and power bottlenecks to Eaton against unchanged Q1 2026 primary evidence; no strategy follow-up was created because acquisition leverage, concentration, working capital, adverse valuation, and pending Q2 evidence remain limiting. Evidence: `data/tables/relationships.csv`, `data/wiki/ideas/idea_ai_infrastructure_power.md`, `data/wiki/securities/security_18a3ab0ee6086ee85d0f.md`, `https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm`.
-
 - [[model-portfolio]]
 - [[performance]]
 - [[relationships/relationship_1655ac715c33506ec7da]]
@@ -133,7 +129,7 @@ No pending paper orders.
 ## 7. Data-quality and coverage impact
 
 - Investment data status: **current**
-- Operations status: **degraded**
+- Operations status: **current**
 - Assessments: 24/24
 - Fresh-evidence assessments: 24/24
 - Relationship reviews: 24/24
@@ -142,49 +138,47 @@ No pending paper orders.
 - Active signals: 0
 - Pending orders: 0
 - Market-data success/failure: 24/0
-- Research alerts (not trade signals): 16
+- Research alerts (not trade signals): 17
 
-### Current system impacts
-
-- **publication only**: Telegram delivery unavailable
+No current system impacts.
 
 ## 8. Audit appendix
 
 ### Run diagnostics
 
-- Run ID: `gha-30369855939-1`
+- Run ID: `gha-30378447463-1`
 - Run status: `succeeded`
-- Generated (UTC): `2026-07-28T14:53:50Z`
-- Decision snapshot: `decision_2b8c46732c054433b992`
+- Generated (UTC): `2026-07-28T16:35:54Z`
+- Decision snapshot: `decision_354ef91a8bfe15f68e1f`
 
 ### Complete market freshness
 
 | Security ID | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| security_18a3ab0ee6086ee85d0f | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_1c055eb9b2bb1f5a8ff2 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_1f9cce545ede94cd6349 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_22c2b9d782a62d7a9b86 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_2c779e81c27b78c556bb | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_2dbe878dfc899d7ee867 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_37ddcbdaad296ad831f2 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_4627aea1bf7d8943d3d8 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_4b61970aa8f574446819 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_59304f90c440def31dc5 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_66cdcf90aac0d83e76f3 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_6ad1af8d10d6276a0221 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_6f9a1450edceb9307c9a | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_7ca095d63423c55a90e3 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_8472507d7d320aa388a7 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_9d4049ed6669a52815d6 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_a9eb9838940ef5ceaa0c | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_bdc2f87dadf134760c3a | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_c120e9f26ebb6159adf9 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_c9a37d277445869a8809 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_cc4dcb8f002b61dffe00 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_ed7d5b616a196969c815 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_f2b9760d847b2ba59324 | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
-| security_fb87fac302a5446a1ced | 2026-07-27 | 2026-07-28T14:45:44Z | ok | — |
+| security_18a3ab0ee6086ee85d0f | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_1c055eb9b2bb1f5a8ff2 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_1f9cce545ede94cd6349 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_22c2b9d782a62d7a9b86 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_2c779e81c27b78c556bb | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_2dbe878dfc899d7ee867 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_37ddcbdaad296ad831f2 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_4627aea1bf7d8943d3d8 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_4b61970aa8f574446819 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_59304f90c440def31dc5 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_66cdcf90aac0d83e76f3 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_6ad1af8d10d6276a0221 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_6f9a1450edceb9307c9a | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_7ca095d63423c55a90e3 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_8472507d7d320aa388a7 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_9d4049ed6669a52815d6 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_a9eb9838940ef5ceaa0c | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_bdc2f87dadf134760c3a | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_c120e9f26ebb6159adf9 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_c9a37d277445869a8809 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_cc4dcb8f002b61dffe00 | 2026-07-28 | 2026-07-28T16:30:00Z | ok | — |
+| security_ed7d5b616a196969c815 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_f2b9760d847b2ba59324 | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
+| security_fb87fac302a5446a1ced | 2026-07-27 | 2026-07-28T16:30:00Z | ok | — |
 
 ### Orders and executions
 
@@ -200,7 +194,7 @@ No pending paper orders.
 
 ### Allocation audit
 
-- Plan ID: `allocation_plan_9dcc769e519f71bedf42`
+- Plan ID: `allocation_plan_4834e38fb71e6631e320`
 - Mode: `active`
 - Deployment budget: 1500 EUR
 - Capital allocated: 0 EUR
@@ -310,6 +304,7 @@ No pending paper orders.
 | 01KYJV7BH02PK4VT3WTS7SQQ61 | wiki_ingest | source_ad511f12b8de63d3a443 | failed | retry_exhausted:agent_validation_failed:issue_bd977249cf9b37fa11b6 |
 | 01KYJV7BH06VQ7GGR2TWBB4A64 | wiki_ingest | source_b2d45bca8d0a249be557 | succeeded | agent_result:succeeded |
 | 01KYMEMXQGA1QK8JVEHY3EY6MN | relationship_research | relationship_87b95f713a902d531f2f | succeeded | agent_result:succeeded |
+| 01KYMRZHT03CWVF3S9FZ1X3MSW | relationship_research | relationship_87b95f713a902d531f2f | skipped | agent_result:skipped |
 
 ### Complete active queue
 
@@ -319,34 +314,34 @@ No pending paper orders.
 
 ### Open issues and delivery failures
 
-- `warning` **`issue_c5f971a694e0ca3598d2`** — Telegram delivery unavailable: Latest-only delivery is pending verification for the next committed daily report; older failed reports will not be replayed.
+No open issues.
 
 ### Machine decision provenance
 
 - `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
-- `allocation_targets`: `fd3449d434fc8282c083d07671fd13b5945627ffd01879390c4ad73e464d82fe`
+- `allocation_targets`: `16c467c0d30c5995475db5bd9172de176bc8b60e6090d6b3fd452a69a59fdbda`
 - `cash_ledger`: `680c5eba138f06e3afc99fbd8919ef0999b97aa6cc567edaf9a11cbece564029`
 - `configuration`: `517c09d6aea6441bc5da12ca67e60e12fbf478767f6da664be8fcc473bc2475b`
 - `csv_contracts`: `5d69a6715a26724da012fa4fea98233c5874ae8f38ea64c03162438d9cc6308e`
 - `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `fx_aud_eur`: `da1bce3a41f3d5285b558360264d963988d2f3cf0a5bc5dacfb8c1de323115e4`
-- `fx_gbp_eur`: `a030c3c155c1bcbdbf8e9ae8614850b6dbb78310bbaf96a0e211108c553a09c8`
-- `fx_usd_eur`: `75334edddff59cac37fa4d54e52ebd79a6f27b3577d2785d5b17f32b08646037`
-- `indicators`: `ebf62b983b1f836186d3e3fc8fe607db7d1c70aa105d9f67d2bc9da3b1532303`
-- `issues`: `8ec2ebd704625fae50465f82b77a0536367fca85695e891589ac16bf3bb0f69a`
-- `market_latest`: `19c5982d9fe504f37669ac99e028f5a394b001f96b49d5803e423dc23e3a8378`
-- `operation_payloads`: `f4905bb9cf9e5267b7316fef38af452c6ac4d6d313ca5d00589789f21d90fa50`
-- `operations_history`: `f03e6e531f7a64fe6143b08aa9d4b6110d1047e08676a4bcd5e15c2261bef1e2`
-- `operations_todo`: `21befec6915045cfc9fd128abd44d16b4c99ed02604d2bcdfa8b02b1fae09216`
+- `fx_aud_eur`: `dc0ca2b710dd7b8cb9171d07515387eb9a66804fccd0950fa09cf15ac95e4f2d`
+- `fx_gbp_eur`: `f6f1ce84fed173cf9e0cfca3604d82a3170d5eb03eb67f8bf9b9277ee95e7d59`
+- `fx_usd_eur`: `c3d254a978e85e4103358474e046f63da2838424fd92774ed1ef2add0711e6ed`
+- `indicators`: `7353ca14e663363f09759dd5c5878507dbb97e45210e2af7dd501d41f821077e`
+- `issues`: `675b3b63ab5375c8380eeac3a81a45cd5693e7f2cc0597d7befe2a45200be8cd`
+- `market_latest`: `2bc4417d2ca0acfb3f8ce0f21a6771599d34cfcf4780ae61e0d41aa5c473e6ce`
+- `operation_payloads`: `96c61a7d2f687f4f923757a90c5dd4ebde29f643d87f81052cb039f875be8010`
+- `operations_history`: `d5be3ee47c49870b64dcc7e0a9daecff02e871fb5e9c269d4b843806a544e54a`
+- `operations_todo`: `89e8ec23b58f943105b741bf547a0ee4c4e6aa707023d2e86f0e48d5ec5023ff`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
 - `orders`: `ed876ae7f67d9632296d12497cb334ed5c925843ac65f9691907bf7a8613a3c0`
 - `performance_daily`: `c0a933d565d17431bafdb911f1e120bddd32758e3eaa9da9d474a7a5a06cbe94`
 - `performance_epochs`: `bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `a6a9995dacd90bf43997b579c49c1b9ea6ac82cf73cd578dbd97559ae54394d3`
-- `runs`: `f4c14dbe9d7f8e5afb458416439eb14d8cfbad4fb03235a72401a36c8f308153`
+- `runs`: `eaf84249e714484fe5bf2246958ab5d0a74cc3790d3d4df74dac1465e35de730`
 - `securities`: `eae80093281bb39b825157ccb07d8c58a09b5228464f4fedc701118b91c76cd2`
 - `security_assessments`: `a6bc3581e9ce6e6be6ed94a60aa0c2c791f84c0dc5f57b7fb63dbf9deb67ec75`
 - `signals`: `874d3deab149ff6c97a32ad6e61f2d243a5f96559acf815dfc1cd3dc91595f41`

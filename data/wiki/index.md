@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_2b8c46732c054433b992"
-as_of: "2026-07-28T14:53:50Z"
+snapshot_id: "decision_354ef91a8bfe15f68e1f"
+as_of: "2026-07-28T16:35:54Z"
 ---
 
 # PaperTrader
 
-**As of `2026-07-28T14:53:50Z` · Investment data: Current · Operations: Attention required**
+**As of `2026-07-28T16:35:54Z` · Investment data: Current · Operations: Current**
 
 ## No trade — hold 100% cash
 

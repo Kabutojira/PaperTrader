@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_2b8c46732c054433b992"
-as_of: "2026-07-28T14:53:50Z"
+snapshot_id: "decision_354ef91a8bfe15f68e1f"
+as_of: "2026-07-28T16:35:54Z"
 ---
 
 # Signals
 
-**Snapshot `decision_2b8c46732c054433b992` · As of `2026-07-28T14:53:50Z`**
+**Snapshot `decision_354ef91a8bfe15f68e1f` · As of `2026-07-28T16:35:54Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending paper orders.
 
 ## Research alerts — not trade signals
+
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-07-28`
+- Research status: `pending`
+- Conclusion: Deterministic indicator state awaits bounded research review.
 
 ### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
 
