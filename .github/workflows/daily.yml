@@ -2,7 +2,8 @@ name: Serialized daily PaperTrader run
 
 on:
   schedule:
-    - cron: "17 21 * * 1-5"
+    - cron: "0 17 * * *"
+      timezone: "Europe/Rome"
   workflow_dispatch:
     inputs:
       operation_id:

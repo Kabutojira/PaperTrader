@@ -125,7 +125,7 @@ function setupScaler(): void {
   const scale = (): void => {
     const notional = parseFinite(input.value);
     if (notional === null || notional <= 0) {
-      setResult(result, "Enter a positive illustrative notional.", []);
+      setResult(result, "Enter a positive portfolio value.", []);
       return;
     }
     const positions = portfolioCards().filter(
@@ -143,7 +143,7 @@ function setupScaler(): void {
         "Whole shares",
         "Reference mark / FX",
         "Reference time",
-        "Illustrative base value",
+        "Base value",
       ],
     ];
     for (const position of positions) {
@@ -167,7 +167,7 @@ function setupScaler(): void {
       "—",
       Math.max(0, notional - deployed).toFixed(2),
     ]);
-    setResult(result, "Illustrative long-equity quantities", output);
+    setResult(result, "Whole-share long-equity quantities", output);
   };
   button.addEventListener("click", scale);
   window.addCleanup(() => button.removeEventListener("click", scale));

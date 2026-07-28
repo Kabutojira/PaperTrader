@@ -434,7 +434,7 @@ def _require_baseline_target(
     *,
     now: datetime,
 ) -> None:
-    from papertrader.allocation import latest_allocation_target
+    from papertrader.allocation import assessment_payoff_reasons, latest_allocation_target
 
     target = latest_allocation_target(repository_root, strategy["strategy_id"])
     if target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
@@ -468,6 +468,11 @@ def _require_baseline_target(
         assessment["hard_blockers"] or assessment["eligibility"] not in {"baseline", "conviction"}
     ):
         raise OrderError("blocked assessment cannot increase baseline exposure")
+    payoff_reasons = assessment_payoff_reasons(assessment, settings)
+    if disposition in {"open", "increase"} and payoff_reasons:
+        raise OrderError(
+            "baseline assessment fails configured payoff gates: " + "|".join(payoff_reasons)
+        )
     leg = legs[0]
     reference = _reference_map(references).get((leg.security_id, leg.provider_contract_id))
     if reference is None:
@@ -604,7 +609,7 @@ def create_signal(
     if strategy["status"] not in {"ready", "active"}:
         raise OrderError(f"strategy {strategy_id} is not ready or active")
     if strategy["sleeve"] == "baseline":
-        from papertrader.allocation import latest_allocation_target
+        from papertrader.allocation import assessment_payoff_reasons, latest_allocation_target
 
         target = latest_allocation_target(repository_root, strategy_id)
         if (
@@ -640,6 +645,11 @@ def create_signal(
             or assessment["eligibility"] not in {"baseline", "conviction"}
         ):
             raise OrderError("blocked assessment cannot increase baseline exposure")
+        payoff_reasons = assessment_payoff_reasons(assessment, settings)
+        if target["disposition"] in {"open", "increase"} and payoff_reasons:
+            raise OrderError(
+                "baseline assessment fails configured payoff gates: " + "|".join(payoff_reasons)
+            )
     for candidate in rows:
         if candidate["strategy_id"] == strategy_id and candidate["status"] == "ready":
             candidate["status"] = "cancelled"
@@ -1120,3 +1130,74 @@ def cancel_paper_order(repository_root: Path, order_id: str) -> None:
         raise OrderError(f"order {order_id} is not pending")
     update_order_status(repository_root, order_id, "cancelled")
     update_signal_status(repository_root, order["signal_id"], "cancelled")
+
+
+def cancel_unauthorized_baseline_orders(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    now: datetime,
+) -> tuple[tuple[str, str], ...]:
+    """Cancel pending baseline entries that the latest canonical state no longer authorizes.
+
+    Fill processing calls this immediately before selecting any market bar.  It closes the
+    timing gap between allocation/assessment changes and a previously-created next-open order,
+    while leaving conviction and reduction orders untouched.
+    """
+
+    from papertrader.allocation import assessment_payoff_reasons, latest_allocation_target
+
+    instant = ensure_utc(now)
+    strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
+    assessments = {
+        row["security_id"]: row for row in read_table(repository_root, "security_assessments")
+    }
+    legs_by_order: dict[str, list[dict[str, str]]] = defaultdict(list)
+    for row in read_table(repository_root, "order_legs"):
+        legs_by_order[row["order_id"]].append(row)
+    cancelled: list[tuple[str, str]] = []
+    for order in sorted(read_table(repository_root, "orders"), key=lambda row: row["order_id"]):
+        if order["status"] != "pending":
+            continue
+        strategy = strategies.get(order["strategy_id"])
+        if strategy is None or strategy["sleeve"] != "baseline":
+            continue
+        order_legs = legs_by_order.get(order["order_id"], [])
+        opening_buy = bool(order_legs) and all(
+            leg["instrument_type"] == "equity" and leg["side"] == "long" and leg["action"] == "buy"
+            for leg in order_legs
+        )
+        if not opening_buy:
+            continue
+        reason = ""
+        target = latest_allocation_target(repository_root, strategy["strategy_id"])
+        if strategy["status"] not in {"ready", "active"}:
+            reason = "strategy_not_active"
+        elif target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
+            reason = "allocation_plan_superseded"
+        elif target["disposition"] not in {"open", "increase", "hold"}:
+            reason = f"allocation_disposition_{target['disposition']}"
+        else:
+            plan_time = parse_timestamp(target["as_of"])
+            if (
+                plan_time is None
+                or plan_time > instant
+                or instant - plan_time > settings.market_data.stale_price_after
+            ):
+                reason = "allocation_plan_stale"
+            else:
+                assessment = assessments.get(strategy["security_id"])
+                if assessment is None or assessment["assessed_at"] != target["assessment_as_of"]:
+                    reason = "assessment_superseded"
+                elif assessment["hard_blockers"]:
+                    reason = "assessment_hard_blocked"
+                elif assessment["eligibility"] not in {"baseline", "conviction"}:
+                    reason = "assessment_ineligible"
+                else:
+                    payoff_reasons = assessment_payoff_reasons(assessment, settings)
+                    if payoff_reasons:
+                        reason = "payoff_gate_" + "_and_".join(payoff_reasons)
+        if reason:
+            cancel_paper_order(repository_root, order["order_id"])
+            cancelled.append((order["order_id"], reason))
+    return tuple(cancelled)

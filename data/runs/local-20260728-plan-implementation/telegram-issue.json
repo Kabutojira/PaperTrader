@@ -1,0 +1,7 @@
+{
+  "severity": "warning",
+  "title": "Telegram delivery unavailable",
+  "description": "Latest-only delivery is pending verification for the next committed daily report; older failed reports will not be replayed.",
+  "owner": "delivery",
+  "related_run_id": "local-20260728-plan-implementation"
+}

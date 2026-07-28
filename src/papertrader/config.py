@@ -110,6 +110,8 @@ class AllocationSettings:
     maximum_sector_pct: Decimal
     maximum_theme_pct: Decimal
     cash_hurdle_score: Decimal
+    minimum_base_upside_pct: Decimal
+    minimum_upside_downside_ratio: Decimal
     minimum_confidence: str
     minimum_diversified_candidates: int
     maximum_assessment_age_days: int
@@ -449,6 +451,12 @@ def _load_runtime_settings(
         ),
         cash_hurdle_score=_decimal(
             parser, "allocation", "cash_hurdle_score", maximum=Decimal("100")
+        ),
+        minimum_base_upside_pct=_decimal(
+            parser, "allocation", "minimum_base_upside_pct", maximum=Decimal("1000")
+        ),
+        minimum_upside_downside_ratio=_decimal(
+            parser, "allocation", "minimum_upside_downside_ratio", maximum=Decimal("100")
         ),
         minimum_confidence=_choice(
             parser,

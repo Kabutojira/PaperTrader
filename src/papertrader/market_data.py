@@ -715,8 +715,35 @@ def latest_fx_rate(
 ) -> Decimal:
     """Return one fresh local-to-base rate, failing closed when missing or stale."""
 
+    return latest_fx_rate_record(
+        repository_root,
+        currency,
+        base_currency,
+        now=now,
+        maximum_age=maximum_age,
+    ).rate_to_base
+
+
+def latest_fx_rate_record(
+    repository_root: Path,
+    currency: str,
+    base_currency: str,
+    *,
+    now: datetime,
+    maximum_age: timedelta,
+) -> FxRate:
+    """Return the fresh rate together with its effective date and retrieval timestamp."""
+
     if currency == base_currency:
-        return Decimal("1")
+        instant = ensure_utc(now)
+        return FxRate(
+            date=instant.date(),
+            currency=currency,
+            base_currency=base_currency,
+            rate_to_base=Decimal("1"),
+            retrieved_at=instant,
+            source="base_currency_identity",
+        )
     rates = read_fx_cache(repository_root, currency, base_currency)
     if not rates:
         raise MarketDataError(f"missing FX cache for {currency}/{base_currency}")
@@ -724,7 +751,7 @@ def latest_fx_rate(
     age = ensure_utc(now) - ensure_utc(latest.retrieved_at)
     if age < timedelta(0) or age > maximum_age:
         raise MarketDataError(f"stale FX cache for {currency}/{base_currency}")
-    return latest.rate_to_base
+    return latest
 
 
 def fx_rates_for_actions(

@@ -21,26 +21,47 @@ from papertrader.advice import (
     reason_label,
 )
 from papertrader.atomic_io import atomic_write_text
+from papertrader.market_data import read_fx_cache
 from papertrader.tables import read_table
-from papertrader.utils import CanonicalValueError, decimal_text, parse_timestamp, required_decimal
+from papertrader.utils import (
+    CanonicalValueError,
+    decimal_text,
+    format_timestamp,
+    parse_timestamp,
+    required_decimal,
+)
 from papertrader.wiki import register_wiki_page
 
 INVESTOR_BRIEF_START = "<!-- papertrader-investor-brief:start -->"
 INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
-DASHBOARD_PAGES = frozenset({"index", "model-portfolio", "signals", "performance", "system-status"})
+DASHBOARD_PAGES = frozenset(
+    {
+        "index",
+        "model-portfolio",
+        "security-catalog",
+        "signals",
+        "performance",
+        "system-status",
+    }
+)
 STANCE_LABELS = {
     "hold_cash": "No trade — hold 100% cash",
     "maintain": "Maintain the current model portfolio",
-    "deploy": "Deploy approved paper capital",
-    "rebalance": "Rebalance toward approved paper targets",
+    "deploy": "Deploy approved model capital",
+    "rebalance": "Rebalance toward approved model targets",
     "reduce_risk": "Reduce model-portfolio risk",
     "exit": "Exit the approved model exposure",
     "blocked": "Decision blocked — do not copy actions",
 }
-STATUS_LABELS = {
+INVESTMENT_STATUS_LABELS = {
     "current": "Current",
-    "degraded": "Degraded — review coverage and data gaps",
+    "degraded": "Degraded — review investment data gaps",
     "blocked": "Blocked — current exposure cannot be projected safely",
+}
+OPERATIONS_STATUS_LABELS = {
+    "current": "Current",
+    "degraded": "Attention required",
+    "blocked": "Blocked",
 }
 CLASSIFICATION_LABELS = {
     "approved": "Approved candidate",
@@ -163,7 +184,7 @@ def _portfolio_markdown_rows(rows: Sequence[ModelPortfolioRow]) -> list[str]:
         holding = (
             "Cash"
             if row.holding_type == "cash"
-            else _link(f"{row.ticker} — {row.company_name}", row.research_page)
+            else _link(f"{row.ticker} — {row.company_name}", row.security_research_page)
         )
         output.append(
             f"| {holding} | {_cell(row.sleeve)} | {row.current_weight_pct}% | "
@@ -182,7 +203,8 @@ def investor_brief_markdown(snapshot: DecisionSnapshot) -> str:
     lines = [
         f"# {STANCE_LABELS[snapshot.stance]}",
         "",
-        f"- **Data status:** {STATUS_LABELS[snapshot.data_status]}",
+        f"- **Investment data:** {INVESTMENT_STATUS_LABELS[snapshot.investment_data_status]}",
+        f"- **Operations:** {OPERATIONS_STATUS_LABELS[snapshot.operations_status]}",
         f"- **As of:** `{snapshot.as_of}`",
         f"- **Snapshot:** `{snapshot.snapshot_id}`",
         f"- **Cash:** {current.cash_base} {snapshot.base_currency} ({current.cash_weight_pct}%)",
@@ -200,7 +222,7 @@ def investor_brief_markdown(snapshot: DecisionSnapshot) -> str:
     if changes:
         lines.extend(
             f"- **{_markdown(row.ticker)}:** {_action_label(row.action)} to "
-            f"{row.approved_target_weight_pct}% (paper estimate)"
+            f"{row.approved_target_weight_pct}% (target estimate)"
             for row in changes[:5]
         )
     else:
@@ -267,11 +289,16 @@ def investor_report_sections(snapshot: DecisionSnapshot) -> list[str]:
             lines.extend(
                 [
                     "### "
-                    + _link(f"{signal.ticker} — {signal.company_name}", signal.research_page),
+                    + _link(
+                        f"{signal.ticker} — {signal.company_name}",
+                        signal.security_research_page,
+                    ),
                     "",
                     f"- Action: **{_action_label(signal.action)}**",
                     f"- State: {_action_status_label(signal.action_status)} ({copy})",
                     f"- Strategy: {_markdown(signal.strategy_name)}",
+                    "- Strategy research: "
+                    + _link("Open strategy page", signal.strategy_research_page),
                     f"- Signal window: `{signal.created_at}` to `{signal.expires_at}`",
                     f"- Market data: `{signal.market_data_as_of}`",
                     f"- Rationale: {_markdown(signal.rationale)}",
@@ -360,7 +387,7 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
     target = snapshot.approved_target_portfolio
     lines = [
         _frontmatter(
-            title="PaperTrader — today's paper-investment decision",
+            title="PaperTrader — today's investment decision",
             page_type="dashboard",
             tag="dashboard",
             day=day,
@@ -368,14 +395,13 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
         ),
         "# PaperTrader",
         "",
-        f"**As of `{snapshot.as_of}` · Data status: {STATUS_LABELS[snapshot.data_status]}**",
+        f"**As of `{snapshot.as_of}` · Investment data: "
+        f"{INVESTMENT_STATUS_LABELS[snapshot.investment_data_status]} · Operations: "
+        f"{OPERATIONS_STATUS_LABELS[snapshot.operations_status]}**",
         "",
         f"## {STANCE_LABELS[snapshot.stance]}",
         "",
         _status_cards(snapshot),
-        "",
-        "Paper-only model output for research and simulation; it is not personalized "
-        "investment advice.",
         "",
         "### Why",
         "",
@@ -387,20 +413,26 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
         f"**{current.cash_weight_pct}% cash**. The approved target retains "
         f"**{target.cash_weight_pct}% cash**.",
         "",
-        "| Holding | Current | Approved target | Action |",
-        "| --- | ---: | ---: | --- |",
+        "| Holding | Current | Approved target | Action | Strategy |",
+        "| --- | ---: | ---: | --- | --- |",
     ]
     for row in current.rows:
         label = "Cash" if row.holding_type == "cash" else f"{row.ticker} — {row.company_name}"
-        linked = label if row.holding_type == "cash" else _link(label, row.research_page)
+        linked = label if row.holding_type == "cash" else _link(label, row.security_research_page)
+        strategy = _link("Open", row.strategy_research_page) if row.strategy_research_page else "—"
         lines.append(
             f"| {linked} | {row.current_weight_pct}% | "
-            f"{row.approved_target_weight_pct}% | {_action_label(row.action)} |"
+            f"{row.approved_target_weight_pct}% | {_action_label(row.action)} | {strategy} |"
         )
     lines.extend(["", "## Actionable trade signals", ""])
     if snapshot.actionable_signals:
         lines.extend(
-            f"- **{_link(f'{signal.ticker} — {signal.company_name}', signal.research_page)}:** "
+            "- **"
+            + _link(
+                f"{signal.ticker} — {signal.company_name}",
+                signal.security_research_page,
+            )
+            + ":** "
             f"{_action_label(signal.action)} · {_action_status_label(signal.action_status)}"
             for signal in snapshot.actionable_signals
         )
@@ -435,13 +467,15 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
             f"- Largest position: **{snapshot.performance.largest_position_weight_pct}%**",
             f"- Current assessments: **{coverage.current_assessment_count}/"
             f"{coverage.allocation_candidate_count}**",
-            f"- Current relationships: **{coverage.current_relationship_count}/"
-            f"{coverage.required_relationship_count}**",
+            f"- Relationship reviews: **{coverage.reviewed_relationship_count}/"
+            f"{coverage.required_relationship_review_count}**",
+            f"- Accepted relationships: **{coverage.accepted_relationship_count}**",
             f"- Market retrieval failures: **{coverage.market_data_failure_count}**",
             "",
             "## Explore",
             "",
             "- [[model-portfolio|Model portfolio]]",
+            "- [[security-catalog|Securities]]",
             "- [[signals|Signals and research alerts]]",
             "- [[performance|Performance and risk]]",
             "- [[research-catalog|Research catalog]]",
@@ -474,7 +508,12 @@ def _portfolio_html(rows: Sequence[ModelPortfolioRow], currency: str) -> str:
                 f'data-market-data-as-of="{_html(row.market_data_as_of)}" '
                 f'data-ticker="{_html(row.ticker)}" '
                 f'data-company="{_html(row.company_name or "Cash")}">',
-                f"<h3>{_html(label)}</h3>",
+                (
+                    f'<h3><a href="{_html(_page_key(row.security_research_page))}">'
+                    f"{_html(label)}</a></h3>"
+                    if row.security_research_page
+                    else f"<h3>{_html(label)}</h3>"
+                ),
                 '<dl class="portfolio-card-values">',
                 f"<div><dt>Current</dt><dd>{_html(row.current_weight_pct)}%</dd></div>",
                 "<div><dt>Approved target</dt><dd>"
@@ -483,11 +522,16 @@ def _portfolio_html(rows: Sequence[ModelPortfolioRow], currency: str) -> str:
                 f"<div><dt>State</dt><dd>{_html(_action_status_label(row.action_status))}</dd></div>",
                 f"<div><dt>Reference mark</dt><dd>{_html(row.mark)} "
                 f"{_html(row.mark_currency)}</dd></div>",
+                f"<div><dt>Base mark</dt><dd>{_html(row.mark_base)} {_html(currency)}</dd></div>",
+                f"<div><dt>FX to {_html(currency)}</dt><dd>{_html(row.fx_rate_to_base)}"
+                f" · {_html(row.fx_as_of)}</dd></div>",
                 f"<div><dt>As of</dt><dd>{_html(row.market_data_as_of)}</dd></div>",
                 "</dl>",
                 (
-                    f'<p><a href="{_html(_page_key(row.research_page))}">Complete research</a></p>'
-                    if row.research_page
+                    '<p><a href="'
+                    + _html(_page_key(row.strategy_research_page))
+                    + '">Strategy research</a></p>'
+                    if row.strategy_research_page
                     else ""
                 ),
                 "</article>",
@@ -514,9 +558,7 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
         "",
         f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
         "",
-        "This is a paper-only, non-personalized research portfolio. Pending targets are "
-        "projections; "
-        "only deterministic fills change the current portfolio.",
+        "Pending targets are projections; only deterministic fills change the current portfolio.",
         "",
         _portfolio_html(current.rows, snapshot.base_currency),
         "",
@@ -526,13 +568,12 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
         "Download committed CSV</a>",
         '<a class="button-link" href="data/decision_snapshot.json" download>'
         "Download snapshot JSON</a>",
-        '<label for="reference-notional">Illustrative reference notional</label>',
+        '<label for="reference-notional">Reference portfolio value</label>',
         '<input id="reference-notional" type="number" min="0" step="100" inputmode="decimal">',
-        '<button type="button" id="scale-portfolio">Scale long-equity targets locally</button>',
+        '<button type="button" id="scale-portfolio">Calculate whole-share quantities</button>',
         "</div>",
-        '<p class="scaler-notice"><strong>Illustrative scaling only.</strong> Your scaled '
-        "quantities "
-        "have not passed PaperTrader's portfolio-level risk checks.</p>",
+        '<p class="scaler-notice">The calculation runs only in this browser and does not '
+        "write portfolio state.</p>",
         '<div id="scaled-portfolio" aria-live="polite"></div>',
         "",
         "## Valuation and thesis detail",
@@ -542,7 +583,7 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
     ]
     for row in current.rows:
         label = "Cash" if row.holding_type == "cash" else f"{row.ticker} — {row.company_name}"
-        linked = label if row.holding_type == "cash" else _link(label, row.research_page)
+        linked = label if row.holding_type == "cash" else _link(label, row.security_research_page)
         lines.append(
             f"| {linked} | {_cell(row.confidence)} | {row.downside_pct or '—'}% | "
             f"{row.base_upside_pct or '—'}% | {_cell(row.review_at)} | "
@@ -564,11 +605,12 @@ def _signal_detail(signal: ActionableSignalView) -> list[str]:
     if signal.limit_price:
         order_description = f"{order_description} {_markdown(signal.limit_price)}"
     return [
-        f"### {_link(f'{signal.ticker} — {signal.company_name}', signal.research_page)}",
+        f"### {_link(f'{signal.ticker} — {signal.company_name}', signal.security_research_page)}",
         "",
         f"- **Action:** {_action_label(signal.action)}",
         f"- **State:** {_action_status_label(signal.action_status)}",
         f"- **Strategy:** {_markdown(signal.strategy_name)}",
+        f"- **Strategy research:** {_link('Open strategy page', signal.strategy_research_page)}",
         f"- **Window:** `{signal.created_at}` to `{signal.expires_at}`",
         f"- **Market data:** `{signal.market_data_as_of}`",
         f"- **Current → target:** {signal.current_weight_pct}% → "
@@ -635,9 +677,15 @@ def _signals_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) 
     lines.extend(["", "## Research alerts — not trade signals", ""])
     if snapshot.research_alerts:
         for alert in snapshot.research_alerts:
+            alert_security = securities.get(alert.security_id)
+            security_page = (
+                alert_security["research_page"]
+                if alert_security is not None
+                else alert.research_page
+            )
             lines.extend(
                 [
-                    f"### {_link(f'{alert.ticker} — {alert.company_name}', alert.research_page)}",
+                    f"### {_link(f'{alert.ticker} — {alert.company_name}', security_page)}",
                     "",
                     f"**{alert.visible_label}**",
                     "",
@@ -658,13 +706,10 @@ def _signals_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) 
             reverse=True,
         )[:20]:
             label = f"{completed_security['ticker']} — {completed_security['company_name']}"
-            research_page = (
-                completed_strategy["research_page"] or completed_security["research_page"]
-            )
             lines.append(
                 f"- **{_markdown(completed_row['status'].title())}:** "
-                f"{_link(label, research_page)} — "
-                f"{_markdown(completed_strategy['name'])} · "
+                f"{_link(label, completed_security['research_page'])} — "
+                f"{_link(completed_strategy['name'], completed_strategy['research_page'])} · "
                 f"created `{completed_row['created_at']}`"
             )
     else:
@@ -712,6 +757,10 @@ def _performance_page(snapshot: DecisionSnapshot, day: date) -> str:
         "",
         f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
         "",
+        f"Current performance epoch started `{performance.epoch_started_at}` at "
+        f"**{performance.epoch_opening_equity_base} {snapshot.base_currency}**. "
+        f"Prior audit epochs retained: **{performance.prior_epoch_count}**.",
+        "",
         _performance_svg(performance.history),
         "",
         "| Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |",
@@ -740,7 +789,7 @@ def _performance_page(snapshot: DecisionSnapshot, day: date) -> str:
     ]
     if changes:
         lines.extend(
-            f"- **{_link(f'{row.ticker} — {row.company_name}', row.research_page)}:** "
+            f"- **{_link(f'{row.ticker} — {row.company_name}', row.security_research_page)}:** "
             f"{_action_label(row.action)} from {row.current_weight_pct}% to "
             f"{row.approved_target_weight_pct}%"
             for row in changes
@@ -769,6 +818,99 @@ def _performance_page(snapshot: DecisionSnapshot, day: date) -> str:
     return "\n".join(lines)
 
 
+def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) -> str:
+    """Render every tracked instrument with direct research and FX-transparent marks."""
+
+    as_of = parse_timestamp(snapshot.as_of)
+    assert as_of is not None
+    latest = {row["security_id"]: row for row in read_table(repository_root, "market_latest")}
+    assessments = {
+        row["security_id"]: row
+        for row in read_table(repository_root, "security_assessments")
+        if (parse_timestamp(row["assessed_at"]) or as_of) <= as_of
+    }
+    candidates = {candidate.security_id: candidate for candidate in snapshot.candidate_pipeline}
+    lines = [
+        _frontmatter(
+            title="PaperTrader tracked securities",
+            page_type="securities-dashboard",
+            tag="security",
+            day=day,
+            snapshot=snapshot,
+        ),
+        "# Securities",
+        "",
+        f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
+        "",
+        "Ticker links open the maintained security analysis. Native marks are converted "
+        f"to {snapshot.base_currency} with the displayed committed FX observation.",
+        "",
+        "| Security | Venue | Native mark | Base mark | Decision | Main reason | Downside | "
+        "Base upside | Data and FX as of | Next review |",
+        "| --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- |",
+    ]
+    for security in sorted(
+        read_table(repository_root, "securities"),
+        key=lambda row: (row["ticker"], row["venue_mic"], row["security_id"]),
+    ):
+        market = latest.get(security["security_id"])
+        assessment = assessments.get(security["security_id"])
+        candidate = candidates.get(security["security_id"])
+        mark_text = "—"
+        base_mark_text = "—"
+        data_as_of = "—"
+        if market is not None and market["status"] == "ok":
+            raw_mark = market["adjusted_close"] or market["close"]
+            mark = required_decimal(raw_mark, label="security dashboard mark")
+            fx_rate: Decimal | None = None
+            fx_as_of = ""
+            if security["currency"] == snapshot.base_currency:
+                fx_rate = Decimal("1")
+                fx_as_of = market["retrieved_at"]
+            else:
+                rates = [
+                    rate
+                    for rate in read_fx_cache(
+                        repository_root, security["currency"], snapshot.base_currency
+                    )
+                    if rate.retrieved_at <= as_of and rate.date <= as_of.date()
+                ]
+                if rates:
+                    fx = max(rates, key=lambda value: (value.date, value.retrieved_at))
+                    fx_rate = fx.rate_to_base
+                    fx_as_of = format_timestamp(fx.retrieved_at)
+            display_mark = mark.quantize(Decimal("0.0001"))
+            mark_text = f"{decimal_text(display_mark)} {security['currency']}"
+            if fx_rate is not None:
+                base_mark = (mark * fx_rate).quantize(Decimal("0.0001"))
+                base_mark_text = f"{decimal_text(base_mark)} {snapshot.base_currency}"
+            data_as_of = market["retrieved_at"]
+            if fx_as_of:
+                data_as_of += f" / FX {fx_as_of}"
+        decision = "Unassessed"
+        reason = "—"
+        downside = "—"
+        upside = "—"
+        review = security["next_review_at"] or "—"
+        if assessment is not None:
+            downside = f"{assessment['downside_pct']}%"
+            upside = f"{assessment['base_upside_pct']}%"
+            review = assessment["expires_at"] or review
+        if candidate is not None:
+            decision = CLASSIFICATION_LABELS[candidate.classification]
+            if candidate.reason_labels:
+                reason = candidate.reason_labels[0]
+        label = f"{security['ticker']} — {security['company_name']}"
+        lines.append(
+            f"| {_link(label, security['research_page'])} | "
+            f"{_cell(security['venue_mic'])} · {_cell(security['status'])} | "
+            f"{mark_text} | {base_mark_text} | {_cell(decision)} | {_cell(reason)} | "
+            f"{downside} | {upside} | {_cell(data_as_of)} | {_cell(review)} |"
+        )
+    lines.extend(["", "[[index|Back to today's decision]]", ""])
+    return "\n".join(lines)
+
+
 def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) -> str:
     coverage = snapshot.coverage
     candidate_fx_gaps = sum(
@@ -790,7 +932,8 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         "",
         f"**Publication snapshot:** `{snapshot.snapshot_id}`",
         f"**As of:** `{snapshot.as_of}`",
-        f"**Data status:** {STATUS_LABELS[snapshot.data_status]}",
+        f"**Investment data:** {INVESTMENT_STATUS_LABELS[snapshot.investment_data_status]}",
+        f"**Operations:** {OPERATIONS_STATUS_LABELS[snapshot.operations_status]}",
         "**Publication validation:** Snapshot and exports validated",
         "**Portfolio reconciliation:** Reconciled",
         "",
@@ -799,8 +942,9 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         f"- Assessments: {coverage.current_assessment_count}/{coverage.allocation_candidate_count}",
         f"- Fresh-evidence assessments: {coverage.fresh_evidence_assessment_count}/"
         f"{coverage.allocation_candidate_count}",
-        f"- Current accepted relationships: {coverage.current_relationship_count}/"
-        f"{coverage.required_relationship_count}",
+        f"- Relationship reviews: {coverage.reviewed_relationship_count}/"
+        f"{coverage.required_relationship_review_count}",
+        f"- Accepted relationships: {coverage.accepted_relationship_count}",
         f"- Ready or active strategies: {coverage.ready_or_active_strategy_count}",
         f"- Active signals: {coverage.active_signal_count}",
         f"- Pending orders: {coverage.pending_order_count}",
@@ -862,6 +1006,7 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
             "## Audit links",
             "",
             "- [[research-catalog|Complete research catalog]]",
+            "- [[security-catalog|Tracked securities]]",
             "- [[SCHEMA|Wiki schema]]",
             "- [[log|Append-only research log]]",
             "- [Decision snapshot JSON](data/decision_snapshot.json)",
@@ -948,6 +1093,7 @@ def refresh_investor_pages(repository_root: Path, snapshot: DecisionSnapshot) ->
     wiki_root = repository_root / "data" / "wiki"
     paths = {
         "model-portfolio.md": _model_portfolio_page(snapshot, day),
+        "security-catalog.md": _securities_page(repository_root, snapshot, day),
         "performance.md": _performance_page(snapshot, day),
         "system-status.md": _system_status_page(repository_root, snapshot, day),
     }
@@ -982,6 +1128,7 @@ def refresh_investor_pages(repository_root: Path, snapshot: DecisionSnapshot) ->
         for name in (
             "index.md",
             "model-portfolio.md",
+            "security-catalog.md",
             "signals.md",
             "performance.md",
             "system-status.md",

@@ -7,15 +7,17 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f7970c846929cff52159"
-as_of: "2026-07-28T10:15:46Z"
+snapshot_id: "decision_f354d036c7b7d92bd9ff"
+as_of: "2026-07-28T13:49:15Z"
 ---
 
 # Performance and risk
 
-**Snapshot `decision_f7970c846929cff52159` · As of `2026-07-28T10:15:46Z`**
+**Snapshot `decision_f354d036c7b7d92bd9ff` · As of `2026-07-28T13:49:15Z`**
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-24 to 2026-07-28; latest equity 100000."><title>Model equity history</title><desc>Equity history from 2026-07-24 to 2026-07-28; latest equity 100000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 25.00,45.00 50.00,45.00 75.00,45.00 100.00,45.00" /></svg>
+Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
+
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-07-28; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-07-28; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -32,17 +34,13 @@ as_of: "2026-07-28T10:15:46Z"
 
 ## Approved allocation changes
 
-- **[ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9):** Buy from 0% to 4.398251%
+No approved allocation changes.
 
 ## Committed history
 
 | Date | Equity | Cash | Gross exposure | Daily return | Cumulative return | Drawdown |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2026-07-24 | 100000 | 100000 | 0 | 0% | 0% | 0% |
-| 2026-07-25 | 100000 | 100000 | 0 | 0% | 0% | 0% |
-| 2026-07-26 | 100000 | 100000 | 0 | 0% | 0% | 0% |
-| 2026-07-27 | 100000 | 100000 | 0 | 0% | 0% | 0% |
-| 2026-07-28 | 100000 | 100000 | 0 | 0% | 0% | 0% |
+| 2026-07-28 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 

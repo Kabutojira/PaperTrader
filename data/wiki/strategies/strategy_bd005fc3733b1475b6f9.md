@@ -1,5 +1,5 @@
 ---
-title: Intuitive Surgical bounded baseline allocation
+title: Intuitive Surgical valuation watch
 type: strategy
 status: maintained
 tags: [strategy, research, risk]
@@ -15,66 +15,47 @@ confidence: high
 next_review: "2026-08-04"
 ---
 
-# Intuitive Surgical bounded baseline allocation
+# Intuitive Surgical valuation watch
 
 ## Decision
 
-Use a **long-equity baseline** structure for
-[[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] under immutable allocation plan
-`allocation_plan_8859abf5cf5708b35855`. The plan ranks the security first with an effective score
-of 63, above the configured cash hurdle of 60, and sets a 4.39% target from a 0% filled weight and a
-2.2% pending weight. Its `increase` disposition therefore represents an incremental 2.196574% of
-model equity, not permission to exceed the deterministic target. This is a lower-conviction
-allocation, not a conviction trade and not personalized investment advice.
+Keep [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] on the valuation watchlist and
+hold cash. The strategy is **paused**: assessed base-case upside is 2.5%, below the configured 10%
+entry minimum, while the 23.2% downside case makes the upside-to-downside ratio about 0.11:1,
+below the required 1:1. A score above the cash hurdle is no longer sufficient on its own.
 
-The bounded increase is preferable to retaining the incremental 2.196574% in cash because the accepted
-[[relationships/relationship_3570e003fd90cd83d26f|healthcare-automation relationship]], high
-business quality, balance-sheet strength, liquidity, recurring procedure economics, and score above
-the cash hurdle provide a modest positive portfolio-ranking edge. The allocation remains below the
-5% baseline-position cap and materially below the 10% general single-position cap.
+The two unfilled orders, `order_3b1467697b731e2bf689` and `order_745a7a020ecf89d5734d`, and their
+signals were cancelled before the capital resize. No ISRG position was filled.
 
-## Why conviction failed
+## Why the entry is paused
 
 The current assessment does not meet the full conviction gate. At the validated USD 356.83 mark,
 the bounded 12-month downside case is USD 274.20, or 23.2% below market, while the USD 365.60 base
-case offers only 2.5% upside. That is below the configured 20% margin-of-safety threshold. Timing is
+case offers only 2.5% upside. That fails both payoff gates and is below the configured 20%
+margin-of-safety threshold. Timing is
 also unfavorable: the 27 July close remains below the 20-, 50-, and 200-day averages, RSI(14) is
-40.46, the 20-day return is -11.83%, and MACD remains negative. The plan also reports insufficient
-diversification, so the deterministic 4.39% target must not be enlarged.
+40.46, the 20-day return is -11.83%, and MACD remains negative. Timing remains a ranking input, but
+the valuation/payoff failures independently prevent a buy.
 
 Soft gaps retained: `margin_of_safety_below_target`, `timing_unfavorable`, and
-`valuation_not_compelling`. There is no current hard blocker, and assessment identity
-`2026-07-27T21:28:56Z` remains unchanged.
+`valuation_not_compelling`. There is no hard data blocker; this is an unattractive payoff decision
+under assessment identity `2026-07-27T21:28:56Z`.
 
 ## Structure and sizing
 
-- Sleeve and structure: baseline, long common equity only.
-- Entry action: use the `open` signal lifecycle action for the plan's `increase` disposition only
-  while the same allocation plan and assessment remain current, the USD equity mark and USD/EUR
-  rate remain fresh, and deterministic risk validation accepts the order.
-- Fill policy: a later `execute_strategy` operation may create a pending `next_open` paper order;
-  this research operation creates no order or fill.
-- Existing state: prior signal `signal_6c82d41c9f217bdab771` and its pending paper order represent
-  the plan's 2.2% pending weight; this research operation does not alter either artifact.
-- Target-size limit: 4.39% of model equity, EUR 4,393.148137004536205664309978, with an incremental
-  plan delta of EUR 2,196.574068502268102832154989 after pending exposure.
-- Normalized research leg: buy the same long ISRG common-equity identity. No new share quantity is
-  selected here; deterministic baseline execution must derive the exact whole-share delta from the
-  live plan, holdings, pending orders, fresh price, and FX and may create a smaller or no order if
-  state changes.
-- Risk ceiling: 5%, matching the configured baseline-position cap. The current plan-owned target
-  remains 4.39%; no short, option, leverage, or multi-leg structure is eligible in baseline mode.
-- Strategy review: 4 August 2026, or immediately if the plan, assessment, price, FX, or relationship
-  is superseded.
+- Sleeve and possible future structure: baseline, long common equity only.
+- Current action: no entry and no increase.
+- Reactivation gate: a fresh assessment must show at least 10% base-case upside, at least 1:1
+  base-upside-to-downside, clear the cash score, and retain acceptable evidence and risk state.
+- Risk ceiling after any future reactivation: 5%, matching the baseline-position cap.
+- Review: after material price or fundamental change, and no later than 26 August 2026.
 
 ## Execution handoff
 
-The corrected lifecycle contract maps both baseline `open` and `increase` allocation dispositions
-to an `open` signal. Signal `signal_98939c5cb11dd6d9d2ae` represents only a request to review the
-incremental allocation under the current plan; it selects no quantity and creates no order or fill.
-Exactly one separate `execute_strategy` follow-up, `01KYKX54MRDBWHGFKQERB0YG2Q`, must revalidate the plan,
-assessment, mark, FX, pending order, cash, and risk limits before deterministic code derives any
-positive whole-share delta. The prior pending paper order remains unchanged.
+There is no execution handoff while the strategy is paused. Deterministic allocation, signal, and
+order gates now enforce the same payoff thresholds, and fill processing cancels a stale baseline
+entry before selecting a market bar. Any later reactivation requires a new current allocation plan
+and a fresh strategy review.
 
 ## Downside, base case, and exit conditions
 
@@ -82,9 +63,9 @@ The downside case is USD 274.20 based on 30 times the annualized first-half GAAP
 rate. The base case is USD 365.60 at 40 times that run rate. These are bounded 12-month scenarios,
 not perpetual values; both require refresh after Q3 evidence.
 
-Reduce or close when a current deterministic plan says `reduce` or `close`, when valuation no
-longer clears the cash hurdle, or when exposure breaches an applicable cap. Exit or pause on a hard
-blocker, superseded assessment, stale price or FX, material safety or training deterioration,
+If exposure exists after a future reactivation, reduce or close when a current deterministic plan
+says `reduce` or `close`, when valuation no longer clears every payoff gate, or when exposure
+breaches an applicable cap. Exit or pause on a hard blocker, superseded assessment, stale price or FX, material safety or training deterioration,
 slowing procedure or installed-base growth, recurring revenue decoupling from utilization,
 hospital-budget deferrals, reimbursement or regulatory constraints, competitive erosion, tariff or
 supply pressure that prevents cash conversion, or Q3 evidence that invalidates the earnings range.

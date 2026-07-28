@@ -105,6 +105,8 @@ def _cash_total(repository_root: Path) -> Decimal:
         "dividend",
         "interest",
         "correction",
+        "capital_contribution",
+        "capital_withdrawal",
     }
     for row in read_table(repository_root, "cash_ledger"):
         if row["cash_entry_id"] in seen:

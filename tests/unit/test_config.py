@@ -25,12 +25,14 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.market_data.minimum_sma_200_observations == 200
     assert settings.indicators.sma_periods == (20, 50, 200)
     assert settings.orders.default_fill_policy == "next_open"
-    assert settings.portfolio.initial_capital == Decimal("100000.00")
+    assert settings.portfolio.initial_capital == Decimal("10000.00")
     assert settings.allocation.mode == "active"
     assert settings.allocation.target_invested_pct == Decimal("60")
     assert settings.allocation.minimum_cash_reserve_pct == Decimal("25")
     assert settings.allocation.maximum_baseline_sleeve_pct == Decimal("30")
     assert settings.allocation.maximum_baseline_position_pct == Decimal("5")
+    assert settings.allocation.minimum_base_upside_pct == Decimal("10")
+    assert settings.allocation.minimum_upside_downside_ratio == Decimal("1")
     assert settings.allocation.minimum_confidence == "medium"
     assert settings.allocation.research_refresh_lead_days == 7
     assert settings.operations.maximum_llm_operations_per_run == 5

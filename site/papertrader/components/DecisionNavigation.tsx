@@ -12,6 +12,7 @@ import styles from "../styles.scss";
 const links = [
   { label: "Today", slug: "index" },
   { label: "Model portfolio", slug: "model-portfolio" },
+  { label: "Securities", slug: "security-catalog" },
   { label: "Signals", slug: "signals" },
   { label: "Research", slug: "research-catalog" },
   { label: "Performance", slug: "performance" },
@@ -46,7 +47,7 @@ const DecisionNavigation: QuartzComponent = ({
         href={resolveRelative(current, "index" as FullSlug)}
       >
         <span>PaperTrader</span>
-        <small>paper-only research</small>
+        <small>decision dashboard</small>
       </a>
       <nav class="papertrader-nav" aria-label="Primary navigation">
         {links.map(({ label, slug }) => {

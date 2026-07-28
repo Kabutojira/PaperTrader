@@ -53,14 +53,43 @@ def ensure_initial_capital(
     """Append exactly one immutable initial-capital entry in the base currency."""
 
     assert_paper_execution_enabled(settings)
+    rows = read_table(repository_root, "cash_ledger")
+    initial = [row for row in rows if row["entry_type"] == "initial_capital"]
+    if initial:
+        if len(initial) != 1:
+            raise ExecutionError("initial-capital ledger invariant is violated")
+        row = initial[0]
+        amount = required_decimal(row["amount"], label="initial capital")
+        fx_rate = required_decimal(row["fx_rate_to_base"], label="initial capital FX")
+        base_amount = required_decimal(row["base_amount"], label="initial capital base amount")
+        valid_ids = {
+            stable_id("cash", "initial_capital", row["currency"], amount),
+            # Version-1 initialization hashed the configured two-decimal Decimal but wrote
+            # its normalized text to CSV. Accept that immutable historical identity.
+            stable_id(
+                "cash",
+                "initial_capital",
+                row["currency"],
+                amount.quantize(Decimal("0.01")),
+            ),
+        }
+        if (
+            amount <= 0
+            or row["currency"] != settings.portfolio.base_currency
+            or fx_rate != 1
+            or base_amount != amount
+            or row["cash_entry_id"] not in valid_ids
+            or row["reference_id"]
+            or row["notes"] != "Configured initial paper capital"
+        ):
+            raise ExecutionError("initial-capital ledger invariant is violated")
+        return row["cash_entry_id"]
     entry_id = stable_id(
         "cash",
         "initial_capital",
         settings.portfolio.base_currency,
         settings.portfolio.initial_capital,
     )
-    rows = read_table(repository_root, "cash_ledger")
-    initial = [row for row in rows if row["entry_type"] == "initial_capital"]
     expected = {
         "cash_entry_id": entry_id,
         "occurred_at": format_timestamp(ensure_utc(occurred_at)),
@@ -73,21 +102,6 @@ def ensure_initial_capital(
         "run_id": run_id,
         "notes": "Configured initial paper capital",
     }
-    if initial:
-        row = initial[0]
-        economic_fields = {
-            "cash_entry_id",
-            "entry_type",
-            "reference_id",
-            "currency",
-            "amount",
-            "fx_rate_to_base",
-            "base_amount",
-            "notes",
-        }
-        if len(initial) != 1 or any(row[field] != expected[field] for field in economic_fields):
-            raise ExecutionError("initial-capital ledger invariant is violated")
-        return row["cash_entry_id"]
     append_unique(
         repository_root,
         "cash_ledger",

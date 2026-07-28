@@ -31,7 +31,9 @@ const publicationFiles = {
     "approved_target_quantity",
     "mark",
     "mark_currency",
+    "mark_base",
     "fx_rate_to_base",
+    "fx_as_of",
     "market_data_as_of",
     "action",
     "action_status",
@@ -48,6 +50,8 @@ const publicationFiles = {
     "exit_rule",
     "invalidation",
     "review_at",
+    "security_research_page",
+    "strategy_research_page",
     "research_page",
     "reason_codes",
   ],
@@ -77,6 +81,8 @@ const publicationFiles = {
     "exit_rule",
     "invalidation",
     "rationale",
+    "security_research_page",
+    "strategy_research_page",
     "research_page",
     "reason_codes",
   ],
@@ -168,7 +174,8 @@ function validateSnapshot(content) {
     "run_id",
     "as_of",
     "report_date",
-    "data_status",
+    "investment_data_status",
+    "operations_status",
     "stance",
     "stance_reason_codes",
     "base_currency",
@@ -183,7 +190,7 @@ function validateSnapshot(content) {
     "source_state_hashes",
   ];
   assertExactKeys(snapshot, required, "decision snapshot");
-  if (snapshot.version !== 1)
+  if (snapshot.version !== 2)
     throw new Error("unsupported decision snapshot version");
   if (!/^decision_[0-9a-f]{20}$/.test(snapshot.snapshot_id)) {
     throw new Error("decision snapshot ID is invalid");
@@ -194,8 +201,10 @@ function validateSnapshot(content) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(snapshot.report_date)) {
     throw new Error("decision snapshot report_date is invalid");
   }
-  if (!["current", "degraded", "blocked"].includes(snapshot.data_status)) {
-    throw new Error("decision snapshot data_status is invalid");
+  for (const field of ["investment_data_status", "operations_status"]) {
+    if (!["current", "degraded", "blocked"].includes(snapshot[field])) {
+      throw new Error(`decision snapshot ${field} is invalid`);
+    }
   }
   if (
     ![

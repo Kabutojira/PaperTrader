@@ -1,0 +1,40 @@
+{
+  "strategy": {
+    "strategy_id": "strategy_bd005fc3733b1475b6f9",
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "security_id": "security_1f9cce545ede94cd6349",
+    "relationship_id": "relationship_3570e003fd90cd83d26f",
+    "name": "Intuitive Surgical valuation watch",
+    "status": "paused",
+    "direction": "long",
+    "instrument_type": "equity",
+    "thesis": "Intuitive Surgical remains a high-quality business, but assessed base-case upside of 2.5% is below the 10% entry minimum and its upside-to-downside ratio is below 1:1, so cash is currently preferable.",
+    "entry_rule": "Do not open or increase while base-case upside is below 10% or the base-upside-to-downside ratio is below 1:1; require a current allocation plan and assessment before reactivation.",
+    "exit_rule": "No live exposure exists; keep the strategy paused until a fresh assessment clears every configured payoff and risk gate.",
+    "invalidation": "Reassess if price, fundamentals, procedure growth, recurring revenue, competitive position, or the valuation range changes enough to clear the configured payoff gates.",
+    "risk_budget_pct": "5",
+    "sleeve": "baseline",
+    "allocation_plan_id": "allocation_plan_8859abf5cf5708b35855",
+    "not_before": "",
+    "expires_at": "2026-08-26T21:28:56Z",
+    "research_page": "data/wiki/strategies/strategy_bd005fc3733b1475b6f9.md"
+  },
+  "legs": [
+    {
+      "leg_id": "leg_isrg_equity",
+      "action": "buy",
+      "side": "long",
+      "instrument_type": "equity",
+      "security_id": "security_1f9cce545ede94cd6349",
+      "provider_contract_id": "",
+      "option_type": "",
+      "expiry": "",
+      "strike": "",
+      "quantity": "6",
+      "contract_multiplier": "1",
+      "order_type": "market",
+      "limit_price": "",
+      "currency": "USD"
+    }
+  ]
+}

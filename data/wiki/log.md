@@ -949,3 +949,19 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_f7970c846929cff52159`.
 
 - Generated canonical [[daily-reports/daily-report_20260728]] for run `gha-30349958765-1`.
+
+- Published investor decision snapshot `decision_a5c8aaf9fb49ce0937ff`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-plan-final`.
+
+- Published investor decision snapshot `decision_e055d5ebac7421551a91`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-plan-final2`.
+
+- Published investor decision snapshot `decision_6366fd6d21e3eb0a7797`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-plan-final3`.
+
+- Published investor decision snapshot `decision_f354d036c7b7d92bd9ff`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-plan-final4`.

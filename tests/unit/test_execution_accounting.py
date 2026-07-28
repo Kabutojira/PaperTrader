@@ -35,12 +35,59 @@ from papertrader.orders import (
     create_paper_order,
     create_signal,
 )
+from papertrader.performance import rebase_performance, update_performance
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.risk import assess_order_risk, option_max_loss
 from papertrader.tables import append_unique, contract_by_name, read_table, write_table
 from papertrader.utils import stable_id
 
 START = datetime(2026, 7, 20, 15, tzinfo=UTC)
+
+
+def test_capital_resize_preserves_ledger_history_and_starts_zero_return_epoch(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    ensure_initial_capital(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="initial-epoch",
+        occurred_at=START,
+    )
+    first = update_performance(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="initial-epoch",
+        generated_at=START + timedelta(minutes=1),
+    )
+    epoch_id, cash_id = rebase_performance(
+        sandbox_repository,
+        sandbox_settings,
+        target_equity_base=Decimal("10000"),
+        reason="Resize model account",
+        run_id="resized-epoch",
+        effective_at=START + timedelta(days=1),
+    )
+    resized = update_performance(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="resized-epoch",
+        generated_at=START + timedelta(days=1, minutes=1),
+    )
+
+    assert first["equity_base"] == "100000"
+    assert resized["performance_epoch_id"] == epoch_id
+    assert resized["equity_base"] == "10000"
+    assert resized["daily_return_pct"] == resized["cumulative_return_pct"] == "0"
+    assert len(read_table(sandbox_repository, "performance_daily")) == 2
+    assert len(read_table(sandbox_repository, "performance_epochs")) == 2
+    withdrawal = next(
+        row
+        for row in read_table(sandbox_repository, "cash_ledger")
+        if row["cash_entry_id"] == cash_id
+    )
+    assert withdrawal["entry_type"] == "capital_withdrawal"
+    assert withdrawal["base_amount"] == "-90000"
 
 
 def _security_row() -> dict[str, str]:

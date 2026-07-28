@@ -10,7 +10,6 @@
     "run_id",
     "as_of",
     "report_date",
-    "data_status",
     "stance",
     "stance_reason_codes",
     "base_currency",
@@ -25,12 +24,14 @@
     "source_state_hashes"
   ],
   "properties": {
-    "version": { "const": 1 },
+    "version": { "enum": [1, 2] },
     "snapshot_id": { "type": "string", "pattern": "^decision_[0-9a-f]{20}$" },
     "run_id": { "$ref": "#/$defs/runId" },
     "as_of": { "$ref": "#/$defs/timestamp" },
     "report_date": { "type": "string", "format": "date" },
     "data_status": { "enum": ["current", "degraded", "blocked"] },
+    "investment_data_status": { "enum": ["current", "degraded", "blocked"] },
+    "operations_status": { "enum": ["current", "degraded", "blocked"] },
     "stance": {
       "enum": ["hold_cash", "maintain", "deploy", "rebalance", "reduce_risk", "exit", "blocked"]
     },
@@ -63,6 +64,48 @@
       "propertyNames": { "pattern": "^[a-z][a-z0-9_]*$" }
     }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "version": { "const": 1 } },
+        "required": ["version"]
+      },
+      "then": {
+        "required": ["data_status"],
+        "properties": {
+          "coverage": {
+            "required": ["current_relationship_count", "required_relationship_count"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "version": { "const": 2 } },
+        "required": ["version"]
+      },
+      "then": {
+        "required": ["investment_data_status", "operations_status"],
+        "properties": {
+          "coverage": {
+            "required": [
+              "reviewed_relationship_count",
+              "accepted_relationship_count",
+              "required_relationship_review_count"
+            ]
+          },
+          "performance": {
+            "required": [
+              "performance_epoch_id",
+              "epoch_started_at",
+              "epoch_opening_equity_base",
+              "prior_epoch_count"
+            ]
+          }
+        }
+      }
+    }
+  ],
   "$defs": {
     "runId": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
     "timestamp": {
@@ -110,7 +153,9 @@
         "approved_target_quantity": { "$ref": "#/$defs/decimal" },
         "mark": { "type": "string" },
         "mark_currency": { "type": "string" },
+        "mark_base": { "type": "string" },
         "fx_rate_to_base": { "type": "string" },
+        "fx_as_of": { "type": "string" },
         "market_data_as_of": { "type": "string" },
         "action": { "enum": ["buy", "add", "hold", "trim", "exit", "no_trade"] },
         "action_status": {
@@ -129,6 +174,8 @@
         "exit_rule": { "type": "string" },
         "invalidation": { "type": "string" },
         "review_at": { "type": "string" },
+        "security_research_page": { "type": "string" },
+        "strategy_research_page": { "type": "string" },
         "research_page": { "type": "string" },
         "reason_codes": { "$ref": "#/$defs/reasonCodes" }
       }
@@ -203,6 +250,8 @@
         "exit_rule": { "type": "string" },
         "invalidation": { "type": "string" },
         "rationale": { "type": "string" },
+        "security_research_page": { "type": "string" },
+        "strategy_research_page": { "type": "string" },
         "research_page": { "type": "string" },
         "reason_codes": { "$ref": "#/$defs/reasonCodes" },
         "legs": { "type": "array", "items": { "$ref": "#/$defs/orderLeg" } }
@@ -280,13 +329,16 @@
     "coverage": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["allocation_candidate_count", "current_assessment_count", "fresh_evidence_assessment_count", "current_relationship_count", "required_relationship_count", "ready_or_active_strategy_count", "active_signal_count", "pending_order_count", "market_data_success_count", "market_data_failure_count", "research_backlog_count", "blocking_issue_count", "non_blocking_issue_count", "last_successful_daily_run"],
+      "required": ["allocation_candidate_count", "current_assessment_count", "fresh_evidence_assessment_count", "ready_or_active_strategy_count", "active_signal_count", "pending_order_count", "market_data_success_count", "market_data_failure_count", "research_backlog_count", "blocking_issue_count", "non_blocking_issue_count", "last_successful_daily_run"],
       "properties": {
         "allocation_candidate_count": { "type": "integer", "minimum": 0 },
         "current_assessment_count": { "type": "integer", "minimum": 0 },
         "fresh_evidence_assessment_count": { "type": "integer", "minimum": 0 },
         "current_relationship_count": { "type": "integer", "minimum": 0 },
         "required_relationship_count": { "type": "integer", "minimum": 0 },
+        "reviewed_relationship_count": { "type": "integer", "minimum": 0 },
+        "accepted_relationship_count": { "type": "integer", "minimum": 0 },
+        "required_relationship_review_count": { "type": "integer", "minimum": 0 },
         "ready_or_active_strategy_count": { "type": "integer", "minimum": 0 },
         "active_signal_count": { "type": "integer", "minimum": 0 },
         "pending_order_count": { "type": "integer", "minimum": 0 },
@@ -303,6 +355,10 @@
       "additionalProperties": false,
       "required": ["daily_return_pct", "cumulative_return_pct", "running_drawdown_pct", "realized_pnl_base", "unrealized_pnl_base", "conviction_exposure_base", "baseline_exposure_base", "largest_position_weight_pct", "largest_sector_weight_pct", "history"],
       "properties": {
+        "performance_epoch_id": { "type": "string" },
+        "epoch_started_at": { "type": "string" },
+        "epoch_opening_equity_base": { "$ref": "#/$defs/decimal" },
+        "prior_epoch_count": { "type": "integer", "minimum": 0 },
         "daily_return_pct": { "$ref": "#/$defs/decimal" },
         "cumulative_return_pct": { "$ref": "#/$defs/decimal" },
         "running_drawdown_pct": { "$ref": "#/$defs/decimal" },

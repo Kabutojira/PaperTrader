@@ -13,6 +13,7 @@ from hypothesis import strategies as st
 
 from papertrader.allocation import (
     allocation_readiness,
+    assessment_payoff_reasons,
     baseline_strategy_id,
     maintain_allocation_research,
     plan_allocation,
@@ -225,6 +226,19 @@ def _seed_candidates(
 
 def _settings(settings: Settings, **changes: object) -> Settings:
     return replace(settings, allocation=replace(settings.allocation, **changes))
+
+
+def test_payoff_gates_reject_low_upside_and_asymmetric_downside(
+    sandbox_settings: Settings,
+) -> None:
+    assessment = _assessment(0)
+    assessment["base_upside_pct"] = "2.5"
+    assessment["downside_pct"] = "-23.2"
+
+    assert assessment_payoff_reasons(assessment, sandbox_settings) == (
+        "base_upside_below_minimum",
+        "upside_downside_ratio_below_minimum",
+    )
 
 
 def _maintained_security_page(
@@ -1300,6 +1314,21 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     assert read_table(sandbox_repository, "cash_ledger")[0]["base_amount"] == "100000"
     assert read_table(sandbox_repository, "executions") == []
 
+    pending_replan = plan_allocation(
+        sandbox_repository,
+        replace(active, allocation=replace(active.allocation, mode="report_only")),
+        run_id="allocation-pending-replan",
+        now=NOW + timedelta(minutes=1),
+    )
+    pending_target = next(
+        row
+        for row in read_table(sandbox_repository, "allocation_targets")
+        if row["security_id"] == "sec_00"
+    )
+    assert pending_replan.pending_gross_exposure_base == pending_target["target_value_base"]
+    assert pending_target["delta_value_base"] == "0"
+    assert pending_target["disposition"] == "hold"
+
     fill_time = datetime(2026, 7, 27, 8, tzinfo=UTC)
     fill_reference = replace(reference, as_of=fill_time)
     status, execution_ids = process_order_fill(
@@ -1371,7 +1400,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     assert second.current_conviction_exposure_base == "0"
     assert current_target["disposition"] == "increase"
     assert required_decimal(current_target["target_value_base"]) <= Decimal("5000")
-    assert len(read_table(sandbox_repository, "allocation_history")) == 12
+    assert len(read_table(sandbox_repository, "allocation_history")) == 18
 
     increase_quantity = required_decimal(current_target["target_value_base"]) / Decimal(
         "100"

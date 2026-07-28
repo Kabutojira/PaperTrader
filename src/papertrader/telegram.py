@@ -24,6 +24,7 @@ TELEGRAM_MARKDOWN_V2_SPECIAL = "_*[]()~`>#+-=|{}.!\\"
 COMMIT_SHA = re.compile(r"^[0-9a-f]{40}$")
 CHAT_ID = re.compile(r"^(?:-?[0-9]{1,20}|@[A-Za-z0-9_]{5,32})$")
 REPORT_PATH = re.compile(r"^data/wiki/daily-reports/daily-report_[0-9]{8}\.md$")
+RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 REPOSITORY_URL = re.compile(r"^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 COMMITTED_REPORT_URL = re.compile(
     r"^(https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40})/"
@@ -32,6 +33,7 @@ COMMITTED_REPORT_URL = re.compile(
 WIKI_LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\n]*?))?\]\]")
 INVESTOR_BRIEF_START = "<!-- papertrader-investor-brief:start -->"
 INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
+DELIVERY_ISSUE_TITLE = "Telegram delivery unavailable"
 
 
 class TelegramDeliveryError(RuntimeError):
@@ -53,14 +55,15 @@ class TelegramTransport(Protocol):
 class UrllibTelegramTransport:
     """Send one form-encoded rich message using only the Python standard library."""
 
-    def send(
+    def _request(
         self,
         token: str,
+        method: str,
         payload: Mapping[str, str],
         *,
         timeout_seconds: int,
     ) -> Mapping[str, object]:
-        endpoint = f"https://api.telegram.org/bot{token}/sendRichMessage"
+        endpoint = f"https://api.telegram.org/bot{token}/{method}"
         request = urllib.request.Request(
             endpoint,
             data=urllib.parse.urlencode(payload).encode("utf-8"),
@@ -84,6 +87,30 @@ class UrllibTelegramTransport:
         if not isinstance(value, dict):
             raise TelegramDeliveryError("Telegram returned a non-object response")
         return value
+
+    def preflight(self, token: str, chat_id: str, *, timeout_seconds: int) -> None:
+        """Verify the bot credential and destination without sending a message."""
+
+        for method, payload in (("getMe", {}), ("getChat", {"chat_id": chat_id})):
+            response = self._request(token, method, payload, timeout_seconds=timeout_seconds)
+            if response.get("ok") is not True:
+                raise TelegramDeliveryError(
+                    str(response.get("description", f"Telegram {method} preflight failed"))
+                )
+
+    def send(
+        self,
+        token: str,
+        payload: Mapping[str, str],
+        *,
+        timeout_seconds: int,
+    ) -> Mapping[str, object]:
+        return self._request(
+            token,
+            "sendRichMessage",
+            payload,
+            timeout_seconds=timeout_seconds,
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -239,6 +266,37 @@ def _committed_report(
     return report
 
 
+def committed_run_report_path(repository_root: Path, *, commit_sha: str, run_id: str) -> str:
+    """Resolve a completed run's canonical report from the exact selected commit."""
+
+    if not COMMIT_SHA.fullmatch(commit_sha) or not RUN_ID.fullmatch(run_id):
+        raise CanonicalValueError("committed run identity is not canonical")
+    manifest_path = f"data/runs/{run_id}/daily_run.json"
+    result = subprocess.run(
+        ["git", "show", f"{commit_sha}:{manifest_path}"],
+        cwd=repository_root,
+        check=False,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        raise CanonicalValueError("committed completed-run manifest is unavailable")
+    try:
+        value = json.loads(result.stdout.decode("utf-8"))
+    except (UnicodeError, json.JSONDecodeError) as exc:
+        raise CanonicalValueError("committed completed-run manifest is invalid") from exc
+    if (
+        not isinstance(value, dict)
+        or value.get("run_id") != run_id
+        or value.get("status") not in {"succeeded", "degraded"}
+        or not isinstance(value.get("report_path"), str)
+        or not REPORT_PATH.fullmatch(value["report_path"])
+    ):
+        raise CanonicalValueError("committed run does not identify a completed canonical report")
+    report_path = value["report_path"]
+    assert isinstance(report_path, str)
+    return report_path
+
+
 def _safe_error(error: BaseException | str, *secrets: str) -> str:
     value = " ".join(str(error).split())
     for secret in secrets:
@@ -247,16 +305,18 @@ def _safe_error(error: BaseException | str, *secrets: str) -> str:
     return value[:1000] or "unknown Telegram delivery failure"
 
 
-def _delivery_issue(repository_root: Path, commit_sha: str) -> Mapping[str, str] | None:
-    issue_id = stable_id("issue", f"telegram delivery failed: {commit_sha}", "")
+def _delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
+    issue_id = stable_id("issue", DELIVERY_ISSUE_TITLE.casefold(), "")
     return next(
         (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
         None,
     )
 
 
-def _resume_chunk(issue: Mapping[str, str] | None, total_chunks: int) -> int:
+def _resume_chunk(issue: Mapping[str, str] | None, commit_sha: str, total_chunks: int) -> int:
     if issue is None or issue["status"] != "open":
+        return 0
+    if f"commit={commit_sha}" not in issue["description"]:
         return 0
     match = re.search(r"(?:^| )next_chunk=([0-9]+)(?: |$)", issue["description"])
     if match is None:
@@ -296,9 +356,8 @@ def deliver_committed_report(
         committed_url=committed_url,
         limit=settings.telegram.message_limit,
     )
-    title = f"Telegram delivery failed: {commit_sha}"
-    prior_issue = _delivery_issue(repository_root, commit_sha)
-    start_at = _resume_chunk(prior_issue, len(messages))
+    prior_issue = _delivery_issue(repository_root)
+    start_at = _resume_chunk(prior_issue, commit_sha, len(messages))
     selected_transport = transport or UrllibTelegramTransport()
     sent = 0
     failure = ""
@@ -306,7 +365,19 @@ def deliver_committed_report(
     if not token or not CHAT_ID.fullmatch(chat_id):
         failure = "Telegram bot token and canonical chat ID are required"
     else:
+        preflight = getattr(selected_transport, "preflight", None)
+        if callable(preflight):
+            try:
+                preflight(
+                    token,
+                    chat_id,
+                    timeout_seconds=settings.telegram.timeout_seconds,
+                )
+            except (OSError, TelegramDeliveryError, ValueError) as exc:
+                failure = _safe_error(exc, token, chat_id)
         for index in range(start_at, len(messages)):
+            if failure:
+                break
             failed_at = index
             message_failure = ""
             for attempt in range(1, settings.telegram.maximum_attempts + 1):
@@ -340,7 +411,7 @@ def deliver_committed_report(
         issue_id = record_issue(
             repository_root,
             severity="warning",
-            title=title,
+            title=DELIVERY_ISSUE_TITLE,
             description=(
                 f"report={report_path} commit={commit_sha} next_chunk={failed_at} "
                 f"total_chunks={len(messages)} error={failure}"
@@ -359,12 +430,23 @@ def deliver_committed_report(
             error=failure,
         )
     issue_id = ""
-    if prior_issue is not None and prior_issue["status"] == "open":
-        issue_id = prior_issue["issue_id"]
+    open_delivery_issues = [
+        row
+        for row in read_table(repository_root, "issues")
+        if row["status"] == "open"
+        and row["owner"] == "delivery"
+        and (
+            row["title"] == DELIVERY_ISSUE_TITLE
+            or row["title"].startswith("Telegram delivery failed:")
+        )
+    ]
+    for issue in open_delivery_issues:
+        issue_id = issue["issue_id"] if issue["title"] == DELIVERY_ISSUE_TITLE else issue_id
         resolve_issue(
             repository_root,
-            issue_id,
-            f"Committed report delivered in {len(messages)} chunks.",
+            issue["issue_id"],
+            f"Latest committed report {commit_sha} delivered successfully; "
+            "older reports were not replayed.",
             now=now,
         )
     return TelegramDeliveryResult(

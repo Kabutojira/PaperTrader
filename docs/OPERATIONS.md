@@ -306,8 +306,8 @@ uv run papertrader advice validate --strict
 Inspect `data/published/decision_snapshot.json`, `model_portfolio.csv`, and
 `actionable_signals.csv`. Filled holdings, validated pending orders, allocation candidates, and
 research alerts are distinct states; only a canonical live paper order may be copy ready. The
-model-portfolio scaler runs locally in the browser and is illustrative—it does not submit an order
-or persist the entered notional. Never overwrite an existing run snapshot with different state;
+model-portfolio scaler runs locally in the browser; it does not submit an order or persist the
+entered portfolio value. Never overwrite an existing run snapshot with different state;
 create and complete a new daily run instead.
 
 Canonical market and research state can advance between daily preparation and finalization. Inside
@@ -321,7 +321,8 @@ decision snapshot under `data/runs/<run_id>/`.
 
 ## Dispatch GitHub workflows
 
-The scheduled and manual controller use the same reusable runtime. Start with a dry run:
+The controller is scheduled for 17:00 `Europe/Rome` every day, including weekends. Scheduled and
+manual invocations use the same reusable runtime. Start with a dry run:
 
 ```bash
 gh workflow run daily.yml \
@@ -348,6 +349,17 @@ gh workflow run reporting.yml \
   -f send_telegram=true
 ```
 
+Telegram delivery verifies the bot and destination, sends Rich Markdown after the report commit,
+and retains one latest-only failure issue. A newer report supersedes older missed reports; they are
+not replayed or summarized. After committing a local completed run, deliver its report with:
+
+```bash
+uv run papertrader telegram deliver-run \
+  --commit-sha "$(git rev-parse HEAD)" \
+  --run-id <run-id> \
+  --repository-url https://github.com/Kabutojira/PaperTrader
+```
+
 ## Change configuration
 
 `config.ini` is versioned operating policy. Change one bounded setting, review its risk and
@@ -355,13 +367,25 @@ accounting effect, and run the complete gate before committing. Secrets do not b
 Important coupled checks include:
 
 - indicator periods versus minimum observation counts;
-- risk percentages versus initial capital and gross exposure;
+- risk percentages versus current epoch equity and gross exposure;
 - instrument, exchange, and currency allowlists;
 - allocation mode, cash hurdle/reserve, diversification, deployment, position, sector, and theme
-  limits, including their cross-checks against risk limits;
+  limits, including minimum base upside, minimum upside/downside, and their cross-checks against
+  risk limits;
 - operation count and model-cost limits;
 - fill expiry, price staleness, slippage, fees, and option quote freshness;
 - classifier command/model presence as a pair.
+
+Resize the model account without rewriting its original capital entry by using an auditable JSON
+request containing `target_equity_base`, `reason`, `run_id`, and `effective_at`:
+
+```bash
+uv run papertrader account rebase --request data/runs/<run-id>/rebase-account.json
+uv run papertrader performance update --run-id <run-id>
+```
+
+The command requires every order to be terminal, appends a capital contribution or withdrawal,
+and starts a new flow-adjusted performance epoch. Earlier epoch rows remain immutable audit data.
 
 Validate a configuration change with:
 
@@ -382,8 +406,8 @@ uv run pytest tests/unit/test_config.py
    generated portfolio.
 5. Manually dispatch `daily.yml` with the retained `operation_id` and `max_operations=1`, first as
    a dry run and then, if valid, as a normal run.
-6. Retry Pages or Telegram separately with the committed SHA. A Telegram retry resumes at its
-   recorded chunk and never rolls back the successful runtime commit.
+6. Retry Pages or the latest Telegram report separately with the committed SHA. Older missed
+   reports are not replayed, and delivery never rolls back the successful runtime commit.
 
 ## Replay by run ID
 

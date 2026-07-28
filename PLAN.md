@@ -51,3 +51,27 @@ Changed candidate titles to human-readable ticker and indicator labels with secu
 ## Step 9 — Publish an investor-facing decision dashboard and copyable model portfolio — Complete (2026-07-27)
 
 Added a deterministic, schema-validated decision snapshot and publication exports; results-first portfolio, signal, performance, system-status, and research pages; investor-focused daily and Telegram briefs; and a responsive Quartz dashboard with downloadable data and local-only long-equity scaling. The views distinguish filled holdings, projected validated orders, candidates, and research alerts, preserve an explicit all-cash recommendation when gates are unmet, share one auditable snapshot identity, and cannot feed generated advice back into trading or accounting state.
+
+## Step 10 — Separate investment readiness from operational health — Complete (2026-07-28)
+
+Split the former aggregate data status into investment-data and operations/delivery health, counted current rejected relationships as completed reviews, and kept research backlog and Telegram failures visible without falsely degrading the investment evidence.
+
+## Step 11 — Enforce payoff-aware entries and pending-order discipline — Complete (2026-07-28)
+
+Required at least 10% base-case upside and a 1:1 upside-to-downside ratio in addition to the cash hurdle, enforced the gates across allocation, strategy, signal, order, and pre-fill validation, and prevented repeated deployment tranches while a baseline order remains pending.
+
+## Step 12 — Resize capital and introduce performance epochs — Complete (2026-07-28)
+
+Reduced current model equity to 10,000 EUR through an append-only 90,000 EUR withdrawal, preserved the original capital ledger and historical returns, and added immutable flow-adjusted performance epochs for future contributions or withdrawals.
+
+## Step 13 — Make security and FX evidence directly inspectable — Complete (2026-07-28)
+
+Added a dedicated Securities dashboard and direct ticker-to-security links, exposed native and EUR marks with conversion rates and separate market/FX timestamps, retained distinct strategy links, and removed disclaimer-style prose from investor-facing pages.
+
+## Step 14 — Guarantee latest-only end-of-run Telegram delivery — Complete (2026-07-28)
+
+Kept formatted Rich Markdown delivery after the runtime commit, added bot/destination preflight, consolidated failures into one stable latest-only issue, added committed local-run delivery, and explicitly prevented replay of older missed reports.
+
+## Step 15 — Run daily at 17:00 Europe/Rome and reconcile publication — Complete (2026-07-28)
+
+Changed the seven-day schedule to timezone-aware 17:00 Europe/Rome, migrated live pending ISRG state to cash after the new payoff gates rejected it, regenerated the canonical snapshot and investor pages, and validated the complete application and Quartz publication.

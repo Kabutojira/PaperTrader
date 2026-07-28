@@ -1,0 +1,3 @@
+performance_epoch_id,started_at,opening_equity_base,base_currency,reason,run_id
+performance_epoch_bc3c0720291f25256897,2026-07-24T21:51:21Z,100000,EUR,Initial capital,gha-30129065584-1
+performance_epoch_f20320f2ff68cb5015b6,2026-07-28T12:00:00Z,10000,EUR,Resize the model portfolio and begin a new performance epoch,local-20260728-plan-implementation

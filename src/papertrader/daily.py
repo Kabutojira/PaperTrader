@@ -39,7 +39,7 @@ from papertrader.opportunity import (
     process_opportunity_transitions,
     retry_unclassified_candidate_packets,
 )
-from papertrader.orders import leg_from_row
+from papertrader.orders import cancel_unauthorized_baseline_orders, leg_from_row
 from papertrader.performance import update_performance
 from papertrader.portfolio import (
     PortfolioError,
@@ -535,7 +535,12 @@ def _process_pending_orders(
     references: tuple[ReferencePrice, ...],
     bars: tuple[MarketBar, ...],
 ) -> tuple[str, ...]:
-    outcomes: list[str] = []
+    outcomes: list[str] = [
+        f"{order_id}:cancelled:{reason}"
+        for order_id, reason in cancel_unauthorized_baseline_orders(
+            repository_root, settings, now=now
+        )
+    ]
     leg_rows = read_table(repository_root, "order_legs")
     for order in sorted(
         (

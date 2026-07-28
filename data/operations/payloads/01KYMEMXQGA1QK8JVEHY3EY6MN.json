@@ -1,0 +1,17 @@
+{
+  "entity_id": "relationship_87b95f713a902d531f2f",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_87b95f713a902d531f2f",
+    "security_id": "security_18a3ab0ee6086ee85d0f"
+  },
+  "objective": "Review the canonical relationship from idea_ai_infrastructure_power to security_18a3ab0ee6086ee85d0f and accept or reject it with current evidence.",
+  "operation_id": "01KYMEMXQGA1QK8JVEHY3EY6MN",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_etn_q1_2026_10q"
+  ]
+}

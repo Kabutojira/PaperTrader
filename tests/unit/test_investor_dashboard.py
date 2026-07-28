@@ -32,6 +32,8 @@ def test_market_signal_detail_has_no_empty_limit_suffix() -> None:
         exit_rule="Test exit",
         invalidation="Test invalidation",
         rationale="Test rationale",
+        security_research_page="data/wiki/securities/security_test.md",
+        strategy_research_page="data/wiki/strategies/strategy_test.md",
         research_page="data/wiki/strategies/strategy_test.md",
         reason_codes=(),
         legs=(),
@@ -62,7 +64,9 @@ def test_portfolio_cards_escape_untrusted_labels_and_expose_scaler_references() 
         approved_target_quantity="10",
         mark="100",
         mark_currency="EUR",
+        mark_base="100",
         fx_rate_to_base="1",
+        fx_as_of="2026-07-24T12:00:00Z",
         market_data_as_of="2026-07-24T12:00:00Z",
         action="buy",
         action_status="pending_order",
@@ -79,6 +83,8 @@ def test_portfolio_cards_escape_untrusted_labels_and_expose_scaler_references() 
         exit_rule="Fixture exit",
         invalidation="Fixture invalidation",
         review_at="2026-08-24T12:00:00Z",
+        security_research_page="data/wiki/securities/sec_escape.md",
+        strategy_research_page="data/wiki/strategies/strategy_escape.md",
         research_page="data/wiki/securities/sec_escape.md",
         reason_codes=(),
     )
@@ -133,6 +139,9 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
 ) -> None:
     site = repository_root / "site"
     layout = (site / "quartz.layout.ts").read_text(encoding="utf-8")
+    navigation = (site / "papertrader" / "components" / "DecisionNavigation.tsx").read_text(
+        encoding="utf-8"
+    )
     build = (site / "build-quartz.mjs").read_text(encoding="utf-8")
     tsconfig = (site / "tsconfig.json").read_text(encoding="utf-8")
     package = (site / "package.json").read_text(encoding="utf-8")
@@ -140,6 +149,8 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
     assert (site / "papertrader" / "components" / "DecisionNavigation.tsx").is_file()
     assert "./papertrader/components/DecisionNavigation" in layout
     assert "condition: (page) => !isDashboardPage(page)" in layout
+    assert '{ label: "Securities", slug: "security-catalog" }' in navigation
+    assert '{ label: "Securities", slug: "securities" }' not in navigation
     assert '"papertrader/**/*.ts"' in tsconfig
     assert '"papertrader/**/*.tsx"' in tsconfig
     assert "prettier quartz.config.ts quartz.layout.ts papertrader" in package

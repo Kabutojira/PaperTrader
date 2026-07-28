@@ -68,7 +68,7 @@ from papertrader.orders import (
     create_signal,
     leg_from_mapping,
 )
-from papertrader.performance import update_performance
+from papertrader.performance import rebase_performance, update_performance
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.queue import (
@@ -95,7 +95,7 @@ from papertrader.research import (
     upsert_strategy,
 )
 from papertrader.tables import read_table
-from papertrader.telegram import deliver_committed_report
+from papertrader.telegram import committed_run_report_path, deliver_committed_report
 from papertrader.utils import (
     CanonicalValueError,
     parse_iso_date,
@@ -175,6 +175,8 @@ def _parser() -> argparse.ArgumentParser:
     account_commands = account.add_subparsers(dest="account_command", required=True)
     initialize = account_commands.add_parser("initialize")
     initialize.add_argument("--run-id", required=True)
+    rebase = account_commands.add_parser("rebase")
+    rebase.add_argument("--request", type=Path, required=True)
 
     signal = commands.add_parser("signal", help="create a time-bounded strategy decision")
     signal_commands = signal.add_subparsers(dest="signal_command", required=True)
@@ -299,6 +301,10 @@ def _parser() -> argparse.ArgumentParser:
     telegram_deliver.add_argument("--report-path", required=True)
     telegram_deliver.add_argument("--repository-url", required=True)
     telegram_deliver.add_argument("--run-id", required=True)
+    telegram_deliver_run = telegram_commands.add_parser("deliver-run")
+    telegram_deliver_run.add_argument("--commit-sha", required=True)
+    telegram_deliver_run.add_argument("--repository-url", required=True)
+    telegram_deliver_run.add_argument("--run-id", required=True)
 
     workflow = commands.add_parser("workflow", help="handoff validated runtime patches")
     workflow_commands = workflow.add_subparsers(dest="workflow_command", required=True)
@@ -594,13 +600,40 @@ def _run_structured_command(
     arguments: argparse.Namespace, repository_root: Path, settings: Settings
 ) -> int:
     if arguments.command == "account":
-        entry_id = ensure_initial_capital(
+        if arguments.account_command == "initialize":
+            entry_id = ensure_initial_capital(
+                repository_root,
+                settings,
+                run_id=arguments.run_id,
+                occurred_at=utc_now(),
+            )
+            print(entry_id)
+            return 0
+        raw = _request_object(repository_root, arguments.request)
+        expected = {"target_equity_base", "reason", "run_id", "effective_at"}
+        if set(raw) != expected:
+            raise CanonicalValueError(
+                "account rebase request fields differ; "
+                f"missing={sorted(expected - set(raw))}, extra={sorted(set(raw) - expected)}"
+            )
+        effective_at = _timestamp(raw, "effective_at")
+        assert effective_at is not None
+        epoch_id, cash_entry_id = rebase_performance(
             repository_root,
             settings,
-            run_id=arguments.run_id,
-            occurred_at=utc_now(),
+            target_equity_base=required_decimal(
+                _text(raw, "target_equity_base"), label="target_equity_base"
+            ),
+            reason=_text(raw, "reason"),
+            run_id=_text(raw, "run_id"),
+            effective_at=effective_at,
         )
-        print(entry_id)
+        print(
+            json.dumps(
+                {"performance_epoch_id": epoch_id, "cash_entry_id": cash_entry_id},
+                sort_keys=True,
+            )
+        )
         return 0
     raw = _request_object(repository_root, arguments.request)
     if arguments.command == "signal":
@@ -995,11 +1028,20 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(disposition)
         return 0
     if arguments.command == "telegram":
+        report_path = (
+            committed_run_report_path(
+                root,
+                commit_sha=arguments.commit_sha,
+                run_id=arguments.run_id,
+            )
+            if arguments.telegram_command == "deliver-run"
+            else arguments.report_path
+        )
         delivery_result = deliver_committed_report(
             root,
             settings,
             commit_sha=arguments.commit_sha,
-            report_path=arguments.report_path,
+            report_path=report_path,
             repository_url=arguments.repository_url,
             run_id=arguments.run_id,
             token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),

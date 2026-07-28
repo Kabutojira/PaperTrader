@@ -8,7 +8,7 @@ created: "2026-07-24"
 updated: "2026-07-24"
 provenance: deterministic-report-generator
 run_id: "run-report"
-snapshot_id: "decision_104a0c7daccbc3bb897c"
+snapshot_id: "decision_7e6bfad31e33fbf06561"
 ---
 
 # PaperTrader daily report — 2026-07-24
@@ -18,9 +18,10 @@ snapshot_id: "decision_104a0c7daccbc3bb897c"
 <!-- papertrader-investor-brief:start -->
 # No trade — hold 100% cash
 
-- **Data status:** Current
+- **Investment data:** Current
+- **Operations:** Current
 - **As of:** `2026-07-24T22:00:00Z`
-- **Snapshot:** `decision_104a0c7daccbc3bb897c`
+- **Snapshot:** `decision_7e6bfad31e33fbf06561`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 100000 EUR (100%)
@@ -86,15 +87,18 @@ No assessed near misses are available; incomplete assessments remain coverage ga
 - [[model-portfolio]]
 - [[performance]]
 - [[research-catalog]]
+- [[security-catalog]]
 - [[signals]]
 - [[system-status]]
 
 ## 7. Data-quality and coverage impact
 
-- Data status: **current**
+- Investment data status: **current**
+- Operations status: **current**
 - Assessments: 0/0
 - Fresh-evidence assessments: 0/0
-- Current accepted relationships: 0/0
+- Relationship reviews: 0/0
+- Accepted relationships: 0
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
@@ -110,7 +114,7 @@ No current system impacts.
 - Run ID: `run-report`
 - Run status: `succeeded`
 - Generated (UTC): `2026-07-24T22:00:00Z`
-- Decision snapshot: `decision_104a0c7daccbc3bb897c`
+- Decision snapshot: `decision_7e6bfad31e33fbf06561`
 
 ### Complete market freshness
 
@@ -156,9 +160,9 @@ No open issues.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
 - `allocation_targets`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `cash_ledger`: `643b368149442110c1e0776eaa1b119e5cabe41f1617ee68328cc468cfa71dff`
-- `configuration`: `6bfbcfa74f10e7c26fb5d945f6c4e0e7748c06714ce07d22e70a46ae67973c83`
-- `csv_contracts`: `006db7fd09c8f810fa6b0be26cd8e4dbd772b3f76b60957660c996d239f16115`
-- `decision_schema`: `af6b26a6dbd262948e4e20bb45ac0f948268dcd7d2e761e5942bdd1b2cd6c68b`
+- `configuration`: `517c09d6aea6441bc5da12ca67e60e12fbf478767f6da664be8fcc473bc2475b`
+- `csv_contracts`: `5d69a6715a26724da012fa4fea98233c5874ae8f38ea64c03162438d9cc6308e`
+- `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `indicators`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `issues`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
@@ -169,6 +173,7 @@ No open issues.
 - `order_legs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `orders`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `performance_daily`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
+- `performance_epochs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `runs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`

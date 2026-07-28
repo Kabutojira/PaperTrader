@@ -697,7 +697,8 @@ def test_global_action_issue_blocks_active_recommendation(
         as_of=NOW,
     )
     assert snapshot.actionable_signals == ()
-    assert snapshot.data_status == "degraded"
+    assert snapshot.investment_data_status == "current"
+    assert snapshot.operations_status == "blocked"
     assert any(impact.impact == "blocks_action" for impact in snapshot.system_impacts)
 
 
@@ -750,7 +751,8 @@ def test_stale_plan_and_relationship_cannot_publish_an_approved_candidate(
         as_of=NOW,
     )
     assert current.candidate_pipeline[0].classification == "approved"
-    assert current.coverage.current_relationship_count == 1
+    assert current.coverage.reviewed_relationship_count == 1
+    assert current.coverage.accepted_relationship_count == 1
 
     stale = build_decision_snapshot(
         sandbox_repository,
@@ -774,7 +776,8 @@ def test_stale_plan_and_relationship_cannot_publish_an_approved_candidate(
         as_of=NOW,
     )
     assert missing_relationship.candidate_pipeline[0].classification == "relationship_pending"
-    assert missing_relationship.coverage.current_relationship_count == 0
+    assert missing_relationship.coverage.reviewed_relationship_count == 0
+    assert missing_relationship.coverage.accepted_relationship_count == 0
 
 
 def test_reason_translation_is_complete_and_unknown_codes_fail_closed() -> None:

@@ -20,10 +20,15 @@ from typing import Any, cast
 import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
-from papertrader.allocation import CONFIDENCE_RANK, AllocationError, score_assessment
+from papertrader.allocation import (
+    CONFIDENCE_RANK,
+    AllocationError,
+    assessment_payoff_reasons,
+    score_assessment,
+)
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
-from papertrader.market_data import MarketDataError, latest_fx_rate
+from papertrader.market_data import MarketDataError, latest_fx_rate, latest_fx_rate_record
 from papertrader.orders import leg_from_row
 from papertrader.portfolio import reconcile_portfolio, replay_accounting
 from papertrader.tables import contract_by_name, read_table, write_table
@@ -39,7 +44,7 @@ from papertrader.utils import (
     stable_id,
 )
 
-SNAPSHOT_VERSION = 1
+SNAPSHOT_VERSION = 2
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 HASH = re.compile(r"^[0-9a-f]{64}$")
 MONEY_QUANTUM = Decimal("0.01")
@@ -63,6 +68,7 @@ AUTHORITATIVE_TABLES = (
     "order_legs",
     "orders",
     "performance_daily",
+    "performance_epochs",
     "portfolio",
     "relationships",
     "runs",
@@ -92,7 +98,9 @@ MODEL_PORTFOLIO_COLUMNS = (
     "approved_target_quantity",
     "mark",
     "mark_currency",
+    "mark_base",
     "fx_rate_to_base",
+    "fx_as_of",
     "market_data_as_of",
     "action",
     "action_status",
@@ -109,6 +117,8 @@ MODEL_PORTFOLIO_COLUMNS = (
     "exit_rule",
     "invalidation",
     "review_at",
+    "security_research_page",
+    "strategy_research_page",
     "research_page",
     "reason_codes",
 )
@@ -139,6 +149,8 @@ ACTIONABLE_SIGNAL_COLUMNS = (
     "exit_rule",
     "invalidation",
     "rationale",
+    "security_research_page",
+    "strategy_research_page",
     "research_page",
     "reason_codes",
 )
@@ -150,6 +162,7 @@ REASON_LABELS = {
     "assessment_stale": "The comparable assessment is stale or expired.",
     "allocation_plan_stale": "No current allocation plan supports this candidate.",
     "base_upside_not_positive": "The assessed base case has no positive upside.",
+    "base_upside_below_minimum": "Base-case upside is below the configured entry minimum.",
     "baseline_sleeve_cap": "The baseline sleeve exposure cap prevents additional allocation.",
     "candidate_inputs": "Candidate inputs are incomplete.",
     "candidate_or_rounding_constraints": (
@@ -190,9 +203,15 @@ REASON_LABELS = {
     "relationship_missing_or_stale": (
         "A current accepted idea-to-security relationship is unavailable."
     ),
+    "relationship_rejected": (
+        "The current relationship review rejected the idea-to-security mechanism."
+    ),
     "score_below_cash_hurdle": "The effective score does not beat the configured cash hurdle.",
     "security_status_not_orderable": "The security is not currently orderable.",
     "target_unchanged": "The approved target does not require a trade.",
+    "upside_downside_ratio_below_minimum": (
+        "Modeled base upside does not match the configured downside-risk ratio."
+    ),
     "validated_open_actions": "Validated opening paper actions are pending.",
     "validated_reduce_actions": "Validated actions reduce existing paper exposure.",
     "validated_rebalance_actions": (
@@ -239,7 +258,9 @@ class ModelPortfolioRow:
     approved_target_quantity: str
     mark: str
     mark_currency: str
+    mark_base: str
     fx_rate_to_base: str
+    fx_as_of: str
     market_data_as_of: str
     action: str
     action_status: str
@@ -256,6 +277,8 @@ class ModelPortfolioRow:
     exit_rule: str
     invalidation: str
     review_at: str
+    security_research_page: str
+    strategy_research_page: str
     research_page: str
     reason_codes: tuple[str, ...]
 
@@ -300,6 +323,8 @@ class ActionableSignalView:
     exit_rule: str
     invalidation: str
     rationale: str
+    security_research_page: str
+    strategy_research_page: str
     research_page: str
     reason_codes: tuple[str, ...]
     legs: tuple[Mapping[str, str], ...]
@@ -344,8 +369,9 @@ class CoverageSummary:
     allocation_candidate_count: int
     current_assessment_count: int
     fresh_evidence_assessment_count: int
-    current_relationship_count: int
-    required_relationship_count: int
+    reviewed_relationship_count: int
+    accepted_relationship_count: int
+    required_relationship_review_count: int
     ready_or_active_strategy_count: int
     active_signal_count: int
     pending_order_count: int
@@ -359,6 +385,10 @@ class CoverageSummary:
 
 @dataclass(frozen=True, slots=True)
 class PerformanceSummary:
+    performance_epoch_id: str
+    epoch_started_at: str
+    epoch_opening_equity_base: str
+    prior_epoch_count: int
     daily_return_pct: str
     cumulative_return_pct: str
     running_drawdown_pct: str
@@ -390,7 +420,8 @@ class DecisionSnapshot:
     run_id: str
     as_of: str
     report_date: str
-    data_status: str
+    investment_data_status: str
+    operations_status: str
     stance: str
     stance_reason_codes: tuple[str, ...]
     base_currency: str
@@ -403,6 +434,12 @@ class DecisionSnapshot:
     performance: PerformanceSummary
     system_impacts: tuple[SystemImpact, ...]
     source_state_hashes: Mapping[str, str]
+
+    @property
+    def data_status(self) -> str:
+        """Compatibility accessor for Python callers during the v1-to-v2 transition."""
+
+        return self.investment_data_status
 
 
 @dataclass(slots=True)
@@ -418,6 +455,7 @@ class _Holding:
     target_quantity: Decimal
     mark: Decimal
     fx_rate: Decimal
+    fx_as_of: datetime
     market_data_as_of: datetime
     strategy_ids: set[str]
     signal_ids: set[str]
@@ -615,6 +653,19 @@ def _current_relationship(row: Mapping[str, str], *, as_of: datetime) -> bool:
     )
 
 
+def _current_relationship_review(row: Mapping[str, str], *, as_of: datetime) -> bool:
+    """Return whether an accepted or rejected relationship has a current review."""
+
+    reviewed = parse_timestamp(row["last_reviewed_at"])
+    next_review = parse_timestamp(row["next_review_at"])
+    return (
+        row["status"] in {"accepted", "rejected"}
+        and reviewed is not None
+        and next_review is not None
+        and reviewed <= as_of < next_review
+    )
+
+
 def _fresh_evidence(
     assessment: Mapping[str, str],
     sources: Mapping[str, Mapping[str, str]],
@@ -775,6 +826,23 @@ def _current_holdings(
                 f"position cannot produce a valid FX reference: {position['position_id']}"
             )
         fx_rate = abs(market_value / denominator)
+        try:
+            fx_record = latest_fx_rate_record(
+                repository_root,
+                position["currency"],
+                settings.portfolio.base_currency,
+                now=as_of,
+                maximum_age=settings.market_data.stale_price_after,
+            )
+        except MarketDataError:
+            # A reconciled historical position can predate the retained FX cache. The
+            # conversion itself remains provable from the generated position value; leave
+            # its separate FX observation timestamp blank by using the mark timestamp.
+            fx_as_of = marked
+        else:
+            if fx_record.rate_to_base != fx_rate:
+                blockers.append("fx_reference_differs_from_position_mark")
+            fx_as_of = fx_record.retrieved_at
         strategy_ids = {part for part in position["strategy_ids"].split("|") if part}
         holdings[_holding_key(position)] = _Holding(
             security_id=position["security_id"],
@@ -788,6 +856,7 @@ def _current_holdings(
             target_quantity=quantity,
             mark=mark,
             fx_rate=fx_rate,
+            fx_as_of=fx_as_of,
             market_data_as_of=marked,
             strategy_ids=strategy_ids,
             signal_ids=set(),
@@ -807,7 +876,7 @@ def _pending_reference(
     latest: Mapping[str, Mapping[str, str]],
     *,
     as_of: datetime,
-) -> tuple[Decimal, Decimal, datetime]:
+) -> tuple[Decimal, Decimal, datetime, datetime]:
     if leg["instrument_type"] == "equity":
         market = latest.get(leg["security_id"])
         if market is None or market["status"] != "ok":
@@ -828,7 +897,7 @@ def _pending_reference(
             raise AdviceError("market_data_missing")
         mark = required_decimal(raw_mark, label="pending option mark")
     try:
-        fx_rate = latest_fx_rate(
+        fx_record = latest_fx_rate_record(
             repository_root,
             security["currency"],
             settings.portfolio.base_currency,
@@ -837,7 +906,7 @@ def _pending_reference(
         )
     except MarketDataError as exc:
         raise AdviceError("fx_unavailable") from exc
-    return mark, fx_rate, observed
+    return mark, fx_record.rate_to_base, observed, fx_record.retrieved_at
 
 
 def _apply_pending_orders(
@@ -908,7 +977,7 @@ def _apply_pending_orders(
         if remaining <= 0:
             continue
         try:
-            mark, fx_rate, observed = _pending_reference(
+            mark, fx_rate, observed, fx_as_of = _pending_reference(
                 repository_root,
                 settings,
                 security,
@@ -937,6 +1006,7 @@ def _apply_pending_orders(
                 target_quantity=Decimal("0"),
                 mark=mark,
                 fx_rate=fx_rate,
+                fx_as_of=fx_as_of,
                 market_data_as_of=observed,
                 strategy_ids=set(),
                 signal_ids=set(),
@@ -949,6 +1019,7 @@ def _apply_pending_orders(
             # reference above is a safety gate, not permission to re-mark accounting here.
             mark = holding.mark
             fx_rate = holding.fx_rate
+            fx_as_of = holding.fx_as_of
             observed = holding.market_data_as_of
         if (
             holding.currency != row["currency"]
@@ -1087,7 +1158,9 @@ def _portfolio_rows(
                 approved_target_quantity=decimal_text(holding.target_quantity),
                 mark=decimal_text(holding.mark),
                 mark_currency=holding.currency,
+                mark_base=decimal_text(holding.mark * holding.fx_rate),
                 fx_rate_to_base=decimal_text(holding.fx_rate),
+                fx_as_of=format_timestamp(holding.fx_as_of),
                 market_data_as_of=format_timestamp(holding.market_data_as_of),
                 action=action,
                 action_status=action_status,
@@ -1104,6 +1177,8 @@ def _portfolio_rows(
                 exit_rule=strategy.get("exit_rule", ""),
                 invalidation=strategy.get("invalidation", ""),
                 review_at=assessment.get("expires_at", "") or security["next_review_at"],
+                security_research_page=security["research_page"],
+                strategy_research_page=strategy.get("research_page", ""),
                 research_page=strategy.get("research_page", "") or security["research_page"],
                 reason_codes=reason_codes,
             )
@@ -1131,7 +1206,9 @@ def _portfolio_rows(
             approved_target_quantity=decimal_text(_money(target_cash)),
             mark="1",
             mark_currency="",
+            mark_base="1",
             fx_rate_to_base="1",
+            fx_as_of=timestamp,
             market_data_as_of=timestamp,
             action="no_trade"
             if current_cash == target_cash
@@ -1150,6 +1227,8 @@ def _portfolio_rows(
             exit_rule="",
             invalidation="",
             review_at="",
+            security_research_page="",
+            strategy_research_page="",
             research_page="",
             reason_codes=(),
         )
@@ -1443,6 +1522,8 @@ def _actionable_signals(
                 exit_rule=strategy["exit_rule"],
                 invalidation=strategy["invalidation"],
                 rationale=signal["rationale"],
+                security_research_page=security["research_page"],
+                strategy_research_page=strategy["research_page"],
                 research_page=strategy["research_page"] or security["research_page"],
                 reason_codes=(),
                 legs=tuple({key: leg[key] for key in leg} for leg in canonical_legs),
@@ -1472,9 +1553,17 @@ def _candidate_classification(
     ):
         return "market_data_blocked"
     if reasons.intersection(
-        {"score_below_cash_hurdle", "base_upside_not_positive", "assessment_ineligible"}
+        {
+            "score_below_cash_hurdle",
+            "base_upside_not_positive",
+            "base_upside_below_minimum",
+            "upside_downside_ratio_below_minimum",
+            "assessment_ineligible",
+        }
     ):
         return "valuation_unattractive"
+    if "relationship_rejected" in reasons:
+        return "research_blocked"
     if "relationship_missing_or_stale" in reasons:
         return "relationship_pending"
     if any(
@@ -1520,6 +1609,11 @@ def _candidate_pipeline(
     current_relationship_ids = {
         row["security_id"] for row in relationships if _current_relationship(row, as_of=as_of)
     }
+    rejected_relationship_ids = {
+        row["security_id"]
+        for row in relationships
+        if row["status"] == "rejected" and _current_relationship_review(row, as_of=as_of)
+    }
     for target in targets:
         security = securities.get(target["security_id"])
         if security is None or not security["ticker"] or not security["company_name"]:
@@ -1541,8 +1635,7 @@ def _candidate_pipeline(
             )
             if blockers:
                 reasons.add(f"hard_blocker:{','.join(blockers)}")
-            if required_decimal(assessment["base_upside_pct"], label="candidate upside") <= 0:
-                reasons.add("base_upside_not_positive")
+            reasons.update(assessment_payoff_reasons(assessment, settings))
             if (
                 score_assessment(assessment, settings.allocation.cash_hurdle_score).effective_score
                 < settings.allocation.cash_hurdle_score
@@ -1574,7 +1667,11 @@ def _candidate_pipeline(
                 except MarketDataError:
                     reasons.add("fx_unavailable")
             if target["security_id"] not in current_relationship_ids:
-                reasons.add("relationship_missing_or_stale")
+                reasons.add(
+                    "relationship_rejected"
+                    if target["security_id"] in rejected_relationship_ids
+                    else "relationship_missing_or_stale"
+                )
         ordered_reasons = tuple(
             sorted(
                 reasons,
@@ -1751,7 +1848,12 @@ def _coverage(
         for security_id, row in assessments.items()
         if security_id in candidate_ids and _current_assessment(row, settings, as_of=as_of)
     ]
-    current_relationship_security_ids = {
+    reviewed_relationship_security_ids = {
+        row["security_id"]
+        for row in relationships
+        if row["security_id"] in candidate_ids and _current_relationship_review(row, as_of=as_of)
+    }
+    accepted_relationship_security_ids = {
         row["security_id"]
         for row in relationships
         if row["security_id"] in candidate_ids and _current_relationship(row, as_of=as_of)
@@ -1805,8 +1907,9 @@ def _coverage(
         fresh_evidence_assessment_count=sum(
             _fresh_evidence(row, sources, settings) for row in current_assessments
         ),
-        current_relationship_count=len(current_relationship_security_ids),
-        required_relationship_count=len(candidate_ids),
+        reviewed_relationship_count=len(reviewed_relationship_security_ids),
+        accepted_relationship_count=len(accepted_relationship_security_ids),
+        required_relationship_review_count=len(candidate_ids),
         ready_or_active_strategy_count=len(current_strategies),
         active_signal_count=active_signals,
         pending_order_count=len(pending_orders),
@@ -1833,11 +1936,17 @@ def _performance_summary(
     *,
     as_of: datetime,
 ) -> PerformanceSummary:
+    current_epoch_id = performance["performance_epoch_id"] if performance is not None else ""
+    epochs = read_table(repository_root, "performance_epochs")
+    current_epoch = next(
+        (row for row in epochs if row["performance_epoch_id"] == current_epoch_id), None
+    )
     history_rows = sorted(
         (
             row
             for row in read_table(repository_root, "performance_daily")
-            if (parse_timestamp(row["generated_at"]) or as_of) <= as_of
+            if row["performance_epoch_id"] == current_epoch_id
+            and (parse_timestamp(row["generated_at"]) or as_of) <= as_of
             and row["date"] <= as_of.date().isoformat()
         ),
         key=lambda value: value["date"],
@@ -1901,6 +2010,12 @@ def _performance_summary(
         )
     largest_sector = max(sectors.values(), default=Decimal("0"))
     return PerformanceSummary(
+        performance_epoch_id=current_epoch_id,
+        epoch_started_at=current_epoch["started_at"] if current_epoch is not None else "",
+        epoch_opening_equity_base=(
+            current_epoch["opening_equity_base"] if current_epoch is not None else "0"
+        ),
+        prior_epoch_count=max(len(epochs) - (1 if current_epoch is not None else 0), 0),
         daily_return_pct=performance["daily_return_pct"] if performance else "0",
         cumulative_return_pct=performance["cumulative_return_pct"] if performance else "0",
         running_drawdown_pct=decimal_text(running_drawdown),
@@ -1918,7 +2033,7 @@ def _performance_summary(
     )
 
 
-def _data_status(
+def _investment_data_status(
     holdings: Mapping[tuple[str, str, str], _Holding],
     pending_blockers: Sequence[str],
     current_blockers: Sequence[str],
@@ -1931,14 +2046,21 @@ def _data_status(
         or any(impact.impact == "blocks_portfolio" for impact in impacts)
     ):
         return "blocked"
-    candidate_gaps = (
+    data_gaps = (
         coverage.current_assessment_count < coverage.allocation_candidate_count
-        or coverage.current_relationship_count < coverage.required_relationship_count
+        or coverage.reviewed_relationship_count < coverage.required_relationship_review_count
         or coverage.market_data_failure_count > 0
-        or coverage.non_blocking_issue_count > 0
-        or any(impact.impact == "blocks_action" for impact in impacts)
+        or any(impact.impact == "affects_candidate" for impact in impacts)
     )
-    if candidate_gaps:
+    if data_gaps:
+        return "degraded"
+    return "current"
+
+
+def _operations_status(impacts: Sequence[SystemImpact]) -> str:
+    if any(impact.impact in {"blocks_portfolio", "blocks_action"} for impact in impacts):
+        return "blocked"
+    if any(impact.impact in {"publication_only", "operational_only"} for impact in impacts):
         return "degraded"
     return "current"
 
@@ -2065,10 +2187,13 @@ def build_decision_snapshot(
         impacts,
         as_of=instant,
     )
-    status = _data_status(holdings, pending_blockers, current_blockers, coverage, impacts)
+    investment_status = _investment_data_status(
+        holdings, pending_blockers, current_blockers, coverage, impacts
+    )
+    operations_status = _operations_status(impacts)
     actions = (
         ()
-        if status == "blocked"
+        if investment_status == "blocked"
         else _actionable_signals(
             repository_root,
             settings,
@@ -2090,7 +2215,7 @@ def build_decision_snapshot(
             else ()
         ),
     }
-    stance, stance_reasons = _stance(status, current, actions, tuple(blocked_reasons))
+    stance, stance_reasons = _stance(investment_status, current, actions, tuple(blocked_reasons))
     for code in stance_reasons:
         reason_label(code)
     snapshot = DecisionSnapshot(
@@ -2099,7 +2224,8 @@ def build_decision_snapshot(
         run_id=run_id,
         as_of=format_timestamp(instant),
         report_date=instant.date().isoformat(),
-        data_status=status,
+        investment_data_status=investment_status,
+        operations_status=operations_status,
         stance=stance,
         stance_reason_codes=stance_reasons,
         base_currency=settings.portfolio.base_currency,
@@ -2138,6 +2264,33 @@ def _validate_snapshot_object(repository_root: Path, value: Mapping[str, object]
                 for error in errors
             )
         )
+    if value.get("version") == 2:
+        row_fields = {
+            "mark_base",
+            "fx_as_of",
+            "security_research_page",
+            "strategy_research_page",
+        }
+        for portfolio_key in ("current_portfolio", "approved_target_portfolio"):
+            portfolio = value.get(portfolio_key)
+            if not isinstance(portfolio, Mapping) or not isinstance(portfolio.get("rows"), list):
+                continue
+            for index, row in enumerate(portfolio["rows"]):
+                if not isinstance(row, Mapping) or not row_fields.issubset(row):
+                    raise AdviceError(
+                        f"decision snapshot schema: {portfolio_key}/rows/{index}: "
+                        "version 2 FX and research-link fields are required"
+                    )
+        signal_fields = {"security_research_page", "strategy_research_page"}
+        raw_signals = value.get("actionable_signals")
+        if not isinstance(raw_signals, list):
+            raise AdviceError("decision snapshot schema: actionable_signals must be an array")
+        for index, signal in enumerate(raw_signals):
+            if not isinstance(signal, Mapping) or not signal_fields.issubset(signal):
+                raise AdviceError(
+                    f"decision snapshot schema: actionable_signals/{index}: "
+                    "version 2 research-link fields are required"
+                )
 
 
 def snapshot_document(snapshot: DecisionSnapshot) -> dict[str, object]:
@@ -2237,34 +2390,73 @@ def load_published_snapshot(
     if expected_run_id is not None and raw_value["run_id"] != expected_run_id:
         raise AdviceError("published decision snapshot belongs to a different run")
 
+    version = int(raw_value["version"])
+
     def model_row(raw: dict[str, Any]) -> ModelPortfolioRow:
-        return ModelPortfolioRow(**{**raw, "reason_codes": tuple(raw["reason_codes"])})
+        normalized = dict(raw)
+        if version == 1:
+            normalized.update(
+                {
+                    "mark_base": decimal_text(
+                        required_decimal(raw["mark"], label="legacy mark")
+                        * required_decimal(raw["fx_rate_to_base"], label="legacy FX rate")
+                    ),
+                    "fx_as_of": raw["market_data_as_of"],
+                    "security_research_page": raw["research_page"],
+                    "strategy_research_page": "",
+                }
+            )
+        return ModelPortfolioRow(
+            **{**normalized, "reason_codes": tuple(normalized["reason_codes"])}
+        )
 
     def portfolio(raw: dict[str, Any]) -> PortfolioSummary:
         return PortfolioSummary(**{**raw, "rows": tuple(model_row(row) for row in raw["rows"])})
 
+    def signal_view(raw: dict[str, Any]) -> ActionableSignalView:
+        normalized = dict(raw)
+        if version == 1:
+            normalized.update(
+                {
+                    "security_research_page": raw["research_page"],
+                    "strategy_research_page": "",
+                }
+            )
+        return ActionableSignalView(
+            **{
+                **normalized,
+                "reason_codes": tuple(normalized["reason_codes"]),
+                "legs": tuple(normalized["legs"]),
+            }
+        )
+
+    raw_coverage = dict(raw_value["coverage"])
+    if version == 1:
+        legacy_relationships = int(raw_coverage.pop("current_relationship_count"))
+        legacy_required = int(raw_coverage.pop("required_relationship_count"))
+        raw_coverage.update(
+            {
+                "reviewed_relationship_count": legacy_relationships,
+                "accepted_relationship_count": legacy_relationships,
+                "required_relationship_review_count": legacy_required,
+            }
+        )
     return DecisionSnapshot(
-        version=int(raw_value["version"]),
+        version=version,
         snapshot_id=str(raw_value["snapshot_id"]),
         run_id=str(raw_value["run_id"]),
         as_of=str(raw_value["as_of"]),
         report_date=str(raw_value["report_date"]),
-        data_status=str(raw_value["data_status"]),
+        investment_data_status=str(
+            raw_value["data_status" if version == 1 else "investment_data_status"]
+        ),
+        operations_status=("current" if version == 1 else str(raw_value["operations_status"])),
         stance=str(raw_value["stance"]),
         stance_reason_codes=tuple(raw_value["stance_reason_codes"]),
         base_currency=str(raw_value["base_currency"]),
         current_portfolio=portfolio(raw_value["current_portfolio"]),
         approved_target_portfolio=portfolio(raw_value["approved_target_portfolio"]),
-        actionable_signals=tuple(
-            ActionableSignalView(
-                **{
-                    **raw,
-                    "reason_codes": tuple(raw["reason_codes"]),
-                    "legs": tuple(raw["legs"]),
-                }
-            )
-            for raw in raw_value["actionable_signals"]
-        ),
+        actionable_signals=tuple(signal_view(raw) for raw in raw_value["actionable_signals"]),
         candidate_pipeline=tuple(
             CandidateView(
                 **{
@@ -2276,9 +2468,19 @@ def load_published_snapshot(
             for raw in raw_value["candidate_pipeline"]
         ),
         research_alerts=tuple(ResearchAlertView(**raw) for raw in raw_value["research_alerts"]),
-        coverage=CoverageSummary(**raw_value["coverage"]),
+        coverage=CoverageSummary(**raw_coverage),
         performance=PerformanceSummary(
             **{
+                **(
+                    {
+                        "performance_epoch_id": "",
+                        "epoch_started_at": "",
+                        "epoch_opening_equity_base": "0",
+                        "prior_epoch_count": 0,
+                    }
+                    if version == 1
+                    else {}
+                ),
                 **raw_value["performance"],
                 "history": tuple(raw_value["performance"]["history"]),
             }

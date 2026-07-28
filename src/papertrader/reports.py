@@ -344,13 +344,14 @@ def _generate_legacy_daily_report(
         if row["run_id"] == run_id or _today(row["executed_at"], day)
     ]
     portfolio = read_table(repository_root, "portfolio")
-    performance = next(
+    performance = max(
         (
             row
             for row in read_table(repository_root, "performance_daily")
             if row["date"] == day.isoformat()
         ),
-        None,
+        key=lambda row: (row["generated_at"], row["performance_epoch_id"]),
+        default=None,
     )
     history = [
         row
@@ -757,13 +758,15 @@ def generate_daily_report(
             "",
             "## 7. Data-quality and coverage impact",
             "",
-            f"- Data status: **{_markdown_text(snapshot.data_status)}**",
+            f"- Investment data status: **{_markdown_text(snapshot.investment_data_status)}**",
+            f"- Operations status: **{_markdown_text(snapshot.operations_status)}**",
             f"- Assessments: {coverage.current_assessment_count}/"
             f"{coverage.allocation_candidate_count}",
             f"- Fresh-evidence assessments: {coverage.fresh_evidence_assessment_count}/"
             f"{coverage.allocation_candidate_count}",
-            f"- Current accepted relationships: {coverage.current_relationship_count}/"
-            f"{coverage.required_relationship_count}",
+            f"- Relationship reviews: {coverage.reviewed_relationship_count}/"
+            f"{coverage.required_relationship_review_count}",
+            f"- Accepted relationships: {coverage.accepted_relationship_count}",
             f"- Ready or active strategies: {coverage.ready_or_active_strategy_count}",
             f"- Active signals: {coverage.active_signal_count}",
             f"- Pending orders: {coverage.pending_order_count}",

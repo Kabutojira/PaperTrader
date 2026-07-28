@@ -107,6 +107,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   │   ├── daily-reports/
 │   │   ├── research-catalog.md
 │   │   ├── model-portfolio.md
+│   │   ├── security-catalog.md
 │   │   ├── signals.md
 │   │   ├── performance.md
 │   │   ├── system-status.md
@@ -123,6 +124,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   │   ├── executions.csv
 │   │   ├── cash_ledger.csv
 │   │   ├── portfolio.csv
+│   │   ├── performance_epochs.csv
 │   │   ├── performance_daily.csv
 │   │   ├── security_assessments.csv
 │   │   ├── allocation_targets.csv
@@ -311,6 +313,10 @@ publication invariant but defers only the source-state freshness comparison unti
 regenerates and strictly validates the completed run's snapshot.
 When several completed runs share one canonical report date, the newest completed run owns that
 report page; every run still retains and validates its own immutable decision snapshot.
+Investment-data health and operations/delivery health are separate snapshot fields. A delivery
+failure must not imply that assessments, prices, FX, or portfolio accounting are degraded. Every
+published foreign-currency mark includes the native mark, base-currency mark, conversion rate, and
+separate market-data and FX timestamps; ticker links open the immutable security research page.
 
 ## Operation queue contract
 
@@ -556,12 +562,25 @@ Additional required settings:
 - order expiry;
 - maximum LLM operations per run;
 - maximum model budget per run.
+- minimum base-case upside for a new or increased baseline position;
+- minimum base-upside-to-downside ratio for a new or increased baseline position.
 
 `allocation_plan_id` identifies the economic allocation decision and must not include controller
 `run_id` or publication time in its content identity. Re-publishing unchanged economic inputs
 keeps the same plan ID while appending a distinct immutable observation keyed by plan, run, and
 security. This prevents daily finalization from superseding its own in-flight baseline strategy or
 signal work.
+
+An assessment must clear the cash score, minimum base-case upside, and minimum
+upside-to-downside ratio before baseline exposure may open or increase. The same gates apply when
+creating a strategy, signal, or order and immediately before a pending order can fill. A security
+with a live pending baseline order receives no additional deployment tranche until that order is
+filled, cancelled, or superseded.
+
+Initial capital remains an immutable `initial_capital` ledger entry. Account resizing uses an
+append-only `capital_contribution` or `capital_withdrawal` entry and starts a row in
+`performance_epochs.csv`; it never rewrites the original capital. Daily and cumulative returns are
+flow-adjusted within the current epoch, while all earlier epoch rows remain audit history.
 
 Use `Decimal` for money and prices. Never use binary float for ledger calculations.
 
@@ -718,3 +737,9 @@ PaperTrader version 1 is done when a clean scheduled run can:
 9. publish a reconciled decision snapshot, explicit model-portfolio stance, copyable exports, daily report, and Quartz dashboard from one snapshot identity;
 10. commit changes and send the committed investor brief to Telegram;
 11. rerun without duplicating work, signals, orders, executions, sources, wiki pages, or publication artifacts.
+
+The daily schedule is 17:00 `Europe/Rome` on all seven days. Scheduled and non-dry manual runs send
+the latest committed report after the runtime commit. Delivery verifies the bot and destination,
+uses one stable retry issue, and never replays older missed reports after a newer report exists.
+Local post-commit delivery uses `papertrader telegram deliver-run` so the report path is resolved
+from the selected commit's completed-run manifest.

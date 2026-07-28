@@ -267,6 +267,10 @@ uv run papertrader research assessment upsert \
 
 After fills, portfolio rebuild, reconciliation, and performance, the daily controller runs the
 allocator. It compares positive risk-adjusted candidate edge with the configured cash hurdle and
+requires at least 10% base-case upside and at least 1:1 base-upside-to-downside before opening or
+increasing a baseline position. Timing affects ranking but cannot override those payoff gates.
+Pending baseline exposure receives no repeated deployment tranche. The fill path cancels an entry
+if its assessment, payoff gates, strategy, or allocation plan is no longer current. The allocator
 keeps cash whenever candidates or capacity are insufficient. To inspect the same deterministic
 plan locally:
 
@@ -302,9 +306,14 @@ a new allocation candidate and defers a pending foreign-currency order; it never
 rate or mutates accounting. Current targets are generated state and agents must never edit either
 allocation table directly.
 
+The configured account size is 10,000 EUR. The original 100,000 EUR capital entry remains in the
+append-only ledger; a 90,000 EUR `capital_withdrawal` starts the current performance epoch. Future
+capital changes use `papertrader account rebase --request <json>`, append a contribution or
+withdrawal, and preserve prior epoch returns as audit history.
+
 ## Investor decision publication
 
-The public Quartz homepage is a results-first paper-investment dashboard. One deterministic
+The public Quartz homepage is a results-first investment dashboard. One deterministic
 projection in `src/papertrader/advice.py` joins the reconciled account, validated pending orders,
 signals, allocation candidates, research alerts, performance, coverage, and issues. The projection
 does not feed allocation, orders, fills, or accounting back into the system.
@@ -321,22 +330,23 @@ the latest validated publication files:
 - `data/published/model_portfolio.csv`;
 - `data/published/actionable_signals.csv`.
 
-The same snapshot generates the Today, Model portfolio, Signals, Performance, System status, and
-Research catalog pages plus the investor-first daily report and Telegram brief. Allocation targets
+The same snapshot generates the Today, Model portfolio, Securities, Signals, Performance, System
+status, and Research catalog pages plus the investor-first daily report and Telegram brief.
+Allocation targets
 without a valid strategy remain candidates, indicator transitions remain visibly labelled research
 alerts, and only a validated non-terminal paper order can be copy ready. An all-cash conclusion is
 published explicitly as `No trade — hold 100% cash`.
 
 The model-portfolio page works without JavaScript and provides committed CSV/JSON downloads.
 Progressive enhancement can copy rows as TSV and scale long-equity target weights to a notional in
-browser memory. It rounds down to whole shares, reports residual cash and the reference mark/FX
-timestamp, does not persist the notional, and never contacts a broker or server. The scaled result
-is illustrative and has not passed PaperTrader's portfolio-level risk checks.
+browser memory. It rounds down to whole shares, reports residual cash and separate market/FX
+timestamps, does not persist the portfolio value, and never contacts a broker or server.
 
 ## Daily automation and publication
 
-The scheduled controller in `.github/workflows/daily.yml` uses one serialized path for both cron
-and manual runs. It prepares market and queue state, executes at most the configured number of
+The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/Rome` every day and
+uses one serialized path for both cron and manual runs. It prepares market and queue state,
+executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
 accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
 investor pages, writes the canonical daily report, and runs the complete validation gate. Manual
@@ -358,8 +368,8 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 - deploy the verified `site/public` artifact when Pages publication is enabled;
 - read the exact committed report with `git show` and send its investor brief as bounded Telegram
   Rich Markdown, preserving headings, lists, code, emphasis, and commit-pinned wiki links;
-- retain a failed Telegram chunk cursor in the repository issue ledger so a later dispatch of
-  `reporting.yml` can resume delivery without rolling back the runtime commit.
+- retain one stable latest-only Telegram delivery issue without rolling back the runtime commit;
+  when a newer report exists, older missed reports are not replayed.
 
 Repository setup requires `OPENAI_OAUTH_SECRET` and the matching
 `.papertrader/credentials/openai-oauth-auth.json.age` for non-dry Hermes runs; no OpenAI or
@@ -369,6 +379,8 @@ source, and enable repository secret scanning. See the operating runbook for OAu
 verification, rotation, and revoked-grant recovery. A deployment can be retried independently by
 manually dispatching `pages.yml` with the committed SHA. Telegram can be retried by dispatching
 `reporting.yml` with the same `commit_sha`, `report_path`, and `run_id`.
+For a committed local run, use `papertrader telegram deliver-run --commit-sha <sha> --run-id
+<run-id> --repository-url https://github.com/Kabutojira/PaperTrader`.
 
 The `[classifier]` command is the repository bridge to a tool-free, one-shot Hermes turn using the
 isolated OpenAI Codex OAuth profile. It defaults to the cost-sensitive `gpt-5.6-luna` model, emits

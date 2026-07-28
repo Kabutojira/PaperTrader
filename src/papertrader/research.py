@@ -670,40 +670,52 @@ def upsert_strategy(
             ),
             None,
         )
-        if (
-            target is None
-            or target["allocation_plan_id"] != values["allocation_plan_id"]
-            or target["security_id"] != values["security_id"]
-        ):
-            raise ResearchStateError("baseline strategy requires its current allocation target")
-        target_time = parse_timestamp(target["as_of"])
-        assert target_time is not None
-        if (
-            target_time > instant_dt
-            or instant_dt - target_time > settings.market_data.stale_price_after
-        ):
-            raise ResearchStateError("baseline strategy allocation plan is stale or future-dated")
-        assessment = next(
-            (
-                row
-                for row in read_table(repository_root, "security_assessments")
-                if row["security_id"] == values["security_id"]
-            ),
-            None,
-        )
-        if (
-            assessment is None
-            or assessment["assessed_at"] != target["assessment_as_of"]
-            or target["disposition"] not in {"open", "increase", "reduce", "close"}
-        ):
-            raise ResearchStateError(
-                "baseline strategy requires the unchanged material plan assessment"
+        if values["status"] in {"ready", "active"}:
+            if (
+                target is None
+                or target["allocation_plan_id"] != values["allocation_plan_id"]
+                or target["security_id"] != values["security_id"]
+            ):
+                raise ResearchStateError("baseline strategy requires its current allocation target")
+            target_time = parse_timestamp(target["as_of"])
+            assert target_time is not None
+            if (
+                target_time > instant_dt
+                or instant_dt - target_time > settings.market_data.stale_price_after
+            ):
+                raise ResearchStateError(
+                    "baseline strategy allocation plan is stale or future-dated"
+                )
+            assessment = next(
+                (
+                    row
+                    for row in read_table(repository_root, "security_assessments")
+                    if row["security_id"] == values["security_id"]
+                ),
+                None,
             )
-        if target["disposition"] in {"open", "increase"} and (
-            assessment["hard_blockers"]
-            or assessment["eligibility"] not in {"baseline", "conviction"}
-        ):
-            raise ResearchStateError("blocked assessment cannot increase baseline exposure")
+            if (
+                assessment is None
+                or assessment["assessed_at"] != target["assessment_as_of"]
+                or target["disposition"] not in {"open", "increase", "reduce", "close"}
+            ):
+                raise ResearchStateError(
+                    "baseline strategy requires the unchanged material plan assessment"
+                )
+            if target["disposition"] in {"open", "increase"}:
+                from papertrader.allocation import assessment_payoff_reasons
+
+                if assessment["hard_blockers"] or assessment["eligibility"] not in {
+                    "baseline",
+                    "conviction",
+                }:
+                    raise ResearchStateError("blocked assessment cannot increase baseline exposure")
+                payoff_reasons = assessment_payoff_reasons(assessment, settings)
+                if payoff_reasons:
+                    raise ResearchStateError(
+                        "baseline assessment fails configured payoff gates: "
+                        + "|".join(payoff_reasons)
+                    )
         if risk_budget != settings.allocation.maximum_baseline_position_pct:
             raise ResearchStateError(
                 "baseline strategy risk budget must equal the configured position cap"

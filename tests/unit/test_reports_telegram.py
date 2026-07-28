@@ -181,6 +181,38 @@ def test_telegram_transport_calls_rich_message_endpoint(monkeypatch: pytest.Monk
     assert payload == {"chat_id": ["-123"], "rich_message": [rich_message]}
 
 
+def test_telegram_transport_preflights_bot_and_destination(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    requests: list[urllib.request.Request] = []
+
+    class Response:
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return b'{"ok":true}'
+
+    def urlopen(request: urllib.request.Request, *, timeout: int) -> Response:
+        assert timeout == 15
+        requests.append(request)
+        return Response()
+
+    monkeypatch.setattr(urllib.request, "urlopen", urlopen)
+
+    UrllibTelegramTransport().preflight("test-token", "-123", timeout_seconds=15)
+
+    assert [request.full_url.rsplit("/", maxsplit=1)[-1] for request in requests] == [
+        "getMe",
+        "getChat",
+    ]
+    assert urllib.parse.parse_qs(requests[0].data.decode("utf-8")) == {}
+    assert urllib.parse.parse_qs(requests[1].data.decode("utf-8")) == {"chat_id": ["-123"]}
+
+
 class _FakeTelegram:
     def __init__(self, events: list[Mapping[str, object] | BaseException]) -> None:
         self.events = events
@@ -295,3 +327,76 @@ def test_telegram_failure_is_redacted_persisted_and_resumed(
         if row["issue_id"] == failed.issue_id
     )
     assert resolved["status"] == "resolved"
+
+
+def test_latest_commit_restarts_delivery_instead_of_replaying_an_old_cursor(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    old_commit, report_path = _commit_report(sandbox_repository)
+    bounded_settings = replace(
+        sandbox_settings,
+        telegram=replace(sandbox_settings.telegram, message_limit=100),
+    )
+    failed = deliver_committed_report(
+        sandbox_repository,
+        bounded_settings,
+        commit_sha=old_commit,
+        report_path=report_path,
+        repository_url="https://github.com/example/PaperTrader",
+        run_id="telegram-old",
+        token="secret-token",
+        chat_id="-123",
+        transport=_FakeTelegram(
+            [
+                {"ok": True},
+                TelegramDeliveryError("temporary failure"),
+                TelegramDeliveryError("temporary failure"),
+                TelegramDeliveryError("temporary failure"),
+            ]
+        ),
+        sleeper=lambda _: None,
+        now=datetime(2026, 7, 24, 23, tzinfo=UTC),
+    )
+    assert failed.status == "failed"
+    assert failed.chunks_sent == 1
+
+    (sandbox_repository / report_path).write_text(
+        "# Newest daily report\n\n" + "Latest position update.\n" * 20,
+        encoding="utf-8",
+    )
+    subprocess.run(["git", "add", report_path], cwd=sandbox_repository, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "newest report"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    latest_commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    transport = _FakeTelegram([])
+
+    sent = deliver_committed_report(
+        sandbox_repository,
+        bounded_settings,
+        commit_sha=latest_commit,
+        report_path=report_path,
+        repository_url="https://github.com/example/PaperTrader",
+        run_id="telegram-latest",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=lambda _: None,
+        now=datetime(2026, 7, 25, tzinfo=UTC),
+    )
+
+    assert sent.status == "sent"
+    assert sent.chunks_sent == sent.total_chunks
+    assert len(transport.calls) == sent.total_chunks
+    first = json.loads(transport.calls[0]["rich_message"])
+    assert first["markdown"].startswith("# Newest daily report")

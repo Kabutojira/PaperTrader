@@ -249,6 +249,25 @@ def score_assessment(
     return AssessmentScore(rounded_raw, effective, edge)
 
 
+def assessment_payoff_reasons(assessment: Mapping[str, str], settings: Settings) -> tuple[str, ...]:
+    """Return deterministic long-baseline payoff gate failures."""
+
+    base_upside = required_decimal(assessment["base_upside_pct"], label="base_upside_pct")
+    downside = required_decimal(assessment["downside_pct"], label="downside_pct")
+    reasons: list[str] = []
+    if base_upside <= 0:
+        reasons.append("base_upside_not_positive")
+    elif base_upside < settings.allocation.minimum_base_upside_pct:
+        reasons.append("base_upside_below_minimum")
+    downside_risk = max(-downside, Decimal("0"))
+    if (
+        downside_risk > 0
+        and base_upside / downside_risk < settings.allocation.minimum_upside_downside_ratio
+    ):
+        reasons.append("upside_downside_ratio_below_minimum")
+    return tuple(reasons)
+
+
 def calculate_assessment_score(
     assessment: Mapping[str, object], cash_hurdle_score: Decimal
 ) -> AssessmentScore:
@@ -814,9 +833,7 @@ def _candidate(
             reasons.append(f"hard_blocker:{','.join(blockers)}")
         if score.candidate_edge <= 0:
             reasons.append("score_below_cash_hurdle")
-        if required_decimal(assessment["base_upside_pct"], label="base_upside_pct") <= 0:
-            reasons.append("base_upside_not_positive")
-        required_decimal(assessment["downside_pct"], label="downside_pct")
+        reasons.extend(assessment_payoff_reasons(assessment, settings))
     if security["status"] not in ELIGIBLE_SECURITY_STATUSES:
         reasons.append("security_status_not_orderable")
     if security["instrument_type"] != "equity":
@@ -1509,12 +1526,25 @@ def plan_allocation(
         Decimal("1"),
     )
     diversified_budget = _money(deployment_budget * diversification_factor)
-    if settings.allocation.mode != "disabled" and eligible and diversified_budget > 0:
+    # Pending baseline exposure already consumes this run's diversification-adjusted
+    # deployment tranche. Replanning while an order is still pending must not create
+    # another tranche for unchanged evidence.
+    incremental_diversified_budget = max(diversified_budget - pending.baseline_total, Decimal("0"))
+    incremental_candidates = [
+        candidate
+        for candidate in eligible
+        if pending.baseline_by_security.get(candidate.security_id, Decimal("0")) <= 0
+    ]
+    if (
+        settings.allocation.mode != "disabled"
+        and incremental_candidates
+        and incremental_diversified_budget > 0
+    ):
         _allocate_capped(
-            eligible,
+            incremental_candidates,
             settings,
             equity,
-            diversified_budget,
+            incremental_diversified_budget,
             portfolio,
             pending,
         )
@@ -1565,6 +1595,10 @@ def plan_allocation(
             "maximum_sector_pct": decimal_text(settings.allocation.maximum_sector_pct),
             "maximum_theme_pct": decimal_text(settings.allocation.maximum_theme_pct),
             "cash_hurdle_score": decimal_text(settings.allocation.cash_hurdle_score),
+            "minimum_base_upside_pct": decimal_text(settings.allocation.minimum_base_upside_pct),
+            "minimum_upside_downside_ratio": decimal_text(
+                settings.allocation.minimum_upside_downside_ratio
+            ),
             "minimum_confidence": settings.allocation.minimum_confidence,
             "minimum_diversified_candidates": settings.allocation.minimum_diversified_candidates,
             "maximum_assessment_age_days": settings.allocation.maximum_assessment_age_days,

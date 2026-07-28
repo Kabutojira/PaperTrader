@@ -1,0 +1,6 @@
+{
+  "target_equity_base": "10000",
+  "reason": "Resize the model portfolio and begin a new performance epoch",
+  "run_id": "local-20260728-plan-implementation",
+  "effective_at": "2026-07-28T12:00:00Z"
+}

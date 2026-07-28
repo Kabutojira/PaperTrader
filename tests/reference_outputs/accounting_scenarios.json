@@ -68,6 +68,8 @@
       "gross_exposure_base": "1100",
       "market_value_base": "1100",
       "net_exposure_base": "1100",
+      "net_external_flow_base": "0",
+      "performance_epoch_id": "performance_epoch_bc3c0720291f25256897",
       "realized_pnl_base": "0",
       "run_id": "run-equity",
       "unrealized_pnl_base": "98.39995"
@@ -159,6 +161,8 @@
       "gross_exposure_base": "600",
       "market_value_base": "600",
       "net_exposure_base": "600",
+      "net_external_flow_base": "0",
+      "performance_epoch_id": "performance_epoch_bc3c0720291f25256897",
       "realized_pnl_base": "0",
       "run_id": "run-option",
       "unrealized_pnl_base": "198.96"
@@ -250,6 +254,8 @@
       "gross_exposure_base": "200",
       "market_value_base": "-200",
       "net_exposure_base": "-200",
+      "net_external_flow_base": "0",
+      "performance_epoch_id": "performance_epoch_bc3c0720291f25256897",
       "realized_pnl_base": "0",
       "run_id": "run-short",
       "unrealized_pnl_base": "48.8500125"

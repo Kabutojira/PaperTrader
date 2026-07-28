@@ -7,8 +7,8 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-report-generator
-run_id: "gha-30349958765-1"
-snapshot_id: "decision_f7970c846929cff52159"
+run_id: "local-20260728-plan-final4"
+snapshot_id: "decision_f354d036c7b7d92bd9ff"
 ---
 
 # PaperTrader daily report — 2026-07-28
@@ -16,74 +16,60 @@ snapshot_id: "decision_f7970c846929cff52159"
 ## 1. Investor decision summary
 
 <!-- papertrader-investor-brief:start -->
-# Deploy approved paper capital
+# No trade — hold 100% cash
 
-- **Data status:** Degraded — review coverage and data gaps
-- **As of:** `2026-07-28T10:15:46Z`
-- **Snapshot:** `decision_f7970c846929cff52159`
-- **Cash:** 100000 EUR (100%)
+- **Investment data:** Current
+- **Operations:** Attention required
+- **As of:** `2026-07-28T13:49:15Z`
+- **Snapshot:** `decision_f354d036c7b7d92bd9ff`
+- **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
-- **Approved target cash:** 95599.42 EUR (95.601749%)
-- **Actionable signals:** 2
+- **Approved target cash:** 10000 EUR (100%)
+- **Actionable signals:** 0
 
 ## Approved target changes
 
-- **ISRG:** Buy to 4.398251% (paper estimate)
+No approved target changes.
 
 ## Actionable signals
 
-- **ISRG:** Buy — Pending validated paper order
-- **ISRG:** Buy — Pending validated paper order
+No actionable trade signals.
 
 ## Top blocker or near miss
 
-- **ISRG — Intuitive Surgical, Inc.:** The eligible set is not sufficiently diversified.
+- **ISRG — Intuitive Surgical, Inc.:** Base-case upside is below the configured entry minimum.
 <!-- papertrader-investor-brief:end -->
 
 ### Deterministic reasons
 
-- Validated opening paper actions are pending.
+- The reconciled model portfolio is entirely cash.
+- No strategy has produced a current actionable trade signal.
 
 ## 2. Model portfolio and approved changes
 
-- Current equity: 100000 EUR
-- Current cash: 100000 EUR (100%)
+- Current equity: 10000 EUR
+- Current cash: 10000 EUR (100%)
 - Current gross exposure: 0 EUR
-- Approved target cash: 95599.42 EUR (95.601749%)
+- Approved target cash: 10000 EUR (100%)
 - Pending-order targets are estimates at the snapshot mark; only fills change accounting.
 
 | Holding | Sleeve | Current weight | Approved target | Current value | Target value | Action | State |
 | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
-| Cash | cash | 100% | 95.601749% | 100000  | 95599.42  | Trim | Pending validated paper order |
-| [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9) | baseline | 0% | 4.398251% | 0  | 4398.14  | Buy | Pending validated paper order |
+| Cash | cash | 100% | 100% | 10000  | 10000  | No trade | No action |
 
 ## 3. Actionable signals and pending orders
 
-### [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9)
+No actionable trade signals.
 
-- Action: **Buy**
-- State: Pending validated paper order (copy ready)
-- Strategy: Intuitive Surgical bounded baseline allocation
-- Signal window: `2026-07-28T07:47:48Z` to `2026-07-29T07:45:53Z`
-- Market data: `2026-07-27T20:55:09Z`
-- Rationale: Replace the cancelled under-sized order signal while allocation plan allocation\_plan\_02b52e8899b55922bf4e and assessment 2026-07-27T21:28:56Z remain current. The approved target remains a bounded 2.2% Intuitive Surgical baseline allocation, and deterministic create-baseline sizing now owns the exact whole-share delta.
-
-### [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9)
-
-- Action: **Buy**
-- State: Pending validated paper order (copy ready)
-- Strategy: Intuitive Surgical bounded baseline allocation
-- Signal window: `2026-07-28T08:22:44Z` to `2026-07-29T08:21:25Z`
-- Market data: `2026-07-27T20:55:09Z`
-- Rationale: Review the incremental allocator-directed Intuitive Surgical baseline exposure only while allocation plan allocation\_plan\_8859abf5cf5708b35855 and assessment 2026-07-27T21:28:56Z remain current. The plan's increase disposition maps to the open signal lifecycle, but this signal authorizes no quantity. The effective score of 63 clears the cash hurdle, while limited 2.5% base upside, 23.2% downside, weak timing, and insufficient diversification keep exposure lower-conviction and capped at the deterministic 4.39% target after pending exposure.
+No pending paper orders.
 
 ## 4. Candidates and near misses
 
 | Candidate | State | Score | Base upside | Main reason |
 | --- | --- | ---: | ---: | --- |
-| [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | Risk blocked | 63 | 2.5% | The eligible set is not sufficiently diversified. |
-| [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | Valuation unattractive | 45.2 | 2% | The effective score does not beat the configured cash hurdle. |
-| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Valuation unattractive | 38.4 | 2.2% | The effective score does not beat the configured cash hurdle. |
+| [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | Valuation unattractive | 63 | 2.5% | Base-case upside is below the configured entry minimum. |
+| [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | Valuation unattractive | 45.2 | 2% | Base-case upside is below the configured entry minimum. |
+| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Valuation unattractive | 38.4 | 2.2% | Base-case upside is below the configured entry minimum. |
 | [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | Valuation unattractive | 34.6 | -18.9% | The assessed base case has no positive upside. |
 | [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809) | Valuation unattractive | 30.6 | -19.9% | The assessed base case has no positive upside. |
 
@@ -135,35 +121,37 @@ snapshot_id: "decision_f7970c846929cff52159"
 - [[securities/security_cc4dcb8f002b61dffe00]]
 - [[securities/security_f2b9760d847b2ba59324]]
 - [[securities/security_fb87fac302a5446a1ced]]
+- [[security-catalog]]
 - [[signals]]
 - [[strategies/strategy_bd005fc3733b1475b6f9]]
 - [[system-status]]
 
 ## 7. Data-quality and coverage impact
 
-- Data status: **degraded**
+- Investment data status: **current**
+- Operations status: **degraded**
 - Assessments: 24/24
 - Fresh-evidence assessments: 24/24
-- Current accepted relationships: 22/24
-- Ready or active strategies: 1
-- Active signals: 2
-- Pending orders: 2
+- Relationship reviews: 24/24
+- Accepted relationships: 22
+- Ready or active strategies: 0
+- Active signals: 0
+- Pending orders: 0
 - Market-data success/failure: 24/0
 - Research alerts (not trade signals): 16
 
 ### Current system impacts
 
-- **publication only**: Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75
-- **publication only**: Telegram delivery failed: a8393d13b8e650e0d813cc9346c3d11dd063264f
+- **publication only**: Telegram delivery unavailable
 
 ## 8. Audit appendix
 
 ### Run diagnostics
 
-- Run ID: `gha-30349958765-1`
+- Run ID: `local-20260728-plan-final4`
 - Run status: `succeeded`
-- Generated (UTC): `2026-07-28T10:15:46Z`
-- Decision snapshot: `decision_f7970c846929cff52159`
+- Generated (UTC): `2026-07-28T13:49:15Z`
+- Decision snapshot: `decision_f354d036c7b7d92bd9ff`
 
 ### Complete market freshness
 
@@ -199,8 +187,8 @@ snapshot_id: "decision_f7970c846929cff52159"
 | Order ID | Strategy ID | Fill policy | Status | Created |
 | --- | --- | --- | --- | --- |
 | order_371f356c9fa026750350 | strategy_bd005fc3733b1475b6f9 | next_open | cancelled | 2026-07-28T07:36:01Z |
-| order_3b1467697b731e2bf689 | strategy_bd005fc3733b1475b6f9 | next_open | pending | 2026-07-28T07:52:26Z |
-| order_745a7a020ecf89d5734d | strategy_bd005fc3733b1475b6f9 | next_open | pending | 2026-07-28T08:42:27Z |
+| order_3b1467697b731e2bf689 | strategy_bd005fc3733b1475b6f9 | next_open | cancelled | 2026-07-28T07:52:26Z |
+| order_745a7a020ecf89d5734d | strategy_bd005fc3733b1475b6f9 | next_open | cancelled | 2026-07-28T08:42:27Z |
 
 | Execution ID | Order ID | Security ID | Side | Quantity | Fill | Fees |
 | --- | --- | --- | --- | ---: | ---: | ---: |
@@ -208,38 +196,38 @@ snapshot_id: "decision_f7970c846929cff52159"
 
 ### Allocation audit
 
-- Plan ID: `allocation_plan_2f7b8ceff49a1ff4c96c`
+- Plan ID: `allocation_plan_a20b6205bf2a087534d4`
 - Mode: `active`
-- Deployment budget: 15000 EUR
+- Deployment budget: 1500 EUR
 - Capital allocated: 0 EUR
-- Capital unallocated: 55601.85630750007489364515817 EUR
+- Capital unallocated: 6000 EUR
 
 | Rank | Security ID | Target weight | Disposition | Machine reasons |
 | ---: | --- | ---: | --- | --- |
-| 1 | security_1f9cce545ede94cd6349 | 4.4% | hold | above_cash_hurdle\|insufficient_diversification |
-| — | security_18a3ab0ee6086ee85d0f | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
+| — | security_18a3ab0ee6086ee85d0f | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
 | — | security_1c055eb9b2bb1f5a8ff2 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_22c2b9d782a62d7a9b86 | 0% | excluded | score_below_cash_hurdle |
-| — | security_2c779e81c27b78c556bb | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_2dbe878dfc899d7ee867 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_37ddcbdaad296ad831f2 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_4627aea1bf7d8943d3d8 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:accounting_uncertain,solvency_risk,valuation_unsupported\|score_below_cash_hurdle |
-| — | security_4b61970aa8f574446819 | 0% | excluded | score_below_cash_hurdle |
-| — | security_59304f90c440def31dc5 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_66cdcf90aac0d83e76f3 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_6ad1af8d10d6276a0221 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_6f9a1450edceb9307c9a | 0% | excluded | score_below_cash_hurdle |
-| — | security_7ca095d63423c55a90e3 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_8472507d7d320aa388a7 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_9d4049ed6669a52815d6 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_a9eb9838940ef5ceaa0c | 0% | excluded | score_below_cash_hurdle |
-| — | security_bdc2f87dadf134760c3a | 0% | excluded | base_upside_not_positive\|relationship_missing_or_stale\|score_below_cash_hurdle |
-| — | security_c120e9f26ebb6159adf9 | 0% | excluded | base_upside_not_positive\|relationship_missing_or_stale\|score_below_cash_hurdle |
-| — | security_c9a37d277445869a8809 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_cc4dcb8f002b61dffe00 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_ed7d5b616a196969c815 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_f2b9760d847b2ba59324 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
-| — | security_fb87fac302a5446a1ced | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_1f9cce545ede94cd6349 | 0% | excluded | base_upside_below_minimum\|upside_downside_ratio_below_minimum |
+| — | security_22c2b9d782a62d7a9b86 | 0% | excluded | base_upside_below_minimum\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_2c779e81c27b78c556bb | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_2dbe878dfc899d7ee867 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_37ddcbdaad296ad831f2 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_4627aea1bf7d8943d3d8 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:accounting_uncertain,solvency_risk,valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_4b61970aa8f574446819 | 0% | excluded | base_upside_below_minimum\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_59304f90c440def31dc5 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_66cdcf90aac0d83e76f3 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_6ad1af8d10d6276a0221 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_6f9a1450edceb9307c9a | 0% | excluded | base_upside_below_minimum\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_7ca095d63423c55a90e3 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_8472507d7d320aa388a7 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_9d4049ed6669a52815d6 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_a9eb9838940ef5ceaa0c | 0% | excluded | base_upside_below_minimum\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_bdc2f87dadf134760c3a | 0% | excluded | base_upside_not_positive\|relationship_missing_or_stale\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_c120e9f26ebb6159adf9 | 0% | excluded | base_upside_not_positive\|relationship_missing_or_stale\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_c9a37d277445869a8809 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_cc4dcb8f002b61dffe00 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_ed7d5b616a196969c815 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_f2b9760d847b2ba59324 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
+| — | security_fb87fac302a5446a1ced | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
 
 ### Research-operation audit
 
@@ -323,41 +311,43 @@ snapshot_id: "decision_f7970c846929cff52159"
 - `waiting` `01KYEWGWBRV9EV6YN1WQA6G3WF` — `security_research` for `security_cb88f9154cfeaa15e878`
 - `waiting` `01KYEXAGNREGCP02XCC9VBV80V` — `security_research` for `security_c5a9e460d3350284d157`
 - `waiting` `01KYFXFKB04HSHKYVSPNGXVJX0` — `security_research` for `security_66cdcf90aac0d83e76f3`
+- `ready` `01KYMEMXQGA1QK8JVEHY3EY6MN` — `relationship_research` for `relationship_87b95f713a902d531f2f`
 
 ### Open issues and delivery failures
 
-- `warning` **`issue_d86e39a339fa322f40f1`** — Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75: report=data/wiki/daily-reports/daily-report\_20260727.md commit=a1340c7457be74bc0d53dcf03b78647077a1ae75 next\_chunk=0 total\_chunks=1 error=Telegram HTTP 401: {"ok":false,"error\_code":401,"description":"Unauthorized"}
-- `warning` **`issue_ea4cacba630c6350ee4f`** — Telegram delivery failed: a8393d13b8e650e0d813cc9346c3d11dd063264f: report=data/wiki/daily-reports/daily-report\_20260728.md commit=a8393d13b8e650e0d813cc9346c3d11dd063264f next\_chunk=0 total\_chunks=1 error=Telegram HTTP 401: {"ok":false,"error\_code":401,"description":"Unauthorized"}
+- `warning` **`issue_c5f971a694e0ca3598d2`** — Telegram delivery unavailable: Latest-only delivery is pending verification for the next committed daily report; older failed reports will not be replayed.
 
 ### Machine decision provenance
 
-- `validated_open_actions` — Validated opening paper actions are pending.
-- `allocation_targets`: `b45abcc1825df144d3e9964c3b6e5ddb76e28bed1fd38e87c3a7889f381ebdf8`
-- `cash_ledger`: `01818c9c63f8b80fdf927abba96e6553d53e28f4e491dcc0201a06f4f4cbc8d1`
-- `configuration`: `6bfbcfa74f10e7c26fb5d945f6c4e0e7748c06714ce07d22e70a46ae67973c83`
-- `csv_contracts`: `006db7fd09c8f810fa6b0be26cd8e4dbd772b3f76b60957660c996d239f16115`
-- `decision_schema`: `af6b26a6dbd262948e4e20bb45ac0f948268dcd7d2e761e5942bdd1b2cd6c68b`
+- `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
+- `no_actionable_signals` — No strategy has produced a current actionable trade signal.
+- `allocation_targets`: `acf89b4ac386a4be4c49d00950bef13b369014a9b14fe93d1d48ae2770a20f5c`
+- `cash_ledger`: `680c5eba138f06e3afc99fbd8919ef0999b97aa6cc567edaf9a11cbece564029`
+- `configuration`: `517c09d6aea6441bc5da12ca67e60e12fbf478767f6da664be8fcc473bc2475b`
+- `csv_contracts`: `5d69a6715a26724da012fa4fea98233c5874ae8f38ea64c03162438d9cc6308e`
+- `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `fx_aud_eur`: `cbd32955bf9d81b9c449f7acae3a850611f317cb2d376e0bb28be1e553e71611`
 - `fx_gbp_eur`: `dbcea5bd7a4ae41c5084e0797386f3e54980566772cd2e679724b5edc4be5e09`
 - `fx_usd_eur`: `dbdc7a58435277b3755d14f343fb743eef44ef7a02fcc5cfa27cefdc44a31728`
 - `indicators`: `330d1b35bb6869ce6d57c7e7d37b59626721611312c4d5cc91670b5cae7693bc`
-- `issues`: `1a5ef9d59356fcfa854830ce213aa6f284200747530ffd266bf462952397edcc`
+- `issues`: `8ec2ebd704625fae50465f82b77a0536367fca85695e891589ac16bf3bb0f69a`
 - `market_latest`: `af3120ffd408e4622886bd9933eb0adbf9104b5c2524dc325958e59afcb1983b`
-- `operation_payloads`: `95bf40ed57e590ffbbfb19ef93b519f0dea5ba6cd1e9e159881d1835e880a57b`
+- `operation_payloads`: `f4905bb9cf9e5267b7316fef38af452c6ac4d6d313ca5d00589789f21d90fa50`
 - `operations_history`: `04124a7411609a2c1f718d63c0a9db53dbecf0e280a0725244efbd5045f2a331`
-- `operations_todo`: `39333797d05e38682a1b58f1e0dd4929c4c208b6fdf20ac0f12cd99a44890811`
+- `operations_todo`: `443ccf6fc1e7d4e741259345b4deb832602f222257fa26883c1630f2e79840bd`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
-- `orders`: `d0f2ee8739f8fa1dc4bc541d3afc4e2ff1ec0257c65bb748e905adfbcd6e1a34`
-- `performance_daily`: `81ec42c1bc37f53e0efe95e0b4784faf3c6ff024d1858f72221b88cc1d6feca9`
+- `orders`: `ed876ae7f67d9632296d12497cb334ed5c925843ac65f9691907bf7a8613a3c0`
+- `performance_daily`: `c0a933d565d17431bafdb911f1e120bddd32758e3eaa9da9d474a7a5a06cbe94`
+- `performance_epochs`: `bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `392b56955048368279eb1b760300ca93ba0f7a7c6f1589a9fe99c844f0d1601a`
-- `runs`: `d70e9afdee09dbdba7609f5d29684ccab02f0776d0cec92182db32b97edb5e3c`
+- `runs`: `a7764a9f06cc6046b25369096c03872230ddb5c410005e6924cd0b6132cff726`
 - `securities`: `eae80093281bb39b825157ccb07d8c58a09b5228464f4fedc701118b91c76cd2`
 - `security_assessments`: `a6bc3581e9ce6e6be6ed94a60aa0c2c791f84c0dc5f57b7fb63dbf9deb67ec75`
-- `signals`: `b0ba7fe72e4ae3dcc4d4aa432b31d631ac633135add41d1d8ea563a652b86a78`
+- `signals`: `874d3deab149ff6c97a32ad6e61f2d243a5f96559acf815dfc1cd3dc91595f41`
 - `source_registry`: `58999055ab38fb916c74fcda948ecfa38ecf3546a573d1d6ade2eeac5f8626ef`
-- `strategies`: `3dfcfa54d1fe8a5464bba5f679a7f297c80b6590d65566f5739434919d5ebf67`
+- `strategies`: `5ed9f7cb50e7da9cad149dba066c4e8429a9b21ee4446bdd837fc1b0a5923e0b`
 - `strategy_legs`: `c814365d6571e84fc619f0905e14a9b7671dd7e312222d4505c732719d26dddf`
 - `wiki_inbox`: `fd3661e378cded9d695dbae451625b4a1b1a6f5da5a2b1a485da03997311012b`
 

@@ -7,8 +7,8 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f7970c846929cff52159"
-as_of: "2026-07-28T10:15:46Z"
+snapshot_id: "decision_f354d036c7b7d92bd9ff"
+as_of: "2026-07-28T13:49:15Z"
 ---
 
 # Research catalog
@@ -113,6 +113,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 - [PaperTrader research catalog](research-catalog)
 
+## Securities Dashboard
+
+- [PaperTrader tracked securities](security-catalog)
+
 ## Security
 
 - [ABB Ltd sponsored ADR](securities/security_c120e9f26ebb6159adf9)
@@ -146,7 +150,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Strategy
 
-- [Intuitive Surgical bounded baseline allocation](strategies/strategy_bd005fc3733b1475b6f9)
+- [Intuitive Surgical valuation watch](strategies/strategy_bd005fc3733b1475b6f9)
 
 ## System Status
 

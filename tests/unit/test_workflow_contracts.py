@@ -77,6 +77,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "send_telegram",
     }
     assert "schedule" in triggers
+    assert triggers["schedule"] == [{"cron": "0 17 * * *", "timezone": "Europe/Rome"}]
     assert daily["concurrency"] == {
         "group": "papertrader-write",
         "cancel-in-progress": "false",

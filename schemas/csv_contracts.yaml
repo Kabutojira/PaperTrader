@@ -273,11 +273,22 @@ contracts:
       - opened_at
       - last_mark_at
       - strategy_ids
+  performance_epochs:
+    path: data/tables/performance_epochs.csv
+    append_only: true
+    columns:
+      - performance_epoch_id
+      - started_at
+      - opening_equity_base
+      - base_currency
+      - reason
+      - run_id
   performance_daily:
     path: data/tables/performance_daily.csv
     generated: true
     columns:
       - date
+      - performance_epoch_id
       - base_currency
       - cash_base
       - market_value_base
@@ -286,6 +297,7 @@ contracts:
       - net_exposure_base
       - realized_pnl_base
       - unrealized_pnl_base
+      - net_external_flow_base
       - daily_pnl_base
       - daily_return_pct
       - cumulative_return_pct
@@ -312,7 +324,9 @@ contracts:
       - approved_target_quantity
       - mark
       - mark_currency
+      - mark_base
       - fx_rate_to_base
+      - fx_as_of
       - market_data_as_of
       - action
       - action_status
@@ -329,6 +343,8 @@ contracts:
       - exit_rule
       - invalidation
       - review_at
+      - security_research_page
+      - strategy_research_page
       - research_page
       - reason_codes
   published_actionable_signals:
@@ -360,6 +376,8 @@ contracts:
       - exit_rule
       - invalidation
       - rationale
+      - security_research_page
+      - strategy_research_page
       - research_page
       - reason_codes
   source_registry:

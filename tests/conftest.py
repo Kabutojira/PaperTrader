@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import shutil
 from dataclasses import replace
+from decimal import Decimal
 from pathlib import Path
 
 import pytest
@@ -93,4 +94,10 @@ def sandbox_settings(sandbox_repository: Path) -> Settings:
     )
     # Most deterministic fixtures exercise report generation without operation handoff.
     # Default-active behavior is asserted separately against the versioned config.
-    return replace(settings, allocation=replace(settings.allocation, mode="report_only"))
+    return replace(
+        settings,
+        allocation=replace(settings.allocation, mode="report_only"),
+        # Accounting scenario fixtures intentionally retain a large round-number balance;
+        # production account size is asserted directly in test_config.py.
+        portfolio=replace(settings.portfolio, initial_capital=Decimal("100000.00")),
+    )
