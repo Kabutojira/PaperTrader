@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_87b95f713a902d531f2f",
+  "idea_id": "idea_ai_infrastructure_power",
+  "security_id": "security_18a3ab0ee6086ee85d0f",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Higher-density compute requires switchgear, power distribution, power quality, thermal management, and related electrical infrastructure; Eaton can convert data-centre and grid demand through qualified Electrical Americas and Electrical Global products into orders, backlog, revenue, segment profit, and cash flow, subject to customer concentration, project delays, capacity execution, acquisitions, leverage, working capital, order normalization, and valuation.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Q2 and later primary evidence shows broad data-centre and utility orders, electrical backlog converting into revenue, durable margins and operating cash flow, capacity additions earning acceptable returns, controlled customer concentration, and acquisition integration reducing leverage without higher working-capital intensity.",
+  "invalidation": "Data-centre projects are cancelled or delayed; efficiency or architecture changes reduce Eaton content; customers internalize or dual-source equipment; capacity additions cause price or utilization deterioration; electrical orders fail to become revenue and cash; acquisitions miss returns; leverage constrains capital allocation; or concentration drives sustained margin compression.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_87b95f713a902d531f2f.md",
+  "last_reviewed_at": "2026-07-28T14:49:41Z",
+  "next_review_at": "2026-08-04T12:00:00Z"
+}

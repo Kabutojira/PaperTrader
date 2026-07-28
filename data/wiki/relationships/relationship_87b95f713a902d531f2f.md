@@ -63,6 +63,11 @@ registered as `source_etn_q1_2026_10q`, retrieved and hash-checked on 2026-07-27
 the scheduled Q2 review and does not quantify data-centre customer concentration, so relationship
 confidence remains medium rather than high.
 
+The 2026-07-28 allocation-maintenance refresh rechecked the same registered filing and both
+immutable endpoints. No newer payload evidence changes the causal test: the edge remains accepted
+with high positive sensitivity and medium confidence, while the Q2 evidence and valuation gates
+remain outstanding.
+
 ## Catalyst and confirmation
 
 Strengthen the edge if Q2 and later primary evidence shows that data-centre and utility orders remain

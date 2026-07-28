@@ -1,0 +1,17 @@
+{
+  "completed_at": "2026-07-28T14:53:50Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "1",
+  "operation_count": 1,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260728.md",
+  "run_id": "gha-30369855939-1",
+  "snapshot_id": "decision_2b8c46732c054433b992",
+  "source_sha": "4703df7f5bf22f1526169f0f53ec4b9ff24f55a0",
+  "started_at": "2026-07-28T14:45:44Z",
+  "status": "succeeded",
+  "trigger": "workflow_dispatch"
+}

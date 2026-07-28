@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/runs/gha-30369855939-1/01KYMEMXQGA1QK8JVEHY3EY6MN/relationship-upsert-request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_87b95f713a902d531f2f.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYMEMXQGA1QK8JVEHY3EY6MN",
+  "passed": true,
+  "run_id": "gha-30369855939-1",
+  "validation_version": 1
+}

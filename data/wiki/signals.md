@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f354d036c7b7d92bd9ff"
-as_of: "2026-07-28T13:49:15Z"
+snapshot_id: "decision_2b8c46732c054433b992"
+as_of: "2026-07-28T14:53:50Z"
 ---
 
 # Signals
 
-**Snapshot `decision_f354d036c7b7d92bd9ff` · As of `2026-07-28T13:49:15Z`**
+**Snapshot `decision_2b8c46732c054433b992` · As of `2026-07-28T14:53:50Z`**
 
 ## Actionable trade signals
 
@@ -25,7 +25,7 @@ No pending paper orders.
 
 ## Research alerts — not trade signals
 
-### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
+### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
 
 **Research alert — not a trade signal**
 
@@ -34,7 +34,7 @@ No pending paper orders.
 - Research status: `pending`
 - Conclusion: Deterministic indicator state awaits bounded research review.
 
-### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
+### [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced)
 
 **Research alert — not a trade signal**
 
