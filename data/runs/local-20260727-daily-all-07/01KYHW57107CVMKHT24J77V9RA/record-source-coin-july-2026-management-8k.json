@@ -1,0 +1,18 @@
+{
+  "source_id": "source_coin_july_2026_management_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000080/coin-20260722.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000080/coin-20260722.htm",
+  "source_type": "filing",
+  "title": "Coinbase July 2026 Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "47c7e56a2431b908a25467a78e94192456245811b60ef2ae36cbc9f51a1ab424",
+  "related_entity_ids": "idea_digital_finance_crypto_rails|security_37ddcbdaad296ad831f2",
+  "checked_at": "2026-07-27T22:55:05Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Coinbase disclosed that Chief People Officer Lawrence Brock intended to step down effective August 17, 2026 and that Dominique Baillet was expected to be appointed; the filing did not update operating or financial results.",
+  "summary": "The latest SEC filing available through July 27, 2026 concerns a management transition and does not supersede the Q1 2026 Form 10-Q as the latest quarterly operating and financial evidence.",
+  "run_id": "local-20260727-daily-all-07"
+}

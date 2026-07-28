@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-14/01KYHW5710RH631A9AKFJ8KRGG/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted the low-confidence, high-sensitivity positive beneficiary relationship from AI-native drug discovery to Recursion Pharmaceuticals based on its computational models, proprietary biological data, automated experimentation, and platform-derived programs; no strategy follow-up was created because clinical translation, repeatable revenue, financing, dilution, and valuation remain unresolved."
+  ],
+  "evidence": [
+    {
+      "claim": "Recursion's SEC-filed Q1 2026 report records USD 654.5 million of cash and cash equivalents, 530.6 million shares outstanding, a USD 117.5 million quarterly net loss, and an expectation that additional capital will be required. This supports a direct but financially conditional platform-to-equity mechanism.",
+      "observed_at": "2026-07-27T23:18:30Z",
+      "source": "source_rxrx_q1_2026_10q",
+      "source_hash": "8b4dc7f64d6e33c66565fc7a4134d5b9a5da5ea3b217e3649094d869ba0355c3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000078/rxrx-20260331.htm"
+    },
+    {
+      "claim": "The maintained AI-native drug-discovery idea defines the causal channel from model-guided candidate selection and automated experimental feedback to owned-pipeline or partnership value, while requiring clinical validation and economics that survive burn, dilution, and partner bargaining power.",
+      "source": "data/wiki/ideas/idea_ai_native_drug_discovery.md"
+    },
+    {
+      "claim": "The maintained Recursion review records early clinical or regulatory progress for REC-1245, REC-4881, and REC-4539, but keeps the security low-confidence and ineligible because clinical translation, capital needs, dilution, and downside-aware valuation remain unsupported.",
+      "source": "data/wiki/securities/security_ed7d5b616a196969c815.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-14/01KYHW5710RH631A9AKFJ8KRGG/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_c829dae21648bb133cc7.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710RH631A9AKFJ8KRGG",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from AI-native drug discovery to Recursion Pharmaceuticals with high positive sensitivity and low confidence. Recursion's computational models, biological and chemical data, automated experiments, and platform-derived programs establish a direct causal exposure, while clinical translation, repeatable partnership economics, operating losses, likely financing, dilution, and unsupported valuation limit shareholder transmission. Updated the relationship page, complete research catalog, append-only wiki log, and canonical relationship row; no strategy, signal, order, issue, or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710RH631A9AKFJ8KRGG, run local-20260728-daily-all-14, relationship relationship_c829dae21648bb133cc7, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by content hash; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, endpoint pages, request, and inserted canonical row.",
+      "The accepted beneficiary row is unique for the idea-security endpoint pair and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The similarly exposed relationship relationship_9e7b4700174908755cbc was reviewed and is not equivalent because it belongs to the broader precision-biology and healthcare-automation idea; the new edge specifically tests AI-native drug-discovery economics.",
+      "The audited immutable request SHA-256 is afc4e60acdc3dc55d56ab904dfdf8a5093a9c24274dcb5fd0cd171338d3f0d35, and its CLI invocation changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, order, or fill path.",
+      "The relationship page is registered in the complete research catalog and documented in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, dependency, queue claim, preflight, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, catalog, and log checks passed."
+    ],
+    "passed": true
+  }
+}

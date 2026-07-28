@@ -1,0 +1,20 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/record-source-etn-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh-v3.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-security-etn-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710FSY7A9Y5NMEBG9AD",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-07",
+  "validation_version": 1
+}

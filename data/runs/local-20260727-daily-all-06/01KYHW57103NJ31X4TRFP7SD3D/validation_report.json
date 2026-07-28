@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-sec-exhibit.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-security-flnc-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW57103NJ31X4TRFP7SD3D",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-06",
+  "validation_version": 1
+}

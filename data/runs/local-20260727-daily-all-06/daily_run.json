@@ -1,0 +1,17 @@
+{
+  "completed_at": "2026-07-27T22:49:01Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "5",
+  "operation_count": 5,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260727.md",
+  "run_id": "local-20260727-daily-all-06",
+  "snapshot_id": "decision_9670681da3b5f418e379",
+  "source_sha": "5d4e05f42c569d7450596b2ca964a84364beee44",
+  "started_at": "2026-07-27T22:01:33Z",
+  "status": "succeeded",
+  "trigger": "local"
+}

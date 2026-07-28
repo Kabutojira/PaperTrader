@@ -1,0 +1,18 @@
+{
+  "source_id": "source_enph_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm",
+  "source_type": "filing",
+  "title": "Enphase Energy Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "8135cdc5c87271f022958a5d67a3869adfe1be8778415016e7989f7f335b307c",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_f2b9760d847b2ba59324",
+  "checked_at": "2026-07-27T23:10:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 revenue was USD 282.9 million, GAAP gross margin was 35.5%, operating cash flow was USD 102.9 million, and cash, cash equivalents, and marketable securities were USD 930.6 million.",
+  "summary": "The SEC-filed quarterly report supports current demand, shipment, margin, cash-flow, liquidity, debt, inventory, purchase-obligation, tariff, and policy-timed revenue analysis for Enphase; SEC submissions show it remains the latest Form 10-Q through 2026-07-27.",
+  "run_id": "local-20260727-daily-all-07"
+}

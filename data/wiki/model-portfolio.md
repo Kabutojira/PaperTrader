@@ -4,31 +4,43 @@ type: model-portfolio
 status: maintained
 tags:
   - model-portfolio
-created: "2026-07-27"
-updated: "2026-07-27"
+created: "2026-07-28"
+updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7eae4d9fa5380e578266"
-as_of: "2026-07-27T15:39:59Z"
+snapshot_id: "decision_55f99cf865416f0c19b8"
+as_of: "2026-07-28T08:45:56Z"
 ---
 
 # Model portfolio
 
-**Snapshot `decision_7eae4d9fa5380e578266` · As of `2026-07-27T15:39:59Z`**
+**Snapshot `decision_55f99cf865416f0c19b8` · As of `2026-07-28T08:45:56Z`**
 
 This is a paper-only, non-personalized research portfolio. Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-07-27T15:39:59Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="95.606745" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-07-28T08:45:56Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
-<div><dt>Approved target</dt><dd>100%</dd></div>
-<div><dt>Action</dt><dd>No trade</dd></div>
-<div><dt>State</dt><dd>No action</dd></div>
+<div><dt>Approved target</dt><dd>95.606745%</dd></div>
+<div><dt>Action</dt><dd>Trim</dd></div>
+<div><dt>State</dt><dd>Pending validated paper order</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
-<div><dt>As of</dt><dd>2026-07-27T15:39:59Z</dd></div>
+<div><dt>As of</dt><dd>2026-07-28T08:45:56Z</dd></div>
 </dl>
 
+</article>
+<article class="portfolio-card" data-scalable="true" data-target-weight="4.393255" data-mark="356.8299865722656" data-fx="0.8794000148773193" data-mark-currency="USD" data-market-data-as-of="2026-07-27T20:55:09Z" data-ticker="ISRG" data-company="Intuitive Surgical, Inc.">
+<h3>ISRG — Intuitive Surgical, Inc.</h3>
+<dl class="portfolio-card-values">
+<div><dt>Current</dt><dd>0%</dd></div>
+<div><dt>Approved target</dt><dd>4.393255%</dd></div>
+<div><dt>Action</dt><dd>Buy</dd></div>
+<div><dt>State</dt><dd>Pending validated paper order</dd></div>
+<div><dt>Reference mark</dt><dd>356.8299865722656 USD</dd></div>
+<div><dt>As of</dt><dd>2026-07-27T20:55:09Z</dd></div>
+</dl>
+<p><a href="strategies/strategy_bd005fc3733b1475b6f9">Complete research</a></p>
 </article>
 </div>
 <p class="portfolio-base">Values use the committed EUR snapshot.</p>
@@ -49,5 +61,6 @@ This is a paper-only, non-personalized research portfolio. Pending targets are p
 | Holding | Confidence | Downside | Base upside | Review | Thesis or cash role |
 | --- | --- | ---: | ---: | --- | --- |
 | Cash | — | —% | —% | — | Capital retained as the configured portfolio alternative. |
+| [ISRG — Intuitive Surgical, Inc.](strategies/strategy_bd005fc3733b1475b6f9) | high | -23.2% | 2.5% | 2026-08-26T21:28:56Z | High-quality recurring procedure economics, balance-sheet strength, liquidity, and an effective score of 63 above the cash hurdle justify only the allocator's bounded 4.39% baseline target after 2.2% pending exposure; limited base upside, a 23.2% downside case, weak timing, and insufficient diversification prevent conviction treatment. |
 
 [[index|Back to today's decision]]

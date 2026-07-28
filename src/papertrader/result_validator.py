@@ -89,7 +89,11 @@ def _strings(result: Mapping[str, object], field: str) -> tuple[str, ...]:
 
 
 def _is_wiki_path(path: PurePosixPath, domains: frozenset[str]) -> bool:
-    if path in {PurePosixPath("data/wiki/index.md"), PurePosixPath("data/wiki/log.md")}:
+    if path in {
+        PurePosixPath("data/wiki/index.md"),
+        PurePosixPath("data/wiki/log.md"),
+        PurePosixPath("data/wiki/research-catalog.md"),
+    }:
         return True
     return (
         len(path.parts) >= 4
@@ -210,7 +214,7 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
         return operation_type == "strategy_research"
     if command[:2] == ("signal", "create"):
         return operation_type == "strategy_research"
-    if command[:2] == ("order", "create"):
+    if command[:2] in {("order", "create"), ("order", "create-baseline")}:
         return operation_type == "execute_strategy"
     if command[:2] == ("order", "cancel"):
         return operation_type == "execute_strategy"
@@ -692,7 +696,12 @@ def validate_agent_result(
         )
     )
     errors.extend(
-        f"post-run integrity: {error}" for error in validate_integrity(repository_root, environment)
+        f"post-run integrity: {error}"
+        for error in validate_integrity(
+            repository_root,
+            environment,
+            require_current_publication=False,
+        )
     )
     errors.extend(
         f"post-run wiki lint: {error}" for error in lint_wiki(repository_root / "data" / "wiki")

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pltr_q1_2026_earnings_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm",
+  "source_type": "issuer-release",
+  "title": "Palantir Q1 2026 earnings release",
+  "publisher": "Palantir Technologies Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "8bb61e349de9184f719690ca3fa8ced024c879327c7859369cad587c847ae0e2",
+  "related_entity_ids": "idea_anduril_product_company_disruption|security_bdc2f87dadf134760c3a",
+  "checked_at": "2026-07-27T21:56:07Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 revenue was USD 1.633 billion, GAAP operating margin was 46%, operating cash flow was USD 899 million, adjusted free cash flow was USD 925 million, and full-year adjusted free-cash-flow guidance was USD 4.2-4.4 billion.",
+  "summary": "The SEC-hosted issuer release reports exceptional Q1 growth, profitability, cash generation, liquidity, diluted share count, stock compensation, and raised 2026 guidance; it does not quantify revenue attributable to Anduril.",
+  "run_id": "local-20260727-daily-all-05"
+}

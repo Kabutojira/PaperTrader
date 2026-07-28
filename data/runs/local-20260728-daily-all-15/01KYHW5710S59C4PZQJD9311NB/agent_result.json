@@ -1,0 +1,52 @@
+{
+  "operation_id": "01KYHW5710S59C4PZQJD9311NB",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from the lithium cycle to SQM ADS with high positive sensitivity and medium confidence. Current SEC-hosted Q1 2026 evidence shows direct transmission from lithium realized pricing and volume to gross profit, earnings, and operating exposure, while Chilean state take, partnership attribution, permits, conversion ramp, capex, minority interests, debt, cyclicality, and unsupported normalized valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical row; no strategy or follow-up operation was created before Q2 primary evidence.",
+  "evidence": [
+    {
+      "source": "source_sqm_q1_2026_6k",
+      "claim": "The SEC-hosted Q1 2026 issuer exhibit reports lithium-equivalent sales volume up 25% to 69 thousand tonnes, realized Chilean lithium price up about 95% to USD 17.8/kg, and lithium contributing 75% of consolidated gross profit. Group revenue was USD 1.76 billion, net income was USD 364.7 million, and adjusted EBITDA was USD 837 million, demonstrating direct and financially material lithium-cycle exposure.",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+      "observed_at": "2026-07-28T00:15:09Z",
+      "source_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa"
+    },
+    {
+      "source": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+      "claim": "The maintained security review records that lithium supplied 75% of consolidated gross profit, while more than USD 530 million of Q1 state payments, partnership and royalty economics, permits, international ramp, debt, capex, minority interests, and an unsupported normalized per-ADS valuation qualify shareholder transmission."
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "claim": "The maintained idea defines the causal channel from EV and stationary-storage demand plus delayed supply to producer realized prices, margins, cash generation, and resource option value, while preserving supply restarts, recycling, sodium-ion chemistry, contract lags, capital intensity, and dilution as contrary evidence."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-15/01KYHW5710S59C4PZQJD9311NB/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_9773364a04293a4febaf.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from the lithium cycle to SQM ADS based on Q1 2026 lithium realized pricing, volume, gross-profit contribution, and earnings evidence; no strategy follow-up was created because normalized per-ADS valuation remains unsupported before Q2 primary evidence."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-15/01KYHW5710S59C4PZQJD9311NB/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole running queue row matched operation 01KYHW5710S59C4PZQJD9311NB, run local-20260728-daily-all-15, relationship relationship_9773364a04293a4febaf, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, source registry, security assessment, request, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited upsert changed only data/tables/relationships.csv, and the immutable request SHA-256 matched its command-audit receipt.",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload-schema, identity, uniqueness, symlink, wiki-registration, request-integrity, and trailing-whitespace checks passed for every changed research file."
+    ]
+  }
+}

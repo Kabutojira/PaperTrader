@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KYHW57102CCNPR5A5GNX8WVG",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from structural copper scarcity to Freeport-McMoRan with high confidence and high positive sensitivity. Current SEC-filed Q2 2026 evidence shows a direct path from realized copper pricing through mine margin and operating cash flow, while production recovery, costs, capex, minority interests, safety, Indonesian terms, commodity normalization, and valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created because the current base and downside values remain below the market mark.",
+  "evidence": [
+    {
+      "source": "source_fcx_q2_2026_results_sec",
+      "claim": "The SEC-filed Q2 2026 results report a USD 6.17/lb realized copper price, USD 1.97/lb unit net cash cost, USD 2.048 billion of operating cash flow, and USD 1.104 billion of capital expenditure. They also report copper production of 786 million pounds versus 963 million a year earlier, demonstrating both direct copper-price transmission and material production-risk counterweights.",
+      "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm",
+      "observed_at": "2026-07-27T23:54:32Z",
+      "source_hash": "9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1"
+    },
+    {
+      "source": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+      "claim": "The current security review records a USD 62.72 mark and bounded 12-month downside and base comparisons of USD 32.64 and USD 47.36, or 48.0% and 24.5% below market, so the accepted causal edge does not justify strategy research or a signal."
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_copper.md",
+      "claim": "The maintained idea defines the causal channel from constrained long-lead mine supply and copper demand to upstream producer economics, while explicitly preserving supply response, recycling, substitution, demand, cost, execution, jurisdiction, and valuation as contrary evidence."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-10/01KYHW57102CCNPR5A5GNX8WVG/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_def43e5b4e13577e2b99.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the high-confidence, high-sensitivity positive beneficiary relationship from structural copper scarcity to Freeport-McMoRan based on Q2 2026 realized-price, unit-cost, and operating-cash-flow evidence; no strategy follow-up was created because current valuation scenarios remain below market."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-10/01KYHW57102CCNPR5A5GNX8WVG/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole running queue row matched operation 01KYHW57102CCNPR5A5GNX8WVG, run local-20260728-daily-all-10, relationship relationship_def43e5b4e13577e2b99, the required skill pair, and a live lease.",
+      "The controller preflight hashes matched llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited upsert changed only data/tables/relationships.csv; allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped git diff checks and trailing-whitespace checks passed for every changed research file."
+    ]
+  }
+}

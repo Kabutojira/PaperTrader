@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-07-27"
-updated: "2026-07-27"
+created: "2026-07-28"
+updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7eae4d9fa5380e578266"
-as_of: "2026-07-27T15:39:59Z"
+snapshot_id: "decision_55f99cf865416f0c19b8"
+as_of: "2026-07-28T08:45:56Z"
 ---
 
 # Research catalog
@@ -20,8 +20,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[ALB\] RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752)
 - [\[ENPH\] Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
+- [\[PARRO.PA\] Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
+- [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101)
 - [\[SGML\] RSI oversold](inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee)
@@ -33,6 +36,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-07-25](daily-reports/daily-report_20260725)
 - [PaperTrader daily report — 2026-07-26](daily-reports/daily-report_20260726)
 - [PaperTrader daily report — 2026-07-27](daily-reports/daily-report_20260727)
+- [PaperTrader daily report — 2026-07-28](daily-reports/daily-report_20260728)
 
 ## Idea
 
@@ -77,9 +81,31 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Relationship
 
+- [AI compute, networking, and hyperscaler monetization to Arista Networks](relationships/relationship_e5f55616b9beaf661080)
+- [AI infrastructure and power bottlenecks to Eaton](relationships/relationship_87b95f713a902d531f2f)
+- [AI infrastructure and power bottlenecks to GE Vernova](relationships/relationship_cbdd07edda84994325d6)
+- [AI-native drug discovery to Recursion Pharmaceuticals](relationships/relationship_c829dae21648bb133cc7)
+- [Anduril product-company disruption to Palantir Technologies](relationships/relationship_250194f6a9e3a1817632)
+- [Commercial space infrastructure to Rocket Lab](relationships/relationship_297f9e36fb4e93a808e8)
+- [Critical minerals and structural copper scarcity to Freeport-McMoRan](relationships/relationship_def43e5b4e13577e2b99)
+- [Critical minerals and structural copper scarcity to Rio Tinto](relationships/relationship_392da6d90e7c969945a2)
+- [Critical minerals and structural copper scarcity to Southern Copper](relationships/relationship_9befaccc50d8cd94372b)
+- [Critical minerals and the lithium cycle to Albemarle](relationships/relationship_871e21ff73620ab8eb14)
+- [Critical minerals and the lithium cycle to Lithium Americas](relationships/relationship_ad2f37b49980dbc73a08)
+- [Critical minerals and the lithium cycle to Sigma Lithium](relationships/relationship_670ed88c8e4616316a19)
+- [Critical minerals and the lithium cycle to SQM](relationships/relationship_9773364a04293a4febaf)
+- [Cybersecurity resilience and geopolitical continuity to CrowdStrike](relationships/relationship_228f56aa5d91f3688b67)
+- [Defense and aerospace replenishment cycle to RTX](relationships/relationship_1655ac715c33506ec7da)
+- [Digital attention, gaming, and consumer ecosystems to Roblox](relationships/relationship_d9c8f578040386a487be)
+- [Digital finance and crypto rails to Coinbase](relationships/relationship_f2efab6050df0edcb762)
+- [Humanoid robotics and embodied AI to ABB](relationships/relationship_afac7205cd7e09800edf)
+- [Nearshoring and friendshoring manufacturing capacity to Ternium](relationships/relationship_510158d3d515d91d5c14)
+- [Precision biology and healthcare automation to Intuitive Surgical](relationships/relationship_3570e003fd90cd83d26f)
+- [Precision biology and healthcare automation to Recursion Pharmaceuticals](relationships/relationship_9e7b4700174908755cbc)
 - [Solar, storage, and grid-flexibility reset to Atkore](relationships/relationship_solar_storage_grid_atkr)
 - [Solar, storage, and grid-flexibility reset to Enphase Energy](relationships/relationship_solar_storage_grid_enph)
 - [Solar, storage, and grid-flexibility reset to Fluence Energy](relationships/relationship_solar_storage_grid_flnc)
+- [Sovereign small-drone and trusted-component supply chains to Parrot](relationships/relationship_7e9fd9486e494dd05bb5)
 
 ## Research Catalog
 
@@ -115,6 +141,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 ## Signals
 
 - [PaperTrader signals and research alerts](signals)
+
+## Strategy
+
+- [Intuitive Surgical bounded baseline allocation](strategies/strategy_bd005fc3733b1475b6f9)
 
 ## System Status
 

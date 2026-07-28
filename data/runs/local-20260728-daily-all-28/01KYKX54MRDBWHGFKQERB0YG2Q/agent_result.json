@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYKX54MRDBWHGFKQERB0YG2Q",
+  "status": "failed",
+  "summary": "Attempted exactly one deterministic baseline paper-order creation for the current Intuitive Surgical increase signal. The applier rejected it because the baseline target exceeds the strategy risk budget, so no order or structured state change was created; strict portfolio reconciliation still passed.",
+  "evidence": [
+    {
+      "source": "data/tables/allocation_targets.csv, data/tables/strategies.csv, and data/tables/signals.csv",
+      "claim": "The payload, sole current allocation target, ready baseline strategy, and ready signal agreed on strategy strategy_bd005fc3733b1475b6f9, signal signal_98939c5cb11dd6d9d2ae, plan allocation_plan_8859abf5cf5708b35855, assessment 2026-07-27T21:28:56Z, and the increase-to-open lifecycle mapping.",
+      "observed_at": "2026-07-28T08:30:02Z"
+    },
+    {
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv",
+      "claim": "The immutable request referenced the validated ISRG close of USD 356.8299865722656 and USD/EUR rate 0.8794000148773193, both as of 2026-07-27T20:55:09Z.",
+      "observed_at": "2026-07-27T20:55:09Z"
+    },
+    {
+      "source": "data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/command_audit.json and deterministic CLI output",
+      "claim": "The single audited create-baseline attempt exited 2 with the deterministic rejection: baseline target exceeds the strategy risk budget. Its changed_paths list was empty; no order was created and signal signal_98939c5cb11dd6d9d2ae remained ready.",
+      "observed_at": "2026-07-28T08:30:30Z"
+    },
+    {
+      "source": "data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/command_audit.json",
+      "claim": "The audited strict portfolio reconciliation subsequently exited 0 with OK [portfolio] and no changed paths. Both audited commands left allocation, accounting, portfolio, performance, order, and signal state unchanged.",
+      "observed_at": "2026-07-28T08:30:38Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "The incremental Intuitive Surgical baseline paper-order attempt failed closed because the deterministic applier found the 4.39% target exceeded the strategy risk budget; no new order, fill, or accounting transition occurred."
+  ],
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true, config.ini disables real orders, exactly one operation was running, and it was claimed by local-20260728-daily-all-28 under a live lease.",
+      "Confirmed hermes_preflight.json identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with matching content hashes, sequential=true, and yolo=true.",
+      "Validated the payload against schemas/operation_payload.schema.json and confirmed the operation, strategy, signal, action, allocation-plan, assessment, market, and FX identities matched current canonical state.",
+      "Confirmed the current increase disposition maps to the requested open signal lifecycle action and reached exactly one deterministic create-baseline attempt.",
+      "The deterministic applier rejected the request because the baseline target exceeds the strategy risk budget; the validation gate therefore did not pass and the rejection was not weakened, bypassed, or retried.",
+      "Strict portfolio reconciliation returned OK [portfolio] without changing state.",
+      "Command audit records exactly the two commands in commands_run and proves both commands changed no paths.",
+      "Confirmed no new order exists for signal signal_98939c5cb11dd6d9d2ae, which remains ready, and allocation targets/history, fills, executions, cash, portfolio, and performance are unchanged.",
+      "Confirmed the run directory and immutable request are not symlinks, the request retained its audited SHA-256 identity, and no deployment, Telegram, GitHub write, or named brokerage credential environment variable was present."
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "order",
+        "create-baseline",
+        "--request",
+        "data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader order create-baseline --request data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json",
+      "completed_at": "2026-07-28T08:30:30Z",
+      "exit_code": 2,
+      "request": {
+        "identity": [
+          "file",
+          "d9525a9011e8ff16e1f388b447dbecd8433733639ebb1610ea411f3d2f263f4d",
+          500,
+          384
+        ],
+        "path": "data/runs/local-20260728-daily-all-28/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json"
+      },
+      "started_at": "2026-07-28T08:30:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "portfolio",
+        "reconcile",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader portfolio reconcile --strict",
+      "completed_at": "2026-07-28T08:30:38Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T08:30:38Z"
+    }
+  ],
+  "operation_id": "01KYKX54MRDBWHGFKQERB0YG2Q",
+  "run_id": "local-20260728-daily-all-28"
+}

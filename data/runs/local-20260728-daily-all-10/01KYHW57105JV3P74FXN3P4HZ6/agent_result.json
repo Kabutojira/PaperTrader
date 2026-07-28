@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KYHW57105JV3P74FXN3P4HZ6",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from the lithium cycle to Albemarle with high positive sensitivity and medium confidence. Current SEC-hosted Q1 2026 evidence shows a direct path from Energy Storage realized pricing and volume through adjusted EBITDA and operating cash flow, while contract lag, inventory timing, supply response, capex, tax, leverage, dilution, and unsupported normalized valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created before the scheduled Q2 release.",
+  "evidence": [
+    {
+      "source": "source_alb_q1_2026_results_sec",
+      "claim": "The SEC-hosted Q1 2026 results exhibit reports Energy Storage price growth of 51%, volume growth of 14%, sales growth of 70%, and adjusted EBITDA growth of 196%. Group operating cash flow was USD 346 million and company-defined free cash flow was USD 248 million, demonstrating direct lithium-price and volume transmission with cash conversion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+      "observed_at": "2026-07-28T00:58:00Z",
+      "source_hash": "197132b1bc66f6201081d938a5884a4895c57b755536cc95e21db466b34aa7e7"
+    },
+    {
+      "source": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+      "claim": "The current security review records high commodity sensitivity, 40% of salts volume under long-term agreements, improved cash conversion and leverage, and an ineligible valuation_unsupported assessment because no probability-weighted downside and base common-equity values are supportable."
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "claim": "The maintained idea defines the causal channel from EV and storage demand plus delayed supply to producer realized prices and margins, while preserving restarts, new projects, recycling, sodium-ion chemistry, capital intensity, contract lags, and dilution as contrary evidence."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-10/01KYHW57105JV3P74FXN3P4HZ6/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_871e21ff73620ab8eb14.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from the lithium cycle to Albemarle based on Q1 2026 Energy Storage price, volume, adjusted-EBITDA, and cash-flow evidence; no strategy follow-up was created because normalized common-equity valuation remains unsupported before Q2 results."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-10/01KYHW57105JV3P74FXN3P4HZ6/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole running queue row matched operation 01KYHW57105JV3P74FXN3P4HZ6, run local-20260728-daily-all-10, relationship relationship_871e21ff73620ab8eb14, the required skill pair, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited upsert changed only data/tables/relationships.csv; allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped identity, uniqueness, symlink, request-integrity, and trailing-whitespace checks passed for every changed research file."
+    ]
+  }
+}

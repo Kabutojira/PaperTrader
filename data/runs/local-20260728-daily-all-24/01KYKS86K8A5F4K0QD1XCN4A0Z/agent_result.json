@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYKS86K8A5F4K0QD1XCN4A0Z",
+  "status": "succeeded",
+  "summary": "Created deterministic pending paper order order_371f356c9fa026750350 for the current Intuitive Surgical baseline allocation. The allocator-owned order is a six-share long-equity buy under next_open; no fill, execution, cash, portfolio, performance, or allocation state changed.",
+  "evidence": [
+    {
+      "source": "data/tables/allocation_targets.csv",
+      "claim": "The sole current Intuitive Surgical target uses allocation_plan_02b52e8899b55922bf4e, assessment 2026-07-27T21:28:56Z, disposition open, and a 2.2% baseline target.",
+      "observed_at": "2026-07-28T07:36:01Z"
+    },
+    {
+      "source": "data/tables/strategies.csv and data/tables/signals.csv",
+      "claim": "Strategy strategy_bd005fc3733b1475b6f9 was ready and bound to the current allocation plan; signal signal_14939473c94cb7b9b567 was ready, unexpired, and bound to the same strategy and assessment before order creation.",
+      "observed_at": "2026-07-28T07:36:01Z"
+    },
+    {
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv",
+      "claim": "The deterministic request referenced the validated ISRG close of USD 356.8299865722656 and USD/EUR rate 0.8794000148773193, both observed as of 2026-07-27T20:55:09Z and within the configured 36-hour freshness limit.",
+      "observed_at": "2026-07-27T20:55:09Z"
+    },
+    {
+      "source": "data/runs/local-20260728-daily-all-24/01KYKS86K8A5F4K0QD1XCN4A0Z/command_audit.json",
+      "claim": "The audited create-baseline command exited successfully with order_id order_371f356c9fa026750350 and no risk violations; its exact delta was limited to orders.csv, order_legs.csv, and signals.csv. The audited strict portfolio reconciliation also passed with no changed paths.",
+      "observed_at": "2026-07-28T07:38:13Z"
+    },
+    {
+      "source": "data/tables/orders.csv and data/tables/order_legs.csv",
+      "claim": "Order order_371f356c9fa026750350 is pending under next_open with one deterministic buy-long equity leg for six ISRG shares; no immediate fill was created.",
+      "observed_at": "2026-07-28T07:36:01Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-24/01KYKS86K8A5F4K0QD1XCN4A0Z/order_create_baseline_01.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Created pending next-open paper order `order_371f356c9fa026750350` for six Intuitive Surgical shares under the current 2.2% baseline allocation target; no fill or accounting transition occurred."
+  ],
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/local-20260728-daily-all-24/01KYKS86K8A5F4K0QD1XCN4A0Z/order_create_baseline_01.json",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and config.ini disables real orders.",
+      "Confirmed the operation row was running, claimed by local-20260728-daily-all-24, and covered by a live lease during execution.",
+      "Confirmed hermes_preflight.json identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with recorded content hashes, sequential=true, and yolo=true.",
+      "Confirmed payload, strategy, signal, canonical leg, allocation plan, assessment timestamp, disposition, security identity, market reference, and FX reference agree.",
+      "Deterministic create-baseline validation derived six whole shares and returned no risk violations.",
+      "Confirmed the accepted order remains pending and the signal transitioned from ready to ordered.",
+      "Strict portfolio reconciliation returned OK [portfolio] without changing repository state.",
+      "Command audit proves allocation targets/history, fills, executions, cash, portfolio, and performance were unchanged.",
+      "Confirmed no deployment, Telegram, GitHub write, or named brokerage credential environment variable was present."
+    ]
+  }
+}

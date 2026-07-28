@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sgml_july_2026_update",
+  "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003854/ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003854/ex99-1.htm",
+  "source_type": "filing_exhibit",
+  "title": "Sigma Lithium July 2026 production and environmental update",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "81cd332f53f96f01fddd354b27ce7264c9aeaaa2aa610ec2596fd2cc894aaddd",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_4627aea1bf7d8943d3d8",
+  "checked_at": "2026-07-27T22:45:40Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Sigma disclosed negotiations with the Minas Gerais state government following approximately USD 540,000 of environmental fines and stated that second-quarter production beat its 33,000-tonne target.",
+  "summary": "The latest SEC-hosted issuer update adds a second-quarter production beat but also a live environmental-regulatory dispute; it does not update the March financial statements or resolve liquidity, going-concern, receivables, or control weaknesses.",
+  "run_id": "local-20260727-daily-all-06"
+}

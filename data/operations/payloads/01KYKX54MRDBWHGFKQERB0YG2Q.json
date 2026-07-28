@@ -1,0 +1,26 @@
+{
+  "entity_id": "strategy_bd005fc3733b1475b6f9",
+  "entity_type": "strategy",
+  "inputs": {
+    "action": "open",
+    "allocation_plan_id": "allocation_plan_8859abf5cf5708b35855",
+    "assessment_as_of": "2026-07-27T21:28:56Z",
+    "disposition": "increase",
+    "evaluation_timestamp": "2026-07-28T08:22:44Z",
+    "fill_policy": "next_open",
+    "market_data_timestamp": "2026-07-27T20:55:09Z",
+    "order_type": "market",
+    "security_id": "security_1f9cce545ede94cd6349",
+    "signal_id": "signal_98939c5cb11dd6d9d2ae",
+    "strategy_id": "strategy_bd005fc3733b1475b6f9"
+  },
+  "objective": "Review the live Intuitive Surgical baseline signal and create at most its deterministic incremental pending paper order.",
+  "operation_id": "01KYKX54MRDBWHGFKQERB0YG2Q",
+  "operation_type": "execute_strategy",
+  "payload_version": 1,
+  "source_refs": [
+    "data/market/fx/USD_EUR.csv",
+    "data/market/latest.csv",
+    "source_isrg_q2_2026_sec_exhibit"
+  ]
+}

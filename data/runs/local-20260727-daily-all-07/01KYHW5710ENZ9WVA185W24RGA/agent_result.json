@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYHW5710ENZ9WVA185W24RGA",
+  "status": "succeeded",
+  "summary": "Revalidated Recursion Pharmaceuticals against its SEC-filed Q1 2026 Form 10-Q, current SEC submission history, and the 2026-07-27 market and FX caches. Clinical milestones and guided runway into early 2028 are encouraging, but the business remains loss-making, expects additional capital, has substantial dilution exposure, and lacks enough program-level evidence for a supportable downside-aware valuation. The current low-confidence assessment is ineligible with valuation_unsupported, and no strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Recursion Pharmaceuticals Q1 2026 Form 10-Q",
+      "claim": "The SEC filing reports USD 654.5 million of cash and cash equivalents at 2026-03-31, 530.6 million shares outstanding, a USD 117.5 million quarterly net loss, and an expectation of substantial future operating losses and additional capital requirements. SEC submissions showed no later Form 10-Q through 2026-07-27; the subsequent June Form 8-K concerned annual-meeting votes rather than updated operating results.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000078/rxrx-20260331.htm",
+      "observed_at": "2026-07-27T23:18:30Z",
+      "source_hash": "8b4dc7f64d6e33c66565fc7a4134d5b9a5da5ea3b217e3649094d869ba0355c3"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "RXRX closed at USD 3.009999990463257 on 2026-07-27 with volume 21,484,156, and the current USD/EUR rate was 0.8794000148773193. Identity, price, FX, and trading-liquidity checks were current; no valuation was inferred from the market mark."
+    },
+    {
+      "source": "Current comparable assessment",
+      "claim": "The assessment is ineligible with low confidence and the explicit valuation_unsupported hard blocker. Its -100% downside and 0% base-upside fields are conservative mechanical values required when valuation is unsupported, not forecast returns or price targets."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/record-source-rxrx-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/upsert-assessment-rxrx-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/upsert-security-rxrx-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ed7d5b616a196969c815.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Recursion Pharmaceuticals is currently ineligible for allocation: early clinical milestones and runway into early 2028 do not overcome continued losses, likely capital needs, dilution, low confidence, and the absence of a supportable risk-adjusted pipeline valuation."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/record-source-rxrx-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/upsert-security-rxrx-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/upsert-assessment-rxrx-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-07 with a live lease through 2026-07-27T23:47:00Z; the payload and queue row matched security_research for the immutable security ID.",
+      "Preflight identified llm-wiki 2.1.0, papertrader-controller, and papertrader-security-research; repository skill SHA-256 values matched the preflight hashes.",
+      "The immutable RXRX/XNAS/USD/equity identity matched exactly one security row, and the validated security upsert preserved all immutable identity fields.",
+      "The SEC filing returned HTTP 200 and was registered with SHA-256 8b4dc7f64d6e33c66565fc7a4134d5b9a5da5ea3b217e3649094d869ba0355c3 before the assessment timestamp; SEC submissions showed no later Form 10-Q through 2026-07-27.",
+      "The current assessment belongs to this run, expires 2026-08-26, references fresh registered evidence, and records the canonical valuation_unsupported blocker with an explicit unsupported-valuation explanation.",
+      "The 2026-07-27 RXRX mark, 21,484,156-share volume, and USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and strict integrity validation passed.",
+      "Allocation readiness returned false only because unrelated repository-wide assessment and relationship backfills remain incomplete; this security's ineligible assessment independently prohibits a conviction strategy follow-up.",
+      "The command audit records changes only to securities, security assessments, source registry, and source history structured tables; no allocation targets/history, orders, executions, cash, portfolio, fills, or performance state changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

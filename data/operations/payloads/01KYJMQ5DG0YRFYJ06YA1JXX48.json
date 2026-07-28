@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_59304f90c440def31dc5",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "backfill",
+    "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+    "security_id": "security_59304f90c440def31dc5"
+  },
+  "objective": "Revalidate security_59304f90c440def31dc5 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYJMQ5DG0YRFYJ06YA1JXX48",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

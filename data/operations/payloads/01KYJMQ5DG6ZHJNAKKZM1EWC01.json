@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_fb87fac302a5446a1ced",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "backfill",
+    "research_page": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+    "security_id": "security_fb87fac302a5446a1ced"
+  },
+  "objective": "Revalidate security_fb87fac302a5446a1ced with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYJMQ5DG6ZHJNAKKZM1EWC01",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

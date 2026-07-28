@@ -1,0 +1,1026 @@
+{
+  "actionable_signals": [],
+  "approved_target_portfolio": {
+    "cash_base": "100000",
+    "cash_weight_pct": "100",
+    "equity_base": "100000",
+    "gross_exposure_base": "0",
+    "invested_value_base": "0",
+    "invested_weight_pct": "0",
+    "net_exposure_base": "0",
+    "portfolio_kind": "approved_target",
+    "realized_pnl_base": "0",
+    "rows": [
+      {
+        "action": "no_trade",
+        "action_status": "no_action",
+        "approved_target_quantity": "100000",
+        "approved_target_value_base": "100000",
+        "approved_target_weight_pct": "100",
+        "as_of": "2026-07-28T01:53:27Z",
+        "base_upside_pct": "",
+        "company_name": "Cash",
+        "confidence": "",
+        "current_quantity": "100000",
+        "current_value_base": "100000",
+        "current_weight_pct": "100",
+        "delta_value_base": "0",
+        "downside_pct": "",
+        "effective_score": "",
+        "entry_rule": "",
+        "exit_rule": "",
+        "fx_rate_to_base": "1",
+        "holding_type": "cash",
+        "instrument_type": "cash",
+        "invalidation": "",
+        "mark": "1",
+        "mark_currency": "",
+        "market_data_as_of": "2026-07-28T01:53:27Z",
+        "order_id": "",
+        "reason_codes": [],
+        "research_page": "",
+        "review_at": "",
+        "security_id": "",
+        "signal_id": "",
+        "sleeve": "cash",
+        "snapshot_id": "decision_7566c9b27a2daa46751e",
+        "strategy_id": "",
+        "thesis_summary": "Capital retained as the configured portfolio alternative.",
+        "ticker": "CASH",
+        "valuation_horizon_months": ""
+      }
+    ],
+    "unrealized_pnl_base": "0"
+  },
+  "as_of": "2026-07-28T01:53:27Z",
+  "base_currency": "EUR",
+  "candidate_pipeline": [
+    {
+      "base_upside_pct": "2.5",
+      "candidate_edge": "3",
+      "classification": "risk_blocked",
+      "company_name": "Intuitive Surgical, Inc.",
+      "confidence": "high",
+      "downside_pct": "-23.2",
+      "effective_score": "63",
+      "rank": "1",
+      "reason_codes": [
+        "insufficient_diversification",
+        "above_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The eligible set is not sufficiently diversified.",
+        "The evidence-backed score clears the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_1f9cce545ede94cd6349.md",
+      "review_at": "2026-08-26T21:28:56Z",
+      "security_id": "security_1f9cce545ede94cd6349",
+      "target_weight_pct": "2.2",
+      "ticker": "ISRG"
+    },
+    {
+      "base_upside_pct": "1.9",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "GE Vernova Inc.",
+      "confidence": "medium",
+      "downside_pct": "-19.2",
+      "effective_score": "42.8",
+      "rank": "",
+      "reason_codes": [
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+      "review_at": "2026-08-26T22:05:09Z",
+      "security_id": "security_4b61970aa8f574446819",
+      "target_weight_pct": "0",
+      "ticker": "GEV"
+    },
+    {
+      "base_upside_pct": "-15.7",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Arista Networks, Inc.",
+      "confidence": "medium",
+      "downside_pct": "-43.8",
+      "effective_score": "34",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_6f9a1450edceb9307c9a.md",
+      "review_at": "2026-08-26T22:40:26Z",
+      "security_id": "security_6f9a1450edceb9307c9a",
+      "target_weight_pct": "0",
+      "ticker": "ANET"
+    },
+    {
+      "base_upside_pct": "-19.9",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Roblox Corporation",
+      "confidence": "medium",
+      "downside_pct": "-47.9",
+      "effective_score": "30.6",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_c9a37d277445869a8809.md",
+      "review_at": "2026-08-26T21:16:25Z",
+      "security_id": "security_c9a37d277445869a8809",
+      "target_weight_pct": "0",
+      "ticker": "RBLX"
+    },
+    {
+      "base_upside_pct": "-40.4",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Palantir Technologies Inc.",
+      "confidence": "medium",
+      "downside_pct": "-60.4",
+      "effective_score": "28.6",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_bdc2f87dadf134760c3a.md",
+      "review_at": "2026-08-26T21:58:18Z",
+      "security_id": "security_bdc2f87dadf134760c3a",
+      "target_weight_pct": "0",
+      "ticker": "PLTR"
+    },
+    {
+      "base_upside_pct": "-19.7",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Eaton Corporation plc",
+      "confidence": "medium",
+      "downside_pct": "-37.6",
+      "effective_score": "25",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+      "review_at": "2026-08-26T23:32:08Z",
+      "security_id": "security_18a3ab0ee6086ee85d0f",
+      "target_weight_pct": "0",
+      "ticker": "ETN"
+    },
+    {
+      "base_upside_pct": "-5.4",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Rio Tinto plc",
+      "confidence": "medium",
+      "downside_pct": "-27.2",
+      "effective_score": "23.2",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "review_at": "2026-08-26T22:29:55Z",
+      "security_id": "security_1c055eb9b2bb1f5a8ff2",
+      "target_weight_pct": "0",
+      "ticker": "RIO"
+    },
+    {
+      "base_upside_pct": "-22.9",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Southern Copper Corporation",
+      "confidence": "medium",
+      "downside_pct": "-40",
+      "effective_score": "22.2",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
+      "review_at": "2026-08-26T23:39:45Z",
+      "security_id": "security_6ad1af8d10d6276a0221",
+      "target_weight_pct": "0",
+      "ticker": "SCCO"
+    },
+    {
+      "base_upside_pct": "-11.9",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "ABB Ltd",
+      "confidence": "medium",
+      "downside_pct": "-33.2",
+      "effective_score": "21.4",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_c120e9f26ebb6159adf9.md",
+      "review_at": "2026-08-27T00:41:43Z",
+      "security_id": "security_c120e9f26ebb6159adf9",
+      "target_weight_pct": "0",
+      "ticker": "ABBNY"
+    },
+    {
+      "base_upside_pct": "-17.9",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "RTX Corporation",
+      "confidence": "medium",
+      "downside_pct": "-35",
+      "effective_score": "20.8",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+      "review_at": "2026-08-27T00:06:00Z",
+      "security_id": "security_59304f90c440def31dc5",
+      "target_weight_pct": "0",
+      "ticker": "RTX"
+    },
+    {
+      "base_upside_pct": "-24.5",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Freeport-McMoRan Inc.",
+      "confidence": "medium",
+      "downside_pct": "-48",
+      "effective_score": "20.4",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+      "review_at": "2026-08-26T23:57:34Z",
+      "security_id": "security_2dbe878dfc899d7ee867",
+      "target_weight_pct": "0",
+      "ticker": "FCX"
+    },
+    {
+      "base_upside_pct": "-27.1",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "CrowdStrike Holdings, Inc.",
+      "confidence": "medium",
+      "downside_pct": "-51.1",
+      "effective_score": "14.2",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_8472507d7d320aa388a7.md",
+      "review_at": "2026-08-27T01:22:10Z",
+      "security_id": "security_8472507d7d320aa388a7",
+      "target_weight_pct": "0",
+      "ticker": "CRWD"
+    },
+    {
+      "base_upside_pct": "3.2",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Atkore Inc.",
+      "confidence": "medium",
+      "downside_pct": "-32.9",
+      "effective_score": "10.2",
+      "rank": "",
+      "reason_codes": [
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_22c2b9d782a62d7a9b86.md",
+      "review_at": "2026-08-27T00:28:34Z",
+      "security_id": "security_22c2b9d782a62d7a9b86",
+      "target_weight_pct": "0",
+      "ticker": "ATKR"
+    },
+    {
+      "base_upside_pct": "2.2",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Fluence Energy, Inc.",
+      "confidence": "medium",
+      "downside_pct": "-48.8",
+      "effective_score": "8.6",
+      "rank": "",
+      "reason_codes": [
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
+      "review_at": "2026-08-26T22:18:42Z",
+      "security_id": "security_a9eb9838940ef5ceaa0c",
+      "target_weight_pct": "0",
+      "ticker": "FLNC"
+    },
+    {
+      "base_upside_pct": "-8.7",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Ternium S.A.",
+      "confidence": "medium",
+      "downside_pct": "-48.9",
+      "effective_score": "8.4",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+      "review_at": "2026-08-27T00:52:52Z",
+      "security_id": "security_2c779e81c27b78c556bb",
+      "target_weight_pct": "0",
+      "ticker": "TX"
+    },
+    {
+      "base_upside_pct": "-56.9",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Rocket Lab Corporation",
+      "confidence": "medium",
+      "downside_pct": "-79.3",
+      "effective_score": "-8.6",
+      "rank": "",
+      "reason_codes": [
+        "base_upside_not_positive",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The assessed base case has no positive upside.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_7ca095d63423c55a90e3.md",
+      "review_at": "2026-08-26T23:04:05Z",
+      "security_id": "security_7ca095d63423c55a90e3",
+      "target_weight_pct": "0",
+      "ticker": "RKLB"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Coinbase Global, Inc.",
+      "confidence": "medium",
+      "downside_pct": "-100",
+      "effective_score": "-10.8",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "hard_blocker:valuation_unsupported",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "A supportable valuation is unavailable.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+      "review_at": "2026-08-26T22:56:38Z",
+      "security_id": "security_37ddcbdaad296ad831f2",
+      "target_weight_pct": "0",
+      "ticker": "COIN"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Albemarle Corporation",
+      "confidence": "medium",
+      "downside_pct": "-100",
+      "effective_score": "-10.8",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "hard_blocker:valuation_unsupported",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "A supportable valuation is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+      "review_at": "2026-08-27T00:59:00Z",
+      "security_id": "security_66cdcf90aac0d83e76f3",
+      "target_weight_pct": "0",
+      "ticker": "ALB"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Sociedad Quimica y Minera de Chile S.A.",
+      "confidence": "medium",
+      "downside_pct": "-100",
+      "effective_score": "-15.6",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "hard_blocker:valuation_unsupported",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "A supportable valuation is unavailable.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+      "review_at": "2026-08-27T00:18:00Z",
+      "security_id": "security_9d4049ed6669a52815d6",
+      "target_weight_pct": "0",
+      "ticker": "SQM"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Parrot S.A.",
+      "confidence": "medium",
+      "downside_pct": "-100",
+      "effective_score": "-21.6",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "hard_blocker:valuation_unsupported",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "A supportable valuation is unavailable.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+      "review_at": "2026-08-27T01:09:21Z",
+      "security_id": "security_cc4dcb8f002b61dffe00",
+      "target_weight_pct": "0",
+      "ticker": "PARRO.PA"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Enphase Energy, Inc.",
+      "confidence": "medium",
+      "downside_pct": "-100",
+      "effective_score": "-25.2",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "hard_blocker:valuation_unsupported",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "A supportable valuation is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+      "review_at": "2026-08-26T23:12:24Z",
+      "security_id": "security_f2b9760d847b2ba59324",
+      "target_weight_pct": "0",
+      "ticker": "ENPH"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Recursion Pharmaceuticals, Inc.",
+      "confidence": "low",
+      "downside_pct": "-100",
+      "effective_score": "-52.88",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "confidence_below_minimum",
+        "hard_blocker:valuation_unsupported",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "Assessment confidence is below the configured minimum.",
+        "A supportable valuation is unavailable.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_ed7d5b616a196969c815.md",
+      "review_at": "2026-08-26T23:20:00Z",
+      "security_id": "security_ed7d5b616a196969c815",
+      "target_weight_pct": "0",
+      "ticker": "RXRX"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Lithium Americas Corp.",
+      "confidence": "low",
+      "downside_pct": "-100",
+      "effective_score": "-59",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "confidence_below_minimum",
+        "hard_blocker:valuation_unsupported",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "Assessment confidence is below the configured minimum.",
+        "A supportable valuation is unavailable.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+      "review_at": "2026-08-26T23:46:00Z",
+      "security_id": "security_fb87fac302a5446a1ced",
+      "target_weight_pct": "0",
+      "ticker": "LAC"
+    },
+    {
+      "base_upside_pct": "0",
+      "candidate_edge": "0",
+      "classification": "valuation_unattractive",
+      "company_name": "Sigma Lithium Corporation",
+      "confidence": "low",
+      "downside_pct": "-100",
+      "effective_score": "-66.75",
+      "rank": "",
+      "reason_codes": [
+        "assessment_ineligible",
+        "base_upside_not_positive",
+        "confidence_below_minimum",
+        "hard_blocker:accounting_uncertain,solvency_risk,valuation_unsupported",
+        "relationship_missing_or_stale",
+        "score_below_cash_hurdle"
+      ],
+      "reason_labels": [
+        "The current assessment marks the security ineligible.",
+        "The assessed base case has no positive upside.",
+        "Assessment confidence is below the configured minimum.",
+        "Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.",
+        "A current accepted idea-to-security relationship is unavailable.",
+        "The effective score does not beat the configured cash hurdle."
+      ],
+      "research_page": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md",
+      "review_at": "2026-08-26T22:46:47Z",
+      "security_id": "security_4627aea1bf7d8943d3d8",
+      "target_weight_pct": "0",
+      "ticker": "SGML"
+    }
+  ],
+  "coverage": {
+    "active_signal_count": 0,
+    "allocation_candidate_count": 24,
+    "blocking_issue_count": 0,
+    "current_assessment_count": 24,
+    "current_relationship_count": 8,
+    "fresh_evidence_assessment_count": 24,
+    "last_successful_daily_run": "2026-07-28T01:53:27Z",
+    "market_data_failure_count": 0,
+    "market_data_success_count": 24,
+    "non_blocking_issue_count": 0,
+    "pending_order_count": 0,
+    "ready_or_active_strategy_count": 0,
+    "required_relationship_count": 24,
+    "research_backlog_count": 40
+  },
+  "current_portfolio": {
+    "cash_base": "100000",
+    "cash_weight_pct": "100",
+    "equity_base": "100000",
+    "gross_exposure_base": "0",
+    "invested_value_base": "0",
+    "invested_weight_pct": "0",
+    "net_exposure_base": "0",
+    "portfolio_kind": "current",
+    "realized_pnl_base": "0",
+    "rows": [
+      {
+        "action": "no_trade",
+        "action_status": "no_action",
+        "approved_target_quantity": "100000",
+        "approved_target_value_base": "100000",
+        "approved_target_weight_pct": "100",
+        "as_of": "2026-07-28T01:53:27Z",
+        "base_upside_pct": "",
+        "company_name": "Cash",
+        "confidence": "",
+        "current_quantity": "100000",
+        "current_value_base": "100000",
+        "current_weight_pct": "100",
+        "delta_value_base": "0",
+        "downside_pct": "",
+        "effective_score": "",
+        "entry_rule": "",
+        "exit_rule": "",
+        "fx_rate_to_base": "1",
+        "holding_type": "cash",
+        "instrument_type": "cash",
+        "invalidation": "",
+        "mark": "1",
+        "mark_currency": "",
+        "market_data_as_of": "2026-07-28T01:53:27Z",
+        "order_id": "",
+        "reason_codes": [],
+        "research_page": "",
+        "review_at": "",
+        "security_id": "",
+        "signal_id": "",
+        "sleeve": "cash",
+        "snapshot_id": "decision_7566c9b27a2daa46751e",
+        "strategy_id": "",
+        "thesis_summary": "Capital retained as the configured portfolio alternative.",
+        "ticker": "CASH",
+        "valuation_horizon_months": ""
+      }
+    ],
+    "unrealized_pnl_base": "0"
+  },
+  "data_status": "degraded",
+  "performance": {
+    "baseline_exposure_base": "0",
+    "conviction_exposure_base": "0",
+    "cumulative_return_pct": "0",
+    "daily_return_pct": "0",
+    "history": [
+      {
+        "cash_base": "100000",
+        "cumulative_return_pct": "0",
+        "daily_return_pct": "0",
+        "date": "2026-07-24",
+        "drawdown_pct": "0",
+        "equity_base": "100000",
+        "gross_exposure_base": "0"
+      },
+      {
+        "cash_base": "100000",
+        "cumulative_return_pct": "0",
+        "daily_return_pct": "0",
+        "date": "2026-07-25",
+        "drawdown_pct": "0",
+        "equity_base": "100000",
+        "gross_exposure_base": "0"
+      },
+      {
+        "cash_base": "100000",
+        "cumulative_return_pct": "0",
+        "daily_return_pct": "0",
+        "date": "2026-07-26",
+        "drawdown_pct": "0",
+        "equity_base": "100000",
+        "gross_exposure_base": "0"
+      },
+      {
+        "cash_base": "100000",
+        "cumulative_return_pct": "0",
+        "daily_return_pct": "0",
+        "date": "2026-07-27",
+        "drawdown_pct": "0",
+        "equity_base": "100000",
+        "gross_exposure_base": "0"
+      },
+      {
+        "cash_base": "100000",
+        "cumulative_return_pct": "0",
+        "daily_return_pct": "0",
+        "date": "2026-07-28",
+        "drawdown_pct": "0",
+        "equity_base": "100000",
+        "gross_exposure_base": "0"
+      }
+    ],
+    "largest_position_weight_pct": "0",
+    "largest_sector_weight_pct": "0",
+    "realized_pnl_base": "0",
+    "running_drawdown_pct": "0",
+    "unrealized_pnl_base": "0"
+  },
+  "report_date": "2026-07-28",
+  "research_alerts": [
+    {
+      "alert_id": "alert_7259b6de3846bad23db7",
+      "alert_type": "rsi_oversold",
+      "company_name": "Lithium Americas Corp.",
+      "market_data_date": "2026-07-27",
+      "observed_at": "2026-07-27T20:55:09Z",
+      "research_conclusion": "Deterministic indicator state awaits bounded research review.",
+      "research_page": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+      "research_status": "pending",
+      "security_id": "security_fb87fac302a5446a1ced",
+      "ticker": "LAC",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "alert_be0254cc5e73ddb60ad4",
+      "alert_type": "rsi_oversold",
+      "company_name": "Albemarle Corporation",
+      "market_data_date": "2026-07-27",
+      "observed_at": "2026-07-27T20:55:09Z",
+      "research_conclusion": "Deterministic indicator state awaits bounded research review.",
+      "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+      "research_status": "pending",
+      "security_id": "security_66cdcf90aac0d83e76f3",
+      "ticker": "ALB",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6",
+      "alert_type": "rsi_overbought",
+      "company_name": "RTX Corporation",
+      "market_data_date": "2026-07-27",
+      "observed_at": "2026-07-27T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6.md",
+      "research_status": "ingest",
+      "security_id": "security_59304f90c440def31dc5",
+      "ticker": "RTX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70",
+      "alert_type": "bollinger_above_upper",
+      "company_name": "RTX Corporation",
+      "market_data_date": "2026-07-27",
+      "observed_at": "2026-07-27T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70.md",
+      "research_status": "ingest",
+      "security_id": "security_59304f90c440def31dc5",
+      "ticker": "RTX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517",
+      "alert_type": "bollinger_below_lower",
+      "company_name": "Parrot S.A.",
+      "market_data_date": "2026-07-27",
+      "observed_at": "2026-07-27T00:00:00Z",
+      "research_conclusion": "Classified Parrot's 2026-06-29 through 2026-07-27 lower-Bollinger transition as noise, not a fundamental opportunity or material risk signal. The adjusted close declined only 0.6179% over the exact period and ended 1.6717% below the lower band after no trigger on the prior session. Parrot's primary publication index showed no time-matched issuer release, while the current thesis already records unresolved valuation, order-concentration, component-provenance, and durable cash-conversion gates. No",
+      "research_page": "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517.md",
+      "research_status": "ignore",
+      "security_id": "security_cc4dcb8f002b61dffe00",
+      "ticker": "PARRO.PA",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b",
+      "alert_type": "bollinger_above_upper",
+      "company_name": "Ternium S.A.",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b.md",
+      "research_status": "ingest",
+      "security_id": "security_2c779e81c27b78c556bb",
+      "ticker": "TX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee",
+      "alert_type": "bollinger_above_upper",
+      "company_name": "Ternium S.A.",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee.md",
+      "research_status": "ingest",
+      "security_id": "security_2c779e81c27b78c556bb",
+      "ticker": "TX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e",
+      "alert_type": "rsi_oversold",
+      "company_name": "Sigma Lithium Corporation",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Material 20.7% decline with a newly entered RSI-oversold condition merits durable review.",
+      "research_page": "data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e.md",
+      "research_status": "ingest",
+      "security_id": "security_4627aea1bf7d8943d3d8",
+      "ticker": "SGML",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101",
+      "alert_type": "rsi_overbought",
+      "company_name": "RTX Corporation",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101.md",
+      "research_status": "ingest",
+      "security_id": "security_59304f90c440def31dc5",
+      "ticker": "RTX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5",
+      "alert_type": "rsi_overbought",
+      "company_name": "RTX Corporation",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5.md",
+      "research_status": "ingest",
+      "security_id": "security_59304f90c440def31dc5",
+      "ticker": "RTX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae",
+      "alert_type": "bollinger_above_upper",
+      "company_name": "RTX Corporation",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Queue triage disposition",
+      "research_page": "data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae.md",
+      "research_status": "ingest",
+      "security_id": "security_59304f90c440def31dc5",
+      "ticker": "RTX",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910",
+      "alert_type": "rsi_oversold",
+      "company_name": "Lithium Americas Corp.",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Classified Lithium Americas' 2026-07-24 oversold-RSI transition as fundamental and commodity risk, not a contrarian opportunity. The 26.45% observation-period decline occurred without a material issuer project update and leaves a pre-revenue, construction-stage equity exposed to lithium pricing, remaining capex, conditional funding, warrants, dilution, commissioning, and schedule risk. No follow-up was created because the current security review already defines those gates and the next evidence ",
+      "research_page": "data/wiki/inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910.md",
+      "research_status": "ingest",
+      "security_id": "security_fb87fac302a5446a1ced",
+      "ticker": "LAC",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e",
+      "alert_type": "bollinger_below_lower",
+      "company_name": "Enphase Energy, Inc.",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Classified Enphase Energy's 25 June–24 July 2026 lower-Bollinger transition as risk, not a validated opportunity. The deterministic 22.262229% decline is material to the existing demand-reset thesis, but the lower-band breach is marginal, current issuer product releases do not explain the move, and no supportable fair-value range exists. Updated the maintained security research and created no follow-up because a bounded security revalidation is already queued for the imminent Q2 evidence.",
+      "research_page": "data/wiki/inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e.md",
+      "research_status": "ingest",
+      "security_id": "security_f2b9760d847b2ba59324",
+      "ticker": "ENPH",
+      "visible_label": "Research alert — not a trade signal"
+    },
+    {
+      "alert_id": "packet:market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752",
+      "alert_type": "rsi_oversold",
+      "company_name": "Albemarle Corporation",
+      "market_data_date": "2026-07-24",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "research_conclusion": "Classified Albemarle's 2026-07-24 oversold-RSI transition as unresolved commodity and earnings risk, not a buy signal. The 18.47% observation-period decline coincided with lithium-price repricing, while the issuer supplied no new operating result during the window and Q1 sensitivity remained dominated by lithium price, contract lag, capital needs, and dilution. Enqueued one post-Q2 security review for 2026-08-06.",
+      "research_page": "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
+      "research_status": "ingest",
+      "security_id": "security_66cdcf90aac0d83e76f3",
+      "ticker": "ALB",
+      "visible_label": "Research alert — not a trade signal"
+    }
+  ],
+  "run_id": "local-20260728-daily-all-10",
+  "snapshot_id": "decision_7566c9b27a2daa46751e",
+  "source_state_hashes": {
+    "allocation_targets": "cbbe0df2a30ee2fb83ce904ed92e6454f0d3c2d39cc91364eee6cdf952246a16",
+    "cash_ledger": "01818c9c63f8b80fdf927abba96e6553d53e28f4e491dcc0201a06f4f4cbc8d1",
+    "configuration": "6bfbcfa74f10e7c26fb5d945f6c4e0e7748c06714ce07d22e70a46ae67973c83",
+    "csv_contracts": "006db7fd09c8f810fa6b0be26cd8e4dbd772b3f76b60957660c996d239f16115",
+    "decision_schema": "af6b26a6dbd262948e4e20bb45ac0f948268dcd7d2e761e5942bdd1b2cd6c68b",
+    "executions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fx_aud_eur": "864a5a889ba1a00e99f4452c13d1e13aa2e8ccd07dbd4a51a3d6a67826bb42c4",
+    "fx_gbp_eur": "ed630d4aa0575ebc9b49dc47600b307b562f4da85553806e46844cd83c520ba5",
+    "fx_usd_eur": "cca01ec6551258350b6a1c1d4ca1a2c1a42a0b6573c0d80aa526f7b1149f7a1d",
+    "indicators": "8441fa114ec18bccef932641d54ccb02daf2f94fb899ee6d7b73f20edb62c690",
+    "issues": "31255ef1ab4783f62d8e37cd1608266b741a5cb75929e155cd6c2c5e45bfb457",
+    "market_latest": "41e1bae1941968c1f65af4de19c5fcb696549e2f98e01c9f651cd66f74f4f204",
+    "operation_payloads": "197d3904ae6728562e013198c0b52834c7546f450121bf95c7c0809262e422cb",
+    "operations_history": "c7ea459de11fd06700a5437999c481489925df41fdf446633b21ec982003f98a",
+    "operations_todo": "41f581a531b03d575e2c7f966c8534406b96e2c4f1ca4bb4802070a7cef73c7b",
+    "order_legs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "orders": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "performance_daily": "81ec42c1bc37f53e0efe95e0b4784faf3c6ff024d1858f72221b88cc1d6feca9",
+    "portfolio": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "relationships": "5a47046b53b3ce800e1fcc63e96c9f4752e1fc6c4fd6894e355a49aa8438a76b",
+    "runs": "643e66adb49c8a4eb2578f886604d6405b54c39511c962e9c4c2c4d28348df4d",
+    "securities": "27755cada53d56b9ed13aed460c0d021d6cc19566d10f959e3219c2094e7294c",
+    "security_assessments": "ac28c0f6ae59647dfebf00489148b564aa804429d6957bfd2b09a2d865b3820e",
+    "signals": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "source_registry": "44ba7eb17462647c3506226c6c827e801aa15c47d05cdf64820a1f611b2c1299",
+    "strategies": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "strategy_legs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "wiki_inbox": "760500710233a0493a99d2fffd33aaafff6d9f5e5d417bedb204e14cb514448e"
+  },
+  "stance": "hold_cash",
+  "stance_reason_codes": [
+    "portfolio_all_cash",
+    "no_actionable_signals"
+  ],
+  "system_impacts": [],
+  "version": 1
+}

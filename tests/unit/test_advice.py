@@ -810,6 +810,33 @@ def test_published_snapshot_tampering_is_detected(
     )
 
 
+def test_in_flight_validation_defers_only_current_source_state(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _initialize(sandbox_repository, sandbox_settings, run_id="in-flight-fixture")
+    refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="in-flight-fixture",
+        as_of=NOW,
+        render_pages=False,
+    )
+    write_table(sandbox_repository, "securities", [_security()])
+
+    assert "published decision snapshot does not match current authoritative state" in (
+        validate_advice(sandbox_repository, strict=True)
+    )
+    assert (
+        validate_advice(
+            sandbox_repository,
+            strict=True,
+            require_current_state=False,
+        )
+        == []
+    )
+
+
 def test_post_publication_delivery_issue_does_not_stale_decision_snapshot(
     sandbox_repository: Path,
     sandbox_settings: Settings,

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crwd_q1_2027_results_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+  "source_type": "filing",
+  "title": "CrowdStrike fiscal Q1 2027 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "689137b1d49987dfe3d47b6c54bbe634def83fb28e44647b662d54c851610a24",
+  "related_entity_ids": "idea_cybersecurity_geopolitical_continuity|security_8472507d7d320aa388a7",
+  "checked_at": "2026-07-28T01:20:18Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fiscal Q1 2027 revenue was USD 1.386 billion, ending ARR was USD 5.51 billion, free cash flow was USD 468.5 million, and fiscal-year revenue guidance was USD 5.915-5.959 billion.",
+  "summary": "The SEC-hosted issuer results exhibit supports current growth, recurring revenue, cash conversion, guidance, module adoption, and valuation scenarios.",
+  "run_id": "local-20260728-daily-all-10"
+}

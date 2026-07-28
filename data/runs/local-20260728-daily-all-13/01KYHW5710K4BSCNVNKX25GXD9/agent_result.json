@@ -1,0 +1,53 @@
+{
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-13/01KYHW5710K4BSCNVNKX25GXD9/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from AI compute, networking, and hyperscaler monetization to Arista Networks based on direct high-speed Ethernet exposure, Q1 growth, margins, cash generation, and liquidity; no strategy follow-up was created because concentration, architecture, supply, valuation, and timing gates remain unresolved before Q2 primary evidence."
+  ],
+  "evidence": [
+    {
+      "claim": "Arista reported Q1 2026 revenue of USD 2.709 billion, up 35.1%, a 42.7% GAAP operating margin, USD 1.694 billion of operating cash flow, and USD 12.353 billion of cash and marketable securities. The filing supports direct cloud and AI networking exposure while identifying large-customer concentration, customer-built alternatives, competition, acceptance periods, inventory, and purchase-commitment risks.",
+      "observed_at": "2026-07-27T22:38:47Z",
+      "source": "source_anet_q1_2026_10q",
+      "source_hash": "f71bc98384b0e63b1d0e2c175081998f089ecbd16740d46c311416f79ae801d8",
+      "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm"
+    },
+    {
+      "claim": "The maintained idea defines the causal channel from AI training and inference demand through high-speed networking and requires supplier revenue and cash flow to exceed concentration, competition, custom-silicon, pricing, and overcapacity risks.",
+      "source": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md"
+    },
+    {
+      "claim": "The maintained Arista review records current 800G and 1.6T product exposure, strong growth, margins, cash conversion, and liquidity, but keeps conviction treatment blocked because customer and architecture risks remain and both bounded valuation anchors are below the current market mark.",
+      "source": "data/wiki/securities/security_6f9a1450edceb9307c9a.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-13/01KYHW5710K4BSCNVNKX25GXD9/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_e5f55616b9beaf661080.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710K4BSCNVNKX25GXD9",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from AI compute, networking, and hyperscaler monetization to Arista Networks with high positive sensitivity and medium confidence. Arista's high-speed Ethernet products, Q1 2026 revenue growth, operating margin, cash generation, and liquidity establish a direct economic mechanism, while customer concentration, architecture substitution, qualification, supply, purchase commitments, and adverse current valuation limit shareholder transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created before Q2 primary evidence.",
+  "validation": {
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710K4BSCNVNKX25GXD9, run local-20260728-daily-all-13, relationship relationship_e5f55616b9beaf661080, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited immutable request SHA-256 is c49ac8a504be6139c937bcbf1939592cc0470b7c0f2e72441788c69bb5848f6f, and the upsert changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, or order path.",
+      "The relationship page is registered in the complete research catalog and documented in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, dependency, lease, preflight, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, trailing-whitespace, and catalog/log checks passed."
+    ],
+    "passed": true
+  }
+}

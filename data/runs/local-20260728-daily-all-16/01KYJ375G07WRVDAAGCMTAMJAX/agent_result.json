@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYJ375G07WRVDAAGCMTAMJAX",
+  "status": "succeeded",
+  "summary": "Ingested RTX's validated 2026-07-24 RSI-overbought transition into the maintained security review. The durable context records the 13.35% adjusted-close gain from 2026-06-25 through 2026-07-24, USD 211.50 close, and 0.1071 trigger strength while treating the indicator as strong-momentum and near-term entry-risk evidence rather than a price explanation, valuation input, short thesis, or trade signal. Updated provenance, reconciled the page with its accepted defense-and-aerospace relationship, and appended the wiki log. No follow-up was created because the existing fundamental review, accepted relationship, and valuation gates already bound the next decision.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5.md",
+      "claim": "The deterministic candidate packet records RTX entering the RSI-overbought condition as of 2026-07-24 after an adjusted-close gain of 13.350128169251126% from 2026-06-25 through 2026-07-24, with a USD 211.50 close, trigger strength 0.1070968283333333333333333333, and an ingest classifier disposition.",
+      "source_hash": "5ff842316175ea3173df9d7191703880b8f79b55296ba872c173a97416b3c1df"
+    },
+    {
+      "source": "data/wiki/securities/security_59304f90c440def31dc5.md",
+      "claim": "The maintained RTX review records a fresh 2026-07-27 USD 218.42 mark, bounded downside and base scenarios below market, overbought timing, and no configured margin of safety; the indicator transition does not independently support a short or other paper trade."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_1655ac715c33506ec7da.md",
+      "claim": "The accepted defense-and-aerospace relationship confirms positive medium-sensitivity exposure to replenishment demand, but commercial diversification, engine remediation, leverage, execution, valuation, and timing prevent strategy research."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested RTX's 2026-07-24 RSI-overbought transition as strong-momentum and near-term entry-risk context after a 13.35% 25 June–24 July gain; it does not explain the move, establish intrinsic value, or independently support a short or other paper trade, and no follow-up was created because existing valuation and timing gates remain controlling."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole selected queue row matched operation 01KYJ375G07WRVDAAGCMTAMJAX, run local-20260728-daily-all-16, source source_5392f8ab153edf73d1e7, wiki_ingest, the required skill pair, and a live lease at prerequisite review.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the immutable operation, type, entity, source path, and source hash.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three content hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local inbox file, its SHA-256 matched 5ff842316175ea3173df9d7191703880b8f79b55296ba872c173a97416b3c1df, and its classifier decision was ingest.",
+      "The maintained RTX page now preserves the source identity and exact indicator transition while distinguishing momentum and timing evidence from explanation, valuation, short-thesis, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained RTX page, and log.md records this ingestion append-only.",
+      "Both audited invocations of papertrader wiki lint --strict returned OK [wiki], including the final post-edit invocation.",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

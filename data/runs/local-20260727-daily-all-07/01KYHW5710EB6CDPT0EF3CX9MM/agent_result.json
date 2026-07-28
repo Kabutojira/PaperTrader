@@ -1,0 +1,66 @@
+{
+  "operation_id": "01KYHW5710EB6CDPT0EF3CX9MM",
+  "status": "succeeded",
+  "summary": "Revalidated Enphase Energy against its SEC-filed Q1 2026 Form 10-Q and current 2026-07-27 market and FX data. Net-cash resilience, positive quarterly cash generation, direct solar-and-storage exposure, and trading liquidity remain strengths, but US sell-through and battery shipments contracted, policy-timed revenue and tariffs obscure normalized economics, and no supportable downside-aware valuation is available before Q2 results. The medium-confidence assessment is ineligible with the explicit valuation_unsupported blocker, and no strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Enphase Energy Q1 2026 Form 10-Q",
+      "claim": "Q1 2026 revenue was USD 282.9 million, GAAP gross margin was 35.5%, operating cash flow was USD 102.9 million, cash plus marketable securities were USD 930.6 million, and remaining debt carrying value was USD 572.5 million. US sell-through fell 48% sequentially and 18% year over year. The SEC filing returned HTTP 200, and SEC submissions showed no later Form 10-Q through 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm",
+      "observed_at": "2026-07-27T23:10:00Z",
+      "source_hash": "8135cdc5c87271f022958a5d67a3869adfe1be8778415016e7989f7f335b307c"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "ENPH closed at USD 38.0099983215332 on 2026-07-27 with volume 3,564,980, and the current USD/EUR rate was 0.8794000148773193. Identity, market, FX, and trading-liquidity checks passed. No valuation was inferred from the mark."
+    },
+    {
+      "source": "Current comparable assessment",
+      "claim": "The assessment is ineligible with medium confidence and hard blocker valuation_unsupported. Its -100% downside and 0% base-upside fields are the canonical mechanical values for an unsupported valuation, not price targets; contracting demand, policy-timed revenue, tariffs, and imminent Q2 evidence prevent a defensible normalized valuation."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/record-source-enph-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/upsert-assessment-enph-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/upsert-assessment-enph-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/upsert-security-enph-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Enphase Energy remains a medium-confidence watch but is currently ineligible for allocation: net-cash resilience, positive Q1 cash generation, and liquid trading do not overcome contracting US sell-through, policy-timed revenue, tariffs, poor pre-results timing, and the absence of a supportable downside-aware valuation."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/record-source-enph-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/upsert-security-enph-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/upsert-assessment-enph-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710EB6CDPT0EF3CX9MM/upsert-assessment-enph-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-07 with a live lease through 2026-07-27T23:36:44Z; the payload validated against schemas/operation_payload.schema.json and preflight hashes matched llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The immutable ENPH/XNAS/USD/equity identity matched exactly one security row with no duplicate issuer-instrument-venue-currency-provider identity.",
+      "The SEC-filed Q1 2026 Form 10-Q returned HTTP 200 and was registered with SHA-256 8135cdc5c87271f022958a5d67a3869adfe1be8778415016e7989f7f335b307c; SEC submissions showed no later Form 10-Q through 2026-07-27.",
+      "The current assessment belongs to this run, expires 2026-08-26, references fresh registered evidence, and explicitly records valuation_unsupported. The initial assessment timestamp preceded the source registry first-seen timestamp; strict integrity caught this, and a new immutable v2 request corrected it before final validation.",
+      "The 2026-07-27 ENPH mark, 3,564,980-share volume, and 2026-07-27 USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and final strict integrity validation passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessment and relationship backfills are incomplete; this security's ineligible assessment independently prevents a conviction strategy follow-up.",
+      "The command audit shows this operation changed only securities, security assessments, source registry, and source history structured tables; no allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

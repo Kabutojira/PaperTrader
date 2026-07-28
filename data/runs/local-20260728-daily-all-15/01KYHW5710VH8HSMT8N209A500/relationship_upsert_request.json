@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_250194f6a9e3a1817632",
+  "idea_id": "idea_anduril_product_company_disruption",
+  "security_id": "security_bdc2f87dadf134760c3a",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Anduril can buy Palantir Warp Speed software and participate with Palantir in defence programs such as TITAN, so growth in Anduril's product-company model could create software demand or program pull-through for Palantir; however, no current source quantifies Anduril-derived Palantir revenue, margin, contract duration, concentration, or incremental cash flow, and Anduril's separate Army procurement ceiling is neither obligated nor Palantir revenue.",
+  "sensitivity": "low",
+  "confidence": "low",
+  "catalyst": "Palantir discloses material Anduril-derived revenue, contract duration, software attachment, margins, or cash flow; Anduril production awards produce measurable recurring Warp Speed demand; or joint defence programs award Palantir identifiable economics that are material relative to its broader business.",
+  "invalidation": "Anduril internalizes the relevant software stack, selects competing infrastructure, joint programs do not award Palantir material economics, Warp Speed remains an immaterial customer relationship, or Palantir continues to omit Anduril exposure because it is not financially material.",
+  "status": "rejected",
+  "research_page": "data/wiki/relationships/relationship_250194f6a9e3a1817632.md",
+  "last_reviewed_at": "2026-07-28T03:20:16Z",
+  "next_review_at": "2026-08-14T12:00:00Z"
+}

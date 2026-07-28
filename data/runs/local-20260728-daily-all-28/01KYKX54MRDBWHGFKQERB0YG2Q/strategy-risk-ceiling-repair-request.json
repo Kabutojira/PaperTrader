@@ -1,0 +1,40 @@
+{
+  "strategy": {
+    "strategy_id": "strategy_bd005fc3733b1475b6f9",
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "security_id": "security_1f9cce545ede94cd6349",
+    "relationship_id": "relationship_3570e003fd90cd83d26f",
+    "name": "Intuitive Surgical bounded baseline allocation",
+    "status": "ready",
+    "direction": "long",
+    "instrument_type": "equity",
+    "thesis": "High-quality recurring procedure economics, balance-sheet strength, liquidity, and an effective score of 63 above the cash hurdle justify only the allocator's bounded 4.39% baseline target after 2.2% pending exposure; limited base upside, a 23.2% downside case, weak timing, and insufficient diversification prevent conviction treatment.",
+    "entry_rule": "Use the open signal lifecycle action for the increase disposition only while allocation_plan_8859abf5cf5708b35855 and assessment 2026-07-27T21:28:56Z remain current, the ISRG mark and USD/EUR rate are fresh, and deterministic risk validation derives a positive whole-share delta no larger than the 4.39% target after pending exposure.",
+    "exit_rule": "Reduce or close only when a current deterministic allocation plan directs reduce or close, the score no longer clears cash, a hard blocker appears, Q3 evidence invalidates the range, or applicable exposure and risk limits require a reduction.",
+    "invalidation": "Invalidate increased exposure if procedure or installed-base growth stalls, recurring revenue decouples from utilization, safety or training weakens, hospital budgets defer placements, reimbursement or regulation constrains use, competition erodes returns, tariffs or supply prevent cash conversion, the assessment or plan is superseded, or market and FX inputs become stale.",
+    "risk_budget_pct": "5",
+    "sleeve": "baseline",
+    "allocation_plan_id": "allocation_plan_8859abf5cf5708b35855",
+    "not_before": "",
+    "expires_at": "2026-08-04T08:21:25Z",
+    "research_page": "data/wiki/strategies/strategy_bd005fc3733b1475b6f9.md"
+  },
+  "legs": [
+    {
+      "leg_id": "leg_isrg_equity",
+      "action": "buy",
+      "side": "long",
+      "instrument_type": "equity",
+      "security_id": "security_1f9cce545ede94cd6349",
+      "provider_contract_id": "",
+      "option_type": "",
+      "expiry": "",
+      "strike": "",
+      "quantity": "6",
+      "contract_multiplier": "1",
+      "order_type": "market",
+      "limit_price": "",
+      "currency": "USD"
+    }
+  ]
+}

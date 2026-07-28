@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_cbdd07edda84994325d6",
+  "idea_id": "idea_ai_infrastructure_power",
+  "security_id": "security_4b61970aa8f574446819",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Rising data-centre electricity demand and grid constraints increase demand for generation equipment, services, and electrification systems; GE Vernova can convert that demand through Power and Electrification into orders, backlog, revenue, margins, and cash flow, subject to project schedules, customer concentration, backlog quality, working-capital normalization, Wind execution, capacity investment, acquisition integration, and valuation.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Later primary evidence shows broad Power and Electrification orders, data-centre and utility projects proceeding on schedule, backlog converting into revenue, durable service mix and margins, normalized free cash flow, acceptable returns on capacity investment, and controlled customer concentration and cancellations.",
+  "invalidation": "Data-centre or utility projects are cancelled or delayed; efficiency or architecture changes reduce power-equipment demand; competing supply or internal generation weakens GE Vernova content; capacity expansion causes price or utilization deterioration; orders fail to become revenue and normalized cash; Wind, warranties, tariffs, acquisitions, or capacity projects absorb gains; customer concentration rises; or backlog materially corrects.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_cbdd07edda84994325d6.md",
+  "last_reviewed_at": "2026-07-28T03:36:48Z",
+  "next_review_at": "2026-08-26T22:05:09Z"
+}

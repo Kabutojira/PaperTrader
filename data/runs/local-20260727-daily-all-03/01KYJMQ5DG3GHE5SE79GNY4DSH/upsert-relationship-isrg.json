@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_3570e003fd90cd83d26f",
+  "idea_id": "idea_precision_biology_healthcare_automation",
+  "security_id": "security_1f9cce545ede94cd6349",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Adoption and utilization of Intuitive's robotically assisted procedure systems expand the installed base and directly drive procedure-linked instruments, accessories, and service revenue; shareholder benefit depends on recurring-revenue growth converting through operating margin, safety, training quality, hospital economics, and cash.",
+  "sensitivity": "high",
+  "confidence": "high",
+  "catalyst": "Procedure and installed-base growth remains durable, da Vinci 5 and Ion utilization expands, recurring instruments and service revenue grows, and operating margin remains resilient after tariffs and supply costs.",
+  "invalidation": "Procedure utilization or installed-base growth stalls, recurring revenue decouples from adoption, hospital budgets defer placements, safety or training evidence weakens, reimbursement or regulation constrains use, competition erodes returns, or tariffs and supply constraints prevent cash conversion.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_3570e003fd90cd83d26f.md",
+  "last_reviewed_at": "2026-07-27T21:36:00Z",
+  "next_review_at": "2026-10-30T21:36:00Z"
+}

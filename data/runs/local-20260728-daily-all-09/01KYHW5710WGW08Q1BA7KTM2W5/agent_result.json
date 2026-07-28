@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYHW5710WGW08Q1BA7KTM2W5",
+  "status": "succeeded",
+  "summary": "Revalidated Albemarle's immutable NYSE common-stock identity against the SEC-hosted Q1 2026 results exhibit and current 2026-07-27 market and FX state. Lithium pricing, volume, cash conversion, leverage, and trading liquidity improved, but management's wide commodity scenarios do not support probability-weighted common-equity downside and base values after contract lag, tax, terminal-multiple, and mandatory-convertible assumptions. The medium-confidence security remains watching and is ineligible with valuation_unsupported; no conviction strategy was queued before the scheduled Q2 review.",
+  "evidence": [
+    {
+      "source": "Albemarle Q1 2026 results exhibit",
+      "claim": "Albemarle reported Q1 2026 adjusted EBITDA of USD 664 million, operating cash flow of USD 346 million, free cash flow of USD 248 million, full-year capex guidance of USD 550-600 million, and debt-reduction actions that paid down USD 1.3 billion. The SEC exhibit returned HTTP 200 on 2026-07-28.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+      "observed_at": "2026-07-28T00:58:00Z",
+      "source_hash": "197132b1bc66f6201081d938a5884a4895c57b755536cc95e21db466b34aa7e7"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "ALB closed at USD 116.18000030517578 on 2026-07-27 with volume 1,463,658 and status ok; RSI was 27.61678499, the 20-day return was -13.103962%, and the close was below its 50- and 200-day averages. USD/EUR was available for 2026-07-27 at 0.8794000148773193."
+    },
+    {
+      "source": "PaperTrader comparable assessment",
+      "claim": "The current assessment belongs to local-20260728-daily-all-09, expires 2026-08-27, references the freshly registered primary source, and records valuation_unsupported because converting management's USD 0.9-1.0 billion to USD 4.2-4.4 billion EBITDA sensitivity range into common-share values would require unsupported commodity probabilities and capital-structure assumptions."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WGW08Q1BA7KTM2W5/record-source-alb-q1-2026-results-sec.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WGW08Q1BA7KTM2W5/upsert-assessment-alb-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WGW08Q1BA7KTM2W5/upsert-security-alb-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Albemarle is a medium-confidence ineligible near miss: lithium economics, cash conversion, leverage, and liquidity improved, but the USD 116.18 mark lacks a supportable downside-aware common-equity valuation after commodity normalization, contract lag, tax, terminal-multiple, and mandatory-convertible assumptions; no strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710WGW08Q1BA7KTM2W5/record-source-alb-q1-2026-results-sec.json",
+    "papertrader research security upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710WGW08Q1BA7KTM2W5/upsert-security-alb-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710WGW08Q1BA7KTM2W5/upsert-assessment-alb-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260728-daily-all-09 with a live lease through 2026-07-28T01:26:51Z.",
+      "Preflight identified llm-wiki 2.1.0, the repository controller skill, and papertrader-security-research with content hashes, sequential execution, and yolo mode.",
+      "The immutable ALB/XNYS/USD/equity identity matched exactly one canonical security row; the validated security upsert preserved every immutable identity field.",
+      "The SEC exhibit returned HTTP 200, its SHA-256 was registered as fresh primary evidence, and the assessment timestamp follows source registration chronology.",
+      "The 2026-07-27 ALB mark, volume, indicators, and USD/EUR rate were current; the assessment expires within the configured 30-day maximum age.",
+      "Strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness remained false as expected because separate repository-wide assessment and relationship work is incomplete; Albemarle is explicitly ineligible, so the conviction strategy gate did not pass and no follow-up was enqueued.",
+      "The command audit records no change to allocation targets/history, orders, executions, cash, portfolio, fills, or performance."
+    ]
+  }
+}

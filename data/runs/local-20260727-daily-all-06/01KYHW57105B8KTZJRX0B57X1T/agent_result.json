@@ -1,0 +1,66 @@
+{
+  "operation_id": "01KYHW57105B8KTZJRX0B57X1T",
+  "status": "succeeded",
+  "summary": "Revalidated Rio Tinto's sponsored ADR against issuer-published 2025 full-year financials, Q2 2026 production results, and current 2026-07-27 market and FX data. Oyu Tolgoi and diversified production are growing, but 2025 free cash flow fell 28% and net debt rose 162%. At the USD 91.95 mark, bounded 12-month scenarios based on 10x and 13x 2025 underlying EPS imply 27.2% downside and 5.4% base-case downside. The medium-confidence security is baseline eligible but uncompetitive with cash; the margin-of-safety gate and pending relationship review preclude a conviction strategy follow-up.",
+  "evidence": [
+    {
+      "source": "Rio Tinto 2025 full-year results",
+      "claim": "The issuer reported USD 57.638 billion revenue, USD 25.363 billion underlying EBITDA, USD 16.832 billion operating cash flow, USD 4.025 billion free cash flow, USD 10.868 billion underlying earnings, USD 6.692 underlying EPS, and USD 14.362 billion net debt for 2025. The issuer page returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-solid-results-underpinned-by-8-cueq-production-and-sharper-cost-discipline",
+      "observed_at": "2026-07-27T22:27:56Z",
+      "source_hash": "c1e5b0a09a24e38de05652c9d1ff99b53dc25c643834dc2611e28a1f522e2dab"
+    },
+    {
+      "source": "Rio Tinto second-quarter 2026 production results",
+      "claim": "First-half copper-equivalent production rose 3%, Oyu Tolgoi first-half production rose 31%, group second-quarter copper production was 213 kt and fell 7% year over year and sequentially, and full-year copper guidance remained 800-870 kt. The issuer page returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results",
+      "observed_at": "2026-07-27T22:27:56Z",
+      "source_hash": "851e917983c691d21f34f9f07c48d261a1e03e7f31276789693152e3542bdf5f"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "RIO closed at USD 91.94999694824219 on 2026-07-27 with volume 1,859,291, and the current USD/EUR rate was 0.8794000148773193. Applying 10x and 13x to USD 6.692 underlying EPS gives USD 66.92 and USD 86.996 values, or rounded returns of -27.2% and -5.4%, under the stated one-ADR-per-plc-ordinary-share assumption."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/record-source-rio-fy2025.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/record-source-rio-q2-2026.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/upsert-assessment-rio-refresh.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/upsert-security-rio-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rio Tinto is a medium-confidence baseline near miss: Oyu Tolgoi and diversified output are growing, but free cash flow fell and net debt rose in 2025; at USD 91.95, bounded 12-month scenarios imply 27.2% downside and 5.4% base-case downside ahead of 29 July half-year results."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/record-source-rio-fy2025.json",
+    "papertrader research source record --request data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/record-source-rio-q2-2026.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/upsert-security-rio-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-06/01KYHW57105B8KTZJRX0B57X1T/upsert-assessment-rio-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-06 with a live lease through 2026-07-27T22:52:41Z.",
+      "Preflight hashes matched llm-wiki 2.1.0, the repository controller skill, and the security-research skill.",
+      "The immutable RIO/XNYS/USD/equity identity matched exactly one security row and passed the validated security upsert without changing immutable identity fields.",
+      "Both issuer pages returned HTTP 200, were registered with current content hashes, and were fresh before the final assessment timestamp.",
+      "The 2026-07-27 RIO mark, trading volume, and USD/EUR rate were current; the assessment belongs to this run, expires 2026-08-26, and references both registered sources.",
+      "Strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment backfills and the separately queued Rio Tinto relationship review are incomplete; no strategy follow-up was permitted.",
+      "The command audit recorded no change to allocation targets/history, orders, executions, cash, portfolio, fills, or performance."
+    ]
+  }
+}

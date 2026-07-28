@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_c68edb5cb872f823b86c",
+  "resolution": "Aligned the result-validator wiki scope with the required research-catalog update, added coverage for every wiki-capable operation type, and verified the duplicate retry was safely merged into the existing equivalent active relationship task."
+}

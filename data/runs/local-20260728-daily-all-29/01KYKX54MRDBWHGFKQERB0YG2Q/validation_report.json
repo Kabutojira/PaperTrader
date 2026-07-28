@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-29/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "errors": [],
+  "operation_id": "01KYKX54MRDBWHGFKQERB0YG2Q",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-29",
+  "validation_version": 1
+}

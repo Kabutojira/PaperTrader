@@ -1,0 +1,17 @@
+{
+  "entity_id": "relationship_d9c8f578040386a487be",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "maintenance_mode": "backfill",
+    "relationship_id": "relationship_d9c8f578040386a487be",
+    "security_id": "security_c9a37d277445869a8809"
+  },
+  "objective": "Review the canonical relationship from idea_digital_attention_gaming_ecosystems to security_c9a37d277445869a8809 and accept or reject it with current evidence.",
+  "operation_id": "01KYJMQ5DGT0HRARBP4GVJTC0X",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_rblx_q1_2026_shareholder_letter"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lac_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm",
+  "source_type": "filing",
+  "title": "Lithium Americas Corp. Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a7d31055ce1a4a604bde8ebb54d0371db6956244067432f5bcd4b504b95bfd88",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_fb87fac302a5446a1ced",
+  "checked_at": "2026-07-27T23:45:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, 2026, cash was USD 758.5 million and restricted cash was USD 449.1 million. Thacker Pass targeted late-2027 mechanical completion; USD 1.1 billion of the USD 2.93 billion technical-report capex estimate had been spent, and fiscal-2026 project capex guidance was USD 1.3-1.6 billion.",
+  "summary": "The SEC filing supports current Thacker Pass construction, capex, liquidity, ownership, DOE and GM funding, offtake, warrant, dilution, schedule, and pre-revenue risk analysis.",
+  "run_id": "local-20260727-daily-all-08"
+}

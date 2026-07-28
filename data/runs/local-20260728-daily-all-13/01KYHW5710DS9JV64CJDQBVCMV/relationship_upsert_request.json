@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_392da6d90e7c969945a2",
+  "idea_id": "idea_critical_minerals_copper",
+  "security_id": "security_1c055eb9b2bb1f5a8ff2",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Structural copper scarcity can raise Rio Tinto's realized copper economics, margins, reserve value, and returns on funded copper growth through Oyu Tolgoi and its other copper assets; shareholder transmission depends on attributable volumes and free cash flow after costs, taxes, ownership interests, capex, leverage, iron ore, aluminium, lithium, and other portfolio demands.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Oyu Tolgoi volume and cost improvements convert into attributable segment and group free cash flow, copper guidance and project schedules hold, net debt remains controlled, Winu or Resolution advances without undermining returns, and the half-year results show a larger copper contribution to group cash generation.",
+  "invalidation": "New supply, recycling, substitution, or weaker demand removes scarcity; Oyu Tolgoi or other copper projects slip; grades, recoveries, water, costs, taxes, or ownership terms worsen; group copper output or attributable cash flow fails to rise; or iron-ore weakness, acquisitions, capex, leverage, and other portfolio demands absorb copper gains.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_392da6d90e7c969945a2.md",
+  "last_reviewed_at": "2026-07-28T02:17:48Z",
+  "next_review_at": "2026-07-30T12:00:00Z"
+}

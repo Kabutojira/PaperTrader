@@ -1,0 +1,18 @@
+{
+  "source_id": "source_flnc_q2_2026_sec_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm",
+  "source_type": "filing_exhibit",
+  "title": "Fluence Energy fiscal Q2 2026 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c86ed5e861ea998d79ab5ae649bd751761886a9694e239e61b0db1e3d6dec00b",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_a9eb9838940ef5ceaa0c",
+  "checked_at": "2026-07-27T22:16:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Fluence reported approximately USD 5.6 billion backlog and USD 412.9 million total cash at March 31, 2026, and reaffirmed fiscal-2026 revenue of USD 3.2-3.6 billion and adjusted EBITDA of USD 40-60 million.",
+  "summary": "The SEC-filed issuer exhibit confirms record storage backlog and fiscal-2026 guidance while showing thin margins, negative first-half adjusted EBITDA and free cash flow, and material backlog conversion, project execution, working-capital, tariff, warranty, and liquidity risks.",
+  "run_id": "local-20260727-daily-all-06"
+}

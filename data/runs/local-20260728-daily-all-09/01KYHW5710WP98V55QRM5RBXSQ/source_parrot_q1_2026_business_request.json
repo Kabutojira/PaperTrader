@@ -1,0 +1,18 @@
+{
+  "source_id": "source_parrot_q1_2026_business",
+  "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf",
+  "canonical_url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf",
+  "source_type": "issuer_release",
+  "title": "Parrot 2026 first-quarter business",
+  "publisher": "Parrot S.A.",
+  "license": "",
+  "status": "available",
+  "content_hash": "62c7a27a71a37be051fe3771f564e4bb83a589de4e43ef7ce46e0421a65c2772",
+  "related_entity_ids": "security_cc4dcb8f002b61dffe00",
+  "checked_at": "2026-07-28T01:05:38Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 revenue was EUR 27.9m, up 52% at current exchange rates; professional micro-UAV revenue was EUR 21.3m, up 102%, while critical-infrastructure solutions revenue was EUR 6.6m, down 16%. The group said it was slightly profitable and did not consume cash in the quarter.",
+  "summary": "Primary issuer release dated 2026-05-20. It reports the ANAFI UKR ramp, institutional deliveries, BLUE UAS and NSPA procurement access, component lead-time pressure, a subscription transition at PIX4D, slight quarterly profitability, and no quarterly cash consumption. It does not provide a full balance sheet, diluted-share bridge, customer concentration, or order values.",
+  "run_id": "local-20260728-daily-all-09"
+}

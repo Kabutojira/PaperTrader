@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYHW5710HN9JVFYSCM4C3KKT",
+  "status": "succeeded",
+  "summary": "Accepted and completed the positive beneficiary relationship from precision biology and healthcare automation to Recursion Pharmaceuticals with high sensitivity and low confidence. Computational discovery, biological data, automated experimentation, and platform-derived programs create a direct causal exposure, but current primary evidence establishes only early clinical activity, not improved clinical success or durable economics. Immaterial revenue, operating losses, likely financing, dilution, and unsupported valuation remain explicit limits, so no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_rxrx_q1_2026_10q",
+      "claim": "Recursion's SEC-filed Q1 2026 Form 10-Q reports USD 654.5 million of cash and cash equivalents, 530.6 million shares outstanding, a USD 117.5 million quarterly net loss, and an expectation that additional capital will be required to advance drug candidates. The filing supports a direct but financially conditional precision-biology relationship and makes funding and dilution central to shareholder transmission.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000078/rxrx-20260331.htm",
+      "observed_at": "2026-07-27T23:18:30Z",
+      "source_hash": "8b4dc7f64d6e33c66565fc7a4134d5b9a5da5ea3b217e3649094d869ba0355c3"
+    },
+    {
+      "source": "data/wiki/securities/security_ed7d5b616a196969c815.md",
+      "claim": "The maintained security review records platform-to-clinic activity in REC-1245, REC-4881, and REC-4539, while explicitly distinguishing those milestones from approval, comparative efficacy, commercial value, or an improved portfolio-wide probability of success. It retains low-confidence watching with a valuation_unsupported hard blocker."
+    },
+    {
+      "source": "data/wiki/ideas/idea_precision_biology_healthcare_automation.md",
+      "claim": "The maintained idea defines the causal mechanism through faster candidate search, assays, diagnostics, laboratory automation, and clinical workflows, but requires validated outcomes, recurring economics, regulatory and reimbursement support, and cash conversion before treating workflow progress as investable value."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-13/01KYHW5710HN9JVFYSCM4C3KKT/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_9e7b4700174908755cbc.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the high-sensitivity, low-confidence positive beneficiary relationship from precision biology and healthcare automation to Recursion Pharmaceuticals; platform-derived programs create direct exposure, but early clinical translation, immaterial revenue, operating losses, likely financing, dilution, and unsupported valuation block strategy research."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-13/01KYHW5710HN9JVFYSCM4C3KKT/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710HN9JVFYSCM4C3KKT, run local-20260728-daily-all-13, relationship relationship_9e7b4700174908755cbc, the required skill pair, and a live lease through 2026-07-28T02:57:05Z.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by content hash; local hashes matched the preflight, execution was sequential, PAPER_TRADING_ONLY=true, and no injection flags were reported.",
+      "The immutable relationship, idea, and security IDs matched the payload, queue row, endpoint pages, request, and resulting canonical row.",
+      "No equivalent canonical edge existed before the operation; after the audited upsert, exactly one row matched relationship_9e7b4700174908755cbc and the idea-security endpoint pair.",
+      "The accepted beneficiary row contains positive direction, high sensitivity, low confidence, a bounded causal mechanism, catalyst, invalidation, status, research page, and review timestamps.",
+      "The audited relationship upsert returned changed=true and changed only data/tables/relationships.csv; no allocation, strategy, signal, order, fill, execution, cash, portfolio, or performance path was changed by the command.",
+      "The immutable request SHA-256 d2601efe462d59b01a17949adb6107f5921fb7f321164ede78dbb210b80880ae matched the command-audit identity, and all operation-written paths were non-symlinks.",
+      "The relationship page links both immutable endpoints, records contrary evidence and the strategy gate, is registered in the research catalog, and is documented in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "command_audit.json contains exactly the two canonical papertrader command strings listed in commands_run, both with exit code 0."
+    ]
+  }
+}

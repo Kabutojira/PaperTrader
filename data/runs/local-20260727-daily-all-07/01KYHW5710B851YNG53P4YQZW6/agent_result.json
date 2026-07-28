@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYHW5710B851YNG53P4YQZW6",
+  "status": "succeeded",
+  "summary": "Revalidated Rocket Lab against its SEC-filed Q1 2026 Form 10-Q and current 2026-07-27 market and FX data. Revenue growth, backlog, gross margin, balance-sheet liquidity, and trading liquidity support baseline comparison, while Neutron execution, operating cash burn, dilution, concentration, and contract quality remain material risks. At the USD 66.94 mark, bounded 12-month revenue scenarios imply 79.3% downside and 56.9% base-case downside. The medium-confidence security is uncompetitive with cash and its relationship review remains pending, so no conviction strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Rocket Lab Q1 2026 Form 10-Q",
+      "claim": "Q1 revenue was USD 200.348 million, GAAP gross profit was USD 76.493 million, backlog was USD 2.220 billion, operating cash use was USD 50.332 million, and cash plus marketable securities were USD 1.477 billion. The filing also showed USD 445.607 million of net ATM proceeds and one government customer at 36% of revenue. The SEC filing returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm",
+      "observed_at": "2026-07-27T23:02:27Z",
+      "source_hash": "ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "RKLB closed at USD 66.94000244140625 on 2026-07-27 with volume 15,576,760, and the current USD/EUR rate was 0.8794000148773193. Using 621.719 million common-plus-preferred shares and USD 1.424 billion net cash, an 8-times multiple on USD 0.9 billion downside revenue produces USD 13.87 and -79.3%; a 15-times multiple on USD 1.1 billion base revenue produces USD 28.83 and -56.9%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/record-source-rklb-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/upsert-assessment-rklb-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/upsert-security-rklb-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_7ca095d63423c55a90e3.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rocket Lab is a medium-confidence baseline near miss: Q1 revenue, backlog, gross margin, balance-sheet liquidity, and trading liquidity are strong enough for comparison, but the USD 66.94 mark stands far above the USD 13.87 downside and USD 28.83 base scenario values, while Neutron, cash burn, dilution, concentration, and the pending relationship review block conviction treatment."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/record-source-rklb-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/upsert-security-rklb-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/upsert-assessment-rklb-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-07 with a live lease, and preflight hashes identified llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The payload validated against schemas/operation_payload.schema.json and the immutable RKLB/XNAS/USD/equity identity matched exactly one security row with no duplicate provider identity.",
+      "The SEC-filed Q1 2026 Form 10-Q returned HTTP 200 and was registered with SHA-256 ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2 before the assessment timestamp; SEC submissions showed no later Form 10-Q through 2026-07-27.",
+      "The current assessment belongs to this run, expires 2026-08-26, references current registered evidence, and records -79.3% downside and -56.9% base upside from the refreshed mark.",
+      "The 2026-07-27 RKLB mark, 15,576,760-share volume, and 2026-07-27 USD/EUR rate were current; strict integrity validation passed.",
+      "Strict schema validation, queue validation, wiki lint, and integrity checks passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment backfills and the separately queued Rocket Lab relationship review are incomplete; negative base upside and the margin-of-safety gap independently prevent a conviction strategy follow-up.",
+      "The command audit shows no allocation target/history, order, execution, cash, portfolio, fill, or performance file changed by this operation, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

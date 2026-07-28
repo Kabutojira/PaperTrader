@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-15/01KYHW5710VH8HSMT8N209A500/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Rejected the low-confidence, low-sensitivity proposed beneficiary relationship from Anduril product-company disruption to Palantir Technologies. Warp Speed customer or partner status and joint TITAN participation establish a possible positive channel, but current evidence does not quantify Anduril-derived Palantir revenue, margins, contract duration, concentration, or cash flow; no strategy follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Palantir's SEC-hosted Q1 2026 release establishes USD 1.633 billion of company-wide revenue, a 46% GAAP operating margin, USD 899 million of operating cash flow, and USD 925 million of adjusted free cash flow, but does not quantify revenue attributable to Anduril. This supports Palantir's independent economics while leaving the proposed proxy sensitivity unmeasured.",
+      "observed_at": "2026-07-27T21:56:07Z",
+      "source": "source_pltr_q1_2026_earnings_release",
+      "source_hash": "8bb61e349de9184f719690ca3fa8ced024c879327c7859369cad587c847ae0e2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm"
+    },
+    {
+      "claim": "The maintained Anduril idea records Palantir as a bounded public-proxy candidate because Anduril uses Warp Speed and participates with Palantir in the TITAN ecosystem, while explicitly requiring proof of material incremental revenue rather than marketing association.",
+      "source": "data/wiki/ideas/idea_anduril_product_company_disruption.md"
+    },
+    {
+      "claim": "The maintained Palantir review states that the Anduril link is operational but economically unquantified, that Anduril's separate Army procurement ceiling is not obligated and is not Palantir revenue, and that adverse current valuation scenarios make the security uncompetitive with cash.",
+      "source": "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-15/01KYHW5710VH8HSMT8N209A500/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_250194f6a9e3a1817632.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710VH8HSMT8N209A500",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Rejected the proposed beneficiary relationship from Anduril product-company disruption to Palantir Technologies with positive direction, low sensitivity, and low confidence. Warp Speed customer or partner status and joint TITAN participation create a possible causal channel, but no current source quantifies Anduril-derived Palantir revenue, margin, contract duration, concentration, or incremental cash flow; the separate Army procurement ceiling is neither obligated nor Palantir revenue. Updated the relationship page, complete research catalog, append-only wiki log, and canonical rejected relationship row. No strategy, signal, order, issue, or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710VH8HSMT8N209A500, run local-20260728-daily-all-15, relationship relationship_250194f6a9e3a1817632, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by content hash; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, endpoint pages, request, and inserted canonical row.",
+      "The rejected beneficiary row is unique for the idea-security endpoint pair and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The evidence test distinguished a real operational association from an investable causal edge: no current source quantifies Anduril-derived Palantir revenue, margin, duration, concentration, or cash flow, so low sensitivity and low confidence do not support acceptance.",
+      "The audited immutable request SHA-256 is 97e139e66a570afe20411c385beebe071ff373c95a237a07e46faae4ada2a1a1, and its CLI invocation changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, order, or fill path.",
+      "The relationship page is registered exactly once in the complete research catalog and documented in the append-only wiki log; relevant operation files are regular files rather than symlinks.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, dependency, queue claim, preflight, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, catalog, log, and whitespace checks passed."
+    ],
+    "passed": true
+  }
+}

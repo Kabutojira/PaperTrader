@@ -176,7 +176,8 @@
                 "signal_id": { "type": "string", "minLength": 1 },
                 "action": {
                   "type": "string",
-                  "enum": ["open", "reduce", "close", "roll", "cancel", "hold"]
+                  "enum": ["open", "reduce", "close", "roll", "cancel", "hold"],
+                  "description": "For baseline allocations, open also represents increase."
                 }
               }
             }

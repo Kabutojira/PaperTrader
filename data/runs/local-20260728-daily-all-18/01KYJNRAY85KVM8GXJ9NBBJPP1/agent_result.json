@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYJNRAY85KVM8GXJ9NBBJPP1",
+  "status": "succeeded",
+  "summary": "Ingested RTX's validated 2026-07-27 strengthened upper-Bollinger candidate packet into the maintained security review. The packet records a USD 218.42 adjusted close, a 16.19% gain from 26 June through 27 July, and trigger strength increasing to 0.0286 from 0.0153. It corroborates stronger momentum and near-term entry risk but supplies no event explanation, intrinsic-value evidence, short thesis, or paper-trade support. Updated the security page provenance and packet link and appended the wiki log; no structured source row or follow-up operation was warranted for this deterministic repository-local inbox packet.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70.md",
+      "claim": "The validated deterministic packet records an ingest-classified strengthened upper-Bollinger condition as of 2026-07-27 for 2026-06-26 through 2026-07-27, with adjusted close 218.4199981689453, period return 0.161870268560036695374533075, trigger strength 0.02861967535063116568152099099 from 0.015295407358163626189144848 previously, and source price hash 47922f7fd70ae7c48ab24062f21bdbd13897039f6f1908d8ba8f13d7ef7a2c38.",
+      "source_hash": "621aed7ad33b6282c71b5b7d8beadf515fb13517e9ac8ea818eaeb7952ae3c9c"
+    },
+    {
+      "source": "data/wiki/securities/security_59304f90c440def31dc5.md",
+      "claim": "The maintained RTX review now identifies source_e5d2d85e77932d3bf56d in provenance, links the 27 July packet, preserves the distinct 24 July observation, and distinguishes strengthened deterministic momentum from a catalyst, intrinsic value, short thesis, or trade signal."
+    },
+    {
+      "source": "data/wiki/log.md",
+      "claim": "The append-only 2026-07-28 log records this ingestion, its bounded interpretation, and the decision not to create a redundant follow-up because the current fundamental review, accepted relationship, and valuation gates already bind the next decision."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested RTX's validated 2026-07-27 strengthened upper-Bollinger packet into the maintained review. The USD 218.42 close, 16.19% 26 June–27 July gain, and strength increase to 0.0286 from 0.0153 corroborate near-term entry risk but do not explain the move, establish intrinsic value, or support a paper trade; no follow-up was created because existing fundamental, relationship, and valuation gates remain controlling."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; exactly one queue row was running, matching this operation, run, source entity, operation type, and required skills, with a lease through 2026-07-28T04:57:23Z.",
+      "The payload matched the immutable operation, type, entity, source path, and source hash and validated against schemas/operation_payload.schema.json.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three SHA-256 hashes matched regular loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular, non-symlink, repository-local deterministic inbox file; its SHA-256 matched 621aed7ad33b6282c71b5b7d8beadf515fb13517e9ac8ea818eaeb7952ae3c9c and its classifier decision was ingest.",
+      "The maintained RTX page now identifies source_e5d2d85e77932d3bf56d, links the candidate packet, preserves the earlier observation, and separates strengthened momentum from explanation, valuation, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained RTX page, and log.md records this ingestion append-only.",
+      "Both audited invocations of papertrader wiki lint --strict returned OK [wiki], including the final post-edit invocation.",
+      "This routed operation directly changed only the maintained RTX page and wiki log; it did not edit allocation targets/history, executions, cash, portfolio, fills, or performance.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

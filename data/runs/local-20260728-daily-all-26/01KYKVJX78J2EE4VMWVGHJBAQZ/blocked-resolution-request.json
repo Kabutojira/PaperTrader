@@ -1,0 +1,8 @@
+{
+  "operation_id": "01KYKVJX78J2EE4VMWVGHJBAQZ",
+  "run_id": "local-20260728-daily-all-26",
+  "terminal_status": "skipped",
+  "result_path": "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/agent_result.json",
+  "result_summary": "Archived the blocked attempt after correcting the baseline increase-to-open signal lifecycle contract; a fresh operation will review the unchanged current plan.",
+  "terminal_reason": "contract_instructions_corrected"
+}

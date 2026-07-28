@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm",
+  "source_type": "filing",
+  "title": "Arista Networks Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "f71bc98384b0e63b1d0e2c175081998f089ecbd16740d46c311416f79ae801d8",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-07-27T22:38:47Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 revenue was USD 2.709 billion, GAAP operating margin was 42.7%, net income was USD 1.023 billion, diluted EPS was USD 0.80, operating cash flow was USD 1.694 billion, and cash plus marketable securities were USD 12.353 billion.",
+  "summary": "The SEC-filed quarterly report supports current growth, profitability, cash generation, liquidity, diluted-share, customer-concentration, inventory, commitment, and architecture-risk analysis for Arista; it predates the still-pending Q2 2026 release.",
+  "run_id": "local-20260727-daily-all-06"
+}

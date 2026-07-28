@@ -1,0 +1,23 @@
+{
+  "security_id": "security_f2b9760d847b2ba59324",
+  "issuer_id": "issuer_e9e6fe7bb54ac8a5e3ab",
+  "company_name": "Enphase Energy, Inc.",
+  "instrument_name": "Enphase Energy, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ENPH",
+  "exchange_code": "NGM",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ENPH",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Solar",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Net-cash resilience and positive Q1 cash generation remain strengths, but contracting US sell-through, policy-timed revenue, tariffs, and unsupported valuation block eligibility.",
+  "research_page": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+  "last_research_at": "2026-07-27T23:10:00Z",
+  "next_review_at": "2026-07-29T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm"
+}

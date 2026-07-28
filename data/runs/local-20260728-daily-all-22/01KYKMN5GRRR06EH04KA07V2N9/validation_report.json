@@ -1,0 +1,11 @@
+{
+  "changed_paths": [],
+  "errors": [
+    "Hermes exited with status 1",
+    "agent result is missing or a symlink: data/runs/local-20260728-daily-all-22/01KYKMN5GRRR06EH04KA07V2N9/agent_result.json"
+  ],
+  "operation_id": "01KYKMN5GRRR06EH04KA07V2N9",
+  "passed": false,
+  "run_id": "local-20260728-daily-all-22",
+  "validation_version": 1
+}

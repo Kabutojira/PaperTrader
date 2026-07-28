@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4b61970aa8f574446819",
+  "issuer_id": "issuer_7bca479f6eb8c69f3ffb",
+  "company_name": "GE Vernova Inc.",
+  "instrument_name": "GE Vernova Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "GEV",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "GEV",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Power and electrification demand, backlog, margins, cash, and liquidity support baseline eligibility, but the current mark offers no 20% margin of safety.",
+  "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+  "last_research_at": "2026-07-27T22:04:36Z",
+  "next_review_at": "2026-08-26T22:04:36Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm"
+}

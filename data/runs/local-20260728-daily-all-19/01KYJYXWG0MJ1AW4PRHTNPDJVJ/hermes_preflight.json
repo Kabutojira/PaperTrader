@@ -1,0 +1,33 @@
+{
+  "api_key_fallback": false,
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "16e0f6fd4f808f5cfc5c987ff9050b21e5ce939ec24958ff56533b9bed33da94",
+    "version": "repository"
+  },
+  "external_skill_dirs": [
+    "skills"
+  ],
+  "hermes_config_sha256": "d9c08540643b5225724b62df2bee03f1c1ce18b05ee07fcefc771097d110f122",
+  "model": "gpt-5.6-sol",
+  "native_skill": {
+    "name": "llm-wiki",
+    "path": "skills/research/llm-wiki/SKILL.md",
+    "sha256": "a37ae04745b04b8e9bbd8de37cdcbc2b2187ccafb68418e436a46ebb1e491ee5",
+    "version": "2.1.0"
+  },
+  "operation_id": "01KYJYXWG0MJ1AW4PRHTNPDJVJ",
+  "operation_skill": {
+    "name": "papertrader-strategy-research",
+    "path": "skills/papertrader-strategy-research/SKILL.md",
+    "sha256": "9842cf4de23cd97a9ce605485fd235c1e6cae13e85133acdda6ea8a95182f0d6",
+    "version": "repository"
+  },
+  "preflight_version": 1,
+  "prompt_injection_flags": [],
+  "provider": "openai-codex",
+  "run_id": "local-20260728-daily-all-19",
+  "sequential": true,
+  "yolo": true
+}

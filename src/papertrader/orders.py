@@ -4,8 +4,9 @@ from __future__ import annotations
 
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
+from dataclasses import replace
 from datetime import datetime
-from decimal import ROUND_DOWN, Decimal
+from decimal import ROUND_HALF_EVEN, Decimal
 from pathlib import Path, PurePosixPath
 
 from papertrader.config import Settings
@@ -342,6 +343,86 @@ def _pending_strategy_quantity(
     return quantity
 
 
+def _whole_target_quantity(target_value: Decimal, unit_value: Decimal) -> Decimal:
+    """Recover an allocator-owned whole quantity without precision-edge under-sizing."""
+
+    if target_value < 0 or unit_value <= 0:
+        raise OrderError("baseline target and unit values must be non-negative")
+    raw_quantity = target_value / unit_value
+    nearest = raw_quantity.to_integral_value(rounding=ROUND_HALF_EVEN)
+    if abs(raw_quantity - nearest) > Decimal("1e-18"):
+        raise OrderError("baseline target value is not an exact whole-unit allocation")
+    return nearest
+
+
+def _baseline_order_legs(
+    repository_root: Path,
+    strategy_id: str,
+    references: Sequence[ReferencePrice],
+    risk_state: RiskState,
+) -> tuple[OrderLegSpec, ...]:
+    """Derive the exact current-plan whole-share delta for one baseline strategy."""
+
+    strategy = next(
+        (
+            row
+            for row in read_table(repository_root, "strategies")
+            if row["strategy_id"] == strategy_id
+        ),
+        None,
+    )
+    if strategy is None or strategy["sleeve"] != "baseline":
+        raise OrderError(f"strategy {strategy_id} is not a baseline strategy")
+    canonical_rows = [
+        row
+        for row in read_table(repository_root, "strategy_legs")
+        if row["strategy_id"] == strategy_id
+    ]
+    if len(canonical_rows) != 1:
+        raise OrderError("baseline strategy requires exactly one canonical leg")
+    canonical = leg_from_row(canonical_rows[0])
+    if canonical.instrument_type != "equity" or canonical.side != "long":
+        raise OrderError("baseline strategy requires one long equity leg")
+    from papertrader.allocation import latest_allocation_target
+
+    target = latest_allocation_target(repository_root, strategy_id)
+    if target is None or target["allocation_plan_id"] != strategy["allocation_plan_id"]:
+        raise OrderError("baseline strategy has no current allocation target")
+    reference = _reference_map(references).get(
+        (canonical.security_id, canonical.provider_contract_id)
+    )
+    if reference is None:
+        raise OrderError("baseline order lacks its equity reference")
+    unit_value = reference.price * reference.fx_rate_to_base * canonical.contract_multiplier
+    if unit_value <= 0:
+        raise OrderError("baseline order unit value must be positive")
+    target_value = required_decimal(target["target_value_base"], label="baseline target value")
+    target_quantity = _whole_target_quantity(target_value, unit_value)
+    current_quantity = sum(
+        (
+            position.quantity
+            for position in risk_state.positions
+            if position.security_id == canonical.security_id
+            and position.provider_contract_id == canonical.provider_contract_id
+            and position.side == "long"
+        ),
+        Decimal("0"),
+    )
+    pending_quantity = _pending_strategy_quantity(
+        repository_root, strategy_id, canonical.security_id
+    )
+    required_delta = target_quantity - current_quantity - pending_quantity
+    if required_delta == 0:
+        raise OrderError("baseline allocation target requires no order")
+    return (
+        replace(
+            canonical,
+            action="buy" if required_delta > 0 else "sell",
+            quantity=abs(required_delta),
+        ),
+    )
+
+
 def _require_baseline_target(
     repository_root: Path,
     settings: Settings,
@@ -400,7 +481,7 @@ def _require_baseline_target(
         risk_state.equity_base * risk_budget / Decimal("100")
     ):
         raise OrderError("baseline target exceeds the strategy risk budget")
-    target_quantity = (target_value / unit_value).to_integral_value(rounding=ROUND_DOWN)
+    target_quantity = _whole_target_quantity(target_value, unit_value)
     current_quantity = sum(
         (
             position.quantity
@@ -504,6 +585,17 @@ def create_signal(
         expiry_mismatch = expires_at is not None and previous["expires_at"] != row["expires_at"]
         if any(previous[field] != row[field] for field in immutable_fields) or expiry_mismatch:
             raise OrderError(f"signal identity collision: {signal_id}")
+        superseded = False
+        for candidate in rows:
+            if (
+                candidate["signal_id"] != signal_id
+                and candidate["strategy_id"] == strategy_id
+                and candidate["status"] == "ready"
+            ):
+                candidate["status"] = "cancelled"
+                superseded = True
+        if superseded:
+            write_table(repository_root, "signals", rows)
         return signal_id, False
     if as_of > instant or instant - as_of > settings.market_data.stale_price_after:
         raise OrderError("signal market data is future-dated or stale")
@@ -548,10 +640,50 @@ def create_signal(
             or assessment["eligibility"] not in {"baseline", "conviction"}
         ):
             raise OrderError("blocked assessment cannot increase baseline exposure")
+    for candidate in rows:
+        if candidate["strategy_id"] == strategy_id and candidate["status"] == "ready":
+            candidate["status"] = "cancelled"
     rows.append(row)
     rows.sort(key=lambda candidate: candidate["signal_id"])
     write_table(repository_root, "signals", rows)
     return signal_id, True
+
+
+def create_baseline_paper_order(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    signal_id: str,
+    strategy_id: str,
+    references: Sequence[ReferencePrice],
+    risk_state: RiskState,
+    run_id: str,
+    fill_policy: str | None = None,
+    order_type: str | None = None,
+    limit_price: Decimal | None = None,
+    not_before: datetime | None = None,
+    expires_at: datetime | None = None,
+    now: datetime | None = None,
+) -> tuple[str, bool, RiskAssessment]:
+    """Create one baseline order whose exact quantity is owned by deterministic state."""
+
+    legs = _baseline_order_legs(repository_root, strategy_id, references, risk_state)
+    return create_paper_order(
+        repository_root,
+        settings,
+        signal_id=signal_id,
+        strategy_id=strategy_id,
+        legs=legs,
+        references=references,
+        risk_state=risk_state,
+        run_id=run_id,
+        fill_policy=fill_policy,
+        order_type=order_type,
+        limit_price=limit_price,
+        not_before=not_before,
+        expires_at=expires_at,
+        now=now,
+    )
 
 
 def create_paper_order(

@@ -1,0 +1,32 @@
+{
+  "operation_type": "execute_strategy",
+  "entity_type": "strategy",
+  "entity_id": "strategy_bd005fc3733b1475b6f9",
+  "dedupe_key": "execute_strategy:strategy_bd005fc3733b1475b6f9:signal_6c82d41c9f217bdab771:open",
+  "prompt": "Review the replacement Intuitive Surgical baseline signal and create at most its deterministically sized pending paper order.",
+  "inputs": {
+    "action": "open",
+    "allocation_plan_id": "allocation_plan_02b52e8899b55922bf4e",
+    "assessment_as_of": "2026-07-27T21:28:56Z",
+    "disposition": "open",
+    "evaluation_timestamp": "2026-07-28T07:48:06Z",
+    "fill_policy": "next_open",
+    "market_data_timestamp": "2026-07-27T20:55:09Z",
+    "order_type": "market",
+    "security_id": "security_1f9cce545ede94cd6349",
+    "signal_id": "signal_6c82d41c9f217bdab771",
+    "strategy_id": "strategy_bd005fc3733b1475b6f9"
+  },
+  "source": "deterministic-recovery:baseline-quantity-precision",
+  "priority": 80,
+  "freshness_days": 0,
+  "depends_on": ["01KYKQ6E3G6E39783E8DV18W0Q"],
+  "not_before": "2026-07-28T07:48:06Z",
+  "deadline": "2026-07-29T07:45:53Z",
+  "source_refs": [
+    "data/market/fx/USD_EUR.csv",
+    "data/market/latest.csv",
+    "source_isrg_q2_2026_sec_exhibit"
+  ],
+  "max_attempts": 3
+}

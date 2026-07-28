@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_7e9fd9486e494dd05bb5",
+  "idea_id": "idea_sovereign_small_drone_supply_chains",
+  "security_id": "security_cc4dcb8f002b61dffe00",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Sovereign procurement preferences can redirect demand toward qualified European and allied small-UAS suppliers; Parrot can convert that demand through ANAFI UKR production and institutional sales into revenue, gross profit, and cash flow, subject to award value, customer concentration, component provenance, supply constraints, operating costs, working capital, and dilution-aware valuation.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "The July 31 half-year release confirms sustained institutional micro-UAV growth, named or measurable order conversion, customer diversification, auditable allied-component content, stable or improving gross margin, and positive operating cash flow without heavier use of the shareholder facility; further trusted-procurement qualifications broaden demand access.",
+  "invalidation": "Institutional awards remain immaterial or concentrated; trusted-source qualifications or component provenance cannot be substantiated; Chinese dependencies remain critical; component constraints delay delivery; rapid redesign and price compression erode margins; inventory and receivables consume cash; or micro-UAV growth fails to produce durable operating profit and cash flow.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_7e9fd9486e494dd05bb5.md",
+  "last_reviewed_at": "2026-07-28T02:34:11Z",
+  "next_review_at": "2026-08-01T12:00:00Z"
+}

@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Baseline increase cannot be handed to execute_strategy",
+  "description": "Allocation plan allocation_plan_8859abf5cf5708b35855 requires disposition increase for strategy_bd005fc3733b1475b6f9, but schemas/operation_payload.schema.json does not allow increase in execute_strategy inputs.action. Mapping the action to open would conflict with the routed execute skill's exact plan-action identity check. No new signal or follow-up operation was created.",
+  "owner": "controller",
+  "related_run_id": "local-20260728-daily-all-26",
+  "related_operation_id": "01KYKVJX78J2EE4VMWVGHJBAQZ"
+}

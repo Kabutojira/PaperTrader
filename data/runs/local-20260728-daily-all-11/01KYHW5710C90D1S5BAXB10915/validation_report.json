@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-11/01KYHW5710C90D1S5BAXB10915/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_510158d3d515d91d5c14.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "errors": [
+    "commands_run does not exactly match deterministic CLI audit receipts"
+  ],
+  "operation_id": "01KYHW5710C90D1S5BAXB10915",
+  "passed": false,
+  "run_id": "local-20260728-daily-all-11",
+  "validation_version": 1
+}

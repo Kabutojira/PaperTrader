@@ -1,0 +1,18 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/record-source-rklb-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/upsert-assessment-rklb-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/upsert-security-rklb-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_7ca095d63423c55a90e3.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710B851YNG53P4YQZW6",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-07",
+  "validation_version": 1
+}

@@ -1,0 +1,46 @@
+{
+  "operation_id": "01KYJ375G0QD57AA4FJQ9FEQC8",
+  "status": "succeeded",
+  "summary": "Ingested Lithium Americas' validated 2026-07-24 RSI-oversold transition into the maintained security review. The durable context records the 26.45% adjusted-close decline from 2026-06-25 through 2026-07-24, USD 2.8315 close, and 0.1879 trigger strength while treating the indicator as weak-momentum and near-term timing-risk evidence rather than a price explanation, valuation input, or trade signal. Updated provenance and appended the wiki log. No follow-up was created because the scheduled quarterly construction, liquidity, funding, and share-count review remains the bounded next step.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910.md",
+      "claim": "The deterministic candidate packet records Lithium Americas entering the RSI-oversold condition as of 2026-07-24 after an adjusted-close decline of 26.45454363276849880708190354% from 2026-06-25 through 2026-07-24, with a USD 2.8315 close, trigger strength 0.18793564, and an ingest classifier disposition.",
+      "source_hash": "0e349489630bf09f6d5db8af4ff7f435fcba4adfc3ba2066241e11663b2c1a48"
+    },
+    {
+      "source": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+      "claim": "The maintained Lithium Americas review records a fresh 2026-07-27 USD 2.90 mark, low confidence, unsupported common-equity valuation, financing and dilution risks, and no strategy; the oversold transition does not remove those gates."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_ad2f37b49980dbc73a08.md",
+      "claim": "The accepted lithium-cycle relationship confirms high positive development-stage project sensitivity, but ownership, remaining capex, funding conditions, warrants, dilution, commissioning, and unsupported common-equity valuation prevent strategy research."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_fb87fac302a5446a1ced.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested Lithium Americas' 2026-07-24 RSI-oversold transition as weak-momentum and near-term timing-risk context after a 26.45% 25 June–24 July decline; it does not explain the move, establish intrinsic value, or independently support a paper trade, and no follow-up was created because the scheduled quarterly construction and funding review remains controlling."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole selected queue row matched operation 01KYJ375G0QD57AA4FJQ9FEQC8, run local-20260728-daily-all-17, source source_fae2a4af713687d5cc2b, wiki_ingest, the required skill pair, and a live lease at prerequisite review.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the immutable operation, type, entity, repository-local source path, and source hash.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three content hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local inbox file, its SHA-256 matched 0e349489630bf09f6d5db8af4ff7f435fcba4adfc3ba2066241e11663b2c1a48, and its classifier decision was ingest.",
+      "The maintained Lithium Americas page now preserves the source identity and exact indicator transition while distinguishing momentum and timing evidence from explanation, valuation, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained Lithium Americas page, and log.md records this ingestion append-only.",
+      "The audited invocation of papertrader wiki lint --strict returned OK [wiki].",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

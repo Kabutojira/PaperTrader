@@ -1,0 +1,64 @@
+{
+  "operation_id": "01KYKX54MRDBWHGFKQERB0YG2Q",
+  "status": "succeeded",
+  "summary": "Created deterministic pending paper order order_745a7a020ecf89d5734d for the current incremental Intuitive Surgical baseline allocation. The allocator-owned next-open order contains one seven-share long-equity buy leg; no fill, execution, cash, portfolio, performance, or allocation state changed.",
+  "evidence": [
+    {
+      "source": "data/tables/allocation_targets.csv",
+      "claim": "The sole current Intuitive Surgical target uses allocation_plan_8859abf5cf5708b35855, assessment 2026-07-27T21:28:56Z, disposition increase, a 2.2% pending weight, and a 4.39% baseline target; increase maps to the open signal lifecycle.",
+      "observed_at": "2026-07-28T08:38:00Z"
+    },
+    {
+      "source": "data/tables/strategies.csv, data/tables/strategy_legs.csv, and data/tables/signals.csv",
+      "claim": "Strategy strategy_bd005fc3733b1475b6f9 was ready and bound to the current baseline allocation plan; signal signal_98939c5cb11dd6d9d2ae was ready, unexpired, and bound to the same strategy before order creation. The maintained thesis retained no hard blocker and capped baseline exposure at 5%.",
+      "observed_at": "2026-07-28T08:42:27Z"
+    },
+    {
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv",
+      "claim": "The deterministic request referenced the validated ISRG close of USD 356.8299865722656 and USD/EUR rate 0.8794000148773193, both observed as of 2026-07-27T20:55:09Z and accepted under the configured freshness and identity checks.",
+      "observed_at": "2026-07-27T20:55:09Z"
+    },
+    {
+      "source": "data/runs/local-20260728-daily-all-29/01KYKX54MRDBWHGFKQERB0YG2Q/command_audit.json",
+      "claim": "The audited create-baseline command exited successfully and returned order_id order_745a7a020ecf89d5734d with no risk violations; its exact structured-state delta was limited to orders.csv, order_legs.csv, and signals.csv. The audited strict portfolio reconciliation also passed with no changed paths.",
+      "observed_at": "2026-07-28T08:42:59Z"
+    },
+    {
+      "source": "data/tables/orders.csv and data/tables/order_legs.csv",
+      "claim": "Order order_745a7a020ecf89d5734d is pending under next_open with one deterministic buy-long equity leg for seven ISRG shares; no immediate fill was created.",
+      "observed_at": "2026-07-28T08:42:27Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-29/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Created pending next-open paper order `order_745a7a020ecf89d5734d` for seven incremental Intuitive Surgical shares under the current 4.39% baseline target after 2.2% pending exposure; no fill or accounting transition occurred."
+  ],
+  "commands_run": [
+    "papertrader order create-baseline --request data/runs/local-20260728-daily-all-29/01KYKX54MRDBWHGFKQERB0YG2Q/order_create_baseline_01.json",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and config.ini disables real orders.",
+      "Confirmed exactly one operation row was running, claimed by local-20260728-daily-all-29, and covered by a live lease during execution.",
+      "Confirmed hermes_preflight.json identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-execute-strategy with matching content hashes, sequential=true, and yolo=true.",
+      "Validated the operation payload against schemas/operation_payload.schema.json and confirmed its immutable operation, strategy, signal, action, and timestamp identities.",
+      "Confirmed payload, strategy, signal, canonical leg, allocation plan, current target, assessment timestamp, increase-to-open disposition mapping, security identity, market reference, and FX reference agree.",
+      "Confirmed the maintained strategy evidence still supports only the bounded baseline increase and reports no current hard blocker.",
+      "Deterministic create-baseline validation derived seven incremental whole shares and returned no risk violations.",
+      "Confirmed the accepted order remains pending under next_open and signal signal_98939c5cb11dd6d9d2ae transitioned from ready to ordered.",
+      "Strict portfolio reconciliation returned OK [portfolio] without changing repository state.",
+      "Command audit proves allocation targets/history, fills, executions, cash, portfolio, and performance were unchanged.",
+      "Confirmed the run and request paths are not symlinks and the used request retained its audited SHA-256 identity.",
+      "Confirmed no deployment, Telegram, GitHub write, or named brokerage credential environment variable was present."
+    ]
+  }
+}

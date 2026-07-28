@@ -1,0 +1,67 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/source_parrot_q1_2026_business_request.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/source_parrot_fy2025_results_request.json",
+    "papertrader research security upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/assessment_upsert_request_v2.json",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Parrot was revalidated against current registered issuer evidence and the 2026-07-27 EUR 9.65 market close. Strong micro-UAV growth and procurement access are offset by full-year losses, cash burn, concentration and disclosure gaps, limited trading depth, and an unsupported valuation; the medium-confidence assessment is ineligible and no strategy was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "Parrot reported 2025 revenue of EUR 79.8 million, a 75.4% gross margin, an EUR 12.7 million loss from ordinary operations, an EUR 15.0 million net loss, an EUR 7.6 million operating cash outflow, and EUR 23.0 million of year-end cash. The main-shareholder facility had EUR 5.0 million outstanding and was expanded to EUR 20.0 million through February 2028.",
+      "observed_at": "2026-07-28T01:05:38Z",
+      "source": "source_parrot_fy2025_results",
+      "source_hash": "f5ffe4a4e4fbfa754d62db12cd1a22e009bd236f98e9b611b877ef57d63ebee2",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf"
+    },
+    {
+      "claim": "Parrot reported Q1 2026 revenue of EUR 27.9 million, up 52%; professional micro-UAV revenue of EUR 21.3 million, up 102%; slight quarterly profitability; no quarterly cash consumption; and access to BLUE UAS and NSPA procurement channels. The release does not disclose the complete valuation and concentration inputs required by the research gate.",
+      "observed_at": "2026-07-28T01:05:38Z",
+      "source": "source_parrot_q1_2026_business",
+      "source_hash": "62c7a27a71a37be051fe3771f564e4bb83a589de4e43ef7ce46e0421a65c2772",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf"
+    },
+    {
+      "claim": "The canonical market row records a 2026-07-27 EUR 9.649999618530273 close, 30,881 shares of volume, retrieval at 2026-07-27T20:55:09Z, and status ok for the immutable PARRO.PA/XPAR/EUR identity.",
+      "observed_at": "2026-07-27T20:55:09Z",
+      "source": "data/market/latest.csv:22"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/assessment_upsert_request.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/assessment_upsert_request_v2.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/security_upsert_request.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/source_parrot_fy2025_results_request.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710WP98V55QRM5RBXSQ/source_parrot_q1_2026_business_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_cc4dcb8f002b61dffe00.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710WP98V55QRM5RBXSQ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Revalidated Parrot S.A. ordinary shares using two freshly registered issuer releases and the current repository market state. Micro-UAV growth, procurement access, gross margin, and recent break-even evidence are improving, but full-year losses and cash burn persist and the available disclosures do not support a downside-aware common-equity valuation. The security remains watching with medium confidence and one current ineligible assessment carrying the explicit valuation_unsupported blocker; no conviction strategy follow-up was created ahead of the scheduled 2026-07-31 half-year release.",
+  "validation": {
+    "checks": [
+      "Validated operation payload identity, running queue claim, live lease, paper-only environment, and preflight skill hashes.",
+      "papertrader schema validate --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "The first strict integrity check exposed an assessment timestamp preceding source first-seen state; a new immutable v2 assessment request corrected the timestamp.",
+      "The final papertrader integrity --strict check passed.",
+      "Selected-security verification confirmed one immutable identity, one current assessment, fresh registered evidence, a fresh EUR market mark, and EUR/EUR FX rate 1.",
+      "No allocation targets or history, fills, executions, cash, portfolio, performance, orders, or signals were changed."
+    ],
+    "passed": true
+  }
+}

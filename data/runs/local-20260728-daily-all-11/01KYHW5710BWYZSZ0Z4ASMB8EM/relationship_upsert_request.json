@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_ad2f37b49980dbc73a08",
+  "idea_id": "idea_critical_minerals_lithium",
+  "security_id": "security_fb87fac302a5446a1ced",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Durable EV and stationary-storage lithium demand plus delayed supply can improve expected lithium pricing, Thacker Pass operating economics, construction funding, offtake value, and the project option value attributable to Lithium Americas common shares; transmission depends on 62% ownership, remaining capex, DOE and GM terms, warrants, dilution, schedule, commissioning, and product qualification.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "EV and storage demand remains durable, lithium-price and offtake economics support Thacker Pass, construction remains within disclosed cost and schedule, funding conditions are satisfied, dilution stays bounded, late-2027 mechanical completion is achieved, and qualified battery-grade production advances toward the planned 2028 ramp.",
+  "invalidation": "Supply restarts, new projects, recycling, sodium-ion adoption, material efficiency, or weaker demand restores durable surplus; lithium prices cease to support Thacker Pass economics; capex rises materially; funding conditions fail; construction, commissioning, or qualification slips; offtake economics disappoint; or dilution and encumbering claims transfer project value away from existing common shareholders.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_ad2f37b49980dbc73a08.md",
+  "last_reviewed_at": "2026-07-28T01:58:37Z",
+  "next_review_at": "2026-08-15T12:00:00Z"
+}

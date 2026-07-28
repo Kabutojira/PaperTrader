@@ -1,0 +1,60 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/record-source-fcx-q2-2026-results-sec.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/upsert-security-fcx-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/upsert-assessment-fcx-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/upsert-assessment-fcx-refresh-v2.json",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "daily_report_items": [
+    "Freeport-McMoRan is a medium-confidence baseline near miss: copper leverage, cash generation, balance-sheet capacity, and liquidity are strengths, but Grasberg recovery, Indonesian terms, commodity normalization, valuation, and timing remain material; the USD 62.72 mark exceeds the USD 32.64 downside and USD 47.36 base scenario values."
+  ],
+  "evidence": [
+    {
+      "claim": "Q2 2026 net income attributable to common stock was USD 984 million, adjusted net income was USD 1.1 billion, copper production was 786 million pounds, operating cash flow was USD 2.048 billion, capital expenditures were USD 1.104 billion, and PTFI achieved its planned quarterly Grasberg ramp rate. The SEC exhibit returned HTTP 200 on 2026-07-27.",
+      "observed_at": "2026-07-27T23:54:32Z",
+      "source": "Freeport-McMoRan Q2 2026 results exhibit filed with the SEC",
+      "source_hash": "9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1",
+      "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm"
+    },
+    {
+      "claim": "FCX closed at USD 62.720001220703125 on 2026-07-27 with volume 7,712,223, and the current USD/EUR rate was 0.8794000148773193. Annualized reported Q2 EPS of USD 2.72 at 12 times gives USD 32.64 and -48.0%; annualized adjusted Q2 EPS of USD 2.96 at 16 times gives USD 47.36 and -24.5%.",
+      "source": "PaperTrader deterministic market and FX caches"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/record-source-fcx-q2-2026-results-sec.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/upsert-assessment-fcx-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/upsert-assessment-fcx-refresh.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710HN1HFEQB9TRTX6S2/upsert-security-fcx-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710HN1HFEQB9TRTX6S2",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Revalidated Freeport-McMoRan against the SEC-filed Q2 2026 results exhibit and current 2026-07-27 market and FX data. Copper leverage, current margins, cash generation, balance-sheet capacity, and liquidity support medium-confidence baseline eligibility, while Grasberg normalization, Indonesian operating terms, minority interests, commodity cyclicality, and valuation remain material gaps. At the USD 62.72 mark, bounded 12-month earnings scenarios imply 48.0% downside and 24.5% base-case downside. No conviction strategy follow-up was enqueued because both scenario values remain below the mark and the canonical relationship review is already queued separately.",
+  "validation": {
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-08 with a live lease through 2026-07-28T00:19:15Z; the payload matched the immutable security operation and preflight hashes identified llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The immutable FCX/XNYS/USD/equity identity matched exactly one security row with no duplicate issuer-instrument-venue-currency-provider identity.",
+      "The SEC-filed Q2 2026 results exhibit returned HTTP 200 and was registered as available with SHA-256 9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1 before the final assessment timestamp.",
+      "The current assessment belongs to this run, expires 2026-08-26, references fresh registered evidence, has no hard blocker, and records -48.0% downside and -24.5% base upside from the refreshed mark.",
+      "The initial assessment request passed the upsert gate but strict integrity detected that its timestamp preceded CLI source registration; the immutable v2 request used an observed post-registration timestamp and strict integrity then passed.",
+      "The 2026-07-27 FCX mark, 7,712,223-share volume, and 2026-07-27 USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and final integrity validation passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessment backfills and relationship reviews are incomplete; Freeport independently lacks a completed accepted relationship and its negative base upside prevents a conviction strategy follow-up.",
+      "The command audit shows this operation changed only securities, security assessments, source registry, and source history structured tables; no allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ],
+    "passed": true
+  }
+}

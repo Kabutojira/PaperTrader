@@ -560,6 +560,9 @@ def _signal_detail(signal: ActionableSignalView) -> list[str]:
         if signal.copy_ready
         else "Awaiting deterministic order validation"
     )
+    order_description = _markdown(signal.order_type or "not yet validated")
+    if signal.limit_price:
+        order_description = f"{order_description} {_markdown(signal.limit_price)}"
     return [
         f"### {_link(f'{signal.ticker} — {signal.company_name}', signal.research_page)}",
         "",
@@ -571,8 +574,7 @@ def _signal_detail(signal: ActionableSignalView) -> list[str]:
         f"- **Current → target:** {signal.current_weight_pct}% → "
         f"{signal.approved_target_weight_pct}%",
         f"- **Copy-ready quantity:** {_markdown(quantity)}",
-        f"- **Order:** {_markdown(signal.order_type or 'not yet validated')} "
-        f"{_markdown(signal.limit_price)}",
+        f"- **Order:** {order_description}",
         f"- **Entry:** {_markdown(signal.entry_rule)}",
         f"- **Exit:** {_markdown(signal.exit_rule)}",
         f"- **Invalidation:** {_markdown(signal.invalidation)}",

@@ -1,0 +1,65 @@
+{
+  "operation_id": "01KYHW5710QD07N3J66DEV37C1",
+  "status": "succeeded",
+  "summary": "Revalidated SQM's NYSE ADS against the SEC-hosted Q1 2026 earnings exhibit and current 2026-07-27 market data. Lithium volume, realized pricing, earnings, cash, and trading liquidity recovered, but Q1 economics are too cyclical to annualize and the filing does not support normalized per-ADS downside and base values after Chilean state take, partnership attribution, capex, minority interests, debt, and depositary economics. The medium-confidence security remains watching and is ineligible with valuation_unsupported; no conviction strategy was queued.",
+  "evidence": [
+    {
+      "source": "SQM Q1 2026 Form 6-K earnings release",
+      "claim": "SQM reported Q1 2026 net income of USD 364.7 million or USD 1.28 per share, adjusted EBITDA of USD 837.0 million, cash of USD 2.829 billion, short- and long-term debt of USD 5.112 billion, and more than USD 530 million contributed to the Chilean state. The SEC exhibit returned HTTP 200 on 2026-07-28.",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+      "observed_at": "2026-07-28T00:15:09Z",
+      "source_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "SQM closed at USD 68.79000091552734 on 2026-07-27 with volume 628,975 and status ok; the audibly normalized provider row was retrieved at 2026-07-27T20:55:09Z. RSI was 39.91 and the close remained below the 50- and 200-day averages. The ADS and its quoted market data are both USD, so no FX conversion is required for the assessment input."
+    },
+    {
+      "source": "PaperTrader comparable assessment",
+      "claim": "The current assessment belongs to local-20260727-daily-all-08, expires 2026-08-27, references the registered current primary source, and records valuation_unsupported because annualizing rebound-quarter earnings or EBITDA would invent a normalized lithium-price and partnership-economics path."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/record-source-sqm-q1-2026-6k.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/upsert-assessment-sqm-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/upsert-assessment-sqm-refresh.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/upsert-security-sqm-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SQM ADS is a medium-confidence ineligible near miss: lithium volume, price, earnings, and liquidity recovered, but the USD 68.79 mark lacks a supportable normalized downside-aware valuation after state take, partnership attribution, capex, minority interests, debt, and cyclicality; no strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/record-source-sqm-q1-2026-6k.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/upsert-security-sqm-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/upsert-assessment-sqm-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710QD07N3J66DEV37C1/upsert-assessment-sqm-refresh-v2.json",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-08 with a live lease through 2026-07-28T00:41:34Z.",
+      "Preflight hashes matched llm-wiki 2.1.0, the repository controller skill, and the security-research skill.",
+      "The immutable SQM/XNYS/USD/equity identity matched exactly one canonical security row and the validated security upsert preserved every immutable identity field.",
+      "The SEC exhibit returned HTTP 200, its SHA-256 was registered as current primary evidence, and the final assessment timestamp follows the source registry's first-seen and changed timestamps.",
+      "The 2026-07-27 SQM mark and volume were current with status ok; no FX input was required because both the ADS and mark are USD.",
+      "The initial strict integrity check exposed source-registration chronology in the first immutable assessment request; a new immutable v2 request moved the assessment timestamp after source first-seen, and the repeated strict integrity check passed.",
+      "Strict schema validation, queue validation, wiki lint, and final integrity validation passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment and separately queued relationship work remain incomplete; SQM is ineligible and no conviction strategy follow-up was permitted.",
+      "The command audit recorded no change to allocation targets/history, orders, executions, cash, portfolio, fills, or performance."
+    ]
+  }
+}

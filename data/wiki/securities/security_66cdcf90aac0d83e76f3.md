@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-26"
-provenance: "Albemarle Q1 2026 earnings release"
+updated: "2026-07-28"
+provenance: "source_alb_q1_2026_results_sec; source_960b91fa563fb8a926b9; deterministic market cache"
 security_id: security_66cdcf90aac0d83e76f3
 issuer_id: issuer_76c4dda166e8f840fb77
 confidence: medium
-next_review: "2026-08-14"
+next_review: "2026-08-06"
 ---
 
 # Albemarle Corporation common stock
@@ -21,7 +21,9 @@ next_review: "2026-08-14"
 - Instrument: common stock, New York Stock Exchange (`XNYS`), USD
 - Provider identity: `ALB` / `XNYS` / `USD` / equity
 
-This review links the verified instrument to [[ideas/idea_critical_minerals_lithium]].
+This review links the verified instrument to [[ideas/idea_critical_minerals_lithium]] and the
+separately reviewed [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752|July
+oversold transition]].
 
 ## Economics and thesis
 
@@ -48,11 +50,25 @@ matter to common-share value.
 
 Primary evidence: [Albemarle Q1 2026 release](https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm).
 
-## Valuation, catalysts, and risks
+## Valuation, market state, catalysts, and risks
 
-No equity valuation range is recorded without a fresh deterministic mark, conversion assumptions
-for preferred stock, and a normalized lithium price. Management's scenario table is retained as an
-earnings-sensitivity framework, not a price target.
+The 27 July deterministic mark is USD 116.18, with 1,463,658 shares traded. RSI is 27.62, the
+20-day return is -13.10%, and the close remains below both the 50-day and 200-day averages. This is
+fresh and liquid enough for comparison, but oversold timing is not valuation evidence.
+
+The deterministic monitor first recorded entry into the RSI-oversold condition on **2026-07-24**,
+after an **18.47%** adjusted-close decline from 25 June to 24 July, at a USD 115 close and trigger
+strength of 0.1593. This [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752|indicator
+transition]] corroborates weak price momentum and near-term timing risk; it does not explain the
+move, establish intrinsic value, or override the fundamental and valuation gates below.
+
+No supportable common-equity valuation range is recorded. The filing's USD 0.9-1.0 billion to USD
+4.2-4.4 billion adjusted-EBITDA span across management's approximately USD 10/kg to USD 30/kg LCE
+scenarios is a sensitivity framework, not a probability-weighted mid-cycle forecast. Converting it
+to per-share downside and base values would require unsupported lithium-price probabilities,
+contract-lag and tax assumptions, terminal multiples, and mandatory-convertible share treatment.
+The comparable assessment therefore records `valuation_unsupported`, rather than inventing a price
+target.
 
 Catalysts are sustained realized pricing, volume growth, cost savings, positive free cash flow, and
 continued leverage reduction. Invalidate if Chinese supply restarts push prices toward the low
@@ -61,5 +77,7 @@ disruption rises, or dilution absorbs the recovery.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**. Review by **2026-08-14** after Q2 results. No strategy
-is proposed without a current mark and probability-weighted commodity valuation.
+Status: **watching**, confidence **medium**, assessment **ineligible**. Review after the scheduled
+Q2 release on **2026-08-06**. Improved cash conversion, leverage, and trading liquidity do not
+remove the hard valuation blocker, and the oversold condition does not justify a conviction
+strategy.

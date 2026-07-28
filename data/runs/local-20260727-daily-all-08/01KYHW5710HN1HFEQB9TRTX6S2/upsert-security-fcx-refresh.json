@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2dbe878dfc899d7ee867",
+  "issuer_id": "issuer_5076f0e0e1dd7cc8bca7",
+  "company_name": "Freeport-McMoRan Inc.",
+  "instrument_name": "Freeport-McMoRan Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "FCX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "FCX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Basic Materials",
+  "industry": "Copper",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Copper leverage, cash generation, and liquidity support baseline comparison, but Grasberg recovery, Indonesian terms, and scenario values below market limit appeal.",
+  "research_page": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+  "last_research_at": "2026-07-27T23:54:32Z",
+  "next_review_at": "2026-08-26T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm"
+}

@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_solar_storage_grid_enph",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "maintenance_mode": "backfill",
+    "relationship_id": "relationship_solar_storage_grid_enph",
+    "security_id": "security_f2b9760d847b2ba59324"
+  },
+  "objective": "Review the canonical relationship from idea_solar_storage_grid_flexibility_reset to security_f2b9760d847b2ba59324 and accept or reject it with current evidence.",
+  "operation_id": "01KYJMQ5DGD4PR1C190FE8PMM6",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_d9c8f578040386a487be",
+  "idea_id": "idea_digital_attention_gaming_ecosystems",
+  "security_id": "security_c9a37d277445869a8809",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Creator content and discovery can increase Roblox users, hours, payer activity, bookings, revenue, and cash flow; shareholder benefit depends on safety and trust, creator and infrastructure costs, cohort durability, cash conversion, and dilution discipline.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Post-age-check engagement and acquisition stabilize, payer and older-user growth remain durable, long-tail content keeps gaining share, advertising and subscriptions add monetization, creator earnings expand with sustainable platform economics, and free cash flow per diluted share grows.",
+  "invalidation": "Safety or regulatory failures impair trust; age controls cause enduring acquisition or retention declines; attention fragments; content concentration rises; bookings or payer growth decouple from engagement; creator, distribution, infrastructure or moderation costs absorb revenue; deferred-revenue timing dominates cash generation; or dilution outruns per-share cash-flow growth.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_d9c8f578040386a487be.md",
+  "last_reviewed_at": "2026-07-28T01:41:57Z",
+  "next_review_at": "2026-08-14T12:00:00Z"
+}

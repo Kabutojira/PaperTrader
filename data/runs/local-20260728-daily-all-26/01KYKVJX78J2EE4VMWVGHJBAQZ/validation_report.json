@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/issues.md",
+    "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/issue-record-request.json",
+    "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/strategy-upsert-request.json",
+    "data/tables/issues.csv",
+    "data/tables/strategies.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_bd005fc3733b1475b6f9.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYKVJX78J2EE4VMWVGHJBAQZ",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-26",
+  "validation_version": 1
+}

@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYJMQ5DGD4PR1C190FE8PMM6",
+  "status": "skipped",
+  "summary": "Skipped an exact fresh duplicate relationship review. The immutable idea, security, and relationship IDs already match one accepted causal edge reviewed on 2026-07-25, its next review is not due until 2026-08-15, and this allocation-maintenance backfill supplies no newer evidence or changed catalyst. The existing high-sensitivity, medium-confidence assessment already records the direct product-demand mechanism, policy and financing transmission, cash resilience, catalyst, invalidation, and valuation and demand blockers.",
+  "evidence": [
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "The unique row relationship_solar_storage_grid_enph already joins idea_solar_storage_grid_flexibility_reset to security_f2b9760d847b2ba59324 as an accepted positive beneficiary edge with high sensitivity and medium confidence; it was last reviewed on 2026-07-25 and is next due on 2026-08-15."
+    },
+    {
+      "source": "data/operations/operations_history.csv",
+      "claim": "Operation 01KYCG64CRX4A3ZVG0TZA0P39S already completed the same bounded relationship review successfully on 2026-07-25 using direct product, shipment, balance-sheet, policy, financing, inventory, and cash-flow evidence."
+    },
+    {
+      "source": "data/operations/payloads/01KYJMQ5DGD4PR1C190FE8PMM6.json",
+      "claim": "The current request is an allocation-maintenance backfill for the same three immutable IDs and contains no evidence references or changed catalyst requiring an early re-review."
+    },
+    {
+      "source": "Enphase fiscal first-quarter 2026 results and SEC Form 10-Q for 31 March 2026",
+      "claim": "The already-reviewed primary evidence establishes direct microinverter and battery exposure and positive free cash flow, while contracting US sell-through, lower battery shipments, inventory and purchase obligations, policy exposure, and absent supportable valuation remain explicit limits; no newer quarterly financial evidence was supplied by this operation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000047/enph-20260331.htm",
+      "observed_at": "2026-04-28T00:00:00Z"
+    },
+    {
+      "source": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+      "claim": "The security page was updated on 2026-07-27 for a material price-risk review, but current issuer product releases did not explain the move or provide new demand, margin, cash-flow, guidance, or valuation evidence; the already queued post-Q2 revalidation remains the bounded next step."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped a duplicate Enphase relationship backfill: the exact accepted edge was reviewed on 2026-07-25, remains current through its 2026-08-15 review date, and the payload supplied no newer causal evidence or changed catalyst."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected queue row is running, claimed by local-20260727-daily-all-05, has a live lease, and names exactly native llm-wiki plus papertrader-relationship-research.",
+      "Confirmed the preflight artifact identifies the native wiki, controller, and relationship-research skills with content hashes and sequential execution enabled.",
+      "Confirmed the payload, relationship row, idea page, security page, and relationship page agree on all three immutable IDs.",
+      "Confirmed relationships.csv contains exactly one row for relationship_solar_storage_grid_enph and structured history contains the prior successful review.",
+      "Applied the exact-fresh-duplicate skip rule because the existing review remains current and the backfill payload supplies no newer causal evidence or changed catalyst.",
+      "Made no wiki, structured-state, allocation, strategy, signal, order, accounting, portfolio, performance, issue, or follow-up change.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

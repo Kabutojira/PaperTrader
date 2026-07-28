@@ -1,0 +1,18 @@
+{
+  "source_id": "source_atkr_june_2026_litigation_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1666138/000166613826000014/atkr-20260604.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1666138/000166613826000014/atkr-20260604.htm",
+  "source_type": "filing",
+  "title": "Atkore 2026-06-04 Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "93b3ee36f5c0d9dce2677297607a80cdd66ca861a4d6797a2ad30e4ca0db11ab",
+  "related_entity_ids": "security_22c2b9d782a62d7a9b86",
+  "checked_at": "2026-07-28T00:25:52Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Atkore agreed to pay USD 50 million to settle claims by the third putative class in the PVC pipe antitrust litigation, subject to court approval, using cash on hand; management said it did not expect a material adverse effect on liquidity or leverage metrics.",
+  "summary": "The SEC current report updates the litigation cash obligation beyond the two settlements recognized in fiscal Q2 and informs downside, liquidity, and invalidation analysis.",
+  "run_id": "local-20260728-daily-all-09"
+}

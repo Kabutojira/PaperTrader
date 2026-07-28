@@ -3,8 +3,44 @@ from __future__ import annotations
 from dataclasses import replace
 from pathlib import Path
 
-from papertrader.advice import ModelPortfolioRow
-from papertrader.investor_pages import _portfolio_html
+from papertrader.advice import ActionableSignalView, ModelPortfolioRow
+from papertrader.investor_pages import _portfolio_html, _signal_detail
+
+
+def test_market_signal_detail_has_no_empty_limit_suffix() -> None:
+    signal = ActionableSignalView(
+        signal_id="signal_test",
+        strategy_id="strategy_test",
+        order_id="order_test",
+        security_id="security_test",
+        ticker="TEST",
+        company_name="Test Security",
+        action="buy",
+        action_status="pending_order",
+        copy_ready=True,
+        quantity="7",
+        order_type="market",
+        limit_price="",
+        currency="EUR",
+        created_at="2026-07-24T12:00:00Z",
+        expires_at="2026-07-25T12:00:00Z",
+        market_data_as_of="2026-07-24T11:00:00Z",
+        current_weight_pct="0",
+        approved_target_weight_pct="5",
+        strategy_name="Test strategy",
+        entry_rule="Test entry",
+        exit_rule="Test exit",
+        invalidation="Test invalidation",
+        rationale="Test rationale",
+        research_page="data/wiki/strategies/strategy_test.md",
+        reason_codes=(),
+        legs=(),
+    )
+
+    lines = _signal_detail(signal)
+
+    assert "- **Order:** market" in lines
+    assert all(line == line.rstrip() for line in lines)
 
 
 def test_portfolio_cards_escape_untrusted_labels_and_expose_scaler_references() -> None:

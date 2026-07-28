@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-14/01KYHW5710NPPFPFY0HTDAME01/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_87b95f713a902d531f2f.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710NPPFPFY0HTDAME01",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-14",
+  "validation_version": 1
+}

@@ -8,11 +8,11 @@ tags:
   - risk
 created: "2026-07-25"
 updated: "2026-07-27"
-provenance: "source_flnc_q2_2026_earnings; source_flnc_q2_2026_10q"
+provenance: "SEC-filed Fluence fiscal Q2 2026 results; SEC Form 10-Q for 2026-03-31; PaperTrader market and FX caches"
 security_id: security_a9eb9838940ef5ceaa0c
 issuer_id: issuer_8ba72d606a1056f95d91
 confidence: medium
-next_review: "2026-08-15"
+next_review: "2026-08-26"
 ---
 
 # Fluence Energy, Inc. Class A common stock
@@ -68,20 +68,25 @@ and first-half cash use shows that volume and bookings have not yet become self-
 | Gross warranty liability was USD 54.8 million and net liability after supplier recoveries was USD 28.8 million. | Supplier-backed recoveries reduce but do not eliminate product and execution exposure. |
 | Fiscal-2026 guidance calls for positive adjusted EBITDA. | A useful milestone, but it is non-GAAP guidance and remains to be delivered. |
 
-Primary evidence: [Fluence fiscal Q2 2026 results filed with the SEC](https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm)
+Primary evidence: the [SEC-filed Fluence fiscal Q2 2026 results exhibit](https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm)
 and the [SEC Form 10-Q for 31 March 2026](https://www.sec.gov/Archives/edgar/data/1868941/000110465926056304/flnc-20260331x10q.htm).
 
 ## Valuation
 
-The 27 July 2026 deterministic close is USD 13.51. The filing shows 132.811 million Class A shares
-and 51.499 million Class B-1 economic interests at 1 May, USD 387.3 million of unrestricted cash,
-and USD 391.7 million of convertible notes. Because earnings and free cash flow remain negative, a
-12-month revenue-multiple sensitivity is more honest than an earnings target but remains
-low-confidence: applying 0.4x and 0.8x to the USD 3.4 billion guidance midpoint, adding net cash,
-and dividing by 184.311 million economic interests gives USD 7.35 downside and USD 14.73 base
-values. These imply **45.6% downside** and only **9.1% base upside**. The range is a bounded
-sensitivity, not false precision: project margins, cancellations, working capital, dilution, and
-the treatment of restricted cash can move value materially.
+The 27 July 2026 deterministic close is USD 13.51. The filing reports 132.781 million Class A and
+51.499 million Class B-1 shares outstanding, USD 387.3 million unrestricted cash, and USD 391.7
+million net carrying value of convertible notes at 31 March 2026. On 184.280 million economic
+shares, the mark implies approximately USD 2.49 billion equity value and USD 2.49 billion enterprise
+value before other adjustments, or about 0.73 times management's USD 3.4 billion fiscal-2026 revenue
+guidance midpoint.
+
+A bounded 12-month scenario uses the issued USD 3.2-3.6 billion revenue range because current
+negative earnings and cash flow do not support an earnings or free-cash-flow multiple. A downside
+case of 0.40 times USD 3.2 billion revenue, plus unrestricted cash and less the convertible notes,
+is USD 6.92 per economic share, 48.8% below the mark. A base case of 0.75 times USD 3.4 billion,
+with the same balance-sheet adjustment, is USD 13.81, only 2.2% above the mark. These are scenario
+bounds rather than price-target precision: project margins, working capital, restricted cash,
+Class B conversion economics, dilution, and the path from backlog to cash remain material gaps.
 
 ## Catalysts and confirmation
 
@@ -101,7 +106,8 @@ raise project costs; or additional capital is required on unattractive terms.
 ## Disposition
 
 Status: **watching** with **medium** confidence and **baseline** assessment eligibility. Research
-again by **2026-08-15** after the next earnings update or sooner after a guidance, tariff,
-project-cost, or liquidity change. No conviction strategy or paper signal is justified: 9.1% base
-upside fails the configured 20% margin-of-safety threshold, downside is asymmetric, and cash
-conversion remains unproven. Fluence is therefore uncompetitive with cash at the current mark.
+again by **2026-08-26** after the next earnings update or sooner after a guidance, tariff,
+project-cost, or liquidity change. The current mark and bounded valuation remove the prior missing-
+valuation blocker, but the 48.8% downside case, only 2.2% base-case upside, negative first-half cash
+conversion, and no near-term margin of safety remain uncompetitive with cash. No conviction
+strategy or paper signal is proposed.

@@ -1,0 +1,46 @@
+{
+  "operation_id": "01KYJ375G06AA8K2J4SVCQZED7",
+  "status": "succeeded",
+  "summary": "Ingested Albemarle's validated 2026-07-24 RSI-oversold transition into the maintained security review. The durable context records the 18.47% adjusted-close decline from 2026-06-25 through 2026-07-24, USD 115 close, and 0.1593 trigger strength while explicitly treating the indicator as weak-momentum and timing-risk evidence rather than a price explanation, valuation input, or trade signal. Updated provenance and the append-only wiki log; no follow-up was created because the scheduled 2026-08-06 Q2 review remains the bounded next step.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
+      "claim": "The deterministic candidate packet records Albemarle entering the RSI-oversold condition as of 2026-07-24 after an adjusted-close decline of 18.468629910060224% from 2026-06-25 through 2026-07-24, with a USD 115 close, trigger strength 0.159321905, and an ingest classifier disposition.",
+      "source_hash": "21b730ad183494c6288113939bc733d75820962553d80add43bcbeafcc67db2a"
+    },
+    {
+      "source": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+      "claim": "The maintained Albemarle review records a fresh 2026-07-27 USD 116.18 mark, RSI 27.62, a close below the 50-day and 200-day averages, unsupported downside-aware valuation, and a scheduled Q2 review on 2026-08-06; the oversold condition does not justify a conviction strategy."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_871e21ff73620ab8eb14.md",
+      "claim": "The accepted lithium-cycle relationship to Albemarle remains high-sensitivity and medium-confidence, but contract lags, supply response, capex, tax, leverage, dilution, and unsupported normalized valuation block strategy research before the scheduled Q2 evidence."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested Albemarle's 2026-07-24 RSI-oversold transition as weak-momentum and timing-risk context after an 18.47% 25 June–24 July decline; it does not explain the move, establish intrinsic value, or remove the valuation blocker, and no follow-up was created ahead of the scheduled Q2 review."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole running queue row matched operation 01KYJ375G06AA8K2J4SVCQZED7, run local-20260728-daily-all-16, source source_960b91fa563fb8a926b9, wiki_ingest, the required skill pair, and a live lease at prerequisite review.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the immutable operation, type, entity, source path, and source hash.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three content hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local inbox file, its SHA-256 matched 21b730ad183494c6288113939bc733d75820962553d80add43bcbeafcc67db2a, and its classifier decision was ingest.",
+      "The maintained Albemarle page now preserves the source identity and exact indicator transition while distinguishing momentum and timing evidence from explanation, valuation, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained Albemarle page, and log.md records this ingestion append-only.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

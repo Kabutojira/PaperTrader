@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_2c779e81c27b78c556bb",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "backfill",
+    "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+    "security_id": "security_2c779e81c27b78c556bb"
+  },
+  "objective": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYJMQ5DG1VF51QQ8BV8AK0X5",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

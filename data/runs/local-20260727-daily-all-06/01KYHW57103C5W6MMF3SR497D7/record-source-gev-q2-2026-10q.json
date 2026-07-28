@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm",
+  "source_type": "filing",
+  "title": "GE Vernova Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_4b61970aa8f574446819",
+  "checked_at": "2026-07-27T22:04:36Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026 GE Vernova reported 266.3 million shares outstanding, USD 13.1 billion cash, USD 2.794 billion long-term borrowings, USD 9.897 billion first-half free cash flow, and 270 million Q2 diluted weighted-average shares.",
+  "summary": "The SEC-filed Q2 2026 Form 10-Q confirms strong Power and Electrification demand and cash generation, while identifying working-capital dependence, Wind execution, tariffs, capacity investment, acquisition integration, and backlog-conversion risks.",
+  "run_id": "local-20260727-daily-all-06"
+}

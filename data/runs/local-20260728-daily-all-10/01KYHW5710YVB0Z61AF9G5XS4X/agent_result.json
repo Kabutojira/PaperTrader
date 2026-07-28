@@ -1,0 +1,69 @@
+{
+  "operation_id": "01KYHW5710YVB0Z61AF9G5XS4X",
+  "status": "succeeded",
+  "summary": "Revalidated CrowdStrike against its SEC-filed fiscal Q1 2027 Form 10-Q, SEC-hosted results exhibit, and current 2026-07-27 market and FX caches. ARR growth, module adoption, cash generation, net cash, and trading liquidity support baseline comparison. At the split-adjusted USD 180.11 mark, dilution-aware 12-month free-cash-flow scenarios imply 51.1% downside and 27.1% base-case downside. The security remains watching with medium confidence; no conviction strategy follow-up was enqueued because valuation and timing are unfavorable, GAAP economics remain burdened by stock compensation and excluded costs, incident exposure persists, and the idea-security relationship awaits its already-queued review.",
+  "evidence": [
+    {
+      "source": "CrowdStrike fiscal Q1 2027 Form 10-Q",
+      "claim": "At April 30, 2026 CrowdStrike reported USD 4.553 billion cash, USD 745.8 million long-term debt, USD 590.9 million quarterly operating cash flow, USD 297.7 million stock-based compensation expense, and 1.031524 billion pro-forma split-adjusted diluted weighted-average shares. The SEC filing returned HTTP 200 and was registered before assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+      "observed_at": "2026-07-28T01:20:18Z",
+      "source_hash": "5cebcdaf54ce867e95d558e2ebeb4cb0f9cebd0193bd138262b5d11c000792c5"
+    },
+    {
+      "source": "CrowdStrike fiscal Q1 2027 results exhibit",
+      "claim": "Fiscal Q1 revenue grew 26% to USD 1.386 billion, ending ARR grew 24% to USD 5.51 billion, net-new ARR was USD 256 million, free cash flow was USD 468.5 million, and fiscal-year revenue guidance was USD 5.915-5.959 billion. The SEC-hosted exhibit returned HTTP 200 and was registered before assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "observed_at": "2026-07-28T01:20:18Z",
+      "source_hash": "689137b1d49987dfe3d47b6c54bbe634def83fb28e44647b662d54c851610a24"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "CRWD closed at a split-adjusted USD 180.11000061035156 on 2026-07-27 with volume 5,788,634, and the current USD/EUR rate was 0.8794000148773193. Using 1.05 billion prospective diluted shares, reported net cash, guided revenue, 25%-30% normalized free-cash-flow margins, and 60x-75x multiples produced USD 88.12 downside and USD 131.31 base values, or -51.1% and -27.1%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/record-source-crwd-q1-2027-10q.json",
+    "data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/record-source-crwd-q1-2027-results.json",
+    "data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/upsert-assessment-crwd-refresh-v2.json",
+    "data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/upsert-assessment-crwd-refresh.json",
+    "data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/upsert-security-crwd-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_8472507d7d320aa388a7.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CrowdStrike is a medium-confidence baseline near miss: 24% ARR growth, strong cash generation, and net cash support the cyber-resilience thesis, but dilution-aware USD 88.12 downside and USD 131.31 base values remain materially below the USD 180.11 mark, while incident and GAAP-cost risks persist."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/record-source-crwd-q1-2027-10q.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/record-source-crwd-q1-2027-results.json",
+    "papertrader research security upsert --request data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/upsert-security-crwd-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/upsert-assessment-crwd-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-10/01KYHW5710YVB0Z61AF9G5XS4X/upsert-assessment-crwd-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260728-daily-all-10 with a live lease through 2026-07-28T01:44:01Z; the payload matched the immutable CrowdStrike security operation and PAPER_TRADING_ONLY was true.",
+      "Preflight hashes matched llm-wiki 2.1.0, the repository controller skill, and the repository security-research skill.",
+      "The CRWD/XNAS/USD/equity identity matched exactly one security row and exactly one issuer-instrument-venue-currency-provider identity.",
+      "Two current primary sources returned HTTP 200, were registered as available with matching SHA-256 hashes, and were checked before the 2026-07-28T01:22:10Z assessment.",
+      "The current baseline assessment belongs to this run, expires 2026-08-27T01:22:10Z, references both registered sources, has no hard blocker, and records -51.1% downside and -27.1% base upside over 12 months.",
+      "The 2026-07-27 CRWD mark and USD/EUR rate were current under the configured 36-hour stale-price policy.",
+      "The first assessment request failed closed without state changes because three soft-gap tokens were non-canonical; its immutable artifact was preserved and a uniquely named corrected request succeeded.",
+      "Strict schema validation, queue validation, wiki lint, and integrity validation passed. Allocation readiness correctly remained false because repository-wide relationship maintenance is incomplete, including the already-queued CrowdStrike relationship review.",
+      "The command audit records only source registry/history, securities, and security-assessment structured changes. No allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

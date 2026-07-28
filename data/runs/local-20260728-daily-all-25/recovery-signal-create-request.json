@@ -1,0 +1,9 @@
+{
+  "strategy_id": "strategy_bd005fc3733b1475b6f9",
+  "signal_type": "open",
+  "rationale": "Replace the cancelled under-sized order signal while allocation plan allocation_plan_02b52e8899b55922bf4e and assessment 2026-07-27T21:28:56Z remain current. The approved target remains a bounded 2.2% Intuitive Surgical baseline allocation, and deterministic create-baseline sizing now owns the exact whole-share delta.",
+  "market_data_as_of": "2026-07-27T20:55:09Z",
+  "expires_at": "2026-07-29T07:45:53Z",
+  "order_request_path": "",
+  "run_id": "local-20260728-daily-all-25"
+}

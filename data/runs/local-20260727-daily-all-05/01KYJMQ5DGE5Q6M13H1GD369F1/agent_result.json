@@ -1,0 +1,52 @@
+{
+  "operation_id": "01KYJMQ5DGE5Q6M13H1GD369F1",
+  "status": "skipped",
+  "summary": "Skipped an exact fresh duplicate relationship review. The immutable idea, security, and relationship IDs already match one accepted causal edge reviewed on 2026-07-26, its next review is not due until 2026-08-15, and this allocation-maintenance backfill supplies no newer evidence or changed catalyst. The existing high-sensitivity, medium-confidence assessment already records the direct storage-demand mechanism, backlog and revenue transmission, margin and cash-conversion limits, catalyst, invalidation, and strategy blocker.",
+  "evidence": [
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "The unique row relationship_solar_storage_grid_flnc joins idea_solar_storage_grid_flexibility_reset to security_a9eb9838940ef5ceaa0c as an accepted positive beneficiary edge with high sensitivity and medium confidence; it was last reviewed at 2026-07-26T19:00:00Z and is next due at 2026-08-15T12:00:00Z."
+    },
+    {
+      "source": "data/operations/operations_history.csv",
+      "claim": "Operation 01KYCFPT58ZKCYEEYE4B721NCX already completed the same bounded relationship review successfully on 2026-07-26, accepting the edge based on direct storage-system exposure, backlog, revenue, project-margin, and operating-cash evidence without escalating to strategy research."
+    },
+    {
+      "source": "data/operations/payloads/01KYJMQ5DGE5Q6M13H1GD369F1.json",
+      "claim": "The current request is an allocation-maintenance backfill for the same three immutable IDs and contains no evidence references, changed catalyst, or other new causal evidence requiring an early re-review."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_solar_storage_grid_flnc.md",
+      "claim": "The maintained relationship page already documents the accepted causal mechanism: grid-scale storage demand can raise Fluence backlog, revenue, installed assets, and recurring service opportunities, while thin project margins, negative operating cash conversion, warranty, financing, and execution risks make shareholder benefit conditional."
+    },
+    {
+      "source": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
+      "claim": "The endpoint security page uses the same immutable security identity and the same fiscal Q2 2026 issuer and SEC evidence; it retains a 2026-08-15 review date and blocks strategy work pending supportable valuation and proven cash conversion."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped a duplicate Fluence relationship backfill: the exact accepted edge was reviewed on 2026-07-26, remains current through its 2026-08-15 review date, and the payload supplied no newer causal evidence or changed catalyst."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and exactly one active queue row is running.",
+      "Confirmed the selected queue row is running, claimed by local-20260727-daily-all-05, has a live lease, and names exactly native llm-wiki plus papertrader-relationship-research.",
+      "Confirmed the preflight artifact identifies the native wiki, controller, and relationship-research skills; the recorded SHA-256 hashes match the loaded skill files and sequential execution is enabled.",
+      "Confirmed the payload, relationship row, idea page, security page, and relationship page agree on all three immutable IDs.",
+      "Confirmed relationships.csv contains exactly one row for relationship_solar_storage_grid_flnc and structured history contains the prior successful review.",
+      "Applied the exact-fresh-duplicate skip rule because the existing review remains current and the backfill payload supplies no newer causal evidence or changed catalyst.",
+      "Made no wiki, structured-state, allocation, strategy, signal, order, accounting, portfolio, performance, issue, or follow-up change.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

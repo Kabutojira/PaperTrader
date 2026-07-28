@@ -1,0 +1,43 @@
+{
+  "entity_id": "strategy_bd005fc3733b1475b6f9",
+  "entity_type": "strategy",
+  "inputs": {
+    "action": "open",
+    "allocation_plan_id": "allocation_plan_02b52e8899b55922bf4e",
+    "assessment_as_of": "2026-07-27T21:28:56Z",
+    "disposition": "open",
+    "evaluation_timestamp": "2026-07-28T07:13:53Z",
+    "fill_policy": "next_open",
+    "legs": [
+      {
+        "action": "buy",
+        "contract_multiplier": "1",
+        "currency": "USD",
+        "expiry": "",
+        "instrument_type": "equity",
+        "leg_id": "leg_isrg_equity",
+        "limit_price": "",
+        "option_type": "",
+        "provider_contract_id": "",
+        "quantity": "6",
+        "security_id": "security_1f9cce545ede94cd6349",
+        "side": "long",
+        "strike": ""
+      }
+    ],
+    "market_data_timestamp": "2026-07-27T20:55:09Z",
+    "order_type": "market",
+    "security_id": "security_1f9cce545ede94cd6349",
+    "signal_id": "signal_14939473c94cb7b9b567",
+    "strategy_id": "strategy_bd005fc3733b1475b6f9"
+  },
+  "objective": "Review the live Intuitive Surgical baseline signal and create at most its deterministic pending paper order.",
+  "operation_id": "01KYKS86K8A5F4K0QD1XCN4A0Z",
+  "operation_type": "execute_strategy",
+  "payload_version": 1,
+  "source_refs": [
+    "data/market/fx/USD_EUR.csv",
+    "data/market/latest.csv",
+    "source_isrg_q2_2026_sec_exhibit"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYK9KN0REKGW54MN71Z4RMGM",
+  "status": "skipped",
+  "summary": "Skipped an exact fresh duplicate relationship review. The immutable relationship, idea, and security IDs already identify one unique accepted beneficiary edge reviewed at 2026-07-28T02:17:48Z, with its next review due on 2026-07-30 after Rio Tinto's half-year results. The existing medium-sensitivity, medium-confidence assessment records the direct Oyu Tolgoi and copper-economics mechanism, catalysts, contrary evidence, invalidation, diversification limits, and valuation blocker. This maintenance payload repeats the same two issuer sources and supplies no newer evidence or changed catalyst requiring another update.",
+  "evidence": [
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "The unique row relationship_392da6d90e7c969945a2 joins idea_critical_minerals_copper to security_1c055eb9b2bb1f5a8ff2 as an accepted positive beneficiary edge with medium sensitivity and medium confidence; it was last reviewed at 2026-07-28T02:17:48Z and is next due on 2026-07-30."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_392da6d90e7c969945a2.md",
+      "claim": "The maintained relationship page already tests the causal path from structural copper scarcity through Rio Tinto's realized copper economics, Oyu Tolgoi volumes and costs, and attributable free cash flow, while explicitly limiting sensitivity for iron ore, aluminium, lithium, capex, leverage, ownership interests, and other portfolio demands."
+    },
+    {
+      "source": "Rio Tinto 2025 full-year results",
+      "claim": "The already-reviewed issuer release reports USD 16.832 billion of operating cash flow, USD 4.025 billion of free cash flow, and USD 14.362 billion of net debt for 2025, supporting funding capacity while evidencing capital-intensity and leverage counterweights.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-solid-results-underpinned-by-8-cueq-production-and-sharper-cost-discipline",
+      "observed_at": "2026-07-27T22:27:56Z",
+      "source_hash": "c1e5b0a09a24e38de05652c9d1ff99b53dc25c643834dc2611e28a1f522e2dab"
+    },
+    {
+      "source": "Rio Tinto second-quarter 2026 production results",
+      "claim": "The already-reviewed issuer release reports first-half copper-equivalent production up 3%, Oyu Tolgoi first-half copper production up 31%, group second-quarter copper production of 213 kt down 7% year over year and sequentially, and unchanged 2026 copper guidance of 800-870 kt, supporting a positive but diluted causal edge.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results",
+      "observed_at": "2026-07-27T22:27:56Z",
+      "source_hash": "851e917983c691d21f34f9f07c48d261a1e03e7f31276789693152e3542bdf5f"
+    },
+    {
+      "source": "data/operations/payloads/01KYK9KN0REKGW54MN71Z4RMGM.json",
+      "claim": "The current refresh request repeats the same relationship, idea, and security IDs and cites only source_rio_fy2025_results and source_rio_q2_2026_production_results, the same evidence already incorporated into the fresh accepted review."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped a duplicate Rio Tinto relationship refresh: the exact accepted structural-copper-scarcity edge was reviewed at 2026-07-28T02:17:48Z, remains scheduled for review after the 29 July half-year results, and the payload supplied no newer evidence or changed catalyst."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and exactly one selected queue row is running, claimed by local-20260728-daily-all-18, with a live lease and exactly native llm-wiki plus papertrader-relationship-research named as operation skills.",
+      "Confirmed the preflight artifact identifies the native wiki, controller, and relationship-research skills with matching content hashes, sequential execution, and yolo mode.",
+      "Confirmed the payload, relationship row, idea page, security page, and relationship page agree on relationship_392da6d90e7c969945a2, idea_critical_minerals_copper, and security_1c055eb9b2bb1f5a8ff2.",
+      "Confirmed relationships.csv contains exactly one equivalent edge for the immutable idea-security endpoints and that its causal fields, accepted status, catalog entry, maintained relationship page, and two registered issuer sources are complete.",
+      "Applied the exact-fresh-duplicate skip rule because the accepted review was completed at 2026-07-28T02:17:48Z, the next evidence-gated review is due after the 29 July half-year results, and this maintenance payload supplies no newer source or changed catalyst.",
+      "Made no wiki, structured-state, allocation, strategy, signal, order, accounting, portfolio, performance, issue, or follow-up change.",
+      "Strict schema, queue, wiki, and integrity checks passed; command_audit.json records the same four canonical commands with exit code zero and no content delta."
+    ]
+  }
+}

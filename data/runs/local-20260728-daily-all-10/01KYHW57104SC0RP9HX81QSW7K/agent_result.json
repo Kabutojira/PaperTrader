@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYHW57104SC0RP9HX81QSW7K",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from digital attention, gaming, and consumer ecosystems to Roblox with high positive sensitivity and medium confidence. Current SEC-hosted issuer evidence establishes a direct causal path from creator content and discovery through users, hours, payers, bookings, revenue, and cash flow, while safety interventions, creator and infrastructure costs, losses, deferred-revenue timing, and dilution limit per-share conversion. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created because the current bounded base and downside scenarios remain below market.",
+  "evidence": [
+    {
+      "source": "source_rblx_q1_2026_shareholder_letter",
+      "claim": "Roblox's SEC-hosted Q1 2026 shareholder letter reports 35% daily-user growth to 132 million, 43% hours growth to 31 billion, 52% monthly-unique-payer growth to 31 million, 43% bookings growth to USD 1.7 billion, and USD 596 million of free cash flow. Content outside the top ten experiences supplied 65% of Robux-spend growth, establishing direct operating exposure to creator supply, discovery, engagement, and monetization rather than ticker-level correlation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm",
+      "observed_at": "2026-07-27T21:16:24Z",
+      "source_hash": "74abbaa419c5913026836470fa3932bf94d55516c38162e610b51921c5c21d08"
+    },
+    {
+      "source": "source_rblx_q1_2026_shareholder_letter",
+      "claim": "The same issuer evidence records a safety-led reduction in full-year bookings-growth guidance to 8-12%, rising developer-exchange and trust-and-safety costs, a widened net loss, and 749 million fully diluted shares. These counterweights make thematic sensitivity high but keep confidence in durable per-share value conversion at medium.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026028882/ex991-q12026earningsshar.htm",
+      "observed_at": "2026-07-27T21:16:24Z",
+      "source_hash": "74abbaa419c5913026836470fa3932bf94d55516c38162e610b51921c5c21d08"
+    },
+    {
+      "source": "data/wiki/securities/security_c9a37d277445869a8809.md",
+      "claim": "The current Roblox assessment uses a validated USD 48.42 mark and bounded 12-month downside and base scenarios 47.9% and 19.9% below market, respectively, so accepting the causal edge does not justify strategy research or a signal."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-10/01KYHW57104SC0RP9HX81QSW7K/upsert-relationship-rblx.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_d9c8f578040386a487be.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the high-sensitivity, medium-confidence positive beneficiary relationship from digital attention, gaming, and consumer ecosystems to Roblox based on current users, hours, payer, bookings, long-tail content, and cash-flow evidence; no strategy follow-up was created because safety costs, dilution, per-share conversion, and valuation remain blocking limits."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260728-daily-all-10/01KYHW57104SC0RP9HX81QSW7K/upsert-relationship-rblx.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The queue contained exactly one running row for operation 01KYHW57104SC0RP9HX81QSW7K, claimed by run local-20260728-daily-all-10 with a live lease, matching immutable relationship relationship_d9c8f578040386a487be and the required skill pair.",
+      "PAPER_TRADING_ONLY was true, and the controller preflight identified llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by verified content hashes with sequential execution, yolo mode, and no detected injection flags.",
+      "The payload passed strict schema validation, and its relationship, idea, and security IDs matched the canonical endpoint pages and exactly one structured security identity.",
+      "The canonical relationship row is unique for the beneficiary edge and includes positive direction, causal mechanism, high sensitivity, medium confidence, catalyst, invalidation, accepted status, page, and review timestamps.",
+      "The audited relationship upsert changed only data/tables/relationships.csv; no allocation, strategy, signal, order, execution, cash, portfolio, fill, or performance state changed through an operation command.",
+      "The relationship page is registered in the research catalog, linked to both canonical endpoints, and recorded in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "git diff --check passed for the request artifact, relationship table, relationship page, research catalog, and wiki log."
+    ]
+  }
+}

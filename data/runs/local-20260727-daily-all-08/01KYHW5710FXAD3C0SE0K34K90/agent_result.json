@@ -1,0 +1,59 @@
+{
+  "operation_id": "01KYHW5710FXAD3C0SE0K34K90",
+  "status": "succeeded",
+  "summary": "Revalidated Southern Copper against freshly registered Q1 2026 issuer results and current 2026-07-27 market and FX data. Reserve life, cash generation, balance-sheet capacity, and market liquidity support medium-confidence baseline eligibility, while lower production, dependence on by-product credits, Peru and Mexico concentration, a large project program, and unfavorable valuation remain material gaps. At the USD 179.32 mark, bounded 12-month earnings scenarios imply 40.0% downside and 22.9% base-case downside. No conviction strategy follow-up was enqueued because both scenario values remain below the mark and the canonical relationship review is already queued separately.",
+  "evidence": [
+    {
+      "source": "Southern Copper Q1 2026 results",
+      "claim": "Q1 2026 sales were USD 4.25 billion, net income was USD 1.58 billion, diluted income per share was USD 1.92, operating cash flow was USD 1.69 billion, capital investment was USD 441.9 million, copper production declined 4.0%, and 826.1 million shares were outstanding at quarter end. The issuer PDF returned HTTP 200 on 2026-07-27.",
+      "url": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf",
+      "observed_at": "2026-07-27T23:38:30Z",
+      "source_hash": "324609bfee42c77e0ccc77d65e258787643334e0df12c8d532c420932108def6"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "SCCO closed at USD 179.32000732421875 on 2026-07-27 with volume 968,432, and the current USD/EUR rate was 0.8794000148773193. Annualized Q1 diluted EPS of USD 7.68 at 14 times gives USD 107.52 and -40.0%; at 18 times it gives USD 138.24 and -22.9%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/record-source-scco-q1-2026-results.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/upsert-assessment-scco-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/upsert-assessment-scco-refresh.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/upsert-security-scco-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6ad1af8d10d6276a0221.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Southern Copper is a medium-confidence baseline near miss: reserve life, cash generation, balance-sheet capacity, and liquidity are strengths, but production declined and by-product, jurisdiction, project, valuation, and timing risks remain; the USD 179.32 mark exceeds the USD 107.52 downside and USD 138.24 base scenario values."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/record-source-scco-q1-2026-results.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/upsert-security-scco-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/upsert-assessment-scco-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710FXAD3C0SE0K34K90/upsert-assessment-scco-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-08 with a live lease through 2026-07-28T00:06:02Z; the payload matched the immutable security operation and preflight hashes identified llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The immutable SCCO/XNYS/USD/equity identity matched exactly one security row with no duplicate issuer-instrument-venue-currency-provider identity.",
+      "The issuer Q1 2026 results PDF returned HTTP 200 and was registered as available with SHA-256 324609bfee42c77e0ccc77d65e258787643334e0df12c8d532c420932108def6 before the final assessment timestamp.",
+      "The current assessment belongs to this run, expires 2026-08-26, references fresh registered evidence, has no hard blocker, and records -40.0% downside and -22.9% base upside from the refreshed mark.",
+      "The initial assessment request failed closed because it was future-dated; the immutable v2 request used an observed timestamp and completed successfully.",
+      "The 2026-07-27 SCCO mark, 968,432-share volume, and 2026-07-27 USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessment backfills and relationship reviews are incomplete; Southern Copper independently lacks a completed accepted relationship and its negative base upside prevents a conviction strategy follow-up.",
+      "The command audit shows this operation changed only securities, security assessments, source registry, and source history structured tables; no allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

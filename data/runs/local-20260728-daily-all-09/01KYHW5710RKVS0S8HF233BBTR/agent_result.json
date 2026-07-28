@@ -1,0 +1,67 @@
+{
+  "operation_id": "01KYHW5710RKVS0S8HF233BBTR",
+  "status": "succeeded",
+  "summary": "Revalidated ABB's sponsored ADR against issuer-published Q2 2026 results, current issuer listing data, and the 2026-07-27 market and FX caches. Record orders, a 20.2% operational EBITA margin, strong cash conversion, low leverage, and adequate paper-monitoring liquidity support baseline eligibility. The Robotics disposal removes the direct embodied-AI exposure while the proposed Rotork acquisition adds capital-allocation and integration risk. At the USD 96.97 mark, bounded 12-month EPS scenarios imply 33.2% downside and 11.9% base-case downside. ABB remains watching with medium confidence; no conviction strategy was enqueued because the base case is below market, the margin-of-safety and timing gates fail, and the causal relationship remains pending.",
+  "evidence": [
+    {
+      "source": "ABB Q2 2026 results",
+      "claim": "ABB reported Q2 orders of USD 12.042 billion, revenue of USD 9.475 billion, a 20.2% operational EBITA margin, and continuing-operations operating cash flow of USD 1.303 billion. First-half free cash flow was USD 2.131 billion, net debt was USD 2.320 billion, and net debt/EBITDA was 0.3. ABB still expected about USD 4.8 billion of Robotics net proceeds in the second half of 2026 and proposed to fund the roughly USD 5.5 billion Rotork acquisition. The primary PDF returned HTTP 200 and was registered before assessment.",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+      "observed_at": "2026-07-28T00:39:25Z",
+      "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508"
+    },
+    {
+      "source": "ABB share listing and capital data",
+      "claim": "ABB identifies US 0003752047 as its non-listed Level I ADR traded OTC as ABBNY and reports 1,814,919,203 shares outstanding at June 30, 2026. The issuer page returned HTTP 200 and was registered before assessment.",
+      "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing",
+      "observed_at": "2026-07-28T00:39:25Z",
+      "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "ABBNY closed at USD 96.97000122070312 on 2026-07-27 with volume 118,209, and the current USD/EUR rate was 0.8794000148773193. Applying 24 times USD 2.70 downside EPS gives USD 64.80 and -33.2%; applying 28 times USD 3.05 base EPS gives USD 85.40 and -11.9%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/record-source-abb-q2-2026-results.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/record-source-abb-share-listing-2026.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/upsert-assessment-abb-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/upsert-security-abb-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "ABB is a medium-confidence baseline near miss: record orders, margins, cash conversion, and balance-sheet strength support comparison, but the Robotics exit, Rotork integration, OTC instrument, pending relationship review, and a USD 96.97 mark above both bounded scenario values block conviction treatment."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/record-source-abb-q2-2026-results.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/record-source-abb-share-listing-2026.json",
+    "papertrader research security upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/upsert-security-abb-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/upsert-assessment-abb-refresh.json",
+    "papertrader schema validate",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260728-daily-all-09 with a live lease through 2026-07-28T01:03:43Z; the payload matched the immutable ABB security operation.",
+      "PAPER_TRADING_ONLY was true, and preflight hashes matched llm-wiki 2.1.0, the repository controller skill, and the repository security-research skill.",
+      "The immutable ABBNY/XOTC/USD/equity identity matched exactly one security row and one full issuer/instrument/venue/currency/provider identity tuple.",
+      "Two current issuer primary sources returned HTTP 200, were registered as available with matching SHA-256 hashes, and were checked before the 2026-07-28T00:41:43Z assessment.",
+      "The current baseline assessment belongs to this run, expires 2026-08-27, references both registered sources, has no hard blocker, and records -33.2% downside and -11.9% base upside over 12 months.",
+      "The 2026-07-27 ABBNY mark, volume, and USD/EUR rate were current under the configured 36-hour market-data policy.",
+      "Strict schema validation, queue validation, wiki lint, and integrity validation passed. Allocation readiness correctly remained false because unrelated repository-wide assessment and relationship maintenance is incomplete; ABB's relationship review is already queued and remains pending.",
+      "Only source registry/history, securities, security-assessment, the one security page, wiki log, and this operation's request artifacts were changed by the operation. No allocation target/history, order, execution, cash, portfolio, fill, or performance path was changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

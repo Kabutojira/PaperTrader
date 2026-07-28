@@ -32,7 +32,12 @@ from papertrader.models import (
     RiskPosition,
     RiskState,
 )
-from papertrader.orders import OrderError, create_paper_order, create_signal
+from papertrader.orders import (
+    OrderError,
+    create_baseline_paper_order,
+    create_paper_order,
+    create_signal,
+)
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.research import ResearchStateError, upsert_assessment, upsert_strategy
 from papertrader.tables import contract_by_name, read_table, write_table
@@ -283,6 +288,33 @@ def test_maintenance_backfill_is_stable_and_relationships_depend_on_security_ref
     assert repeated.operations_created == ()
     assert repeated.security_operations == first.security_operations
     assert repeated.relationship_operations == first.relationship_operations
+
+
+def test_maintenance_backfill_reuses_equivalent_active_refresh_work(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    security = _maintained_security_page(sandbox_repository, _security(0), "idea_00")
+    write_table(sandbox_repository, "securities", [security])
+
+    refresh = maintain_allocation_research(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-refresh-first",
+        now=NOW,
+    )
+    backfill = maintain_allocation_research(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-backfill-second",
+        backfill=True,
+        now=NOW + timedelta(seconds=1),
+    )
+
+    assert backfill.operations_created == ()
+    assert backfill.security_operations == refresh.security_operations
+    assert backfill.relationship_operations == refresh.relationship_operations
+    assert len(read_table(sandbox_repository, "operations_todo")) == 2
 
 
 def test_maintenance_refresh_lead_enqueues_near_expiry_assessment(
@@ -665,6 +697,128 @@ def test_allocation_plan_identity_binds_corrected_market_inputs(
 
     assert corrected.allocation_plan_id != original.allocation_plan_id
     assert len(read_table(sandbox_repository, "allocation_history")) == 12
+
+
+def test_allocation_plan_identity_ignores_run_metadata_when_inputs_are_unchanged(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed_candidates(sandbox_repository, sandbox_settings, 6)
+    original = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-first-publication",
+        now=NOW,
+    )
+    repeated = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-second-publication",
+        now=NOW + timedelta(minutes=5),
+    )
+
+    assert repeated.allocation_plan_id == original.allocation_plan_id
+    history = read_table(sandbox_repository, "allocation_history")
+    assert len(history) == 12
+    assert {row["allocation_plan_id"] for row in history} == {original.allocation_plan_id}
+    assert {row["run_id"] for row in history} == {
+        "allocation-first-publication",
+        "allocation-second-publication",
+    }
+    assert validate_allocation_state(sandbox_repository, sandbox_settings) == []
+
+
+def test_same_run_allocation_retry_reuses_first_immutable_observation(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed_candidates(sandbox_repository, sandbox_settings, 6)
+    original = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-retry",
+        now=NOW,
+    )
+    original_targets = read_table(sandbox_repository, "allocation_targets")
+
+    repeated = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-retry",
+        now=NOW + timedelta(minutes=5),
+    )
+
+    assert repeated.allocation_plan_id == original.allocation_plan_id
+    assert repeated.as_of == original.as_of
+    assert read_table(sandbox_repository, "allocation_targets") == original_targets
+    assert len(read_table(sandbox_repository, "allocation_history")) == 6
+    assert validate_allocation_state(sandbox_repository, sandbox_settings) == []
+
+
+def test_terminal_order_history_does_not_change_economic_plan_identity(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed_candidates(sandbox_repository, sandbox_settings, 6)
+    original = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-before-cancelled-order",
+        now=NOW,
+    )
+    write_table(
+        sandbox_repository,
+        "orders",
+        [
+            {
+                "order_id": "order_cancelled",
+                "signal_id": "signal_cancelled",
+                "strategy_id": "strategy_cancelled",
+                "created_at": "2026-07-24T09:00:00Z",
+                "status": "cancelled",
+                "fill_policy": "next_open",
+                "not_before": "2026-07-24T09:00:00Z",
+                "expires_at": "2026-07-25T09:00:00Z",
+                "order_type": "market",
+                "limit_price": "",
+                "slippage_bps": "5",
+                "fee_model": "fixed_plus_bps",
+                "currency": "EUR",
+                "run_id": "cancelled-order-fixture",
+            }
+        ],
+    )
+    write_table(
+        sandbox_repository,
+        "order_legs",
+        [
+            {
+                "order_id": "order_cancelled",
+                "leg_id": "leg_1",
+                "action": "buy",
+                "side": "long",
+                "instrument_type": "equity",
+                "security_id": "sec_00",
+                "provider_contract_id": "",
+                "option_type": "",
+                "expiry": "",
+                "strike": "",
+                "quantity": "1",
+                "contract_multiplier": "1",
+                "limit_price": "",
+                "currency": "EUR",
+            }
+        ],
+    )
+
+    repeated = plan_allocation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="allocation-after-cancelled-order",
+        now=NOW,
+    )
+
+    assert repeated.allocation_plan_id == original.allocation_plan_id
 
 
 @pytest.mark.parametrize(
@@ -1129,12 +1283,11 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
             run_id="allocation-active",
             now=NOW,
         )
-    order_id, created, assessment = create_paper_order(
+    order_id, created, assessment = create_baseline_paper_order(
         sandbox_repository,
         active,
         signal_id=signal_id,
         strategy_id=strategy_id,
-        legs=(leg(target_quantity),),
         references=(reference,),
         risk_state=risk_state,
         run_id="allocation-active",
@@ -1143,6 +1296,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
     )
     assert created and order_id
     assert assessment.violations == ()
+    assert read_table(sandbox_repository, "order_legs")[0]["quantity"] == str(target_quantity)
     assert read_table(sandbox_repository, "cash_ledger")[0]["base_amount"] == "100000"
     assert read_table(sandbox_repository, "executions") == []
 
@@ -1223,6 +1377,17 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
         "100"
     ) - Decimal("25")
     assert increase_quantity > 0
+    with pytest.raises(ResearchStateError, match="must equal the configured position cap"):
+        _create_baseline_strategy(
+            sandbox_repository,
+            active,
+            security_id="sec_00",
+            allocation_plan_id=current_target["allocation_plan_id"],
+            quantity=increase_quantity,
+            status="active",
+            now=fill_time,
+            risk_budget_pct="3",
+        )
     _create_baseline_strategy(
         sandbox_repository,
         active,
@@ -1231,7 +1396,6 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
         quantity=increase_quantity,
         status="active",
         now=fill_time,
-        risk_budget_pct="3",
     )
     increase_signal, signal_created = create_signal(
         sandbox_repository,
@@ -1245,31 +1409,6 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
         now=fill_time,
     )
     assert signal_created
-    with pytest.raises(OrderError, match="target exceeds the strategy risk budget"):
-        create_paper_order(
-            sandbox_repository,
-            active,
-            signal_id=increase_signal,
-            strategy_id=strategy_id,
-            legs=(leg(increase_quantity),),
-            references=(fill_reference,),
-            risk_state=build_risk_state(
-                sandbox_repository,
-                (fill_reference,),
-                as_of=fill_time,
-            ),
-            run_id="allocation-second-stage",
-            now=fill_time,
-        )
-    _create_baseline_strategy(
-        sandbox_repository,
-        active,
-        security_id="sec_00",
-        allocation_plan_id=current_target["allocation_plan_id"],
-        quantity=increase_quantity,
-        status="active",
-        now=fill_time,
-    )
     increase_order, increase_created, _ = create_paper_order(
         sandbox_repository,
         active,

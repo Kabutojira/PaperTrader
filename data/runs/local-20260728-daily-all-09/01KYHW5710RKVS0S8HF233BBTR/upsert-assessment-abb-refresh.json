@@ -1,0 +1,21 @@
+{
+  "security_id": "security_c120e9f26ebb6159adf9",
+  "assessed_at": "2026-07-28T00:41:43Z",
+  "expires_at": "2026-08-27T00:41:43Z",
+  "eligibility": "baseline",
+  "confidence": "medium",
+  "thesis_score": "50",
+  "business_quality_score": "90",
+  "balance_sheet_score": "90",
+  "valuation_score": "30",
+  "timing_score": "30",
+  "liquidity_score": "70",
+  "risk_penalty": "25",
+  "downside_pct": "-33.2",
+  "base_upside_pct": "-11.9",
+  "valuation_horizon_months": "12",
+  "hard_blockers": "",
+  "soft_gaps": "confidence_medium|margin_of_safety_below_target|timing_unfavorable|valuation_not_compelling",
+  "evidence_refs": "source_abb_q2_2026_results|source_abb_share_listing_2026",
+  "run_id": "local-20260728-daily-all-09"
+}

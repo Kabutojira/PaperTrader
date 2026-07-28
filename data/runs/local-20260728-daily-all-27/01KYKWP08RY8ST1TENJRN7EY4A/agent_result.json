@@ -1,0 +1,92 @@
+{
+  "operation_id": "01KYKWP08RY8ST1TENJRN7EY4A",
+  "status": "succeeded",
+  "summary": "Revalidated the ready long-equity baseline strategy strategy_bd005fc3733b1475b6f9 for current allocation plan allocation_plan_8859abf5cf5708b35855. The unchanged high-confidence assessment supports only the bounded 4.39% target after 2.2% pending exposure: effective score 63 clears the cash hurdle, while 2.5% base upside, 23.2% downside, weak timing, and insufficient diversification prevent conviction treatment. Applied the corrected increase-to-open signal lifecycle, created quantity-free signal signal_98939c5cb11dd6d9d2ae, and enqueued exactly one matching execute_strategy follow-up, 01KYKX54MRDBWHGFKQERB0YG2Q. No order, fill, execution, cash, portfolio, performance, allocation target, or allocation history state was changed.",
+  "evidence": [
+    {
+      "source": "data/tables/allocation_targets.csv",
+      "claim": "Current immutable plan allocation_plan_8859abf5cf5708b35855 ranks Intuitive Surgical first with effective score 63, 0% filled weight, 2.2% pending weight, a 4.39% target below the 5% baseline maximum, an incremental EUR 2,196.574068502268102832154989 delta above the 1% minimum-trade threshold, increase disposition, and assessment timestamp 2026-07-27T21:28:56Z.",
+      "observed_at": "2026-07-28T08:14:53Z"
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "The unchanged high-confidence baseline assessment has no hard blocker, 2.5% bounded base upside, 23.2% bounded downside, and explicit margin-of-safety, timing, and valuation soft gaps.",
+      "observed_at": "2026-07-27T21:28:56Z"
+    },
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "relationship_3570e003fd90cd83d26f remains accepted with positive direction, high sensitivity, high confidence, and the required idea and security endpoints.",
+      "observed_at": "2026-07-27T21:36:00Z"
+    },
+    {
+      "source": "Intuitive Surgical Q2 2026 earnings release (SEC Exhibit 99.1)",
+      "claim": "The SEC-filed primary evidence reports about 16% combined procedure growth, 12% da Vinci and 21% Ion installed-base growth, 18% instruments and accessories revenue growth to USD 1.73 billion, 19% total revenue growth, 31% GAAP operating-income growth to USD 972 million, and USD 8.63 billion of cash and investments.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-07-27T21:27:44Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv",
+      "claim": "The validated 2026-07-27 ISRG close is USD 356.8299865722656 and the same-date USD/EUR rate is 0.8794000148773193; both were retrieved at 2026-07-27T20:55:09Z and remained within the configured 36-hour freshness window during this operation.",
+      "observed_at": "2026-07-27T20:55:09Z"
+    },
+    {
+      "source": "data/market/indicators.csv",
+      "claim": "As of 2026-07-27, ISRG closed below its 20-, 50-, and 200-day averages; RSI(14) was 40.46144047, 20-day return was -11.828521%, and MACD was negative, retaining the unfavorable-timing gap.",
+      "observed_at": "2026-07-27T20:55:09Z",
+      "source_hash": "7d9e73eaf31b654863ccea541628ae02de8670f66e87ab6206167c55ffe8f418"
+    },
+    {
+      "source": "schemas/operation_payload.schema.json and skills/papertrader-execute-strategy/SKILL.md",
+      "claim": "The corrected contract maps both baseline open and increase allocation dispositions to the open signal lifecycle action, while deterministic execution derives the live whole-share delta and baseline requests supply no order-leg quantity.",
+      "observed_at": "2026-07-28T08:24:48Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYKX54MRDBWHGFKQERB0YG2Q.json",
+    "data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/enqueue-execute-strategy-request.json",
+    "data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/signal-create-request.json",
+    "data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_bd005fc3733b1475b6f9.md"
+  ],
+  "operations_created": [
+    "01KYKX54MRDBWHGFKQERB0YG2Q"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Revalidated the Intuitive Surgical lower-conviction 4.39% baseline target after 2.2% pending exposure, created quantity-free open-lifecycle signal signal_98939c5cb11dd6d9d2ae for the plan's increase disposition, and queued exactly one deterministic paper-order review; no order, fill, accounting, portfolio, performance, or allocation state changed."
+  ],
+  "commands_run": [
+    "papertrader research strategy upsert --request data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/strategy-upsert-request.json",
+    "papertrader signal create --request data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/signal-create-request.json",
+    "papertrader queue enqueue --request data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/enqueue-execute-strategy-request.json",
+    "papertrader queue enqueue --request data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/enqueue-execute-strategy-request.json",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true; repository safety configuration forbids real orders.",
+      "Exactly one queue row was running, matched operation 01KYKWP08RY8ST1TENJRN7EY4A and immutable strategy strategy_bd005fc3733b1475b6f9, was claimed by local-20260728-daily-all-27, and retained a live lease during processing.",
+      "Preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-strategy-research.",
+      "The payload-bound current allocation plan, stable baseline strategy identity, accepted relationship endpoints, and unchanged assessment timestamp matched canonical state.",
+      "The assessment had no hard blocker; the incremental plan delta exceeded the 1% minimum-trade threshold, while the 4.39% target remained below the 5% baseline-position cap and retained all valuation, timing, margin-of-safety, and diversification gaps.",
+      "The strategy applier accepted a ready baseline long-equity strategy with a 4.39% risk budget and exactly one allowed existing equity research leg; no short, option, leverage, or multi-leg structure was introduced.",
+      "Signal signal_98939c5cb11dd6d9d2ae uses the required open lifecycle action for the current increase disposition, carries fresh market data, expires after creation, and authorizes no quantity.",
+      "Exactly one matching execute_strategy follow-up, 01KYKX54MRDBWHGFKQERB0YG2Q, was enqueued with action open, disposition increase, the same plan and assessment identities, and no agent-supplied baseline order legs or quantity.",
+      "The first unchanged enqueue attempt encountered an unwritable shared temporary lock and changed no paths; the unchanged request then succeeded using a writable temporary directory, and both canonical receipts are preserved in commands_run.",
+      "Command-audit receipts exactly match commands_run and show structured changes only to strategies, signals, and the one follow-up queue request.",
+      "Allocation targets/history, orders, order legs, executions, cash, portfolio, performance, and fills were unchanged by this routed operation.",
+      "The maintained strategy page and append-only wiki log were updated; the existing research-catalog registration required no change.",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema]."
+    ]
+  }
+}

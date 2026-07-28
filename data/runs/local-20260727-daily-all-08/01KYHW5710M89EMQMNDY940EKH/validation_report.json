@@ -1,0 +1,21 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/record-source-rtx-q2-2026-10q-sec.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/record-source-rtx-q2-2026-results.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh-v3.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-security-rtx-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710M89EMQMNDY940EKH",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-08",
+  "validation_version": 1
+}

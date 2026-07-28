@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_a6149d5a8fe2fa8bb3cd",
+  "resolution": "Clarified that commands_run must contain exactly and only canonical command-audit receipts, added prompt regression coverage, and verified the same Ternium relationship operation succeeded idempotently in local-20260728-daily-all-12."
+}

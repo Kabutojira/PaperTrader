@@ -1,0 +1,18 @@
+{
+  "source_id": "source_ternium_july_2026_sustainability_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+  "source_type": "filing",
+  "title": "Ternium 8 July 2026 sustainability Form 6-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5b10e200e156cb6e2c5874519bda9d717d8fae1d327ba90caf4f2cb4993e3089",
+  "related_entity_ids": "idea_nearshoring_friendshoring_manufacturing|security_2c779e81c27b78c556bb",
+  "checked_at": "2026-07-28T00:52:52Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The 8 July filing says the new DRI-EAF steel shop in Pesquería was expected to begin operations in early 2027, later than the Q1 before-year-end 2026 target.",
+  "summary": "The current SEC-filed issuer update supports Pesquería schedule, execution-risk, environmental-capex, and thesis-catalyst analysis.",
+  "run_id": "local-20260728-daily-all-09"
+}

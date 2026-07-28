@@ -1,0 +1,75 @@
+{
+  "operation_id": "01KYHW5710QRVPBXMBAY8GAWDM",
+  "status": "succeeded",
+  "summary": "Revalidated Atkore against its SEC-filed fiscal Q2 2026 Form 10-Q, issuer results, June litigation update, and current 2026-07-27 market and FX caches. Electrical volume growth and maintained guidance support baseline comparison, while pricing lag, margin compression, negative six-month operating cash flow, net debt, and USD 186.5 million of announced settlements limit quality and confidence. At the USD 75.29 mark, bounded 12-month adjusted-EPS scenarios imply 32.9% downside and only 3.2% base-case upside. The security remains watching and baseline eligible; no conviction strategy follow-up was enqueued because base upside is below the configured margin-of-safety hurdle and timing remains unfavorable.",
+  "evidence": [
+    {
+      "source": "Atkore fiscal Q2 2026 Form 10-Q",
+      "claim": "For the quarter ended 2026-03-27, net sales were USD 731.377 million and gross profit was USD 136.116 million. At quarter end cash was USD 442.336 million and long-term debt was USD 756.911 million; six-month operating cash flow was negative USD 27.2 million. The SEC filing returned HTTP 200 and was registered before assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm",
+      "observed_at": "2026-07-28T00:25:52Z",
+      "source_hash": "4bc93c64246d090766b40a6bfd65795981e0fa2fe711842442cb1ce45acba3d1"
+    },
+    {
+      "source": "Atkore fiscal Q2 2026 results",
+      "claim": "Atkore reported USD 731.4 million of quarterly sales, USD 81.1 million of adjusted EBITDA, and USD 1.23 of adjusted diluted EPS. It maintained fiscal-2026 adjusted EBITDA guidance of USD 340-360 million and adjusted diluted EPS guidance of USD 5.05-5.55. The issuer release returned HTTP 200 and was registered before assessment.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-07-28T00:25:52Z",
+      "source_hash": "6776b93b55cee0b3f26797c9078fa89426d44a34b3c5c15706ab81bd3bca601f"
+    },
+    {
+      "source": "Atkore 2026-06-04 Form 8-K",
+      "claim": "Atkore agreed to a further USD 50 million settlement with the third putative class in the PVC pipe antitrust litigation, subject to court approval and funded from cash on hand. This is incremental to USD 136.5 million recognized in fiscal Q2. The SEC filing returned HTTP 200 and was registered before assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1666138/000166613826000014/atkr-20260604.htm",
+      "observed_at": "2026-07-28T00:25:52Z",
+      "source_hash": "93b3ee36f5c0d9dce2677297607a80cdd66ca861a4d6797a2ad30e4ca0db11ab"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "ATKR closed at USD 75.29000091552734 on 2026-07-27 with volume 419,315 versus a 20-session average of 284,945, and the current USD/EUR rate was 0.8794000148773193. Ten times the USD 5.05 low-end adjusted EPS guidance gives USD 50.50 and -32.9%; fourteen times the USD 5.55 high end gives USD 77.70 and +3.2%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-june-2026-litigation-8k.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-q2-2026-10q.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-q2-2026-results.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/upsert-assessment-atkr-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/upsert-security-atkr-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_22c2b9d782a62d7a9b86.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Atkore is a medium-confidence baseline near miss: electrical volume and maintained guidance support comparison, but pricing lag, weak cash conversion, settlement cash use, and a USD 75.29 mark above the USD 50.50 downside value and only slightly below the USD 77.70 base value block conviction treatment."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-q2-2026-10q.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-q2-2026-results.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-june-2026-litigation-8k.json",
+    "papertrader research security upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/upsert-security-atkr-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/upsert-assessment-atkr-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260728-daily-all-09 with a live lease through 2026-07-28T00:52:08Z; the payload matched the immutable Atkore security operation.",
+      "Preflight hashes matched llm-wiki 2.1.0, the repository controller skill, and the repository security-research skill; PAPER_TRADING_ONLY was true.",
+      "The immutable ATKR/XNYS/USD/equity identity matched exactly one security row with no duplicate issuer or provider identity.",
+      "Three primary sources returned HTTP 200, were registered as available with matching SHA-256 hashes, and were fresh before the 2026-07-28T00:28:34Z assessment.",
+      "The current assessment belongs to this run, expires 2026-08-27, references the three registered sources, has no hard blocker, and records -32.9% downside and +3.2% base upside over 12 months.",
+      "The 2026-07-27 ATKR mark, trading volume, and USD/EUR rate were current under the 36-hour policy; the 20-session average volume was 284,945 shares.",
+      "Strict schema validation, queue validation, wiki lint, and integrity validation passed. Allocation readiness correctly remained false because unrelated repository-wide assessment and relationship maintenance is incomplete; Atkore itself has a current accepted relationship.",
+      "The command audit records only source registry/history, securities, and security-assessment structured changes. No allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

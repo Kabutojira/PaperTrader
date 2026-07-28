@@ -1,0 +1,59 @@
+{
+  "operation_id": "01KYHW5710Y3GNPD64A26Y4GF4",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from the lithium cycle to Sigma Lithium with high positive sensitivity and medium confidence. Current SEC-hosted Q1 2026 accounts and the July operating update establish direct lithium-concentrate revenue, EBITDA, and production exposure, while acute liquidity, debt, negative working capital, receivable collection, controls, environmental proceedings, expansion funding, and unsupported valuation remain severe shareholder-transmission limits. Updated the relationship page, catalog, log, and canonical row; no strategy or follow-up operation was created because the security remains ineligible.",
+  "evidence": [
+    {
+      "source": "source_sgml_q1_2026_mda",
+      "claim": "The SEC-hosted Q1 2026 issuer MD&A reports USD 42.3 million of revenue and USD 16.7 million of adjusted EBITDA from Sigma Lithium's lithium operation, establishing direct operating exposure. It also reports USD 3.9 million of cash, USD 133.9 million of loans and export prepayment, USD 144.5 million of negative working capital, negative USD 2.7 million of operating cash flow, and ineffective internal control, which severely qualify common-shareholder transmission.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm",
+      "observed_at": "2026-07-27T22:45:40Z",
+      "source_hash": "9fb06d6cd00cb27b07aeac6f04e8fecebeddfe13771baadfd32576c4a27656a9"
+    },
+    {
+      "source": "source_sgml_july_2026_update",
+      "claim": "The SEC-hosted July 2026 issuer update reports second-quarter production of 35 thousand tonnes, 6% above guidance, supporting improved operating execution, while also disclosing negotiations over approximately USD 540,000 of environmental fines. The update does not refresh the March liquidity position or establish cash conversion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003854/ex99-1.htm",
+      "observed_at": "2026-07-27T22:45:40Z",
+      "source_hash": "81cd332f53f96f01fddd354b27ce7264c9aeaaa2aa610ec2596fd2cc894aaddd"
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "claim": "The maintained idea defines the causal channel from EV and stationary-storage demand plus delayed supply to producer realized prices, margins, cash generation, and resource option value, while preserving supply restarts, recycling, sodium-ion chemistry, contract lags, capital intensity, and dilution as contrary evidence."
+    },
+    {
+      "source": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md",
+      "claim": "The maintained security review confirms that Sigma Lithium is a producing hard-rock lithium-concentrate issuer, but classifies the common shares as low-confidence and ineligible because accounting uncertainty, solvency risk, and unsupported valuation can overwhelm lithium-cycle upside."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-15/01KYHW5710Y3GNPD64A26Y4GF4/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_670ed88c8e4616316a19.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from the lithium cycle to Sigma Lithium based on current lithium-concentrate revenue, EBITDA, and production evidence; no strategy follow-up was created because liquidity, solvency, controls, funding, and valuation hard blockers keep the security ineligible."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-15/01KYHW5710Y3GNPD64A26Y4GF4/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole running queue row matched operation 01KYHW5710Y3GNPD64A26Y4GF4, run local-20260728-daily-all-15, relationship relationship_670ed88c8e4616316a19, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, current structured sources, immutable request, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited upsert changed only data/tables/relationships.csv, and the immutable request SHA-256 matched its command-audit receipt.",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload-schema, queue identity, endpoint identity, relationship uniqueness, symlink, wiki-registration, request-integrity, and trailing-whitespace checks passed for every changed research file."
+    ]
+  }
+}

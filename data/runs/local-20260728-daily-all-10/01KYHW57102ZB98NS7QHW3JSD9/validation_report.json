@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-10/01KYHW57102ZB98NS7QHW3JSD9/upsert-relationship-rklb.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_297f9e36fb4e93a808e8.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW57102ZB98NS7QHW3JSD9",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-10",
+  "validation_version": 1
+}

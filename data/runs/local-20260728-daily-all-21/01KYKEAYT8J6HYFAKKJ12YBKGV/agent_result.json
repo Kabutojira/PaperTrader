@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYKEAYT8J6HYFAKKJ12YBKGV",
+  "status": "skipped",
+  "summary": "Skipped this baseline-allocation strategy review because its immutable payload binds allocation_plan_1dfe403363a4a34784d4, while the canonical current allocation target is owned by the newer allocation_plan_a0a535a5004d1d7ce414. The strategy skill requires the current allocation-plan identity and explicitly skips a superseded target. Although the newer plan preserves the same security, stable strategy ID, 2.2% target, assessment timestamp, and open disposition, this operation cannot substitute a newer plan into the immutable request. No strategy, leg, signal, follow-up, issue, wiki, queue, allocation, order, execution, cash, portfolio, fill, or performance state was changed.",
+  "evidence": [
+    {
+      "source": "data/operations/payloads/01KYKEAYT8J6HYFAKKJ12YBKGV.json",
+      "claim": "The immutable operation payload binds strategy_bd005fc3733b1475b6f9 and security_1f9cce545ede94cd6349 to allocation_plan_1dfe403363a4a34784d4 with a 2.2% target, open disposition, and assessment timestamp 2026-07-27T21:28:56Z."
+    },
+    {
+      "source": "data/tables/allocation_history.csv",
+      "claim": "allocation_plan_1dfe403363a4a34784d4 is retained as historical allocation state as of 2026-07-28T04:04:45Z, including the payload's Intuitive Surgical target.",
+      "observed_at": "2026-07-28T04:04:45Z"
+    },
+    {
+      "source": "data/tables/allocation_targets.csv",
+      "claim": "The canonical current allocation table is owned by allocation_plan_a0a535a5004d1d7ce414 as of 2026-07-28T05:30:09Z; its Intuitive Surgical row uses the same stable strategy ID and assessment but supersedes the payload's plan identity.",
+      "observed_at": "2026-07-28T05:30:09Z"
+    },
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "relationship_3570e003fd90cd83d26f remains accepted and links the required idea to security_1f9cce545ede94cd6349; the skip is caused by allocation-plan supersession, not a missing relationship.",
+      "observed_at": "2026-07-27T21:36:18Z"
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "The canonical assessment for security_1f9cce545ede94cd6349 remains baseline/high at 2026-07-27T21:28:56Z with no hard blocker; the current plan preserves that timestamp.",
+      "observed_at": "2026-07-27T21:28:56Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped strategy_research operation 01KYKEAYT8J6HYFAKKJ12YBKGV without mutation because allocation_plan_1dfe403363a4a34784d4 was superseded by current plan allocation_plan_a0a535a5004d1d7ce414 before evaluation."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true was present; exactly one queue row was running, it matched this operation and run, and its lease remained live at the final pre-manifest check.",
+      "The payload passed schemas/operation_payload.schema.json validation and matched the queue operation, immutable entity, strategy ID, relationship ID, security ID, and baseline mode.",
+      "The native llm-wiki, controller, and strategy-research skill hashes matched hermes_preflight.json.",
+      "The accepted relationship and security assessment identities matched the payload, but allocation_plan_1dfe403363a4a34784d4 was historical rather than current; the routed skill's superseded-target skip rule was applied.",
+      "Instrument allowlist, normalized legs, risk sizing, target materiality, price/FX freshness, and signal expiry were not evaluated because the mandatory current-plan identity gate stopped the operation before strategy or signal creation; no target was chosen, enlarged, or overridden.",
+      "papertrader wiki lint --strict passed with OK [wiki] and command_audit.json recorded no changed paths.",
+      "No strategy row, leg, signal, execute_strategy follow-up, issue, or wiki mutation was created; files_changed is empty apart from this excluded result manifest and controller-owned artifacts.",
+      "Allocation targets/history, orders, order legs, executions, cash ledger, portfolio, and performance were read-only and were not changed by the routed operation."
+    ]
+  }
+}

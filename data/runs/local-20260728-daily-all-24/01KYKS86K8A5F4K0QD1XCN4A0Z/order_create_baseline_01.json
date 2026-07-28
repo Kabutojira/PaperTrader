@@ -1,0 +1,18 @@
+{
+  "signal_id": "signal_14939473c94cb7b9b567",
+  "strategy_id": "strategy_bd005fc3733b1475b6f9",
+  "run_id": "local-20260728-daily-all-24",
+  "fill_policy": "next_open",
+  "order_type": "market",
+  "now": "2026-07-28T07:36:01Z",
+  "references": [
+    {
+      "security_id": "security_1f9cce545ede94cd6349",
+      "provider_contract_id": "",
+      "price": "356.8299865722656",
+      "currency": "USD",
+      "fx_rate_to_base": "0.8794000148773193",
+      "as_of": "2026-07-27T20:55:09Z"
+    }
+  ]
+}

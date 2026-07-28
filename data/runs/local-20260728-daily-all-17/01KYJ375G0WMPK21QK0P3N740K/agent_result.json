@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYJ375G0WMPK21QK0P3N740K",
+  "status": "succeeded",
+  "summary": "Ingested Ternium's validated refreshed 2026-07-24 upper-Bollinger observation into the maintained security review. The durable context preserves both deterministic snapshots: the earlier USD 47.48 close, 4.65% period gain, and 0.0038 trigger strength, and the later packet's USD 47.30 close, 4.25% gain, and 0.0010 strength despite its strengthened classification. The two packets corroborate a small upper-band breach while showing snapshot sensitivity; neither explains the move, establishes intrinsic value, overrides the negative valuation and operating gates, or supports a paper trade. Updated provenance, linked the refreshed packet, and appended the wiki log. No follow-up was created because the accepted relationship and scheduled Q2 review already bound the next decision.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b.md",
+      "claim": "The deterministic candidate packet records a strengthened upper-Bollinger condition as of 2026-07-24 for the 2026-06-25 through 2026-07-24 period, with a USD 47.29999923706055 adjusted close, return of 0.042539130496197428346979332, trigger strength of 0.0009664226650468261686498285667 from zero previously, and an ingest classifier disposition.",
+      "source_hash": "43cddf2036d866de8df959cdbebc5964f63be09b88c066112597e0d4e9853895"
+    },
+    {
+      "source": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+      "claim": "The maintained Ternium review preserves the refreshed observation alongside the earlier same-date packet rather than silently replacing its differing close and trigger strength. It records that both are momentum and timing context, not price explanation, intrinsic-value evidence, or a trade signal, while the current base and downside scenarios remain below market and commissioning and cash-conversion gates remain unresolved."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_510158d3d515d91d5c14.md",
+      "claim": "The accepted nearshoring relationship confirms positive medium-sensitivity exposure through Pesquería capacity, but schedule, undisclosed utilization and returns, working-capital absorption, cyclicality, non-Mexican operations, and adverse valuation block strategy research pending the scheduled Q2 review."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested Ternium's refreshed 2026-07-24 upper-Bollinger observation as positive but snapshot-sensitive momentum context: the later packet records a USD 47.30 close, 4.25% 25 June–24 July gain, and 0.10% band exceedance versus USD 47.48, 4.65%, and 0.38% in the earlier capture. Neither observation explains the move, establishes intrinsic value, or overrides the negative valuation, commissioning, and cash-conversion gates; no follow-up was created because the accepted relationship and scheduled Q2 review remain controlling."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole selected queue row matched operation 01KYJ375G0WMPK21QK0P3N740K, run local-20260728-daily-all-17, source source_41b6971c55327a48da17, wiki_ingest, and the required skill pair, with a live lease through 2026-07-28T04:47:43Z at final prerequisite review.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the immutable operation, type, entity, source path, and source hash.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three SHA-256 hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local deterministic inbox file, its SHA-256 matched 43cddf2036d866de8df959cdbebc5964f63be09b88c066112597e0d4e9853895, and its classifier decision was ingest.",
+      "The maintained Ternium page now preserves source source_41b6971c55327a48da17, links the refreshed packet, and retains both differing deterministic observations while distinguishing momentum evidence from explanation, valuation, short-thesis, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained Ternium page, and log.md records this ingestion append-only.",
+      "Both audited invocations of papertrader wiki lint --strict returned OK [wiki], including the final post-edit invocation.",
+      "This routed operation changed only the maintained Ternium page and wiki log; it did not edit allocation targets/history, executions, cash, portfolio, fills, or performance.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

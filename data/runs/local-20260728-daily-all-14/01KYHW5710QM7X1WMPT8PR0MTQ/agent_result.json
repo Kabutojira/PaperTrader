@@ -1,0 +1,59 @@
+{
+  "operation_id": "01KYHW5710QM7X1WMPT8PR0MTQ",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from cybersecurity resilience and geopolitical continuity to CrowdStrike with high positive sensitivity and medium confidence. Fiscal Q1 2027 subscription revenue, ARR, net-new ARR, module adoption, and free cash flow establish direct transmission from continuity-driven security demand to issuer economics, while competition, bundled alternatives, incident trust, renewal quality, GAAP costs, stock-based compensation, dilution, and adverse current valuation limit shareholder transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created before the scheduled fiscal Q2 review and a valuation meeting the margin-of-safety gate.",
+  "evidence": [
+    {
+      "source": "source_crwd_q1_2027_results_exhibit",
+      "claim": "CrowdStrike reported fiscal Q1 2027 revenue of USD 1.386 billion, ending ARR of USD 5.51 billion, net-new ARR of USD 256 million, company-defined free cash flow of USD 468.5 million, and increased adoption across six-, seven-, and eight-plus-module cohorts, establishing direct recurring-revenue and platform-adoption exposure.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "observed_at": "2026-07-28T01:20:18Z",
+      "source_hash": "689137b1d49987dfe3d47b6c54bbe634def83fb28e44647b662d54c851610a24"
+    },
+    {
+      "source": "source_crwd_q1_2027_10q",
+      "claim": "The SEC-filed quarterly report supports CrowdStrike's cash generation, liquidity, dilution, incident-risk, and split-adjusted economics; the maintained review records USD 4.553 billion cash, USD 745.8 million long-term debt, a GAAP operating loss, and economically material stock-based compensation and related payroll taxes.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+      "observed_at": "2026-07-28T01:20:18Z",
+      "source_hash": "5cebcdaf54ce867e95d558e2ebeb4cb0f9cebd0193bd138262b5d11c000792c5"
+    },
+    {
+      "source": "data/wiki/ideas/idea_cybersecurity_geopolitical_continuity.md",
+      "claim": "The maintained idea defines the causal channel from geopolitical intrusion, cloud and identity complexity, and regulatory accountability through recurring security demand to vendor ARR, margins, cash flow, and trust, with bundling, outages, dilution, and valuation as explicit counterweights."
+    },
+    {
+      "source": "data/wiki/securities/security_8472507d7d320aa388a7.md",
+      "claim": "The maintained CrowdStrike review records direct subscription and platform exposure but finds bounded split-adjusted 12-month downside and base values of USD 88.12 and USD 131.31 versus the USD 180.11 market mark, blocking strategy research."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-14/01KYHW5710QM7X1WMPT8PR0MTQ/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from cybersecurity resilience and geopolitical continuity to CrowdStrike based on subscription revenue, ARR, net-new ARR, module adoption, and cash conversion; no strategy follow-up was created because incident trust, GAAP costs, dilution, adverse valuation, and pending fiscal Q2 evidence remain limiting."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-14/01KYHW5710QM7X1WMPT8PR0MTQ/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710QM7X1WMPT8PR0MTQ, run local-20260728-daily-all-14, relationship relationship_228f56aa5d91f3688b67, the required skill pair, running status, completed dependency, and a live lease at prerequisite review.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research with content hashes; all three hashes matched their loaded files, execution was sequential, PAPER_TRADING_ONLY=true, and no injection flags were present.",
+      "The immutable relationship, idea, and security IDs matched the payload, endpoint pages, canonical security row, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited request SHA-256 matched its post-invocation identity, and the upsert changed only data/tables/relationships.csv.",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped relationship identity, uniqueness, symlink, trailing-whitespace, catalog, log, source-reference, command-audit, and protected-state checks passed."
+    ]
+  }
+}

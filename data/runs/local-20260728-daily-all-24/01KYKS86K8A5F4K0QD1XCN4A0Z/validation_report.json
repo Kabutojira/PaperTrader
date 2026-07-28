@@ -1,0 +1,15 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-24/01KYKS86K8A5F4K0QD1XCN4A0Z/order_create_baseline_01.json",
+    "data/tables/order_legs.csv",
+    "data/tables/orders.csv",
+    "data/tables/signals.csv"
+  ],
+  "errors": [
+    "command audit entry 0 is outside the operation skill scope"
+  ],
+  "operation_id": "01KYKS86K8A5F4K0QD1XCN4A0Z",
+  "passed": false,
+  "run_id": "local-20260728-daily-all-24",
+  "validation_version": 1
+}

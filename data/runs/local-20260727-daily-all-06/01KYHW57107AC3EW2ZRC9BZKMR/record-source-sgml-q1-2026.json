@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sgml_q1_2026_mda",
+  "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm",
+  "source_type": "filing_exhibit",
+  "title": "Sigma Lithium Q1 2026 management discussion and analysis",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9fb06d6cd00cb27b07aeac6f04e8fecebeddfe13771baadfd32576c4a27656a9",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_4627aea1bf7d8943d3d8",
+  "checked_at": "2026-07-27T22:45:40Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, 2026 Sigma reported USD 3.9 million cash, USD 133.9 million short- and long-term debt, USD 144.527 million negative working capital, and material weaknesses in internal control; Q1 operating cash use was USD 2.7 million.",
+  "summary": "The SEC-hosted Q1 MD&A provides current financial, operating, liquidity, going-concern, receivables, debt, and internal-control evidence for the security assessment.",
+  "run_id": "local-20260727-daily-all-06"
+}

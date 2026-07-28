@@ -1,0 +1,18 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/record-source-rxrx-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/upsert-assessment-rxrx-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710ENZ9WVA185W24RGA/upsert-security-rxrx-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ed7d5b616a196969c815.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710ENZ9WVA185W24RGA",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-07",
+  "validation_version": 1
+}

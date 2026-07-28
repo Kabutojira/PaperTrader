@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KYJMQ5DG5M4WTHXVSN42HYHJ",
+  "status": "skipped",
+  "summary": "Skipped an exact fresh duplicate relationship review. The immutable idea, security, and relationship IDs already match one accepted causal edge reviewed on 2026-07-25, its next review is not due until 2026-08-15, and this backfill payload supplies no newer evidence or changed catalyst. The existing medium-sensitivity, medium-confidence assessment already records the demand mechanism, margin and cash-conversion limits, catalyst, invalidation, and strategy blocker.",
+  "evidence": [
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "The unique row relationship_solar_storage_grid_atkr already joins idea_solar_storage_grid_flexibility_reset to security_22c2b9d782a62d7a9b86 as an accepted positive beneficiary edge with medium sensitivity and confidence; it was last reviewed on 2026-07-25 and is next due on 2026-08-15."
+    },
+    {
+      "source": "data/operations/operations_history.csv",
+      "claim": "Operation 01KYCFZV78NFR2S9QCPT4B2VWQ already completed the same bounded relationship review successfully on 2026-07-25 and recorded the causal electrical-volume evidence and the pricing, margin, cash-conversion, and valuation blockers."
+    },
+    {
+      "source": "data/operations/payloads/01KYJMQ5DG5M4WTHXVSN42HYHJ.json",
+      "claim": "The current request is an allocation-maintenance backfill for the same three immutable endpoint IDs and contains no evidence references or changed catalyst requiring an early re-review."
+    },
+    {
+      "source": "Atkore fiscal second-quarter 2026 results",
+      "claim": "The already-reviewed primary evidence showed Electrical sales growth of 8.1% but margin compression and input costs outrunning pricing; no newer evidence was supplied by this operation.",
+      "url": "https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-05-06T00:00:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped a duplicate Atkore relationship backfill: the exact accepted edge was reviewed on 2026-07-25, remains current through its 2026-08-15 review date, and the payload supplied no newer evidence or changed catalyst."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected queue row is running, claimed by local-20260727-daily-all-05, has a live lease, and names exactly native llm-wiki plus papertrader-relationship-research.",
+      "Confirmed the preflight artifact identifies the native wiki, controller, and relationship-research skills with content hashes and sequential execution enabled.",
+      "Confirmed the payload, relationship row, idea page, security page, and relationship page agree on all three immutable IDs.",
+      "Confirmed relationships.csv contains exactly one row for relationship_solar_storage_grid_atkr and structured history contains the prior successful review.",
+      "Applied the exact-fresh-duplicate skip rule because the existing review remains current and the backfill payload supplies no newer evidence or changed catalyst.",
+      "Made no wiki, structured-state, allocation, strategy, signal, order, accounting, portfolio, performance, issue, or follow-up change.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

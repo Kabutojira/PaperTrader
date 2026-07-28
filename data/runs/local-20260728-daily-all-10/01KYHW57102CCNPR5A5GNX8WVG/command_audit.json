@@ -1,0 +1,69 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/workspace",
+        "research",
+        "relationship",
+        "upsert",
+        "--request",
+        "data/runs/local-20260728-daily-all-10/01KYHW57102CCNPR5A5GNX8WVG/relationship_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/relationships.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f85e66cd92ce7e4c079a7edc2d0780a11b9daac06d104e0b14c3e98a0e075e10",
+            5259,
+            384
+          ],
+          "before": [
+            "file",
+            "35bd392027d64718c6c8dae6f77b69111188537cf9443f2d2c675a08240dc3b6",
+            4155,
+            384
+          ],
+          "path": "data/tables/relationships.csv"
+        }
+      ],
+      "command": "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-10/01KYHW57102CCNPR5A5GNX8WVG/relationship_upsert_request.json",
+      "completed_at": "2026-07-28T01:30:55Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "fc4371b87887a6f310327d19d10b0d90a6db0cc45b5fe724108d535d1e7a4503",
+          1342,
+          384
+        ],
+        "path": "data/runs/local-20260728-daily-all-10/01KYHW57102CCNPR5A5GNX8WVG/relationship_upsert_request.json"
+      },
+      "started_at": "2026-07-28T01:30:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/workspace",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /workspace wiki lint --strict",
+      "completed_at": "2026-07-28T01:31:49Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T01:31:49Z"
+    }
+  ],
+  "operation_id": "01KYHW57102CCNPR5A5GNX8WVG",
+  "run_id": "local-20260728-daily-all-10"
+}

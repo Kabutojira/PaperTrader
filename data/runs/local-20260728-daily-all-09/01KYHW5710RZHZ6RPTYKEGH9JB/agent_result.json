@@ -1,0 +1,78 @@
+{
+  "operation_id": "01KYHW5710RZHZ6RPTYKEGH9JB",
+  "status": "succeeded",
+  "summary": "Revalidated Ternium against SEC-filed Q1 2026 results, a current 8 July sustainability filing, and the 2026-07-27 market and FX caches. Pesquería remains a tangible North American capacity investment, but the later filing moved DRI-EAF startup to early 2027 from the Q1 before-year-end target. At the USD 47.74 mark, bounded 12-month earnings scenarios imply 48.9% downside and 8.7% base-case downside. Ternium remains watching with medium-confidence baseline eligibility; no conviction strategy was enqueued because schedule slippage, capital intensity, cash conversion, cyclicality, negative base upside, adverse timing, and the pending causal relationship fail the unchanged strategy gate.",
+  "evidence": [
+    {
+      "source": "Ternium Q1 2026 results",
+      "claim": "Ternium reported Q1 adjusted EBITDA of USD 479 million, parent-attributable earnings of USD 1.09 per ADS, operating cash flow of USD 217 million after a USD 233 million working-capital build, capex of USD 406 million, and net cash of USD 327 million. The SEC filing returned HTTP 200 and was registered with a matching hash before the final assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm",
+      "observed_at": "2026-07-28T00:52:52Z",
+      "source_hash": "af838871cbdd3ac73d3d9849ebde2ced6f5d7ed190efe18cfc690d6d121bd680"
+    },
+    {
+      "source": "Ternium 8 July 2026 sustainability Form 6-K",
+      "claim": "The current filing says the Pesquería DRI-EAF steel shop was expected to begin operations in early 2027, later than the Q1 before-year-end 2026 target. The SEC filing returned HTTP 200 and was registered with a matching hash before the final assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+      "observed_at": "2026-07-28T00:52:52Z",
+      "source_hash": "5b10e200e156cb6e2c5874519bda9d717d8fae1d327ba90caf4f2cb4993e3089"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "TX closed at USD 47.7400016784668 on 2026-07-27 with volume 943,747, and USD/EUR was 0.8794000148773193. Annualizing USD 1.09 Q1 ADS earnings gives USD 4.36; discounting that by 30% and applying 8 times gives USD 24.42 and -48.9%, while applying 10 times to the unadjusted run-rate gives USD 43.60 and -8.7%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-july-2026-sustainability-6k-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-july-2026-sustainability-6k.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-q1-2026-results-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-q1-2026-results.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/upsert-assessment-ternium-refresh-v2.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/upsert-assessment-ternium-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/upsert-security-ternium-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ternium is a medium-confidence baseline near miss: Pesquería is tangible, but DRI-EAF startup moved to early 2027 and the USD 47.74 mark stands above the USD 24.42 downside and USD 43.60 base scenarios; capex, cash conversion, cyclicality, valuation, timing, and the pending relationship block conviction treatment."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-q1-2026-results.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-july-2026-sustainability-6k.json",
+    "papertrader research security upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/upsert-security-ternium-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/upsert-assessment-ternium-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-q1-2026-results-refresh.json",
+    "papertrader research source record --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/record-source-ternium-july-2026-sustainability-6k-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260728-daily-all-09/01KYHW5710RZHZ6RPTYKEGH9JB/upsert-assessment-ternium-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260728-daily-all-09 with a live lease through 2026-07-28T01:17:54Z; the payload matched the immutable Ternium security operation.",
+      "PAPER_TRADING_ONLY was true, and preflight hashes identified llm-wiki 2.1.0, the repository controller skill, and the repository security-research skill.",
+      "The immutable TX/XNYS/USD/equity identity matched exactly one security row with no duplicate immutable or provider identity.",
+      "Two current SEC primary sources returned HTTP 200, were registered as available with matching SHA-256 hashes, and were refreshed before the final 2026-07-28T00:52:52Z assessment.",
+      "The current medium-confidence baseline assessment belongs to this run, expires 2026-08-27, references both registered sources, has no hard blocker, and records -48.9% downside and -8.7% base upside over 12 months.",
+      "The 2026-07-27 TX mark, volume, and USD/EUR rate were current under the configured 36-hour market-data policy.",
+      "The first integrity check exposed source-first-seen timestamps later than the initial assessment; immutable refresh request files and a new assessment request corrected the ordering, after which strict schema, queue, wiki, and integrity checks passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessments and relationships are incomplete; Ternium's relationship review is already queued and remains pending.",
+      "The command audit records only source registry/history, securities, and security-assessment structured changes. No allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

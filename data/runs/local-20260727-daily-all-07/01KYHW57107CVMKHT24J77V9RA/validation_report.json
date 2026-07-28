@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-july-2026-management-8k.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-assessment-coin-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-security-coin-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW57107CVMKHT24J77V9RA",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-07",
+  "validation_version": 1
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_66cdcf90aac0d83e76f3",
+  "issuer_id": "issuer_76c4dda166e8f840fb77",
+  "company_name": "Albemarle Corporation",
+  "instrument_name": "Albemarle Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "ALB",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ALB",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Basic Materials",
+  "industry": "Specialty Chemicals",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Lithium economics, cash conversion, leverage, and liquidity improved, but wide commodity sensitivity and unsupported common-equity valuation keep Albemarle ineligible.",
+  "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+  "last_research_at": "2026-07-28T00:59:00Z",
+  "next_review_at": "2026-08-06T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm"
+}

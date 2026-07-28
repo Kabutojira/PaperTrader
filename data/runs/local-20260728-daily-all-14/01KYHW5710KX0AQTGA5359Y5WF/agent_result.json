@@ -1,0 +1,60 @@
+{
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-14/01KYHW5710KX0AQTGA5359Y5WF/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted the medium-confidence, medium-sensitivity positive beneficiary relationship from the defense and aerospace replenishment cycle to RTX based on defense backlog, Raytheon program growth and margin expansion, and group cash generation; no strategy follow-up was created because commercial diversification, Pratt remediation, contract execution, leverage, overbought conditions, and adverse valuation remain unresolved."
+  ],
+  "evidence": [
+    {
+      "claim": "RTX reported USD 289 billion of total backlog at 30 June 2026, including USD 119 billion of defense backlog, with USD 8.305 billion of cash and USD 37.383 billion of total debt. The filing supports current backlog, segment economics, cash flow, balance-sheet, fixed-price contract risk, and Pratt powder-metal remediation analysis.",
+      "observed_at": "2026-07-28T00:05:16Z",
+      "source": "source_rtx_q2_2026_10q_sec",
+      "source_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+    },
+    {
+      "claim": "RTX reported Q2 2026 sales of USD 24.7 billion and USD 3.5 billion of operating cash flow; Raytheon sales rose 18%, adjusted operating margin rose to 12.6% from 11.6%, and full-year free-cash-flow guidance increased to USD 8.50-8.75 billion.",
+      "observed_at": "2026-07-28T00:05:16Z",
+      "source": "source_rtx_q2_2026_results",
+      "source_hash": "980e42dfeb9915dc34df466e4f6c41eb65e07aabacce7e7bc75a5e40c073f46b",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results"
+    },
+    {
+      "claim": "The maintained idea defines the causal path from funded allied procurement and replenishment through awards, qualified production, deliveries, sustainment, margin, and cash flow, while requiring contract, capacity, supplier, export, and valuation confirmation.",
+      "source": "data/wiki/ideas/idea_defense_aerospace.md"
+    },
+    {
+      "claim": "The maintained RTX review records direct Raytheon defense exposure and improving segment economics, but both bounded valuation scenarios remain below the USD 218.42 mark and commercial aerospace, engine remediation, leverage, and execution risks block a strategy.",
+      "source": "data/wiki/securities/security_59304f90c440def31dc5.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-14/01KYHW5710KX0AQTGA5359Y5WF/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_1655ac715c33506ec7da.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710KX0AQTGA5359Y5WF",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from the defense and aerospace replenishment cycle to RTX with medium positive sensitivity and medium confidence. RTX's defense backlog, Raytheon program volume and margin expansion, and group cash generation establish a direct economic mechanism, while commercial aerospace diversification, Pratt remediation, fixed-price execution, leverage, and adverse current valuation limit shareholder transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710KX0AQTGA5359Y5WF, run local-20260728-daily-all-14, relationship relationship_1655ac715c33506ec7da, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited immutable request SHA-256 is 95c60a2cb20a3802fbc65fb476b8fb0702dc97f1ec6ab788ff8e559114239d67, and the upsert changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, or order path.",
+      "The relationship page is registered in the complete research catalog and documented in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, dependency, lease, preflight, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, trailing-whitespace, and catalog/log checks passed."
+    ],
+    "passed": true
+  }
+}

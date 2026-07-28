@@ -16,6 +16,7 @@ from papertrader.queue import (
     enqueue_operation,
     prepare_queue,
     release_expired_leases,
+    resolve_blocked_operation,
     validate_queue,
 )
 from papertrader.tables import read_table, write_table
@@ -68,6 +69,81 @@ def _complete(repository: Path, operation_id: str, run_id: str, now: datetime) -
         terminal_reason="completed",
         now=now,
     )
+
+
+def _allocation_target(plan_id: str) -> dict[str, str]:
+    return {
+        "allocation_plan_id": plan_id,
+        "run_id": "allocation-current",
+        "as_of": "2026-07-24T10:00:00Z",
+        "security_id": "sec_a",
+        "strategy_id": "strategy_a",
+        "sleeve": "baseline",
+        "rank": "1",
+        "effective_score": "70",
+        "candidate_edge": "10",
+        "current_weight_pct": "0",
+        "pending_weight_pct": "0",
+        "target_weight_pct": "2",
+        "target_value_base": "2000",
+        "delta_value_base": "2000",
+        "disposition": "open",
+        "reason": "above_cash_hurdle",
+        "assessment_as_of": "2026-07-24T09:00:00Z",
+    }
+
+
+def _enqueue_plan_strategy(
+    repository: Path,
+    settings: Settings,
+    *,
+    plan_id: str,
+    catalyst: str,
+    now: datetime,
+) -> str:
+    operation_id, created = enqueue_operation(
+        repository,
+        settings,
+        operation_type="strategy_research",
+        entity_type="strategy",
+        entity_id="strategy_a",
+        dedupe_key=f"strategy_research:strategy_a:{catalyst}:2026-07-24",
+        prompt="Research one plan-bound baseline strategy.",
+        inputs={
+            "allocation_plan_id": plan_id,
+            "assessment_as_of": "2026-07-24T09:00:00Z",
+            "current_weight_pct": "0",
+            "disposition": "open",
+            "effective_score": "70",
+            "maximum_weight_pct": "5",
+            "mode": "baseline_allocation",
+            "relationship_id": "relationship_a",
+            "security_id": "sec_a",
+            "selection_rank": 1,
+            "strategy_id": "strategy_a",
+            "target_weight_pct": "2",
+        },
+        source=f"deterministic-allocation:{plan_id}",
+        now=now,
+    )
+    assert created is True
+    return operation_id
+
+
+def _signal(signal_id: str, *, status: str) -> dict[str, str]:
+    return {
+        "signal_id": signal_id,
+        "strategy_id": "strategy_a",
+        "signal_type": "open",
+        "created_at": "2026-07-24T09:00:00Z",
+        "expires_at": "2026-07-25T09:00:00Z",
+        "status": status,
+        "rationale": "Fixture signal.",
+        "market_data_as_of": "2026-07-24T09:00:00Z",
+        "order_request_path": "",
+        "telegram_sent_at": "",
+        "run_id": "signal-fixture",
+    }
 
 
 def test_enqueue_is_idempotent_and_payload_matches_queue(
@@ -276,6 +352,76 @@ def test_freshness_cooldown_records_skip_in_history(
     assert any(second in disposition for disposition in dispositions)
 
 
+def test_prepare_skips_superseded_plan_bound_operations_before_claim(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    current_plan = "allocation_plan_current"
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [_allocation_target(current_plan)],
+    )
+    obsolete = _enqueue_plan_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        plan_id="allocation_plan_obsolete",
+        catalyst="obsolete-plan",
+        now=NOW,
+    )
+    current = _enqueue_plan_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        plan_id=current_plan,
+        catalyst="current-plan",
+        now=NOW + timedelta(seconds=1),
+    )
+
+    dispositions = prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    active = read_table(sandbox_repository, "operations_todo")
+    assert [row["operation_id"] for row in active] == [current]
+    assert active[0]["status"] == "ready"
+    archived = next(
+        row
+        for row in read_table(sandbox_repository, "operations_history")
+        if row["operation_id"] == obsolete
+    )
+    assert archived["terminal_status"] == "skipped"
+    assert archived["terminal_reason"] == f"superseded_allocation_plan:{current_plan}"
+    assert any(obsolete in disposition for disposition in dispositions)
+
+
+def test_prepare_skips_execute_request_whose_signal_is_no_longer_ready(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    signal_id = "signal_cancelled"
+    write_table(sandbox_repository, "signals", [_signal(signal_id, status="cancelled")])
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="execute_strategy",
+        entity_type="strategy",
+        entity_id="strategy_a",
+        dedupe_key="execute_strategy:strategy_a:signal_cancelled:open",
+        prompt="Review one cancelled signal.",
+        inputs={"strategy_id": "strategy_a", "signal_id": signal_id, "action": "open"},
+        source="test",
+        now=NOW,
+    )
+    assert created is True
+
+    dispositions = prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    assert read_table(sandbox_repository, "operations_todo") == []
+    archived = read_table(sandbox_repository, "operations_history")[0]
+    assert archived["operation_id"] == operation_id
+    assert archived["terminal_status"] == "skipped"
+    assert archived["terminal_reason"] == "signal_not_ready:cancelled"
+    assert any(operation_id in disposition for disposition in dispositions)
+
+
 def test_expired_leases_retry_then_fail_after_bounded_attempts(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -335,6 +481,92 @@ def test_dependency_cycle_is_machine_readable_blocked_state(
     assert {row["last_error"] for row in blocked} == {"dependency_cycle"}
 
 
+def test_resolve_blocked_archives_prior_result_with_provenance(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_id, _ = _enqueue(
+        sandbox_repository, sandbox_settings, entity_id="sec_a", catalyst="o" * 20
+    )
+    prepare_queue(sandbox_repository, now=NOW)
+    budget = RunBudget.from_settings(sandbox_settings)
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-blocked",
+        budget=budget,
+        now=NOW + timedelta(minutes=1),
+    )
+    assert claimed is not None
+    from papertrader.queue import block_operation
+
+    block_operation(
+        sandbox_repository,
+        operation_id=operation_id,
+        run_id="run-blocked",
+        reason="agent_result:blocked:superseded input",
+        now=NOW + timedelta(minutes=2),
+    )
+    result_path = f"data/runs/run-blocked/{operation_id}/agent_result.json"
+    artifact = sandbox_repository / result_path
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text("{}\n", encoding="utf-8")
+
+    resolve_blocked_operation(
+        sandbox_repository,
+        operation_id=operation_id,
+        run_id="run-blocked",
+        terminal_status="skipped",
+        result_path=result_path,
+        result_summary="The source transition disappeared before review.",
+        terminal_reason="superseded_input",
+        now=NOW + timedelta(minutes=3),
+    )
+
+    assert read_table(sandbox_repository, "operations_todo") == []
+    archived = read_table(sandbox_repository, "operations_history")[0]
+    assert archived["terminal_status"] == "skipped"
+    assert archived["terminal_reason"] == "superseded_input"
+    assert archived["result_path"] == result_path
+    assert archived["claimed_by_run_id"] == "run-blocked"
+    assert validate_queue(sandbox_repository) == []
+    resolve_blocked_operation(
+        sandbox_repository,
+        operation_id=operation_id,
+        run_id="run-blocked",
+        terminal_status="skipped",
+        result_path=result_path,
+        result_summary="The source transition disappeared before review.",
+        terminal_reason="superseded_input",
+        now=NOW + timedelta(minutes=4),
+    )
+
+
+def test_resolve_blocked_rejects_nonblocked_operation(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_id, _ = _enqueue(
+        sandbox_repository, sandbox_settings, entity_id="sec_a", catalyst="p" * 20
+    )
+    result_path = f"data/runs/run-blocked/{operation_id}/agent_result.json"
+    artifact = sandbox_repository / result_path
+    artifact.parent.mkdir(parents=True)
+    artifact.write_text("{}\n", encoding="utf-8")
+
+    with pytest.raises(QueueError, match="is not blocked"):
+        resolve_blocked_operation(
+            sandbox_repository,
+            operation_id=operation_id,
+            run_id="run-blocked",
+            terminal_status="skipped",
+            result_path=result_path,
+            result_summary="No longer applicable.",
+            terminal_reason="superseded_input",
+            now=NOW + timedelta(minutes=1),
+        )
+
+
 class _MergeReviewer:
     def review(
         self,
@@ -368,6 +600,34 @@ def test_semantic_overlap_runs_only_after_exact_rules_and_records_merge_skip(
         first
     ]
     archived = read_table(sandbox_repository, "operations_history")[0]
+    assert archived["operation_id"] == second
+    assert archived["terminal_reason"].startswith(f"semantic_merge:{first}:")
+
+
+def test_semantic_overlap_can_coalesce_already_ready_operations(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    first, _ = _enqueue(sandbox_repository, sandbox_settings, entity_id="sec_a", catalyst="m" * 20)
+    second, _ = _enqueue(
+        sandbox_repository,
+        sandbox_settings,
+        entity_id="sec_a",
+        catalyst="n" * 20,
+        now=NOW + timedelta(seconds=1),
+    )
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+
+    prepare_queue(
+        sandbox_repository,
+        now=NOW + timedelta(minutes=2),
+        semantic_reviewer=_MergeReviewer(),
+    )
+
+    assert [row["operation_id"] for row in read_table(sandbox_repository, "operations_todo")] == [
+        first
+    ]
+    archived = read_table(sandbox_repository, "operations_history")[-1]
     assert archived["operation_id"] == second
     assert archived["terminal_reason"].startswith(f"semantic_merge:{first}:")
 

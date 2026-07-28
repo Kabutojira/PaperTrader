@@ -1,0 +1,65 @@
+{
+  "operation_id": "01KYHW57107CVMKHT24J77V9RA",
+  "status": "succeeded",
+  "summary": "Revalidated Coinbase against its SEC-filed Q1 2026 Form 10-Q, the latest July 2026 management-transition Form 8-K, and current 2026-07-27 market and FX data. Stablecoin growth and positive operating cash flow support the digital-finance-rails thesis, but transaction cyclicality, a GAAP loss, counterparty concentration, custody obligations, stock compensation, and the absence of a supportable downside-aware per-share valuation make the medium-confidence security ineligible. No conviction strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Coinbase Q1 2026 Form 10-Q",
+      "claim": "The SEC filing reports USD 1.339 billion Q1 net revenue, USD 756 million transaction revenue, USD 584 million subscription and services revenue, USD 305 million stablecoin revenue, a USD 394 million net loss, USD 183 million operating cash flow, USD 248 million stock-based compensation expense, 23% revenue concentration in one counterparty, and USD 294.4 billion of customer assets controlled by company keys. The filing returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm",
+      "observed_at": "2026-07-27T22:55:05Z",
+      "source_hash": "bf2393062a2dbaa79513d85526514597e7fd5dc588374816e8e35a89ed83a88e"
+    },
+    {
+      "source": "Coinbase July 2026 Form 8-K",
+      "claim": "The latest SEC filing available through 2026-07-27 disclosed a Chief People Officer transition and did not update operating or financial results, so the Q1 Form 10-Q remains the latest quarterly financial evidence. The filing returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000080/coin-20260722.htm",
+      "observed_at": "2026-07-27T22:55:05Z",
+      "source_hash": "47c7e56a2431b908a25467a78e94192456245811b60ef2ae36cbc9f51a1ab424"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "COIN closed at USD 167.49000549316406 on 2026-07-27 with volume 6,684,661, and the current USD/EUR rate was 0.8794000148773193. The mark and FX data are current, but the quarterly accounts do not provide a clean decision-ready bridge through payment-stablecoin cash classification, customer funds and custody obligations, borrowings, crypto inventory, and diluted shares; the assessment therefore records valuation_unsupported, conservative -100% unbounded downside, and 0% base upside rather than inventing a target."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-july-2026-management-8k.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-assessment-coin-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-security-coin-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Coinbase is a medium-confidence ineligible security: stablecoin growth and positive operating cash flow support the rails thesis, but trading cyclicality, a GAAP loss, concentration, custody obligations, dilution, and unsupported valuation prevent allocation eligibility; no conviction strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-q1-2026-10q.json",
+    "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-july-2026-management-8k.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-security-coin-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-assessment-coin-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-07 with a live lease, and preflight identified llm-wiki 2.1.0, the controller skill, and the security-research skill; repository controller and operation skill hashes matched preflight.",
+      "The immutable Coinbase/XNAS/USD/equity identity matched exactly one security row with no duplicate issuer, instrument, venue, currency, and provider identity.",
+      "Both SEC filings returned HTTP 200, were registered with their observed SHA-256 hashes, and had fresh last-checked timestamps preceding the assessment.",
+      "The assessment belongs to this run, expires 2026-08-26, references both registered sources, records medium confidence, and explicitly uses the canonical valuation_unsupported hard blocker with -100% unbounded downside and 0% base upside.",
+      "The 2026-07-27 COIN mark, 6,684,661-share volume, and 2026-07-27 USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and integrity checks passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment backfills and separately queued relationship reviews are incomplete; Coinbase is independently ineligible, so the conviction gate did not permit a strategy follow-up.",
+      "All four CLI request artifacts retained the exact identities recorded in command_audit.json, no operation artifact is a symlink, and no allocation target/history, order, execution, cash, portfolio, fill, or performance file was changed by this operation."
+    ]
+  }
+}

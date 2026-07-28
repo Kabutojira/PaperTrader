@@ -1,0 +1,18 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYKX54MRDBWHGFKQERB0YG2Q.json",
+    "data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/enqueue-execute-strategy-request.json",
+    "data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/signal-create-request.json",
+    "data/runs/local-20260728-daily-all-27/01KYKWP08RY8ST1TENJRN7EY4A/strategy-upsert-request.json",
+    "data/tables/signals.csv",
+    "data/tables/strategies.csv",
+    "data/wiki/log.md",
+    "data/wiki/strategies/strategy_bd005fc3733b1475b6f9.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYKWP08RY8ST1TENJRN7EY4A",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-27",
+  "validation_version": 1
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_fb87fac302a5446a1ced",
+  "issuer_id": "issuer_8471016731f84aeb44ff",
+  "company_name": "Lithium Americas Corp.",
+  "instrument_name": "Lithium Americas Corp. common shares",
+  "instrument_type": "equity",
+  "ticker": "LAC",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "LAC",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CA",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Thacker Pass is advancing with strategic funding, but pre-revenue economics, remaining capex, conditional financing, dilution, commissioning, and unsupported valuation keep LAC ineligible.",
+  "research_page": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+  "last_research_at": "2026-07-27T23:45:30Z",
+  "next_review_at": "2026-08-15T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm"
+}

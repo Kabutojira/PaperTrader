@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped baseline strategy research for Intuitive Surgical because allocation plan allocation_plan_81b61c648684e1f3ac32 was superseded by current plan allocation_plan_360ce9d0eb854dd4befc before execution; no strategy or signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable request binds strategy_bd005fc3733b1475b6f9 to allocation_plan_81b61c648684e1f3ac32 for security_1f9cce545ede94cd6349.",
+      "source": "data/operations/payloads/01KYK4GBE0GRKW530MT8BDY0CD.json"
+    },
+    {
+      "claim": "The sole current allocation plan is allocation_plan_360ce9d0eb854dd4befc as of 2026-07-28T04:49:00Z; its Intuitive Surgical row retains rank 1, score 63, 2.2% target weight, open disposition, and assessment timestamp 2026-07-27T21:28:56Z.",
+      "observed_at": "2026-07-28T04:49:00Z",
+      "source": "data/tables/allocation_targets.csv"
+    },
+    {
+      "claim": "allocation_plan_81b61c648684e1f3ac32 is retained only in immutable allocation history, where its Intuitive Surgical row was recorded at 2026-07-28T01:12:56Z.",
+      "observed_at": "2026-07-28T01:12:56Z",
+      "source": "data/tables/allocation_history.csv"
+    },
+    {
+      "claim": "The current Intuitive Surgical assessment remains the payload-bound 2026-07-27T21:28:56Z baseline assessment, with valuation and timing soft gaps and no hard blocker.",
+      "observed_at": "2026-07-27T21:28:56Z",
+      "source": "data/tables/security_assessments.csv"
+    },
+    {
+      "claim": "relationship_3570e003fd90cd83d26f remains accepted with high positive sensitivity and high confidence for security_1f9cce545ede94cd6349.",
+      "observed_at": "2026-07-27T21:36:00Z",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYK4GBE0GRKW530MT8BDY0CD",
+  "operations_created": [],
+  "status": "skipped",
+  "summary": "Skipped the baseline-allocation strategy review because its immutable allocation plan allocation_plan_81b61c648684e1f3ac32 was superseded before execution by current plan allocation_plan_360ce9d0eb854dd4befc. The current plan preserves the same Intuitive Surgical assessment, rank, score, target weight, and open disposition, but baseline strategy work must bind the current plan identity. No strategy, signal, follow-up, issue, wiki page, or structured state was changed.",
+  "validation": {
+    "checks": [
+      "PAPER_TRADING_ONLY=true and repository safety configuration forbids real orders.",
+      "The only running queue row is this strategy_research operation, claimed by local-20260728-daily-all-19 with a live lease.",
+      "The operation payload validates against schemas/operation_payload.schema.json and matches the immutable queue entity.",
+      "Native llm-wiki, controller, and strategy-research skill hashes match hermes_preflight.json.",
+      "The payload plan is superseded: current allocation_targets.csv contains only allocation_plan_360ce9d0eb854dd4befc, not allocation_plan_81b61c648684e1f3ac32.",
+      "The linked relationship is accepted and the current security assessment timestamp still matches the payload.",
+      "The superseded-target rule stopped work at the mandatory allocation-plan identity gate before structure or signal evaluation.",
+      "The audited strict wiki lint command changed no paths, and no strategy, signal, follow-up, issue, wiki, allocation, order, accounting, portfolio, or performance state was changed.",
+      "papertrader wiki lint --strict returned OK [wiki]."
+    ],
+    "passed": true
+  }
+}

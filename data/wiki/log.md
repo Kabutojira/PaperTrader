@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-07-27"
+updated: "2026-07-28"
 provenance: repository-contract
 ---
 
@@ -334,3 +334,565 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Aligned the wiki orientation contract so agents use the results-first [[index]] together with
   the complete [[research-catalog]].
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70]] (c288bb87ff70).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70]] as `ingest`: Material Bollinger breakout with a strengthened signal and 16.2% period return warrants durable research context.
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6]] (c4c8f0b60fc6).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6]] as `ingest`: Material RSI overbought transition with strengthened signal and a 16.2% period return warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517]] (8276293d6517).
+
+- Classified [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517]] as `ignore`: Minor one-month decline with weak trigger strength; insufficient evidence of a material transition for durable wiki ingestion.
+
+- Revalidated [[securities/security_c9a37d277445869a8809|Roblox]] against the unchanged registered
+  Q1 2026 issuer release and the 2026-07-27 market and FX refresh. The higher USD 48.42 mark makes
+  the bounded downside and base scenarios 47.9% and 19.9% below market, respectively; the
+  medium-confidence security remains baseline eligible but uncompetitive with cash, so no
+  conviction strategy was queued.
+
+- Published investor decision snapshot `decision_d14f01b9e0128b20bcde`.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `local-20260727-daily-all-02`.
+
+- Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] against the SEC-filed
+  Q2 2026 earnings exhibit and the 2026-07-27 market and FX refresh. The USD 356.83 mark leaves a
+  bounded 23.2% downside case and only 2.5% base-case upside; strong operating evidence still
+  supports baseline eligibility, but valuation and timing remain uncompetitive with cash, so no
+  conviction strategy was queued.
+
+- Accepted [[relationships/relationship_3570e003fd90cd83d26f|the causal relationship]] from
+  [[ideas/idea_precision_biology_healthcare_automation|precision biology and healthcare automation]]
+  to [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]]. Q2 2026 procedure,
+  installed-base, recurring-instrument revenue, and operating-income growth support high positive
+  exposure, while clinical generalization, hospital economics, safety, valuation, tariffs, and
+  supply remain explicit limits. No strategy follow-up was created because current valuation does
+  not meet the margin-of-safety gate.
+
+- Published investor decision snapshot `decision_87e8728baec9e7b61dae`.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `local-20260727-daily-all-04`.
+
+- Revalidated [[securities/security_bdc2f87dadf134760c3a|Palantir]] against the SEC-hosted Q1 2026
+  earnings release and the 2026-07-27 market and FX refresh. Exceptional growth, margins, cash
+  generation, balance-sheet strength, and liquidity support baseline eligibility, but bounded
+  12-month scenarios imply 60.4% downside and 40.4% base-case downside at USD 131.53; medium
+  confidence, valuation, timing, and unquantified Anduril materiality block conviction treatment.
+
+- Published investor decision snapshot `decision_85455c3ec0d988b089b9`.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `local-20260727-daily-all-05`.
+
+- Revalidated [[securities/security_4b61970aa8f574446819|GE Vernova]] against its SEC-filed Q2 2026
+  Form 10-Q and the 2026-07-27 market and FX refresh. Power and Electrification demand, margins,
+  cash, balance-sheet strength, and liquidity support baseline eligibility, but bounded 12-month
+  scenarios imply 19.2% downside and only 1.9% base-case upside at USD 996.57; medium confidence,
+  cash normalization, valuation, and timing block conviction treatment.
+
+- Revalidated [[securities/security_a9eb9838940ef5ceaa0c|Fluence Energy]] against its SEC-filed Q2
+  2026 results exhibit and the 2026-07-27 market and FX refresh. Record backlog and revenue guidance
+  support direct storage exposure, but bounded 12-month scenarios imply 48.8% downside and only 2.2%
+  base-case upside at USD 13.51; negative cash conversion, medium confidence, valuation, and timing
+  block conviction treatment.
+
+- Revalidated [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] against its issuer-published
+  2025 full-year financial results, Q2 2026 production results, and the 2026-07-27 market and FX
+  refresh. Oyu Tolgoi is ramping and group output is growing, but free cash flow fell and net debt
+  rose in 2025. Bounded 12-month scenarios imply 27.2% downside and 5.4% base-case downside at USD
+  91.95; medium confidence, cyclical normalization, valuation, timing, and the pending relationship
+  review block conviction treatment.
+
+- Revalidated [[securities/security_6f9a1450edceb9307c9a|Arista Networks]] against its SEC-filed
+  Q1 2026 Form 10-Q and the 2026-07-27 market and FX refresh. AI-networking growth, margins, cash
+  generation, balance-sheet strength, and liquidity support baseline eligibility, but bounded
+  12-month scenarios imply 43.8% downside and 15.7% base-case downside at USD 170.76; medium
+  confidence, concentration, valuation, timing, and the pending relationship review block
+  conviction treatment.
+
+- Revalidated [[securities/security_4627aea1bf7d8943d3d8|Sigma Lithium]] against its SEC-filed Q1
+  2026 MD&A, July production and environmental update, and the 2026-07-27 market and FX refresh.
+  Second-quarter output beat guidance, but March liquidity, negative working capital, going-concern
+  disclosure, material control weaknesses, unresolved funding, and no supportable valuation make
+  the low-confidence security ineligible; no strategy was queued.
+
+- Published investor decision snapshot `decision_9670681da3b5f418e379`.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `local-20260727-daily-all-06`.
+
+- Revalidated [[securities/security_37ddcbdaad296ad831f2|Coinbase]] against its SEC-filed Q1 2026
+  Form 10-Q, the latest July management-transition Form 8-K, and the 2026-07-27 market and FX
+  refresh. Stablecoin growth and operating cash remain positive, but trading cyclicality, a GAAP
+  loss, counterparty concentration, custody obligations, dilution, and an unsupported downside-aware
+  valuation make the medium-confidence security ineligible; no strategy was queued.
+
+- Revalidated [[securities/security_7ca095d63423c55a90e3|Rocket Lab]] against its SEC-filed Q1
+  2026 Form 10-Q and the 2026-07-27 market and FX refresh. Revenue, backlog, margins, balance-sheet
+  liquidity, and trading liquidity support baseline comparison, but bounded 12-month scenarios imply
+  79.3% downside and 56.9% base-case downside at USD 66.94; Neutron, cash burn, dilution,
+  concentration, valuation, timing, and the pending relationship review block conviction treatment.
+
+- Revalidated [[securities/security_f2b9760d847b2ba59324|Enphase Energy]] against its SEC-filed Q1
+  2026 Form 10-Q and the 2026-07-27 market and FX refresh. Net-cash resilience, positive quarterly
+  cash generation, direct product exposure, and trading liquidity remain strengths, but contracting
+  US sell-through, policy-timed revenue, tariffs, medium confidence, and the absence of a supportable
+  downside-aware valuation make the current assessment ineligible; no strategy was queued.
+
+- Revalidated [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]] against its
+  SEC-filed Q1 2026 Form 10-Q and the 2026-07-27 market and FX refresh. Early clinical milestones and
+  cash runway into early 2028 are encouraging, but clinical translation, continued losses, likely
+  capital needs, dilution, and the absence of a supportable pipeline valuation make the
+  low-confidence assessment ineligible; no strategy was queued.
+
+- Revalidated [[securities/security_18a3ab0ee6086ee85d0f|Eaton]] against its SEC-filed Q1 2026 Form
+  10-Q and the 2026-07-27 market and FX refresh. Electrical demand, margins, positive operating cash
+  flow, and liquidity support baseline eligibility, but acquisition leverage, concentration, and
+  bounded 12-month values of USD 248.64 downside and USD 320.00 base versus the USD 398.64 mark
+  block conviction treatment; no strategy was queued.
+
+- Published investor decision snapshot `decision_92141fd14fdcbfd70916`.
+
+- Generated canonical [[daily-reports/daily-report_20260727]] for run `local-20260727-daily-all-07`.
+
+- Revalidated [[securities/security_6ad1af8d10d6276a0221|Southern Copper]] against its freshly
+  registered Q1 2026 issuer results and the 2026-07-27 market and FX refresh. Reserve life, cash
+  generation, and liquidity support baseline comparison, but bounded 12-month scenarios imply
+  40.0% downside and 22.9% base-case downside at USD 179.32; lower production, by-product
+  sensitivity, jurisdiction, project execution, valuation, and timing block conviction treatment.
+
+- Revalidated [[securities/security_fb87fac302a5446a1ced|Lithium Americas]] against its freshly
+  registered Q1 2026 Form 10-Q and the 2026-07-27 market and FX refresh. Thacker Pass construction,
+  strategic funding, and trading liquidity are tangible, but the pre-revenue common equity lacks a
+  supportable ownership-, funding-, dilution-, ramp-, and lithium-price-adjusted valuation. The
+  low-confidence assessment is ineligible with `valuation_unsupported`; no strategy was queued.
+
+- Revalidated [[securities/security_2dbe878dfc899d7ee867|Freeport-McMoRan]] against its SEC-filed Q2
+  2026 results and the 2026-07-27 market and FX refresh. Current margins, cash generation,
+  balance-sheet capacity, and liquidity support baseline comparison, but bounded 12-month scenarios
+  imply 48.0% downside and 24.5% base-case downside at USD 62.72; Grasberg normalization,
+  Indonesian terms, valuation, timing, and the pending relationship review block conviction
+  treatment.
+
+- Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its SEC-filed Q2 2026 Form
+  10-Q, issuer results, and the 2026-07-27 market and FX refresh. Backlog, segment growth, cash
+  generation, and liquidity support baseline comparison, but bounded 12-month scenarios imply
+  35.0% downside and 17.9% base-case downside at USD 218.42; engine remediation, leverage, contract
+  execution, valuation, overbought timing, and the absent accepted relationship block conviction
+  treatment.
+
+- Revalidated [[securities/security_9d4049ed6669a52815d6|SQM ADS]] against its SEC-filed Q1 2026
+  results and the 2026-07-27 market refresh. Lithium price, volume, earnings, liquidity, and trading
+  liquidity recovered, but the USD 68.79 ADS lacks a supportable normalized valuation after Chilean
+  state take, partnership attribution, capex, minority interests, and cyclicality. The medium-
+  confidence assessment is ineligible with `valuation_unsupported`; no strategy was queued.
+
+## 2026-07-28
+
+- Published investor decision snapshot `decision_ff7c9a0be5aa5abaf344`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260727-daily-all-08`.
+
+- Revalidated [[securities/security_22c2b9d782a62d7a9b86|Atkore]] against its SEC-filed fiscal Q2
+  2026 Form 10-Q, issuer results, June litigation update, and the 2026-07-27 market and FX refresh.
+  Electrical volume and maintained guidance support baseline comparison, but bounded 12-month
+  scenarios imply 32.9% downside and only 3.2% base-case upside at USD 75.29; pricing lag, weak cash
+  conversion, settlement cash use, valuation, and timing block conviction treatment.
+
+- Revalidated [[securities/security_c120e9f26ebb6159adf9|ABB]] against its issuer-published Q2 2026
+  results, current ADR identity data, and the 2026-07-27 market and FX refresh. Orders, margins, cash
+  conversion, balance-sheet strength, and liquidity support baseline comparison, but bounded
+  12-month scenarios imply 33.2% downside and 11.9% base-case downside at USD 96.97; the Robotics
+  disposal, Rotork integration, OTC instrument, valuation, timing, and pending relationship review
+  block conviction treatment.
+
+- Revalidated [[securities/security_2c779e81c27b78c556bb|Ternium]] against its SEC-filed Q1 2026
+  results, 8 July sustainability filing, and the 2026-07-27 market and FX refresh. Pesquería remains
+  a tangible regional-capacity investment, but the later filing moved DRI-EAF startup to early 2027
+  from the Q1 before-year-end target. Bounded 12-month scenarios imply 48.9% downside and 8.7%
+  base-case downside at USD 47.74; schedule, capex, cash conversion, cyclicality, valuation, timing,
+  and the pending relationship review block conviction treatment.
+
+- Revalidated [[securities/security_66cdcf90aac0d83e76f3|Albemarle]] against its SEC-hosted Q1
+  2026 results exhibit and the 2026-07-27 market and FX refresh. Pricing, volumes, cash conversion,
+  leverage, and liquidity improved, but management's wide commodity scenarios do not support
+  probability-weighted common-equity downside and base values after contract lag, tax, terminal-
+  multiple, and mandatory-convertible assumptions. The medium-confidence assessment is ineligible
+  with `valuation_unsupported`; no strategy was queued before the scheduled Q2 release.
+
+- Revalidated [[securities/security_cc4dcb8f002b61dffe00|Parrot]] against its freshly registered Q1
+  2026 business release, 2025 full-year results, and the 2026-07-27 market refresh. Micro-UAV growth,
+  procurement access, gross margin, and recent break-even evidence are improving, but full-year
+  losses and cash burn persist and the EUR 9.65 share lacks a supportable downside-aware valuation
+  without diluted-share, order-value, concentration, and segment-margin inputs. The medium-
+  confidence assessment is ineligible with `valuation_unsupported`; no strategy was queued before
+  the scheduled July 31 half-year release.
+
+- Published investor decision snapshot `decision_adcb38ada858fcf493c3`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-09`.
+
+- Revalidated [[securities/security_8472507d7d320aa388a7|CrowdStrike]] against its SEC-filed fiscal
+  Q1 2027 Form 10-Q, SEC-hosted results exhibit, and the 2026-07-27 market and FX refresh. ARR,
+  platform adoption, cash generation, balance-sheet strength, and liquidity support baseline
+  comparison, but dilution-aware 12-month scenarios imply 51.1% downside and 27.1% base-case
+  downside at USD 180.11; GAAP-cost, incident, valuation, timing, and pending relationship review
+  block conviction treatment.
+
+- Accepted [[relationships/relationship_def43e5b4e13577e2b99|the causal relationship]] from
+  [[ideas/idea_critical_minerals_copper|structural copper scarcity]] to
+  [[securities/security_2dbe878dfc899d7ee867|Freeport-McMoRan]]. Direct copper sales, Q2 realized
+  pricing, unit costs, and operating cash flow support high positive sensitivity, while production
+  recovery, capex, Indonesian terms, minority interests, and valuation remain explicit limits. No
+  strategy follow-up was created because the current base and downside values remain below market.
+
+- Accepted [[relationships/relationship_297f9e36fb4e93a808e8|the causal relationship]] from
+  [[ideas/idea_commercial_space_infrastructure|commercial space infrastructure]] to
+  [[securities/security_7ca095d63423c55a90e3|Rocket Lab]]. Launch Services and Space Systems
+  revenue plus backlog support high positive sensitivity, while contract conversion, mission and
+  Neutron execution, cash burn, dilution, concentration, and valuation remain explicit limits. No
+  strategy follow-up was created because the current base and downside values remain far below
+  market.
+
+- Accepted [[relationships/relationship_d9c8f578040386a487be|the causal relationship]] from
+  [[ideas/idea_digital_attention_gaming_ecosystems|digital attention, gaming, and consumer
+  ecosystems]] to [[securities/security_c9a37d277445869a8809|Roblox]]. Users, hours, payers,
+  bookings, long-tail content, and free cash flow support high positive sensitivity, while safety
+  interventions, creator and infrastructure costs, losses, dilution, and valuation keep confidence
+  medium. No strategy follow-up was created because the current base and downside values remain
+  below market.
+
+- Accepted [[relationships/relationship_871e21ff73620ab8eb14|the causal relationship]] from
+  [[ideas/idea_critical_minerals_lithium|the lithium cycle]] to
+  [[securities/security_66cdcf90aac0d83e76f3|Albemarle]]. Energy Storage realized pricing,
+  volume, adjusted EBITDA, and operating cash flow support high positive sensitivity, while
+  contract lag, inventory timing, supply response, capex, tax, leverage, dilution, and unsupported
+  normalized valuation keep confidence medium. No strategy follow-up was created before the
+  scheduled Q2 release.
+
+- Published investor decision snapshot `decision_7566c9b27a2daa46751e`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-10`.
+
+- Accepted [[relationships/relationship_ad2f37b49980dbc73a08|the causal relationship]] from
+  [[ideas/idea_critical_minerals_lithium|the lithium cycle]] to
+  [[securities/security_fb87fac302a5446a1ced|Lithium Americas]]. Thacker Pass provides direct,
+  high-sensitivity development-stage exposure to future lithium demand and pricing, while 62%
+  ownership, remaining capex, DOE and GM terms, schedule, commissioning, warrants, dilution, and
+  unsupported common-equity valuation keep confidence medium. No strategy follow-up was created.
+
+- Accepted [[relationships/relationship_510158d3d515d91d5c14|the causal relationship]] from
+  [[ideas/idea_nearshoring_friendshoring_manufacturing|nearshoring and friendshoring manufacturing]]
+  to [[securities/security_2c779e81c27b78c556bb|Ternium]]. Pesquería capex and downstream ramp-up
+  provide direct positive exposure to regional steel demand, while the revised early-2027 DRI-EAF
+  startup, undisclosed utilization and returns, working-capital absorption, cyclicality, non-Mexican
+  operations, and adverse valuation keep sensitivity and confidence medium. No strategy follow-up
+  was created.
+
+- Published investor decision snapshot `decision_efa75b7ffa1f0b7d9d41`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-12`.
+
+- Accepted [[relationships/relationship_392da6d90e7c969945a2|the causal relationship]] from
+  [[ideas/idea_critical_minerals_copper|structural copper scarcity]] to
+  [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]]. Oyu Tolgoi's ramp, copper guidance, and
+  cost trajectory support positive exposure, while iron-ore dominance, lower quarterly group
+  copper output, project spending, leverage, commodity diversification, and adverse current
+  valuation keep sensitivity and confidence medium. No strategy follow-up was created before the
+  imminent half-year results.
+
+- Accepted [[relationships/relationship_9e7b4700174908755cbc|the causal relationship]] from
+  [[ideas/idea_precision_biology_healthcare_automation|precision biology and healthcare automation]]
+  to [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]]. Computational
+  discovery, biological data, automated experimentation, and platform-derived programs provide
+  direct high sensitivity, while early clinical translation, immaterial revenue, operating losses,
+  likely financing, dilution, and unsupported valuation keep confidence low. No strategy follow-up
+  was created.
+
+- Accepted [[relationships/relationship_7e9fd9486e494dd05bb5|the causal relationship]] from
+  [[ideas/idea_sovereign_small_drone_supply_chains|sovereign small-drone and trusted-component
+  supply chains]] to [[securities/security_cc4dcb8f002b61dffe00|Parrot]]. Professional micro-UAV
+  revenue, ANAFI UKR production, institutional demand, and trusted procurement access support high
+  positive sensitivity, while undisclosed award value, customer concentration, component
+  provenance, durable cash conversion, valuation, and trading depth keep confidence medium. No
+  strategy follow-up was created before the scheduled half-year release.
+
+- Accepted [[relationships/relationship_e5f55616b9beaf661080|the causal relationship]] from
+  [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking, and
+  hyperscaler monetization]] to [[securities/security_6f9a1450edceb9307c9a|Arista Networks]].
+  High-speed Ethernet products, Q1 revenue growth, margins, operating cash flow, and liquidity
+  support high positive sensitivity, while customer concentration, architecture substitution,
+  qualification, supply, purchase commitments, and adverse current valuation keep confidence
+  medium. No strategy follow-up was created before Q2 primary evidence.
+
+- Published investor decision snapshot `decision_abe4e8dbe73c4749c816`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-13`.
+
+- Accepted [[relationships/relationship_1655ac715c33506ec7da|the causal relationship]] from
+  [[ideas/idea_defense_aerospace|the defense and aerospace replenishment cycle]] to
+  [[securities/security_59304f90c440def31dc5|RTX]]. Defense backlog, Raytheon program volume,
+  segment margin expansion, and group cash generation support positive exposure, while commercial
+  aerospace diversification, Pratt remediation, fixed-price execution, leverage, and adverse
+  current valuation keep common-share sensitivity and confidence medium. No strategy follow-up was
+  created.
+
+- Accepted [[relationships/relationship_f2efab6050df0edcb762|the causal relationship]] from
+  [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]] to
+  [[securities/security_37ddcbdaad296ad831f2|Coinbase]]. Transaction, stablecoin, subscription,
+  custody, institutional, and on-chain platform economics provide direct high positive sensitivity,
+  while crypto cyclicality, rate and partner exposure, counterparty concentration, custody risk,
+  stock-based compensation, dilution, and unsupported valuation keep confidence medium. No strategy
+  follow-up was created before Q2 primary evidence and a downside-aware valuation.
+
+- Accepted [[relationships/relationship_87b95f713a902d531f2f|the causal relationship]] from
+  [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] to
+  [[securities/security_18a3ab0ee6086ee85d0f|Eaton]]. Data-centre orders, electrical backlog,
+  segment revenue, margins, and operating cash flow support high positive sensitivity, while
+  customer concentration, capacity execution, acquisitions, leverage, working capital, order
+  normalization, and adverse current valuation keep confidence medium. No strategy follow-up was
+  created before Q2 primary evidence and a valuation that meets the margin-of-safety gate.
+
+- Accepted [[relationships/relationship_228f56aa5d91f3688b67|the causal relationship]] from
+  [[ideas/idea_cybersecurity_geopolitical_continuity|cybersecurity resilience and geopolitical
+  continuity]] to [[securities/security_8472507d7d320aa388a7|CrowdStrike]]. Subscription revenue,
+  ARR, net-new ARR, module adoption, and free cash flow support high positive sensitivity, while
+  competition, platform bundling, incident trust, renewal quality, GAAP costs, dilution, and
+  adverse current valuation keep confidence medium. No strategy follow-up was created before the
+  scheduled fiscal Q2 review and a valuation that meets the margin-of-safety gate.
+
+- Accepted [[relationships/relationship_c829dae21648bb133cc7|the causal relationship]] from
+  [[ideas/idea_ai_native_drug_discovery|AI-native drug discovery]] to
+  [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]]. Computational models,
+  proprietary biological data, automated experiments, and platform-derived clinical programs
+  support direct high positive sensitivity, while unproven clinical translation, immaterial
+  revenue, operating losses, likely financing, dilution, and unsupported valuation keep confidence
+  low. No strategy follow-up was created.
+
+- Published investor decision snapshot `decision_43fbf8fcb3a4c732d9b2`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-14`.
+
+- Accepted [[relationships/relationship_9773364a04293a4febaf|the causal relationship]] from
+  [[ideas/idea_critical_minerals_lithium|the lithium cycle]] to
+  [[securities/security_9d4049ed6669a52815d6|SQM ADS]]. Lithium realized pricing, volume,
+  gross-profit contribution, earnings, and current operating breadth support high positive
+  sensitivity, while Chilean state take, partnership attribution, permits, conversion ramp, capex,
+  debt, minority interests, cyclicality, and unsupported normalized valuation keep confidence
+  medium. No strategy follow-up was created before Q2 primary evidence.
+
+- Rejected [[relationships/relationship_250194f6a9e3a1817632|the proposed public-proxy
+  relationship]] from [[ideas/idea_anduril_product_company_disruption|Anduril product-company
+  disruption]] to [[securities/security_bdc2f87dadf134760c3a|Palantir Technologies]]. Warp Speed
+  customer or partner status and joint TITAN participation establish a possible positive channel,
+  but no current source quantifies Anduril-derived Palantir revenue, margin, contract duration,
+  concentration, or cash flow. Sensitivity and confidence are low, the separate Army procurement
+  ceiling is neither obligated nor Palantir revenue, and no strategy follow-up was created.
+
+- Rejected [[relationships/relationship_afac7205cd7e09800edf|the proposed robotics and embodied-AI
+  relationship]] from [[ideas/idea_humanoid_robotics_embodied_ai_components|humanoid robotics and
+  embodied-AI components]] to [[securities/security_c120e9f26ebb6159adf9|ABB]]. The historical
+  Robotics channel is causal and positive, but ABB expects about USD 4.8 billion of net sale
+  proceeds in the second half of 2026, retained embodied-AI economics are unquantified, and both
+  sensitivity and confidence are low. No strategy follow-up was created.
+
+- Accepted [[relationships/relationship_670ed88c8e4616316a19|the causal relationship]] from
+  [[ideas/idea_critical_minerals_lithium|the lithium cycle]] to
+  [[securities/security_4627aea1bf7d8943d3d8|Sigma Lithium]]. Direct lithium-concentrate revenue,
+  EBITDA, and production support high positive sensitivity, while acute liquidity, debt, negative
+  working capital, receivable collection, controls, environmental proceedings, expansion funding,
+  and unsupported valuation keep confidence medium and the security ineligible. No strategy
+  follow-up was created.
+
+- Accepted [[relationships/relationship_cbdd07edda84994325d6|the causal relationship]] from
+  [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] to
+  [[securities/security_4b61970aa8f574446819|GE Vernova]]. Power and Electrification orders,
+  backlog, data-centre demand, margins, and cash generation support high positive sensitivity,
+  while project schedules, customer concentration, backlog quality, working-capital normalization,
+  Wind execution, capacity investment, acquisition integration, and adverse current valuation keep
+  confidence medium. No strategy follow-up was created.
+
+- Published investor decision snapshot `decision_97b13353ecb30f4ebff2`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-15`.
+
+- Accepted [[relationships/relationship_9befaccc50d8cd94372b|the causal relationship]] from
+  [[ideas/idea_critical_minerals_copper|critical minerals and structural copper scarcity]] to
+  [[securities/security_6ad1af8d10d6276a0221|Southern Copper]]. Direct copper revenue, margins,
+  operating cash flow, reserves, and funded growth support high positive sensitivity, while lower
+  production, grades, recoveries, by-product credits, project spending, jurisdiction, and current
+  valuation keep confidence medium. No strategy follow-up was created because the bounded base and
+  downside scenarios remain below the market mark.
+
+- Ingested [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752|Albemarle's
+  24 July RSI-oversold transition]] into [[securities/security_66cdcf90aac0d83e76f3|the maintained
+  Albemarle review]]. The 18.47% 25 June–24 July decline corroborates weak momentum and timing risk,
+  but does not explain the move, establish intrinsic value, or remove the valuation blocker. No
+  follow-up operation was created because the scheduled Q2 review remains the bounded next step.
+
+- Ingested [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5|RTX's 24 July
+  RSI-overbought transition]] into [[securities/security_59304f90c440def31dc5|the maintained RTX
+  review]]. The 13.35% 25 June–24 July gain corroborates strong momentum and near-term entry risk,
+  but does not explain the move, establish intrinsic value, or independently support a short or
+  other paper trade. No follow-up operation was created because the current fundamental review,
+  accepted relationship, and valuation gates already bound the next decision.
+
+- Ingested [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee|Ternium's
+  24 July upper-Bollinger transition]] into [[securities/security_2c779e81c27b78c556bb|the maintained
+  Ternium review]]. The 4.65% 25 June–24 July gain and small 0.38% band exceedance corroborate
+  positive near-term momentum but do not explain the move, establish intrinsic value, or override
+  the negative base-case upside, commissioning, and cash-conversion gates. No follow-up operation
+  was created because the accepted relationship and scheduled Q2 review already bound the next
+  decision.
+
+- Ingested [[inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e|Sigma Lithium's
+  24 July RSI-oversold transition]] into [[securities/security_4627aea1bf7d8943d3d8|the maintained
+  Sigma Lithium review]]. The 20.74% 25 June–24 July decline corroborates weak momentum and near-term
+  risk pressure, but does not explain the move, establish intrinsic value, or override the acute
+  liquidity, controls, funding, and valuation blockers. No follow-up operation was created because
+  the scheduled Q2-accounts or financing review remains the bounded next step.
+
+- Ingested [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101|RTX's
+  strengthened 24 July RSI-overbought observation]] into
+  [[securities/security_59304f90c440def31dc5|the maintained RTX review]]. The refreshed USD 212.79
+  close, 14.04% 25 June–24 July gain, and trigger-strength increase to 0.1347 refine the intensity
+  of the already-recorded overbought condition, but do not establish a separate catalyst, intrinsic
+  value, short thesis, or paper trade. No follow-up operation was created because the fresher 27
+  July valuation and timing assessment remains controlling.
+
+- Published investor decision snapshot `decision_d579d925b69d7b4ada51`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-16`.
+
+- Ingested [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910|Lithium Americas'
+  24 July RSI-oversold transition]] into [[securities/security_fb87fac302a5446a1ced|the maintained
+  Lithium Americas review]]. The 26.45% 25 June–24 July decline corroborates weak momentum and near-
+  term timing risk, but does not explain the move, establish intrinsic value, or override the
+  financing, dilution, construction, and valuation blockers. No follow-up operation was created
+  because the scheduled quarterly construction and funding review remains the bounded next step.
+
+- Ingested [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae|RTX's
+  24 July upper-Bollinger transition]] into [[securities/security_59304f90c440def31dc5|the maintained
+  RTX review]]. The 13.35% 25 June–24 July gain and 1.73% band exceedance corroborate strong
+  breakout-like momentum and near-term entry risk, but do not explain the move, establish intrinsic
+  value, or independently support a short or other paper trade. No follow-up operation was created
+  because the existing fundamental review, accepted relationship, and valuation gates already bound
+  the next decision.
+
+- Ingested [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b|Ternium's
+  refreshed 24 July upper-Bollinger observation]] into
+  [[securities/security_2c779e81c27b78c556bb|the maintained Ternium review]]. The packet's USD 47.30
+  close, 4.25% 25 June–24 July gain, and 0.10% band exceedance corroborate the earlier small breach
+  while preserving the differing USD 47.48 close and 0.38% exceedance from the first captured
+  snapshot. Neither observation explains the move, establishes intrinsic value, or overrides the
+  negative base-case upside, commissioning, and cash-conversion gates. No follow-up operation was
+  created because the accepted relationship and scheduled Q2 review already bound the next decision.
+
+- Ingested [[inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e|Enphase
+  Energy's validated 24 July lower-Bollinger packet]] as durable provenance for the existing
+  [[securities/security_f2b9760d847b2ba59324|Enphase opportunity review]]. The packet's 22.262229%
+  25 June–24 July decline, USD 36.70 close, and marginal 0.04375% lower-band breach corroborate the
+  recorded risk classification but add no price explanation, catalyst, intrinsic-value evidence, or
+  paper-trade support. No follow-up operation was created because the scheduled post-Q2 revalidation
+  remains the single bounded next step.
+
+- Published investor decision snapshot `decision_234befde24e3c3811384`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-17`.
+
+- Ingested [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70|RTX's
+  strengthened 27 July upper-Bollinger observation]] into
+  [[securities/security_59304f90c440def31dc5|the maintained RTX review]]. The USD 218.42 close,
+  16.19% 26 June–27 July gain, and trigger-strength increase to 0.0286 from 0.0153 corroborate
+  stronger near-term momentum and entry risk, but do not explain the move, establish intrinsic
+  value, or support a short or other paper trade. No follow-up operation was created because the
+  current fundamental review, accepted relationship, and valuation gates already bound the next
+  decision.
+
+- Ingested [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6|RTX's
+  strengthened 27 July RSI-overbought observation]] into
+  [[securities/security_59304f90c440def31dc5|the maintained RTX review]]. The USD 218.42 close,
+  16.19% 26 June–27 July gain, and trigger-strength increase to 0.2458 from 0.1347 corroborate
+  stronger near-term momentum and entry risk, but do not explain the move, establish a catalyst or
+  intrinsic value, or support a short or other paper trade. No follow-up operation was created
+  because the current fundamental review, accepted relationship, and valuation gates already bound
+  the next decision.
+
+- Published investor decision snapshot `decision_e8e73cbd5713d762ce81`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-18`.
+
+- Published investor decision snapshot `decision_c99d743f03653f3d6660`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-19`.
+
+- Published investor decision snapshot `decision_b51f8269b759c4b8ec5b`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-20`.
+
+- Created [[strategies/strategy_bd005fc3733b1475b6f9|the Intuitive Surgical bounded baseline
+  allocation]] for allocation plan `allocation_plan_a0a535a5004d1d7ce414`. The 2.2% long-equity
+  target reflects a score of 63 above the cash hurdle while preserving limited base upside, 23.2%
+  downside, weak timing, and insufficient diversification as soft gaps. Created time-bounded open
+  signal `signal_13e72675d84a33549138` and queued one separate paper-order review; no order, fill,
+  accounting, portfolio, performance, or allocation state was changed.
+
+- Published investor decision snapshot `decision_11dacafd86a94a9db58f`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-21`.
+
+- Updated [[strategies/strategy_bd005fc3733b1475b6f9|the Intuitive Surgical bounded baseline
+  allocation]] for current allocation plan `allocation_plan_02b52e8899b55922bf4e`. The unchanged
+  assessment still supports only a 2.2% lower-conviction long-equity target with limited base upside,
+  23.2% downside, weak timing, and insufficient diversification. Created time-bounded open signal
+  `signal_14939473c94cb7b9b567` and queued exactly one separate paper-order review; no order, fill,
+  accounting, portfolio, performance, or allocation state was changed.
+
+- Published investor decision snapshot `decision_1f85ddd62c023ff0b542`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-23`.
+
+- Published investor decision snapshot `decision_5ab4f4ea8da6549490d7`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-24`.
+
+- Published investor decision snapshot `decision_0e54c41b1afc3650f796`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-25`.
+
+- Updated [[strategies/strategy_bd005fc3733b1475b6f9|the Intuitive Surgical bounded baseline
+  allocation]] for current plan `allocation_plan_8859abf5cf5708b35855`, which raises the target to
+  4.39% after a 2.2% pending weight. The lower-conviction thesis and valuation, timing, and
+  diversification gaps remain unchanged. No new signal or follow-up was created because the
+  canonical `execute_strategy` payload cannot represent the plan's required `increase` action; the
+  existing pending paper order and all accounting state remain unchanged.
+
+- Published investor decision snapshot `decision_6d7776e667c20fbf174d`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-26`.
+
+- Revalidated [[strategies/strategy_bd005fc3733b1475b6f9|the Intuitive Surgical bounded baseline
+  allocation]] for current plan `allocation_plan_8859abf5cf5708b35855`. The unchanged assessment
+  still supports only the 4.39% lower-conviction target after 2.2% pending exposure, with limited
+  base upside, 23.2% downside, weak timing, and insufficient diversification. Applied the corrected
+  increase-to-open signal lifecycle with signal `signal_98939c5cb11dd6d9d2ae` and queued exactly one
+  separate deterministic paper-order review, `01KYKX54MRDBWHGFKQERB0YG2Q`; no order, fill,
+  accounting, portfolio, performance, or allocation state was changed.
+
+- Published investor decision snapshot `decision_0fe120e62aba83d1de09`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-27`.
+
+- Corrected [[strategies/strategy_bd005fc3733b1475b6f9|the Intuitive Surgical baseline
+  strategy]] risk ceiling to the configured 5% maximum-position cap after the current plan's
+  rounded 4.39% display weight rejected its exact whole-share target. The allocation plan remains
+  the sole sizing authority; no target, signal, order, fill, or accounting state was enlarged by
+  this repair.
+
+- Published investor decision snapshot `decision_1f2821b493e6fd3b58db`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-28`.
+
+- Published investor decision snapshot `decision_55f99cf865416f0c19b8`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-29`.

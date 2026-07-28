@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_c829dae21648bb133cc7",
+  "idea_id": "idea_ai_native_drug_discovery",
+  "security_id": "security_ed7d5b616a196969c815",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "AI models trained on Recursion's biological and chemical data, coupled with automated wet-lab experiments, can shorten candidate-selection loops and generate proprietary drug programs; Recursion can capture value through owned-pipeline economics and partner milestones only if candidates survive clinical and regulatory validation and the resulting value exceeds operating burn, data commitments, financing, and dilution.",
+  "sensitivity": "high",
+  "confidence": "low",
+  "catalyst": "Blinded REC-4881 efficacy and safety data, further REC-1245 dose-escalation evidence, clear FDA development paths, repeatable partner milestones, disclosed improvements in discovery cycle time or success rates, and operating burn below guidance without financing that overwhelms per-share value.",
+  "invalidation": "Platform-derived programs fail safety or efficacy tests; discovery timelines, costs, or clinical success do not improve versus relevant baselines; candidates are repeatedly deprioritized; partnership economics remain immaterial; pharma internalizes the workflow; data obligations consume capital without measurable output; or financing and dilution absorb the platform's enterprise value.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_c829dae21648bb133cc7.md",
+  "last_reviewed_at": "2026-07-28T03:07:09Z",
+  "next_review_at": "2026-08-10T12:00:00Z"
+}

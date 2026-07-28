@@ -1,1 +1,2 @@
 strategy_id,leg_id,action,side,instrument_type,security_id,provider_contract_id,option_type,expiry,strike,quantity,contract_multiplier,order_type,limit_price,currency
+strategy_bd005fc3733b1475b6f9,leg_isrg_equity,buy,long,equity,security_1f9cce545ede94cd6349,,,,,6,1,market,,USD

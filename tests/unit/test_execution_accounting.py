@@ -29,7 +29,12 @@ from papertrader.models import (
     RiskPosition,
     RiskState,
 )
-from papertrader.orders import cancel_paper_order, create_paper_order, create_signal
+from papertrader.orders import (
+    _whole_target_quantity,
+    cancel_paper_order,
+    create_paper_order,
+    create_signal,
+)
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.risk import assess_order_risk, option_max_loss
 from papertrader.tables import append_unique, contract_by_name, read_table, write_table
@@ -205,6 +210,63 @@ def _order_row(policy: str, *, limit: str = "") -> dict[str, str]:
         "currency": "USD",
         "run_id": "run",
     }
+
+
+def test_new_signal_cancels_older_unordered_signal_for_same_strategy(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    strategy_id = "strategy_signal_supersession"
+    _setup_strategy(
+        sandbox_repository,
+        sandbox_settings,
+        strategy_id,
+        _leg(action="buy", side="long"),
+    )
+    first, _ = create_signal(
+        sandbox_repository,
+        sandbox_settings,
+        strategy_id=strategy_id,
+        signal_type="open",
+        rationale="First bounded entry decision.",
+        market_data_as_of=START,
+        run_id="signal-first",
+        now=START,
+    )
+    second, created = create_signal(
+        sandbox_repository,
+        sandbox_settings,
+        strategy_id=strategy_id,
+        signal_type="open",
+        rationale="Replacement bounded entry decision.",
+        market_data_as_of=START,
+        run_id="signal-second",
+        now=START + timedelta(minutes=1),
+    )
+
+    assert created is True
+    statuses = {
+        row["signal_id"]: row["status"] for row in read_table(sandbox_repository, "signals")
+    }
+    assert statuses == {first: "cancelled", second: "ready"}
+    assert create_signal(
+        sandbox_repository,
+        sandbox_settings,
+        strategy_id=strategy_id,
+        signal_type="open",
+        rationale="Replacement bounded entry decision.",
+        market_data_as_of=START,
+        run_id="signal-second",
+        now=START + timedelta(minutes=2),
+    ) == (second, False)
+
+
+def test_whole_target_quantity_tolerates_decimal_context_roundoff() -> None:
+    price = Decimal("356.8299865722656")
+    fx_rate = Decimal("0.8794000148773193")
+    target_value = Decimal("2196.574068502268102832154989")
+
+    assert _whole_target_quantity(target_value, price * fx_rate) == Decimal("7")
 
 
 def test_next_open_has_no_lookahead_and_applies_directional_slippage(

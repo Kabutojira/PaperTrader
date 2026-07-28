@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYJNRAY8BZJ53TFC3XS4EKHW",
+  "status": "succeeded",
+  "summary": "Classified Parrot's 2026-06-29 through 2026-07-27 lower-Bollinger transition as noise, not a fundamental opportunity or material risk signal. The adjusted close declined only 0.6179% over the exact period and ended 1.6717% below the lower band after no trigger on the prior session. Parrot's primary publication index showed no time-matched issuer release, while the current thesis already records unresolved valuation, order-concentration, component-provenance, and durable cash-conversion gates. No wiki update or follow-up was warranted because a bounded security revalidation is already ready ahead of the half-year evidence checkpoint.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517.md",
+      "claim": "For immutable security_cc4dcb8f002b61dffe00, the deterministic packet fixes the 2026-06-29 through 2026-07-27 period, a -0.0061792398950546552587875625 return, 0.01671748883642404546414836886 trigger strength, entered transition, and source-price hash c2263e45b4275cf5d39d3d86066a789ecda89ef443e08d9871645866c623a134.",
+      "observed_at": "2026-07-27T20:55:09Z",
+      "source_hash": "c2263e45b4275cf5d39d3d86066a789ecda89ef443e08d9871645866c623a134"
+    },
+    {
+      "source": "data/market/prices/security_cc4dcb8f002b61dffe00.csv and data/market/indicators.csv",
+      "claim": "Canonical recomputation matched the packet hash and endpoints: adjusted close moved from EUR 9.710000038146973 to EUR 9.649999618530273; the 2026-07-24 close had no trigger, while the 2026-07-27 close was below the EUR 9.81406616 lower band."
+    },
+    {
+      "source": "Parrot financial-publications index",
+      "claim": "The issuer's 2026 publication section listed its latest financial publication as the 20 May 2026 first-quarter business release and showed no June or July issuer result or other financial publication matching the observation window.",
+      "url": "https://www.parrot.com/en/corporate/financial-publications",
+      "observed_at": "2026-07-27T21:51:40Z"
+    },
+    {
+      "source": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+      "claim": "The current medium-confidence review already incorporates Parrot's Q1 2026 and 2025 primary evidence, identifies professional micro-drone growth, and blocks strategy work on valuation, order concentration, component provenance, and durable cash conversion pending half-year evidence."
+    },
+    {
+      "source": "data/operations/operations_TODO.csv",
+      "claim": "A bounded security revalidation for the same immutable security is already ready as operation 01KYHW5710WP98V55QRM5RBXSQ, with its causal relationship review waiting on that dependency; another follow-up would duplicate active work."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Parrot's 29 June–27 July lower-Bollinger transition was classified as noise: the period decline was only 0.6179%, the breach was weak, no time-matched issuer publication explained it, and an existing bounded security revalidation already covers the next half-year evidence checkpoint."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and processed exactly one running operation without delegation, sub-agents, background work, or a second operation.",
+      "Confirmed the queue row is claimed by local-20260727-daily-all-05 with a live lease and names exactly native llm-wiki plus papertrader-opportunity-research.",
+      "Confirmed the preflight identities, versions, sequential mode, yolo mode, and controller and operation-skill SHA-256 hashes.",
+      "Validated the payload and matched the immutable Parrot identity, exact period endpoints, market-data timestamp, entered transition, and current source-price hash.",
+      "Checked the current primary issuer publication index and found no time-matched fundamental release.",
+      "Confirmed there is no position, live signal, or canonical strategy row for this security and that one bounded security revalidation is already active.",
+      "Made no wiki, queue, issue, trading, accounting, allocation, portfolio, cash, execution, fill, or performance change and created no follow-up.",
+      "Strict schema, queue, wiki, and integrity checks passed."
+    ]
+  }
+}

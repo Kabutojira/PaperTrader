@@ -54,6 +54,24 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "security_research",
         {"argv": ["papertrader", "allocation", "readiness"]},
     )
+    assert _command_allowed(
+        "execute_strategy",
+        {"argv": ["papertrader", "order", "create-baseline", "--request", "request.json"]},
+    )
+    for operation_type in (
+        "wiki_ingest",
+        "opportunity_research",
+        "idea_research",
+        "security_research",
+        "relationship_research",
+        "strategy_research",
+        "execute_strategy",
+    ):
+        assert _path_allowed_for_operation(
+            operation_type,
+            "data/wiki/research-catalog.md",
+            created=False,
+        )
 
 
 def _home(repository: Path, settings: Settings, tmp_path: Path) -> Path:

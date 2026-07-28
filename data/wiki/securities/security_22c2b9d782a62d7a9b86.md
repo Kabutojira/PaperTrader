@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-25"
-updated: "2026-07-25"
-provenance: "Atkore fiscal Q2 2026 results; SEC Form 10-Q for 2026-03-27"
+updated: "2026-07-28"
+provenance: "source_atkr_q2_2026_10q; source_atkr_q2_2026_results; source_atkr_june_2026_litigation_8k"
 security_id: security_22c2b9d782a62d7a9b86
 issuer_id: issuer_24dfad17964141504f03
 confidence: medium
@@ -25,7 +25,9 @@ next_review: "2026-08-15"
 - Provider identity: `ATKR` / `XNYS` / `USD` / equity
 
 The SEC filing confirms the common stock and NYSE listing. This page evaluates the instrument
-through [[ideas/idea_solar_storage_grid_flexibility_reset]], never ticker text alone.
+through [[ideas/idea_solar_storage_grid_flexibility_reset]] and its accepted
+[[relationships/relationship_solar_storage_grid_atkr|causal relationship]], never ticker text
+alone.
 
 ## Business economics
 
@@ -44,6 +46,13 @@ Management maintained fiscal-2026 adjusted EBITDA guidance of USD 340-360 millio
 diluted EPS guidance of USD 5.05-5.55. It also closed plants and divested the HDPE pipe-and-conduit
 and Belgian coatings businesses to narrow the portfolio toward electrical infrastructure.
 
+The latest substantive SEC filing is a 4 June 2026 Form 8-K. It adds a USD 50 million settlement
+with the third putative class in the PVC pipe antitrust litigation, subject to court approval and
+funded from cash on hand. This is incremental to the USD 136.5 million of settlements recognized in
+fiscal Q2. Management said the additional payment was not expected to have a material adverse
+effect on liquidity or leverage metrics, but the combined USD 186.5 million burden remains relevant
+to downside and cash-conversion analysis.
+
 ## Thesis
 
 Atkore has positive sensitivity to grid reinforcement, data-centre construction, and electrical
@@ -60,19 +69,25 @@ portfolio restores pricing discipline and cash conversion without sacrificing sh
 | Consolidated input costs rose USD 82.1 million while selling prices added USD 10.2 million. | Pricing lag is the clearest current disconfirmation of operating leverage. |
 | Electrical adjusted EBITDA margin fell 450 basis points to 14.0%. | Higher volume did not translate into stronger segment economics. |
 | Six-month operating cash flow was negative USD 27.2 million versus positive USD 160.9 million a year earlier. | Working-capital and tax outflows make cash conversion an unresolved gate. |
-| Cash was USD 442.3 million against about USD 760.6 million carrying value of debt. | Liquidity is meaningful, but net debt and a USD 136.5 million litigation settlement reduce flexibility. |
+| Cash was USD 442.3 million against about USD 760.6 million carrying value of debt. | Liquidity is meaningful, but net debt and the combined USD 186.5 million announced settlements reduce flexibility. |
 | Fiscal-2026 adjusted EBITDA guidance was maintained. | Provides a measurable recovery milestone, but it is non-GAAP and not yet delivered. |
 
 Primary evidence: [Atkore fiscal Q2 2026 results](https://investors.atkore.com/investors/news/news-details/2026/Atkore-Inc--Announces-Second-Quarter-2026-Results/default.aspx)
 and the [SEC Form 10-Q for 27 March 2026](https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm).
+The [4 June 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/1666138/000166613826000014/atkr-20260604.htm)
+updates the litigation settlement burden. All three sources were fetched successfully and
+registered on 28 July 2026.
 
 ## Valuation
 
-No supportable valuation range is recorded. The repository does not yet contain a fresh
-deterministic market mark for this newly researched security, and discontinued activities,
-restructuring, litigation, input-cost timing, and portfolio divestitures make trailing GAAP results
-a poor normalised base. A later valuation should use a fresh mark, diluted share count, net debt,
-the cash settlement, and scenario-tested post-divestiture free cash flow.
+The deterministic cache records a USD 75.29 close on 27 July 2026. A bounded 12-month earnings
+scenario uses management's maintained fiscal-2026 adjusted diluted EPS range rather than the
+litigation-distorted GAAP loss. Applying 10 times the USD 5.05 low end gives a USD 50.50 downside
+value, 32.9% below the mark. Applying 14 times the USD 5.55 high end gives a USD 77.70 base value,
+only 3.2% above the mark. The low multiples reflect shrinking adjusted EBITDA, pricing lag, weak
+cash conversion, net debt, portfolio transition, and settlement cash use. This range is suitable
+for comparable ranking, not a precise price target: both the adjusted earnings input and multiple
+remain sensitive to post-divestiture normalization.
 
 ## Catalysts and confirmation
 
@@ -91,7 +106,9 @@ or the post-divestiture portfolio cannot convert maintained guidance into free c
 
 ## Disposition
 
-Status: **watching** with **medium** confidence. Research again by **2026-08-15** after the next
-earnings update or sooner after a material pricing, input-cost, litigation, divestiture, or guidance
-change. No strategy or paper signal is proposed because there is no current deterministic mark or
-supportable valuation range and margin recovery and cash conversion remain unproven.
+Status: **watching** with **medium** confidence and **baseline** allocation eligibility. Research
+again by **2026-08-15** after the next earnings update or sooner after a material pricing,
+input-cost, litigation, divestiture, or guidance change. The current mark and bounded valuation now
+support comparison, but the 3.2% base upside is below the configured 20% margin-of-safety hurdle;
+margin recovery, cash conversion, and post-divestiture normalization remain unproven. No conviction
+strategy or paper signal is justified.

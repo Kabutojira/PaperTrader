@@ -1,0 +1,10 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-12/01KYHW5710C90D1S5BAXB10915/relationship_upsert_request.json"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710C90D1S5BAXB10915",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-12",
+  "validation_version": 1
+}

@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYK9KN0RA5MF0NY9H8SNC0HM",
+  "status": "skipped",
+  "summary": "Skipped an exact fresh duplicate relationship review. The immutable relationship, idea, and security IDs match the unique accepted beneficiary edge completed by operation 01KYHW5710J70PNSC8E3ET3904 less than three hours earlier. That review already used both source references supplied by this payload, records high positive sensitivity and medium confidence, and is current through 2026-08-01T12:00:00Z. No newer source hash, changed catalyst, or contrary evidence was supplied, so repeating the upsert or wiki edits would duplicate fresh work.",
+  "evidence": [
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "The unique row relationship_7e9fd9486e494dd05bb5 joins idea_sovereign_small_drone_supply_chains to security_cc4dcb8f002b61dffe00 as an accepted positive beneficiary edge with high sensitivity and medium confidence. It was last reviewed at 2026-07-28T02:34:11Z, is next due at 2026-08-01T12:00:00Z, and already contains the mechanism, catalyst, invalidation, and canonical relationship-page path."
+    },
+    {
+      "source": "data/operations/operations_history.csv",
+      "claim": "Operation 01KYHW5710J70PNSC8E3ET3904 completed the same bounded relationship review successfully at 2026-07-28T02:37:29Z and accepted the edge using Parrot's professional micro-UAV exposure, ANAFI UKR production, institutional demand, BLUE UAS approval, and NSPA catalogue access while preserving valuation, provenance, cash-conversion, concentration, and liquidity limits."
+    },
+    {
+      "source": "data/runs/local-20260728-daily-all-13/01KYHW5710J70PNSC8E3ET3904/agent_result.json",
+      "claim": "The prior completed manifest cites both source_parrot_q1_2026_business and source_parrot_fy2025_results with the same registered hashes supplied to this refresh, and records that no strategy or follow-up was justified before the July 31 half-year release."
+    },
+    {
+      "source": "source_parrot_q1_2026_business",
+      "claim": "The registered Q1 2026 issuer release was already reviewed for the accepted edge and remains registered as available with unchanged hash 62c7a27a71a37be051fe3771f564e4bb83a589de4e43ef7ce46e0421a65c2772.",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf",
+      "observed_at": "2026-07-28T01:05:38Z",
+      "source_hash": "62c7a27a71a37be051fe3771f564e4bb83a589de4e43ef7ce46e0421a65c2772"
+    },
+    {
+      "source": "source_parrot_fy2025_results",
+      "claim": "The registered 2025 full-year issuer release was already reviewed for the accepted edge and remains registered as available with unchanged hash f5ffe4a4e4fbfa754d62db12cd1a22e009bd236f98e9b611b877ef57d63ebee2.",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+      "observed_at": "2026-07-28T01:05:38Z",
+      "source_hash": "f5ffe4a4e4fbfa754d62db12cd1a22e009bd236f98e9b611b877ef57d63ebee2"
+    },
+    {
+      "source": "data/operations/payloads/01KYK9KN0RA5MF0NY9H8SNC0HM.json",
+      "claim": "The current refresh names the same three immutable endpoint IDs and only the two issuer sources already incorporated by the prior successful review; it supplies no newer evidence reference or changed catalyst."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped a fresh duplicate Parrot relationship refresh: the exact accepted high-sensitivity, medium-confidence edge was completed earlier on 2026-07-28 using both supplied issuer sources and remains current through 2026-08-01; no state, wiki, issue, or follow-up change was needed."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the selected queue row matched operation 01KYK9KN0RA5MF0NY9H8SNC0HM, run local-20260728-daily-all-18, relationship relationship_7e9fd9486e494dd05bb5, the required skill pair, and a live lease.",
+      "PAPER_TRADING_ONLY was true, execution was sequential, and the preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research with no detected injection flags.",
+      "The payload, idea page, security page, relationship page, and canonical row agree on relationship relationship_7e9fd9486e494dd05bb5, idea idea_sovereign_small_drone_supply_chains, and security security_cc4dcb8f002b61dffe00.",
+      "relationships.csv contains exactly one row for both the relationship ID and endpoint pair, and all required causal fields are populated.",
+      "Structured history proves the same review succeeded at 2026-07-28T02:37:29Z; the current payload's two source IDs and hashes were already incorporated, and the next review is not due until 2026-08-01T12:00:00Z.",
+      "Applied the exact-fresh-duplicate skip rule and made no wiki, structured-state, allocation, strategy, signal, order, accounting, portfolio, performance, issue, or follow-up change.",
+      "command_audit.json records exactly the single canonical command listed in commands_run, with exit code 0 and no changed paths.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload-schema, claim, immutable-endpoint, relationship-uniqueness, freshness, required-field, prior-history, and path-safety checks passed."
+    ]
+  }
+}

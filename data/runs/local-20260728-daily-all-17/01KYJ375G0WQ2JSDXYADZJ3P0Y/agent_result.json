@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYJ375G0WQ2JSDXYADZJ3P0Y",
+  "status": "succeeded",
+  "summary": "Ingested Enphase Energy's validated 2026-07-24 lower-Bollinger candidate packet as durable provenance for the maintained security review. The packet corroborates the already-recorded 22.262229% decline from 25 June through 24 July, USD 36.70 close, and marginal 0.04375% lower-band breach. It adds no event explanation, catalyst, intrinsic-value evidence, or paper-trade support, so the existing risk classification, valuation blocker, and scheduled post-Q2 revalidation remain unchanged. Updated the security page provenance and packet link and appended the wiki log; no structured source row or follow-up operation was warranted for this deterministic repository-local inbox packet.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e.md",
+      "claim": "The validated deterministic packet records an ingest-classified lower-Bollinger entry as of 2026-07-24 for 2026-06-25 through 2026-07-24, with adjusted close 36.70000076293945, period return -0.2226222945424699012423885593, trigger strength 0.0004374994294540943008193392947 from zero previously, and source price hash 92c3146da6c6940e7d58b99f1f18861956acbac2fcbdcbfbfe909be3e9df0c96.",
+      "source_hash": "95c46c916f09954ffeb8b581a63872bf6a3678d2e50e005a2a541e536604e3a8"
+    },
+    {
+      "source": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+      "claim": "The maintained Enphase review already classifies the same observation as risk rather than opportunity because the decline is material but the band breach is marginal, no current issuer evidence explains the move, and no supportable fair-value range exists. It now links the validated packet and identifies source_ec7e0dc0a1e4897e9ed2 in provenance without duplicating or changing that judgment."
+    },
+    {
+      "source": "data/wiki/log.md",
+      "claim": "The append-only 2026-07-28 log records this ingestion, its bounded interpretation, and the decision not to create a redundant follow-up because scheduled post-Q2 revalidation remains the single bounded next step."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested Enphase Energy's validated 2026-07-24 lower-Bollinger packet as provenance for the maintained risk review. The 22.262229% 25 June–24 July decline, USD 36.70 close, and marginal 0.04375% lower-band breach do not explain the move, establish intrinsic value, or support a paper trade; no follow-up was created because scheduled post-Q2 revalidation remains controlling."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole running queue row matched operation 01KYJ375G0WQ2JSDXYADZJ3P0Y, run local-20260728-daily-all-17, entity source_ec7e0dc0a1e4897e9ed2, wiki_ingest, and the required llm-wiki and papertrader-wiki-ingest skills, with a live lease through 2026-07-28T04:51:38Z.",
+      "The payload matched the immutable operation, type, entity, source path, and source hash and validated against schemas/operation_payload.schema.json.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three SHA-256 hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local deterministic inbox file, its SHA-256 matched 95c46c916f09954ffeb8b581a63872bf6a3678d2e50e005a2a541e536604e3a8, and its classifier decision was ingest.",
+      "The maintained Enphase page now identifies source_ec7e0dc0a1e4897e9ed2, links the candidate packet, and distinguishes the deterministic momentum observation from price explanation, intrinsic-value evidence, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained Enphase page, and log.md records this ingestion append-only.",
+      "Both audited invocations of papertrader wiki lint --strict returned OK [wiki], including the final post-edit invocation.",
+      "This routed operation changed only the maintained Enphase page and wiki log; it did not edit allocation targets/history, executions, cash, portfolio, fills, or performance.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

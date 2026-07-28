@@ -91,7 +91,7 @@ class Operation:
     last_error: str
 
     @classmethod
-    def from_row(cls, row: Mapping[str, str]) -> Operation:
+    def from_row(cls, row: Mapping[str, str], *, archived: bool = False) -> Operation:
         """Parse and validate one complete active queue record."""
 
         operation_id = row["operation_id"]
@@ -158,7 +158,13 @@ class Operation:
                 raise QueueError(f"running operation {operation_id} requires a claim and lease")
             _validate_run_id(row["claimed_by_run_id"])
         elif row["claimed_by_run_id"] or lease is not None:
-            raise QueueError(f"non-running operation {operation_id} cannot retain a claim or lease")
+            if not (
+                archived and status == "blocked" and row["claimed_by_run_id"] and lease is None
+            ):
+                raise QueueError(
+                    f"non-running operation {operation_id} cannot retain a claim or lease"
+                )
+            _validate_run_id(row["claimed_by_run_id"])
         return cls(
             operation_id=operation_id,
             created_at=created,
@@ -546,6 +552,29 @@ def _recent_success(
     return None
 
 
+def _operation_inputs(repository_root: Path, operation: Operation) -> Mapping[str, object]:
+    relative = _validate_payload_path(operation.payload_path)
+    payload = json.loads(repository_root.joinpath(*relative.parts).read_text(encoding="utf-8"))
+    inputs = payload.get("inputs")
+    if not isinstance(inputs, dict):
+        raise QueueError(f"operation {operation.operation_id} payload inputs must be an object")
+    return inputs
+
+
+def _operation_allocation_plan_id(repository_root: Path, operation: Operation) -> str | None:
+    if operation.operation_type not in {"strategy_research", "execute_strategy"}:
+        return None
+    inputs = _operation_inputs(repository_root, operation)
+    plan_id = inputs.get("allocation_plan_id")
+    if plan_id is None:
+        return None
+    if not isinstance(plan_id, str) or not plan_id:
+        raise QueueError(
+            f"operation {operation.operation_id} allocation_plan_id must be a nonempty string"
+        )
+    return plan_id
+
+
 def prepare_queue(
     repository_root: Path,
     *,
@@ -571,6 +600,17 @@ def prepare_queue(
             raise QueueError("more than one operation has a live lease")
         cyclic = _dependency_cycle(active)
         history = read_table(repository_root, "operations_history")
+        allocation_plan_ids = {
+            row["allocation_plan_id"]
+            for row in read_table(repository_root, "allocation_targets")
+            if row["allocation_plan_id"]
+        }
+        if len(allocation_plan_ids) > 1:
+            raise QueueError("current allocation targets contain multiple plan identities")
+        current_allocation_plan_id = next(iter(allocation_plan_ids), None)
+        signal_statuses = {
+            row["signal_id"]: row["status"] for row in read_table(repository_root, "signals")
+        }
         terminal_by_id = {row["operation_id"]: row["terminal_status"] for row in history}
         active_by_id = {operation.operation_id: operation for operation in active}
         seen_dedupe: dict[str, str] = {
@@ -615,6 +655,49 @@ def prepare_queue(
                     )
                 )
                 continue
+            operation_plan_id = _operation_allocation_plan_id(repository_root, operation)
+            if (
+                operation_plan_id is not None
+                and current_allocation_plan_id is not None
+                and operation_plan_id != current_allocation_plan_id
+            ):
+                terminal.append(
+                    (
+                        operation,
+                        "skipped",
+                        f"superseded_allocation_plan:{current_allocation_plan_id}",
+                    )
+                )
+                continue
+            if operation.operation_type == "execute_strategy":
+                signal_id = _operation_inputs(repository_root, operation).get("signal_id")
+                if not isinstance(signal_id, str) or not signal_id:
+                    raise QueueError(
+                        f"execute operation {operation.operation_id} lacks a signal identity"
+                    )
+                signal_status = signal_statuses.get(signal_id)
+                if signal_status is None:
+                    updated.append(
+                        replace(
+                            operation,
+                            status="blocked",
+                            updated_at=instant,
+                            last_error=f"signal_missing:{signal_id}",
+                        )
+                    )
+                    dispositions.append(
+                        f"{operation.operation_id}:blocked:signal_missing:{signal_id}"
+                    )
+                    continue
+                if signal_status != "ready":
+                    terminal.append(
+                        (
+                            operation,
+                            "skipped",
+                            f"signal_not_ready:{signal_status}",
+                        )
+                    )
+                    continue
             if operation.operation_id in cyclic:
                 updated.append(
                     replace(
@@ -691,7 +774,7 @@ def prepare_queue(
                 and candidate.entity_id == operation.entity_id
                 and candidate.status in {"queued", "ready", "waiting"}
             )
-            if semantic_reviewer is not None and overlaps and operation.status != "ready":
+            if semantic_reviewer is not None and overlaps:
                 disposition = semantic_reviewer.review(operation.to_row(), overlaps)
                 disposition.validate()
                 overlap_ids = {candidate["operation_id"] for candidate in overlaps}
@@ -1043,6 +1126,78 @@ def block_operation(
         )
 
 
+def resolve_blocked_operation(
+    repository_root: Path,
+    *,
+    operation_id: str,
+    run_id: str,
+    terminal_status: str,
+    result_path: str,
+    result_summary: str,
+    terminal_reason: str,
+    now: datetime | None = None,
+) -> None:
+    """Archive an adjudicated blocked result without rewriting queue CSV state by hand."""
+
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    _validate_run_id(run_id)
+    if terminal_status not in {"skipped", "cancelled"}:
+        raise QueueError("blocked operations may resolve only as skipped or cancelled")
+    expected_result = PurePosixPath("data", "runs", run_id, operation_id, "agent_result.json")
+    if PurePosixPath(result_path) != expected_result:
+        raise QueueError(f"invalid blocked result path: {result_path!r}")
+    resolved_result = repository_root / expected_result
+    if resolved_result.is_symlink() or not resolved_result.is_file():
+        raise QueueError(f"blocked result is missing or a symlink: {result_path}")
+    normalized_summary = " ".join(result_summary.split())
+    normalized_reason = " ".join(terminal_reason.split())
+    if not normalized_summary or not normalized_reason:
+        raise QueueError("resolved blocked operation requires a summary and terminal reason")
+    with _queue_lock(repository_root):
+        active = _recover_archived(repository_root, _read_active(repository_root))
+        operation = next(
+            (candidate for candidate in active if candidate.operation_id == operation_id), None
+        )
+        if operation is None:
+            archived = next(
+                (
+                    row
+                    for row in read_table(repository_root, "operations_history")
+                    if row["operation_id"] == operation_id
+                ),
+                None,
+            )
+            expected_retry = {
+                "terminal_status": terminal_status,
+                "result_path": result_path,
+                "result_summary": normalized_summary,
+                "terminal_reason": normalized_reason,
+                "claimed_by_run_id": run_id,
+            }
+            if archived is not None and all(
+                archived[field] == value for field, value in expected_retry.items()
+            ):
+                return
+            if archived is not None:
+                raise QueueError(
+                    f"blocked resolution conflicts with archived operation {operation_id}"
+                )
+            raise QueueError(f"unknown active operation: {operation_id}")
+        if operation.status != "blocked":
+            raise QueueError(f"operation {operation_id} is not blocked")
+        resolved = replace(operation, claimed_by_run_id=run_id)
+        _terminalize(
+            repository_root,
+            active,
+            resolved,
+            terminal_status=terminal_status,
+            completed_at=instant,
+            result_path=result_path,
+            result_summary=normalized_summary,
+            terminal_reason=normalized_reason,
+        )
+
+
 def validate_queue(repository_root: Path) -> list[str]:
     """Return complete active/history/payload/sequentiality validation errors."""
 
@@ -1076,7 +1231,7 @@ def validate_queue(repository_root: Path) -> list[str]:
     for row in history:
         operation_id = row["operation_id"]
         try:
-            operation = Operation.from_row(row)
+            operation = Operation.from_row(row, archived=True)
             completed_at = _canonical_time(row["completed_at"], "completed_at")
             assert completed_at is not None
             if completed_at < operation.updated_at:

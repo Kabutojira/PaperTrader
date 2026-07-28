@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_c120e9f26ebb6159adf9",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "backfill",
+    "research_page": "data/wiki/securities/security_c120e9f26ebb6159adf9.md",
+    "security_id": "security_c120e9f26ebb6159adf9"
+  },
+  "objective": "Revalidate security_c120e9f26ebb6159adf9 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYJMQ5DGC670NPDBYANQMWWE",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

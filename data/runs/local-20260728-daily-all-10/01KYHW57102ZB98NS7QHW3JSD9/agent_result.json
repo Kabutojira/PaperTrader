@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYHW57102ZB98NS7QHW3JSD9",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from commercial space infrastructure to Rocket Lab with high positive sensitivity and medium confidence. Current SEC-filed evidence establishes a direct causal path through Launch Services and Space Systems revenue and backlog, while mission reliability, contract conversion, Neutron execution, customer concentration, cash burn, dilution, and valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created because the current downside and base scenarios remain far below market.",
+  "evidence": [
+    {
+      "source": "source_rklb_q1_2026_10q",
+      "claim": "Rocket Lab's SEC-filed Q1 2026 Form 10-Q reports USD 200.348 million of revenue split between USD 136.685 million of Space Systems and USD 63.663 million of Launch Services, with USD 2.220 billion of backlog. This establishes direct operating exposure to launch, spacecraft, component, and mission-system demand rather than ticker-level correlation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm",
+      "observed_at": "2026-07-27T23:02:27Z",
+      "source_hash": "ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2"
+    },
+    {
+      "source": "source_rklb_q1_2026_10q",
+      "claim": "The same filing records USD 50.332 million of operating cash use, USD 445.607 million of net ATM proceeds, material share issuance, one government customer at 36% of quarterly revenue, and backlog subject to timing, modification, termination, and fixed-price execution risk. These conditions limit confidence in durable common-share value conversion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm",
+      "observed_at": "2026-07-27T23:02:27Z",
+      "source_hash": "ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2"
+    },
+    {
+      "source": "data/wiki/securities/security_7ca095d63423c55a90e3.md",
+      "claim": "The current security assessment uses a validated USD 66.94 mark and bounded 12-month downside and base scenarios 79.3% and 56.9% below market, respectively, so accepting the causal edge does not justify strategy research or a signal."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-10/01KYHW57102ZB98NS7QHW3JSD9/upsert-relationship-rklb.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_297f9e36fb4e93a808e8.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the high-sensitivity, medium-confidence positive beneficiary relationship from commercial space infrastructure to Rocket Lab based on current Launch Services, Space Systems, and backlog evidence; no strategy follow-up was created because cash burn, dilution, execution risk, and valuation remain blocking limits."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260728-daily-all-10/01KYHW57102ZB98NS7QHW3JSD9/upsert-relationship-rklb.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The queue contained exactly one running row for operation 01KYHW57102ZB98NS7QHW3JSD9, claimed by run local-20260728-daily-all-10 with a live lease, matching immutable relationship relationship_297f9e36fb4e93a808e8 and the required skill pair.",
+      "The controller preflight identified llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by content hash, with sequential execution, yolo mode, PAPER_TRADING_ONLY=true, and no detected injection flags.",
+      "The payload validated structurally and its relationship, idea, and security IDs matched the canonical endpoint pages and structured security identity.",
+      "The canonical relationship row is unique for the beneficiary edge and includes direction, mechanism, sensitivity, confidence, catalyst, invalidation, accepted status, page, and review timestamps.",
+      "The audited relationship upsert changed only data/tables/relationships.csv; no allocation, strategy, signal, order, execution, cash, portfolio, fill, or performance state changed through an operation command.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "git diff --check passed for the request artifact, relationship table, relationship page, research catalog, and wiki log."
+    ]
+  }
+}

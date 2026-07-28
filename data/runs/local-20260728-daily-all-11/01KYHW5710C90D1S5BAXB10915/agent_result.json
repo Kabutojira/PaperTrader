@@ -1,0 +1,62 @@
+{
+  "operation_id": "01KYHW5710C90D1S5BAXB10915",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from nearshoring and friendshoring manufacturing capacity to Ternium with medium positive sensitivity and medium confidence. Current SEC-filed evidence shows a direct path through Pesquería capacity investment and downstream ramp-up, while the revised early-2027 DRI-EAF startup, undisclosed utilization and returns, working-capital absorption, steel cyclicality, non-Mexican exposures, and adverse valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_ternium_q1_2026_results",
+      "claim": "Ternium's SEC-filed Q1 2026 results report USD 406 million of capex mainly for Pesquería, downstream cold-rolling and galvanizing facilities entering ramp-up, USD 217 million of operating cash flow after a USD 233 million working-capital build, and USD 327 million of net cash. This supports direct regional-capacity exposure while showing material cash-conversion and balance-sheet counterweights.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm",
+      "observed_at": "2026-07-28T00:50:38Z",
+      "source_hash": "af838871cbdd3ac73d3d9849ebde2ced6f5d7ed190efe18cfc690d6d121bd680"
+    },
+    {
+      "source": "source_ternium_july_2026_sustainability_6k",
+      "claim": "Ternium's SEC-filed 8 July 2026 sustainability update says the Pesquería DRI-EAF steel shop was expected to begin operations in early 2027, later than the Q1 target of before year-end 2026. The later primary disclosure establishes schedule slippage and keeps commissioning an explicit catalyst and invalidation gate.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+      "observed_at": "2026-07-28T00:50:38Z",
+      "source_hash": "5b10e200e156cb6e2c5874519bda9d717d8fae1d327ba90caf4f2cb4993e3089"
+    },
+    {
+      "source": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+      "claim": "The maintained security review records a USD 47.74 paper mark, bounded 48.9% downside and 8.7% base-case downside scenarios, and baseline eligibility only; schedule, unproven capacity returns, cash conversion, cyclicality, valuation, and timing block strategy research."
+    },
+    {
+      "source": "data/wiki/ideas/idea_nearshoring_friendshoring_manufacturing.md",
+      "claim": "The maintained idea defines the causal channel from regional manufacturing qualification to local materials demand and requires operating plants, utilization, margins, free cash flow, workable USMCA rules, and adequate infrastructure rather than relying on announcement counts."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-11/01KYHW5710C90D1S5BAXB10915/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_510158d3d515d91d5c14.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, medium-sensitivity positive beneficiary relationship from nearshoring and friendshoring manufacturing capacity to Ternium based on Pesquería capex and downstream ramp-up; no strategy follow-up was created because commissioning slipped, project utilization and returns remain undisclosed, and current base and downside values are below market."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-11/01KYHW5710C90D1S5BAXB10915/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict",
+    "uv run pytest tests/unit/test_research.py -q",
+    "uv run python (validate payload schema and capture protected-state SHA-256 baseline)",
+    "uv run python (scoped endpoint identity, uniqueness, protected-state hash, symlink, request-integrity, and trailing-whitespace validation)"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole running queue row matched operation 01KYHW5710C90D1S5BAXB10915, run local-20260728-daily-all-11, relationship relationship_510158d3d515d91d5c14, the required skill pair, and a live lease.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by content hash; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, endpoint pages, and inserted canonical relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited relationship upsert changed only data/tables/relationships.csv; allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "The immutable request SHA-256 matched the command audit identity 8f138643049b8ebf63fdfc571e52eff604cd3896b62a64e9cd8bd9db7a18aea1.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped endpoint identity, relationship uniqueness, symlink, protected-state, request-integrity, and trailing-whitespace checks passed."
+    ]
+  }
+}

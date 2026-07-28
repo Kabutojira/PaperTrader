@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_afac7205cd7e09800edf",
+  "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+  "security_id": "security_c120e9f26ebb6159adf9",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Growth in industrial robotics and embodied AI can increase demand for robot controllers, drives, motors, machine automation, engineering software, and lifecycle service that ABB historically could convert into revenue, margin, and cash flow; however, ABB has agreed to divest Robotics, expects the net proceeds in the second half of 2026, and does not disclose material recurring RobotStudio or humanoid-attributable economics, so the common shares do not provide a durable direct transmission channel for this idea.",
+  "sensitivity": "low",
+  "confidence": "low",
+  "catalyst": "Reconsider only if the Robotics divestment does not close, ABB retains material participation in Robotics economics, or retained automation and actuator businesses disclose material embodied-AI design wins, recurring software or service revenue, margins, and cash flow attributable to scaled deployments.",
+  "invalidation": "The Robotics divestment closes without material retained economics, humanoid deployments remain pilots, retained ABB businesses do not disclose material embodied-AI revenue or cash flow, fixed automation or competing suppliers capture the demand, or post-sale capital is redeployed into businesses whose economics are not driven by this idea.",
+  "status": "rejected",
+  "research_page": "data/wiki/relationships/relationship_afac7205cd7e09800edf.md",
+  "last_reviewed_at": "2026-07-28T03:25:44Z",
+  "next_review_at": "2026-08-27T12:00:00Z"
+}

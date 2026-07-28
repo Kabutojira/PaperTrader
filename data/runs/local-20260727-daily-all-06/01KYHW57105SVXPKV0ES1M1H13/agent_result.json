@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYHW57105SVXPKV0ES1M1H13",
+  "status": "succeeded",
+  "summary": "Revalidated Arista Networks against its SEC-filed Q1 2026 Form 10-Q and current 2026-07-27 market and FX data. Revenue growth, margins, cash generation, balance-sheet strength, and trading liquidity support baseline eligibility, but customer concentration and architecture risks remain. At the USD 170.76 mark, bounded 12-month earnings scenarios imply 43.8% downside and 15.7% base-case downside. The medium-confidence security is uncompetitive with cash and its relationship review remains pending, so no conviction strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Arista Networks Q1 2026 Form 10-Q",
+      "claim": "Q1 2026 revenue was USD 2.709 billion, GAAP operating margin was 42.7%, net income was USD 1.023 billion, diluted EPS was USD 0.80, operating cash flow was USD 1.694 billion, and cash plus marketable securities were USD 12.353 billion. The SEC filing returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm",
+      "observed_at": "2026-07-27T22:38:47Z",
+      "source_hash": "f71bc98384b0e63b1d0e2c175081998f089ecbd16740d46c311416f79ae801d8"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "ANET closed at USD 170.75999450683594 on 2026-07-27 with volume 5,327,842, and the current USD/EUR rate was 0.8794000148773193. A 30-times multiple on USD 3.20 annualized Q1 GAAP EPS produces USD 96.00 and -43.8%; a 40-times multiple on USD 3.60 base earnings power produces USD 144.00 and -15.7%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-06/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57105SVXPKV0ES1M1H13/upsert-security-anet-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6f9a1450edceb9307c9a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Arista Networks is a medium-confidence baseline near miss: Q1 growth, margins, cash generation, and liquidity are strong, but the USD 170.76 mark stands above both the USD 96 downside and USD 144 base scenario values, while customer concentration and the pending relationship review block conviction treatment."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-06/01KYHW57105SVXPKV0ES1M1H13/record-source-anet-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-06/01KYHW57105SVXPKV0ES1M1H13/upsert-security-anet-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-06/01KYHW57105SVXPKV0ES1M1H13/upsert-assessment-anet-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-06 with a live lease, and preflight hashes matched llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The payload validated against schemas/operation_payload.schema.json and the immutable ANET/XNYS/USD/equity identity matched exactly one security row with no duplicate provider identity.",
+      "The SEC-filed Q1 2026 Form 10-Q returned HTTP 200 and was registered with SHA-256 f71bc98384b0e63b1d0e2c175081998f089ecbd16740d46c311416f79ae801d8 before the assessment timestamp.",
+      "The current assessment belongs to this run, expires 2026-08-26, references current registered evidence, and records -43.8% downside and -15.7% base upside from the refreshed mark.",
+      "The 2026-07-27 ANET mark, 5,327,842-share volume, and 2026-07-27 USD/EUR rate were current; strict integrity validation passed.",
+      "Strict schema validation, queue validation, wiki lint, and integrity checks passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment backfills and the separately queued Arista relationship review are incomplete; negative base upside and the margin-of-safety gap independently prevent a conviction strategy follow-up.",
+      "No allocation target/history, order, execution, cash, portfolio, fill, or performance file was changed by this operation."
+    ]
+  }
+}

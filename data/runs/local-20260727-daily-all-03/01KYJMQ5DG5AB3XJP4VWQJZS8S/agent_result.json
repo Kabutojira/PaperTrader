@@ -1,0 +1,62 @@
+{
+  "operation_id": "01KYJMQ5DG5AB3XJP4VWQJZS8S",
+  "status": "succeeded",
+  "summary": "Revalidated Intuitive Surgical against the SEC-filed Q2 2026 earnings exhibit and fresh 2026-07-27 market and FX state. Procedure growth, recurring revenue, earnings, cash, balance-sheet strength, and liquidity support a high-confidence baseline assessment. At the USD 356.83 mark, the unchanged 12-month USD 274.20 downside and USD 365.60 base cases imply -23.2% and +2.5%; valuation and timing therefore remain uncompetitive with cash and block conviction treatment. No strategy follow-up was enqueued because the conviction gate failed and baseline strategy work belongs to the deterministic allocator.",
+  "evidence": [
+    {
+      "source": "Intuitive Surgical Q2 2026 earnings release, SEC Exhibit 99.1",
+      "claim": "The SEC-filed issuer exhibit reports approximately 16% combined procedure growth, USD 2.89 billion of Q2 revenue, USD 1.73 billion of instruments and accessories revenue, first-half GAAP diluted EPS of USD 4.57, and USD 8.63 billion of quarter-end cash, cash equivalents, and investments.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-07-27T21:26:41Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "ISRG closed at USD 356.8299865722656 on 2026-07-27 with volume 5,104,405; the contemporaneous USD/EUR rate was 0.8794000148773193. These fresh records support the bounded 12-month downside of -23.2% and base upside of +2.5%.",
+      "observed_at": "2026-07-27T20:55:09Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/record-source-isrg-q2-sec.json",
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-assessment-isrg-backfill-v2.json",
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-assessment-isrg-backfill.json",
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-security-isrg-backfill.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1f9cce545ede94cd6349.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Surgical remains high-confidence baseline eligible, but at the USD 356.83 mark its bounded 12-month range implies 23.2% downside and only 2.5% base upside; valuation and timing remain uncompetitive with cash, and no conviction strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/record-source-isrg-q2-sec.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-security-isrg-backfill.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-assessment-isrg-backfill.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-assessment-isrg-backfill-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Preflight identified native llm-wiki 2.1.0, the repository controller skill, and papertrader-security-research by content hash; PAPER_TRADING_ONLY=true and exactly one claimed running operation were confirmed.",
+      "The immutable issuer/instrument/XNAS/USD/ISRG/equity identity matched the canonical security row and had no duplicate identity.",
+      "The SEC exhibit returned HTTP 200, its 310555-byte response hashed to 4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5, and the source was registered before the final assessment.",
+      "The final high-confidence baseline assessment is evidence-linked to this run, current through 2026-08-26T21:28:56Z, and records -23.2% downside, +2.5% base upside, explicit valuation and timing gaps, and no concealed hard blocker.",
+      "The 2026-07-27 ISRG close and USD/EUR rate were retrieved at 2026-07-27T20:55:09Z and passed final integrity freshness checks.",
+      "The initial integrity check exposed source/assessment ordering; a new immutable v2 assessment request corrected the timestamp ordering, after which strict schema validation, queue validation, strict wiki lint, and strict integrity all passed.",
+      "Command audit records only the allowed securities, security assessment, source registry, and source history structured-state deltas; no allocation, order, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

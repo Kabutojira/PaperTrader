@@ -1,0 +1,17 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-27T21:20:09Z",
+  "estimated_cost_per_operation": "1",
+  "estimated_model_budget_used": "1",
+  "maximum_model_budget": "5",
+  "maximum_operations": 1,
+  "operation_count": 1,
+  "outcomes": [
+    {
+      "operation_id": "01KYJMQ5DG45HKS1DT01QB8X4N",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-20260727-daily-all-02",
+  "started_at": "2026-07-27T21:12:32Z"
+}

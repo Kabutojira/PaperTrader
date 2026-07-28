@@ -1,0 +1,14 @@
+{
+  "entity_id": "security_18a3ab0ee6086ee85d0f",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "backfill",
+    "research_page": "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+    "security_id": "security_18a3ab0ee6086ee85d0f"
+  },
+  "objective": "Revalidate security_18a3ab0ee6086ee85d0f with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYJMQ5DGT37XMDQPFJ4Q6KPT",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

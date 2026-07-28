@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_510158d3d515d91d5c14",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "maintenance_mode": "backfill",
+    "relationship_id": "relationship_510158d3d515d91d5c14",
+    "security_id": "security_2c779e81c27b78c556bb"
+  },
+  "objective": "Review the canonical relationship from idea_nearshoring_friendshoring_manufacturing to security_2c779e81c27b78c556bb and accept or reject it with current evidence.",
+  "operation_id": "01KYJMQ5DGF1YN5AEP8Z0Y5YAG",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

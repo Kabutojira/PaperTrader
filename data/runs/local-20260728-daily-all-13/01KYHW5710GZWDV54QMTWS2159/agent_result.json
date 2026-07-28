@@ -1,0 +1,50 @@
+{
+  "operation_id": "01KYHW5710GZWDV54QMTWS2159",
+  "status": "skipped",
+  "summary": "Skipped an exact fresh duplicate relationship review. The immutable relationship, idea, and security IDs already identify one unique accepted causal edge reviewed on 2026-07-27, with its next review due on 2026-10-30. The existing high-sensitivity, high-confidence assessment records the direct procedure-automation mechanism, recurring instruments and service economics, catalysts, contrary evidence, invalidation, and valuation blocker. This maintenance payload supplies no newer evidence reference or changed catalyst requiring another update.",
+  "evidence": [
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "The unique row relationship_3570e003fd90cd83d26f joins idea_precision_biology_healthcare_automation to security_1f9cce545ede94cd6349 as an accepted positive beneficiary edge with high sensitivity and high confidence; it was last reviewed on 2026-07-27 and is next due on 2026-10-30."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_3570e003fd90cd83d26f.md",
+      "claim": "The maintained relationship page already tests the causal mechanism: greater da Vinci and Ion availability and utilization drive procedure-linked instruments, accessories, and service revenue, while operating conversion remains conditional on safety, training, hospital economics, competition, tariffs, and supply."
+    },
+    {
+      "source": "Intuitive Surgical Q2 2026 earnings release, SEC-filed Exhibit 99.1",
+      "claim": "The already-reviewed primary evidence reports approximately 16% combined procedure growth, da Vinci and Ion installed-base growth, 18% instruments and accessories revenue growth to USD 1.73 billion, 19% total revenue growth, and 31% GAAP operating-income growth, supporting a direct positive operating relationship without proving universal clinical or cost superiority.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-07-27T21:26:41Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "data/operations/payloads/01KYHW5710GZWDV54QMTWS2159.json",
+      "claim": "The current refresh request repeats the same relationship, idea, and security IDs and objective, and supplies no evidence references or changed catalyst that postdates the existing review."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped a duplicate Intuitive Surgical relationship refresh: the exact accepted healthcare-automation edge was reviewed on 2026-07-27, remains current through 2026-10-30, and the payload supplied no newer evidence or changed catalyst."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and exactly one selected queue row is running, claimed by local-20260728-daily-all-13, with a live lease and exactly native llm-wiki plus papertrader-relationship-research named as operation skills.",
+      "Confirmed the preflight artifact identifies the native wiki, controller, and relationship-research skills with matching content hashes, sequential execution, and yolo mode.",
+      "Confirmed the payload, relationship row, idea page, security page, and relationship page agree on relationship_3570e003fd90cd83d26f, idea_precision_biology_healthcare_automation, and security_1f9cce545ede94cd6349.",
+      "Confirmed relationships.csv contains exactly one equivalent edge for the immutable idea-security endpoints and that its causal fields, accepted status, catalog entry, and maintained relationship page are complete.",
+      "Applied the exact-fresh-duplicate skip rule because the accepted review remains current and the maintenance payload supplies no newer evidence reference or changed catalyst.",
+      "Made no wiki, structured-state, allocation, strategy, signal, order, accounting, portfolio, performance, issue, or follow-up change.",
+      "Strict schema, queue, wiki, and integrity checks passed; command_audit.json records the same four canonical commands with exit code zero and no content delta."
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYJMQ5DG3GHE5SE79GNY4DSH",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from precision biology and healthcare automation to Intuitive Surgical with high confidence. Current primary evidence shows a direct causal path from robotic-procedure adoption and utilization through installed systems to recurring instruments, accessories, and service economics, while safety, clinical generalization, hospital economics, tariffs, supply, competition, and valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created because the current security assessment does not meet the margin-of-safety gate.",
+  "evidence": [
+    {
+      "source": "source_isrg_q2_2026_sec_exhibit",
+      "claim": "The SEC-filed Q2 2026 issuer exhibit confirms approximately 16% worldwide procedure growth, USD 2.89 billion of quarterly revenue, expanding installed bases and recurring instrument revenue, USD 972 million of GAAP operating income, and USD 8.63 billion of cash, cash equivalents, and investments. These operating observations support a direct positive relationship between healthcare procedure automation and Intuitive's economics.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-07-27T21:26:41Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "source_isrg_q2_2026_earnings",
+      "claim": "The issuer release independently records Q2 procedure and installed-base growth, expanding recurring instrument revenue, first-half GAAP earnings, strong liquidity, and tariff-sensitive guidance, corroborating the operating mechanism while preserving its cost and margin conditions.",
+      "url": "https://investor.intuitivesurgical.com/news-releases/news-release-details/intuitive-announces-second-quarter-earnings-6",
+      "observed_at": "2026-07-27T13:32:49Z",
+      "source_hash": "a9c30d489f845097283c20ad93121a2e85d7f0948c000592707f0ca1cf0330c3"
+    },
+    {
+      "source": "data/wiki/securities/security_1f9cce545ede94cd6349.md",
+      "claim": "The current security assessment reports only 2.5% base-case upside at the validated 2026-07-27 mark versus the configured 20% margin-of-safety target, with a 23.2% downside case, so the accepted causal edge does not justify strategy research or a signal."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG3GHE5SE79GNY4DSH/upsert-relationship-isrg.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_3570e003fd90cd83d26f.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the high-confidence positive beneficiary relationship from precision biology and healthcare automation to Intuitive Surgical based on Q2 2026 procedure, installed-base, recurring-revenue, and operating-income evidence; no strategy follow-up was created because valuation remains below the margin-of-safety gate."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260727-daily-all-03/01KYJMQ5DG3GHE5SE79GNY4DSH/upsert-relationship-isrg.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The running queue row matched operation 01KYJMQ5DG3GHE5SE79GNY4DSH, run local-20260727-daily-all-03, relationship relationship_3570e003fd90cd83d26f, the required skill pair, and a live lease.",
+      "The controller preflight identified llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research with content hashes, sequential execution, PAPER_TRADING_ONLY=true, and no detected injection flags.",
+      "The immutable endpoint IDs matched the canonical idea page, security page, payload, and inserted relationship row.",
+      "The relationship row is unique for the idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited upsert changed only data/tables/relationships.csv; no allocation, order, signal, execution, cash, portfolio, fill, or performance state changed through an operation command.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "git diff --check passed for the relationship table and all wiki files changed by this operation."
+    ]
+  }
+}

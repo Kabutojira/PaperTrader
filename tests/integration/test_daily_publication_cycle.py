@@ -5,9 +5,16 @@ from datetime import UTC, date, datetime
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from papertrader.atomic_io import atomic_write_text
 from papertrader.config import Settings
-from papertrader.daily import execute_agent_batch, finalize_daily_run, prepare_daily_run
+from papertrader.daily import (
+    DailyRunError,
+    execute_agent_batch,
+    finalize_daily_run,
+    prepare_daily_run,
+)
 from papertrader.execution import ensure_initial_capital
 from papertrader.integrity import validate_integrity
 from papertrader.market_data import write_price_cache
@@ -178,6 +185,50 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
         "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
     }
     assert validate_integrity(sandbox_repository, environment) == []
+
+
+def test_daily_finalization_rejects_invalid_report_url_before_state_changes(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    preparation = prepare_daily_run(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="daily-invalid-report-url",
+        trigger="integration",
+        source_sha="d" * 40,
+        now=NOW,
+        retrieve_market=False,
+        classify_opportunities=False,
+    )
+    execute_agent_batch(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=preparation.run_id,
+        hermes_home=tmp_path / "unused-hermes",
+        environment={"PATH": "/usr/bin"},
+        maximum_operations=0,
+        now=NOW,
+    )
+
+    with pytest.raises(DailyRunError, match=r"HTTPS github\.com"):
+        finalize_daily_run(
+            sandbox_repository,
+            sandbox_settings,
+            run_id=preparation.run_id,
+            github_report_url="https://example.com/report",
+            now=NOW,
+        )
+
+    assert read_table(sandbox_repository, "runs") == []
+    assert read_table(sandbox_repository, "allocation_history") == []
+    manifest = json.loads(
+        (sandbox_repository / "data" / "runs" / preparation.run_id / "daily_run.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert manifest["status"] == "prepared"
 
 
 def test_daily_finalization_fills_next_eligible_base_currency_open(

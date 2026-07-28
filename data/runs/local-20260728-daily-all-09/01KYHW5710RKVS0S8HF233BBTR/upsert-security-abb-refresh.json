@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c120e9f26ebb6159adf9",
+  "issuer_id": "issuer_e60cfde16e515ef00e35",
+  "company_name": "ABB Ltd",
+  "instrument_name": "ABB Ltd sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "ABBNY",
+  "exchange_code": "PNK",
+  "venue_mic": "XOTC",
+  "provider_symbol": "ABBNY",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CH",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Strong orders, margins, cash conversion, and balance sheet support baseline comparison, but the Robotics exit, Rotork integration, and negative base upside limit appeal.",
+  "research_page": "data/wiki/securities/security_c120e9f26ebb6159adf9.md",
+  "last_research_at": "2026-07-28T00:41:43Z",
+  "next_review_at": "2026-08-27T00:41:43Z",
+  "source": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch"
+}

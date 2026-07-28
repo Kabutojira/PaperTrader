@@ -45,19 +45,23 @@ assessment timestamp, and disposition from the deterministic payload.
    invalidation. Preserve the existing full conviction gate.
 4. In `baseline_allocation` mode, use only long equity. Document its lower-conviction status, all
    soft gaps, why it did not qualify for conviction, downside/base cases, review date, exit
-   conditions, target-size limit, and why the bounded allocation is preferable to cash. Never
-   choose or enlarge the deterministic target quantity.
+   conditions, target-size limit, and why the bounded allocation is preferable to cash. Set
+   `risk_budget_pct` to the payload's configured `maximum_weight_pct`; this is a stable ceiling,
+   not the current target. Never choose or enlarge the deterministic target quantity.
 5. Select a structure or document the blocking factor. Define entry, exit, expiry, sizing inputs,
    risk budget, required evidence, and every normalized leg.
 6. Update the strategy page/catalog/log and apply strategy state through the CLI. A baseline strategy
    must use the stable per-security strategy ID, `sleeve=baseline`, and current allocation-plan ID.
 7. Create a time-bounded signal through the CLI only when all required fields and fresh evidence
    are present. In baseline mode, the plan must still be current, its delta must exceed the minimum
-   trade threshold, the assessment must be unchanged, and the signal action must match `open`,
-   `increase`, `reduce`, or `close`. A hard blocker forbids increased exposure but may require the
-   plan's risk-reducing `reduce`/`close`; a `hold` creates no signal. A signal is not an order or
-   fill. If a baseline signal is created, immediately enqueue exactly one matching
-   `execute_strategy` follow-up whose payload binds the strategy ID, signal ID, and action.
+   trade threshold, and the assessment must be unchanged. Normalize the allocation disposition to
+   the signal lifecycle: `open` and `increase` both create an `open` signal; `reduce` and `close`
+   retain their names. The `open` action never authorizes a quantity: deterministic order code
+   derives whether and how much to buy from the current plan, holdings, and pending orders. A hard
+   blocker forbids increased exposure but may require the plan's risk-reducing `reduce`/`close`; a
+   `hold` creates no signal. A signal is not an order or fill. If a baseline signal is created,
+   immediately enqueue exactly one matching `execute_strategy` follow-up whose payload binds the
+   strategy ID, signal ID, and normalized signal action.
 
 ## Source hierarchy
 

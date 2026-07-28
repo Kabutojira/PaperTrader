@@ -1,0 +1,70 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/record-source-rtx-q2-2026-10q-sec.json",
+    "papertrader research source record --request data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/record-source-rtx-q2-2026-results.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-security-rtx-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh-v2.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh-v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "daily_report_items": [
+    "RTX is a medium-confidence baseline near miss: backlog, segment growth, cash generation, and liquidity are strengths, but engine remediation, leverage, contract execution, valuation, overbought timing, and the absent accepted relationship remain material; the USD 218.42 mark exceeds the USD 142.00 downside and USD 179.38 base scenario values."
+  ],
+  "evidence": [
+    {
+      "claim": "RTX reported Q2 2026 sales of USD 24.7 billion, GAAP EPS of USD 1.57, operating cash flow of USD 3.5 billion, USD 289 billion of backlog, and adjusted 2026 EPS guidance of USD 7.10-7.25. The issuer release returned HTTP 200.",
+      "observed_at": "2026-07-28T00:05:16Z",
+      "source": "RTX Q2 2026 issuer results",
+      "source_hash": "980e42dfeb9915dc34df466e4f6c41eb65e07aabacce7e7bc75a5e40c073f46b",
+      "url": "https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results"
+    },
+    {
+      "claim": "The filed Q2 2026 report shows USD 8.305 billion of cash, USD 37.383 billion of total debt, USD 63.912 billion of current assets, USD 63.245 billion of current liabilities, first-half operating cash flow of USD 5.402 billion, and continuing Pratt powder-metal uncertainty. The filing returned HTTP 200.",
+      "observed_at": "2026-07-28T00:05:16Z",
+      "source": "RTX Corporation Q2 2026 Form 10-Q filed with the SEC",
+      "source_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+    },
+    {
+      "claim": "RTX closed at USD 218.4199981689453 on 2026-07-27 and the current USD/EUR rate was 0.8794000148773193. Applying 20 times the USD 7.10 guidance low gives USD 142.00 and -35.0%; applying 25 times the USD 7.175 midpoint gives USD 179.375 and -17.9%.",
+      "source": "PaperTrader deterministic market and FX caches"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/record-source-rtx-q2-2026-10q-sec.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/record-source-rtx-q2-2026-results.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh-v3.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-assessment-rtx-refresh.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/upsert-security-rtx-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710M89EMQMNDY940EKH",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Revalidated RTX against its SEC-filed Q2 2026 Form 10-Q, issuer results, and current 2026-07-27 market and FX data. Backlog, segment growth, cash generation, and liquidity support medium-confidence baseline eligibility, while Pratt engine remediation, leverage, contract execution, cycle sensitivity, valuation, and timing remain material gaps. At the USD 218.42 mark, bounded 12-month earnings scenarios imply 35.0% downside and 17.9% base-case downside. No conviction strategy follow-up was enqueued because both scenario values remain below the mark and no accepted idea-to-security relationship exists.",
+  "validation": {
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-08 with a live lease through 2026-07-28T00:31:28Z; the payload validated and matched the immutable security operation, and preflight hashes matched llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The immutable RTX/XNYS/USD/equity identity matched exactly one security row with no duplicate issuer-instrument-venue-currency-provider identity.",
+      "The SEC Form 10-Q and issuer results each returned HTTP 200, were registered as available with their observed SHA-256 hashes, and predate the final assessment timestamp.",
+      "The current assessment belongs to this run, expires 2026-08-27, references both fresh registered sources, has no hard blocker, and records -35.0% downside and -17.9% base upside from the refreshed mark.",
+      "The first assessment request failed without state changes because four soft-gap labels were non-canonical; immutable v2 failed without state changes because the canonical values were not sorted; immutable v3 corrected both issues and succeeded.",
+      "The 2026-07-27 RTX mark and USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessment backfills and relationship reviews are incomplete; RTX independently lacks an accepted relationship and its negative base upside prevents a conviction strategy follow-up.",
+      "The command audit shows this operation changed only securities, security assessments, source registry, and source history structured tables; no allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, every invoked request retained its audited identity, and the operation artifact directory contains no symlink."
+    ],
+    "passed": true
+  }
+}

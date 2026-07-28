@@ -1,0 +1,63 @@
+{
+  "operation_id": "01KYHW57103NJ31X4TRFP7SD3D",
+  "status": "succeeded",
+  "summary": "Revalidated Fluence Energy against its SEC-filed fiscal Q2 2026 results exhibit and current 2026-07-27 market and FX data. Record backlog and reaffirmed revenue guidance support direct grid-storage exposure, but thin margins, negative first-half cash conversion, project execution risk, and a demanding valuation constrain the case. At the USD 13.51 mark, bounded 12-month revenue-multiple scenarios imply 48.8% downside and only 2.2% base-case upside. The medium-confidence security is baseline eligible but uncompetitive with cash, so no conviction strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Fluence Energy fiscal Q2 2026 results exhibit",
+      "claim": "The SEC-filed issuer exhibit reports approximately USD 5.6 billion backlog and USD 412.9 million total cash at March 31, 2026, and reaffirms fiscal-2026 revenue of USD 3.2-3.6 billion and adjusted EBITDA of USD 40-60 million. The exhibit also reports negative first-half adjusted EBITDA and free cash flow and describes backlog conversion, project execution, working-capital, tariff, warranty, and liquidity risks. The SEC exhibit returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000014/flncq2fy26earningspressrel.htm",
+      "observed_at": "2026-07-27T22:16:00Z",
+      "source_hash": "c86ed5e861ea998d79ab5ae649bd751761886a9694e239e61b0db1e3d6dec00b"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "FLNC closed at USD 13.510000228881836 on 2026-07-27 with volume 8,423,118, and the current USD/EUR rate was 0.8794000148773193. Using 184.280287 million Class A plus Class B-1 economic shares, USD 387.299 million unrestricted cash, and USD 391.707 million convertible notes, 0.40 times USD 3.2 billion revenue produces USD 6.92 downside value (-48.8%), while 0.75 times USD 3.4 billion produces USD 13.81 base value (+2.2%)."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-sec-exhibit.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-security-flnc-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Fluence Energy is a medium-confidence baseline near miss: record backlog and revenue guidance support direct storage exposure, but negative first-half cash conversion and the USD 13.51 mark leave 48.8% downside and only 2.2% base-case upside in bounded 12-month scenarios, so no conviction strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/record-source-flnc-q2-2026-sec-exhibit.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-security-flnc-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-06/01KYHW57103NJ31X4TRFP7SD3D/upsert-assessment-flnc-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-06 with a live lease, and preflight identified llm-wiki 2.1.0, the controller skill, and the security-research skill; repository controller and operation skill hashes matched preflight.",
+      "The immutable FLNC/XNAS/USD/equity identity matched exactly one security row with no duplicate issuer, instrument, venue, currency, and provider identity.",
+      "The SEC-filed fiscal Q2 2026 results exhibit returned HTTP 200, was registered with SHA-256 c86ed5e861ea998d79ab5ae649bd751761886a9694e239e61b0db1e3d6dec00b, and remained current for the final assessment.",
+      "The first assessment timestamp preceded the source registry first-seen timestamp; the immutable request was preserved and a uniquely named corrected request advanced the final assessment timestamp before verification.",
+      "The final assessment belongs to this run, expires 2026-08-26, references current registered evidence, and records -48.8% downside and 2.2% base upside from explicit 12-month revenue-multiple scenarios.",
+      "The 2026-07-27 FLNC mark, 8,423,118-share volume, and 2026-07-27 USD/EUR rate were current; final strict schema validation, queue validation, wiki lint, and integrity checks passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment and relationship backfills are incomplete; baseline eligibility and the unchanged full conviction gate therefore did not permit a strategy follow-up.",
+      "No operation artifact is a symlink, request artifacts were not modified after CLI use, and no allocation target/history, order, execution, cash, portfolio, fill, or performance file was changed by this operation."
+    ]
+  }
+}

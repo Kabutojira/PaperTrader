@@ -341,6 +341,7 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
             return [f"cannot load {name} schema: {exc}"]
     daily_by_run: dict[str, Mapping[str, object]] = {}
     batch_runs: set[str] = set()
+    report_owners: dict[str, tuple[str, str, str]] = {}
     for name in ("daily_run", "agent_batch"):
         for path in sorted((repository_root / "data" / "runs").glob(f"*/{name}.json")):
             relative = path.relative_to(repository_root).as_posix()
@@ -391,14 +392,23 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
                             or snapshot.get("as_of") != manifest.get("completed_at")
                         ):
                             errors.append(f"daily decision snapshot identity mismatch: {run_id}")
-                if isinstance(report_path, str) and (repository_root / report_path).is_file():
-                    try:
-                        report = (repository_root / report_path).read_text(encoding="utf-8")
-                    except (OSError, UnicodeError) as exc:
-                        errors.append(f"cannot read daily report {run_id}: {exc}")
-                    else:
-                        if f'snapshot_id: "{snapshot_id}"' not in report:
-                            errors.append(f"daily report snapshot identity mismatch: {run_id}")
+                completed_at = manifest.get("completed_at")
+                if isinstance(report_path, str) and isinstance(completed_at, str):
+                    owner = report_owners.get(report_path)
+                    candidate = (completed_at, run_id, snapshot_id)
+                    if owner is None or candidate[:2] > owner[:2]:
+                        report_owners[report_path] = candidate
+    for report_path, (_, run_id, snapshot_id) in report_owners.items():
+        path = repository_root / report_path
+        if not path.is_file():
+            continue
+        try:
+            report = path.read_text(encoding="utf-8")
+        except (OSError, UnicodeError) as exc:
+            errors.append(f"cannot read daily report {run_id}: {exc}")
+        else:
+            if f'snapshot_id: "{snapshot_id}"' not in report:
+                errors.append(f"daily report snapshot identity mismatch: {run_id}")
     try:
         run_rows = read_csv_contract_rows(repository_root, "runs")
     except (ContractError, OSError, ValueError) as exc:
@@ -429,7 +439,49 @@ def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, s
     return rows
 
 
-def validate_integrity(repository_root: Path, environment: Mapping[str, str]) -> list[str]:
+def publication_requires_current_state(
+    repository_root: Path, environment: Mapping[str, str]
+) -> bool:
+    """Return whether publication hashes must match the current canonical state.
+
+    Only a controller-created operation directory inside its matching prepared daily run may
+    defer freshness until finalization regenerates the publication. Invalid, completed, or
+    standalone contexts fail closed and require the current-state comparison.
+    """
+
+    run_id = environment.get("PAPERTRADER_AUDIT_RUN_ID", "")
+    operation_id = environment.get("PAPERTRADER_AUDIT_OPERATION_ID", "")
+    if not SAFE_RUN_ID.fullmatch(run_id) or not ULID.fullmatch(operation_id):
+        return True
+    run_directory = repository_root / "data" / "runs" / run_id
+    operation_directory = run_directory / operation_id
+    manifest_path = run_directory / "daily_run.json"
+    if (
+        run_directory.is_symlink()
+        or operation_directory.is_symlink()
+        or not operation_directory.is_dir()
+        or manifest_path.is_symlink()
+        or not manifest_path.is_file()
+    ):
+        return True
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return True
+    return not (
+        isinstance(manifest, dict)
+        and manifest.get("run_id") == run_id
+        and manifest.get("status") == "prepared"
+        and manifest.get("completed_at") == ""
+    )
+
+
+def validate_integrity(
+    repository_root: Path,
+    environment: Mapping[str, str],
+    *,
+    require_current_publication: bool | None = None,
+) -> list[str]:
     """Run repository contracts plus deterministic queue/accounting checks."""
 
     errors: list[str] = []
@@ -462,7 +514,12 @@ def validate_integrity(repository_root: Path, environment: Mapping[str, str]) ->
     if settings is not None:
         errors.extend(validate_allocation_state(repository_root, settings))
         errors.extend(validate_fx_data(repository_root, settings))
-    errors.extend(validate_advice(repository_root))
+    publication_is_current = (
+        publication_requires_current_state(repository_root, environment)
+        if require_current_publication is None
+        else require_current_publication
+    )
+    errors.extend(validate_advice(repository_root, require_current_state=publication_is_current))
     errors.extend(reconcile_portfolio(repository_root))
     return errors
 

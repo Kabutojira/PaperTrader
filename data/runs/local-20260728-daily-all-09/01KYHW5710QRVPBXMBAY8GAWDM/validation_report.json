@@ -1,0 +1,20 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-june-2026-litigation-8k.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-q2-2026-10q.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/record-source-atkr-q2-2026-results.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/upsert-assessment-atkr-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710QRVPBXMBAY8GAWDM/upsert-security-atkr-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_22c2b9d782a62d7a9b86.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710QRVPBXMBAY8GAWDM",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-09",
+  "validation_version": 1
+}

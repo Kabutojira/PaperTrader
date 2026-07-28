@@ -203,6 +203,19 @@ uv run papertrader queue validate
 The CLI converts `now` to a concrete UTC timestamp, validates the operation payload, creates an
 immutable ULID and payload, and applies exact deduplication. Never paste a long prompt or nested
 payload directly into a CSV cell.
+Preparation also archives plan-bound strategy and execution requests as `skipped` when their
+`allocation_plan_id` no longer matches the sole current generated allocation plan. This check is
+deterministic and occurs before an LLM can claim obsolete work.
+
+When a blocked agent result is later proven obsolete, archive it without hand-editing queue state:
+
+```bash
+uv run papertrader queue resolve-blocked --request data/runs/<run-id>/resolve-blocked.json
+```
+
+The request identifies the blocked operation and prior run, cites that run's `agent_result.json`,
+selects `skipped` or `cancelled`, and supplies a concise summary and machine-readable terminal
+reason. The CLI validates the artifact and atomically moves the complete request to history.
 
 An idea enters the system through this `idea_research` queue command. It becomes a maintained wiki
 page only after the selected skill supplies evidence, mechanism, catalysts, invalidation,
@@ -258,8 +271,21 @@ the next run. Baseline strategies remain long-equity only, must retain the curre
 ID, and can trade only the deterministic whole-share delta. A superseded/stale plan, changed hard
 blocker, stale price/FX rate, reserve breach, risk-budget breach, canonical-leg mismatch, or target
 overrun fails closed. `hold` and below-minimum-trade targets create no signal or order.
+Allocation-plan identity excludes the controller run ID and publication timestamp: unchanged
+economic inputs retain one plan ID, while immutable history distinguishes repeated observations by
+plan, run, and security. This keeps a valid in-flight signal current across routine finalization.
 Baseline and conviction orders may not share one instrument identity; close or cancel the existing
 sleeve exposure before opening the other sleeve so portfolio ownership remains deterministic.
+Create baseline orders with `papertrader order create-baseline --request <json>`. Supply current
+reference prices and FX but no legs: the command derives the exact whole-share action and delta
+from the current plan, holdings, and pending orders. Creating a newer signal cancels any older
+un-ordered ready signal for the same strategy so the investor dashboard exposes one current action.
+Allocation dispositions `open` and `increase` both normalize to the `open` signal and
+`execute_strategy` action. The distinction remains in the current allocation target; the agent
+does not translate it into a quantity or submit an `increase` action outside the payload schema.
+The baseline strategy's `risk_budget_pct` must equal the configured maximum baseline-position
+percentage. Treat it as a stable ceiling; the current plan's exact target value, not its rounded
+display weight or the strategy leg's research quantity, owns order sizing.
 
 Committed FX rates are stored at `data/market/fx/<currency>_<base_currency>.csv` and refreshed by
 the normal market phase for every allowed non-base currency. Missing or stale FX excludes a new
@@ -283,6 +309,15 @@ research alerts are distinct states; only a canonical live paper order may be co
 model-portfolio scaler runs locally in the browser and is illustrative—it does not submit an order
 or persist the entered notional. Never overwrite an existing run snapshot with different state;
 create and complete a new daily run instead.
+
+Canonical market and research state can advance between daily preparation and finalization. Inside
+a controller-created operation for that same `prepared` run, integrity defers only the publication
+source-hash freshness comparison; finalization regenerates the snapshot and the ordinary strict
+gate requires it to match current state. Snapshot schema, immutable-artifact, CSV, queue, wiki, and
+accounting checks are never deferred.
+If several manual runs complete on the same date, they intentionally share the single canonical
+daily-report path. The latest completed run owns that page, while every run keeps its own immutable
+decision snapshot under `data/runs/<run_id>/`.
 
 ## Dispatch GitHub workflows
 

@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/record-source-isrg-q2-sec.json",
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-assessment-isrg-backfill-v2.json",
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-assessment-isrg-backfill.json",
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG5AB3XJP4VWQJZS8S/upsert-security-isrg-backfill.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1f9cce545ede94cd6349.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYJMQ5DG5AB3XJP4VWQJZS8S",
+  "passed": true,
+  "run_id": "local-20260727-daily-all-03",
+  "validation_version": 1
+}

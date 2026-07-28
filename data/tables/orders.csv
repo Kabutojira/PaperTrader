@@ -1,1 +1,4 @@
 order_id,signal_id,strategy_id,created_at,status,fill_policy,not_before,expires_at,order_type,limit_price,slippage_bps,fee_model,currency,run_id
+order_371f356c9fa026750350,signal_14939473c94cb7b9b567,strategy_bd005fc3733b1475b6f9,2026-07-28T07:36:01Z,cancelled,next_open,2026-07-28T07:36:01Z,2026-07-29T07:13:53Z,market,,5,fixed_plus_bps,USD,local-20260728-daily-all-24
+order_3b1467697b731e2bf689,signal_6c82d41c9f217bdab771,strategy_bd005fc3733b1475b6f9,2026-07-28T07:52:26Z,pending,next_open,2026-07-28T07:52:26Z,2026-07-29T07:45:53Z,market,,5,fixed_plus_bps,USD,local-20260728-daily-all-25
+order_745a7a020ecf89d5734d,signal_98939c5cb11dd6d9d2ae,strategy_bd005fc3733b1475b6f9,2026-07-28T08:42:27Z,pending,next_open,2026-07-28T08:42:27Z,2026-07-29T08:21:25Z,market,,5,fixed_plus_bps,USD,local-20260728-daily-all-29

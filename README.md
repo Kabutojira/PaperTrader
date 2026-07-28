@@ -217,9 +217,21 @@ The Step 2 core owns every numeric and structured state transition:
   `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.
 - `papertrader queue prepare`, `queue claim`, and the terminal queue commands enforce one live
   lease, dependencies, cooldowns, bounded retries, terminal history, and run budgets.
+- Queue preparation deterministically skips strategy and execution requests tied to a superseded
+  allocation plan before they can consume an LLM operation.
+- `papertrader queue resolve-blocked --request <json>` terminalizes only an adjudicated blocked
+  request as `skipped` or `cancelled`, retaining its prior agent-result provenance in history.
 - `papertrader signal create`, `order create`, and `fills process` accept repository-local JSON
   request files. Signals and pending orders do not affect accounting; only an eligible
   deterministic paper fill appends executions and cash entries.
+- Baseline orders use `order create-baseline`; the deterministic command derives quantity from
+  current plan/portfolio/price/FX state and retires superseded ready signals rather than trusting
+  model-supplied sizing.
+- Baseline allocation `open` and `increase` dispositions both use the `open` signal lifecycle
+  action; deterministic order code distinguishes the current plan state and computes only its
+  remaining whole-share delta.
+- A baseline strategy stores the configured maximum-position percentage as its stable risk ceiling;
+  its rounded current target is descriptive and never replaces the exact plan-owned target value.
 - `papertrader portfolio reconcile --strict` replays append-only ledgers, verifies cash links and
   exact Decimal arithmetic, and checks the generated portfolio against canonical state.
 - `papertrader research source record`, `research security upsert`, `research assessment upsert`,
@@ -274,6 +286,11 @@ fill, and reconciliation boundaries. Deterministic order guards own final share 
 reserve, cumulative target risk-budget, canonical-leg, and concentration enforcement. A single
 instrument position cannot mix baseline and conviction ownership because the generated portfolio
 cannot safely attribute an aggregated quantity to two sleeves.
+
+The plan ID is content-addressed from economic inputs only. Re-running or publishing an unchanged
+plan keeps that ID stable even though the run timestamp changes; allocation history records each
+plan/run/security observation separately. A strategy or signal is therefore superseded only by a
+changed economic plan, not by routine daily finalization.
 
 `capital_unallocated_base` is the remaining gap to the configured invested-exposure target after
 the current plan, not merely unused one-run deployment budget. The plan artifact and daily report

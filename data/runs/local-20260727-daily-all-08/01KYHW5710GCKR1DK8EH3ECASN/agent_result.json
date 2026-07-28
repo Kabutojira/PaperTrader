@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYHW5710GCKR1DK8EH3ECASN",
+  "status": "succeeded",
+  "summary": "Revalidated Lithium Americas against a freshly retrieved and registered Q1 2026 Form 10-Q and current 2026-07-27 market and FX data. Thacker Pass construction, strategic funding, and trading liquidity are tangible, but Lithium Americas remains a pre-revenue, project-concentrated security exposed to remaining capex, conditional funding, offtake constraints, dilution, commissioning, and lithium-price risk. The available evidence cannot support a common-equity valuation that reconciles ownership, claims, warrants, future funding, ramp probability, and commodity scenarios, so the low-confidence assessment is ineligible with the explicit hard blocker valuation_unsupported. No strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Lithium Americas Corp. Q1 2026 Form 10-Q",
+      "claim": "At 31 March 2026, cash was USD 758.5 million and restricted cash was USD 449.1 million. Thacker Pass targeted late-2027 mechanical completion; USD 1.1 billion of the USD 2.93 billion technical-report capex estimate had been spent, fiscal-2026 project capex guidance was USD 1.3-1.6 billion, and the company retained an unissued USD 250 million ATM program. The SEC filing returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm",
+      "observed_at": "2026-07-27T23:45:00Z",
+      "source_hash": "a7d31055ce1a4a604bde8ebb54d0371db6956244067432f5bcd4b504b95bfd88"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "LAC closed at USD 2.9000000953674316 on 2026-07-27 with volume 5,583,918, and the current USD/EUR rate was 0.8794000148773193. These observations passed freshness and liquidity checks but do not resolve the unsupported fundamental valuation."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-08/01KYHW5710GCKR1DK8EH3ECASN/record-source-lac-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710GCKR1DK8EH3ECASN/upsert-assessment-lac-refresh.json",
+    "data/runs/local-20260727-daily-all-08/01KYHW5710GCKR1DK8EH3ECASN/upsert-security-lac-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_fb87fac302a5446a1ced.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Lithium Americas remains an ineligible low-confidence development-stage exposure: Thacker Pass construction and strategic funding are tangible, but the common equity lacks a supportable ownership-, funding-, dilution-, ramp-, and lithium-price-adjusted valuation; no strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-08/01KYHW5710GCKR1DK8EH3ECASN/record-source-lac-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710GCKR1DK8EH3ECASN/upsert-security-lac-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-08/01KYHW5710GCKR1DK8EH3ECASN/upsert-assessment-lac-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one selected operation was running, claimed by local-20260727-daily-all-08 with a live lease through 2026-07-28T00:11:41Z; the payload matched the immutable security and the preflight hashes matched llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The LAC/XNYS/USD/equity identity matched exactly one security row, with no duplicate issuer-instrument-venue-currency-provider identity.",
+      "The SEC-hosted Q1 2026 Form 10-Q returned HTTP 200 and was registered as available with SHA-256 a7d31055ce1a4a604bde8ebb54d0371db6956244067432f5bcd4b504b95bfd88 before the assessment timestamp.",
+      "The current assessment belongs to this run, expires 2026-08-26, references fresh registered evidence, and is ineligible with the canonical hard blocker valuation_unsupported; the required numeric fields use a conservative total-loss boundary and a neutral base placeholder rather than presenting an invented valuation.",
+      "The 2026-07-27 LAC mark, 5,583,918-share volume, and 2026-07-27 USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessment backfills and relationship reviews are incomplete; the pending Lithium Americas relationship review and unsupported valuation also prevent a strategy follow-up.",
+      "The command audit contains all eight project CLI invocations. The first seven passed; allocation readiness returned its expected non-ready status. Audited changes touched only securities, security assessments, source registry, and source history structured tables; no allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

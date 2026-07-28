@@ -1,0 +1,69 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/workspace",
+        "research",
+        "relationship",
+        "upsert",
+        "--request",
+        "data/runs/local-20260728-daily-all-13/01KYHW5710HN9JVFYSCM4C3KKT/relationship_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/relationships.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "92a7d62e68c9e2e1bff83039d2884350d043a60174b120501566256bd96bb192",
+            14340,
+            384
+          ],
+          "before": [
+            "file",
+            "ad49b3d7106edbf6b4720b186e51ed747df244815f33ac03be0a7e22ac252b11",
+            13031,
+            384
+          ],
+          "path": "data/tables/relationships.csv"
+        }
+      ],
+      "command": "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-13/01KYHW5710HN9JVFYSCM4C3KKT/relationship_upsert_request.json",
+      "completed_at": "2026-07-28T02:30:33Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "d2601efe462d59b01a17949adb6107f5921fb7f321164ede78dbb210b80880ae",
+          1549,
+          384
+        ],
+        "path": "data/runs/local-20260728-daily-all-13/01KYHW5710HN9JVFYSCM4C3KKT/relationship_upsert_request.json"
+      },
+      "started_at": "2026-07-28T02:30:33Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/workspace",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /workspace wiki lint --strict",
+      "completed_at": "2026-07-28T02:30:46Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T02:30:46Z"
+    }
+  ],
+  "operation_id": "01KYHW5710HN9JVFYSCM4C3KKT",
+  "run_id": "local-20260728-daily-all-13"
+}

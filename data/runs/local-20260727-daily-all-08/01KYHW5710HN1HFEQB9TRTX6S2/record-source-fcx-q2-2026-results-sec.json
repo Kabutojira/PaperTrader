@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fcx_q2_2026_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm",
+  "source_type": "filing",
+  "title": "Freeport-McMoRan Q2 2026 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1",
+  "related_entity_ids": "idea_critical_minerals_copper|security_2dbe878dfc899d7ee867",
+  "checked_at": "2026-07-27T23:54:32Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 2026 net income attributable to common stock was USD 984 million, adjusted net income was USD 1.1 billion, copper production was 786 million pounds, operating cash flow was USD 2.048 billion, and capital expenditures were USD 1.104 billion.",
+  "summary": "The SEC-filed results exhibit supports current production, sales, realized-price, unit-cost, earnings, cash-flow, capital-spending, balance-sheet, Grasberg-ramp, and Indonesian operating-rights analysis for Freeport-McMoRan.",
+  "run_id": "local-20260727-daily-all-08"
+}

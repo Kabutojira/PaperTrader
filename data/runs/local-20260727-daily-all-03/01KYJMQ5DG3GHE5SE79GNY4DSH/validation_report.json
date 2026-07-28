@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260727-daily-all-03/01KYJMQ5DG3GHE5SE79GNY4DSH/upsert-relationship-isrg.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_3570e003fd90cd83d26f.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "errors": [
+    "path is outside relationship_research scope: data/wiki/research-catalog.md"
+  ],
+  "operation_id": "01KYJMQ5DG3GHE5SE79GNY4DSH",
+  "passed": false,
+  "run_id": "local-20260727-daily-all-03",
+  "validation_version": 1
+}

@@ -1,0 +1,64 @@
+{
+  "operation_id": "01KYHW57101205S02R9SC1YWG7",
+  "status": "succeeded",
+  "summary": "Revalidated Palantir against the SEC-hosted Q1 2026 earnings release and current 2026-07-27 market and FX data. Revenue growth, margins, cash generation, balance-sheet strength, and liquidity are exceptional, but Anduril-linked economics remain undisclosed. At the USD 131.53 mark, bounded 12-month free-cash-flow scenarios imply 60.4% downside and 40.4% base-case downside. The medium-confidence security is baseline eligible but uncompetitive with cash, so no conviction strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Palantir Q1 2026 earnings release",
+      "claim": "Q1 revenue was USD 1.633 billion, GAAP operating margin was 46%, operating cash flow was USD 899 million, adjusted free cash flow was USD 925 million, cash and short-term Treasury securities were USD 8.0 billion, diluted weighted-average shares were 2.571 billion, and full-year adjusted free-cash-flow guidance was USD 4.2-4.4 billion. The SEC-hosted release returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000026/a2026q1ex991pressrelease.htm",
+      "observed_at": "2026-07-27T21:56:07Z",
+      "source_hash": "8bb61e349de9184f719690ca3fa8ced024c879327c7859369cad587c847ae0e2"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "PLTR closed at USD 131.52999877929688 on 2026-07-27 with volume 34,757,939, and the current USD/EUR rate was 0.8794000148773193. Using 2.570924 billion diluted shares and USD 8.0 billion of cash and Treasury securities, 30 times USD 4.2 billion and 45 times USD 4.3 billion produce USD 52.12 downside and USD 78.38 base values, or rounded returns of -60.4% and -40.4%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/record-source-pltr-q1-2026.json",
+    "data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh.json",
+    "data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/upsert-security-pltr-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Palantir is a medium-confidence baseline near miss: exceptional Q1 growth and cash generation support eligibility, but the USD 131.53 mark stands 60.4% above the bounded downside return and 40.4% above the bounded base-case return, while Anduril-linked economics remain undisclosed."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/record-source-pltr-q1-2026.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/upsert-security-pltr-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-05/01KYHW57101205S02R9SC1YWG7/upsert-assessment-pltr-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-05 with a live lease, and preflight hashes matched llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The immutable PLTR/XNAS/USD/equity identity matched exactly one security row with no duplicate immutable identity and passed the validated security upsert.",
+      "The SEC-hosted Q1 2026 earnings release returned HTTP 200, was registered with SHA-256 8bb61e349de9184f719690ca3fa8ced024c879327c7859369cad587c847ae0e2, and remained current for the final assessment.",
+      "The first assessment timestamp preceded the source registry first-seen timestamp; the immutable request was preserved and a uniquely named corrected request advanced the final assessment timestamp before verification.",
+      "The final assessment belongs to this run, expires 2026-08-26, references current registered evidence, and records -60.4% downside and -40.4% base upside from the refreshed mark.",
+      "The 2026-07-27 PLTR mark, 34,757,939-share volume, and 2026-07-27 USD/EUR rate were current and strict integrity validation passed.",
+      "Final strict schema validation, queue validation, wiki lint, and integrity checks passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment backfills and the separately queued Palantir relationship review are incomplete; the conviction gate therefore did not permit a strategy follow-up.",
+      "No allocation target/history, order, execution, cash, portfolio, fill, or performance file changed."
+    ]
+  }
+}

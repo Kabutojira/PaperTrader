@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_510158d3d515d91d5c14",
+  "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+  "security_id": "security_2c779e81c27b78c556bb",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Nearshoring and friendshoring can increase demand for locally compliant flat steel; Ternium's Pesquería downstream lines and DRI-EAF shop can convert that demand into Mexican shipments, utilization, revenue, margins, and ADS-holder earnings, subject to commissioning, customer qualification, trade rules, steel pricing, cash conversion, and non-Mexican exposures.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Downstream lines achieve disclosed utilization and customer qualification, the DRI-EAF shop commissions on the revised early-2027 schedule without material cost escalation, USMCA review outcomes preserve workable regional rules, Mexican shipments and margins rise, and operating cash flow covers remaining capex while attributable earnings improve.",
+  "invalidation": "USMCA or tariff changes fragment regional supply chains; customers do not qualify or use Pesquería output; startup slips again; infrastructure constraints impede utilization; imports or weak demand depress steel pricing; or working capital, capex, Usiminas commitments, currencies, minority interests, and non-Mexican operations absorb the regional benefit.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_510158d3d515d91d5c14.md",
+  "last_reviewed_at": "2026-07-28T02:02:53Z",
+  "next_review_at": "2026-08-07T12:00:00Z"
+}

@@ -1,0 +1,46 @@
+{
+  "operation_id": "01KYJ375G0GN464TRX7KH9748R",
+  "status": "succeeded",
+  "summary": "Ingested RTX's validated strengthened 2026-07-24 RSI-overbought observation into the maintained security review. The durable context records the refreshed USD 212.79 adjusted close, 14.04% gain from 2026-06-25 through 2026-07-24, and trigger-strength increase to 0.1347 from 0.1071 while treating it as a refinement of the already-recorded momentum and near-term entry risk, not a separate catalyst, valuation input, short thesis, or trade signal. Updated provenance and the append-only wiki log. No follow-up was created because the fresher 2026-07-27 valuation and timing assessment remains controlling.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101.md",
+      "claim": "The deterministic candidate packet records a strengthened RSI-overbought trigger for RTX as of 2026-07-24 after an adjusted-close gain of 14.041479962729264% from 2026-06-25 through 2026-07-24, with a USD 212.7899932861328 close, trigger strength 0.134651872 versus previous strength 0.1070968283333333333333333333, and an ingest classifier disposition.",
+      "source_hash": "01548e1b6b6ac9501240061ddbb3348b9d9d83d9a04f0b0ed39e53c2c7980946"
+    },
+    {
+      "source": "data/wiki/securities/security_59304f90c440def31dc5.md",
+      "claim": "The maintained RTX review now preserves the strengthened packet identity and exact same-session refinement while recording a fresher 2026-07-27 USD 218.42 mark, bounded downside and base scenarios below market, overbought timing, and no configured margin of safety."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_1655ac715c33506ec7da.md",
+      "claim": "The accepted defense-and-aerospace relationship confirms positive medium-sensitivity exposure to replenishment demand, but commercial diversification, engine remediation, leverage, execution, valuation, and timing prevent strategy research."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested RTX's strengthened 2026-07-24 RSI-overbought observation as a refinement of strong-momentum and near-term entry-risk context after a 14.04% 25 June–24 July gain; it does not establish a separate catalyst, intrinsic value, short thesis, or paper trade, and no follow-up was created because the fresher 27 July valuation and timing assessment remains controlling."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole selected queue row matched operation 01KYJ375G0GN464TRX7KH9748R, run local-20260728-daily-all-17, source source_e4822bd4b442ff51063d, wiki_ingest, the required skill pair, and a live lease at prerequisite review.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the immutable operation, type, entity, source path, and source hash.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three content hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local inbox file, its SHA-256 matched 01548e1b6b6ac9501240061ddbb3348b9d9d83d9a04f0b0ed39e53c2c7980946, and its classifier decision was ingest.",
+      "The maintained RTX page now preserves source_e4822bd4b442ff51063d and the exact strengthened indicator observation while distinguishing a same-condition intensity refinement from explanation, valuation, short-thesis, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained RTX page, and log.md records this ingestion append-only.",
+      "The audited papertrader wiki lint --strict invocation returned OK [wiki].",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

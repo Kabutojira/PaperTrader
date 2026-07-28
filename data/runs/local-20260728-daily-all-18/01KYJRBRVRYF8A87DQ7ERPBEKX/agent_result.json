@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYJRBRVRYF8A87DQ7ERPBEKX",
+  "status": "skipped",
+  "summary": "Skipped the baseline-allocation strategy review because its immutable allocation plan allocation_plan_14360a568bdac40f3817 was superseded before execution by current plan allocation_plan_3bfa08e865743909469b. The current plan preserves the same Intuitive Surgical assessment and target details, but baseline strategy work must bind the current plan identity. No strategy, signal, follow-up, issue, wiki page, or structured state was changed.",
+  "evidence": [
+    {
+      "source": "data/operations/payloads/01KYJRBRVRYF8A87DQ7ERPBEKX.json",
+      "claim": "The immutable request binds strategy_bd005fc3733b1475b6f9 to allocation_plan_14360a568bdac40f3817 for security_1f9cce545ede94cd6349."
+    },
+    {
+      "source": "data/tables/allocation_targets.csv",
+      "claim": "The sole current allocation plan is allocation_plan_3bfa08e865743909469b as of 2026-07-28T04:26:41Z; its Intuitive Surgical row retains rank 1, score 63, 2.2% target weight, open disposition, and assessment timestamp 2026-07-27T21:28:56Z.",
+      "observed_at": "2026-07-28T04:26:41Z"
+    },
+    {
+      "source": "data/tables/allocation_history.csv",
+      "claim": "allocation_plan_14360a568bdac40f3817 is retained only in immutable history, where its Intuitive Surgical row was recorded at 2026-07-27T21:40:43Z."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "The current Intuitive Surgical assessment remains the payload-bound 2026-07-27T21:28:56Z baseline assessment, with valuation and timing soft gaps and no hard blocker.",
+      "observed_at": "2026-07-27T21:28:56Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped baseline strategy research for Intuitive Surgical because allocation plan allocation_plan_14360a568bdac40f3817 was superseded by current plan allocation_plan_3bfa08e865743909469b before execution; no strategy or signal was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and repository safety configuration forbids real orders.",
+      "The only running queue row is this strategy_research operation, claimed by local-20260728-daily-all-18 with a live lease.",
+      "The operation payload validates against schemas/operation_payload.schema.json and matches the immutable queue entity.",
+      "Native llm-wiki, controller, and strategy-research skill hashes match hermes_preflight.json.",
+      "The payload plan is superseded: current allocation_targets.csv contains only allocation_plan_3bfa08e865743909469b, not allocation_plan_14360a568bdac40f3817.",
+      "The linked relationship is accepted and the current security assessment timestamp still matches the payload.",
+      "The audited strict wiki lint command changed no paths, and no strategy, signal, follow-up, issue, wiki, allocation, order, accounting, portfolio, or performance state was changed.",
+      "papertrader wiki lint --strict returned OK [wiki]."
+    ]
+  }
+}

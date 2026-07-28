@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rxrx_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000078/rxrx-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000078/rxrx-20260331.htm",
+  "source_type": "filing",
+  "title": "Recursion Pharmaceuticals Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "8b4dc7f64d6e33c66565fc7a4134d5b9a5da5ea3b217e3649094d869ba0355c3",
+  "related_entity_ids": "idea_ai_native_drug_discovery|idea_precision_biology_healthcare_automation|security_ed7d5b616a196969c815",
+  "checked_at": "2026-07-27T23:18:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, 2026, Recursion reported USD 654.5 million cash and cash equivalents, 530.6 million shares outstanding, a USD 117.5 million quarterly net loss, and stated that additional capital will be required to advance drug candidates.",
+  "summary": "The SEC-filed quarterly report supports current clinical-stage economics, cash runway, operating losses, dilution, capital-needs, and valuation-risk analysis; SEC submissions showed no later Form 10-Q through 2026-07-27.",
+  "run_id": "local-20260727-daily-all-07"
+}

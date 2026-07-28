@@ -1,0 +1,21 @@
+{
+  "security_id": "security_1c055eb9b2bb1f5a8ff2",
+  "assessed_at": "2026-07-27T22:29:55Z",
+  "expires_at": "2026-08-26T22:29:55Z",
+  "eligibility": "baseline",
+  "confidence": "medium",
+  "thesis_score": "75",
+  "business_quality_score": "80",
+  "balance_sheet_score": "65",
+  "valuation_score": "30",
+  "timing_score": "35",
+  "liquidity_score": "95",
+  "risk_penalty": "25",
+  "downside_pct": "-27.2",
+  "base_upside_pct": "-5.4",
+  "valuation_horizon_months": "12",
+  "hard_blockers": "",
+  "soft_gaps": "confidence_medium|cyclical_normalization_uncertain|margin_of_safety_below_target|timing_unfavorable|valuation_not_compelling",
+  "evidence_refs": "source_rio_fy2025_results|source_rio_q2_2026_production_results",
+  "run_id": "local-20260727-daily-all-06"
+}

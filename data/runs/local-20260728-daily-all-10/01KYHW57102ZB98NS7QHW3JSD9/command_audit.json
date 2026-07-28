@@ -1,0 +1,80 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "relationship",
+        "upsert",
+        "--request",
+        "data/runs/local-20260728-daily-all-10/01KYHW57102ZB98NS7QHW3JSD9/upsert-relationship-rklb.json"
+      ],
+      "changed_paths": [
+        "data/tables/relationships.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a6806e279136e9e8234b02a9b3226da415ddab654df2fdcc88831d6a930bd3fd",
+            6456,
+            384
+          ],
+          "before": [
+            "file",
+            "f85e66cd92ce7e4c079a7edc2d0780a11b9daac06d104e0b14c3e98a0e075e10",
+            5259,
+            384
+          ],
+          "path": "data/tables/relationships.csv"
+        }
+      ],
+      "command": "papertrader research relationship upsert --request data/runs/local-20260728-daily-all-10/01KYHW57102ZB98NS7QHW3JSD9/upsert-relationship-rklb.json",
+      "completed_at": "2026-07-28T01:37:24Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "1290ae8481fcf01b86517868470abd2c9db7d549a4aa9fcafbb53496146da56f",
+          1435,
+          384
+        ],
+        "path": "data/runs/local-20260728-daily-all-10/01KYHW57102ZB98NS7QHW3JSD9/upsert-relationship-rklb.json"
+      },
+      "started_at": "2026-07-28T01:37:24Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-28T01:37:39Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T01:37:39Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-28T01:37:49Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T01:37:49Z"
+    }
+  ],
+  "operation_id": "01KYHW57102ZB98NS7QHW3JSD9",
+  "run_id": "local-20260728-daily-all-10"
+}

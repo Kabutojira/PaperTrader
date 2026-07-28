@@ -1,0 +1,18 @@
+{
+  "source_id": "source_atkr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1666138/000162828026030764/atkr-20260327.htm",
+  "source_type": "filing",
+  "title": "Atkore fiscal Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4bc93c64246d090766b40a6bfd65795981e0fa2fe711842442cb1ce45acba3d1",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_22c2b9d782a62d7a9b86",
+  "checked_at": "2026-07-28T00:25:52Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "For the quarter ended 2026-03-27, net sales were USD 731.377 million, gross profit was USD 136.116 million, and cash was USD 442.336 million; long-term debt was USD 756.911 million and the first two class settlements totaled USD 136.5 million.",
+  "summary": "The SEC-filed quarterly report supports Atkore identity, segment demand, margins, cash conversion, balance-sheet, litigation, post-divestiture, and risk analysis.",
+  "run_id": "local-20260728-daily-all-09"
+}

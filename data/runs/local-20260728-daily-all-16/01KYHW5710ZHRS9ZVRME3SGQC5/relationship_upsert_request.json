@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_9befaccc50d8cd94372b",
+  "idea_id": "idea_critical_minerals_copper",
+  "security_id": "security_6ad1af8d10d6276a0221",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Structural copper scarcity can raise Southern Copper's realized copper revenue, mine margins, operating cash flow, reserve value, and returns on funded growth; shareholder transmission depends on production, grades, recoveries, by-product credits, costs, taxes, project spending, jurisdictional terms, and capital allocation.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Copper pricing remains supportive while grades and recoveries improve, production returns to growth, cash costs remain competitive without exceptional by-product credits, operating cash flow funds capital investment and prudent distributions, and Tía María and other projects advance without undermining returns.",
+  "invalidation": "New supply, recycling, substitution, or weaker demand removes scarcity; grades or recoveries remain weak; production fails to recover; costs, taxes, royalties, water, labor, or jurisdictional terms worsen; projects are delayed or overrun; by-product credits normalize sharply; or attributable free cash flow fails to rise with realized copper prices.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_9befaccc50d8cd94372b.md",
+  "last_reviewed_at": "2026-07-28T03:42:45Z",
+  "next_review_at": "2026-08-15T00:00:00Z"
+}

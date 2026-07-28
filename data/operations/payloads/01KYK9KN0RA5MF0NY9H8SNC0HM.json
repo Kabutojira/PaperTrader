@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_7e9fd9486e494dd05bb5",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_sovereign_small_drone_supply_chains",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_7e9fd9486e494dd05bb5",
+    "security_id": "security_cc4dcb8f002b61dffe00"
+  },
+  "objective": "Review the canonical relationship from idea_sovereign_small_drone_supply_chains to security_cc4dcb8f002b61dffe00 and accept or reject it with current evidence.",
+  "operation_id": "01KYK9KN0RA5MF0NY9H8SNC0HM",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_parrot_fy2025_results",
+    "source_parrot_q1_2026_business"
+  ]
+}

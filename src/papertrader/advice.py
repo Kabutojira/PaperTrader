@@ -2288,8 +2288,18 @@ def load_published_snapshot(
     )
 
 
-def validate_advice(repository_root: Path, *, strict: bool = False) -> list[str]:
-    """Validate snapshot identity, immutable copy, and exact generated CSV exports."""
+def validate_advice(
+    repository_root: Path,
+    *,
+    strict: bool = False,
+    require_current_state: bool = True,
+) -> list[str]:
+    """Validate snapshot identity, immutable copy, and exact generated CSV exports.
+
+    A prepared daily run may advance canonical inputs before it publishes its final snapshot.
+    Such an in-flight operation can defer only the source-state freshness comparison; all other
+    publication invariants remain mandatory.
+    """
 
     errors: list[str] = []
     path = repository_root / "data" / "published" / "decision_snapshot.json"
@@ -2314,7 +2324,7 @@ def validate_advice(repository_root: Path, *, strict: bool = False) -> list[str]
     except (AdviceError, CanonicalValueError, OSError, UnicodeError) as exc:
         errors.append(f"cannot validate decision source state: {exc}")
     else:
-        if dict(snapshot.source_state_hashes) != current_source_hashes:
+        if require_current_state and dict(snapshot.source_state_hashes) != current_source_hashes:
             errors.append("published decision snapshot does not match current authoritative state")
         expected_snapshot_id = stable_id(
             "decision", snapshot.run_id, snapshot.as_of, snapshot.source_state_hashes

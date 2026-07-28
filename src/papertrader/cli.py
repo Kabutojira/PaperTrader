@@ -36,6 +36,7 @@ from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
 from papertrader.integrity import (
     changed_paths_from_git,
+    publication_requires_current_state,
     validate_csv_files,
     validate_integrity,
     validate_json_schemas,
@@ -62,6 +63,7 @@ from papertrader.opportunity import (
 )
 from papertrader.orders import (
     cancel_paper_order,
+    create_baseline_paper_order,
     create_paper_order,
     create_signal,
     leg_from_mapping,
@@ -79,6 +81,7 @@ from papertrader.queue import (
     fail_attempt,
     prepare_queue,
     release_expired_leases,
+    resolve_blocked_operation,
     validate_queue,
 )
 from papertrader.reports import NarrativeItem, generate_daily_report, refresh_wiki_homepage
@@ -165,6 +168,8 @@ def _parser() -> argparse.ArgumentParser:
     queue_fail.add_argument("--request", type=Path, required=True)
     queue_block = queue_commands.add_parser("block")
     queue_block.add_argument("--request", type=Path, required=True)
+    queue_resolve_blocked = queue_commands.add_parser("resolve-blocked")
+    queue_resolve_blocked.add_argument("--request", type=Path, required=True)
 
     account = commands.add_parser("account", help="initialize paper-only accounting")
     account_commands = account.add_subparsers(dest="account_command", required=True)
@@ -180,6 +185,8 @@ def _parser() -> argparse.ArgumentParser:
     order_commands = order.add_subparsers(dest="order_command", required=True)
     order_create = order_commands.add_parser("create")
     order_create.add_argument("--request", type=Path, required=True)
+    order_create_baseline = order_commands.add_parser("create-baseline")
+    order_create_baseline.add_argument("--request", type=Path, required=True)
     order_cancel = order_commands.add_parser("cancel")
     order_cancel.add_argument("--request", type=Path, required=True)
 
@@ -570,6 +577,16 @@ def _run_queue_command(
             run_id=_text(raw, "run_id"),
             reason=_text(raw, "reason"),
         )
+    elif command == "resolve-blocked":
+        resolve_blocked_operation(
+            repository_root,
+            operation_id=_text(raw, "operation_id"),
+            run_id=_text(raw, "run_id"),
+            terminal_status=_text(raw, "terminal_status"),
+            result_path=_text(raw, "result_path"),
+            result_summary=_text(raw, "result_summary"),
+            terminal_reason=_text(raw, "terminal_reason"),
+        )
     return 0
 
 
@@ -613,32 +630,58 @@ def _run_structured_command(
         references = tuple(_reference(value) for value in _sequence(raw, "references"))
         now = _timestamp(raw, "now", required=False) or utc_now()
         risk_state = build_risk_state(repository_root, references, as_of=now)
-        leg_values = _sequence(raw, "legs")
-        if not all(isinstance(value, dict) for value in leg_values):
-            raise CanonicalValueError("every order leg must be an object")
-        legs = tuple(leg_from_mapping(value) for value in leg_values if isinstance(value, dict))
         limit_raw = raw.get("limit_price")
         limit = (
             required_decimal(_text(raw, "limit_price"), label="limit_price")
             if limit_raw is not None and limit_raw != ""
             else None
         )
-        order_id, created, assessment = create_paper_order(
-            repository_root,
-            settings,
-            signal_id=_text(raw, "signal_id"),
-            strategy_id=_text(raw, "strategy_id"),
-            legs=legs,
-            references=references,
-            risk_state=risk_state,
-            run_id=_text(raw, "run_id"),
-            fill_policy=_text(raw, "fill_policy", default=settings.orders.default_fill_policy),
-            order_type=_text(raw, "order_type", default=settings.orders.default_order_type),
-            limit_price=limit,
-            not_before=_timestamp(raw, "not_before", required=False),
-            expires_at=_timestamp(raw, "expires_at", required=False),
-            now=now,
-        )
+        signal_id = _text(raw, "signal_id")
+        strategy_id = _text(raw, "strategy_id")
+        run_id = _text(raw, "run_id")
+        fill_policy = _text(raw, "fill_policy", default=settings.orders.default_fill_policy)
+        order_type = _text(raw, "order_type", default=settings.orders.default_order_type)
+        not_before = _timestamp(raw, "not_before", required=False)
+        expires_at = _timestamp(raw, "expires_at", required=False)
+        if arguments.order_command == "create-baseline":
+            if "legs" in raw:
+                raise CanonicalValueError("baseline order quantity and legs are code-owned")
+            order_id, created, assessment = create_baseline_paper_order(
+                repository_root,
+                settings,
+                signal_id=signal_id,
+                strategy_id=strategy_id,
+                references=references,
+                risk_state=risk_state,
+                run_id=run_id,
+                fill_policy=fill_policy,
+                order_type=order_type,
+                limit_price=limit,
+                not_before=not_before,
+                expires_at=expires_at,
+                now=now,
+            )
+        else:
+            leg_values = _sequence(raw, "legs")
+            if not all(isinstance(value, dict) for value in leg_values):
+                raise CanonicalValueError("every order leg must be an object")
+            legs = tuple(leg_from_mapping(value) for value in leg_values if isinstance(value, dict))
+            order_id, created, assessment = create_paper_order(
+                repository_root,
+                settings,
+                signal_id=signal_id,
+                strategy_id=strategy_id,
+                legs=legs,
+                references=references,
+                risk_state=risk_state,
+                run_id=run_id,
+                fill_policy=fill_policy,
+                order_type=order_type,
+                limit_price=limit,
+                not_before=not_before,
+                expires_at=expires_at,
+                now=now,
+            )
         print(
             json.dumps(
                 {
@@ -1024,7 +1067,14 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             snapshot = refresh_advice(root, settings, run_id=arguments.run_id)
             print(json.dumps(asdict(snapshot), sort_keys=True))
             return 0
-        return _print_result("advice", validate_advice(root, strict=arguments.strict))
+        return _print_result(
+            "advice",
+            validate_advice(
+                root,
+                strict=arguments.strict,
+                require_current_state=publication_requires_current_state(root, os.environ),
+            ),
+        )
     if arguments.command == "logs":
         regenerate_log_tail(root)
         return _print_result("logs", [])

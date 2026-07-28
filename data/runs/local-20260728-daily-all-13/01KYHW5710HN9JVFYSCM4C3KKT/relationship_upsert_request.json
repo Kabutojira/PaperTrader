@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_9e7b4700174908755cbc",
+  "idea_id": "idea_precision_biology_healthcare_automation",
+  "security_id": "security_ed7d5b616a196969c815",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Recursion applies computational models, biological data, and automated experimentation to identify and advance drug candidates; repeatable gains in target selection, cycle time, or clinical translation can create pipeline and partner value, but common-share benefit depends on trial success, partner economics, operating burn, capital needs, and dilution.",
+  "sensitivity": "high",
+  "confidence": "low",
+  "catalyst": "Blinded clinical data support efficacy and safety, FDA engagement produces clear development paths, REC-4881 and REC-1245 advance, partner milestones become repeatable, measured discovery-cycle or probability-of-success improvements are disclosed, and operating burn declines without financing that overwhelms per-share value.",
+  "invalidation": "Programs fail safety or efficacy tests; development time or cost does not improve; candidates are repeatedly deprioritized; partnership revenue remains immaterial; proprietary-data commitments consume capital without measurable output; or financing and dilution absorb the platform value attributable to existing common shares.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_9e7b4700174908755cbc.md",
+  "last_reviewed_at": "2026-07-28T02:30:13Z",
+  "next_review_at": "2026-08-10T12:00:00Z"
+}

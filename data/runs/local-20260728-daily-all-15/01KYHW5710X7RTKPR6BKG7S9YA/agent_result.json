@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-15/01KYHW5710X7RTKPR6BKG7S9YA/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Rejected the low-confidence, low-sensitivity proposed beneficiary relationship from humanoid robotics and embodied-AI components to ABB. ABB's historical Robotics channel is causal and positive, but the agreed divestment removes durable direct exposure, retained embodied-AI economics are unquantified, and no strategy follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "ABB's Q2 2026 results establish USD 12.042 billion of orders, USD 9.475 billion of revenue, a 20.2% operational EBITA margin, USD 1.303 billion of continuing-operations operating cash flow, and expected net Robotics-sale proceeds of about USD 4.8 billion in the second half of 2026. The group economics are strong, but the disposal prevents treating ABB common shares as a durable direct robotics proxy.",
+      "observed_at": "2026-07-28T00:39:25Z",
+      "source": "source_abb_q2_2026_results",
+      "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch"
+    },
+    {
+      "claim": "ABB's maintained share-listing evidence identifies the reviewed instrument as the non-listed Level I ABBNY ADR traded over the counter, validating the immutable security endpoint rather than relying on ticker text alone.",
+      "observed_at": "2026-07-28T00:39:25Z",
+      "source": "source_abb_share_listing_2026",
+      "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605",
+      "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing"
+    },
+    {
+      "claim": "The maintained humanoid-robotics idea requires repeat paid deployments, material component content, recurring revenue, and margins, while distinguishing scaled conventional automation from early general-purpose humanoid economics.",
+      "source": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md"
+    },
+    {
+      "claim": "The maintained ABB security review states that the pending Robotics exit removes durable physical-AI exposure, recurring RobotStudio economics remain undisclosed, and both bounded valuation scenarios are below the current mark.",
+      "source": "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-15/01KYHW5710X7RTKPR6BKG7S9YA/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_afac7205cd7e09800edf.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710X7RTKPR6BKG7S9YA",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Rejected the proposed beneficiary relationship from humanoid robotics and embodied-AI components to ABB with positive direction, low sensitivity, and low confidence. Robotics adoption can causally drive controller, drive, motor, software, and service demand, but ABB expects about USD 4.8 billion of net proceeds from the agreed Robotics divestment in the second half of 2026 and does not disclose material retained RobotStudio or humanoid-attributable economics. Updated the relationship page, complete research catalog, append-only wiki log, and canonical rejected relationship row. No strategy, signal, order, issue, or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710X7RTKPR6BKG7S9YA, run local-20260728-daily-all-15, relationship relationship_afac7205cd7e09800edf, the required skill pair, and a live lease at execution.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research by content hash; the repository controller and operation skill hashes matched preflight, PAPER_TRADING_ONLY was true, execution was sequential, and no injection flags were present.",
+      "The immutable relationship, idea, and security IDs matched the payload, endpoint pages, request, security table, and inserted canonical row.",
+      "The rejected beneficiary row is unique for the idea-security endpoint pair and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The causal test distinguished ABB's historical Robotics channel from durable listed-security exposure: the agreed disposal and absent retained embodied-AI economics support rejection with low sensitivity and low confidence.",
+      "The audited immutable request SHA-256 is adb670696f7ab8c76cfd97994133a8761c2d28b0fbfb093168a7dbac12117b16, and its CLI invocation changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, order, or fill path.",
+      "The relationship page is registered exactly once in the complete research catalog and documented in the append-only wiki log; the page and request are regular files rather than symlinks.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, queue claim, preflight, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, catalog, log, and command-delta checks passed."
+    ],
+    "passed": true
+  }
+}

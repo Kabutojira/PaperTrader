@@ -1,0 +1,18 @@
+{
+  "source_id": "source_coin_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm",
+  "source_type": "filing",
+  "title": "Coinbase Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "bf2393062a2dbaa79513d85526514597e7fd5dc588374816e8e35a89ed83a88e",
+  "related_entity_ids": "idea_digital_finance_crypto_rails|security_37ddcbdaad296ad831f2",
+  "checked_at": "2026-07-27T22:55:05Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "For Q1 2026 Coinbase reported USD 1.339 billion net revenue, USD 756 million transaction revenue, USD 584 million subscription and services revenue, a USD 394 million net loss, USD 183 million operating cash flow, and USD 248 million stock-based compensation expense.",
+  "summary": "The SEC-filed Q1 2026 Form 10-Q confirms stablecoin growth and positive operating cash flow but also sharp transaction cyclicality, a GAAP loss, customer-asset custody obligations, revenue concentration, stock compensation, and a balance-sheet presentation that prevents a clean downside-aware per-share valuation bridge.",
+  "run_id": "local-20260727-daily-all-07"
+}

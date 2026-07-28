@@ -1,0 +1,40 @@
+{
+  "operation_id": "01KYJMQ5DG45HKS1DT01QB8X4N",
+  "status": "failed",
+  "summary": "The Roblox security-research operation could not pass its required final verification because strict repository integrity reported that the published decision snapshot does not match current authoritative state. The payload's assessment_state exactly matches an existing current, evidence-backed Roblox assessment from a completed operation, so no duplicate security, source, assessment, wiki, issue, or follow-up state was written. The existing assessment and all out-of-scope accounting and allocation state were preserved.",
+  "evidence": [
+    {
+      "source": "PaperTrader structured operation history and security assessment state",
+      "claim": "Operation 01KYHW57100KA2CGTK6S88B8BQ completed the same Roblox revalidation objective successfully at 2026-07-27T15:39:57Z. The current assessment for security_c9a37d277445869a8809 is assessed_at 2026-07-27T15:37:00Z, exactly matches this payload's assessment_state, expires 2026-08-26T15:37:00Z, and references source_rblx_q1_2026_shareholder_letter."
+    },
+    {
+      "source": "PaperTrader deterministic identity, source, market, and FX state",
+      "claim": "The immutable RBLX/XNYS/USD/equity identity matched exactly one security row with no identity duplicate; assessment readiness returned no errors; the registered issuer source was available and last checked at 2026-07-27T15:37:00Z; and both the RBLX mark and USD/EUR rate were retrieved at 2026-07-27T20:55:09Z with the market row status ok."
+    },
+    {
+      "source": "papertrader integrity --strict",
+      "claim": "The required strict integrity command exited 1 with: published decision snapshot does not match current authoritative state. Repairing or refreshing published decision artifacts is outside the security_research skill's allowed write scope."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "PAPER_TRADING_ONLY=true; exactly one running operation was claimed by local-20260727-daily-all-01 with a live lease, and no second operation was running.",
+      "The preflight hashes exactly matched llm-wiki 2.1.0, papertrader-controller, and papertrader-security-research.",
+      "Strict schema validation, queue validation, and strict wiki lint passed.",
+      "Immutable identity deduplication passed, the existing assessment and registered evidence were current, and current price and FX rows were fresh.",
+      "Strict integrity failed because the published decision snapshot does not match current authoritative state; this operation cannot repair publication artifacts within its allowed scope.",
+      "No security CSV, assessment CSV, source table, allocation target/history, order, execution, cash, portfolio, fill, performance, or wiki file was changed."
+    ]
+  }
+}

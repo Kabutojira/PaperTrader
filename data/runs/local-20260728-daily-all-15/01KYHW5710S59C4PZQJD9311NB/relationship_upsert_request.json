@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_9773364a04293a4febaf",
+  "idea_id": "idea_critical_minerals_lithium",
+  "security_id": "security_9d4049ed6669a52815d6",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "EV and stationary-storage demand plus constrained supply can raise SQM's realized lithium prices, volumes, gross profit, earnings, cash generation, and resource option value; ADS-holder benefit depends on Chilean partnership attribution and state take, contract pricing, permits, conversion ramp, capex, minority interests, debt, and commodity cyclicality.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "EV and stationary-storage demand remains durable, realized lithium prices and volumes stay higher, earnings convert to cash after Chilean state payments, tax, and capex, Kwinana approaches nameplate, Salar Futuro permitting advances, debt remains controlled, and Q2 primary evidence confirms the recovery.",
+  "invalidation": "Supply restarts, new projects, recycling, sodium-ion adoption, material efficiency, or weaker demand restores surplus; realized prices or volumes reverse; Chilean partnership economics or state take worsens; Salar Futuro or Australian conversion slips; capex, tax, debt, or minority interests absorb operating gains; or lithium ceases to be financially material to SQM.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_9773364a04293a4febaf.md",
+  "last_reviewed_at": "2026-07-28T03:12:53Z",
+  "next_review_at": "2026-08-31T12:00:00Z"
+}

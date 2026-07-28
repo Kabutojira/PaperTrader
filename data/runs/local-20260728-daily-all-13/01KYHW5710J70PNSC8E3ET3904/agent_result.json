@@ -1,0 +1,60 @@
+{
+  "operation_id": "01KYHW5710J70PNSC8E3ET3904",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from sovereign small-drone and trusted-component supply chains to Parrot with high positive sensitivity and medium confidence. Current issuer evidence shows direct exposure through professional micro-UAV revenue, ANAFI UKR production, institutional demand, BLUE UAS approval, and NSPA catalogue access, while undisclosed award value, customer concentration, component provenance, durable cash conversion, valuation, and trading depth limit shareholder transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created before the scheduled half-year release.",
+  "evidence": [
+    {
+      "source": "source_parrot_q1_2026_business",
+      "claim": "Parrot reported Q1 2026 revenue of EUR 27.9 million, up 52%, with professional micro-UAV revenue of EUR 21.3 million, up 102% and equal to 76% of group revenue. The release attributes growth to ANAFI UKR production and institutional deliveries, reports BLUE UAS and NSPA procurement access, and describes slight quarterly profitability with no cash consumed, while omitting order values, customer concentration, and sufficient component-country detail.",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf",
+      "observed_at": "2026-07-28T01:05:38Z",
+      "source_hash": "62c7a27a71a37be051fe3771f564e4bb83a589de4e43ef7ce46e0421a65c2772"
+    },
+    {
+      "source": "source_parrot_fy2025_results",
+      "claim": "Parrot reported 2025 revenue of EUR 79.8 million and a 75.4% gross margin, but ordinary operations lost EUR 12.7 million, net loss was EUR 15.0 million, and operating cash outflow was EUR 7.6 million. Year-end cash was EUR 23.0 million, and shareholder-facility support remained relevant, showing that high gross margin had not yet produced durable full-year cash economics.",
+      "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+      "observed_at": "2026-07-28T01:05:38Z",
+      "source_hash": "f5ffe4a4e4fbfa754d62db12cd1a22e009bd236f98e9b611b877ef57d63ebee2"
+    },
+    {
+      "source": "data/wiki/ideas/idea_sovereign_small_drone_supply_chains.md",
+      "claim": "The maintained idea defines the causal channel from trusted sovereign procurement and recurring small-drone demand to supplier revenue and cash flow, while requiring funded volume awards, allied component content, competitive unit economics, margins, and cash conversion rather than policy intent alone."
+    },
+    {
+      "source": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+      "claim": "The maintained security review records direct and material professional micro-UAV exposure but keeps Parrot ineligible because durable cash conversion, order materiality, component provenance, concentration, downside-aware valuation, and trading depth remain unresolved before the July 31 half-year release."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-13/01KYHW5710J70PNSC8E3ET3904/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_7e9fd9486e494dd05bb5.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from sovereign small-drone and trusted-component supply chains to Parrot based on professional micro-UAV revenue, ANAFI UKR production, institutional demand, and trusted procurement access; no strategy follow-up was created because award value, component provenance, durable cash conversion, valuation, and liquidity remain unresolved before the half-year release."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-13/01KYHW5710J70PNSC8E3ET3904/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710J70PNSC8E3ET3904, run local-20260728-daily-all-13, relationship relationship_7e9fd9486e494dd05bb5, the required skill pair, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited immutable request SHA-256 is 49b08ff9d6520d8eb186b4f9997a5dc897427a56ad2da5ca9b27a06d4686c63e, and the upsert changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, or order path.",
+      "The relationship page is registered in the complete research catalog and documented in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, trailing-whitespace, and catalog/log checks passed."
+    ]
+  }
+}

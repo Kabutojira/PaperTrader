@@ -1,0 +1,24 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "--repository",
+        "/workspace",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader --repository /workspace wiki lint --strict",
+      "completed_at": "2026-07-28T03:50:37Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T03:50:37Z"
+    }
+  ],
+  "operation_id": "01KYJ375G06AA8K2J4SVCQZED7",
+  "run_id": "local-20260728-daily-all-16"
+}

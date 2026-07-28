@@ -1,0 +1,10 @@
+{
+  "changed_paths": [],
+  "errors": [
+    "post-run integrity: published decision snapshot does not match current authoritative state"
+  ],
+  "operation_id": "01KYJMQ5DG45HKS1DT01QB8X4N",
+  "passed": false,
+  "run_id": "local-20260727-daily-all-01",
+  "validation_version": 1
+}

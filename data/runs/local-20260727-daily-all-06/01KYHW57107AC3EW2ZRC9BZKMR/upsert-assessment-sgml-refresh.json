@@ -1,0 +1,21 @@
+{
+  "security_id": "security_4627aea1bf7d8943d3d8",
+  "assessed_at": "2026-07-27T22:46:47Z",
+  "expires_at": "2026-08-26T22:46:47Z",
+  "eligibility": "ineligible",
+  "confidence": "low",
+  "thesis_score": "50",
+  "business_quality_score": "35",
+  "balance_sheet_score": "5",
+  "valuation_score": "0",
+  "timing_score": "20",
+  "liquidity_score": "85",
+  "risk_penalty": "80",
+  "downside_pct": "-100",
+  "base_upside_pct": "0",
+  "valuation_horizon_months": "12",
+  "hard_blockers": "accounting_uncertain|solvency_risk|valuation_unsupported",
+  "soft_gaps": "cyclical_normalization_uncertain|timing_unfavorable",
+  "evidence_refs": "source_sgml_july_2026_update|source_sgml_q1_2026_mda",
+  "run_id": "local-20260727-daily-all-06"
+}

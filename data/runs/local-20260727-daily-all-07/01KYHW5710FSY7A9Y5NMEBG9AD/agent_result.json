@@ -1,0 +1,65 @@
+{
+  "operation_id": "01KYHW5710FSY7A9Y5NMEBG9AD",
+  "status": "succeeded",
+  "summary": "Revalidated Eaton against its SEC-filed Q1 2026 Form 10-Q and current 2026-07-27 market and FX data. Electrical demand, segment margins, positive operating cash flow, and trading liquidity support baseline eligibility, while acquisition leverage, concentration, medium confidence, and unfavorable valuation remain material soft gaps. At the USD 398.64 mark, bounded 12-month scenarios imply 37.6% downside and 19.7% base-case downside. No conviction strategy follow-up was enqueued because both scenario values remain below the mark and the separately queued relationship review is incomplete.",
+  "evidence": [
+    {
+      "source": "Eaton Q1 2026 Form 10-Q",
+      "claim": "Q1 2026 net sales were USD 7.451 billion, net income attributable to ordinary shareholders was USD 866 million, diluted EPS was USD 2.22, and operating cash flow was USD 507 million. Cash plus short-term investments was USD 751 million against USD 21.129 billion of short- and long-term debt after USD 11.079 billion of acquisition spending. The SEC filing returned HTTP 200 on 2026-07-27.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm",
+      "observed_at": "2026-07-27T23:28:42Z",
+      "source_hash": "fffc172f0b3e45e0add279ce31bd3201a3b8c04f406f1f48cbafc7ea46363384"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "ETN closed at USD 398.6400146484375 on 2026-07-27 with volume 1,732,751, and the current USD/EUR rate was 0.8794000148773193. Annualized Q1 GAAP EPS of USD 8.88 at 28 times gives USD 248.64 and -37.6%; a USD 10.00 base earnings scenario at 32 times gives USD 320.00 and -19.7%."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/record-source-etn-q1-2026-10q.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh-v2.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh-v3.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh.json",
+    "data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-security-etn-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Eaton is a medium-confidence baseline near miss: electrical demand, margins, positive operating cash flow, and liquidity are strengths, but acquisition leverage and concentration remain risks, while the USD 398.64 mark stands above the USD 248.64 downside and USD 320.00 base scenario values."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/record-source-etn-q1-2026-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-security-etn-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW5710FSY7A9Y5NMEBG9AD/upsert-assessment-etn-refresh-v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-07 with a live lease through 2026-07-27T23:52:24Z; the payload matched the immutable security operation and preflight hashes matched llm-wiki 2.1.0, the controller skill, and the security-research skill.",
+      "The immutable ETN/XNYS/USD/equity identity matched exactly one security row with no duplicate issuer-instrument-venue-currency-provider identity.",
+      "The SEC-filed Q1 2026 Form 10-Q returned HTTP 200 and was registered as available with SHA-256 fffc172f0b3e45e0add279ce31bd3201a3b8c04f406f1f48cbafc7ea46363384 before the final assessment timestamp.",
+      "The final current assessment belongs to this run, expires 2026-08-26, references current registered evidence, has no hard blocker, and records -37.6% downside and -19.7% base upside from the refreshed mark.",
+      "The initial assessment request failed closed because its soft gaps were not canonically sorted; immutable v2 corrected sorting. Strict integrity then detected that the v2 assessment timestamp preceded the source registry first-seen timestamp; immutable v3 corrected the timestamp before final validation.",
+      "The 2026-07-27 ETN mark, 1,732,751-share volume, and 2026-07-27 USD/EUR rate were current; final strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness correctly remained false because unrelated repository-wide assessment backfills and relationship reviews are incomplete; Eaton independently lacks an accepted relationship and its negative base upside prevents a conviction strategy follow-up.",
+      "The command audit shows this operation changed only securities, security assessments, source registry, and source history structured tables; no allocation target/history, order, execution, cash, portfolio, fill, or performance path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

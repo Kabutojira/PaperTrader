@@ -1,0 +1,22 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-28T05:21:30Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T05:21:30Z"
+    }
+  ],
+  "operation_id": "01KYK9JPR0ZFYN74ZZCE6RT3FY",
+  "run_id": "local-20260728-daily-all-20"
+}

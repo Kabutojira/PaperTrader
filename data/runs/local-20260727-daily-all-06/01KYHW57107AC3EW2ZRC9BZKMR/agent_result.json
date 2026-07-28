@@ -1,0 +1,65 @@
+{
+  "operation_id": "01KYHW57107AC3EW2ZRC9BZKMR",
+  "status": "succeeded",
+  "summary": "Revalidated Sigma Lithium against its SEC-filed Q1 2026 MD&A, the latest July production and environmental update, and current 2026-07-27 market and FX data. Second-quarter production beat guidance, but USD 3.9 million of March cash, USD 133.9 million of debt, USD 144.5 million of negative working capital, a going-concern disclosure, material control weaknesses, unresolved funding, and no supportable valuation make the low-confidence security ineligible. No strategy follow-up was enqueued.",
+  "evidence": [
+    {
+      "source": "Sigma Lithium Q1 2026 management discussion and analysis",
+      "claim": "The SEC-hosted filing reports Q1 production of 23.6 kt, USD 42.3 million revenue, USD 11.1 million net income, negative USD 2.7 million operating cash flow, USD 3.9 million cash, USD 133.9 million debt, USD 144.527 million negative working capital that may cast significant doubt on going concern, and material weaknesses in internal control.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm",
+      "observed_at": "2026-07-27T22:45:40Z",
+      "source_hash": "9fb06d6cd00cb27b07aeac6f04e8fecebeddfe13771baadfd32576c4a27656a9"
+    },
+    {
+      "source": "Sigma Lithium July 2026 production and environmental update",
+      "claim": "The latest SEC-hosted issuer update reports 35 kt of second-quarter concentrate, 6% above guidance, but also negotiations with Minas Gerais following approximately USD 540,000 of environmental fines. It does not update the March balance sheet or resolve liquidity, receivables, funding, going-concern, or control weaknesses.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003854/ex99-1.htm",
+      "observed_at": "2026-07-27T22:45:40Z",
+      "source_hash": "81cd332f53f96f01fddd354b27ce7264c9aeaaa2aa610ec2596fd2cc894aaddd"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "SGML closed at USD 9.949999809265137 on 2026-07-27 with volume 1,520,099; RSI was 31.70812037, the 20-day return was -15.029891%, and the current USD/EUR rate was 0.8794000148773193. The fresh liquid mark and near-oversold momentum do not resolve the fundamental hard blockers. Because valuation inputs are unsupported, the required comparable assessment conservatively records -100% downside and 0% base upside rather than asserting a price target."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/record-source-sgml-july-2026.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/record-source-sgml-q1-2026.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/upsert-assessment-sgml-refresh.json",
+    "data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/upsert-security-sgml-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4627aea1bf7d8943d3d8.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Sigma Lithium is ineligible despite a Q2 production beat: March cash, debt, negative working capital, going-concern disclosure, control weaknesses, unresolved funding, and unsupported valuation outweigh the fresh USD 9.95 mark and near-oversold momentum."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/record-source-sgml-q1-2026.json",
+    "papertrader research source record --request data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/record-source-sgml-july-2026.json",
+    "papertrader research security upsert --request data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/upsert-security-sgml-refresh.json",
+    "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-06/01KYHW57107AC3EW2ZRC9BZKMR/upsert-assessment-sgml-refresh.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Exactly one operation was running, claimed by local-20260727-daily-all-06 with a live lease, and preflight identified llm-wiki 2.1.0, the controller skill, and the security-research skill with content hashes.",
+      "The immutable SGML/XNAS/USD/equity identity matched exactly one security row and passed the validated security upsert without changing immutable identity fields.",
+      "Both SEC-hosted evidence documents returned HTTP 200, were registered with current SHA-256 hashes, and predated the final assessment timestamp.",
+      "The final low-confidence assessment belongs to this run, expires 2026-08-26, references both current registered sources, and records canonical accounting_uncertain, solvency_risk, and valuation_unsupported hard blockers.",
+      "The 2026-07-27 SGML mark, volume, indicators, and USD/EUR rate were current; strict schema validation, queue validation, wiki lint, and integrity validation passed.",
+      "Allocation readiness correctly remained false because repository-wide assessment backfills and relationship reviews are incomplete; the ineligible assessment independently prohibits a strategy follow-up.",
+      "Command audit changed only source registry/history, the security row, and the current assessment; no allocation target/history, order, execution, cash, portfolio, fill, or performance file was changed by this operation."
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_297f9e36fb4e93a808e8",
+  "idea_id": "idea_commercial_space_infrastructure",
+  "security_id": "security_7ca095d63423c55a90e3",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Government and commercial demand for launches, spacecraft, components, and mission systems can flow directly into Rocket Lab's Launch Services and Space Systems revenue and backlog; shareholder benefit depends on reliable missions, profitable contract conversion, lower cash use, and disciplined financing.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Electron cadence and mission reliability remain durable, backlog converts at maintained margins, Space Systems repeat-program revenue expands, Neutron reaches milestones without material overruns, customer concentration declines, and operating cash use falls without repeated equity issuance.",
+  "invalidation": "Launch or mission failures interrupt cadence, Neutron slips or exceeds budget, customers terminate or modify material backlog, fixed-price contracts generate losses, concentration rises, segment revenue decouples from sector demand, or cash burn requires dilution that outruns enterprise-value growth.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_297f9e36fb4e93a808e8.md",
+  "last_reviewed_at": "2026-07-28T01:35:44Z",
+  "next_review_at": "2026-08-14T12:00:00Z"
+}

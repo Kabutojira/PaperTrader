@@ -618,6 +618,10 @@ def finalize_daily_run(
 ) -> DailyFinalization:
     """Process fills, rebuild accounting, and generate the single canonical report."""
 
+    if not github_report_url.startswith("https://github.com/") or any(
+        marker in github_report_url for marker in "\r\n"
+    ):
+        raise DailyRunError("GitHub report URL must be an HTTPS github.com URL")
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     manifest_path = _daily_manifest_path(repository_root, run_id)
     manifest = _load_object(manifest_path)
@@ -626,6 +630,14 @@ def finalize_daily_run(
         raise DailyRunError("daily finalization requires this run's prepared manifest")
     if batch.get("run_id") != run_id:
         raise DailyRunError("agent batch identity does not match the daily run")
+    recorded_runs = [row for row in read_table(repository_root, "runs") if row["run_id"] == run_id]
+    if len(recorded_runs) > 1:
+        raise DailyRunError("daily run history contains a duplicate run ID")
+    if recorded_runs:
+        recorded_at = parse_timestamp(recorded_runs[0]["completed_at"])
+        if recorded_at is None:
+            raise DailyRunError("partially finalized daily run lacks a completion time")
+        instant = recorded_at
     started_at = parse_timestamp(str(manifest.get("started_at", "")))
     if started_at is None or started_at > instant:
         raise DailyRunError("daily manifest contains an invalid start time")

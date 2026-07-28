@@ -1,0 +1,59 @@
+{
+  "operation_id": "01KYHW5710DS9JV64CJDQBVCMV",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from structural copper scarcity to Rio Tinto with medium positive sensitivity and medium confidence. Current issuer evidence shows a direct path through Oyu Tolgoi's ramp, copper volumes, costs, and cash generation, while iron-ore dominance, commodity diversification, project spending, leverage, ownership terms, and adverse current valuation limit shareholder transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created before the imminent half-year results.",
+  "evidence": [
+    {
+      "source": "source_rio_q2_2026_production_results",
+      "claim": "Rio Tinto reported first-half copper-equivalent production up 3%, Oyu Tolgoi first-half copper production up 31%, improved Oyu Tolgoi C1 cost guidance of USD 0.30-0.50 per pound, group second-quarter copper production of 213 kt down 7% year over year and sequentially, and unchanged 2026 copper guidance of 800-870 kt.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results",
+      "observed_at": "2026-07-27T22:27:56Z",
+      "source_hash": "851e917983c691d21f34f9f07c48d261a1e03e7f31276789693152e3542bdf5f"
+    },
+    {
+      "source": "source_rio_fy2025_results",
+      "claim": "Rio Tinto reported 2025 operating cash flow of USD 16.832 billion, free cash flow of USD 4.025 billion down 28%, and net debt of USD 14.362 billion, showing group funding capacity but material capital-intensity and leverage counterweights to copper-specific gains.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-solid-results-underpinned-by-8-cueq-production-and-sharper-cost-discipline",
+      "observed_at": "2026-07-27T22:27:56Z",
+      "source_hash": "c1e5b0a09a24e38de05652c9d1ff99b53dc25c643834dc2611e28a1f522e2dab"
+    },
+    {
+      "source": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "claim": "The maintained security review records diversified mining exposure, iron-ore dominance, Oyu Tolgoi ramp potential, a USD 91.95 ADR mark, and bounded downside and base values 27.2% and 5.4% below market, blocking strategy research."
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_copper.md",
+      "claim": "The maintained idea defines the causal channel from constrained mine supply and copper demand to low-cost producer cash flow while preserving recycling, substitution, supply response, execution, jurisdiction, capital intensity, and valuation as contrary evidence."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-13/01KYHW5710DS9JV64CJDQBVCMV/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_392da6d90e7c969945a2.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, medium-sensitivity positive beneficiary relationship from structural copper scarcity to Rio Tinto based on Oyu Tolgoi ramp, copper production, cost, and group cash-flow evidence; no strategy follow-up was created because diversification, imminent half-year results, and current valuation remain limiting."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-13/01KYHW5710DS9JV64CJDQBVCMV/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole running queue row matched operation 01KYHW5710DS9JV64CJDQBVCMV, run local-20260728-daily-all-13, relationship relationship_392da6d90e7c969945a2, the required skill pair, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited request SHA-256 matched its post-invocation identity, and the upsert changed only data/tables/relationships.csv.",
+      "Allocation targets/history, executions, cash, portfolio, and performance retained their pre-operation SHA-256 hashes.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped relationship identity, uniqueness, symlink, trailing-whitespace, and source-reference checks passed."
+    ]
+  }
+}

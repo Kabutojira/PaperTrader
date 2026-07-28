@@ -1,0 +1,33 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-28T03:39:25Z",
+  "estimated_cost_per_operation": "1",
+  "estimated_model_budget_used": "5",
+  "maximum_model_budget": "5",
+  "maximum_operations": 5,
+  "operation_count": 5,
+  "outcomes": [
+    {
+      "operation_id": "01KYHW5710S59C4PZQJD9311NB",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYHW5710VH8HSMT8N209A500",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYHW5710X7RTKPR6BKG7S9YA",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYHW5710Y3GNPD64A26Y4GF4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYHW5710YS6ZF4HJTWXCZ0X8",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-20260728-daily-all-15",
+  "started_at": "2026-07-28T03:10:40Z"
+}

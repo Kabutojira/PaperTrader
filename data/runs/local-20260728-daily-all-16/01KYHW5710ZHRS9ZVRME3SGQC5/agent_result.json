@@ -1,0 +1,52 @@
+{
+  "operation_id": "01KYHW5710ZHRS9ZVRME3SGQC5",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from structural copper scarcity to Southern Copper with high positive sensitivity and medium confidence. Current issuer evidence shows direct transmission through copper revenue, margins, cash flow, reserves, and funded growth, while lower production, grades, recoveries, by-product credits, project spending, jurisdictional risk, and adverse current valuation limit per-share transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_scco_q1_2026_results",
+      "claim": "Southern Copper reported Q1 2026 sales of USD 4.25 billion, net income of USD 1.58 billion, diluted income per share of USD 1.92, operating cash flow of USD 1.69 billion, capital investment of USD 441.9 million, and copper production down 4.0% year over year. The results demonstrate direct copper-economics transmission while preserving volume, cost, and capital-intensity counterweights.",
+      "url": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf",
+      "observed_at": "2026-07-27T23:38:30Z",
+      "source_hash": "324609bfee42c77e0ccc77d65e258787643334e0df12c8d532c420932108def6"
+    },
+    {
+      "source": "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
+      "claim": "The maintained security review records Southern Copper's integrated Peru and Mexico operations, 51.1 million tonnes of claimed contained-copper reserves, negative USD 0.11/lb Q1 cash cost after by-product credits, lower production, a project program exceeding USD 20.5 billion, and bounded downside and base scenarios 40.0% and 22.9% below the USD 179.32 market mark."
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_copper.md",
+      "claim": "The maintained idea defines the causal channel from constrained mine supply and copper demand to low-cost producer cash flow while preserving supply response, recycling, substitution, operating execution, jurisdiction, capital intensity, and valuation as contrary evidence."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-16/01KYHW5710ZHRS9ZVRME3SGQC5/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_9befaccc50d8cd94372b.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from structural copper scarcity to Southern Copper based on direct copper revenue, margin, cash-flow, reserve, and project exposure; no strategy follow-up was created because production and cost counterweights and current valuation remain limiting."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-16/01KYHW5710ZHRS9ZVRME3SGQC5/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710ZHRS9ZVRME3SGQC5, run local-20260728-daily-all-16, relationship relationship_9befaccc50d8cd94372b, the required skill pair, running status, and a live lease.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; repository skill hashes matched, execution was sequential with PAPER_TRADING_ONLY=true, and no injection flags were reported.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, security table, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited request identity remained bound to the consumed JSON bytes, the upsert changed only data/tables/relationships.csv, and both audited commands exited zero.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped payload-schema, queue-identity, relationship-uniqueness, source-reference, symlink, trailing-whitespace, and diff checks passed.",
+      "No strategy, signal, order, follow-up operation, issue, allocation target/history, execution, cash, portfolio, fill, or performance change was made by this operation."
+    ]
+  }
+}

@@ -29,30 +29,52 @@ real-execution command from this skill.
 ## Required input
 
 Require `operation_id`, `strategy_id`, `signal_id`, action (`open`, `reduce`, `close`, `roll`,
-`cancel`, or baseline `hold`), evaluation timestamp, and market-data timestamp. A cancellation requires the immutable
-pending `order_id`. Every other action requires the requested fill policy and complete leg
-identity. Options require provider contract ID, type, expiry, strike, multiplier, quantity,
-currency, and a fresh bid/ask source.
+`cancel`, or baseline `hold`), evaluation timestamp, and market-data timestamp. In the signal
+lifecycle, baseline `open` represents both the allocation plan's initial `open` and later
+`increase` dispositions; deterministic code distinguishes them and derives the current delta. A
+cancellation requires the immutable pending `order_id`. Every other action requires the requested
+fill policy and complete leg identity. Options require provider contract ID, type, expiry, strike,
+multiplier, quantity, currency, and a fresh bid/ask source.
 
 ## Procedure
 
-1. Orient with the strategy's linked research and verify immutable IDs and current statuses.
-2. Decide whether the evidence, thesis, timing, signal, and invalidation still support the action.
-3. For a baseline strategy, read the latest target, reject a superseded/stale plan, and use only
+1. Orient with the payload, strategy, signal, canonical legs, current allocation target, and
+   current market/FX rows. Verify immutable IDs and statuses before doing broader research.
+2. For a baseline strategy, compare the payload's `allocation_plan_id`, the strategy's
+   `allocation_plan_id`, and the sole current target's `allocation_plan_id` and
+   `assessment_as_of`. If any differ, or the current disposition no longer maps to the requested
+   signal action (`open`/`increase` -> `open`, `reduce` -> `reduce`, `close` -> `close`), stop
+   immediately: do not browse, do not create an order, and write a schema-valid `skipped` manifest
+   explaining that the request was superseded. This is the normal safe terminal disposition for an
+   obsolete plan-bound request.
+3. Decide whether the evidence, thesis, timing, signal, and invalidation still support the action.
+4. For a baseline strategy, read the latest target, reject a superseded/stale plan, and use only
    its indicated action. A hard blocker forbids increased exposure but may authorize the plan's
    risk-reducing exit. Let deterministic code derive the exact whole-share delta from target value,
    current/pending quantity, fresh price, and FX. Never submit more than that delta. A `hold` or
    delta inside the rebalance band skips without mutation.
-4. If a pending order must be cancelled, invoke the deterministic cancel command; otherwise retain
+5. If a pending order must be cancelled, invoke the deterministic cancel command; otherwise retain
    an evidence-linked skip without mutating order state.
-5. If the action still warrants an order, invoke the deterministic order applier with explicit
-   parameters. Let it validate cash,
+6. If the action still warrants an order, write one uniquely named JSON request and invoke exactly
+   one order command. For a baseline strategy use
+   `papertrader order create-baseline --request <path>` without a `legs` field; deterministic code
+   derives the exact action and whole-share delta from the current target, holdings, pending
+   orders, price, and FX. For a conviction strategy use
+   `papertrader order create --request <path>` with explicit canonical legs. Build one reference
+   per leg from current normalized market/FX data. Let the command validate cash,
    exposure, the baseline target and reserve, concentration, turnover, shorts, option
    premium/liquidity, expiry, price/FX freshness, canonical strategy legs, and limits.
-6. Leave accepted orders pending under `next_open`, `limit_touch`, or eligible `quote_mid`; never
+   Do not reproduce those calculations in shell or Python. If the command rejects the request, do
+   not weaken or bypass it; promptly write a `blocked` or `failed` manifest with the exact audited
+   command and rejection.
+7. Leave accepted orders pending under `next_open`, `limit_touch`, or eligible `quote_mid`; never
    invent an immediate fill or backfill a pre-signal price.
-7. Let later deterministic processing append fills/cash entries and regenerate views only when the
+8. Let later deterministic processing append fills/cash entries and regenerate views only when the
    fill policy is met and reconciliation balances.
+
+Reach either the superseded-plan fast path or the single deterministic order attempt within the
+first 12 turns. Reserve the remaining turns for verification and `agent_result.json`; never spend
+the full turn budget exploring CLI source or repeatedly reshaping a rejected order.
 
 ## Source hierarchy
 
@@ -82,7 +104,8 @@ schema-conformant, write it last, and let the parent validate its schema and exa
 
 ## Failure policy
 
-Execute one strategy action only. Skip with evidence when the thesis no longer warrants action or
-a baseline target is `hold`; block on stale quotes/FX or missing required state; fail closed on a
-superseded target, quantity override, identity, risk, price, contract, cash, or reconciliation
-error. Never retry beyond the queue's bounded attempt count and never place a real order.
+Execute one strategy action only. Skip with evidence when the thesis no longer warrants action, a
+baseline target is `hold`, or the plan-bound request has been superseded; block on stale quotes/FX
+or missing required state; fail closed on a quantity override, identity, risk, price, contract,
+cash, or reconciliation error. Never retry beyond the queue's bounded attempt count and never
+place a real order.

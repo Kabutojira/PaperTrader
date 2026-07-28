@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1f9cce545ede94cd6349",
+  "issuer_id": "issuer_98d3ab01583161cae27f",
+  "company_name": "Intuitive Surgical, Inc.",
+  "instrument_name": "Intuitive Surgical, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ISRG",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ISRG",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Medical Instruments & Supplies",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Procedure growth, recurring revenue, earnings, cash, and liquidity support baseline eligibility; the current mark leaves little base upside and material downside.",
+  "research_page": "data/wiki/securities/security_1f9cce545ede94cd6349.md",
+  "last_research_at": "2026-07-27T21:26:41Z",
+  "next_review_at": "2026-10-30T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm"
+}

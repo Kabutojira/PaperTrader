@@ -1,0 +1,18 @@
+{
+  "source_id": "source_scco_q1_2026_results",
+  "url": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf",
+  "canonical_url": "https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf",
+  "source_type": "issuer_release",
+  "title": "Southern Copper Q1 2026 results",
+  "publisher": "Southern Copper Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "324609bfee42c77e0ccc77d65e258787643334e0df12c8d532c420932108def6",
+  "related_entity_ids": "idea_critical_minerals_copper|security_6ad1af8d10d6276a0221",
+  "checked_at": "2026-07-27T23:38:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 sales were USD 4.25 billion, net income was USD 1.58 billion, diluted income per share was USD 1.92, operating cash flow was USD 1.69 billion, capital investment was USD 441.9 million, and copper production declined 4.0% year over year.",
+  "summary": "The issuer release supports current production, realized-price, cost, earnings, cash-flow, capital-investment, diluted-share, project-pipeline, and balance-sheet analysis for Southern Copper.",
+  "run_id": "local-20260727-daily-all-08"
+}

@@ -18,9 +18,10 @@ from pathlib import Path, PurePosixPath
 
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
+from papertrader.dedupe import SemanticDisposition
 from papertrader.market_data import MarketDataError, latest_fx_rate, read_price_cache
 from papertrader.portfolio import reconcile_portfolio, replay_accounting
-from papertrader.queue import enqueue_operation
+from papertrader.queue import enqueue_operation, prepare_queue
 from papertrader.tables import append_unique, read_table, write_table
 from papertrader.utils import (
     CanonicalValueError,
@@ -59,10 +60,39 @@ CANONICAL_IDEA_LINK = re.compile(r"\[\[ideas/([a-z][a-z0-9_-]{0,127})\]\]")
 CURRENT_SOURCE_STATUSES = frozenset({"available", "ok", "current"})
 ALLOCATION_MAINTENANCE_SOURCE = "deterministic-allocation-maintenance"
 ALLOCATION_BACKFILL_SOURCE = "deterministic-allocation-backfill"
+ALLOCATION_MAINTENANCE_SOURCES = frozenset(
+    {ALLOCATION_MAINTENANCE_SOURCE, ALLOCATION_BACKFILL_SOURCE}
+)
 
 
 class AllocationError(RuntimeError):
     """Raised when authoritative inputs cannot produce a safe allocation plan."""
+
+
+class _AllocationMaintenanceOverlapReviewer:
+    """Merge equivalent active refresh/backfill work for one immutable entity."""
+
+    def review(
+        self,
+        candidate: dict[str, str],
+        existing: tuple[dict[str, str], ...],
+    ) -> SemanticDisposition:
+        matches = tuple(
+            row
+            for row in existing
+            if candidate["source"] in ALLOCATION_MAINTENANCE_SOURCES
+            and row["source"] in ALLOCATION_MAINTENANCE_SOURCES
+        )
+        if not matches:
+            return SemanticDisposition(
+                "execute", "The overlapping operation has a distinct non-maintenance source."
+            )
+        target = min(matches, key=lambda row: (row["created_at"], row["operation_id"]))
+        return SemanticDisposition(
+            "merge",
+            "Equivalent active allocation maintenance objective for the same immutable entity.",
+            target["operation_id"],
+        )
 
 
 @dataclass(frozen=True, slots=True)
@@ -340,6 +370,12 @@ def maintain_allocation_research(
     if not SAFE_RUN_ID.fullmatch(run_id):
         raise AllocationError(f"invalid allocation maintenance run_id: {run_id!r}")
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    reviewer = _AllocationMaintenanceOverlapReviewer()
+    # Two passes resolve a relationship whose duplicate security dependency is
+    # terminalized during the first pass. Queue triage preserves each merged
+    # request in terminal history with its target operation ID.
+    prepare_queue(repository_root, now=instant, semantic_reviewer=reviewer)
+    prepare_queue(repository_root, now=instant, semantic_reviewer=reviewer)
     lead = timedelta(days=settings.allocation.research_refresh_lead_days)
     researched = _researched_securities(repository_root)
     assessments = {
@@ -351,6 +387,11 @@ def maintain_allocation_research(
     for row in relationship_rows:
         by_pair[(row["idea_id"], row["security_id"])].append(row)
     source = ALLOCATION_BACKFILL_SOURCE if backfill else ALLOCATION_MAINTENANCE_SOURCE
+    active_maintenance = {
+        (row["operation_type"], row["entity_id"]): row["operation_id"]
+        for row in read_table(repository_root, "operations_todo")
+        if row["source"] in ALLOCATION_MAINTENANCE_SOURCES
+    }
     security_operations: dict[str, str] = {}
     relationship_operations: list[str] = []
     created_ids: list[str] = []
@@ -389,33 +430,37 @@ def maintain_allocation_research(
                 refresh = True
         if refresh:
             cycle = "backfill-v1" if backfill else assessment_marker
-            operation_id, created = enqueue_operation(
-                repository_root,
-                settings,
-                operation_type="security_research",
-                entity_type="security",
-                entity_id=security_id,
-                dedupe_key=f"security_research:{security_id}:allocation-maintenance:{cycle}",
-                prompt=(
-                    f"Revalidate {security_id} with current primary evidence and write one "
-                    "comparable allocation assessment."
-                ),
-                inputs={
-                    "security_id": security_id,
-                    "maintenance_mode": "backfill" if backfill else "refresh",
-                    "assessment_state": assessment_marker,
-                    "research_page": security["research_page"],
-                },
-                source=source,
-                priority=75 if backfill else 65,
-                freshness_days=0,
-                source_refs=(
-                    tuple(part for part in assessment["evidence_refs"].split("|") if part)
-                    if assessment is not None
-                    else ()
-                ),
-                now=instant,
-            )
+            operation_id = active_maintenance.get(("security_research", security_id), "")
+            created = False
+            if not operation_id:
+                operation_id, created = enqueue_operation(
+                    repository_root,
+                    settings,
+                    operation_type="security_research",
+                    entity_type="security",
+                    entity_id=security_id,
+                    dedupe_key=f"security_research:{security_id}:allocation-maintenance:{cycle}",
+                    prompt=(
+                        f"Revalidate {security_id} with current primary evidence and write one "
+                        "comparable allocation assessment."
+                    ),
+                    inputs={
+                        "security_id": security_id,
+                        "maintenance_mode": "backfill" if backfill else "refresh",
+                        "assessment_state": assessment_marker,
+                        "research_page": security["research_page"],
+                    },
+                    source=source,
+                    priority=75 if backfill else 65,
+                    freshness_days=0,
+                    source_refs=(
+                        tuple(part for part in assessment["evidence_refs"].split("|") if part)
+                        if assessment is not None
+                        else ()
+                    ),
+                    now=instant,
+                )
+                active_maintenance[("security_research", security_id)] = operation_id
             security_operations[security_id] = operation_id
             if created:
                 created_ids.append(operation_id)
@@ -449,36 +494,40 @@ def maintain_allocation_research(
             )
             cycle = "backfill-v1" if backfill else relationship_marker
             dependency = security_operations.get(security_id)
-            operation_id, created = enqueue_operation(
-                repository_root,
-                settings,
-                operation_type="relationship_research",
-                entity_type="relationship",
-                entity_id=relationship_id,
-                dedupe_key=(
-                    f"relationship_research:{relationship_id}:allocation-maintenance:{cycle}"
-                ),
-                prompt=(
-                    f"Review the canonical relationship from {idea_id} to {security_id} and "
-                    "accept or reject it with current evidence."
-                ),
-                inputs={
-                    "relationship_id": relationship_id,
-                    "idea_id": idea_id,
-                    "security_id": security_id,
-                    "maintenance_mode": "backfill" if backfill else "refresh",
-                },
-                source=source,
-                priority=70 if backfill else 60,
-                freshness_days=0,
-                depends_on=(dependency,) if dependency else (),
-                source_refs=(
-                    tuple(part for part in assessment["evidence_refs"].split("|") if part)
-                    if assessment is not None
-                    else ()
-                ),
-                now=instant,
-            )
+            operation_id = active_maintenance.get(("relationship_research", relationship_id), "")
+            created = False
+            if not operation_id:
+                operation_id, created = enqueue_operation(
+                    repository_root,
+                    settings,
+                    operation_type="relationship_research",
+                    entity_type="relationship",
+                    entity_id=relationship_id,
+                    dedupe_key=(
+                        f"relationship_research:{relationship_id}:allocation-maintenance:{cycle}"
+                    ),
+                    prompt=(
+                        f"Review the canonical relationship from {idea_id} to {security_id} and "
+                        "accept or reject it with current evidence."
+                    ),
+                    inputs={
+                        "relationship_id": relationship_id,
+                        "idea_id": idea_id,
+                        "security_id": security_id,
+                        "maintenance_mode": "backfill" if backfill else "refresh",
+                    },
+                    source=source,
+                    priority=70 if backfill else 60,
+                    freshness_days=0,
+                    depends_on=(dependency,) if dependency else (),
+                    source_refs=(
+                        tuple(part for part in assessment["evidence_refs"].split("|") if part)
+                        if assessment is not None
+                        else ()
+                    ),
+                    now=instant,
+                )
+                active_maintenance[("relationship_research", relationship_id)] = operation_id
             relationship_operations.append(operation_id)
             if created:
                 created_ids.append(operation_id)
@@ -1469,9 +1518,28 @@ def plan_allocation(
             portfolio,
             pending,
         )
+    # A plan identifies the economic decision, not the controller invocation that
+    # happened to publish it.  Keeping run metadata out of the identity prevents
+    # an unchanged plan from superseding its own in-flight strategy/signal work
+    # every time a daily run is finalized.
+    identity_orders = sorted(
+        (
+            row
+            for row in read_table(repository_root, "orders")
+            if row["status"] in {"pending", "partially_filled"}
+        ),
+        key=lambda row: row["order_id"],
+    )
+    identity_order_ids = {row["order_id"] for row in identity_orders}
+    identity_order_legs = sorted(
+        (
+            row
+            for row in read_table(repository_root, "order_legs")
+            if row["order_id"] in identity_order_ids
+        ),
+        key=lambda row: (row["order_id"], row["leg_id"]),
+    )
     input_identity = {
-        "run_id": run_id,
-        "as_of": format_timestamp(instant),
         "mode": settings.allocation.mode,
         "accounting": {
             "cash_base": decimal_text(replay.cash_base),
@@ -1532,8 +1600,8 @@ def plan_allocation(
         "securities": [dict(securities[key]) for key in sorted(candidate_ids)],
         "assessments": [dict(assessments[key]) for key in sorted(assessments)],
         "portfolio": read_table(repository_root, "portfolio"),
-        "orders": read_table(repository_root, "orders"),
-        "order_legs": read_table(repository_root, "order_legs"),
+        "orders": identity_orders,
+        "order_legs": identity_order_legs,
         "relationships": [dict(row) for key in sorted(relationships) for row in relationships[key]],
     }
     plan_id = stable_id("allocation_plan", content_hash(input_identity))
@@ -1551,13 +1619,43 @@ def plan_allocation(
     )
     if settings.allocation.mode == "disabled":
         rows = []
+    prior_rows = [
+        row
+        for row in read_table(repository_root, "allocation_history")
+        if row["allocation_plan_id"] == plan_id and row["run_id"] == run_id
+    ]
+    plan_observed_at = instant
+    if prior_rows:
+        prior_by_security = {row["security_id"]: row for row in prior_rows}
+        current_by_security = {row["security_id"]: row for row in rows}
+        comparable_prior = [
+            {key: value for key, value in row.items() if key != "as_of"}
+            for row in sorted(prior_rows, key=lambda value: value["security_id"])
+        ]
+        comparable_current = [
+            {key: value for key, value in row.items() if key != "as_of"}
+            for row in sorted(rows, key=lambda value: value["security_id"])
+        ]
+        if (
+            len(prior_by_security) != len(prior_rows)
+            or set(prior_by_security) != set(current_by_security)
+            or comparable_prior != comparable_current
+        ):
+            raise AllocationError("same-run allocation retry conflicts with immutable history")
+        observed_values = {row["as_of"] for row in prior_rows}
+        if len(observed_values) != 1:
+            raise AllocationError("same-run allocation history has inconsistent timestamps")
+        observed = parse_timestamp(next(iter(observed_values)))
+        assert observed is not None
+        plan_observed_at = observed
+        rows = sorted(prior_rows, key=lambda value: value["security_id"])
     write_table(repository_root, "allocation_targets", rows)
     if rows:
         append_unique(
             repository_root,
             "allocation_history",
             rows,
-            key_columns=("allocation_plan_id", "security_id"),
+            key_columns=("allocation_plan_id", "run_id", "security_id"),
         )
     operations_created: tuple[str, ...] = ()
     if settings.allocation.mode == "active":
@@ -1596,7 +1694,7 @@ def plan_allocation(
     result = AllocationPlanResult(
         allocation_plan_id=plan_id,
         run_id=run_id,
-        as_of=format_timestamp(instant),
+        as_of=format_timestamp(plan_observed_at),
         mode=settings.allocation.mode,
         equity_base=decimal_text(equity),
         cash_base=decimal_text(replay.cash_base),
@@ -1752,8 +1850,8 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 risk_budget = required_decimal(
                     row["risk_budget_pct"], label="baseline strategy risk budget"
                 )
-                if risk_budget > settings.allocation.maximum_baseline_position_pct:
-                    raise ValueError("risk budget exceeds baseline position cap")
+                if risk_budget != settings.allocation.maximum_baseline_position_pct:
+                    raise ValueError("risk budget differs from baseline position cap")
             except (CanonicalValueError, ValueError) as exc:
                 errors.append(f"invalid baseline strategy {row['strategy_id']}: {exc}")
             legs = [leg for leg in strategy_legs if leg["strategy_id"] == row["strategy_id"]]
@@ -1849,9 +1947,9 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
             errors.append(f"invalid allocation target {security_id}: {exc}")
     if len(target_plan_identity) > 1:
         errors.append("current allocation targets do not share one plan identity")
-    seen_history: set[tuple[str, str]] = set()
+    seen_history: set[tuple[str, str, str]] = set()
     for row in history:
-        key = (row["allocation_plan_id"], row["security_id"])
+        key = (row["allocation_plan_id"], row["run_id"], row["security_id"])
         if key in seen_history:
             errors.append(f"duplicate allocation history row: {key!r}")
         seen_history.add(key)
@@ -1909,9 +2007,12 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 raise ValueError("non-canonical assessment timestamp")
         except (AllocationError, CanonicalValueError, ValueError) as exc:
             errors.append(f"invalid allocation history {key!r}: {exc}")
-    current_history = {(row["allocation_plan_id"], row["security_id"]): row for row in history}
+    current_history = {
+        (row["allocation_plan_id"], row["run_id"], row["security_id"]): row for row in history
+    }
     for row in targets:
-        if current_history.get((row["allocation_plan_id"], row["security_id"])) != row:
+        key = (row["allocation_plan_id"], row["run_id"], row["security_id"])
+        if current_history.get(key) != row:
             errors.append(
                 f"current allocation target lacks identical immutable history: {row['security_id']}"
             )

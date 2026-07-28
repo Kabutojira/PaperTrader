@@ -1,0 +1,152 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "strategy",
+        "upsert",
+        "--request",
+        "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/strategy-upsert-request.json"
+      ],
+      "changed_paths": [
+        "data/tables/strategies.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a4485d22a7e3ababb7e965a05fcd36d825126b993e537e10df17b2c5e0c34eb3",
+            1875,
+            384
+          ],
+          "before": [
+            "file",
+            "d7da3a5002d96a35dc34919a56e0b2b990044a6b61c72bce7ede600e4f78f5fa",
+            1815,
+            384
+          ],
+          "path": "data/tables/strategies.csv"
+        }
+      ],
+      "command": "papertrader research strategy upsert --request data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/strategy-upsert-request.json",
+      "completed_at": "2026-07-28T08:06:18Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "74b21644c2680a75fb800682ce74f7f4a96f521ae158dbbe64872a6f9a3cb00a",
+          2437,
+          384
+        ],
+        "path": "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/strategy-upsert-request.json"
+      },
+      "started_at": "2026-07-28T08:06:17Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "issue",
+        "record",
+        "--request",
+        "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/issue-record-request.json"
+      ],
+      "changed_paths": [
+        "data/issues.md",
+        "data/tables/issues.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "81d242c1acaa16451702f9c7f7bc03954e8360bb3db4858b81cbc3da656e5ae4",
+            324,
+            384
+          ],
+          "before": [
+            "file",
+            "d93b24593734eb194f9d7118146aa74af2c2eb4312355e5072e95708541e4bf4",
+            80,
+            384
+          ],
+          "path": "data/issues.md"
+        },
+        {
+          "after": [
+            "file",
+            "46732fe4e40028884fdd5ae09ed22c4bde68b0d1185326eb4e66a8f6fc625bcb",
+            22422,
+            384
+          ],
+          "before": [
+            "file",
+            "16625333fcb4d08f480fb79eee7980be34c2dd9778a970ba9150b6f4336d3874",
+            21839,
+            384
+          ],
+          "path": "data/tables/issues.csv"
+        }
+      ],
+      "command": "papertrader issue record --request data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/issue-record-request.json",
+      "completed_at": "2026-07-28T08:06:26Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "44faa65cc45b494477af92766e05fe0eee5feab7866fa9438d6ca79495dd487f",
+          624,
+          384
+        ],
+        "path": "data/runs/local-20260728-daily-all-26/01KYKVJX78J2EE4VMWVGHJBAQZ/issue-record-request.json"
+      },
+      "started_at": "2026-07-28T08:06:25Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-28T08:06:36Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T08:06:36Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-28T08:06:48Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T08:06:48Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-28T08:06:55Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-28T08:06:54Z"
+    }
+  ],
+  "operation_id": "01KYKVJX78J2EE4VMWVGHJBAQZ",
+  "run_id": "local-20260728-daily-all-26"
+}

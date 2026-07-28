@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_670ed88c8e4616316a19",
+  "idea_id": "idea_critical_minerals_lithium",
+  "security_id": "security_4627aea1bf7d8943d3d8",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "EV and stationary-storage demand plus constrained supply can support lithium-concentrate prices and volumes, increasing Sigma Lithium's revenue, mine utilization, margins, cash generation, and expansion option value; shareholder benefit depends on production stability, receivable collection, liquidity, debt and offtake obligations, controls, environmental status, Phase 2 funding, and commodity cyclicality.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Lithium-concentrate demand and realized pricing remain durable, production and recovery stay stable, receivables convert to cash, operating cash flow turns positive, debt and offtake obligations remain serviceable, Phase 2 obtains committed non-dilutive funding, and controls and environmental matters are remediated.",
+  "invalidation": "Supply restarts, new projects, recycling, sodium-ion adoption, material efficiency, or weaker demand restores surplus; realized pricing or volumes fall; output or recovery remains unstable; receivables do not convert; debt, prepayment, supplier, or environmental constraints impair operations; Phase 2 requires deeply dilutive funding; or lithium ceases to provide positive operating leverage.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_670ed88c8e4616316a19.md",
+  "last_reviewed_at": "2026-07-28T03:32:12Z",
+  "next_review_at": "2026-08-15T12:00:00Z"
+}

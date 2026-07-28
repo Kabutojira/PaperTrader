@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_aac0db74aa0c133607b1",
+  "resolution": "Made publication freshness phase-aware, retained all structural and accounting checks during prepared operations, added regression coverage, and verified the same RBLX operation succeeded in local-20260727-daily-all-02 before final publication regenerated the current snapshot."
+}

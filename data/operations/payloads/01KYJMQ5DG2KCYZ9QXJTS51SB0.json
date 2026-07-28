@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_228f56aa5d91f3688b67",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_cybersecurity_geopolitical_continuity",
+    "maintenance_mode": "backfill",
+    "relationship_id": "relationship_228f56aa5d91f3688b67",
+    "security_id": "security_8472507d7d320aa388a7"
+  },
+  "objective": "Review the canonical relationship from idea_cybersecurity_geopolitical_continuity to security_8472507d7d320aa388a7 and accept or reject it with current evidence.",
+  "operation_id": "01KYJMQ5DG2KCYZ9QXJTS51SB0",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

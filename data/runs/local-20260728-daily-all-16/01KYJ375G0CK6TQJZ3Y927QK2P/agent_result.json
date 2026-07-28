@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KYJ375G0CK6TQJZ3Y927QK2P",
+  "status": "succeeded",
+  "summary": "Ingested Sigma Lithium's validated 2026-07-24 RSI-oversold transition into the maintained security review. The durable context records the 20.74% adjusted-close decline from 2026-06-25 through 2026-07-24, USD 9.63 close, and 0.0292 trigger strength while treating the indicator as weak-momentum and near-term risk evidence rather than a price explanation, fundamental update, valuation input, or trade signal. Updated provenance and the append-only wiki log. No follow-up was created because the scheduled Q2-accounts or financing review remains the bounded next step and liquidity, controls, funding, and valuation blockers remain controlling.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e.md",
+      "claim": "The deterministic candidate packet records Sigma Lithium entering the RSI-oversold condition as of 2026-07-24 after an adjusted-close decline of 20.74073731036204934670989592% from 2026-06-25 through 2026-07-24, with a USD 9.630000114440918 close, trigger strength 0.02920823666666666666666666667, and an ingest classifier disposition.",
+      "source_hash": "ac85827a12984c25e24e970c3228e93de0f9855846b135e40d2e4f16b2ae82a6"
+    },
+    {
+      "source": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md",
+      "claim": "The maintained Sigma Lithium review records a 2026-07-27 USD 9.95 mark and RSI 31.71, acute liquidity and negative-working-capital risk, ineffective controls, unresolved expansion funding, and unsupported valuation; the earlier oversold transition does not justify a strategy."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_670ed88c8e4616316a19.md",
+      "claim": "The accepted lithium-cycle relationship confirms high positive sensitivity through concentrate demand, pricing, and production, while liquidity, debt, receivables, controls, environmental proceedings, funding, and unsupported valuation prevent strategy research."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4627aea1bf7d8943d3d8.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested Sigma Lithium's 2026-07-24 RSI-oversold transition as weak-momentum and near-term risk context after a 20.74% 25 June–24 July decline; it does not explain the move, establish intrinsic value, or override acute liquidity, controls, funding, and valuation blockers, and no follow-up was created because the scheduled Q2-accounts or financing review remains the bounded next step."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace wiki lint --strict",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole running queue row matched operation 01KYJ375G0CK6TQJZ3Y927QK2P, run local-20260728-daily-all-16, source source_88641b43d89ee178051e, wiki_ingest, the required skill pair, and a live lease through 2026-07-28T04:31:05Z at final prerequisite review.",
+      "The payload validated against schemas/operation_payload.schema.json and matched the immutable operation, type, entity, source path, and source hash.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three content hashes matched their loaded files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular repository-local inbox file, its SHA-256 matched ac85827a12984c25e24e970c3228e93de0f9855846b135e40d2e4f16b2ae82a6, and its classifier decision was ingest.",
+      "The maintained Sigma Lithium page now preserves the source identity and exact indicator transition while distinguishing momentum and timing evidence from explanation, fundamental evidence, valuation, and trading judgment.",
+      "research-catalog.md already catalogs both the candidate packet and maintained Sigma Lithium page, and log.md records this ingestion append-only.",
+      "Both audited invocations of papertrader wiki lint --strict returned OK [wiki], including the final post-edit invocation.",
+      "This routed operation changed only the maintained Sigma Lithium page and wiki log; it did not edit allocation targets/history, executions, cash, portfolio, fills, or performance.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted."
+    ]
+  }
+}

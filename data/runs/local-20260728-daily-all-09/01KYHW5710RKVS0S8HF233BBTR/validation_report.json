@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/record-source-abb-q2-2026-results.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/record-source-abb-share-listing-2026.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/upsert-assessment-abb-refresh.json",
+    "data/runs/local-20260728-daily-all-09/01KYHW5710RKVS0S8HF233BBTR/upsert-security-abb-refresh.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYHW5710RKVS0S8HF233BBTR",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-09",
+  "validation_version": 1
+}

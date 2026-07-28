@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_871e21ff73620ab8eb14",
+  "idea_id": "idea_critical_minerals_lithium",
+  "security_id": "security_66cdcf90aac0d83e76f3",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Lithium demand and tighter supply can raise Albemarle's realized Energy Storage prices, volumes, margins, operating cash flow, and resource option value; shareholder benefit depends on contract lags, costs, inventory timing, capex, taxes, leverage, supply response, and dilution.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "EV and storage demand remains durable, realized prices and volumes stay higher after contract lags, Energy Storage margins and operating cash flow remain positive without favorable inventory timing, capex stays disciplined, leverage falls through operations, and Q2 evidence confirms the recovery.",
+  "invalidation": "Supply restarts, new projects, recycling, sodium-ion adoption, material efficiency, or weaker demand restores surplus; realized prices fail to follow benchmarks; volumes or margins weaken; working capital consumes cash; capex, taxes, debt, or dilution absorb operating gains; or Energy Storage economics decouple from the lithium cycle.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_871e21ff73620ab8eb14.md",
+  "last_reviewed_at": "2026-07-28T01:48:44Z",
+  "next_review_at": "2026-08-06T12:00:00Z"
+}

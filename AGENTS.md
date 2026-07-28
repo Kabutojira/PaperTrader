@@ -306,6 +306,11 @@ explicit cash row. Copy-ready rows require a canonical live order and legs. The 
 local-only, rounds eligible long-equity quantities down to whole shares, and never writes state or
 contacts a broker or server. `papertrader advice validate --strict` must prove the snapshot identity,
 immutable run artifact, CSV projections, source-state hashes, and reconciliation before publication.
+During a controller-verified `prepared` daily operation, integrity still validates every structural
+publication invariant but defers only the source-state freshness comparison until finalization
+regenerates and strictly validates the completed run's snapshot.
+When several completed runs share one canonical report date, the newest completed run owns that
+report page; every run still retains and validates its own immutable decision snapshot.
 
 ## Operation queue contract
 
@@ -330,6 +335,9 @@ Rules:
 - Claiming sets `status=running`, `claimed_by_run_id`, and `lease_expires_at` in one atomic write.
 - Expired leases return to `ready` only if `attempt_count < max_attempts`.
 - Every skip must be recorded in history with the evidence and rule that caused it.
+- A `blocked` agent result remains active. If later evidence proves the request obsolete, resolve
+  it only through `queue resolve-blocked`; the command preserves the prior result artifact and
+  archives the complete request as `skipped` or `cancelled` with a machine-readable reason.
 
 ### Queue triage
 
@@ -338,8 +346,9 @@ Use this order:
 1. Deterministic schema validation.
 2. Dependency and time checks.
 3. Exact deduplication by `dedupe_key` and source hash.
-4. Freshness and cooldown rules based on structured history.
-5. Cheap-model semantic-overlap review when exact rules do not resolve the task.
+4. Deterministic rejection of strategy or execution work bound to a superseded allocation plan.
+5. Freshness and cooldown rules based on structured history.
+6. Cheap-model semantic-overlap review when exact rules do not resolve the task.
 
 The cheap model returns `execute`, `merge`, `defer`, or `skip` with a reason. The controller records that disposition through the queue CLI; tasks are never silently deleted.
 
@@ -397,6 +406,10 @@ A decision that no follow-up is needed is valid and must be logged with evidence
 - Compare alternatives on expected payoff, downside, time horizon, liquidity, cost, thesis fit, and invalidation.
 - Define entry, exit, expiry, position sizing inputs, and required evidence.
 - Create a signal through the project CLI only when all required fields are present.
+- Normalize baseline allocation dispositions into the signal lifecycle: `open` and `increase` both
+  use an `open` signal/action, while deterministic code derives the exact current-plan delta.
+- A baseline strategy's `risk_budget_pct` is the configured maximum-position ceiling, not the
+  rounded current target weight; the allocation plan remains the only sizing authority.
 - A no-strategy result is valid and must explain the blocking factor.
 
 ### `execute_strategy`
@@ -408,16 +421,20 @@ Hermes may decide whether the reviewed strategy still warrants a paper order and
 The deterministic applier must:
 
 1. validate strategy and signal state;
-2. validate price/quote freshness and instrument identity;
-3. validate cash, exposure, position, options-premium, short, concentration, and expiry limits;
-4. create an order and order legs;
-5. send the paper signal to Telegram;
-6. leave the order pending until the configured fill policy is satisfied;
-7. append executions and cash entries only after a deterministic fill;
-8. regenerate portfolio and performance;
-9. reconcile every ledger and fail closed on mismatch.
+2. derive the exact baseline whole-share delta from the current allocation target, holdings,
+   pending orders, price, and FX; baseline agent requests never supply leg quantities;
+3. validate price/quote freshness and instrument identity;
+4. validate cash, exposure, position, options-premium, short, concentration, and expiry limits;
+5. create an order and order legs;
+6. send the paper signal to Telegram;
+7. leave the order pending until the configured fill policy is satisfied;
+8. append executions and cash entries only after a deterministic fill;
+9. regenerate portfolio and performance;
+10. reconcile every ledger and fail closed on mismatch.
 
-The same operation type supports opening, reducing, closing, rolling, or cancelling a paper strategy through explicit order actions.
+The same operation type supports opening or increasing (both represented by the `open` signal
+lifecycle action), reducing, closing, rolling, or cancelling a paper strategy. Baseline quantity
+remains entirely deterministic.
 
 ## Hermes Agent integration
 
@@ -539,6 +556,12 @@ Additional required settings:
 - order expiry;
 - maximum LLM operations per run;
 - maximum model budget per run.
+
+`allocation_plan_id` identifies the economic allocation decision and must not include controller
+`run_id` or publication time in its content identity. Re-publishing unchanged economic inputs
+keeps the same plan ID while appending a distinct immutable observation keyed by plan, run, and
+security. This prevents daily finalization from superseding its own in-flight baseline strategy or
+signal work.
 
 Use `Decimal` for money and prices. Never use binary float for ledger calculations.
 

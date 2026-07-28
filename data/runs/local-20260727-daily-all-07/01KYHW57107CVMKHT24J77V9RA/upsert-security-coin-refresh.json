@@ -1,0 +1,23 @@
+{
+  "security_id": "security_37ddcbdaad296ad831f2",
+  "issuer_id": "issuer_3584c0cf729606c65538",
+  "company_name": "Coinbase Global, Inc.",
+  "instrument_name": "Coinbase Global, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "COIN",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "COIN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financial Services",
+  "industry": "Financial Data & Stock Exchanges",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Stablecoin growth and positive operating cash are real, but trading cyclicality, concentration, custody obligations, dilution, and unsupported valuation make Coinbase ineligible.",
+  "research_page": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+  "last_research_at": "2026-07-27T22:56:38Z",
+  "next_review_at": "2026-08-14T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm"
+}

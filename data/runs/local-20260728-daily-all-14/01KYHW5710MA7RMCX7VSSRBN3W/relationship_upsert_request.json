@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_f2efab6050df0edcb762",
+  "idea_id": "idea_digital_finance_crypto_rails",
+  "security_id": "security_37ddcbdaad296ad831f2",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Clearer rules and broader adoption can increase regulated trading, custody, stablecoin balances, payments, financing, and on-chain activity; Coinbase can monetize those flows through transaction fees, stablecoin revenue, subscriptions and services, institutional products, custody, and Base, subject to crypto-cycle, rate, partner-term, take-rate, counterparty, custody, cyber, regulatory, stock-compensation, dilution, and valuation risks.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Q2 and later primary evidence shows stablecoin balances and non-speculative payment usage growing despite lower rates, recurring subscription and custody revenue expanding, resilient transaction share, durable GAAP cash earnings through a crypto drawdown, lower counterparty concentration, strong custody controls, and dilution-adjusted cash generation.",
+  "invalidation": "Adoption remains predominantly speculative; crypto activity contracts without resilient recurring revenue; lower rates or adverse partner terms overwhelm stablecoin balance growth; competitors capture the economics; fees compress structurally; a material custody, cyber, credit, or regulatory loss occurs; or stock-based compensation and dilution prevent operating growth from reaching shareholders.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_f2efab6050df0edcb762.md",
+  "last_reviewed_at": "2026-07-28T02:49:25Z",
+  "next_review_at": "2026-08-14T12:00:00Z"
+}

@@ -704,9 +704,9 @@ def upsert_strategy(
             or assessment["eligibility"] not in {"baseline", "conviction"}
         ):
             raise ResearchStateError("blocked assessment cannot increase baseline exposure")
-        if risk_budget > settings.allocation.maximum_baseline_position_pct:
+        if risk_budget != settings.allocation.maximum_baseline_position_pct:
             raise ResearchStateError(
-                "baseline strategy risk budget exceeds the sleeve position cap"
+                "baseline strategy risk budget must equal the configured position cap"
             )
     values["not_before"] = _canonical_timestamp(
         values["not_before"], label="not_before", allow_empty=True

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_parrot_fy2025_results",
+  "url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+  "canonical_url": "https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf",
+  "source_type": "issuer_release",
+  "title": "Parrot 2025 full-year earnings",
+  "publisher": "Parrot S.A.",
+  "license": "",
+  "status": "available",
+  "content_hash": "f5ffe4a4e4fbfa754d62db12cd1a22e009bd236f98e9b611b877ef57d63ebee2",
+  "related_entity_ids": "security_cc4dcb8f002b61dffe00",
+  "checked_at": "2026-07-28T01:05:38Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "For 2025 Parrot reported EUR 79.8m revenue, EUR 60.1m gross margin, EUR 12.7m operating loss, EUR 15.0m net loss, EUR 7.6m operating cash outflow, and EUR 23.0m year-end cash. Second-half ordinary operations were slightly positive at EUR 0.2m.",
+  "summary": "Primary issuer release dated 2026-03-27 with FY2025 income statement, balance sheet, cash flow, segment results, and outlook. Revenue and gross margin improved and second-half operations broke even, but full-year losses and cash burn persisted. A shareholder facility had EUR 5.0m outstanding and was expanded to EUR 20.0m through February 2028. The release does not provide the complete diluted-share and customer/order-concentration inputs required for a downside-aware common-equity valuation.",
+  "run_id": "local-20260728-daily-all-09"
+}

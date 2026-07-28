@@ -1,0 +1,11 @@
+{
+  "changed_paths": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYJ375G0WQ2JSDXYADZJ3P0Y",
+  "passed": true,
+  "run_id": "local-20260728-daily-all-17",
+  "validation_version": 1
+}

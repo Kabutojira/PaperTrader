@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_e5f55616b9beaf661080",
+  "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "security_id": "security_6f9a1450edceb9307c9a",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Scaling AI training and inference increases demand for low-latency, high-throughput data-centre fabrics; Arista can convert that demand through Ethernet switching and routing products, EOS software, and related services into revenue, gross profit, and cash flow, subject to customer concentration, architecture substitution, qualification, supply, inventory, purchase commitments, and valuation.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Q2 and later primary evidence shows durable cloud and AI networking growth, explicit AI-network revenue progression, maintained margins and cash conversion, successful 1.6T qualification, customer diversification, and inventory and purchase commitments aligned with realized demand.",
+  "invalidation": "Ethernet loses material AI-fabric share; major customers internalize networking; aggregate AI capex stops reaching Arista revenue; qualification or acceptance slows; merchant-silicon or supply constraints impair launches; purchase commitments become excess inventory; or concentration drives sustained margin and cash-flow deterioration.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_e5f55616b9beaf661080.md",
+  "last_reviewed_at": "2026-07-28T02:38:27Z",
+  "next_review_at": "2026-08-14T12:00:00Z"
+}

@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_def43e5b4e13577e2b99",
+  "idea_id": "idea_critical_minerals_copper",
+  "security_id": "security_2dbe878dfc899d7ee867",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Structural copper scarcity can raise Freeport-McMoRan's realized copper prices, mine margins, operating cash flow, and reserve option value; shareholder benefit depends on attributable production, unit costs, capital spending, minority interests, safety, and Indonesian operating terms.",
+  "sensitivity": "high",
+  "confidence": "high",
+  "catalyst": "Copper pricing remains supported while safe Grasberg restoration, Americas leach initiatives and brownfield projects lift attributable sales, unit costs remain controlled, operating cash flow exceeds capital needs, and final Indonesian rights preserve common-share value.",
+  "invalidation": "New supply, recycling, substitution or weaker demand removes scarcity; production recovery stalls; costs or capex absorb pricing gains; Indonesian terms worsen; safety incidents recur; or attributable free cash flow fails to rise with realized copper prices.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_def43e5b4e13577e2b99.md",
+  "last_reviewed_at": "2026-07-28T01:29:38Z",
+  "next_review_at": "2026-08-26T01:29:38Z"
+}

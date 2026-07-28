@@ -112,7 +112,7 @@ def test_operation_payload_requires_type_specific_input(repository_root: Path) -
     assert list(validator.iter_errors(payload))
 
 
-def test_operation_payload_accepts_bounded_baseline_allocation_and_hold(
+def test_operation_payload_normalizes_baseline_increase_to_open_lifecycle_action(
     repository_root: Path,
 ) -> None:
     validator = _schema_validator(repository_root, "operation_payload.schema.json")
@@ -135,7 +135,7 @@ def test_operation_payload_accepts_bounded_baseline_allocation_and_hold(
             "selection_rank": 1,
             "effective_score": "80",
             "assessment_as_of": "2026-07-24T12:00:00Z",
-            "disposition": "open",
+            "disposition": "increase",
         },
     }
     hold = {
@@ -154,6 +154,10 @@ def test_operation_payload_accepts_bounded_baseline_allocation_and_hold(
 
     assert list(validator.iter_errors(baseline)) == []
     assert list(validator.iter_errors(hold)) == []
+    hold["inputs"]["action"] = "open"
+    assert list(validator.iter_errors(hold)) == []
+    hold["inputs"]["action"] = "increase"
+    assert list(validator.iter_errors(hold))
     del baseline["inputs"]["allocation_plan_id"]
     assert list(validator.iter_errors(baseline))
 

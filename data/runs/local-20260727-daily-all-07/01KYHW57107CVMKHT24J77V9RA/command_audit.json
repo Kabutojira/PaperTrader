@@ -1,0 +1,284 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-q1-2026-10q.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "86f49b9c22665d96e6bcc6674df9b69fddbf4a9f8d0b8515b5962fee2342f3b1",
+            9664,
+            384
+          ],
+          "before": [
+            "file",
+            "025c4c02adf4df8c370e2613ef2ac7a2b30bda675029df88da802fa5505af8a7",
+            8876,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "318fbb06406a49135cf74f873aa7edfa8cd1ecc183317a98e04940bafc918731",
+            6359,
+            384
+          ],
+          "before": [
+            "file",
+            "77b030f3c78765f0488a0935af8146279253deda4a3f47451e19fc8859401825",
+            5887,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-q1-2026-10q.json",
+      "completed_at": "2026-07-27T22:55:44Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "cb3dcd4f7b6b12db3fef2f83741e09f960d703113b1c981be5e748aa540dc04a",
+          1344,
+          384
+        ],
+        "path": "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-q1-2026-10q.json"
+      },
+      "started_at": "2026-07-27T22:55:44Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-july-2026-management-8k.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "c286e54f1b4471d02f5eaaed4ec45ce806540915783bf6addacb5d7301caca6b",
+            10287,
+            384
+          ],
+          "before": [
+            "file",
+            "86f49b9c22665d96e6bcc6674df9b69fddbf4a9f8d0b8515b5962fee2342f3b1",
+            9664,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "8dfe39bf85899a7675851c04ad4301b36ac8e329eb059b660df224a23bbe7e3d",
+            6844,
+            384
+          ],
+          "before": [
+            "file",
+            "318fbb06406a49135cf74f873aa7edfa8cd1ecc183317a98e04940bafc918731",
+            6359,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-july-2026-management-8k.json",
+      "completed_at": "2026-07-27T22:55:52Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "bbbc09cc30fb3de6f6509683f429ff4783bb52ea4ddbf8e2c5b9074aece3893c",
+          1180,
+          384
+        ],
+        "path": "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/record-source-coin-july-2026-management-8k.json"
+      },
+      "started_at": "2026-07-27T22:55:52Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-security-coin-refresh.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "272903632182170ddcb90a527f630ebb455719103257308fd1bd81dd11ad8007",
+            31378,
+            384
+          ],
+          "before": [
+            "file",
+            "bc9195a1e9be49c1963116f40039843651cbe12ea35c27f7c70a0aa67bf76283",
+            31343,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-security-coin-refresh.json",
+      "completed_at": "2026-07-27T22:57:12Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "4cba62b82457319526fd2e8262bf14e77c7703ad1a1a4334d5f77c9373f92c10",
+          1068,
+          384
+        ],
+        "path": "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-security-coin-refresh.json"
+      },
+      "started_at": "2026-07-27T22:57:11Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-assessment-coin-refresh.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "627102b818e720f03a1796316691a6c32acddc543d09523fc390116044e7d1c5",
+            2955,
+            384
+          ],
+          "before": [
+            "file",
+            "09adc1157d756f8676fc3b1e330b11d325d8e957cb7e3825d30b9bcd9ddeab23",
+            2648,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-assessment-coin-refresh.json",
+      "completed_at": "2026-07-27T22:57:18Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "0a5f471fb2cfea7f3b5f9e368f26269b61a25663268ae96179c4a8f29c7196d3",
+          732,
+          384
+        ],
+        "path": "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/upsert-assessment-coin-refresh.json"
+      },
+      "started_at": "2026-07-27T22:57:18Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-27T22:57:28Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-27T22:57:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-27T22:57:34Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-27T22:57:34Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-27T22:57:40Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-27T22:57:40Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-27T22:57:48Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-27T22:57:47Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader allocation readiness --strict",
+      "completed_at": "2026-07-27T22:57:57Z",
+      "exit_code": 1,
+      "request": null,
+      "started_at": "2026-07-27T22:57:57Z"
+    }
+  ],
+  "operation_id": "01KYHW57107CVMKHT24J77V9RA",
+  "run_id": "local-20260727-daily-all-07"
+}

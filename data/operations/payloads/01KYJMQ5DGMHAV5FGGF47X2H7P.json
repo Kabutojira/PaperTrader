@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_e5f55616b9beaf661080",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "maintenance_mode": "backfill",
+    "relationship_id": "relationship_e5f55616b9beaf661080",
+    "security_id": "security_6f9a1450edceb9307c9a"
+  },
+  "objective": "Review the canonical relationship from idea_ai_compute_networking_hyperscaler_monetization to security_6f9a1450edceb9307c9a and accept or reject it with current evidence.",
+  "operation_id": "01KYJMQ5DGMHAV5FGGF47X2H7P",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

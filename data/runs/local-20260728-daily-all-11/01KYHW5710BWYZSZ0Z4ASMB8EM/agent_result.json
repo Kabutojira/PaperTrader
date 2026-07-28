@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KYHW5710BWYZSZ0Z4ASMB8EM",
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from the lithium cycle to Lithium Americas with high positive project sensitivity and medium confidence. Current SEC-filed Q1 2026 evidence supports a direct path from lithium demand and pricing through Thacker Pass economics, funding, offtake, and project option value, while 62% ownership, remaining capex, DOE and GM terms, warrants, dilution, schedule, commissioning, and unsupported common-equity valuation remain explicit limits. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_lac_q1_2026_10q",
+      "claim": "Lithium Americas' SEC-filed Q1 2026 Form 10-Q reports USD 758.5 million cash and USD 449.1 million restricted cash at 31 March 2026, USD 1.1 billion spent against the technical report's USD 2.93 billion Phase 1 capex estimate, fiscal-2026 project capex guidance of USD 1.3-1.6 billion, late-2027 targeted mechanical completion, and a planned 2028 production ramp. These facts establish concentrated development-stage lithium exposure while preserving construction, funding, schedule, and pre-revenue risk.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm",
+      "observed_at": "2026-07-27T23:45:00Z",
+      "source_hash": "a7d31055ce1a4a604bde8ebb54d0371db6956244067432f5bcd4b504b95bfd88"
+    },
+    {
+      "source": "data/wiki/securities/security_fb87fac302a5446a1ced.md",
+      "claim": "The maintained security review confirms Lithium Americas' 62% Thacker Pass ownership, GM joint-venture and offtake exposure, DOE conditions, warrants, observed ATM dilution, pre-revenue status, and an ineligible low-confidence assessment with valuation_unsupported because project economics cannot yet be reconciled to common-share value."
+    },
+    {
+      "source": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "claim": "The maintained idea defines the causal channel from EV and stationary-storage demand plus delayed supply to lithium pricing and funded-project option value, while preserving supply restarts, recycling, sodium-ion substitution, capital intensity, funding, dilution, and commissioning as contrary evidence."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-11/01KYHW5710BWYZSZ0Z4ASMB8EM/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_ad2f37b49980dbc73a08.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from the lithium cycle to Lithium Americas based on direct Thacker Pass project economics; no strategy follow-up was created because the pre-revenue common equity remains ineligible with unsupported valuation and material construction, funding, dilution, and commissioning risks."
+  ],
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-11/01KYHW5710BWYZSZ0Z4ASMB8EM/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710BWYZSZ0Z4ASMB8EM, run local-20260728-daily-all-11, relationship relationship_ad2f37b49980dbc73a08, the required skill pair, running status, and a live lease.",
+      "PAPER_TRADING_ONLY=true was present, and the controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research with sequential yolo execution and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, endpoint pages, securities table, source registry, and inserted relationship row; no equivalent idea-security-type edge existed.",
+      "The accepted beneficiary row is unique and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, research page, and review timestamps.",
+      "The audited upsert changed only data/tables/relationships.csv, and the immutable request SHA-256 matched its command-audit identity; no allocation, execution, cash, portfolio, fill, or performance command was invoked.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a pre-existing cache-permission warning.",
+      "Scoped request-integrity, symlink, trailing-whitespace, catalog registration, and relationship-page checks passed for every operation-owned research file."
+    ]
+  }
+}

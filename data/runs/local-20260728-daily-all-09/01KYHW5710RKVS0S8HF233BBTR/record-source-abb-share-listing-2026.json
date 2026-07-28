@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abb_share_listing_2026",
+  "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing",
+  "canonical_url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing",
+  "source_type": "issuer-release",
+  "title": "ABB share listing and capital data",
+  "publisher": "ABB Ltd",
+  "license": "",
+  "status": "available",
+  "content_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605",
+  "related_entity_ids": "security_c120e9f26ebb6159adf9",
+  "checked_at": "2026-07-28T00:39:25Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "ABB identifies US 0003752047 as its non-listed Level I ADR, traded OTC as ABBNY, and reports 1,814,919,203 shares outstanding at June 30, 2026.",
+  "summary": "The issuer's current share-listing page validates the ADR instrument, OTC identity, and period-end share count used in the bounded review.",
+  "run_id": "local-20260728-daily-all-09"
+}

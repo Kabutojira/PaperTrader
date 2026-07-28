@@ -1,0 +1,14 @@
+{
+  "entity_id": "relationship_c829dae21648bb133cc7",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_native_drug_discovery",
+    "maintenance_mode": "backfill",
+    "relationship_id": "relationship_c829dae21648bb133cc7",
+    "security_id": "security_ed7d5b616a196969c815"
+  },
+  "objective": "Review the canonical relationship from idea_ai_native_drug_discovery to security_ed7d5b616a196969c815 and accept or reject it with current evidence.",
+  "operation_id": "01KYJMQ5DG3N8V46WVTB1989Q6",
+  "operation_type": "relationship_research",
+  "payload_version": 1
+}

@@ -1,0 +1,60 @@
+{
+  "commands_run": [
+    "papertrader --repository /workspace research relationship upsert --request data/runs/local-20260728-daily-all-14/01KYHW5710MA7RMCX7VSSRBN3W/relationship_upsert_request.json",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted the medium-confidence, high-sensitivity positive beneficiary relationship from digital finance and crypto rails to Coinbase based on direct transaction, stablecoin, subscription, custody, institutional, and on-chain platform economics; no strategy follow-up was created because valuation, downside, cyclicality, concentration, custody, and dilution gates remain unresolved."
+  ],
+  "evidence": [
+    {
+      "claim": "Coinbase reported Q1 2026 net revenue of USD 1.339 billion, including USD 756 million of transaction revenue and USD 584 million of subscription and services revenue. Stablecoin revenue was USD 305 million and grew 11%, while transaction revenue fell 40%, subscription and services revenue fell 14%, net loss was USD 394 million, operating cash flow was USD 183 million, and stock-based compensation was USD 248 million. One counterparty generated 23% of revenue, and Coinbase controlled keys to USD 294.4 billion of customer assets with a matching unrecognized custody obligation.",
+      "observed_at": "2026-07-27T22:55:05Z",
+      "source": "source_coin_q1_2026_10q",
+      "source_hash": "bf2393062a2dbaa79513d85526514597e7fd5dc588374816e8e35a89ed83a88e",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm"
+    },
+    {
+      "claim": "The latest SEC filing available through 2026-07-27 was a management-transition Form 8-K that did not update operating or financial results, so it did not supersede the Q1 Form 10-Q as relationship evidence.",
+      "observed_at": "2026-07-27T22:55:05Z",
+      "source": "source_coin_july_2026_management_8k",
+      "source_hash": "47c7e56a2431b908a25467a78e94192456245811b60ef2ae36cbc9f51a1ab424",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000080/coin-20260722.htm"
+    },
+    {
+      "claim": "The maintained idea defines the causal channel from clearer rules and broader regulated rail usage through transaction, custody, subscription, stablecoin, financing, and software revenue, while requiring durable cash economics through lower token prices, volumes, rates, and take rates.",
+      "source": "data/wiki/ideas/idea_digital_finance_crypto_rails.md"
+    },
+    {
+      "claim": "The maintained Coinbase review records direct platform exposure and positive operating cash flow but keeps the security ineligible because a downside-aware per-share valuation is unsupported and cyclical, counterparty, custody, stock-compensation, and dilution risks remain material.",
+      "source": "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260728-daily-all-14/01KYHW5710MA7RMCX7VSSRBN3W/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_f2efab6050df0edcb762.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KYHW5710MA7RMCX7VSSRBN3W",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the beneficiary relationship from digital finance and crypto rails to Coinbase with high positive sensitivity and medium confidence. Coinbase directly monetizes transaction, stablecoin, subscription, custody, institutional, and on-chain activity, while crypto cyclicality, rate and partner exposure, counterparty concentration, custody risk, stock-based compensation, dilution, and unsupported valuation limit shareholder transmission. Updated the relationship page, catalog, log, and canonical relationship row; no strategy or follow-up operation was created before Q2 primary evidence and a downside-aware valuation.",
+  "validation": {
+    "checks": [
+      "The payload validated against schemas/operation_payload.schema.json, and the sole selected queue row matched operation 01KYHW5710MA7RMCX7VSSRBN3W, run local-20260728-daily-all-14, relationship relationship_f2efab6050df0edcb762, the required skill pair, a succeeded dependency, and a live lease.",
+      "The controller preflight hashes matched native llm-wiki 2.1.0, papertrader-controller, and papertrader-relationship-research; execution was sequential with PAPER_TRADING_ONLY=true and no detected injection flags.",
+      "The immutable relationship, idea, and security IDs matched the payload, canonical endpoint pages, and inserted relationship row.",
+      "The accepted beneficiary row is unique for its idea, security, and relationship type and contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, page, and review timestamps.",
+      "The audited immutable request SHA-256 is 4a604df149634939b5aec1838c99aeb71a37c50d7dfbe197b33cce7390456f9d, and the upsert changed only data/tables/relationships.csv.",
+      "The audited commands changed no allocation target, allocation history, execution, cash, portfolio, performance, signal, strategy, or order path.",
+      "The relationship page is registered in the complete research catalog and documented in the append-only wiki log.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "uv run pytest tests/unit/test_research.py -q passed 6 tests; pytest emitted only a cache-permission warning.",
+      "Scoped payload schema, dependency, lease, preflight, endpoint identity, relationship uniqueness, request-integrity, command-audit equality, symlink, trailing-whitespace, and catalog/log checks passed."
+    ],
+    "passed": true
+  }
+}
