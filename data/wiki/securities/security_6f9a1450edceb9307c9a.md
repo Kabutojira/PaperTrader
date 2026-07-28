@@ -5,7 +5,7 @@ status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
 updated: "2026-07-27"
-provenance: "source_anet_q1_2026_10q; deterministic market and FX caches"
+provenance: "source_anet_q1_2026_earnings; source_anet_q1_2026_10q"
 security_id: security_6f9a1450edceb9307c9a
 issuer_id: issuer_29ad971dc8b75eac1b79
 confidence: medium
@@ -26,9 +26,10 @@ Arista is a direct networking exposure within
 
 ## Economics and thesis
 
-Q1 2026 revenue grew 35.1% to USD 2.709 billion. GAAP operating margin was 42.7%, net income was
-USD 1.023 billion, diluted EPS was USD 0.80, and operating cash flow was USD 1.694 billion. Cash
-and marketable securities totaled USD 12.353 billion at 2026-03-31, providing material resilience.
+Q1 2026 revenue grew 35.1% to USD 2.709 billion, including USD 2.311 billion product and USD 398
+million service revenue. GAAP operating margin was 42.7%, net income was USD 1.023 billion, and
+operating cash flow was USD 1.694 billion. At 31 March, cash and marketable securities totalled USD
+12.353 billion, providing material resilience.
 
 Product releases now span 800G and 1.6T Ethernet, universal AI spines, and liquid-cooled optics.
 This supports a real AI-cluster networking mechanism rather than a label. It remains exposed to a
@@ -39,26 +40,30 @@ acceptance periods, competing InfiniBand/Ethernet products, and volatile AI capi
 
 | Evidence | Interpretation |
 | --- | --- |
-| Revenue grew 35.1% with 42.7% GAAP operating margin. | AI and cloud-network demand is converting at high profitability. |
-| Operating cash flow was USD 1.694 billion. | Earnings quality is strong in the quarter, although working-capital benefits require normalization. |
+| Revenue grew 35% with 42.7% GAAP operating margin. | AI and cloud-network demand is converting at high profitability. |
+| Operating cash flow was USD 1.69 billion. | Earnings quality is strong in the quarter. |
 | Cash and marketable securities were USD 12.353 billion. | Balance-sheet downside protection is material. |
 | 1.6T and liquid-cooled products are shipping into customer qualification. | Architecture is current, but adoption is not guaranteed. |
 | Large customers represent a substantial portion of revenue. | Hyperscaler timing and bargaining power can create volatility. |
 | Purchase commitments are elevated and often non-cancellable. | A demand correction can become inventory and margin risk. |
 
-Primary evidence: [Arista Q1 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm)
-(`source_anet_q1_2026_10q`, checked 2026-07-27). The filing supports the operating evidence and
-risk review; yfinance is used only for the deterministic paper mark and liquidity observation.
+Primary evidence: [Arista Q1 2026 results](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-First-Quarter-2026-Financial-Results/default.aspx)
+and [Q1 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000078/anet-20260331.htm).
 
 ## Valuation, catalysts, and risks
 
-The validated 2026-07-27 close is USD 170.76 with 5.33 million shares traded. A bounded 12-month
-earnings range uses the Q1 GAAP diluted EPS run-rate rather than treating one quarter's working-
-capital benefit as recurring cash flow. The downside case annualizes Q1 EPS to USD 3.20 and applies
-30 times earnings, producing USD 96.00 or 43.8% downside. The base case allows earnings power to
-rise 12.5% to USD 3.60, consistent with current growth and Q2 revenue guidance, and applies 40 times
-earnings, producing USD 144.00 or 15.7% downside. These are scenario anchors, not precise targets;
-the large cash and securities balance is recognized in the multiples and is not added again.
+The deterministic 27 July 2026 paper mark is USD 170.76. A bounded 12-month sensitivity starts
+from a USD 11.2 billion 2026 revenue run-rate (four times Q2 guidance), USD 12.353 billion of cash
+and marketable securities, and 1.2738 billion diluted shares. The downside case applies 15% 2027
+growth and a 10x enterprise-value/revenue multiple, producing USD 110.81 per share (-35.1%). The
+base case applies 25% growth and a still-premium 15x multiple, producing USD 174.56 (+2.2%). The
+current mark therefore implies roughly 18.3x enterprise value to the revenue run-rate before the
+next year of execution. These are sensitivities rather than price-target precision; working-capital
+cash flow, customer concentration, and sustained premium multiples remain key uncertainties.
+
+The fresh USD/EUR rate is 0.87930. Price, FX, exchange, currency, instrument and liquidity checks
+do not create a hard blocker, but medium confidence, concentration sensitivity, inadequate margin
+of safety and uncompetitive valuation remain explicit soft gaps.
 
 Catalysts are Q2 growth and margins above guidance, disclosed AI-network revenue progression, 1.6T
 qualification, and customer diversification. Invalidate if Ethernet loses share, major customers
@@ -67,8 +72,9 @@ purchase commitments become excess inventory, or valuation discounts flawless ex
 
 ## Disposition
 
-Status: **watching**, assessment eligibility **baseline**, confidence **medium**. Review by
-**2026-08-14** after Q2 results. Business quality, balance-sheet strength, and liquidity pass, but
-both bounded values remain below the market and the current relationship review is incomplete.
-The margin-of-safety and timing gates therefore block conviction treatment and no strategy follow-up
-is queued. See [[index]] for the current paper-only decision and [[log]] for the audit trail.
+Status: **watching**, confidence **medium**, and allocation eligibility **baseline**. Review by
+**2026-08-14** after Q2 results. Strong economics and liquidity do not overcome the limited base
+upside and material downside sensitivity. No conviction strategy is queued; baseline strategy work
+belongs to the deterministic allocator after the related causal relationship is current.
+
+See the complete [[index]] and append-only [[log]] for repository context.

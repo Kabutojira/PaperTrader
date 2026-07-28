@@ -405,3 +405,37 @@ def test_source_registry_rejects_stale_observations_and_replays_exactly(
             stale,
             now=NOW + timedelta(days=2),
         )
+
+
+def test_source_registry_rebuild_uses_observation_timestamps(
+    sandbox_repository: Path,
+) -> None:
+    request = {
+        "source_id": "source_replayed",
+        "url": "https://example.test/replayed",
+        "canonical_url": "https://example.test/replayed",
+        "source_type": "filing",
+        "title": "Replayed filing",
+        "publisher": "Example issuer",
+        "license": "public-record",
+        "status": "available",
+        "content_hash": "b" * 64,
+        "related_entity_ids": "sec_example",
+        "checked_at": "2026-07-24T10:00:00Z",
+        "http_status": "200",
+        "changed": "false",
+        "excerpt": "A short lawful excerpt.",
+        "summary": "An immutable observation replayed after its originating run.",
+        "run_id": "research-replay",
+    }
+
+    record_source(sandbox_repository, request, now=NOW + timedelta(days=2))
+    row = read_table(sandbox_repository, "source_registry")[0]
+    assert row["first_seen_at"] == request["checked_at"]
+    assert row["last_changed_at"] == request["checked_at"]
+
+    later = request | {"checked_at": "2026-07-24T11:00:00Z"}
+    record_source(sandbox_repository, later, now=NOW + timedelta(days=3))
+    row = read_table(sandbox_repository, "source_registry")[0]
+    assert row["first_seen_at"] == request["checked_at"]
+    assert row["last_changed_at"] == request["checked_at"]

@@ -2,4 +2,6 @@
 
 Generated from `data/tables/issues.csv`.
 
-No open issues.
+| Severity | Issue | Last seen | Owner | Related operation |
+| --- | --- | --- | --- | --- |
+| warning | **issue_d86e39a339fa322f40f1** — Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75 | 2026-07-27T23:18:54Z | delivery |  |

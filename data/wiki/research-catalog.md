@@ -7,8 +7,8 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55f99cf865416f0c19b8"
-as_of: "2026-07-28T08:45:56Z"
+snapshot_id: "decision_3121381750419423c35d"
+as_of: "2026-07-28T09:37:49Z"
 ---
 
 # Research catalog
@@ -22,8 +22,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
 - [\[PARRO.PA\] Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
+- [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101)
 - [\[SGML\] RSI oversold](inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e)

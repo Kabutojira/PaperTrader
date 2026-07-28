@@ -5,7 +5,7 @@ status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
 updated: "2026-07-28"
-provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; deterministic market cache"
+provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; deterministic market cache"
 security_id: security_59304f90c440def31dc5
 issuer_id: issuer_7e0bd218f603cf838669
 confidence: medium
@@ -26,7 +26,8 @@ through [[ideas/idea_defense_aerospace]], never ticker text alone, and separatel
 [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5|24 July RSI-overbought
 entry]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101|same-session
 strengthening]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6|27 July
-RSI strengthening]], [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae|upper-Bollinger entry]],
+RSI strengthening]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb|scheduled-run
+RSI reconciliation]], [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae|upper-Bollinger entry]],
 and [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70|27 July
 upper-Bollinger strengthening]].
 
@@ -96,6 +97,12 @@ The shifted measurement window and refreshed bars make this a later observation 
 replacement for either 24 July packet. It reinforces strong momentum and near-term entry risk but
 does not explain the price move, establish a catalyst or intrinsic value, or independently support
 a short or other paper trade; the fundamental and valuation gates remain controlling.
+
+A scheduled-run packet reconciled the same 26 June–27 July window and USD 218.42 close with the
+same **16.19%** return. Its trigger strength was 0.2443 from 0.1347, slightly below the earlier
+0.2458 observation because its deterministic source-price snapshot had a different hash. This is
+corroborating measurement variation, not a new catalyst or contradictory market conclusion, and it
+does not change the valuation, timing, or paper-trade disposition.
 
 A parallel deterministic packet for the initial USD 211.50 close recorded entry above the upper
 Bollinger band on **2026-07-24**, after the same **13.35%** adjusted-close gain from 25 June to 24

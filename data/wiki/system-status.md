@@ -7,14 +7,14 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55f99cf865416f0c19b8"
-as_of: "2026-07-28T08:45:56Z"
+snapshot_id: "decision_3121381750419423c35d"
+as_of: "2026-07-28T09:37:49Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_55f99cf865416f0c19b8`
-**As of:** `2026-07-28T08:45:56Z`
+**Publication snapshot:** `decision_3121381750419423c35d`
+**As of:** `2026-07-28T09:37:49Z`
 **Data status:** Degraded — review coverage and data gaps
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -29,19 +29,22 @@ as_of: "2026-07-28T08:45:56Z"
 - Pending orders: 2
 - Market success/failure: 24/0
 - Candidate FX gaps: 0
-- Research backlog: 3
-- Last successful daily run: `2026-07-28T08:45:56Z`
+- Research backlog: 4
+- Last successful daily run: `2026-07-28T09:37:49Z`
 
 ## Current issues by investment impact
 
-No open issues.
+### Publication Only
+
+- `warning` **Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75** — Committed Telegram delivery is awaiting a bounded retry.
 
 ## Bounded active operation queue
 
-Showing 3 of 3 active operations.
+Showing 4 of 4 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 
+- `ready` `01KYJV7BH06VQ7GGR2TWBB4A64` — `wiki_ingest` for `source_b2d45bca8d0a249be557`
 - `waiting` `01KYEXAGNREGCP02XCC9VBV80V` — `security_research` for `security_c5a9e460d3350284d157`
 - `waiting` `01KYEWGWBRV9EV6YN1WQA6G3WF` — `security_research` for `security_cb88f9154cfeaa15e878`
 - `waiting` `01KYFXFKB04HSHKYVSPNGXVJX0` — `security_research` for `security_66cdcf90aac0d83e76f3`

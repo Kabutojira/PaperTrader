@@ -1,0 +1,18 @@
+{
+  "changed_paths": [
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "errors": [
+    "post-run integrity: invalid assessment security_1c055eb9b2bb1f5a8ff2: unavailable or stale evidence source_rio_q2_2026_production",
+    "post-run integrity: invalid assessment security_4b61970aa8f574446819: unavailable or stale evidence source_gev_q2_2026_earnings",
+    "post-run integrity: invalid assessment security_6f9a1450edceb9307c9a: unavailable or stale evidence source_anet_q1_2026_earnings",
+    "post-run integrity: invalid assessment security_a9eb9838940ef5ceaa0c: unavailable or stale evidence source_flnc_q2_2026_10q",
+    "post-run integrity: invalid assessment security_bdc2f87dadf134760c3a: timestamp is required"
+  ],
+  "operation_id": "01KYJV7BH02PK4VT3WTS7SQQ61",
+  "passed": false,
+  "run_id": "local-20260728-daily-all-30",
+  "validation_version": 1
+}

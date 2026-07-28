@@ -877,13 +877,19 @@ def record_source(
     if len(values["excerpt"]) > 1000 or len(values["summary"]) > 2000:
         raise ResearchStateError("source excerpt or summary exceeds its bounded length")
     checked = _canonical_timestamp(values["checked_at"], label="checked_at")
-    instant = format_timestamp(ensure_utc(now or utc_now()).replace(microsecond=0))
+    checked_at = parse_timestamp(checked)
+    assert checked_at is not None
     registry = read_table(repository_root, "source_registry")
     previous = next((row for row in registry if row["source_id"] == values["source_id"]), None)
     if previous and previous["canonical_url"] != values["canonical_url"]:
         raise ResearchStateError("source update conflicts with immutable canonical_url")
     if previous and checked < previous["last_checked_at"]:
         raise ResearchStateError("source observation is older than the current registry state")
+    previous_first_seen = parse_timestamp(previous["first_seen_at"]) if previous else None
+    first_seen_at = format_timestamp(
+        min(checked_at, previous_first_seen) if previous_first_seen else checked_at
+    )
+    previous_last_changed = previous["last_changed_at"] if previous else ""
     registry_row = {
         "source_id": values["source_id"],
         "url": values["url"],
@@ -894,12 +900,15 @@ def record_source(
         "license": values["license"],
         "status": values["status"],
         "content_hash": values["content_hash"],
-        "first_seen_at": previous["first_seen_at"] if previous else instant,
+        # The observation timestamp is authoritative when an immutable history row is
+        # replayed after its original run. This keeps reconstructed registry state
+        # consistent with assessments that were already completed against that evidence.
+        "first_seen_at": first_seen_at,
         "last_checked_at": checked,
         "last_changed_at": (
             checked
-            if values["changed"] == "true"
-            else (previous["last_changed_at"] if previous else "")
+            if values["changed"] == "true" or not previous_last_changed
+            else previous_last_changed
         ),
         "related_entity_ids": values["related_entity_ids"],
     }

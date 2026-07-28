@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55f99cf865416f0c19b8"
-as_of: "2026-07-28T08:45:56Z"
+snapshot_id: "decision_3121381750419423c35d"
+as_of: "2026-07-28T09:37:49Z"
 ---
 
 # PaperTrader
 
-**As of `2026-07-28T08:45:56Z` · Data status: Degraded — review coverage and data gaps**
+**As of `2026-07-28T09:37:49Z` · Data status: Degraded — review coverage and data gaps**
 
 ## Deploy approved paper capital
 
@@ -43,7 +43,7 @@ Current equity is **100000 EUR** with **100% cash**. The approved target retains
 
 - **[ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349):** The eligible set is not sufficiently diversified.
 - **[GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819):** The effective score does not beat the configured cash hurdle.
-- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** The assessed base case has no positive upside.
+- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** The effective score does not beat the configured cash hurdle.
 
 ## Performance, risk, and coverage
 

@@ -1,0 +1,20 @@
+{
+  "completed_at": "2026-07-28T09:37:49Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [
+    "order_3b1467697b731e2bf689:pending:-",
+    "order_745a7a020ecf89d5734d:pending:-"
+  ],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260728.md",
+  "run_id": "local-20260728-daily-all-33",
+  "snapshot_id": "decision_3121381750419423c35d",
+  "source_sha": "6e713bfe0d5b939fdc579afb13da90bef5cd3163",
+  "started_at": "2026-07-28T09:37:47Z",
+  "status": "succeeded",
+  "trigger": "local"
+}

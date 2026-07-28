@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_bd977249cf9b37fa11b6",
+  "resolution": "The scheduled RTX RSI packet was fully ingested and its immutable successful agent manifest is present in local-20260728-daily-all-30. Replaying source observations now reconstructs first_seen_at and last_changed_at from canonical checked_at values, so the post-run assessment-integrity errors no longer reproduce; schema, wiki, and strict integrity validation pass after publication refresh."
+}

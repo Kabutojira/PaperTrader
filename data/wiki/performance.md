@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55f99cf865416f0c19b8"
-as_of: "2026-07-28T08:45:56Z"
+snapshot_id: "decision_3121381750419423c35d"
+as_of: "2026-07-28T09:37:49Z"
 ---
 
 # Performance and risk
 
-**Snapshot `decision_55f99cf865416f0c19b8` · As of `2026-07-28T08:45:56Z`**
+**Snapshot `decision_3121381750419423c35d` · As of `2026-07-28T09:37:49Z`**
 
 <svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-24 to 2026-07-28; latest equity 100000."><title>Model equity history</title><desc>Equity history from 2026-07-24 to 2026-07-28; latest equity 100000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 25.00,45.00 50.00,45.00 75.00,45.00 100.00,45.00" /></svg>
 

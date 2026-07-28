@@ -7,8 +7,8 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-report-generator
-run_id: "local-20260728-daily-all-29"
-snapshot_id: "decision_55f99cf865416f0c19b8"
+run_id: "local-20260728-daily-all-33"
+snapshot_id: "decision_3121381750419423c35d"
 ---
 
 # PaperTrader daily report — 2026-07-28
@@ -19,8 +19,8 @@ snapshot_id: "decision_55f99cf865416f0c19b8"
 # Deploy approved paper capital
 
 - **Data status:** Degraded — review coverage and data gaps
-- **As of:** `2026-07-28T08:45:56Z`
-- **Snapshot:** `decision_55f99cf865416f0c19b8`
+- **As of:** `2026-07-28T09:37:49Z`
+- **Snapshot:** `decision_3121381750419423c35d`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 95604.41 EUR (95.606745%)
@@ -82,10 +82,10 @@ snapshot_id: "decision_55f99cf865416f0c19b8"
 | Candidate | State | Score | Base upside | Main reason |
 | --- | --- | ---: | ---: | --- |
 | [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | Risk blocked | 63 | 2.5% | The eligible set is not sufficiently diversified. |
-| [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | Valuation unattractive | 42.8 | 1.9% | The effective score does not beat the configured cash hurdle. |
-| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Valuation unattractive | 34 | -15.7% | The assessed base case has no positive upside. |
+| [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | Valuation unattractive | 45.2 | 2% | The effective score does not beat the configured cash hurdle. |
+| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Valuation unattractive | 38.4 | 2.2% | The effective score does not beat the configured cash hurdle. |
+| [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | Valuation unattractive | 34.6 | -18.9% | The assessed base case has no positive upside. |
 | [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809) | Valuation unattractive | 30.6 | -19.9% | The assessed base case has no positive upside. |
-| [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | Valuation unattractive | 28.6 | -40.4% | The assessed base case has no positive upside. |
 
 ## 5. Performance and risk
 
@@ -99,10 +99,6 @@ snapshot_id: "decision_55f99cf865416f0c19b8"
 
 
 ## 6. Research changes
-
-### Evidence-linked narrative
-
-- Created pending next-open paper order \`order\_745a7a020ecf89d5734d\` for seven incremental Intuitive Surgical shares under the current 4.39% baseline target after 2.2% pending exposure; no fill or accounting transition occurred. Evidence: `data/market/latest.csv and data/market/fx/USD_EUR.csv`, `data/runs/local-20260728-daily-all-29/01KYKX54MRDBWHGFKQERB0YG2Q/command_audit.json`, `data/tables/allocation_targets.csv`, `data/tables/orders.csv and data/tables/order_legs.csv`, `data/tables/strategies.csv, data/tables/strategy_legs.csv, and data/tables/signals.csv`.
 
 - [[model-portfolio]]
 - [[performance]]
@@ -153,18 +149,20 @@ snapshot_id: "decision_55f99cf865416f0c19b8"
 - Active signals: 2
 - Pending orders: 2
 - Market-data success/failure: 24/0
-- Research alerts (not trade signals): 14
+- Research alerts (not trade signals): 16
 
-No current system impacts.
+### Current system impacts
+
+- **publication only**: Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75
 
 ## 8. Audit appendix
 
 ### Run diagnostics
 
-- Run ID: `local-20260728-daily-all-29`
+- Run ID: `local-20260728-daily-all-33`
 - Run status: `succeeded`
-- Generated (UTC): `2026-07-28T08:45:56Z`
-- Decision snapshot: `decision_55f99cf865416f0c19b8`
+- Generated (UTC): `2026-07-28T09:37:49Z`
+- Decision snapshot: `decision_3121381750419423c35d`
 
 ### Complete market freshness
 
@@ -209,7 +207,7 @@ No current system impacts.
 
 ### Allocation audit
 
-- Plan ID: `allocation_plan_16a2809e7228b32b5bb7`
+- Plan ID: `allocation_plan_1090db96103f13437795`
 - Mode: `active`
 - Deployment budget: 15000 EUR
 - Capital allocated: 0 EUR
@@ -219,7 +217,7 @@ No current system impacts.
 | ---: | --- | ---: | --- | --- |
 | 1 | security_1f9cce545ede94cd6349 | 4.39% | hold | above_cash_hurdle\|insufficient_diversification |
 | — | security_18a3ab0ee6086ee85d0f | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_1c055eb9b2bb1f5a8ff2 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
+| — | security_1c055eb9b2bb1f5a8ff2 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
 | — | security_22c2b9d782a62d7a9b86 | 0% | excluded | score_below_cash_hurdle |
 | — | security_2c779e81c27b78c556bb | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
 | — | security_2dbe878dfc899d7ee867 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
@@ -229,7 +227,7 @@ No current system impacts.
 | — | security_59304f90c440def31dc5 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
 | — | security_66cdcf90aac0d83e76f3 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
 | — | security_6ad1af8d10d6276a0221 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
-| — | security_6f9a1450edceb9307c9a | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
+| — | security_6f9a1450edceb9307c9a | 0% | excluded | score_below_cash_hurdle |
 | — | security_7ca095d63423c55a90e3 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
 | — | security_8472507d7d320aa388a7 | 0% | excluded | base_upside_not_positive\|score_below_cash_hurdle |
 | — | security_9d4049ed6669a52815d6 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
@@ -316,21 +314,23 @@ No current system impacts.
 | 01KYKVJX78J2EE4VMWVGHJBAQZ | strategy_research | strategy_bd005fc3733b1475b6f9 | skipped | contract_instructions_corrected |
 | 01KYKWP08RY8ST1TENJRN7EY4A | strategy_research | strategy_bd005fc3733b1475b6f9 | succeeded | agent_result:succeeded |
 | 01KYKX54MRDBWHGFKQERB0YG2Q | execute_strategy | strategy_bd005fc3733b1475b6f9 | succeeded | agent_result:succeeded |
+| 01KYJV7BH02PK4VT3WTS7SQQ61 | wiki_ingest | source_ad511f12b8de63d3a443 | failed | retry_exhausted:agent_validation_failed:issue_bd977249cf9b37fa11b6 |
 
 ### Complete active queue
 
 - `waiting` `01KYEWGWBRV9EV6YN1WQA6G3WF` — `security_research` for `security_cb88f9154cfeaa15e878`
 - `waiting` `01KYEXAGNREGCP02XCC9VBV80V` — `security_research` for `security_c5a9e460d3350284d157`
 - `waiting` `01KYFXFKB04HSHKYVSPNGXVJX0` — `security_research` for `security_66cdcf90aac0d83e76f3`
+- `ready` `01KYJV7BH06VQ7GGR2TWBB4A64` — `wiki_ingest` for `source_b2d45bca8d0a249be557`
 
 ### Open issues and delivery failures
 
-No open issues.
+- `warning` **`issue_d86e39a339fa322f40f1`** — Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75: report=data/wiki/daily-reports/daily-report\_20260727.md commit=a1340c7457be74bc0d53dcf03b78647077a1ae75 next\_chunk=0 total\_chunks=1 error=Telegram HTTP 401: {"ok":false,"error\_code":401,"description":"Unauthorized"}
 
 ### Machine decision provenance
 
 - `validated_open_actions` — Validated opening paper actions are pending.
-- `allocation_targets`: `a62682fb14bc8e3a349309e479d38bff28d6e74946562f29bfeeace9fc37702d`
+- `allocation_targets`: `6309effdc15d56112abe91688ba0d8ba8e4cfb9b779f21f224ef8f1da90da996`
 - `cash_ledger`: `01818c9c63f8b80fdf927abba96e6553d53e28f4e491dcc0201a06f4f4cbc8d1`
 - `configuration`: `6bfbcfa74f10e7c26fb5d945f6c4e0e7748c06714ce07d22e70a46ae67973c83`
 - `csv_contracts`: `006db7fd09c8f810fa6b0be26cd8e4dbd772b3f76b60957660c996d239f16115`
@@ -340,24 +340,24 @@ No open issues.
 - `fx_gbp_eur`: `ed630d4aa0575ebc9b49dc47600b307b562f4da85553806e46844cd83c520ba5`
 - `fx_usd_eur`: `cca01ec6551258350b6a1c1d4ca1a2c1a42a0b6573c0d80aa526f7b1149f7a1d`
 - `indicators`: `8441fa114ec18bccef932641d54ccb02daf2f94fb899ee6d7b73f20edb62c690`
-- `issues`: `8ec08e226e3adc256c1afbbc66dd9773ccd1f8f1be6e93366b9440fbc5e7bb20`
+- `issues`: `351982958049e367de6a219954f445b1df1367f833402df848131c550cccdea9`
 - `market_latest`: `41e1bae1941968c1f65af4de19c5fcb696549e2f98e01c9f651cd66f74f4f204`
-- `operation_payloads`: `00e32e40137900a693883f13341b3f68f81fddceb8a1da5abbd09a04db8537db`
-- `operations_history`: `ab5bf9fdc4f85d9732b9e0807f3ad64e44e86ad0615359708ee4d7d1fabe6c16`
-- `operations_todo`: `10605ca428fb9d5289d8b2a504f94b74987a7ba4dd24f56e037196142f8e8c96`
+- `operation_payloads`: `95bf40ed57e590ffbbfb19ef93b519f0dea5ba6cd1e9e159881d1835e880a57b`
+- `operations_history`: `adf0034496c4801f9bc3b747de2d01b18780bc6648b88f5f5d944d714576c674`
+- `operations_todo`: `5efcfa3a4375ca973759b6a7abd275676ac592416795c3b0f10c32134389a372`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
 - `orders`: `d0f2ee8739f8fa1dc4bc541d3afc4e2ff1ec0257c65bb748e905adfbcd6e1a34`
 - `performance_daily`: `81ec42c1bc37f53e0efe95e0b4784faf3c6ff024d1858f72221b88cc1d6feca9`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `392b56955048368279eb1b760300ca93ba0f7a7c6f1589a9fe99c844f0d1601a`
-- `runs`: `11b94a564cf1fa5eada1283b3406c7dc008592afe184bcd9b1acaa62a7c4b35b`
-- `securities`: `27755cada53d56b9ed13aed460c0d021d6cc19566d10f959e3219c2094e7294c`
-- `security_assessments`: `ac28c0f6ae59647dfebf00489148b564aa804429d6957bfd2b09a2d865b3820e`
+- `runs`: `b7cf9860f84ba577e19a18605b069162a1f58d0164382bdbc1bf7f1182bdbcf8`
+- `securities`: `eae80093281bb39b825157ccb07d8c58a09b5228464f4fedc701118b91c76cd2`
+- `security_assessments`: `a6bc3581e9ce6e6be6ed94a60aa0c2c791f84c0dc5f57b7fb63dbf9deb67ec75`
 - `signals`: `b0ba7fe72e4ae3dcc4d4aa432b31d631ac633135add41d1d8ea563a652b86a78`
-- `source_registry`: `44ba7eb17462647c3506226c6c827e801aa15c47d05cdf64820a1f611b2c1299`
+- `source_registry`: `58999055ab38fb916c74fcda948ecfa38ecf3546a573d1d6ade2eeac5f8626ef`
 - `strategies`: `3dfcfa54d1fe8a5464bba5f679a7f297c80b6590d65566f5739434919d5ebf67`
 - `strategy_legs`: `c814365d6571e84fc619f0905e14a9b7671dd7e312222d4505c732719d26dddf`
-- `wiki_inbox`: `760500710233a0493a99d2fffd33aaafff6d9f5e5d417bedb204e14cb514448e`
+- `wiki_inbox`: `fd3661e378cded9d695dbae451625b4a1b1a6f5da5a2b1a485da03997311012b`
 
 ### Links
 

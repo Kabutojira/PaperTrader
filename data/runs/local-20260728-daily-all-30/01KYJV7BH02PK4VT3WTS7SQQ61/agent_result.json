@@ -1,0 +1,53 @@
+{
+  "operation_id": "01KYJV7BH02PK4VT3WTS7SQQ61",
+  "status": "succeeded",
+  "summary": "Ingested RTX's validated scheduled-run 2026-07-27 strengthened RSI-overbought packet into the maintained security review. The packet records a USD 218.42 adjusted close, a 16.19% return from 26 June through 27 July, and trigger strength increasing to 0.2443 from 0.1347. It corroborates the existing 27 July momentum observation and near-term entry risk; the small difference from the existing 0.2458 measurement reflects a distinct deterministic price snapshot, not a contradictory conclusion. Updated provenance, linked and cataloged the packet, and appended the wiki log. No structured source row or redundant follow-up was warranted.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb.md",
+      "claim": "The regular repository-local candidate packet is classified ingest and records a strengthened RSI-overbought condition as of 2026-07-27 for 2026-06-26 through 2026-07-27, with adjusted close 218.4199981689453, period return 0.161870268560036695374533075, trigger strength 0.244267139 from 0.134651872, and source price hash e6d9344f9fe3838140706fb1b8895afb1c77ea53dda5bf667b6b360ac89b77e8.",
+      "source_hash": "748b32f27fb85638a40432c498b7d48381bfefa50b67c61e1df628a23e4fe739"
+    },
+    {
+      "source": "data/wiki/securities/security_59304f90c440def31dc5.md",
+      "claim": "The maintained RTX page now identifies source_ad511f12b8de63d3a443 in provenance, links the scheduled-run packet, and records its slight deterministic measurement variation without changing the controlling valuation, timing, or paper-trade disposition."
+    },
+    {
+      "source": "data/wiki/research-catalog.md",
+      "claim": "The complete research catalog now includes the scheduled-run RTX RSI-overbought candidate packet."
+    },
+    {
+      "source": "data/wiki/log.md",
+      "claim": "The append-only 2026-07-28 research log records the packet ingestion, bounded interpretation, and decision not to create a redundant follow-up."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ingested the scheduled-run RTX 2026-07-27 strengthened RSI-overbought packet. Its USD 218.42 close, 16.19% period return, and strength increase to 0.2443 from 0.1347 corroborate near-term entry risk; the small difference from the existing 0.2458 observation reflects a distinct deterministic price snapshot and does not change valuation or support a paper trade."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader --repository /workspace wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "PAPER_TRADING_ONLY=true and WIKI_PATH=/workspace/data/wiki were present; the sole running queue row matched operation 01KYJV7BH02PK4VT3WTS7SQQ61, run local-20260728-daily-all-30, entity source_ad511f12b8de63d3a443, wiki_ingest, and the required llm-wiki and papertrader-wiki-ingest skills, with a live lease through 2026-07-28T09:38:58Z.",
+      "The operation payload is a regular file, matched the immutable operation, type, entity, source path, and source hash, and validated against schemas/operation_payload.schema.json.",
+      "The controller preflight identified native llm-wiki 2.1.0, papertrader-controller, and papertrader-wiki-ingest; all three SHA-256 hashes matched their loaded regular files, sequential and yolo flags were true, and no injection flags were present.",
+      "The source is a regular, non-symlink, repository-local deterministic inbox file; its SHA-256 matched 748b32f27fb85638a40432c498b7d48381bfefa50b67c61e1df628a23e4fe739 and its classifier decision was ingest.",
+      "The maintained RTX page now identifies source_ad511f12b8de63d3a443, links the packet, preserves prior observations, and distinguishes deterministic measurement variation from explanation, valuation, and trading judgment.",
+      "research-catalog.md catalogs the candidate packet and maintained RTX page, and log.md records this ingestion append-only.",
+      "The audited papertrader schema validation returned OK [schema], and the audited papertrader wiki lint returned OK [wiki].",
+      "The operation changed only the maintained RTX page, research catalog, and wiki log; it did not edit allocation targets/history, executions, cash, portfolio, fills, or performance.",
+      "No structured source row was created because the validated input is a repository-local deterministic inbox packet rather than an HTTP(S) research source; no issue or follow-up operation was warranted.",
+      "commands_run exactly matches the two canonical command strings in command_audit.json."
+    ]
+  }
+}

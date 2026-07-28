@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55f99cf865416f0c19b8"
-as_of: "2026-07-28T08:45:56Z"
+snapshot_id: "decision_3121381750419423c35d"
+as_of: "2026-07-28T09:37:49Z"
 ---
 
 # Signals
 
-**Snapshot `decision_55f99cf865416f0c19b8` · As of `2026-07-28T08:45:56Z`**
+**Snapshot `decision_3121381750419423c35d` · As of `2026-07-28T09:37:49Z`**
 
 ## Actionable trade signals
 
@@ -81,7 +81,25 @@ as_of: "2026-07-28T08:45:56Z"
 - Research status: `ingest`
 - Conclusion: Queue triage disposition
 
+### [RTX — RTX Corporation](inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-07-27`
+- Research status: `ingest`
+- Conclusion: Queue triage disposition
+
 ### [RTX — RTX Corporation](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-07-27`
+- Research status: `ingest`
+- Conclusion: Queue triage disposition
+
+### [RTX — RTX Corporation](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b)
 
 **Research alert — not a trade signal**
 

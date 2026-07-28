@@ -896,3 +896,40 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_55f99cf865416f0c19b8`.
 
 - Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-29`.
+
+- Reconciled candidate packet
+  [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b]] from
+  scheduled run `gha-30310927695-1`; its deterministic classifier disposition was `ingest` because
+  the strengthened upper-band transition followed a 16.2% period return.
+
+- Reconciled candidate packet
+  [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb]] from scheduled run
+  `gha-30310927695-1`; its deterministic classifier disposition was `ingest` because the stronger
+  overbought transition followed a 16.2% period return.
+
+- Reconciled the later scheduled-run revalidations of
+  [[securities/security_bdc2f87dadf134760c3a|Palantir]],
+  [[securities/security_4b61970aa8f574446819|GE Vernova]],
+  [[securities/security_a9eb9838940ef5ceaa0c|Fluence Energy]],
+  [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]], and
+  [[securities/security_6f9a1450edceb9307c9a|Arista Networks]] from run
+  `gha-30310927695-1`. The comparable assessments remain baseline or ineligible rather than
+  conviction candidates because valuation, evidence, timing, or concentration gaps persist.
+
+- Reconciled the canonical 2026-07-27 report event from scheduled run `gha-30310927695-1`; the
+  later local publication remains the current [[daily-reports/daily-report_20260727]] projection.
+
+- Ingested [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb|the
+  scheduled-run RTX RSI-overbought packet]] into
+  [[securities/security_59304f90c440def31dc5|the maintained RTX review]]. Its 16.19% return and
+  strengthened trigger corroborate near-term entry risk; the small strength difference from the
+  existing 27 July packet reflects a distinct deterministic price snapshot and does not change the
+  valuation, timing, or paper-trade disposition. No redundant follow-up was created.
+
+- Published investor decision snapshot `decision_48c04c3cb58db43272d0`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-32`.
+
+- Published investor decision snapshot `decision_3121381750419423c35d`.
+
+- Generated canonical [[daily-reports/daily-report_20260728]] for run `local-20260728-daily-all-33`.

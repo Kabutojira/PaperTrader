@@ -1,0 +1,17 @@
+{
+  "completed_at": "",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "",
+  "run_id": "local-20260728-daily-all-31",
+  "snapshot_id": "",
+  "source_sha": "6e713bfe0d5b939fdc579afb13da90bef5cd3163",
+  "started_at": "2026-07-28T09:17:43Z",
+  "status": "prepared",
+  "trigger": "local"
+}
