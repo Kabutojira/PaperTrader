@@ -7,13 +7,13 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_420b3864086b1c654369"
-as_of: "2026-07-28T09:50:10Z"
+snapshot_id: "decision_f7970c846929cff52159"
+as_of: "2026-07-28T10:15:46Z"
 ---
 
 # Signals
 
-**Snapshot `decision_420b3864086b1c654369` · As of `2026-07-28T09:50:10Z`**
+**Snapshot `decision_f7970c846929cff52159` · As of `2026-07-28T10:15:46Z`**
 
 ## Actionable trade signals
 
@@ -24,7 +24,7 @@ as_of: "2026-07-28T09:50:10Z"
 - **Strategy:** Intuitive Surgical bounded baseline allocation
 - **Window:** `2026-07-28T07:47:48Z` to `2026-07-29T07:45:53Z`
 - **Market data:** `2026-07-27T20:55:09Z`
-- **Current → target:** 0% → 4.395254%
+- **Current → target:** 0% → 4.398251%
 - **Copy-ready quantity:** 7
 - **Order:** market
 - **Entry:** Use the open signal lifecycle action for the increase disposition only while allocation\_plan\_8859abf5cf5708b35855 and assessment 2026-07-27T21:28:56Z remain current, the ISRG mark and USD/EUR rate are fresh, and deterministic risk validation derives a positive whole-share delta no larger than the 4.39% target after pending exposure.
@@ -39,7 +39,7 @@ as_of: "2026-07-28T09:50:10Z"
 - **Strategy:** Intuitive Surgical bounded baseline allocation
 - **Window:** `2026-07-28T08:22:44Z` to `2026-07-29T08:21:25Z`
 - **Market data:** `2026-07-27T20:55:09Z`
-- **Current → target:** 0% → 4.395254%
+- **Current → target:** 0% → 4.398251%
 - **Copy-ready quantity:** 7
 - **Order:** market
 - **Entry:** Use the open signal lifecycle action for the increase disposition only while allocation\_plan\_8859abf5cf5708b35855 and assessment 2026-07-27T21:28:56Z remain current, the ISRG mark and USD/EUR rate are fresh, and deterministic risk validation derives a positive whole-share delta no larger than the 4.39% target after pending exposure.

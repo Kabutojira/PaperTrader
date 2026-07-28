@@ -7,14 +7,14 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_420b3864086b1c654369"
-as_of: "2026-07-28T09:50:10Z"
+snapshot_id: "decision_f7970c846929cff52159"
+as_of: "2026-07-28T10:15:46Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_420b3864086b1c654369`
-**As of:** `2026-07-28T09:50:10Z`
+**Publication snapshot:** `decision_f7970c846929cff52159`
+**As of:** `2026-07-28T10:15:46Z`
 **Data status:** Degraded — review coverage and data gaps
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -30,13 +30,14 @@ as_of: "2026-07-28T09:50:10Z"
 - Market success/failure: 24/0
 - Candidate FX gaps: 0
 - Research backlog: 3
-- Last successful daily run: `2026-07-28T09:50:10Z`
+- Last successful daily run: `2026-07-28T10:15:46Z`
 
 ## Current issues by investment impact
 
 ### Publication Only
 
 - `warning` **Telegram delivery failed: a1340c7457be74bc0d53dcf03b78647077a1ae75** — Committed Telegram delivery is awaiting a bounded retry.
+- `warning` **Telegram delivery failed: a8393d13b8e650e0d813cc9346c3d11dd063264f** — Committed Telegram delivery is awaiting a bounded retry.
 
 ## Bounded active operation queue
 

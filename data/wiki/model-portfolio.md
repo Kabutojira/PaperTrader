@@ -7,38 +7,38 @@ tags:
 created: "2026-07-28"
 updated: "2026-07-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_420b3864086b1c654369"
-as_of: "2026-07-28T09:50:10Z"
+snapshot_id: "decision_f7970c846929cff52159"
+as_of: "2026-07-28T10:15:46Z"
 ---
 
 # Model portfolio
 
-**Snapshot `decision_420b3864086b1c654369` · As of `2026-07-28T09:50:10Z`**
+**Snapshot `decision_f7970c846929cff52159` · As of `2026-07-28T10:15:46Z`**
 
 This is a paper-only, non-personalized research portfolio. Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="95.604746" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-07-28T09:50:10Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="95.601749" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-07-28T10:15:46Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
-<div><dt>Approved target</dt><dd>95.604746%</dd></div>
+<div><dt>Approved target</dt><dd>95.601749%</dd></div>
 <div><dt>Action</dt><dd>Trim</dd></div>
 <div><dt>State</dt><dd>Pending validated paper order</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
-<div><dt>As of</dt><dd>2026-07-28T09:50:10Z</dd></div>
+<div><dt>As of</dt><dd>2026-07-28T10:15:46Z</dd></div>
 </dl>
 
 </article>
-<article class="portfolio-card" data-scalable="true" data-target-weight="4.395254" data-mark="356.8299865722656" data-fx="0.879800021648407" data-mark-currency="USD" data-market-data-as-of="2026-07-28T09:44:43Z" data-ticker="ISRG" data-company="Intuitive Surgical, Inc.">
+<article class="portfolio-card" data-scalable="true" data-target-weight="4.398251" data-mark="356.8299865722656" data-fx="0.8804000020027161" data-mark-currency="USD" data-market-data-as-of="2026-07-28T10:15:33Z" data-ticker="ISRG" data-company="Intuitive Surgical, Inc.">
 <h3>ISRG — Intuitive Surgical, Inc.</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>0%</dd></div>
-<div><dt>Approved target</dt><dd>4.395254%</dd></div>
+<div><dt>Approved target</dt><dd>4.398251%</dd></div>
 <div><dt>Action</dt><dd>Buy</dd></div>
 <div><dt>State</dt><dd>Pending validated paper order</dd></div>
 <div><dt>Reference mark</dt><dd>356.8299865722656 USD</dd></div>
-<div><dt>As of</dt><dd>2026-07-28T09:44:43Z</dd></div>
+<div><dt>As of</dt><dd>2026-07-28T10:15:33Z</dd></div>
 </dl>
 <p><a href="strategies/strategy_bd005fc3733b1475b6f9">Complete research</a></p>
 </article>
