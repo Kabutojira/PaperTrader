@@ -171,6 +171,93 @@ def _youtube_discovery_lines(repository_root: Path, run_id: str) -> list[str]:
     return lines
 
 
+def _seekingalpha_discovery_lines(repository_root: Path, run_id: str) -> list[str]:
+    """Render search-index lead discovery without reproducing provider summaries."""
+
+    schedule_path = repository_root / "data" / "runs" / run_id / "seekingalpha_schedule.json"
+    if not schedule_path.exists():
+        return []
+    if schedule_path.is_symlink() or not schedule_path.is_file():
+        raise CanonicalValueError("Seeking Alpha schedule must be a regular run artifact")
+    try:
+        schedule = json.loads(schedule_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CanonicalValueError(f"cannot read Seeking Alpha schedule: {exc}") from exc
+    if not isinstance(schedule, dict) or schedule.get("run_id") != run_id:
+        raise CanonicalValueError("Seeking Alpha schedule identity is invalid")
+    lines = [
+        "### Seeking Alpha search-index leads",
+        "",
+        f"- Schedule status: `{_markdown_text(str(schedule.get('status', 'unknown')))}`",
+        "- Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.",
+    ]
+    operation_id = schedule.get("operation_id")
+    if not isinstance(operation_id, str) or not operation_id:
+        lines.append("")
+        return lines
+    discovery_path = (
+        repository_root / "data" / "runs" / run_id / operation_id / "seekingalpha_discovery.json"
+    )
+    if not discovery_path.exists():
+        lines.extend(["- Discovery status: `pending`", ""])
+        return lines
+    if discovery_path.is_symlink() or not discovery_path.is_file():
+        raise CanonicalValueError("Seeking Alpha discovery must be a regular artifact")
+    try:
+        discovery = json.loads(discovery_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CanonicalValueError(f"cannot read Seeking Alpha discovery: {exc}") from exc
+    if (
+        not isinstance(discovery, dict)
+        or discovery.get("run_id") != run_id
+        or discovery.get("operation_id") != operation_id
+    ):
+        raise CanonicalValueError("Seeking Alpha discovery identity is invalid")
+    counts = discovery.get("candidate_counts")
+    selected = discovery.get("selected")
+    rejected = discovery.get("rejected")
+    if (
+        not isinstance(counts, dict)
+        or not isinstance(selected, list)
+        or not all(isinstance(item, dict) for item in selected)
+        or not isinstance(rejected, list)
+    ):
+        raise CanonicalValueError("Seeking Alpha discovery summary is malformed")
+    lines.extend(
+        [
+            f"- Discovery status: `{_markdown_text(str(discovery.get('status', 'unknown')))}`",
+            f"- Candidates examined: analysis `{counts.get('analysis', 0)}`, "
+            f"news `{counts.get('news', 0)}`",
+            f"- Interesting leads selected: `{len(selected)}`; rejected: `{len(rejected)}`",
+        ]
+    )
+    if discovery.get("reason_code"):
+        lines.append(f"- Reason: `{_markdown_text(str(discovery.get('reason_code', '')))}`")
+    if selected:
+        lines.extend(
+            [
+                "",
+                "| Kind | Indexed title | Related entities |",
+                "| --- | --- | --- |",
+            ]
+        )
+        for lead in selected:
+            related = lead.get("related_entity_ids")
+            related_text = (
+                ", ".join(str(value) for value in related)
+                if isinstance(related, list) and related
+                else "new-lead candidate"
+            )
+            title = _markdown_text(str(lead.get("title", "")))
+            url = str(lead.get("canonical_url", ""))
+            lines.append(
+                f"| {_cell(str(lead.get('content_kind', '')))} | "
+                f"[{title}]({url}) | {_cell(related_text)} |"
+            )
+    lines.append("")
+    return lines
+
+
 def _markdown_text(value: str) -> str:
     """Render canonical data as inert one-line Markdown text."""
 
@@ -934,6 +1021,9 @@ def generate_daily_report(
     youtube_lines = _youtube_discovery_lines(repository_root, run_id)
     if youtube_lines:
         lines.extend(["", *youtube_lines])
+    seekingalpha_lines = _seekingalpha_discovery_lines(repository_root, run_id)
+    if seekingalpha_lines:
+        lines.extend(["", *seekingalpha_lines])
     lines.extend(
         [
             "",

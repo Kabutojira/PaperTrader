@@ -94,6 +94,10 @@ from papertrader.research import (
     upsert_security,
     upsert_strategy,
 )
+from papertrader.seekingalpha import (
+    enqueue_seekingalpha_leads,
+    schedule_seekingalpha_discovery,
+)
 from papertrader.tables import read_table
 from papertrader.telegram import committed_run_report_path, deliver_committed_report
 from papertrader.utils import (
@@ -139,6 +143,16 @@ def _parser() -> argparse.ArgumentParser:
     youtube_backfill.add_argument("--run-id", required=True)
     youtube_backfill.add_argument("--channel-id", required=True)
     youtube_backfill.add_argument("--count", type=int, required=True)
+
+    seekingalpha = commands.add_parser(
+        "seekingalpha", help="schedule and validate search-index-only article leads"
+    )
+    seekingalpha_commands = seekingalpha.add_subparsers(dest="seekingalpha_command", required=True)
+    seekingalpha_schedule = seekingalpha_commands.add_parser("schedule")
+    seekingalpha_schedule.add_argument("--run-id", required=True)
+    seekingalpha_schedule.add_argument("--dry-run", action="store_true")
+    seekingalpha_enqueue = seekingalpha_commands.add_parser("enqueue-leads")
+    seekingalpha_enqueue.add_argument("--request", type=Path, required=True)
 
     market = commands.add_parser("market", help="retrieve and normalize market state")
     market_commands = market.add_subparsers(dest="market_command", required=True)
@@ -916,6 +930,22 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 settings,
                 run_id=arguments.run_id,
                 dry_run=arguments.dry_run,
+            )
+        print(json.dumps(result, sort_keys=True))
+        return 0
+    if arguments.command == "seekingalpha":
+        if arguments.seekingalpha_command == "schedule":
+            result = schedule_seekingalpha_discovery(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                dry_run=arguments.dry_run,
+            )
+        else:
+            result = enqueue_seekingalpha_leads(
+                root,
+                settings,
+                _request_object(root, arguments.request),
             )
         print(json.dumps(result, sort_keys=True))
         return 0

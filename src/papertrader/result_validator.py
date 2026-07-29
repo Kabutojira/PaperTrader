@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 from collections.abc import Mapping, Sequence
+from contextlib import suppress
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 
@@ -15,6 +16,7 @@ from papertrader.integrity import is_runtime_path_allowed, validate_integrity
 from papertrader.portfolio import reconcile_portfolio
 from papertrader.queue import Operation
 from papertrader.repository_state import RepositoryDelta, RepositorySnapshot
+from papertrader.seekingalpha import canonical_article_url, seekingalpha_source_id
 from papertrader.tables import read_table
 from papertrader.utils import parse_timestamp, utc_now
 from papertrader.wiki import lint_wiki
@@ -135,6 +137,7 @@ def _path_allowed_for_operation(
     *,
     created: bool,
     youtube_video: bool = False,
+    seekingalpha_lead: bool = False,
 ) -> bool:
     path = PurePosixPath(raw_path)
     if raw_path in COMMON_STRUCTURED_PATHS or _is_followup_path(path):
@@ -147,10 +150,13 @@ def _path_allowed_for_operation(
             PurePosixPath("data/tables/source_history.csv"),
         }:
             return True
-        if youtube_video and path == PurePosixPath("data/tables/securities.csv"):
+        if (youtube_video or seekingalpha_lead) and path == PurePosixPath(
+            "data/tables/securities.csv"
+        ):
             return True
         return (
             not youtube_video
+            and not seekingalpha_lead
             and created
             and len(path.parts) >= 4
             and path.parts[:3] == ("data", "wiki", "raw")
@@ -203,6 +209,7 @@ def _command_allowed(
     entry: Mapping[str, object],
     *,
     youtube_video: bool = False,
+    seekingalpha_lead: bool = False,
 ) -> bool:
     parts = _command_parts(entry)
     if len(parts) < 2:
@@ -222,11 +229,15 @@ def _command_allowed(
     )
     if read_only:
         return True
-    if command[:2] in {("issue", "record"), ("queue", "enqueue")}:
+    if command[:2] == ("issue", "record"):
         return True
+    if command[:2] == ("queue", "enqueue"):
+        return operation_type != "source_discovery"
+    if command[:2] == ("seekingalpha", "enqueue-leads"):
+        return operation_type == "source_discovery"
     if command[:2] == ("watchlist", "import"):
         return operation_type == "idea_research" or (
-            operation_type == "wiki_ingest" and youtube_video
+            operation_type == "wiki_ingest" and (youtube_video or seekingalpha_lead)
         )
     if command[:3] == ("research", "source", "record"):
         return operation_type in {"wiki_ingest", "security_research"}
@@ -371,6 +382,7 @@ def _validate_commands(
     after_snapshot: RepositorySnapshot,
     *,
     youtube_video: bool = False,
+    seekingalpha_lead: bool = False,
 ) -> list[str]:
     entries, errors = _load_command_audit(repository_root, run_id, operation.operation_id)
     audited_commands = tuple(
@@ -380,7 +392,12 @@ def _validate_commands(
     if reported != audited_commands:
         errors.append("commands_run does not exactly match deterministic CLI audit receipts")
     for index, entry in enumerate(entries):
-        if not _command_allowed(operation.operation_type, entry, youtube_video=youtube_video):
+        if not _command_allowed(
+            operation.operation_type,
+            entry,
+            youtube_video=youtube_video,
+            seekingalpha_lead=seekingalpha_lead,
+        ):
             errors.append(f"command audit entry {index} is outside the operation skill scope")
         request = entry.get("request")
         if request is None:
@@ -799,6 +816,315 @@ def _youtube_wiki_ingest_errors(
     return errors
 
 
+def _json_artifact_errors(
+    repository_root: Path, *, relative_path: str, schema_name: str
+) -> tuple[Mapping[str, object] | None, list[str]]:
+    path = repository_root.joinpath(*PurePosixPath(relative_path).parts)
+    if path.is_symlink() or not path.is_file():
+        return None, [f"required artifact is missing or a symlink: {relative_path}"]
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+        schema = json.loads((repository_root / "schemas" / schema_name).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return None, [f"cannot read {relative_path} or {schema_name}: {exc}"]
+    if not isinstance(value, dict):
+        return None, [f"artifact must be an object: {relative_path}"]
+    schema_errors = sorted(
+        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value),
+        key=lambda error: list(error.absolute_path),
+    )
+    return value, [f"{relative_path}: {error.message}" for error in schema_errors]
+
+
+def _seekingalpha_discovery_errors(
+    repository_root: Path,
+    *,
+    run_id: str,
+    operation: Operation,
+    status: object,
+    result: Mapping[str, object],
+    changed_paths: Sequence[str],
+    created_operation_ids: set[str],
+    operation_rows_after: Mapping[str, Mapping[str, str]],
+    analysis_priority: int,
+    news_priority: int,
+) -> list[str]:
+    """Validate search-only discovery output and its exact bounded lead operations."""
+
+    inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    if (
+        operation.operation_type != "source_discovery"
+        or inputs.get("source_kind") != "seekingalpha_search_index"
+    ):
+        return []
+    errors: list[str] = []
+    discovery_path = f"data/runs/{run_id}/{operation.operation_id}/seekingalpha_discovery.json"
+    if discovery_path not in changed_paths:
+        errors.append("Seeking Alpha source discovery requires seekingalpha_discovery.json")
+    artifact, artifact_errors = _json_artifact_errors(
+        repository_root,
+        relative_path=discovery_path,
+        schema_name="seekingalpha_discovery.schema.json",
+    )
+    errors.extend(artifact_errors)
+    artifact_prefix = f"data/runs/{run_id}/{operation.operation_id}/"
+    allowed_artifacts = {discovery_path, artifact_prefix + "seekingalpha_issue.json"}
+    unexpected_artifacts = sorted(
+        path
+        for path in changed_paths
+        if path.startswith(artifact_prefix) and path not in allowed_artifacts
+    )
+    if unexpected_artifacts:
+        errors.append(
+            f"Seeking Alpha discovery wrote unexpected operation artifacts: {unexpected_artifacts}"
+        )
+    if artifact is None:
+        return errors
+    if (
+        artifact.get("run_id") != run_id
+        or artifact.get("operation_id") != operation.operation_id
+        or artifact.get("discovery_date") != inputs.get("discovery_date")
+    ):
+        errors.append("Seeking Alpha discovery artifact identity mismatch")
+    artifact_status = artifact.get("status")
+    if artifact_status == "unavailable":
+        if status != "skipped" or result.get("reason_code") != "seekingalpha_search_unavailable":
+            errors.append(
+                "unavailable Seeking Alpha discovery requires skipped/search-unavailable result"
+            )
+        if created_operation_ids:
+            errors.append("unavailable Seeking Alpha discovery must not enqueue leads")
+        return errors
+    if artifact_status != "succeeded" or status != "succeeded":
+        errors.append("successful Seeking Alpha discovery requires succeeded artifact and result")
+        return errors
+    if "reason_code" in result:
+        errors.append("successful Seeking Alpha discovery must not report a reason_code")
+    selected = artifact.get("selected")
+    selected_source_ids: set[str] = set()
+    if isinstance(selected, list):
+        for raw in selected:
+            if not isinstance(raw, dict):
+                continue
+            content_kind = raw.get("content_kind")
+            article_id = raw.get("article_id")
+            if isinstance(content_kind, str) and isinstance(article_id, str):
+                with suppress(ValueError):
+                    selected_source_ids.add(seekingalpha_source_id(content_kind, article_id))
+    for operation_id in sorted(created_operation_ids):
+        row = operation_rows_after.get(operation_id)
+        if row is None:
+            continue
+        followup_inputs = _payload_inputs(repository_root, row)
+        content_kind = followup_inputs.get("content_kind") if followup_inputs else None
+        expected_priority = analysis_priority if content_kind == "analysis" else news_priority
+        if (
+            row["operation_type"] != "wiki_ingest"
+            or followup_inputs is None
+            or followup_inputs.get("source_kind") != "seekingalpha_search_lead"
+            or row["entity_id"] not in selected_source_ids
+        ):
+            errors.append(f"source discovery created a non-selected lead operation: {operation_id}")
+        if row["priority"] != str(expected_priority):
+            errors.append(f"Seeking Alpha lead priority mismatch: {operation_id}")
+        if operation.operation_id not in row["depends_on"].split("|"):
+            errors.append(f"Seeking Alpha lead must depend on discovery: {operation_id}")
+    known_selected_sources = {
+        row["source_id"] for row in read_table(repository_root, "source_registry")
+    }
+    for row in operation_rows_after.values():
+        followup_inputs = _payload_inputs(repository_root, row)
+        if (
+            row["operation_type"] == "wiki_ingest"
+            and followup_inputs is not None
+            and followup_inputs.get("source_kind") == "seekingalpha_search_lead"
+        ):
+            known_selected_sources.add(row["entity_id"])
+    missing_selected = sorted(selected_source_ids - known_selected_sources)
+    if missing_selected:
+        errors.append(
+            "Seeking Alpha discovery left selected leads neither queued nor registered: "
+            f"{missing_selected}"
+        )
+    return errors
+
+
+def _seekingalpha_wiki_ingest_errors(
+    repository_root: Path,
+    *,
+    run_id: str,
+    operation: Operation,
+    status: object,
+    result: Mapping[str, object],
+    changed_paths: Sequence[str],
+    created_paths: set[str],
+    created_operation_ids: set[str],
+    operation_rows_after: Mapping[str, Mapping[str, str]],
+    followup_priority: int,
+    maximum_new_securities: int,
+) -> list[str]:
+    """Enforce the search-lead-only and independent-corroboration boundary."""
+
+    inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    if (
+        operation.operation_type != "wiki_ingest"
+        or inputs.get("source_kind") != "seekingalpha_search_lead"
+    ):
+        return []
+    errors: list[str] = []
+    content_kind = inputs.get("content_kind")
+    article_id = inputs.get("article_id")
+    source_id = inputs.get("source_id")
+    canonical_url = inputs.get("canonical_url")
+    metadata_hash = inputs.get("metadata_hash")
+    related_ids = inputs.get("related_entity_ids")
+    try:
+        parsed_kind, parsed_id, normalized_url = canonical_article_url(str(canonical_url))
+    except ValueError:
+        parsed_kind, parsed_id, normalized_url = "", "", ""
+    try:
+        expected_source_id = seekingalpha_source_id(str(content_kind), str(article_id))
+    except ValueError:
+        expected_source_id = ""
+    if (
+        not isinstance(content_kind, str)
+        or not isinstance(article_id, str)
+        or source_id != expected_source_id
+        or operation.entity_id != source_id
+        or parsed_kind != content_kind
+        or parsed_id != article_id
+        or normalized_url != canonical_url
+        or inputs.get("discovery_mode") != "search_index"
+        or inputs.get("direct_site_access_allowed") is not False
+    ):
+        errors.append("Seeking Alpha wiki-ingest payload/source identity mismatch")
+    if status == "skipped":
+        if result.get("reason_code") not in {
+            "seekingalpha_identity_unavailable",
+            "seekingalpha_lead_unverifiable",
+        }:
+            errors.append("skipped Seeking Alpha lead requires a bounded reason_code")
+        if changed_paths:
+            errors.append("skipped Seeking Alpha lead must not mutate repository state")
+        if created_operation_ids:
+            errors.append("skipped Seeking Alpha lead must not enqueue follow-ups")
+        return errors
+    if status != "succeeded":
+        return errors
+    if "reason_code" in result:
+        errors.append("successful Seeking Alpha lead ingest must not report a reason_code")
+    analysis_path = f"data/runs/{run_id}/{operation.operation_id}/seekingalpha_analysis.md"
+    if analysis_path not in changed_paths:
+        errors.append("successful Seeking Alpha lead ingest requires seekingalpha_analysis.md")
+    forbidden_created_pages = sorted(
+        path
+        for path in created_paths
+        if PurePosixPath(path).parts[:3]
+        in {
+            ("data", "wiki", "ideas"),
+            ("data", "wiki", "securities"),
+            ("data", "wiki", "strategies"),
+        }
+    )
+    if forbidden_created_pages:
+        errors.append(
+            "Seeking Alpha lead ingestion cannot create idea/security/strategy pages directly: "
+            f"{forbidden_created_pages}"
+        )
+    if any(path.startswith("data/wiki/strategies/") for path in changed_paths):
+        errors.append("Seeking Alpha lead ingestion cannot change strategy pages")
+    related = set(related_ids) if isinstance(related_ids, list) else set()
+    if content_kind == "news":
+        for path in changed_paths:
+            relative = PurePosixPath(path)
+            if (
+                relative.parts[:3]
+                in {
+                    ("data", "wiki", "ideas"),
+                    ("data", "wiki", "securities"),
+                }
+                and relative.stem not in related
+            ):
+                errors.append(f"Seeking Alpha news changed an unrelated entity page: {path}")
+    registry = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+    source = registry.get(str(source_id))
+    if source is None:
+        errors.append("successful Seeking Alpha lead ingest requires a registered source")
+    elif (
+        source["source_type"] != "seekingalpha_search_lead"
+        or source["url"] != canonical_url
+        or source["canonical_url"] != canonical_url
+        or source["publisher"] != "Seeking Alpha"
+        or source["content_hash"] != metadata_hash
+    ):
+        errors.append("registered Seeking Alpha lead metadata is invalid")
+    else:
+        matching_history = [
+            row
+            for row in read_table(repository_root, "source_history")
+            if row["source_id"] == source_id
+            and row["run_id"] == run_id
+            and row["content_hash"] == metadata_hash
+        ]
+        if len(matching_history) != 1:
+            errors.append("Seeking Alpha lead requires one matching source-history record")
+    analysis = repository_root / analysis_path
+    if analysis.is_file() and not analysis.is_symlink():
+        text = analysis.read_text(encoding="utf-8")
+        for required in (str(article_id), str(canonical_url), str(metadata_hash)):
+            if required and required not in text:
+                errors.append(
+                    "seekingalpha_analysis.md must identify the URL, ID, and metadata hash"
+                )
+                break
+    idea_followups = 0
+    security_followups: dict[str, list[str]] = {}
+    for operation_id in sorted(created_operation_ids):
+        row = operation_rows_after.get(operation_id)
+        if row is None:
+            continue
+        if row["operation_type"] not in {"idea_research", "security_research"}:
+            errors.append(
+                f"Seeking Alpha lead may enqueue only idea/security research: {operation_id}"
+            )
+        if row["priority"] != str(followup_priority):
+            errors.append(f"Seeking Alpha follow-up priority mismatch: {operation_id}")
+        if operation.operation_id not in row["depends_on"].split("|"):
+            errors.append(f"Seeking Alpha follow-up must depend on its ingest: {operation_id}")
+        if row["operation_type"] == "idea_research":
+            idea_followups += 1
+        elif row["operation_type"] == "security_research":
+            security_followups.setdefault(row["entity_id"], []).append(operation_id)
+    imported_security_ids = {
+        row["security_id"]
+        for row in read_table(repository_root, "securities")
+        if row["source"] == canonical_url
+    }
+    if content_kind == "analysis":
+        if idea_followups > 1:
+            errors.append("Seeking Alpha analysis may enqueue at most one idea follow-up")
+        if len(imported_security_ids) > maximum_new_securities:
+            errors.append("Seeking Alpha analysis imported too many security identities")
+    else:
+        if imported_security_ids:
+            errors.append("Seeking Alpha news must not import new security identities")
+        if len(created_operation_ids) > 1:
+            errors.append("Seeking Alpha news may enqueue at most one existing-entity refresh")
+        for operation_id in created_operation_ids:
+            row = operation_rows_after.get(operation_id)
+            if row is not None and row["entity_id"] not in related:
+                errors.append(
+                    f"Seeking Alpha news follow-up targets an unrelated entity: {operation_id}"
+                )
+    for security_id in sorted(imported_security_ids):
+        if len(security_followups.get(security_id, [])) != 1:
+            errors.append(
+                "Seeking Alpha-imported security requires exactly one security_research "
+                f"follow-up: {security_id}"
+            )
+    return errors
+
+
 def validate_agent_result(
     repository_root: Path,
     *,
@@ -827,6 +1153,10 @@ def validate_agent_result(
         operation.operation_type == "wiki_ingest"
         and source_inputs.get("source_kind") == "youtube_video"
     )
+    seekingalpha_lead = (
+        operation.operation_type == "wiki_ingest"
+        and source_inputs.get("source_kind") == "seekingalpha_search_lead"
+    )
     created = set(delta.created)
     reserved = {
         f"data/runs/{run_id}/{operation.operation_id}/controller_prompt.md",
@@ -854,6 +1184,7 @@ def validate_agent_result(
             path,
             created=path in created,
             youtube_video=youtube_video,
+            seekingalpha_lead=seekingalpha_lead,
         ):
             errors.append(f"path is outside {operation.operation_type} scope: {path}")
     if result is None:
@@ -943,10 +1274,19 @@ def validate_agent_result(
         )
     )
     try:
-        followup_priority = load_settings(repository_root, environment).youtube.followup_priority
+        settings = load_settings(repository_root, environment)
+        followup_priority = settings.youtube.followup_priority
+        seekingalpha_followup_priority = settings.seekingalpha.followup_priority
+        seekingalpha_analysis_priority = settings.seekingalpha.analysis_priority
+        seekingalpha_news_priority = settings.seekingalpha.news_priority
+        seekingalpha_maximum_securities = settings.seekingalpha.maximum_new_securities_per_analysis
     except ConfigurationError as exc:
-        errors.append(f"cannot validate YouTube follow-up priority: {exc}")
+        errors.append(f"cannot validate curated-source priorities: {exc}")
         followup_priority = 66
+        seekingalpha_followup_priority = 68
+        seekingalpha_analysis_priority = 67
+        seekingalpha_news_priority = 66
+        seekingalpha_maximum_securities = 2
     errors.extend(
         _youtube_wiki_ingest_errors(
             repository_root,
@@ -958,6 +1298,35 @@ def validate_agent_result(
             created_operation_ids=created_operations,
             operation_rows_after=operation_rows_after,
             followup_priority=followup_priority,
+        )
+    )
+    errors.extend(
+        _seekingalpha_discovery_errors(
+            repository_root,
+            run_id=run_id,
+            operation=operation,
+            status=status,
+            result=result,
+            changed_paths=changed_paths,
+            created_operation_ids=created_operations,
+            operation_rows_after=operation_rows_after,
+            analysis_priority=seekingalpha_analysis_priority,
+            news_priority=seekingalpha_news_priority,
+        )
+    )
+    errors.extend(
+        _seekingalpha_wiki_ingest_errors(
+            repository_root,
+            run_id=run_id,
+            operation=operation,
+            status=status,
+            result=result,
+            changed_paths=changed_paths,
+            created_paths=created,
+            created_operation_ids=created_operations,
+            operation_rows_after=operation_rows_after,
+            followup_priority=seekingalpha_followup_priority,
+            maximum_new_securities=seekingalpha_maximum_securities,
         )
     )
     altered_existing_operations = sorted(
@@ -991,6 +1360,7 @@ def validate_agent_result(
             before_snapshot,
             after_snapshot,
             youtube_video=youtube_video,
+            seekingalpha_lead=seekingalpha_lead,
         )
     )
     errors.extend(

@@ -20,6 +20,7 @@
       "type": "string",
       "enum": [
         "wiki_ingest",
+        "source_discovery",
         "opportunity_research",
         "idea_research",
         "security_research",
@@ -115,8 +116,106 @@
                     "prefer_human": { "type": "boolean" },
                     "discovery_mode": { "enum": ["bootstrap", "incremental", "backfill"] }
                   }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "source_kind",
+                    "source_id",
+                    "content_kind",
+                    "article_id",
+                    "title",
+                    "canonical_url",
+                    "discovered_at",
+                    "discovery_operation_id",
+                    "discovery_date",
+                    "rank",
+                    "summary_hash",
+                    "metadata_hash",
+                    "related_entity_ids",
+                    "lead_reason",
+                    "discovery_mode",
+                    "direct_site_access_allowed"
+                  ],
+                  "properties": {
+                    "source_kind": { "const": "seekingalpha_search_lead" },
+                    "source_id": {
+                      "type": "string",
+                      "pattern": "^seekingalpha_(?:analysis|news)_[1-9][0-9]*$"
+                    },
+                    "content_kind": { "enum": ["analysis", "news"] },
+                    "article_id": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+                    "title": { "type": "string", "minLength": 1, "maxLength": 500 },
+                    "canonical_url": {
+                      "type": "string",
+                      "pattern": "^https://seekingalpha\\.com/(?:article|news)/[1-9][0-9]*(?:-[a-z0-9]+(?:-[a-z0-9]+)*)?$"
+                    },
+                    "author": { "type": "string", "maxLength": 200 },
+                    "published_at": {
+                      "oneOf": [
+                        { "const": "" },
+                        { "type": "string", "format": "date-time" }
+                      ]
+                    },
+                    "discovered_at": { "type": "string", "format": "date-time" },
+                    "discovery_operation_id": { "$ref": "#/$defs/ulid" },
+                    "discovery_date": { "type": "string", "format": "date" },
+                    "rank": { "type": "integer", "minimum": 1 },
+                    "summary_hash": { "$ref": "#/$defs/sha256" },
+                    "metadata_hash": { "$ref": "#/$defs/sha256" },
+                    "related_entity_ids": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+                    },
+                    "lead_reason": { "type": "string", "minLength": 1, "maxLength": 1000 },
+                    "discovery_mode": { "const": "search_index" },
+                    "direct_site_access_allowed": { "const": false }
+                  }
                 }
               ]
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "source_discovery" },
+            "inputs": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "source_kind",
+                "source_id",
+                "discovery_date",
+                "analysis_page_url",
+                "news_page_url",
+                "analysis_candidate_limit",
+                "news_candidate_limit",
+                "lookback_days",
+                "search_attempts",
+                "maximum_leads",
+                "discovery_mode",
+                "direct_site_access_allowed"
+              ],
+              "properties": {
+                "source_kind": { "const": "seekingalpha_search_index" },
+                "source_id": { "const": "seekingalpha_trending_daily" },
+                "discovery_date": { "type": "string", "format": "date" },
+                "analysis_page_url": {
+                  "const": "https://seekingalpha.com/trending-analysis"
+                },
+                "news_page_url": {
+                  "const": "https://seekingalpha.com/market-news/trending"
+                },
+                "analysis_candidate_limit": { "type": "integer", "minimum": 1 },
+                "news_candidate_limit": { "type": "integer", "minimum": 1 },
+                "lookback_days": { "type": "integer", "minimum": 1, "maximum": 7 },
+                "search_attempts": { "const": 3 },
+                "maximum_leads": { "type": "integer", "minimum": 1, "maximum": 5 },
+                "discovery_mode": { "const": "search_index" },
+                "direct_site_access_allowed": { "const": false }
+              }
             }
           }
         },

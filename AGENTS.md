@@ -56,6 +56,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── dedupe.py
 │   ├── market_data.py
 │   ├── youtube.py
+│   ├── seekingalpha.py
 │   ├── indicators.py
 │   ├── opportunity.py
 │   ├── agent_runner.py
@@ -81,9 +82,12 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── agent_result.schema.json
 │   ├── decision_snapshot.schema.json
 │   ├── operation_payload.schema.json
+│   ├── seekingalpha_discovery.schema.json
+│   ├── seekingalpha_schedule.schema.json
 │   └── csv_contracts.yaml
 ├── skills/
 │   ├── papertrader-controller/SKILL.md
+│   ├── papertrader-source-discovery/SKILL.md
 │   ├── papertrader-wiki-ingest/SKILL.md
 │   ├── papertrader-opportunity-research/SKILL.md
 │   ├── papertrader-idea-research/SKILL.md
@@ -170,6 +174,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   └── quartz.layout.ts
 └── .github/
     ├── actions/scan-youtube/action.yml
+    ├── actions/schedule-seekingalpha/action.yml
     └── workflows/
         ├── ci.yml
         ├── daily.yml
@@ -382,6 +387,19 @@ The cheap model returns `execute`, `merge`, `defer`, or `skip` with a reason. Th
 
 Keep the allowed set small and explicit.
 
+### `source_discovery`
+
+- Version 1 is the bounded daily Seeking Alpha search-index discovery operation.
+- Read only search-provider result metadata associated with the canonical Trending Analysis and
+  Trending News URLs. Never open, fetch, scrape, cache, log in to, or call an API on a Seeking
+  Alpha domain; never use subscriber credentials.
+- Examine at most the configured analysis/news candidates, retain dynamically from zero through
+  the configured daily maximum, and persist no provider summary or article body.
+- Analysis may surface new causal ideas or independently researchable security leads. News is
+  retained only when it maps to an existing immutable security or maintained idea ID.
+- Queue selected leads only through `papertrader seekingalpha enqueue-leads`; direct generic queue
+  mutation is forbidden. Three-attempt search unavailability is a terminal, non-blocking skip.
+
 ### `wiki_ingest`
 
 - Orient using `SCHEMA.md`, `index.md`, and recent wiki `log.md`.
@@ -399,6 +417,15 @@ Keep the allowed set small and explicit.
 - YouTube ingestion may use identity-only watchlist import for independently verified public
   instruments and must enqueue exactly one priority-66 security review per new identity. It may
   enqueue only bounded priority-66 idea/security leads, never strategy or execution work.
+- A `seekingalpha_search_lead` payload contains search-index metadata only and must never be treated
+  as a fetched article. Independently verify every material claim and instrument identity with
+  current primary sources before changing a maintained entity conclusion.
+- Seeking Alpha analysis may enqueue at most one idea review and import at most two public-security
+  identities, each with exactly one priority-68 security review. News may update only its existing
+  related entities and enqueue at most one priority-68 refresh. Neither kind may change a strategy,
+  signal, allocation, order, or accounting state.
+- Store the original synthesis only in the non-Quartz `seekingalpha_analysis.md` run artifact;
+  never store a search-provider summary or article body.
 
 ### `opportunity_research`
 
@@ -603,6 +630,13 @@ Quartz and Telegram consume that same file.
   `data/runs/<run_id>/youtube_scan.json`; one remote channel failure records a stable issue and does
   not stop other channels or market monitoring, while invalid channel/configuration state fails
   closed before scanning.
+- Seeking Alpha Trending Analysis/news discovery is another separate curated-source path, but it
+  is deliberately search-index-only. `papertrader seekingalpha schedule --run-id <id> [--dry-run]`
+  queues at most one expiring priority-69 discovery per UTC day. Selected analysis/news leads use
+  priorities 67/66 and dedupe key
+  `wiki_ingest:seekingalpha:<analysis|news>:<article_id>:v1` across active work, all terminal
+  history, and registered sources. Follow-up idea/security research uses priority 68. The schedule
+  action makes no network request; the LLM operation never accesses Seeking Alpha directly.
 
 ## Risk and accounting rules
 
@@ -709,13 +743,14 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
 
 1. Acquire `concurrency: papertrader-write` with `cancel-in-progress: false`.
 2. Checkout the default branch with full history and no persisted credentials.
-3. Run the local reusable YouTube discovery action before OAuth restoration; dry runs validate its
-   configuration without network access.
+3. Run the local reusable YouTube discovery and Seeking Alpha scheduling actions before OAuth
+   restoration; dry runs validate both without network access.
 4. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
 5. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
 6. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.
 7. Generate and strictly validate the immutable decision snapshot, CSV exports, investor pages,
-   final daily report, and Quartz content, including YouTube failures as operations degradation.
+   final daily report, and Quartz content, including YouTube and Seeking Alpha search failures as
+   operations degradation.
 8. Run the full test and validation gate, including `papertrader advice validate --strict`.
 9. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
 10. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
@@ -762,6 +797,9 @@ Required coverage:
 - curated YouTube identity/configuration, regular-video filtering, cursor, dedupe, failure isolation,
   closed payload, transcript selection/normalization/hash/chunk/cleanup, skip continuation, source
   registration, follow-up, reporting, and runtime-whitelist checks.
+- Seeking Alpha schedule/configuration, canonical URL/ID validation, search-only access boundary,
+  candidate/lead bounds, active/history/source exact-once dedupe, closed payloads, unavailable-skip
+  continuation, analysis/news scope, imported-security follow-ups, and daily reporting.
 
 A change is not complete until:
 

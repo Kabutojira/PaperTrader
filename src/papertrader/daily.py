@@ -694,12 +694,19 @@ def finalize_daily_run(
     agent_statuses = {
         str(outcome.get("status", "")) for outcome in raw_outcomes if isinstance(outcome, dict)
     }
+    seekingalpha_unavailable = any(
+        row["claimed_by_run_id"] == run_id
+        and row["operation_type"] == "source_discovery"
+        and row["terminal_reason"] == "seekingalpha_search_unavailable"
+        for row in read_table(repository_root, "operations_history")
+    )
     preparation_errors = manifest.get("preparation_errors", [])
     if not isinstance(preparation_errors, list):
         raise DailyRunError("daily preparation errors must be a list")
     degraded = (
         bool(preparation_errors)
         or bool(agent_statuses.intersection({"blocked", "failed"}))
+        or seekingalpha_unavailable
         or any(":deferred:" in outcome for outcome in fill_outcomes)
     )
     status = "degraded" if degraded else "succeeded"

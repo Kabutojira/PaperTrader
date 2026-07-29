@@ -171,6 +171,24 @@ class YouTubeSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class SeekingAlphaSettings:
+    """Search-index-only Seeking Alpha lead-discovery policy."""
+
+    enabled: bool
+    analysis_candidate_limit: int
+    news_candidate_limit: int
+    lookback_days: int
+    search_attempts: int
+    maximum_leads_per_day: int
+    maximum_new_securities_per_analysis: int
+    discovery_priority: int
+    analysis_priority: int
+    news_priority: int
+    followup_priority: int
+    direct_site_access: bool
+
+
+@dataclass(frozen=True, slots=True)
 class HermesSettings:
     """Pinned one-shot Hermes invocation and OAuth-only provider policy."""
 
@@ -212,6 +230,7 @@ class Settings:
     operations: OperationSettings
     classifier: ClassifierSettings
     youtube: YouTubeSettings
+    seekingalpha: SeekingAlphaSettings
     hermes: HermesSettings
     telegram: TelegramSettings
 
@@ -323,6 +342,7 @@ def _load_runtime_settings(
     OperationSettings,
     ClassifierSettings,
     YouTubeSettings,
+    SeekingAlphaSettings,
 ]:
     calendars = tuple(
         sorted((mic.strip().upper(), name.strip()) for mic, name in parser.items("calendars"))
@@ -603,7 +623,69 @@ def _load_runtime_settings(
         raise ConfigurationError(
             "youtube.transcript_languages must contain canonical language codes"
         )
-    return market, indicators, portfolio, risk, allocation, orders, operations, classifier, youtube
+    try:
+        seekingalpha_enabled = parser.getboolean("seekingalpha", "enabled")
+        direct_site_access = parser.getboolean("seekingalpha", "direct_site_access")
+    except (configparser.Error, ValueError) as exc:
+        raise ConfigurationError(
+            "seekingalpha.enabled and seekingalpha.direct_site_access must be booleans"
+        ) from exc
+    seekingalpha = SeekingAlphaSettings(
+        enabled=seekingalpha_enabled,
+        analysis_candidate_limit=_positive_int(parser, "seekingalpha", "analysis_candidate_limit"),
+        news_candidate_limit=_positive_int(parser, "seekingalpha", "news_candidate_limit"),
+        lookback_days=_positive_int(parser, "seekingalpha", "lookback_days"),
+        search_attempts=_positive_int(parser, "seekingalpha", "search_attempts"),
+        maximum_leads_per_day=_positive_int(parser, "seekingalpha", "maximum_leads_per_day"),
+        maximum_new_securities_per_analysis=_positive_int(
+            parser, "seekingalpha", "maximum_new_securities_per_analysis"
+        ),
+        discovery_priority=_positive_int(parser, "seekingalpha", "discovery_priority"),
+        analysis_priority=_positive_int(parser, "seekingalpha", "analysis_priority"),
+        news_priority=_positive_int(parser, "seekingalpha", "news_priority"),
+        followup_priority=_positive_int(parser, "seekingalpha", "followup_priority"),
+        direct_site_access=direct_site_access,
+    )
+    if seekingalpha.search_attempts != 3:
+        raise ConfigurationError("seekingalpha.search_attempts must be exactly 3")
+    if seekingalpha.lookback_days > 7:
+        raise ConfigurationError("seekingalpha.lookback_days must be between 1 and 7")
+    if seekingalpha.maximum_leads_per_day > operations.maximum_llm_operations_per_run:
+        raise ConfigurationError(
+            "seekingalpha.maximum_leads_per_day must not exceed the daily LLM-operation limit"
+        )
+    if seekingalpha.maximum_new_securities_per_analysis > 2:
+        raise ConfigurationError(
+            "seekingalpha.maximum_new_securities_per_analysis must not exceed 2"
+        )
+    if seekingalpha.direct_site_access:
+        raise ConfigurationError("seekingalpha.direct_site_access must remain false")
+    seekingalpha_priorities = (
+        seekingalpha.news_priority,
+        seekingalpha.analysis_priority,
+        seekingalpha.followup_priority,
+        seekingalpha.discovery_priority,
+    )
+    if any(priority > 100 for priority in seekingalpha_priorities):
+        raise ConfigurationError("seekingalpha priorities must be between 1 and 100")
+    if seekingalpha_priorities != tuple(sorted(seekingalpha_priorities)) or len(
+        set(seekingalpha_priorities)
+    ) != len(seekingalpha_priorities):
+        raise ConfigurationError(
+            "seekingalpha priorities must strictly increase from news through discovery"
+        )
+    return (
+        market,
+        indicators,
+        portfolio,
+        risk,
+        allocation,
+        orders,
+        operations,
+        classifier,
+        youtube,
+        seekingalpha,
+    )
 
 
 def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
@@ -725,6 +807,7 @@ def _load_settings_unchecked(
         operations,
         classifier,
         youtube,
+        seekingalpha,
     ) = _load_runtime_settings(parser)
     hermes = _load_hermes_settings(parser)
     telegram = _load_telegram_settings(parser)
@@ -743,6 +826,7 @@ def _load_settings_unchecked(
         operations=operations,
         classifier=classifier,
         youtube=youtube,
+        seekingalpha=seekingalpha,
         hermes=hermes,
         telegram=telegram,
     )

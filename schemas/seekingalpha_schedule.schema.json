@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/seekingalpha_schedule.schema.json",
+  "title": "PaperTrader Seeking Alpha discovery schedule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "seekingalpha_schedule_version",
+    "run_id",
+    "scheduled_at",
+    "discovery_date",
+    "status",
+    "reason",
+    "operation_id",
+    "operation_created",
+    "deadline"
+  ],
+  "properties": {
+    "seekingalpha_schedule_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
+    "scheduled_at": { "type": "string", "format": "date-time" },
+    "discovery_date": { "type": "string", "format": "date" },
+    "status": { "enum": ["queued", "duplicate", "dry_run", "disabled"] },
+    "reason": { "type": "string", "maxLength": 1000 },
+    "operation_id": {
+      "type": "string",
+      "pattern": "^(?:|[0-9A-HJKMNP-TV-Z]{26})$"
+    },
+    "operation_created": { "type": "boolean" },
+    "deadline": {
+      "oneOf": [
+        { "const": "" },
+        { "type": "string", "format": "date-time" }
+      ]
+    }
+  }
+}

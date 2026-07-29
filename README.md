@@ -220,6 +220,10 @@ The Step 2 core owns every numeric and structured state transition:
   handle/immutable-ID pairs, scans only regular Videos-tab uploads, and directly enqueues one
   bounded transcript review per unseen video. `--dry-run` validates configuration and writes its
   run manifest without network access.
+- `papertrader seekingalpha schedule --run-id <id> [--dry-run]` queues at most one expiring,
+  search-index-only discovery operation for the UTC day; the command performs no network access.
+- `papertrader seekingalpha enqueue-leads --request <json>` validates one discovery artifact and
+  queues each selected analysis or news lead at most once by immutable kind and numeric article ID.
 - `papertrader queue prepare`, `queue claim`, and the terminal queue commands enforce one live
   lease, dependencies, cooldowns, bounded retries, terminal history, and run budgets.
 - Queue preparation deterministically skips strategy and execution requests tied to a superseded
@@ -285,6 +289,34 @@ The maintained [pytubefix package](https://pypi.org/project/pytubefix/) is pinne
 older [pytube package](https://pypi.org/project/pytube/). The historical
 [YouTube Telegram Summaries](https://github.com/Stell0/youtubetelegramsummaries) project is a
 behavioral reference only; PaperTrader copies neither its GPL code nor its LangChain dependency.
+
+## Seeking Alpha search-index leads
+
+The daily runtime calls `.github/actions/schedule-seekingalpha` before restoring OAuth. The action
+does not scrape or fetch Seeking Alpha: it queues one priority-69 `source_discovery` operation for
+the current UTC day. That bounded operation uses only search-provider result metadata associated
+with the public Trending Analysis and Trending News URLs, tries at most three searches, examines
+at most 12 analysis and 12 news candidates from the prior three days, and dynamically retains zero
+through five material leads. Direct access to Seeking Alpha domains and use of subscriber
+credentials are disabled in validated configuration.
+
+Only normalized title/URL metadata, the immutable numeric article ID, a hash of the transient
+search summary, and an original selection reason enter the queue. Search summaries and article
+bodies are never committed. Each retained analysis lead becomes a priority-67 `wiki_ingest`;
+entity-linked news uses priority 66. The exact-once key
+`wiki_ingest:seekingalpha:<analysis|news>:<article_id>:v1` is checked against active work, every
+terminal history state, and registered sources, so retries and later daily runs cannot ingest the
+same article twice.
+
+Ingestion treats the indexed lead as a hypothesis, not evidence, and never claims that the article
+was read. It verifies material facts and instrument identities independently from current primary
+sources. A retained analysis may enqueue one idea review and import at most two independently
+verified public-security identities, each with exactly one priority-68 security review. News can
+update only already-related ideas or securities and may enqueue at most one bounded refresh. No
+lead can directly change a strategy, signal, allocation, order, or accounting state. Original
+synthesis is stored only in the operation's non-published `seekingalpha_analysis.md` artifact; a
+three-attempt search failure finishes `skipped` with `seekingalpha_search_unavailable`, appears in
+daily operations degradation, and does not stall later sequential work.
 
 ## Iterative research loop
 
@@ -396,8 +428,9 @@ timestamps, does not persist the portfolio value, and never contacts a broker or
 ## Daily automation and publication
 
 The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/Rome` every day and
-uses one serialized path for both cron and manual runs. It performs curated YouTube discovery
-without credentials before OAuth restoration, then prepares market and queue state,
+uses one serialized path for both cron and manual runs. It performs curated YouTube discovery and
+schedules the search-index-only Seeking Alpha discovery without credentials before OAuth
+restoration, then prepares market and queue state,
 executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
 accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
@@ -405,8 +438,8 @@ investor pages, writes the canonical daily report, and runs the complete validat
 runs expose
 `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and
 `send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
-or delivery. Its YouTube phase uses the same offline dry-run mode and therefore makes no network
-request.
+or delivery. Its YouTube phase uses the same offline dry-run mode and the Seeking Alpha action only
+validates and writes its dry-run schedule artifact, so neither source phase makes a network request.
 
 Hermes and the commit boundary are separate jobs. The read-only runtime decrypts the repository's
 age-encrypted OpenAI Codex OAuth state into its isolated Hermes home, then exports a hash-bound

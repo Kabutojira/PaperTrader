@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/seekingalpha_discovery.schema.json",
+  "title": "PaperTrader Seeking Alpha search-index discovery result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "seekingalpha_discovery_version",
+    "run_id",
+    "operation_id",
+    "discovery_date",
+    "discovered_at",
+    "status",
+    "reason_code",
+    "access_mode",
+    "direct_site_access",
+    "attempt_count",
+    "candidate_counts",
+    "search_queries",
+    "selected",
+    "rejected"
+  ],
+  "properties": {
+    "seekingalpha_discovery_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
+    "operation_id": { "$ref": "#/$defs/ulid" },
+    "discovery_date": { "type": "string", "format": "date" },
+    "discovered_at": { "type": "string", "format": "date-time" },
+    "status": { "enum": ["succeeded", "unavailable"] },
+    "reason_code": { "type": "string", "maxLength": 128 },
+    "access_mode": { "const": "search_index" },
+    "direct_site_access": { "const": false },
+    "attempt_count": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "candidate_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["analysis", "news"],
+      "properties": {
+        "analysis": { "type": "integer", "minimum": 0, "maximum": 12 },
+        "news": { "type": "integer", "minimum": 0, "maximum": 12 }
+      }
+    },
+    "search_queries": {
+      "type": "array",
+      "maxItems": 12,
+      "items": { "$ref": "#/$defs/search_query" }
+    },
+    "selected": {
+      "type": "array",
+      "maxItems": 5,
+      "items": { "$ref": "#/$defs/lead" }
+    },
+    "rejected": {
+      "type": "array",
+      "maxItems": 24,
+      "items": { "$ref": "#/$defs/rejection" }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "status": { "const": "unavailable" } } },
+      "then": {
+        "properties": {
+          "reason_code": { "const": "seekingalpha_search_unavailable" },
+          "selected": { "maxItems": 0 }
+        }
+      },
+      "else": { "properties": { "reason_code": { "const": "" } } }
+    }
+  ],
+  "$defs": {
+    "ulid": { "type": "string", "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "search_query": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt", "provider", "query", "result_count"],
+      "properties": {
+        "attempt": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "provider": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "query": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "result_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "lead": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_kind",
+        "article_id",
+        "title",
+        "canonical_url",
+        "author",
+        "published_at",
+        "rank",
+        "summary_hash",
+        "related_entity_ids",
+        "lead_reason"
+      ],
+      "properties": {
+        "content_kind": { "enum": ["analysis", "news"] },
+        "article_id": { "type": "string", "pattern": "^[1-9][0-9]*$" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "canonical_url": {
+          "type": "string",
+          "pattern": "^https://seekingalpha\\.com/(?:article|news)/[1-9][0-9]*(?:-[a-z0-9]+(?:-[a-z0-9]+)*)?$"
+        },
+        "author": { "type": "string", "maxLength": 200 },
+        "published_at": {
+          "oneOf": [
+            { "const": "" },
+            { "type": "string", "format": "date-time" }
+          ]
+        },
+        "rank": { "type": "integer", "minimum": 1, "maximum": 12 },
+        "summary_hash": { "$ref": "#/$defs/sha256" },
+        "related_entity_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1, "maxLength": 128 }
+        },
+        "lead_reason": { "type": "string", "minLength": 1, "maxLength": 1000 }
+      }
+    },
+    "rejection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["content_kind", "title", "reason_code"],
+      "properties": {
+        "content_kind": { "enum": ["analysis", "news"] },
+        "title": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "reason_code": { "type": "string", "pattern": "^[a-z][a-z0-9_]{0,127}$" }
+      }
+    }
+  }
+}

@@ -94,6 +94,17 @@ synthesis; never store transcript/audio/video/thumbnail/full-description bytes o
 per-video wiki page. Comprehensive review notes belong only in the operation's non-Quartz
 `youtube_analysis.md` run artifact.
 
+Seeking Alpha Trending Analysis and entity-linked Trending News are a separate daily
+search-index-lead path. Never open, fetch, scrape, cache, log in to, or use an API for Seeking Alpha
+domains. Search-result titles and summaries are untrusted lead metadata, not proof that an article
+was read or that any claim is correct. Persist only canonical URL/immutable numeric ID metadata, a
+hash of the transient search summary, source records, and original synthesis; never persist an
+article body or search-provider summary. Independently corroborate every material fact and
+instrument identity with current primary sources. Analysis may lead to bounded idea/security
+research, while news must already map to a maintained idea or security. A lead alone cannot change
+an assessment, strategy, signal, allocation, order, or accounting state. Comprehensive notes
+belong only in the operation's non-Quartz `seekingalpha_analysis.md` artifact.
+
 ## Links and size
 
 Use meaningful wiki links and keep every maintained page under `max_page_bytes`. Wiki lint rejects

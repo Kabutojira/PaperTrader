@@ -47,6 +47,18 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.youtube.followup_priority == 66
     assert settings.youtube.transcript_languages == ("en", "en-US", "en-GB")
     assert settings.youtube.transcript_attempts == 3
+    assert settings.seekingalpha.enabled is True
+    assert settings.seekingalpha.analysis_candidate_limit == 12
+    assert settings.seekingalpha.news_candidate_limit == 12
+    assert settings.seekingalpha.lookback_days == 3
+    assert settings.seekingalpha.search_attempts == 3
+    assert settings.seekingalpha.maximum_leads_per_day == 5
+    assert settings.seekingalpha.maximum_new_securities_per_analysis == 2
+    assert settings.seekingalpha.discovery_priority == 69
+    assert settings.seekingalpha.analysis_priority == 67
+    assert settings.seekingalpha.news_priority == 66
+    assert settings.seekingalpha.followup_priority == 68
+    assert settings.seekingalpha.direct_site_access is False
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
     assert settings.hermes.provider == "openai-codex"
@@ -125,6 +137,25 @@ def test_settings_require_exactly_three_youtube_transcript_attempts(
     )
 
     with pytest.raises(ConfigurationError, match="must be exactly 3"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
+
+
+def test_settings_forbid_seekingalpha_direct_site_access(
+    sandbox_repository: Path,
+    paper_environment: dict[str, str],
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(
+        path.read_text(encoding="utf-8").replace(
+            "direct_site_access = false", "direct_site_access = true"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigurationError, match="direct_site_access must remain false"):
         load_settings(
             sandbox_repository,
             paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},

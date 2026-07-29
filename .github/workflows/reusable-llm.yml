@@ -28,6 +28,11 @@ on:
         required: false
         default: false
         type: boolean
+      scan_seekingalpha:
+        description: Schedule search-index-only Seeking Alpha discovery before OAuth restoration
+        required: false
+        default: false
+        type: boolean
       target_branch:
         description: Default branch receiving a validated runtime commit
         required: false
@@ -87,6 +92,11 @@ on:
         type: boolean
       scan_youtube:
         description: Scan curated YouTube channels before OAuth restoration
+        required: false
+        default: false
+        type: boolean
+      scan_seekingalpha:
+        description: Schedule search-index-only Seeking Alpha discovery before OAuth restoration
         required: false
         default: false
         type: boolean
@@ -164,6 +174,12 @@ jobs:
         with:
           run_id: ${{ steps.identities.outputs.run_id }}
           enabled: ${{ inputs.scan_youtube }}
+          dry_run: ${{ inputs.dry_run }}
+      - name: Schedule Seeking Alpha search-index discovery without credentials
+        uses: ./.github/actions/schedule-seekingalpha
+        with:
+          run_id: ${{ steps.identities.outputs.run_id }}
+          enabled: ${{ inputs.scan_seekingalpha }}
           dry_run: ${{ inputs.dry_run }}
       - name: Determine whether OAuth restoration is required
         id: oauth_contract

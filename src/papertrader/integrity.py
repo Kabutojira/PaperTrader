@@ -20,6 +20,7 @@ from papertrader.models import CsvContract, DynamicCsvContract
 
 EXPECTED_SKILLS = (
     "papertrader-controller",
+    "papertrader-source-discovery",
     "papertrader-wiki-ingest",
     "papertrader-opportunity-research",
     "papertrader-idea-research",
@@ -46,6 +47,8 @@ REQUIRED_LAYOUT = (
     "schemas/agent_result.schema.json",
     "schemas/decision_snapshot.schema.json",
     "schemas/operation_payload.schema.json",
+    "schemas/seekingalpha_discovery.schema.json",
+    "schemas/seekingalpha_schedule.schema.json",
     "schemas/youtube_scan.schema.json",
     "schemas/csv_contracts.yaml",
     "data/wiki/SCHEMA.md",
@@ -516,6 +519,127 @@ def validate_youtube_scan_artifacts(repository_root: Path) -> list[str]:
     return errors
 
 
+def _operation_payload_inputs(
+    repository_root: Path, row: Mapping[str, str]
+) -> Mapping[str, object] | None:
+    relative = PurePosixPath(row["payload_path"])
+    if (
+        relative.is_absolute()
+        or ".." in relative.parts
+        or relative.parts[:3] != ("data", "operations", "payloads")
+        or relative.suffix != ".json"
+    ):
+        return None
+    path = repository_root.joinpath(*relative.parts)
+    if path.is_symlink() or not path.is_file():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    inputs = payload.get("inputs") if isinstance(payload, dict) else None
+    return inputs if isinstance(inputs, dict) else None
+
+
+def validate_seekingalpha_artifacts(repository_root: Path) -> list[str]:
+    """Validate retained search-index schedules and operation discovery manifests."""
+
+    errors: list[str] = []
+    try:
+        schedule_schema = json.loads(
+            (repository_root / "schemas" / "seekingalpha_schedule.schema.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        discovery_schema = json.loads(
+            (repository_root / "schemas" / "seekingalpha_discovery.schema.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        schedule_validator = Draft202012Validator(schedule_schema, format_checker=FormatChecker())
+        discovery_validator = Draft202012Validator(discovery_schema, format_checker=FormatChecker())
+        operation_rows = {
+            row["operation_id"]: row
+            for table in ("operations_todo", "operations_history")
+            for row in read_csv_contract_rows(repository_root, table)
+        }
+    except (ContractError, OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        return [f"cannot validate Seeking Alpha artifacts: {exc}"]
+
+    for path in sorted((repository_root / "data" / "runs").glob("*/seekingalpha_schedule.json")):
+        relative = path.relative_to(repository_root).as_posix()
+        run_id = path.parent.name
+        if not SAFE_RUN_ID.fullmatch(run_id) or path.is_symlink():
+            errors.append(f"invalid Seeking Alpha schedule path: {relative}")
+            continue
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot read Seeking Alpha schedule {relative}: {exc}")
+            continue
+        schema_errors = sorted(
+            schedule_validator.iter_errors(value), key=lambda error: list(error.path)
+        )
+        errors.extend(
+            f"Seeking Alpha schedule {relative}: {error.message}" for error in schema_errors
+        )
+        if not isinstance(value, dict) or value.get("run_id") != run_id:
+            errors.append(f"Seeking Alpha schedule identity mismatch: {relative}")
+            continue
+        operation_id = value.get("operation_id")
+        if not isinstance(operation_id, str) or not operation_id:
+            continue
+        row = operation_rows.get(operation_id)
+        if row is None:
+            errors.append(f"Seeking Alpha schedule references unknown operation: {operation_id}")
+            continue
+        inputs = _operation_payload_inputs(repository_root, row)
+        if (
+            row["operation_type"] != "source_discovery"
+            or not isinstance(inputs, dict)
+            or inputs.get("source_kind") != "seekingalpha_search_index"
+            or inputs.get("discovery_date") != value.get("discovery_date")
+        ):
+            errors.append(f"Seeking Alpha schedule operation identity mismatch: {operation_id}")
+
+    for path in sorted((repository_root / "data" / "runs").glob("*/*/seekingalpha_discovery.json")):
+        relative = path.relative_to(repository_root).as_posix()
+        if path.is_symlink() or len(path.relative_to(repository_root).parts) != 5:
+            errors.append(f"invalid Seeking Alpha discovery path: {relative}")
+            continue
+        run_id = path.parent.parent.name
+        operation_id = path.parent.name
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot read Seeking Alpha discovery {relative}: {exc}")
+            continue
+        schema_errors = sorted(
+            discovery_validator.iter_errors(value), key=lambda error: list(error.path)
+        )
+        errors.extend(
+            f"Seeking Alpha discovery {relative}: {error.message}" for error in schema_errors
+        )
+        if (
+            not isinstance(value, dict)
+            or value.get("run_id") != run_id
+            or value.get("operation_id") != operation_id
+        ):
+            errors.append(f"Seeking Alpha discovery identity mismatch: {relative}")
+            continue
+        row = operation_rows.get(operation_id)
+        inputs = _operation_payload_inputs(repository_root, row) if row is not None else None
+        if (
+            row is None
+            or row["operation_type"] != "source_discovery"
+            or not isinstance(inputs, dict)
+            or inputs.get("source_kind") != "seekingalpha_search_index"
+            or inputs.get("discovery_date") != value.get("discovery_date")
+        ):
+            errors.append(f"Seeking Alpha discovery operation identity mismatch: {operation_id}")
+    return errors
+
+
 def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, str]]:
     """Read a canonical table locally without importing the circular table module."""
 
@@ -599,6 +723,7 @@ def validate_integrity(
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))
     errors.extend(validate_youtube_scan_artifacts(repository_root))
+    errors.extend(validate_seekingalpha_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
     from papertrader.advice import validate_advice
     from papertrader.allocation import validate_allocation_state

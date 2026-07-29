@@ -73,6 +73,19 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
     assert _command_allowed(
         "wiki_ingest",
         {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
+        seekingalpha_lead=True,
+    )
+    assert _command_allowed(
+        "source_discovery",
+        {"argv": ["papertrader", "seekingalpha", "enqueue-leads", "--request", "lead.json"]},
+    )
+    assert not _command_allowed(
+        "source_discovery",
+        {"argv": ["papertrader", "queue", "enqueue", "--request", "lead.json"]},
+    )
+    assert _command_allowed(
+        "wiki_ingest",
+        {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
         youtube_video=True,
     )
     assert not _command_allowed(
@@ -90,6 +103,18 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "data/wiki/raw/transcript.txt",
         created=True,
         youtube_video=True,
+    )
+    assert _path_allowed_for_operation(
+        "wiki_ingest",
+        "data/tables/securities.csv",
+        created=False,
+        seekingalpha_lead=True,
+    )
+    assert not _path_allowed_for_operation(
+        "wiki_ingest",
+        "data/wiki/raw/seekingalpha-article.txt",
+        created=True,
+        seekingalpha_lead=True,
     )
     assert _command_allowed(
         "execute_strategy",
@@ -109,6 +134,11 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
             "data/wiki/research-catalog.md",
             created=False,
         )
+    assert not _path_allowed_for_operation(
+        "source_discovery",
+        "data/wiki/research-catalog.md",
+        created=False,
+    )
 
 
 def _home(repository: Path, settings: Settings, tmp_path: Path) -> Path:

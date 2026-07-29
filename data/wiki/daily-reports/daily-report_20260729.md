@@ -7,8 +7,8 @@ tags:
 created: "2026-07-29"
 updated: "2026-07-29"
 provenance: deterministic-report-generator
-run_id: "youtube-allin-backfill-20260729"
-snapshot_id: "decision_1ad68ce4fd4e7c9bbc28"
+run_id: "seekingalpha-source-20260729"
+snapshot_id: "decision_46254d925ebea0d84906"
 ---
 
 # PaperTrader daily report — 2026-07-29
@@ -20,8 +20,8 @@ snapshot_id: "decision_1ad68ce4fd4e7c9bbc28"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Current
-- **As of:** `2026-07-29T15:00:35Z`
-- **Snapshot:** `decision_1ad68ce4fd4e7c9bbc28`
+- **As of:** `2026-07-29T16:39:40Z`
+- **Snapshot:** `decision_46254d925ebea0d84906`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 10000 EUR (100%)
@@ -178,10 +178,10 @@ No pending paper orders.
 
 ### Run diagnostics
 
-- Run ID: `youtube-allin-backfill-20260729`
+- Run ID: `seekingalpha-source-20260729`
 - Run status: `degraded`
-- Generated (UTC): `2026-07-29T15:00:35Z`
-- Decision snapshot: `decision_1ad68ce4fd4e7c9bbc28`
+- Generated (UTC): `2026-07-29T16:39:40Z`
+- Decision snapshot: `decision_46254d925ebea0d84906`
 
 ### Complete market freshness
 
@@ -256,22 +256,6 @@ No pending paper orders.
 | — | security_ed7d5b616a196969c815 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
 | — | security_f2b9760d847b2ba59324 | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
 | — | security_fb87fac302a5446a1ced | 0% | excluded | assessment_ineligible\|base_upside_not_positive\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle\|upside_downside_ratio_below_minimum |
-
-### Curated YouTube discovery
-
-- Status: `succeeded`
-- Operations queued: `20`
-- Channel failures: `0`
-
-| Channel | Status | Discovered | Queued | Reason |
-| --- | --- | ---: | ---: | --- |
-| @allin | succeeded | 20 | 20 | — |
-| @thelimitingfactor | skipped | 0 | 0 | not_selected_for_backfill |
-| @ConnectingODots | skipped | 0 | 0 | not_selected_for_backfill |
-| @DumbMoneyLive | skipped | 0 | 0 | not_selected_for_backfill |
-| @CouchInvestor | skipped | 0 | 0 | not_selected_for_backfill |
-| @Value-Investing | skipped | 0 | 0 | not_selected_for_backfill |
-
 
 ### Research-operation audit
 
@@ -431,9 +415,9 @@ No pending paper orders.
 
 - `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
-- `allocation_targets`: `6076c4664e9af69aa3ab429df67b2c42b7b0b477f83bce2ed711271138492a9a`
+- `allocation_targets`: `7ce9a9f43270f1103d46d9dd60635f1d635796bc97cb3e7a8bbe02ca37960273`
 - `cash_ledger`: `680c5eba138f06e3afc99fbd8919ef0999b97aa6cc567edaf9a11cbece564029`
-- `configuration`: `3e835d84ebd56078a57326d1a1ff256b4365fd70d480ba906ed56e775e9ea553`
+- `configuration`: `501b53bfd9dc0e4f0c419e499e7fdb941acced8f469c5b86fa079f92032b4e84`
 - `csv_contracts`: `ca848cb3d9d5196f4a5e48bf3227ab5353f1532f70fd364a3bbe9e33780e9650`
 - `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
@@ -441,18 +425,18 @@ No pending paper orders.
 - `fx_gbp_eur`: `f6f1ce84fed173cf9e0cfca3604d82a3170d5eb03eb67f8bf9b9277ee95e7d59`
 - `fx_usd_eur`: `c3d254a978e85e4103358474e046f63da2838424fd92774ed1ef2add0711e6ed`
 - `indicators`: `7353ca14e663363f09759dd5c5878507dbb97e45210e2af7dd501d41f821077e`
-- `issues`: `1368022d73d33769b0ce66d4e5c8cb9a3148e7954551e3c4de8d2926a6957c0b`
+- `issues`: `39a4bc399bc658a9ac15400f36182d6984eb0550831004ac1914cd07676f91d4`
 - `market_latest`: `2bc4417d2ca0acfb3f8ce0f21a6771599d34cfcf4780ae61e0d41aa5c473e6ce`
 - `operation_payloads`: `8e16e9c9f6acd9b9604a5b9b55f0cd63c52edc5f5d67cf69117ec4818b0fe8c6`
 - `operations_history`: `d5be3ee47c49870b64dcc7e0a9daecff02e871fb5e9c269d4b843806a544e54a`
-- `operations_todo`: `93e941419f1c5d1dd61f0f498b13e9cc378c36e5bec72e036832508760e93b62`
+- `operations_todo`: `61e7401015d5b522fa80d18e646ae0e2ac26231d1436774516dc46df37bda684`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
 - `orders`: `ed876ae7f67d9632296d12497cb334ed5c925843ac65f9691907bf7a8613a3c0`
 - `performance_daily`: `093387c75b44a24e065ca7538c9faa547e7e4c4789da85d670ad742601c07f4b`
 - `performance_epochs`: `bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `a6a9995dacd90bf43997b579c49c1b9ea6ac82cf73cd578dbd97559ae54394d3`
-- `runs`: `bbdcbb66480bbcb696c8a922282aa0f8fa6be6be218ca51d32c67a0e17919489`
+- `runs`: `5d899f38608c8f4b591b692fa39a506449a336a5f5e227a2fed7bf4fa6da6096`
 - `securities`: `eae80093281bb39b825157ccb07d8c58a09b5228464f4fedc701118b91c76cd2`
 - `security_assessments`: `a6bc3581e9ce6e6be6ed94a60aa0c2c791f84c0dc5f57b7fb63dbf9deb67ec75`
 - `signals`: `874d3deab149ff6c97a32ad6e61f2d243a5f96559acf815dfc1cd3dc91595f41`
@@ -467,4 +451,4 @@ No pending paper orders.
 - [[model-portfolio|Model portfolio]]
 - [[signals|Signals]]
 - [[system-status|System status]]
-- GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260729.md
+- GitHub report: https://github.com/turesnake/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260729.md

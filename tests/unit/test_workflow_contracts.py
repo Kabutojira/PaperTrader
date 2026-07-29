@@ -138,6 +138,18 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     )
     assert discovery["uses"] == "./.github/actions/scan-youtube"
     assert discovery["with"]["dry_run"] == "${{ inputs.dry_run }}"
+    seekingalpha = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Schedule Seeking Alpha search-index discovery without credentials"
+    )
+    assert seekingalpha["uses"] == "./.github/actions/schedule-seekingalpha"
+    assert seekingalpha["with"]["dry_run"] == "${{ inputs.dry_run }}"
+    assert runtime_steps.index(
+        "Schedule Seeking Alpha search-index discovery without credentials"
+    ) < runtime_steps.index("Restore encrypted OpenAI OAuth state")
+    daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
+    assert daily["jobs"]["runtime"]["with"]["scan_seekingalpha"] == "true"
 
 
 def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(

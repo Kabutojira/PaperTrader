@@ -122,3 +122,5 @@
 2026-07-29T14:59:27Z [daily_run_started] run=youtube-allin-backfill-20260729 Started sequential deterministic daily preparation.
 2026-07-29T15:00:28Z [daily_source_sha_corrected] run=youtube-allin-backfill-20260729 Corrected the prepared manual run source SHA before finalization.
 2026-07-29T15:00:35Z [daily_run_completed] run=youtube-allin-backfill-20260729 Completed deterministic daily run with status degraded.
+2026-07-29T16:39:25Z [daily_run_started] run=seekingalpha-source-20260729 Started sequential deterministic daily preparation.
+2026-07-29T16:39:40Z [daily_run_completed] run=seekingalpha-source-20260729 Completed deterministic daily run with status degraded.

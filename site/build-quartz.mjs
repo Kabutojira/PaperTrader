@@ -340,8 +340,8 @@ function pathIsWithin(parent, candidate) {
   return value !== "" && !value.startsWith("..") && !isAbsolute(value);
 }
 
-function publishValidatedArtifacts(repositoryRoot, outputRoot) {
-  const sourceRoot = resolve(repositoryRoot, "data", "published");
+function publishValidatedArtifacts(wikiRoot, outputRoot) {
+  const sourceRoot = resolve(wikiRoot, "..", "published");
   if (
     !existsSync(sourceRoot) ||
     !lstatSync(sourceRoot).isDirectory() ||
@@ -464,5 +464,5 @@ if (result.error) {
 if (result.status !== 0) {
   process.exitCode = result.status ?? 1;
 } else {
-  publishValidatedArtifacts(repositoryRoot, outputPath);
+  publishValidatedArtifacts(wikiPath, outputPath);
 }

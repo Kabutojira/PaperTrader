@@ -1001,3 +1001,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_1ad68ce4fd4e7c9bbc28`.
 
 - Generated canonical [[daily-reports/daily-report_20260729]] for run `youtube-allin-backfill-20260729`.
+
+- Published investor decision snapshot `decision_46254d925ebea0d84906`.
+
+- Generated canonical [[daily-reports/daily-report_20260729]] for run `seekingalpha-source-20260729`.

@@ -36,6 +36,7 @@ DEPENDENCY_SUCCESS = frozenset({"succeeded", "skipped"})
 SUPPORTED_OPERATIONS = frozenset(
     {
         "wiki_ingest",
+        "source_discovery",
         "opportunity_research",
         "idea_research",
         "security_research",
@@ -49,6 +50,7 @@ OPERATION_SKILLS = {
 }
 OPERATION_ENTITY_TYPES = {
     "wiki_ingest": "source",
+    "source_discovery": "source",
     "opportunity_research": "opportunity",
     "idea_research": "idea",
     "security_research": "security",
