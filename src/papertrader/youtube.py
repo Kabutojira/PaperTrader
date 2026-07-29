@@ -79,6 +79,8 @@ class YouTubeDiscoveryClient(Protocol):
         limit: int,
         minimum_regular: int = 0,
         stop_at_video_id: str = "",
+        anchor_video_id: str = "",
+        minimum_regular_after_anchor: int = 0,
     ) -> YouTubeFeed:
         """Return bounded newest entries, stopping once the scan objective is satisfied."""
 
@@ -189,6 +191,8 @@ class PytubefixDiscoveryClient:
         limit: int,
         minimum_regular: int = 0,
         stop_at_video_id: str = "",
+        anchor_video_id: str = "",
+        minimum_regular_after_anchor: int = 0,
     ) -> YouTubeFeed:
         from pytubefix import Channel  # type: ignore[import-untyped]
 
@@ -201,6 +205,8 @@ class PytubefixDiscoveryClient:
         resolved_channel_id = str(channel.channel_id)
         entries: list[YouTubeVideo] = []
         regular_count = 0
+        anchor_seen = False
+        regular_after_anchor = 0
         for video in itertools.islice(channel.videos, limit):
             video_id = str(video.video_id)
             if not VIDEO_ID.fullmatch(video_id):
@@ -212,7 +218,16 @@ class PytubefixDiscoveryClient:
             )
             entries.append(entry)
             regular_count += entry.kind == "regular"
+            if video_id == anchor_video_id:
+                anchor_seen = True
+            elif anchor_seen and entry.kind == "regular":
+                regular_after_anchor += 1
             if stop_at_video_id and video_id == stop_at_video_id:
+                break
+            if (
+                minimum_regular_after_anchor
+                and regular_after_anchor >= minimum_regular_after_anchor
+            ):
                 break
             if minimum_regular and regular_count >= minimum_regular:
                 break
@@ -518,6 +533,186 @@ def scan_youtube(
     return manifest
 
 
+def backfill_youtube(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    channel_id: str,
+    count: int,
+    client: YouTubeDiscoveryClient | None = None,
+    now: datetime | None = None,
+) -> Mapping[str, object]:
+    """Queue exactly ``count`` unseen regular videos older than one channel's cursor."""
+
+    if not RUN_ID.fullmatch(run_id):
+        raise YouTubeScanError(f"invalid YouTube backfill run_id: {run_id!r}")
+    if not CHANNEL_ID.fullmatch(channel_id):
+        raise YouTubeScanError(f"invalid YouTube backfill channel ID: {channel_id!r}")
+    if count < 1 or count >= settings.youtube.scan_bound:
+        raise YouTubeScanError(
+            f"YouTube backfill count must be between 1 and {settings.youtube.scan_bound - 1}"
+        )
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    channels = load_youtube_channels(repository_root, settings)
+    targets = [channel for channel in channels if channel.channel_id == channel_id]
+    if len(targets) != 1:
+        raise YouTubeScanError(f"YouTube backfill channel is not curated: {channel_id}")
+    target = targets[0]
+    if target.status != "active" or not target.last_seen_video_id:
+        raise YouTubeScanError("YouTube backfill requires an active channel with a cursor")
+    manifest_path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
+    if manifest_path.exists():
+        raise YouTubeScanError(f"YouTube scan manifest already exists for {run_id}")
+    if manifest_path.parent.is_symlink():
+        raise YouTubeScanError("YouTube backfill run directory must not be a symlink")
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    if not settings.youtube.enabled:
+        raise YouTubeScanError("YouTube discovery is disabled")
+
+    known_dedupe = _known_dedupe_keys(repository_root)
+    registered_video_ids = _registered_video_ids(repository_root)
+    prefix = f"wiki_ingest:youtube:{channel_id}:"
+    known_channel_video_ids = {
+        key.removeprefix(prefix).removesuffix(":v1")
+        for key in known_dedupe
+        if key.startswith(prefix) and key.endswith(":v1")
+    }
+    minimum_after_cursor = min(
+        settings.youtube.scan_bound - 1,
+        count + len(known_channel_video_ids - {target.last_seen_video_id}),
+    )
+    discovery = client or PytubefixDiscoveryClient()
+    outcomes: list[dict[str, object]] = []
+    operation_ids: list[str] = []
+    discovered_video_ids: list[str] = []
+    duplicate_video_ids: list[str] = []
+    inspected_count = 0
+    failure_count = 0
+    failure_reason = ""
+    issue_id = ""
+    try:
+        feed = discovery.channel_feed(
+            target.handle,
+            limit=settings.youtube.scan_bound,
+            anchor_video_id=target.last_seen_video_id,
+            minimum_regular_after_anchor=minimum_after_cursor,
+        )
+        if feed.channel_id != target.channel_id:
+            raise YouTubeScanError(
+                f"resolved channel ID {feed.channel_id!r} does not match configuration"
+            )
+        entries = feed.entries[: settings.youtube.scan_bound]
+        inspected_count = len(entries)
+        if len({entry.video_id for entry in entries}) != len(entries):
+            raise YouTubeScanError("Videos tab returned duplicate video identities")
+        cursor_index = next(
+            (
+                index
+                for index, entry in enumerate(entries)
+                if entry.kind == "regular" and entry.video_id == target.last_seen_video_id
+            ),
+            None,
+        )
+        if cursor_index is None:
+            raise YouTubeScanError(
+                f"cursor_not_found_within_scan_bound:{settings.youtube.scan_bound}"
+            )
+        candidates: list[YouTubeVideo] = []
+        for video in entries[cursor_index + 1 :]:
+            if video.kind != "regular":
+                continue
+            dedupe_key = youtube_dedupe_key(target.channel_id, video.video_id)
+            if video.video_id in registered_video_ids or dedupe_key in known_dedupe:
+                duplicate_video_ids.append(video.video_id)
+                continue
+            candidates.append(video)
+            if len(candidates) == count:
+                break
+        if len(candidates) != count:
+            raise YouTubeScanError(
+                f"insufficient_unseen_regular_videos_for_backfill:{len(candidates)}/{count}"
+            )
+        discovered_video_ids = [video.video_id for video in candidates]
+        for video in candidates:
+            operation_id, created = enqueue_operation(
+                repository_root,
+                settings,
+                operation_type="wiki_ingest",
+                entity_type="source",
+                entity_id=youtube_source_id(video.video_id),
+                dedupe_key=youtube_dedupe_key(target.channel_id, video.video_id),
+                prompt="Analyze one curated YouTube transcript as an untrusted lead source.",
+                inputs={
+                    "source_kind": "youtube_video",
+                    "source_id": youtube_source_id(video.video_id),
+                    "video_id": video.video_id,
+                    "video_title": video.title,
+                    "video_url": canonical_video_url(video.video_id),
+                    "channel_id": target.channel_id,
+                    "channel_handle": target.handle,
+                    "channel_url": canonical_channel_url(target.channel_id),
+                    "discovered_at": format_timestamp(instant),
+                    "transcript_languages": list(target.transcript_languages),
+                    "prefer_human": target.prefer_human,
+                    "discovery_mode": "backfill",
+                },
+                source=f"youtube_backfill:{run_id}",
+                priority=settings.youtube.bootstrap_priority,
+                source_refs=(canonical_video_url(video.video_id),),
+                now=instant,
+            )
+            if not created:
+                raise YouTubeScanError(f"backfill operation became duplicate: {video.video_id}")
+            known_dedupe.add(youtube_dedupe_key(target.channel_id, video.video_id))
+            operation_ids.append(operation_id)
+    except Exception as exc:
+        failure_count = 1
+        failure_reason = " ".join(str(exc).split())[:1000] or exc.__class__.__name__
+        issue_id = _failure_issue(
+            repository_root,
+            channel=target,
+            run_id=run_id,
+            reason=failure_reason,
+            now=instant,
+        )
+
+    for channel in channels:
+        selected = channel.channel_id == target.channel_id
+        outcomes.append(
+            {
+                "channel_id": channel.channel_id,
+                "handle": channel.handle,
+                "status": "failed"
+                if selected and failure_count
+                else ("succeeded" if selected else "skipped"),
+                "reason": failure_reason if selected else "not_selected_for_backfill",
+                "previous_cursor": channel.last_seen_video_id,
+                "next_cursor": channel.last_seen_video_id,
+                "inspected_count": inspected_count if selected else 0,
+                "discovered_video_ids": discovered_video_ids if selected else [],
+                "duplicate_video_ids": sorted(duplicate_video_ids) if selected else [],
+                "operation_ids": operation_ids if selected else [],
+                "issue_id": issue_id if selected else "",
+            }
+        )
+    manifest = {
+        "youtube_scan_version": 1,
+        "run_id": run_id,
+        "discovered_at": format_timestamp(instant),
+        "status": "degraded" if failure_count else "succeeded",
+        "scan_bound": settings.youtube.scan_bound,
+        "seed_count": settings.youtube.seed_count,
+        "scan_mode": "backfill",
+        "requested_count": count,
+        "channels": outcomes,
+        "operation_count": len(operation_ids),
+        "failure_count": failure_count,
+    }
+    atomic_write_json(manifest_path, manifest, allowed_root=repository_root)
+    return manifest
+
+
 def youtube_scan_failures(repository_root: Path, run_id: str) -> tuple[str, ...]:
     """Return validated channel failures for daily degradation and reporting."""
 
@@ -558,6 +753,7 @@ __all__ = [
     "YouTubeFeed",
     "YouTubeScanError",
     "YouTubeVideo",
+    "backfill_youtube",
     "canonical_channel_url",
     "canonical_video_url",
     "load_youtube_channels",

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_UIoV8rG_25s",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_UIoV8rG_25s",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "UIoV8rG_25s",
+    "video_title": "Thomas Laffont: The $4T AI IPO Wave Is Coming… and We’ve Never Seen Anything Like It",
+    "video_url": "https://www.youtube.com/watch?v=UIoV8rG_25s"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT86MGSMHX08KN8170X",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=UIoV8rG_25s"
+  ]
+}

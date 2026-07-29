@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_4j9RPGLENNI",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_4j9RPGLENNI",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "4j9RPGLENNI",
+    "video_title": "GameStop CEO Ryan Cohen’s $56B Plan to Take Over eBay",
+    "video_url": "https://www.youtube.com/watch?v=4j9RPGLENNI"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT86ETBZK4W0Q593CN2",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=4j9RPGLENNI"
+  ]
+}

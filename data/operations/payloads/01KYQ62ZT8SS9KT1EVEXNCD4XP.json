@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_xTO1aQ_m44I",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_xTO1aQ_m44I",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "xTO1aQ_m44I",
+    "video_title": "Dan Dreyfus: The Next AI Bottleneck is Copper",
+    "video_url": "https://www.youtube.com/watch?v=xTO1aQ_m44I"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT8SS9KT1EVEXNCD4XP",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=xTO1aQ_m44I"
+  ]
+}

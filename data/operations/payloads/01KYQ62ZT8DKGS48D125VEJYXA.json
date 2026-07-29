@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_V0lFjTWx36I",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_V0lFjTWx36I",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "V0lFjTWx36I",
+    "video_title": "Why Secondary Markets Are Eating the IPO | All-In Liquidity Secondary Markets Panel",
+    "video_url": "https://www.youtube.com/watch?v=V0lFjTWx36I"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT8DKGS48D125VEJYXA",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=V0lFjTWx36I"
+  ]
+}

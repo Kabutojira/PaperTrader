@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_J0bce9WQJ-g",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_J0bce9WQJ-g",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "J0bce9WQJ-g",
+    "video_title": "The Trillion-Dollar Industries AI Is Disrupting: Voice, Law & the End of the Billable Hour",
+    "video_url": "https://www.youtube.com/watch?v=J0bce9WQJ-g"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT8CMTR6FPX1QRP408K",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=J0bce9WQJ-g"
+  ]
+}

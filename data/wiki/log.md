@@ -997,3 +997,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_d2bc1d724ae1b108c0fb`.
 
 - Generated canonical [[daily-reports/daily-report_20260729]] for run `youtube-bootstrap-20260729`.
+
+- Published investor decision snapshot `decision_1ad68ce4fd4e7c9bbc28`.
+
+- Generated canonical [[daily-reports/daily-report_20260729]] for run `youtube-allin-backfill-20260729`.

@@ -264,6 +264,10 @@ channel at priority 60; later discoveries use priority 65. The immutable video I
 identity and dedupe, so active queue rows, terminal history, and registered sources prevent a
 second request. A channel error becomes a stable repository issue while other channels and market
 monitoring continue; malformed configuration fails before network access or queue mutation.
+An explicit curated backlog extension uses
+`papertrader youtube backfill --run-id <id> --channel-id <id> --count <n>`; it queues the next
+unseen regular videos older than that channel's cursor at bootstrap priority without advancing the
+daily-discovery cursor.
 
 Each operation uses `pytubefix==10.10.1` to try human English captions before auto-generated
 English with three anonymous, non-interactive clients. Caption failure ends that operation as

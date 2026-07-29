@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube__TJFqEhxQg4",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube__TJFqEhxQg4",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "_TJFqEhxQg4",
+    "video_title": "Bill Ackman: Here's What the Market is MISSING",
+    "video_url": "https://www.youtube.com/watch?v=_TJFqEhxQg4"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT8R26C95SJ1GXG0QW3",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=_TJFqEhxQg4"
+  ]
+}

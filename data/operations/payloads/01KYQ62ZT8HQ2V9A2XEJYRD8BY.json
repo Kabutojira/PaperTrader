@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_gH4FTjDm9FQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_gH4FTjDm9FQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "gH4FTjDm9FQ",
+    "video_title": "Anthropic's Fable Backlash, Nationalizing AI, Inflation Heats Up & California’s Broken Elections",
+    "video_url": "https://www.youtube.com/watch?v=gH4FTjDm9FQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT8HQ2V9A2XEJYRD8BY",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=gH4FTjDm9FQ"
+  ]
+}

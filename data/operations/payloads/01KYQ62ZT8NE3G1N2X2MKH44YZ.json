@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_hObRMv6qCi0",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:57:33Z",
+    "discovery_mode": "backfill",
+    "prefer_human": true,
+    "source_id": "youtube_hObRMv6qCi0",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "hObRMv6qCi0",
+    "video_title": "Palo Alto Networks CEO: \"AI Found 5 Years of Bugs in 6 Weeks\"",
+    "video_url": "https://www.youtube.com/watch?v=hObRMv6qCi0"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ62ZT8NE3G1N2X2MKH44YZ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=hObRMv6qCi0"
+  ]
+}

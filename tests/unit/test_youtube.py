@@ -14,6 +14,7 @@ from papertrader.youtube import (
     YouTubeFeed,
     YouTubeScanError,
     YouTubeVideo,
+    backfill_youtube,
     canonical_channel_url,
     canonical_video_url,
     load_youtube_channels,
@@ -37,6 +38,8 @@ class FakeDiscovery:
         limit: int,
         minimum_regular: int = 0,
         stop_at_video_id: str = "",
+        anchor_video_id: str = "",
+        minimum_regular_after_anchor: int = 0,
     ) -> YouTubeFeed:
         self.calls.append((handle, limit))
         value = self.feeds[handle]
@@ -44,10 +47,21 @@ class FakeDiscovery:
             raise value
         entries: list[YouTubeVideo] = []
         regular_count = 0
+        anchor_seen = False
+        regular_after_anchor = 0
         for entry in value.entries[:limit]:
             entries.append(entry)
             regular_count += entry.kind == "regular"
+            if entry.video_id == anchor_video_id:
+                anchor_seen = True
+            elif anchor_seen and entry.kind == "regular":
+                regular_after_anchor += 1
             if stop_at_video_id and entry.video_id == stop_at_video_id:
+                break
+            if (
+                minimum_regular_after_anchor
+                and regular_after_anchor >= minimum_regular_after_anchor
+            ):
                 break
             if minimum_regular and regular_count >= minimum_regular:
                 break
@@ -371,3 +385,63 @@ def test_registered_source_deduplicates_by_immutable_video_id(
     assert result["operation_count"] == 29
     outcome = next(row for row in result["channels"] if row["handle"] == first_handle)
     assert outcome["duplicate_video_ids"] == [video_id]
+
+
+def test_backfill_queues_exactly_twenty_older_allin_videos_without_advancing_cursor(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds(videos_per_channel=30)
+    scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-seed-before-backfill",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+    allin_id = CURATED_CHANNELS["@allin"]
+    cursor_before = next(
+        row["last_seen_video_id"]
+        for row in read_table(sandbox_repository, "youtube_channels")
+        if row["channel_id"] == allin_id
+    )
+
+    result = backfill_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-allin-backfill",
+        channel_id=allin_id,
+        count=20,
+        client=FakeDiscovery(feeds),
+        now=NOW + timedelta(hours=1),
+    )
+
+    rows = [
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["source"] == "youtube_backfill:youtube-allin-backfill"
+    ]
+    assert result["status"] == "succeeded"
+    assert result["operation_count"] == 20
+    assert len(rows) == 20
+    assert {row["priority"] for row in rows} == {"60"}
+    assert all(
+        json.loads((sandbox_repository / row["payload_path"]).read_text(encoding="utf-8"))[
+            "inputs"
+        ]["discovery_mode"]
+        == "backfill"
+        for row in rows
+    )
+    cursor_after = next(
+        row["last_seen_video_id"]
+        for row in read_table(sandbox_repository, "youtube_channels")
+        if row["channel_id"] == allin_id
+    )
+    assert cursor_after == cursor_before
+    target = next(row for row in result["channels"] if row["channel_id"] == allin_id)
+    assert len(target["duplicate_video_ids"]) == 4
+    assert all(
+        row["reason"] == "not_selected_for_backfill"
+        for row in result["channels"]
+        if row["channel_id"] != allin_id
+    )

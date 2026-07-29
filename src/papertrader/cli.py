@@ -104,7 +104,7 @@ from papertrader.utils import (
     utc_now,
 )
 from papertrader.wiki import lint_wiki
-from papertrader.youtube import scan_youtube
+from papertrader.youtube import backfill_youtube, scan_youtube
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -135,6 +135,10 @@ def _parser() -> argparse.ArgumentParser:
     youtube_scan = youtube_commands.add_parser("scan")
     youtube_scan.add_argument("--run-id", required=True)
     youtube_scan.add_argument("--dry-run", action="store_true")
+    youtube_backfill = youtube_commands.add_parser("backfill")
+    youtube_backfill.add_argument("--run-id", required=True)
+    youtube_backfill.add_argument("--channel-id", required=True)
+    youtube_backfill.add_argument("--count", type=int, required=True)
 
     market = commands.add_parser("market", help="retrieve and normalize market state")
     market_commands = market.add_subparsers(dest="market_command", required=True)
@@ -898,12 +902,21 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         )
         return 0
     if arguments.command == "youtube":
-        result = scan_youtube(
-            root,
-            settings,
-            run_id=arguments.run_id,
-            dry_run=arguments.dry_run,
-        )
+        if arguments.youtube_command == "backfill":
+            result = backfill_youtube(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                channel_id=arguments.channel_id,
+                count=arguments.count,
+            )
+        else:
+            result = scan_youtube(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                dry_run=arguments.dry_run,
+            )
         print(json.dumps(result, sort_keys=True))
         return 0
     if arguments.command == "market":

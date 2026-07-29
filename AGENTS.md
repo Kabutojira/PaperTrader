@@ -307,6 +307,9 @@ deterministic scanner validates all rows before network access, reads only each 
 advances a cursor only after every newly discovered video for that channel is already known or
 successfully enqueued. A missing cursor at the 50-video bound is a recorded failure, never an
 implicit skip.
+An explicit `youtube backfill` request may enqueue a bounded number of older unseen regular videos
+from one curated channel at bootstrap priority; it records a separate scan manifest and never
+changes the daily-discovery cursor.
 
 ### Generated investor decision publication
 

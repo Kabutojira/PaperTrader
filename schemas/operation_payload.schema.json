@@ -113,7 +113,7 @@
                       }
                     },
                     "prefer_human": { "type": "boolean" },
-                    "discovery_mode": { "enum": ["bootstrap", "incremental"] }
+                    "discovery_mode": { "enum": ["bootstrap", "incremental", "backfill"] }
                   }
                 }
               ]

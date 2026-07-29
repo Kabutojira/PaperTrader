@@ -30,8 +30,15 @@ class _Discovery:
         limit: int,
         minimum_regular: int = 0,
         stop_at_video_id: str = "",
+        anchor_video_id: str = "",
+        minimum_regular_after_anchor: int = 0,
     ) -> YouTubeFeed:
-        del minimum_regular, stop_at_video_id
+        del (
+            minimum_regular,
+            stop_at_video_id,
+            anchor_video_id,
+            minimum_regular_after_anchor,
+        )
         channel_id = CURATED_CHANNELS[handle]
         channel_number = sorted(CURATED_CHANNELS).index(handle) + 1
         entries = tuple(
