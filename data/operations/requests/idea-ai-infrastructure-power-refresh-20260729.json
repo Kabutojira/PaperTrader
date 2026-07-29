@@ -1,0 +1,31 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_infrastructure_power",
+  "dedupe_key": "idea_research:idea_ai_infrastructure_power:security-results-and-universe:2026-07-29",
+  "prompt": "Refresh the AI infrastructure and power idea from completed linked-security results and broaden its evidence-backed investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "seed_claim": "GE Vernova and Eaton research confirmed the physical power bottleneck but rejected current valuations, while Vertiv remains pending and the broader investable value chain has not been systematically refreshed.",
+    "completed_security_ids": [
+      "security_18a3ab0ee6086ee85d0f",
+      "security_4b61970aa8f574446819"
+    ],
+    "pending_security_ids": [
+      "security_cb88f9154cfeaa15e878"
+    ],
+    "research_focus": "Integrate completed security dispositions and reasons, verify the full public investable universe across generation, grid equipment, power distribution, cooling, interconnection, and substitutes, import justified new identities to the watchlist, and enqueue bounded security research without requeuing current results."
+  },
+  "source": "development-research-loop:2026-07-29",
+  "priority": 85,
+  "freshness_days": 0,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "max_attempts": 3
+}

@@ -19,6 +19,11 @@ the one security page and necessary catalog/log changes. Update `securities.csv`
 through the CLI. Raw articles remain outside this skill's write scope. Never touch allocation
 targets/history, ledgers, orders, fills, portfolio, or performance.
 
+This skill never edits an idea page directly. After a successful review it must enqueue exactly one
+`idea_research` follow-up for every idea named by the operation payload and every accepted canonical
+relationship for the security, so each idea can absorb the new security evidence in its own bounded
+operation.
+
 Use `papertrader research source record --request <json>` for every retained evidence source,
 `papertrader research security upsert --request <json>` for the security row,
 `papertrader research assessment upsert --request <json>` for its comparable assessment,
@@ -37,6 +42,8 @@ horizon, expiration, explicit blocker/gap sets, and the current run ID.
 An alert-driven request additionally provides `trigger_types`, `market_data_as_of`,
 `market_data_date`, the exact observation period, and `source_price_hash`. Treat those values as
 canonical measurements to explain, not calculations to replace.
+The payload may identify one `idea_id` or several `idea_ids`; also derive linked ideas from accepted
+rows in `relationships.csv` rather than relying on wiki prose alone.
 
 ## Procedure
 
@@ -60,6 +67,13 @@ canonical measurements to explain, not calculations to replace.
    without an assessment.
 10. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
    Baseline strategy work is enqueued later by the deterministic allocator, never by this skill.
+11. For each linked idea, enqueue exactly one `idea_research` operation whose inputs include
+   `idea_id`, `seed_claim`, this `security_id`, this `security_research_operation_id`, and the
+   expected current result path. Set `depends_on` to this security operation so the idea refresh
+   cannot run before the security result is terminally accepted. Give the follow-up a result-specific
+   dedupe key and source refs to the updated security page. Its objective must update the idea's
+   candidate disposition, thesis, catalysts, risks, confidence, and broader investable-security
+   universe from this review. Do not enqueue another security review for the same fresh result.
 
 ## Source hierarchy
 
@@ -83,8 +97,9 @@ matches the canonical project command receipts.
 
 Before the manifest, run security/assessment CLI validation, identity dedupe, source freshness,
 price/FX freshness, and strict wiki lint. Confirm the assessment is current and that no CSV was
-hand-edited. Make the manifest schema-conformant, write it last, and let the parent validate its
-schema and exact changed paths.
+hand-edited. Confirm exactly one matching idea-research follow-up exists for every linked idea and
+list newly created IDs in `operations_created`. Make the manifest schema-conformant, write it last,
+and let the parent validate its schema and exact changed paths.
 
 ## Failure policy
 

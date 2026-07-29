@@ -389,6 +389,16 @@ A decision that no follow-up is needed is valid and must be logged with evidence
 - Create or update one investment idea.
 - Search the wiki first.
 - Define mechanism, affected value chain, catalysts, invalidation, evidence, confidence, and review date.
+- Search a bounded but value-chain-wide universe of investable public securities rather than only
+  issuers named in the seed. Resolve immutable instrument identity before retaining a candidate.
+- Add evidence-backed new identities through `papertrader watchlist import`, render every retained
+  security as a linked ticker, and enqueue one bounded `security_research` operation for each new or
+  materially stale candidate. Each candidate review depends on the idea operation, so it cannot run
+  before the idea result is terminally accepted. A fresh security result that triggered the idea
+  refresh is consumed, not reflexively requeued.
+- When invoked from completed security research, replace stale candidate/queue prose with that
+  security's result, assessment disposition, decision, and reason, and update the idea thesis,
+  catalysts, risks, gates, confidence, and candidate universe as warranted.
 - Enqueue bounded security or relationship research only when justified.
 
 ### `security_research`
@@ -398,6 +408,11 @@ A decision that no follow-up is needed is valid and must be logged with evidence
 - Update identity, thesis, valuation range or reason no valuation is supportable, catalysts, risks, and next review.
 - Update `securities.csv` through the validated project CLI; do not hand-edit CSV rows.
 - Enqueue strategy research only when evidence, valuation, timing, and risk make a concrete trade candidate plausible.
+- After every successful review, enqueue exactly one `idea_research` follow-up for each idea named
+  in the payload and each accepted canonical relationship. The follow-up carries this security and
+  operation identity and depends on the security operation, so the idea can absorb only a
+  terminally accepted result in a separate sequential operation; the security operation never edits
+  idea pages directly.
 
 ### `relationship_research`
 
@@ -515,6 +530,9 @@ The wiki follows Hermes Agent's native `llm-wiki` conventions:
 - `log.md` is append-only and rotates by year after the configured threshold.
 - `raw/` is immutable after ingestion.
 - Every maintained page has frontmatter, provenance, a confidence level where needed, and meaningful wikilinks.
+- Idea pages show securities as linked ticker labels. Researched instruments link to their security
+  pages; identity-only watchlist candidates link to their stable security-catalog anchor until a
+  security page exists.
 - Every operation first reads `SCHEMA.md`, `index.md`, `research-catalog.md`, and the most recent wiki-log entries.
 - Every run executes wiki lint for broken links, orphans, invalid frontmatter, unknown tags, stale pages, contradictions, source drift, and oversized pages.
 

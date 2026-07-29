@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-26"
-updated: "2026-07-26"
-provenance: "user seed; IEA Key Questions on Energy and AI 2026; issuer releases"
+updated: "2026-07-29"
+provenance: "user seed; IEA Key Questions on Energy and AI 2026; issuer releases; linked security research"
 idea_id: idea_ai_infrastructure_power
 confidence: medium
 next_review: "2026-08-26"
@@ -26,8 +26,10 @@ growth expectations are high, backlogs can be cancelled or delayed, and capacity
 turn scarcity into oversupply.
 
 Current assessment: **the physical bottleneck is confirmed, but investability remains
-security-specific**. Current primary evidence supports orders, margin, and cash conversion at
-selected suppliers, while valuation and backlog quality require dedicated security research.
+security-specific**. Completed GE Vernova and Eaton reviews confirm orders, margins, and cash
+conversion, but both securities are unattractive at their reviewed prices. GE Vernova's bounded
+base case offers only 2.0% upside with 42.6% downside; Eaton's bounded base case remains 19.7% below
+its mark. Vertiv remains an unresearched post-results candidate.
 
 ## Causal mechanism
 
@@ -90,21 +92,27 @@ customer concentration transfers pricing power back to buyers; new manufacturing
 demand; or order growth fails to become cash. It is invalid as an equity thesis where a supplier's
 valuation already assumes an outcome more aggressive than realistic capacity and demand paths.
 
-## Bounded research candidates
+## Bounded research candidates and results
 
-These immutable securities are candidates, not recommendations or established relationships:
+These immutable securities show the current research state and decision for each retained exposure:
 
-- `security_4b61970aa8f574446819` (GE Vernova): test segment backlog quality, turbine-slot economics,
-  electrification margins, cash normalization, and valuation. Queued as operation
-  `01KYEWG8TRCR9WEYGVJR57TY33`.
-- `security_18a3ab0ee6086ee85d0f` (Eaton): test data-centre order concentration, backlog conversion,
-  electrical margins, capacity investment, and valuation. Queued as operation
-  `01KYEWGHM033E1KJ2PA8Q3TDQ0`.
-- `security_cb88f9154cfeaa15e878` (Vertiv): test organic order durability, power/cooling content,
-  working capital, customer concentration, and valuation after the 29 July result. Queued as
-  operation `01KYEWGWBRV9EV6YN1WQA6G3WF`, not before the scheduled release.
+- [[securities/security_4b61970aa8f574446819|GEV]] — GE Vernova: research confirmed strong Power
+  and Electrification demand, USD 176 billion of backlog, margin expansion, cash generation, and
+  net liquidity. **Decision: no strategy.** At the USD 996.57 reviewed mark, the bounded 12-month
+  sensitivity implies 42.6% downside and only 2.0% base-case upside. Latest completed review:
+  `01KYHW57103C5W6MMF3SR497D7`.
+- [[securities/security_18a3ab0ee6086ee85d0f|ETN]] — Eaton: research confirmed direct
+  data-centre electrical demand, strong segment margins, backlog, and positive cash generation.
+  **Decision: no strategy.** Acquisition leverage, concentration, and valuation dominate; at the
+  USD 398.64 reviewed mark, bounded downside is 37.6% and the base case is 19.7% below market.
+  Latest completed review: `01KYHW5710FSY7A9Y5NMEBG9AD`.
+- [[security-catalog#security-security_cb88f9154cfeaa15e878|VRT]] — Vertiv: identity-only
+  watchlist candidate awaiting the scheduled post-Q2 security review. The review must test organic
+  order durability, power/cooling content, working capital, customer concentration, and valuation.
+  Active operation: `01KYEWGWBRV9EV6YN1WQA6G3WF`.
 
-No causal relationship, strategy, signal, or paper order is justified before those bounded reviews.
+Accepted causal relationships now exist for GEV and ETN, but their completed valuations do not
+justify a strategy, signal, or paper order. VRT remains pending research.
 
 ## Confidence and review
 

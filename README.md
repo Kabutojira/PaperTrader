@@ -166,8 +166,9 @@ uv run papertrader watchlist import \
 ```
 
 Use the returned immutable `security_id` in a separately enqueued `security_research` operation.
-Ticker text alone is never an identity, and a new `watchlist` row is not monitored for trading
-until validated research changes its status to `watching` or `active`.
+Ticker text alone is never an identity. A new `watchlist` row is immediately included in
+deterministic price monitoring and alerts, while validated research is still required before it can
+participate in allocation, strategy, signal, or paper-order decisions.
 
 ## Hermes execution
 
@@ -248,6 +249,16 @@ The Step 2 core owns every numeric and structured state transition:
 - `papertrader watchlist import --request <json>` atomically adds identity-only securities with
   deterministic IDs. It leaves research fields empty until a bounded security-research operation
   creates the linked wiki page and evidence-backed summary.
+
+## Iterative research loop
+
+Idea research maps the complete material value chain, searches beyond the issuers already named in
+the seed, imports evidence-backed public instruments as identity-only watchlist rows, links their
+tickers from the idea page, and queues one bounded security review per new or stale candidate. A
+security review then queues one idea refresh for each payload-linked or accepted-relationship idea.
+That refresh replaces stale queued-candidate text with the security's disposition, decision, and
+reason and may discover the next bounded set of investable candidates. Operations remain strictly
+sequential, and a fresh security result is not reflexively sent back through security research.
 
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,

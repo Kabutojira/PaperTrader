@@ -14,16 +14,22 @@ finish any permitted change before returning; never batch unrelated themes.
 
 Read wiki schema/homepage/catalog/log, relevant idea, concept, security, and relationship pages,
 the selected payload, structured identities, and evidence sources. Write one idea page plus
-necessary catalog/log links. Use the CLI for issues and bounded security or relationship
-follow-ups. Do not hand-edit any CSV or create a strategy directly.
+necessary catalog/log links. Use the CLI to import evidence-backed public-security identities into
+the watchlist and for issues and bounded security or relationship follow-ups. Do not hand-edit any
+CSV or create a strategy directly.
 
-The only structured mutations allowed are `papertrader issue record --request <json>` and
-`papertrader queue enqueue --request <json>`.
+The only structured mutations allowed are `papertrader watchlist import --request <json>`,
+`papertrader issue record --request <json>`, and `papertrader queue enqueue --request <json>`.
+Watchlist import is identity-only: it must not invent research, valuation, relationships, or a
+security page.
 
 ## Required input
 
 Require `operation_id`, `idea_id`, `seed_claim`, objective, source references, freshness boundary,
 and any related immutable entity IDs. The idea ID must remain unchanged on update.
+When invoked after security research, also require `security_id`, the completed
+`security_research_operation_id`, and its result path; consume that result as untrusted evidence
+and refresh the idea's security conclusion.
 
 ## Procedure
 
@@ -31,10 +37,30 @@ and any related immutable entity IDs. The idea ID must remain unchanged on updat
    wiki instructions.
 2. Search claims, mechanisms, aliases, links, and IDs to avoid a duplicate idea.
 3. Evaluate the mechanism and affected value chain using dated evidence.
-4. State beneficiaries and harmed entities as hypotheses, not unexplained ticker associations.
-5. Define catalysts, invalidation, contrary evidence, confidence, and a concrete next review date.
-6. Update or create exactly one idea page, then update the research catalog and append the log.
-7. Enqueue only individually bounded security or relationship research justified by evidence.
+4. Build a bounded investable-security universe across every material layer of that value chain;
+   search beyond issuers already named in the seed or current page. Cover direct beneficiaries,
+   enabling suppliers, constrained competitors or harmed incumbents where evidence supports them,
+   and explain material layers that yield no public candidate. Do not use a fixed candidate quota.
+5. Resolve every retained public instrument to issuer, instrument, venue MIC, provider symbol,
+   currency, country, sector, and industry. Reuse existing immutable identities. Import each new
+   evidence-backed identity with `papertrader watchlist import`; never create one from ticker text
+   alone.
+6. For every new or materially stale retained candidate, enqueue exactly one bounded
+   `security_research` operation carrying `idea_id`, the immutable `security_id`, the causal
+   hypothesis, and focused questions. Set `depends_on` to this idea operation so candidate work
+   cannot run before the idea result is terminally accepted. Do not re-enqueue the security whose
+   fresh result triggered this idea refresh unless genuinely new evidence makes another review
+   necessary.
+7. State beneficiaries and harmed entities as hypotheses, not unexplained ticker associations.
+8. When the payload references completed security research, replace stale "queued" prose with the
+   evidence-backed result, assessment disposition, decision, and reason. Reflect its implications
+   in the thesis, catalysts, risks, confirmation gates, and confidence.
+9. Render every retained security as a linked ticker. Link researched identities to their
+   `securities/<security_id>` page; for an identity without a page, link to its stable
+   `security-catalog#security-<security_id>` entry so research status never hides identity.
+10. Define catalysts, invalidation, contrary evidence, confidence, and a concrete next review date.
+11. Update or create exactly one idea page, then update the research catalog and append the log.
+12. Enqueue only individually bounded security or relationship research justified by evidence.
 
 ## Source hierarchy
 
@@ -55,8 +81,11 @@ Write the manifest last; use a sorted exact file delta and canonical command rec
 ## Verification
 
 Before the manifest, confirm one idea ID, no duplicate page, causal links rather than bare
-associations, review date, provenance, catalog/log updates, and strict wiki lint. Make the manifest
-schema-conformant, write it last, and let the parent validate allowed paths and the exact delta.
+associations, linked ticker labels for every retained security, current dispositions for completed
+security reviews, a value-chain-wide investable candidate search, review date, provenance,
+catalog/log updates, and strict wiki lint. Confirm every newly imported identity has exactly one
+bounded security-research follow-up. Make the manifest schema-conformant, write it last, and let the
+parent validate allowed paths and the exact delta.
 
 ## Failure policy
 

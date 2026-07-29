@@ -15,8 +15,10 @@ from papertrader.queue import Operation, enqueue_operation
 from papertrader.result_validator import (
     _baseline_signal_followup_errors,
     _command_allowed,
+    _idea_security_followup_errors,
     _path_allowed_for_operation,
     _security_assessment_result_errors,
+    _security_idea_followup_errors,
 )
 from papertrader.tables import read_table, write_table
 
@@ -53,6 +55,19 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
     assert _command_allowed(
         "security_research",
         {"argv": ["papertrader", "allocation", "readiness"]},
+    )
+    assert _path_allowed_for_operation(
+        "idea_research",
+        "data/tables/securities.csv",
+        created=False,
+    )
+    assert _command_allowed(
+        "idea_research",
+        {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
+    )
+    assert not _command_allowed(
+        "security_research",
+        {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
     )
     assert _command_allowed(
         "execute_strategy",
@@ -108,7 +123,10 @@ def _enqueue(repository: Path, settings: Settings) -> str:
     return operation_id
 
 
-def _enqueue_security(repository: Path, settings: Settings) -> str:
+def _enqueue_security(repository: Path, settings: Settings, *, idea_id: str = "") -> str:
+    inputs = {"security_id": "sec-test"}
+    if idea_id:
+        inputs["idea_id"] = idea_id
     operation_id, _ = enqueue_operation(
         repository,
         settings,
@@ -117,11 +135,143 @@ def _enqueue_security(repository: Path, settings: Settings) -> str:
         entity_id="sec-test",
         dedupe_key="security_research:sec-test:fixture:2026-07-24",
         prompt="Research one bounded security.",
-        inputs={"security_id": "sec-test"},
+        inputs=inputs,
         source="test",
         now=NOW,
     )
     return operation_id
+
+
+def test_completed_security_research_requires_exact_linked_idea_refresh(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    idea_id = "idea-linked"
+    operation_id = _enqueue_security(
+        sandbox_repository,
+        sandbox_settings,
+        idea_id=idea_id,
+    )
+    security_row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+    operation = Operation.from_row(security_row)
+
+    assert _security_idea_followup_errors(
+        sandbox_repository,
+        run_id="research-run",
+        operation=operation,
+        status="succeeded",
+        operation_rows_after={operation_id: security_row},
+    ) == [
+        "completed security research requires exactly one matching idea_research follow-up "
+        f"for {idea_id}"
+    ]
+
+    _followup_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="idea_research",
+        entity_type="idea",
+        entity_id=idea_id,
+        dedupe_key=f"idea_research:{idea_id}:security-result:{operation_id}",
+        prompt="Update the linked idea from one completed security review.",
+        inputs={
+            "idea_id": idea_id,
+            "seed_claim": "The completed security review may change the linked idea.",
+            "security_id": "sec-test",
+            "security_research_operation_id": operation_id,
+            "security_research_result_path": (
+                f"data/runs/research-run/{operation_id}/agent_result.json"
+            ),
+        },
+        source="security-research-followup",
+        depends_on=(operation_id,),
+        now=NOW,
+    )
+    assert created
+    rows_after = {
+        row["operation_id"]: row for row in read_table(sandbox_repository, "operations_todo")
+    }
+
+    assert (
+        _security_idea_followup_errors(
+            sandbox_repository,
+            run_id="research-run",
+            operation=operation,
+            status="succeeded",
+            operation_rows_after=rows_after,
+        )
+        == []
+    )
+
+
+def test_idea_created_security_research_is_identity_linked_and_dependency_ordered(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    idea_id = "idea-linked"
+    idea_operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="idea_research",
+        entity_type="idea",
+        entity_id=idea_id,
+        dedupe_key=f"idea_research:{idea_id}:fixture:2026-07-24",
+        prompt="Research one bounded idea and its investable candidates.",
+        inputs={"idea_id": idea_id, "seed_claim": "A bounded evidence-backed idea."},
+        source="test",
+        now=NOW,
+    )
+    assert created
+    idea_row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == idea_operation_id
+    )
+    idea_operation = Operation.from_row(idea_row)
+    security_operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec-candidate",
+        dedupe_key="security_research:sec-candidate:idea-linked:2026-07-24",
+        prompt="Research one evidence-backed idea candidate.",
+        inputs={"security_id": "sec-candidate", "idea_id": idea_id},
+        source="idea-research-followup",
+        depends_on=(idea_operation_id,),
+        now=NOW,
+    )
+    assert created
+    rows_after = {
+        row["operation_id"]: row for row in read_table(sandbox_repository, "operations_todo")
+    }
+
+    assert (
+        _idea_security_followup_errors(
+            sandbox_repository,
+            operation=idea_operation,
+            status="succeeded",
+            created_operation_ids={security_operation_id},
+            operation_rows_after=rows_after,
+        )
+        == []
+    )
+    invalid_rows = {key: dict(value) for key, value in rows_after.items()}
+    invalid_rows[security_operation_id]["depends_on"] = ""
+    assert _idea_security_followup_errors(
+        sandbox_repository,
+        operation=idea_operation,
+        status="succeeded",
+        created_operation_ids={security_operation_id},
+        operation_rows_after=invalid_rows,
+    ) == [
+        "idea-created security research must carry the idea/security identities and depend on "
+        f"the idea operation: {security_operation_id}"
+    ]
 
 
 def _manifest(operation_id: str, files: list[str]) -> dict[str, object]:

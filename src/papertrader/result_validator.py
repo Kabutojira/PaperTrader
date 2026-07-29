@@ -142,7 +142,7 @@ def _path_allowed_for_operation(operation_type: str, raw_path: str, *, created: 
     if operation_type == "opportunity_research":
         return _is_wiki_path(path, WIKI_RESEARCH_DOMAINS)
     if operation_type == "idea_research":
-        return _is_wiki_path(path, frozenset({"ideas"}))
+        return raw_path == "data/tables/securities.csv" or _is_wiki_path(path, frozenset({"ideas"}))
     if operation_type == "security_research":
         return raw_path in {
             "data/tables/securities.csv",
@@ -202,6 +202,8 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
         return True
     if command[:2] in {("issue", "record"), ("queue", "enqueue")}:
         return True
+    if command[:2] == ("watchlist", "import"):
+        return operation_type == "idea_research"
     if command[:3] == ("research", "source", "record"):
         return operation_type in {"wiki_ingest", "security_research"}
     if command[:3] == ("research", "security", "upsert"):
@@ -546,6 +548,113 @@ def _baseline_signal_followup_errors(
     return errors
 
 
+def _payload_inputs(repository_root: Path, row: Mapping[str, str]) -> Mapping[str, object] | None:
+    path = PurePosixPath(row["payload_path"])
+    if (
+        path.is_absolute()
+        or ".." in path.parts
+        or path.parts[:3] != ("data", "operations", "payloads")
+        or path.suffix != ".json"
+    ):
+        return None
+    absolute = repository_root.joinpath(*path.parts)
+    if absolute.is_symlink() or not absolute.is_file():
+        return None
+    try:
+        payload = json.loads(absolute.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    inputs = payload.get("inputs") if isinstance(payload, dict) else None
+    return inputs if isinstance(inputs, dict) else None
+
+
+def _security_idea_followup_errors(
+    repository_root: Path,
+    *,
+    run_id: str,
+    operation: Operation,
+    status: object,
+    operation_rows_after: Mapping[str, Mapping[str, str]],
+) -> list[str]:
+    """Require every completed security review to refresh each directly linked idea."""
+
+    if operation.operation_type != "security_research" or status != "succeeded":
+        return []
+    source_inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    linked_idea_ids = {
+        row["idea_id"]
+        for row in read_table(repository_root, "relationships")
+        if row["security_id"] == operation.entity_id and row["status"] == "accepted"
+    }
+    idea_id = source_inputs.get("idea_id")
+    if isinstance(idea_id, str) and idea_id:
+        linked_idea_ids.add(idea_id)
+    idea_ids = source_inputs.get("idea_ids")
+    if isinstance(idea_ids, list):
+        linked_idea_ids.update(value for value in idea_ids if isinstance(value, str) and value)
+    active_operation_ids = {
+        row["operation_id"] for row in read_table(repository_root, "operations_todo")
+    }
+    errors: list[str] = []
+    for linked_idea_id in sorted(linked_idea_ids):
+        exact: list[str] = []
+        for operation_id, row in operation_rows_after.items():
+            if (
+                operation_id not in active_operation_ids
+                or row["operation_type"] != "idea_research"
+                or row["entity_id"] != linked_idea_id
+                or operation.operation_id not in row["depends_on"].split("|")
+            ):
+                continue
+            inputs = _payload_inputs(repository_root, row)
+            if (
+                inputs is not None
+                and inputs.get("idea_id") == linked_idea_id
+                and inputs.get("security_id") == operation.entity_id
+                and inputs.get("security_research_operation_id") == operation.operation_id
+                and inputs.get("security_research_result_path")
+                == result_relative_path(run_id, operation.operation_id)
+            ):
+                exact.append(operation_id)
+        if len(exact) != 1:
+            errors.append(
+                "completed security research requires exactly one matching idea_research "
+                f"follow-up for {linked_idea_id}"
+            )
+    return errors
+
+
+def _idea_security_followup_errors(
+    repository_root: Path,
+    *,
+    operation: Operation,
+    status: object,
+    created_operation_ids: set[str],
+    operation_rows_after: Mapping[str, Mapping[str, str]],
+) -> list[str]:
+    """Keep every idea-created security review causally linked and dependency ordered."""
+
+    if operation.operation_type != "idea_research" or status != "succeeded":
+        return []
+    errors: list[str] = []
+    for operation_id in sorted(created_operation_ids):
+        row = operation_rows_after.get(operation_id)
+        if row is None or row["operation_type"] != "security_research":
+            continue
+        inputs = _payload_inputs(repository_root, row)
+        if (
+            inputs is None
+            or inputs.get("idea_id") != operation.entity_id
+            or inputs.get("security_id") != row["entity_id"]
+            or operation.operation_id not in row["depends_on"].split("|")
+        ):
+            errors.append(
+                "idea-created security research must carry the idea/security identities and "
+                f"depend on the idea operation: {operation_id}"
+            )
+    return errors
+
+
 def validate_agent_result(
     repository_root: Path,
     *,
@@ -659,6 +768,24 @@ def validate_agent_result(
             repository_root,
             run_id=run_id,
             operation=operation,
+            created_operation_ids=created_operations,
+            operation_rows_after=operation_rows_after,
+        )
+    )
+    errors.extend(
+        _security_idea_followup_errors(
+            repository_root,
+            run_id=run_id,
+            operation=operation,
+            status=status,
+            operation_rows_after=operation_rows_after,
+        )
+    )
+    errors.extend(
+        _idea_security_followup_errors(
+            repository_root,
+            operation=operation,
+            status=status,
             created_operation_ids=created_operations,
             operation_rows_after=operation_rows_after,
         )

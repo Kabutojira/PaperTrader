@@ -87,8 +87,21 @@
               "required": ["idea_id", "seed_claim"],
               "properties": {
                 "idea_id": { "type": "string", "minLength": 1 },
-                "seed_claim": { "type": "string", "minLength": 1 }
-              }
+                "seed_claim": { "type": "string", "minLength": 1 },
+                "security_id": { "type": "string", "minLength": 1 },
+                "security_research_operation_id": { "$ref": "#/$defs/ulid" },
+                "security_research_result_path": { "$ref": "#/$defs/repository_path" }
+              },
+              "allOf": [
+                {
+                  "if": { "required": ["security_research_operation_id"] },
+                  "then": {
+                    "required": [
+                      "security_id", "security_research_result_path"
+                    ]
+                  }
+                }
+              ]
             }
           }
         },
@@ -100,6 +113,13 @@
               "required": ["security_id"],
               "properties": {
                 "security_id": { "type": "string", "minLength": 1 },
+                "idea_id": { "type": "string", "minLength": 1 },
+                "idea_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": { "type": "string", "minLength": 1 }
+                },
                 "trigger_types": {
                   "type": "array",
                   "minItems": 1,

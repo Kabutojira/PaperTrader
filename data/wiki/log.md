@@ -981,3 +981,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_354ef91a8bfe15f68e1f`.
 
 - Generated canonical [[daily-reports/daily-report_20260728]] for run `gha-30378447463-1`.
+
+## 2026-07-29
+
+- Refreshed [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] with
+  linked GEV, ETN, and VRT ticker identities. Replaced stale queued prose for completed GEV and ETN
+  reviews with their current valuation dispositions and reasons; retained VRT as the remaining
+  identity-only post-results research candidate.
