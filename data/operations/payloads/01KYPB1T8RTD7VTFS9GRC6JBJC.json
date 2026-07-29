@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_2010347f1a0a5ea60f47",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_2010347f1a0a5ea60f47"
+  },
+  "objective": "Research SPOT — Spotify Technology S.A. as an initial bounded security review.",
+  "operation_id": "01KYPB1T8RTD7VTFS9GRC6JBJC",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

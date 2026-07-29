@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_33d9c44facc75c726c7d",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_33d9c44facc75c726c7d"
+  },
+  "objective": "Research NVDA — NVIDIA Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB1X6GMJJD0DTCRTYAGTBE",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

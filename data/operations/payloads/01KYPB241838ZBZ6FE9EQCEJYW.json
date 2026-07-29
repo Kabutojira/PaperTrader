@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_664f93a7eaca72e76e9b",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_664f93a7eaca72e76e9b"
+  },
+  "objective": "Research SPCX — Space Exploration Technologies Corp. as an initial bounded security review.",
+  "operation_id": "01KYPB241838ZBZ6FE9EQCEJYW",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

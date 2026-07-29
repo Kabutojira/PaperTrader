@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_d08d763780400dfbffce",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_d08d763780400dfbffce"
+  },
+  "objective": "Research SSUN.VI — Samsung Electronics Co., Ltd. as an initial bounded security review.",
+  "operation_id": "01KYPB2QJ8QGJJAGXQ71MT7GWW",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

@@ -16,6 +16,7 @@ from papertrader.market_data import (
     MarketDataError,
     fx_rates_for_actions,
     latest_fx_rate,
+    load_security_identities,
     merge_fx_rates,
     merge_price_bars,
     normalize_fx_history,
@@ -121,6 +122,18 @@ def test_normalize_history_filters_non_sessions_and_uses_decimal_values() -> Non
     assert bars[-1].close == Decimal("104")
     assert bars[-1].volume == 1003
     assert bars[-1].retrieved_at == retrieved
+
+
+def test_watchlist_securities_are_part_of_market_monitoring(
+    sandbox_repository: Path,
+) -> None:
+    security = _security_row()
+    security["status"] = "watchlist"
+    write_table(sandbox_repository, "securities", [security])
+
+    identities = load_security_identities(sandbox_repository)
+
+    assert [identity.security_id for identity in identities] == ["sec_a"]
 
 
 def test_normalize_history_rejects_invalid_ohlc() -> None:

@@ -250,8 +250,8 @@ def test_blocked_candidate_is_retried_to_a_final_decision(
 @pytest.mark.parametrize(
     ("decision", "expected_types"),
     [
-        ("ignore", {"opportunity_research"}),
-        ("ingest", {"opportunity_research", "wiki_ingest"}),
+        ("ignore", {"opportunity_research", "security_research"}),
+        ("ingest", {"opportunity_research", "security_research", "wiki_ingest"}),
     ],
 )
 def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
@@ -361,6 +361,16 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
     assert {row["operation_type"] for row in read_table(sandbox_repository, "operations_todo")} == (
         expected_types
     )
+    security_research = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_type"] == "security_research"
+    )
+    assert security_research["priority"] == "95"
+    security_payload = json.loads(
+        (sandbox_repository / security_research["payload_path"]).read_text(encoding="utf-8")
+    )
+    assert security_payload["inputs"]["trigger_types"] == ["rsi_overbought"]
     assert (
         sum(
             row["operation_type"] == "opportunity_research"
@@ -378,3 +388,40 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
     assert f"[\\[EXM\\] RSI overbought](inbox/{first[0].path.stem})" in catalog
     assert f"classifier_decision: {decision}" in packet_text
     assert lint_wiki(sandbox_settings.paths.wiki) == []
+
+
+def test_volume_anomaly_and_sma_macd_crossings_are_price_alert_transitions(
+    sandbox_settings: Settings,
+) -> None:
+    bars = _bars(220)
+    previous = replace(
+        _snapshot(
+            as_of=bars[-2].date,
+            rsi=Decimal("50"),
+            trigger_state=(),
+            source_hash="e" * 64,
+        ),
+        sma_50=Decimal("99"),
+        sma_200=Decimal("100"),
+        macd=Decimal("0.9"),
+        macd_signal=Decimal("1"),
+    )
+    current = replace(
+        previous,
+        as_of_date=bars[-1].date,
+        sma_50=Decimal("101"),
+        sma_200=Decimal("100"),
+        macd=Decimal("1.1"),
+        macd_signal=Decimal("1"),
+        volume_zscore=Decimal("3"),
+        trigger_state=("volume_anomaly",),
+        source_price_hash="f" * 64,
+    )
+
+    transitions = detect_transitions(previous, current, bars, sandbox_settings)
+
+    assert [(item.trigger, item.transition) for item in transitions] == [
+        ("macd_cross_above_signal", "entered"),
+        ("sma_50_cross_above_200", "entered"),
+        ("volume_anomaly", "entered"),
+    ]

@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_204be2a44063993de1a8",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_204be2a44063993de1a8"
+  },
+  "objective": "Research MSFT — Microsoft Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB1V80Z3NV79GVG54DMFMT",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

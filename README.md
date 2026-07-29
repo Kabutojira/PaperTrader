@@ -331,7 +331,11 @@ the latest validated publication files:
 - `data/published/actionable_signals.csv`.
 
 The same snapshot generates the Today, Model portfolio, Securities, Signals, Performance, System
-status, and Research catalog pages plus the investor-first daily report and Telegram brief.
+status, and Research catalog pages plus the investor-first daily report and Telegram brief. Every
+identity-valid security is market-monitored before research; research status gates investment
+decisions, not RSI, Bollinger, configured volume-anomaly, SMA 50/200 crossing, or MACD crossing
+alerts. A new price-alert transition creates one priority-95 security review for the affected
+security, with all due reviews still executed strictly one at a time.
 Allocation targets
 without a valid strategy remain candidates, indicator transitions remain visibly labelled research
 alerts, and only a validated non-terminal paper order can be copy ready. An all-cash conclusion is
@@ -367,7 +371,10 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 - build the wiki and its canonical daily reports from an exact commit with Quartz;
 - deploy the verified `site/public` artifact when Pages publication is enabled;
 - read the exact committed report with `git show` and send its investor brief as bounded Telegram
-  Rich Markdown, preserving headings, lists, code, emphasis, and commit-pinned wiki links;
+  Rich Markdown, preserving headings, lists, code, and emphasis; the brief lists every current
+  price alert, its research decision and reason, and every research result completed in the run;
+- convert security, idea, strategy, and report links to the public GitHub Pages site rather than
+  repository blob URLs;
 - retain one stable latest-only Telegram delivery issue without rolling back the runtime commit;
   when a newer report exists, older missed reports are not replayed.
 

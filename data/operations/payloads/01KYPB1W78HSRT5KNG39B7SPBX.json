@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_2433a056eb0c55961fcc",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_2433a056eb0c55961fcc"
+  },
+  "objective": "Research AMZN — Amazon.com, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB1W78HSRT5KNG39B7SPBX",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

@@ -218,7 +218,7 @@ def load_security_identities(repository_root: Path) -> tuple[SecurityIdentity, .
     seen_ids: set[str] = set()
     provider_keys: set[tuple[str, str, str]] = set()
     for row in read_table(repository_root, "securities"):
-        if row["status"] not in {"active", "watching"}:
+        if row["status"] not in {"active", "watching", "watchlist"}:
             continue
         required = ("security_id", "provider_symbol", "venue_mic", "currency", "instrument_type")
         missing = [field for field in required if not row[field]]

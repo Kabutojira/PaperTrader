@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_b2116dcf976c96974d7b",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_b2116dcf976c96974d7b"
+  },
+  "objective": "Research VALE — Vale S.A. as an initial bounded security review.",
+  "operation_id": "01KYPB2KN8R1RGAPDZQ2AN9P2V",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

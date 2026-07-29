@@ -27,10 +27,12 @@ REPORT_PATH = re.compile(r"^data/wiki/daily-reports/daily-report_[0-9]{8}\.md$")
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 REPOSITORY_URL = re.compile(r"^https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 COMMITTED_REPORT_URL = re.compile(
-    r"^(https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40})/"
+    r"^https://github\.com/(?P<owner>[A-Za-z0-9_.-]+)/(?P<repository>[A-Za-z0-9_.-]+)/"
+    r"blob/(?P<commit>[0-9a-f]{40})/"
     r"data/wiki/daily-reports/daily-report_[0-9]{8}\.md$"
 )
 WIKI_LINK = re.compile(r"\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\n]*?))?\]\]")
+MARKDOWN_LINK = re.compile(r"(?<!!)\[([^\]\n]+)\]\(([^)\n]+)\)")
 INVESTOR_BRIEF_START = "<!-- papertrader-investor-brief:start -->"
 INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
 DELIVERY_ISSUE_TITLE = "Telegram delivery unavailable"
@@ -186,7 +188,31 @@ def _report_markdown(report: str, *, committed_url: str) -> str:
     match = COMMITTED_REPORT_URL.fullmatch(committed_url)
     if match is None:
         raise CanonicalValueError("committed report URL is not canonical")
-    wiki_base = f"{match.group(1)}/data/wiki"
+    owner = match.group("owner")
+    repository = match.group("repository")
+    if repository.casefold() == f"{owner}.github.io".casefold():
+        pages_base = f"https://{repository.casefold()}"
+    else:
+        pages_base = (
+            f"https://{owner.casefold()}.github.io/{urllib.parse.quote(repository, safe='')}"
+        )
+
+    def pages_url(target: str) -> str | None:
+        raw_path, separator, fragment = target.partition("#")
+        normalized = raw_path.strip().removesuffix(".md")
+        path = Path(normalized)
+        if (
+            not normalized
+            or path.is_absolute()
+            or ".." in path.parts
+            or any(marker in normalized for marker in "\r\n")
+        ):
+            return None
+        suffix = "" if normalized == "index" else f"/{urllib.parse.quote(normalized, safe='/')}"
+        url = f"{pages_base}{suffix}"
+        if separator and fragment:
+            url += f"#{urllib.parse.quote(fragment, safe='-_.')}"
+        return url
 
     def replace_wikilink(link: re.Match[str]) -> str:
         target = link.group(1).strip().removesuffix(".md")
@@ -194,11 +220,25 @@ def _report_markdown(report: str, *, committed_url: str) -> str:
             return link.group(0)
         label = (link.group(2) or Path(target).name).strip()
         label = label.replace("[", "\\[").replace("]", "\\]")
-        url = f"{wiki_base}/{urllib.parse.quote(target, safe='/')}.md"
+        url = pages_url(target)
+        if url is None:
+            return link.group(0)
         return f"[{label}]({url})"
 
     report = WIKI_LINK.sub(replace_wikilink, report)
-    return f"{report}\n\n[View the committed report]({committed_url})"
+
+    def replace_markdown_link(link: re.Match[str]) -> str:
+        target = link.group(2).strip()
+        if urllib.parse.urlsplit(target).scheme or target.startswith(("/", "#")):
+            return link.group(0)
+        url = pages_url(target)
+        return f"[{link.group(1)}]({url})" if url is not None else link.group(0)
+
+    report = MARKDOWN_LINK.sub(replace_markdown_link, report)
+    report_path = committed_url.rsplit("/data/wiki/", maxsplit=1)[1].removesuffix(".md")
+    public_report_url = pages_url(report_path)
+    assert public_report_url is not None
+    return f"{report}\n\n[View the daily report]({public_report_url})"
 
 
 def _split_rich_markdown(value: str, *, limit: int) -> tuple[str, ...]:
@@ -232,7 +272,7 @@ def telegram_messages(
     committed_url: str,
     limit: int = 32768,
 ) -> tuple[str, ...]:
-    """Build bounded GitHub-compatible Markdown for Telegram rich messages."""
+    """Build bounded rich Markdown whose internal links resolve to GitHub Pages."""
 
     markdown = _report_markdown(report, committed_url=committed_url)
     return _split_rich_markdown(markdown, limit=limit)

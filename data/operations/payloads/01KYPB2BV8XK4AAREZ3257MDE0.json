@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_96ba305ee7cd586bc348",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_96ba305ee7cd586bc348"
+  },
+  "objective": "Research FUC.F — Fanuc Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB2BV8XK4AAREZ3257MDE0",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

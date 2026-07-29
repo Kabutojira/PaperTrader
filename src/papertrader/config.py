@@ -67,6 +67,7 @@ class IndicatorSettings:
     macd_fast: int
     macd_slow: int
     macd_signal: int
+    volume_zscore_threshold: Decimal
     opportunity_cooldown_days: int
     material_strengthening_pct: Decimal
 
@@ -349,6 +350,7 @@ def _load_runtime_settings(
         macd_fast=_positive_int(parser, "indicators", "macd_fast"),
         macd_slow=_positive_int(parser, "indicators", "macd_slow"),
         macd_signal=_positive_int(parser, "indicators", "macd_signal"),
+        volume_zscore_threshold=_decimal(parser, "indicators", "volume_zscore_threshold"),
         opportunity_cooldown_days=_positive_int(
             parser, "indicators", "opportunity_cooldown_days", allow_zero=True
         ),
@@ -362,6 +364,8 @@ def _load_runtime_settings(
         raise ConfigurationError("Bollinger standard deviations must be positive")
     if indicators.macd_fast >= indicators.macd_slow:
         raise ConfigurationError("MACD fast period must be below slow period")
+    if indicators.volume_zscore_threshold <= 0:
+        raise ConfigurationError("volume z-score threshold must be positive")
     base_currency = parser.get("portfolio", "base_currency").strip().upper()
     if len(base_currency) != 3:
         raise ConfigurationError("portfolio.base_currency must be an ISO currency code")

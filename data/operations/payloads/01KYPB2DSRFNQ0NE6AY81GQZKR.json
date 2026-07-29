@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_98470cfc01bbcde78fc2",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_98470cfc01bbcde78fc2"
+  },
+  "objective": "Research SOFI — SoFi Technologies, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB2DSRFNQ0NE6AY81GQZKR",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import re
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal
 from html import escape
@@ -109,7 +111,10 @@ def _cell(value: str) -> str:
 def _page_key(research_page: str) -> str:
     if not research_page:
         return ""
-    path = PurePosixPath(research_page)
+    raw_path, separator, fragment = research_page.partition("#")
+    if separator and (not fragment or not re.fullmatch(r"[A-Za-z0-9_.-]+", fragment)):
+        raise CanonicalValueError(f"invalid public research page fragment: {research_page}")
+    path = PurePosixPath(raw_path)
     if (
         path.is_absolute()
         or ".." in path.parts
@@ -117,12 +122,119 @@ def _page_key(research_page: str) -> str:
         or path.suffix != ".md"
     ):
         raise CanonicalValueError(f"invalid public research page: {research_page}")
-    return PurePosixPath(*path.parts[2:]).with_suffix("").as_posix()
+    key = PurePosixPath(*path.parts[2:]).with_suffix("").as_posix()
+    return f"{key}#{fragment}" if fragment else key
 
 
 def _link(label: str, research_page: str) -> str:
     key = _page_key(research_page)
     return f"[{_markdown(label)}]({key})" if key else _markdown(label)
+
+
+def _security_public_page(security: Mapping[str, str]) -> str:
+    return security["research_page"] or (
+        f"data/wiki/security-catalog.md#security-{security['security_id']}"
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class ResearchDecisionView:
+    operation_id: str
+    operation_type: str
+    label: str
+    research_page: str
+    status: str
+    conclusion: str
+
+
+def _wiki_title(repository_root: Path, research_page: str, fallback: str) -> str:
+    raw_path = research_page.partition("#")[0]
+    path = repository_root / raw_path
+    if path.is_symlink() or not path.is_file():
+        return fallback
+    try:
+        text = path.read_text(encoding="utf-8")
+    except OSError:
+        return fallback
+    if not text.startswith("---\n") or "\n---\n" not in text[4:]:
+        return fallback
+    raw, _ = text[4:].split("\n---\n", maxsplit=1)
+    metadata = yaml.safe_load(raw)
+    title = metadata.get("title") if isinstance(metadata, dict) else None
+    return " ".join(title.split()) if isinstance(title, str) and title.strip() else fallback
+
+
+def research_decisions_for_run(
+    repository_root: Path, run_id: str
+) -> tuple[ResearchDecisionView, ...]:
+    """Project every completed research operation in one run into a public linked decision."""
+
+    securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
+    relationships = {
+        row["relationship_id"]: row for row in read_table(repository_root, "relationships")
+    }
+    strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
+    output: list[ResearchDecisionView] = []
+    for row in read_table(repository_root, "operations_history"):
+        if row["claimed_by_run_id"] != run_id or not row["operation_type"].endswith("_research"):
+            continue
+        label = row["entity_id"]
+        page = "data/wiki/research-catalog.md"
+        if row["operation_type"] == "security_research":
+            security = securities.get(row["entity_id"])
+            if security is not None:
+                label = f"{security['ticker']} — {security['company_name']}"
+                page = _security_public_page(security)
+        elif row["operation_type"] == "idea_research":
+            candidate = f"data/wiki/ideas/{row['entity_id']}.md"
+            page = candidate if (repository_root / candidate).is_file() else page
+            label = _wiki_title(repository_root, page, row["entity_id"])
+        elif row["operation_type"] == "relationship_research":
+            relationship = relationships.get(row["entity_id"])
+            if relationship is not None:
+                security = securities.get(relationship["security_id"])
+                page = relationship["research_page"] or page
+                label = (
+                    f"{security['ticker']} relationship"
+                    if security is not None
+                    else row["entity_id"]
+                )
+        elif row["operation_type"] == "strategy_research":
+            strategy = strategies.get(row["entity_id"])
+            if strategy is not None:
+                label = strategy["name"] or row["entity_id"]
+                page = strategy["research_page"] or page
+        elif row["operation_type"] == "opportunity_research":
+            payload_path = PurePosixPath(row["payload_path"])
+            if (
+                not payload_path.is_absolute()
+                and ".." not in payload_path.parts
+                and payload_path.parts[:3] == ("data", "operations", "payloads")
+                and payload_path.suffix == ".json"
+            ):
+                absolute = repository_root.joinpath(*payload_path.parts)
+                try:
+                    payload = json.loads(absolute.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError):
+                    payload = {}
+                inputs = payload.get("inputs") if isinstance(payload, dict) else None
+                security_id = inputs.get("security_id") if isinstance(inputs, dict) else None
+                security = securities.get(security_id) if isinstance(security_id, str) else None
+                if security is not None:
+                    label = f"{security['ticker']} — {security['company_name']}"
+                    page = _security_public_page(security)
+        conclusion = " ".join((row["result_summary"] or row["terminal_reason"]).split())
+        output.append(
+            ResearchDecisionView(
+                operation_id=row["operation_id"],
+                operation_type=row["operation_type"],
+                label=label,
+                research_page=page,
+                status=row["terminal_status"],
+                conclusion=conclusion or "No research conclusion was recorded.",
+            )
+        )
+    return tuple(output)
 
 
 def _frontmatter(
@@ -195,7 +307,10 @@ def _portfolio_markdown_rows(rows: Sequence[ModelPortfolioRow]) -> list[str]:
     return output
 
 
-def investor_brief_markdown(snapshot: DecisionSnapshot) -> str:
+def investor_brief_markdown(
+    snapshot: DecisionSnapshot,
+    research_decisions: Sequence[ResearchDecisionView] = (),
+) -> str:
     """Render the compact committed brief consumed by Telegram."""
 
     current = snapshot.current_portfolio
@@ -221,7 +336,8 @@ def investor_brief_markdown(snapshot: DecisionSnapshot) -> str:
     lines.extend(["", "## Approved target changes", ""])
     if changes:
         lines.extend(
-            f"- **{_markdown(row.ticker)}:** {_action_label(row.action)} to "
+            f"- **{_link(row.ticker, row.security_research_page)}:** "
+            f"{_action_label(row.action)} to "
             f"{row.approved_target_weight_pct}% (target estimate)"
             for row in changes[:5]
         )
@@ -230,12 +346,32 @@ def investor_brief_markdown(snapshot: DecisionSnapshot) -> str:
     lines.extend(["", "## Actionable signals", ""])
     if snapshot.actionable_signals:
         lines.extend(
-            f"- **{_markdown(signal.ticker)}:** {_action_label(signal.action)} — "
+            f"- **{_link(signal.ticker, signal.security_research_page)}:** "
+            f"{_action_label(signal.action)} — "
             f"{_action_status_label(signal.action_status)}"
             for signal in snapshot.actionable_signals[:5]
         )
     else:
         lines.append("No actionable trade signals.")
+    if snapshot.research_alerts:
+        lines.extend(["", "## Price action alerts", ""])
+        for alert in snapshot.research_alerts:
+            label = _link(f"{alert.ticker} — {alert.company_name}", alert.research_page)
+            alert_name = _markdown(alert.alert_type.replace("_", " ").title())
+            lines.extend(
+                [
+                    f"- **{label}: {alert_name}** (`{alert.market_data_date}`)",
+                    f"  - Research: **{_markdown(alert.research_status)}**",
+                    f"  - Decision: {_markdown(alert.research_conclusion)}",
+                ]
+            )
+    if research_decisions:
+        lines.extend(["", "## Research decisions this run", ""])
+        for decision in research_decisions:
+            label = _link(decision.label, decision.research_page)
+            lines.append(
+                f"- **{label} — {_markdown(decision.status)}:** {_markdown(decision.conclusion)}"
+            )
     near_miss = next(iter(_near_misses(snapshot, limit=1)), None)
     lines.extend(["", "## Top blocker or near miss", ""])
     if near_miss is None:
@@ -249,7 +385,10 @@ def investor_brief_markdown(snapshot: DecisionSnapshot) -> str:
     return "\n".join(lines)
 
 
-def investor_report_sections(snapshot: DecisionSnapshot) -> list[str]:
+def investor_report_sections(
+    snapshot: DecisionSnapshot,
+    research_decisions: Sequence[ResearchDecisionView] = (),
+) -> list[str]:
     """Render the investor-facing report sections from the shared snapshot."""
 
     current = snapshot.current_portfolio
@@ -258,7 +397,7 @@ def investor_report_sections(snapshot: DecisionSnapshot) -> list[str]:
         "## 1. Investor decision summary",
         "",
         INVESTOR_BRIEF_START,
-        investor_brief_markdown(snapshot),
+        investor_brief_markdown(snapshot, research_decisions),
         INVESTOR_BRIEF_END,
         "",
         "### Deterministic reasons",
@@ -901,8 +1040,9 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
             if candidate.reason_labels:
                 reason = candidate.reason_labels[0]
         label = f"{security['ticker']} — {security['company_name']}"
+        anchor = f'<span id="security-{security["security_id"]}"></span>'
         lines.append(
-            f"| {_link(label, security['research_page'])} | "
+            f"| {anchor}{_link(label, _security_public_page(security))} | "
             f"{_cell(security['venue_mic'])} · {_cell(security['status'])} | "
             f"{mark_text} | {base_mark_text} | {_cell(decision)} | {_cell(reason)} | "
             f"{downside} | {upside} | {_cell(data_as_of)} | {_cell(review)} |"

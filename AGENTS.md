@@ -531,14 +531,19 @@ Quartz and Telegram consume that same file.
 ## Market-data and indicator rules
 
 - Use yfinance for market monitoring and paper marks, not as authoritative fundamental research.
+- Monitor every identity-valid `watchlist`, `watching`, and `active` security. Research status may
+  gate allocation and trading decisions, but it must never suppress deterministic price monitoring.
 - Store provider symbols explicitly and record retrieval timestamps and errors.
 - Pin yfinance and TA-Lib versions in `uv.lock` and use a pinned build container.
 - Normalize corporate actions, time zones, market calendars, splits, dividends, and adjusted/unadjusted prices.
 - Exclude provider rows newer than the latest completed exchange session before validation. If yfinance reports an open or close outside its own high/low envelope, deterministic normalization may widen only that envelope to the provider-reported OHLC extrema and must mark the repaired bar source; other invalid ranges fail closed.
 - Require at least 200 valid daily observations before calculating or acting on a 200-day moving average; otherwise mark the indicator unavailable.
-- Calculate RSI, Bollinger Bands, SMA, MACD, returns, volume anomaly, and volatility in deterministic code.
+- Calculate RSI, Bollinger Bands, SMA, MACD, returns, volume anomaly, and volatility in deterministic code. Price alerts include RSI and Bollinger threshold states, configured volume anomalies, and true one-session SMA 50/200 and MACD crossings.
 - Indicator thresholds come from `config.ini`; do not hard-code them in skills.
 - Add an opportunity operation only when a trigger crosses from inactive to active, materially strengthens, or exits and re-enters after its cooldown.
+- For each security with one or more new price-alert transitions, enqueue exactly one deduplicated
+  priority-95 `security_research` operation containing all triggers and their canonical market date.
+  This alert-driven review bypasses ordinary research freshness but remains sequential and bounded.
 - Commit the rolling daily-price cache to `data/market/prices/<security_id>.csv`. On every successful retrieval, merge by trading date, remove duplicates, sort ascending, and delete rows older than 365 calendar days relative to the newest valid bar. Do not keep all-time history.
 - Deterministic jobs write each candidate knowledge change as a compact Markdown packet under `data/wiki/inbox/`. A packet may describe a market movement, indicator transition, filing, source update, research change, contradiction, or other candidate fact.
 - A candidate packet does not automatically trigger wiki ingestion. After deterministic validation and no-op filtering, run the configured cheap LLM to classify it as `ingest` or `ignore`, with a concise reason and related entity IDs. Only an `ingest` decision may enqueue `wiki_ingest`, and the enqueue must still pass normal deduplication and cooldown rules.
@@ -612,7 +617,7 @@ The page title uses an unambiguous ISO date. Required sections:
 4. Research operations and dispositions.
 5. New or changed ideas, securities, relationships, and strategies.
 6. Risks, blockers, and scheduled follow-ups.
-7. Links to changed wiki pages and the GitHub report page.
+7. Links to changed wiki pages and the public GitHub Pages report.
 
 Do not repeat incorrect example math. Percentage return is `(current_value - cost_basis) / cost_basis`, and option values include contract multipliers and quantity.
 
@@ -634,7 +639,11 @@ Do not repeat incorrect example math. Percentage return is `(current_value - cos
 
 - Send the canonical daily report after a successful commit.
 - Send Telegram Rich Markdown with preserved headings, lists, emphasis, code, and links, and split messages without breaking formatting when they exceed Telegram limits.
-- Include the committed GitHub URL.
+- Include every current price-action alert, its research status, the decision and reason, and every
+  research operation completed by the run.
+- Link securities, ideas, strategies, and the report to their public
+  `https://<owner>.github.io/<repository>/...` pages; do not expose repository blob links in the
+  investor message.
 - Telegram failure must not roll back a successful repository commit; record it as an issue and retry in a bounded later run.
 
 ## GitHub Actions design

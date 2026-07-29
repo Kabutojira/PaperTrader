@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_fe4648901e7675f157fd",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_fe4648901e7675f157fd"
+  },
+  "objective": "Research ANIC.L — Agronomics Limited as an initial bounded security review.",
+  "operation_id": "01KYPB2XDRKAMP0ZX3MWA7Y1JH",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

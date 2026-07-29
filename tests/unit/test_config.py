@@ -24,6 +24,7 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.market_data.price_retention_days == 365
     assert settings.market_data.minimum_sma_200_observations == 200
     assert settings.indicators.sma_periods == (20, 50, 200)
+    assert settings.indicators.volume_zscore_threshold == Decimal("2")
     assert settings.orders.default_fill_policy == "next_open"
     assert settings.portfolio.initial_capital == Decimal("10000.00")
     assert settings.allocation.mode == "active"

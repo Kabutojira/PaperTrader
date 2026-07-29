@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_8a5c43888d224de85c69",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_8a5c43888d224de85c69"
+  },
+  "objective": "Research PLS.AX — PLS Group Limited as an initial bounded security review.",
+  "operation_id": "01KYPB29WRNJGPJTTY2DB72JWG",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

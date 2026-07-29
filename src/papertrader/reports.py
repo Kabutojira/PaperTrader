@@ -661,7 +661,7 @@ def generate_daily_report(
     """Generate the investor-first report and complete deterministic audit appendix."""
 
     from papertrader.advice import load_published_snapshot, reason_label
-    from papertrader.investor_pages import investor_report_sections
+    from papertrader.investor_pages import investor_report_sections, research_decisions_for_run
 
     instant = ensure_utc(generated_at or utc_now()).replace(microsecond=0)
     normalized_status = " ".join(run_status.split())
@@ -720,6 +720,7 @@ def generate_daily_report(
             }
         )
     )
+    research_decisions = research_decisions_for_run(repository_root, run_id)
     lines = [
         "---",
         f'title: "PaperTrader daily report — {day.isoformat()}"',
@@ -736,7 +737,7 @@ def generate_daily_report(
         "",
         f"# PaperTrader daily report — {day.isoformat()}",
         "",
-        *investor_report_sections(snapshot),
+        *investor_report_sections(snapshot, research_decisions),
         "",
         "## 6. Research changes",
         "",

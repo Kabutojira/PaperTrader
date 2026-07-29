@@ -358,6 +358,106 @@ class _CycleHermes:
         )
         return [followup], "The material synthetic transition justified one relationship review."
 
+    def _security(
+        self,
+        repository: Path,
+        environment: Mapping[str, str],
+        artifact: Path,
+        run_id: str,
+    ) -> tuple[list[str], str]:
+        page = _wiki_page(
+            repository,
+            domain="securities",
+            page_id=SECURITY_ID,
+            title="Operating Cycle SE",
+            page_type="security",
+            tag="security",
+            provenance=SOURCE_ID,
+            body=(
+                "The alert-driven review found a sound synthetic business with a positive "
+                "valuation range and sufficient liquidity. The deterministic price alert "
+                "justifies continued research, but it does not by itself decide a trade."
+            ),
+            event_date=self.reference_time.date(),
+        )
+        self._run_request(
+            repository,
+            environment,
+            artifact,
+            "record-security-source.json",
+            {
+                "source_id": SOURCE_ID,
+                "url": "https://example.test/papertrader/operating-cycle",
+                "canonical_url": "https://example.test/papertrader/operating-cycle",
+                "source_type": "synthetic-fixture",
+                "title": "PaperTrader operating-cycle security fixture",
+                "publisher": "PaperTrader tests",
+                "license": "user-owned",
+                "status": "available",
+                "content_hash": "a" * 64,
+                "related_entity_ids": SECURITY_ID,
+                "checked_at": format_timestamp(self.reference_time),
+                "http_status": "200",
+                "changed": "true",
+                "excerpt": "Synthetic security validation evidence.",
+                "summary": "The alert-driven security review supports a comparable assessment.",
+                "run_id": run_id,
+            },
+            ("research", "source", "record"),
+        )
+        security = dict(read_table(repository, "securities")[0])
+        security.update(
+            {
+                "research_summary": (
+                    "Alert-driven review supports baseline eligibility with bounded downside."
+                ),
+                "research_page": page,
+                "last_research_at": format_timestamp(self.reference_time),
+                "next_review_at": format_timestamp(self.reference_time + timedelta(days=30)),
+                "updated_at": format_timestamp(self.reference_time),
+                "source": "https://example.test/papertrader/operating-cycle",
+            }
+        )
+        security.pop("created_at")
+        security.pop("updated_at")
+        self._run_request(
+            repository,
+            environment,
+            artifact,
+            "upsert-security.json",
+            security,
+            ("research", "security", "upsert"),
+        )
+        self._run_request(
+            repository,
+            environment,
+            artifact,
+            "upsert-assessment.json",
+            {
+                "security_id": SECURITY_ID,
+                "assessed_at": format_timestamp(self.reference_time),
+                "expires_at": format_timestamp(self.reference_time + timedelta(days=30)),
+                "eligibility": "baseline",
+                "confidence": "high",
+                "thesis_score": "80",
+                "business_quality_score": "80",
+                "balance_sheet_score": "80",
+                "valuation_score": "80",
+                "timing_score": "80",
+                "liquidity_score": "80",
+                "risk_penalty": "0",
+                "downside_pct": "-20",
+                "base_upside_pct": "25",
+                "valuation_horizon_months": "12",
+                "hard_blockers": "",
+                "soft_gaps": "",
+                "evidence_refs": SOURCE_ID,
+                "run_id": run_id,
+            },
+            ("research", "assessment", "upsert"),
+        )
+        return [], "The alert-driven security review kept the security baseline-eligible."
+
     def _wiki_ingest(
         self,
         repository: Path,
@@ -656,7 +756,9 @@ class _CycleHermes:
         artifact = cwd / "data" / "runs" / run_id / operation_id
         before = snapshot_repository(cwd)
 
-        if operation_type == "opportunity_research":
+        if operation_type == "security_research":
+            created, summary = self._security(cwd, environment, artifact, run_id)
+        elif operation_type == "opportunity_research":
             created, summary = self._opportunity(cwd, environment, artifact, payload)
         elif operation_type == "wiki_ingest":
             created, summary = self._wiki_ingest(cwd, environment, artifact, payload, run_id)
@@ -769,6 +871,14 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     repository_root: Path,
     tmp_path: Path,
 ) -> None:
+    sandbox_settings = replace(
+        sandbox_settings,
+        operations=replace(
+            sandbox_settings.operations,
+            maximum_llm_operations_per_run=6,
+            maximum_model_budget_usd_per_run=Decimal("6"),
+        ),
+    )
     started_at = utc_now().replace(microsecond=0) - timedelta(minutes=1)
     completed_session = latest_completed_session("XETR", started_at)
     session_dates = _sessions_through(completed_session)
@@ -812,11 +922,12 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         run_id=RUN_ID,
         hermes_home=home,
         environment={"PATH": os.environ.get("PATH", "/usr/bin")},
-        maximum_operations=5,
+        maximum_operations=6,
         executor=executor,
     )
-    assert batch.operation_count == 5
+    assert batch.operation_count == 6
     assert executor.operation_types == [
+        "security_research",
         "opportunity_research",
         "wiki_ingest",
         "relationship_research",
@@ -1051,7 +1162,8 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert "## Complete active queue" not in delivered_markdown
     assert finalization.snapshot_id in delivered_markdown
     assert "title:" not in delivered_markdown
-    assert commit_sha in delivered_markdown
+    assert "https://example.github.io/PaperTrader/daily-reports/" in delivered_markdown
+    assert "github.com/example/PaperTrader/blob" not in delivered_markdown
     assert all(set(call) == {"chat_id", "rich_message"} for call in telegram.calls)
 
     if os.environ.get("PAPERTRADER_VALIDATE_QUARTZ") == "true":

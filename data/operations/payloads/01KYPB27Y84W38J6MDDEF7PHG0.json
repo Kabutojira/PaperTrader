@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_83a56943e18793f685b0",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_83a56943e18793f685b0"
+  },
+  "objective": "Research TXN — Texas Instruments Incorporated as an initial bounded security review.",
+  "operation_id": "01KYPB27Y84W38J6MDDEF7PHG0",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

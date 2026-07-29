@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_c150f31c30afdb4a85f9",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_c150f31c30afdb4a85f9"
+  },
+  "objective": "Research CROX — Crocs, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB2MMG5E7Y3EVH2XS3MV0G",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

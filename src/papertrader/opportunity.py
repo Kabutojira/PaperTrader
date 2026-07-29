@@ -166,7 +166,77 @@ def _strength(
         return max(Decimal("0"), (snapshot.bollinger_lower - close) / snapshot.bollinger_lower)
     if trigger == "bollinger_above_upper" and snapshot.bollinger_upper:
         return max(Decimal("0"), (close - snapshot.bollinger_upper) / snapshot.bollinger_upper)
+    if trigger == "volume_anomaly" and snapshot.volume_zscore is not None:
+        threshold = settings.indicators.volume_zscore_threshold
+        return max(Decimal("0"), (snapshot.volume_zscore - threshold) / threshold)
     return Decimal("0")
+
+
+def _crossing_transition(
+    previous: IndicatorSnapshot | None,
+    current: IndicatorSnapshot,
+) -> tuple[OpportunityTransition, ...]:
+    """Return one-session SMA and MACD crossings without turning them into persistent states."""
+
+    if previous is None or previous.as_of_date >= current.as_of_date:
+        return ()
+    crossings: list[tuple[str, Decimal]] = []
+    if all(
+        value is not None
+        for value in (previous.sma_50, previous.sma_200, current.sma_50, current.sma_200)
+    ):
+        assert previous.sma_50 is not None and previous.sma_200 is not None
+        assert current.sma_50 is not None and current.sma_200 is not None
+        if previous.sma_50 <= previous.sma_200 and current.sma_50 > current.sma_200:
+            crossings.append(
+                (
+                    "sma_50_cross_above_200",
+                    abs(current.sma_50 - current.sma_200)
+                    / max(abs(current.sma_200), Decimal("0.00000001")),
+                )
+            )
+        elif previous.sma_50 >= previous.sma_200 and current.sma_50 < current.sma_200:
+            crossings.append(
+                (
+                    "sma_50_cross_below_200",
+                    abs(current.sma_50 - current.sma_200)
+                    / max(abs(current.sma_200), Decimal("0.00000001")),
+                )
+            )
+    if all(
+        value is not None
+        for value in (previous.macd, previous.macd_signal, current.macd, current.macd_signal)
+    ):
+        assert previous.macd is not None and previous.macd_signal is not None
+        assert current.macd is not None and current.macd_signal is not None
+        if previous.macd <= previous.macd_signal and current.macd > current.macd_signal:
+            crossings.append(
+                (
+                    "macd_cross_above_signal",
+                    abs(current.macd - current.macd_signal)
+                    / max(abs(current.macd_signal), Decimal("0.00000001")),
+                )
+            )
+        elif previous.macd >= previous.macd_signal and current.macd < current.macd_signal:
+            crossings.append(
+                (
+                    "macd_cross_below_signal",
+                    abs(current.macd - current.macd_signal)
+                    / max(abs(current.macd_signal), Decimal("0.00000001")),
+                )
+            )
+    return tuple(
+        OpportunityTransition(
+            security_id=current.security_id,
+            trigger=trigger,
+            transition="entered",
+            as_of_date=current.as_of_date,
+            strength=strength,
+            previous_strength=Decimal("0"),
+            source_price_hash=current.source_price_hash,
+        )
+        for trigger, strength in crossings
+    )
 
 
 def detect_transitions(
@@ -175,7 +245,7 @@ def detect_transitions(
     bars: Sequence[PriceBar],
     settings: Settings,
 ) -> tuple[OpportunityTransition, ...]:
-    """Detect new or materially stronger active RSI/Bollinger states."""
+    """Detect state entries, material strengthening, and one-session crossings."""
 
     closes = {bar.date: bar.adjusted_close for bar in bars}
     current_close = closes.get(current.as_of_date)
@@ -212,6 +282,7 @@ def detect_transitions(
                 source_price_hash=current.source_price_hash,
             )
         )
+    output.extend(_crossing_transition(previous, current))
     return tuple(sorted(output, key=lambda item: item.trigger))
 
 
@@ -788,6 +859,7 @@ def process_opportunity_transitions(
         transitions = detect_transitions(
             previous.get(security_id), current[security_id], bars, settings
         )
+        security_packets: list[CandidatePacket] = []
         for transition in transitions:
             packet = create_candidate_packet(settings.paths.wiki, transition, bars, now=instant)
             if packet.decision is None:
@@ -852,4 +924,52 @@ def process_opportunity_transitions(
                     now=instant,
                 )
             packets.append(packet)
+            security_packets.append(packet)
+        if transitions:
+            period = [bar for bar in bars if bar.date <= current[security_id].as_of_date][-21:]
+            trigger_types = sorted({transition.trigger for transition in transitions})
+            alert_hash = source_fingerprint(
+                {
+                    "market_data_date": current[security_id].as_of_date.isoformat(),
+                    "source_price_hash": current[security_id].source_price_hash,
+                    "transitions": [
+                        {"trigger": item.trigger, "transition": item.transition}
+                        for item in transitions
+                    ],
+                }
+            )
+            enqueue_operation(
+                repository_root,
+                settings,
+                operation_type="security_research",
+                entity_type="security",
+                entity_id=security_id,
+                dedupe_key=build_dedupe_key(
+                    "security_research",
+                    security_id,
+                    alert_hash,
+                    current[security_id].as_of_date.isoformat(),
+                ),
+                prompt=(
+                    f"Research {security_id} with high priority after price-action alerts: "
+                    f"{', '.join(trigger_types)}; decide what changed and whether to act."
+                ),
+                inputs={
+                    "security_id": security_id,
+                    "trigger_types": trigger_types,
+                    "market_data_as_of": format_timestamp(current[security_id].calculated_at),
+                    "market_data_date": current[security_id].as_of_date.isoformat(),
+                    "period_start": period[0].date.isoformat(),
+                    "period_end": period[-1].date.isoformat(),
+                    "source_price_hash": current[security_id].source_price_hash,
+                },
+                source="deterministic-price-alert",
+                source_refs=tuple(
+                    packet.path.relative_to(repository_root).as_posix()
+                    for packet in security_packets
+                ),
+                priority=95,
+                freshness_days=0,
+                now=instant,
+            )
     return tuple(packets)

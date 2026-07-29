@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_89969b7dac39b7db5661",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_89969b7dac39b7db5661"
+  },
+  "objective": "Research YEC.F — YASKAWA Electric Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB28XGJ631HDJC853RGBJJ",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

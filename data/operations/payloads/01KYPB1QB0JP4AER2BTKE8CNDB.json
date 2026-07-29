@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_0a56aa634d077fe5796f",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_0a56aa634d077fe5796f"
+  },
+  "objective": "Research AMAT — Applied Materials, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB1QB0JP4AER2BTKE8CNDB",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_715bde20b6e1e1320c1a",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_715bde20b6e1e1320c1a"
+  },
+  "objective": "Research DLO — DLocal Limited as an initial bounded security review.",
+  "operation_id": "01KYPB25ZR2Q5MGTH3P47XVCJ5",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

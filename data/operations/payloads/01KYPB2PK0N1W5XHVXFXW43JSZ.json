@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_ce9b78a4d0773c950765",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_ce9b78a4d0773c950765"
+  },
+  "objective": "Research TSM — Taiwan Semiconductor Manufacturing Company Limited as an initial bounded security review.",
+  "operation_id": "01KYPB2PK0N1W5XHVXFXW43JSZ",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

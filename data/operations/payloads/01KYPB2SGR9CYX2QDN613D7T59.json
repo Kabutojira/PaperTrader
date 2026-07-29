@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_dc7a111e297be528d96b",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_dc7a111e297be528d96b"
+  },
+  "objective": "Research TSLA — Tesla, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB2SGR9CYX2QDN613D7T59",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

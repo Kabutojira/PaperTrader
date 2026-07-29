@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_cd492d97064d8574156e",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_cd492d97064d8574156e"
+  },
+  "objective": "Research MP — MP Materials Corp. as an initial bounded security review.",
+  "operation_id": "01KYPB2PK0R0ZXAHGNGZ6X5FM8",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

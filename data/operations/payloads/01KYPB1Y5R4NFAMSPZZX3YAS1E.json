@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_3853e54c619d597dcaa1",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_3853e54c619d597dcaa1"
+  },
+  "objective": "Research NIB.F — Nidec Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB1Y5R4NFAMSPZZX3YAS1E",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

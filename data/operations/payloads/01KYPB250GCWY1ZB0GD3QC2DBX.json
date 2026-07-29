@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_6cf75bd0ec0aa2a20148",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_6cf75bd0ec0aa2a20148"
+  },
+  "objective": "Research TWST — Twist Bioscience Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB250GCWY1ZB0GD3QC2DBX",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

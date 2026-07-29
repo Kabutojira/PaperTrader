@@ -34,26 +34,31 @@ identity data requires issuer, instrument, venue MIC, provider symbol, currency,
 type; updates must match the immutable ID. The assessment requires current registered evidence,
 eligibility, confidence, all component scores, risk penalty, downside and base upside, valuation
 horizon, expiration, explicit blocker/gap sets, and the current run ID.
+An alert-driven request additionally provides `trigger_types`, `market_data_as_of`,
+`market_data_date`, the exact observation period, and `source_price_hash`. Treat those values as
+canonical measurements to explain, not calculations to replace.
 
 ## Procedure
 
 1. Orient with schema, the results-first homepage, complete research catalog, recent log, and all
    pages linked to the security.
 2. Validate issuer/instrument/venue/currency/provider identity and search for duplicates.
-3. Research business and instrument economics from current primary evidence, then register the
+3. For an alert-driven review, verify every trigger and exact market-data date, explain what changed,
+   and decide whether it is opportunity, risk, or noise before updating the broader assessment.
+4. Research business and instrument economics from current primary evidence, then register the
    bounded source metadata through the source CLI before referencing it from an assessment.
-4. State thesis, contrary evidence, catalysts, risks, and invalidation.
-5. Produce a supportable downside and base-case valuation with dated inputs and an explicit
+5. State thesis, contrary evidence, catalysts, risks, and invalidation.
+6. Produce a supportable downside and base-case valuation with dated inputs and an explicit
    horizon, or record `valuation_unsupported`; never invent a price target.
-6. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
+7. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
    configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
-7. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
+8. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
    upsert for the short structured row summary.
-8. Before completing, use the assessment CLI to write exactly one current comparable result:
+9. Before completing, use the assessment CLI to write exactly one current comparable result:
    `baseline`/`conviction` only with fresh evidence, supportable valuation and no blocker, or
    `ineligible` with one or more canonical explicit hard blockers. Never leave completed research
    without an assessment.
-9. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
+10. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
    Baseline strategy work is enqueued later by the deterministic allocator, never by this skill.
 
 ## Source hierarchy

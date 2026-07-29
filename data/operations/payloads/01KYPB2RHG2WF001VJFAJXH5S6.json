@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_d12e746b3c9d392183cc",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_d12e746b3c9d392183cc"
+  },
+  "objective": "Research META — Meta Platforms, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB2RHG2WF001VJFAJXH5S6",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

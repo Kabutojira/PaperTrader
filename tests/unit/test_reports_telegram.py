@@ -11,9 +11,13 @@ from pathlib import Path
 
 import pytest
 
-from papertrader.advice import refresh_advice
+from papertrader.advice import ResearchAlertView, refresh_advice
 from papertrader.config import Settings
 from papertrader.execution import ensure_initial_capital
+from papertrader.investor_pages import (
+    ResearchDecisionView,
+    investor_brief_markdown,
+)
 from papertrader.reports import NarrativeItem, generate_daily_report
 from papertrader.tables import read_table
 from papertrader.telegram import (
@@ -112,10 +116,11 @@ def test_telegram_builds_one_rich_markdown_report_with_linked_wiki_pages() -> No
     assert messages[0].startswith("# Daily report")
     assert "title: Example" not in messages[0]
     assert "**Cash:** `100000 EUR`" in messages[0]
-    assert (
-        f"[EXM](https://github.com/example/PaperTrader/blob/{commit}/data/wiki/securities/sec_a.md)"
-    ) in messages[0]
-    assert messages[0].endswith(f"[View the committed report]({committed_url})")
+    assert "[EXM](https://example.github.io/PaperTrader/securities/sec_a)" in messages[0]
+    assert messages[0].endswith(
+        "[View the daily report](https://example.github.io/PaperTrader/"
+        "daily-reports/daily-report_20260724)"
+    )
 
 
 def test_telegram_uses_only_the_committed_investor_brief_when_marked() -> None:
@@ -141,11 +146,84 @@ def test_telegram_uses_only_the_committed_investor_brief_when_marked() -> None:
     assert "decision_0123456789abcdefabcd" in delivered
     assert "Complete active queue" not in delivered
     assert "operation_secret" not in delivered
-    assert (
-        f"[Model portfolio](https://github.com/example/PaperTrader/blob/{commit}/"
-        "data/wiki/model-portfolio.md)"
-    ) in delivered
-    assert delivered.endswith(f"[View the committed report]({committed_url})")
+    assert ("[Model portfolio](https://example.github.io/PaperTrader/model-portfolio)") in delivered
+    assert delivered.endswith(
+        "[View the daily report](https://example.github.io/PaperTrader/"
+        "daily-reports/daily-report_20260724)"
+    )
+
+
+def test_telegram_converts_relative_security_idea_and_report_links_to_pages() -> None:
+    commit = "c" * 40
+    committed_url = (
+        "https://github.com/Kabutojira/PaperTrader/blob/"
+        f"{commit}/data/wiki/daily-reports/daily-report_20260729.md"
+    )
+    report = "# Result\n\n- [ALB](securities/security_alb)\n- [Lithium](ideas/idea_lithium)\n"
+
+    delivered = "".join(telegram_messages(report, committed_url=committed_url))
+
+    assert "[ALB](https://kabutojira.github.io/PaperTrader/securities/security_alb)" in delivered
+    assert "[Lithium](https://kabutojira.github.io/PaperTrader/ideas/idea_lithium)" in delivered
+    assert delivered.endswith(
+        "[View the daily report](https://kabutojira.github.io/PaperTrader/"
+        "daily-reports/daily-report_20260729)"
+    )
+
+
+def test_investor_brief_contains_every_price_alert_and_run_research_decision(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    now = datetime(2026, 7, 29, 20, tzinfo=UTC)
+    ensure_initial_capital(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-alert-brief",
+        occurred_at=now,
+    )
+    snapshot = refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="run-alert-brief",
+        as_of=now,
+    )
+    snapshot = replace(
+        snapshot,
+        research_alerts=(
+            ResearchAlertView(
+                alert_id="alert_example",
+                security_id="security_example",
+                ticker="EXM",
+                company_name="Example Corp",
+                alert_type="volume_anomaly",
+                observed_at="2026-07-29T20:00:00Z",
+                market_data_date="2026-07-29",
+                research_status="succeeded",
+                research_conclusion="The volume spike was event-driven; no trade was approved.",
+                research_page=("data/wiki/security-catalog.md#security-security_example"),
+            ),
+        ),
+    )
+    decisions = (
+        ResearchDecisionView(
+            operation_id="operation_example",
+            operation_type="idea_research",
+            label="Lithium supply reset",
+            research_page="data/wiki/ideas/idea_lithium.md",
+            status="succeeded",
+            conclusion="The idea remains valid, but valuation support is incomplete.",
+        ),
+    )
+
+    brief = investor_brief_markdown(snapshot, decisions)
+
+    assert "## Price action alerts" in brief
+    assert "[EXM — Example Corp](security-catalog#security-security_example)" in brief
+    assert "The volume spike was event-driven; no trade was approved." in brief
+    assert "## Research decisions this run" in brief
+    assert "[Lithium supply reset](ideas/idea_lithium)" in brief
+    assert "valuation support is incomplete" in brief
 
 
 def test_telegram_transport_calls_rich_message_endpoint(monkeypatch: pytest.MonkeyPatch) -> None:

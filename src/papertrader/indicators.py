@@ -120,6 +120,8 @@ def calculate_snapshot(
         trigger_state.append("bollinger_below_lower")
     if band_upper is not None and close > band_upper:
         trigger_state.append("bollinger_above_upper")
+    if volume_zscore is not None and volume_zscore >= configured.volume_zscore_threshold:
+        trigger_state.append("volume_anomaly")
     instant = ensure_utc(calculated_at or utc_now())
     return IndicatorSnapshot(
         security_id=security_id,

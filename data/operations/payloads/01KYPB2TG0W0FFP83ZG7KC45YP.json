@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_dfa34d4b9050964b465e",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_dfa34d4b9050964b465e"
+  },
+  "objective": "Research INTC — Intel Corporation as an initial bounded security review.",
+  "operation_id": "01KYPB2TG0W0FFP83ZG7KC45YP",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

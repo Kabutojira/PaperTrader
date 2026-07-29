@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_97f38b2cb2d5ef127f5a",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_97f38b2cb2d5ef127f5a"
+  },
+  "objective": "Research PL — Planet Labs PBC as an initial bounded security review.",
+  "operation_id": "01KYPB2BV8R4KE0M2GGGTY4MCA",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

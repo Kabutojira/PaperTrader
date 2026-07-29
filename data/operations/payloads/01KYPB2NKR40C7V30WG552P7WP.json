@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_c86bb4e75658c07142cf",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_c86bb4e75658c07142cf"
+  },
+  "objective": "Research GOOGL — Alphabet Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB2NKR40C7V30WG552P7WP",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

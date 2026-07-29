@@ -1728,42 +1728,129 @@ def _packet_document(path: Path) -> Mapping[str, object]:
     return value
 
 
-def _operation_conclusions(repository_root: Path) -> Mapping[str, str]:
-    conclusions: dict[str, str] = {}
+@dataclass(frozen=True, slots=True)
+class _AlertResearchState:
+    status: str
+    conclusion: str
+    updated_at: str
+
+
+def _alert_operation_inputs(
+    repository_root: Path, row: Mapping[str, str]
+) -> Mapping[str, object] | None:
+    """Read trusted operation inputs used to join alerts with research outcomes."""
+
+    if row["operation_type"] not in {"opportunity_research", "security_research"}:
+        return None
+    path = PurePosixPath(row["payload_path"])
+    if (
+        path.is_absolute()
+        or ".." in path.parts
+        or path.parts[:3] != ("data", "operations", "payloads")
+        or path.suffix != ".json"
+    ):
+        return None
+    absolute = repository_root.joinpath(*path.parts)
+    if absolute.is_symlink() or not absolute.is_file():
+        return None
+    try:
+        payload = json.loads(absolute.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    inputs = payload.get("inputs") if isinstance(payload, dict) else None
+    return inputs if isinstance(inputs, dict) else None
+
+
+def _operation_conclusions(
+    repository_root: Path,
+) -> Mapping[tuple[str, str, str], _AlertResearchState]:
+    states: dict[tuple[str, str, str], _AlertResearchState] = {}
+
+    def retain(
+        *,
+        security_id: str,
+        trigger: str,
+        market_date: str,
+        status: str,
+        conclusion: str,
+        updated_at: str,
+    ) -> None:
+        state = _AlertResearchState(status, " ".join(conclusion.split())[:1000], updated_at)
+        for key in ((security_id, trigger, market_date), (security_id, trigger, "")):
+            previous = states.get(key)
+            if previous is None or previous.updated_at <= updated_at:
+                states[key] = state
+
     for row in read_table(repository_root, "operations_history"):
-        if row["operation_type"] != "opportunity_research" or not row["result_summary"]:
-            continue
-        path = PurePosixPath(row["payload_path"])
-        if (
-            path.is_absolute()
-            or ".." in path.parts
-            or path.parts[:3] != ("data", "operations", "payloads")
-            or path.suffix != ".json"
-        ):
-            continue
-        absolute = repository_root.joinpath(*path.parts)
-        if absolute.is_symlink() or not absolute.is_file():
-            continue
-        try:
-            payload = json.loads(absolute.read_text(encoding="utf-8"))
-        except (OSError, json.JSONDecodeError):
-            continue
-        inputs = payload.get("inputs") if isinstance(payload, dict) else None
-        if not isinstance(inputs, dict):
+        inputs = _alert_operation_inputs(repository_root, row)
+        if inputs is None:
             continue
         security_id = inputs.get("security_id")
-        trigger = inputs.get("trigger_type")
-        if isinstance(security_id, str) and isinstance(trigger, str):
-            conclusions[f"{security_id}:{trigger}"] = " ".join(row["result_summary"].split())[:500]
-    return conclusions
+        raw_triggers: object = (
+            inputs.get("trigger_types")
+            if row["operation_type"] == "security_research"
+            else [inputs.get("trigger_type")]
+        )
+        market_date = inputs.get("market_data_date") or inputs.get("period_end")
+        if (
+            not isinstance(security_id, str)
+            or not isinstance(raw_triggers, list)
+            or not isinstance(market_date, str)
+        ):
+            continue
+        conclusion = row["result_summary"] or row["terminal_reason"]
+        if not conclusion:
+            continue
+        for trigger in raw_triggers:
+            if isinstance(trigger, str) and trigger:
+                retain(
+                    security_id=security_id,
+                    trigger=trigger,
+                    market_date=market_date,
+                    status=row["terminal_status"],
+                    conclusion=conclusion,
+                    updated_at=row["completed_at"],
+                )
+    active_labels = {
+        "queued": "High-priority security research is queued.",
+        "ready": "High-priority security research is ready to run.",
+        "running": "High-priority security research is running.",
+        "waiting": "High-priority security research is waiting on its scheduling constraints.",
+        "blocked": "High-priority security research is blocked.",
+    }
+    for row in read_table(repository_root, "operations_todo"):
+        inputs = _alert_operation_inputs(repository_root, row)
+        if inputs is None or row["operation_type"] != "security_research":
+            continue
+        security_id = inputs.get("security_id")
+        raw_triggers = inputs.get("trigger_types")
+        market_date = inputs.get("market_data_date")
+        if (
+            not isinstance(security_id, str)
+            or not isinstance(raw_triggers, list)
+            or not isinstance(market_date, str)
+        ):
+            continue
+        conclusion = active_labels.get(row["status"], "Security research is pending.")
+        if row["status"] == "blocked" and row["last_error"]:
+            conclusion = f"{conclusion} {row['last_error']}"
+        for trigger in raw_triggers:
+            if isinstance(trigger, str) and trigger:
+                retain(
+                    security_id=security_id,
+                    trigger=trigger,
+                    market_date=market_date,
+                    status=row["status"],
+                    conclusion=conclusion,
+                    updated_at=row["updated_at"],
+                )
+    return states
 
 
-def _research_alerts(
-    repository_root: Path, securities: Mapping[str, Mapping[str, str]]
-) -> tuple[ResearchAlertView, ...]:
-    conclusions = _operation_conclusions(repository_root)
-    alerts: list[ResearchAlertView] = []
-    seen: set[tuple[str, str, str]] = set()
+def _candidate_packets(
+    repository_root: Path,
+) -> Mapping[tuple[str, str], tuple[str, Mapping[str, object], Path]]:
+    packets: dict[tuple[str, str], tuple[str, Mapping[str, object], Path]] = {}
     for path in sorted((repository_root / "data" / "wiki" / "inbox").glob("*.md")):
         document = _packet_document(path)
         facts = document.get("candidate_facts")
@@ -1776,52 +1863,78 @@ def _research_alerts(
             isinstance(value, str) and value for value in (security_id, trigger, market_date)
         ):
             continue
-        security = securities.get(str(security_id))
+        key = (str(security_id), str(trigger))
+        previous = packets.get(key)
+        if previous is None or previous[0] <= str(market_date):
+            packets[key] = (str(market_date), document, path)
+    return packets
+
+
+def _research_alerts(
+    repository_root: Path, securities: Mapping[str, Mapping[str, str]]
+) -> tuple[ResearchAlertView, ...]:
+    conclusions = _operation_conclusions(repository_root)
+    packets = _candidate_packets(repository_root)
+    alerts: list[ResearchAlertView] = []
+    seen: set[tuple[str, str]] = set()
+    latest_dates = {
+        row["security_id"]: row["as_of_date"] for row in read_table(repository_root, "indicators")
+    }
+
+    def append_alert(*, security_id: str, trigger: str, market_date: str, observed_at: str) -> None:
+        security = securities.get(security_id)
         if security is None or not security["ticker"] or not security["company_name"]:
             raise AdviceError(f"research alert lacks a public security: {security_id}")
-        key = (str(security_id), str(trigger), str(market_date))
-        seen.add(key)
+        packet = packets.get((security_id, trigger))
+        packet_date = packet[0] if packet is not None else ""
+        document = packet[1] if packet is not None else {}
+        state = (
+            conclusions.get((security_id, trigger, market_date))
+            or conclusions.get((security_id, trigger, packet_date))
+            or conclusions.get((security_id, trigger, ""))
+        )
         decision = str(document.get("classifier_decision", "pending"))
         reason = " ".join(str(document.get("classifier_reason", "")).split())
-        conclusion = conclusions.get(f"{security_id}:{trigger}", reason)
+        research_page = security["research_page"] or (
+            f"data/wiki/security-catalog.md#security-{security_id}"
+        )
         alerts.append(
             ResearchAlertView(
-                alert_id=f"packet:{path.stem}",
-                security_id=str(security_id),
+                alert_id=stable_id("alert", security_id, trigger, market_date),
+                security_id=security_id,
                 ticker=security["ticker"],
                 company_name=security["company_name"],
-                alert_type=str(trigger),
-                observed_at=f"{market_date}T00:00:00Z",
-                market_data_date=str(market_date),
-                research_status=decision,
-                research_conclusion=conclusion,
-                research_page=f"data/wiki/inbox/{path.name}",
+                alert_type=trigger,
+                observed_at=observed_at,
+                market_data_date=market_date,
+                research_status=state.status if state is not None else decision,
+                research_conclusion=(
+                    state.conclusion
+                    if state is not None
+                    else reason or "Deterministic price alert awaits bounded research review."
+                ),
+                research_page=research_page,
             )
         )
+        seen.add((security_id, trigger))
+
     for indicator in read_table(repository_root, "indicators"):
         for trigger in sorted(part for part in indicator["trigger_state"].split("|") if part):
-            key = (indicator["security_id"], trigger, indicator["as_of_date"])
-            if key in seen:
-                continue
-            security = securities.get(indicator["security_id"])
-            if security is None or not security["ticker"] or not security["company_name"]:
-                continue
-            alerts.append(
-                ResearchAlertView(
-                    alert_id=stable_id("alert", *key),
-                    security_id=indicator["security_id"],
-                    ticker=security["ticker"],
-                    company_name=security["company_name"],
-                    alert_type=trigger,
-                    observed_at=indicator["calculated_at"],
-                    market_data_date=indicator["as_of_date"],
-                    research_status="pending",
-                    research_conclusion=(
-                        "Deterministic indicator state awaits bounded research review."
-                    ),
-                    research_page=security["research_page"],
-                )
+            append_alert(
+                security_id=indicator["security_id"],
+                trigger=trigger,
+                market_date=indicator["as_of_date"],
+                observed_at=indicator["calculated_at"],
             )
+    for (security_id, trigger), (market_date, _, _) in packets.items():
+        if (security_id, trigger) in seen or latest_dates.get(security_id) != market_date:
+            continue
+        append_alert(
+            security_id=security_id,
+            trigger=trigger,
+            market_date=market_date,
+            observed_at=f"{market_date}T00:00:00Z",
+        )
     return tuple(
         sorted(
             alerts,

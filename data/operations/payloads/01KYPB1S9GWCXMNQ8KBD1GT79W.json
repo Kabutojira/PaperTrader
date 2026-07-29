@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_1e8fbdb0f45f2b413e00",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_1e8fbdb0f45f2b413e00"
+  },
+  "objective": "Research PYPL — PayPal Holdings, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB1S9GWCXMNQ8KBD1GT79W",
+  "operation_type": "security_research",
+  "payload_version": 1
+}

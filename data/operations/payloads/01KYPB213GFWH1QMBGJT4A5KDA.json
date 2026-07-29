@@ -1,0 +1,11 @@
+{
+  "entity_id": "security_55c9ce2fdcd32dad6b8c",
+  "entity_type": "security",
+  "inputs": {
+    "security_id": "security_55c9ce2fdcd32dad6b8c"
+  },
+  "objective": "Research CRSR — Corsair Gaming, Inc. as an initial bounded security review.",
+  "operation_id": "01KYPB213GFWH1QMBGJT4A5KDA",
+  "operation_type": "security_research",
+  "payload_version": 1
+}
