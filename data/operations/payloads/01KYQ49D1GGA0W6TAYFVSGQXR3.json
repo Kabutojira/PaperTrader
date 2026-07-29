@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_wcV0SRPFK9s",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_wcV0SRPFK9s",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "wcV0SRPFK9s",
+    "video_title": "The Fight Over Open Source AI, Anthropic's $1.5B Payout, NYC Socialists: Evictions = Violence?",
+    "video_url": "https://www.youtube.com/watch?v=wcV0SRPFK9s"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GGA0W6TAYFVSGQXR3",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=wcV0SRPFK9s"
+  ]
+}

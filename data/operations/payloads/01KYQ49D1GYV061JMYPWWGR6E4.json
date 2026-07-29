@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_yG-bk8QEjsA",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@ConnectingODots",
+    "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+    "channel_url": "https://www.youtube.com/channel/UCOOSDCjFzHfnGoV8iNLC65A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_yG-bk8QEjsA",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "yG-bk8QEjsA",
+    "video_title": "Tesla's Next Invention is Even Bigger Than Optimus | Engineer Explains",
+    "video_url": "https://www.youtube.com/watch?v=yG-bk8QEjsA"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GYV061JMYPWWGR6E4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=yG-bk8QEjsA"
+  ]
+}

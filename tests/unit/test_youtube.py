@@ -1,0 +1,373 @@
+from __future__ import annotations
+
+import json
+from datetime import UTC, datetime, timedelta
+from pathlib import Path
+
+import pytest
+
+from papertrader.config import Settings
+from papertrader.daily import prepare_daily_run
+from papertrader.tables import read_table, write_table
+from papertrader.youtube import (
+    CURATED_CHANNELS,
+    YouTubeFeed,
+    YouTubeScanError,
+    YouTubeVideo,
+    canonical_channel_url,
+    canonical_video_url,
+    load_youtube_channels,
+    scan_youtube,
+    youtube_dedupe_key,
+    youtube_source_id,
+)
+
+NOW = datetime(2026, 7, 29, 8, tzinfo=UTC)
+
+
+class FakeDiscovery:
+    def __init__(self, feeds: dict[str, YouTubeFeed | Exception]) -> None:
+        self.feeds = feeds
+        self.calls: list[tuple[str, int]] = []
+
+    def channel_feed(
+        self,
+        handle: str,
+        *,
+        limit: int,
+        minimum_regular: int = 0,
+        stop_at_video_id: str = "",
+    ) -> YouTubeFeed:
+        self.calls.append((handle, limit))
+        value = self.feeds[handle]
+        if isinstance(value, Exception):
+            raise value
+        entries: list[YouTubeVideo] = []
+        regular_count = 0
+        for entry in value.entries[:limit]:
+            entries.append(entry)
+            regular_count += entry.kind == "regular"
+            if stop_at_video_id and entry.video_id == stop_at_video_id:
+                break
+            if minimum_regular and regular_count >= minimum_regular:
+                break
+        return YouTubeFeed(value.channel_id, tuple(entries))
+
+
+def _video(index: int, *, kind: str = "regular") -> YouTubeVideo:
+    return YouTubeVideo(f"{index:011d}", f"Video {index}", kind)
+
+
+def _seed_channels(repository: Path, *, cursor: str = "") -> None:
+    write_table(
+        repository,
+        "youtube_channels",
+        [
+            {
+                "channel_id": channel_id,
+                "handle": handle,
+                "status": "active",
+                "video_scope": "regular",
+                "transcript_languages": "en|en-US|en-GB",
+                "prefer_human": "true",
+                "last_seen_video_id": cursor,
+            }
+            for handle, channel_id in sorted(CURATED_CHANNELS.items(), key=lambda item: item[1])
+        ],
+    )
+
+
+def _feeds(*, videos_per_channel: int = 7) -> dict[str, YouTubeFeed]:
+    feeds: dict[str, YouTubeFeed] = {}
+    for channel_index, (handle, channel_id) in enumerate(sorted(CURATED_CHANNELS.items()), start=1):
+        start = channel_index * 100
+        feeds[handle] = YouTubeFeed(
+            channel_id,
+            tuple(_video(start + index) for index in range(videos_per_channel)),
+        )
+    return feeds
+
+
+def test_canonical_youtube_identities_and_channel_table_validation(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+
+    channels = load_youtube_channels(sandbox_repository, sandbox_settings)
+
+    assert len(channels) == 6
+    assert canonical_video_url("abcdefghijk") == ("https://www.youtube.com/watch?v=abcdefghijk")
+    assert youtube_source_id("abcdefghijk") == "youtube_abcdefghijk"
+    assert canonical_channel_url(channels[0].channel_id).endswith("/videos")
+    assert youtube_dedupe_key(channels[0].channel_id, "abcdefghijk").endswith(":abcdefghijk:v1")
+
+    rows = read_table(sandbox_repository, "youtube_channels")
+    rows[0]["video_scope"] = "all"
+    write_table(sandbox_repository, "youtube_channels", rows)
+    with pytest.raises(YouTubeScanError, match="regular-video scope"):
+        load_youtube_channels(sandbox_repository, sandbox_settings)
+
+
+def test_bootstrap_queues_exactly_five_regular_videos_per_channel_and_is_idempotent(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds()
+
+    first = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-bootstrap",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+
+    assert first["status"] == "succeeded"
+    assert first["operation_count"] == 30
+    operations = read_table(sandbox_repository, "operations_todo")
+    assert len(operations) == 30
+    assert {row["priority"] for row in operations} == {"60"}
+    assert len({row["dedupe_key"] for row in operations}) == 30
+    assert all(row["dedupe_key"].endswith(":v1") for row in operations)
+    payloads = [
+        json.loads((sandbox_repository / row["payload_path"]).read_text(encoding="utf-8"))
+        for row in operations
+    ]
+    assert {payload["inputs"]["discovery_mode"] for payload in payloads} == {"bootstrap"}
+    assert all(payload["inputs"]["source_kind"] == "youtube_video" for payload in payloads)
+    assert all(len(outcome["discovered_video_ids"]) == 5 for outcome in first["channels"])
+
+    table_before = read_table(sandbox_repository, "youtube_channels")
+    second = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-identical",
+        client=FakeDiscovery(feeds),
+        now=NOW + timedelta(days=1),
+    )
+
+    assert second["operation_count"] == 0
+    assert read_table(sandbox_repository, "operations_todo") == operations
+    assert read_table(sandbox_repository, "youtube_channels") == table_before
+
+
+def test_scan_excludes_shorts_and_livestream_replays(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds(videos_per_channel=0)
+    for index, (handle, channel_id) in enumerate(sorted(CURATED_CHANNELS.items()), start=1):
+        feeds[handle] = YouTubeFeed(
+            channel_id,
+            (
+                _video(index * 100 + 1, kind="short"),
+                _video(index * 100 + 2, kind="livestream"),
+                *tuple(_video(index * 100 + value) for value in range(3, 8)),
+            ),
+        )
+
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-regular-only",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+
+    assert result["operation_count"] == 30
+    discovered = {
+        video_id for outcome in result["channels"] for video_id in outcome["discovered_video_ids"]
+    }
+    assert not any(video_id.endswith("01") or video_id.endswith("02") for video_id in discovered)
+
+
+def test_bootstrap_fails_one_channel_instead_of_silently_seeding_fewer_than_five(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds(videos_per_channel=5)
+    failed_handle = sorted(CURATED_CHANNELS)[0]
+    failed_feed = feeds[failed_handle]
+    feeds[failed_handle] = YouTubeFeed(failed_feed.channel_id, failed_feed.entries[:4])
+
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-short-bootstrap",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+
+    assert result["status"] == "degraded"
+    assert result["operation_count"] == 25
+    failed = next(row for row in result["channels"] if row["handle"] == failed_handle)
+    assert failed["reason"] == "insufficient_regular_videos_for_bootstrap:4/5"
+    assert failed["next_cursor"] == ""
+
+
+def test_incremental_scan_uses_cursor_and_discovery_priority(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds()
+    scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-seed",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+    target_handle = sorted(CURATED_CHANNELS)[0]
+    old_feed = feeds[target_handle]
+    feeds[target_handle] = YouTubeFeed(
+        old_feed.channel_id,
+        (_video(999_999), _video(999_998), *old_feed.entries),
+    )
+
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-incremental",
+        client=FakeDiscovery(feeds),
+        now=NOW + timedelta(days=1),
+    )
+
+    assert result["operation_count"] == 2
+    incremental = [
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["source"] == "youtube_scan:youtube-incremental"
+    ]
+    assert len(incremental) == 2
+    assert {row["priority"] for row in incremental} == {"65"}
+
+
+def test_cursor_not_found_fails_one_channel_without_advancing_or_stopping_others(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository, cursor="99999999999")
+    feeds = _feeds(videos_per_channel=50)
+    failing_handle = sorted(CURATED_CHANNELS)[0]
+    # The other channels include their cursor after one new regular video.
+    for offset, (handle, feed) in enumerate(tuple(feeds.items()), start=1):
+        if handle != failing_handle:
+            feeds[handle] = YouTubeFeed(
+                feed.channel_id,
+                (_video(888_000 + offset), _video(99_999_999_999)),
+            )
+
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-cursor-missing",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+
+    assert result["status"] == "degraded"
+    assert result["failure_count"] == 1
+    assert result["operation_count"] == 5
+    failed = next(row for row in result["channels"] if row["status"] == "failed")
+    assert failed["handle"] == failing_handle
+    assert "cursor_not_found_within_scan_bound:50" in failed["reason"]
+    assert failed["previous_cursor"] == failed["next_cursor"] == "99999999999"
+    assert (
+        len([row for row in read_table(sandbox_repository, "issues") if row["status"] == "open"])
+        == 1
+    )
+
+
+def test_channel_failure_degrades_the_daily_run_without_duplicate_issue(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds: dict[str, YouTubeFeed | Exception] = _feeds(videos_per_channel=5)
+    failed_handle = sorted(CURATED_CHANNELS)[0]
+    feeds[failed_handle] = RuntimeError("remote channel unavailable")
+    scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-daily-degraded",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+
+    preparation = prepare_daily_run(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-daily-degraded",
+        trigger="unit",
+        source_sha="a" * 40,
+        now=NOW,
+        retrieve_market=False,
+        classify_opportunities=False,
+    )
+
+    assert len(preparation.errors) == 1
+    assert preparation.errors[0].startswith("youtube scan failed for ")
+    assert len(read_table(sandbox_repository, "issues")) == 1
+
+
+def test_dry_run_validates_configuration_without_network_or_state_changes(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    client = FakeDiscovery({})
+    before = read_table(sandbox_repository, "youtube_channels")
+
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-dry-run",
+        dry_run=True,
+        client=client,
+        now=NOW,
+    )
+
+    assert result["status"] == "dry_run"
+    assert client.calls == []
+    assert read_table(sandbox_repository, "youtube_channels") == before
+    assert read_table(sandbox_repository, "operations_todo") == []
+
+
+def test_registered_source_deduplicates_by_immutable_video_id(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds(videos_per_channel=5)
+    first_handle = sorted(CURATED_CHANNELS)[0]
+    video_id = feeds[first_handle].entries[0].video_id
+    video_url = canonical_video_url(video_id)
+    write_table(
+        sandbox_repository,
+        "source_registry",
+        [
+            {
+                "source_id": youtube_source_id(video_id),
+                "url": video_url,
+                "canonical_url": video_url,
+                "source_type": "youtube_video",
+                "title": "Already reviewed",
+                "publisher": first_handle,
+                "license": "copyrighted-transcript-not-stored",
+                "status": "available",
+                "content_hash": "a" * 64,
+                "first_seen_at": "2026-07-28T08:00:00Z",
+                "last_checked_at": "2026-07-28T08:00:00Z",
+                "last_changed_at": "2026-07-28T08:00:00Z",
+                "related_entity_ids": "",
+            }
+        ],
+    )
+
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-source-dedupe",
+        client=FakeDiscovery(feeds),
+        now=NOW,
+    )
+
+    assert result["operation_count"] == 29
+    outcome = next(row for row in result["channels"] if row["handle"] == first_handle)
+    assert outcome["duplicate_video_ids"] == [video_id]

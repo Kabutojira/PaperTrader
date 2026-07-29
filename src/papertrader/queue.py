@@ -323,6 +323,37 @@ def validate_operation_payload(repository_root: Path, operation: Operation) -> N
     mismatches = [key for key, value in expected.items() if payload.get(key) != value]
     if mismatches:
         raise QueueError(f"payload {relative} mismatches queue fields: {mismatches}")
+    inputs = payload.get("inputs")
+    if (
+        operation.operation_type == "wiki_ingest"
+        and isinstance(inputs, dict)
+        and inputs.get("source_kind") == "youtube_video"
+    ):
+        video_id = inputs.get("video_id")
+        channel_id = inputs.get("channel_id")
+        source_id = inputs.get("source_id")
+        if not all(isinstance(value, str) for value in (video_id, channel_id, source_id)):
+            raise QueueError(f"payload {relative} has malformed YouTube identities")
+        assert isinstance(video_id, str)
+        assert isinstance(channel_id, str)
+        assert isinstance(source_id, str)
+        canonical_url = f"https://www.youtube.com/watch?v={video_id}"
+        expected_dedupe = f"wiki_ingest:youtube:{channel_id}:{video_id}:v1"
+        youtube_mismatches = []
+        if source_id != f"youtube_{video_id}" or operation.entity_id != source_id:
+            youtube_mismatches.append("source_id")
+        if inputs.get("video_url") != canonical_url:
+            youtube_mismatches.append("video_url")
+        if inputs.get("channel_url") != (f"https://www.youtube.com/channel/{channel_id}/videos"):
+            youtube_mismatches.append("channel_url")
+        if operation.dedupe_key != expected_dedupe:
+            youtube_mismatches.append("dedupe_key")
+        if payload.get("source_refs") != [canonical_url]:
+            youtube_mismatches.append("source_refs")
+        if youtube_mismatches:
+            raise QueueError(
+                f"payload {relative} mismatches YouTube identities: {youtube_mismatches}"
+            )
 
 
 @contextmanager

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_pVaKoDHW9iY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_pVaKoDHW9iY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "pVaKoDHW9iY",
+    "video_title": "4 Undervalued Stocks to Load Up on Before Earnings",
+    "video_url": "https://www.youtube.com/watch?v=pVaKoDHW9iY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GHSHA6ZVKD6N2VFBG",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=pVaKoDHW9iY"
+  ]
+}

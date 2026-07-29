@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
@@ -48,6 +49,13 @@ class AgentValidation:
     @property
     def passed(self) -> bool:
         return not self.errors and self.result is not None
+
+
+def agent_terminal_reason(result: Mapping[str, object], status: str) -> str:
+    """Return an explicit machine reason when the schema-valid result supplies one."""
+
+    reason_code = result.get("reason_code")
+    return str(reason_code) if isinstance(reason_code, str) else f"agent_result:{status}"
 
 
 def result_relative_path(run_id: str, operation_id: str) -> str:
@@ -121,7 +129,13 @@ def _is_operation_artifact(path: PurePosixPath, run_id: str, operation_id: str) 
     )
 
 
-def _path_allowed_for_operation(operation_type: str, raw_path: str, *, created: bool) -> bool:
+def _path_allowed_for_operation(
+    operation_type: str,
+    raw_path: str,
+    *,
+    created: bool,
+    youtube_video: bool = False,
+) -> bool:
     path = PurePosixPath(raw_path)
     if raw_path in COMMON_STRUCTURED_PATHS or _is_followup_path(path):
         return True
@@ -133,8 +147,11 @@ def _path_allowed_for_operation(operation_type: str, raw_path: str, *, created: 
             PurePosixPath("data/tables/source_history.csv"),
         }:
             return True
+        if youtube_video and path == PurePosixPath("data/tables/securities.csv"):
+            return True
         return (
-            created
+            not youtube_video
+            and created
             and len(path.parts) >= 4
             and path.parts[:3] == ("data", "wiki", "raw")
             and path.suffix in RAW_EXTENSIONS
@@ -181,7 +198,12 @@ def _command_parts(entry: Mapping[str, object]) -> tuple[str, ...]:
     return parts
 
 
-def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
+def _command_allowed(
+    operation_type: str,
+    entry: Mapping[str, object],
+    *,
+    youtube_video: bool = False,
+) -> bool:
     parts = _command_parts(entry)
     if len(parts) < 2:
         return False
@@ -203,7 +225,9 @@ def _command_allowed(operation_type: str, entry: Mapping[str, object]) -> bool:
     if command[:2] in {("issue", "record"), ("queue", "enqueue")}:
         return True
     if command[:2] == ("watchlist", "import"):
-        return operation_type == "idea_research"
+        return operation_type == "idea_research" or (
+            operation_type == "wiki_ingest" and youtube_video
+        )
     if command[:3] == ("research", "source", "record"):
         return operation_type in {"wiki_ingest", "security_research"}
     if command[:3] == ("research", "security", "upsert"):
@@ -345,6 +369,8 @@ def _validate_commands(
     changed_paths: Sequence[str],
     before_snapshot: RepositorySnapshot,
     after_snapshot: RepositorySnapshot,
+    *,
+    youtube_video: bool = False,
 ) -> list[str]:
     entries, errors = _load_command_audit(repository_root, run_id, operation.operation_id)
     audited_commands = tuple(
@@ -354,7 +380,7 @@ def _validate_commands(
     if reported != audited_commands:
         errors.append("commands_run does not exactly match deterministic CLI audit receipts")
     for index, entry in enumerate(entries):
-        if not _command_allowed(operation.operation_type, entry):
+        if not _command_allowed(operation.operation_type, entry, youtube_video=youtube_video):
             errors.append(f"command audit entry {index} is outside the operation skill scope")
         request = entry.get("request")
         if request is None:
@@ -655,6 +681,124 @@ def _idea_security_followup_errors(
     return errors
 
 
+def _youtube_wiki_ingest_errors(
+    repository_root: Path,
+    *,
+    run_id: str,
+    operation: Operation,
+    status: object,
+    result: Mapping[str, object],
+    changed_paths: Sequence[str],
+    created_operation_ids: set[str],
+    operation_rows_after: Mapping[str, Mapping[str, str]],
+    followup_priority: int,
+) -> list[str]:
+    """Enforce the stronger no-analysis-without-corroboration YouTube boundary."""
+
+    inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    if operation.operation_type != "wiki_ingest" or inputs.get("source_kind") != "youtube_video":
+        return []
+    errors: list[str] = []
+    video_id = inputs.get("video_id")
+    source_id = inputs.get("source_id")
+    video_url = inputs.get("video_url")
+    channel_handle = inputs.get("channel_handle")
+    if (
+        not isinstance(video_id, str)
+        or source_id != f"youtube_{video_id}"
+        or operation.entity_id != source_id
+    ):
+        errors.append("YouTube wiki ingest payload/source identity mismatch")
+    if status == "skipped":
+        if result.get("reason_code") != "youtube_transcript_unavailable":
+            errors.append(
+                "skipped YouTube wiki ingest requires reason_code youtube_transcript_unavailable"
+            )
+        if changed_paths:
+            errors.append("transcript-unavailable YouTube ingest must not mutate repository state")
+        if created_operation_ids:
+            errors.append("transcript-unavailable YouTube ingest must not enqueue follow-ups")
+        return errors
+    if status != "succeeded":
+        return errors
+    if "reason_code" in result:
+        errors.append("successful YouTube wiki ingest must not report a terminal reason_code")
+    analysis_path = f"data/runs/{run_id}/{operation.operation_id}/youtube_analysis.md"
+    if analysis_path not in changed_paths:
+        errors.append("successful YouTube wiki ingest requires youtube_analysis.md")
+    registry = {row["source_id"]: row for row in read_table(repository_root, "source_registry")}
+    source = registry.get(str(source_id))
+    if source is None:
+        errors.append("successful YouTube wiki ingest requires a registered source")
+        transcript_digest = ""
+    else:
+        transcript_digest = source["content_hash"]
+        if (
+            source["source_type"] != "youtube_video"
+            or source["url"] != video_url
+            or source["canonical_url"] != video_url
+            or source["publisher"] != channel_handle
+            or not re.fullmatch(r"[a-f0-9]{64}", transcript_digest)
+        ):
+            errors.append("registered YouTube source metadata or transcript hash is invalid")
+        matching_history = [
+            row
+            for row in read_table(repository_root, "source_history")
+            if row["source_id"] == source_id
+            and row["run_id"] == run_id
+            and row["content_hash"] == transcript_digest
+        ]
+        if len(matching_history) != 1:
+            errors.append("YouTube source requires exactly one matching source-history record")
+    analysis = repository_root / analysis_path
+    if analysis.is_file() and not analysis.is_symlink():
+        text = analysis.read_text(encoding="utf-8")
+        for required in (str(video_id), str(video_url), transcript_digest):
+            if required and required not in text:
+                errors.append(
+                    "youtube_analysis.md must identify the video URL, ID, and transcript hash"
+                )
+                break
+
+    for operation_id in sorted(created_operation_ids):
+        row = operation_rows_after.get(operation_id)
+        if row is None:
+            continue
+        if row["operation_type"] not in {"idea_research", "security_research"}:
+            errors.append(f"YouTube ingest may enqueue only idea/security research: {operation_id}")
+        if row["priority"] != str(followup_priority):
+            errors.append(
+                f"YouTube follow-up must use priority {followup_priority}: {operation_id}"
+            )
+        if operation.operation_id not in row["depends_on"].split("|"):
+            errors.append(f"YouTube follow-up must depend on its ingest operation: {operation_id}")
+
+    imported_security_ids = {
+        row["security_id"]
+        for row in read_table(repository_root, "securities")
+        if row["source"] == video_url
+    }
+    for security_id in sorted(imported_security_ids):
+        matches = []
+        for operation_id in created_operation_ids:
+            row = operation_rows_after.get(operation_id)
+            if (
+                row is None
+                or row["operation_type"] != "security_research"
+                or row["entity_id"] != security_id
+            ):
+                continue
+            followup_inputs = _payload_inputs(repository_root, row)
+            if followup_inputs is not None and followup_inputs.get("security_id") == security_id:
+                matches.append(operation_id)
+        if len(matches) != 1:
+            errors.append(
+                "YouTube-imported security requires exactly one security_research follow-up: "
+                f"{security_id}"
+            )
+    return errors
+
+
 def validate_agent_result(
     repository_root: Path,
     *,
@@ -678,6 +822,11 @@ def validate_agent_result(
         f"data/runs/{run_id}/{operation.operation_id}/hermes_run.json",
     }
     changed_paths = tuple(path for path in delta.changed if path not in internal_paths)
+    source_inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    youtube_video = (
+        operation.operation_type == "wiki_ingest"
+        and source_inputs.get("source_kind") == "youtube_video"
+    )
     created = set(delta.created)
     reserved = {
         f"data/runs/{run_id}/{operation.operation_id}/controller_prompt.md",
@@ -701,7 +850,10 @@ def validate_agent_result(
         if not _is_operation_artifact(
             relative, run_id, operation.operation_id
         ) and not _path_allowed_for_operation(
-            operation.operation_type, path, created=path in created
+            operation.operation_type,
+            path,
+            created=path in created,
+            youtube_video=youtube_video,
         ):
             errors.append(f"path is outside {operation.operation_type} scope: {path}")
     if result is None:
@@ -790,6 +942,24 @@ def validate_agent_result(
             operation_rows_after=operation_rows_after,
         )
     )
+    try:
+        followup_priority = load_settings(repository_root, environment).youtube.followup_priority
+    except ConfigurationError as exc:
+        errors.append(f"cannot validate YouTube follow-up priority: {exc}")
+        followup_priority = 66
+    errors.extend(
+        _youtube_wiki_ingest_errors(
+            repository_root,
+            run_id=run_id,
+            operation=operation,
+            status=status,
+            result=result,
+            changed_paths=changed_paths,
+            created_operation_ids=created_operations,
+            operation_rows_after=operation_rows_after,
+            followup_priority=followup_priority,
+        )
+    )
     altered_existing_operations = sorted(
         operation_id
         for operation_id, row in operation_rows_before.items()
@@ -820,6 +990,7 @@ def validate_agent_result(
             changed_paths,
             before_snapshot,
             after_snapshot,
+            youtube_video=youtube_video,
         )
     )
     errors.extend(
@@ -849,6 +1020,7 @@ def validate_agent_result(
 __all__ = [
     "AgentResultError",
     "AgentValidation",
+    "agent_terminal_reason",
     "result_relative_path",
     "validate_agent_result",
 ]

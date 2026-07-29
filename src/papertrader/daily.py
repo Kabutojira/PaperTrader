@@ -61,6 +61,7 @@ from papertrader.utils import (
     required_decimal,
     utc_now,
 )
+from papertrader.youtube import youtube_scan_failures
 
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 SOURCE_SHA = re.compile(r"^[0-9a-f]{40}$")
@@ -239,6 +240,9 @@ def prepare_daily_run(
             error=error,
             now=instant,
         )
+    # The scanner already records one stable issue per failed channel. Carry those failures into
+    # the run status without creating duplicate daily-phase issues.
+    errors.extend(youtube_scan_failures(repository_root, run_id))
     queue_dispositions = (
         *release_dispositions,
         *maintenance_dispositions,

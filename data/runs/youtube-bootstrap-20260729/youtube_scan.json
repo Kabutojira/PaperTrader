@@ -1,0 +1,162 @@
+{
+  "channels": [
+    {
+      "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+      "discovered_video_ids": [
+        "TqNiSTeNtb0",
+        "wcV0SRPFK9s",
+        "OY2Sjbjd_VE",
+        "9IMwRIei-Xc",
+        "-ILKiOU5iAQ"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@allin",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "TqNiSTeNtb0",
+      "operation_ids": [
+        "01KYQ49D1GWY55GJNJNBQRCJ74",
+        "01KYQ49D1GGA0W6TAYFVSGQXR3",
+        "01KYQ49D1GS4CXMK0S510Y67TM",
+        "01KYQ49D1GJ32KP17XS3Z8DJ00",
+        "01KYQ49D1GETPHJ2B8PYVG9FE0"
+      ],
+      "previous_cursor": "",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+      "discovered_video_ids": [
+        "SuSYegb8iK0",
+        "h7XVJ64IhY4",
+        "pVwvxybnwdg",
+        "TyMn7wknYTU",
+        "oyjpF7xPiC4"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@thelimitingfactor",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "SuSYegb8iK0",
+      "operation_ids": [
+        "01KYQ49D1GRCPWM612C0NAM0Z1",
+        "01KYQ49D1G6RHZ9VJYDV5NKPTT",
+        "01KYQ49D1GWWHW1JFKE6VSSHB7",
+        "01KYQ49D1GNQZG7ZW58JW442R5",
+        "01KYQ49D1GF9JD930JH9N49P07"
+      ],
+      "previous_cursor": "",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+      "discovered_video_ids": [
+        "Ejsft2oPCtM",
+        "k77X47h6OVU",
+        "yUq0O-pDHCE",
+        "9ePWIYadju4",
+        "yG-bk8QEjsA"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@ConnectingODots",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "Ejsft2oPCtM",
+      "operation_ids": [
+        "01KYQ49D1GGG62YPWBRNTM1WFD",
+        "01KYQ49D1GB9057VRBFHJ9Y1NX",
+        "01KYQ49D1GAXYP4Y8RR9C5G3KN",
+        "01KYQ49D1G2RNAXKS9RP0MY1R9",
+        "01KYQ49D1GYV061JMYPWWGR6E4"
+      ],
+      "previous_cursor": "",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCS01CiRDAiyhR_mTHXDW23A",
+      "discovered_video_ids": [
+        "u-AXyF9kY9k",
+        "AK_aWcM-VAY",
+        "t3RTJJ6KM_I",
+        "6006vpLlaVw",
+        "-lUsDKvZJu0"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@DumbMoneyLive",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "u-AXyF9kY9k",
+      "operation_ids": [
+        "01KYQ49D1GFY1PFRCMBZ41Q88C",
+        "01KYQ49D1GNN84QQ53F97HDY1P",
+        "01KYQ49D1GZK4Z8RANH5XP9TC0",
+        "01KYQ49D1G3QX14JS5VBH76HN0",
+        "01KYQ49D1GXYX0SF93BMTNHYM8"
+      ],
+      "previous_cursor": "",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+      "discovered_video_ids": [
+        "65IABPxBJ9M",
+        "OcXcgIlJGRw",
+        "a0l7VDnN1bg",
+        "3c9iLgtDdKM",
+        "pVaKoDHW9iY"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@CouchInvestor",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "65IABPxBJ9M",
+      "operation_ids": [
+        "01KYQ49D1GKPX5A7WGCV9GPG8X",
+        "01KYQ49D1GX6X7ACXB1A6KFTR4",
+        "01KYQ49D1GNF94BPJNDE0ZFWSK",
+        "01KYQ49D1GD05JQFX2ZE5MTRWZ",
+        "01KYQ49D1GHSHA6ZVKD6N2VFBG"
+      ],
+      "previous_cursor": "",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+      "discovered_video_ids": [
+        "4JmCb5FmTA4",
+        "yAtpMMC3aiw",
+        "Cbbmj0dqP-M",
+        "e2C_hgXiyzM",
+        "J2ZqFVpMb5M"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@Value-Investing",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "4JmCb5FmTA4",
+      "operation_ids": [
+        "01KYQ49D1G889B5DYTST65N0EW",
+        "01KYQ49D1GCWM22YHNBNMM75XE",
+        "01KYQ49D1GENTSWY2QD1D1RREE",
+        "01KYQ49D1G663ZCTKEG5CJHK7B",
+        "01KYQ49D1G3CHJ4YE6BKXP9RX9"
+      ],
+      "previous_cursor": "",
+      "reason": "",
+      "status": "succeeded"
+    }
+  ],
+  "discovered_at": "2026-07-29T14:26:06Z",
+  "failure_count": 0,
+  "operation_count": 30,
+  "run_id": "youtube-bootstrap-20260729",
+  "scan_bound": 50,
+  "seed_count": 5,
+  "status": "succeeded",
+  "youtube_scan_version": 1
+}

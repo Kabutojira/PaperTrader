@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_e2C_hgXiyzM",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_e2C_hgXiyzM",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "e2C_hgXiyzM",
+    "video_title": "Jeremy Grantham vs. Joseph Carlson & CNBC Discussing Crash & Investing! My Take! AMAZING CONTENT!",
+    "video_url": "https://www.youtube.com/watch?v=e2C_hgXiyzM"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1G663ZCTKEG5CJHK7B",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=e2C_hgXiyzM"
+  ]
+}

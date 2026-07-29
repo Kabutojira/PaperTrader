@@ -1,0 +1,12 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-29T14:29:56Z",
+  "estimated_cost_per_operation": "1",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 0,
+  "operation_count": 0,
+  "outcomes": [],
+  "run_id": "youtube-bootstrap-20260729",
+  "started_at": "2026-07-29T14:29:56Z"
+}

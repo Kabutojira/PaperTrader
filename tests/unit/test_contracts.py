@@ -23,7 +23,7 @@ def _schema_validator(repository_root: Path, name: str):  # type: ignore[no-unty
 def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> None:
     contracts = load_csv_contracts(repository_root)
 
-    assert len(contracts) == 26
+    assert len(contracts) == 27
     assert validate_csv_files(repository_root) == []
     assert {contract.name for contract in contracts} == {
         "allocation_history",
@@ -50,6 +50,7 @@ def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> N
         "signals",
         "source_history",
         "source_registry",
+        "youtube_channels",
         "strategies",
         "strategy_legs",
     }
@@ -112,6 +113,47 @@ def test_operation_payload_requires_type_specific_input(repository_root: Path) -
     assert list(validator.iter_errors(payload)) == []
     payload["inputs"] = {}
     assert list(validator.iter_errors(payload))
+
+
+def test_operation_payload_accepts_closed_youtube_variant_and_local_compatibility(
+    repository_root: Path,
+) -> None:
+    validator = _schema_validator(repository_root, "operation_payload.schema.json")
+    base = {
+        "payload_version": 1,
+        "operation_id": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        "operation_type": "wiki_ingest",
+        "entity_type": "source",
+        "entity_id": "youtube_abcdefghijk",
+        "objective": "Analyze one curated transcript.",
+        "source_refs": ["https://www.youtube.com/watch?v=abcdefghijk"],
+        "inputs": {
+            "source_kind": "youtube_video",
+            "source_id": "youtube_abcdefghijk",
+            "video_id": "abcdefghijk",
+            "video_title": "Example",
+            "video_url": "https://www.youtube.com/watch?v=abcdefghijk",
+            "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+            "channel_handle": "@allin",
+            "channel_url": ("https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos"),
+            "discovered_at": "2026-07-29T08:00:00Z",
+            "transcript_languages": ["en", "en-US", "en-GB"],
+            "prefer_human": True,
+            "discovery_mode": "bootstrap",
+        },
+    }
+
+    assert list(validator.iter_errors(base)) == []
+    base["inputs"]["unexpected"] = "forbidden"
+    assert list(validator.iter_errors(base))
+
+    local = {
+        **base,
+        "entity_id": "source_local",
+        "source_refs": [],
+        "inputs": {"source_path": "data/wiki/inbox/example.md", "source_hash": "a" * 64},
+    }
+    assert list(validator.iter_errors(local)) == []
 
 
 def test_operation_payload_normalizes_baseline_increase_to_open_lifecycle_action(

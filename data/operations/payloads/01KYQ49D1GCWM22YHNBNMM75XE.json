@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_yAtpMMC3aiw",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_yAtpMMC3aiw",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "yAtpMMC3aiw",
+    "video_title": "Capex, D&A, $707 Billion in Commitments Make Google a Very RISKY Stock to Buy!",
+    "video_url": "https://www.youtube.com/watch?v=yAtpMMC3aiw"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GCWM22YHNBNMM75XE",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=yAtpMMC3aiw"
+  ]
+}

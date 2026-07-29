@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_-ILKiOU5iAQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_-ILKiOU5iAQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "-ILKiOU5iAQ",
+    "video_title": "Former Intel CEO on What Went Wrong, What's Next + Lovable CEO on the Real Promise of Vibe Coding",
+    "video_url": "https://www.youtube.com/watch?v=-ILKiOU5iAQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GETPHJ2B8PYVG9FE0",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=-ILKiOU5iAQ"
+  ]
+}

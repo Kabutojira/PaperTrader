@@ -1,0 +1,31 @@
+name: Scan curated YouTube sources
+description: Validate and scan the secret-free curated Videos tabs before agent credentials exist
+inputs:
+  run_id:
+    description: Immutable PaperTrader run identity
+    required: true
+  enabled:
+    description: Whether this caller enables curated discovery
+    required: true
+  dry_run:
+    description: Validate configuration without making network requests
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: Run bounded YouTube discovery
+      shell: bash
+      env:
+        PAPERTRADER_YOUTUBE_DRY_RUN: ${{ inputs.dry_run }}
+        PAPERTRADER_YOUTUBE_ENABLED: ${{ inputs.enabled }}
+        PAPERTRADER_YOUTUBE_RUN_ID: ${{ inputs.run_id }}
+      run: |
+        set -euo pipefail
+        if [ "$PAPERTRADER_YOUTUBE_ENABLED" != "true" ]; then
+          exit 0
+        fi
+        arguments=(youtube scan --run-id "$PAPERTRADER_YOUTUBE_RUN_ID")
+        if [ "$PAPERTRADER_YOUTUBE_DRY_RUN" = "true" ]; then
+          arguments+=(--dry-run)
+        fi
+        uv run papertrader "${arguments[@]}"

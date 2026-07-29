@@ -410,6 +410,16 @@ contracts:
       - excerpt
       - summary
       - run_id
+  youtube_channels:
+    path: data/tables/youtube_channels.csv
+    columns:
+      - channel_id
+      - handle
+      - status
+      - video_scope
+      - transcript_languages
+      - prefer_human
+      - last_seen_video_id
   issues:
     path: data/tables/issues.csv
     columns:

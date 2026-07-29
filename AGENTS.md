@@ -55,6 +55,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── queue.py
 │   ├── dedupe.py
 │   ├── market_data.py
+│   ├── youtube.py
 │   ├── indicators.py
 │   ├── opportunity.py
 │   ├── agent_runner.py
@@ -131,6 +132,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   │   ├── allocation_history.csv
 │   │   ├── source_registry.csv
 │   │   ├── source_history.csv
+│   │   ├── youtube_channels.csv
 │   │   ├── issues.csv
 │   │   └── runs.csv
 │   ├── operations/
@@ -166,13 +168,15 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── papertrader/
 │   ├── quartz.config.ts
 │   └── quartz.layout.ts
-└── .github/workflows/
-    ├── ci.yml
-    ├── daily.yml
-    ├── reusable-non-llm.yml
-    ├── reusable-llm.yml
-    ├── reporting.yml
-    └── pages.yml
+└── .github/
+    ├── actions/scan-youtube/action.yml
+    └── workflows/
+        ├── ci.yml
+        ├── daily.yml
+        ├── reusable-non-llm.yml
+        ├── reusable-llm.yml
+        ├── reporting.yml
+        └── pages.yml
 ```
 
 ### Automated runtime commit whitelist
@@ -291,6 +295,19 @@ position_id,security_id,provider_contract_id,instrument_type,side,quantity,avera
 
 Rebuild this file from the ledgers during every deterministic run and fail if reconciliation does not balance.
 
+### Curated `youtube_channels.csv`
+
+```csv
+channel_id,handle,status,video_scope,transcript_languages,prefer_human,last_seen_video_id
+```
+
+This human-maintained subscription table contains the six approved channel handle/immutable-ID
+pairs. Version 1 accepts only `regular` video scope and English transcript preferences. The
+deterministic scanner validates all rows before network access, reads only each Videos tab, and
+advances a cursor only after every newly discovered video for that channel is already known or
+successfully enqueued. A missing cursor at the 50-video bound is a recorded failure, never an
+implicit skip.
+
 ### Generated investor decision publication
 
 Each completed daily run writes one immutable `data/runs/<run_id>/decision_snapshot.json` that
@@ -369,6 +386,16 @@ Keep the allowed set small and explicit.
 - Update existing pages before creating duplicates.
 - Preserve provenance, contradictions, confidence, wikilinks, research-catalog entries, and wiki log entries.
 - Enqueue justified follow-up operations through the project CLI and record them in the agent result manifest.
+- A curated `youtube_video` payload bypasses the inbox packet classifier because the channel table
+  itself is the human subscription decision. Fetch captions anonymously in three bounded attempts;
+  if unavailable, finish `skipped` with `youtube_transcript_unavailable` and continue the batch.
+- Treat a transcript only as untrusted leads. Persist its hash, at most 25 quoted transcript words,
+  timestamped links, verified facts, and original synthesis; never persist transcript/media bytes,
+  a complete description, or a per-video Quartz page. A video alone cannot change an assessment,
+  strategy, signal, allocation, or order.
+- YouTube ingestion may use identity-only watchlist import for independently verified public
+  instruments and must enqueue exactly one priority-66 security review per new identity. It may
+  enqueue only bounded priority-66 idea/security leads, never strategy or execution work.
 
 ### `opportunity_research`
 
@@ -566,6 +593,13 @@ Quartz and Telegram consume that same file.
 - Deterministic jobs write each candidate knowledge change as a compact Markdown packet under `data/wiki/inbox/`. A packet may describe a market movement, indicator transition, filing, source update, research change, contradiction, or other candidate fact.
 - A candidate packet does not automatically trigger wiki ingestion. After deterministic validation and no-op filtering, run the configured cheap LLM to classify it as `ingest` or `ignore`, with a concise reason and related entity IDs. Only an `ingest` decision may enqueue `wiki_ingest`, and the enqueue must still pass normal deduplication and cooldown rules.
 - Timestamp-only changes, formatting-only changes, and failed or stale retrievals are excluded before the cheap-model decision. Record the classifier decision and reason on the packet so reruns are idempotent.
+- Curated YouTube discovery is a separate direct-source path, not a deterministic knowledge-change
+  packet. `papertrader youtube scan --run-id <id> [--dry-run]` creates one priority-60 bootstrap or
+  priority-65 incremental `wiki_ingest` operation per unseen regular video using dedupe key
+  `wiki_ingest:youtube:<channel_id>:<video_id>:v1`. It writes
+  `data/runs/<run_id>/youtube_scan.json`; one remote channel failure records a stable issue and does
+  not stop other channels or market monitoring, while invalid channel/configuration state fails
+  closed before scanning.
 
 ## Risk and accounting rules
 
@@ -672,13 +706,16 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
 
 1. Acquire `concurrency: papertrader-write` with `cancel-in-progress: false`.
 2. Checkout the default branch with full history and no persisted credentials.
-3. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
-4. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
-5. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.
-6. Generate and strictly validate the immutable decision snapshot, CSV exports, investor pages, final daily report, and Quartz content.
-7. Run the full test and validation gate, including `papertrader advice validate --strict`.
-8. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
-9. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
+3. Run the local reusable YouTube discovery action before OAuth restoration; dry runs validate its
+   configuration without network access.
+4. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
+5. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
+6. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.
+7. Generate and strictly validate the immutable decision snapshot, CSV exports, investor pages,
+   final daily report, and Quartz content, including YouTube failures as operations degradation.
+8. Run the full test and validation gate, including `papertrader advice validate --strict`.
+9. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
+10. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
 
 Manual dispatch inputs must support at least: `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and `send_telegram`. Manual dispatch is for debugging, replay, and bounded execution; it is not an approval gate.
 
@@ -719,6 +756,9 @@ Required coverage:
 - Telegram escaping and message splitting;
 - wiki frontmatter, links, index, provenance, tag, and log lint;
 - workflow YAML lint and secret-boundary checks.
+- curated YouTube identity/configuration, regular-video filtering, cursor, dedupe, failure isolation,
+  closed payload, transcript selection/normalization/hash/chunk/cleanup, skip continuation, source
+  registration, follow-up, reporting, and runtime-whitelist checks.
 
 A change is not complete until:
 

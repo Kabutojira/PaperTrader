@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-07-28"
+updated: "2026-07-29"
 provenance: repository-contract
 ---
 
@@ -988,3 +988,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
   linked GEV, ETN, and VRT ticker identities. Replaced stale queued prose for completed GEV and ETN
   reviews with their current valuation dispositions and reasons; retained VRT as the remaining
   identity-only post-results research candidate.
+
+- Updated the [[SCHEMA|wiki schema]] for curated YouTube transcripts: direct human-subscribed
+  discovery remains separate from inbox classification, transcripts are untrusted lead material,
+  and only hashes, bounded quotations, timestamped links, corroborated facts, and non-published
+  operation synthesis may persist.
+
+- Published investor decision snapshot `decision_d2bc1d724ae1b108c0fb`.
+
+- Generated canonical [[daily-reports/daily-report_20260729]] for run `youtube-bootstrap-20260729`.

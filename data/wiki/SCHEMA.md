@@ -6,7 +6,7 @@ tags:
   - meta
   - schema
 created: "2026-07-24"
-updated: "2026-07-27"
+updated: "2026-07-29"
 provenance: repository-contract
 required_frontmatter:
   - title
@@ -84,6 +84,15 @@ metadata, hashes, short lawful excerpts, extracted facts, and original summaries
 Preserve contradictory claims with their sources, dates, and confidence. Do not overwrite an old
 claim merely because a newer source differs. Mark stale assertions and set a concrete next review
 date where the domain page requires one.
+
+The six rows in `data/tables/youtube_channels.csv` are a human-curated source subscription. Their
+regular videos are queued directly rather than routed through the inbox packet classifier. A
+YouTube transcript is untrusted lead material, never primary evidence: independently corroborate
+every material factual claim before changing a maintained entity conclusion. Store the canonical
+transcript hash, timestamped links, at most 25 quoted transcript words in total, and original
+synthesis; never store transcript/audio/video/thumbnail/full-description bytes or publish a
+per-video wiki page. Comprehensive review notes belong only in the operation's non-Quartz
+`youtube_analysis.md` run artifact.
 
 ## Links and size
 

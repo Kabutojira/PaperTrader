@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_t3RTJJ6KM_I",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@DumbMoneyLive",
+    "channel_id": "UCS01CiRDAiyhR_mTHXDW23A",
+    "channel_url": "https://www.youtube.com/channel/UCS01CiRDAiyhR_mTHXDW23A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_t3RTJJ6KM_I",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "t3RTJJ6KM_I",
+    "video_title": "Amazon, Bloom & Tesla: Conviction Check",
+    "video_url": "https://www.youtube.com/watch?v=t3RTJJ6KM_I"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GZK4Z8RANH5XP9TC0",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=t3RTJJ6KM_I"
+  ]
+}

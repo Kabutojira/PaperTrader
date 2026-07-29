@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_AK_aWcM-VAY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@DumbMoneyLive",
+    "channel_id": "UCS01CiRDAiyhR_mTHXDW23A",
+    "channel_url": "https://www.youtube.com/channel/UCS01CiRDAiyhR_mTHXDW23A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_AK_aWcM-VAY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "AK_aWcM-VAY",
+    "video_title": "Why GTA 6 Is More Than A Video Game",
+    "video_url": "https://www.youtube.com/watch?v=AK_aWcM-VAY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GNN84QQ53F97HDY1P",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=AK_aWcM-VAY"
+  ]
+}

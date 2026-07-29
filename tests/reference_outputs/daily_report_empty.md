@@ -8,7 +8,7 @@ created: "2026-07-24"
 updated: "2026-07-24"
 provenance: deterministic-report-generator
 run_id: "run-report"
-snapshot_id: "decision_aae4deb1357bcf3f3707"
+snapshot_id: "decision_6f8900d8cf9e50a22c4e"
 ---
 
 # PaperTrader daily report — 2026-07-24
@@ -21,7 +21,7 @@ snapshot_id: "decision_aae4deb1357bcf3f3707"
 - **Investment data:** Current
 - **Operations:** Current
 - **As of:** `2026-07-24T22:00:00Z`
-- **Snapshot:** `decision_aae4deb1357bcf3f3707`
+- **Snapshot:** `decision_6f8900d8cf9e50a22c4e`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 100000 EUR (100%)
@@ -114,7 +114,7 @@ No current system impacts.
 - Run ID: `run-report`
 - Run status: `succeeded`
 - Generated (UTC): `2026-07-24T22:00:00Z`
-- Decision snapshot: `decision_aae4deb1357bcf3f3707`
+- Decision snapshot: `decision_6f8900d8cf9e50a22c4e`
 
 ### Complete market freshness
 
@@ -160,8 +160,8 @@ No open issues.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
 - `allocation_targets`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `cash_ledger`: `643b368149442110c1e0776eaa1b119e5cabe41f1617ee68328cc468cfa71dff`
-- `configuration`: `4330946ac497bd629f45427ad8e8b3a1ba577952a8a78761eb041560c04a4557`
-- `csv_contracts`: `5d69a6715a26724da012fa4fea98233c5874ae8f38ea64c03162438d9cc6308e`
+- `configuration`: `3e835d84ebd56078a57326d1a1ff256b4365fd70d480ba906ed56e775e9ea553`
+- `csv_contracts`: `ca848cb3d9d5196f4a5e48bf3227ab5353f1532f70fd364a3bbe9e33780e9650`
 - `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `indicators`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`

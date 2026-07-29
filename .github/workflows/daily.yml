@@ -54,6 +54,7 @@ jobs:
       operation_type: ${{ inputs.operation_type || '' }}
       max_operations: ${{ github.event_name == 'schedule' && '5' || inputs.max_operations }}
       dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      scan_youtube: true
       target_branch: ${{ github.event.repository.default_branch }}
       trigger: ${{ github.event_name }}
       serialized_by_caller: true

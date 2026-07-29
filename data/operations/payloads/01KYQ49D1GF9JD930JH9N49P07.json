@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_oyjpF7xPiC4",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@thelimitingfactor",
+    "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+    "channel_url": "https://www.youtube.com/channel/UCIFn7ONIJHyC-lMnb7Fm_jw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_oyjpF7xPiC4",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "oyjpF7xPiC4",
+    "video_title": "Do Not Buy This Model Y? 4680 '8L' Battery Pack Investigated",
+    "video_url": "https://www.youtube.com/watch?v=oyjpF7xPiC4"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GF9JD930JH9N49P07",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=oyjpF7xPiC4"
+  ]
+}

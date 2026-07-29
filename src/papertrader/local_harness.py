@@ -36,7 +36,11 @@ from papertrader.repository_state import (
     compare_snapshots,
     snapshot_repository,
 )
-from papertrader.result_validator import result_relative_path, validate_agent_result
+from papertrader.result_validator import (
+    agent_terminal_reason,
+    result_relative_path,
+    validate_agent_result,
+)
 from papertrader.tables import read_table
 from papertrader.utils import content_hash, format_timestamp, utc_now
 
@@ -359,7 +363,7 @@ def _terminalize_result(
             terminal_status=status,
             result_path=result_path,
             result_summary=summary,
-            terminal_reason=f"agent_result:{status}",
+            terminal_reason=agent_terminal_reason(result, status),
         )
     elif status == "blocked":
         block_operation(

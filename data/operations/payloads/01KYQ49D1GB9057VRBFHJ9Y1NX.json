@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_k77X47h6OVU",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@ConnectingODots",
+    "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+    "channel_url": "https://www.youtube.com/channel/UCOOSDCjFzHfnGoV8iNLC65A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_k77X47h6OVU",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "k77X47h6OVU",
+    "video_title": "Ford & Toyota Are Betting the Farm on the SAME Desperate HAIL MARY | Engineer Explains",
+    "video_url": "https://www.youtube.com/watch?v=k77X47h6OVU"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GB9057VRBFHJ9Y1NX",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=k77X47h6OVU"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_-lUsDKvZJu0",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@DumbMoneyLive",
+    "channel_id": "UCS01CiRDAiyhR_mTHXDW23A",
+    "channel_url": "https://www.youtube.com/channel/UCS01CiRDAiyhR_mTHXDW23A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_-lUsDKvZJu0",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "-lUsDKvZJu0",
+    "video_title": "This Is When Great Trades Are Made",
+    "video_url": "https://www.youtube.com/watch?v=-lUsDKvZJu0"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GXYX0SF93BMTNHYM8",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=-lUsDKvZJu0"
+  ]
+}

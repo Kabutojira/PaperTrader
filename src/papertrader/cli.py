@@ -104,6 +104,7 @@ from papertrader.utils import (
     utc_now,
 )
 from papertrader.wiki import lint_wiki
+from papertrader.youtube import scan_youtube
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -128,6 +129,12 @@ def _parser() -> argparse.ArgumentParser:
     classifier = commands.add_parser("classifier", help="run bounded inbox classification")
     classifier_commands = classifier.add_subparsers(dest="classifier_command", required=True)
     classifier_commands.add_parser("retry")
+
+    youtube = commands.add_parser("youtube", help="scan curated secret-free video sources")
+    youtube_commands = youtube.add_subparsers(dest="youtube_command", required=True)
+    youtube_scan = youtube_commands.add_parser("scan")
+    youtube_scan.add_argument("--run-id", required=True)
+    youtube_scan.add_argument("--dry-run", action="store_true")
 
     market = commands.add_parser("market", help="retrieve and normalize market state")
     market_commands = market.add_subparsers(dest="market_command", required=True)
@@ -889,6 +896,15 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 sort_keys=True,
             )
         )
+        return 0
+    if arguments.command == "youtube":
+        result = scan_youtube(
+            root,
+            settings,
+            run_id=arguments.run_id,
+            dry_run=arguments.dry_run,
+        )
+        print(json.dumps(result, sort_keys=True))
         return 0
     if arguments.command == "market":
         return _print_result("market", update_market_data(root, settings))

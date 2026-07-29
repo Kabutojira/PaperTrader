@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_J2ZqFVpMb5M",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_J2ZqFVpMb5M",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "J2ZqFVpMb5M",
+    "video_title": "CPRT Copart Stock - Stock Crash Makes it a Better Buy!",
+    "video_url": "https://www.youtube.com/watch?v=J2ZqFVpMb5M"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1G3CHJ4YE6BKXP9RX9",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=J2ZqFVpMb5M"
+  ]
+}

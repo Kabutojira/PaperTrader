@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_9ePWIYadju4",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@ConnectingODots",
+    "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+    "channel_url": "https://www.youtube.com/channel/UCOOSDCjFzHfnGoV8iNLC65A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_9ePWIYadju4",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "9ePWIYadju4",
+    "video_title": "TESLA INSIDER: Elon Musk Deleted All Defaults at Tesla & SpaceX",
+    "video_url": "https://www.youtube.com/watch?v=9ePWIYadju4"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1G2RNAXKS9RP0MY1R9",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=9ePWIYadju4"
+  ]
+}

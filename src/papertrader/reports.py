@@ -132,6 +132,45 @@ def _allocation_summary(repository_root: Path, run_id: str) -> Mapping[str, obje
     return value
 
 
+def _youtube_discovery_lines(repository_root: Path, run_id: str) -> list[str]:
+    """Render the validated run-level discovery outcome without publishing video content."""
+
+    path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
+    if not path.exists():
+        return []
+    if path.is_symlink() or not path.is_file():
+        raise CanonicalValueError("YouTube scan summary must be a regular run artifact")
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise CanonicalValueError(f"cannot read YouTube scan summary: {exc}") from exc
+    channels = value.get("channels") if isinstance(value, dict) else None
+    if not isinstance(channels, list) or not all(isinstance(item, dict) for item in channels):
+        raise CanonicalValueError("YouTube scan summary has invalid channel outcomes")
+    lines = [
+        "### Curated YouTube discovery",
+        "",
+        f"- Status: `{_markdown_text(str(value.get('status', 'unknown')))}`",
+        f"- Operations queued: `{value.get('operation_count', 0)}`",
+        f"- Channel failures: `{value.get('failure_count', 0)}`",
+        "",
+        "| Channel | Status | Discovered | Queued | Reason |",
+        "| --- | --- | ---: | ---: | --- |",
+    ]
+    for channel in channels:
+        discovered = channel.get("discovered_video_ids", [])
+        operations = channel.get("operation_ids", [])
+        lines.append(
+            f"| {_cell(str(channel.get('handle', '')))} | "
+            f"{_cell(str(channel.get('status', '')))} | "
+            f"{len(discovered) if isinstance(discovered, list) else 0} | "
+            f"{len(operations) if isinstance(operations, list) else 0} | "
+            f"{_cell(str(channel.get('reason', '')))} |"
+        )
+    lines.append("")
+    return lines
+
+
 def _markdown_text(value: str) -> str:
     """Render canonical data as inert one-line Markdown text."""
 
@@ -892,6 +931,9 @@ def generate_daily_report(
         if allocation_targets
         else ["| — | — | 0% | no candidates | — |"]
     )
+    youtube_lines = _youtube_discovery_lines(repository_root, run_id)
+    if youtube_lines:
+        lines.extend(["", *youtube_lines])
     lines.extend(
         [
             "",

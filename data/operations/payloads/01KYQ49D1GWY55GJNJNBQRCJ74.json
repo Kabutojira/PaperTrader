@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_TqNiSTeNtb0",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_TqNiSTeNtb0",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "TqNiSTeNtb0",
+    "video_title": "The $1/Hour Robot Is Coming: Four Industry Leaders Explain What’s Next",
+    "video_url": "https://www.youtube.com/watch?v=TqNiSTeNtb0"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GWY55GJNJNBQRCJ74",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=TqNiSTeNtb0"
+  ]
+}

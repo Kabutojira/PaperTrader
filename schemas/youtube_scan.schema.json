@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/youtube_scan.schema.json",
+  "title": "PaperTrader curated YouTube discovery manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "youtube_scan_version",
+    "run_id",
+    "discovered_at",
+    "status",
+    "scan_bound",
+    "seed_count",
+    "channels",
+    "operation_count",
+    "failure_count"
+  ],
+  "properties": {
+    "youtube_scan_version": { "const": 1 },
+    "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
+    "discovered_at": { "type": "string", "format": "date-time" },
+    "status": { "enum": ["succeeded", "degraded", "dry_run", "disabled"] },
+    "scan_bound": { "type": "integer", "minimum": 1 },
+    "seed_count": { "type": "integer", "minimum": 1 },
+    "channels": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/channel" }
+    },
+    "operation_count": { "type": "integer", "minimum": 0 },
+    "failure_count": { "type": "integer", "minimum": 0, "maximum": 6 }
+  },
+  "$defs": {
+    "video_id_or_empty": {
+      "type": "string",
+      "pattern": "^(?:|[A-Za-z0-9_-]{11})$"
+    },
+    "channel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "channel_id",
+        "handle",
+        "status",
+        "reason",
+        "previous_cursor",
+        "next_cursor",
+        "inspected_count",
+        "discovered_video_ids",
+        "duplicate_video_ids",
+        "operation_ids",
+        "issue_id"
+      ],
+      "properties": {
+        "channel_id": { "type": "string", "pattern": "^UC[A-Za-z0-9_-]{22}$" },
+        "handle": { "type": "string", "pattern": "^@[A-Za-z0-9._-]{3,64}$" },
+        "status": { "enum": ["succeeded", "failed", "skipped"] },
+        "reason": { "type": "string", "maxLength": 1000 },
+        "previous_cursor": { "$ref": "#/$defs/video_id_or_empty" },
+        "next_cursor": { "$ref": "#/$defs/video_id_or_empty" },
+        "inspected_count": { "type": "integer", "minimum": 0 },
+        "discovered_video_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+          "uniqueItems": true
+        },
+        "duplicate_video_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9_-]{11}$" },
+          "uniqueItems": true
+        },
+        "operation_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9A-HJKMNP-TV-Z]{26}$" },
+          "uniqueItems": true
+        },
+        "issue_id": { "type": "string", "maxLength": 128 }
+      }
+    }
+  }
+}

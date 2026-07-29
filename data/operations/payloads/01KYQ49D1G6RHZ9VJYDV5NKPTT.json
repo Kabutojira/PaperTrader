@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_h7XVJ64IhY4",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@thelimitingfactor",
+    "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+    "channel_url": "https://www.youtube.com/channel/UCIFn7ONIJHyC-lMnb7Fm_jw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_h7XVJ64IhY4",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "h7XVJ64IhY4",
+    "video_title": "SpaceX Data Center Growth: Big Revenues, But Big Spending (Colossus Update)",
+    "video_url": "https://www.youtube.com/watch?v=h7XVJ64IhY4"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1G6RHZ9VJYDV5NKPTT",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=h7XVJ64IhY4"
+  ]
+}

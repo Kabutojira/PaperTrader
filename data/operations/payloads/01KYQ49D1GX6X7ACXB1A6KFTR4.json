@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_OcXcgIlJGRw",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_OcXcgIlJGRw",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "OcXcgIlJGRw",
+    "video_title": "Don't Buy SoFi Stock Until You Watch This",
+    "video_url": "https://www.youtube.com/watch?v=OcXcgIlJGRw"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GX6X7ACXB1A6KFTR4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=OcXcgIlJGRw"
+  ]
+}

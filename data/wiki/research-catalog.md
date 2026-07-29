@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-07-28"
-updated: "2026-07-28"
+created: "2026-07-29"
+updated: "2026-07-29"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_354ef91a8bfe15f68e1f"
-as_of: "2026-07-28T16:35:54Z"
+snapshot_id: "decision_d2bc1d724ae1b108c0fb"
+as_of: "2026-07-29T14:30:18Z"
 ---
 
 # Research catalog
@@ -39,6 +39,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-07-26](daily-reports/daily-report_20260726)
 - [PaperTrader daily report — 2026-07-27](daily-reports/daily-report_20260727)
 - [PaperTrader daily report — 2026-07-28](daily-reports/daily-report_20260728)
+- [PaperTrader daily report — 2026-07-29](daily-reports/daily-report_20260729)
 
 ## Idea
 

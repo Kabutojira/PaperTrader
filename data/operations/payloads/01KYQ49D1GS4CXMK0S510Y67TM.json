@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_OY2Sjbjd_VE",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_OY2Sjbjd_VE",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "OY2Sjbjd_VE",
+    "video_title": "Mark Cuban on the AI Bubble: Who Actually Gets Wiped Out?",
+    "video_url": "https://www.youtube.com/watch?v=OY2Sjbjd_VE"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GS4CXMK0S510Y67TM",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=OY2Sjbjd_VE"
+  ]
+}

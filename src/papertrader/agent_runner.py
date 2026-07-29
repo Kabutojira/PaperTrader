@@ -33,6 +33,7 @@ from papertrader.queue import (
 from papertrader.repository_state import compare_snapshots, snapshot_repository
 from papertrader.result_validator import (
     AgentValidation,
+    agent_terminal_reason,
     result_relative_path,
     validate_agent_result,
 )
@@ -918,7 +919,7 @@ def _run_claimed_and_disposition(
             terminal_status=status,
             result_path=result_path,
             result_summary=summary,
-            terminal_reason=f"agent_result:{status}",
+            terminal_reason=agent_terminal_reason(validation.result, status),
         )
     elif status == "blocked":
         block_operation(

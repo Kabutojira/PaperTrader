@@ -48,12 +48,75 @@
           "properties": {
             "operation_type": { "const": "wiki_ingest" },
             "inputs": {
-              "type": "object",
-              "required": ["source_path", "source_hash"],
-              "properties": {
-                "source_path": { "$ref": "#/$defs/repository_path" },
-                "source_hash": { "$ref": "#/$defs/sha256" }
-              }
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["source_path", "source_hash"],
+                  "properties": {
+                    "source_path": { "$ref": "#/$defs/repository_path" },
+                    "source_hash": { "$ref": "#/$defs/sha256" }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "source_kind",
+                    "source_id",
+                    "video_id",
+                    "video_title",
+                    "video_url",
+                    "channel_id",
+                    "channel_handle",
+                    "channel_url",
+                    "discovered_at",
+                    "transcript_languages",
+                    "prefer_human",
+                    "discovery_mode"
+                  ],
+                  "properties": {
+                    "source_kind": { "const": "youtube_video" },
+                    "source_id": {
+                      "type": "string",
+                      "pattern": "^youtube_[A-Za-z0-9_-]{11}$"
+                    },
+                    "video_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9_-]{11}$"
+                    },
+                    "video_title": { "type": "string", "maxLength": 500 },
+                    "video_url": {
+                      "type": "string",
+                      "pattern": "^https://www\\.youtube\\.com/watch\\?v=[A-Za-z0-9_-]{11}$"
+                    },
+                    "channel_id": {
+                      "type": "string",
+                      "pattern": "^UC[A-Za-z0-9_-]{22}$"
+                    },
+                    "channel_handle": {
+                      "type": "string",
+                      "pattern": "^@[A-Za-z0-9._-]{3,64}$"
+                    },
+                    "channel_url": {
+                      "type": "string",
+                      "pattern": "^https://www\\.youtube\\.com/channel/UC[A-Za-z0-9_-]{22}/videos$"
+                    },
+                    "discovered_at": { "type": "string", "format": "date-time" },
+                    "transcript_languages": {
+                      "type": "array",
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[a-z]{2}(?:-[A-Z]{2})?$"
+                      }
+                    },
+                    "prefer_human": { "type": "boolean" },
+                    "discovery_mode": { "enum": ["bootstrap", "incremental"] }
+                  }
+                }
+              ]
             }
           }
         },

@@ -157,6 +157,20 @@ class ClassifierSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class YouTubeSettings:
+    """Secret-free curated YouTube discovery and transcript policy."""
+
+    enabled: bool
+    scan_bound: int
+    seed_count: int
+    bootstrap_priority: int
+    discovery_priority: int
+    followup_priority: int
+    transcript_languages: tuple[str, ...]
+    transcript_attempts: int
+
+
+@dataclass(frozen=True, slots=True)
 class HermesSettings:
     """Pinned one-shot Hermes invocation and OAuth-only provider policy."""
 
@@ -197,6 +211,7 @@ class Settings:
     orders: OrderSettings
     operations: OperationSettings
     classifier: ClassifierSettings
+    youtube: YouTubeSettings
     hermes: HermesSettings
     telegram: TelegramSettings
 
@@ -307,6 +322,7 @@ def _load_runtime_settings(
     OrderSettings,
     OperationSettings,
     ClassifierSettings,
+    YouTubeSettings,
 ]:
     calendars = tuple(
         sorted((mic.strip().upper(), name.strip()) for mic, name in parser.items("calendars"))
@@ -552,7 +568,42 @@ def _load_runtime_settings(
     )
     if bool(classifier.command) != bool(classifier.model):
         raise ConfigurationError("classifier.command and classifier.model must be set together")
-    return market, indicators, portfolio, risk, allocation, orders, operations, classifier
+    try:
+        youtube_enabled = parser.getboolean("youtube", "enabled")
+    except (configparser.Error, ValueError) as exc:
+        raise ConfigurationError("youtube.enabled must be a boolean") from exc
+    youtube = YouTubeSettings(
+        enabled=youtube_enabled,
+        scan_bound=_positive_int(parser, "youtube", "scan_bound"),
+        seed_count=_positive_int(parser, "youtube", "seed_count"),
+        bootstrap_priority=_positive_int(parser, "youtube", "bootstrap_priority"),
+        discovery_priority=_positive_int(parser, "youtube", "discovery_priority"),
+        followup_priority=_positive_int(parser, "youtube", "followup_priority"),
+        transcript_languages=_csv_values(parser, "youtube", "transcript_languages"),
+        transcript_attempts=_positive_int(parser, "youtube", "transcript_attempts"),
+    )
+    if youtube.seed_count > youtube.scan_bound:
+        raise ConfigurationError("youtube.seed_count must not exceed youtube.scan_bound")
+    priorities = (
+        youtube.bootstrap_priority,
+        youtube.discovery_priority,
+        youtube.followup_priority,
+    )
+    if any(priority > 100 for priority in priorities):
+        raise ConfigurationError("youtube priorities must be between 1 and 100")
+    if priorities != tuple(sorted(priorities)) or len(set(priorities)) != len(priorities):
+        raise ConfigurationError(
+            "youtube priorities must strictly increase from bootstrap through follow-up"
+        )
+    if youtube.transcript_attempts != 3:
+        raise ConfigurationError("youtube.transcript_attempts must be exactly 3")
+    if not all(
+        re.fullmatch(r"[a-z]{2}(?:-[A-Z]{2})?", code) for code in youtube.transcript_languages
+    ):
+        raise ConfigurationError(
+            "youtube.transcript_languages must contain canonical language codes"
+        )
+    return market, indicators, portfolio, risk, allocation, orders, operations, classifier, youtube
 
 
 def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
@@ -673,6 +724,7 @@ def _load_settings_unchecked(
         orders,
         operations,
         classifier,
+        youtube,
     ) = _load_runtime_settings(parser)
     hermes = _load_hermes_settings(parser)
     telegram = _load_telegram_settings(parser)
@@ -690,6 +742,7 @@ def _load_settings_unchecked(
         orders=orders,
         operations=operations,
         classifier=classifier,
+        youtube=youtube,
         hermes=hermes,
         telegram=telegram,
     )

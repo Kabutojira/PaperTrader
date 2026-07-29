@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_SuSYegb8iK0",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@thelimitingfactor",
+    "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+    "channel_url": "https://www.youtube.com/channel/UCIFn7ONIJHyC-lMnb7Fm_jw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_SuSYegb8iK0",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "SuSYegb8iK0",
+    "video_title": "Does Supercharging kill your Tesla battery? New Data",
+    "video_url": "https://www.youtube.com/watch?v=SuSYegb8iK0"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GRCPWM612C0NAM0Z1",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=SuSYegb8iK0"
+  ]
+}

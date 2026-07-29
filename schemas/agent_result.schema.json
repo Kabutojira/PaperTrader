@@ -23,6 +23,10 @@
       "enum": ["succeeded", "skipped", "blocked", "failed"]
     },
     "summary": { "type": "string", "minLength": 1, "maxLength": 2000 },
+    "reason_code": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,127}$"
+    },
     "evidence": {
       "type": "array",
       "items": { "$ref": "#/$defs/evidence" },

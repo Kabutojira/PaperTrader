@@ -127,6 +127,17 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "github.token" in commit_text
     assert "OPENAI_OAUTH_SECRET" not in commit_text
     assert "OPENROUTER_API_KEY" not in text
+    runtime_steps = [step["name"] for step in runtime["steps"]]
+    assert runtime_steps.index("Discover curated YouTube sources without credentials") < (
+        runtime_steps.index("Restore encrypted OpenAI OAuth state")
+    )
+    discovery = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Discover curated YouTube sources without credentials"
+    )
+    assert discovery["uses"] == "./.github/actions/scan-youtube"
+    assert discovery["with"]["dry_run"] == "${{ inputs.dry_run }}"
 
 
 def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(
@@ -285,6 +296,7 @@ def test_daily_forwards_only_oauth_secret_and_auth_only_pushes_do_not_retrigger_
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
     runtime = daily["jobs"]["runtime"]
     assert runtime["secrets"] == {"OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}"}
+    assert runtime["with"]["scan_youtube"] == "true"
     assert daily["concurrency"] == {
         "group": "papertrader-write",
         "cancel-in-progress": "false",

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_3c9iLgtDdKM",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_3c9iLgtDdKM",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "3c9iLgtDdKM",
+    "video_title": "Time to CASH OUT! 4 Stocks to SELL Before Earnings!",
+    "video_url": "https://www.youtube.com/watch?v=3c9iLgtDdKM"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GD05JQFX2ZE5MTRWZ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=3c9iLgtDdKM"
+  ]
+}

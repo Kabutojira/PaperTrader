@@ -19,6 +19,7 @@ from papertrader.result_validator import (
     _path_allowed_for_operation,
     _security_assessment_result_errors,
     _security_idea_followup_errors,
+    _youtube_wiki_ingest_errors,
 )
 from papertrader.tables import read_table, write_table
 
@@ -68,6 +69,27 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
     assert not _command_allowed(
         "security_research",
         {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
+    )
+    assert _command_allowed(
+        "wiki_ingest",
+        {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
+        youtube_video=True,
+    )
+    assert not _command_allowed(
+        "wiki_ingest",
+        {"argv": ["papertrader", "watchlist", "import", "--request", "request.json"]},
+    )
+    assert _path_allowed_for_operation(
+        "wiki_ingest",
+        "data/tables/securities.csv",
+        created=False,
+        youtube_video=True,
+    )
+    assert not _path_allowed_for_operation(
+        "wiki_ingest",
+        "data/wiki/raw/transcript.txt",
+        created=True,
+        youtube_video=True,
     )
     assert _command_allowed(
         "execute_strategy",
@@ -121,6 +143,81 @@ def _enqueue(repository: Path, settings: Settings) -> str:
         now=NOW,
     )
     return operation_id
+
+
+def test_youtube_transcript_unavailable_is_a_clean_terminal_skip(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    video_id = "abcdefghijk"
+    channel_id = "UCESLZhusAkFfsNsApnjF_Cg"
+    video_url = f"https://www.youtube.com/watch?v={video_id}"
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="wiki_ingest",
+        entity_type="source",
+        entity_id=f"youtube_{video_id}",
+        dedupe_key=f"wiki_ingest:youtube:{channel_id}:{video_id}:v1",
+        prompt="Analyze one curated YouTube transcript as an untrusted lead source.",
+        inputs={
+            "source_kind": "youtube_video",
+            "source_id": f"youtube_{video_id}",
+            "video_id": video_id,
+            "video_title": "Example",
+            "video_url": video_url,
+            "channel_id": channel_id,
+            "channel_handle": "@allin",
+            "channel_url": f"https://www.youtube.com/channel/{channel_id}/videos",
+            "discovered_at": "2026-07-29T08:00:00Z",
+            "transcript_languages": ["en", "en-US", "en-GB"],
+            "prefer_human": True,
+            "discovery_mode": "bootstrap",
+        },
+        source="youtube_scan:test",
+        priority=60,
+        source_refs=(video_url,),
+        now=datetime(2026, 7, 29, 8, tzinfo=UTC),
+    )
+    assert created
+    row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+    operation = Operation.from_row(row)
+    result = {
+        "status": "skipped",
+        "reason_code": "youtube_transcript_unavailable",
+    }
+
+    assert (
+        _youtube_wiki_ingest_errors(
+            sandbox_repository,
+            run_id="youtube-skip",
+            operation=operation,
+            status="skipped",
+            result=result,
+            changed_paths=(),
+            created_operation_ids=set(),
+            operation_rows_after={operation_id: row},
+            followup_priority=66,
+        )
+        == []
+    )
+    result["reason_code"] = "metadata_only"
+    assert "requires reason_code youtube_transcript_unavailable" in " ".join(
+        _youtube_wiki_ingest_errors(
+            sandbox_repository,
+            run_id="youtube-skip",
+            operation=operation,
+            status="skipped",
+            result=result,
+            changed_paths=(),
+            created_operation_ids=set(),
+            operation_rows_after={operation_id: row},
+            followup_priority=66,
+        )
+    )
 
 
 def _enqueue_security(repository: Path, settings: Settings, *, idea_id: str = "") -> str:

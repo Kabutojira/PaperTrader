@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_yUq0O-pDHCE",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@ConnectingODots",
+    "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+    "channel_url": "https://www.youtube.com/channel/UCOOSDCjFzHfnGoV8iNLC65A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_yUq0O-pDHCE",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "yUq0O-pDHCE",
+    "video_title": "Tesla's HUGE Bet Should Fail (But They are Hiding an Ace)",
+    "video_url": "https://www.youtube.com/watch?v=yUq0O-pDHCE"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GAXYP4Y8RR9C5G3KN",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=yUq0O-pDHCE"
+  ]
+}

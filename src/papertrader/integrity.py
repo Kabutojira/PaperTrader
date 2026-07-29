@@ -46,12 +46,14 @@ REQUIRED_LAYOUT = (
     "schemas/agent_result.schema.json",
     "schemas/decision_snapshot.schema.json",
     "schemas/operation_payload.schema.json",
+    "schemas/youtube_scan.schema.json",
     "schemas/csv_contracts.yaml",
     "data/wiki/SCHEMA.md",
     "data/wiki/index.md",
     "data/wiki/log.md",
     "data/operations/operations_TODO.csv",
     "data/operations/operations_history.csv",
+    "data/tables/youtube_channels.csv",
     "data/logs/log.txt",
     "data/published/actionable_signals.csv",
     "data/published/model_portfolio.csv",
@@ -419,6 +421,101 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
     return errors
 
 
+def validate_youtube_scan_artifacts(repository_root: Path) -> list[str]:
+    """Validate retained curated-source scans and every referenced queue identity."""
+
+    errors: list[str] = []
+    schema_path = repository_root / "schemas" / "youtube_scan.schema.json"
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        return [f"cannot load youtube_scan schema: {exc}"]
+    try:
+        operation_rows = {
+            row["operation_id"]: row
+            for table in ("operations_todo", "operations_history")
+            for row in read_csv_contract_rows(repository_root, table)
+        }
+    except (ContractError, OSError, ValueError) as exc:
+        return [f"cannot validate YouTube scan operations: {exc}"]
+    for path in sorted((repository_root / "data" / "runs").glob("*/youtube_scan.json")):
+        relative = path.relative_to(repository_root).as_posix()
+        run_id = path.parent.name
+        if not SAFE_RUN_ID.fullmatch(run_id) or path.is_symlink():
+            errors.append(f"invalid youtube_scan path: {relative}")
+            continue
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot read youtube_scan {relative}: {exc}")
+            continue
+        schema_errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+        errors.extend(f"youtube_scan {relative}: {error.message}" for error in schema_errors)
+        if not isinstance(value, dict) or value.get("run_id") != run_id:
+            errors.append(f"youtube_scan identity does not match path: {relative}")
+            continue
+        channels = value.get("channels")
+        if not isinstance(channels, list) or not all(isinstance(row, dict) for row in channels):
+            continue
+        operation_ids = [
+            operation_id
+            for channel in channels
+            for operation_id in channel.get("operation_ids", [])
+            if isinstance(operation_id, str)
+        ]
+        failures = sum(channel.get("status") == "failed" for channel in channels)
+        if len(operation_ids) != len(set(operation_ids)):
+            errors.append(f"youtube_scan contains duplicate operation IDs: {run_id}")
+        if value.get("operation_count") != len(operation_ids):
+            errors.append(f"youtube_scan operation count mismatch: {run_id}")
+        if value.get("failure_count") != failures:
+            errors.append(f"youtube_scan failure count mismatch: {run_id}")
+        expected_status = "degraded" if failures else "succeeded"
+        if (
+            value.get("status") in {"succeeded", "degraded"}
+            and value.get("status") != expected_status
+        ):
+            errors.append(f"youtube_scan status/failure mismatch: {run_id}")
+        for channel in channels:
+            if channel.get("status") == "failed" and channel.get("previous_cursor") != channel.get(
+                "next_cursor"
+            ):
+                errors.append(
+                    f"failed youtube_scan channel advanced its cursor: {channel.get('channel_id')}"
+                )
+            discovered = channel.get("discovered_video_ids", [])
+            if not isinstance(discovered, list):
+                continue
+            for operation_id in channel.get("operation_ids", []):
+                if not isinstance(operation_id, str):
+                    continue
+                row = operation_rows.get(operation_id)
+                if row is None:
+                    errors.append(f"youtube_scan references unknown operation: {operation_id}")
+                    continue
+                try:
+                    payload_path = repository_root.joinpath(
+                        *PurePosixPath(row["payload_path"]).parts
+                    )
+                    payload = json.loads(payload_path.read_text(encoding="utf-8"))
+                except (OSError, json.JSONDecodeError, KeyError) as exc:
+                    errors.append(
+                        f"cannot read youtube_scan operation payload {operation_id}: {exc}"
+                    )
+                    continue
+                inputs = payload.get("inputs") if isinstance(payload, dict) else None
+                if (
+                    row["operation_type"] != "wiki_ingest"
+                    or not isinstance(inputs, dict)
+                    or inputs.get("source_kind") != "youtube_video"
+                    or inputs.get("channel_id") != channel.get("channel_id")
+                    or inputs.get("video_id") not in discovered
+                ):
+                    errors.append(f"youtube_scan operation identity mismatch: {operation_id}")
+    return errors
+
+
 def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, str]]:
     """Read a canonical table locally without importing the circular table module."""
 
@@ -501,6 +598,7 @@ def validate_integrity(
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))
+    errors.extend(validate_youtube_scan_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
     from papertrader.advice import validate_advice
     from papertrader.allocation import validate_allocation_state

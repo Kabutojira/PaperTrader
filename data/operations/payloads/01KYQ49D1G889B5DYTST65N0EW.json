@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_4JmCb5FmTA4",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_4JmCb5FmTA4",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "4JmCb5FmTA4",
+    "video_title": "Oil Stocks After Q2 2026 / Var Energi Example",
+    "video_url": "https://www.youtube.com/watch?v=4JmCb5FmTA4"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1G889B5DYTST65N0EW",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=4JmCb5FmTA4"
+  ]
+}

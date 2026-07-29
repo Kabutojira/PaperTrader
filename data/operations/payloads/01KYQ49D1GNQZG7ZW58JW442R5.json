@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_TyMn7wknYTU",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@thelimitingfactor",
+    "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+    "channel_url": "https://www.youtube.com/channel/UCIFn7ONIJHyC-lMnb7Fm_jw/videos",
+    "discovered_at": "2026-07-29T14:26:06Z",
+    "discovery_mode": "bootstrap",
+    "prefer_human": true,
+    "source_id": "youtube_TyMn7wknYTU",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "TyMn7wknYTU",
+    "video_title": "The Fully Dry 4680 // Too little too late?",
+    "video_url": "https://www.youtube.com/watch?v=TyMn7wknYTU"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYQ49D1GNQZG7ZW58JW442R5",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=TyMn7wknYTU"
+  ]
+}

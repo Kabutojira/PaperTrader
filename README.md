@@ -216,6 +216,10 @@ The Step 2 core owns every numeric and structured state transition:
 - `papertrader indicators update --classify-opportunities` calculates the pinned TA-Lib
   indicators, writes candidate inbox packets, asks the configured cheap classifier for an
   `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.
+- `papertrader youtube scan --run-id <id> [--dry-run]` validates the six curated channel
+  handle/immutable-ID pairs, scans only regular Videos-tab uploads, and directly enqueues one
+  bounded transcript review per unseen video. `--dry-run` validates configuration and writes its
+  run manifest without network access.
 - `papertrader queue prepare`, `queue claim`, and the terminal queue commands enforce one live
   lease, dependencies, cooldowns, bounded retries, terminal history, and run budgets.
 - Queue preparation deterministically skips strategy and execution requests tied to a superseded
@@ -249,6 +253,34 @@ The Step 2 core owns every numeric and structured state transition:
 - `papertrader watchlist import --request <json>` atomically adds identity-only securities with
   deterministic IDs. It leaves research fields empty until a bounded security-research operation
   creates the linked wiki page and evidence-backed summary.
+
+## Curated YouTube research
+
+`data/tables/youtube_channels.csv` is the human-approved subscription list. The daily reusable
+runtime calls `.github/actions/scan-youtube` before restoring OAuth, walks each Videos tab
+newest-first to its cursor with a 50-entry bound, and writes
+`data/runs/<run_id>/youtube_scan.json`. Bootstrap queues exactly the newest five regular videos per
+channel at priority 60; later discoveries use priority 65. The immutable video ID drives source
+identity and dedupe, so active queue rows, terminal history, and registered sources prevent a
+second request. A channel error becomes a stable repository issue while other channels and market
+monitoring continue; malformed configuration fails before network access or queue mutation.
+
+Each operation uses `pytubefix==10.10.1` to try human English captions before auto-generated
+English with three anonymous, non-interactive clients. Caption failure ends that operation as
+`skipped` with `youtube_transcript_unavailable`; it does not fall back to metadata-only analysis or
+stall the remaining sequential batch. Successful reviews inspect every bounded timestamped chunk
+and treat speaker claims as leads. Material facts must be corroborated with current primary
+sources before any maintained entity conclusion changes. Transcript, media, thumbnails, and full
+descriptions are never committed; only a transcript hash, no more than 25 quoted words,
+timestamped links, source records, corroborated entity edits, bounded priority-66 idea/security
+follow-ups, and the original non-published
+`data/runs/<run_id>/<operation_id>/youtube_analysis.md` synthesis may persist. A video by itself can
+never change an assessment, strategy, signal, allocation, order, or accounting state.
+
+The maintained [pytubefix package](https://pypi.org/project/pytubefix/) is pinned instead of the
+older [pytube package](https://pypi.org/project/pytube/). The historical
+[YouTube Telegram Summaries](https://github.com/Stell0/youtubetelegramsummaries) project is a
+behavioral reference only; PaperTrader copies neither its GPL code nor its LangChain dependency.
 
 ## Iterative research loop
 
@@ -360,7 +392,8 @@ timestamps, does not persist the portfolio value, and never contacts a broker or
 ## Daily automation and publication
 
 The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/Rome` every day and
-uses one serialized path for both cron and manual runs. It prepares market and queue state,
+uses one serialized path for both cron and manual runs. It performs curated YouTube discovery
+without credentials before OAuth restoration, then prepares market and queue state,
 executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
 accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
@@ -368,7 +401,8 @@ investor pages, writes the canonical daily report, and runs the complete validat
 runs expose
 `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and
 `send_telegram`; `dry_run` defaults to true and performs no inference, commit, push, deployment,
-or delivery.
+or delivery. Its YouTube phase uses the same offline dry-run mode and therefore makes no network
+request.
 
 Hermes and the commit boundary are separate jobs. The read-only runtime decrypts the repository's
 age-encrypted OpenAI Codex OAuth state into its isolated Hermes home, then exports a hash-bound

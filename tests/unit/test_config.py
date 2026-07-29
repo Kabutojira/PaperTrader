@@ -39,6 +39,14 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.operations.maximum_llm_operations_per_run == 5
     assert settings.classifier.command == ("python", "-m", "papertrader.classifier_command")
     assert settings.classifier.model == "gpt-5.6-luna"
+    assert settings.youtube.enabled is True
+    assert settings.youtube.scan_bound == 50
+    assert settings.youtube.seed_count == 5
+    assert settings.youtube.bootstrap_priority == 60
+    assert settings.youtube.discovery_priority == 65
+    assert settings.youtube.followup_priority == 66
+    assert settings.youtube.transcript_languages == ("en", "en-US", "en-GB")
+    assert settings.youtube.transcript_attempts == 3
     assert settings.hermes.command == ("hermes", "chat")
     assert settings.hermes.arguments == ("--quiet", "--yolo")
     assert settings.hermes.provider == "openai-codex"
@@ -98,6 +106,25 @@ def test_settings_reject_contract_incompatible_price_retention(
     )
 
     with pytest.raises(ConfigurationError, match="exactly 365"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
+
+
+def test_settings_require_exactly_three_youtube_transcript_attempts(
+    sandbox_repository: Path,
+    paper_environment: dict[str, str],
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(
+        path.read_text(encoding="utf-8").replace(
+            "transcript_attempts = 3", "transcript_attempts = 4"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigurationError, match="must be exactly 3"):
         load_settings(
             sandbox_repository,
             paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},

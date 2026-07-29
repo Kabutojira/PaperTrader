@@ -4,89 +4,89 @@ type: securities-dashboard
 status: maintained
 tags:
   - security
-created: "2026-07-28"
-updated: "2026-07-28"
+created: "2026-07-29"
+updated: "2026-07-29"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_354ef91a8bfe15f68e1f"
-as_of: "2026-07-28T16:35:54Z"
+snapshot_id: "decision_d2bc1d724ae1b108c0fb"
+as_of: "2026-07-29T14:30:18Z"
 ---
 
 # Securities
 
-**Snapshot `decision_354ef91a8bfe15f68e1f` · As of `2026-07-28T16:35:54Z`**
+**Snapshot `decision_d2bc1d724ae1b108c0fb` · As of `2026-07-29T14:30:18Z`**
 
 Ticker links open the maintained security analysis. Native marks are converted to EUR with the displayed committed FX observation.
 
 | Security | Venue | Native mark | Base mark | Decision | Main reason | Downside | Base upside | Data and FX as of | Next review |
 | --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- |
-| [ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9) | XOTC · watching | 96.97 USD | 85.0039 EUR | Valuation unattractive | The assessed base case has no positive upside. | -33.2% | -11.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:41:43Z |
-| ABCL — AbCellera Biologics Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | XNYS · watching | 116.18 USD | 101.8434 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:59:00Z |
-| AMAT — Applied Materials, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| AMZN — Amazon.com, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | XNYS · watching | 170.76 USD | 149.6882 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -35.1% | 2.2% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:11:38Z |
-| ANIC.L — Agronomics Limited | XLON · watchlist | — | — | Unassessed | — | — | — | — | — |
-| ASML — ASML Holding N.V. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | XNYS · watching | 75.29 USD | 65.9992 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -32.9% | 3.2% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:28:34Z |
-| [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | XNAS · watching | 167.49 USD | 146.8217 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:56:38Z |
-| CROX — Crocs, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| CRSR — Corsair Gaming, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) | XNAS · watching | 180.11 USD | 157.8844 EUR | Valuation unattractive | The assessed base case has no positive upside. | -51.1% | -27.1% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T01:22:10Z |
-| CSIQ — Canadian Solar Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| CSL — Carlisle Companies Incorporated | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| DLO — DLocal Limited | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| DNA — Ginkgo Bioworks Holdings, Inc. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | XNAS · watching | 38.01 USD | 33.3196 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:12:24Z |
-| [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | XNYS · watching | 398.64 USD | 349.4478 EUR | Valuation unattractive | The assessed base case has no positive upside. | -37.6% | -19.7% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:32:08Z |
-| [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | XNYS · watching | 62.72 USD | 54.9804 EUR | Valuation unattractive | The assessed base case has no positive upside. | -48% | -24.5% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:57:34Z |
-| [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | XNAS · watching | 13.51 USD | 11.8429 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -45.6% | 9.1% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:53:08Z |
-| FUC.F — Fanuc Corporation | XFRA · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | XNYS · watching | 996.57 USD | 873.5933 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -42.6% | 2% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:42:35Z |
-| GOOGL — Alphabet Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| HOOD — Robinhood Markets, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| INTC — Intel Corporation | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | XNAS · watching | 356.83 USD | 312.7972 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -23.2% | 2.5% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T21:28:56Z |
-| KTOS — Kratos Defense &amp; Security Solutions, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | XNYS · watching | 2.9 USD | 2.5421 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:46:00Z |
-| LH — Labcorp Holdings Inc. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| LUNR — Intuitive Machines, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| META — Meta Platforms, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| MP — MP Materials Corp. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| MSFT — Microsoft Corporation | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| MSTR — Strategy Inc | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| NBIS — Nebius Group N.V. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| NIB.F — Nidec Corporation | XFRA · watchlist | — | — | Unassessed | — | — | — | — | — |
-| NVDA — NVIDIA Corporation | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | XPAR · watching | 9.62 EUR | 9.62 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T01:09:21Z |
-| PATH — UiPath, Inc. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| PL — Planet Labs PBC | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| PLS.AX — PLS Group Limited | XASX · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | XNAS · watching | 131.53 USD | 115.2992 EUR | Valuation unattractive | The assessed base case has no positive upside. | -55.7% | -18.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:36:09Z |
-| PYPL — PayPal Holdings, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| QCOM — QUALCOMM Incorporated | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809) | XNYS · watching | 48.42 USD | 42.445 EUR | Valuation unattractive | The assessed base case has no positive upside. | -47.9% | -19.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T21:16:25Z |
-| [RIO — Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | XNYS · watching | 91.95 USD | 80.6034 EUR | Valuation unattractive | The current assessment marks the security ineligible. | 0% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:01:58Z |
-| [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) | XNAS · watching | 66.94 USD | 58.6796 EUR | Valuation unattractive | The assessed base case has no positive upside. | -79.3% | -56.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:04:05Z |
-| [RTX — RTX Corporation](securities/security_59304f90c440def31dc5) | XNYS · watching | 218.42 USD | 191.467 EUR | Valuation unattractive | The assessed base case has no positive upside. | -35% | -17.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:06:00Z |
-| [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | XNAS · watching | 3.01 USD | 2.6386 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:20:00Z |
-| [SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | XNYS · watching | 179.32 USD | 157.1919 EUR | Valuation unattractive | The assessed base case has no positive upside. | -40% | -22.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:39:45Z |
-| [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) | XNAS · watching | 9.95 USD | 8.7222 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:46:47Z |
-| SOFI — SoFi Technologies, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| SPCX — Space Exploration Technologies Corp. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| SPOT — Spotify Technology S.A. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | XNYS · watching | 68.79 USD | 60.3013 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:18:00Z |
-| SSU.VI — Samsung Electronics Co., Ltd. | XWBO · watchlist | — | — | Unassessed | — | — | — | — | — |
-| SSUN.VI — Samsung Electronics Co., Ltd. | XWBO · watchlist | — | — | Unassessed | — | — | — | — | — |
-| TDY — Teledyne Technologies Incorporated | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| TSLA — Tesla, Inc. | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| TSM — Taiwan Semiconductor Manufacturing Company Limited | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| TWST — Twist Bioscience Corporation | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb) | XNYS · watching | 47.74 USD | 41.8489 EUR | Valuation unattractive | The assessed base case has no positive upside. | -48.9% | -8.7% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:52:52Z |
-| TXN — Texas Instruments Incorporated | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| VALE — Vale S.A. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| VLO — Valero Energy Corporation | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| VRT — Vertiv Holdings Co | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| WTI — W&amp;T Offshore, Inc. | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
-| YEC.F — YASKAWA Electric Corporation | XFRA · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_c120e9f26ebb6159adf9"></span>[ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9) | XOTC · watching | 96.97 USD | 85.0039 EUR | Valuation unattractive | The assessed base case has no positive upside. | -33.2% | -11.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:41:43Z |
+| <span id="security-security_7bf8f4c9cc12ae410e40"></span>[ABCL — AbCellera Biologics Inc.](security-catalog#security-security_7bf8f4c9cc12ae410e40) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_66cdcf90aac0d83e76f3"></span>[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3) | XNYS · watching | 116.18 USD | 101.8434 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:59:00Z |
+| <span id="security-security_0a56aa634d077fe5796f"></span>[AMAT — Applied Materials, Inc.](security-catalog#security-security_0a56aa634d077fe5796f) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_2433a056eb0c55961fcc"></span>[AMZN — Amazon.com, Inc.](security-catalog#security-security_2433a056eb0c55961fcc) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_6f9a1450edceb9307c9a"></span>[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | XNYS · watching | 170.76 USD | 149.6882 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -35.1% | 2.2% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:11:38Z |
+| <span id="security-security_fe4648901e7675f157fd"></span>[ANIC.L — Agronomics Limited](security-catalog#security-security_fe4648901e7675f157fd) | XLON · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_ef35e41886220d51c22c"></span>[ASML — ASML Holding N.V.](security-catalog#security-security_ef35e41886220d51c22c) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_22c2b9d782a62d7a9b86"></span>[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86) | XNYS · watching | 75.29 USD | 65.9992 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -32.9% | 3.2% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:28:34Z |
+| <span id="security-security_37ddcbdaad296ad831f2"></span>[COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2) | XNAS · watching | 167.49 USD | 146.8217 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:56:38Z |
+| <span id="security-security_c150f31c30afdb4a85f9"></span>[CROX — Crocs, Inc.](security-catalog#security-security_c150f31c30afdb4a85f9) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_55c9ce2fdcd32dad6b8c"></span>[CRSR — Corsair Gaming, Inc.](security-catalog#security-security_55c9ce2fdcd32dad6b8c) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_8472507d7d320aa388a7"></span>[CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7) | XNAS · watching | 180.11 USD | 157.8844 EUR | Valuation unattractive | The assessed base case has no positive upside. | -51.1% | -27.1% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T01:22:10Z |
+| <span id="security-security_099561384c0f5e697727"></span>[CSIQ — Canadian Solar Inc.](security-catalog#security-security_099561384c0f5e697727) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_9b0db3bc77914b23a307"></span>[CSL — Carlisle Companies Incorporated](security-catalog#security-security_9b0db3bc77914b23a307) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_715bde20b6e1e1320c1a"></span>[DLO — DLocal Limited](security-catalog#security-security_715bde20b6e1e1320c1a) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_95351d928b674bbdf687"></span>[DNA — Ginkgo Bioworks Holdings, Inc.](security-catalog#security-security_95351d928b674bbdf687) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_f2b9760d847b2ba59324"></span>[ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) | XNAS · watching | 38.01 USD | 33.3196 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:12:24Z |
+| <span id="security-security_18a3ab0ee6086ee85d0f"></span>[ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | XNYS · watching | 398.64 USD | 349.4478 EUR | Valuation unattractive | The assessed base case has no positive upside. | -37.6% | -19.7% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:32:08Z |
+| <span id="security-security_2dbe878dfc899d7ee867"></span>[FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) | XNYS · watching | 62.72 USD | 54.9804 EUR | Valuation unattractive | The assessed base case has no positive upside. | -48% | -24.5% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:57:34Z |
+| <span id="security-security_a9eb9838940ef5ceaa0c"></span>[FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c) | XNAS · watching | 13.51 USD | 11.8429 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -45.6% | 9.1% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:53:08Z |
+| <span id="security-security_96ba305ee7cd586bc348"></span>[FUC.F — Fanuc Corporation](security-catalog#security-security_96ba305ee7cd586bc348) | XFRA · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_4b61970aa8f574446819"></span>[GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | XNYS · watching | 996.57 USD | 873.5933 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -42.6% | 2% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:42:35Z |
+| <span id="security-security_c86bb4e75658c07142cf"></span>[GOOGL — Alphabet Inc.](security-catalog#security-security_c86bb4e75658c07142cf) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_ad3b1f8f59fd599f079a"></span>[HOOD — Robinhood Markets, Inc.](security-catalog#security-security_ad3b1f8f59fd599f079a) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_dfa34d4b9050964b465e"></span>[INTC — Intel Corporation](security-catalog#security-security_dfa34d4b9050964b465e) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_1f9cce545ede94cd6349"></span>[ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | XNAS · watching | 356.83 USD | 312.7972 EUR | Valuation unattractive | Base-case upside is below the configured entry minimum. | -23.2% | 2.5% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T21:28:56Z |
+| <span id="security-security_0cf8075039299094d614"></span>[KTOS — Kratos Defense &amp; Security Solutions, Inc.](security-catalog#security-security_0cf8075039299094d614) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_fb87fac302a5446a1ced"></span>[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced) | XNYS · watching | 2.9 USD | 2.5421 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:46:00Z |
+| <span id="security-security_b1f2c48e1a744f5ecf67"></span>[LH — Labcorp Holdings Inc.](security-catalog#security-security_b1f2c48e1a744f5ecf67) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_a5dc16f3f4b245e6c168"></span>[LUNR — Intuitive Machines, Inc.](security-catalog#security-security_a5dc16f3f4b245e6c168) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_d12e746b3c9d392183cc"></span>[META — Meta Platforms, Inc.](security-catalog#security-security_d12e746b3c9d392183cc) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_cd492d97064d8574156e"></span>[MP — MP Materials Corp.](security-catalog#security-security_cd492d97064d8574156e) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_204be2a44063993de1a8"></span>[MSFT — Microsoft Corporation](security-catalog#security-security_204be2a44063993de1a8) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_fe5539a7d3fd9d553bce"></span>[MSTR — Strategy Inc](security-catalog#security-security_fe5539a7d3fd9d553bce) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_47a0b06f6c6c478d7c1e"></span>[NBIS — Nebius Group N.V.](security-catalog#security-security_47a0b06f6c6c478d7c1e) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_3853e54c619d597dcaa1"></span>[NIB.F — Nidec Corporation](security-catalog#security-security_3853e54c619d597dcaa1) | XFRA · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_33d9c44facc75c726c7d"></span>[NVDA — NVIDIA Corporation](security-catalog#security-security_33d9c44facc75c726c7d) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_cc4dcb8f002b61dffe00"></span>[PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00) | XPAR · watching | 9.62 EUR | 9.62 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T01:09:21Z |
+| <span id="security-security_eca976f0076a425ea1bb"></span>[PATH — UiPath, Inc.](security-catalog#security-security_eca976f0076a425ea1bb) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_97f38b2cb2d5ef127f5a"></span>[PL — Planet Labs PBC](security-catalog#security-security_97f38b2cb2d5ef127f5a) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_8a5c43888d224de85c69"></span>[PLS.AX — PLS Group Limited](security-catalog#security-security_8a5c43888d224de85c69) | XASX · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_bdc2f87dadf134760c3a"></span>[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a) | XNAS · watching | 131.53 USD | 115.2992 EUR | Valuation unattractive | The assessed base case has no positive upside. | -55.7% | -18.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:36:09Z |
+| <span id="security-security_1e8fbdb0f45f2b413e00"></span>[PYPL — PayPal Holdings, Inc.](security-catalog#security-security_1e8fbdb0f45f2b413e00) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_3a75fc1ccca2ee7c937a"></span>[QCOM — QUALCOMM Incorporated](security-catalog#security-security_3a75fc1ccca2ee7c937a) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_c9a37d277445869a8809"></span>[RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809) | XNYS · watching | 48.42 USD | 42.445 EUR | Valuation unattractive | The assessed base case has no positive upside. | -47.9% | -19.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T21:16:25Z |
+| <span id="security-security_1c055eb9b2bb1f5a8ff2"></span>[RIO — Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) | XNYS · watching | 91.95 USD | 80.6034 EUR | Valuation unattractive | The current assessment marks the security ineligible. | 0% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:01:58Z |
+| <span id="security-security_7ca095d63423c55a90e3"></span>[RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3) | XNAS · watching | 66.94 USD | 58.6796 EUR | Valuation unattractive | The assessed base case has no positive upside. | -79.3% | -56.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:04:05Z |
+| <span id="security-security_59304f90c440def31dc5"></span>[RTX — RTX Corporation](securities/security_59304f90c440def31dc5) | XNYS · watching | 218.42 USD | 191.467 EUR | Valuation unattractive | The assessed base case has no positive upside. | -35% | -17.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:06:00Z |
+| <span id="security-security_ed7d5b616a196969c815"></span>[RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815) | XNAS · watching | 3.01 USD | 2.6386 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:20:00Z |
+| <span id="security-security_6ad1af8d10d6276a0221"></span>[SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221) | XNYS · watching | 179.32 USD | 157.1919 EUR | Valuation unattractive | The assessed base case has no positive upside. | -40% | -22.9% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T23:39:45Z |
+| <span id="security-security_4627aea1bf7d8943d3d8"></span>[SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8) | XNAS · watching | 9.95 USD | 8.7222 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-26T22:46:47Z |
+| <span id="security-security_98470cfc01bbcde78fc2"></span>[SOFI — SoFi Technologies, Inc.](security-catalog#security-security_98470cfc01bbcde78fc2) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_664f93a7eaca72e76e9b"></span>[SPCX — Space Exploration Technologies Corp.](security-catalog#security-security_664f93a7eaca72e76e9b) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_2010347f1a0a5ea60f47"></span>[SPOT — Spotify Technology S.A.](security-catalog#security-security_2010347f1a0a5ea60f47) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_9d4049ed6669a52815d6"></span>[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) | XNYS · watching | 68.79 USD | 60.3013 EUR | Valuation unattractive | The current assessment marks the security ineligible. | -100% | 0% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:18:00Z |
+| <span id="security-security_567d0d575bbd30aaa91d"></span>[SSU.VI — Samsung Electronics Co., Ltd.](security-catalog#security-security_567d0d575bbd30aaa91d) | XWBO · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_d08d763780400dfbffce"></span>[SSUN.VI — Samsung Electronics Co., Ltd.](security-catalog#security-security_d08d763780400dfbffce) | XWBO · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_ad5917642acbba28c1f2"></span>[TDY — Teledyne Technologies Incorporated](security-catalog#security-security_ad5917642acbba28c1f2) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_dc7a111e297be528d96b"></span>[TSLA — Tesla, Inc.](security-catalog#security-security_dc7a111e297be528d96b) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_ce9b78a4d0773c950765"></span>[TSM — Taiwan Semiconductor Manufacturing Company Limited](security-catalog#security-security_ce9b78a4d0773c950765) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_6cf75bd0ec0aa2a20148"></span>[TWST — Twist Bioscience Corporation](security-catalog#security-security_6cf75bd0ec0aa2a20148) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_2c779e81c27b78c556bb"></span>[TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb) | XNYS · watching | 47.74 USD | 41.8489 EUR | Valuation unattractive | The assessed base case has no positive upside. | -48.9% | -8.7% | 2026-07-28T16:30:00Z / FX 2026-07-28T16:30:00Z | 2026-08-27T00:52:52Z |
+| <span id="security-security_83a56943e18793f685b0"></span>[TXN — Texas Instruments Incorporated](security-catalog#security-security_83a56943e18793f685b0) | XNAS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_b2116dcf976c96974d7b"></span>[VALE — Vale S.A.](security-catalog#security-security_b2116dcf976c96974d7b) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_c5a9e460d3350284d157"></span>[VLO — Valero Energy Corporation](security-catalog#security-security_c5a9e460d3350284d157) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_cb88f9154cfeaa15e878"></span>[VRT — Vertiv Holdings Co](security-catalog#security-security_cb88f9154cfeaa15e878) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_61567714298b9563d1a9"></span>[WTI — W&amp;T Offshore, Inc.](security-catalog#security-security_61567714298b9563d1a9) | XNYS · watchlist | — | — | Unassessed | — | — | — | — | — |
+| <span id="security-security_89969b7dac39b7db5661"></span>[YEC.F — YASKAWA Electric Corporation](security-catalog#security-security_89969b7dac39b7db5661) | XFRA · watchlist | — | — | Unassessed | — | — | — | — | — |
 
 [[index|Back to today's decision]]
