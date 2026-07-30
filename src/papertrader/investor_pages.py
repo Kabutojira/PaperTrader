@@ -1205,6 +1205,17 @@ def _catalog(repository_root: Path, snapshot: DecisionSnapshot, day: date) -> st
         "the current investor decision.",
         "",
     ]
+    assessment_history = read_table(repository_root, "security_assessment_history")
+    lines.extend(
+        [
+            "## Assessment revision audit",
+            "",
+            f"- Immutable assessment versions: **{len(assessment_history)}**",
+            "- Securities with retained revisions: "
+            f"**{len({row['security_id'] for row in assessment_history})}**",
+            "",
+        ]
+    )
     for page_type in sorted(grouped):
         lines.extend([f"## {_markdown(page_type.replace('-', ' ').title())}", ""])
         for title, key in sorted(

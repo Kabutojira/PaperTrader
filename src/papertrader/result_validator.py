@@ -170,6 +170,7 @@ def _path_allowed_for_operation(
         return raw_path in {
             "data/tables/securities.csv",
             "data/tables/security_assessments.csv",
+            "data/tables/security_assessment_history.csv",
             "data/tables/source_registry.csv",
             "data/tables/source_history.csv",
         } or _is_wiki_path(path, frozenset({"securities"}))
@@ -243,6 +244,11 @@ def _command_allowed(
         }
         or command[:1] == ("integrity",)
         or command[:2] == ("runtime-whitelist", "validate")
+        or command[:2]
+        in {
+            ("research", "security-context"),
+            ("research", "assessment-get"),
+        }
     )
     if read_only:
         return True
@@ -535,6 +541,48 @@ def _security_assessment_result_errors(
         return ["skipped security research requires an existing current assessment"]
     if status == "succeeded" and assessment["run_id"] != run_id:
         return ["completed security research requires this run's comparable assessment"]
+    if status == "succeeded":
+        versions = [
+            row
+            for row in read_table(repository_root, "security_assessment_history")
+            if row["security_id"] == operation.entity_id and row["run_id"] == run_id
+        ]
+        if len(versions) != 1:
+            return ["completed security research requires exactly one immutable assessment version"]
+        if versions[0]["previous_assessment_id"]:
+            entries, audit_errors = _load_command_audit(
+                repository_root, run_id, operation.operation_id
+            )
+            if audit_errors:
+                return audit_errors
+            read_prior = False
+            for entry in entries:
+                command = _command_parts(entry)
+                if (
+                    entry.get("exit_code") == 0
+                    and command[1:3] == ("research", "security-context")
+                    and "--security-id" in command
+                ):
+                    index = command.index("--security-id")
+                    read_prior = (
+                        index + 1 < len(command) and command[index + 1] == operation.entity_id
+                    )
+                    if read_prior:
+                        break
+            if not read_prior:
+                return [
+                    "repeat security research must read prior state with research security-context"
+                ]
+            security = next(
+                row
+                for row in read_table(repository_root, "securities")
+                if row["security_id"] == operation.entity_id
+            )
+            page = repository_root.joinpath(*PurePosixPath(security["research_page"]).parts)
+            if "## Changes since prior review" not in page.read_text(encoding="utf-8"):
+                return [
+                    "repeat security research page requires a Changes since prior review section"
+                ]
     try:
         settings = load_settings(repository_root, environment)
         from papertrader.allocation import _assessment_readiness_errors

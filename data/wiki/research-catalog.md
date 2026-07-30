@@ -7,13 +7,18 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_36f7594ab9045cc12fc2"
-as_of: "2026-07-30T06:47:17Z"
+snapshot_id: "decision_10af74d2d7bd02ea209a"
+as_of: "2026-07-30T10:45:00Z"
 ---
 
 # Research catalog
 
 This is the complete maintained research and audit catalog. The homepage remains focused on the current investor decision.
+
+## Assessment revision audit
+
+- Immutable assessment versions: **0**
+- Securities with retained revisions: **0**
 
 ## Candidate
 

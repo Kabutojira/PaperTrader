@@ -257,6 +257,7 @@ def _parser() -> argparse.ArgumentParser:
     advice_commands = advice.add_subparsers(dest="advice_command", required=True)
     advice_refresh = advice_commands.add_parser("refresh")
     advice_refresh.add_argument("--run-id", required=True)
+    advice_refresh.add_argument("--as-of")
     advice_commands.add_parser("validate").add_argument("--strict", action="store_true")
 
     actions = commands.add_parser("corporate-actions", help="apply durable paper cash actions")
@@ -280,6 +281,11 @@ def _parser() -> argparse.ArgumentParser:
             dest="research_action", required=True
         ).add_parser(action)
         research_action.add_argument("--request", type=Path, required=True)
+    security_context = research_commands.add_parser("security-context")
+    security_context.add_argument("--security-id", required=True)
+    security_context.add_argument("--history-limit", type=int, default=2)
+    assessment_get = research_commands.add_parser("assessment-get")
+    assessment_get.add_argument("--assessment-id", required=True)
 
     watchlist = commands.add_parser("watchlist", help="manage identity-only monitored securities")
     watchlist_commands = watchlist.add_subparsers(dest="watchlist_command", required=True)
@@ -876,6 +882,27 @@ def _run_structured_command(
 def _run_research_command(
     arguments: argparse.Namespace, repository_root: Path, settings: Settings
 ) -> int:
+    if arguments.research_command == "security-context":
+        from papertrader.research import security_research_context
+
+        print(
+            json.dumps(
+                security_research_context(
+                    repository_root,
+                    arguments.security_id,
+                    history_limit=arguments.history_limit,
+                ),
+                sort_keys=True,
+            )
+        )
+        return 0
+    if arguments.research_command == "assessment-get":
+        from papertrader.research import assessment_by_id
+
+        print(
+            json.dumps(assessment_by_id(repository_root, arguments.assessment_id), sort_keys=True)
+        )
+        return 0
     raw = _request_object(repository_root, arguments.request)
     if arguments.research_command == "source":
         history_id, changed = record_source(repository_root, raw)
@@ -1194,7 +1221,12 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         return int(arguments.strict and not readiness.ready)
     if arguments.command == "advice":
         if arguments.advice_command == "refresh":
-            snapshot = refresh_advice(root, settings, run_id=arguments.run_id)
+            snapshot = refresh_advice(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                as_of=parse_timestamp(arguments.as_of) if arguments.as_of else None,
+            )
             print(json.dumps(asdict(snapshot), sort_keys=True))
             return 0
         return _print_result(

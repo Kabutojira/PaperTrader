@@ -88,6 +88,13 @@ Preserve contradictory claims with their sources, dates, and confidence. Do not 
 claim merely because a newer source differs. Mark stale assertions and set a concrete next review
 date where the domain page requires one.
 
+Every repeated security review must consume the bounded deterministic prior-review context and
+retain a `## Changes since prior review` section. It distinguishes changed evidence, assumptions,
+scenario inputs/outputs, thesis, catalysts, risks, blockers, gaps, rating/action, and explicitly
+unchanged conclusions. `security_assessment_history.csv` is the append-only structured revision
+record; `security_assessments.csv` is only its current projection. Idea refreshes caused by a
+security revision preserve the corresponding dated candidate and conclusion delta.
+
 The six rows in `data/tables/youtube_channels.csv` are a human-curated source subscription. Their
 regular videos are queued directly rather than routed through the inbox packet classifier. A
 YouTube transcript is untrusted lead material, never primary evidence: independently corroborate

@@ -15,6 +15,7 @@ from papertrader.orders import leg_from_mapping
 from papertrader.tables import append_unique, contract_by_name, read_table, write_table
 from papertrader.utils import (
     CanonicalValueError,
+    content_hash,
     decimal_text,
     ensure_utc,
     format_timestamp,
@@ -276,12 +277,168 @@ def upsert_assessment(
             raise ResearchStateError("assessment update is older than current assessment state")
         if assessed == previous_assessed and previous != values:
             raise ResearchStateError("assessment timestamp conflicts with existing assessment")
-    return _replace_row(
+    security = next(
+        row
+        for row in read_table(repository_root, "securities")
+        if row["security_id"] == values["security_id"]
+    )
+    page_relative = security["research_page"]
+    page_hash = ""
+    if page_relative:
+        page = repository_root.joinpath(*PurePosixPath(page_relative).parts)
+        if page.is_symlink() or not page.is_file():
+            raise ResearchStateError("assessment security research_page is missing or a symlink")
+        page_hash = content_hash(page.read_bytes())
+    source_operations = [
+        row
+        for table in ("operations_todo", "operations_history")
+        for row in read_table(repository_root, table)
+        if row["operation_type"] in {"security_research", "quick_check_research"}
+        and row["entity_id"] == values["security_id"]
+        and row["claimed_by_run_id"] == values["run_id"]
+    ]
+    if len(source_operations) > 1:
+        raise ResearchStateError("assessment source operation is ambiguous for this run")
+    source_operation_id = source_operations[0]["operation_id"] if source_operations else ""
+    source_result_path = (
+        f"data/runs/{values['run_id']}/{source_operation_id}/agent_result.json"
+        if source_operation_id
+        else ""
+    )
+    history = read_table(repository_root, "security_assessment_history")
+    current_history = next(
+        (row for row in reversed(history) if row["security_id"] == values["security_id"]),
+        None,
+    )
+    previous_assessment_id = current_history["assessment_id"] if current_history else ""
+    assessment_identity = {
+        "assessment_schema_version": "1",
+        **values,
+        "source_operation_id": source_operation_id,
+        "source_result_path": source_result_path,
+        "research_page": page_relative,
+        "research_page_hash": page_hash,
+    }
+    assessment_id = stable_id("assessment", content_hash(assessment_identity))
+    if any(row["assessment_id"] == assessment_id for row in history):
+        return False
+    history_row = {
+        "assessment_id": assessment_id,
+        "previous_assessment_id": previous_assessment_id,
+        **assessment_identity,
+        "recorded_at": format_timestamp(instant),
+    }
+    # The immutable version is accepted and validated before the mutable current projection moves.
+    appended = append_unique(
+        repository_root,
+        "security_assessment_history",
+        [history_row],
+        key_columns=("assessment_id",),
+    )
+    projected = _replace_row(
         repository_root,
         "security_assessments",
         values,
         key="security_id",
     )
+    return bool(appended) or projected
+
+
+def assessment_by_id(repository_root: Path, assessment_id: str) -> dict[str, str]:
+    """Return one immutable historical assessment by its stable identity."""
+
+    _identifier(assessment_id, label="assessment_id")
+    matches = [
+        row
+        for row in read_table(repository_root, "security_assessment_history")
+        if row["assessment_id"] == assessment_id
+    ]
+    if len(matches) != 1:
+        raise ResearchStateError(f"unknown historical assessment_id: {assessment_id}")
+    return matches[0]
+
+
+def security_research_context(
+    repository_root: Path, security_id: str, *, history_limit: int = 2
+) -> dict[str, object]:
+    """Build bounded, read-only prior-review context for one immutable security."""
+
+    _identifier(security_id, label="security_id")
+    if history_limit < 2 or history_limit > 10:
+        raise ResearchStateError("history_limit must be between 2 and 10")
+    security = next(
+        (
+            row
+            for row in read_table(repository_root, "securities")
+            if row["security_id"] == security_id
+        ),
+        None,
+    )
+    if security is None:
+        raise ResearchStateError(f"unknown security_id: {security_id}")
+    versions = [
+        row
+        for row in read_table(repository_root, "security_assessment_history")
+        if row["security_id"] == security_id
+    ][-history_limit:]
+    current = next(
+        (
+            row
+            for row in read_table(repository_root, "security_assessments")
+            if row["security_id"] == security_id
+        ),
+        None,
+    )
+    successful = [
+        row
+        for row in read_table(repository_root, "operations_history")
+        if row["operation_type"] in {"security_research", "quick_check_research"}
+        and row["entity_id"] == security_id
+        and row["terminal_status"] == "succeeded"
+    ]
+    latest_success = max(successful, key=lambda row: row["completed_at"], default=None)
+    page_hash = ""
+    if security["research_page"]:
+        page = repository_root.joinpath(*PurePosixPath(security["research_page"]).parts)
+        if page.is_file() and not page.is_symlink():
+            page_hash = content_hash(page.read_bytes())
+    relationships = [
+        row
+        for row in read_table(repository_root, "relationships")
+        if row["security_id"] == security_id
+    ]
+    idea_ids = sorted({row["idea_id"] for row in relationships})
+    evidence_ids = sorted(
+        {
+            reference
+            for version in versions
+            for reference in version["evidence_refs"].split("|")
+            if reference
+        }
+    )
+    sources = [
+        row
+        for row in read_table(repository_root, "source_registry")
+        if row["source_id"] in evidence_ids
+    ]
+    return {
+        "security": security,
+        "current_assessment": current,
+        "current_history_version": versions[-1] if versions else None,
+        "previous_assessment": versions[-2] if len(versions) > 1 else None,
+        "assessment_history": versions,
+        "latest_successful_research": latest_success,
+        "ideas": idea_ids,
+        "relationships": relationships,
+        "strategies": [
+            row
+            for row in read_table(repository_root, "strategies")
+            if row["security_id"] == security_id
+        ],
+        "sources": sources,
+        "previous_page_hash": versions[-1]["research_page_hash"] if versions else "",
+        "current_page_hash": page_hash,
+    }
 
 
 def import_watchlist(

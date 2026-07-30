@@ -135,6 +135,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   │   ├── performance_epochs.csv
 │   │   ├── performance_daily.csv
 │   │   ├── security_assessments.csv
+│   │   ├── security_assessment_history.csv
 │   │   ├── allocation_targets.csv
 │   │   ├── allocation_history.csv
 │   │   ├── source_registry.csv
@@ -229,6 +230,15 @@ Rules:
 - `research_summary` is one short line. Full research lives in the wiki page referenced by `research_page`.
 - `provider_symbol` is the yfinance symbol. `broker_symbol` may remain blank because no real broker is used.
 - Deduplicate by issuer, instrument, venue, currency, and provider identity, not by ticker text alone.
+
+### `security_assessment_history.csv`
+
+Every accepted security assessment is appended exactly once under an immutable `assessment_id`,
+links its predecessor, and retains its schema version, source operation/result, research-page hash,
+evidence, and run provenance. `security_assessments.csv` remains the current projection and moves
+only after the immutable version validates. Repeat research must read the bounded deterministic
+security context and publish an explicit change summary; historical versions remain retrievable by
+ID and are never replaced or deleted.
 
 ### `relationships.csv`
 

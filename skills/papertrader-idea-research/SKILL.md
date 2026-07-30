@@ -54,7 +54,9 @@ and refresh the idea's security conclusion.
 7. State beneficiaries and harmed entities as hypotheses, not unexplained ticker associations.
 8. When the payload references completed security research, replace stale "queued" prose with the
    evidence-backed result, assessment disposition, decision, and reason. Reflect its implications
-   in the thesis, catalysts, risks, confirmation gates, and confidence.
+   in the thesis, catalysts, risks, confirmation gates, and confidence. Preserve a dated
+   **Changes from the security revision** comparison covering candidate-universe additions/removals,
+   changed conclusions and confidence, contradictions, and conclusions that remain unchanged.
 9. Render every retained security as a linked ticker. Link researched identities to their
    `securities/<security_id>` page; for an identity without a page, link to its stable
    `security-catalog#security-<security_id>` entry so research status never hides identity.

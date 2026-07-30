@@ -31,6 +31,11 @@ Use `papertrader research source record --request <json>` for every retained evi
 `papertrader queue enqueue --request <json>` for a justified follow-up.
 Once any request JSON has been passed to the CLI, it is immutable. Write a new uniquely named JSON
 artifact before retrying with corrected or changed content.
+Before any repeat review, run
+`papertrader research security-context --security-id <security_id>` and consume its current and
+previous structured assessments, latest successful result, linked research state, retained sources,
+and page hashes. Historical versions may be inspected by immutable ID with
+`papertrader research assessment-get --assessment-id <assessment_id>`.
 
 ## Required input
 
@@ -49,25 +54,31 @@ rows in `relationships.csv` rather than relying on wiki prose alone.
 
 1. Orient with schema, the results-first homepage, complete research catalog, recent log, and all
    pages linked to the security.
-2. Validate issuer/instrument/venue/currency/provider identity and search for duplicates.
-3. For an alert-driven review, verify every trigger and exact market-data date, explain what changed,
+2. Read the bounded security context. When prior research exists, read its result artifact and
+   preserve an explicit `## Changes since prior review` section in the security page. Cover changed
+   facts/evidence; changed assumptions; changed bear/base/bull valuation inputs and outputs; thesis
+   upgrades/downgrades; catalysts, risks, blockers, and gaps added/resolved/unchanged; rating and
+   portfolio-action changes; and conclusions that remain unchanged with reasons. Preserve dated,
+   sourced contradictory claims and confidence instead of silently replacing them.
+3. Validate issuer/instrument/venue/currency/provider identity and search for duplicates.
+4. For an alert-driven review, verify every trigger and exact market-data date, explain what changed,
    and decide whether it is opportunity, risk, or noise before updating the broader assessment.
-4. Research business and instrument economics from current primary evidence, then register the
+5. Research business and instrument economics from current primary evidence, then register the
    bounded source metadata through the source CLI before referencing it from an assessment.
-5. State thesis, contrary evidence, catalysts, risks, and invalidation.
-6. Produce a supportable downside and base-case valuation with dated inputs and an explicit
+6. State thesis, contrary evidence, catalysts, risks, and invalidation.
+7. Produce a supportable downside and base-case valuation with dated inputs and an explicit
    horizon, or record `valuation_unsupported`; never invent a price target.
-7. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
+8. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
    configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
-8. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
+9. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
    upsert for the short structured row summary.
-9. Before completing, use the assessment CLI to write exactly one current comparable result:
+10. Before completing, use the assessment CLI to write exactly one current comparable result:
    `baseline`/`conviction` only with fresh evidence, supportable valuation and no blocker, or
    `ineligible` with one or more canonical explicit hard blockers. Never leave completed research
    without an assessment.
-10. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
+11. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
    Baseline strategy work is enqueued later by the deterministic allocator, never by this skill.
-11. For each linked idea, enqueue exactly one `idea_research` operation whose inputs include
+12. For each linked idea, enqueue exactly one `idea_research` operation whose inputs include
    `idea_id`, `seed_claim`, this `security_id`, this `security_research_operation_id`, and the
    expected current result path. Set `depends_on` to this security operation so the idea refresh
    cannot run before the security result is terminally accepted. Give the follow-up a result-specific
@@ -97,7 +108,10 @@ matches the canonical project command receipts.
 
 Before the manifest, run security/assessment CLI validation, identity dedupe, source freshness,
 price/FX freshness, and strict wiki lint. Confirm the assessment is current and that no CSV was
-hand-edited. Confirm exactly one matching idea-research follow-up exists for every linked idea and
+hand-edited. On a repeat review, confirm the prior-context command succeeded, the page contains the
+required complete change summary, and the new immutable history row links its predecessor, source
+operation/result, schema version, and page hash. Confirm exactly one matching idea-research
+follow-up exists for every linked idea and
 list newly created IDs in `operations_created`. Make the manifest schema-conformant, write it last,
 and let the parent validate its schema and exact changed paths.
 

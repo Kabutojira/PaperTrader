@@ -7,13 +7,13 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_36f7594ab9045cc12fc2"
-as_of: "2026-07-30T06:47:17Z"
+snapshot_id: "decision_10af74d2d7bd02ea209a"
+as_of: "2026-07-30T10:45:00Z"
 ---
 
 # PaperTrader
 
-**As of `2026-07-30T06:47:17Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-07-30T10:45:00Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -38,9 +38,7 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 
 ## Top assessed near misses
 
-- **[ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349):** Base-case upside is below the configured entry minimum.
-- **[GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819):** Base-case upside is below the configured entry minimum.
-- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Base-case upside is below the configured entry minimum.
+No assessed near misses; unassessed securities are shown as coverage gaps.
 
 ## Performance, risk, and coverage
 

@@ -662,6 +662,53 @@ def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, s
     return rows
 
 
+def validate_assessment_history(repository_root: Path) -> list[str]:
+    """Validate immutable assessment identities, per-security chains, and current projections."""
+
+    try:
+        history = read_csv_contract_rows(repository_root, "security_assessment_history")
+        current = read_csv_contract_rows(repository_root, "security_assessments")
+    except (ContractError, OSError, ValueError) as exc:
+        return [f"cannot validate assessment history: {exc}"]
+    errors: list[str] = []
+    seen: set[str] = set()
+    latest: dict[str, Mapping[str, str]] = {}
+    for row in history:
+        assessment_id = row["assessment_id"]
+        security_id = row["security_id"]
+        if assessment_id in seen:
+            errors.append(f"duplicate historical assessment_id: {assessment_id}")
+        seen.add(assessment_id)
+        previous = latest.get(security_id)
+        expected_previous = previous["assessment_id"] if previous else ""
+        if row["previous_assessment_id"] != expected_previous:
+            errors.append(f"broken assessment history chain: {assessment_id}")
+        if row["assessment_schema_version"] not in {"1", "legacy_v1"}:
+            errors.append(f"unknown assessment history schema version: {assessment_id}")
+        if row["research_page_hash"] and not re.fullmatch(
+            r"[a-f0-9]{64}", row["research_page_hash"]
+        ):
+            errors.append(f"invalid assessment research page hash: {assessment_id}")
+        if bool(row["source_operation_id"]) != bool(row["source_result_path"]):
+            errors.append(f"incomplete assessment source operation link: {assessment_id}")
+        latest[security_id] = row
+    projection_fields = tuple(
+        field
+        for field in next(
+            contract.columns
+            for contract in load_csv_contracts(repository_root)
+            if contract.name == "security_assessments"
+        )
+    )
+    for row in current:
+        version = latest.get(row["security_id"])
+        if version is not None and any(row[field] != version[field] for field in projection_fields):
+            errors.append(
+                f"assessment projection differs from immutable history: {row['security_id']}"
+            )
+    return errors
+
+
 def publication_requires_current_state(
     repository_root: Path, environment: Mapping[str, str]
 ) -> bool:
@@ -720,6 +767,7 @@ def validate_integrity(
         errors.append(str(exc))
     errors.extend(validate_layout(repository_root))
     errors.extend(validate_csv_files(repository_root))
+    errors.extend(validate_assessment_history(repository_root))
     errors.extend(validate_json_schemas(repository_root))
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))
