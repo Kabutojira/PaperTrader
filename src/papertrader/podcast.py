@@ -268,10 +268,10 @@ def assemble_podcast(
         chunks.append(chunk)
     temporary_output = output.with_suffix(".mp3.tmp")
     try:
-        ffmpeg = shutil.which("ffmpeg")
-        ffprobe = shutil.which("ffprobe")
-        if ffmpeg is None or ffprobe is None:
-            raise PodcastError("ffmpeg and ffprobe are required for podcast assembly")
+        # Prefer resolved executables in production, while leaving command execution fully
+        # injectable for tests and other controlled runners.
+        ffmpeg = shutil.which("ffmpeg") or "ffmpeg"
+        ffprobe = shutil.which("ffprobe") or "ffprobe"
         output.parent.mkdir(parents=True, exist_ok=True)
         with tempfile.TemporaryDirectory(dir=operation_root) as temporary:
             temporary_root = Path(temporary)
@@ -281,46 +281,52 @@ def assemble_podcast(
                 encoding="utf-8",
             )
             assembled = temporary_root / "assembled.mp3"
-            completed = runner(
-                [
-                    ffmpeg,
-                    "-v",
-                    "error",
-                    "-f",
-                    "concat",
-                    "-safe",
-                    "0",
-                    "-i",
-                    str(concat),
-                    "-c",
-                    "copy",
-                    "-y",
-                    str(assembled),
-                ],
-                check=False,
-                capture_output=True,
-            )
+            try:
+                completed = runner(
+                    [
+                        ffmpeg,
+                        "-v",
+                        "error",
+                        "-f",
+                        "concat",
+                        "-safe",
+                        "0",
+                        "-i",
+                        str(concat),
+                        "-c",
+                        "copy",
+                        "-y",
+                        str(assembled),
+                    ],
+                    check=False,
+                    capture_output=True,
+                )
+            except FileNotFoundError as exc:
+                raise PodcastError("ffmpeg and ffprobe are required for podcast assembly") from exc
             if (
                 completed.returncode != 0
                 or not assembled.is_file()
                 or assembled.stat().st_size == 0
             ):
                 raise PodcastError("ffmpeg could not assemble the Hermes TTS chunks")
-            probe = runner(
-                [
-                    ffprobe,
-                    "-v",
-                    "error",
-                    "-show_entries",
-                    "format=duration",
-                    "-of",
-                    "default=noprint_wrappers=1:nokey=1",
-                    str(assembled),
-                ],
-                check=False,
-                capture_output=True,
-                text=True,
-            )
+            try:
+                probe = runner(
+                    [
+                        ffprobe,
+                        "-v",
+                        "error",
+                        "-show_entries",
+                        "format=duration",
+                        "-of",
+                        "default=noprint_wrappers=1:nokey=1",
+                        str(assembled),
+                    ],
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                )
+            except FileNotFoundError as exc:
+                raise PodcastError("ffmpeg and ffprobe are required for podcast assembly") from exc
             try:
                 duration = round(float(probe.stdout.strip()))
             except (AttributeError, ValueError) as exc:
