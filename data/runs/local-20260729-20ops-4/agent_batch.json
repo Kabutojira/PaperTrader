@@ -1,0 +1,85 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-30T00:02:05Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 18,
+  "outcomes": [
+    {
+      "operation_id": "01KYQCTS30C2E30HTD31H46P07",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQCTS30EQG9J9C5K4ZB2TVC",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30FPWA0T2PXDRYYXYR",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30G11B3C9CHZTMA087",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30GG62ZGQQAV3REQ88",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30KTTD0PH1HV9W828T",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30PQV1ZSA6WJFMV763",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30PRJH8K6R0BTK2DY2",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30RBYHT060WE7VBWGT",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30SYF0E0RFYFJ0GP6R",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30X75N3T3K87SY3ABS",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30Y9D9N0JGNK2WDED5",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30ZNSP77NDRSAJS666",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS30ZVE5AER5K9GD2VXT",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYPFC140X5NVAEQ8276H0MRZ",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS304QXMR68PSDYZNHQ0",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQCTS30506JK4T7DZGYWB11",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQCTS309ZGVYSMAYFFXCKT8",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-20260729-20ops-4",
+  "started_at": "2026-07-29T22:06:06Z"
+}

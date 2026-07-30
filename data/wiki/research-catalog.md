@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-07-29"
-updated: "2026-07-29"
+created: "2026-07-30"
+updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_46254d925ebea0d84906"
-as_of: "2026-07-29T16:39:40Z"
+snapshot_id: "decision_0cfdae4fe3cdb1bfe9b5"
+as_of: "2026-07-30T00:22:18Z"
 ---
 
 # Research catalog
@@ -17,10 +17,20 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Candidate
 
+- [\[ALB\] RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f)
 - [\[ALB\] RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752)
+- [\[ASML\] Bollinger below lower](inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad)
 - [\[ENPH\] Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
+- [\[ETN\] Bollinger below lower](inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81)
+- [\[GEV\] Bollinger below lower](inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0)
+- [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
+- [\[LH\] Bollinger above upper](inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-ed7fba71f542)
+- [\[LH\] RSI overbought](inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-f8935339ca1b)
+- [\[LUNR\] RSI oversold](inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa)
 - [\[PARRO.PA\] Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
+- [\[PL\] RSI oversold](inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd)
+- [\[PYPL\] RSI overbought](inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70)
@@ -29,8 +39,16 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101)
 - [\[SGML\] RSI oversold](inbox/market-security_4627aea1bf7d8943d3d8-rsi_oversold-e0b5f3290c6e)
+- [\[SPOT\] Bollinger above upper](inbox/market-security_2010347f1a0a5ea60f47-bollinger_above_upper-fbb3838f144d)
+- [\[SQM\] MACD cross below signal](inbox/market-security_9d4049ed6669a52815d6-macd_cross_below_signal-9e986cb6222e)
+- [\[SSU.VI\] Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a)
+- [\[TSLA\] RSI oversold](inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee)
+- [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-81e6a5bddd70)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b)
+- [\[TX\] RSI overbought](inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-bfbf989faebd)
+- [\[VRT\] Bollinger below lower](inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af)
+- [\[YEC.F\] RSI oversold](inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802)
 
 ## Daily Report
 
@@ -40,6 +58,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-07-27](daily-reports/daily-report_20260727)
 - [PaperTrader daily report — 2026-07-28](daily-reports/daily-report_20260728)
 - [PaperTrader daily report — 2026-07-29](daily-reports/daily-report_20260729)
+- [PaperTrader daily report — 2026-07-30](daily-reports/daily-report_20260730)
 
 ## Idea
 
@@ -123,6 +142,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ABB Ltd sponsored ADR](securities/security_c120e9f26ebb6159adf9)
 - [Albemarle Corporation common stock](securities/security_66cdcf90aac0d83e76f3)
 - [Arista Networks, Inc. common stock](securities/security_6f9a1450edceb9307c9a)
+- [ASML Holding N.V. New York registered shares](securities/security_ef35e41886220d51c22c)
 - [Atkore Inc. common stock](securities/security_22c2b9d782a62d7a9b86)
 - [Coinbase Global, Inc. Class A common stock](securities/security_37ddcbdaad296ad831f2)
 - [CrowdStrike Holdings, Inc. Class A common stock](securities/security_8472507d7d320aa388a7)
@@ -131,19 +151,28 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Fluence Energy, Inc. Class A common stock](securities/security_a9eb9838940ef5ceaa0c)
 - [Freeport-McMoRan Inc. common stock](securities/security_2dbe878dfc899d7ee867)
 - [GE Vernova Inc. common stock](securities/security_4b61970aa8f574446819)
+- [Intuitive Machines, Inc. Class A common stock](securities/security_a5dc16f3f4b245e6c168)
 - [Intuitive Surgical, Inc. common stock](securities/security_1f9cce545ede94cd6349)
+- [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
 - [Palantir Technologies Inc. Class A common stock](securities/security_bdc2f87dadf134760c3a)
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
+- [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)
+- [Planet Labs PBC Class A common stock](securities/security_97f38b2cb2d5ef127f5a)
 - [Recursion Pharmaceuticals, Inc. Class A common stock](securities/security_ed7d5b616a196969c815)
 - [Rio Tinto plc sponsored ADR](securities/security_1c055eb9b2bb1f5a8ff2)
 - [Roblox Corporation Class A common stock](securities/security_c9a37d277445869a8809)
 - [Rocket Lab Corporation common stock](securities/security_7ca095d63423c55a90e3)
 - [RTX Corporation common stock](securities/security_59304f90c440def31dc5)
+- [Samsung Electronics common GDR](securities/security_567d0d575bbd30aaa91d)
 - [Sigma Lithium Corporation common shares](securities/security_4627aea1bf7d8943d3d8)
 - [Sociedad Quimica y Minera de Chile S.A. American depositary shares](securities/security_9d4049ed6669a52815d6)
 - [Southern Copper Corporation common stock](securities/security_6ad1af8d10d6276a0221)
+- [Spotify Technology S.A. ordinary shares](securities/security_2010347f1a0a5ea60f47)
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)
+- [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)
+- [Vertiv Holdings Co Class A common stock](securities/security_cb88f9154cfeaa15e878)
+- [YASKAWA Electric Corporation Frankfurt ordinary shares](securities/security_89969b7dac39b7db5661)
 
 ## Signals
 

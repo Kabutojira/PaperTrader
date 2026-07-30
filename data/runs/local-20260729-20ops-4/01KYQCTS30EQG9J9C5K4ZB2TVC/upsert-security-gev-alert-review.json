@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4b61970aa8f574446819",
+  "issuer_id": "issuer_7bca479f6eb8c69f3ffb",
+  "company_name": "GE Vernova Inc.",
+  "instrument_name": "GE Vernova Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "GEV",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "GEV",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Accepted exposure to AI infrastructure power bottlenecks; maintained for valuation and backlog-conversion monitoring.",
+  "research_summary": "Q2 operating evidence remains strong, but the lower-band selloff lacks RSI or volume confirmation and a bounded 12-month valuation has 39.6% downside versus 7.4% base upside.",
+  "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+  "last_research_at": "2026-07-29T22:08:30Z",
+  "next_review_at": "2026-08-26T22:42:35Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm"
+}

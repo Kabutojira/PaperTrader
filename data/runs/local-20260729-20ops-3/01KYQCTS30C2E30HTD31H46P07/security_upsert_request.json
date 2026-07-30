@@ -1,0 +1,23 @@
+{
+  "security_id": "security_cb88f9154cfeaa15e878",
+  "issuer_id": "issuer_8e4118bf341dfbc9aaa0",
+  "company_name": "Vertiv Holdings Co",
+  "instrument_name": "Vertiv Holdings Co Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "VRT",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "VRT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Q2 growth, margins, cash flow, and raised guidance support the thesis, but the pre-release mark embeds a premium multiple with 38.4% downside and only 4.2% bounded base upside.",
+  "research_page": "data/wiki/securities/security_cb88f9154cfeaa15e878.md",
+  "last_research_at": "2026-07-29T21:52:30Z",
+  "next_review_at": "2026-08-28T21:52:30Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm"
+}

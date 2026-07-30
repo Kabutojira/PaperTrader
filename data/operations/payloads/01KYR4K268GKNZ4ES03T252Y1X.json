@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_488a9d7f7a8573597724",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "Data-centre load growth and inadequate grid capacity can increase utility transmission, substation, distribution, interconnection, and critical-path electrical-construction demand served by Quanta, subject to permitting, project timing, labor, fixed-price execution, policy, and valuation.",
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, transmission and substation demand, data-centre electrical-installation exposure, backlog quality, labor and contract risks, cash conversion, valuation, catalysts, and invalidation.",
+    "security_id": "security_488a9d7f7a8573597724"
+  },
+  "objective": "Research Quanta Services as a bounded grid-interconnection and data-centre electrical-construction exposure.",
+  "operation_id": "01KYR4K268GKNZ4ES03T252Y1X",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/energy-and-ai/executive-summary",
+    "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000006/pwr-20251231.htm"
+  ]
+}

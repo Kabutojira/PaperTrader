@@ -1,0 +1,25 @@
+{
+  "completed_at": "",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "preparation_errors": [
+    "security_3e597863f00753e8c65c: price cache is empty",
+    "security_488a9d7f7a8573597724: price cache is empty",
+    "security_dc8486c1d61df62a22fd: price cache is empty"
+  ],
+  "queue_dispositions": [
+    "allocation_maintenance:01KYR5PTQ83GZTPZMC2Q2KMPAH",
+    "allocation_maintenance:01KYR5PTQ85N1ZCYD8JF9FVRPM",
+    "allocation_maintenance:01KYR5PTQ8SEPDB26SQZPVANG7"
+  ],
+  "report_path": "",
+  "run_id": "local-20260730-maintenance-1",
+  "snapshot_id": "",
+  "source_sha": "679759ae632069705995377f5c0d1d9b4f47226b",
+  "started_at": "2026-07-30T00:10:09Z",
+  "status": "prepared",
+  "trigger": "local"
+}

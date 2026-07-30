@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "AI infrastructure and power bottlenecks: evidence-backed integrated power-distribution, energy-management, and data-centre electrical-equipment candidate requiring security-specific research.",
+  "source": "https://www.se.com/ww/en/about-us/investor-relations/share-information/share-price/",
+  "securities": [
+    {
+      "company_name": "Schneider Electric SE",
+      "instrument_name": "Schneider Electric SE ordinary shares",
+      "instrument_type": "equity",
+      "ticker": "SU",
+      "exchange_code": "PAR",
+      "venue_mic": "XPAR",
+      "provider_symbol": "SU.PA",
+      "currency": "EUR",
+      "country": "FR",
+      "sector": "Industrials",
+      "industry": "Electrical Equipment & Parts"
+    }
+  ]
+}

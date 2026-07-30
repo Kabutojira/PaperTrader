@@ -1,0 +1,50 @@
+{
+  "operation_id": "01KYQCTS309ZGVYSMAYFFXCKT8",
+  "status": "succeeded",
+  "summary": "Classified Eaton's 2026-06-29 through 2026-07-28 lower-Bollinger transition as technical noise with pre-earnings timing risk, not a fundamental opportunity. The USD 388 close was only USD 0.095, or 0.025%, below the lower band; RSI was neutral and volume was not abnormal. Current primary evidence showed Q1 as the latest reported quarter and Q2 results scheduled for July 31, while fresh canonical security research retained medium-confidence baseline eligibility but found both bounded valuation scenarios below the mark. No wiki update or follow-up was created because the maintained page already records this exact evidence and a dependent AI-infrastructure idea refresh is already queued.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "For the exact 2026-06-29 through 2026-07-28 period, ETN's adjusted close fell from USD 408.260009765625 to USD 388.00, a canonical period return of -4.962526%. The 2026-07-28 close was USD 0.095 below the USD 388.095 lower Bollinger band, trigger strength was 0.0002453222 after previous strength zero, RSI was 42.53, volume anomaly was 1.125, and the source-price hash 7df9103ad627a0d8f48feb5bce101bd7130e7e7367ce995d70e0d9ae903919f9 matched the candidate packet and indicator row."
+    },
+    {
+      "source": "Eaton Q1 2026 Form 10-Q",
+      "claim": "The SEC-filed quarter ended 2026-03-31 remained the latest financial report and supports strong electrical demand and cash generation alongside acquisition leverage and integration risk; it contains no evidence of a new fundamental deterioration explaining the 2026-07-28 technical breach.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm",
+      "observed_at": "2026-07-30T00:00:02Z"
+    },
+    {
+      "source": "Eaton Q2 2026 earnings-date announcement",
+      "claim": "Eaton's current primary announcement scheduled second-quarter 2026 results for 2026-07-31 before the NYSE open and a conference call at 11 a.m. Eastern; it disclosed no Q2 result that could explain the alert, making the imminent event a timing risk rather than confirming a fundamental opportunity.",
+      "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-to-announce-second-quarter-2026-earnings-on-july-31--2026.html",
+      "observed_at": "2026-07-30T00:00:02Z"
+    },
+    {
+      "source": "PaperTrader canonical security research and structured queue state",
+      "claim": "The fresh Eaton assessment from operation 01KYQCTS3075EV877E527425DB classified the same alert as marginal technical noise and pre-earnings timing risk, retained medium-confidence baseline status, and recorded bounded downside and base scenarios of -35.9% and -17.5% from the USD 388 mark. Eaton has no position or strategy, and dependent idea-research operations for idea_ai_infrastructure_power are already queued, so another follow-up would be duplicative."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Eaton's 2026-07-28 lower-Bollinger entry was a marginal 0.025% breach with neutral RSI and no abnormal volume. Current primary evidence showed no intervening financial result before the July 31 Q2 release, and fresh valuation scenarios remained below the USD 388 mark, so the move was classified as technical noise with pre-earnings timing risk; no duplicate follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The sole selected queue row remained running under local-20260729-20ops-4 with a live lease and matched the immutable opportunity ID, Eaton security ID, operation type, payload path, sequential local-harness preflight, and repository controller and opportunity-skill hashes.",
+      "The ETN/XNYS/USD/equity identity matched exactly one canonical security row, and the period endpoints, 2026-07-28 source bar, market-data timestamp, entered transition, trigger strength, and source-price hash matched the deterministic packet and indicator cache.",
+      "Current Eaton and SEC primary evidence was time-matched and distinguished from inference; the maintained security page already contains the exact alert evidence, classification, valuation gates, citations, and accepted idea relationship, so no timestamp-only wiki edit was made.",
+      "Structured history and the active queue showed the same alert was absorbed by fresh security research and at least one dependent idea_ai_infrastructure_power refresh is already queued; zero follow-ups is therefore bounded and non-duplicative.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed, and command_audit.json records exactly the four canonical CLI commands with zero changed paths.",
+      "No issue, signal, order, fill, execution, cash, portfolio, performance, allocation, accounting, structured table, or wiki path changed; the payload, source packet, command audit, and operation artifacts inspected before the manifest were regular files rather than symlinks."
+    ]
+  }
+}

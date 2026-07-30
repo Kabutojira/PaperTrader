@@ -92,12 +92,20 @@ ACTION_STATUS_LABELS = {
     "blocked": "Blocked",
     "no_action": "No action",
 }
+RESEARCH_DECISION_CONCLUSION_MAX_CHARS = 350
 
 
 def _markdown(value: str) -> str:
     normalized = " ".join(value.split())
     escaped = escape(normalized, quote=False).replace("\\", "\\\\")
     return re.sub(r"([`*_\[\]|])", r"\\\1", escaped)
+
+
+def _bounded_text(value: str, maximum_chars: int) -> str:
+    normalized = " ".join(value.split())
+    if len(normalized) <= maximum_chars:
+        return normalized
+    return normalized[: maximum_chars - 1].rstrip() + "…"
 
 
 def _html(value: str) -> str:
@@ -369,9 +377,8 @@ def investor_brief_markdown(
         lines.extend(["", "## Research decisions this run", ""])
         for decision in research_decisions:
             label = _link(decision.label, decision.research_page)
-            lines.append(
-                f"- **{label} — {_markdown(decision.status)}:** {_markdown(decision.conclusion)}"
-            )
+            conclusion = _bounded_text(decision.conclusion, RESEARCH_DECISION_CONCLUSION_MAX_CHARS)
+            lines.append(f"- **{label} — {_markdown(decision.status)}:** {_markdown(conclusion)}")
     near_miss = next(iter(_near_misses(snapshot, limit=1)), None)
     lines.extend(["", "## Top blocker or near miss", ""])
     if near_miss is None:

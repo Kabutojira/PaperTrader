@@ -4,20 +4,20 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-07-29"
-updated: "2026-07-29"
+created: "2026-07-30"
+updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_46254d925ebea0d84906"
-as_of: "2026-07-29T16:39:40Z"
+snapshot_id: "decision_0cfdae4fe3cdb1bfe9b5"
+as_of: "2026-07-30T00:22:18Z"
 ---
 
 # PaperTrader
 
-**As of `2026-07-29T16:39:40Z` · Investment data: Degraded — review investment data gaps · Operations: Current**
+**As of `2026-07-30T00:22:18Z` · Investment data: Degraded — review investment data gaps · Operations: Blocked**
 
 ## No trade — hold 100% cash
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>24/24</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>34/34</strong></article></section>
 
 ### Why
 
@@ -40,15 +40,15 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 
 - **[ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349):** Base-case upside is below the configured entry minimum.
 - **[GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819):** Base-case upside is below the configured entry minimum.
-- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Base-case upside is below the configured entry minimum.
+- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Base-case upside is below the configured entry minimum.
 
 ## Performance, risk, and coverage
 
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **24/24**
-- Relationship reviews: **24/24**
+- Current assessments: **34/34**
+- Relationship reviews: **24/34**
 - Accepted relationships: **22**
 - Market retrieval failures: **0**
 
@@ -60,4 +60,4 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260729|Daily report 2026-07-29]]
+- [[daily-reports/daily-report_20260730|Daily report 2026-07-30]]

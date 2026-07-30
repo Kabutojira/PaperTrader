@@ -1,0 +1,18 @@
+{
+  "source_id": "source_yaskawa_fy2026_q1_qa",
+  "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/261Q_QA_EN.pdf",
+  "canonical_url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/261Q_QA_EN.pdf",
+  "source_type": "issuer-presentation",
+  "title": "Yaskawa first-quarter FY2026 results briefing Q&A",
+  "publisher": "YASKAWA Electric Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "a6cf0582347d96dc98edf68163a66e52e1ecb40b277313689b88b051c8db125e",
+  "related_entity_ids": "security_89969b7dac39b7db5661",
+  "checked_at": "2026-07-29T23:32:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Semiconductor AC-servo orders increased more than 200% year on year and semiconductor Robotics orders increased 141%.",
+  "summary": "Management's Q&A describes order strength, the bounded ERP disruption, expected normalization, and the absence of customer switching due to delivery concerns.",
+  "run_id": "local-20260729-20ops-4"
+}

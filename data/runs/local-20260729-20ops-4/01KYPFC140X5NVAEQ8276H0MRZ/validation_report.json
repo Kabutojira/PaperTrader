@@ -1,0 +1,25 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYR4K1705VG7GQANFYSR5RYW.json",
+    "data/operations/payloads/01KYR4K268GKNZ4ES03T252Y1X.json",
+    "data/operations/payloads/01KYR4K35GCJ54W0MEN0SYT67E.json",
+    "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-bloom-research.json",
+    "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-quanta-research.json",
+    "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-schneider-research.json",
+    "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-bloom-energy.json",
+    "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-quanta-services.json",
+    "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-schneider-electric.json",
+    "data/tables/securities.csv",
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-07-29T23:54:09Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYPFC140X5NVAEQ8276H0MRZ",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

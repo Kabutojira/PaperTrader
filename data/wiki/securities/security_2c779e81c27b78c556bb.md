@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-28"
-provenance: "source_ternium_july_2026_sustainability_6k; source_ternium_q1_2026_results; source_1272c9af68af3c39b32e; source_41b6971c55327a48da17; deterministic market cache"
+updated: "2026-07-29"
+provenance: "source_ternium_july_2026_sustainability_6k; source_ternium_q1_2026_results; source_ternium_q2_2026_event; source_ustr_usmca_joint_statement_20260723; source_1272c9af68af3c39b32e; source_41b6971c55327a48da17; deterministic market cache"
 security_id: security_2c779e81c27b78c556bb
 issuer_id: issuer_bc5aa26231f1e18e929d
 confidence: medium
-next_review: "2026-08-07"
+next_review: "2026-08-05"
 ---
 
 # Ternium S.A. ADS
@@ -56,16 +56,17 @@ exposures dilute the Mexico-specific thesis.
 | Net cash fell to USD 327 million. | Capex and Usiminas allocation reduce downside flexibility. |
 | Non-controlling interests materially reduced parent earnings. | Consolidated figures overstate ADS-holder attribution. |
 
-Primary evidence: [Ternium Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm)
-and [8 July 2026 sustainability filing](https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm).
+Primary evidence: [Ternium Q1 2026 results](https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm),
+the [8 July 2026 sustainability filing](https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm),
+and the [23 July U.S.-Mexico USMCA-review statement](https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/joint-statement-ambassador-jamieson-greer-and-mexican-secretary-economy-marcelo-ebrard).
 
 ## Valuation, catalysts, and risks
 
-At the current USD 47.74 paper mark, a bounded 12-month earnings scenario is not compelling. Q1
+At the current USD 49.33 paper mark, a bounded 12-month earnings scenario is not compelling. Q1
 parent-attributable earnings were USD 1.09 per ADS, or USD 4.36 if annualized. A downside scenario
 discounts that run-rate by 30% for steel-cycle and ramp risk and applies 8 times earnings, producing
-USD 24.42 per ADS and 48.9% downside. A base scenario applies 10 times the unadjusted annualized
-run-rate, producing USD 43.60 and 8.7% downside. These are comparison scenarios rather than price
+USD 24.42 per ADS and 50.5% downside. A base scenario applies 10 times the unadjusted annualized
+run-rate, producing USD 43.60 and 11.6% downside. These are comparison scenarios rather than price
 targets: one quarter does not establish normalized earnings, and the method does not credit an
 undisclosed Pesquería return. A fuller model still must include remaining capex and ramp losses and
 scenario Usiminas, working capital, currencies, tariffs, litigation, and non-controlling interests.
@@ -80,6 +81,17 @@ snapshot. Neither packet explains the move, establishes intrinsic value, overrid
 base-case upside, commissioning, and cash-conversion gates, or independently supports a trade or
 short thesis.
 
+The 29 July alert review supersedes the earlier technical context with the canonical **2026-07-28**
+observation. TX rose **13.35%** from 29 June, closed at **USD 49.33**, finished **1.26%** above its
+upper Bollinger band, and entered overbought territory at **RSI 70.52**. Volume was only **0.57
+times** its configured comparison level, so the move lacked abnormal-volume confirmation. The 23
+July USTR statement provides plausible regional-policy context: the third U.S.-Mexico review round
+covered steel, aluminum, automobiles, economic security, and regional supply chains, with further
+talks directed for September. It disclosed no completed agreement, tariff change, or Ternium volume,
+price, utilization, margin, or cash-flow effect, so causation is not established. No issuer release
+inside the observation window changed the operating thesis. Ternium schedules Q2 results after the
+4 August market close; that is the next decisive evidence rather than the momentum transition.
+
 Catalysts are on-time steel-shop commissioning, rising Mexican utilization, working-capital release,
 and improving free cash flow. Invalidate if USMCA or tariffs disrupt rather than support demand,
 imports pressure prices, ramp or infrastructure constraints delay output, working capital stays
@@ -88,8 +100,10 @@ elevated, or regional and Usiminas risks consume Mexico gains.
 ## Disposition
 
 Status: **watching**, allocation eligibility **baseline**, confidence **medium**. Review by
-**2026-08-07** after Q2 results. No conviction strategy is proposed because the later startup
-schedule, unproven capacity returns, cyclical normalization, negative base-case upside, and adverse
-timing fail the unchanged margin-of-safety and strategy gates. The accepted nearshoring relationship
-does not remove those blockers, and this indicator transition does not justify another follow-up.
-See the complete [[research-catalog]] and append-only [[log]] for context.
+**2026-08-05** after Q2 results. The July 28 move is positive policy-linked momentum but also
+valuation and pre-results timing risk, not a paper-trade opportunity. No conviction strategy is
+proposed because the later startup schedule, unproven capacity returns, cyclical normalization,
+11.6% base-case downside, 50.5% downside scenario, overbought timing, and imminent results fail the
+unchanged margin-of-safety and strategy gates. The accepted nearshoring relationship warrants one
+sequential idea refresh, but it does not remove the security blockers. See the complete
+[[research-catalog]] and append-only [[log]] for context.

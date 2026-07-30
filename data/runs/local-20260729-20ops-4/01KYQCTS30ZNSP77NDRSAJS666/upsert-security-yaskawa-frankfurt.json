@@ -1,0 +1,23 @@
+{
+  "security_id": "security_89969b7dac39b7db5661",
+  "issuer_id": "issuer_a10383b9a5262a1907f8",
+  "company_name": "YASKAWA Electric Corporation",
+  "instrument_name": "YASKAWA Electric Corporation Frankfurt ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "YEC.F",
+  "exchange_code": "FRA",
+  "venue_mic": "XFRA",
+  "provider_symbol": "YEC.F",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "JP",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Industrial automation and robotics exposure; monitored for order conversion, ERP normalization, Robotics margins, valuation, and Frankfurt liquidity.",
+  "research_summary": "Strong orders and Motion Control growth preserve the thesis, but Robotics profit fell 82.3%, the bounded valuation is below the EUR 25 mark, and Frankfurt liquidity is insufficient.",
+  "research_page": "data/wiki/securities/security_89969b7dac39b7db5661.md",
+  "last_research_at": "2026-07-29T23:32:00Z",
+  "next_review_at": "2026-08-31T16:00:00Z",
+  "source": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vrt_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+  "source_type": "regulator_filing",
+  "title": "Vertiv Q2 2026 results furnished on Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "d4d0a061a46d88b421ca10cf7d176adb19db3e56af3b053098d07cf3bb41f8bc",
+  "related_entity_ids": "security_cb88f9154cfeaa15e878",
+  "checked_at": "2026-07-29T21:51:59Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Vertiv reported Q2 2026 net sales of USD 3.274 billion, adjusted operating margin of 22.6%, adjusted diluted EPS of USD 1.52, and adjusted free cash flow of USD 925 million.",
+  "summary": "Current primary results for the quarter ended 2026-06-30. Sales rose 24%, adjusted operating profit rose 51%, adjusted margin expanded 410 basis points, and adjusted free cash flow rose 234%. Revenue reflected temporary supply-chain congestion and multi-phased project timing. Vertiv ended Q2 with USD 5.6 billion liquidity and net cash, and raised full-year guidance to USD 13.8-14.2 billion sales, USD 6.65-6.75 adjusted EPS, and USD 2.4-2.6 billion adjusted free cash flow.",
+  "run_id": "local-20260729-20ops-3"
+}

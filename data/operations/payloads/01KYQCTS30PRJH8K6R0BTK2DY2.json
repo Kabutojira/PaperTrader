@@ -1,0 +1,22 @@
+{
+  "entity_id": "security_fb87fac302a5446a1ced",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-07-29T16:55:24Z",
+    "market_data_date": "2026-07-28",
+    "period_end": "2026-07-28",
+    "period_start": "2026-06-29",
+    "security_id": "security_fb87fac302a5446a1ced",
+    "source_price_hash": "73a1b3522099eda6de06ac88f7d135270a9dc1b8ab5c841b67acbb5104e1a1ce",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
+  },
+  "objective": "Research security_fb87fac302a5446a1ced with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+  "operation_id": "01KYQCTS30PRJH8K6R0BTK2DY2",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63.md"
+  ]
+}

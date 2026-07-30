@@ -4,7 +4,7 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-28"
+updated: "2026-07-29"
 provenance: "source_lac_q1_2026_10q; source_fae2a4af713687d5cc2b; deterministic market cache"
 security_id: security_fb87fac302a5446a1ced
 issuer_id: issuer_8471016731f84aeb44ff
@@ -54,9 +54,9 @@ Primary evidence: [Lithium Americas Q1 2026 Form 10-Q](https://www.sec.gov/Archi
 
 ## Valuation, catalysts, and risks
 
-The fresh 27 July 2026 paper mark is USD 2.90, with 5.58 million shares traded; the same refresh
-records USD/EUR at 0.8794000149. Those observations support price, FX, and trading-liquidity checks,
-not fundamental valuation. No supportable common-share valuation is recorded because the available
+The fresh 28 July 2026 paper mark is USD 2.80, with 5.73 million shares traded; the current 29 July
+USD/EUR rate is 0.8782. Those observations support price, FX, and trading-liquidity checks, not
+fundamental valuation. No supportable common-share valuation is recorded because the available
 evidence does not provide a current project model that reconciles 62% ownership, DOE and other
 claims, warrants, offtake pricing, remaining capex, future dilution, ramp probability, and lithium-
 price scenarios. Technical-report NPV cannot be treated as equity value, and an arbitrary price
@@ -67,6 +67,15 @@ after a **26.45%** adjusted-close decline from 25 June to 24 July, at a USD 2.83
 strength of 0.1879. This [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910|indicator
 transition]] corroborates weak momentum and near-term timing risk; it does not explain the move,
 establish intrinsic value, or override the financing, dilution, construction, and valuation gates.
+
+The oversold condition strengthened on **2026-07-28**: the USD 2.80 close was down **25.73%** from
+29 June, RSI fell to **26.75**, and the daily return was **-3.45%**. Volume was not abnormal
+(`z=0.48`), the close remained **11.42% above** the lower Bollinger band, and MACD remained
+marginally above its signal line. The [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63|strengthened
+alert]] therefore confirms weak momentum without independent price or volume confirmation. The
+unchanged SEC-filed Q1 evidence documents construction progress and substantial liquidity but no
+new operating event that explains the observation-period decline. This remains commodity,
+financing, dilution, construction, and timing risk rather than a contrarian opportunity.
 
 Catalysts are construction milestones, cost control, DOE draws, commissioning, and qualified
 battery-grade production. Invalidate if cost-to-complete rises materially, financing conditions
@@ -79,5 +88,5 @@ Status: **watching**, confidence **low**, allocation assessment **ineligible**. 
 blocker is `valuation_unsupported`; project concentration, cyclical normalization, completion
 timing, financing, dilution, and commissioning remain risks. Review by **2026-08-15** after the next
 quarterly construction, liquidity, and share-count disclosure. No strategy is proposed because the
-full valuation and evidence gate does not pass, and the oversold condition is not independently a
-trade signal.
+full valuation and evidence gate does not pass, and the strengthened oversold condition is not
+independently a trade signal.

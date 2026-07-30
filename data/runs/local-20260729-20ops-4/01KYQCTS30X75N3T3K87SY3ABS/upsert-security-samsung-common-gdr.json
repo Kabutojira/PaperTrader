@@ -1,0 +1,23 @@
+{
+  "security_id": "security_567d0d575bbd30aaa91d",
+  "issuer_id": "issuer_adf6eb6a528f8576f0ed",
+  "company_name": "Samsung Electronics Co., Ltd.",
+  "instrument_name": "Samsung Electronics common GDR",
+  "instrument_type": "equity",
+  "ticker": "SSU.VI",
+  "exchange_code": "VIE",
+  "venue_mic": "XWBO",
+  "provider_symbol": "SSU.VI",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "KR",
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "status": "watching",
+  "watchlist_reason": "Samsung common-GDR exposure; monitored for memory-cycle earnings, cross-venue parity, local liquidity, and valuation support.",
+  "research_summary": "Record earnings guidance supports the operating thesis, but the 26.1% local decline lacks volume confirmation and fresh cross-venue, FX, and intrinsic-valuation support.",
+  "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
+  "last_research_at": "2026-07-29T23:18:00Z",
+  "next_review_at": "2026-07-31T12:00:00Z",
+  "source": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_1Q_conference_eng.pdf"
+}

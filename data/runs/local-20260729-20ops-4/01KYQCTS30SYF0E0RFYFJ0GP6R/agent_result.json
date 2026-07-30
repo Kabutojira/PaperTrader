@@ -1,0 +1,102 @@
+{
+  "operation_id": "01KYQCTS30SYF0E0RFYFJ0GP6R",
+  "status": "succeeded",
+  "summary": "Reviewed Ternium's immutable NYSE ADS after its 2026-07-28 upper-Bollinger and RSI-overbought transitions. TX rose 13.35% over the exact observation period and closed at USD 49.33, 1.26% above its upper band with RSI 70.52, but volume was not abnormal. A July 23 USTR statement is relevant regional-policy context without disclosing company economics or establishing causation; Q2 results scheduled after the August 4 close are the next decisive operating evidence. The higher mark worsens the unchanged bounded scenarios to 50.5% downside and 11.6% base-case downside. Ternium remains a medium-confidence baseline comparison with no conviction strategy; one required sequential refresh of the accepted nearshoring idea was enqueued.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market cache and indicator state",
+      "claim": "For the canonical 2026-06-29 through 2026-07-28 observation, TX rose 13.3502% and closed at USD 49.33. The close was 1.2571% above the USD 48.7176 upper Bollinger band, RSI was 70.5229, and the 0.5733 volume ratio did not confirm abnormal volume. The market retrieval timestamp was 2026-07-29T16:55:24Z.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "63545778e6269646e58130dc3ec3d9a44780c65e6701f114fcf73ac3ea637c89"
+    },
+    {
+      "source": "Ternium Q1 2026 SEC-filed results",
+      "claim": "Q1 parent-attributable profit was USD 213 million, or USD 1.09 per ADS. Operating cash flow was USD 217 million versus USD 406 million of capex, and the filing supports the current bounded earnings scenarios and cash-conversion risk.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "af838871cbdd3ac73d3d9849ebde2ced6f5d7ed190efe18cfc690d6d121bd680"
+    },
+    {
+      "source": "Ternium 8 July 2026 sustainability Form 6-K",
+      "claim": "The current issuer filing expects the Pesqueria DRI-EAF shop to begin operations in early 2027, later than the Q1 before-year-end 2026 target, preserving the commissioning and execution-risk gap.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "5b10e200e156cb6e2c5874519bda9d717d8fae1d327ba90caf4f2cb4993e3089"
+    },
+    {
+      "source": "USTR July 23 U.S.-Mexico joint statement",
+      "claim": "The third bilateral USMCA-review round covered steel, aluminum, automobiles, economic security, and regional supply chains, and directed a fourth round for September. The statement disclosed no completed agreement, tariff change, or Ternium-specific volume, price, utilization, margin, or cash-flow effect, so it is plausible context rather than a proven price-move explanation.",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/joint-statement-ambassador-jamieson-greer-and-mexican-secretary-economy-marcelo-ebrard",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "d1a3defb17b35feb0557eb92faa1d0954c3af89c58e5f7b76edfaf0818739f6d"
+    },
+    {
+      "source": "Ternium investor events calendar",
+      "claim": "Ternium schedules its Q2 2026 results release for August 4 after market and the conference call for August 5. The calendar contains no Q2 financial results, making the event an imminent timing catalyst rather than evidence explaining the July 28 move.",
+      "url": "https://investors.ternium.com/events/",
+      "observed_at": "2026-07-29T23:13:30Z",
+      "source_hash": "46105f412cdf2ca7d21ce7c87012f803841085893ce1f5be9d863265f87f8e3a"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYR2CW38HRY2WSCX0MSTYT44.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/enqueue-idea-refresh-nearshoring-ternium-alert.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-july-2026-sustainability-refresh.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-q1-2026-results-refresh.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-q2-2026-event.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ustr-usmca-july23-2026.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v2.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v3.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v4.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-security-ternium-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "operations_created": [
+    "01KYR2CW38HRY2WSCX0MSTYT44"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ternium's 13.35% one-month rise reached RSI 70.52 and closed 1.26% above its upper band without abnormal volume. Constructive U.S.-Mexico steel and supply-chain talks are relevant but do not establish company economics; the USD 49.33 mark stands above the USD 24.42 downside and USD 43.60 base scenarios, and August 4 Q2 results add timing risk. No paper trade."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-q1-2026-results-refresh.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-july-2026-sustainability-refresh.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ustr-usmca-july23-2026.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-security-ternium-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v2.json",
+    "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/enqueue-idea-refresh-nearshoring-ternium-alert.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-q2-2026-event.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v3.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v4.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The parent-supplied row was the sole specified operation, already running for immutable security_2c779e81c27b78c556bb under local-20260729-20ops-4, and preflight hashes identified the repository controller and security-research skills with sequential execution enabled.",
+      "The TX/XNYS/USD/equity provider identity matched exactly one immutable security row and no duplicate provider identity.",
+      "The canonical alert inputs matched the 2026-07-28 market and indicator rows and source price hash; the 2026-07-29T16:55:24Z retrieval was within the configured 36-hour freshness policy at assessment time, and no FX conversion was required for the USD instrument and USD valuation.",
+      "Four retained primary sources were registered or refreshed before the final assessment, with matching hashes, available status, HTTP 200 metadata, and timestamps no later than the 2026-07-29T23:14:00Z assessment.",
+      "The current medium-confidence baseline assessment belongs to this run, expires immediately after the scheduled Q2 evidence window, contains supportable 12-month scenarios of -50.5% downside and -11.6% base upside, lists only canonical soft gaps, and has no hard blocker.",
+      "The initial assessment request failed without state change on non-canonical gap labels; immutable v2 corrected those labels. The later v3 request failed without state change because its assessment time was seconds in the future; immutable v4 corrected the timestamp and is the final current assessment.",
+      "Exactly one result-specific idea_research follow-up, 01KYR2CW38HRY2WSCX0MSTYT44, exists for the sole accepted linked idea and depends on this security operation; no conviction strategy operation was created because the full gate failed.",
+      "Final strict schema validation, queue validation, wiki lint, and repository integrity all passed after the last structured update.",
+      "The command audit contains exactly the listed 18 canonical commands and their exit codes. No allocation target/history, order, fill, execution, cash, portfolio, performance, or other accounting path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

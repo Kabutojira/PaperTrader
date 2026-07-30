@@ -57,3 +57,5 @@ gha-30378447463-1,2026-07-28T16:30:00Z,2026-07-28T16:35:54Z,succeeded,schedule,1
 youtube-bootstrap-20260729,2026-07-29T14:29:29Z,2026-07-29T14:30:18Z,degraded,manual,0,5,0,,Daily run degraded; 0 agent operations; 0 pending-order dispositions.
 youtube-allin-backfill-20260729,2026-07-29T14:59:27Z,2026-07-29T15:00:35Z,degraded,manual,0,5,0,,Daily run degraded; 0 agent operations; 0 pending-order dispositions.
 seekingalpha-source-20260729,2026-07-29T16:39:25Z,2026-07-29T16:39:40Z,degraded,local,0,5,0,,Daily run degraded; 0 agent operations; 0 pending-order dispositions.
+local-20260729-20ops-4,2026-07-29T21:59:17Z,2026-07-30T00:02:15Z,succeeded,local,18,5,0,,Daily run succeeded; 18 agent operations; 0 pending-order dispositions.
+local-20260730-maintenance-2,2026-07-30T00:16:50Z,2026-07-30T00:22:18Z,succeeded,local,1,5,0,,Daily run succeeded; 1 agent operations; 0 pending-order dispositions.

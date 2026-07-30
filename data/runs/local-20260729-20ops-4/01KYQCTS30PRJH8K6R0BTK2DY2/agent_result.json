@@ -1,0 +1,64 @@
+{
+  "operation_id": "01KYQCTS30PRJH8K6R0BTK2DY2",
+  "status": "succeeded",
+  "summary": "Reviewed Lithium Americas after its strengthened 2026-07-28 RSI-oversold alert. The USD 2.80 close fell 25.73% from 2026-06-29 and 3.45% for the session, with RSI at 26.75, but volume was not abnormal, the close remained 11.42% above the lower Bollinger band, and MACD remained marginally above its signal line. Current SEC-filed Q1 evidence still shows tangible Thacker Pass construction progress and substantial liquidity but no new operating event explaining the decline. Pre-revenue economics, remaining capex, conditional financing, dilution, commodity exposure, commissioning, and unsupported common-equity valuation remain decisive. Retained low-confidence ineligible status with valuation_unsupported, created no conviction strategy, and enqueued exactly one dependent refresh for the accepted lithium-cycle idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "LAC closed at USD 2.80 on 2026-07-28, down 3.45% from the prior session and 25.73% from 2026-06-29. RSI was 26.75, volume z-score was 0.48, the close was 11.42% above the lower Bollinger band, and MACD remained 0.0097 above its signal line. The current 2026-07-29 USD/EUR rate was 0.8782. The canonical source-price hash is 73a1b3522099eda6de06ac88f7d135270a9dc1b8ab5c841b67acbb5104e1a1ce.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "73a1b3522099eda6de06ac88f7d135270a9dc1b8ab5c841b67acbb5104e1a1ce"
+    },
+    {
+      "source": "Lithium Americas Corp. Q1 2026 Form 10-Q",
+      "claim": "The unchanged SEC filing reports cash and restricted cash of approximately USD 1.21 billion at 2026-03-31, late-2027 targeted mechanical completion, USD 1.1 billion spent within the USD 2.93 billion technical-report capex estimate, USD 1.3-1.6 billion fiscal-2026 project capex guidance, conditional DOE financing, GM joint-venture ownership, warrants, and observed ATM dilution. It supports the construction and risk analysis but neither explains the July market decline nor supplies a supportable common-equity valuation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1966983/000119312526222727/lac-20260331.htm",
+      "observed_at": "2026-07-29T22:55:00Z",
+      "source_hash": "a7d31055ce1a4a604bde8ebb54d0371db6956244067432f5bcd4b504b95bfd88"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYR1GDY8T9RTDS2G7WCA8V80.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/enqueue-idea-refresh-lac-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/record-source-lac-q1-2026-alert-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/upsert-assessment-lac-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/upsert-security-lac-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_fb87fac302a5446a1ced.md"
+  ],
+  "operations_created": [
+    "01KYR1GDY8T9RTDS2G7WCA8V80"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Lithium Americas' strengthened 2026-07-28 RSI-oversold alert followed a 25.73% one-month decline, but lacked abnormal volume or a lower-Bollinger breach. Current primary evidence disclosed no new operating impairment and common-equity valuation remains unsupported, so the move is momentum, commodity, financing, dilution, and construction risk rather than a conviction paper-trade opportunity."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/record-source-lac-q1-2026-alert-recheck.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/upsert-security-lac-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/upsert-assessment-lac-alert-review.json",
+    "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/enqueue-idea-refresh-lac-alert-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease through 2026-07-29T23:23:07Z, and matched the immutable LAC identity, alert payload, sequential local-harness preflight, controller skill hash, security-research skill hash, and empty injection-flag set.",
+      "The LAC/XNYS/USD/equity identity matched exactly one canonical security row; exactly one accepted relationship links it to idea_critical_minerals_lithium.",
+      "The canonical 2026-07-28 alert type, observation period, mark, market-data timestamp, and source-price hash matched the payload. The alert reproduced as RSI 26.75 after a 25.73% one-month decline, without abnormal volume or a lower-Bollinger breach; the 2026-07-29 USD/EUR rate was current.",
+      "The retained SEC filing was rechecked and recorded before the assessment. The assessment belongs to this run, references fresh registered evidence, expires at the scheduled quarterly review boundary, and records the explicit valuation_unsupported hard blocker.",
+      "Exactly one matching idea-research follow-up was created as 01KYR1GDY8T9RTDS2G7WCA8V80, depends on this security operation, and points to this run's expected result path.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false only for unrelated eligible-security relationship gaps and unreconciled rejected relationships; Lithium Americas' current ineligible assessment and accepted relationship were present.",
+      "The command audit exactly records all nine project CLI invocations, including the expected nonzero repository-wide allocation-readiness check. Audited mutations touched only permitted security, assessment, source, and follow-up queue state; no allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

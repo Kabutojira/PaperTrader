@@ -124,3 +124,11 @@
 2026-07-29T15:00:35Z [daily_run_completed] run=youtube-allin-backfill-20260729 Completed deterministic daily run with status degraded.
 2026-07-29T16:39:25Z [daily_run_started] run=seekingalpha-source-20260729 Started sequential deterministic daily preparation.
 2026-07-29T16:39:40Z [daily_run_completed] run=seekingalpha-source-20260729 Completed deterministic daily run with status degraded.
+2026-07-29T16:51:20Z [daily_run_started] run=local-20260729-20ops-1 Started sequential deterministic daily preparation.
+2026-07-29T16:55:24Z [daily_run_started] run=local-20260729-20ops-2 Started sequential deterministic daily preparation.
+2026-07-29T21:42:10Z [daily_run_started] run=local-20260729-20ops-3 Started sequential deterministic daily preparation.
+2026-07-29T21:59:17Z [daily_run_started] run=local-20260729-20ops-4 Started sequential deterministic daily preparation.
+2026-07-30T00:02:15Z [daily_run_completed] run=local-20260729-20ops-4 Completed deterministic daily run with status succeeded.
+2026-07-30T00:10:09Z [daily_run_started] run=local-20260730-maintenance-1 Started sequential deterministic daily preparation.
+2026-07-30T00:16:50Z [daily_run_started] run=local-20260730-maintenance-2 Started sequential deterministic daily preparation.
+2026-07-30T00:22:18Z [daily_run_completed] run=local-20260730-maintenance-2 Completed deterministic daily run with status succeeded.

@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_critical_minerals_lithium",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "security_id": "security_fb87fac302a5446a1ced",
+    "security_research_operation_id": "01KYQCTS30PRJH8K6R0BTK2DY2",
+    "security_research_result_path": "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/agent_result.json",
+    "seed_claim": "Lithium Americas' strengthened 2026-07-28 RSI-oversold condition followed a 25.73% one-month decline without abnormal volume or a lower-band breach; current primary evidence does not explain a new operating impairment or support a common-equity valuation."
+  },
+  "objective": "Refresh the critical-minerals lithium idea from Lithium Americas' accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYR1GDY8T9RTDS2G7WCA8V80",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_fb87fac302a5446a1ced.md"
+  ]
+}

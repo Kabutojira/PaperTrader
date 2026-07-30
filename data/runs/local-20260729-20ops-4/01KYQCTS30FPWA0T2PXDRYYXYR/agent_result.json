@@ -1,0 +1,74 @@
+{
+  "operation_id": "01KYQCTS30FPWA0T2PXDRYYXYR",
+  "status": "succeeded",
+  "summary": "Researched Planet Labs after its 2026-07-28 RSI-oversold transition. The USD 20.20 close fell 35.42% over the observation period and RSI reached 25.77, but the close remained above the lower Bollinger band and volume was not abnormal. Current SEC-filed Q1 FY2027 evidence shows 42% revenue growth, 99% recurring ACV, USD 816 million of RPO, USD 906 million of backlog, and USD 731 million of cash and short-term investments, with no disclosed operating impairment explaining the July 28 move. Negative free cash flow, capital intensity, cancellable government backlog, stock compensation, convertible-note dilution, and an approximately 16x forward-revenue enterprise valuation remain material. A bounded 12-month sensitivity gives 49.0% downside and a base value 24.1% below the mark, so the alert is valuation and momentum risk rather than a paper-trade opportunity. Recorded medium-confidence baseline comparability, created no strategy, and created no idea refresh because neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "PL closed at USD 20.20 on 2026-07-28, down 3.81% for the session and 35.42% from 2026-06-29. RSI was 25.77, the USD 17.63 lower Bollinger band was not breached, volume anomaly was 0.63, and rsi_oversold was the only transition. The canonical source-price hash is 7ab9f36f1bba068eaa6d42bd40ae774f3083f26fb652c90927f5304142dcac3f. The 2026-07-28 USD/EUR rate was 0.8795499801635742 with the same retrieval timestamp.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "7ab9f36f1bba068eaa6d42bd40ae774f3083f26fb652c90927f5304142dcac3f"
+    },
+    {
+      "source": "Planet Labs PBC Q1 fiscal 2027 results",
+      "claim": "The SEC-filed release reports USD 94.2 million of Q1 revenue, 42% year-over-year growth, 99% recurring ACV, USD 816 million of RPO, more than USD 906 million of backlog, near-break-even adjusted EBITDA, USD 15.4 million of operating cash flow, negative USD 2.5 million of free cash flow, and FY2027 revenue guidance of USD 425-441 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm",
+      "observed_at": "2026-07-29T22:15:00Z",
+      "source_hash": "b994d6e1a86c80fd8ab44ed324d04cd1a7a4be68b6b466ab4a295fbbb50832c2"
+    },
+    {
+      "source": "Planet Labs PBC Q1 fiscal 2027 Form 10-Q",
+      "claim": "The filing confirms the PL/XNYS/USD Class A identity; USD 730.8 million of cash and short-term investments; USD 460 million of 2030 notes; 356.4 million issued Class A and Class B shares; 27.6 million unvested RSUs; cancellable and appropriation-dependent backlog; stock-compensation, capital-intensity, and dilution risks; and the inputs used in the bounded valuation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+      "observed_at": "2026-07-29T22:15:00Z",
+      "source_hash": "9d231aaadd4cefcb37654b291d06ea006f06823737afce397f49181c13a5b0b5"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/record-source-pl-q1-fy2027-10q.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/record-source-pl-q1-fy2027-results.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/upsert-assessment-pl-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/upsert-security-pl-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Planet Labs entered RSI-oversold territory after a 35.42% one-month decline, but lacked abnormal-volume or lower-Bollinger confirmation. Strong Q1 growth, recurring ACV, RPO, backlog, and liquidity remain offset by cash-generation, capital-intensity, dilution, and valuation risk; bounded USD 10.30 downside and USD 15.34 base values remain below the USD 20.20 mark, so no conviction paper strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/record-source-pl-q1-fy2027-results.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/record-source-pl-q1-fy2027-10q.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/upsert-security-pl-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30FPWA0T2PXDRYYXYR/upsert-assessment-pl-alert-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease, and matched the immutable Planet Labs identity, alert payload, sequential harness preflight, controller skill hash, and security-research skill hash.",
+      "The PL/XNYS/USD/equity identity matched exactly one canonical security row and no duplicate immutable provider identity was found.",
+      "The 2026-07-28 market date, observation period, USD 20.20 mark, RSI-oversold trigger, source-price hash, and USD/EUR cache matched the payload and deterministic market state.",
+      "Both retained SEC primary sources were downloaded, hashed, checked, and registered before the current assessment. The assessment belongs to this run, references both fresh registered sources, remains current through 2026-08-28, and has no hard blocker.",
+      "No payload idea and no accepted canonical relationship exists for this security, so exactly zero idea-research follow-ups were required and created.",
+      "The conviction strategy gate failed on downside, base upside, margin of safety, timing, confidence, dilution, and valuation, so no strategy-research follow-up was created.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed after all permitted edits.",
+      "Allocation readiness correctly remained false for pre-existing repository-wide relationship gaps and Planet Labs' absence of an accepted relationship; removing a thematic wiki link eliminated the transient ambiguous-link diagnostic without inventing a relationship.",
+      "command_audit.json contains exactly the twelve canonical project CLI invocations listed in commands_run, including both expected nonzero allocation-readiness checks.",
+      "No allocation target/history, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request or operation artifact is a symlink."
+    ]
+  }
+}

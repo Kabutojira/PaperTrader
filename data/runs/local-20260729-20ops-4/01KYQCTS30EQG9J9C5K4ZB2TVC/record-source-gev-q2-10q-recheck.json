@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm",
+  "source_type": "filing",
+  "title": "GE Vernova Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_4b61970aa8f574446819",
+  "checked_at": "2026-07-29T22:08:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30, 2026, cash and restricted cash were USD 13.120 billion, long-term borrowings were USD 2.794 billion, and Q2 diluted weighted-average shares were 270 million.",
+  "summary": "The unchanged Q2 filing retains the balance-sheet, share-count, backlog-quality, working-capital, acquisition and Wind-risk inputs for the bounded valuation; it does not identify a new fundamental impairment behind the July 28 alert.",
+  "run_id": "local-20260729-20ops-4"
+}

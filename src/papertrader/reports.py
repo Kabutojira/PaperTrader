@@ -23,6 +23,9 @@ HOME_RESULTS_START = "<!-- papertrader-current-results:start -->"
 HOME_RESULTS_END = "<!-- papertrader-current-results:end -->"
 HOME_SUGGESTION_LIMIT = 3
 HOME_SUGGESTION_MAX_CHARS = 400
+REPORT_NARRATIVE_TEXT_MAX_CHARS = 350
+REPORT_NARRATIVE_EVIDENCE_LIMIT = 3
+REPORT_ISSUE_DESCRIPTION_MAX_CHARS = 500
 
 
 @dataclass(frozen=True, slots=True)
@@ -35,6 +38,13 @@ class NarrativeItem:
 
 def _cell(value: str) -> str:
     return value.replace("|", "\\|").replace("\r", " ").replace("\n", " ") or "—"
+
+
+def _bounded_text(value: str, maximum_chars: int) -> str:
+    normalized = " ".join(value.split())
+    if len(normalized) <= maximum_chars:
+        return normalized
+    return normalized[: maximum_chars - 1].rstrip() + "…"
 
 
 def _today(timestamp: str, report_date: date) -> bool:
@@ -871,8 +881,14 @@ def generate_daily_report(
     if narratives:
         lines.extend(["### Evidence-linked narrative", ""])
         for item in narratives:
-            references = ", ".join(f"`{reference}`" for reference in item.evidence_refs)
-            lines.append(f"- {_markdown_text(item.text)} Evidence: {references}.")
+            displayed_refs = item.evidence_refs[:REPORT_NARRATIVE_EVIDENCE_LIMIT]
+            references = ", ".join(f"`{reference}`" for reference in displayed_refs)
+            omitted = len(item.evidence_refs) - len(displayed_refs)
+            suffix = f" (+{omitted} more in the run artifacts)" if omitted else ""
+            lines.append(
+                f"- {_markdown_text(_bounded_text(item.text, REPORT_NARRATIVE_TEXT_MAX_CHARS))} "
+                f"Evidence: {references}{suffix}."
+            )
         lines.append("")
     lines.extend(
         [f"- [[{page_key}]]" for page_key in wiki_changes]
@@ -1054,15 +1070,15 @@ def generate_daily_report(
         else ["No scheduled follow-up operations."]
     )
     lines.extend(["", "### Open issues and delivery failures", ""])
-    lines.extend(
-        (
-            f"- `{row['severity']}` **`{row['issue_id']}`** — {_markdown_text(row['title'])}: "
-            f"{_markdown_text(row['description'])}"
-            for row in issues
-        )
-        if issues
-        else ["No open issues."]
-    )
+    if issues:
+        for row in issues:
+            description = _bounded_text(row["description"], REPORT_ISSUE_DESCRIPTION_MAX_CHARS)
+            lines.append(
+                f"- `{row['severity']}` **`{row['issue_id']}`** — {_markdown_text(row['title'])}: "
+                f"{_markdown_text(description)}"
+            )
+    else:
+        lines.append("No open issues.")
     lines.extend(["", "### Machine decision provenance", ""])
     for code in snapshot.stance_reason_codes:
         lines.append(f"- `{code}` — {_markdown_text(reason_label(code))}")

@@ -1,0 +1,343 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q1-2026-results.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "206577922aab1732c6bf9793241bb1392e18d7fd58881eaef382e78162d0eed6",
+            53027,
+            384
+          ],
+          "before": [
+            "file",
+            "7667b61b8fd6bcf28b7cbf6d324aed4943bf2b138d0c8ded4e3ea0bddbd84512",
+            52523,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "38066e8f6d0f6415ca843e9cca4b09dba42e345e751c6357003d4aac2395baf7",
+            31865,
+            384
+          ],
+          "before": [
+            "file",
+            "67c194f0bfbc357926b3b22417c2d248268dbfde4b286272e18ae3575e6953aa",
+            31371,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q1-2026-results.json",
+      "completed_at": "2026-07-29T23:20:39Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "2c49b3490853b56360c5ffaea4c9a1b793f8ebc8300d300d4593c9e0a12e54d9",
+          1073,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q1-2026-results.json"
+      },
+      "started_at": "2026-07-29T23:20:39Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q2-2026-guidance.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "56bf5b2b4fcdb1d453bf77348ae3ffd1e9a89ce363d7acd6bfe8ac3a05bfa884",
+            53510,
+            384
+          ],
+          "before": [
+            "file",
+            "206577922aab1732c6bf9793241bb1392e18d7fd58881eaef382e78162d0eed6",
+            53027,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "8c34d9ff2e554b5b17dcc43d6f085f5a73463e996b71c1a507b99247195fa62b",
+            32344,
+            384
+          ],
+          "before": [
+            "file",
+            "38066e8f6d0f6415ca843e9cca4b09dba42e345e751c6357003d4aac2395baf7",
+            31865,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q2-2026-guidance.json",
+      "completed_at": "2026-07-29T23:20:47Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "f89ba3f41b3929cdb110ed9f3cd7bceb65032114e326200b77d76258d2090523",
+          1040,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q2-2026-guidance.json"
+      },
+      "started_at": "2026-07-29T23:20:46Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-gdr-identity.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d384cf7614988e3939a916f92bb9ed113632478594c4a68bf535c99e1fd95314",
+            54021,
+            384
+          ],
+          "before": [
+            "file",
+            "56bf5b2b4fcdb1d453bf77348ae3ffd1e9a89ce363d7acd6bfe8ac3a05bfa884",
+            53510,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "e81cda476649b1a92dcadd2b09395fd675419f82b25f1e13003c4f4205b56cb1",
+            32765,
+            384
+          ],
+          "before": [
+            "file",
+            "8c34d9ff2e554b5b17dcc43d6f085f5a73463e996b71c1a507b99247195fa62b",
+            32344,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-gdr-identity.json",
+      "completed_at": "2026-07-29T23:20:53Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "4b44fd35aee40b66bf38734e2d64dd736e23de32d70bc946cf1d0bec718416c7",
+          1003,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-gdr-identity.json"
+      },
+      "started_at": "2026-07-29T23:20:53Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-security-samsung-common-gdr.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "9d6b975bd271fd82363fc02d8f899fc727cd28947e1aa17cc14e66d7fe20a363",
+            34298,
+            384
+          ],
+          "before": [
+            "file",
+            "471c15492460286036ab2b5dc0e42a0dc8adc359834555c56deea7bfbc5796d3",
+            33903,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-security-samsung-common-gdr.json",
+      "completed_at": "2026-07-29T23:21:00Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "4f16e696772a4cd7ab518f9da59349ddda6612e482d57d65856df31da2785498",
+          1111,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-security-samsung-common-gdr.json"
+      },
+      "started_at": "2026-07-29T23:20:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-assessment-samsung-common-gdr.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "74dfab8c4d581c345d72f9c941e68b35cea863503c4d7ce58d67e275fe871e2b",
+            9799,
+            384
+          ],
+          "before": [
+            "file",
+            "4a1f9c5b6832a9c7b7a348fa3d91164234257bfb08a210a14e22e827d879f534",
+            9443,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-assessment-samsung-common-gdr.json",
+      "completed_at": "2026-07-29T23:21:06Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "4e3ae9c7983ff70ee98b3076fbe9249da95644e351a72e7914b2851a6182fb4f",
+          781,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-assessment-samsung-common-gdr.json"
+      },
+      "started_at": "2026-07-29T23:21:06Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-29T23:21:14Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:21:13Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-29T23:21:20Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:21:19Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-29T23:21:26Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:21:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-29T23:21:34Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:21:32Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader allocation readiness --strict",
+      "completed_at": "2026-07-29T23:21:40Z",
+      "exit_code": 1,
+      "request": null,
+      "started_at": "2026-07-29T23:21:40Z"
+    }
+  ],
+  "operation_id": "01KYQCTS30X75N3T3K87SY3ABS",
+  "run_id": "local-20260729-20ops-4"
+}

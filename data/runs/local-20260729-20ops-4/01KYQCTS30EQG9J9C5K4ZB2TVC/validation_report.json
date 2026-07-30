@@ -1,0 +1,24 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYQYVK38FSPHJ5XKB7T0WXD9.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/enqueue-idea-refresh-gev-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/record-source-gev-q2-10q-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/record-source-gev-q2-results-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/upsert-assessment-gev-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/upsert-security-gev-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "completed_at": "2026-07-29T22:12:42Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30EQG9J9C5K4ZB2TVC",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

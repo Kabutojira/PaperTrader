@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYQCTS304QXMR68PSDYZNHQ0",
+  "status": "skipped",
+  "reason_code": "exact_duplicate_absorbed_by_security_research",
+  "summary": "Skipped duplicate Labcorp RSI-overbought opportunity research because completed operation 01KYQCTS30RBYHT060WE7VBWGT already reviewed the identical 2026-06-29 through 2026-07-28 observation, canonical 2026-07-28 bar, RSI-overbought transition, and source-price hash in this run. That accepted review found a 12.39% period rise and RSI 79.56 without abnormal-volume confirmation, checked current primary evidence, classified the move as positive momentum and pre-results timing risk rather than a stand-alone paper-trade opportunity, updated the maintained security research and assessment, and justified no strategy or idea follow-up. Repeating those changes or enqueuing another operation would duplicate completed work.",
+  "evidence": [
+    {
+      "source": "data/market/indicators.csv and data/wiki/inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-f8935339ca1b.md",
+      "claim": "The immutable Labcorp identity, 2026-06-29 through 2026-07-28 period, 2026-07-29T16:55:24Z market-data timestamp, RSI-overbought transition, and canonical source-price hash match this operation payload. The deterministic indicator row records RSI 79.55619119, a 12.393596% period return, no abnormal-volume trigger, and source hash 18c3bbb40ddcb0e9a286214e693bebeaea80016728504f9a827770dd637201e5.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "18c3bbb40ddcb0e9a286214e693bebeaea80016728504f9a827770dd637201e5"
+    },
+    {
+      "source": "data/operations/operations_history.csv and data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/agent_result.json",
+      "claim": "Completed security-research operation 01KYQCTS30RBYHT060WE7VBWGT explicitly reviewed both Labcorp's upper-Bollinger and RSI-overbought transitions using the identical canonical source-price hash and period. It classified the movement as positive momentum and pre-results timing risk, not a conviction paper-trade opportunity, and created no strategy or idea-refresh operation.",
+      "observed_at": "2026-07-29T23:06:11Z"
+    },
+    {
+      "source": "Labcorp Holdings Inc. Q1 2026 Form 10-Q",
+      "claim": "The already accepted review used current SEC-filed operating, cash-flow, liquidity, debt, segment, and risk evidence to test materiality and valuation; the registered filing remained the latest reported-quarter evidence at the alert cutoff.",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000139/lh-20260331.htm",
+      "observed_at": "2026-07-29T23:00:00Z",
+      "source_hash": "9e4df6d9659a86625e63a06ba75673e815b17a8e91a48d2451c5ff1059fd3a45"
+    },
+    {
+      "source": "Labcorp Q2 2026 results-date Form 8-K",
+      "claim": "The accepted SEC evidence established that decisive Q2 results were scheduled before the July 30 market open and were unavailable at the July 28 alert cutoff, supporting the pre-results timing-risk classification.",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000150/lh-20260630.htm",
+      "observed_at": "2026-07-29T23:00:00Z",
+      "source_hash": "933373b69f2aadcee4fdf4391d12b2197161eb47efdccffb6ca3326b221e1a9c"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row was running under local-20260729-20ops-4 with the immutable opportunity ID, Labcorp security ID, opportunity-research type, native llm-wiki skill, repository opportunity skill, and sequential harness preflight required by the controller.",
+      "The payload period, market-data timestamp, trigger type, immutable security identity, source packet, deterministic indicator row, and source-price hash matched exactly.",
+      "Structured history proved that completed operation 01KYQCTS30RBYHT060WE7VBWGT already absorbed this exact RSI transition, period, source hash, primary-source review, materiality test, risk classification, and no-follow-up decision.",
+      "The maintained Labcorp page and canonical assessment already retain the evidence-backed positive-momentum and pre-results timing-risk conclusion, so no wiki update, issue, or follow-up operation was justified.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed before the manifest write.",
+      "command_audit.json contains exactly the four canonical project CLI invocations listed in commands_run, all with exit code zero and no changed paths.",
+      "No allocation target/history, signal, order, order leg, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and the operation artifact directory contains no symlink."
+    ]
+  }
+}

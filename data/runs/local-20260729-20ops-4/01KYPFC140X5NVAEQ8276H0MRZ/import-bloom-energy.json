@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "AI infrastructure and power bottlenecks: evidence-backed on-site generation and grid-delay substitute candidate requiring security-specific research.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm",
+  "securities": [
+    {
+      "company_name": "Bloom Energy Corporation",
+      "instrument_name": "Bloom Energy Corporation Class A common stock",
+      "instrument_type": "equity",
+      "ticker": "BE",
+      "exchange_code": "NYQ",
+      "venue_mic": "XNYS",
+      "provider_symbol": "BE",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Industrials",
+      "industry": "Electrical Equipment & Parts"
+    }
+  ]
+}

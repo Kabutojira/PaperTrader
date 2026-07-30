@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_critical_minerals_lithium",
+  "dedupe_key": "idea_research:idea_critical_minerals_lithium:security-result:01KYQCTS30PQV1ZSA6WJFMV763:local-20260729-20ops-4",
+  "prompt": "Refresh the critical-minerals lithium idea from Albemarle's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "seed_claim": "Albemarle's 2026-07-28 strengthened RSI-oversold condition followed a 12.34% one-month decline without abnormal volume or a lower-band breach; Q1 remains the latest operating evidence before August 5 results, and normalized common-equity valuation remains unsupported.",
+    "security_id": "security_66cdcf90aac0d83e76f3",
+    "security_research_operation_id": "01KYQCTS30PQV1ZSA6WJFMV763",
+    "security_research_result_path": "data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/agent_result.json"
+  },
+  "source": "security_research:01KYQCTS30PQV1ZSA6WJFMV763",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYQCTS30PQV1ZSA6WJFMV763"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "max_attempts": 3
+}

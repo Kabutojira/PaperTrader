@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_3e597863f00753e8c65c",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "Grid-interconnection delays can shift some AI-data-centre power demand toward Bloom Energy on-site fuel cells, subject to fuel availability, emissions policy, financing, concentration, manufacturing execution, competing generation, and valuation.",
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, AI-data-centre order materiality, customer concentration, fuel and carbon economics, financing, manufacturing capacity, cash conversion, valuation, catalysts, and invalidation.",
+    "security_id": "security_3e597863f00753e8c65c"
+  },
+  "objective": "Research Bloom Energy as a bounded on-site power substitute for grid-constrained AI data centres.",
+  "operation_id": "01KYR4K35GCJ54W0MEN0SYT67E",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/energy-and-ai/executive-summary",
+    "https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm"
+  ]
+}

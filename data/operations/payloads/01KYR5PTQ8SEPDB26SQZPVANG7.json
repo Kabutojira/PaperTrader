@@ -1,0 +1,20 @@
+{
+  "entity_id": "security_2c779e81c27b78c556bb",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-07-29T23:14:00Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+    "security_id": "security_2c779e81c27b78c556bb"
+  },
+  "objective": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYR5PTQ8SEPDB26SQZPVANG7",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_ternium_july_2026_sustainability_6k",
+    "source_ternium_q1_2026_results",
+    "source_ternium_q2_2026_event",
+    "source_ustr_usmca_joint_statement_20260723"
+  ]
+}

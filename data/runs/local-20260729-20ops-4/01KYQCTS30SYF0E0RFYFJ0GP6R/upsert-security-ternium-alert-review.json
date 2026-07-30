@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2c779e81c27b78c556bb",
+  "issuer_id": "issuer_bc5aa26231f1e18e929d",
+  "company_name": "Ternium S.A.",
+  "instrument_name": "Ternium S.A. ADS",
+  "instrument_type": "equity",
+  "ticker": "TX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "TX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "LU",
+  "sector": "Basic Materials",
+  "industry": "Steel",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "A policy-linked momentum surge does not overcome Pesqueria timing, cash conversion, cyclicality, and valuation; Q2 results are the next decisive evidence.",
+  "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+  "last_research_at": "2026-07-29T23:12:00Z",
+  "next_review_at": "2026-08-05T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm"
+}

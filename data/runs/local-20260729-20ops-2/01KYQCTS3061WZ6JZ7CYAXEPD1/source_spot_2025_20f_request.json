@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spot_2025_20f",
+  "url": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026006874/ck0001639920-20251231.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026006874/ck0001639920-20251231.htm",
+  "source_type": "regulator_filing",
+  "title": "Spotify Technology S.A. 2025 Form 20-F",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "334c2025b71631e9cc4f19449b8c0fee9f821c1c9f10c9cdf65f4409ef3ff594",
+  "related_entity_ids": "security_2010347f1a0a5ea60f47",
+  "checked_at": "2026-07-29T17:03:27Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Spotify reported 2025 free cash flow of EUR 2.874 billion and year-end cash and short-term investments of EUR 9.467 billion. Its ordinary shares trade as SPOT on the New York Stock Exchange.",
+  "summary": "Audited annual filing for the year ended 2025-12-31. It establishes the Luxembourg issuer and NYSE-listed ordinary-share identity, the subscription and advertising model, 751 million MAUs, 290 million Premium subscribers, EUR 2.874 billion of free cash flow, EUR 9.467 billion of cash and short-term investments, and material risks including competition, content-licensor concentration, advertising execution, regulation, privacy, AI, foreign exchange, and founder voting control.",
+  "run_id": "local-20260729-20ops-2"
+}

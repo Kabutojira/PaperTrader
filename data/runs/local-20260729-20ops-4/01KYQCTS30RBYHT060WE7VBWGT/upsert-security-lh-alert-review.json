@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b1f2c48e1a744f5ecf67",
+  "issuer_id": "issuer_d0762758c05766ef1ab5",
+  "company_name": "Labcorp Holdings Inc.",
+  "instrument_name": "Labcorp Holdings Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "LH",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "LH",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Diagnostics & Research",
+  "status": "watching",
+  "watchlist_reason": "Large diagnostics and biopharma laboratory-services candidate; maintained for organic growth, backlog conversion, reimbursement, leverage, cash generation, and valuation monitoring.",
+  "research_summary": "Broad Q1 growth and margin expansion support comparison, but the overbought pre-Q2 move lacks abnormal-volume confirmation and a bounded base value remains 2.5% below the mark.",
+  "research_page": "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md",
+  "last_research_at": "2026-07-29T23:03:00Z",
+  "next_review_at": "2026-07-31T23:03:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000139/lh-20260331.htm"
+}

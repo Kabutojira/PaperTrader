@@ -1,0 +1,334 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-6k.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f55e7d78e12f371c411f9dcd934aa02feb45ab6db52c5827f0ea21dd1b4bf5a1",
+            45955,
+            384
+          ],
+          "before": [
+            "file",
+            "362967ba7e5e9a84c0478ae9124611f87ded97c478ba6afe36c04c5b2a070888",
+            45327,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "15f910af86c79d35f04150478335f6a47c6b1dab7131db04fe8d58b3215436ba",
+            27645,
+            384
+          ],
+          "before": [
+            "file",
+            "0f3be5ecdf7282018735361eab4852ee52db08c0dab36083451ddaf0b500cc17",
+            27182,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-6k.json",
+      "completed_at": "2026-07-29T22:43:15Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "7a94fc24d1049c3faeb065c91fc9360f4124020a1e8da37689e7745993b77edf",
+          1176,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-6k.json"
+      },
+      "started_at": "2026-07-29T22:43:14Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-financials.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "88b0aa1ef51963de08de318ea4d8cc27e77186c81e6d31e00e3aa34f2a9eccfe",
+            46468,
+            384
+          ],
+          "before": [
+            "file",
+            "f55e7d78e12f371c411f9dcd934aa02feb45ab6db52c5827f0ea21dd1b4bf5a1",
+            45955,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "44ed15ef97b31aaaacd1be48876be2ccfffad640f7e1678a848642c99baf03df",
+            28138,
+            384
+          ],
+          "before": [
+            "file",
+            "15f910af86c79d35f04150478335f6a47c6b1dab7131db04fe8d58b3215436ba",
+            27645,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-financials.json",
+      "completed_at": "2026-07-29T22:43:16Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "59cbd2768627bedacae560319505db8da26f2c92a49b36d03877aad270c51036",
+          1083,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-financials.json"
+      },
+      "started_at": "2026-07-29T22:43:16Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-security-asml-alert-review.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "02046a0c0190a882c4cf4c25f69c68d2000aced85fa595960adaad4821c2d74d",
+            33461,
+            384
+          ],
+          "before": [
+            "file",
+            "4d5ae149f42f7437c8c4ec8c1fd0f58b50d9f3f63aebd917dfe79be59debbddf",
+            33043,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-security-asml-alert-review.json",
+      "completed_at": "2026-07-29T22:43:17Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "315ced35660c4262c99a9043102ba055b704eb588b757473121798237c7aa552",
+          1147,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-security-asml-alert-review.json"
+      },
+      "started_at": "2026-07-29T22:43:17Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review.json",
+      "completed_at": "2026-07-29T22:43:18Z",
+      "exit_code": 2,
+      "request": {
+        "identity": [
+          "file",
+          "94bf894d692444d380a51063103b5c9f116eeb90e32e3c04661436b7b3335b0d",
+          718,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review.json"
+      },
+      "started_at": "2026-07-29T22:43:18Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v2.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v2.json",
+      "completed_at": "2026-07-29T22:43:49Z",
+      "exit_code": 2,
+      "request": {
+        "identity": [
+          "file",
+          "302715cb8a551dfd9ec0e27920397d7759420f36031d91091bad9e5df9801350",
+          718,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v2.json"
+      },
+      "started_at": "2026-07-29T22:43:49Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v3.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f231e48b482da29aa51d808af5d8bdb0f8fb22d793d990d8a7cf56cfd7704107",
+            9041,
+            384
+          ],
+          "before": [
+            "file",
+            "d17824ed54d0d23f6df45228f432e383a36cec664cb8c2220e63d618f3880d7d",
+            8748,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v3.json",
+      "completed_at": "2026-07-29T22:44:27Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "fa3f7fe84ffbb112e8008e17f7aaafe76257acdb57eda2c9b723f190b7a7db4a",
+          718,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v3.json"
+      },
+      "started_at": "2026-07-29T22:44:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-29T22:44:42Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T22:44:42Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-29T22:44:44Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T22:44:43Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-29T22:44:45Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T22:44:44Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-29T22:44:47Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T22:44:46Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader allocation readiness --strict",
+      "completed_at": "2026-07-29T22:44:48Z",
+      "exit_code": 1,
+      "request": null,
+      "started_at": "2026-07-29T22:44:48Z"
+    }
+  ],
+  "operation_id": "01KYQCTS30KTTD0PH1HV9W828T",
+  "run_id": "local-20260729-20ops-4"
+}

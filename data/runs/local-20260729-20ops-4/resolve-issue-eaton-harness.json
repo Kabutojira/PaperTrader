@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_2014f73f2d1ebb0e9974",
+  "resolution": "Validated generated payloads in memory before durable queue writes, added a regression test proving invalid payloads leave no orphan state, and completed Eaton operation 01KYQCTS3075EV877E527425DB successfully in local-20260729-20ops-3."
+}

@@ -1,0 +1,21 @@
+{
+  "security_id": "security_89969b7dac39b7db5661",
+  "assessed_at": "2026-07-29T23:32:00Z",
+  "expires_at": "2026-08-31T16:00:00Z",
+  "eligibility": "ineligible",
+  "confidence": "medium",
+  "thesis_score": "70",
+  "business_quality_score": "70",
+  "balance_sheet_score": "65",
+  "valuation_score": "25",
+  "timing_score": "20",
+  "liquidity_score": "5",
+  "risk_penalty": "65",
+  "downside_pct": "31.8",
+  "base_upside_pct": "-14.7",
+  "valuation_horizon_months": "12",
+  "hard_blockers": "liquidity_insufficient",
+  "soft_gaps": "confidence_medium|cyclical_normalization_uncertain|timing_unfavorable|valuation_not_compelling",
+  "evidence_refs": "source_yaskawa_fy2026_q1_briefing|source_yaskawa_fy2026_q1_qa|source_yaskawa_fy2026_q1_results",
+  "run_id": "local-20260729-20ops-4"
+}

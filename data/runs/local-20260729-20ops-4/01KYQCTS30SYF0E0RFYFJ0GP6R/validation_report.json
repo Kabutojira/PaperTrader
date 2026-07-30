@@ -1,0 +1,29 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYR2CW38HRY2WSCX0MSTYT44.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/enqueue-idea-refresh-nearshoring-ternium-alert.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-july-2026-sustainability-refresh.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-q1-2026-results-refresh.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ternium-q2-2026-event.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/record-source-ustr-usmca-july23-2026.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v2.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v3.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review-v4.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-assessment-ternium-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/upsert-security-ternium-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "completed_at": "2026-07-29T23:16:59Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30SYF0E0RFYFJ0GP6R",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

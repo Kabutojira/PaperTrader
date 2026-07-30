@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-clps.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-q1-10q.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-q2-date.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/upsert-assessment-lunr.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/upsert-security-lunr.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_a5dc16f3f4b245e6c168.md"
+  ],
+  "completed_at": "2026-07-29T22:39:04Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30GG62ZGQQAV3REQ88",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

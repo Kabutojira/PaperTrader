@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pypl_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+  "source_type": "regulator_filing",
+  "title": "PayPal Q2 2026 results furnished on Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab",
+  "related_entity_ids": "security_1e8fbdb0f45f2b413e00",
+  "checked_at": "2026-07-29T23:26:28Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "PayPal reported Q2 2026 net revenue of USD 8.682 billion, GAAP EPS of USD 1.25, free cash flow of USD 1.775 billion, and raised full-year non-GAAP EPS guidance to about USD 5.38.",
+  "summary": "Current primary results for the quarter ended 2026-06-30. Revenue grew 5%, TPV grew 10%, transaction-margin dollars grew 1%, GAAP operating income fell 5%, non-GAAP operating margin contracted 248 basis points, active accounts were nearly flat, and free cash flow was USD 1.775 billion. PayPal held USD 15.3 billion of cash, cash equivalents, and investments against USD 13.4 billion of debt, repurchased USD 1.5 billion of shares, and raised full-year non-GAAP EPS guidance to about USD 5.38 while retaining a mid-single-digit GAAP EPS decline outlook.",
+  "run_id": "local-20260729-20ops-4"
+}

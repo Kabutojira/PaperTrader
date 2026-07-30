@@ -1,0 +1,24 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-6k.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-financials.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v2.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v3.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-security-asml-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md"
+  ],
+  "completed_at": "2026-07-29T22:46:12Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30KTTD0PH1HV9W828T",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

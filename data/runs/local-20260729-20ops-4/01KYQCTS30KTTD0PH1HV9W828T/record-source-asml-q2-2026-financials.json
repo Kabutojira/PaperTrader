@@ -1,0 +1,18 @@
+{
+  "source_id": "source_asml_q2_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm",
+  "source_type": "filing",
+  "title": "ASML Holding N.V. Q2 2026 US GAAP financial statements",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d",
+  "related_entity_ids": "security_ef35e41886220d51c22c",
+  "checked_at": "2026-07-29T22:44:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 revenue was EUR 9.3265 billion, gross margin was 54.0%, net income was EUR 2.9176 billion, and diluted EPS was EUR 7.58.",
+  "summary": "The filed statements provide the earnings, 384.9 million diluted-share, cash, investment, debt, working-capital and cash-flow inputs used in the bounded valuation and balance-sheet review.",
+  "run_id": "local-20260729-20ops-4"
+}

@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYR1GDY8T9RTDS2G7WCA8V80.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/enqueue-idea-refresh-lac-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/record-source-lac-q1-2026-alert-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/upsert-assessment-lac-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PRJH8K6R0BTK2DY2/upsert-security-lac-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_fb87fac302a5446a1ced.md"
+  ],
+  "completed_at": "2026-07-29T22:58:49Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30PRJH8K6R0BTK2DY2",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_yaskawa_fy2026_q1_results",
+  "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf",
+  "canonical_url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf",
+  "source_type": "issuer-release",
+  "title": "Yaskawa consolidated results for the first quarter of fiscal year ending February 28, 2027",
+  "publisher": "YASKAWA Electric Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "32f00d6aeff7e750ea1a54896e723f59b272c4236253ddcb415faa595d4dcc61",
+  "related_entity_ids": "security_89969b7dac39b7db5661",
+  "checked_at": "2026-07-29T23:32:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "First-quarter revenue increased 10.6%, while operating profit decreased 19.2% and profit attributable to owners decreased 21.7%.",
+  "summary": "The issuer filing supplies current consolidated earnings, segment results, cash flow, balance-sheet data, and unchanged full-year guidance used in the security assessment.",
+  "run_id": "local-20260729-20ops-4"
+}

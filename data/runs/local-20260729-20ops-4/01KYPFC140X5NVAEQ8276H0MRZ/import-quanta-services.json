@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "AI infrastructure and power bottlenecks: evidence-backed transmission, substation, distribution, data-centre electrical-installation, and grid-interconnection candidate requiring security-specific research.",
+  "source": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000006/pwr-20251231.htm",
+  "securities": [
+    {
+      "company_name": "Quanta Services, Inc.",
+      "instrument_name": "Quanta Services, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "PWR",
+      "exchange_code": "NYQ",
+      "venue_mic": "XNYS",
+      "provider_symbol": "PWR",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Industrials",
+      "industry": "Engineering & Construction"
+    }
+  ]
+}

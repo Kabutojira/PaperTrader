@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_4b61970aa8f574446819",
+    "security_research_operation_id": "01KYQCTS30EQG9J9C5K4ZB2TVC",
+    "security_research_result_path": "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/agent_result.json",
+    "seed_claim": "GE Vernova's 2026-07-28 lower-Bollinger breach lacks oversold RSI or abnormal-volume confirmation; unchanged strong Q2 fundamentals do not overcome a bounded 39.6% downside and 7.4% base-upside profile."
+  },
+  "objective": "Refresh the AI infrastructure and power bottlenecks idea from GE Vernova's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYQYVK38FSPHJ5XKB7T0WXD9",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ]
+}

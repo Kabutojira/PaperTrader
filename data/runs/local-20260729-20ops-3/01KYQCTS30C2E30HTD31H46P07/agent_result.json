@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KYQCTS30C2E30HTD31H46P07",
+  "status": "succeeded",
+  "summary": "Completed the initial evidence-backed review of Vertiv Holdings Co Class A common stock after the 2026-07-28 lower-Bollinger transition. The immutable VRT/XNYS/USD identity is unique and now linked to a maintained security page. The 12.04% one-month decline was not oversold or volume-confirmed, and no primary source established a single cause before the July 29 release. Fresh Q2 evidence shows 24% sales growth, 410 basis points of adjusted-margin expansion, strong cash conversion, net cash, and raised full-year guidance, while temporary supply-chain congestion, project phasing, and working-capital growth remain execution risks. A bounded 12-month scenario gives 38.4% downside and 4.2% base upside from the USD 270 pre-release mark, so the assessment is medium-confidence baseline comparison only. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "source_vrt_q2_2026_results",
+      "claim": "Vertiv reported Q2 2026 sales of USD 3.274 billion, up 24%, adjusted operating profit of USD 738 million, adjusted margin of 22.6%, adjusted diluted EPS of USD 1.52, and adjusted free cash flow of USD 925 million. It attributed minor revenue timing shifts to temporary supply-chain congestion and multi-phased project execution, ended the quarter with USD 5.6 billion liquidity and net cash, and raised full-year guidance to USD 13.8-14.2 billion sales, USD 6.65-6.75 adjusted EPS, and USD 2.4-2.6 billion adjusted free cash flow.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+      "observed_at": "2026-07-29T21:51:59Z",
+      "source_hash": "d4d0a061a46d88b421ca10cf7d176adb19db3e56af3b053098d07cf3bb41f8bc"
+    },
+    {
+      "source": "source_vrt_q2_2026_10q",
+      "claim": "Vertiv's Q2 Form 10-Q confirms the VRT Class A common-stock identity on NYSE and reports USD 2.811 billion cash, USD 300 million short-term investments, USD 2.940 billion long-term debt, USD 2.484 billion unused revolver capacity, and covenant compliance. Inventory rose to USD 2.523 billion and receivables to USD 3.750 billion, while deferred revenue reached USD 3.634 billion; disclosed risks include backlog conversion, large-customer terms, fixed-price execution, supply chain, tariffs, capacity expansion, competition, and geopolitical disruption.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm",
+      "observed_at": "2026-07-29T21:51:59Z",
+      "source_hash": "9346a7542ba74f5a8f841365e837d45f4bd25c790be0a4da7b4b5807c3e0024d"
+    },
+    {
+      "source": "data/market/indicators.csv:56",
+      "claim": "The canonical 2026-07-28 alert records a USD 270 close, a 12.043523% decline from 2026-06-29, a 1.896831% lower-Bollinger-band breach, RSI 36.839429, volume z-score 0.638287, and the exact payload source-price hash. The measured move predates the July 29 Q2 release and therefore cannot be attributed to it.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "6015c26eb2013ddf6be465a59f79002760b86741ddb67f56aad5fd23a0f1fd38"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:262",
+      "claim": "The canonical USD/EUR cache records 0.8795499801635742 for 2026-07-28 and was retrieved at 2026-07-29T16:55:24Z, confirming fresh same-date FX state for the USD security mark.",
+      "observed_at": "2026-07-29T16:55:24Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/assessment_upsert_request.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/security_upsert_request.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/source_vrt_q2_2026_10q_request.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/source_vrt_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_cb88f9154cfeaa15e878.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Vertiv was researched after its 2026-07-28 lower-Bollinger transition. The shares fell 12.04% over the measured month, but RSI was 36.84 and volume was not abnormal; no primary source established a single cause before the July 29 Q2 release. Q2 sales, margin, cash flow, liquidity, and raised guidance support the thesis, but a bounded range implies 38.4% downside and only 4.2% base upside from the USD 270 mark. The medium-confidence assessment is baseline-comparison only, no conviction strategy was queued, and review is due by 2026-08-28."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/source_vrt_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/source_vrt_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-3/01KYQCTS30C2E30HTD31H46P07/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable operation payload, running queue claim, live lease, paper-only configuration, sequential harness, and trusted controller and security-research skill hashes.",
+      "Confirmed the issuer, instrument, VRT provider symbol, XNYS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched the lower-Bollinger trigger, 2026-07-28 market date, observation period, and source-price hash to canonical market and indicator state.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the canonical alert date.",
+      "Registered two current primary SEC sources before assessment and confirmed both sorted assessment evidence references are available and fresh.",
+      "Confirmed exactly one current security assessment exists for this run with baseline eligibility, medium confidence, no hard blocker, 38.4% downside, 4.2% base upside, and canonical soft gaps.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups are required and present.",
+      "Confirmed the conviction strategy gate fails on margin of safety and valuation, so no strategy-research follow-up was created.",
+      "papertrader schema validate --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the seven successful canonical receipts in command_audit.json.",
+      "No allocation targets or history, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

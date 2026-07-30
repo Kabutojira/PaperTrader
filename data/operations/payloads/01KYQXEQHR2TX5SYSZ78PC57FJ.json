@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_18a3ab0ee6086ee85d0f",
+    "security_research_operation_id": "01KYQCTS3075EV877E527425DB",
+    "security_research_result_path": "data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/agent_result.json",
+    "seed_claim": "Eaton's marginal 2026-07-28 lower-Bollinger breach is technical noise and pre-Q2 timing risk, not a valuation opportunity; Q2 results are due July 31."
+  },
+  "objective": "Refresh the AI infrastructure and power bottlenecks idea from Eaton's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYQXEQHR2TX5SYSZ78PC57FJ",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ]
+}

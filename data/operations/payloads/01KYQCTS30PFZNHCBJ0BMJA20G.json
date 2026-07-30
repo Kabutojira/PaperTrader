@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_2c447a92e1e201e51257",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-07-29T16:55:24Z",
+    "period_end": "2026-07-28",
+    "period_start": "2026-06-29",
+    "security_id": "security_1e8fbdb0f45f2b413e00",
+    "trigger_type": "rsi_overbought"
+  },
+  "objective": "Assess security_1e8fbdb0f45f2b413e00 rsi_overbought transition as opportunity, risk, or noise.",
+  "operation_id": "01KYQCTS30PFZNHCBJ0BMJA20G",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0.md"
+  ]
+}

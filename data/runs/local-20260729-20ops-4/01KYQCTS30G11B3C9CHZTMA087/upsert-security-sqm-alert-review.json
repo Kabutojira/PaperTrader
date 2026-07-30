@@ -1,0 +1,23 @@
+{
+  "security_id": "security_9d4049ed6669a52815d6",
+  "issuer_id": "issuer_b9d09bec8ea0e49d27e5",
+  "company_name": "Sociedad Quimica y Minera de Chile S.A.",
+  "instrument_name": "Sociedad Quimica y Minera de Chile S.A. American depositary shares",
+  "instrument_type": "equity",
+  "ticker": "SQM",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "SQM",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CL",
+  "sector": "Basic Materials",
+  "industry": "Specialty Chemicals",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "The weak bearish MACD transition is timing risk, while Mt Holland adds long-dated capacity and capex; normalized ADS valuation remains unsupported.",
+  "research_page": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+  "last_research_at": "2026-07-29T22:25:00Z",
+  "next_review_at": "2026-08-19T16:00:00Z",
+  "source": "https://links.sgx.com/1.0.0/corporate-announcements/HNQGSKX1PAXMY9YZ/ac956cf9b60b1aa8da12b346ac29bca8c25d7aa2e11721001ffdaf0c4393d08f"
+}

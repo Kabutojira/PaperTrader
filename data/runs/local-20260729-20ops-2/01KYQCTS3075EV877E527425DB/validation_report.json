@@ -1,0 +1,28 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYQWYJYG5CRMBVHMJ7DGPRR1.json",
+    "data/operations/payloads/01KYQWZK5R5CRMBVHMJ7DGPRR1.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3075EV877E527425DB/enqueue-idea-refresh-etn-v2.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3075EV877E527425DB/enqueue-idea-refresh-etn.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3075EV877E527425DB/record-source-etn-q1-refresh.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3075EV877E527425DB/record-source-etn-q2-date.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3075EV877E527425DB/upsert-assessment-etn-alert.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3075EV877E527425DB/upsert-security-etn-alert.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "completed_at": "2026-07-29T21:39:53Z",
+  "errors": [
+    "structured change lacks a successful CLI receipt: data/operations/payloads/01KYQWYJYG5CRMBVHMJ7DGPRR1.json"
+  ],
+  "harness": "local",
+  "operation_id": "01KYQCTS3075EV877E527425DB",
+  "passed": false,
+  "run_id": "local-20260729-20ops-2",
+  "validation_version": 1
+}

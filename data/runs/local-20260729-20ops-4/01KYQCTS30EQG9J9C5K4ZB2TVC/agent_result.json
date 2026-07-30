@@ -1,0 +1,71 @@
+{
+  "operation_id": "01KYQCTS30EQG9J9C5K4ZB2TVC",
+  "status": "succeeded",
+  "summary": "Reviewed GE Vernova after its 2026-07-28 lower-Bollinger transition. The USD 946 close fell 14.20% over the observation period and finished 1.02% below the lower band, but RSI was not oversold and volume was not abnormal. Current SEC-filed Q2 evidence still shows strong Power and Electrification orders, backlog, margins, cash and raised guidance, with no new fundamental impairment explaining the July 28 leg down. Re-marking the unchanged bounded 12-month valuation gives 39.6% downside and 7.4% base upside, so the move is post-results valuation/timing risk rather than a sufficient paper-trade opportunity. Retained medium-confidence baseline eligibility, created no conviction strategy, and enqueued exactly one dependent refresh for the accepted AI-infrastructure idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "GEV closed at USD 946.00 on 2026-07-28, down 5.07% from the prior session and 14.20% from 2026-06-29. The close was 1.02% below the USD 955.76 lower Bollinger band; RSI was 38.94, volume anomaly was 0.59, and bollinger_below_lower was the only transition. The canonical source-price hash is 468a1ad56cf1a146163b86fc7a6372182c9066c9c52e34a29fc7d1290f4e9606. Holding the explicit scenario inputs constant, USD 571.58 downside value and USD 1,016.02 base value imply -39.6% and +7.4% from the mark."
+    },
+    {
+      "source": "GE Vernova Q2 2026 earnings release filed with the SEC",
+      "claim": "The unchanged July 22 release reports USD 24.2 billion of Q2 orders, USD 176 billion of backlog, USD 11.1 billion of revenue, USD 5.1 billion of free cash flow, and raised 2026 revenue and free-cash-flow guidance. It confirms operating strength through the latest reported quarter and does not establish a new fundamental impairment behind the July 28 price decline.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+      "observed_at": "2026-07-29T22:08:30Z",
+      "source_hash": "b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b"
+    },
+    {
+      "source": "GE Vernova Q2 2026 Form 10-Q",
+      "claim": "The unchanged SEC filing confirms USD 13.120 billion of cash and restricted cash, USD 2.794 billion of long-term borrowings, 270 million Q2 diluted weighted-average shares, working-capital dependence, backlog-quality terms, acquisition exposure, and Wind execution risk. These inputs support the bounded valuation and preserve the principal contrary evidence.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm",
+      "observed_at": "2026-07-29T22:08:30Z",
+      "source_hash": "6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYQYVK38FSPHJ5XKB7T0WXD9.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/enqueue-idea-refresh-gev-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/record-source-gev-q2-10q-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/record-source-gev-q2-results-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/upsert-assessment-gev-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/upsert-security-gev-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "operations_created": [
+    "01KYQYVK38FSPHJ5XKB7T0WXD9"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "GE Vernova's 2026-07-28 lower-Bollinger breach followed a 14.20% one-month decline but lacked oversold RSI or abnormal-volume confirmation. Current Q2 evidence remains strong, while bounded USD 571.58 downside and USD 1,016.02 base values imply -39.6% and +7.4% from the USD 946 mark; the move is valuation and timing risk, not a conviction paper-trade opportunity."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/record-source-gev-q2-results-recheck.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/record-source-gev-q2-10q-recheck.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/upsert-security-gev-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/upsert-assessment-gev-alert-review.json",
+    "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/enqueue-idea-refresh-gev-alert-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease, and matched the immutable GEV identity, alert payload, sequential harness preflight, controller skill hash, and security-research skill hash.",
+      "The GEV/XNYS/USD/equity identity matched exactly one security row; the accepted canonical relationship links it to idea_ai_infrastructure_power.",
+      "The canonical 2026-07-28 mark, indicator date, alert type, observation period, source-price hash, and 2026-07-29 USD/EUR cache were current. The alert reproduced as a 1.02% lower-band breach with RSI 38.94 and no abnormal volume.",
+      "Both retained SEC-filed primary sources were rechecked and recorded before the assessment. The assessment belongs to this run, references both registered sources, remains current through 2026-08-26, and has no hard blocker.",
+      "Exactly one matching idea-research follow-up was created as 01KYQYVK38FSPHJ5XKB7T0WXD9, depends on this security operation, and points to this run's expected result path.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false only for unrelated repository-wide eligible-security relationship gaps and unreconciled rejected relationships; GE Vernova's current assessment and accepted relationship were present.",
+      "The command audit exactly records all ten project CLI invocations, including the expected nonzero repository-wide allocation-readiness check. No allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request, payload, or operation artifact was a symlink."
+    ]
+  }
+}

@@ -187,6 +187,36 @@ def test_enqueue_rejects_multiline_prompt_before_writing_state(
     assert list((sandbox_repository / "data" / "operations" / "payloads").glob("*.json")) == []
 
 
+def test_enqueue_rejects_invalid_payload_before_writing_state(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    with pytest.raises(QueueError, match="fails schema"):
+        enqueue_operation(
+            sandbox_repository,
+            sandbox_settings,
+            operation_type="idea_research",
+            entity_type="idea",
+            entity_id="idea_fixture",
+            dedupe_key="idea_research:idea_fixture:invalid-result-key:2026-07-24",
+            prompt="Refresh one idea from completed security research.",
+            inputs={
+                "idea_id": "idea_fixture",
+                "security_id": "security_fixture",
+                "security_research_operation_id": "01K11M5T80JQDRKHZJ5XA8NY1R",
+                "expected_result_path": (
+                    "data/runs/run-fixture/01K11M5T80JQDRKHZJ5XA8NY1R/agent_result.json"
+                ),
+                "seed_claim": "Fixture claim.",
+            },
+            source="test",
+            now=NOW,
+        )
+
+    assert read_table(sandbox_repository, "operations_todo") == []
+    assert list((sandbox_repository / "data" / "operations" / "payloads").glob("*.json")) == []
+
+
 def test_queue_rejects_unrequested_extra_agent_skills(
     sandbox_repository: Path,
     sandbox_settings: Settings,

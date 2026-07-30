@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_critical_minerals_lithium",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "security_id": "security_9d4049ed6669a52815d6",
+    "security_research_operation_id": "01KYQCTS30G11B3C9CHZTMA087",
+    "security_research_result_path": "data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/agent_result.json",
+    "seed_claim": "SQM's 2026-07-28 MACD cross below signal was weak and unconfirmed by oversold RSI, abnormal volume, or a lower-band breach; Mt Holland expansion adds long-dated capacity and USD 450-500 million of SQM-share capex without resolving normalized ADS valuation."
+  },
+  "objective": "Refresh the critical-minerals lithium idea from SQM's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYQZRTMR79EG6XT5BPZGNSJY",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "operation_id": "01KYQCTS3075EV877E527425DB",
+  "status": "succeeded",
+  "summary": "Rechecked Eaton after its 2026-07-28 lower-Bollinger transition. The USD 388 close was only 0.025% below the lower band, RSI was neutral, and volume was not abnormal. Current primary evidence still shows Q1 as the latest reported quarter and schedules Q2 results for July 31, so the alert remains pre-earnings timing risk and technical noise rather than a fundamental opportunity. Retained medium-confidence baseline eligibility, with bounded 12-month downside and base scenarios of -35.9% and -17.5%; valuation and timing do not justify conviction strategy research. Recorded this run's evidence and assessment, updated the security research audit trail, and enqueued one retry-specific dependent idea refresh for the accepted AI-infrastructure relationship.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "ETN closed at USD 388.00 on 2026-07-28, down 2.67% for the session and 4.96% from 2026-06-29. The close was USD 0.095 below the USD 388.095 lower Bollinger band; RSI was 42.53, volume anomaly was 1.125, and bollinger_below_lower was the only transition. The canonical source-price hash is 7df9103ad627a0d8f48feb5bce101bd7130e7e7367ce995d70e0d9ae903919f9. Holding the explicit scenario inputs constant, USD 248.64 downside value and USD 320.00 base value imply -35.9% and -17.5% from the mark."
+    },
+    {
+      "source": "Eaton Q1 2026 Form 10-Q",
+      "claim": "The SEC filing remains Eaton's latest reported financial evidence: Q1 net sales were USD 7.451 billion, diluted EPS was USD 2.22, operating cash flow was USD 507 million, and acquisition spending left USD 21.129 billion of debt. It supports the electrical-demand thesis and acquisition-leverage risk while providing no evidence that the July 28 move changed fundamentals.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm",
+      "observed_at": "2026-07-29T21:44:30Z",
+      "source_hash": "fffc172f0b3e45e0add279ce31bd3201a3b8c04f406f1f48cbafc7ea46363384"
+    },
+    {
+      "source": "Eaton Q2 2026 earnings-date announcement",
+      "claim": "Eaton still plans to release second-quarter 2026 results on July 31 before the NYSE opens and host its conference call at 11 a.m. Eastern time. The announcement contains no Q2 financial results, making the event a near-term timing risk rather than an explanation for the technical alert.",
+      "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-to-announce-second-quarter-2026-earnings-on-july-31--2026.html",
+      "observed_at": "2026-07-29T21:44:32Z",
+      "source_hash": "be6161ed78c48410176424b43705a12aa8a33bf657e4560bfb6a1880f66dfd78"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYQXEQHR2TX5SYSZ78PC57FJ.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/enqueue-idea-refresh-etn-retry.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/record-source-etn-q1-recheck.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/record-source-etn-q2-date-recheck.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/upsert-assessment-etn-recheck.json",
+    "data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/upsert-security-etn-recheck.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "operations_created": [
+    "01KYQXEQHR2TX5SYSZ78PC57FJ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Eaton's 2026-07-28 lower-Bollinger breach was marginal and unconfirmed by RSI or abnormal volume. With Q2 results due July 31 and bounded USD 248.64 downside and USD 320.00 base values still 35.9% and 17.5% below the USD 388 mark, the move remains pre-earnings timing risk and technical noise rather than a paper-trade opportunity."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/record-source-etn-q1-recheck.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/record-source-etn-q2-date-recheck.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/upsert-security-etn-recheck.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/upsert-assessment-etn-recheck.json",
+    "papertrader queue enqueue --request data/runs/local-20260729-20ops-3/01KYQCTS3075EV877E527425DB/enqueue-idea-refresh-etn-retry.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-3 with a live lease, and matched the immutable Eaton identity, alert payload, controller preflight, and security-research skill hash.",
+      "The ETN/XNYS/USD/equity identity matched exactly one security row; the accepted canonical relationship links it to idea_ai_infrastructure_power.",
+      "The canonical 2026-07-28 mark, indicator date, alert type, source-price hash, and 2026-07-29 USD/EUR cache were current. The alert reproduced as a 0.025% lower-band breach with neutral RSI and no abnormal volume.",
+      "Both retained primary sources were rechecked and recorded before the assessment. The assessment belongs to this run, references both registered sources, expires before the July 31 Q2 event, and has no hard blocker.",
+      "Exactly one current-run matching idea-research follow-up was created as 01KYQXEQHR2TX5SYSZ78PC57FJ, depends on this security operation, and points to this run's expected result path.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness was false only for unrelated repository-wide relationship gaps; Eaton's assessment and accepted relationship were present and current.",
+      "The command audit exactly records all ten project CLI invocations. No allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request, payload, or operation artifact was a symlink."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_alb_q1_2026_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+  "source_type": "filing",
+  "title": "Albemarle Q1 2026 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "197132b1bc66f6201081d938a5884a4895c57b755536cc95e21db466b34aa7e7",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_66cdcf90aac0d83e76f3",
+  "checked_at": "2026-07-29T22:49:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q1 2026 adjusted EBITDA was USD 664 million; operating cash flow was USD 346 million and company-defined free cash flow was USD 248 million.",
+  "summary": "The unchanged SEC-hosted exhibit remains Albemarle's latest reported operating evidence. It confirms lithium price and volume recovery, wide commodity-scenario sensitivity, liquidity, debt reduction, capex demands, and mandatory-convertible dilution, but does not provide probability-weighted normalized common-equity value.",
+  "run_id": "local-20260729-20ops-4"
+}

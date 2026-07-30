@@ -1,0 +1,85 @@
+{
+  "operation_id": "01KYQCTS30GG62ZGQQAV3REQ88",
+  "status": "succeeded",
+  "summary": "Completed the initial evidence-backed review of Intuitive Machines, Inc. Class A common stock after the 2026-07-28 RSI-oversold transition. LUNR fell 41.06% from June 29 to USD 12.3599, with RSI 27.88 but no abnormal-volume or lower-Bollinger confirmation. Q1 revenue, backlog, and the June 30 CLPS award support the operating thesis, while operating losses, free-cash outflow, net debt, Lanteris integration, government-contract exposure, and August 13 Q2 timing remain material risks. A bounded 12-month revenue-multiple sensitivity gives 53.5% downside and a base value 15.3% below the mark, so the assessment is medium-confidence baseline comparison only. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "LUNR closed at USD 12.3599 on 2026-07-28, down 7.14% for the session and 41.06% from 2026-06-29. RSI was 27.88, the close remained above the USD 10.58 lower Bollinger band, volume anomaly was 0.60, and rsi_oversold was the only transition. The canonical source-price hash is 3c216cd8e71f6e517a8e3e4fa076a216c0a0907221dc613d1c164cb02d9efe51. Using 216.8 million reported shares and USD 104.2 million net debt, 1.5 times the USD 900 million guidance floor yields USD 5.75 per share and 2.5 times the USD 950 million midpoint yields USD 10.47, or -53.5% and -15.3% from the mark.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "3c216cd8e71f6e517a8e3e4fa076a216c0a0907221dc613d1c164cb02d9efe51"
+    },
+    {
+      "source": "source_lunr_q1_2026_10q",
+      "claim": "The SEC filing confirms the LUNR Class A common-stock identity on Nasdaq. Q1 revenue was USD 186.7 million, operating loss USD 39.2 million, free cash outflow USD 64.6 million, cash USD 231.6 million, working capital USD 89.8 million, and long-term debt USD 335.8 million. Backlog was USD 1.055 billion, including USD 612.8 million acquired with Lanteris; management maintained USD 900 million-1 billion 2026 revenue guidance and positive adjusted EBITDA guidance.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+      "observed_at": "2026-07-29T22:33:49Z",
+      "source_hash": "b424eafae59554bcc85b691b296c18f939451e033e832e795ceb7220a9e4660e"
+    },
+    {
+      "source": "source_lunr_clps_20260630",
+      "claim": "The June 30 issuer release describes a NASA CLPS task order valued up to USD 148.3 million, comprising a USD 68.6 million base contract and USD 79.7 million performance incentive tied to successful product-line qualification. The positive award supports lunar demand but did not prevent the subsequent decline.",
+      "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-secures-sixth-nasa-clps-award-establish-high",
+      "observed_at": "2026-07-29T22:33:49Z",
+      "source_hash": "e20d6b5c52b18f4c94587977fd2e837dc9e2ad699aa9e1fb652fb09669d84a14"
+    },
+    {
+      "source": "source_lunr_q2_2026_date",
+      "claim": "The issuer announced at 4:39 p.m. Eastern on July 28 that Q2 results would be released August 13 before market open. The notice was published after the canonical July 28 close and contains no financial result, so it is a near-term catalyst rather than an explanation for the measured decline.",
+      "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-announces-date-second-quarter-2026-financial",
+      "observed_at": "2026-07-29T22:33:49Z",
+      "source_hash": "43856d4ea8691637afd4977f7f7cbf49c228bfef36f8e5700ede6b445b797724"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv",
+      "claim": "The canonical USD/EUR cache includes a same-date 2026-07-28 conversion observation retrieved at 2026-07-29T16:55:24Z, confirming fresh FX state for the USD mark.",
+      "observed_at": "2026-07-29T16:55:24Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-clps.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-q1-10q.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-q2-date.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/upsert-assessment-lunr.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/upsert-security-lunr.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_a5dc16f3f4b245e6c168.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Machines was researched after its 2026-07-28 RSI-oversold transition. LUNR fell 41.06% over the measured month to USD 12.3599, with RSI 27.88 but no abnormal-volume or lower-Bollinger confirmation. Q1 scale, backlog, and a June 30 NASA award support the thesis, but operating losses, cash burn, net debt, Lanteris integration, and August 13 Q2 timing remain material. A bounded range implies 53.5% downside and a base value 15.3% below the mark, so the assessment is baseline-comparison only and no conviction strategy was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-q1-10q.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-clps.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/record-source-lunr-q2-date.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/upsert-security-lunr.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/upsert-assessment-lunr.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim, live lease, paper-only configuration, sequential local harness, and trusted controller and security-research skill hashes.",
+      "Confirmed the issuer, instrument, LUNR provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched the RSI-oversold trigger, 2026-07-28 market date, exact observation period, and source-price hash to canonical market and indicator state; confirmed the same-date USD/EUR cache is available and fresh.",
+      "Registered three bounded current primary sources before assessment and confirmed every sorted assessment evidence reference is available and fresh.",
+      "Confirmed exactly one current security assessment exists for this run with baseline eligibility, medium confidence, no hard blocker, -53.5% downside, -15.3% base upside, canonical soft gaps, and expiration before August 13 Q2 results.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups are required and present.",
+      "Confirmed the conviction strategy gate fails on margin of safety, valuation, timing, and integration risk, so no strategy-research follow-up was created.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. The broader allocation-readiness diagnostic returned not ready because LUNR and other baseline-comparison securities lack accepted relationships; the security skill cannot create or infer that relationship.",
+      "The command audit contains the exact ten canonical project CLI receipts: nine returned exit code zero, while the non-mutating allocation-readiness diagnostic returned exit code one with its explicit not-ready reasons.",
+      "No allocation targets or history, signal, order, fill, execution, cash, portfolio, performance, or other accounting-ledger path was changed; all operation request artifacts and the maintained security page are regular files, not symlinks."
+    ]
+  }
+}

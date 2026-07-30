@@ -1,0 +1,24 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260729-20ops-2/01KYQCTS3061WZ6JZ7CYAXEPD1/assessment_upsert_request.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3061WZ6JZ7CYAXEPD1/security_upsert_request.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3061WZ6JZ7CYAXEPD1/source_spot_2025_20f_request.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3061WZ6JZ7CYAXEPD1/source_spot_ir_news_2026_request.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3061WZ6JZ7CYAXEPD1/source_spot_q1_2026_6k_request.json",
+    "data/runs/local-20260729-20ops-2/01KYQCTS3061WZ6JZ7CYAXEPD1/source_spot_talk_beta_2026_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_2010347f1a0a5ea60f47.md"
+  ],
+  "completed_at": "2026-07-29T17:11:55Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS3061WZ6JZ7CYAXEPD1",
+  "passed": true,
+  "run_id": "local-20260729-20ops-2",
+  "validation_version": 1
+}

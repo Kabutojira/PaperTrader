@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KYQCTS30RBYHT060WE7VBWGT",
+  "status": "succeeded",
+  "summary": "Researched Labcorp after its 2026-07-28 upper-Bollinger and RSI-overbought transitions. LH closed at USD 314.23, up 12.39% from 2026-06-29 and 4.34% for the session, 3.45% above the upper band with RSI 79.56, but volume was not abnormal. The July 27 Marker genetic-panel launch expands consumer testing but disclosed no adoption or financial economics, while decisive Q2 results were still scheduled before the July 30 open. Q1 primary evidence showed 5.8% revenue growth, broad segment growth and margin expansion, improving cash flow, USD 981.1 million cash, USD 6.33 billion debt, and raised USD 17.70-18.35 adjusted-EPS guidance. A bounded 12-month sensitivity gives 21.1% downside and a base value 2.5% below the mark, so the move is positive momentum and pre-results timing risk rather than a conviction paper-trade opportunity. Recorded medium-confidence baseline comparability, created no strategy, and created no idea refresh because neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "LH closed at USD 314.23 on 2026-07-28, up 4.34% for the session and 12.39% from 2026-06-29. RSI was 79.56, the USD 303.75 upper Bollinger band was exceeded by 3.45%, volume anomaly was 0.264, and both bollinger_above_upper and rsi_overbought transitioned. The canonical source-price hash is 18c3bbb40ddcb0e9a286214e693bebeaea80016728504f9a827770dd637201e5. The 2026-07-28 USD/EUR rate was 0.8795499801635742 with the same retrieval timestamp.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "18c3bbb40ddcb0e9a286214e693bebeaea80016728504f9a827770dd637201e5"
+    },
+    {
+      "source": "Labcorp Holdings Inc. Q1 2026 Form 10-Q",
+      "claim": "The SEC filing confirms the LH/XNYS/USD common-stock identity; Q1 revenue of USD 3.538 billion; USD 380.8 million operating income; growth and adjusted-margin expansion in both segments; USD 8.64 billion Biopharma backlog; USD 191.5 million operating cash flow; USD 70.5 million free cash flow; USD 981.1 million cash; and USD 6.33 billion debt. These are the current operating, liquidity, risk, and valuation inputs.",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000139/lh-20260331.htm",
+      "observed_at": "2026-07-29T23:00:00Z",
+      "source_hash": "9e4df6d9659a86625e63a06ba75673e815b17a8e91a48d2451c5ff1059fd3a45"
+    },
+    {
+      "source": "Labcorp Q2 2026 results-date Form 8-K",
+      "claim": "The SEC filing states that Labcorp would release Q2 2026 results before the July 30 market open. Q2 evidence was therefore unavailable at the July 28 alert cutoff, making the alert pre-results timing evidence rather than confirmation of a newly reported operating change.",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000150/lh-20260630.htm",
+      "observed_at": "2026-07-29T23:00:00Z",
+      "source_hash": "933373b69f2aadcee4fdf4391d12b2197161eb47efdccffb6ca3326b221e1a9c"
+    },
+    {
+      "source": "Labcorp Marker genetic health panel release",
+      "claim": "Labcorp announced on July 27 that its OnDemand panel would analyze 163 genes associated with more than 100 medically actionable conditions and become available August 3. The release disclosed no adoption, revenue, margin, or investment economics sufficient to explain or value the exact July 28 move.",
+      "url": "https://www.labcorp.com/education-events/press-releases/labcorp-launches-marker-labcorptm-genetic-health-panel-expanding",
+      "observed_at": "2026-07-29T23:00:00Z",
+      "source_hash": "62dd8ca9c5f3dfd47c2a15abe0ea36000ae8041a108197ffa931bf27aad7a92d"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/record-source-lh-marker-panel.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/record-source-lh-q1-10q.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/record-source-lh-q2-date-8k.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/upsert-assessment-lh-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/upsert-security-lh-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Labcorp entered upper-Bollinger and RSI-overbought territory after a 12.39% one-month rise, but lacked abnormal-volume confirmation. Q1 growth, margins, cash generation, and raised guidance support baseline comparison, while the July product launch disclosed no economics and Q2 results were imminent; bounded USD 247.80 downside and USD 306.43 base values remain below the USD 314.23 mark, so no conviction paper strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/record-source-lh-q1-10q.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/record-source-lh-q2-date-8k.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/record-source-lh-marker-panel.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/upsert-security-lh-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30RBYHT060WE7VBWGT/upsert-assessment-lh-alert-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease, and matched the immutable Labcorp identity, two-trigger alert payload, sequential harness preflight, controller skill hash, and security-research skill hash.",
+      "The LH/XNYS/USD/equity identity matched exactly one canonical security row; the SEC filing confirmed LH common stock on the New York Stock Exchange; and no duplicate immutable provider identity was found.",
+      "The 2026-07-28 market date, observation period, USD 314.23 mark, upper-Bollinger and RSI-overbought transitions, source-price hash, and same-date USD/EUR cache matched the payload and deterministic market state.",
+      "All three retained primary sources were checked and registered before the current assessment. The assessment belongs to this run, references the three fresh available sources in canonical order, and expires after the scheduled Q2 evidence refresh.",
+      "No payload idea and no accepted canonical relationship exists for this security, so exactly zero idea-research follow-ups were required and created.",
+      "The conviction strategy gate failed on downside, negative base upside, margin of safety, pre-results timing, and medium confidence, so no strategy-research follow-up was created; baseline work remains reserved for the deterministic allocator.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed after all permitted edits.",
+      "Allocation readiness correctly returned not ready because Labcorp and other pre-existing eligible assessments lack accepted canonical relationships; no relationship was invented to suppress that downstream gate.",
+      "command_audit.json contains exactly the ten canonical project CLI invocations listed in commands_run, including the expected nonzero allocation-readiness result.",
+      "No allocation target/history, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request or operation artifact is a symlink."
+    ]
+  }
+}

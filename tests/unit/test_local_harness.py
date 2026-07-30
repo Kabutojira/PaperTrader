@@ -83,6 +83,13 @@ def test_local_harness_claims_validates_and_terminalizes_one_operation(
     prompt = (sandbox_repository / started.controller_prompt_path).read_text(encoding="utf-8")
     assert "skills/papertrader-controller/SKILL.md" in prompt
     assert "skills/papertrader-opportunity-research/SKILL.md" in prompt
+    assert "already started and claimed this operation" in prompt
+    assert "Do not run agent harness start" in prompt
+    assert "Do not run agent harness finish" in prompt
+    assert "PAPERTRADER_AUDIT_RUN_ID=local-codex-1" in prompt
+    assert f"PAPERTRADER_AUDIT_OPERATION_ID={operation_id}" in prompt
+    assert "scripts/papertrader" in prompt
+    assert "stop after agent_result.json exists" in prompt
 
     result_path = sandbox_repository / started.result_path
     result_path.write_text(json.dumps(_result(operation_id)), encoding="utf-8")

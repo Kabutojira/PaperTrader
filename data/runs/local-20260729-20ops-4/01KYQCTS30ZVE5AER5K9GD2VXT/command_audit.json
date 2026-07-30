@@ -1,0 +1,377 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "453d5740aedc78c49811f66c64758e5e897e761c1f7bf4e62fe998b957ebb940",
+            58388,
+            384
+          ],
+          "before": [
+            "file",
+            "f843a8d89768579b48410efdb527250d0553b5b6ad1c97b42e1dbc7f33e65281",
+            57400,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "c18f7d56832702777c5d438cef4d159841799e4ee1393565b188dbefdc09435e",
+            35606,
+            384
+          ],
+          "before": [
+            "file",
+            "6df2eae84dfaa1225b048857ec0fa1fd6c8bfb6adbd9619e42f313f326f73d3e",
+            35153,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_request.json",
+      "completed_at": "2026-07-29T23:40:48Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "935c4c2b0c7a0a346cb8643fac93a2e5b8e9f9329efa96fcd0e46ccf3f47ba2c",
+          1523,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_request.json"
+      },
+      "started_at": "2026-07-29T23:40:48Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_deliveries_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a609cb4f9beced715e3e106d729ba5f42dc648a97f30e1b2ade780efeb94c799",
+            59037,
+            384
+          ],
+          "before": [
+            "file",
+            "453d5740aedc78c49811f66c64758e5e897e761c1f7bf4e62fe998b957ebb940",
+            58388,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "7c609de12dcfcb6e9dc9620394f0e34e696f1a343766eb4e5921584e8dfc9f0c",
+            36101,
+            384
+          ],
+          "before": [
+            "file",
+            "c18f7d56832702777c5d438cef4d159841799e4ee1393565b188dbefdc09435e",
+            35606,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_deliveries_request.json",
+      "completed_at": "2026-07-29T23:40:58Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "051dfd3fcf440c34c87df1108b99c65843e43ab5b4e2eedd9af98e081d9358bb",
+          1217,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_deliveries_request.json"
+      },
+      "started_at": "2026-07-29T23:40:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/security_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "59dea498f36dbeaeeb65136528028bc63e2a67bf3823bb18ed775bc31c7e8fcc",
+            35402,
+            384
+          ],
+          "before": [
+            "file",
+            "70d6774d5e8dae8640b2a45e32158090b8aa04cffb8e58c5f1138df920021a06",
+            35039,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/security_upsert_request.json",
+      "completed_at": "2026-07-29T23:41:05Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "f99ae09ecc2a246c1181a25864e608f48a0f404d518eef4ce35092079b8c0d04",
+          1058,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/security_upsert_request.json"
+      },
+      "started_at": "2026-07-29T23:41:04Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_request.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_request.json",
+      "completed_at": "2026-07-29T23:41:14Z",
+      "exit_code": 2,
+      "request": {
+        "identity": [
+          "file",
+          "efd7226b6f4aa45326a72f97dffb70ed564bc03f8ee3b41d880b6f4f111a3825",
+          721,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_request.json"
+      },
+      "started_at": "2026-07-29T23:41:14Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_retry01_request.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_retry01_request.json",
+      "completed_at": "2026-07-29T23:42:14Z",
+      "exit_code": 2,
+      "request": {
+        "identity": [
+          "file",
+          "6ff0f4ffa8855e4d71e95d0e9ce7b7f90ad881edbb269272f58bf4536b598078",
+          1523,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_retry01_request.json"
+      },
+      "started_at": "2026-07-29T23:42:14Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_retry02_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "45ee710bd903323013e9ab233c4154d3c56a6ef2a86fcfb4886eada2dc551069",
+            10748,
+            384
+          ],
+          "before": [
+            "file",
+            "bbbee7281f17f6ca6d76dce55ab20dfb3e75d90aded43f53231f1036c1d69516",
+            10452,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_retry02_request.json",
+      "completed_at": "2026-07-29T23:44:23Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "efd7226b6f4aa45326a72f97dffb70ed564bc03f8ee3b41d880b6f4f111a3825",
+          721,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_retry02_request.json"
+      },
+      "started_at": "2026-07-29T23:44:23Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-29T23:44:35Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:44:35Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-29T23:44:42Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:44:42Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-29T23:44:53Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:44:53Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-29T23:45:07Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:45:06Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-29T23:45:33Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:45:32Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-29T23:45:38Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:45:38Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-29T23:45:44Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:45:43Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-29T23:45:54Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:45:53Z"
+    }
+  ],
+  "operation_id": "01KYQCTS30ZVE5AER5K9GD2VXT",
+  "run_id": "local-20260729-20ops-4"
+}

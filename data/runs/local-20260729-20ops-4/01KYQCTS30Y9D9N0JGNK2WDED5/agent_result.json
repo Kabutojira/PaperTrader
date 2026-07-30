@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KYQCTS30Y9D9N0JGNK2WDED5",
+  "status": "succeeded",
+  "summary": "Completed the evidence-backed review of PayPal Holdings, Inc. common stock after the 2026-07-28 RSI-overbought transition. The immutable PYPL/XNAS/USD identity is unique and now linked to a maintained security page. The shares rose 31.47% over the measured month and RSI reached 78.99, but the close remained below the upper Bollinger band and volume was not abnormal. PayPal's same-day Q2 release provides direct evidence for the final-session gain: TPV grew 10%, free cash flow reached USD 1.775 billion, and full-year non-GAAP EPS guidance increased to about USD 5.38. Contrary evidence includes lower operating income, a 248-basis-point non-GAAP margin contraction, and nearly flat active accounts. A bounded 8x-12x guided-EPS range gives 26.2% downside and 10.6% base upside from the USD 58.3474 mark, so the assessment is medium-confidence baseline comparison only. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "source_pypl_q2_2026_results",
+      "claim": "PayPal reported Q2 2026 net revenue of USD 8.682 billion, up 5%, TPV of USD 486.4 billion, up 10%, transaction-margin dollars up 1%, GAAP operating income down 5%, non-GAAP operating margin down 248 basis points, and active accounts up only 0.3% year over year and slightly lower sequentially. Free cash flow was USD 1.775 billion, and management raised full-year non-GAAP EPS guidance to about USD 5.38 while retaining an outlook for a mid-single-digit GAAP EPS decline.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+      "observed_at": "2026-07-29T23:26:28Z",
+      "source_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab"
+    },
+    {
+      "source": "source_pypl_q2_2026_10q",
+      "claim": "PayPal's Q2 Form 10-Q confirms PYPL common stock on Nasdaq and reports USD 8.306 billion cash, USD 6.959 billion short- and long-term investments, USD 13.400 billion short- and long-term debt, and 862 million shares outstanding. It supports the identified credit, regulatory, cyber, fraud, third-party network, competition, and transformation-execution risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+      "observed_at": "2026-07-29T23:26:28Z",
+      "source_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074"
+    },
+    {
+      "source": "data/market/indicators.csv:7",
+      "claim": "The canonical 2026-07-28 alert records a USD 58.3474 close, a 31.472282% return from 2026-06-29, RSI 78.989347, an upper Bollinger band of USD 62.016196, volume z-score 0.640945, and the exact payload source-price hash. The final session rose 4.061709% on the date of PayPal's Q2 release.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "28fde8ad1c74ff9e60779077d4000d42815135942213a61b2bdba2a2855eef14"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:262",
+      "claim": "The canonical USD/EUR cache records 0.8795499801635742 for 2026-07-28 and was retrieved at 2026-07-29T16:55:24Z, confirming fresh same-date FX state for the USD security mark.",
+      "observed_at": "2026-07-29T16:55:24Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/assessment_upsert_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/security_upsert_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/source_pypl_q2_2026_10q_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/source_pypl_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "PayPal was researched after its 2026-07-28 RSI-overbought transition. The shares rose 31.47% over the measured month and RSI reached 78.99, but the close remained below the upper Bollinger band and volume was not abnormal. Same-day Q2 results showed 10% TPV growth, strong free cash flow, and raised non-GAAP EPS guidance alongside lower operating income, margin contraction, and nearly flat active accounts. A bounded range implies 26.2% downside and 10.6% base upside from the USD 58.3474 mark, leaving an inadequate upside-to-downside ratio. The medium-confidence assessment is baseline-comparison only, no conviction strategy was queued, and review is due by 2026-08-28."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/source_pypl_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/source_pypl_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30Y9D9N0JGNK2WDED5/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable operation payload, running queue claim for the supplied run ID, paper-only configuration, sequential local harness, and trusted controller and security-research skill hashes.",
+      "Confirmed the issuer, instrument, PYPL provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched the RSI-overbought trigger, 2026-07-28 market date, observation period, and source-price hash to canonical market and indicator state.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the canonical alert date.",
+      "Registered two current primary SEC sources before assessment and confirmed both sorted assessment evidence references are available and fresh.",
+      "Confirmed exactly one current security assessment exists for this run with baseline eligibility, medium confidence, no hard blocker, 26.2% downside, 10.6% base upside, and canonical soft gaps.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups are required and present.",
+      "Confirmed the conviction strategy gate fails because the base-upside-to-downside ratio is below the configured minimum and post-results timing is unfavorable, so no strategy-research follow-up was created.",
+      "papertrader schema validate --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the seven successful canonical receipts in command_audit.json.",
+      "No allocation targets or history, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

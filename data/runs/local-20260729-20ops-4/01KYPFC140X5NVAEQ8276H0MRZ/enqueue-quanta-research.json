@@ -1,0 +1,26 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_488a9d7f7a8573597724",
+  "dedupe_key": "security_research:security_488a9d7f7a8573597724:ai-power-value-chain:2026-07-29",
+  "prompt": "Research Quanta Services as a bounded grid-interconnection and data-centre electrical-construction exposure.",
+  "inputs": {
+    "security_id": "security_488a9d7f7a8573597724",
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, transmission and substation demand, data-centre electrical-installation exposure, backlog quality, labor and contract risks, cash conversion, valuation, catalysts, and invalidation.",
+    "causal_hypothesis": "Data-centre load growth and inadequate grid capacity can increase utility transmission, substation, distribution, interconnection, and critical-path electrical-construction demand served by Quanta, subject to permitting, project timing, labor, fixed-price execution, policy, and valuation."
+  },
+  "source": "idea_research:01KYPFC140X5NVAEQ8276H0MRZ",
+  "priority": 68,
+  "freshness_days": 30,
+  "depends_on": [
+    "01KYPFC140X5NVAEQ8276H0MRZ"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000006/pwr-20251231.htm",
+    "https://www.iea.org/reports/energy-and-ai/executive-summary"
+  ],
+  "max_attempts": 3
+}

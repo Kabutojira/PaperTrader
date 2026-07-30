@@ -225,6 +225,14 @@ def test_investor_brief_contains_every_price_alert_and_run_research_decision(
     assert "[Lithium supply reset](ideas/idea_lithium)" in brief
     assert "valuation support is incomplete" in brief
 
+    long_decision = replace(decisions[0], conclusion="x" * 600)
+    bounded_brief = investor_brief_markdown(snapshot, (long_decision,))
+    decision_line = next(
+        line for line in bounded_brief.splitlines() if "Lithium supply reset" in line
+    )
+    assert decision_line.endswith("…")
+    assert len(decision_line) < 600
+
 
 def test_telegram_transport_calls_rich_message_endpoint(monkeypatch: pytest.MonkeyPatch) -> None:
     requests: list[urllib.request.Request] = []

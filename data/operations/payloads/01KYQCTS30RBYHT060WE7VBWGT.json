@@ -1,0 +1,24 @@
+{
+  "entity_id": "security_b1f2c48e1a744f5ecf67",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-07-29T16:55:24Z",
+    "market_data_date": "2026-07-28",
+    "period_end": "2026-07-28",
+    "period_start": "2026-06-29",
+    "security_id": "security_b1f2c48e1a744f5ecf67",
+    "source_price_hash": "18c3bbb40ddcb0e9a286214e693bebeaea80016728504f9a827770dd637201e5",
+    "trigger_types": [
+      "bollinger_above_upper",
+      "rsi_overbought"
+    ]
+  },
+  "objective": "Research security_b1f2c48e1a744f5ecf67 with high priority after price-action alerts: bollinger_above_upper, rsi_overbought; decide what changed and whether to act.",
+  "operation_id": "01KYQCTS30RBYHT060WE7VBWGT",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-ed7fba71f542.md",
+    "data/wiki/inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-f8935339ca1b.md"
+  ]
+}

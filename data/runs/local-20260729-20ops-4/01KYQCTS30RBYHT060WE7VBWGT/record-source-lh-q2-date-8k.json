@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lh_q2_date_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000150/lh-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000150/lh-20260630.htm",
+  "source_type": "filing",
+  "title": "Labcorp Q2 2026 results-date Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "933373b69f2aadcee4fdf4391d12b2197161eb47efdccffb6ca3326b221e1a9c",
+  "related_entity_ids": "security_b1f2c48e1a744f5ecf67",
+  "checked_at": "2026-07-29T23:00:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Labcorp stated that it would release Q2 2026 results before the market opened on July 30, 2026 and hold its call at 9:00 a.m. ET.",
+  "summary": "The SEC filing establishes that decisive Q2 evidence was unavailable at the July 28 alert cutoff, making the overbought move pre-results timing evidence rather than confirmation of a reported operating change.",
+  "run_id": "local-20260729-20ops-4"
+}

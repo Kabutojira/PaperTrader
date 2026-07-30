@@ -8,7 +8,7 @@ tags:
   - risk
 created: "2026-07-26"
 updated: "2026-07-29"
-provenance: "user seed; IEA Key Questions on Energy and AI 2026; issuer releases; linked security research"
+provenance: "user seed; IEA Energy and AI; issuer filings and releases; linked security research"
 idea_id: idea_ai_infrastructure_power
 confidence: medium
 next_review: "2026-08-26"
@@ -26,10 +26,11 @@ growth expectations are high, backlogs can be cancelled or delayed, and capacity
 turn scarcity into oversupply.
 
 Current assessment: **the physical bottleneck is confirmed, but investability remains
-security-specific**. Completed GE Vernova and Eaton reviews confirm orders, margins, and cash
-conversion, but both securities are unattractive at their reviewed prices. GE Vernova's bounded
-base case offers only 2.0% upside with 42.6% downside; Eaton's bounded base case remains 19.7% below
-its mark. Vertiv remains an unresearched post-results candidate.
+security-specific**. Current GE Vernova, Eaton, and Vertiv reviews all confirm that demand is
+reaching orders, revenue, margins, or cash, but none clears the valuation and timing gates at its
+reviewed mark. The retained universe now also covers integrated electrical equipment, physical
+interconnection work, and on-site generation substitutes; those new identities are hypotheses
+awaiting separate security research, not conclusions or trade candidates.
 
 ## Causal mechanism
 
@@ -51,7 +52,10 @@ its mark. Vertiv remains an unresearched post-results candidate.
 | The IEA estimates that roughly 20% of planned data-centre projects could face delays unless grid risks are addressed. Data centres represent less than 10% of global demand growth but are unusually concentrated. | Grid and connection scarcity can support equipment demand, yet the same constraint can defer customer projects and supplier revenue. | [IEA, Energy and AI executive summary](https://www.iea.org/reports/energy-and-ai/executive-summary) and [energy-demand analysis](https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai) |
 | GE Vernova reported second-quarter 2026 orders of USD 24.2 billion, up 88% organically, a USD 13.0 billion sequential backlog increase, USD 176 billion total backlog, and USD 5.1 billion free cash flow. Data-centre orders exceeded USD 5 billion year to date. | Power and electrification scarcity is converting into reported orders and cash, but the durability and valuation of this growth remain open questions. | [GE Vernova second-quarter 2026 results](https://www.gevernova.com/news/taxonomy/term/9674) |
 | Eaton reported first-quarter 2026 backlog growth of 44% in Electrical Americas and 73% in Electrical Global; Electrical Americas data-centre orders rose about 240%. | Supports electrical-distribution demand beyond generation equipment, subject to customer concentration and order normalization. | [Eaton first-quarter 2026 presentation](https://www.eaton.com/content/dam/eaton/company/investor-relations/quarterly-earnings/filings/2026/q1/q1-2026-analyst-presentation.pdf) |
-| Vertiv reported first-quarter 2026 sales up 30%, adjusted operating margin up 430 basis points to 20.8%, and adjusted free cash flow of USD 653 million. Its second-quarter results were scheduled for 29 July and were not yet available at this review. | Power and cooling demand is reaching revenue and cash, but the next report is a near-term evidence event rather than assumed confirmation. | [Vertiv first-quarter 2026 results](https://investors.vertiv.com/news/news-details/2026/Vertiv-Reports-Strong-First-Quarter-with-Diluted-EPS-Growth-of-136-Adjusted-Diluted-EPS-Growth-of-83-Raises-Full-Year-Guidance/default.aspx) and [Q2 reporting date](https://investors.vertiv.com/news/news-details/2026/Vertiv-Announces-Date-of-Second-Quarter-2026-Earnings-Release-and-Conference-Call/default.aspx) |
+| Vertiv reported second-quarter 2026 sales up 24%, adjusted operating margin of 22.6%, adjusted free cash flow of USD 925 million, and higher full-year guidance. Inventory rose 73% from year-end and receivables rose 21%. | Power and cooling demand is converting, but working capital, project timing, and a premium valuation keep the exposure at baseline-comparison status. | [Vertiv second-quarter 2026 results filed with the SEC](https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm) and [Form 10-Q](https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm) |
+| Schneider Electric reported that pure data-centre demand accelerated to triple-digit year-over-year growth in the fourth quarter of 2025, with uptake across electrical panels, UPS, racks, cooling, and digital offers. | Establishes a broad integrated-equipment candidate, but segment economics, order durability, cash conversion, and valuation still need isolated review. | [Schneider Electric 2025 results](https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf) |
+| Quanta's 2025 Form 10-K identifies utility transmission, substation, distribution and interconnection work plus critical-path electrical installation inside data centres; it also warns that policy, supply-chain, permitting, and project delays can raise costs or defer work. | Adds a direct construction and interconnection channel that equipment-only candidates miss, with contract execution and labor economics as key gates. | [Quanta Services 2025 Form 10-K](https://www.sec.gov/Archives/edgar/data/1050915/000105091526000006/pwr-20251231.htm) |
+| Bloom Energy's 2025 Form 10-K describes on-site fuel cells for AI data centres and discloses that its three largest customers and distributors represented about 43%, 13%, and 12% of revenue. | Grid delays can redirect demand to on-site generation, but concentration, fuel and emissions economics, financing, manufacturing, and cash conversion make this a high-risk substitute hypothesis. | [Bloom Energy 2025 Form 10-K](https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm) |
 
 ## Value-chain hypotheses
 
@@ -92,33 +96,39 @@ customer concentration transfers pricing power back to buyers; new manufacturing
 demand; or order growth fails to become cash. It is invalid as an equity thesis where a supplier's
 valuation already assumes an outcome more aggressive than realistic capacity and demand paths.
 
-## Bounded research candidates and results
+## Value-chain-wide public universe
 
-These immutable securities show the current research state and decision for each retained exposure:
+The bounded search covered every material transmission layer rather than stopping at issuers named
+in the seed:
 
-- [[securities/security_4b61970aa8f574446819|GEV]] — GE Vernova: research confirmed strong Power
-  and Electrification demand, USD 176 billion of backlog, margin expansion, cash generation, and
-  net liquidity. **Decision: no strategy.** At the USD 996.57 reviewed mark, the bounded 12-month
-  sensitivity implies 42.6% downside and only 2.0% base-case upside. Latest completed review:
-  `01KYHW57103C5W6MMF3SR497D7`.
-- [[securities/security_18a3ab0ee6086ee85d0f|ETN]] — Eaton: research confirmed direct
-  data-centre electrical demand, strong segment margins, backlog, and positive cash generation.
-  **Decision: no strategy.** Acquisition leverage, concentration, and valuation dominate; at the
-  USD 398.64 reviewed mark, bounded downside is 37.6% and the base case is 19.7% below market.
-  Latest completed review: `01KYHW5710FSY7A9Y5NMEBG9AD`.
-- [[security-catalog#security-security_cb88f9154cfeaa15e878|VRT]] — Vertiv: identity-only
-  watchlist candidate awaiting the scheduled post-Q2 security review. The review must test organic
-  order durability, power/cooling content, working capital, customer concentration, and valuation.
-  Active operation: `01KYEWGWBRV9EV6YN1WQA6G3WF`.
+| Layer | Retained public exposure | Current conclusion |
+| --- | --- | --- |
+| Generation equipment and grid systems | [[securities/security_4b61970aa8f574446819|GEV]] | Current Q2 and price-alert research confirms demand and cash conversion. **Baseline only; no strategy:** the USD 946 mark implies 39.6% bounded downside and 7.4% base upside. |
+| Electrical distribution and power management | [[securities/security_18a3ab0ee6086ee85d0f|ETN]]; [[security-catalog#security-security_dc8486c1d61df62a22fd|SU]] | Eaton remains **baseline only; no strategy** at 35.9% bounded downside and 17.5% base-case downside. Schneider is a new identity-only integrated-equipment candidate queued for separate research. |
+| Data-centre power and cooling | [[securities/security_cb88f9154cfeaa15e878|VRT]] | Current post-Q2 research replaces the stale pending status. Strong growth, margin, cash, and liquidity support **baseline only; no strategy**, while the USD 270 mark implies 38.4% bounded downside and 4.2% base upside. |
+| Transmission, substation, construction, and interconnection | [[security-catalog#security-security_488a9d7f7a8573597724|PWR]] | New identity-only candidate. Research must isolate backlog quality, utility and data-centre exposure, labor, contract structure, project timing, cash conversion, and valuation. |
+| On-site generation and grid-delay substitutes | [[security-catalog#security-security_3e597863f00753e8c65c|BE]] | New identity-only high-risk candidate. Research must test data-centre order materiality, customer concentration, fuel and carbon economics, financing, manufacturing, cash, and valuation. |
 
-Accepted causal relationships now exist for GEV and ETN, but their completed valuations do not
-justify a strategy, signal, or paper order. VRT remains pending research.
+The search also considered current [[securities/security_c120e9f26ebb6159adf9|ABBNY]],
+[[securities/security_22c2b9d782a62d7a9b86|ATKR]], and
+[[securities/security_a9eb9838940ef5ceaa0c|FLNC]] research. They were not retained for another
+review: ABB's current page does not isolate this idea's economics; Atkore's electrical volume has
+not overcome pricing and cash-conversion weakness; and Fluence's thin margins, cash burn, and
+limited bounded upside do not add a stronger substitute candidate than Bloom. Regulated utilities
+and generation owners were not retained because location-specific tariffs, approved capital
+recovery, load contracts, fuel, and power-price exposure determine the transmission from data-centre
+load to shareholder cash; a generic thematic association is insufficient.
+
+Exactly one dependent security review was created for each new identity. No new Vertiv review was
+created because its current completed result was consumed here. Accepted causal relationships
+remain limited to GEV and ETN; no relationship, strategy, signal, allocation, order, or accounting
+state follows from the three identity imports.
 
 ## Confidence and review
 
 Confidence is **medium** in the bottleneck mechanism and **low-to-medium** that current public-market
-prices offer attractive risk-adjusted exposure. Review by **2026-08-26**, or sooner after Vertiv's
-second-quarter report, material supplier guidance changes, or evidence that large projects are
-cancelled or deferred.
+prices offer attractive risk-adjusted exposure. Review by **2026-08-26**, or sooner after Eaton's
+second-quarter report, the three dependent candidate reviews, material supplier-guidance changes,
+or evidence that large projects are cancelled or deferred.
 
 See the complete [[index]] and append-only [[log]] for repository context.

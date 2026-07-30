@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_nearshoring_friendshoring_manufacturing",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "security_id": "security_2c779e81c27b78c556bb",
+    "security_research_operation_id": "01KYQCTS30SYF0E0RFYFJ0GP6R",
+    "security_research_result_path": "data/runs/local-20260729-20ops-4/01KYQCTS30SYF0E0RFYFJ0GP6R/agent_result.json",
+    "seed_claim": "Ternium's 2026-07-28 upper-Bollinger and RSI-overbought transitions followed a 13.35% one-month rise without abnormal volume; constructive USMCA talks are relevant context but disclosed no company economics, while the higher mark worsens the bounded valuation and Q2 results are due August 4."
+  },
+  "objective": "Refresh the nearshoring and friendshoring manufacturing idea from Ternium's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYR2CW38HRY2WSCX0MSTYT44",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ]
+}

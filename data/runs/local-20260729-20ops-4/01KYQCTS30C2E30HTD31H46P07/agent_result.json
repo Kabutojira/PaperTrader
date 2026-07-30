@@ -1,0 +1,63 @@
+{
+  "operation_id": "01KYQCTS30C2E30HTD31H46P07",
+  "status": "skipped",
+  "reason_code": "fresh_exact_duplicate",
+  "summary": "Skipped a fresh exact duplicate of the Vertiv security review already materialized for this same immutable operation and alert snapshot. The canonical 2026-07-28 USD 270 mark, lower-Bollinger trigger, source-price hash, VRT/XNYS/USD identity, two registered SEC sources, maintained wiki review, and current medium-confidence baseline assessment are unchanged. The assessment still records 38.4% downside and 4.2% bounded base upside, so the alert remains valuation and execution-timing risk rather than a conviction trade candidate. No wiki, structured research, strategy, or follow-up state was changed.",
+  "evidence": [
+    {
+      "source": "data/market/indicators.csv:56",
+      "claim": "The canonical alert remains the 2026-07-28 lower-Bollinger transition at a USD 270 close, with RSI 36.83942939, volume z-score 0.63828713, a 12.043523% measured-period decline, and the exact payload source-price hash.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "6015c26eb2013ddf6be465a59f79002760b86741ddb67f56aad5fd23a0f1fd38"
+    },
+    {
+      "source": "source_vrt_q2_2026_results",
+      "claim": "The registered primary Q2 results source remains current evidence for 24% sales growth, margin expansion, strong adjusted free cash flow, temporary supply-chain and project-phasing constraints, and raised 2026 guidance.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+      "observed_at": "2026-07-29T21:51:59Z",
+      "source_hash": "d4d0a061a46d88b421ca10cf7d176adb19db3e56af3b053098d07cf3bb41f8bc"
+    },
+    {
+      "source": "source_vrt_q2_2026_10q",
+      "claim": "The registered Q2 Form 10-Q still confirms the unique VRT Class A common-stock identity on NYSE, liquidity and balance-sheet evidence, working-capital growth, and the disclosed execution risks used by the current assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm",
+      "observed_at": "2026-07-29T21:51:59Z",
+      "source_hash": "9346a7542ba74f5a8f841365e837d45f4bd25c790be0a4da7b4b5807c3e0024d"
+    },
+    {
+      "source": "data/tables/security_assessments.csv:23",
+      "claim": "Exactly one current Vertiv assessment exists: baseline eligibility, medium confidence, no hard blocker, 38.4% downside, 4.2% base upside, a 12-month horizon, and fresh registered evidence through 2026-08-28.",
+      "observed_at": "2026-07-29T21:52:30Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Skipped the duplicate Vertiv lower-Bollinger security review because its alert hash, market snapshot, primary evidence, maintained page, and current assessment were already fresh and unchanged. The existing medium-confidence baseline disposition remains intact; no conviction strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, running queue claim, live lease, paper-only startup requirement, sequential preflight, and trusted controller and security-research skill identities.",
+      "Confirmed the VRT provider symbol, XNYS venue, USD currency, equity instrument, and immutable security identity remain unique in canonical state.",
+      "Matched the trigger type, 2026-07-28 market date, observation period, USD 270 mark, and source-price hash to canonical market and indicator state.",
+      "Confirmed the 2026-07-28 USD/EUR conversion rate is present with the same canonical retrieval timestamp as the alert market state.",
+      "Confirmed both registered SEC sources remain available and fresh for the existing assessment.",
+      "Confirmed exactly one existing current assessment remains baseline eligible with medium confidence, no hard blocker, 38.4% downside, 4.2% base upside, and expiration on 2026-08-28.",
+      "Confirmed the payload names no idea and the security has no accepted canonical relationship, so zero idea-research follow-ups are required for this skipped duplicate.",
+      "Confirmed the conviction strategy gate remains failed on margin of safety, timing, confidence, and valuation, so no strategy-research follow-up was created.",
+      "The first audited schema validation failed closed because PAPER_TRADING_ONLY was absent; the corrected audited retry with PAPER_TRADING_ONLY=true passed and made no state change.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed.",
+      "commands_run exactly matches all four canonical command entries in command_audit.json, including the failed-closed schema invocation and its successful retry.",
+      "No allocation targets or history, signals, orders, fills, executions, cash, portfolio, performance, wiki, structured research, or accounting state was changed by this attempt."
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_ed682191897704236b3c",
+  "resolution": "Made the generated local harness prompt state explicitly that the parent already claimed the operation, embedded the exact audit environment, prohibited a nested harness start, added regression coverage, and terminalized Vertiv operation 01KYQCTS30C2E30HTD31H46P07 with a validated retry in local-20260729-20ops-4."
+}

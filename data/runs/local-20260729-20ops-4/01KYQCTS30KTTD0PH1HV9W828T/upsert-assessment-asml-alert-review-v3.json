@@ -1,0 +1,21 @@
+{
+  "security_id": "security_ef35e41886220d51c22c",
+  "assessed_at": "2026-07-29T22:44:05Z",
+  "expires_at": "2026-08-28T22:44:05Z",
+  "eligibility": "baseline",
+  "confidence": "medium",
+  "thesis_score": "92",
+  "business_quality_score": "95",
+  "balance_sheet_score": "90",
+  "valuation_score": "40",
+  "timing_score": "45",
+  "liquidity_score": "95",
+  "risk_penalty": "20",
+  "downside_pct": "-31.4",
+  "base_upside_pct": "8.7",
+  "valuation_horizon_months": "12",
+  "hard_blockers": "",
+  "soft_gaps": "confidence_medium|margin_of_safety_below_target|timing_unfavorable|valuation_not_compelling",
+  "evidence_refs": "source_asml_q2_2026_6k|source_asml_q2_2026_financials",
+  "run_id": "local-20260729-20ops-4"
+}

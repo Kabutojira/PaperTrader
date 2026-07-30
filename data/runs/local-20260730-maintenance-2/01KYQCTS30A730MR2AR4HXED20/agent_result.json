@@ -1,0 +1,50 @@
+{
+  "operation_id": "01KYQCTS30A730MR2AR4HXED20",
+  "status": "succeeded",
+  "summary": "Classified ASML's 2026-06-29 through 2026-07-28 lower-Bollinger transition as valuation and timing risk, not a sufficient paper-trade opportunity. The alert packet records a 15.45% period decline and a close 2.18% below the lower band, but RSI was not oversold and volume was not abnormal. Current SEC-filed Q2 evidence showed raised guidance and stronger profitability rather than a new operating impairment. Fresh canonical security research already records 31.4% bounded downside and only 8.7% base upside, so no duplicate wiki update or follow-up operation was warranted.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic ASML alert packet and retained market provenance",
+      "claim": "For the exact 2026-06-29 through 2026-07-28 observation period, the immutable candidate packet records a USD 1,590.18 adjusted close, a -15.445769% period return, entry into bollinger_below_lower at strength 0.0218142207 from previous strength zero, and source-price hash 03461855cc0d161211343f15bfd344f9a6dc5276a1edc50de8d288d2d7b11ef3. The contemporaneous indicator review records a 2.18% lower-band breach, RSI 37.35, and volume anomaly 0.82; retained corporate-action rows preserve the same source-price hash after the rolling cache advanced to the next session."
+    },
+    {
+      "source": "ASML Holding N.V. Q2 2026 Form 6-K",
+      "claim": "The July 15 SEC filing reports EUR 9.3 billion of Q2 net sales, EUR 2.9 billion of net income, and raised 2026 guidance of EUR 43-45 billion of revenue with 54%-56% gross margin. This supports the operating thesis and identifies no new operating impairment explaining the July 27-28 decline.",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm",
+      "observed_at": "2026-07-29T22:44:00Z",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef"
+    },
+    {
+      "source": "ASML Holding N.V. Q2 2026 US GAAP financial statements",
+      "claim": "The SEC-filed statements report EUR 9.3265 billion of Q2 revenue, 54.0% gross margin, EUR 2.9176 billion of net income, EUR 7.58 diluted EPS, and net liquidity, while negative first-half operating cash flow preserves working-capital conversion risk.",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm",
+      "observed_at": "2026-07-29T22:44:00Z",
+      "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d"
+    },
+    {
+      "source": "PaperTrader canonical ASML research, assessment, and structured operation history",
+      "claim": "Completed security-research operation 01KYQCTS30KTTD0PH1HV9W828T evaluated this exact alert and retained medium-confidence baseline eligibility with 31.4% bounded downside and 8.7% base upside. The maintained page already contains the trigger evidence and primary citations; ASML has no position, strategy, accepted canonical relationship, or payload-linked idea requiring a follow-up."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained running under local-20260730-maintenance-2 with a live lease and matched the immutable opportunity ID, ASML security ID, operation type, payload path, sequential local-harness preflight, and repository controller and opportunity-skill hashes.",
+      "The immutable ASML/XNAS/USD/equity identity matched exactly one canonical security row, and the exact period endpoints, entered transition, trigger strength, market-data timestamp, and historical source-price hash were preserved by the deterministic packet and retained provenance.",
+      "Current registered SEC primary evidence and completed canonical security research were time-matched and distinguished from inference; the maintained ASML page already records the exact trigger evidence, valuation gates, classification, and citations, so no timestamp-only or duplicate wiki edit was made.",
+      "Structured history showed the alert was absorbed by completed security research; ASML has no position, strategy, accepted canonical relationship, or payload-linked idea, so zero follow-ups is bounded and non-duplicative.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed.",
+      "The command audit records exactly four canonical CLI invocations with zero changed paths. No issue, signal, order, fill, execution, cash, portfolio, performance, allocation, accounting, structured table, or wiki path changed; inspected payload, packet, preflight, audit, and schema artifacts were regular files rather than symlinks."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsla_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Tesla, Inc. Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+  "related_entity_ids": "security_dc7a111e297be528d96b",
+  "checked_at": "2026-07-29T23:41:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Tesla reported Q2 revenue of USD 28.236 billion, operating income of USD 398 million, and USD 43.524 billion of cash and short-term investments.",
+  "summary": "Current SEC filing confirming Tesla common stock trades as TSLA on Nasdaq. Q2 revenue rose 26% year over year to USD 28.236 billion and gross profit rose to USD 4.751 billion, while operating income fell 57% to USD 398 million as research and development and selling, general and administrative spending increased. Six-month operating cash flow was USD 8.634 billion, capital expenditures were USD 8.282 billion, cash and short-term investments were USD 43.524 billion, and debt principal was USD 9.08 billion. Tesla expects more than USD 25 billion of 2026 capital expenditures, principally for AI, manufacturing, research and fleet infrastructure.",
+  "run_id": "local-20260729-20ops-4"
+}

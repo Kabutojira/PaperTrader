@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsla_q2_2026_deliveries",
+  "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+  "canonical_url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+  "source_type": "issuer_release",
+  "title": "Tesla second-quarter 2026 production, deliveries and deployments",
+  "publisher": "Tesla, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "cadfa292c301e22ed474addbaf936395fdf55a77376ae031631c642f34b772d5",
+  "related_entity_ids": "security_dc7a111e297be528d96b",
+  "checked_at": "2026-07-29T23:44:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Tesla produced 451,758 vehicles, delivered 480,126 vehicles, and deployed 13.5 GWh of energy storage in Q2 2026.",
+  "summary": "Current issuer release reporting Q2 2026 production of 451,758 vehicles, deliveries of 480,126 vehicles, and energy-storage deployments of 13.5 GWh. Tesla cautions that deliveries and storage deployments alone do not determine financial performance because average selling price, costs, foreign exchange, and other factors also matter.",
+  "run_id": "local-20260729-20ops-4"
+}

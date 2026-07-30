@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-07-29"
+updated: "2026-07-30"
 provenance: repository-contract
 ---
 
@@ -1005,3 +1005,204 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_46254d925ebea0d84906`.
 
 - Generated canonical [[daily-reports/daily-report_20260729]] for run `seekingalpha-source-20260729`.
+
+- Created candidate packet [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81]] (59836b510b81).
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0]] (c697a1ba1bf0).
+
+- Created candidate packet [[inbox/market-security_2010347f1a0a5ea60f47-bollinger_above_upper-fbb3838f144d]] (fbb3838f144d).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-81e6a5bddd70]] (81e6a5bddd70).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-bfbf989faebd]] (bfbf989faebd).
+
+- Created candidate packet [[inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0]] (9c7be5f40cd0).
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a]] (917454ed7e3a).
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f]] (bdcd9187383f).
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802]] (a3f287ad1802).
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd]] (54e7a4e6d3dd).
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-macd_cross_below_signal-9e986cb6222e]] (9e986cb6222e).
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa]] (55b68c110daa).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-ed7fba71f542]] (ed7fba71f542).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-f8935339ca1b]] (f8935339ca1b).
+
+- Created candidate packet [[inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af]] (9ce67c8474af).
+
+- Created candidate packet [[inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2]] (3b8a9ff5dca2).
+
+- Created candidate packet [[inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad]] (f5f33a74b0ad).
+
+- Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63]] (2aef2a392f63).
+
+- Researched [[securities/security_2010347f1a0a5ea60f47|Spotify Technology S.A. ordinary
+  shares]] after the 2026-07-28 upper-Bollinger transition. The 10.59% one-month rise was not
+  accompanied by an overbought RSI or abnormal volume, and no decisive primary-source explanation
+  was found before the August 4 Q2 release. Strong scale, margins, cash generation, and liquidity
+  support baseline comparison, but a 27.7% downside case, only 5.2% base upside, and imminent
+  results make the current move timing risk rather than a paper-trade signal. No strategy or
+  idea-refresh operation was created because the full conviction gate failed and the security has
+  no payload-linked or accepted canonical idea relationship.
+
+- Reviewed [[securities/security_18a3ab0ee6086ee85d0f|Eaton]] after its 2026-07-28 lower-Bollinger
+  transition. The USD 388 close was only 0.025% below the lower band, with neutral RSI and no
+  abnormal volume; Eaton's next decisive primary evidence is its scheduled 2026-07-31 Q2 release.
+  Classified the move as pre-earnings timing risk and technical noise, retained baseline eligibility
+  with medium confidence, and kept the no-strategy stance because bounded downside and base values
+  remain 35.9% and 17.5% below the mark. Enqueued the required sequential refresh of
+  [[ideas/idea_ai_infrastructure_power|the linked AI-infrastructure idea]].
+
+- Rechecked [[securities/security_18a3ab0ee6086ee85d0f|Eaton]] for the bounded retry of the same
+  alert review. Primary evidence and the canonical July 28 mark were unchanged: the lower-band
+  breach remains marginal technical noise and pre-Q2 timing risk, baseline eligibility remains
+  medium-confidence, and valuation still blocks conviction strategy research.
+
+- Researched [[securities/security_cb88f9154cfeaa15e878|Vertiv]] after its 2026-07-28
+  lower-Bollinger transition. The 12.04% one-month decline was not oversold or volume-confirmed,
+  and the subsequent Q2 release cannot explain the pre-release move. Q2 sales, margin, cash flow,
+  liquidity, and raised guidance support the operating thesis, but a bounded range implies 38.4%
+  downside and only 4.2% base upside from the USD 270 mark. Retained medium-confidence baseline
+  comparison status, queued no conviction strategy, and created no idea refresh because neither
+  the payload nor an accepted canonical relationship names an idea.
+
+- Reviewed [[securities/security_4b61970aa8f574446819|GE Vernova]] after its 2026-07-28
+  lower-Bollinger transition. The USD 946 close was 1.02% below the lower band and down 14.20% over
+  the observation period, but RSI was not oversold and volume was not abnormal. Current SEC-filed
+  Q2 evidence still supports the operating thesis, while the unchanged bounded range implies 39.6%
+  downside and only 7.4% base upside. Retained medium-confidence baseline comparison status,
+  created no conviction strategy, and queued the required sequential refresh of
+  [[ideas/idea_ai_infrastructure_power|the accepted linked idea]].
+
+- Researched [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] after its 2026-07-28 RSI-
+  oversold transition. The USD 20.20 close fell 35.42% over the observation period, with RSI 25.77
+  but no abnormal-volume or lower-Bollinger confirmation. Current SEC-filed Q1 evidence shows 42%
+  revenue growth, high recurring ACV, strong RPO, backlog, and liquidity, but also negative free
+  cash flow, capital intensity, stock-compensation and note-dilution risk. A bounded range implies
+  49.0% downside and a base value 24.1% below the mark, so the move is valuation and momentum risk,
+  not a conviction paper-trade opportunity. No idea refresh was required because the payload and
+  accepted canonical relationships name no idea.
+
+- Reviewed [[securities/security_9d4049ed6669a52815d6|SQM]] after its 2026-07-28 MACD cross below
+  signal. The 4.28% one-month decline had neutral-to-weak RSI, no abnormal volume, no lower-band
+  breach, and only a marginal MACD gap. The Mt Holland final investment decision adds long-dated
+  capacity and cost optionality alongside USD 450-500 million of SQM-share capex, but does not
+  resolve normalized ADS valuation. Retained medium-confidence ineligible status, created no
+  conviction strategy, and queued the required sequential refresh of
+  [[ideas/idea_critical_minerals_lithium|the accepted linked lithium idea]].
+
+- Researched [[securities/security_a5dc16f3f4b245e6c168|Intuitive Machines]] after its 2026-07-28
+  RSI-oversold transition. The USD 12.3599 close fell 41.06% over the observation period, with RSI
+  27.88 but no abnormal-volume or lower-Bollinger confirmation. Q1 scale and backlog improved after
+  Lanteris, while operating losses, cash burn, net debt, integration, and pre-Q2 timing remain
+  material. A bounded revenue-multiple range implies 53.5% downside and a base value 15.3% below
+  the mark, so the move is momentum and valuation risk rather than a conviction paper-trade
+  opportunity. No idea refresh was required because the payload and accepted canonical
+  relationships name no idea.
+
+- Researched [[securities/security_ef35e41886220d51c22c|ASML]] after its 2026-07-28 lower-
+  Bollinger transition. The USD 1,590.18 close fell 15.45% over the observation period and finished
+  2.18% below the lower band, but RSI was not oversold and volume was not abnormal. SEC-filed Q2
+  results show higher revenue, strong margins, net liquidity, and sharply raised 2026 guidance,
+  with no new operating impairment explaining the decline. A bounded 12-month range implies 31.4%
+  downside and only 8.7% base upside, so the move is valuation and timing risk rather than a
+  conviction paper-trade opportunity. No idea refresh was required because the payload and
+  accepted canonical relationships name no idea.
+
+- Reviewed [[securities/security_66cdcf90aac0d83e76f3|Albemarle]] after its strengthened
+  2026-07-28 RSI-oversold alert. The USD 113.7094 close fell 12.34% over the observation period and
+  RSI reached 25.76, but volume was not abnormal and the close remained above the lower Bollinger
+  band. Q1 remains the latest operating evidence before results scheduled after the 5 August close;
+  it does not support a probability-weighted common-equity valuation. Retained medium-confidence
+  ineligible status, created no conviction strategy, and queued the required sequential refresh of
+  [[ideas/idea_critical_minerals_lithium|the accepted linked lithium idea]].
+
+- Reviewed [[securities/security_fb87fac302a5446a1ced|Lithium Americas]] after its strengthened
+  2026-07-28 RSI-oversold alert. The USD 2.80 close fell 25.73% over the observation period and RSI
+  reached 26.75, but volume was not abnormal, the close remained above the lower Bollinger band,
+  and current primary evidence disclosed no new operating event explaining the decline. Retained
+  low-confidence ineligible status with `valuation_unsupported`, created no conviction strategy,
+  and queued the required sequential refresh of
+  [[ideas/idea_critical_minerals_lithium|the accepted linked lithium idea]].
+
+- Researched [[securities/security_b1f2c48e1a744f5ecf67|Labcorp]] after its 2026-07-28
+  upper-Bollinger and RSI-overbought transitions. The USD 314.23 close rose 12.39% over the
+  observation period and finished 3.45% above the upper band with RSI 79.56, but volume was not
+  abnormal. The July 27 genetic-panel launch had no disclosed economics and Q2 results were due
+  before the July 30 open. Retained medium-confidence baseline comparison status, but a bounded
+  range implies 21.1% downside and a base value 2.5% below the mark, so the move is momentum and
+  pre-results timing risk rather than a conviction paper-trade opportunity. No idea refresh was
+  required because the payload and accepted canonical relationships name no idea.
+
+- Reviewed [[securities/security_2c779e81c27b78c556bb|Ternium]] after its 2026-07-28 upper-
+  Bollinger and RSI-overbought transitions. The USD 49.33 close rose 13.35% over the observation
+  period, finished 1.26% above the upper band, and reached RSI 70.52, but volume was not abnormal.
+  The July 23 U.S.-Mexico statement provides relevant regional-policy context without disclosing
+  Ternium economics or establishing causation. Retained medium-confidence baseline status, but the
+  higher mark implies 50.5% downside and 11.6% base-case downside in the bounded scenarios, while
+  Q2 results due after the August 4 close add timing risk. No conviction strategy was created; the
+  accepted nearshoring relationship requires one sequential idea refresh.
+
+- Researched [[securities/security_567d0d575bbd30aaa91d|Samsung Electronics common GDR]] after
+  its 2026-07-29 lower-Bollinger transition. The EUR 3,220 Vienna close fell 26.15% over the
+  observation period and finished 1.71% below the lower band, but RSI was not oversold and only
+  seven units traded. Record Q1 earnings and sharply stronger Q2 preliminary guidance do not
+  disclose an operating impairment explaining the move. Missing fresh KRW/EUR and cross-venue
+  parity evidence prevents a supportable intrinsic EUR range, while negligible local turnover is
+  a separate hard blocker. The assessment is medium-confidence ineligible; no strategy or idea
+  refresh was created because the full gate failed and no linked idea exists.
+
+- Researched [[securities/security_1e8fbdb0f45f2b413e00|PayPal]] after its 2026-07-28
+  RSI-overbought transition. The USD 58.3474 close rose 31.47% over the observation period and RSI
+  reached 78.99, but the close remained below the upper Bollinger band and volume was not abnormal.
+  Same-day Q2 results showed 10% TPV growth, strong free cash flow, and raised non-GAAP EPS guidance
+  alongside lower operating income, margin contraction, and nearly flat active accounts. A bounded
+  8x-12x guided-EPS range implies 26.2% downside and 10.6% base upside, leaving an inadequate
+  upside-to-downside ratio. The assessment is medium-confidence baseline comparison only; no
+  conviction strategy or idea refresh was created because the full gate failed and no linked idea
+  exists.
+
+- Researched [[securities/security_89969b7dac39b7db5661|YASKAWA Electric's Frankfurt ordinary
+  shares]] after the 2026-07-29 RSI-oversold transition. The EUR 25 close fell 36.22% over the
+  observation period and RSI reached 28.53, but the close remained above the lower Bollinger band,
+  volume was not abnormal, and only 30 shares traded. Q1 revenue and Motion Control profit grew,
+  while Robotics profit fell 82.3% amid ERP disruption and European restructuring. Strong orders
+  and unchanged guidance preserve the operating thesis, but a bounded range remains below the mark
+  and the Frankfurt line's sparse turnover is a hard liquidity blocker. The assessment is
+  medium-confidence ineligible; no strategy or idea refresh was created because the full gate
+  failed and no payload-linked or accepted canonical idea relationship exists.
+
+- Researched [[securities/security_dc7a111e297be528d96b|Tesla]] after its 2026-07-28 RSI-oversold
+  transition. The USD 306.86 close fell 25.49% over the observation period and RSI reached 26.93,
+  while the close remained just above the lower Bollinger band. Q2 revenue and deliveries grew,
+  but operating income fell 57%, capital expenditures nearly doubled, and the shares dropped
+  14.52% in the first post-results session on unusually high volume. Strong liquidity supports
+  baseline comparison, but a bounded revenue-multiple range implies 44.8% downside and a base
+  value 13.6% below the mark. No conviction strategy or idea refresh was created because the full
+  gate failed and no payload-linked or accepted canonical idea relationship exists.
+
+- Refreshed [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] from
+  current Eaton, GE Vernova, and Vertiv research. All three confirm physical demand but remain
+  baseline-only at reviewed valuations. The value-chain search added identity-only
+  [[security-catalog#security-security_dc8486c1d61df62a22fd|SU]],
+  [[security-catalog#security-security_488a9d7f7a8573597724|PWR]], and
+  [[security-catalog#security-security_3e597863f00753e8c65c|BE]] candidates for integrated
+  electrical equipment, interconnection construction, and on-site generation, with exactly one
+  dependent security review each. No relationship, strategy, signal, allocation, order, or
+  accounting state was created.
+
+## 2026-07-30
+
+- Published investor decision snapshot `decision_6fdcbe3dbf92df8340dd`.
+
+- Generated canonical [[daily-reports/daily-report_20260730]] for run `local-20260729-20ops-4`.
+
+- Published investor decision snapshot `decision_0cfdae4fe3cdb1bfe9b5`.
+
+- Generated canonical [[daily-reports/daily-report_20260730]] for run `local-20260730-maintenance-2`.

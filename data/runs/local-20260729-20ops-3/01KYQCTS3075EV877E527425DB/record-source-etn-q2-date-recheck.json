@@ -1,0 +1,18 @@
+{
+  "source_id": "source_etn_q2_2026_earnings_date",
+  "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-to-announce-second-quarter-2026-earnings-on-july-31--2026.html",
+  "canonical_url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-to-announce-second-quarter-2026-earnings-on-july-31--2026.html",
+  "source_type": "issuer_release",
+  "title": "Eaton to announce second quarter 2026 earnings on July 31, 2026",
+  "publisher": "Eaton Corporation plc",
+  "license": "",
+  "status": "available",
+  "content_hash": "be6161ed78c48410176424b43705a12aa8a33bf657e4560bfb6a1880f66dfd78",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_18a3ab0ee6086ee85d0f",
+  "checked_at": "2026-07-29T21:44:32Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Eaton will announce second-quarter 2026 earnings on July 31 before the New York Stock Exchange opens and host its conference call at 11 a.m. Eastern time.",
+  "summary": "The issuer announcement still establishes the next decisive evidence event after the July 28 technical alert and contains no second-quarter financial results.",
+  "run_id": "local-20260729-20ops-3"
+}

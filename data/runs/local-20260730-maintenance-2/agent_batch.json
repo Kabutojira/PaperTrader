@@ -1,0 +1,17 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-07-30T00:22:06Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 1,
+  "outcomes": [
+    {
+      "operation_id": "01KYQCTS30A730MR2AR4HXED20",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-20260730-maintenance-2",
+  "started_at": "2026-07-30T00:22:06Z"
+}

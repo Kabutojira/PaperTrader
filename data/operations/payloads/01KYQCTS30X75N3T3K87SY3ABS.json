@@ -1,0 +1,22 @@
+{
+  "entity_id": "security_567d0d575bbd30aaa91d",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-07-29T16:55:24Z",
+    "market_data_date": "2026-07-29",
+    "period_end": "2026-07-29",
+    "period_start": "2026-07-01",
+    "security_id": "security_567d0d575bbd30aaa91d",
+    "source_price_hash": "6eb025c45adfb61e4cb0d75f20bfdcf333ee0fbfc604998f4160f0fedb16fcdb",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Research security_567d0d575bbd30aaa91d with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+  "operation_id": "01KYQCTS30X75N3T3K87SY3ABS",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a.md"
+  ]
+}

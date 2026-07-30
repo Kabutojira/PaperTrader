@@ -1,0 +1,27 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_dc8486c1d61df62a22fd",
+  "dedupe_key": "security_research:security_dc8486c1d61df62a22fd:ai-power-value-chain:2026-07-29",
+  "prompt": "Research Schneider Electric as a bounded data-centre electrical-distribution and energy-management exposure.",
+  "inputs": {
+    "security_id": "security_dc8486c1d61df62a22fd",
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, data-centre revenue and order exposure, electrical-panel and UPS economics, capacity, customer concentration, cash conversion, valuation, catalysts, and invalidation.",
+    "causal_hypothesis": "Data-centre power-density and interconnection constraints can increase demand for Schneider Electric electrical panels, UPS, power distribution, cooling integration, and energy-management systems, subject to project timing, competition, capacity, concentration, and valuation."
+  },
+  "source": "idea_research:01KYPFC140X5NVAEQ8276H0MRZ",
+  "priority": 68,
+  "freshness_days": 30,
+  "depends_on": [
+    "01KYPFC140X5NVAEQ8276H0MRZ"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.se.com/ww/en/about-us/investor-relations/share-information/share-price/",
+    "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf",
+    "https://www.iea.org/reports/energy-and-ai/executive-summary"
+  ],
+  "max_attempts": 3
+}

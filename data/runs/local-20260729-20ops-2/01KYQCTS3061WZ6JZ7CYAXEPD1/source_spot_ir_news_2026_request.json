@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spot_ir_news_2026",
+  "url": "https://investors.spotify.com/news/default.aspx",
+  "canonical_url": "https://investors.spotify.com/news/default.aspx",
+  "source_type": "issuer_ir",
+  "title": "Spotify investor news and press releases",
+  "publisher": "Spotify Technology S.A.",
+  "license": "",
+  "status": "available",
+  "content_hash": "11d32fb2b42d07a8d4fc63b35ec94bf129e4ce98f111ff7ae9cfff7eba43183f",
+  "related_entity_ids": "security_2010347f1a0a5ea60f47",
+  "checked_at": "2026-07-29T17:03:27Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Spotify's investor-relations feed lists its June 25 announcement for second-quarter 2026 results; the results are scheduled for August 4, 2026 before the U.S. market open.",
+  "summary": "Official investor-relations press-release feed checked before the scheduled Q2 2026 release. The imminent August 4 earnings event makes the July 28 upper-band transition vulnerable to expectation-driven volatility; no Q2 result was available at the research cutoff.",
+  "run_id": "local-20260729-20ops-2"
+}

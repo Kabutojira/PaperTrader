@@ -1,0 +1,18 @@
+{
+  "source_id": "source_ternium_q2_2026_event",
+  "url": "https://investors.ternium.com/events/",
+  "canonical_url": "https://investors.ternium.com/events/",
+  "source_type": "issuer_release",
+  "title": "Ternium investor events calendar",
+  "publisher": "Ternium S.A.",
+  "license": "",
+  "status": "available",
+  "content_hash": "46105f412cdf2ca7d21ce7c87012f803841085893ce1f5be9d863265f87f8e3a",
+  "related_entity_ids": "idea_nearshoring_friendshoring_manufacturing|security_2c779e81c27b78c556bb",
+  "checked_at": "2026-07-29T23:13:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Ternium schedules its second-quarter 2026 results release for August 4 after market and its conference call for August 5 at 8:00 a.m. Eastern.",
+  "summary": "Current issuer scheduling evidence. It establishes an imminent operating-results catalyst after the canonical July 28 observation but contains no Q2 financial results and cannot explain the observed price move.",
+  "run_id": "local-20260729-20ops-4"
+}

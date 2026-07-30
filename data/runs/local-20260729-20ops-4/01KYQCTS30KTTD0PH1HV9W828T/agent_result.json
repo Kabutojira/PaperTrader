@@ -1,0 +1,70 @@
+{
+  "operation_id": "01KYQCTS30KTTD0PH1HV9W828T",
+  "status": "succeeded",
+  "summary": "Researched ASML after its 2026-07-28 lower-Bollinger transition. The USD 1,590.18 close fell 15.45% over the observation period and finished 2.18% below the lower band, but RSI was not oversold and volume was not abnormal. Current SEC-filed Q2 evidence shows EUR 9.3265 billion of revenue, 54.0% gross margin, EUR 2.9176 billion of net income, net liquidity, and sharply raised 2026 guidance, with no new operating impairment explaining the decline. A bounded 12-month earnings sensitivity gives 31.4% downside and only 8.7% base upside, so the move is valuation and timing risk rather than a sufficient paper-trade opportunity. Established medium-confidence baseline eligibility, created no conviction strategy, and created no idea refresh because neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "ASML closed at USD 1,590.18 on 2026-07-28, down 15.45% from 2026-06-29 and 9.33% over the final two sessions. The close was 2.18% below the USD 1,625.64 lower Bollinger band; RSI was 37.35, volume anomaly was 0.82, and bollinger_below_lower was the only transition. The canonical source-price hash is 03461855cc0d161211343f15bfd344f9a6dc5276a1edc50de8d288d2d7b11ef3. At the same-date USD/EUR rate of 0.87955, the mark was about EUR 1,398.64; EUR 960 downside and EUR 1,520 base values convert to USD 1,091.47 and USD 1,728.16, implying -31.4% and +8.7%."
+    },
+    {
+      "source": "ASML Holding N.V. Q2 2026 Form 6-K",
+      "claim": "The July 15 SEC filing reports Q2 total net sales of EUR 9.3 billion and net income of EUR 2.9 billion and raises the 2026 outlook to EUR 43-45 billion of revenue with 54%-56% gross margin. It confirms strong AI-led demand and does not identify a new operating impairment behind the July 27-28 decline.",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm",
+      "observed_at": "2026-07-29T22:44:00Z",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef"
+    },
+    {
+      "source": "ASML Holding N.V. Q2 2026 US GAAP financial statements",
+      "claim": "The filed statements report EUR 9.3265 billion of Q2 revenue, 54.0% gross margin, EUR 2.9176 billion of net income, EUR 7.58 diluted EPS, and 384.9 million diluted weighted-average shares. Cash plus short-term investments were EUR 7.5815 billion versus EUR 1.9844 billion of long-term debt, while negative first-half operating cash flow preserves working-capital conversion as contrary evidence.",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm",
+      "observed_at": "2026-07-29T22:44:00Z",
+      "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-6k.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-financials.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v2.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v3.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-security-asml-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "ASML's 2026-07-28 lower-Bollinger breach followed a 15.45% one-month decline but lacked oversold RSI or abnormal-volume confirmation. SEC-filed Q2 results and raised guidance support the operating thesis, while bounded USD 1,091.47 downside and USD 1,728.16 base values imply -31.4% and +8.7% from the USD 1,590.18 mark; the move is valuation and timing risk, not a conviction paper-trade opportunity."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-6k.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/record-source-asml-q2-2026-financials.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-security-asml-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v2.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30KTTD0PH1HV9W828T/upsert-assessment-asml-alert-review-v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease, and matched the immutable ASML/XNAS/USD/equity identity, alert payload, sequential harness preflight, controller skill hash, and security-research skill hash.",
+      "The immutable ASML/XNAS/USD/equity provider identity matched exactly one security row; neither the payload nor relationships.csv names an accepted linked idea, so zero idea-research follow-ups is the exact required count.",
+      "The canonical 2026-07-28 mark, indicator date, alert type, observation period, source-price hash, and same-date USD/EUR cache were current. The alert reproduced as a 2.18% lower-band breach with RSI 37.35 and no abnormal volume.",
+      "Both retained SEC primary sources were registered before the accepted assessment. The first assessment request failed because it was seconds future-dated and the immutable v2 request failed because its assessment time preceded the registered source-check times; both failures were preserved in the audit, and the uniquely named v3 correction succeeded without modifying either prior request.",
+      "The current assessment belongs to this run, references both registered fresh sources, remains current through 2026-08-28, has no hard blocker, and records the bounded -31.4% downside and +8.7% base-upside result.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false because ASML and other eligible securities lack accepted relationships and two rejected relationships remain unreconciled; this prevents allocation but does not invalidate the completed security assessment.",
+      "The command audit exactly records all eleven project CLI invocations, including two repaired assessment failures and the expected nonzero repository-wide allocation-readiness check. No allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request, payload, or operation artifact was a symlink."
+    ]
+  }
+}

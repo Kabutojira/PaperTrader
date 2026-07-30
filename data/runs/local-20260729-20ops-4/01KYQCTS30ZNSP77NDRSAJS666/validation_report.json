@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-briefing.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-qa.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-results.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-assessment-yaskawa-frankfurt.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-security-yaskawa-frankfurt.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_89969b7dac39b7db5661.md"
+  ],
+  "completed_at": "2026-07-29T23:37:01Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30ZNSP77NDRSAJS666",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

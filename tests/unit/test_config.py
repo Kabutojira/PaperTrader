@@ -36,7 +36,7 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.allocation.minimum_upside_downside_ratio == Decimal("1")
     assert settings.allocation.minimum_confidence == "medium"
     assert settings.allocation.research_refresh_lead_days == 7
-    assert settings.operations.maximum_llm_operations_per_run == 5
+    assert settings.operations.maximum_llm_operations_per_run == 20
     assert settings.classifier.command == ("python", "-m", "papertrader.classifier_command")
     assert settings.classifier.model == "gpt-5.6-luna"
     assert settings.youtube.enabled is True

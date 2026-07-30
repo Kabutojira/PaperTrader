@@ -1,0 +1,73 @@
+{
+  "operation_id": "01KYQCTS30G11B3C9CHZTMA087",
+  "status": "succeeded",
+  "summary": "Reviewed SQM after its 2026-07-28 MACD cross below signal. The USD 66.87 close was down 4.28% from 2026-06-29 and 2.79% from the prior session, but the bearish crossover was only USD 0.0079, RSI was 36.17, volume was not abnormal, and the close remained above the lower Bollinger band. The July 21 Mt Holland final investment decision adds long-dated capacity and cost optionality, alongside USD 450-500 million of SQM-share capex and execution risk; it does not establish a negative cause for the alert or resolve normalized ADS valuation. Retained medium-confidence ineligible status with valuation_unsupported, created no conviction strategy, and enqueued exactly one dependent refresh for the accepted lithium idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "SQM closed at USD 66.87 on 2026-07-28, down 4.28% from 2026-06-29 and 2.79% from the prior session. MACD was USD 2.4747 below zero and only USD 0.0079 below its signal, RSI was 36.17, volume anomaly was 0.52, and the close remained 1.57% above the USD 65.84 lower Bollinger band. The canonical source-price hash is b1c6696baeeb3715701a889baed72a5e63f73b06e30fb81a728bfdf8d9414284.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "b1c6696baeeb3715701a889baed72a5e63f73b06e30fb81a728bfdf8d9414284"
+    },
+    {
+      "source": "Mt Holland lithium expansion final investment decision",
+      "claim": "The primary exchange announcement confirms a plan to double nameplate spodumene concentrate capacity from about 380,000 to 760,000 tonnes per year at 5.5% Li2O, start second-concentrator construction in the second half of 2027, target first expanded output in the first half of 2030, and commit an estimated USD 450-500 million of nominal capital for SQM's share. It adds long-duration growth and lower-cost optionality but also capex, execution, approval, and cycle risk.",
+      "url": "https://links.sgx.com/1.0.0/corporate-announcements/HNQGSKX1PAXMY9YZ/ac956cf9b60b1aa8da12b346ac29bca8c25d7aa2e11721001ffdaf0c4393d08f",
+      "observed_at": "2026-07-29T22:24:00Z",
+      "source_hash": "ac956cf9b60b1aa8da12b346ac29bca8c25d7aa2e11721001ffdaf0c4393d08f"
+    },
+    {
+      "source": "SQM Q1 2026 Form 6-K earnings release",
+      "claim": "The rechecked filing reports USD 1.76 billion revenue, USD 364.7 million net income, USD 837 million adjusted EBITDA, 69 thousand tonnes of lithium-equivalent volume, and about USD 17.8/kg realized Chilean lithium pricing. It confirms cyclical recovery and liquidity, but lacks normalized lithium-price, state-take, partnership-attribution, capex, minority-interest, and ADS inputs needed for defensible downside and base values.",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+      "observed_at": "2026-07-29T22:24:00Z",
+      "source_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYQZRTMR79EG6XT5BPZGNSJY.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/enqueue-idea-refresh-sqm-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/record-source-sqm-mt-holland-fid-2026.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/record-source-sqm-q1-2026-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/upsert-assessment-sqm-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/upsert-security-sqm-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+  ],
+  "operations_created": [
+    "01KYQZRTMR79EG6XT5BPZGNSJY"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SQM's 2026-07-28 MACD cross below signal followed a 4.28% one-month decline but was marginal and lacked oversold RSI, abnormal volume, or a lower-band breach. Mt Holland adds long-dated capacity and USD 450-500 million of SQM-share capex, while normalized ADS valuation remains unsupported; no conviction paper strategy is justified."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/record-source-sqm-q1-2026-recheck.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/record-source-sqm-mt-holland-fid-2026.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/upsert-security-sqm-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/upsert-assessment-sqm-alert-review.json",
+    "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYQCTS30G11B3C9CHZTMA087/enqueue-idea-refresh-sqm-alert-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease, and matched the immutable SQM identity, alert payload, sequential harness preflight, controller skill hash, and security-research skill hash.",
+      "The SQM/XNYS/USD/equity identity matched exactly one security row; the accepted canonical relationship links it to idea_critical_minerals_lithium.",
+      "The canonical 2026-07-28 mark, indicator date, alert type, observation period, and source-price hash were current. The alert reproduced as a marginal MACD cross below signal with RSI 36.17, no abnormal volume, and no lower-Bollinger breach; no FX input is required for the USD-denominated instrument assessment.",
+      "Both retained primary sources were recorded before the assessment. The assessment belongs to this run, references both registered and fresh sources, remains current through 2026-08-19, and records the explicit valuation_unsupported hard blocker.",
+      "Exactly one matching idea-research follow-up was created as 01KYQZRTMR79EG6XT5BPZGNSJY, depends on this security operation in the queue, and points to this run's expected result path.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false only for unrelated repository-wide eligible-security relationship gaps and unreconciled rejected relationships; SQM's current ineligible assessment and accepted relationship were present.",
+      "The command audit exactly records all ten project CLI invocations, including the expected nonzero repository-wide allocation-readiness check. No allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request, payload, or operation artifact was a symlink."
+    ]
+  }
+}

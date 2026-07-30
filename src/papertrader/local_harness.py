@@ -286,12 +286,19 @@ def start_local_harness_operation(
     )
     prompt += (
         "\n\nLocal harness boundary:\n"
+        "- The parent controller already started and claimed this operation. Do not run agent "
+        "harness start or any other queue lifecycle command.\n"
         f"- Read {controller.relative_path} and {selected.relative_path} completely.\n"
         "- Read data/wiki/SCHEMA.md, data/wiki/index.md, and the latest data/wiki/log.md entries.\n"
-        "- Prefix every agent-side papertrader CLI command with the audit environment returned "
-        "by harness start.\n"
+        "- Prefix every agent-side papertrader CLI command with "
+        f"PAPERTRADER_AUDIT_RUN_ID={run_id} "
+        f"PAPERTRADER_AUDIT_OPERATION_ID={operation.operation_id} "
+        f"PAPERTRADER_AUDIT_PATH=data/runs/{run_id}/{operation.operation_id}/command_audit.json.\n"
+        "- Invoke the project CLI through scripts/papertrader; do not use a system or Snap uv "
+        "launcher.\n"
         "- Write agent_result.json only after every permitted edit and audited command.\n"
-        "- Run agent harness finish as the deterministic controller after the manifest exists.\n"
+        "- Do not run agent harness finish; stop after agent_result.json exists so the parent "
+        "controller can validate and terminalize the operation.\n"
     )
     prompt_path = artifact_directory / "controller_prompt.md"
     preflight_path = artifact_directory / "harness_preflight.json"

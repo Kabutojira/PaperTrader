@@ -1,0 +1,18 @@
+{
+  "source_id": "source_etn_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm",
+  "source_type": "filing",
+  "title": "Eaton Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "fffc172f0b3e45e0add279ce31bd3201a3b8c04f406f1f48cbafc7ea46363384",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_18a3ab0ee6086ee85d0f",
+  "checked_at": "2026-07-29T21:35:10Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q1 2026 net sales were USD 7.451 billion, net income attributable to ordinary shareholders was USD 866 million, diluted EPS was USD 2.22, operating cash flow was USD 507 million, cash was USD 565 million, and total debt was USD 21.129 billion.",
+  "summary": "The unchanged SEC-filed quarterly report remains the latest reported financial evidence for Eaton pending its scheduled Q2 2026 release on July 31.",
+  "run_id": "local-20260729-20ops-2"
+}

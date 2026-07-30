@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sqm_q1_2026_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+  "source_type": "regulator_filing",
+  "title": "SQM Q1 2026 Form 6-K earnings release",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_9d4049ed6669a52815d6",
+  "checked_at": "2026-07-29T22:24:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "SQM reported Q1 2026 revenue of USD 1.76 billion, net income of USD 364.7 million, adjusted EBITDA of USD 837 million, lithium sales volume of 69 thousand tonnes LCE, and an average Chilean lithium price of about USD 17.8/kg.",
+  "summary": "Rechecked primary quarterly evidence for the alert review. Lithium volume rose 25%, realized Chilean lithium price rose about 95%, and lithium produced 75% of consolidated gross profit. Cash was USD 2.83 billion and long-term debt was USD 4.79 billion. The filing confirms strong cyclical recovery but still lacks the normalized price, state-take, partnership-attribution, capex, minority-interest, and ADS inputs needed for a defensible downside and base valuation.",
+  "run_id": "local-20260729-20ops-4"
+}

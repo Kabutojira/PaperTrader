@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vrt_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Vertiv Holdings Co Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9346a7542ba74f5a8f841365e837d45f4bd25c790be0a4da7b4b5807c3e0024d",
+  "related_entity_ids": "security_cb88f9154cfeaa15e878",
+  "checked_at": "2026-07-29T21:51:59Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026, Vertiv held USD 2.811 billion cash and USD 300 million short-term investments against USD 2.940 billion long-term debt.",
+  "summary": "Current quarterly filing confirming the VRT Class A common-stock identity on NYSE, Q2 GAAP sales of USD 3.274 billion, operating profit of USD 637.9 million, net income of USD 497.8 million, and diluted EPS of USD 1.27. It reports USD 2.811 billion cash, USD 300 million short-term investments, USD 2.940 billion long-term debt, USD 2.484 billion unused revolver availability, and compliance with the credit covenant. Inventories rose to USD 2.523 billion and receivables to USD 3.750 billion, while deferred revenue rose to USD 3.634 billion. Principal risks include order and backlog conversion, large-customer terms, fixed-price execution, supply chain, tariffs, capacity expansion, competition, and geopolitical disruption.",
+  "run_id": "local-20260729-20ops-3"
+}

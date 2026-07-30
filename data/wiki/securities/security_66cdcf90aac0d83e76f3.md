@@ -4,8 +4,8 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-28"
-provenance: "source_alb_q1_2026_results_sec; source_960b91fa563fb8a926b9; deterministic market cache"
+updated: "2026-07-29"
+provenance: "source_alb_q1_2026_results_sec; source_alb_q2_2026_earnings_date; source_960b91fa563fb8a926b9; deterministic market cache"
 security_id: security_66cdcf90aac0d83e76f3
 issuer_id: issuer_76c4dda166e8f840fb77
 confidence: medium
@@ -52,15 +52,25 @@ Primary evidence: [Albemarle Q1 2026 release](https://www.sec.gov/Archives/edgar
 
 ## Valuation, market state, catalysts, and risks
 
-The 27 July deterministic mark is USD 116.18, with 1,463,658 shares traded. RSI is 27.62, the
-20-day return is -13.10%, and the close remains below both the 50-day and 200-day averages. This is
-fresh and liquid enough for comparison, but oversold timing is not valuation evidence.
+The 28 July deterministic mark is USD 113.7094, with 1,725,336 shares traded. It fell 2.13% for the
+session and 12.34% from 29 June. RSI strengthened further into oversold territory at 25.76, while
+the close remained below the USD 147.10 50-day and USD 151.57 200-day averages. The close was still
+3.30% above the USD 110.08 lower Bollinger band and the -0.64 volume z-score was not an abnormal-
+volume confirmation. This is fresh and liquid enough for comparison, but oversold timing is not
+valuation evidence.
 
 The deterministic monitor first recorded entry into the RSI-oversold condition on **2026-07-24**,
 after an **18.47%** adjusted-close decline from 25 June to 24 July, at a USD 115 close and trigger
 strength of 0.1593. This [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752|indicator
 transition]] corroborates weak price momentum and near-term timing risk; it does not explain the
 move, establish intrinsic value, or override the fundamental and valuation gates below.
+
+The 28 July alert is a **strengthening** of that same condition, not an independent fundamental
+catalyst. Albemarle has scheduled its Q2 results for after the 5 August NYSE close and the call for
+6 August. Q1 therefore remains the latest reported operating evidence. No new reported operating
+result establishes a company-specific impairment or recovery sufficient to explain the one-month
+decline before that release. The move is best classified as momentum and pre-results timing risk,
+with commodity and valuation uncertainty still unresolved.
 
 No supportable common-equity valuation range is recorded. The filing's USD 0.9-1.0 billion to USD
 4.2-4.4 billion adjusted-EBITDA span across management's approximately USD 10/kg to USD 30/kg LCE
@@ -78,6 +88,6 @@ disruption rises, or dilution absorbs the recovery.
 ## Disposition
 
 Status: **watching**, confidence **medium**, assessment **ineligible**. Review after the scheduled
-Q2 release on **2026-08-06**. Improved cash conversion, leverage, and trading liquidity do not
-remove the hard valuation blocker, and the oversold condition does not justify a conviction
-strategy.
+Q2 release on **2026-08-05** and 6 August call. Improved cash conversion, leverage, and trading
+liquidity do not remove the hard valuation blocker; neither the 12.34% one-month decline nor the
+strengthened oversold condition justifies a conviction strategy.

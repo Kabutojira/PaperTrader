@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2010347f1a0a5ea60f47",
+  "issuer_id": "issuer_3a716300677df5b8c1cd",
+  "company_name": "Spotify Technology S.A.",
+  "instrument_name": "Spotify Technology S.A. ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "SPOT",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "SPOT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "LU",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; investment research pending.",
+  "research_summary": "Scale, margins, cash generation, and liquidity are strong, but the upper-band move lacks decisive causal confirmation and 5.2% base upside is not compelling before Q2 results.",
+  "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
+  "last_research_at": "2026-07-29T17:03:27Z",
+  "next_review_at": "2026-08-05T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026006874/ck0001639920-20251231.htm"
+}

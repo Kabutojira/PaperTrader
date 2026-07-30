@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pypl_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "PayPal Holdings, Inc. Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074",
+  "related_entity_ids": "security_1e8fbdb0f45f2b413e00",
+  "checked_at": "2026-07-29T23:26:28Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026, PayPal reported USD 8.306 billion of cash, USD 6.959 billion of investments, USD 13.400 billion of debt, and 862 million common shares outstanding.",
+  "summary": "Current quarterly filing confirming PayPal common stock trades as PYPL on Nasdaq and reporting USD 8.306 billion cash, USD 2.950 billion short-term investments, USD 4.009 billion long-term investments, USD 2.505 billion short-term debt, USD 10.895 billion long-term debt, and 862 million shares outstanding. Q2 revenue was USD 8.682 billion, operating income was USD 1.427 billion, and diluted EPS was USD 1.25. Material risks include intense payments competition, branded-checkout execution, regulation, cyber and fraud exposure, credit funding, third-party network dependence, and transformation execution.",
+  "run_id": "local-20260729-20ops-4"
+}

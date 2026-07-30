@@ -299,23 +299,22 @@ def _payload_validator(repository_root: Path) -> Draft202012Validator:
     return Draft202012Validator(schema, format_checker=FormatChecker())
 
 
-def validate_operation_payload(repository_root: Path, operation: Operation) -> None:
-    """Validate a payload schema, queue identity match, and symlink-safe path."""
+def _validate_operation_payload_value(
+    repository_root: Path,
+    operation: Operation,
+    payload: object,
+    *,
+    relative: PurePosixPath,
+) -> None:
+    """Validate one decoded payload before or after its durable write."""
 
-    relative = _validate_payload_path(operation.payload_path)
-    path = repository_root.joinpath(*relative.parts)
-    if path.is_symlink() or not path.is_file():
-        raise QueueError(f"operation {operation.operation_id} payload does not exist: {relative}")
-    try:
-        payload = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        raise QueueError(f"cannot read payload {relative}: {exc}") from exc
     errors = sorted(
         _payload_validator(repository_root).iter_errors(payload), key=lambda error: list(error.path)
     )
     if errors:
         descriptions = "; ".join(error.message for error in errors)
         raise QueueError(f"payload {relative} fails schema: {descriptions}")
+    assert isinstance(payload, dict)
     expected = {
         "operation_id": operation.operation_id,
         "operation_type": operation.operation_type,
@@ -356,6 +355,25 @@ def validate_operation_payload(repository_root: Path, operation: Operation) -> N
             raise QueueError(
                 f"payload {relative} mismatches YouTube identities: {youtube_mismatches}"
             )
+
+
+def validate_operation_payload(repository_root: Path, operation: Operation) -> None:
+    """Validate a payload schema, queue identity match, and symlink-safe path."""
+
+    relative = _validate_payload_path(operation.payload_path)
+    path = repository_root.joinpath(*relative.parts)
+    if path.is_symlink() or not path.is_file():
+        raise QueueError(f"operation {operation.operation_id} payload does not exist: {relative}")
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise QueueError(f"cannot read payload {relative}: {exc}") from exc
+    _validate_operation_payload_value(
+        repository_root,
+        operation,
+        payload,
+        relative=relative,
+    )
 
 
 @contextmanager
@@ -524,6 +542,12 @@ def enqueue_operation(
         }
         if source_refs:
             payload["source_refs"] = sorted(set(source_refs))
+        _validate_operation_payload_value(
+            repository_root,
+            operation,
+            payload,
+            relative=PurePosixPath(payload_relative),
+        )
         payload_path = repository_root.joinpath(*PurePosixPath(payload_relative).parts)
         if payload_path.exists():
             try:

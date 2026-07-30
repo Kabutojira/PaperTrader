@@ -1,0 +1,21 @@
+{
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "16e0f6fd4f808f5cfc5c987ff9050b21e5ce939ec24958ff56533b9bed33da94",
+    "version": "repository"
+  },
+  "harness": "local",
+  "operation_id": "01KYQCTS3061WZ6JZ7CYAXEPD1",
+  "operation_skill": {
+    "name": "papertrader-security-research",
+    "path": "skills/papertrader-security-research/SKILL.md",
+    "sha256": "1cf4cb5d32f3856fc89c36e3f3f293a108047bc9de52f9c987c01993816a2e51",
+    "version": "repository"
+  },
+  "operation_type": "security_research",
+  "preflight_version": 1,
+  "prompt_injection_flags": [],
+  "run_id": "local-20260729-20ops-2",
+  "sequential": true
+}

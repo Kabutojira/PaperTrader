@@ -1,0 +1,20 @@
+{
+  "completed_at": "",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 0,
+  "preparation_errors": [],
+  "queue_dispositions": [
+    "allocation_maintenance:01KYQX7VTGAA4RZ3KDABA48ZJK",
+    "allocation_maintenance:01KYQX7VTGEFWS7H0DHXC97SC4"
+  ],
+  "report_path": "",
+  "run_id": "local-20260729-20ops-3",
+  "snapshot_id": "",
+  "source_sha": "679759ae632069705995377f5c0d1d9b4f47226b",
+  "started_at": "2026-07-29T21:42:10Z",
+  "status": "prepared",
+  "trigger": "local"
+}

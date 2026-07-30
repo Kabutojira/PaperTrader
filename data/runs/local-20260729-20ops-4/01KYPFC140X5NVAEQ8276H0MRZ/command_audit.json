@@ -1,0 +1,350 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-schneider-electric.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f9cecda1bf26d9d05ae158c7b4ab9aeb045ed2483745c4820df288440c99ac69",
+            35929,
+            384
+          ],
+          "before": [
+            "file",
+            "59dea498f36dbeaeeb65136528028bc63e2a67bf3823bb18ed775bc31c7e8fcc",
+            35402,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-schneider-electric.json",
+      "completed_at": "2026-07-29T23:49:53Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "28a497dd40d4b3495e8c8e0fb30d96feb90b748f7c1d19f9b6cd764bc9df8035",
+          743,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-schneider-electric.json"
+      },
+      "started_at": "2026-07-29T23:49:53Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-quanta-services.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "99597acefac102b3ae715f6786bb730153dcaf0a68c74578cc029c36c9a3d844",
+            36469,
+            384
+          ],
+          "before": [
+            "file",
+            "f9cecda1bf26d9d05ae158c7b4ab9aeb045ed2483745c4820df288440c99ac69",
+            35929,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-quanta-services.json",
+      "completed_at": "2026-07-29T23:49:54Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "cda607622a69c5af77ab618f69f80af4b8041c968b6f677712f9e8963d0f8b42",
+          752,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-quanta-services.json"
+      },
+      "started_at": "2026-07-29T23:49:54Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "watchlist",
+        "import",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-bloom-energy.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "838215a52becffb07e3c2d6e29548a32bfe04e38cafac34681b0e4c07293419a",
+            36959,
+            384
+          ],
+          "before": [
+            "file",
+            "99597acefac102b3ae715f6786bb730153dcaf0a68c74578cc029c36c9a3d844",
+            36469,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader watchlist import --request data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-bloom-energy.json",
+      "completed_at": "2026-07-29T23:49:55Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "dfe94480bb2691d70494609186c25f642fb6a9720c123db8fee3370a42c4344f",
+          708,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/import-bloom-energy.json"
+      },
+      "started_at": "2026-07-29T23:49:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-schneider-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYR4K1705VG7GQANFYSR5RYW.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "7c3558d976206db00698aa6c6b0161118398fb5e111351126a96e99c4f2d5285",
+            51276,
+            384
+          ],
+          "before": [
+            "file",
+            "4b021557578f3c5ab286b199bad94a5f0ea26ce07ce93581b44b1a9eeaf5b58c",
+            50754,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "b69d11a25842ce1aac51f5c08f41bb917f74e4589c40025437463ea7bdd063b9",
+            1221,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYR4K1705VG7GQANFYSR5RYW.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-schneider-research.json",
+      "completed_at": "2026-07-29T23:50:36Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "a3663415f973c956989ab745ae3960d73043b2d415daf9e91a9719671486578f",
+          1461,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-schneider-research.json"
+      },
+      "started_at": "2026-07-29T23:50:36Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-quanta-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYR4K268GKNZ4ES03T252Y1X.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "2736c7a101dd664086f0de8d50483fc9aa9e9ca1aacf7d675e4db5ddb45b8e39",
+            51798,
+            384
+          ],
+          "before": [
+            "file",
+            "7c3558d976206db00698aa6c6b0161118398fb5e111351126a96e99c4f2d5285",
+            51276,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "a0eef15eaa63afcad376c532f482ca807be5417479e5b4dbd7807eb2f82ea3b2",
+            1162,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYR4K268GKNZ4ES03T252Y1X.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-quanta-research.json",
+      "completed_at": "2026-07-29T23:50:37Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "71abf2907610225caf743a6a9f5c53d2168716985609915016202471e87936b1",
+          1402,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-quanta-research.json"
+      },
+      "started_at": "2026-07-29T23:50:37Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-bloom-research.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KYR4K35GCJ54W0MEN0SYT67E.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f66967dda098ee79fdeb0badb9f25ce672a4622d99aeac1006c8e68d91b4f4ca",
+            52309,
+            384
+          ],
+          "before": [
+            "file",
+            "2736c7a101dd664086f0de8d50483fc9aa9e9ca1aacf7d675e4db5ddb45b8e39",
+            51798,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "8d2c04e1cb6b8819787b810b5824d43f52efd49012786014561136f5dd5b76b6",
+            1102,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KYR4K35GCJ54W0MEN0SYT67E.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-bloom-research.json",
+      "completed_at": "2026-07-29T23:50:38Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "53b3e74d7574a8f9ab4dee45c8077780d5d8a83979acb568a8c49169cb53d263",
+          1342,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYPFC140X5NVAEQ8276H0MRZ/enqueue-bloom-research.json"
+      },
+      "started_at": "2026-07-29T23:50:38Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-29T23:52:27Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:52:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-29T23:52:28Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:52:28Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-29T23:52:30Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:52:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-29T23:52:32Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:52:30Z"
+    }
+  ],
+  "operation_id": "01KYPFC140X5NVAEQ8276H0MRZ",
+  "run_id": "local-20260729-20ops-4"
+}

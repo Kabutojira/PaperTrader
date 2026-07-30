@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lunr_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+  "source_type": "regulator_filing",
+  "title": "Intuitive Machines, Inc. Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b424eafae59554bcc85b691b296c18f939451e033e832e795ceb7220a9e4660e",
+  "related_entity_ids": "security_a5dc16f3f4b245e6c168",
+  "checked_at": "2026-07-29T22:33:49Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, 2026, Intuitive Machines reported USD 231.6 million cash, USD 335.8 million long-term debt, and USD 1.055 billion backlog.",
+  "summary": "Current quarterly filing confirming the LUNR Class A common-stock identity on Nasdaq. Q1 revenue was USD 186.7 million, operating loss USD 39.2 million, free cash outflow USD 64.6 million, cash USD 231.6 million, working capital USD 89.8 million, and long-term debt USD 335.8 million. Backlog was USD 1.055 billion, including USD 612.8 million acquired with Lanteris. Risks include government funding and cancellation, fixed-price estimates, mission and launch performance, customer concentration, cash consumption, dilution, and Lanteris integration.",
+  "run_id": "local-20260729-20ops-4"
+}

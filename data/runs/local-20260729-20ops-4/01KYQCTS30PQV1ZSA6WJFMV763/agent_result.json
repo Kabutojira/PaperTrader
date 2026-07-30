@@ -1,0 +1,73 @@
+{
+  "operation_id": "01KYQCTS30PQV1ZSA6WJFMV763",
+  "status": "succeeded",
+  "summary": "Reviewed Albemarle after its strengthened 2026-07-28 RSI-oversold alert. The USD 113.7094 close fell 12.34% from 2026-06-29 and 2.13% for the session, with RSI at 25.76, but volume was not abnormal and the close remained 3.30% above the lower Bollinger band. Q1 remains the latest reported operating evidence before Q2 results scheduled after the August 5 close; its lithium-price sensitivity, contract lags, tax, terminal-multiple uncertainty, and mandatory-convertible treatment still do not support probability-weighted common-equity downside and base values. Retained medium-confidence ineligible status with valuation_unsupported, created no conviction strategy, and enqueued exactly one dependent refresh for the accepted lithium idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "ALB closed at USD 113.7094 on 2026-07-28, down 2.13% from the prior session and 12.34% from 2026-06-29. RSI was 25.76, the close was below its 50-day and 200-day averages but 3.30% above the lower Bollinger band, and the -0.64 volume z-score was not abnormal. The canonical source-price hash is 96016d92b17159d477177686b7f12c3a4f1ac59d0da19cdd7bb5080fc6c89aa9.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "96016d92b17159d477177686b7f12c3a4f1ac59d0da19cdd7bb5080fc6c89aa9"
+    },
+    {
+      "source": "Albemarle Q1 2026 results exhibit",
+      "claim": "The unchanged SEC-hosted exhibit reports USD 664 million of adjusted EBITDA, USD 346 million of operating cash flow, USD 248 million of company-defined free cash flow, USD 2.7 billion of liquidity, USD 1.9 billion of debt, and a wide USD 0.9-1.0 billion to USD 4.2-4.4 billion 2026 adjusted-EBITDA sensitivity range. It confirms operating recovery and balance-sheet improvement but does not supply a probability-weighted normalized common-equity valuation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000070/a1q26earningsreleaseex991.htm",
+      "observed_at": "2026-07-29T22:49:00Z",
+      "source_hash": "197132b1bc66f6201081d938a5884a4895c57b755536cc95e21db466b34aa7e7"
+    },
+    {
+      "source": "Albemarle Q2 2026 earnings release date",
+      "claim": "Albemarle's issuer announcement schedules Q2 results for after the NYSE close on 2026-08-05 and its earnings call for 2026-08-06. Q2 operating evidence therefore was not available at the alert date, making the strengthened oversold reading pre-results timing evidence rather than confirmation of a newly reported operating impairment or recovery.",
+      "url": "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx",
+      "observed_at": "2026-07-29T22:49:00Z",
+      "source_hash": "b407b0a6f1c8059a482f9972ab33913846c9b0217b5eda25ca127e2fb90f9108"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYR14MZRSZTXSDYFC2YZWCAS.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/enqueue-idea-refresh-alb-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/record-source-alb-q1-2026-recheck.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/record-source-alb-q2-2026-earnings-date.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/upsert-assessment-alb-alert-review.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/upsert-security-alb-alert-review.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "operations_created": [
+    "01KYR14MZRSZTXSDYFC2YZWCAS"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Albemarle's strengthened 2026-07-28 RSI-oversold alert followed a 12.34% one-month decline, but lacked abnormal volume or a lower-band breach. Q1 remains the latest operating evidence before August 5 results and normalized common-equity valuation remains unsupported, so the move is momentum and pre-results timing risk rather than a conviction paper-trade opportunity."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/record-source-alb-q1-2026-recheck.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/record-source-alb-q2-2026-earnings-date.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/upsert-security-alb-alert-review.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/upsert-assessment-alb-alert-review.json",
+    "papertrader queue enqueue --request data/runs/local-20260729-20ops-4/01KYQCTS30PQV1ZSA6WJFMV763/enqueue-idea-refresh-alb-alert-review.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under local-20260729-20ops-4 with a live lease during the review, and matched the immutable ALB identity, alert payload, sequential local-harness preflight, controller skill hash, security-research skill hash, and empty injection-flag set.",
+      "The ALB/XNYS/USD/equity identity matched exactly one canonical security row; exactly one accepted relationship links it to idea_critical_minerals_lithium.",
+      "The canonical 2026-07-28 mark, alert type, observation period, market-data timestamp, and source-price hash matched the payload. The strengthened alert reproduced as RSI 25.76 after a 12.34% one-month decline, without abnormal volume or a lower-Bollinger breach; the 2026-07-29 USD/EUR rate was current.",
+      "Both retained primary sources were recorded before the assessment. The assessment belongs to this run, references both registered sources, expires at the scheduled Q2 review boundary, and records the explicit valuation_unsupported hard blocker.",
+      "Exactly one matching idea-research follow-up was created as 01KYR14MZRSZTXSDYFC2YZWCAS, depends on this security operation, and points to this run's expected result path.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false only for unrelated repository-wide eligible-security relationship gaps and unreconciled rejected relationships; Albemarle's current ineligible assessment and accepted relationship were present.",
+      "The command audit exactly records all ten project CLI invocations, including the expected nonzero repository-wide allocation-readiness check. No allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request, payload, or operation artifact was a symlink."
+    ]
+  }
+}

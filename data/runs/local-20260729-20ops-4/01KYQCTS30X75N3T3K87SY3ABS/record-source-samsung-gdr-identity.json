@@ -1,0 +1,18 @@
+{
+  "source_id": "source_samsung_common_gdr_identity",
+  "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+  "canonical_url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+  "source_type": "issuer-page",
+  "title": "Samsung Electronics listing information",
+  "publisher": "Samsung Electronics Co., Ltd.",
+  "license": "",
+  "status": "available",
+  "content_hash": "a5e8493c3af8209e37284e454849e5fe4efccbb26ccf6183a7d034aaf62ef521",
+  "related_entity_ids": "security_567d0d575bbd30aaa91d",
+  "checked_at": "2026-07-29T23:18:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Samsung identifies SMSN, ISIN US7960508882, as its London-listed common GDR; the adjusted conversion ratio is one GDR to 25 Korean common shares.",
+  "summary": "Issuer listing disclosures and the Vienna listing identify SSU as the EUR-traded venue line of Samsung's common GDR, economically representing 25 common shares.",
+  "run_id": "local-20260729-20ops-4"
+}

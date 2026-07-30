@@ -1,0 +1,67 @@
+{
+  "operation_id": "01KYQCTS30506JK4T7DZGYWB11",
+  "status": "succeeded",
+  "reason_code": "risk_no_followup",
+  "summary": "Classified Intuitive Machines' 2026-07-28 RSI-oversold transition as momentum, valuation, and pre-results risk rather than a paper-trade opportunity. LUNR fell 41.06% from 2026-06-29 to USD 12.3599, with RSI 27.88 but no abnormal-volume or lower-Bollinger confirmation. Current primary evidence supports backlog and lunar-demand potential but also acquired-backlog, cancellation, cash-burn, net-debt, and integration risk; the July 28 earnings-date notice came after the measured close and disclosed no results. No follow-up was created because a fresh same-run security review already incorporated the identical trigger and evidence, found the bounded base value below the mark, and set an August 12 review before Q2 results.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "For immutable security security_a5dc16f3f4b245e6c168, the canonical period is 2026-06-29 through 2026-07-28. LUNR closed at USD 12.3599 on 2026-07-28, down 41.06% over the period; RSI was 27.88, the close remained above the USD 10.58 lower Bollinger band, volume anomaly was 0.60, and rsi_oversold was the active transition. The packet and indicator row share source-price hash 3c216cd8e71f6e517a8e3e4fa076a216c0a0907221dc613d1c164cb02d9efe51.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "3c216cd8e71f6e517a8e3e4fa076a216c0a0907221dc613d1c164cb02d9efe51"
+    },
+    {
+      "source": "source_lunr_q1_2026_10q",
+      "claim": "The SEC-filed Q1 report shows USD 1.055 billion of backlog at 2026-03-31, including USD 612.8 million acquired with Lanteris, and warns that government appropriations and termination-for-convenience clauses can make backlog differ from realized revenue. The filing therefore supports operating potential but also contract-conversion and integration risk.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+      "observed_at": "2026-07-29T22:33:49Z",
+      "source_hash": "b424eafae59554bcc85b691b296c18f939451e033e832e795ceb7220a9e4660e"
+    },
+    {
+      "source": "source_lunr_clps_20260630",
+      "claim": "The June 30 issuer release reports a NASA CLPS award valued up to USD 148.3 million, split between a USD 68.6 million base contract and a USD 79.7 million qualification incentive. This is constructive demand evidence within the observation period, but it did not prevent the subsequent decline and does not by itself establish undervaluation.",
+      "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-secures-sixth-nasa-clps-award-establish-high",
+      "observed_at": "2026-07-29T22:33:49Z",
+      "source_hash": "e20d6b5c52b18f4c94587977fd2e837dc9e2ad699aa9e1fb652fb09669d84a14"
+    },
+    {
+      "source": "source_lunr_q2_2026_date",
+      "claim": "The issuer's July 28 notice was published at 4:39 p.m. Eastern, after the canonical market close, and only scheduled Q2 results for August 13 before market open. It contains no financial result and cannot explain the measured decline, but it establishes a near-term evidence checkpoint.",
+      "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-announces-date-second-quarter-2026-financial",
+      "observed_at": "2026-07-29T22:33:49Z",
+      "source_hash": "43856d4ea8691637afd4977f7f7cbf49c228bfef36f8e5700ede6b445b797724"
+    },
+    {
+      "source": "data/runs/local-20260729-20ops-4/01KYQCTS30GG62ZGQQAV3REQ88/agent_result.json",
+      "claim": "A successful same-run security review completed at 2026-07-29T22:39:04Z used the identical July 28 trigger and current primary sources. It classified LUNR as medium-confidence baseline comparison only, with bounded downside of 53.5% and base value 15.3% below the mark, created no strategy, and scheduled review before August 13 Q2 results. Repeating that review would add no bounded information or justified follow-up."
+    },
+    {
+      "source": "PaperTrader canonical portfolio, relationship, strategy, signal, and order tables",
+      "claim": "The immutable security has no position, accepted canonical relationship, strategy, signal, or order. The trigger therefore does not alter an existing thesis, invalidation, strategy, or exposure, and no extra follow-up is justified beyond the fresh scheduled security review."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Machines' 2026-07-28 RSI-oversold transition was classified as momentum, valuation, and pre-results risk rather than a paper-trade opportunity. LUNR fell 41.06% over the measured month to USD 12.3599, but the move lacked abnormal-volume or lower-Bollinger confirmation. Current primary evidence is mixed, and a fresh same-run security review already found its bounded base value below the mark and scheduled the next review before Q2 results, so no additional follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one queue row is running for this immutable operation, claimed by local-20260729-20ops-4 with a live lease, and the preflight names the native llm-wiki skill plus the trusted controller and opportunity-research skill hashes with sequential execution enabled.",
+      "Matched immutable security identity, rsi_oversold entered transition, 2026-06-29 through 2026-07-28 endpoints, 2026-07-29T16:55:24Z retrieval timestamp, and source-price hash across the untrusted packet and canonical indicator and price tables.",
+      "Rechecked current regulator and issuer evidence and distinguished evidence from inference: the award is constructive, the filing documents acquired and cancellable backlog, and the post-close scheduling notice does not explain the measured decline.",
+      "Confirmed the security has no canonical position, accepted relationship, strategy, signal, or order, while the fresh same-run security review already incorporates this trigger and schedules the next primary-evidence checkpoint.",
+      "No wiki edit, issue, or follow-up was warranted; no structured mutation command was run and no allocation target/history, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger path was changed by this operation.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed with zero changed paths in each audited command receipt.",
+      "The command audit contains exactly four canonical receipts, all with exit code zero, and commands_run reproduces those command strings in receipt order."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "operation_id": "01KYQCTS30ZVE5AER5K9GD2VXT",
+  "status": "succeeded",
+  "summary": "Completed the evidence-backed review of Tesla, Inc. common stock after the 2026-07-28 RSI-oversold transition. The immutable TSLA/XNAS/USD identity is unique and now linked to a maintained security page. The shares fell 25.49% over the measured month and RSI reached 26.93, while the close remained just above the lower Bollinger band. Tesla's Q2 filing is temporally aligned with the largest repricing: revenue rose 26% and deliveries reached 480,126, but operating income fell 57%, capital expenditures nearly doubled, and the shares fell 14.52% in the first post-results session on unusually high volume. Strong liquidity supports medium-confidence baseline comparison, but a bounded revenue-multiple range gives 44.8% downside and a base value 13.6% below the USD 306.86 mark. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "source_tsla_q2_2026_10q",
+      "claim": "Tesla's Q2 2026 Form 10-Q confirms TSLA common stock on Nasdaq and reports quarterly revenue of USD 28.236 billion, up 26% year over year, gross profit of USD 4.751 billion, operating income of USD 398 million, down 57%, and common-stockholder net income of USD 1.114 billion. At June 30, cash and short-term investments were USD 43.524 billion against USD 9.08 billion of debt principal; six-month operating cash flow was USD 8.634 billion and capital expenditures were USD 8.282 billion. Management expects more than USD 25 billion of 2026 capital expenditures, primarily for AI, manufacturing, research, fleet, and supporting infrastructure.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2"
+    },
+    {
+      "source": "source_tsla_q2_2026_deliveries",
+      "claim": "Tesla's issuer release reports Q2 2026 production of 451,758 vehicles, deliveries of 480,126 vehicles, and energy-storage deployments of 13.5 GWh. The issuer cautions that these measures alone do not determine financial performance because pricing, costs, foreign exchange, and other factors also matter.",
+      "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source_hash": "cadfa292c301e22ed474addbaf936395fdf55a77376ae031631c642f34b772d5"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "TSLA fell from USD 411.84 on 2026-06-29 to USD 306.86 on 2026-07-28, a 25.49% decline. RSI was 26.93, the close remained just above the USD 306.33 lower Bollinger band, latest volume anomaly was 0.67, and rsi_oversold was the sole transition. Following the July 22 after-close results release, the shares fell 14.52% on July 23 with 115.6 million shares traded versus 30.6 million in the prior session. The payload's canonical source-price hash matches the indicator row.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "9913c5340953f6c4e54865acd6585a21684f8f9eab95f4eafc1a7ca1f49e5c87"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:262",
+      "claim": "The canonical USD/EUR cache records 0.8795499801635742 for 2026-07-28 and was retrieved at 2026-07-29T16:55:24Z, confirming fresh same-date FX state for the USD security mark.",
+      "observed_at": "2026-07-29T16:55:24Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_retry02_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/security_upsert_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_retry01_request.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_deliveries_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Tesla was researched after its 2026-07-28 RSI-oversold transition. The shares fell 25.49% over the measured month and RSI reached 26.93. Q2 revenue and deliveries grew, but operating income fell 57%, capital expenditures nearly doubled, and the shares dropped 14.52% in the first post-results session on unusually high volume. Strong liquidity supports baseline comparison, but a bounded range implies 44.8% downside and a base value 13.6% below the USD 306.86 mark. The medium-confidence assessment is baseline-comparison only, no conviction paper strategy was queued, and review is due by 2026-08-28."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_deliveries_request.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_request.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/source_tsla_q2_2026_10q_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/assessment_upsert_retry02_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim for the supplied run ID, live lease, paper-only configuration, sequential local harness, and trusted controller and security-research skill hashes.",
+      "Confirmed the issuer, instrument, TSLA provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched the RSI-oversold trigger, 2026-07-28 market date, exact observation period, USD 306.86 mark, source-price hash, RSI, Bollinger state, and volume anomaly to canonical market and indicator state.",
+      "Registered two current primary sources before assessment and confirmed both sorted evidence references are available, linked to this immutable security, and fresh at the successful assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the canonical alert date.",
+      "Confirmed exactly one current assessment exists for this run with baseline eligibility, medium confidence, no hard blocker, 44.8% downside, 13.6% base-case downside, and canonical soft gaps.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups are required and present.",
+      "Confirmed the conviction strategy gate fails because base upside is below the configured minimum, the upside-to-downside test cannot pass, and post-results timing and AI-capital-intensity risks remain unfavorable; no strategy-research follow-up was created.",
+      "The first assessment request failed closed because its timestamp was ahead of the harness clock; the request was preserved unchanged and the successful retry used a uniquely named immutable request file after the timestamp became current.",
+      "A bounded source-metadata correction attempt failed closed because its observation preceded the already registered state; the immutable failed request and receipt were preserved, and the original registered sources were current before the successful assessment.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the fourteen canonical receipts in command_audit.json, including two exit-code-2 failed attempts with no structured-state delta.",
+      "No request, maintained page, or operation artifact is a symlink.",
+      "No allocation targets or history, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

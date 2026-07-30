@@ -1,0 +1,17 @@
+{
+  "completed_at": "2026-07-30T00:22:18Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 1,
+  "preparation_errors": [],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260730.md",
+  "run_id": "local-20260730-maintenance-2",
+  "snapshot_id": "decision_0cfdae4fe3cdb1bfe9b5",
+  "source_sha": "679759ae632069705995377f5c0d1d9b4f47226b",
+  "started_at": "2026-07-30T00:16:50Z",
+  "status": "succeeded",
+  "trigger": "local"
+}

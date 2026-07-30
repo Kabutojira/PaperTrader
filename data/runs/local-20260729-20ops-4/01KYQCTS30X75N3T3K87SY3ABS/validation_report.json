@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-gdr-identity.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q1-2026-results.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/record-source-samsung-q2-2026-guidance.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-assessment-samsung-common-gdr.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/upsert-security-samsung-common-gdr.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_567d0d575bbd30aaa91d.md"
+  ],
+  "completed_at": "2026-07-29T23:23:10Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYQCTS30X75N3T3K87SY3ABS",
+  "passed": true,
+  "run_id": "local-20260729-20ops-4",
+  "validation_version": 1
+}

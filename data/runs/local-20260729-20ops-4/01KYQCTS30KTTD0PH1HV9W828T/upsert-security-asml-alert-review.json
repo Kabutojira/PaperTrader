@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ef35e41886220d51c22c",
+  "issuer_id": "issuer_cbc97be23df5c67a2971",
+  "company_name": "ASML Holding N.V.",
+  "instrument_name": "ASML Holding N.V. New York registered shares",
+  "instrument_type": "equity",
+  "ticker": "ASML",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ASML",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "NL",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment & Materials",
+  "status": "watching",
+  "watchlist_reason": "Leading-edge lithography exposure; maintained for AI-capacity conversion, export-control risk, cash generation, and valuation monitoring.",
+  "research_summary": "Raised Q2 guidance and strong margins support the thesis, but the lower-band decline lacks oversold or volume confirmation and a bounded 12-month base value offers only 8.7% upside.",
+  "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
+  "last_research_at": "2026-07-29T22:44:00Z",
+  "next_review_at": "2026-08-28T22:44:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+}

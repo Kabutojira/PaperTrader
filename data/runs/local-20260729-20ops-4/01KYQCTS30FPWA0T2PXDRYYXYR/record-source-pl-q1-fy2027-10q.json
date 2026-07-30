@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_q1_fy2027_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+  "source_type": "filing",
+  "title": "Planet Labs PBC Q1 fiscal 2027 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9d231aaadd4cefcb37654b291d06ea006f06823737afce397f49181c13a5b0b5",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-07-29T22:15:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At April 30, Planet had USD 368.1 million cash, USD 362.7 million short-term investments, USD 460 million face value of 2030 notes, 356.4 million issued shares, and 27.6 million unvested RSUs.",
+  "summary": "The Form 10-Q confirms instrument identity, revenue and retention, RPO quality, liquidity, convertible-note and dilution exposure, stock compensation, capital intensity, government-contract cancellation risk, and the inputs used in the bounded valuation.",
+  "run_id": "local-20260729-20ops-4"
+}

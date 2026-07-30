@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_dc8486c1d61df62a22fd",
+  "entity_type": "security",
+  "inputs": {
+    "causal_hypothesis": "Data-centre power-density and interconnection constraints can increase demand for Schneider Electric electrical panels, UPS, power distribution, cooling integration, and energy-management systems, subject to project timing, competition, capacity, concentration, and valuation.",
+    "idea_id": "idea_ai_infrastructure_power",
+    "research_focus": "Validate identity, data-centre revenue and order exposure, electrical-panel and UPS economics, capacity, customer concentration, cash conversion, valuation, catalysts, and invalidation.",
+    "security_id": "security_dc8486c1d61df62a22fd"
+  },
+  "objective": "Research Schneider Electric as a bounded data-centre electrical-distribution and energy-management exposure.",
+  "operation_id": "01KYR4K1705VG7GQANFYSR5RYW",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.iea.org/reports/energy-and-ai/executive-summary",
+    "https://www.se.com/ww/en/about-us/investor-relations/share-information/share-price/",
+    "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf"
+  ]
+}

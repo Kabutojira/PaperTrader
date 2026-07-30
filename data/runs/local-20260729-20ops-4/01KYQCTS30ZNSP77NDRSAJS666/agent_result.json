@@ -1,0 +1,81 @@
+{
+  "operation_id": "01KYQCTS30ZNSP77NDRSAJS666",
+  "status": "succeeded",
+  "summary": "Completed the initial evidence-backed review of YASKAWA Electric's Frankfurt ordinary shares after the 2026-07-29 RSI-oversold transition. YEC.F fell 36.22% from July 1 to EUR 25 and RSI reached 28.53, but the close remained above the lower Bollinger band, volume was not abnormal, and only 30 shares traded. Yaskawa's Q1 revenue rose 10.6% and strong semiconductor orders preserve the operating thesis, while operating profit fell 19.2% and Robotics profit fell 82.3% amid ERP disruption and European restructuring. A bounded 16x-20x forward-EPS scenario remains below the monitored mark, and the Frankfurt line's sparse turnover is a hard liquidity blocker. The assessment is medium-confidence ineligible. No strategy or idea refresh was created because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "YEC.F closed at EUR 25 on 2026-07-29, down 36.22% from EUR 39.20 on 2026-07-01. RSI was 28.53, the close remained above the EUR 21.83 lower Bollinger band, volume anomaly was 0.71, and rsi_oversold was the sole transition. Only 30 shares traded on July 29; eight of 21 July sessions and 125 of 254 cached sessions had zero volume. The canonical source-price hash is 13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_results",
+      "claim": "Yaskawa reported Q1 revenue of JPY 138.982 billion, up 10.6%, operating profit of JPY 8.486 billion, down 19.2%, and profit attributable to owners of JPY 5.445 billion, down 21.7%. It retained FY2026 guidance of JPY 580 billion revenue, JPY 60 billion operating profit, JPY 47 billion owner profit, and JPY 181.21 EPS. Cash was JPY 57.6 billion, current and non-current bonds and borrowings were JPY 104.7 billion, and the equity ratio was 58.8%.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf",
+      "observed_at": "2026-07-29T23:32:00Z",
+      "source_hash": "32f00d6aeff7e750ea1a54896e723f59b272c4236253ddcb415faa595d4dcc61"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_briefing",
+      "claim": "The issuer briefing showed Motion Control revenue up 21.5% and operating profit up 50.1%, while Robotics revenue rose 2.0% and operating profit fell 82.3%. Yaskawa attributed group profit pressure to ERP-related production disruption, higher indirect expenses, and European restructuring, providing a plausible operating-risk contributor to the alert-period decline without establishing thesis invalidation.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_haifu_en.pdf",
+      "observed_at": "2026-07-29T23:32:00Z",
+      "source_hash": "fda67a88e5f61f7b6b848648edce6aa6b86cff58fe500b097951bf211efa5bb2"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_qa",
+      "claim": "Management reported semiconductor-related AC-servo orders up more than 200% year on year and semiconductor Robotics orders up 141%, with no ERP-related suspension of order intake or observed customer switching. It expected operations to return largely to normal in July and stabilize in August, making delivery conversion and Robotics-margin recovery the next decisive tests.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/261Q_QA_EN.pdf",
+      "observed_at": "2026-07-29T23:32:00Z",
+      "source_hash": "a6cf0582347d96dc98edf68163a66e52e1ecb40b277313689b88b051c8db125e"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-briefing.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-qa.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-results.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-assessment-yaskawa-frankfurt.json",
+    "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-security-yaskawa-frankfurt.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_89969b7dac39b7db5661.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "YASKAWA Electric's Frankfurt line entered RSI-oversold territory after a 36.22% decline to EUR 25. Q1 revenue and semiconductor orders were strong, but operating profit fell 19.2% and Robotics profit fell 82.3% amid ERP disruption and European restructuring. The Frankfurt line traded only 30 shares and a bounded forward-EPS range remains below the mark, so the assessment is ineligible and no conviction paper strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-results.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-briefing.json",
+    "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-qa.json",
+    "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-security-yaskawa-frankfurt.json",
+    "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-assessment-yaskawa-frankfurt.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim, live lease, paper-only configuration, sequential local harness, and trusted controller and security-research skill hashes.",
+      "Confirmed the YEC.F/XFRA/EUR ordinary-equity identity is unique in canonical state and the issuer filing maps YASKAWA Electric to Tokyo and Fukuoka code 6506 without altering the immutable Frankfurt identity.",
+      "Matched the RSI-oversold trigger, 2026-07-29 market date, exact observation period, EUR 25 mark, source-price hash, RSI, Bollinger state, and volume anomaly to canonical market and indicator state.",
+      "Registered three bounded primary issuer sources before assessment and confirmed every sorted assessment evidence reference is available, fresh, and linked to this immutable security.",
+      "Confirmed exactly one current assessment exists for this run with ineligible status, medium confidence, a supportable 12-month scenario range, and the explicit liquidity_insufficient hard blocker.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups were required and created.",
+      "Confirmed the conviction strategy gate fails on Frankfurt liquidity, negative base upside, downside, timing, and Robotics execution risk; no strategy-research follow-up was created, and baseline work remains reserved for the deterministic allocator.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed after all permitted edits.",
+      "Allocation readiness correctly returned not ready only for pre-existing eligible-assessment and rejected-relationship gaps; Yaskawa is ineligible and added no allocation-readiness error.",
+      "command_audit.json contains exactly the ten canonical project CLI invocations listed in commands_run: nine returned exit code zero, while the non-mutating allocation-readiness diagnostic returned exit code one with explicit unrelated reasons.",
+      "No allocation target/history, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no request, maintained page, or operation artifact is a symlink."
+    ]
+  }
+}

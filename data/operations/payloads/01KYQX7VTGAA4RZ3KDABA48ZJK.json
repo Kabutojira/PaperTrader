@@ -1,0 +1,20 @@
+{
+  "entity_id": "security_2010347f1a0a5ea60f47",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-07-29T17:07:04Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
+    "security_id": "security_2010347f1a0a5ea60f47"
+  },
+  "objective": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KYQX7VTGAA4RZ3KDABA48ZJK",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_spot_2025_20f",
+    "source_spot_ir_news_2026",
+    "source_spot_q1_2026_6k",
+    "source_spot_talk_beta_2026"
+  ]
+}

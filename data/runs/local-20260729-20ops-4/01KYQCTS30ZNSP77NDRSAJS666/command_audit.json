@@ -1,0 +1,343 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-results.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d7d5b1d13c70b05f9ec632d5e3b41ceb4be0419b75397950692af874a4479584",
+            56422,
+            384
+          ],
+          "before": [
+            "file",
+            "9777fca0927b0090484e1c74b5c3f398419097ff5ff33b06d36431d9aa4d8979",
+            55919,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "efb6d6e7b7e8f426b71ded23de9d4e5292c97dca12306ddcfbee517aa85d0b1b",
+            34208,
+            384
+          ],
+          "before": [
+            "file",
+            "25f6bb59b010f108a53e9bb89d388cf46c5b7f25f363a31969ceada578f645ae",
+            33720,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-results.json",
+      "completed_at": "2026-07-29T23:34:01Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "448644b05198426da852d8ce910319aa09fd49020c57de43dd9534faa1c5752f",
+          1064,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-results.json"
+      },
+      "started_at": "2026-07-29T23:34:00Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-briefing.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "62917738fefc2edd5dc37ce27e9cbbbbcc1d275dd3a1b97f7734b0689cf70bd0",
+            56928,
+            384
+          ],
+          "before": [
+            "file",
+            "d7d5b1d13c70b05f9ec632d5e3b41ceb4be0419b75397950692af874a4479584",
+            56422,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "862e45878be6db44a0a2065ea2442ae6f67791260b3ef771384a2cb1fec478d9",
+            34710,
+            384
+          ],
+          "before": [
+            "file",
+            "efb6d6e7b7e8f426b71ded23de9d4e5292c97dca12306ddcfbee517aa85d0b1b",
+            34208,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-briefing.json",
+      "completed_at": "2026-07-29T23:34:07Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "8b1cb1a4ea517e50fd75b628c643b08c4f989a58ac883d374a2bcaa1f6030989",
+          1080,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-briefing.json"
+      },
+      "started_at": "2026-07-29T23:34:07Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-qa.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "f843a8d89768579b48410efdb527250d0553b5b6ad1c97b42e1dbc7f33e65281",
+            57400,
+            384
+          ],
+          "before": [
+            "file",
+            "62917738fefc2edd5dc37ce27e9cbbbbcc1d275dd3a1b97f7734b0689cf70bd0",
+            56928,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "6df2eae84dfaa1225b048857ec0fa1fd6c8bfb6adbd9619e42f313f326f73d3e",
+            35153,
+            384
+          ],
+          "before": [
+            "file",
+            "862e45878be6db44a0a2065ea2442ae6f67791260b3ef771384a2cb1fec478d9",
+            34710,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-qa.json",
+      "completed_at": "2026-07-29T23:34:14Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "e16b963c2d8d4b3564b331fe3cef7cf1263f9ab24cc555d28f307604e6b46515",
+          997,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/record-source-yaskawa-q1-qa.json"
+      },
+      "started_at": "2026-07-29T23:34:14Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-security-yaskawa-frankfurt.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "70d6774d5e8dae8640b2a45e32158090b8aa04cffb8e58c5f1138df920021a06",
+            35039,
+            384
+          ],
+          "before": [
+            "file",
+            "2955cb34d9ebf07ade58c9df936a11333be805727a95e2fd9b5545b4edc03afe",
+            34629,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-security-yaskawa-frankfurt.json",
+      "completed_at": "2026-07-29T23:34:22Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "10bad6e11087a48209c7f2d032f180b1ac219ef0d5fd10521aa73f04c5cbd5d5",
+          1156,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-security-yaskawa-frankfurt.json"
+      },
+      "started_at": "2026-07-29T23:34:21Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-assessment-yaskawa-frankfurt.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "bbbee7281f17f6ca6d76dce55ab20dfb3e75d90aded43f53231f1036c1d69516",
+            10452,
+            384
+          ],
+          "before": [
+            "file",
+            "37cda4ef58d1ba60425d00398def867b29268ed5fe867823c06f4144dac5b4aa",
+            10091,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-assessment-yaskawa-frankfurt.json",
+      "completed_at": "2026-07-29T23:34:29Z",
+      "exit_code": 0,
+      "request": {
+        "identity": [
+          "file",
+          "89fb65c0ab883a80d8157c76b1529f342c4208bc27179313b19905a0136c0d33",
+          786,
+          436
+        ],
+        "path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/upsert-assessment-yaskawa-frankfurt.json"
+      },
+      "started_at": "2026-07-29T23:34:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-07-29T23:34:47Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:34:47Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-07-29T23:34:54Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:34:54Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-29T23:34:59Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:34:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-07-29T23:35:06Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-29T23:35:04Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader allocation readiness --strict",
+      "completed_at": "2026-07-29T23:35:12Z",
+      "exit_code": 1,
+      "request": null,
+      "started_at": "2026-07-29T23:35:12Z"
+    }
+  ],
+  "operation_id": "01KYQCTS30ZNSP77NDRSAJS666",
+  "run_id": "local-20260729-20ops-4"
+}

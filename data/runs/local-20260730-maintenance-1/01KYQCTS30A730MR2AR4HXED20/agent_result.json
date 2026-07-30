@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYQCTS30A730MR2AR4HXED20",
+  "status": "failed",
+  "reason_code": "wiki_lint_failed",
+  "summary": "Classified ASML's 2026-06-29 through 2026-07-28 lower-Bollinger transition as valuation and timing risk, not a sufficient paper-trade opportunity. The USD 1,590.18 close fell 15.45% over the period and finished 2.18% below the lower band, but RSI was not oversold, volume was not abnormal, and current SEC-filed Q2 evidence showed raised guidance rather than a new operating impairment. Fresh canonical security research already records 31.4% downside and only 8.7% base upside, so no duplicate wiki update or follow-up was warranted. The operation failed its mandatory final gate because strict wiki lint found the unrelated generated 2026-07-30 daily report exceeds the 100,000-byte schema limit; repairing that report is outside this skill's allowed scope.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "For the exact 2026-06-29 through 2026-07-28 period, ASML's adjusted close fell from USD 1,880.662841796875 to USD 1,590.18, a canonical period return of -15.445769%. The 2026-07-28 close was 2.18% below the USD 1,625.64211582 lower Bollinger band; RSI was 37.35, volume anomaly was 0.816, trigger strength was 0.0218142207 after previous strength zero, and source-price hash 03461855cc0d161211343f15bfd344f9a6dc5276a1edc50de8d288d2d7b11ef3 matched the candidate packet and indicator row."
+    },
+    {
+      "source": "ASML Holding N.V. Q2 2026 Form 6-K",
+      "claim": "The SEC-filed Q2 evidence reports EUR 9.3 billion of net sales, EUR 2.9 billion of net income, and raised 2026 guidance of EUR 43-45 billion of revenue with 54%-56% gross margin. It supports the operating thesis and identifies no new impairment that explains the July 27-28 decline.",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm",
+      "observed_at": "2026-07-29T22:44:00Z",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef"
+    },
+    {
+      "source": "PaperTrader canonical ASML research, assessment, and structured state",
+      "claim": "Completed security-research operation 01KYQCTS30KTTD0PH1HV9W828T evaluated this exact alert and retained medium-confidence baseline eligibility with bounded downside of 31.4% and base upside of 8.7%. The maintained page already contains the exact trigger evidence and citations; ASML has no position, strategy, accepted canonical relationship, or payload-linked idea requiring a follow-up."
+    },
+    {
+      "source": "papertrader wiki lint --strict",
+      "claim": "The required strict wiki lint exited 1 because daily-reports/daily-report_20260730.md is 115,495 bytes and exceeds the wiki schema's 100,000-byte maximum. The generated daily report is unrelated to this opportunity and outside the opportunity_research skill's allowed write scope."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "The sole selected queue row remained running under local-20260730-maintenance-1 with a live lease and matched the immutable opportunity ID, ASML security ID, operation type, payload path, sequential local-harness preflight, and repository controller and opportunity-skill hashes.",
+      "The immutable ASML/XNAS/USD/equity identity matched exactly one canonical security row, and the period endpoints, 2026-07-28 source bar, market-data timestamp, entered transition, trigger strength, and source-price hash matched the deterministic packet and indicator cache.",
+      "Current registered SEC primary evidence and the fresh canonical security review were time-matched and distinguished from inference; the maintained page already records the alert evidence, classification, valuation gates, and citations, so no timestamp-only wiki edit was made.",
+      "Structured history showed the exact alert was absorbed by completed security research; ASML has no position, strategy, accepted relationship, or payload-linked idea, so zero follow-ups is bounded and non-duplicative.",
+      "Strict schema validation, queue validation, and strict integrity passed. Strict wiki lint failed only because the unrelated generated 2026-07-30 daily report exceeds the 100,000-byte page limit; this skill cannot repair that out-of-scope artifact.",
+      "The command audit records exactly four canonical CLI invocations with zero changed paths. No issue, signal, order, fill, execution, cash, portfolio, performance, allocation, accounting, structured table, or wiki path changed; inspected payload, packet, preflight, and audit artifacts were regular files rather than symlinks."
+    ]
+  }
+}
