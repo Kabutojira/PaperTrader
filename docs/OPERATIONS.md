@@ -11,13 +11,18 @@ GitHub secrets, Hermes profile, or request files. Configure the canonical wiki p
 project commands:
 
 ```bash
+cp .env.example .env
+set -a
+. ./.env
+set +a
 export WIKI_PATH="$PWD/data/wiki"
 uv sync --locked --all-groups
 ```
 
 The main inference provider is `openai-codex`. GitHub Actions restores only the encrypted OAuth
-state described below. GitHub write, Telegram, deployment, brokerage credentials, API-key
-fallbacks, and the age private identity must never enter the Hermes process.
+state described below. Only an explicitly selected OpenRouter auxiliary receives its purpose-bound
+key; GitHub write, Telegram, deployment, brokerage credentials, unrelated API keys, and the age
+private identity must never enter the Hermes process.
 
 ## Seed and maintain OpenAI Codex OAuth
 
@@ -41,7 +46,9 @@ path:
 
 ```bash
 gh secret set OPENAI_OAUTH_SECRET < "$HOME/.config/papertrader/openai-oauth.agekey"
-gh secret set OPENROUTER_API_KEY
+gh secret set YOUTUBE_DATA_API
+gh variable set MAX_OPERATIONS --body 180
+gh variable set AUXILIARY_MODEL --body openai-codex:gpt-5.6-terra
 recipient="$(age-keygen -y "$HOME/.config/papertrader/openai-oauth.agekey")"
 install -d .papertrader/credentials
 age --encrypt \
@@ -75,6 +82,11 @@ repository ciphertext, and commit it. To rotate the encryption identity, generat
 replace `OPENAI_OAUTH_SECRET`, re-encrypt from a freshly authenticated profile to the new public
 recipient, verify it, and commit the replacement ciphertext. Never run an interactive login flow
 inside GitHub Actions.
+
+`YOUTUBE_DATA_API` is optional and scoped only to curated discovery. When it is absent or empty,
+the scanner uses anonymous `pytubefix`. `OPENROUTER_API_KEY` is also optional unless
+`AUXILIARY_MODEL` is explicitly set to `openrouter:<model>`; configure it with
+`gh secret set OPENROUTER_API_KEY` only for that override.
 
 ## Run one operation from a local Codex shell
 
@@ -170,6 +182,8 @@ Use a dedicated Hermes profile and process one operation at a time:
 
 ```bash
 export HERMES_HOME=/tmp/papertrader-hermes
+export MAX_OPERATIONS="${MAX_OPERATIONS:-180}"
+export AUXILIARY_MODEL="${AUXILIARY_MODEL:-openai-codex:gpt-5.6-terra}"
 uv run papertrader agent configure --hermes-home "$HERMES_HOME" --replace-unmanaged
 hermes skills opt-in --sync
 uv run papertrader agent preflight \

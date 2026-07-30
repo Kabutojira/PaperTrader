@@ -13,6 +13,9 @@ Python 3.12 or newer and [uv](https://docs.astral.sh/uv/) are required.
 
 ```bash
 cp .env.example .env
+set -a
+. ./.env
+set +a
 export WIKI_PATH="$PWD/data/wiki"
 uv sync --locked --all-groups
 ```
@@ -193,9 +196,11 @@ uv run papertrader agent run \
 ```
 
 The subprocess receives repository paths, safe process settings, and the isolated profile's
-`auth.json`. Its provider is fixed to `openai-codex`, while the model remains configurable in
-`config.ini`. No inference API key, GitHub, Telegram, deployment, brokerage, Actions OIDC, age
-identity, or runtime token is forwarded.
+`auth.json`. Main reasoning remains fixed to `openai-codex`; `AUXILIARY_MODEL` configures only
+Web ExtractPage summarization and defaults to `openai-codex:gpt-5.6-terra`. `MAX_OPERATIONS`
+controls the per-invocation Hermes turn budget and defaults to 180. An `openrouter:<model>`
+auxiliary override forwards only `OPENROUTER_API_KEY`; GitHub, Telegram, deployment, brokerage,
+Actions OIDC, age identity, and runtime tokens are never forwarded.
 
 Every agent-side project command creates an operation-scoped receipt in
 `data/runs/<run_id>/<operation_id>/command_audit.json`. Post-run validation compares a
@@ -216,9 +221,9 @@ The Step 2 core owns every numeric and structured state transition:
   indicators, writes candidate inbox packets, asks the configured cheap classifier for an
   `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.
 - `papertrader youtube scan --run-id <id> [--dry-run]` validates the six curated channel
-  handle/immutable-ID pairs, scans only regular Videos-tab uploads, and directly enqueues one
-  bounded transcript review per unseen video. `--dry-run` validates configuration and writes its
-  run manifest without network access.
+  handle/immutable-ID pairs, scans only eligible regular uploads through the selected Data API or
+  anonymous Videos-tab provider, and directly enqueues one bounded transcript review per unseen
+  video. `--dry-run` validates configuration and writes its run manifest without network access.
 - `papertrader seekingalpha schedule --run-id <id> [--dry-run]` queues at most one expiring,
   search-index-only discovery operation for the UTC day; the command performs no network access.
 - `papertrader seekingalpha enqueue-leads --request <json>` validates one discovery artifact and
@@ -260,13 +265,17 @@ The Step 2 core owns every numeric and structured state transition:
 ## Curated YouTube research
 
 `data/tables/youtube_channels.csv` is the human-approved subscription list. The daily reusable
-runtime calls `.github/actions/scan-youtube` before restoring OAuth, walks each Videos tab
-newest-first to its cursor with a 50-entry bound, and writes
+runtime calls `.github/actions/scan-youtube` before restoring OAuth. When the optional
+`YOUTUBE_DATA_API` secret is nonempty, discovery reads each immutable channel's uploads playlist
+and video metadata through the YouTube Data API; otherwise it walks the anonymous `pytubefix`
+Videos tab. Both paths scan newest-first to the cursor with a 50-entry bound and write
 `data/runs/<run_id>/youtube_scan.json`. Bootstrap queues exactly the newest five regular videos per
 channel at priority 60; later discoveries use priority 65. The immutable video ID drives source
 identity and dedupe, so active queue rows, terminal history, and registered sources prevent a
 second request. A channel error becomes a stable repository issue while other channels and market
-monitoring continue; malformed configuration fails before network access or queue mutation.
+monitoring continue; a configured Data API failure never silently falls back. Because the Data API
+has no authoritative Shorts flag, its regular-video policy excludes live content and videos of
+180 seconds or less. Malformed configuration fails before network access or queue mutation.
 An explicit curated backlog extension uses
 `papertrader youtube backfill --run-id <id> --channel-id <id> --count <n>`; it queues the next
 unseen regular videos older than that channel's cursor at bootstrap priority without advancing the
@@ -284,8 +293,9 @@ follow-ups, and the original non-published
 `data/runs/<run_id>/<operation_id>/youtube_analysis.md` synthesis may persist. A video by itself can
 never change an assessment, strategy, signal, allocation, order, or accounting state.
 
-The maintained [pytubefix package](https://pypi.org/project/pytubefix/) is pinned instead of the
-older [pytube package](https://pypi.org/project/pytube/). The historical
+The maintained [pytubefix package](https://pypi.org/project/pytubefix/) remains pinned for anonymous
+discovery fallback and caption extraction instead of the older
+[pytube package](https://pypi.org/project/pytube/). The historical
 [YouTube Telegram Summaries](https://github.com/Stell0/youtubetelegramsummaries) project is a
 behavioral reference only; PaperTrader copies neither its GPL code nor its LangChain dependency.
 
@@ -457,9 +467,9 @@ timestamps, does not persist the portfolio value, and never contacts a broker or
 ## Daily automation and publication
 
 The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/Rome` every day and
-uses one serialized path for both cron and manual runs. It performs curated YouTube discovery and
-schedules the search-index-only Seeking Alpha discovery without credentials before OAuth
-restoration, then prepares market and queue state,
+uses one serialized path for both cron and manual runs. It performs curated YouTube discovery with
+an optional purpose-bound Data API key and schedules the search-index-only Seeking Alpha discovery
+before OAuth restoration, then prepares market and queue state,
 executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
 accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
@@ -489,12 +499,12 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 - retain one stable latest-only Telegram delivery issue without rolling back the runtime commit;
   when a newer report exists, older missed reports are not replayed.
 
-Repository setup requires `OPENAI_OAUTH_SECRET`, the matching
-`.papertrader/credentials/openai-oauth-auth.json.age`, and `OPENROUTER_API_KEY` for non-dry Hermes
-runs. Main reasoning remains on `openai-codex`; the OpenRouter credential is purpose-bound to
-public-page `web_extract` summarization with
-`nvidia/nemotron-3-ultra-550b-a55b:free`, is exposed only to the Hermes launch step, and is not
-passed through to terminal tools. Delivery additionally requires
+Repository setup requires `OPENAI_OAUTH_SECRET` and the matching
+`.papertrader/credentials/openai-oauth-auth.json.age`. Optional repository variables
+`MAX_OPERATIONS` and `AUXILIARY_MODEL` override the 180-turn and
+`openai-codex:gpt-5.6-terra` defaults. `OPENROUTER_API_KEY` is required only for an OpenRouter
+auxiliary override, and `YOUTUBE_DATA_API` optionally enables keyed discovery; each secret is
+exposed only to its purpose-bound step and never to terminal tools. Delivery additionally requires
 `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. Configure GitHub Pages to use **GitHub Actions** as its
 source, and enable repository secret scanning. See the operating runbook for OAuth seeding,
 verification, rotation, and revoked-grant recovery. A deployment can be retried independently by

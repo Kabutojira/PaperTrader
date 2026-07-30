@@ -339,10 +339,12 @@ channel_id,handle,status,video_scope,transcript_languages,prefer_human,last_seen
 
 This human-maintained subscription table contains the six approved channel handle/immutable-ID
 pairs. Version 1 accepts only `regular` video scope and English transcript preferences. The
-deterministic scanner validates all rows before network access, reads only each Videos tab, and
-advances a cursor only after every newly discovered video for that channel is already known or
-successfully enqueued. A missing cursor at the 50-video bound is a recorded failure, never an
-implicit skip.
+deterministic scanner validates all rows before network access. It uses the YouTube Data API
+uploads playlist and video metadata when `YOUTUBE_DATA_API` is nonempty, otherwise it reads the
+anonymous `pytubefix` Videos tab. Data API mode excludes live content and videos lasting 180
+seconds or less; a configured API failure never falls back. The scanner advances a cursor only
+after every newly discovered video for that channel is already known or successfully enqueued. A
+missing cursor at the 50-video bound is a recorded failure, never an implicit skip.
 An explicit `youtube backfill` request may enqueue a bounded number of older unseen regular videos
 from one curated channel at bootstrap priority; it records a separate scan manifest and never
 changes the daily-discovery cursor.
@@ -634,8 +636,9 @@ This file is a manifest of changes already completed, not a list of changes awai
 - Set checkout `persist-credentials: false`.
 - Do not export `GITHUB_TOKEN`, Telegram secrets, or deployment credentials into the Hermes step.
 - Always invoke Hermes with `--yolo`; there is no interactive approver. Give Hermes only its
-  isolated, restored `auth.json`; never give it the age identity, GitHub write token, Telegram
-  secret, deployment credential, or an API-key fallback. Enforce the post-run path whitelist,
+  isolated, restored `auth.json` and, only when explicitly selected, the purpose-bound auxiliary
+  provider credential; never give it the age identity, GitHub write token, Telegram secret,
+  deployment credential, YouTube key, or unrelated API key. Enforce the post-run path whitelist,
   schema checks, and diff validator.
 - Do not run LLM workflows on pull requests from forks or other untrusted GitHub events.
 - Reject symlinks and path traversal in agent results.
@@ -691,7 +694,8 @@ Quartz and Telegram consume that same file.
   `wiki_ingest:youtube:<channel_id>:<video_id>:v1`. It writes
   `data/runs/<run_id>/youtube_scan.json`; one remote channel failure records a stable issue and does
   not stop other channels or market monitoring, while invalid channel/configuration state fails
-  closed before scanning.
+  closed before scanning. The manifest records whether discovery used the optional YouTube Data
+  API or anonymous `pytubefix`; the Data API secret never enters Hermes.
 - Seeking Alpha Trending Analysis/news discovery is another separate curated-source path, but it
   is deliberately search-index-only. `papertrader seekingalpha schedule --run-id <id> [--dry-run]`
   queues at most one expiring priority-69 discovery per UTC day. Selected analysis/news leads use
@@ -806,7 +810,8 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
 1. Acquire `concurrency: papertrader-write` with `cancel-in-progress: false`.
 2. Checkout the default branch with full history and no persisted credentials.
 3. Run the local reusable YouTube discovery and Seeking Alpha scheduling actions before OAuth
-   restoration; dry runs validate both without network access.
+   restoration; expose the optional YouTube Data API secret only to its discovery action, and keep
+   dry runs network-free.
 4. Run deterministic market retrieval, indicators, corporate actions, queue preparation, and report scaffold.
 5. Call the reusable LLM workflow for due operations strictly one at a time, always running Hermes with `--yolo`, and remain within configured count/cost/time budgets.
 6. Validate the agent's completed changes and result manifest, run fills, rebuild portfolio/performance, lint the wiki, and run integrity checks.

@@ -53,7 +53,10 @@ on:
         description: age private identity used only by runtime credential steps
         required: false
       OPENROUTER_API_KEY:
-        description: Purpose-bound Hermes Web ExtractPage summarization credential
+        description: Optional credential when AUXILIARY_MODEL selects OpenRouter
+        required: false
+      YOUTUBE_DATA_API:
+        description: Optional YouTube Data API key for curated discovery
         required: false
     outputs:
       commit_sha:
@@ -137,7 +140,9 @@ jobs:
       run:
         shell: bash
     env:
+      AUXILIARY_MODEL: ${{ vars.AUXILIARY_MODEL || 'openai-codex:gpt-5.6-terra' }}
       HERMES_HOME: /tmp/papertrader-hermes
+      MAX_OPERATIONS: ${{ vars.MAX_OPERATIONS || '180' }}
     outputs:
       artifact_name: ${{ steps.identities.outputs.artifact_name }}
       base_sha: ${{ steps.identities.outputs.base_sha }}
@@ -175,8 +180,10 @@ jobs:
           echo "run_id=gha-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
           echo "artifact_name=papertrader-runtime-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
           echo "oauth_artifact_name=papertrader-oauth-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
-      - name: Discover curated YouTube sources without credentials
+      - name: Discover curated YouTube sources
         uses: ./.github/actions/scan-youtube
+        env:
+          YOUTUBE_DATA_API: ${{ secrets.YOUTUBE_DATA_API }}
         with:
           run_id: ${{ steps.identities.outputs.run_id }}
           enabled: ${{ inputs.scan_youtube }}
@@ -190,10 +197,10 @@ jobs:
       - name: Determine whether OAuth restoration is required
         id: oauth_contract
         env:
+          BATCH_MAX_OPERATIONS: ${{ inputs.max_operations }}
           DRY_RUN: ${{ inputs.dry_run }}
-          MAX_OPERATIONS: ${{ inputs.max_operations }}
         run: |
-          case "$MAX_OPERATIONS" in
+          case "$BATCH_MAX_OPERATIONS" in
             ""|*[!0-9]*)
               echo "::error::max_operations must be a non-negative integer"
               exit 1
@@ -297,19 +304,16 @@ jobs:
           uv run papertrader "${arguments[@]}"
       - name: Execute due Hermes operations strictly one at a time
         env:
+          BATCH_MAX_OPERATIONS: ${{ inputs.max_operations }}
           DRY_RUN: ${{ inputs.dry_run }}
-          MAX_OPERATIONS: ${{ inputs.max_operations }}
           OPERATION_ID: ${{ inputs.operation_id }}
           OPERATION_TYPE: ${{ inputs.operation_type }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
-          selected_max="$MAX_OPERATIONS"
+          selected_max="$BATCH_MAX_OPERATIONS"
           if [ "$DRY_RUN" = "true" ]; then
             selected_max=0
-          elif ! test -n "${OPENROUTER_API_KEY:-}"; then
-            echo "::error::OPENROUTER_API_KEY is required for non-dry Web ExtractPage summarization"
-            exit 1
           fi
           arguments=(agent run-batch --hermes-home "$HERMES_HOME" --run-id "$RUN_ID" --max-operations "$selected_max")
           if [ -n "$OPERATION_ID" ]; then

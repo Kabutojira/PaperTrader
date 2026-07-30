@@ -1,5 +1,5 @@
 name: Scan curated YouTube sources
-description: Validate and scan the secret-free curated Videos tabs before agent credentials exist
+description: Validate and scan curated uploads through the optional Data API or anonymous fallback
 inputs:
   run_id:
     description: Immutable PaperTrader run identity

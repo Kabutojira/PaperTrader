@@ -5,6 +5,7 @@ import os
 import stat
 import subprocess
 from collections.abc import Mapping, Sequence
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
@@ -29,6 +30,19 @@ from papertrader.queue import enqueue_operation, prepare_queue
 from papertrader.tables import read_table
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def _openrouter_settings(settings: Settings) -> Settings:
+    return replace(
+        settings,
+        hermes=replace(settings.hermes, inference_environment=("OPENROUTER_API_KEY",)),
+        hermes_auxiliary=replace(
+            settings.hermes_auxiliary,
+            web_extract_provider="openrouter",
+            web_extract_model="nvidia/nemotron-3-ultra-550b-a55b:free",
+            web_extract_api_key_env="OPENROUTER_API_KEY",
+        ),
+    )
 
 
 def _hermes_home(repository: Path, settings: Settings, tmp_path: Path) -> Path:
@@ -179,10 +193,10 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert command[command.index("--model") + 1] == "gpt-5.6-sol"
     assert command.count("--skills") == 3
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
-    assert command[command.index("--max-turns") + 1] == "90"
+    assert command[command.index("--max-turns") + 1] == "180"
     child_environment = captured["environment"]
     assert isinstance(child_environment, dict)
-    assert child_environment["OPENROUTER_API_KEY"] == "auxiliary-secret-value"
+    assert "OPENROUTER_API_KEY" not in child_environment
     assert "GITHUB_TOKEN" not in child_environment
     assert "TELEGRAM_BOT_TOKEN" not in child_environment
     assert child_environment["HERMES_YOLO_MODE"] == "1"
@@ -202,9 +216,10 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     )
     assert preflight["provider"] == "openai-codex"
     assert preflight["model"] == "gpt-5.6-sol"
-    assert preflight["web_extract_provider"] == "openrouter"
-    assert preflight["web_extract_model"] == "nvidia/nemotron-3-ultra-550b-a55b:free"
+    assert preflight["web_extract_provider"] == "openai-codex"
+    assert preflight["web_extract_model"] == "gpt-5.6-terra"
     assert preflight["web_extract_reasoning_effort"] == "low"
+    assert preflight["maximum_turns"] == 180
     for path in sandbox_repository.rglob("*"):
         if path.is_file():
             assert b"auxiliary-secret-value" not in path.read_bytes()
@@ -428,11 +443,12 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    openrouter_settings = _openrouter_settings(sandbox_settings)
+    home = _hermes_home(sandbox_repository, openrouter_settings, tmp_path)
 
     sanitized = sanitized_hermes_environment(
         sandbox_repository,
-        sandbox_settings,
+        openrouter_settings,
         home,
         {
             "PATH": "/usr/bin",
@@ -459,12 +475,13 @@ def test_environment_scrubber_requires_auxiliary_key_before_inference(
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
-    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    openrouter_settings = _openrouter_settings(sandbox_settings)
+    home = _hermes_home(sandbox_repository, openrouter_settings, tmp_path)
 
     with pytest.raises(AgentRunError, match="OPENROUTER_API_KEY is required"):
         sanitized_hermes_environment(
             sandbox_repository,
-            sandbox_settings,
+            openrouter_settings,
             home,
             {"PATH": "/usr/bin"},
             run_id="run-1",
@@ -525,7 +542,7 @@ def test_configure_preserves_restored_oauth_state(
     assert "provider: openai-codex" in config
     assert "default: gpt-5.6-sol" in config
     assert "web_extract:" in config
-    assert "model: nvidia/nemotron-3-ultra-550b-a55b:free" in config
+    assert "model: gpt-5.6-terra" in config
     assert "reasoning_effort: low" in config
     loaded = yaml.safe_load(config)
     assert loaded["terminal"]["env_passthrough"] == []

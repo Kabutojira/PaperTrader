@@ -3,14 +3,20 @@ from __future__ import annotations
 import json
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from urllib.error import HTTPError
+from urllib.parse import parse_qs, urlsplit
+from urllib.request import Request
 
 import pytest
 
+import papertrader.youtube as youtube_module
 from papertrader.config import Settings
 from papertrader.daily import prepare_daily_run
 from papertrader.tables import read_table, write_table
 from papertrader.youtube import (
     CURATED_CHANNELS,
+    PytubefixDiscoveryClient,
+    YouTubeDataAPIClient,
     YouTubeFeed,
     YouTubeScanError,
     YouTubeVideo,
@@ -20,6 +26,7 @@ from papertrader.youtube import (
     load_youtube_channels,
     scan_youtube,
     youtube_dedupe_key,
+    youtube_discovery_client,
     youtube_source_id,
 )
 
@@ -27,6 +34,8 @@ NOW = datetime(2026, 7, 29, 8, tzinfo=UTC)
 
 
 class FakeDiscovery:
+    provider_name = "pytubefix"
+
     def __init__(self, feeds: dict[str, YouTubeFeed | Exception]) -> None:
         self.feeds = feeds
         self.calls: list[tuple[str, int]] = []
@@ -35,12 +44,14 @@ class FakeDiscovery:
         self,
         handle: str,
         *,
+        channel_id: str,
         limit: int,
         minimum_regular: int = 0,
         stop_at_video_id: str = "",
         anchor_video_id: str = "",
         minimum_regular_after_anchor: int = 0,
     ) -> YouTubeFeed:
+        assert channel_id == CURATED_CHANNELS[handle]
         self.calls.append((handle, limit))
         value = self.feeds[handle]
         if isinstance(value, Exception):
@@ -137,6 +148,9 @@ def test_bootstrap_queues_exactly_five_regular_videos_per_channel_and_is_idempot
     )
 
     assert first["status"] == "succeeded"
+    assert first["youtube_scan_version"] == 2
+    assert first["discovery_provider"] == "pytubefix"
+    assert first["regular_video_policy"] == "videos_tab_non_short_non_live"
     assert first["operation_count"] == 30
     operations = read_table(sandbox_repository, "operations_todo")
     assert len(operations) == 30
@@ -342,6 +356,133 @@ def test_dry_run_validates_configuration_without_network_or_state_changes(
     assert client.calls == []
     assert read_table(sandbox_repository, "youtube_channels") == before
     assert read_table(sandbox_repository, "operations_todo") == []
+
+
+def test_discovery_client_prefers_nonempty_data_api_key() -> None:
+    assert isinstance(youtube_discovery_client({}), PytubefixDiscoveryClient)
+    assert isinstance(
+        youtube_discovery_client({"YOUTUBE_DATA_API": "   "}), PytubefixDiscoveryClient
+    )
+    assert isinstance(
+        youtube_discovery_client({"YOUTUBE_DATA_API": "api-key"}),
+        YouTubeDataAPIClient,
+    )
+
+
+def test_data_api_preserves_upload_order_and_filters_short_and_live_metadata(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    channel_id = CURATED_CHANNELS["@allin"]
+    video_ids = ["regular0001", "short000001", "live0000001", "replay00001"]
+    responses: dict[str, object] = {
+        "channels": {
+            "items": [
+                {
+                    "id": channel_id,
+                    "contentDetails": {"relatedPlaylists": {"uploads": "uploads-id"}},
+                }
+            ]
+        },
+        "playlistItems": {
+            "items": [{"contentDetails": {"videoId": video_id}} for video_id in video_ids]
+        },
+        "videos": {
+            "items": [
+                {
+                    "id": "replay00001",
+                    "snippet": {"title": "Replay", "liveBroadcastContent": "none"},
+                    "contentDetails": {"duration": "PT2H"},
+                    "liveStreamingDetails": {"actualStartTime": "2026-07-01T10:00:00Z"},
+                },
+                {
+                    "id": "live0000001",
+                    "snippet": {"title": "Live", "liveBroadcastContent": "live"},
+                    "contentDetails": {"duration": "PT20M"},
+                },
+                {
+                    "id": "short000001",
+                    "snippet": {"title": "Three minutes", "liveBroadcastContent": "none"},
+                    "contentDetails": {"duration": "PT3M"},
+                },
+                {
+                    "id": "regular0001",
+                    "snippet": {
+                        "title": "Three minutes one second",
+                        "liveBroadcastContent": "none",
+                    },
+                    "contentDetails": {"duration": "PT3M1S"},
+                },
+            ]
+        },
+    }
+    requested_endpoints: list[str] = []
+
+    class Response:
+        def __init__(self, payload: object) -> None:
+            self.payload = payload
+
+        def __enter__(self) -> Response:
+            return self
+
+        def __exit__(self, *args: object) -> None:
+            return None
+
+        def read(self) -> bytes:
+            return json.dumps(self.payload).encode()
+
+    def fake_urlopen(request: Request, *, timeout: int) -> Response:
+        assert timeout == 30
+        parsed = urlsplit(request.full_url)
+        endpoint = parsed.path.rsplit("/", 1)[-1]
+        parameters = parse_qs(parsed.query)
+        assert parameters["key"] == ["api-key"]
+        requested_endpoints.append(endpoint)
+        return Response(responses[endpoint])
+
+    monkeypatch.setattr(youtube_module, "urlopen", fake_urlopen)
+    feed = YouTubeDataAPIClient("api-key").channel_feed(
+        "@allin",
+        channel_id=channel_id,
+        limit=4,
+    )
+
+    assert requested_endpoints == ["channels", "playlistItems", "videos"]
+    assert [entry.video_id for entry in feed.entries] == video_ids
+    assert [entry.kind for entry in feed.entries] == [
+        "regular",
+        "short",
+        "livestream",
+        "livestream",
+    ]
+
+
+def test_data_api_failure_is_redacted_and_does_not_fall_back(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    _seed_channels(sandbox_repository)
+    secret = "youtube-secret-value"
+
+    def fail_request(request: Request, *, timeout: int) -> object:
+        del timeout
+        raise HTTPError(request.full_url, 403, "forbidden", {}, None)
+
+    monkeypatch.setattr(youtube_module, "urlopen", fail_request)
+    result = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="youtube-api-failure",
+        environment={"YOUTUBE_DATA_API": secret},
+        now=NOW,
+    )
+
+    assert result["status"] == "degraded"
+    assert result["failure_count"] == 6
+    assert result["discovery_provider"] == "youtube_data_api"
+    assert result["regular_video_policy"] == "non_live_duration_over_180_seconds"
+    assert secret not in json.dumps(result)
+    assert all(secret not in row["description"] for row in read_table(sandbox_repository, "issues"))
 
 
 def test_registered_source_deduplicates_by_immutable_video_id(

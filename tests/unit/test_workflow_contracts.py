@@ -88,6 +88,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     assert jobs["runtime"]["secrets"] == {
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
+        "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
     }
     assert jobs["delivery"]["uses"] == "./.github/workflows/reporting.yml"
     assert jobs["pages"]["uses"] == "./.github/workflows/pages.yml"
@@ -117,7 +118,11 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert runtime["permissions"] == {"contents": "read"}
     assert runtime["defaults"]["run"]["shell"] == "bash"
     assert commit["permissions"] == {"contents": "write"}
-    assert runtime["env"] == {"HERMES_HOME": "/tmp/papertrader-hermes"}
+    assert runtime["env"] == {
+        "AUXILIARY_MODEL": "${{ vars.AUXILIARY_MODEL || 'openai-codex:gpt-5.6-terra' }}",
+        "HERMES_HOME": "/tmp/papertrader-hermes",
+        "MAX_OPERATIONS": "${{ vars.MAX_OPERATIONS || '180' }}",
+    }
     assert "WIKI_PATH" not in runtime["env"]
     assert "hermes skills opt-in --sync" in text
     assert "agent preflight" in text
@@ -136,6 +141,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert set(workflow["on"]["workflow_call"]["secrets"]) == {
         "OPENAI_OAUTH_SECRET",
         "OPENROUTER_API_KEY",
+        "YOUTUBE_DATA_API",
     }
     assert "secrets.OPENAI_OAUTH_SECRET" in runtime_text
     assert "github.token" not in runtime_text
@@ -148,7 +154,9 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         if step["name"] == "Execute due Hermes operations strictly one at a time"
     )
     assert run_batch["env"]["OPENROUTER_API_KEY"] == "${{ secrets.OPENROUTER_API_KEY }}"
-    assert 'test -n "${OPENROUTER_API_KEY:-}"' in run_batch["run"]
+    assert run_batch["env"]["BATCH_MAX_OPERATIONS"] == "${{ inputs.max_operations }}"
+    assert 'selected_max="$BATCH_MAX_OPERATIONS"' in run_batch["run"]
+    assert 'test -n "${OPENROUTER_API_KEY:-}"' not in run_batch["run"]
     hermes_logs = next(
         step
         for step in runtime["steps"]
@@ -176,16 +184,18 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         if step is not run_batch:
             assert "OPENROUTER_API_KEY" not in step.get("env", {})
     runtime_steps = [step["name"] for step in runtime["steps"]]
-    assert runtime_steps.index("Discover curated YouTube sources without credentials") < (
+    assert runtime_steps.index("Discover curated YouTube sources") < (
         runtime_steps.index("Restore encrypted OpenAI OAuth state")
     )
     discovery = next(
-        step
-        for step in runtime["steps"]
-        if step["name"] == "Discover curated YouTube sources without credentials"
+        step for step in runtime["steps"] if step["name"] == "Discover curated YouTube sources"
     )
     assert discovery["uses"] == "./.github/actions/scan-youtube"
     assert discovery["with"]["dry_run"] == "${{ inputs.dry_run }}"
+    assert discovery["env"] == {"YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}"}
+    for step in runtime["steps"]:
+        if step is not discovery:
+            assert "YOUTUBE_DATA_API" not in step.get("env", {})
     seekingalpha = next(
         step
         for step in runtime["steps"]
@@ -388,10 +398,11 @@ def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
     assert "git rev-parse --verify 'HEAD^{commit}'" in identities
     assert handoff == 'chown -R hermes:hermes "$HERMES_HOME"'
     assert 'if [ "$DRY_RUN" != "true" ]; then' in oauth_contract
-    assert '&& [ "$MAX_OPERATIONS" -gt 0 ]' not in oauth_contract
+    assert 'case "$BATCH_MAX_OPERATIONS" in' in oauth_contract
+    assert 'case "$MAX_OPERATIONS" in' not in oauth_contract
 
 
-def test_daily_forwards_only_oauth_secret_and_auth_only_pushes_do_not_retrigger_ci(
+def test_daily_forwards_scoped_runtime_secrets_and_auth_only_pushes_do_not_retrigger_ci(
     repository_root: Path,
 ) -> None:
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
@@ -399,6 +410,7 @@ def test_daily_forwards_only_oauth_secret_and_auth_only_pushes_do_not_retrigger_
     assert runtime["secrets"] == {
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
+        "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
     }
     assert runtime["with"]["scan_youtube"] == "true"
     assert daily["concurrency"] == {

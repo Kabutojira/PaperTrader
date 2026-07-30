@@ -323,6 +323,9 @@ Use `Unrated` when a supportable valuation is unavailable.
 
 Hermes continues to use `openai-codex` and the configured main model for agent reasoning, while the `web_extract` auxiliary task uses OpenRouter model `nvidia/nemotron-3-ultra-550b-a55b:free` during daily runs.
 
+This original Step 21 deployment is superseded by the environment-driven follow-up below; the
+historical implementation record remains here for auditability.
+
 ### Hermes configuration
 
 1. Verify the pinned Hermes container supports the current auxiliary model schema. If necessary, update the image by immutable digest and record the Hermes version and native-skill version in preflight artifacts.
@@ -428,5 +431,17 @@ This plan is complete when:
 - the allocator is calibrated, auditable, and capable of both deploying and correctly retaining cash;
 - an all-cash decision clearly states whether it is definitive or provisional and still presents actionable near-miss information;
 - the approved portfolio remains strict while the isolated research benchmark provides learning and measurement;
-- Hermes Web `ExtractPage` summarization uses OpenRouter `nvidia/nemotron-3-ultra-550b-a55b:free` in the daily workflow without exposing `OPENROUTER_API_KEY` or changing the main Codex reasoning provider;
+- Hermes Web `ExtractPage` summarization uses the validated `AUXILIARY_MODEL` selection, defaults
+  to `openai-codex:gpt-5.6-terra`, and forwards `OPENROUTER_API_KEY` only for an explicit
+  `openrouter:<model>` override without changing the main Codex reasoning provider;
 - all migrations, workflows, tests, Pages, reports, Telegram output, and integrity checks pass from a clean checkout.
+
+## Follow-up — Environment-driven discovery and Hermes budgets — Complete (2026-07-30)
+
+- Prefer the YouTube Data API when `YOUTUBE_DATA_API` is nonempty, with anonymous `pytubefix`
+  fallback only when the key is absent, a 50-upload bound, live exclusion, and a conservative
+  over-180-second regular-video rule.
+- Source the Hermes per-invocation turn cap from `MAX_OPERATIONS` with a 180 default while retaining
+  the distinct workflow `max_operations` queue-row input.
+- Source auxiliary Web ExtractPage provider/model from `AUXILIARY_MODEL`, default to
+  `openai-codex:gpt-5.6-terra`, and require OpenRouter credentials only for an explicit override.

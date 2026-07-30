@@ -20,6 +20,11 @@ class ConfigurationError(ValueError):
     """Raised when repository configuration violates a required invariant."""
 
 
+DEFAULT_AUXILIARY_MODEL = "openai-codex:gpt-5.6-terra"
+DEFAULT_HERMES_MAXIMUM_TURNS = 180
+SUPPORTED_AUXILIARY_PROVIDERS = frozenset({"openai-codex", "openrouter"})
+
+
 @dataclass(frozen=True, slots=True)
 class RepositoryPaths:
     """Resolved paths that must remain inside the checkout."""
@@ -177,7 +182,7 @@ class ClassifierSettings:
 
 @dataclass(frozen=True, slots=True)
 class YouTubeSettings:
-    """Secret-free curated YouTube discovery and transcript policy."""
+    """Curated YouTube discovery and transcript policy."""
 
     enabled: bool
     scan_bound: int
@@ -209,7 +214,7 @@ class SeekingAlphaSettings:
 
 @dataclass(frozen=True, slots=True)
 class HermesSettings:
-    """Pinned one-shot Hermes invocation and OAuth-only provider policy."""
+    """Pinned one-shot Hermes invocation and main-provider policy."""
 
     command: tuple[str, ...]
     arguments: tuple[str, ...]
@@ -788,32 +793,39 @@ def _load_runtime_settings(
     )
 
 
-def _load_hermes_auxiliary_settings(parser: configparser.ConfigParser) -> HermesAuxiliarySettings:
+def _load_hermes_auxiliary_settings(
+    parser: configparser.ConfigParser,
+    environment: Mapping[str, str],
+) -> HermesAuxiliarySettings:
+    raw_auxiliary_model = environment.get("AUXILIARY_MODEL", "").strip()
+    if not raw_auxiliary_model:
+        raw_auxiliary_model = DEFAULT_AUXILIARY_MODEL
+    provider, separator, model = raw_auxiliary_model.partition(":")
+    if not separator or not provider or not model:
+        raise ConfigurationError("AUXILIARY_MODEL must use the provider:model format")
+    if provider not in SUPPORTED_AUXILIARY_PROVIDERS:
+        raise ConfigurationError("AUXILIARY_MODEL provider must be openai-codex or openrouter")
+    if any(character.isspace() for character in model):
+        raise ConfigurationError("AUXILIARY_MODEL model must not contain whitespace")
     settings = HermesAuxiliarySettings(
-        web_extract_provider=parser.get("hermes_auxiliary", "web_extract_provider").strip(),
-        web_extract_model=parser.get("hermes_auxiliary", "web_extract_model").strip(),
+        web_extract_provider=provider,
+        web_extract_model=model,
         web_extract_reasoning_effort=parser.get(
             "hermes_auxiliary", "web_extract_reasoning_effort"
         ).strip(),
-        web_extract_api_key_env=parser.get("hermes_auxiliary", "web_extract_api_key_env").strip(),
+        web_extract_api_key_env=("OPENROUTER_API_KEY" if provider == "openrouter" else ""),
     )
-    if settings.web_extract_provider != "openrouter":
-        raise ConfigurationError("hermes_auxiliary.web_extract_provider must be exactly openrouter")
-    if settings.web_extract_model != "nvidia/nemotron-3-ultra-550b-a55b:free":
-        raise ConfigurationError("hermes_auxiliary.web_extract_model must be the pinned Nemotron")
     if settings.web_extract_reasoning_effort != "low":
         raise ConfigurationError(
             "hermes_auxiliary.web_extract_reasoning_effort must be exactly low"
-        )
-    if settings.web_extract_api_key_env != "OPENROUTER_API_KEY":
-        raise ConfigurationError(
-            "hermes_auxiliary.web_extract_api_key_env must be OPENROUTER_API_KEY"
         )
     return settings
 
 
 def _load_hermes_settings(
-    parser: configparser.ConfigParser, auxiliary: HermesAuxiliarySettings
+    parser: configparser.ConfigParser,
+    auxiliary: HermesAuxiliarySettings,
+    environment: Mapping[str, str],
 ) -> HermesSettings:
     """Validate the non-interactive Hermes command without accepting shell syntax."""
 
@@ -824,10 +836,18 @@ def _load_hermes_settings(
     toolsets = _csv_values(parser, "hermes", "toolsets")
     required_skill = parser.get("hermes", "require_native_skill").strip()
     required_version = parser.get("hermes", "native_skill_version").strip()
-    raw_inference_environment = parser.get("hermes", "inference_environment").strip()
     inference_environment = (
-        _csv_values(parser, "hermes", "inference_environment") if raw_inference_environment else ()
+        (auxiliary.web_extract_api_key_env,) if auxiliary.web_extract_api_key_env else ()
     )
+    raw_maximum_turns = environment.get("MAX_OPERATIONS", "").strip()
+    if not raw_maximum_turns:
+        raw_maximum_turns = str(DEFAULT_HERMES_MAXIMUM_TURNS)
+    try:
+        maximum_turns = int(raw_maximum_turns)
+    except ValueError as exc:
+        raise ConfigurationError("MAX_OPERATIONS must be a positive integer") from exc
+    if maximum_turns <= 0:
+        raise ConfigurationError("MAX_OPERATIONS must be a positive integer")
     if command != ("hermes", "chat"):
         raise ConfigurationError("hermes.command must be exactly the hermes chat entry point")
     if arguments != ("--quiet", "--yolo"):
@@ -854,10 +874,6 @@ def _load_hermes_settings(
         for name in inference_environment
     ):
         raise ConfigurationError("hermes.inference_environment contains a forbidden name")
-    if inference_environment != (auxiliary.web_extract_api_key_env,):
-        raise ConfigurationError(
-            "hermes.inference_environment must contain only OPENROUTER_API_KEY"
-        )
     return HermesSettings(
         command=command,
         arguments=arguments,
@@ -867,7 +883,7 @@ def _load_hermes_settings(
         required_native_skill=required_skill,
         required_native_skill_version=required_version,
         inference_environment=inference_environment,
-        maximum_turns=_positive_int(parser, "hermes", "maximum_turns"),
+        maximum_turns=maximum_turns,
         timeout_seconds=_positive_int(parser, "hermes", "timeout_seconds"),
     )
 
@@ -935,8 +951,8 @@ def _load_settings_unchecked(
         youtube,
         seekingalpha,
     ) = _load_runtime_settings(parser)
-    hermes_auxiliary = _load_hermes_auxiliary_settings(parser)
-    hermes = _load_hermes_settings(parser, hermes_auxiliary)
+    hermes_auxiliary = _load_hermes_auxiliary_settings(parser, environment)
+    hermes = _load_hermes_settings(parser, hermes_auxiliary, environment)
     telegram = _load_telegram_settings(parser)
 
     return Settings(

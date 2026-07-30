@@ -23,10 +23,13 @@ RUN_ID = "youtube-integration-cycle"
 
 
 class _Discovery:
+    provider_name = "pytubefix"
+
     def channel_feed(
         self,
         handle: str,
         *,
+        channel_id: str,
         limit: int,
         minimum_regular: int = 0,
         stop_at_video_id: str = "",
@@ -39,7 +42,7 @@ class _Discovery:
             anchor_video_id,
             minimum_regular_after_anchor,
         )
-        channel_id = CURATED_CHANNELS[handle]
+        assert channel_id == CURATED_CHANNELS[handle]
         channel_number = sorted(CURATED_CHANNELS).index(handle) + 1
         entries = tuple(
             YouTubeVideo(f"{channel_number * 100 + index:011d}", f"Video {index}")

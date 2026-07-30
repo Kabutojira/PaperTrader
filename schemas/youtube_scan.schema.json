@@ -16,10 +16,16 @@
     "failure_count"
   ],
   "properties": {
-    "youtube_scan_version": { "const": 1 },
+    "youtube_scan_version": { "enum": [1, 2] },
     "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
     "discovered_at": { "type": "string", "format": "date-time" },
     "status": { "enum": ["succeeded", "degraded", "dry_run", "disabled"] },
+    "discovery_provider": {
+      "enum": ["youtube_data_api", "pytubefix", "none"]
+    },
+    "regular_video_policy": {
+      "enum": ["non_live_duration_over_180_seconds", "videos_tab_non_short_non_live", "none"]
+    },
     "scan_bound": { "type": "integer", "minimum": 1 },
     "seed_count": { "type": "integer", "minimum": 1 },
     "channels": {
@@ -33,6 +39,17 @@
     "scan_mode": { "enum": ["discovery", "backfill"] },
     "requested_count": { "type": "integer", "minimum": 1 }
   },
+  "allOf": [
+    {
+      "if": {
+        "properties": { "youtube_scan_version": { "const": 2 } },
+        "required": ["youtube_scan_version"]
+      },
+      "then": {
+        "required": ["discovery_provider", "regular_video_policy"]
+      }
+    }
+  ],
   "$defs": {
     "video_id_or_empty": {
       "type": "string",

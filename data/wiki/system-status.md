@@ -7,13 +7,13 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d1db783ca3a144450032"
+snapshot_id: "decision_04ae09b97cff52815288"
 as_of: "2026-07-30T13:00:00Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_d1db783ca3a144450032`
+**Publication snapshot:** `decision_04ae09b97cff52815288`
 **As of:** `2026-07-30T13:00:00Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required

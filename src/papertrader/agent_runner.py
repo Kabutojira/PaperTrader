@@ -133,6 +133,7 @@ class HermesPreflight:
     web_extract_provider: str
     web_extract_model: str
     web_extract_reasoning_effort: str
+    maximum_turns: int
 
 
 @dataclass(frozen=True, slots=True)
@@ -474,6 +475,7 @@ def preflight_hermes(
         settings.hermes_auxiliary.web_extract_provider,
         settings.hermes_auxiliary.web_extract_model,
         settings.hermes_auxiliary.web_extract_reasoning_effort,
+        settings.hermes.maximum_turns,
     )
 
 
@@ -611,8 +613,8 @@ def sanitized_hermes_environment(
             environment[name] = source[name]
         elif auxiliary_required:
             raise AgentRunError(
-                "OPENROUTER_API_KEY is required for non-dry web extraction; "
-                "configure the purpose-bound auxiliary credential"
+                f"{name} is required when AUXILIARY_MODEL selects "
+                f"{settings.hermes_auxiliary.web_extract_provider}"
             )
     executable_paths = [str(repository_root / ".venv" / "bin"), str(repository_root / "scripts")]
     if environment.get("PATH"):
@@ -639,6 +641,24 @@ def sanitized_hermes_environment(
     if forbidden:
         raise AgentRunError(f"forbidden credentials would reach Hermes: {forbidden}")
     return environment
+
+
+def _validate_auxiliary_environment(
+    settings: Settings,
+    environment: Mapping[str, str],
+    *,
+    auxiliary_required: bool,
+) -> None:
+    """Fail before claiming work when the selected auxiliary provider lacks credentials."""
+
+    if not auxiliary_required:
+        return
+    for name in settings.hermes.inference_environment:
+        if not environment.get(name):
+            raise AgentRunError(
+                f"{name} is required when AUXILIARY_MODEL selects "
+                f"{settings.hermes_auxiliary.web_extract_provider}"
+            )
 
 
 def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) -> tuple[str, ...]:
@@ -770,7 +790,7 @@ def run_claimed_operation(
     atomic_write_json(
         preflight_path,
         {
-            "preflight_version": 2,
+            "preflight_version": 3,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "native_skill": _identity_payload(preflight.native_skill),
@@ -782,6 +802,7 @@ def run_claimed_operation(
             "web_extract_provider": preflight.web_extract_provider,
             "web_extract_model": preflight.web_extract_model,
             "web_extract_reasoning_effort": preflight.web_extract_reasoning_effort,
+            "maximum_turns": preflight.maximum_turns,
             "web_extract_failure_policy": "native_bounded_raw_excerpt",
             "api_key_fallback": False,
             "external_skill_dirs": [
@@ -850,7 +871,7 @@ def run_claimed_operation(
     atomic_write_json(
         run_path,
         {
-            "run_version": 2,
+            "run_version": 3,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "returncode": execution.returncode,
@@ -865,6 +886,7 @@ def run_claimed_operation(
             "web_extract_provider": preflight.web_extract_provider,
             "web_extract_model": preflight.web_extract_model,
             "web_extract_reasoning_effort": preflight.web_extract_reasoning_effort,
+            "maximum_turns": preflight.maximum_turns,
             "web_extract_failure_policy": "native_bounded_raw_excerpt",
         },
         allowed_root=repository_root,
@@ -1026,6 +1048,11 @@ def run_one_operation(
 ) -> str:
     """Prepare, claim, execute, validate, and disposition one operation only."""
 
+    _validate_auxiliary_environment(
+        settings,
+        environment,
+        auxiliary_required=operation_type != "daily_podcast",
+    )
     prepare_queue(repository_root)
     budget = RunBudget(
         maximum_operations=1, maximum_cost=settings.operations.maximum_model_budget_usd_per_run
@@ -1079,6 +1106,7 @@ def run_sequential_operations(
     if maximum_operations == 0:
         return AgentBatchResult((), 0, maximum_cost, estimate)
 
+    _validate_auxiliary_environment(settings, environment, auxiliary_required=True)
     prepare_queue(repository_root)
     budget = RunBudget(maximum_operations=maximum_operations, maximum_cost=maximum_cost)
     outcomes: list[AgentOperationOutcome] = []

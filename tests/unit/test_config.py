@@ -67,15 +67,15 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.hermes.arguments == ("--quiet", "--yolo")
     assert settings.hermes.provider == "openai-codex"
     assert settings.hermes.model == "gpt-5.6-sol"
-    assert settings.hermes.inference_environment == ("OPENROUTER_API_KEY",)
+    assert settings.hermes.inference_environment == ()
     assert set(settings.hermes.toolsets) == {"web", "file", "terminal"}
     assert settings.hermes.required_native_skill == "llm-wiki"
     assert settings.hermes.required_native_skill_version == "2.1.0"
-    assert settings.hermes.maximum_turns == 90
-    assert settings.hermes_auxiliary.web_extract_provider == "openrouter"
-    assert settings.hermes_auxiliary.web_extract_model == "nvidia/nemotron-3-ultra-550b-a55b:free"
+    assert settings.hermes.maximum_turns == 180
+    assert settings.hermes_auxiliary.web_extract_provider == "openai-codex"
+    assert settings.hermes_auxiliary.web_extract_model == "gpt-5.6-terra"
     assert settings.hermes_auxiliary.web_extract_reasoning_effort == "low"
-    assert settings.hermes_auxiliary.web_extract_api_key_env == "OPENROUTER_API_KEY"
+    assert settings.hermes_auxiliary.web_extract_api_key_env == ""
     assert settings.telegram.maximum_attempts == 3
     assert settings.telegram.timeout_seconds == 15
     assert settings.telegram.message_limit == 32768
@@ -94,24 +94,46 @@ def test_repository_root_discovery_from_nested_path(repository_root: Path) -> No
     assert find_repository_root(repository_root / "data" / "wiki") == repository_root
 
 
-def test_settings_reject_unscoped_api_key_for_main_hermes_provider(
-    sandbox_repository: Path,
-    paper_environment: dict[str, str],
+def test_settings_accept_environment_hermes_overrides(
+    repository_root: Path, paper_environment: dict[str, str]
 ) -> None:
-    path = sandbox_repository / "config.ini"
-    path.write_text(
-        path.read_text(encoding="utf-8").replace(
-            "inference_environment = OPENROUTER_API_KEY",
-            "inference_environment = OPENAI_API_KEY",
-        ),
-        encoding="utf-8",
+    settings = load_settings(
+        repository_root,
+        paper_environment
+        | {
+            "MAX_OPERATIONS": "240",
+            "AUXILIARY_MODEL": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+        },
     )
 
-    with pytest.raises(ConfigurationError, match="must contain only OPENROUTER_API_KEY"):
-        load_settings(
-            sandbox_repository,
-            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
-        )
+    assert settings.hermes.maximum_turns == 240
+    assert settings.hermes.inference_environment == ("OPENROUTER_API_KEY",)
+    assert settings.hermes_auxiliary.web_extract_provider == "openrouter"
+    assert settings.hermes_auxiliary.web_extract_model == ("nvidia/nemotron-3-ultra-550b-a55b:free")
+    assert settings.hermes_auxiliary.web_extract_api_key_env == "OPENROUTER_API_KEY"
+
+
+@pytest.mark.parametrize("value", ["0", "-1", "many"])
+def test_settings_reject_invalid_max_operations(
+    repository_root: Path,
+    paper_environment: dict[str, str],
+    value: str,
+) -> None:
+    with pytest.raises(ConfigurationError, match="MAX_OPERATIONS must be a positive integer"):
+        load_settings(repository_root, paper_environment | {"MAX_OPERATIONS": value})
+
+
+@pytest.mark.parametrize(
+    "value",
+    ["gpt-5.6-terra", "anthropic:claude", "openai-codex:", "openai-codex:gpt terra"],
+)
+def test_settings_reject_invalid_auxiliary_model(
+    repository_root: Path,
+    paper_environment: dict[str, str],
+    value: str,
+) -> None:
+    with pytest.raises(ConfigurationError, match="AUXILIARY_MODEL"):
+        load_settings(repository_root, paper_environment | {"AUXILIARY_MODEL": value})
 
 
 def test_settings_reject_contract_incompatible_price_retention(
