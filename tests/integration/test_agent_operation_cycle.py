@@ -126,7 +126,7 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
             sandbox_settings,
             run_id="integration-1",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=fake_hermes,
         )

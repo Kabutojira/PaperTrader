@@ -122,6 +122,9 @@ class HermesPreflight:
     config_sha256: str
     provider: str
     model: str
+    web_extract_provider: str
+    web_extract_model: str
+    web_extract_reasoning_effort: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -226,6 +229,13 @@ def project_skill_identities(
 def _managed_config(settings: Settings) -> dict[str, object]:
     return {
         "agent": {"disabled_toolsets": list(DISABLED_TOOLSETS)},
+        "auxiliary": {
+            "web_extract": {
+                "provider": settings.hermes_auxiliary.web_extract_provider,
+                "model": settings.hermes_auxiliary.web_extract_model,
+                "reasoning_effort": settings.hermes_auxiliary.web_extract_reasoning_effort,
+            }
+        },
         "mcp_servers": {},
         "model": {
             "default": settings.hermes.model,
@@ -453,6 +463,9 @@ def preflight_hermes(
         config_hash,
         settings.hermes.provider,
         settings.hermes.model,
+        settings.hermes_auxiliary.web_extract_provider,
+        settings.hermes_auxiliary.web_extract_model,
+        settings.hermes_auxiliary.web_extract_reasoning_effort,
     )
 
 
@@ -580,6 +593,7 @@ def sanitized_hermes_environment(
     *,
     run_id: str,
     operation_id: str,
+    auxiliary_required: bool = True,
 ) -> dict[str, str]:
     """Forward system basics and non-secret context; OAuth stays in HERMES_HOME."""
 
@@ -587,6 +601,11 @@ def sanitized_hermes_environment(
     for name in settings.hermes.inference_environment:
         if source.get(name):
             environment[name] = source[name]
+        elif auxiliary_required:
+            raise AgentRunError(
+                "OPENROUTER_API_KEY is required for non-dry web extraction; "
+                "configure the purpose-bound auxiliary credential"
+            )
     executable_paths = [str(repository_root / ".venv" / "bin"), str(repository_root / "scripts")]
     if environment.get("PATH"):
         executable_paths.append(environment["PATH"])
@@ -743,7 +762,7 @@ def run_claimed_operation(
     atomic_write_json(
         preflight_path,
         {
-            "preflight_version": 1,
+            "preflight_version": 2,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "native_skill": _identity_payload(preflight.native_skill),
@@ -752,6 +771,10 @@ def run_claimed_operation(
             "hermes_config_sha256": preflight.config_sha256,
             "provider": preflight.provider,
             "model": preflight.model,
+            "web_extract_provider": preflight.web_extract_provider,
+            "web_extract_model": preflight.web_extract_model,
+            "web_extract_reasoning_effort": preflight.web_extract_reasoning_effort,
+            "web_extract_failure_policy": "native_bounded_raw_excerpt",
             "api_key_fallback": False,
             "external_skill_dirs": [
                 str(path.relative_to(repository_root))
@@ -779,6 +802,7 @@ def run_claimed_operation(
         environment,
         run_id=run_id,
         operation_id=operation.operation_id,
+        auxiliary_required=operation.operation_type != "daily_podcast",
     )
     command = hermes_command(settings, preflight, prompt)
     started = now()
@@ -818,7 +842,7 @@ def run_claimed_operation(
     atomic_write_json(
         run_path,
         {
-            "run_version": 1,
+            "run_version": 2,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "returncode": execution.returncode,
@@ -828,6 +852,12 @@ def run_claimed_operation(
             "stderr_sha256": execution.stderr_sha256,
             "command": [*command[:-1], "<controller-prompt>"],
             "forwarded_environment_names": sorted(child_environment),
+            "provider": preflight.provider,
+            "model": preflight.model,
+            "web_extract_provider": preflight.web_extract_provider,
+            "web_extract_model": preflight.web_extract_model,
+            "web_extract_reasoning_effort": preflight.web_extract_reasoning_effort,
+            "web_extract_failure_policy": "native_bounded_raw_excerpt",
         },
         allowed_root=repository_root,
     )

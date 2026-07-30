@@ -462,7 +462,7 @@ def test_out_of_scope_source_write_fails_closed(
             sandbox_settings,
             run_id="bad-scope",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=_executor_with_change(change, ["src/papertrader/malicious.py"]),
         )
@@ -482,7 +482,7 @@ def test_completed_security_research_without_assessment_fails_closed(
             sandbox_settings,
             run_id="missing-assessment",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=_executor_with_change(lambda root: None, []),
         )
@@ -642,7 +642,7 @@ def test_stale_unchanged_file_in_manifest_fails_closed(
             sandbox_settings,
             run_id="stale-result",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=_executor_with_change(lambda root: None, ["data/wiki/index.md"]),
         )
@@ -665,7 +665,7 @@ def test_symlink_write_fails_closed(
             sandbox_settings,
             run_id="symlink-result",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=_executor_with_change(change, ["data/wiki/ideas/evil.md"]),
         )
@@ -743,7 +743,7 @@ def test_audited_request_cannot_change_after_structured_command(
             sandbox_settings,
             run_id="request-tamper",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=execute,
         )

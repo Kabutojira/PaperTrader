@@ -61,6 +61,7 @@ jobs:
       serialized_by_caller: true
     secrets:
       OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
   delivery:
     needs: runtime

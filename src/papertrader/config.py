@@ -224,6 +224,16 @@ class HermesSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class HermesAuxiliarySettings:
+    """Purpose-bound provider policy for Hermes web extraction summaries."""
+
+    web_extract_provider: str
+    web_extract_model: str
+    web_extract_reasoning_effort: str
+    web_extract_api_key_env: str
+
+
+@dataclass(frozen=True, slots=True)
 class TelegramSettings:
     """Bounded post-commit Telegram delivery policy without credentials."""
 
@@ -252,6 +262,7 @@ class Settings:
     youtube: YouTubeSettings
     seekingalpha: SeekingAlphaSettings
     hermes: HermesSettings
+    hermes_auxiliary: HermesAuxiliarySettings
     telegram: TelegramSettings
 
 
@@ -777,7 +788,33 @@ def _load_runtime_settings(
     )
 
 
-def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
+def _load_hermes_auxiliary_settings(parser: configparser.ConfigParser) -> HermesAuxiliarySettings:
+    settings = HermesAuxiliarySettings(
+        web_extract_provider=parser.get("hermes_auxiliary", "web_extract_provider").strip(),
+        web_extract_model=parser.get("hermes_auxiliary", "web_extract_model").strip(),
+        web_extract_reasoning_effort=parser.get(
+            "hermes_auxiliary", "web_extract_reasoning_effort"
+        ).strip(),
+        web_extract_api_key_env=parser.get("hermes_auxiliary", "web_extract_api_key_env").strip(),
+    )
+    if settings.web_extract_provider != "openrouter":
+        raise ConfigurationError("hermes_auxiliary.web_extract_provider must be exactly openrouter")
+    if settings.web_extract_model != "nvidia/nemotron-3-ultra-550b-a55b:free":
+        raise ConfigurationError("hermes_auxiliary.web_extract_model must be the pinned Nemotron")
+    if settings.web_extract_reasoning_effort != "low":
+        raise ConfigurationError(
+            "hermes_auxiliary.web_extract_reasoning_effort must be exactly low"
+        )
+    if settings.web_extract_api_key_env != "OPENROUTER_API_KEY":
+        raise ConfigurationError(
+            "hermes_auxiliary.web_extract_api_key_env must be OPENROUTER_API_KEY"
+        )
+    return settings
+
+
+def _load_hermes_settings(
+    parser: configparser.ConfigParser, auxiliary: HermesAuxiliarySettings
+) -> HermesSettings:
     """Validate the non-interactive Hermes command without accepting shell syntax."""
 
     command = tuple(shlex.split(parser.get("hermes", "command")))
@@ -817,9 +854,9 @@ def _load_hermes_settings(parser: configparser.ConfigParser) -> HermesSettings:
         for name in inference_environment
     ):
         raise ConfigurationError("hermes.inference_environment contains a forbidden name")
-    if inference_environment:
+    if inference_environment != (auxiliary.web_extract_api_key_env,):
         raise ConfigurationError(
-            "hermes.inference_environment must be empty for openai-codex OAuth"
+            "hermes.inference_environment must contain only OPENROUTER_API_KEY"
         )
     return HermesSettings(
         command=command,
@@ -899,7 +936,8 @@ def _load_settings_unchecked(
         youtube,
         seekingalpha,
     ) = _load_runtime_settings(parser)
-    hermes = _load_hermes_settings(parser)
+    hermes_auxiliary = _load_hermes_auxiliary_settings(parser)
+    hermes = _load_hermes_settings(parser, hermes_auxiliary)
     telegram = _load_telegram_settings(parser)
 
     return Settings(
@@ -919,6 +957,7 @@ def _load_settings_unchecked(
         youtube=youtube,
         seekingalpha=seekingalpha,
         hermes=hermes,
+        hermes_auxiliary=hermes_auxiliary,
         telegram=telegram,
     )
 

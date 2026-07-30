@@ -921,7 +921,10 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         sandbox_settings,
         run_id=RUN_ID,
         hermes_home=home,
-        environment={"PATH": os.environ.get("PATH", "/usr/bin")},
+        environment={
+            "PATH": os.environ.get("PATH", "/usr/bin"),
+            "OPENROUTER_API_KEY": "test-auxiliary-key",
+        },
         maximum_operations=6,
         executor=executor,
     )

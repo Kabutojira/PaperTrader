@@ -41,6 +41,7 @@ path:
 
 ```bash
 gh secret set OPENAI_OAUTH_SECRET < "$HOME/.config/papertrader/openai-oauth.agekey"
+gh secret set OPENROUTER_API_KEY
 recipient="$(age-keygen -y "$HOME/.config/papertrader/openai-oauth.agekey")"
 install -d .papertrader/credentials
 age --encrypt \

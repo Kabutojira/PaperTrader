@@ -52,6 +52,9 @@ on:
       OPENAI_OAUTH_SECRET:
         description: age private identity used only by runtime credential steps
         required: false
+      OPENROUTER_API_KEY:
+        description: Purpose-bound Hermes Web ExtractPage summarization credential
+        required: false
     outputs:
       commit_sha:
         description: Validated runtime commit, or the unchanged base SHA
@@ -295,11 +298,15 @@ jobs:
           MAX_OPERATIONS: ${{ inputs.max_operations }}
           OPERATION_ID: ${{ inputs.operation_id }}
           OPERATION_TYPE: ${{ inputs.operation_type }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
           selected_max="$MAX_OPERATIONS"
           if [ "$DRY_RUN" = "true" ]; then
             selected_max=0
+          elif ! test -n "${OPENROUTER_API_KEY:-}"; then
+            echo "::error::OPENROUTER_API_KEY is required for non-dry Web ExtractPage summarization"
+            exit 1
           fi
           arguments=(agent run-batch --hermes-home "$HERMES_HOME" --run-id "$RUN_ID" --max-operations "$selected_max")
           if [ -n "$OPERATION_ID" ]; then

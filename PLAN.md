@@ -317,7 +317,7 @@ Use `Unrated` when a supportable valuation is unavailable.
 - Snapshot v3, CSV exports, Pages, Telegram, and reference-output tests agree exactly.
 - The research benchmark cannot create or influence an approved target, signal, order, execution, cash entry, position, or approved performance row.
 
-## Step 21 — Route Hermes Web ExtractPage summarization through OpenRouter Nemotron — Planned
+## Step 21 — Route Hermes Web ExtractPage summarization through OpenRouter Nemotron — Complete (2026-07-30)
 
 ### Outcome
 

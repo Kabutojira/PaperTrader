@@ -85,6 +85,10 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     jobs = daily["jobs"]
     assert list(jobs) == ["runtime", "delivery", "pages"]
     assert jobs["runtime"]["uses"] == "./.github/workflows/reusable-llm.yml"
+    assert jobs["runtime"]["secrets"] == {
+        "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
+        "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
+    }
     assert jobs["delivery"]["uses"] == "./.github/workflows/reporting.yml"
     assert jobs["pages"]["uses"] == "./.github/workflows/pages.yml"
     assert jobs["delivery"]["needs"] == "runtime"
@@ -123,13 +127,25 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "git rebase" in text
     assert "git diff --cached --quiet" in text
     assert "--yolo" not in text  # validated config and runner argv own this flag
-    assert set(workflow["on"]["workflow_call"]["secrets"]) == {"OPENAI_OAUTH_SECRET"}
+    assert set(workflow["on"]["workflow_call"]["secrets"]) == {
+        "OPENAI_OAUTH_SECRET",
+        "OPENROUTER_API_KEY",
+    }
     assert "secrets.OPENAI_OAUTH_SECRET" in runtime_text
     assert "github.token" not in runtime_text
     assert "TELEGRAM" not in runtime_text
     assert "github.token" in commit_text
     assert "OPENAI_OAUTH_SECRET" not in commit_text
-    assert "OPENROUTER_API_KEY" not in text
+    run_batch = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Execute due Hermes operations strictly one at a time"
+    )
+    assert run_batch["env"]["OPENROUTER_API_KEY"] == "${{ secrets.OPENROUTER_API_KEY }}"
+    assert 'test -n "${OPENROUTER_API_KEY:-}"' in run_batch["run"]
+    for step in runtime["steps"]:
+        if step is not run_batch:
+            assert "OPENROUTER_API_KEY" not in step.get("env", {})
     runtime_steps = [step["name"] for step in runtime["steps"]]
     assert runtime_steps.index("Discover curated YouTube sources without credentials") < (
         runtime_steps.index("Restore encrypted OpenAI OAuth state")
@@ -310,7 +326,10 @@ def test_daily_forwards_only_oauth_secret_and_auth_only_pushes_do_not_retrigger_
 ) -> None:
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
     runtime = daily["jobs"]["runtime"]
-    assert runtime["secrets"] == {"OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}"}
+    assert runtime["secrets"] == {
+        "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
+        "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
+    }
     assert runtime["with"]["scan_youtube"] == "true"
     assert daily["concurrency"] == {
         "group": "papertrader-write",

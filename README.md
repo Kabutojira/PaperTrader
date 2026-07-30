@@ -490,9 +490,12 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 - retain one stable latest-only Telegram delivery issue without rolling back the runtime commit;
   when a newer report exists, older missed reports are not replayed.
 
-Repository setup requires `OPENAI_OAUTH_SECRET` and the matching
-`.papertrader/credentials/openai-oauth-auth.json.age` for non-dry Hermes runs; no OpenAI or
-OpenRouter API key is needed for the main path. Delivery additionally requires
+Repository setup requires `OPENAI_OAUTH_SECRET`, the matching
+`.papertrader/credentials/openai-oauth-auth.json.age`, and `OPENROUTER_API_KEY` for non-dry Hermes
+runs. Main reasoning remains on `openai-codex`; the OpenRouter credential is purpose-bound to
+public-page `web_extract` summarization with
+`nvidia/nemotron-3-ultra-550b-a55b:free`, is exposed only to the Hermes launch step, and is not
+passed through to terminal tools. Delivery additionally requires
 `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. Configure GitHub Pages to use **GitHub Actions** as its
 source, and enable repository secret scanning. See the operating runbook for OAuth seeding,
 verification, rotation, and revoked-grant recovery. A deployment can be retried independently by

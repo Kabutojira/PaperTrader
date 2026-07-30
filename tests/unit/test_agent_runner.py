@@ -10,6 +10,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
+import yaml
 
 from papertrader.agent_runner import (
     AgentRunError,
@@ -126,7 +127,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
         hermes_home=home,
         environment={
             "PATH": "/usr/bin",
-            "OPENROUTER_API_KEY": "must-not-pass",
+            "OPENROUTER_API_KEY": "auxiliary-secret-value",
             "GITHUB_TOKEN": "must-not-pass",
             "TELEGRAM_BOT_TOKEN": "must-not-pass",
         },
@@ -145,7 +146,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert command[command.index("--max-turns") + 1] == "90"
     child_environment = captured["environment"]
     assert isinstance(child_environment, dict)
-    assert "OPENROUTER_API_KEY" not in child_environment
+    assert child_environment["OPENROUTER_API_KEY"] == "auxiliary-secret-value"
     assert "GITHUB_TOKEN" not in child_environment
     assert "TELEGRAM_BOT_TOKEN" not in child_environment
     assert child_environment["HERMES_YOLO_MODE"] == "1"
@@ -153,6 +154,24 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     history = read_table(sandbox_repository, "operations_history")
     assert history[0]["operation_id"] == operation_id
     assert history[0]["terminal_status"] == "succeeded"
+    preflight = json.loads(
+        (
+            sandbox_repository
+            / "data"
+            / "runs"
+            / "local-hermes-1"
+            / operation_id
+            / "hermes_preflight.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert preflight["provider"] == "openai-codex"
+    assert preflight["model"] == "gpt-5.6-sol"
+    assert preflight["web_extract_provider"] == "openrouter"
+    assert preflight["web_extract_model"] == "nvidia/nemotron-3-ultra-550b-a55b:free"
+    assert preflight["web_extract_reasoning_effort"] == "low"
+    for path in sandbox_repository.rglob("*"):
+        if path.is_file():
+            assert b"auxiliary-secret-value" not in path.read_bytes()
 
 
 def test_tts_toolset_is_enabled_only_for_daily_podcast(
@@ -225,7 +244,7 @@ def test_shared_budget_batch_runs_two_operations_strictly_sequentially(
         sandbox_settings,
         run_id="batch-1",
         hermes_home=home,
-        environment={"PATH": "/usr/bin"},
+        environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
         maximum_operations=2,
         executor=execute,
     )
@@ -287,6 +306,7 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
         {
             "PATH": "/usr/bin",
             "OPENAI_API_KEY": "inference",
+            "OPENROUTER_API_KEY": "auxiliary-secret-value",
             "ACTIONS_RUNTIME_TOKEN": "actions",
             "BROKER_API_TOKEN": "broker",
             "GH_TOKEN": "github",
@@ -296,9 +316,28 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
     )
 
     assert "OPENAI_API_KEY" not in sanitized
+    assert sanitized["OPENROUTER_API_KEY"] == "auxiliary-secret-value"
     assert "ACTIONS_RUNTIME_TOKEN" not in sanitized
     assert "BROKER_API_TOKEN" not in sanitized
     assert "GH_TOKEN" not in sanitized
+
+
+def test_environment_scrubber_requires_auxiliary_key_before_inference(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+
+    with pytest.raises(AgentRunError, match="OPENROUTER_API_KEY is required"):
+        sanitized_hermes_environment(
+            sandbox_repository,
+            sandbox_settings,
+            home,
+            {"PATH": "/usr/bin"},
+            run_id="run-1",
+            operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        )
 
 
 def test_configure_refuses_to_replace_an_unmanaged_profile(
@@ -353,6 +392,11 @@ def test_configure_preserves_restored_oauth_state(
     config = (home / "config.yaml").read_text(encoding="utf-8")
     assert "provider: openai-codex" in config
     assert "default: gpt-5.6-sol" in config
+    assert "web_extract:" in config
+    assert "model: nvidia/nemotron-3-ultra-550b-a55b:free" in config
+    assert "reasoning_effort: low" in config
+    loaded = yaml.safe_load(config)
+    assert loaded["terminal"]["env_passthrough"] == []
 
 
 def test_root_controller_hands_only_repository_data_to_hermes_owner(
@@ -461,7 +505,7 @@ def test_postrun_native_skill_mutation_fails_closed(
             sandbox_settings,
             run_id="native-mutation",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=execute,
         )
