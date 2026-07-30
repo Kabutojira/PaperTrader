@@ -354,11 +354,14 @@ the quick check.
 
 ## Daily podcast
 
-Every non-dry daily workflow finishes with one priority-100 `daily_podcast` operation after the
-canonical report and decision snapshot exist. Deterministic code collects all accepted operation
-results for that run into `data/runs/<run_id>/podcast_context.json`; the podcast skill combines
-related alerts, orders the material arguments, and writes an original 2,400-3,600 word transcript
-under `data/wiki/podcasts/`.
+Podcast generation is off by default. Enable it for a manual daily run with the
+`generate_podcast` workflow-dispatch toggle, or set the GitHub Actions repository/environment
+variable `GENERATE_PODCAST` to `true` for scheduled runs. An enabled non-dry daily workflow
+finishes with one priority-100 `daily_podcast` operation after the canonical report and decision
+snapshot exist. Deterministic code collects all accepted operation results for that run into
+`data/runs/<run_id>/podcast_context.json`; the podcast skill combines related alerts, orders the
+material arguments, and writes an original 2,400-3,600 word transcript under
+`data/wiki/podcasts/`.
 
 Hermes receives its TTS toolset only for this operation. It synthesizes bounded chunks strictly
 sequentially, and `papertrader podcast assemble` validates the transcript length, assembles the

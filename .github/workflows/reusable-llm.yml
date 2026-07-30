@@ -23,6 +23,11 @@ on:
         required: false
         default: true
         type: boolean
+      generate_podcast:
+        description: Generate the final sequential daily podcast
+        required: false
+        default: false
+        type: boolean
       scan_youtube:
         description: Scan curated YouTube channels before OAuth restoration
         required: false
@@ -75,7 +80,7 @@ on:
         description: Whether refreshed encrypted OpenAI OAuth state was committed
         value: ${{ jobs.commit.outputs.oauth_changed }}
       podcast_status:
-        description: Terminal daily podcast status, or skipped for a dry run
+        description: Terminal daily podcast status, or skipped when disabled or dry
         value: ${{ jobs.runtime.outputs.podcast_status }}
   workflow_dispatch:
     inputs:
@@ -98,6 +103,11 @@ on:
         description: Exercise the runtime without inference, commit, or push
         required: false
         default: true
+        type: boolean
+      generate_podcast:
+        description: Generate the final sequential daily podcast
+        required: false
+        default: false
         type: boolean
       scan_youtube:
         description: Scan curated YouTube channels before OAuth restoration
@@ -141,6 +151,7 @@ jobs:
         shell: bash
     env:
       AUXILIARY_MODEL: ${{ vars.AUXILIARY_MODEL || 'openai-codex:gpt-5.6-terra' }}
+      GENERATE_PODCAST: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
       HERMES_HOME: /tmp/papertrader-hermes
       MAX_OPERATIONS: ${{ vars.MAX_OPERATIONS || '180' }}
     outputs:
@@ -332,7 +343,7 @@ jobs:
           report_url="https://github.com/${GITHUB_REPOSITORY}/blob/${TARGET_BRANCH}/data/wiki/daily-reports/${report_name}"
           uv run papertrader daily finalize --run-id "$RUN_ID" --github-report-url "$report_url"
       - name: Collect completed-run changes and enqueue the daily podcast
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}
         env:
           RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
@@ -340,7 +351,7 @@ jobs:
           command -v ffprobe
           uv run papertrader podcast enqueue --run-id "$RUN_ID"
       - name: Generate the daily podcast as the final sequential Hermes operation
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}
         env:
           RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: >-
@@ -350,7 +361,7 @@ jobs:
           --operation-type daily_podcast
       - name: Record the terminal daily podcast disposition
         id: podcast
-        if: ${{ !inputs.dry_run }}
+        if: ${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}
         env:
           RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
@@ -368,7 +379,7 @@ jobs:
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
       - name: Print recent redacted Hermes logs after a runtime or podcast failure
-        if: ${{ failure() || (!inputs.dry_run && steps.podcast.outputs.status != 'succeeded') }}
+        if: ${{ failure() || (!inputs.dry_run && env.GENERATE_PODCAST == 'true' && steps.podcast.outputs.status != 'succeeded') }}
         run: |
           echo "::group::Hermes errors.log (current operation window)"
           hermes logs errors --since 35m -n 200 || true

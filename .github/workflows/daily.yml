@@ -26,6 +26,11 @@ on:
         required: false
         default: false
         type: boolean
+      generate_podcast:
+        description: Generate the final sequential daily podcast
+        required: false
+        default: false
+        type: boolean
       publish_pages:
         description: Build and deploy Pages after the committed run
         required: false
@@ -54,6 +59,7 @@ jobs:
       operation_type: ${{ inputs.operation_type || '' }}
       max_operations: ${{ github.event_name == 'schedule' && '5' || inputs.max_operations }}
       dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+      generate_podcast: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
       scan_youtube: true
       scan_seekingalpha: true
       target_branch: ${{ github.event.repository.default_branch }}
@@ -96,13 +102,14 @@ jobs:
     if: ${{ always() }}
     runs-on: ubuntu-24.04
     steps:
-      - name: Fail after publication when the daily podcast did not succeed
+      - name: Fail after publication when an enabled daily podcast did not succeed
         env:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          GENERATE_PODCAST: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
           PODCAST_STATUS: ${{ needs.runtime.outputs.podcast_status }}
           RUNTIME_RESULT: ${{ needs.runtime.result }}
         run: |
-          if [ "$DRY_RUN" = "true" ] || [ "$RUNTIME_RESULT" != "success" ]; then
+          if [ "$DRY_RUN" = "true" ] || [ "$GENERATE_PODCAST" != "true" ] || [ "$RUNTIME_RESULT" != "success" ]; then
             exit 0
           fi
           if [ "$PODCAST_STATUS" != "succeeded" ]; then

@@ -73,8 +73,15 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "operation_type",
         "max_operations",
         "dry_run",
+        "generate_podcast",
         "publish_pages",
         "send_telegram",
+    }
+    assert inputs["generate_podcast"] == {
+        "description": "Generate the final sequential daily podcast",
+        "required": "false",
+        "default": "false",
+        "type": "boolean",
     }
     assert "schedule" in triggers
     assert triggers["schedule"] == [{"cron": "0 17 * * *", "timezone": "Europe/Rome"}]
@@ -90,6 +97,9 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
         "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
     }
+    assert jobs["runtime"]["with"]["generate_podcast"] == (
+        "${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"
+    )
     assert jobs["delivery"]["uses"] == "./.github/workflows/reporting.yml"
     assert jobs["pages"]["uses"] == "./.github/workflows/pages.yml"
     assert jobs["delivery"]["needs"] == "runtime"
@@ -98,6 +108,9 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     assert outcome["needs"] == ["runtime", "delivery", "pages"]
     assert outcome["if"] == "${{ always() }}"
     outcome_step = outcome["steps"][0]
+    assert outcome_step["env"]["GENERATE_PODCAST"] == (
+        "${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"
+    )
     assert outcome_step["env"]["PODCAST_STATUS"] == "${{ needs.runtime.outputs.podcast_status }}"
     assert "validated research and report state was published" in outcome_step["run"]
 
@@ -120,6 +133,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert commit["permissions"] == {"contents": "write"}
     assert runtime["env"] == {
         "AUXILIARY_MODEL": "${{ vars.AUXILIARY_MODEL || 'openai-codex:gpt-5.6-terra' }}",
+        "GENERATE_PODCAST": ("${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"),
         "HERMES_HOME": "/tmp/papertrader-hermes",
         "MAX_OPERATIONS": "${{ vars.MAX_OPERATIONS || '180' }}",
     }
@@ -138,6 +152,10 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "git rebase" in text
     assert "git diff --cached --quiet" in text
     assert "--yolo" not in text  # validated config and runner argv own this flag
+    for trigger_name in ("workflow_call", "workflow_dispatch"):
+        podcast_input = workflow["on"][trigger_name]["inputs"]["generate_podcast"]
+        assert podcast_input["default"] == "false"
+        assert podcast_input["type"] == "boolean"
     assert set(workflow["on"]["workflow_call"]["secrets"]) == {
         "OPENAI_OAUTH_SECRET",
         "OPENROUTER_API_KEY",
@@ -163,7 +181,8 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         if step["name"] == "Print recent redacted Hermes logs after a runtime or podcast failure"
     )
     assert hermes_logs["if"] == (
-        "${{ failure() || (!inputs.dry_run && steps.podcast.outputs.status != 'succeeded') }}"
+        "${{ failure() || (!inputs.dry_run && env.GENERATE_PODCAST == 'true' && "
+        "steps.podcast.outputs.status != 'succeeded') }}"
     )
     assert "hermes logs errors --since 35m -n 200" in hermes_logs["run"]
     assert "hermes logs agent --since 35m -n 500" in hermes_logs["run"]
@@ -176,7 +195,15 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         if step["name"] == "Record the terminal daily podcast disposition"
     )
     assert podcast_finalize["id"] == "podcast"
+    assert podcast_finalize["if"] == ("${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}")
     assert 'echo "status=$status" >> "$GITHUB_OUTPUT"' in podcast_finalize["run"]
+    for step_name in (
+        "Collect completed-run changes and enqueue the daily podcast",
+        "Generate the daily podcast as the final sequential Hermes operation",
+        "Record the terminal daily podcast disposition",
+    ):
+        step = next(step for step in runtime["steps"] if step["name"] == step_name)
+        assert step["if"] == "${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}"
     assert runtime["outputs"]["podcast_status"] == (
         "${{ steps.podcast.outputs.status || 'skipped' }}"
     )
@@ -211,18 +238,21 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
 
 
 @pytest.mark.parametrize(
-    ("dry_run", "runtime_result", "podcast_status", "expected_exit"),
+    ("dry_run", "generate_podcast", "runtime_result", "podcast_status", "expected_exit"),
     [
-        ("false", "success", "succeeded", 0),
-        ("false", "success", "failed", 1),
-        ("false", "success", "blocked", 1),
-        ("true", "success", "skipped", 0),
-        ("false", "failure", "", 0),
+        ("false", "true", "success", "succeeded", 0),
+        ("false", "true", "success", "failed", 1),
+        ("false", "true", "success", "blocked", 1),
+        ("true", "true", "success", "skipped", 0),
+        ("false", "true", "failure", "", 0),
+        ("false", "false", "success", "skipped", 0),
+        ("false", "false", "success", "failed", 0),
     ],
 )
 def test_daily_outcome_defers_podcast_failure_until_after_publication(
     repository_root: Path,
     dry_run: str,
+    generate_podcast: str,
     runtime_result: str,
     podcast_status: str,
     expected_exit: int,
@@ -233,6 +263,7 @@ def test_daily_outcome_defers_podcast_failure_until_after_publication(
     environment.update(
         {
             "DRY_RUN": dry_run,
+            "GENERATE_PODCAST": generate_podcast,
             "RUNTIME_RESULT": runtime_result,
             "PODCAST_STATUS": podcast_status,
         }
