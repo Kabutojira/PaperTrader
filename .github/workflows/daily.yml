@@ -19,7 +19,7 @@ on:
       max_operations:
         description: Maximum operations executed sequentially
         required: false
-        default: "1"
+        default: "5"
         type: string
       dry_run:
         description: Exercise all validation without inference, commit, or delivery
