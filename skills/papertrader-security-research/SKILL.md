@@ -41,9 +41,13 @@ and page hashes. Historical versions may be inspected by immutable ID with
 
 Require `operation_id`, `security_id`, objective, freshness boundary, and source references. New
 identity data requires issuer, instrument, venue MIC, provider symbol, currency, and instrument
-type; updates must match the immutable ID. The assessment requires current registered evidence,
-eligibility, confidence, all component scores, risk penalty, downside and base upside, valuation
-horizon, expiration, explicit blocker/gap sets, and the current run ID.
+type; updates must match the immutable ID. Assessment schema version 2 requires current registered
+evidence; an anchored score for thesis, business quality, balance sheet, valuation, timing,
+liquidity, and risk; confidence; one repository-owned valuation template and permitted method;
+fresh identity-matched price/FX references; horizon and expiration; explicit blocker/gap sets; and
+the current run ID. For a supported valuation, supply bear/base/bull fair values, probabilities that
+sum exactly to 100, and concise key assumptions. Deterministic code derives all returns, expected
+value/return, confidence adjustment, buy-below price, and margin of safety.
 An alert-driven request additionally provides `trigger_types`, `market_data_as_of`,
 `market_data_date`, the exact observation period, and `source_price_hash`. Treat those values as
 canonical measurements to explain, not calculations to replace.
@@ -66,14 +70,17 @@ rows in `relationships.csv` rather than relying on wiki prose alone.
 5. Research business and instrument economics from current primary evidence, then register the
    bounded source metadata through the source CLI before referencing it from an assessment.
 6. State thesis, contrary evidence, catalysts, risks, and invalidation.
-7. Produce a supportable downside and base-case valuation with dated inputs and an explicit
-   horizon, or record `valuation_unsupported`; never invent a price target.
+7. Select exactly one valuation template from `schemas/valuation_templates.yaml` and follow its
+   primary-evidence, normalization, debt/dilution, and scenario-driver rules. Produce ordered
+   bear/base/bull cases with explicit probabilities and dated inputs, or record an unsupported
+   valuation with the exact missing evidence and no invented value. A bear return may be positive.
+   Use only the concrete 20/40/60/80/100 anchors in `schemas/research_rubrics.yaml`.
 8. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
    configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
 9. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
    upsert for the short structured row summary.
 10. Before completing, use the assessment CLI to write exactly one current comparable result:
-   `baseline`/`conviction` only with fresh evidence, supportable valuation and no blocker, or
+   `baseline`/`conviction` only with fresh evidence, scenario-complete valuation and no blocker, or
    `ineligible` with one or more canonical explicit hard blockers. Never leave completed research
    without an assessment.
 11. Enqueue conviction strategy research only when the unchanged full strategy gate passes.

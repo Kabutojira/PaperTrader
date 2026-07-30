@@ -240,6 +240,14 @@ only after the immutable version validates. Repeat research must read the bounde
 security context and publish an explicit change summary; historical versions remain retrievable by
 ID and are never replaced or deleted.
 
+Assessment schema version 2 is scenario-complete. The agent selects a repository-owned valuation
+template and permitted method, supplies assumptions, bear/base/bull fair values, and probabilities;
+deterministic code validates fresh immutable price/FX identity and calculates scenario returns,
+probability-weighted fair value and return, confidence adjustment, buy-below price, and margin of
+safety. Probabilities total exactly 100 and fair values are ordered. Unsupported valuation stores no
+invented scenario value and is explicitly blocked. All component scores use the concrete repository
+anchors at 20, 40, 60, 80, or 100.
+
 ### `relationships.csv`
 
 This many-to-many layer must not be omitted. It preserves why an idea affects a security and prevents strategies from being generated from unexplained associations.

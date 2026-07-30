@@ -1,0 +1,37 @@
+version: 1
+templates:
+  mature_compounder:
+    allowed_methods: [dcf, earnings_multiple, free_cash_flow_yield]
+    minimum_primary_evidence: [latest_filing, earnings_release, share_count, net_debt]
+    normalization: Normalize recurring margins, taxes, reinvestment, and stock compensation.
+    scenario_drivers: [revenue_growth, operating_margin, valuation_multiple]
+  cyclical_commodity:
+    allowed_methods: [normalized_earnings, nav, mid_cycle_cash_flow]
+    minimum_primary_evidence: [latest_filing, production_report, balance_sheet, realized_prices]
+    normalization: Use mid-cycle prices and costs; do not capitalize peak earnings.
+    scenario_drivers: [commodity_price, unit_cost, production, net_debt]
+  financial_company:
+    allowed_methods: [excess_return, dividend_discount, price_to_book]
+    minimum_primary_evidence: [latest_filing, capital_ratios, asset_quality, funding_mix]
+    normalization: Normalize credit costs and explicitly model required regulatory capital.
+    scenario_drivers: [return_on_equity, credit_loss, capital_ratio, book_value]
+  pre_profit_growth:
+    allowed_methods: [revenue_multiple, probability_weighted_dcf]
+    minimum_primary_evidence: [latest_filing, cash_runway, dilution, unit_economics]
+    normalization: Model dilution, cash burn, and a credible path to positive free cash flow.
+    scenario_drivers: [growth, gross_margin, cash_burn, dilution, terminal_margin]
+  biotechnology_binary:
+    allowed_methods: [risk_adjusted_npv, sum_of_parts]
+    minimum_primary_evidence: [trial_registry, regulatory_status, cash_runway, dilution]
+    normalization: Separate technical, regulatory, commercial, dilution, and timing probabilities.
+    scenario_drivers: [trial_outcome, approval_probability, launch_timing, dilution]
+  private_illiquid:
+    allowed_methods: [nav, transaction_comparables, appraisal]
+    minimum_primary_evidence: [ownership_terms, latest_financials, dilution, liquidity_terms]
+    normalization: Apply explicit dilution, stale-price, liquidity, and transferability adjustments.
+    scenario_drivers: [enterprise_value, ownership_dilution, liquidity_discount]
+  other:
+    allowed_methods: [dcf, earnings_multiple, nav, sum_of_parts, other]
+    minimum_primary_evidence: [latest_primary_financial_evidence]
+    normalization: Explain why no specialized template fits and make debt and dilution explicit.
+    scenario_drivers: [template_specific_driver]

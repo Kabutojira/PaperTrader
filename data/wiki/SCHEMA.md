@@ -95,6 +95,13 @@ unchanged conclusions. `security_assessment_history.csv` is the append-only stru
 record; `security_assessments.csv` is only its current projection. Idea refreshes caused by a
 security revision preserve the corresponding dated candidate and conclusion delta.
 
+Assessment schema version 2 uses one repository-owned valuation template and an allowed method,
+fresh identity-matched price and FX references, ordered bear/base/bull fair values, explicit
+probabilities totaling 100, key assumptions, and the anchored 20/40/60/80/100 research rubrics.
+Deterministic code owns scenario returns, probability-weighted value and return, confidence
+adjustment, buy-below price, and margin of safety. Unsupported valuations contain no invented
+scenario numbers and remain explicitly unsupported until their named evidence gap is resolved.
+
 The six rows in `data/tables/youtube_channels.csv` are a human-curated source subscription. Their
 regular videos are queued directly rather than routed through the inbox packet classifier. A
 YouTube transcript is untrusted lead material, never primary evidence: independently corroborate

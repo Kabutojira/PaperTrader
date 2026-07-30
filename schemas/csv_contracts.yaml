@@ -116,6 +116,34 @@ contracts:
       - soft_gaps
       - evidence_refs
       - run_id
+      - assessment_schema_version
+      - valuation_method
+      - valuation_template
+      - valuation_template_rationale
+      - reference_price
+      - reference_currency
+      - market_data_as_of
+      - fx_rate_to_base
+      - fx_as_of
+      - valuation_supported
+      - bear_fair_value
+      - bear_return_pct
+      - bear_probability_pct
+      - bear_assumptions
+      - base_fair_value
+      - base_return_pct
+      - base_probability_pct
+      - base_assumptions
+      - bull_fair_value
+      - bull_return_pct
+      - bull_probability_pct
+      - bull_assumptions
+      - probability_weighted_fair_value
+      - expected_return_pct
+      - confidence_adjusted_expected_return_pct
+      - buy_below_price
+      - margin_of_safety_pct
+      - research_completeness
   security_assessment_history:
     path: data/tables/security_assessment_history.csv
     append_only: true
@@ -147,6 +175,33 @@ contracts:
       - research_page
       - research_page_hash
       - recorded_at
+      - valuation_method
+      - valuation_template
+      - valuation_template_rationale
+      - reference_price
+      - reference_currency
+      - market_data_as_of
+      - fx_rate_to_base
+      - fx_as_of
+      - valuation_supported
+      - bear_fair_value
+      - bear_return_pct
+      - bear_probability_pct
+      - bear_assumptions
+      - base_fair_value
+      - base_return_pct
+      - base_probability_pct
+      - base_assumptions
+      - bull_fair_value
+      - bull_return_pct
+      - bull_probability_pct
+      - bull_assumptions
+      - probability_weighted_fair_value
+      - expected_return_pct
+      - confidence_adjusted_expected_return_pct
+      - buy_below_price
+      - margin_of_safety_pct
+      - research_completeness
   allocation_targets:
     path: data/tables/allocation_targets.csv
     generated: true

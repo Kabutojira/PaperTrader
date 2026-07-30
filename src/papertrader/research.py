@@ -24,6 +24,12 @@ from papertrader.utils import (
     stable_id,
     utc_now,
 )
+from papertrader.valuation import (
+    ASSESSMENT_V2_AGENT_FIELDS,
+    ASSESSMENT_V2_OUTPUT_FIELDS,
+    ValuationError,
+    normalize_v2_assessment,
+)
 
 SAFE_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 STRATEGY_STATUSES = frozenset(
@@ -40,6 +46,21 @@ ASSESSMENT_SCORE_FIELDS = (
     "timing_score",
     "liquidity_score",
     "risk_penalty",
+)
+LEGACY_ASSESSMENT_FIELDS = (
+    "security_id",
+    "assessed_at",
+    "expires_at",
+    "eligibility",
+    "confidence",
+    *ASSESSMENT_SCORE_FIELDS,
+    "downside_pct",
+    "base_upside_pct",
+    "valuation_horizon_months",
+    "hard_blockers",
+    "soft_gaps",
+    "evidence_refs",
+    "run_id",
 )
 HARD_BLOCKERS = frozenset(
     {
@@ -215,10 +236,43 @@ def upsert_assessment(
     """Insert or replace one current comparable security assessment."""
 
     columns = contract_by_name(repository_root, "security_assessments").columns
-    values = _exact_strings(raw, columns, label="assessment")
+    if raw.get("assessment_schema_version") == "2":
+        agent_values = _exact_strings(raw, ASSESSMENT_V2_AGENT_FIELDS, label="assessment_v2")
+        try:
+            normalized_v2 = normalize_v2_assessment(repository_root, settings, agent_values)
+        except (CanonicalValueError, ValuationError, ValueError) as exc:
+            raise ResearchStateError(f"assessment v2 is invalid: {exc}") from exc
+        values = {
+            "security_id": agent_values["security_id"],
+            "assessed_at": agent_values["assessed_at"],
+            "expires_at": agent_values["expires_at"],
+            "eligibility": agent_values["eligibility"],
+            "confidence": agent_values["confidence"],
+            **{field: agent_values[field] for field in ASSESSMENT_SCORE_FIELDS},
+            "downside_pct": normalized_v2["bear_return_pct"],
+            "base_upside_pct": normalized_v2["base_return_pct"],
+            "valuation_horizon_months": agent_values["valuation_horizon_months"],
+            "hard_blockers": agent_values["hard_blockers"],
+            "soft_gaps": agent_values["soft_gaps"],
+            "evidence_refs": agent_values["evidence_refs"],
+            "run_id": agent_values["run_id"],
+            **normalized_v2,
+        }
+    else:
+        legacy = _exact_strings(raw, LEGACY_ASSESSMENT_FIELDS, label="assessment")
+        values = {
+            **legacy,
+            **{field: "" for field in ASSESSMENT_V2_OUTPUT_FIELDS},
+            "assessment_schema_version": "legacy_v1",
+        }
+    values = _exact_strings(values, columns, label="normalized_assessment")
     _required(
         values,
-        tuple(field for field in columns if field not in {"hard_blockers", "soft_gaps"}),
+        tuple(
+            field
+            for field in LEGACY_ASSESSMENT_FIELDS
+            if field not in {"hard_blockers", "soft_gaps", "downside_pct", "base_upside_pct"}
+        ),
         label="assessment",
     )
     _identifier(values["security_id"], label="security_id")
@@ -237,8 +291,9 @@ def upsert_assessment(
             raise ResearchStateError(f"assessment.{field} must be integer decimal text in 0-100")
         values[field] = decimal_text(score)
     for field in ("downside_pct", "base_upside_pct"):
-        value = required_decimal(values[field], label=field)
-        values[field] = decimal_text(value)
+        if values[field]:
+            value = required_decimal(values[field], label=field)
+            values[field] = decimal_text(value)
     try:
         horizon = int(values["valuation_horizon_months"])
     except ValueError as exc:
@@ -312,7 +367,6 @@ def upsert_assessment(
     )
     previous_assessment_id = current_history["assessment_id"] if current_history else ""
     assessment_identity = {
-        "assessment_schema_version": "1",
         **values,
         "source_operation_id": source_operation_id,
         "source_result_path": source_result_path,

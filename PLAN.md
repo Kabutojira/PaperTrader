@@ -80,7 +80,7 @@ Changed the seven-day schedule to timezone-aware 17:00 Europe/Rome, migrated liv
 
 Merged distinct same-security and repeat-day alert causes into one pre-claim research payload with rising priority; introduced bounded quick checks for securities fully reviewed within ten days, including deterministic escalation back to standard research; and added a final sequential daily podcast operation that collects accepted run changes, writes an evidence-grounded long-form script, uses scoped Hermes TTS, validates and assembles a roughly twenty-minute MP3, and remains one-way from investment decisions.
 
-## Step 17 — Preserve and compare research revisions — Planned
+## Step 17 — Preserve and compare research revisions — Complete (2026-07-30)
 
 ### Outcome
 
@@ -119,7 +119,7 @@ Every security refresh explicitly consumes the previous maintained research and 
 - A historical assessment can be retrieved by immutable ID after any number of later updates.
 - Tests cover first research, unchanged refresh, materially changed refresh, contradiction preservation, stale prior evidence, and retry idempotence.
 
-## Step 18 — Introduce scenario-complete valuation and anchored research rubrics — Planned
+## Step 18 — Introduce scenario-complete valuation and anchored research rubrics — Complete (2026-07-30)
 
 ### Outcome
 

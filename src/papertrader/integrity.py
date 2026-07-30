@@ -53,6 +53,8 @@ REQUIRED_LAYOUT = (
     "schemas/seekingalpha_schedule.schema.json",
     "schemas/youtube_scan.schema.json",
     "schemas/csv_contracts.yaml",
+    "schemas/valuation_templates.yaml",
+    "schemas/research_rubrics.yaml",
     "data/wiki/SCHEMA.md",
     "data/wiki/index.md",
     "data/wiki/log.md",
@@ -188,7 +190,13 @@ def validate_csv_files(repository_root: Path) -> list[str]:
         except (OSError, UnicodeError, csv.Error) as exc:
             errors.append(f"cannot read {contract.path}: {exc}")
             continue
-        if header != list(contract.columns):
+        legacy_assessment_prefix = (
+            contract.name == "security_assessments"
+            and header is not None
+            and list(contract.columns[: len(header)]) == header
+            and header[-1:] == ["run_id"]
+        )
+        if header != list(contract.columns) and not legacy_assessment_prefix:
             errors.append(
                 f"header mismatch for {contract.path}: expected {list(contract.columns)!r}, "
                 f"got {header!r}"
@@ -654,11 +662,20 @@ def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, s
     path = repository_root.joinpath(*contract.path.parts)
     with path.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
-        if reader.fieldnames != list(contract.columns):
+        legacy_assessment_prefix = (
+            contract.name == "security_assessments"
+            and reader.fieldnames is not None
+            and list(contract.columns[: len(reader.fieldnames)]) == reader.fieldnames
+            and reader.fieldnames[-1:] == ["run_id"]
+        )
+        if reader.fieldnames != list(contract.columns) and not legacy_assessment_prefix:
             raise ContractError(f"header mismatch for {contract.path}")
         rows = list(reader)
     if any(None in row for row in rows):
         raise ContractError(f"surplus values in {contract.path}")
+    for row in rows:
+        for column in contract.columns:
+            row.setdefault(column, "")
     return rows
 
 
@@ -683,7 +700,7 @@ def validate_assessment_history(repository_root: Path) -> list[str]:
         expected_previous = previous["assessment_id"] if previous else ""
         if row["previous_assessment_id"] != expected_previous:
             errors.append(f"broken assessment history chain: {assessment_id}")
-        if row["assessment_schema_version"] not in {"1", "legacy_v1"}:
+        if row["assessment_schema_version"] not in {"1", "2", "legacy_v1"}:
             errors.append(f"unknown assessment history schema version: {assessment_id}")
         if row["research_page_hash"] and not re.fullmatch(
             r"[a-f0-9]{64}", row["research_page_hash"]
@@ -768,6 +785,13 @@ def validate_integrity(
     errors.extend(validate_layout(repository_root))
     errors.extend(validate_csv_files(repository_root))
     errors.extend(validate_assessment_history(repository_root))
+    from papertrader.valuation import validate_research_rubrics, valuation_templates
+
+    errors.extend(validate_research_rubrics(repository_root))
+    try:
+        valuation_templates(repository_root)
+    except (OSError, ValueError) as exc:
+        errors.append(f"invalid valuation templates: {exc}")
     errors.extend(validate_json_schemas(repository_root))
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))

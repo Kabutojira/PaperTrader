@@ -34,7 +34,13 @@ def read_csv(path: Path, columns: Sequence[str]) -> list[dict[str, str]]:
 
     with path.open("r", encoding="utf-8", newline="") as handle:
         reader = csv.DictReader(handle)
-        if reader.fieldnames != list(columns):
+        legacy_assessment_prefix = (
+            path.name == "security_assessments.csv"
+            and reader.fieldnames is not None
+            and list(columns[: len(reader.fieldnames)]) == reader.fieldnames
+            and reader.fieldnames[-1:] == ["run_id"]
+        )
+        if reader.fieldnames != list(columns) and not legacy_assessment_prefix:
             raise CanonicalValueError(
                 f"header mismatch for {path}: expected {list(columns)!r}, got {reader.fieldnames!r}"
             )
@@ -42,6 +48,8 @@ def read_csv(path: Path, columns: Sequence[str]) -> list[dict[str, str]]:
     for index, row in enumerate(rows, start=2):
         if None in row:
             raise CanonicalValueError(f"row {index} in {path} has surplus values")
+        for column in columns:
+            row.setdefault(column, "")
         require_columns(row, columns, label=f"row {index} in {path}")
         if any("\x00" in value for value in row.values()):
             raise CanonicalValueError(f"row {index} in {path} contains a NUL byte")
@@ -60,10 +68,20 @@ def _normalized_rows(
 ) -> list[dict[str, object]]:
     normalized: list[dict[str, object]] = []
     for index, row in enumerate(rows, start=1):
-        require_columns(row, columns, label=f"{label} row {index}")
+        source = dict(row)
+        legacy_assessment = (
+            label == "security_assessments"
+            and "run_id" in columns
+            and set(source) == set(columns[: columns.index("run_id") + 1])
+        )
+        if legacy_assessment:
+            for column in columns:
+                source.setdefault(column, "")
+            source["assessment_schema_version"] = "legacy_v1"
+        require_columns(source, columns, label=f"{label} row {index}")
         converted: dict[str, object] = {}
         for column in columns:
-            value = row[column]
+            value = source[column]
             if value is None:
                 value = ""
             if isinstance(value, float):

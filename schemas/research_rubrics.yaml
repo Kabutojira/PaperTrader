@@ -1,0 +1,44 @@
+version: 1
+dimensions:
+  thesis_score:
+    20: Primary evidence contradicts the causal thesis.
+    40: The thesis is plausible but weakly evidenced or materially impaired.
+    60: Current primary evidence supports the thesis with balanced uncertainties.
+    80: Multiple current primary sources strongly support the causal thesis.
+    100: Decisive current evidence supports the thesis and its falsifiable mechanism.
+  business_quality_score:
+    20: Structurally weak economics with no demonstrated durable advantage.
+    40: Mixed economics or a fragile competitive position.
+    60: Adequate returns and competitive durability through a cycle.
+    80: Strong recurring economics and durable competitive advantages.
+    100: Exceptional durable economics with demonstrated reinvestment runway.
+  balance_sheet_score:
+    20: Financing or solvency risk threatens the thesis.
+    40: Material leverage, dilution, or refinancing sensitivity.
+    60: Adequate liquidity and manageable obligations.
+    80: Strong liquidity, low refinancing risk, and resilient funding.
+    100: Net financial strength provides substantial downside protection.
+  valuation_score:
+    20: Scenario-complete valuation indicates severe overvaluation.
+    40: Expected return is below the economic hurdle.
+    60: Fairly valued with balanced expected return.
+    80: Attractive expected return and margin of safety.
+    100: Exceptional scenario-weighted return with robust downside protection.
+  timing_score:
+    20: Near-term evidence or catalyst timing is adverse.
+    40: Entry timing is weak or catalysts are distant.
+    60: Timing is neutral with a defined review window.
+    80: Current evidence and catalysts support timely entry.
+    100: Multiple dated catalysts align with unusually favorable entry conditions.
+  liquidity_score:
+    20: The instrument cannot be entered or exited within the paper mandate.
+    40: Material spread, volume, sizing, or transferability constraints.
+    60: Adequate liquidity for bounded sizing.
+    80: Strong routine liquidity with limited expected market impact.
+    100: Deep, resilient liquidity across stressed and normal conditions.
+  risk_penalty:
+    20: Minimal residual risks after explicit scenario treatment.
+    40: Limited residual risks requiring monitoring.
+    60: Material residual risks constrain sizing.
+    80: Severe residual risks make allocation exceptional only.
+    100: Unbounded or thesis-threatening risk requires a hard blocker.
