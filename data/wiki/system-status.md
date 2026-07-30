@@ -7,14 +7,14 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_72919311ec8957f7a3c2"
-as_of: "2026-07-30T05:33:10Z"
+snapshot_id: "decision_36f7594ab9045cc12fc2"
+as_of: "2026-07-30T06:47:17Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_72919311ec8957f7a3c2`
-**As of:** `2026-07-30T05:33:10Z`
+**Publication snapshot:** `decision_36f7594ab9045cc12fc2`
+**As of:** `2026-07-30T06:47:17Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -31,7 +31,7 @@ as_of: "2026-07-30T05:33:10Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 139
+- Research backlog: 134
 - Last successful daily run: `2026-07-30T00:22:18Z`
 
 ## Current issues by investment impact
@@ -122,7 +122,7 @@ as_of: "2026-07-30T05:33:10Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 139 active operations.
+Showing 20 of 134 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 

@@ -1,0 +1,22 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-07-30T06:43:19Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-07-30T06:43:19Z"
+    }
+  ],
+  "operation_id": "01KYQCTS30N4W5CD6Y5Z62ZBR1",
+  "run_id": "gha-30518997759-1"
+}

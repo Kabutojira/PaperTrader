@@ -7,8 +7,8 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-report-generator
-run_id: "gha-30514477459-1"
-snapshot_id: "decision_72919311ec8957f7a3c2"
+run_id: "gha-30518997759-1"
+snapshot_id: "decision_36f7594ab9045cc12fc2"
 ---
 
 # PaperTrader daily report — 2026-07-30
@@ -20,8 +20,8 @@ snapshot_id: "decision_72919311ec8957f7a3c2"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Attention required
-- **As of:** `2026-07-30T05:33:10Z`
-- **Snapshot:** `decision_72919311ec8957f7a3c2`
+- **As of:** `2026-07-30T06:47:17Z`
+- **Snapshot:** `decision_36f7594ab9045cc12fc2`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 10000 EUR (100%)
@@ -37,9 +37,12 @@ No actionable trade signals.
 
 ## Price action alerts
 
+- **[YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661): Rsi Oversold** (`2026-07-29`)
+  - Research: **succeeded**
+  - Decision: Classified YASKAWA Electric's 2026-07-01 through 2026-07-29 Frankfurt-line RSI-oversold transition as risk, not an actionable opportunity. The EUR 25 close was 36.22% below the period start and RSI was 28.44. Yaskawa's July 10 primary evidence supplies a plausible operating contributor—group operating profit fell 19.2% and Robotics operating profit fell 82.3% amid ERP disruption and European restructuring—but unchanged guidance and strong semiconductor orders do not establish a thesis break. The monitored XFRA line remains a hard liquidity blocker; a subsequent deterministic refresh revised July 29 volume from 30 shares to zero without changing OHLC, adjusted close, or the oversold state. Updated the maintained security page to correct the RSI and volume-z-score labels and preserve both snapshot hashes. No follow-up was created because the fresh assessment already schedules the bounded ERP, margin, valuation, parity, and liquidity review.
 - **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Bollinger Below Lower** (`2026-07-29`)
-  - Research: **skipped**
-  - Decision: Skipped a fresh exact duplicate of the Vertiv security review already materialized for this same immutable operation and alert snapshot. The canonical 2026-07-28 USD 270 mark, lower-Bollinger trigger, source-price hash, VRT/XNYS/USD identity, two registered SEC sources, maintained wiki review, and current medium-confidence baseline assessment are unchanged. The assessment still records 38.4% downside and 4.2% bounded base upside, so the alert remains valuation and execution-timing risk rather than a conviction trade candidate. No wiki, structured research, strategy, or follow-up state was changed.
+  - Research: **succeeded**
+  - Decision: Classified Vertiv's 2026-06-29 through 2026-07-28 lower-Bollinger transition as risk, not a stand-alone paper-trade opportunity. The immutable alert snapshot records a material 12.04% decline and a lower-band breach without oversold-RSI or abnormal-volume confirmation. No primary evidence available within the measured period establishes a single cause; Vertiv's subsequent Q2 release cannot explain the prior move and instead shows strong growth, margins, cash flow and raised guidance alongside project-phasing, supply-chain and working-capital execution risks. The fresh medium-confidence assessment still has only 4.2% bounded base upside versus 38.4% downside and remains excluded from allocation. No wiki update, issue, or follow-up was warranted because the exact alert analysis, current security review and scheduled review path already retain the evidence and disposition.
 - **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Volume Anomaly** (`2026-07-29`)
   - Research: **pending**
   - Decision: Deterministic price alert awaits bounded research review.
@@ -54,7 +57,7 @@ No actionable trade signals.
   - Decision: Skipped duplicate Tesla RSI-oversold opportunity research because completed operation 01KYQCTS30ZVE5AER5K9GD2VXT already reviewed the identical immutable security, 2026-06-29 through 2026-07-28 observation period, 2026-07-29T16:55:24Z market-data timestamp, RSI-oversold transition, source packet, and source-price hash. That accepted review matched the largest repricing to current primary evidence, classified the move as valuation and execution risk rather than a paper-trade opportunity, updated the maintained Tesla research and assessment, and justified no strategy or idea follow-up. Repeating the review, changing the wiki, or enqueuing another operation would duplicate completed work.
 - **[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47): Bollinger Above Upper** (`2026-07-29`)
   - Research: **succeeded**
-  - Decision: Completed the initial evidence-backed review of Spotify Technology S.A. ordinary shares after the 2026-07-28 upper-Bollinger transition. The immutable SPOT/XNYS/USD identity is unique and now linked to a maintained security page. Q1 evidence supports strong scale, margins, free cash flow, and liquidity, while the 10.59% one-month rise lacked an overbought RSI or abnormal volume and had no decisive primary-source causal explanation before the scheduled Q2 release. A bounded 12-month scenario gives 27.7% downside and 5.2% base upside, so the current assessment is medium-confidence baseline comparison only, with valuation and timing soft gaps. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor accepted canonical relationships name an idea.
+  - Decision: Classified Spotify's 2026-06-29 through 2026-07-28 upper-Bollinger transition as risk, specifically entry-timing risk with expectation noise rather than a stand-alone opportunity. The deterministic alert recorded a 10.590753% period rise, a 1.31631% upper-band exceedance, neutral-below-overbought RSI, and no abnormal-volume confirmation. Current registered primary evidence supports Spotify's operating scale, margins, cash generation, and liquidity but does not establish a cause for the move; Q2 results scheduled for August 4 are the next decisive catalyst. The maintained security review already captures this conclusion and valuation blockers, so no wiki edit or redundant follow-up was warranted.
 - **[SOFI — SoFi Technologies, Inc.](security-catalog#security-security_98470cfc01bbcde78fc2): Bollinger Below Lower** (`2026-07-29`)
   - Research: **pending**
   - Decision: Deterministic price alert awaits bounded research review.
@@ -154,20 +157,17 @@ No actionable trade signals.
 - **[ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9): Bollinger Below Lower** (`2026-07-29`)
   - Research: **pending**
   - Decision: Deterministic price alert awaits bounded research review.
-- **[YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661): Rsi Oversold** (`2026-07-29`)
-  - Research: **succeeded**
-  - Decision: Completed the initial evidence-backed review of YASKAWA Electric's Frankfurt ordinary shares after the 2026-07-29 RSI-oversold transition. YEC.F fell 36.22% from July 1 to EUR 25 and RSI reached 28.53, but the close remained above the lower Bollinger band, volume was not abnormal, and only 30 shares traded. Yaskawa's Q1 revenue rose 10.6% and strong semiconductor orders preserve the operating thesis, while operating profit fell 19.2% and Robotics profit fell 82.3% amid ERP disruption and European restructuring. A bounded 16x-20x forward-EPS scenario remains below the monitored mark, and the Frankfurt line's sparse turnover is a hard liquidity blocker. The assessment is medium-confidence ineligible. No strategy or idea refresh was created because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.
 - **[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d): Bollinger Below Lower** (`2026-07-29`)
   - Research: **succeeded**
   - Decision: Completed the initial evidence-backed review of Samsung Electronics' Vienna-traded common GDR after its 2026-07-29 lower-Bollinger transition. SSU.VI fell 26.15% from July 1 to EUR 3,220 and finished 1.71% below the lower band, but RSI was not oversold, volume was not abnormal, and only seven units traded. Samsung's record first-quarter earnings and sharply stronger second-quarter preliminary guidance disclose no operating impairment explaining the decline. The GDR's negligible Vienna liquidity and the absence of a fresh KRW/EUR plus same-timestamp cross-venue valuation bridge prevent a supportable intrinsic EUR range. The current assessment is medium-confidence ineligible with explicit liquidity and valuation blockers. No strategy or idea refresh was created because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.
 
 ## Research decisions this run
 
-- **[CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307) — succeeded:** Completed the evidence-backed review of Carlisle Companies Incorporated common stock after the 2026-07-29 volume anomaly strengthened. The immutable CSL/XNYS/USD identity is unique and now linked to a maintained security page. The shares fell 7.78% over the measured month, and July 29 volume reached 1.108 million shares with a 2.70 z-score. The af…
-- **[PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724) — succeeded:** Completed the evidence-backed review of Quanta Services, Inc. common stock after the 2026-07-29 volume anomaly strengthened. The immutable PWR/XNYS/USD identity is unique and now linked to a maintained security page. The shares fell 22.06% over the measured month; July 29 volume reached 2.045 million shares with a 3.21 z-score, RSI was 27.54, and…
-- **[ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324) — succeeded:** Completed the evidence-backed review of Enphase Energy after its 2026-07-29 volume anomaly strengthened. The immutable ENPH/XNAS/USD identity remains unique. The adjusted close fell 28.78% over the measured month to USD 35.07 while 9.449 million shares traded at a 2.45 volume z-score. Current SEC-filed Q2 evidence shows sequential improvement in r…
-- **[FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867) — succeeded:** Completed the evidence-backed Freeport-McMoRan review after the 2026-07-29 volume anomaly entered. The immutable FCX/XNYS/USD identity remains unique. Adjusted close fell 4.38% over the measured month to USD 59.99 and 2.68% on July 29 while 22.669 million shares traded at a 2.0004 volume z-score. The unchanged SEC-filed Q2 results remain the lates…
-- **[TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b) — skipped:** Skipped duplicate Tesla RSI-oversold opportunity research because completed operation 01KYQCTS30ZVE5AER5K9GD2VXT already reviewed the identical immutable security, 2026-06-29 through 2026-07-28 observation period, 2026-07-29T16:55:24Z market-data timestamp, RSI-oversold transition, source packet, and source-price hash. That accepted review matched…
+- **[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) — succeeded:** Classified Spotify's 2026-06-29 through 2026-07-28 upper-Bollinger transition as risk, specifically entry-timing risk with expectation noise rather than a stand-alone opportunity. The deterministic alert recorded a 10.590753% period rise, a 1.31631% upper-band exceedance, neutral-below-overbought RSI, and no abnormal-volume confirmation. Current r…
+- **[YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661) — succeeded:** Classified YASKAWA Electric's 2026-07-01 through 2026-07-29 Frankfurt-line RSI-oversold transition as risk, not an actionable opportunity. The EUR 25 close was 36.22% below the period start and RSI was 28.44. Yaskawa's July 10 primary evidence supplies a plausible operating contributor—group operating profit fell 19.2% and Robotics operating profi…
+- **[TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb) — succeeded:** Classified Ternium's 2026-06-29 through 2026-07-28 RSI-overbought transition as risk, not a paper-trade opportunity. The immutable NYSE ADS rose 13.35% to USD 49.33 and reached RSI 70.52 without abnormal-volume confirmation. The July 23 USTR statement supplies plausible regional-policy context but no completed policy change, Ternium economics, or…
+- **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878) — succeeded:** Classified Vertiv's 2026-06-29 through 2026-07-28 lower-Bollinger transition as risk, not a stand-alone paper-trade opportunity. The immutable alert snapshot records a material 12.04% decline and a lower-band breach without oversold-RSI or abnormal-volume confirmation. No primary evidence available within the measured period establishes a single c…
+- **[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6) — succeeded:** Classified SQM's 2026-06-29 through 2026-07-28 marginal bearish MACD crossover as risk, not a paper-trade opportunity. The 4.28% decline lacked oversold RSI, abnormal volume, or a lower-Bollinger breach; current primary evidence did not establish a negative cause, and normalized valuation remains unsupported. No follow-up was created because a fre…
 
 ## Top blocker or near miss
 
@@ -222,10 +222,11 @@ No pending paper orders.
 
 ### Evidence-linked narrative
 
-- Carlisle Companies was researched after its 2026-07-29 volume anomaly strengthened. The shares fell 7.78% over the measured month and volume reached a 2.70 z-score. Q2 revenue and adjusted EPS grew, but input and freight inflation reduced margins, first-half cash conversion was weak, and guidance now calls for flat adjusted EBITDA margin. A bounde… Evidence: `3a336b352b9b41083fa16f0d0d7e26878102247f0240d24d1d44c13d90f0b019`, `data/market/fx/USD_EUR.csv:263`, `https://www.sec.gov/Archives/edgar/data/790051/000079005126000009/q42025-ex991xearningsrelea.htm` (+1 more in the run artifacts).
-- Quanta Services was researched after its 2026-07-29 volume anomaly strengthened. The shares fell 22.06% over the measured month and volume reached a 3.21 z-score, while RSI was oversold and the close was below the lower Bollinger band. Current primary filings confirm record first-quarter growth, backlog, and higher guidance but do not explain the… Evidence: `15e13bbaa6aeb74847824041f1232bdc38423ad0f60f1feaf0db9c500bdde617`, `data/market/fx/USD_EUR.csv:263`, `https://data.sec.gov/submissions/CIK0001050915.json` (+2 more in the run artifacts).
-- Enphase Energy was researched after its 2026-07-29 volume anomaly strengthened. The shares fell 28.78% over the measured month and volume reached a 2.45 z-score. Q2 revenue and battery shipments improved sequentially, but U.S. and total revenue remained below prior-year levels, safe-harbor revenue was material, and tariff refunds distorted GAAP ma… Evidence: `8fcf5d368371d4eca10e2259441ccc2709e3cbeb54d6a0c543ad3cd00c5cf358`, `data/market/fx/USD_EUR.csv:263`, `https://www.sec.gov/Archives/edgar/data/1463101/000146310126000080/a2026q2exx991pressrelease.htm` (+1 more in the run artifacts).
-- Freeport-McMoRan was researched after its 2026-07-29 volume anomaly entered. The shares fell 4.38% over the measured month and 2.68% on July 29 while volume reached a 2.0004 z-score. The unchanged SEC-filed Q2 results remain the latest corporate filing through the alert date, so no contemporaneous filing explains the move. Grasberg recovery, Indon… Evidence: `a7eb845fdc9ec53269f4648c73619c7f149dcee990fcc7f2ecb943a1fab9b1de`, `data/market/fx/USD_EUR.csv:263`, `https://data.sec.gov/submissions/CIK0000831259.json` (+2 more in the run artifacts).
+- Spotify's 2026-07-28 upper-Bollinger transition was classified as entry-timing risk with expectation noise, not a stand-alone opportunity. The 10.59% one-month rise lacked overbought-RSI and abnormal-volume confirmation, current primary evidence did not establish a cause, and August 4 Q2 results are the next decisive catalyst. The maintained revie… Evidence: `77106c2d0040d89826c4a2bab5f7aec737b9937540497c477fe8efa7226f2e43`, `data/wiki/securities/security_2010347f1a0a5ea60f47.md`, `https://investors.spotify.com/news/default.aspx` (+2 more in the run artifacts).
+- YASKAWA Electric's Frankfurt line fell 36.22% from 1–29 July and entered RSI-oversold territory. Current issuer evidence points to Robotics execution pressure, while unchanged guidance and strong orders prevent a thesis-break conclusion. Sparse and subsequently zero-reported venue turnover plus valuation below the mark make this risk, not a paper-… Evidence: `13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8`, `15d085715e784c95486d59249904aa72c7d723a28f7f1fd58866ec716a43b91c`, `https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf` (+2 more in the run artifacts).
+- Ternium rose 13.35% from June 29 through July 28 to USD 49.33 and entered RSI-overbought territory without abnormal-volume confirmation. U.S.-Mexico steel and supply-chain talks are plausible context but do not establish Ternium economics or causation; the mark remains above the bounded base scenario and August 4 Q2 results add timing risk. Classi… Evidence: `63545778e6269646e58130dc3ec3d9a44780c65e6701f114fcf73ac3ea637c89`, `https://investors.ternium.com/events/`, `https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/joint-statement-ambassador-jamieson-greer-and-mexican-secretary-economy-marcelo-ebrard` (+2 more in the run artifacts).
+- Classified Vertiv's 29 June-28 July lower-Bollinger transition as risk rather than a stand-alone opportunity: the material decline lacked oversold-RSI and abnormal-volume confirmation, no time-matched primary evidence established a cause, and the subsequent Q2 release supports the operating thesis but not the premium valuation. The fresh assessmen… Evidence: `6015c26eb2013ddf6be465a59f79002760b86741ddb67f56aad5fd23a0f1fd38`, `data/market/prices/security_cb88f9154cfeaa15e878.csv:232,252-253`, `data/tables/allocation_targets.csv:31` (+3 more in the run artifacts).
+- SQM's marginal 2026-07-28 bearish MACD crossover followed a 4.28% one-month decline but lacked oversold RSI, abnormal volume, or a lower-band breach. Current primary evidence did not establish a negative cause, and normalized ADS valuation remains unsupported; classified as risk with no new follow-up. Evidence: `b1c6696baeeb3715701a889baed72a5e63f73b06e30fb81a728bfdf8d9414284`, `https://links.sgx.com/1.0.0/corporate-announcements/HNQGSKX1PAXMY9YZ/ac956cf9b60b1aa8da12b346ac29bca8c25d7aa2e11721001ffdaf0c4393d08f`, `https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm`.
 
 - [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81]]
 - [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0]]
@@ -252,8 +253,10 @@ No pending paper orders.
 - [[model-portfolio]]
 - [[performance]]
 - [[research-catalog]]
+- [[securities/security_2c779e81c27b78c556bb]]
 - [[securities/security_2dbe878dfc899d7ee867]]
 - [[securities/security_488a9d7f7a8573597724]]
+- [[securities/security_89969b7dac39b7db5661]]
 - [[securities/security_9b0db3bc77914b23a307]]
 - [[securities/security_f2b9760d847b2ba59324]]
 - [[security-catalog]]
@@ -359,87 +362,87 @@ No pending paper orders.
 
 ### Run diagnostics
 
-- Run ID: `gha-30514477459-1`
+- Run ID: `gha-30518997759-1`
 - Run status: `degraded`
-- Generated (UTC): `2026-07-30T05:33:10Z`
-- Decision snapshot: `decision_72919311ec8957f7a3c2`
+- Generated (UTC): `2026-07-30T06:47:17Z`
+- Decision snapshot: `decision_36f7594ab9045cc12fc2`
 
 ### Complete market freshness
 
 | Security ID | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| security_099561384c0f5e697727 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_0a56aa634d077fe5796f | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_0cf8075039299094d614 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_18a3ab0ee6086ee85d0f | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_1c055eb9b2bb1f5a8ff2 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_1e8fbdb0f45f2b413e00 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_1f9cce545ede94cd6349 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_2010347f1a0a5ea60f47 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_204be2a44063993de1a8 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_22c2b9d782a62d7a9b86 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_2433a056eb0c55961fcc | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_2c779e81c27b78c556bb | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_2dbe878dfc899d7ee867 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_33d9c44facc75c726c7d | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_37ddcbdaad296ad831f2 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_3853e54c619d597dcaa1 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_3a75fc1ccca2ee7c937a | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_3e597863f00753e8c65c | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_4627aea1bf7d8943d3d8 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_47a0b06f6c6c478d7c1e | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_488a9d7f7a8573597724 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_4b61970aa8f574446819 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_55c9ce2fdcd32dad6b8c | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_567d0d575bbd30aaa91d | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_59304f90c440def31dc5 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_61567714298b9563d1a9 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_664f93a7eaca72e76e9b | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_66cdcf90aac0d83e76f3 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_6ad1af8d10d6276a0221 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_6cf75bd0ec0aa2a20148 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_6f9a1450edceb9307c9a | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_715bde20b6e1e1320c1a | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_7bf8f4c9cc12ae410e40 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_7ca095d63423c55a90e3 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_83a56943e18793f685b0 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_8472507d7d320aa388a7 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_89969b7dac39b7db5661 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_8a5c43888d224de85c69 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_95351d928b674bbdf687 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_96ba305ee7cd586bc348 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_97f38b2cb2d5ef127f5a | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_98470cfc01bbcde78fc2 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_9b0db3bc77914b23a307 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_9d4049ed6669a52815d6 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_a5dc16f3f4b245e6c168 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_a9eb9838940ef5ceaa0c | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_ad3b1f8f59fd599f079a | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_ad5917642acbba28c1f2 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_b1f2c48e1a744f5ecf67 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_b2116dcf976c96974d7b | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_bdc2f87dadf134760c3a | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_c120e9f26ebb6159adf9 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_c150f31c30afdb4a85f9 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_c5a9e460d3350284d157 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_c86bb4e75658c07142cf | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_c9a37d277445869a8809 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_cb88f9154cfeaa15e878 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_cc4dcb8f002b61dffe00 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_cd492d97064d8574156e | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_ce9b78a4d0773c950765 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_d08d763780400dfbffce | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_d12e746b3c9d392183cc | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_dc7a111e297be528d96b | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_dc8486c1d61df62a22fd | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_dfa34d4b9050964b465e | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_eca976f0076a425ea1bb | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_ed7d5b616a196969c815 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_ef35e41886220d51c22c | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_f2b9760d847b2ba59324 | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_fb87fac302a5446a1ced | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_fe4648901e7675f157fd | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
-| security_fe5539a7d3fd9d553bce | 2026-07-29 | 2026-07-30T04:41:08Z | ok | — |
+| security_099561384c0f5e697727 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_0a56aa634d077fe5796f | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_0cf8075039299094d614 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_18a3ab0ee6086ee85d0f | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_1c055eb9b2bb1f5a8ff2 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_1e8fbdb0f45f2b413e00 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_1f9cce545ede94cd6349 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_2010347f1a0a5ea60f47 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_204be2a44063993de1a8 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_22c2b9d782a62d7a9b86 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_2433a056eb0c55961fcc | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_2c779e81c27b78c556bb | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_2dbe878dfc899d7ee867 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_33d9c44facc75c726c7d | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_37ddcbdaad296ad831f2 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_3853e54c619d597dcaa1 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_3a75fc1ccca2ee7c937a | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_3e597863f00753e8c65c | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_4627aea1bf7d8943d3d8 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_47a0b06f6c6c478d7c1e | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_488a9d7f7a8573597724 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_4b61970aa8f574446819 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_55c9ce2fdcd32dad6b8c | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_567d0d575bbd30aaa91d | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_59304f90c440def31dc5 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_61567714298b9563d1a9 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_664f93a7eaca72e76e9b | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_66cdcf90aac0d83e76f3 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_6ad1af8d10d6276a0221 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_6cf75bd0ec0aa2a20148 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_6f9a1450edceb9307c9a | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_715bde20b6e1e1320c1a | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_7bf8f4c9cc12ae410e40 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_7ca095d63423c55a90e3 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_83a56943e18793f685b0 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_8472507d7d320aa388a7 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_89969b7dac39b7db5661 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_8a5c43888d224de85c69 | 2026-07-30 | 2026-07-30T06:16:16Z | ok | — |
+| security_95351d928b674bbdf687 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_96ba305ee7cd586bc348 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_97f38b2cb2d5ef127f5a | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_98470cfc01bbcde78fc2 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_9b0db3bc77914b23a307 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_9d4049ed6669a52815d6 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_a5dc16f3f4b245e6c168 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_a9eb9838940ef5ceaa0c | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_ad3b1f8f59fd599f079a | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_ad5917642acbba28c1f2 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_b1f2c48e1a744f5ecf67 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_b2116dcf976c96974d7b | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_bdc2f87dadf134760c3a | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_c120e9f26ebb6159adf9 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_c150f31c30afdb4a85f9 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_c5a9e460d3350284d157 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_c86bb4e75658c07142cf | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_c9a37d277445869a8809 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_cb88f9154cfeaa15e878 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_cc4dcb8f002b61dffe00 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_cd492d97064d8574156e | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_ce9b78a4d0773c950765 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_d08d763780400dfbffce | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_d12e746b3c9d392183cc | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_dc7a111e297be528d96b | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_dc8486c1d61df62a22fd | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_dfa34d4b9050964b465e | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_eca976f0076a425ea1bb | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_ed7d5b616a196969c815 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_ef35e41886220d51c22c | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_f2b9760d847b2ba59324 | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_fb87fac302a5446a1ced | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_fe4648901e7675f157fd | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
+| security_fe5539a7d3fd9d553bce | 2026-07-29 | 2026-07-30T06:16:16Z | ok | — |
 
 ### Orders and executions
 
@@ -453,7 +456,7 @@ No pending paper orders.
 
 ### Allocation audit
 
-- Plan ID: `allocation_plan_9325598a4ec753188359`
+- Plan ID: `allocation_plan_056de33eecc69536c301`
 - Mode: `active`
 - Deployment budget: 1500 EUR
 - Capital allocated: 0 EUR
@@ -516,7 +519,7 @@ No pending paper orders.
 
 ### Seeking Alpha search-index leads
 
-- Schedule status: `queued`
+- Schedule status: `duplicate`
 - Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
 - Discovery status: `pending`
 
@@ -534,6 +537,11 @@ No pending paper orders.
 | 01KYRN70N0FRJ1Z01HXDJPXGFE | security_research | security_f2b9760d847b2ba59324 | succeeded | agent_result:succeeded |
 | 01KYRN70N0V0QH7E2MA773PPHC | security_research | security_2dbe878dfc899d7ee867 | succeeded | agent_result:succeeded |
 | 01KYQCTS30CHW5BQSJGWT30DEZ | opportunity_research | opportunity_33a2bff2be07c1dc59b8 | skipped | exact_duplicate_absorbed_by_security_research |
+| 01KYQCTS30FES3120JVVMRVJ7R | opportunity_research | opportunity_c886aeef4ff71b102fbe | succeeded | agent_result:succeeded |
+| 01KYQCTS30JP21DP88XJ60G0RY | opportunity_research | opportunity_1b114faf7dc649eb49f9 | succeeded | agent_result:succeeded |
+| 01KYQCTS30K8W5JYCJGWYAV0G8 | opportunity_research | opportunity_ac303545fcf6a7231591 | succeeded | agent_result:succeeded |
+| 01KYQCTS30KES7EG2C8RJCHP82 | opportunity_research | opportunity_1b4feba756dc6e068cfb | succeeded | agent_result:succeeded |
+| 01KYQCTS30N4W5CD6Y5Z62ZBR1 | opportunity_research | opportunity_0c2086ece560ec98e11a | succeeded | agent_result:succeeded |
 
 ### Complete active queue
 
@@ -624,15 +632,10 @@ No pending paper orders.
 - `ready` `01KYQ62ZT8R26C95SJ1GXG0QW3` — `wiki_ingest` for `youtube__TJFqEhxQg4`
 - `ready` `01KYQ62ZT86XNVRAADRGMGPBZW` — `wiki_ingest` for `youtube_TjrShuj_Zsg`
 - `ready` `01KYQCTS30PFZNHCBJ0BMJA20G` — `opportunity_research` for `opportunity_2c447a92e1e201e51257`
-- `ready` `01KYQCTS30FES3120JVVMRVJ7R` — `opportunity_research` for `opportunity_c886aeef4ff71b102fbe`
-- `ready` `01KYQCTS30K8W5JYCJGWYAV0G8` — `opportunity_research` for `opportunity_ac303545fcf6a7231591`
 - `ready` `01KYQCTS30ZBFGAPY776AWDFAD` — `opportunity_research` for `opportunity_b98a51165cb62bb66b8a`
 - `ready` `01KYQCTS30Z20SHWJBWPKTZQXA` — `opportunity_research` for `opportunity_35976484f7580ed6e475`
-- `ready` `01KYQCTS30JP21DP88XJ60G0RY` — `opportunity_research` for `opportunity_1b114faf7dc649eb49f9`
 - `ready` `01KYQCTS30ZPP1CTD2NTFVPQ7Z` — `opportunity_research` for `opportunity_2261a96c6e7c60b2874b`
-- `ready` `01KYQCTS30N4W5CD6Y5Z62ZBR1` — `opportunity_research` for `opportunity_0c2086ece560ec98e11a`
 - `ready` `01KYQCTS30SHPW45RA3FG14YEN` — `opportunity_research` for `opportunity_7140082cb7686078a0b5`
-- `ready` `01KYQCTS30KES7EG2C8RJCHP82` — `opportunity_research` for `opportunity_1b4feba756dc6e068cfb`
 - `ready` `01KYQWZK5R5CRMBVHMJ7DGPRR1` — `idea_research` for `idea_ai_infrastructure_power`
 - `ready` `01KYQX7VTGEFWS7H0DHXC97SC4` — `security_research` for `security_18a3ab0ee6086ee85d0f`
 - `ready` `01KYQX7VTGAA4RZ3KDABA48ZJK` — `security_research` for `security_2010347f1a0a5ea60f47`
@@ -762,28 +765,28 @@ No pending paper orders.
 
 - `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
-- `allocation_targets`: `a7303e035fa81d37ca92c3e49cd94c7b3e2b7b163bf0e35020ecb9b4bac182a6`
+- `allocation_targets`: `566927727f2f3426365c8e2f99beeb402c824d00d65ea624d04cb8a1d645fb06`
 - `cash_ledger`: `680c5eba138f06e3afc99fbd8919ef0999b97aa6cc567edaf9a11cbece564029`
 - `configuration`: `e59bd0f5bb6c768487a47cab555c41b5826d8640e9cbc626eae705a7c2af954c`
 - `csv_contracts`: `ca848cb3d9d5196f4a5e48bf3227ab5353f1532f70fd364a3bbe9e33780e9650`
 - `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `fx_aud_eur`: `41f91201d2084a3b8ced07896dc6164480c2dab9e7847a9763ec6f27e8a1e2ee`
-- `fx_gbp_eur`: `c1128db786f20998811d7900236a7b7aca9020dcadf8578d0787b8d6d20dc42f`
-- `fx_usd_eur`: `20912a5708a1240a46df9d5a5a02037baca785bddcbbaf99584b2ed3bd7ddc15`
-- `indicators`: `02ce68d2d2af6c1490af1efa515013bcb52d1c75fb614013a3af887511aac30c`
-- `issues`: `632cdd5ea59813605b60125f7843819995dc32a6f35e4e16debe8b1a88464723`
-- `market_latest`: `1547722f61b8f0010eaa3925470ca25cd3a407c03f953d6cb37a3ded09f2c490`
+- `fx_aud_eur`: `a38215a6b827aedb812f067067c6903673653724511ca478ee776659d8139fe8`
+- `fx_gbp_eur`: `feffe6c00dde11f93463d658b4338e9c7a11ac5c1edad8e99e505721a3437113`
+- `fx_usd_eur`: `b11f43c487c170b2401f5ee254abb2a04964d6787c21ddf1ab362fb6101c8f18`
+- `indicators`: `18243166b29a0dc2a63a96b2d0794c8a663cf8a7b5c46152d95335d63ae40906`
+- `issues`: `656cc1e55c89334b4d877dcb925a8967a68185214674b6be3316c97b76466a05`
+- `market_latest`: `e5a24d810b27bf9161b8162ed819483b865f551b5296675fc56550a4794fb4e2`
 - `operation_payloads`: `e435c551147b74d43c1a0cfaf6e3a880d6e71ed4471cb3535fd34b586f385f05`
-- `operations_history`: `101414559c18da963eb296668804c33b12f8c5dd86ac3e5336e08c06949972ab`
-- `operations_todo`: `4d86e388ca0defd4822ccb584749fc2d22bd4b196dc536c497e882dccba72791`
+- `operations_history`: `6833eb5e2029004ea9a8fd02198e4f9c809aafc21989855a15e8c6faedb09795`
+- `operations_todo`: `bc23a2ff012e4d4162dcecdee684c2adaceb182816ac99266c4bea15e5b6b07f`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
 - `orders`: `ed876ae7f67d9632296d12497cb334ed5c925843ac65f9691907bf7a8613a3c0`
 - `performance_daily`: `a995725d0b68f45ad65bb77c236ca218c16591d7043b8b06b84b0fee999a82bf`
 - `performance_epochs`: `bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `a6a9995dacd90bf43997b579c49c1b9ea6ac82cf73cd578dbd97559ae54394d3`
-- `runs`: `b8e2c900a19d66e0dd752b3d2941b7e3eef9943ae652210a62e4448e94079530`
+- `runs`: `d7e3177a9b26af68a0284f06bf5d6b4450e5bc4f4f2d19a623356c41d589bcba`
 - `securities`: `130a44f2f6f579fa185c38a7cc4158db78e0b6eb80a1b5bd6a4f1024bce120aa`
 - `security_assessments`: `40570863521c3d1298fcd6baf7095682bf95db66c63ddc6e18e6ce37c092b7cd`
 - `signals`: `874d3deab149ff6c97a32ad6e61f2d243a5f96559acf815dfc1cd3dc91595f41`

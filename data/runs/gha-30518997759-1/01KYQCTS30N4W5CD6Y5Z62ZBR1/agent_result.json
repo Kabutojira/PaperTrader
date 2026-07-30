@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KYQCTS30N4W5CD6Y5Z62ZBR1",
+  "status": "succeeded",
+  "summary": "Classified SQM's 2026-06-29 through 2026-07-28 marginal bearish MACD crossover as risk, not a paper-trade opportunity. The 4.28% decline lacked oversold RSI, abnormal volume, or a lower-Bollinger breach; current primary evidence did not establish a negative cause, and normalized valuation remains unsupported. No follow-up was created because a fresh assessment and its dependent lithium-idea refresh already cover the bounded next work.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market packet and accepted security-review artifact",
+      "claim": "SQM closed at USD 66.87 on 2026-07-28, down 4.28% from 2026-06-29 and 2.79% from the prior session. MACD was only USD 0.0079 below its signal, RSI was 36.17, volume was not abnormal, and the close remained above the lower Bollinger band. The immutable observation is retained under the canonical source-price hash.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "b1c6696baeeb3715701a889baed72a5e63f73b06e30fb81a728bfdf8d9414284"
+    },
+    {
+      "source": "Mt Holland lithium expansion final investment decision",
+      "claim": "The 2026-07-21 primary exchange announcement confirms long-dated capacity expansion, including an estimated USD 450-500 million nominal capital share for SQM. It adds growth optionality and capital-execution risk but does not establish a negative cause for the 2026-07-28 market alert.",
+      "url": "https://links.sgx.com/1.0.0/corporate-announcements/HNQGSKX1PAXMY9YZ/ac956cf9b60b1aa8da12b346ac29bca8c25d7aa2e11721001ffdaf0c4393d08f",
+      "observed_at": "2026-07-29T22:24:00Z",
+      "source_hash": "ac956cf9b60b1aa8da12b346ac29bca8c25d7aa2e11721001ffdaf0c4393d08f"
+    },
+    {
+      "source": "SQM Q1 2026 Form 6-K earnings release",
+      "claim": "The SEC-hosted issuer exhibit confirms lithium price-and-volume recovery and liquidity, but it does not provide the normalized lithium-price, state-take, partnership-attribution, capex, minority-interest, and ADS inputs required for defensible downside and base values.",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+      "observed_at": "2026-07-29T22:24:00Z",
+      "source_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SQM's marginal 2026-07-28 bearish MACD crossover followed a 4.28% one-month decline but lacked oversold RSI, abnormal volume, or a lower-band breach. Current primary evidence did not establish a negative cause, and normalized ADS valuation remains unsupported; classified as risk with no new follow-up."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The sole selected queue row remained running under gha-30518997759-1 with a live lease and matched the immutable opportunity, SQM identity, operation type, payload, preflight, and required skills.",
+      "The XNYS/USD/SQM/equity identity resolved to exactly one canonical security; its accepted lithium relationship, fresh ineligible assessment, valuation_unsupported blocker, and absence of positions, signals, orders, or conviction strategies were reviewed.",
+      "The immutable 2026-07-28 market observation, exact period, entered MACD transition, measurements, and source-price hash matched the retained deterministic packet and accepted security-review evidence; later market-cache advancement does not replace that historical observation.",
+      "The registered Mt Holland exchange announcement and SEC-hosted Q1 issuer exhibit hashes matched the retained citations; evidence supports timing and capital-execution risk but no negative causal attribution or valuation resolution.",
+      "No follow-up was created because dependent idea refresh 01KYQZRTMR79EG6XT5BPZGNSJY is already active from the fresh SQM security review.",
+      "Strict wiki lint passed. The command audit contains exactly one successful canonical CLI command with no content delta; no order, signal, allocation, fill, execution, cash, portfolio, performance, or accounting path was changed, and checked operation paths are not symlinks."
+    ]
+  }
+}

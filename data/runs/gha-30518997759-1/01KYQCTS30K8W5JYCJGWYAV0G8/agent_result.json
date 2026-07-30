@@ -1,0 +1,69 @@
+{
+  "operation_id": "01KYQCTS30K8W5JYCJGWYAV0G8",
+  "status": "succeeded",
+  "summary": "Classified Ternium's 2026-06-29 through 2026-07-28 RSI-overbought transition as risk, not a paper-trade opportunity. The immutable NYSE ADS rose 13.35% to USD 49.33 and reached RSI 70.52 without abnormal-volume confirmation. The July 23 USTR statement supplies plausible regional-policy context but no completed policy change, Ternium economics, or proven price-move causation. The current mark remains above the bounded USD 43.60 base scenario, Q2 results after the August 4 close add timing risk, and the fresh security review already queued the one accepted nearshoring-idea refresh. Updated the maintained security page and research log; no additional follow-up was created.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic RSI-overbought candidate packet",
+      "claim": "For immutable security_2c779e81c27b78c556bb, the canonical observation runs from 2026-06-29 through 2026-07-28. TX closed at USD 49.33 after a 13.3502% period rise, entered RSI-overbought with strength 0.017429371 from zero previous strength, and the triggering market retrieval timestamp was 2026-07-29T16:55:24Z.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "63545778e6269646e58130dc3ec3d9a44780c65e6701f114fcf73ac3ea637c89"
+    },
+    {
+      "source": "Ternium Q1 2026 SEC-filed results",
+      "claim": "Q1 parent-attributable profit was USD 213 million, or USD 1.09 per ADS, while operating cash flow of USD 217 million was below USD 406 million of capex. This supports the existing cash-conversion and valuation risks rather than an opportunity inference from momentum.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "af838871cbdd3ac73d3d9849ebde2ced6f5d7ed190efe18cfc690d6d121bd680"
+    },
+    {
+      "source": "Ternium 8 July 2026 sustainability Form 6-K",
+      "claim": "The issuer filing expects the Pesqueria DRI-EAF shop to begin operations in early 2027, later than the Q1 before-year-end 2026 target, preserving commissioning and execution risk despite positive share-price momentum.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "5b10e200e156cb6e2c5874519bda9d717d8fae1d327ba90caf4f2cb4993e3089"
+    },
+    {
+      "source": "USTR July 23 U.S.-Mexico joint statement",
+      "claim": "The third bilateral USMCA-review round covered steel, aluminum, automobiles, economic security, and regional supply chains, with another round planned for September. The statement disclosed no completed agreement, tariff change, or Ternium-specific volume, price, utilization, margin, or cash-flow effect, so it is plausible context rather than a proven explanation.",
+      "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/july/joint-statement-ambassador-jamieson-greer-and-mexican-secretary-economy-marcelo-ebrard",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "d1a3defb17b35feb0557eb92faa1d0954c3af89c58e5f7b76edfaf0818739f6d"
+    },
+    {
+      "source": "Ternium investor events calendar",
+      "claim": "Ternium schedules Q2 2026 results after the August 4 market close and its conference call for August 5. This is an imminent timing catalyst, not evidence explaining the July 28 move, and it is already the maintained security's bounded next review.",
+      "url": "https://investors.ternium.com/events/",
+      "observed_at": "2026-07-29T23:13:30Z",
+      "source_hash": "46105f412cdf2ca7d21ce7c87012f803841085893ce1f5be9d863265f87f8e3a"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ternium rose 13.35% from June 29 through July 28 to USD 49.33 and entered RSI-overbought territory without abnormal-volume confirmation. U.S.-Mexico steel and supply-chain talks are plausible context but do not establish Ternium economics or causation; the mark remains above the bounded base scenario and August 4 Q2 results add timing risk. Classified as risk, not a paper-trade opportunity, with no additional follow-up."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true, exactly one specified running queue row claimed by gha-30518997759-1, and preflight identification of native llm-wiki, the repository controller, and papertrader-opportunity-research with sequential execution enabled.",
+      "Validated the closed payload and matched immutable identity security_2c779e81c27b78c556bb to TX, XNYS, USD equity; the packet supplies the required entered transition, exact period, trigger measurements, market timestamp, and source-price hash.",
+      "Matched the triggering packet to the prior validated canonical security review: USD 49.33 close, 13.35% period rise, RSI 70.52, no abnormal-volume confirmation, and source hash 63545778e6269646e58130dc3ec3d9a44780c65e6701f114fcf73ac3ea637c89.",
+      "Current registered SEC, issuer, and USTR primary evidence supports policy context, commissioning risk, weak cash conversion, and imminent-results timing but does not establish a price-move cause or remove the negative base-case valuation gate.",
+      "Confirmed there is no Ternium position, live strategy, signal, or order; the accepted nearshoring relationship already has exactly one queued sequential idea refresh from the fresh security review, so this operation created no redundant follow-up.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed after the permitted wiki edits.",
+      "command_audit.json contains exactly the four canonical project CLI commands listed in commands_run, each with exit code zero and no structured-state changes.",
+      "No issue, queue mutation, allocation target/history, signal, order, fill, execution, cash, portfolio, performance, accounting, or raw-source path was changed; the two edited wiki files and operation artifact directory are not symlinks."
+    ]
+  }
+}

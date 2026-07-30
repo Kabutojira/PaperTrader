@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-07-29"
-updated: "2026-07-29"
+updated: "2026-07-30"
 provenance: "source_yaskawa_fy2026_q1_results; source_yaskawa_fy2026_q1_briefing; source_yaskawa_fy2026_q1_qa; deterministic market cache"
 security_id: security_89969b7dac39b7db5661
 issuer_id: issuer_a10383b9a5262a1907f8
@@ -42,10 +42,12 @@ ticker-only reference to the more liquid Japanese line.
 ## Alert review
 
 The adjusted close fell from EUR 39.20 on 1 July to EUR 25.00 on 29 July, a **36.22%** decline over
-the canonical observation period. RSI was **28.53**, crossing into oversold territory. The close
-remained above the EUR 21.83 lower Bollinger band, volume anomaly was only **0.71**, and 29 July
-turnover was **30 shares**. Eight of 21 July sessions and 125 of 254 cached sessions recorded zero
-volume.
+the canonical observation period. RSI was **28.44**, crossing into oversold territory. The close
+remained above the EUR 21.83 lower Bollinger band and the volume z-score was **-0.46** in the
+triggering snapshot. That snapshot reported 29 July turnover of 30 shares; a subsequent provider
+refresh revised the same bar to zero volume without changing its OHLC or adjusted close. The
+refreshed cache has nine of 21 observation-period sessions and 126 of 254 cached sessions at zero
+volume, strengthening rather than resolving the venue-liquidity concern.
 
 The move spans Yaskawa's 10 July first-quarter results. Those results provide a plausible
 fundamental contributor: revenue increased 10.6%, while operating profit fell 19.2% and profit
@@ -108,8 +110,11 @@ fresh cross-venue parity check confirms the EUR line is representative.
 - [Yaskawa FY2026 first-quarter results, 10 July 2026](https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf)
 - [Yaskawa FY2026 first-quarter results briefing](https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_haifu_en.pdf)
 - [Yaskawa FY2026 first-quarter briefing Q&A](https://www.yaskawa-global.com/wp-content/uploads/2026/07/261Q_QA_EN.pdf)
-- PaperTrader market and indicator caches as of `2026-07-29T16:55:24Z`, source-price hash
-  `13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8`
+- PaperTrader triggering market and indicator snapshot as of `2026-07-29T16:55:24Z`, source-price
+  hash `13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8`
+- PaperTrader subsequent cache refresh at `2026-07-30T06:16:16Z`, which preserved the EUR 25.00
+  close and RSI-oversold state while revising 29 July volume to zero; source-price hash
+  `15d085715e784c95486d59249904aa72c7d723a28f7f1fd58866ec716a43b91c`
 
 Review by **2026-08-31**, or earlier after evidence that ERP operations stabilized, a material
 forecast change, or a durable improvement in Frankfurt liquidity.

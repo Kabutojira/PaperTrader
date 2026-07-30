@@ -7,13 +7,13 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_72919311ec8957f7a3c2"
-as_of: "2026-07-30T05:33:10Z"
+snapshot_id: "decision_36f7594ab9045cc12fc2"
+as_of: "2026-07-30T06:47:17Z"
 ---
 
 # Signals
 
-**Snapshot `decision_72919311ec8957f7a3c2` · As of `2026-07-30T05:33:10Z`**
+**Snapshot `decision_36f7594ab9045cc12fc2` · As of `2026-07-30T06:47:17Z`**
 
 ## Actionable trade signals
 
@@ -25,14 +25,23 @@ No pending paper orders.
 
 ## Research alerts — not trade signals
 
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-07-29`
+- Research status: `succeeded`
+- Conclusion: Classified YASKAWA Electric's 2026-07-01 through 2026-07-29 Frankfurt-line RSI-oversold transition as risk, not an actionable opportunity. The EUR 25 close was 36.22% below the period start and RSI was 28.44. Yaskawa's July 10 primary evidence supplies a plausible operating contributor—group operating profit fell 19.2% and Robotics operating profit fell 82.3% amid ERP disruption and European restructuring—but unchanged guidance and strong semiconductor orders do not establish a thesis break. The monitored XFRA line remains a hard liquidity blocker; a subsequent deterministic refresh revised July 29 volume from 30 shares to zero without changing OHLC, adjusted close, or the oversold state. Updated the maintained security page to correct the RSI and volume-z-score labels and preserve both snapshot hashes. No follow-up was created because the fresh assessment already schedules the bounded ERP, margin, valuation, parity, and liquidity review.
+
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-07-29`
-- Research status: `skipped`
-- Conclusion: Skipped a fresh exact duplicate of the Vertiv security review already materialized for this same immutable operation and alert snapshot. The canonical 2026-07-28 USD 270 mark, lower-Bollinger trigger, source-price hash, VRT/XNYS/USD identity, two registered SEC sources, maintained wiki review, and current medium-confidence baseline assessment are unchanged. The assessment still records 38.4% downside and 4.2% bounded base upside, so the alert remains valuation and execution-timing risk rather than a conviction trade candidate. No wiki, structured research, strategy, or follow-up state was changed.
+- Research status: `succeeded`
+- Conclusion: Classified Vertiv's 2026-06-29 through 2026-07-28 lower-Bollinger transition as risk, not a stand-alone paper-trade opportunity. The immutable alert snapshot records a material 12.04% decline and a lower-band breach without oversold-RSI or abnormal-volume confirmation. No primary evidence available within the measured period establishes a single cause; Vertiv's subsequent Q2 release cannot explain the prior move and instead shows strong growth, margins, cash flow and raised guidance alongside project-phasing, supply-chain and working-capital execution risks. The fresh medium-confidence assessment still has only 4.2% bounded base upside versus 38.4% downside and remains excluded from allocation. No wiki update, issue, or follow-up was warranted because the exact alert analysis, current security review and scheduled review path already retain the evidence and disposition.
 
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
@@ -77,7 +86,7 @@ No pending paper orders.
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-07-29`
 - Research status: `succeeded`
-- Conclusion: Completed the initial evidence-backed review of Spotify Technology S.A. ordinary shares after the 2026-07-28 upper-Bollinger transition. The immutable SPOT/XNYS/USD identity is unique and now linked to a maintained security page. Q1 evidence supports strong scale, margins, free cash flow, and liquidity, while the 10.59% one-month rise lacked an overbought RSI or abnormal volume and had no decisive primary-source causal explanation before the scheduled Q2 release. A bounded 12-month scenario gives 27.7% downside and 5.2% base upside, so the current assessment is medium-confidence baseline comparison only, with valuation and timing soft gaps. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor accepted canonical relationships name an idea.
+- Conclusion: Classified Spotify's 2026-06-29 through 2026-07-28 upper-Bollinger transition as risk, specifically entry-timing risk with expectation noise rather than a stand-alone opportunity. The deterministic alert recorded a 10.590753% period rise, a 1.31631% upper-band exceedance, neutral-below-overbought RSI, and no abnormal-volume confirmation. Current registered primary evidence supports Spotify's operating scale, margins, cash generation, and liquidity but does not establish a cause for the move; Q2 results scheduled for August 4 are the next decisive catalyst. The maintained security review already captures this conclusion and valuation blockers, so no wiki edit or redundant follow-up was warranted.
 
 ### SOFI — SoFi Technologies, Inc.
 
@@ -375,15 +384,6 @@ No pending paper orders.
 - Market date: `2026-07-29`
 - Research status: `pending`
 - Conclusion: Deterministic price alert awaits bounded research review.
-
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-07-29`
-- Research status: `succeeded`
-- Conclusion: Completed the initial evidence-backed review of YASKAWA Electric's Frankfurt ordinary shares after the 2026-07-29 RSI-oversold transition. YEC.F fell 36.22% from July 1 to EUR 25 and RSI reached 28.53, but the close remained above the lower Bollinger band, volume was not abnormal, and only 30 shares traded. Yaskawa's Q1 revenue rose 10.6% and strong semiconductor orders preserve the operating thesis, while operating profit fell 19.2% and Robotics profit fell 82.3% amid ERP disruption and European restructuring. A bounded 16x-20x forward-EPS scenario remains below the monitored mark, and the Frankfurt line's sparse turnover is a hard liquidity blocker. The assessment is medium-confidence ineligible. No strategy or idea refresh was created because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.
 
 ### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
 

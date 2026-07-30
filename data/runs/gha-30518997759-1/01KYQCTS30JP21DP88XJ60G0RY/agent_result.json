@@ -1,0 +1,69 @@
+{
+  "operation_id": "01KYQCTS30JP21DP88XJ60G0RY",
+  "status": "succeeded",
+  "summary": "Classified YASKAWA Electric's 2026-07-01 through 2026-07-29 Frankfurt-line RSI-oversold transition as risk, not an actionable opportunity. The EUR 25 close was 36.22% below the period start and RSI was 28.44. Yaskawa's July 10 primary evidence supplies a plausible operating contributor—group operating profit fell 19.2% and Robotics operating profit fell 82.3% amid ERP disruption and European restructuring—but unchanged guidance and strong semiconductor orders do not establish a thesis break. The monitored XFRA line remains a hard liquidity blocker; a subsequent deterministic refresh revised July 29 volume from 30 shares to zero without changing OHLC, adjusted close, or the oversold state. Updated the maintained security page to correct the RSI and volume-z-score labels and preserve both snapshot hashes. No follow-up was created because the fresh assessment already schedules the bounded ERP, margin, valuation, parity, and liquidity review.",
+  "evidence": [
+    {
+      "source": "PaperTrader triggering market and indicator snapshot",
+      "claim": "For immutable security_89969b7dac39b7db5661 on XFRA, adjusted close fell from EUR 39.20 on 2026-07-01 to EUR 25.00 on 2026-07-29, a 36.22% decline. RSI was 28.43761451, the close remained above the EUR 21.83217483 lower Bollinger band, volume z-score was -0.46046554, and rsi_oversold was the active transition.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "13913fe9f36b6c39970bc802b6f80acc2755effa73cd8b31d7606adf7e8f16a8"
+    },
+    {
+      "source": "PaperTrader subsequent market and indicator cache refresh",
+      "claim": "The 2026-07-30 refresh preserved the July 29 EUR 25 OHLC-adjusted-close endpoint and RSI-oversold state but revised that bar's volume from 30 shares to zero. Nine of 21 observation-period sessions and 126 of 254 cached sessions then had zero volume, reinforcing the venue-liquidity blocker rather than creating an opportunity.",
+      "observed_at": "2026-07-30T06:16:16Z",
+      "source_hash": "15d085715e784c95486d59249904aa72c7d723a28f7f1fd58866ec716a43b91c"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_results",
+      "claim": "Yaskawa reported first-quarter revenue up 10.6%, operating profit down 19.2%, and profit attributable to owners down 21.7%, while retaining its full-year forecast. This is material operating-risk evidence but does not by itself prove thesis invalidation.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf",
+      "observed_at": "2026-07-29T23:32:00Z",
+      "source_hash": "32f00d6aeff7e750ea1a54896e723f59b272c4236253ddcb415faa595d4dcc61"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_briefing",
+      "claim": "Motion Control operating profit rose 50.1%, while Robotics operating profit fell 82.3% amid ERP-related production disruption and European restructuring. The segment divergence provides a plausible contributor to the alert-period decline and supports a risk classification.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_haifu_en.pdf",
+      "observed_at": "2026-07-29T23:32:00Z",
+      "source_hash": "fda67a88e5f61f7b6b848648edce6aa6b86cff58fe500b097951bf211efa5bb2"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_qa",
+      "claim": "Management reported semiconductor-related AC-servo orders up more than 200% year on year and semiconductor Robotics orders up 141%, while expecting ERP operations to normalize. Those countervailing facts prevent the price move from being treated as a confirmed thesis break or as sufficient evidence for a trade.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/261Q_QA_EN.pdf",
+      "observed_at": "2026-07-29T23:32:00Z",
+      "source_hash": "a6cf0582347d96dc98edf68163a66e52e1ecb40b277313689b88b051c8db125e"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/log.md",
+    "data/wiki/securities/security_89969b7dac39b7db5661.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "YASKAWA Electric's Frankfurt line fell 36.22% from 1–29 July and entered RSI-oversold territory. Current issuer evidence points to Robotics execution pressure, while unchanged guidance and strong orders prevent a thesis-break conclusion. Sparse and subsequently zero-reported venue turnover plus valuation below the mark make this risk, not a paper-trade opportunity; no follow-up was added because a fresh bounded review is already scheduled."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true, exactly one running queue row, the gha-30518997759-1 claim, a live lease during execution, and the required llm-wiki and opportunity-research skills in preflight.",
+      "Validated the closed operation payload and matched immutable security identity security_89969b7dac39b7db5661 to YEC.F, XFRA, EUR ordinary equity.",
+      "Matched the triggering snapshot's 2026-07-01 and 2026-07-29 endpoints, RSI-oversold transition, market-data timestamp, and source-price hash to the immutable inbox packet and retained snapshot evidence.",
+      "Reconciled subsequent provider drift: OHLC, adjusted close, period return, and trigger state were unchanged, while July 29 volume was revised from 30 to zero and the new source hash was preserved separately.",
+      "Current registered primary issuer evidence supports operating-execution risk but not thesis invalidation; the fresh canonical assessment remains medium-confidence ineligible with liquidity_insufficient as a hard blocker.",
+      "Confirmed there is no position, strategy, or accepted canonical relationship for this security and that no additional follow-up is justified beyond the already scheduled bounded review.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed after the permitted wiki edits.",
+      "command_audit.json contains exactly the four canonical project CLI commands listed in commands_run, all with exit code zero and no structured-state changes.",
+      "No issue, queue mutation, allocation, signal, order, fill, execution, cash, portfolio, performance, or accounting path was changed; edited wiki files and the operation artifact directory are not symlinks."
+    ]
+  }
+}

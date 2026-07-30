@@ -1,0 +1,67 @@
+{
+  "operation_id": "01KYQCTS30KES7EG2C8RJCHP82",
+  "status": "succeeded",
+  "summary": "Classified Vertiv's 2026-06-29 through 2026-07-28 lower-Bollinger transition as risk, not a stand-alone paper-trade opportunity. The immutable alert snapshot records a material 12.04% decline and a lower-band breach without oversold-RSI or abnormal-volume confirmation. No primary evidence available within the measured period establishes a single cause; Vertiv's subsequent Q2 release cannot explain the prior move and instead shows strong growth, margins, cash flow and raised guidance alongside project-phasing, supply-chain and working-capital execution risks. The fresh medium-confidence assessment still has only 4.2% bounded base upside versus 38.4% downside and remains excluded from allocation. No wiki update, issue, or follow-up was warranted because the exact alert analysis, current security review and scheduled review path already retain the evidence and disposition.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af.md:17-29",
+      "claim": "The immutable deterministic packet identifies security_cb88f9154cfeaa15e878, an entered lower-Bollinger transition for 2026-06-29 through 2026-07-28, a USD 270 snapshot close, a -12.0435225% period return, trigger strength 0.0189683 from zero, and the pinned source-price hash.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "6015c26eb2013ddf6be465a59f79002760b86741ddb67f56aad5fd23a0f1fd38"
+    },
+    {
+      "source": "data/market/prices/security_cb88f9154cfeaa15e878.csv:232,252-253",
+      "claim": "The canonical cache retains both period endpoints. A subsequent retrieval revised the July 28 close to USD 269.56 and then added the out-of-period July 29 bar; neither revision removes the measured decline or makes an endpoint missing, and the later bar is not used to redefine this operation's exact period.",
+      "observed_at": "2026-07-30T04:41:08Z"
+    },
+    {
+      "source": "data/wiki/securities/security_cb88f9154cfeaa15e878.md:29-41",
+      "claim": "The maintained security review records that the alert was not oversold or volume-confirmed, no current primary evidence established a single cause through July 28, and the after-period Q2 evidence supports a valuation and execution-timing risk classification rather than a thesis break or stand-alone buying signal.",
+      "observed_at": "2026-07-29T21:52:30Z"
+    },
+    {
+      "source": "source_vrt_q2_2026_results",
+      "claim": "The registered SEC-hosted Q2 results evidence reports strong sales, margin and adjusted free-cash-flow growth plus raised guidance, while identifying temporary supply-chain congestion and project timing; because it was released July 29, it is subsequent evidence and not proof of the cause of the July 28 transition.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+      "observed_at": "2026-07-29T21:51:59Z",
+      "source_hash": "d4d0a061a46d88b421ca10cf7d176adb19db3e56af3b053098d07cf3bb41f8bc"
+    },
+    {
+      "source": "data/tables/security_assessments.csv:31",
+      "claim": "The current Vertiv assessment is fresh through 2026-08-28, baseline eligible with medium confidence, and records 38.4% downside and 4.2% base upside with margin-of-safety, timing and valuation gaps.",
+      "observed_at": "2026-07-29T21:52:30Z"
+    },
+    {
+      "source": "data/tables/allocation_targets.csv:31",
+      "claim": "The current deterministic allocation plan assigns Vertiv zero target weight and excludes it for insufficient base upside, a missing or stale accepted relationship, a score below cash, and an inadequate upside-to-downside ratio.",
+      "observed_at": "2026-07-30T05:33:10Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Classified Vertiv's 29 June-28 July lower-Bollinger transition as risk rather than a stand-alone opportunity: the material decline lacked oversold-RSI and abnormal-volume confirmation, no time-matched primary evidence established a cause, and the subsequent Q2 release supports the operating thesis but not the premium valuation. The fresh assessment and zero-weight allocation already capture the blockers, so no follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and exactly one running queue row claimed by gha-30518997759-1 with a live lease, the expected operation type, immutable entity, payload path, and exactly llm-wiki plus papertrader-opportunity-research.",
+      "Confirmed hermes_preflight.json identifies the native llm-wiki, repository controller, and opportunity-research skill with content hashes, sequential execution, and yolo mode.",
+      "Matched security_cb88f9154cfeaa15e878 to the unique VRT/XNYS/USD/equity identity and matched the trigger, transition, period endpoints, measurements, and pinned source-price hash to the immutable candidate packet.",
+      "Confirmed both source bars remain present. The later deterministic cache revision changed the July 28 close from the packet's rounded USD 270 snapshot to USD 269.56 and added an out-of-period July 29 bar without reversing the alert classification or creating a missing/stale endpoint.",
+      "Separated evidence from inference: no time-matched primary source proves the pre-July-29 decline's cause, and the July 29 SEC evidence was used only to test thesis materiality after the measured period.",
+      "Confirmed the maintained page, registered SEC evidence, fresh assessment, and current zero-weight allocation already retain the risk classification and blockers; an additional wiki edit, issue, or follow-up would be redundant.",
+      "papertrader schema validate --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed.",
+      "commands_run exactly matches the three canonical command strings in command_audit.json.",
+      "Confirmed this operation changed no allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting, wiki, or structured research state."
+    ]
+  }
+}

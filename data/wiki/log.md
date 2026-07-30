@@ -1299,3 +1299,31 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_72919311ec8957f7a3c2`.
 
 - Generated canonical [[daily-reports/daily-report_20260730]] for run `gha-30514477459-1`.
+
+- Classified the 1–29 July RSI-oversold transition for
+  [[securities/security_89969b7dac39b7db5661|YASKAWA Electric's Frankfurt ordinary shares]] as
+  **risk**, not an oversold opportunity. The 36.22% decline spans first-quarter evidence of severe
+  Robotics profit pressure, while unchanged guidance and strong orders stop short of proving a
+  thesis break. A subsequent deterministic refresh revised 29 July volume from 30 shares to zero
+  without changing the EUR 25 close or oversold state, reinforcing the hard venue-liquidity
+  blocker. No follow-up was created because the fresh security assessment already schedules the
+  bounded ERP, margin, valuation, parity, and liquidity review.
+
+- Classified the 29 June–28 July RSI-overbought transition for
+  [[securities/security_2c779e81c27b78c556bb|Ternium]] as **risk**, not a paper-trade opportunity.
+  The 13.35% rise to USD 49.33 entered overbought territory without abnormal-volume confirmation;
+  the 23 July U.S.-Mexico steel and supply-chain talks provide plausible context but no Ternium
+  economics or proven causation. The higher mark remains above the bounded base scenario, and Q2
+  results after the 4 August close are already the next decisive review, so no follow-up was created.
+
+- Classified the 29 June–28 July bearish MACD transition for
+  [[securities/security_9d4049ed6669a52815d6|SQM]] as **risk**, not a paper-trade opportunity.
+  The USD 66.87 close was down 4.28% over the period, but the crossover was marginal, RSI was not
+  oversold, volume was not abnormal, and the close remained above the lower Bollinger band. The
+  21 July Mt Holland expansion decision adds long-dated capacity and capital-execution risk but
+  does not establish a negative cause for the move. No follow-up was created because the fresh SQM
+  assessment already retains the valuation blocker and a dependent lithium-idea refresh is queued.
+
+- Published investor decision snapshot `decision_36f7594ab9045cc12fc2`.
+
+- Generated canonical [[daily-reports/daily-report_20260730]] for run `gha-30518997759-1`.

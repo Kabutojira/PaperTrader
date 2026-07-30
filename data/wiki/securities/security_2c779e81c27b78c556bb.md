@@ -4,7 +4,7 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-29"
+updated: "2026-07-30"
 provenance: "source_ternium_july_2026_sustainability_6k; source_ternium_q1_2026_results; source_ternium_q2_2026_event; source_ustr_usmca_joint_statement_20260723; source_1272c9af68af3c39b32e; source_41b6971c55327a48da17; deterministic market cache"
 security_id: security_2c779e81c27b78c556bb
 issuer_id: issuer_bc5aa26231f1e18e929d
@@ -81,16 +81,19 @@ snapshot. Neither packet explains the move, establishes intrinsic value, overrid
 base-case upside, commissioning, and cash-conversion gates, or independently supports a trade or
 short thesis.
 
-The 29 July alert review supersedes the earlier technical context with the canonical **2026-07-28**
-observation. TX rose **13.35%** from 29 June, closed at **USD 49.33**, finished **1.26%** above its
-upper Bollinger band, and entered overbought territory at **RSI 70.52**. Volume was only **0.57
-times** its configured comparison level, so the move lacked abnormal-volume confirmation. The 23
-July USTR statement provides plausible regional-policy context: the third U.S.-Mexico review round
-covered steel, aluminum, automobiles, economic security, and regional supply chains, with further
-talks directed for September. It disclosed no completed agreement, tariff change, or Ternium volume,
-price, utilization, margin, or cash-flow effect, so causation is not established. No issuer release
-inside the observation window changed the operating thesis. Ternium schedules Q2 results after the
-4 August market close; that is the next decisive evidence rather than the momentum transition.
+The [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-bfbf989faebd|29 July RSI packet]]
+supersedes the earlier technical context with the canonical **2026-07-28** observation. TX rose
+**13.35%** from 29 June, closed at **USD 49.33**, finished **1.26%** above its upper Bollinger band,
+and entered overbought territory at **RSI 70.52**. Volume was only **0.57 times** its configured
+comparison level, so the move lacked abnormal-volume confirmation. The 23 July USTR statement
+provides plausible regional-policy context: the third U.S.-Mexico review round covered steel,
+aluminum, automobiles, economic security, and regional supply chains, with further talks directed
+for September. It disclosed no completed agreement, tariff change, or Ternium volume, price,
+utilization, margin, or cash-flow effect, so causation is not established. No issuer release inside
+the observation window changed the operating thesis. This transition is therefore **risk**, not a
+paper-trade opportunity: it raises entry and pre-results timing risk without changing intrinsic
+value. Ternium schedules Q2 results after the 4 August market close; that already-scheduled release
+is the next decisive evidence rather than a new follow-up from this indicator review.
 
 Catalysts are on-time steel-shop commissioning, rising Mexican utilization, working-capital release,
 and improving free cash flow. Invalidate if USMCA or tariffs disrupt rather than support demand,
@@ -100,9 +103,9 @@ elevated, or regional and Usiminas risks consume Mexico gains.
 ## Disposition
 
 Status: **watching**, allocation eligibility **baseline**, confidence **medium**. Review by
-**2026-08-05** after Q2 results. The July 28 move is positive policy-linked momentum but also
-valuation and pre-results timing risk, not a paper-trade opportunity. No conviction strategy is
-proposed because the later startup schedule, unproven capacity returns, cyclical normalization,
+**2026-08-05** after Q2 results. The July 28 move is positive momentum with plausible policy context
+but also valuation and pre-results timing **risk**, not a paper-trade opportunity. No conviction
+strategy is proposed because the later startup schedule, unproven capacity returns, cyclical normalization,
 11.6% base-case downside, 50.5% downside scenario, overbought timing, and imminent results fail the
 unchanged margin-of-safety and strategy gates. The accepted nearshoring relationship warrants one
 sequential idea refresh, but it does not remove the security blockers. See the complete
