@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-27"
-provenance: "source_fcx_q2_2026_results_sec"
+updated: "2026-07-30"
+provenance: "source_fcx_q2_2026_results_sec; source_fcx_sec_submissions_20260730; deterministic market cache"
 security_id: security_2dbe878dfc899d7ee867
 issuer_id: issuer_5076f0e0e1dd7cc8bca7
 confidence: medium
-next_review: "2026-08-26"
+next_review: "2026-08-29"
 ---
 
 # Freeport-McMoRan Inc. common stock
@@ -53,12 +53,30 @@ common-share economics.
 Primary evidence: [SEC-filed Q2 2026 results exhibit](https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm),
 registered as `source_fcx_q2_2026_results_sec`.
 
+## 2026-07-29 volume review
+
+The deterministic alert is valid. From 2026-06-30 through 2026-07-29, adjusted close fell 4.38%
+from USD 62.74 to USD 59.99. July 29 volume was 22.669 million shares, producing a 2.0004 volume
+z-score and a newly entered volume-anomaly state. The shares fell 2.68% that session. RSI was
+44.82, the close was below the 50-day and 200-day moving averages, and neither RSI nor Bollinger
+Bands generated a concurrent trigger. The source-price hash matches the operation payload.
+
+The SEC submissions index showed no filing after the 2026-07-23 Q2 results filing through the
+alert's market date. The volume event therefore has no independently verified contemporaneous
+company filing as a causal explanation. It may reflect continued post-results repricing, copper
+sensitivity, or unrelated trading flow, but the evidence does not distinguish among them. Treat it
+as a **risk and monitoring signal**, not a standalone opportunity or trade catalyst.
+
+Filing recency evidence: [SEC company submissions index](https://data.sec.gov/submissions/CIK0000831259.json),
+registered as `source_fcx_sec_submissions_20260730`.
+
 ## Valuation, catalysts, and risks
 
-The deterministic 2026-07-27 close is USD 62.72. A bounded 12-month downside comparison annualizes
+The deterministic 2026-07-29 close is USD 59.99. A bounded 12-month downside comparison annualizes
 reported Q2 EPS of USD 0.68 and applies 12 times earnings, producing USD 32.64, or 48.0% below the
-mark. A base comparison annualizes adjusted Q2 EPS of USD 0.74 and applies 16 times earnings,
-producing USD 47.36, or 24.5% below the mark. These scenarios are deliberately simple rather than a
+prior mark and 45.6% below the current mark. A base comparison annualizes adjusted Q2 EPS of USD
+0.74 and applies 16 times earnings, producing USD 47.36, or 21.1% below the current mark. These
+scenarios are deliberately simple rather than a
 precise intrinsic-value claim: they do not capitalize unapproved expansion options and retain a
 discount for peak copper pricing, Grasberg normalization, minority interests, and Indonesian terms.
 
@@ -71,10 +89,11 @@ than production recovers.
 
 Status: **watching**, confidence **medium**, and comparable eligibility **baseline**. Reserve life,
 current cash generation, balance-sheet capacity, and market liquidity support comparison, but both
-bounded values are below the mark. Review by **2026-08-26**, or sooner for a material Grasberg,
+bounded values remain below the mark. Review by **2026-08-29**, or sooner for a material Grasberg,
 Indonesian-license, cost, capital-allocation, or copper-price change. No conviction strategy is
-proposed because valuation and timing fail the full gate and the causal relationship review remains
-pending.
+proposed because valuation and timing fail the full gate. The accepted copper-scarcity relationship
+requires a separate sequential idea refresh so this alert disposition can be absorbed without
+editing the idea here.
 
 See [[research-catalog|the research catalog]] for the maintained security set and
 [[ideas/idea_critical_minerals_copper|the linked copper thesis]] for the causal context.

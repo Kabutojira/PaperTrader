@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 54e7a4e6d3dd52f5bc20cb80b496cf6f16e8fa8eefd1d1dfe4ee8c2b7fb15b8f
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 35.4% decline with a new RSI-oversold transition merits
+  durable review.
+related_entity_ids:
+- security_97f38b2cb2d5ef127f5a
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_97f38b2cb2d5ef127f5a
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: PL — Planet Labs PBC Class A common stock (`security_97f38b2cb2d5ef127f5a`)
+- Security: [[securities/security_97f38b2cb2d5ef127f5a|PL — Planet Labs PBC Class A common stock]] (`security_97f38b2cb2d5ef127f5a`)
 - Trigger: `rsi_oversold`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 35.4% decline with a new RSI-oversold transition merits durable review.

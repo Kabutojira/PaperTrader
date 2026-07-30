@@ -1,0 +1,23 @@
+{
+  "security_id": "security_f2b9760d847b2ba59324",
+  "issuer_id": "issuer_e9e6fe7bb54ac8a5e3ab",
+  "company_name": "Enphase Energy, Inc.",
+  "instrument_name": "Enphase Energy, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ENPH",
+  "exchange_code": "NGM",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ENPH",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Solar",
+  "status": "watching",
+  "watchlist_reason": "Direct solar, storage, and grid-flexibility exposure; reviewed after the 2026-07-29 strengthened volume anomaly.",
+  "research_summary": "Q2 battery shipments and sequential revenue improved, but U.S. demand, safe-harbor dependence, policy risk, nonrecurring tariff refunds, and unsupported valuation keep Enphase ineligible.",
+  "research_page": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+  "last_research_at": "2026-07-30T05:09:37Z",
+  "next_review_at": "2026-08-29T05:09:37Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm"
+}

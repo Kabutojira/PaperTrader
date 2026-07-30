@@ -7,13 +7,13 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0cfdae4fe3cdb1bfe9b5"
-as_of: "2026-07-30T00:22:18Z"
+snapshot_id: "decision_72919311ec8957f7a3c2"
+as_of: "2026-07-30T05:33:10Z"
 ---
 
 # Signals
 
-**Snapshot `decision_0cfdae4fe3cdb1bfe9b5` · As of `2026-07-30T00:22:18Z`**
+**Snapshot `decision_72919311ec8957f7a3c2` · As of `2026-07-30T05:33:10Z`**
 
 ## Actionable trade signals
 
@@ -67,8 +67,8 @@ No pending paper orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-07-29`
-- Research status: `succeeded`
-- Conclusion: Completed the evidence-backed review of Tesla, Inc. common stock after the 2026-07-28 RSI-oversold transition. The immutable TSLA/XNAS/USD identity is unique and now linked to a maintained security page. The shares fell 25.49% over the measured month and RSI reached 26.93, while the close remained just above the lower Bollinger band. Tesla's Q2 filing is temporally aligned with the largest repricing: revenue rose 26% and deliveries reached 480,126, but operating income fell 57%, capital expenditures nearly doubled, and the shares fell 14.52% in the first post-results session on unusually high volume. Strong liquidity supports medium-confidence baseline comparison, but a bounded revenue-multiple range gives 44.8% downside and a base value 13.6% below the USD 306.86 mark. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.
+- Research status: `skipped`
+- Conclusion: Skipped duplicate Tesla RSI-oversold opportunity research because completed operation 01KYQCTS30ZVE5AER5K9GD2VXT already reviewed the identical immutable security, 2026-06-29 through 2026-07-28 observation period, 2026-07-29T16:55:24Z market-data timestamp, RSI-oversold transition, source packet, and source-price hash. That accepted review matched the largest repricing to current primary evidence, classified the move as valuation and execution risk rather than a paper-trade opportunity, updated the maintained Tesla research and assessment, and justified no strategy or idea follow-up. Repeating the review, changing the wiki, or enqueuing another operation would duplicate completed work.
 
 ### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
 
@@ -142,7 +142,7 @@ No pending paper orders.
 - Research status: `succeeded`
 - Conclusion: Completed the evidence-backed review of PayPal Holdings, Inc. common stock after the 2026-07-28 RSI-overbought transition. The immutable PYPL/XNAS/USD identity is unique and now linked to a maintained security page. The shares rose 31.47% over the measured month and RSI reached 78.99, but the close remained below the upper Bollinger band and volume was not abnormal. PayPal's same-day Q2 release provides direct evidence for the final-session gain: TPV grew 10%, free cash flow reached USD 1.775 billion, and full-year non-GAAP EPS guidance increased to about USD 5.38. Contrary evidence includes lower operating income, a 248-basis-point non-GAAP margin contraction, and nearly flat active accounts. A bounded 8x-12x guided-EPS range gives 26.2% downside and 10.6% base upside from the USD 58.3474 mark, so the assessment is medium-confidence baseline comparison only. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted
 
-### PWR — Quanta Services, Inc.
+### [PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724)
 
 **Research alert — not a trade signal**
 
@@ -151,16 +151,16 @@ No pending paper orders.
 - Research status: `pending`
 - Conclusion: Deterministic price alert awaits bounded research review.
 
-### PWR — Quanta Services, Inc.
+### [PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-07-29`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
+- Research status: `succeeded`
+- Conclusion: Completed the evidence-backed review of Quanta Services, Inc. common stock after the 2026-07-29 volume anomaly strengthened. The immutable PWR/XNYS/USD identity is unique and now linked to a maintained security page. The shares fell 22.06% over the measured month; July 29 volume reached 2.045 million shares with a 3.21 z-score, RSI was 27.54, and the close was below the lower Bollinger band. No contemporaneous SEC filing explained the move. Record first-quarter revenue, backlog, remaining performance obligations, earnings, cash flow, and higher guidance support the grid-infrastructure thesis, but leverage, goodwill, contract execution, and valuation dominate. A bounded 25x-32x range gives 38.1% downside and 20.7% base-case downside. The medium-confidence assessment is baseline-comparison only; no conviction strategy or idea refresh was queued because the full gate failed and neither the payload nor an accepted canonical relationship names an idea.
 
-### PWR — Quanta Services, Inc.
+### [PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724)
 
 **Research alert — not a trade signal**
 
@@ -268,6 +268,15 @@ No pending paper orders.
 - Research status: `pending`
 - Conclusion: Deterministic price alert awaits bounded research review.
 
+### [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-07-29`
+- Research status: `succeeded`
+- Conclusion: Completed the evidence-backed Freeport-McMoRan review after the 2026-07-29 volume anomaly entered. The immutable FCX/XNYS/USD identity remains unique. Adjusted close fell 4.38% over the measured month to USD 59.99 and 2.68% on July 29 while 22.669 million shares traded at a 2.0004 volume z-score. The unchanged SEC-filed Q2 results remain the latest corporate filing through the alert date, so the move has no independently verified contemporaneous company-filing explanation. Grasberg recovery, Indonesian terms, and copper sensitivity remain material, while bounded 12-month scenarios imply 45.6% downside and 21.1% base-case downside. The medium-confidence baseline assessment remains non-actionable, no conviction strategy was created, and exactly one dependent idea-research refresh was queued for the accepted structural-copper-scarcity relationship.
+
 ### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
 
 **Research alert — not a trade signal**
@@ -292,17 +301,17 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-07-29`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
+- Research status: `succeeded`
+- Conclusion: Completed the evidence-backed review of Enphase Energy after its 2026-07-29 volume anomaly strengthened. The immutable ENPH/XNAS/USD identity remains unique. The adjusted close fell 28.78% over the measured month to USD 35.07 while 9.449 million shares traded at a 2.45 volume z-score. Current SEC-filed Q2 evidence shows sequential improvement in revenue and battery shipments, resilient net liquidity, and positive cash flow, but U.S. and total revenue remained below prior-year levels, safe-harbor revenue was material, and a nonrecurring tariff refund distorted GAAP margin. Normalized owner earnings and a downside-aware common-equity value remain unsupported, so the medium-confidence assessment is ineligible with valuation\_unsupported. No conviction strategy was created. Exactly one dependent idea-research refresh was queued for the accepted solar, storage, and grid-flexibility relationship.
 
-### CSL — Carlisle Companies Incorporated
+### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-07-29`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
+- Research status: `succeeded`
+- Conclusion: Completed the evidence-backed review of Carlisle Companies Incorporated common stock after the 2026-07-29 volume anomaly strengthened. The immutable CSL/XNYS/USD identity is unique and now linked to a maintained security page. The shares fell 7.78% over the measured month, and July 29 volume reached 1.108 million shares with a 2.70 z-score. The after-close Q2 release reported 8% revenue growth and 12% adjusted-EPS growth, but input and freight inflation reduced margins, first-half cash conversion was weak, and 2026 guidance now calls for flat adjusted EBITDA margin. A bounded 14x-18x normalized-EPS range gives 15.5% downside and 8.6% base upside. The medium-confidence assessment is baseline-comparison only; no conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.
 
 ### BE — Bloom Energy Corporation
 

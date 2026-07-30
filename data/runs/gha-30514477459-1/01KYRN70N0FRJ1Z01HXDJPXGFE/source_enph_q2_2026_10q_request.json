@@ -1,0 +1,18 @@
+{
+  "source_id": "source_enph_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm",
+  "source_type": "filing",
+  "title": "Enphase Energy, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a8763f0f01353d7d6ee16c0af0bf75669acb31c2e54fcedddfcc6363599eddd7",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_f2b9760d847b2ba59324",
+  "checked_at": "2026-07-30T05:09:37Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Net revenues decreased 20% year over year; U.S. revenue decreased 16%, primarily due to expiration of the federal residential clean energy tax credit under Section 25D.",
+  "summary": "The SEC-filed Q2 2026 report confirms USD 291.854 million quarterly revenue, a 20% year-over-year decline, 113.8 MWh of battery shipments, USD 937.708 million of cash and marketable securities, USD 572.836 million of debt, USD 143.194 million of six-month operating cash flow, USD 285.022 million of inventory, USD 236.1 million of purchase obligations, and 132.145 million shares outstanding. It also shows that U.S. quarterly revenue declined 16% year over year, safe-harbor shipments were USD 84.3 million, and the reported GAAP gross margin benefited by 15.6 percentage points from tariff refunds.",
+  "run_id": "gha-30514477459-1"
+}

@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: bfbf989faebd7b47f17ae5220755915f73cf93862b3bdc70d747e016f0ea480c
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material RSI overbought transition after a 13.35% one-month gain
+  merits durable wiki ingestion for review.
+related_entity_ids:
+- security_2c779e81c27b78c556bb
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2c779e81c27b78c556bb
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material RSI overbought transition after a 13.35% one-month gain merits durable wiki ingestion for review.

@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: bdcd9187383ffc3e298e115845009aa20fabf2c430f2a2561a321200efde8ca1
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material RSI oversold strengthening coincides with a 12.3% period
+  decline and merits durable review.
+related_entity_ids:
+- security_66cdcf90aac0d83e76f3
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_66cdcf90aac0d83e76f3
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material RSI oversold strengthening coincides with a 12.3% period decline and merits durable review.

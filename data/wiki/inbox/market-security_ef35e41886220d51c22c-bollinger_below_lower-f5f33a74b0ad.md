@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: f5f33a74b0ad7723c95f12ebbdade0a8acc879a5243f21926432bd47f7af2ad5
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 15.4% decline with a new Bollinger lower-band breach warrants
+  durable review.
+related_entity_ids:
+- security_ef35e41886220d51c22c
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_ef35e41886220d51c22c
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: ASML — ASML Holding N.V. New York registered shares (`security_ef35e41886220d51c22c`)
+- Security: [[securities/security_ef35e41886220d51c22c|ASML — ASML Holding N.V. New York registered shares]] (`security_ef35e41886220d51c22c`)
 - Trigger: `bollinger_below_lower`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 15.4% decline with a new Bollinger lower-band breach warrants durable review.

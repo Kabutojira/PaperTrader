@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: ed7fba71f5427854c05ad07a1cb7606ca83125e9710141c292493a6aaef1c0b4
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 12.4% period return with a new Bollinger-band breakout
+  transition merits durable review.
+related_entity_ids:
+- security_b1f2c48e1a744f5ecf67
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_b1f2c48e1a744f5ecf67
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: LH — Labcorp Holdings Inc. common stock (`security_b1f2c48e1a744f5ecf67`)
+- Security: [[securities/security_b1f2c48e1a744f5ecf67|LH — Labcorp Holdings Inc. common stock]] (`security_b1f2c48e1a744f5ecf67`)
 - Trigger: `bollinger_above_upper`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 12.4% period return with a new Bollinger-band breakout transition merits durable review.

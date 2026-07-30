@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYQCTS30CHW5BQSJGWT30DEZ",
+  "status": "skipped",
+  "reason_code": "exact_duplicate_absorbed_by_security_research",
+  "summary": "Skipped duplicate Tesla RSI-oversold opportunity research because completed operation 01KYQCTS30ZVE5AER5K9GD2VXT already reviewed the identical immutable security, 2026-06-29 through 2026-07-28 observation period, 2026-07-29T16:55:24Z market-data timestamp, RSI-oversold transition, source packet, and source-price hash. That accepted review matched the largest repricing to current primary evidence, classified the move as valuation and execution risk rather than a paper-trade opportunity, updated the maintained Tesla research and assessment, and justified no strategy or idea follow-up. Repeating the review, changing the wiki, or enqueuing another operation would duplicate completed work.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2.md and data/operations/payloads/01KYQCTS30ZVE5AER5K9GD2VXT.json",
+      "claim": "The immutable Tesla security ID, RSI-oversold trigger, entered transition, 2026-06-29 through 2026-07-28 period, 2026-07-29T16:55:24Z market-data timestamp, and canonical source-price hash match this operation's payload and source reference. The retained packet records a 25.49% period decline, USD 306.86 adjusted close, trigger strength 0.1024457156666666666666666667, previous strength zero, and the exact hash consumed by the completed security review.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source_hash": "9913c5340953f6c4e54865acd6585a21684f8f9eab95f4eafc1a7ca1f49e5c87"
+    },
+    {
+      "source": "data/operations/operations_history.csv and data/runs/local-20260729-20ops-4/01KYQCTS30ZVE5AER5K9GD2VXT/agent_result.json",
+      "claim": "Completed security-research operation 01KYQCTS30ZVE5AER5K9GD2VXT terminally succeeded at 2026-07-29T23:47:14Z after explicitly reviewing this identical RSI transition, period, source packet, and source-price hash. It classified the move as valuation and execution risk rather than a paper-trade opportunity and created no strategy or idea-refresh operation.",
+      "observed_at": "2026-07-29T23:47:14Z"
+    },
+    {
+      "source": "source_tsla_q2_2026_10q",
+      "claim": "The accepted review used Tesla's Q2 2026 Form 10-Q to establish that revenue grew 26% year over year while operating income fell 57%, capital expenditures nearly doubled, and planned 2026 capital spending exceeded USD 25 billion. This time-matched primary evidence supported the execution-risk classification despite strong liquidity.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2"
+    },
+    {
+      "source": "source_tsla_q2_2026_deliveries",
+      "claim": "Tesla's issuer release reported 480,126 vehicle deliveries and 13.5 GWh of energy-storage deployments for Q2 2026 while cautioning that production and delivery measures alone do not determine financial performance. The accepted review incorporated this constructive evidence without treating the oversold indicator as a sufficient opportunity signal.",
+      "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source_hash": "cadfa292c301e22ed474addbaf936395fdf55a77376ae031631c642f34b772d5"
+    },
+    {
+      "source": "data/wiki/securities/security_dc7a111e297be528d96b.md and data/tables/security_assessments.csv",
+      "claim": "The maintained Tesla page already retains the alert review, primary evidence, valuation range, risk classification, and next review date. The current medium-confidence baseline assessment records 44.8% downside and 13.6% base-case downside, so the move does not clear the configured opportunity gates and warrants no additional bounded follow-up.",
+      "observed_at": "2026-07-29T23:44:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed PAPER_TRADING_ONLY=true and exactly one selected queue row remained running under gha-30514477459-1 with a live lease, the immutable opportunity ID, opportunity-research type, native llm-wiki skill, and repository opportunity-research skill.",
+      "Confirmed hermes_preflight.json identifies the native llm-wiki skill and that the controller and opportunity-research skill hashes exactly match their repository files.",
+      "Matched this operation's security identity, exact period, market-data timestamp, trigger type, source packet, transition, measurements, and source-price hash to the completed security-research payload and accepted result.",
+      "Structured terminal history proves operation 01KYQCTS30ZVE5AER5K9GD2VXT already absorbed the identical trigger and completed the primary-source, materiality, valuation, and follow-up review.",
+      "Confirmed the maintained Tesla page and current assessment already retain the evidence-backed valuation and execution-risk conclusion, with no position, actionable signal, or justified follow-up operation.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all passed before the manifest write.",
+      "command_audit.json contains exactly the four canonical project CLI invocations listed in commands_run; each exited zero and recorded no changed path.",
+      "No operation artifact was a symlink, and this operation changed no wiki page, structured table, allocation state, signal, order, order leg, fill, execution, cash, portfolio, performance, or accounting ledger."
+    ]
+  }
+}

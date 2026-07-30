@@ -1,0 +1,24 @@
+{
+  "completed_at": "2026-07-30T05:33:10Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "1.25",
+  "operation_count": 5,
+  "preparation_errors": [
+    "youtube scan failed for UCESLZhusAkFfsNsApnjF_Cg: TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+    "youtube scan failed for UCIFn7ONIJHyC-lMnb7Fm_jw: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+    "youtube scan failed for UCOOSDCjFzHfnGoV8iNLC65A: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+    "youtube scan failed for UCS01CiRDAiyhR_mTHXDW23A: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+    "youtube scan failed for UCrGLm-Drgv0vbbemwwHeXJw: MsNPz0dBYDw This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+    "youtube scan failed for UCrTTBSUr0zhPU56UQljag5A: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html"
+  ],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260730.md",
+  "run_id": "gha-30514477459-1",
+  "snapshot_id": "decision_72919311ec8957f7a3c2",
+  "source_sha": "26f677f1ae58b8a8daebe5c057865b382a4309cf",
+  "started_at": "2026-07-30T04:41:08Z",
+  "status": "degraded",
+  "trigger": "workflow_dispatch"
+}

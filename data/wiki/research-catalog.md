@@ -7,8 +7,8 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0cfdae4fe3cdb1bfe9b5"
-as_of: "2026-07-30T00:22:18Z"
+snapshot_id: "decision_72919311ec8957f7a3c2"
+as_of: "2026-07-30T05:33:10Z"
 ---
 
 # Research catalog
@@ -20,8 +20,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[ALB\] RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f)
 - [\[ALB\] RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752)
 - [\[ASML\] Bollinger below lower](inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad)
+- [\[CSL\] Volume anomaly](inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508)
 - [\[ENPH\] Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
+- [\[ENPH\] Volume anomaly](inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212)
 - [\[ETN\] Bollinger below lower](inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81)
+- [\[FCX\] Volume anomaly](inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190)
 - [\[GEV\] Bollinger below lower](inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
@@ -30,6 +33,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[LUNR\] RSI oversold](inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa)
 - [\[PARRO.PA\] Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
 - [\[PL\] RSI oversold](inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd)
+- [\[PWR\] Volume anomaly](inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2)
 - [\[PYPL\] RSI overbought](inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
 - [\[RTX\] Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b)
@@ -144,6 +148,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Arista Networks, Inc. common stock](securities/security_6f9a1450edceb9307c9a)
 - [ASML Holding N.V. New York registered shares](securities/security_ef35e41886220d51c22c)
 - [Atkore Inc. common stock](securities/security_22c2b9d782a62d7a9b86)
+- [Carlisle Companies Incorporated common stock](securities/security_9b0db3bc77914b23a307)
 - [Coinbase Global, Inc. Class A common stock](securities/security_37ddcbdaad296ad831f2)
 - [CrowdStrike Holdings, Inc. Class A common stock](securities/security_8472507d7d320aa388a7)
 - [Eaton Corporation plc ordinary shares](securities/security_18a3ab0ee6086ee85d0f)
@@ -159,6 +164,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)
 - [Planet Labs PBC Class A common stock](securities/security_97f38b2cb2d5ef127f5a)
+- [Quanta Services, Inc. common stock](securities/security_488a9d7f7a8573597724)
 - [Recursion Pharmaceuticals, Inc. Class A common stock](securities/security_ed7d5b616a196969c815)
 - [Rio Tinto plc sponsored ADR](securities/security_1c055eb9b2bb1f5a8ff2)
 - [Roblox Corporation Class A common stock](securities/security_c9a37d277445869a8809)

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_enph_q2_2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000080/a2026q2exx991pressrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000080/a2026q2exx991pressrelease.htm",
+  "source_type": "issuer_release",
+  "title": "Enphase Energy Reports Financial Results for the Second Quarter of 2026",
+  "publisher": "Enphase Energy, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4959ea0d5113a98cc125d33a3ea742ae637d132bee7d71e61b6d30322005274d",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_f2b9760d847b2ba59324",
+  "checked_at": "2026-07-30T05:09:37Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second-quarter revenue was $291.9 million, including $84.3 million of safe harbor revenue; U.S. revenue decreased approximately 3% sequentially.",
+  "summary": "The SEC-hosted issuer release reports Q2 2026 revenue of USD 291.9 million, USD 84.3 million of safe-harbor revenue, 113.8 MWh of battery shipments, USD 40.3 million of operating cash flow, USD 25.9 million of free cash flow, and USD 937.7 million of cash and marketable securities. U.S. revenue declined about 3% sequentially while Europe rose about 35%. Management guided Q3 revenue to USD 290-320 million, including about USD 75 million of safe-harbor shipments, with 130-150 MWh of battery shipments and approximately two percentage points of reciprocal-tariff impact on gross margin.",
+  "run_id": "gha-30514477459-1"
+}

@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 59836b510b81847936575c82991979a36a2603420b09cc9e68ae7b6eb2e657eb
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material Bollinger-band downside transition with a 4.96% decline
+  over the review period warrants durable review.
+related_entity_ids:
+- security_18a3ab0ee6086ee85d0f
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_18a3ab0ee6086ee85d0f
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material Bollinger-band downside transition with a 4.96% decline over the review period warrants durable review.

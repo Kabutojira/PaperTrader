@@ -1,0 +1,23 @@
+{
+  "security_id": "security_9b0db3bc77914b23a307",
+  "issuer_id": "issuer_1038b47ad058326af5aa",
+  "company_name": "Carlisle Companies Incorporated",
+  "instrument_name": "Carlisle Companies Incorporated common stock",
+  "instrument_type": "equity",
+  "ticker": "CSL",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "CSL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Building Products & Equipment",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; reviewed after the 2026-07-29 strengthened volume anomaly and Q2 release.",
+  "research_summary": "Record Q2 growth and re-roofing resilience are offset by price-cost margin pressure, weak first-half cash conversion, leverage, and insufficient valuation asymmetry.",
+  "research_page": "data/wiki/securities/security_9b0db3bc77914b23a307.md",
+  "last_research_at": "2026-07-30T04:48:36Z",
+  "next_review_at": "2026-08-29T04:48:36Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm"
+}

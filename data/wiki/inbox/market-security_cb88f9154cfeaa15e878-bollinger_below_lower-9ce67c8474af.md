@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 9ce67c8474affc529f76287cc4e7f6b8c02c5dab913ad0b7fe9e21edfa5137ee
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 12% decline with a new Bollinger-band breach warrants
+  durable review.
+related_entity_ids:
+- security_cb88f9154cfeaa15e878
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_cb88f9154cfeaa15e878
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: VRT — Vertiv Holdings Co Class A common stock (`security_cb88f9154cfeaa15e878`)
+- Security: [[securities/security_cb88f9154cfeaa15e878|VRT — Vertiv Holdings Co Class A common stock]] (`security_cb88f9154cfeaa15e878`)
 - Trigger: `bollinger_below_lower`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 12% decline with a new Bollinger-band breach warrants durable review.

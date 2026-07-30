@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 917454ed7e3a7ab02934f72d22ec15b27935a8d0fe855b154ea7b186f3a67aca
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: New material Bollinger lower-band breach with a sharp monthly decline
+  merits durable review.
+related_entity_ids:
+- security_567d0d575bbd30aaa91d
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_567d0d575bbd30aaa91d
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: SSU.VI — Samsung Electronics common GDR (`security_567d0d575bbd30aaa91d`)
+- Security: [[securities/security_567d0d575bbd30aaa91d|SSU.VI — Samsung Electronics common GDR]] (`security_567d0d575bbd30aaa91d`)
 - Trigger: `bollinger_below_lower`
 - Transition: `entered`
 - Period: 2026-07-01 through 2026-07-29
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: New material Bollinger lower-band breach with a sharp monthly decline merits durable review.

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pwr_q1_2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526193918/d107542dex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526193918/d107542dex991.htm",
+  "source_type": "issuer_release",
+  "title": "Quanta Services Reports First Quarter 2026 Results",
+  "publisher": "Quanta Services, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "57b00764838dc131077ca75d86adf7200e5d6aef2dcf601fd9a8a686a03d3876",
+  "related_entity_ids": "security_488a9d7f7a8573597724",
+  "checked_at": "2026-07-30T04:59:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "First Quarter Consolidated Revenues of $7.9 Billion; Remaining Performance Obligations of $26.2 Billion and Total Backlog of $48.5 Billion.",
+  "summary": "Quanta's current Q1 release reports USD 7.875 billion revenue, USD 220.6 million net income, USD 2.68 adjusted diluted EPS, USD 391.7 million operating cash flow, USD 184.4 million free cash flow, USD 26.2 billion remaining performance obligations, and USD 48.5 billion backlog. Electric revenue grew to USD 6.469 billion and its operating margin increased to 8.7%. Management raised 2026 guidance to USD 13.55-14.25 adjusted diluted EPS and USD 1.55-2.05 billion free cash flow while identifying permitting, supply-chain, project-timing, inflation, interest-rate, and economic risks.",
+  "run_id": "gha-30514477459-1"
+}

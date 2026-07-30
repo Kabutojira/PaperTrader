@@ -1206,3 +1206,96 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_0cfdae4fe3cdb1bfe9b5`.
 
 - Generated canonical [[daily-reports/daily-report_20260730]] for run `local-20260730-maintenance-2`.
+
+- Classified [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81]] as `ingest`: Material Bollinger-band downside transition with a 4.96% decline over the review period warrants durable review.
+
+- Classified [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0]] as `ingest`: Material RSI overbought transition after a 31.47% period return merits durable wiki review.
+
+- Classified [[inbox/market-security_2010347f1a0a5ea60f47-bollinger_above_upper-fbb3838f144d]] as `ingest`: Material entry into an upper Bollinger Band trigger after a 10.6% period return warrants durable review.
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-81e6a5bddd70]] as `ingest`: Material 13.35% monthly rise with a new Bollinger-band breakout warrants durable review.
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-bfbf989faebd]] as `ingest`: Material RSI overbought transition after a 13.35% one-month gain merits durable wiki ingestion for review.
+
+- Classified [[inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0]] as `ingest`: Material 14.2% decline with a new Bollinger-below-lower transition warrants durable wiki review.
+
+- Classified [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a]] as `ingest`: New material Bollinger lower-band breach with a sharp monthly decline merits durable review.
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f]] as `ingest`: Material RSI oversold strengthening coincides with a 12.3% period decline and merits durable review.
+
+- Classified [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802]] as `ingest`: Material new RSI oversold transition with a severe period decline for the identified security.
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd]] as `ingest`: Material 35.4% decline with a new RSI-oversold transition merits durable review.
+
+- Classified [[inbox/market-security_9d4049ed6669a52815d6-macd_cross_below_signal-9e986cb6222e]] as `ingest`: A newly entered bearish MACD cross coincides with a 4.3% period decline and merits durable review.
+
+- Classified [[inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa]] as `ingest`: Material RSI oversold transition after a sharp period decline merits durable review.
+
+- Classified [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-ed7fba71f542]] as `ingest`: Material 12.4% period return with a new Bollinger-band breakout transition merits durable review.
+
+- Classified [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-f8935339ca1b]] as `ingest`: Material RSI overbought transition after a 12.4% monthly gain warrants durable review.
+
+- Classified [[inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af]] as `ingest`: Material 12% decline with a new Bollinger-band breach warrants durable review.
+
+- Classified [[inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2]] as `ingest`: Material RSI oversold transition accompanied by a substantial 25.5% period decline for the tracked security.
+
+- Classified [[inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad]] as `ingest`: Material 15.4% decline with a new Bollinger lower-band breach warrants durable review.
+
+- Classified [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63]] as `ingest`: Material 25.7% decline with a strengthened RSI-oversold transition merits durable security research context.
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190]] (97d02f6c8190).
+
+- Classified [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190]] as `ingest`: A new volume-anomaly transition coincides with a material one-month decline and merits durable review.
+
+- Created candidate packet [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2]] (276969212fe2).
+
+- Classified [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2]] as `ingest`: Material volume anomaly strengthened alongside a 22.1% period decline, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508]] (454eb81d0508).
+
+- Classified [[inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508]] as `ingest`: A strengthened volume anomaly coincides with a material 7.8% monthly decline and merits durable review.
+
+- Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212]] (74023f863212).
+
+- Classified [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212]] as `ingest`: Strengthened volume anomaly alongside a material one-month decline merits durable wiki review.
+
+- Researched [[securities/security_9b0db3bc77914b23a307|Carlisle Companies]] after its
+  2026-07-29 volume anomaly strengthened. The USD 334.54 close fell 7.78% over the observation
+  period and July 29 volume reached 1.108 million shares with a 2.70 z-score. The after-close Q2
+  release reported 8% revenue growth and 12% adjusted-EPS growth, but input and freight inflation
+  reduced margins, first-half cash conversion was weak, and guidance now calls for flat adjusted
+  EBITDA margin. A bounded 14x-18x normalized-EPS range implies 15.5% downside and 8.6% base
+  upside. The assessment is medium-confidence baseline comparison only; no conviction strategy or
+  idea refresh was created because the full gate failed and no linked idea exists.
+
+- Researched [[securities/security_488a9d7f7a8573597724|Quanta Services]] after its 2026-07-29
+  volume anomaly strengthened. The USD 561.14 close fell 22.06% over the observation period,
+  July 29 volume reached 2.045 million shares with a 3.21 z-score, RSI was 27.54, and the close
+  was below the lower Bollinger band. No contemporaneous SEC filing explained the move. Record
+  first-quarter revenue, backlog, RPO, earnings, and higher guidance support the grid-infrastructure
+  thesis, but debt, goodwill, contract execution, and a 40.4x guidance-midpoint valuation dominate.
+  A bounded 25x-32x range implies 38.1% downside and 20.7% base-case downside. The assessment is
+  medium-confidence baseline comparison only; no conviction strategy or idea refresh was created
+  because the full gate failed and neither the payload nor an accepted relationship names an idea.
+
+- Researched [[securities/security_f2b9760d847b2ba59324|Enphase Energy]] after its 2026-07-29
+  volume anomaly strengthened. The USD 35.07 close fell 28.78% over the observation period while
+  9.449 million shares traded at a 2.45 volume z-score. Q2 revenue and battery shipments improved
+  sequentially, but US and total revenue remained below prior-year levels, safe-harbour revenue was
+  material, and tariff refunds distorted GAAP margin. Net liquidity remains resilient, but a
+  normalised downside-aware valuation is unsupported. The medium-confidence assessment remains
+  ineligible, no conviction strategy was created, and the accepted solar-and-storage relationship
+  requires one sequential idea refresh.
+
+- Researched [[securities/security_2dbe878dfc899d7ee867|Freeport-McMoRan]] after its 2026-07-29
+  volume anomaly entered. The USD 59.99 close fell 4.38% over the observation period and 2.68% on
+  July 29 while 22.669 million shares traded at a 2.0004 volume z-score. The unchanged SEC-filed Q2
+  results remain the latest corporate filing through the alert date, so no contemporaneous filing
+  explains the move. Grasberg recovery, Indonesian terms, and copper sensitivity remain material,
+  while bounded 12-month scenarios imply 45.6% downside and 21.1% base-case downside. The
+  medium-confidence baseline assessment remains non-actionable; no conviction strategy was created,
+  and the accepted copper-scarcity relationship requires one sequential idea refresh.
+
+- Published investor decision snapshot `decision_72919311ec8957f7a3c2`.
+
+- Generated canonical [[daily-reports/daily-report_20260730]] for run `gha-30514477459-1`.

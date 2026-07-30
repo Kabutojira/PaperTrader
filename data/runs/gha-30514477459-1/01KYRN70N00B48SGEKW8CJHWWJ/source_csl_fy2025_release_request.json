@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csl_fy2025_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000009/q42025-ex991xearningsrelea.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000009/q42025-ex991xearningsrelea.htm",
+  "source_type": "issuer_release",
+  "title": "Carlisle Companies Reports Fourth Quarter and Full Year 2025 Results",
+  "publisher": "Carlisle Companies Incorporated via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5e0deaecc7effa3efe13dc048a1fb6e6b80db49d580578cf194c8b2552b9858d",
+  "related_entity_ids": "security_9b0db3bc77914b23a307",
+  "checked_at": "2026-07-30T04:48:36Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Full-year 2025 adjusted EPS was $19.40 and free cash flow from continuing operations was $972 million.",
+  "summary": "Issuer release furnished to the SEC providing the comparison base for normalized valuation. Full-year 2025 revenue was USD 5.020 billion, adjusted EBITDA was USD 1.225 billion at a 24.4% margin, adjusted EPS was USD 19.40, operating cash flow was USD 1.1 billion, and free cash flow from continuing operations was USD 972 million. Carlisle returned USD 1.5 billion through repurchases and dividends and held USD 1.112 billion cash at year end. The release describes durable re-roofing demand but softness in commercial, residential and non-residential new construction.",
+  "run_id": "gha-30514477459-1"
+}

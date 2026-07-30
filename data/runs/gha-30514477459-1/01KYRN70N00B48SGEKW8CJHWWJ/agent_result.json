@@ -1,0 +1,86 @@
+{
+  "operation_id": "01KYRN70N00B48SGEKW8CJHWWJ",
+  "status": "succeeded",
+  "summary": "Completed the evidence-backed review of Carlisle Companies Incorporated common stock after the 2026-07-29 volume anomaly strengthened. The immutable CSL/XNYS/USD identity is unique and now linked to a maintained security page. The shares fell 7.78% over the measured month, and July 29 volume reached 1.108 million shares with a 2.70 z-score. The after-close Q2 release reported 8% revenue growth and 12% adjusted-EPS growth, but input and freight inflation reduced margins, first-half cash conversion was weak, and 2026 guidance now calls for flat adjusted EBITDA margin. A bounded 14x-18x normalized-EPS range gives 15.5% downside and 8.6% base upside. The medium-confidence assessment is baseline-comparison only; no conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "source_csl_q2_2026_release",
+      "claim": "Carlisle's current Q2 release confirms CSL common stock on the New York Stock Exchange and reports revenue of USD 1.570 billion, up 8%, operating income of USD 352.5 million, up 5%, and adjusted EPS of USD 7.03, up 12%. Adjusted EBITDA margin declined 70 basis points to 26.2% as petroleum-derived input and freight costs outpaced pricing. First-half operating cash flow was USD 197 million and free cash flow was USD 130 million. At June 30 cash was USD 665.3 million and long-term debt including current maturities was USD 2.890 billion. Management raised revenue guidance to mid-single-digit growth, changed the margin outlook to flat adjusted EBITDA margin, and increased the 2026 repurchase target to USD 1.2 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm",
+      "observed_at": "2026-07-30T04:48:36Z",
+      "source_hash": "eaddd9f8b58711b4912d80ef1a72d327f5ea85cafe345a8660320f76ed9db417"
+    },
+    {
+      "source": "source_csl_fy2025_release",
+      "claim": "Carlisle's FY2025 release reports revenue of USD 5.020 billion, adjusted EBITDA of USD 1.225 billion at a 24.4% margin, adjusted EPS of USD 19.40, operating cash flow of USD 1.1 billion, and free cash flow from continuing operations of USD 972 million. It identifies re-roofing as approximately 70% of commercial roofing demand while describing continued softness in new-construction markets.",
+      "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000009/q42025-ex991xearningsrelea.htm",
+      "observed_at": "2026-07-30T04:48:36Z",
+      "source_hash": "5e0deaecc7effa3efe13dc048a1fb6e6b80db49d580578cf194c8b2552b9858d"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "CSL fell from USD 362.75 on 2026-06-30 to USD 334.54 on 2026-07-29, a 7.78% decline. July 29 volume was 1,108,300 shares, the volume z-score was 2.70, RSI was 45.68, and volume_anomaly was the sole trigger. The payload's canonical market date, observation period, and source-price hash match the indicator row.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source_hash": "3a336b352b9b41083fa16f0d0d7e26878102247f0240d24d1d44c13d90f0b019"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8727999925613403 for 2026-07-30 and was retrieved at 2026-07-30T04:41:08Z, confirming fresh FX state for the USD security mark.",
+      "observed_at": "2026-07-30T04:41:08Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/assessment_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/security_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/source_csl_fy2025_release_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/source_csl_q2_2026_release_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_9b0db3bc77914b23a307.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Carlisle Companies was researched after its 2026-07-29 volume anomaly strengthened. The shares fell 7.78% over the measured month and volume reached a 2.70 z-score. Q2 revenue and adjusted EPS grew, but input and freight inflation reduced margins, first-half cash conversion was weak, and guidance now calls for flat adjusted EBITDA margin. A bounded range implies 15.5% downside and 8.6% base upside from the USD 334.54 mark. The medium-confidence assessment is baseline-comparison only, no conviction paper strategy was queued, and review is due by 2026-08-29."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/source_csl_q2_2026_release_request.json",
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/source_csl_fy2025_release_request.json",
+    "papertrader research security upsert --request data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/assessment_upsert_retry02_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim for the supplied run ID, live lease, PAPER_TRADING_ONLY=true, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, instrument, CSL provider symbol, XNYS venue, USD currency, and equity identity are unique and match the SEC-filed issuer release.",
+      "Matched the strengthened volume-anomaly trigger, 2026-07-29 market date, exact observation period, USD 334.54 mark, source-price hash, volume z-score, RSI, and sole-trigger state to canonical market and indicator data.",
+      "Registered two current primary issuer sources before assessment and confirmed both sorted evidence references are available, linked to this immutable security, and fresh at the successful assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the review.",
+      "Confirmed exactly one current assessment exists for this run with baseline eligibility, medium confidence, no hard blocker, 15.5% downside, 8.6% base upside, and canonical soft gaps.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups are required and present.",
+      "Confirmed the conviction strategy gate fails because 8.6% base upside is below the configured 10% minimum and the 0.56 upside-to-downside ratio is below the 1.0 minimum; no strategy-research follow-up was created.",
+      "The initial assessment request failed closed because soft gaps were not sorted; the request remained immutable and retry01 used a unique path.",
+      "Assessment retry01 failed closed because it contained non-canonical soft-gap values; the request remained immutable and the successful retry02 used a unique path with sorted canonical values.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the ten canonical receipts in command_audit.json, including two exit-code-2 failed attempts with no structured-state delta.",
+      "No request, maintained page, or operation artifact is a symlink.",
+      "No allocation targets or history, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

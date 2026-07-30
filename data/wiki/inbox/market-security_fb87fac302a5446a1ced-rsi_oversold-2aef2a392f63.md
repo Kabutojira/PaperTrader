@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 2aef2a392f639d8668f6a489c8bb3801ffd6afaf8353d10c76b330fe6e060ec8
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 25.7% decline with a strengthened RSI-oversold transition
+  merits durable security research context.
+related_entity_ids:
+- security_fb87fac302a5446a1ced
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_fb87fac302a5446a1ced
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 25.7% decline with a strengthened RSI-oversold transition merits durable security research context.

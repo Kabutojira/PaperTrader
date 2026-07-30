@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 3b8a9ff5dca273809547fd0c987af30b468b97138f7a84e3027babae56b92c2a
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material RSI oversold transition accompanied by a substantial 25.5%
+  period decline for the tracked security.
+related_entity_ids:
+- security_dc7a111e297be528d96b
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_dc7a111e297be528d96b
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: TSLA — Tesla, Inc. common stock (`security_dc7a111e297be528d96b`)
+- Security: [[securities/security_dc7a111e297be528d96b|TSLA — Tesla, Inc. common stock]] (`security_dc7a111e297be528d96b`)
 - Trigger: `rsi_oversold`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material RSI oversold transition accompanied by a substantial 25.5% period decline for the tracked security.

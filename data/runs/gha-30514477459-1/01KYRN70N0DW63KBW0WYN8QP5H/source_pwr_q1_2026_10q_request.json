@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pwr_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000016/pwr-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000016/pwr-20260331.htm",
+  "source_type": "filing",
+  "title": "Quanta Services, Inc. Form 10-Q for the quarter ended March 31, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "0ac69962d949e82952cfede31ccbe8581f25452028d30c5dd4252b8c326d8c60",
+  "related_entity_ids": "security_488a9d7f7a8573597724",
+  "checked_at": "2026-07-30T04:59:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Cash and cash equivalents were $364.8 million and long-term debt, including current maturities, was $5.89 billion at March 31, 2026.",
+  "summary": "Quanta's current quarterly filing confirms the PWR common-stock identity and reports USD 364.8 million cash, USD 689.7 million current debt maturities, USD 5.202 billion long-term debt, USD 10.653 billion current assets, USD 9.384 billion current liabilities, USD 7.405 billion goodwill, and USD 25.747 billion total assets at March 31, 2026. The filing describes electric-power, transmission, substation, distribution, interconnection, load-center, and communications infrastructure exposure and details fixed-price, labor, customer-payment, acquisition, goodwill, permitting, supply-chain, and project-delay risks.",
+  "run_id": "gha-30514477459-1"
+}

@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 9c7be5f40cd0baa9bb36e524450d988fa86065371a50b272c6b8a8a98570d8d1
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 14.2% decline with a new Bollinger-below-lower transition
+  warrants durable wiki review.
+related_entity_ids:
+- security_4b61970aa8f574446819
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_4b61970aa8f574446819
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 14.2% decline with a new Bollinger-below-lower transition warrants durable wiki review.

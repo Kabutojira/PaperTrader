@@ -1,0 +1,88 @@
+{
+  "operation_id": "01KYRN70N0FRJ1Z01HXDJPXGFE",
+  "status": "succeeded",
+  "summary": "Completed the evidence-backed review of Enphase Energy after its 2026-07-29 volume anomaly strengthened. The immutable ENPH/XNAS/USD identity remains unique. The adjusted close fell 28.78% over the measured month to USD 35.07 while 9.449 million shares traded at a 2.45 volume z-score. Current SEC-filed Q2 evidence shows sequential improvement in revenue and battery shipments, resilient net liquidity, and positive cash flow, but U.S. and total revenue remained below prior-year levels, safe-harbor revenue was material, and a nonrecurring tariff refund distorted GAAP margin. Normalized owner earnings and a downside-aware common-equity value remain unsupported, so the medium-confidence assessment is ineligible with valuation_unsupported. No conviction strategy was created. Exactly one dependent idea-research refresh was queued for the accepted solar, storage, and grid-flexibility relationship.",
+  "evidence": [
+    {
+      "source": "source_enph_q2_2026_10q",
+      "claim": "Enphase's SEC-filed Q2 2026 Form 10-Q reports USD 291.854 million quarterly revenue, down 20% year over year; 113.8 MWh of battery shipments; USD 937.708 million of cash and marketable securities; USD 572.836 million of debt; USD 143.194 million of six-month operating cash flow; USD 285.022 million of inventory; USD 236.1 million of purchase obligations; and 132.145 million shares outstanding. U.S. quarterly revenue fell 16% year over year, safe-harbor shipments were USD 84.3 million, and tariff refunds added 15.6 percentage points to GAAP gross margin.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm",
+      "observed_at": "2026-07-30T05:09:37Z",
+      "source_hash": "a8763f0f01353d7d6ee16c0af0bf75669acb31c2e54fcedddfcc6363599eddd7"
+    },
+    {
+      "source": "source_enph_q2_2026_release",
+      "claim": "The SEC-hosted issuer release reports Q2 revenue of USD 291.9 million, USD 84.3 million of safe-harbor revenue, 113.8 MWh of battery shipments, USD 40.3 million of operating cash flow, USD 25.9 million of free cash flow, and USD 937.7 million of cash and marketable securities. U.S. revenue declined about 3% sequentially while Europe rose about 35%. Q3 guidance is USD 290-320 million of revenue, including about USD 75 million of safe-harbor shipments, and 130-150 MWh of battery shipments.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000080/a2026q2exx991pressrelease.htm",
+      "observed_at": "2026-07-30T05:09:37Z",
+      "source_hash": "4959ea0d5113a98cc125d33a3ea742ae637d132bee7d71e61b6d30322005274d"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "ENPH fell 28.777420% from 2026-06-30 through 2026-07-29 to an adjusted USD 35.07 close. July 29 volume was 9,448,500 shares, the volume z-score was 2.4495, and trigger strength increased to 0.224750535 from 0.18305174. RSI was 31.60 and the close remained slightly above the lower Bollinger band. The payload's trigger, dates, period, and source-price hash match the canonical rows.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source_hash": "8fcf5d368371d4eca10e2259441ccc2709e3cbeb54d6a0c543ad3cd00c5cf358"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8727999925613403 for 2026-07-30 and was retrieved at 2026-07-30T04:41:08Z, confirming fresh FX state for the USD security mark.",
+      "observed_at": "2026-07-30T04:41:08Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYRQ18X8EDCTPPRX31ZJ6K96.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/assessment_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/enqueue_idea_refresh_retry01_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/security_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/source_enph_q2_2026_10q_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/source_enph_q2_2026_release_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "operations_created": [
+    "01KYRQ18X8EDCTPPRX31ZJ6K96"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Enphase Energy was researched after its 2026-07-29 volume anomaly strengthened. The shares fell 28.78% over the measured month and volume reached a 2.45 z-score. Q2 revenue and battery shipments improved sequentially, but U.S. and total revenue remained below prior-year levels, safe-harbor revenue was material, and tariff refunds distorted GAAP margin. Net liquidity remains resilient, but normalized downside-aware valuation is unsupported. The medium-confidence assessment remains ineligible, no conviction paper strategy was created, and one dependent solar-and-storage idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/source_enph_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/source_enph_q2_2026_release_request.json",
+    "papertrader research security upsert --request data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/enqueue_idea_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/enqueue_idea_refresh_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim for the supplied run ID, live lease, PAPER_TRADING_ONLY=true, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, instrument, ENPH provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched the strengthened volume-anomaly trigger, 2026-07-29 market date, exact observation period, USD 35.07 mark, source-price hash, volume z-score, RSI, and Bollinger state to canonical market and indicator data.",
+      "Registered two current primary sources before assessment and confirmed both evidence references are available, linked to this immutable security and its accepted idea, and fresh at the assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the review.",
+      "Confirmed exactly one current assessment exists for this run with ineligible status, medium confidence, valuation_unsupported, and mechanical unsupported-valuation fields of -100% downside and 0% base upside that are not price targets.",
+      "Confirmed exactly one accepted canonical relationship links this security to idea_solar_storage_grid_flexibility_reset and exactly one matching dependent idea-research follow-up, 01KYRQ18X8EDCTPPRX31ZJ6K96, exists.",
+      "Confirmed the conviction strategy gate fails because normalized valuation is unsupported and timing remains unfavorable; no strategy-research follow-up was created.",
+      "The first queue enqueue receipt failed with exit code 2 because the global temporary lock file was not writable; the immutable request was preserved and a uniquely named retry used an isolated temporary directory and succeeded without changing the economic request.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the ten canonical receipts in command_audit.json in receipt order, including the failed enqueue receipt and successful immutable retry.",
+      "No request, maintained page, operation audit, or controller artifact is a symlink.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

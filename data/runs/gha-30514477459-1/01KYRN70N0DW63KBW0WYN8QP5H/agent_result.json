@@ -1,0 +1,89 @@
+{
+  "operation_id": "01KYRN70N0DW63KBW0WYN8QP5H",
+  "status": "succeeded",
+  "summary": "Completed the evidence-backed review of Quanta Services, Inc. common stock after the 2026-07-29 volume anomaly strengthened. The immutable PWR/XNYS/USD identity is unique and now linked to a maintained security page. The shares fell 22.06% over the measured month; July 29 volume reached 2.045 million shares with a 3.21 z-score, RSI was 27.54, and the close was below the lower Bollinger band. No contemporaneous SEC filing explained the move. Record first-quarter revenue, backlog, remaining performance obligations, earnings, cash flow, and higher guidance support the grid-infrastructure thesis, but leverage, goodwill, contract execution, and valuation dominate. A bounded 25x-32x range gives 38.1% downside and 20.7% base-case downside. The medium-confidence assessment is baseline-comparison only; no conviction strategy or idea refresh was queued because the full gate failed and neither the payload nor an accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "source_pwr_q1_2026_release",
+      "claim": "Quanta's SEC-furnished first-quarter release confirms PWR common stock on the New York Stock Exchange and reports USD 7.875 billion revenue, USD 220.6 million net income, USD 2.68 adjusted diluted EPS, USD 391.7 million operating cash flow, USD 184.4 million free cash flow, USD 26.2 billion remaining performance obligations, and USD 48.5 billion backlog. Electric revenue reached USD 6.469 billion with an 8.7% operating margin. Management raised 2026 adjusted diluted-EPS guidance to USD 13.55-14.25 and maintained free-cash-flow guidance of USD 1.55-2.05 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526193918/d107542dex991.htm",
+      "observed_at": "2026-07-30T04:59:12Z",
+      "source_hash": "57b00764838dc131077ca75d86adf7200e5d6aef2dcf601fd9a8a686a03d3876"
+    },
+    {
+      "source": "source_pwr_q1_2026_10q",
+      "claim": "Quanta's current Form 10-Q reports USD 364.8 million cash, USD 689.7 million current debt maturities, USD 5.202 billion long-term debt, USD 10.653 billion current assets, USD 9.384 billion current liabilities, USD 7.405 billion goodwill, and USD 25.747 billion total assets at March 31. It documents fixed-price, skilled-labor, customer-payment, acquisition, goodwill, permitting, supply-chain, and project-delay risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000016/pwr-20260331.htm",
+      "observed_at": "2026-07-30T04:59:12Z",
+      "source_hash": "0ac69962d949e82952cfede31ccbe8581f25452028d30c5dd4252b8c326d8c60"
+    },
+    {
+      "source": "source_pwr_sec_submissions_20260730",
+      "claim": "The SEC submissions record listed a May 27, 2026 Form 8-K as Quanta's latest filing at review time and contained no filing dated within the canonical June 30 through July 29 alert period, so no contemporaneous primary filing was available to explain the price and volume move.",
+      "url": "https://data.sec.gov/submissions/CIK0001050915.json",
+      "observed_at": "2026-07-30T04:59:12Z",
+      "source_hash": "bfb0c0cdf53334deb656b70d403b0c49d45a3b8e2e4f4f9c15fae33c7b7da923"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "PWR fell from an adjusted USD 719.93 close on 2026-06-30 to USD 561.14 on 2026-07-29, a 22.06% decline. July 29 volume was 2,045,400 shares, the volume z-score was 3.21, RSI was 27.54, and the close was 4.06% below the lower Bollinger band. The payload's canonical market date, observation period, volume-anomaly trigger, and source-price hash match the indicator row.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source_hash": "15e13bbaa6aeb74847824041f1232bdc38423ad0f60f1feaf0db9c500bdde617"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8727999925613403 for 2026-07-30 and was retrieved at 2026-07-30T04:41:08Z, confirming fresh FX state for the USD security mark.",
+      "observed_at": "2026-07-30T04:41:08Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/assessment_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/security_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/source_pwr_q1_2026_10q_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/source_pwr_q1_2026_release_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/source_pwr_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_488a9d7f7a8573597724.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Quanta Services was researched after its 2026-07-29 volume anomaly strengthened. The shares fell 22.06% over the measured month and volume reached a 3.21 z-score, while RSI was oversold and the close was below the lower Bollinger band. Current primary filings confirm record first-quarter growth, backlog, and higher guidance but do not explain the July move. Leverage, goodwill, project execution, and a 40.4x guidance-midpoint valuation dominate; a bounded range implies 38.1% downside and 20.7% base-case downside. The medium-confidence assessment is baseline-comparison only, no conviction paper strategy was queued, and review is due by 2026-08-29."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/source_pwr_q1_2026_release_request.json",
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/source_pwr_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/source_pwr_sec_submissions_request.json",
+    "papertrader research security upsert --request data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30514477459-1/01KYRN70N0DW63KBW0WYN8QP5H/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim for the supplied run ID, live lease, PAPER_TRADING_ONLY=true, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, instrument, PWR provider symbol, XNYS venue, USD currency, and equity identity are unique and match the SEC-filed issuer release.",
+      "Matched the strengthened volume-anomaly trigger, 2026-07-29 market date, exact observation period, USD 561.14 mark, source-price hash, volume z-score, RSI, and Bollinger state to canonical market and indicator data.",
+      "Registered three current primary or regulator sources before assessment and confirmed all sorted evidence references are available, linked to this immutable security, and fresh at the assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the review.",
+      "Confirmed exactly one current assessment exists for this run with baseline eligibility, medium confidence, no hard blocker, 38.1% downside, 20.7% base-case downside, and sorted canonical soft gaps.",
+      "Confirmed the payload names no idea and the security has zero accepted canonical relationships, so exactly zero idea-research follow-ups are required and present.",
+      "Confirmed the conviction strategy gate fails because base-case upside is negative, the payoff ratio cannot meet the configured 1.0 minimum, and the margin-of-safety and timing gates fail; no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the nine canonical receipts in command_audit.json, all with exit code zero.",
+      "No request, maintained page, operation audit, or controller artifact is a symlink.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: a3f287ad180265bc2384046a59a6e07645da79eeae88c739ab700e1ad2612d60
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material new RSI oversold transition with a severe period decline
+  for the identified security.
+related_entity_ids:
+- security_89969b7dac39b7db5661
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_89969b7dac39b7db5661
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: YEC.F — YASKAWA Electric Corporation Frankfurt ordinary shares (`security_89969b7dac39b7db5661`)
+- Security: [[securities/security_89969b7dac39b7db5661|YEC.F — YASKAWA Electric Corporation Frankfurt ordinary shares]] (`security_89969b7dac39b7db5661`)
 - Trigger: `rsi_oversold`
 - Transition: `entered`
 - Period: 2026-07-01 through 2026-07-29
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material new RSI oversold transition with a severe period decline for the identified security.

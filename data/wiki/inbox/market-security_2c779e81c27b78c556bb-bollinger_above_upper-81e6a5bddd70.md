@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 81e6a5bddd70e1a53ada70b2638d165ac1b8081672c9e5961ab7bdf7269087c1
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material 13.35% monthly rise with a new Bollinger-band breakout
+  warrants durable review.
+related_entity_ids:
+- security_2c779e81c27b78c556bb
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2c779e81c27b78c556bb
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material 13.35% monthly rise with a new Bollinger-band breakout warrants durable review.

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fcx_sec_submissions_20260730",
+  "url": "https://data.sec.gov/submissions/CIK0000831259.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000831259.json",
+  "source_type": "regulator_index",
+  "title": "Freeport-McMoRan SEC submissions index checked 2026-07-30",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4b8f066a3b93a58b16029b52cc96246da8860a2248c2af9c0fa09a07572b7766",
+  "related_entity_ids": "idea_critical_minerals_copper|security_2dbe878dfc899d7ee867",
+  "checked_at": "2026-07-30T05:20:33Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest filing through the 2026-07-29 market date was the 2026-07-23 Form 8-K for the second-quarter results release.",
+  "summary": "The SEC submissions index showed no Freeport-McMoRan filing after the 2026-07-23 earnings filing through the alert's 2026-07-29 market date, so no later corporate filing independently explains the July 29 volume anomaly.",
+  "run_id": "gha-30514477459-1"
+}

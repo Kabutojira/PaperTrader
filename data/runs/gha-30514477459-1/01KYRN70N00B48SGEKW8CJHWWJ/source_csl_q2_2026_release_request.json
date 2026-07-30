@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csl_q2_2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm",
+  "source_type": "issuer_release",
+  "title": "Carlisle Companies Reports Second Quarter 2026 Results",
+  "publisher": "Carlisle Companies Incorporated via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "eaddd9f8b58711b4912d80ef1a72d327f5ea85cafe345a8660320f76ed9db417",
+  "related_entity_ids": "security_9b0db3bc77914b23a307",
+  "checked_at": "2026-07-30T04:48:36Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Record revenue of $1.6 billion, up 8% year-over-year; adjusted EPS was $7.03 and adjusted EBITDA margin was 26.2%.",
+  "summary": "Current earnings release furnished to the SEC. Q2 revenue rose 8% to USD 1.570 billion and adjusted EPS rose 12% to USD 7.03, while adjusted EBITDA margin fell 70 basis points to 26.2% as petroleum-derived input and freight inflation outpaced pricing. First-half operating cash flow was USD 197 million and free cash flow was USD 130 million. At June 30 Carlisle held USD 665 million cash against USD 2.890 billion long-term debt including current maturities. Management raised 2026 revenue growth guidance to mid-single digits but now expects a flat adjusted EBITDA margin and increased the 2026 share-repurchase target to USD 1.2 billion.",
+  "run_id": "gha-30514477459-1"
+}

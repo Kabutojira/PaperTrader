@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 9e986cb6222e03927cc213206fba55ac87eb62d1388ceb1923337ea2cdd8b491
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: A newly entered bearish MACD cross coincides with a 4.3% period
+  decline and merits durable review.
+related_entity_ids:
+- security_9d4049ed6669a52815d6
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_9d4049ed6669a52815d6
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: A newly entered bearish MACD cross coincides with a 4.3% period decline and merits durable review.

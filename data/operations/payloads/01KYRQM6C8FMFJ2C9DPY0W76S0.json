@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_critical_minerals_copper",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "security_id": "security_2dbe878dfc899d7ee867",
+    "security_research_operation_id": "01KYRN70N0V0QH7E2MA773PPHC",
+    "security_research_result_path": "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/agent_result.json",
+    "seed_claim": "Freeport-McMoRan's 2026-07-29 volume anomaly entered as the shares fell 4.38% over the measured month and 2.68% that session. No later corporate filing followed the July 23 Q2 release through the alert date; Grasberg recovery and Indonesian terms remain material, while both bounded valuation scenarios remain below market."
+  },
+  "objective": "Refresh the structural-copper-scarcity idea from Freeport-McMoRan's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYRQM6C8FMFJ2C9DPY0W76S0",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+  ]
+}

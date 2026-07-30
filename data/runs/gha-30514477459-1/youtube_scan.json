@@ -1,0 +1,90 @@
+{
+  "channels": [
+    {
+      "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@allin",
+      "inspected_count": 0,
+      "issue_id": "issue_ea600e6a0abd700bbdd4",
+      "next_cursor": "TqNiSTeNtb0",
+      "operation_ids": [],
+      "previous_cursor": "TqNiSTeNtb0",
+      "reason": "TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+      "status": "failed"
+    },
+    {
+      "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@thelimitingfactor",
+      "inspected_count": 0,
+      "issue_id": "issue_7473df2183611e3ab999",
+      "next_cursor": "SuSYegb8iK0",
+      "operation_ids": [],
+      "previous_cursor": "SuSYegb8iK0",
+      "reason": "SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+      "status": "failed"
+    },
+    {
+      "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@ConnectingODots",
+      "inspected_count": 0,
+      "issue_id": "issue_2781ea8889ae33bd5a60",
+      "next_cursor": "Ejsft2oPCtM",
+      "operation_ids": [],
+      "previous_cursor": "Ejsft2oPCtM",
+      "reason": "Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+      "status": "failed"
+    },
+    {
+      "channel_id": "UCS01CiRDAiyhR_mTHXDW23A",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@DumbMoneyLive",
+      "inspected_count": 0,
+      "issue_id": "issue_6968cdf3d5a050da82a1",
+      "next_cursor": "u-AXyF9kY9k",
+      "operation_ids": [],
+      "previous_cursor": "u-AXyF9kY9k",
+      "reason": "u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+      "status": "failed"
+    },
+    {
+      "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@CouchInvestor",
+      "inspected_count": 0,
+      "issue_id": "issue_b17f72c0500299df7879",
+      "next_cursor": "65IABPxBJ9M",
+      "operation_ids": [],
+      "previous_cursor": "65IABPxBJ9M",
+      "reason": "MsNPz0dBYDw This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+      "status": "failed"
+    },
+    {
+      "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@Value-Investing",
+      "inspected_count": 0,
+      "issue_id": "issue_1eb21ef7157dbe368e93",
+      "next_cursor": "4JmCb5FmTA4",
+      "operation_ids": [],
+      "previous_cursor": "4JmCb5FmTA4",
+      "reason": "4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html",
+      "status": "failed"
+    }
+  ],
+  "discovered_at": "2026-07-30T04:40:45Z",
+  "failure_count": 6,
+  "operation_count": 0,
+  "run_id": "gha-30514477459-1",
+  "scan_bound": 50,
+  "seed_count": 5,
+  "status": "degraded",
+  "youtube_scan_version": 1
+}

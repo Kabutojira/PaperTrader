@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_solar_storage_grid_flexibility_reset",
+  "dedupe_key": "idea_research:idea_solar_storage_grid_flexibility_reset:security-result:01KYRN70N0FRJ1Z01HXDJPXGFE:gha-30514477459-1",
+  "prompt": "Refresh the solar, storage, and grid-flexibility idea from Enphase Energy's accepted alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "seed_claim": "Enphase's 2026-07-29 strengthened volume anomaly accompanied a 28.78% one-month decline. Q2 revenue and battery shipments improved sequentially, but U.S. revenue remained weak, safe-harbor revenue was material, tariff refunds distorted GAAP margin, and normalized common-equity valuation remains unsupported.",
+    "security_id": "security_f2b9760d847b2ba59324",
+    "security_research_operation_id": "01KYRN70N0FRJ1Z01HXDJPXGFE",
+    "security_research_result_path": "data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/agent_result.json"
+  },
+  "source": "security_research:01KYRN70N0FRJ1Z01HXDJPXGFE",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYRN70N0FRJ1Z01HXDJPXGFE"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "max_attempts": 3
+}

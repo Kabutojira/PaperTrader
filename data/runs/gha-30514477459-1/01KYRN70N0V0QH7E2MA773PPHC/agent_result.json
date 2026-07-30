@@ -1,0 +1,91 @@
+{
+  "operation_id": "01KYRN70N0V0QH7E2MA773PPHC",
+  "status": "succeeded",
+  "summary": "Completed the evidence-backed Freeport-McMoRan review after the 2026-07-29 volume anomaly entered. The immutable FCX/XNYS/USD identity remains unique. Adjusted close fell 4.38% over the measured month to USD 59.99 and 2.68% on July 29 while 22.669 million shares traded at a 2.0004 volume z-score. The unchanged SEC-filed Q2 results remain the latest corporate filing through the alert date, so the move has no independently verified contemporaneous company-filing explanation. Grasberg recovery, Indonesian terms, and copper sensitivity remain material, while bounded 12-month scenarios imply 45.6% downside and 21.1% base-case downside. The medium-confidence baseline assessment remains non-actionable, no conviction strategy was created, and exactly one dependent idea-research refresh was queued for the accepted structural-copper-scarcity relationship.",
+  "evidence": [
+    {
+      "source": "source_fcx_q2_2026_results_sec",
+      "claim": "The unchanged SEC-filed Q2 2026 results exhibit reports USD 984 million of net income attributable to common shareholders, USD 1.1 billion of adjusted net income, 786 million pounds of copper production, 710 million pounds of copper sales, USD 6.17 per pound realized copper pricing, USD 1.97 per pound unit net cash cost, USD 2.048 billion of operating cash flow, and USD 1.104 billion of capital expenditure. Management expected Grasberg to operate at about 65% of normal production in the second half of 2026, 80% by mid-2027, and near full capacity by the end of 2027.",
+      "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm",
+      "observed_at": "2026-07-30T05:20:33Z",
+      "source_hash": "9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1"
+    },
+    {
+      "source": "source_fcx_sec_submissions_20260730",
+      "claim": "The SEC submissions index contained one filing from 2026-07-23 through the alert's 2026-07-29 market date: the Q2-results Form 8-K. No later corporate filing independently explains the July 29 volume anomaly.",
+      "url": "https://data.sec.gov/submissions/CIK0000831259.json",
+      "observed_at": "2026-07-30T05:20:33Z",
+      "source_hash": "4b8f066a3b93a58b16029b52cc96246da8860a2248c2af9c0fa09a07572b7766"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "FCX fell 4.379698% from 2026-06-30 through 2026-07-29 to an adjusted USD 59.99 close and fell 2.676830% on July 29. July 29 volume was 22,668,800 shares, the volume z-score was 2.00040048, and the volume-anomaly trigger entered with strength 0.00020024. RSI was 44.81696123, and no concurrent RSI or Bollinger trigger was present. The payload trigger, market date, observation period, and source-price hash match the canonical rows.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source_hash": "a7eb845fdc9ec53269f4648c73619c7f149dcee990fcc7f2ecb943a1fab9b1de"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8727999925613403 for 2026-07-30 and was retrieved at 2026-07-30T04:41:08Z, confirming fresh FX state for the USD security mark.",
+      "observed_at": "2026-07-30T04:41:08Z"
+    },
+    {
+      "source": "relationship_def43e5b4e13577e2b99",
+      "claim": "Exactly one accepted canonical relationship links this security to idea_critical_minerals_copper, requiring one separate sequential idea refresh after this security result is terminally accepted."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYRQM6C8FMFJ2C9DPY0W76S0.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/assessment_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/security_upsert_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/source_fcx_q2_2026_results_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/source_fcx_q2_2026_results_retry01_request.json",
+    "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/source_fcx_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+  ],
+  "operations_created": [
+    "01KYRQM6C8FMFJ2C9DPY0W76S0"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Freeport-McMoRan was researched after its 2026-07-29 volume anomaly entered. The shares fell 4.38% over the measured month and 2.68% on July 29 while volume reached a 2.0004 z-score. The unchanged SEC-filed Q2 results remain the latest corporate filing through the alert date, so no contemporaneous filing explains the move. Grasberg recovery, Indonesian terms, and copper sensitivity remain material, while both bounded valuation scenarios remain below market. The medium-confidence baseline assessment is non-actionable, no conviction paper strategy was created, and one dependent structural-copper-scarcity idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/source_fcx_q2_2026_results_retry01_request.json",
+    "papertrader research source record --request data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/source_fcx_sec_submissions_request.json",
+    "papertrader research security upsert --request data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable alert payload, sole running queue claim for the supplied run ID, live lease, PAPER_TRADING_ONLY=true, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, instrument, FCX provider symbol, XNYS venue, USD currency, and equity identity are unique and match the SEC filing identity.",
+      "Matched the entered volume-anomaly trigger, 2026-07-29 market date, exact observation period, USD 59.99 mark, source-price hash, 22,668,800-share volume, 2.00040048 z-score, RSI, moving-average state, and absence of concurrent RSI or Bollinger triggers to canonical market and indicator data.",
+      "Registered the unchanged Q2 SEC exhibit and current SEC submissions index before assessment; confirmed both evidence references are available, linked to this immutable security and accepted idea, and fresh at the assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion state are available and fresh for the review.",
+      "Confirmed exactly one current assessment exists for this run with baseline eligibility, medium confidence, 45.6% downside, 21.1% base-case downside, no hard blocker, and explicit valuation and timing gaps.",
+      "Confirmed exactly one accepted canonical relationship links this security to idea_critical_minerals_copper and exactly one matching dependent idea-research follow-up, 01KYRQM6C8FMFJ2C9DPY0W76S0, exists.",
+      "Confirmed the conviction strategy gate fails because both bounded values remain below market and timing is unfavorable; no strategy-research follow-up was created.",
+      "The first source-record launcher attempt failed before the project CLI started because uv could not modify the existing environment; the original request remained immutable, a uniquely named identical retry was used through the repository launcher, and command_audit.json correctly contains no receipt for the pre-CLI launcher failure.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, order, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the nine canonical receipts in command_audit.json in receipt order.",
+      "No operation request, maintained page, or operation audit artifact is a symlink.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

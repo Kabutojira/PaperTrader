@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: f8935339ca1b875bfd798483e2f7fa7cfb5791579cac8f368a72fe5c7db55eb2
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material RSI overbought transition after a 12.4% monthly gain warrants
+  durable review.
+related_entity_ids:
+- security_b1f2c48e1a744f5ecf67
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_b1f2c48e1a744f5ecf67
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: LH — Labcorp Holdings Inc. common stock (`security_b1f2c48e1a744f5ecf67`)
+- Security: [[securities/security_b1f2c48e1a744f5ecf67|LH — Labcorp Holdings Inc. common stock]] (`security_b1f2c48e1a744f5ecf67`)
 - Trigger: `rsi_overbought`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material RSI overbought transition after a 12.4% monthly gain warrants durable review.

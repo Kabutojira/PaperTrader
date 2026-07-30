@@ -6,13 +6,14 @@ tags:
 - inbox
 - opportunity
 created: '2026-07-29'
-updated: '2026-07-29'
+updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: fbb3838f144ddee8a376f7bd2239b94b34b73d99ad115e7dbd81085d2dcd68db
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
-related_entity_ids: []
+classifier_decision: ingest
+classifier_reason: Material entry into an upper Bollinger Band trigger after a 10.6%
+  period return warrants durable review.
+related_entity_ids:
+- security_2010347f1a0a5ea60f47
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2010347f1a0a5ea60f47
@@ -32,7 +33,7 @@ candidate_facts:
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: SPOT — Spotify Technology S.A. ordinary shares (`security_2010347f1a0a5ea60f47`)
+- Security: [[securities/security_2010347f1a0a5ea60f47|SPOT — Spotify Technology S.A. ordinary shares]] (`security_2010347f1a0a5ea60f47`)
 - Trigger: `bollinger_above_upper`
 - Transition: `entered`
 - Period: 2026-06-29 through 2026-07-28
@@ -44,5 +45,5 @@ candidate_facts:
 
 ## Classifier disposition
 
-- Decision: `blocked`
-- Reason: classifier exited 2: Hermes classifier invocation failed: [Errno 2] No such file or directory: 'hermes'
+- Decision: `ingest`
+- Reason: Material entry into an upper Bollinger Band trigger after a 10.6% period return warrants durable review.

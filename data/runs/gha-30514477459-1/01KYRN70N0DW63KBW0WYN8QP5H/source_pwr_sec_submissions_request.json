@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pwr_sec_submissions_20260730",
+  "url": "https://data.sec.gov/submissions/CIK0001050915.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001050915.json",
+  "source_type": "regulator_record",
+  "title": "Quanta Services, Inc. SEC submissions record",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "bfb0c0cdf53334deb656b70d403b0c49d45a3b8e2e4f4f9c15fae33c7b7da923",
+  "related_entity_ids": "security_488a9d7f7a8573597724",
+  "checked_at": "2026-07-30T04:59:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The recent-filings record lists a May 27, 2026 Form 8-K as the latest filing before this review.",
+  "summary": "The SEC's current submissions metadata identifies Quanta Services, Inc. and its recent filings. The latest listed filing at the review time was a Form 8-K filed May 27, 2026; no filing dated within the canonical June 30 through July 29 alert observation period was present, so no contemporaneous primary filing was available to explain the price and volume move.",
+  "run_id": "gha-30514477459-1"
+}
