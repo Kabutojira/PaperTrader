@@ -83,7 +83,6 @@ jobs:
     permissions:
       contents: write
     env:
-      PAPER_TRADING_ONLY: "true"
       WIKI_PATH: ${{ github.workspace }}/data/wiki
     outputs:
       delivery_status: ${{ steps.deliver.outputs.status || steps.skipped.outputs.status }}

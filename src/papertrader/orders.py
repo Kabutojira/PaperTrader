@@ -38,7 +38,7 @@ class OrderError(RuntimeError):
 
 def _assert_paper_only(settings: Settings) -> None:
     if not settings.paper_trading_only:
-        raise OrderError("paper order creation requires PAPER_TRADING_ONLY=true")
+        raise OrderError("paper order creation is disabled by repository configuration")
 
 
 def _request_decimal(value: object, *, label: str) -> Decimal:

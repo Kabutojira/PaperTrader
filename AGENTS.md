@@ -19,7 +19,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 
 ## Non-negotiable invariants
 
-1. **Paper only.** Do not add broker order APIs, brokerage credentials, or a real-execution adapter. `PAPER_TRADING_ONLY=true` must be required at startup and asserted by the execution engine.
+1. **Paper only.** Do not add broker order APIs, brokerage credentials, a live-order mode, or a real-execution adapter. The execution engine creates only simulated orders and fills.
 2. **Scripts own deterministic state.** Python code owns prices, indicators, deduplication, scheduling, schemas, risk limits, fees, fills, cash, positions, P/L, reports, queue transitions, and Git-safe writes.
 3. **LLMs own judgment and complete allowed work.** Hermes may synthesize sources, explain price moves, update theses, evaluate opportunities, create or update strategies, enqueue follow-up operations, and produce narrative report items.
 4. **There is no deferred-change approval layer.** The agent must perform every change allowed by its skill before it finishes. It may edit allowlisted wiki files directly and must use the project CLI for structured CSV changes. Critical accounting transitions—fills, executions, cash, positions, and performance—remain deterministic commands; the agent may invoke those commands but may not hand-edit their ledgers.

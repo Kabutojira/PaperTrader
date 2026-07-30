@@ -8,8 +8,8 @@ description: Decide whether one reviewed PaperTrader strategy and signal still w
 ## Activation
 
 Activate for one validated `strategy_id`, one live `signal_id`, and one explicit action. Require
-`PAPER_TRADING_ONLY=true`, native `llm-wiki`, fresh identity/market evidence, and the deterministic
-execution CLI. No real broker adapter or credential may exist in the agent environment.
+native `llm-wiki`, fresh identity/market evidence, and the deterministic paper-execution CLI. No
+real broker adapter, live-order mode, or brokerage credential may exist.
 For `sleeve=baseline`, also require the latest matching allocation target and an unchanged current
 assessment. A baseline `hold` is an evidence-linked skip and must not create a signal or order.
 

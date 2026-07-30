@@ -1,4 +1,4 @@
-"""Load repository-local settings and enforce the paper-only startup boundary."""
+"""Load and validate repository-local PaperTrader settings."""
 
 from __future__ import annotations
 
@@ -290,7 +290,9 @@ def _resolve_inside(root: Path, value: str, label: str) -> Path:
     return resolved
 
 
-def _require_paper_mode(parser: configparser.ConfigParser, environ: Mapping[str, str]) -> None:
+def _require_paper_configuration(parser: configparser.ConfigParser) -> None:
+    """Require the repository's permanent paper-only configuration."""
+
     if not parser.has_option("safety", "paper_trading_only"):
         raise ConfigurationError("config.ini must define safety.paper_trading_only")
     try:
@@ -301,8 +303,6 @@ def _require_paper_mode(parser: configparser.ConfigParser, environ: Mapping[str,
         raise ConfigurationError("safety.paper_trading_only must be true")
     if parser.getboolean("safety", "allow_real_orders", fallback=False):
         raise ConfigurationError("safety.allow_real_orders must remain false")
-    if environ.get("PAPER_TRADING_ONLY", "").strip().lower() != "true":
-        raise ConfigurationError("PAPER_TRADING_ONLY=true is required at startup")
 
 
 def _positive_int(
@@ -891,7 +891,7 @@ def _load_settings_unchecked(
     repository_root: Path | None = None,
     environ: Mapping[str, str] | None = None,
 ) -> Settings:
-    """Load config.ini, resolve paths, and fail closed unless paper mode is explicit."""
+    """Load config.ini and resolve canonical repository paths."""
 
     root = find_repository_root(repository_root)
     environment = os.environ if environ is None else environ
@@ -899,8 +899,7 @@ def _load_settings_unchecked(
     config_path = root / "config.ini"
     if not parser.read(config_path, encoding="utf-8"):
         raise ConfigurationError(f"missing configuration file: {config_path}")
-    _require_paper_mode(parser, environment)
-
+    _require_paper_configuration(parser)
     data = _resolve_inside(root, parser.get("paths", "data_dir"), "data_dir")
     schemas = _resolve_inside(root, parser.get("paths", "schemas_dir"), "schemas_dir")
     skills = _resolve_inside(root, parser.get("paths", "skills_dir"), "skills_dir")

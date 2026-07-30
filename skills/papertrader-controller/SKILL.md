@@ -7,9 +7,9 @@ description: Control one PaperTrader queue operation from deterministic claim th
 
 ## Activation
 
-Activate for one immutable operation ID selected by the deterministic controller. Require
-`PAPER_TRADING_ONLY=true`, a validated payload, an unexpired run budget, and no other running LLM
-operation. Never activate for batch work or agent fan-out.
+Activate for one immutable operation ID selected by the deterministic controller. Require a
+validated payload, an unexpired run budget, and no other running LLM operation. Never activate for
+batch work or agent fan-out. PaperTrader has no live-order mode or real-execution adapter.
 
 ## Allowed scope
 

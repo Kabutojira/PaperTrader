@@ -4,8 +4,8 @@ PaperTrader is a public, Git-native research system for paper trading. The repos
 source of truth: research, queued work, market snapshots, simulated accounting records, and the
 published wiki all live under `data/`.
 
-PaperTrader never places a real order. Every command requires `PAPER_TRADING_ONLY=true`, and the
-execution boundary asserts the same invariant again.
+PaperTrader never places a real order. The application has no live-order mode, broker adapter, or
+brokerage credential path; its order and fill lifecycle is always simulated.
 
 ## Local setup
 
@@ -13,7 +13,6 @@ Python 3.12 or newer and [uv](https://docs.astral.sh/uv/) are required.
 
 ```bash
 cp .env.example .env
-export PAPER_TRADING_ONLY=true
 export WIKI_PATH="$PWD/data/wiki"
 uv sync --locked --all-groups
 ```

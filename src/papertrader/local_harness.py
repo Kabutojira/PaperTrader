@@ -418,7 +418,6 @@ def finish_local_harness_operation(
         operation_rows_before=operation_rows_before,
         issue_rows_before=issue_rows_before,
         environment={
-            "PAPER_TRADING_ONLY": "true",
             "WIKI_PATH": str((repository_root / "data" / "wiki").resolve()),
         },
     )

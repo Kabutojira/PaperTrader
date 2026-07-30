@@ -276,7 +276,6 @@ def test_curated_youtube_ingest_cycle_stays_research_only_and_reproducible(
         validate_integrity(
             sandbox_repository,
             {
-                "PAPER_TRADING_ONLY": "true",
                 "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
             },
         )

@@ -46,7 +46,6 @@ def repository_root() -> Path:
 @pytest.fixture
 def paper_environment(repository_root: Path) -> dict[str, str]:
     return {
-        "PAPER_TRADING_ONLY": "true",
         "WIKI_PATH": str(repository_root / "data" / "wiki"),
     }
 
@@ -88,7 +87,6 @@ def sandbox_settings(sandbox_repository: Path) -> Settings:
     settings = load_settings(
         sandbox_repository,
         {
-            "PAPER_TRADING_ONLY": "true",
             "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
         },
     )

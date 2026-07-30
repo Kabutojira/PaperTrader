@@ -102,7 +102,7 @@ def rebase_performance(
     """
 
     if not settings.paper_trading_only:
-        raise PerformanceError("performance rebase requires PAPER_TRADING_ONLY=true")
+        raise PerformanceError("paper performance accounting is disabled by configuration")
     if not target_equity_base.is_finite() or target_equity_base <= 0:
         raise PerformanceError("target equity must be a positive decimal")
     normalized_reason = " ".join(reason.split())

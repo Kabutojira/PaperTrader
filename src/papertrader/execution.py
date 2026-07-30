@@ -37,10 +37,10 @@ class ExecutionError(RuntimeError):
 
 
 def assert_paper_execution_enabled(settings: Settings) -> None:
-    """Fail closed at the execution boundary if paper mode was not asserted."""
+    """Fail closed if repository configuration ever ceases to be paper-only."""
 
     if not settings.paper_trading_only:
-        raise RuntimeError("execution requires PAPER_TRADING_ONLY=true")
+        raise RuntimeError("paper execution is disabled by repository configuration")
 
 
 def ensure_initial_capital(

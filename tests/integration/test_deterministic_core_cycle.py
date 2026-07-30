@@ -338,7 +338,6 @@ def test_complete_core_cycle_is_replay_safe(
         validate_integrity(
             sandbox_repository,
             {
-                "PAPER_TRADING_ONLY": "true",
                 "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
             },
         )

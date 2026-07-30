@@ -828,7 +828,6 @@ def _plain_request(
     repository: Path, request: Path, arguments: Sequence[str]
 ) -> Mapping[str, object]:
     environment = os.environ | {
-        "PAPER_TRADING_ONLY": "true",
         "WIKI_PATH": str(repository / "data" / "wiki"),
     }
     for name in tuple(environment):
@@ -1135,7 +1134,6 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     _git(publication, "commit", "-m", "chore(runtime): publish operating cycle")
     commit_sha = _git(publication, "rev-parse", "HEAD")
     environment = {
-        "PAPER_TRADING_ONLY": "true",
         "WIKI_PATH": str(publication / "data" / "wiki"),
     }
     assert validate_integrity(publication, environment) == []

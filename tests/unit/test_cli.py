@@ -12,13 +12,12 @@ from papertrader.tables import read_table
 from papertrader.utils import parse_timestamp
 
 
-def _set_paper_environment(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
-    monkeypatch.setenv("PAPER_TRADING_ONLY", "true")
+def _set_repository_environment(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
     monkeypatch.setenv("WIKI_PATH", str(repository_root / "data" / "wiki"))
 
 
 def test_cli_validation_commands_pass(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
-    _set_paper_environment(monkeypatch, repository_root)
+    _set_repository_environment(monkeypatch, repository_root)
     prefix = ["--repository", str(repository_root)]
 
     assert main([*prefix, "schema", "validate", "--strict"]) == 0
@@ -32,7 +31,7 @@ def test_cli_refreshes_results_first_wiki_homepage(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
-    _set_paper_environment(monkeypatch, sandbox_repository)
+    _set_repository_environment(monkeypatch, sandbox_repository)
     as_of = datetime(2026, 7, 24, 12, tzinfo=UTC)
     ensure_initial_capital(
         sandbox_repository,
@@ -67,7 +66,7 @@ def test_cli_refreshes_results_first_wiki_homepage(
 def test_cli_strict_allocation_readiness_fails_for_unbackfilled_universe(
     monkeypatch, repository_root: Path
 ) -> None:  # type: ignore[no-untyped-def]
-    _set_paper_environment(monkeypatch, repository_root)
+    _set_repository_environment(monkeypatch, repository_root)
 
     assert (
         main(
@@ -83,15 +82,14 @@ def test_cli_strict_allocation_readiness_fails_for_unbackfilled_universe(
     )
 
 
-def test_cli_fails_closed_without_paper_environment(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
-    monkeypatch.delenv("PAPER_TRADING_ONLY", raising=False)
+def test_cli_starts_without_a_mode_environment_switch(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
     monkeypatch.setenv("WIKI_PATH", str(repository_root / "data" / "wiki"))
 
-    assert main(["--repository", str(repository_root), "schema", "validate"]) == 2
+    assert main(["--repository", str(repository_root), "schema", "validate"]) == 0
 
 
 def test_cli_runtime_whitelist_rejects_source_path(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
-    _set_paper_environment(monkeypatch, repository_root)
+    _set_repository_environment(monkeypatch, repository_root)
 
     assert (
         main(
@@ -112,7 +110,7 @@ def test_queue_enqueue_converts_literal_now_to_canonical_utc(
     monkeypatch,  # type: ignore[no-untyped-def]
     sandbox_repository: Path,
 ) -> None:
-    _set_paper_environment(monkeypatch, sandbox_repository)
+    _set_repository_environment(monkeypatch, sandbox_repository)
     request = sandbox_repository / "data" / "operations" / "enqueue-now.json"
     request.write_text(
         json.dumps(

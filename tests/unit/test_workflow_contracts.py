@@ -117,7 +117,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert runtime["permissions"] == {"contents": "read"}
     assert runtime["defaults"]["run"]["shell"] == "bash"
     assert commit["permissions"] == {"contents": "write"}
-    assert runtime["env"]["PAPER_TRADING_ONLY"] == "true"
+    assert runtime["env"] == {"HERMES_HOME": "/tmp/papertrader-hermes"}
     assert "WIKI_PATH" not in runtime["env"]
     assert "hermes skills opt-in --sync" in text
     assert "agent preflight" in text

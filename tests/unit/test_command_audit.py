@@ -28,7 +28,6 @@ def test_agent_scoped_cli_command_writes_exact_change_receipt(
         ),
         encoding="utf-8",
     )
-    monkeypatch.setenv("PAPER_TRADING_ONLY", "true")
     monkeypatch.setenv("WIKI_PATH", str(sandbox_repository / "data" / "wiki"))
     monkeypatch.setenv("PAPERTRADER_AUDIT_RUN_ID", run_id)
     monkeypatch.setenv("PAPERTRADER_AUDIT_OPERATION_ID", operation_id)

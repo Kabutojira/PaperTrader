@@ -8,9 +8,13 @@ import pytest
 from papertrader.config import ConfigurationError, find_repository_root, load_settings
 
 
-def test_settings_require_explicit_paper_mode(repository_root: Path) -> None:
-    with pytest.raises(ConfigurationError, match="PAPER_TRADING_ONLY=true"):
-        load_settings(repository_root, {})
+def test_settings_load_without_a_mode_environment_switch(repository_root: Path) -> None:
+    settings = load_settings(
+        repository_root,
+        {"WIKI_PATH": str(repository_root / "data" / "wiki")},
+    )
+
+    assert settings.paths.root == repository_root
 
 
 def test_settings_resolve_canonical_wiki_and_skills(

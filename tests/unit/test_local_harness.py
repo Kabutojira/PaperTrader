@@ -130,7 +130,6 @@ def test_local_harness_allows_audited_read_only_queue_validation(
             "PAPERTRADER_AUDIT_RUN_ID": started.run_id,
             "PAPERTRADER_AUDIT_OPERATION_ID": started.operation_id,
             "PAPERTRADER_AUDIT_PATH": started.audit_path,
-            "PAPER_TRADING_ONLY": "true",
             "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
         }
     )

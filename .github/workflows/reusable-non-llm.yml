@@ -24,7 +24,6 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
-      PAPER_TRADING_ONLY: "true"
       WIKI_PATH: ${{ github.workspace }}/data/wiki
     steps:
       - name: Check out without persisted credentials

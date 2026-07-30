@@ -7,10 +7,10 @@ contract.
 ## Safety and local setup
 
 PaperTrader has no real-execution adapter. Do not add brokerage credentials to the checkout,
-GitHub secrets, Hermes profile, or request files. Every project command requires:
+GitHub secrets, Hermes profile, or request files. Configure the canonical wiki path before running
+project commands:
 
 ```bash
-export PAPER_TRADING_ONLY=true
 export WIKI_PATH="$PWD/data/wiki"
 uv sync --locked --all-groups
 ```

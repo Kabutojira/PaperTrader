@@ -201,7 +201,6 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
     )
     assert lint_wiki(sandbox_repository / "data" / "wiki") == []
     environment = {
-        "PAPER_TRADING_ONLY": "true",
         "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
     }
     assert validate_integrity(sandbox_repository, environment) == []

@@ -626,7 +626,6 @@ def sanitized_hermes_environment(
             "PAPERTRADER_AUDIT_OPERATION_ID": operation_id,
             "PAPERTRADER_AUDIT_PATH": (f"data/runs/{run_id}/{operation_id}/command_audit.json"),
             "PAPERTRADER_AUDIT_RUN_ID": run_id,
-            "PAPER_TRADING_ONLY": "true",
             "PATH": os.pathsep.join(executable_paths),
             "PYTHONPATH": str(repository_root / "src"),
             "WIKI_PATH": str((repository_root / "data" / "wiki").resolve()),
@@ -883,7 +882,6 @@ def run_claimed_operation(
         operation_rows_before=operation_rows_before,
         issue_rows_before=issue_rows_before,
         environment={
-            "PAPER_TRADING_ONLY": "true",
             "WIKI_PATH": str((repository_root / "data" / "wiki").resolve()),
         },
     )
