@@ -125,6 +125,9 @@ def _request(template: str, method: str) -> dict[str, str]:
         "bull_probability_pct": "25",
         "bull_assumptions": "Higher growth and margins.",
         "research_completeness": "complete",
+        "rating_change_conditions": (
+            "Reassess if growth, margins, or balance-sheet evidence changes."
+        ),
         "hard_blockers": "",
         "soft_gaps": "confidence_medium",
         "evidence_refs": "source_valuation",
@@ -192,6 +195,9 @@ def test_every_valuation_template_produces_reconciled_scenarios(
     assert row["allocation_eligibility"] == "eligible"
     assert row["conviction_tier"] == "baseline"
     assert row["eligibility_reason_codes"] == ""
+    assert row["canonical_rating"] == "buy"
+    assert row["portfolio_action"] == "initiate"
+    assert row["research_conclusion"].startswith("Rating: Buy. Portfolio action: Initiate.")
 
 
 @pytest.mark.parametrize(
@@ -248,6 +254,8 @@ def test_unsupported_valuation_stores_no_invented_scenarios(
     row = read_table(sandbox_repository, "security_assessments")[0]
     assert row["bear_fair_value"] == row["expected_return_pct"] == ""
     assert row["valuation_supported"] == "false"
+    assert row["canonical_rating"] == "unrated"
+    assert row["portfolio_action"] == "watch"
 
 
 def test_repository_valuation_contracts_are_complete(repository_root: Path) -> None:

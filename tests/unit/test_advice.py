@@ -415,7 +415,7 @@ def test_allocation_candidate_and_indicator_remain_non_actionable_research(
     )
 
     assert snapshot.actionable_signals == ()
-    assert snapshot.candidate_pipeline[0].classification == "assessment_pending"
+    assert snapshot.candidate_pipeline[0].classification == "research_incomplete"
     assert snapshot.candidate_pipeline[0].reason_labels == (
         "No current comparable assessment is available.",
     )
@@ -760,7 +760,7 @@ def test_stale_plan_and_relationship_cannot_publish_an_approved_candidate(
         run_id="candidate-later-fixture",
         as_of=NOW,
     )
-    assert stale.candidate_pipeline[0].classification == "research_blocked"
+    assert stale.candidate_pipeline[0].classification == "research_incomplete"
     assert stale.candidate_pipeline[0].target_weight_pct == "0"
     assert "allocation_plan_stale" in stale.candidate_pipeline[0].reason_codes
 

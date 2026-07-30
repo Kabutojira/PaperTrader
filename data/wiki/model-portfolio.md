@@ -7,28 +7,30 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9b582290327b2633e4dc"
-as_of: "2026-07-30T11:45:00Z"
+snapshot_id: "decision_cee9fd9e788c7008ec7d"
+as_of: "2026-07-30T12:15:00Z"
 ---
 
 # Model portfolio
 
-**Snapshot `decision_9b582290327b2633e4dc` · As of `2026-07-30T11:45:00Z`**
+**Snapshot `decision_cee9fd9e788c7008ec7d` · As of `2026-07-30T12:15:00Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-07-30T11:45:00Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-07-30T12:15:00Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
 <div><dt>Approved target</dt><dd>100%</dd></div>
 <div><dt>Action</dt><dd>No trade</dd></div>
 <div><dt>State</dt><dd>No action</dd></div>
+<div><dt>Research rating</dt><dd>Unrated</dd></div>
+<div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-07-30T11:45:00Z</dd></div>
-<div><dt>As of</dt><dd>2026-07-30T11:45:00Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-07-30T12:15:00Z</dd></div>
+<div><dt>As of</dt><dd>2026-07-30T12:15:00Z</dd></div>
 </dl>
 
 </article>
@@ -48,8 +50,16 @@ Pending targets are projections; only deterministic fills change the current por
 
 ## Valuation and thesis detail
 
-| Holding | Confidence | Downside | Base upside | Review | Thesis or cash role |
-| --- | --- | ---: | ---: | --- | --- |
-| Cash | — | —% | —% | — | Capital retained as the configured portfolio alternative. |
+| Holding | Rating / action | Bear / base / bull | Expected | Buy below | Review | Thesis or cash role |
+| --- | --- | ---: | ---: | ---: | --- | --- |
+| Cash | Unrated / Hold | —% / —% / —% | —% | — | — | Capital retained as the configured portfolio alternative. |
+
+## Non-approved research benchmark
+
+This deterministic equal-weight benchmark is for research comparison only. It is not an approved allocation, is not copy-ready, and has no path to signals or orders.
+
+| Security | Rating | Weight | Reference price |
+| --- | --- | ---: | ---: |
+| Cash | Unrated | 100% | 1 — |
 
 [[index|Back to today's decision]]

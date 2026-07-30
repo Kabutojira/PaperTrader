@@ -238,7 +238,7 @@ The headline may still be “No trade — hold 100% cash,” but it must include
 - The allocator can still choose 100% cash, but its reason is definitive or provisional and machine-readable.
 - Every allocation, signal, order, and fill gate uses the same canonical eligibility calculation.
 
-## Step 20 — Publish canonical ratings, actions, near misses, and a research benchmark — Planned
+## Step 20 — Publish canonical ratings, actions, near misses, and a research benchmark — Complete (2026-07-30)
 
 ### Outcome
 

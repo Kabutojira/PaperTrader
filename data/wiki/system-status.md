@@ -7,14 +7,14 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9b582290327b2633e4dc"
-as_of: "2026-07-30T11:45:00Z"
+snapshot_id: "decision_cee9fd9e788c7008ec7d"
+as_of: "2026-07-30T12:15:00Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_9b582290327b2633e4dc`
-**As of:** `2026-07-30T11:45:00Z`
+**Publication snapshot:** `decision_cee9fd9e788c7008ec7d`
+**As of:** `2026-07-30T12:15:00Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -24,8 +24,8 @@ as_of: "2026-07-30T11:45:00Z"
 
 - Assessments: 36/36
 - Fresh-evidence assessments: 36/36
-- Relationship reviews: 24/36
-- Accepted relationships: 22
+- Relationship reviews: 23/36
+- Accepted relationships: 21
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0

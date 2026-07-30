@@ -7,13 +7,13 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9b582290327b2633e4dc"
-as_of: "2026-07-30T11:45:00Z"
+snapshot_id: "decision_cee9fd9e788c7008ec7d"
+as_of: "2026-07-30T12:15:00Z"
 ---
 
 # PaperTrader
 
-**As of `2026-07-30T11:45:00Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-07-30T12:15:00Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -38,7 +38,9 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 
 ## Top assessed near misses
 
-No assessed near misses; unassessed securities are shown as coverage gaps.
+- **[ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349):** Unrated / Watch · expected —% · No current allocation plan supports this candidate.
+- **[GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819):** Unrated / Watch · expected —% · No current allocation plan supports this candidate.
+- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · No current allocation plan supports this candidate.
 
 ## Performance, risk, and coverage
 
@@ -46,8 +48,8 @@ No assessed near misses; unassessed securities are shown as coverage gaps.
 - Running drawdown: **0%**
 - Largest position: **0%**
 - Current assessments: **36/36**
-- Relationship reviews: **24/36**
-- Accepted relationships: **22**
+- Relationship reviews: **23/36**
+- Accepted relationships: **21**
 - Market retrieval failures: **0**
 
 ## Explore

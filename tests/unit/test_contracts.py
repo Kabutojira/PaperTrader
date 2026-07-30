@@ -23,7 +23,7 @@ def _schema_validator(repository_root: Path, name: str):  # type: ignore[no-unty
 def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> None:
     contracts = load_csv_contracts(repository_root)
 
-    assert len(contracts) == 28
+    assert len(contracts) == 29
     assert validate_csv_files(repository_root) == []
     assert {contract.name for contract in contracts} == {
         "allocation_history",
@@ -43,6 +43,7 @@ def test_every_declared_csv_exists_with_exact_header(repository_root: Path) -> N
         "portfolio",
         "published_actionable_signals",
         "published_model_portfolio",
+        "published_research_benchmark",
         "relationships",
         "runs",
         "securities",

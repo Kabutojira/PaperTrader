@@ -67,13 +67,36 @@ OPERATIONS_STATUS_LABELS = {
 }
 CLASSIFICATION_LABELS = {
     "approved": "Approved candidate",
+    "valuation_attractive": "Valuation attractive",
     "strategy_pending": "Strategy research pending",
     "relationship_pending": "Relationship research pending",
     "assessment_pending": "Assessment pending",
     "market_data_blocked": "Market data blocked",
     "valuation_unattractive": "Valuation unattractive",
+    "valuation_unsupported": "Valuation unsupported",
+    "liquidity_blocked": "Liquidity blocked",
+    "solvency_blocked": "Solvency blocked",
+    "research_incomplete": "Research incomplete",
     "risk_blocked": "Risk blocked",
     "research_blocked": "Research incomplete",
+}
+RATING_LABELS = {
+    "strong_buy": "Strong Buy",
+    "buy": "Buy",
+    "hold": "Hold",
+    "sell": "Sell",
+    "strong_sell": "Strong Sell",
+    "unrated": "Unrated",
+}
+PORTFOLIO_ACTION_LABELS = {
+    "initiate": "Initiate",
+    "add": "Add",
+    "hold": "Hold",
+    "trim": "Trim",
+    "exit": "Exit",
+    "avoid": "Avoid",
+    "watch": "Watch",
+    "short_candidate": "Short candidate",
 }
 ACTION_LABELS = {
     "buy": "Buy",
@@ -293,8 +316,7 @@ def _near_misses(snapshot: DecisionSnapshot, *, limit: int = 5) -> tuple[Candida
     return tuple(
         candidate
         for candidate in snapshot.candidate_pipeline
-        if candidate.classification not in {"assessment_pending", "research_blocked"}
-        and candidate.reason_codes
+        if candidate.classification != "approved" and candidate.reason_codes
     )[:limit]
 
 
@@ -335,6 +357,7 @@ def investor_brief_markdown(
         f"- **Approved target cash:** {target.cash_base} {snapshot.base_currency} "
         f"({target.cash_weight_pct}%)",
         f"- **Actionable signals:** {len(snapshot.actionable_signals)}",
+        f"- **Evidence state:** {_markdown(snapshot.evidence_state.replace('_', ' '))}",
     ]
     changes = [
         row
@@ -387,8 +410,24 @@ def investor_brief_markdown(
         reason = near_miss.reason_labels[0] if near_miss.reason_labels else "No approved trade."
         lines.append(
             f"- **{_markdown(near_miss.ticker)} — {_markdown(near_miss.company_name)}:** "
-            f"{_markdown(reason)}"
+            f"{RATING_LABELS[near_miss.canonical_rating]} / "
+            f"{PORTFOLIO_ACTION_LABELS[near_miss.portfolio_action]}; "
+            f"expected return {near_miss.expected_return_pct or '—'}%; {_markdown(reason)}"
         )
+    lines.extend(
+        [
+            "",
+            "## Non-approved research benchmark",
+            "",
+            "This equal-weight research benchmark is analytical only, not copy-ready, and cannot "
+            "create signals, orders, or allocation targets.",
+        ]
+    )
+    benchmark_names = [
+        f"{row.ticker} {row.weight_pct}% ({RATING_LABELS[row.rating]})"
+        for row in snapshot.research_benchmark.rows
+    ]
+    lines.append("- " + "; ".join(benchmark_names))
     return "\n".join(lines)
 
 
@@ -458,8 +497,9 @@ def investor_report_sections(
     if near_misses:
         lines.extend(
             [
-                "| Candidate | State | Score | Base upside | Main reason |",
-                "| --- | --- | ---: | ---: | --- |",
+                "| Candidate | Rating / action | State | Bear / base / bull | Expected | "
+                "Buy below | Exact gate |",
+                "| --- | --- | --- | ---: | ---: | ---: | --- |",
             ]
         )
         for candidate in near_misses:
@@ -471,8 +511,13 @@ def investor_report_sections(
                     candidate.research_page,
                 )
                 + " | "
+                f"{RATING_LABELS[candidate.canonical_rating]} / "
+                f"{PORTFOLIO_ACTION_LABELS[candidate.portfolio_action]} | "
                 f"{_markdown(CLASSIFICATION_LABELS[candidate.classification])} | "
-                f"{candidate.effective_score or '—'} | {candidate.base_upside_pct or '—'}% | "
+                f"{candidate.bear_return_pct or '—'}% / {candidate.base_return_pct or '—'}% / "
+                f"{candidate.bull_return_pct or '—'}% | "
+                f"{candidate.expected_return_pct or '—'}% | "
+                f"{candidate.buy_below_price or '—'} | "
                 f"{_cell(main_reason)} |"
             )
     else:
@@ -598,7 +643,9 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
                     candidate.research_page,
                 )
                 + ":** "
-                f"{_markdown(reason)}"
+                f"{RATING_LABELS[candidate.canonical_rating]} / "
+                f"{PORTFOLIO_ACTION_LABELS[candidate.portfolio_action]} · "
+                f"expected {candidate.expected_return_pct or '—'}% · {_markdown(reason)}"
             )
     else:
         lines.append("No assessed near misses; unassessed securities are shown as coverage gaps.")
@@ -666,6 +713,10 @@ def _portfolio_html(rows: Sequence[ModelPortfolioRow], currency: str) -> str:
                 f"{_html(row.approved_target_weight_pct)}%</dd></div>",
                 f"<div><dt>Action</dt><dd>{_html(_action_label(row.action))}</dd></div>",
                 f"<div><dt>State</dt><dd>{_html(_action_status_label(row.action_status))}</dd></div>",
+                "<div><dt>Research rating</dt><dd>"
+                f"{_html(RATING_LABELS[row.canonical_rating])}</dd></div>",
+                "<div><dt>Research action</dt><dd>"
+                f"{_html(PORTFOLIO_ACTION_LABELS[row.portfolio_action])}</dd></div>",
                 f"<div><dt>Reference mark</dt><dd>{_html(row.mark)} "
                 f"{_html(row.mark_currency)}</dd></div>",
                 f"<div><dt>Base mark</dt><dd>{_html(row.mark_base)} {_html(currency)}</dd></div>",
@@ -724,16 +775,46 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
         "",
         "## Valuation and thesis detail",
         "",
-        "| Holding | Confidence | Downside | Base upside | Review | Thesis or cash role |",
-        "| --- | --- | ---: | ---: | --- | --- |",
+        "| Holding | Rating / action | Bear / base / bull | Expected | Buy below | "
+        "Review | Thesis or cash role |",
+        "| --- | --- | ---: | ---: | ---: | --- | --- |",
     ]
     for row in current.rows:
         label = "Cash" if row.holding_type == "cash" else f"{row.ticker} — {row.company_name}"
         linked = label if row.holding_type == "cash" else _link(label, row.security_research_page)
         lines.append(
-            f"| {linked} | {_cell(row.confidence)} | {row.downside_pct or '—'}% | "
-            f"{row.base_upside_pct or '—'}% | {_cell(row.review_at)} | "
+            f"| {linked} | {RATING_LABELS[row.canonical_rating]} / "
+            f"{PORTFOLIO_ACTION_LABELS[row.portfolio_action]} | "
+            f"{row.bear_return_pct or '—'}% / {row.base_return_pct or '—'}% / "
+            f"{row.bull_return_pct or '—'}% | {row.expected_return_pct or '—'}% | "
+            f"{row.buy_below_price or '—'} | {_cell(row.review_at)} | "
             f"{_cell(row.thesis_summary)} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## Non-approved research benchmark",
+            "",
+            "This deterministic equal-weight benchmark is for research comparison only. It is "
+            "not an approved allocation, is not copy-ready, and has no path to signals or orders.",
+            "",
+            "| Security | Rating | Weight | Reference price |",
+            "| --- | --- | ---: | ---: |",
+        ]
+    )
+    for benchmark_row in snapshot.research_benchmark.rows:
+        label = (
+            benchmark_row.company_name
+            if not benchmark_row.research_page
+            else _link(
+                f"{benchmark_row.ticker} — {benchmark_row.company_name}",
+                benchmark_row.research_page,
+            )
+        )
+        lines.append(
+            f"| {label} | {RATING_LABELS[benchmark_row.rating]} | "
+            f"{benchmark_row.weight_pct}% | {benchmark_row.reference_price} "
+            f"{_cell(benchmark_row.currency)} |"
         )
     lines.extend(["", "[[index|Back to today's decision]]", ""])
     return "\n".join(lines)
@@ -991,9 +1072,9 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         "Ticker links open the maintained security analysis. Native marks are converted "
         f"to {snapshot.base_currency} with the displayed committed FX observation.",
         "",
-        "| Security | Venue | Native mark | Base mark | Decision | Main reason | Downside | "
-        "Base upside | Data and FX as of | Next review |",
-        "| --- | --- | ---: | ---: | --- | --- | ---: | ---: | --- | --- |",
+        "| Security | Venue | Native mark | Base mark | Rating / action | Decision | Main reason | "
+        "Bear / base / bull | Expected | Buy below | Data and FX as of | Next review |",
+        "| --- | --- | ---: | ---: | --- | --- | --- | ---: | ---: | ---: | --- | --- |",
     ]
     for security in sorted(
         read_table(repository_root, "securities"),
@@ -1035,12 +1116,21 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
                 data_as_of += f" / FX {fx_as_of}"
         decision = "Unassessed"
         reason = "—"
-        downside = "—"
-        upside = "—"
+        scenario = "— / — / —"
+        expected_return = "—"
+        buy_below = "—"
+        rating_action = "Unrated / Watch"
         review = security["next_review_at"] or "—"
         if assessment is not None:
-            downside = f"{assessment['downside_pct']}%"
-            upside = f"{assessment['base_upside_pct']}%"
+            bear_return = assessment.get("bear_return_pct") or assessment["downside_pct"]
+            base_return = assessment.get("base_return_pct") or assessment["base_upside_pct"]
+            bull_return = assessment.get("bull_return_pct") or "—"
+            scenario = f"{bear_return}% / {base_return}% / {bull_return}%"
+            expected_return = f"{assessment.get('expected_return_pct') or '—'}%"
+            buy_below = assessment.get("buy_below_price") or "—"
+            rating = assessment.get("canonical_rating") or "unrated"
+            action = assessment.get("portfolio_action") or "watch"
+            rating_action = f"{RATING_LABELS[rating]} / {PORTFOLIO_ACTION_LABELS[action]}"
             review = assessment["expires_at"] or review
         if candidate is not None:
             decision = CLASSIFICATION_LABELS[candidate.classification]
@@ -1051,8 +1141,9 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         lines.append(
             f"| {anchor}{_link(label, _security_public_page(security))} | "
             f"{_cell(security['venue_mic'])} · {_cell(security['status'])} | "
-            f"{mark_text} | {base_mark_text} | {_cell(decision)} | {_cell(reason)} | "
-            f"{downside} | {upside} | {_cell(data_as_of)} | {_cell(review)} |"
+            f"{mark_text} | {base_mark_text} | {_cell(rating_action)} | {_cell(decision)} | "
+            f"{_cell(reason)} | {scenario} | {expected_return} | {buy_below} | "
+            f"{_cell(data_as_of)} | {_cell(review)} |"
         )
     lines.extend(["", "[[index|Back to today's decision]]", ""])
     return "\n".join(lines)

@@ -157,6 +157,10 @@ contracts:
       - frontier_confidence_levels
       - frontier_relationship_status
       - frontier_hard_blockers
+      - canonical_rating
+      - portfolio_action
+      - rating_change_conditions
+      - research_conclusion
   security_assessment_history:
     path: data/tables/security_assessment_history.csv
     append_only: true
@@ -228,6 +232,10 @@ contracts:
       - frontier_confidence_levels
       - frontier_relationship_status
       - frontier_hard_blockers
+      - canonical_rating
+      - portfolio_action
+      - rating_change_conditions
+      - research_conclusion
   allocation_targets:
     path: data/tables/allocation_targets.csv
     generated: true
@@ -449,6 +457,22 @@ contracts:
       - effective_score
       - downside_pct
       - base_upside_pct
+      - bear_fair_value
+      - bear_return_pct
+      - bear_probability_pct
+      - base_fair_value
+      - base_return_pct
+      - base_probability_pct
+      - bull_fair_value
+      - bull_return_pct
+      - bull_probability_pct
+      - expected_return_pct
+      - confidence_adjusted_expected_return_pct
+      - buy_below_price
+      - canonical_rating
+      - portfolio_action
+      - evidence_state
+      - rating_change_conditions
       - valuation_horizon_months
       - thesis_summary
       - entry_rule
@@ -492,6 +516,23 @@ contracts:
       - strategy_research_page
       - research_page
       - reason_codes
+  published_research_benchmark:
+    path: data/published/research_benchmark.csv
+    generated: true
+    columns:
+      - snapshot_id
+      - as_of
+      - policy_version
+      - non_approved
+      - copy_ready
+      - security_id
+      - ticker
+      - company_name
+      - rating
+      - weight_pct
+      - reference_price
+      - currency
+      - research_page
   source_registry:
     path: data/tables/source_registry.csv
     columns:

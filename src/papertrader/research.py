@@ -254,6 +254,67 @@ def upsert_assessment(
             relationship_accepted=relationship_accepted,
         )
         normalized_v2.update(dimensions)
+        from papertrader.ratings import (
+            canonical_rating,
+            portfolio_action,
+            research_conclusion,
+        )
+
+        rating_values = {**agent_values, **normalized_v2}
+        rating = canonical_rating(rating_values, settings)
+        portfolio_row = next(
+            (
+                row
+                for row in read_table(repository_root, "portfolio")
+                if row["security_id"] == agent_values["security_id"]
+            ),
+            None,
+        )
+        target = next(
+            (
+                row
+                for row in read_table(repository_root, "allocation_targets")
+                if row["security_id"] == agent_values["security_id"]
+            ),
+            None,
+        )
+        action = portfolio_action(
+            rating,
+            rating_values,
+            current_quantity=(
+                required_decimal(portfolio_row["quantity"], label="portfolio quantity")
+                if portfolio_row
+                else Decimal("0")
+            ),
+            current_weight_pct=(
+                required_decimal(target["current_weight_pct"], label="current weight")
+                if target
+                else Decimal("0")
+            ),
+            target_weight_pct=(
+                required_decimal(target["target_weight_pct"], label="target weight")
+                if target
+                else Decimal("0")
+            ),
+            strategies=[
+                row
+                for row in read_table(repository_root, "strategies")
+                if row["security_id"] == agent_values["security_id"]
+            ],
+        )
+        normalized_v2.update(
+            {
+                "canonical_rating": rating,
+                "portfolio_action": action,
+                "rating_change_conditions": agent_values["rating_change_conditions"],
+                "research_conclusion": research_conclusion(
+                    rating_values,
+                    rating,
+                    action,
+                    agent_values["rating_change_conditions"],
+                ),
+            }
+        )
         compatibility_eligibility = (
             dimensions["conviction_tier"]
             if dimensions["allocation_eligibility"] == "eligible"

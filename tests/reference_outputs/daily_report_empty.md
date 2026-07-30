@@ -8,7 +8,7 @@ created: "2026-07-24"
 updated: "2026-07-24"
 provenance: deterministic-report-generator
 run_id: "run-report"
-snapshot_id: "decision_f03c50da21757856ad42"
+snapshot_id: "decision_ff8c390e8ad4192d7be8"
 ---
 
 # PaperTrader daily report — 2026-07-24
@@ -21,11 +21,12 @@ snapshot_id: "decision_f03c50da21757856ad42"
 - **Investment data:** Current
 - **Operations:** Current
 - **As of:** `2026-07-24T22:00:00Z`
-- **Snapshot:** `decision_f03c50da21757856ad42`
+- **Snapshot:** `decision_ff8c390e8ad4192d7be8`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 100000 EUR (100%)
 - **Actionable signals:** 0
+- **Evidence state:** definitive cash preference
 
 ## Approved target changes
 
@@ -38,6 +39,11 @@ No actionable trade signals.
 ## Top blocker or near miss
 
 No assessed near miss is available; research coverage remains incomplete.
+
+## Non-approved research benchmark
+
+This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
+- CASH 100% (Unrated)
 <!-- papertrader-investor-brief:end -->
 
 ### Deterministic reasons
@@ -114,7 +120,7 @@ No current system impacts.
 - Run ID: `run-report`
 - Run status: `succeeded`
 - Generated (UTC): `2026-07-24T22:00:00Z`
-- Decision snapshot: `decision_f03c50da21757856ad42`
+- Decision snapshot: `decision_ff8c390e8ad4192d7be8`
 
 ### Complete market freshness
 
@@ -160,9 +166,9 @@ No open issues.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
 - `allocation_targets`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `cash_ledger`: `643b368149442110c1e0776eaa1b119e5cabe41f1617ee68328cc468cfa71dff`
-- `configuration`: `f288cef4850cc1b1a95fdff88ae5a315baf77b056588ca666491268d3253c0ad`
-- `csv_contracts`: `468fd0238e05598a214215e73793220309619133c47586c2018c5337af558582`
-- `decision_schema`: `db3885765b1881feae19b9833e0dcfa6baf1fe486110a7b340477d137453482a`
+- `configuration`: `1a2d4a3b50f95bc7ce6119c830716d80b409912b54939ce7b7ec330a7bbfa34a`
+- `csv_contracts`: `9c7fa8c44f4096f12c5e8b51b2d17d006d2962600936ea0cdb01ce369ba4c154`
+- `decision_schema`: `b841be7e40b72ae7288f7515f606bdb153e972c404186c027b7990875e885de0`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `indicators`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `issues`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`

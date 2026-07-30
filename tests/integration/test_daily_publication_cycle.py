@@ -176,6 +176,26 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
     )
     assert snapshot["snapshot_id"] == finalization.snapshot_id
     assert snapshot["run_id"] == preparation.run_id
+    assert snapshot["research_benchmark"]["non_approved"] is True
+    assert snapshot["research_benchmark"]["copy_ready"] is False
+    assert snapshot["research_benchmark"]["rows"] == [
+        {
+            "company_name": "Cash",
+            "currency": "",
+            "rating": "unrated",
+            "reference_price": "1",
+            "research_page": "",
+            "security_id": "",
+            "ticker": "CASH",
+            "weight_pct": "100",
+        }
+    ]
+    assert (
+        read_table(sandbox_repository, "published_research_benchmark")[0]["non_approved"] == "true"
+    )
+    assert read_table(sandbox_repository, "signals") == []
+    assert read_table(sandbox_repository, "orders") == []
+    assert read_table(sandbox_repository, "executions") == []
     assert finalization.snapshot_id in (sandbox_repository / finalization.report_path).read_text(
         encoding="utf-8"
     )

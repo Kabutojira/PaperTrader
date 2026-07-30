@@ -47,6 +47,7 @@ ASSESSMENT_V2_AGENT_FIELDS = (
     "bull_probability_pct",
     "bull_assumptions",
     "research_completeness",
+    "rating_change_conditions",
     "hard_blockers",
     "soft_gaps",
     "evidence_refs",
@@ -95,6 +96,10 @@ ASSESSMENT_V2_OUTPUT_FIELDS = (
     "frontier_confidence_levels",
     "frontier_relationship_status",
     "frontier_hard_blockers",
+    "canonical_rating",
+    "portfolio_action",
+    "rating_change_conditions",
+    "research_conclusion",
 )
 
 RUBRIC_SCORES = frozenset(

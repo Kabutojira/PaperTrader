@@ -144,6 +144,19 @@ class OrderSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class RatingSettings:
+    """Deterministic scenario-to-rating thresholds."""
+
+    strong_buy_expected_return_pct: Decimal
+    buy_expected_return_pct: Decimal
+    strong_buy_base_return_pct: Decimal
+    buy_base_return_pct: Decimal
+    sell_expected_return_pct: Decimal
+    strong_sell_expected_return_pct: Decimal
+    strong_buy_minimum_confidence: str
+
+
+@dataclass(frozen=True, slots=True)
 class OperationSettings:
     """Sequential queue lease and per-run budget limits."""
 
@@ -232,6 +245,7 @@ class Settings:
     portfolio: PortfolioSettings
     risk: RiskSettings
     allocation: AllocationSettings
+    ratings: RatingSettings
     orders: OrderSettings
     operations: OperationSettings
     classifier: ClassifierSettings
@@ -344,6 +358,7 @@ def _load_runtime_settings(
     PortfolioSettings,
     RiskSettings,
     AllocationSettings,
+    RatingSettings,
     OrderSettings,
     OperationSettings,
     ClassifierSettings,
@@ -581,6 +596,46 @@ def _load_runtime_settings(
         raise ConfigurationError(
             "allocation.minimum_trade_pct must not exceed the baseline position cap"
         )
+    ratings = RatingSettings(
+        strong_buy_expected_return_pct=_decimal(
+            parser, "ratings", "strong_buy_expected_return_pct", maximum=Decimal("1000")
+        ),
+        buy_expected_return_pct=_decimal(
+            parser, "ratings", "buy_expected_return_pct", maximum=Decimal("1000")
+        ),
+        strong_buy_base_return_pct=_decimal(
+            parser, "ratings", "strong_buy_base_return_pct", maximum=Decimal("1000")
+        ),
+        buy_base_return_pct=_decimal(
+            parser, "ratings", "buy_base_return_pct", maximum=Decimal("1000")
+        ),
+        sell_expected_return_pct=_decimal(
+            parser,
+            "ratings",
+            "sell_expected_return_pct",
+            minimum=Decimal("-1000"),
+            maximum=Decimal("0"),
+        ),
+        strong_sell_expected_return_pct=_decimal(
+            parser,
+            "ratings",
+            "strong_sell_expected_return_pct",
+            minimum=Decimal("-1000"),
+            maximum=Decimal("0"),
+        ),
+        strong_buy_minimum_confidence=_choice(
+            parser,
+            "ratings",
+            "strong_buy_minimum_confidence",
+            frozenset({"low", "medium", "high"}),
+        ),
+    )
+    if ratings.strong_buy_expected_return_pct < ratings.buy_expected_return_pct:
+        raise ConfigurationError("strong-buy expected return must be at least the buy threshold")
+    if ratings.strong_buy_base_return_pct < ratings.buy_base_return_pct:
+        raise ConfigurationError("strong-buy base return must be at least the buy threshold")
+    if ratings.strong_sell_expected_return_pct > ratings.sell_expected_return_pct:
+        raise ConfigurationError("strong-sell return must not exceed the sell threshold")
     orders = OrderSettings(
         default_fill_policy=_choice(
             parser,
@@ -713,6 +768,7 @@ def _load_runtime_settings(
         portfolio,
         risk,
         allocation,
+        ratings,
         orders,
         operations,
         classifier,
@@ -836,6 +892,7 @@ def _load_settings_unchecked(
         portfolio,
         risk,
         allocation,
+        ratings,
         orders,
         operations,
         classifier,
@@ -855,6 +912,7 @@ def _load_settings_unchecked(
         portfolio=portfolio,
         risk=risk,
         allocation=allocation,
+        ratings=ratings,
         orders=orders,
         operations=operations,
         classifier=classifier,
