@@ -2,12 +2,35 @@
   "entity_id": "security_3e597863f00753e8c65c",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "missing",
     "causal_hypothesis": "Grid-interconnection delays can shift some AI-data-centre power demand toward Bloom Energy on-site fuel cells, subject to fuel availability, emissions policy, financing, concentration, manufacturing execution, competing generation, and valuation.",
     "idea_id": "idea_ai_infrastructure_power",
+    "maintenance_mode": "assessment_v2_migration",
+    "migration_version": "assessment-v2-migration-v1",
     "research_focus": "Validate identity, AI-data-centre order materiality, customer concentration, fuel and carbon economics, financing, manufacturing capacity, cash conversion, valuation, catalysts, and invalidation.",
+    "research_page": "",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_3e597863f00753e8c65c:ai-power-value-chain:2026-07-29",
+        "observed_at": "2026-07-29T23:50:38Z",
+        "prompt": "Research Bloom Energy as a bounded on-site power substitute for grid-constrained AI data centres.",
+        "source": "idea_research:01KYPFC140X5NVAEQ8276H0MRZ",
+        "source_refs": [
+          "https://www.iea.org/reports/energy-and-ai/executive-summary",
+          "https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_3e597863f00753e8c65c:assessment-v2-migration-v1",
+        "observed_at": "2026-07-30T12:45:00Z",
+        "prompt": "Migrate security_3e597863f00753e8c65c to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+        "source": "assessment_v2_migration:rollout-step22-20260730",
+        "source_refs": []
+      }
+    ],
     "security_id": "security_3e597863f00753e8c65c"
   },
-  "objective": "Research Bloom Energy as a bounded on-site power substitute for grid-constrained AI data centres.",
+  "objective": "Research Bloom Energy as a bounded on-site power substitute for grid-constrained AI data centres. | Additional cause: Migrate security_3e597863f00753e8c65c to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
   "operation_id": "01KYR4K35GCJ54W0MEN0SYT67E",
   "operation_type": "security_research",
   "payload_version": 1,

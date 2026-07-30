@@ -379,7 +379,7 @@ Hermes continues to use `openai-codex` and the configured main model for agent r
 - Secret-scanning tests prove the key cannot appear in the checkout, diff, run artifacts, logs, command audit, issues, reports, or tool-visible terminal environment.
 - A mocked 401, 429, timeout, and provider outage follow the bounded fallback/degradation policy without leaking the key or corrupting queue state.
 
-## Step 22 — Migrate, backfill, test, and roll out safely — Planned
+## Step 22 — Migrate, backfill, test, and roll out safely — Complete (2026-07-30)
 
 ### Migration
 

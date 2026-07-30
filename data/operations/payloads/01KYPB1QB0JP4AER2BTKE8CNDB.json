@@ -2,9 +2,29 @@
   "entity_id": "security_0a56aa634d077fe5796f",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "assessment_v2_migration",
+    "migration_version": "assessment-v2-migration-v1",
+    "research_page": "",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_0a56aa634d077fe5796f:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:00Z",
+        "prompt": "Research AMAT — Applied Materials, Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_0a56aa634d077fe5796f:assessment-v2-migration-v1",
+        "observed_at": "2026-07-30T12:45:00Z",
+        "prompt": "Migrate security_0a56aa634d077fe5796f to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+        "source": "assessment_v2_migration:rollout-step22-20260730",
+        "source_refs": []
+      }
+    ],
     "security_id": "security_0a56aa634d077fe5796f"
   },
-  "objective": "Research AMAT — Applied Materials, Inc. as an initial bounded security review.",
+  "objective": "Research AMAT — Applied Materials, Inc. as an initial bounded security review. | Additional cause: Migrate security_0a56aa634d077fe5796f to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
   "operation_id": "01KYPB1QB0JP4AER2BTKE8CNDB",
   "operation_type": "security_research",
   "payload_version": 1

@@ -90,6 +90,7 @@ from papertrader.reports import NarrativeItem, generate_daily_report, refresh_wi
 from papertrader.repository_state import snapshot_repository
 from papertrader.research import (
     import_watchlist,
+    migrate_legacy_assessments,
     record_source,
     upsert_assessment,
     upsert_relationship,
@@ -289,6 +290,10 @@ def _parser() -> argparse.ArgumentParser:
     security_context.add_argument("--history-limit", type=int, default=2)
     assessment_get = research_commands.add_parser("assessment-get")
     assessment_get.add_argument("--assessment-id", required=True)
+    assessment_migrate = research_commands.add_parser("migrate-assessments")
+    assessment_migrate.add_argument("--run-id", required=True)
+    assessment_migrate.add_argument("--enqueue-limit", type=int, default=20)
+    assessment_migrate.add_argument("--as-of")
 
     watchlist = commands.add_parser("watchlist", help="manage identity-only monitored securities")
     watchlist_commands = watchlist.add_subparsers(dest="watchlist_command", required=True)
@@ -905,6 +910,16 @@ def _run_research_command(
         print(
             json.dumps(assessment_by_id(repository_root, arguments.assessment_id), sort_keys=True)
         )
+        return 0
+    if arguments.research_command == "migrate-assessments":
+        migrated = migrate_legacy_assessments(
+            repository_root,
+            settings,
+            run_id=arguments.run_id,
+            enqueue_limit=arguments.enqueue_limit,
+            now=parse_timestamp(arguments.as_of, allow_empty=True),
+        )
+        print(json.dumps(asdict(migrated), sort_keys=True))
         return 0
     raw = _request_object(repository_root, arguments.request)
     if arguments.research_command == "source":

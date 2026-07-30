@@ -2,9 +2,29 @@
   "entity_id": "security_33d9c44facc75c726c7d",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "assessment_v2_migration",
+    "migration_version": "assessment-v2-migration-v1",
+    "research_page": "",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_33d9c44facc75c726c7d:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:06Z",
+        "prompt": "Research NVDA — NVIDIA Corporation as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_33d9c44facc75c726c7d:assessment-v2-migration-v1",
+        "observed_at": "2026-07-30T12:45:00Z",
+        "prompt": "Migrate security_33d9c44facc75c726c7d to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+        "source": "assessment_v2_migration:rollout-step22-20260730",
+        "source_refs": []
+      }
+    ],
     "security_id": "security_33d9c44facc75c726c7d"
   },
-  "objective": "Research NVDA — NVIDIA Corporation as an initial bounded security review.",
+  "objective": "Research NVDA — NVIDIA Corporation as an initial bounded security review. | Additional cause: Migrate security_33d9c44facc75c726c7d to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
   "operation_id": "01KYPB1X6GMJJD0DTCRTYAGTBE",
   "operation_type": "security_research",
   "payload_version": 1

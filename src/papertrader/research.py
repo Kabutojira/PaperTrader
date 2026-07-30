@@ -3,12 +3,15 @@
 from __future__ import annotations
 
 import re
+from collections import Counter
 from collections.abc import Mapping, Sequence
+from dataclasses import dataclass
 from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
 
+from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
 from papertrader.models import OrderLegSpec
 from papertrader.orders import leg_from_mapping
@@ -115,6 +118,19 @@ WATCHLIST_SECURITY_FIELDS = (
 
 class ResearchStateError(RuntimeError):
     """Raised when a research-state mutation violates identity or schema rules."""
+
+
+@dataclass(frozen=True, slots=True)
+class AssessmentMigrationResult:
+    """Idempotent legacy archive, exact-header rewrite, and bounded v2 refresh plan."""
+
+    migration_version: str
+    imported_history_rows: int
+    existing_history_rows: int
+    current_rows_rewritten: int
+    refreshes_selected: tuple[str, ...]
+    operations_created: tuple[str, ...]
+    report_path: str
 
 
 def _exact_strings(
@@ -571,6 +587,268 @@ def security_research_context(
         "previous_page_hash": versions[-1]["research_page_hash"] if versions else "",
         "current_page_hash": page_hash,
     }
+
+
+def _legacy_source_operation(
+    repository_root: Path, assessment: Mapping[str, str]
+) -> Mapping[str, str] | None:
+    matches = [
+        row
+        for row in read_table(repository_root, "operations_history")
+        if row["operation_type"] in {"security_research", "quick_check_research"}
+        and row["entity_id"] == assessment["security_id"]
+        and row["claimed_by_run_id"] == assessment["run_id"]
+        and row["terminal_status"] == "succeeded"
+    ]
+    return max(matches, key=lambda row: (row["completed_at"], row["operation_id"]), default=None)
+
+
+def _migration_priority(
+    security_id: str,
+    assessment: Mapping[str, str] | None,
+    *,
+    holding_ids: set[str],
+    pending_ids: set[str],
+    target: Mapping[str, str] | None,
+    now: datetime,
+) -> tuple[int, Decimal]:
+    edge = Decimal("0")
+    if target and target.get("candidate_edge"):
+        edge = required_decimal(target["candidate_edge"], label="candidate_edge")
+    if security_id in holding_ids:
+        return 96, edge
+    if security_id in pending_ids:
+        return 94, edge
+    if target and required_decimal(target["target_weight_pct"], label="target_weight_pct") > 0:
+        return 92, edge
+    if target and target.get("rank"):
+        return 88, edge
+    expires = parse_timestamp(assessment["expires_at"]) if assessment else None
+    if expires is None or expires <= now:
+        return 84, edge
+    if assessment and assessment.get("assessment_schema_version") != "2":
+        return 80, edge
+    return 70, edge
+
+
+def migrate_legacy_assessments(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+    enqueue_limit: int = 20,
+    now: datetime | None = None,
+) -> AssessmentMigrationResult:
+    """Archive current v1 assessments without inventing values and queue bounded v2 refreshes."""
+
+    from papertrader.queue import enqueue_operation
+
+    _identifier(run_id, label="run_id")
+    if enqueue_limit < 0 or enqueue_limit > 100:
+        raise ResearchStateError("enqueue_limit must be between 0 and 100")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    migration_version = "assessment-v2-migration-v1"
+    current = read_table(repository_root, "security_assessments")
+    history = read_table(repository_root, "security_assessment_history")
+    history_by_id = {row["assessment_id"]: row for row in history}
+    latest_by_security = {
+        row["security_id"]: row
+        for row in sorted(history, key=lambda value: (value["recorded_at"], value["assessment_id"]))
+    }
+    additions: list[dict[str, str]] = []
+    normalized_current: list[dict[str, str]] = []
+    existing_count = 0
+    for assessment in sorted(current, key=lambda row: row["security_id"]):
+        if assessment.get("assessment_schema_version") == "2":
+            normalized_current.append(dict(assessment))
+            continue
+        normalized = dict(assessment)
+        normalized["assessment_schema_version"] = "legacy_v1"
+        normalized_current.append(normalized)
+        source_operation = _legacy_source_operation(repository_root, normalized)
+        security = next(
+            row
+            for row in read_table(repository_root, "securities")
+            if row["security_id"] == normalized["security_id"]
+        )
+        research_page = security["research_page"]
+        research_page_hash = ""
+        if research_page:
+            page = repository_root.joinpath(*PurePosixPath(research_page).parts)
+            if page.is_file() and not page.is_symlink():
+                research_page_hash = content_hash(page.read_bytes())
+        identity = {
+            **normalized,
+            "source_operation_id": source_operation["operation_id"] if source_operation else "",
+            "source_result_path": source_operation["result_path"] if source_operation else "",
+            "research_page": research_page,
+            "research_page_hash": research_page_hash,
+        }
+        assessment_id = stable_id("assessment", content_hash(identity))
+        if assessment_id in history_by_id:
+            existing_count += 1
+            latest_by_security[normalized["security_id"]] = history_by_id[assessment_id]
+            continue
+        previous = latest_by_security.get(normalized["security_id"])
+        history_row = {
+            "assessment_id": assessment_id,
+            "previous_assessment_id": previous["assessment_id"] if previous else "",
+            **identity,
+            "recorded_at": format_timestamp(instant),
+        }
+        additions.append(history_row)
+        history_by_id[assessment_id] = history_row
+        latest_by_security[normalized["security_id"]] = history_row
+    imported = append_unique(
+        repository_root,
+        "security_assessment_history",
+        additions,
+        key_columns=("assessment_id",),
+    )
+    # This replaces the transitional prefix header with the exact current contract. Values are
+    # unchanged except for the explicit legacy schema marker and unavailable v2 fields remain blank.
+    write_table(repository_root, "security_assessments", normalized_current)
+
+    securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
+    assessments = {
+        row["security_id"]: row for row in read_table(repository_root, "security_assessments")
+    }
+    holding_ids = {
+        row["security_id"]
+        for row in read_table(repository_root, "portfolio")
+        if required_decimal(row["quantity"], label="position quantity") != 0
+    }
+    active_orders = {
+        row["order_id"]
+        for row in read_table(repository_root, "orders")
+        if row["status"] in {"pending", "open", "partially_filled"}
+    }
+    pending_ids = {
+        row["security_id"]
+        for row in read_table(repository_root, "order_legs")
+        if row["order_id"] in active_orders
+    }
+    targets = {row["security_id"]: row for row in read_table(repository_root, "allocation_targets")}
+    ranked: list[tuple[int, Decimal, str]] = []
+    for security_id in sorted(securities):
+        candidate_assessment = assessments.get(security_id)
+        if candidate_assessment and candidate_assessment.get("assessment_schema_version") == "2":
+            continue
+        priority, edge = _migration_priority(
+            security_id,
+            candidate_assessment,
+            holding_ids=holding_ids,
+            pending_ids=pending_ids,
+            target=targets.get(security_id),
+            now=instant,
+        )
+        ranked.append((priority, edge, security_id))
+    selected = sorted(ranked, key=lambda value: (-value[0], -value[1], value[2]))[:enqueue_limit]
+    selected_ids: list[str] = []
+    created_ids: list[str] = []
+    for priority, _edge, security_id in selected:
+        candidate_assessment = assessments.get(security_id)
+        operation_id, created = enqueue_operation(
+            repository_root,
+            settings,
+            operation_type="security_research",
+            entity_type="security",
+            entity_id=security_id,
+            dedupe_key=f"security_research:{security_id}:{migration_version}",
+            prompt=(
+                f"Migrate {security_id} to one scenario-complete assessment v2 using current "
+                "primary evidence and explicit prior-review comparison."
+            ),
+            inputs={
+                "security_id": security_id,
+                "maintenance_mode": "assessment_v2_migration",
+                "assessment_state": (
+                    candidate_assessment["assessed_at"] if candidate_assessment else "missing"
+                ),
+                "research_page": securities[security_id]["research_page"],
+                "migration_version": migration_version,
+            },
+            source=f"assessment_v2_migration:{run_id}",
+            priority=priority,
+            freshness_days=0,
+            source_refs=(
+                tuple(part for part in candidate_assessment["evidence_refs"].split("|") if part)
+                if candidate_assessment
+                else ()
+            ),
+            now=instant,
+        )
+        selected_ids.append(operation_id)
+        if created:
+            created_ids.append(operation_id)
+
+    migrated = read_table(repository_root, "security_assessments")
+    report = {
+        "report_version": 1,
+        "migration_version": migration_version,
+        "run_id": run_id,
+        "as_of": format_timestamp(instant),
+        "assessment_schema_distribution": dict(
+            sorted(Counter(row["assessment_schema_version"] for row in migrated).items())
+        ),
+        "rating_distribution": dict(
+            sorted(Counter(row["canonical_rating"] or "unavailable" for row in migrated).items())
+        ),
+        "allocation_eligibility_distribution": dict(
+            sorted(
+                Counter(row["allocation_eligibility"] or "unavailable" for row in migrated).items()
+            )
+        ),
+        "legacy_score_ranges": {
+            field: {
+                "minimum": decimal_text(
+                    min(
+                        (required_decimal(row[field], label=field) for row in migrated),
+                        default=Decimal("0"),
+                    )
+                ),
+                "maximum": decimal_text(
+                    max(
+                        (required_decimal(row[field], label=field) for row in migrated),
+                        default=Decimal("0"),
+                    )
+                ),
+            }
+            for field in ASSESSMENT_SCORE_FIELDS
+        },
+        "allocation_exclusion_reasons": dict(
+            sorted(
+                Counter(
+                    reason
+                    for target in targets.values()
+                    for reason in target["reason"].split("|")
+                    if reason
+                ).items()
+            )
+        ),
+        "refresh_security_ids": [security_id for _priority, _edge, security_id in selected],
+        "refresh_operation_ids": selected_ids,
+        "active_allocation_enabled": (
+            settings.allocation.mode != "disabled"
+            and sum(
+                row["assessment_schema_version"] == "2" and row["research_status"] == "complete"
+                for row in migrated
+            )
+            >= settings.allocation.minimum_diversified_candidates
+        ),
+    }
+    report_path = repository_root / "data" / "runs" / run_id / "research_rollout.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(report_path, report, allowed_root=repository_root)
+    return AssessmentMigrationResult(
+        migration_version=migration_version,
+        imported_history_rows=imported,
+        existing_history_rows=existing_count,
+        current_rows_rewritten=len(current),
+        refreshes_selected=tuple(selected_ids),
+        operations_created=tuple(created_ids),
+        report_path=report_path.relative_to(repository_root).as_posix(),
+    )
 
 
 def import_watchlist(

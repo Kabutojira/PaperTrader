@@ -2,9 +2,29 @@
   "entity_id": "security_3853e54c619d597dcaa1",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "missing",
+    "maintenance_mode": "assessment_v2_migration",
+    "migration_version": "assessment-v2-migration-v1",
+    "research_page": "",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_3853e54c619d597dcaa1:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:07Z",
+        "prompt": "Research NIB.F — Nidec Corporation as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_3853e54c619d597dcaa1:assessment-v2-migration-v1",
+        "observed_at": "2026-07-30T12:45:00Z",
+        "prompt": "Migrate security_3853e54c619d597dcaa1 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+        "source": "assessment_v2_migration:rollout-step22-20260730",
+        "source_refs": []
+      }
+    ],
     "security_id": "security_3853e54c619d597dcaa1"
   },
-  "objective": "Research NIB.F — Nidec Corporation as an initial bounded security review.",
+  "objective": "Research NIB.F — Nidec Corporation as an initial bounded security review. | Additional cause: Migrate security_3853e54c619d597dcaa1 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
   "operation_id": "01KYPB1Y5R4NFAMSPZZX3YAS1E",
   "operation_type": "security_research",
   "payload_version": 1

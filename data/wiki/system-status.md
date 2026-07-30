@@ -7,14 +7,14 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0419de72cccb8eed7e32"
-as_of: "2026-07-30T12:30:00Z"
+snapshot_id: "decision_d1db783ca3a144450032"
+as_of: "2026-07-30T13:00:00Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_0419de72cccb8eed7e32`
-**As of:** `2026-07-30T12:30:00Z`
+**Publication snapshot:** `decision_d1db783ca3a144450032`
+**As of:** `2026-07-30T13:00:00Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -126,17 +126,6 @@ Showing 20 of 134 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 
-- `ready` `01KYPB1PBRCRHY63XGVY8SV80F` — `security_research` for `security_099561384c0f5e697727`
-- `ready` `01KYPB1QB0JP4AER2BTKE8CNDB` — `security_research` for `security_0a56aa634d077fe5796f`
-- `ready` `01KYPB1RA8KCC272M9J5G94CHK` — `security_research` for `security_0cf8075039299094d614`
-- `ready` `01KYPB1V80Z3NV79GVG54DMFMT` — `security_research` for `security_204be2a44063993de1a8`
-- `ready` `01KYPB1W78HSRT5KNG39B7SPBX` — `security_research` for `security_2433a056eb0c55961fcc`
-- `ready` `01KYPB1X6GMJJD0DTCRTYAGTBE` — `security_research` for `security_33d9c44facc75c726c7d`
-- `ready` `01KYPB1Y5R4NFAMSPZZX3YAS1E` — `security_research` for `security_3853e54c619d597dcaa1`
-- `ready` `01KYPB1Z50955WQSMSWYR16957` — `security_research` for `security_3a75fc1ccca2ee7c937a`
-- `ready` `01KYPB2048VWN4VV7YYF4Y60TX` — `security_research` for `security_47a0b06f6c6c478d7c1e`
-- `ready` `01KYPB213GFWH1QMBGJT4A5KDA` — `security_research` for `security_55c9ce2fdcd32dad6b8c`
-- `ready` `01KYPB2320KM60TB1XB6840QEB` — `security_research` for `security_61567714298b9563d1a9`
 - `ready` `01KYPB241838ZBZ6FE9EQCEJYW` — `security_research` for `security_664f93a7eaca72e76e9b`
 - `ready` `01KYPB250GCWY1ZB0GD3QC2DBX` — `security_research` for `security_6cf75bd0ec0aa2a20148`
 - `ready` `01KYPB25ZR2Q5MGTH3P47XVCJ5` — `security_research` for `security_715bde20b6e1e1320c1a`
@@ -146,6 +135,17 @@ Showing 20 of 134 active operations.
 - `ready` `01KYPB2AW0SJ35EAKMPQM8QVAH` — `security_research` for `security_95351d928b674bbdf687`
 - `ready` `01KYPB2BV8XK4AAREZ3257MDE0` — `security_research` for `security_96ba305ee7cd586bc348`
 - `ready` `01KYPB2DSRFNQ0NE6AY81GQZKR` — `security_research` for `security_98470cfc01bbcde78fc2`
+- `ready` `01KYPB2GQGHN1J2S82EFKN1CAH` — `security_research` for `security_ad3b1f8f59fd599f079a`
+- `ready` `01KYPB2HPR71QC8BBTPA3HMW8R` — `security_research` for `security_ad5917642acbba28c1f2`
+- `ready` `01KYPB2KN8R1RGAPDZQ2AN9P2V` — `security_research` for `security_b2116dcf976c96974d7b`
+- `ready` `01KYPB2MMG5E7Y3EVH2XS3MV0G` — `security_research` for `security_c150f31c30afdb4a85f9`
+- `ready` `01KYPB2NKR40C7V30WG552P7WP` — `security_research` for `security_c86bb4e75658c07142cf`
+- `ready` `01KYPB2PK0N1W5XHVXFXW43JSZ` — `security_research` for `security_ce9b78a4d0773c950765`
+- `ready` `01KYPB2PK0R0ZXAHGNGZ6X5FM8` — `security_research` for `security_cd492d97064d8574156e`
+- `ready` `01KYPB2QJ8QGJJAGXQ71MT7GWW` — `security_research` for `security_d08d763780400dfbffce`
+- `ready` `01KYPB2RHG2WF001VJFAJXH5S6` — `security_research` for `security_d12e746b3c9d392183cc`
+- `ready` `01KYPB2TG0W0FFP83ZG7KC45YP` — `security_research` for `security_dfa34d4b9050964b465e`
+- `ready` `01KYPB2VF8GSJR3R78FTPFE8YM` — `security_research` for `security_eca976f0076a425ea1bb`
 
 </details>
 

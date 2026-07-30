@@ -146,6 +146,24 @@ For a standalone skill debug, omit `daily prepare` and `daily finalize`; start a
 enforce exactly one operation. Never start a second Codex agent or process another row before the
 first finish returns.
 
+## Migrate legacy assessments and stage v2 refreshes
+
+Run the migration once with a stable run ID and bounded refresh count. Retrying the exact command
+is idempotent: immutable history is not duplicated and the rollout report is byte-stable.
+
+```bash
+papertrader research migrate-assessments \
+  --run-id rollout-step22-YYYYMMDD \
+  --enqueue-limit 12 \
+  --as-of YYYY-MM-DDTHH:MM:SSZ
+```
+
+The command writes the exact current assessment header, archives legacy rows as `legacy_v1`, and
+leaves scenario, expected-return, and rating fields unavailable. It reuses or creates only the
+highest-priority bounded security refreshes and writes `data/runs/<run_id>/research_rollout.json`.
+Do not enable deployment based on legacy rows: allocation remains gated on complete assessment-v2
+evidence and the configured diversification threshold.
+
 ## Run one operation through local Hermes
 
 Use a dedicated Hermes profile and process one operation at a time:

@@ -1,0 +1,87 @@
+{
+  "active_allocation_enabled": false,
+  "allocation_eligibility_distribution": {
+    "unavailable": 36
+  },
+  "allocation_exclusion_reasons": {
+    "assessment_ineligible": 11,
+    "base_upside_below_minimum": 9,
+    "base_upside_not_positive": 26,
+    "confidence_below_minimum": 3,
+    "hard_blocker:accounting_uncertain,solvency_risk,valuation_unsupported": 1,
+    "hard_blocker:liquidity_insufficient": 1,
+    "hard_blocker:liquidity_insufficient,valuation_unsupported": 1,
+    "hard_blocker:valuation_unsupported": 8,
+    "relationship_missing_or_stale": 14,
+    "score_below_cash_hurdle": 35,
+    "upside_downside_ratio_below_minimum": 34
+  },
+  "as_of": "2026-07-30T12:45:00Z",
+  "assessment_schema_distribution": {
+    "legacy_v1": 36
+  },
+  "legacy_score_ranges": {
+    "balance_sheet_score": {
+      "maximum": "95",
+      "minimum": "5"
+    },
+    "business_quality_score": {
+      "maximum": "95",
+      "minimum": "25"
+    },
+    "liquidity_score": {
+      "maximum": "95",
+      "minimum": "5"
+    },
+    "risk_penalty": {
+      "maximum": "80",
+      "minimum": "8"
+    },
+    "thesis_score": {
+      "maximum": "92",
+      "minimum": "50"
+    },
+    "timing_score": {
+      "maximum": "45",
+      "minimum": "10"
+    },
+    "valuation_score": {
+      "maximum": "65",
+      "minimum": "0"
+    }
+  },
+  "migration_version": "assessment-v2-migration-v1",
+  "rating_distribution": {
+    "unavailable": 36
+  },
+  "refresh_operation_ids": [
+    "01KYPB1PBRCRHY63XGVY8SV80F",
+    "01KYPB1QB0JP4AER2BTKE8CNDB",
+    "01KYPB1RA8KCC272M9J5G94CHK",
+    "01KYPB1V80Z3NV79GVG54DMFMT",
+    "01KYPB1W78HSRT5KNG39B7SPBX",
+    "01KYPB1X6GMJJD0DTCRTYAGTBE",
+    "01KYPB1Y5R4NFAMSPZZX3YAS1E",
+    "01KYPB1Z50955WQSMSWYR16957",
+    "01KYR4K35GCJ54W0MEN0SYT67E",
+    "01KYPB2048VWN4VV7YYF4Y60TX",
+    "01KYPB213GFWH1QMBGJT4A5KDA",
+    "01KYPB2320KM60TB1XB6840QEB"
+  ],
+  "refresh_security_ids": [
+    "security_099561384c0f5e697727",
+    "security_0a56aa634d077fe5796f",
+    "security_0cf8075039299094d614",
+    "security_204be2a44063993de1a8",
+    "security_2433a056eb0c55961fcc",
+    "security_33d9c44facc75c726c7d",
+    "security_3853e54c619d597dcaa1",
+    "security_3a75fc1ccca2ee7c937a",
+    "security_3e597863f00753e8c65c",
+    "security_47a0b06f6c6c478d7c1e",
+    "security_55c9ce2fdcd32dad6b8c",
+    "security_61567714298b9563d1a9"
+  ],
+  "report_version": 1,
+  "run_id": "rollout-step22-20260730"
+}
