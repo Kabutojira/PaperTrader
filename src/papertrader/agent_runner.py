@@ -613,6 +613,7 @@ def sanitized_hermes_environment(
         {
             "HOME": str((hermes_home / "home").resolve()),
             "HERMES_HOME": str(hermes_home.resolve()),
+            "HERMES_REDACT_SECRETS": "true",
             "HERMES_YOLO_MODE": "1",
             "PAPERTRADER_AUDIT_OPERATION_ID": operation_id,
             "PAPERTRADER_AUDIT_PATH": (f"data/runs/{run_id}/{operation_id}/command_audit.json"),

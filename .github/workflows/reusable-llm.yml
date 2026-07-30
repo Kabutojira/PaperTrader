@@ -356,6 +356,15 @@ jobs:
           uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
+      - name: Print recent redacted Hermes logs after a runtime failure
+        if: ${{ failure() }}
+        run: |
+          echo "::group::Hermes errors.log (current operation window)"
+          hermes logs errors --since 35m -n 200 || true
+          echo "::endgroup::"
+          echo "::group::Hermes agent.log (current operation window)"
+          hermes logs agent --since 35m -n 500 || true
+          echo "::endgroup::"
       - name: Create the whitelisted runtime patch bundle
         id: bundle
         env:

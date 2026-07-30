@@ -317,6 +317,7 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
 
     assert "OPENAI_API_KEY" not in sanitized
     assert sanitized["OPENROUTER_API_KEY"] == "auxiliary-secret-value"
+    assert sanitized["HERMES_REDACT_SECRETS"] == "true"
     assert "ACTIONS_RUNTIME_TOKEN" not in sanitized
     assert "BROKER_API_TOKEN" not in sanitized
     assert "GH_TOKEN" not in sanitized

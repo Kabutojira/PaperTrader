@@ -143,6 +143,14 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     )
     assert run_batch["env"]["OPENROUTER_API_KEY"] == "${{ secrets.OPENROUTER_API_KEY }}"
     assert 'test -n "${OPENROUTER_API_KEY:-}"' in run_batch["run"]
+    hermes_logs = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Print recent redacted Hermes logs after a runtime failure"
+    )
+    assert hermes_logs["if"] == "${{ failure() }}"
+    assert "hermes logs errors --since 35m -n 200" in hermes_logs["run"]
+    assert "hermes logs agent --since 35m -n 500" in hermes_logs["run"]
     for step in runtime["steps"]:
         if step is not run_batch:
             assert "OPENROUTER_API_KEY" not in step.get("env", {})
