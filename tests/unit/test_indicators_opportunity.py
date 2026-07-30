@@ -366,7 +366,7 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
         for row in read_table(sandbox_repository, "operations_todo")
         if row["operation_type"] == "security_research"
     )
-    assert security_research["priority"] == "95"
+    assert security_research["priority"] == "96"
     security_payload = json.loads(
         (sandbox_repository / security_research["payload_path"]).read_text(encoding="utf-8")
     )

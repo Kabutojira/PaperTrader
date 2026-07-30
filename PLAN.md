@@ -75,3 +75,7 @@ Kept formatted Rich Markdown delivery after the runtime commit, added bot/destin
 ## Step 15 — Run daily at 17:00 Europe/Rome and reconcile publication — Complete (2026-07-28)
 
 Changed the seven-day schedule to timezone-aware 17:00 Europe/Rome, migrated live pending ISRG state to cash after the new payoff gates rejected it, regenerated the canonical snapshot and investor pages, and validated the complete application and Quartz publication.
+
+## Step 16 — Merge research alerts, add quick checks, and publish a daily podcast — Complete (2026-07-30)
+
+Merged distinct same-security and repeat-day alert causes into one pre-claim research payload with rising priority; introduced bounded quick checks for securities fully reviewed within ten days, including deterministic escalation back to standard research; and added a final sequential daily podcast operation that collects accepted run changes, writes an evidence-grounded long-form script, uses scoped Hermes TTS, validates and assembles a roughly twenty-minute MP3, and remains one-way from investment decisions.

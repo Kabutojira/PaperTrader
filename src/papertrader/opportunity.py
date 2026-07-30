@@ -7,7 +7,7 @@ import re
 import subprocess
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 from typing import Any, Protocol
@@ -32,6 +32,7 @@ from papertrader.utils import (
     ensure_utc,
     format_timestamp,
     parse_iso_date,
+    parse_timestamp,
     stable_id,
     utc_now,
 )
@@ -938,31 +939,54 @@ def process_opportunity_transitions(
                     ],
                 }
             )
+            research_type, recent_research = _alert_research_type(
+                repository_root,
+                security_id,
+                now=instant,
+            )
+            if research_type == "quick_check_research":
+                assert recent_research is not None
+                research_prompt = (
+                    f"Quick-check {security_id} after price-action alerts: "
+                    f"{', '.join(trigger_types)}; verify the latest research assumptions and "
+                    "escalate to full security research if any material gate changed."
+                )
+            else:
+                research_prompt = (
+                    f"Research {security_id} with high priority after price-action alerts: "
+                    f"{', '.join(trigger_types)}; decide what changed and whether to act."
+                )
+            research_inputs: dict[str, object] = {
+                "security_id": security_id,
+                "trigger_types": trigger_types,
+                "market_data_as_of": format_timestamp(current[security_id].calculated_at),
+                "market_data_date": current[security_id].as_of_date.isoformat(),
+                "period_start": period[0].date.isoformat(),
+                "period_end": period[-1].date.isoformat(),
+                "source_price_hash": current[security_id].source_price_hash,
+            }
+            if recent_research is not None:
+                research_inputs.update(
+                    {
+                        "baseline_operation_id": recent_research["operation_id"],
+                        "baseline_result_path": recent_research["result_path"],
+                        "baseline_completed_at": recent_research["completed_at"],
+                    }
+                )
             enqueue_operation(
                 repository_root,
                 settings,
-                operation_type="security_research",
+                operation_type=research_type,
                 entity_type="security",
                 entity_id=security_id,
                 dedupe_key=build_dedupe_key(
-                    "security_research",
+                    research_type,
                     security_id,
                     alert_hash,
                     current[security_id].as_of_date.isoformat(),
                 ),
-                prompt=(
-                    f"Research {security_id} with high priority after price-action alerts: "
-                    f"{', '.join(trigger_types)}; decide what changed and whether to act."
-                ),
-                inputs={
-                    "security_id": security_id,
-                    "trigger_types": trigger_types,
-                    "market_data_as_of": format_timestamp(current[security_id].calculated_at),
-                    "market_data_date": current[security_id].as_of_date.isoformat(),
-                    "period_start": period[0].date.isoformat(),
-                    "period_end": period[-1].date.isoformat(),
-                    "source_price_hash": current[security_id].source_price_hash,
-                },
+                prompt=research_prompt,
+                inputs=research_inputs,
                 source="deterministic-price-alert",
                 source_refs=tuple(
                     packet.path.relative_to(repository_root).as_posix()
@@ -973,3 +997,41 @@ def process_opportunity_transitions(
                 now=instant,
             )
     return tuple(packets)
+
+
+def _alert_research_type(
+    repository_root: Path,
+    security_id: str,
+    *,
+    now: datetime,
+) -> tuple[str, Mapping[str, str] | None]:
+    """Choose a bounded quick check when a full review succeeded in the last ten days."""
+
+    from papertrader.tables import read_table
+
+    active = read_table(repository_root, "operations_todo")
+    if any(
+        row["entity_id"] == security_id
+        and row["operation_type"] == "security_research"
+        and row["status"] in {"queued", "ready", "waiting"}
+        for row in active
+    ):
+        return "security_research", None
+    cutoff = ensure_utc(now) - timedelta(days=10)
+    recent: Mapping[str, str] | None = None
+    recent_at: datetime | None = None
+    for row in read_table(repository_root, "operations_history"):
+        if (
+            row["entity_id"] != security_id
+            or row["operation_type"] != "security_research"
+            or row["terminal_status"] != "succeeded"
+            or not row["result_path"]
+        ):
+            continue
+        completed = parse_timestamp(row["completed_at"])
+        if completed is None or completed < cutoff or completed > now:
+            continue
+        if recent_at is None or completed > recent_at:
+            recent = row
+            recent_at = completed
+    return ("quick_check_research", recent) if recent is not None else ("security_research", None)

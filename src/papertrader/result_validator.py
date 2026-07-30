@@ -166,7 +166,7 @@ def _path_allowed_for_operation(
         return _is_wiki_path(path, WIKI_RESEARCH_DOMAINS)
     if operation_type == "idea_research":
         return raw_path == "data/tables/securities.csv" or _is_wiki_path(path, frozenset({"ideas"}))
-    if operation_type == "security_research":
+    if operation_type in {"security_research", "quick_check_research"}:
         return raw_path in {
             "data/tables/securities.csv",
             "data/tables/security_assessments.csv",
@@ -189,6 +189,23 @@ def _path_allowed_for_operation(
             "data/tables/orders.csv",
             "data/tables/signals.csv",
         } or _is_wiki_path(path, frozenset({"strategies"}))
+    if operation_type == "daily_podcast":
+        if path in {
+            PurePosixPath("data/wiki/log.md"),
+            PurePosixPath("data/wiki/research-catalog.md"),
+        }:
+            return True
+        return (
+            len(path.parts) == 4
+            and path.parts[:3] == ("data", "wiki", "podcasts")
+            and path.name.startswith("daily-podcast_")
+            and path.suffix in {".md", ".mp3"}
+        ) or (
+            len(path.parts) == 4
+            and path.parts[:3] == ("data", "wiki", "daily-reports")
+            and path.name.startswith("daily-report_")
+            and path.suffix == ".md"
+        )
     return False
 
 
@@ -233,6 +250,8 @@ def _command_allowed(
         return True
     if command[:2] == ("queue", "enqueue"):
         return operation_type != "source_discovery"
+    if command[:2] == ("podcast", "assemble"):
+        return operation_type == "daily_podcast"
     if command[:2] == ("seekingalpha", "enqueue-leads"):
         return operation_type == "source_discovery"
     if command[:2] == ("watchlist", "import"):
@@ -240,11 +259,11 @@ def _command_allowed(
             operation_type == "wiki_ingest" and (youtube_video or seekingalpha_lead)
         )
     if command[:3] == ("research", "source", "record"):
-        return operation_type in {"wiki_ingest", "security_research"}
+        return operation_type in {"wiki_ingest", "security_research", "quick_check_research"}
     if command[:3] == ("research", "security", "upsert"):
-        return operation_type == "security_research"
+        return operation_type in {"security_research", "quick_check_research"}
     if command[:3] == ("research", "assessment", "upsert"):
-        return operation_type == "security_research"
+        return operation_type in {"security_research", "quick_check_research"}
     if command[:3] == ("research", "relationship", "upsert"):
         return operation_type == "relationship_research"
     if command[:3] == ("research", "strategy", "upsert"):
@@ -497,7 +516,10 @@ def _security_assessment_result_errors(
     run_id: str,
     environment: Mapping[str, str],
 ) -> list[str]:
-    if operation.operation_type != "security_research" or status not in {"succeeded", "skipped"}:
+    if operation.operation_type not in {
+        "security_research",
+        "quick_check_research",
+    } or status not in {"succeeded", "skipped"}:
         return []
     assessment = next(
         (
@@ -1216,10 +1238,18 @@ def validate_agent_result(
     evidence = result.get("evidence")
     if status in {"skipped", "blocked", "failed"} and not evidence:
         errors.append(f"{status} result requires evidence")
-    if operation.operation_type in {"opportunity_research", "strategy_research"} and not evidence:
+    if (
+        operation.operation_type
+        in {
+            "opportunity_research",
+            "quick_check_research",
+            "strategy_research",
+        }
+        and not evidence
+    ):
         errors.append(f"{operation.operation_type} result must be evidence-linked")
     if (
-        operation.operation_type == "security_research"
+        operation.operation_type in {"security_research", "quick_check_research"}
         and status == "skipped"
         and "data/tables/security_assessments.csv" in changed_paths
     ):
@@ -1333,6 +1363,7 @@ def validate_agent_result(
         operation_id
         for operation_id, row in operation_rows_before.items()
         if operation_rows_after.get(operation_id) != row
+        and not _is_allowed_preclaim_research_merge(row, operation_rows_after.get(operation_id))
     )
     if altered_existing_operations:
         errors.append(
@@ -1385,6 +1416,36 @@ def validate_agent_result(
         ):
             errors.append(f"files_changed contains an unchanged old value: {path}")
     return AgentValidation(result, changed_paths, tuple(sorted(set(errors))))
+
+
+def _is_allowed_preclaim_research_merge(
+    before: Mapping[str, str], after: Mapping[str, str] | None
+) -> bool:
+    """Accept only the deterministic priority/prompt enrichment of unclaimed research."""
+
+    if after is None or before.get("operation_type") not in {
+        "security_research",
+        "quick_check_research",
+    }:
+        return False
+    if before.get("status") not in {"queued", "ready", "waiting"}:
+        return False
+    changed = {key for key in before if before.get(key) != after.get(key)}
+    if not changed.issubset({"updated_at", "priority", "prompt", "depends_on"}):
+        return False
+    try:
+        before_priority = int(before["priority"])
+        after_priority = int(after["priority"])
+    except (KeyError, ValueError):
+        return False
+    return (
+        before.get("operation_id") == after.get("operation_id")
+        and before.get("operation_type") == after.get("operation_type")
+        and before.get("entity_id") == after.get("entity_id")
+        and before.get("status") == after.get("status")
+        and before_priority <= after_priority <= 100
+        and str(after.get("prompt", "")).startswith(str(before.get("prompt", "")))
+    )
 
 
 __all__ = [

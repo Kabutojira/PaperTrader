@@ -22,16 +22,18 @@
         "wiki_ingest",
         "source_discovery",
         "opportunity_research",
+        "quick_check_research",
         "idea_research",
         "security_research",
         "relationship_research",
         "strategy_research",
-        "execute_strategy"
+        "execute_strategy",
+        "daily_podcast"
       ]
     },
     "entity_type": {
       "type": "string",
-      "enum": ["source", "opportunity", "idea", "security", "relationship", "strategy"]
+      "enum": ["source", "opportunity", "idea", "security", "relationship", "strategy", "run"]
     },
     "entity_id": { "type": "string", "minLength": 1, "maxLength": 128 },
     "objective": { "type": "string", "minLength": 1, "maxLength": 2000 },
@@ -45,6 +47,33 @@
   "allOf": [
     {
       "oneOf": [
+        {
+          "properties": {
+            "operation_type": { "const": "daily_podcast" },
+            "inputs": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "run_id",
+                "context_path",
+                "report_path",
+                "page_path",
+                "audio_path",
+                "target_minutes",
+                "target_words"
+              ],
+              "properties": {
+                "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
+                "context_path": { "$ref": "#/$defs/repository_path" },
+                "report_path": { "$ref": "#/$defs/repository_path" },
+                "page_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}\\.md$" },
+                "audio_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}\\.mp3$" },
+                "target_minutes": { "const": 20 },
+                "target_words": { "type": "integer", "minimum": 2800, "maximum": 3200 }
+              }
+            }
+          }
+        },
         {
           "properties": {
             "operation_type": { "const": "wiki_ingest" },
@@ -237,6 +266,46 @@
                 "market_data_as_of": { "type": "string", "format": "date-time" },
                 "period_start": { "type": "string", "format": "date" },
                 "period_end": { "type": "string", "format": "date" }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "operation_type": { "const": "quick_check_research" },
+            "inputs": {
+              "type": "object",
+              "required": [
+                "security_id",
+                "baseline_operation_id",
+                "baseline_result_path",
+                "baseline_completed_at",
+                "trigger_types",
+                "market_data_as_of",
+                "market_data_date",
+                "period_start",
+                "period_end",
+                "source_price_hash"
+              ],
+              "properties": {
+                "security_id": { "type": "string", "minLength": 1 },
+                "baseline_operation_id": { "$ref": "#/$defs/ulid" },
+                "baseline_result_path": { "$ref": "#/$defs/repository_path" },
+                "baseline_completed_at": { "type": "string", "format": "date-time" },
+                "trigger_types": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": { "type": "string", "minLength": 1 }
+                },
+                "market_data_as_of": { "type": "string", "format": "date-time" },
+                "market_data_date": { "type": "string", "format": "date" },
+                "period_start": { "type": "string", "format": "date" },
+                "period_end": { "type": "string", "format": "date" },
+                "source_price_hash": { "$ref": "#/$defs/sha256" },
+                "research_reasons": { "type": "array", "items": { "type": "object" } },
+                "merged_input_values": { "type": "object" },
+                "full_research_requested": { "type": "boolean" }
               }
             }
           }

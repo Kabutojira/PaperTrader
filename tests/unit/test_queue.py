@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -8,6 +9,7 @@ import pytest
 
 from papertrader.config import Settings
 from papertrader.dedupe import SemanticDisposition, build_dedupe_key
+from papertrader.opportunity import _alert_research_type
 from papertrader.queue import (
     QueueError,
     RunBudget,
@@ -163,6 +165,108 @@ def test_enqueue_is_idempotent_and_payload_matches_queue(
     assert (
         sandbox_repository / "data" / "operations" / "payloads" / f"{operation_id}.json"
     ).is_file()
+
+
+def test_security_research_causes_merge_before_claim_and_raise_priority(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec_merge",
+        dedupe_key="security_research:sec_merge:rsi:2026-07-24",
+        prompt="Research sec_merge after RSI oversold.",
+        inputs={
+            "security_id": "sec_merge",
+            "trigger_types": ["rsi_oversold"],
+            "market_data_as_of": "2026-07-24T10:00:00Z",
+            "market_data_date": "2026-07-24",
+            "period_start": "2026-07-01",
+            "period_end": "2026-07-24",
+            "source_price_hash": "a" * 64,
+        },
+        source="deterministic-price-alert",
+        priority=70,
+        now=NOW,
+    )
+    merged_id, merged_created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec_merge",
+        dedupe_key="security_research:sec_merge:bollinger:2026-07-25",
+        prompt="Research sec_merge after Bollinger below lower.",
+        inputs={
+            "security_id": "sec_merge",
+            "trigger_types": ["bollinger_below_lower"],
+            "market_data_as_of": "2026-07-25T10:00:00Z",
+            "market_data_date": "2026-07-25",
+            "period_start": "2026-07-02",
+            "period_end": "2026-07-25",
+            "source_price_hash": "b" * 64,
+        },
+        source="deterministic-price-alert",
+        priority=95,
+        now=NOW + timedelta(days=1),
+    )
+
+    assert created is True
+    assert (merged_id, merged_created) == (operation_id, False)
+    rows = read_table(sandbox_repository, "operations_todo")
+    assert len(rows) == 1
+    assert rows[0]["priority"] == "96"
+    assert "Additional cause" in rows[0]["prompt"]
+    payload = json.loads((sandbox_repository / rows[0]["payload_path"]).read_text())
+    assert payload["inputs"]["trigger_types"] == [
+        "bollinger_below_lower",
+        "rsi_oversold",
+    ]
+    assert payload["inputs"]["market_data_date"] == "2026-07-25"
+    assert len(payload["inputs"]["research_reasons"]) == 2
+    assert validate_queue(sandbox_repository) == []
+
+
+def test_recent_completed_security_review_selects_quick_check(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_id, _ = _enqueue(
+        sandbox_repository,
+        sandbox_settings,
+        entity_id="sec_recent",
+        catalyst="full-review",
+        now=NOW,
+    )
+    prepare_queue(sandbox_repository, now=NOW)
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="recent-review",
+        budget=RunBudget.from_settings(sandbox_settings),
+        operation_id=operation_id,
+        now=NOW,
+    )
+    assert claimed is not None
+    _complete(
+        sandbox_repository,
+        operation_id,
+        "recent-review",
+        NOW + timedelta(hours=1),
+    )
+
+    operation_type, baseline = _alert_research_type(
+        sandbox_repository,
+        "sec_recent",
+        now=NOW + timedelta(days=5),
+    )
+
+    assert operation_type == "quick_check_research"
+    assert baseline is not None
+    assert baseline["operation_id"] == operation_id
 
 
 def test_enqueue_rejects_multiline_prompt_before_writing_state(
@@ -607,16 +711,40 @@ class _MergeReviewer:
         return SemanticDisposition("merge", "Same bounded objective.", existing[0]["operation_id"])
 
 
+def _enqueue_overlap_opportunity(
+    repository: Path, settings: Settings, *, catalyst: str, now: datetime
+) -> tuple[str, bool]:
+    return enqueue_operation(
+        repository,
+        settings,
+        operation_type="opportunity_research",
+        entity_type="opportunity",
+        entity_id="opportunity_sec_a",
+        dedupe_key=f"opportunity_research:opportunity_sec_a:{catalyst}:2026-07-24",
+        prompt="Assess one overlapping security opportunity.",
+        inputs={
+            "security_id": "sec_a",
+            "trigger_type": catalyst,
+            "market_data_as_of": "2026-07-24T10:00:00Z",
+            "period_start": "2026-07-01",
+            "period_end": "2026-07-24",
+        },
+        source="test",
+        now=now,
+    )
+
+
 def test_semantic_overlap_runs_only_after_exact_rules_and_records_merge_skip(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
-    first, _ = _enqueue(sandbox_repository, sandbox_settings, entity_id="sec_a", catalyst="k" * 20)
-    second, _ = _enqueue(
+    first, _ = _enqueue_overlap_opportunity(
+        sandbox_repository, sandbox_settings, catalyst="rsi_oversold", now=NOW
+    )
+    second, _ = _enqueue_overlap_opportunity(
         sandbox_repository,
         sandbox_settings,
-        entity_id="sec_a",
-        catalyst="l" * 20,
+        catalyst="bollinger_below_lower",
         now=NOW + timedelta(seconds=1),
     )
 
@@ -638,12 +766,13 @@ def test_semantic_overlap_can_coalesce_already_ready_operations(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
-    first, _ = _enqueue(sandbox_repository, sandbox_settings, entity_id="sec_a", catalyst="m" * 20)
-    second, _ = _enqueue(
+    first, _ = _enqueue_overlap_opportunity(
+        sandbox_repository, sandbox_settings, catalyst="rsi_oversold", now=NOW
+    )
+    second, _ = _enqueue_overlap_opportunity(
         sandbox_repository,
         sandbox_settings,
-        entity_id="sec_a",
-        catalyst="n" * 20,
+        catalyst="bollinger_below_lower",
         now=NOW + timedelta(seconds=1),
     )
     prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))

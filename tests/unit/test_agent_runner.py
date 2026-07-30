@@ -16,6 +16,7 @@ from papertrader.agent_runner import (
     _handoff_repository_data,
     build_controller_prompt,
     configure_hermes_home,
+    hermes_command,
     prompt_injection_flags,
     run_one_operation,
     run_sequential_operations,
@@ -152,6 +153,22 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     history = read_table(sandbox_repository, "operations_history")
     assert history[0]["operation_id"] == operation_id
     assert history[0]["terminal_status"] == "succeeded"
+
+
+def test_tts_toolset_is_enabled_only_for_daily_podcast(
+    sandbox_settings: Settings,
+) -> None:
+    preflight = SimpleNamespace(
+        provider="openai-codex",
+        model="gpt-5.6-sol",
+        native_skill=SimpleNamespace(name="llm-wiki"),
+        controller_skill=SimpleNamespace(name="papertrader-controller"),
+        operation_skill=SimpleNamespace(name="papertrader-daily-podcast"),
+    )
+
+    command = hermes_command(sandbox_settings, preflight, "Create one daily podcast.")
+
+    assert command[command.index("--toolsets") + 1] == "web,file,terminal,tts"
 
 
 def test_shared_budget_batch_runs_two_operations_strictly_sequentially(

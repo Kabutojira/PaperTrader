@@ -63,7 +63,6 @@ DISABLED_TOOLSETS = (
     "moa",
     "session_search",
     "spotify",
-    "tts",
 )
 MANAGED_SOUL = """# PaperTrader controller
 
@@ -234,6 +233,7 @@ def _managed_config(settings: Settings) -> dict[str, object]:
         },
         "skills": {"external_dirs": ["${PAPERTRADER_SKILLS_DIR}"]},
         "terminal": {"backend": "local", "env_passthrough": [], "home_mode": "profile"},
+        "tts": {"provider": "edge", "edge": {"voice": "en-US-AriaNeural", "speed": 1.0}},
         "worktree": False,
     }
 
@@ -617,6 +617,9 @@ def sanitized_hermes_environment(
 def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) -> tuple[str, ...]:
     """Return the one-shot command with explicit skills, tools, quiet mode, and YOLO."""
 
+    toolsets = settings.hermes.toolsets
+    if preflight.operation_skill.name == "papertrader-daily-podcast":
+        toolsets = (*toolsets, "tts")
     return (
         *settings.hermes.command,
         *settings.hermes.arguments,
@@ -625,7 +628,7 @@ def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) 
         "--model",
         preflight.model,
         "--toolsets",
-        ",".join(settings.hermes.toolsets),
+        ",".join(toolsets),
         "--max-turns",
         str(settings.hermes.maximum_turns),
         "--skills",

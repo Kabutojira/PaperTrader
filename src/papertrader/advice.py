@@ -511,6 +511,10 @@ def _canonical_rows(
     as_of: datetime | None = None,
 ) -> list[dict[str, str]]:
     rows = read_table(repository_root, name)
+    if name in {"operations_todo", "operations_history"}:
+        # The podcast is a generated delivery view. Its queue lifecycle must never feed back
+        # into an already-published investment decision or invalidate that immutable snapshot.
+        rows = [row for row in rows if row["operation_type"] != "daily_podcast"]
     if name == "issues" and as_of is not None:
         projected: list[dict[str, str]] = []
         for row in rows:
@@ -576,9 +580,14 @@ def _source_hashes(repository_root: Path, *, as_of: datetime) -> Mapping[str, st
     for path in sorted(payload_root.rglob("*.json")):
         if path.is_symlink() or not path.is_file():
             raise AdviceError("operation payload input must be a regular JSON file")
-        payloads.append(
-            (path.relative_to(payload_root).as_posix(), content_hash(path.read_bytes()))
-        )
+        raw = path.read_bytes()
+        try:
+            payload = json.loads(raw)
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise AdviceError(f"operation payload is not valid JSON: {path.name}") from exc
+        if isinstance(payload, dict) and payload.get("operation_type") == "daily_podcast":
+            continue
+        payloads.append((path.relative_to(payload_root).as_posix(), content_hash(raw)))
     hashes["operation_payloads"] = content_hash(payloads)
     hashes.update(
         {
@@ -1740,7 +1749,11 @@ def _alert_operation_inputs(
 ) -> Mapping[str, object] | None:
     """Read trusted operation inputs used to join alerts with research outcomes."""
 
-    if row["operation_type"] not in {"opportunity_research", "security_research"}:
+    if row["operation_type"] not in {
+        "opportunity_research",
+        "quick_check_research",
+        "security_research",
+    }:
         return None
     path = PurePosixPath(row["payload_path"])
     if (
@@ -1788,7 +1801,7 @@ def _operation_conclusions(
         security_id = inputs.get("security_id")
         raw_triggers: object = (
             inputs.get("trigger_types")
-            if row["operation_type"] == "security_research"
+            if row["operation_type"] in {"security_research", "quick_check_research"}
             else [inputs.get("trigger_type")]
         )
         market_date = inputs.get("market_data_date") or inputs.get("period_end")
@@ -1820,7 +1833,10 @@ def _operation_conclusions(
     }
     for row in read_table(repository_root, "operations_todo"):
         inputs = _alert_operation_inputs(repository_root, row)
-        if inputs is None or row["operation_type"] != "security_research":
+        if inputs is None or row["operation_type"] not in {
+            "security_research",
+            "quick_check_research",
+        }:
             continue
         security_id = inputs.get("security_id")
         raw_triggers = inputs.get("trigger_types")

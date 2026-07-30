@@ -28,6 +28,7 @@ known_tags:
   - meta
   - model-portfolio
   - opportunity
+  - podcast
   - query
   - relationship
   - research
@@ -60,6 +61,8 @@ This wiki follows Hermes Agent's native `llm-wiki` conventions and the repositor
 - `strategies/` holds explicit paper strategies and their evidence requirements.
 - `comparisons/` and `queries/` hold bounded cross-entity analysis.
 - `daily-reports/` holds the single canonical daily report for each ISO date.
+- `podcasts/` holds one dated transcript page and Hermes-generated MP3 for each completed daily
+  run that produced material content.
 - `index.md`, `model-portfolio.md`, `security-catalog.md`, `signals.md`, `performance.md`, and `system-status.md`
   are deterministic investor-facing views of the latest decision snapshot.
 - `research-catalog.md` is the complete maintained content catalog linked from the results-first

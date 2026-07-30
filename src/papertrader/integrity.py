@@ -23,11 +23,13 @@ EXPECTED_SKILLS = (
     "papertrader-source-discovery",
     "papertrader-wiki-ingest",
     "papertrader-opportunity-research",
+    "papertrader-quick-check-research",
     "papertrader-idea-research",
     "papertrader-security-research",
     "papertrader-relationship-research",
     "papertrader-strategy-research",
     "papertrader-execute-strategy",
+    "papertrader-daily-podcast",
 )
 
 REQUIRED_SKILL_SECTIONS = (
@@ -771,6 +773,8 @@ def is_runtime_path_allowed(raw_path: str) -> bool:
         if path.suffix == ".md":
             return True
         if path.parts[2] == "raw" and path.suffix in RAW_WIKI_EXTENSIONS:
+            return True
+        if path.parts[2] == "podcasts" and path.suffix == ".mp3":
             return True
     if len(path.parts) >= 3 and path.parts[1] in {"operations", "runs"}:
         return path.suffix in RUN_ARTIFACT_EXTENSIONS

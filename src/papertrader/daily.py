@@ -268,6 +268,10 @@ def prepare_daily_run(
             "fill_outcomes": [],
             "report_path": "",
             "snapshot_id": "",
+            "podcast_status": "pending",
+            "podcast_operation_id": "",
+            "podcast_page_path": "",
+            "podcast_audio_path": "",
         },
         allowed_root=repository_root,
     )

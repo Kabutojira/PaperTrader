@@ -114,6 +114,9 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "agent run-batch" in text
     assert "daily prepare" in text
     assert "daily finalize" in text
+    assert "podcast enqueue" in text
+    assert "--operation-type daily_podcast" in text
+    assert "command -v ffmpeg" in text
     assert "workflow bundle create" in text
     assert "workflow bundle apply" in text
     assert "runtime-whitelist validate --staged" in text

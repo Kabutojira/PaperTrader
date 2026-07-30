@@ -71,6 +71,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── investor_pages.py
 │   ├── corporate_actions.py
 │   ├── reports.py
+│   ├── podcast.py
 │   ├── telegram.py
 │   ├── wiki.py
 │   └── integrity.py
@@ -90,11 +91,13 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── papertrader-source-discovery/SKILL.md
 │   ├── papertrader-wiki-ingest/SKILL.md
 │   ├── papertrader-opportunity-research/SKILL.md
+│   ├── papertrader-quick-check-research/SKILL.md
 │   ├── papertrader-idea-research/SKILL.md
 │   ├── papertrader-security-research/SKILL.md
 │   ├── papertrader-relationship-research/SKILL.md
 │   ├── papertrader-strategy-research/SKILL.md
-│   └── papertrader-execute-strategy/SKILL.md
+│   ├── papertrader-execute-strategy/SKILL.md
+│   └── papertrader-daily-podcast/SKILL.md
 ├── data/
 │   ├── wiki/
 │   │   ├── SCHEMA.md
@@ -192,6 +195,7 @@ Scheduled and manually dispatched runtime workflows may commit only these paths 
 - lawfully storable wiki source assets under `data/wiki/raw/` with extensions `.md`, `.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`, or `.webp`;
 - canonical and generated CSV files under `data/**/*.csv`, including the rolling one-year price cache in `data/market/prices/`;
 - operation payloads, run manifests, and validation results under `data/operations/` and `data/runs/` with extensions `.json` or `.md`;
+- dated podcast transcript pages and generated MP3 audio under `data/wiki/podcasts/`;
 - the generated publication snapshot `data/published/decision_snapshot.json` and generated CSV exports under `data/published/`;
 - structured and human-readable logs under `data/logs/` with extensions `.ndjson` or `.txt`;
 - `data/issues.md`;
@@ -365,6 +369,10 @@ Rules:
 - `prompt` is a short objective without newlines. Put substantial instructions in `payload_path` or a prompt file.
 - Claiming sets `status=running`, `claimed_by_run_id`, and `lease_expires_at` in one atomic write.
 - Expired leases return to `ready` only if `attempt_count < max_attempts`.
+- Before claim, a new security-research cause for an entity that already has queued, ready, or
+  waiting security research is merged into that request: append the distinct reason and source
+  context, union alert/idea inputs, and increment priority up to 100. Running and blocked requests
+  remain immutable.
 - Every skip must be recorded in history with the evidence and rule that caused it.
 - A `blocked` agent result remains active. If later evidence proves the request obsolete, resolve
   it only through `queue resolve-blocked`; the command preserves the prior result artifact and
@@ -441,6 +449,17 @@ It must answer:
 
 A decision that no follow-up is needed is valid and must be logged with evidence.
 
+### `quick_check_research`
+
+- Use only for one immutable security whose full `security_research` succeeded within the prior
+  ten days and which has a new deterministic alert.
+- Recheck the last thesis, valuation or buy zone, catalysts, risks, invalidation, and assessment
+  assumptions against current primary evidence and the exact new market-data period.
+- Update the security page and comparable assessment when time-sensitive assumptions are verified
+  or changed.
+- Enqueue exactly one dependent full `security_research` when a buy zone, catalyst, invalidation,
+  material-evidence, or decision-support gate changed. Never create a strategy or signal directly.
+
 ### `idea_research`
 
 - Create or update one investment idea.
@@ -513,6 +532,22 @@ The deterministic applier must:
 The same operation type supports opening or increasing (both represented by the `open` signal
 lifecycle action), reducing, closing, rolling, or cancelling a paper strategy. Baseline quantity
 remains entirely deterministic.
+
+### `daily_podcast`
+
+- Run exactly once as the final sequential LLM operation after the daily report, allocation, and
+  decision snapshot are complete.
+- Use the deterministic completed-run context plus linked wiki pages to order the day's material
+  arguments into one coherent investor-facing sequence.
+- Write an original 2,400-3,600 word script aiming for about twenty minutes, explicitly label paper
+  trading, preserve uncertainty, and avoid duplicating merged alert causes.
+- Invoke Hermes TTS sequentially in bounded chunks, then use `papertrader podcast assemble` to
+  produce and duration-check the dated MP3. Do not expose credentials or use parallel synthesis.
+- The podcast may describe accepted state but may never change research conclusions, allocation,
+  advice, signals, orders, fills, cash, positions, or performance.
+- Podcast queue rows and payloads are delivery-only generated state and are excluded from decision
+  snapshot source hashes, so creating the podcast cannot invalidate or feed back into the immutable
+  completed-run investment decision.
 
 ## Hermes Agent integration
 

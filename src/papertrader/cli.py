@@ -69,6 +69,7 @@ from papertrader.orders import (
     leg_from_mapping,
 )
 from papertrader.performance import rebase_performance, update_performance
+from papertrader.podcast import assemble_podcast, enqueue_daily_podcast, finalize_daily_podcast
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.queue import (
@@ -169,6 +170,15 @@ def _parser() -> argparse.ArgumentParser:
     daily_finalize = daily_commands.add_parser("finalize")
     daily_finalize.add_argument("--run-id", required=True)
     daily_finalize.add_argument("--github-report-url", required=True)
+
+    podcast = commands.add_parser("podcast", help="generate the final sequential daily podcast")
+    podcast_commands = podcast.add_subparsers(dest="podcast_command", required=True)
+    podcast_enqueue = podcast_commands.add_parser("enqueue")
+    podcast_enqueue.add_argument("--run-id", required=True)
+    podcast_assemble = podcast_commands.add_parser("assemble")
+    podcast_assemble.add_argument("--request", type=Path, required=True)
+    podcast_finalize = podcast_commands.add_parser("finalize")
+    podcast_finalize.add_argument("--run-id", required=True)
 
     indicator = commands.add_parser("indicators", help="calculate deterministic indicators")
     indicator_commands = indicator.add_subparsers(dest="indicator_command", required=True)
@@ -981,6 +991,25 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             github_report_url=arguments.github_report_url,
         )
         print(json.dumps(asdict(daily_finalization), sort_keys=True))
+        return 0
+    if arguments.command == "podcast":
+        if arguments.podcast_command == "enqueue":
+            print(
+                json.dumps(
+                    asdict(enqueue_daily_podcast(root, settings, run_id=arguments.run_id)),
+                    sort_keys=True,
+                )
+            )
+            return 0
+        if arguments.podcast_command == "assemble":
+            print(
+                json.dumps(
+                    asdict(assemble_podcast(root, _request_object(root, arguments.request))),
+                    sort_keys=True,
+                )
+            )
+            return 0
+        print(finalize_daily_podcast(root, run_id=arguments.run_id))
         return 0
     if arguments.command == "indicators":
         previous, current, indicator_errors = update_indicators(root, settings)

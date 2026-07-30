@@ -38,11 +38,13 @@ SUPPORTED_OPERATIONS = frozenset(
         "wiki_ingest",
         "source_discovery",
         "opportunity_research",
+        "quick_check_research",
         "idea_research",
         "security_research",
         "relationship_research",
         "strategy_research",
         "execute_strategy",
+        "daily_podcast",
     }
 )
 OPERATION_SKILLS = {
@@ -52,13 +54,16 @@ OPERATION_ENTITY_TYPES = {
     "wiki_ingest": "source",
     "source_discovery": "source",
     "opportunity_research": "opportunity",
+    "quick_check_research": "security",
     "idea_research": "idea",
     "security_research": "security",
     "relationship_research": "relationship",
     "strategy_research": "strategy",
     "execute_strategy": "strategy",
+    "daily_podcast": "run",
 }
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+MERGEABLE_RESEARCH_TYPES = frozenset({"security_research", "quick_check_research"})
 
 
 class QueueError(RuntimeError):
@@ -502,6 +507,116 @@ def enqueue_operation(
         for row in history:
             if row["dedupe_key"] == dedupe_key and row["terminal_status"] in DEPENDENCY_SUCCESS:
                 return row["operation_id"], False
+        if operation_type in MERGEABLE_RESEARCH_TYPES:
+            merge_targets = [
+                operation
+                for operation in active
+                if operation.entity_type == entity_type
+                and operation.entity_id == entity_id
+                and operation.operation_type in MERGEABLE_RESEARCH_TYPES
+                and operation.status in {"queued", "ready", "waiting"}
+            ]
+            if merge_targets:
+                merge_targets.sort(
+                    key=lambda operation: (
+                        operation.operation_type != "security_research",
+                        -operation.priority,
+                        operation.created_at,
+                        operation.operation_id,
+                    )
+                )
+                target = merge_targets[0]
+                payload_path = repository_root.joinpath(
+                    *_validate_payload_path(target.payload_path).parts
+                )
+                merged_payload = json.loads(payload_path.read_text(encoding="utf-8"))
+                existing_inputs = merged_payload.get("inputs")
+                if not isinstance(existing_inputs, dict):
+                    raise QueueError(
+                        f"operation {target.operation_id} payload inputs must be an object"
+                    )
+                reasons = existing_inputs.get("research_reasons")
+                if not isinstance(reasons, list):
+                    reasons = [
+                        {
+                            "dedupe_key": target.dedupe_key,
+                            "prompt": target.prompt,
+                            "source": target.source,
+                            "source_refs": list(merged_payload.get("source_refs", [])),
+                            "observed_at": format_timestamp(target.created_at),
+                        }
+                    ]
+                if any(
+                    isinstance(reason, dict) and reason.get("dedupe_key") == dedupe_key
+                    for reason in reasons
+                ):
+                    return target.operation_id, False
+                reason: dict[str, object] = {
+                    "dedupe_key": dedupe_key,
+                    "prompt": " ".join(prompt.split()),
+                    "source": source,
+                    "source_refs": sorted(set(source_refs)),
+                    "observed_at": format_timestamp(instant),
+                }
+                trigger_types = inputs.get("trigger_types")
+                if isinstance(trigger_types, list):
+                    reason["trigger_types"] = sorted(
+                        {str(value) for value in trigger_types if str(value)}
+                    )
+                market_date = inputs.get("market_data_date")
+                if isinstance(market_date, str) and market_date:
+                    reason["market_data_date"] = market_date
+                reasons.append(reason)
+                merged_inputs = _merge_research_inputs(existing_inputs, inputs)
+                if (
+                    target.operation_type == "quick_check_research"
+                    and operation_type == "security_research"
+                ):
+                    merged_inputs["full_research_requested"] = True
+                merged_inputs["research_reasons"] = reasons
+                merged_payload["inputs"] = merged_inputs
+                existing_refs = merged_payload.get("source_refs", [])
+                if not isinstance(existing_refs, list):
+                    existing_refs = []
+                combined_refs = sorted(
+                    {
+                        str(value)
+                        for value in (*existing_refs, *source_refs)
+                        if isinstance(value, str) and value
+                    }
+                )
+                if combined_refs:
+                    merged_payload["source_refs"] = combined_refs
+                combined_prompt = _merge_research_prompt(target.prompt, prompt)
+                merged = replace(
+                    target,
+                    updated_at=instant,
+                    priority=min(100, max(target.priority, priority) + 1),
+                    prompt=combined_prompt,
+                    depends_on=tuple(
+                        sorted(
+                            dependency
+                            for dependency in set((*target.depends_on, *depends_on))
+                            if dependency != target.operation_id
+                        )
+                    ),
+                )
+                merged_payload["objective"] = combined_prompt
+                _validate_operation_payload_value(
+                    repository_root,
+                    merged,
+                    merged_payload,
+                    relative=PurePosixPath(merged.payload_path),
+                )
+                atomic_write_json(payload_path, merged_payload, allowed_root=repository_root)
+                _write_active(
+                    repository_root,
+                    [
+                        merged if operation.operation_id == merged.operation_id else operation
+                        for operation in active
+                    ],
+                )
+                return merged.operation_id, False
         operation_id = deterministic_ulid(instant, dedupe_key, entity_type, entity_id)
         payload_relative = f"data/operations/payloads/{operation_id}.json"
         skills = tuple(sorted({"llm-wiki", OPERATION_SKILLS[operation_type]}))
@@ -563,6 +678,84 @@ def enqueue_operation(
         validate_operation_payload(repository_root, operation)
         _write_active(repository_root, [*active, operation])
         return operation_id, True
+
+
+def _merge_research_prompt(current: str, incoming: str) -> str:
+    """Append a distinct queued research cause without exceeding the queue contract."""
+
+    normalized = " ".join(incoming.split())
+    if normalized == current or normalized in current.split(" | Additional cause: "):
+        return current
+    suffix = f" | Additional cause: {normalized}"
+    if len(current) + len(suffix) <= 2000:
+        return current + suffix
+    return current
+
+
+def _merge_research_inputs(
+    current: Mapping[str, object], incoming: Mapping[str, object]
+) -> dict[str, object]:
+    """Combine pre-claim research inputs while preserving every conflicting cause."""
+
+    merged = dict(current)
+    conflicts = merged.get("merged_input_values")
+    conflict_values: dict[str, list[object]] = (
+        {str(key): list(value) for key, value in conflicts.items() if isinstance(value, list)}
+        if isinstance(conflicts, dict)
+        else {}
+    )
+    for key, value in incoming.items():
+        if key == "research_reasons":
+            continue
+        if key not in merged:
+            merged[key] = value
+            continue
+        previous = merged[key]
+        if previous == value:
+            continue
+        if (
+            key in {"trigger_types", "idea_ids"}
+            and isinstance(previous, list)
+            and isinstance(value, list)
+        ):
+            merged[key] = sorted({str(item) for item in (*previous, *value) if str(item)})
+            continue
+        if key == "idea_id" and isinstance(previous, str) and isinstance(value, str):
+            raw_idea_ids = merged.get("idea_ids", [])
+            idea_ids = raw_idea_ids if isinstance(raw_idea_ids, list) else []
+            merged["idea_ids"] = sorted(
+                {
+                    previous,
+                    value,
+                    *(str(item) for item in idea_ids if isinstance(item, str)),
+                }
+            )
+            continue
+        if key == "period_start" and isinstance(previous, str) and isinstance(value, str):
+            merged[key] = min(previous, value)
+            continue
+        if (
+            key in {"period_end", "market_data_date", "market_data_as_of"}
+            and isinstance(previous, str)
+            and isinstance(value, str)
+        ):
+            merged[key] = max(previous, value)
+            continue
+        if key == "source_price_hash" and isinstance(previous, str) and isinstance(value, str):
+            conflict_values.setdefault(key, []).extend(
+                candidate
+                for candidate in (previous, value)
+                if candidate not in conflict_values.get(key, [])
+            )
+            merged[key] = value
+            continue
+        values = conflict_values.setdefault(key, [])
+        for candidate in (previous, value):
+            if candidate not in values:
+                values.append(candidate)
+    if conflict_values:
+        merged["merged_input_values"] = conflict_values
+    return merged
 
 
 def _dependency_cycle(operations: Sequence[Operation]) -> set[str]:

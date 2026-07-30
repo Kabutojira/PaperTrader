@@ -328,6 +328,36 @@ That refresh replaces stale queued-candidate text with the security's dispositio
 reason and may discover the next bounded set of investable candidates. Operations remain strictly
 sequential, and a fresh security result is not reflexively sent back through security research.
 
+### Merged alerts and quick checks
+
+Price alerts for the same immutable security no longer create competing queued security reviews.
+Before a review is claimed, each distinct RSI, Bollinger, volume, crossing, or repeat-day cause is
+appended to its payload, dependencies and source references are combined, and priority rises by one
+up to 100. Exact duplicate dedupe keys remain idempotent. The accepted result therefore evaluates
+all accumulated causes in one auditable operation.
+
+When the latest successful full security review is no more than ten days old, a new price alert
+queues `quick_check_research` instead. That bounded operation re-verifies the stored thesis,
+valuation or buy zone, catalysts, invalidation, risks, and confidence against current prices and
+primary evidence. It updates the comparable security state and queues one normal
+`security_research` follow-up when a material gate changed or a full review cause was merged into
+the quick check.
+
+## Daily podcast
+
+Every non-dry daily workflow finishes with one priority-100 `daily_podcast` operation after the
+canonical report and decision snapshot exist. Deterministic code collects all accepted operation
+results for that run into `data/runs/<run_id>/podcast_context.json`; the podcast skill combines
+related alerts, orders the material arguments, and writes an original 2,400-3,600 word transcript
+under `data/wiki/podcasts/`.
+
+Hermes receives its TTS toolset only for this operation. It synthesizes bounded chunks strictly
+sequentially, and `papertrader podcast assemble` validates the transcript length, assembles the
+chunks with `ffmpeg`, verifies a 16-24 minute duration, and atomically publishes the dated MP3. The
+daily report links the result. Podcast queue and payload state is delivery-only and excluded from
+decision source hashes, so this generated view cannot feed back into or invalidate the immutable
+investment snapshot.
+
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,
 `corporate_actions.csv`, allocation history, operation history, and run history are append-only.

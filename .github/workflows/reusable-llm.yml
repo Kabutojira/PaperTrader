@@ -317,6 +317,28 @@ jobs:
           report_name="daily-report_$(date -u +%Y%m%d).md"
           report_url="https://github.com/${GITHUB_REPOSITORY}/blob/${TARGET_BRANCH}/data/wiki/daily-reports/${report_name}"
           uv run papertrader daily finalize --run-id "$RUN_ID" --github-report-url "$report_url"
+      - name: Collect completed-run changes and enqueue the daily podcast
+        if: ${{ !inputs.dry_run }}
+        env:
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+        run: |
+          command -v ffmpeg
+          command -v ffprobe
+          uv run papertrader podcast enqueue --run-id "$RUN_ID"
+      - name: Generate the daily podcast as the final sequential Hermes operation
+        if: ${{ !inputs.dry_run }}
+        env:
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+        run: >-
+          uv run papertrader agent run
+          --hermes-home "$HERMES_HOME"
+          --run-id "$RUN_ID"
+          --operation-type daily_podcast
+      - name: Record the terminal daily podcast disposition
+        if: ${{ !inputs.dry_run }}
+        env:
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+        run: uv run papertrader podcast finalize --run-id "$RUN_ID"
       - name: Run the complete runtime validation gate
         run: |
           uv run ruff check .
