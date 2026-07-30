@@ -68,6 +68,42 @@ def _enqueue_opportunity(repository: Path, settings: Settings) -> str:
     return operation_id
 
 
+def _enqueue_podcast(repository: Path, settings: Settings, *, run_id: str) -> str:
+    report = repository / "data" / "wiki" / "daily-reports" / "daily-report_20260724.md"
+    report.write_text("Completed deterministic report.\n", encoding="utf-8")
+    context = repository / "data" / "runs" / run_id / "podcast_context.json"
+    context.parent.mkdir(parents=True, exist_ok=True)
+    context.write_text(json.dumps({"run_id": run_id}), encoding="utf-8")
+    operation_id, created = enqueue_operation(
+        repository,
+        settings,
+        operation_type="daily_podcast",
+        entity_type="run",
+        entity_id=run_id,
+        dedupe_key=f"daily_podcast:{run_id}:v1",
+        prompt="Create the completed run's daily podcast.",
+        inputs={
+            "run_id": run_id,
+            "context_path": context.relative_to(repository).as_posix(),
+            "report_path": report.relative_to(repository).as_posix(),
+            "page_path": "data/wiki/podcasts/daily-podcast_20260724.md",
+            "audio_path": "data/wiki/podcasts/daily-podcast_20260724.mp3",
+            "target_minutes": 20,
+            "target_words": 3000,
+        },
+        source="test",
+        source_refs=(
+            context.relative_to(repository).as_posix(),
+            report.relative_to(repository).as_posix(),
+        ),
+        priority=100,
+        max_attempts=1,
+        now=NOW,
+    )
+    assert created
+    return operation_id
+
+
 def _result(operation_id: str) -> dict[str, object]:
     return {
         "operation_id": operation_id,
@@ -188,6 +224,101 @@ def test_tts_toolset_is_enabled_only_for_daily_podcast(
     command = hermes_command(sandbox_settings, preflight, "Create one daily podcast.")
 
     assert command[command.index("--toolsets") + 1] == "web,file,terminal,tts"
+
+
+@pytest.mark.parametrize("hermes_returncode", [0, 17])
+def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+    hermes_returncode: int,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_podcast(
+        sandbox_repository, sandbox_settings, run_id="podcast-contained-failure"
+    )
+
+    status = run_one_operation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="podcast-contained-failure",
+        hermes_home=home,
+        environment={"PATH": "/usr/bin"},
+        operation_id=operation_id,
+        executor=lambda command, cwd, environment, timeout: subprocess.CompletedProcess(
+            command, hermes_returncode, "", ""
+        ),
+    )
+
+    assert status == "failed"
+    assert read_table(sandbox_repository, "operations_todo") == []
+    history = read_table(sandbox_repository, "operations_history")
+    assert history[0]["operation_id"] == operation_id
+    assert history[0]["terminal_status"] == "failed"
+    assert history[0]["result_path"] == ""
+    artifact_root = (
+        sandbox_repository / "data" / "runs" / "podcast-contained-failure" / operation_id
+    )
+    assert not (artifact_root / "agent_result.json").exists()
+    validation = json.loads((artifact_root / "validation_report.json").read_text())
+    assert validation["passed"] is False
+    assert any("agent result is missing" in error for error in validation["errors"])
+
+
+def test_missing_research_result_remains_a_hard_failure(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+
+    with pytest.raises(AgentRunError, match="agent result is missing"):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="research-missing-result",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-key"},
+            operation_id=operation_id,
+            executor=lambda command, cwd, environment, timeout: subprocess.CompletedProcess(
+                command, 0, "", ""
+            ),
+        )
+
+
+def test_podcast_validation_failure_with_partial_output_remains_hard(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_podcast(
+        sandbox_repository, sandbox_settings, run_id="podcast-partial-output"
+    )
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del environment, timeout
+        page = cwd / "data" / "wiki" / "podcasts" / "daily-podcast_20260724.md"
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text("Partial unvalidated script.\n", encoding="utf-8")
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    with pytest.raises(AgentRunError, match="agent result is missing"):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="podcast-partial-output",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=execute,
+        )
 
 
 def test_shared_budget_batch_runs_two_operations_strictly_sequentially(

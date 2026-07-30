@@ -89,3 +89,22 @@ jobs:
     with:
       ref: ${{ needs.delivery.outputs.final_sha || needs.runtime.outputs.commit_sha }}
       publish_pages: ${{ github.event_name == 'schedule' || (!inputs.dry_run && inputs.publish_pages) }}
+
+  daily_outcome:
+    needs: [runtime, delivery, pages]
+    if: ${{ always() }}
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Fail after publication when the daily podcast did not succeed
+        env:
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          PODCAST_STATUS: ${{ needs.runtime.outputs.podcast_status }}
+          RUNTIME_RESULT: ${{ needs.runtime.result }}
+        run: |
+          if [ "$DRY_RUN" = "true" ] || [ "$RUNTIME_RESULT" != "success" ]; then
+            exit 0
+          fi
+          if [ "$PODCAST_STATUS" != "succeeded" ]; then
+            echo "::error::Daily podcast finished with status ${PODCAST_STATUS:-unknown}; validated research and report state was published"
+            exit 1
+          fi

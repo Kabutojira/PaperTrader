@@ -71,6 +71,9 @@ on:
       oauth_changed:
         description: Whether refreshed encrypted OpenAI OAuth state was committed
         value: ${{ jobs.commit.outputs.oauth_changed }}
+      podcast_status:
+        description: Terminal daily podcast status, or skipped for a dry run
+        value: ${{ jobs.runtime.outputs.podcast_status }}
   workflow_dispatch:
     inputs:
       operation_id:
@@ -144,6 +147,7 @@ jobs:
       oauth_sha256: ${{ steps.oauth.outputs.sha256 }}
       report_path: ${{ steps.bundle.outputs.report_path }}
       run_id: ${{ steps.identities.outputs.run_id }}
+      podcast_status: ${{ steps.podcast.outputs.status || 'skipped' }}
     steps:
       - name: Check out the target branch without persisted credentials
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -342,10 +346,14 @@ jobs:
           --run-id "$RUN_ID"
           --operation-type daily_podcast
       - name: Record the terminal daily podcast disposition
+        id: podcast
         if: ${{ !inputs.dry_run }}
         env:
           RUN_ID: ${{ steps.identities.outputs.run_id }}
-        run: uv run papertrader podcast finalize --run-id "$RUN_ID"
+        run: |
+          status="$(uv run papertrader podcast finalize --run-id "$RUN_ID")"
+          echo "$status"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
       - name: Run the complete runtime validation gate
         run: |
           uv run ruff check .
@@ -356,8 +364,8 @@ jobs:
           uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
-      - name: Print recent redacted Hermes logs after a runtime failure
-        if: ${{ failure() }}
+      - name: Print recent redacted Hermes logs after a runtime or podcast failure
+        if: ${{ failure() || (!inputs.dry_run && steps.podcast.outputs.status != 'succeeded') }}
         run: |
           echo "::group::Hermes errors.log (current operation window)"
           hermes logs errors --since 35m -n 200 || true

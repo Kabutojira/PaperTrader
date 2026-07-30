@@ -102,6 +102,14 @@ class AgentRunError(RuntimeError):
     """Raised when agent preflight, execution, or post-run validation fails closed."""
 
 
+class _PostRunValidationError(AgentRunError):
+    """Retain whether a rejected agent attempt left only disposable internal artifacts."""
+
+    def __init__(self, message: str, *, contained: bool) -> None:
+        super().__init__(message)
+        self.contained = contained
+
+
 @dataclass(frozen=True, slots=True)
 class SkillIdentity:
     """Content identity for one effective native or project skill."""
@@ -898,7 +906,22 @@ def run_claimed_operation(
         allowed_root=repository_root,
     )
     if validation_errors:
-        raise AgentRunError("; ".join(sorted(set(validation_errors))))
+        agent_internal_paths = {
+            result_relative_path(run_id, operation.operation_id),
+            f"data/runs/{run_id}/{operation.operation_id}/command_audit.json",
+        }
+        internal_artifacts_are_regular = all(
+            path not in after.files or after.files[path].kind == "file"
+            for path in agent_internal_paths
+        )
+        raise _PostRunValidationError(
+            "; ".join(sorted(set(validation_errors))),
+            contained=(
+                not validation.changed_paths
+                and not profile_errors
+                and internal_artifacts_are_regular
+            ),
+        )
     return validation
 
 
@@ -940,6 +963,23 @@ def _run_claimed_and_disposition(
             run_id=run_id,
             error=f"agent_validation_failed:{issue_id}",
         )
+        if (
+            operation.operation_type == "daily_podcast"
+            and isinstance(exc, _PostRunValidationError)
+            and exc.contained
+            and disposition == "failed"
+        ):
+            rejected_result_path = repository_root / result_relative_path(
+                run_id, operation.operation_id
+            )
+            try:
+                rejected_result_path.unlink(missing_ok=True)
+            except OSError as cleanup_error:
+                raise AgentRunError(
+                    f"contained podcast failure could not remove its rejected result: "
+                    f"{cleanup_error}; recorded {issue_id}; queue disposition={disposition}"
+                ) from cleanup_error
+            return "failed"
         raise AgentRunError(f"{exc}; recorded {issue_id}; queue disposition={disposition}") from exc
     assert validation.result is not None
     status = str(validation.result["status"])

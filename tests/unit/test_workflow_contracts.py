@@ -83,7 +83,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "cancel-in-progress": "false",
     }
     jobs = daily["jobs"]
-    assert list(jobs) == ["runtime", "delivery", "pages"]
+    assert list(jobs) == ["runtime", "delivery", "pages", "daily_outcome"]
     assert jobs["runtime"]["uses"] == "./.github/workflows/reusable-llm.yml"
     assert jobs["runtime"]["secrets"] == {
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
@@ -93,6 +93,12 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     assert jobs["pages"]["uses"] == "./.github/workflows/pages.yml"
     assert jobs["delivery"]["needs"] == "runtime"
     assert jobs["pages"]["needs"] == ["runtime", "delivery"]
+    outcome = jobs["daily_outcome"]
+    assert outcome["needs"] == ["runtime", "delivery", "pages"]
+    assert outcome["if"] == "${{ always() }}"
+    outcome_step = outcome["steps"][0]
+    assert outcome_step["env"]["PODCAST_STATUS"] == "${{ needs.runtime.outputs.podcast_status }}"
+    assert "validated research and report state was published" in outcome_step["run"]
 
 
 def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
@@ -146,11 +152,26 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     hermes_logs = next(
         step
         for step in runtime["steps"]
-        if step["name"] == "Print recent redacted Hermes logs after a runtime failure"
+        if step["name"] == "Print recent redacted Hermes logs after a runtime or podcast failure"
     )
-    assert hermes_logs["if"] == "${{ failure() }}"
+    assert hermes_logs["if"] == (
+        "${{ failure() || (!inputs.dry_run && steps.podcast.outputs.status != 'succeeded') }}"
+    )
     assert "hermes logs errors --since 35m -n 200" in hermes_logs["run"]
     assert "hermes logs agent --since 35m -n 500" in hermes_logs["run"]
+    assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
+        "${{ jobs.runtime.outputs.podcast_status }}"
+    )
+    podcast_finalize = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Record the terminal daily podcast disposition"
+    )
+    assert podcast_finalize["id"] == "podcast"
+    assert 'echo "status=$status" >> "$GITHUB_OUTPUT"' in podcast_finalize["run"]
+    assert runtime["outputs"]["podcast_status"] == (
+        "${{ steps.podcast.outputs.status || 'skipped' }}"
+    )
     for step in runtime["steps"]:
         if step is not run_batch:
             assert "OPENROUTER_API_KEY" not in step.get("env", {})
@@ -177,6 +198,47 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     ) < runtime_steps.index("Restore encrypted OpenAI OAuth state")
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
     assert daily["jobs"]["runtime"]["with"]["scan_seekingalpha"] == "true"
+
+
+@pytest.mark.parametrize(
+    ("dry_run", "runtime_result", "podcast_status", "expected_exit"),
+    [
+        ("false", "success", "succeeded", 0),
+        ("false", "success", "failed", 1),
+        ("false", "success", "blocked", 1),
+        ("true", "success", "skipped", 0),
+        ("false", "failure", "", 0),
+    ],
+)
+def test_daily_outcome_defers_podcast_failure_until_after_publication(
+    repository_root: Path,
+    dry_run: str,
+    runtime_result: str,
+    podcast_status: str,
+    expected_exit: int,
+) -> None:
+    daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
+    step = daily["jobs"]["daily_outcome"]["steps"][0]
+    environment = os.environ.copy()
+    environment.update(
+        {
+            "DRY_RUN": dry_run,
+            "RUNTIME_RESULT": runtime_result,
+            "PODCAST_STATUS": podcast_status,
+        }
+    )
+
+    completed = subprocess.run(
+        ["bash", "--noprofile", "--norc", "-e", "-o", "pipefail", "-c", step["run"]],
+        check=False,
+        capture_output=True,
+        text=True,
+        env=environment,
+    )
+
+    assert completed.returncode == expected_exit
+    if expected_exit:
+        assert "validated research and report state was published" in completed.stdout
 
 
 def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(
