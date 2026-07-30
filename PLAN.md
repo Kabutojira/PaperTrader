@@ -179,7 +179,7 @@ Define repository-owned scoring anchors for thesis, business quality, balance sh
 - Every unsupported valuation explains the exact missing evidence or unsuitable method and is `Unrated` rather than assigned fake extreme returns.
 - Golden fixtures cover at least one security from every valuation template.
 
-## Step 19 — Recalibrate ratings, eligibility, scoring, and allocation — Planned
+## Step 19 — Recalibrate ratings, eligibility, scoring, and allocation — Complete (2026-07-30)
 
 ### Outcome
 

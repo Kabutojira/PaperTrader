@@ -248,6 +248,15 @@ safety. Probabilities total exactly 100 and fair values are ordered. Unsupported
 invented scenario value and is explicitly blocked. All component scores use the concrete repository
 anchors at 20, 40, 60, 80, or 100.
 
+Research status, allocation eligibility, and conviction tier are independent deterministic fields.
+Quality is ranked separately from scenario return; confidence shrinks expected return rather than
+making the quality score a second return penalty. The canonical gate combines confidence-adjusted
+expected return, base return, bear/base and expected/bear payoff, margin of safety, minimum
+confidence, a current accepted relationship, and hard blockers. Every exclusion retains its exact
+threshold frontier. Allocation, strategy, signal, order, and pre-fill validation reuse this one
+calculation. All-cash decisions distinguish definitive preference from incomplete research,
+unsupported valuation, pending strategy work, or blocked portfolio state.
+
 ### `relationships.csv`
 
 This many-to-many layer must not be omitted. It preserves why an idea affects a security and prevents strategies from being generated from unexplained associations.

@@ -102,6 +102,13 @@ Deterministic code owns scenario returns, probability-weighted value and return,
 adjustment, buy-below price, and margin of safety. Unsupported valuations contain no invented
 scenario numbers and remain explicitly unsupported until their named evidence gap is resolved.
 
+Research completeness, allocation eligibility, and conviction are independent. Deterministic code
+derives `complete|partial|unsupported|stale`, `eligible|ineligible`, and
+`watch|baseline|conviction`, publishes quality separately from expected return, and records every
+threshold distance in an eligibility frontier. The same economic gate is reused from allocation
+through pre-fill validation. A 100% cash result is labeled definitive or provisional for incomplete
+research, unsupported valuation, pending strategy work, or blocked portfolio state.
+
 The six rows in `data/tables/youtube_channels.csv` are a human-curated source subscription. Their
 regular videos are queued directly rather than routed through the inbox packet classifier. A
 YouTube transcript is untrusted lead material, never primary evidence: independently corroborate

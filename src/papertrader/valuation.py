@@ -19,7 +19,6 @@ ASSESSMENT_V2_AGENT_FIELDS = (
     "security_id",
     "assessed_at",
     "expires_at",
-    "eligibility",
     "confidence",
     "thesis_score",
     "business_quality_score",
@@ -83,12 +82,32 @@ ASSESSMENT_V2_OUTPUT_FIELDS = (
     "buy_below_price",
     "margin_of_safety_pct",
     "research_completeness",
+    "research_status",
+    "allocation_eligibility",
+    "conviction_tier",
+    "quality_score",
+    "eligibility_reason_codes",
+    "frontier_expected_return_pct",
+    "frontier_base_return_pct",
+    "frontier_bear_base_payoff_ratio",
+    "frontier_expected_bear_payoff_ratio",
+    "frontier_margin_of_safety_pct",
+    "frontier_confidence_levels",
+    "frontier_relationship_status",
+    "frontier_hard_blockers",
 )
 
 RUBRIC_SCORES = frozenset(
     {Decimal("20"), Decimal("40"), Decimal("60"), Decimal("80"), Decimal("100")}
 )
 CONFIDENCE_FACTORS = {"low": Decimal("0.5"), "medium": Decimal("0.75"), "high": Decimal("1")}
+CONFIDENCE_RANK = {"low": 0, "medium": 1, "high": 2}
+QUALITY_WEIGHTS = {
+    "thesis_score": Decimal("0.30"),
+    "business_quality_score": Decimal("0.30"),
+    "balance_sheet_score": Decimal("0.20"),
+    "liquidity_score": Decimal("0.20"),
+}
 
 
 class ValuationError(ValueError):
@@ -138,6 +157,107 @@ def validate_research_rubrics(repository_root: Path) -> list[str]:
 
 def _return_pct(fair_value: Decimal, reference_price: Decimal) -> Decimal:
     return ((fair_value / reference_price) - Decimal("1")) * Decimal("100")
+
+
+def derive_assessment_dimensions(
+    values: Mapping[str, str],
+    settings: Settings,
+    *,
+    relationship_accepted: bool,
+) -> dict[str, str]:
+    """Derive research state, eligibility, conviction, and every gate distance once."""
+
+    supported = values.get("valuation_supported") == "true"
+    completeness = values.get("research_completeness", "")
+    research_status = (
+        "unsupported" if not supported else "complete" if completeness == "complete" else "partial"
+    )
+    confidence = values.get("confidence", "")
+    confidence_rank = CONFIDENCE_RANK.get(confidence, -1)
+    minimum_rank = CONFIDENCE_RANK[settings.allocation.minimum_confidence]
+    quality = sum(
+        (
+            required_decimal(values[field], label=field) * weight
+            for field, weight in QUALITY_WEIGHTS.items()
+        ),
+        Decimal("0"),
+    )
+    hard_blockers = tuple(part for part in values.get("hard_blockers", "").split("|") if part)
+    reasons: list[str] = []
+    expected = Decimal("0")
+    base_return = Decimal("0")
+    bear_return = Decimal("0")
+    margin = Decimal("0")
+    base_ratio = Decimal("0")
+    expected_ratio = Decimal("0")
+    if research_status != "complete":
+        reasons.append(
+            "valuation_unsupported" if research_status == "unsupported" else "research_incomplete"
+        )
+    else:
+        expected = required_decimal(
+            values["confidence_adjusted_expected_return_pct"],
+            label="confidence_adjusted_expected_return_pct",
+        )
+        base_return = required_decimal(values["base_return_pct"], label="base_return_pct")
+        bear_return = required_decimal(values["bear_return_pct"], label="bear_return_pct")
+        margin = required_decimal(values["margin_of_safety_pct"], label="margin_of_safety_pct")
+        downside = max(-bear_return, Decimal("0"))
+        base_ratio = (
+            Decimal("999999") if downside == 0 else max(base_return, Decimal("0")) / downside
+        )
+        expected_ratio = (
+            Decimal("999999") if downside == 0 else max(expected, Decimal("0")) / downside
+        )
+        if expected < settings.allocation.minimum_confidence_adjusted_expected_return_pct:
+            reasons.append("expected_return_below_minimum")
+        if base_return < settings.allocation.minimum_base_upside_pct:
+            reasons.append("base_return_below_minimum")
+        if base_ratio < settings.allocation.minimum_upside_downside_ratio:
+            reasons.append("bear_base_payoff_below_minimum")
+        if expected_ratio < settings.allocation.minimum_expected_bear_payoff_ratio:
+            reasons.append("expected_bear_payoff_below_minimum")
+        if margin < settings.allocation.minimum_margin_of_safety_pct:
+            reasons.append("margin_of_safety_below_minimum")
+    if confidence_rank < minimum_rank:
+        reasons.append("confidence_below_minimum")
+    if not relationship_accepted:
+        reasons.append("relationship_pending")
+    if hard_blockers:
+        reasons.append(f"hard_blocker:{','.join(hard_blockers)}")
+    eligible = not reasons
+    conviction = (
+        eligible
+        and quality >= settings.allocation.conviction_quality_score
+        and required_decimal(values["expected_return_pct"], label="expected_return_pct")
+        >= settings.allocation.conviction_expected_return_pct
+        and confidence_rank >= CONFIDENCE_RANK[settings.allocation.conviction_minimum_confidence]
+    )
+    return {
+        "research_status": research_status,
+        "allocation_eligibility": "eligible" if eligible else "ineligible",
+        "conviction_tier": ("conviction" if conviction else "baseline" if eligible else "watch"),
+        "quality_score": decimal_text(quality),
+        "eligibility_reason_codes": "|".join(sorted(reasons)),
+        "frontier_expected_return_pct": decimal_text(
+            expected - settings.allocation.minimum_confidence_adjusted_expected_return_pct
+        ),
+        "frontier_base_return_pct": decimal_text(
+            base_return - settings.allocation.minimum_base_upside_pct
+        ),
+        "frontier_bear_base_payoff_ratio": decimal_text(
+            base_ratio - settings.allocation.minimum_upside_downside_ratio
+        ),
+        "frontier_expected_bear_payoff_ratio": decimal_text(
+            expected_ratio - settings.allocation.minimum_expected_bear_payoff_ratio
+        ),
+        "frontier_margin_of_safety_pct": decimal_text(
+            margin - settings.allocation.minimum_margin_of_safety_pct
+        ),
+        "frontier_confidence_levels": str(confidence_rank - minimum_rank),
+        "frontier_relationship_status": "complete" if relationship_accepted else "pending",
+        "frontier_hard_blockers": "|".join(hard_blockers),
+    }
 
 
 def _validate_market_references(

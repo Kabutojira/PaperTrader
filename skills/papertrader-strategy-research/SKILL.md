@@ -39,7 +39,9 @@ assessment timestamp, and disposition from the deterministic payload.
 1. Orient with wiki contracts, the results-first homepage, complete research catalog, recent log,
    and linked research.
 2. Revalidate thesis, relationship, valuation/timing evidence, liquidity, invalidation, assessment,
-   current allocation-plan identity, and price/FX freshness.
+   current allocation-plan identity, and price/FX freshness. Use the stored canonical eligibility
+   and frontier; do not reinterpret confidence, expected return, payoff, margin-of-safety,
+   relationship, or blocker thresholds.
 3. In `conviction` mode, compare long, short, equity, call, put, and bounded multi-leg alternatives
    where allowed on expected payoff, downside, horizon, liquidity, cost, thesis fit, and
    invalidation. Preserve the existing full conviction gate.

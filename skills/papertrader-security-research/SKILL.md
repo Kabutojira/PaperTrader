@@ -79,10 +79,11 @@ rows in `relationships.csv` rather than relying on wiki prose alone.
    configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
 9. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
    upsert for the short structured row summary.
-10. Before completing, use the assessment CLI to write exactly one current comparable result:
-   `baseline`/`conviction` only with fresh evidence, scenario-complete valuation and no blocker, or
-   `ineligible` with one or more canonical explicit hard blockers. Never leave completed research
-   without an assessment.
+10. Before completing, use the assessment CLI to write exactly one current comparable result.
+   Supply research evidence and scenarios, never an allocation disposition. Deterministic code
+   independently derives research status, allocation eligibility, conviction tier, quality, every
+   economic gate, and the complete eligibility frontier. Never leave completed research without an
+   assessment.
 11. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
    Baseline strategy work is enqueued later by the deterministic allocator, never by this skill.
 12. For each linked idea, enqueue exactly one `idea_research` operation whose inputs include

@@ -113,7 +113,13 @@ class AllocationSettings:
     cash_hurdle_score: Decimal
     minimum_base_upside_pct: Decimal
     minimum_upside_downside_ratio: Decimal
+    minimum_confidence_adjusted_expected_return_pct: Decimal
+    minimum_expected_bear_payoff_ratio: Decimal
+    minimum_margin_of_safety_pct: Decimal
     minimum_confidence: str
+    conviction_quality_score: Decimal
+    conviction_expected_return_pct: Decimal
+    conviction_minimum_confidence: str
     minimum_diversified_candidates: int
     maximum_assessment_age_days: int
     research_refresh_lead_days: int
@@ -498,10 +504,37 @@ def _load_runtime_settings(
         minimum_upside_downside_ratio=_decimal(
             parser, "allocation", "minimum_upside_downside_ratio", maximum=Decimal("100")
         ),
+        minimum_confidence_adjusted_expected_return_pct=_decimal(
+            parser,
+            "allocation",
+            "minimum_confidence_adjusted_expected_return_pct",
+            maximum=Decimal("1000"),
+        ),
+        minimum_expected_bear_payoff_ratio=_decimal(
+            parser,
+            "allocation",
+            "minimum_expected_bear_payoff_ratio",
+            maximum=Decimal("100"),
+        ),
+        minimum_margin_of_safety_pct=_decimal(
+            parser, "allocation", "minimum_margin_of_safety_pct", maximum=Decimal("100")
+        ),
         minimum_confidence=_choice(
             parser,
             "allocation",
             "minimum_confidence",
+            frozenset({"low", "medium", "high"}),
+        ),
+        conviction_quality_score=_decimal(
+            parser, "allocation", "conviction_quality_score", maximum=Decimal("100")
+        ),
+        conviction_expected_return_pct=_decimal(
+            parser, "allocation", "conviction_expected_return_pct", maximum=Decimal("1000")
+        ),
+        conviction_minimum_confidence=_choice(
+            parser,
+            "allocation",
+            "conviction_minimum_confidence",
             frozenset({"low", "medium", "high"}),
         ),
         minimum_diversified_candidates=_positive_int(

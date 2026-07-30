@@ -126,6 +126,7 @@ class AllocationPlanResult:
     capital_allocated_base: str
     capital_unallocated_base: str
     unallocated_reasons: tuple[str, ...]
+    evidence_state: str
     eligible_candidate_count: int
     excluded_candidate_count: int
     target_count: int
@@ -231,6 +232,16 @@ def score_assessment(
 
     if not cash_hurdle_score.is_finite() or not Decimal("0") <= cash_hurdle_score <= ONE_HUNDRED:
         raise AllocationError("cash hurdle must be finite and within 0-100")
+    if assessment.get("assessment_schema_version") == "2":
+        quality = required_decimal(assessment["quality_score"], label="quality_score")  # type: ignore[arg-type]
+        if not Decimal("0") <= quality <= ONE_HUNDRED:
+            raise AllocationError("quality_score must be within 0-100")
+        rounded_quality = _rounded_score(quality)
+        return AssessmentScore(
+            rounded_quality,
+            rounded_quality,
+            _rounded_score(max(rounded_quality - cash_hurdle_score, Decimal("0"))),
+        )
     raw = Decimal("0")
     for field, weight in SCORE_WEIGHTS.items():
         value = required_decimal(assessment[field], label=field)  # type: ignore[arg-type]
@@ -251,6 +262,15 @@ def score_assessment(
 
 def assessment_payoff_reasons(assessment: Mapping[str, str], settings: Settings) -> tuple[str, ...]:
     """Return deterministic long-baseline payoff gate failures."""
+
+    if assessment.get("assessment_schema_version") == "2":
+        return tuple(
+            reason
+            for reason in assessment["eligibility_reason_codes"].split("|")
+            if reason
+            and reason != "relationship_pending"
+            and not reason.startswith("hard_blocker:")
+        )
 
     base_upside = required_decimal(assessment["base_upside_pct"], label="base_upside_pct")
     downside = required_decimal(assessment["downside_pct"], label="downside_pct")
@@ -274,6 +294,158 @@ def calculate_assessment_score(
     """Compatibility name for callers that describe the score as an aggregate."""
 
     return score_assessment(assessment, cash_hurdle_score)
+
+
+def _calibration_assessment(
+    name: str,
+    *,
+    expected: str,
+    base: str,
+    bear: str,
+    margin: str,
+    confidence: str = "medium",
+    completeness: str = "complete",
+    supported: str = "true",
+    blockers: str = "",
+) -> dict[str, str]:
+    scores = {
+        "clearly_attractive": "80",
+        "fair": "60",
+        "unattractive": "40",
+        "distressed": "40",
+        "incomplete": "60",
+        "illiquid": "60",
+    }
+    score = scores[name]
+    return {
+        "assessment_schema_version": "2",
+        "confidence": confidence,
+        "thesis_score": score,
+        "business_quality_score": score,
+        "balance_sheet_score": score,
+        "liquidity_score": score,
+        "risk_penalty": "40",
+        "valuation_supported": supported,
+        "research_completeness": completeness,
+        "expected_return_pct": expected,
+        "confidence_adjusted_expected_return_pct": expected,
+        "base_return_pct": base,
+        "bear_return_pct": bear,
+        "margin_of_safety_pct": margin,
+        "hard_blockers": blockers,
+    }
+
+
+def write_calibration_report(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    run_id: str,
+) -> Path:
+    """Write fixed-fixture and maintained-universe old/new decision comparisons."""
+
+    if not SAFE_RUN_ID.fullmatch(run_id):
+        raise AllocationError("calibration run_id is unsafe")
+    from papertrader.valuation import derive_assessment_dimensions
+
+    fixtures = {
+        "clearly_attractive": _calibration_assessment(
+            "clearly_attractive", expected="24", base="30", bear="-12", margin="20"
+        ),
+        "fair": _calibration_assessment("fair", expected="7", base="10", bear="-15", margin="0"),
+        "unattractive": _calibration_assessment(
+            "unattractive", expected="-5", base="0", bear="-30", margin="-20"
+        ),
+        "distressed": _calibration_assessment(
+            "distressed",
+            expected="30",
+            base="50",
+            bear="-80",
+            margin="25",
+            blockers="solvency_risk",
+        ),
+        "incomplete": _calibration_assessment(
+            "incomplete",
+            expected="0",
+            base="0",
+            bear="0",
+            margin="0",
+            completeness="partial",
+            supported="false",
+        ),
+        "illiquid": _calibration_assessment(
+            "illiquid",
+            expected="25",
+            base="35",
+            bear="-15",
+            margin="25",
+            blockers="liquidity_insufficient",
+        ),
+    }
+    fixture_results = {
+        name: derive_assessment_dimensions(
+            assessment,
+            settings,
+            relationship_accepted=True,
+        )
+        for name, assessment in fixtures.items()
+    }
+    relationships = {
+        row["security_id"]
+        for row in read_table(repository_root, "relationships")
+        if row["status"] == "accepted"
+    }
+    universe: list[dict[str, object]] = []
+    for assessment in read_table(repository_root, "security_assessments"):
+        score = score_assessment(assessment, settings.allocation.cash_hurdle_score)
+        new_dimensions = (
+            derive_assessment_dimensions(
+                assessment,
+                settings,
+                relationship_accepted=assessment["security_id"] in relationships,
+            )
+            if assessment.get("assessment_schema_version") == "2"
+            else None
+        )
+        universe.append(
+            {
+                "security_id": assessment["security_id"],
+                "assessment_schema_version": assessment.get("assessment_schema_version", "")
+                or "legacy_v1",
+                "old": {
+                    "eligibility": assessment["eligibility"],
+                    "effective_score": decimal_text(score.effective_score),
+                    "candidate_edge": decimal_text(score.candidate_edge),
+                },
+                "new": new_dimensions,
+            }
+        )
+    document = {
+        "version": 1,
+        "run_id": run_id,
+        "thresholds": {
+            "minimum_confidence_adjusted_expected_return_pct": decimal_text(
+                settings.allocation.minimum_confidence_adjusted_expected_return_pct
+            ),
+            "minimum_base_return_pct": decimal_text(settings.allocation.minimum_base_upside_pct),
+            "minimum_bear_base_payoff_ratio": decimal_text(
+                settings.allocation.minimum_upside_downside_ratio
+            ),
+            "minimum_expected_bear_payoff_ratio": decimal_text(
+                settings.allocation.minimum_expected_bear_payoff_ratio
+            ),
+            "minimum_margin_of_safety_pct": decimal_text(
+                settings.allocation.minimum_margin_of_safety_pct
+            ),
+            "minimum_confidence": settings.allocation.minimum_confidence,
+        },
+        "fixtures": fixture_results,
+        "maintained_universe": universe,
+    }
+    path = repository_root / "data" / "runs" / run_id / "allocation_calibration.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    atomic_write_json(path, document, allowed_root=repository_root)
+    return path
 
 
 def baseline_strategy_id(security_id: str) -> str:
@@ -813,7 +985,8 @@ def _candidate(
         assessed_at = parse_timestamp(assessment["assessed_at"])
         expires_at = parse_timestamp(assessment["expires_at"])
         assert assessed_at is not None and expires_at is not None
-        if assessment["eligibility"] not in ELIGIBLE_ASSESSMENTS:
+        is_v2 = assessment.get("assessment_schema_version") == "2"
+        if not is_v2 and assessment["eligibility"] not in ELIGIBLE_ASSESSMENTS:
             reasons.append("assessment_ineligible")
         age = now - assessed_at
         if (
@@ -823,7 +996,7 @@ def _candidate(
         ):
             reasons.append("assessment_stale")
         confidence = assessment["confidence"]
-        if (
+        if not is_v2 and (
             confidence not in CONFIDENCE_RANK
             or CONFIDENCE_RANK[confidence] < CONFIDENCE_RANK[settings.allocation.minimum_confidence]
         ):
@@ -831,9 +1004,8 @@ def _candidate(
         blockers = tuple(part for part in assessment["hard_blockers"].split("|") if part)
         if blockers:
             reasons.append(f"hard_blocker:{','.join(blockers)}")
-        if score.candidate_edge <= 0:
+        if not is_v2 and score.candidate_edge <= 0:
             reasons.append("score_below_cash_hurdle")
-        reasons.extend(assessment_payoff_reasons(assessment, settings))
     if security["status"] not in ELIGIBLE_SECURITY_STATUSES:
         reasons.append("security_status_not_orderable")
     if security["instrument_type"] != "equity":
@@ -847,6 +1019,21 @@ def _candidate(
     current_relationships = relationships.get(security["security_id"], ())
     if not current_relationships:
         reasons.append("relationship_missing_or_stale")
+    if assessment is not None and assessment.get("assessment_schema_version") == "2":
+        from papertrader.valuation import derive_assessment_dimensions
+
+        dimensions = derive_assessment_dimensions(
+            assessment,
+            settings,
+            relationship_accepted=bool(current_relationships),
+        )
+        reasons.extend(
+            reason
+            for reason in dimensions["eligibility_reason_codes"].split("|")
+            if reason
+            and reason != "relationship_pending"
+            and not reason.startswith("hard_blocker:")
+        )
     price: Decimal | None = None
     fx_rate: Decimal | None = None
     try:
@@ -1725,6 +1912,26 @@ def plan_allocation(
                 unallocated_reasons.add("deployment_limit")
         if capital_allocated < diversified_budget:
             unallocated_reasons.add("candidate_or_rounding_constraints")
+    if capital_allocated > 0:
+        evidence_state = "invested_or_actionable"
+    elif any(
+        candidate.assessment is not None
+        and candidate.assessment.get("research_status") == "unsupported"
+        for candidate in candidates
+    ):
+        evidence_state = "provisional_cash_valuation_unsupported"
+    elif any(
+        candidate.assessment is None
+        or candidate.assessment.get("assessment_schema_version") != "2"
+        or candidate.assessment.get("research_status") != "complete"
+        or "relationship_missing_or_stale" in candidate.reasons
+        for candidate in candidates
+    ):
+        evidence_state = "provisional_cash_research_incomplete"
+    elif eligible:
+        evidence_state = "provisional_cash_strategy_pending"
+    else:
+        evidence_state = "definitive_cash_preference"
     result = AllocationPlanResult(
         allocation_plan_id=plan_id,
         run_id=run_id,
@@ -1748,6 +1955,7 @@ def plan_allocation(
         capital_allocated_base=decimal_text(capital_allocated),
         capital_unallocated_base=decimal_text(capital_unallocated),
         unallocated_reasons=tuple(sorted(unallocated_reasons)),
+        evidence_state=evidence_state,
         eligible_candidate_count=len(eligible),
         excluded_candidate_count=len(candidates) - len(eligible),
         target_count=len(rows),
@@ -1828,10 +2036,21 @@ def validate_allocation_state(repository_root: Path, settings: Settings) -> list
                 errors.append(f"assessment hard blockers are invalid: {security_id}")
             if gaps != tuple(sorted(set(gaps))) or set(gaps) - SOFT_GAPS:
                 errors.append(f"assessment soft gaps are invalid: {security_id}")
-            if bool(blockers) != (row["eligibility"] == "ineligible"):
+            is_v2 = row.get("assessment_schema_version") == "2"
+            if not is_v2 and bool(blockers) != (row["eligibility"] == "ineligible"):
                 errors.append(f"assessment hard-blocker disposition is inconsistent: {security_id}")
-            required_decimal(row["downside_pct"], label="downside_pct")
-            required_decimal(row["base_upside_pct"], label="base_upside_pct")
+            if row["downside_pct"]:
+                required_decimal(row["downside_pct"], label="downside_pct")
+            if row["base_upside_pct"]:
+                required_decimal(row["base_upside_pct"], label="base_upside_pct")
+            if is_v2:
+                if row["research_status"] not in {"complete", "partial", "unsupported", "stale"}:
+                    raise ValueError("invalid research status")
+                if row["allocation_eligibility"] not in {"eligible", "ineligible"}:
+                    raise ValueError("invalid allocation eligibility")
+                if row["conviction_tier"] not in {"watch", "baseline", "conviction"}:
+                    raise ValueError("invalid conviction tier")
+                required_decimal(row["quality_score"], label="quality_score")
             horizon = int(row["valuation_horizon_months"])
             if horizon <= 0 or row["valuation_horizon_months"] != str(horizon):
                 raise ValueError("non-positive horizon")

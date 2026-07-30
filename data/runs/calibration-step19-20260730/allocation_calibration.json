@@ -1,0 +1,466 @@
+{
+  "fixtures": {
+    "clearly_attractive": {
+      "allocation_eligibility": "eligible",
+      "conviction_tier": "baseline",
+      "eligibility_reason_codes": "",
+      "frontier_base_return_pct": "20",
+      "frontier_bear_base_payoff_ratio": "1.5",
+      "frontier_confidence_levels": "0",
+      "frontier_expected_bear_payoff_ratio": "1.25",
+      "frontier_expected_return_pct": "16",
+      "frontier_hard_blockers": "",
+      "frontier_margin_of_safety_pct": "20",
+      "frontier_relationship_status": "complete",
+      "quality_score": "80",
+      "research_status": "complete"
+    },
+    "distressed": {
+      "allocation_eligibility": "ineligible",
+      "conviction_tier": "watch",
+      "eligibility_reason_codes": "bear_base_payoff_below_minimum|expected_bear_payoff_below_minimum|hard_blocker:solvency_risk",
+      "frontier_base_return_pct": "40",
+      "frontier_bear_base_payoff_ratio": "-0.375",
+      "frontier_confidence_levels": "0",
+      "frontier_expected_bear_payoff_ratio": "-0.375",
+      "frontier_expected_return_pct": "22",
+      "frontier_hard_blockers": "solvency_risk",
+      "frontier_margin_of_safety_pct": "25",
+      "frontier_relationship_status": "complete",
+      "quality_score": "40",
+      "research_status": "complete"
+    },
+    "fair": {
+      "allocation_eligibility": "ineligible",
+      "conviction_tier": "watch",
+      "eligibility_reason_codes": "bear_base_payoff_below_minimum|expected_bear_payoff_below_minimum|expected_return_below_minimum",
+      "frontier_base_return_pct": "0",
+      "frontier_bear_base_payoff_ratio": "-0.3333333333333333333333333333",
+      "frontier_confidence_levels": "0",
+      "frontier_expected_bear_payoff_ratio": "-0.2833333333333333333333333333",
+      "frontier_expected_return_pct": "-1",
+      "frontier_hard_blockers": "",
+      "frontier_margin_of_safety_pct": "0",
+      "frontier_relationship_status": "complete",
+      "quality_score": "60",
+      "research_status": "complete"
+    },
+    "illiquid": {
+      "allocation_eligibility": "ineligible",
+      "conviction_tier": "watch",
+      "eligibility_reason_codes": "hard_blocker:liquidity_insufficient",
+      "frontier_base_return_pct": "25",
+      "frontier_bear_base_payoff_ratio": "1.333333333333333333333333333",
+      "frontier_confidence_levels": "0",
+      "frontier_expected_bear_payoff_ratio": "0.916666666666666666666666667",
+      "frontier_expected_return_pct": "17",
+      "frontier_hard_blockers": "liquidity_insufficient",
+      "frontier_margin_of_safety_pct": "25",
+      "frontier_relationship_status": "complete",
+      "quality_score": "60",
+      "research_status": "complete"
+    },
+    "incomplete": {
+      "allocation_eligibility": "ineligible",
+      "conviction_tier": "watch",
+      "eligibility_reason_codes": "valuation_unsupported",
+      "frontier_base_return_pct": "-10",
+      "frontier_bear_base_payoff_ratio": "-1",
+      "frontier_confidence_levels": "0",
+      "frontier_expected_bear_payoff_ratio": "-0.75",
+      "frontier_expected_return_pct": "-8",
+      "frontier_hard_blockers": "",
+      "frontier_margin_of_safety_pct": "0",
+      "frontier_relationship_status": "complete",
+      "quality_score": "60",
+      "research_status": "unsupported"
+    },
+    "unattractive": {
+      "allocation_eligibility": "ineligible",
+      "conviction_tier": "watch",
+      "eligibility_reason_codes": "base_return_below_minimum|bear_base_payoff_below_minimum|expected_bear_payoff_below_minimum|expected_return_below_minimum|margin_of_safety_below_minimum",
+      "frontier_base_return_pct": "-10",
+      "frontier_bear_base_payoff_ratio": "-1",
+      "frontier_confidence_levels": "0",
+      "frontier_expected_bear_payoff_ratio": "-0.75",
+      "frontier_expected_return_pct": "-13",
+      "frontier_hard_blockers": "",
+      "frontier_margin_of_safety_pct": "-20",
+      "frontier_relationship_status": "complete",
+      "quality_score": "40",
+      "research_status": "complete"
+    }
+  },
+  "maintained_universe": [
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "23.4",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_18a3ab0ee6086ee85d0f"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "8.2",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_1c055eb9b2bb1f5a8ff2"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "29",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_1e8fbdb0f45f2b413e00"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "3",
+        "effective_score": "63",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_1f9cce545ede94cd6349"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "35",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_2010347f1a0a5ea60f47"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "10.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_22c2b9d782a62d7a9b86"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "1.6",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_2c779e81c27b78c556bb"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "19.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_2dbe878dfc899d7ee867"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-10.8",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_37ddcbdaad296ad831f2"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-66.75",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_4627aea1bf7d8943d3d8"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "14.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_488a9d7f7a8573597724"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "46.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_4b61970aa8f574446819"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-26.2",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_567d0d575bbd30aaa91d"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "20.8",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_59304f90c440def31dc5"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-11.6",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_66cdcf90aac0d83e76f3"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "22.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_6ad1af8d10d6276a0221"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "38.4",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_6f9a1450edceb9307c9a"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-8.6",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_7ca095d63423c55a90e3"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "14.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_8472507d7d320aa388a7"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-25.2",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_89969b7dac39b7db5661"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "10.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_97f38b2cb2d5ef127f5a"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "24.44",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_9b0db3bc77914b23a307"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-16",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_9d4049ed6669a52815d6"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-2.52",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_a5dc16f3f4b245e6c168"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "16",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_a9eb9838940ef5ceaa0c"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "28.4",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_b1f2c48e1a744f5ecf67"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "34.6",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_bdc2f87dadf134760c3a"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "21.4",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_c120e9f26ebb6159adf9"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "30.6",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_c9a37d277445869a8809"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "30.2",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_cb88f9154cfeaa15e878"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-21.6",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_cc4dcb8f002b61dffe00"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "7.8",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_dc7a111e297be528d96b"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-52.88",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_ed7d5b616a196969c815"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "39.8",
+        "eligibility": "baseline"
+      },
+      "security_id": "security_ef35e41886220d51c22c"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-25.64",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_f2b9760d847b2ba59324"
+    },
+    {
+      "assessment_schema_version": "legacy_v1",
+      "new": null,
+      "old": {
+        "candidate_edge": "0",
+        "effective_score": "-59.5",
+        "eligibility": "ineligible"
+      },
+      "security_id": "security_fb87fac302a5446a1ced"
+    }
+  ],
+  "run_id": "calibration-step19-20260730",
+  "thresholds": {
+    "minimum_base_return_pct": "10",
+    "minimum_bear_base_payoff_ratio": "1",
+    "minimum_confidence": "medium",
+    "minimum_confidence_adjusted_expected_return_pct": "8",
+    "minimum_expected_bear_payoff_ratio": "0.75",
+    "minimum_margin_of_safety_pct": "0"
+  },
+  "version": 1
+}

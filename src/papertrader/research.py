@@ -28,6 +28,7 @@ from papertrader.valuation import (
     ASSESSMENT_V2_AGENT_FIELDS,
     ASSESSMENT_V2_OUTPUT_FIELDS,
     ValuationError,
+    derive_assessment_dimensions,
     normalize_v2_assessment,
 )
 
@@ -236,17 +237,33 @@ def upsert_assessment(
     """Insert or replace one current comparable security assessment."""
 
     columns = contract_by_name(repository_root, "security_assessments").columns
-    if raw.get("assessment_schema_version") == "2":
+    is_v2 = raw.get("assessment_schema_version") == "2"
+    if is_v2:
         agent_values = _exact_strings(raw, ASSESSMENT_V2_AGENT_FIELDS, label="assessment_v2")
         try:
             normalized_v2 = normalize_v2_assessment(repository_root, settings, agent_values)
         except (CanonicalValueError, ValuationError, ValueError) as exc:
             raise ResearchStateError(f"assessment v2 is invalid: {exc}") from exc
+        relationship_accepted = any(
+            row["security_id"] == agent_values["security_id"] and row["status"] == "accepted"
+            for row in read_table(repository_root, "relationships")
+        )
+        dimensions = derive_assessment_dimensions(
+            {**agent_values, **normalized_v2},
+            settings,
+            relationship_accepted=relationship_accepted,
+        )
+        normalized_v2.update(dimensions)
+        compatibility_eligibility = (
+            dimensions["conviction_tier"]
+            if dimensions["allocation_eligibility"] == "eligible"
+            else "ineligible"
+        )
         values = {
             "security_id": agent_values["security_id"],
             "assessed_at": agent_values["assessed_at"],
             "expires_at": agent_values["expires_at"],
-            "eligibility": agent_values["eligibility"],
+            "eligibility": compatibility_eligibility,
             "confidence": agent_values["confidence"],
             **{field: agent_values[field] for field in ASSESSMENT_SCORE_FIELDS},
             "downside_pct": normalized_v2["bear_return_pct"],
@@ -304,7 +321,7 @@ def upsert_assessment(
     _canonical_set(values["soft_gaps"], SOFT_GAPS, label="soft_gaps")
     if blockers and values["eligibility"] != "ineligible":
         raise ResearchStateError("a hard blocker forces eligibility=ineligible")
-    if values["eligibility"] == "ineligible" and not blockers:
+    if not is_v2 and values["eligibility"] == "ineligible" and not blockers:
         raise ResearchStateError("an ineligible assessment requires an explicit hard blocker")
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     values["assessed_at"] = _canonical_timestamp(values["assessed_at"], label="assessed_at")

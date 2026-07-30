@@ -1,10 +1,12 @@
 from __future__ import annotations
 
+import json
 from datetime import UTC, datetime
 from pathlib import Path
 
 import pytest
 
+from papertrader.allocation import write_calibration_report
 from papertrader.config import Settings
 from papertrader.research import ResearchStateError, upsert_assessment
 from papertrader.tables import read_table, write_table
@@ -93,7 +95,6 @@ def _request(template: str, method: str) -> dict[str, str]:
         "security_id": "sec_valuation",
         "assessed_at": "2026-07-24T22:00:00Z",
         "expires_at": "2026-08-23T22:00:00Z",
-        "eligibility": "baseline",
         "confidence": "medium",
         "thesis_score": "80",
         "business_quality_score": "80",
@@ -137,6 +138,30 @@ def _seed(repository: Path) -> None:
     write_table(repository, "securities", [_security()])
     write_table(repository, "source_registry", [_source()])
     write_table(repository, "market_latest", [_market()])
+    write_table(
+        repository,
+        "relationships",
+        [
+            {
+                "relationship_id": "relationship_valuation",
+                "idea_id": "idea_valuation",
+                "security_id": "sec_valuation",
+                "relationship_type": "beneficiary",
+                "direction": "positive",
+                "mechanism": "The fixture benefits from its validated mechanism.",
+                "sensitivity": "medium",
+                "confidence": "high",
+                "catalyst": "Evidence converts into cash flow.",
+                "invalidation": "The mechanism fails.",
+                "status": "accepted",
+                "research_page": "",
+                "last_reviewed_at": "2026-07-24T21:00:00Z",
+                "next_review_at": "2026-08-24T21:00:00Z",
+                "created_at": "2026-07-24T21:00:00Z",
+                "updated_at": "2026-07-24T21:00:00Z",
+            }
+        ],
+    )
 
 
 @pytest.mark.parametrize(("template", "method"), sorted(TEMPLATES.items()))
@@ -163,6 +188,10 @@ def test_every_valuation_template_produces_reconciled_scenarios(
     assert row["confidence_adjusted_expected_return_pct"] == "15"
     assert row["buy_below_price"] == "96"
     assert row["margin_of_safety_pct"] == "16.66666666666666666666666667"
+    assert row["research_status"] == "complete"
+    assert row["allocation_eligibility"] == "eligible"
+    assert row["conviction_tier"] == "baseline"
+    assert row["eligibility_reason_codes"] == ""
 
 
 @pytest.mark.parametrize(
@@ -212,7 +241,6 @@ def test_unsupported_valuation_stores_no_invented_scenarios(
         {
             "valuation_supported": "false",
             "research_completeness": "unsupported",
-            "eligibility": "ineligible",
             "hard_blockers": "valuation_unsupported",
         }
     )
@@ -225,3 +253,22 @@ def test_unsupported_valuation_stores_no_invented_scenarios(
 def test_repository_valuation_contracts_are_complete(repository_root: Path) -> None:
     assert set(valuation_templates(repository_root)) == set(TEMPLATES)
     assert validate_research_rubrics(repository_root) == []
+
+
+def test_calibration_frontier_separates_attractive_and_blocked_cases(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    path = write_calibration_report(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="calibration-fixture",
+    )
+    document = json.loads(path.read_text(encoding="utf-8"))
+    fixtures = document["fixtures"]
+    assert fixtures["clearly_attractive"]["allocation_eligibility"] == "eligible"
+    assert fixtures["fair"]["allocation_eligibility"] == "ineligible"
+    assert "expected_return_below_minimum" in fixtures["fair"]["eligibility_reason_codes"]
+    assert "hard_blocker:solvency_risk" in fixtures["distressed"]["eligibility_reason_codes"]
+    assert "hard_blocker:liquidity_insufficient" in fixtures["illiquid"]["eligibility_reason_codes"]
+    assert fixtures["incomplete"]["research_status"] == "unsupported"
+    assert int(fixtures["clearly_attractive"]["frontier_confidence_levels"]) >= 0

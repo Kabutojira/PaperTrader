@@ -48,6 +48,8 @@ multiplier, quantity, currency, and a fresh bid/ask source.
    explaining that the request was superseded. This is the normal safe terminal disposition for an
    obsolete plan-bound request.
 3. Decide whether the evidence, thesis, timing, signal, and invalidation still support the action.
+   Reuse the deterministic canonical eligibility result; never recalculate or reinterpret its
+   confidence, expected-return, payoff, margin-of-safety, relationship, or hard-blocker gates.
 4. For a baseline strategy, read the latest target, reject a superseded/stale plan, and use only
    its indicated action. A hard blocker forbids increased exposure but may authorize the plan's
    risk-reducing exit. Let deterministic code derive the exact whole-share delta from target value,

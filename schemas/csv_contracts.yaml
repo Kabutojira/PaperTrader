@@ -144,6 +144,19 @@ contracts:
       - buy_below_price
       - margin_of_safety_pct
       - research_completeness
+      - research_status
+      - allocation_eligibility
+      - conviction_tier
+      - quality_score
+      - eligibility_reason_codes
+      - frontier_expected_return_pct
+      - frontier_base_return_pct
+      - frontier_bear_base_payoff_ratio
+      - frontier_expected_bear_payoff_ratio
+      - frontier_margin_of_safety_pct
+      - frontier_confidence_levels
+      - frontier_relationship_status
+      - frontier_hard_blockers
   security_assessment_history:
     path: data/tables/security_assessment_history.csv
     append_only: true
@@ -202,6 +215,19 @@ contracts:
       - buy_below_price
       - margin_of_safety_pct
       - research_completeness
+      - research_status
+      - allocation_eligibility
+      - conviction_tier
+      - quality_score
+      - eligibility_reason_codes
+      - frontier_expected_return_pct
+      - frontier_base_return_pct
+      - frontier_bear_base_payoff_ratio
+      - frontier_expected_bear_payoff_ratio
+      - frontier_margin_of_safety_pct
+      - frontier_confidence_levels
+      - frontier_relationship_status
+      - frontier_hard_blockers
   allocation_targets:
     path: data/tables/allocation_targets.csv
     generated: true

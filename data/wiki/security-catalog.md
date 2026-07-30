@@ -7,13 +7,13 @@ tags:
 created: "2026-07-30"
 updated: "2026-07-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d014f6c1b3ad7069bd8c"
-as_of: "2026-07-30T11:15:00Z"
+snapshot_id: "decision_9b582290327b2633e4dc"
+as_of: "2026-07-30T11:45:00Z"
 ---
 
 # Securities
 
-**Snapshot `decision_d014f6c1b3ad7069bd8c` · As of `2026-07-30T11:15:00Z`**
+**Snapshot `decision_9b582290327b2633e4dc` · As of `2026-07-30T11:45:00Z`**
 
 Ticker links open the maintained security analysis. Native marks are converted to EUR with the displayed committed FX observation.
 

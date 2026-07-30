@@ -22,6 +22,7 @@ from papertrader.allocation import (
     allocation_readiness,
     maintain_allocation_research,
     plan_allocation,
+    write_calibration_report,
 )
 from papertrader.command_audit import audit_context, record_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
@@ -252,6 +253,8 @@ def _parser() -> argparse.ArgumentParser:
     allocation_maintain.add_argument("--backfill", action="store_true")
     allocation_readiness_command = allocation_commands.add_parser("readiness")
     allocation_readiness_command.add_argument("--strict", action="store_true")
+    allocation_calibrate = allocation_commands.add_parser("calibrate")
+    allocation_calibrate.add_argument("--run-id", required=True)
 
     advice = commands.add_parser("advice", help="publish the investor decision projection")
     advice_commands = advice.add_subparsers(dest="advice_command", required=True)
@@ -1215,6 +1218,10 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 backfill=arguments.backfill,
             )
             print(json.dumps(asdict(maintenance_result), sort_keys=True))
+            return 0
+        elif arguments.allocation_command == "calibrate":
+            path = write_calibration_report(root, settings, run_id=arguments.run_id)
+            print(path.relative_to(root).as_posix())
             return 0
         readiness = allocation_readiness(root, settings)
         print(json.dumps(asdict(readiness), sort_keys=True))
