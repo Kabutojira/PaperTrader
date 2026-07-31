@@ -174,6 +174,7 @@ def test_quartz_uses_external_dashboard_source_and_validated_publication_copy(
         "decision_snapshot.json",
         "model_portfolio.csv",
         "actionable_signals.csv",
+        "research_benchmark.csv",
     ):
         assert name in build
     assert "isSymbolicLink()" in build

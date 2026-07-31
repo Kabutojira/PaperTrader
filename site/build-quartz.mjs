@@ -44,6 +44,22 @@ const publicationFiles = {
     "effective_score",
     "downside_pct",
     "base_upside_pct",
+    "bear_fair_value",
+    "bear_return_pct",
+    "bear_probability_pct",
+    "base_fair_value",
+    "base_return_pct",
+    "base_probability_pct",
+    "bull_fair_value",
+    "bull_return_pct",
+    "bull_probability_pct",
+    "expected_return_pct",
+    "confidence_adjusted_expected_return_pct",
+    "buy_below_price",
+    "canonical_rating",
+    "portfolio_action",
+    "evidence_state",
+    "rating_change_conditions",
     "valuation_horizon_months",
     "thesis_summary",
     "entry_rule",
@@ -85,6 +101,21 @@ const publicationFiles = {
     "strategy_research_page",
     "research_page",
     "reason_codes",
+  ],
+  "research_benchmark.csv": [
+    "snapshot_id",
+    "as_of",
+    "policy_version",
+    "non_approved",
+    "copy_ready",
+    "security_id",
+    "ticker",
+    "company_name",
+    "rating",
+    "weight_pct",
+    "reference_price",
+    "currency",
+    "research_page",
   ],
 };
 
@@ -178,11 +209,13 @@ function validateSnapshot(content) {
     "operations_status",
     "stance",
     "stance_reason_codes",
+    "evidence_state",
     "base_currency",
     "current_portfolio",
     "approved_target_portfolio",
     "actionable_signals",
     "candidate_pipeline",
+    "research_benchmark",
     "research_alerts",
     "coverage",
     "performance",
@@ -190,7 +223,7 @@ function validateSnapshot(content) {
     "source_state_hashes",
   ];
   assertExactKeys(snapshot, required, "decision snapshot");
-  if (snapshot.version !== 2)
+  if (snapshot.version !== 3)
     throw new Error("unsupported decision snapshot version");
   if (!/^decision_[0-9a-f]{20}$/.test(snapshot.snapshot_id)) {
     throw new Error("decision snapshot ID is invalid");
@@ -219,6 +252,18 @@ function validateSnapshot(content) {
   ) {
     throw new Error("decision snapshot stance is invalid");
   }
+  if (
+    ![
+      "definitive_cash_preference",
+      "provisional_cash_research_incomplete",
+      "provisional_cash_valuation_unsupported",
+      "provisional_cash_strategy_pending",
+      "portfolio_blocked",
+      "invested_or_actionable",
+    ].includes(snapshot.evidence_state)
+  ) {
+    throw new Error("decision snapshot evidence_state is invalid");
+  }
   for (const field of [
     "stance_reason_codes",
     "actionable_signals",
@@ -232,6 +277,7 @@ function validateSnapshot(content) {
   for (const field of [
     "current_portfolio",
     "approved_target_portfolio",
+    "research_benchmark",
     "coverage",
     "performance",
     "source_state_hashes",
@@ -256,6 +302,19 @@ function validateSnapshot(content) {
         throw new Error(`decision snapshot ${field} row identity mismatch`);
       }
     }
+  }
+  assertExactKeys(
+    snapshot.research_benchmark,
+    ["policy_version", "non_approved", "copy_ready", "rows"],
+    "decision snapshot research_benchmark",
+  );
+  if (
+    snapshot.research_benchmark.policy_version !== "equal_weight_rated_v1" ||
+    snapshot.research_benchmark.non_approved !== true ||
+    snapshot.research_benchmark.copy_ready !== false ||
+    !Array.isArray(snapshot.research_benchmark.rows)
+  ) {
+    throw new Error("decision snapshot research_benchmark is invalid");
   }
   return snapshot;
 }
@@ -319,13 +378,25 @@ function expectedCsvRows(values, header, fixed = {}) {
 }
 
 function assertCsvMatchesSnapshot(name, rows, header, snapshot) {
-  const expected =
-    name === "model_portfolio.csv"
-      ? expectedCsvRows(snapshot.current_portfolio.rows, header)
-      : expectedCsvRows(snapshot.actionable_signals, header, {
-          snapshot_id: snapshot.snapshot_id,
-          as_of: snapshot.as_of,
-        });
+  let expected;
+  if (name === "model_portfolio.csv") {
+    expected = expectedCsvRows(snapshot.current_portfolio.rows, header);
+  } else if (name === "actionable_signals.csv") {
+    expected = expectedCsvRows(snapshot.actionable_signals, header, {
+      snapshot_id: snapshot.snapshot_id,
+      as_of: snapshot.as_of,
+    });
+  } else if (name === "research_benchmark.csv") {
+    expected = expectedCsvRows(snapshot.research_benchmark.rows, header, {
+      snapshot_id: snapshot.snapshot_id,
+      as_of: snapshot.as_of,
+      policy_version: snapshot.research_benchmark.policy_version,
+      non_approved: snapshot.research_benchmark.non_approved,
+      copy_ready: snapshot.research_benchmark.copy_ready,
+    });
+  } else {
+    throw new Error(`unsupported publication CSV: ${name}`);
+  }
   if (JSON.stringify(rows) !== JSON.stringify(expected)) {
     throw new Error(`${name} differs from decision_snapshot.json`);
   }

@@ -21,6 +21,7 @@ from papertrader.integrity import is_runtime_path_allowed, validate_runtime_path
         "data/published/decision_snapshot.json",
         "data/published/model_portfolio.csv",
         "data/published/actionable_signals.csv",
+        "data/published/research_benchmark.csv",
         "data/logs/operations-2026.ndjson",
         "data/logs/log.txt",
         "data/issues.md",

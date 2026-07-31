@@ -1195,6 +1195,7 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
             "decision_snapshot.json",
             "model_portfolio.csv",
             "actionable_signals.csv",
+            "research_benchmark.csv",
         ):
             assert (site_output / "data" / publication_name).read_bytes() == (
                 publication / "data" / "published" / publication_name

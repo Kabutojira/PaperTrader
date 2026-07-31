@@ -476,7 +476,8 @@ the latest validated publication files:
 
 - `data/published/decision_snapshot.json`;
 - `data/published/model_portfolio.csv`;
-- `data/published/actionable_signals.csv`.
+- `data/published/actionable_signals.csv`;
+- `data/published/research_benchmark.csv`.
 
 The same snapshot generates the Today, Model portfolio, Securities, Signals, Performance, System
 status, and Research catalog pages plus the investor-first daily report and Telegram brief. Every

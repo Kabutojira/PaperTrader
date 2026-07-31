@@ -67,6 +67,7 @@ REQUIRED_LAYOUT = (
     "data/logs/log.txt",
     "data/published/actionable_signals.csv",
     "data/published/model_portfolio.csv",
+    "data/published/research_benchmark.csv",
     "data/issues.md",
 )
 

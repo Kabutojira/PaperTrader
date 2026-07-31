@@ -33,6 +33,7 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "data/published/decision_snapshot.json",
         "data/published/model_portfolio.csv",
         "data/published/actionable_signals.csv",
+        "data/published/research_benchmark.csv",
     )
     for operation_type in ("security_research", "strategy_research", "execute_strategy"):
         assert all(

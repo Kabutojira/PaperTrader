@@ -25,6 +25,7 @@ jobs:
     timeout-minutes: 30
     env:
       WIKI_PATH: ${{ github.workspace }}/data/wiki
+      PAPERTRADER_BASE_URL: localhost
     steps:
       - name: Check out without persisted credentials
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1

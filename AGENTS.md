@@ -160,7 +160,8 @@ The repository is the source of truth. Any legacy data import is a separate, one
 │   ├── published/
 │   │   ├── decision_snapshot.json
 │   │   ├── model_portfolio.csv
-│   │   └── actionable_signals.csv
+│   │   ├── actionable_signals.csv
+│   │   └── research_benchmark.csv
 │   ├── logs/
 │   │   ├── operations-YYYY.ndjson
 │   │   └── log.txt
@@ -357,7 +358,8 @@ publication views:
 
 - `data/published/decision_snapshot.json`;
 - `data/published/model_portfolio.csv`;
-- `data/published/actionable_signals.csv`.
+- `data/published/actionable_signals.csv`;
+- `data/published/research_benchmark.csv`.
 
 The snapshot joins only canonical state as of the completed run. It distinguishes filled holdings,
 validated non-terminal orders, allocation candidates, and research alerts; an allocation target is
