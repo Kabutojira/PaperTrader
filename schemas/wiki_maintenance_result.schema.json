@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://papertrader.example/schemas/wiki_maintenance_result.schema.json",
+  "title": "PaperTrader native llm-wiki maintenance result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "wiki_maintenance_result_version",
+    "maintenance_identity",
+    "iso_year",
+    "iso_week",
+    "run_id",
+    "status",
+    "reason",
+    "dry_run",
+    "started_at",
+    "completed_at",
+    "lease_expires_at",
+    "native_skill",
+    "provider",
+    "model",
+    "toolsets",
+    "loaded_skills",
+    "prompt_path",
+    "preflight_path",
+    "hermes_run_path",
+    "report_path",
+    "report_sha256",
+    "changed_paths",
+    "validation",
+    "followup_disposition"
+  ],
+  "properties": {
+    "wiki_maintenance_result_version": { "const": 1 },
+    "maintenance_identity": {
+      "type": "string",
+      "pattern": "^wiki-maintenance:[0-9]{4}-W(?:0[1-9]|[1-4][0-9]|5[0-3])$"
+    },
+    "iso_year": { "type": "integer", "minimum": 2000, "maximum": 9999 },
+    "iso_week": { "type": "integer", "minimum": 1, "maximum": 53 },
+    "run_id": { "$ref": "#/$defs/run_id" },
+    "status": { "enum": ["running", "succeeded", "failed", "dry_run"] },
+    "reason": { "type": "string", "minLength": 1, "maxLength": 1000 },
+    "dry_run": { "type": "boolean" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "completed_at": { "$ref": "#/$defs/optional_time" },
+    "lease_expires_at": { "$ref": "#/$defs/optional_time" },
+    "native_skill": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "relative_path", "sha256"],
+      "properties": {
+        "name": { "const": "llm-wiki" },
+        "version": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "relative_path": { "type": "string", "pattern": "^skills/.+/SKILL\\.md$" },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "provider": { "const": "openai-codex" },
+    "model": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "toolsets": {
+      "type": "array",
+      "prefixItems": [{ "const": "file" }, { "const": "terminal" }],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "loaded_skills": {
+      "type": "array",
+      "prefixItems": [{ "const": "llm-wiki" }],
+      "items": false,
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "prompt_path": { "$ref": "#/$defs/artifact_path" },
+    "preflight_path": { "$ref": "#/$defs/artifact_path" },
+    "hermes_run_path": {
+      "oneOf": [{ "const": "" }, { "$ref": "#/$defs/artifact_path" }]
+    },
+    "report_path": {
+      "type": "string",
+      "pattern": "^data/runs/[A-Za-z0-9][A-Za-z0-9_.-]{0,127}/wiki-maintenance/wiki_maintenance_report\\.md$"
+    },
+    "report_sha256": {
+      "oneOf": [{ "const": "" }, { "$ref": "#/$defs/hash" }]
+    },
+    "changed_paths": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 1000 },
+      "uniqueItems": true
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["command", "passed", "errors"],
+        "properties": {
+          "command": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "passed": { "type": "boolean" },
+          "errors": {
+            "type": "array",
+            "items": { "type": "string", "minLength": 1, "maxLength": 4000 },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "followup_disposition": { "const": "report_only" }
+  },
+  "$defs": {
+    "run_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$"
+    },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "optional_time": {
+      "oneOf": [
+        { "const": "" },
+        { "type": "string", "format": "date-time", "minLength": 1 }
+      ]
+    },
+    "artifact_path": {
+      "type": "string",
+      "pattern": "^data/runs/[A-Za-z0-9][A-Za-z0-9_.-]{0,127}/wiki-maintenance/[A-Za-z0-9_.-]+$"
+    }
+  }
+}

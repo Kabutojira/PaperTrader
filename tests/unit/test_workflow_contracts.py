@@ -74,11 +74,18 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "max_operations",
         "dry_run",
         "generate_podcast",
+        "wiki_maintenance",
         "publish_pages",
         "send_telegram",
     }
     assert inputs["generate_podcast"] == {
         "description": "Generate the final sequential daily podcast",
+        "required": "false",
+        "default": "false",
+        "type": "boolean",
+    }
+    assert inputs["wiki_maintenance"] == {
+        "description": "Run the native llm-wiki weekly maintenance pass",
         "required": "false",
         "default": "false",
         "type": "boolean",
@@ -99,6 +106,10 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     }
     assert jobs["runtime"]["with"]["generate_podcast"] == (
         "${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"
+    )
+    assert jobs["runtime"]["with"]["wiki_maintenance"] == (
+        "${{ (github.event_name == 'workflow_dispatch' && inputs.wiki_maintenance) || "
+        "(github.event_name == 'schedule' && vars.WIKI_MAINTENANCE_ENABLED == 'true') }}"
     )
     assert jobs["delivery"]["uses"] == "./.github/workflows/reporting.yml"
     assert jobs["pages"]["uses"] == "./.github/workflows/pages.yml"
@@ -141,6 +152,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "hermes skills opt-in --sync" in text
     assert "agent preflight" in text
     assert "agent run-batch" in text
+    assert "wiki maintain" in text
     assert "daily prepare" in text
     assert "daily finalize" in text
     assert "podcast enqueue" in text
@@ -156,6 +168,9 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         podcast_input = workflow["on"][trigger_name]["inputs"]["generate_podcast"]
         assert podcast_input["default"] == "false"
         assert podcast_input["type"] == "boolean"
+        maintenance_input = workflow["on"][trigger_name]["inputs"]["wiki_maintenance"]
+        assert maintenance_input["default"] == "false"
+        assert maintenance_input["type"] == "boolean"
     assert set(workflow["on"]["workflow_call"]["secrets"]) == {
         "OPENAI_OAUTH_SECRET",
         "OPENROUTER_API_KEY",
@@ -211,6 +226,19 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         if step is not run_batch:
             assert "OPENROUTER_API_KEY" not in step.get("env", {})
     runtime_steps = [step["name"] for step in runtime["steps"]]
+    maintenance_step = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Run weekly native llm-wiki maintenance before queued operations"
+    )
+    assert maintenance_step["if"] == "${{ inputs.wiki_maintenance }}"
+    assert "--dry-run" in maintenance_step["run"]
+    assert "--provider" not in maintenance_step["run"]
+    assert "--model" not in maintenance_step["run"]
+    assert "--skills" not in maintenance_step["run"]
+    assert runtime_steps.index(
+        "Run weekly native llm-wiki maintenance before queued operations"
+    ) < runtime_steps.index("Execute due Hermes operations strictly one at a time")
     assert runtime_steps.index("Discover curated YouTube sources") < (
         runtime_steps.index("Restore encrypted OpenAI OAuth state")
     )

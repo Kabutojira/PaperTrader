@@ -8,6 +8,7 @@ import os
 import re
 import subprocess
 from collections.abc import Iterable, Mapping
+from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 from typing import cast
 
@@ -17,6 +18,7 @@ from jsonschema.validators import validator_for
 
 from papertrader.config import ConfigurationError, Settings, load_settings
 from papertrader.models import CsvContract, DynamicCsvContract
+from papertrader.utils import content_hash
 
 EXPECTED_SKILLS = (
     "papertrader-controller",
@@ -51,6 +53,7 @@ REQUIRED_LAYOUT = (
     "schemas/operation_payload.schema.json",
     "schemas/seekingalpha_discovery.schema.json",
     "schemas/seekingalpha_schedule.schema.json",
+    "schemas/wiki_maintenance_result.schema.json",
     "schemas/youtube_scan.schema.json",
     "schemas/csv_contracts.yaml",
     "schemas/valuation_templates.yaml",
@@ -434,6 +437,131 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
     return errors
 
 
+def validate_wiki_maintenance_artifacts(repository_root: Path) -> list[str]:
+    """Validate native-skill maintenance identities, leases, reports, and skill evidence."""
+
+    errors: list[str] = []
+    schema_path = repository_root / "schemas" / "wiki_maintenance_result.schema.json"
+    try:
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+        return [f"cannot load wiki maintenance result schema: {exc}"]
+    succeeded: dict[str, list[str]] = {}
+    active: dict[str, list[str]] = {}
+    now = datetime.now(UTC)
+    pattern = "*/wiki-maintenance/wiki_maintenance_result.json"
+    for path in sorted((repository_root / "data" / "runs").glob(pattern)):
+        relative = path.relative_to(repository_root).as_posix()
+        run_id = path.parent.parent.name
+        if not SAFE_RUN_ID.fullmatch(run_id) or path.is_symlink():
+            errors.append(f"invalid wiki maintenance result path: {relative}")
+            continue
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot read wiki maintenance result {relative}: {exc}")
+            continue
+        schema_errors = sorted(validator.iter_errors(value), key=lambda error: list(error.path))
+        errors.extend(
+            f"wiki maintenance result {relative}: {error.message}" for error in schema_errors
+        )
+        if not isinstance(value, dict) or value.get("run_id") != run_id:
+            errors.append(f"wiki maintenance result identity does not match path: {relative}")
+            continue
+        identity = value.get("maintenance_identity")
+        status = value.get("status")
+        if not isinstance(identity, str):
+            continue
+        dry_run = value.get("dry_run")
+        completed_at = value.get("completed_at")
+        lease_expires_at = value.get("lease_expires_at")
+        validations = value.get("validation")
+        if status == "running":
+            if completed_at != "" or not isinstance(lease_expires_at, str) or not lease_expires_at:
+                errors.append(f"running wiki maintenance lease state is invalid: {relative}")
+        elif status in {"succeeded", "failed", "dry_run"} and (
+            not isinstance(completed_at, str) or not completed_at or lease_expires_at != ""
+        ):
+            errors.append(f"terminal wiki maintenance state is invalid: {relative}")
+        if (status == "dry_run") != (dry_run is True) and not (
+            status == "failed" and dry_run is True
+        ):
+            errors.append(f"wiki maintenance dry-run state is invalid: {relative}")
+        if status in {"succeeded", "dry_run"}:
+            validation_rows = (
+                validations
+                if isinstance(validations, list)
+                and all(isinstance(check, dict) for check in validations)
+                else []
+            )
+            commands = [check.get("command") for check in validation_rows]
+            expected_commands = [
+                "uv run papertrader schema validate --strict",
+                "uv run papertrader integrity --strict",
+                "uv run papertrader wiki lint --strict",
+                "uv run papertrader advice validate --strict",
+            ]
+            if commands != expected_commands or any(
+                check.get("passed") is not True for check in validation_rows
+            ):
+                errors.append(f"wiki maintenance validation evidence is incomplete: {relative}")
+        if status == "succeeded":
+            succeeded.setdefault(identity, []).append(relative)
+        if status == "running":
+            raw_lease = value.get("lease_expires_at")
+            if isinstance(raw_lease, str) and raw_lease:
+                try:
+                    lease = datetime.fromisoformat(raw_lease.replace("Z", "+00:00"))
+                except ValueError:
+                    pass
+                else:
+                    if lease > now:
+                        active.setdefault(identity, []).append(relative)
+        report_path = value.get("report_path")
+        report_hash = value.get("report_sha256")
+        if status in {"succeeded", "dry_run"}:
+            expected_report = f"data/runs/{run_id}/wiki-maintenance/wiki_maintenance_report.md"
+            if report_path != expected_report:
+                errors.append(f"wiki maintenance report path mismatch: {relative}")
+            else:
+                report = repository_root / expected_report
+                if report.is_symlink() or not report.is_file():
+                    errors.append(f"wiki maintenance result lacks its report: {relative}")
+                elif (
+                    not isinstance(report_hash, str)
+                    or content_hash(report.read_bytes()) != report_hash
+                ):
+                    errors.append(f"wiki maintenance report hash mismatch: {relative}")
+        native = value.get("native_skill")
+        preflight_path = value.get("preflight_path")
+        if isinstance(native, dict) and isinstance(preflight_path, str):
+            expected_preflight = (
+                f"data/runs/{run_id}/wiki-maintenance/wiki_maintenance_preflight.json"
+            )
+            if preflight_path != expected_preflight:
+                errors.append(f"wiki maintenance preflight path mismatch: {relative}")
+                continue
+            preflight = repository_root / expected_preflight
+            try:
+                preflight_value = json.loads(preflight.read_text(encoding="utf-8"))
+            except (OSError, json.JSONDecodeError) as exc:
+                errors.append(f"cannot read wiki maintenance preflight {relative}: {exc}")
+            else:
+                if (
+                    not isinstance(preflight_value, dict)
+                    or preflight_value.get("native_skill") != native
+                ):
+                    errors.append(f"wiki maintenance native skill evidence mismatch: {relative}")
+    for identity, paths in sorted(succeeded.items()):
+        if len(paths) > 1:
+            errors.append(f"multiple successful wiki maintenance results for {identity}: {paths}")
+    for identity, paths in sorted(active.items()):
+        if len(paths) > 1:
+            errors.append(f"multiple active wiki maintenance leases for {identity}: {paths}")
+    return errors
+
+
 def validate_youtube_scan_artifacts(repository_root: Path) -> list[str]:
     """Validate retained curated-source scans and every referenced queue identity."""
 
@@ -796,6 +924,7 @@ def validate_integrity(
     errors.extend(validate_skills(repository_root))
     errors.extend(validate_agent_run_artifacts(repository_root))
     errors.extend(validate_daily_run_artifacts(repository_root))
+    errors.extend(validate_wiki_maintenance_artifacts(repository_root))
     errors.extend(validate_youtube_scan_artifacts(repository_root))
     errors.extend(validate_seekingalpha_artifacts(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.

@@ -137,6 +137,17 @@ class HermesPreflight:
 
 
 @dataclass(frozen=True, slots=True)
+class HermesWikiPreflight:
+    """Native-skill and isolated-config evidence for direct wiki maintenance."""
+
+    native_skill: SkillIdentity
+    config_sha256: str
+    provider: str
+    model: str
+    maximum_turns: int
+
+
+@dataclass(frozen=True, slots=True)
 class HermesExecution:
     """Non-sensitive summary of one Hermes subprocess invocation."""
 
@@ -479,6 +490,41 @@ def preflight_hermes(
     )
 
 
+def preflight_wiki_maintenance(
+    repository_root: Path,
+    settings: Settings,
+    hermes_home: Path,
+    *,
+    environment: Mapping[str, str],
+    check_command: bool = True,
+) -> HermesWikiPreflight:
+    """Verify the isolated profile and exactly one pinned native ``llm-wiki`` skill."""
+
+    if hermes_home.is_symlink():
+        raise AgentRunError("HERMES_HOME must not be a symlink")
+    home = hermes_home.resolve(strict=True)
+    try:
+        home.relative_to(repository_root.resolve(strict=True))
+    except ValueError:
+        pass
+    else:
+        raise AgentRunError("HERMES_HOME must be outside the repository")
+    config_hash = _validate_managed_config(repository_root, settings, home)
+    native = _native_skill(settings, home)
+    if (
+        check_command
+        and shutil.which(settings.hermes.command[0], path=environment.get("PATH")) is None
+    ):
+        raise AgentRunError(f"Hermes executable is unavailable: {settings.hermes.command[0]}")
+    return HermesWikiPreflight(
+        native_skill=native,
+        config_sha256=config_hash,
+        provider=settings.hermes.provider,
+        model=settings.hermes.model,
+        maximum_turns=settings.hermes.maximum_turns,
+    )
+
+
 def _walk_strings(value: object, path: str = "payload") -> tuple[tuple[str, str], ...]:
     findings: list[tuple[str, str]] = []
     if isinstance(value, str):
@@ -684,6 +730,29 @@ def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) 
         preflight.controller_skill.name,
         "--skills",
         preflight.operation_skill.name,
+        "--query",
+        prompt,
+    )
+
+
+def hermes_wiki_maintenance_command(
+    settings: Settings, preflight: HermesWikiPreflight, prompt: str
+) -> tuple[str, ...]:
+    """Return the native-only, network-disabled one-shot wiki maintenance command."""
+
+    return (
+        *settings.hermes.command,
+        *settings.hermes.arguments,
+        "--provider",
+        preflight.provider,
+        "--model",
+        preflight.model,
+        "--toolsets",
+        "file,terminal",
+        "--max-turns",
+        str(preflight.maximum_turns),
+        "--skills",
+        preflight.native_skill.name,
         "--query",
         prompt,
     )
@@ -1144,11 +1213,14 @@ __all__ = [
     "AgentOperationOutcome",
     "AgentRunError",
     "HermesPreflight",
+    "HermesWikiPreflight",
     "SkillIdentity",
     "build_controller_prompt",
     "configure_hermes_home",
     "hermes_command",
+    "hermes_wiki_maintenance_command",
     "preflight_hermes",
+    "preflight_wiki_maintenance",
     "project_skill_identities",
     "prompt_injection_flags",
     "run_claimed_operation",

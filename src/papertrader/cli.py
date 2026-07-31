@@ -111,6 +111,7 @@ from papertrader.utils import (
     utc_now,
 )
 from papertrader.wiki import lint_wiki
+from papertrader.wiki_maintenance import maintain_wiki
 from papertrader.youtube import backfill_youtube, scan_youtube
 
 
@@ -132,6 +133,12 @@ def _parser() -> argparse.ArgumentParser:
     wiki_commands.add_parser("lint").add_argument("--strict", action="store_true")
     wiki_commands.add_parser("refresh-homepage")
     wiki_commands.add_parser("refresh-inbox")
+    wiki_maintain = wiki_commands.add_parser(
+        "maintain", help="run the bundled native llm-wiki maintenance procedure"
+    )
+    wiki_maintain.add_argument("--run-id", required=True)
+    wiki_maintain.add_argument("--hermes-home", type=Path, required=True)
+    wiki_maintain.add_argument("--dry-run", action="store_true")
 
     classifier = commands.add_parser("classifier", help="run bounded inbox classification")
     classifier_commands = classifier.add_subparsers(dest="classifier_command", required=True)
@@ -948,6 +955,17 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
     if arguments.command == "wiki":
         if arguments.wiki_command == "lint":
             return _print_result("wiki", lint_wiki(settings.paths.wiki))
+        if arguments.wiki_command == "maintain":
+            outcome = maintain_wiki(
+                root,
+                settings,
+                run_id=arguments.run_id,
+                hermes_home=arguments.hermes_home.absolute(),
+                environment=os.environ,
+                dry_run=arguments.dry_run,
+            )
+            print(json.dumps(asdict(outcome), sort_keys=True))
+            return 0
         if arguments.wiki_command == "refresh-homepage":
             path = refresh_wiki_homepage(root)
             print(path.relative_to(root).as_posix())

@@ -28,6 +28,11 @@ on:
         required: false
         default: false
         type: boolean
+      wiki_maintenance:
+        description: Run the weekly native llm-wiki maintenance pass before queued operations
+        required: false
+        default: false
+        type: boolean
       scan_youtube:
         description: Scan curated YouTube channels before OAuth restoration
         required: false
@@ -106,6 +111,11 @@ on:
         type: boolean
       generate_podcast:
         description: Generate the final sequential daily podcast
+        required: false
+        default: false
+        type: boolean
+      wiki_maintenance:
+        description: Run the weekly native llm-wiki maintenance pass before queued operations
         required: false
         default: false
         type: boolean
@@ -301,6 +311,17 @@ jobs:
           uv run papertrader agent preflight \
             --hermes-home "$HERMES_HOME" \
             --operation-type "$selected_type"
+      - name: Run weekly native llm-wiki maintenance before queued operations
+        if: ${{ inputs.wiki_maintenance }}
+        env:
+          DRY_RUN: ${{ inputs.dry_run }}
+          RUN_ID: ${{ steps.identities.outputs.run_id }}
+        run: |
+          arguments=(wiki maintain --run-id "$RUN_ID" --hermes-home "$HERMES_HOME")
+          if [ "$DRY_RUN" = "true" ]; then
+            arguments+=(--dry-run)
+          fi
+          uv run papertrader "${arguments[@]}"
       - name: Prepare deterministic market, indicators, actions, and queue state
         env:
           BASE_SHA: ${{ steps.identities.outputs.base_sha }}
@@ -374,6 +395,7 @@ jobs:
           uv run ruff format --check .
           uv run mypy src
           uv run pytest
+          uv run papertrader schema validate --strict
           uv run papertrader integrity --strict
           uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
@@ -527,6 +549,7 @@ jobs:
           uv run ruff format --check .
           uv run mypy src
           uv run pytest
+          uv run papertrader schema validate --strict
           uv run papertrader integrity --strict
           uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
@@ -573,6 +596,7 @@ jobs:
         env:
           TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
         run: |
+          uv run papertrader schema validate --strict
           uv run papertrader integrity --strict
           uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict

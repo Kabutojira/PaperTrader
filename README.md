@@ -208,6 +208,31 @@ content-addressed before/after snapshot with `files_changed`, requires receipts 
 change, rejects symlinks/deletions/path escapes and skill-scope violations, verifies newly created
 operations/issues, and runs strict integrity, wiki, and portfolio checks before queue completion.
 
+### Native wiki maintenance
+
+PaperTrader can invoke the bundled `llm-wiki` lint procedure directly without creating or loading
+an operation-specific maintenance skill:
+
+```bash
+uv run papertrader wiki maintain \
+  --run-id local-wiki-maintenance-01 \
+  --hermes-home "$HERMES_HOME" \
+  --dry-run
+```
+
+The controller derives `wiki-maintenance:<ISO year>-W<ISO week>`, suppresses a second successful or
+actively leased pass for that week, pins and hashes the single native skill, sets canonical
+`WIKI_PATH`, disables web tools, and permits only maintained wiki Markdown plus the required run
+report. Raw sources, `SCHEMA.md`, structured state, financial state, publications, and project
+skills remain outside the maintenance delta. The retained report and JSON result live under
+`data/runs/<run_id>/wiki-maintenance/` and include the four strict post-run validation outcomes.
+
+Manual workflow dispatch exposes the same dry-run switch. Scheduled rollout is intentionally off
+until representative reports have been reviewed; setting repository variable
+`WIKI_MAINTENANCE_ENABLED=true` enables the first scheduled daily run of each ISO week to perform
+maintenance before the queued Hermes batch. Later scheduled runs deduplicate against that success;
+failed or expired attempts remain retryable.
+
 ## Deterministic core
 
 The Step 2 core owns every numeric and structured state transition:

@@ -445,3 +445,15 @@ This plan is complete when:
   the distinct workflow `max_operations` queue-row input.
 - Source auxiliary Web ExtractPage provider/model from `AUXILIARY_MODEL`, default to
   `openai-codex:gpt-5.6-terra`, and require OpenRouter credentials only for an explicit override.
+
+## Follow-up — Schedule native llm-wiki maintenance — Complete (2026-07-31)
+
+- Added a native-only `papertrader wiki maintain` boundary with canonical `WIKI_PATH`, exact pinned
+  `llm-wiki` version/hash evidence, isolated Hermes configuration, filtered environment, and
+  network-disabled `file,terminal` toolsets.
+- Added ISO-week success deduplication and active leases, manual and dry-run execution, immutable
+  report/result/preflight/run artifacts, a wiki-Markdown-only delta allowlist, and strict
+  post-maintenance schema, integrity, wiki, and advice validation.
+- Wired maintenance before the normal sequential agent batch. Weekly scheduled execution remains
+  disabled by default behind `WIKI_MAINTENANCE_ENABLED` until representative manual results are
+  reviewed; failed or expired attempts can retry without creating duplicate successful weeks.
