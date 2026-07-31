@@ -939,7 +939,7 @@ def test_partial_close_preserves_average_cost_and_realizes_decimal_pnl(
     assert reconcile_portfolio(sandbox_repository) == []
 
 
-def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
+def test_split_and_dividend_corrections_are_replayed_from_durable_corporate_actions(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
@@ -993,6 +993,32 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
         run_id="run-actions",
         now=first_mark_time,
     )
+    split_correction_recorded_at = "2026-07-23T21:00:00Z"
+    split_correction_hash = "c" * 64
+    split_correction_id = stable_id(
+        "action",
+        "sec_a",
+        date(2026, 7, 22),
+        "split_correction",
+        "0.5",
+        "USD",
+        "fixture",
+        split_correction_hash,
+        split_correction_recorded_at,
+    )
+    dividend_correction_recorded_at = "2026-07-23T23:00:00Z"
+    dividend_correction_hash = "d" * 64
+    dividend_correction_id = stable_id(
+        "action",
+        "sec_a",
+        date(2026, 7, 23),
+        "dividend_correction",
+        "-0.1",
+        "USD",
+        "fixture",
+        dividend_correction_hash,
+        dividend_correction_recorded_at,
+    )
     append_unique(
         sandbox_repository,
         "corporate_actions",
@@ -1009,6 +1035,17 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
                 "recorded_at": "2026-07-23T22:00:00Z",
             },
             {
+                "corporate_action_id": split_correction_id,
+                "security_id": "sec_a",
+                "action_date": "2026-07-22",
+                "action_type": "split_correction",
+                "value": "0.5",
+                "currency": "USD",
+                "source": "fixture",
+                "source_price_hash": split_correction_hash,
+                "recorded_at": split_correction_recorded_at,
+            },
+            {
                 "corporate_action_id": stable_id("action", "sec_a", date(2026, 7, 23), "dividend"),
                 "security_id": "sec_a",
                 "action_date": "2026-07-23",
@@ -1018,6 +1055,17 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
                 "source": "fixture",
                 "source_price_hash": "b" * 64,
                 "recorded_at": "2026-07-23T22:00:00Z",
+            },
+            {
+                "corporate_action_id": dividend_correction_id,
+                "security_id": "sec_a",
+                "action_date": "2026-07-23",
+                "action_type": "dividend_correction",
+                "value": "-0.1",
+                "currency": "USD",
+                "source": "fixture",
+                "source_price_hash": dividend_correction_hash,
+                "recorded_at": dividend_correction_recorded_at,
             },
         ],
         key_columns=("corporate_action_id",),
@@ -1031,9 +1079,9 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
             base_currency="EUR",
             run_id="run-actions",
         )
-        == 1
+        == 2
     )
-    as_of = datetime(2026, 7, 23, 22, tzinfo=UTC)
+    as_of = datetime(2026, 7, 24, tzinfo=UTC)
     rebuild_portfolio(
         sandbox_repository,
         marks=(
@@ -1056,10 +1104,18 @@ def test_split_and_dividend_are_replayed_from_durable_corporate_actions(
         for row in read_table(sandbox_repository, "cash_ledger")
         if row["entry_type"] == "dividend"
     )
-    assert position["quantity"] == "20"
-    assert position["average_cost"] == "50.0800025"
-    assert dividend["amount"] == "10"
-    assert dividend["base_amount"] == "9"
+    correction = next(
+        row
+        for row in read_table(sandbox_repository, "cash_ledger")
+        if row["entry_type"] == "correction"
+    )
+    assert position["quantity"] == "10"
+    assert position["average_cost"] == "100.160005"
+    assert dividend["amount"] == "5"
+    assert dividend["base_amount"] == "4.5"
+    assert correction["reference_id"] == dividend_correction_id
+    assert correction["amount"] == "-1"
+    assert correction["base_amount"] == "-0.9"
     assert reconcile_portfolio(sandbox_repository) == []
 
 

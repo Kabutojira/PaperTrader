@@ -392,6 +392,58 @@ def test_market_update_merges_cache_and_persists_corporate_actions(
     assert [(row["action_type"], row["value"]) for row in actions] == [("dividend", "0.25")]
 
 
+def test_market_update_appends_provider_action_revisions_as_compensating_entries(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    write_table(sandbox_repository, "securities", [_security_row()])
+    initial = _frame(dividend=True)
+    first_retrieval = datetime(2026, 7, 24, 22, tzinfo=UTC)
+    assert (
+        update_market_data(
+            sandbox_repository,
+            sandbox_settings,
+            provider=_FakeProvider(initial),
+            now=first_retrieval,
+            sleeper=lambda _: None,
+        )
+        == ()
+    )
+
+    revised = _frame(dividend=True)
+    revised.loc[pd.Timestamp("2026-07-23"), "Dividends"] = Decimal("0.2")
+    second_retrieval = first_retrieval + timedelta(days=1)
+    assert (
+        update_market_data(
+            sandbox_repository,
+            sandbox_settings,
+            provider=_FakeProvider(revised),
+            now=second_retrieval,
+            sleeper=lambda _: None,
+        )
+        == ()
+    )
+
+    actions = read_table(sandbox_repository, "corporate_actions")
+    assert [(row["action_type"], row["value"]) for row in actions] == [
+        ("dividend", "0.25"),
+        ("dividend_correction", "-0.05"),
+    ]
+    assert actions[-1]["recorded_at"] == "2026-07-25T22:00:00Z"
+
+    assert (
+        update_market_data(
+            sandbox_repository,
+            sandbox_settings,
+            provider=_FakeProvider(revised),
+            now=second_retrieval + timedelta(hours=1),
+            sleeper=lambda _: None,
+        )
+        == ()
+    )
+    assert read_table(sandbox_repository, "corporate_actions") == actions
+
+
 def test_market_update_excludes_an_in_progress_session(
     sandbox_repository: Path,
     sandbox_settings: Settings,

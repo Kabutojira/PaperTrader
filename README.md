@@ -217,6 +217,8 @@ The Step 2 core owns every numeric and structured state transition:
   plus the durable corporate-action ledger. It discards unfinished sessions before validation;
   a yfinance bar whose open or close falls outside its reported high/low is normalized only by
   widening that envelope to the provider's own OHLC extrema and carries an explicit repair marker.
+  Later provider revisions append signed dividend corrections or multiplicative split corrections;
+  they never replace an observed action, and any related cash change is a separate correction entry.
 - `papertrader indicators update --classify-opportunities` calculates the pinned TA-Lib
   indicators, writes candidate inbox packets, asks the configured cheap classifier for an
   `ingest` or `ignore` decision, and enqueues deduplicated follow-up work.

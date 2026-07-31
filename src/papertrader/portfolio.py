@@ -62,13 +62,33 @@ def _parse_actions(repository_root: Path) -> list[dict[str, object]]:
     actions: list[dict[str, object]] = []
     for row in read_table(repository_root, "corporate_actions"):
         action_type = row["action_type"]
-        if action_type not in {"split", "dividend"}:
+        if action_type not in {
+            "split",
+            "dividend",
+            "split_correction",
+            "dividend_correction",
+        }:
             raise PortfolioError(f"unsupported corporate action: {action_type}")
         value = required_decimal(row["value"], label="corporate action value")
-        if value <= 0:
+        if action_type in {"split", "dividend", "split_correction"} and value <= 0:
             raise PortfolioError(f"corporate action {row['corporate_action_id']} is non-positive")
+        if action_type == "dividend_correction" and value == 0:
+            raise PortfolioError(f"corporate action {row['corporate_action_id']} is zero")
         action_date = parse_iso_date(row["action_date"])
-        expected_id = stable_id("action", row["security_id"], action_date, action_type)
+        if action_type.endswith("_correction"):
+            expected_id = stable_id(
+                "action",
+                row["security_id"],
+                action_date,
+                action_type,
+                decimal_text(value),
+                row["currency"],
+                row["source"],
+                row["source_price_hash"],
+                row["recorded_at"],
+            )
+        else:
+            expected_id = stable_id("action", row["security_id"], action_date, action_type)
         if row["corporate_action_id"] != expected_id:
             raise PortfolioError(
                 f"corporate action identity is invalid: {row['corporate_action_id']}"
@@ -164,7 +184,7 @@ def replay_accounting(repository_root: Path) -> AccountingReplay:
     positions: dict[tuple[str, str, str], _Position] = {}
     for event_time, kind, _, raw in events:
         if kind == 0:
-            if raw["type"] != "split":
+            if raw["type"] not in {"split", "split_correction"}:
                 continue
             security_id = str(raw["security_id"])
             factor = raw["value"]

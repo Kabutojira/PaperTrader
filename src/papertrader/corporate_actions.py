@@ -105,13 +105,14 @@ def persist_actions(
     *,
     source_price_hash: str,
 ) -> int:
-    """Append newly observed actions so portfolio replay outlives rolling price retention."""
+    """Append new actions and compensating provider revisions without replacing history."""
 
-    rows = []
-    existing = {
-        row["corporate_action_id"]: row for row in read_table(repository_root, "corporate_actions")
-    }
+    rows: list[dict[str, str]] = []
+    existing_rows = read_table(repository_root, "corporate_actions")
+    existing = {row["corporate_action_id"]: row for row in existing_rows}
     for action in actions_from_bars(security_id, bars):
+        action_bar = next(bar for bar in bars if bar.date == action.action_date)
+        recorded_at = format_timestamp(action_bar.retrieved_at)
         action_id = stable_id(
             "action",
             action.security_id,
@@ -120,18 +121,71 @@ def persist_actions(
         )
         prior = existing.get(action_id)
         if prior is not None:
-            expected_fields = {
-                "corporate_action_id": action_id,
-                "security_id": action.security_id,
-                "action_date": action.action_date.isoformat(),
-                "action_type": action.action_type,
-                "value": decimal_text(action.value),
-                "currency": action.currency,
-            }
-            if any(prior[field] != value for field, value in expected_fields.items()):
+            if (
+                prior["security_id"] != action.security_id
+                or prior["action_date"] != action.action_date.isoformat()
+                or prior["action_type"] != action.action_type
+                or prior["currency"] != action.currency
+            ):
                 raise CanonicalValueError(
                     f"corporate action correction requires a compensating entry: {action_id}"
                 )
+            effective_value = required_decimal(prior["value"], label="corporate action value")
+            correction_type = f"{action.action_type}_correction"
+            for correction in existing_rows:
+                if (
+                    correction["security_id"] != action.security_id
+                    or correction["action_date"] != action.action_date.isoformat()
+                    or correction["action_type"] != correction_type
+                ):
+                    continue
+                if correction["currency"] != action.currency:
+                    raise CanonicalValueError(
+                        f"corporate action correction currency changed: {action_id}"
+                    )
+                correction_value = required_decimal(
+                    correction["value"], label="corporate action correction value"
+                )
+                if action.action_type == "dividend":
+                    effective_value += correction_value
+                else:
+                    if correction_value <= 0:
+                        raise CanonicalValueError(
+                            f"split correction factor must be positive: "
+                            f"{correction['corporate_action_id']}"
+                        )
+                    effective_value *= correction_value
+            if effective_value == action.value:
+                continue
+            correction_value = (
+                action.value - effective_value
+                if action.action_type == "dividend"
+                else action.value / effective_value
+            )
+            correction_id = stable_id(
+                "action",
+                action.security_id,
+                action.action_date,
+                correction_type,
+                decimal_text(correction_value),
+                action.currency,
+                action.source,
+                source_price_hash,
+                recorded_at,
+            )
+            rows.append(
+                {
+                    "corporate_action_id": correction_id,
+                    "security_id": action.security_id,
+                    "action_date": action.action_date.isoformat(),
+                    "action_type": correction_type,
+                    "value": decimal_text(correction_value),
+                    "currency": action.currency,
+                    "source": action.source,
+                    "source_price_hash": source_price_hash,
+                    "recorded_at": recorded_at,
+                }
+            )
             continue
         rows.append(
             {
@@ -143,7 +197,7 @@ def persist_actions(
                 "currency": action.currency,
                 "source": action.source,
                 "source_price_hash": source_price_hash,
-                "recorded_at": format_timestamp(bars[-1].retrieved_at),
+                "recorded_at": recorded_at,
             }
         )
     return append_unique(
@@ -203,13 +257,13 @@ def accrue_dividends(
         action_type = event_row["action_type"]
         security_id = event_row["security_id"]
         value = required_decimal(event_row["value"], label="corporate action value")
-        if action_type == "split":
+        if action_type in {"split", "split_correction"}:
             for side in ("long", "short"):
                 key = (security_id, side)
                 if key in quantities:
                     quantities[key] *= value
             continue
-        if action_type != "dividend":
+        if action_type not in {"dividend", "dividend_correction"}:
             continue
         action_date = occurred_at.date()
         eligible_quantities = {
@@ -233,14 +287,20 @@ def accrue_dividends(
             candidate = {
                 "cash_entry_id": entry_id,
                 "occurred_at": format_timestamp(occurred_at),
-                "entry_type": "dividend",
+                "entry_type": (
+                    "correction" if action_type == "dividend_correction" else "dividend"
+                ),
                 "reference_id": event_row["corporate_action_id"],
                 "currency": currency,
                 "amount": decimal_text(amount),
                 "fx_rate_to_base": decimal_text(fx_rate),
                 "base_amount": decimal_text(amount * fx_rate),
                 "run_id": run_id,
-                "notes": f"Paper dividend for {security_id} {side} position",
+                "notes": (
+                    f"Paper dividend correction for {security_id} {side} position"
+                    if action_type == "dividend_correction"
+                    else f"Paper dividend for {security_id} {side} position"
+                ),
             }
             prior = existing_cash.get(entry_id)
             if prior is not None:
