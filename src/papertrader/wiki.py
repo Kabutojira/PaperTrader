@@ -83,6 +83,7 @@ def lint_wiki(wiki_root: Path) -> list[str]:
     required_raw = schema_metadata.get("required_frontmatter", [])
     known_tags_raw = schema_metadata.get("known_tags", [])
     max_page_bytes_raw = schema_metadata.get("max_page_bytes", 100000)
+    log_rotation_lines_raw = schema_metadata.get("log_rotation_lines", 5000)
     if not isinstance(required_raw, list) or not all(
         isinstance(value, str) for value in required_raw
     ):
@@ -93,6 +94,8 @@ def lint_wiki(wiki_root: Path) -> list[str]:
         return ["SCHEMA.md: known_tags must be a list of strings"]
     if not isinstance(max_page_bytes_raw, int) or max_page_bytes_raw <= 0:
         return ["SCHEMA.md: max_page_bytes must be a positive integer"]
+    if not isinstance(log_rotation_lines_raw, int) or log_rotation_lines_raw <= 0:
+        return ["SCHEMA.md: log_rotation_lines must be a positive integer"]
     required = set(required_raw)
     known_tags = set(known_tags_raw)
 
@@ -121,7 +124,13 @@ def lint_wiki(wiki_root: Path) -> list[str]:
             unknown = sorted(set(tags).difference(known_tags))
             if unknown:
                 errors.append(f"{relative}: unknown tags: {', '.join(unknown)}")
-        if path.stat().st_size > max_page_bytes_raw:
+        if relative == "log.md":
+            line_count = len(path.read_text(encoding="utf-8").splitlines())
+            if line_count > log_rotation_lines_raw:
+                errors.append(
+                    f"{relative}: log exceeds the {log_rotation_lines_raw}-line rotation threshold"
+                )
+        elif path.stat().st_size > max_page_bytes_raw:
             errors.append(f"{relative}: page exceeds {max_page_bytes_raw} bytes")
 
         body_without_code = FENCED_BLOCK_PATTERN.sub("", body)

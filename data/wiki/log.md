@@ -1341,3 +1341,8 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_d1db783ca3a144450032`.
 
 - Published investor decision snapshot `decision_04ae09b97cff52815288`.
+
+## 2026-07-31
+
+- Aligned wiki lint with the configured append-only log policy: ordinary maintained pages retain
+  the 100 KB cap, while `log.md` is bounded by the 5,000-line yearly rotation threshold.

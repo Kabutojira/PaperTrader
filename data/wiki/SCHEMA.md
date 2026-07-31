@@ -6,7 +6,7 @@ tags:
   - meta
   - schema
 created: "2026-07-24"
-updated: "2026-07-29"
+updated: "2026-07-31"
 provenance: repository-contract
 required_frontmatter:
   - title
@@ -42,6 +42,7 @@ known_tags:
   - performance
   - system-status
 max_page_bytes: 100000
+log_rotation_lines: 5000
 ---
 
 # PaperTrader wiki schema
@@ -131,6 +132,7 @@ belong only in the operation's non-Quartz `seekingalpha_analysis.md` artifact.
 
 ## Links and size
 
-Use meaningful wiki links and keep every maintained page under `max_page_bytes`. Wiki lint rejects
-missing frontmatter, unknown tags, broken or ambiguous links, pages absent from the index, and
-oversized pages.
+Use meaningful wiki links and keep every ordinary maintained page under `max_page_bytes`. The
+append-only `log.md` instead uses `log_rotation_lines` and rotates by year only after crossing that
+threshold. Wiki lint rejects missing frontmatter, unknown tags, broken or ambiguous links, pages
+absent from the index, oversized ordinary pages, and an over-threshold current log.
