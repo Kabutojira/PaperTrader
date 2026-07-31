@@ -4,7 +4,11 @@
   "inputs": {
     "assessment_state": "missing",
     "maintenance_mode": "assessment_v2_migration",
+    "market_data_as_of": "2026-07-31T07:45:55Z",
+    "market_data_date": "2026-07-30",
     "migration_version": "assessment-v2-migration-v1",
+    "period_end": "2026-07-30",
+    "period_start": "2026-07-01",
     "research_page": "",
     "research_reasons": [
       {
@@ -20,12 +24,32 @@
         "prompt": "Migrate security_3a75fc1ccca2ee7c937a to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
         "source": "assessment_v2_migration:rollout-step22-20260730",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_3a75fc1ccca2ee7c937a:7e0d94757eb8292544d6:2026-07-30",
+        "market_data_date": "2026-07-30",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Research security_3a75fc1ccca2ee7c937a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
-    "security_id": "security_3a75fc1ccca2ee7c937a"
+    "security_id": "security_3a75fc1ccca2ee7c937a",
+    "source_price_hash": "4f05b395134950e4d47e888102074dc599b169b4df2cbc3a09ba632d4b0b9c44",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research QCOM — QUALCOMM Incorporated as an initial bounded security review. | Additional cause: Migrate security_3a75fc1ccca2ee7c937a to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+  "objective": "Research QCOM — QUALCOMM Incorporated as an initial bounded security review. | Additional cause: Migrate security_3a75fc1ccca2ee7c937a to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison. | Additional cause: Research security_3a75fc1ccca2ee7c937a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB1Z50955WQSMSWYR16957",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1.md"
+  ]
 }

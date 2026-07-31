@@ -1,0 +1,18 @@
+{
+  "source_id": "source_msft_fy2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+  "source_type": "issuer_release",
+  "title": "Microsoft Cloud and AI Strength Fuels Fourth Quarter Results",
+  "publisher": "Microsoft Corporation via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "03471d4dc122c24deace523de4130d53205a78de2ec11fc965764738bf97149a",
+  "related_entity_ids": "security_204be2a44063993de1a8",
+  "checked_at": "2026-07-31T07:56:03Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Revenue was $90.0 billion and increased 18%; operating income was $40.6 billion and increased 18%.",
+  "summary": "The SEC-hosted fiscal Q4 2026 earnings release reports quarterly revenue of USD 90.007 billion, operating income of USD 40.603 billion, net income of USD 35.766 billion, and diluted EPS of USD 4.81. Microsoft Cloud revenue grew 27% to USD 59.3 billion, Azure and other cloud services revenue grew 43%, and commercial remaining performance obligation rose 84% to USD 678 billion. Full-year adjusted diluted EPS excluding OpenAI investment effects was USD 17.28, versus USD 14.13 in fiscal 2025.",
+  "run_id": "gha-30613872508-1"
+}

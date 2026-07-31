@@ -1,0 +1,83 @@
+{
+  "operation_id": "01KYPB1V80Z3NV79GVG54DMFMT",
+  "status": "succeeded",
+  "summary": "Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares traded and a 4.14 volume z-score. Current SEC-filed fiscal 2026 evidence shows 18% revenue growth, 21% operating-income growth, 27% Microsoft Cloud growth, 41% Azure growth, and USD 678 billion of commercial remaining performance obligation. A mature-compounder earnings-multiple valuation gives USD 375/500/625 bear/base/bull values, 10.84% expected return, and 8.13% confidence-adjusted expected return. Weak bear-payoff ratios, absent accepted relationship, and adverse post-results timing make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.",
+  "evidence": [
+    {
+      "source": "source_msft_fy2026_10k",
+      "claim": "Microsoft's SEC-filed fiscal 2026 Form 10-K reports USD 331.839 billion of revenue, USD 155.237 billion of operating income, USD 133.749 billion of net income, USD 17.95 diluted EPS, USD 182.935 billion of operating cash flow, and USD 115.948 billion of property-and-equipment additions. Microsoft Cloud revenue grew 27% to USD 214.4 billion, Azure and other cloud services grew 41%, commercial remaining performance obligation reached USD 678 billion, and cash plus short-term investments exceeded current and long-term debt by USD 36.549 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "observed_at": "2026-07-31T07:56:03Z",
+      "source_hash": "4bcf2da2871acc19e32c5a62f36f6d83d6aae03cdc4aaa9a86a9a21ee8223f02"
+    },
+    {
+      "source": "source_msft_fy2026_results",
+      "claim": "The SEC-hosted fiscal Q4 2026 release reports USD 90.007 billion of quarterly revenue, USD 40.603 billion of operating income, USD 35.766 billion of net income, and USD 4.81 diluted EPS. Microsoft Cloud revenue grew 27% to USD 59.3 billion, Azure and other cloud services grew 43%, and full-year adjusted diluted EPS excluding OpenAI investment effects was USD 17.28 versus USD 14.13.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+      "observed_at": "2026-07-31T07:56:03Z",
+      "source_hash": "03471d4dc122c24deace523de4130d53205a78de2ec11fc965764738bf97149a"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "MSFT rose 17.388365% from 2026-07-01 through 2026-07-30 to an adjusted USD 451.100006 close. The first post-results session rose 15.506733%, volume reached 109,975,300 shares with a 4.140866 z-score, RSI reached 71.827424, and the close stood 6.855655% above the upper Bollinger band. The payload trigger set, dates, observation period, mark, and source-price hash match canonical state.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source_hash": "614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.867900013923645 for 2026-07-31 and was retrieved at 2026-07-31T07:45:55Z, confirming fresh FX identity for the USD security mark.",
+      "observed_at": "2026-07-31T07:45:55Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/assessment_upsert_request.json",
+    "data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/security_upsert_request.json",
+    "data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/source_msft_fy2026_10k_request.json",
+    "data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/source_msft_fy2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_204be2a44063993de1a8.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Microsoft was researched after its 2026-07-30 earnings-driven upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The shares rose 17.39% over the measured period and 15.51% in the first post-results session on a 4.14 volume z-score. Fiscal 2026 cloud, Azure, operating-income, and cash-flow growth strongly support the thesis, but the USD 451.10 mark leaves 16.9% downside, 10.8% base upside, weak payoff asymmetry, and adverse entry timing. The medium-confidence assessment is watch-rated and ineligible; no conviction paper strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_204be2a44063993de1a8",
+    "papertrader research source record --request data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/source_msft_fy2026_10k_request.json",
+    "papertrader research source record --request data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/source_msft_fy2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30613872508-1/01KYPB1V80Z3NV79GVG54DMFMT/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_204be2a44063993de1a8",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, common-stock instrument, MSFT provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched all three alert transitions, 2026-07-30 market date, exact 2026-07-01 through 2026-07-30 observation period, USD 451.100006 mark, source-price hash, volume z-score, RSI, and Bollinger state to canonical market data.",
+      "Registered the fiscal 2026 Form 10-K and SEC-hosted results release before assessment; both evidence references are current, available, identity-linked, and fresh at the assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion rate and timestamps are identity-matched and fresh.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and the security-page hash, with ordered USD 375/500/625 scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Hold/watch, ineligible, quality score 84, 10.840167% expected return, 8.130125% confidence-adjusted expected return, USD 400 buy-below price, and exact bear-base, expected-bear, and relationship-pending gate failures.",
+      "Confirmed there are no payload-linked ideas or accepted canonical relationships, so no idea-research follow-up is required; the conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the ten canonical receipts in command_audit.json in receipt order.",
+      "No request artifact, maintained page, operation audit, or controller artifact is a symlink.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

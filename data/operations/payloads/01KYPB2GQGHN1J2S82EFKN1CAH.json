@@ -2,10 +2,43 @@
   "entity_id": "security_ad3b1f8f59fd599f079a",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_ad3b1f8f59fd599f079a"
+    "market_data_as_of": "2026-07-31T07:45:55Z",
+    "market_data_date": "2026-07-30",
+    "period_end": "2026-07-30",
+    "period_start": "2026-07-01",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_ad3b1f8f59fd599f079a:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:26Z",
+        "prompt": "Research HOOD — Robinhood Markets, Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_ad3b1f8f59fd599f079a:48b63443b13b9a0c8a38:2026-07-30",
+        "market_data_date": "2026-07-30",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Research security_ad3b1f8f59fd599f079a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
+      }
+    ],
+    "security_id": "security_ad3b1f8f59fd599f079a",
+    "source_price_hash": "42a586c944852154b32039364c071135768965c971d6f17e537b28e7ecce0d91",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
   },
-  "objective": "Research HOOD — Robinhood Markets, Inc. as an initial bounded security review.",
+  "objective": "Research HOOD — Robinhood Markets, Inc. as an initial bounded security review. | Additional cause: Research security_ad3b1f8f59fd599f079a with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01KYPB2GQGHN1J2S82EFKN1CAH",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325.md"
+  ]
 }

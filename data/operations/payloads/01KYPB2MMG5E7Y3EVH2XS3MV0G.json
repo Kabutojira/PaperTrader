@@ -2,10 +2,43 @@
   "entity_id": "security_c150f31c30afdb4a85f9",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_c150f31c30afdb4a85f9"
+    "market_data_as_of": "2026-07-31T07:45:55Z",
+    "market_data_date": "2026-07-30",
+    "period_end": "2026-07-30",
+    "period_start": "2026-07-01",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_c150f31c30afdb4a85f9:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:30Z",
+        "prompt": "Research CROX — Crocs, Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_c150f31c30afdb4a85f9:6572dfc28ca76374fe75:2026-07-30",
+        "market_data_date": "2026-07-30",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_c150f31c30afdb4a85f9",
+    "source_price_hash": "6cbdf40a812232ae34a5ae4b8e69e78fc649911237e36c745488e43bfa461277",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research CROX — Crocs, Inc. as an initial bounded security review.",
+  "objective": "Research CROX — Crocs, Inc. as an initial bounded security review. | Additional cause: Research security_c150f31c30afdb4a85f9 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB2MMG5E7Y3EVH2XS3MV0G",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72.md"
+  ]
 }

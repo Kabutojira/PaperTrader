@@ -2,10 +2,47 @@
   "entity_id": "security_d12e746b3c9d392183cc",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_d12e746b3c9d392183cc"
+    "market_data_as_of": "2026-07-31T07:45:55Z",
+    "market_data_date": "2026-07-30",
+    "period_end": "2026-07-30",
+    "period_start": "2026-07-01",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_d12e746b3c9d392183cc:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:34Z",
+        "prompt": "Research META — Meta Platforms, Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_d12e746b3c9d392183cc:977470427ae1a7f8b302:2026-07-30",
+        "market_data_date": "2026-07-30",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Research security_d12e746b3c9d392183cc with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796.md",
+          "data/wiki/inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_d12e746b3c9d392183cc",
+    "source_price_hash": "d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research META — Meta Platforms, Inc. as an initial bounded security review.",
+  "objective": "Research META — Meta Platforms, Inc. as an initial bounded security review. | Additional cause: Research security_d12e746b3c9d392183cc with high priority after price-action alerts: bollinger_below_lower, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB2RHG2WF001VJFAJXH5S6",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796.md",
+    "data/wiki/inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea.md"
+  ]
 }

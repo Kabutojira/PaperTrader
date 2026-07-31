@@ -2,16 +2,43 @@
   "entity_id": "security_66cdcf90aac0d83e76f3",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-07-29T22:50:00Z",
     "idea_id": "idea_critical_minerals_lithium",
+    "maintenance_mode": "refresh",
     "research_focus": "Test realized lithium pricing, volume, cash conversion, leverage, preferred-stock dilution, updated guidance, valuation, catalysts, and invalidation after Q2 2026 results.",
+    "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:q2-2026:2026-08-06",
+        "observed_at": "2026-07-26T19:12:28Z",
+        "prompt": "Reassess Albemarle after its 2026 second-quarter release following the July oversold transition.",
+        "source": "opportunity_research:01KYFWWE20AG7NT0YKY1YZRJBP",
+        "source_refs": [
+          "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
+          "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:allocation-maintenance:2026-07-29T22:50:00Z",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_alb_q1_2026_results_sec",
+          "source_alb_q2_2026_earnings_date"
+        ]
+      }
+    ],
     "security_id": "security_66cdcf90aac0d83e76f3"
   },
-  "objective": "Reassess Albemarle after its 2026 second-quarter release following the July oversold transition.",
+  "objective": "Reassess Albemarle after its 2026 second-quarter release following the July oversold transition. | Additional cause: Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KYFXFKB04HSHKYVSPNGXVJX0",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
-    "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx"
+    "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx",
+    "source_alb_q1_2026_results_sec",
+    "source_alb_q2_2026_earnings_date"
   ]
 }

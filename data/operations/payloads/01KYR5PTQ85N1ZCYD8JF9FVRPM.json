@@ -4,14 +4,49 @@
   "inputs": {
     "assessment_state": "2026-07-29T23:18:00Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-07-31T07:45:55Z",
+    "market_data_date": "2026-07-30",
+    "period_end": "2026-07-30",
+    "period_start": "2026-07-02",
     "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
-    "security_id": "security_567d0d575bbd30aaa91d"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_567d0d575bbd30aaa91d:allocation-maintenance:2026-07-29T23:18:00Z",
+        "observed_at": "2026-07-30T00:10:09Z",
+        "prompt": "Revalidate security_567d0d575bbd30aaa91d with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_samsung_common_gdr_identity",
+          "source_samsung_q1_2026_results",
+          "source_samsung_q2_2026_guidance"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_567d0d575bbd30aaa91d:5003fb22df62d05bcd9b:2026-07-30",
+        "market_data_date": "2026-07-30",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Research security_567d0d575bbd30aaa91d with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_567d0d575bbd30aaa91d",
+    "source_price_hash": "bbf89dab768e1da5522b802b83b26d5fb46d77541e04e0a6fde6f7c60f1a1f75",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_567d0d575bbd30aaa91d with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_567d0d575bbd30aaa91d with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_567d0d575bbd30aaa91d with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYR5PTQ85N1ZCYD8JF9FVRPM",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da.md",
     "source_samsung_common_gdr_identity",
     "source_samsung_q1_2026_results",
     "source_samsung_q2_2026_guidance"

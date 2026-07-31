@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-07-30"
-updated: "2026-07-30"
+created: "2026-07-31"
+updated: "2026-07-31"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_04ae09b97cff52815288"
-as_of: "2026-07-30T13:00:00Z"
+snapshot_id: "decision_887f74852419aae2ad1f"
+as_of: "2026-07-31T08:02:28Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_04ae09b97cff52815288`
-**As of:** `2026-07-30T13:00:00Z`
+**Publication snapshot:** `decision_887f74852419aae2ad1f`
+**As of:** `2026-07-31T08:02:28Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,17 +22,17 @@ as_of: "2026-07-30T13:00:00Z"
 
 ## Coverage
 
-- Assessments: 36/36
-- Fresh-evidence assessments: 36/36
-- Relationship reviews: 23/36
+- Assessments: 37/37
+- Fresh-evidence assessments: 37/37
+- Relationship reviews: 23/37
 - Accepted relationships: 21
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 134
-- Last successful daily run: `2026-07-30T00:22:18Z`
+- Research backlog: 185
+- Last successful daily run: `2026-07-31T08:02:28Z`
 
 ## Current issues by investment impact
 
@@ -122,7 +122,7 @@ as_of: "2026-07-30T13:00:00Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 134 active operations.
+Showing 20 of 185 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 
@@ -135,17 +135,17 @@ Showing 20 of 134 active operations.
 - `ready` `01KYPB2AW0SJ35EAKMPQM8QVAH` — `security_research` for `security_95351d928b674bbdf687`
 - `ready` `01KYPB2BV8XK4AAREZ3257MDE0` — `security_research` for `security_96ba305ee7cd586bc348`
 - `ready` `01KYPB2DSRFNQ0NE6AY81GQZKR` — `security_research` for `security_98470cfc01bbcde78fc2`
-- `ready` `01KYPB2GQGHN1J2S82EFKN1CAH` — `security_research` for `security_ad3b1f8f59fd599f079a`
 - `ready` `01KYPB2HPR71QC8BBTPA3HMW8R` — `security_research` for `security_ad5917642acbba28c1f2`
 - `ready` `01KYPB2KN8R1RGAPDZQ2AN9P2V` — `security_research` for `security_b2116dcf976c96974d7b`
-- `ready` `01KYPB2MMG5E7Y3EVH2XS3MV0G` — `security_research` for `security_c150f31c30afdb4a85f9`
 - `ready` `01KYPB2NKR40C7V30WG552P7WP` — `security_research` for `security_c86bb4e75658c07142cf`
 - `ready` `01KYPB2PK0N1W5XHVXFXW43JSZ` — `security_research` for `security_ce9b78a4d0773c950765`
 - `ready` `01KYPB2PK0R0ZXAHGNGZ6X5FM8` — `security_research` for `security_cd492d97064d8574156e`
 - `ready` `01KYPB2QJ8QGJJAGXQ71MT7GWW` — `security_research` for `security_d08d763780400dfbffce`
-- `ready` `01KYPB2RHG2WF001VJFAJXH5S6` — `security_research` for `security_d12e746b3c9d392183cc`
 - `ready` `01KYPB2TG0W0FFP83ZG7KC45YP` — `security_research` for `security_dfa34d4b9050964b465e`
 - `ready` `01KYPB2VF8GSJR3R78FTPFE8YM` — `security_research` for `security_eca976f0076a425ea1bb`
+- `ready` `01KYPB2XDRKAMP0ZX3MWA7Y1JH` — `security_research` for `security_fe4648901e7675f157fd`
+- `ready` `01KYPB2YD02XHRSSW68JA9MCG7` — `security_research` for `security_fe5539a7d3fd9d553bce`
+- `ready` `01KYQ49D1G2RNAXKS9RP0MY1R9` — `wiki_ingest` for `youtube_9ePWIYadju4`
 
 </details>
 

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_-jysGHtWkxE",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-07-31T07:45:40Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_-jysGHtWkxE",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "-jysGHtWkxE",
+    "video_title": "Criticism to a Value Investing Approach To Long-Term Wealth Accumulation & Compounding!",
+    "video_url": "https://www.youtube.com/watch?v=-jysGHtWkxE"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYVJ5M50672K1860W3W79JTH",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=-jysGHtWkxE"
+  ]
+}

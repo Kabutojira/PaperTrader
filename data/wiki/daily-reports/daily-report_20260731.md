@@ -1,0 +1,805 @@
+---
+title: "PaperTrader daily report — 2026-07-31"
+type: daily-report
+status: maintained
+tags:
+  - daily-report
+created: "2026-07-31"
+updated: "2026-07-31"
+provenance: deterministic-report-generator
+run_id: "gha-30613872508-1"
+snapshot_id: "decision_887f74852419aae2ad1f"
+---
+
+# PaperTrader daily report — 2026-07-31
+
+## 1. Investor decision summary
+
+<!-- papertrader-investor-brief:start -->
+# No trade — hold 100% cash
+
+- **Investment data:** Degraded — review investment data gaps
+- **Operations:** Attention required
+- **As of:** `2026-07-31T08:02:28Z`
+- **Snapshot:** `decision_887f74852419aae2ad1f`
+- **Cash:** 10000 EUR (100%)
+- **Gross exposure:** 0 EUR
+- **Approved target cash:** 10000 EUR (100%)
+- **Actionable signals:** 0
+- **Evidence state:** definitive cash preference
+
+## Approved target changes
+
+No approved target changes.
+
+## Actionable signals
+
+No actionable trade signals.
+
+## Price action alerts
+
+- **[YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661): Rsi Oversold** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Rsi Oversold** (`2026-07-30`)
+  - Research: **pending**
+  - Decision: Deterministic price alert awaits bounded research review.
+- **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Bollinger Below Lower** (`2026-07-30`)
+  - Research: **succeeded**
+  - Decision: Classified Vertiv's 2026-06-29 through 2026-07-28 lower-Bollinger transition as risk, not a stand-alone paper-trade opportunity. The immutable alert snapshot records a material 12.04% decline and a lower-band breach without oversold-RSI or abnormal-volume confirmation. No primary evidence available within the measured period establishes a single cause; Vertiv's subsequent Q2 release cannot explain the prior move and instead shows strong growth, margins, cash flow and raised guidance alongside project-phasing, supply-chain and working-capital execution risks. The fresh medium-confidence assessment still has only 4.2% bounded base upside versus 38.4% downside and remains excluded from allocation. No wiki update, issue, or follow-up was warranted because the exact alert analysis, current security review and scheduled review path already retain the evidence and disposition.
+- **[SU — Schneider Electric SE](security-catalog#security-security_dc8486c1d61df62a22fd): Bollinger Above Upper** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47): Bollinger Above Upper** (`2026-07-30`)
+  - Research: **succeeded**
+  - Decision: Classified Spotify's 2026-06-29 through 2026-07-28 upper-Bollinger transition as risk, specifically entry-timing risk with expectation noise rather than a stand-alone opportunity. The deterministic alert recorded a 10.590753% period rise, a 1.31631% upper-band exceedance, neutral-below-overbought RSI, and no abnormal-volume confirmation. Current registered primary evidence supports Spotify's operating scale, margins, cash generation, and liquidity but does not establish a cause for the move; Q2 results scheduled for August 4 are the next decisive catalyst. The maintained security review already captures this conclusion and valuation blockers, so no wiki edit or redundant follow-up was warranted.
+- **[RIO — Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2): Bollinger Above Upper** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[QCOM — QUALCOMM Incorporated](security-catalog#security-security_3a75fc1ccca2ee7c937a): Bollinger Below Lower** (`2026-07-30`)
+  - Research: **pending**
+  - Decision: Deterministic price alert awaits bounded research review.
+- **[QCOM — QUALCOMM Incorporated](security-catalog#security-security_3a75fc1ccca2ee7c937a): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Rsi Overbought** (`2026-07-30`)
+  - Research: **succeeded**
+  - Decision: Completed the evidence-backed review of PayPal Holdings, Inc. common stock after the 2026-07-28 RSI-overbought transition. The immutable PYPL/XNAS/USD identity is unique and now linked to a maintained security page. The shares rose 31.47% over the measured month and RSI reached 78.99, but the close remained below the upper Bollinger band and volume was not abnormal. PayPal's same-day Q2 release provides direct evidence for the final-session gain: TPV grew 10%, free cash flow reached USD 1.775 billion, and full-year non-GAAP EPS guidance increased to about USD 5.38. Contrary evidence includes lower operating income, a 248-basis-point non-GAAP margin contraction, and nearly flat active accounts. A bounded 8x-12x guided-EPS range gives 26.2% downside and 10.6% base upside from the USD 58.3474 mark, so the assessment is medium-confidence baseline comparison only. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted
+- **[PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[NBIS — Nebius Group N.V.](security-catalog#security-security_47a0b06f6c6c478d7c1e): Volume Anomaly** (`2026-07-30`)
+  - Research: **pending**
+  - Decision: Deterministic price alert awaits bounded research review.
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Rsi Overbought** (`2026-07-30`)
+  - Research: **succeeded**
+  - Decision: Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares traded and a 4.14 volume z-score. Current SEC-filed fiscal 2026 evidence shows 18% revenue growth, 21% operating-income growth, 27% Microsoft Cloud growth, 41% Azure growth, and USD 678 billion of commercial remaining performance obligation. A mature-compounder earnings-multiple valuation gives USD 375/500/625 bear/base/bull values, 10.84% expected return, and 8.13% confidence-adjusted expected return. Weak bear-payoff ratios, absent accepted relationship, and adverse post-results timing make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Volume Anomaly** (`2026-07-30`)
+  - Research: **succeeded**
+  - Decision: Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares traded and a 4.14 volume z-score. Current SEC-filed fiscal 2026 evidence shows 18% revenue growth, 21% operating-income growth, 27% Microsoft Cloud growth, 41% Azure growth, and USD 678 billion of commercial remaining performance obligation. A mature-compounder earnings-multiple valuation gives USD 375/500/625 bear/base/bull values, 10.84% expected return, and 8.13% confidence-adjusted expected return. Weak bear-payoff ratios, absent accepted relationship, and adverse post-results timing make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Bollinger Above Upper** (`2026-07-30`)
+  - Research: **succeeded**
+  - Decision: Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares traded and a 4.14 volume z-score. Current SEC-filed fiscal 2026 evidence shows 18% revenue growth, 21% operating-income growth, 27% Microsoft Cloud growth, 41% Azure growth, and USD 678 billion of commercial remaining performance obligation. A mature-compounder earnings-multiple valuation gives USD 375/500/625 bear/base/bull values, 10.84% expected return, and 8.13% confidence-adjusted expected return. Weak bear-payoff ratios, absent accepted relationship, and adverse post-results timing make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
+- **[META — Meta Platforms, Inc.](security-catalog#security-security_d12e746b3c9d392183cc): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[META — Meta Platforms, Inc.](security-catalog#security-security_d12e746b3c9d392183cc): Bollinger Below Lower** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Bollinger Above Upper** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Rsi Overbought** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[HOOD — Robinhood Markets, Inc.](security-catalog#security-security_ad3b1f8f59fd599f079a): Bollinger Below Lower** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f): Volume Anomaly** (`2026-07-30`)
+  - Research: **pending**
+  - Decision: Deterministic price alert awaits bounded research review.
+- **[CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307): Bollinger Above Upper** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[CROX — Crocs, Inc.](security-catalog#security-security_c150f31c30afdb4a85f9): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[BE — Bloom Energy Corporation](security-catalog#security-security_3e597863f00753e8c65c): Volume Anomaly** (`2026-07-30`)
+  - Research: **pending**
+  - Decision: Deterministic price alert awaits bounded research review.
+- **[AMZN — Amazon.com, Inc.](security-catalog#security-security_2433a056eb0c55961fcc): Volume Anomaly** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[SU — Schneider Electric SE](security-catalog#security-security_dc8486c1d61df62a22fd): Macd Cross Above Signal** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8): Macd Cross Above Signal** (`2026-07-30`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+
+## Research decisions this run
+
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8) — succeeded:** Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares tr…
+
+## Top blocker or near miss
+
+- **MSFT — Microsoft Corporation:** Hold / Watch; expected return 10.8401669773560446621647853%; Bear/base payoff is below threshold.
+
+## Non-approved research benchmark
+
+This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
+- CASH 100% (Unrated)
+<!-- papertrader-investor-brief:end -->
+
+### Deterministic reasons
+
+- The reconciled model portfolio is entirely cash.
+- No strategy has produced a current actionable trade signal.
+
+## 2. Model portfolio and approved changes
+
+- Current equity: 10000 EUR
+- Current cash: 10000 EUR (100%)
+- Current gross exposure: 0 EUR
+- Approved target cash: 10000 EUR (100%)
+- Pending-order targets are estimates at the snapshot mark; only fills change accounting.
+
+| Holding | Sleeve | Current weight | Approved target | Current value | Target value | Action | State |
+| --- | --- | ---: | ---: | ---: | ---: | --- | --- |
+| Cash | cash | 100% | 100% | 10000  | 10000  | No trade | No action |
+
+## 3. Actionable signals and pending orders
+
+No actionable trade signals.
+
+No pending paper orders.
+
+## 4. Candidates and near misses
+
+| Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8) | Hold / Watch | Valuation unattractive | -16.86987476698296650337641102% / 10.8401669773560446621647853% / 38.5502087216950558277059816% | 10.8401669773560446621647853% | 400 | Bear/base payoff is below threshold. |
+| [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349) | Unrated / Watch | Valuation unattractive | —% / —% / —% | —% | — | Base-case upside is below the configured entry minimum. |
+| [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819) | Unrated / Watch | Valuation unattractive | —% / —% / —% | —% | — | Base-case upside is below the configured entry minimum. |
+| [ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c) | Unrated / Watch | Valuation unattractive | —% / —% / —% | —% | — | Base-case upside is below the configured entry minimum. |
+| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Unrated / Watch | Valuation unattractive | —% / —% / —% | —% | — | Base-case upside is below the configured entry minimum. |
+
+## 5. Performance and risk
+
+- Daily return: 0%
+- Cumulative return: 0%
+- Running drawdown: 0%
+- Realized P/L: 0 EUR
+- Unrealized P/L: 0 EUR
+- Largest position weight: 0%
+- Largest sector weight: 0%
+
+
+## 6. Research changes
+
+### Evidence-linked narrative
+
+- Microsoft was researched after its 2026-07-30 earnings-driven upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The shares rose 17.39% over the measured period and 15.51% in the first post-results session on a 4.14 volume z-score. Fiscal 2026 cloud, Azure, operating-income, and cash-flow growth strongly support the thesis, but the U… Evidence: `614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c`, `data/market/fx/USD_EUR.csv:263`, `https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm` (+1 more in the run artifacts).
+
+- [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6d827efad15c]]
+- [[inbox/market-security_204be2a44063993de1a8-bollinger_above_upper-f3d2a48409b4]]
+- [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-961cf1d1521a]]
+- [[inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9]]
+- [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f]]
+- [[inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1]]
+- [[inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98]]
+- [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340]]
+- [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da]]
+- [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea]]
+- [[inbox/market-security_9b0db3bc77914b23a307-bollinger_above_upper-fff9129760cd]]
+- [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-0cbd43273f8a]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-7a81ccdb18b3]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-30d19f036e9a]]
+- [[inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72]]
+- [[inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a]]
+- [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796]]
+- [[inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb]]
+- [[model-portfolio]]
+- [[performance]]
+- [[research-catalog]]
+- [[securities/security_204be2a44063993de1a8]]
+- [[security-catalog]]
+- [[signals]]
+- [[system-status]]
+
+## 7. Data-quality and coverage impact
+
+- Investment data status: **degraded**
+- Operations status: **degraded**
+- Assessments: 37/37
+- Fresh-evidence assessments: 37/37
+- Relationship reviews: 23/37
+- Accepted relationships: 21
+- Ready or active strategies: 0
+- Active signals: 0
+- Pending orders: 0
+- Market-data success/failure: 72/0
+- Research alerts (not trade signals): 30
+
+### Current system impacts
+
+- **affects candidate** — LAC Lithium Americas Corp.: Daily preparation degraded: security\_fb87fac302a5446a1ced
+- **affects candidate** — HOOD Robinhood Markets, Inc.: Daily preparation degraded: security\_ad3b1f8f59fd599f079a
+- **affects candidate** — CROX Crocs, Inc.: Daily preparation degraded: security\_c150f31c30afdb4a85f9
+- **affects candidate** — WTI W&amp;T Offshore, Inc.: Daily preparation degraded: security\_61567714298b9563d1a9
+- **affects candidate** — FCX Freeport-McMoRan Inc.: Daily preparation degraded: security\_2dbe878dfc899d7ee867
+- **affects candidate** — DLO DLocal Limited: Daily preparation degraded: security\_715bde20b6e1e1320c1a
+- **affects candidate** — TX Ternium S.A.: Daily preparation degraded: security\_2c779e81c27b78c556bb
+- **affects candidate** — GEV GE Vernova Inc.: Daily preparation degraded: security\_4b61970aa8f574446819
+- **affects candidate** — ATKR Atkore Inc.: Daily preparation degraded: security\_22c2b9d782a62d7a9b86
+- **affects candidate** — PLS.AX PLS Group Limited: Daily preparation degraded: security\_8a5c43888d224de85c69
+- **affects candidate** — KTOS Kratos Defense &amp; Security Solutions, Inc.: Daily preparation degraded: security\_0cf8075039299094d614
+- **affects candidate** — RIO Rio Tinto plc: Daily preparation degraded: security\_1c055eb9b2bb1f5a8ff2
+- **affects candidate** — PYPL PayPal Holdings, Inc.: Daily preparation degraded: security\_1e8fbdb0f45f2b413e00
+- **affects candidate** — ETN Eaton Corporation plc: Daily preparation degraded: security\_18a3ab0ee6086ee85d0f
+- **affects candidate** — SOFI SoFi Technologies, Inc.: Daily preparation degraded: security\_98470cfc01bbcde78fc2
+- **affects candidate** — CSL Carlisle Companies Incorporated: Daily preparation degraded: security\_9b0db3bc77914b23a307
+- **affects candidate** — SGML Sigma Lithium Corporation: Daily preparation degraded: security\_4627aea1bf7d8943d3d8
+- **affects candidate** — RKLB Rocket Lab Corporation: Daily preparation degraded: security\_7ca095d63423c55a90e3
+- **affects candidate** — ISRG Intuitive Surgical, Inc.: Daily preparation degraded: security\_1f9cce545ede94cd6349
+- **affects candidate** — INTC Intel Corporation: Daily preparation degraded: security\_dfa34d4b9050964b465e
+- **affects candidate** — TWST Twist Bioscience Corporation: Daily preparation degraded: security\_6cf75bd0ec0aa2a20148
+- **affects candidate** — RBLX Roblox Corporation: Daily preparation degraded: security\_c9a37d277445869a8809
+- **affects candidate** — FUC.F Fanuc Corporation: Daily preparation degraded: security\_96ba305ee7cd586bc348
+- **affects candidate** — TSLA Tesla, Inc.: Daily preparation degraded: security\_dc7a111e297be528d96b
+- **affects candidate** — VALE Vale S.A.: Daily preparation degraded: security\_b2116dcf976c96974d7b
+- **affects candidate** — ALB Albemarle Corporation: Daily preparation degraded: security\_66cdcf90aac0d83e76f3
+- **affects candidate** — ANIC.L Agronomics Limited: Daily preparation degraded: security\_fe4648901e7675f157fd
+- **affects candidate** — GOOGL Alphabet Inc.: Daily preparation degraded: security\_c86bb4e75658c07142cf
+- **affects candidate** — ABCL AbCellera Biologics Inc.: Daily preparation degraded: security\_7bf8f4c9cc12ae410e40
+- **affects candidate** — TXN Texas Instruments Incorporated: Daily preparation degraded: security\_83a56943e18793f685b0
+- **affects candidate** — VLO Valero Energy Corporation: Daily preparation degraded: security\_c5a9e460d3350284d157
+- **affects candidate** — QCOM QUALCOMM Incorporated: Daily preparation degraded: security\_3a75fc1ccca2ee7c937a
+- **affects candidate** — MP MP Materials Corp.: Daily preparation degraded: security\_cd492d97064d8574156e
+- **affects candidate** — ANET Arista Networks, Inc.: Daily preparation degraded: security\_6f9a1450edceb9307c9a
+- **affects candidate** — PARRO.PA Parrot S.A.: Daily preparation degraded: security\_cc4dcb8f002b61dffe00
+- **affects candidate** — TSM Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: security\_ce9b78a4d0773c950765
+- **affects candidate** — PATH UiPath, Inc.: Daily preparation degraded: security\_eca976f0076a425ea1bb
+- **affects candidate** — RTX RTX Corporation: Daily preparation degraded: security\_59304f90c440def31dc5
+- **affects candidate** — ASML ASML Holding N.V.: Daily preparation degraded: security\_ef35e41886220d51c22c
+- **affects candidate** — ENPH Enphase Energy, Inc.: Daily preparation degraded: security\_f2b9760d847b2ba59324
+- **affects candidate** — MSTR Strategy Inc: Daily preparation degraded: security\_fe5539a7d3fd9d553bce
+- **affects candidate** — SPCX Space Exploration Technologies Corp.: Daily preparation degraded: security\_664f93a7eaca72e76e9b
+- **affects candidate** — NBIS Nebius Group N.V.: Daily preparation degraded: security\_47a0b06f6c6c478d7c1e
+- **affects candidate** — CRWD CrowdStrike Holdings, Inc.: Daily preparation degraded: security\_8472507d7d320aa388a7
+- **affects candidate** — SQM Sociedad Quimica y Minera de Chile S.A.: Daily preparation degraded: security\_9d4049ed6669a52815d6
+- **affects candidate** — YEC.F YASKAWA Electric Corporation: Daily preparation degraded: security\_89969b7dac39b7db5661
+- **affects candidate** — META Meta Platforms, Inc.: Daily preparation degraded: security\_d12e746b3c9d392183cc
+- **affects candidate** — RXRX Recursion Pharmaceuticals, Inc.: Daily preparation degraded: security\_ed7d5b616a196969c815
+- **affects candidate** — SCCO Southern Copper Corporation: Daily preparation degraded: security\_6ad1af8d10d6276a0221
+- **affects candidate** — MSFT Microsoft Corporation: Daily preparation degraded: security\_204be2a44063993de1a8
+- **affects candidate** — ABBNY ABB Ltd: Daily preparation degraded: security\_c120e9f26ebb6159adf9
+- **affects candidate** — SSUN.VI Samsung Electronics Co., Ltd.: Daily preparation degraded: security\_d08d763780400dfbffce
+- **affects candidate** — VRT Vertiv Holdings Co: Daily preparation degraded: security\_cb88f9154cfeaa15e878
+- **affects candidate** — LH Labcorp Holdings Inc.: Daily preparation degraded: security\_b1f2c48e1a744f5ecf67
+- **affects candidate** — PL Planet Labs PBC: Daily preparation degraded: security\_97f38b2cb2d5ef127f5a
+- **affects candidate** — TDY Teledyne Technologies Incorporated: Daily preparation degraded: security\_ad5917642acbba28c1f2
+- **affects candidate** — PLTR Palantir Technologies Inc.: Daily preparation degraded: security\_bdc2f87dadf134760c3a
+- **affects candidate** — AMAT Applied Materials, Inc.: Daily preparation degraded: security\_0a56aa634d077fe5796f
+- **affects candidate** — NIB.F Nidec Corporation: Daily preparation degraded: security\_3853e54c619d597dcaa1
+- **affects candidate** — LUNR Intuitive Machines, Inc.: Daily preparation degraded: security\_a5dc16f3f4b245e6c168
+- **affects candidate** — COIN Coinbase Global, Inc.: Daily preparation degraded: security\_37ddcbdaad296ad831f2
+- **affects candidate** — DNA Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: security\_95351d928b674bbdf687
+- **affects candidate** — CSIQ Canadian Solar Inc.: Daily preparation degraded: security\_099561384c0f5e697727
+- **affects candidate** — AMZN Amazon.com, Inc.: Daily preparation degraded: security\_2433a056eb0c55961fcc
+- **affects candidate** — SPOT Spotify Technology S.A.: Daily preparation degraded: security\_2010347f1a0a5ea60f47
+- **affects candidate** — SSU.VI Samsung Electronics Co., Ltd.: Daily preparation degraded: security\_567d0d575bbd30aaa91d
+- **affects candidate** — FLNC Fluence Energy, Inc.: Daily preparation degraded: security\_a9eb9838940ef5ceaa0c
+- **affects candidate** — CRSR Corsair Gaming, Inc.: Daily preparation degraded: security\_55c9ce2fdcd32dad6b8c
+- **affects candidate** — NVDA NVIDIA Corporation: Daily preparation degraded: security\_33d9c44facc75c726c7d
+- **operational only**: Daily preparation degraded: FX AUD/EUR
+- **operational only**: YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A
+- **operational only**: YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A
+- **operational only**: Daily preparation degraded: FX USD/EUR
+- **operational only**: YouTube discovery failed for UCS01CiRDAiyhR\_mTHXDW23A
+- **operational only**: YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm\_jw
+- **operational only**: Daily preparation degraded: FX GBP/EUR
+- **operational only**: YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw
+- **operational only**: YouTube discovery failed for UCESLZhusAkFfsNsApnjF\_Cg
+
+## 8. Audit appendix
+
+### Run diagnostics
+
+- Run ID: `gha-30613872508-1`
+- Run status: `succeeded`
+- Generated (UTC): `2026-07-31T08:02:28Z`
+- Decision snapshot: `decision_887f74852419aae2ad1f`
+
+### Complete market freshness
+
+| Security ID | Price date | Retrieved at | Status | Error |
+| --- | --- | --- | --- | --- |
+| security_099561384c0f5e697727 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_0a56aa634d077fe5796f | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_0cf8075039299094d614 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_18a3ab0ee6086ee85d0f | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_1c055eb9b2bb1f5a8ff2 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_1e8fbdb0f45f2b413e00 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_1f9cce545ede94cd6349 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_2010347f1a0a5ea60f47 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_204be2a44063993de1a8 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_22c2b9d782a62d7a9b86 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_2433a056eb0c55961fcc | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_2c779e81c27b78c556bb | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_2dbe878dfc899d7ee867 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_33d9c44facc75c726c7d | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_37ddcbdaad296ad831f2 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_3853e54c619d597dcaa1 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_3a75fc1ccca2ee7c937a | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_3e597863f00753e8c65c | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_4627aea1bf7d8943d3d8 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_47a0b06f6c6c478d7c1e | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_488a9d7f7a8573597724 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_4b61970aa8f574446819 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_55c9ce2fdcd32dad6b8c | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_567d0d575bbd30aaa91d | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_59304f90c440def31dc5 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_61567714298b9563d1a9 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_664f93a7eaca72e76e9b | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_66cdcf90aac0d83e76f3 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_6ad1af8d10d6276a0221 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_6cf75bd0ec0aa2a20148 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_6f9a1450edceb9307c9a | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_715bde20b6e1e1320c1a | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_7bf8f4c9cc12ae410e40 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_7ca095d63423c55a90e3 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_83a56943e18793f685b0 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_8472507d7d320aa388a7 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_89969b7dac39b7db5661 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_8a5c43888d224de85c69 | 2026-07-31 | 2026-07-31T07:45:55Z | ok | — |
+| security_95351d928b674bbdf687 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_96ba305ee7cd586bc348 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_97f38b2cb2d5ef127f5a | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_98470cfc01bbcde78fc2 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_9b0db3bc77914b23a307 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_9d4049ed6669a52815d6 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_a5dc16f3f4b245e6c168 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_a9eb9838940ef5ceaa0c | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_ad3b1f8f59fd599f079a | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_ad5917642acbba28c1f2 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_b1f2c48e1a744f5ecf67 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_b2116dcf976c96974d7b | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_bdc2f87dadf134760c3a | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_c120e9f26ebb6159adf9 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_c150f31c30afdb4a85f9 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_c5a9e460d3350284d157 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_c86bb4e75658c07142cf | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_c9a37d277445869a8809 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_cb88f9154cfeaa15e878 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_cc4dcb8f002b61dffe00 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_cd492d97064d8574156e | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_ce9b78a4d0773c950765 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_d08d763780400dfbffce | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_d12e746b3c9d392183cc | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_dc7a111e297be528d96b | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_dc8486c1d61df62a22fd | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_dfa34d4b9050964b465e | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_eca976f0076a425ea1bb | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_ed7d5b616a196969c815 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_ef35e41886220d51c22c | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_f2b9760d847b2ba59324 | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_fb87fac302a5446a1ced | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_fe4648901e7675f157fd | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+| security_fe5539a7d3fd9d553bce | 2026-07-30 | 2026-07-31T07:45:55Z | ok | — |
+
+### Orders and executions
+
+| Order ID | Strategy ID | Fill policy | Status | Created |
+| --- | --- | --- | --- | --- |
+| — | — | — | no orders | — |
+
+| Execution ID | Order ID | Security ID | Side | Quantity | Fill | Fees |
+| --- | --- | --- | --- | ---: | ---: | ---: |
+| — | — | — | — | 0 | no executions | 0 |
+
+### Allocation audit
+
+- Plan ID: `allocation_plan_673a3d8b44064c63d60a`
+- Mode: `active`
+- Deployment budget: 1500 EUR
+- Capital allocated: 0 EUR
+- Capital unallocated: 6000 EUR
+
+| Rank | Security ID | Target weight | Disposition | Machine reasons |
+| ---: | --- | ---: | --- | --- |
+| 1 | security_1f9cce545ede94cd6349 | 0% | hold | above_cash_hurdle\|insufficient_diversification |
+| — | security_18a3ab0ee6086ee85d0f | 0% | excluded | score_below_cash_hurdle |
+| — | security_1c055eb9b2bb1f5a8ff2 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_1e8fbdb0f45f2b413e00 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_2010347f1a0a5ea60f47 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_204be2a44063993de1a8 | 0% | excluded | bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|relationship_missing_or_stale |
+| — | security_22c2b9d782a62d7a9b86 | 0% | excluded | score_below_cash_hurdle |
+| — | security_2c779e81c27b78c556bb | 0% | excluded | score_below_cash_hurdle |
+| — | security_2dbe878dfc899d7ee867 | 0% | excluded | score_below_cash_hurdle |
+| — | security_37ddcbdaad296ad831f2 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_4627aea1bf7d8943d3d8 | 0% | excluded | assessment_ineligible\|confidence_below_minimum\|hard_blocker:accounting_uncertain,solvency_risk,valuation_unsupported\|score_below_cash_hurdle |
+| — | security_488a9d7f7a8573597724 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_4b61970aa8f574446819 | 0% | excluded | score_below_cash_hurdle |
+| — | security_567d0d575bbd30aaa91d | 0% | excluded | assessment_ineligible\|hard_blocker:liquidity_insufficient,valuation_unsupported\|relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_59304f90c440def31dc5 | 0% | excluded | score_below_cash_hurdle |
+| — | security_66cdcf90aac0d83e76f3 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_6ad1af8d10d6276a0221 | 0% | excluded | score_below_cash_hurdle |
+| — | security_6f9a1450edceb9307c9a | 0% | excluded | score_below_cash_hurdle |
+| — | security_7ca095d63423c55a90e3 | 0% | excluded | score_below_cash_hurdle |
+| — | security_8472507d7d320aa388a7 | 0% | excluded | score_below_cash_hurdle |
+| — | security_89969b7dac39b7db5661 | 0% | excluded | assessment_ineligible\|hard_blocker:liquidity_insufficient\|relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_97f38b2cb2d5ef127f5a | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_9b0db3bc77914b23a307 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_9d4049ed6669a52815d6 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_a5dc16f3f4b245e6c168 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_a9eb9838940ef5ceaa0c | 0% | excluded | score_below_cash_hurdle |
+| — | security_b1f2c48e1a744f5ecf67 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_bdc2f87dadf134760c3a | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_c120e9f26ebb6159adf9 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_c9a37d277445869a8809 | 0% | excluded | score_below_cash_hurdle |
+| — | security_cb88f9154cfeaa15e878 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_cc4dcb8f002b61dffe00 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_dc7a111e297be528d96b | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_ed7d5b616a196969c815 | 0% | excluded | assessment_ineligible\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_ef35e41886220d51c22c | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_f2b9760d847b2ba59324 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+| — | security_fb87fac302a5446a1ced | 0% | excluded | assessment_ineligible\|confidence_below_minimum\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
+
+### Curated YouTube discovery
+
+- Status: `succeeded`
+- Operations queued: `3`
+- Channel failures: `0`
+
+| Channel | Status | Discovered | Queued | Reason |
+| --- | --- | ---: | ---: | --- |
+| @allin | succeeded | 0 | 0 | — |
+| @thelimitingfactor | succeeded | 0 | 0 | — |
+| @ConnectingODots | succeeded | 0 | 0 | — |
+| @DumbMoneyLive | succeeded | 0 | 0 | — |
+| @CouchInvestor | succeeded | 2 | 2 | — |
+| @Value-Investing | succeeded | 1 | 1 | — |
+
+
+### Seeking Alpha search-index leads
+
+- Schedule status: `queued`
+- Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
+- Discovery status: `pending`
+
+
+### Research-operation audit
+
+| Operation ID | Type | Entity ID | Disposition | Machine reason |
+| --- | --- | --- | --- | --- |
+| 01KYRN6PWGZ94B0GQ5VY410N2T | source_discovery | seekingalpha_trending_daily | expired | deadline_elapsed |
+| 01KYVJ62SRQDEHTKQ7TBBMXZ1T | opportunity_research | opportunity_1b114faf7dc649eb49f9 | skipped | freshness_cooldown:01KYQCTS30JP21DP88XJ60G0RY |
+| 01KYPB1V80Z3NV79GVG54DMFMT | security_research | security_204be2a44063993de1a8 | succeeded | agent_result:succeeded |
+
+### Complete active queue
+
+- `ready` `01KYEWGWBRV9EV6YN1WQA6G3WF` — `security_research` for `security_cb88f9154cfeaa15e878`
+- `ready` `01KYEXAGNREGCP02XCC9VBV80V` — `security_research` for `security_c5a9e460d3350284d157`
+- `waiting` `01KYFXFKB04HSHKYVSPNGXVJX0` — `security_research` for `security_66cdcf90aac0d83e76f3`
+- `ready` `01KYPB1PBRCRHY63XGVY8SV80F` — `security_research` for `security_099561384c0f5e697727`
+- `ready` `01KYPB1QB0JP4AER2BTKE8CNDB` — `security_research` for `security_0a56aa634d077fe5796f`
+- `ready` `01KYPB1RA8KCC272M9J5G94CHK` — `security_research` for `security_0cf8075039299094d614`
+- `ready` `01KYPB1W78HSRT5KNG39B7SPBX` — `security_research` for `security_2433a056eb0c55961fcc`
+- `ready` `01KYPB1X6GMJJD0DTCRTYAGTBE` — `security_research` for `security_33d9c44facc75c726c7d`
+- `ready` `01KYPB1Y5R4NFAMSPZZX3YAS1E` — `security_research` for `security_3853e54c619d597dcaa1`
+- `ready` `01KYPB1Z50955WQSMSWYR16957` — `security_research` for `security_3a75fc1ccca2ee7c937a`
+- `ready` `01KYPB2048VWN4VV7YYF4Y60TX` — `security_research` for `security_47a0b06f6c6c478d7c1e`
+- `ready` `01KYPB213GFWH1QMBGJT4A5KDA` — `security_research` for `security_55c9ce2fdcd32dad6b8c`
+- `ready` `01KYPB2320KM60TB1XB6840QEB` — `security_research` for `security_61567714298b9563d1a9`
+- `ready` `01KYPB241838ZBZ6FE9EQCEJYW` — `security_research` for `security_664f93a7eaca72e76e9b`
+- `ready` `01KYPB250GCWY1ZB0GD3QC2DBX` — `security_research` for `security_6cf75bd0ec0aa2a20148`
+- `ready` `01KYPB25ZR2Q5MGTH3P47XVCJ5` — `security_research` for `security_715bde20b6e1e1320c1a`
+- `ready` `01KYPB26Z023E3AMG9Z8KSPW9D` — `security_research` for `security_7bf8f4c9cc12ae410e40`
+- `ready` `01KYPB27Y84W38J6MDDEF7PHG0` — `security_research` for `security_83a56943e18793f685b0`
+- `ready` `01KYPB29WRNJGPJTTY2DB72JWG` — `security_research` for `security_8a5c43888d224de85c69`
+- `ready` `01KYPB2AW0SJ35EAKMPQM8QVAH` — `security_research` for `security_95351d928b674bbdf687`
+- `ready` `01KYPB2BV8XK4AAREZ3257MDE0` — `security_research` for `security_96ba305ee7cd586bc348`
+- `ready` `01KYPB2DSRFNQ0NE6AY81GQZKR` — `security_research` for `security_98470cfc01bbcde78fc2`
+- `ready` `01KYPB2GQGHN1J2S82EFKN1CAH` — `security_research` for `security_ad3b1f8f59fd599f079a`
+- `ready` `01KYPB2HPR71QC8BBTPA3HMW8R` — `security_research` for `security_ad5917642acbba28c1f2`
+- `ready` `01KYPB2KN8R1RGAPDZQ2AN9P2V` — `security_research` for `security_b2116dcf976c96974d7b`
+- `ready` `01KYPB2MMG5E7Y3EVH2XS3MV0G` — `security_research` for `security_c150f31c30afdb4a85f9`
+- `ready` `01KYPB2NKR40C7V30WG552P7WP` — `security_research` for `security_c86bb4e75658c07142cf`
+- `ready` `01KYPB2PK0R0ZXAHGNGZ6X5FM8` — `security_research` for `security_cd492d97064d8574156e`
+- `ready` `01KYPB2PK0N1W5XHVXFXW43JSZ` — `security_research` for `security_ce9b78a4d0773c950765`
+- `ready` `01KYPB2QJ8QGJJAGXQ71MT7GWW` — `security_research` for `security_d08d763780400dfbffce`
+- `ready` `01KYPB2RHG2WF001VJFAJXH5S6` — `security_research` for `security_d12e746b3c9d392183cc`
+- `ready` `01KYPB2TG0W0FFP83ZG7KC45YP` — `security_research` for `security_dfa34d4b9050964b465e`
+- `ready` `01KYPB2VF8GSJR3R78FTPFE8YM` — `security_research` for `security_eca976f0076a425ea1bb`
+- `ready` `01KYPB2XDRKAMP0ZX3MWA7Y1JH` — `security_research` for `security_fe4648901e7675f157fd`
+- `ready` `01KYPB2YD02XHRSSW68JA9MCG7` — `security_research` for `security_fe5539a7d3fd9d553bce`
+- `ready` `01KYQ49D1GWY55GJNJNBQRCJ74` — `wiki_ingest` for `youtube_TqNiSTeNtb0`
+- `ready` `01KYQ49D1GGA0W6TAYFVSGQXR3` — `wiki_ingest` for `youtube_wcV0SRPFK9s`
+- `ready` `01KYQ49D1GS4CXMK0S510Y67TM` — `wiki_ingest` for `youtube_OY2Sjbjd_VE`
+- `ready` `01KYQ49D1GJ32KP17XS3Z8DJ00` — `wiki_ingest` for `youtube_9IMwRIei-Xc`
+- `ready` `01KYQ49D1GETPHJ2B8PYVG9FE0` — `wiki_ingest` for `youtube_-ILKiOU5iAQ`
+- `ready` `01KYQ49D1GRCPWM612C0NAM0Z1` — `wiki_ingest` for `youtube_SuSYegb8iK0`
+- `ready` `01KYQ49D1G6RHZ9VJYDV5NKPTT` — `wiki_ingest` for `youtube_h7XVJ64IhY4`
+- `ready` `01KYQ49D1GWWHW1JFKE6VSSHB7` — `wiki_ingest` for `youtube_pVwvxybnwdg`
+- `ready` `01KYQ49D1GNQZG7ZW58JW442R5` — `wiki_ingest` for `youtube_TyMn7wknYTU`
+- `ready` `01KYQ49D1GF9JD930JH9N49P07` — `wiki_ingest` for `youtube_oyjpF7xPiC4`
+- `ready` `01KYQ49D1GGG62YPWBRNTM1WFD` — `wiki_ingest` for `youtube_Ejsft2oPCtM`
+- `ready` `01KYQ49D1GB9057VRBFHJ9Y1NX` — `wiki_ingest` for `youtube_k77X47h6OVU`
+- `ready` `01KYQ49D1GAXYP4Y8RR9C5G3KN` — `wiki_ingest` for `youtube_yUq0O-pDHCE`
+- `ready` `01KYQ49D1G2RNAXKS9RP0MY1R9` — `wiki_ingest` for `youtube_9ePWIYadju4`
+- `ready` `01KYQ49D1GYV061JMYPWWGR6E4` — `wiki_ingest` for `youtube_yG-bk8QEjsA`
+- `ready` `01KYQ49D1GFY1PFRCMBZ41Q88C` — `wiki_ingest` for `youtube_u-AXyF9kY9k`
+- `ready` `01KYQ49D1GNN84QQ53F97HDY1P` — `wiki_ingest` for `youtube_AK_aWcM-VAY`
+- `ready` `01KYQ49D1GZK4Z8RANH5XP9TC0` — `wiki_ingest` for `youtube_t3RTJJ6KM_I`
+- `ready` `01KYQ49D1G3QX14JS5VBH76HN0` — `wiki_ingest` for `youtube_6006vpLlaVw`
+- `ready` `01KYQ49D1GXYX0SF93BMTNHYM8` — `wiki_ingest` for `youtube_-lUsDKvZJu0`
+- `ready` `01KYQ49D1GKPX5A7WGCV9GPG8X` — `wiki_ingest` for `youtube_65IABPxBJ9M`
+- `ready` `01KYQ49D1GX6X7ACXB1A6KFTR4` — `wiki_ingest` for `youtube_OcXcgIlJGRw`
+- `ready` `01KYQ49D1GNF94BPJNDE0ZFWSK` — `wiki_ingest` for `youtube_a0l7VDnN1bg`
+- `ready` `01KYQ49D1GD05JQFX2ZE5MTRWZ` — `wiki_ingest` for `youtube_3c9iLgtDdKM`
+- `ready` `01KYQ49D1GHSHA6ZVKD6N2VFBG` — `wiki_ingest` for `youtube_pVaKoDHW9iY`
+- `ready` `01KYQ49D1G889B5DYTST65N0EW` — `wiki_ingest` for `youtube_4JmCb5FmTA4`
+- `ready` `01KYQ49D1GCWM22YHNBNMM75XE` — `wiki_ingest` for `youtube_yAtpMMC3aiw`
+- `ready` `01KYQ49D1GENTSWY2QD1D1RREE` — `wiki_ingest` for `youtube_Cbbmj0dqP-M`
+- `ready` `01KYQ49D1G663ZCTKEG5CJHK7B` — `wiki_ingest` for `youtube_e2C_hgXiyzM`
+- `ready` `01KYQ49D1G3CHJ4YE6BKXP9RX9` — `wiki_ingest` for `youtube_J2ZqFVpMb5M`
+- `ready` `01KYQ62ZT8CMTR6FPX1QRP408K` — `wiki_ingest` for `youtube_J0bce9WQJ-g`
+- `ready` `01KYQ62ZT802KH3KPDKH73DVJG` — `wiki_ingest` for `youtube_PHL1j2ti420`
+- `ready` `01KYQ62ZT814BHMMGYPYBHZDFG` — `wiki_ingest` for `youtube_Y7p4rUCdqi0`
+- `ready` `01KYQ62ZT8PE0KSAT04CPKC1CE` — `wiki_ingest` for `youtube_wgdxSCsmS-Q`
+- `ready` `01KYQ62ZT8TV5T8RB8W46ZW9SN` — `wiki_ingest` for `youtube_ihq_ngvKKmc`
+- `ready` `01KYQ62ZT8K816JKYK8GDWYB56` — `wiki_ingest` for `youtube_w8ah_tA0yfg`
+- `ready` `01KYQ62ZT86ETBZK4W0Q593CN2` — `wiki_ingest` for `youtube_4j9RPGLENNI`
+- `ready` `01KYQ62ZT8N4VRQR9ST8EXQ168` — `wiki_ingest` for `youtube_3Amlu4y94Ho`
+- `ready` `01KYQ62ZT8HQ2V9A2XEJYRD8BY` — `wiki_ingest` for `youtube_gH4FTjDm9FQ`
+- `ready` `01KYQ62ZT8AGDEDP669Q6SF1VD` — `wiki_ingest` for `youtube_fO5sC7qS04E`
+- `ready` `01KYQ62ZT8NF7ZNPSTJ69HS7V6` — `wiki_ingest` for `youtube_0y28p0jqPro`
+- `ready` `01KYQ62ZT8SS9KT1EVEXNCD4XP` — `wiki_ingest` for `youtube_xTO1aQ_m44I`
+- `ready` `01KYQ62ZT801NHJJJESDKAXFKT` — `wiki_ingest` for `youtube_0umrMuUClC4`
+- `ready` `01KYQ62ZT8NE3G1N2X2MKH44YZ` — `wiki_ingest` for `youtube_hObRMv6qCi0`
+- `ready` `01KYQ62ZT8DKGS48D125VEJYXA` — `wiki_ingest` for `youtube_V0lFjTWx36I`
+- `ready` `01KYQ62ZT8QACN7VXB37B6CH64` — `wiki_ingest` for `youtube_jLICvWE7w2Q`
+- `ready` `01KYQ62ZT8S01ZD1P3EMHHVTE7` — `wiki_ingest` for `youtube_i8OI8CNdZgU`
+- `ready` `01KYQ62ZT86MGSMHX08KN8170X` — `wiki_ingest` for `youtube_UIoV8rG_25s`
+- `ready` `01KYQ62ZT8R26C95SJ1GXG0QW3` — `wiki_ingest` for `youtube__TJFqEhxQg4`
+- `ready` `01KYQ62ZT86XNVRAADRGMGPBZW` — `wiki_ingest` for `youtube_TjrShuj_Zsg`
+- `ready` `01KYQCTS30PFZNHCBJ0BMJA20G` — `opportunity_research` for `opportunity_2c447a92e1e201e51257`
+- `ready` `01KYQCTS30ZBFGAPY776AWDFAD` — `opportunity_research` for `opportunity_b98a51165cb62bb66b8a`
+- `ready` `01KYQCTS30Z20SHWJBWPKTZQXA` — `opportunity_research` for `opportunity_35976484f7580ed6e475`
+- `ready` `01KYQCTS30ZPP1CTD2NTFVPQ7Z` — `opportunity_research` for `opportunity_2261a96c6e7c60b2874b`
+- `ready` `01KYQCTS30SHPW45RA3FG14YEN` — `opportunity_research` for `opportunity_7140082cb7686078a0b5`
+- `ready` `01KYQWZK5R5CRMBVHMJ7DGPRR1` — `idea_research` for `idea_ai_infrastructure_power`
+- `ready` `01KYQX7VTGEFWS7H0DHXC97SC4` — `security_research` for `security_18a3ab0ee6086ee85d0f`
+- `ready` `01KYQX7VTGAA4RZ3KDABA48ZJK` — `security_research` for `security_2010347f1a0a5ea60f47`
+- `ready` `01KYQXEQHR2TX5SYSZ78PC57FJ` — `idea_research` for `idea_ai_infrastructure_power`
+- `ready` `01KYQYVK38FSPHJ5XKB7T0WXD9` — `idea_research` for `idea_ai_infrastructure_power`
+- `ready` `01KYQZRTMR79EG6XT5BPZGNSJY` — `idea_research` for `idea_critical_minerals_lithium`
+- `ready` `01KYR14MZRSZTXSDYFC2YZWCAS` — `idea_research` for `idea_critical_minerals_lithium`
+- `ready` `01KYR1GDY8T9RTDS2G7WCA8V80` — `idea_research` for `idea_critical_minerals_lithium`
+- `ready` `01KYR2CW38HRY2WSCX0MSTYT44` — `idea_research` for `idea_nearshoring_friendshoring_manufacturing`
+- `ready` `01KYR4K1705VG7GQANFYSR5RYW` — `security_research` for `security_dc8486c1d61df62a22fd`
+- `ready` `01KYR4K35GCJ54W0MEN0SYT67E` — `security_research` for `security_3e597863f00753e8c65c`
+- `ready` `01KYR5PTQ8SEPDB26SQZPVANG7` — `security_research` for `security_2c779e81c27b78c556bb`
+- `ready` `01KYR5PTQ85N1ZCYD8JF9FVRPM` — `security_research` for `security_567d0d575bbd30aaa91d`
+- `ready` `01KYR5PTQ83GZTPZMC2Q2KMPAH` — `security_research` for `security_b1f2c48e1a744f5ecf67`
+- `ready` `01KYRN70N0WPNJS3H1E6KEZA46` — `wiki_ingest` for `source_b4ccfa5719798cd4b2da`
+- `ready` `01KYRN70N0TSX6FV411YSMJFYJ` — `wiki_ingest` for `source_ca042ab14c267fcf6a43`
+- `ready` `01KYRN70N086Z65D7KW4E1NX7H` — `wiki_ingest` for `source_3a8a23f62b440aba9c12`
+- `ready` `01KYRN70N0MESVGJS97RHZ6HH7` — `wiki_ingest` for `source_c87fa54959ca291bd1b4`
+- `ready` `01KYRN70N0J2XS5YPZHR9MXAYZ` — `wiki_ingest` for `source_ec397cfff2d9367d928e`
+- `ready` `01KYRN70N0ANKTA6F7ERGTRBM8` — `wiki_ingest` for `source_eb431b266db89914928d`
+- `ready` `01KYRN70N092VAA3SXRKBF8HGR` — `wiki_ingest` for `source_9de009f781ad359f3960`
+- `ready` `01KYRN70N0H6VB4R8ET3E5HBEK` — `wiki_ingest` for `source_4f9d8fc028441946bac3`
+- `ready` `01KYRN70N0262AJ4DTQHWW74RJ` — `wiki_ingest` for `source_49195dc54379739b68f1`
+- `ready` `01KYRN70N0PBTV4G1K7FTV3357` — `wiki_ingest` for `source_a34dddcd30ae72f62253`
+- `ready` `01KYRN70N03CA0Z681ZAFSWGPM` — `wiki_ingest` for `source_07ae28fe80c504f55382`
+- `ready` `01KYRN70N0VDZXS6PE3X2SQW8J` — `wiki_ingest` for `source_10ba1621a1d8a30792d4`
+- `ready` `01KYRN70N0F1MM1WGXSN7Y7DB8` — `wiki_ingest` for `source_897bf35ed615196c301c`
+- `ready` `01KYRN70N0YQPBQFGF7RYYJFZP` — `wiki_ingest` for `source_653e412123ef9d8a8acb`
+- `ready` `01KYRN70N0QNC3RPFKX9EWSSFW` — `wiki_ingest` for `source_c6acafaeb6d170f8ab47`
+- `ready` `01KYRN70N098Z64E09AZ9N3K1F` — `wiki_ingest` for `source_6defc9182eb04a9fbe54`
+- `ready` `01KYRN70N0R581XFB4ZCSGEC66` — `wiki_ingest` for `source_ee31dd89d8014d8d36f6`
+- `ready` `01KYRN70N0GXVJT994B286NQYN` — `wiki_ingest` for `source_16ef1d0440a3bb7b89fe`
+- `ready` `01KYRN70N0N9697H5G77KK5SRQ` — `opportunity_research` for `opportunity_1534565cc5755e3968ab`
+- `ready` `01KYRN70N08PJ0ERBVJ3EQGH1C` — `wiki_ingest` for `source_a717308fec3662430845`
+- `ready` `01KYRN70N07XFMWWE6RCGWZ2PD` — `opportunity_research` for `opportunity_43f364fd09fb20edfe29`
+- `ready` `01KYRN70N08CABVMV7Z9238W65` — `wiki_ingest` for `source_ef2908486cb38c8fc059`
+- `ready` `01KYRN70N012YRH9ZFNJE42AGR` — `opportunity_research` for `opportunity_2a28fb4a0f69b575d259`
+- `ready` `01KYRN70N0EF7BHAKETPHEP8V6` — `wiki_ingest` for `source_6b9dba1f65b987d81326`
+- `ready` `01KYRN70N0DRWKYNCNF5MYDJ2G` — `opportunity_research` for `opportunity_f75467845c5b6994584a`
+- `ready` `01KYRN70N0M4VYH1EC2HTW65NV` — `wiki_ingest` for `source_b1ac4b991f93a47d0b17`
+- `ready` `01KYRQ18X8EDCTPPRX31ZJ6K96` — `idea_research` for `idea_solar_storage_grid_flexibility_reset`
+- `ready` `01KYRQM6C8FMFJ2C9DPY0W76S0` — `idea_research` for `idea_critical_minerals_copper`
+- `ready` `01KYVJ5M50F5QEQCR5Z89XQMN8` — `wiki_ingest` for `youtube_DeI6oqdIePA`
+- `ready` `01KYVJ5M500XHZWKZRJCVM5S28` — `wiki_ingest` for `youtube_MsNPz0dBYDw`
+- `ready` `01KYVJ5M50672K1860W3W79JTH` — `wiki_ingest` for `youtube_-jysGHtWkxE`
+- `ready` `01KYVJ5TZR7QRXW8W94TQ5R9V3` — `source_discovery` for `seekingalpha_trending_daily`
+- `ready` `01KYVJ62SR72F5MHBFXFNM08XZ` — `opportunity_research` for `opportunity_91ed90b11150b2e82e64`
+- `ready` `01KYVJ62SR1QVBM8AXA27KQ1MK` — `wiki_ingest` for `source_f586dbd8da0959b3b0c1`
+- `ready` `01KYVJ62SRF4GAV27YA2TP6892` — `quick_check_research` for `security_1c055eb9b2bb1f5a8ff2`
+- `ready` `01KYVJ62SRX0PZDVG0CJQPTAZQ` — `opportunity_research` for `opportunity_cf9e6675a66a9902aa21`
+- `ready` `01KYVJ62SR1Z7SWXHYE3A9QZSX` — `wiki_ingest` for `source_f0ea133f85f94c839bd7`
+- `ready` `01KYVJ62SRCTX6W0J3W9JGAZ30` — `opportunity_research` for `opportunity_d5b3ea7956243e11087f`
+- `ready` `01KYVJ62SRKPW4NCES58GK2RGD` — `wiki_ingest` for `source_b288b73cad132841a305`
+- `ready` `01KYVJ62SR3GYE4GAEGW95QAKW` — `opportunity_research` for `opportunity_7de132d3ba2354ec4cf3`
+- `ready` `01KYVJ62SRY0CAQZY02DEJED5P` — `wiki_ingest` for `source_a09fae88d7cba84e4ee7`
+- `ready` `01KYVJ62SRBRYJMAQY2S1ZG2QR` — `opportunity_research` for `opportunity_c43c780d3d1f99fdc90b`
+- `ready` `01KYVJ62SREB8036QWCTQ94J79` — `wiki_ingest` for `source_ee279ea7bea574851eed`
+- `ready` `01KYVJ62SR01KJPGW0E3Z5ZGD6` — `opportunity_research` for `opportunity_d0fcbdb3867a75c0179e`
+- `ready` `01KYVJ62SRPBVTDVT0DDK4N0RH` — `wiki_ingest` for `source_37350f09b823cbc18889`
+- `ready` `01KYVJ62SR8A0XWFWERMECNXX4` — `opportunity_research` for `opportunity_2c4484d31fe2a7007c74`
+- `ready` `01KYVJ62SR92G7MYVZ6DSF7H8M` — `wiki_ingest` for `source_43f6326c52a602d81b3f`
+- `ready` `01KYVJ62SRK1101MYYCE7256NF` — `quick_check_research` for `security_4627aea1bf7d8943d3d8`
+- `ready` `01KYVJ62SRHP0ES170T3FJG8A5` — `wiki_ingest` for `source_f0951f04d0d9daba8d0f`
+- `ready` `01KYVJ62SR384EB58S06SFPK5G` — `quick_check_research` for `security_488a9d7f7a8573597724`
+- `ready` `01KYVJ62SR4B484KXW7V8CSPR0` — `opportunity_research` for `opportunity_68ed9e422c73cd2b9cf5`
+- `ready` `01KYVJ62SR4A6VFQBFNPPDRQ84` — `wiki_ingest` for `source_fcfc7bd3378bc1945e40`
+- `ready` `01KYVJ62SR0AW69F5PTNWBCF81` — `wiki_ingest` for `source_0a7ae71530f1e999e0a2`
+- `ready` `01KYVJ62SRX74CPEMJD91D8WKX` — `quick_check_research` for `security_89969b7dac39b7db5661`
+- `ready` `01KYVJ62SR74SKH9E7JKB86ARQ` — `opportunity_research` for `opportunity_dca591e5e362c5d98674`
+- `ready` `01KYVJ62SRYNSZX5GSTJND9MHF` — `wiki_ingest` for `source_1b7180e567445d4ee19a`
+- `ready` `01KYVJ62SRBDBV4T7HPTEK2VB7` — `quick_check_research` for `security_9b0db3bc77914b23a307`
+- `ready` `01KYVJ62SRZ8RT1788FTN434KY` — `opportunity_research` for `opportunity_1f5354d4ca15d6c24f80`
+- `ready` `01KYVJ62SRWAHPJHA7QA05F58X` — `wiki_ingest` for `source_e07a3f1a0aabd3a616a9`
+- `ready` `01KYVJ62SRSCG1SJX03H1GYGX5` — `quick_check_research` for `security_9d4049ed6669a52815d6`
+- `ready` `01KYVJ62SRMQWEK23RM9TQ0A0C` — `opportunity_research` for `opportunity_c1687906281f34820e76`
+- `ready` `01KYVJ62SRJS1FVJNPTHNE7473` — `wiki_ingest` for `source_10ae048cade56c4ed504`
+- `ready` `01KYVJ62SRG5B63TQBEHR5AFD3` — `wiki_ingest` for `source_81e05717ea7b0d03ca62`
+- `ready` `01KYVJ62SR18ZSBK3KYFCEJ1GP` — `opportunity_research` for `opportunity_92d013ea44dbb97bae7e`
+- `ready` `01KYVJ62SRDRAK08R9D4XNNDEZ` — `wiki_ingest` for `source_1b81f269aadfd0893730`
+- `ready` `01KYVJ62SRH9ZY1MNMR9B1SHAN` — `opportunity_research` for `opportunity_796db6c9d85e1dd224f3`
+- `ready` `01KYVJ62SRT6Y7CDDNBR2Y2ASM` — `wiki_ingest` for `source_da68baf8d7f5487f4a96`
+- `ready` `01KYVJ62SR04QCNBHAYXVJHCM2` — `opportunity_research` for `opportunity_53a86b93f5863375c3f9`
+- `ready` `01KYVJ62SRK3GC82JH51E3SP4T` — `wiki_ingest` for `source_92aad19d6684f2437637`
+- `ready` `01KYVJ62SR4AABMA256PE9S3ZF` — `opportunity_research` for `opportunity_b22dfe4259e9f57ecfcd`
+- `ready` `01KYVJ62SRFAT0BHZHST9838RQ` — `wiki_ingest` for `source_76e121047cd52659d075`
+- `ready` `01KYVJ62SRG31KASASEYZ2476N` — `quick_check_research` for `security_c9a37d277445869a8809`
+- `ready` `01KYVJ62SRNB44GQ0GWX10MXXX` — `opportunity_research` for `opportunity_b634bc66940ab792d88a`
+- `ready` `01KYVJ62SR2B8NHPZ0X7E7SZ0J` — `wiki_ingest` for `source_63928f6200ad1efb0643`
+- `ready` `01KYVJ62SR10G0SY00S9X9PMK3` — `opportunity_research` for `opportunity_cc6098d8b492c8b12d94`
+- `ready` `01KYVJ62SRARPEX1W4C49BVA0Z` — `wiki_ingest` for `source_52ec4b2f074dc4a805b4`
+- `ready` `01KYVJ62SR3VDNNHV49M5RAX3D` — `opportunity_research` for `opportunity_49f0cc9a6a862e196f21`
+- `ready` `01KYVJ62SRKWZ2Y29VE5ZH4BV9` — `wiki_ingest` for `source_fffb3c94f078738b18af`
+- `ready` `01KYVJ62SR5JT754NAGZD02F5F` — `opportunity_research` for `opportunity_dbcb905f07e035a2d0b0`
+- `ready` `01KYVJ62SR912PA2Z30FFDWQPV` — `wiki_ingest` for `source_021cabcb9d54084ac460`
+- `waiting` `01KYVJ62SRTMQH1020TSZKFS9T` — `relationship_research` for `relationship_871e21ff73620ab8eb14`
+
+### Open issues and delivery failures
+
+- `warning` **`issue_0367496037d0e3f45ccb`** — Daily preparation degraded: security\_fb87fac302a5446a1ced: security\_fb87fac302a5446a1ced: YFTzMissingError: $LAC: possibly delisted; no timezone found
+- `warning` **`issue_0452943dbcb7cbcd404b`** — Daily preparation degraded: security\_ad3b1f8f59fd599f079a: security\_ad3b1f8f59fd599f079a: price cache is empty
+- `warning` **`issue_10ff1797ec43b252e279`** — Daily preparation degraded: security\_c150f31c30afdb4a85f9: security\_c150f31c30afdb4a85f9: price cache is empty
+- `warning` **`issue_1285e87ea97cc268036a`** — Daily preparation degraded: security\_61567714298b9563d1a9: security\_61567714298b9563d1a9: price cache is empty
+- `warning` **`issue_1681e7daa698c45f8006`** — Daily preparation degraded: security\_2dbe878dfc899d7ee867: security\_2dbe878dfc899d7ee867: YFTzMissingError: $FCX: possibly delisted; no timezone found
+- `warning` **`issue_1ad34e45aa4568f4a522`** — Daily preparation degraded: security\_715bde20b6e1e1320c1a: security\_715bde20b6e1e1320c1a: price cache is empty
+- `warning` **`issue_1bae1abd860fc0000c88`** — Daily preparation degraded: FX AUD/EUR: FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
+- `warning` **`issue_1bb9022d55d25edce900`** — Daily preparation degraded: security\_2c779e81c27b78c556bb: security\_2c779e81c27b78c556bb: YFTzMissingError: $TX: possibly delisted; no timezone found
+- `warning` **`issue_1bd0406c44f5c1cb29fa`** — Daily preparation degraded: security\_4b61970aa8f574446819: security\_4b61970aa8f574446819: YFTzMissingError: $GEV: possibly delisted; no timezone found
+- `warning` **`issue_1eb21ef7157dbe368e93`** — YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A: @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **`issue_20b09e9371f8d5b1c303`** — Daily preparation degraded: security\_22c2b9d782a62d7a9b86: security\_22c2b9d782a62d7a9b86: YFTzMissingError: $ATKR: possibly delisted; no timezone found
+- `warning` **`issue_2781ea8889ae33bd5a60`** — YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A: @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **`issue_2873eb4075f12fa65306`** — Daily preparation degraded: security\_8a5c43888d224de85c69: security\_8a5c43888d224de85c69: price cache is empty
+- `warning` **`issue_2e234f6d4287b0e0f129`** — Daily preparation degraded: FX USD/EUR: FX USD/EUR: YFTzMissingError: $USDEUR=X: possibly delisted; no timezone found
+- `warning` **`issue_3135d82d86a9c902250b`** — Daily preparation degraded: security\_0cf8075039299094d614: security\_0cf8075039299094d614: price cache is empty
+- `warning` **`issue_32d1f7843dfa6f6a4bfe`** — Daily preparation degraded: security\_1c055eb9b2bb1f5a8ff2: security\_1c055eb9b2bb1f5a8ff2: YFTzMissingError: $RIO: possibly delisted; no timezone found
+- `warning` **`issue_3387fb684632341a351b`** — Daily preparation degraded: security\_1e8fbdb0f45f2b413e00: security\_1e8fbdb0f45f2b413e00: price cache is empty
+- `warning` **`issue_338b27b21c860e87598b`** — Daily preparation degraded: security\_18a3ab0ee6086ee85d0f: security\_18a3ab0ee6086ee85d0f: YFTzMissingError: $ETN: possibly delisted; no timezone found
+- `warning` **`issue_38d1e37f3d5d6e110e08`** — Daily preparation degraded: security\_98470cfc01bbcde78fc2: security\_98470cfc01bbcde78fc2: price cache is empty
+- `warning` **`issue_3a4655b66f410a1836dc`** — Daily preparation degraded: security\_9b0db3bc77914b23a307: security\_9b0db3bc77914b23a307: price cache is empty
+- `warning` **`issue_3cc01f918c960ecd1e86`** — Daily preparation degraded: security\_4627aea1bf7d8943d3d8: security\_4627aea1bf7d8943d3d8: YFTzMissingError: $SGML: possibly delisted; no timezone found
+- `warning` **`issue_3dfbaf44b38a480a8aa4`** — Daily preparation degraded: security\_7ca095d63423c55a90e3: security\_7ca095d63423c55a90e3: YFTzMissingError: $RKLB: possibly delisted; no timezone found
+- `warning` **`issue_44fe890b2fbae8cf90a0`** — Daily preparation degraded: security\_1f9cce545ede94cd6349: security\_1f9cce545ede94cd6349: YFTzMissingError: $ISRG: possibly delisted; no timezone found
+- `warning` **`issue_4cea078fdac19d342c04`** — Daily preparation degraded: security\_dfa34d4b9050964b465e: security\_dfa34d4b9050964b465e: price cache is empty
+- `warning` **`issue_50e28d602eb0feb06784`** — Daily preparation degraded: security\_6cf75bd0ec0aa2a20148: security\_6cf75bd0ec0aa2a20148: price cache is empty
+- `warning` **`issue_51e19c59b425d7011575`** — Daily preparation degraded: security\_c9a37d277445869a8809: security\_c9a37d277445869a8809: YFTzMissingError: $RBLX: possibly delisted; no timezone found
+- `warning` **`issue_55f958632a0f142a3925`** — Daily preparation degraded: security\_96ba305ee7cd586bc348: security\_96ba305ee7cd586bc348: price cache is empty
+- `warning` **`issue_568a09e6aa89b220ac34`** — Daily preparation degraded: security\_dc7a111e297be528d96b: security\_dc7a111e297be528d96b: price cache is empty
+- `warning` **`issue_5f40235a5598fc72203e`** — Daily preparation degraded: security\_b2116dcf976c96974d7b: security\_b2116dcf976c96974d7b: price cache is empty
+- `warning` **`issue_666586697c8b2cf251b7`** — Daily preparation degraded: security\_66cdcf90aac0d83e76f3: security\_66cdcf90aac0d83e76f3: YFTzMissingError: $ALB: possibly delisted; no timezone found
+- `warning` **`issue_6968cdf3d5a050da82a1`** — YouTube discovery failed for UCS01CiRDAiyhR\_mTHXDW23A: @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **`issue_6b3c8e68ec789ffd7037`** — Daily preparation degraded: security\_fe4648901e7675f157fd: security\_fe4648901e7675f157fd: price cache is empty
+- `warning` **`issue_6c93f0fd88af720b0060`** — Daily preparation degraded: security\_c86bb4e75658c07142cf: security\_c86bb4e75658c07142cf: price cache is empty
+- `warning` **`issue_7473df2183611e3ab999`** — YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm\_jw: @thelimitingfactor: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **`issue_74ca76f4c9de18775121`** — Daily preparation degraded: security\_7bf8f4c9cc12ae410e40: security\_7bf8f4c9cc12ae410e40: price cache is empty
+- `warning` **`issue_74e89bf248810ee20ffe`** — Daily preparation degraded: security\_83a56943e18793f685b0: security\_83a56943e18793f685b0: price cache is empty
+- `warning` **`issue_76d5e90287daac4b0075`** — Daily preparation degraded: security\_c5a9e460d3350284d157: security\_c5a9e460d3350284d157: price cache is empty
+- `warning` **`issue_7a77bfdb512efe271402`** — Daily preparation degraded: security\_3a75fc1ccca2ee7c937a: security\_3a75fc1ccca2ee7c937a: price cache is empty
+- `warning` **`issue_7b47b2b9113e25dccd6b`** — Daily preparation degraded: security\_cd492d97064d8574156e: security\_cd492d97064d8574156e: price cache is empty
+- `warning` **`issue_7bc10afaa74172983194`** — Daily preparation degraded: security\_6f9a1450edceb9307c9a: security\_6f9a1450edceb9307c9a: YFTzMissingError: $ANET: possibly delisted; no timezone found
+- `warning` **`issue_8063efca3ea5402f7588`** — Daily preparation degraded: security\_cc4dcb8f002b61dffe00: security\_cc4dcb8f002b61dffe00: YFTzMissingError: $PARRO.PA: possibly delisted; no timezone found
+- `warning` **`issue_82988148270c1671878b`** — Daily preparation degraded: security\_ce9b78a4d0773c950765: security\_ce9b78a4d0773c950765: price cache is empty
+- `warning` **`issue_8839071e805e6a9f69c4`** — Daily preparation degraded: security\_eca976f0076a425ea1bb: security\_eca976f0076a425ea1bb: price cache is empty
+- `warning` **`issue_8a44c0f8adb3d0d2fb86`** — Daily preparation degraded: security\_59304f90c440def31dc5: security\_59304f90c440def31dc5: YFTzMissingError: $RTX: possibly delisted; no timezone found
+- `warning` **`issue_8ada3995ac26a38446f5`** — Daily preparation degraded: security\_ef35e41886220d51c22c: security\_ef35e41886220d51c22c: price cache is empty
+- `warning` **`issue_8b0b68860313ad4f9bec`** — Daily preparation degraded: security\_f2b9760d847b2ba59324: security\_f2b9760d847b2ba59324: YFTzMissingError: $ENPH: possibly delisted; no timezone found
+- `warning` **`issue_94374052817041f82969`** — Daily preparation degraded: security\_fe5539a7d3fd9d553bce: security\_fe5539a7d3fd9d553bce: price cache is empty
+- `warning` **`issue_97455cd9fdcd489ca07f`** — Daily preparation degraded: security\_664f93a7eaca72e76e9b: security\_664f93a7eaca72e76e9b: price cache is empty
+- `warning` **`issue_97953d4d2c1016441831`** — Daily preparation degraded: security\_47a0b06f6c6c478d7c1e: security\_47a0b06f6c6c478d7c1e: price cache is empty
+- `warning` **`issue_989496e6d541f631fc1d`** — Daily preparation degraded: security\_8472507d7d320aa388a7: security\_8472507d7d320aa388a7: YFTzMissingError: $CRWD: possibly delisted; no timezone found
+- `warning` **`issue_9b4cbf2dec47a2d5f28b`** — Daily preparation degraded: security\_9d4049ed6669a52815d6: security\_9d4049ed6669a52815d6: YFTzMissingError: $SQM: possibly delisted; no timezone found
+- `warning` **`issue_a431f38470d93e962d76`** — Daily preparation degraded: FX GBP/EUR: FX GBP/EUR: YFTzMissingError: $GBPEUR=X: possibly delisted; no timezone found
+- `warning` **`issue_a8ebff7b7d828f3d7e93`** — Daily preparation degraded: security\_89969b7dac39b7db5661: security\_89969b7dac39b7db5661: price cache is empty
+- `warning` **`issue_a95ee10bec8dac18764c`** — Daily preparation degraded: security\_d12e746b3c9d392183cc: security\_d12e746b3c9d392183cc: price cache is empty
+- `warning` **`issue_acfbebf0c986cbab342f`** — Daily preparation degraded: security\_ed7d5b616a196969c815: security\_ed7d5b616a196969c815: YFTzMissingError: $RXRX: possibly delisted; no timezone found
+- `warning` **`issue_ad21944ead57ede6e2ac`** — Daily preparation degraded: security\_6ad1af8d10d6276a0221: security\_6ad1af8d10d6276a0221: YFTzMissingError: $SCCO: possibly delisted; no timezone found
+- `warning` **`issue_ad9eb2e31cc57f9f4f03`** — Daily preparation degraded: security\_204be2a44063993de1a8: security\_204be2a44063993de1a8: price cache is empty
+- `warning` **`issue_b04460fc941344218f71`** — Daily preparation degraded: security\_c120e9f26ebb6159adf9: security\_c120e9f26ebb6159adf9: YFTzMissingError: $ABBNY: possibly delisted; no timezone found
+- `warning` **`issue_b179d981c051d3993456`** — Daily preparation degraded: security\_d08d763780400dfbffce: security\_d08d763780400dfbffce: price cache is empty
+- `warning` **`issue_b17f72c0500299df7879`** — YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw: @CouchInvestor: MsNPz0dBYDw This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **`issue_b20b8e588a6dab63737a`** — Daily preparation degraded: security\_cb88f9154cfeaa15e878: security\_cb88f9154cfeaa15e878: price cache is empty
+- `warning` **`issue_b257fa5df338d5ef2c65`** — Daily preparation degraded: security\_b1f2c48e1a744f5ecf67: security\_b1f2c48e1a744f5ecf67: price cache is empty
+- `warning` **`issue_b9604572acf8d22dc6fd`** — Daily preparation degraded: security\_97f38b2cb2d5ef127f5a: security\_97f38b2cb2d5ef127f5a: price cache is empty
+- `warning` **`issue_c571edbf5e35494198e7`** — Daily preparation degraded: security\_ad5917642acbba28c1f2: security\_ad5917642acbba28c1f2: price cache is empty
+- `warning` **`issue_c69b1fa014248a791e87`** — Daily preparation degraded: security\_bdc2f87dadf134760c3a: security\_bdc2f87dadf134760c3a: YFTzMissingError: $PLTR: possibly delisted; no timezone found
+- `warning` **`issue_c74eab1422fff8b4584c`** — Daily preparation degraded: security\_0a56aa634d077fe5796f: security\_0a56aa634d077fe5796f: price cache is empty
+- `warning` **`issue_cb9347f5eb1a1055de4e`** — Daily preparation degraded: security\_3853e54c619d597dcaa1: security\_3853e54c619d597dcaa1: price cache is empty
+- `warning` **`issue_cf17771fb2fc5b9395ba`** — Daily preparation degraded: security\_a5dc16f3f4b245e6c168: security\_a5dc16f3f4b245e6c168: price cache is empty
+- `warning` **`issue_d21a93a824fdaf0ec1dd`** — Daily preparation degraded: security\_37ddcbdaad296ad831f2: security\_37ddcbdaad296ad831f2: YFTzMissingError: $COIN: possibly delisted; no timezone found
+- `warning` **`issue_d24d52684b3794870e5d`** — Daily preparation degraded: security\_95351d928b674bbdf687: security\_95351d928b674bbdf687: price cache is empty
+- `warning` **`issue_d36bf9b837165bacac8a`** — Daily preparation degraded: security\_099561384c0f5e697727: security\_099561384c0f5e697727: price cache is empty
+- `warning` **`issue_e1b48875d46f1bd3debb`** — Daily preparation degraded: security\_2433a056eb0c55961fcc: security\_2433a056eb0c55961fcc: price cache is empty
+- `warning` **`issue_e8012ba9cfff70e45781`** — Daily preparation degraded: security\_2010347f1a0a5ea60f47: security\_2010347f1a0a5ea60f47: price cache is empty
+- `warning` **`issue_ea600e6a0abd700bbdd4`** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF\_Cg: @allin: TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **`issue_ed85ad36a02af2fdfc33`** — Daily preparation degraded: security\_567d0d575bbd30aaa91d: security\_567d0d575bbd30aaa91d: price cache is empty
+- `warning` **`issue_f320e056b26d54014584`** — Daily preparation degraded: security\_a9eb9838940ef5ceaa0c: security\_a9eb9838940ef5ceaa0c: YFTzMissingError: $FLNC: possibly delisted; no timezone found
+- `warning` **`issue_fc3830c067fcea6132aa`** — Daily preparation degraded: security\_55c9ce2fdcd32dad6b8c: security\_55c9ce2fdcd32dad6b8c: price cache is empty
+- `warning` **`issue_fe482d25304c03ce4d28`** — Daily preparation degraded: security\_33d9c44facc75c726c7d: security\_33d9c44facc75c726c7d: price cache is empty
+
+### Machine decision provenance
+
+- `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
+- `no_actionable_signals` — No strategy has produced a current actionable trade signal.
+- `allocation_targets`: `75f962eaeff6d10f8349903bdf098da22945c0ba63a3c94c350d89941a0e5e01`
+- `cash_ledger`: `680c5eba138f06e3afc99fbd8919ef0999b97aa6cc567edaf9a11cbece564029`
+- `configuration`: `c56da093fd4720881043f59fe4128ce557959405881d57c919968d11229d1bad`
+- `csv_contracts`: `9c7fa8c44f4096f12c5e8b51b2d17d006d2962600936ea0cdb01ce369ba4c154`
+- `decision_schema`: `b841be7e40b72ae7288f7515f606bdb153e972c404186c027b7990875e885de0`
+- `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
+- `fx_aud_eur`: `d245327053a2fffd4e098ca317bfb3369e853e37a90fe2596973b36c78984c2b`
+- `fx_gbp_eur`: `7d0ec7e0e6ac0131e03cc9867b088192478869e629808d5ba7c8dbd38a46d9af`
+- `fx_usd_eur`: `b2188e799edbb902f4a688ee2701ce560d70032a6f66067736e8cb35b16dc35c`
+- `indicators`: `77eb829dcb73abdb0359d64bef80e99d7802b1f5592d1b6162713d4f7b84ea71`
+- `issues`: `656cc1e55c89334b4d877dcb925a8967a68185214674b6be3316c97b76466a05`
+- `market_latest`: `4dd4561cacf99f7177ac77d371871af717729d42a0109ae6f15b5d715c8f9279`
+- `operation_payloads`: `1ee34ac7be82a6b3444c8df65dcddb19690b99782e452d37910fb7033ed3b5f2`
+- `operations_history`: `ee189a0f404970116a907c312c69013b673be585589886df9e6c74ad88f5bd5e`
+- `operations_todo`: `be1d430558688cc174a344551d3a8531a998fe22d4f7fa5aed56ffc257d62af8`
+- `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
+- `orders`: `ed876ae7f67d9632296d12497cb334ed5c925843ac65f9691907bf7a8613a3c0`
+- `performance_daily`: `f065e42cd8ee38c74d3b7e1b488efc4560cb7d19f691354174fa2d85fc76eee9`
+- `performance_epochs`: `bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327`
+- `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
+- `relationships`: `a6a9995dacd90bf43997b579c49c1b9ea6ac82cf73cd578dbd97559ae54394d3`
+- `runs`: `02fde7ec598012587bcc489d23b6fd2846e2e20fffd5c0ec9ec5fdf2b450f740`
+- `securities`: `691f75ac9fe1c443a2d0a6137508b4e5e07845158aaf76412c025a2be1a4a83f`
+- `security_assessments`: `41038f69cf5376cbc644dbbc91d0d4481099e94b2636db73b2522d179eb2eb62`
+- `signals`: `874d3deab149ff6c97a32ad6e61f2d243a5f96559acf815dfc1cd3dc91595f41`
+- `source_registry`: `afb3498f741baa0ebc96028824d47a1c505ca9d0ae7a225e9083f9404b4587fa`
+- `strategies`: `5ed9f7cb50e7da9cad149dba066c4e8429a9b21ee4446bdd837fc1b0a5923e0b`
+- `strategy_legs`: `c814365d6571e84fc619f0905e14a9b7671dd7e312222d4505c732719d26dddf`
+- `wiki_inbox`: `8d412c46365232499f03b30b560308a275dea721623d272600294547b6c7320d`
+
+### Links
+
+- [[index|Investor dashboard]]
+- [[model-portfolio|Model portfolio]]
+- [[signals|Signals]]
+- [[system-status|System status]]
+- GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260731.md

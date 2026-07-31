@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-07-30"
+updated: "2026-07-31"
 provenance: repository-contract
 ---
 
@@ -1346,3 +1346,102 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Aligned wiki lint with the configured append-only log policy: ordinary maintained pages retain
   the 100 KB cap, while `log.md` is bounded by the 5,000-line yearly rotation threshold.
+
+- Created candidate packet [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6d827efad15c]] (6d827efad15c).
+
+- Classified [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6d827efad15c]] as `ingest`: Material Bollinger breakout with a 4.1% monthly gain merits durable review.
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-bollinger_above_upper-f3d2a48409b4]] (f3d2a48409b4).
+
+- Classified [[inbox/market-security_204be2a44063993de1a8-bollinger_above_upper-f3d2a48409b4]] as `ingest`: Material 17.4% monthly rise with a new Bollinger upper-band breakout merits durable review.
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-961cf1d1521a]] (961cf1d1521a).
+
+- Classified [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-961cf1d1521a]] as `ingest`: Material 17.4% monthly gain with a newly entered RSI-overbought condition merits durable review.
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9]] (de9b04e0f3e9).
+
+- Classified [[inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9]] as `ingest`: Material volume anomaly coincides with a 17.4% period return and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f]] (e61b5356f36f).
+
+- Classified [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f]] as `ingest`: A strong newly entered volume anomaly with a material negative monthly return merits durable review.
+
+- Created candidate packet [[inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1]] (73cae404a6a1).
+
+- Classified [[inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1]] as `ingest`: Material volume anomaly coincides with a 16.7% decline over the period and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98]] (714b4dd20b98).
+
+- Classified [[inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98]] as `ingest`: A new MACD bullish crossover after a material decline is a durable, security-specific market transition worth recording.
+
+- Created candidate packet [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340]] (0f8044b1c340).
+
+- Classified [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340]] as `ingest`: Strengthened volume anomaly is a material market transition for the tracked security.
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da]] (58db175775da).
+
+- Classified [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da]] as `ingest`: Material volume anomaly coincides with an approximately 11.5% decline over the period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea]] (51314ebfffea).
+
+- Classified [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea]] as `ingest`: Material strengthened RSI oversold transition with a 34.2% period decline warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_9b0db3bc77914b23a307-bollinger_above_upper-fff9129760cd]] (fff9129760cd).
+
+- Classified [[inbox/market-security_9b0db3bc77914b23a307-bollinger_above_upper-fff9129760cd]] as `ingest`: New Bollinger upper-band transition with a positive monthly return merits durable market-state recording.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477]] (91ad512dd477).
+
+- Classified [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477]] as `ingest`: New volume anomaly coincides with a material 7.8% decline over the period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325]] (fa5c853cd325).
+
+- Classified [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325]] as `ingest`: Material 20.3% decline with a new Bollinger-below-lower transition merits durable review.
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-0cbd43273f8a]] (0cbd43273f8a).
+
+- Classified [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-0cbd43273f8a]] as `ingest`: Material entry above the upper Bollinger Band after an 11.1% period return merits durable review.
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-7a81ccdb18b3]] (7a81ccdb18b3).
+
+- Classified [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-7a81ccdb18b3]] as `ingest`: Material RSI overbought transition with substantially strengthened signal and an 11.1% period return.
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-30d19f036e9a]] (30d19f036e9a).
+
+- Classified [[inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-30d19f036e9a]] as `ingest`: A new volume-anomaly transition coincides with an 11.1% monthly price increase and merits durable review.
+
+- Created candidate packet [[inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72]] (3ecd15687b72).
+
+- Classified [[inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72]] as `ingest`: High-strength volume anomaly transition merits durable review for the security.
+
+- Created candidate packet [[inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a]] (d686f093667a).
+
+- Classified [[inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a]] as `ingest`: Material one-month decline with a newly entered volume anomaly warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796]] (4573b7d51796).
+
+- Classified [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796]] as `ingest`: Material new Bollinger-band breach with a 12.05% monthly decline warrants durable review.
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea]] (5cd1c52bcbea).
+
+- Classified [[inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea]] as `ingest`: New volume-anomaly transition with a material -12.05% monthly return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c]] (885d2463351c).
+
+- Classified [[inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c]] as `ingest`: A new Bollinger-band breakout is a material, validated price transition for the tracked security and merits durable review.
+
+- Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb]] (094629fe26cb).
+
+- Classified [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb]] as `ingest`: A new MACD bullish crossover with a positive 2.7% period return is a material indicator transition for the security.
+
+- Researched [[securities/security_204be2a44063993de1a8|Microsoft]] after its 2026-07-30
+  earnings-driven upper-Bollinger, RSI-overbought, and volume-anomaly transitions. Fiscal 2026
+  Cloud, Azure, operating-income, cash-flow, and backlog growth support the operating thesis, but
+  the USD 451.10 mark leaves 16.9% downside, only 10.8% base upside, weak payoff asymmetry, and
+  adverse entry timing. The initial scenario-complete assessment is ineligible, so no conviction
+  strategy or idea-refresh operation was created.
+
+- Published investor decision snapshot `decision_887f74852419aae2ad1f`.
+
+- Generated canonical [[daily-reports/daily-report_20260731]] for run `gha-30613872508-1`.

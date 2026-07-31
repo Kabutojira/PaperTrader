@@ -1,0 +1,18 @@
+{
+  "source_id": "source_msft_fy2026_10k",
+  "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+  "source_type": "filing",
+  "title": "Microsoft Corporation Form 10-K for the fiscal year ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4bcf2da2871acc19e32c5a62f36f6d83d6aae03cdc4aaa9a86a9a21ee8223f02",
+  "related_entity_ids": "security_204be2a44063993de1a8",
+  "checked_at": "2026-07-31T07:56:03Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Microsoft Cloud revenue increased 27% to $214.4 billion; commercial remaining performance obligation increased 84% to $678 billion.",
+  "summary": "The SEC-filed fiscal 2026 Form 10-K reports revenue of USD 331.839 billion, operating income of USD 155.237 billion, net income of USD 133.749 billion, diluted EPS of USD 17.95, operating cash flow of USD 182.935 billion, and property-and-equipment additions of USD 115.948 billion. Cash and short-term investments were USD 76.843 billion against USD 40.294 billion of current and long-term debt. Microsoft Cloud revenue grew 27% to USD 214.4 billion, Azure and other cloud services grew 41%, commercial remaining performance obligation reached USD 678 billion, and 7.426 billion common shares were outstanding on July 23, 2026.",
+  "run_id": "gha-30613872508-1"
+}

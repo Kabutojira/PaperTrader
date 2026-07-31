@@ -1,0 +1,23 @@
+{
+  "security_id": "security_204be2a44063993de1a8",
+  "issuer_id": "issuer_64fbfb8d9695d940c4bb",
+  "company_name": "Microsoft Corporation",
+  "instrument_name": "Microsoft Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "MSFT",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "MSFT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 earnings-driven upper-Bollinger, RSI-overbought, and volume-anomaly transitions.",
+  "research_summary": "Fiscal 2026 cloud and AI growth is exceptional, but weak scenario payoff asymmetry and post-earnings technical extension keep Microsoft at watch with no strategy.",
+  "research_page": "data/wiki/securities/security_204be2a44063993de1a8.md",
+  "last_research_at": "2026-07-31T07:56:03Z",
+  "next_review_at": "2026-08-30T07:56:03Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+}
