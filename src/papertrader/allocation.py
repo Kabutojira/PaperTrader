@@ -1739,22 +1739,17 @@ def plan_allocation(
     # happened to publish it.  Keeping run metadata out of the identity prevents
     # an unchanged plan from superseding its own in-flight strategy/signal work
     # every time a daily run is finalized.
-    identity_orders = sorted(
-        (
-            row
-            for row in read_table(repository_root, "orders")
-            if row["status"] in {"pending", "partially_filled"}
-        ),
-        key=lambda row: row["order_id"],
-    )
-    identity_order_ids = {row["order_id"] for row in identity_orders}
-    identity_order_legs = sorted(
-        (
-            row
-            for row in read_table(repository_root, "order_legs")
-            if row["order_id"] in identity_order_ids
-        ),
-        key=lambda row: (row["order_id"], row["leg_id"]),
+    provisional_rows = _build_rows(
+        candidates,
+        settings,
+        equity,
+        portfolio,
+        pending,
+        plan_id="",
+        run_id=run_id,
+        as_of=instant,
+        deployment_budget=deployment_budget,
+        diversified=(len(eligible) >= settings.allocation.minimum_diversified_candidates),
     )
     input_identity = {
         "mode": settings.allocation.mode,
@@ -1764,11 +1759,6 @@ def plan_allocation(
             "current_gross_exposure_base": decimal_text(portfolio.gross_total),
             "current_baseline_exposure_base": decimal_text(portfolio.baseline_total),
             "current_conviction_exposure_base": decimal_text(portfolio.conviction_total),
-            "pending_gross_exposure_base": decimal_text(pending.gross_total),
-            "pending_baseline_exposure_base": decimal_text(pending.baseline_total),
-            "pending_committed_cash_base": decimal_text(pending.committed_cash),
-            "deployment_budget_base": decimal_text(deployment_budget),
-            "diversified_budget_base": decimal_text(diversified_budget),
         },
         "policy": {
             "target_invested_pct": decimal_text(settings.allocation.target_invested_pct),
@@ -1814,30 +1804,27 @@ def plan_allocation(
                 "eligible": candidate.eligible,
                 "reasons": sorted(set(candidate.reasons)),
                 "rank": candidate.rank,
-                "allocation": decimal_text(candidate.allocation),
             }
             for candidate in sorted(candidates, key=lambda value: value.security_id)
+        ],
+        "approved_targets": [
+            {
+                "security_id": row["security_id"],
+                "strategy_id": row["strategy_id"],
+                "sleeve": row["sleeve"],
+                "target_weight_pct": row["target_weight_pct"],
+                "target_value_base": row["target_value_base"],
+                "assessment_as_of": row["assessment_as_of"],
+            }
+            for row in provisional_rows
         ],
         "securities": [dict(securities[key]) for key in sorted(candidate_ids)],
         "assessments": [dict(assessments[key]) for key in sorted(assessments)],
         "portfolio": read_table(repository_root, "portfolio"),
-        "orders": identity_orders,
-        "order_legs": identity_order_legs,
         "relationships": [dict(row) for key in sorted(relationships) for row in relationships[key]],
     }
     plan_id = stable_id("allocation_plan", content_hash(input_identity))
-    rows = _build_rows(
-        candidates,
-        settings,
-        equity,
-        portfolio,
-        pending,
-        plan_id=plan_id,
-        run_id=run_id,
-        as_of=instant,
-        deployment_budget=deployment_budget,
-        diversified=(len(eligible) >= settings.allocation.minimum_diversified_candidates),
-    )
+    rows = [{**row, "allocation_plan_id": plan_id} for row in provisional_rows]
     if settings.allocation.mode == "disabled":
         rows = []
     prior_rows = [

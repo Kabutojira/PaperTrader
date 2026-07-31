@@ -24,6 +24,7 @@ from papertrader.allocation import (
     CONFIDENCE_RANK,
     AllocationError,
     assessment_payoff_reasons,
+    latest_allocation_target,
     score_assessment,
 )
 from papertrader.atomic_io import atomic_write_json
@@ -1074,6 +1075,15 @@ def _apply_pending_orders(
         ):
             blockers.append("pending_order_state_unsafe")
             continue
+        if strategy["sleeve"] == "baseline":
+            target = latest_allocation_target(repository_root, strategy["strategy_id"])
+            if (
+                target is None
+                or target["allocation_plan_id"] != strategy["allocation_plan_id"]
+                or target["disposition"] not in {"open", "increase", "hold"}
+            ):
+                blockers.append("pending_order_state_unsafe")
+                continue
         remaining = (
             required_decimal(row["quantity"], label="order quantity")
             - executed[(row["order_id"], row["leg_id"])]

@@ -1316,7 +1316,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
 
     pending_replan = plan_allocation(
         sandbox_repository,
-        replace(active, allocation=replace(active.allocation, mode="report_only")),
+        active,
         run_id="allocation-pending-replan",
         now=NOW + timedelta(minutes=1),
     )
@@ -1326,6 +1326,7 @@ def test_active_handoff_is_idempotent_and_order_quantity_is_code_owned(
         if row["security_id"] == "sec_00"
     )
     assert pending_replan.pending_gross_exposure_base == pending_target["target_value_base"]
+    assert pending_replan.allocation_plan_id == result.allocation_plan_id
     assert pending_target["delta_value_base"] == "0"
     assert pending_target["disposition"] == "hold"
 

@@ -532,6 +532,49 @@ def test_stale_pending_order_is_not_partially_projected_or_copy_ready(
     assert all(row.holding_type == "cash" for row in snapshot.current_portfolio.rows)
 
 
+def test_plan_mismatched_baseline_order_is_not_projected_or_copy_ready(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed_signal(
+        sandbox_repository,
+        sandbox_settings,
+        with_order=True,
+    )
+    strategies = read_table(sandbox_repository, "strategies")
+    strategies[0]["sleeve"] = "baseline"
+    strategies[0]["allocation_plan_id"] = "allocation_original"
+    write_table(sandbox_repository, "strategies", strategies)
+    write_table(
+        sandbox_repository,
+        "allocation_targets",
+        [
+            {
+                **_allocation_target(reason="above_cash_hurdle"),
+                "allocation_plan_id": "allocation_replacement",
+                "strategy_id": "strategy_00",
+                "target_weight_pct": "1",
+                "target_value_base": "1000",
+                "delta_value_base": "0",
+                "disposition": "hold",
+            }
+        ],
+    )
+
+    snapshot = build_decision_snapshot(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="mismatched-baseline-plan-fixture",
+        as_of=NOW,
+    )
+
+    assert snapshot.stance == "blocked"
+    assert snapshot.stance_reason_codes == ("pending_order_state_unsafe",)
+    assert snapshot.actionable_signals == ()
+    assert snapshot.approved_target_portfolio.cash_weight_pct == "100"
+    assert all(not row.order_id for row in snapshot.current_portfolio.rows)
+
+
 def test_expired_nonterminal_order_blocks_copy_and_target_projection(
     sandbox_repository: Path,
     sandbox_settings: Settings,
