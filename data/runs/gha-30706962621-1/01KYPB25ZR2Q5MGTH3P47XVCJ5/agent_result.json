@@ -1,0 +1,94 @@
+{
+  "operation_id": "01KYPB25ZR2Q5MGTH3P47XVCJ5",
+  "status": "succeeded",
+  "summary": "Completed the initial schema-version-2 review of DLocal Limited Class A common shares after the 2026-07-31 SMA 50/200 bullish crossover. Q1 2026 TPV, revenue and gross profit grew 73%, 55% and 40% year over year, and corporate cash reached USD 451.8 million, supporting the emerging-market payment-infrastructure thesis. Offsetting evidence includes gross-profit-over-TPV compression to 0.84%, weak quarterly adjusted free cash flow, 61% top-ten merchant concentration, and material tax, foreign-exchange, regulatory, working-capital and litigation risks. The crossover was narrow, with only a 1.34% 20-session return and mixed momentum evidence. At the USD 15.08 mark, the deterministic assessment derives Hold/Watch and allocation-ineligible: base upside is 9.42%, confidence-adjusted expected return is 7.62%, bear/base payoff is 0.21 and the USD 13.20 buy zone is below the mark. No strategy or idea follow-up was created.",
+  "evidence": [
+    {
+      "source": "source_dlocal_2025_20f",
+      "claim": "The audited 2025 Form 20-F confirms dLocal's Nasdaq Class A listing and payment-infrastructure model, reports that the ten largest merchants represented 61% of revenue, describes non-exclusive and short-notice merchant contracts, and details emerging-market regulatory, tax, foreign-exchange, working-capital, safeguarded-funds and litigation risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+      "observed_at": "2026-08-01T16:01:12Z",
+      "source_hash": "ec7c36ad5d3aa5e2b41e718edceb529d88058c86946c54df1e6122de56202b35"
+    },
+    {
+      "source": "source_dlocal_q1_2026_results",
+      "claim": "dLocal reported Q1 2026 TPV of USD 14.1 billion, revenue of USD 335.9 million and gross profit of USD 118.7 million, up 73%, 55% and 40% year over year. Gross profit over TPV fell to 0.84%, reported net income was USD 41.9 million, adjusted free cash flow was USD 14.7 million, corporate cash was USD 451.8 million and guidance was retained.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+      "observed_at": "2026-08-01T16:01:12Z",
+      "source_hash": "6728ca36193095a954cb21af54a521d35daa9203e7d6180975ae14ecd7ad4517"
+    },
+    {
+      "source": "source_dlocal_q1_2026_financials",
+      "claim": "The Q1 interim statements report USD 815.6 million total cash, USD 553.3 million equity, USD 41.9 million attributable profit and 298.5 million diluted weighted-average shares, while separately identifying large payment-settlement receivables and payables and employee-plan dilution relevant to valuation normalization.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm",
+      "observed_at": "2026-08-01T16:01:12Z",
+      "source_hash": "99545a59cda4db60414db2e6c5b8c6666a1db70a6fc8f37e4348d0b0dfcdead2"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "DLO closed at USD 15.079999923706055 on 2026-07-31, up 1.344085% over the canonical 2026-07-02 through 2026-07-31 period. The 50-day SMA of 13.25943924 narrowly crossed above the 200-day SMA of 13.23579513 with 0.001786 strength; RSI was 61.16314494, MACD remained below signal and volume was not anomalous.",
+      "observed_at": "2026-08-01T15:55:55Z",
+      "source_hash": "9e3af597c3d6705aadeffd1d5765dac32c5186209fa726df1d5aa3b3d8394b19"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_fc2d1bd3bc2ac4a0e4a3 is schema version 2 and derives Hold/Watch, complete research status, ineligible allocation status and quality score 80. Bear/base/bull fair values are USD 8.25, USD 16.50 and USD 25.20 with 25/50/25 probabilities; expected return is 10.16%, confidence-adjusted expected return is 7.62%, and exact failures include expected return, base return, bear/base payoff, expected/bear payoff and pending relationship gates.",
+      "observed_at": "2026-08-01T16:05:01Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/assessment_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/security_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_2025_20f_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_q1_2026_financials_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_q1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "dLocal was researched after its July 31 SMA 50/200 bullish crossover. Rapid TPV and gross-profit growth and strong corporate cash support the thesis, but take-rate compression, weak cash conversion, merchant concentration and emerging-market risks remain material. At USD 15.08, base upside is 9.42%, confidence-adjusted expected return is 7.62% and bear/base payoff is 0.21; the assessment is Hold/Watch and allocation-ineligible, with no strategy created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_2025_20f_request.json",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_q1_2026_results_request.json",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_q1_2026_financials_request.json",
+    "papertrader research security upsert --request data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease, sequential harness, and trusted native, controller and security-research skill preflight identities.",
+      "Confirmed the DLocal Limited issuer, Class A common-share instrument, DLO provider symbol, XNAS venue, USD currency and equity identity are unique and consistent across canonical state and the 2025 Form 20-F.",
+      "Matched the July 31 SMA 50/200 bullish crossover to the canonical 2026-07-02 through 2026-07-31 observation period, USD mark, indicators and source-price hash; classified it as a weak constructive monitoring signal rather than a fundamental trade catalyst.",
+      "Registered the audited 2025 annual filing, Q1 2026 results release and Q1 interim financial statements before assessment; all evidence references are available, identity-linked and current at the assessment timestamp.",
+      "Confirmed the current identity-matched USD market mark and USD/EUR rate were fresh and canonical for the assessment.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered scenarios and probabilities totaling 100.",
+      "Confirmed deterministic outputs: Hold rating, Watch portfolio action and conviction tier, complete research status, ineligible allocation status, quality score 80, USD 16.6125 probability-weighted fair value, 10.16% expected return and 7.62% confidence-adjusted expected return.",
+      "Confirmed the payload and canonical relationship state contain no linked ideas, so no idea-research follow-up is required; the full conviction strategy gate fails and no strategy-research follow-up was created.",
+      "The first assessment request failed closed on non-canonical soft-gap values; the corrected assessment used a new immutable request and succeeded.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, queue, allocation, publication, portfolio and accounting invariants.",
+      "Confirmed commands_run exactly matches the twelve canonical receipts in command_audit.json in receipt order, including the failed-closed assessment attempt.",
+      "Confirmed all operation artifacts are regular files with no symlinks or path traversal and that no allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance or other accounting state were changed by this operation."
+    ]
+  }
+}

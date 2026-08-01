@@ -1,0 +1,23 @@
+{
+  "security_id": "security_715bde20b6e1e1320c1a",
+  "issuer_id": "issuer_153eb518826ba6f3dbcd",
+  "company_name": "DLocal Limited",
+  "instrument_name": "DLocal Limited Class A common shares",
+  "instrument_type": "equity",
+  "ticker": "DLO",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "DLO",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "UY",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-31 SMA 50/200 bullish crossover; valuation, cash conversion, take rate, merchant concentration and emerging-market risks require monitoring.",
+  "research_summary": "Emerging-market payment volumes and gross profit are growing rapidly with strong corporate cash, but take-rate compression, weak quarterly cash conversion, merchant concentration and a poor bear/base payoff preclude a strategy at the current mark.",
+  "research_page": "data/wiki/securities/security_715bde20b6e1e1320c1a.md",
+  "last_research_at": "2026-08-01T16:01:12Z",
+  "next_review_at": "2026-08-31T16:01:12Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm"
+}

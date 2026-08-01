@@ -1,0 +1,18 @@
+{
+  "source_id": "source_alphabet_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+  "source_type": "filing",
+  "title": "Alphabet Inc. quarterly report for the period ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "fecfbc2683f630380b17937278ce3745eca150eb90e21a945fd6b78fe19728c7",
+  "related_entity_ids": "security_c86bb4e75658c07142cf",
+  "checked_at": "2026-08-01T16:32:28Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Quarterly Report Pursuant to Section 13 or 15(d) of the Securities Exchange Act of 1934",
+  "summary": "Alphabet's Q2 2026 Form 10-Q reports USD 119.796 billion quarterly revenue, USD 40.770 billion operating income, USD 242.474 billion cash, cash equivalents and marketable securities, USD 98.165 billion long-term debt, 12.230 billion common shares outstanding, USD 84.859 billion first-half operating cash flow and USD 80.598 billion first-half capital expenditures. It also documents equity and preferred issuance, antitrust proceedings and potential structural remedies.",
+  "run_id": "gha-30706962621-1"
+}

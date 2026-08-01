@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/assessment_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/security_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_2025_20f_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_q1_2026_financials_request.json",
+    "data/runs/gha-30706962621-1/01KYPB25ZR2Q5MGTH3P47XVCJ5/source_dlocal_q1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYPB25ZR2Q5MGTH3P47XVCJ5",
+  "passed": true,
+  "run_id": "gha-30706962621-1",
+  "validation_version": 1
+}

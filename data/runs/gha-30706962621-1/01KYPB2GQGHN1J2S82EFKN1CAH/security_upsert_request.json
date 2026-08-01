@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ad3b1f8f59fd599f079a",
+  "issuer_id": "issuer_5deb5665eaa22bd5dbbe",
+  "company_name": "Robinhood Markets, Inc.",
+  "instrument_name": "Robinhood Markets, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "HOOD",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "HOOD",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financial Services",
+  "industry": "Capital Markets",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 lower-Bollinger transition; valuation, trading and crypto cyclicality, credit, regulation, concentration, product execution, debt and dilution require monitoring.",
+  "research_summary": "Rapid asset, deposit, customer and revenue growth supports the platform thesis, but cyclicality, one-off earnings, higher costs and a bounded base value below the current mark make the lower-band alert a risk signal rather than an entry.",
+  "research_page": "data/wiki/securities/security_ad3b1f8f59fd599f079a.md",
+  "last_research_at": "2026-08-01T16:10:35Z",
+  "next_review_at": "2026-08-31T16:10:35Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crox_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm",
+  "source_type": "issuer_release",
+  "title": "Crocs, Inc. reports second quarter 2026 financial results",
+  "publisher": "Crocs, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "f52ca96031e7f6282ac04f67cbf7a95adbd942b64434ec3234523956e593f53f",
+  "related_entity_ids": "security_c150f31c30afdb4a85f9",
+  "checked_at": "2026-08-01T16:21:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Crocs Brand Surpasses $1 Billion In Quarterly Revenue For The First Time",
+  "summary": "The SEC-hosted Q2 2026 release reports record USD 1.179 billion revenue, 12.0% direct-to-consumer growth, 7.2% wholesale contraction, 59.4% gross margin, USD 296 million adjusted operating income and USD 4.55 adjusted diluted EPS. Crocs Brand grew 4.3% while HEYDUDE fell 5.7%. Management raised full-year revenue growth guidance to 1%-2% and adjusted diluted EPS to USD 13.70-14.00; first-half free cash flow was USD 232.0 million, total borrowings were USD 1.31 billion, and repurchase authorization was expanded.",
+  "run_id": "gha-30706962621-1"
+}

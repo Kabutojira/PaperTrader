@@ -1,0 +1,18 @@
+{
+  "source_id": "source_hood_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm",
+  "source_type": "filing",
+  "title": "Robinhood Markets, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "Robinhood Markets, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "454b499aaf20768afba029cc336539b37c3aa3b79aef20ab5cbced68769616fc",
+  "related_entity_ids": "security_ad3b1f8f59fd599f079a",
+  "checked_at": "2026-08-01T16:10:35Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "As of June 30, 2026, these subsidiaries were in compliance with their respective regulatory capital requirements.",
+  "summary": "The Q2 2026 Form 10-Q reports USD 1.308 billion quarterly revenue, USD 561 million net income attributable to Robinhood, USD 9.541 billion stockholders' equity, USD 5.362 billion cash and USD 2.170 billion long-term borrowings. Transaction revenue rose, but crypto revenue declined; credit-loss expense, operating costs and stock compensation increased. All named broker-dealer and futures subsidiaries exceeded regulatory net-capital requirements, while customer, counterparty, market, regulatory and rate sensitivity remain material.",
+  "run_id": "gha-30706962621-1"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dlocal_q1_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+  "source_type": "issuer_release",
+  "title": "dLocal Reports First Quarter 2026 Financial Results",
+  "publisher": "dLocal Limited",
+  "license": "",
+  "status": "available",
+  "content_hash": "6728ca36193095a954cb21af54a521d35daa9203e7d6180975ae14ecd7ad4517",
+  "related_entity_ids": "security_715bde20b6e1e1320c1a",
+  "checked_at": "2026-08-01T16:01:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Total Payment Volume reached US$14.1 billion in the first quarter of 2026, up 73% year-over-year.",
+  "summary": "dLocal reported Q1 2026 TPV of USD 14.1 billion, revenue of USD 335.9 million, gross profit of USD 118.7 million, reported operating profit of USD 52.8 million, reported net income of USD 41.9 million, adjusted free cash flow of USD 14.7 million, and USD 451.8 million of corporate cash. TPV and gross profit grew 73% and 40% year over year, while gross profit over TPV fell to 0.84%; management retained guidance and described the weak quarterly cash conversion as temporary working-capital timing.",
+  "run_id": "gha-30706962621-1"
+}

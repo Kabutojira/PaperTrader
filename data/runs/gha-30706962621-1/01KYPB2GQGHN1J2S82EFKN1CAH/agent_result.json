@@ -1,0 +1,87 @@
+{
+  "operation_id": "01KYPB2GQGHN1J2S82EFKN1CAH",
+  "status": "succeeded",
+  "summary": "Completed the initial schema-version-2 review of Robinhood Markets, Inc. Class A common stock after the 2026-07-30 lower-Bollinger transition. Q2 2026 platform assets, net deposits, customers, subscriptions, revenue and adjusted EBITDA grew strongly, but cryptocurrency revenue fell 38%, operating expenses rose 33%, credit-loss expense doubled, and USD 129 million of quarterly net income came primarily from deconsolidating RVI. The 20.29% July 1-30 decline ended in only a marginal lower-band breach, which had reversed by July 31, so the alert is valuation and cyclicality risk rather than an oversold entry. At the USD 86.56 mark, bounded USD 42.40/69.00/112.50 bear/base/bull values produce a USD 73.225 probability-weighted value, -15.41% expected return and -11.55% confidence-adjusted expected return. The deterministic assessment is Sell/Avoid and allocation-ineligible. No strategy or idea follow-up was created.",
+  "evidence": [
+    {
+      "source": "source_hood_q2_2026_10q",
+      "claim": "Robinhood's SEC-filed Q2 2026 Form 10-Q reports USD 1.308 billion quarterly revenue, USD 561 million net income attributable to Robinhood, USD 9.541 billion stockholders' equity, USD 5.362 billion cash, USD 2.170 billion long-term borrowings, 899 million basic and 912 million diluted weighted-average shares, and substantial excess regulatory capital at each named broker-dealer and futures subsidiary. It also reports higher costs, credit-loss expense, stock compensation and material market-maker concentration.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm",
+      "observed_at": "2026-08-01T16:10:35Z",
+      "source_hash": "454b499aaf20768afba029cc336539b37c3aa3b79aef20ab5cbced68769616fc"
+    },
+    {
+      "source": "source_hood_q2_2026_results",
+      "claim": "Robinhood's SEC-hosted Q2 release reports 32% revenue growth, USD 741 million adjusted EBITDA, 28.4 million funded customers, USD 368.7 billion total platform assets, USD 21.7 billion quarterly net deposits and 4.84 million Gold subscribers. Cryptocurrency revenue fell 38%, operating expenses rose 33%, and USD 129 million of net income came primarily from the RVI deconsolidation gain.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000113/q22026robinhoodexhibit991.htm",
+      "observed_at": "2026-08-01T16:10:35Z",
+      "source_hash": "3aa2e0f9cd5bf8349a082b961e13e82baf299ff41e2da9e72c16f18fc3e6bd20"
+    },
+    {
+      "source": "PaperTrader deterministic alert payload and market cache",
+      "claim": "HOOD fell 20.294526% from 2026-07-01 through 2026-07-30 to USD 86.599998, entering 0.023806% below the lower Bollinger band. The July 30 first post-results session fell 3.606409%. On July 31 the USD 86.559998 close was back above the USD 84.018152 lower band, RSI was 35.973525, MACD remained below signal and volume was not anomalous.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source_hash": "42a586c944852154b32039364c071135768965c971d6f17e537b28e7ecce0d91"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8675000071525574 for 2026-07-31 and was retrieved at 2026-08-01T15:55:55Z, matching the fresh USD security mark used by the assessment.",
+      "observed_at": "2026-08-01T15:55:55Z"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_a4ecd00845b839f01296 is schema version 2 and derives Sell/Avoid, complete research, ineligible allocation and quality score 78. Bear/base/bull values are USD 42.40, USD 69.00 and USD 112.50 at 25/50/25 probabilities; probability-weighted value is USD 73.225, expected return is -15.405497%, confidence-adjusted expected return is -11.554123%, and buy-below price is USD 55.20.",
+      "observed_at": "2026-08-01T16:14:47Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/assessment_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/security_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/source_hood_q2_2026_10q_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/source_hood_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_ad3b1f8f59fd599f079a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Robinhood was researched after its July 30 lower-Bollinger transition. Q2 asset gathering, customers, revenue and adjusted EBITDA grew strongly, but crypto revenue fell, costs and credit-loss provisions rose, and reported earnings included a material one-off gain. The marginal band breach reversed on July 31. At USD 86.56, the USD 69 base case and USD 73.225 probability-weighted value leave the assessment Sell/Avoid and allocation-ineligible; no conviction strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_ad3b1f8f59fd599f079a",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/source_hood_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/source_hood_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2GQGHN1J2S82EFKN1CAH/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_ad3b1f8f59fd599f079a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease through 2026-08-01T16:37:30Z, sequential harness, and trusted native, controller and security-research skill preflight identities.",
+      "Confirmed Robinhood Markets, Inc., Class A common stock, HOOD provider symbol, XNAS venue, USD currency and equity identity are unique and consistent across canonical state and the SEC filing.",
+      "Matched the July 30 lower-Bollinger transition, canonical 2026-07-01 through 2026-07-30 period, exact mark and source-price hash; confirmed the marginal breach had exited by July 31 and classified it as valuation and cyclicality risk rather than an oversold opportunity.",
+      "Registered the Q2 2026 Form 10-Q and SEC-hosted results release before assessment; both evidence references are available, identity-linked, current and content-hashed.",
+      "Confirmed the current identity-matched USD market mark and USD/EUR rate were fresh and canonical for the assessment.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and the security-page hash, with ordered scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Sell rating, Avoid portfolio action, Watch conviction tier, complete research, ineligible allocation, quality score 78, USD 73.225 probability-weighted value, -15.405497% expected return and -11.554123% confidence-adjusted expected return.",
+      "Confirmed the payload and canonical relationship state contain no linked ideas, so no idea-research follow-up is required; the full conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, FX, queue, allocation, publication, portfolio and accounting invariants.",
+      "Confirmed commands_run exactly matches the ten canonical receipts in command_audit.json in receipt order.",
+      "Confirmed operation artifacts are regular files with no symlinks or path traversal and that no allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance or other accounting state were changed by this operation."
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crox_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm",
+  "source_type": "filing",
+  "title": "Crocs, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "Crocs, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "75aa7525af1c355bc85340fd818845d9f0a4067b9962449e8919c38d89626a89",
+  "related_entity_ids": "security_c150f31c30afdb4a85f9",
+  "checked_at": "2026-08-01T16:21:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "As of June 30, 2026, we were in compliance with all financial covenants under the Credit Agreement.",
+  "summary": "The Q2 2026 Form 10-Q confirms Crocs, Inc.'s Nasdaq common-stock identity and reports USD 1.179 billion quarterly revenue, USD 285.7 million operating income, USD 204.9 million net income, 48.1 million period-end shares, USD 170.3 million cash, USD 1.308 billion long-term borrowings, and USD 270.8 million first-half operating cash flow. It details HEYDUDE impairment history, secured debt, repurchase restrictions, inventory, demand, foreign-exchange, sourcing and execution risks.",
+  "run_id": "gha-30706962621-1"
+}

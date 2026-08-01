@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dlocal_2025_20f",
+  "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+  "source_type": "filing",
+  "title": "dLocal Limited 2025 Form 20-F",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "ec7c36ad5d3aa5e2b41e718edceb529d88058c86946c54df1e6122de56202b35",
+  "related_entity_ids": "security_715bde20b6e1e1320c1a",
+  "checked_at": "2026-08-01T16:01:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "For 2025, dLocal's top 10 merchants represented 61% of total revenue.",
+  "summary": "The audited 2025 annual filing confirms dLocal Limited's Nasdaq Class A listing, payment-infrastructure model, 61% revenue concentration among its ten largest merchants, emerging-market regulatory and foreign-exchange exposures, working-capital and safeguarded-funds constraints, pending securities litigation, and the March 2026 authorization of a USD 300 million share-repurchase program.",
+  "run_id": "gha-30706962621-1"
+}

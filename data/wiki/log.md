@@ -1577,3 +1577,46 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_edd90aad1de62e587d1b`.
 
 - Generated canonical [[daily-reports/daily-report_20260801]] for run `gha-30697153110-1`.
+
+- Researched [[securities/security_715bde20b6e1e1320c1a|dLocal]] after its July 31 SMA 50/200
+  bullish crossover. Q1 TPV and gross profit grew 73% and 40%, corporate cash increased, and
+  guidance was retained, but take rate and cash conversion weakened while merchant, regulatory,
+  tax, foreign-exchange, and working-capital risks remain material. At USD 15.08 the base case has
+  only 9.4% upside and a 0.21 base-upside-to-bear-downside ratio; the initial medium-confidence
+  assessment is ineligible, so no conviction strategy or idea refresh was created.
+
+- Researched [[securities/security_ad3b1f8f59fd599f079a|Robinhood]] after its July 30 lower-
+  Bollinger transition. Q2 platform assets, deposits, customers, revenue, and adjusted EBITDA grew
+  strongly, while crypto revenue fell, costs and credit-loss provisions rose, and reported earnings
+  included a material deconsolidation gain. The marginal band breach did not persist on July 31. At
+  USD 86.56, the bounded USD 69 base case and USD 73.23 probability-weighted value make the alert a
+  valuation and cyclicality risk rather than an entry; no conviction strategy or idea refresh was
+  created.
+
+- Researched [[securities/security_c150f31c30afdb4a85f9|Crocs]] after its July 30 post-results
+  volume anomaly. Record revenue, direct-to-consumer growth, cash generation, raised guidance, and
+  repurchases support the core brand, while wholesale contraction, margin compression, HEYDUDE
+  weakness, leverage, and the adverse results-day reaction constrain the thesis. At USD 128.01, the
+  USD 145.43 base case has insufficient downside payoff and the USD 140.27 probability-weighted
+  value yields only 7.2% confidence-adjusted expected return. The initial medium-confidence
+  assessment is ineligible; no conviction strategy or idea refresh was created.
+
+- Researched [[securities/security_c86bb4e75658c07142cf|Alphabet Class A]] after its July 31
+  bullish-MACD crossover. Q2 Search, YouTube, Cloud, operating income, and margins grew strongly,
+  but the crossover was weak, the 20-session return remained negative, and the USD 356.13 mark
+  offers almost no upside to the USD 360 base case. Record AI capital spending, common and
+  preferred equity issuance, and unresolved antitrust remedies constrain the thesis. The initial
+  medium-confidence assessment is ineligible; no conviction strategy or idea refresh was created.
+
+- Researched [[securities/security_d12e746b3c9d392183cc|Meta Platforms Class A]] after its July 30
+  lower-Bollinger and volume-anomaly transitions. Q2 advertising demand and user scale remained
+  strong, but costs rose 55%, quarterly capital expenditures reached USD 31.08 billion, and free
+  cash flow fell to USD 784 million amid legal charges, severance, AI investment, and continuing
+  Reality Labs losses. The July 31 rebound removed the lower-band breach but did not make the USD
+  556.71 mark attractive against a USD 600 base case and USD 580 probability-weighted value. The
+  initial medium-confidence assessment is ineligible; no conviction strategy or idea refresh was
+  created.
+
+- Published investor decision snapshot `decision_b1645ccec2066bd4eab4`.
+
+- Generated canonical [[daily-reports/daily-report_20260801]] for run `gha-30706962621-1`.

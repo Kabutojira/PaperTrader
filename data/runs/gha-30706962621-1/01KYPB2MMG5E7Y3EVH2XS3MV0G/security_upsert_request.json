@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c150f31c30afdb4a85f9",
+  "issuer_id": "issuer_1f6c9036716fafed5a2a",
+  "company_name": "Crocs, Inc.",
+  "instrument_name": "Crocs, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "CROX",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CROX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Footwear & Accessories",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 volume anomaly; wholesale contraction, margin pressure, HEYDUDE weakness, leverage, fashion-cycle risk and capital allocation require monitoring.",
+  "research_summary": "Core-brand, direct-channel and cash-flow evidence is constructive, but weak downside payoff, leverage, HEYDUDE contraction and only 7.2% confidence-adjusted expected return make the post-results volume event a risk signal rather than an entry.",
+  "research_page": "data/wiki/securities/security_c150f31c30afdb4a85f9.md",
+  "last_research_at": "2026-08-01T16:21:00Z",
+  "next_review_at": "2026-08-31T16:21:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm"
+}

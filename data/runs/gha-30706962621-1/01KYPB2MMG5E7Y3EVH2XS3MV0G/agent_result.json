@@ -1,0 +1,88 @@
+{
+  "operation_id": "01KYPB2MMG5E7Y3EVH2XS3MV0G",
+  "status": "succeeded",
+  "summary": "Completed the initial schema-version-2 review of Crocs, Inc. common stock after the 2026-07-30 volume anomaly. Q2 record revenue, 12.0% direct-to-consumer growth, Crocs Brand growth, positive free cash flow, raised guidance, and repurchases support the core-brand thesis. Wholesale revenue fell 7.2%, gross margin declined, HEYDUDE revenue fell 5.7%, net debt remains material, and the results-day selloff was adverse. The anomaly exited on July 31. At the USD 128.01 mark, bounded USD 88.00/145.425/205.80 bear/base/bull values produce USD 140.2725 probability-weighted value, 9.58% expected return, and 7.18% confidence-adjusted expected return. Deterministic state derives Hold/Watch, complete research, quality score 68, and ineligible allocation because expected-return, downside-payoff, and relationship gates fail. No strategy or idea follow-up was created.",
+  "evidence": [
+    {
+      "source": "source_crox_q2_2026_10q",
+      "claim": "Crocs' SEC-filed Q2 2026 Form 10-Q reports USD 1.179 billion quarterly revenue, USD 285.7 million operating income, USD 204.9 million net income, 48.1 million period-end shares, USD 170.3 million cash, USD 1.308 billion long-term borrowings, and USD 270.8 million first-half operating cash flow; it also documents HEYDUDE impairment history, secured debt, inventory, sourcing, foreign-exchange, demand, and execution risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000052/crox-20260630.htm",
+      "observed_at": "2026-08-01T16:21:00Z",
+      "source_hash": "75aa7525af1c355bc85340fd818845d9f0a4067b9962449e8919c38d89626a89"
+    },
+    {
+      "source": "source_crox_q2_2026_results",
+      "claim": "Crocs' SEC-hosted Q2 release reports 2.6% revenue growth, 12.0% direct-to-consumer growth, 7.2% wholesale contraction, a 230-basis-point reported gross-margin decline, Crocs Brand growth of 4.3%, HEYDUDE contraction of 5.7%, USD 232.0 million first-half free cash flow, and raised 2026 adjusted diluted EPS guidance of USD 13.70-14.00.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1334036/000133403626000050/croxq22026-pressrelease.htm",
+      "observed_at": "2026-08-01T16:21:00Z",
+      "source_hash": "f52ca96031e7f6282ac04f67cbf7a95adbd942b64434ec3234523956e593f53f"
+    },
+    {
+      "source": "PaperTrader deterministic alert payload and market cache",
+      "claim": "CROX ended the canonical 2026-07-01 through 2026-07-30 period at USD 123.660004, down 0.410723%, and entered a 0.930419-strength volume anomaly on 3.007 million shares. The July 30 post-results close fell 7.384662% from July 29. On July 31 the close recovered 3.517702% to USD 128.009995, volume fell to 1.674 million, the volume z-score was 1.143029, and the canonical trigger state was empty.",
+      "observed_at": "2026-08-01T15:55:55Z",
+      "source_hash": "6cbdf40a812232ae34a5ae4b8e69e78fc649911237e36c745488e43bfa461277"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8675000071525574 for 2026-07-31 and was retrieved at 2026-08-01T15:55:55Z, matching the fresh USD security mark used by the assessment.",
+      "observed_at": "2026-08-01T15:55:55Z"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_f23b0bf366f0d89ad929 is schema version 2 and derives Hold, Watch, complete research, ineligible allocation, and quality score 68. Bear/base/bull values are USD 88.00, USD 145.425, and USD 205.80 at 30/50/20 probabilities; probability-weighted value is USD 140.2725, expected return is 9.579334%, confidence-adjusted expected return is 7.184501%, and buy-below price is USD 116.34.",
+      "observed_at": "2026-08-01T16:23:43Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/assessment_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/security_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/source_crox_q2_2026_10q_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/source_crox_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_c150f31c30afdb4a85f9.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Crocs was researched after its July 30 post-results volume anomaly. Record revenue, direct-channel growth, cash generation, raised guidance, and repurchases support the core brand, but wholesale contraction, lower margin, HEYDUDE weakness, leverage, and the adverse results-day reaction constrain the thesis. At USD 128.01, the USD 145.425 base case has weak downside payoff and the USD 140.2725 probability-weighted value yields only 7.18% confidence-adjusted expected return. The assessment is Hold/Watch and allocation-ineligible; no conviction strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c150f31c30afdb4a85f9",
+    "papertrader research security-context --security-id security_c150f31c30afdb4a85f9",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/source_crox_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/source_crox_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_c150f31c30afdb4a85f9",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease through 2026-08-01T16:48:10Z, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed Crocs, Inc. common stock, CROX provider symbol, XNAS venue, USD currency, and equity identity are unique and consistent across canonical state and the SEC filing.",
+      "Matched the July 30 volume-anomaly transition, canonical 2026-07-01 through 2026-07-30 period, source-price hash, and results-day selloff; confirmed the anomaly had exited by July 31 and classified it as mixed risk rather than a durable opportunity.",
+      "Registered the Q2 2026 Form 10-Q and SEC-hosted results release before assessment; both evidence references are available, identity-linked, current, and content-hashed.",
+      "Confirmed the current identity-matched USD market mark and USD/EUR rate were fresh and canonical for the assessment.",
+      "Confirmed exactly one current assessment and one immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Hold rating, Watch portfolio action and conviction tier, complete research, ineligible allocation, quality score 68, USD 140.2725 probability-weighted value, 9.579334% expected return, and 7.184501% confidence-adjusted expected return.",
+      "Confirmed the payload and canonical relationship state contain no linked ideas, so no idea-research follow-up is required; the full conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the eleven canonical receipts in command_audit.json in receipt order.",
+      "Confirmed operation artifacts are regular files with no symlinks or path traversal and that no allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

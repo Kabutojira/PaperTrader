@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c86bb4e75658c07142cf",
+  "issuer_id": "issuer_b25c5419eee7ff55e0d4",
+  "company_name": "Alphabet Inc.",
+  "instrument_name": "Alphabet Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "GOOGL",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "GOOGL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-31 bullish-MACD crossover; AI capital intensity, dilution, free-cash-flow conversion, Search and Cloud monetization, and antitrust remedies require monitoring.",
+  "research_summary": "Search, YouTube, Cloud, operating income and margins grew strongly, but a weak technical rebound, minimal base-case upside, record AI capex, equity issuance and antitrust risk make the USD 356.13 mark unattractive for entry.",
+  "research_page": "data/wiki/securities/security_c86bb4e75658c07142cf.md",
+  "last_research_at": "2026-08-01T16:32:28Z",
+  "next_review_at": "2026-08-31T16:32:28Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+}

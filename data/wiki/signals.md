@@ -7,13 +7,13 @@ tags:
 created: "2026-08-01"
 updated: "2026-08-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_edd90aad1de62e587d1b"
-as_of: "2026-08-01T11:48:34Z"
+snapshot_id: "decision_b1645ccec2066bd4eab4"
+as_of: "2026-08-01T16:47:49Z"
 ---
 
 # Signals
 
-**Snapshot `decision_edd90aad1de62e587d1b` · As of `2026-08-01T11:48:34Z`**
+**Snapshot `decision_b1645ccec2066bd4eab4` · As of `2026-08-01T16:47:49Z`**
 
 ## Actionable trade signals
 
@@ -25,15 +25,6 @@ No pending paper orders.
 
 ## Research alerts — not trade signals
 
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
 
 **Research alert — not a trade signal**
@@ -42,6 +33,15 @@ No pending paper orders.
 - Market date: `2026-07-31`
 - Research status: `succeeded`
 - Conclusion: Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center &amp; Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy
+
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-07-31`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
@@ -223,14 +223,14 @@ No pending paper orders.
 - Research status: `succeeded`
 - Conclusion: Completed the initial schema-version-2 review of Nidec Corporation's Frankfurt ordinary shares after the 2026-07-31 bullish-MACD crossover. The signal followed a 6.16% 20-session decline and coincided with a 5.31% one-session rebound, but the small positive MACD histogram, neutral RSI and 72-share Frankfurt volume make it an unconfirmed technical rebound rather than a trade catalyst. Nidec's latest interim statements report operating strengths and positive free cash flow but warn that suspected inappropriate accounting could materially and pervasively affect the figures. The audited annual filing is delayed to September 30, 2026, and a separate external investigation is assessing group-wide quality issues and their unquantified financial impact. The deterministic assessment is Unrated/Watch, research-unsupported and allocation-ineligible, with accounting uncertainty, insufficient listing liquidity and unsupported valuation as hard blockers. No scenario values, strategy or idea follow-u
 
-### GOOGL — Alphabet Inc.
+### [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the initial schema-version-2 review of Alphabet Inc. Class A common stock after the 2026-07-31 bullish-MACD crossover. Q2 revenue grew 24%, Google Services 15%, Google Cloud 82%, and operating income 30%, while operating margin expanded to 34%. The alert was a weak technical rebound: the crossover had only 0.0723 strength and the 20-session return remained negative despite a 6.73% July 31 gain. Record AI infrastructure spending, common and preferred equity issuance, potential further ATM dilution, and unresolved antitrust remedies constrain the strong operating thesis. At the USD 356.13 mark, bounded USD 260/360/480 bear/base/bull values produce USD 354 probability-weighted value, -0.60% expected return, and -0.45% confidence-adjusted expected return. Deterministic state derives Hold/Watch, complete research, quality score 90, and ineligible allocation because expected-return, base-upside, downside-payoff, and relationship gates fail. No strategy or idea follow-up was created
 
 ### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
 
@@ -241,14 +241,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### DLO — DLocal Limited
+### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
 
 **Research alert — not a trade signal**
 
 - Alert: `sma\_50\_cross\_above\_200`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the initial schema-version-2 review of DLocal Limited Class A common shares after the 2026-07-31 SMA 50/200 bullish crossover. Q1 2026 TPV, revenue and gross profit grew 73%, 55% and 40% year over year, and corporate cash reached USD 451.8 million, supporting the emerging-market payment-infrastructure thesis. Offsetting evidence includes gross-profit-over-TPV compression to 0.84%, weak quarterly adjusted free cash flow, 61% top-ten merchant concentration, and material tax, foreign-exchange, regulatory, working-capital and litigation risks. The crossover was narrow, with only a 1.34% 20-session return and mixed momentum evidence. At the USD 15.08 mark, the deterministic assessment derives Hold/Watch and allocation-ineligible: base upside is 9.42%, confidence-adjusted expected return is 7.62%, bear/base payoff is 0.21 and the USD 13.20 buy zone is below the mark. No strategy or idea follow-up was created.
 
 ### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 

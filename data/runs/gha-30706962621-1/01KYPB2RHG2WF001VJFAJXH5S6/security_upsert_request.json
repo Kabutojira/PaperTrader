@@ -1,0 +1,23 @@
+{
+  "security_id": "security_d12e746b3c9d392183cc",
+  "issuer_id": "issuer_0777ea72e7e5e9618310",
+  "company_name": "Meta Platforms, Inc.",
+  "instrument_name": "Meta Platforms, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "META",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "META",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 lower-Bollinger and volume-anomaly transitions; AI capital intensity, cash conversion, Reality Labs losses, legal exposure, and advertising durability require monitoring.",
+  "research_summary": "Advertising demand and user scale remain strong, but the post-results selloff reflects sharply higher costs, AI capex, weak latest free cash flow, legal charges and Reality Labs losses; the USD 556.71 mark lacks sufficient valuation support.",
+  "research_page": "data/wiki/securities/security_d12e746b3c9d392183cc.md",
+  "last_research_at": "2026-08-01T16:43:00Z",
+  "next_review_at": "2026-08-31T16:43:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+}

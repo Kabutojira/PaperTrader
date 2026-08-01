@@ -1,0 +1,18 @@
+{
+  "source_id": "source_hood_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000113/q22026robinhoodexhibit991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000113/q22026robinhoodexhibit991.htm",
+  "source_type": "issuer-release",
+  "title": "Robinhood Reports Second Quarter 2026 Results",
+  "publisher": "Robinhood Markets, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "3aa2e0f9cd5bf8349a082b961e13e82baf299ff41e2da9e72c16f18fc3e6bd20",
+  "related_entity_ids": "security_ad3b1f8f59fd599f079a",
+  "checked_at": "2026-08-01T16:10:35Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Total net revenues increased 32% year-over-year to $1.31 billion.",
+  "summary": "Robinhood's Q2 2026 release reports USD 1.308 billion revenue, USD 573 million consolidated net income, USD 561 million attributable net income, USD 741 million adjusted EBITDA, 28.4 million funded customers, USD 368.7 billion total platform assets, USD 21.7 billion net deposits and 4.84 million Gold subscribers. Crypto revenue fell 38%, operating expenses rose 33%, and USD 129 million of quarterly net income came from gains primarily related to deconsolidating RVI. The release also reports USD 414 million of repurchases at about USD 94 per share.",
+  "run_id": "gha-30706962621-1"
+}

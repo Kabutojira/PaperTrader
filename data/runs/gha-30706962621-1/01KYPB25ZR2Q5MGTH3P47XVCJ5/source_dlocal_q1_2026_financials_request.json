@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dlocal_q1_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm",
+  "source_type": "filing",
+  "title": "dLocal Limited Unaudited Consolidated Condensed Interim Financial Statements at March 31, 2026",
+  "publisher": "dLocal Limited",
+  "license": "",
+  "status": "available",
+  "content_hash": "99545a59cda4db60414db2e6c5b8c6666a1db70a6fc8f37e4348d0b0dfcdead2",
+  "related_entity_ids": "security_715bde20b6e1e1320c1a",
+  "checked_at": "2026-08-01T16:01:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Weighted average common shares for diluted earnings per share were 298,454,336.",
+  "summary": "The Q1 2026 interim statements report USD 815.6 million cash and equivalents, USD 553.3 million total equity, USD 41.9 million attributable profit, diluted weighted-average shares of 298.5 million including employee-plan dilution, USD 645.1 million net trade receivables, and USD 1.116 billion trade and other payables. The statements identify working-capital settlement balances and employee share plans relevant to net-cash and dilution normalization.",
+  "run_id": "gha-30706962621-1"
+}

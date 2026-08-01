@@ -1,0 +1,91 @@
+{
+  "operation_id": "01KYPB2NKR40C7V30WG552P7WP",
+  "status": "succeeded",
+  "summary": "Completed the initial schema-version-2 review of Alphabet Inc. Class A common stock after the 2026-07-31 bullish-MACD crossover. Q2 revenue grew 24%, Google Services 15%, Google Cloud 82%, and operating income 30%, while operating margin expanded to 34%. The alert was a weak technical rebound: the crossover had only 0.0723 strength and the 20-session return remained negative despite a 6.73% July 31 gain. Record AI infrastructure spending, common and preferred equity issuance, potential further ATM dilution, and unresolved antitrust remedies constrain the strong operating thesis. At the USD 356.13 mark, bounded USD 260/360/480 bear/base/bull values produce USD 354 probability-weighted value, -0.60% expected return, and -0.45% confidence-adjusted expected return. Deterministic state derives Hold/Watch, complete research, quality score 90, and ineligible allocation because expected-return, base-upside, downside-payoff, and relationship gates fail. No strategy or idea follow-up was created.",
+  "evidence": [
+    {
+      "source": "source_alphabet_q2_2026_10q",
+      "claim": "Alphabet's Q2 2026 Form 10-Q reports USD 119.796 billion quarterly revenue, USD 40.770 billion operating income, USD 242.474 billion cash, cash equivalents and marketable securities, USD 98.165 billion long-term debt, 12.230 billion common shares outstanding, USD 84.859 billion first-half operating cash flow, and USD 80.598 billion first-half capital expenditures; it also documents equity issuance and antitrust proceedings with potential structural remedies.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "observed_at": "2026-08-01T16:32:28Z",
+      "source_hash": "fecfbc2683f630380b17937278ce3745eca150eb90e21a945fd6b78fe19728c7"
+    },
+    {
+      "source": "source_alphabet_q2_2026_results",
+      "claim": "Alphabet's SEC-hosted Q2 release reports 24% revenue growth, 15% Google Services growth, 82% Google Cloud growth, 30% operating-income growth, 34% operating margin, and TTM free cash flow of USD 53.273 billion after USD 132.402 billion of capital expenditures. It states that equity-security gains added USD 6.26 to quarterly diluted EPS and documents USD 49.6 billion of common and preferred equity proceeds plus an up-to-USD 40.0 billion ATM program.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+      "observed_at": "2026-08-01T16:32:28Z",
+      "source_hash": "a01f6bd87c7fa0dcb562493dda7348a1a37d017b4a4b5edb39b915b45688237e"
+    },
+    {
+      "source": "PaperTrader deterministic alert payload and market cache",
+      "claim": "GOOGL ended the canonical 2026-07-02 through 2026-07-31 period at USD 356.130005, down 1.050262%, and entered a 0.072277-strength bullish-MACD crossover. MACD was -6.131220 against a -6.608894 signal, RSI was 54.309279, and the July 31 close rose 6.734401% from July 30 on 46.426 million shares.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "b0e7d6aff1b7cf90bed119246e683face8a24200c5b6c597b9f6131387bf6418"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8675000071525574 for 2026-07-31 and was retrieved at 2026-08-01T15:55:55Z, matching the fresh USD security mark used by the assessment.",
+      "observed_at": "2026-08-01T15:55:55Z"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_be2b44681050a9638d98 is schema version 2 and derives Hold, Watch, complete research, ineligible allocation, and quality score 90. Bear/base/bull values are USD 260, USD 360, and USD 480 at 30/50/20 probabilities; probability-weighted value is USD 354, expected return is -0.598098%, confidence-adjusted expected return is -0.448573%, and buy-below price is USD 288.",
+      "observed_at": "2026-08-01T16:36:27Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/assessment_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/security_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/source_alphabet_q2_2026_10q_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/source_alphabet_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_c86bb4e75658c07142cf.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Alphabet Class A was researched after its July 31 bullish-MACD crossover. Q2 Search, YouTube, Cloud, operating income, and margins grew strongly, but the crossover was weak, the 20-session return remained negative, and record AI capex, equity issuance, and antitrust remedies constrain entry appeal. At USD 356.13, the USD 360 base case offers only 1.09% upside and the USD 354 probability-weighted value implies a -0.45% confidence-adjusted expected return. The assessment is Hold/Watch and allocation-ineligible; no conviction strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c86bb4e75658c07142cf",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/source_alphabet_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/source_alphabet_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2NKR40C7V30WG552P7WP/assessment_upsert_retry02_request.json",
+    "papertrader research security-context --security-id security_c86bb4e75658c07142cf",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease through 2026-08-01T16:57:07Z, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed Alphabet Inc. Class A common stock, GOOGL provider symbol, XNAS venue, USD currency, and equity identity are unique and consistent across canonical state and the SEC filing; distinguished the separate GOOG Class C instrument.",
+      "Matched the July 31 bullish-MACD transition, canonical 2026-07-02 through 2026-07-31 period, and source-price hash; classified it as a weak technical rebound rather than an independent opportunity catalyst.",
+      "Registered the Q2 2026 Form 10-Q and SEC-hosted results release before assessment; both evidence references are available, identity-linked, current, and content-hashed.",
+      "Confirmed the current identity-matched USD market mark and USD/EUR rate were fresh and canonical for the assessment.",
+      "Confirmed exactly one current assessment and one immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Hold rating, Watch portfolio action and conviction tier, complete research, ineligible allocation, quality score 90, USD 354 probability-weighted value, -0.598098% expected return, and -0.448573% confidence-adjusted expected return.",
+      "Confirmed the payload and canonical relationship state contain no linked ideas, so no idea-research follow-up is required; the full conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the twelve canonical receipts in command_audit.json in receipt order, including the two rejected immutable assessment requests and the successful corrected request.",
+      "Confirmed operation artifacts are regular files with no path traversal and that no allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

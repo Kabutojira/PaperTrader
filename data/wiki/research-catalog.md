@@ -7,8 +7,8 @@ tags:
 created: "2026-08-01"
 updated: "2026-08-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_edd90aad1de62e587d1b"
-as_of: "2026-08-01T11:48:34Z"
+snapshot_id: "decision_b1645ccec2066bd4eab4"
+as_of: "2026-08-01T16:47:49Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **42**
-- Securities with retained revisions: **42**
+- Immutable assessment versions: **47**
+- Securities with retained revisions: **47**
 
 ## Candidate
 
@@ -196,6 +196,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 - [ABB Ltd sponsored ADR](securities/security_c120e9f26ebb6159adf9)
 - [Albemarle Corporation common stock](securities/security_66cdcf90aac0d83e76f3)
+- [Alphabet Inc. Class A common stock](securities/security_c86bb4e75658c07142cf)
 - [Amazon.com, Inc. common stock](securities/security_2433a056eb0c55961fcc)
 - [Arista Networks, Inc. common stock](securities/security_6f9a1450edceb9307c9a)
 - [ASML Holding N.V. New York registered shares](securities/security_ef35e41886220d51c22c)
@@ -203,7 +204,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Canadian Solar Inc. common shares](securities/security_099561384c0f5e697727)
 - [Carlisle Companies Incorporated common stock](securities/security_9b0db3bc77914b23a307)
 - [Coinbase Global, Inc. Class A common stock](securities/security_37ddcbdaad296ad831f2)
+- [Crocs, Inc. common stock](securities/security_c150f31c30afdb4a85f9)
 - [CrowdStrike Holdings, Inc. Class A common stock](securities/security_8472507d7d320aa388a7)
+- [DLocal Limited Class A common shares](securities/security_715bde20b6e1e1320c1a)
 - [Eaton Corporation plc ordinary shares](securities/security_18a3ab0ee6086ee85d0f)
 - [Enphase Energy, Inc. common stock](securities/security_f2b9760d847b2ba59324)
 - [Fluence Energy, Inc. Class A common stock](securities/security_a9eb9838940ef5ceaa0c)
@@ -213,6 +216,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Intuitive Surgical, Inc. common stock](securities/security_1f9cce545ede94cd6349)
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
+- [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
 - [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)
 - [Palantir Technologies Inc. Class A common stock](securities/security_bdc2f87dadf134760c3a)
@@ -223,6 +227,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Quanta Services, Inc. common stock](securities/security_488a9d7f7a8573597724)
 - [Recursion Pharmaceuticals, Inc. Class A common stock](securities/security_ed7d5b616a196969c815)
 - [Rio Tinto plc sponsored ADR](securities/security_1c055eb9b2bb1f5a8ff2)
+- [Robinhood Markets, Inc. Class A common stock](securities/security_ad3b1f8f59fd599f079a)
 - [Roblox Corporation Class A common stock](securities/security_c9a37d277445869a8809)
 - [Rocket Lab Corporation common stock](securities/security_7ca095d63423c55a90e3)
 - [RTX Corporation common stock](securities/security_59304f90c440def31dc5)

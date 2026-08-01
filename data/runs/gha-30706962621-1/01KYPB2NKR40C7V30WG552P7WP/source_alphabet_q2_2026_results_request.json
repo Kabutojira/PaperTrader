@@ -1,0 +1,18 @@
+{
+  "source_id": "source_alphabet_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+  "source_type": "issuer_release",
+  "title": "Alphabet announces second quarter 2026 results",
+  "publisher": "Alphabet Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "a01f6bd87c7fa0dcb562493dda7348a1a37d017b4a4b5edb39b915b45688237e",
+  "related_entity_ids": "security_c86bb4e75658c07142cf",
+  "checked_at": "2026-08-01T16:32:28Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Alphabet revenues increased 24%, or 23% in constant currency, to $119.8 billion",
+  "summary": "Alphabet's SEC-hosted Q2 2026 release reports 24% revenue growth to USD 119.8 billion, 15% Google Services growth, 82% Google Cloud growth, 34% operating margin and USD 40.770 billion operating income. Reported EPS of USD 9.11 included USD 6.26 from net equity-security gains. TTM operating cash flow was USD 185.675 billion, capital expenditures were USD 132.402 billion and free cash flow was USD 53.273 billion. The company raised USD 49.6 billion through common and mandatory-convertible preferred equity and authorized an up-to-USD 40.0 billion ATM program.",
+  "run_id": "gha-30706962621-1"
+}

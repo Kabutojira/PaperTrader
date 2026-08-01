@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_5aF6qJM8aVM",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-01T15:55:40Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_5aF6qJM8aVM",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "5aF6qJM8aVM",
+    "video_title": "Here is The Notorious 70% US Stocks Crash Jeremy Grantham Prediction, Again!",
+    "video_url": "https://www.youtube.com/watch?v=5aF6qJM8aVM"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYZ0KJ30JTKRSK9BVWPJJ5YD",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=5aF6qJM8aVM"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_meta_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+  "source_type": "issuer_release",
+  "title": "Meta Reports Second Quarter 2026 Results",
+  "publisher": "Meta Platforms, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c",
+  "related_entity_ids": "security_d12e746b3c9d392183cc",
+  "checked_at": "2026-08-01T16:43:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Meta Reports Second Quarter 2026 Results",
+  "summary": "Meta's Q2 release reports 28% revenue growth, 3.60 billion Family daily active people, 14% ad-impression growth, 12% average-price-per-ad growth, USD 31.08 billion quarterly capital expenditures, and only USD 784 million quarterly free cash flow. It guides Q3 revenue to USD 61-64 billion, 2026 expenses to USD 165-169 billion, and 2026 capital expenditures to USD 130-145 billion.",
+  "run_id": "gha-30706962621-1"
+}

@@ -1,0 +1,91 @@
+{
+  "operation_id": "01KYPB2RHG2WF001VJFAJXH5S6",
+  "status": "succeeded",
+  "summary": "Completed the initial schema-version-2 review of Meta Platforms, Inc. Class A common stock after the 2026-07-30 lower-Bollinger and volume-anomaly transitions. Q2 revenue grew 28%, Family daily active people reached 3.60 billion, ad impressions grew 14%, and average price per ad grew 12%, while quarterly costs rose 55%, capital expenditures reached USD 31.08 billion, and free cash flow fell to USD 784 million amid legal charges, severance, AI investment, and continuing Reality Labs losses. The alert was a post-results fundamental repricing and timing risk rather than a stand-alone opportunity: the July 31 rebound removed the lower-band breach but did not resolve cash-conversion risk. At the USD 556.71 mark, bounded USD 400/600/800 bear/base/bull values produce USD 580 probability-weighted value, 4.18% expected return, and 3.14% confidence-adjusted expected return. Deterministic state derives Hold/Watch, complete research, quality score 86, and ineligible allocation because expected-return, base-upside, downside-payoff, and relationship gates fail. No strategy or idea follow-up was created.",
+  "evidence": [
+    {
+      "source": "source_meta_q2_2026_10q",
+      "claim": "Meta's Q2 2026 Form 10-Q reports USD 60.801 billion quarterly revenue, USD 18.775 billion operating income, USD 15.848 billion net income, USD 90.26 billion cash and marketable securities, USD 83.664 billion long-term debt, and 2.548 billion Class A and Class B shares outstanding. It also reports USD 64.088 billion of first-half operating cash flow, USD 49.113 billion of property-and-equipment purchases, USD 13.690 billion of stock compensation, and USD 4.619 billion of quarterly Reality Labs operating loss.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "observed_at": "2026-08-01T16:43:00Z",
+      "source_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492"
+    },
+    {
+      "source": "source_meta_q2_2026_results",
+      "claim": "Meta's Q2 release reports 28% revenue growth, 3.60 billion Family daily active people, 14% ad-impression growth, 12% average-price-per-ad growth, USD 31.08 billion quarterly capital expenditures, and USD 784 million quarterly free cash flow. It guides Q3 revenue to USD 61-64 billion, 2026 expenses to USD 165-169 billion, and 2026 capital expenditures to USD 130-145 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+      "observed_at": "2026-08-01T16:43:00Z",
+      "source_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c"
+    },
+    {
+      "source": "PaperTrader deterministic alert payload and market cache",
+      "claim": "META ended the canonical 2026-07-01 through 2026-07-30 period at USD 539.030029, down 12.053963%, and entered lower-Bollinger and volume-anomaly states with strengths 0.021911 and 0.321187. July 30 volume was 42.272 million shares. On July 31 the close recovered 3.28% to USD 556.710022 on 24.203 million shares and moved back above the USD 546.082684 lower Bollinger band; RSI was 37.845783.",
+      "observed_at": "2026-08-01T15:55:55Z",
+      "source_hash": "d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8675000071525574 for 2026-07-31 and was retrieved at 2026-08-01T15:55:55Z, matching the fresh USD security mark used by the assessment.",
+      "observed_at": "2026-08-01T15:55:55Z"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_f59e367d74ea842838fb is schema version 2 and derives Hold, Watch, complete research, ineligible allocation, and quality score 86. Bear/base/bull values are USD 400, USD 600, and USD 800 at 30/50/20 probabilities; probability-weighted value is USD 580, expected return is 4.183503%, confidence-adjusted expected return is 3.137627%, and buy-below price is USD 480.",
+      "observed_at": "2026-08-01T16:45:32Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/assessment_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/security_upsert_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/source_meta_q2_2026_10q_request.json",
+    "data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/source_meta_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_d12e746b3c9d392183cc.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Meta Platforms Class A was researched after its July 30 lower-Bollinger and volume-anomaly transitions. Q2 advertising demand and user scale remained strong, but costs rose 55%, capital expenditures reached USD 31.08 billion, and quarterly free cash flow fell to USD 784 million amid legal charges, severance, AI investment, and Reality Labs losses. The July 31 rebound removed the lower-band breach but did not resolve cash-conversion risk. At USD 556.71, the USD 600 base case offers only 7.78% upside and the USD 580 probability-weighted value implies a 3.14% confidence-adjusted expected return. The assessment is Hold/Watch and allocation-ineligible; no conviction strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_d12e746b3c9d392183cc",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/source_meta_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/source_meta_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30706962621-1/01KYPB2RHG2WF001VJFAJXH5S6/assessment_upsert_retry02_request.json",
+    "papertrader research security-context --security-id security_d12e746b3c9d392183cc",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease through 2026-08-01T17:09:06Z, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed Meta Platforms, Inc. Class A common stock, META provider symbol, XNAS venue, USD currency, and equity identity are unique and consistent across canonical state and the SEC filing; distinguished the founder-controlled Class B instrument.",
+      "Matched both July 30 transitions, the canonical 2026-07-01 through 2026-07-30 period, and source-price hash; classified the move as post-results fundamental repricing and timing risk rather than a stand-alone opportunity.",
+      "Registered the Q2 2026 Form 10-Q and SEC-hosted results release before assessment; both evidence references are available, identity-linked, current, and content-hashed.",
+      "Confirmed the current identity-matched USD market mark and USD/EUR rate were fresh and canonical for the assessment.",
+      "Confirmed exactly one current assessment and one immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Hold rating, Watch portfolio action and conviction tier, complete research, ineligible allocation, quality score 86, USD 580 probability-weighted value, 4.183503% expected return, and 3.137627% confidence-adjusted expected return.",
+      "Confirmed the payload and canonical relationship state contain no linked ideas, so no idea-research follow-up is required; the full conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the twelve canonical receipts in command_audit.json in receipt order, including the two rejected immutable assessment requests and the successful corrected request.",
+      "Confirmed operation artifacts are regular files with no path traversal and that no allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}
