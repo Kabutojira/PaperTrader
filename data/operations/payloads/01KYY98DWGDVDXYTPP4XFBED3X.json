@@ -1,0 +1,25 @@
+{
+  "entity_id": "security_7ca095d63423c55a90e3",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-07-27T23:06:44Z",
+    "baseline_operation_id": "01KYHW5710B851YNG53P4YQZW6",
+    "baseline_result_path": "data/runs/local-20260727-daily-all-07/01KYHW5710B851YNG53P4YQZW6/agent_result.json",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
+    "security_id": "security_7ca095d63423c55a90e3",
+    "source_price_hash": "b8d851762e6d18a88e1ff4dbd307bfab8051f0ec3b0aa27db924b0d25e523250",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
+  },
+  "objective": "Quick-check security_7ca095d63423c55a90e3 after price-action alerts: macd_cross_above_signal; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01KYY98DWGDVDXYTPP4XFBED3X",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-88ab051849ae.md"
+  ]
+}

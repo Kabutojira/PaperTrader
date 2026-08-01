@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-07-31"
-updated: "2026-07-31"
+created: "2026-08-01"
+updated: "2026-08-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_887f74852419aae2ad1f"
-as_of: "2026-07-31T08:02:28Z"
+snapshot_id: "decision_7dada9410e88dc156ba8"
+as_of: "2026-08-01T09:32:24Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_887f74852419aae2ad1f`
-**As of:** `2026-07-31T08:02:28Z`
+**Publication snapshot:** `decision_7dada9410e88dc156ba8`
+**As of:** `2026-08-01T09:32:24Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,17 +22,17 @@ as_of: "2026-07-31T08:02:28Z"
 
 ## Coverage
 
-- Assessments: 37/37
-- Fresh-evidence assessments: 37/37
-- Relationship reviews: 23/37
+- Assessments: 36/39
+- Fresh-evidence assessments: 36/39
+- Relationship reviews: 23/39
 - Accepted relationships: 21
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 185
-- Last successful daily run: `2026-07-31T08:02:28Z`
+- Research backlog: 235
+- Last successful daily run: `2026-08-01T09:32:24Z`
 
 ## Current issues by investment impact
 
@@ -122,13 +122,12 @@ as_of: "2026-07-31T08:02:28Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 185 active operations.
+Showing 20 of 235 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 
 - `ready` `01KYPB241838ZBZ6FE9EQCEJYW` — `security_research` for `security_664f93a7eaca72e76e9b`
 - `ready` `01KYPB250GCWY1ZB0GD3QC2DBX` — `security_research` for `security_6cf75bd0ec0aa2a20148`
-- `ready` `01KYPB25ZR2Q5MGTH3P47XVCJ5` — `security_research` for `security_715bde20b6e1e1320c1a`
 - `ready` `01KYPB26Z023E3AMG9Z8KSPW9D` — `security_research` for `security_7bf8f4c9cc12ae410e40`
 - `ready` `01KYPB27Y84W38J6MDDEF7PHG0` — `security_research` for `security_83a56943e18793f685b0`
 - `ready` `01KYPB29WRNJGPJTTY2DB72JWG` — `security_research` for `security_8a5c43888d224de85c69`
@@ -137,7 +136,6 @@ Showing 20 of 185 active operations.
 - `ready` `01KYPB2DSRFNQ0NE6AY81GQZKR` — `security_research` for `security_98470cfc01bbcde78fc2`
 - `ready` `01KYPB2HPR71QC8BBTPA3HMW8R` — `security_research` for `security_ad5917642acbba28c1f2`
 - `ready` `01KYPB2KN8R1RGAPDZQ2AN9P2V` — `security_research` for `security_b2116dcf976c96974d7b`
-- `ready` `01KYPB2NKR40C7V30WG552P7WP` — `security_research` for `security_c86bb4e75658c07142cf`
 - `ready` `01KYPB2PK0N1W5XHVXFXW43JSZ` — `security_research` for `security_ce9b78a4d0773c950765`
 - `ready` `01KYPB2PK0R0ZXAHGNGZ6X5FM8` — `security_research` for `security_cd492d97064d8574156e`
 - `ready` `01KYPB2QJ8QGJJAGXQ71MT7GWW` — `security_research` for `security_d08d763780400dfbffce`
@@ -146,6 +144,8 @@ Showing 20 of 185 active operations.
 - `ready` `01KYPB2XDRKAMP0ZX3MWA7Y1JH` — `security_research` for `security_fe4648901e7675f157fd`
 - `ready` `01KYPB2YD02XHRSSW68JA9MCG7` — `security_research` for `security_fe5539a7d3fd9d553bce`
 - `ready` `01KYQ49D1G2RNAXKS9RP0MY1R9` — `wiki_ingest` for `youtube_9ePWIYadju4`
+- `ready` `01KYQ49D1G3CHJ4YE6BKXP9RX9` — `wiki_ingest` for `youtube_J2ZqFVpMb5M`
+- `ready` `01KYQ49D1G3QX14JS5VBH76HN0` — `wiki_ingest` for `youtube_6006vpLlaVw`
 
 </details>
 

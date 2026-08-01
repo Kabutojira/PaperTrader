@@ -2,10 +2,43 @@
   "entity_id": "security_715bde20b6e1e1320c1a",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_715bde20b6e1e1320c1a"
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_715bde20b6e1e1320c1a:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:15Z",
+        "prompt": "Research DLO — DLocal Limited as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_715bde20b6e1e1320c1a:316e9e33cca5872e954f:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Research security_715bde20b6e1e1320c1a with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495.md"
+        ],
+        "trigger_types": [
+          "sma_50_cross_above_200"
+        ]
+      }
+    ],
+    "security_id": "security_715bde20b6e1e1320c1a",
+    "source_price_hash": "9e3af597c3d6705aadeffd1d5765dac32c5186209fa726df1d5aa3b3d8394b19",
+    "trigger_types": [
+      "sma_50_cross_above_200"
+    ]
   },
-  "objective": "Research DLO — DLocal Limited as an initial bounded security review.",
+  "objective": "Research DLO — DLocal Limited as an initial bounded security review. | Additional cause: Research security_715bde20b6e1e1320c1a with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act.",
   "operation_id": "01KYPB25ZR2Q5MGTH3P47XVCJ5",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495.md"
+  ]
 }

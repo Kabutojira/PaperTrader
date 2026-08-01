@@ -4,9 +4,15 @@
   "inputs": {
     "causal_hypothesis": "Data-centre power-density and interconnection constraints can increase demand for Schneider Electric electrical panels, UPS, power distribution, cooling integration, and energy-management systems, subject to project timing, competition, capacity, concentration, and valuation.",
     "idea_id": "idea_ai_infrastructure_power",
-    "market_data_as_of": "2026-07-31T07:45:55Z",
-    "market_data_date": "2026-07-30",
-    "period_end": "2026-07-30",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "merged_input_values": {
+      "source_price_hash": [
+        "27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca",
+        "0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f"
+      ]
+    },
+    "period_end": "2026-07-31",
     "period_start": "2026-07-02",
     "research_focus": "Validate identity, data-centre revenue and order exposure, electrical-panel and UPS economics, capacity, customer concentration, cash conversion, valuation, catalysts, and invalidation.",
     "research_reasons": [
@@ -35,20 +41,34 @@
           "bollinger_above_upper",
           "macd_cross_above_signal"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_dc8486c1d61df62a22fd:1563124611cd27935bee:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Research security_dc8486c1d61df62a22fd with high priority after price-action alerts: bollinger_above_upper; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d.md"
+        ],
+        "trigger_types": [
+          "bollinger_above_upper"
+        ]
       }
     ],
     "security_id": "security_dc8486c1d61df62a22fd",
-    "source_price_hash": "27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca",
+    "source_price_hash": "0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f",
     "trigger_types": [
       "bollinger_above_upper",
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Research Schneider Electric as a bounded data-centre electrical-distribution and energy-management exposure. | Additional cause: Research security_dc8486c1d61df62a22fd with high priority after price-action alerts: bollinger_above_upper, macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Research Schneider Electric as a bounded data-centre electrical-distribution and energy-management exposure. | Additional cause: Research security_dc8486c1d61df62a22fd with high priority after price-action alerts: bollinger_above_upper, macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Research security_dc8486c1d61df62a22fd with high priority after price-action alerts: bollinger_above_upper; decide what changed and whether to act.",
   "operation_id": "01KYR4K1705VG7GQANFYSR5RYW",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d.md",
     "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c.md",
     "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb.md",
     "https://www.iea.org/reports/energy-and-ai/executive-summary",

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_ViqYWhLimGg",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-01T09:07:22Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_ViqYWhLimGg",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "ViqYWhLimGg",
+    "video_title": "Chip Stocks Crash, $20B Fund Margin Called, Frontier Labs: SLOW DOWN AI, Mamdani's Grocery Stores",
+    "video_url": "https://www.youtube.com/watch?v=ViqYWhLimGg"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYY97Y8G9GA4TYNYRFF3DBQ7",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=ViqYWhLimGg"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "entity_id": "security_59304f90c440def31dc5",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-07-28T00:11:34Z",
+    "baseline_operation_id": "01KYHW5710M89EMQMNDY940EKH",
+    "baseline_result_path": "data/runs/local-20260727-daily-all-08/01KYHW5710M89EMQMNDY940EKH/agent_result.json",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
+    "security_id": "security_59304f90c440def31dc5",
+    "source_price_hash": "2ecbeb200f1fdb273ebe16015774d935afb8d02b09ef9cb0bb1b245154ae5378",
+    "trigger_types": [
+      "rsi_overbought"
+    ]
+  },
+  "objective": "Quick-check security_59304f90c440def31dc5 after price-action alerts: rsi_overbought; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01KYY98DWGST45EN32F928GMGG",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e.md"
+  ]
+}

@@ -5,21 +5,53 @@
     "baseline_completed_at": "2026-07-29T23:37:01Z",
     "baseline_operation_id": "01KYQCTS30ZNSP77NDRSAJS666",
     "baseline_result_path": "data/runs/local-20260729-20ops-4/01KYQCTS30ZNSP77NDRSAJS666/agent_result.json",
-    "market_data_as_of": "2026-07-31T07:45:55Z",
-    "market_data_date": "2026-07-30",
-    "period_end": "2026-07-30",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "merged_input_values": {
+      "source_price_hash": [
+        "6dbd1eaa4183ee40d6783d189fd8dc199dd5773c7bebdf5bb7d9668dfc168e7c",
+        "c85ddc3d7c4077e995268bf064deda5667a3815632250e842c480f7661679a83"
+      ]
+    },
+    "period_end": "2026-07-31",
     "period_start": "2026-07-02",
+    "research_reasons": [
+      {
+        "dedupe_key": "quick_check_research:security_89969b7dac39b7db5661:1e047ab34925488373bd:2026-07-30",
+        "observed_at": "2026-07-31T07:45:55Z",
+        "prompt": "Quick-check security_89969b7dac39b7db5661 after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea.md"
+        ]
+      },
+      {
+        "dedupe_key": "quick_check_research:security_89969b7dac39b7db5661:0870f7d35fec7d338403:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Quick-check security_89969b7dac39b7db5661 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_89969b7dac39b7db5661-volume_anomaly-74dd0efba061.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
     "security_id": "security_89969b7dac39b7db5661",
-    "source_price_hash": "6dbd1eaa4183ee40d6783d189fd8dc199dd5773c7bebdf5bb7d9668dfc168e7c",
+    "source_price_hash": "c85ddc3d7c4077e995268bf064deda5667a3815632250e842c480f7661679a83",
     "trigger_types": [
-      "rsi_oversold"
+      "rsi_oversold",
+      "volume_anomaly"
     ]
   },
-  "objective": "Quick-check security_89969b7dac39b7db5661 after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "objective": "Quick-check security_89969b7dac39b7db5661 after price-action alerts: rsi_oversold; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Quick-check security_89969b7dac39b7db5661 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
   "operation_id": "01KYVJ62SRX74CPEMJD91D8WKX",
   "operation_type": "quick_check_research",
   "payload_version": 1,
   "source_refs": [
-    "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea.md"
+    "data/wiki/inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea.md",
+    "data/wiki/inbox/market-security_89969b7dac39b7db5661-volume_anomaly-74dd0efba061.md"
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_qcom_q3_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/qcom-20260628.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/qcom-20260628.htm",
+  "source_type": "filing",
+  "title": "QUALCOMM Incorporated Form 10-Q for the quarter ended June 28, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "3b460b26dff13a28bfda17b4676f6a2bd3686989d4fb5ffff445102fb1455224",
+  "related_entity_ids": "security_3a75fc1ccca2ee7c937a",
+  "checked_at": "2026-08-01T09:27:19Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "QCT revenues decreased by 5% in the third quarter of fiscal 2026 compared to the year ago quarter due to lower handset revenues, partially offset by higher automotive and IoT revenues.",
+  "summary": "The SEC-filed fiscal Q3 2026 Form 10-Q reports quarterly revenue of USD 9.947 billion, down 4% year over year, and operating income of USD 1.626 billion, down 41%. QCT handset revenue fell 20% to USD 5.086 billion while automotive rose 61% to USD 1.588 billion and IoT rose 9% to USD 1.830 billion. Nine-month operating cash flow was USD 8.405 billion and capital expenditure was USD 1.578 billion. At June 28, cash and marketable securities totaled USD 8.304 billion, short- and long-term debt totaled USD 15.270 billion, inventory was USD 8.379 billion, and 1.057 billion common shares were outstanding. Customer and licensee concentration, handset exposure, memory supply constraints, input costs, licensing renewals, and China and trade restrictions remain material risks.",
+  "run_id": "gha-30693087454-1"
+}

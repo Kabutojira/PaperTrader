@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amzn_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+  "source_type": "filing",
+  "title": "Amazon.com, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb",
+  "related_entity_ids": "security_2433a056eb0c55961fcc",
+  "checked_at": "2026-08-01T09:14:42Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "AWS sales increased 37% in Q2 2026, and 33% for the six months ended June 30, 2026.",
+  "summary": "The SEC-filed Q2 2026 Form 10-Q reports quarterly net sales of USD 200.606 billion and operating income of USD 27.461 billion, with six-month net sales of USD 382.125 billion and operating income of USD 51.313 billion. Trailing-twelve-month operating cash flow was USD 161.403 billion, but purchases of property and equipment net of proceeds and incentives produced a USD 7.604 billion free-cash-flow outflow. At June 30, cash and marketable securities totaled USD 122.988 billion, long-term debt was USD 128.894 billion, long-term lease liabilities were USD 94.338 billion, 10.783 billion shares were outstanding, and 244.4 million restricted stock units remained outstanding.",
+  "run_id": "gha-30693087454-1"
+}

@@ -1,0 +1,23 @@
+{
+  "completed_at": "2026-08-01T09:32:24Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0.5",
+  "operation_count": 2,
+  "podcast_audio_path": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "preparation_errors": [],
+  "queue_dispositions": [
+    "allocation_maintenance:01KYY98DWGR67KXCBSSSD496KC"
+  ],
+  "report_path": "data/wiki/daily-reports/daily-report_20260801.md",
+  "run_id": "gha-30693087454-1",
+  "snapshot_id": "decision_7dada9410e88dc156ba8",
+  "source_sha": "c2cd4bf0993feef056435d7f3cef72caf8c4dc47",
+  "started_at": "2026-08-01T09:07:38Z",
+  "status": "succeeded",
+  "trigger": "workflow_dispatch"
+}

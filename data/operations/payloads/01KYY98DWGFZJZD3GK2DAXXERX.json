@@ -1,0 +1,29 @@
+{
+  "entity_id": "security_37ddcbdaad296ad831f2",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-07-27T23:00:26Z",
+    "baseline_operation_id": "01KYHW57107CVMKHT24J77V9RA",
+    "baseline_result_path": "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/agent_result.json",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "source_price_hash": "e1651044890635a944ee7b073558b4ead37fa9dc5f6717ed6b2973ad47738363",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "macd_cross_below_signal",
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Quick-check security_37ddcbdaad296ad831f2 after price-action alerts: bollinger_below_lower, macd_cross_below_signal, volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01KYY98DWGFZJZD3GK2DAXXERX",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a.md",
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_below_signal-639eeb2b117c.md",
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f.md"
+  ]
+}

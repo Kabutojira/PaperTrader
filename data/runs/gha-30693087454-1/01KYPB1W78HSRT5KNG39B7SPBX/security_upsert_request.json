@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2433a056eb0c55961fcc",
+  "issuer_id": "issuer_85fa8ff84ea190add8f0",
+  "company_name": "Amazon.com, Inc.",
+  "instrument_name": "Amazon.com, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "AMZN",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "AMZN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Internet Retail",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 volume anomaly and 2026-07-31 post-results upper-Bollinger and bullish-MACD transitions.",
+  "research_summary": "AWS and retail operating growth are strong, but AI capital intensity, negative trailing free cash flow, leverage, and a post-results valuation near the base case keep Amazon at watch with no strategy.",
+  "research_page": "data/wiki/securities/security_2433a056eb0c55961fcc.md",
+  "last_research_at": "2026-08-01T09:14:42Z",
+  "next_review_at": "2026-08-31T09:14:42Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+}

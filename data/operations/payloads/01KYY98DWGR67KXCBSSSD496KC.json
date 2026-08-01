@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_510158d3d515d91d5c14",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_510158d3d515d91d5c14",
+    "security_id": "security_2c779e81c27b78c556bb"
+  },
+  "objective": "Review the canonical relationship from idea_nearshoring_friendshoring_manufacturing to security_2c779e81c27b78c556bb and accept or reject it with current evidence.",
+  "operation_id": "01KYY98DWGR67KXCBSSSD496KC",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_ternium_july_2026_sustainability_6k",
+    "source_ternium_q1_2026_results",
+    "source_ternium_q2_2026_event",
+    "source_ustr_usmca_joint_statement_20260723"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_DNlb0PrAdro",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-01T09:07:22Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_DNlb0PrAdro",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "DNlb0PrAdro",
+    "video_title": "I'm Buying the Dip on a Stock Everyone Else Is Selling Today",
+    "video_url": "https://www.youtube.com/watch?v=DNlb0PrAdro"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYY97Y8GYPBMJZWF7Y4KZD5A",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=DNlb0PrAdro"
+  ]
+}

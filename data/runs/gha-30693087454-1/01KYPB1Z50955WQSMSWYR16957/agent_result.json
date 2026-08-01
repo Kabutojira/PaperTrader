@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KYPB1Z50955WQSMSWYR16957",
+  "status": "succeeded",
+  "summary": "Completed the initial scenario-complete review of QUALCOMM Incorporated after its July 30 post-results volume anomaly and July 31 RSI-oversold transition. Current SEC-filed fiscal Q3 evidence shows a 4% revenue decline, 23% GAAP diluted-EPS decline, 20% handset-revenue decline, and margin compression, partly offset by 61% automotive and 9% IoT growth. A mature-compounder earnings-multiple valuation gives USD 100/160/220 bear/base/bull values, 8.3937% expected return, 6.2953% confidence-adjusted expected return, and a USD 128 buy-below price versus the USD 147.61 mark. Insufficient expected and base returns, weak downside payoff, inadequate margin of safety, adverse timing, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.",
+  "evidence": [
+    {
+      "source": "source_qcom_q3_2026_10q",
+      "claim": "Qualcomm's SEC-filed fiscal Q3 2026 Form 10-Q reports USD 9.947 billion of quarterly revenue, down 4% year over year, and USD 1.626 billion of operating income, down 41%. QCT handset revenue fell 20% to USD 5.086 billion while automotive rose 61% to USD 1.588 billion and IoT rose 9% to USD 1.830 billion. Nine-month operating cash flow was USD 8.405 billion and capital expenditure was USD 1.578 billion. Cash and marketable securities totaled USD 8.304 billion, short- and long-term debt totaled USD 15.270 billion, inventory was USD 8.379 billion, and 1.057 billion common shares were outstanding.",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/qcom-20260628.htm",
+      "observed_at": "2026-08-01T09:27:19Z",
+      "source_hash": "3b460b26dff13a28bfda17b4676f6a2bd3686989d4fb5ffff445102fb1455224"
+    },
+    {
+      "source": "source_qcom_q3_2026_results",
+      "claim": "Qualcomm's SEC-hosted fiscal Q3 release reports USD 1.87 GAAP diluted EPS, down 23%, and USD 2.21 non-GAAP diluted EPS, down 20%. QCT revenue fell 5%, QTL revenue fell 3%, and their EBT margins declined four and two points. Management guided fiscal Q4 revenue to USD 9.7-10.5 billion and non-GAAP diluted EPS to USD 2.05-2.25 while warning that memory constraints and broad semiconductor input-cost inflation are pressuring current performance.",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm",
+      "observed_at": "2026-08-01T09:27:19Z",
+      "source_hash": "2b813ecd3ee1083753b715ef5525376853825d38ffab72d13abf171a95eae347"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "QCOM's July 30 post-results session entered a volume anomaly at a USD 151.600006 adjusted close on 24,336,800 shares after a -16.666662% July 1-30 return. On July 31, QCOM fell to USD 147.610001, extending the July 2-31 decline to -16.249645%; RSI reached 28.880923 and entered oversold territory. The payload dates, triggers, observation periods, marks, and both source-price hashes match canonical state.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "1593c026c9336f1c930673eccf658cc68e049d320e92f3cd9a2dca960e21722a"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8675000071525574 for 2026-07-31 and was retrieved at 2026-08-01T09:07:38Z, confirming fresh FX identity for the USD security mark.",
+      "observed_at": "2026-08-01T09:07:38Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/assessment_upsert_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/security_upsert_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/source_qcom_q3_2026_10q_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/source_qcom_q3_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_3a75fc1ccca2ee7c937a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Qualcomm was researched after its July 30 post-results volume anomaly and July 31 RSI-oversold transition. Fiscal Q3 revenue fell 4%, handset revenue fell 20%, and margins compressed, partly offset by 61% automotive and 9% IoT growth. The USD 147.61 mark remains above the USD 128 margin-of-safety buy zone; insufficient expected and base returns, weak downside payoff, adverse timing, and no accepted relationship leave the medium-confidence assessment hold/watch-rated and ineligible, with no conviction paper strategy or idea refresh."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_3a75fc1ccca2ee7c937a",
+    "papertrader research source record --request data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/source_qcom_q3_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/source_qcom_q3_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_3a75fc1ccca2ee7c937a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, common-stock instrument, QCOM provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched both alert transitions, canonical market dates, exact observation periods, USD 151.600006 and USD 147.610001 marks, source-price hashes, volume, RSI, Bollinger, and MACD state to canonical market data.",
+      "Registered the fiscal Q3 2026 Form 10-Q and SEC-hosted results release before assessment; both evidence references are current, available, identity-linked, and fresh at the assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion rate and timestamps are identity-matched and fresh.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered USD 100/160/220 scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Hold/watch, ineligible, quality score 74, 8.393740% expected return, 6.295305% confidence-adjusted expected return, USD 128 buy-below price, and exact expected-return, base-return, payoff, margin-of-safety, and relationship-pending gate failures.",
+      "Confirmed there are no payload-linked ideas or accepted canonical relationships, so no idea-research follow-up is required; the conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the ten canonical receipts in command_audit.json in receipt order.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}

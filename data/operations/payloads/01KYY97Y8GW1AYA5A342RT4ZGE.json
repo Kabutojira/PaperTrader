@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_lSx5W8a3_yQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-01T09:07:22Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_lSx5W8a3_yQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "lSx5W8a3_yQ",
+    "video_title": "Nintendo is a Cool Stock/Great Moat!",
+    "video_url": "https://www.youtube.com/watch?v=lSx5W8a3_yQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KYY97Y8GW1AYA5A342RT4ZGE",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=lSx5W8a3_yQ"
+  ]
+}

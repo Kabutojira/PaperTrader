@@ -4,7 +4,11 @@
   "inputs": {
     "assessment_state": "missing",
     "maintenance_mode": "assessment_v2_migration",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
     "migration_version": "assessment-v2-migration-v1",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
     "research_page": "",
     "research_reasons": [
       {
@@ -20,12 +24,32 @@
         "prompt": "Migrate security_099561384c0f5e697727 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
         "source": "assessment_v2_migration:rollout-step22-20260730",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_099561384c0f5e697727:71271d9dddbff8809439:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Research security_099561384c0f5e697727 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
-    "security_id": "security_099561384c0f5e697727"
+    "security_id": "security_099561384c0f5e697727",
+    "source_price_hash": "270e91b06dfe84b0d6cdf39e717e04a28a6be6ea43eefb4c1ccc4ecd7bdecfcb",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research CSIQ — Canadian Solar Inc. as an initial bounded security review. | Additional cause: Migrate security_099561384c0f5e697727 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+  "objective": "Research CSIQ — Canadian Solar Inc. as an initial bounded security review. | Additional cause: Migrate security_099561384c0f5e697727 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison. | Additional cause: Research security_099561384c0f5e697727 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB1PBRCRHY63XGVY8SV80F",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd.md"
+  ]
 }

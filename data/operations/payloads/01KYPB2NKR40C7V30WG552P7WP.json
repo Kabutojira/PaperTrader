@@ -2,10 +2,43 @@
   "entity_id": "security_c86bb4e75658c07142cf",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_c86bb4e75658c07142cf"
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_c86bb4e75658c07142cf:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:31Z",
+        "prompt": "Research GOOGL — Alphabet Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_c86bb4e75658c07142cf:99bede7635248b679fb5:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Research security_c86bb4e75658c07142cf with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_c86bb4e75658c07142cf-macd_cross_above_signal-e7c32a666d8b.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_c86bb4e75658c07142cf",
+    "source_price_hash": "b0e7d6aff1b7cf90bed119246e683face8a24200c5b6c597b9f6131387bf6418",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research GOOGL — Alphabet Inc. as an initial bounded security review.",
+  "objective": "Research GOOGL — Alphabet Inc. as an initial bounded security review. | Additional cause: Research security_c86bb4e75658c07142cf with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB2NKR40C7V30WG552P7WP",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_c86bb4e75658c07142cf-macd_cross_above_signal-e7c32a666d8b.md"
+  ]
 }

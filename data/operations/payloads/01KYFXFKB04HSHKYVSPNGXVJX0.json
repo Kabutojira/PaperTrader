@@ -5,6 +5,10 @@
     "assessment_state": "2026-07-29T22:50:00Z",
     "idea_id": "idea_critical_minerals_lithium",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
     "research_focus": "Test realized lithium pricing, volume, cash conversion, leverage, preferred-stock dilution, updated guidance, valuation, catalysts, and invalidation after Q2 2026 results.",
     "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
     "research_reasons": [
@@ -27,16 +31,34 @@
           "source_alb_q1_2026_results_sec",
           "source_alb_q2_2026_earnings_date"
         ]
+      },
+      {
+        "dedupe_key": "security_research:security_66cdcf90aac0d83e76f3:bcd27984da27603056af:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-11e8b42f0b00.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
-    "security_id": "security_66cdcf90aac0d83e76f3"
+    "security_id": "security_66cdcf90aac0d83e76f3",
+    "source_price_hash": "611da3261bdad867dcad82644a7fbd61b659a01d7f43e83682f9eb8dbbb79382",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Reassess Albemarle after its 2026 second-quarter release following the July oversold transition. | Additional cause: Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Reassess Albemarle after its 2026 second-quarter release following the July oversold transition. | Additional cause: Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_66cdcf90aac0d83e76f3 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYFXFKB04HSHKYVSPNGXVJX0",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752.md",
+    "data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-11e8b42f0b00.md",
     "https://investors.albemarle.com/news-and-events/news/news-details/2026/Albemarle-Corporation-to-Release-Second-Quarter-2026-Earnings-Results-on-Wednesday-August-5-2026/default.aspx",
     "source_alb_q1_2026_results_sec",
     "source_alb_q2_2026_earnings_date"

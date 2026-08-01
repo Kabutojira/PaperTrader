@@ -4,14 +4,48 @@
   "inputs": {
     "assessment_state": "2026-07-29T21:35:30Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
     "research_page": "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
-    "security_id": "security_18a3ab0ee6086ee85d0f"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_18a3ab0ee6086ee85d0f:allocation-maintenance:2026-07-29T21:35:30Z",
+        "observed_at": "2026-07-29T21:42:10Z",
+        "prompt": "Revalidate security_18a3ab0ee6086ee85d0f with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_etn_q1_2026_10q",
+          "source_etn_q2_2026_earnings_date"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_18a3ab0ee6086ee85d0f:56f647b2463b21ebbc32:2026-07-31",
+        "market_data_date": "2026-07-31",
+        "observed_at": "2026-08-01T09:07:38Z",
+        "prompt": "Research security_18a3ab0ee6086ee85d0f with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-4d01b00f7097.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_18a3ab0ee6086ee85d0f",
+    "source_price_hash": "c10ce68bccbe348b676b6fb56c4abf35eaab50b8df7757a59ee0342093d038d9",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_18a3ab0ee6086ee85d0f with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_18a3ab0ee6086ee85d0f with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_18a3ab0ee6086ee85d0f with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYQX7VTGEFWS7H0DHXC97SC4",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-4d01b00f7097.md",
     "source_etn_q1_2026_10q",
     "source_etn_q2_2026_earnings_date"
   ]

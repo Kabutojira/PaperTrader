@@ -1,0 +1,23 @@
+{
+  "security_id": "security_3a75fc1ccca2ee7c937a",
+  "issuer_id": "issuer_c24baac1975c47ed8d80",
+  "company_name": "QUALCOMM Incorporated",
+  "instrument_name": "QUALCOMM Incorporated common stock",
+  "instrument_type": "equity",
+  "ticker": "QCOM",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "QCOM",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 post-results volume anomaly and 2026-07-31 RSI-oversold transition.",
+  "research_summary": "Automotive and IoT growth support diversification, but handset contraction, margin pressure, supply and input-cost risks, net debt, weak downside payoff, and an insufficient margin of safety keep Qualcomm at watch with no strategy.",
+  "research_page": "data/wiki/securities/security_3a75fc1ccca2ee7c937a.md",
+  "last_research_at": "2026-08-01T09:27:19Z",
+  "next_review_at": "2026-08-31T09:27:19Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/qcom-20260628.htm"
+}

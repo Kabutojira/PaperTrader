@@ -1,0 +1,18 @@
+{
+  "source_id": "source_qcom_q3_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000085/qcom062826erex991.htm",
+  "source_type": "issuer_release",
+  "title": "Qualcomm Announces Third Quarter Fiscal 2026 Results",
+  "publisher": "QUALCOMM Incorporated via the U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2b813ecd3ee1083753b715ef5525376853825d38ffab72d13abf171a95eae347",
+  "related_entity_ids": "security_3a75fc1ccca2ee7c937a",
+  "checked_at": "2026-08-01T09:27:19Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The semiconductor industry is experiencing a broad-based increase in input costs, across wafer fabrication, assembly, test, advanced packaging, memory and other materials.",
+  "summary": "Qualcomm's SEC-hosted fiscal Q3 2026 release reports USD 9.947 billion of revenue, USD 1.87 GAAP diluted EPS, and USD 2.21 non-GAAP diluted EPS, all below the prior-year quarter. QCT revenue fell 5% and QTL revenue fell 3%; handset revenue fell 20%, offset partly by 61% automotive and 9% IoT growth. Management guided fiscal Q4 revenue to USD 9.7-10.5 billion and non-GAAP diluted EPS to USD 2.05-2.25 while warning that broad semiconductor input-cost inflation and memory and supply constraints are pressuring current performance. Qualcomm returned USD 2.3 billion to stockholders in the quarter, including USD 1.4 billion of repurchases and USD 973 million of dividends.",
+  "run_id": "gha-30693087454-1"
+}

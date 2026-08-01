@@ -1,0 +1,86 @@
+{
+  "operation_id": "01KYPB1W78HSRT5KNG39B7SPBX",
+  "status": "succeeded",
+  "summary": "Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.",
+  "evidence": [
+    {
+      "source": "source_amzn_q2_2026_10q",
+      "claim": "Amazon's SEC-filed Q2 2026 Form 10-Q reports USD 200.606 billion of quarterly net sales, USD 27.461 billion of operating income, USD 161.403 billion of trailing operating cash flow, and a USD 7.604 billion trailing free-cash-flow outflow. Cash and marketable securities totaled USD 122.988 billion, long-term debt was USD 128.894 billion, long-term lease liabilities were USD 94.338 billion, 10.783 billion common shares were outstanding at quarter-end, and 244.4 million restricted stock units remained outstanding.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+      "observed_at": "2026-08-01T09:14:42Z",
+      "source_hash": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb"
+    },
+    {
+      "source": "source_amzn_q2_2026_results",
+      "claim": "The SEC-hosted Q2 release reports 20% consolidated sales growth, 43% operating-income growth, and 37% AWS sales growth. North America, International, and AWS operating income was USD 9.1 billion, USD 1.7 billion, and USD 16.6 billion. Reported net income included USD 53.4 billion of non-operating pre-tax income primarily from Anthropic, and Q3 guidance calls for USD 197-202 billion of sales and USD 22.5-26.5 billion of operating income.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+      "observed_at": "2026-08-01T09:14:42Z",
+      "source_hash": "3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "AMZN's July 30 volume anomaly occurred at a USD 235.50 adjusted close after a -2.565162% July 1-30 return and before the after-close results release. On July 31, the first post-results session, AMZN rose 15.320589% to USD 271.579987 on 128,881,300 shares; the July 2-31 return was 11.913293%, the volume z-score was 3.419549, RSI was 67.878785, the close was 2.992817% above the upper Bollinger band, and MACD crossed above its signal. The payload dates, triggers, mark, and source-price hashes match canonical state.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "b81fd0db00c2f4206bc6e0d6d5704687c29289da6da636fee699dffb9269df93"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The canonical USD/EUR cache records 0.8675000071525574 for 2026-07-31 and was retrieved at 2026-08-01T09:07:38Z, confirming fresh FX identity for the USD security mark.",
+      "observed_at": "2026-08-01T09:07:38Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/assessment_upsert_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/security_upsert_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/source_amzn_q2_2026_10q_request.json",
+    "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/source_amzn_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_2433a056eb0c55961fcc.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Amazon was researched after its July 30 volume anomaly and July 31 earnings-driven upper-Bollinger and bullish-MACD transitions. Q2 sales rose 20%, operating income rose 43%, and AWS sales rose 37%, but the USD 271.58 mark is slightly above the USD 270 base case. Negative trailing free cash flow, AI capital intensity, leverage, weak downside payoff, and adverse entry timing leave the medium-confidence assessment watch-rated and ineligible; no conviction paper strategy or idea refresh was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_2433a056eb0c55961fcc",
+    "papertrader research source record --request data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/source_amzn_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/source_amzn_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/assessment_upsert_retry02_request.json",
+    "papertrader research security-context --security-id security_2433a056eb0c55961fcc",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, sequential harness, and trusted native, controller, and security-research skill preflight identities.",
+      "Confirmed the issuer, common-stock instrument, AMZN provider symbol, XNAS venue, USD currency, and equity identity are unique and match the SEC filing.",
+      "Matched all three alert transitions, both canonical market dates, exact observation periods, USD 235.50 and USD 271.579987 marks, source-price hashes, volume, RSI, Bollinger, and MACD state to canonical market data.",
+      "Registered the Q2 2026 Form 10-Q and SEC-hosted results release before assessment; both evidence references are current, available, identity-linked, and fresh at the assessment timestamp.",
+      "Confirmed the USD market mark and USD/EUR conversion rate and timestamps are identity-matched and fresh.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered USD 200/270/360 scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Hold/watch, ineligible, quality score 80, 1.259302% expected return, 0.944477% confidence-adjusted expected return, USD 216 buy-below price, and exact expected-return, base-return, payoff, margin-of-safety, and relationship-pending gate failures.",
+      "Confirmed there are no payload-linked ideas or accepted canonical relationships, so no idea-research follow-up is required; the conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "Confirmed commands_run exactly matches the twelve canonical receipts in command_audit.json in receipt order, including two immutable rejected assessment requests followed by the accepted corrected request.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state were changed by this operation."
+    ]
+  }
+}
