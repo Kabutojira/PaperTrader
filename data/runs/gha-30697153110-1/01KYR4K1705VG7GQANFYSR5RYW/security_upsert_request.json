@@ -1,0 +1,23 @@
+{
+  "security_id": "security_dc8486c1d61df62a22fd",
+  "issuer_id": "issuer_7c050f79848c800cf817",
+  "company_name": "Schneider Electric SE",
+  "instrument_name": "Schneider Electric SE ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "SU",
+  "exchange_code": "PAR",
+  "venue_mic": "XPAR",
+  "provider_symbol": "SU.PA",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "FR",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-30 upper-Bollinger and bullish-MACD entries and the strengthened 2026-07-31 upper-Bollinger transition.",
+  "research_summary": "Data-centre demand, integrated power and cooling offers, margins and cash conversion are strong, but leverage, acquisition and working-capital risk, adverse breakout timing, and a valuation above the base case keep Schneider Electric at watch with no strategy.",
+  "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+  "last_research_at": "2026-08-01T11:16:33Z",
+  "next_review_at": "2026-08-31T11:16:33Z",
+  "source": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_schneider_h1_2026_results",
+  "url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026",
+  "canonical_url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026",
+  "source_type": "issuer_release",
+  "title": "Schneider Electric Half Year 2026 Results",
+  "publisher": "Schneider Electric SE",
+  "license": "",
+  "status": "available",
+  "content_hash": "b1107b9dc93b4233bcf5335f7613fb41be0999bd3e573543cbae9a0519245a72",
+  "related_entity_ids": "security_dc8486c1d61df62a22fd|idea_ai_infrastructure_power",
+  "checked_at": "2026-08-01T11:16:33Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The Data Center & Networks end-market continues to see sustained high demand, up triple-digit in Q2.",
+  "summary": "Schneider Electric's July 30 H1 2026 release reports EUR 21.226 billion revenue, up 14.0% organically, EUR 4.093 billion adjusted EBITA at a 19.3% margin, EUR 2.488 billion net income, EUR 1.631 billion free cash flow, and EUR 4.79 adjusted EPS. Energy Management produced EUR 17.641 billion revenue and a 22.4% adjusted EBITA margin. Data Center & Networks demand rose triple-digit in Q2 and sales grew strong double-digit, led by prefabricated solutions, cooling and three-phase UPS. Net debt reached EUR 15.360 billion; trade working capital absorbed EUR 1.208 billion. The group upgraded 2026 organic revenue growth guidance to 10-13% and adjusted EBITA growth to 14-19% while announcing pending Cognite and AiDASH acquisitions.",
+  "run_id": "gha-30697153110-1"
+}

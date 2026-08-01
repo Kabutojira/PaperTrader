@@ -1,0 +1,98 @@
+{
+  "operation_id": "01KYR4K1705VG7GQANFYSR5RYW",
+  "status": "succeeded",
+  "summary": "Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center & Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy was created; exactly one dependent AI-infrastructure idea refresh was queued.",
+  "evidence": [
+    {
+      "source": "source_schneider_h1_2026_results",
+      "claim": "Schneider Electric's July 30 H1 2026 release reports EUR 21.226 billion revenue, up 14.0% organically, EUR 4.093 billion adjusted EBITA at a 19.3% margin, EUR 2.488 billion net income, EUR 1.631 billion free cash flow, and EUR 4.79 adjusted EPS. Energy Management produced EUR 17.641 billion revenue and a 22.4% adjusted EBITA margin. Data Center & Networks demand rose triple-digit in Q2 and sales grew strong double-digit, led by prefabricated solutions, cooling and three-phase UPS. Net debt reached EUR 15.360 billion and trade working capital absorbed EUR 1.208 billion. Management upgraded 2026 organic revenue growth guidance to 10-13% and organic adjusted EBITA growth to 14-19%.",
+      "url": "https://www.se.com/ww/en/assets/pdf/release-hy-results-2026",
+      "observed_at": "2026-08-01T11:16:33Z",
+      "source_hash": "b1107b9dc93b4233bcf5335f7613fb41be0999bd3e573543cbae9a0519245a72"
+    },
+    {
+      "source": "source_schneider_fy2025_results",
+      "claim": "Schneider Electric's FY2025 release reports EUR 40.152 billion revenue, EUR 7.520 billion adjusted EBITA at an 18.7% margin, EUR 4.635 billion free cash flow, EUR 8.59 adjusted EPS and EUR 13.721 billion year-end net debt. It reports sharply accelerating pure data-centre demand and strong uptake across electrical panels, UPS, racks, prefabricated solutions and liquid cooling, plus lifecycle commissioning, modernization and maintenance demand.",
+      "url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf",
+      "observed_at": "2026-08-01T11:16:33Z",
+      "source_hash": "5b17e6e8e5b8c47f697f5d352ed9639b98b261d9ecf886d3e8ce147493ebb00a"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "SU.PA rose from EUR 256.80 on July 29 to EUR 284.60 on July 30, entering upper-Bollinger and bullish-MACD states for source-price hash 27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca. On July 31 it closed at EUR 290.04998779296875, 2.063384% above the upper Bollinger band, with RSI 63.138298 and no volume anomaly; the strengthened upper-band state matches source-price hash 0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f.",
+      "observed_at": "2026-08-01T11:11:18Z",
+      "source_hash": "0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_e4fe0bf457700a06eefc is schema version 2 and derives Sell/Avoid, watch tier, ineligible allocation status, quality score 80, EUR 250 probability-weighted fair value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, EUR 192 buy-below price, and exact failures for expected return, base return, bear/base payoff, expected/bear payoff, margin of safety and relationship status.",
+      "observed_at": "2026-08-01T11:21:10Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYYGXXBG0NQ4A5YSFFBGWK2B.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry03_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry04_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/security_upsert_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/source_schneider_fy2025_results_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/source_schneider_h1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+  ],
+  "operations_created": [
+    "01KYYGXXBG0NQ4A5YSFFBGWK2B"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Schneider Electric was researched after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Record H1 revenue, margin and free cash flow plus triple-digit data-centre demand confirm the operating thesis, but the EUR 290.05 mark exceeds the EUR 240 base case and EUR 192 buy zone. The medium-confidence scenario assessment is Sell/Avoid, watch-tier and ineligible, so no conviction strategy was created; one dependent AI-infrastructure idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc8486c1d61df62a22fd",
+    "papertrader research source record --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/source_schneider_h1_2026_results_request.json",
+    "papertrader research source record --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/source_schneider_fy2025_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry02_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry03_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry04_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/enqueue_idea_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/enqueue_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_dc8486c1d61df62a22fd",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease, sequential harness, and trusted native, controller and security-research skill preflight identities.",
+      "Confirmed the Schneider Electric SE issuer, Paris ordinary-share instrument, SU.PA provider symbol, XPAR venue, EUR currency and equity identity are unique and consistent with the issuer release and canonical security table.",
+      "Matched the July 30 upper-Bollinger and bullish-MACD entries and July 31 strengthened upper-Bollinger transition to the canonical market dates, observation periods, marks, indicators and both source-price hashes.",
+      "Registered the H1 2026 and FY2025 issuer releases before assessment; both evidence references are available, identity-linked and current at the assessment timestamp.",
+      "Confirmed the current EUR market mark, base-currency rate of 1, and market and FX timestamps are identity-matched and fresh.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered EUR 190/240/330 scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Sell/Avoid, watch tier, ineligible, quality score 80, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, EUR 192 buy-below price, and exact expected-return, base-return, payoff, margin-of-safety and relationship-pending gate failures.",
+      "Confirmed exactly one dependent idea-research follow-up, 01KYYGXXBG0NQ4A5YSFFBGWK2B, exists for payload-linked idea_ai_infrastructure_power and no accepted canonical relationship adds another idea; the conviction strategy gate fails and no strategy-research follow-up was created.",
+      "Initial assessment requests failed closed on stale market timestamp, base-currency FX timestamp, non-canonical soft-gap values and unsorted evidence IDs; each correction used a new immutable request artifact, and retry04 succeeded.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, queue, allocation, publication, portfolio and accounting invariants.",
+      "Confirmed commands_run exactly matches the sixteen canonical receipts in command_audit.json in receipt order, including failed closed attempts and the bounded queue-lock retry.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance or other accounting state were changed by this operation."
+    ]
+  }
+}

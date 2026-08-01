@@ -1,0 +1,23 @@
+{
+  "security_id": "security_099561384c0f5e697727",
+  "issuer_id": "issuer_e699404e0c6af2dc02c3",
+  "company_name": "Canadian Solar Inc.",
+  "instrument_name": "Canadian Solar Inc. common shares",
+  "instrument_type": "equity",
+  "ticker": "CSIQ",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CSIQ",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CA",
+  "sector": "Technology",
+  "industry": "Solar",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-31 bullish MACD crossover and initial assessment backfill.",
+  "research_summary": "Storage growth and discounted attributable book value provide upside, but weak normalized module economics, negative operating cash flow, high debt, project complexity, inadequate downside payoff and a mark just above the buy zone keep Canadian Solar at watch with no strategy.",
+  "research_page": "data/wiki/securities/security_099561384c0f5e697727.md",
+  "last_research_at": "2026-08-01T11:29:29Z",
+  "next_review_at": "2026-08-31T11:29:29Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926060672/tm2614624d1_ex99-1.htm"
+}

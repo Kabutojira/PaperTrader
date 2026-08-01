@@ -1,0 +1,18 @@
+{
+  "source_id": "source_schneider_fy2025_results",
+  "url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf",
+  "canonical_url": "https://www.se.com/ww/en/assets/564/document/528237/release-fy-results-2025.pdf",
+  "source_type": "issuer_release",
+  "title": "Schneider Electric Full Year 2025 Results",
+  "publisher": "Schneider Electric SE",
+  "license": "",
+  "status": "available",
+  "content_hash": "5b17e6e8e5b8c47f697f5d352ed9639b98b261d9ecf886d3e8ce147493ebb00a",
+  "related_entity_ids": "security_dc8486c1d61df62a22fd|idea_ai_infrastructure_power",
+  "checked_at": "2026-08-01T11:16:33Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Sales growth in pure Data Center remained at a strong double-digit level, year-over-year in Q4.",
+  "summary": "Schneider Electric's February 26 FY2025 release reports EUR 40.152 billion revenue, up 8.9% organically, EUR 7.520 billion adjusted EBITA at an 18.7% margin, EUR 4.635 billion free cash flow, EUR 8.59 adjusted EPS, and EUR 13.721 billion year-end net debt. Pure data-centre demand accelerated sharply and the group reported strong uptake across electrical panels, UPS, racks, prefabricated solutions and liquid cooling. Data-centre growth also supported commissioning, modernization and maintenance services. The group entered 2026 targeting 7-10% organic revenue growth and 10-15% organic adjusted EBITA growth before upgrading that target at H1.",
+  "run_id": "gha-30697153110-1"
+}

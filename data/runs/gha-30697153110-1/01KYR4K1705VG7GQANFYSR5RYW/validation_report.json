@@ -1,0 +1,28 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KYYGXXBG0NQ4A5YSFFBGWK2B.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry03_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/assessment_upsert_retry04_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/security_upsert_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/source_schneider_fy2025_results_request.json",
+    "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/source_schneider_h1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYR4K1705VG7GQANFYSR5RYW",
+  "passed": true,
+  "run_id": "gha-30697153110-1",
+  "validation_version": 1
+}

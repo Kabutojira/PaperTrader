@@ -7,8 +7,8 @@ tags:
 created: "2026-08-01"
 updated: "2026-08-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7dada9410e88dc156ba8"
-as_of: "2026-08-01T09:32:24Z"
+snapshot_id: "decision_edd90aad1de62e587d1b"
+as_of: "2026-08-01T11:48:34Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **39**
-- Securities with retained revisions: **39**
+- Immutable assessment versions: **42**
+- Securities with retained revisions: **42**
 
 ## Candidate
 
@@ -200,6 +200,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Arista Networks, Inc. common stock](securities/security_6f9a1450edceb9307c9a)
 - [ASML Holding N.V. New York registered shares](securities/security_ef35e41886220d51c22c)
 - [Atkore Inc. common stock](securities/security_22c2b9d782a62d7a9b86)
+- [Canadian Solar Inc. common shares](securities/security_099561384c0f5e697727)
 - [Carlisle Companies Incorporated common stock](securities/security_9b0db3bc77914b23a307)
 - [Coinbase Global, Inc. Class A common stock](securities/security_37ddcbdaad296ad831f2)
 - [CrowdStrike Holdings, Inc. Class A common stock](securities/security_8472507d7d320aa388a7)
@@ -213,6 +214,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
+- [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)
 - [Palantir Technologies Inc. Class A common stock](securities/security_bdc2f87dadf134760c3a)
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)
@@ -225,6 +227,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Rocket Lab Corporation common stock](securities/security_7ca095d63423c55a90e3)
 - [RTX Corporation common stock](securities/security_59304f90c440def31dc5)
 - [Samsung Electronics common GDR](securities/security_567d0d575bbd30aaa91d)
+- [Schneider Electric SE ordinary shares](securities/security_dc8486c1d61df62a22fd)
 - [Sigma Lithium Corporation common shares](securities/security_4627aea1bf7d8943d3d8)
 - [Sociedad Quimica y Minera de Chile S.A. American depositary shares](securities/security_9d4049ed6669a52815d6)
 - [Southern Copper Corporation common stock](securities/security_6ad1af8d10d6276a0221)

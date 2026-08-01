@@ -1,0 +1,23 @@
+{
+  "security_id": "security_3853e54c619d597dcaa1",
+  "issuer_id": "issuer_ce197b18fc3fa3d699e7",
+  "company_name": "Nidec Corporation",
+  "instrument_name": "Nidec Corporation Frankfurt ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "NIB.F",
+  "exchange_code": "FRA",
+  "venue_mic": "XFRA",
+  "provider_symbol": "NIB.F",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "JP",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-07-31 bullish-MACD crossover; accounting, annual-report and quality investigations require monitoring.",
+  "research_summary": "Motor and data-centre exposure has operating potential, but unreliable interim accounts, a delayed audited annual filing, unresolved quality impacts and thin Frankfurt liquidity make valuation unsupported and preclude a strategy.",
+  "research_page": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
+  "last_research_at": "2026-08-01T11:41:20Z",
+  "next_review_at": "2026-09-30T11:41:20Z",
+  "source": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0630-01/260630-01en.pdf"
+}

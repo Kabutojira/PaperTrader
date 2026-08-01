@@ -7,13 +7,13 @@ tags:
 created: "2026-08-01"
 updated: "2026-08-01"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7dada9410e88dc156ba8"
-as_of: "2026-08-01T09:32:24Z"
+snapshot_id: "decision_edd90aad1de62e587d1b"
+as_of: "2026-08-01T11:48:34Z"
 ---
 
 # Signals
 
-**Snapshot `decision_7dada9410e88dc156ba8` · As of `2026-08-01T09:32:24Z`**
+**Snapshot `decision_edd90aad1de62e587d1b` · As of `2026-08-01T11:48:34Z`**
 
 ## Actionable trade signals
 
@@ -34,14 +34,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### SU — Schneider Electric SE
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center &amp; Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy
 
 ### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
@@ -214,14 +214,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### NIB.F — Nidec Corporation
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the initial schema-version-2 review of Nidec Corporation's Frankfurt ordinary shares after the 2026-07-31 bullish-MACD crossover. The signal followed a 6.16% 20-session decline and coincided with a 5.31% one-session rebound, but the small positive MACD histogram, neutral RSI and 72-share Frankfurt volume make it an unconfirmed technical rebound rather than a trade catalyst. Nidec's latest interim statements report operating strengths and positive free cash flow but warn that suspected inappropriate accounting could materially and pervasively affect the figures. The audited annual filing is delayed to September 30, 2026, and a separate external investigation is assessing group-wide quality issues and their unquantified financial impact. The deterministic assessment is Unrated/Watch, research-unsupported and allocation-ineligible, with accounting uncertainty, insufficient listing liquidity and unsupported valuation as hard blockers. No scenario values, strategy or idea follow-u
 
 ### GOOGL — Alphabet Inc.
 
@@ -250,14 +250,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### CSIQ — Canadian Solar Inc.
+### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the initial scenario-complete review of Canadian Solar Inc. after its 2026-07-31 bullish-MACD crossover. Q1 2026 storage shipments rose 142% year on year, but module shipments fell 64%, revenue fell 10%, reported gross margin included a USD 93 million tariff refund, operating cash flow was negative USD 209 million, and total debt reached USD 6.8 billion. A conservative attributable-book NAV gives USD 10.43/18.78/27.12 bear/base/bull values, USD 17.943 probability-weighted fair value, 18.9854117425640888123036307% expected return, 14.23905880692306660922772302% confidence-adjusted expected return, and a USD 15.024 buy-below price versus the USD 15.079999923706055 mark. The deterministic research rating is Buy/Initiate, but the security remains watch-tier and allocation-ineligible because both downside-payoff gates fail and relationship status is pending. No conviction strategy or idea follow-up was created.
 
 ### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
 

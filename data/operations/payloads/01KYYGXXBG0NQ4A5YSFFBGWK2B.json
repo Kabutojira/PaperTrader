@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_dc8486c1d61df62a22fd",
+    "security_research_operation_id": "01KYR4K1705VG7GQANFYSR5RYW",
+    "security_research_result_path": "data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/agent_result.json",
+    "seed_claim": "Schneider Electric's H1 2026 results confirm broad data-centre electrical, cooling, UPS and services demand with stronger margins and cash flow, but the EUR 290.05 mark is above the bounded base case and the breakout worsens entry timing."
+  },
+  "objective": "Refresh the AI infrastructure and power bottlenecks idea from Schneider Electric's accepted security review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KYYGXXBG0NQ4A5YSFFBGWK2B",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+  ]
+}

@@ -1553,3 +1553,27 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_7dada9410e88dc156ba8`.
 
 - Generated canonical [[daily-reports/daily-report_20260801]] for run `gha-30693087454-1`.
+
+- Researched [[securities/security_dc8486c1d61df62a22fd|Schneider Electric]] after its July 30
+  upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Record H1
+  revenue, margins, cash flow, upgraded guidance, and triple-digit data-centre demand confirm the
+  operating thesis, but the EUR 290.05 mark is above the EUR 240 base case and EUR 192 buy zone.
+  The medium-confidence assessment is ineligible, no conviction strategy was created, and the
+  payload-linked AI-infrastructure idea requires one sequential refresh.
+
+- Researched [[securities/security_099561384c0f5e697727|Canadian Solar]] after its July 31 bullish-
+  MACD crossover. Q1 storage shipments grew strongly, but module shipments and revenue contracted,
+  the headline margin depended on a tariff refund, operating cash flow was negative, and debt rose.
+  The USD 15.08 mark is just above the USD 15.02 buy zone, downside payoff is insufficient, and the
+  initial medium-confidence assessment is ineligible; no conviction strategy was created.
+
+- Researched [[securities/security_3853e54c619d597dcaa1|Nidec]] after its July 31 bullish-MACD
+  crossover. The signal followed a 6.16% 20-session decline and is an unconfirmed technical rebound,
+  not a trade catalyst. Suspected inappropriate accounting may materially and pervasively affect the
+  latest interim statements, the audited annual report is delayed to September 30, and a separate
+  external investigation is assessing group-wide quality issues and their financial impact. The
+  initial low-confidence assessment is valuation-unsupported and ineligible; no strategy was created.
+
+- Published investor decision snapshot `decision_edd90aad1de62e587d1b`.
+
+- Generated canonical [[daily-reports/daily-report_20260801]] for run `gha-30697153110-1`.

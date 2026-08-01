@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_q1_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926060672/tm2614624d1_ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926060672/tm2614624d1_ex99-1.htm",
+  "source_type": "issuer_release",
+  "title": "Canadian Solar First Quarter 2026 Results",
+  "publisher": "Canadian Solar Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "59474a34fb9c7a5f8f659bfccf04381a76c3ead9ee65e1857363376d75ac50aa",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-01T11:29:29Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 2026 net revenue was USD 1.1 billion and storage shipments were 2.1 GWh; reported gross margin included a tariff refund.",
+  "summary": "Canadian Solar reported Q1 2026 module shipments of 2.5 GW, down 64% year on year, and storage shipments of 2.1 GWh, up 142%. Net revenue fell 10% to USD 1.078 billion. Gross margin was 25.1% but included a USD 93 million tariff-refund benefit; Q2 gross-margin guidance was 13-15%. Net loss attributable to shareholders was USD 32 million and operating cash flow was negative USD 209 million. Cash was USD 1.441 billion and total debt including financing liabilities was USD 6.8 billion at March 31, 2026.",
+  "run_id": "gha-30697153110-1"
+}

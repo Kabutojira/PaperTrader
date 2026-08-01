@@ -1,0 +1,94 @@
+{
+  "operation_id": "01KYPB1PBRCRHY63XGVY8SV80F",
+  "status": "succeeded",
+  "summary": "Completed the initial scenario-complete review of Canadian Solar Inc. after its 2026-07-31 bullish-MACD crossover. Q1 2026 storage shipments rose 142% year on year, but module shipments fell 64%, revenue fell 10%, reported gross margin included a USD 93 million tariff refund, operating cash flow was negative USD 209 million, and total debt reached USD 6.8 billion. A conservative attributable-book NAV gives USD 10.43/18.78/27.12 bear/base/bull values, USD 17.943 probability-weighted fair value, 18.9854117425640888123036307% expected return, 14.23905880692306660922772302% confidence-adjusted expected return, and a USD 15.024 buy-below price versus the USD 15.079999923706055 mark. The deterministic research rating is Buy/Initiate, but the security remains watch-tier and allocation-ineligible because both downside-payoff gates fail and relationship status is pending. No conviction strategy or idea follow-up was created.",
+  "evidence": [
+    {
+      "source": "source_csiq_q1_2026_results",
+      "claim": "Canadian Solar reported Q1 2026 module shipments of 2.5 GW, down 64% year on year, and storage shipments of 2.1 GWh, up 142%. Net revenue fell 10% to USD 1.078 billion. Reported gross margin was 25.1% but included a USD 93 million tariff-refund benefit; Q2 gross-margin guidance was 13-15%. Net loss attributable to shareholders was USD 32 million, operating cash flow was negative USD 209 million, cash was USD 1.441 billion, and total debt including financing liabilities was USD 6.8 billion at March 31, 2026.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926060672/tm2614624d1_ex99-1.htm",
+      "observed_at": "2026-08-01T11:29:29Z",
+      "source_hash": "59474a34fb9c7a5f8f659bfccf04381a76c3ead9ee65e1857363376d75ac50aa"
+    },
+    {
+      "source": "source_csiq_2025_20f",
+      "claim": "Canadian Solar's audited 2025 Form 20-F identifies 67,816,724 common shares outstanding at January 31, 2026 and documents module and storage manufacturing, Recurrent Energy project assets, subsidiary and minority interests, trade-policy exposure, project-sale execution, financing needs and cyclical pricing risks used in the NAV assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926041976/csiq-20251231x20f.htm",
+      "observed_at": "2026-08-01T11:29:29Z",
+      "source_hash": "ce70a756317632aedb45029525f058e2207cecd2f787d27d68c1ece7453d0f63"
+    },
+    {
+      "source": "source_csiq_2026_green_notes",
+      "claim": "Canadian Solar's July 23, 2026 Form 6-K discloses a EUR 50 million Green Medium Term Note Program for solar and storage projects and general corporate purposes, backed by a parent guarantee capped at EUR 65 million. It adds bounded funding capacity while reinforcing financing and project-execution dependence.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926086249/tm2621092d1_6k.htm",
+      "observed_at": "2026-08-01T11:29:29Z",
+      "source_hash": "285feca0e7c57ab3dcf0e5cd6d524daf795eb8197036314b9e252ba4e4e9fca5"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "CSIQ closed at USD 15.079999923706055 on 2026-07-31 after a 4.287689% return from 2026-07-02. MACD of -0.40666 crossed above its -0.4611963 signal with a 0.0545363 histogram; RSI was 50.631343, the close remained below the 50-day and 200-day moving averages, and volume was not anomalous. The canonical USD/EUR rate was 0.8675000071525574 at the same retrieval timestamp.",
+      "observed_at": "2026-08-01T11:11:18Z",
+      "source_hash": "270e91b06dfe84b0d6cdf39e717e04a28a6be6ea43eefb4c1ccc4ecd7bdecfcb"
+    },
+    {
+      "source": "PaperTrader current assessment projection",
+      "claim": "Assessment assessment_c6e0cb947704a0c011a0 is schema version 2 and derives Buy/Initiate, watch tier, ineligible allocation status, quality score 54, USD 17.943 probability-weighted fair value, 18.9854117425640888123036307% expected return, 14.23905880692306660922772302% confidence-adjusted expected return, USD 15.024 buy-below price, and exact failures for bear/base payoff, expected/bear payoff and relationship status.",
+      "observed_at": "2026-08-01T11:32:50Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/assessment_upsert_request.json",
+    "data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/security_upsert_request.json",
+    "data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/source_csiq_2025_20f_request.json",
+    "data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/source_csiq_2026_green_notes_request.json",
+    "data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/source_csiq_q1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Canadian Solar was researched after its July 31 bullish-MACD crossover. Storage shipments grew strongly, but module volumes and revenue contracted, the headline margin depended on a tariff refund, operating cash flow was negative and debt rose. The USD 15.08 mark is just above the USD 15.024 buy zone; the assessment is Buy/Initiate on research rating but watch-tier and allocation-ineligible because downside payoff and relationship gates fail, so no conviction strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader research source record --request data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/source_csiq_q1_2026_results_request.json",
+    "papertrader research source record --request data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/source_csiq_2025_20f_request.json",
+    "papertrader research source record --request data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/source_csiq_2026_green_notes_request.json",
+    "papertrader research security upsert --request data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30697153110-1/01KYPB1PBRCRHY63XGVY8SV80F/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the immutable payload, sole running queue claim for the supplied run ID, live lease, sequential harness, and trusted native, controller and security-research skill preflight identities.",
+      "Confirmed the Canadian Solar Inc. issuer, Nasdaq common-share instrument, CSIQ provider symbol, XNAS venue, USD currency and equity identity are unique and consistent with the Form 20-F and canonical security table.",
+      "Matched the July 31 bullish-MACD transition to the canonical market date, 2026-07-02 through 2026-07-31 observation period, USD mark, indicators and source-price hash.",
+      "Registered the Q1 2026 results, 2025 Form 20-F and July 2026 green-note Form 6-K before assessment; all evidence references are available, identity-linked and current at the assessment timestamp.",
+      "Confirmed the current USD market mark and identity-matched USD/EUR rate of 0.8675000071525574 share the fresh 2026-08-01T11:11:18Z retrieval timestamp.",
+      "Confirmed exactly one current assessment and immutable history version exist for this run at schema version 2, linked to this operation and security-page hash, with ordered USD 10.43/18.78/27.12 scenarios and probabilities totaling exactly 100.",
+      "Confirmed deterministic outputs: Buy/Initiate research rating, watch tier, ineligible allocation status, quality score 54, 18.9854117425640888123036307% expected return, 14.23905880692306660922772302% confidence-adjusted expected return, USD 15.024 buy-below price, and exact bear/base-payoff, expected/bear-payoff and relationship-pending gate failures.",
+      "Confirmed the payload and canonical relationship state contain no linked ideas, so no idea-research follow-up is required; the unchanged full conviction strategy gate fails and no strategy-research follow-up was created.",
+      "The initial assessment request failed closed on non-canonical soft-gap values; the correction used a new immutable retry request, which succeeded.",
+      "Final papertrader schema validate --strict passed.",
+      "Final papertrader queue validate passed.",
+      "Final papertrader wiki lint --strict passed.",
+      "Final papertrader integrity --strict passed, including schema, source, market, queue, allocation, publication, portfolio and accounting invariants.",
+      "Confirmed commands_run exactly matches the twelve canonical receipts in command_audit.json in receipt order, including the failed closed assessment attempt.",
+      "No allocation targets or history, relationships, strategies, signals, orders, fills, executions, cash, portfolio, performance or other accounting state were changed by this operation."
+    ]
+  }
+}
