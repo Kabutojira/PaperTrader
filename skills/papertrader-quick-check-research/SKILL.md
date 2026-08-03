@@ -19,7 +19,10 @@ Require `security_id`, `baseline_operation_id`, `baseline_result_path`, `baselin
 
 ## Procedure
 
-1. Read the required wiki orientation files and the complete recent baseline security result and maintained security page.
+1. First run `papertrader research security-context --security-id <security_id>` and consume its
+   current and previous assessments, latest successful result, linked research state, retained
+   sources, and page hashes. Then read the required wiki orientation files, the complete recent
+   baseline security result, and the maintained security page.
 2. Extract the baseline thesis, valuation or buy zone, catalysts, invalidation conditions, risks, confidence, and next-review assumptions into a short checklist.
 3. Verify only those assumptions against current primary sources and the payload's exact market period. Do not redo broad discovery unless escalation is required.
 4. Compare the current price and evidence with every stored valuation, buy-zone, catalyst, and invalidation gate. State what remains true, what changed, and whether the repeated or combined alerts are noise, risk, or a possible entry condition.

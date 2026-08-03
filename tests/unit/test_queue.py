@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import os
+import stat
 from datetime import UTC, datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -24,6 +26,23 @@ from papertrader.queue import (
 from papertrader.tables import read_table, write_table
 
 NOW = datetime(2026, 7, 24, 10, tzinfo=UTC)
+
+
+def test_queue_lock_is_writable_across_runtime_users(
+    sandbox_repository: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    monkeypatch.setattr("papertrader.queue.tempfile.gettempdir", lambda: str(tmp_path))
+    previous_umask = os.umask(0o077)
+    try:
+        prepare_queue(sandbox_repository, now=NOW)
+    finally:
+        os.umask(previous_umask)
+
+    locks = list(tmp_path.glob("papertrader-queue-*.lock"))
+    assert len(locks) == 1
+    assert stat.S_IMODE(locks[0].stat().st_mode) == 0o666
 
 
 def _enqueue(

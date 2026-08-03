@@ -436,6 +436,32 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "commands_run must equal exactly" in prompt
     assert "do not include pytest" in prompt
     assert "never exhaust the turn budget without the manifest" in prompt
+    assert "Invoke the prepared `papertrader` executable directly" in prompt
+    assert "prefix a command with `uv run`" in prompt
+    assert "research security-context" not in prompt
+
+    security_operation = replace(
+        operation,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="security_example",
+    )
+    security_prompt = build_controller_prompt(
+        security_operation, run_id="local-1", injection_flags=()
+    )
+    assert (
+        "`papertrader research security-context --security-id security_example`" in security_prompt
+    )
+    assert "successful audited receipt is mandatory" in security_prompt
+
+    quick_check_prompt = build_controller_prompt(
+        replace(security_operation, operation_type="quick_check_research"),
+        run_id="local-1",
+        injection_flags=(),
+    )
+    assert "`papertrader research security-context --security-id security_example`" in (
+        quick_check_prompt
+    )
 
 
 def test_environment_scrubber_drops_actions_and_broker_tokens(

@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import fcntl
 import json
+import os
 import re
+import stat
 import tempfile
 from collections.abc import Iterator, Mapping, Sequence
 from contextlib import contextmanager
@@ -385,12 +387,26 @@ def validate_operation_payload(repository_root: Path, operation: Operation) -> N
 def _queue_lock(repository_root: Path) -> Iterator[None]:
     digest = content_hash(str(repository_root.resolve()))[:16]
     path = Path(tempfile.gettempdir()) / f"papertrader-queue-{digest}.lock"
-    with path.open("a+", encoding="utf-8") as handle:
-        fcntl.flock(handle.fileno(), fcntl.LOCK_EX)
+    flags = os.O_CREAT | os.O_RDWR | getattr(os, "O_CLOEXEC", 0) | getattr(os, "O_NOFOLLOW", 0)
+    descriptor = os.open(path, flags, 0o666)
+    try:
+        metadata = os.fstat(descriptor)
+        if not stat.S_ISREG(metadata.st_mode):
+            raise QueueError(f"queue lock must be a regular file: {path}")
+        if stat.S_IMODE(metadata.st_mode) != 0o666:
+            try:
+                os.fchmod(descriptor, 0o666)
+            except PermissionError as exc:
+                raise QueueError(
+                    f"queue lock is not writable across runtime users: {path}"
+                ) from exc
+        fcntl.flock(descriptor, fcntl.LOCK_EX)
         try:
             yield
         finally:
-            fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+            fcntl.flock(descriptor, fcntl.LOCK_UN)
+    finally:
+        os.close(descriptor)
 
 
 def _read_active(repository_root: Path) -> list[Operation]:

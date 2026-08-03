@@ -39,10 +39,11 @@ skill plus native `llm-wiki`; the parent controller separately preloads this con
 3. Orient with `SCHEMA.md`, the results-first `index.md`, the complete `research-catalog.md`, and
    the recent wiki log, then execute the selected operation skill once without sub-agents or
    concurrent commands.
-4. Use `papertrader` commands for structured state. The controller records each invocation and its
-   exact content delta in `command_audit.json`; `commands_run` must equal exactly those canonical
-   receipt command strings and must not include pytest, Python, shell, browsing, or descriptive
-   check entries.
+4. Invoke the prepared `papertrader` executable directly for structured state. Never invoke `uv`,
+   prefix a command with `uv run`, install dependencies, or modify `.venv`; that environment is
+   controller-owned. The controller records each project CLI invocation and its exact content delta
+   in `command_audit.json`; `commands_run` must equal exactly those canonical receipt command strings
+   and must not include pytest, Python, shell, browsing, or descriptive check entries.
    Treat every JSON request artifact as immutable after its first CLI invocation. A correction or
    changed retry must use a new uniquely named request file; never edit or overwrite the prior file.
    Allocation-linked strategy work may change only its strategy page, CLI-owned strategy/leg row,
