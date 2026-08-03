@@ -7,13 +7,13 @@ tags:
 created: "2026-08-03"
 updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a89f5d2652e4c2c71fea"
-as_of: "2026-08-03T07:52:37Z"
+snapshot_id: "decision_203b586393e6e96077ee"
+as_of: "2026-08-03T09:32:51Z"
 ---
 
 # Signals
 
-**Snapshot `decision_a89f5d2652e4c2c71fea` · As of `2026-08-03T07:52:37Z`**
+**Snapshot `decision_203b586393e6e96077ee` · As of `2026-08-03T09:32:51Z`**
 
 ## Actionable trade signals
 
@@ -58,8 +58,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment\_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.
 
 ### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
 
@@ -67,8 +67,8 @@ No pending paper orders.
 
 - Alert: `rsi\_oversold`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment\_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.
 
 ### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
 
@@ -76,8 +76,8 @@ No pending paper orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment\_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.
 
 ### [QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a)
 
@@ -184,8 +184,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `skipped`
+- Conclusion: Skipped this bounded YASKAWA Electric Frankfurt quick check because deterministic evidence proves the merged alert binding is obsolete. The current canonical 2026-07-31 indicator row has source-price hash df331c293711a8b89de8531f137ffbc13392418cc24b8830910f95c83381f203 rather than the payload's c85ddc3d7c4077e995268bf064deda5667a3815632250e842c480f7661679a83, has an empty trigger state, RSI 31.98414094 rather than oversold, and volume z-score 0.66302232 rather than anomalous. The EUR 25.60 mark remains above the baseline EUR 17.05-21.32 bounded valuation range, Frankfurt liquidity remains the hard blocker, and the three baseline issuer sources remain publicly available. No security, assessment, source, wiki, queue, strategy, signal, order, allocation, or accounting state was changed, and no full-review operation was created.
 
 ### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
 

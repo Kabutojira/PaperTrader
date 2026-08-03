@@ -1,0 +1,111 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security-context",
+        "--security-id",
+        "security_9b0db3bc77914b23a307"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research security-context --security-id security_9b0db3bc77914b23a307",
+      "completed_at": "2026-08-03T09:01:15Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-08-03T09:01:15Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-08-03T09:03:06Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-08-03T09:03:06Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-08-03T09:03:12Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-08-03T09:03:12Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-08-03T09:03:20Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-08-03T09:03:18Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-03T09:03:27Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-08-03T09:03:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "portfolio",
+        "reconcile",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader portfolio reconcile --strict",
+      "completed_at": "2026-08-03T09:03:36Z",
+      "exit_code": 0,
+      "request": null,
+      "started_at": "2026-08-03T09:03:36Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "allocation",
+        "readiness",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader allocation readiness --strict",
+      "completed_at": "2026-08-03T09:03:46Z",
+      "exit_code": 1,
+      "request": null,
+      "started_at": "2026-08-03T09:03:46Z"
+    }
+  ],
+  "operation_id": "01KYVJ62SRBDBV4T7HPTEK2VB7",
+  "run_id": "gha-30798126914-1"
+}

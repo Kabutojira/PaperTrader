@@ -1669,6 +1669,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260803]] for run `gha-30793143744-1`.
 
+- Published investor decision snapshot `decision_203b586393e6e96077ee`.
+
+- Generated canonical [[daily-reports/daily-report_20260803]] for run `gha-30798126914-1`.
+
 ## [2026-08-03] update | Quanta Services full Q2 2026 security review
 
 - Completed the dependent full review of
@@ -1689,3 +1693,29 @@ This log is append-only. Rotate it by year only after the configured line thresh
   results-driven decline to USD 35.60 is material evidence, not a validated buy zone: the old
   full-year cash-flow range is unsupported and the assessment is ineligible pending one dependent
   full review. No strategy or signal was created.
+
+## [2026-08-03] lint | wiki maintenance 2026-W32
+
+- Inspected all 197 maintained Markdown pages for reachability, links, catalog coverage,
+  frontmatter, tags, review dates, contradictions, confidence, sourcing, source drift, size, and
+  log rotation. Deterministic wiki lint passed. Recorded bounded stale-review and weak-confidence
+  findings in the run maintenance report; no sourced investment conclusion was changed.
+
+## [2026-08-03] update | Roblox full Q2 2026 security review
+
+- Completed the dependent full review of
+  [[securities/security_c9a37d277445869a8809|Roblox]]. Unchanged SEC-filed Q2 evidence confirms
+  continued engagement and payer growth, weak per-hour monetization, 8% bookings growth, withdrawal
+  of annual guidance, and Q3 bookings and cash-flow pressure. A normalized revenue-multiple review
+  establishes USD 28.23/USD 39.58/USD 53.00 bear/base/bull values at 30%/50%/20% probabilities.
+  At USD 35.60, downside payoff, confidence-adjusted expected return, margin of safety, and timing
+  remain inadequate. The disposition is Hold / Watch and ineligible; no conviction strategy or
+  signal was created, and the linked digital-attention idea requires one sequential refresh.
+
+## [2026-08-03] update | Rio Tinto breakout quick check
+
+- Updated [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] after the 30 July upper-Bollinger
+  transition persisted in the 31 July recomputation. The move does not establish a buy zone:
+  valuation remains unsupported because the now-due half-year earnings, cash-flow, net-debt, capex,
+  share-count, and segment inputs are unverified. Exactly one dependent full security review was
+  requested; no strategy or signal was created.

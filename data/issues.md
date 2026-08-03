@@ -4,6 +4,7 @@ Generated from `data/tables/issues.csv`.
 
 | Severity | Issue | Last seen | Owner | Related operation |
 | --- | --- | --- | --- | --- |
+| error | **issue_0acd52c371559780a934** — Rio Tinto assessment source operation is ambiguous within one run | 2026-08-03T09:27:11Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |

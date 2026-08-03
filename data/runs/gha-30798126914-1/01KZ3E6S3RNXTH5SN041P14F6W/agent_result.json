@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KZ3E6S3RNXTH5SN041P14F6W",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded full Rio Tinto review. The issuer's 2026 half-year release was retrieved and registered, but the required schema-v2 assessment could not be written: the deterministic applier found both predecessor quick check 01KYVJ62SRF4GAV27YA2TP6892 and current security review 01KZ3E6S3RNXTH5SN041P14F6W for the same security and run, then rejected their provenance as ambiguous. The wiki page and prior unsupported assessment were restored and remain hash-aligned; no idea follow-up, strategy, signal, order, allocation, or accounting state changed. Issue issue_0acd52c371559780a934 was recorded, and strict schema, queue, wiki, integrity, and portfolio checks passed.",
+  "evidence": [
+    {
+      "source": "Rio Tinto 2026 half year results",
+      "claim": "The issuer's half-year release was retrieved successfully from the issuer CDN and retained as source_rio_h1_2026_results for a future provenance-unambiguous review.",
+      "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84",
+      "observed_at": "2026-08-03T09:23:53Z",
+      "source_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The immutable assessment request made no assessment-table change and failed with 'assessment source operation is ambiguous for this run' because the same run contains predecessor quick_check_research 01KYVJ62SRF4GAV27YA2TP6892 and current security_research 01KZ3E6S3RNXTH5SN041P14F6W, while the request contract provides no source-operation selector."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_ea30ebe239779a4bbd83 from quick check 01KYVJ62SRF4GAV27YA2TP6892. Its research-page hash and the restored current page hash both equal 87d787b1ae5bfc09e88eebbf6ef12bbd67774729c1769eee79c9f9cf8d496043. The assessment remains unsupported and ineligible, and no failed-review idea follow-up was enqueued."
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX state",
+      "claim": "The immutable RIO/XNYS/USD/equity identity has a July 31 close of USD 96.8499984741211, the persistent upper-Bollinger source-price hash d128e27693dddb5f5164743cabac3134952bfcf6b270e33bde8c6c6305a2c3df, and current USD/EUR evidence available for assessment validation.",
+      "observed_at": "2026-08-03T08:44:33Z",
+      "source_hash": "d128e27693dddb5f5164743cabac3134952bfcf6b270e33bde8c6c6305a2c3df"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_request.json",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/issue_record_request.json",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/security_revert_request.json",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/security_revert_retry01_request.json",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/security_upsert_request.json",
+    "data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/source_rio_h1_2026_results_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_0acd52c371559780a934"
+  ],
+  "daily_report_items": [
+    "Rio Tinto's full half-year review failed closed because deterministic assessment provenance was ambiguous between a same-run quick check and its dependent full review. The issuer release was retained, the prior unsupported quick-check assessment and page remain current and hash-aligned, issue issue_0acd52c371559780a934 was recorded, and no idea follow-up, paper strategy, signal, order, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2",
+    "papertrader research source record --request data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/source_rio_h1_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_request.json",
+    "papertrader issue record --request data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2",
+    "papertrader research security upsert --request data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/security_revert_request.json",
+    "papertrader research security upsert --request data/runs/gha-30798126914-1/01KZ3E6S3RNXTH5SN041P14F6W/security_revert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running operation, claimed by gha-30798126914-1 with a live lease at operation start, a validated immutable payload, matching RIO/XNYS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state reads and retained the prior quick-check result and accepted relationship context.",
+      "Retrieved the issuer half-year PDF with HTTP 200, hashed it, and registered it through one immutable source request.",
+      "The schema-valid assessment request was rejected without state change because the deterministic applier found two same-security source operations claimed by this run and provides no request field to select the current operation. The required assessment therefore could not be completed.",
+      "Restored the prior wiki page exactly; current page and current assessment retain identical hash 87d787b1ae5bfc09e88eebbf6ef12bbd67774729c1769eee79c9f9cf8d496043. The prior quick-check assessment remains current and no new assessment history row exists for this operation.",
+      "The accepted Rio Tinto relationship names exactly one linked idea, but no idea-research follow-up was enqueued because this full review failed and produced no accepted assessment result. The full strategy gate remains failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed; schema, wiki and integrity were rerun after cleanup and passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

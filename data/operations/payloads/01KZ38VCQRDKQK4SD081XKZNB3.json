@@ -2,8 +2,10 @@
   "entity_id": "security_c9a37d277445869a8809",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-03T07:33:18Z",
     "baseline_operation_id": "01KYJMQ5DG45HKS1DT01QB8X4N",
     "changed_gate": "material_primary_evidence_q2_monetization_guidance_and_valuation_support",
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-01T09:07:38Z",
     "market_data_date": "2026-07-31",
     "merged_source_price_hashes": [
@@ -13,6 +15,7 @@
     "period_end": "2026-07-31",
     "period_start": "2026-07-01",
     "quick_check_operation_id": "01KYVJ62SRG31KASASEYZ2476N",
+    "research_page": "data/wiki/securities/security_c9a37d277445869a8809.md",
     "research_reasons": [
       {
         "cause": "volume_anomaly",
@@ -29,6 +32,16 @@
       {
         "cause": "material_q2_primary_evidence",
         "source_ref": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm"
+      },
+      {
+        "dedupe_key": "security_research:security_c9a37d277445869a8809:allocation-maintenance:2026-08-03T07:33:18Z",
+        "observed_at": "2026-08-03T08:44:33Z",
+        "prompt": "Revalidate security_c9a37d277445869a8809 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_rblx_q2_2026_10q",
+          "source_rblx_q2_2026_shareholder_letter"
+        ]
       }
     ],
     "security_id": "security_c9a37d277445869a8809",
@@ -39,7 +52,7 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Fully reassess Roblox after its material Q2 2026 monetization change, withdrawn annual guidance, Q3 outlook and results-driven repricing identified by the bounded quick check.",
+  "objective": "Fully reassess Roblox after its material Q2 2026 monetization change, withdrawn annual guidance, Q3 outlook and results-driven repricing identified by the bounded quick check. | Additional cause: Revalidate security_c9a37d277445869a8809 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZ38VCQRDKQK4SD081XKZNB3",
   "operation_type": "security_research",
   "payload_version": 1,
@@ -48,6 +61,8 @@
     "data/wiki/inbox/market-security_c9a37d277445869a8809-rsi_oversold-dcd8a733d0db.md",
     "data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a.md",
     "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
-    "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm"
+    "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm",
+    "source_rblx_q2_2026_10q",
+    "source_rblx_q2_2026_shareholder_letter"
   ]
 }

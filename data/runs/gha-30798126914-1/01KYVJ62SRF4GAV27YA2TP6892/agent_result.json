@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KYVJ62SRF4GAV27YA2TP6892",
+  "status": "succeeded",
+  "summary": "Completed one bounded Rio Tinto quick check after the July 30 upper-Bollinger transition. The July 31 recomputation superseded the payload price hash but preserved bollinger_above_upper: RIO closed at USD 96.85 above the USD 96.34 upper band. The move is not a validated buy zone because the baseline's named half-year earnings, cash-flow, net-debt, capex, share-count, segment and ADR-attribution inputs remain unverified, so valuation remains unsupported. Updated the security page and structured security state, appended one schema-v2 unsupported and ineligible assessment, and created exactly one dependent full security review, 01KZ3E6S3RNXTH5SN041P14F6W. No strategy, signal, order, allocation or accounting state was changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic indicator state",
+      "claim": "The payload-bound 2026-07-30 row recorded RIO at USD 97.18000030517578, a 4.1028408073% rise from July 1, entering bollinger_above_upper with source-price hash e91de860c8a516d37fa4f2e26d14c135f0ee10f6db3226462640cb2e2a1eda29. The canonical 2026-07-31 recomputation superseded that hash with d128e27693dddb5f5164743cabac3134952bfcf6b270e33bde8c6c6305a2c3df but preserved bollinger_above_upper: adjusted close USD 96.8499984741211 versus upper band USD 96.3359774, RSI 57.73225022 and non-anomalous volume.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "d128e27693dddb5f5164743cabac3134952bfcf6b270e33bde8c6c6305a2c3df"
+    },
+    {
+      "source": "Baseline security result 01KYHW57105B8KTZJRX0B57X1T",
+      "claim": "The mandatory audited security context confirmed that the same immutable RIO/XNYS/USD equity completed full research on 2026-07-27T23:04:25Z. Oyu Tolgoi's ramp and lower cost guidance supported the copper mechanism, while lower Q2 group copper output, diversified commodity exposure and absent current financial inputs left valuation unsupported and the assessment ineligible."
+    },
+    {
+      "source": "Rio Tinto retained primary-source registry",
+      "claim": "The final security context retains the issuer's 2025 full-year results and Q2 2026 production release as available, identity-linked primary evidence. Those sources support the existing production and funding checklist but do not resolve the now-due half-year earnings, free cash flow, net debt, capex, share-count, segment cash-generation and ADR-attribution gate required for a current diversified-miner valuation.",
+      "url": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results"
+    },
+    {
+      "source": "PaperTrader deterministic assessment and queue projections",
+      "claim": "Assessment assessment_ea30ebe239779a4bbd83 is schema version 2, links predecessor assessment_369ef0afbab6c27f96e3 and this quick-check operation, records USD 96.8499984741211 with fresh USD/EUR identity, valuation_unsupported, research status unsupported, allocation ineligible, Unrated / Watch, and no invented scenario values. Exactly one dependent full review, 01KZ3E6S3RNXTH5SN041P14F6W, carries both price hashes, the persistent trigger, exact market period, quick-check identity and changed decision-support gate."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ3E6S3RNXTH5SN041P14F6W.json",
+    "data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_request.json",
+    "data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_retry03_request.json",
+    "data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/enqueue_full_research_request.json",
+    "data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"
+  ],
+  "operations_created": [
+    "01KZ3E6S3RNXTH5SN041P14F6W"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RIO's July 30 upper-Bollinger breakout persisted in the July 31 recomputation, but the USD 96.85 mark is not a validated buy zone. The now-due half-year financial inputs needed for a diversified-miner valuation remain unverified, so the assessment is unsupported and ineligible pending exactly one dependent full review; no paper strategy or signal was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2",
+    "papertrader queue enqueue --request data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_retry02_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30798126914-1/01KYVJ62SRF4GAV27YA2TP6892/assessment_upsert_retry03_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict",
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was the sole running LLM operation, matched run gha-30798126914-1, immutable security_1c055eb9b2bb1f5a8ff2, quick_check_research payload, recent successful baseline and trusted preflight skill identities.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and confirmed baseline operation 01KYHW57105B8KTZJRX0B57X1T succeeded for the same security within ten days.",
+      "Confirmed the payload's July 30 period and source-price hash against its canonical alert packet, then confirmed the July 31 hash supersedes it while trigger_state remains bollinger_above_upper.",
+      "Updated the maintained security page with an explicit Changes since prior review section covering evidence, thesis, valuation and buy-zone disposition, catalysts, risks, confidence, action and escalation.",
+      "Confirmed assessment assessment_ea30ebe239779a4bbd83 is the sole immutable assessment version for this operation and run, links the predecessor and expected result path, uses only anchored scores, records fresh price and FX identity, and contains no invented scenario values for its unsupported valuation.",
+      "Confirmed exactly one dependent security_research operation, 01KZ3E6S3RNXTH5SN041P14F6W, carries this quick-check identity, the changed decision-support gate, the alert cause, both price hashes and the exact market period.",
+      "The first three immutable assessment requests were rejected without state changes for an unknown template and non-canonical blocker values; uniquely named retry03 used the repository-owned cyclical_commodity/nav template and canonical blocker vocabulary and succeeded.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation returned OK with no changes from those checks.",
+      "Allocation readiness remained false only for pre-existing repository-wide relationship coverage, rejected-relationship reconciliation and stale-relationship gaps; Rio Tinto's updated assessment itself is ineligible because valuation is unsupported.",
+      "command_audit.json contains exactly the fourteen canonical PaperTrader CLI invocations listed in commands_run; ten returned exit code zero, the three rejected assessment requests made no state change, and the non-mutating allocation-readiness diagnostic returned exit code one with explicit pre-existing reasons.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page was changed by this operation."
+    ]
+  }
+}

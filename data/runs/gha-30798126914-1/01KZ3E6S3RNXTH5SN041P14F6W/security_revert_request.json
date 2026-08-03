@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1c055eb9b2bb1f5a8ff2",
+  "issuer_id": "issuer_3f384e36fe805b0fcbea",
+  "company_name": "Rio Tinto plc",
+  "instrument_name": "Rio Tinto plc sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "RIO",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RIO",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "GB",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; persistent Bollinger breakout and now-due half-year evidence require a dependent full review.",
+  "research_summary": "Oyu Tolgoi's ramp remains supportive, but the persistent breakout and now-due half-year financial inputs leave valuation unsupported pending full review.",
+  "research_page": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+  "last_research_at": "2026-08-03T09:09:07Z",
+  "next_review_at": "2026-08-10T09:09:07Z",
+  "source": "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results"
+}

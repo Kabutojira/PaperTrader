@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_digital_attention_gaming_ecosystems",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "security_id": "security_c9a37d277445869a8809",
+    "security_research_operation_id": "01KZ38VCQRDKQK4SD081XKZNB3",
+    "security_research_result_path": "data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/agent_result.json",
+    "seed_claim": "Roblox's Q2 engagement and payer growth preserve the creator-platform mechanism, but weaker monetization, Q3 bookings contraction and cash-flow pressure leave the post-results valuation without sufficient downside payoff."
+  },
+  "objective": "Refresh the digital attention, gaming, and consumer ecosystems idea from Roblox's completed Q2 review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KZ3D3TYG07K1VA09Y61YXPCH",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_c9a37d277445869a8809.md"
+  ]
+}

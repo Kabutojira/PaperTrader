@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Rio Tinto assessment source operation is ambiguous within one run",
+  "description": "The required schema-v2 assessment for security_1c055eb9b2bb1f5a8ff2 could not be written. The deterministic assessment applier found both predecessor quick_check_research 01KYVJ62SRF4GAV27YA2TP6892 and current security_research 01KZ3E6S3RNXTH5SN041P14F6W claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code or queue/history change.",
+  "owner": "controller",
+  "related_run_id": "gha-30798126914-1",
+  "related_operation_id": "01KZ3E6S3RNXTH5SN041P14F6W"
+}

@@ -1,0 +1,40 @@
+{
+  "entity_id": "security_1c055eb9b2bb1f5a8ff2",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYHW57105B8KTZJRX0B57X1T",
+    "changed_gate": "baseline_decision_support_expired_pending_now_due_half_year_financial_evidence",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "merged_source_price_hashes": [
+      "e91de860c8a516d37fa4f2e26d14c135f0ee10f6db3226462640cb2e2a1eda29",
+      "d128e27693dddb5f5164743cabac3134952bfcf6b270e33bde8c6c6305a2c3df"
+    ],
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-01",
+    "quick_check_operation_id": "01KYVJ62SRF4GAV27YA2TP6892",
+    "research_reasons": [
+      {
+        "cause": "bollinger_above_upper",
+        "source_ref": "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6d827efad15c.md"
+      },
+      {
+        "cause": "half_year_financial_evidence_due",
+        "source_ref": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"
+      }
+    ],
+    "security_id": "security_1c055eb9b2bb1f5a8ff2",
+    "source_price_hash": "d128e27693dddb5f5164743cabac3134952bfcf6b270e33bde8c6c6305a2c3df",
+    "trigger_types": [
+      "bollinger_above_upper"
+    ]
+  },
+  "objective": "Fully reassess Rio Tinto after the persistent Bollinger breakout and the now-due half-year financial evidence needed to resolve the unsupported valuation gate.",
+  "operation_id": "01KZ3E6S3RNXTH5SN041P14F6W",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6d827efad15c.md",
+    "https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results"
+  ]
+}

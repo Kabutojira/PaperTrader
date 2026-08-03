@@ -7,14 +7,14 @@ tags:
 created: "2026-08-03"
 updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a89f5d2652e4c2c71fea"
-as_of: "2026-08-03T07:52:37Z"
+snapshot_id: "decision_203b586393e6e96077ee"
+as_of: "2026-08-03T09:32:51Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_a89f5d2652e4c2c71fea`
-**As of:** `2026-08-03T07:52:37Z`
+**Publication snapshot:** `decision_203b586393e6e96077ee`
+**As of:** `2026-08-03T09:32:51Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,7 +23,7 @@ as_of: "2026-08-03T07:52:37Z"
 ## Coverage
 
 - Assessments: 47/47
-- Fresh-evidence assessments: 46/47
+- Fresh-evidence assessments: 47/47
 - Relationship reviews: 22/47
 - Accepted relationships: 20
 - Ready or active strategies: 0
@@ -31,13 +31,14 @@ as_of: "2026-08-03T07:52:37Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 227
+- Research backlog: 225
 - Last successful daily run: `2026-08-01T16:47:49Z`
 
 ## Current issues by investment impact
 
 ### Affects Candidate
 
+- `error` **RIO — Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_1c055eb9b2bb1f5a8ff2 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SRF4GAV27YA2TP6892 and current security\_research 01KZ3E6S3RNXTH5SN041P14F6W claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - `error` **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_c9a37d277445869a8809 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SRG31KASASEYZ2476N and current security\_research 01KZ38VCQRDKQK4SD081XKZNB3 claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - `error` **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_488a9d7f7a8573597724 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SR384EB58S06SFPK5G and current security\_research 01KZ35CPR03SHK78B81ZSEV4JT claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - `warning` **LAC — Lithium Americas Corp.: Daily preparation degraded: security\_fb87fac302a5446a1ced** — security\_fb87fac302a5446a1ced: YFTzMissingError: $LAC: possibly delisted; no timezone found
@@ -124,7 +125,7 @@ as_of: "2026-08-03T07:52:37Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 227 active operations.
+Showing 20 of 225 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 

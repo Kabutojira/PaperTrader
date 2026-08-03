@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYVJ62SRBDBV4T7HPTEK2VB7",
+  "status": "skipped",
+  "summary": "Skipped this bounded Carlisle Companies quick check because deterministic evidence proves the July 30 Bollinger-upper alert binding is obsolete. The current canonical July 31 indicator row has source-price hash 47d4899a6f6e76a50787c575fb0f11e02fffceda0bcfa0635cbe99a1f675336b rather than the payload's 259412f57c34ec48b52f738887fbd3e77cc4df87a43ff82ccd2431fc7c68809c, has an empty trigger state, and closed at USD 359.92 below its USD 367.72 upper band. The mark remains near the baseline USD 363.42 base value, with only 0.97% base upside and 21.47% bear downside; the existing valuation and payoff gates therefore remain failed. No security, assessment, source, wiki, queue, strategy, signal, order, allocation, or accounting state was changed, and no full-review operation was created.",
+  "reason_code": "alert_binding_obsolete",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic indicator state",
+      "claim": "For security_9b0db3bc77914b23a307 as of 2026-07-31, the canonical row reports an empty trigger_state, a USD 359.9200134277344 adjusted close, USD 367.71795442 Bollinger upper band, RSI 55.67473971, volume z-score 0.55717364, and source-price hash 47d4899a6f6e76a50787c575fb0f11e02fffceda0bcfa0635cbe99a1f675336b. This supersedes the payload's July 30 hash and deterministically clears bollinger_above_upper.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "47d4899a6f6e76a50787c575fb0f11e02fffceda0bcfa0635cbe99a1f675336b"
+    },
+    {
+      "source": "PaperTrader deterministic market cache",
+      "claim": "The immutable CSL/XNYS/USD equity identity closed at USD 369.8800048828125 on 2026-07-30, 10.56% above July 29, then at USD 359.9200134277344 on 2026-07-31, 2.69% lower. The July 31 mark is below the current upper band and does not establish a new buy zone.",
+      "observed_at": "2026-08-03T08:44:33Z"
+    },
+    {
+      "source": "Baseline security result 01KYRN70N00B48SGEKW8CJHWWJ",
+      "claim": "The mandatory audited security context confirms the baseline full security review succeeded on 2026-07-30T04:55:23Z for the same immutable security. It retained re-roofing resilience and franchise quality but identified input and freight inflation, flat margin guidance, weak first-half cash conversion, leverage, and insufficient valuation asymmetry. Its bounded USD 282.66 bear and USD 363.42 base values remain decision-relevant; at the current USD 359.92 mark they imply approximately 21.47% bear downside and only 0.97% base upside, so the configured 10% base-upside and 1.0 payoff gates remain failed."
+    },
+    {
+      "source": "PaperTrader retained primary-source registry",
+      "claim": "The required security context links the baseline assessment to Carlisle's SEC-filed FY2025 and Q2 2026 issuer releases, each registered as available and checked on 2026-07-30 with immutable content hashes. The obsolete one-session indicator binding supplies no current evidence that changes the baseline thesis, catalysts, invalidation conditions, risks, confidence, or review date."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CSL's July 30 Bollinger-upper quick check was skipped as obsolete after the canonical July 31 recomputation cleared the trigger and superseded the payload price hash. At USD 359.92, the mark remains near the prior USD 363.42 base value with only 0.97% base upside and about 21.47% bear downside; no full review, strategy, or signal was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_9b0db3bc77914b23a307",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was the sole running LLM operation, matched run gha-30798126914-1, immutable security_9b0db3bc77914b23a307, quick_check_research payload, recent successful baseline, and trusted preflight skill identities.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and confirmed baseline operation 01KYRN70N00B48SGEKW8CJHWWJ succeeded for the same security within ten days.",
+      "Confirmed the payload's July 30 period and source-price hash against its canonical alert packet, then confirmed the current July 31 source-price hash supersedes it and trigger_state is empty.",
+      "Confirmed the July 31 close is below the current Bollinger upper band, RSI is neutral, and volume is not anomalous; the prior alert no longer binds.",
+      "Confirmed the current mark does not establish a buy zone and leaves the baseline base-upside and upside-to-downside gates failed, while no new deterministic or retained primary evidence changes the thesis, catalysts, risks, invalidation, confidence, or next-review assumptions.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation passed with no content changes.",
+      "Allocation readiness remained false only for pre-existing repository-wide relationship coverage, rejected-relationship reconciliation, and stale-relationship gaps; no allocation state was changed.",
+      "command_audit.json contains exactly the seven canonical PaperTrader CLI invocations listed in commands_run; six returned exit code zero and the non-mutating allocation-readiness diagnostic returned exit code one with explicit pre-existing reasons.",
+      "No full security review was enqueued because deterministic evidence made the alert binding obsolete, and no allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}

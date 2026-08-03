@@ -1,0 +1,87 @@
+{
+  "operation_id": "01KZ38VCQRDKQK4SD081XKZNB3",
+  "status": "succeeded",
+  "summary": "Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Roblox Q2 2026 shareholder letter",
+      "claim": "The unchanged SEC-filed issuer letter reports Q2 revenue of USD 1.469 billion, bookings of USD 1.557 billion, operating cash flow of USD 318 million and company-defined free cash flow of USD 294 million. Management withdrew annual guidance and guided Q3 bookings to USD 1.576-1.653 billion, down 14-18%, and Q3 free cash flow to negative USD 60 million through positive USD 5 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+      "observed_at": "2026-08-03T08:47:46Z",
+      "source_hash": "2d51c740b0a4a948e2bf839a70d3c2b1b02cd8ef9aaa4f4d194bbe0fc20918d4"
+    },
+    {
+      "source": "Roblox Q2 2026 Form 10-Q",
+      "claim": "The unchanged filing confirms first-half revenue of USD 2.911 billion, a USD 433 million first-half consolidated net loss, USD 890 million of company-defined first-half free cash flow, USD 6.084 billion of cash and investments, USD 1.009 billion of long-term debt, stock compensation, dilution and continuing platform, safety and regulatory risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm",
+      "observed_at": "2026-08-03T08:47:46Z",
+      "source_hash": "13062b27ac41d72b98c4a537ecccb4ba0202fecd85e99bf9872855abb4fd55d4"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX state",
+      "claim": "The immutable RBLX/XNYS/USD/equity identity has a July 31 close of USD 35.599998474121094. The payload source-price hash exactly matches the indicator row carrying lower-Bollinger, oversold-RSI and volume-anomaly triggers; the current USD/EUR rate is 0.8673999905586243.",
+      "observed_at": "2026-08-03T08:44:33Z",
+      "source_hash": "dced5c654bf10a1182122b13e2a687465321594b16d988787902a293a5d83b51"
+    },
+    {
+      "source": "PaperTrader deterministic assessment projection",
+      "claim": "Assessment assessment_88cd8bf47d6613485ad6 links predecessor assessment_03f9bfdd4212485fec29 and source operation 01KZ38VCQRDKQK4SD081XKZNB3. Ordered 30%/50%/20% scenarios derive bear/base/bull returns of -20.7022%/11.1798%/48.8764%, expected return of 9.1545%, medium-confidence-adjusted expected return of 6.8659%, and a USD 31.664 buy-below level. The canonical result is Hold / Watch and ineligible for expected-return and downside-payoff shortfalls."
+    },
+    {
+      "source": "PaperTrader deterministic queue projection",
+      "claim": "Exactly one dependent idea_research follow-up, 01KZ3D3TYG07K1VA09Y61YXPCH, carries idea_digital_attention_gaming_ecosystems, this security and security-review operation identity, the expected current result path, and the updated security page as its source reference."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ3D3TYG07K1VA09Y61YXPCH.json",
+    "data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_request.json",
+    "data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/security_upsert_request.json",
+    "data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_10q_refresh_request.json",
+    "data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_release_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c9a37d277445869a8809.md"
+  ],
+  "operations_created": [
+    "01KZ3D3TYG07K1VA09Y61YXPCH"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Roblox's Q2 full review converted the prior unsupported valuation into USD 28.23/USD 39.58/USD 53.00 bear/base/bull scenarios. At USD 35.60, the USD 38.859 probability-weighted value and 6.87% confidence-adjusted expected return do not compensate for 20.70% bear downside; the result is Hold / Watch and ineligible, with no paper strategy or signal and exactly one dependent digital-attention idea refresh."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c9a37d277445869a8809",
+    "papertrader research source record --request data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_release_refresh_request.json",
+    "papertrader research source record --request data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_10q_refresh_request.json",
+    "papertrader research security upsert --request data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30798126914-1/01KZ38VCQRDKQK4SD081XKZNB3/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict",
+    "papertrader research security-context --security-id security_c9a37d277445869a8809"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the supplied operation was the sole running LLM operation, claimed by gha-30798126914-1 with a live lease, and matched the validated payload, immutable RBLX/XNYS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited prior security context before assessment-state reads and retained a complete Changes since prior review section covering evidence, assumptions, scenarios, thesis, catalysts, risks, blockers, gaps, rating, action and unchanged conclusions.",
+      "Re-fetched both SEC documents with HTTP 200 and confirmed their SHA-256 hashes exactly matched the registered Q2 shareholder letter and Form 10-Q; both current source checks were recorded before assessment upsert.",
+      "Confirmed the July 31 USD 35.599998474121094 mark, USD/EUR rate 0.8673999905586243, all three payload triggers and exact source-price hash against fresh deterministic market, FX and indicator state.",
+      "Confirmed assessment assessment_88cd8bf47d6613485ad6 is the sole immutable assessment version for this operation and run, links predecessor assessment_03f9bfdd4212485fec29, source operation/result, schema version 2 and page hash 35db953c9e4c69f22f3162414b37a08adaa131c9cacb08eed29feb54861b420a, and uses only anchored scores.",
+      "Confirmed exactly one matching dependent idea-research follow-up, 01KZ3D3TYG07K1VA09Y61YXPCH, exists for the one payload-linked and accepted-relationship idea. The full conviction gate failed, so no strategy follow-up was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed with no changes from those checks.",
+      "Allocation readiness remained false only for pre-existing repository-wide relationship coverage and reconciliation gaps; Roblox's complete assessment itself is ineligible for expected-return and downside-payoff shortfalls.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page was changed by this operation."
+    ]
+  }
+}

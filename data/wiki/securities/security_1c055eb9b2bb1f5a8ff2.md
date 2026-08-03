@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-27"
+updated: "2026-08-03"
 provenance: "source_rio_q2_2026_production"
 security_id: security_1c055eb9b2bb1f5a8ff2
 issuer_id: issuer_3f384e36fe805b0fcbea
 confidence: medium
-next_review: "2026-07-30"
+next_review: "2026-08-10"
 ---
 
 # Rio Tinto plc sponsored ADR
@@ -67,5 +67,23 @@ production from improving per-share cash flow.
 ## Disposition
 
 Status: **watching**, confidence **medium**. The current comparable assessment is **ineligible**
-because `valuation_unsupported` is a hard blocker. Review by **2026-07-30**, after half-year results.
-No strategy is proposed before current financials and a diversified sum-of-parts valuation are tested.
+because `valuation_unsupported` remains a hard blocker. The 30 July close of USD 97.18 entered an
+upper-Bollinger breakout after a 4.10% rise from 1 July; the 31 July close of USD 96.85 remained
+above the recalculated USD 96.34 upper band. This persistent price signal is not a validated buy
+zone because the half-year earnings, free cash flow, net debt, capex, share-count, and segment cash
+generation needed for a diversified sum-of-parts assessment remain unverified. Review by
+**2026-08-10** through the dependent full security review. No strategy or signal is proposed.
+
+## Changes since prior review
+
+- **Evidence:** the baseline Q2 production evidence is unchanged. The exact 1–30 July alert hash is
+  retained, and the 31 July recomputation supersedes it while preserving `bollinger_above_upper`.
+- **Thesis and catalysts:** Oyu Tolgoi's ramp, lower cost guidance, diversified commodity exposure,
+  and the half-year cash-conversion gate are unchanged.
+- **Valuation and buy zone:** the higher USD 96.85 mark does not resolve the unsupported valuation
+  or establish a buy zone; no scenario fair values are invented.
+- **Risks and invalidation:** iron-ore demand, project execution, capex, leverage, and per-share cash
+  conversion remain the controlling risks. No invalidation is verified by price action alone.
+- **Confidence and action:** confidence remains medium and the action remains watch. Because the
+  named financial evidence gate is now due and decision support remains incomplete, exactly one
+  dependent full `security_research` review was requested; no strategy or signal was created.

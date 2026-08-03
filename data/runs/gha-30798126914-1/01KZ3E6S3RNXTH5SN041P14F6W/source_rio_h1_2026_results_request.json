@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rio_h1_2026_results",
+  "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84",
+  "canonical_url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf",
+  "source_type": "issuer_release",
+  "title": "Rio Tinto 2026 half year results",
+  "publisher": "Rio Tinto plc",
+  "license": "",
+  "status": "available",
+  "content_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1",
+  "related_entity_ids": "idea_critical_minerals_copper|security_1c055eb9b2bb1f5a8ff2",
+  "checked_at": "2026-08-03T09:23:53Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Rio Tinto reported first-half free cash flow of USD 3.8 billion, up 75%, underlying EBITDA of USD 14.8 billion, up 28%, and USD 9.2 billion of net cash generated from operating activities.",
+  "summary": "The issuer's half-year release resolves the scheduled-results availability gap and confirms stronger group earnings and cash conversion, but the bounded review could not independently reconcile current net debt, combined DLC share count, ADR attribution, and normalized segment values needed for per-ADR scenarios.",
+  "run_id": "gha-30798126914-1"
+}
