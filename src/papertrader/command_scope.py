@@ -62,8 +62,7 @@ def command_allowed(
         return operation_type == "source_discovery"
     if _matches(command, ("watchlist", "import")):
         return operation_type == "idea_research" or (
-            operation_type == "wiki_ingest"
-            and (pre_dispatch or youtube_video or seekingalpha_lead)
+            operation_type == "wiki_ingest" and (pre_dispatch or youtube_video or seekingalpha_lead)
         )
     if _matches(command, ("research", "source", "record")):
         return operation_type in {"wiki_ingest", "security_research", "quick_check_research"}
@@ -77,9 +76,7 @@ def command_allowed(
         return operation_type == "strategy_research"
     if _matches(command, ("signal", "create")):
         return operation_type == "strategy_research"
-    if _matches(command, ("order", "create")) or _matches(
-        command, ("order", "create-baseline")
-    ):
+    if _matches(command, ("order", "create")) or _matches(command, ("order", "create-baseline")):
         return operation_type == "execute_strategy"
     if _matches(command, ("order", "cancel")):
         return operation_type == "execute_strategy"
