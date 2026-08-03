@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KZ35CPR03SHK78B81ZSEV4JT",
+  "status": "succeeded",
+  "summary": "Completed one full security review of Quanta Services after its material Q2 2026 results and July 30-31 repricing. Rechecked the unchanged SEC-filed release and Form 10-Q, expanded the security page with segment margins, backlog quality, acquisitions, debt and goodwill, and wrote immutable assessment assessment_4b78877aa4c4563435e9. At USD 667.36, the retained USD 417.50/USD 534.40/USD 668.00 scenarios derive a Sell/Avoid/Watch disposition and remain ineligible. No linked canonical idea or accepted relationship exists, so no idea follow-up was required; no strategy, signal, order, allocation or accounting state was changed.",
+  "evidence": [
+    {
+      "source": "Quanta Services Reports Second Quarter 2026 Results",
+      "claim": "The unchanged SEC-filed issuer release reports Q2 revenue of USD 9.56 billion, adjusted diluted EPS of USD 4.24, Electric operating margin of 11.5%, total RPO of USD 33.55 billion, total backlog of USD 53.44 billion, and raised 2026 adjusted-EPS guidance of USD 16.45-16.95. Four acquisitions are expected to contribute USD 1.2-1.4 billion of 2026 revenue and USD 120-140 million of adjusted EBITDA but required about USD 1.24 billion upfront plus possible contingent consideration.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm",
+      "observed_at": "2026-08-03T07:23:05Z",
+      "source_hash": "9b146f185a5c45d72b4ca42957898bc643001bd13024a91681d1fd5341e30c5f"
+    },
+    {
+      "source": "Quanta Services Q2 2026 Form 10-Q",
+      "claim": "The unchanged SEC filing confirms USD 506.4 million cash, USD 6.105 billion current and long-term debt, USD 7.869 billion goodwill, 150.27 million shares outstanding and USD 1.487 billion first-half operating cash flow, while retaining acquisition, fixed-price contract, labor, collection and backlog-realization risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm",
+      "observed_at": "2026-08-03T07:23:05Z",
+      "source_hash": "bab73becc52179586fe155bc1c0e3b8956e1dd08da291b8d5628ddf87151691a"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX state",
+      "claim": "The identity-matched July 31 PWR close is USD 667.3599853515625; the payload's July 31 indicator hash remains exact, and USD/EUR was refreshed to 0.8676000237464905 at 2026-08-03T07:19:23Z.",
+      "observed_at": "2026-08-03T07:19:23Z",
+      "source_hash": "030ca764726cd6128f54714aade8b3a8fa2a1177af73d8ebf4e3816668a50f2f"
+    },
+    {
+      "source": "PaperTrader deterministic assessment projection",
+      "claim": "Assessment assessment_4b78877aa4c4563435e9 links predecessor assessment_d022df8ec9862d4e8a70 and the current page hash. It derives -37.4401%/-19.9233%/0.0959% bear/base/bull returns, USD 538.575 probability-weighted value, -19.2977% expected return, -14.4733% confidence-adjusted expected return and USD 427.52 buy-below price, with an ineligible Sell/Avoid/Watch disposition."
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request_v2.json",
+    "data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/security_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_10q_refresh_request.json",
+    "data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_release_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_488a9d7f7a8573597724.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Quanta Services' full Q2 review confirms record growth, 11.5% Electric margin, USD 33.55 billion RPO, USD 53.44 billion backlog and raised guidance, while acquisition funding, debt, goodwill and execution risks remain material. At USD 667.36, the USD 417.50/USD 534.40/USD 668.00 scenarios remain ineligible with a Sell/Avoid/Watch disposition; no paper strategy or signal was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_488a9d7f7a8573597724",
+    "papertrader research source record --request data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_release_refresh_request.json",
+    "papertrader research source record --request data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_10q_refresh_request.json",
+    "papertrader research security upsert --request data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30793143744-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request_v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_488a9d7f7a8573597724"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the supplied operation was the sole running LLM operation, claimed by gha-30793143744-1 with a live lease, and matched the validated payload, immutable PWR/XNYS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the bounded prior context and prior quick-check result; the security page retains a complete Changes since prior review section covering evidence, assumptions, scenarios, thesis, catalysts, risks, blockers, gaps, rating and portfolio action.",
+      "Re-fetched both SEC primary sources with exact registered content hashes and recorded fresh unchanged-source observations before the assessment upsert.",
+      "Confirmed assessment assessment_4b78877aa4c4563435e9 is the sole new immutable assessment for this operation, links predecessor assessment_d022df8ec9862d4e8a70, source operation/result, schema version 2 and current page hash, and uses ordered scenarios, probabilities totaling 100 and permitted anchored scores.",
+      "Confirmed the deterministic current assessment is complete but ineligible, with exact economic-gate reasons and relationship_pending; the bounded context contains no payload idea, canonical linked idea or accepted relationship, so exactly zero idea-research follow-ups are required.",
+      "The first immutable assessment request failed without state change because valuation_template_rationale is forbidden for mature_compounder; the corrected uniquely named request succeeded and both audited invocations are retained exactly.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed with no changes from those checks.",
+      "No relationship, strategy, signal, order, allocation target/history, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page was changed."
+    ]
+  }
+}

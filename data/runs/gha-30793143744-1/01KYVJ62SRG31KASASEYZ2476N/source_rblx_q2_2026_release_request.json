@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rblx_q2_2026_shareholder_letter",
+  "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+  "source_type": "issuer_release",
+  "title": "Roblox Q2 2026 shareholder letter",
+  "publisher": "Roblox Corporation via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2d51c740b0a4a948e2bf839a70d3c2b1b02cd8ef9aaa4f4d194bbe0fc20918d4",
+  "related_entity_ids": "idea_digital_attention_gaming_ecosystems|security_c9a37d277445869a8809",
+  "checked_at": "2026-08-03T07:33:18Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 bookings grew 8%; Q3 bookings were guided to decline 14% to 18% year over year.",
+  "summary": "Roblox's SEC-filed Q2 letter reports continued user, revenue and cash-flow growth but weaker per-hour monetization, withdrawal of full-year guidance, expected Q3 bookings contraction and near-zero Q3 free cash flow.",
+  "run_id": "gha-30793143744-1"
+}

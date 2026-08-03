@@ -7,8 +7,8 @@ tags:
 created: "2026-08-03"
 updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cf76086beeb13f2c6ca6"
-as_of: "2026-08-03T06:55:46Z"
+snapshot_id: "decision_a89f5d2652e4c2c71fea"
+as_of: "2026-08-03T07:52:37Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **51**
+- Immutable assessment versions: **53**
 - Securities with retained revisions: **47**
 
 ## Candidate

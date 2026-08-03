@@ -1664,3 +1664,28 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_cf76086beeb13f2c6ca6`.
 
 - Generated canonical [[daily-reports/daily-report_20260803]] for run `gha-30788518712-1`.
+
+- Published investor decision snapshot `decision_a89f5d2652e4c2c71fea`.
+
+- Generated canonical [[daily-reports/daily-report_20260803]] for run `gha-30793143744-1`.
+
+## [2026-08-03] update | Quanta Services full Q2 2026 security review
+
+- Completed the dependent full review of
+  [[securities/security_488a9d7f7a8573597724|Quanta Services]]. The unchanged SEC-filed Q2
+  release and Form 10-Q confirm record growth, 11.5% Electric operating margin, USD 33.55 billion
+  of RPO, USD 53.44 billion of backlog, and materially raised guidance. The same evidence also
+  confirms acquisition funding, debt, goodwill, backlog-quality, labor, fixed-price, and collection
+  risks. At USD 667.36, the retained USD 417.50/USD 534.40/USD 668.00 scenarios remain ineligible;
+  the disposition is Sell / Avoid / Watch and no conviction strategy or signal was created.
+
+## [2026-08-03] update | Roblox Q2 2026 quick check
+
+- Updated [[securities/security_c9a37d277445869a8809|Roblox]] after the merged July 30 volume
+  anomaly and July 31 lower-Bollinger and oversold-RSI transitions. The SEC-filed Q2 release and
+  Form 10-Q show continued user and cash-flow growth but only 8% bookings growth, weaker per-hour
+  monetization, withdrawal of full-year guidance, a 14–18% Q3 bookings decline outlook, and Q3 free
+  cash flow guided between negative USD 60 million and positive USD 5 million. The 26.85%
+  results-driven decline to USD 35.60 is material evidence, not a validated buy zone: the old
+  full-year cash-flow range is unsupported and the assessment is ineligible pending one dependent
+  full review. No strategy or signal was created.

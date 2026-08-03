@@ -1,0 +1,61 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_c9a37d277445869a8809",
+  "dedupe_key": "security_research:security_c9a37d277445869a8809:q2-2026-quick-check:2026-08-03",
+  "prompt": "Fully reassess Roblox after its material Q2 2026 monetization change, withdrawn annual guidance, Q3 outlook and results-driven repricing identified by the bounded quick check.",
+  "inputs": {
+    "security_id": "security_c9a37d277445869a8809",
+    "quick_check_operation_id": "01KYVJ62SRG31KASASEYZ2476N",
+    "baseline_operation_id": "01KYJMQ5DG45HKS1DT01QB8X4N",
+    "changed_gate": "material_primary_evidence_q2_monetization_guidance_and_valuation_support",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "rsi_oversold",
+      "volume_anomaly"
+    ],
+    "market_data_date": "2026-07-31",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "period_start": "2026-07-01",
+    "period_end": "2026-07-31",
+    "source_price_hash": "dced5c654bf10a1182122b13e2a687465321594b16d988787902a293a5d83b51",
+    "merged_source_price_hashes": [
+      "ad5bc8cf8ab172a83c9f8cd34341a87389af5c01d8f2a936b74d3e4745c6fd03",
+      "dced5c654bf10a1182122b13e2a687465321594b16d988787902a293a5d83b51"
+    ],
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a.md"
+      },
+      {
+        "cause": "bollinger_below_lower",
+        "source_ref": "data/wiki/inbox/market-security_c9a37d277445869a8809-bollinger_below_lower-340d8d301e21.md"
+      },
+      {
+        "cause": "rsi_oversold",
+        "source_ref": "data/wiki/inbox/market-security_c9a37d277445869a8809-rsi_oversold-dcd8a733d0db.md"
+      },
+      {
+        "cause": "material_q2_primary_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KYVJ62SRG31KASASEYZ2476N",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYVJ62SRG31KASASEYZ2476N"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/inbox/market-security_c9a37d277445869a8809-bollinger_below_lower-340d8d301e21.md",
+    "data/wiki/inbox/market-security_c9a37d277445869a8809-rsi_oversold-dcd8a733d0db.md",
+    "data/wiki/inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a.md",
+    "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+    "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm"
+  ],
+  "max_attempts": 3
+}

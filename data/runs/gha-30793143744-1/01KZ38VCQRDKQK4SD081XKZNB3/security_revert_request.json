@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c9a37d277445869a8809",
+  "issuer_id": "issuer_2cfe7452981883bfe840",
+  "company_name": "Roblox Corporation",
+  "instrument_name": "Roblox Corporation Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "RBLX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RBLX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Communication Services",
+  "industry": "Electronic Gaming & Multimedia",
+  "status": "watching",
+  "watchlist_reason": "Digital-attention and creator-platform candidate; Q2 monetization weakness and the July 30-31 repricing triggered a dependent full review.",
+  "research_summary": "Engagement and cash generation remain positive, but Q2 monetization weakness and withdrawn annual guidance leave valuation unsupported pending full review.",
+  "research_page": "data/wiki/securities/security_c9a37d277445869a8809.md",
+  "last_research_at": "2026-08-03T07:33:18Z",
+  "next_review_at": "2026-08-10T07:33:18Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm"
+}

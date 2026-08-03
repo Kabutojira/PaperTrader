@@ -1,0 +1,25 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ38VCQRDKQK4SD081XKZNB3.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/assessment_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/enqueue_full_research_request.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/security_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/source_rblx_q2_2026_10q_request.json",
+    "data/runs/gha-30793143744-1/01KYVJ62SRG31KASASEYZ2476N/source_rblx_q2_2026_release_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c9a37d277445869a8809.md"
+  ],
+  "errors": [],
+  "operation_id": "01KYVJ62SRG31KASASEYZ2476N",
+  "passed": true,
+  "run_id": "gha-30793143744-1",
+  "validation_version": 1
+}

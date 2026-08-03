@@ -1,0 +1,94 @@
+{
+  "operation_id": "01KZ38VCQRDKQK4SD081XKZNB3",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded full review of Roblox. The current SEC-filed Q2 shareholder letter and Form 10-Q were rechecked unchanged and a scenario-complete valuation was prepared, but the required schema-v2 assessment could not be written: the deterministic applier found both predecessor quick check 01KYVJ62SRG31KASASEYZ2476N and current security review 01KZ38VCQRDKQK4SD081XKZNB3 for the same security and run, then rejected their provenance as ambiguous. The wiki page and prior unsupported assessment were restored and remain hash-aligned; no idea follow-up, strategy, signal, order, allocation, or accounting state changed. Two source rechecks were retained, issue issue_21a0449443916cc13580 was recorded, and strict schema, queue, wiki, integrity, and portfolio checks passed.",
+  "evidence": [
+    {
+      "source": "Roblox Q2 2026 shareholder letter",
+      "claim": "The unchanged SEC-filed issuer letter reports Q2 revenue of USD 1.469 billion, bookings of USD 1.557 billion, operating cash flow of USD 318 million and company-defined free cash flow of USD 294 million. Management withdrew annual guidance and guided Q3 bookings to USD 1.576-1.653 billion, down 14-18%, and Q3 free cash flow to negative USD 60 million through positive USD 5 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+      "observed_at": "2026-08-03T07:42:38Z",
+      "source_hash": "2d51c740b0a4a948e2bf839a70d3c2b1b02cd8ef9aaa4f4d194bbe0fc20918d4"
+    },
+    {
+      "source": "Roblox Q2 2026 Form 10-Q",
+      "claim": "The unchanged filing confirms first-half revenue of USD 2.911 billion, a USD 433 million first-half consolidated net loss, USD 890 million of company-defined first-half free cash flow, USD 6.084 billion of cash and investments, USD 1.009 billion of long-term debt, stock compensation, dilution and continuing platform, safety and regulatory risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm",
+      "observed_at": "2026-08-03T07:42:38Z",
+      "source_hash": "13062b27ac41d72b98c4a537ecccb4ba0202fecd85e99bf9872855abb4fd55d4"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "All four immutable assessment requests made no assessment-table change. After request-shape corrections, the final valid request failed with 'assessment source operation is ambiguous for this run' because the same run contains predecessor quick_check_research 01KYVJ62SRG31KASASEYZ2476N and current security_research 01KZ38VCQRDKQK4SD081XKZNB3 for Roblox, while the request contract provides no source-operation selector."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_03f9bfdd4212485fec29 from quick check 01KYVJ62SRG31KASASEYZ2476N. Its research-page hash and the restored current page hash both equal f0597bb8af702238fc35f3e5c4a0771e6a47c2bdc6f3dc7d68134447decd00b0. The assessment remains unsupported and ineligible; the accepted relationship to idea_digital_attention_gaming_ecosystems remains unchanged and no failed-review idea follow-up was enqueued."
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX state",
+      "claim": "The immutable RBLX/XNYS/USD/equity identity has a July 31 close of USD 35.599998474121094. The payload's current indicator source-price hash dced5c654bf10a1182122b13e2a687465321594b16d988787902a293a5d83b51 exactly matches the row carrying lower-Bollinger, oversold-RSI and volume-anomaly triggers; current USD/EUR evidence was available for assessment validation.",
+      "observed_at": "2026-08-03T07:19:23Z",
+      "source_hash": "dced5c654bf10a1182122b13e2a687465321594b16d988787902a293a5d83b51"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry03_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/issue_record_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_revert_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_revert_retry01_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_10q_refresh_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_release_refresh_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_21a0449443916cc13580"
+  ],
+  "daily_report_items": [
+    "Roblox's full Q2 review failed closed because deterministic assessment provenance was ambiguous between a same-run quick check and its dependent full review. Primary sources were rechecked, the prior unsupported quick-check assessment and page remain current and hash-aligned, issue issue_21a0449443916cc13580 was recorded, and no idea follow-up, paper strategy, signal, order, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c9a37d277445869a8809",
+    "papertrader research source record --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_release_refresh_request.json",
+    "papertrader research source record --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_10q_refresh_request.json",
+    "papertrader research security upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry02_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry03_request.json",
+    "papertrader issue record --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/issue_record_request.json",
+    "papertrader research security upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_revert_request.json",
+    "papertrader research security upsert --request data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_revert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_c9a37d277445869a8809"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running operation, claimed by gha-30793143744-1 with a live lease at operation start, a validated immutable payload, matching RBLX/XNYS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the bounded prior security context and prior quick-check result, independently retrieved both current SEC documents with HTTP 200, and confirmed their SHA-256 hashes exactly matched the registered Q2 shareholder letter and Form 10-Q hashes.",
+      "Confirmed all three July 31 triggers, the exact July 1-31 period and payload source-price hash against deterministic market and indicator state; current identity-matched market and USD/EUR evidence was available.",
+      "The first three assessment requests were rejected without state change for, respectively, a prohibited non-empty specialized-template rationale, a missing required empty rationale field, and non-canonical soft-gap values. Each correction used a new immutable request file.",
+      "The final schema-valid assessment request was rejected without state change because the deterministic applier found two same-security source operations claimed by this run and provides no request field to select the current operation. The required assessment therefore could not be completed.",
+      "Restored the prior wiki page exactly; current page and current assessment retain identical hash f0597bb8af702238fc35f3e5c4a0771e6a47c2bdc6f3dc7d68134447decd00b0. The prior quick-check assessment remains current and no new assessment history row exists for this operation.",
+      "The accepted Roblox relationship names exactly one linked idea, but no idea-research follow-up was enqueued because this full review failed and produced no accepted assessment result. The full strategy gate remains failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed after cleanup.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

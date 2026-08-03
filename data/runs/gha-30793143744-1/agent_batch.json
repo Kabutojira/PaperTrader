@@ -1,0 +1,25 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-03T07:52:35Z",
+  "estimated_cost_per_operation": "0.25",
+  "estimated_model_budget_used": "0.75",
+  "maximum_model_budget": "5",
+  "maximum_operations": 5,
+  "operation_count": 3,
+  "outcomes": [
+    {
+      "operation_id": "01KZ35CPR03SHK78B81ZSEV4JT",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYVJ62SRG31KASASEYZ2476N",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ38VCQRDKQK4SD081XKZNB3",
+      "status": "failed"
+    }
+  ],
+  "run_id": "gha-30793143744-1",
+  "started_at": "2026-08-03T07:19:47Z"
+}

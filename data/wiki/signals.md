@@ -7,13 +7,13 @@ tags:
 created: "2026-08-03"
 updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cf76086beeb13f2c6ca6"
-as_of: "2026-08-03T06:55:46Z"
+snapshot_id: "decision_a89f5d2652e4c2c71fea"
+as_of: "2026-08-03T07:52:37Z"
 ---
 
 # Signals
 
-**Snapshot `decision_cf76086beeb13f2c6ca6` · As of `2026-08-03T06:55:46Z`**
+**Snapshot `decision_a89f5d2652e4c2c71fea` · As of `2026-08-03T07:52:37Z`**
 
 ## Actionable trade signals
 
@@ -33,15 +33,6 @@ No pending paper orders.
 - Market date: `2026-07-31`
 - Research status: `succeeded`
 - Conclusion: Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center &amp; Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy
-
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
@@ -187,6 +178,15 @@ No pending paper orders.
 - Research status: `waiting`
 - Conclusion: High-priority security research is waiting on its scheduling constraints.
 
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-07-31`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
 ### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
 
 **Research alert — not a trade signal**
@@ -202,8 +202,8 @@ No pending paper orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one full security review of Quanta Services after its material Q2 2026 results and July 30-31 repricing. Rechecked the unchanged SEC-filed release and Form 10-Q, expanded the security page with segment margins, backlog quality, acquisitions, debt and goodwill, and wrote immutable assessment assessment\_4b78877aa4c4563435e9. At USD 667.36, the retained USD 417.50/USD 534.40/USD 668.00 scenarios derive a Sell/Avoid/Watch disposition and remain ineligible. No linked canonical idea or accepted relationship exists, so no idea follow-up was required; no strategy, signal, order, allocation or accounting state was changed.
 
 ### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
 

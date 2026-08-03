@@ -1,0 +1,25 @@
+{
+  "changed_paths": [
+    "data/issues.md",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry01_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry02_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/assessment_upsert_retry03_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/issue_record_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_revert_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_revert_retry01_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/security_upsert_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_10q_refresh_request.json",
+    "data/runs/gha-30793143744-1/01KZ38VCQRDKQK4SD081XKZNB3/source_rblx_q2_2026_release_refresh_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "errors": [],
+  "operation_id": "01KZ38VCQRDKQK4SD081XKZNB3",
+  "passed": true,
+  "run_id": "gha-30793143744-1",
+  "validation_version": 1
+}
