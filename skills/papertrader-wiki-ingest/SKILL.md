@@ -20,15 +20,15 @@ Read the selected source, `data/wiki/SCHEMA.md`, `index.md`, `research-catalog.m
 `log.md`, relevant wiki pages, and source registry/history rows. Write allowlisted wiki Markdown
 and lawful assets under `data/wiki/raw/` for local-file ingestion only. Use the project CLI for
 source rows, issues, and follow-up operations. A YouTube operation may also use identity-only
-`papertrader watchlist import`; it must never store transcript, audio, video, thumbnail, or full
+`scripts/papertrader watchlist import`; it must never store transcript, audio, video, thumbnail, or full
 description bytes. A Seeking Alpha lead may also use identity-only watchlist import, but it must
 never fetch or store the article, a provider summary, cookies, or subscriber content. Do not
 hand-edit CSVs or touch trading/accounting state.
 
-The structured commands allowed here are `papertrader research source record --request <json>`,
-`papertrader issue record --request <json>`, and `papertrader queue enqueue --request <json>`.
+The structured commands allowed here are `scripts/papertrader research source record --request <json>`,
+`scripts/papertrader issue record --request <json>`, and `scripts/papertrader queue enqueue --request <json>`.
 Only `youtube_video` and `seekingalpha_search_lead` payloads additionally allow
-`papertrader watchlist import --request <json>`.
+`scripts/papertrader watchlist import --request <json>`.
 
 ## Required input
 
@@ -85,7 +85,7 @@ verification steps:
    unsupported certainty, and passing company mentions.
 6. Retain a public security only when independent evidence verifies issuer, instrument, venue MIC,
    provider symbol, currency, and a material causal investment hypothesis. Import a genuinely new
-   identity only through `papertrader watchlist import` using the canonical video URL as its source.
+   identity only through `scripts/papertrader watchlist import` using the canonical video URL as its source.
 7. Enqueue only bounded `idea_research` or `security_research` leads at configured priority 66,
    depending on this ingest operation. Every newly imported security must receive exactly one
    matching `security_research` follow-up. Do not enqueue strategy or execution work.
@@ -159,7 +159,7 @@ Write the manifest last and copy each canonical project command from the command
 
 ## Verification
 
-Before the manifest, run source-hash validation and `papertrader wiki lint --strict`. For YouTube,
+Before the manifest, run source-hash validation and `scripts/papertrader wiki lint --strict`. For YouTube,
 confirm the source row uses the transcript hash, no transcript media/content exists under the
 repository, `youtube_analysis.md` is non-published and complete, only independently corroborated
 facts changed entity pages, and every imported security has exactly one priority-66 dependent

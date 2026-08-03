@@ -11,6 +11,7 @@ from pathlib import Path, PurePosixPath
 
 from jsonschema import Draft202012Validator, FormatChecker
 
+from papertrader.command_scope import command_allowed, normalized_command
 from papertrader.config import ConfigurationError, load_settings
 from papertrader.integrity import is_runtime_path_allowed, validate_integrity
 from papertrader.portfolio import reconcile_portfolio
@@ -217,9 +218,7 @@ def _command_parts(entry: Mapping[str, object]) -> tuple[str, ...]:
     parts = tuple(argv)
     if not parts or parts[0] != "papertrader":
         return ()
-    if len(parts) >= 3 and parts[1] == "--repository":
-        return (parts[0], *parts[3:])
-    return parts
+    return (parts[0], *normalized_command(parts[1:]))
 
 
 def _command_allowed(
@@ -232,55 +231,12 @@ def _command_allowed(
     parts = _command_parts(entry)
     if len(parts) < 2:
         return False
-    command = parts[1:]
-    read_only = (
-        command[:2]
-        in {
-            ("portfolio", "reconcile"),
-            ("queue", "validate"),
-            ("schema", "validate"),
-            ("wiki", "lint"),
-            ("allocation", "readiness"),
-        }
-        or command[:1] == ("integrity",)
-        or command[:2] == ("runtime-whitelist", "validate")
-        or command[:2]
-        in {
-            ("research", "security-context"),
-            ("research", "assessment-get"),
-        }
+    return command_allowed(
+        operation_type,
+        parts[1:],
+        youtube_video=youtube_video,
+        seekingalpha_lead=seekingalpha_lead,
     )
-    if read_only:
-        return True
-    if command[:2] == ("issue", "record"):
-        return True
-    if command[:2] == ("queue", "enqueue"):
-        return operation_type != "source_discovery"
-    if command[:2] == ("podcast", "assemble"):
-        return operation_type == "daily_podcast"
-    if command[:2] == ("seekingalpha", "enqueue-leads"):
-        return operation_type == "source_discovery"
-    if command[:2] == ("watchlist", "import"):
-        return operation_type == "idea_research" or (
-            operation_type == "wiki_ingest" and (youtube_video or seekingalpha_lead)
-        )
-    if command[:3] == ("research", "source", "record"):
-        return operation_type in {"wiki_ingest", "security_research", "quick_check_research"}
-    if command[:3] == ("research", "security", "upsert"):
-        return operation_type in {"security_research", "quick_check_research"}
-    if command[:3] == ("research", "assessment", "upsert"):
-        return operation_type in {"security_research", "quick_check_research"}
-    if command[:3] == ("research", "relationship", "upsert"):
-        return operation_type == "relationship_research"
-    if command[:3] == ("research", "strategy", "upsert"):
-        return operation_type == "strategy_research"
-    if command[:2] == ("signal", "create"):
-        return operation_type == "strategy_research"
-    if command[:2] in {("order", "create"), ("order", "create-baseline")}:
-        return operation_type == "execute_strategy"
-    if command[:2] == ("order", "cancel"):
-        return operation_type == "execute_strategy"
-    return False
 
 
 def _load_command_audit(
@@ -423,7 +379,11 @@ def _validate_commands(
             youtube_video=youtube_video,
             seekingalpha_lead=seekingalpha_lead,
         ):
-            errors.append(f"command audit entry {index} is outside the operation skill scope")
+            command = entry.get("command")
+            rendered = command if isinstance(command, str) and command else "<invalid command>"
+            errors.append(
+                f"command audit entry {index} is outside the operation skill scope: {rendered}"
+            )
         request = entry.get("request")
         if request is None:
             continue

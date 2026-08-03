@@ -18,8 +18,8 @@ wiki schema/homepage/catalog/log, and related wiki pages and sources. Write rele
 pages only when evidence changes them. Use the CLI for issues and at most one follow-up operation.
 Do not create an order, signal, execution, or position.
 
-The only structured mutations allowed are `papertrader issue record --request <json>` and
-`papertrader queue enqueue --request <json>`.
+The only structured mutations allowed are `scripts/papertrader issue record --request <json>` and
+`scripts/papertrader queue enqueue --request <json>`.
 
 ## Required input
 

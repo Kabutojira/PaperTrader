@@ -293,6 +293,7 @@ def start_local_harness_operation(
         "- Prefix every agent-side papertrader CLI command with "
         f"PAPERTRADER_AUDIT_RUN_ID={run_id} "
         f"PAPERTRADER_AUDIT_OPERATION_ID={operation.operation_id} "
+        f"PAPERTRADER_AUDIT_OPERATION_TYPE={operation.operation_type} "
         f"PAPERTRADER_AUDIT_PATH=data/runs/{run_id}/{operation.operation_id}/command_audit.json.\n"
         "- Invoke the project CLI through scripts/papertrader; do not use a system or Snap uv "
         "launcher.\n"

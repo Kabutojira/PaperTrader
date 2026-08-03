@@ -436,7 +436,9 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "commands_run must equal exactly" in prompt
     assert "do not include pytest" in prompt
     assert "never exhaust the turn budget without the manifest" in prompt
-    assert "Invoke the prepared `papertrader` executable directly" in prompt
+    assert "Invoke repository-local `scripts/papertrader`" in prompt
+    assert "Never invoke bare `papertrader`" in prompt
+    assert "rejects commands outside this operation's skill scope before dispatch" in prompt
     assert "prefix a command with `uv run`" in prompt
     assert "research security-context" not in prompt
 
@@ -450,7 +452,8 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
         security_operation, run_id="local-1", injection_flags=()
     )
     assert (
-        "`papertrader research security-context --security-id security_example`" in security_prompt
+        "`scripts/papertrader research security-context --security-id security_example`"
+        in security_prompt
     )
     assert "successful audited receipt is mandatory" in security_prompt
 
@@ -459,7 +462,7 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
         run_id="local-1",
         injection_flags=(),
     )
-    assert "`papertrader research security-context --security-id security_example`" in (
+    assert "`scripts/papertrader research security-context --security-id security_example`" in (
         quick_check_prompt
     )
 
@@ -486,11 +489,13 @@ def test_environment_scrubber_drops_actions_and_broker_tokens(
         },
         run_id="run-1",
         operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        operation_type="security_research",
     )
 
     assert "OPENAI_API_KEY" not in sanitized
     assert sanitized["OPENROUTER_API_KEY"] == "auxiliary-secret-value"
     assert sanitized["HERMES_REDACT_SECRETS"] == "true"
+    assert sanitized["PAPERTRADER_AUDIT_OPERATION_TYPE"] == "security_research"
     assert "ACTIONS_RUNTIME_TOKEN" not in sanitized
     assert "BROKER_API_TOKEN" not in sanitized
     assert "GH_TOKEN" not in sanitized

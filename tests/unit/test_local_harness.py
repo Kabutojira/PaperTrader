@@ -88,6 +88,7 @@ def test_local_harness_claims_validates_and_terminalizes_one_operation(
     assert "Do not run agent harness finish" in prompt
     assert "PAPERTRADER_AUDIT_RUN_ID=local-codex-1" in prompt
     assert f"PAPERTRADER_AUDIT_OPERATION_ID={operation_id}" in prompt
+    assert "PAPERTRADER_AUDIT_OPERATION_TYPE=opportunity_research" in prompt
     assert "scripts/papertrader" in prompt
     assert "stop after agent_result.json exists" in prompt
 

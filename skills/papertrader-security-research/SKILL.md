@@ -24,18 +24,18 @@ This skill never edits an idea page directly. After a successful review it must 
 relationship for the security, so each idea can absorb the new security evidence in its own bounded
 operation.
 
-Use `papertrader research source record --request <json>` for every retained evidence source,
-`papertrader research security upsert --request <json>` for the security row,
-`papertrader research assessment upsert --request <json>` for its comparable assessment,
-`papertrader issue record --request <json>` for issues, and
-`papertrader queue enqueue --request <json>` for a justified follow-up.
+Use `scripts/papertrader research source record --request <json>` for every retained evidence source,
+`scripts/papertrader research security upsert --request <json>` for the security row,
+`scripts/papertrader research assessment upsert --request <json>` for its comparable assessment,
+`scripts/papertrader issue record --request <json>` for issues, and
+`scripts/papertrader queue enqueue --request <json>` for a justified follow-up.
 Once any request JSON has been passed to the CLI, it is immutable. Write a new uniquely named JSON
 artifact before retrying with corrected or changed content.
 Before any repeat review, run
-`papertrader research security-context --security-id <security_id>` and consume its current and
+`scripts/papertrader research security-context --security-id <security_id>` and consume its current and
 previous structured assessments, latest successful result, linked research state, retained sources,
 and page hashes. Historical versions may be inspected by immutable ID with
-`papertrader research assessment-get --assessment-id <assessment_id>`.
+`scripts/papertrader research assessment-get --assessment-id <assessment_id>`.
 
 ## Required input
 

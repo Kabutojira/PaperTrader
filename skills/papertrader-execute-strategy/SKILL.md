@@ -21,8 +21,8 @@ Invoke only deterministic project CLI commands to create/cancel a paper order an
 Do not hand-edit any CSV, fill, execution, cash entry, portfolio, performance, or Telegram state.
 Write only this operation's result artifact and permitted wiki explanation when necessary.
 
-Use `papertrader order create --request <json>` for a pending paper order and
-`papertrader order cancel --request <json>` for an existing pending order. Use the issue CLI only
+Use `scripts/papertrader order create --request <json>` for a pending paper order and
+`scripts/papertrader order cancel --request <json>` for an existing pending order. Use the issue CLI only
 for a bounded repository issue. Never invoke `fills process`, accounting, portfolio rebuild, or a
 real-execution command from this skill.
 
@@ -59,10 +59,10 @@ multiplier, quantity, currency, and a fresh bid/ask source.
    an evidence-linked skip without mutating order state.
 6. If the action still warrants an order, write one uniquely named JSON request and invoke exactly
    one order command. For a baseline strategy use
-   `papertrader order create-baseline --request <path>` without a `legs` field; deterministic code
+   `scripts/papertrader order create-baseline --request <path>` without a `legs` field; deterministic code
    derives the exact action and whole-share delta from the current target, holdings, pending
    orders, price, and FX. For a conviction strategy use
-   `papertrader order create --request <path>` with explicit canonical legs. Build one reference
+   `scripts/papertrader order create --request <path>` with explicit canonical legs. Build one reference
    per leg from current normalized market/FX data. Let the command validate cash,
    exposure, the baseline target and reserve, concentration, turnover, shorts, option
    premium/liquidity, expiry, price/FX freshness, canonical strategy legs, and limits.

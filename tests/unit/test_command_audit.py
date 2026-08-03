@@ -31,6 +31,7 @@ def test_agent_scoped_cli_command_writes_exact_change_receipt(
     monkeypatch.setenv("WIKI_PATH", str(sandbox_repository / "data" / "wiki"))
     monkeypatch.setenv("PAPERTRADER_AUDIT_RUN_ID", run_id)
     monkeypatch.setenv("PAPERTRADER_AUDIT_OPERATION_ID", operation_id)
+    monkeypatch.setenv("PAPERTRADER_AUDIT_OPERATION_TYPE", "opportunity_research")
     monkeypatch.setenv(
         "PAPERTRADER_AUDIT_PATH",
         f"data/runs/{run_id}/{operation_id}/command_audit.json",
@@ -59,3 +60,44 @@ def test_agent_scoped_cli_command_writes_exact_change_receipt(
     assert entry["changed_paths"] == ["data/issues.md", "data/tables/issues.csv"]
     assert [change["path"] for change in entry["changes"]] == entry["changed_paths"]
     assert all(change["before"] != change["after"] for change in entry["changes"])
+
+
+def test_agent_scoped_cli_rejects_disallowed_command_before_audit(
+    monkeypatch,
+    sandbox_repository: Path,  # type: ignore[no-untyped-def]
+    capsys,
+) -> None:
+    operation_id = "01ARZ3NDEKTSV4RRFFQ69G5FAV"
+    run_id = "scope-guard"
+    artifact = sandbox_repository / "data" / "runs" / run_id / operation_id
+    artifact.mkdir(parents=True)
+    request = artifact / "watchlist-request.json"
+    request.write_text("{}\n", encoding="utf-8")
+    monkeypatch.setenv("WIKI_PATH", str(sandbox_repository / "data" / "wiki"))
+    monkeypatch.setenv("PAPERTRADER_AUDIT_RUN_ID", run_id)
+    monkeypatch.setenv("PAPERTRADER_AUDIT_OPERATION_ID", operation_id)
+    monkeypatch.setenv("PAPERTRADER_AUDIT_OPERATION_TYPE", "security_research")
+    monkeypatch.setenv(
+        "PAPERTRADER_AUDIT_PATH",
+        f"data/runs/{run_id}/{operation_id}/command_audit.json",
+    )
+
+    assert (
+        main(
+            [
+                "--repository",
+                str(sandbox_repository),
+                "watchlist",
+                "import",
+                "--request",
+                str(request),
+            ]
+        )
+        == 2
+    )
+
+    captured = capsys.readouterr()
+    assert "ERROR [command-scope]" in captured.err
+    assert "papertrader --repository" in captured.err
+    assert "is outside the security_research skill scope" in captured.err
+    assert not (artifact / "command_audit.json").exists()

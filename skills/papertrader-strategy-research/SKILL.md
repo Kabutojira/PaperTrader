@@ -20,8 +20,8 @@ source evidence. Write one strategy page plus catalog/log. Use the CLI for strat
 issues, follow-ups, and an eligible signal. Do not change allocation targets/history, create an
 order, or mutate accounting state.
 
-Use `papertrader research strategy upsert --request <json>` for the strategy and normalized legs,
-`papertrader signal create --request <json>` only for a complete time-bounded signal, and the
+Use `scripts/papertrader research strategy upsert --request <json>` for the strategy and normalized legs,
+`scripts/papertrader signal create --request <json>` only for a complete time-bounded signal, and the
 issue/queue CLI commands for issues or a justified follow-up. Every created baseline signal must
 enqueue exactly one `execute_strategy` operation for the same strategy and signal before the
 result manifest is written.

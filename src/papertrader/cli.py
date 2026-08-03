@@ -24,7 +24,8 @@ from papertrader.allocation import (
     plan_allocation,
     write_calibration_report,
 )
-from papertrader.command_audit import audit_context, record_command
+from papertrader.command_audit import audit_context, canonical_command, record_command
+from papertrader.command_scope import command_allowed
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
 from papertrader.daily import (
@@ -1325,6 +1326,18 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         context = None if local_harness_boundary else audit_context(root, os.environ)
         if context is not None:
+            if context.operation_type and not command_allowed(
+                context.operation_type,
+                raw_arguments,
+                pre_dispatch=True,
+            ):
+                print(
+                    "ERROR [command-scope] "
+                    f"{canonical_command(raw_arguments)} is outside the "
+                    f"{context.operation_type} skill scope",
+                    file=sys.stderr,
+                )
+                return 2
             before = snapshot_repository(root)
         settings = load_settings(root, os.environ)
         exit_code = _dispatch(arguments, root, settings)

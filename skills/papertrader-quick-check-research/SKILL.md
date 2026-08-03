@@ -19,7 +19,7 @@ Require `security_id`, `baseline_operation_id`, `baseline_result_path`, `baselin
 
 ## Procedure
 
-1. First run `papertrader research security-context --security-id <security_id>` and consume its
+1. First run `scripts/papertrader research security-context --security-id <security_id>` and consume its
    current and previous assessments, latest successful result, linked research state, retained
    sources, and page hashes. Then read the required wiki orientation files, the complete recent
    baseline security result, and the maintained security page.
@@ -45,7 +45,7 @@ Write the standard schema-valid `agent_result.json`. A succeeded result must ide
 
 ## Verification
 
-Run security/assessment schema validation, source freshness checks, `papertrader queue validate`, strict integrity, strict wiki lint, and portfolio reconciliation. Confirm the baseline operation identity and the current `source_price_hash`. When escalating, confirm exactly one dependent full-review payload contains this quick-check operation ID and all merged trigger causes.
+Run security/assessment schema validation, source freshness checks, `scripts/papertrader queue validate`, strict integrity, strict wiki lint, and portfolio reconciliation. Confirm the baseline operation identity and the current `source_price_hash`. When escalating, confirm exactly one dependent full-review payload contains this quick-check operation ID and all merged trigger causes.
 
 ## Failure policy
 

@@ -25,7 +25,7 @@ Require `run_id`, `context_path`, `report_path`, `page_path`, `audio_path`, `tar
 4. Write one original, neutral, investor-facing script of 2,400-3,600 words on the dated podcast page. Aim for about 3,000 words and twenty minutes. Clearly label paper trading, distinguish fact from inference, retain important uncertainty, and mention evidence naturally without reading raw URLs.
 5. Include frontmatter, the ordered outline, the full transcript, provenance links, and a relative link to the dated MP3. Add a concise podcast link to the completed daily report without changing its canonical facts.
 6. Split only the spoken transcript at paragraph boundaries into 2-12 chunks, each within the active Hermes TTS provider's character limit. Invoke Hermes `text_to_speech` sequentially for each chunk, using absolute output paths under this operation's run directory and stable numbered `.mp3` names. Do not use parallel calls.
-7. Call `papertrader podcast assemble --request <operation-local-json>` once. The request must bind this run and operation, the dated script/output paths, and ordered chunk paths. The deterministic command validates word count, concatenates audio, verifies a 16-24 minute duration, atomically writes the final MP3, and removes intermediate chunks.
+7. Call `scripts/papertrader podcast assemble --request <operation-local-json>` once. The request must bind this run and operation, the dated script/output paths, and ordered chunk paths. The deterministic command validates word count, concatenates audio, verifies a 16-24 minute duration, atomically writes the final MP3, and removes intermediate chunks.
 8. Run strict wiki lint, integrity, queue validation, and portfolio reconciliation. Write `agent_result.json` last.
 
 ## Source hierarchy
@@ -42,7 +42,7 @@ Write the standard schema-valid `agent_result.json`. On success, `files_changed`
 
 ## Verification
 
-Confirm the context/run/snapshot identities, that every material accepted run result is represented or explicitly omitted as immaterial, that combined alerts are discussed once with all causes, and that no post-snapshot investment claim was invented. Run `papertrader podcast assemble`, strict schema/integrity/wiki checks, queue validation, and portfolio reconciliation. Verify the final MP3 exists at the payload path and its measured duration is between 16 and 24 minutes.
+Confirm the context/run/snapshot identities, that every material accepted run result is represented or explicitly omitted as immaterial, that combined alerts are discussed once with all causes, and that no post-snapshot investment claim was invented. Run `scripts/papertrader podcast assemble`, strict schema/integrity/wiki checks, queue validation, and portfolio reconciliation. Verify the final MP3 exists at the payload path and its measured duration is between 16 and 24 minutes.
 
 ## Failure policy
 

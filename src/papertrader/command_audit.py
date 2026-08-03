@@ -28,6 +28,7 @@ class CommandAuditContext:
     run_id: str
     operation_id: str
     path: Path
+    operation_type: str = ""
 
 
 def audit_context(
@@ -38,6 +39,7 @@ def audit_context(
     run_id = environment.get("PAPERTRADER_AUDIT_RUN_ID", "")
     operation_id = environment.get("PAPERTRADER_AUDIT_OPERATION_ID", "")
     raw_path = environment.get("PAPERTRADER_AUDIT_PATH", "")
+    operation_type = environment.get("PAPERTRADER_AUDIT_OPERATION_TYPE", "")
     if not any((run_id, operation_id, raw_path)):
         return None
     if not all((run_id, operation_id, raw_path)):
@@ -52,7 +54,12 @@ def audit_context(
     path = repository_root.joinpath(*relative.parts)
     if path.is_symlink():
         raise CommandAuditError("command-audit path must not be a symlink")
-    return CommandAuditContext(run_id=run_id, operation_id=operation_id, path=path)
+    return CommandAuditContext(
+        run_id=run_id,
+        operation_id=operation_id,
+        path=path,
+        operation_type=operation_type,
+    )
 
 
 def canonical_command(arguments: Sequence[str]) -> str:

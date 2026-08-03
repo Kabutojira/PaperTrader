@@ -18,8 +18,8 @@ necessary catalog/log links. Use the CLI to import evidence-backed public-securi
 the watchlist and for issues and bounded security or relationship follow-ups. Do not hand-edit any
 CSV or create a strategy directly.
 
-The only structured mutations allowed are `papertrader watchlist import --request <json>`,
-`papertrader issue record --request <json>`, and `papertrader queue enqueue --request <json>`.
+The only structured mutations allowed are `scripts/papertrader watchlist import --request <json>`,
+`scripts/papertrader issue record --request <json>`, and `scripts/papertrader queue enqueue --request <json>`.
 Watchlist import is identity-only: it must not invent research, valuation, relationships, or a
 security page.
 
@@ -43,7 +43,7 @@ and refresh the idea's security conclusion.
    and explain material layers that yield no public candidate. Do not use a fixed candidate quota.
 5. Resolve every retained public instrument to issuer, instrument, venue MIC, provider symbol,
    currency, country, sector, and industry. Reuse existing immutable identities. Import each new
-   evidence-backed identity with `papertrader watchlist import`; never create one from ticker text
+   evidence-backed identity with `scripts/papertrader watchlist import`; never create one from ticker text
    alone.
 6. For every new or materially stale retained candidate, enqueue exactly one bounded
    `security_research` operation carrying `idea_id`, the immutable `security_id`, the causal

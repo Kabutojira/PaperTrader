@@ -469,6 +469,73 @@ def test_out_of_scope_source_write_fails_closed(
         )
 
 
+def test_out_of_scope_command_error_names_rejected_command(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    operation_id = _enqueue(sandbox_repository, sandbox_settings)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
+    rejected_command = "papertrader watchlist import --request unexpected.json"
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        run_id = environment["PAPERTRADER_AUDIT_RUN_ID"]
+        selected_operation = environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+        artifact = cwd / "data" / "runs" / run_id / selected_operation
+        (artifact / "command_audit.json").write_text(
+            json.dumps(
+                {
+                    "audit_version": 1,
+                    "run_id": run_id,
+                    "operation_id": selected_operation,
+                    "entries": [
+                        {
+                            "command": rejected_command,
+                            "argv": [
+                                "papertrader",
+                                "watchlist",
+                                "import",
+                                "--request",
+                                "unexpected.json",
+                            ],
+                            "request": None,
+                            "started_at": "2026-07-24T12:00:00Z",
+                            "completed_at": "2026-07-24T12:00:01Z",
+                            "exit_code": 0,
+                            "changed_paths": [],
+                            "changes": [],
+                        }
+                    ],
+                },
+                sort_keys=True,
+            ),
+            encoding="utf-8",
+        )
+        result = _manifest(selected_operation, [])
+        result["commands_run"] = [rejected_command]
+        (artifact / "agent_result.json").write_text(
+            json.dumps(result, sort_keys=True), encoding="utf-8"
+        )
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    with pytest.raises(AgentRunError, match=rejected_command):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="bad-command-scope",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
+            operation_id=operation_id,
+            executor=execute,
+        )
+
+
 def test_completed_security_research_without_assessment_fails_closed(
     sandbox_repository: Path,
     sandbox_settings: Settings,

@@ -17,9 +17,9 @@ row/page, relevant evidence, and structured source history. Write the one relati
 catalog/log. Use the CLI to upsert or reject the relationship and to enqueue a bounded follow-up.
 Do not create a strategy, signal, order, or accounting entry.
 
-Use `papertrader research relationship upsert --request <json>` for an accepted or rejected edge,
-`papertrader issue record --request <json>` for issues, and
-`papertrader queue enqueue --request <json>` for the optional follow-up.
+Use `scripts/papertrader research relationship upsert --request <json>` for an accepted or rejected edge,
+`scripts/papertrader issue record --request <json>` for issues, and
+`scripts/papertrader queue enqueue --request <json>` for the optional follow-up.
 
 ## Required input
 
