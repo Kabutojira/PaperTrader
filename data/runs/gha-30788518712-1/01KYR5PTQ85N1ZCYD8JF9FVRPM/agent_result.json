@@ -1,0 +1,81 @@
+{
+  "operation_id": "01KYR5PTQ85N1ZCYD8JF9FVRPM",
+  "status": "succeeded",
+  "summary": "Updated Samsung Electronics' Vienna-traded common GDR review with detailed Q2 2026 primary evidence and the July 30 volume anomaly. Record revenue, Device Solutions profit, operating cash flow, cash, and net cash strengthen the AI-memory thesis and explain the results-day rebound and relative volume spike, while Device eXperience's operating loss adds contrary evidence. The anomaly cleared on July 31, but turnover remained only eight units. Missing fresh KRW/EUR and same-timestamp cross-venue parity, uncertain through-cycle normalization, and negligible Vienna liquidity still prevent a supportable instrument-level valuation. The new schema-v2 assessment is medium-confidence, unsupported, ineligible, and watch-only with explicit valuation and liquidity blockers. No strategy, idea follow-up, or paper order was created because there are no payload-linked or accepted canonical ideas and the conviction gate fails.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The canonical alert period was 2026-07-02 through 2026-07-30. SSU.VI closed at EUR 3,550 on July 30, down 11.47132169576059850374064838% over the period but up 10.24844720496894409937888199% for the session; 56 units traded and volume anomaly entered at strength 1.04706207. On July 31 the close was EUR 3,650 on eight units and the current indicator cache had no active trigger.",
+      "observed_at": "2026-08-03T05:56:22Z",
+      "source_hash": "bbf89dab768e1da5522b802b83b26d5fb46d77541e04e0a6fde6f7c60f1a1f75"
+    },
+    {
+      "source": "source_samsung_q2_2026_results",
+      "claim": "Samsung reported Q2 revenue of KRW 171.5 trillion, operating profit of KRW 89.5 trillion, net profit of KRW 71.6 trillion, and common-share EPS of KRW 10,849. Device Solutions produced KRW 127.5 trillion of sales and KRW 89.2 trillion of operating profit, cash reached KRW 190.0 trillion, debt fell to KRW 22.4 trillion, and operating cash flow reached KRW 105.08 trillion; Device eXperience posted a KRW 0.8 trillion operating loss.",
+      "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+      "observed_at": "2026-08-03T06:22:25Z",
+      "source_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf"
+    },
+    {
+      "source": "source_samsung_common_gdr_identity",
+      "claim": "Issuer listing evidence identifies the common GDR as ISIN US7960508882 and one GDR as representing 25 Korean common shares. The reviewed immutable identity remains SSU.VI/XWBO/EUR and is distinct from the preferred GDR and Korean ordinary lines.",
+      "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+      "observed_at": "2026-07-29T23:18:00Z",
+      "source_hash": "a5e8493c3af8209e37284e454849e5fe4efccbb26ccf6183a7d034aaf62ef521"
+    },
+    {
+      "source": "PaperTrader canonical assessment state",
+      "claim": "Assessment assessment_8e31b574b5b937920756 is schema version 2, links predecessor assessment_439df8789aacd897b657, uses the current EUR 3,650 mark and identity-matched EUR/EUR rate of 1, and is deterministically classified unsupported, ineligible, unrated, and watch-only with liquidity_insufficient and valuation_unsupported hard blockers.",
+      "observed_at": "2026-08-03T06:22:25Z",
+      "source_hash": "00055c9bb5a35a1fec86b0a49756da8c1c77233aff4318383ba8e4e03ec21eea"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/assessment_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/assessment_upsert_request_v2.json",
+    "data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/security_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/source_samsung_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_567d0d575bbd30aaa91d.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Samsung Electronics' Vienna common GDR entered a results-day volume anomaly on July 30 as detailed Q2 results confirmed record revenue, memory profit, cash flow, and net cash. The relative volume spike occurred on only 56 units and cleared the next day; missing KRW/EUR and cross-venue parity plus sparse local liquidity leave valuation unsupported and allocation ineligible, so no conviction paper strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_567d0d575bbd30aaa91d",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/source_samsung_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/assessment_upsert_request_v2.json",
+    "papertrader research security-context --security-id security_567d0d575bbd30aaa91d",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the parent supplied exactly one running security_research row claimed by gha-30788518712-1 with a live lease, a schema-valid bounded payload, sequential execution, and matching native wiki, controller, and operation-skill preflight identities.",
+      "Consumed the required bounded prior-review context and confirmed the updated page contains a complete Changes since prior review section covering evidence, alert measurements, assumptions, unsupported scenarios, thesis, catalysts, risks, blockers, gaps, rating, action, and unchanged conclusions.",
+      "Matched the July 30 volume_anomaly, exact July 2-July 30 period, EUR 3,550 alert mark, 56-unit volume, trigger strength, and canonical source-price hash; confirmed the July 31 EUR 3,650 current mark, eight-unit turnover, cleared trigger state, fresh retrieval timestamp, and identity-matched EUR/EUR rate.",
+      "Confirmed the SSU.VI/XWBO/EUR common-GDR identity remains unique, unchanged, and distinct from Samsung's preferred GDR and Korean ordinary lines.",
+      "Registered the detailed Q2 issuer release before assessment; all four sorted assessment evidence references are available, current, and linked to the immutable security.",
+      "Confirmed exactly one new current assessment exists for this run: schema version 2, immutable predecessor linked, current page hash retained, source operation/result provenance retained, research status unsupported, allocation ineligible, conviction watch, and no invented scenario values.",
+      "Confirmed the payload names no idea and canonical state has zero relationships for this security, so exactly zero idea-research follow-ups were required and created.",
+      "Confirmed the conviction strategy gate fails on unsupported valuation and insufficient Vienna liquidity; no strategy, signal, order, fill, execution, cash, portfolio, performance, allocation target, or allocation history state changed.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity all returned exit code zero after the permitted edits.",
+      "Allocation readiness returned exit code one only for pre-existing repository-wide relationship coverage and stale/rejected relationship gaps; Samsung is ineligible and introduced no readiness error.",
+      "The first assessment request failed without state changes because it used non-canonical soft-gap labels; it remains immutable in the audit trail, and the uniquely named v2 request corrected the labels and succeeded.",
+      "command_audit.json contains exactly the eleven canonical project CLI invocations listed in commands_run, including the failed immutable assessment request and the successful corrected request."
+    ]
+  }
+}

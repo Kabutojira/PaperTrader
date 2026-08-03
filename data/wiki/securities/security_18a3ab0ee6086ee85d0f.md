@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-29"
-provenance: "Eaton Q1 2026 Form 10-Q; Eaton Q2 2026 earnings-date announcement; PaperTrader market and FX caches"
+updated: "2026-08-03"
+provenance: "Eaton Q2 2026 Form 10-Q and results exhibit; PaperTrader market and FX caches"
 security_id: security_18a3ab0ee6086ee85d0f
 issuer_id: issuer_f95d7e49ebda3ca93218
 confidence: medium
-next_review: "2026-07-31"
+next_review: "2026-09-02"
 ---
 
 # Eaton Corporation plc ordinary shares
@@ -24,72 +24,86 @@ next_review: "2026-07-31"
 The filing confirms Eaton Corporation plc and its exchange-listed ordinary shares. This review is
 linked to [[ideas/idea_ai_infrastructure_power]] and the complete [[research-catalog]].
 
+## Changes since prior review
+
+- **Evidence:** Q2 results and the Q2 Form 10-Q replace the pre-earnings Q1 evidence boundary.
+  Sales reached USD 8.531 billion, organic growth was 14%, operating cash flow was USD 1.1 billion,
+  free cash flow was USD 874 million, and full-year adjusted-EPS guidance rose to USD 13.40-13.60.
+- **Alert:** The July 31 close rose 7.32% in one session to USD 415.20 on 4.55 million shares. The
+  deterministic 20-session return was 4.19% and volume anomaly strength rose from 0.0146 to 0.1564.
+  This is a results-driven positive repricing, not noise, but it worsens entry valuation.
+- **Assumptions and valuation:** The old two-case Q1 proxy is replaced by a scenario-complete
+  earnings-multiple assessment. Bear/base/bull fair values are USD 285/USD 350/USD 450 with
+  25%/50%/25% probabilities. The USD 358.75 probability-weighted value remains below the mark.
+- **Thesis and catalysts:** Broad electrical orders, backlog and margins strengthen the AI-power
+  mechanism. Raised guidance and the planned Mobility separation are new catalysts.
+- **Risks, blockers and gaps:** No hard blocker is added. Acquisition leverage, integration,
+  working-capital growth, data-centre concentration, margin normalization and overvaluation remain.
+- **Rating and action:** Research becomes scenario-complete, but the decision remains watch/no
+  paper trade. The evidence upgrade does not overcome the adverse valuation and payoff frontiers.
+
 ## Economics and thesis
 
-Eaton sells electrical distribution, power quality, thermal, aerospace, and mobility products. Q1
-2026 sales rose 17% to USD 7.451 billion. Electrical Americas sales rose 20% to USD 3.6 billion with
-25.6% operating margin; its rolling orders rose 42% organically and backlog 44%. Electrical Global
-sales rose 21%, margin reached 19.2%, and backlog rose 73%. Eaton attributed roughly 240% growth in
-Electrical Americas data-centre orders and about 50% revenue growth to that market.
+Eaton supplies electrical distribution, power quality, thermal, aerospace and mobility products.
+Q2 2026 sales rose 21% to USD 8.531 billion, including 14% organic growth. Electrical Americas
+sales grew 18% organically, margin reached 27.5%, rolling orders rose 41% and backlog rose 33%.
+Electrical Global organic sales grew 18%, margin reached 19.8%, orders rose 33% and backlog rose
+103%. The electrical businesses retained a 1.2 rolling book-to-bill ratio. This broad conversion of
+power demand into revenue, orders and high-margin backlog strongly supports the mechanism in
+[[ideas/idea_ai_infrastructure_power]] and the accepted
+[[relationships/relationship_87b95f713a902d531f2f|AI-infrastructure relationship]].
 
-The data-centre bottleneck is converting into revenue and backlog at high segment margins. The
-countercase is concentration, capacity execution, acquisition integration, tariff/input pressure,
-and valuation. Eaton spent USD 11.079 billion on acquisitions in the quarter; cash plus short-term
-investments was USD 751 million against USD 21.129 billion of short- and long-term debt, while
-receivables and inventory rose. Operating cash flow nevertheless improved to USD 507 million from
-USD 238 million, so leverage and cash conversion are material risks rather than a present solvency
-blocker.
+Cash conversion improved: quarterly operating cash flow was USD 1.1 billion and free cash flow was
+USD 874 million. However, cash plus short-term investments was only USD 695 million against USD
+20.611 billion of short- and long-term debt at June 30. Receivables and inventory also rose to USD
+6.673 billion and USD 5.417 billion. The balance sheet remains serviceable rather than strong after
+large acquisitions, making integration and refinancing sensitivity material valuation constraints.
 
 ## Evidence and gates
 
 | Evidence | Interpretation |
 | --- | --- |
-| Electrical-sector backlog grew 48% year over year. | Good visibility, subject to cancellations and conversion timing. |
-| Electrical Americas data-centre orders rose about 240%. | Strong AI-power sensitivity but a concentration and normalization risk. |
-| Electrical Americas margin was 25.6%; Global margin 19.2%. | Pricing and mix are strong; these are the margins to defend through capacity expansion. |
-| Operating cash flow was USD 507 million, but cash plus short-term investments was USD 751 million against USD 21.129 billion of debt after acquisitions. | Cash generation is positive, while acquisition leverage and integration require monitoring. |
+| Q2 organic sales grew 14%; Electrical Americas and Global organic sales each grew 18%. | The demand mechanism is broad and is converting into reported revenue. |
+| Electrical Americas orders rose 41% and backlog 33%; Global orders rose 33% and backlog 103%. | Strong visibility, subject to cancellations, normalization and acquisition mix. |
+| Electrical Americas margin reached 27.5%; consolidated segment margin was 23.1%. | Strong economics, though total margin was 80 basis points below Q2 2025. |
+| Operating cash flow was USD 1.1 billion and free cash flow USD 874 million. | Cash conversion supports the thesis after a weaker Q1. |
+| Cash and short-term investments were USD 695 million versus USD 20.611 billion debt. | Acquisition leverage and integration remain material residual risks. |
 
-Primary evidence: [Eaton Q1 2026 results](https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html)
-and [Eaton Q1 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1551182/000155118226000013/etn-20260331.htm).
+Primary evidence: [Eaton Q2 2026 results exhibit](https://www.sec.gov/Archives/edgar/data/1551182/000155118226000027/etn06302026exhibit99.htm)
+and [Eaton Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm).
 
-## 2026-07-28 price alert
+## 2026-07-31 price and volume alert
 
-Eaton closed at USD 388.00 on 2026-07-28, down 2.67% from USD 398.64 on the prior session and
-4.96% from 2026-06-29. The close was only USD 0.095, or 0.025%, below the USD 388.095 lower
-Bollinger band. RSI was neutral at 42.53, volume was 1.125 times its reference level, and no other
-indicator transitioned. The measurement therefore shows a marginal technical breach, not capitulation
-or a corroborated fundamental deterioration.
-
-No company financial result explains the move. Eaton's current primary announcement says Q2 2026
-results will be released on 2026-07-31 before the NYSE opens, with a conference call at 11 a.m.
-Eastern time. With that decisive evidence event two days away, the alert is best classified as
-**pre-earnings timing risk and technical noise**, not an opportunity. The Q1 thesis remains intact,
-but the move does not independently strengthen it. A same-day primary-source recheck at
-2026-07-29T21:44:32Z found the Q1 filing and July 31 earnings schedule unchanged and no Q2 financial
-release, so the disposition remains evidence-current for this operation attempt.
+The canonical July 31 close was USD 415.200012, up 7.32% from USD 386.890015 on July 30 and up
+4.19% over July 2-31. Volume was 4,548,500 shares, and deterministic anomaly strength increased
+from 0.014594865 to 0.1564304. The same-day Q2 release provides a direct explanation: record sales,
+strong electrical orders and backlog, improved sequential Electrical Americas margin, stronger cash
+flow and raised organic-growth and adjusted-EPS guidance. The alert is therefore a **positive
+fundamental repricing**, but not an entry opportunity at the resulting mark.
 
 ## Valuation, catalysts, and risks
 
-Eaton closed at USD 388.00 on 2026-07-28. A bounded 12-month downside scenario annualizes Q1 GAAP
-diluted EPS of USD 2.22 and applies a 28-times multiple, producing USD 248.64, or 35.9% downside. A
-base scenario allows earnings power to recover to USD 10.00 per share and applies a 32-times
-multiple, producing USD 320.00, or 17.5% downside. These are scenarios rather than price targets:
-the multiples are judgmental and Q1 earnings include acquisition effects. Both values remain below
-the current mark and fail the configured 20% margin-of-safety requirement.
+The mature-compounder earnings-multiple template uses fresh Q2 guidance, the latest diluted share
+count and net debt. The bear case is USD 285 (25% probability): roughly USD 10.36 GAAP EPS at a
+27.5-times multiple if integration costs, leverage and margin normalization dominate. The base case
+is USD 350 (50%): roughly USD 13.50 adjusted EPS at 25.9 times as backlog converts but the current
+premium moderates. The bull case is USD 450 (25%): sustained mid-teens growth, margin resilience,
+Mobility separation benefits and visible deleveraging support a roughly 33-times multiple on guided
+adjusted EPS. The probability-weighted value is USD 358.75, below the USD 415.20 mark; the valuation
+is supported but does not clear the expected-return, base-upside, payoff or margin-of-safety gates.
 
-Catalysts are backlog conversion, sustained data-centre revenue, capacity delivery, stable margins,
-and acquisition synergies. Invalidate if order growth reverses, cancellations rise, margins compress,
-working capital remains elevated, acquisitions miss returns, or customer over-ordering emerges.
+Catalysts are backlog conversion, raised guidance delivery, acquisition synergies, capacity ramp,
+deleveraging and the planned first-quarter 2027 Mobility separation. Invalidate on order or backlog
+contraction, cancellations, sustained margin compression, poor cash conversion, acquisition
+underperformance, leverage-constrained capital allocation or evidence that customer concentration
+and over-ordering are masking weaker end demand.
 
 ## Disposition
 
-Status: **watching**, assessment **baseline**, confidence **medium**. Business quality, current cash
-generation, instrument support, and trading liquidity clear hard eligibility gates, but acquisition
-leverage, concentration, medium confidence, unfavorable timing, and valuation are explicit soft
-gaps. The assessment expires into the Q2 event and must be reviewed after the 2026-07-31 release.
-No conviction strategy follow-up is justified because both bounded values remain below the current
-mark and the marginal technical breach does not clear the valuation or timing gates. The accepted
-[[relationships/relationship_87b95f713a902d531f2f|AI-infrastructure relationship]] will be
-refreshed through its required sequential idea operation after this security result is accepted.
+Status: **watching**, confidence **medium**, research **complete**, allocation **ineligible**. The
+business and causal thesis strengthened, while the 7.32% results-day repricing left the USD 415.20
+mark above both the USD 350 base case and USD 358.75 probability-weighted value. No conviction
+strategy is justified. One dependent idea refresh is required after this security result is accepted;
+the security operation does not edit the idea page directly.
 
 See [[index]] for the current paper-only investor decision.

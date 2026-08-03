@@ -1,0 +1,23 @@
+{
+  "security_id": "security_488a9d7f7a8573597724",
+  "issuer_id": "issuer_b2a03da10cdfd4135d9b",
+  "company_name": "Quanta Services, Inc.",
+  "instrument_name": "Quanta Services, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "PWR",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "PWR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Engineering & Construction",
+  "status": "watching",
+  "watchlist_reason": "AI infrastructure and power bottlenecks candidate; monitor backlog conversion, margins, cash flow, acquisition integration, leverage and valuation after the Q2 repricing.",
+  "research_summary": "Full Q2 review confirms strong organic growth, margins and liquidity, but the USD 667.36 mark remains above the USD 534.40 base and USD 538.58 probability-weighted values.",
+  "research_page": "data/wiki/securities/security_488a9d7f7a8573597724.md",
+  "last_research_at": "2026-08-03T06:44:30Z",
+  "next_review_at": "2026-09-02T06:44:30Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm"
+}

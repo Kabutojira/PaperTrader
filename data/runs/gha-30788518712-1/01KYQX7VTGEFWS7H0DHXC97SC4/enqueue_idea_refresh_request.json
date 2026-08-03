@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_infrastructure_power",
+  "dedupe_key": "idea_research:idea_ai_infrastructure_power:security-result:01KYQX7VTGEFWS7H0DHXC97SC4",
+  "prompt": "Refresh the AI infrastructure and power bottlenecks idea from Eaton's completed Q2 review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "seed_claim": "Eaton's Q2 record sales, broad electrical orders and backlog, stronger cash flow and raised guidance strengthen the AI-power mechanism, but the results-day repricing left the security above its base and probability-weighted values.",
+    "security_id": "security_18a3ab0ee6086ee85d0f",
+    "security_research_operation_id": "01KYQX7VTGEFWS7H0DHXC97SC4",
+    "security_research_result_path": "data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/agent_result.json"
+  },
+  "source": "security_research:01KYQX7VTGEFWS7H0DHXC97SC4",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYQX7VTGEFWS7H0DHXC97SC4"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "max_attempts": 3
+}

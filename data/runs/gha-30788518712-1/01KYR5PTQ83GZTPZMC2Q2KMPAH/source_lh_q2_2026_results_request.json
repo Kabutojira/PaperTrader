@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lh_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000162/form8-kexhibit9912q26.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000162/form8-kexhibit9912q26.htm",
+  "source_type": "issuer_release",
+  "title": "Labcorp Announces 2026 Second Quarter Results; Raises Full Year 2026 Guidance",
+  "publisher": "Labcorp Holdings Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "3d46d95ee7e0a9ca6903530e722cbccb413b9205fbd8d1d2faca67a86ea4509b",
+  "related_entity_ids": "security_b1f2c48e1a744f5ecf67",
+  "checked_at": "2026-08-03T06:13:41Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second-quarter revenue was USD 3.731 billion, adjusted EPS was USD 4.99, and updated full-year adjusted-EPS guidance was USD 18.10-18.55.",
+  "summary": "Labcorp's SEC-filed Q2 release reports 5.8% revenue growth, broad segment growth and margin expansion, lower quarterly free cash flow, debt retirement, raised revenue and adjusted-EPS guidance, and a larger repurchase authorization.",
+  "run_id": "gha-30788518712-1"
+}

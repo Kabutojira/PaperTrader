@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-01"
+updated: "2026-08-03"
 provenance: repository-contract
 ---
 
@@ -1620,3 +1620,47 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_b1645ccec2066bd4eab4`.
 
 - Generated canonical [[daily-reports/daily-report_20260801]] for run `gha-30706962621-1`.
+
+## [2026-08-03] update | Eaton Q2 2026 security review
+
+- Updated [[securities/security_18a3ab0ee6086ee85d0f|Eaton]] from pre-earnings Q1 evidence to its
+  July 31 Q2 filing and results. Record sales, broad electrical order and backlog growth, stronger
+  cash flow, and raised guidance explain the results-day volume anomaly and strengthen the
+  AI-power thesis. The 7.32% repricing to USD 415.20 nevertheless left the mark above the USD 350
+  base case and USD 358.75 probability-weighted value, so the scenario-complete assessment remains
+  ineligible and no conviction strategy was created.
+
+## [2026-08-03] update | Labcorp Q2 2026 security review
+
+- Updated [[securities/security_b1f2c48e1a744f5ecf67|Labcorp]] after its July 30 upper-Bollinger,
+  overbought-RSI, and volume-anomaly signals. The SEC-filed Q2 release showed 5.8% revenue growth,
+  broad segment margin expansion, 14.9% adjusted-EPS growth, and raised guidance, explaining the
+  results-day repricing. The signal cleared on July 31, and the USD 309.20 mark offers only 0.8%
+  base upside and about 0.9% probability-weighted return against material bear downside. The
+  scenario-complete assessment remains ineligible, so no conviction strategy was created.
+
+## [2026-08-03] update | Samsung Electronics Q2 2026 security review
+
+- Updated [[securities/security_567d0d575bbd30aaa91d|Samsung Electronics common GDR]] after its
+  July 30 volume anomaly. Detailed Q2 results confirmed record revenue, operating profit, memory
+  economics, cash flow, and net cash and explain the results-day rebound and relative volume spike;
+  Device eXperience's operating loss and peak-cycle normalization remain risks. The signal cleared
+  on July 31, but the Vienna line traded only 56 units on the event and eight the next day. Missing
+  fresh KRW/EUR and same-timestamp cross-venue parity still prevents a supportable EUR valuation,
+  so the schema-v2 assessment remains ineligible and no conviction strategy was created.
+
+## [2026-08-03] update | Quanta Services Q2 2026 quick check
+
+- Updated [[securities/security_488a9d7f7a8573597724|Quanta Services]] after the merged July 30
+  volume anomaly and July 31 bullish-MACD crossover. The SEC-filed Q2 release and Form 10-Q show
+  record revenue, earnings, cash flow, RPO and backlog plus materially raised guidance, explaining
+  the 17.26% results-day rebound. At USD 667.36, a bounded guidance-midpoint sensitivity still has
+  37.44% bear downside and 19.92% base downside. The assessment remains ineligible, and the material
+  evidence change was escalated to dependent full review `01KZ35CPR03SHK78B81ZSEV4JT`; no strategy
+  or signal was created.
+
+## 2026-08-03
+
+- Published investor decision snapshot `decision_cf76086beeb13f2c6ca6`.
+
+- Generated canonical [[daily-reports/daily-report_20260803]] for run `gha-30788518712-1`.

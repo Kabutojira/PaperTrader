@@ -1,0 +1,51 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_488a9d7f7a8573597724",
+  "dedupe_key": "security_research:security_488a9d7f7a8573597724:q2-2026-quick-check:2026-08-03",
+  "prompt": "Fully reassess Quanta Services after its material Q2 2026 release and results-day repricing identified by the bounded quick check.",
+  "inputs": {
+    "security_id": "security_488a9d7f7a8573597724",
+    "quick_check_operation_id": "01KYVJ62SR384EB58S06SFPK5G",
+    "baseline_operation_id": "01KYRN70N0DW63KBW0WYN8QP5H",
+    "changed_gate": "material_primary_evidence_q2_results_and_guidance",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ],
+    "market_data_date": "2026-07-31",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "period_start": "2026-07-01",
+    "period_end": "2026-07-31",
+    "source_price_hash": "030ca764726cd6128f54714aade8b3a8fa2a1177af73d8ebf4e3816668a50f2f",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340.md"
+      },
+      {
+        "cause": "macd_cross_above_signal",
+        "source_ref": "data/wiki/inbox/market-security_488a9d7f7a8573597724-macd_cross_above_signal-3bbf5060198b.md"
+      },
+      {
+        "cause": "material_q2_primary_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KYVJ62SR384EB58S06SFPK5G",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYVJ62SR384EB58S06SFPK5G"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/inbox/market-security_488a9d7f7a8573597724-macd_cross_above_signal-3bbf5060198b.md",
+    "data/wiki/inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340.md",
+    "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm"
+  ],
+  "max_attempts": 3
+}

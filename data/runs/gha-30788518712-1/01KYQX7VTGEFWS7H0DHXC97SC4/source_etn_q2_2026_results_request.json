@@ -1,0 +1,18 @@
+{
+  "source_id": "source_etn_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000027/etn06302026exhibit99.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000027/etn06302026exhibit99.htm",
+  "source_type": "issuer_release",
+  "title": "Eaton Reports Record Second Quarter 2026 Results",
+  "publisher": "Eaton Corporation plc via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "cd57fc97df50efa0657881b253fc96d446ad15ea62d6ed21c827054f2ae3c149",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_18a3ab0ee6086ee85d0f",
+  "checked_at": "2026-08-03T06:01:36Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second quarter sales were USD 8.5 billion, up 21%, with 14% organic growth; operating cash flow was USD 1.1 billion and free cash flow was USD 874 million.",
+  "summary": "Eaton's SEC-filed Q2 release reports record sales, broad electrical order and backlog growth, 23.1% segment margin, stronger cash generation, raised organic-growth and adjusted-EPS guidance, and a planned Mobility separation.",
+  "run_id": "gha-30788518712-1"
+}

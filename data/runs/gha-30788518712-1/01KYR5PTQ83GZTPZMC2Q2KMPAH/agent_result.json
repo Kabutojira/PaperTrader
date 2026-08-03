@@ -1,0 +1,73 @@
+{
+  "operation_id": "01KYR5PTQ83GZTPZMC2Q2KMPAH",
+  "status": "succeeded",
+  "summary": "Revalidated Labcorp after its 2026-07-30 upper-Bollinger, overbought-RSI, and volume-anomaly signals. The exact alert period ended at USD 315.53, up 11.15%, and the results-day move is explained by the SEC-filed Q2 release: revenue grew 5.8%, adjusted EPS grew 14.9%, both segment margins expanded, and full-year revenue and adjusted-EPS guidance increased. The signal cleared on July 31, while half-year free cash flow declined and acquisition spending, low cash, and leverage remain risks. At the current USD 309.20 mark, the scenario-complete USD 253.40/311.53/371.00 bear/base/bull valuation produces only 0.86% probability-weighted return and 0.65% confidence-adjusted return. The deterministic assessment is complete but ineligible, with Hold/Watch disposition; no conviction strategy or idea follow-up was created because the economic gate failed and no payload or accepted canonical relationship names an idea.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "For the canonical 2026-07-01 through 2026-07-30 alert period, LH closed at USD 315.5299987792969, returned 11.1491%, entered 0.9698% above its upper Bollinger band, strengthened its overbought RSI state, and narrowly entered the configured volume anomaly. The source-price hash is 9c78f83e4556c3d92cc0a4e9e6bdb5ee48f713316b7fc182a6607be4663bcb5c. By 2026-07-31 the USD 309.20001220703125 close, 67.2885 RSI, and 0.9302 volume z-score showed that all three alert states had cleared. The current canonical USD/EUR rate is 0.8665000200271606.",
+      "observed_at": "2026-08-03T05:56:22Z",
+      "source_hash": "9c78f83e4556c3d92cc0a4e9e6bdb5ee48f713316b7fc182a6607be4663bcb5c"
+    },
+    {
+      "source": "Labcorp Announces 2026 Second Quarter Results; Raises Full Year 2026 Guidance",
+      "claim": "Labcorp's SEC-filed Q2 release reports USD 3.7311 billion revenue, USD 451.6 million operating income, USD 4.99 adjusted EPS, 18.0% Diagnostics adjusted margin, 17.0% Biopharma adjusted margin, USD 8.73 billion Biopharma backlog, USD 313.9 million quarterly free cash flow, USD 141.8 million cash, USD 5.86 billion debt after retiring USD 500 million of notes, and updated USD 18.10-18.55 adjusted-EPS guidance. These current primary inputs explain the results-day repricing and support the valuation and risk review.",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000162/form8-kexhibit9912q26.htm",
+      "observed_at": "2026-08-03T06:13:41Z",
+      "source_hash": "3d46d95ee7e0a9ca6903530e722cbccb413b9205fbd8d1d2faca67a86ea4509b"
+    },
+    {
+      "source": "PaperTrader deterministic assessment normalization",
+      "claim": "The accepted schema-v2 assessment uses the mature_compounder earnings_multiple method with 25%/50%/25% probabilities and USD 253.40/311.53/371.00 fair values. Deterministic code derived -18.0466%/0.7536%/19.9871% scenario returns, USD 311.865 probability-weighted fair value, 0.8619% expected return, 0.6464% confidence-adjusted expected return, Hold/Watch, and ineligibility reason codes for expected return, base return, bear/base payoff, expected/bear payoff, and the pending relationship gate.",
+      "observed_at": "2026-08-03T06:17:07Z",
+      "source_hash": "883491a915878fe0f945b32879add7aa56ea8b909310aaaaf9ac91b8ddc56102"
+    }
+  ],
+  "files_changed": [
+    "data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/assessment_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/assessment_upsert_request_v2.json",
+    "data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/security_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/source_lh_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Labcorp's July 30 upper-band, overbought-RSI, and volume signals coincided with Q2 results showing 5.8% revenue growth, broad margin expansion, 14.9% adjusted-EPS growth, and raised guidance, but the signals cleared the next session. At USD 309.20, the USD 253.40/311.53/371.00 scenario set offers only 0.86% probability-weighted return with material bear downside; the complete assessment is Hold/Watch and ineligible, so no conviction paper strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_b1f2c48e1a744f5ecf67",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/source_lh_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KYR5PTQ83GZTPZMC2Q2KMPAH/assessment_upsert_request_v2.json",
+    "papertrader research security-context --security-id security_b1f2c48e1a744f5ecf67",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row remained the sole executed operation, was running under gha-30788518712-1 with a live lease, matched the immutable Labcorp identity and three-trigger payload, and had a sequential preflight naming the native wiki, controller, and security-research skills.",
+      "The LH/XNYS/USD/equity identity matched exactly one canonical security row, the current SEC filing confirmed Labcorp's NYSE-listed LH identity, and no duplicate provider identity or conflicting immutable field was found.",
+      "The exact 2026-07-01 through 2026-07-30 period, USD 315.5299987792969 alert close, all three payload trigger states, source-price hash, current USD 309.20001220703125 mark, and current USD/EUR record matched deterministic state.",
+      "The new SEC-filed Q2 release was fetched successfully, hashed, and registered before assessment use; all three assessment evidence references were current, available, primary sources.",
+      "The schema-v2 assessment is current, scenario-complete, uses only anchored rubric scores, links predecessor assessment_6200bd3b093f0eec9323, records source operation and result identity, and retains research-page hash 883491a915878fe0f945b32879add7aa56ea8b909310aaaaf9ac91b8ddc56102.",
+      "The security page contains a complete Changes since prior review section covering evidence, alert interpretation, assumptions, scenario values, thesis, catalysts, risks, blockers, gaps, disposition, and unchanged conclusions.",
+      "No payload idea and no accepted canonical relationship exists for Labcorp, so exactly zero idea-research follow-ups were required and created. The conviction strategy gate failed on expected return, base upside, downside payoff, margin of safety, and relationship status, so no strategy operation was created.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed after all permitted changes. Allocation readiness returned the expected non-ready result for pre-existing system-wide relationship and stale-assessment gaps; Labcorp itself is correctly ineligible rather than treated as allocatable.",
+      "The first assessment request failed without changing state because it referenced the prior-session FX rate. It remained immutable; a uniquely named corrected request used the current canonical FX record and succeeded.",
+      "command_audit.json contains exactly the eleven canonical project CLI invocations listed in commands_run, including both security-context reads, the unchanged failed assessment attempt, and the expected nonzero allocation-readiness check.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and no operation artifact is a symlink."
+    ]
+  }
+}

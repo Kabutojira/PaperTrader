@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pwr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm",
+  "source_type": "filing",
+  "title": "Quanta Services, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "bab73becc52179586fe155bc1c0e3b8956e1dd08da291b8d5628ddf87151691a",
+  "related_entity_ids": "security_488a9d7f7a8573597724",
+  "checked_at": "2026-08-03T06:44:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30 Quanta had USD 506.4 million cash, USD 6.096 billion total long-term debt obligations, USD 2.26 billion of remaining revolving capacity, and complied with all credit-agreement covenants.",
+  "summary": "The Q2 Form 10-Q validates current diluted share count, segment margins, backlog composition, acquisition accounting, debt maturities and liquidity. It also shows 68.8% of quarterly revenue used percentage-of-completion accounting and retains contract-estimate, collection, labor, acquisition, leverage and goodwill risks.",
+  "run_id": "gha-30788518712-1"
+}

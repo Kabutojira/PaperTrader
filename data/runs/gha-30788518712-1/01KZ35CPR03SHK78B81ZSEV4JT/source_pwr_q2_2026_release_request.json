@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pwr_q2_2026_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm",
+  "source_type": "issuer_release",
+  "title": "Quanta Services Reports Second Quarter 2026 Results",
+  "publisher": "Quanta Services, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9b146f185a5c45d72b4ca42957898bc643001bd13024a91681d1fd5341e30c5f",
+  "related_entity_ids": "security_488a9d7f7a8573597724",
+  "checked_at": "2026-08-03T06:44:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Electric segment revenue rose to USD 7.838 billion with an 11.5% operating margin, while total RPO reached USD 33.554 billion and total backlog reached USD 53.440 billion.",
+  "summary": "The SEC-filed Q2 release confirms broad operating leverage, record cash generation and backlog, raised 2026 guidance, and USD 1.24 billion of aggregate upfront consideration for four recent acquisitions, including USD 1.07 billion cash funded with debt arrangements and cash on hand.",
+  "run_id": "gha-30788518712-1"
+}

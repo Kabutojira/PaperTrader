@@ -1,0 +1,18 @@
+{
+  "source_id": "source_samsung_q2_2026_results",
+  "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+  "canonical_url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+  "source_type": "issuer_release",
+  "title": "Samsung Electronics 2026 second-quarter earnings results",
+  "publisher": "Samsung Electronics Co., Ltd.",
+  "license": "",
+  "status": "available",
+  "content_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf",
+  "related_entity_ids": "security_567d0d575bbd30aaa91d",
+  "checked_at": "2026-08-03T06:22:25Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second-quarter revenue was KRW 171.5 trillion, operating profit KRW 89.5 trillion, and common-share EPS KRW 10,849.",
+  "summary": "Samsung's detailed Q2 results confirm record revenue and operating profit led by AI-server memory, stronger cash and lower debt, while Device eXperience posted an operating loss and management warned of geopolitical and demand uncertainty.",
+  "run_id": "gha-30788518712-1"
+}

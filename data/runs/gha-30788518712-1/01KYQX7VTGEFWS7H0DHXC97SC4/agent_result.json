@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KYQX7VTGEFWS7H0DHXC97SC4",
+  "status": "succeeded",
+  "summary": "Completed Eaton's Q2 2026 refresh and July 31 volume-anomaly review. Current SEC-filed results show record sales, broad electrical order and backlog growth, stronger cash flow, and raised guidance, explaining the 7.32% results-day rise and strengthening the AI-power thesis. A scenario-complete mature-compounder assessment at the USD 415.20 mark derives USD 285/USD 350/USD 450 bear/base/bull values, USD 358.75 probability-weighted value, -13.60% expected return, and an ineligible Sell/Avoid disposition. Updated the security page and structured state, registered both Q2 sources, created exactly one dependent idea refresh, and created no strategy or accounting change.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "ETN closed at USD 415.20001220703125 on 2026-07-31, up 7.3173% from the prior close and 4.1855% over 2026-07-02 through 2026-07-31. Volume was 4,548,500 shares; volume-anomaly strength increased from 0.014594865 to 0.1564304. The identity-matched market retrieval was refreshed at 2026-08-03T05:56:22Z and the USD/EUR rate was 0.8665000200271606.",
+      "observed_at": "2026-08-03T05:56:22Z",
+      "source_hash": "c10ce68bccbe348b676b6fb56c4abf35eaab50b8df7757a59ee0342093d038d9"
+    },
+    {
+      "source": "Eaton Reports Record Second Quarter 2026 Results",
+      "claim": "The SEC-filed issuer release reports USD 8.531 billion Q2 sales, 14% organic growth, 41% Electrical Americas order growth, 33% Electrical Global order growth, 23.1% segment margin, USD 1.1 billion operating cash flow, USD 874 million free cash flow, and raised full-year adjusted-EPS guidance of USD 13.40-13.60.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000027/etn06302026exhibit99.htm",
+      "observed_at": "2026-08-03T06:01:36Z",
+      "source_hash": "cd57fc97df50efa0657881b253fc96d446ad15ea62d6ed21c827054f2ae3c149"
+    },
+    {
+      "source": "Eaton Q2 2026 Form 10-Q",
+      "claim": "The SEC filing confirms the current financial and instrument evidence used by the assessment, including the diluted share count and June 30 liquidity and debt: USD 483 million cash, USD 212 million short-term investments, USD 2.091 billion short-term debt, and USD 18.509 billion long-term debt.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+      "observed_at": "2026-08-03T06:01:36Z",
+      "source_hash": "4f40d51852654f217b0b66ebc5520fb676bc99195cfb8cd5e644b19cda599e7b"
+    },
+    {
+      "source": "PaperTrader deterministic assessment projection",
+      "claim": "The accepted schema-version-2 assessment links predecessor assessment_4a6fe07e565ba7e006a2 to assessment_a0ec02ee0eba52fb57ab. It derives bear/base/bull returns of -31.3584%/-15.7033%/8.3815%, probability-weighted fair value of USD 358.75, expected return of -13.5959%, confidence-adjusted expected return of -10.1969%, quality score 82, buy-below price USD 280, and an ineligible Sell/Avoid disposition with exact failed economic gates."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ33NA98BREE07T4TV1ZZGJM.json",
+    "data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/assessment_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/enqueue_idea_refresh_request.json",
+    "data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/security_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/source_etn_q2_2026_10q_request.json",
+    "data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/source_etn_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "operations_created": [
+    "01KZ33NA98BREE07T4TV1ZZGJM"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Eaton's Q2 record sales, electrical orders, backlog, cash flow and raised guidance explain the July 31 volume anomaly and strengthen the AI-power thesis, but the 7.32% repricing to USD 415.20 left the mark above the USD 350 base case and USD 358.75 probability-weighted value. The complete assessment is ineligible with a Sell/Avoid disposition, so no conviction strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_18a3ab0ee6086ee85d0f",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/source_etn_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/source_etn_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/enqueue_idea_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30788518712-1/01KYQX7VTGEFWS7H0DHXC97SC4/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research security-context --security-id security_18a3ab0ee6086ee85d0f",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected row was the only operation executed, was running under gha-30788518712-1 with a live lease, and matched the immutable ETN/XNYS/USD/equity identity, validated payload, preflight hashes, and security-research skill.",
+      "The bounded prior-review context was consumed. The security page contains an explicit changes-since-prior-review section covering evidence, assumptions, scenarios, thesis, catalysts, risks, gaps, rating, action, and unchanged no-trade conclusion.",
+      "Both current Q2 primary sources were registered before assessment upsert. The market and FX references were identity-matched and fresh, probabilities total 100, fair values are ordered, and all rubric scores use permitted 20/40/60/80/100 anchors.",
+      "Assessment assessment_a0ec02ee0eba52fb57ab is current, schema version 2, links predecessor assessment_4a6fe07e565ba7e006a2, this operation and expected result path, both retained evidence sources, the current page hash, and run gha-30788518712-1.",
+      "Exactly one result-specific dependent idea refresh was created as 01KZ33NA98BREE07T4TV1ZZGJM for idea_ai_infrastructure_power. No conviction strategy was justified or created.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false only for unrelated repository-wide stale assessments and relationship gaps; Eaton's assessment is complete and its accepted relationship is current.",
+      "The initial enqueue attempt encountered a root-owned temporary lock and made no state change; the identical immutable request succeeded with a writable temporary directory. Both canonical invocations are retained in command_audit.json and commands_run.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting-ledger, raw-source, or other security path changed."
+    ]
+  }
+}

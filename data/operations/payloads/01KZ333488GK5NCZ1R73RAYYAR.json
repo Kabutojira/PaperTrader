@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_MSfaIeQ0eq8",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-03T05:56:05Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_MSfaIeQ0eq8",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "MSfaIeQ0eq8",
+    "video_title": "I Just Bought $5,200 of These 3 Stocks. Here's Why",
+    "video_url": "https://www.youtube.com/watch?v=MSfaIeQ0eq8"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZ333488GK5NCZ1R73RAYYAR",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=MSfaIeQ0eq8"
+  ]
+}

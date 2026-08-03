@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-01"
-updated: "2026-08-01"
+created: "2026-08-03"
+updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b1645ccec2066bd4eab4"
-as_of: "2026-08-01T16:47:49Z"
+snapshot_id: "decision_cf76086beeb13f2c6ca6"
+as_of: "2026-08-03T06:55:46Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_b1645ccec2066bd4eab4`
-**As of:** `2026-08-01T16:47:49Z`
+**Publication snapshot:** `decision_cf76086beeb13f2c6ca6`
+**As of:** `2026-08-03T06:55:46Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,8 +22,8 @@ as_of: "2026-08-01T16:47:49Z"
 
 ## Coverage
 
-- Assessments: 44/47
-- Fresh-evidence assessments: 44/47
+- Assessments: 47/47
+- Fresh-evidence assessments: 46/47
 - Relationship reviews: 22/47
 - Accepted relationships: 20
 - Ready or active strategies: 0
@@ -31,13 +31,14 @@ as_of: "2026-08-01T16:47:49Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 229
+- Research backlog: 228
 - Last successful daily run: `2026-08-01T16:47:49Z`
 
 ## Current issues by investment impact
 
 ### Affects Candidate
 
+- `error` **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_488a9d7f7a8573597724 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SR384EB58S06SFPK5G and current security\_research 01KZ35CPR03SHK78B81ZSEV4JT claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - `warning` **LAC — Lithium Americas Corp.: Daily preparation degraded: security\_fb87fac302a5446a1ced** — security\_fb87fac302a5446a1ced: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - `warning` **HOOD — Robinhood Markets, Inc.: Daily preparation degraded: security\_ad3b1f8f59fd599f079a** — security\_ad3b1f8f59fd599f079a: price cache is empty
 - `warning` **CROX — Crocs, Inc.: Daily preparation degraded: security\_c150f31c30afdb4a85f9** — security\_c150f31c30afdb4a85f9: price cache is empty
@@ -122,7 +123,7 @@ as_of: "2026-08-01T16:47:49Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 229 active operations.
+Showing 20 of 228 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 

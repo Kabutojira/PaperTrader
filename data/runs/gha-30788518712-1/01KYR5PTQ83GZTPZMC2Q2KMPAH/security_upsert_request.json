@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b1f2c48e1a744f5ecf67",
+  "issuer_id": "issuer_d0762758c05766ef1ab5",
+  "company_name": "Labcorp Holdings Inc.",
+  "instrument_name": "Labcorp Holdings Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "LH",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "LH",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Diagnostics & Research",
+  "status": "watching",
+  "watchlist_reason": "Large diagnostics and biopharma laboratory-services candidate; monitor organic growth, backlog conversion, reimbursement, leverage, cash conversion, acquisitions and valuation after the 2026-07-30 Q2 repricing.",
+  "research_summary": "Q2 growth, margin expansion and raised guidance strengthen the thesis, but the USD 309.20 mark offers less than 1% base upside and probability-weighted return with material bear downside.",
+  "research_page": "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md",
+  "last_research_at": "2026-08-03T06:13:41Z",
+  "next_review_at": "2026-09-02T06:13:41Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000162/form8-kexhibit9912q26.htm"
+}

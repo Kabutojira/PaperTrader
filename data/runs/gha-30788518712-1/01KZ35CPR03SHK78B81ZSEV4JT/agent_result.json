@@ -1,0 +1,83 @@
+{
+  "operation_id": "01KZ35CPR03SHK78B81ZSEV4JT",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded full review of Quanta Services. Current SEC primary evidence and deterministic market state were verified, but the required schema-v2 assessment could not be written: the applier found both predecessor quick check 01KYVJ62SR384EB58S06SFPK5G and current security review 01KZ35CPR03SHK78B81ZSEV4JT for the same security and run, then rejected their provenance as ambiguous. The wiki page and prior assessment were restored and remain hash-aligned; no strategy, signal, order, allocation, or accounting state changed. Two source rechecks were retained, issue issue_5f32f7df9890b7b85f92 was recorded, and strict schema, queue, wiki, integrity, and portfolio checks passed.",
+  "evidence": [
+    {
+      "source": "Quanta Services Reports Second Quarter 2026 Results",
+      "claim": "The SEC-filed issuer release reports Q2 revenue of USD 9.56 billion, adjusted diluted EPS of USD 4.24, operating cash flow of USD 1.1 billion, free cash flow of USD 0.9 billion, RPO of USD 33.6 billion and backlog of USD 53.4 billion, with raised full-year adjusted diluted-EPS guidance of USD 16.45-16.95.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm",
+      "observed_at": "2026-08-03T06:44:30Z",
+      "source_hash": "9b146f185a5c45d72b4ca42957898bc643001bd13024a91681d1fd5341e30c5f"
+    },
+    {
+      "source": "Quanta Services Q2 2026 Form 10-Q",
+      "claim": "The filing confirms USD 506.4 million cash, USD 6.096 billion total long-term debt obligations, USD 2.26 billion of remaining revolving capacity, covenant compliance, diluted-share-count evidence, acquisition funding and percentage-of-completion contract risk.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm",
+      "observed_at": "2026-08-03T06:44:30Z",
+      "source_hash": "bab73becc52179586fe155bc1c0e3b8956e1dd08da291b8d5628ddf87151691a"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "Both assessment upsert attempts made no assessment-table change. The corrected immutable request failed with 'assessment source operation is ambiguous for this run' because the same run contains the predecessor quick check and current full review for this security."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_d022df8ec9862d4e8a70 from quick check 01KYVJ62SR384EB58S06SFPK5G, and its research-page hash exactly matches the restored current page hash 5d839150f88e4d5ac458ae47061faaa148686f28fcf6818628eadeea32f4f12d. No linked idea or accepted relationship requires a follow-up."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request_v2.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/issue_record_request.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/security_revert_request.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/security_revert_request_v2.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/security_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_10q_request.json",
+    "data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_release_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_5f32f7df9890b7b85f92"
+  ],
+  "daily_report_items": [
+    "Quanta Services full Q2 review failed closed because deterministic assessment provenance was ambiguous between a same-run quick check and its dependent full review. Primary sources were rechecked, the prior quick-check assessment and page remain current and hash-aligned, issue issue_5f32f7df9890b7b85f92 was recorded, and no strategy, signal, order, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_488a9d7f7a8573597724",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_release_request.json",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/source_pwr_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/assessment_upsert_request_v2.json",
+    "papertrader issue record --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/issue_record_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/security_revert_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KZ35CPR03SHK78B81ZSEV4JT/security_revert_request_v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_488a9d7f7a8573597724"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running operation, claimed by gha-30788518712-1 with a live lease at operation start, a validated immutable payload, matching security identity and trusted preflight skill hashes.",
+      "Consumed bounded prior security context and independently retrieved both current SEC documents with HTTP 200; their SHA-256 hashes exactly matched the registered Q2 release and Form 10-Q hashes.",
+      "Confirmed immutable PWR/XNYS/USD/equity identity appears once, the July 31 market and indicator row matches source-price hash 030ca764726cd6128f54714aade8b3a8fa2a1177af73d8ebf4e3816668a50f2f, and current USD/EUR evidence is present.",
+      "The first assessment request was rejected without state change because valuation_template_rationale is prohibited for mature_compounder; a new immutable corrected request was used as required.",
+      "The corrected assessment request was rejected without state change because the deterministic applier found two same-security source operations claimed by this run and provides no request field to select the current operation. The required assessment therefore could not be completed.",
+      "Restored the prior wiki page exactly; current page and current assessment retain identical hash 5d839150f88e4d5ac458ae47061faaa148686f28fcf6818628eadeea32f4f12d. The prior quick-check assessment remains current and no new assessment history row exists for this operation.",
+      "No linked idea or accepted relationship exists, so no idea-research follow-up was required or created. The full strategy gate remains failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed after cleanup.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

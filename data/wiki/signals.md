@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-01"
-updated: "2026-08-01"
+created: "2026-08-03"
+updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b1645ccec2066bd4eab4"
-as_of: "2026-08-01T16:47:49Z"
+snapshot_id: "decision_cf76086beeb13f2c6ca6"
+as_of: "2026-08-03T06:55:46Z"
 ---
 
 # Signals
 
-**Snapshot `decision_b1645ccec2066bd4eab4` · As of `2026-08-01T16:47:49Z`**
+**Snapshot `decision_cf76086beeb13f2c6ca6` · As of `2026-08-03T06:55:46Z`**
 
 ## Actionable trade signals
 
@@ -139,8 +139,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed Eaton's Q2 2026 refresh and July 31 volume-anomaly review. Current SEC-filed results show record sales, broad electrical order and backlog growth, stronger cash flow, and raised guidance, explaining the 7.32% results-day rise and strengthening the AI-power thesis. A scenario-complete mature-compounder assessment at the USD 415.20 mark derives USD 285/USD 350/USD 450 bear/base/bull values, USD 358.75 probability-weighted value, -13.60% expected return, and an ineligible Sell/Avoid disposition. Updated the security page and structured state, registered both Q2 sources, created exactly one dependent idea refresh, and created no strategy or accounting change.
 
 ### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
 

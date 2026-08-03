@@ -4,6 +4,7 @@ Generated from `data/tables/issues.csv`.
 
 | Severity | Issue | Last seen | Owner | Related operation |
 | --- | --- | --- | --- | --- |
+| error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_10ff1797ec43b252e279** — Daily preparation degraded: security_c150f31c30afdb4a85f9 | 2026-07-29T16:51:20Z | deterministic-controller |  |

@@ -1,0 +1,85 @@
+{
+  "operation_id": "01KYVJ62SR384EB58S06SFPK5G",
+  "status": "succeeded",
+  "summary": "Completed one bounded quick check of Quanta Services after the merged July 30 volume anomaly and July 31 bullish-MACD crossover. Current SEC-filed Q2 results materially changed the baseline evidence: record revenue, earnings, cash flow, RPO and backlog plus raised guidance explain the 17.26% results-day rebound. The updated scenario-complete assessment at USD 667.36 derives USD 417.50/USD 534.40/USD 668.00 bear/base/bull values and remains ineligible with a Sell/Avoid disposition. Updated the security page and structured state, registered two Q2 primary sources, and created exactly one dependent full security review, 01KZ35CPR03SHK78B81ZSEV4JT. No strategy, signal, order, allocation, or accounting state was changed.",
+  "evidence": [
+    {
+      "source": "Quanta Services Reports Second Quarter 2026 Results",
+      "claim": "The SEC-filed issuer release reports Q2 revenue of USD 9.56 billion, adjusted diluted EPS of USD 4.24, operating cash flow of USD 1.1 billion, free cash flow of USD 0.9 billion, RPO of USD 33.6 billion and backlog of USD 53.4 billion. Full-year adjusted diluted-EPS guidance increased to USD 16.45-16.95 and free-cash-flow guidance to USD 2.00-2.50 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000119312526324855/d56853dex991.htm",
+      "observed_at": "2026-08-03T06:34:49Z",
+      "source_hash": "9b146f185a5c45d72b4ca42957898bc643001bd13024a91681d1fd5341e30c5f"
+    },
+    {
+      "source": "Quanta Services Q2 2026 Form 10-Q",
+      "claim": "The current SEC filing confirms USD 506.4 million cash, USD 683.0 million current debt, USD 5.422 billion long-term debt, USD 7.869 billion goodwill and USD 1.487 billion first-half operating cash flow, while retaining acquisition, contract, labor, leverage and backlog-conversion risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050915/000105091526000025/pwr-20260630.htm",
+      "observed_at": "2026-08-03T06:34:49Z",
+      "source_hash": "bab73becc52179586fe155bc1c0e3b8956e1dd08da291b8d5628ddf87151691a"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "PWR rose 17.2577% on July 30 and closed July 31 at USD 667.3599853515625, 18.9293% above the July 29 baseline mark and 3.4770% below July 1. MACD crossed above its signal with a +2.4618 histogram, RSI recovered to 53.07, and the payload source-price hash exactly matches the July 31 indicator row. The USD/EUR rate was refreshed at 2026-08-03T05:56:22Z.",
+      "observed_at": "2026-08-03T05:56:22Z",
+      "source_hash": "030ca764726cd6128f54714aade8b3a8fa2a1177af73d8ebf4e3816668a50f2f"
+    },
+    {
+      "source": "PaperTrader deterministic assessment projection",
+      "claim": "Assessment assessment_d022df8ec9862d4e8a70 links predecessor assessment_2d00c200e4451b2f6a4a and derives -37.4401%/-19.9233%/0.0959% bear/base/bull returns, USD 538.575 probability-weighted fair value, -19.2977% expected return, -14.4733% confidence-adjusted expected return, USD 427.52 buy-below price, and an ineligible Sell/Avoid disposition."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ35CPR03SHK78B81ZSEV4JT.json",
+    "data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/assessment_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/enqueue_full_research_request.json",
+    "data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/security_upsert_request.json",
+    "data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/source_pwr_q2_2026_10q_request.json",
+    "data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/source_pwr_q2_2026_release_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_488a9d7f7a8573597724.md"
+  ],
+  "operations_created": [
+    "01KZ35CPR03SHK78B81ZSEV4JT"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Quanta Services' merged volume anomaly and bullish-MACD crossover were driven by Q2 record revenue, earnings, cash flow and backlog plus raised guidance. The 17.26% results-day rebound to a July 31 USD 667.36 close left the mark 19.92% above the bounded base value and produced an ineligible Sell/Avoid assessment. Exactly one dependent full review was queued; no paper strategy or signal was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_488a9d7f7a8573597724",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/source_pwr_q2_2026_release_request.json",
+    "papertrader research source record --request data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/source_pwr_q2_2026_10q_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/enqueue_full_research_request.json",
+    "papertrader queue enqueue --request data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/gha-30788518712-1/01KYVJ62SR384EB58S06SFPK5G/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_488a9d7f7a8573597724",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the supplied operation was the sole running LLM operation, claimed by gha-30788518712-1 with a live lease, and matched the validated payload, immutable PWR/XNYS/USD/equity identity, recent successful baseline result, and trusted preflight skill hashes.",
+      "Consumed the bounded prior security context and retained an explicit Changes since prior review section covering evidence, market state, scenario inputs, thesis, risks, confidence, action and escalation.",
+      "Confirmed both merged trigger causes and both payload source-price hashes were retained; the current 030ca764726cd6128f54714aade8b3a8fa2a1177af73d8ebf4e3816668a50f2f hash exactly matches the July 31 indicator row.",
+      "Registered the Q2 release and Form 10-Q before assessment upsert; both sources are current, available, identity-linked and hash-bound.",
+      "Confirmed assessment assessment_d022df8ec9862d4e8a70 is the sole immutable assessment version for this operation and run, links its predecessor and expected result path, uses ordered scenarios and probabilities totaling 100, and has only permitted anchored scores.",
+      "Confirmed exactly one dependent security_research operation, 01KZ35CPR03SHK78B81ZSEV4JT, carries the quick-check identity, changed material-evidence gate, both trigger causes, exact market period and current source-price hash.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed with no changes from those checks.",
+      "Allocation readiness confirmed all 47 assessments have fresh evidence; its repository-wide strict result remains false only for pre-existing relationship coverage and reconciliation gaps unrelated to Quanta's ineligible assessment.",
+      "The first enqueue invocation encountered a root-owned temporary queue lock and made no state change; the identical immutable request succeeded with a private writable temporary directory. Both audited invocations are retained exactly.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page was changed by this operation."
+    ]
+  }
+}

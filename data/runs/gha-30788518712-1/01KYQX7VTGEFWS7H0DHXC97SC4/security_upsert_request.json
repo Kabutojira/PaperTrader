@@ -1,0 +1,23 @@
+{
+  "security_id": "security_18a3ab0ee6086ee85d0f",
+  "issuer_id": "issuer_f95d7e49ebda3ca93218",
+  "company_name": "Eaton Corporation plc",
+  "instrument_name": "Eaton Corporation plc ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "ETN",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ETN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "IE",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "AI-power and electrification beneficiary; monitor electrical backlog conversion, acquisition integration, leverage, Mobility separation and valuation after the 2026-07-31 results-day repricing.",
+  "research_summary": "Q2 record sales, electrical orders, backlog and cash flow strengthen the AI-power thesis, but the USD 415.20 mark exceeds the USD 350 base and USD 358.75 probability-weighted values.",
+  "research_page": "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md",
+  "last_research_at": "2026-08-03T06:01:36Z",
+  "next_review_at": "2026-09-02T06:01:36Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm"
+}

@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-01"
-updated: "2026-08-01"
+created: "2026-08-03"
+updated: "2026-08-03"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b1645ccec2066bd4eab4"
-as_of: "2026-08-01T16:47:49Z"
+snapshot_id: "decision_cf76086beeb13f2c6ca6"
+as_of: "2026-08-03T06:55:46Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **47**
+- Immutable assessment versions: **51**
 - Securities with retained revisions: **47**
 
 ## Candidate
@@ -114,6 +114,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-07-30](daily-reports/daily-report_20260730)
 - [PaperTrader daily report — 2026-07-31](daily-reports/daily-report_20260731)
 - [PaperTrader daily report — 2026-08-01](daily-reports/daily-report_20260801)
+- [PaperTrader daily report — 2026-08-03](daily-reports/daily-report_20260803)
 
 ## Idea
 

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_etn_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1551182/000155118226000030/etn-20260630.htm",
+  "source_type": "filing",
+  "title": "Eaton Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4f40d51852654f217b0b66ebc5520fb676bc99195cfb8cd5e644b19cda599e7b",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_18a3ab0ee6086ee85d0f",
+  "checked_at": "2026-08-03T06:01:36Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026 Eaton reported USD 483 million cash, USD 212 million short-term investments, USD 2.091 billion short-term debt and USD 18.509 billion long-term debt.",
+  "summary": "The Q2 Form 10-Q provides current revenue, earnings, diluted share count, cash flow, working capital, debt, acquisition, segment and risk evidence for the scenario-complete Eaton assessment.",
+  "run_id": "gha-30788518712-1"
+}
