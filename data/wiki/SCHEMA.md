@@ -41,7 +41,7 @@ known_tags:
   - strategy
   - performance
   - system-status
-max_page_bytes: 100000
+max_page_bytes: 200000
 log_rotation_lines: 5000
 ---
 
