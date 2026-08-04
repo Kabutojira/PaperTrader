@@ -122,6 +122,7 @@ from papertrader.telegram import (
 )
 from papertrader.utils import (
     CanonicalValueError,
+    decimal_text,
     parse_iso_date,
     parse_timestamp,
     required_decimal,
@@ -1273,7 +1274,9 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 operation_type=arguments.operation_type,
                 environment=os.environ,
             )
-            print(json.dumps(asdict(report), sort_keys=True))
+            document = asdict(report)
+            document["weighted_cost"] = decimal_text(report.weighted_cost)
+            print(json.dumps(document, sort_keys=True))
             return 0
         if arguments.agent_command == "run-batch":
             batch_result = execute_agent_batch(

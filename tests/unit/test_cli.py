@@ -2,9 +2,11 @@ from __future__ import annotations
 
 import json
 from datetime import UTC, datetime
+from decimal import Decimal
 from pathlib import Path
 
 from papertrader.advice import refresh_advice
+from papertrader.agent_runner import HermesPreflight, SkillIdentity
 from papertrader.cli import main
 from papertrader.config import Settings
 from papertrader.execution import ensure_initial_capital
@@ -86,6 +88,52 @@ def test_cli_starts_without_a_mode_environment_switch(monkeypatch, repository_ro
     monkeypatch.setenv("WIKI_PATH", str(repository_root / "data" / "wiki"))
 
     assert main(["--repository", str(repository_root), "schema", "validate"]) == 0
+
+
+def test_cli_agent_preflight_serializes_profile_weighted_cost(
+    monkeypatch, repository_root: Path, tmp_path: Path, capsys
+) -> None:  # type: ignore[no-untyped-def]
+    _set_repository_environment(monkeypatch, repository_root)
+    skill = SkillIdentity("skill", "1", "skills/skill/SKILL.md", "a" * 64)
+    report = HermesPreflight(
+        native_skill=skill,
+        controller_skill=skill,
+        operation_skill=skill,
+        config_sha256="b" * 64,
+        provider="openai-codex",
+        model="gpt-5.6-terra",
+        web_extract_provider="openai-codex",
+        web_extract_model="gpt-5.6-terra",
+        web_extract_reasoning_effort="low",
+        maximum_turns=80,
+        profile="analyst",
+        profile_policy_version="profile-router-v1",
+        route_reason="routine_research_or_long_form_synthesis",
+        reasoning_effort="medium",
+        timeout_seconds=1200,
+        weighted_cost=Decimal("2.5"),
+        mutation_policy="routine_research",
+        escalation_source="",
+    )
+    monkeypatch.setattr("papertrader.cli.preflight_hermes", lambda *args, **kwargs: report)
+
+    assert (
+        main(
+            [
+                "--repository",
+                str(repository_root),
+                "agent",
+                "preflight",
+                "--hermes-home",
+                str(tmp_path / "hermes"),
+                "--operation-type",
+                "wiki_ingest",
+            ]
+        )
+        == 0
+    )
+    output = json.loads(capsys.readouterr().out)
+    assert output["weighted_cost"] == "2.5"
 
 
 def test_cli_runtime_whitelist_rejects_source_path(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
