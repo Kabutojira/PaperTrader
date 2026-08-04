@@ -80,7 +80,7 @@ def test_runtime_bundle_round_trip_preserves_exact_whitelisted_patch(
     assert (target / created.report_path).read_text(encoding="utf-8") == "# Committed report\n"
 
 
-def test_runtime_bundle_rejects_tampering_and_out_of_scope_changes(
+def test_runtime_bundle_rejects_tampering(
     sandbox_repository: Path,
     tmp_path: Path,
 ) -> None:
@@ -98,12 +98,7 @@ def test_runtime_bundle_rejects_tampering_and_out_of_scope_changes(
         (bundle_directory / "runtime.patch").read_bytes() + b"tampered"
     )
     target = tmp_path / "commit-checkout"
-    subprocess.run(
-        ["git", "clone", "--no-hardlinks", str(sandbox_repository), str(target)],
-        check=True,
-        capture_output=True,
-        text=True,
-    )
+    target.mkdir()
 
     with pytest.raises(PublicationError, match="patch hash"):
         apply_runtime_bundle(target, bundle_directory)
