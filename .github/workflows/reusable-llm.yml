@@ -712,6 +712,19 @@ jobs:
           AUDIO_RENDER_OUTCOME: ${{ steps.render_audio.outcome }}
         run: |
           manifest="data/runs/$CYCLE_ID/daily_run.json"
+          if [ -z "$CYCLE_ID" ] || [ ! -f "$manifest" ]; then
+            echo "commit_sha=" >> "$GITHUB_OUTPUT"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "oauth_changed=false" >> "$GITHUB_OUTPUT"
+            echo "report_path=" >> "$GITHUB_OUTPUT"
+            echo "podcast_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "podcast_path=" >> "$GITHUB_OUTPUT"
+            echo "audio_artifact_name=" >> "$GITHUB_OUTPUT"
+            echo "audio_render_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "audio_path=" >> "$GITHUB_OUTPUT"
+            echo "audio_manifest_path=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           report_path=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["report_path"])' "$manifest")
           podcast_path=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["podcast_page_path"])' "$manifest")
           echo "commit_sha=${PODCAST_SHA:-$FINALIZATION_SHA}" >> "$GITHUB_OUTPUT"

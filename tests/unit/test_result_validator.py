@@ -815,3 +815,4 @@ def test_audited_request_cannot_change_after_structured_command(
             operation_id=operation_id,
             executor=execute,
         )
+    assert (sandbox_repository / "data" / "tables" / "issues.csv").is_file()

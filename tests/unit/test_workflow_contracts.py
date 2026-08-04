@@ -214,6 +214,11 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         step = next(step for step in runtime["steps"] if step["name"] == step_name)
         assert step["if"] == "${{ inputs.generate_podcast && !inputs.dry_run }}"
     assert runtime["outputs"]["podcast_status"] == ("${{ steps.outputs.outputs.podcast_status }}")
+    publish_outputs = next(
+        step for step in runtime["steps"] if step["name"] == "Publish cycle outputs"
+    )
+    assert '[ -z "$CYCLE_ID" ] || [ ! -f "$manifest" ]' in publish_outputs["run"]
+    assert 'echo "changed=false"' in publish_outputs["run"]
     runtime_steps = [step["name"] for step in runtime["steps"]]
     maintenance_step = next(
         step

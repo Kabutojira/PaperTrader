@@ -116,8 +116,9 @@ def _restore_rejected_agent_delta(
     repository_root: Path,
     paths: Sequence[str],
     protected: Mapping[str, tuple[bytes, int]],
+    before_paths: frozenset[str],
 ) -> tuple[str, ...]:
-    """Restore an invalid agent delta to HEAD while retaining controller evidence."""
+    """Restore an invalid agent delta without deleting pre-run state outside Git."""
 
     errors: list[str] = []
     root = repository_root.resolve()
@@ -162,6 +163,8 @@ def _restore_rejected_agent_delta(
                 if restored.returncode:
                     detail = (restored.stderr or restored.stdout).strip()
                     raise OSError(detail or "git restore failed")
+            elif relative in before_paths:
+                raise OSError("pre-run path cannot be restored because Git metadata is unavailable")
             elif path.exists() or path.is_symlink():
                 if path.is_dir() and not path.is_symlink():
                     path.rmdir()
@@ -1233,6 +1236,7 @@ def run_claimed_operation(
             repository_root,
             tuple(path for path in delta.changed if path != retained_run_path),
             protected_artifacts,
+            frozenset(before.files),
         )
         if restore_errors:
             validation_errors.extend(restore_errors)
