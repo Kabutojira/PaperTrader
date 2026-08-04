@@ -8,6 +8,7 @@ from collections.abc import Mapping
 from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from papertrader.advice import AdviceError, refresh_advice
 from papertrader.agent_runner import AgentBatchResult, Executor, run_sequential_operations
@@ -66,6 +67,7 @@ from papertrader.youtube import youtube_scan_failures
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 SOURCE_SHA = re.compile(r"^[0-9a-f]{40}$")
 TRIGGER = re.compile(r"^[a-z][a-z0-9_-]{0,63}$")
+DAILY_CYCLE_ID = re.compile(r"^daily-[0-9]{8}T[0-9]{6}Z$")
 
 
 class DailyRunError(RuntimeError):
@@ -92,6 +94,294 @@ class DailyFinalization:
     snapshot_id: str
     operation_count: int
     fill_outcomes: tuple[str, ...]
+
+
+def _cycle_profiles(settings: Settings) -> dict[str, object]:
+    return {
+        profile.name: {
+            "model": profile.model,
+            "reasoning_effort": profile.reasoning_effort,
+            "maximum_turns": profile.maximum_turns,
+            "timeout_seconds": profile.timeout_seconds,
+            "weighted_cost": decimal_text(profile.cost_weight),
+            "mutation_policy": profile.mutation_policy,
+            "policy_version": profile.policy_version,
+        }
+        for profile in settings.hermes.profiles
+    }
+
+
+def resume_or_create_daily_cycle(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    trigger: str,
+    source_sha: str,
+    github_run_id: str,
+    workflow_attempt: str,
+    resume_cycle_id: str = "",
+    now: datetime | None = None,
+) -> dict[str, object]:
+    """Create one timestamped cycle or resume the open cycle for a workflow run."""
+
+    if not TRIGGER.fullmatch(trigger):
+        raise DailyRunError(f"invalid daily trigger: {trigger!r}")
+    if not SOURCE_SHA.fullmatch(source_sha):
+        raise DailyRunError("daily source SHA must contain 40 lowercase hex characters")
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    selected = resume_cycle_id
+    resuming = bool(selected)
+    if selected and not DAILY_CYCLE_ID.fullmatch(selected):
+        raise DailyRunError(f"invalid daily cycle ID: {selected!r}")
+    if not selected:
+        for path in sorted((repository_root / "data" / "runs").glob("daily-*/daily_run.json")):
+            with path.open(encoding="utf-8") as handle:
+                candidate = json.load(handle)
+            if (
+                isinstance(candidate, dict)
+                and candidate.get("originating_github_run_id") == github_run_id
+                and candidate.get("status") in {"running", "interrupted", "degraded"}
+                and not candidate.get("completion_at")
+            ):
+                selected = str(candidate.get("daily_cycle_id", ""))
+                resuming = True
+                break
+    if not selected:
+        selected = f"daily-{instant.strftime('%Y%m%dT%H%M%SZ')}"
+        while _daily_manifest_path(repository_root, selected).exists():
+            instant += timedelta(seconds=1)
+            selected = f"daily-{instant.strftime('%Y%m%dT%H%M%SZ')}"
+    path = _daily_manifest_path(repository_root, selected)
+    attempt = {
+        "github_run_id": github_run_id,
+        "workflow_attempt": workflow_attempt,
+        "resumed_at": format_timestamp(instant),
+    }
+    if path.exists():
+        if not resuming:
+            raise DailyRunError("new daily cycle identity unexpectedly collides")
+        manifest = _load_object(path)
+        if manifest.get("daily_run_version") != 2 or manifest.get("daily_cycle_id") != selected:
+            raise DailyRunError("resume target is not a compatible daily cycle")
+        if manifest.get("completion_at"):
+            raise DailyRunError("completed daily cycles cannot be reopened")
+        attempts = manifest.get("workflow_attempts")
+        if not isinstance(attempts, list):
+            raise DailyRunError("daily workflow attempts are invalid")
+        identity = (github_run_id, workflow_attempt)
+        if not any(
+            isinstance(item, dict)
+            and (item.get("github_run_id"), item.get("workflow_attempt")) == identity
+            for item in attempts
+        ):
+            attempts.append(attempt)
+        manifest["workflow_attempts"] = attempts
+        accepted = manifest.get("operations_accepted", [])
+        manifest["status"] = (
+            "degraded"
+            if isinstance(accepted, list)
+            and any(
+                isinstance(item, dict) and item.get("terminal_status") in {"blocked", "failed"}
+                for item in accepted
+            )
+            else "running"
+        )
+        atomic_write_json(path, manifest, allowed_root=repository_root)
+        return manifest
+    local_date = instant.astimezone(ZoneInfo("Europe/Rome")).date().isoformat()
+    maximum_operations = settings.operations.cycle_maximum_operations
+    manifest = {
+        "daily_run_version": 2,
+        "run_id": selected,
+        "daily_cycle_id": selected,
+        "started_at": format_timestamp(instant),
+        "operating_date": local_date,
+        "trigger": trigger,
+        "source_sha": source_sha,
+        "originating_github_run_id": github_run_id,
+        "workflow_attempts": [attempt],
+        "status": "running",
+        "maximum_operations": maximum_operations,
+        "remaining_operations": maximum_operations,
+        "weighted_model_budget": decimal_text(
+            settings.operations.maximum_weighted_model_budget_per_cycle
+        ),
+        "weighted_model_budget_used": "0",
+        "profile_limits": _cycle_profiles(settings),
+        "operations_attempted": [],
+        "operations_accepted": [],
+        "checkpoints": [],
+        "next_checkpoint_index": 0,
+        "preparation_at": "",
+        "research_cutoff_at": "",
+        "finalization_at": "",
+        "podcast_text_at": "",
+        "completion_at": "",
+        "completed_at": "",
+        "preparation_errors": [],
+        "queue_dispositions": [],
+        "operation_count": 0,
+        "model_budget_limit": decimal_text(settings.operations.maximum_model_budget_usd_per_run),
+        "model_budget_used": "0",
+        "fill_outcomes": [],
+        "report_path": "",
+        "snapshot_id": "",
+        "podcast_status": "pending",
+        "podcast_operation_id": "",
+        "podcast_page_path": "",
+        "podcast_audio_path": "",
+        "final_commit_sha": "",
+        "finalization_commit_identity": "",
+        "podcast_commit_identity": "",
+        "final_commit_identity": "",
+    }
+    atomic_write_json(path, manifest, allowed_root=repository_root)
+    return manifest
+
+
+def complete_daily_cycle(
+    repository_root: Path,
+    *,
+    daily_cycle_id: str,
+    now: datetime | None = None,
+) -> dict[str, object]:
+    """Complete a finalized cycle when no text-podcast checkpoint is requested."""
+
+    path = _daily_manifest_path(repository_root, daily_cycle_id)
+    manifest = _load_object(path)
+    if manifest.get("daily_run_version") != 2 or not manifest.get("finalization_at"):
+        raise DailyRunError("only a finalized version-2 cycle can be completed")
+    if manifest.get("completion_at"):
+        return manifest
+    instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    manifest["completion_at"] = format_timestamp(instant)
+    manifest["status"] = (
+        "degraded" if manifest.get("finalization_status") == "degraded" else "succeeded"
+    )
+    manifest["podcast_status"] = (
+        manifest.get("podcast_status") if manifest.get("podcast_status") != "pending" else "skipped"
+    )
+    atomic_write_json(path, manifest, allowed_root=repository_root)
+    return manifest
+
+
+def record_cycle_checkpoint(
+    repository_root: Path,
+    *,
+    daily_cycle_id: str,
+    kind: str,
+    operation_id: str = "",
+    operation_type: str = "",
+    terminal_status: str = "",
+    profile: str = "",
+    now: datetime | None = None,
+) -> dict[str, object]:
+    """Reserve the next immutable checkpoint identity before its commit is created."""
+
+    manifest_path = _daily_manifest_path(repository_root, daily_cycle_id)
+    manifest = _load_object(manifest_path)
+    if manifest.get("daily_run_version") != 2:
+        raise DailyRunError("checkpoint recording requires a version-2 daily cycle")
+    index = manifest.get("next_checkpoint_index")
+    if isinstance(index, bool) or not isinstance(index, int) or index < 0:
+        raise DailyRunError("daily checkpoint index is invalid")
+    checkpoint = {
+        "index": index,
+        "kind": kind,
+        "recorded_at": format_timestamp(ensure_utc(now or utc_now()).replace(microsecond=0)),
+        "operation_id": operation_id,
+        "operation_type": operation_type,
+        "terminal_status": terminal_status,
+        "profile": profile,
+    }
+    checkpoints = manifest.get("checkpoints")
+    if not isinstance(checkpoints, list):
+        raise DailyRunError("daily checkpoints are invalid")
+    checkpoints.append(checkpoint)
+    manifest["checkpoints"] = checkpoints
+    manifest["next_checkpoint_index"] = index + 1
+    trailer_identity = f"{daily_cycle_id}:checkpoint-{index:03d}"
+    if kind == "finalization":
+        manifest["finalization_commit_identity"] = trailer_identity
+        manifest["final_commit_identity"] = trailer_identity
+    elif kind == "podcast_text":
+        manifest["podcast_commit_identity"] = trailer_identity
+        manifest["final_commit_identity"] = trailer_identity
+    atomic_write_json(manifest_path, manifest, allowed_root=repository_root)
+    return checkpoint
+
+
+def record_cycle_operation(
+    repository_root: Path,
+    *,
+    daily_cycle_id: str,
+    operation_id: str,
+    terminal_status: str,
+) -> dict[str, object]:
+    """Consume one cycle iteration and its routed weighted budget exactly once."""
+
+    manifest_path = _daily_manifest_path(repository_root, daily_cycle_id)
+    manifest = _load_object(manifest_path)
+    attempted = manifest.get("operations_attempted")
+    accepted = manifest.get("operations_accepted")
+    if not isinstance(attempted, list) or not isinstance(accepted, list):
+        raise DailyRunError("daily operation accounting is invalid")
+    existing = next(
+        (
+            item
+            for item in accepted
+            if isinstance(item, dict) and item.get("operation_id") == operation_id
+        ),
+        None,
+    )
+    if existing is not None:
+        return existing
+    maximum_operations = manifest.get("maximum_operations")
+    if isinstance(maximum_operations, bool) or not isinstance(maximum_operations, int):
+        raise DailyRunError("daily cycle maximum operation count is invalid")
+    if len(attempted) >= maximum_operations:
+        raise DailyRunError("daily cycle operation count is exhausted")
+    route = _load_object(
+        _run_directory(repository_root, daily_cycle_id) / operation_id / "profile_route.json"
+    )
+    weight = required_decimal(str(route.get("weighted_cost", "")), label="profile weighted cost")
+    used = required_decimal(
+        str(manifest.get("weighted_model_budget_used", "0")), label="used weighted budget"
+    )
+    limit = required_decimal(
+        str(manifest.get("weighted_model_budget", "0")), label="weighted budget"
+    )
+    if used + weight > limit:
+        raise DailyRunError("daily cycle weighted model budget is exhausted")
+    checkpoint_index = manifest.get("next_checkpoint_index")
+    item = {
+        "operation_id": operation_id,
+        "terminal_status": terminal_status,
+        "profile": str(route.get("profile", "")),
+        "profile_policy_version": str(route.get("profile_policy_version", "")),
+        "route_reason": str(route.get("route_reason", "")),
+        "effective_model": str(route.get("effective_model", "")),
+        "reasoning_effort": str(route.get("reasoning_effort", "")),
+        "maximum_turns": route.get("maximum_turns"),
+        "timeout_seconds": route.get("timeout_seconds"),
+        "weighted_cost": decimal_text(weight),
+        "mutation_policy": str(route.get("mutation_policy", "")),
+        "auxiliary_models": route.get("auxiliary_models", {}),
+        "escalation_source": str(route.get("escalation_source", "")),
+        "checkpoint_index": checkpoint_index,
+    }
+    attempted.append(operation_id)
+    accepted.append(item)
+    manifest["operations_attempted"] = attempted
+    manifest["operations_accepted"] = accepted
+    manifest["operation_count"] = len(attempted)
+    manifest["remaining_operations"] = maximum_operations - len(attempted)
+    manifest["weighted_model_budget_used"] = decimal_text(used + weight)
+    manifest["model_budget_used"] = decimal_text(used + weight)
+    if terminal_status in {"blocked", "failed"}:
+        manifest["status"] = "degraded"
+    atomic_write_json(manifest_path, manifest, allowed_root=repository_root)
+    return item
 
 
 def _run_directory(repository_root: Path, run_id: str) -> Path:
@@ -165,8 +455,22 @@ def prepare_daily_run(
         raise DailyRunError("daily source SHA must contain 40 lowercase hex characters")
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     manifest_path = _daily_manifest_path(repository_root, run_id)
+    existing_manifest: dict[str, object] | None = None
     if manifest_path.exists():
-        raise DailyRunError(f"daily run already exists: {run_id}")
+        existing_manifest = _load_object(manifest_path)
+        if existing_manifest.get("daily_run_version") != 2:
+            raise DailyRunError(f"daily run already exists: {run_id}")
+        if existing_manifest.get("preparation_at"):
+            raw_errors = existing_manifest.get("preparation_errors", [])
+            raw_dispositions = existing_manifest.get("queue_dispositions", [])
+            if not isinstance(raw_errors, list) or not isinstance(raw_dispositions, list):
+                raise DailyRunError("resumed preparation state is invalid")
+            return DailyPreparation(
+                run_id=run_id,
+                started_at=parse_timestamp(str(existing_manifest["started_at"])) or instant,
+                errors=tuple(str(value) for value in raw_errors),
+                queue_dispositions=tuple(str(value) for value in raw_dispositions),
+            )
     append_event(
         repository_root,
         event_type="daily_run_started",
@@ -248,9 +552,8 @@ def prepare_daily_run(
         *maintenance_dispositions,
         *prepare_queue(repository_root, now=instant),
     )
-    atomic_write_json(
-        manifest_path,
-        {
+    if existing_manifest is None:
+        document: dict[str, object] = {
             "daily_run_version": 1,
             "run_id": run_id,
             "trigger": trigger,
@@ -272,9 +575,16 @@ def prepare_daily_run(
             "podcast_operation_id": "",
             "podcast_page_path": "",
             "podcast_audio_path": "",
-        },
-        allowed_root=repository_root,
-    )
+        }
+    else:
+        document = {
+            **existing_manifest,
+            "status": "running",
+            "preparation_at": format_timestamp(instant),
+            "preparation_errors": sorted(set(errors)),
+            "queue_dispositions": list(queue_dispositions),
+        }
+    atomic_write_json(manifest_path, document, allowed_root=repository_root)
     return DailyPreparation(
         run_id=run_id,
         started_at=instant,
@@ -638,11 +948,36 @@ def finalize_daily_run(
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     manifest_path = _daily_manifest_path(repository_root, run_id)
     manifest = _load_object(manifest_path)
-    batch = _load_object(_batch_path(repository_root, run_id))
-    if manifest.get("run_id") != run_id or manifest.get("status") != "prepared":
-        raise DailyRunError("daily finalization requires this run's prepared manifest")
-    if batch.get("run_id") != run_id:
-        raise DailyRunError("agent batch identity does not match the daily run")
+    version = manifest.get("daily_run_version")
+    if version == 2:
+        if manifest.get("daily_cycle_id") != run_id or manifest.get("status") not in {
+            "running",
+            "degraded",
+            "interrupted",
+        }:
+            raise DailyRunError("daily finalization requires an open version-2 cycle")
+        accepted = manifest.get("operations_accepted", [])
+        if not isinstance(accepted, list):
+            raise DailyRunError("daily accepted-operation accounting is invalid")
+        batch: dict[str, object] = {
+            "run_id": run_id,
+            "outcomes": [
+                {
+                    "operation_id": item.get("operation_id"),
+                    "status": item.get("terminal_status"),
+                }
+                for item in accepted
+                if isinstance(item, dict)
+            ],
+            "operation_count": len(accepted),
+            "estimated_model_budget_used": str(manifest.get("weighted_model_budget_used", "0")),
+        }
+    else:
+        batch = _load_object(_batch_path(repository_root, run_id))
+        if manifest.get("run_id") != run_id or manifest.get("status") != "prepared":
+            raise DailyRunError("daily finalization requires this run's prepared manifest")
+        if batch.get("run_id") != run_id:
+            raise DailyRunError("agent batch identity does not match the daily run")
     recorded_runs = [row for row in read_table(repository_root, "runs") if row["run_id"] == run_id]
     if len(recorded_runs) > 1:
         raise DailyRunError("daily run history contains a duplicate run ID")
@@ -757,7 +1092,7 @@ def finalize_daily_run(
     report_path = report.relative_to(repository_root).as_posix()
     completed_manifest = {
         **manifest,
-        "status": status,
+        "status": (status if version == 1 else ("degraded" if status == "degraded" else "running")),
         "completed_at": format_timestamp(instant),
         "operation_count": operation_count,
         "model_budget_used": decimal_text(used),
@@ -765,6 +1100,10 @@ def finalize_daily_run(
         "report_path": report_path,
         "snapshot_id": decision_snapshot.snapshot_id,
     }
+    if version == 2:
+        completed_manifest["research_cutoff_at"] = format_timestamp(instant)
+        completed_manifest["finalization_at"] = format_timestamp(instant)
+        completed_manifest["finalization_status"] = status
     atomic_write_json(manifest_path, completed_manifest, allowed_root=repository_root)
     append_event(
         repository_root,

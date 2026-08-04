@@ -47,7 +47,7 @@ path:
 ```bash
 gh secret set OPENAI_OAUTH_SECRET < "$HOME/.config/papertrader/openai-oauth.agekey"
 gh secret set YOUTUBE_DATA_API
-gh variable set MAX_OPERATIONS --body 180
+gh variable set MAX_OPERATIONS --body 5
 gh variable set AUXILIARY_MODEL --body openai-codex:gpt-5.6-terra
 recipient="$(age-keygen -y "$HOME/.config/papertrader/openai-oauth.agekey")"
 install -d .papertrader/credentials
@@ -182,7 +182,7 @@ Use a dedicated Hermes profile and process one operation at a time:
 
 ```bash
 export HERMES_HOME=/tmp/papertrader-hermes
-export MAX_OPERATIONS="${MAX_OPERATIONS:-180}"
+export MAX_OPERATIONS="${MAX_OPERATIONS:-5}"
 export AUXILIARY_MODEL="${AUXILIARY_MODEL:-openai-codex:gpt-5.6-terra}"
 uv run papertrader agent configure --hermes-home "$HERMES_HOME" --replace-unmanaged
 hermes skills opt-in --sync

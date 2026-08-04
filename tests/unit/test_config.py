@@ -41,6 +41,8 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.allocation.minimum_confidence == "medium"
     assert settings.allocation.research_refresh_lead_days == 7
     assert settings.operations.maximum_llm_operations_per_run == 20
+    assert settings.operations.cycle_maximum_operations == 20
+    assert settings.operations.maximum_weighted_model_budget_per_cycle == Decimal("100.00")
     assert settings.classifier.command == ("python", "-m", "papertrader.classifier_command")
     assert settings.classifier.model == "gpt-5.6-luna"
     assert settings.youtube.enabled is True
@@ -71,7 +73,16 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert set(settings.hermes.toolsets) == {"web", "file", "terminal"}
     assert settings.hermes.required_native_skill == "llm-wiki"
     assert settings.hermes.required_native_skill_version == "2.1.0"
-    assert settings.hermes.maximum_turns == 180
+    assert [profile.name for profile in settings.hermes.profiles] == [
+        "scout",
+        "analyst",
+        "deep",
+    ]
+    assert settings.hermes.profile("scout").maximum_turns == 32
+    assert settings.hermes.profile("analyst").maximum_turns == 80
+    assert settings.hermes.profile("deep").maximum_turns == 160
+    assert settings.hermes.profile("scout").model == "gpt-5.6-luna"
+    assert settings.hermes.profile("analyst").cost_weight == Decimal("2.5")
     assert settings.hermes_auxiliary.web_extract_provider == "openai-codex"
     assert settings.hermes_auxiliary.web_extract_model == "gpt-5.6-terra"
     assert settings.hermes_auxiliary.web_extract_reasoning_effort == "low"
@@ -101,12 +112,14 @@ def test_settings_accept_environment_hermes_overrides(
         repository_root,
         paper_environment
         | {
-            "MAX_OPERATIONS": "240",
+            "MAX_OPERATIONS": "7",
+            "HERMES_DEEP_MAX_TURNS": "240",
             "AUXILIARY_MODEL": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
         },
     )
 
-    assert settings.hermes.maximum_turns == 240
+    assert settings.operations.cycle_maximum_operations == 7
+    assert settings.hermes.profile("deep").maximum_turns == 240
     assert settings.hermes.inference_environment == ("OPENROUTER_API_KEY",)
     assert settings.hermes_auxiliary.web_extract_provider == "openrouter"
     assert settings.hermes_auxiliary.web_extract_model == ("nvidia/nemotron-3-ultra-550b-a55b:free")

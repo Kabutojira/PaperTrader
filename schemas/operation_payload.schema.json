@@ -58,7 +58,6 @@
                 "context_path",
                 "report_path",
                 "page_path",
-                "audio_path",
                 "target_minutes",
                 "target_words"
               ],
@@ -66,8 +65,7 @@
                 "run_id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$" },
                 "context_path": { "$ref": "#/$defs/repository_path" },
                 "report_path": { "$ref": "#/$defs/repository_path" },
-                "page_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}\\.md$" },
-                "audio_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}\\.mp3$" },
+                "page_path": { "type": "string", "pattern": "^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\\.md$" },
                 "target_minutes": { "const": 20 },
                 "target_words": { "type": "integer", "minimum": 2800, "maximum": 3200 }
               }

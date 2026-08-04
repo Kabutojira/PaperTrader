@@ -21,6 +21,11 @@ on:
         required: false
         default: "5"
         type: string
+      resume_cycle_id:
+        description: Optional timestamped daily cycle to resume
+        required: false
+        default: ""
+        type: string
       dry_run:
         description: Exercise all validation without inference, commit, or delivery
         required: false
@@ -62,7 +67,10 @@ jobs:
     with:
       operation_id: ${{ inputs.operation_id || '' }}
       operation_type: ${{ inputs.operation_type || '' }}
-      max_operations: ${{ github.event_name == 'schedule' && '5' || inputs.max_operations }}
+      max_operations: >-
+        ${{ github.event_name == 'schedule' && vars.MAX_OPERATIONS ||
+        inputs.max_operations || '5' }}
+      resume_cycle_id: ${{ inputs.resume_cycle_id || '' }}
       dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
       generate_podcast: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
       wiki_maintenance: >-
@@ -87,6 +95,17 @@ jobs:
       commit_sha: ${{ needs.runtime.outputs.commit_sha }}
       report_path: ${{ needs.runtime.outputs.report_path }}
       run_id: ${{ needs.runtime.outputs.run_id }}
+      daily_cycle_id: ${{ needs.runtime.outputs.daily_cycle_id }}
+      podcast_path: ${{ needs.runtime.outputs.podcast_path }}
+      audio_artifact_name: ${{ needs.runtime.outputs.audio_artifact_name }}
+      audio_artifact_run_id: ${{ github.run_id }}
+      audio_path: ${{ needs.runtime.outputs.audio_path }}
+      audio_manifest_path: ${{ needs.runtime.outputs.audio_manifest_path }}
+      audio_render_status: ${{ needs.runtime.outputs.audio_render_status }}
+      send_podcast_audio: >-
+        ${{ (github.event_name == 'schedule' || (!inputs.dry_run && inputs.send_telegram)) &&
+        needs.runtime.outputs.podcast_status == 'succeeded' &&
+        needs.runtime.outputs.audio_render_status == 'succeeded' }}
       send_telegram: ${{ github.event_name == 'schedule' || (!inputs.dry_run && inputs.send_telegram) }}
       target_branch: ${{ github.event.repository.default_branch }}
       serialized_by_caller: true

@@ -198,7 +198,8 @@ uv run papertrader agent run \
 The subprocess receives repository paths, safe process settings, and the isolated profile's
 `auth.json`. Main reasoning remains fixed to `openai-codex`; `AUXILIARY_MODEL` configures only
 Web ExtractPage summarization and defaults to `openai-codex:gpt-5.6-terra`. `MAX_OPERATIONS`
-controls the per-invocation Hermes turn budget and defaults to 180. An `openrouter:<model>`
+controls queued research iterations in one daily cycle (bounded by the repository hard ceiling).
+Scout, analyst, and deep turn caps live in their execution-profile sections. An `openrouter:<model>`
 auxiliary override forwards only `OPENROUTER_API_KEY`; GitHub, Telegram, deployment, brokerage,
 Actions OIDC, age identity, and runtime tokens are never forwarded.
 
@@ -388,11 +389,13 @@ finishes with one priority-100 `daily_podcast` operation after the canonical rep
 snapshot exist. Deterministic code collects all accepted operation results for that run into
 `data/runs/<run_id>/podcast_context.json`; the podcast skill combines related alerts, orders the
 material arguments, and writes an original 2,400-3,600 word transcript under
-`data/wiki/podcasts/`.
+`data/wiki/podcasts/` using the cycle's full UTC timestamp.
 
-Hermes receives its TTS toolset only for this operation. It synthesizes bounded chunks strictly
-sequentially, and `papertrader podcast assemble` validates the transcript length, assembles the
-chunks with `ffmpeg`, verifies a 16-24 minute duration, and atomically publishes the dated MP3. The
+Hermes receives no TTS toolset for this operation and synthesizes text only. After that transcript
+checkpoint, `papertrader podcast render` reads the exact page
+from its Git commit, uses the locked `edge-tts` backend to synthesize sequential chunks outside the
+checkout, verifies the duration and
+hashes, and passes the ephemeral MP3 manifest to isolated Telegram delivery. The
 daily report links the result. Podcast queue and payload state is delivery-only and excluded from
 decision source hashes, so this generated view cannot feed back into or invalidate the immutable
 investment snapshot.
@@ -532,8 +535,8 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 
 Repository setup requires `OPENAI_OAUTH_SECRET` and the matching
 `.papertrader/credentials/openai-oauth-auth.json.age`. Optional repository variables
-`MAX_OPERATIONS` and `AUXILIARY_MODEL` override the 180-turn and
-`openai-codex:gpt-5.6-terra` defaults. `OPENROUTER_API_KEY` is required only for an OpenRouter
+`MAX_OPERATIONS`, profile-specific `HERMES_*_MAX_TURNS`, and `AUXILIARY_MODEL` override the cycle,
+turn, and auxiliary-model defaults. `OPENROUTER_API_KEY` is required only for an OpenRouter
 auxiliary override, and `YOUTUBE_DATA_API` optionally enables keyed discovery; each secret is
 exposed only to its purpose-bound step and never to terminal tools. Delivery additionally requires
 `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. Configure GitHub Pages to use **GitHub Actions** as its

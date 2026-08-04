@@ -29,6 +29,9 @@ class CommandAuditContext:
     operation_id: str
     path: Path
     operation_type: str = ""
+    profile: str = ""
+    profile_policy_version: str = ""
+    route_reason: str = ""
 
 
 def audit_context(
@@ -40,6 +43,9 @@ def audit_context(
     operation_id = environment.get("PAPERTRADER_AUDIT_OPERATION_ID", "")
     raw_path = environment.get("PAPERTRADER_AUDIT_PATH", "")
     operation_type = environment.get("PAPERTRADER_AUDIT_OPERATION_TYPE", "")
+    profile = environment.get("PAPERTRADER_EXECUTION_PROFILE", "")
+    profile_policy_version = environment.get("PAPERTRADER_PROFILE_POLICY_VERSION", "")
+    route_reason = environment.get("PAPERTRADER_ROUTE_REASON", "")
     if not any((run_id, operation_id, raw_path)):
         return None
     if not all((run_id, operation_id, raw_path)):
@@ -59,6 +65,9 @@ def audit_context(
         operation_id=operation_id,
         path=path,
         operation_type=operation_type,
+        profile=profile,
+        profile_policy_version=profile_policy_version,
+        route_reason=route_reason,
     )
 
 
@@ -122,6 +131,9 @@ def record_command(
             "run_id": context.run_id,
             "operation_id": context.operation_id,
             "entries": [],
+            "profile": context.profile,
+            "profile_policy_version": context.profile_policy_version,
+            "route_reason": context.route_reason,
         }
     if (
         document.get("audit_version") != 1
@@ -154,6 +166,7 @@ def record_command(
             "exit_code": exit_code,
             "changed_paths": list(delta.changed),
             "changes": changes,
+            "profile": context.profile,
         }
     )
     context.path.parent.mkdir(parents=True, exist_ok=True)

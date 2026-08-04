@@ -24,10 +24,13 @@ from papertrader.telegram import (
     TelegramDeliveryError,
     UrllibTelegramTransport,
     deliver_committed_report,
+    deliver_podcast_audio,
     escape_markdown_v2,
+    record_podcast_audio_failure,
     split_message,
     telegram_messages,
 )
+from papertrader.utils import content_hash
 from papertrader.wiki import lint_wiki
 
 
@@ -318,6 +321,139 @@ class _FakeTelegram:
         if isinstance(event, BaseException):
             raise event
         return event
+
+
+class _FakeAudioTelegram:
+    def __init__(self, events: list[Mapping[str, object] | BaseException]) -> None:
+        self.events = events
+        self.calls: list[tuple[Mapping[str, str], Path]] = []
+
+    def preflight(self, token: str, chat_id: str, *, timeout_seconds: int) -> None:
+        assert token == "secret-token"
+        assert chat_id == "-123"
+        assert timeout_seconds > 0
+
+    def send_audio(
+        self,
+        token: str,
+        payload: Mapping[str, str],
+        audio_path: Path,
+        *,
+        timeout_seconds: int,
+    ) -> Mapping[str, object]:
+        assert token == "secret-token"
+        assert timeout_seconds > 0
+        self.calls.append((payload, audio_path))
+        event = self.events.pop(0) if self.events else {"ok": True}
+        if isinstance(event, BaseException):
+            raise event
+        return event
+
+
+def _commit_podcast_handoff(repository: Path) -> tuple[str, Path, Path, str]:
+    cycle_id = "daily-20260724T220000Z"
+    report_path = "data/wiki/daily-reports/daily-report_20260724.md"
+    script_path = "data/wiki/podcasts/daily-podcast_20260724T220000Z.md"
+    (repository / report_path).write_text("# Daily report\n", encoding="utf-8")
+    script = (
+        f"---\ndaily_cycle_id: {cycle_id}\n---\n\n"
+        "<!-- papertrader-spoken-transcript:start -->\nPaper trading only.\n"
+        "<!-- papertrader-spoken-transcript:end -->\n"
+    )
+    (repository / script_path).parent.mkdir(parents=True, exist_ok=True)
+    (repository / script_path).write_text(script, encoding="utf-8")
+    run_directory = repository / "data" / "runs" / cycle_id
+    run_directory.mkdir(parents=True)
+    (run_directory / "daily_run.json").write_text(
+        json.dumps(
+            {
+                "run_id": cycle_id,
+                "status": "succeeded",
+                "report_path": report_path,
+            }
+        ),
+        encoding="utf-8",
+    )
+    subprocess.run(["git", "init", "-b", "main"], cwd=repository, check=True, capture_output=True)
+    subprocess.run(["git", "config", "user.name", "Test"], cwd=repository, check=True)
+    subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repository, check=True)
+    subprocess.run(["git", "add", "--all"], cwd=repository, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "podcast"], cwd=repository, check=True, capture_output=True
+    )
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"],
+        cwd=repository,
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.strip()
+    audio = repository.parent / f"{cycle_id}.mp3"
+    audio.write_bytes(b"ID3-ephemeral-audio")
+    manifest = repository.parent / f"{cycle_id}.audio-manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "audio_manifest_version": 1,
+                "daily_cycle_id": cycle_id,
+                "script_commit": commit,
+                "script_path": script_path,
+                "script_sha256": content_hash(script.encode()),
+                "spoken_transcript_sha256": content_hash("Paper trading only."),
+                "audio_filename": audio.name,
+                "audio_size": audio.stat().st_size,
+                "audio_sha256": content_hash(audio.read_bytes()),
+                "duration_seconds": 1200,
+                "format": "mp3",
+            }
+        ),
+        encoding="utf-8",
+    )
+    return commit, manifest, audio, cycle_id
+
+
+def test_verified_ephemeral_podcast_audio_is_delivered_and_failures_are_stable(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    commit, manifest, audio, cycle_id = _commit_podcast_handoff(sandbox_repository)
+    transport = _FakeAudioTelegram([])
+
+    delivered = deliver_podcast_audio(
+        sandbox_repository,
+        sandbox_settings,
+        manifest_path=manifest,
+        audio_path=audio,
+        repository_url="https://github.com/example/PaperTrader",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=lambda _: None,
+    )
+
+    assert delivered.status == "sent"
+    assert delivered.script_commit == commit
+    assert transport.calls[0][1] == audio
+    assert f"/blob/{commit}/data/wiki/podcasts/" in transport.calls[0][0]["caption"]
+
+    first = record_podcast_audio_failure(
+        sandbox_repository,
+        daily_cycle_id=cycle_id,
+        script_commit=commit,
+        error="render failed",
+    )
+    second = record_podcast_audio_failure(
+        sandbox_repository,
+        daily_cycle_id=cycle_id,
+        script_commit=commit,
+        error="artifact expired",
+    )
+    assert first.issue_id == second.issue_id
+    issues = [
+        row for row in read_table(sandbox_repository, "issues") if row["issue_id"] == first.issue_id
+    ]
+    assert len(issues) == 1
+    assert "artifact expired" in issues[0]["description"]
 
 
 def _commit_report(repository: Path) -> tuple[str, str]:

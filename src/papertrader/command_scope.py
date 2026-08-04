@@ -39,6 +39,7 @@ def command_allowed(
     youtube_video: bool = False,
     seekingalpha_lead: bool = False,
     pre_dispatch: bool = False,
+    profile: str = "",
 ) -> bool:
     """Return whether one canonical CLI argument vector is allowed for an operation.
 
@@ -50,14 +51,17 @@ def command_allowed(
     command = normalized_command(arguments)
     if not command:
         return False
+    if profile:
+        from papertrader.profiles import profile_command_allowed
+
+        if not profile_command_allowed(profile, command):
+            return False
     if any(_matches(command, prefix) for prefix in READ_ONLY_COMMAND_PREFIXES):
         return True
     if _matches(command, ("issue", "record")):
         return True
     if _matches(command, ("queue", "enqueue")):
         return operation_type != "source_discovery"
-    if _matches(command, ("podcast", "assemble")):
-        return operation_type == "daily_podcast"
     if _matches(command, ("seekingalpha", "enqueue-leads")):
         return operation_type == "source_discovery"
     if _matches(command, ("watchlist", "import")):

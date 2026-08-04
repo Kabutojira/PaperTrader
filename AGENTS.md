@@ -197,7 +197,8 @@ Scheduled and manually dispatched runtime workflows may commit only these paths 
 - lawfully storable wiki source assets under `data/wiki/raw/` with extensions `.md`, `.txt`, `.pdf`, `.png`, `.jpg`, `.jpeg`, or `.webp`;
 - canonical and generated CSV files under `data/**/*.csv`, including the rolling one-year price cache in `data/market/prices/`;
 - operation payloads, run manifests, and validation results under `data/operations/` and `data/runs/` with extensions `.json` or `.md`;
-- dated podcast transcript pages and generated MP3 audio under `data/wiki/podcasts/`;
+- timestamped podcast transcript pages under `data/wiki/podcasts/`; podcast audio is ephemeral and
+  forbidden from the repository;
 - the generated publication snapshot `data/published/decision_snapshot.json` and generated CSV exports under `data/published/`;
 - structured and human-readable logs under `data/logs/` with extensions `.ndjson` or `.txt`;
 - `data/issues.md`;
@@ -572,8 +573,9 @@ remains entirely deterministic.
   arguments into one coherent investor-facing sequence.
 - Write an original 2,400-3,600 word script aiming for about twenty minutes, explicitly label paper
   trading, preserve uncertainty, and avoid duplicating merged alert causes.
-- Invoke Hermes TTS sequentially in bounded chunks, then use `papertrader podcast assemble` to
-  produce and duration-check the dated MP3. Do not expose credentials or use parallel synthesis.
+- Commit only the timestamped transcript. After that checkpoint, deterministic code reads the exact
+  committed transcript, renders and validates TTS audio sequentially outside the checkout, and
+  hands it ephemerally to Telegram. Never add audio or TTS chunks to Git or Pages.
 - The podcast may describe accepted state but may never change research conclusions, allocation,
   advice, signals, orders, fills, cash, positions, or performance.
 - Podcast queue rows and payloads are delivery-only generated state and are excluded from decision

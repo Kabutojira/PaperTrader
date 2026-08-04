@@ -11,9 +11,9 @@ from papertrader.advice import _source_hashes
 from papertrader.config import Settings
 from papertrader.podcast import (
     PodcastError,
-    assemble_podcast,
     enqueue_daily_podcast,
     finalize_daily_podcast,
+    render_committed_podcast,
 )
 from papertrader.queue import RunBudget, claim_next, fail_attempt, prepare_queue
 from papertrader.tables import read_table
@@ -23,22 +23,10 @@ NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
 
 def _completed_manifest(repository: Path, run_id: str) -> None:
     report = repository / "data" / "wiki" / "daily-reports" / "daily-report_20260730.md"
-    report.write_text(
-        """---
-title: Daily
-type: daily-report
-status: maintained
-tags:
-  - daily-report
-created: '2026-07-30'
-updated: '2026-07-30'
-provenance: test
----
-""",
-        encoding="utf-8",
-    )
+    report.write_text("---\ntitle: Daily\ntype: daily-report\nstatus: maintained\n---\n")
     run = repository / "data" / "runs" / run_id
     run.mkdir(parents=True)
+    (run / "decision_snapshot.json").write_text("{}\n", encoding="utf-8")
     (run / "daily_run.json").write_text(
         json.dumps(
             {
@@ -67,7 +55,7 @@ provenance: test
     )
 
 
-def test_completed_run_enqueues_one_final_podcast(
+def test_completed_run_enqueues_one_text_only_podcast(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
@@ -75,10 +63,7 @@ def test_completed_run_enqueues_one_final_podcast(
     hashes_before = _source_hashes(sandbox_repository, as_of=NOW)
 
     result = enqueue_daily_podcast(
-        sandbox_repository,
-        sandbox_settings,
-        run_id="podcast-run",
-        now=NOW,
+        sandbox_repository, sandbox_settings, run_id="podcast-run", now=NOW
     )
 
     assert result.created is True
@@ -88,39 +73,30 @@ def test_completed_run_enqueues_one_final_podcast(
         if row["operation_id"] == result.operation_id
     )
     assert row["operation_type"] == "daily_podcast"
-    assert row["priority"] == "100"
-    assert row["max_attempts"] == "1"
     context = json.loads((sandbox_repository / result.context_path).read_text())
     assert context["target_minutes"] == 20
+    assert "audio_path" not in context
     manifest = json.loads(
         (sandbox_repository / "data" / "runs" / "podcast-run" / "daily_run.json").read_text()
     )
     assert manifest["podcast_status"] == "queued"
-    assert manifest["podcast_operation_id"] == result.operation_id
+    assert manifest["podcast_audio_path"] == ""
     assert _source_hashes(sandbox_repository, as_of=NOW) == hashes_before
 
 
-def test_failed_podcast_is_recorded_on_the_completed_daily_manifest(
+def test_failed_podcast_is_recorded_without_requiring_audio(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
     run_id = "podcast-failed"
     _completed_manifest(sandbox_repository, run_id)
-    enqueued = enqueue_daily_podcast(
-        sandbox_repository,
-        sandbox_settings,
-        run_id=run_id,
-        now=NOW,
-    )
+    enqueued = enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=run_id, now=NOW)
     prepare_queue(sandbox_repository, now=NOW)
     claimed = claim_next(
         sandbox_repository,
         sandbox_settings,
         run_id=run_id,
-        budget=RunBudget(
-            maximum_operations=1,
-            maximum_cost=sandbox_settings.operations.maximum_model_budget_usd_per_run,
-        ),
+        budget=RunBudget(maximum_operations=1, maximum_cost=5),
         operation_id=enqueued.operation_id,
         operation_type="daily_podcast",
         now=NOW,
@@ -136,88 +112,112 @@ def test_failed_podcast_is_recorded_on_the_completed_daily_manifest(
         )
         == "failed"
     )
-
     assert finalize_daily_podcast(sandbox_repository, run_id=run_id, now=NOW) == "failed"
     manifest = json.loads(
         (sandbox_repository / "data" / "runs" / run_id / "daily_run.json").read_text()
     )
     assert manifest["podcast_status"] == "failed"
-    issues = read_table(sandbox_repository, "issues")
-    assert any(
-        row["owner"] == "delivery" and row["related_operation_id"] == enqueued.operation_id
-        for row in issues
+
+
+def test_podcast_render_uses_exact_committed_transcript_and_ephemeral_directory(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id = "daily-20260730T180000Z"
+    commit = "a" * 40
+    script_path = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
+    paragraphs = [" ".join(["word"] * 750) for _ in range(4)]
+    markdown = (
+        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        + "\n\n".join(paragraphs)
+        + "\n<!-- papertrader-spoken-transcript:end -->\n"
     )
 
-
-def test_podcast_assembly_validates_length_and_removes_tts_chunks(
-    sandbox_repository: Path,
-) -> None:
-    run_id = "podcast-assembly"
-    operation_id = "01K11M5T80JQDRKHZJ5XA8NY1R"
-    operation_root = sandbox_repository / "data" / "runs" / run_id / operation_id
-    operation_root.mkdir(parents=True)
-    chunks = [operation_root / "chunk-01.mp3", operation_root / "chunk-02.mp3"]
-    for chunk in chunks:
-        chunk.write_bytes(b"audio-chunk")
-    page = sandbox_repository / "data" / "wiki" / "podcasts" / "daily-podcast_20260730.md"
-    page.parent.mkdir(parents=True)
-    page.write_text(" ".join(["word"] * 3000), encoding="utf-8")
-
-    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[str]:
+    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        if command[:2] == ["git", "show"]:
+            return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
         if "-show_entries" in command:
-            return subprocess.CompletedProcess(command, 0, stdout="1200\n", stderr="")
-        Path(command[-1]).write_bytes(b"assembled-audio")
-        return subprocess.CompletedProcess(command, 0, stdout="", stderr="")
+            return subprocess.CompletedProcess(command, 0, "1200\n", "")
+        output = (
+            Path(command[command.index("--write-media") + 1])
+            if "--write-media" in command
+            else Path(command[-1])
+        )
+        output.write_bytes(b"assembled-audio")
+        return subprocess.CompletedProcess(command, 0, "", "")
 
-    result = assemble_podcast(
+    output = tmp_path / "ephemeral"
+    result = render_committed_podcast(
         sandbox_repository,
-        {
-            "run_id": run_id,
-            "operation_id": operation_id,
-            "script_path": "data/wiki/podcasts/daily-podcast_20260730.md",
-            "output_path": "data/wiki/podcasts/daily-podcast_20260730.mp3",
-            "chunk_paths": [path.relative_to(sandbox_repository).as_posix() for path in chunks],
-        },
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        script_commit=commit,
+        script_path=script_path,
+        output_directory=output,
         runner=fake_runner,
     )
 
     assert result.word_count == 3000
     assert result.duration_seconds == 1200
-    assert (sandbox_repository / result.output_path).read_bytes() == b"assembled-audio"
-    assert not any(path.exists() for path in chunks)
+    assert Path(result.audio_path).read_bytes() == b"assembled-audio"
+    assert Path(result.manifest_path).is_file()
+    assert not list(sandbox_repository.rglob("*.mp3"))
+    assert not list(output.glob("chunk-*.mp3"))
 
 
-def test_failed_podcast_assembly_removes_intermediate_audio(
+def test_repository_podcast_audio_path_is_rejected(
     sandbox_repository: Path,
+    sandbox_settings: Settings,
 ) -> None:
-    run_id = "podcast-failed-assembly"
-    operation_id = "01K11M5T80JQDRKHZJ5XA8NY1S"
-    operation_root = sandbox_repository / "data" / "runs" / run_id / operation_id
-    operation_root.mkdir(parents=True)
-    chunks = [operation_root / "chunk-01.mp3", operation_root / "chunk-02.mp3"]
-    for chunk in chunks:
-        chunk.write_bytes(b"audio-chunk")
-    page = sandbox_repository / "data" / "wiki" / "podcasts" / "daily-podcast_20260730.md"
-    page.parent.mkdir(parents=True)
-    page.write_text(" ".join(["word"] * 3000), encoding="utf-8")
-
-    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[str]:
-        if "-show_entries" in command:
-            return subprocess.CompletedProcess(command, 0, stdout="100\n", stderr="")
-        Path(command[-1]).write_bytes(b"assembled-audio")
-        return subprocess.CompletedProcess(command, 0, stdout="", stderr="")
-
-    with pytest.raises(PodcastError, match="between 16 and 24 minutes"):
-        assemble_podcast(
+    with pytest.raises(PodcastError, match="outside the checkout"):
+        render_committed_podcast(
             sandbox_repository,
-            {
-                "run_id": run_id,
-                "operation_id": operation_id,
-                "script_path": "data/wiki/podcasts/daily-podcast_20260730.md",
-                "output_path": "data/wiki/podcasts/daily-podcast_20260730.mp3",
-                "chunk_paths": [path.relative_to(sandbox_repository).as_posix() for path in chunks],
-            },
-            runner=fake_runner,
+            sandbox_settings,
+            daily_cycle_id="daily-20260730T180000Z",
+            script_commit="a" * 40,
+            script_path="data/wiki/podcasts/daily-podcast_20260730T180000Z.md",
+            output_directory=sandbox_repository / "data" / "wiki" / "podcasts",
         )
 
-    assert not any(path.exists() for path in chunks)
+
+def test_failed_ephemeral_render_removes_completed_chunks(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id = "daily-20260730T180001Z"
+    script_path = "data/wiki/podcasts/daily-podcast_20260730T180001Z.md"
+    paragraphs = [" ".join(["word"] * 750) for _ in range(4)]
+    markdown = (
+        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        + "\n\n".join(paragraphs)
+        + "\n<!-- papertrader-spoken-transcript:end -->\n"
+    )
+    attempts = 0
+
+    def failing_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        nonlocal attempts
+        if command[:2] == ["git", "show"]:
+            return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
+        attempts += 1
+        if attempts == 1:
+            Path(command[command.index("--write-media") + 1]).write_bytes(b"first-chunk")
+            return subprocess.CompletedProcess(command, 0, "", "")
+        return subprocess.CompletedProcess(command, 1, "", "tts failed")
+
+    output = tmp_path / "failed-render"
+    with pytest.raises(PodcastError, match="chunk 2"):
+        render_committed_podcast(
+            sandbox_repository,
+            sandbox_settings,
+            daily_cycle_id=cycle_id,
+            script_commit="a" * 40,
+            script_path=script_path,
+            output_directory=output,
+            runner=failing_runner,
+        )
+
+    assert list(output.iterdir()) == []

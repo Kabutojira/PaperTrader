@@ -18,8 +18,9 @@ from pathlib import Path, PurePosixPath
 import yaml
 
 from papertrader.atomic_io import atomic_write_json, atomic_write_text
-from papertrader.config import Settings
+from papertrader.config import HermesExecutionProfile, Settings
 from papertrader.issues import record_issue
+from papertrader.profiles import ProfileRoute, RoutingContext, route_profile, select_profile
 from papertrader.queue import (
     OPERATION_SKILLS,
     Operation,
@@ -105,9 +106,70 @@ class AgentRunError(RuntimeError):
 class _PostRunValidationError(AgentRunError):
     """Retain whether a rejected agent attempt left only disposable internal artifacts."""
 
-    def __init__(self, message: str, *, contained: bool) -> None:
+    def __init__(self, message: str, *, contained: bool, had_agent_delta: bool) -> None:
         super().__init__(message)
         self.contained = contained
+        self.had_agent_delta = had_agent_delta
+
+
+def _restore_rejected_agent_delta(
+    repository_root: Path,
+    paths: Sequence[str],
+    protected: Mapping[str, tuple[bytes, int]],
+) -> tuple[str, ...]:
+    """Restore an invalid agent delta to HEAD while retaining controller evidence."""
+
+    errors: list[str] = []
+    root = repository_root.resolve()
+    for relative in sorted(set(paths)):
+        path = root.joinpath(*PurePosixPath(relative).parts)
+        try:
+            path.relative_to(root)
+            if relative in protected:
+                if path.exists() or path.is_symlink():
+                    path.unlink()
+                contents, mode = protected[relative]
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_bytes(contents)
+                path.chmod(mode)
+                continue
+            tracked = (
+                subprocess.run(
+                    ("git", "ls-files", "--error-unmatch", "--", relative),
+                    cwd=root,
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                ).returncode
+                == 0
+            )
+            if tracked:
+                restored = subprocess.run(
+                    (
+                        "git",
+                        "restore",
+                        "--source=HEAD",
+                        "--staged",
+                        "--worktree",
+                        "--",
+                        relative,
+                    ),
+                    cwd=root,
+                    check=False,
+                    capture_output=True,
+                    text=True,
+                )
+                if restored.returncode:
+                    detail = (restored.stderr or restored.stdout).strip()
+                    raise OSError(detail or "git restore failed")
+            elif path.exists() or path.is_symlink():
+                if path.is_dir() and not path.is_symlink():
+                    path.rmdir()
+                else:
+                    path.unlink()
+        except (OSError, ValueError) as exc:
+            errors.append(f"cannot restore rejected path {relative}: {exc}")
+    return tuple(errors)
 
 
 @dataclass(frozen=True, slots=True)
@@ -134,6 +196,14 @@ class HermesPreflight:
     web_extract_model: str
     web_extract_reasoning_effort: str
     maximum_turns: int
+    profile: str
+    profile_policy_version: str
+    route_reason: str
+    reasoning_effort: str
+    timeout_seconds: int
+    weighted_cost: Decimal
+    mutation_policy: str
+    escalation_source: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -164,6 +234,18 @@ class AgentOperationOutcome:
 
     operation_id: str
     status: str
+
+
+@dataclass(frozen=True, slots=True)
+class AgentCheckpointOutcome:
+    """One cycle-accounted operation ready for its durability checkpoint."""
+
+    operation_id: str
+    operation_type: str
+    status: str
+    profile: str
+    checkpoint_index: int
+    weighted_cost: Decimal
 
 
 @dataclass(frozen=True, slots=True)
@@ -456,6 +538,8 @@ def preflight_hermes(
     operation_type: str,
     environment: Mapping[str, str],
     check_command: bool = True,
+    execution_profile: HermesExecutionProfile | None = None,
+    route: ProfileRoute | None = None,
 ) -> HermesPreflight:
     """Verify isolated config, native llm-wiki, and exact project skill content."""
 
@@ -476,17 +560,30 @@ def preflight_hermes(
         and shutil.which(settings.hermes.command[0], path=environment.get("PATH")) is None
     ):
         raise AgentRunError(f"Hermes executable is unavailable: {settings.hermes.command[0]}")
+    if route is None:
+        route = route_profile(operation_type, RoutingContext())
+    profile = execution_profile or settings.hermes.profile(route.profile)
+    if profile.name != route.profile or profile.policy_version != route.profile_policy_version:
+        raise AgentRunError("Hermes profile does not match the persisted route")
     return HermesPreflight(
         native,
         controller,
         operation_skill,
         config_hash,
-        settings.hermes.provider,
-        settings.hermes.model,
+        profile.provider,
+        profile.model,
         settings.hermes_auxiliary.web_extract_provider,
         settings.hermes_auxiliary.web_extract_model,
         settings.hermes_auxiliary.web_extract_reasoning_effort,
-        settings.hermes.maximum_turns,
+        profile.maximum_turns,
+        profile.name,
+        profile.policy_version,
+        route.route_reason,
+        profile.reasoning_effort,
+        profile.timeout_seconds,
+        profile.cost_weight,
+        profile.mutation_policy,
+        route.escalation_source,
     )
 
 
@@ -666,6 +763,8 @@ def sanitized_hermes_environment(
     operation_id: str,
     operation_type: str = "",
     auxiliary_required: bool = True,
+    profile: HermesExecutionProfile | None = None,
+    route: ProfileRoute | None = None,
 ) -> dict[str, str]:
     """Forward system basics and non-secret context; OAuth stays in HERMES_HOME."""
 
@@ -697,6 +796,15 @@ def sanitized_hermes_environment(
     )
     if operation_type:
         environment["PAPERTRADER_AUDIT_OPERATION_TYPE"] = operation_type
+    if profile is not None and route is not None:
+        environment.update(
+            {
+                "PAPERTRADER_EXECUTION_PROFILE": profile.name,
+                "PAPERTRADER_MUTATION_POLICY": profile.mutation_policy,
+                "PAPERTRADER_PROFILE_POLICY_VERSION": route.profile_policy_version,
+                "PAPERTRADER_ROUTE_REASON": route.route_reason,
+            }
+        )
     forbidden = sorted(
         name
         for name in environment
@@ -728,9 +836,7 @@ def _validate_auxiliary_environment(
 def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) -> tuple[str, ...]:
     """Return the one-shot command with explicit skills, tools, quiet mode, and YOLO."""
 
-    toolsets = settings.hermes.toolsets
-    if preflight.operation_skill.name == "papertrader-daily-podcast":
-        toolsets = (*toolsets, "tts")
+    toolsets = settings.hermes.profile(preflight.profile).toolsets
     return (
         *settings.hermes.command,
         *settings.hermes.arguments,
@@ -738,10 +844,12 @@ def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) 
         preflight.provider,
         "--model",
         preflight.model,
+        "--reasoning-effort",
+        preflight.reasoning_effort,
         "--toolsets",
         ",".join(toolsets),
         "--max-turns",
-        str(settings.hermes.maximum_turns),
+        str(preflight.maximum_turns),
         "--skills",
         preflight.native_skill.name,
         "--skills",
@@ -861,6 +969,45 @@ def run_claimed_operation(
     if artifact_directory.exists() and any(artifact_directory.iterdir()):
         raise AgentRunError(f"operation artifact directory is not empty: {artifact_directory}")
     artifact_directory.mkdir(parents=True, exist_ok=True)
+    try:
+        execution_profile, route = select_profile(repository_root, settings, operation)
+    except ValueError as exc:
+        raise AgentRunError(f"cannot route operation profile: {exc}") from exc
+    checkpoint_index: int | str = ""
+    cycle_manifest_path = run_directory / "daily_run.json"
+    if cycle_manifest_path.is_file() and not cycle_manifest_path.is_symlink():
+        try:
+            cycle_manifest = json.loads(cycle_manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise AgentRunError(f"cannot read daily cycle before routing: {exc}") from exc
+        if isinstance(cycle_manifest, dict) and cycle_manifest.get("daily_run_version") == 2:
+            raw_index = cycle_manifest.get("next_checkpoint_index")
+            if isinstance(raw_index, bool) or not isinstance(raw_index, int):
+                raise AgentRunError("daily cycle checkpoint index is invalid")
+            checkpoint_index = raw_index
+    atomic_write_json(
+        artifact_directory / "profile_route.json",
+        {
+            "route_version": 1,
+            "run_id": run_id,
+            "operation_id": operation.operation_id,
+            **route.to_dict(),
+            "effective_model": execution_profile.model,
+            "reasoning_effort": execution_profile.reasoning_effort,
+            "maximum_turns": execution_profile.maximum_turns,
+            "timeout_seconds": execution_profile.timeout_seconds,
+            "weighted_cost": str(execution_profile.cost_weight),
+            "mutation_policy": execution_profile.mutation_policy,
+            "auxiliary_models": {
+                "web_extract": (
+                    f"{settings.hermes_auxiliary.web_extract_provider}:"
+                    f"{settings.hermes_auxiliary.web_extract_model}"
+                )
+            },
+            "checkpoint_index": checkpoint_index,
+        },
+        allowed_root=repository_root,
+    )
     preflight = preflight_hermes(
         repository_root,
         settings,
@@ -868,6 +1015,8 @@ def run_claimed_operation(
         operation_type=operation.operation_type,
         environment=environment,
         check_command=executor is _subprocess_executor,
+        execution_profile=execution_profile,
+        route=route,
     )
     injection_flags = prompt_injection_flags(repository_root, operation)
     prompt = build_controller_prompt(operation, run_id=run_id, injection_flags=injection_flags)
@@ -877,7 +1026,7 @@ def run_claimed_operation(
     atomic_write_json(
         preflight_path,
         {
-            "preflight_version": 3,
+            "preflight_version": 4,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "native_skill": _identity_payload(preflight.native_skill),
@@ -890,6 +1039,17 @@ def run_claimed_operation(
             "web_extract_model": preflight.web_extract_model,
             "web_extract_reasoning_effort": preflight.web_extract_reasoning_effort,
             "maximum_turns": preflight.maximum_turns,
+            "profile": preflight.profile,
+            "profile_policy_version": preflight.profile_policy_version,
+            "route_reason": preflight.route_reason,
+            "reasoning_effort": preflight.reasoning_effort,
+            "timeout_seconds": preflight.timeout_seconds,
+            "weighted_cost": str(preflight.weighted_cost),
+            "mutation_policy": preflight.mutation_policy,
+            "escalation_source": preflight.escalation_source,
+            "auxiliary_models": {
+                "web_extract": (f"{preflight.web_extract_provider}:{preflight.web_extract_model}")
+            },
             "web_extract_failure_policy": "native_bounded_raw_excerpt",
             "api_key_fallback": False,
             "external_skill_dirs": [
@@ -910,6 +1070,17 @@ def run_claimed_operation(
     operation_ids_before = set(operation_rows_before)
     issue_rows_before = {row["issue_id"]: row for row in read_table(repository_root, "issues")}
     _handoff_repository_data(repository_root, hermes_home)
+    protected_artifacts = {
+        path.relative_to(repository_root).as_posix(): (
+            path.read_bytes(),
+            stat.S_IMODE(path.stat().st_mode),
+        )
+        for path in (
+            artifact_directory / "profile_route.json",
+            prompt_path,
+            preflight_path,
+        )
+    }
     before = snapshot_repository(repository_root)
     child_environment = sanitized_hermes_environment(
         repository_root,
@@ -920,15 +1091,26 @@ def run_claimed_operation(
         operation_id=operation.operation_id,
         operation_type=operation.operation_type,
         auxiliary_required=operation.operation_type != "daily_podcast",
+        profile=execution_profile,
+        route=route,
     )
     command = hermes_command(settings, preflight, prompt)
     started = now()
     try:
         completed = executor(
-            command, repository_root, child_environment, settings.hermes.timeout_seconds
+            command, repository_root, child_environment, execution_profile.timeout_seconds
         )
     except subprocess.TimeoutExpired as exc:
-        raise AgentRunError(f"Hermes timed out after {settings.hermes.timeout_seconds}s") from exc
+        completed = subprocess.CompletedProcess(
+            command,
+            124,
+            stdout=(
+                exc.stdout.decode(errors="replace") if isinstance(exc.stdout, bytes) else exc.stdout
+            ),
+            stderr=(
+                exc.stderr.decode(errors="replace") if isinstance(exc.stderr, bytes) else exc.stderr
+            ),
+        )
     finished = now()
     profile_errors: list[str] = []
     try:
@@ -939,6 +1121,8 @@ def run_claimed_operation(
             operation_type=operation.operation_type,
             environment=child_environment,
             check_command=False,
+            execution_profile=execution_profile,
+            route=route,
         )
         if postflight != preflight:
             profile_errors.append(
@@ -959,7 +1143,7 @@ def run_claimed_operation(
     atomic_write_json(
         run_path,
         {
-            "run_version": 3,
+            "run_version": 4,
             "run_id": run_id,
             "operation_id": operation.operation_id,
             "returncode": execution.returncode,
@@ -975,6 +1159,17 @@ def run_claimed_operation(
             "web_extract_model": preflight.web_extract_model,
             "web_extract_reasoning_effort": preflight.web_extract_reasoning_effort,
             "maximum_turns": preflight.maximum_turns,
+            "profile": preflight.profile,
+            "profile_policy_version": preflight.profile_policy_version,
+            "route_reason": preflight.route_reason,
+            "reasoning_effort": preflight.reasoning_effort,
+            "timeout_seconds": preflight.timeout_seconds,
+            "weighted_cost": str(preflight.weighted_cost),
+            "mutation_policy": preflight.mutation_policy,
+            "escalation_source": preflight.escalation_source,
+            "auxiliary_models": {
+                "web_extract": (f"{preflight.web_extract_provider}:{preflight.web_extract_model}")
+            },
             "web_extract_failure_policy": "native_bounded_raw_excerpt",
         },
         allowed_root=repository_root,
@@ -993,11 +1188,17 @@ def run_claimed_operation(
         issue_rows_before=issue_rows_before,
         environment={
             "WIKI_PATH": str((repository_root / "data" / "wiki").resolve()),
+            "PAPERTRADER_EXECUTION_PROFILE": execution_profile.name,
+            "PAPERTRADER_PROFILE_POLICY_VERSION": route.profile_policy_version,
+            "PAPERTRADER_ROUTE_REASON": route.route_reason,
         },
     )
     validation_errors = [*validation.errors, *profile_errors]
     if execution.returncode != 0:
-        validation_errors.append(f"Hermes exited with status {execution.returncode}")
+        if execution.returncode == 124:
+            validation_errors.append(f"Hermes timed out after {execution_profile.timeout_seconds}s")
+        else:
+            validation_errors.append(f"Hermes exited with status {execution.returncode}")
     validation_path = artifact_directory / "validation_report.json"
     if validation_path.exists():
         validation_errors.append("Hermes created the controller-owned validation report")
@@ -1010,25 +1211,35 @@ def run_claimed_operation(
             "passed": not validation_errors,
             "changed_paths": list(validation.changed_paths),
             "errors": sorted(set(validation_errors)),
+            "profile": preflight.profile,
+            "profile_policy_version": preflight.profile_policy_version,
+            "route_reason": preflight.route_reason,
+            "effective_model": preflight.model,
+            "reasoning_effort": preflight.reasoning_effort,
+            "maximum_turns": preflight.maximum_turns,
+            "timeout_seconds": preflight.timeout_seconds,
+            "weighted_cost": str(preflight.weighted_cost),
+            "mutation_policy": preflight.mutation_policy,
+            "auxiliary_models": {
+                "web_extract": (f"{preflight.web_extract_provider}:{preflight.web_extract_model}")
+            },
+            "escalation_source": preflight.escalation_source,
         },
         allowed_root=repository_root,
     )
     if validation_errors:
-        agent_internal_paths = {
-            result_relative_path(run_id, operation.operation_id),
-            f"data/runs/{run_id}/{operation.operation_id}/command_audit.json",
-        }
-        internal_artifacts_are_regular = all(
-            path not in after.files or after.files[path].kind == "file"
-            for path in agent_internal_paths
+        retained_run_path = run_path.relative_to(repository_root).as_posix()
+        restore_errors = _restore_rejected_agent_delta(
+            repository_root,
+            tuple(path for path in delta.changed if path != retained_run_path),
+            protected_artifacts,
         )
+        if restore_errors:
+            validation_errors.extend(restore_errors)
         raise _PostRunValidationError(
             "; ".join(sorted(set(validation_errors))),
-            contained=(
-                not validation.changed_paths
-                and not profile_errors
-                and internal_artifacts_are_regular
-            ),
+            contained=not restore_errors and not profile_errors,
+            had_agent_delta=bool(validation.changed_paths),
         )
     return validation
 
@@ -1072,10 +1283,16 @@ def _run_claimed_and_disposition(
             error=f"agent_validation_failed:{issue_id}",
         )
         if (
-            operation.operation_type == "daily_podcast"
-            and isinstance(exc, _PostRunValidationError)
+            isinstance(exc, _PostRunValidationError)
             and exc.contained
-            and disposition == "failed"
+            and (
+                run_id.startswith("daily-")
+                or (
+                    operation.operation_type == "daily_podcast"
+                    and not exc.had_agent_delta
+                    and disposition == "failed"
+                )
+            )
         ):
             rejected_result_path = repository_root / result_relative_path(
                 run_id, operation.operation_id
@@ -1084,7 +1301,7 @@ def _run_claimed_and_disposition(
                 rejected_result_path.unlink(missing_ok=True)
             except OSError as cleanup_error:
                 raise AgentRunError(
-                    f"contained podcast failure could not remove its rejected result: "
+                    f"contained operation failure could not remove its rejected result: "
                     f"{cleanup_error}; recorded {issue_id}; queue disposition={disposition}"
                 ) from cleanup_error
             return "failed"
@@ -1164,6 +1381,155 @@ def run_one_operation(
         hermes_home=hermes_home,
         environment=environment,
         executor=executor,
+    )
+
+
+def run_cycle_operation(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    daily_cycle_id: str,
+    hermes_home: Path,
+    environment: Mapping[str, str],
+    operation_id: str | None = None,
+    operation_type: str | None = None,
+    executor: Executor = _subprocess_executor,
+) -> AgentCheckpointOutcome | None:
+    """Run one routed operation and atomically consume its durable cycle allowance."""
+
+    from papertrader.daily import (
+        DailyRunError,
+        record_cycle_checkpoint,
+        record_cycle_operation,
+    )
+
+    manifest_path = repository_root / "data" / "runs" / daily_cycle_id / "daily_run.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise AgentRunError(f"cannot read daily cycle manifest: {exc}") from exc
+    if not isinstance(manifest, dict) or manifest.get("daily_run_version") != 2:
+        raise AgentRunError("checkpointed operation requires a version-2 daily cycle")
+    if manifest.get("status") == "degraded":
+        return None
+    if int(manifest.get("remaining_operations", 0)) <= 0:
+        return None
+    attempted = manifest.get("operations_attempted", [])
+    if not isinstance(attempted, list) or not all(isinstance(value, str) for value in attempted):
+        raise AgentRunError("daily cycle attempted-operation accounting is invalid")
+    attempted_ids = set(attempted)
+    prepare_queue(repository_root)
+    candidates = [
+        Operation.from_row(row)
+        for row in read_table(repository_root, "operations_todo")
+        if row["status"] == "ready"
+        and row["operation_id"] not in attempted_ids
+        and (operation_id is None or row["operation_id"] == operation_id)
+        and (operation_type is None or row["operation_type"] == operation_type)
+    ]
+    candidates.sort(key=lambda item: (-item.priority, item.created_at, item.operation_id))
+    if not candidates:
+        return None
+    selected = candidates[0]
+    profile, _ = select_profile(repository_root, settings, selected)
+    used = Decimal(str(manifest.get("weighted_model_budget_used", "0")))
+    limit = Decimal(str(manifest.get("weighted_model_budget", "0")))
+    if used + profile.cost_weight > limit:
+        return None
+    status = run_one_operation(
+        repository_root,
+        settings,
+        run_id=daily_cycle_id,
+        hermes_home=hermes_home,
+        environment=environment,
+        operation_id=selected.operation_id,
+        operation_type=selected.operation_type,
+        estimated_cost=profile.cost_weight,
+        executor=executor,
+    )
+    if status == "no_operation":
+        return None
+    route_path = (
+        repository_root
+        / "data"
+        / "runs"
+        / daily_cycle_id
+        / selected.operation_id
+        / "profile_route.json"
+    )
+    try:
+        route_document = json.loads(route_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise AgentRunError(f"cannot read persisted operation profile route: {exc}") from exc
+    queue_row = next(
+        (
+            row
+            for table in ("operations_todo", "operations_history")
+            for row in read_table(repository_root, table)
+            if row["operation_id"] == selected.operation_id
+        ),
+        None,
+    )
+    if queue_row is None:
+        raise AgentRunError("completed cycle operation is absent from queue history")
+    atomic_write_json(
+        route_path.with_name("operation_history.json"),
+        {
+            "operation_history_version": 1,
+            "daily_cycle_id": daily_cycle_id,
+            "operation_id": selected.operation_id,
+            "operation_type": selected.operation_type,
+            "cycle_disposition": status,
+            "queue_status": queue_row.get("terminal_status") or queue_row.get("status", ""),
+            "queue_updated_at": queue_row.get("completed_at") or queue_row.get("updated_at", ""),
+            **{
+                key: route_document.get(key, "")
+                for key in (
+                    "profile",
+                    "profile_policy_version",
+                    "route_reason",
+                    "effective_model",
+                    "reasoning_effort",
+                    "maximum_turns",
+                    "timeout_seconds",
+                    "weighted_cost",
+                    "mutation_policy",
+                    "auxiliary_models",
+                    "escalation_source",
+                    "checkpoint_index",
+                )
+            },
+        },
+        allowed_root=repository_root,
+    )
+    try:
+        accounting = record_cycle_operation(
+            repository_root,
+            daily_cycle_id=daily_cycle_id,
+            operation_id=selected.operation_id,
+            terminal_status=status,
+        )
+        checkpoint = record_cycle_checkpoint(
+            repository_root,
+            daily_cycle_id=daily_cycle_id,
+            kind="operation",
+            operation_id=selected.operation_id,
+            operation_type=selected.operation_type,
+            terminal_status=status,
+            profile=profile.name,
+        )
+    except DailyRunError as exc:
+        raise AgentRunError(f"cannot record daily operation checkpoint: {exc}") from exc
+    raw_checkpoint_index = checkpoint.get("index")
+    if isinstance(raw_checkpoint_index, bool) or not isinstance(raw_checkpoint_index, int):
+        raise AgentRunError("recorded checkpoint index is invalid")
+    return AgentCheckpointOutcome(
+        operation_id=selected.operation_id,
+        operation_type=selected.operation_type,
+        status=status,
+        profile=profile.name,
+        checkpoint_index=raw_checkpoint_index,
+        weighted_cost=Decimal(str(accounting["weighted_cost"])),
     )
 
 

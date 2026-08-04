@@ -16,6 +16,7 @@ from papertrader.advice import refresh_advice, validate_advice
 from papertrader.agent_runner import (
     configure_hermes_home,
     preflight_hermes,
+    run_cycle_operation,
     run_one_operation,
 )
 from papertrader.allocation import (
@@ -24,15 +25,19 @@ from papertrader.allocation import (
     plan_allocation,
     write_calibration_report,
 )
+from papertrader.checkpoints import create_checkpoint
 from papertrader.command_audit import audit_context, canonical_command, record_command
-from papertrader.command_scope import command_allowed
+from papertrader.command_scope import command_allowed, normalized_command
 from papertrader.config import ConfigurationError, Settings, find_repository_root, load_settings
 from papertrader.corporate_actions import accrue_dividends
 from papertrader.daily import (
+    complete_daily_cycle,
     execute_agent_batch,
     finalize_daily_run,
     prepare_daily_run,
+    record_cycle_checkpoint,
     record_local_agent_outcome,
+    resume_or_create_daily_cycle,
 )
 from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
@@ -71,8 +76,14 @@ from papertrader.orders import (
     leg_from_mapping,
 )
 from papertrader.performance import rebase_performance, update_performance
-from papertrader.podcast import assemble_podcast, enqueue_daily_podcast, finalize_daily_podcast
+from papertrader.podcast import (
+    build_podcast_context,
+    enqueue_daily_podcast,
+    finalize_daily_podcast,
+    render_committed_podcast,
+)
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
+from papertrader.profiles import analyst_relationship_gate
 from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.queue import (
     OPERATION_SKILLS,
@@ -103,7 +114,12 @@ from papertrader.seekingalpha import (
     schedule_seekingalpha_discovery,
 )
 from papertrader.tables import read_table
-from papertrader.telegram import committed_run_report_path, deliver_committed_report
+from papertrader.telegram import (
+    committed_run_report_path,
+    deliver_committed_report,
+    deliver_podcast_audio,
+    record_podcast_audio_failure,
+)
 from papertrader.utils import (
     CanonicalValueError,
     parse_iso_date,
@@ -171,6 +187,12 @@ def _parser() -> argparse.ArgumentParser:
 
     daily = commands.add_parser("daily", help="run sequential deterministic daily phases")
     daily_commands = daily.add_subparsers(dest="daily_command", required=True)
+    daily_cycle = daily_commands.add_parser("resume-or-create")
+    daily_cycle.add_argument("--trigger", required=True)
+    daily_cycle.add_argument("--source-sha", required=True)
+    daily_cycle.add_argument("--github-run-id", required=True)
+    daily_cycle.add_argument("--workflow-attempt", required=True)
+    daily_cycle.add_argument("--resume-cycle-id", default="")
     daily_prepare = daily_commands.add_parser("prepare")
     daily_prepare.add_argument("--run-id", required=True)
     daily_prepare.add_argument("--trigger", required=True)
@@ -180,13 +202,43 @@ def _parser() -> argparse.ArgumentParser:
     daily_finalize = daily_commands.add_parser("finalize")
     daily_finalize.add_argument("--run-id", required=True)
     daily_finalize.add_argument("--github-report-url", required=True)
+    daily_complete = daily_commands.add_parser("complete")
+    daily_complete.add_argument("--daily-cycle-id", required=True)
+    daily_checkpoint = daily_commands.add_parser("record-checkpoint")
+    daily_checkpoint.add_argument("--daily-cycle-id", required=True)
+    daily_checkpoint.add_argument(
+        "--kind",
+        choices=(
+            "preparation",
+            "operation",
+            "failure",
+            "finalization",
+            "podcast_text",
+            "credential",
+        ),
+        required=True,
+    )
+    daily_checkpoint.add_argument("--operation-id", default="")
+    daily_checkpoint.add_argument("--operation-type", default="")
+    daily_checkpoint.add_argument("--terminal-status", default="")
+    daily_checkpoint.add_argument("--profile", default="")
 
     podcast = commands.add_parser("podcast", help="generate the final sequential daily podcast")
     podcast_commands = podcast.add_subparsers(dest="podcast_command", required=True)
     podcast_enqueue = podcast_commands.add_parser("enqueue")
     podcast_enqueue.add_argument("--run-id", required=True)
-    podcast_assemble = podcast_commands.add_parser("assemble")
-    podcast_assemble.add_argument("--request", type=Path, required=True)
+    podcast_context = podcast_commands.add_parser("context")
+    podcast_context_commands = podcast_context.add_subparsers(
+        dest="podcast_context_command", required=True
+    )
+    podcast_context_build = podcast_context_commands.add_parser("build")
+    podcast_context_build.add_argument("--daily-cycle-id", required=True)
+    podcast_context_build.add_argument("--cutoff", required=True)
+    podcast_render = podcast_commands.add_parser("render")
+    podcast_render.add_argument("--daily-cycle-id", required=True)
+    podcast_render.add_argument("--script-commit", required=True)
+    podcast_render.add_argument("--script-path", required=True)
+    podcast_render.add_argument("--output-directory", type=Path, required=True)
     podcast_finalize = podcast_commands.add_parser("finalize")
     podcast_finalize.add_argument("--run-id", required=True)
 
@@ -338,6 +390,11 @@ def _parser() -> argparse.ArgumentParser:
     agent_batch.add_argument("--max-operations", type=int, required=True)
     agent_batch.add_argument("--operation-id")
     agent_batch.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
+    agent_checkpoint = agent_commands.add_parser("run-checkpoint")
+    agent_checkpoint.add_argument("--hermes-home", type=Path, required=True)
+    agent_checkpoint.add_argument("--daily-cycle-id", required=True)
+    agent_checkpoint.add_argument("--operation-id")
+    agent_checkpoint.add_argument("--operation-type", choices=sorted(OPERATION_SKILLS))
     agent_harness = agent_commands.add_parser(
         "harness", help="run one operation through a local agentic harness"
     )
@@ -362,6 +419,14 @@ def _parser() -> argparse.ArgumentParser:
     telegram_deliver_run.add_argument("--commit-sha", required=True)
     telegram_deliver_run.add_argument("--repository-url", required=True)
     telegram_deliver_run.add_argument("--run-id", required=True)
+    telegram_audio = telegram_commands.add_parser("deliver-audio")
+    telegram_audio.add_argument("--manifest-path", type=Path, required=True)
+    telegram_audio.add_argument("--audio-path", type=Path, required=True)
+    telegram_audio.add_argument("--repository-url", required=True)
+    telegram_audio_failure = telegram_commands.add_parser("record-audio-failure")
+    telegram_audio_failure.add_argument("--daily-cycle-id", required=True)
+    telegram_audio_failure.add_argument("--script-commit", required=True)
+    telegram_audio_failure.add_argument("--error", required=True)
 
     workflow = commands.add_parser("workflow", help="handoff validated runtime patches")
     workflow_commands = workflow.add_subparsers(dest="workflow_command", required=True)
@@ -380,6 +445,17 @@ def _parser() -> argparse.ArgumentParser:
     oauth_apply = oauth_commands.add_parser("apply")
     oauth_apply.add_argument("--artifact-directory", type=Path, required=True)
     oauth_apply.add_argument("--expected-sha256", required=True)
+    checkpoint = workflow_commands.add_parser("checkpoint")
+    checkpoint.add_argument("--daily-cycle-id", required=True)
+    checkpoint.add_argument("--checkpoint-index", type=int, required=True)
+    checkpoint.add_argument("--kind", required=True)
+    checkpoint.add_argument("--operation-id", default="")
+    checkpoint.add_argument("--operation-type", default="")
+    checkpoint.add_argument("--terminal-status", default="")
+    checkpoint.add_argument("--profile", default="")
+    checkpoint.add_argument("--target-branch", default="main")
+    checkpoint.add_argument("--remote", default="origin")
+    checkpoint.add_argument("--dry-run", action="store_true")
 
     whitelist = commands.add_parser(
         "runtime-whitelist", help="validate automated runtime commit paths"
@@ -1026,6 +1102,18 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
     if arguments.command == "market":
         return _print_result("market", update_market_data(root, settings))
     if arguments.command == "daily":
+        if arguments.daily_command == "resume-or-create":
+            cycle = resume_or_create_daily_cycle(
+                root,
+                settings,
+                trigger=arguments.trigger,
+                source_sha=arguments.source_sha,
+                github_run_id=arguments.github_run_id,
+                workflow_attempt=arguments.workflow_attempt,
+                resume_cycle_id=arguments.resume_cycle_id,
+            )
+            print(json.dumps(cycle, sort_keys=True))
+            return 0
         if arguments.daily_command == "prepare":
             daily_preparation = prepare_daily_run(
                 root,
@@ -1048,6 +1136,26 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 )
             )
             return 0
+        if arguments.daily_command == "record-checkpoint":
+            checkpoint = record_cycle_checkpoint(
+                root,
+                daily_cycle_id=arguments.daily_cycle_id,
+                kind=arguments.kind,
+                operation_id=arguments.operation_id,
+                operation_type=arguments.operation_type,
+                terminal_status=arguments.terminal_status,
+                profile=arguments.profile,
+            )
+            print(json.dumps(checkpoint, sort_keys=True))
+            return 0
+        if arguments.daily_command == "complete":
+            print(
+                json.dumps(
+                    complete_daily_cycle(root, daily_cycle_id=arguments.daily_cycle_id),
+                    sort_keys=True,
+                )
+            )
+            return 0
         daily_finalization = finalize_daily_run(
             root,
             settings,
@@ -1065,10 +1173,32 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 )
             )
             return 0
-        if arguments.podcast_command == "assemble":
+        if arguments.podcast_command == "context":
+            cutoff = parse_timestamp(arguments.cutoff)
+            if cutoff is None:
+                raise CanonicalValueError("podcast cutoff must be a UTC timestamp")
+            print(
+                build_podcast_context(
+                    root,
+                    settings,
+                    daily_cycle_id=arguments.daily_cycle_id,
+                    cutoff=cutoff,
+                )
+            )
+            return 0
+        if arguments.podcast_command == "render":
             print(
                 json.dumps(
-                    asdict(assemble_podcast(root, _request_object(root, arguments.request))),
+                    asdict(
+                        render_committed_podcast(
+                            root,
+                            settings,
+                            daily_cycle_id=arguments.daily_cycle_id,
+                            script_commit=arguments.script_commit,
+                            script_path=arguments.script_path,
+                            output_directory=arguments.output_directory,
+                        )
+                    ),
                     sort_keys=True,
                 )
             )
@@ -1167,6 +1297,22 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 )
             )
             return 0
+        if arguments.agent_command == "run-checkpoint":
+            checkpoint_outcome = run_cycle_operation(
+                root,
+                settings,
+                daily_cycle_id=arguments.daily_cycle_id,
+                hermes_home=home,
+                environment=os.environ,
+                operation_id=arguments.operation_id,
+                operation_type=arguments.operation_type,
+            )
+            print(
+                "null"
+                if checkpoint_outcome is None
+                else json.dumps(asdict(checkpoint_outcome), sort_keys=True, default=str)
+            )
+            return 0
         disposition = run_one_operation(
             root,
             settings,
@@ -1180,6 +1326,27 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(disposition)
         return 0
     if arguments.command == "telegram":
+        if arguments.telegram_command == "record-audio-failure":
+            failure_result = record_podcast_audio_failure(
+                root,
+                daily_cycle_id=arguments.daily_cycle_id,
+                script_commit=arguments.script_commit,
+                error=arguments.error,
+            )
+            print(json.dumps(asdict(failure_result), sort_keys=True))
+            return 0
+        if arguments.telegram_command == "deliver-audio":
+            audio_delivery_result = deliver_podcast_audio(
+                root,
+                settings,
+                manifest_path=arguments.manifest_path,
+                audio_path=arguments.audio_path,
+                repository_url=arguments.repository_url,
+                token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
+                chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+            )
+            print(json.dumps(asdict(audio_delivery_result), sort_keys=True))
+            return 0
         report_path = (
             committed_run_report_path(
                 root,
@@ -1189,7 +1356,7 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             if arguments.telegram_command == "deliver-run"
             else arguments.report_path
         )
-        delivery_result = deliver_committed_report(
+        report_delivery_result = deliver_committed_report(
             root,
             settings,
             commit_sha=arguments.commit_sha,
@@ -1199,7 +1366,7 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
             chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
         )
-        print(json.dumps(asdict(delivery_result), sort_keys=True))
+        print(json.dumps(asdict(report_delivery_result), sort_keys=True))
         return 0
     if arguments.command == "workflow":
         if arguments.workflow_command == "bundle":
@@ -1225,13 +1392,30 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                     sort_keys=True,
                 )
             )
-        else:
+        elif arguments.workflow_command == "oauth-artifact":
             path = apply_oauth_ciphertext_artifact(
                 root,
                 arguments.artifact_directory,
                 expected_sha256=arguments.expected_sha256,
             )
             print(path.relative_to(root).as_posix())
+        else:
+            checkpoint_result = create_checkpoint(
+                root,
+                settings,
+                daily_cycle_id=arguments.daily_cycle_id,
+                checkpoint_index=arguments.checkpoint_index,
+                kind=arguments.kind,
+                operation_id=arguments.operation_id,
+                operation_type=arguments.operation_type,
+                terminal_status=arguments.terminal_status,
+                profile=arguments.profile,
+                target_branch=arguments.target_branch,
+                remote=arguments.remote,
+                dry_run=arguments.dry_run,
+                github_token=os.environ.get("GITHUB_TOKEN", ""),
+            )
+            print(json.dumps(asdict(checkpoint_result), sort_keys=True))
         return 0
     if arguments.command == "portfolio" and arguments.portfolio_command == "reconcile":
         return _print_result("portfolio", reconcile_portfolio(root))
@@ -1330,6 +1514,7 @@ def main(argv: Sequence[str] | None = None) -> int:
                 context.operation_type,
                 raw_arguments,
                 pre_dispatch=True,
+                profile=context.profile,
             ):
                 print(
                     "ERROR [command-scope] "
@@ -1338,6 +1523,21 @@ def main(argv: Sequence[str] | None = None) -> int:
                     file=sys.stderr,
                 )
                 return 2
+            if context.profile == "analyst" and normalized_command(raw_arguments)[:3] == (
+                "research",
+                "relationship",
+                "upsert",
+            ):
+                request_path = getattr(arguments, "request", None)
+                if request_path is None or not analyst_relationship_gate(
+                    root, _request_object(root, request_path)
+                ):
+                    print(
+                        "ERROR [profile-scope] analyst relationship change requires a "
+                        "deep allocation-enablement review",
+                        file=sys.stderr,
+                    )
+                    return 2
             before = snapshot_repository(root)
         settings = load_settings(root, os.environ)
         exit_code = _dispatch(arguments, root, settings)

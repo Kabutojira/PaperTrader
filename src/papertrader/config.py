@@ -21,7 +21,7 @@ class ConfigurationError(ValueError):
 
 
 DEFAULT_AUXILIARY_MODEL = "openai-codex:gpt-5.6-terra"
-DEFAULT_HERMES_MAXIMUM_TURNS = 180
+DEFAULT_MAX_OPERATIONS = 20
 SUPPORTED_AUXILIARY_PROVIDERS = frozenset({"openai-codex", "openrouter"})
 
 
@@ -168,7 +168,9 @@ class OperationSettings:
     lease_duration: timedelta
     default_max_attempts: int
     maximum_llm_operations_per_run: int
+    cycle_maximum_operations: int
     maximum_model_budget_usd_per_run: Decimal
+    maximum_weighted_model_budget_per_cycle: Decimal
 
 
 @dataclass(frozen=True, slots=True)
@@ -213,19 +215,53 @@ class SeekingAlphaSettings:
 
 
 @dataclass(frozen=True, slots=True)
+class HermesExecutionProfile:
+    """One controller-owned Hermes execution and mutation authority profile."""
+
+    name: str
+    policy_version: str
+    provider: str
+    model: str
+    reasoning_effort: str
+    maximum_turns: int
+    timeout_seconds: int
+    cost_weight: Decimal
+    toolsets: tuple[str, ...]
+    mutation_policy: str
+    escalation_targets: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
 class HermesSettings:
-    """Pinned one-shot Hermes invocation and main-provider policy."""
+    """Pinned Hermes command plus the three controller-owned execution profiles."""
 
     command: tuple[str, ...]
     arguments: tuple[str, ...]
-    provider: str
-    model: str
-    toolsets: tuple[str, ...]
     required_native_skill: str
     required_native_skill_version: str
     inference_environment: tuple[str, ...]
-    maximum_turns: int
-    timeout_seconds: int
+    profiles: tuple[HermesExecutionProfile, ...]
+
+    def profile(self, name: str) -> HermesExecutionProfile:
+        """Return a named execution profile or fail configuration closed."""
+
+        for profile in self.profiles:
+            if profile.name == name:
+                return profile
+        raise ConfigurationError(f"unknown Hermes execution profile: {name}")
+
+    @property
+    def deep(self) -> HermesExecutionProfile:
+        """Return the compatibility/default profile used by maintenance commands."""
+
+        return self.profile("deep")
+
+    # Compatibility accessors keep non-operation wiki maintenance on the deep profile.
+    provider = property(lambda self: self.deep.provider)
+    model = property(lambda self: self.deep.model)
+    toolsets = property(lambda self: self.deep.toolsets)
+    maximum_turns = property(lambda self: self.deep.maximum_turns)
+    timeout_seconds = property(lambda self: self.deep.timeout_seconds)
 
 
 @dataclass(frozen=True, slots=True)
@@ -245,6 +281,18 @@ class TelegramSettings:
     maximum_attempts: int
     timeout_seconds: int
     message_limit: int
+    audio_maximum_bytes: int
+
+
+@dataclass(frozen=True, slots=True)
+class PodcastSettings:
+    """Deterministic ephemeral TTS rendering limits."""
+
+    tts_command: tuple[str, ...]
+    voice: str
+    chunk_character_limit: int
+    minimum_duration_seconds: int
+    maximum_duration_seconds: int
 
 
 @dataclass(frozen=True, slots=True)
@@ -269,6 +317,7 @@ class Settings:
     hermes: HermesSettings
     hermes_auxiliary: HermesAuxiliarySettings
     telegram: TelegramSettings
+    podcast: PodcastSettings
 
 
 def find_repository_root(start: Path | None = None) -> Path:
@@ -368,6 +417,7 @@ def _choice(
 
 def _load_runtime_settings(
     parser: configparser.ConfigParser,
+    environment: Mapping[str, str],
 ) -> tuple[
     MarketDataSettings,
     IndicatorSettings,
@@ -680,8 +730,37 @@ def _load_runtime_settings(
         maximum_llm_operations_per_run=_positive_int(
             parser, "operations", "maximum_llm_operations_per_run"
         ),
+        cycle_maximum_operations=0,
         maximum_model_budget_usd_per_run=_decimal(
             parser, "operations", "maximum_model_budget_usd_per_run"
+        ),
+        maximum_weighted_model_budget_per_cycle=_decimal(
+            parser, "operations", "maximum_weighted_model_budget_per_cycle"
+        ),
+    )
+    raw_cycle_maximum = environment.get("MAX_OPERATIONS", "").strip()
+    if not raw_cycle_maximum:
+        raw_cycle_maximum = str(
+            min(DEFAULT_MAX_OPERATIONS, operations.maximum_llm_operations_per_run)
+        )
+    try:
+        cycle_maximum_operations = int(raw_cycle_maximum)
+    except ValueError as exc:
+        raise ConfigurationError("MAX_OPERATIONS must be a positive integer") from exc
+    if cycle_maximum_operations <= 0:
+        raise ConfigurationError("MAX_OPERATIONS must be a positive integer")
+    if cycle_maximum_operations > operations.maximum_llm_operations_per_run:
+        raise ConfigurationError(
+            "MAX_OPERATIONS must not exceed operations.maximum_llm_operations_per_run"
+        )
+    operations = OperationSettings(
+        lease_duration=operations.lease_duration,
+        default_max_attempts=operations.default_max_attempts,
+        maximum_llm_operations_per_run=operations.maximum_llm_operations_per_run,
+        cycle_maximum_operations=cycle_maximum_operations,
+        maximum_model_budget_usd_per_run=operations.maximum_model_budget_usd_per_run,
+        maximum_weighted_model_budget_per_cycle=(
+            operations.maximum_weighted_model_budget_per_cycle
         ),
     )
     raw_command = parser.get("classifier", "command", fallback="").strip()
@@ -831,31 +910,16 @@ def _load_hermes_settings(
 
     command = tuple(shlex.split(parser.get("hermes", "command")))
     arguments = tuple(shlex.split(parser.get("hermes", "arguments")))
-    provider = parser.get("hermes", "provider").strip()
-    model = parser.get("hermes", "model").strip()
     toolsets = _csv_values(parser, "hermes", "toolsets")
     required_skill = parser.get("hermes", "require_native_skill").strip()
     required_version = parser.get("hermes", "native_skill_version").strip()
     inference_environment = (
         (auxiliary.web_extract_api_key_env,) if auxiliary.web_extract_api_key_env else ()
     )
-    raw_maximum_turns = environment.get("MAX_OPERATIONS", "").strip()
-    if not raw_maximum_turns:
-        raw_maximum_turns = str(DEFAULT_HERMES_MAXIMUM_TURNS)
-    try:
-        maximum_turns = int(raw_maximum_turns)
-    except ValueError as exc:
-        raise ConfigurationError("MAX_OPERATIONS must be a positive integer") from exc
-    if maximum_turns <= 0:
-        raise ConfigurationError("MAX_OPERATIONS must be a positive integer")
     if command != ("hermes", "chat"):
         raise ConfigurationError("hermes.command must be exactly the hermes chat entry point")
     if arguments != ("--quiet", "--yolo"):
         raise ConfigurationError("hermes.arguments must be exactly --quiet --yolo")
-    if provider != "openai-codex":
-        raise ConfigurationError("hermes.provider must be exactly openai-codex")
-    if not model or any(character.isspace() for character in model):
-        raise ConfigurationError("hermes.model must be one non-empty model identifier")
     if set(toolsets) != {"file", "terminal", "web"}:
         raise ConfigurationError("hermes.toolsets must be exactly web,file,terminal")
     if required_skill != "llm-wiki" or not required_version:
@@ -874,17 +938,68 @@ def _load_hermes_settings(
         for name in inference_environment
     ):
         raise ConfigurationError("hermes.inference_environment contains a forbidden name")
+    profiles: list[HermesExecutionProfile] = []
+    profile_contract = (
+        ("scout", "HERMES_SCOUT_MAX_TURNS", ("analyst", "deep")),
+        ("analyst", "HERMES_ANALYST_MAX_TURNS", ("deep",)),
+        ("deep", "HERMES_DEEP_MAX_TURNS", ()),
+    )
+    for name, override_name, escalation_targets in profile_contract:
+        section = f"hermes_profile_{name}"
+        provider = parser.get(section, "provider", fallback="openai-codex").strip()
+        model = parser.get(section, "model").strip()
+        reasoning_effort = parser.get(section, "reasoning_effort").strip()
+        raw_turns = environment.get(override_name, "").strip()
+        try:
+            maximum_turns = (
+                int(raw_turns) if raw_turns else _positive_int(parser, section, "maximum_turns")
+            )
+        except ValueError as exc:
+            raise ConfigurationError(f"{override_name} must be a positive integer") from exc
+        if maximum_turns <= 0:
+            raise ConfigurationError(f"{override_name} must be a positive integer")
+        if provider != "openai-codex":
+            raise ConfigurationError(f"{section}.provider must be exactly openai-codex")
+        if not model or any(character.isspace() for character in model):
+            raise ConfigurationError(f"{section}.model must be one non-empty identifier")
+        if reasoning_effort not in {"low", "medium", "high"}:
+            raise ConfigurationError(f"{section}.reasoning_effort is invalid")
+        mutation_policy = parser.get(section, "mutation_policy").strip()
+        expected_policy = {
+            "scout": "triage_only",
+            "analyst": "routine_research",
+            "deep": "full_research",
+        }[name]
+        if mutation_policy != expected_policy:
+            raise ConfigurationError(f"{section}.mutation_policy must be {expected_policy}")
+        profiles.append(
+            HermesExecutionProfile(
+                name=name,
+                policy_version=parser.get(
+                    section, "policy_version", fallback="profile-router-v1"
+                ).strip(),
+                provider=provider,
+                model=model,
+                reasoning_effort=reasoning_effort,
+                maximum_turns=maximum_turns,
+                timeout_seconds=_positive_int(parser, section, "timeout_seconds"),
+                cost_weight=_decimal(parser, section, "cost_weight", minimum=Decimal("0.0001")),
+                toolsets=toolsets,
+                mutation_policy=mutation_policy,
+                escalation_targets=escalation_targets,
+            )
+        )
+    if tuple(profile.cost_weight for profile in profiles) != tuple(
+        sorted(profile.cost_weight for profile in profiles)
+    ):
+        raise ConfigurationError("Hermes profile cost weights must be nondecreasing")
     return HermesSettings(
         command=command,
         arguments=arguments,
-        provider=provider,
-        model=model,
-        toolsets=toolsets,
         required_native_skill=required_skill,
         required_native_skill_version=required_version,
         inference_environment=inference_environment,
-        maximum_turns=maximum_turns,
-        timeout_seconds=_positive_int(parser, "hermes", "timeout_seconds"),
+        profiles=tuple(profiles),
     )
 
 
@@ -895,11 +1010,30 @@ def _load_telegram_settings(parser: configparser.ConfigParser) -> TelegramSettin
         maximum_attempts=_positive_int(parser, "telegram", "maximum_attempts"),
         timeout_seconds=_positive_int(parser, "telegram", "timeout_seconds"),
         message_limit=_positive_int(parser, "telegram", "message_limit"),
+        audio_maximum_bytes=_positive_int(parser, "telegram", "audio_maximum_bytes"),
     )
     if settings.maximum_attempts > 10:
         raise ConfigurationError("telegram.maximum_attempts must be <= 10")
     if settings.message_limit > 32768:
         raise ConfigurationError("telegram.message_limit must be <= 32768")
+    return settings
+
+
+def _load_podcast_settings(parser: configparser.ConfigParser) -> PodcastSettings:
+    command = tuple(shlex.split(parser.get("podcast", "tts_command")))
+    if not command:
+        raise ConfigurationError("podcast.tts_command must not be empty")
+    settings = PodcastSettings(
+        tts_command=command,
+        voice=parser.get("podcast", "voice").strip(),
+        chunk_character_limit=_positive_int(parser, "podcast", "chunk_character_limit"),
+        minimum_duration_seconds=_positive_int(parser, "podcast", "minimum_duration_seconds"),
+        maximum_duration_seconds=_positive_int(parser, "podcast", "maximum_duration_seconds"),
+    )
+    if not settings.voice:
+        raise ConfigurationError("podcast.voice must not be empty")
+    if settings.minimum_duration_seconds >= settings.maximum_duration_seconds:
+        raise ConfigurationError("podcast duration bounds are invalid")
     return settings
 
 
@@ -950,10 +1084,11 @@ def _load_settings_unchecked(
         classifier,
         youtube,
         seekingalpha,
-    ) = _load_runtime_settings(parser)
+    ) = _load_runtime_settings(parser, environment)
     hermes_auxiliary = _load_hermes_auxiliary_settings(parser, environment)
     hermes = _load_hermes_settings(parser, hermes_auxiliary, environment)
     telegram = _load_telegram_settings(parser)
+    podcast = _load_podcast_settings(parser)
 
     return Settings(
         config=parser,
@@ -974,6 +1109,7 @@ def _load_settings_unchecked(
         hermes=hermes,
         hermes_auxiliary=hermes_auxiliary,
         telegram=telegram,
+        podcast=podcast,
     )
 
 

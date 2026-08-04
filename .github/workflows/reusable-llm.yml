@@ -1,141 +1,133 @@
-name: Reusable sequential PaperTrader runtime
+name: Reusable checkpointed PaperTrader daily cycle
 
 on:
   workflow_call:
     inputs:
       operation_id:
-        description: Optional immutable operation ID
         required: false
         default: ""
         type: string
       operation_type:
-        description: Optional supported operation type
         required: false
         default: ""
         type: string
       max_operations:
-        description: Maximum operations executed sequentially
+        description: Maximum queued research iterations in this daily cycle
         required: false
         default: "1"
         type: string
+      resume_cycle_id:
+        description: Optional timestamped cycle to resume
+        required: false
+        default: ""
+        type: string
       dry_run:
-        description: Exercise the runtime without inference, commit, or push
         required: false
         default: true
         type: boolean
       generate_podcast:
-        description: Generate the final sequential daily podcast
         required: false
         default: false
         type: boolean
       wiki_maintenance:
-        description: Run the weekly native llm-wiki maintenance pass before queued operations
         required: false
         default: false
         type: boolean
       scan_youtube:
-        description: Scan curated YouTube channels before OAuth restoration
         required: false
         default: false
         type: boolean
       scan_seekingalpha:
-        description: Schedule search-index-only Seeking Alpha discovery before OAuth restoration
         required: false
         default: false
         type: boolean
       target_branch:
-        description: Default branch receiving a validated runtime commit
         required: false
         default: ""
         type: string
       trigger:
-        description: Machine-readable run trigger
         required: false
         default: workflow_dispatch
         type: string
       serialized_by_caller:
-        description: Caller already holds the papertrader-write concurrency group
         required: false
         default: false
         type: boolean
     secrets:
       OPENAI_OAUTH_SECRET:
-        description: age private identity used only by runtime credential steps
         required: false
       OPENROUTER_API_KEY:
-        description: Optional credential when AUXILIARY_MODEL selects OpenRouter
         required: false
       YOUTUBE_DATA_API:
-        description: Optional YouTube Data API key for curated discovery
         required: false
     outputs:
       commit_sha:
-        description: Validated runtime commit, or the unchanged base SHA
-        value: ${{ jobs.commit.outputs.commit_sha }}
+        value: ${{ jobs.runtime.outputs.commit_sha }}
       changed:
-        description: Whether the runtime patch contained repository changes
-        value: ${{ jobs.commit.outputs.changed }}
+        value: ${{ jobs.runtime.outputs.changed }}
       report_path:
-        description: Canonical daily report path
-        value: ${{ jobs.commit.outputs.report_path }}
+        value: ${{ jobs.runtime.outputs.report_path }}
       run_id:
-        description: Immutable workflow run ID
-        value: ${{ jobs.runtime.outputs.run_id }}
+        value: ${{ jobs.runtime.outputs.daily_cycle_id }}
+      daily_cycle_id:
+        value: ${{ jobs.runtime.outputs.daily_cycle_id }}
       oauth_changed:
-        description: Whether refreshed encrypted OpenAI OAuth state was committed
-        value: ${{ jobs.commit.outputs.oauth_changed }}
+        value: ${{ jobs.runtime.outputs.oauth_changed }}
       podcast_status:
-        description: Terminal daily podcast status, or skipped when disabled or dry
         value: ${{ jobs.runtime.outputs.podcast_status }}
+      podcast_path:
+        value: ${{ jobs.runtime.outputs.podcast_path }}
+      audio_artifact_name:
+        value: ${{ jobs.runtime.outputs.audio_artifact_name }}
+      audio_path:
+        value: ${{ jobs.runtime.outputs.audio_path }}
+      audio_manifest_path:
+        value: ${{ jobs.runtime.outputs.audio_manifest_path }}
+      audio_render_status:
+        value: ${{ jobs.runtime.outputs.audio_render_status }}
   workflow_dispatch:
     inputs:
       operation_id:
-        description: Optional immutable operation ID
         required: false
         default: ""
         type: string
       operation_type:
-        description: Optional supported operation type
         required: false
         default: ""
         type: string
       max_operations:
-        description: Maximum operations executed sequentially
         required: false
         default: "1"
         type: string
+      resume_cycle_id:
+        required: false
+        default: ""
+        type: string
       dry_run:
-        description: Exercise the runtime without inference, commit, or push
         required: false
         default: true
         type: boolean
       generate_podcast:
-        description: Generate the final sequential daily podcast
         required: false
         default: false
         type: boolean
       wiki_maintenance:
-        description: Run the weekly native llm-wiki maintenance pass before queued operations
         required: false
         default: false
         type: boolean
       scan_youtube:
-        description: Scan curated YouTube channels before OAuth restoration
         required: false
         default: false
         type: boolean
       scan_seekingalpha:
-        description: Schedule search-index-only Seeking Alpha discovery before OAuth restoration
         required: false
         default: false
         type: boolean
       target_branch:
-        description: Branch receiving a validated runtime commit
         required: false
         default: ""
         type: string
       trigger:
-        description: Machine-readable run trigger
         required: false
         default: workflow_dispatch
         type: string
@@ -150,9 +142,9 @@ concurrency:
 jobs:
   runtime:
     runs-on: ubuntu-24.04
-    timeout-minutes: 120
+    timeout-minutes: 180
     permissions:
-      contents: read
+      contents: write
     container:
       image: nousresearch/hermes-agent@sha256:a6ce64e2038867885c2c90f6602425e6e70293d5e6d952a0e603a99265e01c40
       options: --user 0:0
@@ -161,20 +153,25 @@ jobs:
         shell: bash
     env:
       AUXILIARY_MODEL: ${{ vars.AUXILIARY_MODEL || 'openai-codex:gpt-5.6-terra' }}
-      GENERATE_PODCAST: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
       HERMES_HOME: /tmp/papertrader-hermes
-      MAX_OPERATIONS: ${{ vars.MAX_OPERATIONS || '180' }}
+      HERMES_SCOUT_MAX_TURNS: ${{ vars.HERMES_SCOUT_MAX_TURNS || '' }}
+      HERMES_ANALYST_MAX_TURNS: ${{ vars.HERMES_ANALYST_MAX_TURNS || '' }}
+      HERMES_DEEP_MAX_TURNS: ${{ vars.HERMES_DEEP_MAX_TURNS || '' }}
+      MAX_OPERATIONS: ${{ inputs.max_operations }}
     outputs:
-      artifact_name: ${{ steps.identities.outputs.artifact_name }}
-      base_sha: ${{ steps.identities.outputs.base_sha }}
-      oauth_artifact_name: ${{ steps.identities.outputs.oauth_artifact_name }}
-      oauth_changed: ${{ steps.oauth.outputs.changed || 'false' }}
-      oauth_sha256: ${{ steps.oauth.outputs.sha256 }}
-      report_path: ${{ steps.bundle.outputs.report_path }}
-      run_id: ${{ steps.identities.outputs.run_id }}
-      podcast_status: ${{ steps.podcast.outputs.status || 'skipped' }}
+      commit_sha: ${{ steps.outputs.outputs.commit_sha }}
+      changed: ${{ steps.outputs.outputs.changed }}
+      report_path: ${{ steps.outputs.outputs.report_path }}
+      daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+      oauth_changed: ${{ steps.outputs.outputs.oauth_changed }}
+      podcast_status: ${{ steps.outputs.outputs.podcast_status }}
+      podcast_path: ${{ steps.outputs.outputs.podcast_path }}
+      audio_artifact_name: ${{ steps.outputs.outputs.audio_artifact_name }}
+      audio_path: ${{ steps.outputs.outputs.audio_path }}
+      audio_manifest_path: ${{ steps.outputs.outputs.audio_manifest_path }}
+      audio_render_status: ${{ steps.outputs.outputs.audio_render_status }}
     steps:
-      - name: Check out the target branch without persisted credentials
+      - name: Check out and fast-forward the target branch without persisted credentials
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           ref: ${{ inputs.target_branch || github.event.repository.default_branch }}
@@ -185,211 +182,411 @@ jobs:
           workspace="$(pwd -P)"
           git config --system --add safe.directory "$workspace"
           echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"
+          git config user.name "papertrader-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Install pinned project runner
         uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
         with:
           version: "0.8.17"
           enable-cache: "false"
           github-token: ""
-      - name: Install locked Python dependencies
+      - name: Install locked dependencies
         run: uv sync --locked --all-groups
-      - name: Establish immutable runtime identities
-        id: identities
+      - name: Validate the selected cycle limit and run the full preflight gate
         run: |
-          base_sha="$(git rev-parse --verify 'HEAD^{commit}')"
-          echo "base_sha=$base_sha" >> "$GITHUB_OUTPUT"
-          echo "run_id=gha-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
-          echo "artifact_name=papertrader-runtime-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
-          echo "oauth_artifact_name=papertrader-oauth-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" >> "$GITHUB_OUTPUT"
-      - name: Discover curated YouTube sources
-        uses: ./.github/actions/scan-youtube
-        env:
-          YOUTUBE_DATA_API: ${{ secrets.YOUTUBE_DATA_API }}
-        with:
-          run_id: ${{ steps.identities.outputs.run_id }}
-          enabled: ${{ inputs.scan_youtube }}
-          dry_run: ${{ inputs.dry_run }}
-      - name: Schedule Seeking Alpha search-index discovery without credentials
-        uses: ./.github/actions/schedule-seekingalpha
-        with:
-          run_id: ${{ steps.identities.outputs.run_id }}
-          enabled: ${{ inputs.scan_seekingalpha }}
-          dry_run: ${{ inputs.dry_run }}
-      - name: Determine whether OAuth restoration is required
-        id: oauth_contract
-        env:
-          BATCH_MAX_OPERATIONS: ${{ inputs.max_operations }}
-          DRY_RUN: ${{ inputs.dry_run }}
-        run: |
-          case "$BATCH_MAX_OPERATIONS" in
-            ""|*[!0-9]*)
-              echo "::error::max_operations must be a non-negative integer"
-              exit 1
-              ;;
-          esac
-          oauth_required=false
-          if [ "$DRY_RUN" != "true" ]; then
-            oauth_required=true
-          fi
-          echo "oauth_required=$oauth_required" >> "$GITHUB_OUTPUT"
-      - name: Configure an isolated Hermes profile
-        run: >-
-          uv run papertrader agent configure
-          --hermes-home "$HERMES_HOME"
-          --replace-unmanaged
+          case "$MAX_OPERATIONS" in ""|*[!0-9]*) echo "::error::MAX_OPERATIONS must be a positive integer"; exit 1;; esac
+          test "$MAX_OPERATIONS" -gt 0
+          uv run ruff check .
+          uv run ruff format --check .
+          uv run mypy src
+          uv run pytest
+          uv run papertrader schema validate --strict
+          uv run papertrader integrity --strict
+      - name: Configure isolated Hermes profile
+        run: uv run papertrader agent configure --hermes-home "$HERMES_HOME" --replace-unmanaged
       - name: Install checksum-verified age 1.3.1
-        if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
+        if: ${{ !inputs.dry_run }}
         run: |
-          age_archive="$RUNNER_TEMP/age-v1.3.1-linux-amd64.tar.gz"
-          curl --fail --location --proto '=https' --tlsv1.2 \
-            --output "$age_archive" \
-            "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-linux-amd64.tar.gz"
-          echo "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377  $age_archive" \
-            | sha256sum --check --status
-          tar --extract --gzip --file "$age_archive" --directory "$RUNNER_TEMP"
+          archive="$RUNNER_TEMP/age-v1.3.1-linux-amd64.tar.gz"
+          curl --fail --location --proto '=https' --tlsv1.2 --output "$archive" "https://github.com/FiloSottile/age/releases/download/v1.3.1/age-v1.3.1-linux-amd64.tar.gz"
+          echo "bdc69c09cbdd6cf8b1f333d372a1f58247b3a33146406333e30c0f26e8f51377  $archive" | sha256sum --check --status
+          tar --extract --gzip --file "$archive" --directory "$RUNNER_TEMP"
           install -m 755 "$RUNNER_TEMP/age/age" /usr/local/bin/age
           install -m 755 "$RUNNER_TEMP/age/age-keygen" /usr/local/bin/age-keygen
           test "$(age --version)" = "v1.3.1"
           test "$(age-keygen --version)" = "v1.3.1"
-      - name: Restore encrypted OpenAI OAuth state
-        id: restore_oauth
-        if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
+      - name: Restore OpenAI OAuth only inside Hermes home
+        if: ${{ !inputs.dry_run }}
         env:
           OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
         run: |
-          set -euo pipefail
-          CIPHERTEXT="$GITHUB_WORKSPACE/.papertrader/credentials/openai-oauth-auth.json.age"
-          IDENTITY_FILE="$RUNNER_TEMP/openai-oauth.agekey"
-          AUTH_FILE="$HERMES_HOME/auth.json"
-          AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"
-
-          if ! test -s "$CIPHERTEXT"; then
-            echo "::error::Missing .papertrader/credentials/openai-oauth-auth.json.age"
-            exit 1
-          fi
-          if ! test -n "${OPENAI_OAUTH_SECRET:-}"; then
-            echo "::error::OPENAI_OAUTH_SECRET is required for non-dry openai-codex inference"
-            exit 1
-          fi
-
-          install -m 600 /dev/null "$IDENTITY_FILE"
-          printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$IDENTITY_FILE"
-
-          age --decrypt \
-            --identity "$IDENTITY_FILE" \
-            --output "$AUTH_FILE" \
-            "$CIPHERTEXT"
-
-          chmod 600 "$AUTH_FILE"
-          python3 -c 'import json,sys; value=json.load(open(sys.argv[1], encoding="utf-8")); assert isinstance(value, dict)' "$AUTH_FILE"
-          cp "$AUTH_FILE" "$AUTH_BEFORE"
-          chmod 600 "$AUTH_BEFORE"
+          identity="$RUNNER_TEMP/openai-oauth.agekey"
+          install -m 600 /dev/null "$identity"
+          printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$identity"
+          age --decrypt --identity "$identity" --output "$HERMES_HOME/auth.json" .papertrader/credentials/openai-oauth-auth.json.age
+          chmod 600 "$HERMES_HOME/auth.json"
+          install -m 600 "$HERMES_HOME/auth.json" "$RUNNER_TEMP/openai-oauth-auth.before.json"
+          rm -f "$identity"
       - name: Hand the isolated profile to the Hermes user
+        if: ${{ !inputs.dry_run }}
         run: chown -R hermes:hermes "$HERMES_HOME"
-      - name: Synchronize bundled native skills into the isolated profile
+      - name: Activate bundled native skills
+        if: ${{ !inputs.dry_run }}
         run: hermes skills opt-in --sync
       - name: Preflight OpenAI Codex OAuth without exposing credential state
-        if: ${{ steps.oauth_contract.outputs.oauth_required == 'true' }}
+        if: ${{ !inputs.dry_run }}
         run: |
-          set -euo pipefail
           if ! oauth_status="$(hermes auth status openai-codex 2>/dev/null)"; then
-            echo "::error::Hermes could not inspect the restored openai-codex OAuth credential"
+            unset oauth_status
+            echo "::error::OpenAI Codex OAuth preflight failed"
             exit 1
           fi
           oauth_status_line="${oauth_status%%$'\n'*}"
           unset oauth_status
           if [ "$oauth_status_line" != "openai-codex: logged in" ]; then
-            echo "::error::Restored auth.json contains no usable openai-codex OAuth credential; re-authenticate and replace the ciphertext"
+            unset oauth_status_line
+            echo "::error::OpenAI Codex OAuth is unavailable"
             exit 1
           fi
           unset oauth_status_line
-      - name: Preflight native llm-wiki and the selected project skill
+      - name: Preflight routed Hermes configuration
+        if: ${{ !inputs.dry_run }}
         env:
           OPERATION_TYPE: ${{ inputs.operation_type }}
+        run: uv run papertrader agent preflight --hermes-home "$HERMES_HOME" --operation-type "${OPERATION_TYPE:-wiki_ingest}"
+      - name: Create or resume one timestamped daily cycle
+        id: cycle
+        env:
+          RESUME_CYCLE_ID: ${{ inputs.resume_cycle_id }}
+          RUN_TRIGGER: ${{ inputs.trigger }}
         run: |
-          selected_type="${OPERATION_TYPE:-wiki_ingest}"
-          uv run papertrader agent preflight \
-            --hermes-home "$HERMES_HOME" \
-            --operation-type "$selected_type"
+          source_sha=$(git rev-parse HEAD)
+          result=$(uv run papertrader daily resume-or-create --trigger "$RUN_TRIGGER" --source-sha "$source_sha" --github-run-id "$GITHUB_RUN_ID" --workflow-attempt "$GITHUB_RUN_ATTEMPT" --resume-cycle-id "$RESUME_CYCLE_ID")
+          cycle_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["daily_cycle_id"])' <<< "$result")
+          echo "cycle_id=$cycle_id" >> "$GITHUB_OUTPUT"
       - name: Run weekly native llm-wiki maintenance before queued operations
         if: ${{ inputs.wiki_maintenance }}
         env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           DRY_RUN: ${{ inputs.dry_run }}
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
-          arguments=(wiki maintain --run-id "$RUN_ID" --hermes-home "$HERMES_HOME")
-          if [ "$DRY_RUN" = "true" ]; then
-            arguments+=(--dry-run)
-          fi
+          arguments=(wiki maintain --run-id "$CYCLE_ID" --hermes-home "$HERMES_HOME")
+          if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
           uv run papertrader "${arguments[@]}"
-      - name: Prepare deterministic market, indicators, actions, and queue state
+      - name: Discover curated YouTube sources
+        uses: ./.github/actions/scan-youtube
         env:
-          BASE_SHA: ${{ steps.identities.outputs.base_sha }}
-          DRY_RUN: ${{ inputs.dry_run }}
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
+          YOUTUBE_DATA_API: ${{ secrets.YOUTUBE_DATA_API }}
+        with:
+          run_id: ${{ steps.cycle.outputs.cycle_id }}
+          enabled: ${{ inputs.scan_youtube }}
+          dry_run: ${{ inputs.dry_run }}
+      - name: Schedule Seeking Alpha discovery
+        uses: ./.github/actions/schedule-seekingalpha
+        with:
+          run_id: ${{ steps.cycle.outputs.cycle_id }}
+          enabled: ${{ inputs.scan_seekingalpha }}
+          dry_run: ${{ inputs.dry_run }}
+      - name: Prepare deterministic daily state and reserve preparation checkpoint
+        id: preparation
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           RUN_TRIGGER: ${{ inputs.trigger }}
-        run: |
-          arguments=(daily prepare --run-id "$RUN_ID" --trigger "$RUN_TRIGGER" --source-sha "$BASE_SHA")
-          if [ "$DRY_RUN" = "true" ]; then
-            arguments+=(--offline --skip-classifier)
-          fi
-          uv run papertrader "${arguments[@]}"
-      - name: Execute due Hermes operations strictly one at a time
-        env:
-          BATCH_MAX_OPERATIONS: ${{ inputs.max_operations }}
           DRY_RUN: ${{ inputs.dry_run }}
-          OPERATION_ID: ${{ inputs.operation_id }}
-          OPERATION_TYPE: ${{ inputs.operation_type }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
         run: |
-          selected_max="$BATCH_MAX_OPERATIONS"
-          if [ "$DRY_RUN" = "true" ]; then
-            selected_max=0
-          fi
-          arguments=(agent run-batch --hermes-home "$HERMES_HOME" --run-id "$RUN_ID" --max-operations "$selected_max")
-          if [ -n "$OPERATION_ID" ]; then
-            arguments+=(--operation-id "$OPERATION_ID")
-          fi
-          if [ -n "$OPERATION_TYPE" ]; then
-            arguments+=(--operation-type "$OPERATION_TYPE")
-          fi
+          arguments=(daily prepare --run-id "$CYCLE_ID" --trigger "$RUN_TRIGGER" --source-sha "$(git rev-parse HEAD)")
+          if [ "$DRY_RUN" = "true" ]; then arguments+=(--offline --skip-classifier); fi
           uv run papertrader "${arguments[@]}"
-      - name: Finalize fills, portfolio, performance, and canonical report
+          checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind preparation)
+          echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
+      - name: Push preparation checkpoint from the credentialed boundary
         env:
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
+          GITHUB_TOKEN: ${{ !inputs.dry_run && github.token || '' }}
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          CHECKPOINT_INDEX: ${{ steps.preparation.outputs.index }}
           TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          arguments=(workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind preparation --target-branch "$TARGET_BRANCH")
+          if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
+          uv run papertrader "${arguments[@]}"
+      - name: Routed research checkpoint 01
+        id: operation_01
+        if: ${{ fromJSON(inputs.max_operations) >= 1 }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 02
+        id: operation_02
+        if: ${{ fromJSON(inputs.max_operations) >= 2 && steps.operation_01.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 03
+        id: operation_03
+        if: ${{ fromJSON(inputs.max_operations) >= 3 && steps.operation_02.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 04
+        id: operation_04
+        if: ${{ fromJSON(inputs.max_operations) >= 4 && steps.operation_03.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 05
+        id: operation_05
+        if: ${{ fromJSON(inputs.max_operations) >= 5 && steps.operation_04.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 06
+        id: operation_06
+        if: ${{ fromJSON(inputs.max_operations) >= 6 && steps.operation_05.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 07
+        id: operation_07
+        if: ${{ fromJSON(inputs.max_operations) >= 7 && steps.operation_06.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 08
+        id: operation_08
+        if: ${{ fromJSON(inputs.max_operations) >= 8 && steps.operation_07.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 09
+        id: operation_09
+        if: ${{ fromJSON(inputs.max_operations) >= 9 && steps.operation_08.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 10
+        id: operation_10
+        if: ${{ fromJSON(inputs.max_operations) >= 10 && steps.operation_09.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 11
+        id: operation_11
+        if: ${{ fromJSON(inputs.max_operations) >= 11 && steps.operation_10.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 12
+        id: operation_12
+        if: ${{ fromJSON(inputs.max_operations) >= 12 && steps.operation_11.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 13
+        id: operation_13
+        if: ${{ fromJSON(inputs.max_operations) >= 13 && steps.operation_12.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 14
+        id: operation_14
+        if: ${{ fromJSON(inputs.max_operations) >= 14 && steps.operation_13.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 15
+        id: operation_15
+        if: ${{ fromJSON(inputs.max_operations) >= 15 && steps.operation_14.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 16
+        id: operation_16
+        if: ${{ fromJSON(inputs.max_operations) >= 16 && steps.operation_15.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 17
+        id: operation_17
+        if: ${{ fromJSON(inputs.max_operations) >= 17 && steps.operation_16.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 18
+        id: operation_18
+        if: ${{ fromJSON(inputs.max_operations) >= 18 && steps.operation_17.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 19
+        id: operation_19
+        if: ${{ fromJSON(inputs.max_operations) >= 19 && steps.operation_18.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Routed research checkpoint 20
+        id: operation_20
+        if: ${{ fromJSON(inputs.max_operations) >= 20 && steps.operation_19.outputs.continue == 'true' }}
+        uses: ./.github/actions/checkpoint-operation
+        with:
+          daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
+          hermes_home: ${{ env.HERMES_HOME }}
+          operation_id: ${{ inputs.operation_id }}
+          operation_type: ${{ inputs.operation_type }}
+          target_branch: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          dry_run: ${{ inputs.dry_run }}
+          github_token: ${{ !inputs.dry_run && github.token || '' }}
+          openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
+      - name: Finalize accounting, allocation, publication, and report
+        id: finalization
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          GENERATE_PODCAST: ${{ inputs.generate_podcast }}
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
           report_name="daily-report_$(date -u +%Y%m%d).md"
           report_url="https://github.com/${GITHUB_REPOSITORY}/blob/${TARGET_BRANCH}/data/wiki/daily-reports/${report_name}"
-          uv run papertrader daily finalize --run-id "$RUN_ID" --github-report-url "$report_url"
-      - name: Collect completed-run changes and enqueue the daily podcast
-        if: ${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}
-        env:
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
-        run: |
-          command -v ffmpeg
-          command -v ffprobe
-          uv run papertrader podcast enqueue --run-id "$RUN_ID"
-      - name: Generate the daily podcast as the final sequential Hermes operation
-        if: ${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}
-        env:
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
-        run: >-
-          uv run papertrader agent run
-          --hermes-home "$HERMES_HOME"
-          --run-id "$RUN_ID"
-          --operation-type daily_podcast
-      - name: Record the terminal daily podcast disposition
-        id: podcast
-        if: ${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}
-        env:
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
-        run: |
-          status="$(uv run papertrader podcast finalize --run-id "$RUN_ID")"
-          echo "$status"
-          echo "status=$status" >> "$GITHUB_OUTPUT"
-      - name: Run the complete runtime validation gate
+          uv run papertrader daily finalize --run-id "$CYCLE_ID" --github-report-url "$report_url"
+          if [ "$GENERATE_PODCAST" != "true" ] || [ "$DRY_RUN" = "true" ]; then
+            uv run papertrader daily complete --daily-cycle-id "$CYCLE_ID"
+          fi
+          checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind finalization)
+          echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
+      - name: Run full post-finalization gate
         run: |
           uv run ruff check .
           uv run ruff format --check .
@@ -400,246 +597,143 @@ jobs:
           uv run papertrader advice validate --strict
           uv run papertrader wiki lint --strict
           uv run papertrader portfolio reconcile --strict
-      - name: Print recent redacted Hermes logs after a runtime or podcast failure
-        if: ${{ failure() || (!inputs.dry_run && env.GENERATE_PODCAST == 'true' && steps.podcast.outputs.status != 'succeeded') }}
-        run: |
-          echo "::group::Hermes errors.log (current operation window)"
-          hermes logs errors --since 35m -n 200 || true
-          echo "::endgroup::"
-          echo "::group::Hermes agent.log (current operation window)"
-          hermes logs agent --since 35m -n 500 || true
-          echo "::endgroup::"
-      - name: Create the whitelisted runtime patch bundle
-        id: bundle
+      - name: Push finalization checkpoint from the credentialed boundary
+        id: finalization_checkpoint
         env:
-          BASE_SHA: ${{ steps.identities.outputs.base_sha }}
-          RUN_ID: ${{ steps.identities.outputs.run_id }}
+          GITHUB_TOKEN: ${{ !inputs.dry_run && github.token || '' }}
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          CHECKPOINT_INDEX: ${{ steps.finalization.outputs.index }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+          DRY_RUN: ${{ inputs.dry_run }}
         run: |
-          bundle_dir="${RUNNER_TEMP}/papertrader-runtime-bundle"
-          uv run papertrader workflow bundle create \
-            --output-directory "$bundle_dir" \
-            --run-id "$RUN_ID" \
-            --base-sha "$BASE_SHA"
-          report_path=$(python3 -c 'import json, os, pathlib; print(json.loads((pathlib.Path(os.environ["RUNNER_TEMP"]) / "papertrader-runtime-bundle" / "runtime_manifest.json").read_text())["report_path"])')
-          echo "report_path=$report_path" >> "$GITHUB_OUTPUT"
-      - name: Upload the hash-verified runtime bundle
+          arguments=(workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind finalization --target-branch "$TARGET_BRANCH")
+          if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
+          result=$(uv run papertrader "${arguments[@]}")
+          echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+      - name: Freeze complete cycle podcast context and enqueue text synthesis
+        id: podcast_enqueue
+        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+        run: |
+          cutoff=$(python3 -c 'import json,os,pathlib; print(json.loads((pathlib.Path("data/runs") / os.environ["CYCLE_ID"] / "daily_run.json").read_text())["research_cutoff_at"])')
+          uv run papertrader podcast context build --daily-cycle-id "$CYCLE_ID" --cutoff "$cutoff"
+          result=$(uv run papertrader podcast enqueue --run-id "$CYCLE_ID")
+          echo "operation_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["operation_id"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+      - name: Synthesize only the timestamped podcast transcript
+        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        continue-on-error: true
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: uv run papertrader agent run --hermes-home "$HERMES_HOME" --run-id "$CYCLE_ID" --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast
+      - name: Encrypt a podcast-time OAuth refresh before its text checkpoint
+        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        env:
+          OPENAI_OAUTH_SECRET: ${{ secrets.OPENAI_OAUTH_SECRET }}
+        run: |
+          auth_before="$RUNNER_TEMP/openai-oauth-auth.before.json"
+          auth_file="$HERMES_HOME/auth.json"
+          if cmp -s "$auth_before" "$auth_file"; then exit 0; fi
+          identity="$RUNNER_TEMP/podcast-oauth.agekey"
+          refreshed="$RUNNER_TEMP/podcast-oauth.age"
+          verified="$RUNNER_TEMP/podcast-oauth.verify.json"
+          install -m 600 /dev/null "$identity"
+          printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$identity"
+          recipient=$(age-keygen -y "$identity")
+          age --encrypt --recipient "$recipient" --output "$refreshed" "$auth_file"
+          age --decrypt --identity "$identity" --output "$verified" "$refreshed"
+          cmp -s "$auth_file" "$verified"
+          install -m 600 "$refreshed" .papertrader/credentials/openai-oauth-auth.json.age
+          install -m 600 "$auth_file" "$auth_before"
+          rm -f "$identity" "$refreshed" "$verified"
+      - name: Finalize text podcast and reserve its checkpoint
+        id: podcast_text
+        if: ${{ inputs.generate_podcast && !inputs.dry_run }}
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
+        run: |
+          status=$(uv run papertrader podcast finalize --run-id "$CYCLE_ID")
+          checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "$status" --profile analyst)
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
+      - name: Push the terminal text-podcast checkpoint
+        id: podcast_checkpoint
+        if: ${{ inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outcome == 'success' }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          CHECKPOINT_INDEX: ${{ steps.podcast_text.outputs.index }}
+          PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          result=$(uv run papertrader workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "${{ steps.podcast_text.outputs.status }}" --profile analyst --target-branch "$TARGET_BRANCH")
+          echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+      - name: Render audio ephemerally from the exact pushed transcript
+        id: render_audio
+        if: ${{ inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+        run: |
+          command -v edge-tts >/dev/null
+          command -v ffmpeg >/dev/null
+          command -v ffprobe >/dev/null
+          stamp="${CYCLE_ID#daily-}"
+          output_directory="$RUNNER_TEMP/papertrader-podcast/$CYCLE_ID"
+          script_path="data/wiki/podcasts/daily-podcast_${stamp}.md"
+          result=$(uv run papertrader podcast render --daily-cycle-id "$CYCLE_ID" --script-commit "$SCRIPT_COMMIT" --script-path "$script_path" --output-directory "$output_directory")
+          echo "audio_path=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["audio_path"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+          echo "manifest_path=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["manifest_path"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+          echo "script_path=$script_path" >> "$GITHUB_OUTPUT"
+      - name: Upload one-day ephemeral podcast audio handoff
+        if: ${{ steps.render_audio.outcome == 'success' }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
         with:
-          name: ${{ steps.identities.outputs.artifact_name }}
-          path: ${{ runner.temp }}/papertrader-runtime-bundle
+          name: papertrader-podcast-${{ steps.cycle.outputs.cycle_id }}
+          path: |
+            ${{ steps.render_audio.outputs.audio_path }}
+            ${{ steps.render_audio.outputs.manifest_path }}
           if-no-files-found: error
           retention-days: 1
-      - name: Encrypt refreshed OpenAI OAuth state when changed
-        id: oauth
-        if: ${{ always() && steps.oauth_contract.outputs.oauth_required == 'true' && steps.restore_oauth.outcome == 'success' }}
+      - name: Publish cycle outputs
+        id: outputs
+        if: ${{ always() }}
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          FINALIZATION_SHA: ${{ steps.finalization_checkpoint.outputs.commit_sha }}
+          PODCAST_SHA: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+          PODCAST_STATUS: ${{ steps.podcast_text.outputs.status }}
+          AUDIO_PATH: ${{ steps.render_audio.outputs.audio_path }}
+          AUDIO_MANIFEST_PATH: ${{ steps.render_audio.outputs.manifest_path }}
+          AUDIO_RENDER_OUTCOME: ${{ steps.render_audio.outcome }}
         run: |
-          set -euo pipefail
-          IDENTITY_FILE="$RUNNER_TEMP/openai-oauth.agekey"
-          AUTH_FILE="$HERMES_HOME/auth.json"
-          AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"
-          AUTH_VERIFY="$RUNNER_TEMP/openai-oauth-auth.verify.json"
-          REFRESHED_CIPHERTEXT="$RUNNER_TEMP/openai-oauth-auth.json.age"
-          ARTIFACT_ROOT="$RUNNER_TEMP/papertrader-oauth-artifact"
-          ARTIFACT_FILE="$ARTIFACT_ROOT/.papertrader/credentials/openai-oauth-auth.json.age"
-
-          test -s "$IDENTITY_FILE"
-          test -s "$AUTH_BEFORE"
-          test -s "$AUTH_FILE"
-          python3 -c 'import json,sys; value=json.load(open(sys.argv[1], encoding="utf-8")); assert isinstance(value, dict)' "$AUTH_FILE"
-          if cmp -s "$AUTH_BEFORE" "$AUTH_FILE"; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          AGE_RECIPIENT="$(age-keygen -y "$IDENTITY_FILE")"
-          test -n "$AGE_RECIPIENT"
-          age --encrypt \
-            --recipient "$AGE_RECIPIENT" \
-            --output "$REFRESHED_CIPHERTEXT" \
-            "$AUTH_FILE"
-          age --decrypt \
-            --identity "$IDENTITY_FILE" \
-            --output "$AUTH_VERIFY" \
-            "$REFRESHED_CIPHERTEXT"
-          cmp -s "$AUTH_FILE" "$AUTH_VERIFY"
-          test -s "$REFRESHED_CIPHERTEXT"
-
-          mkdir -p "$(dirname "$ARTIFACT_FILE")"
-          install -m 600 "$REFRESHED_CIPHERTEXT" "$ARTIFACT_FILE"
-          ciphertext_sha256="$(sha256sum "$REFRESHED_CIPHERTEXT" | cut -d ' ' -f 1)"
+          manifest="data/runs/$CYCLE_ID/daily_run.json"
+          report_path=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["report_path"])' "$manifest")
+          podcast_path=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["podcast_page_path"])' "$manifest")
+          echo "commit_sha=${PODCAST_SHA:-$FINALIZATION_SHA}" >> "$GITHUB_OUTPUT"
           echo "changed=true" >> "$GITHUB_OUTPUT"
-          echo "sha256=$ciphertext_sha256" >> "$GITHUB_OUTPUT"
-      - name: Upload only the refreshed OAuth ciphertext
-        if: ${{ always() && steps.oauth.outputs.changed == 'true' }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        with:
-          name: ${{ steps.identities.outputs.oauth_artifact_name }}
-          path: ${{ runner.temp }}/papertrader-oauth-artifact
-          if-no-files-found: error
-          include-hidden-files: true
-          retention-days: 1
-      - name: Remove all plaintext OAuth credential material
+          echo "oauth_changed=false" >> "$GITHUB_OUTPUT"
+          echo "report_path=$report_path" >> "$GITHUB_OUTPUT"
+          echo "podcast_status=${PODCAST_STATUS:-skipped}" >> "$GITHUB_OUTPUT"
+          echo "podcast_path=$podcast_path" >> "$GITHUB_OUTPUT"
+          if [ "$AUDIO_RENDER_OUTCOME" = "success" ]; then
+            echo "audio_artifact_name=papertrader-podcast-$CYCLE_ID" >> "$GITHUB_OUTPUT"
+            echo "audio_render_status=succeeded" >> "$GITHUB_OUTPUT"
+          elif [ "$AUDIO_RENDER_OUTCOME" = "failure" ]; then
+            echo "audio_artifact_name=" >> "$GITHUB_OUTPUT"
+            echo "audio_render_status=failed" >> "$GITHUB_OUTPUT"
+          else
+            echo "audio_artifact_name=" >> "$GITHUB_OUTPUT"
+            echo "audio_render_status=skipped" >> "$GITHUB_OUTPUT"
+          fi
+          echo "audio_path=$(basename "$AUDIO_PATH")" >> "$GITHUB_OUTPUT"
+          echo "audio_manifest_path=$(basename "$AUDIO_MANIFEST_PATH")" >> "$GITHUB_OUTPUT"
+      - name: Remove plaintext OAuth and all temporary media
         if: ${{ always() }}
         run: |
-          rm -f \
-            "$HERMES_HOME/auth.json" \
-            "$RUNNER_TEMP/openai-oauth.agekey" \
-            "$RUNNER_TEMP/openai-oauth-auth.before.json" \
-            "$RUNNER_TEMP/openai-oauth-auth.verify.json" \
-            "$RUNNER_TEMP/openai-oauth-auth.json.age"
-          rm -rf "$RUNNER_TEMP/papertrader-oauth-artifact"
-
-  commit:
-    needs: runtime
-    if: ${{ always() }}
-    runs-on: ubuntu-24.04
-    timeout-minutes: 45
-    permissions:
-      contents: write
-    env:
-      WIKI_PATH: ${{ github.workspace }}/data/wiki
-    outputs:
-      changed: ${{ steps.outcome.outputs.changed }}
-      commit_sha: ${{ steps.outcome.outputs.commit_sha }}
-      oauth_changed: ${{ steps.outcome.outputs.oauth_changed }}
-      report_path: ${{ needs.runtime.outputs.report_path }}
-    steps:
-      - name: Check out the exact runtime base without persisted credentials
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          ref: ${{ needs.runtime.outputs.base_sha || inputs.target_branch || github.event.repository.default_branch }}
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Install pinned project runner
-        run: python3 -m pip install --disable-pip-version-check uv==0.8.17
-      - name: Install locked Python dependencies
-        run: uv sync --locked --all-groups
-      - name: Download the runtime bundle with artifact digest verification
-        if: ${{ needs.runtime.result == 'success' }}
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
-        with:
-          name: ${{ needs.runtime.outputs.artifact_name }}
-          path: ${{ runner.temp }}/papertrader-runtime-bundle
-      - name: Apply the exact validated runtime patch
-        if: ${{ needs.runtime.result == 'success' }}
-        run: >-
-          uv run papertrader workflow bundle apply
-          --bundle-directory "${RUNNER_TEMP}/papertrader-runtime-bundle"
-      - name: Download the refreshed OAuth ciphertext with artifact digest verification
-        if: ${{ needs.runtime.outputs.oauth_changed == 'true' }}
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
-        with:
-          name: ${{ needs.runtime.outputs.oauth_artifact_name }}
-          path: ${{ runner.temp }}/papertrader-oauth-artifact
-      - name: Validate and stage only the refreshed OAuth ciphertext
-        if: ${{ needs.runtime.outputs.oauth_changed == 'true' }}
-        env:
-          OAUTH_SHA256: ${{ needs.runtime.outputs.oauth_sha256 }}
-        run: |
-          uv run papertrader workflow oauth-artifact apply \
-            --artifact-directory "$RUNNER_TEMP/papertrader-oauth-artifact" \
-            --expected-sha256 "$OAUTH_SHA256"
-          test ! -e "$RUNNER_TEMP/papertrader-oauth-artifact/auth.json"
-          test ! -e ".papertrader/credentials/auth.json"
-          git add -- .papertrader/credentials/openai-oauth-auth.json.age
-      - name: Re-run validation in the commit boundary
-        if: ${{ needs.runtime.result == 'success' }}
-        run: |
-          uv run ruff check .
-          uv run ruff format --check .
-          uv run mypy src
-          uv run pytest
-          uv run papertrader schema validate --strict
-          uv run papertrader integrity --strict
-          uv run papertrader advice validate --strict
-          uv run papertrader wiki lint --strict
-          uv run papertrader portfolio reconcile --strict
-          uv run papertrader runtime-whitelist validate --staged
-      - name: Validate credential-only staging after a runtime failure
-        if: ${{ needs.runtime.result != 'success' && needs.runtime.outputs.oauth_changed == 'true' }}
-        run: |
-          staged_paths="$(git diff --cached --name-only --diff-filter=ACDMRTUXB)"
-          test "$staged_paths" = ".papertrader/credentials/openai-oauth-auth.json.age"
-          uv run papertrader runtime-whitelist validate --staged
-      - name: Create a commit only when validated state changed
-        id: commit
-        if: ${{ !inputs.dry_run && (needs.runtime.result == 'success' || needs.runtime.outputs.oauth_changed == 'true') }}
-        env:
-          RUN_ID: ${{ needs.runtime.outputs.run_id }}
-          RUNTIME_RESULT: ${{ needs.runtime.result }}
-        run: |
-          if git diff --cached --quiet; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          git config user.name "papertrader-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ "$RUNTIME_RESULT" = "success" ]; then
-            git commit -m "chore(runtime): publish daily run ${RUN_ID}"
-          else
-            git commit -m "chore(auth): persist refreshed OpenAI OAuth state"
-          fi
-          echo "changed=true" >> "$GITHUB_OUTPUT"
-          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-      - name: Rebase the validated commit
-        id: rebase
-        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' }}
-        env:
-          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
-        run: |
-          git fetch --no-tags origin "$TARGET_BRANCH"
-          git rebase "origin/${TARGET_BRANCH}"
-          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-      - name: Repeat strict validation after a successful runtime rebase
-        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' && needs.runtime.result == 'success' }}
-        env:
-          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
-        run: |
-          uv run papertrader schema validate --strict
-          uv run papertrader integrity --strict
-          uv run papertrader advice validate --strict
-          uv run papertrader wiki lint --strict
-          uv run papertrader portfolio reconcile --strict
-          uv run papertrader runtime-whitelist validate \
-            --base-ref "origin/${TARGET_BRANCH}" \
-            --head-ref HEAD
-      - name: Repeat credential-only validation after a failed runtime rebase
-        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' && needs.runtime.result != 'success' }}
-        env:
-          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
-        run: |
-          changed_paths="$(git diff --name-only --diff-filter=ACDMRTUXB "origin/${TARGET_BRANCH}..HEAD")"
-          test "$changed_paths" = ".papertrader/credentials/openai-oauth-auth.json.age"
-          uv run papertrader runtime-whitelist validate \
-            --base-ref "origin/${TARGET_BRANCH}" \
-            --head-ref HEAD
-      - name: Push only from the post-agent credentialed boundary
-        if: ${{ !inputs.dry_run && steps.commit.outputs.changed == 'true' }}
-        env:
-          PAPERTRADER_GIT_TOKEN: ${{ github.token }}
-          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
-        run: |
-          git config --local credential.helper '!f() { if test "$1" = get; then echo username=x-access-token; echo "password=$PAPERTRADER_GIT_TOKEN"; fi; }; f'
-          git push "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${TARGET_BRANCH}"
-          git config --local --unset-all credential.helper
-      - name: Publish commit outputs
-        id: outcome
-        env:
-          BASE_SHA: ${{ needs.runtime.outputs.base_sha }}
-          COMMIT_SHA: ${{ steps.commit.outputs.commit_sha }}
-          DRY_RUN: ${{ inputs.dry_run }}
-          REBASED_SHA: ${{ steps.rebase.outputs.commit_sha }}
-          RUNTIME_CHANGED: ${{ steps.commit.outputs.changed }}
-          OAUTH_CHANGED: ${{ needs.runtime.outputs.oauth_changed }}
-        run: |
-          base_sha="${BASE_SHA:-$(git rev-parse HEAD)}"
-          if [ "$DRY_RUN" = "true" ]; then
-            echo "changed=false" >> "$GITHUB_OUTPUT"
-            echo "commit_sha=$base_sha" >> "$GITHUB_OUTPUT"
-            echo "oauth_changed=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "changed=${RUNTIME_CHANGED:-false}" >> "$GITHUB_OUTPUT"
-            echo "commit_sha=${REBASED_SHA:-${COMMIT_SHA:-$base_sha}}" >> "$GITHUB_OUTPUT"
-            echo "oauth_changed=${OAUTH_CHANGED:-false}" >> "$GITHUB_OUTPUT"
-          fi
+          rm -f "$HERMES_HOME/auth.json" "$RUNNER_TEMP/openai-oauth-auth.before.json" "$RUNNER_TEMP/papertrader-checkpoint.agekey" "$RUNNER_TEMP/openai-oauth-auth.refreshed.age" "$RUNNER_TEMP/openai-oauth-auth.verified.json"
+          rm -rf "$RUNNER_TEMP/papertrader-podcast"

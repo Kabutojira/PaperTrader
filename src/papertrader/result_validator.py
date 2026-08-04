@@ -201,7 +201,7 @@ def _path_allowed_for_operation(
             len(path.parts) == 4
             and path.parts[:3] == ("data", "wiki", "podcasts")
             and path.name.startswith("daily-podcast_")
-            and path.suffix in {".md", ".mp3"}
+            and path.suffix == ".md"
         ) or (
             len(path.parts) == 4
             and path.parts[:3] == ("data", "wiki", "daily-reports")
@@ -227,6 +227,7 @@ def _command_allowed(
     *,
     youtube_video: bool = False,
     seekingalpha_lead: bool = False,
+    profile: str = "",
 ) -> bool:
     parts = _command_parts(entry)
     if len(parts) < 2:
@@ -236,6 +237,7 @@ def _command_allowed(
         parts[1:],
         youtube_video=youtube_video,
         seekingalpha_lead=seekingalpha_lead,
+        profile=profile,
     )
 
 
@@ -276,9 +278,12 @@ def _load_command_audit(
             "exit_code",
             "changed_paths",
             "changes",
+            "profile",
         }:
             errors.append(f"command audit entry {index} has unexpected fields")
             continue
+        if not isinstance(entry["profile"], str):
+            errors.append(f"command audit entry {index} has invalid execution profile")
         if not isinstance(entry["command"], str) or not _command_parts(entry):
             errors.append(f"command audit entry {index} has invalid argv")
         if not isinstance(entry["exit_code"], int):
@@ -364,6 +369,7 @@ def _validate_commands(
     *,
     youtube_video: bool = False,
     seekingalpha_lead: bool = False,
+    profile: str = "",
 ) -> list[str]:
     entries, errors = _load_command_audit(repository_root, run_id, operation.operation_id)
     audited_commands = tuple(
@@ -378,6 +384,7 @@ def _validate_commands(
             entry,
             youtube_video=youtube_video,
             seekingalpha_lead=seekingalpha_lead,
+            profile=profile,
         ):
             command = entry.get("command")
             rendered = command if isinstance(command, str) and command else "<invalid command>"
@@ -639,6 +646,61 @@ def _payload_inputs(repository_root: Path, row: Mapping[str, str]) -> Mapping[st
         return None
     inputs = payload.get("inputs") if isinstance(payload, dict) else None
     return inputs if isinstance(inputs, dict) else None
+
+
+def _daily_podcast_text_errors(
+    repository_root: Path,
+    *,
+    operation: Operation,
+    status: object,
+    changed_paths: Sequence[str],
+) -> list[str]:
+    """Validate the transcript-only podcast result before its queue transition."""
+
+    if operation.operation_type != "daily_podcast":
+        return []
+    inputs = _payload_inputs(repository_root, operation.to_row()) or {}
+    page_path = inputs.get("page_path")
+    report_path = inputs.get("report_path")
+    errors: list[str] = []
+    podcast_changes = [path for path in changed_paths if path.startswith("data/wiki/podcasts/")]
+    if status != "succeeded":
+        if podcast_changes:
+            errors.append("non-successful daily podcast must not retain a transcript page")
+        return errors
+    if not isinstance(page_path, str) or page_path not in changed_paths:
+        errors.append("succeeded daily podcast must create its exact timestamped transcript")
+        return errors
+    if podcast_changes != [page_path]:
+        errors.append("daily podcast must change exactly one timestamped transcript page")
+    page = repository_root.joinpath(*PurePosixPath(page_path).parts)
+    if page.is_symlink() or not page.is_file():
+        return [*errors, "daily podcast transcript must be a regular file"]
+    text = page.read_text(encoding="utf-8")
+    start_marker = "<!-- papertrader-spoken-transcript:start -->"
+    end_marker = "<!-- papertrader-spoken-transcript:end -->"
+    if text.count(start_marker) != 1 or text.count(end_marker) != 1:
+        errors.append("daily podcast requires one bounded spoken transcript")
+    else:
+        spoken = text.split(start_marker, maxsplit=1)[1].split(end_marker, maxsplit=1)[0]
+        word_count = len(re.findall(r"\b[\w'-]+\b", spoken))
+        if not 2400 <= word_count <= 3600:
+            errors.append("daily podcast spoken transcript must contain 2400-3600 words")
+        if "paper trad" not in spoken.casefold():
+            errors.append("daily podcast spoken transcript must label paper trading")
+    if operation.entity_id not in text:
+        errors.append("daily podcast transcript must identify its timestamped cycle")
+    if re.search(r"(?i)\.(?:mp3|wav|m4a)(?:\b|[?#])", text):
+        errors.append("daily podcast transcript must not contain a persistent audio link")
+    if not isinstance(report_path, str) or report_path not in changed_paths:
+        errors.append("succeeded daily podcast must link its transcript from the daily report")
+    else:
+        report = repository_root.joinpath(*PurePosixPath(report_path).parts)
+        if report.is_symlink() or not report.is_file():
+            errors.append("daily podcast report link target must be a regular Markdown file")
+        elif PurePosixPath(page_path).stem not in report.read_text(encoding="utf-8"):
+            errors.append("daily report does not link the timestamped podcast transcript")
+    return errors
 
 
 def _security_idea_followup_errors(
@@ -1276,6 +1338,14 @@ def validate_agent_result(
         not isinstance(validation, dict) or validation.get("passed") is not True
     ):
         errors.append("successful or skipped result must report passing validation")
+    errors.extend(
+        _daily_podcast_text_errors(
+            repository_root,
+            operation=operation,
+            status=status,
+            changed_paths=changed_paths,
+        )
+    )
     created_operations = _operation_ids(repository_root) - operation_ids_before
     reported_operations = set(_strings(result, "operations_created"))
     if created_operations != reported_operations:
@@ -1400,6 +1470,7 @@ def validate_agent_result(
             after_snapshot,
             youtube_video=youtube_video,
             seekingalpha_lead=seekingalpha_lead,
+            profile=environment.get("PAPERTRADER_EXECUTION_PROFILE", ""),
         )
     )
     errors.extend(

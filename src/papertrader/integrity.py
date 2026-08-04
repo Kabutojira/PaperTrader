@@ -386,9 +386,13 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
                 batch_runs.add(run_id)
     for run_id, manifest in daily_by_run.items():
         status = manifest.get("status")
+        version = manifest.get("daily_run_version")
         report_path = manifest.get("report_path")
-        if status in {"succeeded", "degraded"}:
-            if run_id not in batch_runs:
+        finalized = status in {"succeeded", "degraded"} and (
+            version == 1 or bool(manifest.get("finalization_at"))
+        )
+        if finalized:
+            if version == 1 and run_id not in batch_runs:
                 errors.append(f"completed daily run lacks agent batch: {run_id}")
             if not isinstance(report_path, str) or not (repository_root / report_path).is_file():
                 errors.append(f"completed daily run lacks canonical report: {run_id}")
@@ -887,8 +891,18 @@ def publication_requires_current_state(
     return not (
         isinstance(manifest, dict)
         and manifest.get("run_id") == run_id
-        and manifest.get("status") == "prepared"
-        and manifest.get("completed_at") == ""
+        and (
+            (
+                manifest.get("daily_run_version") == 1
+                and manifest.get("status") == "prepared"
+                and manifest.get("completed_at") == ""
+            )
+            or (
+                manifest.get("daily_run_version") == 2
+                and manifest.get("status") in {"running", "degraded", "interrupted"}
+                and not manifest.get("finalization_at")
+            )
+        )
     )
 
 
@@ -960,6 +974,10 @@ def is_runtime_path_allowed(raw_path: str) -> bool:
     if any(part in {"", ".", ".."} for part in raw_parts):
         return False
     path = PurePosixPath(raw_path)
+    if path.suffix.lower() in {".mp3", ".wav", ".m4a"}:
+        return False
+    if "tts" in path.name.lower() and "chunk" in path.name.lower():
+        return False
     if path == PurePosixPath(".papertrader/credentials/openai-oauth-auth.json.age"):
         return True
     if path.is_absolute() or not path.parts or path.parts[0] != "data":
@@ -975,8 +993,6 @@ def is_runtime_path_allowed(raw_path: str) -> bool:
         if path.suffix == ".md":
             return True
         if path.parts[2] == "raw" and path.suffix in RAW_WIKI_EXTENSIONS:
-            return True
-        if path.parts[2] == "podcasts" and path.suffix == ".mp3":
             return True
     if len(path.parts) >= 3 and path.parts[1] in {"operations", "runs"}:
         return path.suffix in RUN_ARTIFACT_EXTENSIONS

@@ -20,11 +20,13 @@ from papertrader.agent_runner import (
     configure_hermes_home,
     hermes_command,
     prompt_injection_flags,
+    run_cycle_operation,
     run_one_operation,
     run_sequential_operations,
     sanitized_hermes_environment,
 )
 from papertrader.config import Settings
+from papertrader.daily import resume_or_create_daily_cycle
 from papertrader.dedupe import build_dedupe_key
 from papertrader.queue import enqueue_operation, prepare_queue
 from papertrader.tables import read_table
@@ -94,14 +96,13 @@ def _enqueue_podcast(repository: Path, settings: Settings, *, run_id: str) -> st
         operation_type="daily_podcast",
         entity_type="run",
         entity_id=run_id,
-        dedupe_key=f"daily_podcast:{run_id}:v1",
+        dedupe_key=f"daily_podcast:{run_id}:text-v2",
         prompt="Create the completed run's daily podcast.",
         inputs={
             "run_id": run_id,
             "context_path": context.relative_to(repository).as_posix(),
             "report_path": report.relative_to(repository).as_posix(),
-            "page_path": "data/wiki/podcasts/daily-podcast_20260724.md",
-            "audio_path": "data/wiki/podcasts/daily-podcast_20260724.mp3",
+            "page_path": "data/wiki/podcasts/daily-podcast_20260724T120000Z.md",
             "target_minutes": 20,
             "target_words": 3000,
         },
@@ -190,10 +191,10 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert isinstance(command, tuple)
     assert "--yolo" in command
     assert command[command.index("--provider") + 1] == "openai-codex"
-    assert command[command.index("--model") + 1] == "gpt-5.6-sol"
+    assert command[command.index("--model") + 1] == "gpt-5.6-terra"
     assert command.count("--skills") == 3
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
-    assert command[command.index("--max-turns") + 1] == "180"
+    assert command[command.index("--max-turns") + 1] == "80"
     child_environment = captured["environment"]
     assert isinstance(child_environment, dict)
     assert "OPENROUTER_API_KEY" not in child_environment
@@ -215,17 +216,18 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
         ).read_text(encoding="utf-8")
     )
     assert preflight["provider"] == "openai-codex"
-    assert preflight["model"] == "gpt-5.6-sol"
+    assert preflight["model"] == "gpt-5.6-terra"
     assert preflight["web_extract_provider"] == "openai-codex"
     assert preflight["web_extract_model"] == "gpt-5.6-terra"
     assert preflight["web_extract_reasoning_effort"] == "low"
-    assert preflight["maximum_turns"] == 180
+    assert preflight["maximum_turns"] == 80
+    assert preflight["profile"] == "analyst"
     for path in sandbox_repository.rglob("*"):
         if path.is_file():
             assert b"auxiliary-secret-value" not in path.read_bytes()
 
 
-def test_tts_toolset_is_enabled_only_for_daily_podcast(
+def test_daily_podcast_is_text_only_on_the_analyst_profile(
     sandbox_settings: Settings,
 ) -> None:
     preflight = SimpleNamespace(
@@ -234,11 +236,15 @@ def test_tts_toolset_is_enabled_only_for_daily_podcast(
         native_skill=SimpleNamespace(name="llm-wiki"),
         controller_skill=SimpleNamespace(name="papertrader-controller"),
         operation_skill=SimpleNamespace(name="papertrader-daily-podcast"),
+        profile="analyst",
+        reasoning_effort="medium",
+        maximum_turns=80,
     )
 
     command = hermes_command(sandbox_settings, preflight, "Create one daily podcast.")
 
-    assert command[command.index("--toolsets") + 1] == "web,file,terminal,tts"
+    assert command[command.index("--toolsets") + 1] == "web,file,terminal"
+    assert "tts" not in command[command.index("--toolsets") + 1]
 
 
 @pytest.mark.parametrize("hermes_returncode", [0, 17])
@@ -319,7 +325,7 @@ def test_podcast_validation_failure_with_partial_output_remains_hard(
         timeout: int,
     ) -> subprocess.CompletedProcess[str]:
         del environment, timeout
-        page = cwd / "data" / "wiki" / "podcasts" / "daily-podcast_20260724.md"
+        page = cwd / "data" / "wiki" / "podcasts" / "daily-podcast_20260724T120000Z.md"
         page.parent.mkdir(parents=True, exist_ok=True)
         page.write_text("Partial unvalidated script.\n", encoding="utf-8")
         return subprocess.CompletedProcess(command, 0, "", "")
@@ -334,6 +340,72 @@ def test_podcast_validation_failure_with_partial_output_remains_hard(
             operation_id=operation_id,
             executor=execute,
         )
+
+
+def test_checkpointed_cycle_removes_rejected_delta_and_records_contained_failure(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    cycle = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        github_run_id="42",
+        workflow_attempt="1",
+        now=datetime(2026, 8, 4, 15, tzinfo=UTC),
+    )
+    rejected_path = sandbox_repository / "data" / "wiki" / "ideas" / "rejected.md"
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del cwd, environment, timeout
+        rejected_path.write_text("invalid partial research\n", encoding="utf-8")
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    outcome = run_cycle_operation(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=str(cycle["daily_cycle_id"]),
+        hermes_home=home,
+        environment={"PATH": "/usr/bin"},
+        operation_id=operation_id,
+        executor=execute,
+    )
+
+    assert outcome is not None
+    assert outcome.status == "failed"
+    assert rejected_path.exists() is False
+    artifact = sandbox_repository / "data" / "runs" / str(cycle["daily_cycle_id"]) / operation_id
+    assert json.loads((artifact / "validation_report.json").read_text())["passed"] is False
+    history = json.loads((artifact / "operation_history.json").read_text())
+    assert history["cycle_disposition"] == "failed"
+    manifest = json.loads(
+        (
+            sandbox_repository / "data" / "runs" / str(cycle["daily_cycle_id"]) / "daily_run.json"
+        ).read_text()
+    )
+    assert manifest["status"] == "degraded"
+    assert manifest["remaining_operations"] == manifest["maximum_operations"] - 1
+    assert (
+        run_cycle_operation(
+            sandbox_repository,
+            sandbox_settings,
+            daily_cycle_id=str(cycle["daily_cycle_id"]),
+            hermes_home=home,
+            environment={"PATH": "/usr/bin"},
+            operation_id=operation_id,
+            executor=execute,
+        )
+        is None
+    )
 
 
 def test_shared_budget_batch_runs_two_operations_strictly_sequentially(

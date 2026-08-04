@@ -72,6 +72,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "operation_id",
         "operation_type",
         "max_operations",
+        "resume_cycle_id",
         "dry_run",
         "generate_podcast",
         "wiki_maintenance",
@@ -133,36 +134,37 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     text = path.read_text(encoding="utf-8")
     workflow = _workflow(path)
     jobs = workflow["jobs"]
+    assert set(jobs) == {"runtime"}
     runtime = jobs["runtime"]
-    commit = jobs["commit"]
     runtime_text = yaml.safe_dump(runtime)
-    commit_text = yaml.safe_dump(commit)
 
     assert PINNED_CONTAINER.fullmatch(runtime["container"]["image"])
-    assert runtime["permissions"] == {"contents": "read"}
+    assert runtime["permissions"] == {"contents": "write"}
     assert runtime["defaults"]["run"]["shell"] == "bash"
-    assert commit["permissions"] == {"contents": "write"}
     assert runtime["env"] == {
         "AUXILIARY_MODEL": "${{ vars.AUXILIARY_MODEL || 'openai-codex:gpt-5.6-terra' }}",
-        "GENERATE_PODCAST": ("${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"),
         "HERMES_HOME": "/tmp/papertrader-hermes",
-        "MAX_OPERATIONS": "${{ vars.MAX_OPERATIONS || '180' }}",
+        "HERMES_SCOUT_MAX_TURNS": "${{ vars.HERMES_SCOUT_MAX_TURNS || '' }}",
+        "HERMES_ANALYST_MAX_TURNS": "${{ vars.HERMES_ANALYST_MAX_TURNS || '' }}",
+        "HERMES_DEEP_MAX_TURNS": "${{ vars.HERMES_DEEP_MAX_TURNS || '' }}",
+        "MAX_OPERATIONS": "${{ inputs.max_operations }}",
     }
     assert "WIKI_PATH" not in runtime["env"]
     assert "hermes skills opt-in --sync" in text
     assert "agent preflight" in text
-    assert "agent run-batch" in text
+    assert "agent run-batch" not in text
+    assert "agent run-checkpoint" not in text  # owned by the composite action
     assert "wiki maintain" in text
+    assert "daily resume-or-create" in text
     assert "daily prepare" in text
     assert "daily finalize" in text
+    assert "daily record-checkpoint" in text
     assert "podcast enqueue" in text
     assert "--operation-type daily_podcast" in text
-    assert "command -v ffmpeg" in text
-    assert "workflow bundle create" in text
-    assert "workflow bundle apply" in text
-    assert "runtime-whitelist validate --staged" in text
-    assert "git rebase" in text
-    assert "git diff --cached --quiet" in text
+    assert "podcast render" in text
+    assert "retention-days: 1" in text
+    assert "workflow bundle create" not in text
+    assert "workflow bundle apply" not in text
     assert "--yolo" not in text  # validated config and runner argv own this flag
     for trigger_name in ("workflow_call", "workflow_dispatch"):
         podcast_input = workflow["on"][trigger_name]["inputs"]["generate_podcast"]
@@ -177,54 +179,41 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         "YOUTUBE_DATA_API",
     }
     assert "secrets.OPENAI_OAUTH_SECRET" in runtime_text
-    assert "github.token" not in runtime_text
     assert "TELEGRAM" not in runtime_text
-    assert "github.token" in commit_text
-    assert "OPENAI_OAUTH_SECRET" not in commit_text
-    run_batch = next(
+    operation_steps = [
         step
         for step in runtime["steps"]
-        if step["name"] == "Execute due Hermes operations strictly one at a time"
-    )
-    assert run_batch["env"]["OPENROUTER_API_KEY"] == "${{ secrets.OPENROUTER_API_KEY }}"
-    assert run_batch["env"]["BATCH_MAX_OPERATIONS"] == "${{ inputs.max_operations }}"
-    assert 'selected_max="$BATCH_MAX_OPERATIONS"' in run_batch["run"]
-    assert 'test -n "${OPENROUTER_API_KEY:-}"' not in run_batch["run"]
-    hermes_logs = next(
-        step
-        for step in runtime["steps"]
-        if step["name"] == "Print recent redacted Hermes logs after a runtime or podcast failure"
-    )
-    assert hermes_logs["if"] == (
-        "${{ failure() || (!inputs.dry_run && env.GENERATE_PODCAST == 'true' && "
-        "steps.podcast.outputs.status != 'succeeded') }}"
-    )
-    assert "hermes logs errors --since 35m -n 200" in hermes_logs["run"]
-    assert "hermes logs agent --since 35m -n 500" in hermes_logs["run"]
+        if step.get("uses") == "./.github/actions/checkpoint-operation"
+    ]
+    assert len(operation_steps) == 20
+    assert [step["id"] for step in operation_steps] == [
+        f"operation_{index:02d}" for index in range(1, 21)
+    ]
+    assert operation_steps[0]["if"] == "${{ fromJSON(inputs.max_operations) >= 1 }}"
+    for index, step in enumerate(operation_steps[1:], start=2):
+        assert f"steps.operation_{index - 1:02d}.outputs.continue == 'true'" in step["if"]
+    for step in operation_steps:
+        assert step["with"]["github_token"] == ("${{ !inputs.dry_run && github.token || '' }}")
     assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
         "${{ jobs.runtime.outputs.podcast_status }}"
+    )
+    assert workflow["on"]["workflow_call"]["outputs"]["audio_render_status"]["value"] == (
+        "${{ jobs.runtime.outputs.audio_render_status }}"
     )
     podcast_finalize = next(
         step
         for step in runtime["steps"]
-        if step["name"] == "Record the terminal daily podcast disposition"
+        if step["name"] == "Finalize text podcast and reserve its checkpoint"
     )
-    assert podcast_finalize["id"] == "podcast"
-    assert podcast_finalize["if"] == ("${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}")
-    assert 'echo "status=$status" >> "$GITHUB_OUTPUT"' in podcast_finalize["run"]
+    assert podcast_finalize["id"] == "podcast_text"
     for step_name in (
-        "Collect completed-run changes and enqueue the daily podcast",
-        "Generate the daily podcast as the final sequential Hermes operation",
-        "Record the terminal daily podcast disposition",
+        "Freeze complete cycle podcast context and enqueue text synthesis",
+        "Synthesize only the timestamped podcast transcript",
+        "Finalize text podcast and reserve its checkpoint",
     ):
         step = next(step for step in runtime["steps"] if step["name"] == step_name)
-        assert step["if"] == "${{ !inputs.dry_run && env.GENERATE_PODCAST == 'true' }}"
-    assert runtime["outputs"]["podcast_status"] == (
-        "${{ steps.podcast.outputs.status || 'skipped' }}"
-    )
-    for step in runtime["steps"]:
-        if step is not run_batch:
-            assert "OPENROUTER_API_KEY" not in step.get("env", {})
+        assert step["if"] == "${{ inputs.generate_podcast && !inputs.dry_run }}"
+    assert runtime["outputs"]["podcast_status"] == ("${{ steps.outputs.outputs.podcast_status }}")
     runtime_steps = [step["name"] for step in runtime["steps"]]
     maintenance_step = next(
         step
@@ -238,10 +227,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "--skills" not in maintenance_step["run"]
     assert runtime_steps.index(
         "Run weekly native llm-wiki maintenance before queued operations"
-    ) < runtime_steps.index("Execute due Hermes operations strictly one at a time")
-    assert runtime_steps.index("Discover curated YouTube sources") < (
-        runtime_steps.index("Restore encrypted OpenAI OAuth state")
-    )
+    ) < runtime_steps.index("Routed research checkpoint 01")
     discovery = next(
         step for step in runtime["steps"] if step["name"] == "Discover curated YouTube sources"
     )
@@ -252,17 +238,36 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         if step is not discovery:
             assert "YOUTUBE_DATA_API" not in step.get("env", {})
     seekingalpha = next(
-        step
-        for step in runtime["steps"]
-        if step["name"] == "Schedule Seeking Alpha search-index discovery without credentials"
+        step for step in runtime["steps"] if step["name"] == "Schedule Seeking Alpha discovery"
     )
     assert seekingalpha["uses"] == "./.github/actions/schedule-seekingalpha"
     assert seekingalpha["with"]["dry_run"] == "${{ inputs.dry_run }}"
-    assert runtime_steps.index(
-        "Schedule Seeking Alpha search-index discovery without credentials"
-    ) < runtime_steps.index("Restore encrypted OpenAI OAuth state")
+    assert runtime_steps.index("Schedule Seeking Alpha discovery") < runtime_steps.index(
+        "Prepare deterministic daily state and reserve preparation checkpoint"
+    )
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
     assert daily["jobs"]["runtime"]["with"]["scan_seekingalpha"] == "true"
+
+    composite_path = repository_root / ".github" / "actions" / "checkpoint-operation" / "action.yml"
+    composite_text = composite_path.read_text(encoding="utf-8")
+    composite = _workflow(composite_path)
+    assert "agent run-checkpoint" in composite_text
+    assert "workflow checkpoint" in composite_text
+    assert "git rebase" in composite_text
+    agent_step = next(step for step in composite["runs"]["steps"] if step.get("id") == "agent")
+    assert "GITHUB_TOKEN" not in agent_step.get("env", {})
+    checkpoint_step = next(
+        step for step in composite["runs"]["steps"] if step.get("id") == "checkpoint"
+    )
+    assert checkpoint_step["env"]["GITHUB_TOKEN"] == (
+        "${{ inputs.dry_run != 'true' && inputs.github_token || '' }}"
+    )
+    podcast_synthesis = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Synthesize only the timestamped podcast transcript"
+    )
+    assert podcast_synthesis["continue-on-error"] == "true"
 
 
 @pytest.mark.parametrize(
@@ -316,53 +321,49 @@ def test_openai_oauth_restore_refresh_failure_and_cleanup_contract(
     path = repository_root / ".github" / "workflows" / "reusable-llm.yml"
     workflow = _workflow(path)
     runtime = workflow["jobs"]["runtime"]
-    commit = workflow["jobs"]["commit"]
     steps = {step["name"]: step for step in runtime["steps"]}
-    restore = steps["Restore encrypted OpenAI OAuth state"]
-    persist = steps["Encrypt refreshed OpenAI OAuth state when changed"]
-    upload = steps["Upload only the refreshed OAuth ciphertext"]
-    cleanup = steps["Remove all plaintext OAuth credential material"]
+    restore = steps["Restore OpenAI OAuth only inside Hermes home"]
+    cleanup = steps["Remove plaintext OAuth and all temporary media"]
 
     assert "OPENAI_OAUTH_SECRET" not in workflow.get("env", {})
     assert "OPENAI_OAUTH_SECRET" not in runtime["env"]
-    assert "OPENAI_OAUTH_SECRET" not in commit["env"]
     assert restore["env"] == {"OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}"}
-    assert "steps.oauth_contract.outputs.oauth_required == 'true'" in restore["if"]
+    assert restore["if"] == "${{ !inputs.dry_run }}"
     assert "inputs.dry_run" not in restore["env"]
-    assert 'test -s "$CIPHERTEXT"' in restore["run"]
-    assert 'test -n "${OPENAI_OAUTH_SECRET:-}"' in restore["run"]
     assert "age --decrypt" in restore["run"]
-    assert 'AUTH_FILE="$HERMES_HOME/auth.json"' in restore["run"]
-    assert 'AUTH_BEFORE="$RUNNER_TEMP/openai-oauth-auth.before.json"' in restore["run"]
+    assert '"$HERMES_HOME/auth.json"' in restore["run"]
+    assert '"$RUNNER_TEMP/openai-oauth-auth.before.json"' in restore["run"]
     preflight = steps["Preflight OpenAI Codex OAuth without exposing credential state"]
     assert "hermes auth status openai-codex 2>/dev/null" in preflight["run"]
     assert '"openai-codex: logged in"' in preflight["run"]
     assert "unset oauth_status" in preflight["run"]
 
-    assert "always()" in persist["if"]
-    assert 'cmp -s "$AUTH_BEFORE" "$AUTH_FILE"' in persist["run"]
-    assert 'age-keygen -y "$IDENTITY_FILE"' in persist["run"]
+    composite = _workflow(
+        repository_root / ".github" / "actions" / "checkpoint-operation" / "action.yml"
+    )
+    composite_steps = {step["name"]: step for step in composite["runs"]["steps"]}
+    persist = composite_steps["Encrypt and verify refreshed OAuth state before the checkpoint"]
+    assert 'cmp -s "$auth_before" "$auth_file"' in persist["run"]
+    assert 'age-keygen -y "$identity_file"' in persist["run"]
     assert "age --encrypt" in persist["run"]
-    assert 'cmp -s "$AUTH_FILE" "$AUTH_VERIFY"' in persist["run"]
-    assert upload["with"]["retention-days"] == "1"
-    assert upload["with"]["include-hidden-files"] == "true"
-    assert upload["with"]["path"] == "${{ runner.temp }}/papertrader-oauth-artifact"
+    assert 'cmp -s "$auth_file" "$verified"' in persist["run"]
+    assert persist["env"] == {
+        "OPENAI_OAUTH_SECRET": "${{ inputs.openai_oauth_secret }}",
+        "HERMES_HOME": "${{ inputs.hermes_home }}",
+    }
     assert "always()" in cleanup["if"]
     for required_path in (
         "$HERMES_HOME/auth.json",
-        "$RUNNER_TEMP/openai-oauth.agekey",
         "$RUNNER_TEMP/openai-oauth-auth.before.json",
-        "$RUNNER_TEMP/openai-oauth-auth.verify.json",
-        "$RUNNER_TEMP/openai-oauth-auth.json.age",
+        "$RUNNER_TEMP/papertrader-checkpoint.agekey",
+        "$RUNNER_TEMP/openai-oauth-auth.verified.json",
     ):
         assert required_path in cleanup["run"]
-
-    assert commit["if"] == "${{ always() }}"
-    assert "needs.runtime.result != 'success'" in yaml.safe_dump(commit)
-    assert "chore(auth): persist refreshed OpenAI OAuth state" in path.read_text(encoding="utf-8")
-    assert ".papertrader/credentials/openai-oauth-auth.json.age" in yaml.safe_dump(commit)
-    assert "$HERMES_HOME/auth.json" not in yaml.safe_dump(commit)
-    assert "openai-oauth.agekey" not in yaml.safe_dump(commit)
+    agent_step = composite_steps[
+        "Run exactly one routed Hermes operation without write credentials"
+    ]
+    assert "OPENAI_OAUTH_SECRET" not in agent_step.get("env", {})
+    assert "GITHUB_TOKEN" not in agent_step.get("env", {})
 
 
 @pytest.mark.parametrize(
@@ -447,18 +448,16 @@ def test_hermes_runtime_establishes_container_paths_and_profile_ownership(
     runtime = workflow["jobs"]["runtime"]
     steps = {step["name"]: step for step in runtime["steps"]}
     boundary = steps["Establish the container workspace boundary"]["run"]
-    identities = steps["Establish immutable runtime identities"]["run"]
     handoff = steps["Hand the isolated profile to the Hermes user"]["run"]
-    oauth_contract = steps["Determine whether OAuth restoration is required"]["run"]
+    preflight = steps["Validate the selected cycle limit and run the full preflight gate"]["run"]
 
     assert 'workspace="$(pwd -P)"' in boundary
     assert 'git config --system --add safe.directory "$workspace"' in boundary
     assert 'echo "WIKI_PATH=${workspace}/data/wiki" >> "$GITHUB_ENV"' in boundary
-    assert "git rev-parse --verify 'HEAD^{commit}'" in identities
     assert handoff == 'chown -R hermes:hermes "$HERMES_HOME"'
-    assert 'if [ "$DRY_RUN" != "true" ]; then' in oauth_contract
-    assert 'case "$BATCH_MAX_OPERATIONS" in' in oauth_contract
-    assert 'case "$MAX_OPERATIONS" in' not in oauth_contract
+    assert 'case "$MAX_OPERATIONS" in' in preflight
+    assert 'test "$MAX_OPERATIONS" -gt 0' in preflight
+    assert "uv run pytest" in preflight
 
 
 def test_daily_forwards_scoped_runtime_secrets_and_auth_only_pushes_do_not_retrigger_ci(
@@ -513,6 +512,10 @@ def test_reporting_failure_state_and_pages_deployment_use_post_commit_boundaries
         "TELEGRAM_CHAT_ID",
     }
     assert "telegram deliver" in reporting_text
+    assert "telegram deliver-audio" in reporting_text
+    assert "telegram record-audio-failure" in reporting_text
+    assert "retention-days" not in reporting_text  # runtime owns the one-day upload
+    assert "Remove downloaded podcast media" in reporting_text
     assert "runtime-whitelist validate --staged" in reporting_text
     assert "git rebase" in reporting_text
     assert "TELEGRAM_BOT_TOKEN" in delivery_text

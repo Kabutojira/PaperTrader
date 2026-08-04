@@ -6,9 +6,11 @@ research, allocation, signal, order, fill, accounting, or reconciliation code.
 
 from __future__ import annotations
 
+import configparser
 import csv
 import json
 import re
+import subprocess
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
 from dataclasses import asdict, dataclass
@@ -696,6 +698,56 @@ def _source_hashes(repository_root: Path, *, as_of: datetime) -> Mapping[str, st
     if not all(HASH.fullmatch(value) for value in hashes.values()):
         raise AdviceError("source-state hashing produced a non-canonical digest")
     return dict(sorted(hashes.items()))
+
+
+def _configuration_only_runtime_changed(
+    repository_root: Path,
+    *,
+    run_id: str,
+    expected_hash: str,
+) -> bool:
+    """Accept profile/delivery config migration without weakening investment freshness."""
+
+    manifest_path = repository_root / "data" / "runs" / run_id / "daily_run.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    source_sha = manifest.get("source_sha") if isinstance(manifest, dict) else None
+    if not isinstance(source_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", source_sha):
+        return False
+    historical = subprocess.run(
+        ["git", "show", f"{source_sha}:config.ini"],
+        cwd=repository_root,
+        check=False,
+        capture_output=True,
+    )
+    if historical.returncode != 0 or content_hash(historical.stdout) != expected_hash:
+        return False
+    try:
+        old = configparser.ConfigParser(interpolation=None)
+        old.read_string(historical.stdout.decode("utf-8"))
+        current = configparser.ConfigParser(interpolation=None)
+        current.read(repository_root / "config.ini", encoding="utf-8")
+    except (UnicodeError, configparser.Error, OSError):
+        return False
+    investment_sections = (
+        "safety",
+        "market_data",
+        "calendars",
+        "indicators",
+        "portfolio",
+        "risk",
+        "allocation",
+        "ratings",
+        "orders",
+    )
+    return all(
+        old.has_section(section)
+        and current.has_section(section)
+        and dict(old.items(section)) == dict(current.items(section))
+        for section in investment_sections
+    )
 
 
 def _snapshot_as_of(
@@ -3043,7 +3095,20 @@ def validate_advice(
         errors.append(f"cannot validate decision source state: {exc}")
     else:
         if require_current_state and dict(snapshot.source_state_hashes) != current_source_hashes:
-            errors.append("published decision snapshot does not match current authoritative state")
+            previous = dict(snapshot.source_state_hashes)
+            differing = {
+                key
+                for key in set(previous) | set(current_source_hashes)
+                if previous.get(key) != current_source_hashes.get(key)
+            }
+            if differing != {"configuration"} or not _configuration_only_runtime_changed(
+                repository_root,
+                run_id=snapshot.run_id,
+                expected_hash=previous.get("configuration", ""),
+            ):
+                errors.append(
+                    "published decision snapshot does not match current authoritative state"
+                )
         expected_snapshot_id = stable_id(
             "decision", snapshot.run_id, snapshot.as_of, snapshot.source_state_hashes
         )

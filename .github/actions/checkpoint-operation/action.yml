@@ -1,0 +1,160 @@
+name: Run and checkpoint one routed PaperTrader operation
+description: Runs exactly one Hermes process without Git credentials, then validates and pushes its accepted checkpoint.
+
+inputs:
+  daily_cycle_id:
+    required: true
+  hermes_home:
+    required: true
+  operation_id:
+    required: false
+    default: ""
+  operation_type:
+    required: false
+    default: ""
+  target_branch:
+    required: true
+  dry_run:
+    required: true
+  github_token:
+    required: false
+    default: ""
+  openai_oauth_secret:
+    required: false
+    default: ""
+
+outputs:
+  continue:
+    description: Whether another research iteration may be attempted.
+    value: ${{ steps.outcome.outputs.continue }}
+  operation_id:
+    value: ${{ steps.outcome.outputs.operation_id }}
+  status:
+    value: ${{ steps.outcome.outputs.status }}
+  commit_sha:
+    value: ${{ steps.checkpoint.outputs.commit_sha }}
+
+runs:
+  using: composite
+  steps:
+    - name: Reconcile the current target branch before claiming work
+      if: ${{ inputs.dry_run != 'true' }}
+      shell: bash
+      env:
+        TARGET_BRANCH: ${{ inputs.target_branch }}
+      run: |
+        test -z "$(git status --porcelain=v1)"
+        git fetch --no-tags origin "$TARGET_BRANCH"
+        git rebase "origin/${TARGET_BRANCH}"
+        uv run papertrader schema validate --strict
+        uv run papertrader integrity --strict
+    - name: Run exactly one routed Hermes operation without write credentials
+      id: agent
+      if: ${{ inputs.dry_run != 'true' }}
+      shell: bash
+      env:
+        DAILY_CYCLE_ID: ${{ inputs.daily_cycle_id }}
+        HERMES_HOME: ${{ inputs.hermes_home }}
+        SELECTED_OPERATION_ID: ${{ inputs.operation_id }}
+        SELECTED_OPERATION_TYPE: ${{ inputs.operation_type }}
+      run: |
+        set +e
+        result_file="${RUNNER_TEMP}/papertrader-operation-result.json"
+        arguments=(agent run-checkpoint --daily-cycle-id "$DAILY_CYCLE_ID" --hermes-home "$HERMES_HOME")
+        if [ -n "$SELECTED_OPERATION_ID" ]; then arguments+=(--operation-id "$SELECTED_OPERATION_ID"); fi
+        if [ -n "$SELECTED_OPERATION_TYPE" ]; then arguments+=(--operation-type "$SELECTED_OPERATION_TYPE"); fi
+        uv run papertrader "${arguments[@]}" > "$result_file"
+        result_code=$?
+        echo "result_file=$result_file" >> "$GITHUB_OUTPUT"
+        echo "result_code=$result_code" >> "$GITHUB_OUTPUT"
+        exit 0
+    - name: Classify the operation result and contained failures
+      id: outcome
+      shell: bash
+      env:
+        DAILY_CYCLE_ID: ${{ inputs.daily_cycle_id }}
+        RESULT_FILE: ${{ steps.agent.outputs.result_file }}
+        RESULT_CODE: ${{ steps.agent.outputs.result_code }}
+        DRY_RUN: ${{ inputs.dry_run }}
+      run: |
+        if [ "$DRY_RUN" = "true" ]; then
+          echo "continue=false" >> "$GITHUB_OUTPUT"
+          echo "status=no_operation" >> "$GITHUB_OUTPUT"
+          echo "operation_id=" >> "$GITHUB_OUTPUT"
+          echo "checkpoint_index=" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        if [ "$RESULT_CODE" != "0" ]; then
+          checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$DAILY_CYCLE_ID" --kind failure)
+          echo "checkpoint_index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
+          echo "kind=failure" >> "$GITHUB_OUTPUT"
+          echo "continue=false" >> "$GITHUB_OUTPUT"
+          echo "status=failed" >> "$GITHUB_OUTPUT"
+          echo "operation_id=" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        if [ "$(tr -d '[:space:]' < "$RESULT_FILE")" = "null" ]; then
+          echo "continue=false" >> "$GITHUB_OUTPUT"
+          echo "status=no_operation" >> "$GITHUB_OUTPUT"
+          echo "operation_id=" >> "$GITHUB_OUTPUT"
+          echo "checkpoint_index=" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        python3 - "$RESULT_FILE" "$GITHUB_OUTPUT" <<'PY'
+        import json, pathlib, sys
+        value = json.loads(pathlib.Path(sys.argv[1]).read_text())
+        with pathlib.Path(sys.argv[2]).open("a") as output:
+            output.write(f"checkpoint_index={value['checkpoint_index']}\n")
+            output.write("kind=operation\n")
+            output.write(f"operation_id={value['operation_id']}\n")
+            output.write(f"operation_type={value['operation_type']}\n")
+            output.write(f"profile={value['profile']}\n")
+            output.write(f"status={value['status']}\n")
+            output.write(f"continue={'true' if value['status'] in {'succeeded', 'skipped'} else 'false'}\n")
+        PY
+    - name: Encrypt and verify refreshed OAuth state before the checkpoint
+      if: ${{ steps.outcome.outputs.checkpoint_index != '' && inputs.dry_run != 'true' }}
+      shell: bash
+      env:
+        OPENAI_OAUTH_SECRET: ${{ inputs.openai_oauth_secret }}
+        HERMES_HOME: ${{ inputs.hermes_home }}
+      run: |
+        identity_file="${RUNNER_TEMP}/papertrader-checkpoint.agekey"
+        auth_before="${RUNNER_TEMP}/openai-oauth-auth.before.json"
+        auth_file="$HERMES_HOME/auth.json"
+        refreshed="${RUNNER_TEMP}/openai-oauth-auth.refreshed.age"
+        verified="${RUNNER_TEMP}/openai-oauth-auth.verified.json"
+        if cmp -s "$auth_before" "$auth_file"; then exit 0; fi
+        install -m 600 /dev/null "$identity_file"
+        printf '%s\n' "$OPENAI_OAUTH_SECRET" > "$identity_file"
+        recipient=$(age-keygen -y "$identity_file")
+        age --encrypt --recipient "$recipient" --output "$refreshed" "$auth_file"
+        age --decrypt --identity "$identity_file" --output "$verified" "$refreshed"
+        cmp -s "$auth_file" "$verified"
+        install -m 600 "$refreshed" .papertrader/credentials/openai-oauth-auth.json.age
+        install -m 600 "$auth_file" "$auth_before"
+        rm -f "$identity_file" "$refreshed" "$verified"
+    - name: Commit and push only the validated checkpoint
+      id: checkpoint
+      if: ${{ steps.outcome.outputs.checkpoint_index != '' }}
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ inputs.dry_run != 'true' && inputs.github_token || '' }}
+        DAILY_CYCLE_ID: ${{ inputs.daily_cycle_id }}
+        CHECKPOINT_INDEX: ${{ steps.outcome.outputs.checkpoint_index }}
+        CHECKPOINT_KIND: ${{ steps.outcome.outputs.kind }}
+        OPERATION_ID: ${{ steps.outcome.outputs.operation_id }}
+        OPERATION_TYPE: ${{ steps.outcome.outputs.operation_type }}
+        TERMINAL_STATUS: ${{ steps.outcome.outputs.status }}
+        PROFILE: ${{ steps.outcome.outputs.profile }}
+        TARGET_BRANCH: ${{ inputs.target_branch }}
+        DRY_RUN: ${{ inputs.dry_run }}
+      run: |
+        arguments=(workflow checkpoint --daily-cycle-id "$DAILY_CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind "$CHECKPOINT_KIND" --target-branch "$TARGET_BRANCH")
+        if [ -n "$OPERATION_ID" ]; then arguments+=(--operation-id "$OPERATION_ID"); fi
+        if [ -n "$OPERATION_TYPE" ]; then arguments+=(--operation-type "$OPERATION_TYPE"); fi
+        if [ -n "$TERMINAL_STATUS" ]; then arguments+=(--terminal-status "$TERMINAL_STATUS"); fi
+        if [ -n "$PROFILE" ]; then arguments+=(--profile "$PROFILE"); fi
+        if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
+        result=$(uv run papertrader "${arguments[@]}")
+        echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
