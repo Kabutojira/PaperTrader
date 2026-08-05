@@ -194,6 +194,14 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         assert f"steps.operation_{index - 1:02d}.outputs.continue == 'true'" in step["if"]
     for step in operation_steps:
         assert step["with"]["github_token"] == ("${{ !inputs.dry_run && github.token || '' }}")
+    preflight_step = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Validate the selected cycle limit and run the full preflight gate"
+    )
+    assert preflight_step["env"] == {"RESUME_CYCLE_ID": "${{ inputs.resume_cycle_id }}"}
+    assert "--prepared-daily-cycle-id" in preflight_step["run"]
+    assert "--prepared-github-run-id" in preflight_step["run"]
     assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
         "${{ jobs.runtime.outputs.podcast_status }}"
     )
@@ -259,6 +267,15 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "agent run-checkpoint" in composite_text
     assert "workflow checkpoint" in composite_text
     assert "git rebase" in composite_text
+    reconcile_step = next(
+        step
+        for step in composite["runs"]["steps"]
+        if step["name"] == "Reconcile the current target branch before claiming work"
+    )
+    assert (
+        'integrity --strict --prepared-daily-cycle-id "${{ inputs.daily_cycle_id }}"'
+        in reconcile_step["run"]
+    )
     agent_step = next(step for step in composite["runs"]["steps"] if step.get("id") == "agent")
     assert "GITHUB_TOKEN" not in agent_step.get("env", {})
     checkpoint_step = next(

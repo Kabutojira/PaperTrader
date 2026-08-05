@@ -47,7 +47,7 @@ runs:
         git fetch --no-tags origin "$TARGET_BRANCH"
         git rebase "origin/${TARGET_BRANCH}"
         uv run papertrader schema validate --strict
-        uv run papertrader integrity --strict
+        uv run papertrader integrity --strict --prepared-daily-cycle-id "${{ inputs.daily_cycle_id }}"
     - name: Run exactly one routed Hermes operation without write credentials
       id: agent
       if: ${{ inputs.dry_run != 'true' }}

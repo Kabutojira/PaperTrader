@@ -43,6 +43,7 @@ from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.indicators import update_indicators
 from papertrader.integrity import (
     changed_paths_from_git,
+    prepared_daily_cycle_for_github_run,
     publication_requires_current_state,
     validate_csv_files,
     validate_integrity,
@@ -142,8 +143,18 @@ def _parser() -> argparse.ArgumentParser:
     schema_commands = schema.add_subparsers(dest="schema_command", required=True)
     schema_commands.add_parser("validate").add_argument("--strict", action="store_true")
 
-    commands.add_parser("integrity", help="run repository integrity checks").add_argument(
-        "--strict", action="store_true"
+    integrity = commands.add_parser("integrity", help="run repository integrity checks")
+    integrity.add_argument("--strict", action="store_true")
+    integrity_context = integrity.add_mutually_exclusive_group()
+    integrity_context.add_argument(
+        "--prepared-daily-cycle-id",
+        default="",
+        help="defer only publication freshness for a verified unfinalized daily cycle",
+    )
+    integrity_context.add_argument(
+        "--prepared-github-run-id",
+        default="",
+        help="defer only publication freshness for this GitHub run's unique unfinalized cycle",
     )
 
     wiki = commands.add_parser("wiki", help="work with the research wiki")
@@ -1029,7 +1040,29 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         errors.extend(validate_json_schemas(root))
         return _print_result("schema", errors)
     if arguments.command == "integrity":
-        return _print_result("integrity", validate_integrity(root, os.environ))
+        prepared_daily_cycle_id = arguments.prepared_daily_cycle_id
+        if arguments.prepared_github_run_id:
+            prepared_daily_cycle_id = prepared_daily_cycle_for_github_run(
+                root,
+                arguments.prepared_github_run_id,
+            )
+        require_current_publication = (
+            publication_requires_current_state(
+                root,
+                os.environ,
+                prepared_daily_cycle_id=prepared_daily_cycle_id,
+            )
+            if prepared_daily_cycle_id
+            else None
+        )
+        return _print_result(
+            "integrity",
+            validate_integrity(
+                root,
+                os.environ,
+                require_current_publication=require_current_publication,
+            ),
+        )
     if arguments.command == "wiki":
         if arguments.wiki_command == "lint":
             return _print_result("wiki", lint_wiki(settings.paths.wiki))

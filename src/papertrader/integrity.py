@@ -75,6 +75,7 @@ RAW_WIKI_EXTENSIONS = frozenset({".md", ".txt", ".pdf", ".png", ".jpg", ".jpeg",
 RUN_ARTIFACT_EXTENSIONS = frozenset({".json", ".md"})
 LOG_EXTENSIONS = frozenset({".ndjson", ".txt"})
 SAFE_RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+GITHUB_RUN_ID = re.compile(r"^[1-9][0-9]{0,31}$")
 ULID = re.compile(r"^[0-9A-HJKMNP-TV-Z]{26}$")
 
 
@@ -859,36 +860,12 @@ def validate_assessment_history(repository_root: Path) -> list[str]:
     return errors
 
 
-def publication_requires_current_state(
-    repository_root: Path, environment: Mapping[str, str]
+def _manifest_defers_publication_freshness(
+    manifest: object,
+    *,
+    run_id: str,
 ) -> bool:
-    """Return whether publication hashes must match the current canonical state.
-
-    Only a controller-created operation directory inside its matching prepared daily run may
-    defer freshness until finalization regenerates the publication. Invalid, completed, or
-    standalone contexts fail closed and require the current-state comparison.
-    """
-
-    run_id = environment.get("PAPERTRADER_AUDIT_RUN_ID", "")
-    operation_id = environment.get("PAPERTRADER_AUDIT_OPERATION_ID", "")
-    if not SAFE_RUN_ID.fullmatch(run_id) or not ULID.fullmatch(operation_id):
-        return True
-    run_directory = repository_root / "data" / "runs" / run_id
-    operation_directory = run_directory / operation_id
-    manifest_path = run_directory / "daily_run.json"
-    if (
-        run_directory.is_symlink()
-        or operation_directory.is_symlink()
-        or not operation_directory.is_dir()
-        or manifest_path.is_symlink()
-        or not manifest_path.is_file()
-    ):
-        return True
-    try:
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return True
-    return not (
+    return bool(
         isinstance(manifest, dict)
         and manifest.get("run_id") == run_id
         and (
@@ -904,6 +881,84 @@ def publication_requires_current_state(
             )
         )
     )
+
+
+def prepared_daily_cycle_for_github_run(
+    repository_root: Path,
+    github_run_id: str,
+) -> str:
+    """Return one unfinalized cycle owned by this GitHub run, or fail closed."""
+
+    if not GITHUB_RUN_ID.fullmatch(github_run_id):
+        return ""
+    matches: list[str] = []
+    for manifest_path in sorted((repository_root / "data" / "runs").glob("daily-*/daily_run.json")):
+        run_directory = manifest_path.parent
+        run_id = run_directory.name
+        if (
+            not SAFE_RUN_ID.fullmatch(run_id)
+            or run_directory.is_symlink()
+            or manifest_path.is_symlink()
+            or not manifest_path.is_file()
+        ):
+            continue
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if (
+            isinstance(manifest, dict)
+            and manifest.get("originating_github_run_id") == github_run_id
+            and _manifest_defers_publication_freshness(manifest, run_id=run_id)
+        ):
+            matches.append(run_id)
+    return matches[0] if len(matches) == 1 else ""
+
+
+def publication_requires_current_state(
+    repository_root: Path,
+    environment: Mapping[str, str],
+    *,
+    prepared_daily_cycle_id: str = "",
+) -> bool:
+    """Return whether publication hashes must match the current canonical state.
+
+    A controller may explicitly validate its matching prepared daily cycle immediately before
+    claiming work. After claim, only a controller-created operation directory inside its matching
+    prepared daily run may defer freshness until finalization regenerates the publication.
+    Invalid, completed, or standalone contexts fail closed and require the current-state
+    comparison.
+    """
+
+    operation_id = ""
+    if prepared_daily_cycle_id:
+        run_id = prepared_daily_cycle_id
+    else:
+        run_id = environment.get("PAPERTRADER_AUDIT_RUN_ID", "")
+        operation_id = environment.get("PAPERTRADER_AUDIT_OPERATION_ID", "")
+    if not SAFE_RUN_ID.fullmatch(run_id) or (
+        not prepared_daily_cycle_id and not ULID.fullmatch(operation_id)
+    ):
+        return True
+    run_directory = repository_root / "data" / "runs" / run_id
+    operation_directory = run_directory / operation_id
+    manifest_path = run_directory / "daily_run.json"
+    if (
+        run_directory.is_symlink()
+        or not run_directory.is_dir()
+        or manifest_path.is_symlink()
+        or not manifest_path.is_file()
+    ):
+        return True
+    if not prepared_daily_cycle_id and (
+        operation_directory.is_symlink() or not operation_directory.is_dir()
+    ):
+        return True
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return True
+    return not _manifest_defers_publication_freshness(manifest, run_id=run_id)
 
 
 def validate_integrity(

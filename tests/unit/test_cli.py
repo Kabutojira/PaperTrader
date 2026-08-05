@@ -18,9 +18,9 @@ def _set_repository_environment(monkeypatch, repository_root: Path) -> None:  # 
     monkeypatch.setenv("WIKI_PATH", str(repository_root / "data" / "wiki"))
 
 
-def test_cli_validation_commands_pass(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
-    _set_repository_environment(monkeypatch, repository_root)
-    prefix = ["--repository", str(repository_root)]
+def test_cli_validation_commands_pass(monkeypatch, sandbox_repository: Path) -> None:  # type: ignore[no-untyped-def]
+    _set_repository_environment(monkeypatch, sandbox_repository)
+    prefix = ["--repository", str(sandbox_repository)]
 
     assert main([*prefix, "schema", "validate", "--strict"]) == 0
     assert main([*prefix, "integrity", "--strict"]) == 0

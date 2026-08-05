@@ -9,6 +9,8 @@ from papertrader.config import Settings
 from papertrader.execution import ensure_initial_capital
 from papertrader.integrity import (
     load_csv_contracts,
+    prepared_daily_cycle_for_github_run,
+    publication_requires_current_state,
     validate_daily_run_artifacts,
     validate_integrity,
     validate_skills,
@@ -18,9 +20,12 @@ from papertrader.tables import read_csv
 
 
 def test_clean_scaffold_passes_integrity(
-    repository_root: Path, paper_environment: dict[str, str]
+    sandbox_repository: Path,
 ) -> None:
-    assert validate_integrity(repository_root, paper_environment) == []
+    environment = {
+        "WIKI_PATH": str((sandbox_repository / "data" / "wiki").resolve()),
+    }
+    assert validate_integrity(sandbox_repository, environment) == []
 
 
 def test_all_project_skills_are_discoverable(repository_root: Path) -> None:
@@ -87,14 +92,61 @@ def test_prepared_agent_operation_defers_publication_freshness_until_finalizatio
         + "\n",
         encoding="utf-8",
     )
-    operation_environment = {
+    controller_environment = {
         **paper_environment,
+        "WIKI_PATH": str((sandbox_repository / "data" / "wiki").resolve()),
+    }
+    assert not publication_requires_current_state(
+        sandbox_repository,
+        controller_environment,
+        prepared_daily_cycle_id=run_id,
+    )
+    assert (
+        validate_integrity(
+            sandbox_repository,
+            controller_environment,
+            require_current_publication=publication_requires_current_state(
+                sandbox_repository,
+                controller_environment,
+                prepared_daily_cycle_id=run_id,
+            ),
+        )
+        == []
+    )
+
+    operation_environment = {
+        **controller_environment,
         "PAPERTRADER_AUDIT_RUN_ID": run_id,
         "PAPERTRADER_AUDIT_OPERATION_ID": operation_id,
-        "WIKI_PATH": str((sandbox_repository / "data" / "wiki").resolve()),
     }
 
     assert validate_integrity(sandbox_repository, operation_environment) == []
+
+
+def test_github_rerun_resolves_its_unique_unfinalized_daily_cycle(
+    sandbox_repository: Path,
+) -> None:
+    run_id = "daily-20260805T065913Z"
+    github_run_id = "30982821493"
+    run_directory = sandbox_repository / "data" / "runs" / run_id
+    run_directory.mkdir()
+    manifest_path = run_directory / "daily_run.json"
+    manifest = {
+        "daily_run_version": 2,
+        "run_id": run_id,
+        "daily_cycle_id": run_id,
+        "originating_github_run_id": github_run_id,
+        "status": "running",
+        "finalization_at": "",
+    }
+    manifest_path.write_text(json.dumps(manifest) + "\n", encoding="utf-8")
+
+    assert prepared_daily_cycle_for_github_run(sandbox_repository, github_run_id) == run_id
+    assert prepared_daily_cycle_for_github_run(sandbox_repository, "not-a-run-id") == ""
+
+    manifest["finalization_at"] = "2026-08-05T08:00:00Z"
+    manifest_path.write_text(json.dumps(manifest) + "\n", encoding="utf-8")
+    assert prepared_daily_cycle_for_github_run(sandbox_repository, github_run_id) == ""
 
 
 def test_latest_completed_run_owns_shared_canonical_daily_report(
