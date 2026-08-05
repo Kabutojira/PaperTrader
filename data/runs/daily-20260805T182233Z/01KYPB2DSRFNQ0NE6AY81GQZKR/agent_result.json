@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KYPB2DSRFNQ0NE6AY81GQZKR",
+  "status": "succeeded",
+  "summary": "Completed one bounded SoFi Technologies security review using the Q1 2026 Form 10-Q and SEC-filed Q2 2026 results exhibit. Created the security page, registered two current primary sources, updated the structured security row, and accepted assessment assessment_1c9ade30dbdac5102ac3. Bear/base/bull fair values are USD 11.25/USD 20.90/USD 32.00 at 30%/50%/20%; deterministic calculation produced USD 20.225 probability-weighted fair value, 8.1550758012954881810739869% expected return, 6.116306850971616135805490175% confidence-adjusted expected return, a Hold rating, Watch action, and ineligible allocation status at the USD 18.700000762939453 mark. No linked idea or accepted relationship required a follow-up, and the conviction strategy gate failed. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "SoFi Technologies second-quarter 2026 results exhibit",
+      "claim": "SoFi reported approximately USD 1.2 billion of GAAP net revenue, up 43% year over year, USD 357.8 million of adjusted EBITDA, USD 156.6 million of GAAP net income, USD 0.12 diluted EPS, 15.8 million members, and 24.4 million products.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "1faf6a64f45f7ce7bfeb279aa5983e1d6281f6d99e859b92ce6d30affc46be1d"
+    },
+    {
+      "source": "SoFi Technologies second-quarter 2026 results exhibit",
+      "claim": "Quarter-end deposits were USD 45.543 billion, estimated CET1 and Tier 1 risk-based capital ratios were 18.7%, book value was USD 8.58 per share, tangible book value was USD 7.34 per share, and management raised 2026 adjusted-net-revenue guidance to USD 4.75-4.85 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "1faf6a64f45f7ce7bfeb279aa5983e1d6281f6d99e859b92ce6d30affc46be1d"
+    },
+    {
+      "source": "SoFi Technologies Form 10-Q for the quarter ended March 31, 2026 and second-quarter results exhibit",
+      "claim": "SoFi operates Lending, Technology Platform, and Financial Services segments. Q2 personal-loan annualized net charge-offs were 2.62%, while the weighted-average annual default assumption increased to 4.77% from 4.57%; Technology Platform revenue remained 23% below the prior-year quarter after a large client transition.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000037/sofi-20260331.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "621d87c594d6ed57cdec9220a2aadd05b069e97bd438f2fa05fb69632e221336"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, and assessment state",
+      "claim": "The immutable SOFI/XNAS/USD/equity identity had a current adjusted close of USD 18.700000762939453 retrieved at 2026-08-05T18:22:39Z. The 4 August bullish MACD crossover followed a 5.3476% gain over 7 July through 4 August, with RSI 59.13 and no volume anomaly. Assessment assessment_1c9ade30dbdac5102ac3 produced USD 20.225 probability-weighted value, Hold/Watch state, and exact ineligibility frontiers.",
+      "observed_at": "2026-08-05T19:54:19Z",
+      "source_hash": "bda3ac6a746f8c036fc9b29eee6b84c2da1719fef93d846f9cf3bda7fafcf344"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/source_sofi_q1_2026_10q_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/source_sofi_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_98470cfc01bbcde78fc2.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SoFi's Q2 2026 results showed record revenue, GAAP profitability, 35% member growth, USD 45.5 billion of deposits, strong regulatory capital, and continued book-value growth. The bullish MACD crossover is positive post-results momentum, but USD 20.225 probability-weighted value offers only 8.16% expected return at USD 18.70, medium confidence reduces the adjusted return to 6.12%, and material bear downside leaves weak payoff ratios. Deterministic state is Hold/Watch and allocation-ineligible, with no paper strategy or signal."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_98470cfc01bbcde78fc2",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/source_sofi_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/source_sofi_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2DSRFNQ0NE6AY81GQZKR/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_98470cfc01bbcde78fc2"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one routed security_research operation for daily-20260805T182233Z with matching immutable SOFI/XNAS/USD/equity identity and trusted native, controller, and operation skill hashes.",
+      "Consumed the mandatory audited security context before any assessment-state read; it showed no prior assessment, successful result, retained source, page hash, linked idea, relationship, or strategy.",
+      "Retrieved the SEC filing and exhibit successfully, retained their SHA-256 hashes, registered both through the project CLI, and used current earnings, segment, deposit, regulatory-capital, credit, book-value, share-count, guidance, and risk evidence.",
+      "Accepted assessment assessment_1c9ade30dbdac5102ac3 is schema version 2, has no predecessor, links this operation and expected result path, and records research-page hash bda3ac6a746f8c036fc9b29eee6b84c2da1719fef93d846f9cf3bda7fafcf344.",
+      "The alert's exact 2026-07-07 through 2026-08-04 period, 5.3476% move, 2026-08-04 MACD crossover, RSI, Bollinger, and volume states were preserved as canonical measurements and assessed as positive momentum rather than a valuation signal.",
+      "No payload idea or accepted canonical relationship exists, so zero idea-research follow-ups is exactly complete. The conviction strategy gate failed on expected return, payoff ratios, and relationship status, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all passed.",
+      "Final security context confirmed source identity and freshness, market and FX freshness, current assessment projection, immutable assessment-history provenance, exact page-hash identity, and complete deterministic gate frontiers.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}

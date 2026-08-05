@@ -2026,3 +2026,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   signal, so no strategy or signal is justified.
 - Linked the result to [[ideas/idea_humanoid_robotics_embodied_ai_components]] for a separate
   sequential refresh.
+
+## 2026-08-05 — security review — SoFi Technologies, Inc. common stock
+
+- Created [[securities/security_98470cfc01bbcde78fc2]] from the Q1 2026 Form 10-Q and SEC-filed Q2
+  results exhibit.
+- Profitable growth, deposit funding, regulatory capital, and book-value gains support the thesis,
+  while consumer credit, fair-value estimates, client concentration, regulation, and dilution
+  remain material.
+- Bear/base/bull values of USD 11.25/USD 20.90/USD 32.00 leave only modest probability-weighted
+  upside at the USD 18.70 mark; the 4 August bullish MACD crossover is positive post-results
+  momentum rather than a paper-buy signal, so no strategy, signal, order, or follow-up operation
+  was justified.

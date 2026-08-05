@@ -1,0 +1,23 @@
+{
+  "security_id": "security_98470cfc01bbcde78fc2",
+  "issuer_id": "issuer_415865699c92fc5218dd",
+  "company_name": "SoFi Technologies, Inc.",
+  "instrument_name": "SoFi Technologies, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "SOFI",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "SOFI",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financial Services",
+  "industry": "Credit Services",
+  "status": "watching",
+  "watchlist_reason": "Initial review completed after a bullish MACD crossover; deposit-funded growth is strong, but downside payoff and confidence-adjusted expected return do not support exposure.",
+  "research_summary": "Profitable growth, deposits, capital, and book-value gains are strong, but scenario downside and confidence-adjusted return keep SOFI at Watch.",
+  "research_page": "data/wiki/securities/security_98470cfc01bbcde78fc2.md",
+  "last_research_at": "2026-08-05T19:50:27Z",
+  "next_review_at": "2026-08-19T19:50:27Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm"
+}

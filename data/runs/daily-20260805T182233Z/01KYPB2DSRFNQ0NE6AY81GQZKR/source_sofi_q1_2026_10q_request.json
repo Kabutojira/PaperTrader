@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sofi_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000037/sofi-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000037/sofi-20260331.htm",
+  "source_type": "filing",
+  "title": "SoFi Technologies Form 10-Q for the quarter ended March 31, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "621d87c594d6ed57cdec9220a2aadd05b069e97bd438f2fa05fb69632e221336",
+  "related_entity_ids": "security_98470cfc01bbcde78fc2",
+  "checked_at": "2026-08-05T19:50:27Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The Company conducts its business through three reportable segments: Lending, Technology Platform and Financial Services.",
+  "summary": "The latest quarterly filing available before the Q2 Form 10-Q supplies audited-form balance-sheet, credit, funding, dilution, segment, and risk context.",
+  "run_id": "daily-20260805T182233Z"
+}
