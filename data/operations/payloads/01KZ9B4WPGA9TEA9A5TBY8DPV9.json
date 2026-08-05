@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_G3S5ZyL9U64",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-05T16:12:18Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_G3S5ZyL9U64",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "G3S5ZyL9U64",
+    "video_title": "I Just Bought 3 Stocks!",
+    "video_url": "https://www.youtube.com/watch?v=G3S5ZyL9U64"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZ9B4WPGA9TEA9A5TBY8DPV9",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=G3S5ZyL9U64"
+  ]
+}
