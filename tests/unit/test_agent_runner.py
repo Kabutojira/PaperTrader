@@ -675,10 +675,22 @@ def test_reconfigure_restores_managed_profile_file_ownership(
 ) -> None:
     home = tmp_path / "managed-hermes"
     configure_hermes_home(sandbox_repository, sandbox_settings, home)
-    owner = home.stat()
+    original_stat = Path.stat
+    simulated_uid = 1000
+    simulated_gid = 1000
     calls: list[tuple[Path, int, int, bool]] = []
 
+    def stat_with_non_root_owner(path: Path, *, follow_symlinks: bool = True) -> os.stat_result:
+        result = original_stat(path, follow_symlinks=follow_symlinks)
+        if path == home:
+            fields = list(result)
+            fields[4] = simulated_uid
+            fields[5] = simulated_gid
+            return os.stat_result(fields)
+        return result
+
     monkeypatch.setattr(os, "geteuid", lambda: 0)
+    monkeypatch.setattr(Path, "stat", stat_with_non_root_owner)
     monkeypatch.setattr(
         os,
         "chown",
@@ -701,7 +713,7 @@ def test_reconfigure_restores_managed_profile_file_ownership(
         "papertrader-managed.json",
     }
     assert all(
-        uid == owner.st_uid and gid == owner.st_gid and follow_symlinks is False
+        uid == simulated_uid and gid == simulated_gid and follow_symlinks is False
         for _, uid, gid, follow_symlinks in calls
     )
 
