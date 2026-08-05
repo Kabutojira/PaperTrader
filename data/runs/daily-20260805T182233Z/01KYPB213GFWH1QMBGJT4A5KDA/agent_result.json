@@ -1,0 +1,87 @@
+{
+  "operation_id": "01KYPB213GFWH1QMBGJT4A5KDA",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete Corsair Gaming common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. The deterministic assessment recorded a Hold research rating, Watch portfolio action, 64 quality, medium confidence, and USD 6.00/USD 11.25/USD 18.00 bear/base/bull fair values with USD 11.625 probability-weighted fair value against USD 11.369999885559082. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_crsr_q1_2026_10q",
+      "claim": "Corsair's SEC quarterly report for Q1 2026 reported USD 354.5 million revenue, USD 116.0 million gross profit, USD 13.8 million operating income, USD 12.8 million net income attributable to Corsair, USD 29.7 million operating cash flow, USD 119.7 million cash and restricted cash, USD 119.8 million total debt, USD 273.5 million inventory, and 107.8 million diluted weighted-average shares.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526211947/crsr-20260331.htm",
+      "observed_at": "2026-08-05T18:48:45Z",
+      "source_hash": "7768c3b3e886843d72cb83babbb8a57f215f316994022beb6cb35810045e8cde"
+    },
+    {
+      "source": "source_crsr_q1_2026_results",
+      "claim": "The SEC-filed issuer release reported 32.7% Q1 gross margin and USD 35.8 million adjusted EBITDA, guided Q2 to USD 295-320 million revenue and USD 12.5-15.5 million adjusted EBITDA, and left full-year 2026 guidance unchanged at USD 1.33-1.47 billion revenue, USD 100-115 million adjusted EBITDA, and USD 0.58-0.74 non-GAAP EPS.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526211845/crsr-ex99_1.htm",
+      "observed_at": "2026-08-05T18:48:45Z",
+      "source_hash": "a5dda49ba47ba2bda8ffee44c4996295e8d01a1fd36160bee766c92858d99619"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195.md",
+      "claim": "The canonical alert measured a 27.90% adjusted-close increase from 2026-07-07 through 2026-08-04 to USD 11.37 and a close 0.92% above the USD 11.2660 upper Bollinger band; RSI was 65.97 and volume was not anomalous. The review treated this as stronger expectations and timing risk rather than verified improvement in intrinsic value."
+    },
+    {
+      "source": "assessment_303976b4c016e472e258",
+      "claim": "Deterministic assessment version 2 derived USD 11.625 probability-weighted fair value, 2.2427% expected return, 1.6821% confidence-adjusted expected return, USD 9 buy-below price, -1.0667% margin of safety, Hold canonical rating, Watch portfolio action, Watch conviction tier, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/security_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/security_upsert_request_v3.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/source_crsr_q1_2026_10q_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/source_crsr_q1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CRSR security review completed: Q1 revenue declined 4.1%, but gross margin reached 32.7%, GAAP operating income returned to USD 13.8 million, operating cash flow was USD 29.7 million, and cash roughly equaled debt. Scenario fair values are USD 6.00/USD 11.25/USD 18.00 against USD 11.37. Deterministic rating is Hold and portfolio action Watch; the 4 August upper-Bollinger breakout does not overcome low modeled return, unfavorable bear asymmetry, medium confidence, cyclicality, or the missing accepted relationship. No strategy, signal, or paper order was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/source_crsr_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/source_crsr_q1_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/security_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB213GFWH1QMBGJT4A5KDA/assessment_upsert_request_v4.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered both retained SEC primary sources with current 2026-08-05 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved immutable CRSR/XNAS/USD/equity identity and updated only validated research fields; rejected request shapes remained immutable and corrected retries used uniquely named request artifacts.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_303976b4c016e472e258, was accepted and linked to this operation, result path, evidence, and research-page hash.",
+      "Final security-context confirmed the current page hash 626a6ac5d1fe6f7608f9b048b4a2d526c276f5b27926a875d2d3bfa02ffeee3d matches immutable history, price and FX timestamps are fresh, both evidence sources are current and registered, and no accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contained no relationship; no strategy-research follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side ledger, fill, execution, cash, portfolio, or performance mutation."
+    ]
+  }
+}

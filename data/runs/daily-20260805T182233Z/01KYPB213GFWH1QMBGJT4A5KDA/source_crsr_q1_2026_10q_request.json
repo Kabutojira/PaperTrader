@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crsr_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526211947/crsr-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526211947/crsr-20260331.htm",
+  "source_type": "filing",
+  "title": "Corsair Gaming, Inc. quarterly report for the quarter ended March 31, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "7768c3b3e886843d72cb83babbb8a57f215f316994022beb6cb35810045e8cde",
+  "related_entity_ids": "security_55c9ce2fdcd32dad6b8c",
+  "checked_at": "2026-08-05T18:48:45Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "For Q1 2026 Corsair reported USD 354.5 million revenue, USD 116.0 million gross profit, USD 13.8 million operating income, USD 29.7 million operating cash flow, USD 119.7 million cash and restricted cash, USD 119.8 million total debt, and 107.8 million diluted weighted-average shares.",
+  "summary": "The current SEC quarterly filing supplies identity, revenue, segment, margin, operating-profit, cash-flow, liquidity, debt, inventory, share-count, repurchase, working-capital, tariff, supply, and product-cycle evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

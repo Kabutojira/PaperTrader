@@ -1972,3 +1972,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Bear/base/bull values of USD 75/USD 170/USD 340 remain below the USD 225.74 mark on a
   probability-weighted basis; the 4 August bullish MACD crossover is improving momentum rather than
   a paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — Corsair Gaming, Inc. common stock
+
+- Created [[securities/security_55c9ce2fdcd32dad6b8c]] from the Q1 2026 quarterly report and
+  SEC-filed results release.
+- Revenue declined, but product mix and cost discipline expanded gross margin, restored GAAP
+  operating profit, generated positive operating cash flow, and left cash roughly equal to debt.
+- Bear/base/bull values of USD 6.00/USD 11.25/USD 18.00 leave the USD 11.37 mark near base and
+  weighted value; the 4 August upper-Bollinger breakout is expectation and timing risk rather than a
+  paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.

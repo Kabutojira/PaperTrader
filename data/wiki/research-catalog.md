@@ -257,6 +257,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Canadian Solar Inc. common shares](securities/security_099561384c0f5e697727)
 - [Carlisle Companies Incorporated common stock](securities/security_9b0db3bc77914b23a307)
 - [Coinbase Global, Inc. Class A common stock](securities/security_37ddcbdaad296ad831f2)
+- [Corsair Gaming, Inc. common stock](securities/security_55c9ce2fdcd32dad6b8c)
 - [Crocs, Inc. common stock](securities/security_c150f31c30afdb4a85f9)
 - [CrowdStrike Holdings, Inc. Class A common stock](securities/security_8472507d7d320aa388a7)
 - [DLocal Limited Class A common shares](securities/security_715bde20b6e1e1320c1a)

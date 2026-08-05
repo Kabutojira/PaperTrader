@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crsr_q1_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526211845/crsr-ex99_1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526211845/crsr-ex99_1.htm",
+  "source_type": "issuer_release",
+  "title": "Corsair Reports Strong Profit Growth for First Quarter 2026",
+  "publisher": "Corsair Gaming, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "a5dda49ba47ba2bda8ffee44c4996295e8d01a1fd36160bee766c92858d99619",
+  "related_entity_ids": "security_55c9ce2fdcd32dad6b8c",
+  "checked_at": "2026-08-05T18:48:45Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Corsair reported 32.7% Q1 gross margin and USD 35.8 million adjusted EBITDA, guided Q2 to USD 295-320 million revenue and USD 12.5-15.5 million adjusted EBITDA, and left full-year 2026 guidance unchanged at USD 1.33-1.47 billion revenue and USD 100-115 million adjusted EBITDA.",
+  "summary": "The SEC-filed issuer release supplies management's segment commentary, Q2 outlook, unchanged full-year revenue, adjusted-EBITDA and non-GAAP EPS ranges, and repurchase context; non-GAAP measures are treated as supplemental rather than substitutes for GAAP results.",
+  "run_id": "daily-20260805T182233Z"
+}
