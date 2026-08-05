@@ -2004,3 +2004,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Bear/base/bull values of USD 38.81/USD 69.69/USD 105.47 leave the USD 99.45 mark far above base and
   weighted value; the bullish MACD crossover is post-results expectation confirmation rather than a
   paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — Ginkgo Bioworks Holdings, Inc. Class A common stock
+
+- Created [[securities/security_95351d928b674bbdf687]] from the first-quarter 2026 quarterly report
+  and SEC-filed results release; the post-Biosecurity autonomous-lab thesis remains early.
+- Revenue fell 49%, losses, cash burn, and dilution remain material, while USD 373 million of cash
+  and marketable securities provides near-term runway rather than proof of durable economics.
+- Bear/base/bull values of USD 3.33/USD 7.57/USD 16.47 leave the USD 9.37 mark above base and weighted
+  value; the 4 August bullish MACD crossover is improved momentum without a verified fundamental
+  explanation, so no strategy, signal, order, or follow-up operation was justified.

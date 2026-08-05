@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dna_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026032116/dna-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026032116/dna-20260331.htm",
+  "source_type": "filing",
+  "title": "Ginkgo Bioworks Holdings, Inc. quarterly report for the quarter ended March 31, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c687cd20bfa0e10145f5f24411da75fb47c991a0927836838b8437318a09d4fc",
+  "related_entity_ids": "security_95351d928b674bbdf687",
+  "checked_at": "2026-08-05T19:26:40Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "First-quarter continuing-operations revenue was USD 19.5 million, operating cash use was USD 46.4 million, and cash plus marketable securities was USD 373.5 million at March 31, 2026.",
+  "summary": "The current SEC quarterly filing supplies revenue, loss, cash-burn, liquidity, lease, restructuring, customer-concentration, stock-compensation, dilution, and risk evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

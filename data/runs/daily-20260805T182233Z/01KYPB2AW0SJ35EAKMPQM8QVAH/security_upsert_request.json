@@ -1,0 +1,23 @@
+{
+  "security_id": "security_95351d928b674bbdf687",
+  "issuer_id": "issuer_a743f8506828e2be799d",
+  "company_name": "Ginkgo Bioworks Holdings, Inc.",
+  "instrument_name": "Ginkgo Bioworks Holdings, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "DNA",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "DNA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Autonomous-lab scale and platform partnerships merit monitoring, but revenue contraction, heavy losses and burn, dilution, execution risk, and scenario value below the market prevent action.",
+  "research_summary": "Ginkgo retains substantial liquidity and an autonomous-lab thesis, but revenue fell 49%, burn and dilution remain high, and USD 3.33/USD 7.57/USD 16.47 scenarios do not support buying at USD 9.37.",
+  "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
+  "last_research_at": "2026-08-05T19:26:40Z",
+  "next_review_at": "2026-08-06T20:30:00Z",
+  "source": "source_dna_q1_2026_10q|source_dna_q1_2026_results"
+}

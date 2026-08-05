@@ -1,0 +1,78 @@
+{
+  "operation_id": "01KYPB2AW0SJ35EAKMPQM8QVAH",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete Ginkgo Bioworks security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. First-quarter continuing revenue fell 49% to USD 19.5 million, continuing operations used USD 46.4 million of operating cash, and dilution continued, while USD 373.5 million of cash and marketable securities provides near-term runway. The deterministic assessment recorded Sell, Avoid, 52 quality, medium confidence, and USD 3.33/USD 7.57/USD 16.47 bear/base/bull fair values with USD 8.078 probability-weighted value against USD 9.37. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_dna_q1_2026_10q",
+      "claim": "The first-quarter SEC filing reported continuing-operations revenue of USD 19.474 million, continuing-operations net loss of USD 76.059 million, continuing-operations operating cash use of USD 46.433 million, stock compensation of USD 15.853 million, and cash plus marketable securities of USD 373.456 million at March 31, 2026; 65,324,491 common shares across classes were outstanding on April 30.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026032116/dna-20260331.htm",
+      "observed_at": "2026-08-05T19:26:40Z",
+      "source_hash": "c687cd20bfa0e10145f5f24411da75fb47c991a0927836838b8437318a09d4fc"
+    },
+    {
+      "source": "source_dna_q1_2026_results",
+      "claim": "The SEC-filed issuer release reported a 49% year-over-year revenue decline to about USD 19 million, negative USD 42 million adjusted EBITDA, completion of the Biosecurity divestiture, USD 373 million of cash and marketable securities, and reaffirmed USD 125-150 million full-year 2026 cash burn while presenting autonomous laboratories as the refocused strategy.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026032093/ex991earningspr.htm",
+      "observed_at": "2026-08-05T19:26:40Z",
+      "source_hash": "07b2e89f70aeb7ca322670e552d68b15d54d8263c45dc1b91de446279eb6e566"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-3d74cac677e3.md",
+      "claim": "The canonical alert measured a 0.32% adjusted-close rise from 2026-07-07 through 2026-08-04 to USD 9.37 and a bullish MACD crossover with strength 0.5060; RSI was 60.35 and volume was not anomalous. No current issuer filing explained the late-period rise before the scheduled Q2 update, so the review classified it as improving momentum and timing noise rather than a paper-buy signal.",
+      "source_hash": "3de35a0612e9250fef741a7fca48b8882117dbd5d39857f50b6ea36e40e2d0a7"
+    },
+    {
+      "source": "assessment_702e3e25b164b09cdc2d",
+      "claim": "Deterministic assessment version 2 derived USD 8.078 probability-weighted fair value, -13.7887% expected return, -10.3415% confidence-adjusted expected return, USD 6.056 buy-below price, -23.7781% margin of safety, Sell canonical rating, Avoid portfolio action, Watch conviction tier, 52 quality, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/source_dna_q1_2026_10q_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/source_dna_q1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_95351d928b674bbdf687.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "DNA security review completed: first-quarter continuing revenue fell 49% to USD 19.5 million and burn and dilution remain material, while USD 373.5 million of cash and marketable securities provides runway. Scenario fair values are USD 3.33/USD 7.57/USD 16.47 against USD 9.37. Deterministic rating is Sell and portfolio action Avoid; the 4 August MACD crossover is improving momentum without a verified fundamental explanation, not a paper-buy signal. No strategy, signal, paper order, issue, or follow-up operation was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/source_dna_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/source_dna_q1_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_95351d928b674bbdf687"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered both retained SEC primary sources with current 2026-08-05 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved the exact issuer_a743f8506828e2be799d/DNA/XNYS/USD/equity identity and completed built-in identity validation.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_702e3e25b164b09cdc2d, was accepted and linked to this operation, expected result path, evidence set, and research-page hash.",
+      "Final security-context confirmed current page hash c131e8e0ed02f0467dc40c2990f864bc60b3676618cf00aa5731e9112170334a matches immutable history, the 2026-08-05 price and FX identities are fresh, both evidence sources are current and registered, and no prior assessment, accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contains no relationship; no conviction strategy follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side allocation, ledger, fill, execution, cash, portfolio, or performance mutation."
+    ]
+  }
+}
