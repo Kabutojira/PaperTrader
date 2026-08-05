@@ -1,3 +1,3 @@
 snapshot_id,as_of,policy_version,non_approved,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_4f90a8ff770b4eed82db,2026-08-05T17:51:26Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,25,15.079999923706055,USD,data/wiki/securities/security_099561384c0f5e697727.md
-decision_4f90a8ff770b4eed82db,2026-08-05T17:51:26Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,
+decision_438a97c488fc7fa4fbc0,2026-08-05T20:06:58Z,equal_weight_rated_v1,true,false,security_33d9c44facc75c726c7d,NVDA,NVIDIA Corporation,buy,25,211.94000244140625,USD,data/wiki/securities/security_33d9c44facc75c726c7d.md
+decision_438a97c488fc7fa4fbc0,2026-08-05T20:06:58Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,

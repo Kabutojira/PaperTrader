@@ -7,8 +7,8 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-report-generator
-run_id: "daily-20260805T161218Z"
-snapshot_id: "decision_4f90a8ff770b4eed82db"
+run_id: "daily-20260805T182233Z"
+snapshot_id: "decision_438a97c488fc7fa4fbc0"
 ---
 
 # PaperTrader daily report — 2026-08-05
@@ -20,8 +20,8 @@ snapshot_id: "decision_4f90a8ff770b4eed82db"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Attention required
-- **As of:** `2026-08-05T17:51:26Z`
-- **Snapshot:** `decision_4f90a8ff770b4eed82db`
+- **As of:** `2026-08-05T20:06:58Z`
+- **Snapshot:** `decision_438a97c488fc7fa4fbc0`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 10000 EUR (100%)
@@ -47,15 +47,15 @@ No actionable trade signals.
 - **[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1): Volume Anomaly** (`2026-08-05`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[TDY — Teledyne Technologies Incorporated](security-catalog#security-security_ad5917642acbba28c1f2): Bollinger Above Upper** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2): Bollinger Above Upper** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Teledyne Technologies common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. Record Q2 orders, sales, operating profit, funded backlog, margin expansion, cash flow and debt repayment support a high-quality thesis, but the deterministic assessment recorded a Hold rating, Watch portfolio action, 86 quality, medium confidence, and USD 506/USD 675/USD 870 bear/base/bull fair values with USD 681.50 probability-weighted fair value against USD 684.760009765625. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 - **[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47): Volume Anomaly** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[SPCX — Space Exploration Technologies Corp.](security-catalog#security-security_664f93a7eaca72e76e9b): Volume Anomaly** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b): Volume Anomaly** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and equipment purchases reached USD 28.476 billion, customer concentration and controller governance are material, and the USD 125.33 mark embeds extreme revenue multiples. The deterministic assessment recorded Hold, Watch, 72 quality, low confidence, and USD 50/USD 110/USD 195 bear/base/bull fair values with USD 109 probability-weighted value. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 - **[SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221): Bollinger Above Upper** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -119,9 +119,9 @@ No actionable trade signals.
 - **[CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727): Bollinger Above Upper** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[CRSR — Corsair Gaming, Inc.](security-catalog#security-security_55c9ce2fdcd32dad6b8c): Bollinger Above Upper** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Bollinger Above Upper** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Corsair Gaming common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. The deterministic assessment recorded a Hold research rating, Watch portfolio action, 64 quality, medium confidence, and USD 6.00/USD 11.25/USD 18.00 bear/base/bull fair values with USD 11.625 probability-weighted fair value against USD 11.369999885559082. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 - **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -134,18 +134,18 @@ No actionable trade signals.
 - **[AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc): Bollinger Above Upper** (`2026-08-04`)
   - Research: **succeeded**
   - Decision: Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
-- **[TWST — Twist Bioscience Corporation](security-catalog#security-security_6cf75bd0ec0aa2a20148): Macd Cross Above Signal** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Macd Cross Above Signal** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Twist Bioscience security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. Fiscal Q3 revenue grew 23% to USD 118.4 million, gross margin reached 52.8%, guidance rose to USD 456-457 million, and liquidity remained adequate, but GAAP losses, cash use, stock compensation, dilution, and valuation remain material. The deterministic assessment recorded Sell, Avoid, 74 quality, medium confidence, and USD 38.81/USD 69.69/USD 105.47 bear/base/bull fair values with USD 67.582 probability-weighted value against USD 99.45. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 - **[TSM — Taiwan Semiconductor Manufacturing Company Limited](security-catalog#security-security_ce9b78a4d0773c950765): Macd Cross Above Signal** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 - **[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47): Macd Cross Below Signal** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[SOFI — SoFi Technologies, Inc.](security-catalog#security-security_98470cfc01bbcde78fc2): Macd Cross Above Signal** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2): Macd Cross Above Signal** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed one bounded SoFi Technologies security review using the Q1 2026 Form 10-Q and SEC-filed Q2 2026 results exhibit. Created the security page, registered two current primary sources, updated the structured security row, and accepted assessment assessment\_1c9ade30dbdac5102ac3. Bear/base/bull fair values are USD 11.25/USD 20.90/USD 32.00 at 30%/50%/20%; deterministic calculation produced USD 20.225 probability-weighted fair value, 8.1550758012954881810739869% expected return, 6.116306850971616135805490175% confidence-adjusted expected return, a Hold rating, Watch action, and ineligible allocation status at the USD 18.700000762939453 mark. No linked idea or accepted relationship required a follow-up, and the conviction strategy gate failed. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.
 - **[SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8): Sma 50 Cross Below 200** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -155,12 +155,12 @@ No actionable trade signals.
 - **[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a): Macd Cross Above Signal** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[NVDA — NVIDIA Corporation](security-catalog#security-security_33d9c44facc75c726c7d): Macd Cross Above Signal** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
-- **[NBIS — Nebius Group N.V.](security-catalog#security-security_47a0b06f6c6c478d7c1e): Macd Cross Above Signal** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d): Macd Cross Above Signal** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete NVIDIA common-stock review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded Buy research economics, an Initiate portfolio action, 94 quality, medium confidence, and USD 180/USD 252/USD 374 bear/base/bull fair values with USD 264.50 probability-weighted fair value against USD 211.94000244140625. Allocation remains ineligible and conviction remains Watch solely because the required accepted canonical relationship is pending; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
+- **[NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e): Macd Cross Above Signal** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Nebius Class A review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded a Sell research rating, Avoid portfolio action, 70 quality, medium confidence, and USD 75/USD 170/USD 340 bear/base/bull fair values with USD 188.75 probability-weighted fair value against USD 225.74000549316406. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 - **[MP — MP Materials Corp.](security-catalog#security-security_cd492d97064d8574156e): Macd Cross Above Signal** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -176,9 +176,9 @@ No actionable trade signals.
 - **[ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324): Macd Cross Above Signal** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[DNA — Ginkgo Bioworks Holdings, Inc.](security-catalog#security-security_95351d928b674bbdf687): Macd Cross Above Signal** (`2026-08-04`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687): Macd Cross Above Signal** (`2026-08-04`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Ginkgo Bioworks security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. First-quarter continuing revenue fell 49% to USD 19.5 million, continuing operations used USD 46.4 million of operating cash, and dilution continued, while USD 373.5 million of cash and marketable securities provides near-term runway. The deterministic assessment recorded Sell, Avoid, 52 quality, medium confidence, and USD 3.33/USD 7.57/USD 16.47 bear/base/bull fair values with USD 8.078 probability-weighted value against USD 9.37. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 - **[CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7): Macd Cross Above Signal** (`2026-08-04`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -194,22 +194,25 @@ No actionable trade signals.
 
 ## Research decisions this run
 
-- **[RIO — Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2) — succeeded:** Completed one bounded Rio Tinto security review using the issuer's 2026 half-year filing. Updated the security page and structured security state, replaced the unsupported assessment with a scenario-complete schema-v2 mid-cycle cash-flow assessment, and preserved the RIO/XNYS/USD identity. Bear/base/bull fair values are USD 68.00/USD 93.50/USD 126…
-- **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614) — succeeded:** Completed one bounded Kratos Defense &amp; Security Solutions security review using the 4 August 2026 SEC filing and SEC-filed issuer results. Created the security page, registered both retained sources, updated the validated security row, and wrote exactly one schema-v2 scenario assessment while preserving the immutable KTOS/XNAS/USD identity. Bear/b…
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) — succeeded:** Completed the first scenario-complete NVIDIA common-stock review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded Buy research economics, an Initiate portfolio action, 94 quality, medium confidence, and USD 180/USD 252/USD 374 bear/base/bull fair values with USD 264.50 probabilit…
+- **[NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e) — succeeded:** Completed the first scenario-complete Nebius Class A review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded a Sell research rating, Avoid portfolio action, 70 quality, medium confidence, and USD 75/USD 170/USD 340 bear/base/bull fair values with USD 188.75 probability-weighted f…
+- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c) — succeeded:** Completed the first scenario-complete Corsair Gaming common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. The deterministic assessment recorded a Hold research rating, Watch portfolio action, 64 quality, medium confidence, and USD 6.00/USD 11.25/USD 18.00 bear/base/bull fair values with USD 1…
+- **[SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b) — succeeded:** Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and…
+- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148) — succeeded:** Completed the first scenario-complete Twist Bioscience security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. Fiscal Q3 revenue grew 23% to USD 118.4 million, gross margin reached 52.8%, guidance rose to USD 456-457 million, and liquidity remained adequate, but GAAP losses, cash use, stock compensation, dil…
+- **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687) — succeeded:** Completed the first scenario-complete Ginkgo Bioworks security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. First-quarter continuing revenue fell 49% to USD 19.5 million, continuing operations used USD 46.4 million of operating cash, and dilution continued, while USD 373.5 million of cash and marketable se…
+- **[FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348) — succeeded:** Completed one bounded FANUC security review using the issuer's quarter ended 30 June 2026 financial results and reference material. Created the security page, updated the structured security row, registered two current primary sources, and accepted assessment assessment\_9720edf9bb377a006f6b. Bear/base/bull fair values are EUR 24.25/EUR 36.38/EUR 4…
+- **[SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2) — succeeded:** Completed one bounded SoFi Technologies security review using the Q1 2026 Form 10-Q and SEC-filed Q2 2026 results exhibit. Created the security page, registered two current primary sources, updated the structured security row, and accepted assessment assessment\_1c9ade30dbdac5102ac3. Bear/base/bull fair values are USD 11.25/USD 20.90/USD 32.00 at 3…
+- **[TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) — succeeded:** Completed the first scenario-complete Teledyne Technologies common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. Record Q2 orders, sales, operating profit, funded backlog, margin expansion, cash flow and debt repayment support a high-quality thesis, but the deterministic assessment recorded a…
 
 ## Top blocker or near miss
 
-- **GOOGL — Alphabet Inc.:** Hold / Watch; expected return -0.59809756370104102361780986%; Base-case return is below threshold.
+- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 24.7994701109455207815863554%; A current accepted idea-to-security relationship is unavailable.
 
 ## Non-approved research benchmark
 
 This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
-- CSIQ 25% (Buy); CASH 75% (Unrated)
+- NVDA 25% (Buy); CASH 75% (Unrated)
 <!-- papertrader-investor-brief:end -->
-
-## Daily podcast transcript
-
-- [[podcasts/daily-podcast_20260805T161218Z|PaperTrader daily podcast — 2026-08-05T161218Z]]
 
 ### Deterministic reasons
 
@@ -238,11 +241,11 @@ No pending paper orders.
 
 | Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
 | --- | --- | --- | ---: | ---: | ---: | --- |
+| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Relationship research pending | -15.07030389425257564958206441% / 18.9015745480463940905851098% / 76.4650352419418705947572662% | 24.7994701109455207815863554% | 201.6 | A current accepted idea-to-security relationship is unavailable. |
 | [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | Hold / Watch | Valuation unattractive | -26.99295301288777024333511459% / 1.0866804436938565861513798% / 34.7822405915918087815351731% | -0.59809756370104102361780986% | 288 | Base-case return is below threshold. |
 | [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | Hold / Watch | Valuation unattractive | -28.14930857852479807505507126% / 7.7760371322128028874173931% / 43.7013828429504038498898575% | 4.1835025611390427911701467% | 480 | Base-case return is below threshold. |
+| [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2) | Hold / Watch | Valuation unattractive | -26.10549787024066440932737255% / -1.42531830516294165275884678% / 27.0518119622344307586663753% | -0.47608062958302923904467271% | 540 | Base-case return is below threshold. |
 | [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8) | Hold / Watch | Valuation unattractive | -16.86987476698296650337641102% / 10.8401669773560446621647853% / 38.5502087216950558277059816% | 10.8401669773560446621647853% | 400 | Bear/base payoff is below threshold. |
-| [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f) | Sell / Avoid | Valuation unattractive | -31.35838352097870281774553015% / -15.70327800821945960074012475% / 8.3814997037178376561912682% | -13.59585995842494609075862787% | 280 | Base-case return is below threshold. |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Hold / Watch | Valuation unattractive | -45.29177691154468412743103421% / 9.4164461769106317451379316% / 67.108754161099873938028841% | 10.1624674008441133252184175% | 13.2 | Base-case return is below threshold. |
 
 ## 5. Performance and risk
 
@@ -259,8 +262,15 @@ No pending paper orders.
 
 ### Evidence-linked narrative
 
-- Kratos Q2 2026 revenue, organic growth, backlog, and raised guidance support the defense-technology demand thesis, but guided free-cash-flow use, low GAAP margin, dilution, and a USD 43.815 probability-weighted value below the USD 51.87 mark make the deterministic disposition Sell/Avoid and allocation-ineligible. The Bollinger breakout and volume… Evidence: `7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032`, `https://www.sec.gov/Archives/edgar/data/1069258/000106925826000075/ktos202606288kexhibit991.htm`, `https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm`.
-- Rio Tinto's 2026 half-year review resolved the prior unsupported-valuation gap. Stronger copper EBITDA and cash conversion support the diversified copper thesis, but the USD 95.375 probability-weighted value is below the USD 99.01 mark; deterministic state is Hold/Watch and allocation-ineligible, with no paper strategy or signal. One dependent cri… Evidence: `5be555b1f1b84a4c1f1fd59ef868befab6e03c65849fda45ffe7b4c320db5365`, `https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84`.
+- NVDA security review completed: Q1 fiscal 2027 revenue was USD 81.6 billion and Data Center revenue USD 75.2 billion; scenario fair values are USD 180/USD 252/USD 374 against USD 211.94. Deterministic research rating is Buy and portfolio action Initiate, but conviction remains Watch and allocation is ineligible because no accepted canonical relati… Evidence: `assessment_d52ee4bef0580c696dbb`, `data/wiki/inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-8425952b966e.md`, `https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm` (+1 more in the run artifacts).
+- NBIS security review completed: Q1 2026 revenue was USD 399.0 million, AI-cloud adjusted EBITDA was USD 174.0 million, and July financing added an approximately USD 775 million secured facility against contracted deployment cash flows. Scenario fair values are USD 75/USD 170/USD 340 against USD 225.74. Deterministic rating is Sell and portfolio ac… Evidence: `assessment_e2c4e2fa700c110e5f32`, `data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-65152a0c42fe.md`, `https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331xex99d2.htm` (+1 more in the run artifacts).
+- CRSR security review completed: Q1 revenue declined 4.1%, but gross margin reached 32.7%, GAAP operating income returned to USD 13.8 million, operating cash flow was USD 29.7 million, and cash roughly equaled debt. Scenario fair values are USD 6.00/USD 11.25/USD 18.00 against USD 11.37. Deterministic rating is Hold and portfolio action Watch; the… Evidence: `assessment_303976b4c016e472e258`, `data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195.md`, `https://www.sec.gov/Archives/edgar/data/1743759/000119312526211845/crsr-ex99_1.htm` (+1 more in the run artifacts).
+- SPCX security review completed: Q2 revenue grew 91.9% to USD 7.814 billion and profitable Connectivity economics strengthened, but Space and AI operating losses, first-half capex of USD 28.476 billion, customer concentration, dilution, governance, and extreme valuation remain material. Scenario fair values are USD 50/USD 110/USD 195 against USD 12… Evidence: `assessment_6a11ab6d421d481439ee`, `data/wiki/inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198.md`, `https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm` (+2 more in the run artifacts).
+- TWST security review completed: fiscal Q3 revenue grew 23% to USD 118.4 million, gross margin reached 52.8%, and guidance rose, but GAAP losses, cash use, stock compensation, dilution, and a premium valuation remain material. Scenario fair values are USD 38.81/USD 69.69/USD 105.47 against USD 99.45. Deterministic rating is Sell and portfolio actio… Evidence: `assessment_a74d909e79d6de48e2f0`, `data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_above_signal-6a84e7a0c5f7.md`, `https://www.sec.gov/Archives/edgar/data/1581280/000158128026000044/twst-2026630xex991.htm` (+1 more in the run artifacts).
+- DNA security review completed: first-quarter continuing revenue fell 49% to USD 19.5 million and burn and dilution remain material, while USD 373.5 million of cash and marketable securities provides runway. Scenario fair values are USD 3.33/USD 7.57/USD 16.47 against USD 9.37. Deterministic rating is Sell and portfolio action Avoid; the 4 August M… Evidence: `3de35a0612e9250fef741a7fca48b8882117dbd5d39857f50b6ea36e40e2d0a7`, `assessment_702e3e25b164b09cdc2d`, `https://www.sec.gov/Archives/edgar/data/1830214/000162828026032093/ex991earningspr.htm` (+1 more in the run artifacts).
+- FANUC's quarter ended 30 June 2026 showed 17.7% sales growth, 26.1% operating-income growth, raised full-year guidance, and substantial net financial strength. However, the EUR 36.3775 probability-weighted value offers only 1.78% expected return at the EUR 35.74 Frankfurt mark, the listing is thinly traded, and the idea relationship remains pendin… Evidence: `20c79ccb05957caa272b377ce01b842f64ca1c74fd7696606987e23ab44fb46f`, `https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf`, `https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf`.
+- SoFi's Q2 2026 results showed record revenue, GAAP profitability, 35% member growth, USD 45.5 billion of deposits, strong regulatory capital, and continued book-value growth. The bullish MACD crossover is positive post-results momentum, but USD 20.225 probability-weighted value offers only 8.16% expected return at USD 18.70, medium confidence redu… Evidence: `bda3ac6a746f8c036fc9b29eee6b84c2da1719fef93d846f9cf3bda7fafcf344`, `https://www.sec.gov/Archives/edgar/data/1818874/000181887426000037/sofi-20260331.htm`, `https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm`.
+- TDY security review completed: Q2 sales rose 9.8%, attributable net income rose 19.9%, operating margin expanded to 20.0%, management reported record orders and approximately USD 5.0 billion funded backlog, and Q2 free cash flow reached USD 284.7 million. Scenario fair values are USD 506/USD 675/USD 870 against USD 684.76. Deterministic rating is… Evidence: `assessment_6efbfe8c34c124d99c45`, `data/wiki/inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab.md`, `https://www.sec.gov/Archives/edgar/data/1094285/000109428526000039/q2-2026earningsrelease.htm` (+1 more in the run artifacts).
 
 - [[inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618]]
 - [[inbox/market-security_0cf8075039299094d614-bollinger_above_upper-b87f3649b640]]
@@ -315,9 +325,19 @@ No pending paper orders.
 - [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91]]
 - [[model-portfolio]]
 - [[performance]]
+- [[podcasts/daily-podcast_20260805T161218Z]]
 - [[research-catalog]]
 - [[securities/security_0cf8075039299094d614]]
 - [[securities/security_1c055eb9b2bb1f5a8ff2]]
+- [[securities/security_33d9c44facc75c726c7d]]
+- [[securities/security_47a0b06f6c6c478d7c1e]]
+- [[securities/security_55c9ce2fdcd32dad6b8c]]
+- [[securities/security_664f93a7eaca72e76e9b]]
+- [[securities/security_6cf75bd0ec0aa2a20148]]
+- [[securities/security_95351d928b674bbdf687]]
+- [[securities/security_96ba305ee7cd586bc348]]
+- [[securities/security_98470cfc01bbcde78fc2]]
+- [[securities/security_ad5917642acbba28c1f2]]
 - [[security-catalog]]
 - [[signals]]
 - [[system-status]]
@@ -326,9 +346,9 @@ No pending paper orders.
 
 - Investment data status: **degraded**
 - Operations status: **degraded**
-- Assessments: 46/48
-- Fresh-evidence assessments: 46/48
-- Relationship reviews: 21/48
+- Assessments: 55/57
+- Fresh-evidence assessments: 55/57
+- Relationship reviews: 21/57
 - Accepted relationships: 19
 - Ready or active strategies: 0
 - Active signals: 0
@@ -422,92 +442,93 @@ No pending paper orders.
 - **operational only**: YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw
 - **operational only**: Daily podcast failed: daily-20260805T065913Z
 - **operational only**: YouTube discovery failed for UCESLZhusAkFfsNsApnjF\_Cg
+- **publication only**: Telegram podcast audio delivery unavailable
 
 ## 8. Audit appendix
 
 ### Run diagnostics
 
-- Run ID: `daily-20260805T161218Z`
+- Run ID: `daily-20260805T182233Z`
 - Run status: `succeeded`
-- Generated (UTC): `2026-08-05T17:51:26Z`
-- Decision snapshot: `decision_4f90a8ff770b4eed82db`
+- Generated (UTC): `2026-08-05T20:06:58Z`
+- Decision snapshot: `decision_438a97c488fc7fa4fbc0`
 
 ### Complete market freshness
 
 | Security ID | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| security_099561384c0f5e697727 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_0a56aa634d077fe5796f | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_0cf8075039299094d614 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_18a3ab0ee6086ee85d0f | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_1c055eb9b2bb1f5a8ff2 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_1e8fbdb0f45f2b413e00 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_1f9cce545ede94cd6349 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_2010347f1a0a5ea60f47 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_204be2a44063993de1a8 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_22c2b9d782a62d7a9b86 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_2433a056eb0c55961fcc | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_2c779e81c27b78c556bb | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_2dbe878dfc899d7ee867 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_33d9c44facc75c726c7d | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_37ddcbdaad296ad831f2 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_3853e54c619d597dcaa1 | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_3a75fc1ccca2ee7c937a | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_3e597863f00753e8c65c | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_4627aea1bf7d8943d3d8 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_47a0b06f6c6c478d7c1e | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_488a9d7f7a8573597724 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_4b61970aa8f574446819 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_55c9ce2fdcd32dad6b8c | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_567d0d575bbd30aaa91d | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_59304f90c440def31dc5 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_61567714298b9563d1a9 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_664f93a7eaca72e76e9b | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_66cdcf90aac0d83e76f3 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_6ad1af8d10d6276a0221 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_6cf75bd0ec0aa2a20148 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_6f9a1450edceb9307c9a | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_715bde20b6e1e1320c1a | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_7bf8f4c9cc12ae410e40 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_7ca095d63423c55a90e3 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_83a56943e18793f685b0 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_8472507d7d320aa388a7 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_89969b7dac39b7db5661 | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_8a5c43888d224de85c69 | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_95351d928b674bbdf687 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_96ba305ee7cd586bc348 | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_97f38b2cb2d5ef127f5a | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_98470cfc01bbcde78fc2 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_9b0db3bc77914b23a307 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_9d4049ed6669a52815d6 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_a5dc16f3f4b245e6c168 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_a9eb9838940ef5ceaa0c | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_ad3b1f8f59fd599f079a | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_ad5917642acbba28c1f2 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_b1f2c48e1a744f5ecf67 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_b2116dcf976c96974d7b | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_bdc2f87dadf134760c3a | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_c120e9f26ebb6159adf9 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_c150f31c30afdb4a85f9 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_c5a9e460d3350284d157 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_c86bb4e75658c07142cf | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_c9a37d277445869a8809 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_cb88f9154cfeaa15e878 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_cc4dcb8f002b61dffe00 | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_cd492d97064d8574156e | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_ce9b78a4d0773c950765 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_d08d763780400dfbffce | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_d12e746b3c9d392183cc | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_dc7a111e297be528d96b | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_dc8486c1d61df62a22fd | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_dfa34d4b9050964b465e | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_eca976f0076a425ea1bb | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_ed7d5b616a196969c815 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_ef35e41886220d51c22c | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_f2b9760d847b2ba59324 | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_fb87fac302a5446a1ced | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
-| security_fe4648901e7675f157fd | 2026-08-05 | 2026-08-05T16:12:24Z | ok | — |
-| security_fe5539a7d3fd9d553bce | 2026-08-04 | 2026-08-05T16:12:24Z | ok | — |
+| security_099561384c0f5e697727 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_0a56aa634d077fe5796f | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_0cf8075039299094d614 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_18a3ab0ee6086ee85d0f | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_1c055eb9b2bb1f5a8ff2 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_1e8fbdb0f45f2b413e00 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_1f9cce545ede94cd6349 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_2010347f1a0a5ea60f47 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_204be2a44063993de1a8 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_22c2b9d782a62d7a9b86 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_2433a056eb0c55961fcc | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_2c779e81c27b78c556bb | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_2dbe878dfc899d7ee867 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_33d9c44facc75c726c7d | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_37ddcbdaad296ad831f2 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_3853e54c619d597dcaa1 | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_3a75fc1ccca2ee7c937a | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_3e597863f00753e8c65c | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_4627aea1bf7d8943d3d8 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_47a0b06f6c6c478d7c1e | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_488a9d7f7a8573597724 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_4b61970aa8f574446819 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_55c9ce2fdcd32dad6b8c | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_567d0d575bbd30aaa91d | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_59304f90c440def31dc5 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_61567714298b9563d1a9 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_664f93a7eaca72e76e9b | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_66cdcf90aac0d83e76f3 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_6ad1af8d10d6276a0221 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_6cf75bd0ec0aa2a20148 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_6f9a1450edceb9307c9a | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_715bde20b6e1e1320c1a | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_7bf8f4c9cc12ae410e40 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_7ca095d63423c55a90e3 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_83a56943e18793f685b0 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_8472507d7d320aa388a7 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_89969b7dac39b7db5661 | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_8a5c43888d224de85c69 | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_95351d928b674bbdf687 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_96ba305ee7cd586bc348 | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_97f38b2cb2d5ef127f5a | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_98470cfc01bbcde78fc2 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_9b0db3bc77914b23a307 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_9d4049ed6669a52815d6 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_a5dc16f3f4b245e6c168 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_a9eb9838940ef5ceaa0c | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_ad3b1f8f59fd599f079a | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_ad5917642acbba28c1f2 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_b1f2c48e1a744f5ecf67 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_b2116dcf976c96974d7b | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_bdc2f87dadf134760c3a | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_c120e9f26ebb6159adf9 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_c150f31c30afdb4a85f9 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_c5a9e460d3350284d157 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_c86bb4e75658c07142cf | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_c9a37d277445869a8809 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_cb88f9154cfeaa15e878 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_cc4dcb8f002b61dffe00 | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_cd492d97064d8574156e | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_ce9b78a4d0773c950765 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_d08d763780400dfbffce | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_d12e746b3c9d392183cc | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_dc7a111e297be528d96b | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_dc8486c1d61df62a22fd | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_dfa34d4b9050964b465e | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_eca976f0076a425ea1bb | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_ed7d5b616a196969c815 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_ef35e41886220d51c22c | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_f2b9760d847b2ba59324 | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_fb87fac302a5446a1ced | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
+| security_fe4648901e7675f157fd | 2026-08-05 | 2026-08-05T18:22:39Z | ok | — |
+| security_fe5539a7d3fd9d553bce | 2026-08-04 | 2026-08-05T18:22:39Z | ok | — |
 
 ### Orders and executions
 
@@ -521,7 +542,7 @@ No pending paper orders.
 
 ### Allocation audit
 
-- Plan ID: `allocation_plan_ea2c6d4ad3a45a0fb589`
+- Plan ID: `allocation_plan_6216d28769c4d7de6638`
 - Mode: `active`
 - Deployment budget: 1500 EUR
 - Capital allocated: 0 EUR
@@ -541,27 +562,36 @@ No pending paper orders.
 | — | security_2433a056eb0c55961fcc | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_2c779e81c27b78c556bb | 0% | excluded | assessment_stale\|score_below_cash_hurdle |
 | — | security_2dbe878dfc899d7ee867 | 0% | excluded | score_below_cash_hurdle |
+| — | security_33d9c44facc75c726c7d | 0% | excluded | relationship_missing_or_stale |
 | — | security_37ddcbdaad296ad831f2 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
 | — | security_3853e54c619d597dcaa1 | 0% | excluded | confidence_below_minimum\|hard_blocker:accounting_uncertain,liquidity_insufficient,valuation_unsupported\|relationship_missing_or_stale\|valuation_unsupported |
 | — | security_3a75fc1ccca2ee7c937a | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|relationship_missing_or_stale |
 | — | security_4627aea1bf7d8943d3d8 | 0% | excluded | assessment_ineligible\|confidence_below_minimum\|hard_blocker:accounting_uncertain,solvency_risk,valuation_unsupported\|score_below_cash_hurdle |
+| — | security_47a0b06f6c6c478d7c1e | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_488a9d7f7a8573597724 | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_4b61970aa8f574446819 | 0% | excluded | score_below_cash_hurdle |
+| — | security_55c9ce2fdcd32dad6b8c | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_567d0d575bbd30aaa91d | 0% | excluded | hard_blocker:liquidity_insufficient,valuation_unsupported\|relationship_missing_or_stale\|valuation_unsupported |
 | — | security_59304f90c440def31dc5 | 0% | excluded | score_below_cash_hurdle |
+| — | security_664f93a7eaca72e76e9b | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|confidence_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_66cdcf90aac0d83e76f3 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
 | — | security_6ad1af8d10d6276a0221 | 0% | excluded | score_below_cash_hurdle |
+| — | security_6cf75bd0ec0aa2a20148 | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_6f9a1450edceb9307c9a | 0% | excluded | score_below_cash_hurdle |
 | — | security_715bde20b6e1e1320c1a | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|relationship_missing_or_stale |
 | — | security_7ca095d63423c55a90e3 | 0% | excluded | score_below_cash_hurdle |
 | — | security_8472507d7d320aa388a7 | 0% | excluded | score_below_cash_hurdle |
 | — | security_89969b7dac39b7db5661 | 0% | excluded | assessment_ineligible\|hard_blocker:liquidity_insufficient\|relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_95351d928b674bbdf687 | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
+| — | security_96ba305ee7cd586bc348 | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|relationship_missing_or_stale |
 | — | security_97f38b2cb2d5ef127f5a | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
+| — | security_98470cfc01bbcde78fc2 | 0% | excluded | bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|relationship_missing_or_stale |
 | — | security_9b0db3bc77914b23a307 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
 | — | security_9d4049ed6669a52815d6 | 0% | excluded | assessment_ineligible\|hard_blocker:valuation_unsupported\|score_below_cash_hurdle |
 | — | security_a5dc16f3f4b245e6c168 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
 | — | security_a9eb9838940ef5ceaa0c | 0% | excluded | score_below_cash_hurdle |
 | — | security_ad3b1f8f59fd599f079a | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
+| — | security_ad5917642acbba28c1f2 | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|margin_of_safety_below_minimum\|relationship_missing_or_stale |
 | — | security_b1f2c48e1a744f5ecf67 | 0% | excluded | base_return_below_minimum\|bear_base_payoff_below_minimum\|expected_bear_payoff_below_minimum\|expected_return_below_minimum\|relationship_missing_or_stale |
 | — | security_bdc2f87dadf134760c3a | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
 | — | security_c120e9f26ebb6159adf9 | 0% | excluded | relationship_missing_or_stale\|score_below_cash_hurdle |
@@ -581,7 +611,7 @@ No pending paper orders.
 ### Curated YouTube discovery
 
 - Status: `succeeded`
-- Operations queued: `1`
+- Operations queued: `0`
 - Channel failures: `0`
 
 | Channel | Status | Discovered | Queued | Reason |
@@ -591,7 +621,7 @@ No pending paper orders.
 | @ConnectingODots | succeeded | 0 | 0 | — |
 | @DumbMoneyLive | succeeded | 0 | 0 | — |
 | @CouchInvestor | succeeded | 0 | 0 | — |
-| @Value-Investing | succeeded | 1 | 1 | — |
+| @Value-Investing | succeeded | 0 | 0 | — |
 
 
 ### Seeking Alpha search-index leads
@@ -609,6 +639,16 @@ No pending paper orders.
 | 01KZ8VJY48VNMCFW638QQJZGJH | daily_podcast | daily-20260805T065913Z | failed | retry_exhausted:agent_validation_failed:issue_86f9f3bc8907460da2fc |
 | 01KZ3E6S3RNXTH5SN041P14F6W | security_research | security_1c055eb9b2bb1f5a8ff2 | succeeded | agent_result:succeeded |
 | 01KYPB1RA8KCC272M9J5G94CHK | security_research | security_0cf8075039299094d614 | succeeded | agent_result:succeeded |
+| 01KZ9H5HQRPCB3H5EPFEJENTET | daily_podcast | daily-20260805T161218Z | succeeded | agent_result:succeeded |
+| 01KYPB1X6GMJJD0DTCRTYAGTBE | security_research | security_33d9c44facc75c726c7d | succeeded | agent_result:succeeded |
+| 01KYPB2048VWN4VV7YYF4Y60TX | security_research | security_47a0b06f6c6c478d7c1e | succeeded | agent_result:succeeded |
+| 01KYPB213GFWH1QMBGJT4A5KDA | security_research | security_55c9ce2fdcd32dad6b8c | succeeded | agent_result:succeeded |
+| 01KYPB241838ZBZ6FE9EQCEJYW | security_research | security_664f93a7eaca72e76e9b | succeeded | agent_result:succeeded |
+| 01KYPB250GCWY1ZB0GD3QC2DBX | security_research | security_6cf75bd0ec0aa2a20148 | succeeded | agent_result:succeeded |
+| 01KYPB2AW0SJ35EAKMPQM8QVAH | security_research | security_95351d928b674bbdf687 | succeeded | agent_result:succeeded |
+| 01KYPB2BV8XK4AAREZ3257MDE0 | security_research | security_96ba305ee7cd586bc348 | succeeded | agent_result:succeeded |
+| 01KYPB2DSRFNQ0NE6AY81GQZKR | security_research | security_98470cfc01bbcde78fc2 | succeeded | agent_result:succeeded |
+| 01KYPB2HPR71QC8BBTPA3HMW8R | security_research | security_ad5917642acbba28c1f2 | succeeded | agent_result:succeeded |
 
 ### Complete active queue
 
@@ -616,19 +656,10 @@ No pending paper orders.
 - `ready` `01KYEXAGNREGCP02XCC9VBV80V` — `security_research` for `security_c5a9e460d3350284d157`
 - `waiting` `01KYFXFKB04HSHKYVSPNGXVJX0` — `security_research` for `security_66cdcf90aac0d83e76f3`
 - `ready` `01KYPB1QB0JP4AER2BTKE8CNDB` — `security_research` for `security_0a56aa634d077fe5796f`
-- `ready` `01KYPB1X6GMJJD0DTCRTYAGTBE` — `security_research` for `security_33d9c44facc75c726c7d`
-- `ready` `01KYPB2048VWN4VV7YYF4Y60TX` — `security_research` for `security_47a0b06f6c6c478d7c1e`
-- `ready` `01KYPB213GFWH1QMBGJT4A5KDA` — `security_research` for `security_55c9ce2fdcd32dad6b8c`
 - `ready` `01KYPB2320KM60TB1XB6840QEB` — `security_research` for `security_61567714298b9563d1a9`
-- `ready` `01KYPB241838ZBZ6FE9EQCEJYW` — `security_research` for `security_664f93a7eaca72e76e9b`
-- `ready` `01KYPB250GCWY1ZB0GD3QC2DBX` — `security_research` for `security_6cf75bd0ec0aa2a20148`
 - `ready` `01KYPB26Z023E3AMG9Z8KSPW9D` — `security_research` for `security_7bf8f4c9cc12ae410e40`
 - `ready` `01KYPB27Y84W38J6MDDEF7PHG0` — `security_research` for `security_83a56943e18793f685b0`
 - `ready` `01KYPB29WRNJGPJTTY2DB72JWG` — `security_research` for `security_8a5c43888d224de85c69`
-- `ready` `01KYPB2AW0SJ35EAKMPQM8QVAH` — `security_research` for `security_95351d928b674bbdf687`
-- `ready` `01KYPB2BV8XK4AAREZ3257MDE0` — `security_research` for `security_96ba305ee7cd586bc348`
-- `ready` `01KYPB2DSRFNQ0NE6AY81GQZKR` — `security_research` for `security_98470cfc01bbcde78fc2`
-- `ready` `01KYPB2HPR71QC8BBTPA3HMW8R` — `security_research` for `security_ad5917642acbba28c1f2`
 - `ready` `01KYPB2KN8R1RGAPDZQ2AN9P2V` — `security_research` for `security_b2116dcf976c96974d7b`
 - `ready` `01KYPB2PK0R0ZXAHGNGZ6X5FM8` — `security_research` for `security_cd492d97064d8574156e`
 - `ready` `01KYPB2PK0N1W5XHVXFXW43JSZ` — `security_research` for `security_ce9b78a4d0773c950765`
@@ -963,6 +994,8 @@ No pending paper orders.
 - `ready` `01KZ8BGD985Q85HTC8GAFTZZSX` — `relationship_research` for `relationship_9e7b4700174908755cbc`
 - `ready` `01KZ9B4WPGA9TEA9A5TBY8DPV9` — `wiki_ingest` for `youtube_G3S5ZyL9U64`
 - `ready` `01KZ9BRZ9009HEE5TJTRXK6QQF` — `idea_research` for `idea_critical_minerals_copper`
+- `ready` `01KZ9JKJCRY0G3AX08CFSYQGTH` — `relationship_research` for `relationship_e45a19aedbe5cfcd7c60`
+- `ready` `01KZ9Q96FGCGYB9CCA48432BJX` — `idea_research` for `idea_humanoid_robotics_embodied_ai_components`
 
 ### Open issues and delivery failures
 
@@ -1048,6 +1081,7 @@ No pending paper orders.
 - `warning` **`issue_ea600e6a0abd700bbdd4`** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF\_Cg: @allin: TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 - `warning` **`issue_ed85ad36a02af2fdfc33`** — Daily preparation degraded: security\_567d0d575bbd30aaa91d: security\_567d0d575bbd30aaa91d: price cache is empty
 - `warning` **`issue_f320e056b26d54014584`** — Daily preparation degraded: security\_a9eb9838940ef5ceaa0c: security\_a9eb9838940ef5ceaa0c: YFTzMissingError: $FLNC: possibly delisted; no timezone found
+- `warning` **`issue_f9849560e317bb03afe4`** — Telegram podcast audio delivery unavailable: cycle=daily-20260805T161218Z commit=5b772172ef2475c83df287639ec1ac4a4d0ddcc8 error=ephemeral podcast rendering or one-day artifact handoff failed
 - `warning` **`issue_fc3830c067fcea6132aa`** — Daily preparation degraded: security\_55c9ce2fdcd32dad6b8c: security\_55c9ce2fdcd32dad6b8c: price cache is empty
 - `warning` **`issue_fe482d25304c03ce4d28`** — Daily preparation degraded: security\_33d9c44facc75c726c7d: security\_33d9c44facc75c726c7d: price cache is empty
 
@@ -1055,32 +1089,32 @@ No pending paper orders.
 
 - `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
 - `no_actionable_signals` — No strategy has produced a current actionable trade signal.
-- `allocation_targets`: `55882dc696b9233f08a3ada42014c849326c26415387374f526c9745d18b294f`
+- `allocation_targets`: `f5894c55b34b45d32ae37d5d2853cc654b935498924edb5e04abf11bf2f64841`
 - `cash_ledger`: `680c5eba138f06e3afc99fbd8919ef0999b97aa6cc567edaf9a11cbece564029`
 - `configuration`: `aeff8f82c22ecf61dbc8468718142848202eb6b6e62f446921ff0c6ede86ce5b`
 - `csv_contracts`: `9c7fa8c44f4096f12c5e8b51b2d17d006d2962600936ea0cdb01ce369ba4c154`
 - `decision_schema`: `b841be7e40b72ae7288f7515f606bdb153e972c404186c027b7990875e885de0`
 - `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `fx_aud_eur`: `2ad27a3f7e6e95f95c1fc409f8420a0a0ddb670f23b5486531225f44ec3f01ae`
-- `fx_gbp_eur`: `7e98221fe7424c2805ead40c46b375bc12c86709778255dd4b95f40220962910`
-- `fx_usd_eur`: `5eca3d43b083192f27c5e46a79b12fe9bde69834af3e64a3a6461c1cffec1abd`
+- `fx_aud_eur`: `49a59f64f84facadef6cf172d17307c59373c4442176de8520d1b07355af62f6`
+- `fx_gbp_eur`: `8aefeb0441159070675e6a1be9f497d9461af298349c8d86eba33d996677e424`
+- `fx_usd_eur`: `cc5d43cb2308d8b2cdbf93f1ba32a09c5208870064749e603e8324731cd6a3de`
 - `indicators`: `5637afaccddfb823f5c5e0d56f75510f7ef50614009c8c32b95758bdff805b2e`
-- `issues`: `cc7a59c7ce9fcbdc8ff93242ea38490f196a141f3ec0aec5ad1c5cd0511121d6`
-- `market_latest`: `5db12a2266d51e59d428bb3cd5acb42e3390b90f2fce5d13401babb1542b5b0e`
-- `operation_payloads`: `5db56d9c3f7f10cf796608f40598cf57a243766a41e2be8b9b191f242f66aab7`
-- `operations_history`: `35d9a3e3d426ed08274b8a85b7f3428d2eedc8cb3ebd757167fd997f4b302a2f`
-- `operations_todo`: `c7074b6e1898ca40143605a5633b5b71019979792c536916c485abe1c1c370cf`
+- `issues`: `432b839588d0abb5a9c675b840953b07eb7c418bf2da3d800933f742d37b1f1d`
+- `market_latest`: `a5ce1769b0b6f6b1157b53922781a4cf3b3b22b6cfeb7119f36d0a2d7793e82e`
+- `operation_payloads`: `845f54f05b84d0c235762ec5debe68916f8ccf089ad25ef62fd61667fbab6e33`
+- `operations_history`: `7ea31794072bb4bf88cd56dd49675a4256f09b4b739c548975175f8c60c0ec4c`
+- `operations_todo`: `cddd7ed176b0e22991f6768ce4725257e182434cf4ceaddbc4dfca5c7e70bc9e`
 - `order_legs`: `3512aeb3a497f47ab696f3794bd08b84fbf86957e471550449c0a70530347040`
 - `orders`: `ed876ae7f67d9632296d12497cb334ed5c925843ac65f9691907bf7a8613a3c0`
 - `performance_daily`: `9cd8b25d22ba936ab98b9b8c44277c317b8905f11f925d3b4330713e7d0281cf`
 - `performance_epochs`: `bc47865ef0a04d0e2b97b9395a4276b3db677cbcfc1471469d24df7f367ac327`
 - `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
 - `relationships`: `a6a9995dacd90bf43997b579c49c1b9ea6ac82cf73cd578dbd97559ae54394d3`
-- `runs`: `9ec32a578231a2cb536f8df4d4ed9325fbdbceed485f06cbc1dacd800ebea891`
-- `securities`: `27f73aaa0c69ad82fe7b4ff30dd2fe7f585c89b65154f11def4603c13cdc1353`
-- `security_assessments`: `a785ec61a38f2f852eb5a6f0e9302fb73b4ed11aaf46888977564ff53d8884ad`
+- `runs`: `87b5ce74edfa0f287e4fc72fb5ddd1958ed0fefc7b5a49514520d9b952f8f5f7`
+- `securities`: `9b86a065d3505e4e91527c24729f3daa5849ace6bdc8f079df7ae5a61566b689`
+- `security_assessments`: `41cf6134816dd1ef990e2b912cbcbc47b41feb8ed1780ae402ca78abaae2c3c4`
 - `signals`: `874d3deab149ff6c97a32ad6e61f2d243a5f96559acf815dfc1cd3dc91595f41`
-- `source_registry`: `02de751090bd52b0296cfd530d16bca1c8a542acd36143fc27f0bc9737274dc2`
+- `source_registry`: `0263117a73a53ff585ef77a171c36145e4b429f12199642c850d48921dba84f9`
 - `strategies`: `5ed9f7cb50e7da9cad149dba066c4e8429a9b21ee4446bdd837fc1b0a5923e0b`
 - `strategy_legs`: `c814365d6571e84fc619f0905e14a9b7671dd7e312222d4505c732719d26dddf`
 - `wiki_inbox`: `b2698911beef7704ceb00ea1e965470b973ba4073196dfe06be42884065a3d78`

@@ -7,14 +7,14 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_4f90a8ff770b4eed82db"
-as_of: "2026-08-05T17:51:26Z"
+snapshot_id: "decision_438a97c488fc7fa4fbc0"
+as_of: "2026-08-05T20:06:58Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_4f90a8ff770b4eed82db`
-**As of:** `2026-08-05T17:51:26Z`
+**Publication snapshot:** `decision_438a97c488fc7fa4fbc0`
+**As of:** `2026-08-05T20:06:58Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,17 +22,17 @@ as_of: "2026-08-05T17:51:26Z"
 
 ## Coverage
 
-- Assessments: 46/48
-- Fresh-evidence assessments: 46/48
-- Relationship reviews: 21/48
+- Assessments: 55/57
+- Fresh-evidence assessments: 55/57
+- Relationship reviews: 21/57
 - Accepted relationships: 19
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 351
-- Last successful daily run: `2026-08-05T17:51:26Z`
+- Research backlog: 344
+- Last successful daily run: `2026-08-05T20:06:58Z`
 
 ## Current issues by investment impact
 
@@ -111,6 +111,10 @@ as_of: "2026-08-05T17:51:26Z"
 - `warning` **CRSR — Corsair Gaming, Inc.: Daily preparation degraded: security\_55c9ce2fdcd32dad6b8c** — security\_55c9ce2fdcd32dad6b8c: price cache is empty
 - `warning` **NVDA — NVIDIA Corporation: Daily preparation degraded: security\_33d9c44facc75c726c7d** — security\_33d9c44facc75c726c7d: price cache is empty
 
+### Publication Only
+
+- `warning` **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.
+
 ### Operational Only
 
 - `error` **Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/agent\_result.json
@@ -128,7 +132,7 @@ as_of: "2026-08-05T17:51:26Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 351 active operations.
+Showing 20 of 344 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 

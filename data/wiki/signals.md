@@ -7,13 +7,13 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_4f90a8ff770b4eed82db"
-as_of: "2026-08-05T17:51:26Z"
+snapshot_id: "decision_438a97c488fc7fa4fbc0"
+as_of: "2026-08-05T20:06:58Z"
 ---
 
 # Signals
 
-**Snapshot `decision_4f90a8ff770b4eed82db` · As of `2026-08-05T17:51:26Z`**
+**Snapshot `decision_438a97c488fc7fa4fbc0` · As of `2026-08-05T20:06:58Z`**
 
 ## Actionable trade signals
 
@@ -52,14 +52,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### TDY — Teledyne Technologies Incorporated
+### [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete Teledyne Technologies common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. Record Q2 orders, sales, operating profit, funded backlog, margin expansion, cash flow and debt repayment support a high-quality thesis, but the deterministic assessment recorded a Hold rating, Watch portfolio action, 86 quality, medium confidence, and USD 506/USD 675/USD 870 bear/base/bull fair values with USD 681.50 probability-weighted fair value against USD 684.760009765625. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 
 ### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
 
@@ -70,14 +70,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### SPCX — Space Exploration Technologies Corp.
+### [SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and equipment purchases reached USD 28.476 billion, customer concentration and controller governance are material, and the USD 125.33 mark embeds extreme revenue multiples. The deterministic assessment recorded Hold, Watch, 72 quality, low confidence, and USD 50/USD 110/USD 195 bear/base/bull fair values with USD 109 probability-weighted value. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 
 ### [SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221)
 
@@ -268,14 +268,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### CRSR — Corsair Gaming, Inc.
+### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete Corsair Gaming common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. The deterministic assessment recorded a Hold research rating, Watch portfolio action, 64 quality, medium confidence, and USD 6.00/USD 11.25/USD 18.00 bear/base/bull fair values with USD 11.625 probability-weighted fair value against USD 11.369999885559082. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -313,14 +313,14 @@ No pending paper orders.
 - Research status: `succeeded`
 - Conclusion: Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
 
-### TWST — Twist Bioscience Corporation
+### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete Twist Bioscience security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. Fiscal Q3 revenue grew 23% to USD 118.4 million, gross margin reached 52.8%, guidance rose to USD 456-457 million, and liquidity remained adequate, but GAAP losses, cash use, stock compensation, dilution, and valuation remain material. The deterministic assessment recorded Sell, Avoid, 74 quality, medium confidence, and USD 38.81/USD 69.69/USD 105.47 bear/base/bull fair values with USD 67.582 probability-weighted value against USD 99.45. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 
 ### TSM — Taiwan Semiconductor Manufacturing Company Limited
 
@@ -340,14 +340,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### SOFI — SoFi Technologies, Inc.
+### [SOFI — SoFi Technologies, Inc.](securities/security_98470cfc01bbcde78fc2)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded SoFi Technologies security review using the Q1 2026 Form 10-Q and SEC-filed Q2 2026 results exhibit. Created the security page, registered two current primary sources, updated the structured security row, and accepted assessment assessment\_1c9ade30dbdac5102ac3. Bear/base/bull fair values are USD 11.25/USD 20.90/USD 32.00 at 30%/50%/20%; deterministic calculation produced USD 20.225 probability-weighted fair value, 8.1550758012954881810739869% expected return, 6.116306850971616135805490175% confidence-adjusted expected return, a Hold rating, Watch action, and ineligible allocation status at the USD 18.700000762939453 mark. No linked idea or accepted relationship required a follow-up, and the conviction strategy gate failed. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.
 
 ### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
 
@@ -376,23 +376,23 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### NVDA — NVIDIA Corporation
+### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete NVIDIA common-stock review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded Buy research economics, an Initiate portfolio action, 94 quality, medium confidence, and USD 180/USD 252/USD 374 bear/base/bull fair values with USD 264.50 probability-weighted fair value against USD 211.94000244140625. Allocation remains ineligible and conviction remains Watch solely because the required accepted canonical relationship is pending; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 
-### NBIS — Nebius Group N.V.
+### [NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete Nebius Class A review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded a Sell research rating, Avoid portfolio action, 70 quality, medium confidence, and USD 75/USD 170/USD 340 bear/base/bull fair values with USD 188.75 probability-weighted fair value against USD 225.74000549316406. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.
 
 ### MP — MP Materials Corp.
 
@@ -439,14 +439,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### DNA — Ginkgo Bioworks Holdings, Inc.
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first scenario-complete Ginkgo Bioworks security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. First-quarter continuing revenue fell 49% to USD 19.5 million, continuing operations used USD 46.4 million of operating cash, and dilution continued, while USD 373.5 million of cash and marketable securities provides near-term runway. The deterministic assessment recorded Sell, Avoid, 52 quality, medium confidence, and USD 3.33/USD 7.57/USD 16.47 bear/base/bull fair values with USD 8.078 probability-weighted value against USD 9.37. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 
 ### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
 
