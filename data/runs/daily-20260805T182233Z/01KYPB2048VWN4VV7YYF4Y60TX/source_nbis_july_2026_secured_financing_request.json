@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nbis_july_2026_secured_financing",
+  "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926084452/tm2620683d1_ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926084452/tm2620683d1_ex99-1.htm",
+  "source_type": "issuer_release",
+  "title": "Nebius announces approximately USD 775 million senior secured debt facility",
+  "publisher": "Nebius Group N.V. via the U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e6fb2405bc2362c22f44775270948a84672f32cd43c3e2d4fa952c693bbf03a1",
+  "related_entity_ids": "security_47a0b06f6c6c478d7c1e",
+  "checked_at": "2026-08-05T18:39:11Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Nebius announced an approximately USD 775 million senior secured facility due October 31, 2030 at SOFR plus 2.50%, backed by deployed GPU infrastructure and contracted cash flows; it cited more than USD 40 billion of additional contracted revenue.",
+  "summary": "The SEC-filed issuer release provides current evidence on asset-backed financing, customer-contract coverage of underlying deployment capex, delivery progress, funding cost, and the scale and concentration of contracted revenue.",
+  "run_id": "daily-20260805T182233Z"
+}

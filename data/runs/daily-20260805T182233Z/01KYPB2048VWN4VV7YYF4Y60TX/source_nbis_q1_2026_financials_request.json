@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nbis_q1_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331xex99d2.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331xex99d2.htm",
+  "source_type": "filing",
+  "title": "Nebius Group N.V. unaudited condensed consolidated financial statements for the quarter ended March 31, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4e3eb19ae8fba85cc7a38bee65438d854b271072ff899874dda01cfbc8a77a5e",
+  "related_entity_ids": "security_47a0b06f6c6c478d7c1e",
+  "checked_at": "2026-08-05T18:39:11Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "For Q1 2026 Nebius reported USD 399.0 million revenue, USD 129.5 million adjusted EBITDA, USD 9.2982 billion cash, USD 8.4504 billion current and non-current debt, USD 2.4729 billion capital expenditure, and 308,971,701 diluted weighted-average ordinary shares.",
+  "summary": "The current SEC-filed quarterly financial statements and operating review provide revenue, segment economics, operating loss, cash flow, capex, liquidity, debt, deferred revenue, share count, dilution, and customer-advance evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

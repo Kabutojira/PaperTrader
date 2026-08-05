@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KYPB2048VWN4VV7YYF4Y60TX",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete Nebius Class A review using current SEC primary evidence and the canonical 2026-08-04 market trigger. The deterministic assessment recorded a Sell research rating, Avoid portfolio action, 70 quality, medium confidence, and USD 75/USD 170/USD 340 bear/base/bull fair values with USD 188.75 probability-weighted fair value against USD 225.74000549316406. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_nbis_q1_2026_financials",
+      "claim": "Nebius's SEC-filed financial statements for Q1 2026 reported USD 399.0 million revenue, USD 389.7 million AI-cloud revenue, USD 129.5 million group adjusted EBITDA, a USD 128.0 million operating loss, USD 9.2982 billion cash, USD 8.4504 billion current and non-current debt, USD 2.4729 billion capex, and 308,971,701 diluted weighted-average ordinary shares.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331xex99d2.htm",
+      "observed_at": "2026-08-05T18:39:11Z",
+      "source_hash": "4e3eb19ae8fba85cc7a38bee65438d854b271072ff899874dda01cfbc8a77a5e"
+    },
+    {
+      "source": "source_nbis_july_2026_secured_financing",
+      "claim": "The SEC-filed issuer release announced an approximately USD 775 million senior secured facility due 2030 at SOFR plus 2.50%, backed by deployed GPU infrastructure and contracted cash flows, and cited more than USD 40 billion of additional contracted revenue.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926084452/tm2620683d1_ex99-1.htm",
+      "observed_at": "2026-08-05T18:39:11Z",
+      "source_hash": "e6fb2405bc2362c22f44775270948a84672f32cd43c3e2d4fa952c693bbf03a1"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-65152a0c42fe.md",
+      "claim": "The canonical alert measured a 15.65% adjusted-close increase from 2026-07-07 through 2026-08-04 to USD 225.74 and a 2026-08-04 MACD cross above signal with strength 0.3516; RSI was 55.27 and the close remained below the upper Bollinger band. The review treated this as improving momentum and expectation risk rather than independent evidence of higher fundamental value."
+    },
+    {
+      "source": "assessment_e2c4e2fa700c110e5f32",
+      "claim": "Deterministic assessment version 2 derived USD 188.75 probability-weighted fair value, -16.3861% expected return, -12.2896% confidence-adjusted expected return, USD 136 buy-below price, -32.7882% margin of safety, Sell canonical rating, Avoid portfolio action, Watch conviction tier, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/source_nbis_july_2026_secured_financing_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/source_nbis_q1_2026_financials_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "NBIS security review completed: Q1 2026 revenue was USD 399.0 million, AI-cloud adjusted EBITDA was USD 174.0 million, and July financing added an approximately USD 775 million secured facility against contracted deployment cash flows. Scenario fair values are USD 75/USD 170/USD 340 against USD 225.74. Deterministic rating is Sell and portfolio action Avoid; the 4 August bullish MACD crossover improves momentum but does not overcome negative modeled return, capital intensity, concentration, leverage, dilution, medium confidence, or the missing accepted relationship. No strategy, signal, or paper order was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/source_nbis_q1_2026_financials_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/source_nbis_july_2026_secured_financing_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered both retained SEC primary sources with current 2026-08-05 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved immutable NBIS/XNAS/USD/equity identity and updated only validated research fields.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_e2c4e2fa700c110e5f32, was accepted and linked to this operation, result path, evidence, and research-page hash.",
+      "Final security-context confirmed the current page hash 70e28bb5522bdbcfe88a717f5ddd7feff84aa78c80a539a18abe7c12bf7a9e54 matches immutable history, price and FX timestamps are fresh, both evidence sources are current and registered, and no accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contained no relationship; no strategy-research follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side ledger, fill, execution, cash, portfolio, or performance mutation."
+    ]
+  }
+}

@@ -1961,3 +1961,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   downside at the USD 211.94 mark keep the security watching and allocation-ineligible.
 - Reviewed the 4 August bullish MACD crossover as improving momentum rather than a fundamental
   change or paper-buy signal; no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — Nebius Group N.V. Class A ordinary shares
+
+- Created [[securities/security_47a0b06f6c6c478d7c1e]] from the first-quarter financial statements
+  and SEC-filed July secured-financing release.
+- Rapid AI-cloud growth, positive segment adjusted EBITDA, contracted revenue, and substantial cash
+  support the scaling thesis, but capital intensity, customer-advance dependence, leverage,
+  concentration, and dilution remain material.
+- Bear/base/bull values of USD 75/USD 170/USD 340 remain below the USD 225.74 mark on a
+  probability-weighted basis; the 4 August bullish MACD crossover is improving momentum rather than
+  a paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.
