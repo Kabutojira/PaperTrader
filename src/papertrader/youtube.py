@@ -527,6 +527,49 @@ def _channel_row(channel: YouTubeChannel, cursor: str) -> dict[str, str]:
     }
 
 
+def _load_youtube_scan_manifest(repository_root: Path, run_id: str) -> Mapping[str, object]:
+    """Load and validate one immutable YouTube discovery artifact."""
+
+    path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
+    if path.is_symlink() or not path.is_file():
+        raise YouTubeScanError("YouTube scan artifact must be a regular file")
+    try:
+        value = json.loads(path.read_text(encoding="utf-8"))
+        schema = json.loads(
+            (repository_root / "schemas" / "youtube_scan.schema.json").read_text(encoding="utf-8")
+        )
+    except (OSError, json.JSONDecodeError) as exc:
+        raise YouTubeScanError(f"cannot read YouTube scan artifact: {exc}") from exc
+    errors = sorted(
+        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value),
+        key=lambda error: list(error.path),
+    )
+    if errors:
+        raise YouTubeScanError(f"invalid YouTube scan artifact: {errors[0].message}")
+    if not isinstance(value, Mapping) or value.get("run_id") != run_id:
+        raise YouTubeScanError("YouTube scan artifact identity mismatch")
+    return value
+
+
+def _skip_existing_youtube_scan(repository_root: Path, run_id: str) -> Mapping[str, object] | None:
+    """Return an idempotent skip result without replacing an existing manifest."""
+
+    manifest_path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
+    if not manifest_path.exists():
+        return None
+    manifest = _load_youtube_scan_manifest(repository_root, run_id)
+    return {
+        "youtube_scan_version": manifest["youtube_scan_version"],
+        "run_id": run_id,
+        "status": "skipped",
+        "reason": "manifest_already_exists",
+        "existing_manifest_status": manifest["status"],
+        "manifest_path": manifest_path.relative_to(repository_root).as_posix(),
+        "operation_count": 0,
+        "failure_count": 0,
+    }
+
+
 def scan_youtube(
     repository_root: Path,
     settings: Settings,
@@ -541,12 +584,13 @@ def scan_youtube(
 
     if not RUN_ID.fullmatch(run_id):
         raise YouTubeScanError(f"invalid YouTube scan run_id: {run_id!r}")
+    existing = _skip_existing_youtube_scan(repository_root, run_id)
+    if existing is not None:
+        return existing
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     source_environment = os.environ if environment is None else environment
     channels = load_youtube_channels(repository_root, settings)
     manifest_path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
-    if manifest_path.exists():
-        raise YouTubeScanError(f"YouTube scan manifest already exists for {run_id}")
     if manifest_path.parent.is_symlink():
         raise YouTubeScanError("YouTube scan run directory must not be a symlink")
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -803,6 +847,9 @@ def backfill_youtube(
         raise YouTubeScanError(
             f"YouTube backfill count must be between 1 and {settings.youtube.scan_bound - 1}"
         )
+    existing = _skip_existing_youtube_scan(repository_root, run_id)
+    if existing is not None:
+        return existing
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     source_environment = os.environ if environment is None else environment
     channels = load_youtube_channels(repository_root, settings)
@@ -813,8 +860,6 @@ def backfill_youtube(
     if target.status != "active" or not target.last_seen_video_id:
         raise YouTubeScanError("YouTube backfill requires an active channel with a cursor")
     manifest_path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
-    if manifest_path.exists():
-        raise YouTubeScanError(f"YouTube scan manifest already exists for {run_id}")
     if manifest_path.parent.is_symlink():
         raise YouTubeScanError("YouTube backfill run directory must not be a symlink")
     manifest_path.parent.mkdir(parents=True, exist_ok=True)
@@ -974,23 +1019,7 @@ def youtube_scan_failures(repository_root: Path, run_id: str) -> tuple[str, ...]
     path = repository_root / "data" / "runs" / run_id / "youtube_scan.json"
     if not path.exists():
         return ()
-    if path.is_symlink() or not path.is_file():
-        raise YouTubeScanError("YouTube scan artifact must be a regular file")
-    try:
-        value = json.loads(path.read_text(encoding="utf-8"))
-        schema = json.loads(
-            (repository_root / "schemas" / "youtube_scan.schema.json").read_text(encoding="utf-8")
-        )
-    except (OSError, json.JSONDecodeError) as exc:
-        raise YouTubeScanError(f"cannot read YouTube scan artifact: {exc}") from exc
-    errors = sorted(
-        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value),
-        key=lambda error: list(error.path),
-    )
-    if errors:
-        raise YouTubeScanError(f"invalid YouTube scan artifact: {errors[0].message}")
-    if not isinstance(value, Mapping) or value.get("run_id") != run_id:
-        raise YouTubeScanError("YouTube scan artifact identity mismatch")
+    value = _load_youtube_scan_manifest(repository_root, run_id)
     channels = value.get("channels")
     assert isinstance(channels, Sequence)
     return tuple(
