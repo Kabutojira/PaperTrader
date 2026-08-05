@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_critical_minerals_copper",
+  "dedupe_key": "idea_research:idea_critical_minerals_copper:security-result:01KZ3E6S3RNXTH5SN041P14F6W",
+  "prompt": "Refresh the critical-minerals and structural-copper-scarcity idea from Rio Tinto's completed half-year review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "seed_claim": "Rio Tinto's H1 copper EBITDA and cash conversion strengthen the diversified copper-beneficiary mechanism, but a scenario-complete mid-cycle valuation remains below the current ADR mark and does not justify exposure.",
+    "security_id": "security_1c055eb9b2bb1f5a8ff2",
+    "security_research_operation_id": "01KZ3E6S3RNXTH5SN041P14F6W",
+    "security_research_result_path": "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/agent_result.json"
+  },
+  "source": "security_research:01KZ3E6S3RNXTH5SN041P14F6W",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZ3E6S3RNXTH5SN041P14F6W"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"
+  ],
+  "max_attempts": 3
+}

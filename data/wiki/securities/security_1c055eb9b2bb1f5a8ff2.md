@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-03"
-provenance: "source_rio_q2_2026_production"
+updated: "2026-08-05"
+provenance: "source_rio_h1_2026_results"
 security_id: security_1c055eb9b2bb1f5a8ff2
 issuer_id: issuer_3f384e36fe805b0fcbea
 confidence: medium
-next_review: "2026-08-10"
+next_review: "2026-08-19"
 ---
 
 # Rio Tinto plc sponsored ADR
@@ -27,10 +27,10 @@ contrasts its diversified commodity exposure with [[securities/security_2dbe878d
 ## Economics and thesis
 
 Rio Tinto is a diversified miner whose iron ore, aluminium, copper, and emerging lithium cash flows
-make the ADR less sensitive to copper than a pure producer. H1 2026 copper-equivalent output rose 3%.
-Oyu Tolgoi production rose 31% and its C1 net unit-cost guidance improved to USD 0.30-0.50/lb, but
-group Q2 copper output of 213 kt was 7% below both prior year and Q1. Full-year copper guidance of
-800-870 kt was unchanged. Iron ore remains much larger and links the equity to China and steel.
+make the ADR less sensitive to copper than a pure producer. H1 2026 copper-equivalent output rose 3%,
+and copper EBITDA rose 84% to USD 5.7 billion as Oyu Tolgoi ramped and copper, gold, and silver prices
+strengthened. Iron ore still produced USD 6.8 billion of EBITDA, so China, steel, and bulk-commodity
+economics remain at least as important as the structural-copper thesis.
 
 The Oyu Tolgoi underground ramp can increase low-cost copper exposure, while Resolution and Winu
 offer longer-dated options. Simandou, Pilbara renewal, lithium integration, national partnerships,
@@ -40,50 +40,62 @@ capex, and commodity diversification can either fund copper growth or dilute its
 
 | Evidence | Interpretation |
 | --- | --- |
-| Oyu Tolgoi H1 production rose 31%; cost guidance fell. | Ramp economics are improving. |
-| Group Q2 copper production fell 7% year over year. | One growth asset did not prevent quarterly portfolio decline. |
-| H1 copper-equivalent production rose 3%. | Diversification supports aggregate growth but reduces copper beta. |
-| Iron ore sales rose 5% in Q2 and Simandou construction exceeded 75%. | Iron ore remains a major earnings and capital-allocation driver. |
-| Lithium output rose 20% in Q2. | Adds transition-material exposure and integration risk after acquisition. |
+| H1 revenue was USD 31.0 billion, underlying EBITDA USD 14.8 billion, and underlying earnings USD 6.9 billion. | Earnings strengthened, but favourable commodity prices contributed materially. |
+| Free cash flow was USD 3.8 billion, up 75%; operating cash flow was USD 9.2 billion. | Cash conversion improved while group capital investment remained high at USD 5.0 billion. |
+| Copper EBITDA rose 84% to USD 5.7 billion; Oyu Tolgoi production rose 31%. | The copper-beneficiary mechanism is operating, though partly price-driven. |
+| Iron ore EBITDA was USD 6.8 billion and free cash flow USD 3.0 billion. | Iron ore remains the largest single cash engine and key China sensitivity. |
+| Net debt was USD 14.1 billion versus USD 14.4 billion at year-end. | Leverage is manageable but limits downside protection during a commodity reversal. |
+| 1,626.8 million combined DLC shares were public at 30 June; ADR holders receive the declared USD dividend rate. | Combined per-share cash flow maps to the sponsored ADR economics. |
 
-Primary evidence: [Rio Tinto Q2 2026 production results](https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results),
-checked 27 July 2026 and registered as `source_rio_q2_2026_production`. The issuer page also states
-that half-year financial results are scheduled for 29 July 2026.
+Primary evidence: [Rio Tinto 2026 half-year results](https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf),
+published 29 July and checked 5 August 2026 as `source_rio_h1_2026_results`, supplemented by
+[Q2 production results](https://www.riotinto.com/en/news/releases/2026/rio-tinto-releases-second-quarter-2026-production-results)
+as `source_rio_q2_2026_production`.
 
 ## Valuation, catalysts, and risks
 
-The deterministic ADR mark is USD 91.95 at 27 July 2026, with current USD/EUR data, but no
-supportable valuation range is recorded ahead of the 29 July half-year financial results. Current
-production data do not supply earnings, free cash flow, net debt, capex, share-count, or segment
-valuation inputs. A later sum-of-parts should normalize iron ore, copper, aluminium, and lithium
-prices; capex and net debt; project ownership; taxes; and ADR terms. Assessment downside and base
-upside are therefore recorded as zero only as required non-estimate fields, not as fair-value claims.
+The cyclical-commodity template uses `mid_cycle_cash_flow`, not peak-period earnings. H1 free cash
+flow of USD 3.834 billion annualises to USD 4.71 per combined share before normalization; net debt is
+USD 8.64 per combined share and is reflected by conservative equity cash-flow multiples rather than
+adding an unlevered value. Against the 4 August close of USD 99.01, the 12-month scenarios are:
 
-Catalysts are Oyu Tolgoi ramp and cost delivery, half-year cash results, and de-risking of Winu,
+| Scenario | Probability | Fair value | Assumptions |
+| --- | ---: | ---: | --- |
+| Bear | 25% | USD 68.00 | USD 3.40 normalized FCF/share at 20x as commodity prices weaken, project spend stays elevated, and debt falls slowly. |
+| Base | 50% | USD 93.50 | USD 4.25 normalized FCF/share at 22x; Oyu Tolgoi ramps, productivity offsets inflation, and strong H1 pricing partly normalizes. |
+| Bull | 25% | USD 126.50 | USD 5.50 normalized FCF/share at 23x as copper and aluminium stay strong, Simandou ramps, and productivity improves conversion. |
+
+Probability-weighted fair value is USD 95.38, below the mark. The base case is 5.6% below the mark,
+the bear case is 31.3% below, and the bull case is 27.8% above. Cyclical normalization remains a soft
+gap, but current filing, realized-price, balance-sheet, share-count, and production evidence now make
+the valuation supportable.
+
+Catalysts are Oyu Tolgoi ramp and cost delivery, productivity savings, and de-risking of Winu,
 Resolution, and Simandou. Invalidate if underground ramp slips, copper cost guidance reverses,
 iron-ore demand weakens, large projects overrun, or capital allocation prevents higher copper
 production from improving per-share cash flow.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**. The current comparable assessment is **ineligible**
-because `valuation_unsupported` remains a hard blocker. The 30 July close of USD 97.18 entered an
-upper-Bollinger breakout after a 4.10% rise from 1 July; the 31 July close of USD 96.85 remained
-above the recalculated USD 96.34 upper band. This persistent price signal is not a validated buy
-zone because the half-year earnings, free cash flow, net debt, capex, share-count, and segment cash
-generation needed for a diversified sum-of-parts assessment remain unverified. Review by
-**2026-08-10** through the dependent full security review. No strategy or signal is proposed.
+Status: **watching**, confidence **medium**. The valuation blocker is resolved, but the assessment
+remains economically ineligible: expected and base returns are below the cash hurdle and bear/base
+payoff is adverse. The 4 August USD 99.01 close remained above its upper Bollinger band; the breakout
+is therefore a timing risk rather than a buy signal. Review by **2026-08-19**, or sooner after a
+material commodity-price, Oyu Tolgoi, Simandou, capex, or balance-sheet change. No strategy or signal
+is justified.
 
 ## Changes since prior review
 
-- **Evidence:** the baseline Q2 production evidence is unchanged. The exact 1–30 July alert hash is
-  retained, and the 31 July recomputation supersedes it while preserving `bollinger_above_upper`.
-- **Thesis and catalysts:** Oyu Tolgoi's ramp, lower cost guidance, diversified commodity exposure,
-  and the half-year cash-conversion gate are unchanged.
-- **Valuation and buy zone:** the higher USD 96.85 mark does not resolve the unsupported valuation
-  or establish a buy zone; no scenario fair values are invented.
-- **Risks and invalidation:** iron-ore demand, project execution, capex, leverage, and per-share cash
-  conversion remain the controlling risks. No invalidation is verified by price action alone.
-- **Confidence and action:** confidence remains medium and the action remains watch. Because the
-  named financial evidence gate is now due and decision support remains incomplete, exactly one
-  dependent full `security_research` review was requested; no strategy or signal was created.
+- **Facts and evidence:** the 29 July half-year filing replaces the prior scheduled-results gap with
+  current net debt, combined share count, segment cash flow, realized prices, and maintained guidance.
+- **Assumptions and valuation:** unsupported valuation is resolved. New bear/base/bull mid-cycle
+  cash-flow values are USD 68.00/USD 93.50/USD 126.50 at 25%/50%/25%; there were no prior supported
+  scenario outputs to revise. The weighted value is below the current mark, so no buy zone opens.
+- **Thesis and catalysts:** stronger copper EBITDA and Oyu Tolgoi delivery upgrade evidence for the
+  copper mechanism; diversification and iron-ore dependence remain unchanged constraints.
+- **Risks, blockers, and gaps:** `valuation_unsupported` is resolved. Commodity normalization remains
+  uncertain; leverage, project execution, China/iron-ore demand, and favourable H1 metals prices
+  remain material risks. No thesis invalidation is verified.
+- **Rating and action:** confidence stays medium and status stays watching, but the reason changes
+  from incomplete decision support to a definitive preference for cash at USD 99.01. No strategy or
+  signal is created because the full economic gate fails.

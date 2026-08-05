@@ -1929,3 +1929,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_a5376d68ccb0afee130d`.
 
 - Generated canonical [[daily-reports/daily-report_20260805]] for run `daily-20260805T065913Z`.
+
+## 2026-08-05 — security review — Rio Tinto plc sponsored ADR
+
+- Updated [[securities/security_1c055eb9b2bb1f5a8ff2]] from Rio Tinto's 2026 half-year results.
+- Resolved the unsupported-valuation gap with a scenario-complete mid-cycle cash-flow assessment;
+  the probability-weighted value remains below the USD 99.01 mark, so the security stays watching
+  and no paper strategy or signal is justified.
+- Linked the result to [[ideas/idea_critical_minerals_copper]] for a separate sequential refresh.

@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KZ3E6S3RNXTH5SN041P14F6W",
+  "status": "succeeded",
+  "summary": "Completed one bounded Rio Tinto security review using the issuer's 2026 half-year filing. Updated the security page and structured security state, replaced the unsupported assessment with a scenario-complete schema-v2 mid-cycle cash-flow assessment, and preserved the RIO/XNYS/USD identity. Bear/base/bull fair values are USD 68.00/USD 93.50/USD 126.50 at 25%/50%/25%; deterministic calculation produced USD 95.375 probability-weighted fair value, -3.6713% expected return, a Hold rating, Watch action, and ineligible allocation status at the USD 99.01 mark. Created exactly one dependent idea-research follow-up, 01KZ9BRZ9009HEE5TJTRXK6QQF. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Rio Tinto 2026 half year results",
+      "claim": "Rio Tinto reported H1 revenue of USD 31.028 billion, underlying EBITDA of USD 14.826 billion, underlying earnings of USD 6.851 billion, free cash flow of USD 3.834 billion, operating cash flow of USD 9.173 billion, and net debt of USD 14.061 billion.",
+      "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84",
+      "observed_at": "2026-08-05T16:18:44Z",
+      "source_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1"
+    },
+    {
+      "source": "Rio Tinto 2026 half year results",
+      "claim": "Copper underlying EBITDA rose 84% to USD 5.713 billion, Iron Ore underlying EBITDA was USD 6.769 billion, Aluminium and Lithium underlying EBITDA was USD 3.311 billion, and 1,626.8 million combined DLC shares were in public hands at 30 June 2026; the filing states ADR holders receive dividends at the declared USD rate.",
+      "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84",
+      "observed_at": "2026-08-05T16:18:44Z",
+      "source_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, FX, and assessment state",
+      "claim": "The immutable RIO/XNYS/USD/equity identity had a 4 August close of USD 99.01000213623047, fresh USD/EUR rate 0.8658000230789185, and a persistent bollinger_above_upper state. Deterministic assessment calculation produced assessment_52370d00fd199e7540c1 with USD 95.375 probability-weighted fair value, -3.67134840703161970420252232% expected return, Hold rating, Watch action, and exact ineligibility frontiers.",
+      "observed_at": "2026-08-05T16:12:24Z",
+      "source_hash": "5be555b1f1b84a4c1f1fd59ef868befab6e03c65849fda45ffe7b4c320db5365"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ9BRZ9009HEE5TJTRXK6QQF.json",
+    "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_request.json",
+    "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/security_upsert_request.json",
+    "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/source_rio_h1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"
+  ],
+  "operations_created": [
+    "01KZ9BRZ9009HEE5TJTRXK6QQF"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rio Tinto's 2026 half-year review resolved the prior unsupported-valuation gap. Stronger copper EBITDA and cash conversion support the diversified copper thesis, but the USD 95.375 probability-weighted value is below the USD 99.01 mark; deterministic state is Hold/Watch and allocation-ineligible, with no paper strategy or signal. One dependent critical-minerals idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2",
+    "papertrader research source record --request data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/source_rio_h1_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_1c055eb9b2bb1f5a8ff2"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260805T161218Z, with matching immutable security identity, validated payload, live initial lease, and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state reads and verified the current page, predecessor assessment assessment_ea30ebe239779a4bbd83, accepted relationship, retained sources, and prior result provenance.",
+      "Retrieved the issuer half-year PDF with the retained SHA-256 hash, consumed its financial statements, segment results, realized prices, production, net debt, share count and dividend attribution, and refreshed its source history through the project CLI.",
+      "The first immutable assessment request was rejected without state change because valuation_template_rationale is reserved for the other template; a new immutable retry request corrected that contract field and succeeded.",
+      "The accepted assessment assessment_52370d00fd199e7540c1 is schema version 2, links predecessor assessment_ea30ebe239779a4bbd83, current operation/result provenance, and research-page hash 2c390d14b6a84d98534e7d98f72f6984f4c788aea9f869fda3cfa04135b63bcd.",
+      "Exactly one accepted relationship names idea_critical_minerals_copper, and exactly one dependent result-specific idea_research follow-up was created as 01KZ9BRZ9009HEE5TJTRXK6QQF. The conviction strategy gate failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1c055eb9b2bb1f5a8ff2",
+  "issuer_id": "issuer_3f384e36fe805b0fcbea",
+  "company_name": "Rio Tinto plc",
+  "instrument_name": "Rio Tinto plc sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "RIO",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RIO",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "GB",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; H1 cash conversion and copper economics strengthened, but scenario value remains below the current breakout mark.",
+  "research_summary": "H1 cash conversion and copper EBITDA strengthened, but mid-cycle scenario value remains below the USD 99.01 ADR mark.",
+  "research_page": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+  "last_research_at": "2026-08-05T16:18:44Z",
+  "next_review_at": "2026-08-19T16:18:44Z",
+  "source": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf"
+}

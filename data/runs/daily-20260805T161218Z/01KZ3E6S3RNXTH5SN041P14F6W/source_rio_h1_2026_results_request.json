@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rio_h1_2026_results",
+  "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84",
+  "canonical_url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf",
+  "source_type": "issuer_release",
+  "title": "Rio Tinto 2026 half year results",
+  "publisher": "Rio Tinto plc",
+  "license": "",
+  "status": "available",
+  "content_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1",
+  "related_entity_ids": "idea_critical_minerals_copper|security_1c055eb9b2bb1f5a8ff2",
+  "checked_at": "2026-08-05T16:18:44Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Rio Tinto reported H1 free cash flow of USD 3.834 billion, underlying EBITDA of USD 14.826 billion, net debt of USD 14.061 billion, and 1,626.8 million combined DLC shares in public hands.",
+  "summary": "The issuer half-year filing supplies current group and segment earnings, free cash flow, realized prices, balance sheet, share count, dividend attribution, production and guidance needed for a scenario-complete per-ADR review.",
+  "run_id": "daily-20260805T161218Z"
+}
