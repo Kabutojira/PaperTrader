@@ -1982,3 +1982,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Bear/base/bull values of USD 6.00/USD 11.25/USD 18.00 leave the USD 11.37 mark near base and
   weighted value; the 4 August upper-Bollinger breakout is expectation and timing risk rather than a
   paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — Space Exploration Technologies Corp. listed equity
+
+- Created [[securities/security_664f93a7eaca72e76e9b]] from the Q2 2026 quarterly report,
+  same-day results filing, and June final IPO prospectus.
+- Q2 growth, profitable Connectivity economics, backlog, and post-IPO liquidity support the
+  platform thesis, but Space and AI operating losses, extraordinary capex, customer concentration,
+  dilution, and controller governance remain material.
+- Bear/base/bull values of USD 50/USD 110/USD 195 leave the USD 125.33 mark above base and weighted
+  value; the 4 August volume anomaly is mixed post-earnings repricing and timing risk rather than a
+  paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.

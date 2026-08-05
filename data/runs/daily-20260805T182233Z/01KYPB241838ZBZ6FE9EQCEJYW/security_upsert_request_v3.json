@@ -1,0 +1,23 @@
+{
+  "security_id": "security_664f93a7eaca72e76e9b",
+  "issuer_id": "issuer_49aaac63bcf49630e15b",
+  "company_name": "Space Exploration Technologies Corp.",
+  "instrument_name": "Space Exploration Technologies Corp. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "SPCX",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "SPCX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "United States",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Reusable launch and Starlink network scale now combined with xAI; watch Q2 price discovery, Starlink ARPU, AI margin and customer concentration, Starship execution, capex conversion, dilution, and governance.",
+  "research_summary": "Q2 growth and profitable Connectivity are substantial, but USD 125.33 embeds extreme revenue multiples while capex, segment losses, dilution, governance, and downside asymmetry keep SPCX allocation-ineligible.",
+  "research_page": "data/wiki/securities/security_664f93a7eaca72e76e9b.md",
+  "last_research_at": "2026-08-05T19:02:24Z",
+  "next_review_at": "2026-08-19T19:02:24Z",
+  "source": "source_spcx_2026_prospectus|source_spcx_q2_2026_10q|source_spcx_q2_2026_results_8k"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spcx_q2_2026_results_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052515/spcx-20260804.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052515/spcx-20260804.htm",
+  "source_type": "filing",
+  "title": "Space Exploration Technologies Corp. Form 8-K reporting second-quarter 2026 results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "acea2f27c4fb07add04f4826713bb6c3e686be2c716fd032173357c043d90e43",
+  "related_entity_ids": "security_664f93a7eaca72e76e9b",
+  "checked_at": "2026-08-05T19:02:24Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Space Exploration Technologies reported that it issued its second-quarter 2026 earnings release on August 4, 2026, the same date as the canonical volume-anomaly market session.",
+  "summary": "The SEC current report establishes the timing and identity of the earnings disclosure that coincided with the deterministic volume anomaly; numerical conclusions use the filed quarterly report.",
+  "run_id": "daily-20260805T182233Z"
+}

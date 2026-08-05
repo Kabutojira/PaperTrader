@@ -293,6 +293,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Sigma Lithium Corporation common shares](securities/security_4627aea1bf7d8943d3d8)
 - [Sociedad Quimica y Minera de Chile S.A. American depositary shares](securities/security_9d4049ed6669a52815d6)
 - [Southern Copper Corporation common stock](securities/security_6ad1af8d10d6276a0221)
+- [Space Exploration Technologies Corp. listed equity](securities/security_664f93a7eaca72e76e9b)
 - [Spotify Technology S.A. ordinary shares](securities/security_2010347f1a0a5ea60f47)
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)
 - [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)

@@ -1,0 +1,92 @@
+{
+  "operation_id": "01KYPB241838ZBZ6FE9EQCEJYW",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and equipment purchases reached USD 28.476 billion, customer concentration and controller governance are material, and the USD 125.33 mark embeds extreme revenue multiples. The deterministic assessment recorded Hold, Watch, 72 quality, low confidence, and USD 50/USD 110/USD 195 bear/base/bull fair values with USD 109 probability-weighted value. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_spcx_q2_2026_10q",
+      "claim": "The Q2 SEC filing reported USD 7.814 billion revenue, USD 143 million operating loss, USD 541 million net loss, USD 3.538 billion adjusted EBITDA, 12.0 million Starlink service lines, USD 66 subscriber ARPU, USD 100.009 billion cash plus marketable securities, USD 39.364 billion debt and finance leases, USD 3.466 billion first-half operating cash flow, USD 28.476 billion first-half property and equipment purchases, and USD 47.461 billion backlog.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm",
+      "observed_at": "2026-08-05T19:02:24Z",
+      "source_hash": "2b6762e149c2af81f1f840acb7541e0df8b420cb18e0058d59b451721418ff88"
+    },
+    {
+      "source": "source_spcx_q2_2026_results_8k",
+      "claim": "The SEC Form 8-K establishes that Space Exploration Technologies issued its second-quarter 2026 earnings release on August 4, the same date as the canonical volume-anomaly session; numerical conclusions use the filed quarterly report.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052515/spcx-20260804.htm",
+      "observed_at": "2026-08-05T19:02:24Z",
+      "source_hash": "acea2f27c4fb07add04f4826713bb6c3e686be2c716fd032173357c043d90e43"
+    },
+    {
+      "source": "source_spcx_2026_prospectus",
+      "claim": "The final SEC prospectus priced 555,555,555 Class A shares at USD 135, expected approximately USD 74.4 billion of net proceeds, documented option and RSU overhang and common-control transaction history, and left Elon Musk with approximately 82.4% of voting power immediately after the offering.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+      "observed_at": "2026-08-05T19:02:24Z",
+      "source_hash": "6e2ca0709f2c7251f46adec87e5ef30bee8b8bf1f9d9b7741221c4ef74ebeb0a"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198.md",
+      "claim": "The canonical alert measured a 16.15% adjusted-close decline from 2026-07-07 through 2026-08-04, followed by a 9.43% one-session rise to USD 125.33 on 140.6 million shares and a 3.4588 volume-anomaly factor. RSI was neutral at 46.96 and the 36-observation history was insufficient for 50-day and 200-day averages. The review classified this as material mixed post-earnings repricing and timing risk, not noise or a paper-buy signal."
+    },
+    {
+      "source": "assessment_6a11ab6d421d481439ee",
+      "claim": "Deterministic assessment version 2 derived USD 109 probability-weighted fair value, -13.0296% expected return, -6.5148% confidence-adjusted expected return, USD 88 buy-below price, -13.9364% margin of safety, Hold canonical rating, Watch portfolio action, Watch conviction tier, 72 quality, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request_v3.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request_v4.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/source_spcx_2026_prospectus_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/source_spcx_q2_2026_10q_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/source_spcx_q2_2026_results_8k_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_664f93a7eaca72e76e9b.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SPCX security review completed: Q2 revenue grew 91.9% to USD 7.814 billion and profitable Connectivity economics strengthened, but Space and AI operating losses, first-half capex of USD 28.476 billion, customer concentration, dilution, governance, and extreme valuation remain material. Scenario fair values are USD 50/USD 110/USD 195 against USD 125.33. Deterministic rating is Hold and portfolio action Watch; the 4 August volume anomaly is mixed post-earnings repricing rather than a paper-buy signal. No strategy, signal, paper order, issue, or follow-up operation was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_664f93a7eaca72e76e9b",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/source_spcx_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/source_spcx_q2_2026_results_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/source_spcx_2026_prospectus_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request_v3.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/security_upsert_request_v4.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB241838ZBZ6FE9EQCEJYW/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_664f93a7eaca72e76e9b"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered all three retained SEC primary sources with current 2026-08-05 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved the exact immutable issuer_a1b6a091481aed0c877f/SPCX/XNAS/USD/equity identity and completed the built-in duplicate-identity check. Three rejected request shapes remained immutable and each correction used a newly named request artifact before the successful v4 upsert.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_6a11ab6d421d481439ee, was accepted and linked to this operation, expected result path, evidence set, and research-page hash.",
+      "Final security-context confirmed that current page hash daea736c087605249245671cdbb969073fd7dfff3814c982bac5904e35265eab matches immutable history, the 2026-08-05 price and FX identities are fresh, all three evidence sources are current and registered, and no prior assessment, accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contains no relationship; no conviction strategy follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side allocation, ledger, fill, execution, cash, portfolio, or performance mutation."
+    ]
+  }
+}

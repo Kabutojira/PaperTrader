@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spcx_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026052535/spcx-20260630.htm",
+  "source_type": "filing",
+  "title": "Space Exploration Technologies Corp. quarterly report for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2b6762e149c2af81f1f840acb7541e0df8b420cb18e0058d59b451721418ff88",
+  "related_entity_ids": "security_664f93a7eaca72e76e9b",
+  "checked_at": "2026-08-05T19:02:24Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 revenue was USD 7.814 billion, operating loss was USD 143 million, net loss was USD 541 million, and adjusted EBITDA was USD 3.538 billion; cash plus marketable securities was USD 100.009 billion at June 30, 2026.",
+  "summary": "The current SEC quarterly filing supplies segment revenue and profit, Starlink subscriber and ARPU, backlog, customer concentration, balance-sheet, cash-flow, capex, debt, share-count, dilution, governance, and risk evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

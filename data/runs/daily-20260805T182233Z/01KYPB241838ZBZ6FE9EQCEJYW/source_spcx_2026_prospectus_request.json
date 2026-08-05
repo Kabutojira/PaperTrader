@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spcx_2026_prospectus",
+  "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026042639/spaceexplorationtechnologi.htm",
+  "source_type": "filing",
+  "title": "Space Exploration Technologies Corp. final prospectus dated June 11, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6e2ca0709f2c7251f46adec87e5ef30bee8b8bf1f9d9b7741221c4ef74ebeb0a",
+  "related_entity_ids": "security_664f93a7eaca72e76e9b",
+  "checked_at": "2026-08-05T19:02:24Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The June 2026 IPO offered 555,555,555 Class A shares at USD 135, expected about USD 74.4 billion of net proceeds, and left Elon Musk with approximately 82.4% of voting power immediately after the offering.",
+  "summary": "The final SEC prospectus supplies the offering price and size, post-offering share classes, option and RSU overhang, use of proceeds, common-control transaction history, risk factors, and concentrated-control evidence.",
+  "run_id": "daily-20260805T182233Z"
+}
