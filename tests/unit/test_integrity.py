@@ -6,6 +6,7 @@ from pathlib import Path
 
 from papertrader.advice import refresh_advice
 from papertrader.config import Settings
+from papertrader.daily import resume_or_create_daily_cycle
 from papertrader.execution import ensure_initial_capital
 from papertrader.integrity import (
     load_csv_contracts,
@@ -223,6 +224,58 @@ def test_latest_completed_run_owns_shared_canonical_daily_report(
 
     report.write_text('---\nsnapshot_id: "decision_11111111111111111111"\n---\n', encoding="utf-8")
     assert "daily report snapshot identity mismatch: same-day-latest" in (
+        validate_daily_run_artifacts(sandbox_repository)
+    )
+
+
+def test_finalized_version_two_cycle_owns_report_while_podcast_is_pending(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    report_path = "data/wiki/daily-reports/daily-report_20260727.md"
+    snapshot_id = "decision_22222222222222222222"
+    completed_at = "2026-07-27T12:00:00Z"
+    manifest = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        github_run_id="123",
+        workflow_attempt="1",
+        now=datetime(2026, 7, 27, 9, tzinfo=UTC),
+    )
+    run_id = str(manifest["run_id"])
+    report = sandbox_repository / report_path
+    report.write_text(f'---\nsnapshot_id: "{snapshot_id}"\n---\n', encoding="utf-8")
+    run_directory = sandbox_repository / "data" / "runs" / run_id
+    manifest.update(
+        {
+            "status": "running",
+            "research_cutoff_at": completed_at,
+            "finalization_at": completed_at,
+            "finalization_status": "succeeded",
+            "completed_at": completed_at,
+            "report_path": report_path,
+            "snapshot_id": snapshot_id,
+        }
+    )
+    (run_directory / "daily_run.json").write_text(json.dumps(manifest) + "\n", encoding="utf-8")
+    (run_directory / "decision_snapshot.json").write_text(
+        json.dumps(
+            {
+                "snapshot_id": snapshot_id,
+                "run_id": run_id,
+                "as_of": completed_at,
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+
+    assert validate_daily_run_artifacts(sandbox_repository) == []
+
+    report.write_text('---\nsnapshot_id: "decision_11111111111111111111"\n---\n', encoding="utf-8")
+    assert f"daily report snapshot identity mismatch: {run_id}" in (
         validate_daily_run_artifacts(sandbox_repository)
     )
 
