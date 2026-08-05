@@ -86,5 +86,6 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_ea600e6a0abd700bbdd4** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_ed85ad36a02af2fdfc33** — Daily preparation degraded: security_567d0d575bbd30aaa91d | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_f320e056b26d54014584** — Daily preparation degraded: security_a9eb9838940ef5ceaa0c | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_f9849560e317bb03afe4** — Telegram podcast audio delivery unavailable | 2026-08-05T18:03:13Z | delivery |  |
 | warning | **issue_fc3830c067fcea6132aa** — Daily preparation degraded: security_55c9ce2fdcd32dad6b8c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_fe482d25304c03ce4d28** — Daily preparation degraded: security_33d9c44facc75c726c7d | 2026-07-29T16:51:20Z | deterministic-controller |  |
