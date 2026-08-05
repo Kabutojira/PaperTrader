@@ -111,7 +111,14 @@ def create_checkpoint(
         raise CheckpointError("invalid checkpoint identity")
     if not dry_run and not github_token:
         raise CheckpointError("a GitHub token is required only for a real checkpoint push")
-    raw_status = _git(repository_root, "status", "--porcelain=v1", "-z", strip=False)
+    raw_status = _git(
+        repository_root,
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all",
+        "-z",
+        strip=False,
+    )
     changed_values: set[str] = set()
     fields = raw_status.split("\0") if raw_status else []
     index = 0

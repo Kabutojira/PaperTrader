@@ -185,6 +185,11 @@ def test_dry_checkpoint_creates_local_trailered_commit_without_push(
     monkeypatch.setattr(checkpoints, "validate_checkpoint_state", lambda *_: ())
     issue_page = sandbox_repository / "data" / "issues.md"
     issue_page.write_text(issue_page.read_text() + "\nCheckpoint fixture.\n", encoding="utf-8")
+    run_artifact = (
+        sandbox_repository / "data" / "runs" / "daily-20260804T150000Z" / "checkpoint.json"
+    )
+    run_artifact.parent.mkdir(parents=True)
+    run_artifact.write_text("{}\n", encoding="utf-8")
 
     result = create_checkpoint(
         sandbox_repository,
@@ -201,6 +206,7 @@ def test_dry_checkpoint_creates_local_trailered_commit_without_push(
 
     assert result.dry_run is True
     assert result.pushed is False
+    assert "data/runs/daily-20260804T150000Z/checkpoint.json" in result.changed_paths
     assert (
         subprocess.run(
             ["git", "branch", "--show-current"],
