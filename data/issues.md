@@ -8,6 +8,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | error | **issue_63954cb215f224b75cb3** — Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W | 2026-08-05T11:35:18Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
+| error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_10ff1797ec43b252e279** — Daily preparation degraded: security_c150f31c30afdb4a85f9 | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -80,6 +81,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_d24d52684b3794870e5d** — Daily preparation degraded: security_95351d928b674bbdf687 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_d36bf9b837165bacac8a** — Daily preparation degraded: security_099561384c0f5e697727 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_e1b48875d46f1bd3debb** — Daily preparation degraded: security_2433a056eb0c55961fcc | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_e6df6c7159267aecd855** — Daily podcast failed: daily-20260805T065913Z | 2026-08-05T11:40:25Z | delivery | 01KZ8VJY48VNMCFW638QQJZGJH |
 | warning | **issue_e8012ba9cfff70e45781** — Daily preparation degraded: security_2010347f1a0a5ea60f47 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_ea600e6a0abd700bbdd4** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_ed85ad36a02af2fdfc33** — Daily preparation degraded: security_567d0d575bbd30aaa91d | 2026-07-29T16:51:20Z | deterministic-controller |  |

@@ -1,0 +1,59 @@
+{
+  "daily_cycle_id": "daily-20260805T065913Z",
+  "decision_snapshot_path": "data/runs/daily-20260805T065913Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "8092698afc702ec894f1ae41a2da6035436c5f7cdfea9e5487447d96125012b1",
+  "fill_outcomes": [],
+  "finalization_status": "degraded",
+  "generated_at": "2026-08-05T11:40:21Z",
+  "page_path": "data/wiki/podcasts/daily-podcast_20260805T065913Z.md",
+  "podcast_context_version": 2,
+  "report_path": "data/wiki/daily-reports/daily-report_20260805.md",
+  "report_sha256": "0ed81beab2ccecd7f66df8b95e7eec9f8b344ee521b9de5891d4b6df9dee28cb",
+  "research_cutoff_at": "2026-08-05T11:35:26Z",
+  "run_id": "daily-20260805T065913Z",
+  "snapshot_id": "decision_a5376d68ccb0afee130d",
+  "source_items": [
+    {
+      "completed_at": "2026-08-05T11:35:17Z",
+      "daily_report_items": [],
+      "effective_model": "gpt-5.6-sol",
+      "entity_id": "security_1c055eb9b2bb1f5a8ff2",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes exited with status 2",
+          "source": "data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/validation_report.json"
+        },
+        {
+          "claim": "agent result is missing or a symlink: data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/agent_result.json",
+          "source": "data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes exited with status 2",
+        "agent result is missing or a symlink: data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/agent_result.json"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZ3E6S3RNXTH5SN041P14F6W",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "rejected_paths": [],
+      "result_path": "data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/validation_report.json",
+      "route_reason": "scenario_complete_security_review",
+      "sequence_group": 60,
+      "status": "failed",
+      "summary": "The controller rejected this operation's repository delta.",
+      "weighted_cost": "5"
+    }
+  ],
+  "started_at": "2026-08-05T06:59:13Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ]
+}
