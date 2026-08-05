@@ -1,0 +1,92 @@
+{
+  "operation_id": "01KYPB2BV8XK4AAREZ3257MDE0",
+  "status": "succeeded",
+  "summary": "Completed one bounded FANUC security review using the issuer's quarter ended 30 June 2026 financial results and reference material. Created the security page, updated the structured security row, registered two current primary sources, and accepted assessment assessment_9720edf9bb377a006f6b. Bear/base/bull fair values are EUR 24.25/EUR 36.38/EUR 48.50 at 25%/50%/25%; deterministic calculation produced EUR 36.3775 probability-weighted fair value, 1.783710944583670921087536% expected return, a Hold rating, Watch action, and ineligible allocation status at the EUR 35.7400016784668 mark. Created exactly one dependent idea-research follow-up, 01KZ9Q96FGCGYB9CCA48432BJX. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "FANUC consolidated quarterly financial results for the three months ended June 30, 2026",
+      "claim": "FANUC reported net sales of JPY 231.035 billion, operating income of JPY 53.492 billion, ordinary income of JPY 68.193 billion, and net income attributable to owners of JPY 50.981 billion; these increased 17.7%, 26.1%, 32.3%, and 34.7% year over year.",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf",
+      "observed_at": "2026-08-05T19:39:54Z",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5"
+    },
+    {
+      "source": "FANUC consolidated quarterly financial results and first-quarter reference material",
+      "claim": "The issuer raised FY2026 guidance to JPY 948.1 billion of sales, JPY 218.0 billion of operating income, and JPY 198.0 billion of attributable net income or JPY 212.18 per share. It assumed JPY 150/USD and JPY 175/EUR for July 2026 through March 2027; FA sales increased in China and India, robotics grew in the Americas and China, and robomachine sales grew in China.",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf",
+      "observed_at": "2026-08-05T19:39:54Z",
+      "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94"
+    },
+    {
+      "source": "FANUC consolidated quarterly financial results for the three months ended June 30, 2026",
+      "claim": "At 30 June 2026 FANUC reported JPY 721.468 billion of cash and bank deposits, JPY 40.800 billion of marketable securities, JPY 231.110 billion of investment securities, JPY 198.875 billion of total liabilities, and JPY 1.910 trillion of net assets; average shares for the quarter were approximately 933.158 million.",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf",
+      "observed_at": "2026-08-05T19:39:54Z",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, and assessment state",
+      "claim": "The immutable FUC.F/XFRA/EUR/equity identity had a current adjusted close of EUR 35.7400016784668 retrieved at 2026-08-05T18:22:39Z. The 4 August MACD bullish crossover followed a 2.9943% decline over 7 July through 4 August. Deterministic assessment calculation accepted assessment_9720edf9bb377a006f6b with EUR 36.3775 probability-weighted fair value, 1.783710944583670921087536% expected return, Hold rating, Watch action, and exact ineligibility frontiers.",
+      "observed_at": "2026-08-05T19:45:08Z",
+      "source_hash": "20c79ccb05957caa272b377ce01b842f64ca1c74fd7696606987e23ab44fb46f"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZ9Q96FGCGYB9CCA48432BJX.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/security_upsert_retry01_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/source_fanuc_q1_fy2026_reference_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/source_fanuc_q1_fy2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+  ],
+  "operations_created": [
+    "01KZ9Q96FGCGYB9CCA48432BJX"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "FANUC's quarter ended 30 June 2026 showed 17.7% sales growth, 26.1% operating-income growth, raised full-year guidance, and substantial net financial strength. However, the EUR 36.3775 probability-weighted value offers only 1.78% expected return at the EUR 35.74 Frankfurt mark, the listing is thinly traded, and the idea relationship remains pending; deterministic state is Hold/Watch and allocation-ineligible, with no paper strategy or signal. One dependent humanoid-robotics idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/source_fanuc_q1_fy2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/source_fanuc_q1_fy2026_reference_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/security_upsert_request.json",
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/security_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one routed security_research operation for daily-20260805T182233Z with matching immutable security identity and trusted native, controller, and operation skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state reads; the target had no prior page, predecessor assessment, successful research result, accepted relationship, or retained source.",
+      "Retrieved both issuer PDFs successfully, retained their SHA-256 hashes, registered their metadata through the project CLI, and used the quarterly statements, balance sheet, share count, revised forecast, foreign-exchange assumptions, and divisional demand context.",
+      "The first immutable security request was rejected without state change because its issuer identity conflicted with the canonical row; a new immutable retry preserved issuer_b000ffd888e42845fe36 and succeeded.",
+      "The first immutable assessment request was rejected without state change because evidence source IDs were not sorted; a new immutable retry sorted the same evidence set and succeeded.",
+      "Accepted assessment assessment_9720edf9bb377a006f6b is schema version 2, has no predecessor, links this operation and expected result path, and records research-page hash 47cbc259224e27523870c41fd626f5c648c4dfe31c7075cb2dabc60f7d47a9e7.",
+      "The payload named idea_humanoid_robotics_embodied_ai_components and no accepted canonical relationship added another idea; exactly one dependent result-specific idea_research follow-up was created as 01KZ9Q96FGCGYB9CCA48432BJX. The conviction strategy gate failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all passed.",
+      "Final security context confirmed current source hashes, identity, market and FX freshness, current assessment projection, immutable assessment history provenance, page-hash identity, and complete deterministic gate frontiers.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}

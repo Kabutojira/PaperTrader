@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fanuc_q1_fy2026_reference",
+  "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf",
+  "canonical_url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf",
+  "source_type": "issuer_release",
+  "title": "FANUC financial results reference material for the first quarter of FY2026",
+  "publisher": "FANUC Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_96ba305ee7cd586bc348",
+  "checked_at": "2026-08-05T19:39:54Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "FA sales increased in China and India, robotics grew in the Americas and China, and the full-year forecast was revised upward.",
+  "summary": "The issuer presentation supplies divisional and regional demand context, revised forecast assumptions, and current physical-AI positioning.",
+  "run_id": "daily-20260805T182233Z"
+}

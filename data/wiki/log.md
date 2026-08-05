@@ -2014,3 +2014,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Bear/base/bull values of USD 3.33/USD 7.57/USD 16.47 leave the USD 9.37 mark above base and weighted
   value; the 4 August bullish MACD crossover is improved momentum without a verified fundamental
   explanation, so no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — Fanuc Corporation Frankfurt ordinary shares
+
+- Created [[securities/security_96ba305ee7cd586bc348]] from FANUC's quarter ended 30 June 2026
+  financial results and reference material.
+- Sales, earnings, raised guidance, and net financial strength support the conventional automation
+  thesis, but they do not establish material humanoid revenue and the Frankfurt line remains thin.
+- Bear/base/bull values of EUR 24.25/EUR 36.38/EUR 48.50 leave only modest weighted upside at the
+  EUR 35.74 mark; the 4 August bullish MACD crossover is improving momentum rather than a paper-buy
+  signal, so no strategy or signal is justified.
+- Linked the result to [[ideas/idea_humanoid_robotics_embodied_ai_components]] for a separate
+  sequential refresh.

@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_humanoid_robotics_embodied_ai_components",
+  "dedupe_key": "idea_research:idea_humanoid_robotics_embodied_ai_components:security-result:01KYPB2BV8XK4AAREZ3257MDE0",
+  "prompt": "Refresh the humanoid robotics and embodied-AI component idea from FANUC's completed quarterly review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "seed_claim": "FANUC's quarterly growth, raised guidance, and net financial strength support incumbent automation exposure, but do not prove material humanoid revenue; the Frankfurt line's valuation and liquidity do not justify exposure.",
+    "security_id": "security_96ba305ee7cd586bc348",
+    "security_research_operation_id": "01KYPB2BV8XK4AAREZ3257MDE0",
+    "security_research_result_path": "data/runs/daily-20260805T182233Z/01KYPB2BV8XK4AAREZ3257MDE0/agent_result.json"
+  },
+  "source": "security_research:01KYPB2BV8XK4AAREZ3257MDE0",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYPB2BV8XK4AAREZ3257MDE0"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+  ],
+  "max_attempts": 3
+}

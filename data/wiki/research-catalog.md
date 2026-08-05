@@ -263,6 +263,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [DLocal Limited Class A common shares](securities/security_715bde20b6e1e1320c1a)
 - [Eaton Corporation plc ordinary shares](securities/security_18a3ab0ee6086ee85d0f)
 - [Enphase Energy, Inc. common stock](securities/security_f2b9760d847b2ba59324)
+- [Fanuc Corporation Frankfurt ordinary shares](securities/security_96ba305ee7cd586bc348)
 - [Fluence Energy, Inc. Class A common stock](securities/security_a9eb9838940ef5ceaa0c)
 - [Freeport-McMoRan Inc. common stock](securities/security_2dbe878dfc899d7ee867)
 - [GE Vernova Inc. common stock](securities/security_4b61970aa8f574446819)

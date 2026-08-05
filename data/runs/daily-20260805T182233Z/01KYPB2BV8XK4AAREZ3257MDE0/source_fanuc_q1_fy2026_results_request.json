@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fanuc_q1_fy2026_results",
+  "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf",
+  "canonical_url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf",
+  "source_type": "issuer_release",
+  "title": "FANUC consolidated quarterly financial results for the three months ended June 30, 2026",
+  "publisher": "FANUC Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+  "related_entity_ids": "idea_humanoid_robotics_embodied_ai_components|security_96ba305ee7cd586bc348",
+  "checked_at": "2026-08-05T19:39:54Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Net sales were JPY 231.035 billion, operating income was JPY 53.492 billion, and attributable net income was JPY 50.981 billion.",
+  "summary": "The issuer quarterly report provides current earnings, balance-sheet, share-count, guidance, and foreign-exchange assumptions for the scenario-complete review.",
+  "run_id": "daily-20260805T182233Z"
+}
