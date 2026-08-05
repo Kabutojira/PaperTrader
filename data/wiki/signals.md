@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-03"
-updated: "2026-08-03"
+created: "2026-08-05"
+updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_203b586393e6e96077ee"
-as_of: "2026-08-03T09:32:51Z"
+snapshot_id: "decision_a5376d68ccb0afee130d"
+as_of: "2026-08-05T11:35:26Z"
 ---
 
 # Signals
 
-**Snapshot `decision_203b586393e6e96077ee` · As of `2026-08-03T09:32:51Z`**
+**Snapshot `decision_a5376d68ccb0afee130d` · As of `2026-08-05T11:35:26Z`**
 
 ## Actionable trade signals
 
@@ -25,21 +25,66 @@ No pending paper orders.
 
 ## Research alerts — not trade signals
 
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### TDY — Teledyne Technologies Incorporated
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
 ### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-07-31`
+- Market date: `2026-08-04`
 - Research status: `succeeded`
 - Conclusion: Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center &amp; Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy
+
+### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### SPCX — Space Exploration Technologies Corp.
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-07-31`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -48,7 +93,7 @@ No pending paper orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-07-31`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -56,8 +101,8 @@ No pending paper orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-04`
 - Research status: `succeeded`
 - Conclusion: Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment\_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.
 
@@ -66,151 +111,61 @@ No pending paper orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_oversold`
-- Market date: `2026-07-31`
+- Market date: `2026-08-04`
 - Research status: `succeeded`
 - Conclusion: Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment\_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.
-
-### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed one bounded full Roblox review after its Q2 2026 monetization change and July 30-31 repricing. The SEC-filed shareholder letter and Form 10-Q were re-fetched and matched their registered hashes. A scenario-complete pre-profit-growth revenue-multiple valuation produced USD 28.23/USD 39.58/USD 53.00 bear/base/bull values and a USD 38.859 probability-weighted value against the USD 35.60 mark. Deterministic assessment assessment\_88cd8bf47d6613485ad6 is Hold / Watch and ineligible because confidence-adjusted expected return and both downside-payoff gates remain below threshold. Updated the security page and structured state, registered both source rechecks, and created exactly one dependent idea refresh, 01KZ3D3TYG07K1VA09Y61YXPCH. No strategy, signal, order, allocation, or accounting state changed.
-
-### [QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-07-31`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
-
-### [QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial scenario-complete review of QUALCOMM Incorporated after its July 30 post-results volume anomaly and July 31 RSI-oversold transition. Current SEC-filed fiscal Q3 evidence shows a 4% revenue decline, 23% GAAP diluted-EPS decline, 20% handset-revenue decline, and margin compression, partly offset by 61% automotive and 9% IoT growth. A mature-compounder earnings-multiple valuation gives USD 100/160/220 bear/base/bull values, 8.3937% expected return, 6.2953% confidence-adjusted expected return, and a USD 128 buy-below price versus the USD 147.61 mark. Insufficient expected and base returns, weak downside payoff, inadequate margin of safety, adverse timing, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
 
 ### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the evidence-backed review of PayPal Holdings, Inc. common stock after the 2026-07-28 RSI-overbought transition. The immutable PYPL/XNAS/USD identity is unique and now linked to a maintained security page. The shares rose 31.47% over the measured month and RSI reached 78.99, but the close remained below the upper Bollinger band and volume was not abnormal. PayPal's same-day Q2 release provides direct evidence for the final-session gain: TPV grew 10%, free cash flow reached USD 1.775 billion, and full-year non-GAAP EPS guidance increased to about USD 5.38. Contrary evidence includes lower operating income, a 248-basis-point non-GAAP margin contraction, and nearly flat active accounts. A bounded 8x-12x guided-EPS range gives 26.2% downside and 10.6% base upside from the USD 58.3474 mark, so the assessment is medium-confidence baseline comparison only. No conviction strategy or idea refresh was queued because the full strategy gate failed and neither the payload nor an accepted
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
-### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-07-31`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### PATH — UiPath, Inc.
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares traded and a 4.14 volume z-score. Current SEC-filed fiscal 2026 evidence shows 18% revenue growth, 21% operating-income growth, 27% Microsoft Cloud growth, 41% Azure growth, and USD 678 billion of commercial remaining performance obligation. A mature-compounder earnings-multiple valuation gives USD 375/500/625 bear/base/bull values, 10.84% expected return, and 8.13% confidence-adjusted expected return. Weak bear-payoff ratios, absent accepted relationship, and adverse post-results timing make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
-
-### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed Eaton's Q2 2026 refresh and July 31 volume-anomaly review. Current SEC-filed results show record sales, broad electrical order and backlog growth, stronger cash flow, and raised guidance, explaining the 7.32% results-day rise and strengthening the AI-power thesis. A scenario-complete mature-compounder assessment at the USD 415.20 mark derives USD 285/USD 350/USD 450 bear/base/bull values, USD 358.75 probability-weighted value, -13.60% expected return, and an ineligible Sell/Avoid disposition. Updated the security page and structured state, registered both Q2 sources, created exactly one dependent idea refresh, and created no strategy or accounting change.
-
-### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
+### PATH — UiPath, Inc.
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
-
-### [AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
-
-### [ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
-- Research status: `waiting`
-- Conclusion: High-priority security research is waiting on its scheduling constraints.
-
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-07-31`
-- Research status: `skipped`
-- Conclusion: Skipped this bounded YASKAWA Electric Frankfurt quick check because deterministic evidence proves the merged alert binding is obsolete. The current canonical 2026-07-31 indicator row has source-price hash df331c293711a8b89de8531f137ffbc13392418cc24b8830910f95c83381f203 rather than the payload's c85ddc3d7c4077e995268bf064deda5667a3815632250e842c480f7661679a83, has an empty trigger state, RSI 31.98414094 rather than oversold, and volume z-score 0.66302232 rather than anomalous. The EUR 25.60 mark remains above the baseline EUR 17.05-21.32 bounded valuation range, Frankfurt liquidity remains the hard blocker, and the three baseline issuer sources remain publicly available. No security, assessment, source, wiki, queue, strategy, signal, order, allocation, or accounting state was changed, and no full-review operation was created.
-
-### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed one full security review of Quanta Services after its material Q2 2026 results and July 30-31 repricing. Rechecked the unchanged SEC-filed release and Form 10-Q, expanded the security page with segment margins, backlog quality, acquisitions, debt and goodwill, and wrote immutable assessment assessment\_4b78877aa4c4563435e9. At USD 667.36, the retained USD 417.50/USD 534.40/USD 668.00 scenarios derive a Sell/Avoid/Watch disposition and remain ineligible. No linked canonical idea or accepted relationship exists, so no idea follow-up was required; no strategy, signal, order, allocation or accounting state was changed.
-
-### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -218,53 +173,143 @@ No pending paper orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial schema-version-2 review of Nidec Corporation's Frankfurt ordinary shares after the 2026-07-31 bullish-MACD crossover. The signal followed a 6.16% 20-session decline and coincided with a 5.31% one-session rebound, but the small positive MACD histogram, neutral RSI and 72-share Frankfurt volume make it an unconfirmed technical rebound rather than a trade catalyst. Nidec's latest interim statements report operating strengths and positive free cash flow but warn that suspected inappropriate accounting could materially and pervasively affect the figures. The audited annual filing is delayed to September 30, 2026, and a separate external investigation is assessing group-wide quality issues and their unquantified financial impact. The deterministic assessment is Unrated/Watch, research-unsupported and allocation-ineligible, with accounting uncertainty, insufficient listing liquidity and unsupported valuation as hard blockers. No scenario values, strategy or idea follow-u
-
-### [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial schema-version-2 review of Alphabet Inc. Class A common stock after the 2026-07-31 bullish-MACD crossover. Q2 revenue grew 24%, Google Services 15%, Google Cloud 82%, and operating income 30%, while operating margin expanded to 34%. The alert was a weak technical rebound: the crossover had only 0.0723 strength and the 20-session return remained negative despite a 6.73% July 31 gain. Record AI infrastructure spending, common and preferred equity issuance, potential further ATM dilution, and unresolved antitrust remedies constrain the strong operating thesis. At the USD 356.13 mark, bounded USD 260/360/480 bear/base/bull values produce USD 354 probability-weighted value, -0.60% expected return, and -0.45% confidence-adjusted expected return. Deterministic state derives Hold/Watch, complete research, quality score 90, and ineligible allocation because expected-return, base-upside, downside-payoff, and relationship gates fail. No strategy or idea follow-up was created
-
-### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
 
 **Research alert — not a trade signal**
 
-- Alert: `sma\_50\_cross\_above\_200`
-- Market date: `2026-07-31`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
 - Research status: `succeeded`
-- Conclusion: Completed the initial schema-version-2 review of DLocal Limited Class A common shares after the 2026-07-31 SMA 50/200 bullish crossover. Q1 2026 TPV, revenue and gross profit grew 73%, 55% and 40% year over year, and corporate cash reached USD 451.8 million, supporting the emerging-market payment-infrastructure thesis. Offsetting evidence includes gross-profit-over-TPV compression to 0.84%, weak quarterly adjusted free cash flow, 61% top-ten merchant concentration, and material tax, foreign-exchange, regulatory, working-capital and litigation risks. The crossover was narrow, with only a 1.34% 20-session return and mixed momentum evidence. At the USD 15.08 mark, the deterministic assessment derives Hold/Watch and allocation-ineligible: base upside is 9.42%, confidence-adjusted expected return is 7.62%, bear/base payoff is 0.21 and the USD 13.20 buy zone is below the mark. No strategy or idea follow-up was created.
+- Conclusion: Completed the initial scenario-complete review of Microsoft Corporation after its 2026-07-30 upper-Bollinger, RSI-overbought, and volume-anomaly transitions. The immutable MSFT/XNAS/USD identity is unique. The adjusted close rose 17.39% over the measured period and 15.51% in the first session after fiscal Q4 results, with 109.975 million shares traded and a 4.14 volume z-score. Current SEC-filed fiscal 2026 evidence shows 18% revenue growth, 21% operating-income growth, 27% Microsoft Cloud growth, 41% Azure growth, and USD 678 billion of commercial remaining performance obligation. A mature-compounder earnings-multiple valuation gives USD 375/500/625 bear/base/bull values, 10.84% expected return, and 8.13% confidence-adjusted expected return. Weak bear-payoff ratios, absent accepted relationship, and adverse post-results timing make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
+
+### MP — MP Materials Corp.
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### KTOS — Kratos Defense &amp; Security Solutions, Inc.
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### KTOS — Kratos Defense &amp; Security Solutions, Inc.
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
-- Research status: `succeeded`
-- Conclusion: Completed the initial scenario-complete review of Canadian Solar Inc. after its 2026-07-31 bullish-MACD crossover. Q1 2026 storage shipments rose 142% year on year, but module shipments fell 64%, revenue fell 10%, reported gross margin included a USD 93 million tariff refund, operating cash flow was negative USD 209 million, and total debt reached USD 6.8 billion. A conservative attributable-book NAV gives USD 10.43/18.78/27.12 bear/base/bull values, USD 17.943 probability-weighted fair value, 18.9854117425640888123036307% expected return, 14.23905880692306660922772302% confidence-adjusted expected return, and a USD 15.024 buy-below price versus the USD 15.079999923706055 mark. The deterministic research rating is Buy/Initiate, but the security remains watch-tier and allocation-ineligible because both downside-payoff gates fail and relationship status is pending. No conviction strategy or idea follow-up was created.
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
-### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
+### CRSR — Corsair Gaming, Inc.
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-07-31`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -272,10 +317,217 @@ No pending paper orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-07-31`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-04`
 - Research status: `succeeded`
 - Conclusion: Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
+
+### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### TWST — Twist Bioscience Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### TSM — Taiwan Semiconductor Manufacturing Company Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### SSUN.VI — Samsung Electronics Co., Ltd.
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### SOFI — SoFi Technologies, Inc.
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
+
+**Research alert — not a trade signal**
+
+- Alert: `sma\_50\_cross\_below\_200`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### NVDA — NVIDIA Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### NBIS — Nebius Group N.V.
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### MP — MP Materials Corp.
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ISRG — Intuitive Surgical, Inc.](securities/security_1f9cce545ede94cd6349)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### INTC — Intel Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### FUC.F — Fanuc Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ENPH — Enphase Energy, Inc.](securities/security_f2b9760d847b2ba59324)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### DNA — Ginkgo Bioworks Holdings, Inc.
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### BE — Bloom Energy Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ABBNY — ABB Ltd](securities/security_c120e9f26ebb6159adf9)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-04`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 
 ## Recently expired or completed signals

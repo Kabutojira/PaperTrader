@@ -4,17 +4,17 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-03"
-updated: "2026-08-03"
+created: "2026-08-05"
+updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_203b586393e6e96077ee"
-as_of: "2026-08-03T09:32:51Z"
+snapshot_id: "decision_a5376d68ccb0afee130d"
+as_of: "2026-08-05T11:35:26Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_203b586393e6e96077ee`
-**As of:** `2026-08-03T09:32:51Z`
+**Publication snapshot:** `decision_a5376d68ccb0afee130d`
+**As of:** `2026-08-05T11:35:26Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -24,14 +24,14 @@ as_of: "2026-08-03T09:32:51Z"
 
 - Assessments: 47/47
 - Fresh-evidence assessments: 47/47
-- Relationship reviews: 22/47
-- Accepted relationships: 20
+- Relationship reviews: 21/47
+- Accepted relationships: 19
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 225
+- Research backlog: 351
 - Last successful daily run: `2026-08-01T16:47:49Z`
 
 ## Current issues by investment impact
@@ -113,6 +113,7 @@ as_of: "2026-08-03T09:32:51Z"
 
 ### Operational Only
 
+- `error` **Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/agent\_result.json
 - `warning` **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - `warning` **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 - `warning` **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
@@ -125,30 +126,30 @@ as_of: "2026-08-03T09:32:51Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 225 active operations.
+Showing 20 of 351 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 
-- `ready` `01KYPB241838ZBZ6FE9EQCEJYW` — `security_research` for `security_664f93a7eaca72e76e9b`
-- `ready` `01KYPB250GCWY1ZB0GD3QC2DBX` — `security_research` for `security_6cf75bd0ec0aa2a20148`
 - `ready` `01KYPB26Z023E3AMG9Z8KSPW9D` — `security_research` for `security_7bf8f4c9cc12ae410e40`
 - `ready` `01KYPB27Y84W38J6MDDEF7PHG0` — `security_research` for `security_83a56943e18793f685b0`
 - `ready` `01KYPB29WRNJGPJTTY2DB72JWG` — `security_research` for `security_8a5c43888d224de85c69`
-- `ready` `01KYPB2AW0SJ35EAKMPQM8QVAH` — `security_research` for `security_95351d928b674bbdf687`
-- `ready` `01KYPB2BV8XK4AAREZ3257MDE0` — `security_research` for `security_96ba305ee7cd586bc348`
-- `ready` `01KYPB2DSRFNQ0NE6AY81GQZKR` — `security_research` for `security_98470cfc01bbcde78fc2`
-- `ready` `01KYPB2HPR71QC8BBTPA3HMW8R` — `security_research` for `security_ad5917642acbba28c1f2`
 - `ready` `01KYPB2KN8R1RGAPDZQ2AN9P2V` — `security_research` for `security_b2116dcf976c96974d7b`
-- `ready` `01KYPB2PK0N1W5XHVXFXW43JSZ` — `security_research` for `security_ce9b78a4d0773c950765`
-- `ready` `01KYPB2PK0R0ZXAHGNGZ6X5FM8` — `security_research` for `security_cd492d97064d8574156e`
-- `ready` `01KYPB2QJ8QGJJAGXQ71MT7GWW` — `security_research` for `security_d08d763780400dfbffce`
-- `ready` `01KYPB2TG0W0FFP83ZG7KC45YP` — `security_research` for `security_dfa34d4b9050964b465e`
-- `ready` `01KYPB2VF8GSJR3R78FTPFE8YM` — `security_research` for `security_eca976f0076a425ea1bb`
 - `ready` `01KYPB2XDRKAMP0ZX3MWA7Y1JH` — `security_research` for `security_fe4648901e7675f157fd`
 - `ready` `01KYPB2YD02XHRSSW68JA9MCG7` — `security_research` for `security_fe5539a7d3fd9d553bce`
 - `ready` `01KYQ49D1G2RNAXKS9RP0MY1R9` — `wiki_ingest` for `youtube_9ePWIYadju4`
 - `ready` `01KYQ49D1G3CHJ4YE6BKXP9RX9` — `wiki_ingest` for `youtube_J2ZqFVpMb5M`
 - `ready` `01KYQ49D1G3QX14JS5VBH76HN0` — `wiki_ingest` for `youtube_6006vpLlaVw`
+- `ready` `01KYQ49D1G663ZCTKEG5CJHK7B` — `wiki_ingest` for `youtube_e2C_hgXiyzM`
+- `ready` `01KYQ49D1G6RHZ9VJYDV5NKPTT` — `wiki_ingest` for `youtube_h7XVJ64IhY4`
+- `ready` `01KYQ49D1G889B5DYTST65N0EW` — `wiki_ingest` for `youtube_4JmCb5FmTA4`
+- `ready` `01KYQ49D1GAXYP4Y8RR9C5G3KN` — `wiki_ingest` for `youtube_yUq0O-pDHCE`
+- `ready` `01KYQ49D1GB9057VRBFHJ9Y1NX` — `wiki_ingest` for `youtube_k77X47h6OVU`
+- `ready` `01KYQ49D1GCWM22YHNBNMM75XE` — `wiki_ingest` for `youtube_yAtpMMC3aiw`
+- `ready` `01KYQ49D1GD05JQFX2ZE5MTRWZ` — `wiki_ingest` for `youtube_3c9iLgtDdKM`
+- `ready` `01KYQ49D1GENTSWY2QD1D1RREE` — `wiki_ingest` for `youtube_Cbbmj0dqP-M`
+- `ready` `01KYQ49D1GETPHJ2B8PYVG9FE0` — `wiki_ingest` for `youtube_-ILKiOU5iAQ`
+- `ready` `01KYQ49D1GF9JD930JH9N49P07` — `wiki_ingest` for `youtube_oyjpF7xPiC4`
+- `ready` `01KYQ49D1GFY1PFRCMBZ41Q88C` — `wiki_ingest` for `youtube_u-AXyF9kY9k`
 
 </details>
 

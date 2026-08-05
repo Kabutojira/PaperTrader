@@ -1925,3 +1925,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91]] (74a046620f91).
 
 - Classified [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91]] as `ingest`: New MACD bullish crossover is a durable indicator transition despite the recent negative return.
+
+- Published investor decision snapshot `decision_a5376d68ccb0afee130d`.
+
+- Generated canonical [[daily-reports/daily-report_20260805]] for run `daily-20260805T065913Z`.

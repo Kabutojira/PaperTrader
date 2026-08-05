@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-08-03"
-updated: "2026-08-03"
+created: "2026-08-05"
+updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_203b586393e6e96077ee"
-as_of: "2026-08-03T09:32:51Z"
+snapshot_id: "decision_a5376d68ccb0afee130d"
+as_of: "2026-08-05T11:35:26Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-03T09:32:51Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-05T11:35:26Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -48,8 +48,8 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - Running drawdown: **0%**
 - Largest position: **0%**
 - Current assessments: **47/47**
-- Relationship reviews: **22/47**
-- Accepted relationships: **20**
+- Relationship reviews: **21/47**
+- Accepted relationships: **19**
 - Market retrieval failures: **0**
 
 ## Explore
@@ -60,4 +60,4 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260803|Daily report 2026-08-03]]
+- [[daily-reports/daily-report_20260805|Daily report 2026-08-05]]

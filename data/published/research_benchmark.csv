@@ -1,3 +1,3 @@
 snapshot_id,as_of,policy_version,non_approved,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_203b586393e6e96077ee,2026-08-03T09:32:51Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,25,15.079999923706055,USD,data/wiki/securities/security_099561384c0f5e697727.md
-decision_203b586393e6e96077ee,2026-08-03T09:32:51Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,
+decision_a5376d68ccb0afee130d,2026-08-05T11:35:26Z,equal_weight_rated_v1,true,false,security_099561384c0f5e697727,CSIQ,Canadian Solar Inc.,buy,25,15.079999923706055,USD,data/wiki/securities/security_099561384c0f5e697727.md
+decision_a5376d68ccb0afee130d,2026-08-05T11:35:26Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,
