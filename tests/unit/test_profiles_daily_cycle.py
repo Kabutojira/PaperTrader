@@ -10,8 +10,10 @@ import pytest
 from papertrader.checkpoints import CheckpointError, create_checkpoint
 from papertrader.config import Settings
 from papertrader.daily import (
+    DailyRunError,
     record_cycle_checkpoint,
     record_cycle_operation,
+    resolve_existing_daily_cycle,
     resume_or_create_daily_cycle,
 )
 from papertrader.integrity import is_runtime_path_allowed, validate_daily_run_artifacts
@@ -147,6 +149,76 @@ def test_daily_cycle_resume_consumes_original_count_and_weighted_budget(
     assert resumed["weighted_model_budget_used"] == "2.5"
     assert len(resumed["workflow_attempts"]) == 2
     assert validate_daily_run_artifacts(sandbox_repository) == []
+
+
+def test_fresh_manual_run_resumes_the_only_open_cycle(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        github_run_id="123",
+        workflow_attempt="1",
+        now=NOW,
+    )
+    cycle_id = str(cycle["daily_cycle_id"])
+
+    assert (
+        resolve_existing_daily_cycle(
+            sandbox_repository,
+            trigger="workflow_dispatch",
+            github_run_id="456",
+        )
+        == cycle_id
+    )
+    resumed = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="b" * 40,
+        github_run_id="456",
+        workflow_attempt="1",
+        now=NOW + timedelta(minutes=5),
+    )
+
+    assert resumed["daily_cycle_id"] == cycle_id
+    assert resumed["originating_github_run_id"] == "123"
+    assert [item["github_run_id"] for item in resumed["workflow_attempts"]] == ["123", "456"]
+
+
+def test_new_scheduled_run_does_not_adopt_an_open_cycle(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    manual = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        github_run_id="123",
+        workflow_attempt="1",
+        now=NOW,
+    )
+    scheduled = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="schedule",
+        source_sha="b" * 40,
+        github_run_id="456",
+        workflow_attempt="1",
+        now=NOW + timedelta(days=1),
+    )
+
+    assert scheduled["daily_cycle_id"] != manual["daily_cycle_id"]
+    with pytest.raises(DailyRunError, match="explicit resume_cycle_id"):
+        resolve_existing_daily_cycle(
+            sandbox_repository,
+            trigger="workflow_dispatch",
+            github_run_id="789",
+        )
 
 
 def test_audio_extensions_are_never_runtime_paths() -> None:

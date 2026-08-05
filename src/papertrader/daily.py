@@ -111,6 +111,67 @@ def _cycle_profiles(settings: Settings) -> dict[str, object]:
     }
 
 
+def resolve_existing_daily_cycle(
+    repository_root: Path,
+    *,
+    trigger: str,
+    github_run_id: str,
+    resume_cycle_id: str = "",
+) -> str:
+    """Resolve one open cycle without mutating it.
+
+    Same-run retries always resume their cycle. A manual dispatch may also adopt the repository's
+    sole open cycle so a durable preparation checkpoint can be recovered by a fresh GitHub run.
+    Scheduled invocations retain their new-cycle behavior unless they are retries of the same run.
+    """
+
+    if not TRIGGER.fullmatch(trigger):
+        raise DailyRunError(f"invalid daily trigger: {trigger!r}")
+    if resume_cycle_id and not DAILY_CYCLE_ID.fullmatch(resume_cycle_id):
+        raise DailyRunError(f"invalid daily cycle ID: {resume_cycle_id!r}")
+
+    open_cycles: dict[str, dict[str, object]] = {}
+    for manifest_path in sorted((repository_root / "data" / "runs").glob("daily-*/daily_run.json")):
+        run_id = manifest_path.parent.name
+        if not DAILY_CYCLE_ID.fullmatch(run_id):
+            continue
+        manifest = _load_object(manifest_path)
+        if (
+            manifest.get("daily_run_version") == 2
+            and manifest.get("daily_cycle_id") == run_id
+            and manifest.get("status") in {"running", "interrupted", "degraded"}
+            and not manifest.get("completion_at")
+        ):
+            open_cycles[run_id] = manifest
+
+    if resume_cycle_id:
+        if resume_cycle_id not in open_cycles:
+            raise DailyRunError("resume target is not an open compatible daily cycle")
+        return resume_cycle_id
+
+    owned_cycles: list[str] = []
+    for run_id, manifest in open_cycles.items():
+        attempts = manifest.get("workflow_attempts", [])
+        if manifest.get("originating_github_run_id") == github_run_id or (
+            isinstance(attempts, list)
+            and any(
+                isinstance(item, dict) and item.get("github_run_id") == github_run_id
+                for item in attempts
+            )
+        ):
+            owned_cycles.append(run_id)
+    if len(owned_cycles) > 1:
+        raise DailyRunError("GitHub run owns multiple open daily cycles")
+    if owned_cycles:
+        return owned_cycles[0]
+
+    if trigger != "workflow_dispatch":
+        return ""
+    if len(open_cycles) > 1:
+        raise DailyRunError("multiple open daily cycles require an explicit resume_cycle_id")
+    return next(iter(open_cycles), "")
+
+
 def resume_or_create_daily_cycle(
     repository_root: Path,
     settings: Settings,
@@ -129,23 +190,13 @@ def resume_or_create_daily_cycle(
     if not SOURCE_SHA.fullmatch(source_sha):
         raise DailyRunError("daily source SHA must contain 40 lowercase hex characters")
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
-    selected = resume_cycle_id
+    selected = resolve_existing_daily_cycle(
+        repository_root,
+        trigger=trigger,
+        github_run_id=github_run_id,
+        resume_cycle_id=resume_cycle_id,
+    )
     resuming = bool(selected)
-    if selected and not DAILY_CYCLE_ID.fullmatch(selected):
-        raise DailyRunError(f"invalid daily cycle ID: {selected!r}")
-    if not selected:
-        for path in sorted((repository_root / "data" / "runs").glob("daily-*/daily_run.json")):
-            with path.open(encoding="utf-8") as handle:
-                candidate = json.load(handle)
-            if (
-                isinstance(candidate, dict)
-                and candidate.get("originating_github_run_id") == github_run_id
-                and candidate.get("status") in {"running", "interrupted", "degraded"}
-                and not candidate.get("completion_at")
-            ):
-                selected = str(candidate.get("daily_cycle_id", ""))
-                resuming = True
-                break
     if not selected:
         selected = f"daily-{instant.strftime('%Y%m%dT%H%M%SZ')}"
         while _daily_manifest_path(repository_root, selected).exists():

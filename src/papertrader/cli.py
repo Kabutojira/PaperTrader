@@ -37,6 +37,7 @@ from papertrader.daily import (
     prepare_daily_run,
     record_cycle_checkpoint,
     record_local_agent_outcome,
+    resolve_existing_daily_cycle,
     resume_or_create_daily_cycle,
 )
 from papertrader.execution import ensure_initial_capital, process_order_fill
@@ -205,6 +206,10 @@ def _parser() -> argparse.ArgumentParser:
     daily_cycle.add_argument("--github-run-id", required=True)
     daily_cycle.add_argument("--workflow-attempt", required=True)
     daily_cycle.add_argument("--resume-cycle-id", default="")
+    daily_resolve = daily_commands.add_parser("resolve-cycle")
+    daily_resolve.add_argument("--trigger", required=True)
+    daily_resolve.add_argument("--github-run-id", required=True)
+    daily_resolve.add_argument("--resume-cycle-id", default="")
     daily_prepare = daily_commands.add_parser("prepare")
     daily_prepare.add_argument("--run-id", required=True)
     daily_prepare.add_argument("--trigger", required=True)
@@ -1136,6 +1141,21 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
     if arguments.command == "market":
         return _print_result("market", update_market_data(root, settings))
     if arguments.command == "daily":
+        if arguments.daily_command == "resolve-cycle":
+            print(
+                json.dumps(
+                    {
+                        "daily_cycle_id": resolve_existing_daily_cycle(
+                            root,
+                            trigger=arguments.trigger,
+                            github_run_id=arguments.github_run_id,
+                            resume_cycle_id=arguments.resume_cycle_id,
+                        )
+                    },
+                    sort_keys=True,
+                )
+            )
+            return 0
         if arguments.daily_command == "resume-or-create":
             cycle = resume_or_create_daily_cycle(
                 root,

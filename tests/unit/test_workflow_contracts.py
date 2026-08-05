@@ -194,14 +194,35 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         assert f"steps.operation_{index - 1:02d}.outputs.continue == 'true'" in step["if"]
     for step in operation_steps:
         assert step["with"]["github_token"] == ("${{ !inputs.dry_run && github.token || '' }}")
+    cycle_resolution = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Resolve one resumable daily cycle without mutating state"
+    )
+    assert cycle_resolution["id"] == "cycle_resolution"
+    assert "daily resolve-cycle" in cycle_resolution["run"]
+    assert cycle_resolution["env"] == {
+        "RESUME_CYCLE_ID": "${{ inputs.resume_cycle_id }}",
+        "RUN_TRIGGER": "${{ inputs.trigger }}",
+    }
     preflight_step = next(
         step
         for step in runtime["steps"]
         if step["name"] == "Validate the selected cycle limit and run the full preflight gate"
     )
-    assert preflight_step["env"] == {"RESUME_CYCLE_ID": "${{ inputs.resume_cycle_id }}"}
+    assert preflight_step["env"] == {
+        "RESOLVED_CYCLE_ID": "${{ steps.cycle_resolution.outputs.cycle_id }}"
+    }
     assert "--prepared-daily-cycle-id" in preflight_step["run"]
-    assert "--prepared-github-run-id" in preflight_step["run"]
+    assert "--prepared-github-run-id" not in preflight_step["run"]
+    cycle_step = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Create or resume one timestamped daily cycle"
+    )
+    assert cycle_step["env"]["RESUME_CYCLE_ID"] == (
+        "${{ steps.cycle_resolution.outputs.cycle_id }}"
+    )
     assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
         "${{ jobs.runtime.outputs.podcast_status }}"
     )

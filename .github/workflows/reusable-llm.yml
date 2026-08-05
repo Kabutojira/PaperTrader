@@ -192,9 +192,18 @@ jobs:
           github-token: ""
       - name: Install locked dependencies
         run: uv sync --locked --all-groups
-      - name: Validate the selected cycle limit and run the full preflight gate
+      - name: Resolve one resumable daily cycle without mutating state
+        id: cycle_resolution
         env:
           RESUME_CYCLE_ID: ${{ inputs.resume_cycle_id }}
+          RUN_TRIGGER: ${{ inputs.trigger }}
+        run: |
+          result=$(uv run papertrader daily resolve-cycle --trigger "$RUN_TRIGGER" --github-run-id "$GITHUB_RUN_ID" --resume-cycle-id "$RESUME_CYCLE_ID")
+          cycle_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["daily_cycle_id"])' <<< "$result")
+          echo "cycle_id=$cycle_id" >> "$GITHUB_OUTPUT"
+      - name: Validate the selected cycle limit and run the full preflight gate
+        env:
+          RESOLVED_CYCLE_ID: ${{ steps.cycle_resolution.outputs.cycle_id }}
         run: |
           case "$MAX_OPERATIONS" in ""|*[!0-9]*) echo "::error::MAX_OPERATIONS must be a positive integer"; exit 1;; esac
           test "$MAX_OPERATIONS" -gt 0
@@ -204,10 +213,8 @@ jobs:
           uv run pytest
           uv run papertrader schema validate --strict
           integrity_arguments=(integrity --strict)
-          if [ -n "$RESUME_CYCLE_ID" ]; then
-            integrity_arguments+=(--prepared-daily-cycle-id "$RESUME_CYCLE_ID")
-          else
-            integrity_arguments+=(--prepared-github-run-id "$GITHUB_RUN_ID")
+          if [ -n "$RESOLVED_CYCLE_ID" ]; then
+            integrity_arguments+=(--prepared-daily-cycle-id "$RESOLVED_CYCLE_ID")
           fi
           uv run papertrader "${integrity_arguments[@]}"
       - name: Configure isolated Hermes profile
@@ -265,7 +272,7 @@ jobs:
       - name: Create or resume one timestamped daily cycle
         id: cycle
         env:
-          RESUME_CYCLE_ID: ${{ inputs.resume_cycle_id }}
+          RESUME_CYCLE_ID: ${{ steps.cycle_resolution.outputs.cycle_id }}
           RUN_TRIGGER: ${{ inputs.trigger }}
         run: |
           source_sha=$(git rev-parse HEAD)
