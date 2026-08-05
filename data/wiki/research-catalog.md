@@ -7,8 +7,8 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a5376d68ccb0afee130d"
-as_of: "2026-08-05T11:35:26Z"
+snapshot_id: "decision_4f90a8ff770b4eed82db"
+as_of: "2026-08-05T17:51:26Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **55**
-- Securities with retained revisions: **47**
+- Immutable assessment versions: **57**
+- Securities with retained revisions: **48**
 
 ## Candidate
 
@@ -267,7 +267,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [GE Vernova Inc. common stock](securities/security_4b61970aa8f574446819)
 - [Intuitive Machines, Inc. Class A common stock](securities/security_a5dc16f3f4b245e6c168)
 - [Intuitive Surgical, Inc. common stock](securities/security_1f9cce545ede94cd6349)
-- [Kratos Defense & Security Solutions, Inc. common stock](securities/security_0cf8075039299094d614)
+- [Kratos Defense &amp; Security Solutions, Inc. common stock](securities/security_0cf8075039299094d614)
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
 - [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)

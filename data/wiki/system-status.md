@@ -7,14 +7,14 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a5376d68ccb0afee130d"
-as_of: "2026-08-05T11:35:26Z"
+snapshot_id: "decision_4f90a8ff770b4eed82db"
+as_of: "2026-08-05T17:51:26Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_a5376d68ccb0afee130d`
-**As of:** `2026-08-05T11:35:26Z`
+**Publication snapshot:** `decision_4f90a8ff770b4eed82db`
+**As of:** `2026-08-05T17:51:26Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,9 +22,9 @@ as_of: "2026-08-05T11:35:26Z"
 
 ## Coverage
 
-- Assessments: 47/47
-- Fresh-evidence assessments: 47/47
-- Relationship reviews: 21/47
+- Assessments: 46/48
+- Fresh-evidence assessments: 46/48
+- Relationship reviews: 21/48
 - Accepted relationships: 19
 - Ready or active strategies: 0
 - Active signals: 0
@@ -32,7 +32,7 @@ as_of: "2026-08-05T11:35:26Z"
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
 - Research backlog: 351
-- Last successful daily run: `2026-08-01T16:47:49Z`
+- Last successful daily run: `2026-08-05T17:51:26Z`
 
 ## Current issues by investment impact
 
@@ -114,6 +114,7 @@ as_of: "2026-08-05T11:35:26Z"
 ### Operational Only
 
 - `error` **Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/daily-20260805T065913Z/01KZ3E6S3RNXTH5SN041P14F6W/agent\_result.json
+- `error` **Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/daily-20260805T065913Z/01KZ8VJY48VNMCFW638QQJZGJH/agent\_result.json
 - `warning` **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - `warning` **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 - `warning` **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
@@ -122,6 +123,7 @@ as_of: "2026-08-05T11:35:26Z"
 - `warning` **YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm\_jw** — @thelimitingfactor: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 - `warning` **Daily preparation degraded: FX GBP/EUR** — FX GBP/EUR: YFTzMissingError: $GBPEUR=X: possibly delisted; no timezone found
 - `warning` **YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw** — @CouchInvestor: MsNPz0dBYDw This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- `warning` **Daily podcast failed: daily-20260805T065913Z** — Committed Telegram delivery is awaiting a bounded retry.
 - `warning` **YouTube discovery failed for UCESLZhusAkFfsNsApnjF\_Cg** — @allin: TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 
 ## Bounded active operation queue

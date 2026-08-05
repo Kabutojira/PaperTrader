@@ -7,13 +7,13 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a5376d68ccb0afee130d"
-as_of: "2026-08-05T11:35:26Z"
+snapshot_id: "decision_4f90a8ff770b4eed82db"
+as_of: "2026-08-05T17:51:26Z"
 ---
 
 # Signals
 
-**Snapshot `decision_a5376d68ccb0afee130d` · As of `2026-08-05T11:35:26Z`**
+**Snapshot `decision_4f90a8ff770b4eed82db` · As of `2026-08-05T17:51:26Z`**
 
 ## Actionable trade signals
 
@@ -25,12 +25,30 @@ No pending paper orders.
 
 ## Research alerts — not trade signals
 
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-05`
+- Research status: `succeeded`
+- Conclusion: Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center &amp; Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-05`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-08-04`
+- Market date: `2026-08-05`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -42,15 +60,6 @@ No pending paper orders.
 - Market date: `2026-08-04`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
-
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-04`
-- Research status: `succeeded`
-- Conclusion: Completed the initial scenario-complete review of Schneider Electric SE after its July 30 upper-Bollinger and bullish-MACD entries and strengthened July 31 upper-band state. Schneider's July 30 H1 release provides a contemporaneous fundamental explanation: H1 revenue rose 14.0% organically, adjusted EBITA rose 22.1% organically to a 19.3% margin, free cash flow reached EUR 1.631 billion, Data Center &amp; Networks demand rose triple-digit in Q2, and full-year guidance was upgraded. A mature-compounder earnings-multiple valuation gives EUR 190/240/330 bear/base/bull values, a EUR 250 probability-weighted value, -13.80796051663878822746365404% expected return, -10.35597038747909117059774053% confidence-adjusted expected return, and a EUR 192 buy-below price versus the EUR 290.04998779296875 mark. The deterministic assessment is Sell/Avoid, watch-tier and ineligible because expected and base returns, downside payoff, margin of safety, timing and relationship gates fail. No conviction strategy
 
 ### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
 
@@ -94,8 +103,8 @@ No pending paper orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Rio Tinto security review using the issuer's 2026 half-year filing. Updated the security page and structured security state, replaced the unsupported assessment with a scenario-complete schema-v2 mid-cycle cash-flow assessment, and preserved the RIO/XNYS/USD identity. Bear/base/bull fair values are USD 68.00/USD 93.50/USD 126.50 at 25%/50%/25%; deterministic calculation produced USD 95.375 probability-weighted fair value, -3.6713% expected return, a Hold rating, Watch action, and ineligible allocation status at the USD 99.01 mark. Created exactly one dependent idea-research follow-up, 01KZ9BRZ9009HEE5TJTRXK6QQF. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.
 
 ### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
 
@@ -169,24 +178,6 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
 
 **Research alert — not a trade signal**
@@ -223,23 +214,23 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### KTOS — Kratos Defense &amp; Security Solutions, Inc.
+### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Kratos Defense &amp; Security Solutions security review using the 4 August 2026 SEC filing and SEC-filed issuer results. Created the security page, registered both retained sources, updated the validated security row, and wrote exactly one schema-v2 scenario assessment while preserving the immutable KTOS/XNAS/USD identity. Bear/base/bull fair values are USD 28.09/USD 41.79/USD 63.59 at 25%/50%/25%; deterministic calculation produced USD 43.815 probability-weighted fair value, -15.5292% expected return, a Sell rating, Avoid action, Watch conviction tier, and ineligible allocation status at the USD 51.87 mark. No linked idea or accepted relationship exists, so no idea follow-up was required; the conviction strategy gate failed and no strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.
 
-### KTOS — Kratos Defense &amp; Security Solutions, Inc.
+### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Kratos Defense &amp; Security Solutions security review using the 4 August 2026 SEC filing and SEC-filed issuer results. Created the security page, registered both retained sources, updated the validated security row, and wrote exactly one schema-v2 scenario assessment while preserving the immutable KTOS/XNAS/USD identity. Bear/base/bull fair values are USD 28.09/USD 41.79/USD 63.59 at 25%/50%/25%; deterministic calculation produced USD 43.815 probability-weighted fair value, -15.5292% expected return, a Sell rating, Avoid action, Watch conviction tier, and ineligible allocation status at the USD 51.87 mark. No linked idea or accepted relationship exists, so no idea follow-up was required; the conviction strategy gate failed and no strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.
 
 ### [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867)
 
@@ -322,15 +313,6 @@ No pending paper orders.
 - Research status: `succeeded`
 - Conclusion: Completed the initial scenario-complete review of Amazon.com, Inc. after its July 30 volume anomaly and July 31 post-results upper-Bollinger and bullish-MACD transitions. Current SEC-filed Q2 evidence shows 20% sales growth, 43% operating-income growth, and 37% AWS growth. The July 31 move is a positive earnings-driven repricing, while the prior-session volume anomaly remains unexplained by a contemporaneous filing. A mature-compounder earnings-multiple valuation gives USD 200/270/360 bear/base/bull values, 1.2593% expected return, and 0.9445% confidence-adjusted expected return. Negative base return, weak downside payoff, negative trailing free cash flow, AI capital intensity, and the absent accepted relationship make the assessment ineligible and watch-rated. No conviction strategy or idea refresh was created.
 
-### [YEC.F — YASKAWA Electric Corporation](securities/security_89969b7dac39b7db5661)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### TWST — Twist Bioscience Corporation
 
 **Research alert — not a trade signal**
@@ -341,24 +323,6 @@ No pending paper orders.
 - Conclusion: High-priority security research is ready to run.
 
 ### TSM — Taiwan Semiconductor Manufacturing Company Limited
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### SSUN.VI — Samsung Electronics Co., Ltd.
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
 
 **Research alert — not a trade signal**
 
@@ -449,15 +413,6 @@ No pending paper orders.
 - Conclusion: High-priority security research is ready to run.
 
 ### INTC — Intel Corporation
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-04`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### FUC.F — Fanuc Corporation
 
 **Research alert — not a trade signal**
 

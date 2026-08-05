@@ -7,17 +7,17 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a5376d68ccb0afee130d"
-as_of: "2026-08-05T11:35:26Z"
+snapshot_id: "decision_4f90a8ff770b4eed82db"
+as_of: "2026-08-05T17:51:26Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-05T11:35:26Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-05T17:51:26Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>47/47</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>46/48</strong></article></section>
 
 ### Why
 
@@ -47,8 +47,8 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **47/47**
-- Relationship reviews: **21/47**
+- Current assessments: **46/48**
+- Relationship reviews: **21/48**
 - Accepted relationships: **19**
 - Market retrieval failures: **0**
 

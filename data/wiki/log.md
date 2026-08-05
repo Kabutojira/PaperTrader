@@ -1930,6 +1930,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260805]] for run `daily-20260805T065913Z`.
 
+- Published investor decision snapshot `decision_4f90a8ff770b4eed82db`.
+
+- Generated canonical [[daily-reports/daily-report_20260805]] for run `daily-20260805T161218Z`.
+
 ## 2026-08-05 — security review — Rio Tinto plc sponsored ADR
 
 - Updated [[securities/security_1c055eb9b2bb1f5a8ff2]] from Rio Tinto's 2026 half-year results.
