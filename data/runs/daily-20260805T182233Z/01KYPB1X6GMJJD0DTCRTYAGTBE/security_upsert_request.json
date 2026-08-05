@@ -1,0 +1,23 @@
+{
+  "security_id": "security_33d9c44facc75c726c7d",
+  "issuer_id": "issuer_7f0f0b334051a9c9a06b",
+  "company_name": "NVIDIA Corporation",
+  "instrument_name": "NVIDIA Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "NVDA",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "NVDA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Exceptional AI-platform growth and cash generation merit monitoring, but modeled bear downside, weak base/bear asymmetry, medium confidence, and no accepted relationship prevent action.",
+  "research_summary": "Q1 growth and cash generation support NVIDIA's platform thesis, but a USD 180 bear value and 1.25x base/bear asymmetry at USD 211.94 keep NVDA watching.",
+  "research_page": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+  "last_research_at": "2026-08-05T18:27:18Z",
+  "next_review_at": "2026-08-19T18:27:18Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
+}

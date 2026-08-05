@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nvda_q1_fy2027_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+  "source_type": "filing",
+  "title": "NVIDIA Corporation quarterly report for the quarter ended April 26, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1b5de37b973da4a3f1cd31a09aa455c01c519ea7cc409c73de2250ad156f99e4",
+  "related_entity_ids": "security_33d9c44facc75c726c7d",
+  "checked_at": "2026-08-05T18:27:18Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "For the quarter ended April 26, 2026, NVIDIA reported USD 81.615 billion revenue, USD 53.536 billion operating income, USD 50.344 billion operating cash flow, USD 50.335 billion cash and marketable debt securities, and USD 8.470 billion total debt.",
+  "summary": "The current SEC quarterly filing supplies identity, revenue, margins, cash flow, liquidity, debt, share-count, inventory, investment, supply-commitment, export-control, and product-transition evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

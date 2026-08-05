@@ -273,6 +273,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
 - [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)
+- [NVIDIA Corporation common stock](securities/security_33d9c44facc75c726c7d)
 - [Palantir Technologies Inc. Class A common stock](securities/security_bdc2f87dadf134760c3a)
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)

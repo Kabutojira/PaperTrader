@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nvda_q1_fy2027_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+  "source_type": "issuer_release",
+  "title": "NVIDIA announces financial results for first quarter fiscal 2027",
+  "publisher": "NVIDIA Corporation via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "736c5d15dc63b5110455150e76a796a912a44ae0c0c03928b4326299a84bb618",
+  "related_entity_ids": "security_33d9c44facc75c726c7d",
+  "checked_at": "2026-08-05T18:27:18Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "NVIDIA reported Q1 fiscal 2027 revenue of USD 81.6 billion, Data Center revenue of USD 75.2 billion, 74.9% GAAP gross margin, and guided Q2 revenue to USD 91.0 billion plus or minus 2% with no China Data Center compute revenue assumed.",
+  "summary": "The SEC-filed issuer release supplies current segment growth, normalized earnings, gross-margin, capital-return, and next-quarter guidance evidence for the scenario valuation.",
+  "run_id": "daily-20260805T182233Z"
+}

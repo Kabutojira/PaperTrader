@@ -1951,3 +1951,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   USD 51.87 mark keep the security watching and allocation-ineligible.
 - Reviewed the Bollinger-band breakout and volume anomaly as expectation and timing risk rather than
   a buy signal; no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — NVIDIA Corporation common stock
+
+- Created [[securities/security_33d9c44facc75c726c7d]] from NVIDIA's fiscal 2027 first-quarter
+  filing and SEC-filed results release.
+- Record revenue, Data Center growth, mid-70% gross margin, cash generation, and net financial
+  strength support the platform thesis, but a USD 180 bear value and only 1.25x base-upside-to-bear-
+  downside at the USD 211.94 mark keep the security watching and allocation-ineligible.
+- Reviewed the 4 August bullish MACD crossover as improving momentum rather than a fundamental
+  change or paper-buy signal; no strategy, signal, order, or follow-up operation was justified.
