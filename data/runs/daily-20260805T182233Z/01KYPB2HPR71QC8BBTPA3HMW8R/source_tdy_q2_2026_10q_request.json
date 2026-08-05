@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tdy_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1094285/000109428526000043/tdy-20260628.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1094285/000109428526000043/tdy-20260628.htm",
+  "source_type": "filing",
+  "title": "Teledyne Technologies Incorporated quarterly report for the quarter ended June 28, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1d543d663811f342974c6a77f93a74305a865cc0ff7785249c86e6ac6a3de0d2",
+  "related_entity_ids": "security_ad5917642acbba28c1f2",
+  "checked_at": "2026-08-05T19:59:39Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "For Q2 2026 Teledyne reported USD 1,662.5 million net sales, USD 251.7 million attributable net income, USD 5.37 diluted EPS and 20.0% operating margin; first-half operating cash flow was USD 549.2 million and capital expenditure was USD 60.2 million.",
+  "summary": "The current SEC quarterly filing supplies identity, segment, revenue, margin, earnings, cash-flow, liquidity, debt, acquisition, backlog, share-count, tariff, supply-chain and goodwill evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

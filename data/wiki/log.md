@@ -2038,3 +2038,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   upside at the USD 18.70 mark; the 4 August bullish MACD crossover is positive post-results
   momentum rather than a paper-buy signal, so no strategy, signal, order, or follow-up operation
   was justified.
+
+## 2026-08-05 — security review — Teledyne Technologies Incorporated common stock
+
+- Created [[securities/security_ad5917642acbba28c1f2]] from the Q2 2026 quarterly report and
+  SEC-filed results release.
+- Record orders, sales and operating profit, broad segment growth, margin expansion, backlog, free
+  cash flow and debt repayment support the high-quality compounder thesis, while customer funding,
+  fixed-price work, trade and supply constraints, acquisitions and valuation remain material.
+- Bear/base/bull values of USD 506/USD 675/USD 870 leave the USD 684.76 mark above base and weighted
+  value; the 4 August upper-Bollinger breakout is positive post-results confirmation but unfavorable
+  entry timing, so no strategy, signal, order, or follow-up operation was justified.

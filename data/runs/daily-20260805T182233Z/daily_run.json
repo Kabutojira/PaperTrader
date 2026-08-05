@@ -80,6 +80,15 @@
       "profile": "deep",
       "recorded_at": "2026-08-05T19:55:44Z",
       "terminal_status": "succeeded"
+    },
+    {
+      "index": 9,
+      "kind": "operation",
+      "operation_id": "01KYPB2HPR71QC8BBTPA3HMW8R",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "recorded_at": "2026-08-05T20:06:47Z",
+      "terminal_status": "succeeded"
     }
   ],
   "completed_at": "",
@@ -93,10 +102,10 @@
   "finalization_commit_identity": "",
   "maximum_operations": 9,
   "model_budget_limit": "100",
-  "model_budget_used": "40",
-  "next_checkpoint_index": 9,
+  "model_budget_used": "45",
+  "next_checkpoint_index": 10,
   "operating_date": "2026-08-05",
-  "operation_count": 8,
+  "operation_count": 9,
   "operations_accepted": [
     {
       "auxiliary_models": {
@@ -241,6 +250,24 @@
       "terminal_status": "succeeded",
       "timeout_seconds": 1800,
       "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 9,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01KYPB2HPR71QC8BBTPA3HMW8R",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "scenario_complete_security_review",
+      "terminal_status": "succeeded",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
     }
   ],
   "operations_attempted": [
@@ -251,7 +278,8 @@
     "01KYPB250GCWY1ZB0GD3QC2DBX",
     "01KYPB2AW0SJ35EAKMPQM8QVAH",
     "01KYPB2BV8XK4AAREZ3257MDE0",
-    "01KYPB2DSRFNQ0NE6AY81GQZKR"
+    "01KYPB2DSRFNQ0NE6AY81GQZKR",
+    "01KYPB2HPR71QC8BBTPA3HMW8R"
   ],
   "originating_github_run_id": "31033840622",
   "podcast_audio_path": "",
@@ -294,7 +322,7 @@
   "queue_dispositions": [
     "allocation_maintenance:01KZ9JKJCRY0G3AX08CFSYQGTH"
   ],
-  "remaining_operations": 1,
+  "remaining_operations": 0,
   "report_path": "",
   "research_cutoff_at": "",
   "run_id": "daily-20260805T182233Z",
@@ -304,7 +332,7 @@
   "status": "running",
   "trigger": "workflow_dispatch",
   "weighted_model_budget": "100",
-  "weighted_model_budget_used": "40",
+  "weighted_model_budget_used": "45",
   "workflow_attempts": [
     {
       "github_run_id": "31033840622",

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ad5917642acbba28c1f2",
+  "issuer_id": "issuer_1ddf41bcf5c77bb61b97",
+  "company_name": "Teledyne Technologies Incorporated",
+  "instrument_name": "Teledyne Technologies Incorporated common stock",
+  "instrument_type": "equity",
+  "ticker": "TDY",
+  "exchange_code": "NYSE",
+  "venue_mic": "XNYS",
+  "provider_symbol": "TDY",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "United States",
+  "sector": "Technology",
+  "industry": "Scientific & Technical Instruments",
+  "status": "watching",
+  "watchlist_reason": "High-reliability imaging, sensing, instrumentation, defense and space compounder; watch backlog conversion, organic margins, cash flow, debt reduction, acquisition discipline, and valuation after the Q2 breakout.",
+  "research_summary": "Record Q2 orders, sales, operating profit, backlog and cash flow support Teledyne's quality, but the USD 684.76 mark exceeds base and weighted fair value and leaves the security allocation-ineligible.",
+  "research_page": "data/wiki/securities/security_ad5917642acbba28c1f2.md",
+  "last_research_at": "2026-08-05T19:59:39Z",
+  "next_review_at": "2026-09-04T19:59:39Z",
+  "source": "source_tdy_q2_2026_10q|source_tdy_q2_2026_results"
+}

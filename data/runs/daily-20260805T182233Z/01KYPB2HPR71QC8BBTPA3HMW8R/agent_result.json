@@ -1,0 +1,86 @@
+{
+  "operation_id": "01KYPB2HPR71QC8BBTPA3HMW8R",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete Teledyne Technologies common-stock review using current SEC primary evidence and the canonical 2026-08-04 upper-Bollinger trigger. Record Q2 orders, sales, operating profit, funded backlog, margin expansion, cash flow and debt repayment support a high-quality thesis, but the deterministic assessment recorded a Hold rating, Watch portfolio action, 86 quality, medium confidence, and USD 506/USD 675/USD 870 bear/base/bull fair values with USD 681.50 probability-weighted fair value against USD 684.760009765625. Allocation remains ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no conviction strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_tdy_q2_2026_10q",
+      "claim": "Teledyne's SEC quarterly report for Q2 2026 reported USD 1,662.5 million net sales, USD 251.7 million attributable net income, USD 5.37 diluted EPS, 20.0% operating margin, USD 549.2 million first-half operating cash flow, USD 60.2 million first-half capital expenditure, USD 340.1 million cash, USD 2,027.0 million total debt, and 46,355,673 shares outstanding on July 15.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1094285/000109428526000043/tdy-20260628.htm",
+      "observed_at": "2026-08-05T19:59:39Z",
+      "source_hash": "1d543d663811f342974c6a77f93a74305a865cc0ff7785249c86e6ac6a3de0d2"
+    },
+    {
+      "source": "source_tdy_q2_2026_results",
+      "claim": "The SEC-filed issuer release reported record quarterly orders, sales and operating profit, approximately USD 5.0 billion funded backlog, USD 284.7 million Q2 free cash flow, 1.1x quarter-end leverage, and raised full-year 2026 GAAP and non-GAAP EPS guidance to USD 20.73-20.99 and USD 24.45-24.65.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1094285/000109428526000039/q2-2026earningsrelease.htm",
+      "observed_at": "2026-08-05T19:59:39Z",
+      "source_hash": "2774c4a94d97925731b1db2f843d0c5261eb63111e29c306a50684fc932152a9"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab.md",
+      "claim": "The canonical alert measured a 16.39% adjusted-close increase from 2026-07-07 through 2026-08-04 to USD 684.760009765625 and a close 3.68% above the USD 660.46 upper Bollinger band; RSI was 75.05 and volume was not anomalous. The review treated this as verified post-results fundamental confirmation but unfavorable entry timing rather than a paper-buy signal."
+    },
+    {
+      "source": "assessment_6efbfe8c34c124d99c45",
+      "claim": "Deterministic assessment version 2 derived USD 681.50 probability-weighted fair value, -0.4761% expected return, -0.3571% confidence-adjusted expected return, USD 540 buy-below price, -1.4459% margin of safety, Hold canonical rating, Watch portfolio action, Watch conviction tier, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/security_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/source_tdy_q2_2026_10q_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/source_tdy_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_ad5917642acbba28c1f2.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "TDY security review completed: Q2 sales rose 9.8%, attributable net income rose 19.9%, operating margin expanded to 20.0%, management reported record orders and approximately USD 5.0 billion funded backlog, and Q2 free cash flow reached USD 284.7 million. Scenario fair values are USD 506/USD 675/USD 870 against USD 684.76. Deterministic rating is Hold and portfolio action Watch; the 4 August upper-Bollinger breakout confirms strong post-results expectations but does not overcome slightly negative modeled return, unfavorable bear asymmetry, medium confidence, premium valuation, or the missing accepted relationship. No strategy, signal, or paper order was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_ad5917642acbba28c1f2",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/source_tdy_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/source_tdy_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB2HPR71QC8BBTPA3HMW8R/assessment_upsert_request_v4.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_ad5917642acbba28c1f2"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered both retained SEC primary sources with current 2026-08-05 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved immutable TDY/XNYS/USD/equity identity and updated only validated research fields; the rejected identity-conflicting request remained immutable and the corrected retry used a uniquely named request artifact.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_6efbfe8c34c124d99c45, was accepted and linked to this operation, result path, evidence, and research-page hash; rejected request shapes remained immutable and corrected retries used uniquely named artifacts.",
+      "Final security-context confirmed the current page hash 828c0175c790345831464d396d189382c43a2c34c227faf0041b58a02c936fe8 matches immutable history, price and FX timestamps are fresh, both evidence sources are current and registered, and no accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contained no relationship; no strategy-research follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side ledger, fill, execution, cash, portfolio, or performance mutation.",
+      "git diff --check passed before the manifest was written."
+    ]
+  }
+}
