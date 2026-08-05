@@ -1,0 +1,78 @@
+{
+  "operation_id": "01KYY98DWGST45EN32F928GMGG",
+  "status": "succeeded",
+  "summary": "Completed one bounded RTX quick check for the merged July 31, August 4, and August 5 RSI-overbought alerts. The latest USD 222.31 close, RSI 75.81, and 14.06% 20-session return confirm persistent adverse entry timing rather than a buy or short signal. The unchanged SEC-filed Q2 report supports the existing thesis checklist, but the baseline's legacy valuation lacks a bull case and probabilities and therefore cannot support the canonical decision gate. The accepted defense relationship removes the baseline's prior relationship blocker. Updated the security page and structured security state, appended one schema-v2 unsupported and ineligible assessment, and created exactly one dependent full security review, 01KZA04098D4DF0J4SFMJK1TDD. No strategy, signal, order, allocation, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator state",
+      "claim": "The merged alert sequence records RSI-overbought entry on July 31 and strengthening on August 4 and 5. The canonical August 5 close is USD 222.30999755859375, RSI is 75.81343843, the 20-session return is 14.057767%, the upper Bollinger band is USD 227.31180331, and the source-price hash matches the payload's current hash.",
+      "observed_at": "2026-08-05T22:09:27Z",
+      "source_hash": "145058c76665a7cd75a02203139ad13ba3eadef94c856ba566cdea4d52263ef5"
+    },
+    {
+      "source": "RTX Corporation Q2 2026 Form 10-Q filed with the SEC",
+      "claim": "The SEC-hosted filing returned HTTP 200 on August 5 with the exact retained SHA-256. It continues to support the existing backlog, segment, cash-flow, debt, contract-risk, and Pratt powder-metal remediation checklist; the SEC submissions record showed no later RTX company financial filing through the check.",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+      "observed_at": "2026-08-05T22:17:05Z",
+      "source_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2"
+    },
+    {
+      "source": "Baseline security result 01KYHW5710M89EMQMNDY940EKH and current relationship state",
+      "claim": "The successful baseline completed within ten days for the same immutable RTX/XNYS/USD/equity identity. Its USD 142.00 downside and USD 179.375 base reference values remain 36.1% and 19.3% below the current mark, but its legacy assessment has no bull case or scenario probabilities. Relationship relationship_1655ac715c33506ec7da is now accepted, changing the baseline's absent-relationship gate without resolving valuation or timing."
+    },
+    {
+      "source": "PaperTrader deterministic assessment and queue projections",
+      "claim": "Assessment assessment_d0c4e85956c111973bbc is the sole immutable schema-v2 assessment for this operation, links predecessor assessment_b1abc66cfd0edcc2a7e2, matches the maintained page hash, records fresh price and FX identity, and is unsupported, ineligible, Unrated / Watch with valuation_unsupported and no invented scenario values. Exactly one dependent full review, 01KZA04098D4DF0J4SFMJK1TDD, carries this quick-check identity, all three merged price hashes and alert causes, the accepted-relationship change, and the scenario-completeness gate."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZA04098D4DF0J4SFMJK1TDD.json",
+    "data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/assessment_upsert_request.json",
+    "data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/enqueue_full_research_request.json",
+    "data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/security_upsert_request.json",
+    "data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/source_rtx_q2_2026_10q_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [
+    "01KZA04098D4DF0J4SFMJK1TDD"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RTX's merged RSI-overbought alerts strengthened through August 5: the USD 222.31 close, RSI 75.81, and 14.06% 20-session gain indicate adverse entry timing, not a paper-trade signal. Q2 evidence and the accepted defense relationship remain supportive, but the legacy valuation is not scenario-complete, so the new assessment is unsupported and ineligible pending exactly one dependent full review; no strategy, signal, order, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_59304f90c440def31dc5",
+    "papertrader research source record --request data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/source_rtx_q2_2026_10q_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T220920Z/01KYY98DWGST45EN32F928GMGG/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_59304f90c440def31dc5"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was the sole routed running operation, claimed by daily-20260805T220920Z with a live lease at operation start, and matched the immutable security, validated quick-check payload, and trusted preflight skill hashes.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and confirmed baseline operation 01KYHW5710M89EMQMNDY940EKH succeeded for the same security within ten days.",
+      "Confirmed every merged alert cause and all three source-price hashes against the canonical packets; the current indicator row matches payload hash 145058c76665a7cd75a02203139ad13ba3eadef94c856ba566cdea4d52263ef5.",
+      "Rechecked the SEC filing with HTTP 200 and exact retained hash, refreshed its source record, and treated the issuer release's HTTP 403 as unavailable for new verification rather than as evidence of changed fundamentals.",
+      "Updated the maintained security page with explicit evidence, thesis, valuation and buy-zone, catalyst, risk, confidence, relationship-gate, action, and escalation changes since the prior review.",
+      "Confirmed assessment assessment_d0c4e85956c111973bbc is the sole immutable assessment version for this operation, links its predecessor and expected result path, uses anchored scores, fresh price and FX identity, and no invented scenario values for its unsupported valuation.",
+      "Confirmed exactly one dependent security_research operation, 01KZA04098D4DF0J4SFMJK1TDD, contains this quick-check identity, all merged trigger causes and hashes, the exact market period, and the changed relationship and valuation-support gates.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation all returned OK.",
+      "command_audit.json contains exactly the eleven canonical PaperTrader CLI invocations listed in commands_run, all with exit code zero.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source, or other security page changed."
+    ]
+  }
+}

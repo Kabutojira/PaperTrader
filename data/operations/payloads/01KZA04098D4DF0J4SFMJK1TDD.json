@@ -1,0 +1,51 @@
+{
+  "entity_id": "security_59304f90c440def31dc5",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYHW5710M89EMQMNDY940EKH",
+    "changed_gate": "accepted_relationship_now_current_but_legacy_valuation_cannot_support_scenario_complete_decision",
+    "market_data_as_of": "2026-08-05T22:09:27Z",
+    "market_data_date": "2026-08-05",
+    "merged_source_price_hashes": [
+      "2ecbeb200f1fdb273ebe16015774d935afb8d02b09ef9cb0bb1b245154ae5378",
+      "66067179ecc5ca96d35afe46d37d8e5770bb1fe0541bbb4b94871fe6e9900d53",
+      "145058c76665a7cd75a02203139ad13ba3eadef94c856ba566cdea4d52263ef5"
+    ],
+    "period_end": "2026-08-05",
+    "period_start": "2026-07-02",
+    "quick_check_operation_id": "01KYY98DWGST45EN32F928GMGG",
+    "research_reasons": [
+      {
+        "cause": "rsi_overbought_entered",
+        "source_ref": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e.md"
+      },
+      {
+        "cause": "rsi_overbought_strengthened",
+        "source_ref": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40.md"
+      },
+      {
+        "cause": "rsi_overbought_strengthened",
+        "source_ref": "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383.md"
+      },
+      {
+        "cause": "accepted_relationship_changed_since_baseline_and_legacy_valuation_is_not_scenario_complete",
+        "source_ref": "data/wiki/securities/security_59304f90c440def31dc5.md"
+      }
+    ],
+    "security_id": "security_59304f90c440def31dc5",
+    "source_price_hash": "145058c76665a7cd75a02203139ad13ba3eadef94c856ba566cdea4d52263ef5",
+    "trigger_types": [
+      "rsi_overbought"
+    ]
+  },
+  "objective": "Fully reassess RTX after persistent RSI-overbought momentum, acceptance of the defense relationship, and the legacy valuation's missing schema-v2 bull case and probabilities.",
+  "operation_id": "01KZA04098D4DF0J4SFMJK1TDD",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e.md",
+    "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40.md",
+    "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383.md",
+    "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+  ]
+}

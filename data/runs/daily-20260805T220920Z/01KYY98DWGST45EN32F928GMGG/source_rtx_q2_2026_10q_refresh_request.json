@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rtx_q2_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+  "source_type": "filing",
+  "title": "RTX Corporation Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2",
+  "related_entity_ids": "idea_defense_aerospace|security_59304f90c440def31dc5",
+  "checked_at": "2026-08-05T22:17:05Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30, 2026, cash and cash equivalents were USD 8.305 billion, total debt was USD 37.383 billion, and first-half operating cash flow was USD 5.402 billion.",
+  "summary": "The unchanged SEC-filed quarterly report continues to support RTX backlog, segment economics, cash flow, balance-sheet liquidity, debt, contract risk, and Pratt powder-metal remediation analysis.",
+  "run_id": "daily-20260805T220920Z"
+}

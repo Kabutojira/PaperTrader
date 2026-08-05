@@ -4,7 +4,7 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-28"
+updated: "2026-08-05"
 provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; source_b2d45bca8d0a249be557; deterministic market cache"
 security_id: security_59304f90c440def31dc5
 issuer_id: issuer_7e0bd218f603cf838669
@@ -32,6 +32,11 @@ and [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87f
 upper-Bollinger strengthening]], plus its
 [[inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b|scheduled-run
 reconciliation]].
+
+The repeat check also covers the [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e|31 July
+RSI re-entry]], [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40|4 August
+strengthening]], and [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383|5 August
+strengthening]].
 
 ## Business economics
 
@@ -126,6 +131,47 @@ below the earlier 0.0286 observation because the deterministic source-price snap
 hash. As with the parallel RSI reconciliation, this is corroborating measurement variation rather
 than a new catalyst or contradictory market conclusion. It does not alter the valuation, timing, or
 paper-trade disposition.
+
+## Quick check — 2026-08-05
+
+The deterministic close rose from USD 215.22 on 31 July to USD 217.93 on 4 August and USD 222.31 on
+5 August. Over the payload's merged alert sequence, RSI-overbought first re-entered with an 8.02%
+period return, then strengthened, reaching RSI 75.81 and a 14.06% 20-session return on 5 August.
+The latest source-price hash is
+`145058c76665a7cd75a02203139ad13ba3eadef94c856ba566cdea4d52263ef5`. Price remains below the
+USD 227.31 upper Bollinger band, so the controlling observation is persistent overbought momentum,
+not a fresh upper-band breakout.
+
+The SEC-hosted Q2 filing was retrieved again on 5 August with HTTP 200 and the unchanged registered
+SHA-256 `9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2`.
+The SEC submissions record showed no later RTX company financial filing through the check; later
+entries were insider Forms 4 and selling-holder Forms 144. The issuer release URL returned HTTP 403
+to the bounded unauthenticated check, so it was not treated as newly verified evidence. The
+unchanged SEC filing continues to support the backlog, segment, cash-flow, debt, contract-risk, and
+Pratt-remediation checklist, but no new primary evidence changes those assumptions.
+
+At USD 222.31, the old bounded downside and base reference values of USD 142.00 and USD 179.38 are
+about 36.1% and 19.3% below the mark, respectively. They remain useful adverse-entry checks but do
+not form a scenario-complete schema-v2 valuation because the prior review did not establish a bull
+case and scenario probabilities. The price therefore has not entered a validated buy zone. A full
+review is required to establish a complete current valuation rather than inventing missing scenario
+inputs in this quick check.
+
+## Changes since prior review
+
+- **Evidence:** the Q2 filing content is unchanged; no later company financial filing was found.
+- **Thesis, catalysts, risks, and invalidation:** unchanged. Backlog conversion and cash generation
+  remain supportive; Pratt remediation, leverage, fixed-price execution, supply, budget timing, and
+  cycle sensitivity remain controlling risks.
+- **Valuation and buy zone:** the USD 222.31 mark is still above both prior bounded reference values,
+  but the legacy assessment cannot support the canonical scenario-complete gate.
+- **Relationship gate:** changed since the baseline result. The defense-and-aerospace relationship
+  is now accepted, removing the baseline's absent-relationship blocker but not the valuation or
+  timing blockers.
+- **Confidence and action:** medium confidence is unchanged. Persistent RSI-overbought momentum is
+  adverse entry timing rather than a short thesis or paper-buy signal. Exactly one dependent full
+  security review is warranted; no strategy, signal, order, allocation, or accounting change is
+  warranted here.
 
 ## Catalysts and invalidation
 

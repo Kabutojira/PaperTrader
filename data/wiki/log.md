@@ -2133,3 +2133,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Bear/base/bull values of USD 506/USD 675/USD 870 leave the USD 684.76 mark above base and weighted
   value; the 4 August upper-Bollinger breakout is positive post-results confirmation but unfavorable
   entry timing, so no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — quick security check — RTX Corporation common stock
+
+- Updated [[securities/security_59304f90c440def31dc5]] for the merged 31 July, 4 August, and 5 August
+  RSI-overbought alerts; the latest USD 222.31 close, RSI 75.81, and 14.06% 20-session return confirm
+  persistent momentum and adverse entry timing rather than a paper-trade signal.
+- Reverified the SEC-hosted Q2 filing at its unchanged registered hash. The thesis, catalysts, risks,
+  and invalidation remain unchanged, while both prior bounded reference values remain below market.
+- The accepted [[relationships/relationship_1655ac715c33506ec7da|defense-and-aerospace relationship]]
+  removes the baseline's relationship blocker, but the legacy valuation lacks a bull case and
+  probabilities. Recorded valuation as unsupported and escalated exactly one dependent full review;
+  no strategy, signal, order, allocation, or accounting state changed.
