@@ -1,0 +1,68 @@
+{
+  "operation_id": "01KZ9H5HQRPCB3H5EPFEJENTET",
+  "status": "succeeded",
+  "summary": "Created the 2,406-word frozen-cycle paper-trading transcript for daily-20260805T161218Z and linked it once from the canonical daily report. The ordered arguments cover the all-cash reconciled portfolio stance, Rio Tinto's constructive half-year results but valuation-ineligible Hold/Watch assessment, Kratos's growth and backlog evidence but valuation-ineligible Sell/Avoid assessment, and the research-alert and operational-risk backlog. No audio, TTS, queue, investment, accounting, allocation, signal, order, fill, cash, position, portfolio, performance, or strategy state changed.",
+  "evidence": [
+    {
+      "source": "Frozen podcast context",
+      "claim": "The context binds this daily cycle, its research cutoff, completed operation history, report, decision snapshot, cash-only portfolio state, material assessments, alerts, and unresolved health gaps.",
+      "url": "data/runs/daily-20260805T161218Z/podcast_context.json",
+      "observed_at": "2026-08-05T17:51:00Z",
+      "source_hash": "f727c3bdfc6e731c3e764768fc26d3d813b34339d2fb355adab3bd3e47ebd76c"
+    },
+    {
+      "source": "Frozen decision snapshot",
+      "claim": "The approved model portfolio is 100% cash with EUR 10,000 cash, zero gross exposure, zero filled holdings, zero pending orders, and zero actionable signals.",
+      "url": "data/runs/daily-20260805T161218Z/decision_snapshot.json",
+      "observed_at": "2026-08-05T17:51:00Z",
+      "source_hash": "dfbdb779357f62bc1a89b52688cf766430548b461f7fb5ca1b5f97e5f040457d"
+    },
+    {
+      "source": "Rio Tinto accepted security-research result",
+      "claim": "Rio's half-year operating evidence resolved the prior unsupported valuation, but the USD 95.375 probability-weighted fair value remained below the USD 99.01 mark, yielding Hold/Watch and allocation ineligibility.",
+      "url": "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/agent_result.json",
+      "observed_at": "2026-08-05T17:42:36Z",
+      "source_hash": "3ae37e9c16f1ac1ec9f65c9a6699483678bbd22cbf49fcb9d0e8213d9ded1aee"
+    },
+    {
+      "source": "Kratos accepted security-research result",
+      "claim": "Kratos reported Q2 revenue growth, backlog, and raised guidance, but the USD 43.815 probability-weighted fair value was below the USD 51.87 mark, yielding Sell/Avoid and allocation ineligibility.",
+      "url": "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/agent_result.json",
+      "observed_at": "2026-08-05T16:33:27Z",
+      "source_hash": "7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260805.md",
+    "data/wiki/podcasts/daily-podcast_20260805T161218Z.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Added the frozen-cycle paper-trading podcast transcript for daily-20260805T161218Z. It explains the unchanged 100% cash stance, Rio Tinto's valuation-ineligible Hold/Watch assessment, Kratos's valuation-ineligible Sell/Avoid assessment, and the distinction between research alerts and actionable signals."
+  ],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the running operation, immutable daily-cycle entity, validated payload inputs, analyst profile route, and trusted preflight skill hashes before writing the transcript.",
+      "Confirmed the frozen context, report path, snapshot identity, and accepted operation evidence; no material source outside the cycle cutoff was used.",
+      "Confirmed the transcript has exactly one bounded spoken section containing 2,406 words, identifies daily-20260805T161218Z, explicitly labels paper trading, and contains no persistent audio reference.",
+      "Confirmed the canonical report contains exactly the transcript link and the transcript contains no audio link or TTS artifact.",
+      "Strict schema validation, queue validation, wiki lint, integrity, and portfolio reconciliation passed after the final transcript edit.",
+      "The controller-scoped CLI rejected advice validate --strict before dispatch because it is outside daily_podcast scope; it created no audit receipt and was not retried or substituted.",
+      "Confirmed no allocation targets/history, strategies, signals, orders, fills, executions, cash, positions, portfolio, performance, or queue state changed."
+    ]
+  }
+}

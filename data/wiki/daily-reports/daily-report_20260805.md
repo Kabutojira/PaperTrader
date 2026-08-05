@@ -207,6 +207,10 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - CSIQ 25% (Buy); CASH 75% (Unrated)
 <!-- papertrader-investor-brief:end -->
 
+## Daily podcast transcript
+
+- [[podcasts/daily-podcast_20260805T161218Z|PaperTrader daily podcast — 2026-08-05T161218Z]]
+
 ### Deterministic reasons
 
 - The reconciled model portfolio is entirely cash.

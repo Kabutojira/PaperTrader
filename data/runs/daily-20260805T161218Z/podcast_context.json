@@ -1,0 +1,142 @@
+{
+  "daily_cycle_id": "daily-20260805T161218Z",
+  "decision_snapshot_path": "data/runs/daily-20260805T161218Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "214ffe551af14dd86a23b60ab512991d694fcd97030975b965db5c3086029822",
+  "fill_outcomes": [],
+  "finalization_status": "succeeded",
+  "generated_at": "2026-08-05T17:57:31Z",
+  "page_path": "data/wiki/podcasts/daily-podcast_20260805T161218Z.md",
+  "podcast_context_version": 2,
+  "report_path": "data/wiki/daily-reports/daily-report_20260805.md",
+  "report_sha256": "1af6630429c9b45b488fafd3a36e4834cd0a1cc62df47cb4ab8d5b6b5ef97ed8",
+  "research_cutoff_at": "2026-08-05T17:51:26Z",
+  "run_id": "daily-20260805T161218Z",
+  "snapshot_id": "decision_4f90a8ff770b4eed82db",
+  "source_items": [
+    {
+      "completed_at": "2026-08-05T16:35:39Z",
+      "daily_report_items": [
+        "Kratos Q2 2026 revenue, organic growth, backlog, and raised guidance support the defense-technology demand thesis, but guided free-cash-flow use, low GAAP margin, dilution, and a USD 43.815 probability-weighted value below the USD 51.87 mark make the deterministic disposition Sell/Avoid and allocation-ineligible. The Bollinger breakout and volume anomaly are expectation risk rather than a paper buy signal; no follow-up or strategy was created."
+      ],
+      "effective_model": "gpt-5.6-sol",
+      "entity_id": "security_0cf8075039299094d614",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC filing reports USD 1,437.6 million cash, 187,557,916 shares outstanding, USD 139.9 million current and long-term finance-lease liabilities, negative USD 38.4 million six-month operating cash flow, and a share count increased from 168,933,826 at year-end after a 16.4 million-share offering.",
+          "observed_at": "2026-08-05T16:29:53Z",
+          "source": "Kratos quarterly report for the period ended June 28, 2026",
+          "source_hash": "8e8b289182e1cc177d881cc3eb39b1f236e87390732749a93239aefab9452773",
+          "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm"
+        },
+        {
+          "claim": "Kratos reported Q2 revenue of USD 458.8 million, 19.1% organic growth, adjusted EBITDA of USD 38.2 million, USD 2.084 billion consolidated backlog including USD 1.572 billion funded, and raised 2026 revenue guidance to USD 1.750-1.810 billion. Full-year guidance calls for USD 30-50 million operating cash flow and USD 125-135 million capital spending.",
+          "observed_at": "2026-08-05T16:29:53Z",
+          "source": "Kratos second-quarter 2026 financial results",
+          "source_hash": "28699d64d6351e24dfaa4a60b316cf55aa0fbecaaf6c345ab9ba102dc3360dde",
+          "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000075/ktos202606288kexhibit991.htm"
+        },
+        {
+          "claim": "The immutable KTOS/XNAS/USD/equity identity had a 4 August close of USD 51.869998931884766, fresh USD/EUR rate 0.8658000230789185, an upper-Bollinger-band breakout, and a 2.39164955 volume z-score. Deterministic assessment calculation produced assessment_ea9c9772e692259611ba with USD 43.815 probability-weighted fair value, -15.5292058950348561482424294% expected return, Sell rating, Avoid action, Watch conviction tier, and exact ineligibility frontiers.",
+          "observed_at": "2026-08-05T16:12:24Z",
+          "source": "PaperTrader deterministic market, indicator, FX, and assessment state",
+          "source_hash": "7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/assessment_upsert_request.json",
+        "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/security_upsert_request.json",
+        "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/source_ktos_q2_2026_10q_request.json",
+        "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/source_ktos_q2_2026_results_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/securities/security_0cf8075039299094d614.md"
+      ],
+      "operation_id": "01KYPB1RA8KCC272M9J5G94CHK",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "rejected_paths": [],
+      "result_path": "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/agent_result.json",
+      "route_reason": "scenario_complete_security_review",
+      "sequence_group": 60,
+      "status": "succeeded",
+      "summary": "Completed one bounded Kratos Defense & Security Solutions security review using the 4 August 2026 SEC filing and SEC-filed issuer results. Created the security page, registered both retained sources, updated the validated security row, and wrote exactly one schema-v2 scenario assessment while preserving the immutable KTOS/XNAS/USD identity. Bear/base/bull fair values are USD 28.09/USD 41.79/USD 63.59 at 25%/50%/25%; deterministic calculation produced USD 43.815 probability-weighted fair value, -15.5292% expected return, a Sell rating, Avoid action, Watch conviction tier, and ineligible allocation status at the USD 51.87 mark. No linked idea or accepted relationship exists, so no idea follow-up was required; the conviction strategy gate failed and no strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+      "weighted_cost": "5"
+    },
+    {
+      "completed_at": "2026-08-05T16:25:37Z",
+      "daily_report_items": [
+        "Rio Tinto's 2026 half-year review resolved the prior unsupported-valuation gap. Stronger copper EBITDA and cash conversion support the diversified copper thesis, but the USD 95.375 probability-weighted value is below the USD 99.01 mark; deterministic state is Hold/Watch and allocation-ineligible, with no paper strategy or signal. One dependent critical-minerals idea refresh was queued."
+      ],
+      "effective_model": "gpt-5.6-sol",
+      "entity_id": "security_1c055eb9b2bb1f5a8ff2",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Rio Tinto reported H1 revenue of USD 31.028 billion, underlying EBITDA of USD 14.826 billion, underlying earnings of USD 6.851 billion, free cash flow of USD 3.834 billion, operating cash flow of USD 9.173 billion, and net debt of USD 14.061 billion.",
+          "observed_at": "2026-08-05T16:18:44Z",
+          "source": "Rio Tinto 2026 half year results",
+          "source_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1",
+          "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84"
+        },
+        {
+          "claim": "Copper underlying EBITDA rose 84% to USD 5.713 billion, Iron Ore underlying EBITDA was USD 6.769 billion, Aluminium and Lithium underlying EBITDA was USD 3.311 billion, and 1,626.8 million combined DLC shares were in public hands at 30 June 2026; the filing states ADR holders receive dividends at the declared USD rate.",
+          "observed_at": "2026-08-05T16:18:44Z",
+          "source": "Rio Tinto 2026 half year results",
+          "source_hash": "86c8e8a81c83492627a588c06f5cd43e2e0fae33d4133b14b121622a3e5c66c1",
+          "url": "https://cdn-rio.dataweavers.io/-/media/content/documents/invest/financial-news-and-performance/results/2026/2026-half-year-results.pdf?rev=a679d7cf629e4f9bb065bee92ddc0f84"
+        },
+        {
+          "claim": "The immutable RIO/XNYS/USD/equity identity had a 4 August close of USD 99.01000213623047, fresh USD/EUR rate 0.8658000230789185, and a persistent bollinger_above_upper state. Deterministic assessment calculation produced assessment_52370d00fd199e7540c1 with USD 95.375 probability-weighted fair value, -3.67134840703161970420252232% expected return, Hold rating, Watch action, and exact ineligibility frontiers.",
+          "observed_at": "2026-08-05T16:12:24Z",
+          "source": "PaperTrader deterministic market, indicator, FX, and assessment state",
+          "source_hash": "5be555b1f1b84a4c1f1fd59ef868befab6e03c65849fda45ffe7b4c320db5365"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZ9BRZ9009HEE5TJTRXK6QQF.json",
+        "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_request.json",
+        "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/security_upsert_request.json",
+        "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/source_rio_h1_2026_results_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md"
+      ],
+      "operation_id": "01KZ3E6S3RNXTH5SN041P14F6W",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "rejected_paths": [],
+      "result_path": "data/runs/daily-20260805T161218Z/01KZ3E6S3RNXTH5SN041P14F6W/agent_result.json",
+      "route_reason": "scenario_complete_security_review",
+      "sequence_group": 60,
+      "status": "succeeded",
+      "summary": "Completed one bounded Rio Tinto security review using the issuer's 2026 half-year filing. Updated the security page and structured security state, replaced the unsupported assessment with a scenario-complete schema-v2 mid-cycle cash-flow assessment, and preserved the RIO/XNYS/USD identity. Bear/base/bull fair values are USD 68.00/USD 93.50/USD 126.50 at 25%/50%/25%; deterministic calculation produced USD 95.375 probability-weighted fair value, -3.6713% expected return, a Hold rating, Watch action, and ineligible allocation status at the USD 99.01 mark. Created exactly one dependent idea-research follow-up, 01KZ9BRZ9009HEE5TJTRXK6QQF. No strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+      "weighted_cost": "5"
+    }
+  ],
+  "started_at": "2026-08-05T16:12:18Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ]
+}
