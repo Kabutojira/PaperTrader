@@ -1,0 +1,23 @@
+{
+  "security_id": "security_6cf75bd0ec0aa2a20148",
+  "issuer_id": "issuer_cae5ee22a91decef8a5a",
+  "company_name": "Twist Bioscience Corporation",
+  "instrument_name": "Twist Bioscience Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "TWST",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "TWST",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "United States",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Synthetic-DNA platform growth with improving gross margin; watch Q4 adjusted-EBITDA breakeven, GAAP and cash conversion, dilution, and valuation compression risk.",
+  "research_summary": "Strong Q3 growth, margin expansion, raised guidance, and adequate liquidity are offset by GAAP losses, stock compensation, dilution, and a USD 99.45 mark far above base and weighted scenario values.",
+  "research_page": "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md",
+  "last_research_at": "2026-08-05T19:16:05Z",
+  "next_review_at": "2026-08-19T19:16:05Z",
+  "source": "source_twst_q3_2026_10q|source_twst_q3_2026_results"
+}

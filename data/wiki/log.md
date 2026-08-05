@@ -1993,3 +1993,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Bear/base/bull values of USD 50/USD 110/USD 195 leave the USD 125.33 mark above base and weighted
   value; the 4 August volume anomaly is mixed post-earnings repricing and timing risk rather than a
   paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.
+
+## 2026-08-05 — security review — Twist Bioscience Corporation common stock
+
+- Created [[securities/security_6cf75bd0ec0aa2a20148]] from the fiscal Q3 2026 quarterly report and
+  SEC-filed results release.
+- Revenue growth, gross-margin expansion, raised guidance, customer adoption, and adequate liquidity
+  support the scaling thesis, but GAAP losses, cash use, stock compensation, dilution, and valuation
+  remain material.
+- Bear/base/bull values of USD 38.81/USD 69.69/USD 105.47 leave the USD 99.45 mark far above base and
+  weighted value; the bullish MACD crossover is post-results expectation confirmation rather than a
+  paper-buy signal, so no strategy, signal, order, or follow-up operation was justified.

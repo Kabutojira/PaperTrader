@@ -1,0 +1,18 @@
+{
+  "source_id": "source_twst_q3_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000047/twst-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000047/twst-20260630.htm",
+  "source_type": "filing",
+  "title": "Twist Bioscience Corporation quarterly report for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e20fb71610dfcfc11d1747341cb56240e4608f37302f7589c41e48362bf66c37",
+  "related_entity_ids": "security_6cf75bd0ec0aa2a20148",
+  "checked_at": "2026-08-05T19:16:05Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Nine-month operating cash use was USD 41.3 million, stock compensation was USD 50.4 million, and 62,707,424 common shares were outstanding on July 29, 2026.",
+  "summary": "The current SEC quarterly filing supplies revenue, margin, operating-loss, liquidity, cash-burn, capital-spending, dilution, customer, competition, and risk evidence for the assessment.",
+  "run_id": "daily-20260805T182233Z"
+}

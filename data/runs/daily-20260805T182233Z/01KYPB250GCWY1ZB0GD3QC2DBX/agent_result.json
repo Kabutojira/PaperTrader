@@ -1,0 +1,83 @@
+{
+  "operation_id": "01KYPB250GCWY1ZB0GD3QC2DBX",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete Twist Bioscience security review using current SEC primary evidence and the canonical 2026-08-04 MACD crossover. Fiscal Q3 revenue grew 23% to USD 118.4 million, gross margin reached 52.8%, guidance rose to USD 456-457 million, and liquidity remained adequate, but GAAP losses, cash use, stock compensation, dilution, and valuation remain material. The deterministic assessment recorded Sell, Avoid, 74 quality, medium confidence, and USD 38.81/USD 69.69/USD 105.47 bear/base/bull fair values with USD 67.582 probability-weighted value against USD 99.45. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_twst_q3_2026_10q",
+      "claim": "The fiscal Q3 SEC filing reported nine-month revenue of USD 332.8 million, operating loss of USD 115.0 million, operating cash use of USD 41.3 million, property-and-equipment purchases of USD 27.6 million, stock compensation of USD 50.4 million, and 62,707,424 shares outstanding on July 29, 2026; cash plus short-term investments was approximately USD 166.8 million at June 30.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000047/twst-20260630.htm",
+      "observed_at": "2026-08-05T19:16:05Z",
+      "source_hash": "e20fb71610dfcfc11d1747341cb56240e4608f37302f7589c41e48362bf66c37"
+    },
+    {
+      "source": "source_twst_q3_2026_results",
+      "claim": "The SEC-filed fiscal Q3 release reported 23% revenue growth to USD 118.4 million, 52.8% gross margin, a USD 35.1 million net loss, negative USD 11.3 million adjusted EBITDA, approximately 2,650 customers, 369,000 genes shipped, raised fiscal 2026 revenue guidance of USD 456-457 million, and a Q4 adjusted-EBITDA breakeven target.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000044/twst-2026630xex991.htm",
+      "observed_at": "2026-08-05T19:16:05Z",
+      "source_hash": "3a34417e101c8027714733d3ad79153b54785e3497ec62cf5b74fbce9bc2d353"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_above_signal-6a84e7a0c5f7.md",
+      "claim": "The canonical alert measured a 9.25% adjusted-close rise from 2026-07-07 through 2026-08-04 to USD 99.45 and a bullish MACD crossover with strength 0.0722; RSI was 60.28, volume was not anomalous, and the close remained just below the upper Bollinger band. The SEC-filed Q3 results plausibly explain the repricing, which this review classified as improved expectations and valuation/timing risk rather than a paper-buy signal."
+    },
+    {
+      "source": "assessment_a74d909e79d6de48e2f0",
+      "claim": "Deterministic assessment version 2 derived USD 67.582 probability-weighted fair value, -32.0442% expected return, -24.0332% confidence-adjusted expected return, USD 55.752 buy-below price, -42.7034% margin of safety, Sell canonical rating, Avoid portfolio action, Watch conviction tier, 74 quality, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/assessment_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/security_upsert_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/security_upsert_request_v2.json",
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/security_upsert_request_v3.json",
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/source_twst_q3_2026_10q_request.json",
+    "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/source_twst_q3_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "TWST security review completed: fiscal Q3 revenue grew 23% to USD 118.4 million, gross margin reached 52.8%, and guidance rose, but GAAP losses, cash use, stock compensation, dilution, and a premium valuation remain material. Scenario fair values are USD 38.81/USD 69.69/USD 105.47 against USD 99.45. Deterministic rating is Sell and portfolio action Avoid; the 4 August MACD crossover confirms improved post-results expectations rather than a paper-buy signal. No strategy, signal, paper order, issue, or follow-up operation was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_6cf75bd0ec0aa2a20148",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/source_twst_q3_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/source_twst_q3_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/security_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/assessment_upsert_request_v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_6cf75bd0ec0aa2a20148"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered both retained SEC primary sources with current 2026-08-05 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved the exact issuer_cae5ee22a91decef8a5a/TWST/XNAS/USD/equity identity and completed built-in identity validation. Two rejected request shapes remained immutable and each correction used a newly named request artifact before the successful v3 upsert.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_a74d909e79d6de48e2f0, was accepted and linked to this operation, expected result path, evidence set, and research-page hash. One rejected request with non-canonical soft gaps remained immutable and the correction used a newly named request artifact.",
+      "Final security-context confirmed that current page hash 99f423acb46d69b5ca6949b19c3473f84fadb60e35c693478f297c2041399ed7 matches immutable history, the 2026-08-05 price and FX identities are fresh, both evidence sources are current and registered, and no prior assessment, accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contains no relationship; no conviction strategy follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side allocation, ledger, fill, execution, cash, portfolio, or performance mutation."
+    ]
+  }
+}
