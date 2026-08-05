@@ -1,0 +1,11 @@
+{
+  "deadline": "2026-08-06T00:00:00Z",
+  "discovery_date": "2026-08-05",
+  "operation_created": false,
+  "operation_id": "01KZ8BGCA0CNKJ94TCEN311YY1",
+  "reason": "daily_discovery_already_known",
+  "run_id": "daily-20260805T182233Z",
+  "scheduled_at": "2026-08-05T18:22:39Z",
+  "seekingalpha_schedule_version": 1,
+  "status": "duplicate"
+}
