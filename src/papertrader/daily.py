@@ -272,7 +272,11 @@ def resume_or_create_daily_cycle(
         "preparation_errors": [],
         "queue_dispositions": [],
         "operation_count": 0,
-        "model_budget_limit": decimal_text(settings.operations.maximum_model_budget_usd_per_run),
+        # Version-2 cycles account profile consumption in weighted units. Keep the legacy
+        # run-summary aliases in the same unit so their used/limit invariant remains meaningful.
+        "model_budget_limit": decimal_text(
+            settings.operations.maximum_weighted_model_budget_per_cycle
+        ),
         "model_budget_used": "0",
         "fill_outcomes": [],
         "report_path": "",
@@ -1107,6 +1111,14 @@ def finalize_daily_run(
     if not isinstance(budget_used, str):
         raise DailyRunError("agent batch budget used must be decimal text")
     used = required_decimal(budget_used, label="agent batch budget used")
+    model_budget_limit = (
+        required_decimal(
+            str(manifest.get("weighted_model_budget", "")),
+            label="daily cycle weighted model budget",
+        )
+        if version == 2
+        else settings.operations.maximum_model_budget_usd_per_run
+    )
     record_completed_run(
         repository_root,
         run_id=run_id,
@@ -1115,7 +1127,7 @@ def finalize_daily_run(
         status=status,
         trigger=str(manifest["trigger"]),
         operation_count=operation_count,
-        model_budget_limit=settings.operations.maximum_model_budget_usd_per_run,
+        model_budget_limit=model_budget_limit,
         model_budget_used=used,
         summary=(
             f"Daily run {status}; {operation_count} agent operations; "
@@ -1146,6 +1158,7 @@ def finalize_daily_run(
         "status": (status if version == 1 else ("degraded" if status == "degraded" else "running")),
         "completed_at": format_timestamp(instant),
         "operation_count": operation_count,
+        "model_budget_limit": decimal_text(model_budget_limit),
         "model_budget_used": decimal_text(used),
         "fill_outcomes": list(fill_outcomes),
         "report_path": report_path,

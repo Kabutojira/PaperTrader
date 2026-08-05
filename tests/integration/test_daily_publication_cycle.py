@@ -14,6 +14,8 @@ from papertrader.daily import (
     execute_agent_batch,
     finalize_daily_run,
     prepare_daily_run,
+    record_cycle_operation,
+    resume_or_create_daily_cycle,
 )
 from papertrader.execution import ensure_initial_capital
 from papertrader.integrity import validate_integrity
@@ -204,6 +206,85 @@ def test_empty_daily_cycle_generates_one_reconciled_canonical_report(
         "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
     }
     assert validate_integrity(sandbox_repository, environment) == []
+
+
+def test_profile_cycle_finalization_records_weighted_budget_units(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        github_run_id="123",
+        workflow_attempt="1",
+        now=NOW,
+    )
+    run_id = str(cycle["daily_cycle_id"])
+    prepare_daily_run(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        trigger="workflow_dispatch",
+        source_sha="a" * 40,
+        now=NOW,
+        retrieve_market=False,
+        classify_opportunities=False,
+    )
+    for operation_id in (
+        "01K1W0M0000000000000000000",
+        "01K1W0M0000000000000000001",
+    ):
+        operation_directory = sandbox_repository / "data" / "runs" / run_id / operation_id
+        operation_directory.mkdir()
+        (operation_directory / "profile_route.json").write_text(
+            json.dumps(
+                {
+                    "profile": "deep",
+                    "profile_policy_version": "profile-router-v1",
+                    "route_reason": "scenario_complete_security_review",
+                    "effective_model": "gpt-5.6-sol",
+                    "reasoning_effort": "medium",
+                    "maximum_turns": 160,
+                    "timeout_seconds": 1800,
+                    "weighted_cost": "5",
+                    "mutation_policy": "full_research",
+                    "auxiliary_models": {"web_extract": "openai-codex:gpt-5.6-luna"},
+                    "escalation_source": "",
+                }
+            ),
+            encoding="utf-8",
+        )
+        record_cycle_operation(
+            sandbox_repository,
+            daily_cycle_id=run_id,
+            operation_id=operation_id,
+            terminal_status="succeeded",
+        )
+
+    finalization = finalize_daily_run(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        github_report_url=(
+            "https://github.com/example/PaperTrader/blob/main/"
+            "data/wiki/daily-reports/daily-report_20260724.md"
+        ),
+        now=NOW,
+    )
+
+    assert finalization.operation_count == 2
+    run = read_table(sandbox_repository, "runs")[0]
+    assert run["model_budget_limit"] == "100"
+    assert run["model_budget_used"] == "10"
+    manifest = json.loads(
+        (sandbox_repository / "data" / "runs" / run_id / "daily_run.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert manifest["model_budget_limit"] == manifest["weighted_model_budget"] == "100"
+    assert manifest["model_budget_used"] == manifest["weighted_model_budget_used"] == "10"
 
 
 def test_daily_finalization_rejects_invalid_report_url_before_state_changes(
