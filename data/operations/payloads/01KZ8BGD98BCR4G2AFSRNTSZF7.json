@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_ad00ba5886f90d2dc946",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
+    "security_id": "security_6ad1af8d10d6276a0221",
+    "trigger_type": "bollinger_above_upper"
+  },
+  "objective": "Assess security_6ad1af8d10d6276a0221 bollinger_above_upper transition as opportunity, risk, or noise.",
+  "operation_id": "01KZ8BGD98BCR4G2AFSRNTSZF7",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_6ad1af8d10d6276a0221-bollinger_above_upper-9a8a4ba8a4bc.md"
+  ]
+}

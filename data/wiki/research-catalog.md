@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-03"
-updated: "2026-08-03"
+updated: "2026-08-05"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_203b586393e6e96077ee"
 as_of: "2026-08-03T09:32:51Z"
@@ -256,3 +256,57 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [\[ABBNY\] MACD cross above signal](inbox/market-security_c120e9f26ebb6159adf9-macd_cross_above_signal-9dc4f63596a7)
+- [\[ANET\] MACD cross above signal](inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b)
+- [\[ANET\] Volume anomaly](inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be)
+- [\[ATKR\] Bollinger above upper](inbox/market-security_22c2b9d782a62d7a9b86-bollinger_above_upper-eabc6069145d)
+- [\[ATKR\] RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-5a6018d0a619)
+- [\[BE\] MACD cross above signal](inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-67248af469a1)
+- [\[CRSR\] Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195)
+- [\[CRWD\] MACD cross above signal](inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de)
+- [\[CSIQ\] Bollinger above upper](inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618)
+- [\[CSL\] Bollinger above upper](inbox/market-security_9b0db3bc77914b23a307-bollinger_above_upper-f603bd3a7a5e)
+- [\[DNA\] MACD cross above signal](inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-3d74cac677e3)
+- [\[ENPH\] MACD cross above signal](inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91)
+- [\[ETN\] Bollinger above upper](inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_above_upper-12e694571336)
+- [\[ETN\] MACD cross above signal](inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-4af1197123e0)
+- [\[FCX\] Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-778fbd7eff43)
+- [\[FUC.F\] MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502)
+- [\[INTC\] MACD cross above signal](inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-181ec6e47f3f)
+- [\[ISRG\] MACD cross above signal](inbox/market-security_1f9cce545ede94cd6349-macd_cross_above_signal-8d6ef0392190)
+- [\[KTOS\] Bollinger above upper](inbox/market-security_0cf8075039299094d614-bollinger_above_upper-b87f3649b640)
+- [\[KTOS\] Volume anomaly](inbox/market-security_0cf8075039299094d614-volume_anomaly-127ac2ec3af3)
+- [\[LUNR\] Volume anomaly](inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073)
+- [\[MP\] MACD cross above signal](inbox/market-security_cd492d97064d8574156e-macd_cross_above_signal-67ca09efe67d)
+- [\[MP\] Volume anomaly](inbox/market-security_cd492d97064d8574156e-volume_anomaly-08c55411ef29)
+- [\[MSFT\] RSI overbought](inbox/market-security_204be2a44063993de1a8-rsi_overbought-0b5218955ce2)
+- [\[NBIS\] MACD cross above signal](inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-65152a0c42fe)
+- [\[NIB.F\] Bollinger above upper](inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971)
+- [\[NIB.F\] Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1)
+- [\[NVDA\] MACD cross above signal](inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-8425952b966e)
+- [\[PATH\] Bollinger above upper](inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-4b2db672f17a)
+- [\[PATH\] RSI overbought](inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-d6eb134c7089)
+- [\[PLTR\] Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7)
+- [\[PLTR\] MACD cross above signal](inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba)
+- [\[PLTR\] RSI overbought](inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-cdf7d35dbde8)
+- [\[PLTR\] Volume anomaly](inbox/market-security_bdc2f87dadf134760c3a-volume_anomaly-93058ffcb396)
+- [\[PYPL\] RSI overbought](inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-6b8f3a400f00)
+- [\[RIO\] Bollinger above upper](inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-f2f8daa71933)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40)
+- [\[RXRX\] MACD cross above signal](inbox/market-security_ed7d5b616a196969c815-macd_cross_above_signal-02a3c62e94ad)
+- [\[SCCO\] Bollinger above upper](inbox/market-security_6ad1af8d10d6276a0221-bollinger_above_upper-9a8a4ba8a4bc)
+- [\[SGML\] SMA 50 cross below 200](inbox/market-security_4627aea1bf7d8943d3d8-sma_50_cross_below_200-fe17d3d3655f)
+- [\[SOFI\] MACD cross above signal](inbox/market-security_98470cfc01bbcde78fc2-macd_cross_above_signal-9972fa31e705)
+- [\[SPCX\] Volume anomaly](inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198)
+- [\[SPOT\] MACD cross below signal](inbox/market-security_2010347f1a0a5ea60f47-macd_cross_below_signal-fb6429705e27)
+- [\[SPOT\] Volume anomaly](inbox/market-security_2010347f1a0a5ea60f47-volume_anomaly-78a51b6daf0e)
+- [\[SSU.VI\] MACD cross above signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-347a0faa1d0e)
+- [\[SSUN.VI\] MACD cross above signal](inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd)
+- [\[TDY\] Bollinger above upper](inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab)
+- [\[TSM\] MACD cross above signal](inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-02538665a30b)
+- [\[TWST\] MACD cross above signal](inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_above_signal-6a84e7a0c5f7)
+- [\[YEC.F\] MACD cross above signal](inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-121917b81e15)
+- [\[YEC.F\] Volume anomaly](inbox/market-security_89969b7dac39b7db5661-volume_anomaly-044d9cca9c40)

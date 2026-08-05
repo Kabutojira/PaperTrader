@@ -4,7 +4,11 @@
   "inputs": {
     "assessment_state": "missing",
     "maintenance_mode": "assessment_v2_migration",
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
     "migration_version": "assessment-v2-migration-v1",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
     "research_page": "",
     "research_reasons": [
       {
@@ -20,12 +24,36 @@
         "prompt": "Migrate security_0cf8075039299094d614 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
         "source": "assessment_v2_migration:rollout-step22-20260730",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_0cf8075039299094d614:0dca69f8645efac83e55:2026-08-04",
+        "market_data_date": "2026-08-04",
+        "observed_at": "2026-08-05T06:59:21Z",
+        "prompt": "Research security_0cf8075039299094d614 with high priority after price-action alerts: bollinger_above_upper, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_0cf8075039299094d614-bollinger_above_upper-b87f3649b640.md",
+          "data/wiki/inbox/market-security_0cf8075039299094d614-volume_anomaly-127ac2ec3af3.md"
+        ],
+        "trigger_types": [
+          "bollinger_above_upper",
+          "volume_anomaly"
+        ]
       }
     ],
-    "security_id": "security_0cf8075039299094d614"
+    "security_id": "security_0cf8075039299094d614",
+    "source_price_hash": "7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032",
+    "trigger_types": [
+      "bollinger_above_upper",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research KTOS — Kratos Defense & Security Solutions, Inc. as an initial bounded security review. | Additional cause: Migrate security_0cf8075039299094d614 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+  "objective": "Research KTOS — Kratos Defense & Security Solutions, Inc. as an initial bounded security review. | Additional cause: Migrate security_0cf8075039299094d614 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison. | Additional cause: Research security_0cf8075039299094d614 with high priority after price-action alerts: bollinger_above_upper, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB1RA8KCC272M9J5G94CHK",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_0cf8075039299094d614-bollinger_above_upper-b87f3649b640.md",
+    "data/wiki/inbox/market-security_0cf8075039299094d614-volume_anomaly-127ac2ec3af3.md"
+  ]
 }

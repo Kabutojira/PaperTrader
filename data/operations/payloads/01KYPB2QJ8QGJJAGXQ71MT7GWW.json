@@ -2,10 +2,43 @@
   "entity_id": "security_d08d763780400dfbffce",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_d08d763780400dfbffce"
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_d08d763780400dfbffce:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:33Z",
+        "prompt": "Research SSUN.VI — Samsung Electronics Co., Ltd. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_d08d763780400dfbffce:68990c6d1edadbc908cb:2026-08-04",
+        "market_data_date": "2026-08-04",
+        "observed_at": "2026-08-05T06:59:21Z",
+        "prompt": "Research security_d08d763780400dfbffce with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_d08d763780400dfbffce",
+    "source_price_hash": "f7c93ad966bdacdf865b5b6f39a55cdc69366aca2fc0ceefa522db12f8a309f2",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research SSUN.VI — Samsung Electronics Co., Ltd. as an initial bounded security review.",
+  "objective": "Research SSUN.VI — Samsung Electronics Co., Ltd. as an initial bounded security review. | Additional cause: Research security_d08d763780400dfbffce with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB2QJ8QGJJAGXQ71MT7GWW",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd.md"
+  ]
 }

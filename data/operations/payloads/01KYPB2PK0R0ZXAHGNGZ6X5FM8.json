@@ -2,10 +2,47 @@
   "entity_id": "security_cd492d97064d8574156e",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_cd492d97064d8574156e"
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_cd492d97064d8574156e:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:32Z",
+        "prompt": "Research MP — MP Materials Corp. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_cd492d97064d8574156e:fd4a67c00c897979d5e1:2026-08-04",
+        "market_data_date": "2026-08-04",
+        "observed_at": "2026-08-05T06:59:21Z",
+        "prompt": "Research security_cd492d97064d8574156e with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_cd492d97064d8574156e-macd_cross_above_signal-67ca09efe67d.md",
+          "data/wiki/inbox/market-security_cd492d97064d8574156e-volume_anomaly-08c55411ef29.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_cd492d97064d8574156e",
+    "source_price_hash": "edc9a0b9f6b6ef1cc654a03428cc076145113fcb728f08aa46638a0db7161a9e",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research MP — MP Materials Corp. as an initial bounded security review.",
+  "objective": "Research MP — MP Materials Corp. as an initial bounded security review. | Additional cause: Research security_cd492d97064d8574156e with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB2PK0R0ZXAHGNGZ6X5FM8",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_cd492d97064d8574156e-macd_cross_above_signal-67ca09efe67d.md",
+    "data/wiki/inbox/market-security_cd492d97064d8574156e-volume_anomaly-08c55411ef29.md"
+  ]
 }

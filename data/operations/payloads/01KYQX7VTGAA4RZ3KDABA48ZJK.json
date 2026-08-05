@@ -4,14 +4,54 @@
   "inputs": {
     "assessment_state": "2026-07-29T17:07:04Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
     "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
-    "security_id": "security_2010347f1a0a5ea60f47"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_2010347f1a0a5ea60f47:allocation-maintenance:2026-07-29T17:07:04Z",
+        "observed_at": "2026-07-29T21:42:10Z",
+        "prompt": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_spot_2025_20f",
+          "source_spot_ir_news_2026",
+          "source_spot_q1_2026_6k",
+          "source_spot_talk_beta_2026"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_2010347f1a0a5ea60f47:05457f72b9d134d64d9b:2026-08-04",
+        "market_data_date": "2026-08-04",
+        "observed_at": "2026-08-05T06:59:21Z",
+        "prompt": "Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: macd_cross_below_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-macd_cross_below_signal-fb6429705e27.md",
+          "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-volume_anomaly-78a51b6daf0e.md"
+        ],
+        "trigger_types": [
+          "macd_cross_below_signal",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_2010347f1a0a5ea60f47",
+    "source_price_hash": "1e4f582d291a00c189884396774810beba95ef80c554241a65d9920f97151671",
+    "trigger_types": [
+      "macd_cross_below_signal",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_2010347f1a0a5ea60f47 with high priority after price-action alerts: macd_cross_below_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYQX7VTGAA4RZ3KDABA48ZJK",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-macd_cross_below_signal-fb6429705e27.md",
+    "data/wiki/inbox/market-security_2010347f1a0a5ea60f47-volume_anomaly-78a51b6daf0e.md",
     "source_spot_2025_20f",
     "source_spot_ir_news_2026",
     "source_spot_q1_2026_6k",

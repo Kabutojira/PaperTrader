@@ -2,10 +2,43 @@
   "entity_id": "security_98470cfc01bbcde78fc2",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_98470cfc01bbcde78fc2"
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_98470cfc01bbcde78fc2:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:23Z",
+        "prompt": "Research SOFI — SoFi Technologies, Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_98470cfc01bbcde78fc2:b7f110f9a1e8a6ff42e4:2026-08-04",
+        "market_data_date": "2026-08-04",
+        "observed_at": "2026-08-05T06:59:21Z",
+        "prompt": "Research security_98470cfc01bbcde78fc2 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-macd_cross_above_signal-9972fa31e705.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_98470cfc01bbcde78fc2",
+    "source_price_hash": "ff607e177adc9a619a2073eaa02815a58b5af4ed5056e3074de68378a4db4101",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research SOFI — SoFi Technologies, Inc. as an initial bounded security review.",
+  "objective": "Research SOFI — SoFi Technologies, Inc. as an initial bounded security review. | Additional cause: Research security_98470cfc01bbcde78fc2 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB2DSRFNQ0NE6AY81GQZKR",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_98470cfc01bbcde78fc2-macd_cross_above_signal-9972fa31e705.md"
+  ]
 }

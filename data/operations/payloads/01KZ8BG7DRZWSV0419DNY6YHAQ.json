@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_JEP4vi9pW9o",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-05T06:59:15Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_JEP4vi9pW9o",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "JEP4vi9pW9o",
+    "video_title": "Analysts Have Never Seen This Before",
+    "video_url": "https://www.youtube.com/watch?v=JEP4vi9pW9o"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZ8BG7DRZWSV0419DNY6YHAQ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=JEP4vi9pW9o"
+  ]
+}

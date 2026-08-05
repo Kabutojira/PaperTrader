@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_sDDQ5Ueg1dk",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-05T06:59:15Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_sDDQ5Ueg1dk",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "sDDQ5Ueg1dk",
+    "video_title": "AMD Stock Is Crashing After Earnings. Here's Everything You Need To Know",
+    "video_url": "https://www.youtube.com/watch?v=sDDQ5Ueg1dk"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZ8BG7DRH59EGMCM9E1A29N4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=sDDQ5Ueg1dk"
+  ]
+}

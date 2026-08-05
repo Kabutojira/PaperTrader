@@ -1,0 +1,15 @@
+{
+  "entity_id": "source_0c35980ae1023b954eda",
+  "entity_type": "source",
+  "inputs": {
+    "source_hash": "e4a047f4793ff8ef4be87cac941cb60cc13f320ab2216467b562a98babfd6ec6",
+    "source_path": "data/wiki/inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab.md"
+  },
+  "objective": "Ingest validated candidate packet market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab.md into the wiki.",
+  "operation_id": "01KZ8BGD98BJVP30RGV0YGQSR7",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab.md"
+  ]
+}

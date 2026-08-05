@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_gIYNCsp0TFY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-05T06:59:15Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_gIYNCsp0TFY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "gIYNCsp0TFY",
+    "video_title": "GOOG, MSFT, AMZN, NVDA – INVESTING RISK AND REWARD!!!",
+    "video_url": "https://www.youtube.com/watch?v=gIYNCsp0TFY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZ8BG7DRAH794C5G2FPNBQSQ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=gIYNCsp0TFY"
+  ]
+}

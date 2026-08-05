@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_ktY0IrrdSM8",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-05T06:59:15Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_ktY0IrrdSM8",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "ktY0IrrdSM8",
+    "video_title": "Oracle Stock Can Give You A 5X!",
+    "video_url": "https://www.youtube.com/watch?v=ktY0IrrdSM8"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZ8BG7DR6BVMZJV9CMSSYX7Y",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=ktY0IrrdSM8"
+  ]
+}
