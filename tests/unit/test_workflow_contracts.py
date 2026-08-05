@@ -210,6 +210,16 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         "RESUME_CYCLE_ID": "${{ inputs.resume_cycle_id }}",
         "RUN_TRIGGER": "${{ inputs.trigger }}",
     }
+    configure_step = next(
+        step for step in runtime["steps"] if step["name"] == "Configure isolated Hermes profile"
+    )
+    assert configure_step["env"] == {"OPERATION_TYPE": "${{ inputs.operation_type }}"}
+    assert '--operation-type "${OPERATION_TYPE:-wiki_ingest}"' in configure_step["run"]
+    routed_preflight = next(
+        step for step in runtime["steps"] if step["name"] == "Preflight routed Hermes configuration"
+    )
+    assert routed_preflight["env"] == configure_step["env"]
+    assert '--operation-type "${OPERATION_TYPE:-wiki_ingest}"' in routed_preflight["run"]
     preflight_step = next(
         step
         for step in runtime["steps"]

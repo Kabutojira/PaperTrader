@@ -219,7 +219,9 @@ jobs:
           fi
           uv run papertrader "${integrity_arguments[@]}"
       - name: Configure isolated Hermes profile
-        run: uv run papertrader agent configure --hermes-home "$HERMES_HOME" --replace-unmanaged
+        env:
+          OPERATION_TYPE: ${{ inputs.operation_type }}
+        run: uv run papertrader agent configure --hermes-home "$HERMES_HOME" --replace-unmanaged --operation-type "${OPERATION_TYPE:-wiki_ingest}"
       - name: Install checksum-verified age 1.3.1
         if: ${{ !inputs.dry_run }}
         run: |

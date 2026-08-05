@@ -85,7 +85,7 @@ from papertrader.podcast import (
     render_committed_podcast,
 )
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
-from papertrader.profiles import analyst_relationship_gate
+from papertrader.profiles import RoutingContext, analyst_relationship_gate, route_profile
 from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.queue import (
     OPERATION_SKILLS,
@@ -390,6 +390,9 @@ def _parser() -> argparse.ArgumentParser:
     agent_configure = agent_commands.add_parser("configure")
     agent_configure.add_argument("--hermes-home", type=Path, required=True)
     agent_configure.add_argument("--replace-unmanaged", action="store_true")
+    agent_configure.add_argument(
+        "--operation-type", default="wiki_ingest", choices=sorted(OPERATION_SKILLS)
+    )
     agent_preflight = agent_commands.add_parser("preflight")
     agent_preflight.add_argument("--hermes-home", type=Path, required=True)
     agent_preflight.add_argument(
@@ -1311,11 +1314,13 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             return 0
         home = arguments.hermes_home.absolute()
         if arguments.agent_command == "configure":
+            route = route_profile(arguments.operation_type, RoutingContext())
             path = configure_hermes_home(
                 root,
                 settings,
                 home,
                 replace_unmanaged=arguments.replace_unmanaged,
+                execution_profile=settings.hermes.profile(route.profile),
             )
             print(path)
             return 0

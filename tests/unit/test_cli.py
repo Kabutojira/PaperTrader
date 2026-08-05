@@ -136,6 +136,38 @@ def test_cli_agent_preflight_serializes_profile_weighted_cost(
     assert output["weighted_cost"] == "2.5"
 
 
+def test_cli_agent_configure_routes_the_requested_operation_profile(
+    monkeypatch, repository_root: Path, tmp_path: Path
+) -> None:  # type: ignore[no-untyped-def]
+    _set_repository_environment(monkeypatch, repository_root)
+    captured: dict[str, object] = {}
+
+    def configure(*args, **kwargs):  # type: ignore[no-untyped-def]
+        captured.update(kwargs)
+        return tmp_path / "hermes" / "config.yaml"
+
+    monkeypatch.setattr("papertrader.cli.configure_hermes_home", configure)
+
+    assert (
+        main(
+            [
+                "--repository",
+                str(repository_root),
+                "agent",
+                "configure",
+                "--hermes-home",
+                str(tmp_path / "hermes"),
+                "--operation-type",
+                "wiki_ingest",
+            ]
+        )
+        == 0
+    )
+    profile = captured["execution_profile"]
+    assert profile.name == "analyst"
+    assert profile.model == "gpt-5.6-terra"
+
+
 def test_cli_runtime_whitelist_rejects_source_path(monkeypatch, repository_root: Path) -> None:  # type: ignore[no-untyped-def]
     _set_repository_environment(monkeypatch, repository_root)
 
