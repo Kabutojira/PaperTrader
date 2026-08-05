@@ -389,8 +389,10 @@ def validate_daily_run_artifacts(repository_root: Path) -> list[str]:
         status = manifest.get("status")
         version = manifest.get("daily_run_version")
         report_path = manifest.get("report_path")
-        finalized = status in {"succeeded", "degraded"} and (
-            version == 1 or bool(manifest.get("finalization_at"))
+        finalized = (
+            status in {"succeeded", "degraded"}
+            if version == 1
+            else version == 2 and bool(manifest.get("finalization_at"))
         )
         if finalized:
             if version == 1 and run_id not in batch_runs:
