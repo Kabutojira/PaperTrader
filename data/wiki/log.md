@@ -2018,6 +2018,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa]] as `ingest`: Material RSI oversold transition strengthened during a 34.34% period decline, warranting durable review.
 
+- Published investor decision snapshot `decision_ffbf228dca49bf71406d`.
+
+- Generated canonical [[daily-reports/daily-report_20260805]] for run `daily-20260805T220920Z`.
+
 ## 2026-08-05 — security review — Rio Tinto plc sponsored ADR
 
 - Updated [[securities/security_1c055eb9b2bb1f5a8ff2]] from Rio Tinto's 2026 half-year results.

@@ -7,14 +7,14 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_438a97c488fc7fa4fbc0"
-as_of: "2026-08-05T20:06:58Z"
+snapshot_id: "decision_ffbf228dca49bf71406d"
+as_of: "2026-08-05T22:34:36Z"
 ---
 
 # System status and audit
 
-**Publication snapshot:** `decision_438a97c488fc7fa4fbc0`
-**As of:** `2026-08-05T20:06:58Z`
+**Publication snapshot:** `decision_ffbf228dca49bf71406d`
+**As of:** `2026-08-05T22:34:36Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,7 +23,7 @@ as_of: "2026-08-05T20:06:58Z"
 ## Coverage
 
 - Assessments: 55/57
-- Fresh-evidence assessments: 55/57
+- Fresh-evidence assessments: 54/57
 - Relationship reviews: 21/57
 - Accepted relationships: 19
 - Ready or active strategies: 0
@@ -31,7 +31,7 @@ as_of: "2026-08-05T20:06:58Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 344
+- Research backlog: 390
 - Last successful daily run: `2026-08-05T20:06:58Z`
 
 ## Current issues by investment impact
@@ -41,6 +41,7 @@ as_of: "2026-08-05T20:06:58Z"
 - `error` **RIO — Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_1c055eb9b2bb1f5a8ff2 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SRF4GAV27YA2TP6892 and current security\_research 01KZ3E6S3RNXTH5SN041P14F6W claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - `error` **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_c9a37d277445869a8809 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SRG31KASASEYZ2476N and current security\_research 01KZ38VCQRDKQK4SD081XKZNB3 claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - `error` **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_488a9d7f7a8573597724 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYVJ62SR384EB58S06SFPK5G and current security\_research 01KZ35CPR03SHK78B81ZSEV4JT claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
+- `error` **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for security\_59304f90c440def31dc5 could not be written. The deterministic assessment applier found both predecessor quick\_check\_research 01KYY98DWGST45EN32F928GMGG and current security\_research 01KZA04098D4DF0J4SFMJK1TDD claimed by run daily-20260805T220920Z and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - `warning` **LAC — Lithium Americas Corp.: Daily preparation degraded: security\_fb87fac302a5446a1ced** — security\_fb87fac302a5446a1ced: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - `warning` **HOOD — Robinhood Markets, Inc.: Daily preparation degraded: security\_ad3b1f8f59fd599f079a** — security\_ad3b1f8f59fd599f079a: price cache is empty
 - `warning` **CROX — Crocs, Inc.: Daily preparation degraded: security\_c150f31c30afdb4a85f9** — security\_c150f31c30afdb4a85f9: price cache is empty
@@ -132,7 +133,7 @@ as_of: "2026-08-05T20:06:58Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 344 active operations.
+Showing 20 of 390 active operations.
 
 <details><summary>Technical queue identifiers</summary>
 

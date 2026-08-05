@@ -7,8 +7,8 @@ tags:
 created: "2026-08-05"
 updated: "2026-08-05"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_438a97c488fc7fa4fbc0"
-as_of: "2026-08-05T20:06:58Z"
+snapshot_id: "decision_ffbf228dca49bf71406d"
+as_of: "2026-08-05T22:34:36Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **66**
+- Immutable assessment versions: **67**
 - Securities with retained revisions: **57**
 
 ## Candidate
@@ -29,8 +29,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[AMZN\] Bollinger above upper](inbox/market-security_2433a056eb0c55961fcc-bollinger_above_upper-0d1101e5c09b)
 - [\[AMZN\] MACD cross above signal](inbox/market-security_2433a056eb0c55961fcc-macd_cross_above_signal-f8b94c946cb3)
 - [\[AMZN\] Volume anomaly](inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f)
+- [\[ANET\] Bollinger above upper](inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6)
 - [\[ANET\] MACD cross above signal](inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b)
 - [\[ANET\] Volume anomaly](inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be)
+- [\[ANET\] Volume anomaly](inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d)
 - [\[ASML\] Bollinger below lower](inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad)
 - [\[ATKR\] Bollinger above upper](inbox/market-security_22c2b9d782a62d7a9b86-bollinger_above_upper-eabc6069145d)
 - [\[ATKR\] RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-5a6018d0a619)
@@ -40,6 +42,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[COIN\] Volume anomaly](inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f)
 - [\[CROX\] Volume anomaly](inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72)
 - [\[CRSR\] Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195)
+- [\[CRSR\] Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff)
 - [\[CRWD\] MACD cross above signal](inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de)
 - [\[CSIQ\] Bollinger above upper](inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618)
 - [\[CSIQ\] MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd)
@@ -48,6 +51,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[CSL\] Volume anomaly](inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508)
 - [\[DLO\] SMA 50 cross above 200](inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495)
 - [\[DNA\] MACD cross above signal](inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-3d74cac677e3)
+- [\[DNA\] SMA 50 cross above 200](inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5)
 - [\[ENPH\] Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
 - [\[ENPH\] MACD cross above signal](inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91)
 - [\[ENPH\] Volume anomaly](inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212)
@@ -55,9 +59,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[ETN\] Bollinger below lower](inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81)
 - [\[ETN\] MACD cross above signal](inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-4af1197123e0)
 - [\[ETN\] Volume anomaly](inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-4d01b00f7097)
+- [\[FCX\] Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-6be595721e61)
 - [\[FCX\] Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-778fbd7eff43)
 - [\[FCX\] Volume anomaly](inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190)
 - [\[FLNC\] MACD cross above signal](inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65)
+- [\[FLNC\] Volume anomaly](inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0)
 - [\[FUC.F\] MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502)
 - [\[GEV\] Bollinger below lower](inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0)
 - [\[GOOGL\] MACD cross above signal](inbox/market-security_c86bb4e75658c07142cf-macd_cross_above_signal-e7c32a666d8b)
@@ -65,7 +71,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[INTC\] MACD cross above signal](inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-181ec6e47f3f)
 - [\[ISRG\] MACD cross above signal](inbox/market-security_1f9cce545ede94cd6349-macd_cross_above_signal-8d6ef0392190)
 - [\[KTOS\] Bollinger above upper](inbox/market-security_0cf8075039299094d614-bollinger_above_upper-b87f3649b640)
+- [\[KTOS\] Bollinger above upper](inbox/market-security_0cf8075039299094d614-bollinger_above_upper-f1372c401f24)
 - [\[KTOS\] Volume anomaly](inbox/market-security_0cf8075039299094d614-volume_anomaly-127ac2ec3af3)
+- [\[KTOS\] Volume anomaly](inbox/market-security_0cf8075039299094d614-volume_anomaly-ece9af648e0a)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63)
 - [\[LAC\] RSI oversold](inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-97348588c910)
 - [\[LH\] Bollinger above upper](inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-0cbd43273f8a)
@@ -88,6 +96,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[NIB.F\] Bollinger above upper](inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971)
 - [\[NIB.F\] MACD cross above signal](inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392)
 - [\[NIB.F\] Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1)
+- [\[NVDA\] Bollinger above upper](inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-53c3e02d5180)
 - [\[NVDA\] MACD cross above signal](inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-8425952b966e)
 - [\[PARRO.PA\] Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
 - [\[PATH\] Bollinger above upper](inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-4b2db672f17a)
@@ -101,13 +110,16 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[PWR\] MACD cross above signal](inbox/market-security_488a9d7f7a8573597724-macd_cross_above_signal-3bbf5060198b)
 - [\[PWR\] Volume anomaly](inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340)
 - [\[PWR\] Volume anomaly](inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2)
+- [\[PYPL\] MACD cross below signal](inbox/market-security_1e8fbdb0f45f2b413e00-macd_cross_below_signal-fb40c510ddc7)
 - [\[PYPL\] RSI overbought](inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-6b8f3a400f00)
 - [\[PYPL\] RSI overbought](inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-c697a1ba1bf0)
 - [\[QCOM\] RSI oversold](inbox/market-security_3a75fc1ccca2ee7c937a-rsi_oversold-43fc4f1bab70)
 - [\[QCOM\] Volume anomaly](inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1)
 - [\[RBLX\] Bollinger below lower](inbox/market-security_c9a37d277445869a8809-bollinger_below_lower-340d8d301e21)
+- [\[RBLX\] RSI oversold](inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa)
 - [\[RBLX\] RSI oversold](inbox/market-security_c9a37d277445869a8809-rsi_oversold-dcd8a733d0db)
 - [\[RBLX\] Volume anomaly](inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a)
+- [\[RIO\] Bollinger above upper](inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-5c3f84337712)
 - [\[RIO\] Bollinger above upper](inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6d827efad15c)
 - [\[RIO\] Bollinger above upper](inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-f2f8daa71933)
 - [\[RKLB\] MACD cross above signal](inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-88ab051849ae)
@@ -117,6 +129,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-22069206cbf5)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40)
+- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-a6de68653afb)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-c4c8f0b60fc6)
 - [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-fac3019c4101)
@@ -142,12 +155,19 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [\[TDY\] Bollinger above upper](inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab)
 - [\[TSLA\] RSI oversold](inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2)
 - [\[TSM\] MACD cross above signal](inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-02538665a30b)
+- [\[TWST\] Bollinger above upper](inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-4bdd7687554e)
 - [\[TWST\] MACD cross above signal](inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_above_signal-6a84e7a0c5f7)
+- [\[TWST\] RSI overbought](inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-2df36a4ac7b5)
+- [\[TWST\] Volume anomaly](inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-3a01ce587bee)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-81e6a5bddd70)
 - [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-9327af26235b)
+- [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-a8d080c8468b)
 - [\[TX\] RSI overbought](inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-bfbf989faebd)
+- [\[TX\] RSI overbought](inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-e4ef2a75b523)
+- [\[TX\] Volume anomaly](inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247)
 - [\[VRT\] Bollinger below lower](inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af)
+- [\[WTI\] MACD cross below signal](inbox/market-security_61567714298b9563d1a9-macd_cross_below_signal-35e9caa65341)
 - [\[YEC.F\] MACD cross above signal](inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-121917b81e15)
 - [\[YEC.F\] RSI oversold](inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea)
 - [\[YEC.F\] RSI oversold](inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802)
@@ -322,26 +342,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [\[ANET\] Bollinger above upper](inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6)
-- [\[ANET\] Volume anomaly](inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d)
-- [\[CRSR\] Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff)
-- [\[DNA\] SMA 50 cross above 200](inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5)
-- [\[FCX\] Bollinger above upper](inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-6be595721e61)
-- [\[FLNC\] Volume anomaly](inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0)
-- [\[KTOS\] Bollinger above upper](inbox/market-security_0cf8075039299094d614-bollinger_above_upper-f1372c401f24)
-- [\[KTOS\] Volume anomaly](inbox/market-security_0cf8075039299094d614-volume_anomaly-ece9af648e0a)
-- [\[NVDA\] Bollinger above upper](inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-53c3e02d5180)
-- [\[PYPL\] MACD cross below signal](inbox/market-security_1e8fbdb0f45f2b413e00-macd_cross_below_signal-fb40c510ddc7)
-- [\[RBLX\] RSI oversold](inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa)
-- [\[RIO\] Bollinger above upper](inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-5c3f84337712)
-- [\[RTX\] RSI overbought](inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383)
-- [\[TWST\] Bollinger above upper](inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-4bdd7687554e)
-- [\[TWST\] RSI overbought](inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-2df36a4ac7b5)
-- [\[TWST\] Volume anomaly](inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123)
-- [\[TX\] Bollinger above upper](inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-a8d080c8468b)
-- [\[TX\] RSI overbought](inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-e4ef2a75b523)
-- [\[TX\] Volume anomaly](inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247)
-- [\[WTI\] MACD cross below signal](inbox/market-security_61567714298b9563d1a9-macd_cross_below_signal-35e9caa65341)
