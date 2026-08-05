@@ -135,6 +135,41 @@ def test_daily_schedule_is_expiring_idempotent_and_network_free(
     assert read_table(sandbox_repository, "operations_todo") == rows
 
 
+def test_existing_schedule_manifest_returns_successful_skip_without_mutation(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    run_id = "daily-source-repeat"
+    first = schedule_seekingalpha_discovery(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        now=NOW,
+    )
+    manifest_path = sandbox_repository / "data" / "runs" / run_id / "seekingalpha_schedule.json"
+    manifest_before = manifest_path.read_bytes()
+    operations_before = read_table(sandbox_repository, "operations_todo")
+
+    repeated = schedule_seekingalpha_discovery(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        now=datetime(2026, 7, 29, 16, tzinfo=UTC),
+    )
+
+    assert repeated == {
+        "seekingalpha_schedule_version": 1,
+        "run_id": run_id,
+        "status": "skipped",
+        "reason": "manifest_already_exists",
+        "existing_manifest_status": first["status"],
+        "manifest_path": f"data/runs/{run_id}/seekingalpha_schedule.json",
+        "operation_id": first["operation_id"],
+        "operation_created": False,
+    }
+    assert manifest_path.read_bytes() == manifest_before
+    assert read_table(sandbox_repository, "operations_todo") == operations_before
+
+
 def test_dry_schedule_writes_only_a_run_artifact(
     sandbox_repository: Path, sandbox_settings: Settings
 ) -> None:

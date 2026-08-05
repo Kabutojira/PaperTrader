@@ -116,6 +116,53 @@ def _schedule_document(
     }
 
 
+def _load_seekingalpha_schedule(repository_root: Path, run_id: str) -> Mapping[str, object]:
+    """Load and validate one immutable Seeking Alpha schedule artifact."""
+
+    artifact = repository_root / "data" / "runs" / run_id / "seekingalpha_schedule.json"
+    if artifact.parent.is_symlink() or artifact.is_symlink() or not artifact.is_file():
+        raise SeekingAlphaError("Seeking Alpha schedule artifact must be a regular file")
+    try:
+        value = json.loads(artifact.read_text(encoding="utf-8"))
+        schema = json.loads(
+            (repository_root / "schemas" / "seekingalpha_schedule.schema.json").read_text(
+                encoding="utf-8"
+            )
+        )
+    except (OSError, json.JSONDecodeError) as exc:
+        raise SeekingAlphaError(f"cannot read Seeking Alpha schedule artifact: {exc}") from exc
+    errors = sorted(
+        Draft202012Validator(schema, format_checker=FormatChecker()).iter_errors(value),
+        key=lambda error: list(error.path),
+    )
+    if errors:
+        raise SeekingAlphaError(f"invalid Seeking Alpha schedule artifact: {errors[0].message}")
+    if not isinstance(value, Mapping) or value.get("run_id") != run_id:
+        raise SeekingAlphaError("Seeking Alpha schedule artifact identity mismatch")
+    return value
+
+
+def _skip_existing_seekingalpha_schedule(
+    repository_root: Path, run_id: str
+) -> Mapping[str, object] | None:
+    """Return an idempotent skip result without replacing an existing schedule."""
+
+    artifact = repository_root / "data" / "runs" / run_id / "seekingalpha_schedule.json"
+    if not artifact.exists():
+        return None
+    schedule = _load_seekingalpha_schedule(repository_root, run_id)
+    return {
+        "seekingalpha_schedule_version": schedule["seekingalpha_schedule_version"],
+        "run_id": run_id,
+        "status": "skipped",
+        "reason": "manifest_already_exists",
+        "existing_manifest_status": schedule["status"],
+        "manifest_path": artifact.relative_to(repository_root).as_posix(),
+        "operation_id": schedule["operation_id"],
+        "operation_created": False,
+    }
+
+
 def schedule_seekingalpha_discovery(
     repository_root: Path,
     settings: Settings,
@@ -128,10 +175,11 @@ def schedule_seekingalpha_discovery(
 
     if RUN_ID.fullmatch(run_id) is None:
         raise SeekingAlphaError(f"invalid Seeking Alpha schedule run_id: {run_id!r}")
+    existing = _skip_existing_seekingalpha_schedule(repository_root, run_id)
+    if existing is not None:
+        return existing
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     artifact = repository_root / "data" / "runs" / run_id / "seekingalpha_schedule.json"
-    if artifact.exists():
-        raise SeekingAlphaError(f"Seeking Alpha schedule artifact already exists for {run_id}")
     if artifact.parent.is_symlink():
         raise SeekingAlphaError("Seeking Alpha schedule directory must not be a symlink")
     artifact.parent.mkdir(parents=True, exist_ok=True)
