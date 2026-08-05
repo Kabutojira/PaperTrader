@@ -1,0 +1,72 @@
+{
+  "operation_id": "01KYPB1RA8KCC272M9J5G94CHK",
+  "status": "succeeded",
+  "summary": "Completed one bounded Kratos Defense & Security Solutions security review using the 4 August 2026 SEC filing and SEC-filed issuer results. Created the security page, registered both retained sources, updated the validated security row, and wrote exactly one schema-v2 scenario assessment while preserving the immutable KTOS/XNAS/USD identity. Bear/base/bull fair values are USD 28.09/USD 41.79/USD 63.59 at 25%/50%/25%; deterministic calculation produced USD 43.815 probability-weighted fair value, -15.5292% expected return, a Sell rating, Avoid action, Watch conviction tier, and ineligible allocation status at the USD 51.87 mark. No linked idea or accepted relationship exists, so no idea follow-up was required; the conviction strategy gate failed and no strategy, signal, order, allocation, fill, execution, cash, portfolio, performance, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Kratos quarterly report for the period ended June 28, 2026",
+      "claim": "The SEC filing reports USD 1,437.6 million cash, 187,557,916 shares outstanding, USD 139.9 million current and long-term finance-lease liabilities, negative USD 38.4 million six-month operating cash flow, and a share count increased from 168,933,826 at year-end after a 16.4 million-share offering.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm",
+      "observed_at": "2026-08-05T16:29:53Z",
+      "source_hash": "8e8b289182e1cc177d881cc3eb39b1f236e87390732749a93239aefab9452773"
+    },
+    {
+      "source": "Kratos second-quarter 2026 financial results",
+      "claim": "Kratos reported Q2 revenue of USD 458.8 million, 19.1% organic growth, adjusted EBITDA of USD 38.2 million, USD 2.084 billion consolidated backlog including USD 1.572 billion funded, and raised 2026 revenue guidance to USD 1.750-1.810 billion. Full-year guidance calls for USD 30-50 million operating cash flow and USD 125-135 million capital spending.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000075/ktos202606288kexhibit991.htm",
+      "observed_at": "2026-08-05T16:29:53Z",
+      "source_hash": "28699d64d6351e24dfaa4a60b316cf55aa0fbecaaf6c345ab9ba102dc3360dde"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, FX, and assessment state",
+      "claim": "The immutable KTOS/XNAS/USD/equity identity had a 4 August close of USD 51.869998931884766, fresh USD/EUR rate 0.8658000230789185, an upper-Bollinger-band breakout, and a 2.39164955 volume z-score. Deterministic assessment calculation produced assessment_ea9c9772e692259611ba with USD 43.815 probability-weighted fair value, -15.5292058950348561482424294% expected return, Sell rating, Avoid action, Watch conviction tier, and exact ineligibility frontiers.",
+      "observed_at": "2026-08-05T16:12:24Z",
+      "source_hash": "7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/assessment_upsert_request.json",
+    "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/security_upsert_request.json",
+    "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/source_ktos_q2_2026_10q_request.json",
+    "data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/source_ktos_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_0cf8075039299094d614.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Kratos Q2 2026 revenue, organic growth, backlog, and raised guidance support the defense-technology demand thesis, but guided free-cash-flow use, low GAAP margin, dilution, and a USD 43.815 probability-weighted value below the USD 51.87 mark make the deterministic disposition Sell/Avoid and allocation-ineligible. The Bollinger breakout and volume anomaly are expectation risk rather than a paper buy signal; no follow-up or strategy was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_0cf8075039299094d614",
+    "papertrader research source record --request data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/source_ktos_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/source_ktos_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260805T161218Z/01KYPB1RA8KCC272M9J5G94CHK/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_0cf8075039299094d614"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260805T161218Z, with matching immutable security identity, validated payload, live initial lease, and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before reading assessment state; it confirmed no predecessor assessment, prior successful result, retained source, accepted relationship, linked idea, strategy, or prior research page.",
+      "Retrieved and hashed the current SEC-filed 10-Q and issuer results release, consumed their revenue, backlog, margin, cash-flow, liquidity, lease, acquisition, share-count, and dilution evidence, and registered both through the project CLI.",
+      "The accepted assessment assessment_ea9c9772e692259611ba is schema version 2, has no predecessor because this is the initial assessment, links current operation/result provenance, and records research-page hash 6ea612a59063bc5ba388d33554ceae9b0dae0c9fc97012b076a182a7a082eaec.",
+      "The exact alert period and 4 August market date were reviewed: the close entered the upper Bollinger state and volume z-score reached 2.39164955, but valuation made the move a timing risk rather than an opportunity.",
+      "No payload idea, accepted canonical relationship, or linked idea exists, so zero idea-research follow-ups satisfies the security-research follow-up contract. The conviction strategy gate failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}

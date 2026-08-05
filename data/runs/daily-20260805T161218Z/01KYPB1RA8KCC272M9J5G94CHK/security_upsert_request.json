@@ -1,0 +1,23 @@
+{
+  "security_id": "security_0cf8075039299094d614",
+  "issuer_id": "issuer_ef50712da9240a7a822b",
+  "company_name": "Kratos Defense & Security Solutions, Inc.",
+  "instrument_name": "Kratos Defense & Security Solutions, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "KTOS",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "KTOS",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Strong defense-technology growth and funded backlog merit monitoring, but low cash conversion, dilution, and valuation below the current breakout mark prevent action.",
+  "research_summary": "Q2 organic growth and backlog support demand, but cash use, dilution, and a USD 43.815 weighted value below the USD 51.87 mark keep KTOS watching.",
+  "research_page": "data/wiki/securities/security_0cf8075039299094d614.md",
+  "last_research_at": "2026-08-05T16:29:53Z",
+  "next_review_at": "2026-08-19T16:29:53Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm"
+}

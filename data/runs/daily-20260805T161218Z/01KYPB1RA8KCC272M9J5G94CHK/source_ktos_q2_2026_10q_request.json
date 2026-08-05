@@ -1,0 +1,18 @@
+{
+  "source_id": "source_ktos_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000077/ktos-20260628.htm",
+  "source_type": "filing",
+  "title": "Kratos Defense & Security Solutions, Inc. quarterly report for the period ended June 28, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "8e8b289182e1cc177d881cc3eb39b1f236e87390732749a93239aefab9452773",
+  "related_entity_ids": "security_0cf8075039299094d614",
+  "checked_at": "2026-08-05T16:29:53Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 28, 2026, Kratos reported USD 1,437.6 million cash, 187,557,916 shares outstanding, and USD 139.9 million current and long-term finance lease liabilities; six-month operating cash flow was negative USD 38.4 million.",
+  "summary": "The current SEC filing supplies identity, revenue, margins, cash flow, liquidity, finance leases, acquisitions, equity issuance, dilution, and share-count evidence for the assessment.",
+  "run_id": "daily-20260805T161218Z"
+}

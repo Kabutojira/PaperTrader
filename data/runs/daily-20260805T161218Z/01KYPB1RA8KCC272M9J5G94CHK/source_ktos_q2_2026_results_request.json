@@ -1,0 +1,18 @@
+{
+  "source_id": "source_ktos_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000075/ktos202606288kexhibit991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1069258/000106925826000075/ktos202606288kexhibit991.htm",
+  "source_type": "issuer_release",
+  "title": "Kratos reports second quarter 2026 financial results",
+  "publisher": "Kratos Defense & Security Solutions, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "28699d64d6351e24dfaa4a60b316cf55aa0fbecaaf6c345ab9ba102dc3360dde",
+  "related_entity_ids": "security_0cf8075039299094d614",
+  "checked_at": "2026-08-05T16:29:53Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Kratos reported Q2 revenue of USD 458.8 million, adjusted EBITDA of USD 38.2 million, consolidated backlog of USD 2.084 billion, and raised 2026 revenue guidance to USD 1.750-1.810 billion.",
+  "summary": "The SEC-filed issuer release supplies current quarterly results, organic growth, bookings, backlog, program commentary, full-year guidance, investment plans, and free-cash-flow guidance.",
+  "run_id": "daily-20260805T161218Z"
+}

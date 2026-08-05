@@ -1937,3 +1937,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   the probability-weighted value remains below the USD 99.01 mark, so the security stays watching
   and no paper strategy or signal is justified.
 - Linked the result to [[ideas/idea_critical_minerals_copper]] for a separate sequential refresh.
+
+## 2026-08-05 — security review — Kratos Defense & Security Solutions, Inc. common stock
+
+- Created [[securities/security_0cf8075039299094d614]] from the 4 August 2026 quarterly filing and
+  SEC-filed results release.
+- Strong organic growth, funded backlog, and raised guidance support the defense-technology demand
+  thesis, but low GAAP margin, guided free-cash-flow use, dilution, and a scenario value below the
+  USD 51.87 mark keep the security watching and allocation-ineligible.
+- Reviewed the Bollinger-band breakout and volume anomaly as expectation and timing risk rather than
+  a buy signal; no strategy, signal, order, or follow-up operation was justified.
