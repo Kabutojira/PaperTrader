@@ -1938,6 +1938,86 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260805]] for run `daily-20260805T182233Z`.
 
+- Created candidate packet [[inbox/market-security_0cf8075039299094d614-bollinger_above_upper-f1372c401f24]] (f1372c401f24).
+
+- Classified [[inbox/market-security_0cf8075039299094d614-bollinger_above_upper-f1372c401f24]] as `ingest`: Material strengthened Bollinger breakout with a 9.85% period return merits durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_0cf8075039299094d614-volume_anomaly-ece9af648e0a]] (ece9af648e0a).
+
+- Classified [[inbox/market-security_0cf8075039299094d614-volume_anomaly-ece9af648e0a]] as `ingest`: Material volume-anomaly strengthening with an approximately 9.8% period return merits durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-5c3f84337712]] (5c3f84337712).
+
+- Classified [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-5c3f84337712]] as `ingest`: Material 14.3% period return with a strengthened Bollinger-above-upper transition merits durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-macd_cross_below_signal-fb40c510ddc7]] (fb40c510ddc7).
+
+- Classified [[inbox/market-security_1e8fbdb0f45f2b413e00-macd_cross_below_signal-fb40c510ddc7]] as `ingest`: A new bearish MACD signal after a substantial 30% period gain is a material risk transition for the security.
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-a8d080c8468b]] (a8d080c8468b).
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-a8d080c8468b]] as `ingest`: Material breakout with a 25.2% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-e4ef2a75b523]] (e4ef2a75b523).
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-e4ef2a75b523]] as `ingest`: New RSI overbought transition after a material 25.2% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247]] (fab436606247).
+
+- Classified [[inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247]] as `ingest`: Material volume anomaly coincides with a 25.2% one-month return and merits durable review.
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-6be595721e61]] (6be595721e61).
+
+- Classified [[inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-6be595721e61]] as `ingest`: Material 20.97% period return with a strengthened Bollinger-band breakout warrants durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-53c3e02d5180]] (53c3e02d5180).
+
+- Classified [[inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-53c3e02d5180]] as `ingest`: Material 7.4% gain with a new Bollinger-band breakout transition warrants durable review.
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff]] (1f18981b3fff).
+
+- Classified [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff]] as `ingest`: Material 26.4% period return with a newly entered volume anomaly warrants durable review.
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383]] (8910e4772383).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383]] as `ingest`: Material 14.1% gain with a strengthened RSI overbought transition warrants durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_61567714298b9563d1a9-macd_cross_below_signal-35e9caa65341]] (35e9caa65341).
+
+- Classified [[inbox/market-security_61567714298b9563d1a9-macd_cross_below_signal-35e9caa65341]] as `ingest`: Material bearish MACD transition accompanied by a 9.47% period decline merits durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-4bdd7687554e]] (4bdd7687554e).
+
+- Classified [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-4bdd7687554e]] as `ingest`: Material 28.7% period return with a new Bollinger-band breakout transition warrants durable review.
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-2df36a4ac7b5]] (2df36a4ac7b5).
+
+- Classified [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-2df36a4ac7b5]] as `ingest`: Material RSI overbought transition coincides with a 28.7% period return and merits durable security-level context.
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123]] (ad4f57619123).
+
+- Classified [[inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123]] as `ingest`: Material volume-anomaly transition with a 28.7% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6]] (31f44d2276c6).
+
+- Classified [[inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6]] as `ingest`: Material entry into an overbought Bollinger-band condition after an 8.98% period return warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d]] (7a6eb592774d).
+
+- Classified [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d]] as `ingest`: Material volume-anomaly strengthening with an 8.98% one-month return merits durable review.
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5]] (a545a403aac5).
+
+- Classified [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5]] as `ingest`: A new SMA 50/200 bullish crossover is a durable, security-specific market transition warranting wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0]] (a2e1b1a4c9f0).
+
+- Classified [[inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0]] as `ingest`: New volume-anomaly transition coincides with a material 7.2% decline over the validated period, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa]] (9dee6faa97aa).
+
+- Classified [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa]] as `ingest`: Material RSI oversold transition strengthened during a 34.34% period decline, warranting durable review.
+
 ## 2026-08-05 — security review — Rio Tinto plc sponsored ADR
 
 - Updated [[securities/security_1c055eb9b2bb1f5a8ff2]] from Rio Tinto's 2026 half-year results.

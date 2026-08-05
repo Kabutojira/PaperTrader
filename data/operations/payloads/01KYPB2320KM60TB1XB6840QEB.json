@@ -4,7 +4,11 @@
   "inputs": {
     "assessment_state": "missing",
     "maintenance_mode": "assessment_v2_migration",
+    "market_data_as_of": "2026-08-05T22:09:27Z",
+    "market_data_date": "2026-08-05",
     "migration_version": "assessment-v2-migration-v1",
+    "period_end": "2026-08-05",
+    "period_start": "2026-07-08",
     "research_page": "",
     "research_reasons": [
       {
@@ -20,12 +24,32 @@
         "prompt": "Migrate security_61567714298b9563d1a9 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
         "source": "assessment_v2_migration:rollout-step22-20260730",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_61567714298b9563d1a9:eba637af2de0990565b7:2026-08-05",
+        "market_data_date": "2026-08-05",
+        "observed_at": "2026-08-05T22:09:27Z",
+        "prompt": "Research security_61567714298b9563d1a9 with high priority after price-action alerts: macd_cross_below_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_61567714298b9563d1a9-macd_cross_below_signal-35e9caa65341.md"
+        ],
+        "trigger_types": [
+          "macd_cross_below_signal"
+        ]
       }
     ],
-    "security_id": "security_61567714298b9563d1a9"
+    "security_id": "security_61567714298b9563d1a9",
+    "source_price_hash": "b6ed00e210514609f304a368930d3b63cba6ed69e414f8974c2372dfd2d7f32d",
+    "trigger_types": [
+      "macd_cross_below_signal"
+    ]
   },
-  "objective": "Research WTI — W&T Offshore, Inc. as an initial bounded security review. | Additional cause: Migrate security_61567714298b9563d1a9 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+  "objective": "Research WTI — W&T Offshore, Inc. as an initial bounded security review. | Additional cause: Migrate security_61567714298b9563d1a9 to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison. | Additional cause: Research security_61567714298b9563d1a9 with high priority after price-action alerts: macd_cross_below_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB2320KM60TB1XB6840QEB",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_61567714298b9563d1a9-macd_cross_below_signal-35e9caa65341.md"
+  ]
 }

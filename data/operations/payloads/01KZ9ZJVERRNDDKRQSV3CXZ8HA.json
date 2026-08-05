@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_7a3c869c13ff806182d5",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_7a3c869c13ff806182d5",
+    "security_id": "security_96ba305ee7cd586bc348"
+  },
+  "objective": "Review the canonical relationship from idea_humanoid_robotics_embodied_ai_components to security_96ba305ee7cd586bc348 and accept or reject it with current evidence.",
+  "operation_id": "01KZ9ZJVERRNDDKRQSV3CXZ8HA",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_fanuc_q1_fy2026_reference",
+    "source_fanuc_q1_fy2026_results"
+  ]
+}

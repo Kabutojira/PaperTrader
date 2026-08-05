@@ -4,14 +4,58 @@
   "inputs": {
     "assessment_state": "2026-07-29T23:14:00Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-05T22:09:27Z",
+    "market_data_date": "2026-08-05",
+    "period_end": "2026-08-05",
+    "period_start": "2026-07-08",
     "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
-    "security_id": "security_2c779e81c27b78c556bb"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_2c779e81c27b78c556bb:allocation-maintenance:2026-07-29T23:14:00Z",
+        "observed_at": "2026-07-30T00:10:09Z",
+        "prompt": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_ternium_july_2026_sustainability_6k",
+          "source_ternium_q1_2026_results",
+          "source_ternium_q2_2026_event",
+          "source_ustr_usmca_joint_statement_20260723"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_2c779e81c27b78c556bb:5ccea98485d038ee0b80:2026-08-05",
+        "market_data_date": "2026-08-05",
+        "observed_at": "2026-08-05T22:09:27Z",
+        "prompt": "Research security_2c779e81c27b78c556bb with high priority after price-action alerts: bollinger_above_upper, rsi_overbought, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-a8d080c8468b.md",
+          "data/wiki/inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-e4ef2a75b523.md",
+          "data/wiki/inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247.md"
+        ],
+        "trigger_types": [
+          "bollinger_above_upper",
+          "rsi_overbought",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_2c779e81c27b78c556bb",
+    "source_price_hash": "7ee4570e35c66ddb262959d2b5b113993b4d641019caf73e86af15b901fbf42b",
+    "trigger_types": [
+      "bollinger_above_upper",
+      "rsi_overbought",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_2c779e81c27b78c556bb with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_2c779e81c27b78c556bb with high priority after price-action alerts: bollinger_above_upper, rsi_overbought, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYR5PTQ8SEPDB26SQZPVANG7",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_2c779e81c27b78c556bb-bollinger_above_upper-a8d080c8468b.md",
+    "data/wiki/inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-e4ef2a75b523.md",
+    "data/wiki/inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247.md",
     "source_ternium_july_2026_sustainability_6k",
     "source_ternium_q1_2026_results",
     "source_ternium_q2_2026_event",
