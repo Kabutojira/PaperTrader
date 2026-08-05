@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_defense_aerospace",
+  "dedupe_key": "idea_research:idea_defense_aerospace:security-result:01KZA04098D4DF0J4SFMJK1TDD",
+  "prompt": "Refresh the defense and aerospace replenishment idea from RTX's completed full review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_defense_aerospace",
+    "seed_claim": "RTX's current filing confirms defense backlog, segment growth, and cash generation, but a complete downside-weighted valuation and persistent overbought timing make the shares ineligible for new paper exposure despite the accepted causal relationship.",
+    "security_id": "security_59304f90c440def31dc5",
+    "security_research_operation_id": "01KZA04098D4DF0J4SFMJK1TDD",
+    "security_research_result_path": "data/runs/daily-20260805T220920Z/01KZA04098D4DF0J4SFMJK1TDD/agent_result.json"
+  },
+  "source": "security_research:01KZA04098D4DF0J4SFMJK1TDD",
+  "priority": 68,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZA04098D4DF0J4SFMJK1TDD"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_59304f90c440def31dc5",
+  "issuer_id": "issuer_7e0bd218f603cf838669",
+  "company_name": "RTX Corporation",
+  "instrument_name": "RTX Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "RTX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RTX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; accepted defense relationship remains relevant, but complete valuation and overbought timing do not support paper exposure.",
+  "research_summary": "Q2 demand and cash evidence remain supportive, but complete downside-weighted valuation and overbought timing make RTX ineligible for new paper exposure.",
+  "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+  "last_research_at": "2026-08-05T22:27:20Z",
+  "next_review_at": "2026-08-19T22:27:20Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+}

@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "RTX assessment source operation is ambiguous within one run",
+  "description": "The required schema-v2 assessment for security_59304f90c440def31dc5 could not be written. The deterministic assessment applier found both predecessor quick_check_research 01KYY98DWGST45EN32F928GMGG and current security_research 01KZA04098D4DF0J4SFMJK1TDD claimed by run daily-20260805T220920Z and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code or queue/history change.",
+  "owner": "controller",
+  "related_run_id": "daily-20260805T220920Z",
+  "related_operation_id": "01KZA04098D4DF0J4SFMJK1TDD"
+}

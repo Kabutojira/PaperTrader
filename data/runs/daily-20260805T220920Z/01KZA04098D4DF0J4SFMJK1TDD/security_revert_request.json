@@ -1,0 +1,23 @@
+{
+  "security_id": "security_59304f90c440def31dc5",
+  "issuer_id": "issuer_7e0bd218f603cf838669",
+  "company_name": "RTX Corporation",
+  "instrument_name": "RTX Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "RTX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RTX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; persistent RSI-overbought momentum and changed decision-support gates require full review.",
+  "research_summary": "Q2 evidence remains supportive, but persistent overbought timing and a legacy valuation without complete scenarios require full review before allocation.",
+  "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+  "last_research_at": "2026-08-05T22:17:05Z",
+  "next_review_at": "2026-08-12T22:17:05Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+}
