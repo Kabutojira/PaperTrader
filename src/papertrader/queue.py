@@ -841,6 +841,25 @@ def _operation_allocation_plan_id(repository_root: Path, operation: Operation) -
     return plan_id
 
 
+def _triaged_operation(
+    operation: Operation,
+    *,
+    status: str,
+    last_error: str,
+    updated_at: datetime,
+) -> Operation:
+    """Apply a triage transition without rewriting timestamps for an unchanged state."""
+
+    if operation.status == status and operation.last_error == last_error:
+        return operation
+    return replace(
+        operation,
+        status=status,
+        updated_at=updated_at,
+        last_error=last_error,
+    )
+
+
 def prepare_queue(
     repository_root: Path,
     *,
@@ -944,11 +963,11 @@ def prepare_queue(
                 signal_status = signal_statuses.get(signal_id)
                 if signal_status is None:
                     updated.append(
-                        replace(
+                        _triaged_operation(
                             operation,
                             status="blocked",
-                            updated_at=instant,
                             last_error=f"signal_missing:{signal_id}",
+                            updated_at=instant,
                         )
                     )
                     dispositions.append(
@@ -966,11 +985,11 @@ def prepare_queue(
                     continue
             if operation.operation_id in cyclic:
                 updated.append(
-                    replace(
+                    _triaged_operation(
                         operation,
                         status="blocked",
-                        updated_at=instant,
                         last_error="dependency_cycle",
+                        updated_at=instant,
                     )
                 )
                 dispositions.append(f"{operation.operation_id}:blocked:dependency_cycle")
@@ -992,11 +1011,11 @@ def prepare_queue(
             )
             if failed_dependency is not None:
                 updated.append(
-                    replace(
+                    _triaged_operation(
                         operation,
                         status="blocked",
-                        updated_at=instant,
                         last_error=f"dependency_unavailable:{failed_dependency}",
+                        updated_at=instant,
                     )
                 )
                 dispositions.append(
@@ -1005,21 +1024,21 @@ def prepare_queue(
                 continue
             if any(state == "active" for state in dependency_states):
                 updated.append(
-                    replace(
+                    _triaged_operation(
                         operation,
                         status="waiting",
-                        updated_at=instant,
                         last_error="dependencies_incomplete",
+                        updated_at=instant,
                     )
                 )
                 continue
             if operation.not_before is not None and operation.not_before > instant:
                 updated.append(
-                    replace(
+                    _triaged_operation(
                         operation,
                         status="waiting",
-                        updated_at=instant,
                         last_error="not_before_pending",
+                        updated_at=instant,
                     )
                 )
                 continue
@@ -1062,15 +1081,22 @@ def prepare_queue(
                     continue
                 if disposition.decision == "defer":
                     updated.append(
-                        replace(
+                        _triaged_operation(
                             operation,
                             status="waiting",
-                            updated_at=instant,
                             last_error=f"semantic_defer:{reason}",
+                            updated_at=instant,
                         )
                     )
                     continue
-            updated.append(replace(operation, status="ready", updated_at=instant, last_error=""))
+            updated.append(
+                _triaged_operation(
+                    operation,
+                    status="ready",
+                    last_error="",
+                    updated_at=instant,
+                )
+            )
         if terminal:
             history_rows = [
                 _history_row(

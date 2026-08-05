@@ -1297,7 +1297,7 @@ def _run_claimed_and_disposition(
             severity="error",
             title=f"Hermes operation validation failed: {operation.operation_id}",
             description=str(exc),
-            owner="controller",
+            owner="delivery" if operation.operation_type == "daily_podcast" else "controller",
             related_run_id=run_id,
             related_operation_id=operation.operation_id,
         )

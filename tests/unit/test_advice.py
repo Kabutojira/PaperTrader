@@ -16,13 +16,15 @@ from papertrader.advice import (
     validate_advice,
 )
 from papertrader.config import Settings
+from papertrader.dedupe import build_dedupe_key
 from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.issues import record_issue
 from papertrader.models import MarketBar, OrderLegSpec, ReferencePrice
 from papertrader.orders import create_paper_order, create_signal
 from papertrader.portfolio import build_risk_state
-from papertrader.tables import read_table, write_table
-from papertrader.utils import required_decimal
+from papertrader.queue import enqueue_operation
+from papertrader.tables import append_unique, read_table, write_table
+from papertrader.utils import deterministic_ulid, format_timestamp, required_decimal
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
@@ -920,3 +922,89 @@ def test_post_publication_delivery_issue_does_not_stale_decision_snapshot(
 
     assert validate_advice(sandbox_repository, strict=True) == []
     assert len(snapshot.system_impacts) == 1
+
+
+def test_legacy_post_publication_podcast_bookkeeping_does_not_stale_snapshot(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    run_id = "legacy-podcast-fixture"
+    _initialize(sandbox_repository, sandbox_settings, run_id=run_id)
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="security_research",
+        entity_type="security",
+        entity_id="sec_legacy_queue",
+        dedupe_key=build_dedupe_key(
+            "security_research",
+            "sec_legacy_queue",
+            "legacy-queue",
+            NOW.date().isoformat(),
+        ),
+        prompt="Research the legacy queue fixture.",
+        inputs={"security_id": "sec_legacy_queue"},
+        source="test",
+        now=NOW,
+    )
+    assert created
+    refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        as_of=NOW,
+        render_pages=False,
+    )
+
+    active = read_table(sandbox_repository, "operations_todo")
+    assert len(active) == 1
+    active[0]["updated_at"] = format_timestamp(NOW + timedelta(minutes=5))
+    write_table(sandbox_repository, "operations_todo", active)
+
+    podcast_operation_id = deterministic_ulid(
+        NOW + timedelta(minutes=5), "legacy-podcast-bookkeeping"
+    )
+    podcast_time = format_timestamp(NOW + timedelta(minutes=5))
+    podcast_history = {
+        **active[0],
+        "operation_id": podcast_operation_id,
+        "created_at": podcast_time,
+        "updated_at": podcast_time,
+        "status": "running",
+        "priority": "100",
+        "operation_type": "daily_podcast",
+        "entity_type": "run",
+        "entity_id": run_id,
+        "dedupe_key": f"daily_podcast:{run_id}:text-v2",
+        "skill_names": "llm-wiki|papertrader-daily-podcast",
+        "prompt": "Create the completed run's daily podcast.",
+        "source": "test",
+        "attempt_count": "1",
+        "max_attempts": "1",
+        "claimed_by_run_id": run_id,
+        "last_error": "agent_validation_failed:fixture",
+        "terminal_status": "failed",
+        "completed_at": podcast_time,
+        "result_path": "",
+        "result_summary": "",
+        "terminal_reason": "agent_validation_failed:fixture",
+    }
+    append_unique(
+        sandbox_repository,
+        "operations_history",
+        [podcast_history],
+        key_columns=("operation_id",),
+    )
+    record_issue(
+        sandbox_repository,
+        severity="error",
+        title=f"Hermes operation validation failed: {podcast_operation_id}",
+        description="Legacy controller classification for a contained podcast failure.",
+        owner="controller",
+        related_run_id=run_id,
+        related_operation_id=podcast_operation_id,
+        now=NOW + timedelta(minutes=5),
+    )
+
+    assert operation_id == active[0]["operation_id"]
+    assert validate_advice(sandbox_repository, strict=True) == []

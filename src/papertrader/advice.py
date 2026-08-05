@@ -750,6 +750,75 @@ def _configuration_only_runtime_changed(
     )
 
 
+def _post_publication_podcast_only_changed(
+    repository_root: Path,
+    *,
+    run_id: str,
+    as_of: datetime,
+    expected_hashes: Mapping[str, str],
+    differing: set[str],
+) -> bool:
+    """Recognize legacy podcast bookkeeping that cannot affect a decision snapshot.
+
+    Older queue triage rewrote every active row's ``updated_at`` while preparing the
+    post-publication podcast, and older controller code classified a contained podcast
+    failure as an investment-system issue. Reconstructing the pre-podcast rows must match
+    the stored hashes exactly; any substantive or unrelated change still fails closed.
+    """
+
+    if not differing or not differing <= {"issues", "operations_todo"}:
+        return False
+    podcast_operation_ids: set[str] = set()
+    for row in read_table(repository_root, "operations_history"):
+        if row["operation_type"] != "daily_podcast" or row["entity_id"] != run_id:
+            continue
+        completed_at = parse_timestamp(row["completed_at"], allow_empty=True)
+        if completed_at is not None and completed_at > as_of:
+            podcast_operation_ids.add(row["operation_id"])
+    if not podcast_operation_ids:
+        return False
+
+    if "issues" in differing:
+        rows = _canonical_rows(repository_root, "issues", as_of=as_of)
+        reconstructed: list[dict[str, str]] = []
+        removed = False
+        for row in rows:
+            first_seen = parse_timestamp(row["first_seen_at"])
+            if (
+                row["related_operation_id"] in podcast_operation_ids
+                and row["related_run_id"] == run_id
+                and row["owner"] == "controller"
+                and row["title"]
+                == f"Hermes operation validation failed: {row['related_operation_id']}"
+                and first_seen is not None
+                and first_seen > as_of
+            ):
+                removed = True
+                continue
+            reconstructed.append(row)
+        if not removed or content_hash(
+            sorted(reconstructed, key=canonical_json)
+        ) != expected_hashes.get("issues"):
+            return False
+
+    if "operations_todo" in differing:
+        rows = _canonical_rows(repository_root, "operations_todo", as_of=as_of)
+        reconstructed = []
+        rewound = False
+        for row in rows:
+            updated_at = parse_timestamp(row["updated_at"])
+            if updated_at is not None and updated_at > as_of:
+                row = {**row, "updated_at": format_timestamp(as_of)}
+                rewound = True
+            reconstructed.append(row)
+        if not rewound or content_hash(
+            sorted(reconstructed, key=canonical_json)
+        ) != expected_hashes.get("operations_todo"):
+            return False
+
+    return True
+
+
 def _snapshot_as_of(
     repository_root: Path,
     run_id: str,
@@ -3101,11 +3170,21 @@ def validate_advice(
                 for key in set(previous) | set(current_source_hashes)
                 if previous.get(key) != current_source_hashes.get(key)
             }
-            if differing != {"configuration"} or not _configuration_only_runtime_changed(
+            configuration_only = differing == {"configuration"} and (
+                _configuration_only_runtime_changed(
+                    repository_root,
+                    run_id=snapshot.run_id,
+                    expected_hash=previous.get("configuration", ""),
+                )
+            )
+            podcast_only = _post_publication_podcast_only_changed(
                 repository_root,
                 run_id=snapshot.run_id,
-                expected_hash=previous.get("configuration", ""),
-            ):
+                as_of=snapshot_as_of,
+                expected_hashes=previous,
+                differing=differing,
+            )
+            if not configuration_only and not podcast_only:
                 errors.append(
                     "published decision snapshot does not match current authoritative state"
                 )

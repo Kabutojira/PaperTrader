@@ -287,6 +287,10 @@ def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
     assert history[0]["operation_id"] == operation_id
     assert history[0]["terminal_status"] == "failed"
     assert history[0]["result_path"] == ""
+    issues = read_table(sandbox_repository, "issues")
+    assert len(issues) == 1
+    assert issues[0]["related_operation_id"] == operation_id
+    assert issues[0]["owner"] == "delivery"
     artifact_root = (
         sandbox_repository / "data" / "runs" / "podcast-contained-failure" / operation_id
     )

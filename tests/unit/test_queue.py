@@ -45,6 +45,33 @@ def test_queue_lock_is_writable_across_runtime_users(
     assert stat.S_IMODE(locks[0].stat().st_mode) == 0o666
 
 
+def test_prepare_preserves_timestamp_when_triage_state_is_unchanged(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    operation_id, _ = _enqueue(
+        sandbox_repository,
+        sandbox_settings,
+        entity_id="sec_stable_triage",
+        catalyst="stable-triage",
+    )
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=1))
+    before = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+
+    prepare_queue(sandbox_repository, now=NOW + timedelta(minutes=2))
+
+    after = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+    assert after == before
+
+
 def _enqueue(
     repository: Path,
     settings: Settings,
