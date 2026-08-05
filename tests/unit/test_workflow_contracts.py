@@ -19,6 +19,10 @@ WORKFLOW_NAMES = {
 }
 FULL_SHA_ACTION = re.compile(r"^[^@\s]+@[0-9a-f]{40}$")
 PINNED_CONTAINER = re.compile(r"^[^@\s]+@sha256:[0-9a-f]{64}$")
+HERMES_RELEASE_IMAGE = (
+    "nousresearch/hermes-agent@"
+    "sha256:9c841866021c54c4596849f6135717e8a4d52ba510b7f52c50aef1de1a283973"
+)
 SETUP_UV_ACTION = "astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9"
 
 
@@ -139,6 +143,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     runtime_text = yaml.safe_dump(runtime)
 
     assert PINNED_CONTAINER.fullmatch(runtime["container"]["image"])
+    assert runtime["container"]["image"] == HERMES_RELEASE_IMAGE
     assert runtime["permissions"] == {"contents": "write"}
     assert runtime["defaults"]["run"]["shell"] == "bash"
     assert runtime["env"] == {

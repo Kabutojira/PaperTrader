@@ -192,6 +192,8 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert "--yolo" in command
     assert command[command.index("--provider") + 1] == "openai-codex"
     assert command[command.index("--model") + 1] == "gpt-5.6-terra"
+    assert "--reasoning" not in command
+    assert "--reasoning-effort" not in command
     assert command.count("--skills") == 3
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
     assert command[command.index("--max-turns") + 1] == "80"
@@ -222,6 +224,12 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert preflight["web_extract_reasoning_effort"] == "low"
     assert preflight["maximum_turns"] == 80
     assert preflight["profile"] == "analyst"
+    managed_config = yaml.safe_load((home / "config.yaml").read_text(encoding="utf-8"))
+    assert managed_config["agent"]["reasoning_effort"] == "medium"
+    assert managed_config["model"] == {
+        "default": "gpt-5.6-terra",
+        "provider": "openai-codex",
+    }
     for path in sandbox_repository.rglob("*"):
         if path.is_file():
             assert b"auxiliary-secret-value" not in path.read_bytes()
@@ -244,6 +252,8 @@ def test_daily_podcast_is_text_only_on_the_analyst_profile(
     command = hermes_command(sandbox_settings, preflight, "Create one daily podcast.")
 
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
+    assert "--reasoning" not in command
+    assert "--reasoning-effort" not in command
     assert "tts" not in command[command.index("--toolsets") + 1]
 
 
@@ -638,17 +648,62 @@ def test_configure_preserves_restored_oauth_state(
     auth.write_bytes(oauth_state)
     auth.chmod(0o600)
 
-    configure_hermes_home(sandbox_repository, sandbox_settings, home)
+    configure_hermes_home(
+        sandbox_repository,
+        sandbox_settings,
+        home,
+        execution_profile=sandbox_settings.hermes.profile("scout"),
+    )
 
     assert auth.read_bytes() == oauth_state
     config = (home / "config.yaml").read_text(encoding="utf-8")
     assert "provider: openai-codex" in config
-    assert "default: gpt-5.6-sol" in config
+    assert "default: gpt-5.6-luna" in config
     assert "web_extract:" in config
     assert "model: gpt-5.6-terra" in config
     assert "reasoning_effort: low" in config
     loaded = yaml.safe_load(config)
+    assert loaded["agent"]["reasoning_effort"] == "low"
     assert loaded["terminal"]["env_passthrough"] == []
+
+
+def test_reconfigure_restores_managed_profile_file_ownership(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    home = tmp_path / "managed-hermes"
+    configure_hermes_home(sandbox_repository, sandbox_settings, home)
+    owner = home.stat()
+    calls: list[tuple[Path, int, int, bool]] = []
+
+    monkeypatch.setattr(os, "geteuid", lambda: 0)
+    monkeypatch.setattr(
+        os,
+        "chown",
+        lambda path, uid, gid, *, follow_symlinks=True: calls.append(
+            (Path(path), uid, gid, follow_symlinks)
+        ),
+    )
+
+    configure_hermes_home(
+        sandbox_repository,
+        sandbox_settings,
+        home,
+        execution_profile=sandbox_settings.hermes.profile("analyst"),
+    )
+
+    assert {path.name for path, _, _, _ in calls} == {
+        ".env",
+        "SOUL.md",
+        "config.yaml",
+        "papertrader-managed.json",
+    }
+    assert all(
+        uid == owner.st_uid and gid == owner.st_gid and follow_symlinks is False
+        for _, uid, gid, follow_symlinks in calls
+    )
 
 
 def test_root_controller_hands_only_repository_data_to_hermes_owner(

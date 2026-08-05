@@ -331,9 +331,16 @@ def project_skill_identities(
     return controller, operation_skill
 
 
-def _managed_config(settings: Settings) -> dict[str, object]:
+def _managed_config(
+    settings: Settings,
+    execution_profile: HermesExecutionProfile | None = None,
+) -> dict[str, object]:
+    profile = execution_profile or settings.hermes.deep
     return {
-        "agent": {"disabled_toolsets": list(DISABLED_TOOLSETS)},
+        "agent": {
+            "disabled_toolsets": list(DISABLED_TOOLSETS),
+            "reasoning_effort": profile.reasoning_effort,
+        },
         "auxiliary": {
             "web_extract": {
                 "provider": settings.hermes_auxiliary.web_extract_provider,
@@ -343,8 +350,8 @@ def _managed_config(settings: Settings) -> dict[str, object]:
         },
         "mcp_servers": {},
         "model": {
-            "default": settings.hermes.model,
-            "provider": settings.hermes.provider,
+            "default": profile.model,
+            "provider": profile.provider,
         },
         "skills": {"external_dirs": ["${PAPERTRADER_SKILLS_DIR}"]},
         "terminal": {"backend": "local", "env_passthrough": [], "home_mode": "profile"},
@@ -359,6 +366,7 @@ def configure_hermes_home(
     hermes_home: Path,
     *,
     replace_unmanaged: bool = False,
+    execution_profile: HermesExecutionProfile | None = None,
 ) -> Path:
     """Create a minimal Hermes profile with no hooks, plugins, MCPs, or extra skills."""
 
@@ -373,6 +381,7 @@ def configure_hermes_home(
     else:
         raise AgentRunError("HERMES_HOME must be outside the repository")
     home.mkdir(parents=True, exist_ok=True)
+    owner = home.stat()
     marker = home / "papertrader-managed.json"
     config_path = home / "config.yaml"
     env_path = home / ".env"
@@ -402,7 +411,7 @@ def configure_hermes_home(
             raise AgentRunError(
                 "managed Hermes profile contains environment credentials; remove them first"
             )
-    config = _managed_config(settings)
+    config = _managed_config(settings, execution_profile)
     config["skills"] = {"external_dirs": [str((root / "skills").resolve())]}
     atomic_write_text(
         config_path,
@@ -421,6 +430,9 @@ def configure_hermes_home(
         },
         allowed_root=home,
     )
+    if os.geteuid() == 0 and owner.st_uid != 0:
+        for path in (config_path, home / "SOUL.md", env_path, marker):
+            os.chown(path, owner.st_uid, owner.st_gid, follow_symlinks=False)
     return config_path
 
 
@@ -436,7 +448,12 @@ def _contains_nonempty_environment_credentials(home: Path) -> bool:
     return False
 
 
-def _validate_managed_config(repository_root: Path, settings: Settings, hermes_home: Path) -> str:
+def _validate_managed_config(
+    repository_root: Path,
+    settings: Settings,
+    hermes_home: Path,
+    execution_profile: HermesExecutionProfile | None = None,
+) -> str:
     marker = hermes_home / "papertrader-managed.json"
     config_path = hermes_home / "config.yaml"
     auth_path = hermes_home / "auth.json"
@@ -468,7 +485,7 @@ def _validate_managed_config(repository_root: Path, settings: Settings, hermes_h
         config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     except (OSError, yaml.YAMLError) as exc:
         raise AgentRunError(f"cannot read Hermes config: {exc}") from exc
-    expected = _managed_config(settings)
+    expected = _managed_config(settings, execution_profile)
     expected["skills"] = {"external_dirs": [str((repository_root / "skills").resolve())]}
     if config != expected:
         raise AgentRunError("Hermes config differs from the isolated PaperTrader profile")
@@ -555,7 +572,12 @@ def preflight_hermes(
         pass
     else:
         raise AgentRunError("HERMES_HOME must be outside the repository")
-    config_hash = _validate_managed_config(repository_root, settings, home)
+    if route is None:
+        route = route_profile(operation_type, RoutingContext())
+    profile = execution_profile or settings.hermes.profile(route.profile)
+    if profile.name != route.profile or profile.policy_version != route.profile_policy_version:
+        raise AgentRunError("Hermes profile does not match the persisted route")
+    config_hash = _validate_managed_config(repository_root, settings, home, profile)
     native = _native_skill(settings, home)
     controller, operation_skill = project_skill_identities(repository_root, operation_type)
     if (
@@ -563,11 +585,6 @@ def preflight_hermes(
         and shutil.which(settings.hermes.command[0], path=environment.get("PATH")) is None
     ):
         raise AgentRunError(f"Hermes executable is unavailable: {settings.hermes.command[0]}")
-    if route is None:
-        route = route_profile(operation_type, RoutingContext())
-    profile = execution_profile or settings.hermes.profile(route.profile)
-    if profile.name != route.profile or profile.policy_version != route.profile_policy_version:
-        raise AgentRunError("Hermes profile does not match the persisted route")
     return HermesPreflight(
         native,
         controller,
@@ -837,7 +854,7 @@ def _validate_auxiliary_environment(
 
 
 def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) -> tuple[str, ...]:
-    """Return the one-shot command with explicit skills, tools, quiet mode, and YOLO."""
+    """Return the released Hermes one-shot command; reasoning lives in managed config."""
 
     toolsets = settings.hermes.profile(preflight.profile).toolsets
     return (
@@ -847,8 +864,6 @@ def hermes_command(settings: Settings, preflight: HermesPreflight, prompt: str) 
         preflight.provider,
         "--model",
         preflight.model,
-        "--reasoning-effort",
-        preflight.reasoning_effort,
         "--toolsets",
         ",".join(toolsets),
         "--max-turns",
@@ -976,6 +991,12 @@ def run_claimed_operation(
         execution_profile, route = select_profile(repository_root, settings, operation)
     except ValueError as exc:
         raise AgentRunError(f"cannot route operation profile: {exc}") from exc
+    configure_hermes_home(
+        repository_root,
+        settings,
+        hermes_home,
+        execution_profile=execution_profile,
+    )
     checkpoint_index: int | str = ""
     cycle_manifest_path = run_directory / "daily_run.json"
     if cycle_manifest_path.is_file() and not cycle_manifest_path.is_symlink():
