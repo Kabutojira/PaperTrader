@@ -179,6 +179,50 @@ def test_bootstrap_queues_exactly_five_regular_videos_per_channel_and_is_idempot
     assert read_table(sandbox_repository, "youtube_channels") == table_before
 
 
+def test_existing_scan_manifest_returns_successful_skip_without_mutation(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds()
+    discovery = FakeDiscovery(feeds)
+    run_id = "youtube-repeat-run"
+    first = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        client=discovery,
+        now=NOW,
+    )
+    manifest_path = sandbox_repository / "data" / "runs" / run_id / "youtube_scan.json"
+    manifest_before = manifest_path.read_bytes()
+    channels_before = read_table(sandbox_repository, "youtube_channels")
+    operations_before = read_table(sandbox_repository, "operations_todo")
+    discovery.calls.clear()
+
+    repeated = scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        client=discovery,
+        now=NOW + timedelta(hours=1),
+    )
+
+    assert repeated == {
+        "youtube_scan_version": 2,
+        "run_id": run_id,
+        "status": "skipped",
+        "reason": "manifest_already_exists",
+        "existing_manifest_status": first["status"],
+        "manifest_path": f"data/runs/{run_id}/youtube_scan.json",
+        "operation_count": 0,
+        "failure_count": 0,
+    }
+    assert discovery.calls == []
+    assert manifest_path.read_bytes() == manifest_before
+    assert read_table(sandbox_repository, "youtube_channels") == channels_before
+    assert read_table(sandbox_repository, "operations_todo") == operations_before
+
+
 def test_scan_excludes_shorts_and_livestream_replays(
     sandbox_repository: Path, sandbox_settings: Settings
 ) -> None:
@@ -586,3 +630,39 @@ def test_backfill_queues_exactly_twenty_older_allin_videos_without_advancing_cur
         for row in result["channels"]
         if row["channel_id"] != allin_id
     )
+
+
+def test_existing_scan_manifest_skips_backfill_without_discovery(
+    sandbox_repository: Path, sandbox_settings: Settings
+) -> None:
+    _seed_channels(sandbox_repository)
+    feeds = _feeds(videos_per_channel=30)
+    discovery = FakeDiscovery(feeds)
+    run_id = "youtube-repeat-backfill"
+    scan_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        client=discovery,
+        now=NOW,
+    )
+    manifest_path = sandbox_repository / "data" / "runs" / run_id / "youtube_scan.json"
+    manifest_before = manifest_path.read_bytes()
+    operations_before = read_table(sandbox_repository, "operations_todo")
+    discovery.calls.clear()
+
+    repeated = backfill_youtube(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        channel_id=CURATED_CHANNELS["@allin"],
+        count=20,
+        client=discovery,
+        now=NOW + timedelta(hours=1),
+    )
+
+    assert repeated["status"] == "skipped"
+    assert repeated["reason"] == "manifest_already_exists"
+    assert discovery.calls == []
+    assert manifest_path.read_bytes() == manifest_before
+    assert read_table(sandbox_repository, "operations_todo") == operations_before
