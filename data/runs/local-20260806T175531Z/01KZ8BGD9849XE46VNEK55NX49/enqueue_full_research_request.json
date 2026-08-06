@@ -1,0 +1,61 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_3853e54c619d597dcaa1",
+  "dedupe_key": "security_research:security_3853e54c619d597dcaa1:confirmed-accounting-and-preliminary-fy2025-evidence:2026-08-06",
+  "prompt": "Fully reassess Nidec after confirmed and quantified accounting misconduct plus unaudited preliminary fiscal-2025 figures materially changed the quick-check evidence while the annual filing and quality investigation remain unresolved.",
+  "inputs": {
+    "security_id": "security_3853e54c619d597dcaa1",
+    "quick_check_operation_id": "01KZ8BGD9849XE46VNEK55NX49",
+    "baseline_operation_id": "01KYPB1Y5R4NFAMSPZZX3YAS1E",
+    "changed_gate": "material_primary_evidence_confirmed_and_quantified_accounting_misconduct_and_preliminary_fiscal_year_figures",
+    "trigger_types": [
+      "bollinger_above_upper",
+      "volume_anomaly"
+    ],
+    "market_data_date": "2026-08-06",
+    "market_data_as_of": "2026-08-06T15:35:53Z",
+    "period_start": "2026-07-07",
+    "period_end": "2026-08-06",
+    "source_price_hash": "f003db0edf8862961d04217728fb8cb28125ea637bca8696fff4d041fecc4d50",
+    "merged_source_price_hashes": [
+      "59a44014342dd26c542299f8128daea26aee036dcbfd3a2eac68e2ffc2d90807",
+      "f003db0edf8862961d04217728fb8cb28125ea637bca8696fff4d041fecc4d50"
+    ],
+    "research_reasons": [
+      {
+        "cause": "bollinger_above_upper",
+        "source_ref": "data/wiki/inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971.md"
+      },
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1.md"
+      },
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e.md"
+      },
+      {
+        "cause": "material_accounting_and_preliminary_fiscal_year_evidence",
+        "source_ref": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0417-01/260417-01en.pdf"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZ8BGD9849XE46VNEK55NX49",
+  "priority": 98,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZ8BGD9849XE46VNEK55NX49"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971.md",
+    "data/wiki/inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1.md",
+    "data/wiki/inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e.md",
+    "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0417-01/260417-01en.pdf",
+    "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0616-01/260616-01en.pdf",
+    "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0630-01/260630-01en.pdf"
+  ],
+  "max_attempts": 3
+}

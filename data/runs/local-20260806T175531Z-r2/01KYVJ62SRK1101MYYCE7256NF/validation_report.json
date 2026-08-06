@@ -1,0 +1,14 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260806T175531Z-r2/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request.json",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv"
+  ],
+  "completed_at": "2026-08-06T18:31:11Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYVJ62SRK1101MYYCE7256NF",
+  "passed": true,
+  "run_id": "local-20260806T175531Z-r2",
+  "validation_version": 1
+}

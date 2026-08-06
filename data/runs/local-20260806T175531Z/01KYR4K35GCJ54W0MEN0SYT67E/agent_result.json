@@ -1,0 +1,111 @@
+{
+  "operation_id": "01KYR4K35GCJ54W0MEN0SYT67E",
+  "status": "succeeded",
+  "summary": "Completed the first full Bloom Energy review from current primary evidence and the merged 4 August bullish MACD cause. Record Q2 revenue, margin, operating income and cash flow plus contracted Oracle deployment validate the onsite AI-power mechanism, while customer concentration, manufacturing scale-up, natural-gas and carbon policy, service execution, competing generation, convertibles and warrant dilution remain material. A scenario-complete mature-compounder assessment values Bloom at USD 90 bear, USD 180 base and USD 300 bull with 25%/50%/25% probabilities. The USD 187.50 weighted value is 19.98% below the USD 234.33 mark, so the canonical conclusion is Sell / Avoid with no strategy. Created exactly one dependent AI-power idea refresh.",
+  "evidence": [
+    {
+      "source": "Bloom Energy second-quarter 2026 financial results",
+      "claim": "Bloom reported USD 1.065 billion of Q2 revenue, 33.4% GAAP gross margin, USD 182.2 million of operating income, USD 226.4 million of operating cash flow, USD 2.689 billion of ending cash and restricted cash, and 323.3 million diluted weighted-average shares. Management raised 2026 guidance to USD 3.9-4.2 billion of revenue, USD 800-900 million of non-GAAP operating income and USD 2.55-2.85 of non-GAAP EPS.",
+      "url": "https://investor.bloomenergy.com/press-releases/press-release-details/2026/Bloom-Energy-Reports-Record-Second-Quarter-2026-Financial-Results-and-Raises-Full-Year-2026-Guidance/default.aspx",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "fbf53799f4db3d8e3b2b1fb388e0e16ddd909968e7ac17be66d0e60249728cca"
+    },
+    {
+      "source": "Bloom Energy Corporation Q1 2026 Form 10-Q",
+      "claim": "The SEC quarterly filing reports USD 2.491 billion of cash, USD 2.599 billion of recourse debt, material customer concentration, warranty exposure and the balance-sheet, fuel, financing and operating risks used in the assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026028021/be-20260331.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "65b49cf01cccf1bbe926741ab71fb9ecda0e00451f62fdd9b777fc0ddd3b08ba"
+    },
+    {
+      "source": "Bloom Energy Oracle warrant Form 8-K",
+      "claim": "The SEC filing verifies a fully vested Oracle warrant for up to 3,531,073 Class A shares at USD 113.28, making partnership-linked dilution explicit. Bloom separately states that 1.2 GW is contracted under a master agreement supporting up to 2.8 GW.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026024896/be-20260413.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "cfb0fbb860edf0c05782114633c85a6187a62c658fadd28d0c057f9acd83900c"
+    },
+    {
+      "source": "Bloom Energy Corporation 2025 Form 10-K",
+      "claim": "The audited filing explains that Energy Servers generally use natural gas and emit carbon dioxide, identifies fuel, permitting, customer, warranty, service and competing-generation risks, and describes the planned Fremont expansion from 1 GW to 2 GW annual production run-rate by year-end 2026.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "f9393f439b60a3ceacc748538f0cf0f15901dcf9f182b286e2f49164898bfdad"
+    },
+    {
+      "source": "Bloom Energy July 2026 accounting and scandium response Form 8-K",
+      "claim": "Bloom rejected third-party accounting and scandium-supply claims and stated that its supply is not China-dependent. The review preserves this as the issuer's response rather than treating the dispute as independently resolved.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026047734/be-20260709.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "22baab177a0d4246f10738b6fa433c1a34022781aa3f22497a27a990a5bffa6e"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "The 4 August bullish MACD crossover followed a 15.4% decline from the 7 July close to USD 228.11. The current identity-matched 5 August mark is USD 234.3300018310547, still 13.1% below 7 July, with RSI 51.85, price below the 50-day average, and USD/EUR at 0.8676000237464905. The transition is stabilization rather than a fundamental entry signal.",
+      "observed_at": "2026-08-06T17:56:07Z",
+      "source_hash": "823b7d2b06cdd979853992ca5cdb1faf20816f49c01de431c9d83e1bb4ce8cfa"
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Deterministic normalization derived USD 187.50 probability-weighted fair value, -19.9846% expected return, -14.9885% confidence-adjusted expected return, -23.1853% base return and -61.5926% bear return. The assessment is complete but ineligible, with canonical rating Sell and portfolio action Avoid."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC3ZBP0MSA1D6GR3D2NDW7B.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v2.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v3.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v4.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_2025_10k_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_oracle_warrant_2026_8k_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_q1_2026_10q_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_q2_2026_results_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_scandium_response_2026_8k_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_3e597863f00753e8c65c.md"
+  ],
+  "operations_created": ["01KZC3ZBP0MSA1D6GR3D2NDW7B"],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Bloom Energy's contracted Oracle deployment, record Q2 growth, margin expansion and positive operating cash flow validate onsite AI power demand, but USD 90/USD 180/USD 300 scenarios imply USD 187.50 weighted value versus USD 234.33. Customer concentration, capacity execution, natural-gas policy and dilution reinforce Sell / Avoid; the bullish MACD crossover is stabilization, not a paper-trade signal."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_3e597863f00753e8c65c",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_oracle_warrant_2026_8k_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_2025_10k_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_scandium_response_2026_8k_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row was running under local-20260806T175531Z with the immutable BE/XNYS/USD/equity identity, exactly the controller and security-research skills, a valid payload and no injection flags.",
+      "The mandatory audited security-context command succeeded before assessment state was read and established no prior assessment, page, relationship, strategy or successful result.",
+      "Five current primary sources were registered before assessment upsert. Immutable rejected assessment requests were retained, and a uniquely named canonical correction succeeded without editing or reusing any invoked request artifact.",
+      "Assessment assessment_8fa467e61500541e1995 is schema version 2, links this operation and expected result path, retains the updated page hash, uses fresh identity-matched price and FX state, and references every registered source in sorted order.",
+      "Exactly one matching idea-research follow-up was created as 01KZC3ZBP0MSA1D6GR3D2NDW7B, depends on this security operation, and points to this operation's expected result path. No strategy was justified because the full strategy gate fails.",
+      "Strict schema validation, queue validation, strict wiki lint and strict integrity passed. Allocation readiness remains false only for pre-existing repository-wide stale or missing relationship work; Bloom's assessment is complete and explicitly ineligible.",
+      "The command audit records exactly the seventeen canonical project CLI invocations listed in commands_run. No allocation target/history, order, fill, execution, cash, portfolio, performance or accounting-ledger path changed."
+    ]
+  }
+}

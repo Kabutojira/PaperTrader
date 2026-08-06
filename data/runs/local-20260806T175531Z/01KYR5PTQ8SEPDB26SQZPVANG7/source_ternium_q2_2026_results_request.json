@@ -1,0 +1,18 @@
+{
+  "source_id": "source_ternium_q2_2026_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm",
+  "source_type": "filing",
+  "title": "Ternium second-quarter and first-half 2026 results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b0674fb4c0ddedccac1055846296f19764ace7bf34011673ab8dee7a56a9d6c2",
+  "related_entity_ids": "idea_nearshoring_friendshoring_manufacturing|security_2c779e81c27b78c556bb",
+  "checked_at": "2026-08-06T18:12:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 adjusted EBITDA was USD 717 million at a 17% margin, with USD 344 million of equity-holder net income.",
+  "summary": "The SEC-filed issuer release supplies current shipments, revenue, EBITDA, attributable earnings, cash flow, capex, net debt, Pesquería progress and Q3 outlook.",
+  "run_id": "local-20260806T175531Z"
+}

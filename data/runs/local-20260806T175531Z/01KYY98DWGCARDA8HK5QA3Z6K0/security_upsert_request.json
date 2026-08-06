@@ -1,0 +1,23 @@
+{
+  "security_id": "security_204be2a44063993de1a8",
+  "issuer_id": "issuer_64fbfb8d9695d940c4bb",
+  "company_name": "Microsoft Corporation",
+  "instrument_name": "Microsoft Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "MSFT",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "MSFT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the earnings-driven repricing; persistent overbought momentum remains adverse entry timing without a newer fundamental catalyst.",
+  "research_summary": "Fiscal 2026 cloud and AI evidence remains exceptional, but USD 487.46 leaves only 2.6% base upside, weak payoff asymmetry and adverse overbought timing.",
+  "research_page": "data/wiki/securities/security_204be2a44063993de1a8.md",
+  "last_research_at": "2026-08-06T18:51:54Z",
+  "next_review_at": "2026-08-20T18:51:54Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+}

@@ -1,0 +1,98 @@
+{
+  "operation_id": "01KZ8BGD9849XE46VNEK55NX49",
+  "status": "succeeded",
+  "summary": "Completed one bounded Nidec quick check for the merged Bollinger-above-upper and repeated volume alerts. NIB.F rose 7.25% over the current 20-session period, but the Frankfurt line reported only 660 shares on each alert-volume day. Official evidence absent from the August 1 baseline materially changed the record: an April final investigation confirmed widespread accounting misconduct and provisionally quantified cumulative reductions of JPY 166.4 billion to operating profit and JPY 160.7 billion to period profit through fiscal Q1 2025, while June preliminary fiscal-year figures explicitly excluded corrections and unresolved quality and customs impacts. The annual filing remains due September 30, so valuation remains unsupported and the assessment remains Unrated / Watch and allocation-ineligible. Created exactly one dependent full review, 01KZC7H968FVJSE93MAANZBZJ5. No strategy, signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Nidec final third-party accounting investigation and company response",
+      "claim": "The completed independent investigation identified widespread improper accounting. Nidec quantified cumulative negative effects through fiscal Q1 2025 of JPY 166.4 billion on operating profit and JPY 160.7 billion on period profit, before possible additional impairment, depreciation and tax effects, and separately estimated USD 69.7 million of U.S. customs duties and interest through September 2025.",
+      "url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0417-01/260417-01en.pdf",
+      "observed_at": "2026-08-06T19:00:14Z",
+      "source_hash": "401015bc696bb03d721c78c4927b01762e4ccb6ec51d64110a802a59254705a5"
+    },
+    {
+      "source": "Nidec preliminary fiscal-2025 figures and contemplated filing extension",
+      "claim": "Nidec reported preliminary sales of JPY 2.700 trillion, cash of JPY 850 billion, interest-bearing debt of JPY 1.110 trillion and net debt of JPY 260 billion at March 31, 2026. The release explicitly excludes accounting corrections and the financial effects of the quality and customs investigations, so it cannot support scenario valuation.",
+      "url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0616-01/260616-01en.pdf",
+      "observed_at": "2026-08-06T19:00:14Z",
+      "source_hash": "4305d48f23d8fb3058c5d5daa97503c88e1e79e05c5afc052ed69783a1307a7e"
+    },
+    {
+      "source": "Nidec annual-filing extension and quality-investigation releases",
+      "claim": "The audited annual securities report remains due by September 30, 2026, while the external quality investigation is expected to complete by the end of August and still has no quantified financial impact. Both official files retained their prior hashes at this check.",
+      "url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0630-01/260630-01en.pdf",
+      "observed_at": "2026-08-06T19:00:14Z",
+      "source_hash": "419a3f3ea90c16b804a9dea3e0e60b2a1a91dfda84c3a1b7575d774b66736a25"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "NIB.F closed at EUR 14.817999839782715 on August 6, up 7.25246% over 20 sessions and down 1.37114% for the day. RSI was 57.13, MACD remained above signal, and the volume z-score was 2.51, but absolute Frankfurt volume was only 660 shares. The alerts are risk and unconfirmed technical movement, not an entry condition.",
+      "observed_at": "2026-08-06T17:56:07Z",
+      "source_hash": "f003db0edf8862961d04217728fb8cb28125ea637bca8696fff4d041fecc4d50"
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Assessment assessment_920298927fe64e5e43f4 is the sole immutable version for this operation and links its predecessor, current page hash, fresh EUR mark and five current source records. Deterministic normalization retained unsupported research, Unrated / Watch, quality score 44 and allocation ineligibility with accounting uncertainty, insufficient liquidity and unsupported valuation as exact hard blockers.",
+      "observed_at": "2026-08-06T19:07:19Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC7H968FVJSE93MAANZBZJ5.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/enqueue_full_research_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_2026_accounting_final_report_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_2026_quality_investigation_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_fy2026_filing_extension_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_fy2026_preliminary_figures_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_h1_fy2025_financials_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_3853e54c619d597dcaa1.md"
+  ],
+  "operations_created": [
+    "01KZC7H968FVJSE93MAANZBZJ5"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Nidec's repeated technical alerts exposed a material evidence gap rather than a trade entry: a completed investigation had already confirmed widespread accounting misconduct and provisionally quantified JPY 166.4 billion of cumulative operating-profit reductions, while preliminary fiscal-year figures excluded corrections and unresolved quality and customs effects. NIB.F remains Unrated / Watch with unsupported valuation and thin Frankfurt liquidity; one dependent full review was queued and no paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_3853e54c619d597dcaa1",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_2026_accounting_final_report_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_2026_quality_investigation_refresh_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_fy2026_filing_extension_refresh_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_fy2026_preliminary_figures_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_h1_fy2025_financials_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_3853e54c619d597dcaa1",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row is the sole routed running operation, claimed by local-20260806T175531Z with the immutable NIB.F/XFRA/EUR/equity identity and a validated merged-alert payload.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYPB1Y5R4NFAMSPZZX3YAS1E succeeded for the same security within ten days.",
+      "Verified all three merged alert packets and both source-price hashes against canonical market state, including the August 6 EUR 14.818 mark and 660-share volume.",
+      "Downloaded and hashed the issuer's current official files, registered two newly reconciled sources and refreshed the three retained sources before assessment upsert; no source body was committed.",
+      "Confirmed assessment assessment_920298927fe64e5e43f4 is the sole immutable schema-v2 version for this operation, links its predecessor and expected result path, matches the maintained page hash and deterministically retains Unrated / Watch unsupported state.",
+      "Confirmed exactly one dependent security-research operation, 01KZC7H968FVJSE93MAANZBZJ5, carries this quick-check identity, all merged alert causes and hashes, exact market period and the material primary-evidence gate change.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation returned OK.",
+      "Allocation readiness remains false only for eighteen pre-existing repository-wide missing, stale or unreconciled relationship conditions; Nidec itself remains explicitly ineligible and has no relationship.",
+      "command_audit.json contains exactly the sixteen canonical PaperTrader CLI invocations listed in commands_run; all operation-specific and structural checks passed, with only the documented repository-wide allocation-readiness command returning nonzero.",
+      "No strategy, signal, allocation target/history, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

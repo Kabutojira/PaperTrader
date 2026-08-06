@@ -1,0 +1,18 @@
+{
+  "source_id": "source_be_oracle_warrant_2026_8k_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026024896/be-20260413.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026024896/be-20260413.htm",
+  "source_type": "filing",
+  "title": "Bloom Energy Oracle warrant Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "cfb0fbb860edf0c05782114633c85a6187a62c658fadd28d0c057f9acd83900c",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_3e597863f00753e8c65c",
+  "checked_at": "2026-08-06T18:00:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Bloom issued Oracle a fully vested warrant for up to 3,531,073 Class A shares at USD 113.28 per share.",
+  "summary": "The SEC filing verifies the Oracle-linked equity dilution terms associated with the onsite-power partnership.",
+  "run_id": "local-20260806T175531Z"
+}

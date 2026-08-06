@@ -1,0 +1,27 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_solar_storage_grid_flexibility_reset",
+  "dedupe_key": "idea_research:idea_solar_storage_grid_flexibility_reset:security-result:01KZC5YVX8EY4YHH1S06VVHT5T",
+  "prompt": "Refresh the solar, storage and grid-flexibility idea from Fluence's completed fiscal Q3 review, including candidate disposition, thesis, catalysts, risks, gates, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "seed_claim": "Fluence's record order intake and 12.6 GW storage backlog validate direct grid-storage demand, but 5.1% Q3 gross margin, concentrated revenue, rising inventory, cash use and reduced guidance show that deployment is not yet creating durable shareholder economics; USD 4.59/USD 11.09/USD 20.84 scenarios leave FLNC at Sell / Avoid.",
+    "security_id": "security_a9eb9838940ef5ceaa0c",
+    "security_research_operation_id": "01KZC5YVX8EY4YHH1S06VVHT5T",
+    "security_research_result_path": "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/agent_result.json"
+  },
+  "source": "security_research:01KZC5YVX8EY4YHH1S06VVHT5T",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZC5YVX8EY4YHH1S06VVHT5T"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/relationships/relationship_solar_storage_grid_flnc.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "max_attempts": 3
+}

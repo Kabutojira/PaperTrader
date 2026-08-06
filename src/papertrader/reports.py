@@ -419,6 +419,7 @@ def _homepage_suggestion_lines(repository_root: Path) -> list[str]:
         if row["terminal_status"] in {"succeeded", "skipped"} and row["result_summary"].strip()
     ]
     history.sort(key=lambda row: (row["completed_at"], row["operation_id"]), reverse=True)
+    resolver = PublicEntityResolver(repository_root)
     wiki_root, securities = _security_references(repository_root)
     lines = ["### Latest suggestions and research conclusions", ""]
     for row in history[:HOME_SUGGESTION_LIMIT]:
@@ -430,7 +431,7 @@ def _homepage_suggestion_lines(repository_root: Path) -> list[str]:
         )
         operation = _markdown_text(row["operation_type"].replace("_", " "))
         completed = _markdown_text(row["completed_at"])
-        summary = _markdown_text(_summary_excerpt(row["result_summary"]))
+        summary = _markdown_text(_summary_excerpt(resolver.human_label(row["result_summary"])))
         lines.append(f"- **{completed} — {operation} for {entity}:** {summary}")
     if len(lines) == 2:
         lines.append("No completed research suggestions are available yet.")
@@ -886,7 +887,7 @@ def generate_daily_report(
         "",
         f"# PaperTrader daily report — {day.isoformat()}",
         "",
-        *investor_report_sections(snapshot, research_decisions),
+        *investor_report_sections(repository_root, snapshot, research_decisions),
         "",
         "## 6. Research changes",
         "",

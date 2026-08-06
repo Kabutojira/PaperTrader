@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fcx_sec_submissions_20260806",
+  "url": "https://data.sec.gov/submissions/CIK0000831259.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000831259.json",
+  "source_type": "regulator_index",
+  "title": "Freeport-McMoRan SEC submissions index checked 2026-08-06",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "14a1fbe10f532b565b73c5a96592f94a14ef1f5d43c00545c3114b51e118ec9a",
+  "related_entity_ids": "idea_critical_minerals_copper|security_2dbe878dfc899d7ee867",
+  "checked_at": "2026-08-06T19:16:48Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Only Forms 4 and 144 followed the July 23 Q2 results filing through August 5.",
+  "summary": "The SEC submissions index contains insider ownership Forms 4 dated August 3 and 5 and planned-sale Forms 144 dated July 30 and August 5, but no issuer operating filing after the July 23 Q2 results through the alert market date. Those notices do not change the maintained operating assumptions.",
+  "run_id": "local-20260806T175531Z"
+}

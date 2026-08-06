@@ -1,0 +1,23 @@
+{
+  "security_id": "security_3853e54c619d597dcaa1",
+  "issuer_id": "issuer_ce197b18fc3fa3d699e7",
+  "company_name": "Nidec Corporation",
+  "instrument_name": "Nidec Corporation Frankfurt ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "NIB.F",
+  "exchange_code": "FRA",
+  "venue_mic": "XFRA",
+  "provider_symbol": "NIB.F",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "JP",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Repeated August price and volume alerts plus newly reconciled confirmed accounting evidence require a dependent full review.",
+  "research_summary": "Motor and data-centre exposure persists, but confirmed accounting misconduct, unaudited preliminary figures, unresolved quality impacts and thin Frankfurt liquidity make valuation unsupported.",
+  "research_page": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
+  "last_research_at": "2026-08-06T19:00:14Z",
+  "next_review_at": "2026-08-13T19:00:14Z",
+  "source": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0417-01/260417-01en.pdf"
+}

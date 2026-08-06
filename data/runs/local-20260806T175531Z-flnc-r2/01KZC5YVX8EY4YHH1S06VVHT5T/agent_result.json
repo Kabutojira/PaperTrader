@@ -1,0 +1,81 @@
+{
+  "operation_id": "01KZC5YVX8EY4YHH1S06VVHT5T",
+  "status": "succeeded",
+  "summary": "Completed the full Fluence fiscal Q3 review under an isolated retry run so the immutable assessment links unambiguously. Record order intake, 12.6 GW storage backlog and data-centre awards confirm high grid-storage demand sensitivity, but 5.1% quarterly gross margin, 48% customer concentration, a 72% inventory increase, USD 366.5 million nine-month operating cash use and reduced guidance show fragile shareholder economics. Exact filing inputs refine the scenarios to USD 4.59/USD 11.09/USD 20.84 and USD 10.2775 weighted value against the USD 14.23 mark. The canonical result remains complete but ineligible Sell / Avoid; no strategy or paper trade was created. Exactly one dependent solar-storage idea refresh, 01KZC6GFCGAK5MV2ZGPDFNBCAS, was enqueued.",
+  "evidence": [
+    {
+      "source": "Fluence Energy fiscal Q3 2026 Form 10-Q",
+      "claim": "The filing reports 143.164 million Class A and 41.433 million Class B-1 shares at July 31, USD 339.3 million cash and equivalents, USD 392.2 million convertible notes, USD 783.0 million inventory, USD 328.2 million unbilled receivables and 48% top-three-customer concentration. Storage deployed reached 7.4 GW and contracted backlog 12.6 GW.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000029/flnc-20260630.htm",
+      "observed_at": "2026-08-06T18:47:30Z",
+      "source_hash": "c253c7df28a7519d288ebf4609c82524d01b9f332d1f0b3796a462d20245c573"
+    },
+    {
+      "source": "Fluence Energy fiscal Q3 2026 earnings release filed with the SEC",
+      "claim": "Fluence reported USD 649.8 million quarterly revenue, 5.1% GAAP gross margin, a USD 44.3 million net loss, negative USD 29.3 million adjusted EBITDA, more than USD 1.44 billion order intake and USD 6.4 billion backlog. About USD 400 million of deliveries moved into fiscal 2027 and fiscal-2026 adjusted-EBITDA guidance fell around a negative midpoint.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm",
+      "observed_at": "2026-08-06T18:47:30Z",
+      "source_hash": "6cc433780144bb7a54a89dce0da186c78e012ca943c6806a54a6142da59e89c4"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "FLNC closed at USD 14.229999542236328 on August 5 on 17,720,600 shares, and the current USD/EUR rate is 0.8676000237464905. The merged bullish-MACD and volume alerts are information-heavy timing around the filing rather than a standalone entry signal.",
+      "observed_at": "2026-08-06T17:56:07Z",
+      "source_hash": "ad43e32fa91c0322b349d2d81f9a1aef61274f4c6c3c06dc59aa84bcca88e4ed"
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Assessment assessment_c43738c5ccfaaeba240a is the sole immutable version for this retry and links predecessor assessment_089c6bbe3ad7d1b821a3, the current page hash, exact source operation and retry result path. Deterministic normalization derived USD 10.2775 weighted value, negative 27.7758% expected return, negative 20.8319% confidence-adjusted expected return and negative 22.0661% base return, producing Sell / Avoid."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC6GFCGAK5MV2ZGPDFNBCAS.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_10q_refresh_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_earnings_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [
+    "01KZC6GFCGAK5MV2ZGPDFNBCAS"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Fluence's full fiscal Q3 review confirms record storage demand but fragile economics: 5.1% gross margin, 48% customer concentration, sharply higher inventory, USD 366.5 million nine-month operating cash use and reduced guidance outweigh 12.6 GW storage backlog. USD 4.59/USD 11.09/USD 20.84 scenarios imply USD 10.2775 weighted value versus USD 14.23, so FLNC remains Sell / Avoid with no paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_a9eb9838940ef5ceaa0c",
+    "papertrader research source record --request data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_earnings_refresh_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_10q_refresh_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict --prepared-daily-cycle-id local-20260806T175531Z",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_a9eb9838940ef5ceaa0c",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The isolated retry run claimed exactly the same immutable full-review operation and removed the same-run assessment-source ambiguity without changing scope.",
+      "The mandatory audited security-context command succeeded before assessment-state reads and established the quick-check assessment as the exact predecessor.",
+      "Both current SEC documents were rechecked with unchanged exact hashes and registered before assessment upsert; the maintained page already contained the complete full-review change summary from the audited first attempt.",
+      "Confirmed assessment assessment_c43738c5ccfaaeba240a is the sole immutable assessment version for this retry, links the predecessor, current page hash, source operation and expected retry result path, uses fresh identity-matched price and FX state, and deterministically derives Sell / Avoid.",
+      "Confirmed exactly one matching idea-research follow-up, 01KZC6GFCGAK5MV2ZGPDFNBCAS, depends on this security operation and carries the required idea ID, seed claim, security ID, source operation and expected retry result path.",
+      "Strict schema validation, queue validation, strict wiki lint, prepared-cycle strict integrity and strict portfolio reconciliation returned OK.",
+      "Allocation readiness remains false only for pre-existing repository-wide missing, stale or unreconciled relationship work; Fluence's accepted relationship is current and this assessment is explicitly ineligible.",
+      "command_audit.json contains exactly the thirteen canonical PaperTrader CLI invocations listed in commands_run, with only the documented repository-wide allocation-readiness command returning nonzero.",
+      "No strategy, signal, allocation target/history, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page changed in the retry."
+    ]
+  }
+}

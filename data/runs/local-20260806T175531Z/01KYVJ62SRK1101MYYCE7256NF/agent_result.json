@@ -1,0 +1,88 @@
+{
+  "operation_id": "01KYVJ62SRK1101MYYCE7256NF",
+  "status": "succeeded",
+  "summary": "Completed the bounded Sigma Lithium quick check against the merged 30 July bullish-MACD and 4 August bearish moving-average alerts and the new 5 August SEC filing. The filing reiterates 35,000 tonnes of Q2 production and schedules full Q2 accounts for 14 August, but supplies no new cash, debt, receivable, control, funding, cash-conversion or environmental-settlement evidence. The USD 10.55 mark, neutral RSI, positive short-horizon MACD and negative long-horizon moving-average crossover are mixed rebound volatility. Accounting, solvency and unsupported-valuation blockers remain, yielding Unrated / Avoid. No material decision gate changed, so no premature full security review was enqueued.",
+  "evidence": [
+    {
+      "source": "Sigma Lithium August 2026 Q2-results schedule and production update",
+      "claim": "The SEC-filed release schedules Q2 results for 14 August 2026 and reiterates Q2 production of 35,000 tonnes, 6% above guidance, and first-half production of 58,000 tonnes above target. It contains no new financial statements or evidence resolving the baseline liquidity, receivable, debt, control, funding or environmental gaps.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004055/ex99-1.htm",
+      "observed_at": "2026-08-06T18:19:13Z",
+      "source_hash": "dd09bba7d0541050f557ad040b8bbfe5bf96b0ff3a67559ed799ef9755d1ef07"
+    },
+    {
+      "source": "Sigma Lithium Q1 2026 management discussion and analysis",
+      "claim": "The retained baseline reports USD 3.9 million of March cash, USD 133.9 million of loans and export prepayment, USD 144.5 million of negative working capital, negative operating cash flow, a going-concern disclosure and material internal-control weaknesses.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003065/ex99-1.htm",
+      "observed_at": "2026-07-27T22:45:40Z",
+      "source_hash": "9fb06d6cd00cb27b07aeac6f04e8fecebeddfe13771baadfd32576c4a27656a9"
+    },
+    {
+      "source": "Sigma Lithium July 2026 production and environmental update",
+      "claim": "The retained update first established 35,000 tonnes of Q2 production and the unresolved Minas Gerais environmental proceeding; the August filing confirms production rather than changing the fundamental gate.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003854/ex99-1.htm",
+      "observed_at": "2026-07-27T22:45:40Z",
+      "source_hash": "81cd332f53f96f01fddd354b27ce7264c9aeaaa2aa610ec2596fd2cc894aaddd"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "The 30 July bullish MACD crossover followed a 19.58% decline from 1 July; the 4 August 50-day average crossing below the 200-day average followed a 5.93% decline from 7 July. The fresher 5 August close was USD 10.550000190734863, down 4.95% in one session, with RSI 45.05, MACD above signal, SMA50 USD 10.52 below SMA200 USD 12.53, and USD/EUR 0.8676000237464905. The payload's 7ea7c9d27f3f76dab5ef18744a2f08f03b0757efbe782c948850be9bb485fa31 source hash matches the merged 4 August packet."
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "The current schema-v2 assessment is unsupported, ineligible and watch tier, with quality score 50, low confidence, an accepted relationship, and exact accounting_uncertain, solvency_risk and valuation_unsupported blockers. Canonical rating is Unrated and portfolio action is Avoid."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request_v2.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request_v3.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/source_sgml_aug_2026_q2_schedule_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4627aea1bf7d8943d3d8.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Sigma Lithium's August filing reiterates its Q2 production beat and schedules full accounts for 14 August but does not resolve cash, debt, receivable, control, funding or valuation blockers. The mixed MACD and long-horizon moving-average alerts plus USD 10.55 mark are rebound volatility; Unrated / Avoid with no early full-review escalation."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/source_sgml_aug_2026_q2_schedule_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request_v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request_v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The operation binds exactly one immutable SGML/XNAS/USD/equity identity to the successful baseline operation 01KYHW57107AC3EW2ZRC9BZKMR, completed within ten days of quick-check enqueue.",
+      "The mandatory audited security-context receipt was consumed before assessment state, and final context confirms the current assessment, page hash d6616243826cec707e2cf37dc908a86c1860a092b39e9b7b293ebd66871a3062, accepted relationship and three retained sources.",
+      "The exact merged MACD and SMA alert causes were preserved. The current payload hash matches the 4 August packet, while the prior merged hash matches the 30 July packet.",
+      "The new August SEC exhibit was registered before assessment. Its bounded facts reiterate known production and define the pending Q2 catalyst without resolving or changing a decision-support gate, so the no-escalation decision complies with the quick-check skill.",
+      "The first assessment request was rejected for non-canonical soft gaps and retained immutably. The corrected request succeeded; a final immutable version then aligned the page wording and page hash with canonical Unrated / Avoid state.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed after the final assessment. Allocation readiness remains false only for pre-existing repository-wide relationship gaps; Sigma itself is unsupported and explicitly ineligible.",
+      "The command audit records exactly the nineteen canonical project CLI invocations listed in commands_run. No allocation, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger path changed."
+    ]
+  }
+}

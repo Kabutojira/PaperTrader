@@ -1,0 +1,78 @@
+{
+  "operation_id": "01KYY98DWGCARDA8HK5QA3Z6K0",
+  "status": "succeeded",
+  "summary": "Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.",
+  "evidence": [
+    {
+      "source": "Microsoft SEC filing index and retained fiscal 2026 Form 10-K",
+      "claim": "The SEC index through August 5 contains only insider-transaction and planned-sale forms after the July 29 annual report, not newer operating or financial evidence. The retained annual filing hash is unchanged and continues to support the cloud, earnings, cash-flow, balance-sheet and capital-commitment assumptions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "observed_at": "2026-08-06T18:51:54Z",
+      "source_hash": "4bcf2da2871acc19e32c5a62f36f6d83d6aae03cdc4aaa9a86a9a21ee8223f02"
+    },
+    {
+      "source": "Microsoft fiscal Q4 and FY2026 results",
+      "claim": "The SEC-hosted results release is unchanged and remains the latest material issuer result, preserving the fiscal Q4 cloud, Azure, adjusted-EPS and USD 678 billion commercial remaining-performance-obligation evidence.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+      "observed_at": "2026-08-06T18:51:54Z",
+      "source_hash": "03471d4dc122c24deace523de4130d53205a78de2ec11fc965764738bf97149a"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "MSFT reached USD 492.81 on August 4 after a 26.74% measured-period gain, then closed August 5 at USD 487.4599914550781 with RSI 76.0964 and an upper Bollinger band of USD 489.2256. USD/EUR was 0.8676000237464905. Persistent overbought momentum is adverse timing around the same earnings catalyst, not new fundamental evidence.",
+      "observed_at": "2026-08-06T17:56:07Z",
+      "source_hash": "16b5715e649d08ac342265302df87df4b8c3693771bce71323384e3a8eee94ba"
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Assessment assessment_5fc8247673b8f36a8976 is the sole immutable version for this operation, links its predecessor and current page hash, and derives 2.5725% expected return, 1.9294% confidence-adjusted return, 23.0706% bear downside and a USD 400 buy-below price. Base return, expected return, payoff, margin-of-safety and relationship gates fail, producing Hold / Watch."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/source_msft_fy2026_10k_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/source_msft_fy2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_204be2a44063993de1a8.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Microsoft's RSI-overbought condition strengthened without newer operating evidence. The USD 487.46 close leaves only 2.57% upside to the unchanged USD 500 base and weighted value versus 23.07% downside to the USD 375 bear case; Hold / Watch remains ineligible and no paper trade or full review was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_204be2a44063993de1a8",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/source_msft_fy2026_10k_refresh_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/source_msft_fy2026_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_204be2a44063993de1a8",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row is the sole routed running operation and the baseline succeeded for the same immutable MSFT/XNAS/USD/equity identity within ten days.",
+      "Consumed the mandatory audited security-context receipt before assessment-state reads and verified both merged RSI alert packets and source-price hashes.",
+      "Rechecked the current SEC filing index and both retained primary documents; no material operating filing superseded the baseline, and both exact document hashes are unchanged.",
+      "Updated the maintained page with a complete prior-review comparison covering evidence, price, assumptions, scenarios, thesis, catalysts, risks, gaps, rating and unchanged action.",
+      "Confirmed assessment assessment_5fc8247673b8f36a8976 is the sole immutable version for this operation, links the predecessor, current page hash and expected result path, and uses fresh identity-matched price and FX state.",
+      "The USD 400 buy zone was not reached, no catalyst or invalidation fired, no material primary evidence changed and the baseline still supports the decision, so no full security review was enqueued.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation returned OK.",
+      "Allocation readiness remains false only for pre-existing repository-wide relationship work; Microsoft itself has no accepted relationship and its current assessment is explicitly ineligible.",
+      "command_audit.json contains exactly the twelve canonical PaperTrader CLI invocations listed in commands_run, with only the documented repository-wide allocation-readiness command returning nonzero.",
+      "No strategy, signal, allocation target/history, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

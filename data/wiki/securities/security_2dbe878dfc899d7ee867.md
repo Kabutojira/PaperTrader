@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-30"
-provenance: "source_fcx_q2_2026_results_sec; source_fcx_sec_submissions_20260730; deterministic market cache"
+updated: "2026-08-06"
+provenance: "source_fcx_q2_2026_results_sec|source_fcx_sec_submissions_20260806|deterministic market cache"
 security_id: security_2dbe878dfc899d7ee867
 issuer_id: issuer_5076f0e0e1dd7cc8bca7
 confidence: medium
-next_review: "2026-08-29"
+next_review: "2026-08-20"
 ---
 
 # Freeport-McMoRan Inc. common stock
@@ -22,6 +22,20 @@ next_review: "2026-08-29"
 - Provider identity: `FCX` / `XNYS` / `USD` / equity
 
 This review links the verified instrument to [[ideas/idea_critical_minerals_copper]].
+
+## Decision
+
+**Sell / Avoid at USD 69.39; no full review or strategy.** FCX advanced 20.97% over the July
+8-August 5 alert period and strengthened above its upper Bollinger band. The SEC submissions index
+contains only insider Forms 4 and planned-sale notices after the July 23 results filing, so no new
+operating disclosure explains or validates the rerating. The same Q2 production, Grasberg recovery,
+Indonesian-rights and copper-price assumptions remain current.
+
+The required v2 cyclical valuation makes the unchanged economic conclusion explicit. USD
+32.64/USD 47.36/USD 65.12 bear/base/bull cases produce a USD 46.496 probability-weighted value,
+well below the current mark; even the bull case remains below market. The accepted structural-copper
+relationship remains current, but valuation, payoff asymmetry and timing fail. The move is a
+valuation and timing risk, not a new entry condition.
 
 ## Economics and thesis
 
@@ -53,32 +67,46 @@ common-share economics.
 Primary evidence: [SEC-filed Q2 2026 results exhibit](https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm),
 registered as `source_fcx_q2_2026_results_sec`.
 
-## 2026-07-29 volume review
+## August 4-5 above-band quick check
 
-The deterministic alert is valid. From 2026-06-30 through 2026-07-29, adjusted close fell 4.38%
-from USD 62.74 to USD 59.99. July 29 volume was 22.669 million shares, producing a 2.0004 volume
-z-score and a newly entered volume-anomaly state. The shares fell 2.68% that session. RSI was
-44.82, the close was below the 50-day and 200-day moving averages, and neither RSI nor Bollinger
-Bands generated a concurrent trigger. The source-price hash matches the operation payload.
+The merged alerts are valid. FCX closed at **USD 67.30** on August 4, entering above its upper
+Bollinger band, then strengthened to **USD 69.39** on August 5. The latest 20-session return is
+**20.97%**, five-session return **15.67%**, RSI **64.30**, and MACD histogram **0.8724**. The close
+is 2.56% above the USD 67.657 upper band. Volume was 17.110 million shares with a 0.713 z-score, so
+the current transition is price extension rather than another volume anomaly.
 
-The SEC submissions index showed no filing after the 2026-07-23 Q2 results filing through the
-alert's market date. The volume event therefore has no independently verified contemporaneous
-company filing as a causal explanation. It may reflect continued post-results repricing, copper
-sensitivity, or unrelated trading flow, but the evidence does not distinguish among them. Treat it
-as a **risk and monitoring signal**, not a standalone opportunity or trade catalyst.
+The alert packets retain hashes
+`20148936c2398c913c238be6bb07fdac8e83aed2ef01fe580354124fb4f64ea8` and
+`2a73bd71f08cdb23c9499ec33cd9b2f0304a12790e8d69154772efff69db482b`. The refreshed indicator
+calculation preserves the same August 5 mark and trigger under current price-cache hash
+`c4f5743cea60e8fb668f35caab456950cf99899720b0cb6c053e08962c62af57`.
+
+The August 6 SEC submissions index contains Forms 4 dated August 3 and 5 and Forms 144 dated July
+30 and August 5, but no issuer operating filing after the July 23 Q2 results. Those ownership and
+sale notices do not change production, valuation, catalysts or invalidation. The above-band move is
+therefore **valuation/timing risk and an unconfirmed rerating**, not a standalone opportunity.
 
 Filing recency evidence: [SEC company submissions index](https://data.sec.gov/submissions/CIK0000831259.json),
-registered as `source_fcx_sec_submissions_20260730`.
+registered as `source_fcx_sec_submissions_20260806`.
 
 ## Valuation, catalysts, and risks
 
-The deterministic 2026-07-29 close is USD 59.99. A bounded 12-month downside comparison annualizes
-reported Q2 EPS of USD 0.68 and applies 12 times earnings, producing USD 32.64, or 48.0% below the
-prior mark and 45.6% below the current mark. A base comparison annualizes adjusted Q2 EPS of USD
-0.74 and applies 16 times earnings, producing USD 47.36, or 21.1% below the current mark. These
-scenarios are deliberately simple rather than a
-precise intrinsic-value claim: they do not capitalize unapproved expansion options and retain a
-discount for peak copper pricing, Grasberg normalization, minority interests, and Indonesian terms.
+The selected repository template is `cyclical_commodity` with a `normalized_earnings` method. The
+bounded 12-month cases use only the SEC-filed Q2 earnings base and explicitly vary the multiple for
+copper, recovery and jurisdictional risk:
+
+- **Bear — USD 32.64, 30%:** annualized USD 0.68 reported Q2 EPS at 12x as copper normalizes,
+  Grasberg restoration slows and idle/restoration costs persist.
+- **Base — USD 47.36, 50%:** annualized USD 0.74 adjusted Q2 EPS at 16x as the stated Grasberg ramp
+  proceeds but production remains below normal and Indonesian/minority economics retain a discount.
+- **Bull — USD 65.12, 20%:** annualized USD 0.74 adjusted Q2 EPS at 22x as copper pricing stays
+  elevated, recovery executes safely, costs remain controlled and Indonesian rights advance.
+
+The weighted value is **USD 46.496**, implying a **33.0% expected loss** from USD 69.39. The base
+case implies **31.7% downside** and the bear case **53.0% downside**; even the bull case is about
+6.2% below the mark. These are deliberately bounded comparisons rather than a precise intrinsic-
+value claim. They do not capitalize unapproved expansion options and retain normalization,
+minority-interest, net-debt and jurisdictional risk.
 
 Catalysts are safe Grasberg restoration, Americas leach gains, El Abra progress, final Indonesian
 rights, and cash generation after capex. Invalidate if ramp delays recur, unit costs rise, operating
@@ -87,13 +115,34 @@ than production recovers.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, and comparable eligibility **baseline**. Reserve life,
-current cash generation, balance-sheet capacity, and market liquidity support comparison, but both
-bounded values remain below the mark. Review by **2026-08-29**, or sooner for a material Grasberg,
-Indonesian-license, cost, capital-allocation, or copper-price change. No conviction strategy is
-proposed because valuation and timing fail the full gate. The accepted copper-scarcity relationship
-requires a separate sequential idea refresh so this alert disposition can be absorbed without
-editing the idea here.
+Status: **watching**, confidence **medium**, canonical rating **Sell**, and portfolio action
+**Avoid**. Reserve life, current cash generation, balance-sheet capacity and market liquidity
+support comparison, but all weighted, base and bear economic gates fail despite the accepted
+copper-scarcity relationship. Review by **2026-08-20**, or sooner for a material Grasberg,
+Indonesian-license, cost, capital-allocation or copper-price change. No full security review,
+strategy or signal is justified because no primary operating assumption changed and valuation and
+timing deteriorated.
+
+## Changes since prior review
+
+- **Evidence:** the Q2 exhibit is byte-for-byte unchanged. The refreshed SEC index adds only Forms
+  4 and 144 after July 23, not an operating filing or catalyst.
+- **Market state:** the prior USD 59.99 volume-risk mark rose to USD 69.39; the 20-session return is
+  now 20.97% and the upper-band transition strengthened. This increases valuation/timing risk.
+- **Valuation:** the legacy USD 32.64 downside and USD 47.36 base comparisons are preserved as v2
+  bear/base cases. A bounded USD 65.12 bull case and 30%/50%/20% probabilities complete the
+  required cyclical scenario set. All three cases remain below market.
+- **Thesis and contrary evidence:** structural copper sensitivity, reserve optionality and recovery
+  progress remain; disrupted Grasberg volumes, normalization, Indonesian terms and minority/capex
+  economics remain contrary evidence. No thesis gate changed.
+- **Catalysts, risks, blockers and gaps:** all catalysts and invalidations remain. No hard blocker is
+  needed because valuation is supported, but confidence, concentration, cyclicality, margin of
+  safety, timing and valuation gaps remain exact.
+- **Rating and action:** the legacy non-actionable baseline is normalized to explicit Sell / Avoid,
+  complete but allocation-ineligible. This makes the same economic conclusion machine-readable.
+- **Escalation:** no full review is warranted because no valuation assumption, catalyst,
+  invalidation or material primary evidence changed. The existing accepted idea relationship remains
+  current, and this quick check does not edit or requeue the idea.
 
 See [[research-catalog|the research catalog]] for the maintained security set and
 [[ideas/idea_critical_minerals_copper|the linked copper thesis]] for the causal context.

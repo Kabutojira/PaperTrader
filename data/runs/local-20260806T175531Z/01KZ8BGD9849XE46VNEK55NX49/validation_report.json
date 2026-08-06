@@ -1,0 +1,28 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC7H968FVJSE93MAANZBZJ5.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/enqueue_full_research_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_2026_accounting_final_report_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_2026_quality_investigation_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_fy2026_filing_extension_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_fy2026_preliminary_figures_request.json",
+    "data/runs/local-20260806T175531Z/01KZ8BGD9849XE46VNEK55NX49/source_nidec_h1_fy2025_financials_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_3853e54c619d597dcaa1.md"
+  ],
+  "completed_at": "2026-08-06T19:08:43Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZ8BGD9849XE46VNEK55NX49",
+  "passed": true,
+  "run_id": "local-20260806T175531Z",
+  "validation_version": 1
+}

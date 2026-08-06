@@ -2180,6 +2180,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T153546Z`.
 
+- Published investor decision snapshot `decision_980a06d6d0cb6b3fe1ff`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `local-20260806T175531Z`.
+
 ## 2026-08-06 — security review — RTX Corporation common stock
 
 - Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its unchanged Q2 Form 10-Q,
@@ -2294,3 +2298,109 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - USD 330/USD 532/USD 771 free-cash-flow-yield scenarios imply about USD 541 weighted value against
   the USD 482.23 mark. Bear/base payoff, margin of safety, medium confidence, bearish timing and the
   absent accepted relationship require Watch / no action; no strategy or follow-up was created.
+
+## 2026-08-06 — security review — Bloom Energy Corporation Class A common stock
+
+- Created [[securities/security_3e597863f00753e8c65c|Bloom Energy]] from its Q1 Form 10-Q, Q2
+  results, Oracle agreement filing, annual report and July supply-chain response.
+- Record AI-linked growth, margin expansion and positive operating cash flow support the rapid
+  onsite-power thesis, while customer concentration, manufacturing scale-up, natural-gas and carbon
+  policy, service execution, competing generation, convertibles and warrant dilution remain material.
+- USD 90/USD 180/USD 300 earnings-multiple scenarios imply USD 187.50 weighted value against the USD
+  234.33 mark. The 4 August bullish MACD crossover is stabilization after a 15.4% decline from 7 July,
+  not a fundamental entry signal.
+- Bloom moves from unassessed watchlist status to Sell / Avoid. No strategy, signal, order or
+  accounting change was justified; one dependent AI-power idea refresh is required.
+
+## 2026-08-06 — security review — Ternium S.A. ADS
+
+- Updated [[securities/security_2c779e81c27b78c556bb|Ternium]] from its SEC-filed Q2 results.
+  Steel shipments, Mexican demand, margins and attributable earnings improved, and Pesquería was
+  described as on schedule; project-specific utilization, qualification and returns remain unproven.
+- Operating cash flow remained below capex after a large working-capital build, and Ternium moved
+  from modest net cash to USD 112 million net debt, preserving cyclical and buildout risk.
+- USD 28/USD 50/USD 78 normalized-earnings scenarios imply USD 51.50 weighted value against the USD
+  53.71 mark. The merged upper-band, overbought-RSI and volume alerts followed a 25.23% measured-
+  period rally and are adverse entry timing, not an independent fundamental signal.
+- Ternium remains Hold / Watch. No strategy, signal, order or accounting change was justified; one
+  dependent nearshoring-idea refresh is required.
+
+## 2026-08-06 — quick check — Sigma Lithium Corporation common shares
+
+- Rechecked [[securities/security_4627aea1bf7d8943d3d8|Sigma Lithium]] against its 5 August SEC
+  filing and the merged 30 July bullish-MACD and 4 August bearish moving-average alerts.
+- The filing reiterates 35,000 tonnes of Q2 production and schedules full Q2 accounts for 14 August;
+  it does not update cash, debt, receivables, controls, funding, cash conversion or environmental
+  settlement, so the accounting, solvency and unsupported-valuation blockers remain unchanged.
+- The USD 10.55 close, neutral RSI, positive short-horizon MACD and negative long-horizon moving-
+  average crossover describe mixed rebound volatility, not an entry condition or invalidation.
+- No material decision gate changed. Sigma remains Unrated / Avoid, and no premature full security
+  review, strategy, signal, order or accounting change was created before the scheduled Q2 report.
+
+## 2026-08-06 — quick check — Fluence Energy, Inc. Class A common stock
+
+- Rechecked [[securities/security_a9eb9838940ef5ceaa0c|Fluence Energy]] after merged bullish-MACD
+  and volume alerts against its newly filed fiscal Q3 results and Form 10-Q.
+- Record order intake, USD 6.4 billion backlog and data-centre awards strengthen demand evidence,
+  but the 5.1% gross margin, USD 44.3 million quarterly net loss, USD 366.5 million nine-month
+  operating cash use and materially reduced fiscal-2026 guidance weaken execution evidence.
+- USD 4.60/USD 11.10/USD 20.90 pre-profit revenue scenarios imply about USD 10.30 weighted value
+  against the USD 14.23 mark. Fluence moves to Sell / Avoid, and exactly one dependent full review
+  is required; no strategy, signal, paper order, allocation or accounting state changed.
+
+## 2026-08-06 — full security review — Fluence Energy, Inc. Class A common stock
+
+- Completed the dependent full review of [[securities/security_a9eb9838940ef5ceaa0c|Fluence
+  Energy]] from the complete fiscal Q3 filing, validating exact economic interests, cash, debt,
+  inventory, receivables, customer concentration and operating metrics.
+- Storage backlog grew to 12.6 GW and total backlog to USD 6.4 billion, but top-three-customer
+  concentration reached 48%, inventory rose 72% since September, quarterly gross margin fell to
+  5.1%, and nine-month operating cash use reached USD 366.5 million.
+- Refined USD 4.59/USD 11.09/USD 20.84 scenarios imply USD 10.278 weighted value against the
+  USD 14.23 mark. Sell / Avoid remains complete but ineligible; no strategy or paper trade was
+  created, and one dependent solar-storage idea refresh is required.
+
+## 2026-08-06 — quick check — Microsoft Corporation common stock
+
+- Rechecked [[securities/security_204be2a44063993de1a8|Microsoft]] after its RSI-overbought
+  condition strengthened through 4 August. No newer material operating filing followed the fiscal
+  2026 annual report; the move remains extension around the same earnings catalyst.
+- The 5 August USD 487.46 close and RSI of 76.10 reduce the unchanged USD 500 base and weighted value
+  to only 2.6% upside, while USD 375 bear value implies 23.1% downside and the USD 400 buy zone remains
+  unreached.
+- Hold / Watch remains complete but ineligible. No full review, strategy, signal, paper order,
+  allocation or accounting change was justified.
+
+## 2026-08-06 — quick check — Nidec Corporation Frankfurt ordinary shares
+
+- Rechecked [[securities/security_3853e54c619d597dcaa1|Nidec]] after an above-band transition and
+  repeated volume anomalies. NIB.F rose 7.25% over the current 20-session period, but reported
+  Frankfurt volume remained only 660 shares on each alert-volume day.
+- Reconciled official evidence absent from the August 1 baseline: an April final investigation
+  confirmed widespread accounting misconduct and provisionally quantified a JPY 166.4 billion
+  cumulative operating-profit reduction, while June preliminary fiscal-year figures explicitly
+  excluded corrections and unresolved quality and customs effects.
+- Unrated / Watch remains unsupported and allocation-ineligible. Exactly one dependent full review
+  was required; no strategy, signal, paper order, allocation or accounting state changed.
+
+## 2026-08-06 — full review — Nidec Corporation Frankfurt ordinary shares
+
+- Completed the dependent full review of [[securities/security_3853e54c619d597dcaa1|Nidec]],
+  confirming that the accounting misconduct involved inventory valuation, impairment testing,
+  capitalized labor, reversed provisions, grant recognition and bad-debt allowances across operating
+  bases rather than one isolated adjustment.
+- Preliminary JPY 2.700 trillion sales and JPY 260 billion net debt exclude accounting corrections
+  and unresolved quality and customs impacts. They cannot establish normalized earnings, dependable
+  dilution or a scenario valuation before audited corrected accounts.
+- Unrated / Watch remains unsupported and allocation-ineligible with accounting, valuation and thin-
+  listing liquidity hard blockers. No linked idea, strategy or paper trade was created.
+
+## 2026-08-06 — quick check — Freeport-McMoRan Inc. common stock
+
+- Rechecked [[securities/security_2dbe878dfc899d7ee867|Freeport-McMoRan]] after its above-band
+  transition strengthened. FCX rose 20.97% over 20 sessions to USD 69.39, while the SEC index showed
+  only Forms 4 and 144 after the July 23 results and no new operating catalyst.
+- Migrated the legacy comparison to complete cyclical scenarios: USD 32.64/USD 47.36/USD 65.12
+  bear/base/bull cases imply USD 46.496 weighted value, with even the bull case below market.
+- Sell / Avoid is complete but allocation-ineligible. No full review, strategy, signal, paper order,
+  allocation or accounting change was justified.

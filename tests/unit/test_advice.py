@@ -18,6 +18,7 @@ from papertrader.advice import (
 from papertrader.config import Settings
 from papertrader.dedupe import build_dedupe_key
 from papertrader.execution import ensure_initial_capital, process_order_fill
+from papertrader.investor_pages import _public_snapshot
 from papertrader.issues import record_issue
 from papertrader.models import MarketBar, OrderLegSpec, ReferencePrice
 from papertrader.orders import create_paper_order, create_signal
@@ -424,6 +425,65 @@ def test_allocation_candidate_and_indicator_remain_non_actionable_research(
     assert snapshot.research_alerts[0].visible_label == "Research alert — not a trade signal"
     assert snapshot.research_alerts[0].ticker == "D00"
     assert snapshot.research_alerts[0].alert_type == "bollinger_above_upper"
+
+
+def test_public_snapshot_humanizes_research_alert_operation_identity(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _initialize(sandbox_repository, sandbox_settings, run_id="public-alert-fixture")
+    write_table(
+        sandbox_repository,
+        "securities",
+        [_security(research_page="data/wiki/securities/sec_00.md")],
+    )
+    write_table(sandbox_repository, "indicators", [_indicator()])
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="quick_check_research",
+        entity_type="security",
+        entity_id="sec_00",
+        dedupe_key=build_dedupe_key(
+            "quick_check_research",
+            "sec_00",
+            "public-alert-fixture",
+            NOW.date().isoformat(),
+        ),
+        prompt="Review the deterministic price alert.",
+        inputs={
+            "security_id": "sec_00",
+            "baseline_operation_id": deterministic_ulid(NOW - timedelta(days=1), "baseline"),
+            "baseline_result_path": "data/runs/baseline/result.json",
+            "baseline_completed_at": format_timestamp(NOW - timedelta(days=1)),
+            "trigger_types": ["bollinger_above_upper"],
+            "market_data_as_of": format_timestamp(NOW),
+            "market_data_date": NOW.date().isoformat(),
+            "period_start": (NOW - timedelta(days=20)).date().isoformat(),
+            "period_end": NOW.date().isoformat(),
+            "source_price_hash": "0" * 64,
+        },
+        source="test",
+        now=NOW,
+    )
+    assert created
+    active = read_table(sandbox_repository, "operations_todo")
+    active[0]["status"] = "blocked"
+    active[0]["last_error"] = f"Waiting for dependent operation {operation_id}."
+    write_table(sandbox_repository, "operations_todo", active)
+
+    snapshot = build_decision_snapshot(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="public-alert-fixture",
+        as_of=NOW,
+    )
+
+    assert operation_id in snapshot.research_alerts[0].research_conclusion
+    public_snapshot = _public_snapshot(sandbox_repository, snapshot)
+    conclusion = public_snapshot.research_alerts[0].research_conclusion
+    assert operation_id not in conclusion
+    assert "Quick check research for D00" in conclusion
 
 
 def test_active_signal_without_order_is_not_copy_ready_and_stale_signal_is_hidden(

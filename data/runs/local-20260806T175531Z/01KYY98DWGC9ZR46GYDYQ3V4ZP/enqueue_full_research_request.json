@@ -1,0 +1,55 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_a9eb9838940ef5ceaa0c",
+  "dedupe_key": "security_research:security_a9eb9838940ef5ceaa0c:q3-2026-guidance-and-execution-change:2026-08-06",
+  "prompt": "Fully reassess Fluence after fiscal Q3 production delays, margin deterioration, cash use, reduced fiscal-2026 guidance and record backlog materially changed the quick-check decision gates.",
+  "inputs": {
+    "security_id": "security_a9eb9838940ef5ceaa0c",
+    "quick_check_operation_id": "01KYY98DWGC9ZR46GYDYQ3V4ZP",
+    "baseline_operation_id": "01KYHW57103NJ31X4TRFP7SD3D",
+    "changed_gate": "material_q3_primary_evidence_changed_guidance_margin_cash_runway_and_baseline_valuation",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ],
+    "market_data_date": "2026-08-05",
+    "market_data_as_of": "2026-08-05T22:09:27Z",
+    "period_start": "2026-07-02",
+    "period_end": "2026-08-05",
+    "source_price_hash": "ad43e32fa91c0322b349d2d81f9a1aef61274f4c6c3c06dc59aa84bcca88e4ed",
+    "merged_source_price_hashes": [
+      "a352617a3ffb8716fd7cce9cc525c79a801fb8e720716579101f31b1285cf703",
+      "ad43e32fa91c0322b349d2d81f9a1aef61274f4c6c3c06dc59aa84bcca88e4ed"
+    ],
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal",
+        "source_ref": "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65.md"
+      },
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0.md"
+      },
+      {
+        "cause": "material_q3_primary_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KYY98DWGC9ZR46GYDYQ3V4ZP",
+  "priority": 98,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYY98DWGC9ZR46GYDYQ3V4ZP"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65.md",
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0.md",
+    "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm",
+    "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000029/flnc-20260630.htm"
+  ],
+  "max_attempts": 3
+}

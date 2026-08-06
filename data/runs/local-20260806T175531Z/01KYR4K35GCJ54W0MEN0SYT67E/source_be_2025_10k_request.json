@@ -1,0 +1,18 @@
+{
+  "source_id": "source_be_2025_10k_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026006516/be-20251231.htm",
+  "source_type": "filing",
+  "title": "Bloom Energy Corporation 2025 Form 10-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "f9393f439b60a3ceacc748538f0cf0f15901dcf9f182b286e2f49164898bfdad",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_3e597863f00753e8c65c",
+  "checked_at": "2026-08-06T18:00:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Bloom planned to expand Fremont annual production run-rate from 1 GW to 2 GW by the end of 2026.",
+  "summary": "The audited annual filing supplies technology, fuel, emissions, regulation, competition, service, capacity, capital and customer-financing risks.",
+  "run_id": "local-20260806T175531Z"
+}

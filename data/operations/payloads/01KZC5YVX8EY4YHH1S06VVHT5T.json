@@ -1,0 +1,47 @@
+{
+  "entity_id": "security_a9eb9838940ef5ceaa0c",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYHW57103NJ31X4TRFP7SD3D",
+    "changed_gate": "material_q3_primary_evidence_changed_guidance_margin_cash_runway_and_baseline_valuation",
+    "market_data_as_of": "2026-08-05T22:09:27Z",
+    "market_data_date": "2026-08-05",
+    "merged_source_price_hashes": [
+      "a352617a3ffb8716fd7cce9cc525c79a801fb8e720716579101f31b1285cf703",
+      "ad43e32fa91c0322b349d2d81f9a1aef61274f4c6c3c06dc59aa84bcca88e4ed"
+    ],
+    "period_end": "2026-08-05",
+    "period_start": "2026-07-02",
+    "quick_check_operation_id": "01KYY98DWGC9ZR46GYDYQ3V4ZP",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal",
+        "source_ref": "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65.md"
+      },
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0.md"
+      },
+      {
+        "cause": "material_q3_primary_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm"
+      }
+    ],
+    "security_id": "security_a9eb9838940ef5ceaa0c",
+    "source_price_hash": "ad43e32fa91c0322b349d2d81f9a1aef61274f4c6c3c06dc59aa84bcca88e4ed",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Fluence after fiscal Q3 production delays, margin deterioration, cash use, reduced fiscal-2026 guidance and record backlog materially changed the quick-check decision gates.",
+  "operation_id": "01KZC5YVX8EY4YHH1S06VVHT5T",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65.md",
+    "data/wiki/inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0.md",
+    "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm",
+    "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000029/flnc-20260630.htm"
+  ]
+}

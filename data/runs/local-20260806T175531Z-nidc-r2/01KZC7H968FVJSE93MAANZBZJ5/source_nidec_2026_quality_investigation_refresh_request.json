@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nidec_2026_quality_investigation",
+  "url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0513-02/260513-02en.pdf",
+  "canonical_url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0513-02/260513-02en.pdf",
+  "source_type": "issuer_release",
+  "title": "Notice Regarding Potential Quality Issues and Establishment of an Investigation Committee Composed of External Experts",
+  "publisher": "Nidec Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "7707fa5979aec4a16da5f12163305f71301cdb60b7c8dd33afba3ec2382a94b7",
+  "related_entity_ids": "security_3853e54c619d597dcaa1",
+  "checked_at": "2026-08-06T19:10:34Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The external quality investigation remains current and its financial impact unresolved.",
+  "summary": "The unchanged release continues to document group-wide potential quality issues, customer consultations and an external-expert investigation expected to complete by the end of August 2026; no quantified financial impact is available.",
+  "run_id": "local-20260806T175531Z-nidc-r2"
+}

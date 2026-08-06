@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KYVJ62SRK1101MYYCE7256NF",
+  "status": "succeeded",
+  "summary": "Completed the deterministic retry of Sigma Lithium's bounded quick check. The maintained page and registered August filing already capture that Q2 production was reiterated, full accounts are due 14 August, mixed alert horizons do not create an entry condition, and accounting, solvency and unsupported-valuation blockers remain. This retry appended exactly one schema-v2 assessment under its own run provenance, preserving the immutable history from the rejected first attempt. Canonical state is Unrated / Avoid, and no full security review, strategy or signal was created.",
+  "evidence": [
+    {
+      "source": "Sigma Lithium August 2026 Q2-results schedule and production update",
+      "claim": "The registered SEC exhibit schedules Q2 results for 14 August and reiterates 35,000 tonnes of Q2 production, without providing new financial evidence that resolves the named blockers.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004055/ex99-1.htm",
+      "observed_at": "2026-08-06T18:19:13Z",
+      "source_hash": "dd09bba7d0541050f557ad040b8bbfe5bf96b0ff3a67559ed799ef9755d1ef07"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "The current identity-matched mark is USD 10.550000190734863 with USD/EUR at 0.8676000237464905. The merged MACD and SMA alert evidence remains mixed rebound volatility rather than a changed valuation, catalyst or invalidation gate."
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Assessment assessment_6bc07dc1e88cfdf6de67 is the only immutable assessment version under run local-20260806T175531Z-r2. It retains page hash d6616243826cec707e2cf37dc908a86c1860a092b39e9b7b293ebd66871a3062, accepted relationship status, low confidence, quality score 50 and exact accounting_uncertain, solvency_risk and valuation_unsupported blockers; canonical rating is Unrated and portfolio action is Avoid."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260806T175531Z-r2/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request.json",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Sigma Lithium remains Unrated / Avoid: the August filing reiterates production and schedules Q2 accounts but does not resolve liquidity, control, funding or valuation blockers; mixed alert horizons do not justify escalation or a paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z-r2/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader integrity --strict --prepared-daily-cycle-id local-20260806T175531Z",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The retry claimed the same immutable quick-check operation on attempt two under isolated run provenance local-20260806T175531Z-r2 and read the complete prior assessment chain with the mandatory audited security-context command.",
+      "Exactly one immutable assessment version belongs to this retry run. It points to this retry's expected result path, matches the current page hash, uses the fresh identity-matched market and FX state and preserves the prior versions rather than deleting or replacing them.",
+      "The bounded conclusion and no-escalation decision remain supported: the August filing reiterates the known production result and Q2 reporting date without changing a valuation, buy-zone, catalyst, invalidation or decision-support gate.",
+      "Strict schema validation, queue validation, strict wiki lint, prepared-cycle strict integrity and strict portfolio reconciliation passed. The initial plain integrity invocation failed only because the publication freshness deferral belongs to the verified prepared daily cycle local-20260806T175531Z; the explicit prepared-cycle invocation passed.",
+      "Allocation readiness remains false only for pre-existing repository-wide relationship gaps; Sigma's accepted relationship is complete and its unsupported assessment is explicitly ineligible.",
+      "The command audit records exactly the ten canonical project CLI invocations listed in commands_run. This retry changed only its immutable request artifact and the append-only/current assessment tables."
+    ]
+  }
+}

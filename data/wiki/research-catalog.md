@@ -7,8 +7,8 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_30eab4469ed792ad87c0"
-as_of: "2026-08-06T15:55:44Z"
+snapshot_id: "decision_980a06d6d0cb6b3fe1ff"
+as_of: "2026-08-06T19:21:36Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **76**
-- Securities with retained revisions: **63**
+- Immutable assessment versions: **87**
+- Securities with retained revisions: **64**
 
 ## Candidate
 
@@ -282,6 +282,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Arista Networks, Inc. common stock](securities/security_6f9a1450edceb9307c9a)
 - [ASML Holding N.V. New York registered shares](securities/security_ef35e41886220d51c22c)
 - [Atkore Inc. common stock](securities/security_22c2b9d782a62d7a9b86)
+- [Bloom Energy Corporation Class A common stock](securities/security_3e597863f00753e8c65c)
 - [Canadian Solar Inc. common shares](securities/security_099561384c0f5e697727)
 - [Carlisle Companies Incorporated common stock](securities/security_9b0db3bc77914b23a307)
 - [Coinbase Global, Inc. Class A common stock](securities/security_37ddcbdaad296ad831f2)

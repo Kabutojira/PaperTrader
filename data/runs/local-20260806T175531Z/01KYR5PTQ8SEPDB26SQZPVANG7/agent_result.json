@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KYR5PTQ8SEPDB26SQZPVANG7",
+  "status": "succeeded",
+  "summary": "Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.",
+  "evidence": [
+    {
+      "source": "Ternium second-quarter and first-half 2026 results",
+      "claim": "Ternium reported Q2 steel shipments of 3.858 million tonnes, net sales of USD 4.340 billion, adjusted EBITDA of USD 717 million at a 17% margin, USD 344 million of equity-holder net income and USD 1.75 EPS per ADS. Operating cash flow was USD 256 million, capex USD 431 million and June-end net debt USD 112 million; management described the Pesquería steel shop as progressing on schedule and expected Q3 adjusted EBITDA to rise.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm",
+      "observed_at": "2026-08-06T18:12:30Z",
+      "source_hash": "b0674fb4c0ddedccac1055846296f19764ace7bf34011673ab8dee7a56a9d6c2"
+    },
+    {
+      "source": "Ternium July 2026 sustainability Form 6-K",
+      "claim": "The retained primary filing provides the current buildout framing and revised early-2027 operating expectation used to preserve commissioning and project-return risk.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000155485526001509/MainDocument.htm",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "5b10e200e156cb6e2c5874519bda9d717d8fae1d327ba90caf4f2cb4993e3089"
+    },
+    {
+      "source": "Ternium first-quarter 2026 results",
+      "claim": "The prior-quarter filing establishes the sequential baseline of USD 479 million adjusted EBITDA, USD 213 million equity-holder earnings, USD 217 million operating cash flow, USD 406 million capex and USD 327 million net cash.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000030/prternium1q2026.htm",
+      "observed_at": "2026-07-29T23:10:00Z",
+      "source_hash": "af838871cbdd3ac73d3d9849ebde2ced6f5d7ed190efe18cfc690d6d121bd680"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator and FX caches",
+      "claim": "From 8 July through 5 August the adjusted close rose 25.23%. The 5 August session added 6.69% to USD 53.709999084472656 on 1,618,600 shares, with RSI 78.07, a close above the USD 52.19 upper band and a 2.42 volume z-score. USD/EUR was 0.8676000237464905. The alerts are adverse entry timing rather than standalone fundamental evidence.",
+      "observed_at": "2026-08-06T17:56:07Z",
+      "source_hash": "7ee4570e35c66ddb262959d2b5b113993b4d641019caf73e86af15b901fbf42b"
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Deterministic normalization derived USD 51.50 probability-weighted fair value, -4.1147% expected return, -3.0860% confidence-adjusted expected return, -6.9075% base return and -47.8682% bear return. The assessment is complete but ineligible, with canonical rating Hold and portfolio action Watch."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC4JHY8K5V584C7AF2K548J.json",
+    "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/source_ternium_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ],
+  "operations_created": ["01KZC4JHY8K5V584C7AF2K548J"],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Ternium's Q2 shipments, margins and attributable earnings strengthen its Mexican nearshoring exposure, but operating cash flow remained below capex and net cash became modest net debt. USD 28/USD 50/USD 78 normalized-earnings scenarios imply USD 51.50 weighted value versus USD 53.71, while the 25.23% rally left RSI at 78.07; Hold / Watch with no paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_2c779e81c27b78c556bb",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/source_ternium_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row was running under local-20260806T175531Z with the immutable TX/XNYS/USD/equity identity, exactly the controller and security-research skills, a valid payload and no injection flags.",
+      "The mandatory audited security-context command succeeded before assessment state was read and established the prior legacy assessment, immutable page, accepted nearshoring relationship and prior successful result.",
+      "The current Q2 SEC filing was registered before assessment upsert, and the scenario-complete assessment references the retained primary evidence in canonical order.",
+      "Assessment assessment state for security_2c779e81c27b78c556bb is schema version 2, links this operation and expected result path, retains the updated page hash, uses fresh identity-matched price and FX state, and deterministically derives Hold / Watch.",
+      "Exactly one matching idea-research follow-up was created as 01KZC4JHY8K5V584C7AF2K548J, depends on this security operation and points to this operation's expected result path. No strategy was justified because the canonical allocation and payoff gates fail.",
+      "Strict schema validation, queue validation, strict wiki lint and strict integrity passed. Allocation readiness remains false only for pre-existing repository-wide missing, stale or unreconciled relationship work; Ternium's accepted relationship is complete and its assessment is explicitly ineligible.",
+      "The command audit records exactly the ten canonical project CLI invocations listed in commands_run. No allocation target/history, order, fill, execution, cash, portfolio, performance or accounting-ledger path changed."
+    ]
+  }
+}

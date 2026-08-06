@@ -1,0 +1,23 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC6GFCGAK5MV2ZGPDFNBCAS.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_10q_refresh_request.json",
+    "data/runs/local-20260806T175531Z-flnc-r2/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_earnings_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "completed_at": "2026-08-06T18:50:31Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZC5YVX8EY4YHH1S06VVHT5T",
+  "passed": true,
+  "run_id": "local-20260806T175531Z-flnc-r2",
+  "validation_version": 1
+}

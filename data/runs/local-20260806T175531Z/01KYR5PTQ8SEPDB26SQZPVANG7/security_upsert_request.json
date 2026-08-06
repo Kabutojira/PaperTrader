@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2c779e81c27b78c556bb",
+  "issuer_id": "issuer_bc5aa26231f1e18e929d",
+  "company_name": "Ternium S.A.",
+  "instrument_name": "Ternium S.A. ADS",
+  "instrument_type": "equity",
+  "ticker": "TX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "TX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "LU",
+  "sector": "Basic Materials",
+  "industry": "Steel",
+  "status": "watching",
+  "watchlist_reason": "Accepted nearshoring exposure and improving Mexican operations warrant monitoring, while cyclicality, capital intensity, cash conversion, project economics and valuation block allocation.",
+  "research_summary": "Q2 earnings and shipments improved, but USD 28/50/78 scenarios imply USD 51.50 weighted value versus USD 53.71; Hold / Watch.",
+  "research_page": "data/wiki/securities/security_2c779e81c27b78c556bb.md",
+  "last_research_at": "2026-08-06T18:12:30Z",
+  "next_review_at": "2026-08-20T18:12:30Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1342874/000134287426000044/prternium2q2026.htm"
+}

@@ -1,0 +1,22 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/source_msft_fy2026_10k_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KYY98DWGCARDA8HK5QA3Z6K0/source_msft_fy2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_204be2a44063993de1a8.md"
+  ],
+  "completed_at": "2026-08-06T18:56:15Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYY98DWGCARDA8HK5QA3Z6K0",
+  "passed": true,
+  "run_id": "local-20260806T175531Z",
+  "validation_version": 1
+}

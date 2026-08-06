@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sgml_aug_2026_q2_schedule",
+  "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004055/ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004055/ex99-1.htm",
+  "source_type": "filing_exhibit",
+  "title": "Sigma Lithium August 2026 Q2-results schedule and production update",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "dd09bba7d0541050f557ad040b8bbfe5bf96b0ff3a67559ed799ef9755d1ef07",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_4627aea1bf7d8943d3d8",
+  "checked_at": "2026-08-06T18:19:13Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Sigma scheduled Q2 results for 14 August and reiterated 35,000 tonnes of Q2 production, 6% above guidance.",
+  "summary": "The SEC-filed release confirms the Q2 reporting date and reiterates production, but contains no new financial, liquidity, control, funding or environmental-settlement evidence.",
+  "run_id": "local-20260806T175531Z"
+}

@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_3e597863f00753e8c65c",
+    "security_research_operation_id": "01KYR4K35GCJ54W0MEN0SYT67E",
+    "security_research_result_path": "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/agent_result.json",
+    "seed_claim": "Bloom's Oracle deployment, record Q2 growth, margin and cash conversion validate onsite power for grid-constrained AI loads, but complete USD 90/USD 180/USD 300 scenarios imply unfavorable expected return at USD 234.33; concentration, scaling, natural-gas policy, dilution and the missing accepted relationship keep the security at Sell / Avoid."
+  },
+  "objective": "Refresh the AI infrastructure and power idea from Bloom Energy's completed Q2 review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KZC3ZBP0MSA1D6GR3D2NDW7B",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_3e597863f00753e8c65c.md"
+  ]
+}

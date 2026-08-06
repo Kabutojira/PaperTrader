@@ -1,0 +1,18 @@
+{
+  "source_id": "source_flnc_q3_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000029/flnc-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000029/flnc-20260630.htm",
+  "source_type": "filing",
+  "title": "Fluence Energy fiscal Q3 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c253c7df28a7519d288ebf4609c82524d01b9f332d1f0b3796a462d20245c573",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_a9eb9838940ef5ceaa0c",
+  "checked_at": "2026-08-06T18:43:48Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30, 2026 Fluence held USD 339.3 million of cash and equivalents, USD 392.2 million of convertible notes, USD 783.0 million of inventory and USD 328.2 million of unbilled receivables; top-three customers supplied 48% of nine-month revenue.",
+  "summary": "The unchanged quarterly filing supplies exact cash, debt, dilution, working-capital, concentration, margin, backlog and operating-metric evidence for the full security review.",
+  "run_id": "local-20260806T175531Z"
+}

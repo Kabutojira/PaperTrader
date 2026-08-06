@@ -1,0 +1,52 @@
+{
+  "operation_id": "01KZC5YVX8EY4YHH1S06VVHT5T",
+  "status": "failed",
+  "summary": "The full Fluence review verified the current Q3 filing and updated the bounded page and security summary, but the deterministic assessment command failed closed because the same run ID already contains the preceding Fluence quick-check operation. The assessment linker reported assessment source operation is ambiguous for this run before changing assessment state. No assessment, idea follow-up, strategy, signal, order, allocation or accounting state was created; this attempt requires an isolated run-ID retry so the immutable assessment can link exactly one source operation.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic assessment validator",
+      "claim": "The assessment upsert rejected the request with assessment source operation is ambiguous for this run because both the completed quick check and current full review share local-20260806T175531Z for the same immutable security. The command made no assessment-table change.",
+      "observed_at": "2026-08-06T18:45:00Z"
+    },
+    {
+      "source": "Fluence Energy fiscal Q3 2026 Form 10-Q",
+      "claim": "The full review verified 184.596 million Class A plus Class B-1 economic interests, USD 339.3 million cash, USD 392.2 million convertible notes, USD 783.0 million inventory, 48% top-three-customer concentration and 12.6 GW storage backlog.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000029/flnc-20260630.htm",
+      "observed_at": "2026-08-06T18:43:48Z",
+      "source_hash": "c253c7df28a7519d288ebf4609c82524d01b9f332d1f0b3796a462d20245c573"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_10q_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_earnings_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_a9eb9838940ef5ceaa0c",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_earnings_refresh_request.json",
+    "papertrader research source record --request data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_10q_refresh_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/assessment_upsert_request.json"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "The mandatory audited security-context command succeeded before assessment-state reads and established the exact predecessor assessment and current relationship.",
+      "Both retained SEC sources were rechecked with unchanged exact hashes and recorded before the attempted assessment.",
+      "The security page and short row were updated with exact share count, cash, debt, working-capital, concentration and operating-metric evidence.",
+      "The assessment command failed closed before changing security_assessment_history.csv or security_assessments.csv because two same-security source operations share this run ID.",
+      "The queued idea-refresh request was not invoked after the assessment rejection, so no follow-up operation was created.",
+      "No strategy, signal, allocation target/history, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

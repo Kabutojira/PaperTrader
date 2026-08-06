@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_nearshoring_friendshoring_manufacturing",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "security_id": "security_2c779e81c27b78c556bb",
+    "security_research_operation_id": "01KYR5PTQ8SEPDB26SQZPVANG7",
+    "security_research_result_path": "data/runs/local-20260806T175531Z/01KYR5PTQ8SEPDB26SQZPVANG7/agent_result.json",
+    "seed_claim": "Ternium's Q2 shipments, margins and attributable earnings strengthen the accepted Mexican nearshoring mechanism, but cash conversion, project-level economics, cyclicality and USD 28/USD 50/USD 78 valuation scenarios leave the ADS at Hold / Watch after an overbought rally."
+  },
+  "objective": "Refresh the nearshoring and friendshoring manufacturing idea from Ternium's completed Q2 review, including its candidate disposition, thesis, catalysts, risks, gates, confidence and broader investable-security universe.",
+  "operation_id": "01KZC4JHY8K5V584C7AF2K548J",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/relationships/relationship_510158d3d515d91d5c14.md",
+    "data/wiki/securities/security_2c779e81c27b78c556bb.md"
+  ]
+}

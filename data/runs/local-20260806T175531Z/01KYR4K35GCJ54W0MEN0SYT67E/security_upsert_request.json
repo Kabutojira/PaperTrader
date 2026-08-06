@@ -1,0 +1,23 @@
+{
+  "security_id": "security_3e597863f00753e8c65c",
+  "issuer_id": "issuer_1dbb3f443520b01d8540",
+  "company_name": "Bloom Energy Corporation",
+  "instrument_name": "Bloom Energy Corporation Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "BE",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "BE",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Record AI-driven growth and Oracle deployment support onsite power, but concentration, scale-up, natural-gas policy, dilution and unfavorable scenario returns require watch-only status.",
+  "research_summary": "Q2 growth and cash conversion validate onsite AI power demand, but USD 90/180/300 scenarios imply USD 187.50 weighted value versus USD 234.33; Sell / Avoid.",
+  "research_page": "data/wiki/securities/security_3e597863f00753e8c65c.md",
+  "last_research_at": "2026-08-06T18:00:04Z",
+  "next_review_at": "2026-08-20T18:00:04Z",
+  "source": "https://investor.bloomenergy.com/press-releases/press-release-details/2026/Bloom-Energy-Reports-Record-Second-Quarter-2026-Financial-Results-and-Raises-Full-Year-2026-Guidance/default.aspx"
+}

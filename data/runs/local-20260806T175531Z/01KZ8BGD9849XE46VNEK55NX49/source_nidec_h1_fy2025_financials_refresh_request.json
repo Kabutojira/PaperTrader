@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nidec_h1_fy2025_financials",
+  "url": "https://www.nidec.com/files/user/www-nidec-com/ir/library/earnings/2026/FY25Q2_3_en.pdf",
+  "canonical_url": "https://www.nidec.com/files/user/www-nidec-com/ir/library/earnings/2026/FY25Q2_3_en.pdf",
+  "source_type": "issuer_release",
+  "title": "Nidec Financial Statements Summary for the Six Months Ended September 30, 2025",
+  "publisher": "Nidec Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "fad489bf83dd4f3154ccff65b94e81278a29c84db8d0e4d543be61356e6f6159",
+  "related_entity_ids": "security_3853e54c619d597dcaa1",
+  "checked_at": "2026-08-06T19:00:14Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The unchanged interim filing remains unreliable for valuation because it was unreviewed and excluded investigation effects.",
+  "summary": "The unchanged interim filing continues to support the operating-segment and cash-flow baseline, but its lack of interim review and excluded accounting effects prevent its use as a reliable standalone valuation base.",
+  "run_id": "local-20260806T175531Z"
+}

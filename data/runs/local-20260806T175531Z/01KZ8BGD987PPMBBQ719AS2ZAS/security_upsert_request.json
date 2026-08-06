@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2dbe878dfc899d7ee867",
+  "issuer_id": "issuer_5076f0e0e1dd7cc8bca7",
+  "company_name": "Freeport-McMoRan Inc.",
+  "instrument_name": "Freeport-McMoRan Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "FCX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "FCX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Basic Materials",
+  "industry": "Copper",
+  "status": "watching",
+  "watchlist_reason": "Direct copper-scarcity exposure; August above-band extension raises valuation and timing risk without new operating evidence.",
+  "research_summary": "Q2 copper economics and Grasberg recovery are unchanged, but v2 scenarios remain below the USD 69.39 mark; Sell / Avoid with no full review.",
+  "research_page": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+  "last_research_at": "2026-08-06T19:16:48Z",
+  "next_review_at": "2026-08-20T19:16:48Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm"
+}

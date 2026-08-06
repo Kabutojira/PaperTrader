@@ -1,0 +1,28 @@
+{
+  "operation_id": "01KZC7H968FVJSE93MAANZBZJ5",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Stopped before mutation because this full Nidec review and its immediately preceding quick check share run ID local-20260806T175531Z. The deterministic assessment linker rejects more than one security or quick-check operation for the same security and run as ambiguous, so this operation cannot create its mandatory sole comparable assessment under the current claim. The existing Nidec page, sources, assessment, queue and all accounting state were preserved. Retry the same immutable operation under an isolated run ID.",
+  "evidence": [
+    {
+      "source": "PaperTrader audited security context and deterministic assessment-linking contract",
+      "claim": "The current context contains quick-check operation 01KZ8BGD9849XE46VNEK55NX49 for security_3853e54c619d597dcaa1 claimed by local-20260806T175531Z, while this full-review claim uses the same run ID. The assessment upsert contract raises assessment source operation is ambiguous for this run when more than one matching security or quick-check operation shares the run, so continuing would fail after partial writes.",
+      "observed_at": "2026-08-06T19:10:00Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_3853e54c619d597dcaa1"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory audited security-context read succeeded and confirmed the immutable Nidec identity, current assessment and retained primary sources.",
+      "Detected the deterministic same-security same-run assessment-link ambiguity before changing the wiki page, any structured table or the operation queue.",
+      "No source, security, assessment, idea, strategy, signal, order, allocation, portfolio or accounting state changed in this attempt."
+    ]
+  }
+}

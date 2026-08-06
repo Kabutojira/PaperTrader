@@ -1,0 +1,21 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_10q_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KZC5YVX8EY4YHH1S06VVHT5T/source_flnc_q3_2026_earnings_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md"
+  ],
+  "completed_at": "2026-08-06T18:47:01Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZC5YVX8EY4YHH1S06VVHT5T",
+  "passed": true,
+  "run_id": "local-20260806T175531Z",
+  "validation_version": 1
+}

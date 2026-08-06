@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nidec_2026_accounting_final_report",
+  "url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0417-01/260417-01en.pdf",
+  "canonical_url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0417-01/260417-01en.pdf",
+  "source_type": "issuer_release",
+  "title": "Announcement Regarding Receipt of the Third-Party Committee's Investigation Report (Final Report) and Our Company's Response",
+  "publisher": "Nidec Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "401015bc696bb03d721c78c4927b01762e4ccb6ec51d64110a802a59254705a5",
+  "related_entity_ids": "security_3853e54c619d597dcaa1",
+  "checked_at": "2026-08-06T19:10:34Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The completed investigation identified widespread improper accounting and provisional historical effects.",
+  "summary": "The unchanged final investigation identifies unrecorded inventory losses, impairment avoidance, improperly capitalized labor, reversed provisions, grants misclassified as revenue and inadequate bad-debt allowances. It quantifies cumulative negative effects through fiscal Q1 2025 of JPY 166.4 billion on operating profit and JPY 160.7 billion on period profit before derivative adjustments.",
+  "run_id": "local-20260806T175531Z-nidc-r2"
+}

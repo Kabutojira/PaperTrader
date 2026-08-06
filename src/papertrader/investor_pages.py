@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import date
 from decimal import Decimal
 from html import escape
@@ -206,7 +206,9 @@ def research_decisions_for_run(
         if row["claimed_by_run_id"] != run_id or not row["operation_type"].endswith("_research"):
             continue
         reference = resolver.resolve(row["entity_type"], row["entity_id"])
-        conclusion = " ".join((row["result_summary"] or row["terminal_reason"]).split())
+        conclusion = resolver.human_label(
+            " ".join((row["result_summary"] or row["terminal_reason"]).split())
+        )
         output.append(
             ResearchDecisionView(
                 operation_id=row["operation_id"],
@@ -218,6 +220,20 @@ def research_decisions_for_run(
             )
         )
     return tuple(output)
+
+
+def _public_snapshot(repository_root: Path, snapshot: DecisionSnapshot) -> DecisionSnapshot:
+    """Humanize machine identities before rendering snapshot narratives to Markdown."""
+
+    resolver = PublicEntityResolver(repository_root)
+    alerts = tuple(
+        replace(
+            alert,
+            research_conclusion=resolver.human_label(alert.research_conclusion),
+        )
+        for alert in snapshot.research_alerts
+    )
+    return replace(snapshot, research_alerts=alerts)
 
 
 def _frontmatter(
@@ -383,11 +399,13 @@ def investor_brief_markdown(
 
 
 def investor_report_sections(
+    repository_root: Path,
     snapshot: DecisionSnapshot,
     research_decisions: Sequence[ResearchDecisionView] = (),
 ) -> list[str]:
     """Render the investor-facing report sections from the shared snapshot."""
 
+    snapshot = _public_snapshot(repository_root, snapshot)
     current = snapshot.current_portfolio
     target = snapshot.approved_target_portfolio
     lines = [
@@ -1291,6 +1309,7 @@ def _latest_report_link(repository_root: Path) -> str:
 def refresh_investor_pages(repository_root: Path, snapshot: DecisionSnapshot) -> tuple[Path, ...]:
     """Atomically regenerate every investor page from one committed-state snapshot."""
 
+    snapshot = _public_snapshot(repository_root, snapshot)
     day = date.fromisoformat(snapshot.report_date)
     wiki_root = repository_root / "data" / "wiki"
     paths = {

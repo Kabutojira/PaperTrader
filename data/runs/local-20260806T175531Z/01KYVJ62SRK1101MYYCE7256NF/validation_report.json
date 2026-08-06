@@ -1,0 +1,25 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request_v2.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/assessment_upsert_request_v3.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYVJ62SRK1101MYYCE7256NF/source_sgml_aug_2026_q2_schedule_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4627aea1bf7d8943d3d8.md"
+  ],
+  "completed_at": "2026-08-06T18:26:55Z",
+  "errors": [
+    "completed security research requires exactly one immutable assessment version"
+  ],
+  "harness": "local",
+  "operation_id": "01KYVJ62SRK1101MYYCE7256NF",
+  "passed": false,
+  "run_id": "local-20260806T175531Z",
+  "validation_version": 1
+}

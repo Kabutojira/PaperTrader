@@ -1,0 +1,18 @@
+{
+  "source_id": "source_be_scandium_response_2026_8k_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026047734/be-20260709.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026047734/be-20260709.htm",
+  "source_type": "filing",
+  "title": "Bloom Energy July 2026 accounting and scandium response Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "22baab177a0d4246f10738b6fa433c1a34022781aa3f22497a27a990a5bffa6e",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_3e597863f00753e8c65c",
+  "checked_at": "2026-08-06T18:00:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Bloom rejected third-party accounting and scandium claims and stated current and future supply is not dependent on China.",
+  "summary": "The SEC filing preserves the issuer's response to disputed accounting and critical-material supply claims without treating it as independent resolution.",
+  "run_id": "local-20260806T175531Z"
+}

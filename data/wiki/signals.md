@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_30eab4469ed792ad87c0"
-as_of: "2026-08-06T15:55:44Z"
+snapshot_id: "decision_980a06d6d0cb6b3fe1ff"
+as_of: "2026-08-06T19:21:36Z"
 ---
 
 # Signals
 
-**As of `2026-08-06T15:55:44Z`**
+**As of `2026-08-06T19:21:36Z`**
 
 ## Actionable trade signals
 
@@ -31,8 +31,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
@@ -40,8 +40,8 @@ No pending paper orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `succeeded`
+- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
@@ -49,8 +49,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-05`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
@@ -58,8 +58,8 @@ No pending paper orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-05`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
 
 ### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
@@ -175,8 +175,8 @@ No pending paper orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
 
 ### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
 
@@ -202,8 +202,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-05`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the full Fluence fiscal Q3 review under an isolated retry run so the immutable assessment links unambiguously. Record order intake, 12.6 GW storage backlog and data-centre awards confirm high grid-storage demand sensitivity, but 5.1% quarterly gross margin, 48% customer concentration, a 72% inventory increase, USD 366.5 million nine-month operating cash use and reduced guidance show fragile shareholder economics. Exact filing inputs refine the scenarios to USD 4.59/USD 11.09/USD 20.84 and USD 10.2775 weighted value against the USD 14.23 mark. The canonical result remains complete but ineligible Sell / Avoid; no strategy or paper trade was created. Exactly one dependent solar-storage idea refresh, Idea research for Solar, storage, and grid-flexibility reset on 2026-08-06, was enqueued.
 
 ### [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867)
 
@@ -211,8 +211,8 @@ No pending paper orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Freeport-McMoRan quick check for the merged August 4-5 Bollinger-above-upper alerts. FCX rose 20.97% over the current 20-session period to USD 69.39, but the refreshed SEC index contains only insider Forms 4 and planned-sale Forms 144 after the July 23 Q2 results and no new operating filing. The Q2 exhibit is unchanged, so Grasberg recovery, copper-price sensitivity, Indonesian terms, net debt and capex assumptions remain current. Migrated the legacy comparison to complete cyclical v2 scenarios of USD 32.64/USD 47.36/USD 65.12 with 30%/50%/20% probabilities. Deterministic normalization derives USD 46.496 weighted value, negative 32.99% expected return and Sell / Avoid. No primary gate changed, so no full review, strategy, signal, order, allocation or accounting change was justified.
 
 ### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
 

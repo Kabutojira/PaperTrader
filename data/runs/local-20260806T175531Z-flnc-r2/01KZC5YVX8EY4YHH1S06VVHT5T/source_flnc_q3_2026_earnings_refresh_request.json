@@ -1,0 +1,18 @@
+{
+  "source_id": "source_flnc_q3_2026_earnings",
+  "url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1868941/000186894126000028/flncq3fy26earningspressrel.htm",
+  "source_type": "issuer_release",
+  "title": "Fluence Energy fiscal Q3 2026 earnings release",
+  "publisher": "Fluence Energy, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "6cc433780144bb7a54a89dce0da186c78e012ca943c6806a54a6142da59e89c4",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_a9eb9838940ef5ceaa0c",
+  "checked_at": "2026-08-06T18:47:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Fluence reported fiscal Q3 revenue of USD 649.8 million, 5.1% GAAP gross margin, a USD 44.3 million net loss, USD 1.44 billion of order intake, USD 6.4 billion of backlog and USD 365.0 million of total cash.",
+  "summary": "The unchanged SEC-filed issuer release supplies the quarterly results, backlog, data-centre awards and reduced fiscal-2026 revenue and adjusted-EBITDA guidance used in the full review.",
+  "run_id": "local-20260806T175531Z-flnc-r2"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_be_q1_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026028021/be-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026028021/be-20260331.htm",
+  "source_type": "filing",
+  "title": "Bloom Energy Corporation Q1 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "65b49cf01cccf1bbe926741ab71fb9ecda0e00451f62fdd9b777fc0ddd3b08ba",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_3e597863f00753e8c65c",
+  "checked_at": "2026-08-06T18:00:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At March 31, cash was USD 2.491 billion and recourse debt USD 2.599 billion; two customers were 50% and 12% of revenue.",
+  "summary": "The SEC quarterly filing supplies balance-sheet, debt, customer-concentration, warranty, financing, fuel and operating-risk evidence.",
+  "run_id": "local-20260806T175531Z"
+}

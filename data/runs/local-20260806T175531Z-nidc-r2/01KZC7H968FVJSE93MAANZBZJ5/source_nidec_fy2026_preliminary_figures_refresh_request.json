@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nidec_fy2026_preliminary_figures",
+  "url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0616-01/260616-01en.pdf",
+  "canonical_url": "https://www.nidec.com/files/user/www-nidec-com/corporate/news/2026/0616-01/260616-01en.pdf",
+  "source_type": "issuer_release",
+  "title": "Notice regarding consideration of an application for approval of an extension of the filing deadline of Annual Securities Report for the 53rd Fiscal Year",
+  "publisher": "Nidec Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "4305d48f23d8fb3058c5d5daa97503c88e1e79e05c5afc052ed69783a1307a7e",
+  "related_entity_ids": "security_3853e54c619d597dcaa1",
+  "checked_at": "2026-08-06T19:10:34Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Preliminary fiscal-year figures exclude accounting corrections and unresolved quality and customs impacts.",
+  "summary": "The unchanged release reports unaudited preliminary fiscal-2025 sales of JPY 2.700 trillion, cash of JPY 850 billion, interest-bearing debt of JPY 1.110 trillion and net debt of JPY 260 billion. It explicitly excludes accounting corrections and unresolved investigation effects and therefore cannot establish normalized earnings or a reliable valuation base.",
+  "run_id": "local-20260806T175531Z-nidc-r2"
+}

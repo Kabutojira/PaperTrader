@@ -1,0 +1,32 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZC3ZBP0MSA1D6GR3D2NDW7B.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v2.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v3.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/assessment_upsert_request_v4.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/enqueue_idea_refresh_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/security_upsert_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_2025_10k_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_oracle_warrant_2026_8k_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_q1_2026_10q_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_q2_2026_results_request.json",
+    "data/runs/local-20260806T175531Z/01KYR4K35GCJ54W0MEN0SYT67E/source_be_scandium_response_2026_8k_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_3e597863f00753e8c65c.md"
+  ],
+  "completed_at": "2026-08-06T18:06:54Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYR4K35GCJ54W0MEN0SYT67E",
+  "passed": true,
+  "run_id": "local-20260806T175531Z",
+  "validation_version": 1
+}
