@@ -10,6 +10,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | error | **issue_63954cb215f224b75cb3** — Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W | 2026-08-05T11:35:18Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
+| error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | error | **issue_e7dea4abd8cffd476a05** — RTX assessment source operation is ambiguous within one run | 2026-08-05T22:31:51Z | controller | 01KZA04098D4DF0J4SFMJK1TDD |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -35,6 +36,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_3dfbaf44b38a480a8aa4** — Daily preparation degraded: security_7ca095d63423c55a90e3 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_44fe890b2fbae8cf90a0** — Daily preparation degraded: security_1f9cce545ede94cd6349 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_4cea078fdac19d342c04** — Daily preparation degraded: security_dfa34d4b9050964b465e | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_4f229989274e68b0b88e** — Daily podcast failed: daily-20260806T120804Z | 2026-08-06T12:53:17Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | warning | **issue_50e28d602eb0feb06784** — Daily preparation degraded: security_6cf75bd0ec0aa2a20148 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_51e19c59b425d7011575** — Daily preparation degraded: security_c9a37d277445869a8809 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_55f958632a0f142a3925** — Daily preparation degraded: security_96ba305ee7cd586bc348 | 2026-07-29T16:51:20Z | deterministic-controller |  |
