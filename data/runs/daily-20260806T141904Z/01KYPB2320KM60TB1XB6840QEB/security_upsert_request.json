@@ -1,0 +1,23 @@
+{
+  "security_id": "security_61567714298b9563d1a9",
+  "issuer_id": "issuer_38b6e4bf3c9437d4a2aa",
+  "company_name": "W&T Offshore, Inc.",
+  "instrument_name": "W&T Offshore, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "WTI",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "WTI",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Energy",
+  "industry": "Oil & Gas E&P",
+  "status": "watching",
+  "watchlist_reason": "Q2 cash generation and lower net debt support continued coverage, but commodity sensitivity, leverage, large retirement obligations, severe bear downside, and adverse momentum prevent ownership.",
+  "research_summary": "Q2 improved cash and net debt, but USD 0.79/3.17/6.15 scenarios imply only USD 3.32 weighted value versus USD 3.25 with severe downside; Hold / Watch.",
+  "research_page": "data/wiki/securities/security_61567714298b9563d1a9.md",
+  "last_research_at": "2026-08-06T14:22:30Z",
+  "next_review_at": "2026-08-20T14:22:30Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091281/wti-20260630x10q.htm"
+}

@@ -2193,3 +2193,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The 31 July volume anomaly is pre-results risk evidence, not a fundamental signal. Albemarle
   remains Hold / Watch with no strategy or paper trade; one dependent lithium-idea refresh is
   required.
+
+## 2026-08-06 — security review — W&T Offshore, Inc. common stock
+
+- Created [[securities/security_61567714298b9563d1a9|W&T Offshore]] from its Q2 2026 Form 10-Q and
+  SEC-filed results release; production and cash generation were resilient and net debt declined,
+  while commodity sensitivity, leverage, dilution and large retirement obligations remain material.
+- The 5 August bearish MACD transition is adverse timing rather than primary evidence of impairment:
+  the adjusted close fell 9.47% over the measured period, while Q2 evidence showed improved cash and
+  net debt.
+- USD 0.79/USD 3.17/USD 6.15 normalized-earnings scenarios imply USD 3.32 weighted value against the
+  USD 3.25 mark, but base downside and severe bear asymmetry leave W&T at Hold / Watch. No strategy,
+  signal, order, follow-up operation, or accounting change was justified.

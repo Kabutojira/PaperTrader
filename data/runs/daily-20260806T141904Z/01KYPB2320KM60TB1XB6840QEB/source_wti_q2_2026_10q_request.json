@@ -1,0 +1,18 @@
+{
+  "source_id": "source_wti_q2_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091281/wti-20260630x10q.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091281/wti-20260630x10q.htm",
+  "source_type": "filing",
+  "title": "W&T Offshore, Inc. Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6868602953e3128dd77e4b5128cbbb3a7e49e063c1f37eb2371ebf4cb3ab6d9d",
+  "related_entity_ids": "security_61567714298b9563d1a9",
+  "checked_at": "2026-08-06T14:22:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026, W&T reported USD 150.7 million of cash, USD 351.6 million of debt, USD 573.2 million of estimated asset-retirement obligations, and 157.7 million diluted weighted-average shares for the quarter.",
+  "summary": "The SEC-filed quarterly report supports W&T Offshore identity, production economics, realized commodity prices, liquidity, debt, dilution, asset-retirement obligations, and risk analysis.",
+  "run_id": "daily-20260806T141904Z"
+}

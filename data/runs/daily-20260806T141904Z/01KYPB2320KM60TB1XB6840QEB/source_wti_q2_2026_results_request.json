@@ -1,0 +1,18 @@
+{
+  "source_id": "source_wti_q2_2026_results_sec_ex99",
+  "url": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091211/wti-20260805xex99d1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091211/wti-20260805xex99d1.htm",
+  "source_type": "issuer_release",
+  "title": "W&T Offshore Reports Second Quarter 2026 Results (SEC-filed Exhibit 99.1)",
+  "publisher": "W&T Offshore, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e01bc74581beb110c827b210a9be464b07add388affd3909958ab0d3de818c8b",
+  "related_entity_ids": "security_61567714298b9563d1a9",
+  "checked_at": "2026-08-06T14:22:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second-quarter production was 34.7 MBoe/d, Adjusted EBITDA USD 54.4 million, Free Cash Flow USD 31.4 million, and net debt USD 200.9 million; full-year production guidance is 33.5-37.2 MBoe/d.",
+  "summary": "The SEC-filed results release provides current production, realized prices, operating costs, cash generation, liquidity, net debt, capital plans, and third-quarter and full-year guidance for scenario valuation.",
+  "run_id": "daily-20260806T141904Z"
+}

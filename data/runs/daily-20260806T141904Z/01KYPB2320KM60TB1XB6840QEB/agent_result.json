@@ -1,0 +1,81 @@
+{
+  "operation_id": "01KYPB2320KM60TB1XB6840QEB",
+  "status": "succeeded",
+  "summary": "Completed exactly one full W&T Offshore security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market and FX state. Registered the Q2 Form 10-Q and SEC-filed results exhibit, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. Bear/base/bull fair values of USD 0.79/USD 3.17/USD 6.15 produce a USD 3.32 probability-weighted value versus USD 3.25; deterministic state derives Hold / Watch, watch-tier conviction, and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and relationship gates fail. The bearish MACD transition is adverse timing rather than evidence of fundamental impairment. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because the security has no linked idea or accepted relationship and the strategy gate failed.",
+  "evidence": [
+    {
+      "source": "source_wti_q2_2026_10q_sec",
+      "claim": "W&T Offshore's Q2 2026 Form 10-Q supports the production-economics, balance-sheet, debt, dilution, retirement-obligation, and risk analysis; at June 30 it reported USD 150.7 million of cash, USD 351.6 million of debt, USD 573.2 million of estimated asset-retirement obligations, and 157.657 million diluted weighted-average shares for the quarter.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091281/wti-20260630x10q.htm",
+      "observed_at": "2026-08-06T14:22:30Z",
+      "source_hash": "6868602953e3128dd77e4b5128cbbb3a7e49e063c1f37eb2371ebf4cb3ab6d9d"
+    },
+    {
+      "source": "source_wti_q2_2026_results_sec_ex99",
+      "claim": "W&T Offshore's SEC-filed Q2 results exhibit reports 34.7 MBoe/d of production, USD 54.4 million of Adjusted EBITDA, USD 31.4 million of company-defined Free Cash Flow, USD 200.9 million of net debt, and full-year production guidance of 33.5-37.2 MBoe/d.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1288403/000110465926091211/wti-20260805xex99d1.htm",
+      "observed_at": "2026-08-06T14:22:30Z",
+      "source_hash": "e01bc74581beb110c827b210a9be464b07add388affd3909958ab0d3de818c8b"
+    },
+    {
+      "source": "data/market/latest.csv, data/market/indicators.csv, and data/market/fx/USD_EUR.csv",
+      "claim": "The identity-matched reference mark is USD 3.25 for the 2026-08-05 session and the current USD/EUR rate is 0.8665000200271606, both retrieved at 2026-08-06T14:19:11Z. The canonical alert period returned -9.47%, and MACD -0.0249 remained below its -0.0127 signal with RSI 43.92 and no volume anomaly."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic assessment normalization derived bear/base/bull returns of -75.6923%/-2.4615%/89.2308%, expected return of 2.1538%, medium-confidence adjusted return of 1.6154%, USD 2.536 buy-below value, Hold rating, Watch action, quality score 54, watch-tier conviction, and allocation ineligibility across expected-return, base-return, payoff, margin-of-safety, and relationship gates."
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable first assessment assessment_4c83cd49e95be9881097 records schema version 2, this operation and result path, the W&T security page and captured hash, registered evidence, and current run provenance; no predecessor existed."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/assessment_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/security_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/source_wti_q2_2026_10q_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/source_wti_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_61567714298b9563d1a9.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "WTI full review completed: Q2 production, cash generation and lower net debt support continued monitoring, but USD 0.79/USD 3.17/USD 6.15 scenarios imply only USD 3.32 weighted value against USD 3.25 with severe bear downside. Canonical conclusion is Hold / Watch; no paper strategy, signal, order, or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_61567714298b9563d1a9",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/source_wti_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/source_wti_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2320KM60TB1XB6840QEB/assessment_upsert_request_v3.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context completed before assessment-state reads or changes and showed no prior assessment, successful result, linked idea, accepted relationship, or strategy.",
+      "Immutable identity remained security_61567714298b9563d1a9 / issuer_38b6e4bf3c9437d4a2aa / XNYS / WTI / USD / equity; the validated security upsert found no identity conflict.",
+      "Both retained primary sources were registered through the project CLI with current SEC URLs and content hashes.",
+      "The first two assessment requests failed closed on non-canonical soft-gap formatting and values; both request artifacts remained immutable, and uniquely named assessment_upsert_request_v3.json used sorted canonical gaps and succeeded.",
+      "Current assessment is schema version 2, scenario-complete, source-backed, price/FX identity-matched, and linked through immutable history to this operation, result path, wiki page, page hash, and run.",
+      "Assessment probabilities total 100%, fair values are ordered, and all seven component inputs use only the 20/40/60/80/100 rubric anchors.",
+      "No idea-research follow-up was required because bounded security context and canonical relationship state contained no linked idea; no conviction strategy was queued because the full strategy gate failed.",
+      "Strict schema validation returned OK [schema].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ]
+  }
+}
