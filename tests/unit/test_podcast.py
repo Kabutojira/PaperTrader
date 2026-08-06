@@ -22,9 +22,9 @@ NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
 
 
 def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path) -> None:
-    skill = (
-        repository_root / "skills" / "papertrader-daily-podcast" / "SKILL.md"
-    ).read_text(encoding="utf-8")
+    skill = (repository_root / "skills" / "papertrader-daily-podcast" / "SKILL.md").read_text(
+        encoding="utf-8"
+    )
 
     assert "`advice validate` is outside the `daily_podcast` command scope" in skill
     assert "never list a rejected or pre-dispatch command" in skill
