@@ -8,9 +8,15 @@
     "baseline_result_path": "data/runs/daily-20260805T182233Z/01KYPB2AW0SJ35EAKMPQM8QVAH/agent_result.json",
     "full_research_requested": true,
     "maintenance_mode": "refresh",
-    "market_data_as_of": "2026-08-05T22:09:27Z",
-    "market_data_date": "2026-08-05",
-    "period_end": "2026-08-05",
+    "market_data_as_of": "2026-08-06T21:26:50Z",
+    "market_data_date": "2026-08-06",
+    "merged_input_values": {
+      "source_price_hash": [
+        "791ce2499d3572074e3bc04bc296150d20845dc5d29a7a960f9f3e80c4c7aeb7",
+        "444cadc770775713c80a9e2f68c33f152c5145ffed1d9cb9f0b7c749066ec521"
+      ]
+    },
+    "period_end": "2026-08-06",
     "period_start": "2026-07-08",
     "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
     "research_reasons": [
@@ -32,20 +38,35 @@
           "source_dna_q1_2026_10q",
           "source_dna_q1_2026_results"
         ]
+      },
+      {
+        "dedupe_key": "quick_check_research:security_95351d928b674bbdf687:68d86f9f603b99eb1261:2026-08-06",
+        "market_data_date": "2026-08-06",
+        "observed_at": "2026-08-06T21:26:50Z",
+        "prompt": "Quick-check security_95351d928b674bbdf687 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
       }
     ],
     "security_id": "security_95351d928b674bbdf687",
-    "source_price_hash": "791ce2499d3572074e3bc04bc296150d20845dc5d29a7a960f9f3e80c4c7aeb7",
+    "source_price_hash": "444cadc770775713c80a9e2f68c33f152c5145ffed1d9cb9f0b7c749066ec521",
     "trigger_types": [
-      "sma_50_cross_above_200"
+      "sma_50_cross_above_200",
+      "volume_anomaly"
     ]
   },
-  "objective": "Quick-check security_95351d928b674bbdf687 after price-action alerts: sma_50_cross_above_200; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_95351d928b674bbdf687 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Quick-check security_95351d928b674bbdf687 after price-action alerts: sma_50_cross_above_200; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_95351d928b674bbdf687 with current primary evidence and write one comparable allocation assessment. | Additional cause: Quick-check security_95351d928b674bbdf687 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
   "operation_id": "01KZ9ZJVER177B5ASW4ZMQHEG3",
   "operation_type": "quick_check_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5.md",
+    "data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd.md",
     "source_dna_q1_2026_10q",
     "source_dna_q1_2026_results"
   ]

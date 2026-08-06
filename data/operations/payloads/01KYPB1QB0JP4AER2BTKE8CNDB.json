@@ -4,7 +4,11 @@
   "inputs": {
     "assessment_state": "missing",
     "maintenance_mode": "assessment_v2_migration",
+    "market_data_as_of": "2026-08-06T21:26:50Z",
+    "market_data_date": "2026-08-06",
     "migration_version": "assessment-v2-migration-v1",
+    "period_end": "2026-08-06",
+    "period_start": "2026-07-09",
     "research_page": "",
     "research_reasons": [
       {
@@ -20,12 +24,32 @@
         "prompt": "Migrate security_0a56aa634d077fe5796f to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
         "source": "assessment_v2_migration:rollout-step22-20260730",
         "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_0a56aa634d077fe5796f:6c7a1672051e4a687dec:2026-08-06",
+        "market_data_date": "2026-08-06",
+        "observed_at": "2026-08-06T21:26:50Z",
+        "prompt": "Research security_0a56aa634d077fe5796f with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
       }
     ],
-    "security_id": "security_0a56aa634d077fe5796f"
+    "security_id": "security_0a56aa634d077fe5796f",
+    "source_price_hash": "d6b0c7cb8b2d4c29ecf903de0b67734959662b792a22b54d73e07188b8b2828d",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research AMAT — Applied Materials, Inc. as an initial bounded security review. | Additional cause: Migrate security_0a56aa634d077fe5796f to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison.",
+  "objective": "Research AMAT — Applied Materials, Inc. as an initial bounded security review. | Additional cause: Migrate security_0a56aa634d077fe5796f to one scenario-complete assessment v2 using current primary evidence and explicit prior-review comparison. | Additional cause: Research security_0a56aa634d077fe5796f with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB1QB0JP4AER2BTKE8CNDB",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58.md"
+  ]
 }

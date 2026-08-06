@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_980a06d6d0cb6b3fe1ff"
-as_of: "2026-08-06T19:21:36Z"
+snapshot_id: "decision_5e4a28ab3391b54d3ac5"
+as_of: "2026-08-06T21:34:57Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-06T19:21:36Z`
+**As of:** `2026-08-06T21:34:57Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-06T19:21:36Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 284
+- Research backlog: 302
 - Last successful daily run: 2026-08-06
 
 ## Current issues by investment impact
@@ -133,11 +133,10 @@ as_of: "2026-08-06T19:21:36Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 284 active operations.
+Showing 20 of 302 active operations.
 
 <details><summary>Active research work</summary>
 
-- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-07-29]]
 - Ready — [[security-catalog#security-security_83a56943e18793f685b0|Security research for TXN on 2026-07-29]]
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
@@ -157,6 +156,7 @@ Showing 20 of 284 active operations.
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=-ILKiOU5iAQ)
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=oyjpF7xPiC4)
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=u-AXyF9kY9k)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wcV0SRPFK9s)
 
 </details>
 

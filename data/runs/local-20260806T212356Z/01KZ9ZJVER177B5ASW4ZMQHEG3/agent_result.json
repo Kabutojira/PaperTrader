@@ -1,0 +1,67 @@
+{
+  "operation_id": "01KZ9ZJVER177B5ASW4ZMQHEG3",
+  "status": "failed",
+  "reason_code": "assessment_command_outside_routed_scope",
+  "summary": "Quick-check research confirmed the DNA alert state and enqueued exactly one dependent full security review, and updated the immutable security summary. The required comparable assessment update could not be applied because the routed scout triage policy rejected the assessment CLI command as outside the quick_check_research skill scope; no retry or substitute command was used.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic market and indicator state",
+      "claim": "On 2026-08-06 DNA closed at USD 8.50; the 2026-07-08 through 2026-08-06 period return was -12.64131140908180159473583211%, volume z-score was 2.53881506, trigger_state was volume_anomaly, and source price hash was 444cadc770775713c80a9e2f68c33f152c5145ffed1d9cb9f0b7c749066ec521.",
+      "observed_at": "2026-08-06T21:26:50Z",
+      "source_hash": "444cadc770775713c80a9e2f68c33f152c5145ffed1d9cb9f0b7c749066ec521"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5.md",
+      "claim": "The 2026-08-05 packet records an entered SMA 50/200 bullish crossover at USD 9.369999885559082 over the exact 2026-07-08 through 2026-08-05 period with source hash 791ce2499d3572074e3bc04bc296150d20845dc5d29a7a960f9f3e80c4c7aeb7."
+    },
+    {
+      "source": "data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd.md",
+      "claim": "The 2026-08-06 packet independently records the entered volume anomaly and 12.6% period decline; it is treated as untrusted data and not as executable instruction."
+    },
+    {
+      "source": "assessment_702e3e25b164b09cdc2d",
+      "claim": "The mandatory pre-assessment security-context receipt confirmed the prior accepted assessment remained Sell/Avoid, Watch conviction, medium confidence, USD 3.33/USD 7.57/USD 16.47 bear/base/bull values, and allocation ineligible with the existing economic gates."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZCFVCT82RJFGB5HESAFJB6B.json",
+    "data/runs/local-20260806T212356Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_request.json",
+    "data/runs/local-20260806T212356Z/01KZ9ZJVER177B5ASW4ZMQHEG3/enqueue_full_research_request.json",
+    "data/runs/local-20260806T212356Z/01KZ9ZJVER177B5ASW4ZMQHEG3/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/wiki/securities/security_95351d928b674bbdf687.md"
+  ],
+  "operations_created": ["01KZCFVCT82RJFGB5HESAFJB6B"],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "DNA quick check found a 12.6% decline to USD 8.50 with anomalous volume and retained the Sell/Avoid, Watch, allocation-ineligible conclusion pending post-Q2 evidence. Exactly one dependent full security review was enqueued. The comparable assessment update was blocked by the routed CLI scope policy and no paper trade state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader queue enqueue --request data/runs/local-20260806T212356Z/01KZ9ZJVER177B5ASW4ZMQHEG3/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/local-20260806T212356Z/01KZ9ZJVER177B5ASW4ZMQHEG3/security_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory security-context command succeeded before assessment state was read or changed; it confirmed the same immutable security and successful baseline within ten days.",
+      "Confirmed both merged alert causes and the current source price hash from the payload and deterministic inbox packets.",
+      "Updated the maintained DNA security page with the current decline, volume anomaly, unchanged valuation conclusion, and explicit escalation rationale.",
+      "Enqueued exactly one dependent security_research operation 01KZCFVCT82RJFGB5HESAFJB6B carrying this quick-check identity, both trigger causes, both price hashes, exact market period, and changed gate.",
+      "Security upsert succeeded and changed only the validated securities projection.",
+      "Assessment upsert was rejected by the deterministic CLI as outside the quick_check_research skill scope under the routed scout triage policy; it was not retried or substituted.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio].",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting ledger was changed."
+    ]
+  }
+}

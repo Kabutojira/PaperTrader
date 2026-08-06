@@ -2,10 +2,47 @@
   "entity_id": "security_7bf8f4c9cc12ae410e40",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_7bf8f4c9cc12ae410e40"
+    "market_data_as_of": "2026-08-06T21:26:50Z",
+    "market_data_date": "2026-08-06",
+    "period_end": "2026-08-06",
+    "period_start": "2026-07-09",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_7bf8f4c9cc12ae410e40:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:16Z",
+        "prompt": "Research ABCL — AbCellera Biologics Inc. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_7bf8f4c9cc12ae410e40:fe16a11c017479b7831b:2026-08-06",
+        "market_data_date": "2026-08-06",
+        "observed_at": "2026-08-06T21:26:50Z",
+        "prompt": "Research security_7bf8f4c9cc12ae410e40 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee.md",
+          "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_7bf8f4c9cc12ae410e40",
+    "source_price_hash": "b43b2dad2b8f5b72cfafe65ea7db9ade3c586c92f9b5cb8c48bfaff66c9a9d12",
+    "trigger_types": [
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research ABCL — AbCellera Biologics Inc. as an initial bounded security review.",
+  "objective": "Research ABCL — AbCellera Biologics Inc. as an initial bounded security review. | Additional cause: Research security_7bf8f4c9cc12ae410e40 with high priority after price-action alerts: macd_cross_above_signal, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB26Z023E3AMG9Z8KSPW9D",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee.md",
+    "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08.md"
+  ]
 }

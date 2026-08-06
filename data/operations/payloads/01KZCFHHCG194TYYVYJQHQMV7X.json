@@ -1,0 +1,15 @@
+{
+  "entity_id": "source_36f171707a29a02c8a5e",
+  "entity_type": "source",
+  "inputs": {
+    "source_hash": "aa94268d359828b9eabeef89a8de5a85ee4519228348db86cb4dc909142f56cb",
+    "source_path": "data/wiki/inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58.md"
+  },
+  "objective": "Ingest validated candidate packet market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58.md into the wiki.",
+  "operation_id": "01KZCFHHCG194TYYVYJQHQMV7X",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58.md"
+  ]
+}

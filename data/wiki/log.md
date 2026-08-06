@@ -2184,6 +2184,46 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260806]] for run `local-20260806T175531Z`.
 
+- Created candidate packet [[inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58]] (17f2c47b5c58).
+
+- Classified [[inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58]] as `ingest`: New MACD bullish crossover after a material 10.4% decline merits durable security context.
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-9ea1640a5ec9]] (9ea1640a5ec9).
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-cb0dbbd33b2b]] (cb0dbbd33b2b).
+
+- Created candidate packet [[inbox/market-security_3a75fc1ccca2ee7c937a-macd_cross_above_signal-d19b3285efd2]] (d19b3285efd2).
+
+- Classified [[inbox/market-security_3a75fc1ccca2ee7c937a-macd_cross_above_signal-d19b3285efd2]] as `ingest`: New MACD bullish crossover after a material 16.07% decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-b9b686957690]] (b9b686957690).
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-b9b686957690]] as `ingest`: A newly entered volume anomaly coincides with a material 2.3% decline over the review period and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee]] (fe2fa9c59fee).
+
+- Classified [[inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee]] as `ingest`: A new MACD bullish crossover after a 10.4% period decline is a material indicator transition for the security.
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08]] (2be7b5c1bf08).
+
+- Classified [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08]] as `ingest`: Material volume anomaly coincides with a 10.4% decline over the observed period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd]] (0ee132d3f8bd).
+
+- Classified [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd]] as `ingest`: Material volume anomaly coincides with a 12.6% decline over the observed period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_a9eb9838940ef5ceaa0c-sma_50_cross_below_200-ae9bff9e83c0]] (ae9bff9e83c0).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-2e836cf4b95b]] (2e836cf4b95b).
+
+- Created candidate packet [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-d2200e5084d7]] (d2200e5084d7).
+
+- Classified [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-d2200e5084d7]] as `ingest`: A new MACD bullish crossover is a durable indicator transition for the tracked security despite the negative period return.
+
+- Published investor decision snapshot `decision_5e4a28ab3391b54d3ac5`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `local-20260806T212356Z`.
+
 ## 2026-08-06 — security review — RTX Corporation common stock
 
 - Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its unchanged Q2 Form 10-Q,

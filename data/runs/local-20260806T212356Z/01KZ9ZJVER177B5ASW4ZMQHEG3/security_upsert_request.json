@@ -1,0 +1,23 @@
+{
+  "security_id": "security_95351d928b674bbdf687",
+  "issuer_id": "issuer_a743f8506828e2be799d",
+  "company_name": "Ginkgo Bioworks Holdings, Inc.",
+  "instrument_name": "Ginkgo Bioworks Holdings, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "DNA",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "DNA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Autonomous-lab scale merits monitoring, but the 12.6% decline, high burn, dilution, and unresolved post-Q2 evidence keep DNA allocation-ineligible.",
+  "research_summary": "DNA fell 12.6% over the alert period to USD 8.50 amid anomalous volume; prior scenario downside and burn/dilution concerns remain unresolved pending full post-Q2 review.",
+  "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
+  "last_research_at": "2026-08-06T21:26:50Z",
+  "next_review_at": "2026-08-06T22:30:00Z",
+  "source": "source_dna_q1_2026_10q|source_dna_q1_2026_results"
+}
