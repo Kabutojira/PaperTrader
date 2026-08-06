@@ -1,0 +1,49 @@
+{
+  "api_key_fallback": false,
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "a06e7f220dd8c80ca0f4294045de3244e6d468d7334f517b6301a75ee61eb80d",
+    "version": "repository"
+  },
+  "escalation_source": "",
+  "external_skill_dirs": [
+    "skills"
+  ],
+  "hermes_config_sha256": "e57922b590217ad33e49b290a966b39c19ac771dd2b632d82ff5bc9b4ac01545",
+  "maximum_turns": 160,
+  "model": "gpt-5.6-sol",
+  "mutation_policy": "full_research",
+  "native_skill": {
+    "name": "llm-wiki",
+    "path": "skills/research/llm-wiki/SKILL.md",
+    "sha256": "a37ae04745b04b8e9bbd8de37cdcbc2b2187ccafb68418e436a46ebb1e491ee5",
+    "version": "2.1.0"
+  },
+  "operation_id": "01KYPB2TG0W0FFP83ZG7KC45YP",
+  "operation_skill": {
+    "name": "papertrader-security-research",
+    "path": "skills/papertrader-security-research/SKILL.md",
+    "sha256": "6500a666bea70a875a084b022742c967d59b135c2b3aba03ac2ffc2056bc6075",
+    "version": "repository"
+  },
+  "preflight_version": 4,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "prompt_injection_flags": [],
+  "provider": "openai-codex",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260806T141904Z",
+  "sequential": true,
+  "timeout_seconds": 1800,
+  "web_extract_failure_policy": "native_bounded_raw_excerpt",
+  "web_extract_model": "gpt-5.6-luna",
+  "web_extract_provider": "openai-codex",
+  "web_extract_reasoning_effort": "low",
+  "weighted_cost": "5",
+  "yolo": true
+}

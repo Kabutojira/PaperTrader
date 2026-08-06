@@ -2244,3 +2244,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Instrument-level valuation remains unsupported and local liquidity is insufficient, so the
   assessment is ineligible and no strategy, signal, order, follow-up operation, or accounting
   change was justified.
+
+## 2026-08-06 — security review — Intel Corporation common stock
+
+- Created [[securities/security_dfa34d4b9050964b465e|Intel]] from its Q2 2026 Form 10-Q and SEC-filed
+  results release; product demand, yields, margins and operating cash flow improved, while external
+  foundry revenue remains early and net debt, investment intensity, dilution and execution risk remain
+  material.
+- The 4 August bullish MACD crossover followed a 3.67% one-session adjusted-close decline. It is
+  constructive timing inside an incomplete trend recovery, not a verified fundamental catalyst.
+- USD 33/USD 80/USD 133 normalized-earnings scenarios imply USD 81.50 weighted value against the USD
+  101.06 mark. Intel is Hold / Watch: expected return, base return, downside payoff, margin of safety
+  and the absent accepted relationship block allocation, so no strategy, signal, order or follow-up
+  was created.

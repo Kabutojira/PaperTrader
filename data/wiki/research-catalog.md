@@ -294,6 +294,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Freeport-McMoRan Inc. common stock](securities/security_2dbe878dfc899d7ee867)
 - [GE Vernova Inc. common stock](securities/security_4b61970aa8f574446819)
 - [Ginkgo Bioworks Holdings, Inc. Class A common stock](securities/security_95351d928b674bbdf687)
+- [Intel Corporation common stock](securities/security_dfa34d4b9050964b465e)
 - [Intuitive Machines, Inc. Class A common stock](securities/security_a5dc16f3f4b245e6c168)
 - [Intuitive Surgical, Inc. common stock](securities/security_1f9cce545ede94cd6349)
 - [Kratos Defense &amp; Security Solutions, Inc. common stock](securities/security_0cf8075039299094d614)

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_dfa34d4b9050964b465e",
+  "issuer_id": "issuer_e5ff2f53cd2ac8db4f85",
+  "company_name": "Intel Corporation",
+  "instrument_name": "Intel Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "INTC",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "INTC",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Product and margin recovery plus external-foundry optionality merit coverage, but USD 33/80/133 scenarios imply USD 81.50 weighted value below the USD 101.06 mark amid capital and execution risk.",
+  "research_summary": "Q2 growth, yield and margin recovery are constructive, but USD 81.50 weighted value is below USD 101.06; Hold / Watch despite bullish MACD.",
+  "research_page": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+  "last_research_at": "2026-08-06T15:02:43Z",
+  "next_review_at": "2026-08-20T15:02:43Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm"
+}

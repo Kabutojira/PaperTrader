@@ -1,0 +1,18 @@
+{
+  "source_id": "source_intc_q2_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm",
+  "source_type": "filing",
+  "title": "Intel Corporation Form 10-Q for the quarter ended June 27, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "23bf9b8f45c8a4412245f9919fcbf124d0aa1af3bd949af671a4cce68fc2acda",
+  "related_entity_ids": "security_dfa34d4b9050964b465e",
+  "checked_at": "2026-08-06T15:02:43Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 27 Intel held $29.727 billion of cash and short-term investments against $50.537 billion of debt; first-half operating cash flow was $8.102 billion.",
+  "summary": "The quarterly filing supports segment economics, external foundry progress, balance-sheet and cash-flow analysis, capital intensity, dilution, restructuring, and operating and competitive risks.",
+  "run_id": "daily-20260806T141904Z"
+}

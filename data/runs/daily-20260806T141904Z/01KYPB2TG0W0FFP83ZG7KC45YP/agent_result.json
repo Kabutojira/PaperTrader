@@ -1,0 +1,79 @@
+{
+  "operation_id": "01KYPB2TG0W0FFP83ZG7KC45YP",
+  "status": "succeeded",
+  "summary": "Completed exactly one Intel Corporation common-stock security review from the Q2 2026 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. Bear/base/bull fair values of USD 33/USD 80/USD 133 produce a USD 81.50 probability-weighted value versus USD 101.06. Deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility because expected return, base return, bear/base and expected/bear payoff, margin of safety, and relationship gates fail. The bullish MACD transition is constructive timing inside an incomplete trend recovery, not an entry signal. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because the security has no linked idea or accepted relationship and the strategy gate failed.",
+  "evidence": [
+    {
+      "source": "source_intc_q2_2026_10q_sec",
+      "claim": "Intel's Q2 Form 10-Q supports segment economics, external-foundry progress, balance-sheet and cash-flow analysis, capital intensity, dilution, restructuring, and operating risks. At June 27 Intel held USD 29.727 billion of cash and short-term investments against USD 50.537 billion of debt; first-half operating cash flow was USD 8.102 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm",
+      "observed_at": "2026-08-06T15:02:43Z",
+      "source_hash": "23bf9b8f45c8a4412245f9919fcbf124d0aa1af3bd949af671a4cce68fc2acda"
+    },
+    {
+      "source": "source_intc_q2_2026_results_sec_ex99_1",
+      "claim": "Intel's SEC-filed Q2 release reports USD 16.1 billion of revenue, 40.4% GAAP gross margin, 11.1% GAAP operating margin, USD 0.42 non-GAAP EPS, USD 15.8-16.8 billion of Q3 revenue guidance, and a quarterly USD 8.419 billion adjusted free-cash-flow outflow after investment and partner-contribution movements.",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm",
+      "observed_at": "2026-08-06T15:02:43Z",
+      "source_hash": "5793462254cf215b58c508b426a914e3264b8044e623b7433f7e51696caf7e7a"
+    },
+    {
+      "source": "data/market/latest.csv, data/market/indicators.csv, data/market/fx/USD_EUR.csv, and the canonical alert packet",
+      "claim": "The identity-matched reference mark is USD 101.05999755859375 for the 2026-08-05 session and the current USD/EUR rate is 0.8665000200271606, both retrieved at 2026-08-06T14:19:11Z. The canonical alert period returned -3.67%; current MACD -5.2526 remained above its -6.1686 signal, RSI was 49.52, the mark was below SMA50 but above SMA200, and no threshold alert remained active."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic assessment normalization derived bear/base/bull returns of -67.3461%/-20.8391%/31.6050%, expected return of -19.3548%, medium-confidence adjusted return of -14.5161%, USD 64 buy-below value, Sell rating, Avoid action, quality score 74, watch-tier conviction, and allocation ineligibility across expected-return, base-return, payoff, margin-of-safety, and relationship gates."
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable first assessment assessment_a66ec8b3a31b859f1946 records schema version 2, this operation and result path, the Intel security page and captured hash, registered evidence, and current run provenance; no predecessor existed."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/assessment_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/security_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/security_upsert_request_v2.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/source_intc_q2_2026_10q_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/source_intc_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_dfa34d4b9050964b465e.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "INTC full review completed: Q2 product growth, yield and margin recovery are constructive, but USD 33/USD 80/USD 133 scenarios imply USD 81.50 weighted value against USD 101.06 while foundry execution, net debt and capital intensity remain material. Canonical conclusion is Sell / Avoid; no paper strategy, signal, order, or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_dfa34d4b9050964b465e",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/source_intc_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/source_intc_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2TG0W0FFP83ZG7KC45YP/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context completed before assessment-state reads or changes and showed no prior assessment, successful result, linked idea, accepted relationship, or strategy.",
+      "Immutable identity remained security_dfa34d4b9050964b465e / issuer_e5ff2f53cd2ac8db4f85 / XNAS / INTC / USD / equity; the initial request used an incorrect issuer ID and exited without changing state, while the uniquely named corrected request validated and changed only the security row.",
+      "Both retained primary sources were registered through the project CLI with current SEC URLs and content hashes.",
+      "Current assessment is schema version 2, scenario-complete, source-backed, price/FX identity-matched, and linked through immutable history to this operation, result path, wiki page, page hash, and run.",
+      "Assessment probabilities total 100%, fair values are ordered, and all seven component inputs use only the 20/40/60/80/100 rubric anchors.",
+      "No idea-research follow-up was required because bounded security context and canonical relationship state contained no linked idea; no conviction strategy was queued because the full strategy gate failed.",
+      "Strict schema validation returned OK [schema].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ]
+  }
+}

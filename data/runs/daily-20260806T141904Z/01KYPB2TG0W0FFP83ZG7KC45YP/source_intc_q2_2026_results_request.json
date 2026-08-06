@@ -1,0 +1,18 @@
+{
+  "source_id": "source_intc_q2_2026_results_sec_ex99_1",
+  "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm",
+  "source_type": "issuer_release",
+  "title": "Intel Corporation second-quarter 2026 financial results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5793462254cf215b58c508b426a914e3264b8044e623b7433f7e51696caf7e7a",
+  "related_entity_ids": "security_dfa34d4b9050964b465e",
+  "checked_at": "2026-08-06T15:02:43Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 revenue was $16.1 billion, GAAP gross margin 40.4%, non-GAAP EPS $0.42, and Q3 revenue guidance $15.8-$16.8 billion.",
+  "summary": "The SEC-filed issuer release supports current revenue, product and foundry trends, margins, normalized earnings, cash flow, investment requirements, and third-quarter guidance.",
+  "run_id": "daily-20260806T141904Z"
+}
