@@ -2216,3 +2216,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - USD 247/USD 379.50/USD 494 earnings-multiple scenarios imply USD 375 weighted value against USD 414.
   TSMC is Hold / Watch: expected return, base return, downside payoff, margin of safety and the absent
   accepted relationship block allocation, so no strategy, signal, order or follow-up was created.
+
+## 2026-08-06 — security review — MP Materials Corp. common stock
+
+- Created [[securities/security_cd492d97064d8574156e|MP Materials]] from its Q1 2026 Form 10-Q and
+  issuer results release; record NdPr production, initial magnetics economics, contractual support,
+  and strong liquidity support the vertical-integration thesis.
+- Government dependence, commodity sensitivity, construction execution, capital intensity,
+  preferred capital, and dilution remain material, while robotics-specific revenue is unverified.
+- USD 20/USD 42/USD 75 normalized-earnings scenarios imply USD 44.75 weighted value against the USD
+  47.91 mark. The 4 August MACD crossover is constructive rebound timing, but the volume anomaly was
+  not persistent and no fundamental entry signal was verified.
+- MP moves from unassessed watchlist status to Hold / Watch. No strategy, signal, follow-up operation,
+  order, or accounting change was justified.

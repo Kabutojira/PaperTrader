@@ -1,0 +1,90 @@
+{
+  "operation_id": "01KYPB2PK0R0ZXAHGNGZ6X5FM8",
+  "status": "succeeded",
+  "summary": "Completed the first scenario-complete MP Materials common-stock review using its Q1 2026 Form 10-Q, issuer results release, and the canonical 4 August MACD-cross and volume-anomaly observations. Record NdPr output, initial profitable Magnetics operations, contractual price protection, 10X progress, and USD 1.738 billion of cash and short-term investments support the vertical-integration thesis, but government concentration, commodity exposure, construction risk, capital intensity, preferred capital, and dilution remain material. The deterministic assessment recorded a Hold rating, Watch portfolio action, quality score 72, medium confidence, and USD 20/USD 42/USD 75 bear/base/bull fair values with USD 44.75 probability-weighted fair value against USD 47.90999984741211. Allocation is ineligible because expected return, base return, bear/base and expected/bear payoff, margin of safety, and the accepted-relationship gate do not pass; no strategy, signal, paper order, issue, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_mp_q1_2026_10q",
+      "claim": "MP Materials' Q1 2026 Form 10-Q reported USD 1.738 billion of cash and short-term investments, about USD 1.000 billion debt carrying value, USD 420.7 million preferred liquidation preference, USD 77.4 million quarterly capital expenditure, and 177.670 million common shares outstanding. It also documents the NdPr price floor, 10X offtake and minimum-EBITDA framework, customer and government concentration, construction obligations, dilution, and appropriation risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000029/mp-20260331.htm",
+      "observed_at": "2026-08-06T14:41:19Z",
+      "source_hash": "8bcfe282884ba4017444d98debe94d742b46a956d9ed9133d7b3a285c965f8ff"
+    },
+    {
+      "source": "source_mp_q1_2026_results",
+      "claim": "The issuer's Q1 2026 release reported 917 metric tons of NdPr production, 1,006 metric tons of NdPr sales, USD 90.6 million consolidated revenue, USD 42.3 million price-protection income, USD 36.6 million adjusted EBITDA, USD 21.1 million Magnetics revenue, USD 9.6 million Magnetics adjusted EBITDA, and groundbreaking at the 10X facility.",
+      "url": "https://investors.mpmaterials.com/investor-news/news-details/2026/MP-Materials-Reports-First-Quarter-2026-Results/default.aspx",
+      "observed_at": "2026-08-06T14:41:19Z",
+      "source_hash": "555411ffd11a7f4f536bc7f962b60146929ecba1be3b90850c82aaf589ab74d0"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_cd492d97064d8574156e-macd_cross_above_signal-67ca09efe67d.md",
+      "claim": "The canonical 4 August alert measured a 5.98% adjusted-close decline from 7 July through 4 August to USD 47.47 while MACD crossed above its signal line. The fresher 5 August close was USD 47.91 with MACD still above signal, so the review treated the crossover as constructive rebound timing rather than verified fundamental evidence or an entry signal."
+    },
+    {
+      "source": "data/wiki/inbox/market-security_cd492d97064d8574156e-volume_anomaly-08c55411ef29.md",
+      "claim": "The canonical 4 August volume alert recorded 10.3 million shares and strengthening anomalous volume over the same drawdown period; fresher 5 August volume normalized to 7.4 million shares, so the anomaly was not persistent and did not justify action."
+    },
+    {
+      "source": "assessment_93a60c605666d4019f13",
+      "claim": "Deterministic assessment version 2 derived USD 44.75 probability-weighted fair value, -6.5957% expected return, -4.9468% confidence-adjusted expected return, USD 33.60 buy-below price, -14.0714% margin of safety, Hold canonical rating, Watch portfolio action, Watch conviction tier, and allocation ineligibility with complete threshold-frontier reasons."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry03_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry04_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/security_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/source_mp_q1_2026_10q_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/source_mp_q1_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_cd492d97064d8574156e.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "MP Materials security review completed: Q1 delivered record NdPr output, initial Magnetics profit, contractual price protection, 10X progress, and strong liquidity, but government concentration, cyclicality, capex, execution and dilution remain material. Scenario fair values are USD 20/USD 42/USD 75 against USD 47.91. Deterministic rating is Hold and portfolio action Watch; the 4 August MACD crossover is constructive rebound timing, but the volume anomaly was not persistent and neither alert overcomes negative modeled return, severe bear downside, medium confidence, or the missing accepted relationship. No strategy, signal, paper order, issue, or follow-up operation was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_cd492d97064d8574156e",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/source_mp_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/source_mp_q1_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry02_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry03_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0R0ZXAHGNGZ6X5FM8/assessment_upsert_retry04_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_cd492d97064d8574156e"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed; it showed no prior assessment, successful result, retained source, accepted relationship, strategy, or linked idea requiring a follow-up.",
+      "Registered both retained primary sources with current 2026-08-06 observation timestamps and immutable SHA-256 content hashes before assessment use.",
+      "Security upsert preserved immutable MP/XNYS/USD/equity identity and changed only validated research fields.",
+      "Exactly one immutable assessment schema-version-2 history row, assessment_93a60c605666d4019f13, was accepted and linked to this operation, result path, registered evidence, and research-page hash; rejected request shapes remained immutable and every correction used a uniquely named request artifact.",
+      "Final security-context confirmed the current page hash a414fde85dfa27ee8e79e7a963242af63ad4f573f787217af6d210231cd71e5e matches immutable history, price and FX timestamps are fresh, both evidence sources are current and registered, and no accepted relationship, linked idea, or strategy exists.",
+      "No idea-research follow-up was required because the payload named no idea and canonical structured state contained no relationship; no strategy-research follow-up was allowed because allocation eligibility is ineligible.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio], confirming no accounting mismatch and no operation-side ledger, fill, execution, cash, portfolio, or performance mutation.",
+      "git diff --check passed before the manifest was written."
+    ]
+  }
+}

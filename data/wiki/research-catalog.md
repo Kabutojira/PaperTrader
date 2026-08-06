@@ -300,6 +300,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
 - [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)
+- [MP Materials Corp. common stock](securities/security_cd492d97064d8574156e)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
 - [Nebius Group N.V. Class A ordinary shares](securities/security_47a0b06f6c6c478d7c1e)
 - [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)

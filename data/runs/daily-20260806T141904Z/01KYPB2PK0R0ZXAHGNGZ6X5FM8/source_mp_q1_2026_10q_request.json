@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mp_q1_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000029/mp-20260331.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000029/mp-20260331.htm",
+  "source_type": "filing",
+  "title": "MP Materials Corp. Form 10-Q for the quarter ended March 31, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "8bcfe282884ba4017444d98debe94d742b46a956d9ed9133d7b3a285c965f8ff",
+  "related_entity_ids": "security_cd492d97064d8574156e",
+  "checked_at": "2026-08-06T14:41:19Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At March 31, 2026, cash and short-term investments totaled USD 1.738 billion, debt carrying value totaled about USD 1.000 billion, and 177.670 million common shares were outstanding.",
+  "summary": "The quarterly filing supplies current production, segment economics, price-protection income, capital expenditure, liquidity, debt, preferred capital, dilution, customer and government-contract risks for the common-equity review.",
+  "run_id": "daily-20260806T141904Z"
+}

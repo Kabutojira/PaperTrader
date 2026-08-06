@@ -1,0 +1,23 @@
+{
+  "security_id": "security_cd492d97064d8574156e",
+  "issuer_id": "issuer_f55643c93c8d6d38a0f8",
+  "company_name": "MP Materials Corp.",
+  "instrument_name": "MP Materials Corp. common stock",
+  "instrument_type": "equity",
+  "ticker": "MP",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "MP",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "Vertically integrated US rare-earth and magnetics exposure; monitor NdPr economics, Independence and 10X ramps, government-contract cash conversion, capex, dilution, and Q2 evidence.",
+  "research_summary": "Record NdPr output and early magnetics profit support vertical integration, but USD 44.75 weighted value is below the USD 47.91 mark and downside remains severe.",
+  "research_page": "data/wiki/securities/security_cd492d97064d8574156e.md",
+  "last_research_at": "2026-08-06T14:41:19Z",
+  "next_review_at": "2026-09-05T14:41:19Z",
+  "source": "source_mp_q1_2026_10q|source_mp_q1_2026_results"
+}
