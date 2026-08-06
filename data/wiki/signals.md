@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bd9a696aa85c10753d20"
-as_of: "2026-08-06T09:56:15Z"
+snapshot_id: "decision_d0d9b91d2c4d8a341997"
+as_of: "2026-08-06T12:26:03Z"
 ---
 
 # Signals
 
-**As of `2026-08-06T09:56:15Z`**
+**As of `2026-08-06T12:26:03Z`**
 
 ## Actionable trade signals
 
@@ -121,8 +121,8 @@ No pending paper orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-05`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
 
 ### [RIO — Rio Tinto plc](securities/security_1c055eb9b2bb1f5a8ff2)
 
