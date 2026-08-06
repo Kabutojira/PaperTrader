@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsm_q2_2026_results_sec_ex99_1",
+  "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm",
+  "source_type": "issuer_release",
+  "title": "TSMC Reports Second Quarter 2026 Results (SEC-filed Exhibit 99.1)",
+  "publisher": "Taiwan Semiconductor Manufacturing Company Limited via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6e877956870c87d857d8af23144f35ddcbd3b569d464c962e7cf368c46860be3",
+  "related_entity_ids": "security_ce9b78a4d0773c950765",
+  "checked_at": "2026-08-06T14:30:57Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second-quarter revenue was US$40.20 billion, diluted EPS was US$4.31 per ADR, and management guided third-quarter revenue to US$44.6-45.8 billion.",
+  "summary": "The SEC-filed release provides current revenue, margins, ADR earnings, node mix, share count, and third-quarter guidance for the scenario valuation.",
+  "run_id": "daily-20260806T141904Z"
+}

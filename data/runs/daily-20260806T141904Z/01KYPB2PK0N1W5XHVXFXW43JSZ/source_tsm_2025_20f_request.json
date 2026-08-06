@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsm_2025_20f_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+  "source_type": "filing",
+  "title": "Taiwan Semiconductor Manufacturing Company Limited 2025 Form 20-F",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "c3ebd05cd8fb383f53fc21a0ac497ee12cf908b709c380f9bec4f39c4916647b",
+  "related_entity_ids": "security_ce9b78a4d0773c950765",
+  "checked_at": "2026-08-06T14:30:57Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "2025 diluted earnings were US$10.43 per equivalent ADS; operating cash flow was US$72.5 billion, while 2026 capital expenditure was expected at US$52-56 billion.",
+  "summary": "The annual filing supports ADR identity, audited earnings and cash flow, customer concentration, capital requirements, geographic expansion, and geopolitical and operating risks.",
+  "run_id": "daily-20260806T141904Z"
+}

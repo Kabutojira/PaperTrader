@@ -2205,3 +2205,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - USD 0.79/USD 3.17/USD 6.15 normalized-earnings scenarios imply USD 3.32 weighted value against the
   USD 3.25 mark, but base downside and severe bear asymmetry leave W&T at Hold / Watch. No strategy,
   signal, order, follow-up operation, or accounting change was justified.
+
+## 2026-08-06 — security review — Taiwan Semiconductor Manufacturing Company Limited sponsored ADR
+
+- Created [[securities/security_ce9b78a4d0773c950765|TSMC]] from the 2025 Form 20-F and SEC-filed
+  Q2 2026 results; leading-node demand, 67.7% gross margin, cash generation and net financial strength
+  support exceptional business quality, while geographic and customer concentration remain severe.
+- The 4 August bullish MACD crossover followed a 3.56% adjusted-close decline over the measured
+  period. It is constructive timing, but not a fundamental entry signal at the fresher USD 414 mark.
+- USD 247/USD 379.50/USD 494 earnings-multiple scenarios imply USD 375 weighted value against USD 414.
+  TSMC is Hold / Watch: expected return, base return, downside payoff, margin of safety and the absent
+  accepted relationship block allocation, so no strategy, signal, order or follow-up was created.

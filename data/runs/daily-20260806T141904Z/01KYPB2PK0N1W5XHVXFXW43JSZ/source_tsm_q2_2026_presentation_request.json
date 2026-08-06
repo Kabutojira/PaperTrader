@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsm_q2_2026_presentation_sec_ex99_2",
+  "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26presentatione.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26presentatione.htm",
+  "source_type": "issuer_release",
+  "title": "TSMC 2026 Second Quarter Earnings Conference Presentation (SEC-filed Exhibit 99.2)",
+  "publisher": "Taiwan Semiconductor Manufacturing Company Limited via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "939d51f10b81ee70e87864e3fa0f93b7eb0a9e4868d6a226b6bd284d407583af",
+  "related_entity_ids": "security_ce9b78a4d0773c950765",
+  "checked_at": "2026-08-06T14:30:57Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, cash and marketable securities were NT$3.518 trillion, long-term interest-bearing debt was NT$864.27 billion, and quarterly free cash flow was NT$287.36 billion.",
+  "summary": "The SEC-filed presentation supports current balance-sheet strength, cash generation, capital intensity, node mix, 2026 growth outlook, and diluted share count.",
+  "run_id": "daily-20260806T141904Z"
+}

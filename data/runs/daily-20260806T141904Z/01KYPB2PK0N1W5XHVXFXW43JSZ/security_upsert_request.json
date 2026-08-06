@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ce9b78a4d0773c950765",
+  "issuer_id": "issuer_9735cbb026f9cfcfa534",
+  "company_name": "Taiwan Semiconductor Manufacturing Company Limited",
+  "instrument_name": "Taiwan Semiconductor Manufacturing Company Limited sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "TSM",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "TSM",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "TW",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Exceptional foundry economics and AI-led demand merit coverage, but USD 247/379.5/494 scenarios imply overvaluation at USD 414 and Taiwan geopolitical concentration makes allocation exceptional only.",
+  "research_summary": "Q2 growth, margins and cash generation are exceptional, but USD 375 weighted ADR value is below USD 414; Hold / Watch despite bullish MACD.",
+  "research_page": "data/wiki/securities/security_ce9b78a4d0773c950765.md",
+  "last_research_at": "2026-08-06T14:30:57Z",
+  "next_review_at": "2026-08-20T14:30:57Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm"
+}

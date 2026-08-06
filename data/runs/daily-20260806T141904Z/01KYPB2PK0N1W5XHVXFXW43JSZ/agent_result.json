@@ -1,0 +1,86 @@
+{
+  "operation_id": "01KYPB2PK0N1W5XHVXFXW43JSZ",
+  "status": "succeeded",
+  "summary": "Completed exactly one Taiwan Semiconductor Manufacturing Company sponsored-ADR security review from the 2025 Form 20-F, SEC-filed Q2 2026 results and presentation, and canonical 5 August 2026 market and FX state. Registered all three primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. Bear/base/bull fair values of USD 247/USD 379.50/USD 494 produce a USD 375 probability-weighted value versus USD 414; deterministic state derives Hold / Watch, watch-tier conviction, and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and relationship gates fail. The bullish MACD transition is constructive timing but not an entry signal. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because the security has no linked idea or accepted relationship and the strategy gate failed.",
+  "evidence": [
+    {
+      "source": "source_tsm_2025_20f_sec",
+      "claim": "TSMC's 2025 Form 20-F supports the ADR identity, audited earnings, cash generation, capital intensity, customer concentration, overseas expansion, and geopolitical risk analysis; 2025 diluted earnings were USD 10.43 per equivalent ADS, operating cash flow was USD 72.5 billion, and 2026 capital expenditure was expected at USD 52-56 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm",
+      "observed_at": "2026-08-06T14:30:57Z",
+      "source_hash": "c3ebd05cd8fb383f53fc21a0ac497ee12cf908b709c380f9bec4f39c4916647b"
+    },
+    {
+      "source": "source_tsm_q2_2026_results_sec_ex99_1",
+      "claim": "TSMC's SEC-filed Q2 results report USD 40.20 billion of revenue, 67.7% gross margin, 60.3% operating margin, USD 4.31 diluted EPS per ADR, 77% leading-node wafer revenue, and third-quarter revenue guidance of USD 44.6-45.8 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm",
+      "observed_at": "2026-08-06T14:30:57Z",
+      "source_hash": "6e877956870c87d857d8af23144f35ddcbd3b569d464c962e7cf368c46860be3"
+    },
+    {
+      "source": "source_tsm_q2_2026_presentation_sec_ex99_2",
+      "claim": "TSMC's SEC-filed Q2 presentation reports NT$3.518 trillion of cash and marketable securities versus NT$864.27 billion of long-term interest-bearing debt, NT$287.36 billion of quarterly free cash flow, and an outlook for 2026 US-dollar revenue growth slightly above 40%.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26presentatione.htm",
+      "observed_at": "2026-08-06T14:30:57Z",
+      "source_hash": "939d51f10b81ee70e87864e3fa0f93b7eb0a9e4868d6a226b6bd284d407583af"
+    },
+    {
+      "source": "data/market/latest.csv, data/market/indicators.csv, data/market/fx/USD_EUR.csv, and the canonical alert packet",
+      "claim": "The identity-matched reference mark is USD 414 for the 2026-08-05 session and the current USD/EUR rate is 0.8665000200271606, both retrieved at 2026-08-06T14:19:11Z. The canonical alert period returned -3.56%; the current MACD of -5.7906 remained above its -6.9156 signal with RSI 49.88 and no active threshold alert."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic assessment normalization derived bear/base/bull returns of -40.3382%/-8.3333%/19.3237%, expected return of -9.4203%, medium-confidence adjusted return of -7.0652%, USD 303.60 buy-below value, Hold rating, Watch action, quality score 94, watch-tier conviction, and allocation ineligibility across expected-return, base-return, payoff, margin-of-safety, and relationship gates."
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable first assessment assessment_46d2ae16336286c36b20 records schema version 2, this operation and result path, the TSMC security page and captured hash, registered evidence, and current run provenance; no predecessor existed."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/assessment_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/security_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/source_tsm_2025_20f_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/source_tsm_q2_2026_presentation_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/source_tsm_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_ce9b78a4d0773c950765.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "TSM full review completed: Q2 leading-node growth, margins, cash generation and net financial strength are exceptional, but USD 247/USD 379.50/USD 494 scenarios imply USD 375 weighted value against USD 414 and concentrated geopolitical risk remains severe. Canonical conclusion is Hold / Watch; no paper strategy, signal, order, or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_ce9b78a4d0773c950765",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/source_tsm_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/source_tsm_q2_2026_presentation_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/source_tsm_2025_20f_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2PK0N1W5XHVXFXW43JSZ/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context completed before assessment-state reads or changes and showed no prior assessment, successful result, linked idea, accepted relationship, or strategy.",
+      "Immutable identity remained security_ce9b78a4d0773c950765 / issuer_9735cbb026f9cfcfa534 / XNYS / TSM / USD / equity; the validated security upsert found no identity conflict.",
+      "All three retained primary sources were registered through the project CLI with current SEC URLs and content hashes.",
+      "Current assessment is schema version 2, scenario-complete, source-backed, price/FX identity-matched, and linked through immutable history to this operation, result path, wiki page, page hash, and run.",
+      "Assessment probabilities total 100%, fair values are ordered, and all seven component inputs use only the 20/40/60/80/100 rubric anchors.",
+      "No idea-research follow-up was required because bounded security context and canonical relationship state contained no linked idea; no conviction strategy was queued because the full strategy gate failed.",
+      "Strict schema validation returned OK [schema].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ]
+  }
+}
