@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_da64fdec600b87557ab4"
-as_of: "2026-08-06T13:15:04Z"
+snapshot_id: "decision_c091a208b1ea6b519d4c"
+as_of: "2026-08-06T15:11:37Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-06T13:15:04Z`
+**As of:** `2026-08-06T15:11:37Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -21,16 +21,16 @@ as_of: "2026-08-06T13:15:04Z"
 
 ## Coverage
 
-- Assessments: 55/57
-- Fresh-evidence assessments: 55/57
-- Relationship reviews: 20/57
+- Assessments: 60/62
+- Fresh-evidence assessments: 60/62
+- Relationship reviews: 20/62
 - Accepted relationships: 18
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 294
+- Research backlog: 289
 - Last successful daily run: 2026-08-06
 
 ## Current issues by investment impact
@@ -44,7 +44,7 @@ as_of: "2026-08-06T13:15:04Z"
 - Warning **LAC — Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]** — [[securities/security_fb87fac302a5446a1ced|LAC]]: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - Warning **HOOD — Robinhood Markets, Inc.: Daily preparation degraded: [[securities/security_ad3b1f8f59fd599f079a|HOOD]]** — [[securities/security_ad3b1f8f59fd599f079a|HOOD]]: price cache is empty
 - Warning **CROX — Crocs, Inc.: Daily preparation degraded: [[securities/security_c150f31c30afdb4a85f9|CROX]]** — [[securities/security_c150f31c30afdb4a85f9|CROX]]: price cache is empty
-- Warning **WTI — W&T Offshore, Inc.: Daily preparation degraded: [[security-catalog#security-security_61567714298b9563d1a9|WTI]]** — [[security-catalog#security-security_61567714298b9563d1a9|WTI]]: price cache is empty
+- Warning **WTI — W&T Offshore, Inc.: Daily preparation degraded: [[securities/security_61567714298b9563d1a9|WTI]]** — [[securities/security_61567714298b9563d1a9|WTI]]: price cache is empty
 - Warning **FCX — Freeport-McMoRan Inc.: Daily preparation degraded: [[securities/security_2dbe878dfc899d7ee867|FCX]]** — [[securities/security_2dbe878dfc899d7ee867|FCX]]: YFTzMissingError: $FCX: possibly delisted; no timezone found
 - Warning **DLO — DLocal Limited: Daily preparation degraded: [[securities/security_715bde20b6e1e1320c1a|DLO]]** — [[securities/security_715bde20b6e1e1320c1a|DLO]]: price cache is empty
 - Warning **TX — Ternium S.A.: Daily preparation degraded: [[securities/security_2c779e81c27b78c556bb|TX]]** — [[securities/security_2c779e81c27b78c556bb|TX]]: YFTzMissingError: $TX: possibly delisted; no timezone found
@@ -60,7 +60,7 @@ as_of: "2026-08-06T13:15:04Z"
 - Warning **SGML — Sigma Lithium Corporation: Daily preparation degraded: [[securities/security_4627aea1bf7d8943d3d8|SGML]]** — [[securities/security_4627aea1bf7d8943d3d8|SGML]]: YFTzMissingError: $SGML: possibly delisted; no timezone found
 - Warning **RKLB — Rocket Lab Corporation: Daily preparation degraded: [[securities/security_7ca095d63423c55a90e3|RKLB]]** — [[securities/security_7ca095d63423c55a90e3|RKLB]]: YFTzMissingError: $RKLB: possibly delisted; no timezone found
 - Warning **ISRG — Intuitive Surgical, Inc.: Daily preparation degraded: [[securities/security_1f9cce545ede94cd6349|ISRG]]** — [[securities/security_1f9cce545ede94cd6349|ISRG]]: YFTzMissingError: $ISRG: possibly delisted; no timezone found
-- Warning **INTC — Intel Corporation: Daily preparation degraded: [[security-catalog#security-security_dfa34d4b9050964b465e|INTC]]** — [[security-catalog#security-security_dfa34d4b9050964b465e|INTC]]: price cache is empty
+- Warning **INTC — Intel Corporation: Daily preparation degraded: [[securities/security_dfa34d4b9050964b465e|INTC]]** — [[securities/security_dfa34d4b9050964b465e|INTC]]: price cache is empty
 - Warning **TWST — Twist Bioscience Corporation: Daily preparation degraded: [[securities/security_6cf75bd0ec0aa2a20148|TWST]]** — [[securities/security_6cf75bd0ec0aa2a20148|TWST]]: price cache is empty
 - Warning **RBLX — Roblox Corporation: Daily preparation degraded: [[securities/security_c9a37d277445869a8809|RBLX]]** — [[securities/security_c9a37d277445869a8809|RBLX]]: YFTzMissingError: $RBLX: possibly delisted; no timezone found
 - Warning **FUC.F — Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]** — [[securities/security_96ba305ee7cd586bc348|FUC.F]]: price cache is empty
@@ -73,10 +73,10 @@ as_of: "2026-08-06T13:15:04Z"
 - Warning **TXN — Texas Instruments Incorporated: Daily preparation degraded: [[security-catalog#security-security_83a56943e18793f685b0|TXN]]** — [[security-catalog#security-security_83a56943e18793f685b0|TXN]]: price cache is empty
 - Warning **VLO — Valero Energy Corporation: Daily preparation degraded: [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]** — [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]: price cache is empty
 - Warning **QCOM — QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]** — [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]: price cache is empty
-- Warning **MP — MP Materials Corp.: Daily preparation degraded: [[security-catalog#security-security_cd492d97064d8574156e|MP]]** — [[security-catalog#security-security_cd492d97064d8574156e|MP]]: price cache is empty
+- Warning **MP — MP Materials Corp.: Daily preparation degraded: [[securities/security_cd492d97064d8574156e|MP]]** — [[securities/security_cd492d97064d8574156e|MP]]: price cache is empty
 - Warning **ANET — Arista Networks, Inc.: Daily preparation degraded: [[securities/security_6f9a1450edceb9307c9a|ANET]]** — [[securities/security_6f9a1450edceb9307c9a|ANET]]: YFTzMissingError: $ANET: possibly delisted; no timezone found
 - Warning **PARRO.PA — Parrot S.A.: Daily preparation degraded: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]** — [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]: YFTzMissingError: $PARRO.PA: possibly delisted; no timezone found
-- Warning **TSM — Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[security-catalog#security-security_ce9b78a4d0773c950765|TSM]]** — [[security-catalog#security-security_ce9b78a4d0773c950765|TSM]]: price cache is empty
+- Warning **TSM — Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[securities/security_ce9b78a4d0773c950765|TSM]]** — [[securities/security_ce9b78a4d0773c950765|TSM]]: price cache is empty
 - Warning **PATH — UiPath, Inc.: Daily preparation degraded: [[security-catalog#security-security_eca976f0076a425ea1bb|PATH]]** — [[security-catalog#security-security_eca976f0076a425ea1bb|PATH]]: price cache is empty
 - Warning **RTX — RTX Corporation: Daily preparation degraded: [[securities/security_59304f90c440def31dc5|RTX]]** — [[securities/security_59304f90c440def31dc5|RTX]]: YFTzMissingError: $RTX: possibly delisted; no timezone found
 - Warning **ASML — ASML Holding N.V.: Daily preparation degraded: [[securities/security_ef35e41886220d51c22c|ASML]]** — [[securities/security_ef35e41886220d51c22c|ASML]]: price cache is empty
@@ -92,7 +92,7 @@ as_of: "2026-08-06T13:15:04Z"
 - Warning **SCCO — Southern Copper Corporation: Daily preparation degraded: [[securities/security_6ad1af8d10d6276a0221|SCCO]]** — [[securities/security_6ad1af8d10d6276a0221|SCCO]]: YFTzMissingError: $SCCO: possibly delisted; no timezone found
 - Warning **MSFT — Microsoft Corporation: Daily preparation degraded: [[securities/security_204be2a44063993de1a8|MSFT]]** — [[securities/security_204be2a44063993de1a8|MSFT]]: price cache is empty
 - Warning **ABBNY — ABB Ltd: Daily preparation degraded: [[securities/security_c120e9f26ebb6159adf9|ABBNY]]** — [[securities/security_c120e9f26ebb6159adf9|ABBNY]]: YFTzMissingError: $ABBNY: possibly delisted; no timezone found
-- Warning **SSUN.VI — Samsung Electronics Co., Ltd.: Daily preparation degraded: [[security-catalog#security-security_d08d763780400dfbffce|SSUN.VI]]** — [[security-catalog#security-security_d08d763780400dfbffce|SSUN.VI]]: price cache is empty
+- Warning **SSUN.VI — Samsung Electronics Co., Ltd.: Daily preparation degraded: [[securities/security_d08d763780400dfbffce|SSUN.VI]]** — [[securities/security_d08d763780400dfbffce|SSUN.VI]]: price cache is empty
 - Warning **VRT — Vertiv Holdings Co: Daily preparation degraded: [[securities/security_cb88f9154cfeaa15e878|VRT]]** — [[securities/security_cb88f9154cfeaa15e878|VRT]]: price cache is empty
 - Warning **LH — Labcorp Holdings Inc.: Daily preparation degraded: [[securities/security_b1f2c48e1a744f5ecf67|LH]]** — [[securities/security_b1f2c48e1a744f5ecf67|LH]]: price cache is empty
 - Warning **PL — Planet Labs PBC: Daily preparation degraded: [[securities/security_97f38b2cb2d5ef127f5a|PL]]** — [[securities/security_97f38b2cb2d5ef127f5a|PL]]: price cache is empty
@@ -110,10 +110,6 @@ as_of: "2026-08-06T13:15:04Z"
 - Warning **FLNC — Fluence Energy, Inc.: Daily preparation degraded: [[securities/security_a9eb9838940ef5ceaa0c|FLNC]]** — [[securities/security_a9eb9838940ef5ceaa0c|FLNC]]: YFTzMissingError: $FLNC: possibly delisted; no timezone found
 - Warning **CRSR — Corsair Gaming, Inc.: Daily preparation degraded: [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]** — [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]: price cache is empty
 - Warning **NVDA — NVIDIA Corporation: Daily preparation degraded: [[securities/security_33d9c44facc75c726c7d|NVDA]]** — [[securities/security_33d9c44facc75c726c7d|NVDA]]: price cache is empty
-
-### Publication Only
-
-- Warning **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.
 
 ### Operational Only
 
@@ -136,7 +132,7 @@ as_of: "2026-08-06T13:15:04Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 294 active operations.
+Showing 20 of 289 active operations.
 
 <details><summary>Active research work</summary>
 

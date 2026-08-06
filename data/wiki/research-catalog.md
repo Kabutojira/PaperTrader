@@ -7,8 +7,8 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_da64fdec600b87557ab4"
-as_of: "2026-08-06T13:15:04Z"
+snapshot_id: "decision_c091a208b1ea6b519d4c"
+as_of: "2026-08-06T15:11:37Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **69**
-- Securities with retained revisions: **57**
+- Immutable assessment versions: **74**
+- Securities with retained revisions: **62**
 
 ## Candidate
 
@@ -234,6 +234,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 ## Podcast
 
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
+- [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 
 ## Relationship
 
@@ -301,8 +302,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
 - [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)
-- [MP Materials Corp. common stock](securities/security_cd492d97064d8574156e)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
+- [MP Materials Corp. common stock](securities/security_cd492d97064d8574156e)
 - [Nebius Group N.V. Class A ordinary shares](securities/security_47a0b06f6c6c478d7c1e)
 - [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)
 - [NVIDIA Corporation common stock](securities/security_33d9c44facc75c726c7d)
@@ -333,6 +334,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)
 - [Twist Bioscience Corporation common stock](securities/security_6cf75bd0ec0aa2a20148)
 - [Vertiv Holdings Co Class A common stock](securities/security_cb88f9154cfeaa15e878)
+- [W&amp;T Offshore, Inc. common stock](securities/security_61567714298b9563d1a9)
 - [YASKAWA Electric Corporation Frankfurt ordinary shares](securities/security_89969b7dac39b7db5661)
 
 ## Signals

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_da64fdec600b87557ab4"
-as_of: "2026-08-06T13:15:04Z"
+snapshot_id: "decision_c091a208b1ea6b519d4c"
+as_of: "2026-08-06T15:11:37Z"
 ---
 
 # Signals
 
-**As of `2026-08-06T13:15:04Z`**
+**As of `2026-08-06T15:11:37Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending paper orders.
 
 ## Research alerts — not trade signals
+
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-05`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
@@ -80,15 +89,6 @@ No pending paper orders.
 - Conclusion: High-priority security research is ready to run.
 
 ### [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
 
 **Research alert — not a trade signal**
 
@@ -286,14 +286,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### WTI — W&amp;T Offshore, Inc.
+### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
 - Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `succeeded`
+- Conclusion: Completed exactly one full W&amp;T Offshore security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market and FX state. Registered the Q2 Form 10-Q and SEC-filed results exhibit, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. Bear/base/bull fair values of USD 0.79/USD 3.17/USD 6.15 produce a USD 3.32 probability-weighted value versus USD 3.25; deterministic state derives Hold / Watch, watch-tier conviction, and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and relationship gates fail. The bearish MACD transition is adverse timing rather than evidence of fundamental impairment. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because the security has no linked idea or accepted relationship and the strategy gate failed.
 
 ### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
 
