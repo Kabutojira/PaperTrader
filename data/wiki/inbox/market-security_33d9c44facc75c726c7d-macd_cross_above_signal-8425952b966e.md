@@ -1,5 +1,5 @@
 ---
-title: '[NVDA] MACD cross above signal'
+title: NVDA — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 8425952b966eee8f3642124f27b809dca0ffcc998af907fe6ea6c3296f89ebdd
 classifier_decision: ingest
 classifier_reason: Material MACD bullish crossover with a 7.6% period return and new
   signal strength for the security.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_33d9c44facc75c726c7d
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 21164710c96e9c08aa6547f57a8c8a723dce195d1e1a3c5ffc9814ca9651ca59
 ---
 
-# [NVDA] MACD cross above signal
+# NVDA — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: NVDA — NVIDIA Corporation common stock (`security_33d9c44facc75c726c7d`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_33d9c44facc75c726c7d|NVDA — NVIDIA Corporation common stock]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 211.94000244140625
 - Period return: 0.076220029065541898173904177
 - Trigger strength: 0.5629127268683324382363486244
 - Previous strength: 0
-- Source price hash: `21164710c96e9c08aa6547f57a8c8a723dce195d1e1a3c5ffc9814ca9651ca59`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material MACD bullish crossover with a 7.6% period return and new signal strength for the security.
+- Decision: Ingest
+- Reason: Material macd bullish crossover with a 7.6% period return and new signal strength for the security.

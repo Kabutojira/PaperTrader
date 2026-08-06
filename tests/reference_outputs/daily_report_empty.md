@@ -21,7 +21,6 @@ snapshot_id: "decision_2c6fafc24a484f5cd6fb"
 - **Investment data:** Current
 - **Operations:** Current
 - **As of:** `2026-07-24T22:00:00Z`
-- **Snapshot:** `decision_2c6fafc24a484f5cd6fb`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Approved target cash:** 100000 EUR (100%)
@@ -88,14 +87,14 @@ No assessed near misses are available; incomplete assessments remain coverage ga
 
 ### Evidence-linked narrative
 
-- No material market move required a research follow-up. Evidence: `data/market/latest.csv`.
+- No material market move required a research follow-up. Evidence is retained in the canonical run artifacts.
 
-- [[model-portfolio]]
-- [[performance]]
-- [[research-catalog]]
-- [[security-catalog]]
-- [[signals]]
-- [[system-status]]
+- [[model-portfolio|PaperTrader model portfolio]]
+- [[performance|PaperTrader performance and risk]]
+- [[research-catalog|PaperTrader research catalog]]
+- [[security-catalog|PaperTrader tracked securities]]
+- [[signals|PaperTrader signals and research alerts]]
+- [[system-status|PaperTrader system status and audit]]
 
 ## 7. Data-quality and coverage impact
 
@@ -117,24 +116,23 @@ No current system impacts.
 
 ### Run diagnostics
 
-- Run ID: `run-report`
-- Run status: `succeeded`
+- Report date: 2026-07-24
+- Run status: succeeded
 - Generated (UTC): `2026-07-24T22:00:00Z`
-- Decision snapshot: `decision_2c6fafc24a484f5cd6fb`
 
 ### Complete market freshness
 
-| Security ID | Price date | Retrieved at | Status | Error |
+| Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
 | — | — | — | no monitored securities | — |
 
 ### Orders and executions
 
-| Order ID | Strategy ID | Fill policy | Status | Created |
+| Paper order | Strategy | Fill policy | Status | Created |
 | --- | --- | --- | --- | --- |
 | — | — | — | no orders | — |
 
-| Execution ID | Order ID | Security ID | Side | Quantity | Fill | Fees |
+| Paper fill | Paper order | Security | Side | Quantity | Fill | Fees |
 | --- | --- | --- | --- | ---: | ---: | ---: |
 | — | — | — | — | 0 | no executions | 0 |
 
@@ -142,15 +140,15 @@ No current system impacts.
 
 No allocation plan was generated for this run.
 
-| Rank | Security ID | Target weight | Disposition | Machine reasons |
+| Rank | Security | Target weight | Disposition | Reasons |
 | ---: | --- | ---: | --- | --- |
 | — | — | 0% | no candidates | — |
 
 ### Research-operation audit
 
-| Operation ID | Type | Entity ID | Disposition | Machine reason |
-| --- | --- | --- | --- | --- |
-| — | — | — | no completed operations | — |
+| Research operation | Entity | Disposition | Reason |
+| --- | --- | --- | --- |
+| — | — | no completed operations | — |
 
 ### Complete active queue
 
@@ -160,36 +158,10 @@ No scheduled follow-up operations.
 
 No open issues.
 
-### Machine decision provenance
+### Decision provenance
 
-- `portfolio_all_cash` — The reconciled model portfolio is entirely cash.
-- `no_actionable_signals` — No strategy has produced a current actionable trade signal.
-- `allocation_targets`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `cash_ledger`: `643b368149442110c1e0776eaa1b119e5cabe41f1617ee68328cc468cfa71dff`
-- `configuration`: `aeff8f82c22ecf61dbc8468718142848202eb6b6e62f446921ff0c6ede86ce5b`
-- `csv_contracts`: `9c7fa8c44f4096f12c5e8b51b2d17d006d2962600936ea0cdb01ce369ba4c154`
-- `decision_schema`: `b841be7e40b72ae7288f7515f606bdb153e972c404186c027b7990875e885de0`
-- `executions`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `indicators`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `issues`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `market_latest`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `operation_payloads`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `operations_history`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `operations_todo`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `order_legs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `orders`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `performance_daily`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `performance_epochs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `portfolio`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `relationships`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `runs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `securities`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `security_assessments`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `signals`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `source_registry`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `strategies`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `strategy_legs`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
-- `wiki_inbox`: `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`
+- The reconciled model portfolio is entirely cash.
+- No strategy has produced a current actionable trade signal.
 
 ### Links
 

@@ -1,5 +1,5 @@
 ---
-title: '[RTX] Bollinger above upper'
+title: RTX — Bollinger above upper
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-07-27'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: b275f066a05b75b92a8cc021d8eaa1eedf52addbd6d6ba0150ad4dc9e58897e2
-classifier_decision: ingest
-classifier_reason: 'Material bullish indicator transition: price broke above the upper
-  Bollinger Band after a 16.2% period return and strengthened signal.'
-related_entity_ids:
-- security_59304f90c440def31dc5
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_59304f90c440def31dc5
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: e6d9344f9fe3838140706fb1b8895afb1c77ea53dda5bf667b6b360ac89b77e8
 ---
 
-# [RTX] Bollinger above upper
+# RTX — Bollinger above upper
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_59304f90c440def31dc5|RTX — RTX Corporation common stock]] (`security_59304f90c440def31dc5`)
-- Trigger: `bollinger_above_upper`
-- Transition: `strengthened`
+- Security: [[securities/security_59304f90c440def31dc5|RTX — RTX Corporation common stock]]
+- Alert: Bollinger above upper
+- Direction: Bearish
+- Transition: Strengthened
 - Period: 2026-06-26 through 2026-07-27
 - Latest adjusted close: 218.4199981689453
 - Period return: 0.161870268560036695374533075
 - Trigger strength: 0.02708964323562807083491648832
 - Previous strength: 0.02148795704579245505519957495
-- Source price hash: `e6d9344f9fe3838140706fb1b8895afb1c77ea53dda5bf667b6b360ac89b77e8`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material bullish indicator transition: price broke above the upper Bollinger Band after a 16.2% period return and strengthened signal.
+- Decision: Skipped
+- Reason: Bearish alert unowned

@@ -13,7 +13,7 @@ as_of: "2026-08-05T22:34:36Z"
 
 # Securities
 
-**Snapshot `decision_ffbf228dca49bf71406d` · As of `2026-08-05T22:34:36Z`**
+**As of `2026-08-05T22:34:36Z`**
 
 Ticker links open the maintained security analysis. Native marks are converted to EUR with the displayed committed FX observation.
 

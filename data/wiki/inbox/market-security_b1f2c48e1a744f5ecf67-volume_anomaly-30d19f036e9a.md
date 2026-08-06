@@ -1,5 +1,5 @@
 ---
-title: '[LH] Volume anomaly'
+title: LH — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 30d19f036e9acb5f26d312d83561c78099f91ab6f3e4d0d00fcab8b68c9d946a
 classifier_decision: ingest
 classifier_reason: A new volume-anomaly transition coincides with an 11.1% monthly
   price increase and merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_b1f2c48e1a744f5ecf67
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 9c78f83e4556c3d92cc0a4e9e6bdb5ee48f713316b7fc182a6607be4663bcb5c
 ---
 
-# [LH] Volume anomaly
+# LH — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_b1f2c48e1a744f5ecf67|LH — Labcorp Holdings Inc. common stock]] (`security_b1f2c48e1a744f5ecf67`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_b1f2c48e1a744f5ecf67|LH — Labcorp Holdings Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 315.5299987792969
 - Period return: 0.111490747330195805628358084
 - Trigger strength: 0.002604165
 - Previous strength: 0
-- Source price hash: `9c78f83e4556c3d92cc0a4e9e6bdb5ee48f713316b7fc182a6607be4663bcb5c`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: A new volume-anomaly transition coincides with an 11.1% monthly price increase and merits durable review.

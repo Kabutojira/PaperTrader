@@ -15,6 +15,7 @@ from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path, PurePosixPath
 
+import yaml
 from jsonschema import Draft202012Validator, FormatChecker
 
 from papertrader.atomic_io import atomic_write_json
@@ -841,6 +842,143 @@ def _operation_allocation_plan_id(repository_root: Path, operation: Operation) -
     return plan_id
 
 
+def _indicator_packet_cause(
+    repository_root: Path,
+    raw_path: object,
+    *,
+    security_id: str,
+) -> str | None:
+    """Resolve one canonical indicator packet to its trigger, or fail closed as ambiguous."""
+
+    if not isinstance(raw_path, str):
+        return None
+    relative = PurePosixPath(raw_path)
+    if (
+        relative.is_absolute()
+        or ".." in relative.parts
+        or relative.parts[:3] != ("data", "wiki", "inbox")
+        or relative.suffix != ".md"
+    ):
+        return None
+    path = repository_root.joinpath(*relative.parts)
+    try:
+        text = path.read_text(encoding="utf-8")
+        raw, _ = text[4:].split("\n---\n", maxsplit=1)
+        metadata = yaml.safe_load(raw)
+        facts = metadata.get("candidate_facts") if isinstance(metadata, dict) else None
+    except (OSError, UnicodeError, ValueError, yaml.YAMLError):
+        return None
+    if not isinstance(facts, dict) or facts.get("security_id") != security_id:
+        return None
+    trigger = facts.get("trigger")
+    return trigger if isinstance(trigger, str) and trigger else None
+
+
+def _exclusively_unheld_bearish_indicator_work(
+    repository_root: Path,
+    operation: Operation,
+    *,
+    held_ids: frozenset[str],
+) -> bool:
+    """Identify only complete, unambiguous bearish-indicator cause lineages."""
+
+    if operation.status not in {"queued", "ready", "waiting"}:
+        return False
+    if operation.operation_type not in {
+        "opportunity_research",
+        "wiki_ingest",
+        "quick_check_research",
+        "security_research",
+    }:
+        return False
+    inputs = _operation_inputs(repository_root, operation)
+    security_id = inputs.get("security_id")
+    packet_refs: list[object] = []
+    triggers: list[object] = []
+    if operation.operation_type == "wiki_ingest":
+        packet_refs = [inputs.get("source_path")]
+        if isinstance(packet_refs[0], str):
+            packet_trigger = _indicator_packet_cause(
+                repository_root, packet_refs[0], security_id=""
+            )
+            if packet_trigger is None:
+                # The security identity is intentionally recovered from packet frontmatter here.
+                relative = PurePosixPath(packet_refs[0])
+                try:
+                    text = repository_root.joinpath(*relative.parts).read_text(encoding="utf-8")
+                    raw, _ = text[4:].split("\n---\n", maxsplit=1)
+                    metadata = yaml.safe_load(raw)
+                    facts = metadata.get("candidate_facts")
+                    security_id = facts.get("security_id") if isinstance(facts, dict) else None
+                except (OSError, UnicodeError, ValueError, yaml.YAMLError):
+                    return False
+            if isinstance(security_id, str):
+                triggers = [
+                    _indicator_packet_cause(
+                        repository_root, packet_refs[0], security_id=security_id
+                    )
+                ]
+    else:
+        if not isinstance(security_id, str) or not security_id:
+            return False
+        reasons = inputs.get("research_reasons")
+        if isinstance(reasons, list) and reasons:
+            for reason in reasons:
+                if (
+                    not isinstance(reason, dict)
+                    or reason.get("source") != "deterministic-price-alert"
+                ):
+                    return False
+                raw_triggers = reason.get("trigger_types")
+                raw_refs = reason.get("source_refs")
+                if not isinstance(raw_triggers, list) or not isinstance(raw_refs, list):
+                    return False
+                triggers.extend(raw_triggers)
+                packet_refs.extend(raw_refs)
+        else:
+            allowed_source = {
+                "opportunity_research": "deterministic-indicator-transition",
+                "quick_check_research": "deterministic-price-alert",
+                "security_research": "deterministic-price-alert",
+            }[operation.operation_type]
+            if operation.source != allowed_source:
+                return False
+            raw_trigger = inputs.get("trigger_type")
+            raw_triggers = inputs.get("trigger_types")
+            triggers = (
+                [raw_trigger]
+                if isinstance(raw_trigger, str)
+                else (list(raw_triggers) if isinstance(raw_triggers, list) else [])
+            )
+            payload_path = _validate_payload_path(operation.payload_path)
+            payload = json.loads(
+                repository_root.joinpath(*payload_path.parts).read_text(encoding="utf-8")
+            )
+            raw_refs = payload.get("source_refs")
+            packet_refs = list(raw_refs) if isinstance(raw_refs, list) else []
+    if not isinstance(security_id, str) or not security_id or security_id in held_ids:
+        return False
+    if not triggers or not packet_refs or not all(isinstance(value, str) for value in triggers):
+        return False
+    from papertrader.models import AlertDirection
+    from papertrader.opportunity import alert_direction
+
+    try:
+        if any(alert_direction(str(value)) is not AlertDirection.BEARISH for value in triggers):
+            return False
+    except CanonicalValueError:
+        return False
+    packet_triggers = [
+        _indicator_packet_cause(repository_root, ref, security_id=security_id)
+        for ref in packet_refs
+    ]
+    return (
+        bool(packet_triggers)
+        and None not in packet_triggers
+        and all(trigger in triggers for trigger in packet_triggers)
+    )
+
+
 def _triaged_operation(
     operation: Operation,
     *,
@@ -898,6 +1036,9 @@ def prepare_queue(
         }
         terminal_by_id = {row["operation_id"]: row["terminal_status"] for row in history}
         active_by_id = {operation.operation_id: operation for operation in active}
+        from papertrader.opportunity import held_security_ids
+
+        held_ids = held_security_ids(repository_root)
         seen_dedupe: dict[str, str] = {
             operation.dedupe_key: operation.operation_id
             for operation in active
@@ -913,6 +1054,11 @@ def prepare_queue(
                 ("dependency_cycle", "dependency_unavailable:")
             ):
                 updated.append(operation)
+                continue
+            if _exclusively_unheld_bearish_indicator_work(
+                repository_root, operation, held_ids=held_ids
+            ):
+                terminal.append((operation, "skipped", "bearish_alert_unowned"))
                 continue
             if operation.deadline is not None and operation.deadline <= instant:
                 terminal.append((operation, "expired", "deadline_elapsed"))

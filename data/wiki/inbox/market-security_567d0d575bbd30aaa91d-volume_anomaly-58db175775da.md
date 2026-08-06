@@ -1,5 +1,5 @@
 ---
-title: '[SSU.VI] Volume anomaly'
+title: SSU.VI — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 58db175775daa7252e7f001758d92a0f5cd227a5e059939d624e20c15efbe887
 classifier_decision: ingest
 classifier_reason: Material volume anomaly coincides with an approximately 11.5% decline
   over the period and merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_567d0d575bbd30aaa91d
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: bbf89dab768e1da5522b802b83b26d5fb46d77541e04e0a6fde6f7c60f1a1f75
 ---
 
-# [SSU.VI] Volume anomaly
+# SSU.VI — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_567d0d575bbd30aaa91d|SSU.VI — Samsung Electronics common GDR]] (`security_567d0d575bbd30aaa91d`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_567d0d575bbd30aaa91d|SSU.VI — Samsung Electronics common GDR]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-02 through 2026-07-30
 - Latest adjusted close: 3550
 - Period return: -0.1147132169576059850374064838
 - Trigger strength: 1.04706207
 - Previous strength: 0
-- Source price hash: `bbf89dab768e1da5522b802b83b26d5fb46d77541e04e0a6fde6f7c60f1a1f75`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: Material volume anomaly coincides with an approximately 11.5% decline over the period and merits durable review.

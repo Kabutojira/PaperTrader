@@ -1,5 +1,5 @@
 ---
-title: '[ISRG] MACD cross above signal'
+title: ISRG — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 8d6ef0392190e8af0a3e37304af904cab1d7dcca3da2a3c3b601e9523381a935
 classifier_decision: ingest
 classifier_reason: Material MACD bullish transition after a 13.8% decline warrants
   durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_1f9cce545ede94cd6349
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 5281f9a3c72cd18527d9df265367920e3f3a6f9e566346343b23eb513a7c6670
 ---
 
-# [ISRG] MACD cross above signal
+# ISRG — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_1f9cce545ede94cd6349|ISRG — Intuitive Surgical, Inc. common stock]] (`security_1f9cce545ede94cd6349`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_1f9cce545ede94cd6349|ISRG — Intuitive Surgical, Inc. common stock]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 368.2699890136719
 - Period return: -0.1381465023769143964268507273
 - Trigger strength: 0.185642120713661537002225384
 - Previous strength: 0
-- Source price hash: `5281f9a3c72cd18527d9df265367920e3f3a6f9e566346343b23eb513a7c6670`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material MACD bullish transition after a 13.8% decline warrants durable review.
+- Decision: Ingest
+- Reason: Material macd bullish transition after a 13.8% decline warrants durable review.

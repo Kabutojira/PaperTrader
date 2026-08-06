@@ -999,6 +999,9 @@ def validate_integrity(
     errors.extend(validate_wiki_maintenance_artifacts(repository_root))
     errors.extend(validate_youtube_scan_artifacts(repository_root))
     errors.extend(validate_seekingalpha_artifacts(repository_root))
+    from papertrader.public_markdown import validate_generated_public_markdown
+
+    errors.extend(validate_generated_public_markdown(repository_root))
     # Imported lazily because canonical table access resolves contracts from this module.
     from papertrader.advice import validate_advice
     from papertrader.allocation import validate_allocation_state

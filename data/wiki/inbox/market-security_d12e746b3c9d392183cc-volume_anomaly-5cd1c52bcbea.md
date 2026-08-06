@@ -1,5 +1,5 @@
 ---
-title: '[META] Volume anomaly'
+title: META — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 5cd1c52bcbea6803d8d7422b60a63ee29be44147a884a3b1cafc596b2a38db89
 classifier_decision: ingest
 classifier_reason: New volume-anomaly transition with a material -12.05% monthly return
   merits durable wiki review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_d12e746b3c9d392183cc
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0
 ---
 
-# [META] Volume anomaly
+# META — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: META — Meta Platforms, Inc. Class A common stock (`security_d12e746b3c9d392183cc`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_d12e746b3c9d392183cc|META — Meta Platforms, Inc. Class A common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 539.030029296875
 - Period return: -0.1205396340160946639517203922
 - Trigger strength: 0.3211868
 - Previous strength: 0
-- Source price hash: `d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: New volume-anomaly transition with a material -12.05% monthly return merits durable wiki review.

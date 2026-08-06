@@ -1,5 +1,5 @@
 ---
-title: '[PWR] Volume anomaly'
+title: PWR — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 276969212fe2d18023f17c946775dd0b407059dcd3805f4e0566c2994541dc6a
 classifier_decision: ingest
 classifier_reason: Material volume anomaly strengthened alongside a 22.1% period decline,
   warranting durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_488a9d7f7a8573597724
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 15e13bbaa6aeb74847824041f1232bdc38423ad0f60f1feaf0db9c500bdde617
 ---
 
-# [PWR] Volume anomaly
+# PWR — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: PWR — Quanta Services, Inc. common stock (`security_488a9d7f7a8573597724`)
-- Trigger: `volume_anomaly`
-- Transition: `strengthened`
+- Security: [[securities/security_488a9d7f7a8573597724|PWR — Quanta Services, Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Strengthened
 - Period: 2026-06-30 through 2026-07-29
 - Latest adjusted close: 561.1400146484375
 - Period return: -0.2205630820257469086701729231
 - Trigger strength: 0.602805435
 - Previous strength: 0.30418991
-- Source price hash: `15e13bbaa6aeb74847824041f1232bdc38423ad0f60f1feaf0db9c500bdde617`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: Material volume anomaly strengthened alongside a 22.1% period decline, warranting durable review.

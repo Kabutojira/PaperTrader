@@ -182,6 +182,37 @@ def test_repository_podcast_audio_path_is_rejected(
         )
 
 
+def test_podcast_render_rejects_visible_machine_identity(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id = "daily-20260730T180000Z"
+    transcript = " ".join(["word"] * 2500)
+    markdown = (
+        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        "Visible security security_1234567890abcdef1234. "
+        f"{transcript}\n"
+        "<!-- papertrader-spoken-transcript:end -->\n"
+    )
+
+    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        assert command[:2] == ["git", "show"]
+        return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
+
+    with pytest.raises(PodcastError, match="exposes a machine identity"):
+        render_committed_podcast(
+            sandbox_repository,
+            sandbox_settings,
+            daily_cycle_id=cycle_id,
+            script_commit="a" * 40,
+            script_path="data/wiki/podcasts/daily-podcast_20260730T180000Z.md",
+            output_directory=tmp_path / "podcast",
+            runner=fake_runner,
+        )
+
+
 def test_failed_ephemeral_render_removes_completed_chunks(
     sandbox_repository: Path,
     sandbox_settings: Settings,

@@ -1,5 +1,5 @@
 ---
-title: '[DNA] MACD cross above signal'
+title: DNA — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 3d74cac677e3e83a53f0b6311bba6f2a9a87e5de1035294df47fc5c20b4958fe
 classifier_decision: ingest
 classifier_reason: New MACD bullish crossover transition for the security merits recording
   as a durable market signal.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_95351d928b674bbdf687
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 3de35a0612e9250fef741a7fca48b8882117dbd5d39857f50b6ea36e40e2d0a7
 ---
 
-# [DNA] MACD cross above signal
+# DNA — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: DNA — Ginkgo Bioworks Holdings, Inc. Class A common stock (`security_95351d928b674bbdf687`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_95351d928b674bbdf687|DNA — Ginkgo Bioworks Holdings, Inc. Class A common stock]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 9.369999885559082
 - Period return: 0.003211962792407427703216551
 - Trigger strength: 0.5060099782597925053408362487
 - Previous strength: 0
-- Source price hash: `3de35a0612e9250fef741a7fca48b8882117dbd5d39857f50b6ea36e40e2d0a7`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: New MACD bullish crossover transition for the security merits recording as a durable market signal.
+- Decision: Ingest
+- Reason: New macd bullish crossover transition for the security merits recording as a durable market signal.

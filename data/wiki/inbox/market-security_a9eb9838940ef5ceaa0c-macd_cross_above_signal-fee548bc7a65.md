@@ -1,5 +1,5 @@
 ---
-title: '[FLNC] MACD cross above signal'
+title: FLNC — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: fee548bc7a65b2b99d8b8ec036a7c43d83840c3bc39698f91c30623a8923deb8
 classifier_decision: ingest
 classifier_reason: New MACD bullish crossover after a material -18.1% decline merits
   durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_a9eb9838940ef5ceaa0c
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: a352617a3ffb8716fd7cce9cc525c79a801fb8e720716579101f31b1285cf703
 ---
 
-# [FLNC] MACD cross above signal
+# FLNC — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_a9eb9838940ef5ceaa0c|FLNC — Fluence Energy, Inc. Class A common stock]] (`security_a9eb9838940ef5ceaa0c`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_a9eb9838940ef5ceaa0c|FLNC — Fluence Energy, Inc. Class A common stock]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-02 through 2026-07-31
 - Latest adjusted close: 13.930000305175781
 - Period return: -0.1805882173426011176470588235
 - Trigger strength: 0.03492695135922126058906042685
 - Previous strength: 0
-- Source price hash: `a352617a3ffb8716fd7cce9cc525c79a801fb8e720716579101f31b1285cf703`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: New MACD bullish crossover after a material -18.1% decline merits durable review.
+- Decision: Ingest
+- Reason: New macd bullish crossover after a material -18.1% decline merits durable review.

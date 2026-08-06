@@ -13,6 +13,7 @@ from pathlib import Path, PurePosixPath
 import yaml
 
 from papertrader.atomic_io import atomic_write_text
+from papertrader.public_refs import PublicEntityResolver
 from papertrader.tables import read_table
 from papertrader.utils import CanonicalValueError, ensure_utc, parse_timestamp, utc_now
 from papertrader.wiki import register_wiki_page
@@ -38,6 +39,10 @@ class NarrativeItem:
 
 def _cell(value: str) -> str:
     return value.replace("|", "\\|").replace("\r", " ").replace("\n", " ") or "—"
+
+
+def _allocation_security(resolver: PublicEntityResolver, row: Mapping[str, str]) -> str:
+    return resolver.markdown("security", row["security_id"]) if row["security_id"] else "Cash"
 
 
 def _bounded_text(value: str, maximum_chars: int) -> str:
@@ -201,6 +206,7 @@ def _seekingalpha_discovery_lines(repository_root: Path, run_id: str) -> list[st
         f"- Schedule status: `{_markdown_text(str(schedule.get('status', 'unknown')))}`",
         "- Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.",
     ]
+    resolver = PublicEntityResolver(repository_root)
     operation_id = schedule.get("operation_id")
     if not isinstance(operation_id, str) or not operation_id:
         lines.append("")
@@ -253,11 +259,16 @@ def _seekingalpha_discovery_lines(repository_root: Path, run_id: str) -> list[st
         )
         for lead in selected:
             related = lead.get("related_entity_ids")
-            related_text = (
-                ", ".join(str(value) for value in related)
-                if isinstance(related, list) and related
-                else "new-lead candidate"
-            )
+            related_text = "new-lead candidate"
+            if isinstance(related, list) and related:
+                references: list[str] = []
+                for value in related:
+                    if not isinstance(value, str) or "_" not in value:
+                        raise CanonicalValueError(
+                            "Seeking Alpha lead has an invalid public entity reference"
+                        )
+                    references.append(resolver.markdown(value.split("_", 1)[0], value))
+                related_text = ", ".join(references)
             title = _markdown_text(str(lead.get("title", "")))
             url = str(lead.get("canonical_url", ""))
             lines.append(
@@ -304,28 +315,8 @@ def _entity_reference(
     entity_id: str,
     aliased: bool = True,
 ) -> str:
-    prefixes = {
-        "idea": "ideas",
-        "relationship": "relationships",
-        "security": "securities",
-        "strategy": "strategies",
-    }
-    prefix = prefixes.get(entity_type)
-    if entity_type == "security" and entity_id in securities:
-        security = securities[entity_id]
-        ticker = f" ({security['ticker']})" if security["ticker"] else ""
-        label = _wikilink_label(f"{security['company_name']}{ticker}")
-    else:
-        label = _wikilink_label(entity_id)
-    safe_entity_id = re.fullmatch(r"[A-Za-z0-9_.:-]+", entity_id) is not None
-    if prefix and safe_entity_id:
-        page = wiki_root / prefix / f"{entity_id}.md"
-        if page.is_file() and not page.is_symlink():
-            link = f"[[{prefix}/{entity_id}]]"
-            return f"[[{prefix}/{entity_id}|{label}]]" if aliased else f"{link} - {label}"
-    if safe_entity_id:
-        return f"`{entity_id}`"
-    return _markdown_text(entity_id)
+    del securities, aliased
+    return PublicEntityResolver(wiki_root.parent.parent).markdown(entity_type, entity_id)
 
 
 def _latest_report_page_key(wiki_root: Path) -> tuple[str, date] | None:
@@ -341,6 +332,22 @@ def _latest_report_page_key(wiki_root: Path) -> tuple[str, date] | None:
     return (
         max(candidates, key=lambda candidate: (candidate[1], candidate[0])) if candidates else None
     )
+
+
+def _public_page_link(repository_root: Path, page_key: str) -> str:
+    """Render one wiki page with a required human title as its visible label."""
+
+    path = repository_root / "data" / "wiki" / f"{page_key}.md"
+    try:
+        text = path.read_text(encoding="utf-8")
+        raw, _ = text[4:].split("\n---\n", maxsplit=1)
+        metadata = yaml.safe_load(raw)
+    except (OSError, UnicodeError, ValueError, yaml.YAMLError) as exc:
+        raise CanonicalValueError(f"cannot resolve public wiki reference: {page_key}") from exc
+    title = metadata.get("title") if isinstance(metadata, dict) else None
+    if not isinstance(title, str) or not title.strip():
+        raise CanonicalValueError(f"public wiki reference has no title: {page_key}")
+    return f"[[{page_key}|{_wikilink_label(' '.join(title.split()))}]]"
 
 
 def _homepage_portfolio_lines(repository_root: Path) -> list[str]:
@@ -857,6 +864,12 @@ def generate_daily_report(
         )
     )
     research_decisions = research_decisions_for_run(repository_root, run_id)
+    resolver = PublicEntityResolver(repository_root)
+
+    def public_allocation_reason(raw: str) -> str:
+        codes = [code for code in raw.split("|") if code]
+        return "; ".join(reason_label(code) for code in codes) if codes else "—"
+
     lines = [
         "---",
         f'title: "PaperTrader daily report — {day.isoformat()}"',
@@ -881,17 +894,13 @@ def generate_daily_report(
     if narratives:
         lines.extend(["### Evidence-linked narrative", ""])
         for item in narratives:
-            displayed_refs = item.evidence_refs[:REPORT_NARRATIVE_EVIDENCE_LIMIT]
-            references = ", ".join(f"`{reference}`" for reference in displayed_refs)
-            omitted = len(item.evidence_refs) - len(displayed_refs)
-            suffix = f" (+{omitted} more in the run artifacts)" if omitted else ""
             lines.append(
-                f"- {_markdown_text(_bounded_text(item.text, REPORT_NARRATIVE_TEXT_MAX_CHARS))} "
-                f"Evidence: {references}{suffix}."
+                f"- {resolver.humanize(_bounded_text(item.text, REPORT_NARRATIVE_TEXT_MAX_CHARS))} "
+                "Evidence is retained in the canonical run artifacts."
             )
         lines.append("")
     lines.extend(
-        [f"- [[{page_key}]]" for page_key in wiki_changes]
+        [f"- {_public_page_link(repository_root, page_key)}" for page_key in wiki_changes]
         if wiki_changes
         else ["No maintained research pages changed during this run."]
     )
@@ -929,7 +938,7 @@ def generate_daily_report(
             )
             lines.append(
                 f"- **{_markdown_text(impact.impact.replace('_', ' '))}**{affected}: "
-                f"{_markdown_text(impact.title)}"
+                f"{resolver.humanize(impact.title)}"
             )
     else:
         lines.append("No current system impacts.")
@@ -940,22 +949,21 @@ def generate_daily_report(
             "",
             "### Run diagnostics",
             "",
-            f"- Run ID: `{run_id}`",
-            f"- Run status: `{normalized_status}`",
+            f"- Report date: {day.isoformat()}",
+            f"- Run status: {normalized_status}",
             f"- Generated (UTC): `{snapshot.as_of}`",
-            f"- Decision snapshot: `{snapshot.snapshot_id}`",
             "",
             "### Complete market freshness",
             "",
-            "| Security ID | Price date | Retrieved at | Status | Error |",
+            "| Security | Price date | Retrieved at | Status | Error |",
             "| --- | --- | --- | --- | --- |",
         ]
     )
     lines.extend(
         (
-            f"| {_cell(row['security_id'])} | {_cell(row['price_date'])} | "
+            f"| {resolver.markdown('security', row['security_id'])} | {_cell(row['price_date'])} | "
             f"{_cell(row['retrieved_at'])} | {_cell(row['status'])} | "
-            f"{_cell(row['error'])} |"
+            f"{_cell(resolver.human_label(row['error']))} |"
             for row in latest
         )
         if latest
@@ -966,13 +974,14 @@ def generate_daily_report(
             "",
             "### Orders and executions",
             "",
-            "| Order ID | Strategy ID | Fill policy | Status | Created |",
+            "| Paper order | Strategy | Fill policy | Status | Created |",
             "| --- | --- | --- | --- | --- |",
         ]
     )
     lines.extend(
         (
-            f"| {_cell(row['order_id'])} | {_cell(row['strategy_id'])} | "
+            f"| {resolver.markdown('order', row['order_id'])} | "
+            f"{resolver.markdown('strategy', row['strategy_id'])} | "
             f"{_cell(row['fill_policy'])} | {_cell(row['status'])} | "
             f"{_cell(row['created_at'])} |"
             for row in orders
@@ -983,14 +992,15 @@ def generate_daily_report(
     lines.extend(
         [
             "",
-            "| Execution ID | Order ID | Security ID | Side | Quantity | Fill | Fees |",
+            "| Paper fill | Paper order | Security | Side | Quantity | Fill | Fees |",
             "| --- | --- | --- | --- | ---: | ---: | ---: |",
         ]
     )
     lines.extend(
         (
-            f"| {_cell(row['execution_id'])} | {_cell(row['order_id'])} | "
-            f"{_cell(row['security_id'])} | {_cell(row['side'])} | "
+            f"| {resolver.markdown('execution', row['execution_id'])} | "
+            f"{resolver.markdown('order', row['order_id'])} | "
+            f"{resolver.markdown('security', row['security_id'])} | {_cell(row['side'])} | "
             f"{_cell(row['quantity'])} | {_cell(row['fill_price'])} "
             f"{_cell(row['currency'])} | {_cell(row['fees'])} |"
             for row in executions
@@ -1004,7 +1014,6 @@ def generate_daily_report(
     else:
         lines.extend(
             [
-                f"- Plan ID: `{allocation_summary['allocation_plan_id']}`",
                 f"- Mode: `{allocation_summary['mode']}`",
                 f"- Deployment budget: {allocation_summary['deployment_budget_base']} "
                 f"{snapshot.base_currency}",
@@ -1017,15 +1026,17 @@ def generate_daily_report(
     lines.extend(
         [
             "",
-            "| Rank | Security ID | Target weight | Disposition | Machine reasons |",
+            "| Rank | Security | Target weight | Disposition | Reasons |",
             "| ---: | --- | ---: | --- | --- |",
         ]
     )
     lines.extend(
         (
-            f"| {_cell(row['rank'])} | {_cell(row['security_id'])} | "
+            f"| {_cell(row['rank'])} | "
+            f"{_allocation_security(resolver, row)} "
+            "| "
             f"{_cell(row['target_weight_pct'])}% | {_cell(row['disposition'])} | "
-            f"{_cell(row['reason'])} |"
+            f"{_cell(public_allocation_reason(row['reason']))} |"
             for row in sorted(
                 allocation_targets,
                 key=lambda value: (int(value["rank"] or "999999"), value["security_id"]),
@@ -1045,25 +1056,26 @@ def generate_daily_report(
             "",
             "### Research-operation audit",
             "",
-            "| Operation ID | Type | Entity ID | Disposition | Machine reason |",
-            "| --- | --- | --- | --- | --- |",
+            "| Research operation | Entity | Disposition | Reason |",
+            "| --- | --- | --- | --- |",
         ]
     )
     lines.extend(
         (
-            f"| {_cell(row['operation_id'])} | {_cell(row['operation_type'])} | "
-            f"{_cell(row['entity_id'])} | {_cell(row['terminal_status'])} | "
-            f"{_cell(row['terminal_reason'])} |"
+            f"| {resolver.markdown('operation', row['operation_id'])} | "
+            f"{resolver.markdown(row['entity_type'], row['entity_id'])} | "
+            f"{_cell(row['terminal_status'])} | "
+            f"{_cell(resolver.human_label(row['terminal_reason']).replace('_', ' '))} |"
             for row in history
         )
         if history
-        else ["| — | — | — | no completed operations | — |"]
+        else ["| — | — | no completed operations | — |"]
     )
     lines.extend(["", "### Complete active queue", ""])
     lines.extend(
         (
-            f"- `{row['status']}` `{row['operation_id']}` — `{row['operation_type']}` "
-            f"for `{row['entity_id']}`"
+            f"- {row['status'].capitalize()} — "
+            f"{resolver.markdown('operation', row['operation_id'])}"
             for row in active_operations
         )
         if active_operations
@@ -1072,17 +1084,19 @@ def generate_daily_report(
     lines.extend(["", "### Open issues and delivery failures", ""])
     if issues:
         for row in issues:
-            description = _bounded_text(row["description"], REPORT_ISSUE_DESCRIPTION_MAX_CHARS)
+            description = _bounded_text(
+                resolver.human_label(row["description"]), REPORT_ISSUE_DESCRIPTION_MAX_CHARS
+            )
             lines.append(
-                f"- `{row['severity']}` **`{row['issue_id']}`** — {_markdown_text(row['title'])}: "
+                f"- {row['severity'].capitalize()} — "
+                f"{resolver.markdown('issue', row['issue_id'])}: "
                 f"{_markdown_text(description)}"
             )
     else:
         lines.append("No open issues.")
-    lines.extend(["", "### Machine decision provenance", ""])
+    lines.extend(["", "### Decision provenance", ""])
     for code in snapshot.stance_reason_codes:
-        lines.append(f"- `{code}` — {_markdown_text(reason_label(code))}")
-    lines.extend(f"- `{name}`: `{digest}`" for name, digest in snapshot.source_state_hashes.items())
+        lines.append(f"- {_markdown_text(reason_label(code))}")
     lines.extend(
         [
             "",

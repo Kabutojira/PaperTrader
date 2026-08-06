@@ -12,10 +12,13 @@ from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
 
+import yaml
+
 from papertrader.atomic_io import atomic_write_json
 from papertrader.config import Settings
 from papertrader.issues import record_issue
 from papertrader.logs import append_event
+from papertrader.public_markdown import visible_machine_ids
 from papertrader.queue import enqueue_operation
 from papertrader.tables import read_table
 from papertrader.utils import content_hash, ensure_utc, format_timestamp, parse_timestamp, utc_now
@@ -345,6 +348,22 @@ def _spoken_transcript(markdown: str) -> str:
     return transcript
 
 
+def _podcast_cycle_id(markdown: str) -> str:
+    """Read immutable podcast cycle identity from YAML frontmatter only."""
+
+    if not markdown.startswith("---\n") or "\n---\n" not in markdown[4:]:
+        raise PodcastError("podcast page lacks frontmatter identity")
+    raw, _ = markdown[4:].split("\n---\n", maxsplit=1)
+    try:
+        metadata = yaml.safe_load(raw)
+    except yaml.YAMLError as exc:
+        raise PodcastError("podcast page has invalid frontmatter") from exc
+    cycle_id = metadata.get("daily_cycle_id") if isinstance(metadata, dict) else None
+    if not isinstance(cycle_id, str) or not RUN_ID.fullmatch(cycle_id):
+        raise PodcastError("podcast page lacks a valid frontmatter cycle identity")
+    return cycle_id
+
+
 def assemble_podcast(
     repository_root: Path,
     request: Mapping[str, object],
@@ -422,8 +441,10 @@ def _render_committed_podcast(
         markdown = markdown_bytes.decode("utf-8")
     except UnicodeDecodeError as exc:
         raise PodcastError("committed podcast transcript is not UTF-8") from exc
-    if daily_cycle_id not in markdown:
-        raise PodcastError("committed podcast transcript lacks its daily cycle ID")
+    if _podcast_cycle_id(markdown) != daily_cycle_id:
+        raise PodcastError("committed podcast transcript frontmatter has the wrong cycle ID")
+    if visible_machine_ids(markdown):
+        raise PodcastError("committed podcast transcript exposes a machine identity")
     transcript = _spoken_transcript(markdown)
     words = re.findall(r"\b[\w'-]+\b", transcript)
     word_count = len(words)
@@ -649,8 +670,12 @@ def finalize_daily_podcast(
         word_count = len(re.findall(r"\b[\w'-]+\b", spoken))
         if not MINIMUM_SCRIPT_WORDS <= word_count <= MAXIMUM_SCRIPT_WORDS:
             raise PodcastError("succeeded daily podcast has an invalid spoken word count")
-        if run_id not in text or "paper trad" not in spoken.casefold():
-            raise PodcastError("succeeded daily podcast lacks its cycle or paper-trading label")
+        if _podcast_cycle_id(text) != run_id or "paper trad" not in spoken.casefold():
+            raise PodcastError(
+                "succeeded daily podcast lacks its cycle identity or paper-trading label"
+            )
+        if visible_machine_ids(text):
+            raise PodcastError("succeeded daily podcast exposes a machine identity")
         if re.search(r"(?i)\.(?:mp3|wav|m4a)(?:\b|[?#])", text):
             raise PodcastError("succeeded daily podcast contains a persistent audio link")
         report = repository_root / str(manifest.get("report_path", ""))

@@ -1,5 +1,5 @@
 ---
-title: '[AMZN] MACD cross above signal'
+title: AMZN — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: f8b94c946cb3321b67229748c495befd79923471c5fd96422f6d16fa17aa0933
 classifier_decision: ingest
 classifier_reason: Material bullish MACD crossover with a 11.9% period return merits
   durable wiki ingestion.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_2433a056eb0c55961fcc
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: b81fd0db00c2f4206bc6e0d6d5704687c29289da6da636fee699dffb9269df93
 ---
 
-# [AMZN] MACD cross above signal
+# AMZN — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: AMZN — Amazon.com, Inc. common stock (`security_2433a056eb0c55961fcc`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_2433a056eb0c55961fcc|AMZN — Amazon.com, Inc. common stock]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-02 through 2026-07-31
 - Latest adjusted close: 271.5799865722656
 - Period return: 0.119132932053649874980905162
 - Trigger strength: 0.6605671237376012112458304792
 - Previous strength: 0
-- Source price hash: `b81fd0db00c2f4206bc6e0d6d5704687c29289da6da636fee699dffb9269df93`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material bullish MACD crossover with a 11.9% period return merits durable wiki ingestion.
+- Decision: Ingest
+- Reason: Material bullish macd crossover with a 11.9% period return merits durable wiki ingestion.

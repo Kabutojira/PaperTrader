@@ -1,5 +1,5 @@
 ---
-title: '[YEC.F] Volume anomaly'
+title: YEC.F — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 044d9cca9c4034d713adc163513c14d1504ee2d5869267259d220ddc8b3a6beb
 classifier_decision: ingest
 classifier_reason: A new volume anomaly coincides with a material 21.7% decline over
   the period and merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_89969b7dac39b7db5661
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329
 ---
 
-# [YEC.F] Volume anomaly
+# YEC.F — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_89969b7dac39b7db5661|YEC.F — YASKAWA Electric Corporation Frankfurt ordinary shares]] (`security_89969b7dac39b7db5661`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_89969b7dac39b7db5661|YEC.F — YASKAWA Electric Corporation Frankfurt ordinary shares]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 29.200000762939453
 - Period return: -0.2171581404772013206085445867
 - Trigger strength: 1.173111815
 - Previous strength: 0
-- Source price hash: `872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: A new volume anomaly coincides with a material 21.7% decline over the period and merits durable review.

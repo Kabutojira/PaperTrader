@@ -13,7 +13,7 @@ as_of: "2026-08-05T22:34:36Z"
 
 # Signals
 
-**Snapshot `decision_ffbf228dca49bf71406d` · As of `2026-08-05T22:34:36Z`**
+**As of `2026-08-05T22:34:36Z`**
 
 ## Actionable trade signals
 

@@ -12,17 +12,20 @@ import pytest
 from papertrader.config import Settings
 from papertrader.indicators import calculate_snapshot, snapshot_row
 from papertrader.models import (
+    AlertDirection,
     ClassifierDecision,
     IndicatorSnapshot,
     PriceBar,
 )
 from papertrader.opportunity import (
     ClassifierError,
+    alert_direction,
     detect_transitions,
     process_opportunity_transitions,
     retry_unclassified_candidate_packets,
     validate_classifier_decision,
 )
+from papertrader.queue import prepare_queue
 from papertrader.tables import read_table, write_table
 from papertrader.utils import content_hash
 from papertrader.wiki import lint_wiki, register_wiki_page
@@ -113,6 +116,26 @@ def _security_row() -> dict[str, str]:
     }
 
 
+def _position_row(*, quantity: str = "1", side: str = "long") -> dict[str, str]:
+    return {
+        "position_id": "position_test",
+        "security_id": "sec_a",
+        "provider_contract_id": "",
+        "instrument_type": "equity",
+        "side": side,
+        "quantity": quantity,
+        "average_cost": "90",
+        "currency": "USD",
+        "current_price": "100",
+        "market_value_base": "100",
+        "unrealized_pnl_base": "10",
+        "realized_pnl_base": "0",
+        "opened_at": "2026-07-20T00:00:00Z",
+        "last_mark_at": "2026-07-24T22:00:00Z",
+        "strategy_ids": "",
+    }
+
+
 def test_sma_200_requires_configured_minimum_observation_count(
     sandbox_settings: Settings,
 ) -> None:
@@ -187,6 +210,29 @@ def test_classifier_contract_is_closed_and_rejects_extra_fields() -> None:
         )
 
 
+@pytest.mark.parametrize(
+    ("trigger", "expected"),
+    [
+        ("rsi_oversold", AlertDirection.BULLISH),
+        ("bollinger_below_lower", AlertDirection.BULLISH),
+        ("sma_50_cross_above_200", AlertDirection.BULLISH),
+        ("macd_cross_above_signal", AlertDirection.BULLISH),
+        ("rsi_overbought", AlertDirection.BEARISH),
+        ("bollinger_above_upper", AlertDirection.BEARISH),
+        ("sma_50_cross_below_200", AlertDirection.BEARISH),
+        ("macd_cross_below_signal", AlertDirection.BEARISH),
+        ("volume_anomaly", AlertDirection.NEUTRAL),
+    ],
+)
+def test_alert_direction_contract(trigger: str, expected: AlertDirection) -> None:
+    assert alert_direction(trigger) is expected
+
+
+def test_unknown_alert_direction_fails_closed() -> None:
+    with pytest.raises(ValueError, match="unknown indicator alert trigger"):
+        alert_direction("instructions_from_source")
+
+
 class _Classifier:
     def __init__(self, decision: str) -> None:
         self.decision = decision
@@ -210,8 +256,8 @@ def test_blocked_candidate_is_retried_to_a_final_decision(
     bars = _bars(220)
     current = _snapshot(
         as_of=bars[-1].date,
-        rsi=Decimal("80"),
-        trigger_state=("rsi_overbought",),
+        rsi=Decimal("20"),
+        trigger_state=("rsi_oversold",),
         source_hash="c" * 64,
     )
     write_table(sandbox_repository, "securities", [_security_row()])
@@ -263,8 +309,8 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
     bars = _bars(220)
     current = _snapshot(
         as_of=bars[-1].date,
-        rsi=Decimal("80"),
-        trigger_state=("rsi_overbought",),
+        rsi=Decimal("20"),
+        trigger_state=("rsi_oversold",),
         source_hash="c" * 64,
     )
     security = _security_row()
@@ -370,7 +416,7 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
     security_payload = json.loads(
         (sandbox_repository / security_research["payload_path"]).read_text(encoding="utf-8")
     )
-    assert security_payload["inputs"]["trigger_types"] == ["rsi_overbought"]
+    assert security_payload["inputs"]["trigger_types"] == ["rsi_oversold"]
     assert (
         sum(
             row["operation_type"] == "opportunity_research"
@@ -379,13 +425,13 @@ def test_cheap_model_is_final_wiki_ingest_decision_and_rerun_is_idempotent(
         == 1
     )
     packet_text = first[0].path.read_text(encoding="utf-8")
-    assert "title: '[EXM] RSI overbought'" in packet_text
-    assert "# [EXM] RSI overbought" in packet_text
-    assert "- Security: [[securities/sec_a|EXM — Example common stock]] (`sec_a`)" in packet_text
+    assert "title: EXM — RSI oversold" in packet_text
+    assert "# EXM — RSI oversold" in packet_text
+    assert "- Security: [[securities/sec_a|EXM — Example common stock]]" in packet_text
     catalog = sandbox_settings.paths.wiki.joinpath("research-catalog.md").read_text(
         encoding="utf-8"
     )
-    assert f"[\\[EXM\\] RSI overbought](inbox/{first[0].path.stem})" in catalog
+    assert f"[[inbox/{first[0].path.stem}|EXM — RSI oversold]]" in catalog
     assert f"classifier_decision: {decision}" in packet_text
     assert lint_wiki(sandbox_settings.paths.wiki) == []
 
@@ -425,3 +471,157 @@ def test_volume_anomaly_and_sma_macd_crossings_are_price_alert_transitions(
         ("sma_50_cross_above_200", "entered"),
         ("volume_anomaly", "entered"),
     ]
+
+
+def test_unheld_bearish_alert_is_audited_without_classifier_or_research(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    bars = _bars(220)
+    current = _snapshot(
+        as_of=bars[-1].date,
+        rsi=Decimal("80"),
+        trigger_state=("rsi_overbought",),
+        source_hash="9" * 64,
+    )
+    write_table(sandbox_repository, "securities", [_security_row()])
+    classifier = _Classifier("ingest")
+
+    packets = process_opportunity_transitions(
+        sandbox_repository,
+        sandbox_settings,
+        {},
+        {"sec_a": current},
+        {"sec_a": bars},
+        classifier=classifier,
+        now=datetime(2026, 7, 24, 22, tzinfo=UTC),
+    )
+
+    assert classifier.calls == 0
+    assert packets[0].decision == ClassifierDecision("skipped", "bearish_alert_unowned", ())
+    packet = packets[0].path.read_text(encoding="utf-8")
+    assert "alert_direction: bearish" in packet
+    assert "research_gate: suppressed" in packet
+    assert "research_gate_reason: bearish_alert_unowned" in packet
+    assert "classifier_decision: skipped" in packet
+    assert read_table(sandbox_repository, "operations_todo") == []
+
+
+@pytest.mark.parametrize(("quantity", "side"), [("1", "long"), ("-2", "short")])
+def test_any_nonzero_reconciled_position_keeps_bearish_research_enabled(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    quantity: str,
+    side: str,
+) -> None:
+    bars = _bars(220)
+    current = _snapshot(
+        as_of=bars[-1].date,
+        rsi=Decimal("80"),
+        trigger_state=("rsi_overbought",),
+        source_hash="8" * 64,
+    )
+    write_table(sandbox_repository, "securities", [_security_row()])
+    write_table(sandbox_repository, "portfolio", [_position_row(quantity=quantity, side=side)])
+    classifier = _Classifier("ignore")
+
+    packets = process_opportunity_transitions(
+        sandbox_repository,
+        sandbox_settings,
+        {},
+        {"sec_a": current},
+        {"sec_a": bars},
+        classifier=classifier,
+        now=datetime(2026, 7, 24, 22, tzinfo=UTC),
+    )
+
+    assert classifier.calls == 1
+    assert packets[0].decision is not None
+    assert packets[0].decision.decision == "ignore"
+    assert {row["operation_type"] for row in read_table(sandbox_repository, "operations_todo")} == {
+        "opportunity_research",
+        "security_research",
+    }
+
+
+def test_mixed_unheld_alert_filters_bearish_causes_from_every_payload(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    bars = _bars(220)
+    current = _snapshot(
+        as_of=bars[-1].date,
+        rsi=Decimal("80"),
+        trigger_state=("rsi_overbought", "volume_anomaly"),
+        source_hash="7" * 64,
+    )
+    current = replace(current, volume_zscore=Decimal("3"))
+    write_table(sandbox_repository, "securities", [_security_row()])
+    classifier = _Classifier("ignore")
+
+    packets = process_opportunity_transitions(
+        sandbox_repository,
+        sandbox_settings,
+        {},
+        {"sec_a": current},
+        {"sec_a": bars},
+        classifier=classifier,
+        now=datetime(2026, 7, 24, 22, tzinfo=UTC),
+    )
+
+    assert classifier.calls == 1
+    assert [packet.decision.decision if packet.decision else "blocked" for packet in packets] == [
+        "skipped",
+        "ignore",
+    ]
+    operations = read_table(sandbox_repository, "operations_todo")
+    assert {row["operation_type"] for row in operations} == {
+        "opportunity_research",
+        "security_research",
+    }
+    for row in operations:
+        payload = json.loads((sandbox_repository / row["payload_path"]).read_text())
+        assert "rsi_overbought" not in json.dumps(payload)
+    research = next(row for row in operations if row["operation_type"] == "security_research")
+    payload = json.loads((sandbox_repository / research["payload_path"]).read_text())
+    assert payload["inputs"]["trigger_types"] == ["volume_anomaly"]
+
+
+def test_queue_cleanup_archives_only_exclusive_unheld_bearish_lineage(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    bars = _bars(220)
+    current = _snapshot(
+        as_of=bars[-1].date,
+        rsi=Decimal("80"),
+        trigger_state=("rsi_overbought", "volume_anomaly"),
+        source_hash="6" * 64,
+    )
+    current = replace(current, volume_zscore=Decimal("3"))
+    write_table(sandbox_repository, "securities", [_security_row()])
+    write_table(sandbox_repository, "portfolio", [_position_row()])
+    process_opportunity_transitions(
+        sandbox_repository,
+        sandbox_settings,
+        {},
+        {"sec_a": current},
+        {"sec_a": bars},
+        classifier=_Classifier("ignore"),
+        now=datetime(2026, 7, 24, 22, tzinfo=UTC),
+    )
+    write_table(sandbox_repository, "portfolio", [])
+
+    dispositions = prepare_queue(sandbox_repository, now=datetime(2026, 7, 24, 22, 1, tzinfo=UTC))
+
+    assert sum("bearish_alert_unowned" in value for value in dispositions) == 1
+    history = read_table(sandbox_repository, "operations_history")
+    skipped = [row for row in history if row["terminal_reason"] == "bearish_alert_unowned"]
+    assert len(skipped) == 1
+    active = read_table(sandbox_repository, "operations_todo")
+    assert any(row["operation_type"] == "security_research" for row in active)
+    assert any(
+        row["operation_type"] == "opportunity_research"
+        and "volume_anomaly" in (sandbox_repository / row["payload_path"]).read_text()
+        for row in active
+    )

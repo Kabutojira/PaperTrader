@@ -1,5 +1,5 @@
 ---
-title: '[TSM] MACD cross above signal'
+title: TSM — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 02538665a30b4d33ece2fcb154fe989a18e671066558dc5b4265628d96466498
 classifier_decision: ingest
 classifier_reason: A new MACD bullish crossover is a durable, security-specific market
   transition despite the recent negative return.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_ce9b78a4d0773c950765
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 23680e1081b20c6eee063ca3d67dfdaada83b2d952b928c7caea00b524a36f15
 ---
 
-# [TSM] MACD cross above signal
+# TSM — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: TSM — Taiwan Semiconductor Manufacturing Company Limited sponsored ADR (`security_ce9b78a4d0773c950765`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: TSM — Taiwan Semiconductor Manufacturing Company Limited sponsored ADR
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 417.1700134277344
 - Period return: -0.0356011596637160895791823798
 - Trigger strength: 0.04952257779117493800268232252
 - Previous strength: 0
-- Source price hash: `23680e1081b20c6eee063ca3d67dfdaada83b2d952b928c7caea00b524a36f15`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: A new MACD bullish crossover is a durable, security-specific market transition despite the recent negative return.
+- Decision: Ingest
+- Reason: A new macd bullish crossover is a durable, security-specific market transition despite the recent negative return.

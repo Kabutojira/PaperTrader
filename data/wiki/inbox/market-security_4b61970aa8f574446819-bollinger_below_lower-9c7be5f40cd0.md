@@ -1,5 +1,5 @@
 ---
-title: '[GEV] Bollinger below lower'
+title: GEV — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 9c7be5f40cd0baa9bb36e524450d988fa86065371a50b272c6b8a8a98570d8d1
 classifier_decision: ingest
 classifier_reason: Material 14.2% decline with a new Bollinger-below-lower transition
   warrants durable wiki review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_4b61970aa8f574446819
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 468a1ad56cf1a146163b86fc7a6372182c9066c9c52e34a29fc7d1290f4e9606
 ---
 
-# [GEV] Bollinger below lower
+# GEV — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_4b61970aa8f574446819|GEV — GE Vernova Inc. common stock]] (`security_4b61970aa8f574446819`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_4b61970aa8f574446819|GEV — GE Vernova Inc. common stock]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 946
 - Period return: -0.1419579036737239090224033804
 - Trigger strength: 0.01020799019027844734925744084
 - Previous strength: 0
-- Source price hash: `468a1ad56cf1a146163b86fc7a6372182c9066c9c52e34a29fc7d1290f4e9606`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 14.2% decline with a new Bollinger-below-lower transition warrants durable wiki review.
+- Decision: Ingest
+- Reason: Material 14.2% decline with a new bollinger-below-lower transition warrants durable wiki review.

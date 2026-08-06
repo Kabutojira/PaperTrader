@@ -1,5 +1,5 @@
 ---
-title: '[ENPH] Bollinger below lower'
+title: ENPH — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 48b7e8fa112e9acb813457a37f2b7e6a601f00724953b59592fe67cb986ae522
 classifier_decision: ingest
 classifier_reason: Material 22% decline with a new Bollinger-band breach merits durable
   review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_f2b9760d847b2ba59324
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 92c3146da6c6940e7d58b99f1f18861956acbac2fcbdcbfbfe909be3e9df0c96
 ---
 
-# [ENPH] Bollinger below lower
+# ENPH — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_f2b9760d847b2ba59324|ENPH — Enphase Energy, Inc. common stock]] (`security_f2b9760d847b2ba59324`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_f2b9760d847b2ba59324|ENPH — Enphase Energy, Inc. common stock]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-25 through 2026-07-24
 - Latest adjusted close: 36.70000076293945
 - Period return: -0.2226222945424699012423885593
 - Trigger strength: 0.0004374994294540943008193392947
 - Previous strength: 0
-- Source price hash: `92c3146da6c6940e7d58b99f1f18861956acbac2fcbdcbfbfe909be3e9df0c96`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 22% decline with a new Bollinger-band breach merits durable review.
+- Decision: Ingest
+- Reason: Material 22% decline with a new bollinger-band breach merits durable review.

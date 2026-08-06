@@ -13,7 +13,7 @@ as_of: "2026-08-05T22:34:36Z"
 
 # Model portfolio
 
-**Snapshot `decision_ffbf228dca49bf71406d` · As of `2026-08-05T22:34:36Z`**
+**As of `2026-08-05T22:34:36Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 

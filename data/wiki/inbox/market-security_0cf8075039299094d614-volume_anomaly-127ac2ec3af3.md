@@ -1,5 +1,5 @@
 ---
-title: '[KTOS] Volume anomaly'
+title: KTOS — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 127ac2ec3af3328c73ea9a9af1914fd6847c38a9752f0a8817cf1dd4534fd450
 classifier_decision: ingest
 classifier_reason: New volume-anomaly transition with a material 2.8% period return
   merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_0cf8075039299094d614
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032
 ---
 
-# [KTOS] Volume anomaly
+# KTOS — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: KTOS — Kratos Defense & Security Solutions, Inc. common stock (`security_0cf8075039299094d614`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_0cf8075039299094d614|KTOS — Kratos Defense & Security Solutions, Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 51.869998931884766
 - Period return: 0.030393301046071242019173548
 - Trigger strength: 0.195824775
 - Previous strength: 0
-- Source price hash: `7b463eb275bd79a21a8579cb5403f6321989606cf4e0001d7d4ceaac6322b032`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: New volume-anomaly transition with a material 2.8% period return merits durable review.

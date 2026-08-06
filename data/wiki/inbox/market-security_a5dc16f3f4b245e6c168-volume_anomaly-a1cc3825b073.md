@@ -1,5 +1,5 @@
 ---
-title: '[LUNR] Volume anomaly'
+title: LUNR — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: a1cc3825b073335589176e455d1e648ddc6b88e23dc45719aaa0d53dfbe4ad2d
 classifier_decision: ingest
 classifier_reason: Material volume anomaly coincides with a 21.8% decline over the
   review period and merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_a5dc16f3f4b245e6c168
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: c5b846a0cc45e7033eb5322af3ce18c73775ff3003dc5563c2a161ac7a03e8fe
 ---
 
-# [LUNR] Volume anomaly
+# LUNR — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_a5dc16f3f4b245e6c168|LUNR — Intuitive Machines, Inc. Class A common stock]] (`security_a5dc16f3f4b245e6c168`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_a5dc16f3f4b245e6c168|LUNR — Intuitive Machines, Inc. Class A common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 13.960000038146973
 - Period return: -0.2179271854448252135845463424
 - Trigger strength: 0.35588394
 - Previous strength: 0
-- Source price hash: `c5b846a0cc45e7033eb5322af3ce18c73775ff3003dc5563c2a161ac7a03e8fe`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: Material volume anomaly coincides with a 21.8% decline over the review period and merits durable review.

@@ -1,5 +1,5 @@
 ---
-title: '[NBIS] MACD cross above signal'
+title: NBIS — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 65152a0c42fe58e52abd7eded56b7785cb23559d13a3e7a945c83605fc0b1c7b
 classifier_decision: ingest
 classifier_reason: Material MACD bullish crossover with a 15.65% period return merits
   durable wiki review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_47a0b06f6c6c478d7c1e
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: bc3a54289318c2d49eb7b5885bbff26322c894b2cee2d66ce3f504a5fa8e0ccb
 ---
 
-# [NBIS] MACD cross above signal
+# NBIS — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: NBIS — Nebius Group N.V. Class A ordinary shares (`security_47a0b06f6c6c478d7c1e`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_47a0b06f6c6c478d7c1e|NBIS — Nebius Group N.V. Class A ordinary shares]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 225.74000549316406
 - Period return: 0.15651417936186850910555464
 - Trigger strength: 0.3515748637841134223735649166
 - Previous strength: 0
-- Source price hash: `bc3a54289318c2d49eb7b5885bbff26322c894b2cee2d66ce3f504a5fa8e0ccb`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material MACD bullish crossover with a 15.65% period return merits durable wiki review.
+- Decision: Ingest
+- Reason: Material macd bullish crossover with a 15.65% period return merits durable wiki review.

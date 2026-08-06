@@ -1,5 +1,5 @@
 ---
-title: '[TX] Bollinger above upper'
+title: TX — Bollinger above upper
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-07-27'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 9327af26235b643c494c5fd7a9173540374c046dc880e1db7cb50d502b55dd41
-classifier_decision: ingest
-classifier_reason: A strengthened Bollinger-above-upper trigger with a 4.25% monthly
-  return is a material indicator transition for the tracked security.
-related_entity_ids:
-- security_2c779e81c27b78c556bb
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2c779e81c27b78c556bb
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: b137b98d7c2dcea315f3255e61529f2fcb74362230e0d49dae85af433f2108fe
 ---
 
-# [TX] Bollinger above upper
+# TX — Bollinger above upper
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_2c779e81c27b78c556bb|TX — Ternium S.A. ADS]] (`security_2c779e81c27b78c556bb`)
-- Trigger: `bollinger_above_upper`
-- Transition: `strengthened`
+- Security: [[securities/security_2c779e81c27b78c556bb|TX — Ternium S.A. ADS]]
+- Alert: Bollinger above upper
+- Direction: Bearish
+- Transition: Strengthened
 - Period: 2026-06-25 through 2026-07-24
 - Latest adjusted close: 47.29999923706055
 - Period return: 0.042539130496197428346979332
 - Trigger strength: 0.0009664226650468261686498285667
 - Previous strength: 0
-- Source price hash: `b137b98d7c2dcea315f3255e61529f2fcb74362230e0d49dae85af433f2108fe`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: A strengthened Bollinger-above-upper trigger with a 4.25% monthly return is a material indicator transition for the tracked security.
+- Decision: Skipped
+- Reason: Bearish alert unowned

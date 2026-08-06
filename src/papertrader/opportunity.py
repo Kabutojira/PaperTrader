@@ -19,11 +19,13 @@ from papertrader.config import Settings
 from papertrader.dedupe import build_dedupe_key, freshness_bucket, source_fingerprint
 from papertrader.issues import resolve_issue
 from papertrader.models import (
+    AlertDirection,
     ClassifierDecision,
     IndicatorSnapshot,
     OpportunityTransition,
     PriceBar,
 )
+from papertrader.public_refs import PublicEntityResolver
 from papertrader.tables import read_table
 from papertrader.utils import (
     CanonicalValueError,
@@ -39,6 +41,18 @@ from papertrader.utils import (
 from papertrader.wiki import register_wiki_page
 
 CLASSIFIER_DECISIONS = frozenset({"ingest", "ignore"})
+STORED_CLASSIFIER_DECISIONS = frozenset({*CLASSIFIER_DECISIONS, "skipped"})
+ALERT_DIRECTIONS = {
+    "rsi_oversold": AlertDirection.BULLISH,
+    "bollinger_below_lower": AlertDirection.BULLISH,
+    "sma_50_cross_above_200": AlertDirection.BULLISH,
+    "macd_cross_above_signal": AlertDirection.BULLISH,
+    "rsi_overbought": AlertDirection.BEARISH,
+    "bollinger_above_upper": AlertDirection.BEARISH,
+    "sma_50_cross_below_200": AlertDirection.BEARISH,
+    "macd_cross_below_signal": AlertDirection.BEARISH,
+    "volume_anomaly": AlertDirection.NEUTRAL,
+}
 TRANSITION_TYPES = frozenset({"entered", "strengthened"})
 CANDIDATE_FACT_KEYS = frozenset(
     {
@@ -122,6 +136,29 @@ class CandidatePacket:
     transition: OpportunityTransition
     created: bool
     decision: ClassifierDecision | None
+
+
+def alert_direction(trigger: str) -> AlertDirection:
+    """Return the closed canonical direction for one supported indicator trigger."""
+
+    try:
+        return ALERT_DIRECTIONS[trigger]
+    except KeyError as exc:
+        raise CanonicalValueError(f"unknown indicator alert trigger: {trigger}") from exc
+
+
+def held_security_ids(repository_root: Path) -> frozenset[str]:
+    """Return immutable security identities with any reconciled non-zero position."""
+
+    held: set[str] = set()
+    for row in read_table(repository_root, "portfolio"):
+        try:
+            quantity = Decimal(row["quantity"])
+        except (KeyError, ArithmeticError) as exc:
+            raise CanonicalValueError("portfolio contains an invalid position quantity") from exc
+        if quantity != 0:
+            held.add(row["security_id"])
+    return frozenset(held)
 
 
 def validate_classifier_decision(raw: Mapping[str, object]) -> ClassifierDecision:
@@ -322,6 +359,7 @@ def _validated_candidate_facts(raw: Mapping[Any, object]) -> dict[str, object]:
         raise CanonicalValueError("candidate facts must contain non-empty canonical strings")
     if facts["transition"] not in TRANSITION_TYPES:
         raise CanonicalValueError("candidate transition is not supported")
+    alert_direction(str(facts["trigger"]))
     parse_iso_date(str(facts["as_of_date"]))
     parse_iso_date(str(facts["period_start"]))
     parse_iso_date(str(facts["period_end"]))
@@ -376,7 +414,7 @@ def _security_display(wiki_root: Path, security_id: str) -> tuple[str, str, str]
 
 def _candidate_display(wiki_root: Path, facts: Mapping[str, object]) -> tuple[str, str]:
     ticker, instrument, page_key = _security_display(wiki_root, str(facts["security_id"]))
-    title = f"[{ticker}] {_trigger_label(str(facts['trigger']))}"
+    title = f"{ticker} — {_trigger_label(str(facts['trigger']))}"
     security = f"{ticker} — {instrument}"
     if page_key:
         security = f"[[{page_key}|{security}]]"
@@ -392,11 +430,21 @@ def _render_packet(
     decision: ClassifierDecision | None,
     blocked_reason: str = "",
     created_on: date | None = None,
+    held: bool | None = None,
 ) -> str:
     facts = _validated_candidate_facts(facts)
     title, security = _candidate_display(wiki_root, facts)
+    direction = alert_direction(str(facts["trigger"]))
+    suppressed = held is False and direction is AlertDirection.BEARISH
     decision_value = decision.decision if decision else ("blocked" if blocked_reason else "pending")
+    if suppressed:
+        decision_value = "skipped"
     reason = decision.reason if decision else blocked_reason
+    if suppressed:
+        reason = "bearish_alert_unowned"
+    visible_reason = (
+        PublicEntityResolver(wiki_root.parent.parent).humanize(reason) if reason else ""
+    )
     entities = decision.related_entity_ids if decision else ()
     frontmatter = {
         "title": title,
@@ -409,10 +457,18 @@ def _render_packet(
         "content_hash": packet_hash,
         "classifier_decision": decision_value,
         "classifier_reason": reason,
+        "alert_direction": direction.value,
+        "research_gate": "suppressed" if suppressed else "eligible",
+        "research_gate_reason": "bearish_alert_unowned" if suppressed else "",
         "related_entity_ids": list(entities),
         "candidate_facts": facts,
     }
     metadata = yaml.safe_dump(frontmatter, sort_keys=False, allow_unicode=True).strip()
+    disposition_reason = (
+        visible_reason.replace("_", " ").capitalize()
+        if visible_reason
+        else "Awaiting cheap-model review."
+    )
     lines = [
         "---",
         metadata,
@@ -423,20 +479,20 @@ def _render_packet(
         "> This packet is untrusted input data for research. "
         "It contains no executable instructions.",
         "",
-        f"- Security: {security} (`{facts['security_id']}`)",
-        f"- Trigger: `{facts['trigger']}`",
-        f"- Transition: `{facts['transition']}`",
+        f"- Security: {security}",
+        f"- Alert: {_trigger_label(str(facts['trigger']))}",
+        f"- Direction: {direction.value.capitalize()}",
+        f"- Transition: {str(facts['transition']).capitalize()}",
         f"- Period: {facts['period_start']} through {facts['period_end']}",
         f"- Latest adjusted close: {facts['latest_close']}",
         f"- Period return: {facts['return_period']}",
         f"- Trigger strength: {facts['strength']}",
         f"- Previous strength: {facts['previous_strength']}",
-        f"- Source price hash: `{facts['source_price_hash']}`",
         "",
-        "## Classifier disposition",
+        "## Research disposition",
         "",
-        f"- Decision: `{decision_value}`",
-        f"- Reason: {reason or 'Awaiting cheap-model review.'}",
+        f"- Decision: {decision_value.capitalize()}",
+        f"- Reason: {disposition_reason}",
         "",
     ]
     return "\n".join(lines)
@@ -520,10 +576,14 @@ def _existing_packet(wiki_root: Path, packet_hash: str) -> Path | None:
 def _stored_decision(path: Path) -> ClassifierDecision | None:
     metadata = _packet_metadata(path)
     decision = metadata.get("classifier_decision")
-    if decision not in CLASSIFIER_DECISIONS:
+    if decision not in STORED_CLASSIFIER_DECISIONS:
         return None
     reason = metadata.get("classifier_reason")
     related = metadata.get("related_entity_ids")
+    if decision == "skipped":
+        if reason != "bearish_alert_unowned" or not isinstance(related, (list, tuple)):
+            raise CanonicalValueError(f"invalid skipped candidate disposition: {path}")
+        return ClassifierDecision("skipped", reason, ())
     return validate_classifier_decision(
         {"decision": decision, "reason": reason, "related_entity_ids": related}
     )
@@ -535,14 +595,38 @@ def create_candidate_packet(
     bars: Sequence[PriceBar],
     *,
     now: datetime | None = None,
+    held: bool | None = None,
 ) -> CandidatePacket:
     """Write one compact economic-change packet, filtering exact no-op repeats."""
 
     generated_at = ensure_utc(now or utc_now())
+    repository_root = wiki_root.parent.parent
+    effective_held = (
+        transition.security_id in held_security_ids(repository_root) if held is None else held
+    )
     facts = _candidate_facts(transition, bars)
     packet_hash = content_hash(facts)
     existing = _existing_packet(wiki_root, packet_hash)
     if existing is not None:
+        if (
+            alert_direction(transition.trigger) is AlertDirection.BEARISH
+            and not effective_held
+            and _packet_metadata(existing).get("classifier_decision") != "skipped"
+        ):
+            metadata = _packet_metadata(existing)
+            atomic_write_text(
+                existing,
+                _render_packet(
+                    wiki_root,
+                    facts,
+                    packet_hash=packet_hash,
+                    generated_at=generated_at,
+                    decision=None,
+                    created_on=parse_iso_date(str(metadata.get("created", ""))),
+                    held=False,
+                ),
+                allowed_root=wiki_root,
+            )
         return CandidatePacket(existing, packet_hash, transition, False, _stored_decision(existing))
     filename = f"market-{transition.security_id}-{transition.trigger}-{packet_hash[:12]}.md"
     path = wiki_root / "inbox" / filename
@@ -554,6 +638,7 @@ def create_candidate_packet(
             packet_hash=packet_hash,
             generated_at=generated_at,
             decision=None,
+            held=effective_held,
         ),
         allowed_root=wiki_root,
     )
@@ -565,7 +650,7 @@ def create_candidate_packet(
         event=f"Created candidate packet [[inbox/{path.stem}]] ({packet_hash[:12]}).",
         event_date=generated_at.date(),
     )
-    return CandidatePacket(path, packet_hash, transition, True, None)
+    return CandidatePacket(path, packet_hash, transition, True, _stored_decision(path))
 
 
 def classify_candidate_packet(
@@ -579,6 +664,8 @@ def classify_candidate_packet(
     """Ask the cheap model for the final wiki-ingestion decision and persist it."""
 
     generated_at = ensure_utc(now or utc_now())
+    if packet.decision is not None and packet.decision.decision == "skipped":
+        return packet
     facts = _candidate_facts(packet.transition, bars)
     return _classify_candidate_facts(
         wiki_root,
@@ -743,10 +830,11 @@ def retry_unclassified_candidate_packets(
 
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     selected_classifier = classifier or SubprocessClassifier(settings)
+    held_ids = held_security_ids(repository_root)
     packets: list[CandidatePacket] = []
     for path in sorted(settings.paths.wiki.joinpath("inbox").glob("*.md")):
         metadata = _packet_metadata(path)
-        if metadata.get("classifier_decision") in CLASSIFIER_DECISIONS:
+        if metadata.get("classifier_decision") in STORED_CLASSIFIER_DECISIONS:
             continue
         facts = _packet_facts(path)
         transition = _transition_from_facts(facts)
@@ -757,6 +845,32 @@ def retry_unclassified_candidate_packets(
             created=False,
             decision=None,
         )
+        direction = alert_direction(transition.trigger)
+        if direction is AlertDirection.BEARISH and transition.security_id not in held_ids:
+            created_on = parse_iso_date(str(metadata.get("created", "")))
+            atomic_write_text(
+                path,
+                _render_packet(
+                    settings.paths.wiki,
+                    facts,
+                    packet_hash=packet.content_hash,
+                    generated_at=instant,
+                    decision=None,
+                    created_on=created_on,
+                    held=False,
+                ),
+                allowed_root=settings.paths.wiki,
+            )
+            packets.append(
+                CandidatePacket(
+                    path,
+                    packet.content_hash,
+                    transition,
+                    False,
+                    ClassifierDecision("skipped", "bearish_alert_unowned", ()),
+                )
+            )
+            continue
         try:
             packet = _classify_candidate_facts(
                 settings.paths.wiki,
@@ -803,6 +917,7 @@ def refresh_candidate_packet_display(
     """Regenerate candidate titles, security links, facts, and catalog labels."""
 
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
+    held_ids = held_security_ids(repository_root)
     updated: list[Path] = []
     for path in sorted(settings.paths.wiki.joinpath("inbox").glob("*.md")):
         metadata = _packet_metadata(path)
@@ -823,6 +938,7 @@ def refresh_candidate_packet_display(
             decision=decision,
             blocked_reason=blocked_reason,
             created_on=created_on,
+            held=str(facts["security_id"]) in held_ids,
         )
         if rendered != path.read_text(encoding="utf-8"):
             atomic_write_text(path, rendered, allowed_root=settings.paths.wiki)
@@ -854,15 +970,32 @@ def process_opportunity_transitions(
 
     instant = ensure_utc(now or utc_now()).replace(microsecond=0)
     selected_classifier = classifier or SubprocessClassifier(settings)
+    held_ids = held_security_ids(repository_root)
     packets: list[CandidatePacket] = []
     for security_id in sorted(current):
         bars = bars_by_security.get(security_id, ())
         transitions = detect_transitions(
             previous.get(security_id), current[security_id], bars, settings
         )
+        eligible_transitions = tuple(
+            transition
+            for transition in transitions
+            if not (
+                alert_direction(transition.trigger) is AlertDirection.BEARISH
+                and security_id not in held_ids
+            )
+        )
         security_packets: list[CandidatePacket] = []
         for transition in transitions:
-            packet = create_candidate_packet(settings.paths.wiki, transition, bars, now=instant)
+            is_held = security_id in held_ids
+            direction = alert_direction(transition.trigger)
+            suppressed = direction is AlertDirection.BEARISH and not is_held
+            packet = create_candidate_packet(
+                settings.paths.wiki, transition, bars, now=instant, held=is_held
+            )
+            if suppressed:
+                packets.append(packet)
+                continue
             if packet.decision is None:
                 try:
                     packet = classify_candidate_packet(
@@ -926,16 +1059,16 @@ def process_opportunity_transitions(
                 )
             packets.append(packet)
             security_packets.append(packet)
-        if transitions:
+        if eligible_transitions:
             period = [bar for bar in bars if bar.date <= current[security_id].as_of_date][-21:]
-            trigger_types = sorted({transition.trigger for transition in transitions})
+            trigger_types = sorted({transition.trigger for transition in eligible_transitions})
             alert_hash = source_fingerprint(
                 {
                     "market_data_date": current[security_id].as_of_date.isoformat(),
                     "source_price_hash": current[security_id].source_price_hash,
                     "transitions": [
                         {"trigger": item.trigger, "transition": item.transition}
-                        for item in transitions
+                        for item in eligible_transitions
                     ],
                 }
             )

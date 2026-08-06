@@ -1,5 +1,5 @@
 ---
-title: '[CROX] Volume anomaly'
+title: CROX — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 3ecd15687b720ccc9d07b54802974653aedad6266d19a290473d37dfca499663
 classifier_decision: ingest
 classifier_reason: High-strength volume anomaly transition merits durable review for
   the security.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_c150f31c30afdb4a85f9
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 6cbdf40a812232ae34a5ae4b8e69e78fc649911237e36c745488e43bfa461277
 ---
 
-# [CROX] Volume anomaly
+# CROX — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: CROX — Crocs, Inc. common stock (`security_c150f31c30afdb4a85f9`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_c150f31c30afdb4a85f9|CROX — Crocs, Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 123.66000366210938
 - Period return: -0.0041072281094989876201816448
 - Trigger strength: 0.93041873
 - Previous strength: 0
-- Source price hash: `6cbdf40a812232ae34a5ae4b8e69e78fc649911237e36c745488e43bfa461277`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: High-strength volume anomaly transition merits durable review for the security.

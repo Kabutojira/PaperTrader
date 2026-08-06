@@ -1,5 +1,5 @@
 ---
-title: '[SSUN.VI] MACD cross above signal'
+title: SSUN.VI — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 5f77e49fc4fddf85a46049803322126f31ce3349160ecf8f065572f956ad4d9a
 classifier_decision: ingest
 classifier_reason: New MACD bullish crossover transition for the tracked security
   warrants durable wiki context despite modest period return.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_d08d763780400dfbffce
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: f7c93ad966bdacdf865b5b6f39a55cdc69366aca2fc0ceefa522db12f8a309f2
 ---
 
-# [SSUN.VI] MACD cross above signal
+# SSUN.VI — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: SSUN.VI — Samsung Electronics preferred GDR (`security_d08d763780400dfbffce`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: SSUN.VI — Samsung Electronics preferred GDR
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 2790
 - Period return: -0.0035714285714285714285714286
 - Trigger strength: 0.214395360209524424786832317
 - Previous strength: 0
-- Source price hash: `f7c93ad966bdacdf865b5b6f39a55cdc69366aca2fc0ceefa522db12f8a309f2`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: New MACD bullish crossover transition for the tracked security warrants durable wiki context despite modest period return.
+- Decision: Ingest
+- Reason: New macd bullish crossover transition for the tracked security warrants durable wiki context despite modest period return.
