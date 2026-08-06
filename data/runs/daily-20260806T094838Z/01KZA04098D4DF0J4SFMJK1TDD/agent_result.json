@@ -1,0 +1,37 @@
+{
+  "operation_id": "01KZA04098D4DF0J4SFMJK1TDD",
+  "status": "failed",
+  "summary": "The mandatory repeat-assessment security-context prerequisite could not run because the controller-owned runtime has no repository .venv and system Python cannot import the declared PyYAML dependency. The command failed before CLI dispatch and produced no audited receipt, so assessment state was not consumed, no research or structured-state changes were made, and the operation failed closed.",
+  "reason_code": "security_context_runtime_dependency_missing",
+  "evidence": [
+    {
+      "source": "scripts/papertrader research security-context --security-id security_59304f90c440def31dc5",
+      "claim": "The required command exited with status 1 during papertrader.cli import: ModuleNotFoundError: No module named 'yaml'."
+    },
+    {
+      "source": "controller-owned Python runtime inspection",
+      "claim": "No executable /workspace/.venv/bin/python exists, so scripts/papertrader selected /usr/bin/python3; operation instructions prohibit installing dependencies or modifying .venv."
+    },
+    {
+      "source": "data/runs/daily-20260806T094838Z/01KZA04098D4DF0J4SFMJK1TDD",
+      "claim": "No command_audit.json was created because the required CLI command failed before dispatch; therefore there are no canonical command receipts to list."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RTX full security reassessment failed closed before assessment access because the controller-owned Python runtime lacked PyYAML; no investment or accounting state changed."
+  ],
+  "commands_run": [],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Controller preflight identified llm-wiki, papertrader-controller, and papertrader-security-research with content hashes and sequential execution enabled.",
+      "Queue row identified exactly one running security_research operation for security_59304f90c440def31dc5 claimed by daily-20260806T094838Z.",
+      "FAILED: mandatory security-context command did not produce a successful audited receipt because PyYAML was unavailable.",
+      "No assessment, wiki, CSV, allocation, order, execution, cash, portfolio, or performance state was changed.",
+      "No routed project CLI command reached dispatch, and no command_audit.json receipt exists; commands_run is therefore empty."
+    ]
+  }
+}
