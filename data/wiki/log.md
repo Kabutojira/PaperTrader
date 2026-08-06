@@ -2229,3 +2229,18 @@ This log is append-only. Rotate it by year only after the configured line thresh
   not persistent and no fundamental entry signal was verified.
 - MP moves from unassessed watchlist status to Hold / Watch. No strategy, signal, follow-up operation,
   order, or accounting change was justified.
+
+## 2026-08-06 — security review — Samsung Electronics preferred GDR
+
+- Created [[securities/security_d08d763780400dfbffce]] from Samsung's issuer listing information
+  and detailed Q2 2026 results, preserving the preferred GDR as distinct from the common GDR and
+  Korean preferred share.
+- Record memory-led earnings, cash flow, and net financial strength support the issuer thesis, while
+  cyclical normalization, preferred-GDR conversion and parity, currency translation, depositary
+  basis, and negligible Vienna turnover remain material.
+- The 4 August bullish MACD crossover followed a 0.36% measured-period decline and only five units
+  of volume; the next session traded one unit. It is technical noise with mildly constructive
+  momentum, not a verified fundamental signal.
+- Instrument-level valuation remains unsupported and local liquidity is insufficient, so the
+  assessment is ineligible and no strategy, signal, order, follow-up operation, or accounting
+  change was justified.

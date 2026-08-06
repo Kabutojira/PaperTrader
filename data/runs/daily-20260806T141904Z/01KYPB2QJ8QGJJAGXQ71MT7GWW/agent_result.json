@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KYPB2QJ8QGJJAGXQ71MT7GWW",
+  "status": "succeeded",
+  "summary": "Completed exactly one Samsung Electronics preferred-GDR review from issuer listing information, detailed Q2 2026 results, and canonical 4-5 August 2026 market state. Registered two primary sources, created the maintained security page, updated the structured security row, and wrote the first immutable schema-v2 assessment. Samsung's record memory-led earnings, cash flow, and net financial strength support the issuer thesis, but a defensible preferred-GDR conversion and cross-venue parity bridge, fresh KRW/EUR translation, normalized-cycle preferred earnings, and routine Vienna liquidity are unavailable. Deterministic state therefore records an unsupported, unrated assessment, Watch action, watch-tier conviction, quality score 72, and allocation ineligibility. The bullish MACD crossover followed a 0.36% measured-period decline and only five units of volume; the next session traded one unit, so it is technical noise with mildly constructive momentum rather than an entry signal. No strategy, signal, order, issue, follow-up operation, allocation, or accounting state changed because there is no linked idea or accepted relationship and valuation and liquidity are hard blockers.",
+  "evidence": [
+    {
+      "source": "source_samsung_preferred_gdr_identity",
+      "claim": "Samsung's issuer listing page distinguishes preferred shares (KRX 005935, ISIN KR7005931001) and the preferred GDR (LSE SMSEL, ISIN US7960502018) from common instruments and reports 815,974,664 preferred shares outstanding at Q1 2026.",
+      "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+      "observed_at": "2026-08-06T14:53:04Z",
+      "source_hash": "157af68a08d3ed830fc05ebcfb3789a9b5285adf558c661429505536aed63d7e"
+    },
+    {
+      "source": "source_samsung_preferred_q2_2026_results",
+      "claim": "Samsung's detailed Q2 2026 results report KRW 171.5 trillion revenue, KRW 89.5 trillion operating profit, KRW 71.6 trillion net profit, KRW 10,899 preferred-share EPS, KRW 190.0 trillion cash, KRW 22.4 trillion debt, KRW 105.1 trillion operating cash flow, and memory-led Device Solutions strength alongside a Device eXperience operating loss.",
+      "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+      "observed_at": "2026-08-06T14:53:04Z",
+      "source_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf"
+    },
+    {
+      "source": "data/market/latest.csv, data/market/indicators.csv, data/market/prices/security_d08d763780400dfbffce.csv, and the canonical alert packet",
+      "claim": "The identity-matched 5 August close is EUR 2,785 on one unit of volume. The canonical 4 August alert measured a 0.36% decline from 7 July while MACD crossed above signal on five units of volume; current MACD remains above signal with no new trigger."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic assessment normalization records schema version 2, unsupported research, Unrated / Watch, quality score 72, watch-tier conviction, and allocation ineligibility because valuation is unsupported, liquidity is insufficient, and relationship state is pending."
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable first assessment assessment_27be4a94f4e72cdda9dc records this operation and result path, schema version 2, registered evidence, research page, exact page hash 4736ad0e11651a479e5c036fa896691b50f099fdcf07f6833066df0846c39f9e, and current run provenance; no predecessor existed."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/assessment_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/security_upsert_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/source_samsung_preferred_gdr_identity_request.json",
+    "data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/source_samsung_preferred_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_d08d763780400dfbffce.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Samsung Electronics preferred GDR full review completed: record memory-led Q2 earnings and net financial strength support the issuer, but unsupported preferred-GDR conversion and parity, normalized-cycle valuation, and negligible Vienna liquidity make the bullish MACD crossover non-actionable. Canonical conclusion is Unrated / Watch; no paper strategy, signal, order, issue, or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_d08d763780400dfbffce",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/source_samsung_preferred_gdr_identity_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/source_samsung_preferred_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T141904Z/01KYPB2QJ8QGJJAGXQ71MT7GWW/assessment_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context completed before assessment-state reads or changes and showed no prior assessment, successful result, linked idea, accepted relationship, strategy, or retained source for this immutable security.",
+      "Immutable identity remained security_d08d763780400dfbffce / issuer_adf6eb6a528f8576f0ed / XWBO / SSUN.VI / EUR / equity; validated security upsert and strict schema validation found no identity conflict.",
+      "Both retained primary sources were registered through the project CLI with current issuer URLs, bounded metadata, and content hashes.",
+      "The first assessment is schema version 2, explicitly unsupported rather than inventing scenario values, source-backed, identity-matched to the EUR 2,785 mark, and linked through immutable history to this operation, result path, wiki page, exact page hash, and run.",
+      "All seven component inputs use only the 20/40/60/80/100 rubric anchors; deterministic state derives Unrated / Watch, quality score 72, watch-tier conviction, and explicit valuation, liquidity, and relationship frontiers.",
+      "The first assessment request failed without a state change because base-currency fx_as_of did not match canonical rules; the immutable corrected retry used the allowed assessed-at identity and succeeded.",
+      "No idea-research follow-up was required because bounded security context and canonical relationship state contained no linked idea; no conviction strategy was queued because valuation and liquidity hard blockers prevent the full strategy gate.",
+      "Strict schema validation returned OK [schema].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ]
+  }
+}

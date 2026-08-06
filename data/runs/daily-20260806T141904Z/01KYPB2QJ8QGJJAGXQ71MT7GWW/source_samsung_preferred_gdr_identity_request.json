@@ -1,0 +1,18 @@
+{
+  "source_id": "source_samsung_preferred_gdr_identity",
+  "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+  "canonical_url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+  "source_type": "issuer_page",
+  "title": "Samsung Electronics listing information",
+  "publisher": "Samsung Electronics Co., Ltd.",
+  "license": "",
+  "status": "available",
+  "content_hash": "157af68a08d3ed830fc05ebcfb3789a9b5285adf558c661429505536aed63d7e",
+  "related_entity_ids": "security_d08d763780400dfbffce",
+  "checked_at": "2026-08-06T14:53:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Samsung lists preferred shares as KRX 005935 / ISIN KR7005931001 and the preferred GDR as LSE SMSEL / ISIN US7960502018; 815,974,664 preferred shares were outstanding at Q1 2026.",
+  "summary": "Issuer listing information verifies that the maintained security is the preferred-share GDR, distinct from Samsung's common shares and common GDR, and provides the preferred underlying and LSE GDR identities.",
+  "run_id": "daily-20260806T141904Z"
+}

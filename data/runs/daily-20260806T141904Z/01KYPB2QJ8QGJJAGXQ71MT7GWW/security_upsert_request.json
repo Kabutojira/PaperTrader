@@ -1,0 +1,23 @@
+{
+  "security_id": "security_d08d763780400dfbffce",
+  "issuer_id": "issuer_adf6eb6a528f8576f0ed",
+  "company_name": "Samsung Electronics Co., Ltd.",
+  "instrument_name": "Samsung Electronics preferred GDR",
+  "instrument_type": "equity",
+  "ticker": "SSUN.VI",
+  "exchange_code": "VIE",
+  "venue_mic": "XWBO",
+  "provider_symbol": "SSUN.VI",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "KR",
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "status": "watching",
+  "watchlist_reason": "Samsung preferred-GDR exposure; monitor AI-memory earnings, preferred/common basis, GDR conversion and parity, KRW/EUR translation, local liquidity, and cycle-normalized valuation.",
+  "research_summary": "Record Q2 memory earnings and net financial strength support Samsung, but unsupported preferred-GDR valuation and negligible Vienna turnover make the bullish MACD crossover non-actionable.",
+  "research_page": "data/wiki/securities/security_d08d763780400dfbffce.md",
+  "last_research_at": "2026-08-06T14:53:04Z",
+  "next_review_at": "2026-08-20T14:53:04Z",
+  "source": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf"
+}

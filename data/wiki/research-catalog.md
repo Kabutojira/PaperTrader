@@ -318,6 +318,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Rocket Lab Corporation common stock](securities/security_7ca095d63423c55a90e3)
 - [RTX Corporation common stock](securities/security_59304f90c440def31dc5)
 - [Samsung Electronics common GDR](securities/security_567d0d575bbd30aaa91d)
+- [Samsung Electronics preferred GDR](securities/security_d08d763780400dfbffce)
 - [Schneider Electric SE ordinary shares](securities/security_dc8486c1d61df62a22fd)
 - [Sigma Lithium Corporation common shares](securities/security_4627aea1bf7d8943d3d8)
 - [Sociedad Quimica y Minera de Chile S.A. American depositary shares](securities/security_9d4049ed6669a52815d6)
