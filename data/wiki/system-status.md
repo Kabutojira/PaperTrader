@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c091a208b1ea6b519d4c"
-as_of: "2026-08-06T15:11:37Z"
+snapshot_id: "decision_30eab4469ed792ad87c0"
+as_of: "2026-08-06T15:55:44Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-06T15:11:37Z`
+**As of:** `2026-08-06T15:55:44Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -21,16 +21,16 @@ as_of: "2026-08-06T15:11:37Z"
 
 ## Coverage
 
-- Assessments: 60/62
-- Fresh-evidence assessments: 60/62
-- Relationship reviews: 20/62
+- Assessments: 62/63
+- Fresh-evidence assessments: 62/63
+- Relationship reviews: 20/63
 - Accepted relationships: 18
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 289
+- Research backlog: 288
 - Last successful daily run: 2026-08-06
 
 ## Current issues by investment impact
@@ -77,7 +77,7 @@ as_of: "2026-08-06T15:11:37Z"
 - Warning **ANET — Arista Networks, Inc.: Daily preparation degraded: [[securities/security_6f9a1450edceb9307c9a|ANET]]** — [[securities/security_6f9a1450edceb9307c9a|ANET]]: YFTzMissingError: $ANET: possibly delisted; no timezone found
 - Warning **PARRO.PA — Parrot S.A.: Daily preparation degraded: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]** — [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]: YFTzMissingError: $PARRO.PA: possibly delisted; no timezone found
 - Warning **TSM — Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[securities/security_ce9b78a4d0773c950765|TSM]]** — [[securities/security_ce9b78a4d0773c950765|TSM]]: price cache is empty
-- Warning **PATH — UiPath, Inc.: Daily preparation degraded: [[security-catalog#security-security_eca976f0076a425ea1bb|PATH]]** — [[security-catalog#security-security_eca976f0076a425ea1bb|PATH]]: price cache is empty
+- Warning **PATH — UiPath, Inc.: Daily preparation degraded: [[securities/security_eca976f0076a425ea1bb|PATH]]** — [[securities/security_eca976f0076a425ea1bb|PATH]]: price cache is empty
 - Warning **RTX — RTX Corporation: Daily preparation degraded: [[securities/security_59304f90c440def31dc5|RTX]]** — [[securities/security_59304f90c440def31dc5|RTX]]: YFTzMissingError: $RTX: possibly delisted; no timezone found
 - Warning **ASML — ASML Holding N.V.: Daily preparation degraded: [[securities/security_ef35e41886220d51c22c|ASML]]** — [[securities/security_ef35e41886220d51c22c|ASML]]: price cache is empty
 - Warning **ENPH — Enphase Energy, Inc.: Daily preparation degraded: [[securities/security_f2b9760d847b2ba59324|ENPH]]** — [[securities/security_f2b9760d847b2ba59324|ENPH]]: YFTzMissingError: $ENPH: possibly delisted; no timezone found
@@ -132,7 +132,7 @@ as_of: "2026-08-06T15:11:37Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 289 active operations.
+Showing 20 of 288 active operations.
 
 <details><summary>Active research work</summary>
 

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c091a208b1ea6b519d4c"
-as_of: "2026-08-06T15:11:37Z"
+snapshot_id: "decision_30eab4469ed792ad87c0"
+as_of: "2026-08-06T15:55:44Z"
 ---
 
 # Signals
 
-**As of `2026-08-06T15:11:37Z`**
+**As of `2026-08-06T15:55:44Z`**
 
 ## Actionable trade signals
 
@@ -25,14 +25,14 @@ No pending paper orders.
 
 ## Research alerts — not trade signals
 
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-06`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
@@ -161,15 +161,6 @@ No pending paper orders.
 - Conclusion: Queue triage disposition
 
 ### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-05`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
 
 **Research alert — not a trade signal**
 

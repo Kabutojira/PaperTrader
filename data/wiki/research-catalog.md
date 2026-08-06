@@ -7,8 +7,8 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c091a208b1ea6b519d4c"
-as_of: "2026-08-06T15:11:37Z"
+snapshot_id: "decision_30eab4469ed792ad87c0"
+as_of: "2026-08-06T15:55:44Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **74**
-- Securities with retained revisions: **62**
+- Immutable assessment versions: **76**
+- Securities with retained revisions: **63**
 
 ## Candidate
 
@@ -97,6 +97,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [NIB.F — Bollinger above upper](inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971)
 - [NIB.F — MACD cross above signal](inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392)
 - [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1)
+- [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e)
 - [NVDA — Bollinger above upper](inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-53c3e02d5180)
 - [NVDA — MACD cross above signal](inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-8425952b966e)
 - [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
@@ -351,7 +352,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e|NIB.F — Volume anomaly]]
