@@ -333,6 +333,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)
 - [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)
 - [Twist Bioscience Corporation common stock](securities/security_6cf75bd0ec0aa2a20148)
+- [UiPath, Inc. Class A common stock](securities/security_eca976f0076a425ea1bb)
 - [Vertiv Holdings Co Class A common stock](securities/security_cb88f9154cfeaa15e878)
 - [W&amp;T Offshore, Inc. common stock](securities/security_61567714298b9563d1a9)
 - [YASKAWA Electric Corporation Frankfurt ordinary shares](securities/security_89969b7dac39b7db5661)

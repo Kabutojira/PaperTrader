@@ -1,0 +1,18 @@
+{
+  "source_id": "source_uipath_q1_fy2027_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000041/path-20260430.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000041/path-20260430.htm",
+  "source_type": "filing",
+  "title": "UiPath, Inc. Form 10-Q for the quarter ended April 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "7490f488d0ceb1380225c3e618123be8af8b9acd60f4ceec8db63f25ecedcc8d",
+  "related_entity_ids": "security_eca976f0076a425ea1bb",
+  "checked_at": "2026-08-06T15:39:19Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q1 revenue was $418.4 million, ARR was $1.901 billion, operating cash flow was $131.9 million, and cash plus marketable securities was $1.417 billion.",
+  "summary": "The quarterly filing supports recurring-revenue growth, retention, margins, GAAP profitability, cash generation, liquidity, share count, stock compensation, repurchases, remaining performance obligations, and operating risks.",
+  "run_id": "daily-20260806T153546Z"
+}

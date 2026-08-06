@@ -1,0 +1,18 @@
+{
+  "source_id": "source_uipath_q1_fy2027_results_sec_ex99_1",
+  "url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000037/path-2026430xex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472226000037/path-2026430xex991.htm",
+  "source_type": "issuer_release",
+  "title": "UiPath first-quarter fiscal 2027 financial results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "299ded9adeff3fe47e4e17b7114a468489d538e4d1b2a0ff63eabfa60871178f",
+  "related_entity_ids": "security_eca976f0076a425ea1bb",
+  "checked_at": "2026-08-06T15:39:19Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Revenue grew 17% to $418 million, ARR grew 12% to $1.901 billion, dollar-based net retention was 109%, and full-year revenue guidance was $1.776-$1.781 billion.",
+  "summary": "The SEC-filed issuer release supports current ARR, revenue, retention, gross margin, operating income, cash flow, liquidity, and second-quarter and full-year fiscal 2027 guidance.",
+  "run_id": "daily-20260806T153546Z"
+}

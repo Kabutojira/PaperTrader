@@ -2265,3 +2265,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   101.06 mark. Intel is Hold / Watch: expected return, base return, downside payoff, margin of safety
   and the absent accepted relationship block allocation, so no strategy, signal, order or follow-up
   was created.
+
+## 2026-08-06 — security review — UiPath, Inc. Class A common stock
+
+- Created [[securities/security_eca976f0076a425ea1bb|UiPath]] from its fiscal Q1 2027 Form 10-Q and
+  SEC-filed results release; ARR, revenue, retention, GAAP operating profit, cash generation and net
+  financial strength support the automation-platform thesis, while stock compensation, dilution,
+  competition and agentic-product monetization remain material.
+- The 4 August Bollinger and overbought-RSI transitions followed a 21.03% measured-period rally without
+  a newer issuer filing that explains the move. The next close fell 1.99% to USD 13.82, making the
+  alerts adverse entry timing rather than verified fundamental confirmation.
+- USD 8.50/USD 15.50/USD 26.50 normalized-earnings scenarios imply USD 16.50 weighted value against
+  USD 13.82. The valuation label is Buy / Initiate, but downside payoff, timing, medium confidence and
+  the absent accepted relationship require Watch / no action; no strategy or follow-up was created.
