@@ -98,7 +98,7 @@ def record_issue(
         "owner": owner,
         "first_seen_at": previous["first_seen_at"] if previous else timestamp,
         "last_seen_at": timestamp,
-        "related_run_id": related_run_id,
+        "related_run_id": previous["related_run_id"] if previous else related_run_id,
         "related_operation_id": related_operation_id,
         "resolution": "",
         "resolved_at": "",

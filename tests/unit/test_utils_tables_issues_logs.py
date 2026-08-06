@@ -77,6 +77,7 @@ def test_issue_upsert_resolution_and_dashboard(sandbox_repository: Path) -> None
         severity="warning",
         title="Stale quote",
         description="Option quote exceeded its freshness window.",
+        related_run_id="first-run",
         now=first_seen,
     )
     assert (
@@ -85,6 +86,7 @@ def test_issue_upsert_resolution_and_dashboard(sandbox_repository: Path) -> None
             severity="error",
             title="Stale quote",
             description="Option quote is still stale.",
+            related_run_id="later-run",
             now=datetime(2026, 7, 24, 10, tzinfo=UTC),
         )
         == issue_id
@@ -93,6 +95,7 @@ def test_issue_upsert_resolution_and_dashboard(sandbox_repository: Path) -> None
     assert row["first_seen_at"] == "2026-07-24T09:00:00Z"
     assert row["last_seen_at"] == "2026-07-24T10:00:00Z"
     assert row["severity"] == "error"
+    assert row["related_run_id"] == "first-run"
     assert issue_id in (sandbox_repository / "data" / "issues.md").read_text(encoding="utf-8")
 
     resolve_issue(
