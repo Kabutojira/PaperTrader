@@ -201,6 +201,7 @@ No pending paper orders.
 - [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674|CRSR — Volume anomaly]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260806T125642Z|PaperTrader daily podcast — 2026-08-06T125642Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_59304f90c440def31dc5|RTX Corporation common stock]]
 - [[securities/security_66cdcf90aac0d83e76f3|Albemarle Corporation common stock]]
