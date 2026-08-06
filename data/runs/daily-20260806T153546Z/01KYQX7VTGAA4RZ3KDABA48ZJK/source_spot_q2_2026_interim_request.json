@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spot_q2_2026_interim_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026052543/spot-20260630x6xk.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026052543/spot-20260630x6xk.htm",
+  "source_type": "regulator_filing",
+  "title": "Spotify interim report for the six months ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4f2e44b9f5d5d5a1ca7118357f1d38c4c17c2c4ccaf30c4f619e6bfcc3a6d6e2",
+  "related_entity_ids": "security_2010347f1a0a5ea60f47",
+  "checked_at": "2026-08-06T15:48:55Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "June 30 liquidity was EUR 9.388 billion; 210.241 million shares were issued and 4.657 million were held in treasury.",
+  "summary": "The current SEC filing supplies IFRS financial statements, cash and investments, share count, repurchases, commitments and risks needed to normalize the Q2 assessment and valuation.",
+  "run_id": "daily-20260806T153546Z"
+}

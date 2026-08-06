@@ -2278,3 +2278,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - USD 8.50/USD 15.50/USD 26.50 normalized-earnings scenarios imply USD 16.50 weighted value against
   USD 13.82. The valuation label is Buy / Initiate, but downside payoff, timing, medium confidence and
   the absent accepted relationship require Watch / no action; no strategy or follow-up was created.
+
+## 2026-08-06 — security review — Spotify Technology S.A. ordinary shares
+
+- Updated [[securities/security_2010347f1a0a5ea60f47|Spotify]] from its Q2 results and June interim
+  report. Subscriber growth, pricing, record gross margin, cash conversion and liquidity support the
+  thesis, while advertising softness, valuation sensitivity and content economics remain material.
+- The 4 August bearish MACD crossover and volume anomaly coincided with the earnings release and a
+  3.19% measured-period decline. The mixed release explains the information-heavy session, but the
+  transition is adverse timing rather than thesis invalidation or a stand-alone opportunity.
+- USD 330/USD 532/USD 771 free-cash-flow-yield scenarios imply about USD 541 weighted value against
+  the USD 482.23 mark. Bear/base payoff, margin of safety, medium confidence, bearish timing and the
+  absent accepted relationship require Watch / no action; no strategy or follow-up was created.

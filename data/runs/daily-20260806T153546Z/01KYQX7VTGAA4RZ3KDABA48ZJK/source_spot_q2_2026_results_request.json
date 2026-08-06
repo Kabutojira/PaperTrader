@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spot_q2_2026_results_sec_ex99_1",
+  "url": "https://www.sec.gov/Archives/edgar/data/1639920/000114036126031044/ef20078867_ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1639920/000114036126031044/ef20078867_ex99-1.htm",
+  "source_type": "issuer_release",
+  "title": "Spotify second-quarter 2026 financial results",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a7e051d6e156fa997172a5cb13e431967c03ea527992b1cc9f2054dca75f46cd",
+  "related_entity_ids": "security_2010347f1a0a5ea60f47",
+  "checked_at": "2026-08-06T15:48:55Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 revenue was EUR 4.777 billion, gross margin 33.4%, operating income EUR 655 million and free cash flow EUR 797 million.",
+  "summary": "The SEC-filed issuer update supports current user, subscriber, revenue, margin, free-cash-flow, liquidity, product and Q3 guidance evidence for the quarter ended 2026-06-30.",
+  "run_id": "daily-20260806T153546Z"
+}

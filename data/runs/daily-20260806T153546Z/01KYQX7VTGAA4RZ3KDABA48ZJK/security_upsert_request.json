@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2010347f1a0a5ea60f47",
+  "issuer_id": "issuer_3a716300677df5b8c1cd",
+  "company_name": "Spotify Technology S.A.",
+  "instrument_name": "Spotify Technology S.A. ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "SPOT",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "SPOT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "LU",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "Strong scale, margins, cash generation and liquidity merit coverage, but downside payoff, bearish timing, medium confidence and no accepted relationship block allocation.",
+  "research_summary": "Q2 subscribers, margins and cash flow support the thesis; USD 541 weighted value exceeds USD 482.23, but bear asymmetry and timing require Watch / no action.",
+  "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
+  "last_research_at": "2026-08-06T15:48:55Z",
+  "next_review_at": "2026-08-20T15:48:55Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026052543/spot-20260630x6xk.htm"
+}

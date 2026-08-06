@@ -1,0 +1,78 @@
+{
+  "operation_id": "01KYQX7VTGAA4RZ3KDABA48ZJK",
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat review of Spotify Technology S.A. ordinary shares from the Q2 2026 SEC-furnished results release, June interim report, and canonical 4 August alert plus current 5 August market state. Registered both primary sources, updated the maintained security page and structured security row, and wrote one schema-version-2 assessment linked to its predecessor. USD 330/USD 532/USD 771 bear/base/bull values produce a USD 541.25 weighted value versus USD 482.23. Deterministic state derives Hold / Watch, 12.24% expected return and allocation ineligibility because bear/base payoff, expected/bear payoff and relationship gates fail. The bearish MACD crossover and volume anomaly coincided with a mixed earnings release and represent adverse entry timing rather than thesis invalidation or a stand-alone opportunity. No strategy, signal, order, follow-up operation, allocation or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.",
+  "evidence": [
+    {
+      "source": "source_spot_q2_2026_results_sec_ex99_1",
+      "claim": "Spotify's SEC-furnished Q2 release reports 777 million MAUs, 300 million Premium subscribers, EUR 4.777 billion revenue, 33.4% gross margin, EUR 655 million operating income, EUR 797 million free cash flow and EUR 3.261 billion trailing free cash flow; Q3 guidance is 788 million MAUs, 305 million subscribers, EUR 5.0 billion revenue, 32.9% gross margin and EUR 670 million operating income.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1639920/000114036126031044/ef20078867_ex99-1.htm",
+      "observed_at": "2026-08-06T15:48:55Z",
+      "source_hash": "a7e051d6e156fa997172a5cb13e431967c03ea527992b1cc9f2054dca75f46cd"
+    },
+    {
+      "source": "source_spot_q2_2026_interim_6k",
+      "claim": "Spotify's June interim report confirms EUR 9.388 billion cash, restricted cash and short-term investments, 205.584 million issued shares net of treasury shares, 7.4% Premium ARPU growth and one million MAU below guidance alongside one million Premium subscribers above guidance.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1639920/000162828026052543/spot-20260630x6xk.htm",
+      "observed_at": "2026-08-06T15:48:55Z",
+      "source_hash": "4f2e44b9f5d5d5a1ca7118357f1d38c4c17c2c4ccaf30c4f619e6bfcc3a6d6e2"
+    },
+    {
+      "source": "data/market/latest.csv, data/market/indicators.csv, data/market/fx/USD_EUR.csv, and the canonical alert packets",
+      "claim": "The identity-matched reference mark is USD 482.2300109863281 for the 2026-08-05 session and the current USD/EUR rate is 0.8676999807357788, both retrieved at 2026-08-06T15:35:53Z. The 4 August alert measured a 3.1947% decline from 7 July, a bearish MACD crossover and 4.857 million-share volume anomaly; the next close gained 0.8491%, RSI was 47.91 and MACD remained below signal."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic assessment normalization derived bear/base/bull returns of -31.5679%/10.3208%/59.8822%, expected return of 12.2390%, medium-confidence adjusted return of 9.1792%, USD 425.60 buy-below value, Hold rating, Watch action, quality score 88 and allocation ineligibility across bear/base payoff, expected/bear payoff and relationship gates."
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable assessment assessment_bafae6a672bab7d1327a records schema version 2, predecessor assessment_74950c1d23a71d16460d, this operation and result path, the Spotify security page hash 5ac5f4965933a52d1ae7b1564d9a5914e012b4dbcbb4d977da2bac2bd7f8e4db, registered evidence and current run provenance."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/assessment_upsert_request.json",
+    "data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/security_upsert_request.json",
+    "data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/source_spot_q2_2026_interim_request.json",
+    "data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/source_spot_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2010347f1a0a5ea60f47.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SPOT repeat review completed: Q2 subscribers, pricing, record gross margin, cash conversion and liquidity support the thesis; USD 330/USD 532/USD 771 scenarios imply USD 541.25 weighted value against USD 482.23. Canonical assessment is Hold / Watch because downside payoff, bearish earnings timing and the absent relationship block paper action."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_2010347f1a0a5ea60f47",
+    "papertrader research source record --request data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/source_spot_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/source_spot_q2_2026_interim_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T153546Z/01KYQX7VTGAA4RZ3KDABA48ZJK/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research security-context --security-id security_2010347f1a0a5ea60f47"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context completed before any assessment-state read or change; it showed one prior successful assessment and no linked idea, accepted relationship or strategy.",
+      "Immutable identity remained security_2010347f1a0a5ea60f47 / issuer_3a716300677df5b8c1cd / XNYS / SPOT / USD / equity; strict integrity validated identity deduplication.",
+      "Both retained primary sources were registered through the project CLI with current SEC URLs and content hashes.",
+      "Current assessment is schema version 2, scenario-complete, source-backed and price/FX identity-matched; immutable history links predecessor assessment_74950c1d23a71d16460d to assessment_bafae6a672bab7d1327a, this operation/result, wiki page/hash and run.",
+      "Assessment probabilities total 100%, fair values are ordered and all seven component inputs use only the 20/40/60/80/100 rubric anchors.",
+      "Final bounded security-context recheck confirmed the accepted current assessment and matching current/history page hash.",
+      "No idea-research follow-up was required because bounded security context and canonical relationship state contained no linked idea; no conviction strategy was queued because the full strategy gate failed.",
+      "Strict schema validation returned OK [schema].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill or performance path changed."
+    ]
+  }
+}
