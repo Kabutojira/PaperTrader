@@ -2164,6 +2164,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T120804Z`.
 
+- Published investor decision snapshot `decision_da64fdec600b87557ab4`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T125642Z`.
+
 ## 2026-08-06 — security review — RTX Corporation common stock
 
 - Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its unchanged Q2 Form 10-Q,

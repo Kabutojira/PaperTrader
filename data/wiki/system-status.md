@@ -7,13 +7,13 @@ tags:
 created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d0d9b91d2c4d8a341997"
-as_of: "2026-08-06T12:26:03Z"
+snapshot_id: "decision_da64fdec600b87557ab4"
+as_of: "2026-08-06T13:15:04Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-06T12:26:03Z`
+**As of:** `2026-08-06T13:15:04Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-06T12:26:03Z"
 
 ## Coverage
 
-- Assessments: 54/57
-- Fresh-evidence assessments: 54/57
+- Assessments: 55/57
+- Fresh-evidence assessments: 55/57
 - Relationship reviews: 20/57
 - Accepted relationships: 18
 - Ready or active strategies: 0
@@ -120,10 +120,12 @@ as_of: "2026-08-06T12:26:03Z"
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
+- Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **Daily preparation degraded: FX USD/EUR** — FX USD/EUR: YFTzMissingError: $USDEUR=X: possibly delisted; no timezone found
+- Warning **Daily podcast failed: [[daily-reports/daily-report_20260806|Daily report for 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A** — @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm_jw** — @thelimitingfactor: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **Daily podcast failed: [[daily-reports/daily-report_20260806|Daily report for 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
