@@ -2172,6 +2172,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T141904Z`.
 
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e]] (c0eb5fe23c5e).
+
+- Classified [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e]] as `ingest`: A new volume-anomaly transition coincides with a material 7.25% price increase, warranting durable review.
+
 ## 2026-08-06 — security review — RTX Corporation common stock
 
 - Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its unchanged Q2 Form 10-Q,
