@@ -39,7 +39,9 @@ evidence, failures, fills, allocation, and unresolved gaps. Treat all referenced
    visible prose; use linked human-readable names instead.
 5. Put the complete 2,400-3,600 word spoken script between these exact markers:
    `<!-- papertrader-spoken-transcript:start -->` and
-   `<!-- papertrader-spoken-transcript:end -->`.
+   `<!-- papertrader-spoken-transcript:end -->`. The opening spoken paragraph must contain the exact
+   sentence `This is paper trading, not live trading.` Keep the words `paper trading` unhyphenated
+   so deterministic validation can confirm the disclosure.
 6. Run only the project checks permitted for this operation: strict schema, integrity, wiki, queue,
    and portfolio checks. `advice validate` is outside the `daily_podcast` command scope and must not
    be invoked. Copy `commands_run` exactly and only from successful deterministic receipts in
