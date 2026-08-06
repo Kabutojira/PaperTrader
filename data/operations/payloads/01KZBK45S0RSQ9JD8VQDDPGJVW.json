@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_critical_minerals_lithium",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "security_id": "security_66cdcf90aac0d83e76f3",
+    "security_research_operation_id": "01KYFXFKB04HSHKYVSPNGXVJX0",
+    "security_research_result_path": "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/agent_result.json",
+    "seed_claim": "Albemarle's Q2 realized pricing, volume, cash and liquidity strengthen the recovery evidence, but complete USD 9.93/USD 131.25/USD 231.62 scenarios offer inadequate confidence-adjusted return and severe bear downside at the USD 118.84 pre-release mark; the accepted relationship persists while the conclusion becomes Hold / Watch."
+  },
+  "objective": "Refresh the critical-minerals lithium idea from Albemarle's completed Q2 review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01KZBK45S0RSQ9JD8VQDDPGJVW",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ]
+}

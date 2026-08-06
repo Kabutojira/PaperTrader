@@ -2174,3 +2174,18 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The accepted defense relationship and supportive backlog evidence remain current, but valuation,
   payoff asymmetry, margin of safety, and overbought timing block allocation. No strategy, signal,
   order, or accounting change was justified; one dependent idea refresh is required.
+
+## 2026-08-06 — security review — Albemarle Corporation common stock
+
+- Revalidated [[securities/security_66cdcf90aac0d83e76f3|Albemarle]] against its SEC-filed Q2 Form
+  10-Q, Q2 results exhibit, and the current 5 August market and FX state.
+- Q2 realized lithium pricing, volume, EBITDA, cash generation, liquidity and lower capex improve
+  the operating thesis, while working-capital timing, Talison disruption, cyclicality, tax and
+  mandatory-convertible dilution remain material.
+- Replaced the unsupported legacy valuation with a complete 25%/50%/25% cyclical normalized-
+  earnings scenario: USD 9.93 bear, USD 131.25 base and USD 231.62 bull. The approximately USD
+  126.01 weighted value offers only about 6% upside to the USD 118.84 pre-release mark, with severe
+  bear downside.
+- The 31 July volume anomaly is pre-results risk evidence, not a fundamental signal. Albemarle
+  remains Hold / Watch with no strategy or paper trade; one dependent lithium-idea refresh is
+  required.

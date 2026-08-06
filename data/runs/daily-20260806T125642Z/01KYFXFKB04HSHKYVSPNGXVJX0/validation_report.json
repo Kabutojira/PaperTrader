@@ -1,0 +1,37 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-terra"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZBK45S0RSQ9JD8VQDDPGJVW.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/assessment_upsert_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/security_upsert_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/source_alb_q2_2026_10q_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/source_alb_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KYFXFKB04HSHKYVSPNGXVJX0",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260806T125642Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

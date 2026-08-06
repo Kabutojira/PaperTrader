@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KYFXFKB04HSHKYVSPNGXVJX0",
+  "status": "succeeded",
+  "summary": "Reassessed Albemarle after Q2 2026 and the 31 July volume anomaly. Q2 net sales, realized lithium pricing, volume, EBITDA, cash generation, liquidity, and lower capex improved the operating evidence, while non-recurring working-capital timing, commodity sensitivity, Talison disruption, tax, and mandatory-convertible dilution remain material. Replaced the unsupported legacy valuation with a scenario-complete cyclical normalized-earnings assessment: USD 9.93 bear, USD 131.25 base, and USD 231.62 bull at 25%/50%/25%. The USD 126.0125 weighted value is only 6.04% above the USD 118.84 pre-release mark; confidence-adjusted expected return and payoff asymmetry fail the economic gates. Albemarle remains watching with Hold / Watch, no strategy, and exactly one dependent lithium-idea refresh.",
+  "evidence": [
+    {
+      "source": "Albemarle Q2 2026 results exhibit",
+      "claim": "The SEC-filed exhibit reports Q2 net sales of USD 1.743 billion, adjusted EBITDA of USD 858.1 million, operating cash flow of USD 710 million, company-defined free cash flow of USD 638 million, Energy Storage realized price of USD 19.53/kg LCE, and Energy Storage volume of 65 kt LCE. It also identifies Talison-dividend and non-recurring working-capital timing benefits, lowers expected 2026 capex to about USD 500 million, and retains USD 10/USD 20/USD 30 per kg LCE sensitivity cases.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000101/a2q26earningsreleaseex991.htm",
+      "observed_at": "2026-08-06T13:04:49Z",
+      "source_hash": "e040ddc92609c67057128d17703e2a1ec5078a8004bc15bbb9ed20504a758c6e"
+    },
+    {
+      "source": "Albemarle Corporation Q2 2026 Form 10-Q",
+      "claim": "The SEC-filed quarterly report confirms June 30 cash of USD 1.632 billion, total debt of about USD 1.877 billion, diluted weighted-average common shares of 136.212 million for Q2, mandatory-convertible preferred treatment, current cash-flow evidence, and the balance-sheet and risk inputs used by the assessment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000102/alb-20260630.htm",
+      "observed_at": "2026-08-06T13:04:49Z",
+      "source_hash": "14cec6cc6e6082d0635624636f1bbed350a37350d64aa48fe823025e8bdecb12"
+    },
+    {
+      "source": "PaperTrader deterministic market, indicator, and FX caches",
+      "claim": "The canonical 31 July alert records a 13.22% decline from 2 July to USD 117.64, 3.65 million shares of volume, and source-price hash 611da3261bdad867dcad82644a7fbd61b659a01d7f43e83682f9eb8dbbb79382. The current identity-matched mark is USD 118.83999633789062 for 5 August, with RSI 38.33 and volume z-score 0.30; the USD/EUR rate is 0.866100013256073. Because Q2 was released after the 5 August close, the mark predates a regular-session results reaction.",
+      "observed_at": "2026-08-06T12:57:51Z",
+      "source_hash": "611da3261bdad867dcad82644a7fbd61b659a01d7f43e83682f9eb8dbbb79382"
+    },
+    {
+      "source": "PaperTrader comparable assessment v2",
+      "claim": "Deterministic normalization derived a USD 126.0125 probability-weighted fair value, 6.0354% expected return, 4.5266% confidence-adjusted expected return, 10.4426% base return, and 91.6442% bear downside. The assessment is complete but ineligible because expected return and bear/base and expected/bear payoff gates fail; its canonical rating and action are Hold / Watch.",
+      "observed_at": "2026-08-06T13:04:49Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZBK45S0RSQ9JD8VQDDPGJVW.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/assessment_upsert_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/security_upsert_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/source_alb_q2_2026_10q_request.json",
+    "data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/source_alb_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_66cdcf90aac0d83e76f3.md"
+  ],
+  "operations_created": [
+    "01KZBK45S0RSQ9JD8VQDDPGJVW"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Albemarle's Q2 realized lithium pricing, volume, EBITDA, cash, liquidity, and lower capex improved the recovery evidence, but USD 9.93/USD 131.25/USD 231.62 scenarios produce only 6.04% weighted upside to the USD 118.84 pre-release mark and severe bear downside. The 31 July volume anomaly is pre-results risk evidence rather than a trade signal; Albemarle remains Hold / Watch with no paper strategy."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_66cdcf90aac0d83e76f3",
+    "papertrader research source record --request data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/source_alb_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/source_alb_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260806T125642Z/01KYFXFKB04HSHKYVSPNGXVJX0/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row was running under daily-20260806T125642Z with the immutable ALB/XNYS/USD/equity identity, exactly the native wiki and security-research skills, sequential preflight, a live lease during mutation, and no injection flags.",
+      "The mandatory audited security-context command succeeded before assessment state was read and established predecessor assessment assessment_41e76cbedc43fb71ae9e, exactly one accepted relationship, one linked idea, and the prior result and page hash.",
+      "Both Q2 SEC sources were registered before assessment upsert. The scenario-complete assessment belongs to this run, uses current identity-matched price and FX state, references both fresh registered sources, and appended immutable version assessment_34f8c1b459177a91e165 linked to its predecessor, source operation, expected result path, schema version 2, and updated research-page hash.",
+      "The first assessment request was immutably retained after validation rejected a nonempty specialized-template rationale; a uniquely named corrected request succeeded, and both canonical receipts remain in command_audit.json.",
+      "Exactly one matching idea-research follow-up was created as 01KZBK45S0RSQ9JD8VQDDPGJVW, depends on this security operation, and points to this operation's expected result path. No strategy was justified because the unchanged full strategy gate fails.",
+      "Strict schema validation, queue validation, strict wiki lint, and strict integrity passed. Allocation readiness remained false for pre-existing repository-wide stale or missing relationship work, including the linked relationship reaching its review boundary; Albemarle's complete ineligible assessment itself has an accepted relationship and no relationship-pending reason.",
+      "The command audit records exactly the twelve canonical project CLI invocations listed in commands_run. No allocation target/history, order, fill, execution, cash, portfolio, performance, or accounting-ledger path changed, and all request artifacts were uniquely named and remained immutable after invocation."
+    ]
+  }
+}
