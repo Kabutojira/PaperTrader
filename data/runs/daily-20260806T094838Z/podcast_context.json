@@ -1,0 +1,62 @@
+{
+  "daily_cycle_id": "daily-20260806T094838Z",
+  "decision_snapshot_path": "data/runs/daily-20260806T094838Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "9d14b8999f6a2b6fe524fe1478831611256804a908f5a7cc4143201c2c75255d",
+  "fill_outcomes": [],
+  "finalization_status": "degraded",
+  "generated_at": "2026-08-06T10:07:30Z",
+  "page_path": "data/wiki/podcasts/daily-podcast_20260806T094838Z.md",
+  "podcast_context_version": 2,
+  "report_path": "data/wiki/daily-reports/daily-report_20260806.md",
+  "report_sha256": "960baf6afb6e1334075b6dd97d28415cbdbd8611a80c8a022d819d5d6973804a",
+  "research_cutoff_at": "2026-08-06T09:56:15Z",
+  "run_id": "daily-20260806T094838Z",
+  "snapshot_id": "decision_bd9a696aa85c10753d20",
+  "source_items": [
+    {
+      "completed_at": "2026-08-06T09:54:25Z",
+      "daily_report_items": [
+        "RTX full security reassessment failed closed before assessment access because the controller-owned Python runtime lacked PyYAML; no investment or accounting state changed."
+      ],
+      "effective_model": "gpt-5.6-sol",
+      "entity_id": "security_59304f90c440def31dc5",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The required command exited with status 1 during papertrader.cli import: ModuleNotFoundError: No module named 'yaml'.",
+          "source": "scripts/papertrader research security-context --security-id security_59304f90c440def31dc5"
+        },
+        {
+          "claim": "No executable /workspace/.venv/bin/python exists, so scripts/papertrader selected /usr/bin/python3; operation instructions prohibit installing dependencies or modifying .venv.",
+          "source": "controller-owned Python runtime inspection"
+        },
+        {
+          "claim": "No command_audit.json was created because the required CLI command failed before dispatch; therefore there are no canonical command receipts to list.",
+          "source": "data/runs/daily-20260806T094838Z/01KZA04098D4DF0J4SFMJK1TDD"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KZA04098D4DF0J4SFMJK1TDD",
+      "operation_type": "security_research",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "rejected_paths": [],
+      "result_path": "data/runs/daily-20260806T094838Z/01KZA04098D4DF0J4SFMJK1TDD/agent_result.json",
+      "route_reason": "scenario_complete_security_review",
+      "sequence_group": 60,
+      "status": "failed",
+      "summary": "The mandatory repeat-assessment security-context prerequisite could not run because the controller-owned runtime has no repository .venv and system Python cannot import the declared PyYAML dependency. The command failed before CLI dispatch and produced no audited receipt, so assessment state was not consumed, no research or structured-state changes were made, and the operation failed closed.",
+      "weighted_cost": "5"
+    }
+  ],
+  "started_at": "2026-08-06T09:48:38Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ]
+}

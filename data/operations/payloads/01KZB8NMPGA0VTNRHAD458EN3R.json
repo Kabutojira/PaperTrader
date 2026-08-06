@@ -1,0 +1,20 @@
+{
+  "entity_id": "daily-20260806T094838Z",
+  "entity_type": "run",
+  "inputs": {
+    "context_path": "data/runs/daily-20260806T094838Z/podcast_context.json",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260806T094838Z.md",
+    "report_path": "data/wiki/daily-reports/daily-report_20260806.md",
+    "run_id": "daily-20260806T094838Z",
+    "target_minutes": 20,
+    "target_words": 3000
+  },
+  "objective": "Create the 20260806T094838Z PaperTrader daily podcast from this run's accepted changes and linked wiki, aiming for twenty minutes.",
+  "operation_id": "01KZB8NMPGA0VTNRHAD458EN3R",
+  "operation_type": "daily_podcast",
+  "payload_version": 1,
+  "source_refs": [
+    "data/runs/daily-20260806T094838Z/podcast_context.json",
+    "data/wiki/daily-reports/daily-report_20260806.md"
+  ]
+}

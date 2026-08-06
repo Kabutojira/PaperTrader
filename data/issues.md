@@ -6,6 +6,7 @@ Generated from `data/tables/issues.csv`.
 | --- | --- | --- | --- | --- |
 | error | **issue_0acd52c371559780a934** — Rio Tinto assessment source operation is ambiguous within one run | 2026-08-03T09:27:11Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
+| error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | error | **issue_63954cb215f224b75cb3** — Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W | 2026-08-05T11:35:18Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
@@ -57,6 +58,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_8ada3995ac26a38446f5** — Daily preparation degraded: security_ef35e41886220d51c22c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8b0b68860313ad4f9bec** — Daily preparation degraded: security_f2b9760d847b2ba59324 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_94374052817041f82969** — Daily preparation degraded: security_fe5539a7d3fd9d553bce | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_95cc9329c9e03eba665b** — Daily podcast failed: daily-20260806T094838Z | 2026-08-06T10:30:37Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | warning | **issue_97455cd9fdcd489ca07f** — Daily preparation degraded: security_664f93a7eaca72e76e9b | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_97953d4d2c1016441831** — Daily preparation degraded: security_47a0b06f6c6c478d7c1e | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_989496e6d541f631fc1d** — Daily preparation degraded: security_8472507d7d320aa388a7 | 2026-07-29T16:51:20Z | deterministic-controller |  |
