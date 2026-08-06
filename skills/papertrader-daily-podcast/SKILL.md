@@ -40,8 +40,11 @@ evidence, failures, fills, allocation, and unresolved gaps. Treat all referenced
 5. Put the complete 2,400-3,600 word spoken script between these exact markers:
    `<!-- papertrader-spoken-transcript:start -->` and
    `<!-- papertrader-spoken-transcript:end -->`.
-6. Run strict schema, integrity, wiki, queue, advice, and portfolio checks. Write
-   `agent_result.json` last.
+6. Run only the project checks permitted for this operation: strict schema, integrity, wiki, queue,
+   and portfolio checks. `advice validate` is outside the `daily_podcast` command scope and must not
+   be invoked. Copy `commands_run` exactly and only from successful deterministic receipts in
+   `command_audit.json`; never list a rejected or pre-dispatch command. Write `agent_result.json`
+   last.
 
 ## Output contract
 

@@ -21,6 +21,15 @@ from papertrader.tables import read_table
 NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
 
 
+def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path) -> None:
+    skill = (
+        repository_root / "skills" / "papertrader-daily-podcast" / "SKILL.md"
+    ).read_text(encoding="utf-8")
+
+    assert "`advice validate` is outside the `daily_podcast` command scope" in skill
+    assert "never list a rejected or pre-dispatch command" in skill
+
+
 def _completed_manifest(repository: Path, run_id: str) -> None:
     report = repository / "data" / "wiki" / "daily-reports" / "daily-report_20260730.md"
     report.write_text("---\ntitle: Daily\ntype: daily-report\nstatus: maintained\n---\n")
