@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-05"
+created: "2026-08-06"
 updated: "2026-08-06"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_ffbf228dca49bf71406d"
-as_of: "2026-08-05T22:34:36Z"
+snapshot_id: "decision_bd9a696aa85c10753d20"
+as_of: "2026-08-06T09:56:15Z"
 ---
 
 # Research catalog
@@ -43,6 +43,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [CROX — Volume anomaly](inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72)
 - [CRSR — Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195)
 - [CRSR — Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff)
+- [CRSR — Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674)
 - [CRWD — MACD cross above signal](inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de)
 - [CSIQ — Bollinger above upper](inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618)
 - [CSIQ — MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd)
@@ -187,6 +188,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-01](daily-reports/daily-report_20260801)
 - [PaperTrader daily report — 2026-08-03](daily-reports/daily-report_20260803)
 - [PaperTrader daily report — 2026-08-05](daily-reports/daily-report_20260805)
+- [PaperTrader daily report — 2026-08-06](daily-reports/daily-report_20260806)
 
 ## Idea
 
@@ -342,7 +344,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674|CRSR — Volume anomaly]]

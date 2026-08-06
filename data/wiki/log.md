@@ -2155,3 +2155,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674]] (5244183d7674).
 
 - Classified [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674]] as `ingest`: Material volume-anomaly strengthening accompanied by a 26.4% period return merits durable wiki review.
+
+- Published investor decision snapshot `decision_bd9a696aa85c10753d20`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T094838Z`.
