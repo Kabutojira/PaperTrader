@@ -1,0 +1,84 @@
+{
+  "operation_id": "01KZA04098D4DF0J4SFMJK1TDD",
+  "status": "succeeded",
+  "summary": "Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.",
+  "evidence": [
+    {
+      "source": "source_rtx_q2_2026_10q_sec",
+      "claim": "RTX's Q2 2026 Form 10-Q was retrieved unchanged and supports the refreshed backlog, segment economics, cash-flow, debt, share-count, contract-risk, and Pratt-remediation analysis; it reports USD 8.305 billion of cash, USD 37.383 billion of total debt, and 1,365.0 million diluted weighted-average shares for the quarter.",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+      "observed_at": "2026-08-06T12:15:24Z",
+      "source_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2"
+    },
+    {
+      "source": "source_rtx_q2_2026_results_sec_ex99",
+      "claim": "RTX's SEC-filed Q2 results exhibit raises 2026 adjusted EPS guidance to USD 7.10-7.25 and free-cash-flow guidance to USD 8.50-8.75 billion after reporting USD 289 billion of backlog.",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000025/a2026-07x238xkerexhibit99.htm",
+      "observed_at": "2026-08-06T12:15:24Z",
+      "source_hash": "4fc01f125ed3318eb3f2e1f15d64c312bd38c0663b1c86a42ab37317124528e6"
+    },
+    {
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv",
+      "claim": "The canonical RTX reference mark is USD 222.30999755859375 for the 2026-08-05 session, and the identity-matched USD/EUR rate is 0.866100013256073; both were retrieved at 2026-08-06T12:09:18Z.",
+      "observed_at": "2026-08-06T12:09:18Z"
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic normalization derived bear/base/bull returns of -36.12522983246699156885145128%/-19.31312043097722966663893714%/10.8812031429358209737895582%, expected return of -15.96756688787140748208494185%, medium-confidence adjusted return of -11.97567516590355561156370639%, USD 143.5 buy-below value, Sell rating, Avoid action, and allocation ineligibility across five economic gates."
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable assessment assessment_d7a8c8f63eb1a1be48ee links predecessor assessment_d0c4e85956c111973bbc, schema version 2, this operation and result path, the RTX page, its captured hash, retained evidence, and current run provenance."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZBGASDRXT12CV3D8J79YQ1C.json",
+    "data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/assessment_upsert_request.json",
+    "data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/security_upsert_request.json",
+    "data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/source_rtx_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/source_rtx_q2_2026_results_sec_ex99_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "operations_created": [
+    "01KZBGASDRXT12CV3D8J79YQ1C"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "RTX full review completed: current Q2 evidence supports backlog and operating execution, but USD 142.00/USD 179.375/USD 246.50 scenarios imply USD 186.8125 weighted value against the USD 222.31 mark. Canonical conclusion is Sell / Avoid; no paper strategy or order was created, and one dependent defense-and-aerospace idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_59304f90c440def31dc5",
+    "papertrader research source record --request data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/source_rtx_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/source_rtx_q2_2026_results_sec_ex99_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260806T120804Z/01KZA04098D4DF0J4SFMJK1TDD/enqueue_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context completed before assessment-state reads or changes and showed predecessor assessment_d0c4e85956c111973bbc.",
+      "Immutable security identity remained security_59304f90c440def31dc5 / issuer_7e0bd218f603cf838669 / XNYS / RTX / USD / equity; the validated security upsert found no duplicate identity.",
+      "Both retained primary sources were registered through the project CLI; the 10-Q hash was unchanged and the SEC-filed results exhibit received a current source record.",
+      "The first assessment request failed closed because it referenced the prior session's FX row; that request remained immutable, and uniquely named assessment_upsert_request_v2.json used the current canonical 2026-08-06 FX rate and succeeded.",
+      "Current assessment is schema version 2, scenario-complete, source-backed, price/FX identity-matched, and linked through immutable history to its predecessor, operation, result path, wiki page, page hash, and run.",
+      "Assessment probabilities total 100%, fair values are ordered, and all seven component inputs use only the 20/40/60/80/100 rubric anchors.",
+      "Exactly one dependent idea_research follow-up exists for linked idea idea_defense_aerospace: 01KZBGASDRXT12CV3D8J79YQ1C.",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ]
+  }
+}

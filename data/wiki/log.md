@@ -2159,3 +2159,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_bd9a696aa85c10753d20`.
 
 - Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T094838Z`.
+
+## 2026-08-06 — security review — RTX Corporation common stock
+
+- Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its unchanged Q2 Form 10-Q,
+  the SEC-filed Q2 results exhibit, and the current 5 August market and FX state.
+- Replaced the unsupported legacy valuation with a complete 25%/50%/25% mature-compounder scenario:
+  USD 142.00 bear, USD 179.375 base, and USD 246.50 bull. The USD 186.8125 weighted value remains
+  below the USD 222.31 mark, changing the conclusion from Unrated / Watch to Sell / Avoid.
+- The accepted defense relationship and supportive backlog evidence remain current, but valuation,
+  payoff asymmetry, margin of safety, and overbought timing block allocation. No strategy, signal,
+  order, or accounting change was justified; one dependent idea refresh is required.
