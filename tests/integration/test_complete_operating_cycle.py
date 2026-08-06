@@ -31,6 +31,7 @@ from papertrader.market_data import (
 from papertrader.models import ClassifierDecision, ReferencePrice, SecurityIdentity
 from papertrader.opportunity import process_opportunity_transitions
 from papertrader.portfolio import build_risk_state, reconcile_portfolio
+from papertrader.public_markdown import visible_machine_ids
 from papertrader.publication import apply_runtime_bundle, create_runtime_bundle
 from papertrader.repository_state import compare_snapshots, snapshot_repository
 from papertrader.tables import read_table, write_table
@@ -195,6 +196,8 @@ def _seed_security(repository: Path, instant: datetime) -> None:
 
 def _market_frame(session_dates: Sequence[date]) -> pd.DataFrame:
     closes = [Decimal("40") + Decimal(index) / Decimal("4") for index in range(len(session_dates))]
+    volumes = [100_000 + index * 100 for index in range(len(session_dates))]
+    volumes[-1] = 10_000_000
     return pd.DataFrame(
         {
             "Open": [value - Decimal("0.10") for value in closes],
@@ -202,7 +205,7 @@ def _market_frame(session_dates: Sequence[date]) -> pd.DataFrame:
             "Low": [value - Decimal("0.75") for value in closes],
             "Close": closes,
             "Adj Close": closes,
-            "Volume": [100_000 + index * 100 for index in range(len(session_dates))],
+            "Volume": volumes,
             "Dividends": [Decimal("0")] * len(session_dates),
             "Stock Splits": [Decimal("0")] * len(session_dates),
         },
@@ -981,13 +984,10 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert lint_wiki(sandbox_repository / "data" / "wiki") == []
     report = sandbox_repository / finalization.report_path
     report_text = report.read_text(encoding="utf-8")
-    assert all(
-        row["operation_id"] in report_text
-        for row in read_table(sandbox_repository, "operations_history")
-    )
-    assert f"[[ideas/{IDEA_ID}]]" in report_text
-    assert f"[[relationships/{RELATIONSHIP_ID}]]" in report_text
-    assert f"[[strategies/{STRATEGY_ID}]]" in report_text
+    assert visible_machine_ids(report_text) == ()
+    assert f"[[ideas/{IDEA_ID}|" in report_text
+    assert f"[[relationships/{RELATIONSHIP_ID}|" in report_text
+    assert f"[[strategies/{STRATEGY_ID}|" in report_text
     homepage_text = (sandbox_repository / "data" / "wiki" / "index.md").read_text(encoding="utf-8")
     assert homepage_text.index("Maintain the current model portfolio") < homepage_text.index(
         "## Explore"
@@ -996,8 +996,7 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert "OCY — Operating Cycle SE" in homepage_text
     assert f"strategies/{STRATEGY_ID}" in homepage_text
     assert "**No actionable trade signals.**" in homepage_text
-    assert finalization.snapshot_id in homepage_text
-    assert finalization.snapshot_id in report_text
+    assert visible_machine_ids(homepage_text) == ()
 
     counts_before_replay = {
         name: len(read_table(sandbox_repository, name))
@@ -1161,7 +1160,8 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert "# Maintain the current model portfolio" in delivered_markdown
     assert "## Approved target changes" in delivered_markdown
     assert "## Complete active queue" not in delivered_markdown
-    assert finalization.snapshot_id in delivered_markdown
+    assert finalization.snapshot_id not in delivered_markdown
+    assert visible_machine_ids(delivered_markdown) == ()
     assert "title:" not in delivered_markdown
     assert "https://example.github.io/PaperTrader/daily-reports/" in delivered_markdown
     assert "github.com/example/PaperTrader/blob" not in delivered_markdown
@@ -1185,7 +1185,9 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         assert site.returncode == 0, site.stderr
         html = site_output / "daily-reports" / report.with_suffix(".html").name
         assert html.is_file()
-        assert RUN_ID in html.read_text(encoding="utf-8")
+        report_html = html.read_text(encoding="utf-8")
+        assert RUN_ID not in report_html
+        assert f'href="../securities/{SECURITY_ID}"' in report_html
         homepage_html = (site_output / "index.html").read_text(encoding="utf-8")
         assert (
             "No trade" in homepage_html or "Maintain the current model portfolio" in homepage_html

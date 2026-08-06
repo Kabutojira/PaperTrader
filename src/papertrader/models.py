@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal
+from enum import StrEnum
 from pathlib import PurePosixPath
 
 
@@ -120,6 +121,14 @@ class OpportunityTransition:
     strength: Decimal
     previous_strength: Decimal
     source_price_hash: str
+
+
+class AlertDirection(StrEnum):
+    """Canonical research direction for a deterministic indicator alert."""
+
+    BULLISH = "bullish"
+    BEARISH = "bearish"
+    NEUTRAL = "neutral"
 
 
 @dataclass(frozen=True, slots=True)

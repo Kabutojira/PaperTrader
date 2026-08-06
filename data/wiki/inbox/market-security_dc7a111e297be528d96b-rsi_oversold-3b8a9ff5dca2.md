@@ -1,5 +1,5 @@
 ---
-title: '[TSLA] RSI oversold'
+title: TSLA — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 3b8a9ff5dca273809547fd0c987af30b468b97138f7a84e3027babae56b92c2a
 classifier_decision: ingest
 classifier_reason: Material RSI oversold transition accompanied by a substantial 25.5%
   period decline for the tracked security.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_dc7a111e297be528d96b
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 9913c5340953f6c4e54865acd6585a21684f8f9eab95f4eafc1a7ca1f49e5c87
 ---
 
-# [TSLA] RSI oversold
+# TSLA — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_dc7a111e297be528d96b|TSLA — Tesla, Inc. common stock]] (`security_dc7a111e297be528d96b`)
-- Trigger: `rsi_oversold`
-- Transition: `entered`
+- Security: [[securities/security_dc7a111e297be528d96b|TSLA — Tesla, Inc. common stock]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 306.86
 - Period return: -0.2549048107793801079554905291
 - Trigger strength: 0.1024457156666666666666666667
 - Previous strength: 0
-- Source price hash: `9913c5340953f6c4e54865acd6585a21684f8f9eab95f4eafc1a7ca1f49e5c87`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material RSI oversold transition accompanied by a substantial 25.5% period decline for the tracked security.
+- Decision: Ingest
+- Reason: Material rsi oversold transition accompanied by a substantial 25.5% period decline for the tracked security.

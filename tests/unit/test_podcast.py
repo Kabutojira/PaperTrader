@@ -21,6 +21,16 @@ from papertrader.tables import read_table
 NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
 
 
+def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path) -> None:
+    skill = (repository_root / "skills" / "papertrader-daily-podcast" / "SKILL.md").read_text(
+        encoding="utf-8"
+    )
+
+    assert "`advice validate` is outside the `daily_podcast` command scope" in skill
+    assert "never list a rejected or pre-dispatch command" in skill
+    assert "`This is paper trading, not live trading.`" in skill
+
+
 def _completed_manifest(repository: Path, run_id: str) -> None:
     report = repository / "data" / "wiki" / "daily-reports" / "daily-report_20260730.md"
     report.write_text("---\ntitle: Daily\ntype: daily-report\nstatus: maintained\n---\n")
@@ -179,6 +189,37 @@ def test_repository_podcast_audio_path_is_rejected(
             script_commit="a" * 40,
             script_path="data/wiki/podcasts/daily-podcast_20260730T180000Z.md",
             output_directory=sandbox_repository / "data" / "wiki" / "podcasts",
+        )
+
+
+def test_podcast_render_rejects_visible_machine_identity(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id = "daily-20260730T180000Z"
+    transcript = " ".join(["word"] * 2500)
+    markdown = (
+        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        "Visible security security_1234567890abcdef1234. "
+        f"{transcript}\n"
+        "<!-- papertrader-spoken-transcript:end -->\n"
+    )
+
+    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        assert command[:2] == ["git", "show"]
+        return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
+
+    with pytest.raises(PodcastError, match="exposes a machine identity"):
+        render_committed_podcast(
+            sandbox_repository,
+            sandbox_settings,
+            daily_cycle_id=cycle_id,
+            script_commit="a" * 40,
+            script_path="data/wiki/podcasts/daily-podcast_20260730T180000Z.md",
+            output_directory=tmp_path / "podcast",
+            runner=fake_runner,
         )
 
 

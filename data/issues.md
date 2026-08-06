@@ -6,9 +6,11 @@ Generated from `data/tables/issues.csv`.
 | --- | --- | --- | --- | --- |
 | error | **issue_0acd52c371559780a934** — Rio Tinto assessment source operation is ambiguous within one run | 2026-08-03T09:27:11Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
+| error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | error | **issue_63954cb215f224b75cb3** — Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W | 2026-08-05T11:35:18Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
+| error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | error | **issue_e7dea4abd8cffd476a05** — RTX assessment source operation is ambiguous within one run | 2026-08-05T22:31:51Z | controller | 01KZA04098D4DF0J4SFMJK1TDD |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -34,6 +36,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_3dfbaf44b38a480a8aa4** — Daily preparation degraded: security_7ca095d63423c55a90e3 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_44fe890b2fbae8cf90a0** — Daily preparation degraded: security_1f9cce545ede94cd6349 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_4cea078fdac19d342c04** — Daily preparation degraded: security_dfa34d4b9050964b465e | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_4f229989274e68b0b88e** — Daily podcast failed: daily-20260806T120804Z | 2026-08-06T12:53:17Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | warning | **issue_50e28d602eb0feb06784** — Daily preparation degraded: security_6cf75bd0ec0aa2a20148 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_51e19c59b425d7011575** — Daily preparation degraded: security_c9a37d277445869a8809 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_55f958632a0f142a3925** — Daily preparation degraded: security_96ba305ee7cd586bc348 | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -57,6 +60,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_8ada3995ac26a38446f5** — Daily preparation degraded: security_ef35e41886220d51c22c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8b0b68860313ad4f9bec** — Daily preparation degraded: security_f2b9760d847b2ba59324 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_94374052817041f82969** — Daily preparation degraded: security_fe5539a7d3fd9d553bce | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_95cc9329c9e03eba665b** — Daily podcast failed: daily-20260806T094838Z | 2026-08-06T10:30:37Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | warning | **issue_97455cd9fdcd489ca07f** — Daily preparation degraded: security_664f93a7eaca72e76e9b | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_97953d4d2c1016441831** — Daily preparation degraded: security_47a0b06f6c6c478d7c1e | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_989496e6d541f631fc1d** — Daily preparation degraded: security_8472507d7d320aa388a7 | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -87,6 +91,5 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_ea600e6a0abd700bbdd4** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_ed85ad36a02af2fdfc33** — Daily preparation degraded: security_567d0d575bbd30aaa91d | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_f320e056b26d54014584** — Daily preparation degraded: security_a9eb9838940ef5ceaa0c | 2026-07-29T16:51:20Z | deterministic-controller |  |
-| warning | **issue_f9849560e317bb03afe4** — Telegram podcast audio delivery unavailable | 2026-08-05T18:03:13Z | delivery |  |
 | warning | **issue_fc3830c067fcea6132aa** — Daily preparation degraded: security_55c9ce2fdcd32dad6b8c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_fe482d25304c03ce4d28** — Daily preparation degraded: security_33d9c44facc75c726c7d | 2026-07-29T16:51:20Z | deterministic-controller |  |

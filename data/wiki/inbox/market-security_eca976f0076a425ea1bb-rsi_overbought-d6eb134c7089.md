@@ -1,5 +1,5 @@
 ---
-title: '[PATH] RSI overbought'
+title: PATH — RSI overbought
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-08-05'
 updated: '2026-08-05'
 provenance: deterministic-market-monitor
 content_hash: d6eb134c708926640c477f911dd17872389c6c2d92b61acef3e86c81eff76988
-classifier_decision: ingest
-classifier_reason: Material entered RSI-overbought transition after a 21.03% period
-  return; durable wiki ingestion is warranted.
-related_entity_ids:
-- security_eca976f0076a425ea1bb
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_eca976f0076a425ea1bb
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: 5834724c840fe582815a49fe7197e00f37f120b2c999abbd4f8beb1451f17c7e
 ---
 
-# [PATH] RSI overbought
+# PATH — RSI overbought
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: PATH — UiPath, Inc. Class A common stock (`security_eca976f0076a425ea1bb`)
-- Trigger: `rsi_overbought`
-- Transition: `entered`
+- Security: PATH — UiPath, Inc. Class A common stock
+- Alert: RSI overbought
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 14.100000381469727
 - Period return: 0.210300501559032525123365815
 - Trigger strength: 0.04023774733333333333333333333
 - Previous strength: 0
-- Source price hash: `5834724c840fe582815a49fe7197e00f37f120b2c999abbd4f8beb1451f17c7e`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material entered RSI-overbought transition after a 21.03% period return; durable wiki ingestion is warranted.
+- Decision: Skipped
+- Reason: Bearish alert unowned

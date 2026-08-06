@@ -1,5 +1,5 @@
 ---
-title: '[LUNR] RSI oversold'
+title: LUNR — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 55b68c110daa564497ed71d436f9067b7a6a4f71f9f7c5befdec5145084635bc
 classifier_decision: ingest
 classifier_reason: Material RSI oversold transition after a sharp period decline merits
   durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_a5dc16f3f4b245e6c168
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 3c216cd8e71f6e517a8e3e4fa076a216c0a0907221dc613d1c164cb02d9efe51
 ---
 
-# [LUNR] RSI oversold
+# LUNR — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_a5dc16f3f4b245e6c168|LUNR — Intuitive Machines, Inc. Class A common stock]] (`security_a5dc16f3f4b245e6c168`)
-- Trigger: `rsi_oversold`
-- Transition: `entered`
+- Security: [[securities/security_a5dc16f3f4b245e6c168|LUNR — Intuitive Machines, Inc. Class A common stock]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 12.3599
 - Period return: -0.4105913016349625603967619382
 - Trigger strength: 0.07053970066666666666666666667
 - Previous strength: 0
-- Source price hash: `3c216cd8e71f6e517a8e3e4fa076a216c0a0907221dc613d1c164cb02d9efe51`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material RSI oversold transition after a sharp period decline merits durable review.
+- Decision: Ingest
+- Reason: Material rsi oversold transition after a sharp period decline merits durable review.

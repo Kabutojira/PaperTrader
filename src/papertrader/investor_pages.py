@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import json
 import re
 from collections import defaultdict
 from collections.abc import Mapping, Sequence
@@ -24,6 +23,7 @@ from papertrader.advice import (
 )
 from papertrader.atomic_io import atomic_write_text
 from papertrader.market_data import read_fx_cache
+from papertrader.public_refs import PublicEntityResolver
 from papertrader.tables import read_table
 from papertrader.utils import (
     CanonicalValueError,
@@ -200,67 +200,19 @@ def research_decisions_for_run(
 ) -> tuple[ResearchDecisionView, ...]:
     """Project every completed research operation in one run into a public linked decision."""
 
-    securities = {row["security_id"]: row for row in read_table(repository_root, "securities")}
-    relationships = {
-        row["relationship_id"]: row for row in read_table(repository_root, "relationships")
-    }
-    strategies = {row["strategy_id"]: row for row in read_table(repository_root, "strategies")}
+    resolver = PublicEntityResolver(repository_root)
     output: list[ResearchDecisionView] = []
     for row in read_table(repository_root, "operations_history"):
         if row["claimed_by_run_id"] != run_id or not row["operation_type"].endswith("_research"):
             continue
-        label = row["entity_id"]
-        page = "data/wiki/research-catalog.md"
-        if row["operation_type"] == "security_research":
-            security = securities.get(row["entity_id"])
-            if security is not None:
-                label = f"{security['ticker']} — {security['company_name']}"
-                page = _security_public_page(security)
-        elif row["operation_type"] == "idea_research":
-            candidate = f"data/wiki/ideas/{row['entity_id']}.md"
-            page = candidate if (repository_root / candidate).is_file() else page
-            label = _wiki_title(repository_root, page, row["entity_id"])
-        elif row["operation_type"] == "relationship_research":
-            relationship = relationships.get(row["entity_id"])
-            if relationship is not None:
-                security = securities.get(relationship["security_id"])
-                page = relationship["research_page"] or page
-                label = (
-                    f"{security['ticker']} relationship"
-                    if security is not None
-                    else row["entity_id"]
-                )
-        elif row["operation_type"] == "strategy_research":
-            strategy = strategies.get(row["entity_id"])
-            if strategy is not None:
-                label = strategy["name"] or row["entity_id"]
-                page = strategy["research_page"] or page
-        elif row["operation_type"] == "opportunity_research":
-            payload_path = PurePosixPath(row["payload_path"])
-            if (
-                not payload_path.is_absolute()
-                and ".." not in payload_path.parts
-                and payload_path.parts[:3] == ("data", "operations", "payloads")
-                and payload_path.suffix == ".json"
-            ):
-                absolute = repository_root.joinpath(*payload_path.parts)
-                try:
-                    payload = json.loads(absolute.read_text(encoding="utf-8"))
-                except (OSError, json.JSONDecodeError):
-                    payload = {}
-                inputs = payload.get("inputs") if isinstance(payload, dict) else None
-                security_id = inputs.get("security_id") if isinstance(inputs, dict) else None
-                security = securities.get(security_id) if isinstance(security_id, str) else None
-                if security is not None:
-                    label = f"{security['ticker']} — {security['company_name']}"
-                    page = _security_public_page(security)
+        reference = resolver.resolve(row["entity_type"], row["entity_id"])
         conclusion = " ".join((row["result_summary"] or row["terminal_reason"]).split())
         output.append(
             ResearchDecisionView(
                 operation_id=row["operation_id"],
                 operation_type=row["operation_type"],
-                label=label,
-                research_page=page,
+                label=reference.label,
+                research_page=reference.target,
                 status=row["terminal_status"],
                 conclusion=conclusion or "No research conclusion was recorded.",
             )
@@ -351,7 +303,6 @@ def investor_brief_markdown(
         f"- **Investment data:** {INVESTMENT_STATUS_LABELS[snapshot.investment_data_status]}",
         f"- **Operations:** {OPERATIONS_STATUS_LABELS[snapshot.operations_status]}",
         f"- **As of:** `{snapshot.as_of}`",
-        f"- **Snapshot:** `{snapshot.snapshot_id}`",
         f"- **Cash:** {current.cash_base} {snapshot.base_currency} ({current.cash_weight_pct}%)",
         f"- **Gross exposure:** {current.gross_exposure_base} {snapshot.base_currency}",
         f"- **Approved target cash:** {target.cash_base} {snapshot.base_currency} "
@@ -753,7 +704,7 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
         ),
         "# Model portfolio",
         "",
-        f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
+        f"**As of `{snapshot.as_of}`**",
         "",
         "Pending targets are projections; only deterministic fills change the current portfolio.",
         "",
@@ -882,7 +833,7 @@ def _signals_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) 
         ),
         "# Signals",
         "",
-        f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
+        f"**As of `{snapshot.as_of}`**",
         "",
         "## Actionable trade signals",
         "",
@@ -895,8 +846,8 @@ def _signals_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) 
     lines.extend(["## Pending validated paper orders", ""])
     if pending:
         lines.extend(
-            f"- **{_markdown(signal.ticker)}:** {_action_label(signal.action)} · order "
-            f"`{signal.order_id}` · {_action_status_label(signal.action_status)}"
+            f"- **{_markdown(signal.ticker)}:** {_action_label(signal.action)} · "
+            f"{_action_status_label(signal.action_status)}"
             for signal in pending
         )
     else:
@@ -982,7 +933,7 @@ def _performance_page(snapshot: DecisionSnapshot, day: date) -> str:
         ),
         "# Performance and risk",
         "",
-        f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
+        f"**As of `{snapshot.as_of}`**",
         "",
         f"Current performance epoch started `{performance.epoch_started_at}` at "
         f"**{performance.epoch_opening_equity_base} {snapshot.base_currency}**. "
@@ -1067,7 +1018,7 @@ def _securities_page(repository_root: Path, snapshot: DecisionSnapshot, day: dat
         ),
         "# Securities",
         "",
-        f"**Snapshot `{snapshot.snapshot_id}` · As of `{snapshot.as_of}`**",
+        f"**As of `{snapshot.as_of}`**",
         "",
         "Ticker links open the maintained security analysis. Native marks are converted "
         f"to {snapshot.base_currency} with the displayed committed FX observation.",
@@ -1158,6 +1109,9 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         read_table(repository_root, "operations_todo"),
         key=lambda row: (int(row["priority"]), row["created_at"], row["operation_id"]),
     )
+    resolver = PublicEntityResolver(repository_root)
+    last_success = parse_timestamp(coverage.last_successful_daily_run, allow_empty=True)
+    latest_run = last_success.date().isoformat() if last_success is not None else "none"
     lines = [
         _frontmatter(
             title="PaperTrader system status and audit",
@@ -1168,7 +1122,6 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         ),
         "# System status and audit",
         "",
-        f"**Publication snapshot:** `{snapshot.snapshot_id}`",
         f"**As of:** `{snapshot.as_of}`",
         f"**Investment data:** {INVESTMENT_STATUS_LABELS[snapshot.investment_data_status]}",
         f"**Operations:** {OPERATIONS_STATUS_LABELS[snapshot.operations_status]}",
@@ -1190,7 +1143,7 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
         f"{coverage.market_data_failure_count}",
         f"- Candidate FX gaps: {candidate_fx_gaps}",
         f"- Research backlog: {coverage.research_backlog_count}",
-        f"- Last successful daily run: `{coverage.last_successful_daily_run or 'none'}`",
+        f"- Last successful daily run: {latest_run}",
         "",
         "## Current issues by investment impact",
         "",
@@ -1212,9 +1165,10 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
             lines.extend([f"### {_markdown(category.replace('_', ' ').title())}", ""])
             for value in values:
                 label = f"{value.ticker} — {value.company_name}: " if value.ticker else ""
+                public_title = resolver.humanize(label + value.title)
                 lines.append(
-                    f"- `{value.severity}` **{_markdown(label + value.title)}** — "
-                    f"{_markdown(value.summary)}"
+                    f"- {value.severity.capitalize()} **{public_title}** — "
+                    f"{resolver.humanize(value.summary)}"
                 )
             lines.append("")
     else:
@@ -1225,13 +1179,12 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
             "",
             f"Showing {min(len(active_queue), 20)} of {len(active_queue)} active operations.",
             "",
-            "<details><summary>Technical queue identifiers</summary>",
+            "<details><summary>Active research work</summary>",
             "",
         ]
     )
     lines.extend(
-        f"- `{row['status']}` `{row['operation_id']}` — `{row['operation_type']}` for "
-        f"`{row['entity_id']}`"
+        f"- {row['status'].capitalize()} — {resolver.markdown('operation', row['operation_id'])}"
         for row in active_queue[:20]
     )
     if not active_queue:

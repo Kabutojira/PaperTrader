@@ -1,5 +1,5 @@
 ---
-title: '[ENPH] Volume anomaly'
+title: ENPH — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 74023f8632120ca88efd8f6703ea853776b43b1a3ae88e5f4bbed473a08125e8
 classifier_decision: ingest
 classifier_reason: Strengthened volume anomaly alongside a material one-month decline
   merits durable wiki review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_f2b9760d847b2ba59324
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 8fcf5d368371d4eca10e2259441ccc2709e3cbeb54d6a0c543ad3cd00c5cf358
 ---
 
-# [ENPH] Volume anomaly
+# ENPH — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_f2b9760d847b2ba59324|ENPH — Enphase Energy, Inc. common stock]] (`security_f2b9760d847b2ba59324`)
-- Trigger: `volume_anomaly`
-- Transition: `strengthened`
+- Security: [[securities/security_f2b9760d847b2ba59324|ENPH — Enphase Energy, Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Strengthened
 - Period: 2026-06-30 through 2026-07-29
 - Latest adjusted close: 35.06999969482422
 - Period return: -0.2877741978193164716418542578
 - Trigger strength: 0.224750535
 - Previous strength: 0.18305174
-- Source price hash: `8fcf5d368371d4eca10e2259441ccc2709e3cbeb54d6a0c543ad3cd00c5cf358`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: Strengthened volume anomaly alongside a material one-month decline merits durable wiki review.

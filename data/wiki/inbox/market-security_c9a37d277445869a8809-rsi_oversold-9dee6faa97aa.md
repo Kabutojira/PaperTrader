@@ -1,5 +1,5 @@
 ---
-title: '[RBLX] RSI oversold'
+title: RBLX — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 9dee6faa97aa99493cc1cf18c3da1cb02e32bfc7693e9787d3082739a5a39ee7
 classifier_decision: ingest
 classifier_reason: Material RSI oversold transition strengthened during a 34.34% period
   decline, warranting durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_c9a37d277445869a8809
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: c062a7a5e5ce41f0e88f9b737fe1059fe91b8fbde535c3feeeb67858444647d7
 ---
 
-# [RBLX] RSI oversold
+# RBLX — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_c9a37d277445869a8809|RBLX — Roblox Corporation Class A common stock]] (`security_c9a37d277445869a8809`)
-- Trigger: `rsi_oversold`
-- Transition: `strengthened`
+- Security: [[securities/security_c9a37d277445869a8809|RBLX — Roblox Corporation Class A common stock]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Strengthened
 - Period: 2026-07-08 through 2026-08-05
 - Latest adjusted close: 36.189998626708984
 - Period return: -0.3434325230769465121470087777
 - Trigger strength: 0.03100286333333333333333333333
 - Previous strength: 0.002335562666666666666666666667
-- Source price hash: `c062a7a5e5ce41f0e88f9b737fe1059fe91b8fbde535c3feeeb67858444647d7`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material RSI oversold transition strengthened during a 34.34% period decline, warranting durable review.
+- Decision: Ingest
+- Reason: Material rsi oversold transition strengthened during a 34.34% period decline, warranting durable review.

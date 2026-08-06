@@ -1,5 +1,5 @@
 ---
-title: '[PARRO.PA] Bollinger below lower'
+title: PARRO.PA — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 8276293d6517ddda4f13e161b6af638f2a3379b4a132350bc8c88b79f8937e5d
 classifier_decision: ignore
 classifier_reason: Minor one-month decline with weak trigger strength; insufficient
   evidence of a material transition for durable wiki ingestion.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_cc4dcb8f002b61dffe00
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: c2263e45b4275cf5d39d3d86066a789ecda89ef443e08d9871645866c623a134
 ---
 
-# [PARRO.PA] Bollinger below lower
+# PARRO.PA — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA — Parrot S.A. ordinary shares]] (`security_cc4dcb8f002b61dffe00`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA — Parrot S.A. ordinary shares]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-27
 - Latest adjusted close: 9.649999618530273
 - Period return: -0.0061792398950546552587875625
 - Trigger strength: 0.01671748883642404546414836886
 - Previous strength: 0
-- Source price hash: `c2263e45b4275cf5d39d3d86066a789ecda89ef443e08d9871645866c623a134`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ignore`
+- Decision: Ignore
 - Reason: Minor one-month decline with weak trigger strength; insufficient evidence of a material transition for durable wiki ingestion.

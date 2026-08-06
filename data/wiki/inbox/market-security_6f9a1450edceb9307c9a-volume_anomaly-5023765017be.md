@@ -1,5 +1,5 @@
 ---
-title: '[ANET] Volume anomaly'
+title: ANET — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 5023765017be89b65ed522b45f49dccb8a0734db60a3fc522bc749ba5572c52a
 classifier_decision: ingest
 classifier_reason: Material volume anomaly coincides with a 14.4% return over the
   validated period.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_6f9a1450edceb9307c9a
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 48684b017d673413a4e371c384795d535d16c328688390035aae202012b50005
 ---
 
-# [ANET] Volume anomaly
+# ANET — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_6f9a1450edceb9307c9a|ANET — Arista Networks, Inc. common stock]] (`security_6f9a1450edceb9307c9a`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_6f9a1450edceb9307c9a|ANET — Arista Networks, Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 190.50999450683594
 - Period return: 0.144479074990720998038315433
 - Trigger strength: 0.29663296
 - Previous strength: 0
-- Source price hash: `48684b017d673413a4e371c384795d535d16c328688390035aae202012b50005`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: Material volume anomaly coincides with a 14.4% return over the validated period.

@@ -1,5 +1,5 @@
 ---
-title: '[GOOGL] MACD cross above signal'
+title: GOOGL — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: e7c32a666d8b6ecbf61797d7b8ee5dd75ca100407a3c6e89aa569ca58b7252de
 classifier_decision: ignore
 classifier_reason: Weak MACD bullish crossover with only 0.072 strength and a negative
   1.05% period return does not merit durable wiki ingestion.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_c86bb4e75658c07142cf
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: b0e7d6aff1b7cf90bed119246e683face8a24200c5b6c597b9f6131387bf6418
 ---
 
-# [GOOGL] MACD cross above signal
+# GOOGL — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: GOOGL — Alphabet Inc. Class A common stock (`security_c86bb4e75658c07142cf`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_c86bb4e75658c07142cf|GOOGL — Alphabet Inc. Class A common stock]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-02 through 2026-07-31
 - Latest adjusted close: 356.1300048828125
 - Period return: -0.0105026221578593222501600181
 - Trigger strength: 0.07227749696538882697577708485
 - Previous strength: 0
-- Source price hash: `b0e7d6aff1b7cf90bed119246e683face8a24200c5b6c597b9f6131387bf6418`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ignore`
-- Reason: Weak MACD bullish crossover with only 0.072 strength and a negative 1.05% period return does not merit durable wiki ingestion.
+- Decision: Ignore
+- Reason: Weak macd bullish crossover with only 0.072 strength and a negative 1.05% period return does not merit durable wiki ingestion.

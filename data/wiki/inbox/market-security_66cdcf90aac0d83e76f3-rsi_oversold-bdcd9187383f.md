@@ -1,5 +1,5 @@
 ---
-title: '[ALB] RSI oversold'
+title: ALB — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: bdcd9187383ffc3e298e115845009aa20fabf2c430f2a2561a321200efde8ca1
 classifier_decision: ingest
 classifier_reason: Material RSI oversold strengthening coincides with a 12.3% period
   decline and merits durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_66cdcf90aac0d83e76f3
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 96016d92b17159d477177686b7f12c3a4f1ac59d0da19cdd7bb5080fc6c89aa9
 ---
 
-# [ALB] RSI oversold
+# ALB — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_66cdcf90aac0d83e76f3|ALB — Albemarle Corporation common stock]] (`security_66cdcf90aac0d83e76f3`)
-- Trigger: `rsi_oversold`
-- Transition: `strengthened`
+- Security: [[securities/security_66cdcf90aac0d83e76f3|ALB — Albemarle Corporation common stock]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Strengthened
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 113.7094
 - Period return: -0.1234243067378868615573888829
 - Trigger strength: 0.141476086
 - Previous strength: 0.073143163
-- Source price hash: `96016d92b17159d477177686b7f12c3a4f1ac59d0da19cdd7bb5080fc6c89aa9`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material RSI oversold strengthening coincides with a 12.3% period decline and merits durable review.
+- Decision: Ingest
+- Reason: Material rsi oversold strengthening coincides with a 12.3% period decline and merits durable review.

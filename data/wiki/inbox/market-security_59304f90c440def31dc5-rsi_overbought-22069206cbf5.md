@@ -1,5 +1,5 @@
 ---
-title: '[RTX] RSI overbought'
+title: RTX — RSI overbought
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-07-26'
 updated: '2026-07-27'
 provenance: deterministic-market-monitor
 content_hash: 22069206cbf52bc8f3c469dedb9daedf3a24d8d906960dfc34ec4146ab485e32
-classifier_decision: ingest
-classifier_reason: Material 13.35% period return with a newly entered RSI-overbought
-  transition merits durable wiki review.
-related_entity_ids:
-- security_59304f90c440def31dc5
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_59304f90c440def31dc5
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: 67e4f6c67810fbf8b15203707d7c3be75ac5edd61740d920efdbcf4c82adb9b1
 ---
 
-# [RTX] RSI overbought
+# RTX — RSI overbought
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_59304f90c440def31dc5|RTX — RTX Corporation common stock]] (`security_59304f90c440def31dc5`)
-- Trigger: `rsi_overbought`
-- Transition: `entered`
+- Security: [[securities/security_59304f90c440def31dc5|RTX — RTX Corporation common stock]]
+- Alert: RSI overbought
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-06-25 through 2026-07-24
 - Latest adjusted close: 211.5
 - Period return: 0.133501281692511259596804542
 - Trigger strength: 0.1070968283333333333333333333
 - Previous strength: 0
-- Source price hash: `67e4f6c67810fbf8b15203707d7c3be75ac5edd61740d920efdbcf4c82adb9b1`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 13.35% period return with a newly entered RSI-overbought transition merits durable wiki review.
+- Decision: Skipped
+- Reason: Bearish alert unowned

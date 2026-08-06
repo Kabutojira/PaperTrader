@@ -1,5 +1,5 @@
 ---
-title: '[MSFT] Volume anomaly'
+title: MSFT — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: de9b04e0f3e9ed74b635f90003a527f0067f278a7e26acb44bce2ce15bf04df8
 classifier_decision: ingest
 classifier_reason: Material volume anomaly coincides with a 17.4% period return and
   warrants durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_204be2a44063993de1a8
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c
 ---
 
-# [MSFT] Volume anomaly
+# MSFT — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: MSFT — Microsoft Corporation common stock (`security_204be2a44063993de1a8`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_204be2a44063993de1a8|MSFT — Microsoft Corporation common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 451.1000061035156
 - Period return: 0.173883646134274502642375095
 - Trigger strength: 1.07043305
 - Previous strength: 0
-- Source price hash: `614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: Material volume anomaly coincides with a 17.4% period return and warrants durable review.

@@ -1,5 +1,5 @@
 ---
-title: '[SSU.VI] Bollinger below lower'
+title: SSU.VI — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 917454ed7e3a7ab02934f72d22ec15b27935a8d0fe855b154ea7b186f3a67aca
 classifier_decision: ingest
 classifier_reason: New material Bollinger lower-band breach with a sharp monthly decline
   merits durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_567d0d575bbd30aaa91d
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 6eb025c45adfb61e4cb0d75f20bfdcf333ee0fbfc604998f4160f0fedb16fcdb
 ---
 
-# [SSU.VI] Bollinger below lower
+# SSU.VI — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_567d0d575bbd30aaa91d|SSU.VI — Samsung Electronics common GDR]] (`security_567d0d575bbd30aaa91d`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_567d0d575bbd30aaa91d|SSU.VI — Samsung Electronics common GDR]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-29
 - Latest adjusted close: 3220
 - Period return: -0.2614678899082568807339449541
 - Trigger strength: 0.01710176860570747080249783746
 - Previous strength: 0
-- Source price hash: `6eb025c45adfb61e4cb0d75f20bfdcf333ee0fbfc604998f4160f0fedb16fcdb`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: New material Bollinger lower-band breach with a sharp monthly decline merits durable review.
+- Decision: Ingest
+- Reason: New material bollinger lower-band breach with a sharp monthly decline merits durable review.

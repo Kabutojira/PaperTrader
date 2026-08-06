@@ -160,3 +160,12 @@
 2026-08-05T20:06:58Z [daily_run_completed] run=daily-20260805T182233Z Completed deterministic daily run with status succeeded.
 2026-08-05T22:09:27Z [daily_run_started] run=daily-20260805T220920Z Started sequential deterministic daily preparation.
 2026-08-05T22:34:36Z [daily_run_completed] run=daily-20260805T220920Z Completed deterministic daily run with status degraded.
+2026-08-06T09:50:05Z [daily_run_started] run=daily-20260806T094838Z Started sequential deterministic daily preparation.
+2026-08-06T09:56:15Z [daily_run_completed] run=daily-20260806T094838Z Completed deterministic daily run with status degraded.
+2026-08-06T10:30:37Z [daily_podcast_completed] run=daily-20260806T094838Z operation=01KZB8NMPGA0VTNRHAD458EN3R Daily podcast finished with status failed.
+2026-08-06T12:09:18Z [daily_run_started] run=daily-20260806T120804Z Started sequential deterministic daily preparation.
+2026-08-06T12:26:03Z [daily_run_completed] run=daily-20260806T120804Z Completed deterministic daily run with status succeeded.
+2026-08-06T12:53:17Z [daily_podcast_completed] run=daily-20260806T120804Z operation=01KZBHM8JGFW6R10CN34GRREZY Daily podcast finished with status failed.
+2026-08-06T12:57:51Z [daily_run_started] run=daily-20260806T125642Z Started sequential deterministic daily preparation.
+2026-08-06T13:15:04Z [daily_run_completed] run=daily-20260806T125642Z Completed deterministic daily run with status succeeded.
+2026-08-06T13:23:04Z [daily_podcast_completed] run=daily-20260806T125642Z operation=01KZBKH6RR58Z7N6H95AAG2HZV Daily podcast finished with status succeeded.

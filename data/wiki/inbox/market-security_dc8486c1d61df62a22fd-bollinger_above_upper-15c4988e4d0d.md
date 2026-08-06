@@ -1,5 +1,5 @@
 ---
-title: '[SU] Bollinger above upper'
+title: SU — Bollinger above upper
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-08-01'
 updated: '2026-08-01'
 provenance: deterministic-market-monitor
 content_hash: 15c4988e4d0d4b5c291fe764a91bc84cb9c8ec245fe4411f7aa67771f04aab8a
-classifier_decision: ingest
-classifier_reason: A strengthened Bollinger-above-upper transition with a 3.55% period
-  return is a material market signal for durable security research context.
-related_entity_ids:
-- security_dc8486c1d61df62a22fd
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_dc8486c1d61df62a22fd
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: 0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f
 ---
 
-# [SU] Bollinger above upper
+# SU — Bollinger above upper
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: SU — Schneider Electric SE ordinary shares (`security_dc8486c1d61df62a22fd`)
-- Trigger: `bollinger_above_upper`
-- Transition: `strengthened`
+- Security: [[securities/security_dc8486c1d61df62a22fd|SU — Schneider Electric SE ordinary shares]]
+- Alert: Bollinger above upper
+- Direction: Bearish
+- Transition: Strengthened
 - Period: 2026-07-03 through 2026-07-31
 - Latest adjusted close: 290.04998779296875
 - Period return: 0.035522961344656198767204263
 - Trigger strength: 0.02063384190977947080112942142
 - Previous strength: 0.01270546693426125865600015928
-- Source price hash: `0521116af09dd3e0d9591d7eca02678b993b9c93c6587d992748cb6a9bd5995f`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: A strengthened Bollinger-above-upper transition with a 3.55% period return is a material market signal for durable security research context.
+- Decision: Skipped
+- Reason: Bearish alert unowned

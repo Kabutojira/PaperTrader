@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZBKH6RR58Z7N6H95AAG2HZV",
+  "status": "succeeded",
+  "summary": "Created a 2,497-word frozen-cycle daily podcast transcript that orders the all-cash paper-portfolio stance, market-alert discipline, Albemarle reassessment, assessed near misses, operational and research gaps, and closing risk recap. The canonical daily report now links to the transcript; no audio, trade, allocation, order, accounting, or queue state changed.",
+  "evidence": [
+    {
+      "source": "Frozen daily podcast context",
+      "claim": "The completed cycle froze at 2026-08-06T13:15:04Z with a succeeded finalization, a decision snapshot, no fill outcomes, and one accepted Albemarle security-research result. Its frozen snapshot hash is 4f841c9dcf1f338ba777cd4207fff9e39a2d61d25ec4752c70d5af2f5562e9c4.",
+      "observed_at": "2026-08-06T13:17:19Z",
+      "source_hash": "0361765636d10078118d3e90d98f04ad0cd37d2b240006be6b2dfeab97b5fbda"
+    },
+    {
+      "source": "Canonical daily report",
+      "claim": "The frozen report records a 100% cash model portfolio, zero gross exposure, no actionable signals or pending paper orders, 32 research alerts, and Albemarle's completed Hold / Watch reassessment with no paper strategy.",
+      "observed_at": "2026-08-06T13:15:04Z"
+    },
+    {
+      "source": "Accepted Albemarle security-research result",
+      "claim": "The accepted review used SEC-filed second-quarter evidence and a scenario-complete valuation. Its probability-weighted value was only modestly above the pre-release market reference, while confidence-adjusted expected return and payoff asymmetry failed the economic gates; no paper strategy was justified.",
+      "observed_at": "2026-08-06T13:14:15Z"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260806.md",
+    "data/wiki/podcasts/daily-podcast_20260806T125642Z.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The selected queue row was running under the supplied daily cycle with the required native wiki and daily-podcast skills, analyst route, sequential preflight, and no prompt-injection flags.",
+      "The frozen context identity, cutoff, report path, snapshot path, and snapshot SHA-256 were validated before the permitted report-link update; the context records finalization succeeded and no fill outcomes.",
+      "The spoken section contains exactly 2,497 words between the required markers, begins with the exact paper-trading disclosure sentence, contains no audio extension or audio link, and uses no visible machine identifiers in spoken prose.",
+      "The transcript is evidence-grounded in the frozen context, canonical report, and accepted Albemarle result; it does not create research, allocation, signal, order, fill, accounting, performance, or queue state.",
+      "The canonical daily report contains one transcript link. Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all passed.",
+      "command_audit.json records exactly the five successful canonical project CLI commands listed in commands_run; no request artifact was used or changed."
+    ]
+  }
+}

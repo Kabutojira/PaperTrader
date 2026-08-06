@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-05"
+updated: "2026-08-06"
 provenance: repository-contract
 ---
 
@@ -2149,3 +2149,47 @@ This log is append-only. Rotate it by year only after the configured line thresh
   removes the baseline's relationship blocker, but the legacy valuation lacks a bull case and
   probabilities. Recorded valuation as unsupported and escalated exactly one dependent full review;
   no strategy, signal, order, allocation, or accounting state changed.
+
+## 2026-08-06
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674]] (5244183d7674).
+
+- Classified [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674]] as `ingest`: Material volume-anomaly strengthening accompanied by a 26.4% period return merits durable wiki review.
+
+- Published investor decision snapshot `decision_bd9a696aa85c10753d20`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T094838Z`.
+
+- Published investor decision snapshot `decision_d0d9b91d2c4d8a341997`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T120804Z`.
+
+- Published investor decision snapshot `decision_da64fdec600b87557ab4`.
+
+- Generated canonical [[daily-reports/daily-report_20260806]] for run `daily-20260806T125642Z`.
+
+## 2026-08-06 — security review — RTX Corporation common stock
+
+- Revalidated [[securities/security_59304f90c440def31dc5|RTX]] against its unchanged Q2 Form 10-Q,
+  the SEC-filed Q2 results exhibit, and the current 5 August market and FX state.
+- Replaced the unsupported legacy valuation with a complete 25%/50%/25% mature-compounder scenario:
+  USD 142.00 bear, USD 179.375 base, and USD 246.50 bull. The USD 186.8125 weighted value remains
+  below the USD 222.31 mark, changing the conclusion from Unrated / Watch to Sell / Avoid.
+- The accepted defense relationship and supportive backlog evidence remain current, but valuation,
+  payoff asymmetry, margin of safety, and overbought timing block allocation. No strategy, signal,
+  order, or accounting change was justified; one dependent idea refresh is required.
+
+## 2026-08-06 — security review — Albemarle Corporation common stock
+
+- Revalidated [[securities/security_66cdcf90aac0d83e76f3|Albemarle]] against its SEC-filed Q2 Form
+  10-Q, Q2 results exhibit, and the current 5 August market and FX state.
+- Q2 realized lithium pricing, volume, EBITDA, cash generation, liquidity and lower capex improve
+  the operating thesis, while working-capital timing, Talison disruption, cyclicality, tax and
+  mandatory-convertible dilution remain material.
+- Replaced the unsupported legacy valuation with a complete 25%/50%/25% cyclical normalized-
+  earnings scenario: USD 9.93 bear, USD 131.25 base and USD 231.62 bull. The approximately USD
+  126.01 weighted value offers only about 6% upside to the USD 118.84 pre-release mark, with severe
+  bear downside.
+- The 31 July volume anomaly is pre-results risk evidence, not a fundamental signal. Albemarle
+  remains Hold / Watch with no strategy or paper trade; one dependent lithium-idea refresh is
+  required.

@@ -72,3 +72,6 @@ daily-20260805T065913Z,2026-08-05T06:59:13Z,2026-08-05T11:35:26Z,degraded,workfl
 daily-20260805T161218Z,2026-08-05T16:12:18Z,2026-08-05T17:51:26Z,succeeded,workflow_dispatch,2,100,10,,Daily run succeeded; 2 agent operations; 0 pending-order dispositions.
 daily-20260805T182233Z,2026-08-05T18:22:33Z,2026-08-05T20:06:58Z,succeeded,workflow_dispatch,9,100,45,,Daily run succeeded; 9 agent operations; 0 pending-order dispositions.
 daily-20260805T220920Z,2026-08-05T22:09:20Z,2026-08-05T22:34:36Z,degraded,workflow_dispatch,2,100,10,,Daily run degraded; 2 agent operations; 0 pending-order dispositions.
+daily-20260806T094838Z,2026-08-06T09:48:38Z,2026-08-06T09:56:15Z,degraded,manual,1,100,5,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.
+daily-20260806T120804Z,2026-08-06T12:08:04Z,2026-08-06T12:26:03Z,succeeded,manual,1,100,5,,Daily run succeeded; 1 agent operations; 0 pending-order dispositions.
+daily-20260806T125642Z,2026-08-06T12:56:42Z,2026-08-06T13:15:04Z,succeeded,manual,1,100,5,,Daily run succeeded; 1 agent operations; 0 pending-order dispositions.

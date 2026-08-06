@@ -1,5 +1,5 @@
 ---
-title: '[SQM] MACD cross below signal'
+title: SQM — MACD cross below signal
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-07-29'
 updated: '2026-07-30'
 provenance: deterministic-market-monitor
 content_hash: 9e986cb6222e03927cc213206fba55ac87eb62d1388ceb1923337ea2cdd8b491
-classifier_decision: ingest
-classifier_reason: A newly entered bearish MACD cross coincides with a 4.3% period
-  decline and merits durable review.
-related_entity_ids:
-- security_9d4049ed6669a52815d6
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_9d4049ed6669a52815d6
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: b1c6696baeeb3715701a889baed72a5e63f73b06e30fb81a728bfdf8d9414284
 ---
 
-# [SQM] MACD cross below signal
+# SQM — MACD cross below signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_9d4049ed6669a52815d6|SQM — Sociedad Quimica y Minera de Chile S.A. American depositary shares]] (`security_9d4049ed6669a52815d6`)
-- Trigger: `macd_cross_below_signal`
-- Transition: `entered`
+- Security: [[securities/security_9d4049ed6669a52815d6|SQM — Sociedad Quimica y Minera de Chile S.A. American depositary shares]]
+- Alert: MACD cross below signal
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 66.87
 - Period return: -0.0427998938481044663895653578
 - Trigger strength: 0.003185175805893855836221952748
 - Previous strength: 0
-- Source price hash: `b1c6696baeeb3715701a889baed72a5e63f73b06e30fb81a728bfdf8d9414284`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: A newly entered bearish MACD cross coincides with a 4.3% period decline and merits durable review.
+- Decision: Skipped
+- Reason: Bearish alert unowned

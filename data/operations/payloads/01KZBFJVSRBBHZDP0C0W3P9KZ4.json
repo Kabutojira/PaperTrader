@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_BPmhjXnBRNE",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-06T12:08:19Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_BPmhjXnBRNE",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "BPmhjXnBRNE",
+    "video_title": "Everything Will Crash in The Next Crash! Even BRK or Value ETFs",
+    "video_url": "https://www.youtube.com/watch?v=BPmhjXnBRNE"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZBFJVSRBBHZDP0C0W3P9KZ4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=BPmhjXnBRNE"
+  ]
+}

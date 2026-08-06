@@ -1,5 +1,5 @@
 ---
-title: '[ETN] Bollinger above upper'
+title: ETN — Bollinger above upper
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-08-05'
 updated: '2026-08-05'
 provenance: deterministic-market-monitor
 content_hash: 12e694571336ce0530f927f7889cf4c0bff95cc475b3e4eccb65b6d0b9bff0b8
-classifier_decision: ingest
-classifier_reason: Material breakout above the upper Bollinger Band after a 12.4%
-  period return warrants durable review.
-related_entity_ids:
-- security_18a3ab0ee6086ee85d0f
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_18a3ab0ee6086ee85d0f
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: fb2aa91af537611795229fc050d6e48fb2b7c2c3b0ee576ebffac45435e56185
 ---
 
-# [ETN] Bollinger above upper
+# ETN — Bollinger above upper
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_18a3ab0ee6086ee85d0f|ETN — Eaton Corporation plc ordinary shares]] (`security_18a3ab0ee6086ee85d0f`)
-- Trigger: `bollinger_above_upper`
-- Transition: `entered`
+- Security: [[securities/security_18a3ab0ee6086ee85d0f|ETN — Eaton Corporation plc ordinary shares]]
+- Alert: Bollinger above upper
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 444.7699890136719
 - Period return: 0.124064893971312860496996601
 - Trigger strength: 0.01267458188230052922889752214
 - Previous strength: 0
-- Source price hash: `fb2aa91af537611795229fc050d6e48fb2b7c2c3b0ee576ebffac45435e56185`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material breakout above the upper Bollinger Band after a 12.4% period return warrants durable review.
+- Decision: Skipped
+- Reason: Bearish alert unowned

@@ -1,5 +1,5 @@
 ---
-title: '[SQM] Volume anomaly'
+title: SQM — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 91ad512dd477d95d5dd1ecfa045f883c4b70522049d8c84674fd17ea489ea540
 classifier_decision: ingest
 classifier_reason: New volume anomaly coincides with a material 7.8% decline over
   the period and merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_9d4049ed6669a52815d6
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 50d8d4b3cc530dac62a1b9fc0b75b2b24eb271813ba5568f5f626eb60a05c8cc
 ---
 
-# [SQM] Volume anomaly
+# SQM — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_9d4049ed6669a52815d6|SQM — Sociedad Quimica y Minera de Chile S.A. American depositary shares]] (`security_9d4049ed6669a52815d6`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_9d4049ed6669a52815d6|SQM — Sociedad Quimica y Minera de Chile S.A. American depositary shares]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 68.43000030517578
 - Period return: -0.0780113287563819400665433286
 - Trigger strength: 0.01854665
 - Previous strength: 0
-- Source price hash: `50d8d4b3cc530dac62a1b9fc0b75b2b24eb271813ba5568f5f626eb60a05c8cc`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: New volume anomaly coincides with a material 7.8% decline over the period and merits durable review.

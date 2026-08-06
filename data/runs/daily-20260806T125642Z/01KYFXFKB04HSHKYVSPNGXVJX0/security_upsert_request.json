@@ -1,0 +1,23 @@
+{
+  "security_id": "security_66cdcf90aac0d83e76f3",
+  "issuer_id": "issuer_76c4dda166e8f840fb77",
+  "company_name": "Albemarle Corporation",
+  "instrument_name": "Albemarle Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "ALB",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ALB",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Basic Materials",
+  "industry": "Specialty Chemicals",
+  "status": "watching",
+  "watchlist_reason": "Q2 confirms lithium-price and volume recovery, but severe cyclical downside and inadequate confidence-adjusted expected return keep Albemarle on watch rather than in the paper portfolio.",
+  "research_summary": "Q2 improves pricing, volume, cash and leverage; USD 9.93/131.25/231.62 scenarios imply only about 6% weighted upside to USD 118.84, so Hold / Watch.",
+  "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+  "last_research_at": "2026-08-06T13:04:49Z",
+  "next_review_at": "2026-08-20T13:04:49Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/915913/000091591326000102/alb-20260630.htm"
+}

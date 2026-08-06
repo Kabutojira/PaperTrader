@@ -1,5 +1,5 @@
 ---
-title: '[NVDA] Bollinger above upper'
+title: NVDA — Bollinger above upper
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-08-05'
 updated: '2026-08-05'
 provenance: deterministic-market-monitor
 content_hash: 53c3e02d5180a6961f633fcc176521d491d88e2b0b5acd463bdb7da7241bc0b9
-classifier_decision: ingest
-classifier_reason: Material 7.4% gain with a new Bollinger-band breakout transition
-  warrants durable review.
-related_entity_ids:
-- security_33d9c44facc75c726c7d
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_33d9c44facc75c726c7d
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: b5c369adc1a53ba9464042614b9e8fa3830f53560d81d5baf2742a35b45bf7db
 ---
 
-# [NVDA] Bollinger above upper
+# NVDA — Bollinger above upper
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_33d9c44facc75c726c7d|NVDA — NVIDIA Corporation common stock]] (`security_33d9c44facc75c726c7d`)
-- Trigger: `bollinger_above_upper`
-- Transition: `entered`
+- Security: [[securities/security_33d9c44facc75c726c7d|NVDA — NVIDIA Corporation common stock]]
+- Alert: Bollinger above upper
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-07-08 through 2026-08-05
 - Latest adjusted close: 219.22000122070312
 - Period return: 0.073976124165819928367713203
 - Trigger strength: 0.00004452301427319098395854090199
 - Previous strength: 0
-- Source price hash: `b5c369adc1a53ba9464042614b9e8fa3830f53560d81d5baf2742a35b45bf7db`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 7.4% gain with a new Bollinger-band breakout transition warrants durable review.
+- Decision: Skipped
+- Reason: Bearish alert unowned

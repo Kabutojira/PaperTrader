@@ -1,5 +1,5 @@
 ---
-title: '[AMZN] Volume anomaly'
+title: AMZN — Volume anomaly
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: e61b5356f36f3e481f784ecb296aa8107ffabf810a1272e4d12b7153005eb7e7
 classifier_decision: ingest
 classifier_reason: A strong newly entered volume anomaly with a material negative
   monthly return merits durable review.
+alert_direction: neutral
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_2433a056eb0c55961fcc
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 200396dbbd81b7ec09a5b79863cf355c888217931d18c42885ebbc2590a8917f
 ---
 
-# [AMZN] Volume anomaly
+# AMZN — Volume anomaly
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: AMZN — Amazon.com, Inc. common stock (`security_2433a056eb0c55961fcc`)
-- Trigger: `volume_anomaly`
-- Transition: `entered`
+- Security: [[securities/security_2433a056eb0c55961fcc|AMZN — Amazon.com, Inc. common stock]]
+- Alert: Volume anomaly
+- Direction: Neutral
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 235.5
 - Period return: -0.0256516219550051195028470107
 - Trigger strength: 0.98033297
 - Previous strength: 0
-- Source price hash: `200396dbbd81b7ec09a5b79863cf355c888217931d18c42885ebbc2590a8917f`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
+- Decision: Ingest
 - Reason: A strong newly entered volume anomaly with a material negative monthly return merits durable review.

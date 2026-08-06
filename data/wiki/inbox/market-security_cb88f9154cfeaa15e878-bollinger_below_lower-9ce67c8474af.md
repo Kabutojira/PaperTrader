@@ -1,5 +1,5 @@
 ---
-title: '[VRT] Bollinger below lower'
+title: VRT — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 9ce67c8474affc529f76287cc4e7f6b8c02c5dab913ad0b7fe9e21edfa5137ee
 classifier_decision: ingest
 classifier_reason: Material 12% decline with a new Bollinger-band breach warrants
   durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_cb88f9154cfeaa15e878
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 6015c26eb2013ddf6be465a59f79002760b86741ddb67f56aad5fd23a0f1fd38
 ---
 
-# [VRT] Bollinger below lower
+# VRT — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_cb88f9154cfeaa15e878|VRT — Vertiv Holdings Co Class A common stock]] (`security_cb88f9154cfeaa15e878`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_cb88f9154cfeaa15e878|VRT — Vertiv Holdings Co Class A common stock]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 270
 - Period return: -0.1204352251805956519296635757
 - Trigger strength: 0.01896830978955694896352110355
 - Previous strength: 0
-- Source price hash: `6015c26eb2013ddf6be465a59f79002760b86741ddb67f56aad5fd23a0f1fd38`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 12% decline with a new Bollinger-band breach warrants durable review.
+- Decision: Ingest
+- Reason: Material 12% decline with a new bollinger-band breach warrants durable review.

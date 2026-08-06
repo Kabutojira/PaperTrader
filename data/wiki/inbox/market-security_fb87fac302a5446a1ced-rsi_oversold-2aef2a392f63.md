@@ -1,5 +1,5 @@
 ---
-title: '[LAC] RSI oversold'
+title: LAC — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 2aef2a392f639d8668f6a489c8bb3801ffd6afaf8353d10c76b330fe6e060ec8
 classifier_decision: ingest
 classifier_reason: Material 25.7% decline with a strengthened RSI-oversold transition
   merits durable security research context.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_fb87fac302a5446a1ced
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 73a1b3522099eda6de06ac88f7d135270a9dc1b8ab5c841b67acbb5104e1a1ce
 ---
 
-# [LAC] RSI oversold
+# LAC — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_fb87fac302a5446a1ced|LAC — Lithium Americas Corp. common shares]] (`security_fb87fac302a5446a1ced`)
-- Trigger: `rsi_oversold`
-- Transition: `strengthened`
+- Security: [[securities/security_fb87fac302a5446a1ced|LAC — Lithium Americas Corp. common shares]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Strengthened
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 2.8
 - Period return: -0.2572944259506672170918874379
 - Trigger strength: 0.10839506
 - Previous strength: 0.041799304
-- Source price hash: `73a1b3522099eda6de06ac88f7d135270a9dc1b8ab5c841b67acbb5104e1a1ce`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 25.7% decline with a strengthened RSI-oversold transition merits durable security research context.
+- Decision: Ingest
+- Reason: Material 25.7% decline with a strengthened rsi-oversold transition merits durable security research context.

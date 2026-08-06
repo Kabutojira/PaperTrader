@@ -1,5 +1,5 @@
 ---
-title: '[ASML] Bollinger below lower'
+title: ASML — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: f5f33a74b0ad7723c95f12ebbdade0a8acc879a5243f21926432bd47f7af2ad5
 classifier_decision: ingest
 classifier_reason: Material 15.4% decline with a new Bollinger lower-band breach warrants
   durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_ef35e41886220d51c22c
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 03461855cc0d161211343f15bfd344f9a6dc5276a1edc50de8d288d2d7b11ef3
 ---
 
-# [ASML] Bollinger below lower
+# ASML — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_ef35e41886220d51c22c|ASML — ASML Holding N.V. New York registered shares]] (`security_ef35e41886220d51c22c`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_ef35e41886220d51c22c|ASML — ASML Holding N.V. New York registered shares]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 1590.18
 - Period return: -0.1544576919057611809125953582
 - Trigger strength: 0.02181422065465641499032014172
 - Previous strength: 0
-- Source price hash: `03461855cc0d161211343f15bfd344f9a6dc5276a1edc50de8d288d2d7b11ef3`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 15.4% decline with a new Bollinger lower-band breach warrants durable review.
+- Decision: Ingest
+- Reason: Material 15.4% decline with a new bollinger lower-band breach warrants durable review.

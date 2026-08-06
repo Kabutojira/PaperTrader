@@ -1,5 +1,5 @@
 ---
-title: '[PATH] Bollinger above upper'
+title: PATH — Bollinger above upper
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-08-05'
 updated: '2026-08-05'
 provenance: deterministic-market-monitor
 content_hash: 4b2db672f17ad6b47caf75a4926bbf6b1b0a5a8c86840e115677c68dc3f49612
-classifier_decision: ingest
-classifier_reason: Material Bollinger breakout with a 21.03% period return merits
-  durable wiki ingestion for review.
-related_entity_ids:
-- security_eca976f0076a425ea1bb
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_eca976f0076a425ea1bb
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: 5834724c840fe582815a49fe7197e00f37f120b2c999abbd4f8beb1451f17c7e
 ---
 
-# [PATH] Bollinger above upper
+# PATH — Bollinger above upper
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: PATH — UiPath, Inc. Class A common stock (`security_eca976f0076a425ea1bb`)
-- Trigger: `bollinger_above_upper`
-- Transition: `entered`
+- Security: PATH — UiPath, Inc. Class A common stock
+- Alert: Bollinger above upper
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-07-07 through 2026-08-04
 - Latest adjusted close: 14.100000381469727
 - Period return: 0.210300501559032525123365815
 - Trigger strength: 0.03526998524515099339637124899
 - Previous strength: 0
-- Source price hash: `5834724c840fe582815a49fe7197e00f37f120b2c999abbd4f8beb1451f17c7e`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material Bollinger breakout with a 21.03% period return merits durable wiki ingestion for review.
+- Decision: Skipped
+- Reason: Bearish alert unowned

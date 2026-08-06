@@ -1,5 +1,5 @@
 ---
-title: '[TX] RSI overbought'
+title: TX — RSI overbought
 type: candidate
 status: reviewed
 tags:
@@ -9,11 +9,12 @@ created: '2026-08-05'
 updated: '2026-08-05'
 provenance: deterministic-market-monitor
 content_hash: e4ef2a75b52367a384a1d640b01d0ed7ca4b591498dde2845a307e651f4dc5ae
-classifier_decision: ingest
-classifier_reason: New RSI overbought transition after a material 25.2% period return
-  merits durable wiki review.
-related_entity_ids:
-- security_2c779e81c27b78c556bb
+classifier_decision: skipped
+classifier_reason: bearish_alert_unowned
+alert_direction: bearish
+research_gate: suppressed
+research_gate_reason: bearish_alert_unowned
+related_entity_ids: []
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_2c779e81c27b78c556bb
@@ -29,21 +30,21 @@ candidate_facts:
   source_price_hash: 7ee4570e35c66ddb262959d2b5b113993b4d641019caf73e86af15b901fbf42b
 ---
 
-# [TX] RSI overbought
+# TX — RSI overbought
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_2c779e81c27b78c556bb|TX — Ternium S.A. ADS]] (`security_2c779e81c27b78c556bb`)
-- Trigger: `rsi_overbought`
-- Transition: `entered`
+- Security: [[securities/security_2c779e81c27b78c556bb|TX — Ternium S.A. ADS]]
+- Alert: RSI overbought
+- Direction: Bearish
+- Transition: Entered
 - Period: 2026-07-08 through 2026-08-05
 - Latest adjusted close: 53.709999084472656
 - Period return: 0.252273253644196547167429413
 - Trigger strength: 0.2691640916666666666666666667
 - Previous strength: 0
-- Source price hash: `7ee4570e35c66ddb262959d2b5b113993b4d641019caf73e86af15b901fbf42b`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: New RSI overbought transition after a material 25.2% period return merits durable wiki review.
+- Decision: Skipped
+- Reason: Bearish alert unowned

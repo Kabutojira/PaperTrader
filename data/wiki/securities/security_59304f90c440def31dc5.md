@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-05"
-provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; source_b2d45bca8d0a249be557; deterministic market cache"
+updated: "2026-08-06"
+provenance: "source_rtx_q2_2026_10q_sec; source_rtx_q2_2026_results; source_rtx_q2_2026_results_sec_ex99; source_5392f8ab153edf73d1e7; source_e4822bd4b442ff51063d; source_d73911b42ea0e59df247; source_e5d2d85e77932d3bf56d; source_8b43e53b8703087510ef; source_ad511f12b8de63d3a443; source_b2d45bca8d0a249be557; deterministic market cache"
 security_id: security_59304f90c440def31dc5
 issuer_id: issuer_7e0bd218f603cf838669
 confidence: medium
-next_review: "2026-08-27"
+next_review: "2026-08-20"
 ---
 
 # RTX Corporation common stock
@@ -75,16 +75,32 @@ Primary evidence: [RTX Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/dat
 (`source_rtx_q2_2026_results`). The broader demand mechanism remains documented in
 [[ideas/idea_defense_aerospace]].
 
-## Valuation
+## Valuation and market context
 
-The fresh 27 July 2026 deterministic close is USD 218.42 (retrieved at 20:55:09Z), with fresh USD/EUR
-FX of 0.8794000149. Against RTX's adjusted 2026 EPS guidance of USD 7.10-7.25, the mark is about
-30.1-30.8 times guided adjusted earnings. A bounded 12-month downside case applies 20 times the low
-end of guidance for USD 142.00, or 35.0% below the mark. A base case applies 25 times the USD 7.175
-guidance midpoint for USD 179.38, or 17.9% below the mark. These are scenarios, not price targets:
-adjusted EPS excludes acquisition-accounting and other items, and the multiples explicitly allow
-for strong backlog while discounting engine remediation, leverage, contract execution, and cycle
-normalization. Neither case offers the configured 20% margin of safety at the current price.
+The current deterministic close is USD 222.30999755859375 for 5 August 2026, retrieved at
+12:09:18Z on 6 August, with current USD/EUR FX of 0.866100013256073. RTX's SEC-filed Q2 results
+exhibit raises 2026 adjusted EPS guidance to USD 7.10-7.25 and free-cash-flow guidance to USD
+8.50-8.75 billion. The 10-Q reports USD 8.305 billion of cash, USD 37.383 billion of total debt,
+and 1,365.0 million diluted weighted-average shares for the quarter. The market price is therefore
+about 30.7-31.3 times guided adjusted EPS before separately normalizing acquisition-accounting and
+other excluded items.
+
+The repository's `mature_compounder` template and `earnings_multiple` method provide a bounded
+12-month comparison. The cases deliberately vary both earnings delivery and the multiple because
+backlog growth and raised guidance coexist with net debt, Pratt remediation, fixed-price execution,
+supply constraints, and commercial-cycle risk. They are scenario values, not price targets.
+
+| Case | Probability | Fair value | Key assumptions |
+| --- | ---: | ---: | --- |
+| Bear | 25% | USD 142.00 | Low-end USD 7.10 adjusted EPS at 20x; remediation, contract, supply, or cycle pressure prevents further normalization and compresses the premium multiple. |
+| Base | 50% | USD 179.375 | USD 7.175 guidance midpoint at 25x; backlog converts and raised cash guidance is delivered, but leverage, remediation, and cycle risk retain a discount to the current multiple. |
+| Bull | 25% | USD 246.50 | High-end USD 7.25 adjusted EPS at 34x; defense and commercial demand convert cleanly, margins and cash strengthen, and remediation and execution risks recede enough to sustain a premium multiple. |
+
+At the current mark, deterministic scenario returns are approximately **-36.13% / -19.31% /
++10.88%** for bear/base/bull. Probability-weighted fair value is USD 186.8125, an expected return
+of about **-15.97%** before the medium-confidence adjustment. The configured 20% margin-of-safety
+buy-below price is USD 143.50. A complete valuation is now supportable, but it is decisively
+unattractive relative to cash at the current mark.
 
 The deterministic monitor first recorded entry into the RSI-overbought condition on **2026-07-24**
 after a **13.35%** adjusted-close gain from 25 June to 24 July, at a USD 211.50 close and trigger
@@ -150,28 +166,36 @@ to the bounded unauthenticated check, so it was not treated as newly verified ev
 unchanged SEC filing continues to support the backlog, segment, cash-flow, debt, contract-risk, and
 Pratt-remediation checklist, but no new primary evidence changes those assumptions.
 
-At USD 222.31, the old bounded downside and base reference values of USD 142.00 and USD 179.38 are
-about 36.1% and 19.3% below the mark, respectively. They remain useful adverse-entry checks but do
-not form a scenario-complete schema-v2 valuation because the prior review did not establish a bull
-case and scenario probabilities. The price therefore has not entered a validated buy zone. A full
-review is required to establish a complete current valuation rather than inventing missing scenario
-inputs in this quick check.
+At USD 222.31, the old bounded downside and base reference values of USD 142.00 and USD 179.38 were
+about 36.1% and 19.3% below the mark, respectively. The quick check correctly treated that legacy
+two-case work as incomplete. This full review resolves the schema gap with the explicit three-case
+valuation above; it confirms rather than reverses the adverse entry conclusion.
 
 ## Changes since prior review
 
-- **Evidence:** the Q2 filing content is unchanged; no later company financial filing was found.
-- **Thesis, catalysts, risks, and invalidation:** unchanged. Backlog conversion and cash generation
-  remain supportive; Pratt remediation, leverage, fixed-price execution, supply, budget timing, and
-  cycle sensitivity remain controlling risks.
-- **Valuation and buy zone:** the USD 222.31 mark is still above both prior bounded reference values,
-  but the legacy assessment cannot support the canonical scenario-complete gate.
-- **Relationship gate:** changed since the baseline result. The defense-and-aerospace relationship
-  is now accepted, removing the baseline's absent-relationship blocker but not the valuation or
-  timing blockers.
-- **Confidence and action:** medium confidence is unchanged. Persistent RSI-overbought momentum is
-  adverse entry timing rather than a short thesis or paper-buy signal. Exactly one dependent full
-  security review is warranted; no strategy, signal, order, allocation, or accounting change is
-  warranted here.
+- **Evidence:** the Q2 10-Q was retrieved again at its unchanged SHA-256. The issuer's Q2 release
+  was independently retrieved as the SEC-filed Exhibit 99, establishing a current retained primary
+  source for raised adjusted EPS and free-cash-flow guidance. No later company financial filing was
+  identified in the SEC submissions record.
+- **Assumptions and scenarios:** the prior quick check's unsupported valuation is replaced by a
+  scenario-complete `mature_compounder` earnings-multiple valuation. Bear/base values remain USD
+  142.00/USD 179.375; the new bull value is USD 246.50 and probabilities are 25%/50%/25%.
+  Probability-weighted value is USD 186.8125 versus the USD 222.31 mark.
+- **Thesis:** unchanged. Funded backlog, segment growth, margin improvement, and cash generation
+  support the causal thesis, but RTX remains a diversified commercial-and-defense instrument rather
+  than a pure replenishment exposure.
+- **Catalysts, risks, and invalidation:** unchanged. Backlog conversion, awards, cash delivery, and
+  remediation progress remain the catalysts; Pratt liabilities, leverage, fixed-price execution,
+  supply constraints, budget timing, and commercial cyclicality remain the controlling risks.
+- **Blockers and gaps:** `valuation_unsupported` is resolved, and the accepted
+  [[relationships/relationship_1655ac715c33506ec7da|defense-and-aerospace relationship]] remains
+  current. The security nevertheless fails expected-return, base-return, payoff-asymmetry, and
+  margin-of-safety gates; medium confidence and adverse timing remain soft gaps.
+- **Rating and action:** the prior **Unrated / Watch** conclusion changes to **Sell / Avoid** because
+  the complete medium-confidence valuation has materially negative expected and base returns. This
+  is not a short signal: no short strategy exists, the security is unowned, and RSI-overbought
+  momentum alone cannot authorize a paper trade. No strategy, signal, order, allocation, or
+  accounting change is warranted.
 
 ## Catalysts and invalidation
 
@@ -182,11 +206,11 @@ delayed or cancelled, supply constraints cap delivery, or commercial aerospace d
 
 ## Disposition
 
-Status: **watching** with **medium** confidence and **baseline** assessment eligibility. Business
-quality, funded demand, cash generation, and trading liquidity permit comparison, but the base case
-has negative upside and the current mark is overbought. The accepted
-[[relationships/relationship_1655ac715c33506ec7da|defense-and-aerospace relationship]] confirms
-positive exposure but does not remove the valuation or timing blockers. Review by **2026-08-27**, or
-sooner after a major award, program charge, engine-liability, guidance, or valuation change. No
-conviction strategy or paper signal is proposed. See the complete [[research-catalog]] and
-append-only [[log]] for context.
+Status: **watching** with **medium** confidence and a scenario-complete but **allocation-ineligible**
+assessment. Business quality, funded demand, cash generation, the accepted relationship, and deep
+trading liquidity support continued research coverage. The USD 186.8125 weighted value, USD 179.375
+base value, USD 143.50 buy-below level, and persistent overbought momentum do not support ownership
+at the USD 222.31 mark. The canonical conclusion is **Sell / Avoid**, not a short signal. Review by
+**2026-08-20**, or sooner after a major award, program charge, engine-liability, guidance, or
+valuation change. No conviction strategy or paper signal is justified. See the complete
+[[research-catalog]] and append-only [[log]] for context.

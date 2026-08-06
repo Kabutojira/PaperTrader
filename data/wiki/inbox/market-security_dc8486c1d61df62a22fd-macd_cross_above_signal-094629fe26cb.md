@@ -1,5 +1,5 @@
 ---
-title: '[SU] MACD cross above signal'
+title: SU — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 094629fe26cbfebc154af85924a3e68b697a5a4de8c4e791e0b0041decd0ad13
 classifier_decision: ingest
 classifier_reason: A new MACD bullish crossover with a positive 2.7% period return
   is a material indicator transition for the security.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_dc8486c1d61df62a22fd
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca
 ---
 
-# [SU] MACD cross above signal
+# SU — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: SU — Schneider Electric SE ordinary shares (`security_dc8486c1d61df62a22fd`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_dc8486c1d61df62a22fd|SU — Schneider Electric SE ordinary shares]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-02 through 2026-07-30
 - Latest adjusted close: 283.45001220703125
 - Period return: 0.027365054286226479633309835
 - Trigger strength: 0.2767094858885180534637187821
 - Previous strength: 0
-- Source price hash: `27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: A new MACD bullish crossover with a positive 2.7% period return is a material indicator transition for the security.
+- Decision: Ingest
+- Reason: A new macd bullish crossover with a positive 2.7% period return is a material indicator transition for the security.

@@ -1,5 +1,5 @@
 ---
-title: '[META] Bollinger below lower'
+title: META — Bollinger below lower
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 4573b7d5179670375be0d67d7a4e3d74a59cd7ec05273c37bd5881344b9cd1ac
 classifier_decision: ingest
 classifier_reason: Material new Bollinger-band breach with a 12.05% monthly decline
   warrants durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_d12e746b3c9d392183cc
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0
 ---
 
-# [META] Bollinger below lower
+# META — Bollinger below lower
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: META — Meta Platforms, Inc. Class A common stock (`security_d12e746b3c9d392183cc`)
-- Trigger: `bollinger_below_lower`
-- Transition: `entered`
+- Security: [[securities/security_d12e746b3c9d392183cc|META — Meta Platforms, Inc. Class A common stock]]
+- Alert: Bollinger below lower
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-01 through 2026-07-30
 - Latest adjusted close: 539.030029296875
 - Period return: -0.1205396340160946639517203922
 - Trigger strength: 0.02191114086450073329319034629
 - Previous strength: 0
-- Source price hash: `d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material new Bollinger-band breach with a 12.05% monthly decline warrants durable review.
+- Decision: Ingest
+- Reason: Material new bollinger-band breach with a 12.05% monthly decline warrants durable review.

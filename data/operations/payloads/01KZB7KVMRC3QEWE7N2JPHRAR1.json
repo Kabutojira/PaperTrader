@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_jfxHHglA5Eo",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-06T09:49:03Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_jfxHHglA5Eo",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "jfxHHglA5Eo",
+    "video_title": "China Outbuilds America 230-to-1. Saronic Has a Plan",
+    "video_url": "https://www.youtube.com/watch?v=jfxHHglA5Eo"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZB7KVMRC3QEWE7N2JPHRAR1",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=jfxHHglA5Eo"
+  ]
+}

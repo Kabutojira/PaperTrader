@@ -2,8 +2,10 @@
   "entity_id": "security_59304f90c440def31dc5",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-05T22:17:05Z",
     "baseline_operation_id": "01KYHW5710M89EMQMNDY940EKH",
     "changed_gate": "accepted_relationship_now_current_but_legacy_valuation_cannot_support_scenario_complete_decision",
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-05T22:09:27Z",
     "market_data_date": "2026-08-05",
     "merged_source_price_hashes": [
@@ -14,6 +16,7 @@
     "period_end": "2026-08-05",
     "period_start": "2026-07-02",
     "quick_check_operation_id": "01KYY98DWGST45EN32F928GMGG",
+    "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
     "research_reasons": [
       {
         "cause": "rsi_overbought_entered",
@@ -30,6 +33,16 @@
       {
         "cause": "accepted_relationship_changed_since_baseline_and_legacy_valuation_is_not_scenario_complete",
         "source_ref": "data/wiki/securities/security_59304f90c440def31dc5.md"
+      },
+      {
+        "dedupe_key": "security_research:security_59304f90c440def31dc5:allocation-maintenance:2026-08-05T22:17:05Z",
+        "observed_at": "2026-08-06T09:50:05Z",
+        "prompt": "Revalidate security_59304f90c440def31dc5 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_rtx_q2_2026_10q_sec",
+          "source_rtx_q2_2026_results"
+        ]
       }
     ],
     "security_id": "security_59304f90c440def31dc5",
@@ -38,7 +51,7 @@
       "rsi_overbought"
     ]
   },
-  "objective": "Fully reassess RTX after persistent RSI-overbought momentum, acceptance of the defense relationship, and the legacy valuation's missing schema-v2 bull case and probabilities.",
+  "objective": "Fully reassess RTX after persistent RSI-overbought momentum, acceptance of the defense relationship, and the legacy valuation's missing schema-v2 bull case and probabilities. | Additional cause: Revalidate security_59304f90c440def31dc5 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZA04098D4DF0J4SFMJK1TDD",
   "operation_type": "security_research",
   "payload_version": 1,
@@ -46,6 +59,8 @@
     "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-1d1f51178b2e.md",
     "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-2a2e6bf5ce40.md",
     "data/wiki/inbox/market-security_59304f90c440def31dc5-rsi_overbought-8910e4772383.md",
-    "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+    "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+    "source_rtx_q2_2026_10q_sec",
+    "source_rtx_q2_2026_results"
   ]
 }

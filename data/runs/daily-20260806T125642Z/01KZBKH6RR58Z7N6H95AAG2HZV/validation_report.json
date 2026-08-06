@@ -1,0 +1,24 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-terra"
+  },
+  "changed_paths": [
+    "data/wiki/daily-reports/daily-report_20260806.md",
+    "data/wiki/podcasts/daily-podcast_20260806T125642Z.md"
+  ],
+  "effective_model": "gpt-5.6-terra",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 80,
+  "mutation_policy": "routine_research",
+  "operation_id": "01KZBKH6RR58Z7N6H95AAG2HZV",
+  "passed": true,
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "run_id": "daily-20260806T125642Z",
+  "timeout_seconds": 1200,
+  "validation_version": 1,
+  "weighted_cost": "2.5"
+}

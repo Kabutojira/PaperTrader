@@ -1,5 +1,5 @@
 ---
-title: '[CSIQ] MACD cross above signal'
+title: CSIQ — MACD cross above signal
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 50d5f6aaa5bd0ede4193bebf9753532ed4351a6e91f8f9609ed6366be018f897
 classifier_decision: ingest
 classifier_reason: New MACD bullish crossover with a 4.3% period return merits durable
   market-transition tracking.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_099561384c0f5e697727
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 270e91b06dfe84b0d6cdf39e717e04a28a6be6ea43eefb4c1ccc4ecd7bdecfcb
 ---
 
-# [CSIQ] MACD cross above signal
+# CSIQ — MACD cross above signal
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: CSIQ — Canadian Solar Inc. common shares (`security_099561384c0f5e697727`)
-- Trigger: `macd_cross_above_signal`
-- Transition: `entered`
+- Security: [[securities/security_099561384c0f5e697727|CSIQ — Canadian Solar Inc. common shares]]
+- Alert: MACD cross above signal
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-07-02 through 2026-07-31
 - Latest adjusted close: 15.079999923706055
 - Period return: 0.042876893770640269087656809
 - Trigger strength: 0.1182496477096628919182569331
 - Previous strength: 0
-- Source price hash: `270e91b06dfe84b0d6cdf39e717e04a28a6be6ea43eefb4c1ccc4ecd7bdecfcb`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: New MACD bullish crossover with a 4.3% period return merits durable market-transition tracking.
+- Decision: Ingest
+- Reason: New macd bullish crossover with a 4.3% period return merits durable market-transition tracking.

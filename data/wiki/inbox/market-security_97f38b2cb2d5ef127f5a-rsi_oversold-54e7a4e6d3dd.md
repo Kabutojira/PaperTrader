@@ -1,5 +1,5 @@
 ---
-title: '[PL] RSI oversold'
+title: PL — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: 54e7a4e6d3dd52f5bc20cb80b496cf6f16e8fa8eefd1d1dfe4ee8c2b7fb15b8f
 classifier_decision: ingest
 classifier_reason: Material 35.4% decline with a new RSI-oversold transition merits
   durable review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_97f38b2cb2d5ef127f5a
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 7ab9f36f1bba068eaa6d42bd40ae774f3083f26fb652c90927f5304142dcac3f
 ---
 
-# [PL] RSI oversold
+# PL — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_97f38b2cb2d5ef127f5a|PL — Planet Labs PBC Class A common stock]] (`security_97f38b2cb2d5ef127f5a`)
-- Trigger: `rsi_oversold`
-- Transition: `entered`
+- Security: [[securities/security_97f38b2cb2d5ef127f5a|PL — Planet Labs PBC Class A common stock]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-29 through 2026-07-28
 - Latest adjusted close: 20.2
 - Period return: -0.3542199630249987706188779555
 - Trigger strength: 0.03823666133333333333333333333
 - Previous strength: 0
-- Source price hash: `7ab9f36f1bba068eaa6d42bd40ae774f3083f26fb652c90927f5304142dcac3f`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 35.4% decline with a new RSI-oversold transition merits durable review.
+- Decision: Ingest
+- Reason: Material 35.4% decline with a new rsi-oversold transition merits durable review.

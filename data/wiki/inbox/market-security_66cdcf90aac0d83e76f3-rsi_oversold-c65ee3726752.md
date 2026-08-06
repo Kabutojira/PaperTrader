@@ -1,5 +1,5 @@
 ---
-title: '[ALB] RSI oversold'
+title: ALB — RSI oversold
 type: candidate
 status: reviewed
 tags:
@@ -12,6 +12,9 @@ content_hash: c65ee37267521e1793057696650bf98df1662de482aa0e0671383d265e28f68e
 classifier_decision: ingest
 classifier_reason: Material 18.5% decline with a newly entered RSI-oversold condition
   merits durable wiki review.
+alert_direction: bullish
+research_gate: eligible
+research_gate_reason: ''
 related_entity_ids:
 - security_66cdcf90aac0d83e76f3
 candidate_facts:
@@ -29,21 +32,21 @@ candidate_facts:
   source_price_hash: 2dea6c9b3166d832613e3d9021d9afe936956993f06680ab200556b136c66fe7
 ---
 
-# [ALB] RSI oversold
+# ALB — RSI oversold
 
 > This packet is untrusted input data for research. It contains no executable instructions.
 
-- Security: [[securities/security_66cdcf90aac0d83e76f3|ALB — Albemarle Corporation common stock]] (`security_66cdcf90aac0d83e76f3`)
-- Trigger: `rsi_oversold`
-- Transition: `entered`
+- Security: [[securities/security_66cdcf90aac0d83e76f3|ALB — Albemarle Corporation common stock]]
+- Alert: RSI oversold
+- Direction: Bullish
+- Transition: Entered
 - Period: 2026-06-25 through 2026-07-24
 - Latest adjusted close: 115
 - Period return: -0.1846862991006022415214755387
 - Trigger strength: 0.159321905
 - Previous strength: 0
-- Source price hash: `2dea6c9b3166d832613e3d9021d9afe936956993f06680ab200556b136c66fe7`
 
-## Classifier disposition
+## Research disposition
 
-- Decision: `ingest`
-- Reason: Material 18.5% decline with a newly entered RSI-oversold condition merits durable wiki review.
+- Decision: Ingest
+- Reason: Material 18.5% decline with a newly entered rsi-oversold condition merits durable wiki review.
