@@ -1,0 +1,77 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-07T09:35:22Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 16,
+  "outcomes": [
+    {
+      "operation_id": "01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ3ZR8JZCFH75XC7S7665S",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ41PRX8WGX7D75GT71285",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ43N8H9VGQ3TB07HNFKYN",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ44MGNEA7NF7WHEQSW8XW",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ46K0XZT9ZCKA9P2QQNW0",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ47J8A1SSF0NR06CZSTAX",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDQ49GRDQNS8H3NK59HRBBB",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDR23M00Q9XYAQZ6RKQWSFS",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDR24K88V57958W94SW5MA2",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDR25JGXDWR88KX1GVAHB1K",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDR26HR7DT00RX049FQX19Z",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDRVRX8Q62Z4KQ7YZV0RA5N",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDRVTVRSXKYD7B5K63KAZD4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZDRVVV0BFGVXH10CAY670MZ",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-20260807T085336Z-terafab",
+  "started_at": "2026-08-07T09:00:22Z"
+}

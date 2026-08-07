@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDQ47J8A1SSF0NR06CZSTAX",
+  "status": "succeeded",
+  "summary": "Accepted the Terafab-to-TSMC relationship as a positive bridge beneficiary with medium sensitivity and medium confidence. SpaceX expects significant third-party compute sourcing to continue while internal capability develops, preserving leading-node and advanced-packaging demand. The edge explicitly reverses if qualified Terafab insourcing displaces more TSMC volume than the ramp creates; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "claim": "SpaceX expects significant third-party compute sourcing to continue during the internal Terafab buildout."
+    },
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "claim": "Nvidia identifies dependence on external foundry, memory and packaging partners including TSMC, linking current Nvidia-led demand to TSMC production."
+    },
+    {
+      "source": "https://investor.tsmc.com/static/annualReports/2025/english/index.html",
+      "claim": "TSMC's annual report supports leading-node, advanced-packaging and manufacturing-scale capability but not a Terafab-specific contract."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_terafab_tsm.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted TSMC as a medium-sensitivity Terafab bridge beneficiary while making qualified long-run insourcing the explicit reversal condition."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent Terafab-to-TSMC edge existed before this operation.",
+      "The accepted row contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, research page and review timestamps.",
+      "The maintained page preserves both external-sourcing bridge demand and the conditional long-run displacement risk.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

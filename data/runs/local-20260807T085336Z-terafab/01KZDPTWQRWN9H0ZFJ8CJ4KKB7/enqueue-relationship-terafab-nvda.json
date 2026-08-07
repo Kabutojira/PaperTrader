@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_terafab_nvda",
+  "dedupe_key": "relationship_research:relationship_terafab_nvda:terafab-launch:2026-08-07",
+  "prompt": "Review the causal Terafab relationship to Nvidia.",
+  "inputs": {
+    "relationship_id": "relationship_terafab_nvda",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "hypothesis": "Terafab and orbital AI demand can increase Nvidia system, networking, software and specialized space-compute economics before any unannounced wafer-production relationship."
+  },
+  "source": "idea_research:01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": ["01KZDPTWQRWN9H0ZFJ8CJ4KKB7"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "https://nvidianews.nvidia.com/news/space-computing",
+    "https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents"
+  ],
+  "max_attempts": 3
+}

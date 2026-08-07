@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nvda_space_computing_20260316",
+  "url": "https://nvidianews.nvidia.com/news/space-computing",
+  "canonical_url": "https://nvidianews.nvidia.com/news/space-computing",
+  "source_type": "issuer_release",
+  "title": "NVIDIA introduces accelerated computing platform for space",
+  "publisher": "NVIDIA Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "6b493750bba1116196e526df345681bacd274244f337fafd0ce35081b3ff29d2",
+  "related_entity_ids": "security_33d9c44facc75c726c7d",
+  "checked_at": "2026-08-07T09:23:01Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "NVIDIA introduced the Space-1 Vera Rubin Module for later availability and named current space-platform adopters, establishing a product channel without quantified SpaceX revenue.",
+  "summary": "The issuer release supplies current product, availability, capability and customer-adoption evidence for NVIDIA's orbital-compute opportunity while leaving revenue and SpaceX-specific economics unquantified.",
+  "run_id": "local-20260807T085336Z-terafab"
+}

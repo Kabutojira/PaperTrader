@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-08-07T09:35:21Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZDRVVV0BFGVXH10CAY670MZ",
+  "passed": true,
+  "run_id": "local-20260807T085336Z-terafab",
+  "validation_version": 1
+}

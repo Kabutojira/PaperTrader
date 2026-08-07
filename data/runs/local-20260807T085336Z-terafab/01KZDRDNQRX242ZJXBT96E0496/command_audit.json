@@ -1,0 +1,643 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security-context",
+        "--security-id",
+        "security_33d9c44facc75c726c7d"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research security-context --security-id security_33d9c44facc75c726c7d",
+      "completed_at": "2026-08-07T09:21:41Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:21:40Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_space_computing_20260316_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "2c9d005094aa25668d7d3faf603cf3705ff9b7d15c5343ff6d7e308e92a76295",
+            137618,
+            384
+          ],
+          "before": [
+            "file",
+            "eac19fd84df74c46239f8354286cefe214011998f312bfdae8c5b2ad6a3dd68f",
+            137015,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "f3e54bb2a74fd26092c725895607c2e50a6d51a6422c483b32bc38d85a21ddfc",
+            83159,
+            384
+          ],
+          "before": [
+            "file",
+            "7a67dbe27c5a03010a66b7f30fb74c8e0568294833e2fe2ad72f67df5dd426cb",
+            82757,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_space_computing_20260316_request.json",
+      "completed_at": "2026-08-07T09:23:56Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "803e70e160e1a7c8c0aec041c6a327378ef864e3a8fb7a28637305dbaa10d660",
+          1076,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_space_computing_20260316_request.json"
+      },
+      "started_at": "2026-08-07T09:23:55Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_vera_spacexai_20260531_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "90eb459c6b788b62ea129699a5c8e72c1905f93c0ad61e1e7ad0617b222d53d6",
+            138204,
+            384
+          ],
+          "before": [
+            "file",
+            "2c9d005094aa25668d7d3faf603cf3705ff9b7d15c5343ff6d7e308e92a76295",
+            137618,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "e6c297e9fec77bd0aef942c5178c27ea61891b6735ef7aa68e3fcda3aea01e6c",
+            83581,
+            384
+          ],
+          "before": [
+            "file",
+            "f3e54bb2a74fd26092c725895607c2e50a6d51a6422c483b32bc38d85a21ddfc",
+            83159,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_vera_spacexai_20260531_request.json",
+      "completed_at": "2026-08-07T09:23:57Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "1e85d6cd9899074a8f2dbd1b5ac18abb7f1026ffc604c6e25646fb7686c49be1",
+          1081,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_vera_spacexai_20260531_request.json"
+      },
+      "started_at": "2026-08-07T09:23:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_spacex_terafab_prospectus_20260605_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "74851c67a7f78b876a9dd5628703e953652524c9d27f45cb19fff9f119e0800f",
+            138798,
+            384
+          ],
+          "before": [
+            "file",
+            "90eb459c6b788b62ea129699a5c8e72c1905f93c0ad61e1e7ad0617b222d53d6",
+            138204,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "296194685a3ddb92e20120d74de1ce8bf2325dfcb9722a69780341a92b740299",
+            84199,
+            384
+          ],
+          "before": [
+            "file",
+            "e6c297e9fec77bd0aef942c5178c27ea61891b6735ef7aa68e3fcda3aea01e6c",
+            83581,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_spacex_terafab_prospectus_20260605_request.json",
+      "completed_at": "2026-08-07T09:23:59Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "733a9381dc40bdfa66bad7057f77075110e235d2771b26d14653a3be2df76b2d",
+          1280,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_spacex_terafab_prospectus_20260605_request.json"
+      },
+      "started_at": "2026-08-07T09:23:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/security_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d0d80469db92497fa7cdd39b0e733ca8843e8d24ec64df40d33877e9a328cc20",
+            50967,
+            384
+          ],
+          "before": [
+            "file",
+            "e0f68b1cc6e3b0af834d01703501cb80a85e9e9efec5e8a2766e42f24f9e1714",
+            50922,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/security_upsert_request.json",
+      "completed_at": "2026-08-07T09:27:25Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "a397aae3b1bcb11db30cf6faa912a53eb14b89d58539080b13e25c6c69634a93",
+          1169,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/security_upsert_request.json"
+      },
+      "started_at": "2026-08-07T09:27:25Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/assessment_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "97ae4b5c3b60b7cb79f956ba9a8a9ca5606c5bc3a1c8369d644807a64d86449e",
+            173517,
+            384
+          ],
+          "before": [
+            "file",
+            "5f43ac7e12313b3f8ca3571ad3546c989dee827283131899743aa870f43b899f",
+            170221,
+            384
+          ],
+          "path": "data/tables/security_assessment_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "e0b7ebf99616d8e1276c3b3b10c78953b1e98d71bc9705deeb2357b1a63b886e",
+            121206,
+            384
+          ],
+          "before": [
+            "file",
+            "e3b975bde88cd77a9c57441ff6ad1fc2a1a51d93da01e54daf9d8452f8f042e3",
+            120901,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/assessment_upsert_request.json",
+      "completed_at": "2026-08-07T09:27:28Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "065c8edf11dd345f63961e1d3b60859cdad1cd07aa4588e0ec657a81c9ca6b29",
+          2660,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/assessment_upsert_request.json"
+      },
+      "started_at": "2026-08-07T09:27:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh.json",
+      "completed_at": "2026-08-07T09:27:45Z",
+      "exit_code": 2,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "f6c4161b606df1fee09451307c9ab832a69d7272563ae14e6f65848b2291176b",
+          1610,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh.json"
+      },
+      "started_at": "2026-08-07T09:27:45Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh.json",
+      "completed_at": "2026-08-07T09:27:47Z",
+      "exit_code": 2,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "97ef8d5e8a7cac4811b1a7500ea47e6c3e415775eb41522ff6fb6e6f52dcee19",
+          1555,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh.json"
+      },
+      "started_at": "2026-08-07T09:27:46Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh.json"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh.json",
+      "completed_at": "2026-08-07T09:27:48Z",
+      "exit_code": 2,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "33dbc086e68728217f2e0bc04667768b31e0ba140cd3cc349fefa7b978cc27d5",
+          1531,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh.json"
+      },
+      "started_at": "2026-08-07T09:27:48Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh-v2.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDRVRX8Q62Z4KQ7YZV0RA5N.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "b9c8a2982d27cdf2e7dd3ef99ce2fcc501e3960b7072868854db1d4c333bae2d",
+            145994,
+            384
+          ],
+          "before": [
+            "file",
+            "3858a9b1f3839c7e9b3ec672ac6eac03708fe735b1bf2aabf976b15de6ccaab4",
+            145409,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ed8fbcb27cb6a9e1a634c4c8be1bc872facae2644cdb1314942757d7f2c49914",
+            1124,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDRVRX8Q62Z4KQ7YZV0RA5N.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh-v2.json",
+      "completed_at": "2026-08-07T09:28:57Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "69e7463bb589ec65b10d2ef347a33b5189d8aa78f48c2cc37f8d963ff2d8a998",
+          1388,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh-v2.json"
+      },
+      "started_at": "2026-08-07T09:28:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh-v2.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDRVTVRSXKYD7B5K63KAZD4.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "45d875638d948323873aa31fe12c0d4f8cb7ea50ff642f6269a595e2f1129bf2",
+            146558,
+            384
+          ],
+          "before": [
+            "file",
+            "b9c8a2982d27cdf2e7dd3ef99ce2fcc501e3960b7072868854db1d4c333bae2d",
+            145994,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "70aa705d718f2e0f73862d4a436ea82d0db0e628be910d48fee08e67be7bed23",
+            1076,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDRVTVRSXKYD7B5K63KAZD4.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh-v2.json",
+      "completed_at": "2026-08-07T09:28:59Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "b497b74d7c5978f8bf1eade8ad6bca2cef1d23e11a3e9e6145a7808ceccb13b0",
+          1334,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh-v2.json"
+      },
+      "started_at": "2026-08-07T09:28:58Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh-v2.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDRVVV0BFGVXH10CAY670MZ.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "600b730f1672ce59c05ccdc3864b75f0f376cd9c54e7095937a013884e1e7533",
+            147093,
+            384
+          ],
+          "before": [
+            "file",
+            "45d875638d948323873aa31fe12c0d4f8cb7ea50ff642f6269a595e2f1129bf2",
+            146558,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "11808b96b6b218d5b0edba017f7de276f317b36d2231e923ab445b09ca99d392",
+            1076,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDRVVV0BFGVXH10CAY670MZ.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh-v2.json",
+      "completed_at": "2026-08-07T09:29:00Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "ce9c0590163747d2412467e7948c6f3197dd2787eafb712a95b31311073316c8",
+          1321,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh-v2.json"
+      },
+      "started_at": "2026-08-07T09:29:00Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-08-07T09:29:21Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:29:20Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-08-07T09:29:23Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:29:22Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-07T09:29:25Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:29:24Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-08-07T09:29:28Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:29:26Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "portfolio",
+        "reconcile",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader portfolio reconcile --strict",
+      "completed_at": "2026-08-07T09:29:30Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:29:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security-context",
+        "--security-id",
+        "security_33d9c44facc75c726c7d"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research security-context --security-id security_33d9c44facc75c726c7d",
+      "completed_at": "2026-08-07T09:29:31Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:29:31Z"
+    }
+  ],
+  "operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-20260807T085336Z-terafab"
+}

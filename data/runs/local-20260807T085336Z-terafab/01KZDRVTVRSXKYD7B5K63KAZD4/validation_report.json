@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-08-07T09:33:54Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZDRVTVRSXKYD7B5K63KAZD4",
+  "passed": true,
+  "run_id": "local-20260807T085336Z-terafab",
+  "validation_version": 1
+}

@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_terafab_samsung_common_gdr",
+  "dedupe_key": "relationship_research:relationship_terafab_samsung_common_gdr:terafab-launch:2026-08-07",
+  "prompt": "Review the causal Terafab relationship to Samsung Electronics common GDR.",
+  "inputs": {
+    "relationship_id": "relationship_terafab_samsung_common_gdr",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_567d0d575bbd30aaa91d",
+    "hypothesis": "Samsung can supply HBM, memory, foundry and packaging during a Terafab ramp, while internalized memory and logic create only long-run conditional displacement risk."
+  },
+  "source": "idea_research:01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": ["01KZDPTWQRWN9H0ZFJ8CJ4KKB7"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
+    "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+  ],
+  "max_attempts": 3
+}

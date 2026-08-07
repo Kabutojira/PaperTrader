@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_intc",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_dfa34d4b9050964b465e",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Intel could monetize process integration, fabrication and advanced-packaging expertise through Terafab and could gain utilization, services or IP economics, but the only current Terafab evidence describes Intel's contribution as proposed and discloses no definitive agreement, work scope, process node, fees, capacity, IP terms, milestones, revenue or cash flow.",
+  "sensitivity": "low",
+  "confidence": "low",
+  "catalyst": "Intel and SpaceX execute a binding Terafab agreement that identifies process, packaging or IP scope, milestones and measurable fees, utilization, revenue, margin or cash-flow economics material to Intel.",
+  "invalidation": "The proposed framework does not become definitive; Intel provides no material technology or services; scope is immaterial or uneconomic; process and packaging milestones slip; IP or governance conflicts block execution; or Intel continues to disclose no measurable Terafab economics.",
+  "status": "rejected",
+  "research_page": "data/wiki/relationships/relationship_terafab_intc.md",
+  "last_reviewed_at": "2026-08-07T09:08:00Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

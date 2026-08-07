@@ -1,0 +1,938 @@
+---
+title: "PaperTrader daily report — 2026-08-07"
+type: daily-report
+status: maintained
+tags:
+  - daily-report
+created: "2026-08-07"
+updated: "2026-08-07"
+provenance: deterministic-report-generator
+run_id: "local-20260807T085336Z-terafab"
+snapshot_id: "decision_7291ada3bc3dd4554729"
+---
+
+# PaperTrader daily report — 2026-08-07
+
+## 1. Investor decision summary
+
+<!-- papertrader-investor-brief:start -->
+# No trade — hold 100% cash
+
+- **Investment data:** Degraded — review investment data gaps
+- **Operations:** Attention required
+- **As of:** `2026-08-07T09:35:34Z`
+- **Cash:** 10000 EUR (100%)
+- **Gross exposure:** 0 EUR
+- **Approved target cash:** 10000 EUR (100%)
+- **Actionable signals:** 0
+- **Evidence state:** provisional cash valuation unsupported
+
+## Approved target changes
+
+No approved target changes.
+
+## Actionable signals
+
+No actionable trade signals.
+
+## Price action alerts
+
+- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Bollinger Above Upper** (`2026-08-06`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b): Volume Anomaly** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and equipment purchases reached USD 28.476 billion, customer concentration and controller governance are material, and the USD 125.33 mark embeds extreme revenue multiples. The deterministic assessment recorded Hold, Watch, 72 quality, low confidence, and USD 50/USD 110/USD 195 bear/base/bull fair values with USD 109 probability-weighted value. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
+- **[RTX — RTX Corporation](securities/security_59304f90c440def31dc5): Rsi Overbought** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
+- **[RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809): Rsi Oversold** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Rsi Overbought** (`2026-08-06`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Rsi Overbought** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
+- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Rsi Overbought** (`2026-08-06`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Bollinger Above Upper** (`2026-08-06`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c): Volume Anomaly** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed the full Fluence fiscal Q3 review under an isolated retry run so the immutable assessment links unambiguously. Record order intake, 12.6 GW storage backlog and data-centre awards confirm high grid-storage demand sensitivity, but 5.1% quarterly gross margin, 48% customer concentration, a 72% inventory increase, USD 366.5 million nine-month operating cash use and reduced guidance show fragile shareholder economics. Exact filing inputs refine the scenarios to USD 4.59/USD 11.09/USD 20.84 and USD 10.2775 weighted value against the USD 14.23 mark. The canonical result remains complete but ineligible Sell / Avoid; no strategy or paper trade was created. Exactly one dependent solar-storage idea refresh, Idea research for Solar, storage, and grid-flexibility reset on 2026-08-06, was enqueued.
+- **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687): Volume Anomaly** (`2026-08-06`)
+  - Research: **waiting**
+  - Decision: High-priority security research is waiting on its scheduling constraints.
+- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Volume Anomaly** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-06`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3): Volume Anomaly** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[ABCL — AbCellera Biologics Inc.](security-catalog#security-security_7bf8f4c9cc12ae410e40): Volume Anomaly** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Macd Cross Above Signal** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a): Macd Cross Above Signal** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1): Volume Anomaly** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
+- **[FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c): Sma 50 Cross Below 200** (`2026-08-06`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[AMAT — Applied Materials, Inc.](security-catalog#security-security_0a56aa634d077fe5796f): Macd Cross Above Signal** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[ABCL — AbCellera Biologics Inc.](security-catalog#security-security_7bf8f4c9cc12ae410e40): Macd Cross Above Signal** (`2026-08-06`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+
+## Research decisions this run
+
+- **[Terafab and the vertically coordinated AI hardware stack](ideas/idea_terafab_ai_industrial_stack) — succeeded:** Created one maintained Terafab AI-industrial-stack idea from current primary project, issuer and regulatory evidence. The thesis is a staged hybrid buildout: SpaceX, xAI and Tesla can create captive demand, while Nvidia, Intel, ASML, TSMC, Samsung and other suppliers remain essential until binding agreements, process technology, tools, yield and p…
+- **[Terafab AI industrial stack to NVIDIA](relationships/relationship_terafab_nvda) — succeeded:** Accepted the positive beneficiary relationship from the Terafab AI industrial stack to NVIDIA with medium sensitivity and medium confidence. Current Nvidia product disclosures and the SpaceX prospectus establish a direct channel through Vera Rubin systems, orbital modules, networking, interconnect and software while internal fabrication is develop…
+- **[Terafab AI industrial stack to SpaceX listed equity](relationships/relationship_terafab_spcx) — succeeded:** Accepted the positive beneficiary relationship from the Terafab AI industrial stack to SpaceX listed equity with high sensitivity and medium confidence. SpaceX is the proposed owner, principal user and systems integrator, creating material supply-security and deployment upside if the campus qualifies. The edge also preserves SpaceX's direct exposu…
+- **[Terafab AI industrial stack to Tesla](relationships/relationship_terafab_tsla) — succeeded:** Accepted the positive beneficiary relationship from the Terafab AI industrial stack to Tesla with medium sensitivity and medium confidence. Tesla's custom vehicle, autonomy and robotics inference hardware creates a plausible supply-security and iteration channel if Terafab reaches competitive qualification. The non-binding framework, absent commer…
+- **[Terafab AI industrial stack to Intel](relationships/relationship_terafab_intc) — succeeded:** Rejected the proposed Terafab-to-Intel beneficiary relationship at low sensitivity and low confidence. Intel's process, foundry and advanced-packaging capabilities fit the project, but the current record explicitly describes only a proposed contribution that may not become definitive and supplies no scope, IP terms, milestones or measurable shareh…
+- **[Terafab AI industrial stack to ASML](relationships/relationship_terafab_asml) — succeeded:** Accepted the positive beneficiary relationship from the Terafab AI industrial stack to ASML with medium sensitivity and medium confidence. Advanced logic or memory fabrication requires production lithography, software, upgrades and service, while Terafab has disclosed neither a process node nor a tool order. xLight remains a prototype source optio…
+- **[Terafab AI industrial stack to TSMC](relationships/relationship_terafab_tsm) — succeeded:** Accepted the Terafab-to-TSMC relationship as a positive bridge beneficiary with medium sensitivity and medium confidence. SpaceX expects significant third-party compute sourcing to continue while internal capability develops, preserving leading-node and advanced-packaging demand. The edge explicitly reverses if qualified Terafab insourcing displac…
+- **[Terafab AI industrial stack to Samsung Electronics common GDR](relationships/relationship_terafab_samsung_common_gdr) — succeeded:** Accepted the Terafab-to-Samsung Electronics common GDR relationship as a positive bridge beneficiary with medium sensitivity and low confidence. Samsung's HBM, memory, foundry and packaging capabilities and Nvidia alignment create a plausible transition channel while Terafab ramps. No Terafab-specific customer, product or volume is disclosed, and…
+- **[AI compute, networking, and hyperscaler monetization to NVIDIA](relationships/relationship_ai_compute_nvda) — succeeded:** Accepted the AI-compute, networking and hyperscaler-monetization relationship to NVIDIA with high positive sensitivity and high confidence. NVIDIA's accelerator, networking, interconnect, system and software revenue directly transmits current infrastructure demand into margins and cash flow. Hyperscaler capex, export controls, custom silicon, supp…
+- **[Humanoid robotics and embodied AI to NVIDIA](relationships/relationship_humanoid_nvda) — succeeded:** Accepted the humanoid-robotics and embodied-AI relationship to NVIDIA with medium positive sensitivity and medium confidence. NVIDIA has a direct product channel through simulation, world models, training compute, edge modules, safety tooling and the CUDA ecosystem. Current vendor disclosures do not quantify humanoid-attributable revenue or repeat…
+- **[Wide-bandgap power semiconductors to NVIDIA](relationships/relationship_wide_bandgap_nvda) — succeeded:** Rejected the wide-bandgap-power-semiconductor relationship to NVIDIA at low sensitivity and low confidence. NVIDIA's 800 VDC architecture is credible evidence for WBG component demand and may reduce AI-system deployment friction, but NVIDIA is the architecture and compute vendor rather than an evidenced WBG supplier and discloses no material WBG-a…
+- **[AI-native drug discovery to NVIDIA](relationships/relationship_ai_drug_nvda) — succeeded:** Rejected the AI-native-drug-discovery relationship to NVIDIA at low sensitivity and low confidence. The Lilly co-innovation lab establishes a concrete compute, software and laboratory-integration channel, but the up-to-USD-1-billion five-year commitment is not NVIDIA revenue and does not establish material, repeatable life-sciences economics relat…
+- **[NVDA](securities/security_33d9c44facc75c726c7d) — succeeded:** Completed NVIDIA's repeat full review after Terafab and five relationship decisions. AI compute, embodied AI and Terafab are accepted canonical edges; AI drug discovery and wide-bandgap power are rejected as current shareholder edges. New Space-1, Vera-SpaceXAI and SpaceX prospectus evidence supports a product and customer option but no order valu…
+- **[AI compute, networking, and hyperscaler monetization](ideas/idea_ai_compute_networking_hyperscaler_monetization) — succeeded:** Refreshed the AI-compute, networking and hyperscaler-monetization idea from NVIDIA's completed result. NVIDIA is now an accepted high-sensitivity, high-confidence direct beneficiary alongside Arista, and its current financial evidence strengthens confidence in present infrastructure demand. The USD 218.99 mark still leaves bear/base payoff below m…
+- **[Humanoid robotics and embodied-AI component supply chain](ideas/idea_humanoid_robotics_embodied_ai_components) — succeeded:** Refreshed the humanoid-robotics and embodied-AI idea from NVIDIA's completed result. NVIDIA is now an accepted medium-sensitivity platform beneficiary through simulation, world models, training compute, edge modules and safety tooling, while humanoid-attributable revenue and paid scale remain unquantified. ABB's stale queued-candidate prose was re…
+- **[Terafab and the vertically coordinated AI hardware stack](ideas/idea_terafab_ai_industrial_stack) — succeeded:** Refreshed the Terafab idea from NVIDIA's completed result and the resolved seven-security relationship graph. SpaceX, Tesla, NVIDIA, ASML, TSMC and Samsung are accepted conditional beneficiaries; Intel is rejected until its proposed role becomes binding and financially measurable. NVIDIA's orbital and SpaceXAI evidence supports the staged hybrid t…
+
+## Top blocker or near miss
+
+- **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 20.7817678274164750316066337%; Bear/base payoff is below threshold.
+
+## Non-approved research benchmark
+
+This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
+- NVDA 25% (Buy); CASH 75% (Unrated)
+<!-- papertrader-investor-brief:end -->
+
+### Deterministic reasons
+
+- The reconciled model portfolio is entirely cash.
+- No strategy has produced a current actionable trade signal.
+
+## 2. Model portfolio and approved changes
+
+- Current equity: 10000 EUR
+- Current cash: 10000 EUR (100%)
+- Current gross exposure: 0 EUR
+- Approved target cash: 10000 EUR (100%)
+- Pending-order targets are estimates at the snapshot mark; only fills change accounting.
+
+| Holding | Sleeve | Current weight | Approved target | Current value | Target value | Action | State |
+| --- | --- | ---: | ---: | ---: | ---: | --- | --- |
+| Cash | cash | 100% | 100% | 10000  | 10000  | No trade | No action |
+
+## 3. Actionable signals and pending orders
+
+No actionable trade signals.
+
+No pending paper orders.
+
+## 4. Candidates and near misses
+
+| Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
+| --- | --- | --- | ---: | ---: | ---: | --- |
+| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Valuation unattractive | -17.80446801914946878756448371% / 15.0737447731907436974097228% / 70.7840497824338815191715727% | 20.7817678274164750316066337% | 201.6 | Bear/base payoff is below threshold. |
+| [TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | Hold / Watch | Valuation unattractive | -40.33816425120772946859903382% / -8.33333333333333333333333333% / 19.3236714975845410628019324% | -9.42028985507246376811594203% | 303.6 | Base-case return is below threshold. |
+| [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | Hold / Watch | Valuation unattractive | -26.99295301288777024333511459% / 1.0866804436938565861513798% / 34.7822405915918087815351731% | -0.59809756370104102361780986% | 288 | Base-case return is below threshold. |
+| [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | Hold / Watch | Valuation unattractive | -31.56792557870149546067851214% / 10.3207987640327406512697926% / 59.882210238851960605505658% | 12.2389705470539866118416827% | 425.6 | Bear/base payoff is below threshold. |
+| [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc) | Hold / Watch | Valuation unattractive | -28.14930857852479807505507126% / 7.7760371322128028874173931% / 43.7013828429504038498898575% | 4.1835025611390427911701467% | 480 | Base-case return is below threshold. |
+
+## 5. Performance and risk
+
+- Daily return: 0%
+- Cumulative return: 0%
+- Running drawdown: 0%
+- Realized P/L: 0 EUR
+- Unrealized P/L: 0 EUR
+- Largest position weight: 0%
+- Largest sector weight: 0%
+
+
+## 6. Research changes
+
+### Evidence-linked narrative
+
+- Created the Terafab AI-industrial-stack idea as a medium-confidence staged hybrid thesis and queued seven security-specific causal relationship reviews; no strategy or paper trade was created. Evidence is retained in the canonical run artifacts.
+- Accepted the medium-confidence positive Terafab-to-NVIDIA edge through current AI systems, networking, software and orbital products, without assuming any unannounced wafer-production agreement. Evidence is retained in the canonical run artifacts.
+- Accepted the high-sensitivity Terafab-to-SpaceX relationship: ownership and captive deployment create direct upside, while capital, yield, utilization and governance risks remain equally direct. Evidence is retained in the canonical run artifacts.
+- Accepted the medium-sensitivity Terafab-to-Tesla relationship through custom edge silicon, while retaining non-binding terms, capex and related-party governance as decision limits. Evidence is retained in the canonical run artifacts.
+- Rejected the current Terafab-to-Intel investment edge: capabilities fit, but a proposed framework without binding scope or measurable economics is not shareholder transmission. Evidence is retained in the canonical run artifacts.
+- Accepted the medium-sensitivity Terafab-to-ASML edge conditional on advanced-wafer phases and actual lithography orders; xLight is not yet a production substitute. Evidence is retained in the canonical run artifacts.
+- Accepted TSMC as a medium-sensitivity Terafab bridge beneficiary while making qualified long-run insourcing the explicit reversal condition. Evidence is retained in the canonical run artifacts.
+- Accepted Samsung as a low-confidence Terafab bridge through HBM, memory, foundry and packaging, while retaining absent contract evidence and long-run insourcing risk. Evidence is retained in the canonical run artifacts.
+- Accepted NVIDIA as a high-confidence direct beneficiary of AI compute and networking demand, while retaining customer-capex, export, custom-silicon and commitment risks. Evidence is retained in the canonical run artifacts.
+- Accepted NVIDIA's medium-confidence physical-AI edge while retaining paid deployment, safety and revenue materiality as confirmation gates. Evidence is retained in the canonical run artifacts.
+- Rejected NVIDIA as a direct wide-bandgap investment edge: 800 VDC supports supplier demand, but no material WBG economics currently transmit to NVIDIA common stock. Evidence is retained in the canonical run artifacts.
+- Rejected NVIDIA as a current AI-drug-discovery investment edge: a concrete Lilly lab supports relevance but not material, recurring shareholder economics. Evidence is retained in the canonical run artifacts.
+- NVIDIA full review completed after Terafab: AI compute, embodied AI and Terafab are accepted edges, while AI drug discovery and wide-bandgap power are rejected as current shareholder edges. USD 180/USD 252/USD 374 scenarios remain unchanged because new customer and orbital evidence is unquantified. At USD 218.99, deterministic research is Buy/Init… Evidence is retained in the canonical run artifacts.
+- AI-compute idea refreshed: NVIDIA is now an accepted direct beneficiary alongside Arista, but its USD 218.99 valuation still fails bear/base payoff, so no new strategy or paper action followed. Evidence is retained in the canonical run artifacts.
+- Humanoid and embodied-AI idea refreshed: NVIDIA is an accepted platform beneficiary, ABB is a completed rejected edge, and repeat paid deployments plus attributable revenue remain the decisive gates. Evidence is retained in the canonical run artifacts.
+- Terafab idea refresh completed: six relationships are accepted, Intel is rejected, and NVIDIA's new customer and orbital evidence supports the hybrid thesis without changing its current non-actionable valuation frontier. Evidence is retained in the canonical run artifacts.
+
+- [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking, and hyperscaler monetization]]
+- [[ideas/idea_humanoid_robotics_embodied_ai_components|Humanoid robotics and embodied-AI component supply chain]]
+- [[ideas/idea_terafab_ai_industrial_stack|Terafab and the vertically coordinated AI hardware stack]]
+- [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1|CRSR — Volume anomaly]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0|ALB — Volume anomaly]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222|ABCL — Volume anomaly]]
+- [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0|DNA — Volume anomaly]]
+- [[model-portfolio|PaperTrader model portfolio]]
+- [[performance|PaperTrader performance and risk]]
+- [[relationships/relationship_ai_compute_nvda|AI compute, networking, and hyperscaler monetization to NVIDIA]]
+- [[relationships/relationship_ai_drug_nvda|AI-native drug discovery to NVIDIA]]
+- [[relationships/relationship_humanoid_nvda|Humanoid robotics and embodied AI to NVIDIA]]
+- [[relationships/relationship_terafab_asml|Terafab AI industrial stack to ASML]]
+- [[relationships/relationship_terafab_intc|Terafab AI industrial stack to Intel]]
+- [[relationships/relationship_terafab_nvda|Terafab AI industrial stack to NVIDIA]]
+- [[relationships/relationship_terafab_samsung_common_gdr|Terafab AI industrial stack to Samsung Electronics common GDR]]
+- [[relationships/relationship_terafab_spcx|Terafab AI industrial stack to SpaceX listed equity]]
+- [[relationships/relationship_terafab_tsla|Terafab AI industrial stack to Tesla]]
+- [[relationships/relationship_terafab_tsm|Terafab AI industrial stack to TSMC]]
+- [[relationships/relationship_wide_bandgap_nvda|Wide-bandgap power semiconductors to NVIDIA]]
+- [[research-catalog|PaperTrader research catalog]]
+- [[securities/security_33d9c44facc75c726c7d|NVIDIA Corporation common stock]]
+- [[security-catalog|PaperTrader tracked securities]]
+- [[signals|PaperTrader signals and research alerts]]
+- [[system-status|PaperTrader system status and audit]]
+
+## 7. Data-quality and coverage impact
+
+- Investment data status: **degraded**
+- Operations status: **degraded**
+- Assessments: 64/64
+- Fresh-evidence assessments: 64/64
+- Relationship reviews: 27/64
+- Accepted relationships: 24
+- Ready or active strategies: 0
+- Active signals: 0
+- Pending orders: 0
+- Market-data success/failure: 72/0
+- Research alerts (not trade signals): 20
+
+### Current system impacts
+
+- **affects candidate** — RIO Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run
+- **affects candidate** — RBLX Roblox Corporation: Assessment source operation is ambiguous within one run
+- **affects candidate** — PWR Quanta Services, Inc.: Assessment source operation is ambiguous within one run
+- **affects candidate**: Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]
+- **affects candidate** — RTX RTX Corporation: RTX assessment source operation is ambiguous within one run
+- **affects candidate** — LAC Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]
+- **affects candidate** — HOOD Robinhood Markets, Inc.: Daily preparation degraded: [[securities/security_ad3b1f8f59fd599f079a|HOOD]]
+- **affects candidate** — CROX Crocs, Inc.: Daily preparation degraded: [[securities/security_c150f31c30afdb4a85f9|CROX]]
+- **affects candidate** — WTI W&amp;T Offshore, Inc.: Daily preparation degraded: [[securities/security_61567714298b9563d1a9|WTI]]
+- **affects candidate** — FCX Freeport-McMoRan Inc.: Daily preparation degraded: [[securities/security_2dbe878dfc899d7ee867|FCX]]
+- **affects candidate** — DLO DLocal Limited: Daily preparation degraded: [[securities/security_715bde20b6e1e1320c1a|DLO]]
+- **affects candidate** — TX Ternium S.A.: Daily preparation degraded: [[securities/security_2c779e81c27b78c556bb|TX]]
+- **affects candidate** — GEV GE Vernova Inc.: Daily preparation degraded: [[securities/security_4b61970aa8f574446819|GEV]]
+- **affects candidate** — ATKR Atkore Inc.: Daily preparation degraded: [[securities/security_22c2b9d782a62d7a9b86|ATKR]]
+- **affects candidate** — PLS.AX PLS Group Limited: Daily preparation degraded: [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]]
+- **affects candidate** — KTOS Kratos Defense &amp; Security Solutions, Inc.: Daily preparation degraded: [[securities/security_0cf8075039299094d614|KTOS]]
+- **affects candidate** — RIO Rio Tinto plc: Daily preparation degraded: [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]]
+- **affects candidate** — PYPL PayPal Holdings, Inc.: Daily preparation degraded: [[securities/security_1e8fbdb0f45f2b413e00|PYPL]]
+- **affects candidate** — ETN Eaton Corporation plc: Daily preparation degraded: [[securities/security_18a3ab0ee6086ee85d0f|ETN]]
+- **affects candidate** — SOFI SoFi Technologies, Inc.: Daily preparation degraded: [[securities/security_98470cfc01bbcde78fc2|SOFI]]
+- **affects candidate** — CSL Carlisle Companies Incorporated: Daily preparation degraded: [[securities/security_9b0db3bc77914b23a307|CSL]]
+- **affects candidate** — SGML Sigma Lithium Corporation: Daily preparation degraded: [[securities/security_4627aea1bf7d8943d3d8|SGML]]
+- **affects candidate** — RKLB Rocket Lab Corporation: Daily preparation degraded: [[securities/security_7ca095d63423c55a90e3|RKLB]]
+- **affects candidate** — ISRG Intuitive Surgical, Inc.: Daily preparation degraded: [[securities/security_1f9cce545ede94cd6349|ISRG]]
+- **affects candidate** — INTC Intel Corporation: Daily preparation degraded: [[securities/security_dfa34d4b9050964b465e|INTC]]
+- **affects candidate** — TWST Twist Bioscience Corporation: Daily preparation degraded: [[securities/security_6cf75bd0ec0aa2a20148|TWST]]
+- **affects candidate** — RBLX Roblox Corporation: Daily preparation degraded: [[securities/security_c9a37d277445869a8809|RBLX]]
+- **affects candidate** — FUC.F Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]
+- **affects candidate** — TSLA Tesla, Inc.: Daily preparation degraded: [[securities/security_dc7a111e297be528d96b|TSLA]]
+- **affects candidate** — VALE Vale S.A.: Daily preparation degraded: [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]]
+- **affects candidate** — DNA Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[securities/security_95351d928b674bbdf687|DNA]]-volume_anomaly-357acbb964f0.md
+- **affects candidate** — ALB Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]
+- **affects candidate** — ANIC.L Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]
+- **affects candidate** — GOOGL Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]
+- **affects candidate** — ABCL AbCellera Biologics Inc.: Daily preparation degraded: [[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]
+- **affects candidate** — TXN Texas Instruments Incorporated: Daily preparation degraded: [[security-catalog#security-security_83a56943e18793f685b0|TXN]]
+- **affects candidate** — VLO Valero Energy Corporation: Daily preparation degraded: [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]
+- **affects candidate** — QCOM QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]
+- **affects candidate** — MP MP Materials Corp.: Daily preparation degraded: [[securities/security_cd492d97064d8574156e|MP]]
+- **affects candidate** — ANET Arista Networks, Inc.: Daily preparation degraded: [[securities/security_6f9a1450edceb9307c9a|ANET]]
+- **affects candidate** — PARRO.PA Parrot S.A.: Daily preparation degraded: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]
+- **affects candidate** — TSM Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[securities/security_ce9b78a4d0773c950765|TSM]]
+- **affects candidate** — PATH UiPath, Inc.: Daily preparation degraded: [[securities/security_eca976f0076a425ea1bb|PATH]]
+- **affects candidate** — ABCL AbCellera Biologics Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]-volume_anomaly-9e9c3f80e222.md
+- **affects candidate** — RTX RTX Corporation: Daily preparation degraded: [[securities/security_59304f90c440def31dc5|RTX]]
+- **affects candidate** — ASML ASML Holding N.V.: Daily preparation degraded: [[securities/security_ef35e41886220d51c22c|ASML]]
+- **affects candidate** — ENPH Enphase Energy, Inc.: Daily preparation degraded: [[securities/security_f2b9760d847b2ba59324|ENPH]]
+- **affects candidate** — MSTR Strategy Inc: Daily preparation degraded: [[security-catalog#security-security_fe5539a7d3fd9d553bce|MSTR]]
+- **affects candidate** — SPCX Space Exploration Technologies Corp.: Daily preparation degraded: [[securities/security_664f93a7eaca72e76e9b|SPCX]]
+- **affects candidate** — NBIS Nebius Group N.V.: Daily preparation degraded: [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]
+- **affects candidate** — CRWD CrowdStrike Holdings, Inc.: Daily preparation degraded: [[securities/security_8472507d7d320aa388a7|CRWD]]
+- **affects candidate** — SQM Sociedad Quimica y Minera de Chile S.A.: Daily preparation degraded: [[securities/security_9d4049ed6669a52815d6|SQM]]
+- **affects candidate** — YEC.F YASKAWA Electric Corporation: Daily preparation degraded: [[securities/security_89969b7dac39b7db5661|YEC.F]]
+- **affects candidate** — META Meta Platforms, Inc.: Daily preparation degraded: [[securities/security_d12e746b3c9d392183cc|META]]
+- **affects candidate** — CRSR Corsair Gaming, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]-volume_anomaly-919db7c341d1.md
+- **affects candidate** — RXRX Recursion Pharmaceuticals, Inc.: Daily preparation degraded: [[securities/security_ed7d5b616a196969c815|RXRX]]
+- **affects candidate** — SCCO Southern Copper Corporation: Daily preparation degraded: [[securities/security_6ad1af8d10d6276a0221|SCCO]]
+- **affects candidate** — MSFT Microsoft Corporation: Daily preparation degraded: [[securities/security_204be2a44063993de1a8|MSFT]]
+- **affects candidate** — ABBNY ABB Ltd: Daily preparation degraded: [[securities/security_c120e9f26ebb6159adf9|ABBNY]]
+- **affects candidate** — SSUN.VI Samsung Electronics Co., Ltd.: Daily preparation degraded: [[securities/security_d08d763780400dfbffce|SSUN.VI]]
+- **affects candidate** — VRT Vertiv Holdings Co: Daily preparation degraded: [[securities/security_cb88f9154cfeaa15e878|VRT]]
+- **affects candidate** — LH Labcorp Holdings Inc.: Daily preparation degraded: [[securities/security_b1f2c48e1a744f5ecf67|LH]]
+- **affects candidate** — PL Planet Labs PBC: Daily preparation degraded: [[securities/security_97f38b2cb2d5ef127f5a|PL]]
+- **affects candidate** — TDY Teledyne Technologies Incorporated: Daily preparation degraded: [[securities/security_ad5917642acbba28c1f2|TDY]]
+- **affects candidate** — PLTR Palantir Technologies Inc.: Daily preparation degraded: [[securities/security_bdc2f87dadf134760c3a|PLTR]]
+- **affects candidate** — AMAT Applied Materials, Inc.: Daily preparation degraded: [[security-catalog#security-security_0a56aa634d077fe5796f|AMAT]]
+- **affects candidate** — NIB.F Nidec Corporation: Daily preparation degraded: [[securities/security_3853e54c619d597dcaa1|NIB.F]]
+- **affects candidate** — LUNR Intuitive Machines, Inc.: Daily preparation degraded: [[securities/security_a5dc16f3f4b245e6c168|LUNR]]
+- **affects candidate** — COIN Coinbase Global, Inc.: Daily preparation degraded: [[securities/security_37ddcbdaad296ad831f2|COIN]]
+- **affects candidate** — DNA Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: [[securities/security_95351d928b674bbdf687|DNA]]
+- **affects candidate** — CSIQ Canadian Solar Inc.: Daily preparation degraded: [[securities/security_099561384c0f5e697727|CSIQ]]
+- **affects candidate** — AMZN Amazon.com, Inc.: Daily preparation degraded: [[securities/security_2433a056eb0c55961fcc|AMZN]]
+- **affects candidate** — ALB Albemarle Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[securities/security_66cdcf90aac0d83e76f3|ALB]]-volume_anomaly-8c73a0b155d0.md
+- **affects candidate** — SPOT Spotify Technology S.A.: Daily preparation degraded: [[securities/security_2010347f1a0a5ea60f47|SPOT]]
+- **affects candidate** — SSU.VI Samsung Electronics Co., Ltd.: Daily preparation degraded: [[securities/security_567d0d575bbd30aaa91d|SSU.VI]]
+- **affects candidate** — FLNC Fluence Energy, Inc.: Daily preparation degraded: [[securities/security_a9eb9838940ef5ceaa0c|FLNC]]
+- **affects candidate** — CRSR Corsair Gaming, Inc.: Daily preparation degraded: [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]
+- **affects candidate** — NVDA NVIDIA Corporation: Daily preparation degraded: [[securities/security_33d9c44facc75c726c7d|NVDA]]
+- **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
+- **operational only**: Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]
+- **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]
+- **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
+- **operational only**: Daily preparation degraded: FX AUD/EUR
+- **operational only**: YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A
+- **operational only**: YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A
+- **operational only**: Daily preparation degraded: FX USD/EUR
+- **operational only**: Daily podcast failed: [[daily-reports/daily-report_20260806|Daily report for 2026-08-06]]
+- **operational only**: YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A
+- **operational only**: YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm_jw
+- **operational only**: Daily podcast failed: [[daily-reports/daily-report_20260806|Daily report for 2026-08-06]]
+- **operational only**: Daily preparation degraded: FX GBP/EUR
+- **operational only**: YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw
+- **operational only**: Daily podcast failed: [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]
+- **operational only**: YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg
+
+## 8. Audit appendix
+
+### Run diagnostics
+
+- Report date: 2026-08-07
+- Run status: degraded
+- Generated (UTC): `2026-08-07T09:35:34Z`
+
+### Complete market freshness
+
+| Security | Price date | Retrieved at | Status | Error |
+| --- | --- | --- | --- | --- |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_0a56aa634d077fe5796f|AMAT]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_83a56943e18793f685b0|TXN]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-07 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+| [[security-catalog#security-security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-06 | 2026-08-07T08:54:30Z | ok | — |
+
+### Orders and executions
+
+| Paper order | Strategy | Fill policy | Status | Created |
+| --- | --- | --- | --- | --- |
+| — | — | — | no orders | — |
+
+| Paper fill | Paper order | Security | Side | Quantity | Fill | Fees |
+| --- | --- | --- | --- | ---: | ---: | ---: |
+| — | — | — | — | 0 | no executions | 0 |
+
+### Allocation audit
+
+- Mode: `active`
+- Deployment budget: 1500 EUR
+- Capital allocated: 0 EUR
+- Capital unallocated: 6000 EUR
+
+| Rank | Security | Target weight | Disposition | Reasons |
+| ---: | --- | ---: | --- | --- |
+| 1 | [[securities/security_1f9cce545ede94cd6349|ISRG]] | 0% | hold | The evidence-backed score clears the configured cash hurdle.; The eligible set is not sufficiently diversified. |
+| — | [[securities/security_099561384c0f5e697727|CSIQ]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_0cf8075039299094d614|KTOS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 0% | excluded | Bear/base payoff is below threshold. |
+| — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_3e597863f00753e8c65c|BE]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Assessment confidence is below the configured minimum.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6f9a1450edceb9307c9a|ANET]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_715bde20b6e1e1320c1a|DLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | The current assessment marks the security ineligible.; Liquidity is insufficient.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_9b0db3bc77914b23a307|CSL]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_9d4049ed6669a52815d6|SQM]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ad5917642acbba28c1f2|TDY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c9a37d277445869a8809|RBLX]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold. |
+| — | [[securities/security_cb88f9154cfeaa15e878|VRT]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_dc8486c1d61df62a22fd|SU]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_dfa34d4b9050964b465e|INTC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_eca976f0076a425ea1bb|PATH]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ed7d5b616a196969c815|RXRX]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_ef35e41886220d51c22c|ASML]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
+
+### Research-operation audit
+
+| Research operation | Entity | Disposition | Reason |
+| --- | --- | --- | --- |
+| [Source discovery for seekingalpha.com on 2026-08-07](https://seekingalpha.com/trending-analysis) | [seekingalpha.com](https://seekingalpha.com/trending-analysis) | expired | deadline elapsed |
+| [[ideas/idea_terafab_ai_industrial_stack|Idea research for Terafab and the vertically coordinated AI hardware stack on 2026-08-07]] | [[ideas/idea_terafab_ai_industrial_stack|Terafab and the vertically coordinated AI hardware stack]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_nvda|Relationship research for Terafab AI industrial stack to NVIDIA on 2026-08-07]] | [[relationships/relationship_terafab_nvda|Terafab AI industrial stack to NVIDIA]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_spcx|Relationship research for Terafab AI industrial stack to SpaceX listed equity on 2026-08-07]] | [[relationships/relationship_terafab_spcx|Terafab AI industrial stack to SpaceX listed equity]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_tsla|Relationship research for Terafab AI industrial stack to Tesla on 2026-08-07]] | [[relationships/relationship_terafab_tsla|Terafab AI industrial stack to Tesla]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_intc|Relationship research for Terafab AI industrial stack to Intel on 2026-08-07]] | [[relationships/relationship_terafab_intc|Terafab AI industrial stack to Intel]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_asml|Relationship research for Terafab AI industrial stack to ASML on 2026-08-07]] | [[relationships/relationship_terafab_asml|Terafab AI industrial stack to ASML]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_tsm|Relationship research for Terafab AI industrial stack to TSMC on 2026-08-07]] | [[relationships/relationship_terafab_tsm|Terafab AI industrial stack to TSMC]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_terafab_samsung_common_gdr|Relationship research for Terafab AI industrial stack to Samsung Electronics common GDR on 2026-08-07]] | [[relationships/relationship_terafab_samsung_common_gdr|Terafab AI industrial stack to Samsung Electronics common GDR]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_ai_compute_nvda|Relationship research for AI compute, networking, and hyperscaler monetization to NVIDIA on 2026-08-07]] | [[relationships/relationship_ai_compute_nvda|AI compute, networking, and hyperscaler monetization to NVIDIA]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_humanoid_nvda|Relationship research for Humanoid robotics and embodied AI to NVIDIA on 2026-08-07]] | [[relationships/relationship_humanoid_nvda|Humanoid robotics and embodied AI to NVIDIA]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_wide_bandgap_nvda|Relationship research for Wide-bandgap power semiconductors to NVIDIA on 2026-08-07]] | [[relationships/relationship_wide_bandgap_nvda|Wide-bandgap power semiconductors to NVIDIA]] | succeeded | agent result:succeeded |
+| [[relationships/relationship_ai_drug_nvda|Relationship research for AI-native drug discovery to NVIDIA on 2026-08-07]] | [[relationships/relationship_ai_drug_nvda|AI-native drug discovery to NVIDIA]] | succeeded | agent result:succeeded |
+| [[securities/security_33d9c44facc75c726c7d|Security research for NVDA on 2026-08-07]] | [[securities/security_33d9c44facc75c726c7d|NVDA]] | succeeded | agent result:succeeded |
+| [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Idea research for AI compute, networking, and hyperscaler monetization on 2026-08-07]] | [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking, and hyperscaler monetization]] | succeeded | agent result:succeeded |
+| [[ideas/idea_humanoid_robotics_embodied_ai_components|Idea research for Humanoid robotics and embodied-AI component supply chain on 2026-08-07]] | [[ideas/idea_humanoid_robotics_embodied_ai_components|Humanoid robotics and embodied-AI component supply chain]] | succeeded | agent result:succeeded |
+| [[ideas/idea_terafab_ai_industrial_stack|Idea research for Terafab and the vertically coordinated AI hardware stack on 2026-08-07]] | [[ideas/idea_terafab_ai_industrial_stack|Terafab and the vertically coordinated AI hardware stack]] | succeeded | agent result:succeeded |
+
+### Complete active queue
+
+- Ready — [[securities/security_cb88f9154cfeaa15e878|Security research for VRT on 2026-07-26]]
+- Ready — [[security-catalog#security-security_c5a9e460d3350284d157|Security research for VLO on 2026-07-26]]
+- Ready — [[security-catalog#security-security_0a56aa634d077fe5796f|Security research for AMAT on 2026-07-29]]
+- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-07-29]]
+- Ready — [[security-catalog#security-security_83a56943e18793f685b0|Security research for TXN on 2026-07-29]]
+- Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
+- Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
+- Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
+- Ready — [[security-catalog#security-security_fe5539a7d3fd9d553bce|Security research for MSTR on 2026-07-29]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=TqNiSTeNtb0)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wcV0SRPFK9s)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=OY2Sjbjd_VE)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=9IMwRIei-Xc)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=-ILKiOU5iAQ)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=SuSYegb8iK0)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=h7XVJ64IhY4)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=pVwvxybnwdg)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=TyMn7wknYTU)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=oyjpF7xPiC4)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Ejsft2oPCtM)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=k77X47h6OVU)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yUq0O-pDHCE)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=9ePWIYadju4)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yG-bk8QEjsA)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=u-AXyF9kY9k)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=AK_aWcM-VAY)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=t3RTJJ6KM_I)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=6006vpLlaVw)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=-lUsDKvZJu0)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=65IABPxBJ9M)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=OcXcgIlJGRw)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=a0l7VDnN1bg)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=3c9iLgtDdKM)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=pVaKoDHW9iY)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=4JmCb5FmTA4)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yAtpMMC3aiw)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Cbbmj0dqP-M)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=e2C_hgXiyzM)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=J2ZqFVpMb5M)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=J0bce9WQJ-g)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=PHL1j2ti420)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Y7p4rUCdqi0)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wgdxSCsmS-Q)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=ihq_ngvKKmc)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=w8ah_tA0yfg)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=4j9RPGLENNI)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=3Amlu4y94Ho)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=gH4FTjDm9FQ)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=fO5sC7qS04E)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=0y28p0jqPro)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=xTO1aQ_m44I)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=0umrMuUClC4)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=hObRMv6qCi0)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=V0lFjTWx36I)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=jLICvWE7w2Q)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=i8OI8CNdZgU)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=UIoV8rG_25s)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=_TJFqEhxQg4)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=TjrShuj_Zsg)
+- Ready — [[securities/security_4b61970aa8f574446819|Opportunity research for Market alert for GEV on 2026-07-29]]
+- Ready — [[securities/security_567d0d575bbd30aaa91d|Opportunity research for Market alert for SSU.VI on 2026-07-29]]
+- Ready — [[securities/security_97f38b2cb2d5ef127f5a|Opportunity research for Market alert for PL on 2026-07-29]]
+- Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-07-29]]
+- Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-07-29]]
+- Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-07-29]]
+- Ready — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-07-29]]
+- Ready — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-07-29]]
+- Ready — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-07-29]]
+- Ready — [[ideas/idea_nearshoring_friendshoring_manufacturing|Idea research for Nearshoring and friendshoring manufacturing capacity on 2026-07-29]]
+- Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81|Wiki ingest for ETN — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0|Wiki ingest for GEV — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a|Wiki ingest for SSU.VI — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f|Wiki ingest for ALB — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd|Wiki ingest for PL — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa|Wiki ingest for LUNR — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af|Wiki ingest for VRT — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2|Wiki ingest for TSLA — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad|Wiki ingest for ASML — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63|Wiki ingest for LAC — RSI oversold on 2026-07-30]]
+- Ready — [[securities/security_2dbe878dfc899d7ee867|Opportunity research for Market alert for FCX on 2026-07-30]]
+- Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]
+- Ready — [[securities/security_488a9d7f7a8573597724|Opportunity research for Market alert for PWR on 2026-07-30]]
+- Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
+- Ready — [[securities/security_9b0db3bc77914b23a307|Opportunity research for Market alert for CSL on 2026-07-30]]
+- Ready — [[inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508|Wiki ingest for CSL — Volume anomaly on 2026-07-30]]
+- Ready — [[securities/security_f2b9760d847b2ba59324|Opportunity research for Market alert for ENPH on 2026-07-30]]
+- Ready — [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212|Wiki ingest for ENPH — Volume anomaly on 2026-07-30]]
+- Ready — [[ideas/idea_solar_storage_grid_flexibility_reset|Idea research for Solar, storage, and grid-flexibility reset on 2026-07-30]]
+- Ready — [[ideas/idea_critical_minerals_copper|Idea research for Critical minerals and structural copper scarcity on 2026-07-30]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-31](https://www.youtube.com/watch?v=DeI6oqdIePA)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-31](https://www.youtube.com/watch?v=MsNPz0dBYDw)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-31](https://www.youtube.com/watch?v=-jysGHtWkxE)
+- Ready — [[securities/security_204be2a44063993de1a8|Opportunity research for Market alert for MSFT on 2026-07-31]]
+- Ready — [[inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9|Wiki ingest for MSFT — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_2433a056eb0c55961fcc|Opportunity research for Market alert for AMZN on 2026-07-31]]
+- Ready — [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f|Wiki ingest for AMZN — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_3a75fc1ccca2ee7c937a|Opportunity research for Market alert for QCOM on 2026-07-31]]
+- Ready — [[inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1|Wiki ingest for QCOM — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_4627aea1bf7d8943d3d8|Opportunity research for Market alert for SGML on 2026-07-31]]
+- Ready — [[inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98|Wiki ingest for SGML — MACD cross above signal on 2026-07-31]]
+- Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-0f8044b1c340|Wiki ingest for PWR — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_567d0d575bbd30aaa91d|Opportunity research for Market alert for SSU.VI on 2026-07-31]]
+- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da|Wiki ingest for SSU.VI — Volume anomaly on 2026-07-31]]
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea|Wiki ingest for YEC.F — RSI oversold on 2026-07-31]]
+- Ready — [[securities/security_9d4049ed6669a52815d6|Opportunity research for Market alert for SQM on 2026-07-31]]
+- Ready — [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477|Wiki ingest for SQM — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_9d4049ed6669a52815d6|Quick check research for SQM on 2026-07-31]]
+- Ready — [[securities/security_ad3b1f8f59fd599f079a|Opportunity research for Market alert for HOOD on 2026-07-31]]
+- Ready — [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325|Wiki ingest for HOOD — Bollinger below lower on 2026-07-31]]
+- Ready — [[securities/security_b1f2c48e1a744f5ecf67|Opportunity research for Market alert for LH on 2026-07-31]]
+- Ready — [[inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-30d19f036e9a|Wiki ingest for LH — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_c150f31c30afdb4a85f9|Opportunity research for Market alert for CROX on 2026-07-31]]
+- Ready — [[inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72|Wiki ingest for CROX — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_c9a37d277445869a8809|Opportunity research for Market alert for RBLX on 2026-07-31]]
+- Ready — [[inbox/market-security_c9a37d277445869a8809-volume_anomaly-d686f093667a|Wiki ingest for RBLX — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_d12e746b3c9d392183cc|Opportunity research for Market alert for META on 2026-07-31]]
+- Ready — [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796|Wiki ingest for META — Bollinger below lower on 2026-07-31]]
+- Ready — [[securities/security_d12e746b3c9d392183cc|Opportunity research for Market alert for META on 2026-07-31]]
+- Ready — [[inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea|Wiki ingest for META — Volume anomaly on 2026-07-31]]
+- Ready — [[securities/security_dc8486c1d61df62a22fd|Opportunity research for Market alert for SU on 2026-07-31]]
+- Ready — [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb|Wiki ingest for SU — MACD cross above signal on 2026-07-31]]
+- Ready — [[relationships/relationship_871e21ff73620ab8eb14|Relationship research for Critical minerals and the lithium cycle to Albemarle on 2026-07-31]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=ViqYWhLimGg)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=DNlb0PrAdro)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=lSx5W8a3_yQ)
+- Ready — [[securities/security_099561384c0f5e697727|Opportunity research for Market alert for CSIQ on 2026-08-01]]
+- Ready — [[inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd|Wiki ingest for CSIQ — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_18a3ab0ee6086ee85d0f|Opportunity research for Market alert for ETN on 2026-08-01]]
+- Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-volume_anomaly-4d01b00f7097|Wiki ingest for ETN — Volume anomaly on 2026-08-01]]
+- Ready — [[securities/security_2433a056eb0c55961fcc|Opportunity research for Market alert for AMZN on 2026-08-01]]
+- Ready — [[inbox/market-security_2433a056eb0c55961fcc-macd_cross_above_signal-f8b94c946cb3|Wiki ingest for AMZN — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_37ddcbdaad296ad831f2|Opportunity research for Market alert for COIN on 2026-08-01]]
+- Ready — [[inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a|Wiki ingest for COIN — Bollinger below lower on 2026-08-01]]
+- Ready — [[securities/security_37ddcbdaad296ad831f2|Opportunity research for Market alert for COIN on 2026-08-01]]
+- Ready — [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f|Wiki ingest for COIN — Volume anomaly on 2026-08-01]]
+- Ready — [[securities/security_37ddcbdaad296ad831f2|Quick check research for COIN on 2026-08-01]]
+- Ready — [[securities/security_3853e54c619d597dcaa1|Opportunity research for Market alert for NIB.F on 2026-08-01]]
+- Ready — [[inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392|Wiki ingest for NIB.F — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_3a75fc1ccca2ee7c937a|Opportunity research for Market alert for QCOM on 2026-08-01]]
+- Ready — [[inbox/market-security_3a75fc1ccca2ee7c937a-rsi_oversold-43fc4f1bab70|Wiki ingest for QCOM — RSI oversold on 2026-08-01]]
+- Ready — [[securities/security_488a9d7f7a8573597724|Opportunity research for Market alert for PWR on 2026-08-01]]
+- Ready — [[inbox/market-security_488a9d7f7a8573597724-macd_cross_above_signal-3bbf5060198b|Wiki ingest for PWR — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_66cdcf90aac0d83e76f3|Opportunity research for Market alert for ALB on 2026-08-01]]
+- Ready — [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-11e8b42f0b00|Wiki ingest for ALB — Volume anomaly on 2026-08-01]]
+- Ready — [[securities/security_715bde20b6e1e1320c1a|Opportunity research for Market alert for DLO on 2026-08-01]]
+- Ready — [[inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495|Wiki ingest for DLO — SMA 50 cross above 200 on 2026-08-01]]
+- Ready — [[securities/security_7ca095d63423c55a90e3|Opportunity research for Market alert for RKLB on 2026-08-01]]
+- Ready — [[inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-88ab051849ae|Wiki ingest for RKLB — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-01]]
+- Ready — [[securities/security_89969b7dac39b7db5661|Opportunity research for Market alert for YEC.F on 2026-08-01]]
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-74dd0efba061|Wiki ingest for YEC.F — Volume anomaly on 2026-08-01]]
+- Ready — [[securities/security_97f38b2cb2d5ef127f5a|Opportunity research for Market alert for PL on 2026-08-01]]
+- Ready — [[inbox/market-security_97f38b2cb2d5ef127f5a-macd_cross_above_signal-45073f63c222|Wiki ingest for PL — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_97f38b2cb2d5ef127f5a|Quick check research for PL on 2026-08-01]]
+- Ready — [[securities/security_a9eb9838940ef5ceaa0c|Opportunity research for Market alert for FLNC on 2026-08-01]]
+- Ready — [[inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_above_signal-fee548bc7a65|Wiki ingest for FLNC — MACD cross above signal on 2026-08-01]]
+- Ready — [[securities/security_c86bb4e75658c07142cf|Opportunity research for Market alert for GOOGL on 2026-08-01]]
+- Ready — [[securities/security_c9a37d277445869a8809|Opportunity research for Market alert for RBLX on 2026-08-01]]
+- Ready — [[inbox/market-security_c9a37d277445869a8809-bollinger_below_lower-340d8d301e21|Wiki ingest for RBLX — Bollinger below lower on 2026-08-01]]
+- Ready — [[securities/security_c9a37d277445869a8809|Opportunity research for Market alert for RBLX on 2026-08-01]]
+- Ready — [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-dcd8a733d0db|Wiki ingest for RBLX — RSI oversold on 2026-08-01]]
+- Ready — [[relationships/relationship_510158d3d515d91d5c14|Relationship research for Nearshoring and friendshoring manufacturing capacity to Ternium on 2026-08-01]]
+- Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-01]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=5aF6qJM8aVM)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-03](https://www.youtube.com/watch?v=MSfaIeQ0eq8)
+- Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-03]]
+- Ready — [[ideas/idea_digital_attention_gaming_ecosystems|Idea research for Digital attention, gaming, and consumer ecosystems on 2026-08-03]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=sDDQ5Ueg1dk)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=JEP4vi9pW9o)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=UryYddSqC30)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=ktY0IrrdSM8)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=gIYNCsp0TFY)
+- Ready — [[securities/security_0cf8075039299094d614|Opportunity research for Market alert for KTOS on 2026-08-05]]
+- Ready — [[inbox/market-security_0cf8075039299094d614-volume_anomaly-127ac2ec3af3|Wiki ingest for KTOS — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_18a3ab0ee6086ee85d0f|Opportunity research for Market alert for ETN on 2026-08-05]]
+- Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-4af1197123e0|Wiki ingest for ETN — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-05]]
+- Ready — [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-05]]
+- Ready — [[securities/security_1f9cce545ede94cd6349|Opportunity research for Market alert for ISRG on 2026-08-05]]
+- Ready — [[inbox/market-security_1f9cce545ede94cd6349-macd_cross_above_signal-8d6ef0392190|Wiki ingest for ISRG — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-05]]
+- Ready — [[securities/security_2010347f1a0a5ea60f47|Opportunity research for Market alert for SPOT on 2026-08-05]]
+- Ready — [[inbox/market-security_2010347f1a0a5ea60f47-volume_anomaly-78a51b6daf0e|Wiki ingest for SPOT — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_33d9c44facc75c726c7d|Opportunity research for Market alert for NVDA on 2026-08-05]]
+- Ready — [[inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-8425952b966e|Wiki ingest for NVDA — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_3853e54c619d597dcaa1|Opportunity research for Market alert for NIB.F on 2026-08-05]]
+- Ready — [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1|Wiki ingest for NIB.F — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_3e597863f00753e8c65c|Opportunity research for Market alert for BE on 2026-08-05]]
+- Ready — [[inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-67248af469a1|Wiki ingest for BE — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_47a0b06f6c6c478d7c1e|Opportunity research for Market alert for NBIS on 2026-08-05]]
+- Ready — [[inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-65152a0c42fe|Wiki ingest for NBIS — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_567d0d575bbd30aaa91d|Opportunity research for Market alert for SSU.VI on 2026-08-05]]
+- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-347a0faa1d0e|Wiki ingest for SSU.VI — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_567d0d575bbd30aaa91d|Quick check research for SSU.VI on 2026-08-05]]
+- Ready — [[securities/security_664f93a7eaca72e76e9b|Opportunity research for Market alert for SPCX on 2026-08-05]]
+- Ready — [[inbox/market-security_664f93a7eaca72e76e9b-volume_anomaly-31c89c5fa198|Wiki ingest for SPCX — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_6cf75bd0ec0aa2a20148|Opportunity research for Market alert for TWST on 2026-08-05]]
+- Ready — [[inbox/market-security_6cf75bd0ec0aa2a20148-macd_cross_above_signal-6a84e7a0c5f7|Wiki ingest for TWST — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_6f9a1450edceb9307c9a|Opportunity research for Market alert for ANET on 2026-08-05]]
+- Ready — [[inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b|Wiki ingest for ANET — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_6f9a1450edceb9307c9a|Opportunity research for Market alert for ANET on 2026-08-05]]
+- Ready — [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be|Wiki ingest for ANET — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_6f9a1450edceb9307c9a|Quick check research for ANET on 2026-08-05]]
+- Ready — [[securities/security_8472507d7d320aa388a7|Opportunity research for Market alert for CRWD on 2026-08-05]]
+- Ready — [[inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de|Wiki ingest for CRWD — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_8472507d7d320aa388a7|Quick check research for CRWD on 2026-08-05]]
+- Ready — [[securities/security_89969b7dac39b7db5661|Opportunity research for Market alert for YEC.F on 2026-08-05]]
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-121917b81e15|Wiki ingest for YEC.F — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_89969b7dac39b7db5661|Opportunity research for Market alert for YEC.F on 2026-08-05]]
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-044d9cca9c40|Wiki ingest for YEC.F — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-05]]
+- Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-05]]
+- Ready — [[inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-3d74cac677e3|Wiki ingest for DNA — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_96ba305ee7cd586bc348|Opportunity research for Market alert for FUC.F on 2026-08-05]]
+- Ready — [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502|Wiki ingest for FUC.F — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_98470cfc01bbcde78fc2|Opportunity research for Market alert for SOFI on 2026-08-05]]
+- Ready — [[inbox/market-security_98470cfc01bbcde78fc2-macd_cross_above_signal-9972fa31e705|Wiki ingest for SOFI — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_a5dc16f3f4b245e6c168|Opportunity research for Market alert for LUNR on 2026-08-05]]
+- Ready — [[inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073|Wiki ingest for LUNR — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-05]]
+- Ready — [[securities/security_bdc2f87dadf134760c3a|Opportunity research for Market alert for PLTR on 2026-08-05]]
+- Ready — [[inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba|Wiki ingest for PLTR — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_bdc2f87dadf134760c3a|Opportunity research for Market alert for PLTR on 2026-08-05]]
+- Ready — [[inbox/market-security_bdc2f87dadf134760c3a-volume_anomaly-93058ffcb396|Wiki ingest for PLTR — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_bdc2f87dadf134760c3a|Quick check research for PLTR on 2026-08-05]]
+- Ready — [[securities/security_c120e9f26ebb6159adf9|Opportunity research for Market alert for ABBNY on 2026-08-05]]
+- Ready — [[securities/security_c120e9f26ebb6159adf9|Quick check research for ABBNY on 2026-08-05]]
+- Ready — [[securities/security_cd492d97064d8574156e|Opportunity research for Market alert for MP on 2026-08-05]]
+- Ready — [[inbox/market-security_cd492d97064d8574156e-macd_cross_above_signal-67ca09efe67d|Wiki ingest for MP — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_cd492d97064d8574156e|Opportunity research for Market alert for MP on 2026-08-05]]
+- Ready — [[inbox/market-security_cd492d97064d8574156e-volume_anomaly-08c55411ef29|Wiki ingest for MP — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_ce9b78a4d0773c950765|Opportunity research for Market alert for TSM on 2026-08-05]]
+- Ready — [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_above_signal-02538665a30b|Wiki ingest for TSM — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_d08d763780400dfbffce|Opportunity research for Market alert for SSUN.VI on 2026-08-05]]
+- Ready — [[inbox/market-security_d08d763780400dfbffce-macd_cross_above_signal-5f77e49fc4fd|Wiki ingest for SSUN.VI — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_dfa34d4b9050964b465e|Opportunity research for Market alert for INTC on 2026-08-05]]
+- Ready — [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_above_signal-181ec6e47f3f|Wiki ingest for INTC — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_ed7d5b616a196969c815|Opportunity research for Market alert for RXRX on 2026-08-05]]
+- Ready — [[inbox/market-security_ed7d5b616a196969c815-macd_cross_above_signal-02a3c62e94ad|Wiki ingest for RXRX — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-05]]
+- Ready — [[securities/security_f2b9760d847b2ba59324|Opportunity research for Market alert for ENPH on 2026-08-05]]
+- Ready — [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91|Wiki ingest for ENPH — MACD cross above signal on 2026-08-05]]
+- Ready — [[securities/security_f2b9760d847b2ba59324|Quick check research for ENPH on 2026-08-05]]
+- Ready — [[relationships/relationship_c829dae21648bb133cc7|Relationship research for AI-native drug discovery to Recursion Pharmaceuticals on 2026-08-05]]
+- Ready — [[relationships/relationship_9e7b4700174908755cbc|Relationship research for Precision biology and healthcare automation to Recursion Pharmaceuticals on 2026-08-05]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=G3S5ZyL9U64)
+- Ready — [[ideas/idea_critical_minerals_copper|Idea research for Critical minerals and structural copper scarcity on 2026-08-05]]
+- Ready — [[ideas/idea_defense_aerospace|Relationship research for relationship between Defense and aerospace replenishment cycle and KTOS on 2026-08-05]]
+- Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Idea research for Humanoid robotics and embodied-AI component supply chain on 2026-08-05]]
+- Ready — [[securities/security_0cf8075039299094d614|Opportunity research for Market alert for KTOS on 2026-08-05]]
+- Ready — [[inbox/market-security_0cf8075039299094d614-volume_anomaly-ece9af648e0a|Wiki ingest for KTOS — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-05]]
+- Ready — [[securities/security_2c779e81c27b78c556bb|Opportunity research for Market alert for TX on 2026-08-05]]
+- Ready — [[inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247|Wiki ingest for TX — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Opportunity research for Market alert for CRSR on 2026-08-05]]
+- Ready — [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff|Wiki ingest for CRSR — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Quick check research for CRSR on 2026-08-05]]
+- Ready — [[securities/security_6cf75bd0ec0aa2a20148|Opportunity research for Market alert for TWST on 2026-08-05]]
+- Ready — [[inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123|Wiki ingest for TWST — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]
+- Ready — [[securities/security_6f9a1450edceb9307c9a|Opportunity research for Market alert for ANET on 2026-08-05]]
+- Ready — [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d|Wiki ingest for ANET — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-05]]
+- Ready — [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5|Wiki ingest for DNA — SMA 50 cross above 200 on 2026-08-05]]
+- Ready — [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-05]]
+- Ready — [[securities/security_a9eb9838940ef5ceaa0c|Opportunity research for Market alert for FLNC on 2026-08-05]]
+- Ready — [[inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0|Wiki ingest for FLNC — Volume anomaly on 2026-08-05]]
+- Ready — [[securities/security_c9a37d277445869a8809|Opportunity research for Market alert for RBLX on 2026-08-05]]
+- Ready — [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa|Wiki ingest for RBLX — RSI oversold on 2026-08-05]]
+- Ready — [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-05]]
+- Ready — [[ideas/idea_digital_attention_gaming_ecosystems|Relationship research for relationship between Digital attention, gaming, and consumer ecosystems and CRSR on 2026-08-05]]
+- Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Relationship research for relationship between Humanoid robotics and embodied-AI component supply chain and FUC.F on 2026-08-05]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-06](https://www.youtube.com/watch?v=jfxHHglA5Eo)
+- Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Opportunity research for Market alert for CRSR on 2026-08-06]]
+- Ready — [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674|Wiki ingest for CRSR — Volume anomaly on 2026-08-06]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-06](https://www.youtube.com/watch?v=BPmhjXnBRNE)
+- Ready — [[ideas/idea_defense_aerospace|Idea research for Defense and aerospace replenishment cycle on 2026-08-06]]
+- Ready — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-08-06]]
+- Ready — [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e|Wiki ingest for NIB.F — Volume anomaly on 2026-08-06]]
+- Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-06]]
+- Ready — [[ideas/idea_nearshoring_friendshoring_manufacturing|Idea research for Nearshoring and friendshoring manufacturing capacity on 2026-08-06]]
+- Ready — [[ideas/idea_solar_storage_grid_flexibility_reset|Idea research for Solar, storage, and grid-flexibility reset on 2026-08-06]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-06](https://www.youtube.com/watch?v=sDA3wYsYjM8)
+- Ready — [[security-catalog#security-security_0a56aa634d077fe5796f|Opportunity research for Market alert for AMAT on 2026-08-06]]
+- Ready — [[inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58|Wiki ingest for AMAT — MACD cross above signal on 2026-08-06]]
+- Ready — [[securities/security_3a75fc1ccca2ee7c937a|Opportunity research for Market alert for QCOM on 2026-08-06]]
+- Ready — [[inbox/market-security_3a75fc1ccca2ee7c937a-macd_cross_above_signal-d19b3285efd2|Wiki ingest for QCOM — MACD cross above signal on 2026-08-06]]
+- Ready — [[securities/security_3a75fc1ccca2ee7c937a|Quick check research for QCOM on 2026-08-06]]
+- Ready — [[securities/security_66cdcf90aac0d83e76f3|Opportunity research for Market alert for ALB on 2026-08-06]]
+- Ready — [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-b9b686957690|Wiki ingest for ALB — Volume anomaly on 2026-08-06]]
+- Ready — [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]
+- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-06]]
+- Ready — [[inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee|Wiki ingest for ABCL — MACD cross above signal on 2026-08-06]]
+- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-06]]
+- Ready — [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08|Wiki ingest for ABCL — Volume anomaly on 2026-08-06]]
+- Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-06]]
+- Ready — [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd|Wiki ingest for DNA — Volume anomaly on 2026-08-06]]
+- Ready — [[securities/security_cb88f9154cfeaa15e878|Opportunity research for Market alert for VRT on 2026-08-06]]
+- Ready — [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-d2200e5084d7|Wiki ingest for VRT — MACD cross above signal on 2026-08-06]]
+- Waiting — [[securities/security_95351d928b674bbdf687|Security research for DNA on 2026-08-06]]
+- Ready — [[securities/security_66cdcf90aac0d83e76f3|Opportunity research for Market alert for ALB on 2026-08-07]]
+- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-07]]
+- Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-07]]
+
+### Open issues and delivery failures
+
+- Warning — [[system-status|Daily preparation degraded: LAC]]: LAC: YFTzMissingError: $LAC: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: HOOD]]: HOOD: price cache is empty
+- Error — [[system-status|Rio Tinto assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for RIO could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for RIO on 2026-08-03 and current security\_research Security research for RIO on 2026-08-05 claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope…
+- Warning — [[system-status|Daily preparation degraded: CROX]]: CROX: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: WTI]]: WTI: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: FCX]]: FCX: YFTzMissingError: $FCX: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: DLO]]: DLO: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: FX AUD/EUR]]: FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: TX]]: TX: YFTzMissingError: $TX: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: GEV]]: GEV: YFTzMissingError: $GEV: possibly delisted; no timezone found
+- Warning — [[system-status|YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A]]: @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- Warning — [[system-status|Daily preparation degraded: ATKR]]: ATKR: YFTzMissingError: $ATKR: possibly delisted; no timezone found
+- Error — [[system-status|Assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for RBLX could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for RBLX on 2026-08-03 and current security\_research Security research for RBLX on 2026-08-03 claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-sco…
+- Warning — [[system-status|YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A]]: @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- Warning — [[system-status|Daily preparation degraded: PLS.AX]]: PLS.AX: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: FX USD/EUR]]: FX USD/EUR: YFTzMissingError: $USDEUR=X: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: KTOS]]: KTOS: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: RIO]]: RIO: YFTzMissingError: $RIO: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: PYPL]]: PYPL: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: ETN]]: ETN: YFTzMissingError: $ETN: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: SOFI]]: SOFI: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: CSL]]: CSL: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: SGML]]: SGML: YFTzMissingError: $SGML: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: RKLB]]: RKLB: YFTzMissingError: $RKLB: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: ISRG]]: ISRG: YFTzMissingError: $ISRG: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: INTC]]: INTC: price cache is empty
+- Warning — [[system-status|Daily podcast failed: Daily report for 2026-08-06]]: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06
+- Warning — [[system-status|Daily preparation degraded: TWST]]: TWST: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: RBLX]]: RBLX: YFTzMissingError: $RBLX: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: FUC.F]]: FUC.F: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: TSLA]]: TSLA: price cache is empty
+- Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: commands\_run does not exactly match deterministic CLI audit receipts
+- Error — [[system-status|Assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for PWR could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for PWR on 2026-08-03 and current security\_research Security research for PWR on 2026-08-03 claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope…
+- Warning — [[system-status|Daily preparation degraded: VALE]]: VALE: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: classifier blocked for data/wiki/inbox/market-DNA-volume_anomaly-357acbb964f0.md]]: classifier blocked for data/wiki/inbox/market-DNA-volume\_anomaly-357acbb964f0.md
+- Error — [[system-status|Hermes operation validation failed: Security research for RIO on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Security research for RIO on 2026-08-05/agent\_result.json
+- Warning — [[system-status|Daily preparation degraded: ALB]]: ALB: YFTzMissingError: $ALB: possibly delisted; no timezone found
+- Warning — [[system-status|YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A]]: @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- Warning — [[system-status|Daily preparation degraded: ANIC.L]]: ANIC.L: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: GOOGL]]: GOOGL: price cache is empty
+- Warning — [[system-status|YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm_jw]]: @thelimitingfactor: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- Warning — [[system-status|Daily preparation degraded: ABCL]]: ABCL: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: TXN]]: TXN: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: VLO]]: VLO: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: QCOM]]: QCOM: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: MP]]: MP: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: ANET]]: ANET: YFTzMissingError: $ANET: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: PARRO.PA]]: PARRO.PA: YFTzMissingError: $PARRO.PA: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: TSM]]: TSM: price cache is empty
+- Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Daily podcast for Daily report for 2026-08-05 on 2026-08-05/agent\_result.json
+- Warning — [[system-status|Daily preparation degraded: PATH]]: PATH: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: classifier blocked for data/wiki/inbox/market-ABCL-volume_anomaly-9e9c3f80e222.md]]: classifier blocked for data/wiki/inbox/market-ABCL-volume\_anomaly-9e9c3f80e222.md
+- Warning — [[system-status|Daily preparation degraded: RTX]]: RTX: YFTzMissingError: $RTX: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: ASML]]: ASML: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: ENPH]]: ENPH: YFTzMissingError: $ENPH: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: MSTR]]: MSTR: price cache is empty
+- Warning — [[system-status|Daily podcast failed: Daily report for 2026-08-06]]: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06
+- Warning — [[system-status|Daily preparation degraded: SPCX]]: SPCX: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: NBIS]]: NBIS: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: CRWD]]: CRWD: YFTzMissingError: $CRWD: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: SQM]]: SQM: YFTzMissingError: $SQM: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: FX GBP/EUR]]: FX GBP/EUR: YFTzMissingError: $GBPEUR=X: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: YEC.F]]: YEC.F: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: META]]: META: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: classifier blocked for data/wiki/inbox/market-CRSR-volume_anomaly-919db7c341d1.md]]: classifier blocked for data/wiki/inbox/market-CRSR-volume\_anomaly-919db7c341d1.md
+- Warning — [[system-status|Daily preparation degraded: RXRX]]: RXRX: YFTzMissingError: $RXRX: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: SCCO]]: SCCO: YFTzMissingError: $SCCO: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: MSFT]]: MSFT: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: ABBNY]]: ABBNY: YFTzMissingError: $ABBNY: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: SSUN.VI]]: SSUN.VI: price cache is empty
+- Warning — [[system-status|YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw]]: @CouchInvestor: MsNPz0dBYDw This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- Warning — [[system-status|Daily preparation degraded: VRT]]: VRT: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: LH]]: LH: price cache is empty
+- Error — [[system-status|Local harness operation validation failed: Quick check research for SGML on 2026-08-06]]: completed security research requires exactly one immutable assessment version
+- Warning — [[system-status|Daily preparation degraded: PL]]: PL: price cache is empty
+- Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: cannot restore rejected path data/wiki/daily-reports/daily-report\_20260806.md: pre-run path cannot be restored because Git metadata is unavailable; daily podcast spoken transcript must label paper trading
+- Warning — [[system-status|Daily preparation degraded: TDY]]: TDY: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: PLTR]]: PLTR: YFTzMissingError: $PLTR: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: AMAT]]: AMAT: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: NIB.F]]: NIB.F: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: LUNR]]: LUNR: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: COIN]]: COIN: YFTzMissingError: $COIN: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: DNA]]: DNA: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: CSIQ]]: CSIQ: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: AMZN]]: AMZN: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: classifier blocked for data/wiki/inbox/market-ALB-volume_anomaly-8c73a0b155d0.md]]: classifier blocked for data/wiki/inbox/market-ALB-volume\_anomaly-8c73a0b155d0.md
+- Warning — [[system-status|Daily podcast failed: Daily report for 2026-08-05]]: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Daily podcast for Daily report for 2026-08-05 on 2026-08-05
+- Error — [[system-status|RTX assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for RTX could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for RTX on 2026-08-05 and current security\_research Security research for RTX on 2026-08-06 claimed by run Daily report for 2026-08-05 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out…
+- Warning — [[system-status|Daily preparation degraded: SPOT]]: SPOT: price cache is empty
+- Warning — [[system-status|YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg]]: @allin: TqNiSTeNtb0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
+- Warning — [[system-status|Daily preparation degraded: SSU.VI]]: SSU.VI: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: FLNC]]: FLNC: YFTzMissingError: $FLNC: possibly delisted; no timezone found
+- Warning — [[system-status|Daily preparation degraded: CRSR]]: CRSR: price cache is empty
+- Warning — [[system-status|Daily preparation degraded: NVDA]]: NVDA: price cache is empty
+
+### Decision provenance
+
+- The reconciled model portfolio is entirely cash.
+- No strategy has produced a current actionable trade signal.
+
+### Links
+
+- [[index|Investor dashboard]]
+- [[model-portfolio|Model portfolio]]
+- [[signals|Signals]]
+- [[system-status|System status]]
+- GitHub report: https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260807.md

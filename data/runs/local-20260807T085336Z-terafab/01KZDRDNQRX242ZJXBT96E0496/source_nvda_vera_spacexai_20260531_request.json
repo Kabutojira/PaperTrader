@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nvda_vera_spacexai_20260531",
+  "url": "https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents",
+  "canonical_url": "https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents",
+  "source_type": "issuer_release",
+  "title": "NVIDIA unveils Vera CPU for agents",
+  "publisher": "NVIDIA Corporation",
+  "license": "",
+  "status": "available",
+  "content_hash": "199469c60572a80367be09b6fcd5ce94156c4887f9417ba42bd7b46033432a25",
+  "related_entity_ids": "security_33d9c44facc75c726c7d",
+  "checked_at": "2026-08-07T09:23:01Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "NVIDIA named SpaceXAI among organizations exploring Vera and said the CPU is in full production, supporting a current customer channel without purchase volume or revenue.",
+  "summary": "The issuer release supplies current Vera product and prospective-adoption evidence linking SpaceXAI to NVIDIA's platform while leaving customer volume, contract and financial contribution unquantified.",
+  "run_id": "local-20260807T085336Z-terafab"
+}

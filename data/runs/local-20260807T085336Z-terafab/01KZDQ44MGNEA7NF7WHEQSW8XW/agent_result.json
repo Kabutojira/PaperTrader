@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDQ44MGNEA7NF7WHEQSW8XW",
+  "status": "succeeded",
+  "summary": "Rejected the proposed Terafab-to-Intel beneficiary relationship at low sensitivity and low confidence. Intel's process, foundry and advanced-packaging capabilities fit the project, but the current record explicitly describes only a proposed contribution that may not become definitive and supplies no scope, IP terms, milestones or measurable shareholder economics. A binding agreement with material Intel revenue, margin or cash flow is the upgrade gate; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "claim": "SpaceX calls Intel's contribution proposed and says the framework may not lead to a definitive agreement."
+    },
+    {
+      "source": "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+      "claim": "Intel's maintained review shows broader foundry and packaging capability but only USD 293 million of quarterly third-party foundry and assembly-and-test revenue, making measurable customer economics necessary."
+    },
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000077/q126earningsrelease.htm",
+      "claim": "Intel's filing supports process and packaging capabilities but does not establish Terafab scope or economics."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_terafab_intc.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rejected the current Terafab-to-Intel investment edge: capabilities fit, but a proposed framework without binding scope or measurable economics is not shareholder transmission."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent Terafab-to-Intel edge existed before this operation.",
+      "The rejected row retains the hypothesized direction, mechanism, sensitivity, confidence, catalyst, invalidation, research page and review timestamps.",
+      "The maintained page distinguishes Intel's relevant capabilities from absent binding scope, milestones and material shareholder economics.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

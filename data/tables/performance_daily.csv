@@ -12,3 +12,4 @@ date,performance_epoch_id,base_currency,cash_base,market_value_base,equity_base,
 2026-08-03,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,gha-30788518712-1,2026-08-03T06:55:46Z
 2026-08-05,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,daily-20260805T065913Z,2026-08-05T11:35:26Z
 2026-08-06,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,daily-20260806T094838Z,2026-08-06T09:56:15Z
+2026-08-07,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,local-20260807T085336Z-terafab,2026-08-07T09:35:34Z

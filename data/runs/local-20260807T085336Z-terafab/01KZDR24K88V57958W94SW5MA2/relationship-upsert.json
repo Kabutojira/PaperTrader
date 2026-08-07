@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_humanoid_nvda",
+  "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+  "security_id": "security_33d9c44facc75c726c7d",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Growth in industrial robotics and embodied AI can increase demand for NVIDIA simulation, world models, training compute, edge modules, safety tooling and the CUDA developer stack; integrations across major robot makers and humanoid developers establish a product channel, although attributable revenue and deployment economics remain undisclosed.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Robot makers disclose repeat paid NVIDIA-based deployments, attributable system or software revenue becomes material, safety certification supports scale, or multi-site autonomous-machine deployments show durable uptime and task economics.",
+  "invalidation": "Humanoids remain demonstrations; fixed automation wins the same tasks; robot makers internalize or select competing compute and software; safety or reliability blocks scale; or physical-AI revenue remains immaterial despite ecosystem announcements.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_humanoid_nvda.md",
+  "last_reviewed_at": "2026-08-07T09:16:40Z",
+  "next_review_at": "2026-10-15T12:00:00Z"
+}

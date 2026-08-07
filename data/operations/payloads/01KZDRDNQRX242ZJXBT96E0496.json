@@ -1,0 +1,38 @@
+{
+  "entity_id": "security_33d9c44facc75c726c7d",
+  "entity_type": "security",
+  "inputs": {
+    "accepted_relationship_ids": [
+      "relationship_ai_compute_nvda",
+      "relationship_humanoid_nvda",
+      "relationship_terafab_nvda"
+    ],
+    "idea_ids": [
+      "idea_ai_compute_networking_hyperscaler_monetization",
+      "idea_humanoid_robotics_embodied_ai_components",
+      "idea_terafab_ai_industrial_stack"
+    ],
+    "rejected_relationship_ids": [
+      "relationship_ai_drug_nvda",
+      "relationship_wide_bandgap_nvda"
+    ],
+    "research_focus": "Read the deterministic security context, retain the prior scenario framework unless evidence changes assumptions, incorporate current market and FX identity, distinguish Terafab and physical-AI option value from current earnings, and update the canonical assessment without forcing a strategy.",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "trigger": "User-requested full recheck after new Terafab primary evidence and completed NVIDIA relationship reviews."
+  },
+  "objective": "Reassess NVIDIA after the Terafab announcement and the completed review of all current idea relationships.",
+  "operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/relationships/relationship_ai_compute_nvda.md",
+    "data/wiki/relationships/relationship_humanoid_nvda.md",
+    "data/wiki/relationships/relationship_terafab_nvda.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+    "https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents",
+    "https://nvidianews.nvidia.com/news/space-computing",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
+  ]
+}

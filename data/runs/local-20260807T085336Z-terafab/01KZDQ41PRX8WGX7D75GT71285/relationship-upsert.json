@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_spcx",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_664f93a7eaca72e76e9b",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "SpaceX is the proposed owner, principal user and systems integrator of Terafab; successful internal packaging, selected silicon and compute-system production could reduce deployment bottlenecks and improve iteration speed for Starlink, Starship, xAI and orbital compute, but those benefits accrue only if utilization, yield and cost exceed the campus's capital and governance burden.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Binding Terafab phase financing, tool and process commitments; first qualified products with disclosed cost, yield or deployment benefits; measurable SpaceXAI or orbital-compute capacity; or capex converting into durable segment revenue and cash flow.",
+  "invalidation": "Frameworks remain non-binding; construction, utilities, tools or product qualification slip materially; yield and unit cost remain uncompetitive; the campus is underutilized; related-party governance transfers value; or Terafab capex and losses outweigh supply-security and deployment benefits.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_terafab_spcx.md",
+  "last_reviewed_at": "2026-08-07T09:04:58Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

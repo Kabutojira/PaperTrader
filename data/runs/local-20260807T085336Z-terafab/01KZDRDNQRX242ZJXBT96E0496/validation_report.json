@@ -1,0 +1,33 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZDRVRX8Q62Z4KQ7YZV0RA5N.json",
+    "data/operations/payloads/01KZDRVTVRSXKYD7B5K63KAZD4.json",
+    "data/operations/payloads/01KZDRVVV0BFGVXH10CAY670MZ.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/assessment_upsert_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh-v2.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh-v2.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh-v2.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/security_upsert_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_space_computing_20260316_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_vera_spacexai_20260531_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_spacex_terafab_prospectus_20260605_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+  ],
+  "completed_at": "2026-08-07T09:31:12Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+  "passed": true,
+  "run_id": "local-20260807T085336Z-terafab",
+  "validation_version": 1
+}

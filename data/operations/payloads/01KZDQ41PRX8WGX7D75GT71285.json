@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_terafab_spcx",
+  "entity_type": "relationship",
+  "inputs": {
+    "hypothesis": "SpaceX is the proposed owner, primary user and integration beneficiary of Terafab while bearing its capital, execution and governance risks.",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "relationship_id": "relationship_terafab_spcx",
+    "security_id": "security_664f93a7eaca72e76e9b"
+  },
+  "objective": "Review the causal Terafab relationship to SpaceX listed equity.",
+  "operation_id": "01KZDQ41PRX8WGX7D75GT71285",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_664f93a7eaca72e76e9b.md",
+    "https://assets.comptroller.texas.gov/open-data/jeti/J0037/J0037-terafab-anderson-appsupp1.pdf",
+    "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf"
+  ]
+}

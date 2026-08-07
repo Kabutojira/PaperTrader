@@ -1,0 +1,18 @@
+{
+  "source_id": "source_spacex_terafab_prospectus_20260605",
+  "url": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+  "canonical_url": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+  "source_type": "filing",
+  "title": "SpaceX European prospectus describing Terafab",
+  "publisher": "Space Exploration Technologies Corp.",
+  "license": "",
+  "status": "available",
+  "content_hash": "4655a5283f60bab22e9895edc1eedef4eb76f9c75f6694d3d6b12f3a77e01d10",
+  "related_entity_ids": "security_33d9c44facc75c726c7d",
+  "checked_at": "2026-08-07T09:23:01Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "SpaceX described a one-terawatt annual compute-production goal and an integrated Terafab workflow while expecting significant third-party compute sourcing to continue.",
+  "summary": "The issuer prospectus supplies primary evidence for Terafab's intended scope, prospective status, continued third-party sourcing and non-definitive framework risks relevant to NVIDIA demand and substitution.",
+  "run_id": "local-20260807T085336Z-terafab"
+}

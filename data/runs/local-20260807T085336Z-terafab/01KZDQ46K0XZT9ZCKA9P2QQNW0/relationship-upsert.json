@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_asml",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_ef35e41886220d51c22c",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "A Terafab ramp into advanced logic and memory requires production lithography systems, software, upgrades and field service that ASML can monetize; xLight's government-funded free-electron-laser work is a prototype source option rather than a qualified scanner replacement, while Terafab-specific tool orders and timing remain undisclosed.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Terafab discloses a process node and binding ASML tool orders, accepts systems on site, begins wafer production, or creates recurring installed-base service and upgrade revenue with measurable economics.",
+  "invalidation": "Terafab remains packaging or mature-node only; advanced-wafer phases are cancelled or delayed indefinitely; no ASML tools are ordered; export or permitting restrictions block delivery; project economics fail; or an alternative lithography route is qualified at competitive production scale.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_terafab_asml.md",
+  "last_reviewed_at": "2026-08-07T09:09:42Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

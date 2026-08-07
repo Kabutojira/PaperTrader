@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "status": "succeeded",
+  "summary": "Created one maintained Terafab AI-industrial-stack idea from current primary project, issuer and regulatory evidence. The thesis is a staged hybrid buildout: SpaceX, xAI and Tesla can create captive demand, while Nvidia, Intel, ASML, TSMC, Samsung and other suppliers remain essential until binding agreements, process technology, tools, yield and product qualification are demonstrated. Retained seven existing immutable public instruments and enqueued one bounded relationship review for each; no identity, strategy, signal, order, allocation or accounting state was created.",
+  "evidence": [
+    {
+      "source": "https://assets.comptroller.texas.gov/open-data/jeti/J0037/J0037-terafab-anderson-appsupp1.pdf",
+      "claim": "Texas JETI application records describe a proposed multiphase, vertically integrated semiconductor, packaging and system-integration campus led by affiliated Tesla, SpaceX and xAI entities, with phase decisions and capital remaining prospective."
+    },
+    {
+      "source": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "claim": "SpaceX's June 2026 prospectus targets one terawatt of annual compute-hardware production and an integrated mask, logic, memory and packaging workflow, while explicitly expecting significant third-party hardware sourcing to continue and describing Intel's contribution as proposed."
+    },
+    {
+      "source": "https://nvidianews.nvidia.com/news/space-computing",
+      "claim": "Nvidia has introduced a Vera Rubin-derived Space-1 module for orbital compute, establishing a current product channel without proving any unannounced Terafab wafer-production or investment agreement."
+    },
+    {
+      "source": "https://www.nist.gov/news-events/news/2026/06/department-commerce-announces-finalization-chips-incentives-xlight-support",
+      "claim": "NIST finalized a USD 150 million award for an xLight free-electron-laser prototype at Albany NanoTech; this supports a long-dated lithography option, not an initial Terafab production dependency or disclosed supply agreement."
+    },
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+      "claim": "Nvidia's annual filing documents continued dependence on external foundry, memory, packaging and manufacturing partners, supporting the hybrid-ramp conclusion and the retention of TSMC and Samsung as bridge suppliers."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZDQ3ZR8JZCFH75XC7S7665S.json",
+    "data/operations/payloads/01KZDQ41PRX8WGX7D75GT71285.json",
+    "data/operations/payloads/01KZDQ43N8H9VGQ3TB07HNFKYN.json",
+    "data/operations/payloads/01KZDQ44MGNEA7NF7WHEQSW8XW.json",
+    "data/operations/payloads/01KZDQ46K0XZT9ZCKA9P2QQNW0.json",
+    "data/operations/payloads/01KZDQ47J8A1SSF0NR06CZSTAX.json",
+    "data/operations/payloads/01KZDQ49GRDQNS8H3NK59HRBBB.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-asml.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-intc.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-nvda.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-samsung.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-spcx.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsla.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsm.json",
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [
+    "01KZDQ3ZR8JZCFH75XC7S7665S",
+    "01KZDQ41PRX8WGX7D75GT71285",
+    "01KZDQ43N8H9VGQ3TB07HNFKYN",
+    "01KZDQ44MGNEA7NF7WHEQSW8XW",
+    "01KZDQ46K0XZT9ZCKA9P2QQNW0",
+    "01KZDQ47J8A1SSF0NR06CZSTAX",
+    "01KZDQ49GRDQNS8H3NK59HRBBB"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Created the Terafab AI-industrial-stack idea as a medium-confidence staged hybrid thesis and queued seven security-specific causal relationship reviews; no strategy or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-nvda.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-spcx.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsla.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-intc.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-asml.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsm.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-samsung.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The running queue row, payload, operation identity, live lease and skill pair matched idea_terafab_ai_industrial_stack under the claimed local run.",
+      "The wiki search found no duplicate Terafab idea or existing Terafab relationship edge.",
+      "The page separates primary records, company targets, inference and speculation and defines mechanism, scenarios, catalysts, invalidation, contrary evidence, confidence and a concrete review date.",
+      "The bounded public universe covers owner, captive demand, compute architecture, process and packaging expertise, lithography, foundry, advanced packaging and memory with immutable security links.",
+      "No new security identity was imported because the existing configured universe covers every retained material layer, and private xLight is explicitly not represented as a public security.",
+      "Exactly one dependency-bound relationship review was created for each of the seven retained configured securities.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation, execution, cash, portfolio or performance state changed."
+    ]
+  }
+}

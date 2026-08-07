@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDR26HR7DT00RX049FQX19Z",
+  "status": "succeeded",
+  "summary": "Rejected the AI-native-drug-discovery relationship to NVIDIA at low sensitivity and low confidence. The Lilly co-innovation lab establishes a concrete compute, software and laboratory-integration channel, but the up-to-USD-1-billion five-year commitment is not NVIDIA revenue and does not establish material, repeatable life-sciences economics relative to NVIDIA's diversified Data Center business. Measurable multi-customer revenue or software economics are the upgrade gate; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://investor.lilly.com/news-releases/news-release-details/nvidia-and-lilly-announce-co-innovation-ai-lab-reinvent-drug",
+      "claim": "Lilly describes up to USD 1 billion over five years for a co-innovation lab using NVIDIA infrastructure and software, but does not allocate that commitment to NVIDIA revenue or profit."
+    },
+    {
+      "source": "data/wiki/ideas/idea_ai_native_drug_discovery.md",
+      "claim": "The maintained idea confirms tool adoption but not generalized clinical success and identifies pharma internalization as a risk to supplier economics."
+    },
+    {
+      "source": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "claim": "NVIDIA's maintained review reports USD 75.246 billion of quarterly Data Center revenue and no comparable life-sciences economic line."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDR26HR7DT00RX049FQX19Z/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_ai_drug_nvda.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rejected NVIDIA as a current AI-drug-discovery investment edge: a concrete Lilly lab supports relevance but not material, recurring shareholder economics."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDR26HR7DT00RX049FQX19Z/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent AI-drug-discovery-to-NVIDIA edge existed before this operation.",
+      "The rejected row retains the hypothesized direction, mechanism, sensitivity, confidence, catalyst, invalidation, research page and review timestamps.",
+      "The maintained page distinguishes a concrete product program from material, repeatable NVIDIA shareholder economics.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

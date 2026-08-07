@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_tsla",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_dc7a111e297be528d96b",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Tesla designs workload-specific inference chips for vehicles, robotics and AI systems; a qualified Terafab process and packaging route could shorten design-to-production cycles, improve supply security and coordinate edge-compute products with SpaceXAI demand, but the public framework is non-binding and discloses no capacity, price, capital or ownership economics.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Tesla and SpaceX execute binding Terafab terms; Tesla identifies a qualified chip or package, measurable volume, cost, performance or iteration gains; or Terafab-supported Optimus, autonomy or edge products contribute disclosed economics.",
+  "invalidation": "The framework does not become definitive; Tesla products remain externally fabricated without an economic disadvantage; Terafab yield, cost or schedule is uncompetitive; related-party terms transfer value; or incremental capex and complexity exceed supply-security and iteration benefits.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_terafab_tsla.md",
+  "last_reviewed_at": "2026-08-07T09:06:25Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

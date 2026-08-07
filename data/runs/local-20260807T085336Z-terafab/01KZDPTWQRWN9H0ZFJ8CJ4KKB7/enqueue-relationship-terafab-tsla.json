@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_terafab_tsla",
+  "dedupe_key": "relationship_research:relationship_terafab_tsla:terafab-launch:2026-08-07",
+  "prompt": "Review the causal Terafab relationship to Tesla.",
+  "inputs": {
+    "relationship_id": "relationship_terafab_tsla",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_dc7a111e297be528d96b",
+    "hypothesis": "Tesla can benefit from faster iteration and secured supply for vehicle and robotics ASICs, subject to non-binding framework, capital-allocation and related-party risks."
+  },
+  "source": "idea_research:01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": ["01KZDPTWQRWN9H0ZFJ8CJ4KKB7"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md",
+    "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+    "https://www.tesla.com/AI"
+  ],
+  "max_attempts": 3
+}

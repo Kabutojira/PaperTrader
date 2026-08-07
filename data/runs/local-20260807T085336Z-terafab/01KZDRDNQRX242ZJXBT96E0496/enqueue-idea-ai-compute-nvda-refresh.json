@@ -1,0 +1,27 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "dedupe_key": "idea_research:idea_ai_compute_networking_hyperscaler_monetization:security-result-01KZDRDNQRX242ZJXBT96E0496",
+  "prompt": "Refresh the AI-compute idea from the accepted NVIDIA security result without requeueing the fresh security.",
+  "inputs": {
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "seed_claim": "NVIDIA's refreshed review confirms direct compute and networking transmission, but the current mark still fails downside-payoff and margin-of-safety frontiers.",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "security_research_operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+    "expected_security_result_path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json",
+    "research_focus": "Replace stale candidate prose with NVIDIA's accepted relationship, current assessment disposition and exact valuation reason; update thesis, catalysts, risks, confidence and the broader investable universe without requeueing NVIDIA."
+  },
+  "source": "security_research:01KZDRDNQRX242ZJXBT96E0496",
+  "priority": 98,
+  "freshness_days": 0,
+  "depends_on": ["01KZDRDNQRX242ZJXBT96E0496"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "data/wiki/relationships/relationship_ai_compute_nvda.md",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json"
+  ],
+  "max_attempts": 3
+}

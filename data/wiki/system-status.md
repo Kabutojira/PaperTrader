@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-06"
-updated: "2026-08-06"
+created: "2026-08-07"
+updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5e4a28ab3391b54d3ac5"
-as_of: "2026-08-06T21:34:57Z"
+snapshot_id: "decision_7291ada3bc3dd4554729"
+as_of: "2026-08-07T09:35:34Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-06T21:34:57Z`
+**As of:** `2026-08-07T09:35:34Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -23,14 +23,14 @@ as_of: "2026-08-06T21:34:57Z"
 
 - Assessments: 64/64
 - Fresh-evidence assessments: 64/64
-- Relationship reviews: 20/64
-- Accepted relationships: 18
+- Relationship reviews: 27/64
+- Accepted relationships: 24
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 302
+- Research backlog: 304
 - Last successful daily run: 2026-08-06
 
 ## Current issues by investment impact
@@ -67,6 +67,7 @@ as_of: "2026-08-06T21:34:57Z"
 - Warning **FUC.F — Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]** — [[securities/security_96ba305ee7cd586bc348|FUC.F]]: price cache is empty
 - Warning **TSLA — Tesla, Inc.: Daily preparation degraded: [[securities/security_dc7a111e297be528d96b|TSLA]]** — [[securities/security_dc7a111e297be528d96b|TSLA]]: price cache is empty
 - Warning **VALE — Vale S.A.: Daily preparation degraded: [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]]** — [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]]: price cache is empty
+- Warning **DNA — Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[securities/security_95351d928b674bbdf687|DNA]]-volume_anomaly-357acbb964f0.md** — classifier blocked for data/wiki/inbox/market-[[securities/security_95351d928b674bbdf687|DNA]]-volume_anomaly-357acbb964f0.md
 - Warning **ALB — Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]** — [[securities/security_66cdcf90aac0d83e76f3|ALB]]: YFTzMissingError: $ALB: possibly delisted; no timezone found
 - Warning **ANIC.L — Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]** — [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]: price cache is empty
 - Warning **GOOGL — Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]** — [[securities/security_c86bb4e75658c07142cf|GOOGL]]: price cache is empty
@@ -79,6 +80,7 @@ as_of: "2026-08-06T21:34:57Z"
 - Warning **PARRO.PA — Parrot S.A.: Daily preparation degraded: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]** — [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]: YFTzMissingError: $PARRO.PA: possibly delisted; no timezone found
 - Warning **TSM — Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[securities/security_ce9b78a4d0773c950765|TSM]]** — [[securities/security_ce9b78a4d0773c950765|TSM]]: price cache is empty
 - Warning **PATH — UiPath, Inc.: Daily preparation degraded: [[securities/security_eca976f0076a425ea1bb|PATH]]** — [[securities/security_eca976f0076a425ea1bb|PATH]]: price cache is empty
+- Warning **ABCL — AbCellera Biologics Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]-volume_anomaly-9e9c3f80e222.md** — classifier blocked for data/wiki/inbox/market-[[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]-volume_anomaly-9e9c3f80e222.md
 - Warning **RTX — RTX Corporation: Daily preparation degraded: [[securities/security_59304f90c440def31dc5|RTX]]** — [[securities/security_59304f90c440def31dc5|RTX]]: YFTzMissingError: $RTX: possibly delisted; no timezone found
 - Warning **ASML — ASML Holding N.V.: Daily preparation degraded: [[securities/security_ef35e41886220d51c22c|ASML]]** — [[securities/security_ef35e41886220d51c22c|ASML]]: price cache is empty
 - Warning **ENPH — Enphase Energy, Inc.: Daily preparation degraded: [[securities/security_f2b9760d847b2ba59324|ENPH]]** — [[securities/security_f2b9760d847b2ba59324|ENPH]]: YFTzMissingError: $ENPH: possibly delisted; no timezone found
@@ -89,6 +91,7 @@ as_of: "2026-08-06T21:34:57Z"
 - Warning **SQM — Sociedad Quimica y Minera de Chile S.A.: Daily preparation degraded: [[securities/security_9d4049ed6669a52815d6|SQM]]** — [[securities/security_9d4049ed6669a52815d6|SQM]]: YFTzMissingError: $SQM: possibly delisted; no timezone found
 - Warning **YEC.F — YASKAWA Electric Corporation: Daily preparation degraded: [[securities/security_89969b7dac39b7db5661|YEC.F]]** — [[securities/security_89969b7dac39b7db5661|YEC.F]]: price cache is empty
 - Warning **META — Meta Platforms, Inc.: Daily preparation degraded: [[securities/security_d12e746b3c9d392183cc|META]]** — [[securities/security_d12e746b3c9d392183cc|META]]: price cache is empty
+- Warning **CRSR — Corsair Gaming, Inc.: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]-volume_anomaly-919db7c341d1.md** — classifier blocked for data/wiki/inbox/market-[[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]-volume_anomaly-919db7c341d1.md
 - Warning **RXRX — Recursion Pharmaceuticals, Inc.: Daily preparation degraded: [[securities/security_ed7d5b616a196969c815|RXRX]]** — [[securities/security_ed7d5b616a196969c815|RXRX]]: YFTzMissingError: $RXRX: possibly delisted; no timezone found
 - Warning **SCCO — Southern Copper Corporation: Daily preparation degraded: [[securities/security_6ad1af8d10d6276a0221|SCCO]]** — [[securities/security_6ad1af8d10d6276a0221|SCCO]]: YFTzMissingError: $SCCO: possibly delisted; no timezone found
 - Warning **MSFT — Microsoft Corporation: Daily preparation degraded: [[securities/security_204be2a44063993de1a8|MSFT]]** — [[securities/security_204be2a44063993de1a8|MSFT]]: price cache is empty
@@ -106,6 +109,7 @@ as_of: "2026-08-06T21:34:57Z"
 - Warning **DNA — Ginkgo Bioworks Holdings, Inc.: Daily preparation degraded: [[securities/security_95351d928b674bbdf687|DNA]]** — [[securities/security_95351d928b674bbdf687|DNA]]: price cache is empty
 - Warning **CSIQ — Canadian Solar Inc.: Daily preparation degraded: [[securities/security_099561384c0f5e697727|CSIQ]]** — [[securities/security_099561384c0f5e697727|CSIQ]]: price cache is empty
 - Warning **AMZN — Amazon.com, Inc.: Daily preparation degraded: [[securities/security_2433a056eb0c55961fcc|AMZN]]** — [[securities/security_2433a056eb0c55961fcc|AMZN]]: price cache is empty
+- Warning **ALB — Albemarle Corporation: Daily preparation degraded: classifier blocked for data/wiki/inbox/market-[[securities/security_66cdcf90aac0d83e76f3|ALB]]-volume_anomaly-8c73a0b155d0.md** — classifier blocked for data/wiki/inbox/market-[[securities/security_66cdcf90aac0d83e76f3|ALB]]-volume_anomaly-8c73a0b155d0.md
 - Warning **SPOT — Spotify Technology S.A.: Daily preparation degraded: [[securities/security_2010347f1a0a5ea60f47|SPOT]]** — [[securities/security_2010347f1a0a5ea60f47|SPOT]]: price cache is empty
 - Warning **SSU.VI — Samsung Electronics Co., Ltd.: Daily preparation degraded: [[securities/security_567d0d575bbd30aaa91d|SSU.VI]]** — [[securities/security_567d0d575bbd30aaa91d|SSU.VI]]: price cache is empty
 - Warning **FLNC — Fluence Energy, Inc.: Daily preparation degraded: [[securities/security_a9eb9838940ef5ceaa0c|FLNC]]** — [[securities/security_a9eb9838940ef5ceaa0c|FLNC]]: YFTzMissingError: $FLNC: possibly delisted; no timezone found
@@ -133,7 +137,7 @@ as_of: "2026-08-06T21:34:57Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 302 active operations.
+Showing 20 of 304 active operations.
 
 <details><summary>Active research work</summary>
 

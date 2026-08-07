@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDQ41PRX8WGX7D75GT71285",
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from the Terafab AI industrial stack to SpaceX listed equity with high sensitivity and medium confidence. SpaceX is the proposed owner, principal user and systems integrator, creating material supply-security and deployment upside if the campus qualifies. The edge also preserves SpaceX's direct exposure to capital intensity, yield, utilization, schedule and related-party governance risk; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://assets.comptroller.texas.gov/open-data/jeti/J0037/J0037-terafab-anderson-appsupp1.pdf",
+      "claim": "The Texas application describes a proposed multiphase semiconductor, packaging and system-integration campus associated with SpaceX, xAI and Tesla, but not completed production."
+    },
+    {
+      "source": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "claim": "SpaceX describes the integrated Terafab ambition while expecting significant third-party compute sourcing to continue, supporting a staged rather than self-sufficient ramp."
+    },
+    {
+      "source": "data/wiki/securities/security_664f93a7eaca72e76e9b.md",
+      "claim": "The maintained SpaceX review documents high capex, Space and AI operating losses, a strong post-IPO liquidity position and concentrated governance, which bound the relationship economics."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDQ41PRX8WGX7D75GT71285/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_terafab_spcx.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the high-sensitivity Terafab-to-SpaceX relationship: ownership and captive deployment create direct upside, while capital, yield, utilization and governance risks remain equally direct."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDQ41PRX8WGX7D75GT71285/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent Terafab-to-SpaceX edge existed before this operation.",
+      "The accepted row contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, research page and review timestamps.",
+      "The maintained page treats applications and frameworks as prospective and preserves capital, yield, schedule, utilization and governance contrary evidence.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

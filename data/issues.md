@@ -43,6 +43,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_55f958632a0f142a3925** — Daily preparation degraded: security_96ba305ee7cd586bc348 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_568a09e6aa89b220ac34** — Daily preparation degraded: security_dc7a111e297be528d96b | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_5f40235a5598fc72203e** — Daily preparation degraded: security_b2116dcf976c96974d7b | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_607cf4086c569d20677d** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0.md | 2026-08-07T08:54:30Z | deterministic-controller |  |
 | warning | **issue_666586697c8b2cf251b7** — Daily preparation degraded: security_66cdcf90aac0d83e76f3 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_6968cdf3d5a050da82a1** — YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_6b3c8e68ec789ffd7037** — Daily preparation degraded: security_fe4648901e7675f157fd | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -57,6 +58,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_8063efca3ea5402f7588** — Daily preparation degraded: security_cc4dcb8f002b61dffe00 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_82988148270c1671878b** — Daily preparation degraded: security_ce9b78a4d0773c950765 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8839071e805e6a9f69c4** — Daily preparation degraded: security_eca976f0076a425ea1bb | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_88dd492ca600fe659405** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222.md | 2026-08-07T08:54:30Z | deterministic-controller |  |
 | warning | **issue_8a44c0f8adb3d0d2fb86** — Daily preparation degraded: security_59304f90c440def31dc5 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8ada3995ac26a38446f5** — Daily preparation degraded: security_ef35e41886220d51c22c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8b0b68860313ad4f9bec** — Daily preparation degraded: security_f2b9760d847b2ba59324 | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -69,6 +71,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_a431f38470d93e962d76** — Daily preparation degraded: FX GBP/EUR | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_a8ebff7b7d828f3d7e93** — Daily preparation degraded: security_89969b7dac39b7db5661 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_a95ee10bec8dac18764c** — Daily preparation degraded: security_d12e746b3c9d392183cc | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_aad5a91c34b4693b7564** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1.md | 2026-08-07T08:54:30Z | deterministic-controller |  |
 | warning | **issue_acfbebf0c986cbab342f** — Daily preparation degraded: security_ed7d5b616a196969c815 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_ad21944ead57ede6e2ac** — Daily preparation degraded: security_6ad1af8d10d6276a0221 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_ad9eb2e31cc57f9f4f03** — Daily preparation degraded: security_204be2a44063993de1a8 | 2026-07-29T16:51:20Z | deterministic-controller |  |
@@ -87,6 +90,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_d24d52684b3794870e5d** — Daily preparation degraded: security_95351d928b674bbdf687 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_d36bf9b837165bacac8a** — Daily preparation degraded: security_099561384c0f5e697727 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_e1b48875d46f1bd3debb** — Daily preparation degraded: security_2433a056eb0c55961fcc | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_e2e7d9997e294836f759** — Daily preparation degraded: classifier blocked for data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0.md | 2026-08-07T08:54:30Z | deterministic-controller |  |
 | warning | **issue_e6df6c7159267aecd855** — Daily podcast failed: daily-20260805T065913Z | 2026-08-05T11:40:25Z | delivery | 01KZ8VJY48VNMCFW638QQJZGJH |
 | warning | **issue_e8012ba9cfff70e45781** — Daily preparation degraded: security_2010347f1a0a5ea60f47 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_ea600e6a0abd700bbdd4** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg | 2026-07-30T06:15:52Z | youtube-discovery |  |

@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_nvda",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_33d9c44facc75c726c7d",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Terafab and SpaceXAI require immediately deployable general-purpose training, inference, networking and software while internal fabrication is built and qualified; NVIDIA can convert that demand through Vera Rubin systems, Space-1 orbital modules, interconnect, networking and CUDA into revenue and cash flow, while any domestic packaging or selected-silicon benefit remains conditional and unannounced.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "SpaceXAI discloses material NVIDIA system orders or deployment, orbital compute ships successfully with recurring NVIDIA content, or NVIDIA signs a measurable package, chiplet, capacity, co-development or investment agreement related to Terafab.",
+  "invalidation": "SpaceXAI deployment is immaterial, cancelled or shifts materially to internal or competing accelerators; orbital economics fail; export, supply or power constraints prevent delivery; no measurable NVIDIA economics emerge; or customer-designed silicon erodes more NVIDIA revenue than Terafab-related demand creates.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_terafab_nvda.md",
+  "last_reviewed_at": "2026-08-07T09:00:58Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

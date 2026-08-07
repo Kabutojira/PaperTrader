@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_terafab_asml",
+  "dedupe_key": "relationship_research:relationship_terafab_asml:terafab-launch:2026-08-07",
+  "prompt": "Review the causal Terafab relationship to ASML.",
+  "inputs": {
+    "relationship_id": "relationship_terafab_asml",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_ef35e41886220d51c22c",
+    "hypothesis": "A leading-edge Terafab buildout creates lithography and service demand for ASML, while project delay and unproven xLight source integration constrain Terafab-specific confidence."
+  },
+  "source": "idea_research:01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": ["01KZDPTWQRWN9H0ZFJ8CJ4KKB7"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md",
+    "https://www.asml.com/en/news/press-releases/2026/q1-2026-financial-results",
+    "https://www.nist.gov/news-events/news/2026/06/department-commerce-announces-finalization-chips-incentives-xlight-support"
+  ],
+  "max_attempts": 3
+}

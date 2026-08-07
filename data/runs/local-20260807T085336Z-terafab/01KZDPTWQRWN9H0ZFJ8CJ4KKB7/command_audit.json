@@ -1,0 +1,404 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-nvda.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ3ZR8JZCFH75XC7S7665S.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "1e346fdb7859a5b28bf2c61729fef8cb49d834cf0893516544e0091d7e1a023f",
+            145663,
+            384
+          ],
+          "before": [
+            "file",
+            "e9bbe23df000b94f75d626388a1848b09fec66b694a1c9fd03e9b1d9f6d7ca70",
+            145198,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "35ab8238f574e848a5587a8ec50f7d5a67044e77f1f50211f4c7b84ce99f04e1",
+            914,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ3ZR8JZCFH75XC7S7665S.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-nvda.json",
+      "completed_at": "2026-08-07T08:58:30Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "0bcd31e221bfebf80e9a24eed73704d9cf36d214ef4b667f927b54184af6734b",
+          1140,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-nvda.json"
+      },
+      "started_at": "2026-08-07T08:58:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-spcx.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ41PRX8WGX7D75GT71285.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "6788a33a4b4c0b67b406d0cc857eb5c96bb27b478d694b41bef7b945b4e2e67d",
+            146142,
+            384
+          ],
+          "before": [
+            "file",
+            "1e346fdb7859a5b28bf2c61729fef8cb49d834cf0893516544e0091d7e1a023f",
+            145663,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "dd072d28d44546bb15cc0b0f2e6e1faf54d296ee74b146abd37156c721aeb2ee",
+            1023,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ41PRX8WGX7D75GT71285.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-spcx.json",
+      "completed_at": "2026-08-07T08:58:31Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "865e38f41a75a0b010751d63225bb8ea024fcc79173b7dd9c6d0b1e675c1a817",
+          1249,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-spcx.json"
+      },
+      "started_at": "2026-08-07T08:58:31Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsla.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ43N8H9VGQ3TB07HNFKYN.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d22f419b8df1fd71c30ccc5266aaab2baa93574b1687544d549e8e21d3052d79",
+            146606,
+            384
+          ],
+          "before": [
+            "file",
+            "6788a33a4b4c0b67b406d0cc857eb5c96bb27b478d694b41bef7b945b4e2e67d",
+            146142,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "6644c551e4d36fef80c2f7a8321687f66bcbc56a5d3256a7b98ab320860fd963",
+            967,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ43N8H9VGQ3TB07HNFKYN.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsla.json",
+      "completed_at": "2026-08-07T08:58:33Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "cb48ab0b65610762d5b57b317a4a04bb562b02ec324fc79a7b621d626e8cfbd5",
+          1193,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsla.json"
+      },
+      "started_at": "2026-08-07T08:58:32Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-intc.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ44MGNEA7NF7WHEQSW8XW.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "e7dee4612d96cb46b0b471d7d408ac37af2e30f129cebd3b3494f7f931961492",
+            147070,
+            384
+          ],
+          "before": [
+            "file",
+            "d22f419b8df1fd71c30ccc5266aaab2baa93574b1687544d549e8e21d3052d79",
+            146606,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "273e5890922e388cb5f72da27a7f0b9a1c55cb6bcbb1a53c311000e3c43006a2",
+            1027,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ44MGNEA7NF7WHEQSW8XW.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-intc.json",
+      "completed_at": "2026-08-07T08:58:34Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "107c886e7f2c35e714b91ede55461009fd72221465a87822f8520a1ef9ea5751",
+          1253,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-intc.json"
+      },
+      "started_at": "2026-08-07T08:58:34Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-asml.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ46K0XZT9ZCKA9P2QQNW0.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "bc9af1b55c9114527d7471cf800a1c0fc7fcef76c8c7e0e8210fb9769624b15b",
+            147533,
+            384
+          ],
+          "before": [
+            "file",
+            "e7dee4612d96cb46b0b471d7d408ac37af2e30f129cebd3b3494f7f931961492",
+            147070,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "b3919bad541e0dd986a86452a92204a79bcf4129e88a3a3cfdb47aede836d372",
+            989,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ46K0XZT9ZCKA9P2QQNW0.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-asml.json",
+      "completed_at": "2026-08-07T08:58:36Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "5db2f8d9059996d1f7f476c0e8e7f16e96ce0efaa742b9901b3c5bc928bd9539",
+          1215,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-asml.json"
+      },
+      "started_at": "2026-08-07T08:58:36Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsm.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ47J8A1SSF0NR06CZSTAX.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "a1172f9f9df4dbf5d3646b0e087f293f1cb231ee5dd1b503437961230db7d218",
+            147994,
+            384
+          ],
+          "before": [
+            "file",
+            "bc9af1b55c9114527d7471cf800a1c0fc7fcef76c8c7e0e8210fb9769624b15b",
+            147533,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "388b145ef8e7723e4b1a53ed4b71a7d01b3f4af3def8f3d1ff300580993129a1",
+            935,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ47J8A1SSF0NR06CZSTAX.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsm.json",
+      "completed_at": "2026-08-07T08:58:38Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "4874746a8e71ff33ddc3b4bbe8d54cf75cf330c9d211aa655811738a766a4d99",
+          1160,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsm.json"
+      },
+      "started_at": "2026-08-07T08:58:37Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-samsung.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01KZDQ49GRDQNS8H3NK59HRBBB.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "fdfc7513e9a096cffef9868fb472ee91685584e592b772449af75be387f09a2d",
+            148511,
+            384
+          ],
+          "before": [
+            "file",
+            "a1172f9f9df4dbf5d3646b0e087f293f1cb231ee5dd1b503437961230db7d218",
+            147994,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "a7b57d3082e4ab3afa2170a3079f6ed96e8c0d2ea42e574e574d32c5e85374a2",
+            1059,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01KZDQ49GRDQNS8H3NK59HRBBB.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-samsung.json",
+      "completed_at": "2026-08-07T08:58:39Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "0acefb62500ad77818630cfa2654f1f3d3a444d7f6f2c7c7c839340822ed0cea",
+          1299,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-samsung.json"
+      },
+      "started_at": "2026-08-07T08:58:39Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-07T08:59:02Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T08:59:02Z"
+    }
+  ],
+  "operation_id": "01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-20260807T085336Z-terafab"
+}

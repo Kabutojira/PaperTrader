@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_samsung_common_gdr",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_567d0d575bbd30aaa91d",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Terafab and SpaceXAI require HBM, server memory, foundry and packaging capacity while internal memory and logic are unqualified; Samsung can monetize the transition through its Nvidia-aligned HBM and integrated semiconductor capabilities, but no Terafab-specific contract or volume is disclosed and successful insourcing creates long-run displacement risk.",
+  "sensitivity": "medium",
+  "confidence": "low",
+  "catalyst": "Samsung discloses material SpaceXAI or Terafab HBM, memory, foundry or packaging volume; Nvidia-aligned HBM shipments scale with the deployment; or external memory and packaging sourcing persists after internal phases begin.",
+  "invalidation": "SpaceXAI demand does not create material Samsung content; Samsung loses relevant HBM or foundry qualifications; Terafab internalizes competitive memory, logic or packaging faster than expected; or long-run displacement outweighs transition revenue.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_terafab_samsung_common_gdr.md",
+  "last_reviewed_at": "2026-08-07T09:12:32Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

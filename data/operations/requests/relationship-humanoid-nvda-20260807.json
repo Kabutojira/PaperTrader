@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_humanoid_nvda",
+  "dedupe_key": "relationship_research:relationship_humanoid_nvda:nvidia-recheck:2026-08-07",
+  "prompt": "Review the causal humanoid robotics and embodied-AI relationship to NVIDIA.",
+  "inputs": {
+    "relationship_id": "relationship_humanoid_nvda",
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "hypothesis": "NVIDIA can monetize physical AI through simulation, world models, edge compute, safety tooling and the developer ecosystem, while humanoid revenue materiality remains unproven."
+  },
+  "source": "user:nvidia-recheck:2026-08-07",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world",
+    "https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai"
+  ],
+  "max_attempts": 3
+}

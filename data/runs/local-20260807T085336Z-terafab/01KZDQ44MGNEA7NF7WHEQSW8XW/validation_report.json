@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDQ44MGNEA7NF7WHEQSW8XW/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_terafab_intc.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-08-07T09:09:25Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZDQ44MGNEA7NF7WHEQSW8XW",
+  "passed": true,
+  "run_id": "local-20260807T085336Z-terafab",
+  "validation_version": 1
+}

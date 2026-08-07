@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_terafab_tsm",
+  "idea_id": "idea_terafab_ai_industrial_stack",
+  "security_id": "security_ce9b78a4d0773c950765",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "SpaceXAI and Terafab's staged buildout increase near-term demand for externally fabricated Nvidia and custom silicon while internal logic, packaging and memory are unqualified; TSMC can monetize that bridge through leading-node wafers and advanced packaging, but successful Terafab internalization creates a long-run displacement risk.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "SpaceXAI or Tesla demand produces measurable TSMC-fabricated accelerator or custom-silicon volume, advanced-packaging demand expands during the Terafab ramp, or external sourcing persists after internal phases begin.",
+  "invalidation": "SpaceXAI demand is immaterial or shifts away from TSMC-fabricated products; Terafab qualifies competitive leading-edge logic and packaging faster than expected; TSMC loses relevant Nvidia or custom-silicon designs; or incremental bridge revenue is outweighed by durable customer insourcing.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_terafab_tsm.md",
+  "last_reviewed_at": "2026-08-07T09:11:04Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

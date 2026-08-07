@@ -1,0 +1,42 @@
+{
+  "operation_id": "01KZDRVVV0BFGVXH10CAY670MZ",
+  "status": "succeeded",
+  "summary": "Refreshed the Terafab idea from NVIDIA's completed result and the resolved seven-security relationship graph. SpaceX, Tesla, NVIDIA, ASML, TSMC and Samsung are accepted conditional beneficiaries; Intel is rejected until its proposed role becomes binding and financially measurable. NVIDIA's orbital and SpaceXAI evidence supports the staged hybrid thesis but does not justify changing USD 180/USD 252/USD 374 scenarios. At USD 218.99, bear/base payoff remains below minimum, so no strategy or paper action followed and no identity or downstream operation was created.",
+  "evidence": [
+    {
+      "source": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json",
+      "claim": "The terminal NVIDIA result retains unchanged scenarios, records Watch conviction and allocation ineligibility solely for bear/base payoff, and confirms no strategy despite complete relationship status."
+    },
+    {
+      "source": "data/wiki/relationships/relationship_terafab_nvda.md",
+      "claim": "The accepted NVIDIA edge is current SpaceXAI and orbital demand through systems, networking, interconnect and software, not an unannounced wafer-production agreement."
+    },
+    {
+      "source": "data/tables/relationships.csv",
+      "claim": "Canonical state resolves all seven original Terafab candidates: six accepted relationships and one rejected Intel relationship with explicit catalysts and invalidation."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Terafab idea refresh completed: six relationships are accepted, Intel is rejected, and NVIDIA's new customer and orbital evidence supports the hybrid thesis without changing its current non-actionable valuation frontier."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The immutable Terafab idea ID and NVIDIA security/result identities match the running payload and terminal dependency.",
+      "The page replaces every pending relationship hypothesis with a linked accepted or rejected canonical disposition and preserves immutable security links.",
+      "The revision covers candidate-universe status, changed conclusions and confidence, contradictions, catalysts, risks and unchanged hybrid-ramp conclusions.",
+      "The original owner, demand, compute, process, lithography, foundry, packaging and memory layers remain covered, and no new identity is justified by the NVIDIA result.",
+      "The fresh NVIDIA result was consumed without requeueing it, and no structured state, strategy, signal, order, allocation or accounting file changed.",
+      "papertrader wiki lint --strict returned OK [wiki]."
+    ]
+  }
+}

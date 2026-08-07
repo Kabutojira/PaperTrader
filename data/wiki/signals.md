@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-06"
-updated: "2026-08-06"
+created: "2026-08-07"
+updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5e4a28ab3391b54d3ac5"
-as_of: "2026-08-06T21:34:57Z"
+snapshot_id: "decision_7291ada3bc3dd4554729"
+as_of: "2026-08-07T09:35:34Z"
 ---
 
 # Signals
 
-**As of `2026-08-06T21:34:57Z`**
+**As of `2026-08-07T09:35:34Z`**
 
 ## Actionable trade signals
 
@@ -115,6 +115,15 @@ No pending paper orders.
 - Research status: `waiting`
 - Conclusion: High-priority security research is waiting on its scheduling constraints.
 
+### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-06`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
@@ -142,15 +151,6 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
-- Research status: `succeeded`
-- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
-
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
 **Research alert — not a trade signal**
@@ -168,6 +168,15 @@ No pending paper orders.
 - Market date: `2026-08-06`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-06`
+- Research status: `succeeded`
+- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
 
 ### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
 

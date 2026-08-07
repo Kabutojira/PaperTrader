@@ -1,0 +1,29 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZDQ3ZR8JZCFH75XC7S7665S.json",
+    "data/operations/payloads/01KZDQ41PRX8WGX7D75GT71285.json",
+    "data/operations/payloads/01KZDQ43N8H9VGQ3TB07HNFKYN.json",
+    "data/operations/payloads/01KZDQ44MGNEA7NF7WHEQSW8XW.json",
+    "data/operations/payloads/01KZDQ46K0XZT9ZCKA9P2QQNW0.json",
+    "data/operations/payloads/01KZDQ47J8A1SSF0NR06CZSTAX.json",
+    "data/operations/payloads/01KZDQ49GRDQNS8H3NK59HRBBB.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-asml.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-intc.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-nvda.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-samsung.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-spcx.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsla.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDPTWQRWN9H0ZFJ8CJ4KKB7/enqueue-relationship-terafab-tsm.json",
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-08-07T09:00:22Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "passed": true,
+  "run_id": "local-20260807T085336Z-terafab",
+  "validation_version": 1
+}

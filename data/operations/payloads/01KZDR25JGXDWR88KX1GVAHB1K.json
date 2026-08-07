@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_wide_bandgap_nvda",
+  "entity_type": "relationship",
+  "inputs": {
+    "hypothesis": "NVIDIA's 800 VDC architecture can accelerate WBG adoption and improve system deployability, but WBG component economics may not transmit materially to NVIDIA common stock.",
+    "idea_id": "idea_wide_bandgap_power_semiconductors",
+    "relationship_id": "relationship_wide_bandgap_nvda",
+    "security_id": "security_33d9c44facc75c726c7d"
+  },
+  "objective": "Review the causal wide-bandgap power-semiconductor relationship to NVIDIA.",
+  "operation_id": "01KZDR25JGXDWR88KX1GVAHB1K",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "https://www.nvidia.com/en-us/data-center/technologies/800-vdc-architecture/"
+  ]
+}

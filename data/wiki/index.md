@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-08-06"
-updated: "2026-08-06"
+created: "2026-08-07"
+updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5e4a28ab3391b54d3ac5"
-as_of: "2026-08-06T21:34:57Z"
+snapshot_id: "decision_7291ada3bc3dd4554729"
+as_of: "2026-08-07T09:35:34Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-06T21:34:57Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-07T09:35:34Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -38,7 +38,7 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 
 ## Top assessed near misses
 
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 24.7994701109455207815863554% · A current accepted idea-to-security relationship is unavailable.
+- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · Bear/base payoff is below threshold.
 - **[TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765):** Hold / Watch · expected -9.42028985507246376811594203% · Base-case return is below threshold.
 - **[GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf):** Hold / Watch · expected -0.59809756370104102361780986% · Base-case return is below threshold.
 
@@ -48,8 +48,8 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - Running drawdown: **0%**
 - Largest position: **0%**
 - Current assessments: **64/64**
-- Relationship reviews: **20/64**
-- Accepted relationships: **18**
+- Relationship reviews: **27/64**
+- Accepted relationships: **24**
 - Market retrieval failures: **0**
 
 ## Explore
@@ -60,4 +60,4 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260806|Daily report 2026-08-06]]
+- [[daily-reports/daily-report_20260807|Daily report 2026-08-07]]

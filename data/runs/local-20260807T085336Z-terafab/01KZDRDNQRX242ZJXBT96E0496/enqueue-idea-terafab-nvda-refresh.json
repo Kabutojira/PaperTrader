@@ -1,0 +1,27 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_terafab_ai_industrial_stack",
+  "dedupe_key": "idea_research:idea_terafab_ai_industrial_stack:security-result-01KZDRDNQRX242ZJXBT96E0496",
+  "prompt": "Refresh the Terafab idea from the accepted NVIDIA security result without requeueing the fresh security.",
+  "inputs": {
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "seed_claim": "NVIDIA's refreshed review accepts near-term platform and orbital demand but changes no EPS scenario because customer and manufacturing economics remain unannounced.",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "security_research_operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+    "expected_security_result_path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json",
+    "research_focus": "Absorb NVIDIA's accepted relationship, assessment disposition and unchanged-scenario conclusion into the idea's candidate disposition, thesis, catalysts, risks, confidence and universe without requeueing NVIDIA."
+  },
+  "source": "security_research:01KZDRDNQRX242ZJXBT96E0496",
+  "priority": 98,
+  "freshness_days": 0,
+  "depends_on": ["01KZDRDNQRX242ZJXBT96E0496"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "data/wiki/relationships/relationship_terafab_nvda.md",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json"
+  ],
+  "max_attempts": 3
+}

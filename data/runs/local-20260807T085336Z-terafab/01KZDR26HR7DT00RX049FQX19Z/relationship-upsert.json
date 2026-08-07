@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_ai_drug_nvda",
+  "idea_id": "idea_ai_native_drug_discovery",
+  "security_id": "security_33d9c44facc75c726c7d",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "AI-native drug discovery can create demand for NVIDIA accelerated compute, software, data infrastructure and automated-lab integration, and the Lilly co-innovation lab establishes a concrete channel; however, the disclosed sector commitment is not NVIDIA revenue and is immaterial relative to NVIDIA's diversified Data Center economics without broader repeat adoption.",
+  "sensitivity": "low",
+  "confidence": "low",
+  "catalyst": "Multiple pharmaceutical customers disclose repeat material NVIDIA platform purchases, life-sciences revenue or software economics become separately measurable, or clinical and lab productivity creates durable sector demand material to NVIDIA cash flow.",
+  "invalidation": "Pharma internalizes or uses competing infrastructure; AI workflows fail to improve discovery economics; the Lilly lab does not create repeat purchases; sector demand remains immaterial; or NVIDIA continues to disclose no measurable life-sciences revenue, margin or cash flow.",
+  "status": "rejected",
+  "research_page": "data/wiki/relationships/relationship_ai_drug_nvda.md",
+  "last_reviewed_at": "2026-08-07T09:19:27Z",
+  "next_review_at": "2026-11-15T12:00:00Z"
+}

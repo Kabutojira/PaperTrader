@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDR25JGXDWR88KX1GVAHB1K",
+  "status": "succeeded",
+  "summary": "Rejected the wide-bandgap-power-semiconductor relationship to NVIDIA at low sensitivity and low confidence. NVIDIA's 800 VDC architecture is credible evidence for WBG component demand and may reduce AI-system deployment friction, but NVIDIA is the architecture and compute vendor rather than an evidenced WBG supplier and discloses no material WBG-attributable revenue, margin or cash flow. Quantified production economics are the upgrade gate; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://www.nvidia.com/en-us/data-center/technologies/800-vdc-architecture/",
+      "claim": "NVIDIA describes a gradual 800 VDC migration that reduces current, copper and conversion stages but does not quantify NVIDIA WBG-attributable economics."
+    },
+    {
+      "source": "data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md",
+      "claim": "The maintained idea identifies device qualification, yield, utilization, packaging, price and capital intensity as determinants of supplier returns and does not identify NVIDIA as a direct WBG supplier."
+    },
+    {
+      "source": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "claim": "NVIDIA's maintained review treats power as a deployment constraint but records compute and networking, not WBG component sales, as the direct economic channel."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDR25JGXDWR88KX1GVAHB1K/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_wide_bandgap_nvda.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rejected NVIDIA as a direct wide-bandgap investment edge: 800 VDC supports supplier demand, but no material WBG economics currently transmit to NVIDIA common stock."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDR25JGXDWR88KX1GVAHB1K/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent wide-bandgap-to-NVIDIA edge existed before this operation.",
+      "The rejected row retains the hypothesized direction, mechanism, sensitivity, confidence, catalyst, invalidation, research page and review timestamps.",
+      "The maintained page distinguishes NVIDIA's role as architecture evidence from direct supplier or shareholder economics.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

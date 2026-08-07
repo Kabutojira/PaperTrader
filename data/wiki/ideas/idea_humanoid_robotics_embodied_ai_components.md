@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-26"
-updated: "2026-07-26"
-provenance: "user seed; International Federation of Robotics; NVIDIA; MP Materials"
+updated: "2026-08-07"
+provenance: "user seed; International Federation of Robotics; NVIDIA; MP Materials; NVIDIA fiscal Q1 2027 review and accepted relationship"
 idea_id: idea_humanoid_robotics_embodied_ai_components
 confidence: low-medium
 next_review: "2026-10-15"
@@ -26,7 +26,9 @@ general-purpose humanoid economics remain early.
 
 Current assessment: **monitoring**. Robotics adoption and enabling technology are advancing, but
 the evidence does not yet establish repeat multi-site humanoid economics or material component
-revenue attributable to humanoids.
+revenue attributable to humanoids. [[securities/security_33d9c44facc75c726c7d|NVDA]] is now an
+accepted medium-sensitivity platform beneficiary, while its own USD 218.99 valuation remains
+non-actionable because downside payoff is inadequate.
 
 ## Causal mechanism
 
@@ -74,18 +76,48 @@ cheaply, component designs remain bespoke, or low-cost Asian suppliers retain th
 invalid if material intensity falls, maintenance and safety costs prevent acceptable payback, or
 supplier margins decline even as units grow.
 
-## Bounded research candidate
+## Current investable universe and dispositions
 
-`security_c120e9f26ebb6159adf9` (ABB Ltd ADR) is an existing immutable identity. A bounded review
-must separate Robotics from Electrification and Automation, test RobotStudio monetization,
-installed-base service economics, segment orders and margins, portfolio changes, and valuation.
-It is not yet an accepted relationship or recommendation. Queued as operation
-`01KYFQN7F8BKSSMGH81567597W`.
+- [[securities/security_33d9c44facc75c726c7d|NVDA]] is an **accepted, medium-sensitivity,
+  medium-confidence beneficiary** through simulation, world models, training compute, edge modules,
+  safety tooling and CUDA. Product availability and robot-maker integrations are established;
+  humanoid-attributable revenue and repeat paid deployment economics are not. NVIDIA's current
+  assessment is complete and Buy/Initiate at the research layer, but remains Watch and allocation-
+  ineligible at USD 218.99 because bear/base payoff is below minimum. See
+  [[relationships/relationship_humanoid_nvda]].
+- [[securities/security_c120e9f26ebb6159adf9|ABB]] has completed research but its relationship is
+  **rejected**. The pending Robotics divestment removes a durable direct transmission channel and
+  retained businesses disclose no material embodied-AI economics. See
+  [[relationships/relationship_afac7205cd7e09800edf]].
+- [[securities/security_89969b7dac39b7db5661|YASKAWA]] remains an installed-base industrial-
+  robotics comparison named in NVIDIA's ecosystem evidence, not a retained causal edge from this
+  revision. No fresh company-specific economic evidence justifies another review.
+- Motion components, safety sensors, batteries, magnets and power electronics remain material
+  layers. The existing result adds platform evidence rather than a new supplier identity, so no
+  watchlist import or downstream operation is justified.
+
+## Changes from the security revision
+
+- **Candidate conclusion changed:** NVIDIA moved from idea evidence to an accepted platform
+  beneficiary. The stock remains Watch because its current assessment fails bear/base payoff, not
+  because the physical-AI mechanism is absent.
+- **Universe changed:** NVIDIA joins the explicit retained set; ABB moves from stale queued prose to
+  a completed rejected relationship. No identity was imported or removed.
+- **Thesis and confidence changed:** confidence rises for the enabling compute, simulation and safety
+  layer, but not for general-purpose humanoid adoption or component revenue materiality. Overall
+  confidence remains medium in industrial robotics and low in near-term humanoid economics.
+- **Catalysts and risks changed:** repeat paid NVIDIA-based deployments, multi-site uptime, safety
+  certification and attributable software or edge revenue are explicit gates. Fixed automation,
+  competing stacks, customer internalization and continued immaterial revenue are explicit risks.
+- **Contradictions and unchanged conclusions:** ecosystem breadth supports adoption, while vendor-
+  promotional evidence and missing unit economics prevent a mass-deployment conclusion. Monitoring,
+  no strategy and no requeue of the fresh NVIDIA result remain unchanged.
 
 ## Confidence and review
 
 Confidence is **medium** in continued industrial-robot adoption and **low** in near-term humanoid
 component materiality. Review by **2026-10-15**, or sooner after material multi-site orders,
-supplier revenue disclosure, safety certification, or a major failed deployment.
+NVIDIA-attributable platform revenue, supplier revenue disclosure, safety certification, or a major
+failed deployment.
 
 See the complete [[index]] and append-only [[log]] for repository context.

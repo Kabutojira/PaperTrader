@@ -1,0 +1,26 @@
+{
+  "completed_at": "2026-08-07T09:35:34Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 16,
+  "podcast_audio_path": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "preparation_errors": [
+    "classifier blocked for data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1.md",
+    "classifier blocked for data/wiki/inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0.md",
+    "classifier blocked for data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222.md",
+    "classifier blocked for data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0.md"
+  ],
+  "queue_dispositions": [],
+  "report_path": "data/wiki/daily-reports/daily-report_20260807.md",
+  "run_id": "local-20260807T085336Z-terafab",
+  "snapshot_id": "decision_7291ada3bc3dd4554729",
+  "source_sha": "5b062e84ad6d82d953340dcd723dcbc415f985e3",
+  "started_at": "2026-08-07T08:54:30Z",
+  "status": "degraded",
+  "trigger": "local-user-request"
+}

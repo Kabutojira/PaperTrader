@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_terafab_tsm",
+  "dedupe_key": "relationship_research:relationship_terafab_tsm:terafab-launch:2026-08-07",
+  "prompt": "Review the causal Terafab relationship to TSMC.",
+  "inputs": {
+    "relationship_id": "relationship_terafab_tsm",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_ce9b78a4d0773c950765",
+    "hypothesis": "TSMC is a near-term bridge beneficiary from Nvidia and AI demand but faces long-run displacement risk only if Terafab proves competitive leading-edge yield and scale."
+  },
+  "source": "idea_research:01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": ["01KZDPTWQRWN9H0ZFJ8CJ4KKB7"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_ce9b78a4d0773c950765.md",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "https://investor.tsmc.com/static/annualReports/2025/english/index.html"
+  ],
+  "max_attempts": 3
+}

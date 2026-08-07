@@ -1,0 +1,70 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "relationship",
+        "upsert",
+        "--request",
+        "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/relationship-upsert.json"
+      ],
+      "changed_paths": [
+        "data/tables/relationships.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "47d10abf474ba814cabea3303abc91046074487071ff57e12342234de4f5bb1d",
+            39530,
+            384
+          ],
+          "before": [
+            "file",
+            "8b7a3c9707a309c9793b5cd1be01b5664bf416ac932a954554c8bfb43309cb55",
+            38413,
+            384
+          ],
+          "path": "data/tables/relationships.csv"
+        }
+      ],
+      "command": "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/relationship-upsert.json",
+      "completed_at": "2026-08-07T09:11:49Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "1521b89c0deac12900aebfd47aad64a4c0a89765bbafbaeaebd8b851a1111296",
+          1357,
+          436
+        ],
+        "path": "data/runs/local-20260807T085336Z-terafab/01KZDQ47J8A1SSF0NR06CZSTAX/relationship-upsert.json"
+      },
+      "started_at": "2026-08-07T09:11:48Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-07T09:11:50Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-07T09:11:50Z"
+    }
+  ],
+  "operation_id": "01KZDQ47J8A1SSF0NR06CZSTAX",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-20260807T085336Z-terafab"
+}

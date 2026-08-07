@@ -1,0 +1,26 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_ai_compute_nvda",
+  "dedupe_key": "relationship_research:relationship_ai_compute_nvda:nvidia-recheck:2026-08-07",
+  "prompt": "Review the causal AI compute, networking and hyperscaler monetization relationship to NVIDIA.",
+  "inputs": {
+    "relationship_id": "relationship_ai_compute_nvda",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "hypothesis": "NVIDIA directly monetizes the idea through accelerated compute, networking, systems and software, subject to hyperscaler capex, export, custom-silicon and valuation risks."
+  },
+  "source": "user:nvidia-recheck:2026-08-07",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,34 @@
+{
+  "entity_id": "idea_terafab_ai_industrial_stack",
+  "entity_type": "idea",
+  "inputs": {
+    "configured_security_ids": [
+      "security_33d9c44facc75c726c7d",
+      "security_664f93a7eaca72e76e9b",
+      "security_dc7a111e297be528d96b",
+      "security_dfa34d4b9050964b465e",
+      "security_ef35e41886220d51c22c",
+      "security_ce9b78a4d0773c950765",
+      "security_567d0d575bbd30aaa91d"
+    ],
+    "drivers": "AI and orbital-compute demand; domestic semiconductor capacity; captive Tesla and SpaceX silicon; advanced packaging; leading-edge lithography; memory and foundry bottlenecks.",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "invalidation": "Binding site, financing, process, tool, utility, customer, yield, packaging, and memory milestones fail to appear; Intel or Tesla frameworks do not become definitive; Nvidia remains only a merchant supplier; xLight does not progress beyond prototype; or external suppliers remain structurally more economic than internal capacity.",
+    "research_focus": "Verify the current project boundary with primary evidence, preserve every speculative dependency, map the complete investable public value chain, and enqueue one bounded relationship review for each retained configured security without creating a strategy or signal.",
+    "seed_claim": "SpaceX's proposed Terafab may become a staged, vertically coordinated AI-hardware manufacturing stack built around captive SpaceX, xAI, and Tesla demand, with Nvidia as the near-term compute platform, Intel as a potential process and packaging contributor, ASML as the incumbent lithography supplier, and existing foundry and memory suppliers remaining essential during the ramp.",
+    "supporting_evidence": "The user seed cites current SpaceX disclosures and Texas project records, issuer releases and filings, NIST's xLight prototype award, and clearly separates confirmed facts, company targets, inference, and speculation.",
+    "value_chain": "SpaceX and Tesla demand; Nvidia compute architecture; Intel process and packaging expertise; ASML lithography; TSMC and Samsung transition capacity; HBM and advanced memory; non-lithography equipment and packaging suppliers."
+  },
+  "objective": "Research one Terafab AI-industrial-stack investment idea and its public value chain.",
+  "operation_id": "01KZDPTWQRWN9H0ZFJ8CJ4KKB7",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://assets.comptroller.texas.gov/open-data/jeti/J0035/J0035-terafab-anderson-app.pdf",
+    "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+    "https://nvidianews.nvidia.com/news/space-computing",
+    "https://www.nist.gov/news-events/news/2026/06/department-commerce-announces-finalization-chips-incentives-xlight-support",
+    "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+    "user-supplied TERAFAB_IDEA.md dated 2026-08-07"
+  ]
+}

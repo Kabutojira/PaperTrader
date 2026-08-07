@@ -1,0 +1,104 @@
+{
+  "operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+  "status": "succeeded",
+  "summary": "Completed NVIDIA's repeat full review after Terafab and five relationship decisions. AI compute, embodied AI and Terafab are accepted canonical edges; AI drug discovery and wide-bandgap power are rejected as current shareholder edges. New Space-1, Vera-SpaceXAI and SpaceX prospectus evidence supports a product and customer option but no order value or near-term EPS change, so USD 180/USD 252/USD 374 scenarios remain unchanged. At USD 218.99000549316406, deterministic research remains Buy/Initiate but allocation remains ineligible and conviction Watch solely because bear/base payoff is below minimum; three required dependent idea refreshes were enqueued and no strategy, signal or paper order was created.",
+  "evidence": [
+    {
+      "source": "source_nvda_q1_fy2027_10q",
+      "claim": "NVIDIA's SEC quarterly report remains the decisive financial evidence: USD 81.615 billion revenue, USD 75.246 billion Data Center revenue, 74.9% GAAP gross margin, USD 50.344 billion operating cash flow and material supply and export-control exposures.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+      "observed_at": "2026-08-05T18:27:18Z",
+      "source_hash": "1b5de37b973da4a3f1cd31a09aa455c01c519ea7cc409c73de2250ad156f99e4"
+    },
+    {
+      "source": "source_nvda_space_computing_20260316",
+      "claim": "NVIDIA introduced a Space-1 Vera Rubin module for later availability, establishing an orbital-compute product channel without SpaceX-specific order or revenue evidence.",
+      "url": "https://nvidianews.nvidia.com/news/space-computing",
+      "observed_at": "2026-08-07T09:23:01Z",
+      "source_hash": "6b493750bba1116196e526df345681bacd274244f337fafd0ce35081b3ff29d2"
+    },
+    {
+      "source": "source_nvda_vera_spacexai_20260531",
+      "claim": "NVIDIA named SpaceXAI among organizations exploring the in-production Vera CPU, supporting a current customer channel while leaving volume, contract and financial contribution unquantified.",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents",
+      "observed_at": "2026-08-07T09:23:01Z",
+      "source_hash": "199469c60572a80367be09b6fcd5ce94156c4887f9417ba42bd7b46033432a25"
+    },
+    {
+      "source": "source_spacex_terafab_prospectus_20260605",
+      "claim": "SpaceX described Terafab's one-terawatt compute-production goal and integrated workflow while expecting significant third-party sourcing to continue, supporting near-term NVIDIA demand and a conditional long-run substitution risk.",
+      "url": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "observed_at": "2026-08-07T09:23:01Z",
+      "source_hash": "4655a5283f60bab22e9895edc1eedef4eb76f9c75f6694d3d6b12f3a77e01d10"
+    },
+    {
+      "source": "assessment_96ae529b2d4d9d8d3c85",
+      "claim": "Deterministic assessment version 2 linked predecessor assessment_d52ee4bef0580c696dbb and derived USD 264.50 weighted fair value, 20.7818% expected return, 15.5863% confidence-adjusted expected return, USD 201.60 buy-below price, Buy/Initiate research economics, Watch conviction and allocation ineligibility solely for bear_base_payoff_below_minimum."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZDRVRX8Q62Z4KQ7YZV0RA5N.json",
+    "data/operations/payloads/01KZDRVTVRSXKYD7B5K63KAZD4.json",
+    "data/operations/payloads/01KZDRVVV0BFGVXH10CAY670MZ.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/assessment_upsert_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh-v2.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh-v2.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh-v2.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/security_upsert_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_space_computing_20260316_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_vera_spacexai_20260531_request.json",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_spacex_terafab_prospectus_20260605_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+  ],
+  "operations_created": [
+    "01KZDRVRX8Q62Z4KQ7YZV0RA5N",
+    "01KZDRVTVRSXKYD7B5K63KAZD4",
+    "01KZDRVVV0BFGVXH10CAY670MZ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "NVIDIA full review completed after Terafab: AI compute, embodied AI and Terafab are accepted edges, while AI drug discovery and wide-bandgap power are rejected as current shareholder edges. USD 180/USD 252/USD 374 scenarios remain unchanged because new customer and orbital evidence is unquantified. At USD 218.99, deterministic research is Buy/Initiate but conviction remains Watch and allocation is ineligible solely because bear/base payoff is below minimum; no strategy or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_33d9c44facc75c726c7d",
+    "papertrader research source record --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_space_computing_20260316_request.json",
+    "papertrader research source record --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_nvda_vera_spacexai_20260531_request.json",
+    "papertrader research source record --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/source_spacex_terafab_prospectus_20260605_request.json",
+    "papertrader research security upsert --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-ai-compute-nvda-refresh-v2.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-humanoid-nvda-refresh-v2.json",
+    "papertrader queue enqueue --request data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/enqueue-idea-terafab-nvda-refresh-v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_33d9c44facc75c726c7d"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory security-context succeeded before assessment state was read and showed predecessor assessment_d52ee4bef0580c696dbb, the prior result, page hash, retained sources and all five relationship decisions.",
+      "Registered and hashed three new primary sources before assessment use; the existing SEC filing and results sources remain current decisive financial evidence.",
+      "Security upsert preserved immutable NVDA/XNAS/USD/equity identity and updated only validated research fields; the page contains a complete facts, relationships, scenarios, outputs, thesis, risk, blocker, rating and action comparison to the prior review.",
+      "Exactly one immutable schema-version-2 assessment, assessment_96ae529b2d4d9d8d3c85, linked its predecessor, source operation/result and current page hash. Fresh identity-matched USD 218.99000549316406 market and 0.8675000071525574 USD/EUR state were used.",
+      "The first three follow-up request artifacts were rejected for a noncanonical result-path field without queue state changes; immutable corrected v2 requests then created exactly one dependency-bound idea refresh for each accepted linked idea.",
+      "Final security-context confirmed relationship status complete, Buy/Initiate research economics, Watch conviction, allocation ineligibility solely for bear_base_payoff_below_minimum, and no strategy. The full strategy gate therefore did not authorize strategy research.",
+      "papertrader schema validate --strict, queue validate, wiki lint --strict, integrity --strict and portfolio reconcile --strict all returned OK, with no allocation, strategy, signal, order, execution, cash, portfolio or performance mutation."
+    ]
+  }
+}

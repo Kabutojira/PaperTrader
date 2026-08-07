@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDR24K88V57958W94SW5MA2",
+  "status": "succeeded",
+  "summary": "Accepted the humanoid-robotics and embodied-AI relationship to NVIDIA with medium positive sensitivity and medium confidence. NVIDIA has a direct product channel through simulation, world models, training compute, edge modules, safety tooling and the CUDA ecosystem. Current vendor disclosures do not quantify humanoid-attributable revenue or repeat paid deployment economics, so scale and materiality remain explicit gates; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world",
+      "claim": "NVIDIA names major industrial robot makers and humanoid developers integrating its simulation, world-model and edge-compute stack, establishing a product channel without quantified revenue."
+    },
+    {
+      "source": "https://nvidianews.nvidia.com/news/nvidia-announces-halos-for-robotics-the-industrys-first-full-stack-safety-system-for-physical-ai",
+      "claim": "NVIDIA describes a robotics safety stack and named partners while identifying safety and certification as gating inputs."
+    },
+    {
+      "source": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "claim": "The maintained idea confirms a large conventional robot base but retains low confidence in near-term general-purpose humanoid and supplier economics."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDR24K88V57958W94SW5MA2/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_humanoid_nvda.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted NVIDIA's medium-confidence physical-AI edge while retaining paid deployment, safety and revenue materiality as confirmation gates."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDR24K88V57958W94SW5MA2/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent humanoid-to-NVIDIA edge existed before this operation.",
+      "The accepted row contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, research page and review timestamps.",
+      "The maintained page distinguishes observable product integration from unquantified humanoid revenue and deployment economics.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

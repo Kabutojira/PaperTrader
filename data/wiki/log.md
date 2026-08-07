@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-06"
+updated: "2026-08-07"
 provenance: repository-contract
 ---
 
@@ -2444,3 +2444,165 @@ This log is append-only. Rotate it by year only after the configured line thresh
   bear/base/bull cases imply USD 46.496 weighted value, with even the bull case below market.
 - Sell / Avoid is complete but allocation-ineligible. No full review, strategy, signal, paper order,
   allocation or accounting change was justified.
+
+## 2026-08-07
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1]] (919db7c341d1).
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0]] (8c73a0b155d0).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222]] (9e9c3f80e222).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0]] (357acbb964f0).
+
+- Published investor decision snapshot `decision_7291ada3bc3dd4554729`.
+
+- Generated canonical [[daily-reports/daily-report_20260807]] for run `local-20260807T085336Z-terafab`.
+
+## 2026-08-07 — idea research — Terafab and the vertically coordinated AI hardware stack
+
+- Created [[ideas/idea_terafab_ai_industrial_stack]] from the user seed, Texas JETI project records,
+  the SpaceX prospectus, Nvidia product disclosures, NIST's xLight award and incumbent-supplier
+  filings.
+- The maintained thesis is a staged hybrid stack: captive SpaceX, xAI and Tesla demand can support
+  internal packaging and selected silicon, while Nvidia, Intel, ASML, TSMC, Samsung and other
+  suppliers remain essential until binding agreements, tools, process technology, yield and product
+  qualification are demonstrated.
+- Retained seven existing immutable public instruments across owner, demand, compute, process,
+  lithography, foundry, packaging and memory layers. Each causal edge requires its own relationship
+  review; no new watchlist identity, strategy, signal, order or accounting state was created.
+
+## 2026-08-07 — relationship review — Terafab to NVIDIA
+
+- Accepted [[relationships/relationship_terafab_nvda]] with medium positive sensitivity and medium
+  confidence. SpaceXAI and orbital deployments create a direct channel through Nvidia systems,
+  networking, interconnect and software while internal fabrication is built and qualified.
+- The edge does not assume Nvidia investment, exclusivity, capacity guarantees or Terafab wafer
+  production. Custom-silicon substitution, unquantified customer economics and orbital execution
+  remain explicit invalidation paths; no strategy or follow-up operation was created.
+
+## 2026-08-07 — relationship review — Terafab to SpaceX listed equity
+
+- Accepted [[relationships/relationship_terafab_spcx]] with high positive sensitivity and medium
+  confidence. SpaceX is the proposed owner, primary user and systems integrator, so qualified
+  internal packaging, silicon and systems could improve supply security and deployment speed.
+- SpaceX also bears the campus's capital, yield, utilization, execution and related-party governance
+  burden. Current project records remain prospective; no strategy or follow-up operation was created.
+
+## 2026-08-07 — relationship review — Terafab to Tesla
+
+- Accepted [[relationships/relationship_terafab_tsla]] with medium positive sensitivity and medium
+  confidence. Tesla's custom vehicle, autonomy and robotics silicon creates a plausible route to
+  faster iteration and supply security if Terafab reaches competitive qualification.
+- The Tesla framework is non-binding and discloses no product, capacity, capital or pricing terms.
+  Capital intensity and related-party governance remain explicit limits; no strategy or follow-up
+  operation was created.
+
+## 2026-08-07 — relationship review — Terafab to Intel
+
+- Rejected [[relationships/relationship_terafab_intc]] at low sensitivity and low confidence.
+  Intel's process, foundry and packaging capabilities fit the project, but the prospectus describes
+  only a proposed contribution that may never become a definitive agreement.
+- No work scope, process node, IP terms, milestones, fees, utilization, revenue, margin or cash flow
+  are disclosed. A binding agreement with measurable Intel economics is the upgrade gate; no
+  strategy or follow-up operation was created.
+
+## 2026-08-07 — relationship review — Terafab to ASML
+
+- Accepted [[relationships/relationship_terafab_asml]] with medium positive sensitivity and medium
+  confidence. A credible advanced logic or memory fab requires production lithography, software,
+  upgrades and field service, but Terafab has disclosed no node or tool order.
+- xLight remains a government-funded prototype source rather than a production scanner replacement.
+  The edge depends on actual advanced-wafer phases and accepted systems; no strategy or follow-up
+  operation was created.
+
+## 2026-08-07 — relationship review — Terafab to TSMC
+
+- Accepted [[relationships/relationship_terafab_tsm]] as a medium-sensitivity, medium-confidence
+  positive bridge. SpaceX expects third-party sourcing to continue while Terafab develops internal
+  capability, preserving leading-node and packaging demand during the ramp.
+- Successful leading-edge internal production would turn the bridge into partial customer
+  displacement, so first qualification and actual sourcing volumes are explicit review gates. No
+  strategy or follow-up operation was created.
+
+## 2026-08-07 — relationship review — Terafab to Samsung Electronics common GDR
+
+- Accepted [[relationships/relationship_terafab_samsung_common_gdr]] as a medium-sensitivity,
+  low-confidence positive bridge through HBM, memory, foundry and packaging during Terafab's ramp.
+- Samsung's Nvidia-aligned capabilities are established, but no Terafab customer, product or volume
+  is disclosed and competitive internalization would create long-run displacement. No strategy or
+  follow-up operation was created.
+
+## 2026-08-07 — relationship review — AI compute to NVIDIA
+
+- Accepted [[relationships/relationship_ai_compute_nvda]] with high positive sensitivity and high
+  confidence. Accelerators, networking, interconnect, systems and software directly transmitted AI
+  infrastructure demand into NVIDIA's latest revenue, margins and cash flow.
+- Hyperscaler capex, export controls, custom silicon, supply commitments and valuation remain
+  separate constraints. No strategy or follow-up operation was created.
+
+## 2026-08-07 — relationship review — humanoid robotics and embodied AI to NVIDIA
+
+- Accepted [[relationships/relationship_humanoid_nvda]] with medium positive sensitivity and medium
+  confidence. NVIDIA has an integrated simulation, world-model, edge-compute and safety channel
+  across industrial robot makers and humanoid developers.
+- Vendor disclosures do not quantify humanoid-attributable revenue or repeat paid deployment
+  economics, so scale and materiality remain explicit gates. No strategy or follow-up operation was
+  created.
+
+## 2026-08-07 — relationship review — wide-bandgap power semiconductors to NVIDIA
+
+- Rejected [[relationships/relationship_wide_bandgap_nvda]] at low sensitivity and low confidence.
+  NVIDIA's 800 VDC architecture is credible evidence for WBG demand, but it does not establish
+  material WBG revenue, margin or cash flow for NVIDIA common stock.
+- A production deployment with measurable NVIDIA system or power-content economics is the upgrade
+  gate. No strategy or follow-up operation was created.
+
+## 2026-08-07 — relationship review — AI-native drug discovery to NVIDIA
+
+- Rejected [[relationships/relationship_ai_drug_nvda]] at low sensitivity and low confidence. The
+  Lilly co-innovation lab establishes product relevance, but its up-to-USD-1-billion five-year
+  commitment is not NVIDIA revenue and is immaterial without broader repeat adoption.
+- Measurable, recurring life-sciences revenue or software economics across multiple customers is the
+  upgrade gate. No strategy or follow-up operation was created.
+
+## 2026-08-07 — full review — NVIDIA Corporation common stock
+
+- Rechecked [[securities/security_33d9c44facc75c726c7d|NVIDIA]] after the Terafab announcement and
+  completion of five idea-relationship reviews. AI compute, embodied AI and Terafab are accepted;
+  AI drug discovery and wide-bandgap power are rejected as current shareholder edges.
+- Space-1, Vera–SpaceXAI and the SpaceX prospectus support a real product and customer channel but
+  disclose no order value, volume, manufacturing agreement or near-term EPS contribution. The
+  USD 180/USD 252/USD 374 scenarios remain unchanged.
+- At the fresher USD 218.99 mark, weighted upside falls to about 20.8%, base upside to 15.1% and bear
+  downside widens to 17.8%; the relationship blocker is resolved but downside-payoff and margin-of-
+  safety frontiers remain unmet. No strategy, signal or paper order was created.
+
+## 2026-08-07 — idea refresh — AI compute, networking and hyperscaler monetization
+
+- Updated [[ideas/idea_ai_compute_networking_hyperscaler_monetization]] from NVIDIA's completed
+  security result. [[securities/security_33d9c44facc75c726c7d|NVDA]] is now an accepted direct
+  beneficiary alongside [[securities/security_6f9a1450edceb9307c9a|ANET]].
+- NVIDIA's USD 180/USD 252/USD 374 scenarios support positive weighted return, but bear/base payoff
+  at USD 218.99 remains below minimum. The idea retains high confidence in current demand and medium
+  confidence in durable cross-cycle returns; no security, relationship, strategy or paper-trade work
+  was enqueued.
+
+## 2026-08-07 — idea refresh — humanoid robotics and embodied AI
+
+- Updated [[ideas/idea_humanoid_robotics_embodied_ai_components]] from NVIDIA's completed security
+  result. [[securities/security_33d9c44facc75c726c7d|NVDA]] is now an accepted platform
+  beneficiary, while [[securities/security_c120e9f26ebb6159adf9|ABB]] is recorded as a completed
+  rejected edge after its Robotics divestment decision.
+- NVIDIA's simulation, edge-compute and safety channel raises confidence in the enabling layer, not
+  in mass humanoid economics. Paid multi-site deployments and attributable revenue remain gates; no
+  security, relationship, strategy or paper-trade work was enqueued.
+
+## 2026-08-07 — idea refresh — Terafab AI industrial stack
+
+- Updated [[ideas/idea_terafab_ai_industrial_stack]] from NVIDIA's completed result and the resolved
+  seven-security graph. Six Terafab relationships are accepted; Intel is rejected until binding and
+  measurable economics exist.
+- NVIDIA's Space-1, Vera–SpaceXAI and third-party-sourcing evidence supports the staged hybrid thesis
+  but changes no EPS scenario. At USD 218.99, bear/base payoff remains below minimum; no security,
+  relationship, strategy or paper-trade work was enqueued.

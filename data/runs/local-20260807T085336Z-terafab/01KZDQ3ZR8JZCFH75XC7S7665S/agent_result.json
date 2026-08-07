@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDQ3ZR8JZCFH75XC7S7665S",
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from the Terafab AI industrial stack to NVIDIA with medium sensitivity and medium confidence. Current Nvidia product disclosures and the SpaceX prospectus establish a direct channel through Vera Rubin systems, orbital modules, networking, interconnect and software while internal fabrication is developed. The edge explicitly excludes any unannounced Nvidia investment, exclusivity, capacity guarantee or Terafab wafer-production agreement; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://nvidianews.nvidia.com/news/space-computing",
+      "claim": "Nvidia introduced a Vera Rubin-derived Space-1 module for orbital compute, creating a product-level channel aligned with SpaceX's orbital-compute ambition."
+    },
+    {
+      "source": "https://nvidianews.nvidia.com/news/nvidia-unveils-vera-the-cpu-for-agents",
+      "claim": "Nvidia names SpaceXAI among organizations planning to adopt Vera, supporting current platform demand without quantifying customer economics."
+    },
+    {
+      "source": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "claim": "SpaceX expects significant third-party compute sourcing to continue while Terafab develops internal capability, supporting a hybrid rather than immediate replacement mechanism."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDQ3ZR8JZCFH75XC7S7665S/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_terafab_nvda.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence positive Terafab-to-NVIDIA edge through current AI systems, networking, software and orbital products, without assuming any unannounced wafer-production agreement."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDQ3ZR8JZCFH75XC7S7665S/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent Terafab-to-NVIDIA edge existed before this operation.",
+      "The accepted row contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, research page and review timestamps.",
+      "The maintained page preserves contrary evidence and distinguishes current product demand from unannounced investment, exclusivity, capacity or wafer-production claims.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

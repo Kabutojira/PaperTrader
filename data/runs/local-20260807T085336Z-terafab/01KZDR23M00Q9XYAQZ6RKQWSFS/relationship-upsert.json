@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_ai_compute_nvda",
+  "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "security_id": "security_33d9c44facc75c726c7d",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "AI training and inference demand converts directly into NVIDIA accelerator, networking, interconnect, system and software revenue; platform breadth and rapid product cadence can retain economics as clusters scale, while hyperscaler capex concentration, export controls, custom silicon, supply commitments and valuation constrain shareholder returns.",
+  "sensitivity": "high",
+  "confidence": "high",
+  "catalyst": "Q2 guidance converts with durable mid-70% gross margins; Rubin ships broadly on schedule; networking and non-hyperscale AI demand continue to scale; or recurring software and enterprise adoption broaden cash-flow sources.",
+  "invalidation": "Customer AI returns fail to support capex; Data Center growth or margins deteriorate materially; Rubin is delayed or loses adoption; custom silicon or competitors erode platform economics; export controls expand; or supply commitments create material provisions and weak cash conversion.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_ai_compute_nvda.md",
+  "last_reviewed_at": "2026-08-07T09:15:09Z",
+  "next_review_at": "2026-10-31T12:00:00Z"
+}

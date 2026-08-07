@@ -1,0 +1,45 @@
+{
+  "operation_id": "01KZDR23M00Q9XYAQZ6RKQWSFS",
+  "status": "succeeded",
+  "summary": "Accepted the AI-compute, networking and hyperscaler-monetization relationship to NVIDIA with high positive sensitivity and high confidence. NVIDIA's accelerator, networking, interconnect, system and software revenue directly transmits current infrastructure demand into margins and cash flow. Hyperscaler capex, export controls, custom silicon, supply commitments and valuation remain explicit security-level constraints; no strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+      "claim": "NVIDIA's fiscal Q1 filing reports Data Center at about 92% of revenue, USD 14.8 billion of networking revenue, mid-70% gross margin and exceptional operating cash flow, establishing direct transmission."
+    },
+    {
+      "source": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm",
+      "claim": "The results release reports 85% year-over-year growth and USD 91 billion Q2 guidance while preserving the forward execution risk."
+    },
+    {
+      "source": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+      "claim": "The maintained idea independently documents networking, foundry and hyperscaler capex demand and its utilization, depreciation, energy and custom-silicon risks."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-20260807T085336Z-terafab/01KZDR23M00Q9XYAQZ6RKQWSFS/relationship-upsert.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_ai_compute_nvda.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted NVIDIA as a high-confidence direct beneficiary of AI compute and networking demand, while retaining customer-capex, export, custom-silicon and commitment risks."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-20260807T085336Z-terafab/01KZDR23M00Q9XYAQZ6RKQWSFS/relationship-upsert.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The relationship, idea and security IDs match the running payload and immutable endpoint pages.",
+      "No equivalent AI-compute-to-NVIDIA edge existed before this operation.",
+      "The accepted row contains direction, mechanism, sensitivity, confidence, catalyst, invalidation, status, research page and review timestamps.",
+      "The maintained page separates strong current transmission evidence from forward valuation and customer-return uncertainty.",
+      "papertrader wiki lint --strict returned OK [wiki], and no strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_ai_drug_nvda",
+  "dedupe_key": "relationship_research:relationship_ai_drug_nvda:nvidia-recheck:2026-08-07",
+  "prompt": "Review the causal AI-native drug-discovery relationship to NVIDIA.",
+  "inputs": {
+    "relationship_id": "relationship_ai_drug_nvda",
+    "idea_id": "idea_ai_native_drug_discovery",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "hypothesis": "NVIDIA can sell compute, software and lab infrastructure into AI drug discovery, but disclosed sector programs may be immaterial to its diversified economics."
+  },
+  "source": "user:nvidia-recheck:2026-08-07",
+  "priority": 99,
+  "freshness_days": 30,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_native_drug_discovery.md",
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "https://investor.lilly.com/news-releases/news-release-details/nvidia-and-lilly-announce-co-innovation-ai-lab-reinvent-drug"
+  ],
+  "max_attempts": 3
+}

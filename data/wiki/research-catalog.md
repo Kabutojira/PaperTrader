@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-06"
-updated: "2026-08-06"
+created: "2026-08-07"
+updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5e4a28ab3391b54d3ac5"
-as_of: "2026-08-06T21:34:57Z"
+snapshot_id: "decision_7291ada3bc3dd4554729"
+as_of: "2026-08-07T09:35:34Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **87**
+- Immutable assessment versions: **88**
 - Securities with retained revisions: **64**
 
 ## Candidate
@@ -25,9 +25,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ABBNY — MACD cross above signal](inbox/market-security_c120e9f26ebb6159adf9-macd_cross_above_signal-9dc4f63596a7)
 - [ABCL — MACD cross above signal](inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee)
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08)
+- [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222)
 - [ALB — RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f)
 - [ALB — RSI oversold](inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-c65ee3726752)
 - [ALB — Volume anomaly](inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-11e8b42f0b00)
+- [ALB — Volume anomaly](inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0)
 - [ALB — Volume anomaly](inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-b9b686957690)
 - [AMAT — MACD cross above signal](inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58)
 - [AMZN — Bollinger above upper](inbox/market-security_2433a056eb0c55961fcc-bollinger_above_upper-0d1101e5c09b)
@@ -48,6 +50,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [CRSR — Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195)
 - [CRSR — Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff)
 - [CRSR — Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674)
+- [CRSR — Volume anomaly](inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1)
 - [CRWD — MACD cross above signal](inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de)
 - [CSIQ — Bollinger above upper](inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618)
 - [CSIQ — MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd)
@@ -58,6 +61,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [DNA — MACD cross above signal](inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-3d74cac677e3)
 - [DNA — SMA 50 cross above 200](inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5)
 - [DNA — Volume anomaly](inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd)
+- [DNA — Volume anomaly](inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0)
 - [ENPH — Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
 - [ENPH — MACD cross above signal](inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91)
 - [ENPH — Volume anomaly](inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212)
@@ -201,6 +205,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-03](daily-reports/daily-report_20260803)
 - [PaperTrader daily report — 2026-08-05](daily-reports/daily-report_20260805)
 - [PaperTrader daily report — 2026-08-06](daily-reports/daily-report_20260806)
+- [PaperTrader daily report — 2026-08-07](daily-reports/daily-report_20260807)
 
 ## Idea
 
@@ -228,6 +233,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Solar, storage, and grid-flexibility reset](ideas/idea_solar_storage_grid_flexibility_reset)
 - [Sovereign small-drone and trusted-component supply chains](ideas/idea_sovereign_small_drone_supply_chains)
 - [Structural silver deficit](ideas/idea_structural_silver_deficit)
+- [Terafab and the vertically coordinated AI hardware stack](ideas/idea_terafab_ai_industrial_stack)
 - [Wide-bandgap power semiconductors](ideas/idea_wide_bandgap_power_semiconductors)
 
 ## Meta
@@ -251,8 +257,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 ## Relationship
 
 - [AI compute, networking, and hyperscaler monetization to Arista Networks](relationships/relationship_e5f55616b9beaf661080)
+- [AI compute, networking, and hyperscaler monetization to NVIDIA](relationships/relationship_ai_compute_nvda)
 - [AI infrastructure and power bottlenecks to Eaton](relationships/relationship_87b95f713a902d531f2f)
 - [AI infrastructure and power bottlenecks to GE Vernova](relationships/relationship_cbdd07edda84994325d6)
+- [AI-native drug discovery to NVIDIA](relationships/relationship_ai_drug_nvda)
 - [AI-native drug discovery to Recursion Pharmaceuticals](relationships/relationship_c829dae21648bb133cc7)
 - [Anduril product-company disruption to Palantir Technologies](relationships/relationship_250194f6a9e3a1817632)
 - [Commercial space infrastructure to Rocket Lab](relationships/relationship_297f9e36fb4e93a808e8)
@@ -268,6 +276,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Digital attention, gaming, and consumer ecosystems to Roblox](relationships/relationship_d9c8f578040386a487be)
 - [Digital finance and crypto rails to Coinbase](relationships/relationship_f2efab6050df0edcb762)
 - [Humanoid robotics and embodied AI to ABB](relationships/relationship_afac7205cd7e09800edf)
+- [Humanoid robotics and embodied AI to NVIDIA](relationships/relationship_humanoid_nvda)
 - [Nearshoring and friendshoring manufacturing capacity to Ternium](relationships/relationship_510158d3d515d91d5c14)
 - [Precision biology and healthcare automation to Intuitive Surgical](relationships/relationship_3570e003fd90cd83d26f)
 - [Precision biology and healthcare automation to Recursion Pharmaceuticals](relationships/relationship_9e7b4700174908755cbc)
@@ -275,6 +284,14 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Solar, storage, and grid-flexibility reset to Enphase Energy](relationships/relationship_solar_storage_grid_enph)
 - [Solar, storage, and grid-flexibility reset to Fluence Energy](relationships/relationship_solar_storage_grid_flnc)
 - [Sovereign small-drone and trusted-component supply chains to Parrot](relationships/relationship_7e9fd9486e494dd05bb5)
+- [Terafab AI industrial stack to ASML](relationships/relationship_terafab_asml)
+- [Terafab AI industrial stack to Intel](relationships/relationship_terafab_intc)
+- [Terafab AI industrial stack to NVIDIA](relationships/relationship_terafab_nvda)
+- [Terafab AI industrial stack to Samsung Electronics common GDR](relationships/relationship_terafab_samsung_common_gdr)
+- [Terafab AI industrial stack to SpaceX listed equity](relationships/relationship_terafab_spcx)
+- [Terafab AI industrial stack to Tesla](relationships/relationship_terafab_tsla)
+- [Terafab AI industrial stack to TSMC](relationships/relationship_terafab_tsm)
+- [Wide-bandgap power semiconductors to NVIDIA](relationships/relationship_wide_bandgap_nvda)
 
 ## Research Catalog
 

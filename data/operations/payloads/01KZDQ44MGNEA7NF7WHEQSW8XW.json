@@ -1,0 +1,20 @@
+{
+  "entity_id": "relationship_terafab_intc",
+  "entity_type": "relationship",
+  "inputs": {
+    "hypothesis": "Intel can monetize process, fabrication and advanced-packaging expertise if its proposed Terafab contribution becomes a binding agreement with measurable economics.",
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "relationship_id": "relationship_terafab_intc",
+    "security_id": "security_dfa34d4b9050964b465e"
+  },
+  "objective": "Review the causal Terafab relationship to Intel.",
+  "operation_id": "01KZDQ44MGNEA7NF7WHEQSW8XW",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+    "data/wiki/securities/security_dfa34d4b9050964b465e.md",
+    "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+    "https://www.sec.gov/Archives/edgar/data/50863/000005086326000077/q126earningsrelease.htm"
+  ]
+}

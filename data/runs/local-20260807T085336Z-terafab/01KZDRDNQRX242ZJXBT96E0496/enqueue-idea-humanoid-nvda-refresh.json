@@ -1,0 +1,27 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_humanoid_robotics_embodied_ai_components",
+  "dedupe_key": "idea_research:idea_humanoid_robotics_embodied_ai_components:security-result-01KZDRDNQRX242ZJXBT96E0496",
+  "prompt": "Refresh the embodied-AI idea from the accepted NVIDIA security result without requeueing the fresh security.",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "seed_claim": "NVIDIA's refreshed review confirms a physical-AI product channel while retaining unquantified paid deployment and revenue materiality.",
+    "security_id": "security_33d9c44facc75c726c7d",
+    "security_research_operation_id": "01KZDRDNQRX242ZJXBT96E0496",
+    "expected_security_result_path": "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json",
+    "research_focus": "Replace stale candidate prose with NVIDIA's accepted relationship, current assessment and no-action reason; update thesis, catalysts, risks, gates, confidence and the broader investable universe without requeueing NVIDIA."
+  },
+  "source": "security_research:01KZDRDNQRX242ZJXBT96E0496",
+  "priority": 98,
+  "freshness_days": 0,
+  "depends_on": ["01KZDRDNQRX242ZJXBT96E0496"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+    "data/wiki/relationships/relationship_humanoid_nvda.md",
+    "data/runs/local-20260807T085336Z-terafab/01KZDRDNQRX242ZJXBT96E0496/agent_result.json"
+  ],
+  "max_attempts": 3
+}
