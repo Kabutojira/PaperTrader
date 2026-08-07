@@ -2467,6 +2467,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0]] as `ingest`: Material volume-anomaly transition strengthened alongside a 12.6% decline over the period, warranting durable review.
 
+- Published investor decision snapshot `decision_313912db0a0071184812`.
+
+- Generated canonical [[daily-reports/daily-report_20260807]] for run `daily-20260807T103239Z`.
+
 ## 2026-08-07 — idea research — Terafab and the vertically coordinated AI hardware stack
 
 - Created [[ideas/idea_terafab_ai_industrial_stack]] from the user seed, Texas JETI project records,
