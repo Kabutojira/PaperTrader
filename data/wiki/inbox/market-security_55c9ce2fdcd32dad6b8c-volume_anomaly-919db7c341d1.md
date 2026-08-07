@@ -9,13 +9,13 @@ created: '2026-08-07'
 updated: '2026-08-07'
 provenance: deterministic-market-monitor
 content_hash: 919db7c341d144c323fb1dbded679852303e504a6a3b2542fba3e4f376ff5267
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
+classifier_decision: ingest
+classifier_reason: New volume anomaly with an 11.1% period return merits durable review.
 alert_direction: neutral
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_55c9ce2fdcd32dad6b8c
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_55c9ce2fdcd32dad6b8c
@@ -47,5 +47,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier invocation failed: [errno 2] no such file or directory: 'hermes'
+- Decision: Ingest
+- Reason: New volume anomaly with an 11.1% period return merits durable review.

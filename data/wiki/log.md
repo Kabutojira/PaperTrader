@@ -2459,6 +2459,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260807]] for run `local-20260807T085336Z-terafab`.
 
+- Classified [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1]] as `ingest`: New volume anomaly with an 11.1% period return merits durable review.
+
+- Classified [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0]] as `ingest`: Materially strengthened volume anomaly for the tracked security warrants durable review.
+
+- Classified [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222]] as `ingest`: Material volume-anomaly strengthening coincides with a 10.4% decline over the validated period and merits durable review.
+
+- Classified [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0]] as `ingest`: Material volume-anomaly transition strengthened alongside a 12.6% decline over the period, warranting durable review.
+
 ## 2026-08-07 — idea research — Terafab and the vertically coordinated AI hardware stack
 
 - Created [[ideas/idea_terafab_ai_industrial_stack]] from the user seed, Texas JETI project records,

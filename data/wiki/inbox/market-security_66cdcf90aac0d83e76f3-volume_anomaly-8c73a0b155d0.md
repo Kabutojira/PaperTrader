@@ -9,13 +9,14 @@ created: '2026-08-07'
 updated: '2026-08-07'
 provenance: deterministic-market-monitor
 content_hash: 8c73a0b155d0224788e6481a480ee386dd03fe52ae78cba96d09584568015841
-classifier_decision: blocked
-classifier_reason: 'classifier exited 2: Hermes classifier invocation failed: [Errno
-  2] No such file or directory: ''hermes'''
+classifier_decision: ingest
+classifier_reason: Materially strengthened volume anomaly for the tracked security
+  warrants durable review.
 alert_direction: neutral
 research_gate: eligible
 research_gate_reason: ''
-related_entity_ids: []
+related_entity_ids:
+- security_66cdcf90aac0d83e76f3
 candidate_facts:
   candidate_type: indicator_transition
   security_id: security_66cdcf90aac0d83e76f3
@@ -47,5 +48,5 @@ candidate_facts:
 
 ## Research disposition
 
-- Decision: Blocked
-- Reason: Classifier exited 2: hermes classifier invocation failed: [errno 2] no such file or directory: 'hermes'
+- Decision: Ingest
+- Reason: Materially strengthened volume anomaly for the tracked security warrants durable review.
