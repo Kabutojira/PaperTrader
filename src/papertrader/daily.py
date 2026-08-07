@@ -780,9 +780,16 @@ def record_local_agent_outcome(
 
 
 def _research_narratives(repository_root: Path, run_id: str) -> tuple[NarrativeItem, ...]:
-    run_directory = _run_directory(repository_root, run_id)
     narratives: list[NarrativeItem] = []
-    for path in sorted(run_directory.glob("*/agent_result.json")):
+    result_paths: set[Path] = set()
+    for row in read_table(repository_root, "operations_history"):
+        if row["claimed_by_run_id"] != run_id or not row["result_path"]:
+            continue
+        expected = Path("data") / "runs" / run_id / row["operation_id"] / "agent_result.json"
+        if Path(row["result_path"]) != expected:
+            raise DailyRunError("accepted operation has a non-canonical agent result path")
+        result_paths.add(repository_root / expected)
+    for path in sorted(result_paths):
         result = _load_object(path)
         raw_evidence = result.get("evidence", [])
         raw_items = result.get("daily_report_items", [])

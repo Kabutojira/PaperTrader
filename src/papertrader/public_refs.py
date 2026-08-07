@@ -14,6 +14,11 @@ import yaml
 from papertrader.tables import read_table
 from papertrader.utils import CanonicalValueError, parse_timestamp
 
+PUBLIC_DAILY_RUN_ID = re.compile(
+    r"(?<![A-Za-z0-9_-])(?:[A-Za-z0-9]+-)*daily-[0-9]{8}T[0-9]{6}Z"
+    r"(?![A-Za-z0-9_-])"
+)
+
 
 @dataclass(frozen=True, slots=True)
 class HumanReference:
@@ -307,7 +312,7 @@ class PublicEntityResolver:
             r"execution|issue)_[0-9a-f]{20}\b|"
             r"\bidea_(?!research\b)[a-z0-9][a-z0-9_]{5,}\b|"
             r"\bsource_(?!discovery\b)[A-Za-z0-9][A-Za-z0-9_-]{5,}\b|"
-            r"\bdaily-[0-9]{8}T[0-9]{6}Z\b|"
+            rf"{PUBLIC_DAILY_RUN_ID.pattern}|"
             r"\b(?=[0-9A-HJKMNP-TV-Z]{0,25}[A-HJKMNP-TV-Z])[0-9A-HJKMNP-TV-Z]{26}\b|"
             r"\b(?:allocation_plan|snapshot|decision)_[A-Za-z0-9_-]{6,}\b|"
             r"\b[0-9a-f]{40,64}\b"
@@ -330,7 +335,7 @@ class PublicEntityResolver:
                 return "current allocation plan"
             if value.startswith(("snapshot_", "decision_")):
                 return "decision snapshot"
-            if value.startswith("daily-"):
+            if PUBLIC_DAILY_RUN_ID.fullmatch(value):
                 return self.markdown("run", value)
             if re.fullmatch(
                 r"(?=[0-9A-HJKMNP-TV-Z]{0,25}[A-HJKMNP-TV-Z])[0-9A-HJKMNP-TV-Z]{26}",
@@ -338,7 +343,12 @@ class PublicEntityResolver:
             ):
                 return self.markdown("operation", value)
             prefix = value.split("_", maxsplit=1)[0]
-            return self.markdown(prefix, value)
+            try:
+                return self.markdown(prefix, value)
+            except CanonicalValueError:
+                if prefix == "source":
+                    return "recorded source"
+                raise
 
         return token.sub(replace, text)
 
