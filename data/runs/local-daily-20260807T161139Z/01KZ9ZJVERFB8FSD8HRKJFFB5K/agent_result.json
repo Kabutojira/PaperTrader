@@ -1,0 +1,84 @@
+{
+  "operation_id": "01KZ9ZJVERFB8FSD8HRKJFFB5K",
+  "status": "succeeded",
+  "summary": "Completed the bounded Corsair Gaming quick check against the current Q2 Form 10-Q, SEC-filed results release, three merged volume-anomaly causes, and canonical USD 10.61 mark. Q2 revenue declined 1.8% to USD 314.3 million, while underlying adjusted EBITDA of USD 16.6 million exceeded guidance and operating cash flow reached USD 74.8 million. Reported earnings also included a material one-time tariff refund; full-year revenue and profit guidance rose, and the post-quarter Trak Racer acquisition adds new integration and capital-allocation assumptions. Registered both primary sources, refreshed the security page and row, and wrote exactly one comparable schema-v2 assessment. Holding the bounded prior scenarios derives Hold / Watch and allocation ineligibility. The changed evidence requires a full scenario reassessment, so exactly one dependent security review was enqueued; no strategy, signal, order, allocation, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_crsr_q2_2026_10q",
+      "claim": "The Q2 Form 10-Q reports USD 314.3 million of quarterly revenue, USD 7.6 million operating income, USD 9.1 million net income, USD 74.8 million quarterly operating cash flow, USD 193.9 million cash and restricted cash, about USD 118.7 million debt, customer concentration, tariff effects, and the subsequent Trak Racer acquisition.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+      "observed_at": "2026-08-07T16:37:14Z",
+      "source_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363"
+    },
+    {
+      "source": "source_crsr_q2_2026_results",
+      "claim": "The SEC-filed release reports USD 30.8 million adjusted EBITDA including a USD 14.3 million tariff-refund benefit, USD 16.6 million underlying adjusted EBITDA above guidance, 13% peripherals growth, 9% component-segment contraction, and raised full-year guidance of USD 1.40-1.47 billion revenue, USD 121-131 million adjusted EBITDA, and USD 0.85-0.94 non-GAAP EPS.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+      "observed_at": "2026-08-07T16:37:14Z",
+      "source_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff.md, data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674.md, and data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1.md",
+      "claim": "The merged causes record volume-anomaly entry and strengthening with a 26.4% rise through 5 August, then the current 6 August USD 10.61 close and 11.1% period return under exact source-price hash 507551e0e5f99423191005f2e8a876a1c2cb482fa7b37ad4dd66a44470194023."
+    },
+    {
+      "source": "assessment_d52252a2530f6940e6cd",
+      "claim": "Deterministic assessment version 2 derives USD 11.625 weighted fair value, 9.57% expected return, 7.17% confidence-adjusted expected return, 6.03% base return, Hold rating, Watch action, watch conviction, and allocation ineligibility."
+    },
+    {
+      "source": "data/operations/payloads/01KZEHGE70QV9HKC2T38858SKT.json",
+      "claim": "Exactly one dependent full security review carries the quick-check identity, all three source hashes, all merged volume causes, Q2 evidence gate, and current market period."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZEHGE70QV9HKC2T38858SKT.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/assessment_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/enqueue_full_research_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/security_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/source_crsr_q2_2026_10q_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/source_crsr_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+  ],
+  "operations_created": ["01KZEHGE70QV9HKC2T38858SKT"],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CRSR quick check completed: Q2 underlying adjusted EBITDA beat guidance and quarterly operating cash flow reached USD 74.8 million, while reported profit included a one-time tariff refund and the Trak Racer acquisition adds new integration assumptions. At USD 10.61 the bounded prior scenarios derive Hold / Watch but remain allocation-ineligible; exactly one dependent full Q2 review was enqueued."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research source record --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/source_crsr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/source_crsr_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context ran before assessment-state reads or changes and confirmed the successful baseline was less than ten days old.",
+      "Immutable identity remained security_55c9ce2fdcd32dad6b8c / issuer_5ce238383a369ed3467b / XNAS / CRSR / USD / equity.",
+      "Both retained Q2 primary sources were registered through the project CLI with current SEC URLs and SHA-256 content hashes.",
+      "Exactly one immutable assessment version, assessment_d52252a2530f6940e6cd, was accepted for this operation and linked to the prior assessment, final page hash, registered evidence, result path, and run.",
+      "The current source-price hash and all merged alert hashes were preserved; Q2 results, raised guidance, tariff-refund normalization and the Trak Racer acquisition constitute a material changed gate.",
+      "Exactly one dependent full review, 01KZEHGE70QV9HKC2T38858SKT, was enqueued with this quick-check identity and all merged causes.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No idea, relationship, strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

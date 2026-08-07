@@ -7,13 +7,13 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_313912db0a0071184812"
-as_of: "2026-08-07T10:46:58Z"
+snapshot_id: "decision_82e786976fa2f781c584"
+as_of: "2026-08-07T16:49:41Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-07T10:46:58Z`
+**As of:** `2026-08-07T16:49:41Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -21,26 +21,27 @@ as_of: "2026-08-07T10:46:58Z"
 
 ## Coverage
 
-- Assessments: 64/64
-- Fresh-evidence assessments: 64/64
-- Relationship reviews: 27/64
-- Accepted relationships: 24
+- Assessments: 65/65
+- Fresh-evidence assessments: 64/65
+- Relationship reviews: 26/65
+- Accepted relationships: 23
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 309
+- Research backlog: 312
 - Last successful daily run: 2026-08-06
 
 ## Current issues by investment impact
 
 ### Affects Candidate
 
+- Error **DNA — Ginkgo Bioworks Holdings, Inc.: Local harness operation validation failed: [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]** — completed security research requires exactly one immutable assessment version; files_changed contains an unchanged old value: data/wiki/log.md; files_changed contains an unchanged old value: data/wiki/research-catalog.md; files_changed is stale or incomplete: reported=['data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_request.json', 'data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_retry01_request.json', 'data/runs/local-daily
 - Error **RIO — Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_1c055eb9b2bb1f5a8ff2|Quick check research for RIO on 2026-08-03]] and current security_research [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]] claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
-- Error **Hermes operation validation failed: [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-07-29]]** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Warning **LAC — Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]** — [[securities/security_fb87fac302a5446a1ced|LAC]]: YFTzMissingError: $LAC: possibly delisted; no timezone found
@@ -71,7 +72,7 @@ as_of: "2026-08-07T10:46:58Z"
 - Warning **ALB — Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]** — [[securities/security_66cdcf90aac0d83e76f3|ALB]]: YFTzMissingError: $ALB: possibly delisted; no timezone found
 - Warning **ANIC.L — Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]** — [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]: price cache is empty
 - Warning **GOOGL — Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]** — [[securities/security_c86bb4e75658c07142cf|GOOGL]]: price cache is empty
-- Warning **ABCL — AbCellera Biologics Inc.: Daily preparation degraded: [[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]** — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]: price cache is empty
+- Warning **ABCL — AbCellera Biologics Inc.: Daily preparation degraded: [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]** — [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]: price cache is empty
 - Warning **TXN — Texas Instruments Incorporated: Daily preparation degraded: [[security-catalog#security-security_83a56943e18793f685b0|TXN]]** — [[security-catalog#security-security_83a56943e18793f685b0|TXN]]: price cache is empty
 - Warning **VLO — Valero Energy Corporation: Daily preparation degraded: [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]** — [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]: price cache is empty
 - Warning **QCOM — QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]** — [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]: price cache is empty
@@ -134,7 +135,7 @@ as_of: "2026-08-07T10:46:58Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 309 active operations.
+Showing 20 of 312 active operations.
 
 <details><summary>Active research work</summary>
 

@@ -1,0 +1,93 @@
+{
+  "operation_id": "01KZ9ZJVER177B5ASW4ZMQHEG3",
+  "status": "succeeded",
+  "summary": "Completed the bounded Ginkgo Bioworks quick-check retry against the current Q2 Form 10-Q, SEC-filed results release, canonical USD 8.50 mark, 12.64% alert-period decline, and volume anomaly. Q2 revenue fell 48% to USD 20.2 million, continuing-operations adjusted EBITDA was negative USD 36.3 million, first-half continuing operating cash use was USD 88.6 million, and liquidity declined to USD 302.2 million, while autonomous-lab awards and initial product adoption provide incomplete operating validation. Registered both current primary sources, refreshed the security page and row, and wrote a comparable schema-v2 assessment. Holding the bounded prior scenario values changes the deterministic conclusion to Hold / Watch at the lower mark, but the security remains allocation-ineligible. The exact dependent full Q2 review already existed from the first attempt, so no duplicate operation, strategy, signal, order, allocation, or accounting change was created.",
+  "evidence": [
+    {
+      "source": "source_dna_q2_2026_10q",
+      "claim": "The Q2 Form 10-Q reports USD 20.2 million of quarterly revenue, a USD 57.3 million continuing-operations net loss, USD 88.6 million of first-half continuing operating cash use, USD 302.2 million of cash, equivalents and marketable securities, USD 47 million of restricted cash, and 3.7 million ATM shares issued for USD 34.6 million of net proceeds.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026054298/dna-20260630.htm",
+      "observed_at": "2026-08-07T16:27:41Z",
+      "source_hash": "f4ff3f89cd228be384c2360f08bc3a4cf6acf207848a9a016b84e6b31bccc0fa"
+    },
+    {
+      "source": "source_dna_q2_2026_results",
+      "claim": "The SEC-filed Q2 release reports negative USD 36.3 million adjusted EBITDA, reaffirms USD 125-150 million of 2026 cash burn, and describes autonomous-lab awards, Nebula expansion beyond 100 robots, and initial ADME-One customers.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026053319/ex991earningspr.htm",
+      "observed_at": "2026-08-07T16:27:41Z",
+      "source_hash": "faeeee152f48395f9278133536d3e328f796bd9447ca38c113049233f1d40cc3"
+    },
+    {
+      "source": "data/market/latest.csv, data/market/indicators.csv, and the operation payload",
+      "claim": "The identity-matched 6 August reference mark is USD 8.50. The payload records a 12.64% decline from 8 July through 6 August, volume anomaly, SMA 50/200 bullish crossover, and exact source-price hash 444cadc770775713c80a9e2f68c33f152c5145ffed1d9cb9f0b7c749066ec521."
+    },
+    {
+      "source": "data/tables/security_assessments.csv",
+      "claim": "Deterministic normalization at USD 8.50 derives USD 8.078 weighted fair value, negative 4.96% expected return, negative 10.94% base return, Hold rating, Watch action, watch conviction, and allocation ineligibility."
+    },
+    {
+      "source": "data/operations/operations_TODO.csv",
+      "claim": "Exactly one dependent full security review already exists as operation 01KZCFVCT82RJFGB5HESAFJB6B; this retry created no duplicate."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_retry01_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_retry02_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/security_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/source_dna_q2_2026_10q_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/source_dna_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_95351d928b674bbdf687.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "DNA quick check completed: Q2 revenue fell 48% to USD 20.2 million and adjusted EBITDA remained negative USD 36.3 million as liquidity declined to USD 302.2 million. New autonomous-lab wins are promising but do not yet clear valuation or timing gates; the lower USD 8.50 mark produces Hold / Watch while allocation remains ineligible, with the existing dependent full review next."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader research source record --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/source_dna_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/source_dna_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader integrity --strict",
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader research assessment upsert --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader research assessment upsert --request data/runs/local-daily-20260807T161139Z/01KZ9ZJVER177B5ASW4ZMQHEG3/assessment_upsert_retry02_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context ran before assessment-state reads or changes and confirmed the eligible recent full-review baseline.",
+      "Immutable identity remained security_95351d928b674bbdf687 / issuer_a743f8506828e2be799d / XNYS / DNA / USD / equity.",
+      "Both retained Q2 primary sources were registered through the project CLI with SEC URLs and content hashes.",
+      "The current comparable assessment is schema version 2, price and FX identity-matched, source-backed, and linked through immutable history to the operation result, final wiki page hash, and prior assessment.",
+      "A page-label mismatch discovered after the first accepted assessment was corrected through a new immutable assessment version; the first retry request was rejected without state change because its timestamp was future-dated, and the distinct second retry succeeded.",
+      "The payload-bound market hash and alert period were preserved; the Q2 evidence changed materially and the exact dependent full review already existed, so no duplicate was enqueued.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "Strict repository integrity returned OK [integrity].",
+      "No idea, relationship, strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

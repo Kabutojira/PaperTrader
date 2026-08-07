@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_retry01_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "completed_at": "2026-08-07T16:49:27Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZEHGE70QV9HKC2T38858SKT",
+  "passed": true,
+  "run_id": "local-daily-20260807T161139Z",
+  "validation_version": 1
+}

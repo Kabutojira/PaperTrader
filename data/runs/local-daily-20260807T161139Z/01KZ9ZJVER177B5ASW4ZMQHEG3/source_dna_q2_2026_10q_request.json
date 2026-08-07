@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dna_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026054298/dna-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026054298/dna-20260630.htm",
+  "source_type": "filing",
+  "title": "Ginkgo Bioworks Holdings, Inc. quarterly report for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "f4ff3f89cd228be384c2360f08bc3a4cf6acf207848a9a016b84e6b31bccc0fa",
+  "related_entity_ids": "security_95351d928b674bbdf687",
+  "checked_at": "2026-08-07T16:27:41Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026, cash, cash equivalents and marketable securities totaled $302.2 million; management expects that liquidity to fund at least the next 12 months.",
+  "summary": "The current SEC quarterly filing supplies Q2 revenue, losses, cash use, liquidity, restricted cash, ATM issuance, dilution and operating-risk evidence for the bounded review.",
+  "run_id": "local-daily-20260807T161139Z"
+}

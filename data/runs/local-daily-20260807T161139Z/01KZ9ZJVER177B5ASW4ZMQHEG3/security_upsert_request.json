@@ -1,0 +1,23 @@
+{
+  "security_id": "security_95351d928b674bbdf687",
+  "issuer_id": "issuer_a743f8506828e2be799d",
+  "company_name": "Ginkgo Bioworks Holdings, Inc.",
+  "instrument_name": "Ginkgo Bioworks Holdings, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "DNA",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "DNA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Autonomous-lab progress merits monitoring, but Q2 revenue contraction, cash burn, dilution and a mark above base value keep DNA allocation-ineligible.",
+  "research_summary": "Q2 revenue fell 48% to USD 20.2 million and adjusted EBITDA weakened to negative USD 36.3 million; new lab wins do not yet clear valuation and timing gates.",
+  "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
+  "last_research_at": "2026-08-07T16:27:41Z",
+  "next_review_at": "2026-08-08T16:27:41Z",
+  "source": "source_dna_q2_2026_10q|source_dna_q2_2026_results"
+}

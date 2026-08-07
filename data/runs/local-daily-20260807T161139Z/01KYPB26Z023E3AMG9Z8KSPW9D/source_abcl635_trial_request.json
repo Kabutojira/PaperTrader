@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abcl635_clinicaltrials_gov",
+  "url": "https://clinicaltrials.gov/study/NCT07118891",
+  "canonical_url": "https://clinicaltrials.gov/study/NCT07118891",
+  "source_type": "regulator_registry",
+  "title": "NCT07118891: Phase 1/2 study of ABCL635 for vasomotor symptoms",
+  "publisher": "ClinicalTrials.gov, U.S. National Library of Medicine",
+  "license": "",
+  "status": "available",
+  "content_hash": "f4a8d90f6d436a4d0592d5ebca3ea39413456b1bf574ea3a2ae3bd3f20547ff4",
+  "related_entity_ids": "security_7bf8f4c9cc12ae410e40",
+  "checked_at": "2026-08-07T16:16:59Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "NCT07118891 is an active, not recruiting, randomized Phase 1/2 study with estimated enrollment of 136 and efficacy outcomes for moderate-to-severe vasomotor symptoms.",
+  "summary": "The regulator registry verifies sponsor, trial identity, phase, status, design, enrollment, efficacy measures, and the June 2026 record update.",
+  "run_id": "local-daily-20260807T161139Z"
+}

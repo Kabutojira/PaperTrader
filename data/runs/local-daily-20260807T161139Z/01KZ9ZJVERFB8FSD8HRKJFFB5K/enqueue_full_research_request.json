@@ -1,0 +1,34 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_55c9ce2fdcd32dad6b8c",
+  "dedupe_key": "security_research:security_55c9ce2fdcd32dad6b8c:quick-check-q2-results-and-volume:2026-08-06",
+  "prompt": "Fully reassess Corsair Gaming after the Q2 earnings beat, raised guidance, tariff-refund normalization, Trak Racer acquisition, and repeated volume anomalies.",
+  "inputs": {
+    "security_id": "security_55c9ce2fdcd32dad6b8c",
+    "quick_check_operation_id": "01KZ9ZJVERFB8FSD8HRKJFFB5K",
+    "baseline_operation_id": "01KYPB213GFWH1QMBGJT4A5KDA",
+    "changed_gate": "q2_primary_evidence_and_raised_guidance_require_scenario_reassessment",
+    "trigger_types": ["volume_anomaly"],
+    "market_data_date": "2026-08-06",
+    "market_data_as_of": "2026-08-07T08:54:30Z",
+    "period_start": "2026-07-08",
+    "period_end": "2026-08-06",
+    "source_price_hash": "507551e0e5f99423191005f2e8a876a1c2cb482fa7b37ad4dd66a44470194023",
+    "merged_source_price_hashes": ["0266cc03b3f704975c9d818425e035b2fe369f0d25a4e0f9c9d0225ef5c95a6a", "72892d5db6b3bbada700f84ddd44a91f634a7b8d0f5c7f453feda0bfb1d1bb4c", "507551e0e5f99423191005f2e8a876a1c2cb482fa7b37ad4dd66a44470194023"],
+    "research_reasons": [
+      {"cause": "volume_anomaly_entered", "source_ref": "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff.md"},
+      {"cause": "volume_anomaly_strengthened", "source_ref": "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674.md"},
+      {"cause": "current_volume_anomaly_and_11_1_percent_return", "source_ref": "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1.md"},
+      {"cause": "q2_results_and_guidance_changed", "source_ref": "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"}
+    ]
+  },
+  "source": "quick_check_research:01KZ9ZJVERFB8FSD8HRKJFFB5K",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": ["01KZ9ZJVERFB8FSD8HRKJFFB5K"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff.md", "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674.md", "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1.md", "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"],
+  "max_attempts": 3
+}

@@ -7,8 +7,8 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-report-generator
-run_id: "daily-20260807T103239Z"
-snapshot_id: "decision_313912db0a0071184812"
+run_id: "local-daily-20260807T161139Z"
+snapshot_id: "decision_82e786976fa2f781c584"
 ---
 
 # PaperTrader daily report — 2026-08-07
@@ -20,16 +20,16 @@ snapshot_id: "decision_313912db0a0071184812"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Attention required
-- **As of:** `2026-08-07T10:46:58Z`
+- **As of:** `2026-08-07T16:49:41Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
-- **Approved target cash:** 10000 EUR (100%)
+- **Target cash:** 10000 EUR (100%)
 - **Actionable signals:** 0
 - **Evidence state:** provisional cash valuation unsupported
 
-## Approved target changes
+## Target changes
 
-No approved target changes.
+No target changes.
 
 ## Actionable signals
 
@@ -37,6 +37,9 @@ No actionable trade signals.
 
 ## Price action alerts
 
+- **[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1): Volume Anomaly** (`2026-08-07`)
+  - Research: **succeeded**
+  - Decision: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
 - **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Bollinger Above Upper** (`2026-08-06`)
   - Research: **skipped**
   - Decision: Queue triage disposition
@@ -65,8 +68,8 @@ No actionable trade signals.
   - Research: **succeeded**
   - Decision: Completed the full Fluence fiscal Q3 review under an isolated retry run so the immutable assessment links unambiguously. Record order intake, 12.6 GW storage backlog and data-centre awards confirm high grid-storage demand sensitivity, but 5.1% quarterly gross margin, 48% customer concentration, a 72% inventory increase, USD 366.5 million nine-month operating cash use and reduced guidance show fragile shareholder economics. Exact filing inputs refine the scenarios to USD 4.59/USD 11.09/USD 20.84 and USD 10.2775 weighted value against the USD 14.23 mark. The canonical result remains complete but ineligible Sell / Avoid; no strategy or paper trade was created. Exactly one dependent solar-storage idea refresh, Idea research for Solar, storage, and grid-flexibility reset on 2026-08-06, was enqueued.
 - **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687): Volume Anomaly** (`2026-08-06`)
-  - Research: **waiting**
-  - Decision: High-priority security research is waiting on its scheduling constraints.
+  - Research: **blocked**
+  - Decision: High-priority security research is blocked. dependency\_unavailable:Quick check research for DNA on 2026-08-07
 - **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Volume Anomaly** (`2026-08-06`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
@@ -76,33 +79,36 @@ No actionable trade signals.
 - **[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3): Volume Anomaly** (`2026-08-06`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[ABCL — AbCellera Biologics Inc.](security-catalog#security-security_7bf8f4c9cc12ae410e40): Volume Anomaly** (`2026-08-06`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Volume Anomaly** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout, but the 20-session return remained negative 10.4%. Registered all three primary sources, created the maintained security page, updated the security row, and wrote the first schema-v2 assessment. Strong liquidity supports continued coverage, while unreported Phase 2 efficacy and missing program-level probability, commercial, development-cost, burn, and dilution inputs make risk-adjusted NPV unsupported. Deterministic state derives Unrated / Watch and allocation ineligibility; no linked idea, strategy, signal, order, allocation, or accounting state changed.
 - **[VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878): Macd Cross Above Signal** (`2026-08-06`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 - **[QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a): Macd Cross Above Signal** (`2026-08-06`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1): Volume Anomaly** (`2026-08-06`)
-  - Research: **succeeded**
-  - Decision: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
 - **[FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c): Sma 50 Cross Below 200** (`2026-08-06`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
 - **[AMAT — Applied Materials, Inc.](security-catalog#security-security_0a56aa634d077fe5796f): Macd Cross Above Signal** (`2026-08-06`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[ABCL — AbCellera Biologics Inc.](security-catalog#security-security_7bf8f4c9cc12ae410e40): Macd Cross Above Signal** (`2026-08-06`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Macd Cross Above Signal** (`2026-08-06`)
+  - Research: **succeeded**
+  - Decision: Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout, but the 20-session return remained negative 10.4%. Registered all three primary sources, created the maintained security page, updated the security row, and wrote the first schema-v2 assessment. Strong liquidity supports continued coverage, while unreported Phase 2 efficacy and missing program-level probability, commercial, development-cost, burn, and dilution inputs make risk-adjusted NPV unsupported. Deterministic state derives Unrated / Watch and allocation ineligibility; no linked idea, strategy, signal, order, allocation, or accounting state changed.
+
+## Research decisions this run
+
+- **[ABCL](securities/security_7bf8f4c9cc12ae410e40) — succeeded:** Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout,…
+- **[DNA](securities/security_95351d928b674bbdf687) — failed:** retry\_exhausted:local\_harness\_retry\_artifact\_conflict\_after\_prior\_validation\_failure
+- **[CRSR](securities/security_55c9ce2fdcd32dad6b8c) — succeeded:** Completed the bounded Corsair Gaming quick check against the current Q2 Form 10-Q, SEC-filed results release, three merged volume-anomaly causes, and canonical USD 10.61 mark. Q2 revenue declined 1.8% to USD 314.3 million, while underlying adjusted EBITDA of USD 16.6 million exceeded guidance and operating cash flow reached USD 74.8 million. Repor…
 
 ## Top blocker or near miss
 
 - **NVDA — NVIDIA Corporation:** Buy / Initiate; expected return 20.7817678274164750316066337%; Bear/base payoff is below threshold.
 
-## Non-approved research benchmark
+## Comparison-only research benchmark
 
 This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
 - NVDA 25% (Buy); CASH 75% (Unrated)
@@ -113,15 +119,15 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - The reconciled model portfolio is entirely cash.
 - No strategy has produced a current actionable trade signal.
 
-## 2. Model portfolio and approved changes
+## 2. Model portfolio and target changes
 
 - Current equity: 10000 EUR
 - Current cash: 10000 EUR (100%)
 - Current gross exposure: 0 EUR
-- Approved target cash: 10000 EUR (100%)
+- Target cash: 10000 EUR (100%)
 - Pending-order targets are estimates at the snapshot mark; only fills change accounting.
 
-| Holding | Sleeve | Current weight | Approved target | Current value | Target value | Action | State |
+| Holding | Sleeve | Current weight | Target | Current value | Target value | Action | State |
 | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
 | Cash | cash | 100% | 100% | 10000  | 10000  | No trade | No action |
 
@@ -129,7 +135,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 No actionable trade signals.
 
-No pending paper orders.
+No pending orders.
 
 ## 4. Candidates and near misses
 
@@ -154,6 +160,12 @@ No pending paper orders.
 
 ## 6. Research changes
 
+### Evidence-linked narrative
+
+- ABCL initial full review completed: Q2 liquidity and funded Jazz and Vertex collaborations support continued coverage, and the 6 August session rebounded 10.3% on anomalous volume. ABCL635 Phase 2 efficacy remains unreported, so risk-adjusted NPV is unsupported and the canonical conclusion is Unrated / Watch with no strategy, signal, or order. Evidence is retained in the canonical run artifacts.
+- CRSR quick check completed: Q2 underlying adjusted EBITDA beat guidance and quarterly operating cash flow reached USD 74.8 million, while reported profit included a one-time tariff refund and the Trak Racer acquisition adds new integration assumptions. At USD 10.61 the bounded prior scenarios derive Hold / Watch but remain allocation-ineligible; e… Evidence is retained in the canonical run artifacts.
+- CRSR full review failed closed: deterministic assessment provenance was ambiguous because the same daily run contained both the preceding quick check and this review. The accepted Hold / Watch assessment and matching research page remain in force; no trade or accounting state changed. Evidence is retained in the canonical run artifacts.
+
 - [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking, and hyperscaler monetization]]
 - [[ideas/idea_humanoid_robotics_embodied_ai_components|Humanoid robotics and embodied-AI component supply chain]]
 - [[ideas/idea_terafab_ai_industrial_stack|Terafab and the vertically coordinated AI hardware stack]]
@@ -176,6 +188,9 @@ No pending paper orders.
 - [[relationships/relationship_wide_bandgap_nvda|Wide-bandgap power semiconductors to NVIDIA]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_33d9c44facc75c726c7d|NVIDIA Corporation common stock]]
+- [[securities/security_55c9ce2fdcd32dad6b8c|Corsair Gaming, Inc. common stock]]
+- [[securities/security_7bf8f4c9cc12ae410e40|AbCellera Biologics Inc. common shares]]
+- [[securities/security_95351d928b674bbdf687|Ginkgo Bioworks Holdings, Inc. Class A common stock]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]
@@ -184,10 +199,10 @@ No pending paper orders.
 
 - Investment data status: **degraded**
 - Operations status: **degraded**
-- Assessments: 64/64
-- Fresh-evidence assessments: 64/64
-- Relationship reviews: 27/64
-- Accepted relationships: 24
+- Assessments: 65/65
+- Fresh-evidence assessments: 64/65
+- Relationship reviews: 26/65
+- Accepted relationships: 23
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
@@ -196,10 +211,11 @@ No pending paper orders.
 
 ### Current system impacts
 
+- **affects candidate** — DNA Ginkgo Bioworks Holdings, Inc.: Local harness operation validation failed: [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]
 - **affects candidate** — RIO Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run
 - **affects candidate** — RBLX Roblox Corporation: Assessment source operation is ambiguous within one run
 - **affects candidate** — PWR Quanta Services, Inc.: Assessment source operation is ambiguous within one run
-- **affects candidate**: Hermes operation validation failed: [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-07-29]]
+- **affects candidate**: Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]
 - **affects candidate**: Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]
 - **affects candidate** — RTX RTX Corporation: RTX assessment source operation is ambiguous within one run
 - **affects candidate** — LAC Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]
@@ -230,7 +246,7 @@ No pending paper orders.
 - **affects candidate** — ALB Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]
 - **affects candidate** — ANIC.L Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]
 - **affects candidate** — GOOGL Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]
-- **affects candidate** — ABCL AbCellera Biologics Inc.: Daily preparation degraded: [[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]]
+- **affects candidate** — ABCL AbCellera Biologics Inc.: Daily preparation degraded: [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]
 - **affects candidate** — TXN Texas Instruments Incorporated: Daily preparation degraded: [[security-catalog#security-security_83a56943e18793f685b0|TXN]]
 - **affects candidate** — VLO Valero Energy Corporation: Daily preparation degraded: [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]
 - **affects candidate** — QCOM QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]
@@ -294,92 +310,92 @@ No pending paper orders.
 
 - Report date: 2026-08-07
 - Run status: degraded
-- Generated (UTC): `2026-08-07T10:46:58Z`
+- Generated (UTC): `2026-08-07T16:49:41Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_0a56aa634d077fe5796f|AMAT]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_83a56943e18793f685b0|TXN]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-07 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
-| [[security-catalog#security-security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-06 | 2026-08-07T10:32:46Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_0a56aa634d077fe5796f|AMAT]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_83a56943e18793f685b0|TXN]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-07 | 2026-08-07T16:11:49Z | ok | — |
+| [[security-catalog#security-security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-06 | 2026-08-07T16:11:49Z | ok | — |
 
 ### Orders and executions
 
-| Paper order | Strategy | Fill policy | Status | Created |
+| Order | Strategy | Fill policy | Status | Created |
 | --- | --- | --- | --- | --- |
 | — | — | — | no orders | — |
 
-| Paper fill | Paper order | Security | Side | Quantity | Fill | Fees |
+| Fill | Order | Security | Side | Quantity | Fill price | Fees |
 | --- | --- | --- | --- | ---: | ---: | ---: |
 | — | — | — | — | 0 | no executions | 0 |
 
@@ -402,7 +418,7 @@ No pending paper orders.
 | — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
 | — | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 0% | excluded | Bear/base payoff is below threshold. |
 | — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
@@ -413,7 +429,7 @@ No pending paper orders.
 | — | [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
 | — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
@@ -423,6 +439,7 @@ No pending paper orders.
 | — | [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_6f9a1450edceb9307c9a|ANET]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_715bde20b6e1e1320c1a|DLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 0% | excluded | A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | The current assessment marks the security ineligible.; Liquidity is insufficient.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
@@ -457,29 +474,6 @@ No pending paper orders.
 | — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
 
-### Curated YouTube discovery
-
-- Status: `succeeded`
-- Operations queued: `0`
-- Channel failures: `0`
-
-| Channel | Status | Discovered | Queued | Reason |
-| --- | --- | ---: | ---: | --- |
-| @allin | succeeded | 0 | 0 | — |
-| @thelimitingfactor | succeeded | 0 | 0 | — |
-| @ConnectingODots | succeeded | 0 | 0 | — |
-| @DumbMoneyLive | succeeded | 0 | 0 | — |
-| @CouchInvestor | succeeded | 0 | 0 | — |
-| @Value-Investing | succeeded | 0 | 0 | — |
-
-
-### Seeking Alpha search-index leads
-
-- Schedule status: `queued`
-- Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
-- Discovery status: `pending`
-
-
 ### Research-operation audit
 
 | Research operation | Entity | Disposition | Reason |
@@ -501,13 +495,15 @@ No pending paper orders.
 | [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Idea research for AI compute, networking, and hyperscaler monetization on 2026-08-07]] | [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking, and hyperscaler monetization]] | succeeded | agent result:succeeded |
 | [[ideas/idea_humanoid_robotics_embodied_ai_components|Idea research for Humanoid robotics and embodied-AI component supply chain on 2026-08-07]] | [[ideas/idea_humanoid_robotics_embodied_ai_components|Humanoid robotics and embodied-AI component supply chain]] | succeeded | agent result:succeeded |
 | [[ideas/idea_terafab_ai_industrial_stack|Idea research for Terafab and the vertically coordinated AI hardware stack on 2026-08-07]] | [[ideas/idea_terafab_ai_industrial_stack|Terafab and the vertically coordinated AI hardware stack]] | succeeded | agent result:succeeded |
+| [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]] | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | succeeded | agent result:succeeded |
+| [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]] | [[securities/security_95351d928b674bbdf687|DNA]] | failed | retry exhausted:local harness retry artifact conflict after prior validation failure |
+| [[securities/security_55c9ce2fdcd32dad6b8c|Quick check research for CRSR on 2026-08-07]] | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | succeeded | agent result:succeeded |
 
 ### Complete active queue
 
 - Ready — [[securities/security_cb88f9154cfeaa15e878|Security research for VRT on 2026-07-26]]
 - Ready — [[security-catalog#security-security_c5a9e460d3350284d157|Security research for VLO on 2026-07-26]]
 - Ready — [[security-catalog#security-security_0a56aa634d077fe5796f|Security research for AMAT on 2026-07-29]]
-- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-07-29]]
 - Ready — [[security-catalog#security-security_83a56943e18793f685b0|Security research for TXN on 2026-07-29]]
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
@@ -761,7 +757,6 @@ No pending paper orders.
 - Ready — [[inbox/market-security_2c779e81c27b78c556bb-volume_anomaly-fab436606247|Wiki ingest for TX — Volume anomaly on 2026-08-05]]
 - Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Opportunity research for Market alert for CRSR on 2026-08-05]]
 - Ready — [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-1f18981b3fff|Wiki ingest for CRSR — Volume anomaly on 2026-08-05]]
-- Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Quick check research for CRSR on 2026-08-05]]
 - Ready — [[securities/security_6cf75bd0ec0aa2a20148|Opportunity research for Market alert for TWST on 2026-08-05]]
 - Ready — [[inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123|Wiki ingest for TWST — Volume anomaly on 2026-08-05]]
 - Ready — [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]
@@ -769,7 +764,6 @@ No pending paper orders.
 - Ready — [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d|Wiki ingest for ANET — Volume anomaly on 2026-08-05]]
 - Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-05]]
 - Ready — [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-a545a403aac5|Wiki ingest for DNA — SMA 50 cross above 200 on 2026-08-05]]
-- Ready — [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-05]]
 - Ready — [[securities/security_a9eb9838940ef5ceaa0c|Opportunity research for Market alert for FLNC on 2026-08-05]]
 - Ready — [[inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0|Wiki ingest for FLNC — Volume anomaly on 2026-08-05]]
 - Ready — [[securities/security_c9a37d277445869a8809|Opportunity research for Market alert for RBLX on 2026-08-05]]
@@ -796,26 +790,33 @@ No pending paper orders.
 - Ready — [[securities/security_66cdcf90aac0d83e76f3|Opportunity research for Market alert for ALB on 2026-08-06]]
 - Ready — [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-b9b686957690|Wiki ingest for ALB — Volume anomaly on 2026-08-06]]
 - Ready — [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]
-- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-06]]
+- Ready — [[securities/security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-06]]
 - Ready — [[inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee|Wiki ingest for ABCL — MACD cross above signal on 2026-08-06]]
-- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-06]]
+- Ready — [[securities/security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-06]]
 - Ready — [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08|Wiki ingest for ABCL — Volume anomaly on 2026-08-06]]
 - Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-06]]
 - Ready — [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd|Wiki ingest for DNA — Volume anomaly on 2026-08-06]]
 - Ready — [[securities/security_cb88f9154cfeaa15e878|Opportunity research for Market alert for VRT on 2026-08-06]]
 - Ready — [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_above_signal-d2200e5084d7|Wiki ingest for VRT — MACD cross above signal on 2026-08-06]]
-- Waiting — [[securities/security_95351d928b674bbdf687|Security research for DNA on 2026-08-06]]
+- Blocked — [[securities/security_95351d928b674bbdf687|Security research for DNA on 2026-08-06]]
 - Ready — [[securities/security_66cdcf90aac0d83e76f3|Opportunity research for Market alert for ALB on 2026-08-07]]
-- Ready — [[security-catalog#security-security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-07]]
+- Ready — [[securities/security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-07]]
 - Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-07]]
 - Ready — [Source discovery for seekingalpha.com on 2026-08-07](https://seekingalpha.com/trending-analysis)
 - Ready — [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-919db7c341d1|Wiki ingest for CRSR — Volume anomaly on 2026-08-07]]
 - Ready — [[inbox/market-security_66cdcf90aac0d83e76f3-volume_anomaly-8c73a0b155d0|Wiki ingest for ALB — Volume anomaly on 2026-08-07]]
 - Ready — [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222|Wiki ingest for ABCL — Volume anomaly on 2026-08-07]]
 - Ready — [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0|Wiki ingest for DNA — Volume anomaly on 2026-08-07]]
+- Ready — [[relationships/relationship_f2efab6050df0edcb762|Relationship research for Digital finance and crypto rails to Coinbase on 2026-08-07]]
+- Ready — [[relationships/relationship_e5f55616b9beaf661080|Relationship research for AI compute, networking, and hyperscaler monetization to Arista Networks on 2026-08-07]]
+- Ready — [[relationships/relationship_297f9e36fb4e93a808e8|Relationship research for Commercial space infrastructure to Rocket Lab on 2026-08-07]]
+- Ready — [[relationships/relationship_250194f6a9e3a1817632|Relationship research for Anduril product-company disruption to Palantir Technologies on 2026-08-07]]
+- Ready — [[relationships/relationship_d9c8f578040386a487be|Relationship research for Digital attention, gaming, and consumer ecosystems to Roblox on 2026-08-07]]
+- Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Security research for CRSR on 2026-08-07]]
 
 ### Open issues and delivery failures
 
+- Error — [[system-status|Local harness operation validation failed: Quick check research for DNA on 2026-08-07]]: completed security research requires exactly one immutable assessment version; files\_changed contains an unchanged old value: data/wiki/log.md; files\_changed contains an unchanged old value: data/wiki/research-catalog.md; files\_changed is stale or incomplete: reported=\['data/runs/Daily report for 2026-08-07/Quick check research for DNA on 2026-08-07/assessment\_upsert\_request.json', 'data/runs/Daily report for 2026-08-07/Quick check research for DNA on 2026-08-07/assessment\_upsert\_retry01\_reques…
 - Warning — [[system-status|Daily preparation degraded: LAC]]: LAC: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - Warning — [[system-status|Daily preparation degraded: HOOD]]: HOOD: price cache is empty
 - Error — [[system-status|Rio Tinto assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for RIO could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for RIO on 2026-08-03 and current security\_research Security research for RIO on 2026-08-05 claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope…
@@ -851,7 +852,7 @@ No pending paper orders.
 - Error — [[system-status|Assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for PWR could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for PWR on 2026-08-03 and current security\_research Security research for PWR on 2026-08-03 claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope…
 - Warning — [[system-status|Daily preparation degraded: VALE]]: VALE: price cache is empty
 - Error — [[system-status|Hermes operation validation failed: Security research for RIO on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Security research for RIO on 2026-08-05/agent\_result.json
-- Error — [[system-status|Hermes operation validation failed: Security research for ABCL on 2026-07-29]]: completed security research requires exactly one immutable assessment version
+- Error — [[system-status|Hermes operation validation failed: Security research for ABCL on 2026-08-07]]: completed security research requires exactly one immutable assessment version
 - Warning — [[system-status|Daily preparation degraded: ALB]]: ALB: YFTzMissingError: $ALB: possibly delisted; no timezone found
 - Warning — [[system-status|YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A]]: @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 - Warning — [[system-status|Daily preparation degraded: ANIC.L]]: ANIC.L: price cache is empty

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abcl_q2_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000046/abcl-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000046/abcl-20260630.htm",
+  "source_type": "issuer_filing",
+  "title": "AbCellera Biologics Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "AbCellera Biologics Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "eb969e925388baf3f52909d2a6cffddefd24b75cbe06d926cffd9a1a9646f1fd",
+  "related_entity_ids": "security_7bf8f4c9cc12ae410e40",
+  "checked_at": "2026-08-07T16:16:59Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, 2026, cash, cash equivalents and marketable securities totaled $540.1 million; management expects available liquidity to fund at least the next 36 months.",
+  "summary": "The current quarterly filing establishes pipeline status, partner economics, revenue, losses, cash runway, share count, dilution, regulatory dependencies, and the binary August ABCL635 catalyst.",
+  "run_id": "local-daily-20260807T161139Z"
+}

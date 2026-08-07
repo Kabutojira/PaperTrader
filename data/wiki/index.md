@@ -7,28 +7,28 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_313912db0a0071184812"
-as_of: "2026-08-07T10:46:58Z"
+snapshot_id: "decision_82e786976fa2f781c584"
+as_of: "2026-08-07T16:49:41Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-07T10:46:58Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-07T16:49:41Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>64/64</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>65/65</strong></article></section>
 
 ### Why
 
 - The reconciled model portfolio is entirely cash.
 - No strategy has produced a current actionable trade signal.
 
-## Current and approved target portfolio
+## Current and target portfolio
 
-Current equity is **10000 EUR** with **100% cash**. The approved target retains **100% cash**.
+Current equity is **10000 EUR** with **100% cash**. The target retains **100% cash**.
 
-| Holding | Current | Approved target | Action | Strategy |
+| Holding | Current | Target | Action | Strategy |
 | --- | ---: | ---: | --- | --- |
 | Cash | 100% | 100% | No trade | — |
 
@@ -47,9 +47,9 @@ Current equity is **10000 EUR** with **100% cash**. The approved target retains 
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **64/64**
-- Relationship reviews: **27/64**
-- Accepted relationships: **24**
+- Current assessments: **65/65**
+- Relationship reviews: **26/65**
+- Accepted relationships: **23**
 - Market retrieval failures: **0**
 
 ## Explore

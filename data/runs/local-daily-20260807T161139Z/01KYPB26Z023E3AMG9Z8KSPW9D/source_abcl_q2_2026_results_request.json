@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abcl_q2_2026_results_sec_ex99_1",
+  "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000044/q22026earningspressrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000044/q22026earningspressrelease.htm",
+  "source_type": "issuer_release",
+  "title": "AbCellera Reports Q2 2026 Business Results (SEC-filed Exhibit 99.1)",
+  "publisher": "AbCellera Biologics Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9903b98c3e3776fe6e3f0a981af33f651f48f5157dd11dd941d396d4e7c9a4a3",
+  "related_entity_ids": "security_7bf8f4c9cc12ae410e40",
+  "checked_at": "2026-08-07T16:16:59Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 revenue was $4.1 million, net loss was $55.4 million, and ABCL635 Phase 2 top-line data were expected in August 2026.",
+  "summary": "The SEC-filed release confirms the current clinical calendar, Jazz and Vertex upfront economics, partner-program attrition, quarterly losses, and available liquidity.",
+  "run_id": "local-daily-20260807T161139Z"
+}

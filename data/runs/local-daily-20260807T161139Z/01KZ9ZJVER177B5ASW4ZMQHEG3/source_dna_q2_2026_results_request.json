@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dna_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026053319/ex991earningspr.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026053319/ex991earningspr.htm",
+  "source_type": "issuer_release",
+  "title": "Ginkgo Bioworks reports second quarter 2026 financial results",
+  "publisher": "Ginkgo Bioworks Holdings, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "faeeee152f48395f9278133536d3e328f796bd9447ca38c113049233f1d40cc3",
+  "related_entity_ids": "security_95351d928b674bbdf687",
+  "checked_at": "2026-08-07T16:27:41Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Second-quarter revenue was $20 million, adjusted EBITDA was negative $36 million, and cash, equivalents and marketable securities were $302 million.",
+  "summary": "The SEC-filed issuer release supplies management's Q2 autonomous-lab progress, customer wins, current operating metrics, liquidity and reaffirmed 2026 cash-burn outlook.",
+  "run_id": "local-daily-20260807T161139Z"
+}

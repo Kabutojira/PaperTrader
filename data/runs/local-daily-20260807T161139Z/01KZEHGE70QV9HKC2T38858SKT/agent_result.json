@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KZEHGE70QV9HKC2T38858SKT",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous_same_run",
+  "summary": "The bounded CRSR full review rechecked the current Q2 Form 10-Q and SEC-filed results release, but the deterministic assessment applier rejected the update because this run contains both the immediately preceding CRSR quick check and this full review, making source-operation attribution ambiguous. No substitute invocation or assessment retry was attempted. The research page was restored to the accepted quick-check version, whose hash still matches the current immutable Hold / Watch assessment. The earlier security-row draft could not be restored because the deterministic CLI rejected the accepted quick-check timestamp as older than the draft; this mismatch is retained as explicit failed-operation evidence. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.",
+  "evidence": [
+    {
+      "source": "source_crsr_q2_2026_10q",
+      "claim": "The refreshed Q2 Form 10-Q remains registered at the SEC with the same content hash and supports the current revenue, cash-flow, balance-sheet, tariff, customer-concentration, and Trak Racer evidence.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+      "observed_at": "2026-08-07T16:42:47Z",
+      "source_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363"
+    },
+    {
+      "source": "source_crsr_q2_2026_results",
+      "claim": "The refreshed SEC-filed results release remains registered with the same content hash and supports the raised guidance, underlying adjusted EBITDA, segment trends, and one-time tariff-refund normalization evidence.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+      "observed_at": "2026-08-07T16:42:47Z",
+      "source_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e"
+    },
+    {
+      "source": "papertrader research assessment upsert",
+      "claim": "The deterministic applier rejected assessment_upsert_request.json with assessment source operation is ambiguous for this run because two CRSR research operations exist under local-daily-20260807T161139Z."
+    },
+    {
+      "source": "papertrader research security upsert",
+      "claim": "The deterministic applier rejected security_upsert_retry01_request.json because the accepted quick-check research timestamp is older than the full-review draft already applied to securities.csv."
+    },
+    {
+      "source": "assessment_d52252a2530f6940e6cd",
+      "claim": "Final security-context validation confirms the current accepted CRSR assessment remains the quick-check Hold / Watch result and its research-page hash matches the restored page."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_retry01_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CRSR full review failed closed: deterministic assessment provenance was ambiguous because the same daily run contained both the preceding quick check and this review. The accepted Hold / Watch assessment and matching research page remain in force; no trade or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research source record --request data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/local-daily-20260807T161139Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory audited security-context ran before assessment-state reads or changes.",
+      "Both retained Q2 primary sources were refreshed through the project CLI with current SEC URLs and unchanged SHA-256 content hashes.",
+      "The assessment write failed closed on ambiguous same-run source-operation provenance; no assessment version was accepted for this operation.",
+      "No rejected command was retried and no substitute mutation path was used.",
+      "The research page was restored byte-for-byte to the accepted quick-check state and final security-context confirmed its hash matches assessment_d52252a2530f6940e6cd.",
+      "The deterministic CLI rejected restoration of the security row because its accepted timestamp was older than the full-review draft timestamp; the operation therefore reports failure rather than claiming a coherent review update.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No idea, relationship, strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

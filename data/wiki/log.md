@@ -2471,6 +2471,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260807]] for run `daily-20260807T103239Z`.
 
+- Published investor decision snapshot `decision_82e786976fa2f781c584`.
+
+- Generated canonical [[daily-reports/daily-report_20260807]] for run `local-daily-20260807T161139Z`.
+
 ## 2026-08-07 — idea research — Terafab and the vertically coordinated AI hardware stack
 
 - Created [[ideas/idea_terafab_ai_industrial_stack]] from the user seed, Texas JETI project records,
@@ -2618,3 +2622,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - NVIDIA's Space-1, Vera–SpaceXAI and third-party-sourcing evidence supports the staged hybrid thesis
   but changes no EPS scenario. At USD 218.99, bear/base payoff remains below minimum; no security,
   relationship, strategy or paper-trade work was enqueued.
+
+## 2026-08-07 — full review — AbCellera Biologics Inc. common shares
+
+- Completed the initial review of [[securities/security_7bf8f4c9cc12ae410e40|AbCellera]] after a
+  10.3% post-results rebound, bullish MACD crossover and 2.06 volume z-score; the 20-session return
+  nevertheless remained negative 10.4%.
+- Q2 evidence shows USD 540.1 million of cash and marketable securities, more than 36 months of
+  stated runway, USD 112 million of Jazz and Vertex upfront economics, but only USD 4.1 million of
+  quarterly revenue, a USD 55.4 million net loss and declining partnered-program counts.
+- ABCL635 Phase 2 efficacy data are due in August. Unrated / Watch is unsupported and
+  allocation-ineligible until efficacy, regulatory, commercial, development-cost, burn and dilution
+  inputs support a risk-adjusted NPV; no idea follow-up, strategy, signal or order was created.

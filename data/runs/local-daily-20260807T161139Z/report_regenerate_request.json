@@ -1,0 +1,31 @@
+{
+  "run_id": "local-daily-20260807T161139Z",
+  "run_status": "degraded",
+  "report_date": "2026-08-07",
+  "generated_at": "2026-08-07T16:49:41Z",
+  "github_report_url": "https://github.com/Kabutojira/PaperTrader/blob/main/data/wiki/daily-reports/daily-report_20260807.md",
+  "narrative_items": [
+    {
+      "text": "ABCL initial full review completed: Q2 liquidity and funded Jazz and Vertex collaborations support continued coverage, and the 6 August session rebounded 10.3% on anomalous volume. ABCL635 Phase 2 efficacy remains unreported, so risk-adjusted NPV is unsupported and the canonical conclusion is Unrated / Watch with no strategy, signal, or order.",
+      "evidence_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000046/abcl-20260630.htm",
+        "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000044/q22026earningspressrelease.htm",
+        "https://clinicaltrials.gov/study/NCT07118891"
+      ]
+    },
+    {
+      "text": "CRSR quick check completed: Q2 underlying adjusted EBITDA beat guidance and quarterly operating cash flow reached USD 74.8 million, while reported profit included a one-time tariff refund and the Trak Racer acquisition adds new integration assumptions. At USD 10.61 the bounded prior scenarios derive Hold / Watch but remain allocation-ineligible; exactly one dependent full Q2 review was enqueued.",
+      "evidence_refs": [
+        "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+        "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm"
+      ]
+    },
+    {
+      "text": "CRSR full review failed closed: deterministic assessment provenance was ambiguous because the same daily run contained both the preceding quick check and this review. The accepted Hold / Watch assessment and matching research page remain in force; no trade or accounting state changed.",
+      "evidence_refs": [
+        "papertrader research assessment upsert",
+        "assessment_d52252a2530f6940e6cd"
+      ]
+    }
+  ]
+}

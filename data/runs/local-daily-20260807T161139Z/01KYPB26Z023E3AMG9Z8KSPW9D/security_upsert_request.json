@@ -1,0 +1,23 @@
+{
+  "security_id": "security_7bf8f4c9cc12ae410e40",
+  "issuer_id": "issuer_6647bd573a38716cbcbd",
+  "company_name": "AbCellera Biologics Inc.",
+  "instrument_name": "AbCellera Biologics Inc. common shares",
+  "instrument_type": "equity",
+  "ticker": "ABCL",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ABCL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CA",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Cash runway and funded T-cell-engager partnerships support continued research, but ABCL635 efficacy is unreported and a program-level risk-adjusted valuation is unsupported.",
+  "research_summary": "Q2 liquidity is strong and the post-results rebound was material, but the August ABCL635 readout remains binary; Unrated / Watch pending supportable rNPV inputs.",
+  "research_page": "data/wiki/securities/security_7bf8f4c9cc12ae410e40.md",
+  "last_research_at": "2026-08-07T16:16:59Z",
+  "next_review_at": "2026-08-14T16:16:59Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000046/abcl-20260630.htm"
+}

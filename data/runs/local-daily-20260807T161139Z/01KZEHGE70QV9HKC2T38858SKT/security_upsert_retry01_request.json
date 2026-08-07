@@ -1,0 +1,23 @@
+{
+  "security_id": "security_55c9ce2fdcd32dad6b8c",
+  "issuer_id": "issuer_5ce238383a369ed3467b",
+  "company_name": "Corsair Gaming, Inc.",
+  "instrument_name": "Corsair Gaming, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "CRSR",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CRSR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "United States",
+  "sector": "Technology",
+  "industry": "Computer Hardware",
+  "status": "watching",
+  "watchlist_reason": "Q2 underlying profit and cash conversion improved and guidance rose, but the one-time tariff refund, component cyclicality, acquisition risk and valuation gates require a full reassessment.",
+  "research_summary": "Q2 revenue fell 2%, underlying adjusted EBITDA beat guidance, and cash rose to USD 193.9 million; Hold / Watch remains allocation-ineligible pending a full Q2 scenario refresh.",
+  "research_page": "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md",
+  "last_research_at": "2026-08-07T16:37:14Z",
+  "next_review_at": "2026-08-08T16:37:14Z",
+  "source": "source_crsr_q2_2026_10q|source_crsr_q2_2026_results"
+}

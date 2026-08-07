@@ -1,0 +1,27 @@
+{
+  "completed_at": "2026-08-07T16:49:41Z",
+  "daily_run_version": 1,
+  "fill_outcomes": [],
+  "model_budget_limit": "5",
+  "model_budget_used": "0",
+  "operation_count": 3,
+  "podcast_audio_path": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "preparation_errors": [],
+  "queue_dispositions": [
+    "allocation_maintenance:01KZEFXEC84Z8C5ZF155S1H9K0",
+    "allocation_maintenance:01KZEFXEC8636W2C60C8AZZDBB",
+    "allocation_maintenance:01KZEFXEC8JAGTYCVXEV2W62J5",
+    "allocation_maintenance:01KZEFXEC8KTF5AD8J2VYCJ9PG",
+    "allocation_maintenance:01KZEFXEC8M0CH4FYD1ZHN9AA7"
+  ],
+  "report_path": "data/wiki/daily-reports/daily-report_20260807.md",
+  "run_id": "local-daily-20260807T161139Z",
+  "snapshot_id": "decision_82e786976fa2f781c584",
+  "source_sha": "1043b76c410900a36e71ce97dc854e3078dacd55",
+  "started_at": "2026-08-07T16:11:49Z",
+  "status": "degraded",
+  "trigger": "local"
+}

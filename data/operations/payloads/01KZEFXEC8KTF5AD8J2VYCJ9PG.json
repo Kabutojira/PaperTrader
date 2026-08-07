@@ -1,0 +1,17 @@
+{
+  "entity_id": "relationship_250194f6a9e3a1817632",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_anduril_product_company_disruption",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_250194f6a9e3a1817632",
+    "security_id": "security_bdc2f87dadf134760c3a"
+  },
+  "objective": "Review the canonical relationship from idea_anduril_product_company_disruption to security_bdc2f87dadf134760c3a and accept or reject it with current evidence.",
+  "operation_id": "01KZEFXEC8KTF5AD8J2VYCJ9PG",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_pltr_q1_2026_earnings"
+  ]
+}

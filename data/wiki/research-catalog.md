@@ -7,8 +7,8 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_313912db0a0071184812"
-as_of: "2026-08-07T10:46:58Z"
+snapshot_id: "decision_82e786976fa2f781c584"
+as_of: "2026-08-07T16:49:41Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **88**
-- Securities with retained revisions: **64**
+- Immutable assessment versions: **92**
+- Securities with retained revisions: **65**
 
 ## Candidate
 
@@ -304,6 +304,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 ## Security
 
 - [ABB Ltd sponsored ADR](securities/security_c120e9f26ebb6159adf9)
+- [AbCellera Biologics Inc. common shares](securities/security_7bf8f4c9cc12ae410e40)
 - [Albemarle Corporation common stock](securities/security_66cdcf90aac0d83e76f3)
 - [Alphabet Inc. Class A common stock](securities/security_c86bb4e75658c07142cf)
 - [Amazon.com, Inc. common stock](securities/security_2433a056eb0c55961fcc)

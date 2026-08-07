@@ -4,6 +4,7 @@ Generated from `data/tables/issues.csv`.
 
 | Severity | Issue | Last seen | Owner | Related operation |
 | --- | --- | --- | --- | --- |
+| error | **issue_009da4be114b9f22fa30** — Local harness operation validation failed: 01KZ9ZJVER177B5ASW4ZMQHEG3 | 2026-08-07T16:33:04Z | controller | 01KZ9ZJVER177B5ASW4ZMQHEG3 |
 | error | **issue_0acd52c371559780a934** — Rio Tinto assessment source operation is ambiguous within one run | 2026-08-03T09:27:11Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
 | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crsr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+  "source_type": "filing",
+  "title": "Corsair Gaming, Inc. quarterly report for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363",
+  "related_entity_ids": "security_55c9ce2fdcd32dad6b8c",
+  "checked_at": "2026-08-07T16:37:14Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Net revenue was $314.3 million and net income was $9.1 million for the quarter; cash and restricted cash totaled $193.9 million at June 30, 2026.",
+  "summary": "The current SEC quarterly filing supplies Q2 revenue, margin, income, cash flow, liquidity, debt, inventory, tariff-refund, customer-concentration and acquisition evidence.",
+  "run_id": "local-daily-20260807T161139Z"
+}

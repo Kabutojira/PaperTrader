@@ -1,0 +1,5 @@
+{
+  "operation_id": "01KZ9ZJVER177B5ASW4ZMQHEG3",
+  "run_id": "local-daily-20260807T161139Z",
+  "error": "local_harness_retry_artifact_conflict_after_prior_validation_failure"
+}

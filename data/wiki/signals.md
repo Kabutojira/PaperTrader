@@ -7,23 +7,32 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_313912db0a0071184812"
-as_of: "2026-08-07T10:46:58Z"
+snapshot_id: "decision_82e786976fa2f781c584"
+as_of: "2026-08-07T16:49:41Z"
 ---
 
 # Signals
 
-**As of `2026-08-07T10:46:58Z`**
+**As of `2026-08-07T16:49:41Z`**
 
 ## Actionable trade signals
 
 No actionable trade signals.
 
-## Pending validated paper orders
+## Pending validated orders
 
-No pending paper orders.
+No pending orders.
 
 ## Research alerts — not trade signals
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-07`
+- Research status: `succeeded`
+- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
 
 ### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
@@ -112,8 +121,8 @@ No pending paper orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-06`
-- Research status: `waiting`
-- Conclusion: High-priority security research is waiting on its scheduling constraints.
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. dependency\_unavailable:Quick check research for DNA on 2026-08-07
 
 ### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
 
@@ -142,14 +151,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### ABCL — AbCellera Biologics Inc.
+### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout, but the 20-session return remained negative 10.4%. Registered all three primary sources, created the maintained security page, updated the security row, and wrote the first schema-v2 assessment. Strong liquidity supports continued coverage, while unreported Phase 2 efficacy and missing program-level probability, commercial, development-cost, burn, and dilution inputs make risk-adjusted NPV unsupported. Deterministic state derives Unrated / Watch and allocation ineligibility; no linked idea, strategy, signal, order, allocation, or accounting state changed.
 
 ### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
 
@@ -169,15 +178,6 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
-- Research status: `succeeded`
-- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
-
 ### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
 
 **Research alert — not a trade signal**
@@ -196,14 +196,14 @@ No pending paper orders.
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### ABCL — AbCellera Biologics Inc.
+### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout, but the 20-session return remained negative 10.4%. Registered all three primary sources, created the maintained security page, updated the security row, and wrote the first schema-v2 assessment. Strong liquidity supports continued coverage, while unreported Phase 2 efficacy and missing program-level probability, commercial, development-cost, burn, and dilution inputs make risk-adjusted NPV unsupported. Deterministic state derives Unrated / Watch and allocation ineligibility; no linked idea, strategy, signal, order, allocation, or accounting state changed.
 
 
 ## Recently expired or completed signals

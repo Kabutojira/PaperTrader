@@ -7,13 +7,13 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_313912db0a0071184812"
-as_of: "2026-08-07T10:46:58Z"
+snapshot_id: "decision_82e786976fa2f781c584"
+as_of: "2026-08-07T16:49:41Z"
 ---
 
 # Performance and risk
 
-**As of `2026-08-07T10:46:58Z`**
+**As of `2026-08-07T16:49:41Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
@@ -32,9 +32,9 @@ Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior
 - Largest position: 0%
 - Largest sector: 0%
 
-## Approved allocation changes
+## Target allocation changes
 
-No approved allocation changes.
+No target allocation changes.
 
 ## Committed history
 

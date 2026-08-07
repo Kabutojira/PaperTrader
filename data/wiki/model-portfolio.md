@@ -7,30 +7,30 @@ tags:
 created: "2026-08-07"
 updated: "2026-08-07"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_313912db0a0071184812"
-as_of: "2026-08-07T10:46:58Z"
+snapshot_id: "decision_82e786976fa2f781c584"
+as_of: "2026-08-07T16:49:41Z"
 ---
 
 # Model portfolio
 
-**As of `2026-08-07T10:46:58Z`**
+**As of `2026-08-07T16:49:41Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-07T10:46:58Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-07T16:49:41Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
-<div><dt>Approved target</dt><dd>100%</dd></div>
+<div><dt>Target</dt><dd>100%</dd></div>
 <div><dt>Action</dt><dd>No trade</dd></div>
 <div><dt>State</dt><dd>No action</dd></div>
 <div><dt>Research rating</dt><dd>Unrated</dd></div>
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-08-07T10:46:58Z</dd></div>
-<div><dt>As of</dt><dd>2026-08-07T10:46:58Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-08-07T16:49:41Z</dd></div>
+<div><dt>As of</dt><dd>2026-08-07T16:49:41Z</dd></div>
 </dl>
 
 </article>
@@ -54,9 +54,9 @@ Pending targets are projections; only deterministic fills change the current por
 | --- | --- | ---: | ---: | ---: | --- | --- |
 | Cash | Unrated / Hold | —% / —% / —% | —% | — | — | Capital retained as the configured portfolio alternative. |
 
-## Non-approved research benchmark
+## Comparison-only research benchmark
 
-This deterministic equal-weight benchmark is for research comparison only. It is not an approved allocation, is not copy-ready, and has no path to signals or orders.
+This deterministic equal-weight benchmark is for research comparison only. It is comparison-only, is not copy-ready, and has no path to signals or orders.
 
 | Security | Rating | Weight | Reference price |
 | --- | --- | ---: | ---: |

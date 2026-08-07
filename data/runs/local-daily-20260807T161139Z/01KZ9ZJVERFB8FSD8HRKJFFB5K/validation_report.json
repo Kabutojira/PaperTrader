@@ -1,0 +1,24 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZEHGE70QV9HKC2T38858SKT.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/assessment_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/enqueue_full_research_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/security_upsert_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/source_crsr_q2_2026_10q_request.json",
+    "data/runs/local-daily-20260807T161139Z/01KZ9ZJVERFB8FSD8HRKJFFB5K/source_crsr_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+  ],
+  "completed_at": "2026-08-07T16:41:20Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KZ9ZJVERFB8FSD8HRKJFFB5K",
+  "passed": true,
+  "run_id": "local-daily-20260807T161139Z",
+  "validation_version": 1
+}
