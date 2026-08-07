@@ -686,6 +686,8 @@ def _daily_podcast_text_errors(
         word_count = len(re.findall(r"\b[\w'-]+\b", spoken))
         if not 2400 <= word_count <= 3600:
             errors.append("daily podcast spoken transcript must contain 2400-3600 words")
+        if "paper trad" not in spoken.casefold():
+            errors.append("daily podcast spoken transcript must label paper trading")
     if operation.entity_id not in text:
         errors.append("daily podcast transcript must identify its timestamped cycle")
     if re.search(r"(?i)\.(?:mp3|wav|m4a)(?:\b|[?#])", text):
