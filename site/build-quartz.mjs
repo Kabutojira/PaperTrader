@@ -23,12 +23,12 @@ const publicationFiles = {
     "instrument_type",
     "sleeve",
     "current_weight_pct",
-    "approved_target_weight_pct",
+    "target_weight_pct",
     "current_value_base",
-    "approved_target_value_base",
+    "target_value_base",
     "delta_value_base",
     "current_quantity",
-    "approved_target_quantity",
+    "target_quantity",
     "mark",
     "mark_currency",
     "mark_base",
@@ -91,7 +91,7 @@ const publicationFiles = {
     "expires_at",
     "market_data_as_of",
     "current_weight_pct",
-    "approved_target_weight_pct",
+    "target_weight_pct",
     "strategy_name",
     "entry_rule",
     "exit_rule",
@@ -106,7 +106,7 @@ const publicationFiles = {
     "snapshot_id",
     "as_of",
     "policy_version",
-    "non_approved",
+    "comparison_only",
     "copy_ready",
     "security_id",
     "ticker",
@@ -118,6 +118,21 @@ const publicationFiles = {
     "research_page",
   ],
 };
+
+const legacyPublicationFiles = Object.fromEntries(
+  Object.entries(publicationFiles).map(([name, header]) => [
+    name,
+    header?.map(
+      (column) =>
+        ({
+          target_weight_pct: "approved_target_weight_pct",
+          target_value_base: "approved_target_value_base",
+          target_quantity: "approved_target_quantity",
+          comparison_only: "non_approved",
+        })[column] || column,
+    ) ?? null,
+  ]),
+);
 
 function assertRegularFile(path) {
   if (!existsSync(path))
@@ -199,6 +214,12 @@ function validateSnapshot(content) {
   } catch (error) {
     throw new Error(`decision_snapshot.json is invalid JSON: ${error.message}`);
   }
+  if (![3, 4].includes(snapshot.version))
+    throw new Error("unsupported decision snapshot version");
+  const targetPortfolioKey =
+    snapshot.version === 4 ? "target_portfolio" : "approved_target_portfolio";
+  const benchmarkBoundaryKey =
+    snapshot.version === 4 ? "comparison_only" : "non_approved";
   const required = [
     "version",
     "snapshot_id",
@@ -212,7 +233,7 @@ function validateSnapshot(content) {
     "evidence_state",
     "base_currency",
     "current_portfolio",
-    "approved_target_portfolio",
+    targetPortfolioKey,
     "actionable_signals",
     "candidate_pipeline",
     "research_benchmark",
@@ -223,8 +244,6 @@ function validateSnapshot(content) {
     "source_state_hashes",
   ];
   assertExactKeys(snapshot, required, "decision snapshot");
-  if (snapshot.version !== 3)
-    throw new Error("unsupported decision snapshot version");
   if (!/^decision_[0-9a-f]{20}$/.test(snapshot.snapshot_id)) {
     throw new Error("decision snapshot ID is invalid");
   }
@@ -276,7 +295,7 @@ function validateSnapshot(content) {
   }
   for (const field of [
     "current_portfolio",
-    "approved_target_portfolio",
+    targetPortfolioKey,
     "research_benchmark",
     "coverage",
     "performance",
@@ -290,7 +309,7 @@ function validateSnapshot(content) {
       throw new Error(`decision snapshot ${field} must be an object`);
     }
   }
-  for (const field of ["current_portfolio", "approved_target_portfolio"]) {
+  for (const field of ["current_portfolio", targetPortfolioKey]) {
     if (!Array.isArray(snapshot[field].rows)) {
       throw new Error(`decision snapshot ${field}.rows must be an array`);
     }
@@ -305,12 +324,12 @@ function validateSnapshot(content) {
   }
   assertExactKeys(
     snapshot.research_benchmark,
-    ["policy_version", "non_approved", "copy_ready", "rows"],
+    ["policy_version", benchmarkBoundaryKey, "copy_ready", "rows"],
     "decision snapshot research_benchmark",
   );
   if (
     snapshot.research_benchmark.policy_version !== "equal_weight_rated_v1" ||
-    snapshot.research_benchmark.non_approved !== true ||
+    snapshot.research_benchmark[benchmarkBoundaryKey] !== true ||
     snapshot.research_benchmark.copy_ready !== false ||
     !Array.isArray(snapshot.research_benchmark.rows)
   ) {
@@ -387,11 +406,13 @@ function assertCsvMatchesSnapshot(name, rows, header, snapshot) {
       as_of: snapshot.as_of,
     });
   } else if (name === "research_benchmark.csv") {
+    const boundaryKey =
+      snapshot.version === 4 ? "comparison_only" : "non_approved";
     expected = expectedCsvRows(snapshot.research_benchmark.rows, header, {
       snapshot_id: snapshot.snapshot_id,
       as_of: snapshot.as_of,
       policy_version: snapshot.research_benchmark.policy_version,
-      non_approved: snapshot.research_benchmark.non_approved,
+      [boundaryKey]: snapshot.research_benchmark[boundaryKey],
       copy_ready: snapshot.research_benchmark.copy_ready,
     });
   } else {
@@ -432,7 +453,9 @@ function publishValidatedArtifacts(wikiRoot, outputRoot) {
   const snapshot = validateSnapshot(
     readFileSync(join(sourceRoot, "decision_snapshot.json"), "utf8"),
   );
-  for (const [name, header] of Object.entries(publicationFiles)) {
+  const expectedPublicationFiles =
+    snapshot.version === 4 ? publicationFiles : legacyPublicationFiles;
+  for (const [name, header] of Object.entries(expectedPublicationFiles)) {
     if (header !== null) {
       const rows = validateCsv(
         readFileSync(join(sourceRoot, name), "utf8"),

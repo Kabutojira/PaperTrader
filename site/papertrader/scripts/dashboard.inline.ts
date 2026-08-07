@@ -84,7 +84,7 @@ function setupCopyButton(): void {
       [
         "Ticker",
         "Company",
-        "Approved target weight %",
+        "Target weight %",
         "Reference mark",
         "Currency",
         "FX to base",

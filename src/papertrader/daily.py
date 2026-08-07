@@ -750,6 +750,8 @@ def record_local_agent_outcome(
         maximum = document.get("maximum_operations")
         if isinstance(maximum, bool) or not isinstance(maximum, int):
             raise DailyRunError("existing agent batch maximum is invalid")
+        if maximum != settings.operations.cycle_maximum_operations:
+            raise DailyRunError("local daily MAX_OPERATIONS changed during the cycle")
         if len(outcomes) >= maximum:
             raise DailyRunError("local harness operation count exceeds the daily run budget")
         outcomes.append({"operation_id": operation_id, "status": status})
@@ -765,7 +767,7 @@ def record_local_agent_outcome(
             "run_id": run_id,
             "started_at": format_timestamp(instant),
             "completed_at": format_timestamp(instant),
-            "maximum_operations": settings.operations.maximum_llm_operations_per_run,
+            "maximum_operations": settings.operations.cycle_maximum_operations,
             "maximum_model_budget": decimal_text(
                 settings.operations.maximum_model_budget_usd_per_run
             ),

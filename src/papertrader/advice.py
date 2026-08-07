@@ -47,7 +47,7 @@ from papertrader.utils import (
     stable_id,
 )
 
-SNAPSHOT_VERSION = 3
+SNAPSHOT_VERSION = 4
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 HASH = re.compile(r"^[0-9a-f]{64}$")
 MONEY_QUANTUM = Decimal("0.01")
@@ -93,12 +93,12 @@ MODEL_PORTFOLIO_COLUMNS = (
     "instrument_type",
     "sleeve",
     "current_weight_pct",
-    "approved_target_weight_pct",
+    "target_weight_pct",
     "current_value_base",
-    "approved_target_value_base",
+    "target_value_base",
     "delta_value_base",
     "current_quantity",
-    "approved_target_quantity",
+    "target_quantity",
     "mark",
     "mark_currency",
     "mark_base",
@@ -162,7 +162,7 @@ ACTIONABLE_SIGNAL_COLUMNS = (
     "expires_at",
     "market_data_as_of",
     "current_weight_pct",
-    "approved_target_weight_pct",
+    "target_weight_pct",
     "strategy_name",
     "entry_rule",
     "exit_rule",
@@ -178,7 +178,7 @@ RESEARCH_BENCHMARK_COLUMNS = (
     "snapshot_id",
     "as_of",
     "policy_version",
-    "non_approved",
+    "comparison_only",
     "copy_ready",
     "security_id",
     "ticker",
@@ -211,13 +211,13 @@ REASON_LABELS = {
     "conviction_pending_exposure": (
         "A validated pending conviction-sleeve order already represents the security."
     ),
-    "currency_not_allowed": "The instrument currency is outside the configured paper mandate.",
+    "currency_not_allowed": "The instrument currency is outside the configured mandate.",
     "deployment_budget_exhausted": "The per-run deployment budget is exhausted.",
-    "exchange_not_allowed": "The venue is outside the configured paper mandate.",
+    "exchange_not_allowed": "The venue is outside the configured mandate.",
     "fx_unavailable": "A fresh required foreign-exchange rate is unavailable.",
     "insufficient_diversification": "The eligible set is not sufficiently diversified.",
     "insufficient_eligible_candidates": "Too few eligible candidates clear all allocation gates.",
-    "instrument_not_allowed": "The instrument is outside the configured paper mandate.",
+    "instrument_not_allowed": "The instrument is outside the configured mandate.",
     "instrument_unsupported": "The allocator does not support this instrument.",
     "maintenance_mode": "Allocation is not active.",
     "market_data_missing": "A required current market price is unavailable.",
@@ -243,7 +243,7 @@ REASON_LABELS = {
     ),
     "score_below_cash_hurdle": "The effective score does not beat the configured cash hurdle.",
     "security_status_not_orderable": "The security is not currently orderable.",
-    "target_unchanged": "The approved target does not require a trade.",
+    "target_unchanged": "The target does not require a trade.",
     "upside_downside_ratio_below_minimum": (
         "Modeled base upside does not match the configured downside-risk ratio."
     ),
@@ -254,8 +254,8 @@ REASON_LABELS = {
     "margin_of_safety_below_minimum": "Margin of safety is below threshold.",
     "research_incomplete": "Scenario-complete research remains incomplete.",
     "valuation_unsupported": "A supportable scenario valuation is unavailable.",
-    "validated_open_actions": "Validated opening paper actions are pending.",
-    "validated_reduce_actions": "Validated actions reduce existing paper exposure.",
+    "validated_open_actions": "Validated opening actions are pending.",
+    "validated_reduce_actions": "Validated actions reduce existing exposure.",
     "validated_rebalance_actions": (
         "Validated opening and reduction actions rebalance the portfolio."
     ),
@@ -292,12 +292,12 @@ class ModelPortfolioRow:
     instrument_type: str
     sleeve: str
     current_weight_pct: str
-    approved_target_weight_pct: str
+    target_weight_pct: str
     current_value_base: str
-    approved_target_value_base: str
+    target_value_base: str
     delta_value_base: str
     current_quantity: str
-    approved_target_quantity: str
+    target_quantity: str
     mark: str
     mark_currency: str
     mark_base: str
@@ -375,7 +375,7 @@ class ActionableSignalView:
     expires_at: str
     market_data_as_of: str
     current_weight_pct: str
-    approved_target_weight_pct: str
+    target_weight_pct: str
     strategy_name: str
     entry_rule: str
     exit_rule: str
@@ -440,7 +440,7 @@ class ResearchBenchmarkRow:
 @dataclass(frozen=True, slots=True)
 class ResearchBenchmark:
     policy_version: str
-    non_approved: bool
+    comparison_only: bool
     copy_ready: bool
     rows: tuple[ResearchBenchmarkRow, ...]
 
@@ -523,7 +523,7 @@ class DecisionSnapshot:
     evidence_state: str
     base_currency: str
     current_portfolio: PortfolioSummary
-    approved_target_portfolio: PortfolioSummary
+    target_portfolio: PortfolioSummary
     actionable_signals: tuple[ActionableSignalView, ...]
     candidate_pipeline: tuple[CandidateView, ...]
     research_benchmark: ResearchBenchmark
@@ -748,6 +748,40 @@ def _configuration_only_runtime_changed(
         and dict(old.items(section)) == dict(current.items(section))
         for section in investment_sections
     )
+
+
+def _legacy_publication_contracts_changed(
+    repository_root: Path,
+    *,
+    snapshot: DecisionSnapshot,
+    differing: set[str],
+) -> bool:
+    """Accept only the v4 schema/header migration for an immutable legacy publication."""
+
+    if snapshot.version >= SNAPSHOT_VERSION or differing != {"csv_contracts", "decision_schema"}:
+        return False
+    manifest_path = repository_root / "data" / "runs" / snapshot.run_id / "daily_run.json"
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    source_sha = manifest.get("source_sha") if isinstance(manifest, dict) else None
+    if not isinstance(source_sha, str) or not re.fullmatch(r"[0-9a-f]{40}", source_sha):
+        return False
+    for key, relative in (
+        ("csv_contracts", "schemas/csv_contracts.yaml"),
+        ("decision_schema", "schemas/decision_snapshot.schema.json"),
+    ):
+        historical = subprocess.run(
+            ["git", "show", f"{source_sha}:{relative}"],
+            cwd=repository_root,
+            check=False,
+            capture_output=True,
+        )
+        expected_hash = snapshot.source_state_hashes.get(key)
+        if historical.returncode != 0 or content_hash(historical.stdout) != expected_hash:
+            return False
+    return True
 
 
 def _post_publication_podcast_only_changed(
@@ -1385,12 +1419,12 @@ def _portfolio_rows(
                 instrument_type=holding.instrument_type,
                 sleeve=holding.sleeve,
                 current_weight_pct=decimal_text(current_weight),
-                approved_target_weight_pct=decimal_text(target_weight),
+                target_weight_pct=decimal_text(target_weight),
                 current_value_base=decimal_text(_money(holding.current_value)),
-                approved_target_value_base=decimal_text(_money(holding.target_value)),
+                target_value_base=decimal_text(_money(holding.target_value)),
                 delta_value_base=decimal_text(_money(holding.target_value - holding.current_value)),
                 current_quantity=decimal_text(holding.current_quantity),
-                approved_target_quantity=decimal_text(holding.target_quantity),
+                target_quantity=decimal_text(holding.target_quantity),
                 mark=decimal_text(holding.mark),
                 mark_currency=holding.currency,
                 mark_base=decimal_text(holding.mark * holding.fx_rate),
@@ -1451,12 +1485,12 @@ def _portfolio_rows(
             instrument_type="cash",
             sleeve="cash",
             current_weight_pct=decimal_text(current_cash_weight),
-            approved_target_weight_pct=decimal_text(target_cash_weight),
+            target_weight_pct=decimal_text(target_cash_weight),
             current_value_base=decimal_text(_money(current_cash)),
-            approved_target_value_base=decimal_text(_money(target_cash)),
+            target_value_base=decimal_text(_money(target_cash)),
             delta_value_base=decimal_text(_money(target_cash - current_cash)),
             current_quantity=decimal_text(_money(current_cash)),
-            approved_target_quantity=decimal_text(_money(target_cash)),
+            target_quantity=decimal_text(_money(target_cash)),
             mark="1",
             mark_currency="",
             mark_base="1",
@@ -1528,8 +1562,7 @@ def _portfolio_summaries(
         required_decimal(row.current_value_base, label="current value") for row in security_rows
     ]
     target_values = [
-        required_decimal(row.approved_target_value_base, label="target value")
-        for row in security_rows
+        required_decimal(row.target_value_base, label="target value") for row in security_rows
     ]
     current_gross = sum((abs(value) for value in current_values), Decimal("0"))
     target_gross = sum((abs(value) for value in target_values), Decimal("0"))
@@ -1555,12 +1588,10 @@ def _portfolio_summaries(
         rows=rows,
     )
     target = PortfolioSummary(
-        portfolio_kind="approved_target",
+        portfolio_kind="target",
         equity_base=decimal_text(_money(target_equity)),
         cash_base=decimal_text(_money(target_cash)),
-        cash_weight_pct=next(
-            row.approved_target_weight_pct for row in rows if row.holding_type == "cash"
-        ),
+        cash_weight_pct=next(row.target_weight_pct for row in rows if row.holding_type == "cash"),
         invested_value_base=decimal_text(_money(target_net)),
         invested_weight_pct=decimal_text(
             _percent(target_net, target_equity) if target_equity else Decimal("0")
@@ -1774,11 +1805,11 @@ def _actionable_signals(
                         Decimal("0"),
                     )
                 ),
-                approved_target_weight_pct=decimal_text(
+                target_weight_pct=decimal_text(
                     sum(
                         (
                             required_decimal(
-                                row.approved_target_weight_pct,
+                                row.target_weight_pct,
                                 label="signal target weight",
                             )
                             for row in portfolio_rows
@@ -1869,7 +1900,7 @@ def _candidate_classification(
         if assessment is not None and assessment.get("canonical_rating") in {"buy", "strong_buy"}:
             return "valuation_attractive"
         return "valuation_unattractive"
-    return "approved"
+    return "strategy_ready"
 
 
 def _candidate_pipeline(
@@ -2619,7 +2650,7 @@ def _research_benchmark(
     )
     return ResearchBenchmark(
         policy_version="equal_weight_rated_v1",
-        non_approved=True,
+        comparison_only=True,
         copy_ready=False,
         rows=tuple(rows),
     )
@@ -2787,7 +2818,7 @@ def build_decision_snapshot(
         evidence_state=_evidence_state(investment_status, stance, candidates),
         base_currency=settings.portfolio.base_currency,
         current_portfolio=current,
-        approved_target_portfolio=target,
+        target_portfolio=target,
         actionable_signals=actions,
         candidate_pipeline=candidates,
         research_benchmark=_research_benchmark(securities, assessments),
@@ -2874,7 +2905,7 @@ def _benchmark_csv_rows(snapshot: DecisionSnapshot) -> list[dict[str, object]]:
             "snapshot_id": snapshot.snapshot_id,
             "as_of": snapshot.as_of,
             "policy_version": snapshot.research_benchmark.policy_version,
-            "non_approved": "true",
+            "comparison_only": "true",
             "copy_ready": "false",
             **asdict(row),
         }
@@ -2971,6 +3002,14 @@ def load_published_snapshot(
 
     def model_row(raw: dict[str, Any]) -> ModelPortfolioRow:
         normalized = dict(raw)
+        if version < 4:
+            normalized.update(
+                {
+                    "target_weight_pct": normalized.pop("approved_target_weight_pct"),
+                    "target_value_base": normalized.pop("approved_target_value_base"),
+                    "target_quantity": normalized.pop("approved_target_quantity"),
+                }
+            )
         if version == 1:
             normalized.update(
                 {
@@ -3009,10 +3048,17 @@ def load_published_snapshot(
         )
 
     def portfolio(raw: dict[str, Any]) -> PortfolioSummary:
-        return PortfolioSummary(**{**raw, "rows": tuple(model_row(row) for row in raw["rows"])})
+        normalized = dict(raw)
+        if version < 4 and normalized.get("portfolio_kind") == "approved_target":
+            normalized["portfolio_kind"] = "target"
+        return PortfolioSummary(
+            **{**normalized, "rows": tuple(model_row(row) for row in normalized["rows"])}
+        )
 
     def signal_view(raw: dict[str, Any]) -> ActionableSignalView:
         normalized = dict(raw)
+        if version < 4:
+            normalized["target_weight_pct"] = normalized.pop("approved_target_weight_pct")
         if version == 1:
             normalized.update(
                 {
@@ -3063,14 +3109,16 @@ def load_published_snapshot(
     benchmark = (
         ResearchBenchmark(
             policy_version=str(raw_benchmark["policy_version"]),
-            non_approved=bool(raw_benchmark["non_approved"]),
+            comparison_only=bool(
+                raw_benchmark["comparison_only" if version >= 4 else "non_approved"]
+            ),
             copy_ready=bool(raw_benchmark["copy_ready"]),
             rows=tuple(ResearchBenchmarkRow(**row) for row in raw_benchmark["rows"]),
         )
         if isinstance(raw_benchmark, dict)
         else ResearchBenchmark(
             policy_version="legacy_unavailable",
-            non_approved=True,
+            comparison_only=True,
             copy_ready=False,
             rows=(),
         )
@@ -3090,12 +3138,21 @@ def load_published_snapshot(
         evidence_state=str(raw_value.get("evidence_state", "provisional_cash_research_incomplete")),
         base_currency=str(raw_value["base_currency"]),
         current_portfolio=portfolio(raw_value["current_portfolio"]),
-        approved_target_portfolio=portfolio(raw_value["approved_target_portfolio"]),
+        target_portfolio=portfolio(
+            raw_value["target_portfolio" if version >= 4 else "approved_target_portfolio"]
+        ),
         actionable_signals=tuple(signal_view(raw) for raw in raw_value["actionable_signals"]),
         candidate_pipeline=tuple(
             CandidateView(
                 **{
-                    **raw,
+                    **{
+                        **raw,
+                        "classification": (
+                            "strategy_ready"
+                            if version < 4 and raw["classification"] == "approved"
+                            else raw["classification"]
+                        ),
+                    },
                     **({} if version >= 3 else candidate_defaults),
                     "reason_codes": tuple(raw["reason_codes"]),
                     "reason_labels": tuple(raw["reason_labels"]),
@@ -3184,7 +3241,12 @@ def validate_advice(
                 expected_hashes=previous,
                 differing=differing,
             )
-            if not configuration_only and not podcast_only:
+            legacy_contracts_only = _legacy_publication_contracts_changed(
+                repository_root,
+                snapshot=snapshot,
+                differing=differing,
+            )
+            if not configuration_only and not podcast_only and not legacy_contracts_only:
                 errors.append(
                     "published decision snapshot does not match current authoritative state"
                 )
@@ -3212,7 +3274,7 @@ def validate_advice(
         "snapshot_id",
         "as_of",
         "policy_version",
-        "non_approved",
+        "comparison_only",
         "copy_ready",
         "security_id",
         "ticker",
@@ -3247,13 +3309,13 @@ def validate_advice(
         errors.append(str(exc))
     target_weights = sum(
         (
-            required_decimal(row.approved_target_weight_pct, label="target weight")
-            for row in snapshot.approved_target_portfolio.rows
+            required_decimal(row.target_weight_pct, label="target weight")
+            for row in snapshot.target_portfolio.rows
         ),
         Decimal("0"),
     )
     if abs(target_weights - Decimal("100")) > WEIGHT_TOLERANCE:
-        errors.append("approved target weights do not reconcile to 100%")
+        errors.append("target weights do not reconcile to 100%")
     current_weights = sum(
         (
             required_decimal(row.current_weight_pct, label="current weight")
@@ -3263,10 +3325,10 @@ def validate_advice(
     )
     if abs(current_weights - Decimal("100")) > WEIGHT_TOLERANCE:
         errors.append("current portfolio weights do not reconcile to 100%")
-    if required_decimal(snapshot.approved_target_portfolio.cash_base, label="target cash") < 0:
-        errors.append("approved target cash is negative")
-    if snapshot.current_portfolio.rows != snapshot.approved_target_portfolio.rows:
-        errors.append("current and approved portfolio views do not share one row projection")
+    if required_decimal(snapshot.target_portfolio.cash_base, label="target cash") < 0:
+        errors.append("target cash is negative")
+    if snapshot.current_portfolio.rows != snapshot.target_portfolio.rows:
+        errors.append("current and target portfolio views do not share one row projection")
     cash_rows = [row for row in snapshot.current_portfolio.rows if row.holding_type == "cash"]
     if len(cash_rows) != 1:
         errors.append("decision portfolio must contain exactly one cash row")
@@ -3274,7 +3336,7 @@ def validate_advice(
         if row.snapshot_id != snapshot.snapshot_id or row.as_of != snapshot.as_of:
             errors.append("decision portfolio row identity differs from its snapshot")
             break
-    for portfolio in (snapshot.current_portfolio, snapshot.approved_target_portfolio):
+    for portfolio in (snapshot.current_portfolio, snapshot.target_portfolio):
         equity = required_decimal(portfolio.equity_base, label="portfolio equity")
         cash = required_decimal(portfolio.cash_base, label="portfolio cash")
         net = required_decimal(portfolio.net_exposure_base, label="portfolio net exposure")
@@ -3299,7 +3361,7 @@ def validate_advice(
                     )
             except AdviceError as exc:
                 errors.append(str(exc))
-    if not snapshot.research_benchmark.non_approved or snapshot.research_benchmark.copy_ready:
+    if not snapshot.research_benchmark.comparison_only or snapshot.research_benchmark.copy_ready:
         errors.append("research benchmark trading boundary is invalid")
     benchmark_weight = sum(
         (

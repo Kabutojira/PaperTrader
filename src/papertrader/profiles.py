@@ -20,7 +20,7 @@ class RoutingContext:
     """Trusted deterministic facts used by the pure profile router."""
 
     current_holding: bool = False
-    approved_target: bool = False
+    target_exposure: bool = False
     pending_order: bool = False
     active_strategy: bool = False
     ready_signal: bool = False
@@ -37,7 +37,7 @@ class RoutingContext:
         return any(
             (
                 self.current_holding,
-                self.approved_target,
+                self.target_exposure,
                 self.pending_order,
                 self.active_strategy,
                 self.ready_signal,
@@ -165,7 +165,7 @@ def routing_context(repository_root: Path, operation: Operation) -> RoutingConte
             row["security_id"] == security_id and row["quantity"] not in {"", "0"}
             for row in holdings
         ),
-        approved_target=any(
+        target_exposure=any(
             row["security_id"] == security_id and row.get("target_weight_pct", "") not in {"", "0"}
             for row in targets
         ),

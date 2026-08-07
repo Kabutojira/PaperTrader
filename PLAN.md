@@ -242,7 +242,7 @@ The headline may still be “No trade — hold 100% cash,” but it must include
 
 ### Outcome
 
-Each researched security has a clear investor conclusion, while portfolio actions remain context-aware and the strict approved portfolio remains separate from research exploration.
+Each researched security has a clear investor conclusion, while portfolio actions remain context-aware and the strict target portfolio remains separate from research exploration.
 
 ### Canonical investment rating
 
@@ -270,7 +270,7 @@ Derive a separate context-aware action:
 - `watch`;
 - `short_candidate` when the strategy and risk mandate explicitly support it.
 
-A `Buy` rating may map to `Hold` when the approved target is already reached. A `Hold` rating may map to `Trim` because of concentration. A `Sell` rating for an unowned security does not automatically authorize a short.
+A `Buy` rating may map to `Hold` when the target is already reached. A `Hold` rating may map to `Trim` because of concentration. A `Sell` rating for an unowned security does not automatically authorize a short.
 
 ### Required research conclusion
 
@@ -291,7 +291,7 @@ Use `Unrated` when a supportable valuation is unavailable.
    - eligibility-frontier distances;
    - “what would change the rating” conditions.
 2. Replace broad candidate classifications with precise states such as:
-   - `approved`;
+   - `strategy_ready`;
    - `valuation_attractive`;
    - `valuation_unattractive`;
    - `valuation_unsupported`;
@@ -301,12 +301,12 @@ Use `Unrated` when a supportable valuation is unavailable.
    - `strategy_pending`;
    - `research_incomplete`;
    - `market_data_blocked`.
-3. Always publish the top near misses even when the approved portfolio is all cash. Show failed gates, threshold distances, attractive entry price, decisive catalyst, next review date, and the exact condition needed to become eligible.
+3. Always publish the top near misses even when the target portfolio is all cash. Show failed gates, threshold distances, attractive entry price, decisive catalyst, next review date, and the exact condition needed to become eligible.
 4. Add a separately generated **research benchmark portfolio** for measurement only:
-   - clearly label it non-approved and non-copy-ready;
+   - clearly label it comparison-only and non-copy-ready;
    - use a deterministic, simple policy such as equal-weighting the highest-rated supportable candidates within broad diversification caps;
    - create no strategies, signals, orders, fills, or accounting entries;
-   - track its hypothetical performance separately from the approved portfolio;
+   - track its hypothetical performance separately from the target portfolio;
    - prohibit every benchmark output from becoming an allocation input.
 
 ### Acceptance criteria
@@ -315,7 +315,7 @@ Use `Unrated` when a supportable valuation is unavailable.
 - No page uses `Hold` as a substitute for missing research; missing research is `Unrated` plus `Watch` or `Avoid` with a reason.
 - An all-cash report still gives useful ranked near misses and exact upgrade conditions.
 - Snapshot v3, CSV exports, Pages, Telegram, and reference-output tests agree exactly.
-- The research benchmark cannot create or influence an approved target, signal, order, execution, cash entry, position, or approved performance row.
+- The research benchmark cannot create or influence a target, signal, order, execution, cash entry, position, or performance row.
 
 ## Step 21 — Route Hermes Web ExtractPage summarization through OpenRouter Nemotron — Complete (2026-07-30)
 
@@ -393,7 +393,7 @@ historical implementation record remains here for auditability.
    - maps old `downside_pct` and `base_upside_pct` only as legacy fields;
    - marks scenario probabilities, bull case, expected return, and rating unavailable;
    - does not invent missing values.
-3. Enqueue bounded security refreshes to produce assessment v2, prioritizing current holdings, approved/pending exposure, previously closest candidates, stale assessments, and major watchlist names.
+3. Enqueue bounded security refreshes to produce assessment v2, prioritizing current holdings, target/pending exposure, previously closest candidates, stale assessments, and major watchlist names.
 4. Regenerate allocation plans, snapshot v3, pages, reports, Telegram fixtures, and exports only after enough v2 coverage exists for a meaningful comparison.
 
 ### Test matrix
@@ -430,7 +430,7 @@ This plan is complete when:
 - every researched security has a deterministic rating or an honest `Unrated` state and a context-aware portfolio action;
 - the allocator is calibrated, auditable, and capable of both deploying and correctly retaining cash;
 - an all-cash decision clearly states whether it is definitive or provisional and still presents actionable near-miss information;
-- the approved portfolio remains strict while the isolated research benchmark provides learning and measurement;
+- the target portfolio remains strict while the isolated research benchmark provides learning and measurement;
 - Hermes Web `ExtractPage` summarization uses the validated `AUXILIARY_MODEL` selection, defaults
   to `openai-codex:gpt-5.6-terra`, and forwards `OPENROUTER_API_KEY` only for an explicit
   `openrouter:<model>` override without changing the main Codex reasoning provider;
@@ -458,6 +458,16 @@ This plan is complete when:
   disabled by default behind `WIKI_MAINTENANCE_ENABLED` until representative manual results are
   reviewed; failed or expired attempts can retry without creating duplicate successful weeks.
 
+## Follow-up — Remove portfolio approval semantics — Complete (2026-08-07)
+
+Renamed the active decision-publication contract from approved targets to autonomous portfolio
+targets, replaced the non-approved benchmark label with comparison-only research, and removed
+generic disclaimer-style copy from future investor pages, reports, Telegram briefs, and podcasts.
+Snapshot schema version 4 and canonical CSV headers now use the neutral terminology while strict
+readers preserve immutable version 1–3 artifacts through explicit legacy aliases. Deterministic
+risk, eligibility, accounting, paper-only, and sequential-execution controls are unchanged. The
+local Codex harness now also enforces the configured daily `MAX_OPERATIONS` across repeated claims,
+so a locally executed cycle cannot exceed its recorded operation budget.
 
 ## Step 23 — Add profile-routed, checkpointed daily execution and ephemeral podcast audio — Planned (2026-08-04)
 
@@ -572,7 +582,7 @@ Initial routing policy:
 
 The router must promote work to a stronger profile when any of these conditions applies:
 
-- a current holding, approved target, pending order, active strategy, or ready signal depends on the
+- a current holding, target, pending order, active strategy, or ready signal depends on the
   conclusion;
 - earnings, guidance, capital structure, dilution, accounting, instrument identity, or the business
   model changed materially;
@@ -748,7 +758,7 @@ Change the podcast skill and result contract accordingly:
 
 - remove MP3 and TTS chunks from allowed repository writes and `files_changed`;
 - remove audio existence/duration from the text operation's success criteria;
-- preserve the outline, 2,400-3,600-word transcript, provenance, uncertainty, paper-trading label,
+- preserve the outline, 2,400-3,600-word transcript, provenance, uncertainty,
   and complete cycle coverage checks;
 - make text success independent from later audio rendering or Telegram availability;
 - if text synthesis fails, retain all earlier research/finalization checkpoints and deliver the

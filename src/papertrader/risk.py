@@ -425,7 +425,7 @@ def assess_order_risk(
     )
 
 
-def require_risk_approval(assessment: RiskAssessment) -> None:
+def require_risk_clearance(assessment: RiskAssessment) -> None:
     """Fail closed with stable machine-readable violations."""
 
     if not assessment.passed:

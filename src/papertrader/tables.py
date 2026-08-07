@@ -29,7 +29,13 @@ def contract_path(repository_root: Path, contract: CsvContract) -> Path:
     return repository_root.joinpath(*contract.path.parts)
 
 
-def read_csv(path: Path, columns: Sequence[str]) -> list[dict[str, str]]:
+def read_csv(
+    path: Path,
+    columns: Sequence[str],
+    *,
+    legacy_columns: Sequence[Sequence[str]] = (),
+    legacy_renames: Mapping[str, str] | None = None,
+) -> list[dict[str, str]]:
     """Read an RFC 4180 CSV and require its exact ordered header."""
 
     with path.open("r", encoding="utf-8", newline="") as handle:
@@ -40,11 +46,23 @@ def read_csv(path: Path, columns: Sequence[str]) -> list[dict[str, str]]:
             and list(columns[: len(reader.fieldnames)]) == reader.fieldnames
             and reader.fieldnames[-1:] == ["run_id"]
         )
-        if reader.fieldnames != list(columns) and not legacy_assessment_prefix:
+        legacy_header = reader.fieldnames is not None and tuple(reader.fieldnames) in {
+            tuple(candidate) for candidate in legacy_columns
+        }
+        if (
+            reader.fieldnames != list(columns)
+            and not legacy_assessment_prefix
+            and not legacy_header
+        ):
             raise CanonicalValueError(
                 f"header mismatch for {path}: expected {list(columns)!r}, got {reader.fieldnames!r}"
             )
         rows = list(reader)
+    aliases = legacy_renames or {}
+    if legacy_header:
+        rows = [
+            {aliases.get(column, column): value for column, value in row.items()} for row in rows
+        ]
     for index, row in enumerate(rows, start=2):
         if None in row:
             raise CanonicalValueError(f"row {index} in {path} has surplus values")
@@ -60,7 +78,12 @@ def read_table(repository_root: Path, name: str) -> list[dict[str, str]]:
     """Read one canonical table by contract name."""
 
     contract = contract_by_name(repository_root, name)
-    return read_csv(contract_path(repository_root, contract), contract.columns)
+    return read_csv(
+        contract_path(repository_root, contract),
+        contract.columns,
+        legacy_columns=contract.legacy_columns,
+        legacy_renames=dict(contract.legacy_renames),
+    )
 
 
 def _normalized_rows(

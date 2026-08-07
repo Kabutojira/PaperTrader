@@ -386,7 +386,7 @@ def _homepage_portfolio_lines(repository_root: Path) -> list[str]:
         )
     lines.append("")
     if not portfolio:
-        lines.append("No open paper positions; the portfolio is currently held in cash.")
+        lines.append("No open positions; the portfolio is currently held in cash.")
         return lines
     lines.extend(
         [
@@ -975,7 +975,7 @@ def generate_daily_report(
             "",
             "### Orders and executions",
             "",
-            "| Paper order | Strategy | Fill policy | Status | Created |",
+            "| Order | Strategy | Fill policy | Status | Created |",
             "| --- | --- | --- | --- | --- |",
         ]
     )
@@ -993,7 +993,7 @@ def generate_daily_report(
     lines.extend(
         [
             "",
-            "| Paper fill | Paper order | Security | Side | Quantity | Fill | Fees |",
+            "| Fill | Order | Security | Side | Quantity | Fill price | Fees |",
             "| --- | --- | --- | --- | ---: | ---: | ---: |",
         ]
     )

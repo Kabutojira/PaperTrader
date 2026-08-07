@@ -14,7 +14,6 @@
     "stance_reason_codes",
     "base_currency",
     "current_portfolio",
-    "approved_target_portfolio",
     "actionable_signals",
     "candidate_pipeline",
     "research_alerts",
@@ -24,7 +23,7 @@
     "source_state_hashes"
   ],
   "properties": {
-    "version": { "enum": [1, 2, 3] },
+    "version": { "enum": [1, 2, 3, 4] },
     "snapshot_id": { "type": "string", "pattern": "^decision_[0-9a-f]{20}$" },
     "run_id": { "$ref": "#/$defs/runId" },
     "as_of": { "$ref": "#/$defs/timestamp" },
@@ -40,6 +39,7 @@
     "base_currency": { "$ref": "#/$defs/currency" },
     "current_portfolio": { "$ref": "#/$defs/portfolioSummary" },
     "approved_target_portfolio": { "$ref": "#/$defs/portfolioSummary" },
+    "target_portfolio": { "$ref": "#/$defs/portfolioSummary" },
     "actionable_signals": {
       "type": "array",
       "items": { "$ref": "#/$defs/actionableSignal" }
@@ -73,7 +73,7 @@
         "required": ["version"]
       },
       "then": {
-        "required": ["data_status"],
+        "required": ["data_status", "approved_target_portfolio"],
         "properties": {
           "coverage": {
             "required": ["current_relationship_count", "required_relationship_count"]
@@ -87,7 +87,7 @@
         "required": ["version"]
       },
       "then": {
-        "required": ["investment_data_status", "operations_status"],
+        "required": ["investment_data_status", "operations_status", "approved_target_portfolio"],
         "properties": {
           "coverage": {
             "required": [
@@ -113,7 +113,7 @@
         "required": ["version"]
       },
       "then": {
-        "required": ["investment_data_status", "operations_status", "evidence_state", "research_benchmark"],
+        "required": ["investment_data_status", "operations_status", "evidence_state", "research_benchmark", "approved_target_portfolio"],
         "properties": {
           "current_portfolio": {
             "properties": {
@@ -125,6 +125,41 @@
             }
           },
           "approved_target_portfolio": {
+            "properties": {
+              "rows": {
+                "items": {
+                  "required": ["bear_fair_value", "bear_return_pct", "bear_probability_pct", "base_fair_value", "base_return_pct", "base_probability_pct", "bull_fair_value", "bull_return_pct", "bull_probability_pct", "expected_return_pct", "confidence_adjusted_expected_return_pct", "buy_below_price", "canonical_rating", "portfolio_action", "evidence_state", "rating_change_conditions"]
+                }
+              }
+            }
+          },
+          "candidate_pipeline": {
+            "items": {
+              "required": ["bear_fair_value", "bear_return_pct", "bear_probability_pct", "base_fair_value", "base_return_pct", "base_probability_pct", "bull_fair_value", "bull_return_pct", "bull_probability_pct", "expected_return_pct", "confidence_adjusted_expected_return_pct", "buy_below_price", "canonical_rating", "portfolio_action", "evidence_state", "eligibility_frontier", "rating_change_conditions", "research_conclusion"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": { "version": { "const": 4 } },
+        "required": ["version"]
+      },
+      "then": {
+        "required": ["investment_data_status", "operations_status", "evidence_state", "research_benchmark", "target_portfolio"],
+        "not": { "required": ["approved_target_portfolio"] },
+        "properties": {
+          "current_portfolio": {
+            "properties": {
+              "rows": {
+                "items": {
+                  "required": ["bear_fair_value", "bear_return_pct", "bear_probability_pct", "base_fair_value", "base_return_pct", "base_probability_pct", "bull_fair_value", "bull_return_pct", "bull_probability_pct", "expected_return_pct", "confidence_adjusted_expected_return_pct", "buy_below_price", "canonical_rating", "portfolio_action", "evidence_state", "rating_change_conditions"]
+                }
+              }
+            }
+          },
+          "target_portfolio": {
             "properties": {
               "rows": {
                 "items": {
@@ -163,13 +198,23 @@
       "additionalProperties": false,
       "required": [
         "snapshot_id", "as_of", "holding_type", "security_id", "ticker", "company_name",
-        "instrument_type", "sleeve", "current_weight_pct", "approved_target_weight_pct",
-        "current_value_base", "approved_target_value_base", "delta_value_base",
-        "current_quantity", "approved_target_quantity", "mark", "mark_currency",
+        "instrument_type", "sleeve", "current_weight_pct",
+        "current_value_base", "delta_value_base",
+        "current_quantity", "mark", "mark_currency",
         "fx_rate_to_base", "market_data_as_of", "action", "action_status", "strategy_id",
         "signal_id", "order_id", "confidence", "effective_score", "downside_pct",
         "base_upside_pct", "valuation_horizon_months", "thesis_summary", "entry_rule",
         "exit_rule", "invalidation", "review_at", "research_page", "reason_codes"
+      ],
+      "oneOf": [
+        {
+          "required": ["approved_target_weight_pct", "approved_target_value_base", "approved_target_quantity"],
+          "not": { "anyOf": [{ "required": ["target_weight_pct"] }, { "required": ["target_value_base"] }, { "required": ["target_quantity"] }] }
+        },
+        {
+          "required": ["target_weight_pct", "target_value_base", "target_quantity"],
+          "not": { "anyOf": [{ "required": ["approved_target_weight_pct"] }, { "required": ["approved_target_value_base"] }, { "required": ["approved_target_quantity"] }] }
+        }
       ],
       "properties": {
         "snapshot_id": { "type": "string" },
@@ -182,11 +227,14 @@
         "sleeve": { "type": "string" },
         "current_weight_pct": { "$ref": "#/$defs/decimal" },
         "approved_target_weight_pct": { "$ref": "#/$defs/decimal" },
+        "target_weight_pct": { "$ref": "#/$defs/decimal" },
         "current_value_base": { "$ref": "#/$defs/decimal" },
         "approved_target_value_base": { "$ref": "#/$defs/decimal" },
+        "target_value_base": { "$ref": "#/$defs/decimal" },
         "delta_value_base": { "$ref": "#/$defs/decimal" },
         "current_quantity": { "$ref": "#/$defs/decimal" },
         "approved_target_quantity": { "$ref": "#/$defs/decimal" },
+        "target_quantity": { "$ref": "#/$defs/decimal" },
         "mark": { "type": "string" },
         "mark_currency": { "type": "string" },
         "mark_base": { "type": "string" },
@@ -241,7 +289,7 @@
         "net_exposure_base", "realized_pnl_base", "unrealized_pnl_base", "rows"
       ],
       "properties": {
-        "portfolio_kind": { "enum": ["current", "approved_target"] },
+        "portfolio_kind": { "enum": ["current", "approved_target", "target"] },
         "equity_base": { "$ref": "#/$defs/decimal" },
         "cash_base": { "$ref": "#/$defs/decimal" },
         "cash_weight_pct": { "$ref": "#/$defs/decimal" },
@@ -275,8 +323,18 @@
         "signal_id", "strategy_id", "order_id", "security_id", "ticker", "company_name",
         "action", "action_status", "copy_ready", "quantity", "order_type", "limit_price",
         "currency", "created_at", "expires_at", "market_data_as_of", "current_weight_pct",
-        "approved_target_weight_pct", "strategy_name", "entry_rule", "exit_rule", "invalidation",
+        "strategy_name", "entry_rule", "exit_rule", "invalidation",
         "rationale", "research_page", "reason_codes", "legs"
+      ],
+      "oneOf": [
+        {
+          "required": ["approved_target_weight_pct"],
+          "not": { "required": ["target_weight_pct"] }
+        },
+        {
+          "required": ["target_weight_pct"],
+          "not": { "required": ["approved_target_weight_pct"] }
+        }
       ],
       "properties": {
         "signal_id": { "type": "string", "minLength": 1 },
@@ -297,6 +355,7 @@
         "market_data_as_of": { "$ref": "#/$defs/timestamp" },
         "current_weight_pct": { "$ref": "#/$defs/decimal" },
         "approved_target_weight_pct": { "$ref": "#/$defs/decimal" },
+        "target_weight_pct": { "$ref": "#/$defs/decimal" },
         "strategy_name": { "type": "string" },
         "entry_rule": { "type": "string" },
         "exit_rule": { "type": "string" },
@@ -347,7 +406,7 @@
         "ticker": { "type": "string", "minLength": 1 },
         "company_name": { "type": "string", "minLength": 1 },
         "research_page": { "type": "string" },
-        "classification": { "enum": ["approved", "valuation_attractive", "valuation_unattractive", "valuation_unsupported", "liquidity_blocked", "solvency_blocked", "relationship_pending", "strategy_pending", "research_incomplete", "market_data_blocked", "assessment_pending", "risk_blocked", "research_blocked"] },
+        "classification": { "enum": ["approved", "strategy_ready", "valuation_attractive", "valuation_unattractive", "valuation_unsupported", "liquidity_blocked", "solvency_blocked", "relationship_pending", "strategy_pending", "research_incomplete", "market_data_blocked", "assessment_pending", "risk_blocked", "research_blocked"] },
         "rank": { "type": "string" },
         "effective_score": { "type": "string" },
         "candidate_edge": { "type": "string" },
@@ -381,10 +440,21 @@
     "researchBenchmark": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["policy_version", "non_approved", "copy_ready", "rows"],
+      "required": ["policy_version", "copy_ready", "rows"],
+      "oneOf": [
+        {
+          "required": ["non_approved"],
+          "not": { "required": ["comparison_only"] }
+        },
+        {
+          "required": ["comparison_only"],
+          "not": { "required": ["non_approved"] }
+        }
+      ],
       "properties": {
         "policy_version": { "const": "equal_weight_rated_v1" },
         "non_approved": { "const": true },
+        "comparison_only": { "const": true },
         "copy_ready": { "const": false },
         "rows": {
           "type": "array",

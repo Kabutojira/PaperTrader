@@ -255,7 +255,7 @@ class PublicEntityResolver:
         strategy = self._strategy(row["strategy_id"])
         timestamp = parse_timestamp(row["created_at"])
         day = timestamp.date().isoformat() if timestamp else "unknown date"
-        return HumanReference(f"Paper order for {strategy.label} on {day}", strategy.target)
+        return HumanReference(f"Order for {strategy.label} on {day}", strategy.target)
 
     def _execution(self, entity_id: str) -> HumanReference:
         row = self.executions.get(entity_id)
@@ -264,7 +264,7 @@ class PublicEntityResolver:
         security = self._security(row["security_id"])
         timestamp = parse_timestamp(row["executed_at"])
         day = timestamp.date().isoformat() if timestamp else "unknown date"
-        return HumanReference(f"Paper fill for {security.label} on {day}", security.target)
+        return HumanReference(f"Fill for {security.label} on {day}", security.target)
 
     def _run(self, entity_id: str) -> HumanReference:
         manifest_path = self.root / "data" / "runs" / entity_id / "daily_run.json"

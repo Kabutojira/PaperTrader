@@ -19,7 +19,7 @@ from papertrader.models import (
     RiskState,
 )
 from papertrader.orders import leg_from_row, update_order_status, update_signal_status
-from papertrader.risk import assess_order_risk, require_risk_approval
+from papertrader.risk import assess_order_risk, require_risk_clearance
 from papertrader.tables import append_unique, read_table, write_table
 from papertrader.utils import (
     decimal_text,
@@ -501,7 +501,7 @@ def process_order_fill(
         now=instant,
         activates_new_strategy=strategy["status"] != "active",
     )
-    require_risk_approval(assessment)
+    require_risk_clearance(assessment)
     notionals = [fill.quantity * fill.fill_price * fill.contract_multiplier for fill in fills]
     variable_fees = [
         notional * settings.orders.variable_fee_bps / Decimal("10000") for notional in notionals

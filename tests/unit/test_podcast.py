@@ -28,7 +28,7 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
 
     assert "`advice validate` is outside the `daily_podcast` command scope" in skill
     assert "never list a rejected or pre-dispatch command" in skill
-    assert "`This is paper trading, not live trading.`" in skill
+    assert "do not add generic advice, brokerage, authorization, or execution disclaimers" in skill
 
 
 def _completed_manifest(repository: Path, run_id: str) -> None:

@@ -250,6 +250,27 @@ def start_local_harness_operation(
 
     if not SAFE_RUN_ID.fullmatch(run_id):
         raise AgentRunError(f"invalid run_id: {run_id!r}")
+    batch_path = repository_root / "data" / "runs" / run_id / "agent_batch.json"
+    if batch_path.exists():
+        if batch_path.is_symlink() or not batch_path.is_file():
+            raise AgentRunError("local daily agent batch must be a regular file")
+        try:
+            batch = json.loads(batch_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise AgentRunError("local daily agent batch is invalid") from exc
+        maximum = batch.get("maximum_operations") if isinstance(batch, dict) else None
+        count = batch.get("operation_count") if isinstance(batch, dict) else None
+        if (
+            isinstance(maximum, bool)
+            or not isinstance(maximum, int)
+            or isinstance(count, bool)
+            or not isinstance(count, int)
+        ):
+            raise AgentRunError("local daily agent batch budget is invalid")
+        if maximum != settings.operations.cycle_maximum_operations:
+            raise AgentRunError("local daily MAX_OPERATIONS changed during the cycle")
+        if count >= maximum:
+            return None
     prepare_queue(repository_root)
     budget = RunBudget(
         maximum_operations=1,

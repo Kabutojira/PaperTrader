@@ -9,6 +9,7 @@ import pytest
 
 from papertrader.advice import (
     AdviceError,
+    _validate_snapshot_object,
     build_decision_snapshot,
     reason_label,
     refresh_advice,
@@ -28,6 +29,29 @@ from papertrader.tables import append_unique, read_table, write_table
 from papertrader.utils import deterministic_ulid, format_timestamp, required_decimal
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def _legacy_v3(document: dict[str, object]) -> dict[str, object]:
+    legacy = json.loads(json.dumps(document))
+    legacy["version"] = 3
+    legacy["approved_target_portfolio"] = legacy.pop("target_portfolio")
+    for key in ("current_portfolio", "approved_target_portfolio"):
+        portfolio = legacy[key]
+        assert isinstance(portfolio, dict)
+        if portfolio["portfolio_kind"] == "target":
+            portfolio["portfolio_kind"] = "approved_target"
+        for row in portfolio["rows"]:
+            row["approved_target_weight_pct"] = row.pop("target_weight_pct")
+            row["approved_target_value_base"] = row.pop("target_value_base")
+            row["approved_target_quantity"] = row.pop("target_quantity")
+    for signal in legacy["actionable_signals"]:
+        signal["approved_target_weight_pct"] = signal.pop("target_weight_pct")
+    for candidate in legacy["candidate_pipeline"]:
+        if candidate["classification"] == "strategy_ready":
+            candidate["classification"] = "approved"
+    benchmark = legacy["research_benchmark"]
+    benchmark["non_approved"] = benchmark.pop("comparison_only")
+    return legacy
 
 
 def _security(
@@ -334,12 +358,13 @@ def test_all_cash_snapshot_is_explicit_idempotent_and_exported(
     )
 
     assert snapshot_document(first) == snapshot_document(second)
+    _validate_snapshot_object(sandbox_repository, _legacy_v3(snapshot_document(first)))
     assert first.stance == "hold_cash"
     assert first.data_status == "current"
     assert len(first.current_portfolio.rows) == 1
     cash = first.current_portfolio.rows[0]
     assert (cash.holding_type, cash.ticker, cash.current_weight_pct) == ("cash", "CASH", "100")
-    assert cash.approved_target_weight_pct == "100"
+    assert cash.target_weight_pct == "100"
 
     published = refresh_advice(
         sandbox_repository,
@@ -508,7 +533,7 @@ def test_active_signal_without_order_is_not_copy_ready_and_stale_signal_is_hidde
     assert signal.action_status == "awaiting_order_validation"
     assert signal.copy_ready is False
     assert signal.quantity == ""
-    assert current.approved_target_portfolio.cash_weight_pct == "100"
+    assert current.target_portfolio.cash_weight_pct == "100"
 
     stale = build_decision_snapshot(
         sandbox_repository,
@@ -541,18 +566,18 @@ def test_pending_order_projects_target_and_is_copy_ready_without_mutating_accoun
 
     assert snapshot.stance == "deploy"
     assert snapshot.current_portfolio.cash_base == "100000"
-    assert required_decimal(snapshot.approved_target_portfolio.cash_base, label="cash") > 0
+    assert required_decimal(snapshot.target_portfolio.cash_base, label="cash") > 0
     security = next(
         row for row in snapshot.current_portfolio.rows if row.holding_type == "security"
     )
     assert security.action == "buy"
     assert security.action_status == "pending_order"
     assert security.current_quantity == "0"
-    assert security.approved_target_quantity == "10"
+    assert security.target_quantity == "10"
     assert security.order_id == order_id
     assert sum(
-        required_decimal(row.approved_target_weight_pct, label="weight")
-        for row in snapshot.approved_target_portfolio.rows
+        required_decimal(row.target_weight_pct, label="weight")
+        for row in snapshot.target_portfolio.rows
     ) == Decimal("100")
     signal = snapshot.actionable_signals[0]
     assert (signal.signal_id, signal.order_id, signal.copy_ready, signal.quantity) == (
@@ -589,8 +614,8 @@ def test_stale_pending_order_is_not_partially_projected_or_copy_ready(
     assert snapshot.stance == "blocked"
     assert snapshot.stance_reason_codes == ("market_data_stale",)
     assert snapshot.actionable_signals == ()
-    assert snapshot.approved_target_portfolio.cash_base == "100000"
-    assert snapshot.approved_target_portfolio.cash_weight_pct == "100"
+    assert snapshot.target_portfolio.cash_base == "100000"
+    assert snapshot.target_portfolio.cash_weight_pct == "100"
     assert all(row.holding_type == "cash" for row in snapshot.current_portfolio.rows)
 
 
@@ -633,7 +658,7 @@ def test_plan_mismatched_baseline_order_is_not_projected_or_copy_ready(
     assert snapshot.stance == "blocked"
     assert snapshot.stance_reason_codes == ("pending_order_state_unsafe",)
     assert snapshot.actionable_signals == ()
-    assert snapshot.approved_target_portfolio.cash_weight_pct == "100"
+    assert snapshot.target_portfolio.cash_weight_pct == "100"
     assert all(not row.order_id for row in snapshot.current_portfolio.rows)
 
 
@@ -653,7 +678,7 @@ def test_expired_nonterminal_order_blocks_copy_and_target_projection(
     assert snapshot.stance == "blocked"
     assert snapshot.stance_reason_codes == ("pending_order_state_unsafe",)
     assert snapshot.actionable_signals == ()
-    assert snapshot.approved_target_portfolio.cash_weight_pct == "100"
+    assert snapshot.target_portfolio.cash_weight_pct == "100"
 
 
 def test_action_issue_suppresses_signal_and_current_position_market_failure_blocks_snapshot(
@@ -755,11 +780,11 @@ def test_action_issue_suppresses_signal_and_current_position_market_failure_bloc
         row for row in reduced.current_portfolio.rows if row.holding_type == "security"
     )
     assert reduced_row.current_quantity == "10"
-    assert reduced_row.approved_target_quantity == "6"
+    assert reduced_row.target_quantity == "6"
     assert reduced_row.action == "trim"
     assert reduced.actionable_signals[0].order_id == reduce_order_id
     assert reduced.actionable_signals[0].copy_ready is True
-    assert required_decimal(reduced.approved_target_portfolio.cash_base, label="target cash") > (
+    assert required_decimal(reduced.target_portfolio.cash_base, label="target cash") > (
         required_decimal(reduced.current_portfolio.cash_base, label="current cash")
     )
     write_table(
@@ -855,7 +880,7 @@ def test_stale_plan_and_relationship_cannot_publish_an_approved_candidate(
         run_id=run_id,
         as_of=NOW,
     )
-    assert current.candidate_pipeline[0].classification == "approved"
+    assert current.candidate_pipeline[0].classification == "strategy_ready"
     assert current.coverage.reviewed_relationship_count == 1
     assert current.coverage.accepted_relationship_count == 1
 

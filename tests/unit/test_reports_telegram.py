@@ -203,7 +203,7 @@ def test_investor_brief_contains_every_price_alert_and_run_research_decision(
                 observed_at="2026-07-29T20:00:00Z",
                 market_data_date="2026-07-29",
                 research_status="succeeded",
-                research_conclusion="The volume spike was event-driven; no trade was approved.",
+                research_conclusion="The volume spike was event-driven; no trade was warranted.",
                 research_page=("data/wiki/security-catalog.md#security-security_example"),
             ),
         ),
@@ -223,7 +223,7 @@ def test_investor_brief_contains_every_price_alert_and_run_research_decision(
 
     assert "## Price action alerts" in brief
     assert "[EXM — Example Corp](security-catalog#security-security_example)" in brief
-    assert "The volume spike was event-driven; no trade was approved." in brief
+    assert "The volume spike was event-driven; no trade was warranted." in brief
     assert "## Research decisions this run" in brief
     assert "[Lithium supply reset](ideas/idea_lithium)" in brief
     assert "valuation support is incomplete" in brief
@@ -357,7 +357,7 @@ def _commit_podcast_handoff(repository: Path) -> tuple[str, Path, Path, str]:
     (repository / report_path).write_text("# Daily report\n", encoding="utf-8")
     script = (
         f"---\ndaily_cycle_id: {cycle_id}\n---\n\n"
-        "<!-- papertrader-spoken-transcript:start -->\nPaper trading only.\n"
+        "<!-- papertrader-spoken-transcript:start -->\nDaily portfolio review.\n"
         "<!-- papertrader-spoken-transcript:end -->\n"
     )
     (repository / script_path).parent.mkdir(parents=True, exist_ok=True)
@@ -399,7 +399,7 @@ def _commit_podcast_handoff(repository: Path) -> tuple[str, Path, Path, str]:
                 "script_commit": commit,
                 "script_path": script_path,
                 "script_sha256": content_hash(script.encode()),
-                "spoken_transcript_sha256": content_hash("Paper trading only."),
+                "spoken_transcript_sha256": content_hash("Daily portfolio review."),
                 "audio_filename": audio.name,
                 "audio_size": audio.stat().st_size,
                 "audio_sha256": content_hash(audio.read_bytes()),

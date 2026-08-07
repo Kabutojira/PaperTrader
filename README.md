@@ -292,7 +292,7 @@ The Step 2 core owns every numeric and structured state transition:
 
 ## Curated YouTube research
 
-`data/tables/youtube_channels.csv` is the human-approved subscription list. The daily reusable
+`data/tables/youtube_channels.csv` is the human-maintained subscription list. The daily reusable
 runtime calls `.github/actions/scan-youtube` before restoring OAuth. When the optional
 `YOUTUBE_DATA_API` secret is nonempty, discovery reads each immutable channel's uploads playlist
 and video metadata through the YouTube Data API; otherwise it walks the anonymous `pytubefix`

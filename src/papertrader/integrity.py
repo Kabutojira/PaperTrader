@@ -107,6 +107,8 @@ def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
         entry = _mapping(raw_entry, f"contract {raw_name}")
         raw_path = entry.get("path")
         raw_columns = entry.get("columns")
+        raw_legacy_columns = entry.get("legacy_columns", [])
+        raw_legacy_renames = entry.get("legacy_renames", {})
         if not isinstance(raw_path, str):
             raise ContractError(f"contract {raw_name} path must be a string")
         if not isinstance(raw_columns, list) or not all(
@@ -116,6 +118,37 @@ def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
         columns = cast(list[str], raw_columns)
         if len(columns) != len(set(columns)):
             raise ContractError(f"contract {raw_name} contains duplicate columns")
+        if not isinstance(raw_legacy_columns, list) or not all(
+            isinstance(candidate, list)
+            and candidate
+            and all(isinstance(column, str) and column for column in candidate)
+            and len(candidate) == len(set(candidate))
+            for candidate in raw_legacy_columns
+        ):
+            raise ContractError(f"contract {raw_name} legacy_columns must contain column lists")
+        if not isinstance(raw_legacy_renames, Mapping) or not all(
+            isinstance(source, str) and source and isinstance(target, str) and target in columns
+            for source, target in raw_legacy_renames.items()
+        ):
+            raise ContractError(f"contract {raw_name} legacy_renames must map to current columns")
+        rename_pairs = tuple(
+            sorted((str(source), str(target)) for source, target in raw_legacy_renames.items())
+        )
+        if raw_legacy_columns:
+            legacy_columns = tuple(tuple(candidate) for candidate in raw_legacy_columns)
+        elif rename_pairs:
+            inverse = {target: source for source, target in rename_pairs}
+            if len(inverse) != len(rename_pairs):
+                raise ContractError(f"contract {raw_name} legacy rename targets must be unique")
+            legacy_columns = (tuple(inverse.get(column, column) for column in columns),)
+        else:
+            legacy_columns = ()
+        for legacy in legacy_columns:
+            normalized = tuple(dict(rename_pairs).get(column, column) for column in legacy)
+            if normalized != tuple(columns):
+                raise ContractError(
+                    f"contract {raw_name} legacy columns do not normalize to current columns"
+                )
         path = PurePosixPath(raw_path)
         if path.is_absolute() or ".." in path.parts or not path.parts or path.parts[0] != "data":
             raise ContractError(f"contract {raw_name} path must be repository-local under data/")
@@ -129,6 +162,8 @@ def load_csv_contracts(repository_root: Path) -> tuple[CsvContract, ...]:
                 name=raw_name,
                 path=path,
                 columns=tuple(columns),
+                legacy_columns=legacy_columns,
+                legacy_renames=rename_pairs,
                 append_only=entry.get("append_only") is True,
                 generated=entry.get("generated") is True,
             )
@@ -201,7 +236,8 @@ def validate_csv_files(repository_root: Path) -> list[str]:
             and list(contract.columns[: len(header)]) == header
             and header[-1:] == ["run_id"]
         )
-        if header != list(contract.columns) and not legacy_assessment_prefix:
+        legacy_header = header is not None and tuple(header) in contract.legacy_columns
+        if header != list(contract.columns) and not legacy_assessment_prefix and not legacy_header:
             errors.append(
                 f"header mismatch for {contract.path}: expected {list(contract.columns)!r}, "
                 f"got {header!r}"
@@ -804,11 +840,23 @@ def read_csv_contract_rows(repository_root: Path, name: str) -> list[dict[str, s
             and list(contract.columns[: len(reader.fieldnames)]) == reader.fieldnames
             and reader.fieldnames[-1:] == ["run_id"]
         )
-        if reader.fieldnames != list(contract.columns) and not legacy_assessment_prefix:
+        legacy_header = (
+            reader.fieldnames is not None and tuple(reader.fieldnames) in contract.legacy_columns
+        )
+        if (
+            reader.fieldnames != list(contract.columns)
+            and not legacy_assessment_prefix
+            and not legacy_header
+        ):
             raise ContractError(f"header mismatch for {contract.path}")
         rows = list(reader)
     if any(None in row for row in rows):
         raise ContractError(f"surplus values in {contract.path}")
+    aliases = dict(contract.legacy_renames) if legacy_header else {}
+    if aliases:
+        rows = [
+            {aliases.get(column, column): value for column, value in row.items()} for row in rows
+        ]
     for row in rows:
         for column in contract.columns:
             row.setdefault(column, "")

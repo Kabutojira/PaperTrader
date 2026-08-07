@@ -436,12 +436,12 @@ contracts:
       - instrument_type
       - sleeve
       - current_weight_pct
-      - approved_target_weight_pct
+      - target_weight_pct
       - current_value_base
-      - approved_target_value_base
+      - target_value_base
       - delta_value_base
       - current_quantity
-      - approved_target_quantity
+      - target_quantity
       - mark
       - mark_currency
       - mark_base
@@ -483,6 +483,10 @@ contracts:
       - strategy_research_page
       - research_page
       - reason_codes
+    legacy_renames:
+      approved_target_weight_pct: target_weight_pct
+      approved_target_value_base: target_value_base
+      approved_target_quantity: target_quantity
   published_actionable_signals:
     path: data/published/actionable_signals.csv
     generated: true
@@ -506,7 +510,7 @@ contracts:
       - expires_at
       - market_data_as_of
       - current_weight_pct
-      - approved_target_weight_pct
+      - target_weight_pct
       - strategy_name
       - entry_rule
       - exit_rule
@@ -516,6 +520,8 @@ contracts:
       - strategy_research_page
       - research_page
       - reason_codes
+    legacy_renames:
+      approved_target_weight_pct: target_weight_pct
   published_research_benchmark:
     path: data/published/research_benchmark.csv
     generated: true
@@ -523,7 +529,7 @@ contracts:
       - snapshot_id
       - as_of
       - policy_version
-      - non_approved
+      - comparison_only
       - copy_ready
       - security_id
       - ticker
@@ -533,6 +539,8 @@ contracts:
       - reference_price
       - currency
       - research_page
+    legacy_renames:
+      non_approved: comparison_only
   source_registry:
     path: data/tables/source_registry.csv
     columns:

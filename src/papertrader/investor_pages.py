@@ -49,10 +49,10 @@ DASHBOARD_PAGES = frozenset(
 STANCE_LABELS = {
     "hold_cash": "No trade — hold 100% cash",
     "maintain": "Maintain the current model portfolio",
-    "deploy": "Deploy approved model capital",
-    "rebalance": "Rebalance toward approved model targets",
+    "deploy": "Deploy model capital",
+    "rebalance": "Rebalance toward model targets",
     "reduce_risk": "Reduce model-portfolio risk",
-    "exit": "Exit the approved model exposure",
+    "exit": "Exit the model exposure",
     "blocked": "Decision blocked — do not copy actions",
 }
 INVESTMENT_STATUS_LABELS = {
@@ -66,7 +66,7 @@ OPERATIONS_STATUS_LABELS = {
     "blocked": "Blocked",
 }
 CLASSIFICATION_LABELS = {
-    "approved": "Approved candidate",
+    "strategy_ready": "Strategy-ready candidate",
     "valuation_attractive": "Valuation attractive",
     "strategy_pending": "Strategy research pending",
     "relationship_pending": "Relationship research pending",
@@ -108,7 +108,7 @@ ACTION_LABELS = {
 }
 ACTION_STATUS_LABELS = {
     "filled": "Filled",
-    "pending_order": "Pending validated paper order",
+    "pending_order": "Pending validated order",
     "active_signal": "Active signal",
     "awaiting_order_validation": "Awaiting deterministic order validation",
     "research_candidate": "Research candidate",
@@ -284,7 +284,7 @@ def _near_misses(snapshot: DecisionSnapshot, *, limit: int = 5) -> tuple[Candida
     return tuple(
         candidate
         for candidate in snapshot.candidate_pipeline
-        if candidate.classification != "approved" and candidate.reason_codes
+        if candidate.classification != "strategy_ready" and candidate.reason_codes
     )[:limit]
 
 
@@ -298,8 +298,8 @@ def _portfolio_markdown_rows(rows: Sequence[ModelPortfolioRow]) -> list[str]:
         )
         output.append(
             f"| {holding} | {_cell(row.sleeve)} | {row.current_weight_pct}% | "
-            f"{row.approved_target_weight_pct}% | {_money(row.current_value_base, '')} | "
-            f"{_money(row.approved_target_value_base, '')} | "
+            f"{row.target_weight_pct}% | {_money(row.current_value_base, '')} | "
+            f"{_money(row.target_value_base, '')} | "
             f"{_action_label(row.action)} | {_action_status_label(row.action_status)} |"
         )
     return output
@@ -312,7 +312,7 @@ def investor_brief_markdown(
     """Render the compact committed brief consumed by Telegram."""
 
     current = snapshot.current_portfolio
-    target = snapshot.approved_target_portfolio
+    target = snapshot.target_portfolio
     lines = [
         f"# {STANCE_LABELS[snapshot.stance]}",
         "",
@@ -321,7 +321,7 @@ def investor_brief_markdown(
         f"- **As of:** `{snapshot.as_of}`",
         f"- **Cash:** {current.cash_base} {snapshot.base_currency} ({current.cash_weight_pct}%)",
         f"- **Gross exposure:** {current.gross_exposure_base} {snapshot.base_currency}",
-        f"- **Approved target cash:** {target.cash_base} {snapshot.base_currency} "
+        f"- **Target cash:** {target.cash_base} {snapshot.base_currency} "
         f"({target.cash_weight_pct}%)",
         f"- **Actionable signals:** {len(snapshot.actionable_signals)}",
         f"- **Evidence state:** {_markdown(snapshot.evidence_state.replace('_', ' '))}",
@@ -331,16 +331,16 @@ def investor_brief_markdown(
         for row in target.rows
         if row.holding_type == "security" and row.action in {"buy", "add", "trim", "exit"}
     ]
-    lines.extend(["", "## Approved target changes", ""])
+    lines.extend(["", "## Target changes", ""])
     if changes:
         lines.extend(
             f"- **{_link(row.ticker, row.security_research_page)}:** "
             f"{_action_label(row.action)} to "
-            f"{row.approved_target_weight_pct}% (target estimate)"
+            f"{row.target_weight_pct}% (target estimate)"
             for row in changes[:5]
         )
     else:
-        lines.append("No approved target changes.")
+        lines.append("No target changes.")
     lines.extend(["", "## Actionable signals", ""])
     if snapshot.actionable_signals:
         lines.extend(
@@ -374,7 +374,7 @@ def investor_brief_markdown(
     if near_miss is None:
         lines.append("No assessed near miss is available; research coverage remains incomplete.")
     else:
-        reason = near_miss.reason_labels[0] if near_miss.reason_labels else "No approved trade."
+        reason = near_miss.reason_labels[0] if near_miss.reason_labels else "No current trade."
         lines.append(
             f"- **{_markdown(near_miss.ticker)} — {_markdown(near_miss.company_name)}:** "
             f"{RATING_LABELS[near_miss.canonical_rating]} / "
@@ -384,7 +384,7 @@ def investor_brief_markdown(
     lines.extend(
         [
             "",
-            "## Non-approved research benchmark",
+            "## Comparison-only research benchmark",
             "",
             "This equal-weight research benchmark is analytical only, not copy-ready, and cannot "
             "create signals, orders, or allocation targets.",
@@ -407,7 +407,7 @@ def investor_report_sections(
 
     snapshot = _public_snapshot(repository_root, snapshot)
     current = snapshot.current_portfolio
-    target = snapshot.approved_target_portfolio
+    target = snapshot.target_portfolio
     lines = [
         "## 1. Investor decision summary",
         "",
@@ -419,17 +419,16 @@ def investor_report_sections(
         "",
         *_reason_lines(snapshot.stance_reason_codes),
         "",
-        "## 2. Model portfolio and approved changes",
+        "## 2. Model portfolio and target changes",
         "",
         f"- Current equity: {current.equity_base} {snapshot.base_currency}",
         f"- Current cash: {current.cash_base} {snapshot.base_currency} "
         f"({current.cash_weight_pct}%)",
         f"- Current gross exposure: {current.gross_exposure_base} {snapshot.base_currency}",
-        f"- Approved target cash: {target.cash_base} {snapshot.base_currency} "
-        f"({target.cash_weight_pct}%)",
+        f"- Target cash: {target.cash_base} {snapshot.base_currency} ({target.cash_weight_pct}%)",
         "- Pending-order targets are estimates at the snapshot mark; only fills change accounting.",
         "",
-        "| Holding | Sleeve | Current weight | Approved target | Current value | "
+        "| Holding | Sleeve | Current weight | Target | Current value | "
         "Target value | Action | State |",
         "| --- | --- | ---: | ---: | ---: | ---: | --- | --- |",
         *_portfolio_markdown_rows(current.rows),
@@ -460,7 +459,7 @@ def investor_report_sections(
                 ]
             )
     else:
-        lines.extend(["No actionable trade signals.", "", "No pending paper orders.", ""])
+        lines.extend(["No actionable trade signals.", "", "No pending orders.", ""])
     lines.extend(["## 4. Candidates and near misses", ""])
     near_misses = _near_misses(snapshot)
     if near_misses:
@@ -544,7 +543,7 @@ def _status_cards(snapshot: DecisionSnapshot) -> str:
 
 def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
     current = snapshot.current_portfolio
-    target = snapshot.approved_target_portfolio
+    target = snapshot.target_portfolio
     lines = [
         _frontmatter(
             title="PaperTrader — today's investment decision",
@@ -567,13 +566,13 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
         "",
         *_reason_lines(snapshot.stance_reason_codes),
         "",
-        "## Current and approved target portfolio",
+        "## Current and target portfolio",
         "",
         f"Current equity is **{current.equity_base} {snapshot.base_currency}** with "
-        f"**{current.cash_weight_pct}% cash**. The approved target retains "
+        f"**{current.cash_weight_pct}% cash**. The target retains "
         f"**{target.cash_weight_pct}% cash**.",
         "",
-        "| Holding | Current | Approved target | Action | Strategy |",
+        "| Holding | Current | Target | Action | Strategy |",
         "| --- | ---: | ---: | --- | --- |",
     ]
     for row in current.rows:
@@ -582,7 +581,7 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
         strategy = _link("Open", row.strategy_research_page) if row.strategy_research_page else "—"
         lines.append(
             f"| {linked} | {row.current_weight_pct}% | "
-            f"{row.approved_target_weight_pct}% | {_action_label(row.action)} | {strategy} |"
+            f"{row.target_weight_pct}% | {_action_label(row.action)} | {strategy} |"
         )
     lines.extend(["", "## Actionable trade signals", ""])
     if snapshot.actionable_signals:
@@ -602,9 +601,7 @@ def _homepage(snapshot: DecisionSnapshot, day: date, latest_report: str) -> str:
     near_misses = _near_misses(snapshot, limit=3)
     if near_misses:
         for candidate in near_misses:
-            reason = (
-                candidate.reason_labels[0] if candidate.reason_labels else "No approved action."
-            )
+            reason = candidate.reason_labels[0] if candidate.reason_labels else "No current action."
             lines.append(
                 "- **"
                 + _link(
@@ -657,14 +654,14 @@ def _portfolio_html(rows: Sequence[ModelPortfolioRow], currency: str) -> str:
         scalable = (
             row.holding_type == "security"
             and row.instrument_type == "equity"
-            and required_decimal(row.approved_target_value_base, label="approved target value") > 0
+            and required_decimal(row.target_value_base, label="target value") > 0
         )
         label = "Cash" if row.holding_type == "cash" else f"{row.ticker} — {row.company_name}"
         output.extend(
             [
                 '<article class="portfolio-card" '
                 f'data-scalable="{"true" if scalable else "false"}" '
-                f'data-target-weight="{_html(row.approved_target_weight_pct)}" '
+                f'data-target-weight="{_html(row.target_weight_pct)}" '
                 f'data-mark="{_html(row.mark)}" data-fx="{_html(row.fx_rate_to_base)}" '
                 f'data-mark-currency="{_html(row.mark_currency)}" '
                 f'data-market-data-as-of="{_html(row.market_data_as_of)}" '
@@ -678,8 +675,7 @@ def _portfolio_html(rows: Sequence[ModelPortfolioRow], currency: str) -> str:
                 ),
                 '<dl class="portfolio-card-values">',
                 f"<div><dt>Current</dt><dd>{_html(row.current_weight_pct)}%</dd></div>",
-                "<div><dt>Approved target</dt><dd>"
-                f"{_html(row.approved_target_weight_pct)}%</dd></div>",
+                f"<div><dt>Target</dt><dd>{_html(row.target_weight_pct)}%</dd></div>",
                 f"<div><dt>Action</dt><dd>{_html(_action_label(row.action))}</dd></div>",
                 f"<div><dt>State</dt><dd>{_html(_action_status_label(row.action_status))}</dd></div>",
                 "<div><dt>Research rating</dt><dd>"
@@ -762,10 +758,10 @@ def _model_portfolio_page(snapshot: DecisionSnapshot, day: date) -> str:
     lines.extend(
         [
             "",
-            "## Non-approved research benchmark",
+            "## Comparison-only research benchmark",
             "",
             "This deterministic equal-weight benchmark is for research comparison only. It is "
-            "not an approved allocation, is not copy-ready, and has no path to signals or orders.",
+            "comparison-only, is not copy-ready, and has no path to signals or orders.",
             "",
             "| Security | Rating | Weight | Reference price |",
             "| --- | --- | ---: | ---: |",
@@ -809,8 +805,7 @@ def _signal_detail(signal: ActionableSignalView) -> list[str]:
         f"- **Strategy research:** {_link('Open strategy page', signal.strategy_research_page)}",
         f"- **Window:** `{signal.created_at}` to `{signal.expires_at}`",
         f"- **Market data:** `{signal.market_data_as_of}`",
-        f"- **Current → target:** {signal.current_weight_pct}% → "
-        f"{signal.approved_target_weight_pct}%",
+        f"- **Current → target:** {signal.current_weight_pct}% → {signal.target_weight_pct}%",
         f"- **Copy-ready quantity:** {_markdown(quantity)}",
         f"- **Order:** {order_description}",
         f"- **Entry:** {_markdown(signal.entry_rule)}",
@@ -861,7 +856,7 @@ def _signals_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) 
             lines.extend(_signal_detail(signal))
     else:
         lines.extend(["No actionable trade signals.", ""])
-    lines.extend(["## Pending validated paper orders", ""])
+    lines.extend(["## Pending validated orders", ""])
     if pending:
         lines.extend(
             f"- **{_markdown(signal.ticker)}:** {_action_label(signal.action)} · "
@@ -869,7 +864,7 @@ def _signals_page(repository_root: Path, snapshot: DecisionSnapshot, day: date) 
             for signal in pending
         )
     else:
-        lines.append("No pending paper orders.")
+        lines.append("No pending orders.")
     lines.extend(["", "## Research alerts — not trade signals", ""])
     if snapshot.research_alerts:
         for alert in snapshot.research_alerts:
@@ -975,23 +970,23 @@ def _performance_page(snapshot: DecisionSnapshot, day: date) -> str:
         f"- Largest position: {performance.largest_position_weight_pct}%",
         f"- Largest sector: {performance.largest_sector_weight_pct}%",
         "",
-        "## Approved allocation changes",
+        "## Target allocation changes",
         "",
     ]
     changes = [
         row
-        for row in snapshot.approved_target_portfolio.rows
+        for row in snapshot.target_portfolio.rows
         if row.holding_type == "security" and row.action in {"buy", "add", "trim", "exit"}
     ]
     if changes:
         lines.extend(
             f"- **{_link(f'{row.ticker} — {row.company_name}', row.security_research_page)}:** "
             f"{_action_label(row.action)} from {row.current_weight_pct}% to "
-            f"{row.approved_target_weight_pct}%"
+            f"{row.target_weight_pct}%"
             for row in changes
         )
     else:
-        lines.append("No approved allocation changes.")
+        lines.append("No target allocation changes.")
     lines.extend(
         [
             "",

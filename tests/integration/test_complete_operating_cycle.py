@@ -992,10 +992,19 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
     assert homepage_text.index("Maintain the current model portfolio") < homepage_text.index(
         "## Explore"
     )
-    assert "## Current and approved target portfolio" in homepage_text
+    assert "## Current and target portfolio" in homepage_text
     assert "OCY — Operating Cycle SE" in homepage_text
     assert f"strategies/{STRATEGY_ID}" in homepage_text
     assert "**No actionable trade signals.**" in homepage_text
+    for forbidden in (
+        "approved target",
+        "paper order",
+        "paper fill",
+        "not investment advice",
+        "not a brokerage",
+        "not live trading",
+    ):
+        assert forbidden not in homepage_text.casefold()
     assert visible_machine_ids(homepage_text) == ()
 
     counts_before_replay = {
@@ -1158,7 +1167,7 @@ def test_clean_checkout_research_to_publication_cycle_is_replay_safe(
         json.loads(call["rich_message"])["markdown"] for call in telegram.calls
     )
     assert "# Maintain the current model portfolio" in delivered_markdown
-    assert "## Approved target changes" in delivered_markdown
+    assert "## Target changes" in delivered_markdown
     assert "## Complete active queue" not in delivered_markdown
     assert finalization.snapshot_id not in delivered_markdown
     assert visible_machine_ids(delivered_markdown) == ()

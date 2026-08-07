@@ -1752,6 +1752,7 @@ def plan_allocation(
         diversified=(len(eligible) >= settings.allocation.minimum_diversified_candidates),
     )
     input_identity = {
+        "allocation_identity_version": 2,
         "mode": settings.allocation.mode,
         "accounting": {
             "cash_base": decimal_text(replay.cash_base),
@@ -1807,7 +1808,7 @@ def plan_allocation(
             }
             for candidate in sorted(candidates, key=lambda value: value.security_id)
         ],
-        "approved_targets": [
+        "targets": [
             {
                 "security_id": row["security_id"],
                 "strategy_id": row["strategy_id"],

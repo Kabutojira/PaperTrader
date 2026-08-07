@@ -11,7 +11,7 @@ from pathlib import Path, PurePosixPath
 
 from papertrader.config import Settings
 from papertrader.models import OrderLegSpec, ReferencePrice, RiskAssessment, RiskState
-from papertrader.risk import assess_order_risk, require_risk_approval
+from papertrader.risk import assess_order_risk, require_risk_clearance
 from papertrader.tables import read_table, write_table
 from papertrader.utils import (
     CanonicalValueError,
@@ -877,7 +877,7 @@ def create_paper_order(
         now=instant,
         activates_new_strategy=strategy["status"] != "active",
     )
-    require_risk_approval(assessment)
+    require_risk_clearance(assessment)
     if strategy["sleeve"] == "baseline":
         required_reserve = (
             risk_state.equity_base * settings.allocation.minimum_cash_reserve_pct / Decimal("100")

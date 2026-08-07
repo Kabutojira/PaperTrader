@@ -16,6 +16,8 @@ class CsvContract:
     name: str
     path: PurePosixPath
     columns: tuple[str, ...]
+    legacy_columns: tuple[tuple[str, ...], ...] = ()
+    legacy_renames: tuple[tuple[str, str], ...] = ()
     append_only: bool = False
     generated: bool = False
 

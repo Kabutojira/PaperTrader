@@ -22,7 +22,7 @@ The repository is the source of truth. Any legacy data import is a separate, one
 1. **Paper only.** Do not add broker order APIs, brokerage credentials, a live-order mode, or a real-execution adapter. The execution engine creates only simulated orders and fills.
 2. **Scripts own deterministic state.** Python code owns prices, indicators, deduplication, scheduling, schemas, risk limits, fees, fills, cash, positions, P/L, reports, queue transitions, and Git-safe writes.
 3. **LLMs own judgment and complete allowed work.** Hermes may synthesize sources, explain price moves, update theses, evaluate opportunities, create or update strategies, enqueue follow-up operations, and produce narrative report items.
-4. **There is no deferred-change approval layer.** The agent must perform every change allowed by its skill before it finishes. It may edit allowlisted wiki files directly and must use the project CLI for structured CSV changes. Critical accounting transitions—fills, executions, cash, positions, and performance—remain deterministic commands; the agent may invoke those commands but may not hand-edit their ledgers.
+4. **There is no deferred-change staging layer.** The agent must perform every change allowed by its skill before it finishes. It may edit allowlisted wiki files directly and must use the project CLI for structured CSV changes. Critical accounting transitions—fills, executions, cash, positions, and performance—remain deterministic commands; the agent may invoke those commands but may not hand-edit their ledgers.
 5. **Executions are append-only.** `executions.csv` and `cash_ledger.csv` are immutable ledgers. Corrections use compensating entries, never row replacement or deletion.
 6. **Portfolio is derived.** `portfolio.csv` is generated from executions, cash entries, corporate actions, and current marks. It is never a primary input.
 7. **Stable identities beat tickers.** Every security has an immutable `security_id`, venue MIC, provider symbol, currency, and instrument type. Never identify an instrument by ticker alone.
@@ -339,7 +339,7 @@ Rebuild this file from the ledgers during every deterministic run and fail if re
 channel_id,handle,status,video_scope,transcript_languages,prefer_human,last_seen_video_id
 ```
 
-This human-maintained subscription table contains the six approved channel handle/immutable-ID
+This human-maintained subscription table contains the six configured channel handle/immutable-ID
 pairs. Version 1 accepts only `regular` video scope and English transcript preferences. The
 deterministic scanner validates all rows before network access. It uses the YouTube Data API
 uploads playlist and video metadata when `YOUTUBE_DATA_API` is nonempty, otherwise it reads the
@@ -364,7 +364,7 @@ publication views:
 
 The snapshot joins only canonical state as of the completed run. It distinguishes filled holdings,
 validated non-terminal orders, allocation candidates, and research alerts; an allocation target is
-not an actionable signal. Current and approved target weights must each reconcile to 100%, with one
+not an actionable signal. Current and target weights must each reconcile to 100%, with one
 explicit cash row. Copy-ready rows require a canonical live order and legs. The browser scaler is
 local-only, rounds eligible long-equity quantities down to whole shares, and never writes state or
 contacts a broker or server. `papertrader advice validate --strict` must prove the snapshot identity,
@@ -571,8 +571,8 @@ remains entirely deterministic.
   decision snapshot are complete.
 - Use the deterministic completed-run context plus linked wiki pages to order the day's material
   arguments into one coherent investor-facing sequence.
-- Write an original 2,400-3,600 word script aiming for about twenty minutes, explicitly label paper
-  trading, preserve uncertainty, and avoid duplicating merged alert causes.
+- Write an original 2,400-3,600 word script aiming for about twenty minutes, preserve uncertainty,
+  avoid generic advice or execution disclaimers, and avoid duplicating merged alert causes.
 - Commit only the timestamped transcript. After that checkpoint, deterministic code reads the exact
   committed transcript, renders and validates TTS audio sequentially outside the checkout, and
   hands it ephemerally to Telegram. Never add audio or TTS chunks to Git or Pages.
@@ -631,7 +631,7 @@ The result must validate against `schemas/agent_result.schema.json` and include:
 }
 ```
 
-This file is a manifest of changes already completed, not a list of changes awaiting approval. Before writing it, the agent must update every path permitted by its skill. Wiki Markdown may be edited directly. Structured CSV state must be changed through the project CLI so schemas, identifiers, invariants, atomic writes, and audit logs are enforced. Accounting ledgers and generated portfolio/performance views may change only as the result of deterministic CLI commands.
+This file is a manifest of changes already completed, not a list of deferred changes. Before writing it, the agent must update every path permitted by its skill. Wiki Markdown may be edited directly. Structured CSV state must be changed through the project CLI so schemas, identifiers, invariants, atomic writes, and audit logs are enforced. Accounting ledgers and generated portfolio/performance views may change only as the result of deterministic CLI commands.
 
 ### Agent sandbox
 
@@ -826,7 +826,7 @@ Use one serialized daily orchestration workflow and reusable sub-workflows. Ever
 9. Rebase against the current default branch, verify every changed path against the automated runtime commit whitelist, commit only when changes exist, and push with a bot identity.
 10. Deploy Pages and send Telegram using secrets introduced only in their specific post-validation steps.
 
-Manual dispatch inputs must support at least: `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and `send_telegram`. Manual dispatch is for debugging, replay, and bounded execution; it is not an approval gate.
+Manual dispatch inputs must support at least: `operation_id`, `operation_type`, `max_operations`, `dry_run`, `publish_pages`, and `send_telegram`. Manual dispatch is for debugging, replay, and bounded execution; it is not a trading-decision input.
 
 ### Permissions and supply chain
 

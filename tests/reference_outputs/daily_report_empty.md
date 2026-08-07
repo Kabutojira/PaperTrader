@@ -8,7 +8,7 @@ created: "2026-07-24"
 updated: "2026-07-24"
 provenance: deterministic-report-generator
 run_id: "run-report"
-snapshot_id: "decision_2c6fafc24a484f5cd6fb"
+snapshot_id: "decision_b7335a10d8a1134156a5"
 ---
 
 # PaperTrader daily report — 2026-07-24
@@ -23,13 +23,13 @@ snapshot_id: "decision_2c6fafc24a484f5cd6fb"
 - **As of:** `2026-07-24T22:00:00Z`
 - **Cash:** 100000 EUR (100%)
 - **Gross exposure:** 0 EUR
-- **Approved target cash:** 100000 EUR (100%)
+- **Target cash:** 100000 EUR (100%)
 - **Actionable signals:** 0
 - **Evidence state:** definitive cash preference
 
-## Approved target changes
+## Target changes
 
-No approved target changes.
+No target changes.
 
 ## Actionable signals
 
@@ -39,7 +39,7 @@ No actionable trade signals.
 
 No assessed near miss is available; research coverage remains incomplete.
 
-## Non-approved research benchmark
+## Comparison-only research benchmark
 
 This equal-weight research benchmark is analytical only, not copy-ready, and cannot create signals, orders, or allocation targets.
 - CASH 100% (Unrated)
@@ -50,15 +50,15 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 - The reconciled model portfolio is entirely cash.
 - No strategy has produced a current actionable trade signal.
 
-## 2. Model portfolio and approved changes
+## 2. Model portfolio and target changes
 
 - Current equity: 100000 EUR
 - Current cash: 100000 EUR (100%)
 - Current gross exposure: 0 EUR
-- Approved target cash: 100000 EUR (100%)
+- Target cash: 100000 EUR (100%)
 - Pending-order targets are estimates at the snapshot mark; only fills change accounting.
 
-| Holding | Sleeve | Current weight | Approved target | Current value | Target value | Action | State |
+| Holding | Sleeve | Current weight | Target | Current value | Target value | Action | State |
 | --- | --- | ---: | ---: | ---: | ---: | --- | --- |
 | Cash | cash | 100% | 100% | 100000  | 100000  | No trade | No action |
 
@@ -66,7 +66,7 @@ This equal-weight research benchmark is analytical only, not copy-ready, and can
 
 No actionable trade signals.
 
-No pending paper orders.
+No pending orders.
 
 ## 4. Candidates and near misses
 
@@ -128,11 +128,11 @@ No current system impacts.
 
 ### Orders and executions
 
-| Paper order | Strategy | Fill policy | Status | Created |
+| Order | Strategy | Fill policy | Status | Created |
 | --- | --- | --- | --- | --- |
 | — | — | — | no orders | — |
 
-| Paper fill | Paper order | Security | Side | Quantity | Fill | Fees |
+| Fill | Order | Security | Side | Quantity | Fill price | Fees |
 | --- | --- | --- | --- | ---: | ---: | ---: |
 | — | — | — | — | 0 | no executions | 0 |
 

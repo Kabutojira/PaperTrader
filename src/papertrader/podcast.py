@@ -670,10 +670,8 @@ def finalize_daily_podcast(
         word_count = len(re.findall(r"\b[\w'-]+\b", spoken))
         if not MINIMUM_SCRIPT_WORDS <= word_count <= MAXIMUM_SCRIPT_WORDS:
             raise PodcastError("succeeded daily podcast has an invalid spoken word count")
-        if _podcast_cycle_id(text) != run_id or "paper trad" not in spoken.casefold():
-            raise PodcastError(
-                "succeeded daily podcast lacks its cycle identity or paper-trading label"
-            )
+        if _podcast_cycle_id(text) != run_id:
+            raise PodcastError("succeeded daily podcast lacks its cycle identity")
         if visible_machine_ids(text):
             raise PodcastError("succeeded daily podcast exposes a machine identity")
         if re.search(r"(?i)\.(?:mp3|wav|m4a)(?:\b|[?#])", text):

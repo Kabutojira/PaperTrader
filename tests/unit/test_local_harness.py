@@ -4,6 +4,7 @@ import json
 import os
 import subprocess
 import sys
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -213,9 +214,13 @@ def test_local_harness_outcome_can_complete_a_prepared_daily_batch(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
+    limited_settings = replace(
+        sandbox_settings,
+        operations=replace(sandbox_settings.operations, cycle_maximum_operations=1),
+    )
     prepare_daily_run(
         sandbox_repository,
-        sandbox_settings,
+        limited_settings,
         run_id="local-daily-1",
         trigger="local",
         source_sha="a" * 40,
@@ -226,7 +231,7 @@ def test_local_harness_outcome_can_complete_a_prepared_daily_batch(
 
     record_local_agent_outcome(
         sandbox_repository,
-        sandbox_settings,
+        limited_settings,
         run_id="local-daily-1",
         operation_id="01K11M5T80JQDRKHZJ5XA8NY1R",
         status="succeeded",
@@ -239,7 +244,18 @@ def test_local_harness_outcome_can_complete_a_prepared_daily_batch(
         )
     )
     assert batch["operation_count"] == 1
+    assert batch["maximum_operations"] == 1
     assert batch["estimated_model_budget_used"] == "0"
     assert batch["outcomes"] == [
         {"operation_id": "01K11M5T80JQDRKHZJ5XA8NY1R", "status": "succeeded"}
     ]
+    queued = _enqueue_opportunity(sandbox_repository, limited_settings)
+    assert (
+        start_local_harness_operation(
+            sandbox_repository,
+            limited_settings,
+            run_id="local-daily-1",
+            operation_id=queued,
+        )
+        is None
+    )

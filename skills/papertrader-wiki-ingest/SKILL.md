@@ -61,7 +61,7 @@ summary are lead metadata only.
 For `youtube_video`, perform every step below in addition to the common orientation and
 verification steps:
 
-1. Treat the human-approved channel as a valuable source of hypotheses and viewpoints, never as
+1. Treat the configured channel as a valuable source of hypotheses and viewpoints, never as
    proof or authoritative investment analysis.
 2. Run `scripts/youtube_transcript.py` with the payload's canonical video URL, language order,
    human-caption preference, and the configured three attempts. It uses anonymous non-interactive

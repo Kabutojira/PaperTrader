@@ -665,7 +665,7 @@ def deliver_podcast_audio(
         repository_root, commit_sha=script_commit, run_id=cycle_id
     )
     caption = (
-        "PaperTrader paper-trading podcast\n"
+        "PaperTrader daily podcast\n"
         f"Transcript: {repository_url}/blob/{script_commit}/{script_path}\n"
         f"Daily report: {repository_url}/blob/{script_commit}/{report_path}"
     )

@@ -197,7 +197,7 @@ uv run papertrader agent run \
 
 The native `llm-wiki` skill, `papertrader-controller`, and exactly one operation skill are loaded.
 Hermes is always invoked with `--yolo`; the path allowlist, command receipts, result schema, and
-post-run validation replace interactive approval.
+post-run validation replace interactive prompts.
 
 ## Enqueue bounded work
 
@@ -368,7 +368,7 @@ gh workflow run daily.yml \
 ```
 
 After diagnosing the dry run, use `dry_run=false` for bounded execution. Manual dispatch is a
-debugging and replay surface, not an approval gate. Scheduled runs use the same code path with the
+debugging and replay surface, not a trading-decision input. Scheduled runs use the same code path with the
 configured maximum operation count, Pages publication, and Telegram delivery enabled.
 
 Retry publication independently when runtime state is already committed:
