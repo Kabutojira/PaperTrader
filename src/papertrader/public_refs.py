@@ -280,7 +280,7 @@ class PublicEntityResolver:
                 raise CanonicalValueError("cannot read required public run reference") from exc
             report = manifest.get("report_path")
             stamp = manifest.get("completed_at") or manifest.get("research_cutoff_at")
-            parsed = parse_timestamp(stamp) if isinstance(stamp, str) else None
+            parsed = parse_timestamp(stamp, allow_empty=True) if isinstance(stamp, str) else None
             if isinstance(report, str) and report and parsed is not None:
                 label = f"Daily report for {parsed.date().isoformat()}"
                 return HumanReference(label, self._page(report))

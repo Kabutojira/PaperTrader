@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+from datetime import UTC, datetime
+from decimal import Decimal
 from pathlib import Path
 
+from papertrader.logs import record_completed_run
 from papertrader.public_refs import PublicEntityResolver
 
 
@@ -28,6 +31,44 @@ def test_humanize_resolves_prefixed_daily_run_id(sandbox_repository: Path) -> No
 
     assert run_id not in rendered
     assert "[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]" in rendered
+
+
+def test_humanize_falls_back_to_completed_run_while_manifest_is_open(
+    sandbox_repository: Path,
+) -> None:
+    run_id = "daily-20260808T155913Z"
+    completed_at = datetime(2026, 8, 8, 15, 59, 13, tzinfo=UTC)
+    run_directory = sandbox_repository / "data" / "runs" / run_id
+    run_directory.mkdir(parents=True)
+    (run_directory / "daily_run.json").write_text(
+        json.dumps(
+            {
+                "run_id": run_id,
+                "completed_at": "",
+                "research_cutoff_at": "",
+                "report_path": "",
+            }
+        ),
+        encoding="utf-8",
+    )
+    record_completed_run(
+        sandbox_repository,
+        run_id=run_id,
+        started_at=datetime(2026, 8, 8, 13, 46, 54, tzinfo=UTC),
+        completed_at=completed_at,
+        status="degraded",
+        trigger="workflow_dispatch",
+        operation_count=3,
+        model_budget_limit=Decimal("100"),
+        model_budget_used=Decimal("15"),
+    )
+
+    rendered = PublicEntityResolver(sandbox_repository).humanize(
+        f"Daily finalization issue for {run_id}."
+    )
+
+    assert run_id not in rendered
+    assert "[[daily-reports/daily-report_20260808|Daily report for 2026-08-08]]" in rendered
 
 
 def test_humanize_sanitizes_source_request_filename(sandbox_repository: Path) -> None:
