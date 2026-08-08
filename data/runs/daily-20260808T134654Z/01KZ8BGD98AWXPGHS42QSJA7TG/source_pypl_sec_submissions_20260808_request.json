@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pypl_sec_submissions_20260808",
+  "url": "https://data.sec.gov/submissions/CIK0001633917.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001633917.json",
+  "source_type": "regulator_index",
+  "title": "PayPal SEC submissions index checked 2026-08-08",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "062bc98bdee6625d78b3ce683334a8789e24849d9b28bce57944468e84d5dd38",
+  "related_entity_ids": "security_1e8fbdb0f45f2b413e00",
+  "checked_at": "2026-08-08T13:49:45Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Only ownership Forms 4 and planned-sale Forms 144 followed the July 28 Q2 operating filings through August 8.",
+  "summary": "The current SEC submissions index contains no new issuer operating filing after the July 28 Q2 Form 10-Q and results Form 8-K. Later ownership and planned-sale notices do not change the maintained operating assumptions.",
+  "run_id": "daily-20260808T134654Z"
+}

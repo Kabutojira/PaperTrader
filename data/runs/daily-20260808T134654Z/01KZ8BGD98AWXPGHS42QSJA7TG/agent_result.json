@@ -1,0 +1,90 @@
+{
+  "operation_id": "01KZ8BGD98AWXPGHS42QSJA7TG",
+  "status": "succeeded",
+  "summary": "Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_pypl_q2_2026_results",
+      "claim": "The SEC-filed Q2 results release remained available with an unchanged content hash. It continues to report 10% total-payment-volume growth, USD 1.775 billion of free cash flow, raised full-year non-GAAP EPS guidance of about USD 5.38, alongside lower operating income, margin contraction and nearly flat active accounts.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+      "observed_at": "2026-08-08T13:49:45Z",
+      "source_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab"
+    },
+    {
+      "source": "source_pypl_q2_2026_10q",
+      "claim": "The Q2 Form 10-Q remained available with an unchanged content hash and continues to support the immutable PYPL/XNAS/USD identity, USD 8.306 billion cash, USD 6.959 billion investments, USD 13.400 billion debt, and the maintained credit, regulatory, cyber, fraud and execution risks.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+      "observed_at": "2026-08-08T13:49:45Z",
+      "source_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074"
+    },
+    {
+      "source": "source_pypl_sec_submissions_20260808",
+      "claim": "The current SEC submissions index contains only ownership Forms 4 and planned-sale Forms 144 after the July 28 Q2 Form 10-Q and results Form 8-K through this check, with no later issuer operating filing that changes the maintained assumptions.",
+      "url": "https://data.sec.gov/submissions/CIK0001633917.json",
+      "observed_at": "2026-08-08T13:49:45Z",
+      "source_hash": "062bc98bdee6625d78b3ce683334a8789e24849d9b28bce57944468e84d5dd38"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The two payload hashes exactly identify the August 4 strengthened RSI-overbought packet and August 5 MACD-cross-below packet. The refreshed cache adds two later sessions and records an August 7 USD 59.06999969482422 mark, RSI 71.05435651, MACD 3.07203822 below its 3.17141799 signal, upper Bollinger band USD 62.53227123, and volume z-score -0.58955556.",
+      "observed_at": "2026-08-08T13:47:02Z",
+      "source_hash": "b29031903584f196d8d65c4f0c33d80812a5f407b705d233ee7a18e61cbdd762"
+    },
+    {
+      "source": "assessment_26b689f8e4568c69ba9b",
+      "claim": "The sole immutable assessment version for this operation links the legacy predecessor, current page hash, fresh USD mark and FX rate, and all three current evidence records. Deterministic normalization derives USD 61.332 weighted fair value, 3.8293555389572467157372296% expected return, 2.8720166542179350368029222% confidence-adjusted return, 9.2940584620602597007760312% base return, Hold / Watch, and allocation ineligibility for return, payoff and pending-relationship gates.",
+      "observed_at": "2026-08-08T13:53:18Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/assessment_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/security_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_sec_submissions_20260808_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "PayPal's August overbought momentum weakened as MACD crossed below signal, but current SEC evidence contains no new operating development after Q2. Scenario-complete USD 43.04/USD 64.56/USD 80.70 values imply USD 61.332 weighted fair value versus USD 59.07, only 3.83% expected return, 9.29% base upside and 27.14% bear downside. PYPL remains Hold / Watch and allocation-ineligible; no full review or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1e8fbdb0f45f2b413e00",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_sec_submissions_20260808_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_1e8fbdb0f45f2b413e00"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row is the sole routed running operation, claimed by daily-20260808T134654Z with a live lease, immutable PYPL/XNAS/USD/equity identity, and validated merged-alert payload.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYQCTS30Y9D9N0JGNK2WDED5 succeeded for the same security within ten days.",
+      "Verified both merged alert packets, their exact August 4 and August 5 periods and source-price hashes; confirmed the current cache hash differs only because it incorporates the later August 6 and 7 sessions used for the fresh assessment.",
+      "Downloaded and hashed both retained SEC documents and the current SEC submissions index, refreshed the unchanged Q2 sources and registered the dated regulator index before assessment upsert; no source body was committed.",
+      "Confirmed assessment assessment_26b689f8e4568c69ba9b is the sole immutable schema-v2 version for this operation, links its legacy predecessor and expected result path, matches page hash 1c7419667210ee065f8a1033e1809570ba45ef8d439f68e56bb694d7efc6689c, and uses fresh identity-matched price and FX state.",
+      "Confirmed no valuation or buy-zone gate was newly reached, catalyst or invalidation fired, material primary evidence changed, or decision-support gap opened; no full security review or other follow-up was created.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the twelve canonical PaperTrader CLI invocations listed in commands_run, all with successful receipts.",
+      "No idea, relationship, strategy, signal, allocation target/history, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

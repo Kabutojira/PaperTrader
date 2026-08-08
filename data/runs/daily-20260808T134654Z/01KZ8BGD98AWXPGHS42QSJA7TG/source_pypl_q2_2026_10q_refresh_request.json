@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pypl_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "PayPal Holdings, Inc. Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074",
+  "related_entity_ids": "security_1e8fbdb0f45f2b413e00",
+  "checked_at": "2026-08-08T13:49:45Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30 PayPal reported USD 8.306 billion cash, USD 6.959 billion investments and USD 13.400 billion short- and long-term debt.",
+  "summary": "The unchanged Q2 Form 10-Q remains current primary evidence for identity, liquidity, debt, share count and the maintained operating, credit, regulatory, cyber and execution risks.",
+  "run_id": "daily-20260808T134654Z"
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1e8fbdb0f45f2b413e00",
+  "issuer_id": "issuer_5c3fe75eec62fcc8cb57",
+  "company_name": "PayPal Holdings, Inc.",
+  "instrument_name": "PayPal Holdings, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "PYPL",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "PYPL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financial Services",
+  "industry": "Credit Services",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; August overbought momentum weakened as MACD crossed below signal without new operating evidence.",
+  "research_summary": "Q2 volume and cash flow improved, but margin contraction, flat accounts and weak scenario asymmetry support Hold / Watch after momentum weakened.",
+  "research_page": "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md",
+  "last_research_at": "2026-08-08T13:49:45Z",
+  "next_review_at": "2026-08-22T13:49:45Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm"
+}

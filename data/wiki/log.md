@@ -2765,3 +2765,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   value versus the USD 100.01 mark; downside payoff, margin of safety, confidence, and the missing
   accepted relationship derive Hold / Watch and allocation ineligibility. No strategy, signal,
   order, or paper trade was created.
+
+## 2026-08-08 — quick check — PayPal Holdings, Inc. common stock
+
+- Rechecked [[securities/security_1e8fbdb0f45f2b413e00|PayPal]] after the August 4 strengthened
+  RSI-overbought state and August 5 MACD cross below signal. Both Q2 SEC documents are unchanged,
+  and the current SEC submissions index contains no later issuer operating filing.
+- The August 7 mark is USD 59.07 with RSI still overbought and MACD below signal. A scenario-complete
+  USD 43.04/USD 64.56/USD 80.70 valuation produces USD 61.332 probability-weighted fair value,
+  3.83% expected return, 9.29% base upside, and 27.14% bear downside. The result remains Hold /
+  Watch and allocation-ineligible; no full review, strategy, signal, order, or paper trade was
+  created.

@@ -1,0 +1,34 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/assessment_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/security_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98AWXPGHS42QSJA7TG/source_pypl_sec_submissions_20260808_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZ8BGD98AWXPGHS42QSJA7TG",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "unsupported_prior_valuation",
+  "run_id": "daily-20260808T134654Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

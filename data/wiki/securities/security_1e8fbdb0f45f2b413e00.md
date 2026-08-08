@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-29"
-updated: "2026-07-29"
-provenance: "source_pypl_q2_2026_10q|source_pypl_q2_2026_results"
+updated: "2026-08-08"
+provenance: "source_pypl_q2_2026_10q|source_pypl_q2_2026_results|source_pypl_sec_submissions_20260808"
 security_id: security_1e8fbdb0f45f2b413e00
 issuer_id: issuer_5c3fe75eec62fcc8cb57
 ticker: PYPL
@@ -16,20 +16,39 @@ venue_mic: XNAS
 provider_symbol: PYPL
 currency: USD
 confidence: medium
-next_review: "2026-08-28"
+next_review: "2026-08-22"
 ---
 
 # PayPal Holdings, Inc. common stock
 
 ## Decision
 
-**Baseline comparison; no conviction strategy.** PayPal's July 28 results provide a current,
-primary explanation for the final-session gain that pushed RSI to an overbought reading. Payment
-volume and free cash flow improved, management raised full-year non-GAAP EPS guidance, and the
-shares remain highly liquid. Those positives are offset by lower operating income, contracting
-margins, nearly flat active accounts, transformation risk, and a valuation range whose base upside
-is small relative to downside. The alert is therefore post-results momentum and timing risk, not a
-paper-trade signal.
+**Hold / Watch; no paper-trade escalation.** PayPal's unchanged July 28 results remain the latest
+operating evidence. Payment volume and free cash flow improved and management raised full-year
+non-GAAP EPS guidance, but lower operating income, contracting margins, nearly flat active
+accounts, transformation risk, and weak scenario asymmetry still constrain the thesis. The
+strengthened overbought alert followed by a MACD cross below signal shows post-results momentum
+losing force, not a new fundamental catalyst or an entry condition.
+
+## Changes since prior review
+
+- **Evidence:** Both retained Q2 SEC documents have unchanged content hashes. The SEC submissions
+  index shows no new issuer operating filing after July 28 through this August 8 check; only
+  ownership Forms 4 and planned-sale Forms 144 followed.
+- **Market state:** The alert-time USD 58.54 mark on August 4 strengthened the existing
+  `rsi_overbought` state. The USD 57.93 mark on August 5 entered
+  `macd_cross_below_signal`. The newer canonical mark is USD 59.07 on August 7; RSI remains
+  overbought at 71.05 and MACD remains below signal.
+- **Assumptions and thesis:** Q2 guidance, margin, active-account, liquidity, debt, catalyst, risk,
+  and invalidation assumptions are unchanged. The technical reversal weakens timing but does not
+  invalidate the operating thesis.
+- **Valuation and action:** The legacy two-point comparison is replaced by a scenario-complete
+  mature-compounder assessment. USD 43.04/USD 64.56/USD 80.70 bear/base/bull values imply a USD
+  61.332 probability-weighted value versus USD 59.07. Base upside is only 9.29%, expected return is
+  3.83%, and bear downside is 27.14%, so the disposition remains Hold / Watch and allocation
+  ineligible.
+- **Escalation:** No valuation or buy-zone gate was newly reached, no catalyst or invalidation
+  fired, and no material primary evidence changed. A full security review is not warranted.
 
 ## Immutable identity
 
@@ -45,18 +64,21 @@ issuer-instrument-venue-currency-provider identity exists in the canonical secur
 
 ## Alert review
 
-The canonical market record covers 2026-06-29 through 2026-07-28:
+The merged deterministic alert record covers two exact observations:
 
-- Adjusted close rose from USD 44.38 to USD 58.3474, a **31.47%** return.
-- RSI reached **78.99**, creating the `rsi_overbought` transition.
-- The close remained below the USD 62.0162 upper Bollinger band.
-- Volume z-score was **0.64**, below the abnormal-volume threshold.
-- The July 28 session rose **4.06%** from the prior close on the same date as PayPal's Q2 release.
+- From July 7 through August 4, adjusted close rose from USD 45.65 to USD 58.54, a **28.24%**
+  return, and the existing `rsi_overbought` state strengthened.
+- From July 8 through August 5, adjusted close rose from USD 44.53 to USD 57.93, a **30.09%**
+  return, while `macd_cross_below_signal` entered.
+- The current August 7 adjusted close is **USD 59.07**. RSI is **71.05**, the USD 62.53 upper
+  Bollinger band remains above the mark, MACD is 3.0720 versus a 3.1714 signal, and volume z-score
+  is **-0.59**.
 
-The Q2 release is direct primary evidence for the final-session repricing: PayPal raised full-year
-non-GAAP EPS guidance to about USD 5.38 while reporting 10% TPV growth and strong free cash flow.
-It does not prove that one event explains the entire one-month advance. The alert is material
-because the higher mark reduces margin of safety while the short-term price signal is extended.
+The two payload hashes remain exact identities for their August 4 and August 5 alert packets. The
+newer current-cache hash incorporates two later sessions and is used for this assessment. The Q2
+release remains direct primary evidence for the July repricing, but no new operating filing links
+the August technical reversal to a changed fundamental assumption. The combined alerts are timing
+risk after an extended advance, not an independent paper-trade signal.
 
 ## Business and financial evidence
 
@@ -87,28 +109,36 @@ or free-cash-flow weakening that undermines capital returns.
 
 ## Valuation
 
-The USD 58.3474 mark is about 10.8 times management's approximately USD 5.38 full-year non-GAAP
-EPS guidance. A bounded 12-month scenario applies an **8x** downside multiple and a **12x** base
-multiple to that same guidance:
+The USD 59.07 current mark is about 11.0 times management's approximately USD 5.38 full-year
+non-GAAP EPS guidance. A bounded 12-month mature-compounder earnings-multiple assessment uses
+30%/50%/20% bear/base/bull probabilities:
 
-- Downside: USD 43.04, or **-26.2%**.
-- Base: USD 64.56, or **+10.6%**.
+- Bear: **USD 43.04** or 8x guided EPS, **-27.14%**, if margin contraction persists and branded
+  checkout, transaction-margin growth, or active accounts weaken.
+- Base: **USD 64.56** or 12x guided EPS, **+9.29%**, if raised guidance is delivered but durable
+  margin and account acceleration remain unproven.
+- Bull: **USD 80.70** or 15x guided EPS, **+36.62%**, if branded checkout stabilizes, Venmo
+  monetization improves, and transaction-margin and operating-margin growth recover.
 
-The range is deliberately conservative because Q2 margins contracted and active-account growth was
-minimal. The base case narrowly exceeds the configured 10% absolute-upside threshold, but its
-upside-to-downside ratio is only about 0.4, below the required 1.0. Medium confidence and
-post-results overbought timing further prevent conviction strategy research.
+The probability-weighted fair value is **USD 61.332**, a **3.83%** expected return before the
+medium-confidence adjustment. Base upside is below the configured hurdle, expected return and
+margin of safety are not compelling, and bear/base asymmetry remains adverse. This supports Hold /
+Watch rather than a new or increased baseline position.
 
 ## Sources
 
 - [PayPal Q2 2026 results furnished on Form 8-K](https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm)
-  (`source_pypl_q2_2026_results`, checked 2026-07-29).
+  (`source_pypl_q2_2026_results`, checked 2026-08-08; unchanged).
 - [PayPal Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm)
-  (`source_pypl_q2_2026_10q`, checked 2026-07-29).
+  (`source_pypl_q2_2026_10q`, checked 2026-08-08; unchanged).
+- [PayPal SEC submissions index](https://data.sec.gov/submissions/CIK0001633917.json)
+  (`source_pypl_sec_submissions_20260808`, checked 2026-08-08).
 - Canonical market and indicator state:
   `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_1e8fbdb0f45f2b413e00.csv`, retrieved
-  `2026-07-29T16:55:24Z`.
+  `data/market/prices/security_1e8fbdb0f45f2b413e00.csv`, current through
+  `2026-08-07` and retrieved `2026-08-08T13:47:02Z`.
 
-Next review: **2026-08-28**, or sooner after material guidance, margin, regulatory, credit, or
+Next review: **2026-08-22**, or sooner after material guidance, margin, regulatory, credit, or
 capital-allocation evidence.
+
+[[research-catalog|Research catalog]] · [[index|Current paper-trading decision]]
