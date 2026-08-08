@@ -1,0 +1,23 @@
+{
+  "security_id": "security_0a56aa634d077fe5796f",
+  "issuer_id": "issuer_0f91c69d2d38e1a7920d",
+  "company_name": "Applied Materials, Inc.",
+  "instrument_name": "Applied Materials, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "AMAT",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "AMAT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment & Materials",
+  "status": "watching",
+  "watchlist_reason": "Record fiscal Q2 growth and strong liquidity merit monitoring, but export-control exposure, customer concentration, cash conversion, valuation, and timing prevent action.",
+  "research_summary": "Record Q2 growth supports AMAT quality, but USD 414.75 weighted value versus USD 539.14 makes the medium-confidence security Hold / Watch and allocation ineligible.",
+  "research_page": "data/wiki/securities/security_0a56aa634d077fe5796f.md",
+  "last_research_at": "2026-08-08T11:54:15Z",
+  "next_review_at": "2026-09-07T11:54:15Z",
+  "source": "source_amat_q2_2026_10q|source_amat_q2_2026_results"
+}

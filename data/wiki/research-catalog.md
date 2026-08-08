@@ -331,6 +331,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Albemarle Corporation common stock](securities/security_66cdcf90aac0d83e76f3)
 - [Alphabet Inc. Class A common stock](securities/security_c86bb4e75658c07142cf)
 - [Amazon.com, Inc. common stock](securities/security_2433a056eb0c55961fcc)
+- [Applied Materials, Inc. common stock](securities/security_0a56aa634d077fe5796f)
 - [Arista Networks, Inc. common stock](securities/security_6f9a1450edceb9307c9a)
 - [ASML Holding N.V. New York registered shares](securities/security_ef35e41886220d51c22c)
 - [Atkore Inc. common stock](securities/security_22c2b9d782a62d7a9b86)

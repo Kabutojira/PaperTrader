@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amat_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026037227/amat-20260426.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026037227/amat-20260426.htm",
+  "source_type": "regulator_filing",
+  "title": "Applied Materials fiscal Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "37add482e2b9894dfd552d94a2791c4f2e47dc176e18fb4f4a0a9f8d16d27be1",
+  "related_entity_ids": "security_0a56aa634d077fe5796f",
+  "checked_at": "2026-08-08T11:54:15Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At April 26, 2026, Applied held USD 6.301 billion cash and USD 7.082 billion investments against USD 6.455 billion total debt.",
+  "summary": "Current quarterly filing confirming Applied Materials common stock traded as AMAT on Nasdaq. At 2026-04-26, cash was USD 6.301 billion, short- and long-term investments totaled USD 7.082 billion, and short- plus long-term debt totaled USD 6.455 billion. Two customers represented 21% and 15% of six-month revenue; China represented 27% of quarterly revenue. The filing records a USD 253 million BIS export-control settlement paid in fiscal Q2 and continuing audit, training, and reporting obligations. Demand, customer concentration, export controls, tariffs, supply chain, technology transitions, competition, cash conversion, and valuation remain material risks.",
+  "run_id": "daily-20260808T113248Z"
+}

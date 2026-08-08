@@ -1,0 +1,76 @@
+{
+  "operation_id": "01KYPB1QB0JP4AER2BTKE8CNDB",
+  "status": "succeeded",
+  "summary": "Completed the first full Applied Materials common-stock review from immutable XNAS/USD identity, fresh SEC-filed fiscal Q2 2026 evidence, and the canonical 2026-08-06 MACD alert. Record revenue, margins, Semiconductor Systems and AGS growth, guidance, and net financial strength support an 88 quality score, but customer concentration, China and export controls, cash conversion, cyclicality, timing, and valuation remain material risks. The deterministic schema-v2 assessment derives USD 262.50/USD 416/USD 640 bear/base/bull values, USD 414.75 probability-weighted fair value, -17.30% confidence-adjusted expected return, Sell/Avoid, and allocation ineligibility versus the USD 539.14 mark. No linked idea or accepted relationship existed, so no idea follow-up was required; no strategy, signal, order, or paper trade was created.",
+  "evidence": [
+    {
+      "source": "source_amat_q2_2026_results",
+      "claim": "Applied Materials reported record fiscal Q2 2026 revenue of USD 7.91 billion, GAAP gross margin of 49.9%, GAAP operating margin of 31.9%, GAAP diluted EPS of USD 3.51, 10% Semiconductor Systems growth, 17% AGS growth, and fiscal Q3 revenue guidance of USD 8.95 billion plus or minus USD 500 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026035071/exhibit991q22026earningsre.htm",
+      "observed_at": "2026-08-08T11:54:15Z",
+      "source_hash": "553ff723eba5b193e45857a42d35d7864cd4c5cb7945901e583d4a61620231ba"
+    },
+    {
+      "source": "source_amat_q2_2026_10q",
+      "claim": "The fiscal Q2 Form 10-Q confirms AMAT/XNAS identity, USD 13.383 billion of cash and investments versus USD 6.455 billion total debt, two customers representing 21% and 15% of six-month revenue, China at 27% of quarterly revenue, and a USD 253 million BIS settlement paid during the quarter.",
+      "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026037227/amat-20260426.htm",
+      "observed_at": "2026-08-08T11:54:15Z",
+      "source_hash": "37add482e2b9894dfd552d94a2791c4f2e47dc176e18fb4f4a0a9f8d16d27be1"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58.md",
+      "claim": "The canonical alert records a 2026-08-06 MACD cross above signal after a 10.39% adjusted-close decline from 2026-07-09 through 2026-08-06; the review classified it as weak timing information rather than a new fundamental catalyst."
+    },
+    {
+      "source": "data/market/prices/security_0a56aa634d077fe5796f.csv and data/market/fx/USD_EUR.csv",
+      "claim": "Fresh deterministic state supplied the USD 539.1400146484375 reference price and 0.8648999929428101 USD-to-EUR rate, both retrieved at 2026-08-08T11:32:56Z."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/assessment_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/security_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/source_amat_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/source_amat_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Applied Materials fiscal Q2 revenue rose 11% to USD 7.91 billion with 31.9% GAAP operating margin; Semiconductor Systems grew 10%, AGS grew 17%, and the balance sheet held USD 13.383 billion cash and investments against USD 6.455 billion debt.",
+    "AMAT's weak 2026-08-06 bullish MACD transition did not overcome valuation: USD 414.75 weighted fair value versus USD 539.14 derives -17.30% confidence-adjusted expected return, Sell/Avoid, allocation ineligibility, and no strategy or paper order."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/source_amat_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/source_amat_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB1QB0JP4AER2BTKE8CNDB/assessment_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context receipt completed before assessment state was read or changed.",
+      "Immutable AMAT instrument identity matched security_0a56aa634d077fe5796f / issuer_0f91c69d2d38e1a7920d / XNAS / AMAT / USD / equity with no duplicate identity found.",
+      "Two fresh primary SEC sources were registered with immutable source-history rows before assessment upsert.",
+      "The first assessment request was rejected without state change because three soft-gap values were non-canonical; its immutable request was preserved and a uniquely named corrected request succeeded.",
+      "Exactly one immutable schema-v2 assessment version, assessment_f4d21375676428ce0084, was accepted for this security and run; its research-page hash is acd67d5fc08839f1835e3b106d6fe1a0532a445eccd96af9e82ecd53ce6d277d.",
+      "No payload idea, accepted canonical relationship, linked strategy, or matching idea follow-up existed; no strategy follow-up passed the conviction gate.",
+      "scripts/papertrader schema validate --strict returned OK [schema].",
+      "scripts/papertrader wiki lint --strict returned OK [wiki].",
+      "scripts/papertrader integrity --strict returned OK [integrity].",
+      "No allocation, signal, order, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

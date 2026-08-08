@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amat_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026035071/exhibit991q22026earningsre.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026035071/exhibit991q22026earningsre.htm",
+  "source_type": "regulator_filing",
+  "title": "Applied Materials Q2 fiscal 2026 results furnished on Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "553ff723eba5b193e45857a42d35d7864cd4c5cb7945901e583d4a61620231ba",
+  "related_entity_ids": "security_0a56aa634d077fe5796f",
+  "checked_at": "2026-08-08T11:54:15Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Applied reported record fiscal Q2 revenue of USD 7.91 billion, GAAP gross margin of 49.9%, and GAAP diluted EPS of USD 3.51.",
+  "summary": "Current primary results for the quarter ended 2026-04-26. Revenue rose 11% to USD 7.91 billion, GAAP operating margin reached 31.9%, and GAAP diluted EPS rose 33% to USD 3.51. Semiconductor Systems revenue rose 10% to USD 5.965 billion and AGS revenue rose 17% to USD 1.665 billion. Operating cash flow was USD 845 million but non-GAAP free cash flow fell 80% to USD 210 million. Management expects fiscal Q3 revenue of USD 8.95 billion plus or minus USD 500 million and non-GAAP diluted EPS of USD 3.36 plus or minus USD 0.20.",
+  "run_id": "daily-20260808T113248Z"
+}

@@ -2720,3 +2720,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   probability-weighted value. Expected return, base return, downside payoff, margin of safety,
   timing, and the missing accepted relationship keep the result Hold / Watch and allocation
   ineligible; no strategy, signal, order, or paper trade was created.
+
+## 2026-08-08 — full review — Applied Materials, Inc. common stock
+
+- Completed the first full assessment of [[securities/security_0a56aa634d077fe5796f|Applied
+  Materials]] using its fiscal Q2 2026 Form 10-Q and SEC-filed results release. Record revenue,
+  margins, segment growth, product breadth, service revenue, liquidity, and Q3 guidance support a
+  high-quality operating thesis, while customer concentration, China and export controls,
+  cyclicality, and weak recent free-cash-flow conversion remain material risks.
+- Reviewed the 2026-08-06 MACD cross above signal after a 10.39% decline over the canonical period.
+  The weak crossover is timing information rather than a new fundamental catalyst. USD
+  262.50/USD 416/USD 640 bear/base/bull values produce a USD 414.75 probability-weighted value
+  below the USD 539.14 mark, deriving Hold / Watch and allocation ineligibility; no strategy,
+  signal, order, or paper trade was created.
