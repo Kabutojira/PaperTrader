@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Arista Networks Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "ef779da6a72b571c20f9f6f91c4d1acb009e85d2ae2f6fd39d284e9283811361",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-08-08T19:45:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 revenue was USD 3.036 billion, GAAP diluted EPS was USD 0.95, and at June 30 cash and current marketable securities were USD 13.343 billion while non-cancellable purchase commitments were USD 9.7 billion.",
+  "summary": "The current Q2 filing confirms revenue, earnings, cash generation, liquidity, inventory, purchase commitments, dilution, customer concentration and predominant Broadcom merchant-silicon reliance used in the full review.",
+  "run_id": "daily-20260808T192334Z"
+}

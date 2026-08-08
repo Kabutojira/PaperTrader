@@ -1,0 +1,66 @@
+{
+  "operation_id": "01KZHE5TSGZG1J39Z17TDBK1DW",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "The bounded Arista Networks full review could not be accepted because the deterministic assessment upsert rejected the request with `assessment source operation is ambiguous for this run`: this run already contains the preceding quick-check assessment for the same security. The current accepted assessment and its hash-matched wiki page were preserved, and no idea follow-up, strategy, signal, order or accounting transition was created. Two current SEC-hosted primary sources were registered and the short security row was refreshed before the fail-closed assessment rejection. Schema, queue, strict wiki, strict integrity and strict portfolio-reconciliation checks all passed, but validation is false because this operation did not create the required comparable assessment.",
+  "evidence": [
+    {
+      "source": "Arista Networks Q2 2026 Form 10-Q",
+      "claim": "Q2 revenue was USD 3.036 billion, Q2 GAAP diluted EPS was USD 0.95, first-half operating cash flow was USD 2.777 billion, and June 30 cash plus current marketable securities were USD 13.343 billion; non-cancellable purchase commitments were USD 9.7 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm",
+      "observed_at": "2026-08-08T19:45:00Z",
+      "source_hash": "ef779da6a72b571c20f9f6f91c4d1acb009e85d2ae2f6fd39d284e9283811361"
+    },
+    {
+      "source": "Arista Networks Q2 2026 results, SEC-filed Exhibit 99.1",
+      "claim": "Q2 revenue increased 37.7% year over year to USD 3.036 billion, GAAP operating margin was 45.4%, and Q3 guidance called for approximately USD 3.3 billion of revenue.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000174/ex991q226-earningsrelease.htm",
+      "observed_at": "2026-08-08T19:45:00Z",
+      "source_hash": "2c09cea59dbcab3dc72a279846f27fa2e20ec4636775cd58028c30e7c6fc714d"
+    },
+    {
+      "source": "data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/command_audit.json",
+      "claim": "The audited assessment upsert exited 2 without changing assessment state because the deterministic source-operation resolver found more than one matching research operation for this security in run daily-20260808T192334Z. The request was not retried or bypassed."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/assessment_upsert_request.json",
+    "data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/security_upsert_request.json",
+    "data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/source_anet_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/source_anet_q2_2026_8k_exhibit_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Arista Networks full security review failed closed: current SEC evidence was retained, but the required scenario-complete assessment was not accepted because source-operation identity was ambiguous within the shared run. The prior Unrated / Watch, valuation-unsupported assessment remains current; no strategy, signal, order or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_6f9a1450edceb9307c9a",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/source_anet_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/source_anet_q2_2026_8k_exhibit_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T192334Z/01KZHE5TSGZG1J39Z17TDBK1DW/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_6f9a1450edceb9307c9a"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "PASSED: mandatory pre-review security-context receipt completed before assessment-state access.",
+      "PASSED: two current SEC-hosted primary sources were recorded through the project CLI with immutable request artifacts and SHA-256 identities.",
+      "PASSED: immutable ANET instrument identity remained security_6f9a1450edceb9307c9a / XNYS / ANET / USD / equity.",
+      "FAILED: assessment upsert exited 2 with `assessment source operation is ambiguous for this run`; no schema-v2 assessment history version was appended for this operation.",
+      "PASSED: the assessment command was not retried or bypassed after rejection.",
+      "PASSED: the attempted wiki update was restored; final security-context reported current_page_hash 9e6fe8209e1eec40dccfb0af50e810c2b615351a73620f01e3f1e3fbdc46ae51 matching the accepted current history version.",
+      "PASSED: schema validate --strict, queue validate, wiki lint --strict, integrity --strict and portfolio reconcile --strict all returned OK.",
+      "PASSED: no allocation target/history, order, execution, cash, portfolio, fill, performance or other accounting state changed."
+    ]
+  }
+}
