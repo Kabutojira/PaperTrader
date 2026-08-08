@@ -2,14 +2,17 @@
   "entity_id": "security_a5dc16f3f4b245e6c168",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-08T14:02:47Z",
     "baseline_operation_id": "01KYQCTS30GG62ZGQQAV3REQ88",
     "changed_gate": "goonhilly_acquisition_invalidates_pre_acquisition_valuation_inputs",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-05T06:59:21Z",
     "market_data_date": "2026-08-04",
     "period_end": "2026-08-04",
     "period_start": "2026-07-07",
     "quick_check_operation_id": "01KZ8BGD98NGR8DC52D40WR5VH",
+    "research_page": "data/wiki/securities/security_a5dc16f3f4b245e6c168.md",
     "research_reasons": [
       {
         "cause": "volume_anomaly_entered_with_21_79_percent_period_decline",
@@ -22,6 +25,19 @@
       {
         "cause": "goonhilly_completion_changed_cash_dilution_and_integration_inputs",
         "source_ref": "source_lunr_20260803_goonhilly_8k"
+      },
+      {
+        "dedupe_key": "security_research:security_a5dc16f3f4b245e6c168:allocation-maintenance:2026-08-08T14:02:47Z",
+        "observed_at": "2026-08-08T19:23:43Z",
+        "prompt": "Revalidate security_a5dc16f3f4b245e6c168 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_lunr_20260803_goonhilly_8k",
+          "source_lunr_clps_20260630",
+          "source_lunr_q1_2026_10q",
+          "source_lunr_q2_2026_date",
+          "source_lunr_sec_submissions_20260808"
+        ]
       }
     ],
     "security_id": "security_a5dc16f3f4b245e6c168",
@@ -30,13 +46,17 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Fully reassess Intuitive Machines after the Goonhilly acquisition, August volume anomaly, valuation-support gap, and pre-Q2 allocation-maintenance request.",
+  "objective": "Fully reassess Intuitive Machines after the Goonhilly acquisition, August volume anomaly, valuation-support gap, and pre-Q2 allocation-maintenance request. | Additional cause: Revalidate security_a5dc16f3f4b245e6c168 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZGV5E1GF4N027VZVMD02HEZ",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/operations/payloads/01KZ8BGD98NGR8DC52D40WR5VH.json",
     "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073.md",
-    "source_lunr_20260803_goonhilly_8k"
+    "source_lunr_20260803_goonhilly_8k",
+    "source_lunr_clps_20260630",
+    "source_lunr_q1_2026_10q",
+    "source_lunr_q2_2026_date",
+    "source_lunr_sec_submissions_20260808"
   ]
 }
