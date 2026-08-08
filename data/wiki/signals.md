@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-07"
-updated: "2026-08-07"
+created: "2026-08-08"
+updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_82e786976fa2f781c584"
-as_of: "2026-08-07T16:49:41Z"
+snapshot_id: "decision_fbf6c8f9bba700f1666d"
+as_of: "2026-08-08T11:13:14Z"
 ---
 
 # Signals
 
-**As of `2026-08-07T16:49:41Z`**
+**As of `2026-08-08T11:13:14Z`**
 
 ## Actionable trade signals
 
@@ -25,21 +25,30 @@ No pending orders.
 
 ## Research alerts — not trade signals
 
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
+- Alert: `rsi\_overbought`
 - Market date: `2026-08-07`
 - Research status: `succeeded`
-- Conclusion: Completed the dependent full review of Nidec Corporation's Frankfurt ordinary shares. The final independent report shows structural accounting misconduct across operating bases, including inventory valuation, impairment testing, capitalized labor, provision reversals, grant recognition and bad-debt allowances, and provisionally reduces cumulative operating profit by JPY 166.4 billion and period profit by JPY 160.7 billion through fiscal Q1 2025 before derivative effects. Preliminary fiscal-2025 sales of JPY 2.700 trillion and net debt of JPY 260 billion explicitly exclude accounting corrections and unresolved quality and customs impacts, so they cannot support normalized per-share earnings. NIB.F remains Unrated / Watch, unsupported and allocation-ineligible at EUR 14.818, with accounting uncertainty, thin Frankfurt liquidity and unsupported valuation as exact hard blockers. No linked idea exists, and no strategy, signal, order, allocation or accounting state changed.
+- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
+
+### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `succeeded`
+- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
 
 ### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
@@ -48,7 +57,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `succeeded`
 - Conclusion: Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and equipment purchases reached USD 28.476 billion, customer concentration and controller governance are material, and the USD 125.33 mark embeds extreme revenue multiples. The deterministic assessment recorded Hold, Watch, 72 quality, low confidence, and USD 50/USD 110/USD 195 bear/base/bull fair values with USD 109 probability-weighted value. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
 
@@ -57,43 +66,115 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `succeeded`
 - Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
 
-### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
+### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
 
 **Research alert — not a trade signal**
 
-- Alert: `rsi\_oversold`
-- Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
+
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-07`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
+
+### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
+
+### [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### MSTR — Strategy Inc
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `succeeded`
 - Conclusion: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
+
+### [MP — MP Materials Corp.](securities/security_cd492d97064d8574156e)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
@@ -102,25 +183,16 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
-
-### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
-- Research status: `succeeded`
-- Conclusion: Completed the full Fluence fiscal Q3 review under an isolated retry run so the immutable assessment links unambiguously. Record order intake, 12.6 GW storage backlog and data-centre awards confirm high grid-storage demand sensitivity, but 5.1% quarterly gross margin, 48% customer concentration, a 72% inventory increase, USD 366.5 million nine-month operating cash use and reduced guidance show fragile shareholder economics. Exact filing inputs refine the scenarios to USD 4.59/USD 11.09/USD 20.84 and USD 10.2775 weighted value against the USD 14.23 mark. The canonical result remains complete but ineligible Sell / Avoid; no strategy or paper trade was created. Exactly one dependent solar-storage idea refresh, Idea research for Solar, storage, and grid-flexibility reset on 2026-08-06, was enqueued.
 
 ### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `blocked`
 - Conclusion: High-priority security research is blocked. dependency\_unavailable:Quick check research for DNA on 2026-08-07
 
@@ -128,8 +200,26 @@ No pending orders.
 
 **Research alert — not a trade signal**
 
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
+
+**Research alert — not a trade signal**
+
 - Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
@@ -138,7 +228,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
@@ -146,64 +236,46 @@ No pending orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-06`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout, but the 20-session return remained negative 10.4%. Registered all three primary sources, created the maintained security page, updated the security row, and wrote the first schema-v2 assessment. Strong liquidity supports continued coverage, while unreported Phase 2 efficacy and missing program-level probability, commercial, development-cost, burn, and dilution inputs make risk-adjusted NPV unsupported. Deterministic state derives Unrated / Watch and allocation ineligibility; no linked idea, strategy, signal, order, allocation, or accounting state changed.
-
-### [VRT — Vertiv Holdings Co](securities/security_cb88f9154cfeaa15e878)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [QCOM — QUALCOMM Incorporated](securities/security_3a75fc1ccca2ee7c937a)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-06`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [FLNC — Fluence Energy, Inc.](securities/security_a9eb9838940ef5ceaa0c)
-
-**Research alert — not a trade signal**
-
-- Alert: `sma\_50\_cross\_below\_200`
-- Market date: `2026-08-06`
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-07`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### AMAT — Applied Materials, Inc.
+### TXN — Texas Instruments Incorporated
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-06`
+- Market date: `2026-08-07`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
 
-### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
+### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-06`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one initial AbCellera Biologics security review from the current Q2 2026 Form 10-Q, SEC-filed results release, ClinicalTrials.gov record, and canonical 6 August market state. The 10.3% post-results rebound and 2.06 volume z-score are explained by liquidity, funded Jazz and Vertex collaborations, and the imminent ABCL635 readout, but the 20-session return remained negative 10.4%. Registered all three primary sources, created the maintained security page, updated the security row, and wrote the first schema-v2 assessment. Strong liquidity supports continued coverage, while unreported Phase 2 efficacy and missing program-level probability, commercial, development-cost, burn, and dilution inputs make risk-adjusted NPV unsupported. Deterministic state derives Unrated / Watch and allocation ineligibility; no linked idea, strategy, signal, order, allocation, or accounting state changed.
+- Market date: `2026-08-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [HOOD — Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a)
+
+**Research alert — not a trade signal**
+
+- Alert: `sma\_50\_cross\_above\_200`
+- Market date: `2026-08-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-07`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 
 ## Recently expired or completed signals

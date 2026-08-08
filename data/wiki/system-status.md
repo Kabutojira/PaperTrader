@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-07"
-updated: "2026-08-07"
+created: "2026-08-08"
+updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_82e786976fa2f781c584"
-as_of: "2026-08-07T16:49:41Z"
+snapshot_id: "decision_fbf6c8f9bba700f1666d"
+as_of: "2026-08-08T11:13:14Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-07T16:49:41Z`
+**As of:** `2026-08-08T11:13:14Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-07T16:49:41Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 312
+- Research backlog: 332
 - Last successful daily run: 2026-08-06
 
 ## Current issues by investment impact
@@ -135,15 +135,13 @@ as_of: "2026-08-07T16:49:41Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 312 active operations.
+Showing 20 of 332 active operations.
 
 <details><summary>Active research work</summary>
 
-- Ready — [[security-catalog#security-security_83a56943e18793f685b0|Security research for TXN on 2026-07-29]]
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [[security-catalog#security-security_fe5539a7d3fd9d553bce|Security research for MSTR on 2026-07-29]]
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=9ePWIYadju4)
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=J2ZqFVpMb5M)
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=6006vpLlaVw)
@@ -159,6 +157,8 @@ Showing 20 of 312 active operations.
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=oyjpF7xPiC4)
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=u-AXyF9kY9k)
 - Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wcV0SRPFK9s)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Ejsft2oPCtM)
+- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=pVaKoDHW9iY)
 
 </details>
 
