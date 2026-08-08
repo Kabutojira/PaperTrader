@@ -1,0 +1,88 @@
+{
+  "operation_id": "01KZEHGE70QV9HKC2T38858SKT",
+  "status": "failed",
+  "reason_code": "assessment_soft_gaps_noncanonical",
+  "summary": "The bounded CRSR full review rechecked the current Q2 Form 10-Q and SEC-filed results release and prepared a scenario-complete reassessment against the canonical USD 14.35 mark. The deterministic assessment applier rejected the request because two proposed soft-gap values were not canonical. Per controller policy, the rejected assessment command was not retried or substituted. The security page was restored byte-for-byte to the accepted quick-check version, and final security context confirms its hash still matches assessment_d52252a2530f6940e6cd. A bounded security-row correction was separately rejected because next_review_at did not strictly follow last_research_at, so the earlier applied security-row draft remains explicit failed-operation evidence. No assessment, strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.",
+  "evidence": [
+    {
+      "source": "source_crsr_q2_2026_10q",
+      "claim": "The SEC filing remained available with unchanged content hash and confirms USD 193.9 million of cash and restricted cash, USD 118.3 million of debt, Amazon at 25.7% of first-half revenue, and the post-quarter Trak Racer asset acquisition.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+      "observed_at": "2026-08-08T11:03:57Z",
+      "source_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363"
+    },
+    {
+      "source": "source_crsr_q2_2026_results",
+      "claim": "The SEC-filed issuer release remained available with unchanged content hash and supports raised 2026 guidance, underlying adjusted EBITDA above Q2 guidance, segment trends, cash generation, and normalization of the one-time tariff refund.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+      "observed_at": "2026-08-08T11:03:57Z",
+      "source_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-23e48859ad86.md",
+      "claim": "Canonical market data records a USD 14.350000381469727 close on 2026-08-07, a 48.55% period return, and volume-anomaly strength of 1.108979875.",
+      "observed_at": "2026-08-08T11:01:36Z",
+      "source_hash": "5223e984aad28b387ae6d6213cd418ca524fb89d7c7dbead5dcfae11528a128c"
+    },
+    {
+      "source": "papertrader research assessment upsert",
+      "claim": "The deterministic applier rejected assessment_upsert_request.json because soft_gaps contained non-canonical values timing_adverse and valuation_overextended. No assessment version was written."
+    },
+    {
+      "source": "papertrader research security upsert",
+      "claim": "The bounded security correction request was rejected because next_review_at must strictly follow last_research_at; the previously applied security-row draft therefore remains recorded as failed-operation evidence."
+    },
+    {
+      "source": "assessment_d52252a2530f6940e6cd",
+      "claim": "Final security-context validation confirms the current accepted assessment remains Hold / Watch and the restored research page hash is 483889f68386f00305497b2a8f4ba7b8bf02b9a31e55e0a7f5df3ea7ce6f7be0."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/security_correction_request.json",
+    "data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CRSR full review failed closed: the deterministic assessment applier rejected non-canonical soft-gap values. The accepted Hold / Watch assessment and matching research page remain in force; no strategy, trade, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research source record --request data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T110128Z/01KZEHGE70QV9HKC2T38858SKT/security_correction_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory audited security-context ran before assessment-state reads or changes.",
+      "Both retained Q2 primary sources were refreshed through the project CLI with HTTP 200 status and unchanged content hashes.",
+      "Identity-matched market and FX state were fresh as of 2026-08-08T11:01:36Z.",
+      "The assessment write failed closed on non-canonical soft-gap values; no assessment version was accepted for this operation.",
+      "No rejected command was retried and no substitute invocation path was used.",
+      "The research page was restored byte-for-byte to the accepted quick-check state; final security-context confirmed its hash matches assessment_d52252a2530f6940e6cd.",
+      "The deterministic CLI rejected the bounded security-row correction because next_review_at did not strictly follow last_research_at; the operation reports failure rather than claiming a coherent completed review.",
+      "No linked canonical idea or accepted relationship exists, so no idea-research follow-up was required or created.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

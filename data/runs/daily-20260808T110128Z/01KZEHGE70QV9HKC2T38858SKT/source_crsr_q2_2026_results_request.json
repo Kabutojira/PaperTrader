@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crsr_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+  "source_type": "issuer_release",
+  "title": "Corsair reports strong second quarter 2026 profit growth and cash generation",
+  "publisher": "Corsair Gaming, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e",
+  "related_entity_ids": "security_55c9ce2fdcd32dad6b8c",
+  "checked_at": "2026-08-08T11:03:57Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Full-year guidance increased to $1.40-$1.47 billion revenue, $121-$131 million adjusted EBITDA, and $0.85-$0.94 non-GAAP EPS after a material one-time Q2 tariff refund.",
+  "summary": "The SEC-filed release supports Q2 underlying-profit normalization, updated full-year guidance, segment trends, operating catalysts and the distinction between recurring progress and the one-time tariff benefit.",
+  "run_id": "daily-20260808T110128Z"
+}
