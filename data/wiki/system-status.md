@@ -7,13 +7,13 @@ tags:
 created: "2026-08-08"
 updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_fbf6c8f9bba700f1666d"
-as_of: "2026-08-08T11:13:14Z"
+snapshot_id: "decision_c40bd1927229031d7005"
+as_of: "2026-08-08T12:35:28Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-08T11:13:14Z`
+**As of:** `2026-08-08T12:35:28Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -21,17 +21,17 @@ as_of: "2026-08-08T11:13:14Z"
 
 ## Coverage
 
-- Assessments: 65/65
-- Fresh-evidence assessments: 64/65
-- Relationship reviews: 26/65
+- Assessments: 68/68
+- Fresh-evidence assessments: 68/68
+- Relationship reviews: 26/68
 - Accepted relationships: 23
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 332
-- Last successful daily run: 2026-08-06
+- Research backlog: 330
+- Last successful daily run: 2026-08-08
 
 ## Current issues by investment impact
 
@@ -43,6 +43,7 @@ as_of: "2026-08-08T11:13:14Z"
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-05]]** — repeat security research page requires a Changes since prior review section
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Warning **LAC — Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]** — [[securities/security_fb87fac302a5446a1ced|LAC]]: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - Warning **HOOD — Robinhood Markets, Inc.: Daily preparation degraded: [[securities/security_ad3b1f8f59fd599f079a|HOOD]]** — [[securities/security_ad3b1f8f59fd599f079a|HOOD]]: price cache is empty
@@ -73,7 +74,7 @@ as_of: "2026-08-08T11:13:14Z"
 - Warning **ANIC.L — Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]** — [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]: price cache is empty
 - Warning **GOOGL — Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]** — [[securities/security_c86bb4e75658c07142cf|GOOGL]]: price cache is empty
 - Warning **ABCL — AbCellera Biologics Inc.: Daily preparation degraded: [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]** — [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]: price cache is empty
-- Warning **TXN — Texas Instruments Incorporated: Daily preparation degraded: [[security-catalog#security-security_83a56943e18793f685b0|TXN]]** — [[security-catalog#security-security_83a56943e18793f685b0|TXN]]: price cache is empty
+- Warning **TXN — Texas Instruments Incorporated: Daily preparation degraded: [[securities/security_83a56943e18793f685b0|TXN]]** — [[securities/security_83a56943e18793f685b0|TXN]]: price cache is empty
 - Warning **VLO — Valero Energy Corporation: Daily preparation degraded: [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]** — [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]: price cache is empty
 - Warning **QCOM — QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]** — [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]: price cache is empty
 - Warning **MP — MP Materials Corp.: Daily preparation degraded: [[securities/security_cd492d97064d8574156e|MP]]** — [[securities/security_cd492d97064d8574156e|MP]]: price cache is empty
@@ -84,7 +85,7 @@ as_of: "2026-08-08T11:13:14Z"
 - Warning **RTX — RTX Corporation: Daily preparation degraded: [[securities/security_59304f90c440def31dc5|RTX]]** — [[securities/security_59304f90c440def31dc5|RTX]]: YFTzMissingError: $RTX: possibly delisted; no timezone found
 - Warning **ASML — ASML Holding N.V.: Daily preparation degraded: [[securities/security_ef35e41886220d51c22c|ASML]]** — [[securities/security_ef35e41886220d51c22c|ASML]]: price cache is empty
 - Warning **ENPH — Enphase Energy, Inc.: Daily preparation degraded: [[securities/security_f2b9760d847b2ba59324|ENPH]]** — [[securities/security_f2b9760d847b2ba59324|ENPH]]: YFTzMissingError: $ENPH: possibly delisted; no timezone found
-- Warning **MSTR — Strategy Inc: Daily preparation degraded: [[security-catalog#security-security_fe5539a7d3fd9d553bce|MSTR]]** — [[security-catalog#security-security_fe5539a7d3fd9d553bce|MSTR]]: price cache is empty
+- Warning **MSTR — Strategy Inc: Daily preparation degraded: [[securities/security_fe5539a7d3fd9d553bce|MSTR]]** — [[securities/security_fe5539a7d3fd9d553bce|MSTR]]: price cache is empty
 - Warning **SPCX — Space Exploration Technologies Corp.: Daily preparation degraded: [[securities/security_664f93a7eaca72e76e9b|SPCX]]** — [[securities/security_664f93a7eaca72e76e9b|SPCX]]: price cache is empty
 - Warning **NBIS — Nebius Group N.V.: Daily preparation degraded: [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]** — [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]: price cache is empty
 - Warning **CRWD — CrowdStrike Holdings, Inc.: Daily preparation degraded: [[securities/security_8472507d7d320aa388a7|CRWD]]** — [[securities/security_8472507d7d320aa388a7|CRWD]]: YFTzMissingError: $CRWD: possibly delisted; no timezone found
@@ -101,7 +102,7 @@ as_of: "2026-08-08T11:13:14Z"
 - Warning **PL — Planet Labs PBC: Daily preparation degraded: [[securities/security_97f38b2cb2d5ef127f5a|PL]]** — [[securities/security_97f38b2cb2d5ef127f5a|PL]]: price cache is empty
 - Warning **TDY — Teledyne Technologies Incorporated: Daily preparation degraded: [[securities/security_ad5917642acbba28c1f2|TDY]]** — [[securities/security_ad5917642acbba28c1f2|TDY]]: price cache is empty
 - Warning **PLTR — Palantir Technologies Inc.: Daily preparation degraded: [[securities/security_bdc2f87dadf134760c3a|PLTR]]** — [[securities/security_bdc2f87dadf134760c3a|PLTR]]: YFTzMissingError: $PLTR: possibly delisted; no timezone found
-- Warning **AMAT — Applied Materials, Inc.: Daily preparation degraded: [[security-catalog#security-security_0a56aa634d077fe5796f|AMAT]]** — [[security-catalog#security-security_0a56aa634d077fe5796f|AMAT]]: price cache is empty
+- Warning **AMAT — Applied Materials, Inc.: Daily preparation degraded: [[securities/security_0a56aa634d077fe5796f|AMAT]]** — [[securities/security_0a56aa634d077fe5796f|AMAT]]: price cache is empty
 - Warning **NIB.F — Nidec Corporation: Daily preparation degraded: [[securities/security_3853e54c619d597dcaa1|NIB.F]]** — [[securities/security_3853e54c619d597dcaa1|NIB.F]]: price cache is empty
 - Warning **LUNR — Intuitive Machines, Inc.: Daily preparation degraded: [[securities/security_a5dc16f3f4b245e6c168|LUNR]]** — [[securities/security_a5dc16f3f4b245e6c168|LUNR]]: price cache is empty
 - Warning **COIN — Coinbase Global, Inc.: Daily preparation degraded: [[securities/security_37ddcbdaad296ad831f2|COIN]]** — [[securities/security_37ddcbdaad296ad831f2|COIN]]: YFTzMissingError: $COIN: possibly delisted; no timezone found
@@ -135,7 +136,7 @@ as_of: "2026-08-08T11:13:14Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 332 active operations.
+Showing 20 of 330 active operations.
 
 <details><summary>Active research work</summary>
 

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-08"
 updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_fbf6c8f9bba700f1666d"
-as_of: "2026-08-08T11:13:14Z"
+snapshot_id: "decision_c40bd1927229031d7005"
+as_of: "2026-08-08T12:35:28Z"
 ---
 
 # Signals
 
-**As of `2026-08-08T11:13:14Z`**
+**As of `2026-08-08T12:35:28Z`**
 
 ## Actionable trade signals
 
@@ -133,14 +133,14 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### MSTR — Strategy Inc
+### [MSTR — Strategy Inc](securities/security_fe5539a7d3fd9d553bce)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-07`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first full Strategy Inc Class A common-stock review from immutable MSTR/XNAS/USD identity, fresh SEC-filed second-quarter and August 3 treasury evidence, and the canonical 2026-08-07 volume alert. Bitcoin scale and capital-market access support the treasury mechanism, but Bitcoin volatility, current common dilution, USD 6.710 billion debt, roughly USD 15.462 billion preferred liquidation preference, preferred funding costs, and limited software economics constrain the residual common claim. The deterministic schema-v2 assessment derives USD 52.50/USD 108.16/USD 175.99 bear/base/bull values, USD 105.028 probability-weighted fair value, 3.76% confidence-adjusted expected return, Hold/Watch, and allocation ineligibility versus the USD 100.01 mark. No linked idea, accepted relationship, or strategy existed, so no follow-up was required; no signal, order, or paper trade was created.
 
 ### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
 
@@ -220,8 +220,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-07`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the bounded full Q2 2026 review of Corsair Gaming common stock. Reverified the unchanged SEC Form 10-Q and SEC-filed results release, refreshed the security page and structured row, and appended exactly one schema-v2 assessment linked to its predecessor. At the canonical USD 14.350000381469727 mark, revised USD 6.60/USD 12.00/USD 18.90 bear/base/bull values produce USD 12.03 probability-weighted fair value, -16.16724961530706640473577404% expected return, -12.12543721148029980355183053% confidence-adjusted return, and -19.583336512247725% margin of safety. Deterministic state derives Sell / Avoid and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and accepted-relationship gates fail. No strategy, signal, order, idea follow-up, allocation, or accounting state was created or changed.
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -241,14 +241,14 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### TXN — Texas Instruments Incorporated
+### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-07`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the first full Texas Instruments common-stock review from immutable XNAS/USD identity, fresh SEC-filed second-quarter 2026 evidence, and the canonical 2026-08-07 MACD alert. Broad industrial, data-center and automotive recovery, analog breadth, 300mm economics, margins and cash generation support an 80 quality score, while cyclicality, fixed manufacturing costs, inventory, Silicon Labs acquisition financing, leverage and valuation remain material risks. The deterministic schema-v2 assessment derives USD 150/USD 256.50/USD 374 bear/base/bull values, USD 259.25 probability-weighted fair value, -7.03% confidence-adjusted expected return, Hold/Watch, and allocation ineligibility versus the USD 286.08 mark. No linked idea or accepted relationship existed, so no idea follow-up was required; no strategy, signal, order, or paper trade was created.
 
 ### [TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b)
 

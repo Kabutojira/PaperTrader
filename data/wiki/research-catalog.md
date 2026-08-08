@@ -7,8 +7,8 @@ tags:
 created: "2026-08-08"
 updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_fbf6c8f9bba700f1666d"
-as_of: "2026-08-08T11:13:14Z"
+snapshot_id: "decision_c40bd1927229031d7005"
+as_of: "2026-08-08T12:35:28Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **92**
-- Securities with retained revisions: **65**
+- Immutable assessment versions: **97**
+- Securities with retained revisions: **68**
 
 ## Candidate
 
@@ -387,8 +387,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Taiwan Semiconductor Manufacturing Company Limited sponsored ADR](securities/security_ce9b78a4d0773c950765)
 - [Teledyne Technologies Incorporated common stock](securities/security_ad5917642acbba28c1f2)
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)
-- [Texas Instruments Incorporated common stock](securities/security_83a56943e18793f685b0)
 - [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)
+- [Texas Instruments Incorporated common stock](securities/security_83a56943e18793f685b0)
 - [Twist Bioscience Corporation common stock](securities/security_6cf75bd0ec0aa2a20148)
 - [UiPath, Inc. Class A common stock](securities/security_eca976f0076a425ea1bb)
 - [Vertiv Holdings Co Class A common stock](securities/security_cb88f9154cfeaa15e878)

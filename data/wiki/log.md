@@ -2699,6 +2699,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260808]] for run `daily-20260808T110128Z`.
 
+- Published investor decision snapshot `decision_c40bd1927229031d7005`.
+
+- Generated canonical [[daily-reports/daily-report_20260808]] for run `daily-20260808T113248Z`.
+
 ## 2026-08-08 — full review — Corsair Gaming, Inc. common stock
 
 - Reassessed [[securities/security_55c9ce2fdcd32dad6b8c|Corsair Gaming]] against the unchanged Q2

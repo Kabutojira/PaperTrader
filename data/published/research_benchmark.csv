@@ -1,3 +1,3 @@
 snapshot_id,as_of,policy_version,comparison_only,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_fbf6c8f9bba700f1666d,2026-08-08T11:13:14Z,equal_weight_rated_v1,true,false,security_33d9c44facc75c726c7d,NVDA,NVIDIA Corporation,buy,25,218.99000549316406,USD,data/wiki/securities/security_33d9c44facc75c726c7d.md
-decision_fbf6c8f9bba700f1666d,2026-08-08T11:13:14Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,
+decision_c40bd1927229031d7005,2026-08-08T12:35:28Z,equal_weight_rated_v1,true,false,security_33d9c44facc75c726c7d,NVDA,NVIDIA Corporation,buy,25,218.99000549316406,USD,data/wiki/securities/security_33d9c44facc75c726c7d.md
+decision_c40bd1927229031d7005,2026-08-08T12:35:28Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,
