@@ -2790,3 +2790,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   shares, and unresolved integration and post-closing inputs make the prior revenue-multiple
   sensitivity unsupported. LUNR remains Watch and allocation-ineligible; exactly one dependent
   full review was requested and no paper trade was created.
+
+## 2026-08-08 — full review — Intuitive Machines, Inc. Class A common stock
+
+- Reassessed [[securities/security_a5dc16f3f4b245e6c168|Intuitive Machines]] against five freshly
+  checked primary sources after the August 4 volume anomaly and Goonhilly completion. The Q1 Form
+  10-Q and August 3 acquisition Form 8-K remain the latest financial and operating evidence.
+- Goonhilly's known cash and share consideration is insufficient for a scenario-complete common-
+  equity valuation without acquired contribution, integration expense, working-capital, cash,
+  debt, capex, post-closing adjustments and updated dilution. The full review therefore preserves
+  Unrated / Watch and allocation ineligibility rather than inventing bear, base or bull values.
+- The August 7 USD 16.40 mark and upper-Bollinger close remain volatile event digestion before the
+  August 13 Q2 release. No strategy, signal, order or paper trade was created.

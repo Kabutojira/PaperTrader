@@ -1,0 +1,96 @@
+{
+  "operation_id": "01KZGV5E1GF4N027VZVMD02HEZ",
+  "status": "succeeded",
+  "summary": "Completed one full research review of Intuitive Machines Class A common stock. Five retained primary sources were freshly checked, immutable LUNR/XNAS/USD/equity identity was preserved, and the security page and structured row were updated. The schema-v2 assessment remains explicitly unsupported, Unrated, Watch, and allocation-ineligible because the acquisition filing does not quantify acquired contribution, integration expense, working-capital, cash, debt, specified-capex and post-closing adjustments or a current diluted claim count. No bear/base/bull values were invented, and no strategy, signal, order, issue, or follow-up operation was created. The next review remains the August 13, 2026 Q2 release.",
+  "evidence": [
+    {
+      "source": "source_lunr_q1_2026_10q",
+      "claim": "The unchanged Q1 2026 Form 10-Q remains the latest periodic filing and reports USD 186.7 million of Q1 revenue, USD 1.055 billion of backlog, USD 231.6 million of cash, and USD 335.8 million of long-term debt.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+      "observed_at": "2026-08-08T19:25:47Z",
+      "source_hash": "b424eafae59554bcc85b691b296c18f939451e033e832e795ceb7220a9e4660e"
+    },
+    {
+      "source": "source_lunr_20260803_goonhilly_8k",
+      "claim": "The unchanged August 3 Form 8-K confirms the Goonhilly acquisitions and discloses GBP 37.0 million of UK consideration split equally between cash and 960,649 Class A shares plus a USD 10 million COMSAT base cash price, expenses and post-closing adjustments; it does not provide acquired contribution or integration economics.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+      "observed_at": "2026-08-08T19:25:47Z",
+      "source_hash": "e46bd0d28879442d54280af5c24d6d1748e8329508849fa11dd8e2750b99b68e"
+    },
+    {
+      "source": "source_lunr_sec_submissions_20260808",
+      "claim": "The SEC submissions index shows no later issuer operating filing after the August 3 acquisition Form 8-K through the check; the later August 6 filing is Schedule 13G/A ownership disclosure.",
+      "url": "https://data.sec.gov/submissions/CIK0001844452.json",
+      "observed_at": "2026-08-08T19:25:47Z",
+      "source_hash": "3d528a6a1015b7f0feb80e74e93f0f1b34824e670d6261ce73cd33cc343123aa"
+    },
+    {
+      "source": "source_lunr_clps_20260630",
+      "claim": "The current issuer release continues to support a firm-fixed-price CLPS award valued up to USD 148.3 million, including a USD 79.7 million incentive conditional on successful product-line qualification.",
+      "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-secures-sixth-nasa-clps-award-establish-high",
+      "observed_at": "2026-08-08T19:25:47Z",
+      "source_hash": "e20d6b5c52b18f4c94587977fd2e837dc9e2ad699aa9e1fb652fb09669d84a14"
+    },
+    {
+      "source": "source_lunr_q2_2026_date",
+      "claim": "The current issuer release confirms Q2 2026 results are due before the market opens on August 13, 2026 and contains no operating result or valuation input.",
+      "url": "https://investors.intuitivemachines.com/news-releases/news-release-details/intuitive-machines-announces-date-second-quarter-2026-financial",
+      "observed_at": "2026-08-08T19:25:47Z",
+      "source_hash": "43856d4ea8691637afd4977f7f7cbf49c228bfef36f8e5700ede6b445b797724"
+    },
+    {
+      "source": "data/market/latest.csv",
+      "claim": "The identity-matched current LUNR mark was USD 16.399999618530273 for the August 7 completed session, retrieved at 2026-08-08T19:23:43Z; canonical USD/EUR FX was 0.8648999929428101 at the same retrieval time. The assessment applier accepted both references as fresh."
+    },
+    {
+      "source": "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/command_audit.json",
+      "claim": "The mandatory repeat-review security-context receipt succeeded before assessment state was read, and the new immutable schema-v2 assessment links predecessor assessment_3b6200d9481217132a1c to assessment_0e788678ac0857de5db8 with this operation, result path, page hash, evidence, and run provenance."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/assessment_upsert_request.json",
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/security_upsert_request.json",
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_20260803_goonhilly_8k_refresh_request.json",
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_clps_20260630_refresh_request.json",
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_q1_2026_10q_refresh_request.json",
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_q2_2026_date_refresh_request.json",
+    "data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_sec_submissions_20260808_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a5dc16f3f4b245e6c168.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "LUNR full review: five primary sources were freshly checked; Goonhilly adds communications assets but unresolved acquired contribution, integration economics, adjustments and current dilution keep valuation unsupported, Unrated / Watch, and allocation-ineligible.",
+    "The August 7 USD 16.40 mark and upper-Bollinger close remain volatile event digestion before August 13 Q2 results; no strategy, signal, order or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_q1_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_20260803_goonhilly_8k_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_sec_submissions_20260808_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_clps_20260630_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_q2_2026_date_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T192334Z/01KZGV5E1GF4N027VZVMD02HEZ/assessment_upsert_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory security-context command completed successfully before assessment-state review.",
+      "Five retained primary sources were fetched or checked and recorded through audited source CLI requests with fresh 2026-08-08T19:25:47Z timestamps.",
+      "Security upsert preserved issuer, instrument, venue, provider, currency and instrument-type identity and updated only the bounded research projection.",
+      "Assessment upsert accepted the current identity-matched USD mark and canonical USD/EUR FX, fresh evidence, anchored 20/40/60/80/100 scores, explicit valuation_unsupported blocker, and empty scenario fields.",
+      "Immutable assessment history row assessment_0e788678ac0857de5db8 links predecessor assessment_3b6200d9481217132a1c and records schema version 2, source operation/result, current page hash, evidence and run provenance.",
+      "No payload idea IDs or accepted canonical relationships exist for this security, so the required linked-idea follow-up count is zero; no strategy gate was evaluated as passing.",
+      "Strict wiki lint returned OK [wiki].",
+      "Git diff check passed and no allocation, strategy, signal, order, execution, cash, portfolio, fill or performance state was changed."
+    ]
+  }
+}

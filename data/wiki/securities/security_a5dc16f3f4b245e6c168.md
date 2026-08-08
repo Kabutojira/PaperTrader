@@ -93,25 +93,27 @@ expenses and post-closing adjustments. The transaction adds earth-station and sa
 communications capability, but it also changes cash, dilution, integration and valuation inputs.
 The August 6 Schedule 13G/A is an ownership filing, not new operating evidence.
 
-## Valuation
+## Full review at 2026-08-08
 
-At USD 12.3599 and 216.8 million reported Class A and Class C shares outstanding at 31 March, the
-equity value is approximately USD 2.68 billion. Adding USD 335.8 million of long-term debt and
-subtracting USD 231.6 million of cash gives an approximate USD 2.78 billion enterprise value, or
-2.93 times the USD 950 million midpoint of 2026 revenue guidance. This is a favorable simplification
-because it does not add preferred stock, warrants, employee awards, or other claims and because the
-reported share count may change before the 12-month horizon.
+The five retained primary sources were rechecked. Their material evidence is unchanged: the Q1 Form
+10-Q remains the latest periodic filing, the August 3 Form 8-K remains the latest operating filing,
+and the August 6 Schedule 13G/A is an ownership filing. The June CLPS release still supports a
+qualification-dependent award of up to USD 148.3 million, while the Q2 scheduling release confirms
+that results are due before the August 13 market open and supplies no financial result.
 
-A bounded pre-acquisition 12-month sensitivity, not a precise price target, used the reported share count and USD
-104.2 million of net debt. A downside case applies 1.5 times the USD 900 million low end of revenue
-guidance, producing USD 5.75 per share, or **53.5% downside**. A base case applies 2.5 times the USD
-950 million midpoint, producing USD 10.47 per share, or **15.3% downside**. The base multiple still
-assumes successful Lanteris integration, backlog conversion, and positive adjusted EBITDA. Neither
-case supported the configured margin of safety despite the oversold decline. It is no longer a
-decision-ready comparable valuation because it predates the Goonhilly cash and share consideration
-and contains no contribution, integration-cost or post-closing-adjustment assumptions. The quick
-check therefore records valuation as unsupported pending the dependent full review rather than
-inventing revised scenarios before Q2 results.
+The review confirms the immutable LUNR / XNAS / USD / equity identity and the pre-profit-growth
+valuation template with revenue multiple as the permitted method. It does **not** support a new
+scenario valuation. Goonhilly's known consideration establishes at least GBP 18.5 million of UK
+cash consideration, 960,649 new Class A shares, and a USD 10 million COMSAT base cash price, but the
+filing leaves acquired revenue and margins, integration expense, working-capital, cash, debt,
+specified-capex and post-closing adjustments unresolved. The Q1 filing also predates completion and
+does not provide consolidated Goonhilly unit economics or an updated diluted claim count.
+
+Using the pre-acquisition USD 5.75 and USD 10.47 sensitivities as current bear or base values would
+hide those missing inputs. Adding arbitrary acquired contribution, conversion rates or adjustments
+would instead invent evidence. The schema-v2 result therefore remains explicitly **unsupported**,
+with no bear, base or bull values or probabilities, until primary evidence supplies the missing
+inputs. This is a valuation blocker, not a claim that fair value is zero.
 
 ## Catalysts and invalidation
 
@@ -126,23 +128,28 @@ delivery, key missions fail, or dilution overwhelms per-share growth.
 Status: **watching** with **medium** confidence and an **unsupported** current valuation. Scale,
 backlog, contract wins, and Goonhilly's communications footprint warrant continued review, but cash
 burn, debt, dilution, two concurrent integrations, government-contract exposure, pre-results
-timing, and stale valuation inputs prevent allocation or a strategy. Exactly one dependent full
-security review is required before or with the **2026-08-13** Q2 results. No paper strategy or
-signal is justified.
+timing, and unresolved valuation inputs prevent allocation or a strategy. The next bounded review
+is the **2026-08-13** Q2 release, when consolidated contribution, cash, debt, dilution, integration
+and guidance evidence may resolve the blocker. No paper strategy or signal is justified.
 
 ## Changes since prior review
 
-- **Changed evidence:** the August 3 Form 8-K completed the Goonhilly acquisition after the prior
-  review; the Q1 filing hash remains unchanged and no later periodic financial filing was present.
-- **Changed market state:** the August 4 volume anomaly accompanied a 21.79% measured decline, then
-  the mark rebounded 17.48% through August 7 and closed above the upper Bollinger band.
-- **Changed assumptions and blockers:** cash consideration, 960,649 new shares, integration costs,
-  acquired contribution, and post-closing adjustments are not captured by the prior sensitivity,
-  so valuation is now unsupported pending full research.
-- **Unchanged thesis:** backlog conversion, mission execution, positive cash generation, dilution,
-  government funding and integration remain the decisive gates; no catalyst or invalidation has
-  yet been verified as fired.
-- **Action:** remain Watch, allocation-ineligible, and paper-only; escalate exactly once to a
-  dependent full security review and create no strategy or signal here.
+- **Evidence:** all five retained source records were freshly checked. No new periodic or operating
+  filing followed the August 3 acquisition Form 8-K; the August 6 ownership schedule does not alter
+  the company evidence.
+- **Market state:** unchanged from the quick check. The August 4 volume anomaly accompanied a 21.79%
+  measured decline, then the mark rebounded to USD 16.40 on August 7 and closed above the upper
+  Bollinger band. This remains volatile event digestion, not a verified fundamental catalyst.
+- **Valuation inputs and outputs:** the full review confirmed GBP 18.5 million of known UK cash
+  consideration, 960,649 new shares, and the USD 10 million COMSAT base price, but acquired
+  contribution, integration expense and multiple post-closing adjustments remain undisclosed. The
+  prior scenario outputs remain withdrawn; no replacement bear, base or bull values are supportable.
+- **Thesis, catalysts and risks:** unchanged. Backlog conversion, mission execution, positive cash
+  generation, government funding and integration remain the decisive gates. Goonhilly adds a
+  communications channel while increasing cash-use, dilution and integration risk.
+- **Blockers and gaps:** `valuation_unsupported` remains the hard blocker. Medium confidence and
+  unfavorable pre-Q2 timing remain soft gaps; no blocker was resolved by repeating stale inputs.
+- **Rating and action:** unchanged at Unrated / Watch and allocation-ineligible. Review the August
+  13 Q2 evidence; create no strategy, signal or paper order from this operation.
 
 See the complete [[research-catalog]] and append-only [[log]].
