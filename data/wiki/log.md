@@ -2746,3 +2746,18 @@ This log is append-only. Rotate it by year only after the configured line thresh
   catalyst. USD 150/USD 256.50/USD 374 bear/base/bull values produce a USD 259.25
   probability-weighted value below the USD 286.08 mark, deriving Hold / Watch and allocation
   ineligibility; no strategy, signal, order, or paper trade was created.
+
+## 2026-08-08 — full review — Strategy Inc Class A common stock
+
+- Completed the first full assessment of [[securities/security_fe5539a7d3fd9d553bce|Strategy]]
+  using its second-quarter Form 10-Q and August 3 SEC-filed treasury update. Bitcoin scale and
+  capital-market access support the treasury mechanism, while Bitcoin volatility, USD 6.710
+  billion debt, USD 15.462 billion preferred liquidation preference, current common dilution,
+  preferred funding costs, and limited software economics constrain the residual common claim.
+- Reviewed the 2026-08-07 volume anomaly after a 5.67% gain over the canonical period. The filing
+  disclosed common issuance, Bitcoin sales, preferred repurchases, and a USD 4.0 billion reserve,
+  making the alert mixed event digestion rather than an independent entry catalyst. USD
+  52.50/USD 108.16/USD 175.99 bear/base/bull values produce a USD 105.03 probability-weighted
+  value versus the USD 100.01 mark; downside payoff, margin of safety, confidence, and the missing
+  accepted relationship derive Hold / Watch and allocation ineligibility. No strategy, signal,
+  order, or paper trade was created.

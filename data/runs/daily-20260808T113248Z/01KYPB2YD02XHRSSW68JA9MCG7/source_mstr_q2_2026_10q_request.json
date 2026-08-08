@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mstr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000044/mstr-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000044/mstr-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Strategy Inc second-quarter 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "7ca05da524aa6609e050313746c6619cfd614bb51f89a52cf8307b7cd6949f72",
+  "related_entity_ids": "security_fe5539a7d3fd9d553bce",
+  "checked_at": "2026-08-08T12:17:09Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "As of June 30, 2026, we held approximately 846,000 and 672,500 bitcoins, respectively, all of which were unencumbered.",
+  "summary": "The Form 10-Q confirms MSTR common stock on Nasdaq, 846,000 bitcoin at June 30 with USD 49.672 billion fair value and USD 63.939 billion cost, USD 2.448 billion cash and Treasury investments, USD 6.710 billion debt, and USD 15.462 billion preferred liquidation preference. It reports USD 246.7 million first-half software revenue, material Bitcoin concentration and volatility, and post-quarter sales of 2,225 bitcoin to fund preferred dividends and replenish the USD reserve.",
+  "run_id": "daily-20260808T113248Z"
+}

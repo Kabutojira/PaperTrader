@@ -383,6 +383,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Southern Copper Corporation common stock](securities/security_6ad1af8d10d6276a0221)
 - [Space Exploration Technologies Corp. listed equity](securities/security_664f93a7eaca72e76e9b)
 - [Spotify Technology S.A. ordinary shares](securities/security_2010347f1a0a5ea60f47)
+- [Strategy Inc Class A common stock](securities/security_fe5539a7d3fd9d553bce)
 - [Taiwan Semiconductor Manufacturing Company Limited sponsored ADR](securities/security_ce9b78a4d0773c950765)
 - [Teledyne Technologies Incorporated common stock](securities/security_ad5917642acbba28c1f2)
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)

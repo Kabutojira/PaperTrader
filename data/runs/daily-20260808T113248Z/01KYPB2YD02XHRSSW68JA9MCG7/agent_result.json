@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KYPB2YD02XHRSSW68JA9MCG7",
+  "status": "succeeded",
+  "summary": "Completed the first full Strategy Inc Class A common-stock review from immutable MSTR/XNAS/USD identity, fresh SEC-filed second-quarter and August 3 treasury evidence, and the canonical 2026-08-07 volume alert. Bitcoin scale and capital-market access support the treasury mechanism, but Bitcoin volatility, current common dilution, USD 6.710 billion debt, roughly USD 15.462 billion preferred liquidation preference, preferred funding costs, and limited software economics constrain the residual common claim. The deterministic schema-v2 assessment derives USD 52.50/USD 108.16/USD 175.99 bear/base/bull values, USD 105.028 probability-weighted fair value, 3.76% confidence-adjusted expected return, Hold/Watch, and allocation ineligibility versus the USD 100.01 mark. No linked idea, accepted relationship, or strategy existed, so no follow-up was required; no signal, order, or paper trade was created.",
+  "evidence": [
+    {
+      "source": "source_mstr_q2_2026_10q",
+      "claim": "Strategy reported 846,000 bitcoin with USD 49.672 billion fair value and USD 63.939 billion cost at June 30, 2026, alongside USD 2.448 billion cash and Treasury investments, USD 6.710 billion debt, roughly USD 15.462 billion preferred liquidation preference, and USD 246.7 million first-half software revenue.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050446/000105044626000044/mstr-20260630.htm",
+      "observed_at": "2026-08-08T12:17:09Z",
+      "source_hash": "7ca05da524aa6609e050313746c6619cfd614bb51f89a52cf8307b7cd6949f72"
+    },
+    {
+      "source": "source_mstr_aug3_2026_8k",
+      "claim": "Strategy reported 842,138 bitcoin at August 2, a USD 4.0 billion USD reserve, 3,011,361 MSTR shares sold for USD 290.6 million net proceeds, 1,638 bitcoin sold, and USD 81.2 million of STRC repurchases during July 27 through August 2.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526329565/mstr-20260803.htm",
+      "observed_at": "2026-08-08T12:17:09Z",
+      "source_hash": "d08462476aee69bd6364df94c893bf8928adb82871c65ff8be4fcfaca03f3b8a"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-1c56259a5e4e.md",
+      "claim": "The canonical alert records entry into a volume anomaly on 2026-08-07 after a 5.67% adjusted-close gain from 2026-07-10 through 2026-08-07; the review classified it as mixed event digestion rather than an independently actionable catalyst."
+    },
+    {
+      "source": "data/market/prices/security_fe5539a7d3fd9d553bce.csv and data/market/fx/USD_EUR.csv",
+      "claim": "Fresh deterministic state supplied the USD 100.01000213623047 reference price and 0.8648999929428101 USD-to-EUR rate, both retrieved at 2026-08-08T11:32:56Z."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/security_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/source_mstr_aug3_2026_8k_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/source_mstr_q2_2026_10q_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_fe5539a7d3fd9d553bce.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Strategy held 842,138 bitcoin and a USD 4.0 billion reserve at August 2 after current Bitcoin sales, MSTR issuance, and preferred repurchases; these actions improve liquidity while confirming common dilution and preferred-financing demands.",
+    "MSTR's volume anomaly accompanied a 5.67% period gain but did not clear valuation gates: USD 105.028 weighted fair value versus USD 100.01 derives 3.76% confidence-adjusted expected return, Hold/Watch, allocation ineligibility, and no strategy or paper order."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_fe5539a7d3fd9d553bce",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/source_mstr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/source_mstr_aug3_2026_8k_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB2YD02XHRSSW68JA9MCG7/assessment_upsert_request_v4.json",
+    "papertrader research assessment-get --assessment-id assessment_9a6f9dc91435d20a6057",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context receipt completed before assessment state was read or changed.",
+      "Immutable MSTR instrument identity matched security_fe5539a7d3fd9d553bce / issuer_c09135a9f81a751eb0e3 / XNAS / MSTR / USD / equity with no duplicate identity found.",
+      "Two fresh primary SEC sources were registered with immutable source-history rows before assessment upsert.",
+      "Rejected assessment requests were preserved immutably and changed no structured state; corrected request v4 produced the single accepted schema-v2 assessment for this operation.",
+      "Assessment assessment_9a6f9dc91435d20a6057 is current, links source operation 01KYPB2YD02XHRSSW68JA9MCG7 and expected result path, and records research-page hash 08047ca544fefe24affb1740b1786a98167e1fea197521120d491c7ca709f664.",
+      "Fresh identity-matched market and FX references were accepted; deterministic assessment-get returned complete research, Hold/Watch, watch conviction, quality 58, and allocation ineligibility with all failed gates retained.",
+      "No payload idea, accepted canonical relationship, linked strategy, or matching idea follow-up existed; no strategy follow-up passed the conviction gate.",
+      "scripts/papertrader schema validate --strict returned OK [schema].",
+      "scripts/papertrader wiki lint --strict returned OK [wiki].",
+      "scripts/papertrader integrity --strict returned OK [integrity].",
+      "No allocation, signal, order, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

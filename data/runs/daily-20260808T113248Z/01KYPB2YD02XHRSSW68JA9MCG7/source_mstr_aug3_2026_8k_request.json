@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mstr_aug3_2026_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526329565/mstr-20260803.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526329565/mstr-20260803.htm",
+  "source_type": "regulator_filing",
+  "title": "Strategy Inc August 3, 2026 Form 8-K treasury update",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "d08462476aee69bd6364df94c893bf8928adb82871c65ff8be4fcfaca03f3b8a",
+  "related_entity_ids": "security_fe5539a7d3fd9d553bce",
+  "checked_at": "2026-08-08T12:17:09Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "As of August 2, 2026, the balance of the USD Reserve is $4.0 billion.",
+  "summary": "The Form 8-K reports 842,138 bitcoin at August 2 with USD 63.51 billion aggregate purchase cost, 1,638 bitcoin sold during July 27-August 2, 3,011,361 MSTR shares sold for USD 290.6 million net proceeds, and USD 4.0 billion in the USD reserve. It also reports USD 81.2 million of STRC repurchases and a maintained 12% STRC dividend rate, demonstrating both current liquidity support and continuing common-share dilution and preferred-financing obligations.",
+  "run_id": "daily-20260808T113248Z"
+}
