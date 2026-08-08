@@ -1,0 +1,23 @@
+{
+  "security_id": "security_83a56943e18793f685b0",
+  "issuer_id": "issuer_965a911bcabf04f4a40b",
+  "company_name": "Texas Instruments Incorporated",
+  "instrument_name": "Texas Instruments Incorporated common stock",
+  "instrument_type": "equity",
+  "ticker": "TXN",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "TXN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Broad end-market recovery, analog breadth and 300mm economics merit monitoring, but cyclicality, acquisition financing, leverage, downside asymmetry and valuation prevent action.",
+  "research_summary": "Strong Q2 recovery supports TXN quality, but USD 259.25 weighted value versus USD 286.08 makes the medium-confidence security Hold / Watch and allocation ineligible.",
+  "research_page": "data/wiki/securities/security_83a56943e18793f685b0.md",
+  "last_research_at": "2026-08-08T12:06:50Z",
+  "next_review_at": "2026-09-07T12:06:50Z",
+  "source": "source_txn_q2_2026_results|source_txn_q2_2026_10q"
+}

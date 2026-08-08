@@ -1,0 +1,74 @@
+{
+  "operation_id": "01KYPB27Y84W38J6MDDEF7PHG0",
+  "status": "succeeded",
+  "summary": "Completed the first full Texas Instruments common-stock review from immutable XNAS/USD identity, fresh SEC-filed second-quarter 2026 evidence, and the canonical 2026-08-07 MACD alert. Broad industrial, data-center and automotive recovery, analog breadth, 300mm economics, margins and cash generation support an 80 quality score, while cyclicality, fixed manufacturing costs, inventory, Silicon Labs acquisition financing, leverage and valuation remain material risks. The deterministic schema-v2 assessment derives USD 150/USD 256.50/USD 374 bear/base/bull values, USD 259.25 probability-weighted fair value, -7.03% confidence-adjusted expected return, Hold/Watch, and allocation ineligibility versus the USD 286.08 mark. No linked idea or accepted relationship existed, so no idea follow-up was required; no strategy, signal, order, or paper trade was created.",
+  "evidence": [
+    {
+      "source": "source_txn_q2_2026_results",
+      "claim": "Texas Instruments reported second-quarter 2026 revenue of USD 5.463 billion, operating profit of USD 2.310 billion, diluted EPS of USD 2.14, 26% Analog revenue growth, 16% Embedded Processing revenue growth, and third-quarter guidance of USD 5.65-6.15 billion revenue and USD 2.23-2.57 EPS.",
+      "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000148/q22026txnex99-eredgar.htm",
+      "observed_at": "2026-08-08T12:06:50Z",
+      "source_hash": "e949c034b9c0f2cc027cfc7c44e989dfe485b5088eb18a37bd09c131003c0958"
+    },
+    {
+      "source": "source_txn_q2_2026_10q",
+      "claim": "The second-quarter Form 10-Q confirms TXN/XNAS identity, USD 7.001 billion cash and short-term investments, USD 14.052 billion current and long-term debt, USD 4.605 billion inventory, 196 inventory days, USD 2-3 billion expected 2026 capital expenditure, and the approximately USD 7.5 billion pending Silicon Labs acquisition funded with cash and debt.",
+      "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+      "observed_at": "2026-08-08T12:06:50Z",
+      "source_hash": "fae79f7e6a775bd84b54827e7cfde89fe8ea1b5e9c154537e6a5051618320553"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_83a56943e18793f685b0-macd_cross_above_signal-d98969d607e6.md",
+      "claim": "The canonical alert records a 2026-08-07 MACD cross above signal after an 8.15% adjusted-close decline from 2026-07-10 through 2026-08-07; the review classified it as early recovery timing information rather than a sufficient entry signal or independent fundamental catalyst."
+    },
+    {
+      "source": "data/market/prices/security_83a56943e18793f685b0.csv and data/market/fx/USD_EUR.csv",
+      "claim": "Fresh deterministic state supplied the USD 286.0799865722656 reference price and 0.8648999929428101 USD-to-EUR rate, both retrieved at 2026-08-08T11:32:56Z."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/assessment_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/security_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/source_txn_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/source_txn_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_83a56943e18793f685b0.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Texas Instruments second-quarter revenue rose 23% to USD 5.463 billion with 42.3% operating margin; Analog grew 26%, Embedded Processing grew 16%, and trailing-12-month operating cash flow reached USD 8.667 billion.",
+    "TXN's 2026-08-07 bullish MACD transition did not overcome valuation: USD 259.25 weighted fair value versus USD 286.08 derives -7.03% confidence-adjusted expected return, Hold/Watch, allocation ineligibility, and no strategy or paper order."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_83a56943e18793f685b0",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/source_txn_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/source_txn_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYPB27Y84W38J6MDDEF7PHG0/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context receipt completed before assessment state was read or changed.",
+      "Immutable TXN instrument identity matched security_83a56943e18793f685b0 / issuer_965a911bcabf04f4a40b / XNAS / TXN / USD / equity with no duplicate identity found.",
+      "Two fresh primary SEC sources were registered with immutable source-history rows before assessment upsert.",
+      "Exactly one immutable schema-v2 assessment version, assessment_1afb54951422e1361c5e, was accepted for this security and run; its research-page hash is fd87d33c93688cd777f3727485b817331f3abdff64584f01a2bdc18180059ce9 and matches the final page.",
+      "Fresh identity-matched market and FX references were accepted; the assessment derived complete research, Hold/Watch, watch conviction, 80 quality, and allocation ineligibility with every failed gate retained.",
+      "No payload idea, accepted canonical relationship, linked strategy, or matching idea follow-up existed; no strategy follow-up passed the conviction gate.",
+      "scripts/papertrader schema validate --strict returned OK [schema].",
+      "scripts/papertrader wiki lint --strict returned OK [wiki].",
+      "scripts/papertrader integrity --strict returned OK [integrity].",
+      "No allocation, signal, order, execution, cash, portfolio, fill, or performance state changed."
+    ]
+  }
+}

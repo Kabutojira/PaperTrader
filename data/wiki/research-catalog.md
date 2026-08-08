@@ -386,6 +386,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Taiwan Semiconductor Manufacturing Company Limited sponsored ADR](securities/security_ce9b78a4d0773c950765)
 - [Teledyne Technologies Incorporated common stock](securities/security_ad5917642acbba28c1f2)
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)
+- [Texas Instruments Incorporated common stock](securities/security_83a56943e18793f685b0)
 - [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)
 - [Twist Bioscience Corporation common stock](securities/security_6cf75bd0ec0aa2a20148)
 - [UiPath, Inc. Class A common stock](securities/security_eca976f0076a425ea1bb)

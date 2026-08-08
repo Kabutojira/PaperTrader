@@ -2733,3 +2733,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   262.50/USD 416/USD 640 bear/base/bull values produce a USD 414.75 probability-weighted value
   below the USD 539.14 mark, deriving Hold / Watch and allocation ineligibility; no strategy,
   signal, order, or paper trade was created.
+
+## 2026-08-08 — full review — Texas Instruments Incorporated common stock
+
+- Completed the first full assessment of [[securities/security_83a56943e18793f685b0|Texas
+  Instruments]] using its second-quarter 2026 Form 10-Q and SEC-filed results release. Broad
+  industrial, data-center and automotive growth, 300mm economics, margins and cash generation
+  support the quality thesis, while cyclicality, fixed manufacturing costs, inventory, acquisition
+  financing and valuation remain material risks.
+- Reviewed the 2026-08-07 MACD cross above signal after an 8.15% decline over the canonical period.
+  The crossover is early recovery timing information rather than an independent fundamental
+  catalyst. USD 150/USD 256.50/USD 374 bear/base/bull values produce a USD 259.25
+  probability-weighted value below the USD 286.08 mark, deriving Hold / Watch and allocation
+  ineligibility; no strategy, signal, order, or paper trade was created.
