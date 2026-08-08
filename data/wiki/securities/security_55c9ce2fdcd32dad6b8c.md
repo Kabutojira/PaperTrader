@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-05"
-updated: "2026-08-07"
+updated: "2026-08-08"
 provenance: "source_crsr_q1_2026_10q; source_crsr_q1_2026_results; source_crsr_q2_2026_10q; source_crsr_q2_2026_results"
 security_id: security_55c9ce2fdcd32dad6b8c
 issuer_id: issuer_5ce238383a369ed3467b
 confidence: medium
-next_review: "2026-08-08"
+next_review: "2026-08-22"
 ---
 
 # Corsair Gaming, Inc. common stock
@@ -62,29 +62,33 @@ as `source_crsr_q2_2026_results`, both checked 7 August 2026.
 ## Valuation
 
 The `mature_compounder` template uses a 12-month `earnings_multiple`. It starts from management's
-prior scenario set, then normalizes for stock compensation,
-amortization, product-cycle sensitivity, working capital, net debt, and the possibility that 2027
-profitability differs from the raised 2026 guide. Against the 6 August close of USD 10.609999656677246:
+raised 2026 guide but removes the one-time tariff refund and normalizes stock compensation,
+amortization, product-cycle sensitivity, working capital, net cash, acquisition spending, and the
+possibility that 2027 profitability differs from non-GAAP guidance. Against the 7 August close of
+USD 14.350000381469727:
 
 | Scenario | Probability | Fair value | Assumptions |
 | --- | ---: | ---: | --- |
-| Bear | 25% | USD 6.00 | USD 0.50 normalized forward EPS at 12x; component constraints, tariffs, promotions, or weak discretionary demand reverse margin progress and working-capital cash conversion fades. |
-| Base | 50% | USD 11.25 | USD 0.75 normalized forward EPS at 15x; full-year guidance converts, peripherals and creator products offset component softness, gross margin remains improved, and dilution is broadly contained. |
-| Bull | 25% | USD 18.00 | USD 1.00 normalized forward EPS at 18x; premium ecosystem growth broadens, Fanatec and Elgato execution improves, component supply normalizes, and sustained mix and cost discipline lift cash earnings. |
+| Bear | 25% | USD 6.60 | USD 0.55 normalized forward EPS at 12x after removing the tariff refund; elevated memory pricing, discretionary weakness, integration costs, customer concentration, or margin reversion suppress recurring earnings and cash conversion. |
+| Base | 55% | USD 12.00 | USD 0.80 normalized forward EPS at 15x after removing the tariff refund; peripherals and creator growth, adequate component supply, improved underlying margin, and modest deferred-demand recovery convert raised guidance while acquisition spending and dilution remain controlled. |
+| Bull | 20% | USD 18.90 | USD 1.05 normalized forward EPS at 18x as Fanatec, Trak Racer, Elgato, and Stream Deck scale, deferred DIY demand returns, AI workstations add profitable revenue, underlying margins persist, and cash-funded acquisitions earn attractive returns. |
 
-Probability-weighted fair value is USD 11.625, 9.6% above the mark. The base case is 6.0% above the
-mark and the bear case implies 43.4% downside, so confidence-adjusted return, base upside,
-bear/base payoff, expected/bear payoff, and margin of safety do not clear the portfolio gates. Medium
-confidence reflects demand cyclicality, non-GAAP normalization, product and component timing, and
-the sensitivity of fair value to modest EPS and multiple changes.
+Probability-weighted fair value is USD 12.03, or 16.2% below the mark. The bear/base/bull returns
+are approximately -54.0%/-16.4%/+31.7%; medium-confidence adjustment reduces the already negative
+expected return to about -12.1%. The base-derived buy-below price is USD 9.60 and current margin of
+safety is negative 19.6%. Expected return, base return, bear/base payoff, expected/bear payoff,
+margin of safety, and the accepted-relationship requirement all fail. Medium confidence reflects
+demand cyclicality, non-GAAP normalization, acquisition and product timing, customer concentration,
+and the sensitivity of fair value to modest EPS and multiple changes.
 
 ## Alert review, catalysts, and risks
 
-The merged alerts record repeated volume anomalies: a 26.4% rise through 5 August at USD 11.20,
-followed by a pullback to USD 10.61 on 6 August while the current 20-session return remained 11.1%.
-The Q2 filing released after the 6 August close validates underlying profit progress and raised
-guidance, but also identifies a large one-time tariff benefit and new acquisition work. The move is
-therefore material evidence and timing risk, not a completed buy signal.
+The merged alerts record repeated volume anomalies: a 26.4% rise through 5 August at USD 11.20, a
+pullback to USD 10.61 on 6 August, and then a strongly strengthened anomaly at the USD 14.35 close
+on 7 August. The canonical 10 July–7 August return is 48.55% and trigger strength is 1.108979875.
+The Q2 evidence validates underlying profit progress and raised guidance, but the repricing now
+runs materially ahead of normalized base value. This is a material **risk and adverse entry-timing
+signal**, not noise, an opportunity at the current mark, or a completed buy signal.
 
 Catalysts are delivery of raised full-year guidance, sustained peripheral and creator growth, easing
 semiconductor constraints, durable underlying gross-margin expansion, Fanatec, Trak Racer and Elgato
@@ -100,11 +104,12 @@ capital without adequate returns, or dilution overwhelms repurchases and per-sha
 
 ## Disposition
 
-Status: **watching**, confidence **medium**. Q2 underlying profit, cash generation and raised
-guidance strengthen the thesis, but the one-time tariff benefit, cyclicality, Trak Racer integration,
-bear downside and missing accepted relationship keep the security allocation-ineligible. Holding
-the bounded prior scenarios at USD 10.61 derives **Hold / Watch**. Complete the dependent full Q2
-review by **2026-08-08**. No conviction strategy, signal, or paper order is justified.
+Status: **watching**, confidence **medium**. Q2 underlying profit, cash generation, net cash, and
+raised guidance strengthen operating evidence, but the one-time tariff benefit, cyclicality,
+customer concentration, Trak Racer integration, 48.55% repricing, bear downside, and missing
+accepted relationship keep the security allocation-ineligible. The revised scenarios at USD 14.35
+derive **Hold / Watch**. Review by **2026-08-22**, or sooner after material acquisition terms,
+guidance, or price evidence. No conviction strategy, signal, or paper order is justified.
 
 ## Changes since prior review
 
@@ -128,3 +133,35 @@ review by **2026-08-08**. No conviction strategy, signal, or paper order is just
   Hold / Watch and allocation-ineligible remain unchanged pending full normalization.
 - **Escalation:** the changed Q2 evidence, raised guidance and acquisition require exactly one
   dependent full security review. No strategy, signal, order, allocation or accounting state changes.
+
+### 2026-08-08 full Q2 reassessment
+
+- **Facts and evidence changed:** the Q2 Form 10-Q and SEC-filed results release remain unchanged at
+  their registered hashes. They confirm stronger underlying adjusted EBITDA and cash conversion,
+  raised 2026 guidance, USD 193.9 million cash and restricted cash against USD 118.3 million debt,
+  25.7% first-half Amazon concentration, and the post-quarter Trak Racer asset acquisition. The
+  market mark changed from USD 10.61 to USD 14.35 and the merged volume-anomaly period return rose
+  from 11.1% through 6 August to 48.55% through 7 August.
+- **Assumptions and scenarios changed:** normalized forward EPS increases from USD 0.50/USD
+  0.75/USD 1.00 to USD 0.55/USD 0.80/USD 1.05 as the raised guide and underlying Q2 beat improve the
+  earnings range. Multiples remain 12x/15x/18x. Fair values increase from USD 6.00/USD 11.25/USD
+  18.00 to USD 6.60/USD 12.00/USD 18.90, while probabilities shift from 25%/50%/25% to
+  25%/55%/20% because acquisition execution and the one-time refund limit bull-case weight.
+- **Outputs changed:** at USD 14.35, weighted fair value is USD 12.03 and expected return becomes
+  negative 16.2%; bear/base/bull returns become approximately -54.0%/-16.4%/+31.7%. The buy-below
+  price increases from USD 9.00 to USD 9.60, but margin of safety deteriorates to negative 19.6%.
+- **Thesis and quality changed:** the core ecosystem and mix thesis remains supported rather than
+  upgraded. Improved net cash raises the balance-sheet score from 60 to 80. The repricing lowers
+  valuation and timing scores from 60/40 to 20/20; thesis, business quality, liquidity, residual
+  risk, and medium confidence remain 60/60/80/60 and unchanged.
+- **Catalysts and risks changed:** raised guidance and a better underlying Q2 result are now verified
+  catalysts. Trak Racer broadens the sim-racing opportunity but adds purchase-accounting,
+  integration, and capital-allocation risk. Customer concentration, component pricing, working
+  capital, dilution, and through-cycle margin durability remain material risks.
+- **Blockers and gaps:** no hard research blocker remains. Concentration, medium confidence,
+  cyclical normalization, inadequate margin of safety, unfavorable timing, and uncompelling
+  valuation remain soft gaps; the canonical relationship is still pending.
+- **Rating and action:** **Hold / Watch** and no paper trade are unchanged, but the reason shifts
+  from a pending normalization review at USD 10.61 to a completed, negative-return scenario set at
+  USD 14.35. No strategy or idea follow-up is created because the conviction gate fails and no idea
+  is named in the payload or linked by an accepted canonical relationship.

@@ -2698,3 +2698,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_fbf6c8f9bba700f1666d`.
 
 - Generated canonical [[daily-reports/daily-report_20260808]] for run `daily-20260808T110128Z`.
+
+## 2026-08-08 — full review — Corsair Gaming, Inc. common stock
+
+- Reassessed [[securities/security_55c9ce2fdcd32dad6b8c|Corsair Gaming]] against the unchanged Q2
+  Form 10-Q and SEC-filed results release after the 7 August mark rose to USD 14.35 and the merged
+  volume-anomaly period return reached 48.55%.
+- Raised normalized bear/base/bull values to USD 6.60/USD 12.00/USD 18.90, but their USD 12.03
+  probability-weighted value remains below market. The resulting negative expected and base returns,
+  downside-payoff, margin-of-safety, timing, and pending-relationship gates derive Sell / Avoid and
+  allocation ineligibility; no strategy, signal, order, or paper trade was created.

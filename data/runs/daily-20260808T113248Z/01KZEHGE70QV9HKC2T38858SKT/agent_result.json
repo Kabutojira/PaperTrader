@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KZEHGE70QV9HKC2T38858SKT",
+  "status": "succeeded",
+  "summary": "Completed the bounded full Q2 2026 review of Corsair Gaming common stock. Reverified the unchanged SEC Form 10-Q and SEC-filed results release, refreshed the security page and structured row, and appended exactly one schema-v2 assessment linked to its predecessor. At the canonical USD 14.350000381469727 mark, revised USD 6.60/USD 12.00/USD 18.90 bear/base/bull values produce USD 12.03 probability-weighted fair value, -16.16724961530706640473577404% expected return, -12.12543721148029980355183053% confidence-adjusted return, and -19.583336512247725% margin of safety. Deterministic state derives Sell / Avoid and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and accepted-relationship gates fail. No strategy, signal, order, idea follow-up, allocation, or accounting state was created or changed.",
+  "evidence": [
+    {
+      "source": "source_crsr_q2_2026_10q",
+      "claim": "The SEC Form 10-Q supports the reviewed cash, debt, customer-concentration, working-capital, acquisition-spending, share-count, and normalized-earnings inputs; its registered content hash was unchanged on recheck.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337981/crsr-20260630.htm",
+      "observed_at": "2026-08-08T11:36:18Z",
+      "source_hash": "e306380d66a43eec2c3b8a7859e5fdcfaa257af07cedef5e35487f1e30cd5363"
+    },
+    {
+      "source": "source_crsr_q2_2026_results",
+      "claim": "The SEC-filed issuer release supports Q2 underlying-profit normalization, the one-time tariff-refund distinction, segment trends, cash generation, and raised full-year guidance; its registered content hash was unchanged on recheck.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1743759/000119312526337943/crsr-ex99_1.htm",
+      "observed_at": "2026-08-08T11:36:18Z",
+      "source_hash": "b1bb3ca94486c7d4370c5a6d071f01b01b2902e343a529fffb4796e48f6d201e"
+    },
+    {
+      "source": "data/market/snapshots/daily-20260808T113248Z.csv",
+      "claim": "The immutable identity-matched market snapshot records CRSR at USD 14.350000381469727 and USD/EUR at 0.8648999929428101 as of 2026-08-08T11:32:56Z; the merged alert period return through the 2026-08-07 market date is 48.55%.",
+      "observed_at": "2026-08-08T11:32:56Z"
+    },
+    {
+      "source": "assessment_3e49d9649a25ad388d36",
+      "claim": "Deterministic schema-v2 valuation derives Sell / Avoid, complete research, quality score 68, USD 12.03 weighted fair value, negative expected and base returns, and allocation ineligibility; the immutable version links predecessor assessment_d52252a2530f6940e6cd and matches the current research-page hash."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/security_rating_correction_request.json",
+    "data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_55c9ce2fdcd32dad6b8c.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CRSR full Q2 review completed: revised USD 6.60/USD 12.00/USD 18.90 scenarios imply USD 12.03 weighted fair value versus USD 14.35, -16.17% expected return, and Sell / Avoid.",
+    "CRSR remains allocation-ineligible with no paper trade because expected return, base return, downside payoff, margin of safety, and accepted-relationship gates fail; no linked idea required a follow-up."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/source_crsr_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c",
+    "papertrader research security upsert --request data/runs/daily-20260808T113248Z/01KZEHGE70QV9HKC2T38858SKT/security_rating_correction_request.json",
+    "papertrader schema validate",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_55c9ce2fdcd32dad6b8c"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory repeat-review security context succeeded before assessment state was read and was consumed together with the predecessor assessment and latest successful result.",
+      "Preflight identified the native llm-wiki, papertrader-controller, and papertrader-security-research skills with content hashes.",
+      "Both retained primary sources were registered as available with unchanged hashes and current 2026-08-08T11:36:18Z checks.",
+      "Exactly one schema-v2 current assessment was appended as assessment_3e49d9649a25ad388d36; it links predecessor assessment_d52252a2530f6940e6cd and its stored page hash equals the current page hash.",
+      "Final security context confirms immutable XNAS/CRSR/USD/equity identity, fresh price and FX references, zero linked ideas, zero relationships, zero strategies, and deterministic Sell / Avoid allocation-ineligible state.",
+      "Schema validation passed.",
+      "Queue validation passed.",
+      "Strict wiki lint passed.",
+      "Strict integrity validation passed.",
+      "Strict portfolio reconciliation passed without changing portfolio, cash, executions, fills, allocation, or performance."
+    ]
+  }
+}
