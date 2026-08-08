@@ -1,0 +1,23 @@
+{
+  "security_id": "security_cb88f9154cfeaa15e878",
+  "issuer_id": "issuer_8e4118bf341dfbc9aaa0",
+  "company_name": "Vertiv Holdings Co",
+  "instrument_name": "Vertiv Holdings Co Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "VRT",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "VRT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Q2 growth and cash conversion support AI-infrastructure exposure, but the August technical rebound leaves expected return, downside payoff, margin of safety, timing, and relationship gates uncleared.",
+  "research_summary": "Unchanged Q2 strength supports the thesis, but USD 270.98 probability-weighted value versus USD 272.40 leaves VRT Hold / Watch and allocation ineligible.",
+  "research_page": "data/wiki/securities/security_cb88f9154cfeaa15e878.md",
+  "last_research_at": "2026-08-08T11:46:19Z",
+  "next_review_at": "2026-09-07T11:46:19Z",
+  "source": "source_vrt_q2_2026_10q|source_vrt_q2_2026_results"
+}

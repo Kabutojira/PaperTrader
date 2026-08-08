@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_cb88f9154cfeaa15e878",
+    "security_research_operation_id": "01KYEWGWBRV9EV6YN1WQA6G3WF",
+    "security_research_result_path": "data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/agent_result.json",
+    "seed_claim": "Vertiv's unchanged Q2 growth, margins, cash conversion and raised guidance support the operating thesis, but the 2026-08-06 MACD recovery is unconfirmed by volume and USD 166.25/USD 281.40/USD 402.00 scenarios leave probability-weighted value below the USD 272.40 mark; VRT remains Hold / Watch and allocation ineligible."
+  },
+  "objective": "Refresh the AI infrastructure and power-bottlenecks idea from Vertiv's completed MACD-alert review, including candidate disposition, thesis, catalysts, risks, gates, confidence and the broader investable-security universe.",
+  "operation_id": "01KZGK9Y689X6WK5CK91YRGM4R",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_cb88f9154cfeaa15e878.md"
+  ]
+}

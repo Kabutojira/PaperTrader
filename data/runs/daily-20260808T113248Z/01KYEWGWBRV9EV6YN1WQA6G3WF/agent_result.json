@@ -1,0 +1,91 @@
+{
+  "operation_id": "01KYEWGWBRV9EV6YN1WQA6G3WF",
+  "status": "succeeded",
+  "summary": "Completed one repeat, alert-driven security review of Vertiv Holdings Co Class A common stock after consuming the mandatory audited security context. The 2026-08-06 MACD cross above signal followed a rebound from USD 223.04 to USD 275.17, but remained below the 50- and 200-day averages, lacked volume confirmation, and sat within a 15.17% one-month decline. Unchanged Q2 primary evidence still supports growth, margins, cash conversion, liquidity, and raised guidance. Schema-v2 bear/base/bull values of USD 166.25/USD 281.40/USD 402.00 produce a USD 270.975 probability-weighted value below the USD 272.40 mark. Deterministic gates derive Hold / Watch and allocation ineligibility, so no strategy, signal, order, fill, or paper trade was created. Exactly one dependent idea-research follow-up was enqueued for the payload-linked AI infrastructure idea.",
+  "evidence": [
+    {
+      "source": "source_vrt_q2_2026_results",
+      "claim": "Vertiv reported Q2 2026 sales of USD 3.274 billion, up 24%, adjusted operating profit of USD 738 million, adjusted margin of 22.6%, adjusted diluted EPS of USD 1.52, and adjusted free cash flow of USD 925 million. It raised full-year guidance to USD 13.8-14.2 billion sales, USD 6.65-6.75 adjusted EPS, and USD 2.4-2.6 billion adjusted free cash flow; the registered source hash was unchanged on repeat review.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050323/q22026exhibit991vrt07292026.htm",
+      "observed_at": "2026-08-08T11:46:19Z",
+      "source_hash": "d4d0a061a46d88b421ca10cf7d176adb19db3e56af3b053098d07cf3bb41f8bc"
+    },
+    {
+      "source": "source_vrt_q2_2026_10q",
+      "claim": "Vertiv's Q2 Form 10-Q confirms the VRT Class A common-stock identity on NYSE and reports USD 2.811 billion cash, USD 300 million short-term investments, USD 2.940 billion long-term debt, USD 2.484 billion unused revolver capacity, and covenant compliance. Inventory, receivables, backlog conversion, large-customer terms, fixed-price execution, supply chain, tariffs, capacity expansion, competition, and geopolitical disruption remain material monitoring items; the registered source hash was unchanged.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1674101/000162828026050609/vrt-20260630.htm",
+      "observed_at": "2026-08-08T11:46:19Z",
+      "source_hash": "9346a7542ba74f5a8f841365e837d45f4bd25c790be0a4da7b4b5807c3e0024d"
+    },
+    {
+      "source": "data/market/indicators.csv:58",
+      "claim": "The canonical alert records a 2026-08-06 MACD cross above signal with MACD -1.2386 versus signal -2.8901, a USD 275.17 close, 15.17% decline from 2026-07-07, RSI 47.76, a -0.741 volume z-score, and the exact payload source-price hash. The close remained below both the 50- and 200-day moving averages and inside its Bollinger bands.",
+      "observed_at": "2026-08-08T11:32:56Z",
+      "source_hash": "6cce38a2a46affd39dc157680d4d9a39b9ff549181336535fc22eb15af2f15a0"
+    },
+    {
+      "source": "data/market/latest.csv:58",
+      "claim": "The fresh canonical market mark is the 2026-08-07 VRT close of USD 272.3999938964844, retrieved at 2026-08-08T11:32:56Z and identity-matched to security_cb88f9154cfeaa15e878 and provider symbol VRT.",
+      "observed_at": "2026-08-08T11:32:56Z"
+    },
+    {
+      "source": "data/market/fx/USD_EUR.csv:263",
+      "claim": "The fresh same-date USD/EUR conversion rate is 0.8648999929428101, retrieved at 2026-08-08T11:32:56Z for the EUR-base assessment.",
+      "observed_at": "2026-08-08T11:32:56Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZGK9Y689X6WK5CK91YRGM4R.json",
+    "data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/assessment_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/security_upsert_request.json",
+    "data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/source_vrt_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/source_vrt_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_cb88f9154cfeaa15e878.md"
+  ],
+  "operations_created": [
+    "01KZGK9Y689X6WK5CK91YRGM4R"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Vertiv was reassessed after its 2026-08-06 MACD cross above signal. The move was a technical rebound without volume confirmation and remained below both major moving averages within a 15.17% one-month decline. Unchanged Q2 growth, margins, cash conversion, liquidity, and raised guidance support the operating thesis, but USD 166.25/USD 281.40/USD 402.00 scenarios give a USD 270.975 probability-weighted value below the USD 272.40 mark. The result is Hold / Watch and allocation ineligible; no strategy or paper trade was created, and one dependent AI-infrastructure idea refresh was queued."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_cb88f9154cfeaa15e878",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/source_vrt_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/source_vrt_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260808T113248Z/01KYEWGWBRV9EV6YN1WQA6G3WF/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The mandatory audited security-context command succeeded before assessment state was read or changed, and its prior legacy assessment, prior result, source state, linked idea state, and page hash were consumed.",
+      "Validated the immutable operation payload, running queue claim, paper-only scope, sequential execution, and preflight hashes for native llm-wiki, papertrader-controller, and papertrader-security-research.",
+      "Confirmed issuer, Class A instrument, VRT provider symbol, XNYS venue, USD currency, and equity identity match canonical state and the SEC filing, with no duplicate immutable identity.",
+      "Matched the MACD trigger, 2026-08-06 market date, 2026-07-07 through 2026-08-06 observation period, and source-price hash to canonical market and indicator state.",
+      "Confirmed the USD 272.3999938964844 mark and USD/EUR 0.8648999929428101 conversion are identity-matched and fresh as of 2026-08-08T11:32:56Z.",
+      "Re-registered both retained SEC sources with unchanged content hashes and current successful checks before assessment upsert.",
+      "Confirmed exactly one current schema-v2 assessment for this run and an immutable history row assessment_384ce1847d1028be8e77 linked to predecessor assessment_9124de71d939aae69688, this operation/result path, the current research page, and its page hash.",
+      "Deterministic assessment output is allocation ineligible with medium confidence, bear/base returns of -38.9684%/3.3040%, negative probability-weighted expected return, no hard blockers, and canonical valuation, timing, confidence, and margin-of-safety gaps.",
+      "Confirmed exactly one dependent idea-research follow-up, 01KZGK9Y689X6WK5CK91YRGM4R, exists for the payload-linked idea and this result; no accepted canonical relationship adds another idea follow-up.",
+      "Confirmed the conviction strategy gate fails, so no strategy-research operation, signal, order, fill, or paper trade was created.",
+      "papertrader schema validate --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed, including schema, source freshness, identity, FX, queue, allocation, publication, portfolio, and accounting invariants.",
+      "commands_run exactly matches the nine successful canonical receipts in command_audit.json.",
+      "No allocation targets or history, signals, orders, fills, executions, cash, portfolio, performance, or other accounting state was changed by this operation."
+    ]
+  }
+}

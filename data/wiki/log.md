@@ -2708,3 +2708,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   probability-weighted value remains below market. The resulting negative expected and base returns,
   downside-payoff, margin-of-safety, timing, and pending-relationship gates derive Sell / Avoid and
   allocation ineligibility; no strategy, signal, order, or paper trade was created.
+
+## 2026-08-08 — full review — Vertiv Holdings Co Class A common stock
+
+- Reassessed [[securities/security_cb88f9154cfeaa15e878|Vertiv]] after its 2026-08-06 MACD
+  cross above signal and consumed the unchanged Q2 Form 10-Q and SEC-filed results release.
+- The cross followed a rebound from USD 223.04 to USD 275.17 but remained unconfirmed by volume,
+  below both major moving averages, and within a 15.17% one-month decline; the August 7 mark was
+  USD 272.40.
+- Updated schema-v2 bear/base/bull values of USD 166.25/USD 281.40/USD 402.00 produce a USD 270.98
+  probability-weighted value. Expected return, base return, downside payoff, margin of safety,
+  timing, and the missing accepted relationship keep the result Hold / Watch and allocation
+  ineligible; no strategy, signal, order, or paper trade was created.
