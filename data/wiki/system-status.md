@@ -7,13 +7,13 @@ tags:
 created: "2026-08-08"
 updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3dec2327f09b1aa2aab6"
-as_of: "2026-08-08T17:06:34Z"
+snapshot_id: "decision_7ea86c7b75082f7db55f"
+as_of: "2026-08-08T19:57:20Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-08T17:06:34Z`
+**As of:** `2026-08-08T19:57:20Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-08T17:06:34Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 334
+- Research backlog: 333
 - Last successful daily run: 2026-08-08
 
 ## Current issues by investment impact
@@ -137,7 +137,7 @@ as_of: "2026-08-08T17:06:34Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 334 active operations.
+Showing 20 of 333 active operations.
 
 <details><summary>Active research work</summary>
 
