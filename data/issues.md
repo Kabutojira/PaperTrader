@@ -14,6 +14,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | error | **issue_b3932acdc72f52e4e4f2** — Local harness operation validation failed: 01KYVJ62SRK1101MYYCE7256NF | 2026-08-06T18:26:55Z | controller | 01KYVJ62SRK1101MYYCE7256NF |
 | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
+| error | **issue_e6820a7a8318aa2adbf4** — Hermes operation validation failed: 01KZ8BGD98AWXPGHS42QSJA7TG | 2026-08-08T12:35:16Z | controller | 01KZ8BGD98AWXPGHS42QSJA7TG |
 | error | **issue_e7dea4abd8cffd476a05** — RTX assessment source operation is ambiguous within one run | 2026-08-05T22:31:51Z | controller | 01KZA04098D4DF0J4SFMJK1TDD |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
