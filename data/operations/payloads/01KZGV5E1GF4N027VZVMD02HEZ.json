@@ -1,0 +1,42 @@
+{
+  "entity_id": "security_a5dc16f3f4b245e6c168",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYQCTS30GG62ZGQQAV3REQ88",
+    "changed_gate": "goonhilly_acquisition_invalidates_pre_acquisition_valuation_inputs",
+    "full_research_requested": true,
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
+    "quick_check_operation_id": "01KZ8BGD98NGR8DC52D40WR5VH",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly_entered_with_21_79_percent_period_decline",
+        "source_ref": "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073.md"
+      },
+      {
+        "cause": "allocation_maintenance_requested_comparable_assessment",
+        "source_ref": "data/operations/payloads/01KZ8BGD98NGR8DC52D40WR5VH.json"
+      },
+      {
+        "cause": "goonhilly_completion_changed_cash_dilution_and_integration_inputs",
+        "source_ref": "source_lunr_20260803_goonhilly_8k"
+      }
+    ],
+    "security_id": "security_a5dc16f3f4b245e6c168",
+    "source_price_hash": "c5b846a0cc45e7033eb5322af3ce18c73775ff3003dc5563c2a161ac7a03e8fe",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Intuitive Machines after the Goonhilly acquisition, August volume anomaly, valuation-support gap, and pre-Q2 allocation-maintenance request.",
+  "operation_id": "01KZGV5E1GF4N027VZVMD02HEZ",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/operations/payloads/01KZ8BGD98NGR8DC52D40WR5VH.json",
+    "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073.md",
+    "source_lunr_20260803_goonhilly_8k"
+  ]
+}

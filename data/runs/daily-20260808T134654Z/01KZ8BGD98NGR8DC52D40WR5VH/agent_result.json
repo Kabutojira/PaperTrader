@@ -1,0 +1,106 @@
+{
+  "operation_id": "01KZ8BGD98NGR8DC52D40WR5VH",
+  "status": "succeeded",
+  "summary": "Completed one bounded Intuitive Machines quick check for the August 4 volume anomaly and merged allocation-maintenance request. The unchanged Q1 Form 10-Q remains the latest periodic filing, but the current SEC index identified a material August 3 Form 8-K completing the Goonhilly UK and U.S. acquisitions. The GBP 37.0 million UK consideration, USD 10 million COMSAT base cash price, 960,649 new Class A shares, integration costs, acquired contribution and post-closing adjustments are absent from the prior revenue-multiple sensitivity. The current schema-v2 assessment therefore records valuation as unsupported, Unrated / Watch and allocation-ineligible rather than inventing revised scenarios before Q2 results. The payload-bound USD 13.96 close and volume anomaly were followed by a rebound to USD 16.40 and an upper-Bollinger close on August 7, which is volatile event digestion rather than a verified entry gate. Exactly one dependent full security review, 01KZGV5E1GF4N027VZVMD02HEZ, was enqueued with every merged cause. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_lunr_q1_2026_10q",
+      "claim": "The Q1 Form 10-Q remained available with its unchanged content hash. It remains the latest periodic filing and supports the maintained USD 186.7 million Q1 revenue, USD 1.055 billion backlog, USD 231.6 million cash, USD 335.8 million long-term debt, cash-burn, dilution and contract-risk baseline.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+      "observed_at": "2026-08-08T14:02:47Z",
+      "source_hash": "b424eafae59554bcc85b691b296c18f939451e033e832e795ceb7220a9e4660e"
+    },
+    {
+      "source": "source_lunr_20260803_goonhilly_8k",
+      "claim": "The August 3 Form 8-K confirms completion of the Goonhilly acquisition. The UK consideration was GBP 37.0 million, split equally between cash and 960,649 Class A shares, while COMSAT carried a USD 10 million base cash price plus expenses and post-closing adjustments. This changes cash, dilution, integration and valuation inputs after the baseline review.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+      "observed_at": "2026-08-08T14:02:47Z",
+      "source_hash": "e46bd0d28879442d54280af5c24d6d1748e8329508849fa11dd8e2750b99b68e"
+    },
+    {
+      "source": "source_lunr_sec_submissions_20260808",
+      "claim": "The current SEC submissions index identifies the August 3 acquisition Form 8-K as the only later issuer operating filing after the Q1 Form 10-Q through this check. The August 6 Schedule 13G/A is an ownership filing rather than new operating evidence.",
+      "url": "https://data.sec.gov/submissions/CIK0001844452.json",
+      "observed_at": "2026-08-08T14:02:47Z",
+      "source_hash": "3d528a6a1015b7f0feb80e74e93f0f1b34824e670d6261ce73cd33cc343123aa"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The payload source-price hash c5b846a0cc45e7033eb5322af3ce18c73775ff3003dc5563c2a161ac7a03e8fe exactly binds the July 7-August 4 period, USD 13.960000038146973 close, 21.79% decline and entered volume anomaly. The refreshed cache records an August 7 USD 16.399999618530273 close, RSI 52.84438679, USD 16.08366904 upper Bollinger band and 0.88833365 volume z-score.",
+      "observed_at": "2026-08-08T13:47:02Z",
+      "source_hash": "e2852fa7cbd417e2a1a66a732bf0eaa06668be926ba85b32ad411ad53eda4205"
+    },
+    {
+      "source": "assessment_3b6200d9481217132a1c",
+      "claim": "The sole immutable schema-v2 assessment for this operation links legacy predecessor assessment_e8b460cfc4c850d39af2, current page hash 8470678405cedb2ecc2a0d41db0fdf9b210dcba27f4b75fde02eb06a7815c204, fresh USD mark and FX state, and all five retained evidence records. Deterministic normalization derives unsupported research, Unrated / Watch, quality score 64 and allocation ineligibility with valuation_unsupported and pending-relationship gates.",
+      "observed_at": "2026-08-08T14:07:53Z"
+    },
+    {
+      "source": "data/operations/payloads/01KZGV5E1GF4N027VZVMD02HEZ.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, exact volume-anomaly period and source-price hash, the allocation-maintenance cause, the Goonhilly evidence gate and full_research_requested=true."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZGV5E1GF4N027VZVMD02HEZ.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/assessment_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/enqueue_full_research_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/security_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/source_lunr_20260803_goonhilly_8k_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/source_lunr_q1_2026_10q_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/source_lunr_sec_submissions_20260808_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a5dc16f3f4b245e6c168.md"
+  ],
+  "operations_created": [
+    "01KZGV5E1GF4N027VZVMD02HEZ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Machines quick check completed: the August 4 volume anomaly and later rebound coincide with a material post-baseline Goonhilly acquisition filing. GBP 37.0 million of UK consideration, a USD 10 million COMSAT base cash price, 960,649 new shares and unresolved acquisition inputs make the pre-acquisition valuation unsupported. LUNR is Unrated / Watch and allocation-ineligible pending exactly one dependent full review; no paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/source_lunr_q1_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/source_lunr_20260803_goonhilly_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/source_lunr_sec_submissions_20260808_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T134654Z/01KZ8BGD98NGR8DC52D40WR5VH/assessment_upsert_request_v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was running, claimed by daily-20260808T134654Z with a live lease, and routed sequentially to native llm-wiki plus papertrader-quick-check-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYQCTS30GG62ZGQQAV3REQ88 succeeded for the same immutable LUNR/XNAS/USD/equity identity within ten days.",
+      "Verified the merged volume-anomaly and allocation-maintenance causes, exact July 7-August 4 period and canonical source-price hash; later August 6-7 cache rows were used only for the fresh current assessment.",
+      "Downloaded and hashed the unchanged Q1 Form 10-Q, current SEC submissions index and material August 3 acquisition Form 8-K; all three source records were accepted through the project CLI and no source body was committed.",
+      "Confirmed assessment assessment_3b6200d9481217132a1c is the sole immutable schema-v2 version for this operation, links its legacy predecessor and expected result path, matches page hash 8470678405cedb2ecc2a0d41db0fdf9b210dcba27f4b75fde02eb06a7815c204, and contains no invented scenario values.",
+      "Confirmed Goonhilly cash, dilution, integration, contribution and post-closing inputs materially invalidate the pre-acquisition valuation; full_research_requested=true and the changed gate require exactly one dependent full review.",
+      "Confirmed dependent operation 01KZGV5E1GF4N027VZVMD02HEZ contains this quick-check identity, all merged causes, exact payload market period and source-price hash, and depends on this operation.",
+      "Two immutable assessment request attempts were rejected without state changes for non-canonical blocker encoding; the third uniquely named corrected request was accepted and all three audited attempts are retained.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the fifteen canonical PaperTrader CLI invocations listed in commands_run, including the two documented non-mutating rejected assessment requests.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

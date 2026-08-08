@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lunr_20260803_goonhilly_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+  "source_type": "regulator_filing",
+  "title": "Intuitive Machines, Inc. August 3, 2026 Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e46bd0d28879442d54280af5c24d6d1748e8329508849fa11dd8e2750b99b68e",
+  "related_entity_ids": "security_a5dc16f3f4b245e6c168",
+  "checked_at": "2026-08-08T14:02:47Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The UK consideration was GBP 37.0 million, split equally between cash and 960,649 Class A shares; COMSAT had a USD 10 million base cash price plus expenses and adjustments.",
+  "summary": "The August 3 Form 8-K confirms completion of the Goonhilly UK and U.S. acquisitions, adding earth-station and satellite-communications assets while changing cash, share count, integration and valuation assumptions before Q2 results.",
+  "run_id": "daily-20260808T134654Z"
+}

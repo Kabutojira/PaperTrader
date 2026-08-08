@@ -2776,3 +2776,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   3.83% expected return, 9.29% base upside, and 27.14% bear downside. The result remains Hold /
   Watch and allocation-ineligible; no full review, strategy, signal, order, or paper trade was
   created.
+
+## 2026-08-08 — quick check — Intuitive Machines, Inc. Class A common stock
+
+- Rechecked [[securities/security_a5dc16f3f4b245e6c168|Intuitive Machines]] after the August 4
+  volume anomaly and allocation-maintenance request. The Q1 filing is unchanged, while the current
+  SEC index identifies a material August 3 Form 8-K completing the Goonhilly acquisition.
+- The GBP 37.0 million UK consideration, USD 10 million COMSAT base cash price, 960,649 new Class A
+  shares, and unresolved integration and post-closing inputs make the prior revenue-multiple
+  sensitivity unsupported. LUNR remains Watch and allocation-ineligible; exactly one dependent
+  full review was requested and no paper trade was created.

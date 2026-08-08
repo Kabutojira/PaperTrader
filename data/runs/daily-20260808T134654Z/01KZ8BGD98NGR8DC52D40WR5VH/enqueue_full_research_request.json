@@ -1,0 +1,46 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_a5dc16f3f4b245e6c168",
+  "dedupe_key": "security_research:security_a5dc16f3f4b245e6c168:quick-check-goonhilly-volume:2026-08-08",
+  "prompt": "Fully reassess Intuitive Machines after the Goonhilly acquisition, August volume anomaly, valuation-support gap, and pre-Q2 allocation-maintenance request.",
+  "inputs": {
+    "security_id": "security_a5dc16f3f4b245e6c168",
+    "quick_check_operation_id": "01KZ8BGD98NGR8DC52D40WR5VH",
+    "baseline_operation_id": "01KYQCTS30GG62ZGQQAV3REQ88",
+    "changed_gate": "goonhilly_acquisition_invalidates_pre_acquisition_valuation_inputs",
+    "full_research_requested": true,
+    "trigger_types": ["volume_anomaly"],
+    "market_data_date": "2026-08-04",
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "period_start": "2026-07-07",
+    "period_end": "2026-08-04",
+    "source_price_hash": "c5b846a0cc45e7033eb5322af3ce18c73775ff3003dc5563c2a161ac7a03e8fe",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly_entered_with_21_79_percent_period_decline",
+        "source_ref": "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073.md"
+      },
+      {
+        "cause": "allocation_maintenance_requested_comparable_assessment",
+        "source_ref": "data/operations/payloads/01KZ8BGD98NGR8DC52D40WR5VH.json"
+      },
+      {
+        "cause": "goonhilly_completion_changed_cash_dilution_and_integration_inputs",
+        "source_ref": "source_lunr_20260803_goonhilly_8k"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZ8BGD98NGR8DC52D40WR5VH",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": ["01KZ8BGD98NGR8DC52D40WR5VH"],
+  "not_before": "now",
+  "deadline": "2026-08-13T12:00:00Z",
+  "source_refs": [
+    "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073.md",
+    "data/operations/payloads/01KZ8BGD98NGR8DC52D40WR5VH.json",
+    "source_lunr_20260803_goonhilly_8k"
+  ],
+  "max_attempts": 3
+}
