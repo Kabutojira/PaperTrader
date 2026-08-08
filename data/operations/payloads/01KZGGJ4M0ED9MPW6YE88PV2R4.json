@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_95351d928b674bbdf687",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-07T16:30:55Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
+    "security_id": "security_95351d928b674bbdf687"
+  },
+  "objective": "Revalidate security_95351d928b674bbdf687 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZGGJ4M0ED9MPW6YE88PV2R4",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_dna_q2_2026_10q",
+    "source_dna_q2_2026_results"
+  ]
+}

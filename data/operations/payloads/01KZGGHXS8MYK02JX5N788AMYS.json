@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_muRIXCDw-k0",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-08T11:01:29Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_muRIXCDw-k0",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "muRIXCDw-k0",
+    "video_title": "Google’s AI Brain Drain, SpaceX's Huge Quarter, Airtable’s 90% Collapse, US Data Fuels China AI",
+    "video_url": "https://www.youtube.com/watch?v=muRIXCDw-k0"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZGGHXS8MYK02JX5N788AMYS",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=muRIXCDw-k0"
+  ]
+}

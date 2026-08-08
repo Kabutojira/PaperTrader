@@ -2,10 +2,43 @@
   "entity_id": "security_83a56943e18793f685b0",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_83a56943e18793f685b0"
+    "market_data_as_of": "2026-08-08T11:01:36Z",
+    "market_data_date": "2026-08-07",
+    "period_end": "2026-08-07",
+    "period_start": "2026-07-10",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_83a56943e18793f685b0:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:17Z",
+        "prompt": "Research TXN — Texas Instruments Incorporated as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_83a56943e18793f685b0:050172deb6284f2e7cd9:2026-08-07",
+        "market_data_date": "2026-08-07",
+        "observed_at": "2026-08-08T11:01:36Z",
+        "prompt": "Research security_83a56943e18793f685b0 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_83a56943e18793f685b0-macd_cross_above_signal-d98969d607e6.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_83a56943e18793f685b0",
+    "source_price_hash": "3791d394103d671f6b1bbdf79f5bde109497f22820db8d60db52c46d47481883",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research TXN — Texas Instruments Incorporated as an initial bounded security review.",
+  "objective": "Research TXN — Texas Instruments Incorporated as an initial bounded security review. | Additional cause: Research security_83a56943e18793f685b0 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYPB27Y84W38J6MDDEF7PHG0",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_83a56943e18793f685b0-macd_cross_above_signal-d98969d607e6.md"
+  ]
 }

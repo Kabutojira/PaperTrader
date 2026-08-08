@@ -2,10 +2,43 @@
   "entity_id": "security_fe5539a7d3fd9d553bce",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_fe5539a7d3fd9d553bce"
+    "market_data_as_of": "2026-08-08T11:01:36Z",
+    "market_data_date": "2026-08-07",
+    "period_end": "2026-08-07",
+    "period_start": "2026-07-10",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_fe5539a7d3fd9d553bce:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:40Z",
+        "prompt": "Research MSTR — Strategy Inc as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_fe5539a7d3fd9d553bce:5f52a3845dc2f61fe1cd:2026-08-07",
+        "market_data_date": "2026-08-07",
+        "observed_at": "2026-08-08T11:01:36Z",
+        "prompt": "Research security_fe5539a7d3fd9d553bce with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-1c56259a5e4e.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_fe5539a7d3fd9d553bce",
+    "source_price_hash": "bea8f67ccb0bdbb8dd08cae71b1b3d767d138b236a61b5960233bc591b89d6b9",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Research MSTR — Strategy Inc as an initial bounded security review.",
+  "objective": "Research MSTR — Strategy Inc as an initial bounded security review. | Additional cause: Research security_fe5539a7d3fd9d553bce with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KYPB2YD02XHRSSW68JA9MCG7",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-1c56259a5e4e.md"
+  ]
 }
