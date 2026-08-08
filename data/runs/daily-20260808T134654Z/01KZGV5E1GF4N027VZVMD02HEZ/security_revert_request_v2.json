@@ -1,0 +1,23 @@
+{
+  "security_id": "security_a5dc16f3f4b245e6c168",
+  "issuer_id": "issuer_0be47cd79cc6492e56b5",
+  "company_name": "Intuitive Machines, Inc.",
+  "instrument_name": "Intuitive Machines, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "LUNR",
+  "exchange_code": "NGM",
+  "venue_mic": "XNAS",
+  "provider_symbol": "LUNR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; Goonhilly completion and volatile volume require a full valuation refresh before Q2 results.",
+  "research_summary": "Goonhilly adds communications assets but changes cash, dilution and integration inputs, making the prior valuation unsupported pending full review.",
+  "research_page": "data/wiki/securities/security_a5dc16f3f4b245e6c168.md",
+  "last_research_at": "2026-08-08T14:13:25Z",
+  "next_review_at": "2026-08-13T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm"
+}

@@ -1,0 +1,90 @@
+{
+  "operation_id": "01KZGV5E1GF4N027VZVMD02HEZ",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded full Intuitive Machines review. The unchanged Q1 Form 10-Q, Goonhilly acquisition Form 8-K and SEC submissions index were re-fetched and registered, but the required schema-v2 assessment could not be written: the deterministic applier found both predecessor quick check 01KZ8BGD98NGR8DC52D40WR5VH and current security review 01KZGV5E1GF4N027VZVMD02HEZ for the same security and run, then rejected their provenance as ambiguous. The wiki page was restored and remains hash-aligned with the prior unsupported assessment; the structured security conclusion was restored, with only the deterministic monotonic research timestamp advanced. No idea follow-up, strategy, signal, order, allocation or accounting state changed. Issue issue_3d573dd92b113a698d01 was recorded, and strict schema, queue, wiki, integrity and portfolio checks passed.",
+  "evidence": [
+    {
+      "source": "Intuitive Machines Q1 2026 Form 10-Q",
+      "claim": "The unchanged filing was retrieved with HTTP 200 and confirms the pre-Goonhilly financial baseline, including USD 231.624 million of cash, USD 335.844 million of long-term debt and 216,819,088 Class A and Class C shares outstanding.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026035236/lunr-20260331.htm",
+      "observed_at": "2026-08-08T14:13:25Z",
+      "source_hash": "b424eafae59554bcc85b691b296c18f939451e033e832e795ceb7220a9e4660e"
+    },
+    {
+      "source": "Intuitive Machines August 3, 2026 Form 8-K",
+      "claim": "The unchanged filing was retrieved with HTTP 200 and confirms GBP 37.0 million of UK consideration split equally between cash and 960,649 Class A shares, plus a USD 10 million COMSAT base cash price, while omitting acquired contribution, integration cost and final post-closing adjustments.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000119312526330778/d323986d8k.htm",
+      "observed_at": "2026-08-08T14:13:25Z",
+      "source_hash": "e46bd0d28879442d54280af5c24d6d1748e8329508849fa11dd8e2750b99b68e"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The corrected immutable assessment request made no assessment-table change and failed with 'assessment source operation is ambiguous for this run' because the same run contains predecessor quick_check_research 01KZ8BGD98NGR8DC52D40WR5VH and current security_research 01KZGV5E1GF4N027VZVMD02HEZ, while the request contract provides no source-operation selector."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_3b6200d9481217132a1c from quick check 01KZ8BGD98NGR8DC52D40WR5VH. Its research-page hash and the restored current page hash both equal 8470678405cedb2ecc2a0d41db0fdf9b210dcba27f4b75fde02eb06a7815c204; no assessment history row or idea follow-up was created for this failed review."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/assessment_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/issue_record_request.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/security_revert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/security_revert_request_v2.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/security_upsert_request.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_20260803_goonhilly_8k_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_q1_2026_10q_refresh_request.json",
+    "data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_sec_submissions_20260808_refresh_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_3d573dd92b113a698d01"
+  ],
+  "daily_report_items": [
+    "Intuitive Machines' full review failed closed because deterministic assessment provenance was ambiguous between a same-run quick check and its dependent full review. Refreshed SEC source metadata was retained, the prior unsupported quick-check assessment and restored page remain hash-aligned, issue issue_3d573dd92b113a698d01 was recorded, and no idea follow-up, paper strategy, signal, order, allocation or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_q1_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_20260803_goonhilly_8k_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/source_lunr_sec_submissions_20260808_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/assessment_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/security_revert_request.json",
+    "papertrader issue record --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168",
+    "papertrader research security upsert --request data/runs/daily-20260808T134654Z/01KZGV5E1GF4N027VZVMD02HEZ/security_revert_request_v2.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running operation, claimed by daily-20260808T134654Z with a live lease at operation start, a validated immutable payload, matching LUNR/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state reads and retained the prior quick-check result; canonical structured state contains no linked idea or accepted relationship for this security.",
+      "Retrieved the Q1 Form 10-Q, Goonhilly Form 8-K and SEC submissions index with HTTP 200, verified their unchanged SHA-256 hashes and registered refreshed source metadata through immutable source requests.",
+      "The schema-corrected assessment request was rejected without assessment-state change because the deterministic applier found two same-security source operations claimed by this run and provides no request field to select the current operation. The required assessment therefore could not be completed.",
+      "Restored the prior wiki page exactly; current page and current assessment retain identical hash 8470678405cedb2ecc2a0d41db0fdf9b210dcba27f4b75fde02eb06a7815c204. The prior quick-check assessment remains current and no new assessment history row exists for this operation.",
+      "No idea follow-up was required or enqueued because canonical context contains no linked ideas or accepted relationships and this full review produced no accepted assessment. The full strategy gate remains failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed after cleanup.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}
