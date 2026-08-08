@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_solar_storage_grid_atkr",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_solar_storage_grid_atkr",
+    "security_id": "security_22c2b9d782a62d7a9b86"
+  },
+  "objective": "Review the canonical relationship from idea_solar_storage_grid_flexibility_reset to security_22c2b9d782a62d7a9b86 and accept or reject it with current evidence.",
+  "operation_id": "01KZGJBGJ06NJ3FSNFQDB30JB2",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_atkr_june_2026_litigation_8k",
+    "source_atkr_q2_2026_10q",
+    "source_atkr_q2_2026_results"
+  ]
+}

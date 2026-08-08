@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_solar_storage_grid_enph",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_solar_storage_grid_enph",
+    "security_id": "security_f2b9760d847b2ba59324"
+  },
+  "objective": "Review the canonical relationship from idea_solar_storage_grid_flexibility_reset to security_f2b9760d847b2ba59324 and accept or reject it with current evidence.",
+  "operation_id": "01KZGJBGJ0RSQX6KWXTSDC7QYH",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_enph_q2_2026_10q",
+    "source_enph_q2_2026_release"
+  ]
+}
