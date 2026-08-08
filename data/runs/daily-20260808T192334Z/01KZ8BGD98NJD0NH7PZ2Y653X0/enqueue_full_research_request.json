@@ -1,0 +1,57 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_6f9a1450edceb9307c9a",
+  "dedupe_key": "security_research:security_6f9a1450edceb9307c9a:quick-check-q2-results:2026-08-08",
+  "prompt": "Fully reassess Arista Networks after Q2 results superseded the baseline valuation inputs and triggered post-results MACD, volume, and upper-Bollinger alerts.",
+  "inputs": {
+    "security_id": "security_6f9a1450edceb9307c9a",
+    "idea_ids": ["idea_ai_compute_networking_hyperscaler_monetization"],
+    "relationship_ids": [],
+    "quick_check_operation_id": "01KZ8BGD98NJD0NH7PZ2Y653X0",
+    "baseline_operation_id": "01KYHW57105SVXPKV0ES1M1H13",
+    "changed_gate": "q2_results_superseded_prior_revenue_and_valuation_inputs",
+    "full_research_requested": true,
+    "trigger_types": ["bollinger_above_upper", "macd_cross_above_signal", "volume_anomaly"],
+    "market_data_date": "2026-08-05",
+    "market_data_as_of": "2026-08-08T19:23:43Z",
+    "period_start": "2026-07-07",
+    "period_end": "2026-08-05",
+    "source_price_hash": "c917f097ff89a87567c08c0692bb34ee420b8ea9e63449537720649822be33ce",
+    "research_reasons": [
+      {
+        "cause": "bollinger_above_upper_entered_after_q2_results",
+        "source_ref": "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6.md"
+      },
+      {
+        "cause": "macd_cross_above_signal_entered_on_q2_release",
+        "source_ref": "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b.md"
+      },
+      {
+        "cause": "volume_anomaly_entered_on_q2_release_and_strengthened_next_session",
+        "source_ref": "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be.md|data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d.md"
+      },
+      {
+        "cause": "q2_revenue_and_q3_guidance_superseded_prior_valuation_baseline",
+        "source_ref": "source_anet_q2_2026_earnings|source_anet_q2_2026_10q"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZ8BGD98NJD0NH7PZ2Y653X0",
+  "priority": 99,
+  "freshness_days": 0,
+  "depends_on": ["01KZ8BGD98NJD0NH7PZ2Y653X0"],
+  "not_before": "now",
+  "deadline": "2026-08-12T20:00:00Z",
+  "source_refs": [
+    "data/operations/payloads/01KZ8BGD98NJD0NH7PZ2Y653X0.json",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6.md",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b.md",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be.md",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d.md",
+    "source_anet_q2_2026_earnings",
+    "source_anet_q2_2026_10q",
+    "source_anet_sec_submissions_20260808"
+  ],
+  "max_attempts": 3
+}

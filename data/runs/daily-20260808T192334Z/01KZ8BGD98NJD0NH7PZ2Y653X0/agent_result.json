@@ -1,0 +1,106 @@
+{
+  "operation_id": "01KZ8BGD98NJD0NH7PZ2Y653X0",
+  "status": "succeeded",
+  "summary": "Completed one bounded Arista Networks quick check for the merged August 4-5 Bollinger, MACD and volume alerts. Current primary evidence supersedes the Q1 baseline: Q2 revenue was USD 3.036 billion, up 37.7% year over year, GAAP operating margin was 45.4%, and Q3 revenue guidance was approximately USD 3.3 billion. Those results make the prior USD 11.2 billion annualized-revenue valuation input stale. The refreshed USD 188.67 mark is also 7.48% above the prior USD 174.56 base sensitivity, while August 7 indicators have no active trigger, so the price action is post-results digestion rather than a verified entry gate. The accepted schema-v2 assessment is Unrated / Watch, valuation-unsupported and allocation-ineligible pending a full valuation rebuild. Exactly one dependent full security review, 01KZHE5TSGZG1J39Z17TDBK1DW, was enqueued with all merged causes. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_anet_q2_2026_earnings",
+      "claim": "Arista reported Q2 revenue of USD 3.036 billion, 37.7% year-over-year growth, 45.4% GAAP operating margin and approximately USD 3.3 billion of Q3 revenue guidance. This materially supersedes the Q1 review's USD 11.2 billion annualized-revenue valuation baseline.",
+      "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+      "observed_at": "2026-08-08T19:35:45Z",
+      "source_hash": "2eccb07bd3eee791d860c0abecad923b709d1366fcd6cdd2369785181293a814"
+    },
+    {
+      "source": "source_anet_q2_2026_10q",
+      "claim": "The Q2 Form 10-Q reports USD 2.290 billion of cash and cash equivalents and USD 11.053 billion of marketable securities at June 30 and updates the concentration, inventory, purchase-commitment and cash-flow evidence required for a current valuation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm",
+      "observed_at": "2026-08-08T19:35:45Z",
+      "source_hash": "ef779da6a72b571c20f9f6f91c4d1acb009e85d2ae2f6fd39d284e9283811361"
+    },
+    {
+      "source": "source_anet_sec_submissions_20260808",
+      "claim": "The current SEC submissions index confirms that the August 4 results Form 8-K and August 5 Form 10-Q are the latest issuer operating filings; later filings through August 7 are ownership forms.",
+      "url": "https://data.sec.gov/submissions/CIK0001596532.json",
+      "observed_at": "2026-08-08T19:35:45Z",
+      "source_hash": "3d3f817821e555bfe1b4f9b66ab16e49728a1023d25b8f4d6d1d338b10daa6d4"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The required payload binds the July 7-August 5 alert periods and source-price hash c917f097ff89a87567c08c0692bb34ee420b8ea9e63449537720649822be33ce. The refreshed cache records an August 7 USD 188.6699981689453 close, RSI 58.76383791, upper Bollinger band USD 194.45742052, MACD 6.26877356 below its 6.56505877 signal, and no active trigger.",
+      "observed_at": "2026-08-08T19:23:43Z",
+      "source_hash": "c917f097ff89a87567c08c0692bb34ee420b8ea9e63449537720649822be33ce"
+    },
+    {
+      "source": "assessment_422bcb3fa173c8a9cc9c",
+      "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_b5ba294a8f3d2d1e51aa, current page hash 9e6fe8209e1eec40dccfb0af50e810c2b615351a73620f01e3f1e3fbdc46ae51, fresh USD mark and FX state, and all five retained source records. Deterministic normalization derives quality score 94, Unrated / Watch, unsupported research and allocation ineligibility under valuation_unsupported.",
+      "observed_at": "2026-08-08T19:40:14Z"
+    },
+    {
+      "source": "data/operations/payloads/01KZHE5TSGZG1J39Z17TDBK1DW.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, successful baseline identity, all three merged trigger types, both volume packets, exact source-price hash, Q2 changed gate and full_research_requested=true."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZHE5TSGZG1J39Z17TDBK1DW.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/assessment_upsert_request.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/enqueue_full_research_request.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/security_upsert_request.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/source_anet_q2_2026_10q_request.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/source_anet_q2_2026_earnings_request.json",
+    "data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/source_anet_sec_submissions_20260808_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6f9a1450edceb9307c9a.md"
+  ],
+  "operations_created": [
+    "01KZHE5TSGZG1J39Z17TDBK1DW"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Arista Networks quick check completed: Q2 revenue of USD 3.036 billion, 37.7% year-over-year growth, 45.4% GAAP operating margin and approximately USD 3.3 billion Q3 guidance supersede the prior valuation baseline. The USD 188.67 mark remains above the old base sensitivity; ANET is Unrated / Watch and allocation-ineligible pending exactly one dependent full review. No paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_6f9a1450edceb9307c9a",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/source_anet_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/source_anet_q2_2026_earnings_request.json",
+    "papertrader research source record --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/source_anet_sec_submissions_20260808_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260808T192334Z/01KZ8BGD98NJD0NH7PZ2Y653X0/assessment_upsert_request_v3.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_6f9a1450edceb9307c9a"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was running, claimed by daily-20260808T192334Z with a live lease, and routed sequentially to native llm-wiki plus papertrader-quick-check-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYHW57105SVXPKV0ES1M1H13 succeeded for the same immutable ANET/XNYS/USD/equity identity within ten days at enqueue time.",
+      "Verified all merged Bollinger, MACD and volume causes, both volume packets, exact July 7-August 5 periods and canonical source-price hash; the August 7 cache row was used only for the fresh current assessment.",
+      "Fetched and hashed the current issuer results release, Q2 Form 10-Q and SEC submissions index; all three source records were accepted through the project CLI and no source body was committed.",
+      "Confirmed assessment assessment_422bcb3fa173c8a9cc9c is the sole immutable schema-v2 version for this operation, links its legacy predecessor and expected result path, matches page hash 9e6fe8209e1eec40dccfb0af50e810c2b615351a73620f01e3f1e3fbdc46ae51, and contains no invented scenario values.",
+      "Confirmed Q2 revenue, guidance, balance-sheet and commitment evidence materially supersede the prior valuation inputs; the prior base sensitivity is 7.48% below the fresh mark, so full_research_requested=true and the changed gate require exactly one dependent full review.",
+      "Confirmed dependent operation 01KZHE5TSGZG1J39Z17TDBK1DW contains this quick-check identity, all merged causes, exact payload period and source-price hash, and depends on this operation.",
+      "Two immutable assessment request attempts were rejected without state changes for an unknown template and non-canonical evidence ordering; the third uniquely named corrected request was accepted and all three audited attempts are retained.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the fifteen canonical PaperTrader CLI invocations listed in commands_run, including the two documented non-mutating rejected assessment requests.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

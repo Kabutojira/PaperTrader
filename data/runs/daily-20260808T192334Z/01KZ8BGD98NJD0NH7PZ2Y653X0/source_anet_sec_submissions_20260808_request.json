@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_sec_submissions_20260808",
+  "url": "https://data.sec.gov/submissions/CIK0001596532.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001596532.json",
+  "source_type": "regulator_index",
+  "title": "Arista Networks SEC submissions index checked 2026-08-08",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "3d3f817821e555bfe1b4f9b66ab16e49728a1023d25b8f4d6d1d338b10daa6d4",
+  "related_entity_ids": "security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-08-08T19:35:45Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The index lists the August 4 results Form 8-K and August 5 Form 10-Q as the latest operating filings; later entries through August 7 are ownership forms.",
+  "summary": "The current SEC index confirms that Q2 results and the Q2 Form 10-Q supersede the Q1 operating evidence used by the baseline assessment.",
+  "run_id": "daily-20260808T192334Z"
+}

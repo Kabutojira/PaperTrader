@@ -1,0 +1,57 @@
+{
+  "entity_id": "security_6f9a1450edceb9307c9a",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYHW57105SVXPKV0ES1M1H13",
+    "changed_gate": "q2_results_superseded_prior_revenue_and_valuation_inputs",
+    "full_research_requested": true,
+    "idea_ids": [
+      "idea_ai_compute_networking_hyperscaler_monetization"
+    ],
+    "market_data_as_of": "2026-08-08T19:23:43Z",
+    "market_data_date": "2026-08-05",
+    "period_end": "2026-08-05",
+    "period_start": "2026-07-07",
+    "quick_check_operation_id": "01KZ8BGD98NJD0NH7PZ2Y653X0",
+    "relationship_ids": [],
+    "research_reasons": [
+      {
+        "cause": "bollinger_above_upper_entered_after_q2_results",
+        "source_ref": "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6.md"
+      },
+      {
+        "cause": "macd_cross_above_signal_entered_on_q2_release",
+        "source_ref": "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b.md"
+      },
+      {
+        "cause": "volume_anomaly_entered_on_q2_release_and_strengthened_next_session",
+        "source_ref": "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be.md|data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d.md"
+      },
+      {
+        "cause": "q2_revenue_and_q3_guidance_superseded_prior_valuation_baseline",
+        "source_ref": "source_anet_q2_2026_earnings|source_anet_q2_2026_10q"
+      }
+    ],
+    "security_id": "security_6f9a1450edceb9307c9a",
+    "source_price_hash": "c917f097ff89a87567c08c0692bb34ee420b8ea9e63449537720649822be33ce",
+    "trigger_types": [
+      "bollinger_above_upper",
+      "macd_cross_above_signal",
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Arista Networks after Q2 results superseded the baseline valuation inputs and triggered post-results MACD, volume, and upper-Bollinger alerts.",
+  "operation_id": "01KZHE5TSGZG1J39Z17TDBK1DW",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/operations/payloads/01KZ8BGD98NJD0NH7PZ2Y653X0.json",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-31f44d2276c6.md",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b.md",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be.md",
+    "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d.md",
+    "source_anet_q2_2026_10q",
+    "source_anet_q2_2026_earnings",
+    "source_anet_sec_submissions_20260808"
+  ]
+}

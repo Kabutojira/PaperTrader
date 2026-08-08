@@ -2802,3 +2802,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   Unrated / Watch and allocation ineligibility rather than inventing bear, base or bull values.
 - The August 7 USD 16.40 mark and upper-Bollinger close remain volatile event digestion before the
   August 13 Q2 release. No strategy, signal, order or paper trade was created.
+
+## 2026-08-08 — quick check — Arista Networks, Inc. common stock
+
+- Rechecked [[securities/security_6f9a1450edceb9307c9a|Arista Networks]] after the merged 4-5
+  August MACD, volume and upper-Bollinger alerts. Q2 revenue was USD 3.036 billion, up 37.7% year
+  over year, GAAP operating margin was 45.4%, and Q3 revenue guidance was approximately USD 3.3
+  billion; these results supersede the Q1 evidence and USD 11.2 billion revenue baseline used by
+  the prior valuation sensitivity.
+- The 7 August mark is USD 188.67, above the prior USD 174.56 base sensitivity, while the refreshed
+  indicators show no active trigger. The quick check therefore treats the alerts as post-results
+  price digestion, records valuation as unsupported pending exactly one dependent full review, and
+  creates no strategy, signal, order or paper trade.

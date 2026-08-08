@@ -1,0 +1,23 @@
+{
+  "security_id": "security_6f9a1450edceb9307c9a",
+  "issuer_id": "issuer_29ad971dc8b75eac1b79",
+  "company_name": "Arista Networks, Inc.",
+  "instrument_name": "Arista Networks, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ANET",
+  "exchange_code": "NYSE",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ANET",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Information Technology",
+  "industry": "Communications Equipment",
+  "status": "watching",
+  "watchlist_reason": "AI and hyperscaler networking exposure; Q2 evidence and post-results technical alerts require a full valuation refresh.",
+  "research_summary": "Q2 growth and margins strengthen the thesis, but the prior valuation baseline is stale and the USD 188.67 mark is above its base sensitivity.",
+  "research_page": "data/wiki/securities/security_6f9a1450edceb9307c9a.md",
+  "last_research_at": "2026-08-08T19:35:45Z",
+  "next_review_at": "2026-08-12T20:00:00Z",
+  "source": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx"
+}

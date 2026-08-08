@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_q2_2026_earnings",
+  "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+  "canonical_url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx",
+  "source_type": "issuer_release",
+  "title": "Arista Networks Q2 2026 financial results",
+  "publisher": "Arista Networks, Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "2eccb07bd3eee791d860c0abecad923b709d1366fcd6cdd2369785181293a814",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-08-08T19:35:45Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Revenue was $3.036 billion, up 37.7% year over year; GAAP operating margin was 45.4%; third-quarter revenue guidance was approximately $3.3 billion.",
+  "summary": "Q2 results exceeded the revenue run-rate embedded in the prior sensitivity and raised the next-quarter revenue baseline, while preserving strong profitability and making the prior valuation inputs stale.",
+  "run_id": "daily-20260808T192334Z"
+}
