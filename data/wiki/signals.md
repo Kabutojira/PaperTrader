@@ -7,13 +7,13 @@ tags:
 created: "2026-08-08"
 updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c40bd1927229031d7005"
-as_of: "2026-08-08T12:35:28Z"
+snapshot_id: "decision_3dec2327f09b1aa2aab6"
+as_of: "2026-08-08T17:06:34Z"
 ---
 
 # Signals
 
-**As of `2026-08-08T12:35:28Z`**
+**As of `2026-08-08T17:06:34Z`**
 
 ## Actionable trade signals
 
@@ -85,8 +85,8 @@ No pending orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-07`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `succeeded`
+- Conclusion: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
 
 ### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 

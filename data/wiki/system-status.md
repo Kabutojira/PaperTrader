@@ -7,13 +7,13 @@ tags:
 created: "2026-08-08"
 updated: "2026-08-08"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c40bd1927229031d7005"
-as_of: "2026-08-08T12:35:28Z"
+snapshot_id: "decision_3dec2327f09b1aa2aab6"
+as_of: "2026-08-08T17:06:34Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-08T12:35:28Z`
+**As of:** `2026-08-08T17:06:34Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,7 +22,7 @@ as_of: "2026-08-08T12:35:28Z"
 ## Coverage
 
 - Assessments: 68/68
-- Fresh-evidence assessments: 68/68
+- Fresh-evidence assessments: 67/68
 - Relationship reviews: 26/68
 - Accepted relationships: 23
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-08T12:35:28Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 330
+- Research backlog: 334
 - Last successful daily run: 2026-08-08
 
 ## Current issues by investment impact
@@ -40,10 +40,11 @@ as_of: "2026-08-08T12:35:28Z"
 - Error **DNA — Ginkgo Bioworks Holdings, Inc.: Local harness operation validation failed: [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]** — completed security research requires exactly one immutable assessment version; files_changed contains an unchanged old value: data/wiki/log.md; files_changed contains an unchanged old value: data/wiki/research-catalog.md; files_changed is stale or incomplete: reported=['data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_request.json', 'data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_retry01_request.json', 'data/runs/local-daily
 - Error **RIO — Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_1c055eb9b2bb1f5a8ff2|Quick check research for RIO on 2026-08-03]] and current security_research [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]] claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
+- Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
-- Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-05]]** — repeat security research page requires a Changes since prior review section
+- Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Warning **LAC — Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]** — [[securities/security_fb87fac302a5446a1ced|LAC]]: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - Warning **HOOD — Robinhood Markets, Inc.: Daily preparation degraded: [[securities/security_ad3b1f8f59fd599f079a|HOOD]]** — [[securities/security_ad3b1f8f59fd599f079a|HOOD]]: price cache is empty
@@ -136,7 +137,7 @@ as_of: "2026-08-08T12:35:28Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 330 active operations.
+Showing 20 of 334 active operations.
 
 <details><summary>Active research work</summary>
 
