@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_Mey5z-pk5yQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-09T11:05:16Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_Mey5z-pk5yQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "Mey5z-pk5yQ",
+    "video_title": "Could This Be The Most Controversial Multibagger Stock In The Making?",
+    "video_url": "https://www.youtube.com/watch?v=Mey5z-pk5yQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZK35JF0GV4QT8NCXDWM6M62",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=Mey5z-pk5yQ"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "entity_id": "seekingalpha_trending_daily",
+  "entity_type": "source",
+  "inputs": {
+    "analysis_candidate_limit": 12,
+    "analysis_page_url": "https://seekingalpha.com/trending-analysis",
+    "direct_site_access_allowed": false,
+    "discovery_date": "2026-08-09",
+    "discovery_mode": "search_index",
+    "lookback_days": 3,
+    "maximum_leads": 5,
+    "news_candidate_limit": 12,
+    "news_page_url": "https://seekingalpha.com/market-news/trending",
+    "search_attempts": 3,
+    "source_id": "seekingalpha_trending_daily",
+    "source_kind": "seekingalpha_search_index"
+  },
+  "objective": "Discover material Seeking Alpha analysis and entity-relevant news through search-index metadata only.",
+  "operation_id": "01KZK35QB8T4EWZDA2X60ZCAWQ",
+  "operation_type": "source_discovery",
+  "payload_version": 1,
+  "source_refs": [
+    "https://seekingalpha.com/market-news/trending",
+    "https://seekingalpha.com/trending-analysis"
+  ]
+}

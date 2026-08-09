@@ -2,18 +2,21 @@
   "entity_id": "security_6f9a1450edceb9307c9a",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-08T19:35:45Z",
     "baseline_operation_id": "01KYHW57105SVXPKV0ES1M1H13",
     "changed_gate": "q2_results_superseded_prior_revenue_and_valuation_inputs",
     "full_research_requested": true,
     "idea_ids": [
       "idea_ai_compute_networking_hyperscaler_monetization"
     ],
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-08T19:23:43Z",
     "market_data_date": "2026-08-05",
     "period_end": "2026-08-05",
     "period_start": "2026-07-07",
     "quick_check_operation_id": "01KZ8BGD98NJD0NH7PZ2Y653X0",
     "relationship_ids": [],
+    "research_page": "data/wiki/securities/security_6f9a1450edceb9307c9a.md",
     "research_reasons": [
       {
         "cause": "bollinger_above_upper_entered_after_q2_results",
@@ -30,6 +33,19 @@
       {
         "cause": "q2_revenue_and_q3_guidance_superseded_prior_valuation_baseline",
         "source_ref": "source_anet_q2_2026_earnings|source_anet_q2_2026_10q"
+      },
+      {
+        "dedupe_key": "security_research:security_6f9a1450edceb9307c9a:allocation-maintenance:2026-08-08T19:35:45Z",
+        "observed_at": "2026-08-09T11:05:22Z",
+        "prompt": "Revalidate security_6f9a1450edceb9307c9a with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_anet_q1_2026_10q",
+          "source_anet_q1_2026_earnings",
+          "source_anet_q2_2026_10q",
+          "source_anet_q2_2026_earnings",
+          "source_anet_sec_submissions_20260808"
+        ]
       }
     ],
     "security_id": "security_6f9a1450edceb9307c9a",
@@ -40,7 +56,7 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Fully reassess Arista Networks after Q2 results superseded the baseline valuation inputs and triggered post-results MACD, volume, and upper-Bollinger alerts.",
+  "objective": "Fully reassess Arista Networks after Q2 results superseded the baseline valuation inputs and triggered post-results MACD, volume, and upper-Bollinger alerts. | Additional cause: Revalidate security_6f9a1450edceb9307c9a with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZHE5TSGZG1J39Z17TDBK1DW",
   "operation_type": "security_research",
   "payload_version": 1,
@@ -50,6 +66,8 @@
     "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-macd_cross_above_signal-38851209cc8b.md",
     "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be.md",
     "data/wiki/inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-7a6eb592774d.md",
+    "source_anet_q1_2026_10q",
+    "source_anet_q1_2026_earnings",
     "source_anet_q2_2026_10q",
     "source_anet_q2_2026_earnings",
     "source_anet_sec_submissions_20260808"
