@@ -1,0 +1,23 @@
+{
+  "security_id": "security_97f38b2cb2d5ef127f5a",
+  "issuer_id": "issuer_f0de6eb64ff0330bf082",
+  "company_name": "Planet Labs PBC",
+  "instrument_name": "Planet Labs PBC Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "PL",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "PL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Earth-observation data and satellite-services candidate; maintained for contract conversion, cash generation, dilution, valuation and satellite execution.",
+  "research_summary": "USD 6.42/USD 14.36/USD 27.73 scenarios imply negative expected return at USD 23.93, leaving Planet Labs Sell / Avoid with no buy zone.",
+  "research_page": "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md",
+  "last_research_at": "2026-08-09T20:18:35Z",
+  "next_review_at": "2026-08-23T20:18:35Z",
+  "source": "source_pl_q1_fy2027_10q|source_pl_q1_fy2027_results_sec"
+}

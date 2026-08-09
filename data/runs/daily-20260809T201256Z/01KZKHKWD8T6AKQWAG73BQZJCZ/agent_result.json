@@ -1,0 +1,80 @@
+{
+  "operation_id": "01KZKHKWD8T6AKQWAG73BQZJCZ",
+  "status": "succeeded",
+  "summary": "Completed one bounded full review of Planet Labs PBC Class A common stock. Rechecked the unchanged Q1 fiscal 2027 Form 10-Q and SEC-filed results release, confirmed that the July 31 bullish MACD transition was a technical recovery rather than new fundamental evidence, and replaced the unsupported two-case sensitivity with a scenario-complete pre-profit-growth revenue-multiple assessment. Bear/base/bull fair values are USD 6.42/USD 14.36/USD 27.73 with a USD 14.652 probability-weighted value versus the USD 23.93 mark. Deterministic assessment derived Strong Sell / Avoid, -38.77% expected return, -29.08% confidence-adjusted expected return, and ineligibility from negative expected/base returns, poor downside payoff, inadequate margin of safety, and a pending relationship. Updated the security page, structured security and immutable assessment state, retained-source metadata, and wiki log. No linked ideas or accepted relationships existed, the conviction strategy gate failed, and no strategy, signal, order, allocation, fill, ledger, portfolio, or performance state changed.",
+  "evidence": [
+    {
+      "source": "source_pl_q1_fy2027_10q",
+      "claim": "Planet Labs reported Q1 fiscal 2027 revenue of USD 94.2 million, USD 730.8 million of cash and short-term investments, USD 460 million face value of 2030 convertible notes, 356.4 million common shares outstanding at April 30, 27.6 million unvested RSUs, 13.7 million options, and initial note conversion equivalent to about 38.5 million shares; the filing also documents capital intensity, contract-cancellation exposure, stock compensation, and dilution.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+      "observed_at": "2026-08-09T20:18:35Z",
+      "source_hash": "9d231aaadd4cefcb37654b291d06ea006f06823737afce397f49181c13a5b0b5"
+    },
+    {
+      "source": "source_pl_q1_fy2027_results_sec",
+      "claim": "The SEC-filed issuer release reported 32% year-over-year revenue growth, 97% recurring ACV, 106% net dollar retention, USD 852 million RPO, more than USD 900 million backlog, Q1 free cash flow of negative USD 2.5 million, and FY2027 revenue guidance of USD 425-441 million with USD 80-95 million of capex.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm",
+      "observed_at": "2026-08-09T20:18:35Z",
+      "source_hash": "b994d6e1a86c80fd8ab44ed324d04cd1a7a4be68b6b466ab4a295fbbb50832c2"
+    },
+    {
+      "source": "data/market/latest.csv",
+      "claim": "The identity-matched PL mark was USD 23.93000030517578 as of 2026-08-09T20:13:02Z, with USD/EUR 0.8648999929428101 at the same timestamp; the payload-bound July 31 observation was a bullish MACD cross at USD 20.48 after a 34.74% decline from July 2.",
+      "observed_at": "2026-08-09T20:13:02Z",
+      "source_hash": "eb672c4d670ec4581fc9040d10878e78f8fe48c98bef1a4c71445ae9e80545a7"
+    },
+    {
+      "source": "assessment_f276685aa36f1341befd",
+      "claim": "Deterministic schema-v2 assessment derived Strong Sell / Avoid, USD 14.652 probability-weighted fair value, -38.7714% expected return, -29.0786% confidence-adjusted expected return, USD 11.488 buy-below price, and ineligibility reason codes base_return_below_minimum, bear_base_payoff_below_minimum, expected_bear_payoff_below_minimum, expected_return_below_minimum, margin_of_safety_below_minimum, and relationship_pending. The immutable version links predecessor assessment_66fc26c182dc7e9e72f5 and the current operation/result path."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/assessment_upsert_request.json",
+    "data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_upsert_request.json",
+    "data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_10q_request.json",
+    "data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Planet Labs full review completed: Q1 operating evidence remains intact, but USD 6.42/USD 14.36/USD 27.73 scenarios produce USD 14.652 weighted fair value versus USD 23.93. Deterministic rating is Strong Sell / Avoid and allocation remains ineligible; no strategy, signal, order, or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader research source record --request data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T201256Z/01KZKHKWD8T6AKQWAG73BQZJCZ/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory repeat-review security context succeeded before assessment-state reads and confirmed immutable identity security_97f38b2cb2d5ef127f5a with no linked ideas, accepted relationships, or strategies.",
+      "Both retained primary sources were rechecked, registered with unchanged hashes, and current source history appended.",
+      "The first assessment request was rejected without state change because valuation_template_rationale is reserved for template=other; its immutable artifact was preserved and corrected in uniquely named assessment_upsert_retry01_request.json.",
+      "Assessment retry succeeded and current context confirmed schema version 2, predecessor assessment_66fc26c182dc7e9e72f5, source operation 01KZKHKWD8T6AKQWAG73BQZJCZ, current result path, current page hash, fresh price/FX identity, complete scenarios, and current immutable assessment_f276685aa36f1341befd.",
+      "No linked idea or accepted relationship exists, so the required idea-research follow-up count is exactly zero; the conviction strategy gate failed and no strategy follow-up was created.",
+      "scripts/papertrader schema validate --strict returned OK [schema].",
+      "scripts/papertrader queue validate returned OK [queue].",
+      "scripts/papertrader integrity --strict returned OK [integrity], including identity deduplication and source/assessment consistency.",
+      "scripts/papertrader wiki lint --strict returned OK [wiki].",
+      "scripts/papertrader portfolio reconcile --strict returned OK [portfolio].",
+      "Git delta inspection confirmed no changes to allocation targets/history, orders, executions, cash ledgers, portfolio, or performance."
+    ]
+  }
+}

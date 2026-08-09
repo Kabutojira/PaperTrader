@@ -2876,3 +2876,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   applier found both the prior quick check and this dependent full review as source operations in
   the same run and could not assign unambiguous provenance. The current Unrated / Watch assessment
   and security page therefore remain unchanged pending repair of the source-operation selection.
+
+## 2026-08-09 — full review — Planet Labs PBC Class A common stock
+
+- Reassessed [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] in a separate controller run
+  against the unchanged Q1 Form 10-Q and SEC-filed results release. Revenue growth, recurring ACV,
+  retention, RPO, backlog and liquidity support the operating thesis, while capital intensity,
+  government-contract cancellation, satellite execution, stock compensation and convertible
+  dilution remain material risks.
+- A scenario-complete `pre_profit_growth` revenue-multiple review produces USD 6.42/USD 14.36/USD
+  27.73 bear/base/bull fair values and a USD 14.65 probability-weighted value. At the USD 23.93 mark,
+  negative expected and base returns, severe bear downside, medium confidence, no margin of safety,
+  and no accepted relationship derive Sell / Avoid and no paper position. No strategy, signal,
+  order or paper trade was created.
