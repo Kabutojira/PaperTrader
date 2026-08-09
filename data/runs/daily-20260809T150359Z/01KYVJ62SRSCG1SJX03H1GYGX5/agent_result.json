@@ -1,0 +1,83 @@
+{
+  "operation_id": "01KYVJ62SRSCG1SJX03H1GYGX5",
+  "status": "succeeded",
+  "summary": "Rechecked SQM against the exact 2026-07-01 through 2026-07-30 volume-anomaly period, the latest 2026-08-07 market state, the retained Q1 filing, and the current SEC filing index. The 2026-07-30 USD 68.43 close was 7.80% below 2026-07-01, but the volume z-score exceeded the configured threshold by only 0.0185; by 2026-08-07 the ADS had recovered to USD 71.95 and the volume anomaly was inactive at 0.42. No Q2 earnings filing or other primary evidence changed the thesis, valuation or buy-zone blocker, catalysts, risks, invalidation, or decision-support gate. Refreshed the security page, source record, one-line summary, and comparable schema-v2 assessment. The result remains Unrated / Watch, medium confidence, allocation-ineligible, and valuation_unsupported. The temporary alert is noise and does not warrant a dependent full review, strategy, signal, order, or paper trade.",
+  "reason_code": "quick_check_no_material_change",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477.md",
+      "claim": "The deterministic alert bound the quick check to 2026-07-01 through 2026-07-30, with a USD 68.43 end close, -7.80% period return, and volume-anomaly strength only 0.0185 above the configured threshold.",
+      "observed_at": "2026-08-09T15:05:00Z",
+      "source_hash": "eb60470877a6ad0620c50e6f04ed2e363dfbe15d3845f7d018023a8f08ecc7d4"
+    },
+    {
+      "source": "data/market/prices/security_9d4049ed6669a52815d6.csv and data/market/indicators.csv",
+      "claim": "The latest canonical state is the 2026-08-07 USD 71.95 close, 7.60% above the prior-review USD 66.87 mark and 3.06% below 2026-07-01; the latest volume anomaly is 0.4184, below the configured 2.0 trigger.",
+      "observed_at": "2026-08-09T15:04:07Z",
+      "source_hash": "91ad512dd477d92ee74ae4aed78af345d8aa272d9e501278ef940deafecf66c7"
+    },
+    {
+      "source": "SQM Q1 2026 Form 6-K earnings release",
+      "claim": "The unchanged SEC-filed Q1 release remains available and preserves the operating-recovery, state-take, partnership-attribution, capex, minority-interest, balance-sheet, and normalized-valuation checklist; its retrieved content hash matched the registered hash.",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+      "observed_at": "2026-08-09T15:07:19Z",
+      "source_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa"
+    },
+    {
+      "source": "SEC submissions index for CIK 0000909037",
+      "claim": "The index checked on 2026-08-09 still showed the 2026-07-27 Mt Holland Form 6-K as the latest filing and no Q2 earnings filing, so there was no newer primary earnings evidence to change a gate.",
+      "url": "https://data.sec.gov/submissions/CIK0000909037.json",
+      "observed_at": "2026-08-09T15:06:00Z"
+    },
+    {
+      "source": "papertrader research security-context --security-id security_9d4049ed6669a52815d6",
+      "claim": "The audited repeat-state read confirmed the accepted lithium relationship, no strategy, refreshed source timestamp, and exactly one new schema-v2 assessment linked to assessment_a3b330620580749df996. Deterministic derivation returned Unrated / Watch, ineligible, with valuation_unsupported and no scenario values or invented buy zone.",
+      "observed_at": "2026-08-09T15:09:47Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260809T150359Z/01KYVJ62SRSCG1SJX03H1GYGX5/assessment_upsert_request.json",
+    "data/runs/daily-20260809T150359Z/01KYVJ62SRSCG1SJX03H1GYGX5/security_upsert_request.json",
+    "data/runs/daily-20260809T150359Z/01KYVJ62SRSCG1SJX03H1GYGX5/source_sqm_q1_2026_recheck_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SQM quick check: the marginal 30 July volume anomaly reversed by 7 August and no newer primary earnings evidence changed the thesis or decision gate. SQM remains Unrated / Watch, medium confidence, allocation-ineligible, with valuation unsupported; no full review or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_9d4049ed6669a52815d6",
+    "papertrader research source record --request data/runs/daily-20260809T150359Z/01KYVJ62SRSCG1SJX03H1GYGX5/source_sqm_q1_2026_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T150359Z/01KYVJ62SRSCG1SJX03H1GYGX5/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T150359Z/01KYVJ62SRSCG1SJX03H1GYGX5/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_9d4049ed6669a52815d6"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context read succeeded before assessment-state inspection and a confirming repeat read succeeded after mutation.",
+      "The baseline operation and result were successful, matched security_9d4049ed6669a52815d6, and were within the ten-day quick-check window at enqueue time.",
+      "The payload source_price_hash 91ad512dd477d92ee74ae4aed78af345d8aa272d9e501278ef940deafecf66c7 matched the canonical trigger packet and current market context retained the same immutable security identity.",
+      "The Q1 SEC filing content hash matched its registered source hash; the refreshed registered evidence passed deterministic assessment-freshness validation.",
+      "Exactly one immutable schema-v2 assessment was appended for this run and linked to the prior assessment; unsupported valuation stores no scenario values or buy-zone price.",
+      "No dependent full review was enqueued because no valuation/buy-zone, catalyst, invalidation, material-evidence, or decision-support gate changed; no merged alert cause was omitted.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader portfolio reconcile --strict passed, confirming no accounting, allocation, signal, order, fill, cash, portfolio, execution, or performance mutation."
+    ]
+  }
+}

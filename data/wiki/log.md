@@ -2843,3 +2843,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_4645f9b0d437db55e26c`.
 
 - Generated canonical [[daily-reports/daily-report_20260809]] for run `daily-20260809T141210Z`.
+
+## 2026-08-09 — quick check — Sociedad Quimica y Minera de Chile S.A. ADS
+
+- Rechecked [[securities/security_9d4049ed6669a52815d6|SQM ADS]] after the 30 July volume anomaly.
+  The anomaly exceeded its threshold only marginally, the ADS recovered to USD 71.95 by 7 August,
+  and the latest volume state was inactive. The SEC filing index still showed no Q2 earnings filing.
+- The lithium thesis, catalysts, risks, invalidation and `valuation_unsupported` blocker remain
+  unchanged. Neither the alert-period nor current mark is a validated buy zone; no dependent full
+  review, strategy, signal, order or paper trade was created.

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sqm_q1_2026_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000026/a6-k_1q2026earningsrelease.htm",
+  "source_type": "regulator_filing",
+  "title": "SQM Q1 2026 Form 6-K earnings release",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4356fa3145aa9f294ce907198cd0050cf32733d6bfe94e4257286a0335de7afa",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_9d4049ed6669a52815d6",
+  "checked_at": "2026-08-09T15:07:19Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q1 2026 revenue was USD 1.76 billion, net income was USD 364.7 million, adjusted EBITDA was USD 837 million, and lithium-equivalent sales volume was 69 thousand tonnes.",
+  "summary": "The unchanged SEC-filed Q1 release remains the latest earnings evidence and retains the operating-recovery, state-take, partnership-attribution, capex and normalized-valuation checklist.",
+  "run_id": "daily-20260809T150359Z"
+}
