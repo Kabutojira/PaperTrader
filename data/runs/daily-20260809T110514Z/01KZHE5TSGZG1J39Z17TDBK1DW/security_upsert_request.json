@@ -1,0 +1,23 @@
+{
+  "security_id": "security_6f9a1450edceb9307c9a",
+  "issuer_id": "issuer_29ad971dc8b75eac1b79",
+  "company_name": "Arista Networks, Inc.",
+  "instrument_name": "Arista Networks, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ANET",
+  "exchange_code": "NYSE",
+  "venue_mic": "XNYS",
+  "provider_symbol": "ANET",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Information Technology",
+  "industry": "Communications Equipment",
+  "status": "watching",
+  "watchlist_reason": "AI and hyperscaler networking exposure; Q2 growth and cash generation strengthen the thesis, but concentration, commitments and valuation keep ANET on watch.",
+  "research_summary": "Q2 evidence supports USD 120/USD 182.40/USD 252 scenarios, but negative medium-confidence expected return at USD 188.67 leaves ANET Hold / Watch.",
+  "research_page": "data/wiki/securities/security_6f9a1450edceb9307c9a.md",
+  "last_research_at": "2026-08-09T11:07:34Z",
+  "next_review_at": "2026-08-23T11:07:34Z",
+  "source": "source_anet_q2_2026_10q|source_anet_q2_2026_8k_exhibit"
+}

@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "dedupe_key": "idea_research:idea_ai_compute_networking_hyperscaler_monetization:security-result:01KZHE5TSGZG1J39Z17TDBK1DW",
+  "prompt": "Refresh the AI compute networking and hyperscaler monetization idea from ANET's completed full review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "seed_claim": "Arista's Q2 growth, margins, cash generation and Q3 guidance strengthen the AI-networking mechanism, but USD 120/USD 182.40/USD 252 scenarios imply negative medium-confidence expected return at the USD 188.67 mark; the accepted relationship persists while ANET remains Hold / Watch.",
+    "security_id": "security_6f9a1450edceb9307c9a",
+    "security_research_operation_id": "01KZHE5TSGZG1J39Z17TDBK1DW",
+    "security_research_result_path": "data/runs/daily-20260809T110514Z/01KZHE5TSGZG1J39Z17TDBK1DW/agent_result.json"
+  },
+  "source": "security_research:01KZHE5TSGZG1J39Z17TDBK1DW",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZHE5TSGZG1J39Z17TDBK1DW"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_6f9a1450edceb9307c9a.md"
+  ],
+  "max_attempts": 3
+}

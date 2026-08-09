@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-08"
-provenance: "source_anet_q1_2026_earnings; source_anet_q1_2026_10q; source_anet_q2_2026_earnings; source_anet_q2_2026_10q; source_anet_sec_submissions_20260808"
+updated: "2026-08-09"
+provenance: "source_anet_q1_2026_earnings; source_anet_q1_2026_10q; source_anet_q2_2026_earnings; source_anet_q2_2026_10q; source_anet_q2_2026_8k_exhibit; source_anet_sec_submissions_20260808"
 security_id: security_6f9a1450edceb9307c9a
 issuer_id: issuer_29ad971dc8b75eac1b79
 confidence: medium
-next_review: "2026-08-12"
+next_review: "2026-08-23"
 ---
 
 # Arista Networks, Inc. common stock
@@ -22,79 +22,93 @@ next_review: "2026-08-12"
 - Provider identity: `ANET` / `XNYS` / `USD` / equity
 
 Arista is a direct networking exposure within
-[[ideas/idea_ai_compute_networking_hyperscaler_monetization]].
+[[ideas/idea_ai_compute_networking_hyperscaler_monetization]] through the accepted
+[[relationships/relationship_e5f55616b9beaf661080]].
 
 ## Changes since prior review
 
-- **Changed evidence:** the 4 August results release and 5 August Form 10-Q supersede Q1 as the
-  latest operating evidence. Q2 revenue was USD 3.036 billion, up 37.7% year over year, GAAP
-  operating margin was 45.4%, and Q3 revenue guidance was approximately USD 3.3 billion.
-- **Changed market state:** the merged alerts captured a 14.45% rise through 4 August, a bullish
-  MACD crossover and abnormal volume, followed by a USD 197.31 close above the upper Bollinger band
-  on 5 August. The refreshed 7 August close is USD 188.67, with no active deterministic trigger.
-- **Changed gate:** the prior valuation used a USD 11.2 billion annualized revenue baseline derived
-  from Q2 guidance. Actual Q2 revenue and Q3 guidance make that input stale, while the market mark
-  remains above the prior USD 174.56 base sensitivity. A full review is required before scenario
-  values can again support a decision.
-- **Unchanged:** strong growth, margins and liquidity continue to support the operating thesis;
-  customer concentration, architecture substitution, supply commitments and premium valuation
-  remain the principal risks. No strategy, signal or paper trade follows from the technical alerts.
+- **Facts and evidence:** no new issuer facts appeared after the accepted 8 August quick check. The
+  SEC-hosted Q2 filing and results exhibit were fetched again on 9 August and retained identical
+  hashes. Q2 revenue, USD 0.95 GAAP diluted EPS, USD 2.7765 billion of first-half operating cash
+  flow, USD 13.3433 billion of cash plus current marketable securities, Q3 guidance, and USD 9.7
+  billion of purchase commitments remain the current primary evidence.
+- **Assumptions:** the prior unsupported state is resolved through a full `mature_compounder`
+  earnings-multiple review. The 12-month scenarios normalize forward GAAP EPS at USD 4.00, USD 4.80,
+  and USD 5.60 and apply 30x, 38x, and 45x multiples. The base and bull cases require sustained AI
+  demand and operating leverage; the bear case captures customer, mix, commitment, and multiple
+  compression.
+- **Valuation inputs and outputs:** valuation changes from unsupported with no scenarios to USD
+  120.00/USD 182.40/USD 252.00 bear/base/bull values at 25%/50%/25% probabilities. Probability-
+  weighted fair value is USD 184.20. At USD 188.67, expected return is about -2.37%, base return
+  about -3.32%, bear return about -36.40%, and bull return about 33.57%.
+- **Thesis, catalysts, and risks:** Q2 upgrades the evidence for demand conversion, margins, and
+  liquidity. Q3 guide execution and broader AI Ethernet adoption remain catalysts. Customer and
+  supplier concentration, demand timing, inventory, binding commitments, and premium valuation are
+  unchanged risks and are now reflected explicitly in the scenarios.
+- **Blockers and gaps:** the hard valuation-support blocker is resolved. Medium confidence,
+  concentration sensitivity, unfavorable timing, insufficient margin of safety, and an
+  uncompelling expected return remain soft gaps.
+- **Rating and portfolio action:** the accepted Unrated / Watch quick-check conclusion becomes Hold
+  / Watch after completing valuation. The portfolio action remains unchanged: no strategy, signal,
+  order, or paper exposure.
 
 ## Economics and thesis
 
-Q1 2026 revenue grew 35.1% to USD 2.709 billion, including USD 2.311 billion product and USD 398
-million service revenue. GAAP operating margin was 42.7%, net income was USD 1.023 billion, and
-operating cash flow was USD 1.694 billion. At 31 March, cash and marketable securities totalled USD
-12.353 billion, providing material resilience.
+Q2 revenue was USD 3.036 billion, up 37.7% year over year, with 45.4% GAAP operating margin and USD
+0.95 diluted GAAP EPS. First-half operating cash flow was USD 2.7765 billion. At 30 June, USD 2.2902
+billion of cash plus USD 11.0531 billion of current marketable securities provide substantial
+resilience. Q3 revenue guidance of approximately USD 3.3 billion supports continued growth.
 
-Product releases now span 800G and 1.6T Ethernet, universal AI spines, and liquid-cooled optics.
-This supports a real AI-cluster networking mechanism rather than a label. It remains exposed to a
-limited set of large buyers, customer-built alternatives, merchant silicon, qualification and
-acceptance periods, competing InfiniBand/Ethernet products, and volatile AI capital expenditure.
+Arista's Ethernet switching, routing, EOS software, and services can convert AI and cloud-network
+investment into revenue, earnings, and cash. That mechanism remains exposed to a limited set of
+large buyers, customer-built alternatives, competing architectures, merchant silicon, qualification
+and acceptance periods, and volatile AI capital expenditure. Non-cancellable purchase commitments
+of USD 9.7 billion, including USD 9.4 billion expected within 12 months, amplify forecast error.
 
-## Evidence and gates
+## Valuation
 
-| Evidence | Interpretation |
-| --- | --- |
-| Revenue grew 35% with 42.7% GAAP operating margin. | AI and cloud-network demand is converting at high profitability. |
-| Operating cash flow was USD 1.69 billion. | Earnings quality is strong in the quarter. |
-| Cash and marketable securities were USD 12.353 billion. | Balance-sheet downside protection is material. |
-| 1.6T and liquid-cooled products are shipping into customer qualification. | Architecture is current, but adoption is not guaranteed. |
-| Large customers represent a substantial portion of revenue. | Hyperscaler timing and bargaining power can create volatility. |
-| Purchase commitments are elevated and often non-cancellable. | A demand correction can become inventory and margin risk. |
+Template: `mature_compounder`; method: `earnings_multiple`; horizon: 12 months.
 
-Current primary evidence: [Arista Q2 2026 results](https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/default.aspx)
-and [Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm).
+| Scenario | Probability | Normalized forward GAAP EPS | Multiple | Fair value | Return vs USD 188.67 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Bear | 25% | USD 4.00 | 30x | USD 120.00 | -36.40% |
+| Base | 50% | USD 4.80 | 38x | USD 182.40 | -3.32% |
+| Bull | 25% | USD 5.60 | 45x | USD 252.00 | 33.57% |
 
-## Valuation, catalysts, and risks
+The probability-weighted fair value is USD 184.20, about 2.37% below the mark. The valuation is
+per-share and uses GAAP earnings so stock compensation and dilution remain inside the denominator.
+The base case assumes substantial delivery against Q3 guidance with durable AI-networking demand;
+the bull case requires sustained wins, software attachment, and operating leverage; the bear case
+allows growth deceleration, customer weakness, gross-margin pressure, commitment losses, and
+multiple compression.
 
-The deterministic 27 July 2026 paper mark was USD 170.76. The prior bounded 12-month sensitivity starts
-from a USD 11.2 billion 2026 revenue run-rate (four times Q2 guidance), USD 12.353 billion of cash
-and marketable securities, and 1.2738 billion diluted shares. The downside case applies 15% 2027
-growth and a 10x enterprise-value/revenue multiple, producing USD 110.81 per share (-35.1%). The
-base case applies 25% growth and a still-premium 15x multiple, producing USD 174.56 (+2.2%). The
-current mark therefore implies roughly 18.3x enterprise value to the revenue run-rate before the
-next year of execution. Q2 revenue of USD 3.036 billion and Q3 guidance of approximately USD 3.3
-billion now supersede that revenue baseline. At the refreshed USD 188.67 mark, the prior USD 174.56
-base sensitivity is 7.5% below market and cannot be treated as a current scenario-complete
-valuation. The quick check therefore marks valuation support as unavailable pending the dependent
-full review rather than inventing revised scenarios.
+## Catalysts, risks, and invalidation
 
-The fresh USD/EUR rate is 0.86490. Price, FX, exchange, currency, instrument and liquidity checks
-do not create a hard blocker. The stale valuation is the current hard blocker; medium confidence,
-concentration sensitivity and unfavorable timing remain explicit gaps.
+Catalysts are Q3 revenue and GAAP earnings delivery, durable AI back-end and front-end Ethernet wins
+with profitable software and service attachment, and broader customer contribution. Invalidate if
+Ethernet loses share, major customers slow or internalize networking, AI capex or acceptance slows,
+supplier concentration constrains launches, commitments create inventory losses, or per-share
+earnings decelerate enough that a premium multiple cannot be supported.
 
-Catalysts are Q2 growth and margins above guidance, disclosed AI-network revenue progression, 1.6T
-qualification, and customer diversification. Invalidate if Ethernet loses share, major customers
-internalize networking, AI capex or acceptance slows, merchant silicon constrains launches,
-purchase commitments become excess inventory, or valuation discounts flawless execution.
+Upgrade requires a lower entry price or higher auditable per-share earnings that clears expected-
+return, base-return, downside-payoff, margin-of-safety, confidence, and relationship gates.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, and allocation **ineligible pending valuation refresh**.
-Review by **2026-08-12**. Q2 growth and margins strengthen the operating evidence, but the merged
-MACD, volume and upper-Bollinger alerts are post-results price digestion rather than an independent
-entry catalyst. Exactly one dependent full security review is required to rebuild the valuation
-from Q2 evidence. No strategy, signal, order or paper trade was created.
+Status: **watching**, rating **Hold / Watch**, confidence **medium**, and allocation **ineligible**.
+The USD 188.67 mark exceeds both base and probability-weighted fair values. No conviction strategy,
+signal, order, or paper trade is justified. Review by **2026-08-23**, or earlier after a material
+customer, architecture, earnings, guidance, commitment, or price change.
+
+## Evidence and provenance
+
+- [Arista Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000175/anet-20260630.htm)
+  — financial statements, cash flow, concentration, inventory, commitments, and risks; hash checked
+  unchanged on 2026-08-09.
+- [Arista Q2 2026 results, SEC-filed Exhibit 99.1](https://www.sec.gov/Archives/edgar/data/1596532/000159653226000174/ex991q226-earningsrelease.htm)
+  — Q2 revenue, margins, EPS, and Q3 guidance; hash checked unchanged on 2026-08-09.
+- `data/market/latest.csv`, `data/market/indicators.csv`, and `data/market/fx/USD_EUR.csv` —
+  identity-matched paper mark, deterministic market state, and USD/EUR conversion observed
+  2026-08-09T11:05:22Z, with market data as of 2026-08-08T19:23:43Z.
 
 See the complete [[index]] and append-only [[log]] for repository context.

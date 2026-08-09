@@ -2818,3 +2818,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   indicators show no active trigger. The quick check therefore treats the alerts as post-results
   price digestion, records valuation as unsupported pending exactly one dependent full review, and
   creates no strategy, signal, order or paper trade.
+
+## 2026-08-09 — full review — Arista Networks, Inc. common stock
+
+- Reassessed [[securities/security_6f9a1450edceb9307c9a|Arista Networks]] against the unchanged Q2
+  Form 10-Q and SEC-filed results exhibit. Revenue growth, 45.4% GAAP operating margin, first-half
+  cash generation, and USD 13.3433 billion of cash plus current marketable securities strengthen
+  the AI-networking thesis, while customer concentration and USD 9.7 billion of purchase
+  commitments remain material risks.
+- A scenario-complete `mature_compounder` earnings-multiple review produces USD 120.00/USD
+  182.40/USD 252.00 bear/base/bull fair values and a USD 184.20 probability-weighted value. At the
+  USD 188.67 mark, negative expected and base returns, bear downside, medium confidence, and no
+  margin of safety derive Hold / Watch and no paper position. No strategy, signal, order, or paper
+  trade was created.

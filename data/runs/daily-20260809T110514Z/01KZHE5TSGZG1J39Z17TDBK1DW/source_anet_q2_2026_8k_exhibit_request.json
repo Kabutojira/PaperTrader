@@ -1,0 +1,18 @@
+{
+  "source_id": "source_anet_q2_2026_8k_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000174/ex991q226-earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653226000174/ex991q226-earningsrelease.htm",
+  "source_type": "issuer_release",
+  "title": "Arista Networks Q2 2026 results, SEC-filed Exhibit 99.1",
+  "publisher": "Arista Networks, Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2c09cea59dbcab3dc72a279846f27fa2e20ec4636775cd58028c30e7c6fc714d",
+  "related_entity_ids": "idea_ai_compute_networking_hyperscaler_monetization|security_6f9a1450edceb9307c9a",
+  "checked_at": "2026-08-09T11:07:34Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 revenue was USD 3.036 billion, up 37.7% year over year, GAAP operating margin was 45.4%, and GAAP diluted EPS was USD 0.95; Q3 guidance called for approximately USD 3.3 billion of revenue.",
+  "summary": "The SEC-filed issuer release confirms Q2 revenue, margins and EPS plus Q3 revenue and non-GAAP guidance used to normalize the 12-month earnings scenarios.",
+  "run_id": "daily-20260809T110514Z"
+}
