@@ -1,0 +1,19 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "checkpoint_index": 2,
+  "effective_model": "gpt-5.6-luna",
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZCFHHCGX1RGXKKVHNF86W7N",
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "route_version": 1,
+  "run_id": "daily-20260809T110514Z",
+  "timeout_seconds": 600,
+  "weighted_cost": "1"
+}
