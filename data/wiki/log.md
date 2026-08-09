@@ -2852,6 +2852,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260809]] for run `daily-20260809T201256Z`.
 
+- Published investor decision snapshot `decision_5a631efab9c992d90617`.
+
+- Generated canonical [[daily-reports/daily-report_20260809]] for run `daily-20260809T212714Z`.
+
 ## 2026-08-09 — quick check — Sociedad Quimica y Minera de Chile S.A. ADS
 
 - Rechecked [[securities/security_9d4049ed6669a52815d6|SQM ADS]] after the 30 July volume anomaly.
