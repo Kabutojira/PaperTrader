@@ -2852,3 +2852,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The lithium thesis, catalysts, risks, invalidation and `valuation_unsupported` blocker remain
   unchanged. Neither the alert-period nor current mark is a validated buy zone; no dependent full
   review, strategy, signal, order or paper trade was created.
+
+## 2026-08-09 — quick check — Planet Labs PBC Class A common stock
+
+- Rechecked [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] after the 31 July bullish-MACD
+  cross. The USD 20.48 alert-period close recovered to USD 23.93 by 7 August; MACD remained above
+  signal, while RSI and volume were neutral. The current SEC submissions index contains no later
+  earnings release or periodic operating filing, so the Q1 thesis, catalysts, risks and invalidation
+  remain unchanged.
+- The prior USD 10.30/USD 15.34 downside/base sensitivity remains below both marks but lacks a bull
+  case and explicit probabilities, so it cannot support a scenario-complete current assessment.
+  Planet Labs is Unrated / Watch and allocation-ineligible pending exactly one dependent full
+  review; no strategy, signal, order or paper trade was created.

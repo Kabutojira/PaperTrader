@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-07-29"
+updated: "2026-08-09"
 provenance: "source_pl_q1_fy2027_10q; source_pl_q1_fy2027_results_sec"
 security_id: security_97f38b2cb2d5ef127f5a
 issuer_id: issuer_f0de6eb64ff0330bf082
 confidence: medium
-next_review: "2026-08-28"
+next_review: "2026-08-16"
 ---
 
 # Planet Labs PBC Class A common stock
@@ -74,6 +74,38 @@ technical condition**, not verified fundamental invalidation and not a sufficien
 The absence of abnormal volume and the still-demanding valuation prevent treating RSI alone as
 capitulation evidence.
 
+## 2026-08-09 quick check of the 2026-07-31 MACD alert
+
+The payload-bound 31 July close was USD 20.48, down 34.74% from 2 July, when MACD crossed above
+its signal. By 7 August, the deterministic close had recovered to USD 23.93 and MACD remained
+above its signal, but no new transition was active; RSI was neutral at 48.72 and volume remained
+non-anomalous. This is a technical recovery after the oversold decline, not independent evidence
+that the operating thesis or intrinsic value improved.
+
+The current SEC submissions index contains no later earnings release or periodic operating filing
+after the retained Q1 evidence. A 29 July Schedule 13G amendment and a 7 August ownership filing do
+not change revenue, RPO, backlog, cash generation, guidance, dilution, or satellite-execution
+assumptions. The Q1 thesis, catalysts, invalidation conditions, and risks therefore remain intact.
+
+Neither the alert-period price nor the higher current mark reaches a supported buy zone. The prior
+USD 10.30 downside and USD 15.34 base sensitivities imply approximately 49.71% and 25.10% downside
+at the alert mark, and still larger downside at the 7 August mark. They are not a scenario-complete
+schema-v2 valuation because the baseline did not establish a bull case and explicit probabilities.
+The comparable assessment is therefore **Unrated / Watch**, valuation-unsupported, and allocation-
+ineligible pending one dependent full review; no strategy or signal is justified by the MACD cross.
+
+## Changes since prior review
+
+- **Evidence:** no new issuer operating filing; only non-operating ownership disclosures appeared
+  in the SEC submissions index after the Q1 sources.
+- **Market state:** MACD crossed bullish on 31 July and remained above its signal on 7 August; the
+  close recovered from USD 20.48 to USD 23.93, while RSI and volume were neutral.
+- **Thesis, catalysts, risks, and invalidation:** unchanged from the Q1 review.
+- **Valuation and buy zone:** the old two-case sensitivity remains below both marks but cannot serve
+  as a scenario-complete current valuation; no supported buy zone is established.
+- **Confidence and action:** medium confidence; Unrated / Watch and allocation-ineligible. One
+  dependent full security review is required to resolve the valuation decision-support gate.
+
 ## Valuation
 
 At USD 20.20 and 356.4 million reported Class A and Class B shares outstanding at 30 April, Planet's
@@ -102,11 +134,11 @@ per-share growth.
 
 ## Disposition
 
-Status: **watching** with **medium** confidence and **baseline** assessment eligibility. The
-business has strong growth, recurrence, backlog, and liquidity, but bounded downside is 49.0% and
-even the generous base case is 24.1% below the mark. RSI oversold is a monitoring signal rather
-than a paper-trade entry. Review by **2026-08-28**, or sooner after Q2 results, material contract
-cancellation, satellite failure, guidance change, financing, or capital-allocation news. No
-conviction strategy or paper signal is justified.
+Status: **watching** with **medium** confidence. The business has strong growth, recurrence,
+backlog, and liquidity, but the old sensitivity remains below the mark and is not scenario-complete
+under the current assessment contract. The MACD recovery is a monitoring signal rather than a
+paper-trade entry. Review by **2026-08-16** through the dependent full review, or sooner after Q2
+results, material contract cancellation, satellite failure, guidance change, financing, or capital-
+allocation news. No conviction strategy or paper signal is justified.
 
 See the complete [[research-catalog]] and append-only [[log]].

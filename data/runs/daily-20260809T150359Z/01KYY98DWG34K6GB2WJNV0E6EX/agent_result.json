@@ -1,0 +1,83 @@
+{
+  "operation_id": "01KYY98DWG34K6GB2WJNV0E6EX",
+  "status": "succeeded",
+  "summary": "Completed one bounded Planet Labs quick check after the July 31 bullish-MACD transition. The payload-bound USD 20.48 close recovered to USD 23.93 by August 7 with MACD still above signal, neutral RSI and non-anomalous volume, while the current SEC submissions index showed no later operating filing that changed the Q1 thesis. The prior USD 10.30/USD 15.34 downside/base sensitivity remains below both marks but is not scenario-complete, so the assessment is now schema-v2 Unrated / Watch, valuation-unsupported and allocation-ineligible. Updated the security page and structured security state and created exactly one dependent full security review, 01KZKHKWD8T6AKQWAG73BQZJCZ. No strategy, signal, order, allocation or accounting state was changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader payload-bound market alert and deterministic price state",
+      "claim": "The canonical alert packet binds the 2026-07-02 through 2026-07-31 period, USD 20.479999542236328 adjusted close, -34.7355000320% period return and macd_cross_above_signal to source-price hash 472200283b7036f4a8fd8256cfdf5921d250604c64af329e59a6f5e2fdb80f9d.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "472200283b7036f4a8fd8256cfdf5921d250604c64af329e59a6f5e2fdb80f9d"
+    },
+    {
+      "source": "PaperTrader current deterministic market and indicator state",
+      "claim": "By 2026-08-07 Planet Labs closed at USD 23.93000030517578, 16.8457% above the alert mark. MACD 0.47793786 remained above its -0.20052352 signal with positive histogram 0.67846138, while RSI 48.72147925 was neutral, volume was non-anomalous and no new trigger transition was active.",
+      "observed_at": "2026-08-09T15:04:07Z",
+      "source_hash": "eb67223ae4c0d53c96debaae598cd3997e3b45f1e417bab3de9cad78edafcf9c"
+    },
+    {
+      "source": "Baseline security result 01KYQCTS30FPWA0T2PXDRYYXYR and retained Q1 primary sources",
+      "claim": "The mandatory audited security context confirmed the same immutable PL/XNYS/USD equity completed full research on 2026-07-29. Q1 evidence supports 42% revenue growth, 99% recurring ACV, USD 816 million RPO, USD 906 million backlog and USD 731 million cash plus short-term investments, while negative free cash flow, capital intensity, cancellable government backlog, stock compensation and convertible dilution remain material."
+    },
+    {
+      "source": "SEC submissions index for Planet Labs PBC",
+      "claim": "The current submissions index contains no earnings release or periodic operating filing after the retained Q1 filing. The later Schedule 13G amendment and ownership filing do not update revenue, RPO, backlog, cash generation, guidance, dilution or satellite-execution assumptions.",
+      "url": "https://data.sec.gov/submissions/CIK0001836833.json",
+      "observed_at": "2026-08-09T15:14:40Z"
+    },
+    {
+      "source": "PaperTrader deterministic assessment and queue projections",
+      "claim": "Assessment assessment_66fc26c182dc7e9e72f5 is schema version 2, links predecessor assessment_8e7c047670320e66ebdf and this quick check, records fresh USD price and USD/EUR identity, valuation_unsupported, research status unsupported, allocation ineligible, Unrated / Watch and no invented scenario values. Exactly one dependent full review, 01KZKHKWD8T6AKQWAG73BQZJCZ, carries the alert and current price hashes, exact market period, quick-check identity and changed scenario-completeness gate."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZKHKWD8T6AKQWAG73BQZJCZ.json",
+    "data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/assessment_upsert_request.json",
+    "data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/enqueue_full_research_request.json",
+    "data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "operations_created": [
+    "01KZKHKWD8T6AKQWAG73BQZJCZ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Planet Labs' July 31 bullish-MACD cross persisted through August 7 and the close recovered from USD 20.48 to USD 23.93, but neutral RSI, ordinary volume and no new operating filing leave the Q1 thesis unchanged. The prior two-case sensitivity is below the mark but not scenario-complete, so PL is Unrated / Watch and allocation-ineligible pending exactly one dependent full review; no paper strategy or signal was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader queue enqueue --request data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T150359Z/01KYY98DWG34K6GB2WJNV0E6EX/assessment_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict",
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was the sole running LLM operation, matched run daily-20260809T150359Z, immutable security_97f38b2cb2d5ef127f5a, quick_check_research payload and trusted preflight skill identities.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and confirmed baseline operation 01KYQCTS30FPWA0T2PXDRYYXYR succeeded for the same security within ten days.",
+      "Confirmed the payload's exact July 2 through July 31 market period and source-price hash against its canonical alert packet, then confirmed the current August 7 source-price hash, persistent positive MACD relationship, neutral RSI and ordinary volume.",
+      "Updated the maintained security page with an explicit Changes since prior review section covering evidence, thesis, valuation and buy-zone disposition, catalysts, risks, confidence, action and escalation.",
+      "Confirmed assessment assessment_66fc26c182dc7e9e72f5 is the sole immutable assessment version for this operation and run, links its predecessor and expected result path, uses anchored scores, records fresh price and FX identity and contains no invented scenario values for its unsupported valuation.",
+      "Confirmed exactly one dependent security_research operation, 01KZKHKWD8T6AKQWAG73BQZJCZ, carries this quick-check identity, the changed scenario-completeness gate, all alert causes, both price hashes and the exact market period.",
+      "The first immutable assessment request was rejected without state changes because soft_gaps were not sorted; uniquely named retry01 sorted the canonical gap values and succeeded.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation returned OK with no changes from those checks.",
+      "Allocation readiness remained false only for pre-existing repository-wide relationship coverage, rejected-relationship reconciliation and stale-relationship gaps; Planet Labs' updated assessment itself is ineligible because valuation is unsupported and no accepted relationship exists.",
+      "command_audit.json contains exactly the twelve canonical PaperTrader CLI invocations listed in commands_run; ten returned exit code zero, the rejected assessment request made no state change and the non-mutating allocation-readiness diagnostic returned exit code one with explicit pre-existing reasons.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page was changed by this operation."
+    ]
+  }
+}
