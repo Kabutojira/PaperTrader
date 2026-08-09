@@ -1,0 +1,59 @@
+{
+  "entity_id": "security_37ddcbdaad296ad831f2",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYHW57107CVMKHT24J77V9RA",
+    "changed_gate": "material_q2_operating_evidence_supersedes_baseline_and_requires_scenario_complete_valuation",
+    "current_market_data_as_of": "2026-08-09T21:27:20Z",
+    "current_market_data_date": "2026-08-07",
+    "current_source_price_hash": "1f78818329e0ef7fd02cacee1e7f5585147506277195156088f91b64dbfb5a4b",
+    "idea_ids": [
+      "idea_digital_finance_crypto_rails"
+    ],
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "market_data_date": "2026-07-31",
+    "period_end": "2026-07-31",
+    "period_start": "2026-07-02",
+    "quick_check_operation_id": "01KYY98DWGFZJZD3GK2DAXXERX",
+    "research_reasons": [
+      {
+        "cause": "bollinger_below_lower",
+        "source_ref": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a.md"
+      },
+      {
+        "cause": "macd_cross_below_signal",
+        "source_ref": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_below_signal-639eeb2b117c.md"
+      },
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f.md"
+      },
+      {
+        "cause": "material_q2_operating_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+      },
+      {
+        "cause": "scenario_complete_valuation_required",
+        "source_ref": "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+      }
+    ],
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "source_price_hash": "e1651044890635a944ee7b073558b4ead37fa9dc5f6717ed6b2973ad47738363",
+    "trigger_types": [
+      "bollinger_below_lower",
+      "macd_cross_below_signal",
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Coinbase after the July 31 price alerts because the newly filed Q2 Form 10-Q materially supersedes the baseline evidence and the valuation remains unsupported.",
+  "operation_id": "01KZM7W5C8C2YW24Q3J4JNJ0MS",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a.md",
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_below_signal-639eeb2b117c.md",
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f.md",
+    "https://data.sec.gov/submissions/CIK0001679788.json",
+    "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+  ]
+}

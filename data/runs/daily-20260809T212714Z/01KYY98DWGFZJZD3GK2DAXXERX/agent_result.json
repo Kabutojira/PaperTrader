@@ -1,0 +1,102 @@
+{
+  "operation_id": "01KYY98DWGFZJZD3GK2DAXXERX",
+  "status": "succeeded",
+  "summary": "Completed the bounded Coinbase quick check against the exact 2026-07-02 through 2026-07-31 alert period, the 2026-08-07 current mark, the successful 2026-07-27 baseline result and Coinbase's newly filed Q2 2026 Form 10-Q. The July 31 USD 146.26 close below the lower Bollinger band, bearish MACD cross and volume anomaly had recovered to USD 153.60 by August 7, with all three latest deterministic trigger states inactive, so the technical cluster did not establish a buy zone. The baseline's diversification thesis remains plausible, but Q2 net revenue of USD 1.154 billion, transaction revenue of USD 599 million, subscription and services revenue of USD 555 million, a USD 359 million net loss and 26% single-counterparty revenue concentration materially supersede the Q1 operating checklist. Updated the maintained security page, one-line security state, current immutable assessment and source records. The assessment is medium-confidence, valuation-unsupported, ineligible and Watch/Unrated; no fair-value scenarios or buy-below price were invented. Enqueued exactly one dependent full security review, 01KZM7W5C8C2YW24Q3J4JNJ0MS, carrying all three alert causes and the changed Q2 evidence gate. No strategy, signal, order, accounting, allocation, portfolio or performance state was changed.",
+  "evidence": [
+    {
+      "source": "data/runs/local-20260727-daily-all-07/01KYHW57107CVMKHT24J77V9RA/agent_result.json",
+      "claim": "The successful 2026-07-27 full security review is the bound baseline. It recorded a plausible digital-finance-rails thesis but an unsupported valuation, no actionable entry and ineligibility because transaction cyclicality, GAAP losses, concentration, custody obligations, stock compensation and dilution prevented a downside-aware per-share valuation.",
+      "observed_at": "2026-07-27T23:00:26Z"
+    },
+    {
+      "source": "Coinbase Q2 2026 Form 10-Q",
+      "claim": "For the quarter ended 2026-06-30, Coinbase reported USD 1.154 billion of net revenue, including USD 599 million of transaction revenue and USD 555 million of subscription and services revenue, and a USD 359 million net loss. One counterparty accounted for 26% of total revenue, leaving material concentration sensitivity. These current primary facts supersede the Q1 operating checklist and require full valuation normalization.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+      "observed_at": "2026-07-30T00:00:00Z",
+      "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-bollinger_below_lower-403f5e12235a.md",
+      "claim": "The July 31 alert-period close was USD 146.26, below the USD 149.454687 lower Bollinger band; the exact alert source-price hash was e1651044890635a944ee7b073558b4ead37fa9dc5f6717ed6b2973ad47738363.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source_hash": "e1651044890635a944ee7b073558b4ead37fa9dc5f6717ed6b2973ad47738363"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_below_signal-639eeb2b117c.md",
+      "claim": "The same July 31 bar carried the bearish MACD-cross trigger, so it was evaluated as one merged alert cluster rather than an independent operation.",
+      "observed_at": "2026-08-01T09:07:38Z"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f.md",
+      "claim": "The same July 31 bar traded 25,368,800 shares versus 8,878,976 mean volume, confirming that the selloff was material rather than a low-volume price print.",
+      "observed_at": "2026-08-01T09:07:38Z"
+    },
+    {
+      "source": "data/market/indicators.csv",
+      "claim": "By the latest completed 2026-08-07 session, adjusted close had recovered to USD 153.60000610351562 and the latest Bollinger-below-lower, MACD-cross-below-signal and volume-anomaly trigger states were all false. The current canonical market record was retrieved at 2026-08-09T21:27:20Z with source-price hash 1f78818329e0ef7fd02cacee1e7f5585147506277195156088f91b64dbfb5a4b.",
+      "observed_at": "2026-08-09T21:27:20Z",
+      "source_hash": "1f78818329e0ef7fd02cacee1e7f5585147506277195156088f91b64dbfb5a4b"
+    },
+    {
+      "source": "data/tables/security_assessment_history.csv",
+      "claim": "Immutable assessment assessment_f107e26b6b1b7b913d29 links predecessor assessment_d3e4537300996a37ae9d and records a schema-v2, medium-confidence, valuation-unsupported result at the fresh USD 153.60000610351562 mark. The exact blocker is valuation_unsupported; allocation eligibility is ineligible, canonical rating is Unrated and portfolio action is Watch.",
+      "observed_at": "2026-08-09T21:46:38Z"
+    },
+    {
+      "source": "data/operations/payloads/01KZM7W5C8C2YW24Q3J4JNJ0MS.json",
+      "claim": "Exactly one dependent full security-research operation was created. Its closed payload carries quick-check operation 01KYY98DWGFZJZD3GK2DAXXERX, baseline 01KYHW57107CVMKHT24J77V9RA, all three merged technical causes, both exact price hashes and the material-Q2-evidence/scenario-valuation changed gate.",
+      "observed_at": "2026-08-09T21:46:45Z"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZM7W5C8C2YW24Q3J4JNJ0MS.json",
+    "data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/assessment_upsert_request.json",
+    "data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/enqueue_full_research_request.json",
+    "data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/security_upsert_request.json",
+    "data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/source_coin_q2_2026_10q_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ],
+  "operations_created": [
+    "01KZM7W5C8C2YW24Q3J4JNJ0MS"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Coinbase quick check: the July 31 lower-Bollinger, bearish-MACD and volume cluster recovered partly by August 7 and all three latest trigger states were inactive, but Q2 primary evidence materially changed the operating checklist. Valuation remains unsupported, so COIN stays Watch/Unrated and ineligible; one dependent full review was queued and no paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader research source record --request data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/source_coin_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260809T212714Z/01KYY98DWGFZJZD3GK2DAXXERX/enqueue_full_research_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed, and the final receipt confirmed current/history linkage, page hash, evidence references, fresh market/FX identity and the accepted relationship.",
+      "Baseline result 01KYHW57107CVMKHT24J77V9RA was successful, matched security_37ddcbdaad296ad831f2 and was within ten days at enqueue time.",
+      "The original alert source-price hash e1651044890635a944ee7b073558b4ead37fa9dc5f6717ed6b2973ad47738363 and current hash 1f78818329e0ef7fd02cacee1e7f5585147506277195156088f91b64dbfb5a4b were confirmed against canonical repository records.",
+      "The SEC Q2 filing was registered as source_coin_q2_2026_10q with content hash 6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a and current available status.",
+      "Exactly one dependent full review, 01KZM7W5C8C2YW24Q3J4JNJ0MS, exists for this security and carries this quick-check identity plus every merged trigger cause.",
+      "papertrader schema validate --strict: OK [schema]",
+      "papertrader queue validate: OK [queue]",
+      "papertrader integrity --strict: OK [integrity]",
+      "papertrader wiki lint --strict: OK [wiki]",
+      "papertrader portfolio reconcile --strict: OK [portfolio]",
+      "No allocation target/history, signal, order, execution, cash, portfolio or performance path was changed."
+    ]
+  }
+}

@@ -2928,3 +2928,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   Negative expected, base and bear returns and no margin of safety derive Sell / Avoid and no paper
   position. Exactly one dependent commercial-space idea refresh was requested; no strategy, signal,
   order or paper trade was created.
+
+## 2026-08-09 — quick check — Coinbase Global, Inc. Class A common stock
+
+- Rechecked [[securities/security_37ddcbdaad296ad831f2|Coinbase]] after the July 31 lower-Bollinger,
+  bearish-MACD and volume alerts. The USD 146.26 alert close recovered to USD 153.60 by August 7 and
+  the latest deterministic trigger state was inactive.
+- The July 30 Q2 Form 10-Q is material new evidence: Q2 net revenue was USD 1.154 billion,
+  transaction revenue USD 599 million, subscription and services revenue USD 555 million, net loss
+  USD 359 million and one counterparty represented 26% of revenue. The unsupported valuation and
+  absence of a validated buy zone remain blockers pending exactly one dependent full review; no
+  strategy, signal, order or paper trade was created.
