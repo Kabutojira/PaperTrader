@@ -2915,3 +2915,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   not assign unambiguous provenance. The current Unrated / Watch assessment and security page
   therefore remain unchanged pending repair of source-operation selection. No follow-up, strategy,
   signal, order, or paper trade was created.
+
+## 2026-08-09 — full review — Rocket Lab Corporation common stock
+
+- Reassessed [[securities/security_7ca095d63423c55a90e3|Rocket Lab]] in a new controller run against
+  the Q1 Form 10-Q, signed Iridium merger Form 8-K and Iridium Q2 Form 10-Q. The transaction can add
+  recurring satellite-service revenue and cash generation, but its USD 27 cash plus variable-stock
+  consideration, USD 3.6 billion bridge commitment, assumed debt, dilution and integration risk
+  materially weaken balance-sheet quality and raise execution risk.
+- A scenario-complete `pre_profit_growth` revenue-multiple review produces USD 15/USD 34/USD 60
+  bear/base/bull fair values and USD 33.50 probability-weighted value versus the USD 82.83 mark.
+  Negative expected, base and bear returns and no margin of safety derive Sell / Avoid and no paper
+  position. Exactly one dependent commercial-space idea refresh was requested; no strategy, signal,
+  order or paper trade was created.

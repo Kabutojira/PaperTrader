@@ -1,0 +1,90 @@
+{
+  "operation_id": "01KZM3JQXG54MXRP9EPRNYX45A",
+  "status": "succeeded",
+  "summary": "Completed one bounded Rocket Lab full review using current SEC primary evidence and fresh identity-matched market/FX state. The signed Iridium transaction adds recurring satellite-service revenue and cash generation but materially increases financing, leverage, dilution, closing and integration risk. A scenario-complete pre-profit-growth revenue-multiple assessment derives USD 15/USD 34/USD 60 bear/base/bull fair values, USD 33.50 probability-weighted fair value and -59.56% expected return versus the USD 82.83 mark. Deterministic state records Strong Sell / Avoid, allocation ineligibility and no strategy candidate. The security page, structured security and assessment, retained sources and wiki log were updated, and exactly one dependent commercial-space idea refresh, 01KZM7A388FM6JZ48NYZZPF7JF, was enqueued. No signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Rocket Lab Q1 2026 Form 10-Q",
+      "claim": "Rocket Lab reported Q1 revenue of USD 200.348 million, gross profit of USD 76.493 million, USD 50.332 million operating cash use, USD 1.477 billion cash plus marketable securities and substantial equity issuance; the retained filing hash was unchanged on recheck.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm",
+      "observed_at": "2026-08-09T21:30:46Z",
+      "source_hash": "ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2"
+    },
+    {
+      "source": "Rocket Lab-Iridium merger agreement Form 8-K",
+      "claim": "Rocket Lab agreed to pay USD 27 cash plus a variable 0.24-0.40 Rocket Lab share per Iridium share and disclosed a USD 3.6 billion bridge commitment, creating material financing, dilution, closing and integration consequences.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "observed_at": "2026-08-09T21:30:46Z",
+      "source_hash": "e903aa04bc77737055b83574ad9e511c49d8819c38338908ab2d5df1dfa4b1de"
+    },
+    {
+      "source": "Iridium Q2 2026 Form 10-Q",
+      "claim": "Iridium reported USD 444.294 million of first-half revenue, USD 185.762 million operating cash flow, USD 184.214 million cash and USD 1.762 billion secured debt, supporting merger-aware revenue, cash-generation and leverage analysis.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1418819/000141881926000045/irdm-20260630.htm",
+      "observed_at": "2026-08-09T21:30:46Z",
+      "source_hash": "3665c2b21b462743c235c26b90125d8aec8f5b4b11c29c84d2979e3b978bf4c6"
+    },
+    {
+      "source": "PaperTrader deterministic assessment assessment_139572984e6c1e53af22",
+      "claim": "The accepted schema-v2 assessment links predecessor assessment_56d34b132c9720aa6813 and source operation 01KZM3JQXG54MXRP9EPRNYX45A, matches research-page hash d1603c3c26c70225fbfefe361b31c2a6b826e8bd961d5c407818f22407062f55, and derives Strong Sell / Avoid, USD 33.50 probability-weighted fair value, -59.56% expected return and allocation ineligibility."
+    },
+    {
+      "source": "PaperTrader queue receipt",
+      "claim": "Exactly one dependent idea_research follow-up, 01KZM7A388FM6JZ48NYZZPF7JF, was created for accepted relationship idea_commercial_space_infrastructure; no strategy follow-up was created because the full strategy gate failed."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZM7A388FM6JZ48NYZZPF7JF.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/assessment_upsert_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/security_upsert_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/source_iridium_q2_2026_10q_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/source_rklb_iridium_merger_8k_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/source_rklb_q1_2026_10q_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_7ca095d63423c55a90e3.md"
+  ],
+  "operations_created": [
+    "01KZM7A388FM6JZ48NYZZPF7JF"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Rocket Lab's merger-aware full review incorporated the signed Iridium transaction and Iridium Q2 filing. USD 15/USD 34/USD 60 scenarios produce USD 33.50 probability-weighted fair value and -59.56% expected return versus USD 82.83, deriving Strong Sell / Avoid and no paper position. Exactly one dependent commercial-space idea refresh was requested; no strategy, signal, order, allocation or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_7ca095d63423c55a90e3",
+    "papertrader research source record --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/source_rklb_q1_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/source_rklb_iridium_merger_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/source_iridium_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/enqueue_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_7ca095d63423c55a90e3",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260809T212714Z with a live lease, validated payload, immutable RKLB/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after applying state; the current assessment is schema version 2, complete, predecessor-linked, source-operation-linked and page-hash-aligned.",
+      "Retrieved, hashed and re-registered three current SEC primary sources; source registry timestamps and immutable source-history rows now reflect the 2026-08-09T21:30:46Z checks.",
+      "The first assessment request was rejected without state change because repository-owned templates require an empty rationale field; a new immutable retry request corrected that contract error and wrote exactly one accepted assessment history version.",
+      "The deterministic assessment derives Strong Sell / Avoid, ineligibility and exact failed expected-return, base-return, payoff and margin-of-safety gates; no conviction strategy work was created.",
+      "Exactly one result-specific idea-research follow-up exists for the sole accepted linked idea and depends on this security operation.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation and queue validation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

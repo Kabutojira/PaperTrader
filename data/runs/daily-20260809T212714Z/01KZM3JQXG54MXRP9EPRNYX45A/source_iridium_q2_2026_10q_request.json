@@ -1,0 +1,18 @@
+{
+  "source_id": "source_iridium_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1418819/000141881926000045/irdm-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1418819/000141881926000045/irdm-20260630.htm",
+  "source_type": "filing",
+  "title": "Iridium Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "3665c2b21b462743c235c26b90125d8aec8f5b4b11c29c84d2979e3b978bf4c6",
+  "related_entity_ids": "idea_commercial_space_infrastructure|security_7ca095d63423c55a90e3",
+  "checked_at": "2026-08-09T21:30:46Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Rechecked Iridium's Q2 filing: first-half revenue was USD 444.294 million, operating cash flow USD 185.762 million, June cash USD 184.214 million and secured debt USD 1.762 billion; the retained content hash is unchanged.",
+  "run_id": "daily-20260809T212714Z"
+}
