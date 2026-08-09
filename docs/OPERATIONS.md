@@ -47,7 +47,6 @@ path:
 ```bash
 gh secret set OPENAI_OAUTH_SECRET < "$HOME/.config/papertrader/openai-oauth.agekey"
 gh secret set YOUTUBE_DATA_API
-gh variable set MAX_OPERATIONS --body 5
 gh variable set AUXILIARY_MODEL --body openai-codex:gpt-5.6-terra
 recipient="$(age-keygen -y "$HOME/.config/papertrader/openai-oauth.agekey")"
 install -d .papertrader/credentials

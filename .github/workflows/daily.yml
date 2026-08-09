@@ -67,9 +67,7 @@ jobs:
     with:
       operation_id: ${{ inputs.operation_id || '' }}
       operation_type: ${{ inputs.operation_type || '' }}
-      max_operations: >-
-        ${{ github.event_name == 'schedule' && vars.MAX_OPERATIONS ||
-        inputs.max_operations || '5' }}
+      max_operations: ${{ github.event_name == 'schedule' && '5' || inputs.max_operations || '5' }}
       resume_cycle_id: ${{ inputs.resume_cycle_id || '' }}
       dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
       generate_podcast: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}

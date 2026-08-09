@@ -501,9 +501,12 @@ timestamps, does not persist the portfolio value, and never contacts a broker or
 ## Daily automation and publication
 
 The scheduled controller in `.github/workflows/daily.yml` runs at 17:00 `Europe/Rome` every day and
-uses one serialized path for both cron and manual runs. It performs curated YouTube discovery with
-an optional purpose-bound Data API key and schedules the search-index-only Seeking Alpha discovery
-before OAuth restoration, then prepares market and queue state,
+uses one serialized path for both cron and manual runs. Scheduled runs execute at most five queued
+research iterations; this version-controlled limit avoids unaudited repository-variable drift.
+Manual runs may select a different `max_operations` value at or below the repository hard ceiling.
+The controller performs curated YouTube discovery with an optional purpose-bound Data API key and
+schedules the search-index-only Seeking Alpha discovery before OAuth restoration, then prepares
+market and queue state,
 executes at most the configured number of
 Hermes operations one at a time, processes eligible paper fills, rebuilds and reconciles
 accounting, generates the allocation plan and deterministic decision snapshot, refreshes the
@@ -535,8 +538,10 @@ the write job never receives the OAuth secret or plaintext. The post-commit jobs
 
 Repository setup requires `OPENAI_OAUTH_SECRET` and the matching
 `.papertrader/credentials/openai-oauth-auth.json.age`. Optional repository variables
-`MAX_OPERATIONS`, profile-specific `HERMES_*_MAX_TURNS`, and `AUXILIARY_MODEL` override the cycle,
-turn, and auxiliary-model defaults. `OPENROUTER_API_KEY` is required only for an OpenRouter
+profile-specific `HERMES_*_MAX_TURNS` and `AUXILIARY_MODEL` override the turn and auxiliary-model
+defaults. Local runs may set `MAX_OPERATIONS`; scheduled and manual GitHub runs take their cycle
+limits from version-controlled workflow configuration and the validated dispatch input,
+respectively. `OPENROUTER_API_KEY` is required only for an OpenRouter
 auxiliary override, and `YOUTUBE_DATA_API` optionally enables keyed discovery; each secret is
 exposed only to its purpose-bound step and never to terminal tools. Delivery additionally requires
 `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`. Configure GitHub Pages to use **GitHub Actions** as its

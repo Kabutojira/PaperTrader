@@ -109,6 +109,13 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
         "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
     }
+    assert jobs["runtime"]["with"]["max_operations"] == (
+        "${{ github.event_name == 'schedule' && '5' || inputs.max_operations || '5' }}"
+    )
+    daily_text = (repository_root / ".github" / "workflows" / "daily.yml").read_text(
+        encoding="utf-8"
+    )
+    assert "vars.MAX_OPERATIONS" not in daily_text
     assert jobs["runtime"]["with"]["generate_podcast"] == (
         "${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"
     )
