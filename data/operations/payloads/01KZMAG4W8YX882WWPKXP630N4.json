@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_7lE_ewagWx4",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-09T22:32:37Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_7lE_ewagWx4",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "7lE_ewagWx4",
+    "video_title": "I Just Sold Out of a Stock Completely. Here's What I Bought Instead",
+    "video_url": "https://www.youtube.com/watch?v=7lE_ewagWx4"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZMAG4W8YX882WWPKXP630N4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=7lE_ewagWx4"
+  ]
+}

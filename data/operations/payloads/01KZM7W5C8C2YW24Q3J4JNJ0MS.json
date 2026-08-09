@@ -2,6 +2,7 @@
   "entity_id": "security_37ddcbdaad296ad831f2",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-09T21:43:10Z",
     "baseline_operation_id": "01KYHW57107CVMKHT24J77V9RA",
     "changed_gate": "material_q2_operating_evidence_supersedes_baseline_and_requires_scenario_complete_valuation",
     "current_market_data_as_of": "2026-08-09T21:27:20Z",
@@ -10,11 +11,13 @@
     "idea_ids": [
       "idea_digital_finance_crypto_rails"
     ],
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-01T09:07:38Z",
     "market_data_date": "2026-07-31",
     "period_end": "2026-07-31",
     "period_start": "2026-07-02",
     "quick_check_operation_id": "01KYY98DWGFZJZD3GK2DAXXERX",
+    "research_page": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
     "research_reasons": [
       {
         "cause": "bollinger_below_lower",
@@ -35,6 +38,17 @@
       {
         "cause": "scenario_complete_valuation_required",
         "source_ref": "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+      },
+      {
+        "dedupe_key": "security_research:security_37ddcbdaad296ad831f2:allocation-maintenance:2026-08-09T21:43:10Z",
+        "observed_at": "2026-08-09T22:32:44Z",
+        "prompt": "Revalidate security_37ddcbdaad296ad831f2 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_coin_july_2026_management_8k",
+          "source_coin_q1_2026_10q",
+          "source_coin_q2_2026_10q"
+        ]
       }
     ],
     "security_id": "security_37ddcbdaad296ad831f2",
@@ -45,7 +59,7 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Fully reassess Coinbase after the July 31 price alerts because the newly filed Q2 Form 10-Q materially supersedes the baseline evidence and the valuation remains unsupported.",
+  "objective": "Fully reassess Coinbase after the July 31 price alerts because the newly filed Q2 Form 10-Q materially supersedes the baseline evidence and the valuation remains unsupported. | Additional cause: Revalidate security_37ddcbdaad296ad831f2 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZM7W5C8C2YW24Q3J4JNJ0MS",
   "operation_type": "security_research",
   "payload_version": 1,
@@ -54,6 +68,9 @@
     "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_below_signal-639eeb2b117c.md",
     "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f.md",
     "https://data.sec.gov/submissions/CIK0001679788.json",
-    "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+    "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+    "source_coin_july_2026_management_8k",
+    "source_coin_q1_2026_10q",
+    "source_coin_q2_2026_10q"
   ]
 }
