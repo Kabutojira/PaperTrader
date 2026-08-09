@@ -2864,3 +2864,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
   case and explicit probabilities, so it cannot support a scenario-complete current assessment.
   Planet Labs is Unrated / Watch and allocation-ineligible pending exactly one dependent full
   review; no strategy, signal, order or paper trade was created.
+
+## 2026-08-09 — blocked security research — Planet Labs PBC Class A common stock
+
+- Rechecked the unchanged Q1 primary evidence for
+  [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]], but the deterministic assessment
+  applier found both the prior quick check and this dependent full review as source operations in
+  the same run and could not assign unambiguous provenance. The current Unrated / Watch assessment
+  and security page therefore remain unchanged pending repair of the source-operation selection.

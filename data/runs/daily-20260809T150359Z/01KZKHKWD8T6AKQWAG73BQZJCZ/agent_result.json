@@ -1,0 +1,81 @@
+{
+  "operation_id": "01KZKHKWD8T6AKQWAG73BQZJCZ",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded full Planet Labs review. The unchanged Q1 Form 10-Q and SEC-filed results release were rechecked and registered, but the required schema-v2 assessment could not be written: the deterministic applier found both predecessor quick check 01KYY98DWG34K6GB2WJNV0E6EX and current security review 01KZKHKWD8T6AKQWAG73BQZJCZ for the same security and run, then rejected their provenance as ambiguous. The security page was restored and remains hash-aligned with the prior unsupported assessment; the structured security conclusion was restored, with only the deterministic monotonic research timestamp advanced and the blocker recorded. No idea follow-up, strategy, signal, order, allocation or accounting state changed. Issue issue_e96418f6e865e7193bef was recorded, and strict schema, wiki, integrity and portfolio checks plus queue validation passed.",
+  "evidence": [
+    {
+      "source": "Planet Labs PBC Q1 fiscal 2027 Form 10-Q",
+      "claim": "The unchanged filing remains the latest periodic operating evidence and supplies the balance-sheet, share-count, dilution, cash-runway, cash-burn and operating-economics inputs required by the attempted review.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+      "observed_at": "2026-08-09T15:25:57Z",
+      "source_hash": "9d231aaadd4cefcb37654b291d06ea006f06823737afce397f49181c13a5b0b5"
+    },
+    {
+      "source": "Planet Labs PBC Q1 fiscal 2027 results",
+      "claim": "The unchanged SEC-filed issuer release reports Q1 revenue of USD 94.2 million, recurring ACV of 99%, net dollar retention of 113%, RPO of USD 816.0 million, gross margin of 54%, and FY2027 revenue guidance of USD 425-440 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm",
+      "observed_at": "2026-08-09T15:25:57Z",
+      "source_hash": "b994d6e1a86c80fd8ab44ed324d04cd1a7a4be68b6b466ab4a295fbbb50832c2"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The immutable assessment request made no assessment-table change and failed with 'assessment source operation is ambiguous for this run' because the same run contains predecessor quick_check_research 01KYY98DWG34K6GB2WJNV0E6EX and current security_research 01KZKHKWD8T6AKQWAG73BQZJCZ, while the request contract provides no source-operation selector."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_66fc26c182dc7e9e72f5 from quick check 01KYY98DWG34K6GB2WJNV0E6EX. Its research-page hash and the restored current page hash both equal dc920fdc21d777d5ca0a9597d951098ef67fe4fe760a02ce4305489c8fe86855; no assessment history row, linked-idea follow-up or strategy was created for this failed review."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/assessment_upsert_request.json",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/issue_record_request.json",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_restore_request.json",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_restore_retry01_request.json",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_upsert_request.json",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_10q_recheck_request.json",
+    "data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_results_recheck_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_e96418f6e865e7193bef"
+  ],
+  "daily_report_items": [
+    "Planet Labs' dependent full review failed closed because deterministic assessment provenance was ambiguous between a same-run quick check and this security review. Refreshed SEC source metadata was retained, the prior unsupported quick-check assessment and restored page remain hash-aligned, issue issue_e96418f6e865e7193bef was recorded, and no idea follow-up, paper strategy, signal, order, allocation or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader research source record --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_10q_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/source_pl_q1_fy2027_results_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_restore_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/security_restore_retry01_request.json",
+    "papertrader issue record --request data/runs/daily-20260809T150359Z/01KZKHKWD8T6AKQWAG73BQZJCZ/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running operation claimed by daily-20260809T150359Z, a validated immutable payload, matching PL/XNYS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state reads and retained the prior quick-check result; canonical context contains no linked idea, accepted relationship or strategy for this security.",
+      "Rechecked the Q1 Form 10-Q and SEC-filed results release, verified their unchanged SHA-256 hashes and registered refreshed source metadata through immutable source requests.",
+      "The schema-v2 assessment request was rejected without assessment-state change because the deterministic applier found two same-security source operations claimed by this run and provides no request field to select the current operation. The required assessment therefore could not be completed.",
+      "Restored the prior wiki security page exactly; current page and current assessment retain identical hash dc920fdc21d777d5ca0a9597d951098ef67fe4fe760a02ce4305489c8fe86855. The prior quick-check assessment remains current and no new assessment history row exists for this operation.",
+      "No idea follow-up was required or enqueued because canonical context contains no linked ideas or accepted relationships and this full review produced no accepted assessment. The full strategy gate remains failed, so no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed after cleanup.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}
