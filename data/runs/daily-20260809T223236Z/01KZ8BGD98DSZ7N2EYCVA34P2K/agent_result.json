@@ -1,0 +1,92 @@
+{
+  "operation_id": "01KZ8BGD98DSZ7N2EYCVA34P2K",
+  "status": "succeeded",
+  "summary": "Completed one bounded ABB Ltd ADR quick check for the August 4 bullish-MACD crossover. Fresh issuer Q2-results and share-listing downloads match the retained hashes, so orders, margins, cash conversion, leverage, the Robotics disposal, proposed Rotork acquisition, risks and invalidation remain unchanged. The payload-bound USD 101.57 close was down 1.35% over the alert period and the later August 7 cache showed neutral RSI and volume with no active threshold trigger, so the crossover is technical timing evidence rather than a buy signal. The prior two-case sensitivity remains below market but lacks a bull case, probabilities and current transaction-adjusted inputs, so it cannot support the scenario-complete decision contract. The sole new schema-v2 assessment is therefore Unrated / Watch and allocation-ineligible with valuation unsupported. Exactly one dependent full security review, 01KZMBZY5RBVNJH4ZHBZ47FG2S, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_abb_q2_2026_results",
+      "claim": "The issuer Q2-results PDF remains available with its unchanged content hash. It continues to support USD 12.042 billion of Q2 orders, USD 9.475 billion of revenue, a 20.2% operational EBITA margin, 93% cash conversion, 0.2x net leverage, expected Robotics disposal proceeds and the proposed Rotork acquisition baseline.",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+      "observed_at": "2026-08-09T22:56:34Z",
+      "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508"
+    },
+    {
+      "source": "source_abb_share_listing_2026",
+      "claim": "The issuer share-listing page remains available with its unchanged content hash and continues to identify ABBNY as a non-listed Level I ADR traded over the counter.",
+      "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing",
+      "observed_at": "2026-08-09T22:56:34Z",
+      "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The canonical source-price hash binds the July 7-August 4 period, USD 101.57 adjusted close, negative 1.35% period return and MACD-cross-above-signal transition with 0.2090 strength. The refreshed cache records an August 7 USD 100.86 adjusted close, RSI 51.20, non-anomalous volume and no active threshold trigger.",
+      "observed_at": "2026-08-09T22:32:44Z",
+      "source_hash": "0112eb6e81e4e59adf877317fa5f70e1af46185267e063e8dc6d97ac3f9326e6"
+    },
+    {
+      "source": "assessment_59feaff2207a977a856f",
+      "claim": "The sole immutable schema-v2 assessment for this operation links legacy predecessor assessment_95c7d37850be4eae78e9, current page hash d46e960307eb6fb570c955edf74d8265a3e27542b56b4ca8cceaf613f7277195, fresh USD mark and FX state, and both retained evidence records. Deterministic normalization derives unsupported research, Unrated / Watch, quality score 70 and allocation ineligibility with valuation-unsupported and pending-relationship gates.",
+      "observed_at": "2026-08-09T22:59:19Z"
+    },
+    {
+      "source": "data/operations/payloads/01KZMBZY5RBVNJH4ZHBZ47FG2S.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, exact MACD alert period and source-price hash, every bounded cause, and full_research_requested=true."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZMBZY5RBVNJH4ZHBZ47FG2S.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/assessment_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/enqueue_full_research_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/security_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/source_abb_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/source_abb_share_listing_2026_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+  ],
+  "operations_created": [
+    "01KZMBZY5RBVNJH4ZHBZ47FG2S"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "ABB quick check completed: unchanged issuer evidence and a modest bullish-MACD crossover do not establish a buy zone. The legacy valuation lacks complete scenarios and current transaction inputs, so ABB is Unrated / Watch and allocation-ineligible pending exactly one dependent full review; no paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/source_abb_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/source_abb_share_listing_2026_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T223236Z/01KZ8BGD98DSZ7N2EYCVA34P2K/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was running, claimed by daily-20260809T223236Z with a live lease, and routed sequentially to native llm-wiki plus papertrader-quick-check-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYHW5710RKVS0S8HF233BBTR succeeded for the same immutable ABBNY/XOTC/USD/equity identity within ten days at enqueue time.",
+      "Verified the MACD-cross-above-signal cause, exact July 7-August 4 period and canonical source-price hash; later August 7 cache data was used only for the fresh current assessment.",
+      "Downloaded and hashed the issuer Q2 results and share-listing page; both match retained hashes and both source freshness records were accepted through the project CLI without committing source bodies.",
+      "Confirmed assessment assessment_59feaff2207a977a856f is the sole immutable schema-v2 version for this operation, links its legacy predecessor and expected result path, matches page hash d46e960307eb6fb570c955edf74d8265a3e27542b56b4ca8cceaf613f7277195, and contains no invented scenario values.",
+      "Confirmed no buy zone, catalyst or invalidation fired and no primary evidence changed; the only escalated gate is the legacy valuation's inability to support the current scenario-complete decision contract.",
+      "Confirmed dependent operation 01KZMBZY5RBVNJH4ZHBZ47FG2S contains this quick-check identity, all bounded causes, exact payload market period and source-price hash, and depends on this operation.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the twelve canonical PaperTrader CLI invocations listed in commands_run.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "checkpoint_index": 3,
+  "effective_model": "gpt-5.6-sol",
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZ8BGD98DSZ7N2EYCVA34P2K",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "unsupported_prior_valuation",
+  "route_version": 1,
+  "run_id": "daily-20260809T223236Z",
+  "timeout_seconds": 1800,
+  "weighted_cost": "5"
+}

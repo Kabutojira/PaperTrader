@@ -4,7 +4,7 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-28"
+updated: "2026-08-09"
 provenance: "source_abb_q2_2026_results; source_abb_share_listing_2026"
 security_id: security_c120e9f26ebb6159adf9
 issuer_id: issuer_e60cfde16e515ef00e35
@@ -72,12 +72,45 @@ centre and industrial orders reverse, margins normalize sharply, or cash convers
 
 ## Disposition
 
-Status: **watching**, assessment **baseline**, confidence **medium**. Current evidence, balance-
-sheet strength, a fresh mark and adequate paper-monitoring liquidity clear hard eligibility gates.
-The pending Robotics exit, Rotork integration, OTC instrument, judgmental transaction-adjusted
-valuation, negative base-case upside, unfavorable timing, and unavailable accepted relationship are
-explicit gaps. Review by **2026-08-27**, or sooner on disposal or acquisition completion. No
-conviction strategy is justified because ABB will cease to be the requested direct robotics
-exposure and both bounded values remain below the market price.
+Status: **watching**, **Unrated / Watch**, confidence **medium**, and **allocation-ineligible**. The
+legacy two-case valuation is useful downside context but is not a scenario-complete assessment: it
+lacks a bull case, explicit probabilities, transaction-adjusted per-share inputs, and a current
+accepted relationship. The Robotics exit, proposed Rotork integration, OTC instrument, unfavorable
+timing, and unsupported canonical valuation are explicit blockers. Review by **2026-08-14**, or
+sooner on disposal or acquisition completion. Exactly one dependent full review is required to
+rebuild the valuation under the current assessment contract; no strategy or paper signal is
+justified before that review.
+
+## 2026-08-09 bullish-MACD quick check
+
+The bounded checklist from the 28 July review remains strong orders, margins, cash conversion and
+low leverage; the expected Robotics disposal and proposed Rotork acquisition; transaction and
+integration risk; and invalidation on weakening orders, margins, cash conversion or acquisition
+returns. Fresh downloads of the issuer Q2 results and share-listing page match their retained
+SHA-256 hashes. There is no changed primary evidence in those retained sources through the exact
+4 August alert period.
+
+The deterministic alert-period cache records a **USD 101.57** adjusted close on 4 August, down
+**1.35%** from 7 July but up **4.74%** from the 27 July baseline mark. MACD crossed above its signal
+with modest positive strength of **0.2090**. By 7 August the adjusted close was **USD 100.86**;
+MACD remained above signal, RSI was neutral at **51.20**, volume was not anomalous, and no threshold
+trigger was active. This is technical timing evidence, not proof of improved transaction economics
+or a newly reached buy zone. At the alert-period mark, the old USD 64.80 bear and USD 85.40 base
+cases imply approximately **36.20%** and **15.92%** downside respectively.
+
+### Changes since prior review
+
+- **Primary evidence, thesis, catalysts, risks and invalidation:** unchanged; both retained issuer
+  sources are available and hash-identical.
+- **Market state and timing:** changed to a modest bullish-MACD crossover, but the period return was
+  negative and the later cache has no active threshold trigger.
+- **Valuation and buy zone:** no buy zone was reached. The old two-case sensitivity remains below
+  market, but it cannot support a current canonical decision because it lacks the complete scenario,
+  probability and transaction-adjusted inputs required by assessment schema version 2.
+- **Assessment:** migrated from legacy baseline fields to an explicit schema-v2 unsupported
+  assessment. The unchanged economic conclusion is to watch rather than allocate.
+- **Escalation:** exactly one dependent full review is required because the prior valuation can no
+  longer support the current decision contract; it must incorporate a complete bull case,
+  probabilities, current diluted-share and transaction inputs, and the rejected relationship.
 
 See [[index]] for the current paper-only investor decision.

@@ -2976,3 +2976,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   contains no later operating filing through the alert period. The thesis, catalysts, risks,
   invalidation and unsupported valuation remain unchanged. Enphase remains Unrated / Watch and
   allocation-ineligible; no full review, strategy, signal, order or paper trade was created.
+
+## 2026-08-09 — quick check — ABB Ltd sponsored ADR
+
+- Rechecked [[securities/security_c120e9f26ebb6159adf9|ABB]] after the 4 August bullish-MACD
+  crossover. The USD 101.57 alert-period close was 1.35% below 7 July and 4.74% above the 27 July
+  baseline mark; by 7 August RSI and volume were neutral and no threshold trigger was active.
+- Fresh hashes of the Q2 results and issuer listing page are unchanged. The thesis, catalysts,
+  risks and invalidation remain unchanged, but the legacy two-case sensitivity cannot support the
+  current scenario-complete assessment contract. ABB is Unrated / Watch and allocation-ineligible
+  pending exactly one dependent full review; no strategy, signal, order or paper trade was created.
