@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-08-08"
-updated: "2026-08-08"
+created: "2026-08-09"
+updated: "2026-08-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7ea86c7b75082f7db55f"
-as_of: "2026-08-08T19:57:20Z"
+snapshot_id: "decision_b3f06157109e8238f73e"
+as_of: "2026-08-09T11:20:11Z"
 ---
 
 # Performance and risk
 
-**As of `2026-08-08T19:57:20Z`**
+**As of `2026-08-09T11:20:11Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-08; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-08; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 11.11,45.00 22.22,45.00 33.33,45.00 44.44,45.00 55.56,45.00 66.67,45.00 77.78,45.00 88.89,45.00 100.00,45.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-09; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-09; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 10.00,45.00 20.00,45.00 30.00,45.00 40.00,45.00 50.00,45.00 60.00,45.00 70.00,45.00 80.00,45.00 90.00,45.00 100.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -50,6 +50,7 @@ No target allocation changes.
 | 2026-08-06 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-07 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-08 | 10000 | 10000 | 0 | 0% | 0% | 0% |
+| 2026-08-09 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 

@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-08"
-updated: "2026-08-08"
+created: "2026-08-09"
+updated: "2026-08-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7ea86c7b75082f7db55f"
-as_of: "2026-08-08T19:57:20Z"
+snapshot_id: "decision_b3f06157109e8238f73e"
+as_of: "2026-08-09T11:20:11Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-08T19:57:20Z`
+**As of:** `2026-08-09T11:20:11Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -22,7 +22,7 @@ as_of: "2026-08-08T19:57:20Z"
 ## Coverage
 
 - Assessments: 68/68
-- Fresh-evidence assessments: 67/68
+- Fresh-evidence assessments: 68/68
 - Relationship reviews: 26/68
 - Accepted relationships: 23
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-08T19:57:20Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 333
+- Research backlog: 335
 - Last successful daily run: 2026-08-08
 
 ## Current issues by investment impact
@@ -43,6 +43,7 @@ as_of: "2026-08-08T19:57:20Z"
 - Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]** — agent result schema: 'recorded source state|recorded source state' does not match '^[a-f0-9]{64}$'; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]/agent_result.json: 'recorded source state|recorded source state'
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
@@ -137,7 +138,7 @@ as_of: "2026-08-08T19:57:20Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 333 active operations.
+Showing 20 of 335 active operations.
 
 <details><summary>Active research work</summary>
 

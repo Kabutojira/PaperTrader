@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-08-08"
-updated: "2026-08-08"
+created: "2026-08-09"
+updated: "2026-08-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7ea86c7b75082f7db55f"
-as_of: "2026-08-08T19:57:20Z"
+snapshot_id: "decision_b3f06157109e8238f73e"
+as_of: "2026-08-09T11:20:11Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-08T19:57:20Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-09T11:20:11Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -39,7 +39,7 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 ## Top assessed near misses
 
 - **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · Bear/base payoff is below threshold.
-- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Unrated / Watch · expected —% · A supportable valuation is unavailable.
+- **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · Base-case return is below threshold.
 - **[TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765):** Hold / Watch · expected -9.42028985507246376811594203% · Base-case return is below threshold.
 
 ## Performance, risk, and coverage
@@ -60,4 +60,4 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260808|Daily report 2026-08-08]]
+- [[daily-reports/daily-report_20260809|Daily report 2026-08-09]]
