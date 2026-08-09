@@ -2965,3 +2965,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   `assessment_f107e26b6b1b7b913d29`, the current operation and the updated security-page hash.
   Enqueued dependent idea refresh `01KZMB0N6G33Q5MAHKWB5NGBZP`; no strategy, signal, order,
   allocation, accounting, portfolio or performance state changed.
+
+## 2026-08-09 — quick check — Enphase Energy, Inc. common stock
+
+- Rechecked [[securities/security_f2b9760d847b2ba59324|Enphase Energy]] after the 4 August bullish-
+  MACD cross. The USD 41.77 alert-period close was 19.11% above the 29 July baseline, and MACD
+  remained above signal on 7 August, but RSI and volume were neutral and no threshold trigger was
+  active.
+- Fresh hashes of the Q2 Form 10-Q and results release are unchanged, and the SEC submissions index
+  contains no later operating filing through the alert period. The thesis, catalysts, risks,
+  invalidation and unsupported valuation remain unchanged. Enphase remains Unrated / Watch and
+  allocation-ineligible; no full review, strategy, signal, order or paper trade was created.

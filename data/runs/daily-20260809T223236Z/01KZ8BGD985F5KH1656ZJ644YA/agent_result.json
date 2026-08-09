@@ -1,0 +1,93 @@
+{
+  "operation_id": "01KZ8BGD985F5KH1656ZJ644YA",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Enphase Energy quick check for the 2026-08-04 bullish MACD cross. The payload-bound USD 41.77 adjusted close was 2.84% below July 7 but 19.10% above the July 29 full-review mark; by August 7 MACD remained above signal, while RSI was neutral, volume was not anomalous and no threshold trigger remained active. Fresh hashes of the July 28 Q2 Form 10-Q and results release are unchanged, and the current SEC submissions index contains no later operating filing through the alert period. The rebound therefore changes technical timing but does not verify recovered U.S. demand, normalized margins or safe-harbor conversion. Thesis, valuation/buy-zone, catalysts, risks and invalidation remain unchanged. The accepted schema-v2 assessment is Unrated / Watch, valuation-unsupported and allocation-ineligible. No full security review, strategy, signal, order, allocation or paper trade was created.",
+  "evidence": [
+    {
+      "source": "source_enph_q2_2026_10q",
+      "claim": "A fresh retrieval of the July 28 Q2 Form 10-Q matched the retained content hash. It remains the latest periodic filing and continues to show weak year-over-year revenue, material safe-harbor revenue, a nonrecurring tariff refund, inventory and purchase-obligation exposure, and insufficient inputs for normalized common-equity valuation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm",
+      "observed_at": "2026-08-09T22:47:07Z",
+      "source_hash": "a8763f0f01353d7d6ee16c0af0bf75669acb31c2e54fcedddfcc6363599eddd7"
+    },
+    {
+      "source": "source_enph_q2_2026_release",
+      "claim": "A fresh retrieval of the SEC-hosted Q2 results release matched the retained content hash. Sequential revenue and battery improvement and Q3 guidance remain the latest issuer outlook, but they do not establish durable U.S. demand, normalized margins or a downside-aware fair-value range.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000080/a2026q2exx991pressrelease.htm",
+      "observed_at": "2026-08-09T22:47:07Z",
+      "source_hash": "4959ea0d5113a98cc125d33a3ea742ae637d132bee7d71e61b6d30322005274d"
+    },
+    {
+      "source": "source_enph_sec_submissions_20260809",
+      "claim": "The current SEC submissions index contains no Form 10-Q, results Form 8-K or other issuer operating filing after the July 28 Q2 filings through the August 4 alert period. Later ownership filings do not change the maintained operating assumptions.",
+      "url": "https://data.sec.gov/submissions/CIK0001463101.json",
+      "observed_at": "2026-08-09T22:47:07Z",
+      "source_hash": "8edcdfb15621cb420e7ec7ed99eb8ac23ce8d1df245f3e56f37baaf66b4d8c58"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The canonical source-price hash f720a1ba4ceb29c6e8f827d6206d5e9e1e45f96af33ba684c138e5a0454a0700 binds the exact July 7-August 4 period, USD 41.77000045776367 adjusted close, -2.8379% period return and entered bullish MACD cross with 0.1673213 strength. The fresh August 7 cache records USD 41.869998931884766, MACD above signal with 0.7447769 histogram, neutral 50.8166 RSI, non-anomalous -0.6452 volume z-score and no active threshold trigger.",
+      "observed_at": "2026-08-09T22:32:44Z",
+      "source_hash": "f720a1ba4ceb29c6e8f827d6206d5e9e1e45f96af33ba684c138e5a0454a0700"
+    },
+    {
+      "source": "assessment_af00dbb98d58a4f60ed5",
+      "claim": "The accepted immutable schema-v2 assessment links predecessor assessment_e525afce290d78214b0e, this operation, current research-page hash 8ba5afb259bb454812a474c85c458b3452ad61a85c76b2efa3bb7cda210a3c9b, identity-matched fresh price and FX state, and all three retained primary sources. Deterministic normalization derives Unrated / Watch, quality score 72 and allocation ineligibility under valuation_unsupported without invented scenario values.",
+      "observed_at": "2026-08-09T22:50:38Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/assessment_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/security_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/source_enph_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/source_enph_q2_2026_release_refresh_request.json",
+    "data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/source_enph_sec_submissions_20260809_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Enphase quick check completed: the August 4 bullish MACD cross developed into a technical rebound near USD 41.9, but fresh Q2 source hashes are unchanged and the SEC index contains no later operating evidence through the alert period. U.S. demand, normalized margins and valuation remain unverified; ENPH stays Unrated / Watch and allocation-ineligible, with no full review or paper trade created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_f2b9760d847b2ba59324",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/source_enph_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/source_enph_q2_2026_release_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/source_enph_sec_submissions_20260809_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T223236Z/01KZ8BGD985F5KH1656ZJ644YA/assessment_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_f2b9760d847b2ba59324"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was running, claimed by daily-20260809T223236Z with a live lease, and routed sequentially to native llm-wiki plus papertrader-quick-check-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYRN70N0FRJ1Z01HXDJPXGFE succeeded for the same immutable ENPH/XNAS/USD/equity identity within ten days.",
+      "Confirmed the exact July 7-August 4 market period, macd_cross_above_signal cause and canonical source-price hash f720a1ba4ceb29c6e8f827d6206d5e9e1e45f96af33ba684c138e5a0454a0700; later cache rows were used only for current context and assessment identity.",
+      "Fresh Q2 Form 10-Q and results-release retrievals matched retained hashes; the current SEC submissions index showed no later operating filing through the alert period, and all three source records were accepted through the project CLI without committing source bodies.",
+      "Confirmed assessment assessment_af00dbb98d58a4f60ed5 is the sole immutable schema-v2 version for this operation, links its legacy predecessor and expected result path, matches page hash 8ba5afb259bb454812a474c85c458b3452ad61a85c76b2efa3bb7cda210a3c9b, and contains no invented scenario values.",
+      "Confirmed the technical rebound did not newly reach a buy zone or fire a catalyst, invalidation or material-evidence gate. No full_research_requested flag was present and no full-review operation was enqueued.",
+      "One immutable assessment request was rejected without state change because it contained one non-canonical soft gap; the uniquely named corrected request was accepted and both audited requests are retained.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the thirteen canonical PaperTrader CLI invocations listed in commands_run, including the documented non-mutating rejected assessment request.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

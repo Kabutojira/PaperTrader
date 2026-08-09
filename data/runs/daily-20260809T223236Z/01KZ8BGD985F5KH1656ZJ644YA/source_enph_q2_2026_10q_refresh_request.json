@@ -1,0 +1,18 @@
+{
+  "source_id": "source_enph_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm",
+  "source_type": "filing",
+  "title": "Enphase Energy, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a8763f0f01353d7d6ee16c0af0bf75669acb31c2e54fcedddfcc6363599eddd7",
+  "related_entity_ids": "idea_solar_storage_grid_flexibility_reset|security_f2b9760d847b2ba59324",
+  "checked_at": "2026-08-09T22:47:07Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 revenue was USD 291.854 million; safe-harbor revenue and a tariff refund remained material to reported results.",
+  "summary": "The unchanged SEC-filed Q2 Form 10-Q remains the latest periodic operating evidence for revenue, demand mix, cash flow, liquidity, inventory, purchase obligations, dilution and tariff effects.",
+  "run_id": "daily-20260809T223236Z"
+}
