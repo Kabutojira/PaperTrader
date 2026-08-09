@@ -2986,3 +2986,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   risks and invalidation remain unchanged, but the legacy two-case sensitivity cannot support the
   current scenario-complete assessment contract. ABB is Unrated / Watch and allocation-ineligible
   pending exactly one dependent full review; no strategy, signal, order or paper trade was created.
+
+## 2026-08-09 — failed full review — ABB Ltd sponsored ADR
+
+- The full [[securities/security_c120e9f26ebb6159adf9|ABB]] review prepared a scenario-complete
+  earnings-multiple assessment from unchanged issuer evidence, but failed closed because the
+  deterministic assessment applier found both the same-run predecessor quick check and this
+  dependent full review as candidate provenance sources.
+- The prior unsupported Unrated / Watch assessment and hash-aligned security page remain current.
+  A controller-owned issue records the provenance defect. No idea follow-up, strategy, signal,
+  order, allocation change or paper trade was created.

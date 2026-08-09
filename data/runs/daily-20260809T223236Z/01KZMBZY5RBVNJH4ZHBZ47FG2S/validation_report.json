@@ -1,0 +1,36 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/issues.md",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/assessment_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/issue_record_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_blocked_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_restore_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_q2_2026_results_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_share_listing_2026_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZMBZY5RBVNJH4ZHBZ47FG2S",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260809T223236Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

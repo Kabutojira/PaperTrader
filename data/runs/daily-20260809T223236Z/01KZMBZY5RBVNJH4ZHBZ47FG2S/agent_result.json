@@ -1,0 +1,82 @@
+{
+  "operation_id": "01KZMBZY5RBVNJH4ZHBZ47FG2S",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded ABB Ltd ADR full review. Current issuer evidence was hash-identical and supported a scenario-complete mature-compounder assessment, but the required schema-v2 assessment could not be written because the deterministic applier found both predecessor quick check 01KZ8BGD98DSZ7N2EYCVA34P2K and current security review 01KZMBZY5RBVNJH4ZHBZ47FG2S for the same security and run, making source provenance ambiguous. The prior unsupported Unrated / Watch assessment and hash-aligned security page remain current; issue issue_1e862c198e274a99add1 was recorded, and no follow-up, strategy, signal, order, allocation, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "ABB Q2 2026 results",
+      "claim": "The unchanged issuer release supports first-half basic EPS of USD 1.41, annualized EPS of USD 2.82, net debt of USD 2.320 billion, expected Robotics net proceeds of about USD 4.8 billion, a proposed Rotork purchase price of about USD 5.5 billion, and 1,814,919,203 shares outstanding at June 30.",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+      "observed_at": "2026-08-09T23:05:27Z",
+      "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508"
+    },
+    {
+      "source": "ABB share listing and capital data",
+      "claim": "The unchanged issuer listing confirms the sponsored ADR identity and the outstanding-share input retained for per-share valuation work.",
+      "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing",
+      "observed_at": "2026-08-09T23:05:27Z",
+      "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The immutable assessment request made no assessment-table change and failed with 'assessment source operation is ambiguous for this run' because the run contains predecessor quick_check_research 01KZ8BGD98DSZ7N2EYCVA34P2K and current security_research 01KZMBZY5RBVNJH4ZHBZ47FG2S, while the assessment request contract provides no source-operation selector."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_59feaff2207a977a856f from quick check 01KZ8BGD98DSZ7N2EYCVA34P2K. Its research-page hash and the restored current page hash both equal d46e960307eb6fb570c955edf74d8265a3e27542b56b4ca8cceaf613f7277195; it remains unsupported and allocation-ineligible, and no failed-review idea follow-up was enqueued."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/assessment_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/issue_record_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_blocked_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_restore_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_q2_2026_results_request.json",
+    "data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_share_listing_2026_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_1e862c198e274a99add1"
+  ],
+  "daily_report_items": [
+    "ABB's full review failed closed because deterministic assessment provenance was ambiguous between a same-run quick check and its dependent full review. The unchanged issuer sources were refreshed, the prior unsupported Unrated / Watch assessment and hash-aligned page remain current, issue issue_1e862c198e274a99add1 was recorded, and no follow-up, paper strategy, signal, order, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_share_listing_2026_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_restore_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_blocked_request.json",
+    "papertrader issue record --request data/runs/daily-20260809T223236Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/issue_record_request.json",
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260809T223236Z with a validated immutable payload, matching ABBNY/XOTC/USD/equity identity, trusted preflight skill hashes, and no delegated or background execution.",
+      "Consumed the mandatory audited security context before assessment-state work and retained the predecessor quick-check result, current assessment, rejected relationship and linked idea context.",
+      "Retrieved and hashed current issuer evidence; both retained sources remained unchanged and were refreshed through immutable source requests.",
+      "Prepared a scenario-complete mature-compounder assessment, but the deterministic applier rejected it without assessment-table change because two same-security source operations are claimed by this run and the request contract provides no source-operation selector.",
+      "Restored the prior security page exactly; current page and current assessment retain identical hash d46e960307eb6fb570c955edf74d8265a3e27542b56b4ca8cceaf613f7277195. The prior quick-check assessment remains current and no new assessment history row exists for this operation.",
+      "The canonical rejected relationship names exactly one linked idea, but no idea-research follow-up was enqueued because this full review failed and produced no accepted assessment result. The strategy gate therefore remains failed and no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}
