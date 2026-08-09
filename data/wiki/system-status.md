@@ -7,13 +7,13 @@ tags:
 created: "2026-08-09"
 updated: "2026-08-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b3f06157109e8238f73e"
-as_of: "2026-08-09T11:20:11Z"
+snapshot_id: "decision_16e4b97be58c7cc5030f"
+as_of: "2026-08-09T11:54:23Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-09T11:20:11Z`
+**As of:** `2026-08-09T11:54:23Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -43,7 +43,6 @@ as_of: "2026-08-09T11:20:11Z"
 - Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
-- Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]** — agent result schema: 'recorded source state|recorded source state' does not match '^[a-f0-9]{64}$'; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]/agent_result.json: 'recorded source state|recorded source state'
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
@@ -121,6 +120,7 @@ as_of: "2026-08-09T11:20:11Z"
 
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
+- Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-06]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
