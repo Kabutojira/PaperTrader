@@ -2953,3 +2953,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The prior unsupported Unrated / Watch assessment and hash-aligned security page remain current.
   Issue `issue_de6f5509df14629098c4` records the controller-owned provenance defect. No idea
   follow-up, strategy, signal, order, allocation change or paper trade was created.
+
+## 2026-08-09 — full review retry — Coinbase Global, Inc. Class A common stock
+
+- Rechecked the unchanged Q2 Form 10-Q and completed the full
+  [[securities/security_37ddcbdaad296ad831f2|Coinbase]] review with a sum-of-parts scenario set.
+  Bear/base/bull fair values are USD 28/USD 87/USD 191 with 30%/50%/20% probabilities versus a
+  USD 153.60 mark; deterministic assessment state derives a USD 90.10 probability-weighted value,
+  Strong Sell / Avoid disposition and allocation ineligibility.
+- The new immutable assessment `assessment_bd1fa53f07f4aab13f4c` links predecessor
+  `assessment_f107e26b6b1b7b913d29`, the current operation and the updated security-page hash.
+  Enqueued dependent idea refresh `01KZMB0N6G33Q5MAHKWB5NGBZP`; no strategy, signal, order,
+  allocation, accounting, portfolio or performance state changed.

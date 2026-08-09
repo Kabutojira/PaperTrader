@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KZM7W5C8C2YW24Q3J4JNJ0MS",
+  "status": "succeeded",
+  "summary": "Completed one bounded Coinbase full review using the current SEC-filed Q2 2026 Form 10-Q and fresh identity-matched market/FX state. A scenario-complete sum-of-parts assessment derives USD 28/USD 87/USD 191 bear/base/bull fair values, USD 90.10 probability-weighted fair value and -41.34% expected return versus the USD 153.60 mark. Deterministic state records Strong Sell / Avoid, complete research, allocation ineligibility and no strategy candidate. The security page, structured security and immutable assessment, retained source metadata and wiki log were updated, and exactly one dependent digital-finance idea refresh, 01KZMB0N6G33Q5MAHKWB5NGBZP, was enqueued. No signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Coinbase Q2 2026 Form 10-Q",
+      "claim": "Coinbase reported Q2 net revenue of USD 1.154 billion, including USD 599 million transaction revenue, USD 555 million subscription and services revenue and USD 292 million stablecoin revenue; transaction and subscription/services revenue declined, net loss was USD 359 million, and one counterparty generated 26% of Q2 revenue.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+      "observed_at": "2026-08-09T22:37:18Z",
+      "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a"
+    },
+    {
+      "source": "Coinbase Q2 2026 Form 10-Q",
+      "claim": "At June 30 Coinbase disclosed USD 8.614 billion cash and cash equivalents including payment stablecoins, USD 539 million short-term borrowings, USD 5.944 billion long-term debt, and USD 486 million six-month stock-based compensation expense, supporting the conservative balance-sheet deduction and dilution treatment.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+      "observed_at": "2026-08-09T22:37:18Z",
+      "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a"
+    },
+    {
+      "source": "PaperTrader deterministic assessment assessment_bd1fa53f07f4aab13f4c",
+      "claim": "The accepted schema-v2 assessment links predecessor assessment_f107e26b6b1b7b913d29 and source operation 01KZM7W5C8C2YW24Q3J4JNJ0MS, matches research-page hash ae681f02cf783993de1df22aa4ee4063726cc52d943bec95664bf9ae36be921a, and derives Strong Sell / Avoid, USD 90.10 probability-weighted fair value, -41.34% expected return and allocation ineligibility."
+    },
+    {
+      "source": "PaperTrader queue receipt",
+      "claim": "Exactly one dependent idea_research follow-up, 01KZMB0N6G33Q5MAHKWB5NGBZP, was created for accepted relationship idea_digital_finance_crypto_rails; no strategy follow-up was created because the full strategy gate failed."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZMB0N6G33Q5MAHKWB5NGBZP.json",
+    "data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/assessment_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_upsert_request.json",
+    "data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/source_coin_q2_2026_10q_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ],
+  "operations_created": [
+    "01KZMB0N6G33Q5MAHKWB5NGBZP"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Coinbase's full Q2 review now has a scenario-complete sum-of-parts assessment. USD 28/USD 87/USD 191 scenarios produce USD 90.10 probability-weighted fair value and -41.34% expected return versus USD 153.60, deriving Strong Sell / Avoid and no paper position. Exactly one dependent digital-finance idea refresh was requested; no strategy, signal, order, allocation or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader research source record --request data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/source_coin_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/enqueue_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260809T223236Z with a live lease, validated payload, immutable COIN/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after applying state; the current assessment is schema version 2, complete, predecessor-linked, current-operation-linked and page-hash-aligned.",
+      "Rechecked and re-registered the current SEC Q2 2026 filing; source registry freshness is 2026-08-09T22:37:18Z and the retained content hash is unchanged.",
+      "Fresh market and FX references both resolve to 2026-08-09T22:32:44Z and match the immutable COIN/XNAS/USD identity.",
+      "The deterministic assessment derives Strong Sell / Avoid, ineligibility and exact failed expected-return, base-return, bear/base payoff, expected/bear payoff and margin-of-safety gates; no conviction strategy work was created.",
+      "Exactly one result-specific idea-research follow-up exists for the sole accepted linked idea and depends on this security operation.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation and queue validation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

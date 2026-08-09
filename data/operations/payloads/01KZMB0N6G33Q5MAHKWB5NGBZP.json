@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_digital_finance_crypto_rails",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "security_research_operation_id": "01KZM7W5C8C2YW24Q3J4JNJ0MS",
+    "security_research_result_path": "data/runs/daily-20260809T223236Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/agent_result.json",
+    "seed_claim": "Coinbase's stablecoin and diversified platform mechanism remains plausible, but Q2 cyclicality, 26% counterparty concentration, dilution and a scenario-weighted value materially below market keep the security allocation-ineligible."
+  },
+  "objective": "Refresh the digital-finance-and-crypto-rails idea from Coinbase's completed Q2 full review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01KZMB0N6G33Q5MAHKWB5NGBZP",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ]
+}

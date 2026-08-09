@@ -9,7 +9,7 @@ provenance: "source_coin_q1_2026_10q; source_coin_july_2026_management_8k; sourc
 security_id: security_37ddcbdaad296ad831f2
 issuer_id: issuer_3584c0cf729606c65538
 confidence: medium
-next_review: "2026-08-16"
+next_review: "2026-08-23"
 ---
 
 # Coinbase Global, Inc. Class A common stock
@@ -25,18 +25,18 @@ Coinbase is a direct platform exposure within [[ideas/idea_digital_finance_crypt
 
 ## Economics and thesis
 
-The SEC-filed Q2 2026 Form 10-Q now supersedes the Q1 operating baseline. Q2 net revenue was USD
-1.154 billion: transaction revenue was USD 599 million and subscription and services revenue was USD
-555 million. Stablecoin revenue was USD 292 million, still supporting the payment-rails mechanism in
-[[ideas/idea_digital_finance_crypto_rails]], but total transaction revenue fell 22% year over year,
+The SEC-filed Q2 2026 Form 10-Q supersedes the Q1 operating baseline. Q2 net revenue was USD 1.154
+billion: transaction revenue was USD 599 million and subscription and services revenue was USD 555
+million. Stablecoin revenue of USD 292 million still supports the payment-rails mechanism in
+[[ideas/idea_digital_finance_crypto_rails]], but transaction revenue fell 22% year over year,
 subscription and services revenue fell 12%, and net loss was USD 359 million. Six-month operating
 cash flow remained positive at USD 380 million, down from USD 1.093 billion a year earlier.
 
-At June 30 Coinbase reported USD 8.614 billion of cash and cash equivalents, which still includes
-payment stablecoins, and USD 486 million of six-month stock-based compensation expense. One
-counterparty produced 26% of Q2 revenue, up from the 23% Q1 concentration cited in the prior review.
-These changes reinforce the prior cyclicality, concentration, custody, dilution and valuation risks
-rather than establishing a decision-ready buy zone.
+At June 30 Coinbase reported USD 8.614 billion of cash and cash equivalents, including payment
+stablecoins, against USD 539 million of short-term borrowings and USD 5.944 billion of long-term
+debt. Six-month stock-based compensation expense was USD 486 million. One counterparty produced 26%
+of Q2 revenue, up from the 23% Q1 concentration cited in the baseline review. The mix confirms a
+real diversified platform but not durable through-cycle economics or a decision-ready buy zone.
 
 ## Evidence and gates
 
@@ -56,28 +56,48 @@ and [Coinbase July 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/167978
 
 ## Changes since prior review
 
-- **Evidence:** The July 30 Q2 Form 10-Q is material new primary evidence and supersedes Q1 as the
-  operating baseline. Revenue, GAAP loss, cash, operating cash flow, stock compensation and
-  counterparty concentration all changed.
-- **Thesis, catalysts and risks:** The stablecoin-rails mechanism remains plausible, but lower
-  transaction and subscription revenue and 26% counterparty concentration reinforce cyclicality and
-  concentration risk. Catalysts and invalidation conditions are unchanged pending a full review.
-- **Valuation and buy zone:** The USD 146.26 alert close and USD 153.60 current mark are not validated
-  buy zones. The prior unsupported valuation cannot absorb the new Q2 inputs without a complete
-  scenario review; no fair value is invented here.
-- **Confidence, action and escalation:** Confidence remains medium and the security remains Unrated /
-  Watch and allocation-ineligible. Exactly one dependent full security review is required because
-  material operating evidence changed after the baseline review.
+- **Evidence:** No filing newer than the Q2 Form 10-Q was needed for this dependent review. The full
+  review consumes its revenue mix, cash, debt, custody, stock-compensation, share-count and
+  concentration disclosures rather than leaving Q2 as an unresolved escalation item.
+- **Assumptions and scenarios:** The prior review had no supportable scenario values. This review
+  introduces an explicit sum-of-parts framework with cycle-normalized transaction and recurring
+  revenue, segment multiples, a conservative net balance-sheet deduction and 282 million diluted
+  shares. Bear/base/bull fair values are USD 28/USD 87/USD 191 with 30%/50%/20% probabilities.
+- **Valuation outputs:** Probability-weighted fair value is USD 90.10 versus the USD 153.60 mark.
+  Expected, base and bear returns are all materially negative; the bull case alone is positive. The
+  `valuation_unsupported` hard blocker is resolved, but overvaluation and absent margin of safety
+  replace it as decisive economic exclusions.
+- **Thesis, catalysts and risks:** The stablecoin-rails mechanism and medium thesis confidence are
+  unchanged. Lower transaction and subscription revenue, 26% counterparty concentration, stock
+  compensation, custody obligations and debt keep residual risk severe. Catalysts and invalidation
+  conditions remain substantively unchanged and are now bounded by explicit scenarios.
+- **Gaps, rating and action:** Corporate-cash classification, cycle normalization and counterparty
+  economics remain soft gaps. Research completeness moves from unsupported to complete, while the
+  investment conclusion moves from Unrated / Watch to Sell / Avoid. Allocation remains ineligible;
+  no strategy or signal is justified.
 
-## Valuation, catalysts, and risks
+## Scenario valuation
 
-The 2026-08-07 mark is current, but a supportable scenario-complete valuation is still unavailable.
-The Q2 accounts do not provide a clean, decision-ready bridge from corporate cash—which includes
-payment stablecoins—through customer funds and custody obligations, borrowings, crypto inventory,
-and diluted shares. Applying an arbitrary revenue or EBITDA multiple would conceal rather than
-bound trading-volume, take-rate, rate, counterparty, custody, credit, regulatory, stock-compensation,
-and acquisition sensitivities. The comparable assessment therefore records `valuation_unsupported`,
-a conservative -100% unbounded downside input, and 0% base upside rather than inventing a target.
+The repository `other` template and permitted `sum_of_parts` method fit Coinbase better than a bank
+or mature-compounder template because transaction, stablecoin, staking, custody, financing,
+derivatives and crypto-asset economics have distinct drivers. Each case capitalizes normalized
+transaction and recurring revenue separately, deducts a conservative balance-sheet amount to avoid
+treating payment-stablecoin cash or customer assets as distributable corporate cash, and divides by
+282 million diluted shares. That share count is above the Q2 six-month basic weighted average of
+264.1 million to recognize dilution risk.
+
+| Case | Probability | Assumptions | Fair value |
+| --- | ---: | --- | ---: |
+| Bear | 30% | USD 2.0bn transaction revenue at 2x plus USD 2.0bn recurring revenue at 4x, less USD 4.0bn; weak volume, rates and take rates with persistent dilution. | USD 28 |
+| Base | 50% | USD 2.7bn transaction revenue at 4x plus USD 2.4bn recurring revenue at 7x, less USD 3.0bn; Deribit supports mix, but cycle and concentration persist. | USD 87 |
+| Bull | 20% | USD 4.0bn transaction revenue at 6x plus USD 3.2bn recurring revenue at 10x, less USD 2.0bn; volume and stablecoin growth, margin recovery and moderated dilution. | USD 191 |
+
+At the current USD 153.60 mark, the probability-weighted value is USD 90.10. The approximately -41%
+expected return, -43% base return and -82% bear return fail the expected-return, base-return,
+downside-payoff and margin-of-safety gates. The alert cluster was therefore noise for allocation:
+it prompted useful research but did not identify an opportunity.
+
+## Catalysts, risks, and invalidation
 
 Catalysts are sustained USDC growth despite lower rates, recurring subscription growth, derivatives
 and institutional share gains, and GAAP profitability. Invalidate if crypto activity contracts,
@@ -86,8 +106,9 @@ regulation limits products, or equity compensation absorbs per-share cash genera
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, but allocation eligibility is **ineligible** while
-valuation remains unsupported. Review by **2026-08-16** through the dependent full review. No
-strategy or signal is created by this quick check because cyclical downside, counterparty
-concentration, custody exposure, and dilution-adjusted valuation are not bounded. See
-[[research-catalog]] for the maintained research graph.
+Status: **watching**, confidence **medium**, rating **Sell**, portfolio action **Avoid**, and
+allocation eligibility **ineligible**. Review by **2026-08-23**, or earlier after material results,
+rate or stablecoin-partner changes, custody or regulatory events, or a price move that materially
+changes the scenario frontier. No strategy or signal is created because expected, base and bear
+returns and margin of safety fail the canonical gate. See [[research-catalog]] for the maintained
+research graph.
