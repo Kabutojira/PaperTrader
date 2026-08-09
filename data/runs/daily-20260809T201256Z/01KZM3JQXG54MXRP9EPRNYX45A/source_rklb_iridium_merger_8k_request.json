@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rklb_iridium_merger_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+  "source_type": "filing",
+  "title": "Rocket Lab-Iridium merger agreement Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e903aa04bc77737055b83574ad9e511c49d8819c38338908ab2d5df1dfa4b1de",
+  "related_entity_ids": "idea_commercial_space_infrastructure|security_7ca095d63423c55a90e3",
+  "checked_at": "2026-08-09T20:47:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "",
+  "summary": "Rocket Lab agreed to acquire Iridium for USD 27 cash plus a variable 0.24-0.40 Rocket Lab share per Iridium share and obtained a USD 3.6 billion bridge commitment, creating material leverage, dilution, closing, integration, and recurring-revenue consequences.",
+  "run_id": "daily-20260809T201256Z"
+}

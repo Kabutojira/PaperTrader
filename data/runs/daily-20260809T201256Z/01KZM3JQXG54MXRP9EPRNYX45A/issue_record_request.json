@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Rocket Lab assessment source operation is ambiguous within one run",
+  "description": "The required schema-v2 assessment for security_7ca095d63423c55a90e3 could not be written. The deterministic assessment applier found both predecessor quick_check_research 01KYY98DWGDVDXYTPP4XFBED3X and current security_research 01KZM3JQXG54MXRP9EPRNYX45A claimed by run daily-20260809T201256Z and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code or queue/history change.",
+  "owner": "controller",
+  "related_run_id": "daily-20260809T201256Z",
+  "related_operation_id": "01KZM3JQXG54MXRP9EPRNYX45A"
+}

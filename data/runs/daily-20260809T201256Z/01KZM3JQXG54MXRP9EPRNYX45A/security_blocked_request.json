@@ -1,0 +1,23 @@
+{
+  "security_id": "security_7ca095d63423c55a90e3",
+  "issuer_id": "issuer_05ab5fa9cb5610adb694",
+  "company_name": "Rocket Lab Corporation",
+  "instrument_name": "Rocket Lab Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "RKLB",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "RKLB",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Commercial-space launch and systems candidate; maintained for backlog conversion, Neutron execution, cash use, dilution, valuation, and a scenario-complete review after provenance repair.",
+  "research_summary": "Full assessment was blocked by ambiguous same-run source-operation provenance; the prior Unrated / Watch assessment remains current pending controller repair.",
+  "research_page": "data/wiki/securities/security_7ca095d63423c55a90e3.md",
+  "last_research_at": "2026-08-09T20:48:50Z",
+  "next_review_at": "2026-08-16T20:28:47Z",
+  "source": "source_iridium_q2_2026_10q|source_rklb_iridium_merger_8k|source_rklb_q1_2026_10q"
+}

@@ -2901,3 +2901,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   bull case and explicit probabilities, so it cannot support a scenario-complete current assessment.
   Rocket Lab is Unrated / Watch and allocation-ineligible pending exactly one dependent full review;
   no strategy, signal, order or paper trade was created.
+
+## 2026-08-09 — blocked security research — Rocket Lab Corporation common stock
+
+- Rechecked current primary evidence for
+  [[securities/security_7ca095d63423c55a90e3|Rocket Lab]], including the material 29 June Iridium
+  merger Form 8-K and Iridium's Q2 Form 10-Q. The deterministic assessment applier found both the
+  prior quick check and this dependent full review as source operations in the same run and could
+  not assign unambiguous provenance. The current Unrated / Watch assessment and security page
+  therefore remain unchanged pending repair of source-operation selection. No follow-up, strategy,
+  signal, order, or paper trade was created.

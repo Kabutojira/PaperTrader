@@ -1,0 +1,22 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_commercial_space_infrastructure",
+  "dedupe_key": "idea_research:idea_commercial_space_infrastructure:security-result:01KZM3JQXG54MXRP9EPRNYX45A",
+  "prompt": "Refresh the commercial-space-infrastructure idea from Rocket Lab's completed merger-aware full review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_commercial_space_infrastructure",
+    "seed_claim": "Rocket Lab's launch and systems scaling remains supported, but the signed Iridium transaction materially changes recurring revenue, leverage, dilution and integration risk while the scenario-complete valuation remains far below market.",
+    "security_id": "security_7ca095d63423c55a90e3",
+    "security_research_operation_id": "01KZM3JQXG54MXRP9EPRNYX45A",
+    "security_research_result_path": "data/runs/daily-20260809T201256Z/01KZM3JQXG54MXRP9EPRNYX45A/agent_result.json"
+  },
+  "source": "security_research:01KZM3JQXG54MXRP9EPRNYX45A",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZM3JQXG54MXRP9EPRNYX45A"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/securities/security_7ca095d63423c55a90e3.md"],
+  "max_attempts": 3
+}
