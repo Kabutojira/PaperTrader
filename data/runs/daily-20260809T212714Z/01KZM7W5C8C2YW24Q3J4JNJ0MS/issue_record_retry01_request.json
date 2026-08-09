@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Coinbase assessment source operation is ambiguous within one run",
+  "description": "The required schema-v2 assessment for security_37ddcbdaad296ad831f2 could not be written. The deterministic assessment applier found both predecessor quick_check_research 01KYY98DWGFZJZD3GK2DAXXERX and current security_research 01KZM7W5C8C2YW24Q3J4JNJ0MS claimed by run daily-20260809T212714Z and rejects more than one same-security source operation as ambiguous. The assessment request has no source-operation selector, so this routed operation cannot repair provenance without an out-of-scope code or queue/history change.",
+  "owner": "controller",
+  "related_run_id": "daily-20260809T212714Z",
+  "related_operation_id": "01KZM7W5C8C2YW24Q3J4JNJ0MS"
+}

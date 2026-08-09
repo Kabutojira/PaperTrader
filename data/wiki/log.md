@@ -2939,3 +2939,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   USD 359 million and one counterparty represented 26% of revenue. The unsupported valuation and
   absence of a validated buy zone remain blockers pending exactly one dependent full review; no
   strategy, signal, order or paper trade was created.
+
+## 2026-08-09 — failed full review — Coinbase Global, Inc. Class A common stock
+
+- The full [[securities/security_37ddcbdaad296ad831f2|Coinbase]] review prepared a scenario-complete
+  sum-of-parts assessment from the unchanged Q2 Form 10-Q, but failed closed because the
+  deterministic assessment applier found both the same-run predecessor quick check and this full
+  review as candidate provenance sources.
+- The prior unsupported Unrated / Watch assessment and hash-aligned security page remain current.
+  Issue `issue_de6f5509df14629098c4` records the controller-owned provenance defect. No idea
+  follow-up, strategy, signal, order, allocation change or paper trade was created.

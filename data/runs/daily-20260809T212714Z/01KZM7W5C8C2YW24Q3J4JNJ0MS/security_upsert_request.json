@@ -1,0 +1,23 @@
+{
+  "security_id": "security_37ddcbdaad296ad831f2",
+  "issuer_id": "issuer_3584c0cf729606c65538",
+  "company_name": "Coinbase Global, Inc.",
+  "instrument_name": "Coinbase Global, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "COIN",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "COIN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financial Services",
+  "industry": "Financial Data & Stock Exchanges",
+  "status": "watching",
+  "watchlist_reason": "Digital-finance and crypto-rails candidate; maintained for cycle sensitivity, stablecoin economics, concentration, custody, debt, dilution, profitability and valuation review.",
+  "research_summary": "USD 28/USD 87/USD 191 scenarios imply materially negative expected return at USD 153.60; Q2 diversification remains cycle-sensitive and concentrated.",
+  "research_page": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+  "last_research_at": "2026-08-09T21:54:12Z",
+  "next_review_at": "2026-08-23T21:54:12Z",
+  "source": "source_coin_q2_2026_10q|source_coin_q1_2026_10q|source_coin_july_2026_management_8k"
+}

@@ -1,0 +1,76 @@
+{
+  "operation_id": "01KZM7W5C8C2YW24Q3J4JNJ0MS",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after one bounded Coinbase full review. The unchanged SEC-filed Q2 Form 10-Q was retained and a scenario-complete sum-of-parts assessment was prepared, but the required schema-v2 assessment could not be written because the deterministic applier found both predecessor quick check 01KYY98DWGFZJZD3GK2DAXXERX and current security review 01KZM7W5C8C2YW24Q3J4JNJ0MS for the same security and run, making source provenance ambiguous. The prior unsupported Unrated / Watch assessment and its hash-aligned security page remain current. Issue issue_de6f5509df14629098c4 was recorded, and no idea follow-up, strategy, signal, order, allocation, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Coinbase Q2 2026 Form 10-Q",
+      "claim": "Coinbase reported Q2 net revenue of USD 1.154 billion, transaction revenue of USD 599 million, subscription and services revenue of USD 555 million, a USD 359 million net loss and 26% single-counterparty revenue concentration; the filing content hash was unchanged from the predecessor quick check.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+      "observed_at": "2026-08-09T21:54:12Z",
+      "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The corrected immutable assessment request made no assessment-table change and failed with 'assessment source operation is ambiguous for this run' because the run contains predecessor quick_check_research 01KYY98DWGFZJZD3GK2DAXXERX and current security_research 01KZM7W5C8C2YW24Q3J4JNJ0MS, while the assessment request contract provides no source-operation selector."
+    },
+    {
+      "source": "PaperTrader final security context",
+      "claim": "The current assessment remains assessment_f107e26b6b1b7b913d29 from quick check 01KYY98DWGFZJZD3GK2DAXXERX. Its stored research-page hash and the restored current page hash both equal 6072aeb0a6e517788011016e8f9a922ae34f0702982386b4882b7b6791030a1d; it remains valuation-unsupported, Unrated / Watch and allocation-ineligible, and no failed-review idea follow-up was enqueued."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/assessment_upsert_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/issue_record_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/issue_record_retry01_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_blocked_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_restore_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_upsert_request.json",
+    "data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/source_coin_q2_2026_10q_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_de6f5509df14629098c4"
+  ],
+  "daily_report_items": [
+    "Coinbase's full review failed closed because deterministic assessment provenance was ambiguous between the same-run predecessor quick check and its dependent full review. The prior unsupported Unrated / Watch assessment and hash-aligned page remain current, issue issue_de6f5509df14629098c4 was recorded, and no idea follow-up, paper strategy, signal, order, allocation, or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader research source record --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/source_coin_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/assessment_upsert_retry01_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_restore_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/security_blocked_request.json",
+    "papertrader issue record --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/issue_record_request.json",
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader issue record --request data/runs/daily-20260809T212714Z/01KZM7W5C8C2YW24Q3J4JNJ0MS/issue_record_retry01_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260809T212714Z with validated immutable identity security_37ddcbdaad296ad831f2, trusted preflight skill hashes, and no delegated, background, or second-operation execution.",
+      "Consumed the mandatory audited security context before assessment-state work and retained the predecessor quick-check result, current assessment, accepted relationship and linked idea context.",
+      "Retrieved and hashed current SEC primary evidence and registered the unchanged Coinbase Q2 filing through an immutable source request.",
+      "Prepared a scenario-complete sum-of-parts assessment, but the deterministic applier rejected it without assessment-table change because two same-security source operations are claimed by this run and the request contract provides no source-operation selector.",
+      "Restored the prior security page exactly; current page and current assessment retain identical hash 6072aeb0a6e517788011016e8f9a922ae34f0702982386b4882b7b6791030a1d. The prior quick-check assessment remains current and no new assessment-history row exists for this operation.",
+      "The accepted relationship names exactly one linked idea, but no idea-research follow-up was enqueued because this full review failed and produced no accepted assessment result. The strategy gate therefore remains failed and no strategy work was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity and strict portfolio reconciliation passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}
