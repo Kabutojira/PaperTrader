@@ -7,13 +7,13 @@ tags:
 created: "2026-08-09"
 updated: "2026-08-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_ee2e3de3a817adce7602"
-as_of: "2026-08-09T15:35:15Z"
+snapshot_id: "decision_0472533f870002f23e08"
+as_of: "2026-08-09T20:53:26Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-09T15:35:15Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-09T20:53:26Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 

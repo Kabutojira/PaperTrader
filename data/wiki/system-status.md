@@ -7,13 +7,13 @@ tags:
 created: "2026-08-09"
 updated: "2026-08-09"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_ee2e3de3a817adce7602"
-as_of: "2026-08-09T15:35:15Z"
+snapshot_id: "decision_0472533f870002f23e08"
+as_of: "2026-08-09T20:53:26Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-09T15:35:15Z`
+**As of:** `2026-08-09T20:53:26Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-09T15:35:15Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 333
+- Research backlog: 332
 - Last successful daily run: 2026-08-08
 
 ## Current issues by investment impact
@@ -45,6 +45,7 @@ as_of: "2026-08-09T15:35:15Z"
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
+- Error **RKLB — Rocket Lab Corporation: Rocket Lab assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_7ca095d63423c55a90e3|RKLB]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-09]] and current security_research [[securities/security_7ca095d63423c55a90e3|Security research for RKLB on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **PL — Planet Labs PBC: Planet Labs assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_97f38b2cb2d5ef127f5a|PL]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_97f38b2cb2d5ef127f5a|Quick check research for PL on 2026-08-09]] and current security_research [[securities/security_97f38b2cb2d5ef127f5a|Security research for PL on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
@@ -139,7 +140,7 @@ as_of: "2026-08-09T15:35:15Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 333 active operations.
+Showing 20 of 332 active operations.
 
 <details><summary>Active research work</summary>
 
