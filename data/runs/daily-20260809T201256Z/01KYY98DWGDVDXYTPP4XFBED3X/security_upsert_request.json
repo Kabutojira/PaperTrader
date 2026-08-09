@@ -1,0 +1,23 @@
+{
+  "security_id": "security_7ca095d63423c55a90e3",
+  "issuer_id": "issuer_05ab5fa9cb5610adb694",
+  "company_name": "Rocket Lab Corporation",
+  "instrument_name": "Rocket Lab Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "RKLB",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "RKLB",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Commercial-space launch and systems candidate; maintained for backlog conversion, Neutron execution, cash use, dilution, valuation, and the dependent scenario-complete review.",
+  "research_summary": "The bullish MACD recovery does not change the Q1 thesis or establish a buy zone; the prior two-case sensitivity is far below market but not scenario-complete, requiring a dependent full review.",
+  "research_page": "data/wiki/securities/security_7ca095d63423c55a90e3.md",
+  "last_research_at": "2026-08-09T20:28:47Z",
+  "next_review_at": "2026-08-16T20:28:47Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm"
+}

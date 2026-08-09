@@ -2889,3 +2889,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   negative expected and base returns, severe bear downside, medium confidence, no margin of safety,
   and no accepted relationship derive Sell / Avoid and no paper position. No strategy, signal,
   order or paper trade was created.
+
+## 2026-08-09 — quick check — Rocket Lab Corporation common stock
+
+- Rechecked [[securities/security_7ca095d63423c55a90e3|Rocket Lab]] after the 31 July bullish-MACD
+  cross. The USD 64.95 alert-period close recovered to USD 82.83 by 7 August; MACD remained above
+  signal and RSI was neutral, while the close exceeded its upper Bollinger band. The current SEC
+  submissions index contains no later earnings release or periodic operating filing, so the Q1
+  thesis, catalysts, risks and invalidation remain unchanged.
+- The prior USD 13.87/USD 28.83 downside/base sensitivity is far below the current mark but lacks a
+  bull case and explicit probabilities, so it cannot support a scenario-complete current assessment.
+  Rocket Lab is Unrated / Watch and allocation-ineligible pending exactly one dependent full review;
+  no strategy, signal, order or paper trade was created.

@@ -1,0 +1,48 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_7ca095d63423c55a90e3",
+  "dedupe_key": "security_research:security_7ca095d63423c55a90e3:quick-check-valuation-contract:2026-08-09",
+  "prompt": "Fully reassess Rocket Lab after the bullish MACD recovery because the prior two-case sensitivity cannot support a scenario-complete current valuation or buy-zone decision.",
+  "inputs": {
+    "security_id": "security_7ca095d63423c55a90e3",
+    "quick_check_operation_id": "01KYY98DWGDVDXYTPP4XFBED3X",
+    "baseline_operation_id": "01KYHW5710B851YNG53P4YQZW6",
+    "changed_gate": "baseline_two_case_sensitivity_not_scenario_complete_under_current_assessment_contract",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ],
+    "market_data_date": "2026-07-31",
+    "market_data_as_of": "2026-08-01T09:07:38Z",
+    "period_start": "2026-07-02",
+    "period_end": "2026-07-31",
+    "source_price_hash": "b8d32a11606ed9ce021353f56fef90f5ac34774772cf5f1a72916665a5545ab0",
+    "current_market_data_date": "2026-08-07",
+    "current_market_data_as_of": "2026-08-09T20:13:02Z",
+    "current_source_price_hash": "3b1270ca9ba652053285bc2de5e8933358e1e3d14e233526ba5a532ec3de29ce",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal",
+        "source_ref": "data/wiki/inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-88ab051849ae.md"
+      },
+      {
+        "cause": "scenario_complete_valuation_required",
+        "source_ref": "data/wiki/securities/security_7ca095d63423c55a90e3.md"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KYY98DWGDVDXYTPP4XFBED3X",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KYY98DWGDVDXYTPP4XFBED3X"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-88ab051849ae.md",
+    "https://data.sec.gov/submissions/CIK0001819994.json",
+    "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm"
+  ],
+  "max_attempts": 3
+}
