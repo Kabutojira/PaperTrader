@@ -7,13 +7,13 @@ tags:
 created: "2026-08-10"
 updated: "2026-08-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7e0db90bf1dbe6a9cb7f"
-as_of: "2026-08-10T16:11:32Z"
+snapshot_id: "decision_008cd109f31b5035709b"
+as_of: "2026-08-10T17:35:48Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-10T16:11:32Z`
+**As of:** `2026-08-10T17:35:48Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Attention required
 **Publication validation:** Snapshot and exports validated
@@ -46,6 +46,7 @@ as_of: "2026-08-10T16:11:32Z"
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-05]]** — agent result schema: Additional properties are not allowed ('operation_id' was unexpected); agent result schema: Additional properties are not allowed ('source_ref' was unexpected); agent result schema: Additional properties are not allowed ('source_refs' was unexpected); commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/01KZ9ZJVERX5NYGBGE6Z
 - Error **COIN — Coinbase Global, Inc.: Coinbase assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_37ddcbdaad296ad831f2|COIN]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_37ddcbdaad296ad831f2|Quick check research for COIN on 2026-08-09]] and current security_research [[securities/security_37ddcbdaad296ad831f2|Security research for COIN on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects more than one same-security source operation as ambiguous. The assessment request has no source-operation selector, so this routed operation cannot repair provenance without an out-of-scope code 
 - Error **RKLB — Rocket Lab Corporation: Rocket Lab assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_7ca095d63423c55a90e3|RKLB]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-09]] and current security_research [[securities/security_7ca095d63423c55a90e3|Security research for RKLB on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
@@ -128,7 +129,6 @@ as_of: "2026-08-10T16:11:32Z"
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-05]]** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/[[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
-- Error **Hermes operation validation failed: [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-05]]** — Hermes timed out after 600s; agent result schema: 'recorded source state' does not match '^[a-f0-9]{64}$'; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/[[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-05]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/[[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-05]]/agent_result.json: 'c062a7a5e5ce41f0e88f9b737fe1059fe91b8f
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
