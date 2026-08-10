@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abcl635_phase2_2026_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/a2026-08x10abcl635phase2.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/a2026-08x10abcl635phase2.htm",
+  "source_type": "issuer_release",
+  "title": "AbCellera announces positive top-line Phase 2 results for ABCL635",
+  "publisher": "AbCellera Biologics Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a30222f91d2a4425269c2b03f6166b35482cb9dddfce6c72b9e299478e29f54e",
+  "related_entity_ids": "security_7bf8f4c9cc12ae410e40",
+  "checked_at": "2026-08-10T22:35:08Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The study met the primary efficacy endpoints achieving statistically significant reductions in both frequency and severity of VMSM-S at week 4 compared to placebo after a single dose.",
+  "summary": "The SEC-filed issuer release reports controlled week-four efficacy, sleep and patient-global-impression improvements, and initial four-week tolerability for ABCL635 in 92 randomized participants.",
+  "run_id": "daily-20260810T222901Z"
+}

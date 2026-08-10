@@ -1,0 +1,18 @@
+{
+  "source_id": "source_abcl635_phase2_2026_presentation_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/abcl635phase2clinicalupd.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/abcl635phase2clinicalupd.htm",
+  "source_type": "issuer_presentation",
+  "title": "ABCL635 Phase 2 clinical update dated August 10, 2026",
+  "publisher": "AbCellera Biologics Inc. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "80897ad0b7cccec98b37182512abe60234700f64062ccb4df16526e9e6341642",
+  "related_entity_ids": "security_7bf8f4c9cc12ae410e40",
+  "checked_at": "2026-08-10T22:35:08Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "No SAEs or severe (Grade 3+) AEs in ABCL635 group; completion of 12-week follow up, dose selection, and regulatory interactions remain next steps.",
+  "summary": "The SEC-filed clinical presentation supplies the randomized population, endpoint magnitudes, adverse-event detail, four-week data cutoff, cross-study limitations, and remaining late-stage development steps.",
+  "run_id": "daily-20260810T222901Z"
+}

@@ -1,0 +1,70 @@
+{
+  "operation_id": "01KZGGJ4M0EZAXDQDSYMTWQ1TF",
+  "status": "succeeded",
+  "summary": "Completed the repeat ABCL security review for the 2026-08-10 volume anomaly. SEC-filed ABCL635 Phase 2 results directly explain the 34.78% session gain and materially strengthen the clinical thesis: both week-four efficacy endpoints met p<0.001 with favorable initial four-week tolerability. The security remains Unrated / Watch and allocation-ineligible because a scenario-complete biotechnology risk-adjusted NPV is still unsupported by late-stage, regulatory, development-cost, commercial, burn, and dilution evidence. No strategy, signal, order, allocation, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_abcl635_phase2_2026_results_sec",
+      "claim": "The SEC-filed issuer release reports that the 92-participant randomized Phase 2 portion met both week-four efficacy endpoints after one 600 mg dose: placebo-adjusted vasomotor-symptom frequency improved by 5.3 events per day and severity by 1.1 points, both p<0.001; sleep and patient-global-impression measures also improved.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/a2026-08x10abcl635phase2.htm",
+      "observed_at": "2026-08-10T22:35:08Z",
+      "source_hash": "a30222f91d2a4425269c2b03f6166b35482cb9dddfce6c72b9e299478e29f54e"
+    },
+    {
+      "source": "source_abcl635_phase2_2026_presentation_sec",
+      "claim": "The SEC-filed clinical update reports no serious, grade 3-or-higher, or discontinuation-causing adverse event in the treated group through four weeks and identifies 12-week follow-up, dose selection, and regulatory interactions as remaining development steps.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/abcl635phase2clinicalupd.htm",
+      "observed_at": "2026-08-10T22:35:08Z",
+      "source_hash": "80897ad0b7cccec98b37182512abe60234700f64062ccb4df16526e9e6341642"
+    },
+    {
+      "source": "data/operations/payloads/01KZGGJ4M0EZAXDQDSYMTWQ1TF.json",
+      "claim": "Canonical alert measurements show a USD 9.34 reference close on 2026-08-10, a 43.25% observation-period return, 34.78% one-session return, 45,715,300 shares of volume, and a deterministic volume-anomaly trigger; the same-day SEC filing provides the causal event evidence.",
+      "observed_at": "2026-08-10T22:29:08Z",
+      "source_hash": "e6008267118732885358e7268664170961365165663869364821345625eed857"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/assessment_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/security_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/source_abcl635_phase2_presentation_request.json",
+    "data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/source_abcl635_phase2_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_7bf8f4c9cc12ae410e40.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "ABCL rose 34.78% on 10 August and 43.25% over the alert period as SEC-filed ABCL635 Phase 2 results met both week-four efficacy endpoints at p<0.001 with favorable initial tolerability. The clinical thesis improved, but unsupported risk-adjusted valuation keeps ABCL Unrated / Watch and allocation-ineligible; no paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_7bf8f4c9cc12ae410e40",
+    "papertrader research source record --request data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/source_abcl635_phase2_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/source_abcl635_phase2_presentation_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T222901Z/01KZGGJ4M0EZAXDQDSYMTWQ1TF/assessment_upsert_request.json",
+    "papertrader schema validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited repeat-review security context completed successfully before assessment-state reads or changes.",
+      "Immutable security identity matched issuer, common-share instrument, XNAS venue, ABCL provider symbol, and USD currency; strict integrity found no duplicate identity.",
+      "Both retained 2026-08-10 SEC exhibits were registered with current hashes and available status before assessment upsert.",
+      "Fresh identity-matched USD 9.34000015258789 market data and USD/EUR 0.866100013256073 FX data were used as of 2026-08-10T22:29:08Z.",
+      "Assessment schema version 2 was accepted as ineligible with valuation_unsupported, and immutable assessment assessment_b8e50a8f738ab77c206a links predecessor assessment_62cb2dab4bdcb70edcdf, this operation, expected result path, and the updated research-page hash.",
+      "No payload idea and no accepted canonical relationship existed, so the required linked-idea follow-up set was empty; no strategy follow-up passed the unchanged full strategy gate.",
+      "papertrader schema validate returned OK [schema].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "No allocation target/history, order, execution, cash, portfolio, performance, fill, or other accounting state changed."
+    ]
+  }
+}

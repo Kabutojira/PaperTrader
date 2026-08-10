@@ -1,0 +1,23 @@
+{
+  "security_id": "security_7bf8f4c9cc12ae410e40",
+  "issuer_id": "issuer_6647bd573a38716cbcbd",
+  "company_name": "AbCellera Biologics Inc.",
+  "instrument_name": "AbCellera Biologics Inc. common shares",
+  "instrument_type": "equity",
+  "ticker": "ABCL",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ABCL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CA",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Positive ABCL635 Phase 2 efficacy and initial tolerability strengthen the thesis, but late-stage, regulatory, commercial, burn, dilution, and risk-adjusted valuation evidence remain unresolved.",
+  "research_summary": "ABCL635 met both week-four Phase 2 efficacy endpoints with favorable initial tolerability, but risk-adjusted NPV remains unsupported; Unrated / Watch.",
+  "research_page": "data/wiki/securities/security_7bf8f4c9cc12ae410e40.md",
+  "last_research_at": "2026-08-10T22:35:08Z",
+  "next_review_at": "2026-08-24T22:35:08Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1703057/000170305726000053/a2026-08x10abcl635phase2.htm"
+}

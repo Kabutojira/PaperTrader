@@ -3093,3 +3093,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   invalidation and unsupported valuation are unchanged. Missing cross-venue parity, KRW/EUR
   translation and routine Vienna liquidity keep SSU Unrated / Watch and allocation-ineligible; no
   full review, strategy, signal, order or paper trade was created.
+
+## 2026-08-10 — security research — AbCellera Biologics
+
+- Revalidated [[securities/security_7bf8f4c9cc12ae410e40|AbCellera]] after its 10 August volume
+  anomaly and 43.25% alert-period rise. The same-day SEC-filed ABCL635 top-line results directly
+  explain the move: both week-four efficacy endpoints met `p<0.001`, sleep and patient impression
+  improved, and no treated participant had a serious, grade 3-or-higher, or discontinuation-causing
+  event through four weeks.
+- The clinical thesis is materially stronger, but 12-week durability, late-stage and regulatory
+  success probabilities, development cost and timing, commercial economics, burn, and dilution
+  remain unbounded. Risk-adjusted NPV is still unsupported, so the comparable conclusion remains
+  Unrated / Watch and allocation-ineligible with no strategy, signal, order, or paper trade.
