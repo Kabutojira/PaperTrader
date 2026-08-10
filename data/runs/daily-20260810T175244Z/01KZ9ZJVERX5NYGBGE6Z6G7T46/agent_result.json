@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KZ9ZJVERX5NYGBGE6Z6G7T46",
+  "status": "failed",
+  "summary": "Quick check could not be completed safely because the supplied alert identity is stale relative to current deterministic market state and no current primary-source verification was available. No assessment or other structured state was changed, and no follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "Mandatory deterministic security context",
+      "claim": "The prior accepted assessment is Hold / Watch and allocation-ineligible; the required context command completed successfully before assessment-state consumption.",
+      "observed_at": "2026-08-10T17:54:00Z"
+    },
+    {
+      "source": "Quick-check payload",
+      "claim": "The payload binds the check to market_data_date 2026-08-05 and source_price_hash c062a7a5e5ce41f0e88f9b737fe1059fe91b8fbde535c3feeeb67858444647d7.",
+      "observed_at": "2026-08-10T17:54:00Z",
+      "source_hash": "c062a7a5e5ce41f0e88f9b737fe1059fe91b8fbde535c3feeeb67858444647d7"
+    },
+    {
+      "source": "Current deterministic market state",
+      "claim": "Current latest.csv is dated 2026-08-07 and current indicators.csv carries a different source_price_hash, b55d30a40812b351d2df2b7275460321664a7fb12eea2ed6cf142fbdcf0e70c4; the payload-bound price identity therefore cannot be confirmed against current state.",
+      "observed_at": "2026-08-10T17:54:00Z",
+      "source_hash": "b55d30a40812b351d2df2b7275460321664a7fb12eea2ed6cf142fbdcf0e70c4"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c9a37d277445869a8809",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory security-context receipt succeeded before assessment-state reads.",
+      "Schema validation passed.",
+      "Queue validation passed.",
+      "Strict wiki lint passed.",
+      "Strict integrity passed.",
+      "Strict portfolio reconciliation passed.",
+      "Quick-check failed closed because the payload source_price_hash does not match the current deterministic indicator state and the payload market period is no longer the current market-data endpoint.",
+      "No assessment, securities projection, source registry/history, wiki page, accounting ledger, allocation state, portfolio, performance, signal, order, execution, or follow-up operation was changed."
+    ]
+  }
+}
