@@ -7,8 +7,8 @@ tags:
 created: "2026-08-10"
 updated: "2026-08-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7ab74d62618fd22a70c9"
-as_of: "2026-08-10T11:52:10Z"
+snapshot_id: "decision_7e0db90bf1dbe6a9cb7f"
+as_of: "2026-08-10T16:11:32Z"
 ---
 
 # Research catalog
@@ -120,6 +120,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [NIB.F — Bollinger above upper](inbox/market-security_3853e54c619d597dcaa1-bollinger_above_upper-7c97de19e971)
 - [NIB.F — MACD cross above signal](inbox/market-security_3853e54c619d597dcaa1-macd_cross_above_signal-8478cd817392)
 - [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-1249876a4ec1)
+- [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1)
 - [NIB.F — Volume anomaly](inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e)
 - [NVDA — Bollinger above upper](inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-53c3e02d5180)
 - [NVDA — Bollinger above upper](inbox/market-security_33d9c44facc75c726c7d-bollinger_above_upper-783b87512286)
@@ -411,7 +412,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1|NIB.F — Volume anomaly]]

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-10"
 updated: "2026-08-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_7ab74d62618fd22a70c9"
-as_of: "2026-08-10T11:52:10Z"
+snapshot_id: "decision_7e0db90bf1dbe6a9cb7f"
+as_of: "2026-08-10T16:11:32Z"
 ---
 
 # Signals
 
-**As of `2026-08-10T11:52:10Z`**
+**As of `2026-08-10T16:11:32Z`**
 
 ## Actionable trade signals
 
@@ -33,6 +33,15 @@ No pending orders.
 - Market date: `2026-08-10`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
+
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-10`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 
