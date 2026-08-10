@@ -3009,6 +3009,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260810]] for run `daily-20260810T071837Z`.
 
+- Published investor decision snapshot `decision_74ad49a4757ea8faf4f1`.
+
+- Generated canonical [[daily-reports/daily-report_20260810]] for run `daily-20260810T083001Z`.
+
 ## 2026-08-10 — full review retry — ABB Ltd sponsored ADR
 
 - Rechecked unchanged issuer evidence and completed the full

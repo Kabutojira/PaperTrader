@@ -7,13 +7,13 @@ tags:
 created: "2026-08-10"
 updated: "2026-08-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_52efc7345da86d338e94"
-as_of: "2026-08-10T07:46:24Z"
+snapshot_id: "decision_74ad49a4757ea8faf4f1"
+as_of: "2026-08-10T09:01:02Z"
 ---
 
 # Signals
 
-**As of `2026-08-10T07:46:24Z`**
+**As of `2026-08-10T09:01:02Z`**
 
 ## Actionable trade signals
 
