@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crwd_q1_2027_results_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+  "source_type": "filing",
+  "title": "CrowdStrike fiscal Q1 2027 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "689137b1d49987dfe3d47b6c54bbe634def83fb28e44647b662d54c851610a24",
+  "related_entity_ids": "idea_cybersecurity_geopolitical_continuity|security_8472507d7d320aa388a7",
+  "checked_at": "2026-08-10T22:53:47Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Fiscal Q1 revenue grew 26% to USD 1.386 billion, ending ARR grew 24% to USD 5.51 billion and free cash flow was USD 468.5 million.",
+  "summary": "The unchanged SEC-hosted fiscal Q1 results exhibit remains the latest retained earnings evidence and continues to support the ARR-growth, module-adoption, revenue-guidance and free-cash-flow assumptions.",
+  "run_id": "daily-20260810T222901Z"
+}

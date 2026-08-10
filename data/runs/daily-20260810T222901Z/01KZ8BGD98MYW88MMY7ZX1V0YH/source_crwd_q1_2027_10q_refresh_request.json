@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crwd_q1_2027_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+  "source_type": "filing",
+  "title": "CrowdStrike fiscal Q1 2027 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5cebcdaf54ce867e95d558e2ebeb4cb0f9cebd0193bd138262b5d11c000792c5",
+  "related_entity_ids": "idea_cybersecurity_geopolitical_continuity|security_8472507d7d320aa388a7",
+  "checked_at": "2026-08-10T22:53:47Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At April 30, 2026 CrowdStrike reported USD 4.553 billion of cash, USD 745.8 million of long-term debt and USD 590.9 million of quarterly operating cash flow.",
+  "summary": "The unchanged fiscal Q1 Form 10-Q remains the latest periodic operating filing and continues to support the retained balance-sheet, cash-flow, stock-compensation, dilution and incident-risk assumptions.",
+  "run_id": "daily-20260810T222901Z"
+}

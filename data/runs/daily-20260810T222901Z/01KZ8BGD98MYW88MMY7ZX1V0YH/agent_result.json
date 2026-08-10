@@ -1,0 +1,103 @@
+{
+  "operation_id": "01KZ8BGD98MYW88MMY7ZX1V0YH",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded CrowdStrike quick check for the 2026-08-04 bullish-MACD cross. CRWD rose 8.53% over the alert period to USD 211.22 and then 6.60% to USD 225.16 by August 10, when MACD remained above signal and RSI/upper-Bollinger states indicated stronger momentum rather than a valuation-supported entry. Fresh SEC downloads matched both retained fiscal Q1 hashes, and the SEC submissions index showed no later periodic operating filing or earnings release, so the thesis, catalysts, risks and invalidation remain unchanged. The accepted cybersecurity relationship improves the relationship gate, but the legacy two-case sensitivity lacks a bull case, explicit probabilities and fresh scenario inputs. The accepted schema-v2 assessment is therefore Unrated / Watch, valuation-unsupported and allocation-ineligible with no buy zone. Exactly one dependent full security review, 01KZPY8FCGVBRGTPP66WJS5JEC, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic 2026-08-04 alert payload and candidate packet",
+      "claim": "The immutable payload binds macd_cross_above_signal to the 2026-07-07 through 2026-08-04 period, a USD 211.22000122070312 adjusted close, an 8.5294453396323313247533285% period return, and canonical source-price hash 537bbbb47e929979ffeb4ef2d426f3651947e62e8fe20a3fd61f688b3f856994.",
+      "observed_at": "2026-08-05T06:59:21Z",
+      "source_hash": "537bbbb47e929979ffeb4ef2d426f3651947e62e8fe20a3fd61f688b3f856994"
+    },
+    {
+      "source": "PaperTrader current deterministic market and indicator caches",
+      "claim": "The 2026-08-10 adjusted close was USD 225.16000366210938, 6.5997549289095945793233581% above the alert close and 25.0124939754004068770404755% above the baseline mark. MACD 8.03413886 remained above signal 5.27814656, RSI was 71.34510919, and the close exceeded the 224.08545887 upper Bollinger band; the current canonical source-price hash is 044dfdb9dc37dad008a5bcdb215cad6c876af687f1a8db619291247ae93f2ada.",
+      "observed_at": "2026-08-10T22:29:08Z",
+      "source_hash": "044dfdb9dc37dad008a5bcdb215cad6c876af687f1a8db619291247ae93f2ada"
+    },
+    {
+      "source": "source_crwd_q1_2027_10q",
+      "claim": "A bounded current download returned HTTP 200 and matched the retained hash. The unchanged Form 10-Q continues to support the balance-sheet, operating-cash-flow, stock-compensation, dilution and incident-risk assumptions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+      "observed_at": "2026-08-10T22:53:47Z",
+      "source_hash": "5cebcdaf54ce867e95d558e2ebeb4cb0f9cebd0193bd138262b5d11c000792c5"
+    },
+    {
+      "source": "source_crwd_q1_2027_results_exhibit",
+      "claim": "A bounded current download returned HTTP 200 and matched the retained hash. The unchanged results exhibit continues to support the ARR growth, module adoption, revenue guidance and free-cash-flow assumptions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "observed_at": "2026-08-10T22:53:47Z",
+      "source_hash": "689137b1d49987dfe3d47b6c54bbe634def83fb28e44647b662d54c851610a24"
+    },
+    {
+      "source": "SEC company submissions index for CrowdStrike Holdings, Inc.",
+      "claim": "The current submissions index showed no periodic operating filing or earnings release after the fiscal Q1 filing through 2026-08-10. The June 22 Form 8-K concerned annual-meeting and charter matters rather than a change to operating assumptions.",
+      "url": "https://data.sec.gov/submissions/CIK0001535527.json",
+      "observed_at": "2026-08-10T22:53:47Z",
+      "source_hash": "de714afd12c9147d7a587ae5047c9b8e7413f5551ea1e33642390dac0c6f4e54"
+    },
+    {
+      "source": "PaperTrader accepted assessment assessment_dfabdeaf18df33b4e2b7",
+      "claim": "The deterministic applier linked the sole new schema-v2 assessment to legacy predecessor assessment_a14806c997858e805d7c and page hash 4524191f9c72b48c4cfd0ac9dfb34f9f29a96b94abb6db97ba3fa9f832663a9f. It accepted reference price USD 225.16000366210938, unsupported valuation with no scenario values or buy-below price, complete relationship frontier, canonical rating Unrated, portfolio action Watch and allocation ineligibility.",
+      "observed_at": "2026-08-10T22:56:49Z",
+      "source_hash": "4524191f9c72b48c4cfd0ac9dfb34f9f29a96b94abb6db97ba3fa9f832663a9f"
+    },
+    {
+      "source": "data/operations/payloads/01KZPY8FCGVBRGTPP66WJS5JEC.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, the exact MACD alert period and source-price hash, the legacy-valuation and accepted-relationship gate changes, and full_research_requested=true."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZPY8FCGVBRGTPP66WJS5JEC.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/assessment_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/enqueue_full_research_request.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/security_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/source_crwd_q1_2027_10q_refresh_request.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/source_crwd_q1_2027_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_8472507d7d320aa388a7.md"
+  ],
+  "operations_created": [
+    "01KZPY8FCGVBRGTPP66WJS5JEC"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CrowdStrike's August 4 bullish-MACD cross extended to a USD 225.16 mark with overbought and upper-Bollinger conditions by August 10, but unchanged fiscal Q1 primary evidence provides no new operating catalyst. The accepted cybersecurity relationship improves one gate, while the legacy two-case sensitivity remains noncanonical; CRWD is Unrated / Watch and allocation-ineligible pending exactly one full review, with no paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7",
+    "papertrader research source record --request data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/source_crwd_q1_2027_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/source_crwd_q1_2027_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T222901Z/01KZ8BGD98MYW88MMY7ZX1V0YH/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the single running quick_check_research row, daily-20260810T222901Z claim, live lease, immutable CRWD/XNAS/USD/equity identity, successful same-security baseline result within ten days at enqueue time, and native/controller/operation preflight hashes before mutation.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the current and previous assessment versions, latest successful baseline result, security identity, page hash, retained sources, accepted relationship, linked idea and zero strategies.",
+      "Matched the sole payload trigger, exact 2026-07-07 through 2026-08-04 period, USD 211.22000122070312 alert mark and canonical payload source-price hash 537bbbb47e929979ffeb4ef2d426f3651947e62e8fe20a3fd61f688b3f856994 to the deterministic candidate packet and price cache.",
+      "Confirmed current canonical market state at 2026-08-10T22:29:08Z: USD 225.16000366210938 mark, MACD above signal, RSI overbought and close above the upper Bollinger band, with current source-price hash 044dfdb9dc37dad008a5bcdb215cad6c876af687f1a8db619291247ae93f2ada.",
+      "Downloaded and hashed both retained SEC filings; each returned HTTP 200 with its unchanged registered hash. The current SEC submissions index contained no later periodic operating filing or earnings release, so the thesis, catalysts, risks and invalidation remain unchanged.",
+      "Confirmed no valuation or buy zone was newly reached and no operating catalyst or invalidation fired. Escalation is required because the legacy two-case sensitivity cannot support scenario-complete decisions and the canonical relationship is now accepted rather than pending.",
+      "Confirmed exactly one dependent full-review payload, 01KZPY8FCGVBRGTPP66WJS5JEC, contains this quick-check identity, baseline identity, all payload trigger causes, exact alert period and source-price hash, both changed gates and full_research_requested=true.",
+      "The second audited security-context receipt confirmed immutable assessment assessment_dfabdeaf18df33b4e2b7, predecessor assessment_a14806c997858e805d7c, schema version 2, current page-hash identity, refreshed source times, complete relationship frontier, Unrated / Watch disposition, valuation-unsupported blocker and no invented scenario values or buy zone.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned exit code zero after the permitted changes.",
+      "command_audit.json contains exactly the twelve canonical project CLI invocations listed in commands_run, in the same order, and every receipt returned exit code zero.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, fill, cash, portfolio, performance, accounting-ledger, raw-source or other security-page path changed; no issue was recorded and no operation was delegated, claimed, completed or otherwise processed."
+    ]
+  }
+}

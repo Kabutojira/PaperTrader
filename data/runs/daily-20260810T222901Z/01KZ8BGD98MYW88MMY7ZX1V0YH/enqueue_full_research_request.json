@@ -1,0 +1,52 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_8472507d7d320aa388a7",
+  "dedupe_key": "security_research:security_8472507d7d320aa388a7:quick-check-canonical-valuation:2026-08-10",
+  "prompt": "Fully reassess CrowdStrike after the August MACD alert because the legacy two-case sensitivity and changed relationship gate cannot support the current scenario-complete decision contract.",
+  "inputs": {
+    "security_id": "security_8472507d7d320aa388a7",
+    "quick_check_operation_id": "01KZ8BGD98MYW88MMY7ZX1V0YH",
+    "baseline_operation_id": "01KYHW5710YVB0Z61AF9G5XS4X",
+    "changed_gate": "legacy_two_case_valuation_cannot_support_schema_v2_decision_and_relationship_is_now_accepted",
+    "full_research_requested": true,
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ],
+    "market_data_date": "2026-08-04",
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "period_start": "2026-07-07",
+    "period_end": "2026-08-04",
+    "source_price_hash": "537bbbb47e929979ffeb4ef2d426f3651947e62e8fe20a3fd61f688b3f856994",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal_entered_with_positive_period_return",
+        "source_ref": "data/wiki/inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de.md"
+      },
+      {
+        "cause": "legacy_two_case_valuation_lacks_bull_case_probabilities_and_fresh_scenario_inputs",
+        "source_ref": "data/wiki/securities/security_8472507d7d320aa388a7.md"
+      },
+      {
+        "cause": "canonical_cybersecurity_continuity_relationship_is_now_accepted",
+        "source_ref": "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZ8BGD98MYW88MMY7ZX1V0YH",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZ8BGD98MYW88MMY7ZX1V0YH"
+  ],
+  "not_before": "now",
+  "deadline": "2026-08-15T12:00:00Z",
+  "source_refs": [
+    "data/wiki/inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de.md",
+    "data/wiki/securities/security_8472507d7d320aa388a7.md",
+    "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md",
+    "source_crwd_q1_2027_10q",
+    "source_crwd_q1_2027_results_exhibit"
+  ],
+  "max_attempts": 3
+}

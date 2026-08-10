@@ -3117,3 +3117,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   turnover remains a hard blocker, while the legacy two-point earnings sensitivity is explicitly
   valuation-unsupported under schema v2. The security remains Unrated / Watch and
   allocation-ineligible; no full review, strategy, signal, order, or paper trade was created.
+
+## 2026-08-10 — quick check — CrowdStrike Holdings Class A common stock
+
+- Rechecked [[securities/security_8472507d7d320aa388a7|CrowdStrike]] after the 4 August bullish-
+  MACD cross. The USD 211.22 alert close followed an 8.53% rise from 7 July; the 10 August close was
+  USD 225.16 with MACD still above signal, RSI overbought and price above the upper Bollinger band.
+- Fresh hashes of the fiscal Q1 Form 10-Q and results exhibit are unchanged, and the SEC submissions
+  index contains no later periodic operating filing or earnings release. The thesis, catalysts,
+  risks and invalidation remain unchanged, while the cybersecurity-continuity relationship is now
+  accepted. The legacy two-case sensitivity cannot support schema-v2 valuation, so CrowdStrike is
+  Unrated / Watch and allocation-ineligible pending exactly one dependent full review; no strategy,
+  signal, order or paper trade was created.
