@@ -1,0 +1,77 @@
+{
+  "operation_id": "01KZ8BGD98FSXHG4KQ8C6MGNW1",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded YASKAWA Electric Frankfurt quick check for the 2026-08-04 bullish-MACD cross and volume anomaly. YEC.F fell 21.72% from July 7 to EUR 29.20; the 7,300-share alert-session turnover did not persist, and the August 10 close was EUR 29.30 with no configured indicator trigger active. Yaskawa's issuer page still listed the July 10 first-quarter filing as its latest financial result, so the operating thesis, catalysts, risks, and invalidation remain unchanged. Sparse routine Frankfurt turnover remains a hard blocker, and the legacy two-point earnings sensitivity is not a scenario-complete valuation. The accepted schema-v2 assessment is therefore Unrated / Watch, valuation-unsupported, and allocation-ineligible with no buy zone. No material decision gate changed, so no full security review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic 2026-08-04 alert payload and candidate packets",
+      "claim": "The immutable payload binds both macd_cross_above_signal and volume_anomaly to the 2026-07-07 through 2026-08-04 period, a EUR 29.200000762939453 adjusted close, a -21.71581404772013206085445867% period return, and canonical source-price hash 872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329. The price cache reports 7,300 shares on August 4.",
+      "observed_at": "2026-08-05T06:59:21Z",
+      "source_hash": "872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329"
+    },
+    {
+      "source": "PaperTrader current deterministic market and indicator caches",
+      "claim": "After the alert, reported volume was 45 shares on August 5, zero on August 6 and 7, and 170 on August 10. The August 10 close was EUR 29.299999237060547, only 0.342460518864135584373295100% above the alert close. MACD remained above signal, but the configured trigger_state was empty, so the isolated volume anomaly did not establish routine venue liquidity.",
+      "observed_at": "2026-08-10T22:29:08Z",
+      "source_hash": "8ed34b4323570c67e96f0d4888c928df377ab27c97cecc8e117a8281600dafc8"
+    },
+    {
+      "source": "source_yaskawa_fy2026_q1_results",
+      "claim": "A bounded current check returned HTTP 200 for the retained first-quarter filing, and Yaskawa's investor-relations page still listed that July 10 filing as its latest financial result. The retained filing reports revenue up 10.6%, operating profit down 19.2%, and profit attributable to owners down 21.7%; no newer primary result changed the baseline operating assumptions.",
+      "url": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf",
+      "observed_at": "2026-08-10T22:41:29Z",
+      "source_hash": "32f00d6aeff7e750ea1a54896e723f59b272c4236253ddcb415faa595d4dcc61"
+    },
+    {
+      "source": "PaperTrader accepted assessment assessment_c5903a0dc95e6fb4f789",
+      "claim": "The deterministic applier linked the new schema-v2 version to legacy assessment assessment_c89cd62a99d2b5cb4df3 and accepted reference price EUR 29.299999237060547, unsupported valuation, no scenario values or buy-below price, hard blockers liquidity_insufficient and valuation_unsupported, canonical rating Unrated, portfolio action Watch, and allocation-ineligible status. The immutable assessment page hash matches the maintained page hash 3e8d2ccb93bffd856b8e8b03ff4c9b38b9c5aa11813781377768725415d814da.",
+      "observed_at": "2026-08-10T22:46:29Z",
+      "source_hash": "3e8d2ccb93bffd856b8e8b03ff4c9b38b9c5aa11813781377768725415d814da"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98FSXHG4KQ8C6MGNW1/assessment_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98FSXHG4KQ8C6MGNW1/security_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZ8BGD98FSXHG4KQ8C6MGNW1/source_yaskawa_q1_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_89969b7dac39b7db5661.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "YASKAWA Electric's Frankfurt line triggered a bullish-MACD cross and one-session volume anomaly after a 21.72% decline to EUR 29.20. Turnover immediately returned to sparse levels, the August 10 mark was EUR 29.30 with no active configured trigger, and no newer issuer result changed the operating thesis. Routine Frankfurt liquidity and scenario-valuation support remain hard gaps, so YEC.F is Unrated / Watch and allocation-ineligible with no full-review escalation or paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_89969b7dac39b7db5661",
+    "papertrader research source record --request data/runs/daily-20260810T222901Z/01KZ8BGD98FSXHG4KQ8C6MGNW1/source_yaskawa_q1_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260810T222901Z/01KZ8BGD98FSXHG4KQ8C6MGNW1/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T222901Z/01KZ8BGD98FSXHG4KQ8C6MGNW1/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_89969b7dac39b7db5661"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the single running quick_check_research row, daily-20260810T222901Z claim, live lease, immutable security identity, payload binding, successful baseline result from 2026-07-29, and native/controller/operation skill preflight hashes before mutation.",
+      "Ran the mandatory audited security-context receipt before reading assessment state, consumed the current and previous assessment versions, latest successful baseline result, security identity, page hash, retained sources, and zero linked ideas, relationships, or strategies.",
+      "Matched both merged trigger causes, exact 2026-07-07 through 2026-08-04 period, market date, EUR 29.200000762939453 alert mark, and payload source-price hash 872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329 to the deterministic candidate packets and price cache.",
+      "Confirmed from current canonical market state that the one-session volume spike did not persist, the August 10 close was EUR 29.299999237060547, MACD remained above signal, and no configured indicator trigger was active; the current source-price hash is 8ed34b4323570c67e96f0d4888c928df377ab27c97cecc8e117a8281600dafc8.",
+      "Refreshed the latest issuer-result source record and confirmed it remains available and current for the bounded assumption check; the operating thesis, demand evidence, ERP and Robotics-margin tests, catalysts, risks, invalidation, and next-review date remain unchanged.",
+      "Confirmed the retained EUR 17.05-EUR 21.32 sensitivity remains below the EUR 29.30 mark but lacks a complete three-scenario probability set and fresh same-timestamp cross-venue parity; no scenario values or buy zone were invented, and the comparable schema-v2 assessment is explicitly unsupported and allocation-ineligible.",
+      "Confirmed no valuation/buy-zone threshold was newly reached, no operating catalyst or invalidation fired, no material primary evidence changed, and no decision-support gap newly opened; exactly zero full security-research follow-ups or other operations were created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all returned exit code zero after the permitted changes.",
+      "The second audited security-context receipt confirmed immutable assessment assessment_c5903a0dc95e6fb4f789, predecessor assessment_c89cd62a99d2b5cb4df3, schema version 2, current page-hash identity, refreshed source time, Unrated / Watch disposition, and exact unsupported and liquidity blockers.",
+      "command_audit.json contains exactly the ten canonical project CLI invocations listed in commands_run, in the same order, and every receipt returned exit code zero.",
+      "No allocation target/history, strategy, signal, order, execution, fill, cash, portfolio, performance, or accounting-ledger path changed; no issue was recorded and no operation was delegated, claimed, completed, or otherwise processed."
+    ]
+  }
+}

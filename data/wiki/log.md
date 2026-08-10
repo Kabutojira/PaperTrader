@@ -3105,3 +3105,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   success probabilities, development cost and timing, commercial economics, burn, and dilution
   remain unbounded. Risk-adjusted NPV is still unsupported, so the comparable conclusion remains
   Unrated / Watch and allocation-ineligible with no strategy, signal, order, or paper trade.
+
+## 2026-08-10 — quick check — YASKAWA Electric Frankfurt ordinary shares
+
+- Rechecked [[securities/security_89969b7dac39b7db5661|YASKAWA Electric Frankfurt ordinary
+  shares]] after the 4 August bullish-MACD cross and volume anomaly. The EUR 29.20 alert close
+  followed a 21.72% decline from 7 July; the one-session 7,300-share turnover did not persist, and
+  the 10 August close was EUR 29.30 with no configured indicator trigger active.
+- The issuer still listed its 10 July first-quarter filing as the latest financial result. The
+  operating thesis, catalysts, risks, and invalidation remain unchanged. Sparse routine Frankfurt
+  turnover remains a hard blocker, while the legacy two-point earnings sensitivity is explicitly
+  valuation-unsupported under schema v2. The security remains Unrated / Watch and
+  allocation-ineligible; no full review, strategy, signal, order, or paper trade was created.

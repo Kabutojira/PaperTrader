@@ -1,0 +1,23 @@
+{
+  "security_id": "security_89969b7dac39b7db5661",
+  "issuer_id": "issuer_a10383b9a5262a1907f8",
+  "company_name": "YASKAWA Electric Corporation",
+  "instrument_name": "YASKAWA Electric Corporation Frankfurt ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "YEC.F",
+  "exchange_code": "FRA",
+  "venue_mic": "XFRA",
+  "provider_symbol": "YEC.F",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "JP",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "Industrial automation and robotics exposure; the August bullish-MACD cross and one-session volume spike did not resolve valuation support, cross-venue parity, ERP normalization, Robotics margins, or routine Frankfurt liquidity.",
+  "research_summary": "The bullish-MACD cross is technical only; sparse routine Frankfurt turnover and unsupported scenario valuation keep YEC.F Unrated / Watch and allocation-ineligible.",
+  "research_page": "data/wiki/securities/security_89969b7dac39b7db5661.md",
+  "last_research_at": "2026-08-10T22:41:29Z",
+  "next_review_at": "2026-08-31T16:00:00Z",
+  "source": "https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf"
+}

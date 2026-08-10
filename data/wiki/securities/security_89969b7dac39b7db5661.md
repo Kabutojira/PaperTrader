@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-07-29"
-updated: "2026-07-30"
+updated: "2026-08-10"
 provenance: "source_yaskawa_fy2026_q1_results; source_yaskawa_fy2026_q1_briefing; source_yaskawa_fy2026_q1_qa; deterministic market cache"
 security_id: security_89969b7dac39b7db5661
 issuer_id: issuer_a10383b9a5262a1907f8
@@ -22,10 +22,11 @@ next_review: "2026-08-31"
 
 ## Decision
 
-**Ineligible for paper allocation.** Yaskawa has credible motion-control and industrial-robotics
-economics, but the Frankfurt `YEC.F` line has insufficient liquidity for a reproducible paper
-entry. The 29 July alert is a real price decline on the monitored line, not a standalone buy
-signal. No conviction strategy is justified.
+**Unrated / Watch and ineligible for paper allocation.** Yaskawa has credible motion-control and
+industrial-robotics economics, but the Frankfurt `YEC.F` line has insufficient routine liquidity
+for a reproducible paper entry. The 4 August bullish MACD cross and one-session volume spike do not
+resolve that blocker. The retained two-point earnings sensitivity is not a scenario-complete
+schema-v2 valuation, so no supported buy zone or conviction strategy exists.
 
 ## Identity
 
@@ -57,6 +58,21 @@ The issuer nevertheless kept its full-year forecast unchanged and reported firm 
 conclusion is **operating-execution and venue-liquidity risk**, not a confirmed thesis break and
 not an actionable oversold opportunity.
 
+### 4 August quick check
+
+From 7 July through 4 August, the adjusted close fell **21.72%**, from EUR 37.30 to EUR 29.20. MACD
+crossed above its signal with a small positive trigger strength, while reported volume rose to
+7,300 shares and triggered the volume-anomaly threshold. The isolated turnover did not persist:
+the next three cached sessions reported 45, zero, and zero shares, followed by 170 shares on 10
+August. The 10 August close was EUR 29.30, only **0.34%** above the alert close; MACD remained above
+signal, but no configured indicator trigger was active.
+
+This is **technical stabilization, not a changed investment gate**. The monitored price remains
+above the entire retained earnings sensitivity, and one exceptional session does not demonstrate
+routine Frankfurt liquidity. The issuer's IR page still listed the 10 July first-quarter filing as
+its latest financial result when checked on 10 August. No new primary evidence fired an operating
+catalyst or invalidation.
+
 ## Business thesis
 
 Yaskawa sells AC servo motors and controllers, drives, industrial robots, and system-engineering
@@ -81,16 +97,18 @@ JPY 21.4 billion and purchases of property, plant, equipment, and intangibles we
 The balance sheet is adequate, but not net-cash, and inventory of JPY 215.2 billion remains a
 meaningful working-capital exposure.
 
-## Bounded valuation
+## Valuation status
 
 Management maintained FY2026 guidance of JPY 580 billion revenue, JPY 60 billion operating profit,
 JPY 47 billion profit attributable to owners, and JPY 181.21 EPS. Using the issuer's JPY 170 per
-EUR planning rate, a bounded **16x–20x** forward-earnings scenario implies approximately
-**EUR 17.05–21.32** per share over 12 months. Against the EUR 25.00 monitored close, that is about
-**31.8% downside** to the downside case and **14.7% downside** to the base case.
+EUR planning rate, the prior review retained a **16x–20x** forward-earnings sensitivity of roughly
+**EUR 17.05–21.32** per share over 12 months. Against the 10 August EUR 29.30 close, that range is
+about **41.81% to 27.24% below** the monitored mark.
 
-This is a scenario range, not a price target. It does not compensate for the monitored line's
-poor liquidity, and no same-timestamp primary-market parity check is available in canonical state.
+This is not a schema-v2 bear/base/bull valuation: it has no complete probability set and no fresh
+same-timestamp primary-market parity check for the Frankfurt line. The comparable assessment is
+therefore explicitly valuation-unsupported rather than converting the legacy sensitivity into an
+invented price target or buy zone.
 
 ## Catalysts, risks, and invalidation
 
@@ -105,6 +123,19 @@ or Robotics margins remain near first-quarter levels after temporary costs reced
 instrument remains ineligible until turnover becomes sufficient for deterministic fills and a
 fresh cross-venue parity check confirms the EUR line is representative.
 
+## Changes since prior review
+
+- **Changed market evidence:** the 4 August close recovered to EUR 29.20 with a bullish MACD cross
+  and 7,300 reported shares, but subsequent turnover immediately returned to 45, zero, zero, and
+  170 shares through 10 August.
+- **Unchanged thesis and primary evidence:** the 10 July first-quarter result remains the latest
+  financial result listed by the issuer; demand, ERP normalization, Robotics-margin recovery,
+  balance-sheet, catalyst, risk, and invalidation conclusions are unchanged.
+- **Valuation and buy zone:** the legacy sensitivity remains below the mark, but it is not
+  scenario-complete; valuation is now recorded explicitly as unsupported and no buy zone exists.
+- **Decision and escalation:** Unrated / Watch, allocation-ineligible, and no full security review.
+  Neither the technical rebound nor one-session turnover changed a material decision gate.
+
 ## Evidence
 
 - [Yaskawa FY2026 first-quarter results, 10 July 2026](https://www.yaskawa-global.com/wp-content/uploads/2026/07/20260710_en.pdf)
@@ -115,6 +146,12 @@ fresh cross-venue parity check confirms the EUR line is representative.
 - PaperTrader subsequent cache refresh at `2026-07-30T06:16:16Z`, which preserved the EUR 25.00
   close and RSI-oversold state while revising 29 July volume to zero; source-price hash
   `15d085715e784c95486d59249904aa72c7d723a28f7f1fd58866ec716a43b91c`
+- PaperTrader 4 August MACD/volume snapshot as of `2026-08-05T06:59:21Z`, source-price hash
+  `872c416d184aac8061b04c45cbaea989e7d6df576a96ac8ae684964bbab11329`
+- PaperTrader current market and indicator cache as of `2026-08-10T22:29:08Z`, source-price hash
+  `8ed34b4323570c67e96f0d4888c928df377ab27c97cecc8e117a8281600dafc8`
+- [Yaskawa investor-relations page](https://www.yaskawa-global.com/ir/), checked 10 August 2026 for
+  the latest listed financial result
 
 Review by **2026-08-31**, or earlier after evidence that ERP operations stabilized, a material
 forecast change, or a durable improvement in Frankfurt liquidity.
