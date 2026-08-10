@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-09"
-updated: "2026-08-09"
+created: "2026-08-10"
+updated: "2026-08-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b6234a7b8f3c4f276d67"
-as_of: "2026-08-09T23:13:06Z"
+snapshot_id: "decision_52efc7345da86d338e94"
+as_of: "2026-08-10T07:46:24Z"
 ---
 
 # Signals
 
-**As of `2026-08-09T23:13:06Z`**
+**As of `2026-08-10T07:46:24Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### PLS.AX — PLS Group Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-10`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
 

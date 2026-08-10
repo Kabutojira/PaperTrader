@@ -15,3 +15,4 @@ date,performance_epoch_id,base_currency,cash_base,market_value_base,equity_base,
 2026-08-07,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,local-20260807T085336Z-terafab,2026-08-07T09:35:34Z
 2026-08-08,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,daily-20260808T110128Z,2026-08-08T11:13:14Z
 2026-08-09,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,daily-20260809T110514Z,2026-08-09T11:20:11Z
+2026-08-10,performance_epoch_f20320f2ff68cb5015b6,EUR,10000,0,10000,0,0,0,0,0,0,0,0,daily-20260810T071837Z,2026-08-10T07:46:24Z
