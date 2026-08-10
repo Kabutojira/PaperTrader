@@ -3004,3 +3004,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 ## 2026-08-10
 
 - Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484]] (0f061b8f1484).
+
+## 2026-08-10 — full review retry — ABB Ltd sponsored ADR
+
+- Rechecked unchanged issuer evidence and completed the full
+  [[securities/security_c120e9f26ebb6159adf9|ABB]] review with a mature-compounder
+  earnings-multiple scenario set. Bear/base/bull fair values are USD 62.40/USD 86.80/USD 105.00
+  with 30%/50%/20% probabilities versus a USD 100.86 mark; the probability-weighted value is
+  USD 83.12 and the complete assessment remains allocation-ineligible.
+- The rejected embodied-AI relationship and negative expected and base returns preclude conviction
+  strategy work. One dependent idea refresh is required so the broader candidate universe can
+  absorb the completed security result; no signal, order, allocation, accounting, portfolio or
+  performance state changed.

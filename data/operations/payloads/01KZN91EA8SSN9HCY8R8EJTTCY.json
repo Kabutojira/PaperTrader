@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_humanoid_robotics_embodied_ai_components",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "security_id": "security_c120e9f26ebb6159adf9",
+    "security_research_operation_id": "01KZMBZY5RBVNJH4ZHBZ47FG2S",
+    "security_research_result_path": "data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/agent_result.json",
+    "seed_claim": "ABB's strong group economics do not restore durable embodied-AI exposure because Robotics is being divested; a complete scenario valuation is below market and supports no paper position."
+  },
+  "objective": "Refresh the humanoid-robotics and embodied-AI idea from ABB's completed full review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01KZN91EA8SSN9HCY8R8EJTTCY",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+  ]
+}

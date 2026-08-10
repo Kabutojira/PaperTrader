@@ -1,0 +1,79 @@
+{
+  "operation_id": "01KZMBZY5RBVNJH4ZHBZ47FG2S",
+  "status": "succeeded",
+  "summary": "Completed one bounded ABB Ltd sponsored-ADR full review. Fresh issuer downloads were hash-identical, and the updated mature-compounder assessment records USD 62.40/USD 86.80/USD 105.00 bear/base/bull fair values with 30%/50%/20% probabilities against the fresh USD 100.86 mark. Deterministic state derives USD 83.12 probability-weighted fair value, -17.59% expected return, Sell / Avoid, and allocation ineligibility. Immutable assessment assessment_b72368d562b62acfb851 links its predecessor, this operation, result path, and page hash. One dependent idea refresh, 01KZN91EA8SSN9HCY8R8EJTTCY, was enqueued; no strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.",
+  "evidence": [
+    {
+      "source": "ABB Q2 2026 results",
+      "claim": "The hash-identical issuer release supports Q2 orders of USD 12.042 billion, revenue of USD 9.475 billion, operational EBITA margin of 20.2%, first-half basic EPS of USD 1.41, USD 2.320 billion net debt, expected Robotics net proceeds of about USD 4.8 billion, and the proposed Rotork purchase price of about USD 5.5 billion.",
+      "url": "https://search.abb.com/library/Download.aspx?DocumentID=9AKK108472A9735&LanguageCode=en&DocumentPartId=&Action=Launch",
+      "observed_at": "2026-08-10T07:21:34Z",
+      "source_hash": "7129a0f6f3777204d3b4b426f66c6069ce702d26ee364c76f2cf50fb04a54508"
+    },
+    {
+      "source": "ABB share listing and capital data",
+      "claim": "The hash-identical issuer listing confirms 1,814,919,203 shares outstanding at June 30, 2026 and ABBNY as a non-listed Level I sponsored ADR traded over the counter.",
+      "url": "https://global.abb/group/en/investors/investor-and-shareholder-resources/share-listing",
+      "observed_at": "2026-08-10T07:21:34Z",
+      "source_hash": "d982a37747ddf71731ff81e546e794f03eb1b98835067e72a681a655d4ac9605"
+    },
+    {
+      "source": "PaperTrader deterministic market and assessment state",
+      "claim": "At the USD 100.86000061035156 reference mark with fresh USD/EUR FX of 0.8651999831199646, the accepted scenarios derive bear/base/bull returns of -38.13%/-13.94%/4.10%, probability-weighted fair value of USD 83.12, expected return of -17.59%, confidence-adjusted expected return of -13.19%, buy-below price of USD 69.44, and margin of safety of -16.20%."
+    },
+    {
+      "source": "PaperTrader immutable assessment history",
+      "claim": "Assessment assessment_b72368d562b62acfb851 is schema version 2, links predecessor assessment_59feaff2207a977a856f and source operation 01KZMBZY5RBVNJH4ZHBZ47FG2S, retains research-page hash 65a6e6992f72c6477287e4d3ee770a58038bdf7482c461d675e65d697c1ea267, and deterministically derives complete research, Sell / Avoid, quality score 70, and allocation ineligibility."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZN91EA8SSN9HCY8R8EJTTCY.json",
+    "data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/assessment_upsert_request.json",
+    "data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_upsert_request.json",
+    "data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_q2_2026_results_request.json",
+    "data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_share_listing_2026_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c120e9f26ebb6159adf9.md"
+  ],
+  "operations_created": [
+    "01KZN91EA8SSN9HCY8R8EJTTCY"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "ABB's full review completed with USD 62.40/USD 86.80/USD 105.00 bear/base/bull values and USD 83.12 probability-weighted fair value versus a USD 100.86 mark. Deterministic state rates the ADR Sell / Avoid and allocation-ineligible; one dependent embodied-AI idea refresh was queued, with no paper strategy, signal, order, allocation, or accounting change."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9",
+    "papertrader research source record --request data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/source_abb_share_listing_2026_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_c120e9f26ebb6159adf9",
+    "papertrader queue enqueue --request data/runs/daily-20260810T071837Z/01KZMBZY5RBVNJH4ZHBZ47FG2S/enqueue_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260810T071837Z with the validated payload, ABBNY/XOTC/USD/equity identity, live lease, trusted preflight hashes, and no delegated, background, or second-operation execution.",
+      "Consumed the mandatory audited security context before assessment-state work and preserved an explicit Changes since prior review section covering evidence, assumptions, scenarios, thesis, catalysts, risks, blockers, gaps, rating, action, and unchanged conclusions.",
+      "Downloaded and hashed both current primary issuer sources; each matched its registered content hash and was refreshed through one immutable source request.",
+      "Accepted exactly one schema-v2 assessment version for this run: assessment_b72368d562b62acfb851 links predecessor assessment_59feaff2207a977a856f, this operation, its expected result path, and current page hash 65a6e6992f72c6477287e4d3ee770a58038bdf7482c461d675e65d697c1ea267.",
+      "Confirmed ordered fair values, probabilities totaling 100, fresh identity-matched price and FX, complete evidence, deterministic Sell / Avoid disposition, and every failed allocation frontier without inventing an allocation decision.",
+      "Enqueued exactly one dependent idea-research follow-up for payload-linked idea_humanoid_robotics_embodied_ai_components; the conviction strategy gate failed and no strategy work was created.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation, and queue validation all passed.",
+      "Confirmed no allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting-ledger state changed."
+    ]
+  }
+}
