@@ -1,0 +1,34 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZPBTFG8XSBB416TEAFDYJHG.json",
+    "data/runs/daily-20260810T173203Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/enqueue_full_research_request.json"
+  ],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "agent result schema: Additional properties are not allowed ('operation_id' was unexpected)",
+    "agent result schema: Additional properties are not allowed ('source_ref' was unexpected)",
+    "agent result schema: Additional properties are not allowed ('source_refs' was unexpected)",
+    "commands_run does not exactly match deterministic CLI audit receipts",
+    "completed security research requires this run's comparable assessment",
+    "post-run integrity: agent result data/runs/daily-20260810T173203Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/agent_result.json: Additional properties are not allowed ('operation_id' was unexpected)",
+    "post-run integrity: agent result data/runs/daily-20260810T173203Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/agent_result.json: Additional properties are not allowed ('source_ref' was unexpected)",
+    "post-run integrity: agent result data/runs/daily-20260810T173203Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/agent_result.json: Additional properties are not allowed ('source_refs' was unexpected)"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZ9ZJVERX5NYGBGE6Z6G7T46",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260810T173203Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
