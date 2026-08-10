@@ -15,6 +15,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_6642c41b20e1ceeabf3a** — Hermes operation validation failed: 01KYPB26Z023E3AMG9Z8KSPW9D | 2026-08-07T10:46:48Z | controller | 01KYPB26Z023E3AMG9Z8KSPW9D |
 | error | **issue_7f39fae50d63b862a20b** — Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N | 2026-08-09T14:23:04Z | controller | 01KZCFHHCGX1RGXKKVHNF86W7N |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
+| error | **issue_a32ef908d1aab8f839d5** — Hermes operation validation failed: 01KZ8BGD98FSXHG4KQ8C6MGNW1 | 2026-08-10T07:46:13Z | controller | 01KZ8BGD98FSXHG4KQ8C6MGNW1 |
 | error | **issue_b3932acdc72f52e4e4f2** — Local harness operation validation failed: 01KYVJ62SRK1101MYYCE7256NF | 2026-08-06T18:26:55Z | controller | 01KYVJ62SRK1101MYYCE7256NF |
 | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | error | **issue_de6f5509df14629098c4** — Coinbase assessment source operation is ambiguous within one run | 2026-08-09T22:01:17Z | controller | 01KZM7W5C8C2YW24Q3J4JNJ0MS |
