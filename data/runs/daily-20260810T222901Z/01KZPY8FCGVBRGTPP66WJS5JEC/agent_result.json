@@ -1,0 +1,76 @@
+{
+  "operation_id": "01KZPY8FCGVBRGTPP66WJS5JEC",
+  "status": "failed",
+  "reason_code": "assessment_market_reference_mismatch",
+  "summary": "Failed closed after one bounded CrowdStrike full review. Current primary evidence supports durable ARR growth, strong cash generation and net cash, but a downside-weighted free-cash-flow valuation remained far below the canonical USD 225.16000366210938 market mark. The sole immutable assessment request was rejected before any assessment-state change because it contained a mismatched price and timestamp; the operation contract forbids editing a used request or retrying a rejected project command. The prior quick-check assessment and hash-aligned security page remain current, issue issue_9f54455539f07576361c was recorded, and no follow-up, strategy, signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "CrowdStrike Q1 FY2027 Form 10-Q",
+      "claim": "CrowdStrike reported USD 1.385629 billion quarterly revenue, USD 5.3529 billion ARR, USD 590.8 million operating cash flow, USD 4.9738 billion cash plus marketable securities, USD 1.1665 billion debt, USD 317.6 million stock-based compensation and related payroll taxes, and continuing July 19 incident exposure as of April 30, 2026.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000017/crwd-20260430.htm",
+      "observed_at": "2026-08-10T22:39:54Z",
+      "source_hash": "8f43d81c9d4e25339926e54177247856681523a4841f298140507f2cb7bfde73"
+    },
+    {
+      "source": "CrowdStrike Q1 FY2027 results release",
+      "claim": "The issuer reported 25% year-over-year revenue and ARR growth, record USD 468 million quarterly free cash flow, raised FY2027 ARR and revenue guidance, and announced a four-for-one stock split; FY2027 revenue guidance was USD 5.9147-5.9587 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000019/crwd-20260603xex991.htm",
+      "observed_at": "2026-08-10T22:42:17Z",
+      "source_hash": "cba042441e83a445db9043965265381709443025025858175132434fed3d0a63"
+    },
+    {
+      "source": "PaperTrader deterministic MACD alert payload",
+      "claim": "The canonical 2026-08-10 alert records a bullish MACD signal crossover on a current-mark basis but also records RSI 45.7018 and price below both the 50-day and 200-day simple moving averages; the technical change does not repair the valuation gap.",
+      "observed_at": "2026-08-10T22:29:57Z",
+      "source_hash": "e88db4f348399533d54bd05f51c044552b1af1bf71be1e4e8b955c95c0197a0a"
+    },
+    {
+      "source": "PaperTrader canonical market mark",
+      "claim": "data/market/latest.csv records CrowdStrike adjusted close USD 225.16000366210938 retrieved at 2026-08-10T22:29:08Z for immutable CRWD/XNAS/USD identity. The used assessment request instead contained USD 123.87000274658203 and 2026-08-10T22:29:57Z."
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The only assessment upsert exited 2 with 'assessment reference price does not match the current mark' and changed no assessment path. Under the controller's no-retry rule, a corrected request could not be submitted in this operation."
+    },
+    {
+      "source": "PaperTrader mandatory security context",
+      "claim": "The prior quick-check assessment assessment_102d6ae5e5f24a7a2197 and its security-page hash remain current; no full-review assessment version or idea follow-up was accepted for this failed operation."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260810T222901Z/01KZPY8FCGVBRGTPP66WJS5JEC/assessment_upsert_request.json",
+    "data/runs/daily-20260810T222901Z/01KZPY8FCGVBRGTPP66WJS5JEC/issue_record_request.json",
+    "data/tables/issues.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_9f54455539f07576361c"
+  ],
+  "daily_report_items": [
+    "CrowdStrike's full review failed closed because its immutable assessment request did not match the canonical USD 225.16000366210938 market mark. Current filings support durable growth and cash generation but the completed downside-weighted valuation remained materially below market; the prior quick-check assessment remains current, issue issue_9f54455539f07576361c was recorded, and no follow-up or paper-trading state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T222901Z/01KZPY8FCGVBRGTPP66WJS5JEC/assessment_upsert_request.json",
+    "papertrader issue record --request data/runs/daily-20260810T222901Z/01KZPY8FCGVBRGTPP66WJS5JEC/issue_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260810T222901Z with a live lease, validated immutable payload, trusted preflight hashes, CRWD/XNAS/USD/equity identity, and no delegation or background execution.",
+      "Consumed the mandatory audited security context before assessment-state work and retained the prior quick-check assessment, accepted relationship, linked idea, registered sources and page-hash context.",
+      "Reviewed current SEC primary evidence and the exact deterministic MACD alert period; the alert is a tentative timing improvement, not evidence that changes business quality or closes the valuation gap.",
+      "Prepared one scenario-complete mature-compounder free-cash-flow assessment, but the deterministic applier rejected its mismatched reference price and timestamp before changing current or immutable assessment state; the used request was not edited or retried.",
+      "No security page or structured security row was changed because a full assessment could not be accepted; the prior quick-check assessment and hash-aligned page remain authoritative.",
+      "No idea-research follow-up or strategy work was enqueued because the full review failed and produced no accepted assessment result.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation and queue validation passed after issue issue_9f54455539f07576361c was recorded.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "CrowdStrike full assessment rejected by canonical market identity",
+  "description": "The required schema-v2 assessment for security_8472507d7d320aa388a7 was rejected before any assessment state changed because immutable request assessment_upsert_request.json used reference price 123.87000274658203 and market timestamp 2026-08-10T22:29:57Z, while canonical data/market/latest.csv records adjusted close 225.16000366210938 retrieved at 2026-08-10T22:29:08Z. The operation contract forbids editing a used request or retrying a rejected project command, so this operation must fail closed without a current full assessment, security-page update, or idea follow-up.",
+  "owner": "controller",
+  "related_run_id": "daily-20260810T222901Z",
+  "related_operation_id": "01KZPY8FCGVBRGTPP66WJS5JEC"
+}
