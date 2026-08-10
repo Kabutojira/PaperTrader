@@ -3025,6 +3025,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260810]] for run `daily-20260810T114443Z`.
 
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1]] (815d3d6124c1).
+
+- Classified [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1]] as `ingest`: New volume anomaly with a material 5.8% period return merits durable review.
+
 ## 2026-08-10 — full review retry — ABB Ltd sponsored ADR
 
 - Rechecked unchanged issuer evidence and completed the full

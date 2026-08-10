@@ -411,3 +411,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1|NIB.F — Volume anomaly]]

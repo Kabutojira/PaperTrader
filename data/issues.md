@@ -81,7 +81,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_a8ebff7b7d828f3d7e93** — Daily preparation degraded: security_89969b7dac39b7db5661 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_a95ee10bec8dac18764c** — Daily preparation degraded: security_d12e746b3c9d392183cc | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_acfbebf0c986cbab342f** — Daily preparation degraded: security_ed7d5b616a196969c815 | 2026-07-29T16:51:20Z | deterministic-controller |  |
-| warning | **issue_ad21944ead57ede6e2ac** — Daily preparation degraded: security_6ad1af8d10d6276a0221 | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_ad21944ead57ede6e2ac** — Daily preparation degraded: security_6ad1af8d10d6276a0221 | 2026-08-10T16:00:15Z | deterministic-controller |  |
 | warning | **issue_ad9eb2e31cc57f9f4f03** — Daily preparation degraded: security_204be2a44063993de1a8 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_b04460fc941344218f71** — Daily preparation degraded: security_c120e9f26ebb6159adf9 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_b179d981c051d3993456** — Daily preparation degraded: security_d08d763780400dfbffce | 2026-07-29T16:51:20Z | deterministic-controller |  |

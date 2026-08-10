@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_NNbke4YhznQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-10T16:00:10Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_NNbke4YhznQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "NNbke4YhznQ",
+    "video_title": "OTIS, KONE, SCHINDLER - ELevate Your Portfolio With These Dividend Growth Stocks!",
+    "video_url": "https://www.youtube.com/watch?v=NNbke4YhznQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZP6E8RGQV49A4B29D414XK4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=NNbke4YhznQ"
+  ]
+}
