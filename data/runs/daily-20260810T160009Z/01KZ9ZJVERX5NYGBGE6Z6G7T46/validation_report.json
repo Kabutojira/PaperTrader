@@ -1,0 +1,31 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260810T160009Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/enqueue_security_research_request.json",
+    "data/runs/daily-20260810T160009Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/enqueue_security_research_request_v2.json",
+    "data/wiki/securities/security_c9a37d277445869a8809.md"
+  ],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "Hermes timed out after 600s",
+    "agent result schema: 'c062a7a5e5ce41f0e88f9b737fe1059fe91b8fbde535c3feeeb67858444647d' does not match '^[a-f0-9]{64}$'",
+    "agent result was written before completed change: data/runs/daily-20260810T160009Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/command_audit.json",
+    "commands_run does not exactly match deterministic CLI audit receipts",
+    "post-run integrity: agent result data/runs/daily-20260810T160009Z/01KZ9ZJVERX5NYGBGE6Z6G7T46/agent_result.json: 'c062a7a5e5ce41f0e88f9b737fe1059fe91b8fbde535c3feeeb67858444647d' does not match '^[a-f0-9]{64}$'"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZ9ZJVERX5NYGBGE6Z6G7T46",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260810T160009Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
