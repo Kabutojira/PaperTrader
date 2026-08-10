@@ -3071,6 +3071,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-cf2a6744e8a1]] (cf2a6744e8a1).
 
+- Published investor decision snapshot `decision_a3337119e6d1d76c1a11`.
+
+- Generated canonical [[daily-reports/daily-report_20260810]] for run `daily-20260810T222901Z`.
+
 ## 2026-08-10 — full review retry — ABB Ltd sponsored ADR
 
 - Rechecked unchanged issuer evidence and completed the full

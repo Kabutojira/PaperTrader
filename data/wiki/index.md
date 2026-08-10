@@ -7,13 +7,13 @@ tags:
 created: "2026-08-10"
 updated: "2026-08-10"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e6773a89acd4e7a759cc"
-as_of: "2026-08-10T17:55:52Z"
+snapshot_id: "decision_a3337119e6d1d76c1a11"
+as_of: "2026-08-10T23:11:04Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-10T17:55:52Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
+**As of `2026-08-10T23:11:04Z` · Investment data: Degraded — review investment data gaps · Operations: Attention required**
 
 ## No trade — hold 100% cash
 
@@ -50,7 +50,7 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - Current assessments: **68/68**
 - Relationship reviews: **25/68**
 - Accepted relationships: **22**
-- Market retrieval failures: **1**
+- Market retrieval failures: **0**
 
 ## Explore
 

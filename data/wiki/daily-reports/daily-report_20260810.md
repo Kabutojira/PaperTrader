@@ -7,8 +7,8 @@ tags:
 created: "2026-08-10"
 updated: "2026-08-10"
 provenance: deterministic-report-generator
-run_id: "daily-20260810T175244Z"
-snapshot_id: "decision_e6773a89acd4e7a759cc"
+run_id: "daily-20260810T222901Z"
+snapshot_id: "decision_a3337119e6d1d76c1a11"
 ---
 
 # PaperTrader daily report — 2026-08-10
@@ -20,7 +20,7 @@ snapshot_id: "decision_e6773a89acd4e7a759cc"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Attention required
-- **As of:** `2026-08-10T17:55:52Z`
+- **As of:** `2026-08-10T23:11:04Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Target cash:** 10000 EUR (100%)
@@ -37,100 +37,84 @@ No actionable trade signals.
 
 ## Price action alerts
 
+- **[TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb): Rsi Overbought** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
+- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Rsi Overbought** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[RTX — RTX Corporation](securities/security_59304f90c440def31dc5): Rsi Overbought** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Rsi Overbought** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
+- **[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a): Rsi Overbought** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
+- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb): Rsi Overbought** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Rsi Overbought** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
+- **[MP — MP Materials Corp.](securities/security_cd492d97064d8574156e): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Rsi Overbought** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7): Rsi Overbought** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
+- **[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Volume Anomaly** (`2026-08-10`)
+  - Research: **succeeded**
+  - Decision: Completed the repeat ABCL security review for the 2026-08-10 volume anomaly. SEC-filed ABCL635 Phase 2 results directly explain the 34.78% session gain and materially strengthen the clinical thesis: both week-four efficacy endpoints met p&lt;0.001 with favorable initial four-week tolerability. The security remains Unrated / Watch and allocation-ineligible because a scenario-complete biotechnology risk-adjusted NPV is still unsupported by late-stage, regulatory, development-cost, commercial, burn, and dilution evidence. No strategy, signal, order, allocation, or accounting state changed.
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Bollinger Above Upper** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Rsi Overbought** (`2026-08-10`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
 - **[PLS.AX — PLS Group Limited](security-catalog#security-security_8a5c43888d224de85c69): Bollinger Above Upper** (`2026-08-10`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
 - **[NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1): Volume Anomaly** (`2026-08-10`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb): Rsi Overbought** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
-- **[TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
-- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[SPCX — Space Exploration Technologies Corp.](securities/security_664f93a7eaca72e76e9b): Volume Anomaly** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed the first scenario-complete Space Exploration Technologies listed-equity review using current SEC primary evidence and the canonical 2026-08-04 volume anomaly. Q2 revenue grew 91.9% to USD 7.814 billion and Connectivity produced USD 1.656 billion of segment operating income, but Space and AI remained loss-making, first-half property and equipment purchases reached USD 28.476 billion, customer concentration and controller governance are material, and the USD 125.33 mark embeds extreme revenue multiples. The deterministic assessment recorded Hold, Watch, 72 quality, low confidence, and USD 50/USD 110/USD 195 bear/base/bull fair values with USD 109 probability-weighted value. Allocation remains ineligible; no strategy, signal, paper order, issue, or follow-up operation was created.
-- **[RTX — RTX Corporation](securities/security_59304f90c440def31dc5): Rsi Overbought** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
-- **[RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: bearish\_alert\_unowned
-- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Rsi Overbought** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
-- **[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a): Rsi Overbought** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb): Rsi Overbought** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
-- **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[MSTR — Strategy Inc](securities/security_fe5539a7d3fd9d553bce): Volume Anomaly** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed the first full Strategy Inc Class A common-stock review from immutable MSTR/XNAS/USD identity, fresh SEC-filed second-quarter and August 3 treasury evidence, and the canonical 2026-08-07 volume alert. Bitcoin scale and capital-market access support the treasury mechanism, but Bitcoin volatility, current common dilution, USD 6.710 billion debt, roughly USD 15.462 billion preferred liquidation preference, preferred funding costs, and limited software economics constrain the residual common claim. The deterministic schema-v2 assessment derives USD 52.50/USD 108.16/USD 175.99 bear/base/bull values, USD 105.028 probability-weighted fair value, 3.76% confidence-adjusted expected return, Hold/Watch, and allocation ineligibility versus the USD 100.01 mark. No linked idea, accepted relationship, or strategy existed, so no follow-up was required; no signal, order, or paper trade was created.
-- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Rsi Overbought** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
-- **[MP — MP Materials Corp.](securities/security_cd492d97064d8574156e): Volume Anomaly** (`2026-08-07`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
-- **[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: bearish\_alert\_unowned
-- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Rsi Overbought** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687): Volume Anomaly** (`2026-08-07`)
-  - Research: **blocked**
-  - Decision: High-priority security research is blocked. dependency\_unavailable:Quick check research for DNA on 2026-08-07
-- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Rsi Overbought** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: bearish\_alert\_unowned
-- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c): Volume Anomaly** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed the bounded full Q2 2026 review of Corsair Gaming common stock. Reverified the unchanged SEC Form 10-Q and SEC-filed results release, refreshed the security page and structured row, and appended exactly one schema-v2 assessment linked to its predecessor. At the canonical USD 14.350000381469727 mark, revised USD 6.60/USD 12.00/USD 18.90 bear/base/bull values produce USD 12.03 probability-weighted fair value, -16.16724961530706640473577404% expected return, -12.12543721148029980355183053% confidence-adjusted return, and -19.583336512247725% margin of safety. Deterministic state derives Sell / Avoid and allocation ineligibility because expected return, base return, downside payoff, margin of safety, and accepted-relationship gates fail. No strategy, signal, order, idea follow-up, allocation, or accounting state was created or changed.
-- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3): Bollinger Above Upper** (`2026-08-07`)
-  - Research: **skipped**
-  - Decision: bearish\_alert\_unowned
-- **[TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0): Macd Cross Above Signal** (`2026-08-07`)
-  - Research: **succeeded**
-  - Decision: Completed the first full Texas Instruments common-stock review from immutable XNAS/USD identity, fresh SEC-filed second-quarter 2026 evidence, and the canonical 2026-08-07 MACD alert. Broad industrial, data-center and automotive recovery, analog breadth, 300mm economics, margins and cash generation support an 80 quality score, while cyclicality, fixed manufacturing costs, inventory, Silicon Labs acquisition financing, leverage and valuation remain material risks. The deterministic schema-v2 assessment derives USD 150/USD 256.50/USD 374 bear/base/bull values, USD 259.25 probability-weighted fair value, -7.03% confidence-adjusted expected return, Hold/Watch, and allocation ineligibility versus the USD 286.08 mark. No linked idea or accepted relationship existed, so no idea follow-up was required; no strategy, signal, order, or paper trade was created.
-- **[TSLA — Tesla, Inc.](securities/security_dc7a111e297be528d96b): Macd Cross Above Signal** (`2026-08-07`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
-- **[HOOD — Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a): Sma 50 Cross Above 200** (`2026-08-07`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
-- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c): Macd Cross Above Signal** (`2026-08-07`)
+- **[WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9): Macd Cross Above Signal** (`2026-08-10`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
 
 ## Research decisions this run
 
-- **[RBLX](securities/security_c9a37d277445869a8809) — failed:** Quick check could not be completed safely because the supplied alert identity is stale relative to current deterministic market state and no current primary-source verification was available. No assessment or other structured state was changed, and no follow-up operation was created.
+- **[ABCL](securities/security_7bf8f4c9cc12ae410e40) — succeeded:** Completed the repeat ABCL security review for the 2026-08-10 volume anomaly. SEC-filed ABCL635 Phase 2 results directly explain the 34.78% session gain and materially strengthen the clinical thesis: both week-four efficacy endpoints met p&lt;0.001 with favorable initial four-week tolerability. The security remains Unrated / Watch and allocation-ineli…
+- **[YEC.F](securities/security_89969b7dac39b7db5661) — succeeded:** Completed exactly one bounded YASKAWA Electric Frankfurt quick check for the 2026-08-04 bullish-MACD cross and volume anomaly. YEC.F fell 21.72% from July 7 to EUR 29.20; the 7,300-share alert-session turnover did not persist, and the August 10 close was EUR 29.30 with no configured indicator trigger active. Yaskawa's issuer page still listed the…
+- **[CRWD](securities/security_8472507d7d320aa388a7) — succeeded:** Completed exactly one bounded CrowdStrike quick check for the 2026-08-04 bullish-MACD cross. CRWD rose 8.53% over the alert period to USD 211.22 and then 6.60% to USD 225.16 by August 10, when MACD remained above signal and RSI/upper-Bollinger states indicated stronger momentum rather than a valuation-supported entry. Fresh SEC downloads matched b…
 
 ## Top blocker or near miss
 
@@ -169,11 +153,11 @@ No pending orders.
 
 | Candidate | Rating / action | State | Bear / base / bull | Expected | Buy below | Exact gate |
 | --- | --- | --- | ---: | ---: | ---: | --- |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Market data blocked | -17.80446801914946878756448371% / 15.0737447731907436974097228% / 70.7840497824338815191715727% | 20.7817678274164750316066337% | 201.6 | Bear/base payoff is below threshold. |
-| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Hold / Watch | Market data blocked | -36.39688283001650167621252171% / -3.32326190162508254784303301% / 33.5665460569653464799537044% | -2.36921514407533007298622083% | 145.92 | Base-case return is below threshold. |
-| [TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | Hold / Watch | Market data blocked | -40.33816425120772946859903382% / -8.33333333333333333333333333% / 19.3236714975845410628019324% | -9.42028985507246376811594203% | 303.6 | Base-case return is below threshold. |
-| [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | Hold / Watch | Market data blocked | -26.99295301288777024333511459% / 1.0866804436938565861513798% / 34.7822405915918087815351731% | -0.59809756370104102361780986% | 288 | Base-case return is below threshold. |
-| [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | Hold / Watch | Market data blocked | -31.56792557870149546067851214% / 10.3207987640327406512697926% / 59.882210238851960605505658% | 12.2389705470539866118416827% | 425.6 | Bear/base payoff is below threshold. |
+| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy / Initiate | Valuation unattractive | -17.80446801914946878756448371% / 15.0737447731907436974097228% / 70.7840497824338815191715727% | 20.7817678274164750316066337% | 201.6 | Bear/base payoff is below threshold. |
+| [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a) | Hold / Watch | Valuation unattractive | -36.39688283001650167621252171% / -3.32326190162508254784303301% / 33.5665460569653464799537044% | -2.36921514407533007298622083% | 145.92 | Base-case return is below threshold. |
+| [TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765) | Hold / Watch | Valuation unattractive | -40.33816425120772946859903382% / -8.33333333333333333333333333% / 19.3236714975845410628019324% | -9.42028985507246376811594203% | 303.6 | Base-case return is below threshold. |
+| [GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf) | Hold / Watch | Valuation unattractive | -26.99295301288777024333511459% / 1.0866804436938565861513798% / 34.7822405915918087815351731% | -0.59809756370104102361780986% | 288 | Base-case return is below threshold. |
+| [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47) | Hold / Watch | Valuation unattractive | -31.56792557870149546067851214% / 10.3207987640327406512697926% / 59.882210238851960605505658% | 12.2389705470539866118416827% | 425.6 | Bear/base payoff is below threshold. |
 
 ## 5. Performance and risk
 
@@ -188,12 +172,34 @@ No pending orders.
 
 ## 6. Research changes
 
+### Evidence-linked narrative
+
+- YASKAWA Electric's Frankfurt line triggered a bullish-MACD cross and one-session volume anomaly after a 21.72% decline to EUR 29.20. Turnover immediately returned to sparse levels, the August 10 mark was EUR 29.30 with no active configured trigger, and no newer issuer result changed the operating thesis. Routine Frankfurt liquidity and scenario-va… Evidence is retained in the canonical run artifacts.
+- CrowdStrike's August 4 bullish-MACD cross extended to a USD 225.16 mark with overbought and upper-Bollinger conditions by August 10, but unchanged fiscal Q1 primary evidence provides no new operating catalyst. The accepted cybersecurity relationship improves one gate, while the legacy two-case sensitivity remains noncanonical; CRWD is Unrated / Wa… Evidence is retained in the canonical run artifacts.
+- ABCL rose 34.78% on 10 August and 43.25% over the alert period as SEC-filed ABCL635 Phase 2 results met both week-four efficacy endpoints at p<0.001 with favorable initial tolerability. The clinical thesis improved, but unsupported risk-adjusted valuation keeps ABCL Unrated / Watch and allocation-ineligible; no paper trade was created. Evidence is retained in the canonical run artifacts.
+
+- [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-b444ee917444|TX — RSI overbought]]
 - [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1|NIB.F — Volume anomaly]]
+- [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-1efe3b3ad0e6|WTI — MACD cross above signal]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-8e9309d84694|TWST — Bollinger above upper]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-0145bf3c924c|TWST — RSI overbought]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-e0a7bae0fbcf|ABCL — Bollinger above upper]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-8c3fef6f6aed|ABCL — RSI overbought]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395|ABCL — Volume anomaly]]
+- [[inbox/market-security_8472507d7d320aa388a7-bollinger_above_upper-ab225eb74d5d|CRWD — Bollinger above upper]]
+- [[inbox/market-security_8472507d7d320aa388a7-rsi_overbought-9d0131f99b46|CRWD — RSI overbought]]
 - [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484|PLS.AX — Bollinger above upper]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-daafaca9f1a5|LH — RSI overbought]]
+- [[inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-7e811fb1ada9|PLTR — RSI overbought]]
+- [[inbox/market-security_cd492d97064d8574156e-bollinger_above_upper-20006b9ca080|MP — Bollinger above upper]]
+- [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-cf2a6744e8a1|PATH — RSI overbought]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_567d0d575bbd30aaa91d|Samsung Electronics common GDR]]
+- [[securities/security_7bf8f4c9cc12ae410e40|AbCellera Biologics Inc. common shares]]
+- [[securities/security_8472507d7d320aa388a7|CrowdStrike Holdings, Inc. Class A common stock]]
+- [[securities/security_89969b7dac39b7db5661|YASKAWA Electric Corporation Frankfurt ordinary shares]]
 - [[securities/security_c120e9f26ebb6159adf9|ABB Ltd sponsored ADR]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
@@ -210,8 +216,8 @@ No pending orders.
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
-- Market-data success/failure: 71/1
-- Research alerts (not trade signals): 30
+- Market-data success/failure: 72/0
+- Research alerts (not trade signals): 24
 
 ### Current system impacts
 
@@ -223,6 +229,7 @@ No pending orders.
 - **affects candidate** — PWR Quanta Services, Inc.: Assessment source operation is ambiguous within one run
 - **affects candidate**: Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]
+- **affects candidate** — CRWD CrowdStrike Holdings, Inc.: CrowdStrike full assessment rejected by canonical market identity
 - **affects candidate**: Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]
 - **affects candidate**: Hermes operation validation failed: [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-10]]
 - **affects candidate** — COIN Coinbase Global, Inc.: Coinbase assessment source operation is ambiguous within one run
@@ -302,7 +309,7 @@ No pending orders.
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
 - **operational only**: Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]
-- **operational only**: Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-05]]
+- **operational only**: Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]]
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
 - **operational only**: Daily preparation degraded: FX AUD/EUR
 - **operational only**: YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A
@@ -323,84 +330,84 @@ No pending orders.
 
 - Report date: 2026-08-10
 - Run status: degraded
-- Generated (UTC): `2026-08-10T17:55:52Z`
+- Generated (UTC): `2026-08-10T23:11:04Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-07 | 2026-08-10T17:52:51Z | error | MarketDataError: provider returned no valid sessions for SCCO |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-10 | 2026-08-10T17:52:51Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-07 | 2026-08-10T17:52:51Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-10 | 2026-08-10T22:29:08Z | ok | — |
 
 ### Orders and executions
 
@@ -421,74 +428,74 @@ No pending orders.
 
 | Rank | Security | Target weight | Disposition | Reasons |
 | ---: | --- | ---: | --- | --- |
-| — | [[securities/security_099561384c0f5e697727|CSIQ]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_0a56aa634d077fe5796f|AMAT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_0cf8075039299094d614|KTOS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_1f9cce545ede94cd6349|ISRG]] | 0% | excluded | The required market reference is stale. |
-| — | [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The required market reference is stale.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
-| — | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 0% | excluded | Bear/base payoff is below threshold.; The required market reference is stale. |
-| — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
+| 1 | [[securities/security_1f9cce545ede94cd6349|ISRG]] | 0% | hold | The evidence-backed score clears the configured cash hurdle.; The eligible set is not sufficiently diversified. |
+| — | [[securities/security_099561384c0f5e697727|CSIQ]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_0a56aa634d077fe5796f|AMAT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_0cf8075039299094d614|KTOS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_204be2a44063993de1a8|MSFT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_2433a056eb0c55961fcc|AMZN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_2c779e81c27b78c556bb|TX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 0% | excluded | Bear/base payoff is below threshold. |
+| — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
 | — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_3e597863f00753e8c65c|BE]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.; The required market reference is stale.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | The required market reference is stale.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_3e597863f00753e8c65c|BE]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
-| — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Assessment confidence is below the configured minimum.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
-| — | [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 0% | excluded | The latest market retrieval did not succeed.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_6f9a1450edceb9307c9a|ANET]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
-| — | [[securities/security_715bde20b6e1e1320c1a|DLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 0% | excluded | A supportable valuation is unavailable.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
-| — | [[securities/security_83a56943e18793f685b0|TXN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | The required market reference is stale.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | The current assessment marks the security ineligible.; Liquidity is insufficient.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Assessment confidence is below the configured minimum.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_6f9a1450edceb9307c9a|ANET]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_715bde20b6e1e1320c1a|DLO]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 0% | excluded | A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_83a56943e18793f685b0|TXN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_9b0db3bc77914b23a307|CSL]] | 0% | excluded | The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_9d4049ed6669a52815d6|SQM]] | 0% | excluded | A supportable valuation is unavailable.; The required market reference is stale.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 0% | excluded | A supportable valuation is unavailable.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
-| — | [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ad5917642acbba28c1f2|TDY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_c9a37d277445869a8809|RBLX]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale. |
-| — | [[securities/security_cb88f9154cfeaa15e878|VRT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_9b0db3bc77914b23a307|CSL]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_9d4049ed6669a52815d6|SQM]] | 0% | excluded | A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 0% | excluded | A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
+| — | [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ad5917642acbba28c1f2|TDY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c150f31c30afdb4a85f9|CROX]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_c9a37d277445869a8809|RBLX]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold. |
+| — | [[securities/security_cb88f9154cfeaa15e878|VRT]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale. |
+| — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
 | — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | The required market reference is stale.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_dc8486c1d61df62a22fd|SU]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_dfa34d4b9050964b465e|INTC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_eca976f0076a425ea1bb|PATH]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_ed7d5b616a196969c815|RXRX]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_ef35e41886220d51c22c|ASML]] | 0% | excluded | The required market reference is stale.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | A supportable valuation is unavailable.; The required market reference is stale.; A supportable scenario valuation is unavailable. |
-| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The required market reference is stale.; The effective score does not beat the configured cash hurdle. |
-| — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_dfa34d4b9050964b465e|INTC]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_eca976f0076a425ea1bb|PATH]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_ed7d5b616a196969c815|RXRX]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_ef35e41886220d51c22c|ASML]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_f2b9760d847b2ba59324|ENPH]] | 0% | excluded | A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
+| — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 
 ### Curated YouTube discovery
 
@@ -521,6 +528,9 @@ No pending orders.
 | [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-10]] | [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | succeeded | agent result:succeeded |
 | [[securities/security_567d0d575bbd30aaa91d|Quick check research for SSU.VI on 2026-08-10]] | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | succeeded | agent result:succeeded |
 | [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-10]] | [[securities/security_c9a37d277445869a8809|RBLX]] | failed | retry exhausted:agent result:failed:Quick check could not be completed safely because the supplied alert identity is stale relative to current deterministic market state and no current primary-source verification was available. No assessment or other structured state was changed, and no follow-up operation was created. |
+| [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-10]] | [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | succeeded | agent result:succeeded |
+| [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]] | [[securities/security_89969b7dac39b7db5661|YEC.F]] | succeeded | agent result:succeeded |
+| [[securities/security_8472507d7d320aa388a7|Quick check research for CRWD on 2026-08-10]] | [[securities/security_8472507d7d320aa388a7|CRWD]] | succeeded | agent result:succeeded |
 
 ### Complete active queue
 
@@ -718,12 +728,10 @@ No pending orders.
 - Ready — [[inbox/market-security_6f9a1450edceb9307c9a-volume_anomaly-5023765017be|Wiki ingest for ANET — Volume anomaly on 2026-08-05]]
 - Ready — [[securities/security_8472507d7d320aa388a7|Opportunity research for Market alert for CRWD on 2026-08-05]]
 - Ready — [[inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de|Wiki ingest for CRWD — MACD cross above signal on 2026-08-05]]
-- Ready — [[securities/security_8472507d7d320aa388a7|Quick check research for CRWD on 2026-08-05]]
 - Ready — [[securities/security_89969b7dac39b7db5661|Opportunity research for Market alert for YEC.F on 2026-08-05]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-macd_cross_above_signal-121917b81e15|Wiki ingest for YEC.F — MACD cross above signal on 2026-08-05]]
 - Ready — [[securities/security_89969b7dac39b7db5661|Opportunity research for Market alert for YEC.F on 2026-08-05]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-volume_anomaly-044d9cca9c40|Wiki ingest for YEC.F — Volume anomaly on 2026-08-05]]
-- Ready — [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-05]]
 - Ready — [[securities/security_95351d928b674bbdf687|Opportunity research for Market alert for DNA on 2026-08-05]]
 - Ready — [[inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-3d74cac677e3|Wiki ingest for DNA — MACD cross above signal on 2026-08-05]]
 - Ready — [[securities/security_96ba305ee7cd586bc348|Opportunity research for Market alert for FUC.F on 2026-08-05]]
@@ -836,7 +844,6 @@ No pending orders.
 - Ready — [[securities/security_fe5539a7d3fd9d553bce|Opportunity research for Market alert for MSTR on 2026-08-08]]
 - Ready — [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-1c56259a5e4e|Wiki ingest for MSTR — Volume anomaly on 2026-08-08]]
 - Ready — [[relationships/relationship_9befaccc50d8cd94372b|Relationship research for Critical minerals and structural copper scarcity to Southern Copper on 2026-08-08]]
-- Ready — [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-08]]
 - Ready — [[securities/security_95351d928b674bbdf687|Security research for DNA on 2026-08-08]]
 - Ready — [[relationships/relationship_solar_storage_grid_atkr|Relationship research for Solar, storage, and grid-flexibility reset to Atkore on 2026-08-08]]
 - Ready — [[relationships/relationship_solar_storage_grid_enph|Relationship research for Solar, storage, and grid-flexibility reset to Enphase Energy on 2026-08-08]]
@@ -858,6 +865,13 @@ No pending orders.
 - Ready — [[securities/security_3853e54c619d597dcaa1|Opportunity research for Market alert for NIB.F on 2026-08-10]]
 - Ready — [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1|Wiki ingest for NIB.F — Volume anomaly on 2026-08-10]]
 - Ready — [[securities/security_3853e54c619d597dcaa1|Quick check research for NIB.F on 2026-08-10]]
+- Ready — [[securities/security_61567714298b9563d1a9|Opportunity research for Market alert for WTI on 2026-08-10]]
+- Ready — [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-1efe3b3ad0e6|Wiki ingest for WTI — MACD cross above signal on 2026-08-10]]
+- Ready — [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]
+- Ready — [[securities/security_7bf8f4c9cc12ae410e40|Opportunity research for Market alert for ABCL on 2026-08-10]]
+- Ready — [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395|Wiki ingest for ABCL — Volume anomaly on 2026-08-10]]
+- Ready — [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-10]]
+- Ready — [[securities/security_8472507d7d320aa388a7|Security research for CRWD on 2026-08-10]]
 
 ### Open issues and delivery failures
 
@@ -925,7 +939,8 @@ No pending orders.
 - Warning — [[system-status|Daily preparation degraded: NBIS]]: NBIS: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: CRWD]]: CRWD: YFTzMissingError: $CRWD: possibly delisted; no timezone found
 - Warning — [[system-status|Daily preparation degraded: SQM]]: SQM: YFTzMissingError: $SQM: possibly delisted; no timezone found
-- Error — [[system-status|Hermes operation validation failed: Quick check research for YEC.F on 2026-08-05]]: Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-08-10/Quick check research for YEC.F on 2026-08-05/agent\_result.json
+- Error — [[system-status|CrowdStrike full assessment rejected by canonical market identity]]: The required schema-v2 assessment for CRWD was rejected before any assessment state changed because immutable request assessment\_upsert\_request.json used reference price 123.87000274658203 and market timestamp 2026-08-10T22:29:57Z, while canonical data/market/latest.csv records adjusted close 225.16000366210938 retrieved at 2026-08-10T22:29:08Z. The operation contract forbids editing a used request or retrying a rejected project command, so this operation must fail closed without a current full…
+- Error — [[system-status|Hermes operation validation failed: Quick check research for YEC.F on 2026-08-10]]: Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/Daily report for 2026-08-10/Quick check research for YEC.F on 2026-08-10/agent\_result.json
 - Warning — [[system-status|Daily preparation degraded: FX GBP/EUR]]: FX GBP/EUR: YFTzMissingError: $GBPEUR=X: possibly delisted; no timezone found
 - Warning — [[system-status|Daily preparation degraded: YEC.F]]: YEC.F: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: META]]: META: price cache is empty
