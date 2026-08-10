@@ -3041,6 +3041,36 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260810]] for run `daily-20260810T175244Z`.
 
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-b444ee917444]] (b444ee917444).
+
+- Created candidate packet [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-1efe3b3ad0e6]] (1efe3b3ad0e6).
+
+- Classified [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-1efe3b3ad0e6]] as `ingest`: Material MACD bullish crossover with a 7.6% period return merits durable security-linked ingestion.
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-8e9309d84694]] (8e9309d84694).
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-0145bf3c924c]] (0145bf3c924c).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-e0a7bae0fbcf]] (e0a7bae0fbcf).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-8c3fef6f6aed]] (8c3fef6f6aed).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395]] (72614a871395).
+
+- Classified [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395]] as `ingest`: Material volume-anomaly transition with a 43.3% period return merits durable review.
+
+- Created candidate packet [[inbox/market-security_8472507d7d320aa388a7-bollinger_above_upper-ab225eb74d5d]] (ab225eb74d5d).
+
+- Created candidate packet [[inbox/market-security_8472507d7d320aa388a7-rsi_overbought-9d0131f99b46]] (9d0131f99b46).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-daafaca9f1a5]] (daafaca9f1a5).
+
+- Created candidate packet [[inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-7e811fb1ada9]] (7e811fb1ada9).
+
+- Created candidate packet [[inbox/market-security_cd492d97064d8574156e-bollinger_above_upper-20006b9ca080]] (20006b9ca080).
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-cf2a6744e8a1]] (cf2a6744e8a1).
+
 ## 2026-08-10 — full review retry — ABB Ltd sponsored ADR
 
 - Rechecked unchanged issuer evidence and completed the full

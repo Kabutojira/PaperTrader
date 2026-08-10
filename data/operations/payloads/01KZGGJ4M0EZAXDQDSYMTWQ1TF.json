@@ -4,14 +4,49 @@
   "inputs": {
     "assessment_state": "2026-08-07T16:16:59Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-10T22:29:08Z",
+    "market_data_date": "2026-08-10",
+    "period_end": "2026-08-10",
+    "period_start": "2026-07-13",
     "research_page": "data/wiki/securities/security_7bf8f4c9cc12ae410e40.md",
-    "security_id": "security_7bf8f4c9cc12ae410e40"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_7bf8f4c9cc12ae410e40:allocation-maintenance:2026-08-07T16:16:59Z",
+        "observed_at": "2026-08-08T11:01:36Z",
+        "prompt": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_abcl635_clinicaltrials_gov",
+          "source_abcl_q2_2026_10q_sec",
+          "source_abcl_q2_2026_results_sec_ex99_1"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_7bf8f4c9cc12ae410e40:ced2bc9fe0690a2e91a4:2026-08-10",
+        "market_data_date": "2026-08-10",
+        "observed_at": "2026-08-10T22:29:08Z",
+        "prompt": "Research security_7bf8f4c9cc12ae410e40 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_7bf8f4c9cc12ae410e40",
+    "source_price_hash": "2fdd00cf56f9c156ed855d0c176b4402b2d6d1139da753344cbfeec620e2d30a",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_7bf8f4c9cc12ae410e40 with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KZGGJ4M0EZAXDQDSYMTWQ1TF",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395.md",
     "source_abcl635_clinicaltrials_gov",
     "source_abcl_q2_2026_10q_sec",
     "source_abcl_q2_2026_results_sec_ex99_1"

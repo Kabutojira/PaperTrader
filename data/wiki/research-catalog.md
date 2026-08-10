@@ -412,3 +412,19 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-b444ee917444|TX — RSI overbought]]
+- [[inbox/market-security_61567714298b9563d1a9-macd_cross_above_signal-1efe3b3ad0e6|WTI — MACD cross above signal]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-8e9309d84694|TWST — Bollinger above upper]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-0145bf3c924c|TWST — RSI overbought]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-e0a7bae0fbcf|ABCL — Bollinger above upper]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-8c3fef6f6aed|ABCL — RSI overbought]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395|ABCL — Volume anomaly]]
+- [[inbox/market-security_8472507d7d320aa388a7-bollinger_above_upper-ab225eb74d5d|CRWD — Bollinger above upper]]
+- [[inbox/market-security_8472507d7d320aa388a7-rsi_overbought-9d0131f99b46|CRWD — RSI overbought]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-daafaca9f1a5|LH — RSI overbought]]
+- [[inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-7e811fb1ada9|PLTR — RSI overbought]]
+- [[inbox/market-security_cd492d97064d8574156e-bollinger_above_upper-20006b9ca080|MP — Bollinger above upper]]
+- [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-cf2a6744e8a1|PATH — RSI overbought]]
