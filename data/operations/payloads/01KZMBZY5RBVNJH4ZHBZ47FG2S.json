@@ -2,14 +2,17 @@
   "entity_id": "security_c120e9f26ebb6159adf9",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-09T22:56:34Z",
     "baseline_operation_id": "01KYHW5710RKVS0S8HF233BBTR",
     "changed_gate": "legacy_two_case_valuation_cannot_support_schema_v2_decision",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-05T06:59:21Z",
     "market_data_date": "2026-08-04",
     "period_end": "2026-08-04",
     "period_start": "2026-07-07",
     "quick_check_operation_id": "01KZ8BGD98DSZ7N2EYCVA34P2K",
+    "research_page": "data/wiki/securities/security_c120e9f26ebb6159adf9.md",
     "research_reasons": [
       {
         "cause": "macd_cross_above_signal_entered_with_negative_period_return",
@@ -22,6 +25,16 @@
       {
         "cause": "canonical_relationship_is_rejected",
         "source_ref": "data/wiki/relationships/relationship_afac7205cd7e09800edf.md"
+      },
+      {
+        "dedupe_key": "security_research:security_c120e9f26ebb6159adf9:allocation-maintenance:2026-08-09T22:56:34Z",
+        "observed_at": "2026-08-10T07:18:44Z",
+        "prompt": "Revalidate security_c120e9f26ebb6159adf9 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_abb_q2_2026_results",
+          "source_abb_share_listing_2026"
+        ]
       }
     ],
     "security_id": "security_c120e9f26ebb6159adf9",
@@ -30,7 +43,7 @@
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Fully reassess ABB after the August MACD alert because the legacy two-case sensitivity cannot support the current scenario-complete decision contract.",
+  "objective": "Fully reassess ABB after the August MACD alert because the legacy two-case sensitivity cannot support the current scenario-complete decision contract. | Additional cause: Revalidate security_c120e9f26ebb6159adf9 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZMBZY5RBVNJH4ZHBZ47FG2S",
   "operation_type": "security_research",
   "payload_version": 1,

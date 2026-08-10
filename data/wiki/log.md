@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-09"
+updated: "2026-08-10"
 provenance: repository-contract
 ---
 
@@ -3000,3 +3000,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The prior unsupported Unrated / Watch assessment and hash-aligned security page remain current.
   A controller-owned issue records the provenance defect. No idea follow-up, strategy, signal,
   order, allocation change or paper trade was created.
+
+## 2026-08-10
+
+- Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484]] (0f061b8f1484).
