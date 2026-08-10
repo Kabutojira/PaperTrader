@@ -4,7 +4,7 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-08-03"
+updated: "2026-08-10"
 provenance: "source_samsung_common_gdr_identity; source_samsung_q1_2026_results; source_samsung_q2_2026_guidance; source_samsung_q2_2026_results"
 security_id: security_567d0d575bbd30aaa91d
 issuer_id: issuer_adf6eb6a528f8576f0ed
@@ -71,6 +71,20 @@ local turnover, currency translation, and cross-venue basis remain plausible con
 alert is therefore **a results-driven volume event within a liquidity and valuation risk**, not a
 confirmed fundamental entry opportunity.
 
+## 2026-08-10 quick check
+
+The payload-bound August 4 bullish MACD crossover followed a **15.53%** decline from the July 7
+adjusted close to EUR 3,800. By August 7 the canonical mark was EUR 3,580: MACD remained above its
+signal, but RSI was neutral, volume was not anomalous, and no configured threshold trigger remained
+active. This is early technical stabilization, not an independently verified operating catalyst.
+
+A fresh retrieval of Samsung's detailed Q2 results PDF was byte-for-byte unchanged. Record
+memory-led earnings, cash generation, net-liquidity strength, cycle risks, and Device eXperience
+weakness therefore remain the latest operating evidence. The move did not establish same-timestamp
+common-share/GDR parity, KRW/EUR translation, normalized through-cycle earnings, a valuation range,
+or routine Vienna liquidity. No buy zone is supportable, no catalyst or invalidation fired, and no
+full review is warranted.
+
 ## Valuation
 
 A supportable EUR intrinsic range remains unavailable. The GDR represents 25 KRW-denominated common
@@ -117,6 +131,7 @@ conversion fails to persist as memory conditions normalize.
 
 Status: **watching**, **medium** confidence, and **ineligible** for allocation. Record Q2 earnings,
 cash flow, and net liquidity do not cure the missing valuation bridge or the instrument's
-insufficient local liquidity. No conviction strategy or paper signal is justified. Review by
+insufficient local liquidity. The August 10 quick check reaffirms this `Unrated / Watch` conclusion
+at the fresh EUR 3,580 mark. No conviction strategy or paper signal is justified. Review by
 **2026-09-02**, or earlier if fresh cross-venue, KRW/EUR, normalized-cycle, or venue-liquidity
 evidence becomes available.

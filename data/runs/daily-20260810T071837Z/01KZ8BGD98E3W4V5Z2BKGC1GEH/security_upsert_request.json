@@ -1,0 +1,23 @@
+{
+  "security_id": "security_567d0d575bbd30aaa91d",
+  "issuer_id": "issuer_adf6eb6a528f8576f0ed",
+  "company_name": "Samsung Electronics Co., Ltd.",
+  "instrument_name": "Samsung Electronics common GDR",
+  "instrument_type": "equity",
+  "ticker": "SSU.VI",
+  "exchange_code": "VIE",
+  "venue_mic": "XWBO",
+  "provider_symbol": "SSU.VI",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "KR",
+  "sector": "Technology",
+  "industry": "Consumer Electronics",
+  "status": "watching",
+  "watchlist_reason": "Samsung common-GDR exposure; the August bullish-MACD cross did not resolve cross-venue parity, KRW/EUR translation, local liquidity or normalized-cycle valuation gates.",
+  "research_summary": "Q2 evidence is unchanged and the bullish-MACD cross remains technical only; sparse Vienna turnover and unresolved instrument-level valuation keep SSU Unrated / Watch.",
+  "research_page": "data/wiki/securities/security_567d0d575bbd30aaa91d.md",
+  "last_research_at": "2026-08-10T07:31:49Z",
+  "next_review_at": "2026-09-02T06:22:25Z",
+  "source": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf"
+}

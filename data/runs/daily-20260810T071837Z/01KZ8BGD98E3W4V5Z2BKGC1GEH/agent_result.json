@@ -1,0 +1,84 @@
+{
+  "operation_id": "01KZ8BGD98E3W4V5Z2BKGC1GEH",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Samsung Electronics common-GDR quick check for the 2026-08-04 bullish MACD cross. The payload-bound EUR 3,800 close followed a 15.53% decline; by August 7 the canonical mark was EUR 3,580, MACD remained above signal, while RSI and volume were neutral and no configured threshold trigger remained active. A fresh retrieval of Samsung's detailed Q2 issuer PDF matched its retained hash. The thesis, catalysts, risks and invalidation remain unchanged, and the technical stabilization does not resolve same-timestamp cross-venue parity, KRW/EUR translation, normalized through-cycle valuation or routine Vienna liquidity. The accepted schema-v2 assessment remains Unrated / Watch, valuation-unsupported and allocation-ineligible. No buy zone was established, catalyst or invalidation fired, material primary evidence changed, or decision-support gap newly opened, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_samsung_q2_2026_results",
+      "claim": "A fresh retrieval of Samsung's detailed Q2 2026 results PDF was byte-for-byte unchanged. It remains the latest operating evidence for record memory-led earnings, strong cash generation and net liquidity, alongside Device eXperience weakness and cycle-normalization risk.",
+      "url": "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+      "observed_at": "2026-08-10T07:31:49Z",
+      "source_hash": "e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf"
+    },
+    {
+      "source": "source_samsung_common_gdr_identity",
+      "claim": "Samsung's maintained issuer listing identifies the reviewed instrument as the common GDR representing 25 Korean common shares; the immutable operation concerns only the SSU.VI/XWBO/EUR line, not the preferred GDR or a Korean ordinary-share ticker.",
+      "url": "https://www.samsung.com/global/ir/stock-information/listing-Info/",
+      "observed_at": "2026-08-10T07:31:49Z",
+      "source_hash": "a5e8493c3af8209e37284e454849e5fe4efccbb26ccf6183a7d034aaf62ef521"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The canonical source-price hash 672a428528fe9f27e81ef08c578a50a032abf69b5245a77e7f938baf6d4ea77a binds the exact July 7-August 4 period, EUR 3,800 adjusted close, -15.5277% period return and entered bullish MACD cross. The refreshed August 7 cache records EUR 3,580, MACD -160.32235128 above its -185.54514899 signal, neutral 43.79125284 RSI, non-anomalous -0.38386857 volume z-score and no active threshold trigger.",
+      "observed_at": "2026-08-10T07:18:44Z",
+      "source_hash": "672a428528fe9f27e81ef08c578a50a032abf69b5245a77e7f938baf6d4ea77a"
+    },
+    {
+      "source": "assessment_2464b39d991806a1006f",
+      "claim": "The accepted immutable schema-v2 assessment links predecessor assessment_8e31b574b5b937920756, this operation, current research-page hash d526959109c652b0439ebc7f4f65e19ec5455fd29b3e6a4b0a1621bc35a2de11, fresh EUR 3,580 price identity and retained primary sources. Deterministic normalization derives Unrated / Watch, quality score 72 and allocation ineligibility under liquidity_insufficient and valuation_unsupported without invented scenario values.",
+      "observed_at": "2026-08-10T07:35:26Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/assessment_upsert_request.json",
+    "data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/security_upsert_request.json",
+    "data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/source_samsung_q2_2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_567d0d575bbd30aaa91d.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Samsung Electronics common-GDR quick check completed: the August 4 bullish-MACD cross developed into early technical stabilization near EUR 3,580, but fresh Q2 evidence is unchanged and cross-venue parity, KRW/EUR translation, normalized valuation and Vienna liquidity remain unresolved. SSU stays Unrated / Watch and allocation-ineligible; no full review or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_567d0d575bbd30aaa91d",
+    "papertrader research source record --request data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/source_samsung_q2_2026_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260810T071837Z/01KZ8BGD98E3W4V5Z2BKGC1GEH/assessment_upsert_retry02_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_567d0d575bbd30aaa91d"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was the sole routed running operation, claimed by daily-20260810T071837Z, and routed sequentially to native llm-wiki plus papertrader-quick-check-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYR5PTQ85N1ZCYD8JF9FVRPM succeeded for the same immutable SSU.VI/XWBO/EUR/equity identity within ten days.",
+      "Confirmed the exact July 7-August 4 market period, macd_cross_above_signal cause and canonical source-price hash 672a428528fe9f27e81ef08c578a50a032abf69b5245a77e7f938baf6d4ea77a; later cache rows were used only for current context and assessment identity.",
+      "Fresh retrieval of the Q2 results PDF matched the retained e90b8e4829403339206fa77821aeadd71e39a611f3830a4cbcd349321de9e0cf hash, and the refreshed source record was accepted through the project CLI without committing source content.",
+      "Confirmed assessment assessment_2464b39d991806a1006f is the sole immutable schema-v2 version for this operation, links predecessor assessment_8e31b574b5b937920756 and expected result path, matches page hash d526959109c652b0439ebc7f4f65e19ec5455fd29b3e6a4b0a1621bc35a2de11, and contains no invented scenario values.",
+      "Confirmed no valuation or buy-zone gate was newly reached, catalyst or invalidation fired, material primary evidence changed, or decision-support gap opened. No full_research_requested flag was present and no full-review operation was enqueued.",
+      "Two immutable assessment requests were rejected without state change for noncanonical FX timestamp and soft-gap values; the uniquely named corrected request was accepted and all three audited requests are retained.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the twelve canonical PaperTrader CLI invocations listed in commands_run, including both documented non-mutating rejected assessment requests.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

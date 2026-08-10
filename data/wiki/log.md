@@ -3016,3 +3016,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   strategy work. One dependent idea refresh is required so the broader candidate universe can
   absorb the completed security result; no signal, order, allocation, accounting, portfolio or
   performance state changed.
+
+## 2026-08-10 — quick check — Samsung Electronics common GDR
+
+- Rechecked [[securities/security_567d0d575bbd30aaa91d|Samsung Electronics common GDR]] after the
+  4 August bullish-MACD cross. The alert-period EUR 3,800 close followed a 15.53% decline; by 7
+  August the mark was EUR 3,580, MACD remained above signal, while RSI and volume were neutral and
+  no threshold trigger remained active.
+- A fresh retrieval of the Q2 issuer PDF matched its retained hash. The thesis, catalysts, risks,
+  invalidation and unsupported valuation are unchanged. Missing cross-venue parity, KRW/EUR
+  translation and routine Vienna liquidity keep SSU Unrated / Watch and allocation-ineligible; no
+  full review, strategy, signal, order or paper trade was created.
