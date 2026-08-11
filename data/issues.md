@@ -21,6 +21,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | error | **issue_c930fec93e016f142719** — Hermes operation validation failed: 01KZ9ZJVERX5NYGBGE6Z6G7T46 | 2026-08-10T17:35:35Z | controller | 01KZ9ZJVERX5NYGBGE6Z6G7T46 |
 | error | **issue_de6f5509df14629098c4** — Coinbase assessment source operation is ambiguous within one run | 2026-08-09T22:01:17Z | controller | 01KZM7W5C8C2YW24Q3J4JNJ0MS |
+| error | **issue_def4113908890fc82c0a** — Palantir full assessment blocked by same-run provenance ambiguity | 2026-08-11T08:29:58Z | controller | 01KZQYAY286JRATAH6EKE2E9AZ |
 | error | **issue_e4ecee1264285c78e3e3** — Rocket Lab assessment source operation is ambiguous within one run | 2026-08-09T20:50:38Z | controller | 01KZM3JQXG54MXRP9EPRNYX45A |
 | error | **issue_e6820a7a8318aa2adbf4** — Hermes operation validation failed: 01KZ8BGD98AWXPGHS42QSJA7TG | 2026-08-08T12:35:16Z | controller | 01KZ8BGD98AWXPGHS42QSJA7TG |
 | error | **issue_e7dea4abd8cffd476a05** — RTX assessment source operation is ambiguous within one run | 2026-08-05T22:31:51Z | controller | 01KZA04098D4DF0J4SFMJK1TDD |

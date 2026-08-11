@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pltr_sec_submissions_20260811",
+  "url": "https://data.sec.gov/submissions/CIK0001321655.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001321655.json",
+  "source_type": "regulator_index",
+  "title": "Palantir SEC submissions index checked 2026-08-11",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "891bebc7397416d14b27dbe75e36fe0dc17ba30cb75b930ca909eece220910aa",
+  "related_entity_ids": "idea_anduril_product_company_disruption|security_bdc2f87dadf134760c3a",
+  "checked_at": "2026-08-11T08:21:27Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "",
+  "summary": "The SEC submissions index identifies the 4 August 2026 Form 10-Q and its 3 August earnings Form 8-K as the latest periodic operating evidence; filings through 10 August after the 10-Q are insider or resale notices rather than newer operating results.",
+  "run_id": "daily-20260811T075824Z"
+}

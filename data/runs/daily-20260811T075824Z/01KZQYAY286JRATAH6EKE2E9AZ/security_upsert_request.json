@@ -1,0 +1,23 @@
+{
+  "security_id": "security_bdc2f87dadf134760c3a",
+  "issuer_id": "issuer_7273af0280c612edebab",
+  "company_name": "Palantir Technologies Inc.",
+  "instrument_name": "Palantir Technologies Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "PLTR",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "PLTR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Exceptional growth and cash conversion merit monitoring, but completed scenarios remain below market and the Anduril proxy relationship is rejected.",
+  "research_summary": "Q2 strongly supports operating quality, but all completed FCF scenarios remain below USD 175.23; Strong Sell / Avoid with no paper trade.",
+  "research_page": "data/wiki/securities/security_bdc2f87dadf134760c3a.md",
+  "last_research_at": "2026-08-11T08:21:27Z",
+  "next_review_at": "2026-09-05T08:21:27Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
+}

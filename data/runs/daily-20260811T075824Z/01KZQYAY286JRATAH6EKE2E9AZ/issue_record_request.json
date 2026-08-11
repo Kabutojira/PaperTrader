@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Palantir full assessment blocked by same-run provenance ambiguity",
+  "description": "The required schema-v2 assessment for security_bdc2f87dadf134760c3a was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation 01KZ8BGD98PKED1HFZEE390H75 and the current security_research operation 01KZQYAY286JRATAH6EKE2E9AZ claimed by run daily-20260811T075824Z and cannot select a unique source operation. The completed scenario research could not be accepted without an immutable predecessor-linked assessment. Wiki conclusions were restored, no idea or strategy follow-up was enqueued, and the operation must fail closed until the controller schedules the full review under a distinct run or deterministic provenance selection is repaired.",
+  "owner": "controller",
+  "related_run_id": "daily-20260811T075824Z",
+  "related_operation_id": "01KZQYAY286JRATAH6EKE2E9AZ"
+}

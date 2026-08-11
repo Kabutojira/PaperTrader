@@ -1,0 +1,93 @@
+{
+  "operation_id": "01KZQYAY286JRATAH6EKE2E9AZ",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after exactly one bounded Palantir full security review. Current SEC primary evidence supports exceptional growth, margins, cash generation and liquidity, and a completed 25%/50%/25% free-cash-flow scenario analysis produced USD 49.99/USD 95.49/USD 164.74 bear/base/bull values versus the USD 175.23 mark. The deterministic assessment applier rejected the immutable request before assessment state changed because both the completed quick check and this full review have the same security, entity and run identity, making source-operation provenance ambiguous. The security page and conclusions were restored to the prior hash-aligned quick-check state, the structured security summary was restored while retaining an advanced audit timestamp, issue issue_def4113908890fc82c0a was recorded, and no idea or strategy follow-up was enqueued. No signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Palantir Q2 2026 Form 10-Q",
+      "claim": "Palantir reported Q2 revenue of USD 1.935 billion, GAAP operating income of USD 912 million, operating cash flow of USD 1.216 billion, USD 9.409 billion of cash plus marketable securities, USD 1.794 billion of total liabilities, USD 467 million of six-month stock compensation, 2.403 billion period-end shares and 2.569 billion Q2 diluted weighted-average shares. The retained filing hash was unchanged on recheck.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm",
+      "observed_at": "2026-08-11T08:21:27Z",
+      "source_hash": "a36c04dc261071a706cc84f0e94ed1bff7ce7745b73ac2af03a0e07118a5e741"
+    },
+    {
+      "source": "Palantir Q2 2026 earnings release",
+      "claim": "The SEC-filed issuer release reports 93% Q2 revenue growth, 149% U.S. commercial growth, 90% U.S. government growth, 47% GAAP operating margin, USD 1.220 billion adjusted free cash flow, full-year revenue guidance of USD 8.150-8.158 billion and adjusted free-cash-flow guidance of USD 4.5-4.7 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm",
+      "observed_at": "2026-08-11T08:21:27Z",
+      "source_hash": "6f9f63ea7846f2a33710e5fad73699b5cb556b9d7d25b130e8b797eb6618af37"
+    },
+    {
+      "source": "Palantir SEC submissions index",
+      "claim": "The SEC index identifies the 4 August 2026 Form 10-Q and 3 August earnings Form 8-K as the latest periodic operating evidence; subsequent filings through 10 August are insider or resale notices rather than newer operating results.",
+      "url": "https://data.sec.gov/submissions/CIK0001321655.json",
+      "observed_at": "2026-08-11T08:21:27Z",
+      "source_hash": "891bebc7397416d14b27dbe75e36fe0dc17ba30cb75b930ca909eece220910aa"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The assessment upsert exited 2 with 'assessment source operation is ambiguous for this run' and changed neither security_assessments.csv nor security_assessment_history.csv because operations 01KZ8BGD98PKED1HFZEE390H75 and 01KZQYAY286JRATAH6EKE2E9AZ are both security review operations for the same security claimed by daily-20260811T075824Z."
+    },
+    {
+      "source": "PaperTrader mandatory security context",
+      "claim": "After restoration, current assessment assessment_54c6074c7b88a0229617 remains schema version 2, predecessor-linked to assessment_07158fcafd843a6a8936 and hash-aligned to current page hash 63e85852b1ece838bc46d76b8814b90de37a2b5ace62113dc8fd89613aa9f7fd."
+    },
+    {
+      "source": "PaperTrader issue receipt",
+      "claim": "Issue issue_def4113908890fc82c0a records the same-run assessment-provenance failure for deterministic controller repair or rescheduling."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/assessment_upsert_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/issue_record_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/security_restore_after_assessment_failure_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/security_restore_after_assessment_failure_retry01_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/security_upsert_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/source_pltr_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/source_pltr_q2_2026_earnings_release_request.json",
+    "data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/source_pltr_sec_submissions_20260811_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_def4113908890fc82c0a"
+  ],
+  "daily_report_items": [
+    "Palantir's full review failed closed because the deterministic assessment applier could not choose between the same-run quick check and full review as the immutable source operation. Q2 primary evidence supports exceptional growth and cash generation, but the completed USD 49.99/USD 95.49/USD 164.74 scenario analysis remained below the USD 175.23 mark in every case. The prior hash-aligned Unrated / Watch assessment remains authoritative, issue issue_def4113908890fc82c0a was recorded, and no follow-up or paper-trading state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_bdc2f87dadf134760c3a",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/source_pltr_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/source_pltr_q2_2026_earnings_release_request.json",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/source_pltr_sec_submissions_20260811_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/security_restore_after_assessment_failure_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/security_restore_after_assessment_failure_retry01_request.json",
+    "papertrader issue record --request data/runs/daily-20260811T075824Z/01KZQYAY286JRATAH6EKE2E9AZ/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader research security-context --security-id security_bdc2f87dadf134760c3a",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260811T075824Z with a live lease, validated payload, immutable PLTR/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after restoration; the prior quick-check assessment remains predecessor-linked and page-hash-aligned.",
+      "Retrieved, hashed and registered three current SEC primary-source records; the retained Q2 filing hash was unchanged, the earnings release was registered, and the regulator index confirms no newer periodic operating result.",
+      "Prepared one scenario-complete mature-compounder free-cash-flow assessment, but the deterministic applier rejected it before any assessment path changed because same-security quick and full reviews share this run identity.",
+      "Restored the security page to its exact prior hash and restored the structured security conclusion; only the audit research timestamp advanced because deterministic state forbids older timestamps.",
+      "No idea-research or strategy follow-up was enqueued because no full assessment was accepted.",
+      "Strict schema validation, strict wiki lint, strict integrity, strict portfolio reconciliation and queue validation all passed after issue issue_def4113908890fc82c0a was recorded.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

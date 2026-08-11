@@ -1,0 +1,23 @@
+{
+  "security_id": "security_bdc2f87dadf134760c3a",
+  "issuer_id": "issuer_7273af0280c612edebab",
+  "company_name": "Palantir Technologies Inc.",
+  "instrument_name": "Palantir Technologies Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "PLTR",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "PLTR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; maintained for growth, cash conversion, dilution, valuation and Anduril-proxy materiality review.",
+  "research_summary": "Q2 materially strengthened growth, margins and cash, but the overbought USD 175.23 mark has no scenario-complete buy zone and Anduril-linked economics remain undisclosed pending full review.",
+  "research_page": "data/wiki/securities/security_bdc2f87dadf134760c3a.md",
+  "last_research_at": "2026-08-11T08:21:27Z",
+  "next_review_at": "2026-08-18T08:21:27Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
+}
