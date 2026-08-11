@@ -7,13 +7,13 @@ tags:
 created: "2026-08-11"
 updated: "2026-08-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_bb549ef453754d96176a"
-as_of: "2026-08-11T08:32:26Z"
+snapshot_id: "decision_17bcfd652c77daf33042"
+as_of: "2026-08-11T14:01:47Z"
 ---
 
 # Signals
 
-**As of `2026-08-11T08:32:26Z`**
+**As of `2026-08-11T14:01:47Z`**
 
 ## Actionable trade signals
 
@@ -85,8 +85,8 @@ No pending orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded full Palantir security review after the 4 August alert cluster and Q2 operating reset. Fresh retrievals confirmed the Q2 Form 10-Q and SEC-filed earnings release are unchanged: Q2 revenue was USD 1.935 billion, GAAP operating margin was 47%, operating cash flow was USD 1.216 billion, and 2026 adjusted free-cash-flow guidance is USD 4.5-4.7 billion. The unsupported legacy sensitivity was replaced with a scenario-complete mature-compounder free-cash-flow-yield valuation of USD 52.29/USD 99.24/USD 162.50 with 25%/50%/25% probabilities. At the fresh USD 175.23 mark, deterministic code derived a USD 103.3175 probability-weighted fair value, -41.04% expected return, Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one dependent idea refresh was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.
 
 ### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 
@@ -94,8 +94,8 @@ No pending orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded full Palantir security review after the 4 August alert cluster and Q2 operating reset. Fresh retrievals confirmed the Q2 Form 10-Q and SEC-filed earnings release are unchanged: Q2 revenue was USD 1.935 billion, GAAP operating margin was 47%, operating cash flow was USD 1.216 billion, and 2026 adjusted free-cash-flow guidance is USD 4.5-4.7 billion. The unsupported legacy sensitivity was replaced with a scenario-complete mature-compounder free-cash-flow-yield valuation of USD 52.29/USD 99.24/USD 162.50 with 25%/50%/25% probabilities. At the fresh USD 175.23 mark, deterministic code derived a USD 103.3175 probability-weighted fair value, -41.04% expected return, Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one dependent idea refresh was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.
 
 ### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
 
