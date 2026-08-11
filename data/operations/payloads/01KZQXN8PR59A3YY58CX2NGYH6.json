@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_cybersecurity_geopolitical_continuity",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_cybersecurity_geopolitical_continuity",
+    "security_id": "security_8472507d7d320aa388a7",
+    "security_research_operation_id": "01KZPY8FCGVBRGTPP66WJS5JEC",
+    "security_research_result_path": "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/agent_result.json",
+    "seed_claim": "CrowdStrike's current primary operating evidence and accepted causal relationship remain supportive, but the completed bear, base and bull free-cash-flow scenarios all remain materially below market, changing the security conclusion to Strong Sell / Avoid."
+  },
+  "objective": "Refresh the cybersecurity-continuity idea from CrowdStrike's completed scenario-complete review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01KZQXN8PR59A3YY58CX2NGYH6",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_8472507d7d320aa388a7.md"
+  ]
+}

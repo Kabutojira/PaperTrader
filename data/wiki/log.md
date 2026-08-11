@@ -3139,3 +3139,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966]] (a33942d7e966).
 
 - Classified [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966]] as `ingest`: A new material volume-anomaly transition accompanies a 4.31% one-month return and merits durable review.
+
+## 2026-08-11 — security research — CrowdStrike Holdings Class A common stock
+
+- Revalidated [[securities/security_8472507d7d320aa388a7|CrowdStrike]] after the 4 August bullish-
+  MACD alert. Fresh fiscal Q1 filing hashes remain unchanged, the current SEC submissions index has
+  no later operating results, and the USD 225.16 mark remains overbought and above its upper
+  Bollinger band without a new operating catalyst.
+- Replaced the unsupported two-case sensitivity with a 25%/50%/25% scenario-complete free-cash-flow
+  valuation of USD 68.88/USD 108.79/USD 149.76. The probability-weighted USD 109.055 value remains
+  deeply below market, changing the conclusion from Unrated / Watch to Strong Sell / Avoid while
+  retaining allocation ineligibility and creating no strategy, signal, order, or paper trade.

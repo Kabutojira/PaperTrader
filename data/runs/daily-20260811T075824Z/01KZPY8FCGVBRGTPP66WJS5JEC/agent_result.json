@@ -1,0 +1,87 @@
+{
+  "operation_id": "01KZPY8FCGVBRGTPP66WJS5JEC",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded CrowdStrike full security review using refreshed SEC primary evidence, current identity-matched market/FX state and the accepted cybersecurity-continuity relationship. The retained fiscal Q1 filing and results hashes were unchanged, and the current SEC submissions index showed no later periodic operating results. A scenario-complete mature-compounder free-cash-flow valuation derives USD 68.88/USD 108.79/USD 149.76 bear/base/bull fair values, USD 109.055 probability-weighted fair value and -51.57% expected return versus the USD 225.16 mark. Deterministic state records Strong Sell / Avoid, allocation ineligibility and no strategy candidate. The security page, structured security and assessment, retained sources and wiki log were updated, and exactly one dependent cybersecurity-continuity idea refresh, 01KZQXN8PR59A3YY58CX2NGYH6, was enqueued. No signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "CrowdStrike fiscal Q1 2027 Form 10-Q",
+      "claim": "At April 30, 2026 CrowdStrike reported USD 4.553 billion of cash, USD 745.8 million of long-term debt, 257.881 million pre-split diluted weighted-average shares and USD 590.9 million of quarterly operating cash flow; the retained filing hash was unchanged on recheck.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+      "observed_at": "2026-08-11T08:01:35Z",
+      "source_hash": "5cebcdaf54ce867e95d558e2ebeb4cb0f9cebd0193bd138262b5d11c000792c5"
+    },
+    {
+      "source": "CrowdStrike fiscal Q1 2027 results exhibit",
+      "claim": "CrowdStrike guided fiscal-2027 revenue to USD 5.9147-5.9587 billion and 259 million diluted shares before the four-for-one split after reporting USD 468.463 million of fiscal Q1 free cash flow on USD 1.386 billion of revenue; the retained exhibit hash was unchanged on recheck.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "observed_at": "2026-08-11T08:01:35Z",
+      "source_hash": "689137b1d49987dfe3d47b6c54bbe634def83fb28e44647b662d54c851610a24"
+    },
+    {
+      "source": "CrowdStrike SEC submissions index",
+      "claim": "The latest periodic operating filing remained the June 4 fiscal Q1 Form 10-Q; filings after the June 22 governance Form 8-K through August 10 were ownership forms, so no later primary operating result superseded the retained inputs.",
+      "url": "https://data.sec.gov/submissions/CIK0001535527.json",
+      "observed_at": "2026-08-11T08:01:35Z",
+      "source_hash": "50536f60a9d18074dfde8263b122474e6b3a6224e3805bc2ba27cd49fa856089"
+    },
+    {
+      "source": "PaperTrader deterministic assessment assessment_d7627fc0cfdd00f8d0eb",
+      "claim": "The accepted schema-v2 assessment links predecessor assessment_dfabdeaf18df33b4e2b7 and source operation 01KZPY8FCGVBRGTPP66WJS5JEC, matches research-page hash 1dce1e3674b8ca8be90dfed1156292def397d0d41cfb651d9a3c151b06c26d00, and derives Strong Sell / Avoid, USD 109.055 probability-weighted fair value, -51.56555417202095568370902751% expected return and allocation ineligibility."
+    },
+    {
+      "source": "PaperTrader queue receipt",
+      "claim": "Exactly one dependent idea_research follow-up, 01KZQXN8PR59A3YY58CX2NGYH6, was created for the sole linked accepted idea; no strategy follow-up was created because the full strategy gate failed."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZQXN8PR59A3YY58CX2NGYH6.json",
+    "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/assessment_upsert_request.json",
+    "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/security_upsert_request.json",
+    "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/source_crwd_q1_2027_10q_refresh_request.json",
+    "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/source_crwd_q1_2027_results_refresh_request.json",
+    "data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/source_crwd_sec_submissions_20260811_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_8472507d7d320aa388a7.md"
+  ],
+  "operations_created": [
+    "01KZQXN8PR59A3YY58CX2NGYH6"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "CrowdStrike's full review revalidated unchanged fiscal Q1 primary evidence and completed USD 68.88/USD 108.79/USD 149.76 bear/base/bull free-cash-flow scenarios. The USD 109.055 probability-weighted value implies -51.57% expected return versus USD 225.16, deriving Strong Sell / Avoid and no paper position. Exactly one dependent cybersecurity-continuity idea refresh was requested; no strategy, signal, order, allocation or accounting state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/source_crwd_q1_2027_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/source_crwd_q1_2027_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/source_crwd_sec_submissions_20260811_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260811T075824Z/01KZPY8FCGVBRGTPP66WJS5JEC/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260811T075824Z with a live lease, validated payload, immutable CRWD/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after applying state; the current assessment is schema version 2, complete, predecessor-linked, source-operation-linked and page-hash-aligned.",
+      "Retrieved, hashed and registered three current SEC primary-source records; both retained operating-source hashes were unchanged and the regulator index confirms no newer periodic operating result.",
+      "The deterministic assessment derives Strong Sell / Avoid, ineligibility and exact failed expected-return, base-return, payoff and margin-of-safety gates; no conviction strategy work was created.",
+      "Exactly one result-specific idea-research follow-up exists for the sole linked accepted idea and depends on this security operation.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation and queue validation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}
