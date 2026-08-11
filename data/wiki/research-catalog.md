@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-10"
-updated: "2026-08-10"
+updated: "2026-08-11"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_a3337119e6d1d76c1a11"
 as_of: "2026-08-10T23:11:04Z"
@@ -425,3 +425,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966|RKLB — Volume anomaly]]

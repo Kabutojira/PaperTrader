@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-10"
+updated: "2026-08-11"
 provenance: repository-contract
 ---
 
@@ -3133,3 +3133,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
   accepted. The legacy two-case sensitivity cannot support schema-v2 valuation, so CrowdStrike is
   Unrated / Watch and allocation-ineligible pending exactly one dependent full review; no strategy,
   signal, order or paper trade was created.
+
+## 2026-08-11
+
+- Created candidate packet [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966]] (a33942d7e966).
+
+- Classified [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966]] as `ingest`: A new material volume-anomaly transition accompanies a 4.31% one-month return and merits durable review.

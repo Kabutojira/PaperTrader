@@ -1,0 +1,25 @@
+{
+  "entity_id": "security_7ca095d63423c55a90e3",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_completed_at": "2026-08-09T21:39:19Z",
+    "baseline_operation_id": "01KZM3JQXG54MXRP9EPRNYX45A",
+    "baseline_result_path": "data/runs/daily-20260809T212714Z/01KZM3JQXG54MXRP9EPRNYX45A/agent_result.json",
+    "market_data_as_of": "2026-08-11T07:58:31Z",
+    "market_data_date": "2026-08-10",
+    "period_end": "2026-08-10",
+    "period_start": "2026-07-13",
+    "security_id": "security_7ca095d63423c55a90e3",
+    "source_price_hash": "b7794b59a9c0cc92c348fbc027d5b88fadb1685a35f8341859ac7073e7050ade",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Quick-check security_7ca095d63423c55a90e3 after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966.md"
+  ]
+}
