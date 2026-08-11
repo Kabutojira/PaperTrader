@@ -1,0 +1,26 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^[a-f0-9]{64}$'",
+    "commands_run does not exactly match deterministic CLI audit receipts",
+    "completed security research requires this run's comparable assessment",
+    "post-run integrity: agent result data/runs/daily-20260811T144815Z/01KZ8BGD98T363E1NM8EPYT9TG/agent_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^[a-f0-9]{64}$'"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZ8BGD98T363E1NM8EPYT9TG",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260811T144815Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
