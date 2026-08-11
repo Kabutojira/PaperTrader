@@ -1,0 +1,44 @@
+{
+  "operation_id": "01KZ8BGD98T363E1NM8EPYT9TG",
+  "status": "failed",
+  "summary": "Quick-check evidence was reviewed for Eaton. The 2026-08-04 bullish MACD crossover and Bollinger-above-upper transition coincide with a rise to USD 444.96, materially above the prior USD 350 base case, while no new primary evidence or thesis invalidation was present; the existing Sell/Avoid conclusion does not warrant full-research escalation. The maintained security page was updated, but the required comparable assessment upsert was rejected by the controller command-scope guard, so the operation cannot be marked succeeded.",
+  "evidence": [
+    {
+      "source": "data/wiki/inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_above_signal-4af1197123e0.md",
+      "claim": "The MACD bullish crossover entered on 2026-08-04 with a 12.41% period return and source price hash fb2aa91af537611795229fc050d6e48fb2b7c2c3b0ee576ebffac45435e56185."
+    },
+    {
+      "source": "data/wiki/inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_above_upper-12e694571336.md",
+      "claim": "The Bollinger-above-upper transition entered on 2026-08-04; the packet is classified as a bearish alert and does not establish a thesis invalidation."
+    },
+    {
+      "source": "data/market/latest.csv and data/market/indicators.csv",
+      "claim": "The latest cached ETN mark is USD 444.9599914550781 for 2026-08-10, with MACD 10.53168277 above signal 4.87555279 and the retained valuation still below the mark."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260811T142247Z/01KZ8BGD98T363E1NM8EPYT9TG/assessment_upsert_request.json",
+    "data/wiki/securities/security_18a3ab0ee6086ee85d0f.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_18a3ab0ee6086ee85d0f",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory security-context command succeeded and its bounded prior assessment, latest successful research, source registry, relationship, and page hash were consumed before assessment handling.",
+      "The selected operation remained the only operation processed; no delegation, sub-agent, background task, accounting, allocation, order, signal, execution, cash, portfolio, or performance state was touched.",
+      "The security page records the exact quick-check alert interpretation, current mark, unchanged valuation conclusion, and no-escalation decision.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation all passed.",
+      "The comparable assessment request was rejected by the command-scope guard as outside the quick_check_research skill scope; no assessment state changed. This unrepaired required state transition makes the operation failed rather than succeeded."
+    ]
+  }
+}

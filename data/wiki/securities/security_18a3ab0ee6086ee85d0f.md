@@ -4,8 +4,8 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-03"
-provenance: "Eaton Q2 2026 Form 10-Q and results exhibit; PaperTrader market and FX caches"
+updated: "2026-08-11"
+provenance: "Eaton Q2 2026 Form 10-Q and results exhibit; PaperTrader market and FX caches; 2026-08-11 quick check"
 security_id: security_18a3ab0ee6086ee85d0f
 issuer_id: issuer_f95d7e49ebda3ca93218
 confidence: medium
@@ -25,6 +25,13 @@ The filing confirms Eaton Corporation plc and its exchange-listed ordinary share
 linked to [[ideas/idea_ai_infrastructure_power]] and the complete [[research-catalog]].
 
 ## Changes since prior review
+
+- **2026-08-11 quick check:** The 2026-08-04 alert packet recorded a bullish MACD crossover
+  alongside a Bollinger-above-upper transition and a 12.41% period return. The latest identity-
+  matched mark was USD 444.96 as of 2026-08-10, above the prior USD 415.20 mark and materially
+  above the USD 350 base case, while no new primary evidence or thesis invalidation was supplied.
+  The technical strength is treated as a positive repricing signal, not a new entry condition;
+  the existing Sell/Avoid conclusion remains unchanged and no full research escalation is warranted.
 
 - **Evidence:** Q2 results and the Q2 Form 10-Q replace the pre-earnings Q1 evidence boundary.
   Sales reached USD 8.531 billion, organic growth was 14%, operating cash flow was USD 1.1 billion,
