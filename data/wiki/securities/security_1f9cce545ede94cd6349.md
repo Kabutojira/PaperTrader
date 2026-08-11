@@ -4,7 +4,7 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-27"
+updated: "2026-08-11"
 provenance: source_isrg_q2_2026_sec_exhibit
 security_id: security_1f9cce545ede94cd6349
 issuer_id: issuer_98d3ab01583161cae27f
@@ -50,13 +50,12 @@ Primary evidence: [Intuitive Surgical Q2 2026 earnings, SEC-filed Exhibit 99.1](
 
 ## Valuation, catalysts, and risks
 
-The validated 2026-07-27 close is USD 356.83. First-half 2026 GAAP diluted EPS was USD 4.57, so a
-simple annualized run rate is USD 9.14 and the mark is 39.0 times that run rate. A 12-month downside
-case of 30 times the run rate is USD 274.20, or 23.2% below the mark; a base case of 40 times is USD
-365.60, or 2.5% above it. This bounded range is supportable for relative allocation, but the base
-upside is below the configured 20% margin-of-safety target and is not compelling enough for a
-conviction strategy. The range must be refreshed after Q3 rather than treated as a perpetual
-multiple.
+The validated 2026-08-10 close is USD 393.38. The 2026-07-27 review annualized first-half GAAP
+diluted EPS of USD 4.57 to USD 9.14 and used USD 274.20 and USD 365.60 as downside and base
+sensitivity points. At the fresh mark those points imply 30.3% downside and 7.1% downside,
+respectively. They are not a scenario-complete valuation: there is no bull case, no explicit
+probability set, and no fresh diluted-share or net-cash bridge. The security therefore has no
+canonical fair-value range or buy zone until a full review supplies those inputs.
 
 The model uses GAAP earnings, including stock compensation, and must continue to separate placements,
 leases, procedures, consumables and service economics, normalize one-time tariff refunds, and stress
@@ -70,8 +69,22 @@ constraints compress margins, or valuation requires implausible procedure growth
 
 ## Disposition
 
-Status: **watching**, confidence **high**. Review by **2026-10-30** after Q3 results. The current
-comparable assessment is **baseline eligible**, not conviction eligible: business quality,
-balance-sheet strength, and liquidity are strong, while limited base upside and a 23.2% downside
-case keep valuation as the principal soft gap. Baseline strategy work, if any, belongs to the
-deterministic allocator.
+Status: **watching**, confidence **high**. Review by **2026-08-15** through the dependent full
+review. The current comparable assessment is **Unrated / Watch**, valuation-unsupported and
+allocation-ineligible. Strong business quality, balance-sheet strength and liquidity remain
+evidence-backed, but the old sensitivity cannot support a current schema-v2 decision. The bullish
+MACD transition is momentum after a drawdown, not a validated entry signal.
+
+## Changes since prior review
+
+- **Evidence and assumptions:** A fresh download of the SEC-filed Q2 earnings exhibit matched its
+  retained hash. The current SEC submissions index shows no later periodic operating filing or
+  earnings release; post-Q2 filings are ownership reports. Procedure growth, recurring revenue,
+  operating leverage, cash strength, catalysts, risks and invalidation therefore remain unchanged.
+- **Market period:** ISRG fell 13.8% from 7 July through the USD 368.27 close on 4 August, when MACD
+  crossed above its signal. By 10 August the close was USD 393.38, 6.8% above the alert close;
+  MACD remained above signal, while the one-session cross was no longer active.
+- **Valuation and gate:** The fresh mark is above both legacy sensitivity points. More importantly,
+  the prior two-case range lacks the bull case, probabilities and current scenario inputs required
+  by schema v2. No buy zone, catalyst or invalidation fired, but the baseline can no longer support
+  a canonical decision, so one dependent full security review is required.

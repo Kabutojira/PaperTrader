@@ -1,0 +1,98 @@
+{
+  "operation_id": "01KZ8BGD98WHFV7P2DCWX2WDQN",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Intuitive Surgical quick check for the 2026-08-04 bullish-MACD cross. ISRG fell 13.8% over the alert period to USD 368.27 and then rose 6.8% to USD 393.38 by August 10; MACD remained above signal while the one-session cross was no longer active. A fresh SEC download matched the retained Q2 exhibit hash, and the current SEC submissions index contained no later periodic operating filing or earnings release, so the operating thesis, catalysts, risks and invalidation remain unchanged. The legacy two-case sensitivity now lies below the market and lacks a bull case, probabilities and fresh scenario inputs. The accepted schema-v2 assessment is therefore Unrated / Watch, valuation-unsupported and allocation-ineligible with no canonical buy zone. Exactly one dependent full security review, 01KZRY95ZGA17F8N27YMA7G1G9, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic 2026-08-04 alert payload and candidate packet",
+      "claim": "The immutable payload binds macd_cross_above_signal to the exact 2026-07-07 through 2026-08-04 period, a USD 368.2699890136719 adjusted close, a 13.81465023769143964268507273% period decline and canonical source-price hash 5281f9a3c72cd18527d9df265367920e3f3a6f9e566346343b23eb513a7c6670.",
+      "observed_at": "2026-08-05T06:59:21Z",
+      "source_hash": "5281f9a3c72cd18527d9df265367920e3f3a6f9e566346343b23eb513a7c6670"
+    },
+    {
+      "source": "PaperTrader current deterministic market and indicator caches",
+      "claim": "The 2026-08-10 adjusted close was USD 393.3800048828125, 6.818371471536986705366028300% above the alert close and 10.24297836110944398712244820% above the baseline mark. MACD -4.61440415 remained above signal -10.42262199, while the one-session cross trigger was inactive; the current canonical source-price hash is e79b59d70ea8c4628e946516b77235968547ae6e055c843beec6a580cb4fbb1c.",
+      "observed_at": "2026-08-11T17:29:10Z",
+      "source_hash": "e79b59d70ea8c4628e946516b77235968547ae6e055c843beec6a580cb4fbb1c"
+    },
+    {
+      "source": "source_isrg_q2_2026_sec_exhibit",
+      "claim": "A bounded current download returned HTTP 200 and matched the retained hash. The unchanged Q2 exhibit continues to support procedure growth, recurring instruments and accessories revenue, operating leverage and balance-sheet strength.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-08-11T17:32:33Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "SEC company submissions index for Intuitive Surgical, Inc.",
+      "claim": "The current submissions index contained no periodic operating filing or earnings release after the Q2 Form 8-K through 2026-08-11; subsequent filings were ownership reports and did not change the bounded operating assumptions.",
+      "url": "https://data.sec.gov/submissions/CIK0001035267.json",
+      "observed_at": "2026-08-11T17:32:33Z",
+      "source_hash": "7d4d2e40bb6acfac2fccaf6d073bd9c4c624fc52c27a828b5d26973176fcac07"
+    },
+    {
+      "source": "assessment_142cb893bce67464e477",
+      "claim": "The deterministic applier linked the sole new schema-v2 assessment to legacy predecessor assessment_9404a9d63d6d67925e74 and page hash 7aed5844b41164eb79ab561acde42368dd69b6116b2bcd82bfa89e85eb4e0324. It accepted the fresh USD 393.3800048828125 mark, unsupported valuation with no scenario values or buy-below price, quality score 82, Unrated / Watch disposition, complete relationship frontier and allocation ineligibility under valuation_unsupported.",
+      "observed_at": "2026-08-11T17:35:12Z",
+      "source_hash": "7aed5844b41164eb79ab561acde42368dd69b6116b2bcd82bfa89e85eb4e0324"
+    },
+    {
+      "source": "data/operations/payloads/01KZRY95ZGA17F8N27YMA7G1G9.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, the exact MACD alert period and source-price hash, the fresh current market hash, the legacy-valuation changed gate and full_research_requested=true."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZRY95ZGA17F8N27YMA7G1G9.json",
+    "data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/assessment_upsert_request.json",
+    "data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/enqueue_full_research_request.json",
+    "data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/security_upsert_request.json",
+    "data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/source_isrg_q2_2026_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1f9cce545ede94cd6349.md"
+  ],
+  "operations_created": [
+    "01KZRY95ZGA17F8N27YMA7G1G9"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Surgical's August 4 bullish-MACD cross followed a 13.8% drawdown and extended to a USD 393.38 mark by August 10, but unchanged Q2 primary evidence provides no new operating catalyst. The legacy two-case sensitivity is below market and not scenario-complete; ISRG is Unrated / Watch and allocation-ineligible pending exactly one dependent full review, with no paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1f9cce545ede94cd6349",
+    "papertrader research source record --request data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/source_isrg_q2_2026_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260811T172903Z/01KZ8BGD98WHFV7P2DCWX2WDQN/enqueue_full_research_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_1f9cce545ede94cd6349"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the single running quick_check_research row, daily-20260811T172903Z claim, live lease, immutable ISRG/XNAS/USD/equity identity, successful same-security baseline result within ten days at enqueue time, and native/controller/operation preflight hashes before mutation.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the current legacy assessment, latest successful baseline result, security identity, page hash, retained source, accepted relationship, linked idea and paused strategy.",
+      "Matched the sole payload trigger, exact 2026-07-07 through 2026-08-04 period, USD 368.2699890136719 alert mark and canonical payload source-price hash 5281f9a3c72cd18527d9df265367920e3f3a6f9e566346343b23eb513a7c6670 to the deterministic candidate packet and price cache.",
+      "Confirmed current canonical market state at 2026-08-11T17:29:10Z: 2026-08-10 USD 393.3800048828125 mark, MACD above signal and inactive one-session crossing, with current source-price hash e79b59d70ea8c4628e946516b77235968547ae6e055c843beec6a580cb4fbb1c.",
+      "Downloaded and hashed the retained SEC exhibit; it returned HTTP 200 with its unchanged registered hash. The current SEC submissions index contained no later periodic operating filing or earnings release, so the operating thesis, catalysts, risks and invalidation remain unchanged.",
+      "Confirmed no valuation or buy zone was newly reached and no operating catalyst or invalidation fired. Escalation is required because the legacy two-case sensitivity cannot support scenario-complete decisions at the fresh mark.",
+      "Confirmed exactly one dependent full-review payload, 01KZRY95ZGA17F8N27YMA7G1G9, contains this quick-check identity, baseline identity, every payload trigger cause, exact alert period and source-price hash, fresh current market hash, the changed valuation gate and full_research_requested=true.",
+      "The second audited security-context receipt confirmed immutable assessment assessment_142cb893bce67464e477, predecessor assessment_9404a9d63d6d67925e74, schema version 2, current page-hash identity, refreshed source time, complete relationship frontier, Unrated / Watch disposition, valuation-unsupported blocker and no invented scenario values or buy zone.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the eleven canonical project CLI invocations listed in commands_run, in the same order, and every receipt returned exit code zero.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, fill, cash, portfolio, performance, accounting-ledger, raw-source or other security-page path changed; no issue was recorded and no operation was delegated, claimed, completed or otherwise processed."
+    ]
+  }
+}

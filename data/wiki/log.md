@@ -3195,3 +3195,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   103.32 fair value is 41.0% below the USD 175.23 mark, changing the conclusion from Unrated / Watch
   to Strong Sell / Avoid while retaining allocation ineligibility and creating no strategy, signal,
   order or paper trade.
+
+## 2026-08-11 — quick check — Intuitive Surgical, Inc. common stock
+
+- Rechecked [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] after the 4 August
+  bullish-MACD cross. ISRG fell 13.8% over the alert period to USD 368.27, then reached USD 393.38
+  by 10 August with MACD still above signal while the one-session cross was no longer active.
+- A fresh SEC exhibit download matched the retained Q2 hash, and the SEC submissions index contains
+  no later periodic operating filing or earnings release. The operating thesis, catalysts, risks
+  and invalidation remain unchanged, but the legacy two-case sensitivity lacks a bull case,
+  probabilities and fresh scenario inputs. ISRG is Unrated / Watch and allocation-ineligible
+  pending exactly one dependent full review; no strategy, signal, order or paper trade was created.
