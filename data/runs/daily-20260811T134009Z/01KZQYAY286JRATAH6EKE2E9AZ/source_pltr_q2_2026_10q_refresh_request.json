@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pltr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm",
+  "source_type": "filing",
+  "title": "Palantir Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a36c04dc261071a706cc84f0e94ed1bff7ce7745b73ac2af03a0e07118a5e741",
+  "related_entity_ids": "idea_anduril_product_company_disruption|security_bdc2f87dadf134760c3a",
+  "checked_at": "2026-08-11T13:45:04Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "The unchanged Q2 2026 Form 10-Q reports USD 1.935 billion quarterly revenue, USD 912 million GAAP operating income, USD 1.216 billion operating cash flow, USD 9.409 billion cash and marketable securities, USD 1.794 billion total liabilities, 2.569 billion diluted weighted-average shares and USD 467 million six-month stock compensation.",
+  "run_id": "daily-20260811T134009Z"
+}

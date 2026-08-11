@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_anduril_product_company_disruption",
+  "dedupe_key": "idea_research:idea_anduril_product_company_disruption:security-result:01KZQYAY286JRATAH6EKE2E9AZ",
+  "prompt": "Refresh the Anduril product-company idea from Palantir's completed scenario valuation, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_anduril_product_company_disruption",
+    "seed_claim": "Palantir's Q2 operating evidence remains exceptional, but Anduril-linked economics remain undisclosed and all completed free-cash-flow scenarios remain below market, changing the security conclusion to Strong Sell / Avoid.",
+    "security_id": "security_bdc2f87dadf134760c3a",
+    "security_research_operation_id": "01KZQYAY286JRATAH6EKE2E9AZ",
+    "security_research_result_path": "data/runs/daily-20260811T134009Z/01KZQYAY286JRATAH6EKE2E9AZ/agent_result.json"
+  },
+  "source": "security_research:01KZQYAY286JRATAH6EKE2E9AZ",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZQYAY286JRATAH6EKE2E9AZ"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+  ],
+  "max_attempts": 3
+}

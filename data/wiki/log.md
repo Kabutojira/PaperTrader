@@ -3167,3 +3167,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   The legacy two-case sensitivity is not scenario-complete, so Palantir is Unrated / Watch and
   allocation-ineligible pending exactly one dependent full review; no strategy, signal, order or
   paper trade was created.
+
+## 2026-08-11 — security research — Palantir Technologies Class A common stock
+
+- Revalidated [[securities/security_bdc2f87dadf134760c3a|Palantir]] after the Q2 operating reset and
+  4 August alert cluster. Fresh retrievals confirm the Q2 filing and results release are unchanged;
+  growth, profitability, cash conversion and liquidity remain exceptional, while Anduril-linked
+  economics remain undisclosed and the alert remains adverse entry timing rather than a buy signal.
+- Replaced the unsupported legacy sensitivity with a 25%/50%/25% scenario-complete
+  free-cash-flow-yield valuation of USD 52.29/USD 99.24/USD 162.50. The probability-weighted USD
+  103.32 fair value is 41.0% below the USD 175.23 mark, changing the conclusion from Unrated / Watch
+  to Strong Sell / Avoid while retaining allocation ineligibility and creating no strategy, signal,
+  order or paper trade.

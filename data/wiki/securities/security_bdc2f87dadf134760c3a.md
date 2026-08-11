@@ -9,7 +9,7 @@ provenance: "source_pltr_q1_2026_earnings; source_pltr_q2_2026_10q; Warp Speed m
 security_id: security_bdc2f87dadf134760c3a
 issuer_id: issuer_7273af0280c612edebab
 confidence: medium
-next_review: "2026-08-14"
+next_review: "2026-08-25"
 ---
 
 # Palantir Technologies Inc. Class A common stock
@@ -63,42 +63,57 @@ Primary evidence: [Palantir Q2 2026 10-Q](https://www.sec.gov/Archives/edgar/dat
 
 ## Changes since prior review
 
-- **Evidence:** Q2 revenue, U.S. commercial growth, operating margin, cash generation, liquidity and
-  full-year guidance all improved materially from the Q1 checklist. No new evidence quantifies
-  Anduril-derived revenue, margin, contract duration or cash flow, so the proxy mechanism remains
-  economically unproven.
-- **Market period and timing:** The 7 July–4 August alert cluster combined a 21.05% rise to USD
-  162.66, an upper-Bollinger breach, bullish MACD cross, overbought RSI and volume anomaly. By 10
-  August the close was USD 175.23, another 7.73% above the alert mark; RSI remained overbought and
-  price remained above the upper band, while the one-session MACD-cross and volume triggers were no
-  longer active. This is earnings-backed momentum and entry risk, not a validated buy zone.
-- **Valuation and action:** The prior two-case sensitivity is not scenario-complete under the current
-  assessment contract and both prior values are far below the higher mark. No fair value or
-  buy-below price is carried forward as decision-ready. The security is Unrated / Watch and
-  allocation-ineligible pending one dependent full review.
-- **Thesis, catalysts, risks and invalidation:** The broad growth and cash-conversion thesis
-  strengthened, but valuation, dilution and concentration risks remain. Catalysts and invalidation
-  are unchanged except that Q2 results now replace Q1 as the operating baseline. The rejected,
-  low-confidence [[relationships/relationship_250194f6a9e3a1817632|Anduril relationship]] remains
-  unchanged.
+- **Evidence:** Fresh retrievals confirm that the Q2 Form 10-Q and SEC-filed earnings release are
+  unchanged since the quick check. Q2 remains the current operating baseline, and no new evidence
+  quantifies Anduril-derived revenue, margin, contract duration or cash flow.
+- **Assumptions and scenarios:** The unsupported legacy two-case revenue sensitivity is replaced by
+  a scenario-complete `mature_compounder` free-cash-flow-yield valuation. It starts from the USD
+  8.154 billion midpoint of 2026 revenue guidance, explicitly normalizes the unusually high 2026
+  adjusted free-cash-flow margin, includes USD 7.615 billion of net liquid assets, and models
+  dilution above the 2.570 billion Q2 diluted weighted-average share count. Bear/base/bull fair
+  values are now USD 52.29/USD 99.24/USD 162.50 with 25%/50%/25% probabilities; the prior review had
+  no accepted scenarios or buy-below value.
+- **Thesis and evidence quality:** The broad growth, profitability, cash-conversion and balance-sheet
+  thesis remains strong rather than receiving another upgrade. The proxy thesis remains unproven
+  because Anduril economics are still undisclosed. Confidence remains medium.
+- **Catalysts, risks and invalidation:** Sustained organic growth, durable GAAP profitability and
+  disclosed Warp Speed economics remain catalysts. Multiple compression, growth and margin
+  normalization, stock compensation, dilution and government concentration remain risks. The
+  invalidation tests are unchanged.
+- **Blockers and gaps:** `valuation_unsupported` is resolved by the ordered scenarios. The remaining
+  valuation and timing gaps become measured rather than unbounded: even the bull value is below the
+  USD 175.23 mark. The rejected, low-confidence
+  [[relationships/relationship_250194f6a9e3a1817632|Anduril relationship]] remains unchanged and
+  independently prevents the proxy idea from supporting allocation.
+- **Rating and action:** The conclusion changes from **Unrated / Watch** to **Strong Sell / Avoid**.
+  Allocation remains ineligible, now because scenario returns and margin of safety fail rather than
+  because valuation is unsupported. No strategy, signal or paper order is justified.
+- **Unchanged conclusion:** The 7 July–4 August cluster remains earnings-backed momentum and adverse
+  entry timing, not a buy signal. By 10 August the close was USD 175.23, RSI remained overbought and
+  price remained above the upper Bollinger band, while the one-session MACD-cross and volume anomaly
+  were no longer active.
 
 ## Valuation, catalysts, and risks
 
-The 27 July 2026 paper mark is USD 131.53. At 2.571 billion diluted shares, this implies about USD
-338.15 billion of equity value and 43.3 times the midpoint of 2026 guided revenue after subtracting
-USD 6.384 billion of net liquid assets. A bounded 12-month scenario starts with the issuer's USD
-7.656 billion guidance midpoint and uses the current diluted share count:
+The selected repository template is `mature_compounder` and the permitted method is
+`free_cash_flow_yield`. The 12-month model starts with the issuer's USD 8.150-8.158 billion 2026
+revenue guidance and USD 4.5-4.7 billion adjusted free-cash-flow guidance. It deliberately uses
+2027 free-cash-flow margins below the 56.4% 2026 guidance midpoint, includes USD 7.615 billion of
+net liquid assets from the Q2 balance sheet, and raises scenario share counts above the Q2 diluted
+weighted average to treat stock compensation and dilution explicitly.
 
-| Scenario | Explicit assumptions | Value per share | Return from USD 131.53 |
-| --- | --- | ---: | ---: |
-| Downside | 25% 2027 revenue growth, 15x revenue multiple, USD 6.384 billion net liquid assets | USD 58.32 | -55.7% |
-| Base | 40% 2027 revenue growth, 25x revenue multiple, USD 6.384 billion net liquid assets | USD 106.71 | -18.9% |
+| Scenario | Probability | Explicit assumptions | Value per share | Return from USD 175.23 |
+| --- | ---: | --- | ---: | ---: |
+| Bear | 25% | 30% 2027 revenue growth, 42% FCF margin, 30x FCF, USD 7.615 billion net liquid assets, 2.70 billion diluted shares | USD 52.29 | -70.2% |
+| Base | 50% | 45% 2027 revenue growth, 48% FCF margin, 45x FCF, USD 7.615 billion net liquid assets, 2.65 billion diluted shares | USD 99.24 | -43.4% |
+| Bull | 25% | 60% 2027 revenue growth, 53% FCF margin, 60x FCF, USD 7.615 billion net liquid assets, 2.60 billion diluted shares | USD 162.50 | -7.3% |
 
-This legacy sensitivity is historical context, not a current scenario-complete valuation or buy
-zone. Both values remain far below the 10 August USD 175.23 mark, but a full review must replace the
-two-case Q1 framework with ordered bear/base/bull values, explicit probabilities and Q2 assumptions.
-It must not credit the Anduril Army ceiling because neither revenue attribution nor obligation is
-disclosed.
+The probability-weighted fair value is USD 103.32, a -41.0% expected return before the deterministic
+medium-confidence adjustment. The 20% research margin-of-safety policy implies a USD 82.65
+buy-below price; the current price is about 69.6% above weighted fair value. These outcomes are
+severe overvaluation even though the scenarios grant exceptional growth, free-cash-flow conversion
+and valuation multiples. The model assigns no value to the Anduril Army ceiling because neither
+revenue attribution nor obligation is disclosed.
 
 Catalysts are sustained organic growth, disclosed Warp Speed customer expansion, durable GAAP cash
 conversion, and measurable defence-manufacturing revenue. Invalidate the proxy if Anduril-linked
@@ -108,9 +123,9 @@ no downside margin.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, rating **Unrated**, portfolio action **Watch**, and
+Status: **watching**, confidence **medium**, rating **Strong Sell**, portfolio action **Avoid**, and
 allocation eligibility **ineligible**. Q2 materially strengthened the operating checklist, but the
-USD 175.23 mark remains overbought and the legacy two-case valuation cannot satisfy the current
-scenario-complete contract. Exactly one dependent full security review is required to reassess Q2
-economics, valuation and the buy-below frontier. No strategy or signal is created. See
-[[research-catalog]] for the maintained research graph.
+USD 175.23 mark exceeds even the bull fair value and fails expected-return, base-return, payoff and
+margin-of-safety gates. Revisit after material operating evidence or near the USD 82.65 buy-below
+frontier; no strategy or signal is created. See [[research-catalog]] for the maintained research
+graph.
