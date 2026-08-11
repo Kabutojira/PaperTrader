@@ -7,13 +7,13 @@ tags:
 created: "2026-08-11"
 updated: "2026-08-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_5c296c0c941459d6c332"
-as_of: "2026-08-11T14:51:44Z"
+snapshot_id: "decision_01cb045de1bdb265df0a"
+as_of: "2026-08-11T16:11:08Z"
 ---
 
 # Signals
 
-**As of `2026-08-11T14:51:44Z`**
+**As of `2026-08-11T16:11:08Z`**
 
 ## Actionable trade signals
 
@@ -228,15 +228,6 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
 - Market date: `2026-08-10`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
