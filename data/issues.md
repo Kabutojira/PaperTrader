@@ -19,6 +19,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_9f54455539f07576361c** — CrowdStrike full assessment rejected by canonical market identity | 2026-08-10T23:08:16Z | controller | 01KZPY8FCGVBRGTPP66WJS5JEC |
 | error | **issue_a32ef908d1aab8f839d5** — Hermes operation validation failed: 01KZ8BGD98FSXHG4KQ8C6MGNW1 | 2026-08-10T09:00:48Z | controller | 01KZ8BGD98FSXHG4KQ8C6MGNW1 |
 | error | **issue_b3932acdc72f52e4e4f2** — Local harness operation validation failed: 01KYVJ62SRK1101MYYCE7256NF | 2026-08-06T18:26:55Z | controller | 01KYVJ62SRK1101MYYCE7256NF |
+| error | **issue_b75a39226dfa72cb49f9** — Hermes operation validation failed: 01KZ8BGD98WHFV7P2DCWX2WDQN | 2026-08-11T16:10:57Z | controller | 01KZ8BGD98WHFV7P2DCWX2WDQN |
 | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | error | **issue_c930fec93e016f142719** — Hermes operation validation failed: 01KZ9ZJVERX5NYGBGE6Z6G7T46 | 2026-08-10T17:35:35Z | controller | 01KZ9ZJVERX5NYGBGE6Z6G7T46 |
 | error | **issue_de6f5509df14629098c4** — Coinbase assessment source operation is ambiguous within one run | 2026-08-09T22:01:17Z | controller | 01KZM7W5C8C2YW24Q3J4JNJ0MS |
