@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_pMbb5BfWUCY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-11T14:22:48Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_pMbb5BfWUCY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "pMbb5BfWUCY",
+    "video_title": "Sell These Stocks Before It's Too Late",
+    "video_url": "https://www.youtube.com/watch?v=pMbb5BfWUCY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZRK8PP09BM7F71P39FJ4A2A",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=pMbb5BfWUCY"
+  ]
+}
