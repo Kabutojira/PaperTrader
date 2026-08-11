@@ -2,6 +2,7 @@
   "entity_id": "security_bdc2f87dadf134760c3a",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-11T08:10:54Z",
     "baseline_operation_id": "01KYHW57101205S02R9SC1YWG7",
     "changed_gate": "material_q2_operating_evidence_supersedes_baseline_and_requires_scenario_complete_valuation",
     "current_market_data_as_of": "2026-08-11T07:58:31Z",
@@ -10,11 +11,13 @@
     "idea_ids": [
       "idea_anduril_product_company_disruption"
     ],
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-05T06:59:21Z",
     "market_data_date": "2026-08-04",
     "period_end": "2026-08-04",
     "period_start": "2026-07-07",
     "quick_check_operation_id": "01KZ8BGD98PKED1HFZEE390H75",
+    "research_page": "data/wiki/securities/security_bdc2f87dadf134760c3a.md",
     "research_reasons": [
       {
         "cause": "bollinger_above_upper",
@@ -39,6 +42,16 @@
       {
         "cause": "scenario_complete_valuation_required",
         "source_ref": "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+      },
+      {
+        "dedupe_key": "security_research:security_bdc2f87dadf134760c3a:allocation-maintenance:2026-08-11T08:10:54Z",
+        "observed_at": "2026-08-11T13:40:16Z",
+        "prompt": "Revalidate security_bdc2f87dadf134760c3a with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_pltr_q1_2026_earnings",
+          "source_pltr_q2_2026_10q"
+        ]
       }
     ],
     "security_id": "security_bdc2f87dadf134760c3a",
@@ -50,7 +63,7 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Fully reassess Palantir after the 4 August price-alert cluster because Q2 evidence materially supersedes the baseline and the legacy two-case valuation is not scenario-complete.",
+  "objective": "Fully reassess Palantir after the 4 August price-alert cluster because Q2 evidence materially supersedes the baseline and the legacy two-case valuation is not scenario-complete. | Additional cause: Revalidate security_bdc2f87dadf134760c3a with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZQYAY286JRATAH6EKE2E9AZ",
   "operation_type": "security_research",
   "payload_version": 1,
@@ -60,6 +73,8 @@
     "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-cdf7d35dbde8.md",
     "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-volume_anomaly-93058ffcb396.md",
     "https://data.sec.gov/submissions/CIK0001321655.json",
-    "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
+    "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm",
+    "source_pltr_q1_2026_earnings",
+    "source_pltr_q2_2026_10q"
   ]
 }

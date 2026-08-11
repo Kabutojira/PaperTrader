@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_AGaZ5XbmRXg",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-11T13:40:10Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_AGaZ5XbmRXg",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "AGaZ5XbmRXg",
+    "video_title": "Burry's Flutter Stocks is a BUY! + Burry's Bets & Shorts",
+    "video_url": "https://www.youtube.com/watch?v=AGaZ5XbmRXg"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZRGTMMGDHZWVFKTYNG62PGV",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=AGaZ5XbmRXg"
+  ]
+}
