@@ -1,0 +1,25 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "agent result was written before completed change: data/runs/daily-20260811T134009Z/01KZ8BGD98T363E1NM8EPYT9TG/command_audit.json",
+    "commands_run does not exactly match deterministic CLI audit receipts",
+    "completed security research requires this run's comparable assessment"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZ8BGD98T363E1NM8EPYT9TG",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260811T134009Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
