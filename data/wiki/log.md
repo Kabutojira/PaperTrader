@@ -3150,3 +3150,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   valuation of USD 68.88/USD 108.79/USD 149.76. The probability-weighted USD 109.055 value remains
   deeply below market, changing the conclusion from Unrated / Watch to Strong Sell / Avoid while
   retaining allocation ineligibility and creating no strategy, signal, order, or paper trade.
+
+## 2026-08-11 — quick check — Palantir Technologies Class A common stock
+
+- Rechecked [[securities/security_bdc2f87dadf134760c3a|Palantir]] after the 4 August upper-Bollinger,
+  bullish-MACD, overbought-RSI and volume cluster. The USD 162.66 alert close followed a 21.05%
+  rise; by 10 August the close was USD 175.23, with RSI still overbought and price above the upper
+  band while the one-session MACD-cross and volume triggers were inactive.
+- The newly filed Q2 Form 10-Q materially strengthens the operating baseline: revenue grew 93%,
+  GAAP operating margin reached 47%, operating cash flow was USD 1.216 billion and cash plus
+  marketable securities reached USD 9.409 billion. Anduril-linked economics remain undisclosed.
+  The legacy two-case sensitivity is not scenario-complete, so Palantir is Unrated / Watch and
+  allocation-ineligible pending exactly one dependent full review; no strategy, signal, order or
+  paper trade was created.

@@ -1,0 +1,65 @@
+{
+  "entity_id": "security_bdc2f87dadf134760c3a",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYHW57101205S02R9SC1YWG7",
+    "changed_gate": "material_q2_operating_evidence_supersedes_baseline_and_requires_scenario_complete_valuation",
+    "current_market_data_as_of": "2026-08-11T07:58:31Z",
+    "current_market_data_date": "2026-08-10",
+    "current_source_price_hash": "a974d7b5910eb8837818a83b5b9fa82d744273bf27f1d7d7fc2b57b345c412b4",
+    "idea_ids": [
+      "idea_anduril_product_company_disruption"
+    ],
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "market_data_date": "2026-08-04",
+    "period_end": "2026-08-04",
+    "period_start": "2026-07-07",
+    "quick_check_operation_id": "01KZ8BGD98PKED1HFZEE390H75",
+    "research_reasons": [
+      {
+        "cause": "bollinger_above_upper",
+        "source_ref": "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7.md"
+      },
+      {
+        "cause": "macd_cross_above_signal",
+        "source_ref": "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba.md"
+      },
+      {
+        "cause": "rsi_overbought",
+        "source_ref": "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-cdf7d35dbde8.md"
+      },
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-volume_anomaly-93058ffcb396.md"
+      },
+      {
+        "cause": "material_q2_operating_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
+      },
+      {
+        "cause": "scenario_complete_valuation_required",
+        "source_ref": "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+      }
+    ],
+    "security_id": "security_bdc2f87dadf134760c3a",
+    "source_price_hash": "ad8a2a97c4bb28084f0693497b2e0bf1e7c5976fd93fe7ce40dc81f8861fea7a",
+    "trigger_types": [
+      "bollinger_above_upper",
+      "macd_cross_above_signal",
+      "rsi_overbought",
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Palantir after the 4 August price-alert cluster because Q2 evidence materially supersedes the baseline and the legacy two-case valuation is not scenario-complete.",
+  "operation_id": "01KZQYAY286JRATAH6EKE2E9AZ",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7.md",
+    "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba.md",
+    "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-cdf7d35dbde8.md",
+    "data/wiki/inbox/market-security_bdc2f87dadf134760c3a-volume_anomaly-93058ffcb396.md",
+    "https://data.sec.gov/submissions/CIK0001321655.json",
+    "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm"
+  ]
+}

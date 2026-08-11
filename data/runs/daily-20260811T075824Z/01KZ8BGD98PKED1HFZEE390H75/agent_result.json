@@ -1,0 +1,99 @@
+{
+  "operation_id": "01KZ8BGD98PKED1HFZEE390H75",
+  "status": "succeeded",
+  "summary": "Completed one bounded Palantir quick check for the merged 4 August upper-Bollinger, bullish-MACD, overbought-RSI and volume alerts. The alert close was USD 162.66 after a 21.05% rise; the fresh 10 August close was USD 175.23, with RSI still overbought and price above the upper band while the one-session MACD-cross and volume triggers were no longer active. The newly filed Q2 Form 10-Q materially supersedes the Q1 baseline: revenue grew 93% to USD 1.935 billion, GAAP operating margin reached 47%, operating cash flow was USD 1.216 billion and cash plus marketable securities reached USD 9.409 billion. These results strengthen the operating thesis but do not quantify Anduril-linked economics or make the legacy two-case valuation scenario-complete. The accepted schema-v2 assessment is Unrated / Watch, valuation-unsupported and allocation-ineligible pending full review. Exactly one dependent full security review, 01KZQYAY286JRATAH6EKE2E9AZ, was enqueued with all merged causes. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_pltr_q2_2026_10q",
+      "claim": "Palantir reported Q2 revenue of USD 1.935 billion, up 93% year over year; U.S. commercial revenue of USD 764 million, up 149%; U.S. government revenue of USD 809 million, up 90%; GAAP operating income of USD 912 million; operating cash flow of USD 1.216 billion; and USD 9.409 billion of cash, cash equivalents and marketable securities at June 30. Six-month stock compensation was USD 467 million and 2.403 billion common shares were outstanding at quarter end.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm",
+      "observed_at": "2026-08-11T08:10:54Z",
+      "source_hash": "a36c04dc261071a706cc84f0e94ed1bff7ce7745b73ac2af03a0e07118a5e741"
+    },
+    {
+      "source": "Palantir Q2 2026 earnings release filed with the SEC",
+      "claim": "Management raised full-year 2026 revenue guidance to USD 8.150-8.158 billion and adjusted free-cash-flow guidance to USD 4.5-4.7 billion, materially superseding the Q1 assumptions retained by the baseline review.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm",
+      "observed_at": "2026-08-11T08:10:54Z",
+      "source_hash": "9ad90a084c66f3334963eb6ac1c3daf7822f4cc139125e17bedcd22a2c1895b7"
+    },
+    {
+      "source": "PaperTrader deterministic market and indicator caches",
+      "claim": "The payload binds all four alerts to the exact 7 July-4 August period and source-price hash ad8a2a97c4bb28084f0693497b2e0bf1e7c5976fd93fe7ce40dc81f8861fea7a. The fresh cache records a 10 August USD 175.22999572753906 close, RSI 71.78712819 and upper Bollinger band USD 172.09047790; RSI-overbought and upper-band states remained active, while the one-session MACD-cross and volume-anomaly triggers were inactive.",
+      "observed_at": "2026-08-11T07:58:31Z",
+      "source_hash": "a974d7b5910eb8837818a83b5b9fa82d744273bf27f1d7d7fc2b57b345c412b4"
+    },
+    {
+      "source": "assessment_54c6074c7b88a0229617",
+      "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_07158fcafd843a6a8936, current page hash 63e85852b1ece838bc46d76b8814b90de37a2b5ace62113dc8fd89613aa9f7fd, fresh USD 175.23 mark and USD/EUR FX state. Deterministic normalization derives quality score 94, Unrated / Watch, unsupported research and allocation ineligibility under valuation_unsupported; no scenario values or buy-below price were invented.",
+      "observed_at": "2026-08-11T08:16:56Z"
+    },
+    {
+      "source": "data/operations/payloads/01KZQYAY286JRATAH6EKE2E9AZ.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, all four merged trigger types, exact source-price hash, current market hash, Q2 changed gate and the requirement to replace the legacy two-case sensitivity with scenario-complete research."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZQYAY286JRATAH6EKE2E9AZ.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/enqueue_full_research_request.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/security_upsert_request.json",
+    "data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/source_pltr_q2_2026_10q_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_bdc2f87dadf134760c3a.md"
+  ],
+  "operations_created": [
+    "01KZQYAY286JRATAH6EKE2E9AZ"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Palantir quick check completed: Q2 revenue grew 93% to USD 1.935 billion, GAAP operating margin reached 47% and operating cash flow was USD 1.216 billion, materially strengthening the Q1 operating baseline. The fresh USD 175.23 mark remains overbought and above the upper Bollinger band, while the legacy two-case sensitivity is not scenario-complete. PLTR is Unrated / Watch and allocation-ineligible pending exactly one dependent full review. No paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_bdc2f87dadf134760c3a",
+    "papertrader research source record --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/source_pltr_q2_2026_10q_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/daily-20260811T075824Z/01KZ8BGD98PKED1HFZEE390H75/enqueue_full_research_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_bdc2f87dadf134760c3a"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was running, claimed by daily-20260811T075824Z with a live lease, and routed sequentially to native llm-wiki plus papertrader-quick-check-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYHW57101205S02R9SC1YWG7 succeeded for the same immutable PLTR/XNAS/USD/equity identity within ten days at enqueue time.",
+      "Verified all merged upper-Bollinger, bullish-MACD, overbought-RSI and volume causes, exact 7 July-4 August period and canonical source-price hash; the 10 August cache row and its exact current source hash were used only for the fresh current assessment.",
+      "Fetched and hashed the current SEC submissions index, Q2 results exhibit and Q2 Form 10-Q; the Q2 filing source record was accepted through the project CLI and no source body was committed.",
+      "Verified assumptions: Q2 growth, profitability, cash conversion and liquidity strengthened; stock compensation, dilution, valuation risk and unquantified Anduril economics remain material; catalysts and invalidation remain substantively unchanged except that Q2 supersedes Q1 as the operating baseline.",
+      "Confirmed the alert cluster is earnings-backed momentum and entry risk rather than a validated buy zone: the fresh mark is 7.73% above the alert close, RSI and upper-band states remain active, and the one-session MACD-cross and volume triggers are inactive.",
+      "Confirmed assessment assessment_54c6074c7b88a0229617 is the sole immutable schema-v2 version for this operation, links its legacy predecessor and expected result path, matches page hash 63e85852b1ece838bc46d76b8814b90de37a2b5ace62113dc8fd89613aa9f7fd, and contains no invented scenario values.",
+      "Confirmed Q2 evidence materially changed the baseline and the prior two-case sensitivity cannot support a current decision, so exactly one dependent full security review was required and no strategy or signal was created directly.",
+      "Confirmed dependent operation 01KZQYAY286JRATAH6EKE2E9AZ contains this quick-check identity, all four merged causes, exact payload period, alert and current source-price hashes, Q2 changed gate, and depends on this operation.",
+      "Three immutable assessment request attempts were rejected without state changes for a non-current FX row, unsorted soft gaps and non-canonical soft-gap values; the fourth uniquely named corrected request was accepted and all four audited attempts are retained.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the fourteen canonical PaperTrader CLI invocations listed in commands_run, including the three documented non-mutating rejected assessment requests.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}
