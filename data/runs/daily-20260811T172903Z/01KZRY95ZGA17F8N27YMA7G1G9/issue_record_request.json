@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Intuitive Surgical full assessment blocked by same-run provenance ambiguity",
+  "description": "The required schema-v2 assessment for security_1f9cce545ede94cd6349 was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation 01KZRY95ZG3FGA7NA2RS8C0Q40 and the current security_research operation 01KZRY95ZGA17F8N27YMA7G1G9 claimed by run daily-20260811T172903Z and cannot select a unique source operation. The completed 25%/50%/25% earnings-multiple scenarios were USD 243.96/USD 336.59/USD 436.81 versus the USD 393.38 mark, but they cannot become authoritative without an immutable predecessor-linked assessment. The security page was restored to the prior hash-aligned quick-check state, the structured security conclusion was restored while retaining an advanced audit timestamp, no idea or strategy follow-up was enqueued, and the operation must fail closed until the controller schedules the full review under a distinct run or deterministic provenance selection is repaired.",
+  "owner": "controller",
+  "related_run_id": "daily-20260811T172903Z",
+  "related_operation_id": "01KZRY95ZGA17F8N27YMA7G1G9"
+}

@@ -18,6 +18,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | error | **issue_9f54455539f07576361c** — CrowdStrike full assessment rejected by canonical market identity | 2026-08-10T23:08:16Z | controller | 01KZPY8FCGVBRGTPP66WJS5JEC |
 | error | **issue_a32ef908d1aab8f839d5** — Hermes operation validation failed: 01KZ8BGD98FSXHG4KQ8C6MGNW1 | 2026-08-10T09:00:48Z | controller | 01KZ8BGD98FSXHG4KQ8C6MGNW1 |
+| error | **issue_a57d145a15316065ef4b** — Intuitive Surgical full assessment blocked by same-run provenance ambiguity | 2026-08-11T17:50:40Z | controller | 01KZRY95ZGA17F8N27YMA7G1G9 |
 | error | **issue_b3932acdc72f52e4e4f2** — Local harness operation validation failed: 01KYVJ62SRK1101MYYCE7256NF | 2026-08-06T18:26:55Z | controller | 01KYVJ62SRK1101MYYCE7256NF |
 | error | **issue_b75a39226dfa72cb49f9** — Hermes operation validation failed: 01KZ8BGD98WHFV7P2DCWX2WDQN | 2026-08-11T16:10:57Z | controller | 01KZ8BGD98WHFV7P2DCWX2WDQN |
 | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |

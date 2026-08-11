@@ -1,0 +1,18 @@
+{
+  "source_id": "source_isrg_q2_2026_sec_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+  "source_type": "regulator-filing",
+  "title": "Intuitive Surgical Q2 2026 earnings release (SEC Exhibit 99.1)",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5",
+  "related_entity_ids": "idea_precision_biology_healthcare_automation|security_1f9cce545ede94cd6349",
+  "checked_at": "2026-08-11T17:42:03Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 2026 combined procedures grew about 16%, revenue grew 19%, GAAP operating income grew 31%, and cash plus investments totaled USD 8.63 billion.",
+  "summary": "The unchanged SEC-filed Q2 release continues to support procedure growth, recurring instruments and accessories revenue, operating leverage and balance-sheet strength.",
+  "run_id": "daily-20260811T172903Z"
+}

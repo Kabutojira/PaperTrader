@@ -1,0 +1,95 @@
+{
+  "operation_id": "01KZRY95ZGA17F8N27YMA7G1G9",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after exactly one bounded Intuitive Surgical full security review. Current SEC primary evidence supports durable procedure growth, recurring revenue, operating leverage, a debt-free financial profile and high liquidity, while a completed 25%/50%/25% mature-compounder earnings-multiple analysis produced USD 243.96/USD 336.59/USD 436.81 bear/base/bull values versus the USD 393.38 mark. After correcting a request-field validation error in a new immutable request, the deterministic assessment applier rejected the assessment before state changed because both the completed quick check and this full review have the same security and run identity, making source-operation provenance ambiguous. The security page and conclusions were restored to the prior hash-aligned quick-check state, the structured security summary was restored while retaining an advanced audit timestamp, issue issue_a57d145a15316065ef4b was recorded, and no idea or strategy follow-up was enqueued. No signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "Intuitive Surgical Q2 2026 Form 10-Q",
+      "claim": "The filing reports first-half revenue of USD 5.663 billion, attributable net income of USD 1.640 billion, 358.5 million diluted shares, USD 419 million of share-based compensation, USD 1.973 billion of operating cash flow and USD 8.626 billion of cash plus investments; the balance sheet lists no financial debt.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000058/isrg-20260630.htm",
+      "observed_at": "2026-08-11T17:42:03Z",
+      "source_hash": "768a40ff59920552aac8af395754a5b265d02eccad99f2dbc842cc15285913b3"
+    },
+    {
+      "source": "Intuitive Surgical Q2 2026 earnings release",
+      "claim": "The SEC-filed issuer release reports 16% combined procedure growth, 15% da Vinci procedure growth, 36% Ion procedure growth, a 12% larger da Vinci installed base, an 18% increase in instruments and accessories revenue, 19% revenue growth and 31% GAAP operating-income growth.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-08-11T17:42:03Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "Intuitive Surgical SEC submissions index",
+      "claim": "The SEC index identifies the 21 July 2026 Form 10-Q and 16 July earnings Form 8-K as the latest periodic financial evidence through 11 August; later entries are ownership reports rather than newer operating results.",
+      "url": "https://data.sec.gov/submissions/CIK0001035267.json",
+      "observed_at": "2026-08-11T17:42:03Z",
+      "source_hash": "6666ed1ba2b8d6fb92e6b2603fd2028e08a20f457f64f19f73ce0edac8a5ee5e"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The corrected assessment upsert exited 2 with 'assessment source operation is ambiguous for this run' and changed neither security_assessments.csv nor security_assessment_history.csv because operations 01KZ8BGD98WHFV7P2DCWX2WDQN and 01KZRY95ZGA17F8N27YMA7G1G9 are both security-review operations for this security claimed by daily-20260811T172903Z."
+    },
+    {
+      "source": "PaperTrader mandatory security context",
+      "claim": "After restoration, current assessment assessment_142cb893bce67464e477 remains schema version 2, predecessor-linked to assessment_9404a9d63d6d67925e74 and hash-aligned to current page hash 7aed5844b41164eb79ab561acde42368dd69b6116b2bcd82bfa89e85eb4e0324."
+    },
+    {
+      "source": "PaperTrader issue receipt",
+      "claim": "Issue issue_a57d145a15316065ef4b records the same-run assessment-provenance failure for deterministic controller repair or rescheduling."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/assessment_upsert_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/issue_record_correction_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/issue_record_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/security_restore_after_assessment_failure_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/security_upsert_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_10q_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_exhibit_refresh_request.json",
+    "data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_sec_submissions_20260811_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_a57d145a15316065ef4b"
+  ],
+  "daily_report_items": [
+    "Intuitive Surgical's full review failed closed because the deterministic assessment applier could not choose between the same-run quick check and full review as the immutable source operation. Q2 primary evidence supports durable procedure growth, recurring revenue and balance-sheet strength, but the completed USD 243.96/USD 336.59/USD 436.81 scenario analysis remained below the USD 393.38 mark in its weighted and base outcomes. The prior hash-aligned Unrated / Watch assessment remains authoritative, issue issue_a57d145a15316065ef4b was recorded, and no follow-up or paper-trading state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1f9cce545ede94cd6349",
+    "papertrader research source record --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_exhibit_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_sec_submissions_20260811_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/assessment_upsert_retry01_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/security_restore_after_assessment_failure_request.json",
+    "papertrader issue record --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader research security-context --security-id security_1f9cce545ede94cd6349",
+    "papertrader issue record --request data/runs/daily-20260811T172903Z/01KZRY95ZGA17F8N27YMA7G1G9/issue_record_correction_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260811T172903Z with a live lease, validated payload, immutable ISRG/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after restoration; the prior quick-check assessment remains predecessor-linked and page-hash-aligned.",
+      "Retrieved, hashed and registered three current SEC primary-source records; the retained Q2 exhibit hash was unchanged, the Q2 Form 10-Q and regulator index were registered, and the index confirms no newer periodic financial result.",
+      "Prepared one scenario-complete mature-compounder earnings-multiple assessment; after one field-level correction in a new immutable request, the deterministic applier rejected it before any assessment path changed because same-security quick and full reviews share this run identity.",
+      "Restored the security page to its exact prior hash and restored the structured security conclusion; only the audit research timestamp advanced because deterministic state forbids an older timestamp.",
+      "No idea-research or strategy follow-up was enqueued because no full assessment was accepted.",
+      "Strict schema validation, strict wiki lint, strict integrity, strict portfolio reconciliation and queue validation all passed after issue issue_a57d145a15316065ef4b was recorded.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1f9cce545ede94cd6349",
+  "issuer_id": "issuer_98d3ab01583161cae27f",
+  "company_name": "Intuitive Surgical, Inc.",
+  "instrument_name": "Intuitive Surgical, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "ISRG",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ISRG",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Medical Instruments & Supplies",
+  "status": "watching",
+  "watchlist_reason": "Strong procedure-linked recurring economics merit monitoring, but the scenario-complete expected and base returns are negative at the current mark.",
+  "research_summary": "Q2 operating evidence remains strong, but the scenario-complete weighted value is below market; Sell / Avoid with no paper trade.",
+  "research_page": "data/wiki/securities/security_1f9cce545ede94cd6349.md",
+  "last_research_at": "2026-08-11T17:42:03Z",
+  "next_review_at": "2026-09-10T17:42:03Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000058/isrg-20260630.htm"
+}
