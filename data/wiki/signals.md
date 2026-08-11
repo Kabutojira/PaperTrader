@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-10"
-updated: "2026-08-10"
+created: "2026-08-11"
+updated: "2026-08-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a3337119e6d1d76c1a11"
-as_of: "2026-08-10T23:11:04Z"
+snapshot_id: "decision_bb549ef453754d96176a"
+as_of: "2026-08-11T08:32:26Z"
 ---
 
 # Signals
 
-**As of `2026-08-10T23:11:04Z`**
+**As of `2026-08-11T08:32:26Z`**
 
 ## Actionable trade signals
 
@@ -61,6 +61,15 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
 
+### [RKLB — Rocket Lab Corporation](securities/security_7ca095d63423c55a90e3)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-10`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
 ### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
 
 **Research alert — not a trade signal**
@@ -76,8 +85,8 @@ No pending orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-10`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 
@@ -85,8 +94,8 @@ No pending orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-10`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
 
@@ -214,29 +223,20 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### PLS.AX — PLS Group Limited
+### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
+- Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-10`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-08-10`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [WTI — W&amp;T Offshore, Inc.](securities/security_61567714298b9563d1a9)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-10`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.

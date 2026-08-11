@@ -4,25 +4,25 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-10"
-updated: "2026-08-10"
+created: "2026-08-11"
+updated: "2026-08-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a3337119e6d1d76c1a11"
-as_of: "2026-08-10T23:11:04Z"
+snapshot_id: "decision_bb549ef453754d96176a"
+as_of: "2026-08-11T08:32:26Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-10T23:11:04Z`
+**As of:** `2026-08-11T08:32:26Z`
 **Investment data:** Degraded — review investment data gaps
-**Operations:** Attention required
+**Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
 
 ## Coverage
 
 - Assessments: 68/68
-- Fresh-evidence assessments: 68/68
+- Fresh-evidence assessments: 67/68
 - Relationship reviews: 25/68
 - Accepted relationships: 22
 - Ready or active strategies: 0
@@ -30,10 +30,14 @@ as_of: "2026-08-10T23:11:04Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 338
+- Research backlog: 341
 - Last successful daily run: 2026-08-10
 
 ## Current issues by investment impact
+
+### Blocks Action
+
+- Error **PLTR — Palantir Technologies Inc.: Palantir full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_bdc2f87dadf134760c3a|PLTR]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_bdc2f87dadf134760c3a|Quick check research for PLTR on 2026-08-11]] and the current security_research operation [[securities/security_bdc2f87dadf134760c3a|Security research for PLTR on 2026-08-11]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed scenario research could not be accepted without an immutable predecessor-linked assessment.
 
 ### Affects Candidate
 
@@ -145,7 +149,7 @@ as_of: "2026-08-10T23:11:04Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 338 active operations.
+Showing 20 of 341 active operations.
 
 <details><summary>Active research work</summary>
 

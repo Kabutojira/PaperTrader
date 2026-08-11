@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-10"
+created: "2026-08-11"
 updated: "2026-08-11"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a3337119e6d1d76c1a11"
-as_of: "2026-08-10T23:11:04Z"
+snapshot_id: "decision_bb549ef453754d96176a"
+as_of: "2026-08-11T08:32:26Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **116**
+- Immutable assessment versions: **118**
 - Securities with retained revisions: **68**
 
 ## Candidate
@@ -167,6 +167,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [RIO — Bollinger above upper](inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-f2f8daa71933)
 - [RKLB — Bollinger above upper](inbox/market-security_7ca095d63423c55a90e3-bollinger_above_upper-26b256140562)
 - [RKLB — MACD cross above signal](inbox/market-security_7ca095d63423c55a90e3-macd_cross_above_signal-88ab051849ae)
+- [RKLB — Volume anomaly](inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966)
 - [RTX — Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-7a832eb2d5ae)
 - [RTX — Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-b275f066a05b)
 - [RTX — Bollinger above upper](inbox/market-security_59304f90c440def31dc5-bollinger_above_upper-c288bb87ff70)
@@ -246,6 +247,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-08](daily-reports/daily-report_20260808)
 - [PaperTrader daily report — 2026-08-09](daily-reports/daily-report_20260809)
 - [PaperTrader daily report — 2026-08-10](daily-reports/daily-report_20260810)
+- [PaperTrader daily report — 2026-08-11](daily-reports/daily-report_20260811)
 
 ## Idea
 
@@ -425,7 +427,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966|RKLB — Volume anomaly]]

@@ -3140,6 +3140,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966]] as `ingest`: A new material volume-anomaly transition accompanies a 4.31% one-month return and merits durable review.
 
+- Published investor decision snapshot `decision_bb549ef453754d96176a`.
+
+- Generated canonical [[daily-reports/daily-report_20260811]] for run `daily-20260811T075824Z`.
+
 ## 2026-08-11 — security research — CrowdStrike Holdings Class A common stock
 
 - Revalidated [[securities/security_8472507d7d320aa388a7|CrowdStrike]] after the 4 August bullish-
