@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-11"
-updated: "2026-08-11"
+created: "2026-08-12"
+updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_49571b86b48ab1bccf76"
-as_of: "2026-08-11T17:53:00Z"
+snapshot_id: "decision_6057cff497c139de2a3a"
+as_of: "2026-08-12T00:40:50Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-11T17:53:00Z`
+**As of:** `2026-08-12T00:40:50Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,14 +30,15 @@ as_of: "2026-08-11T17:53:00Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 342
+- Research backlog: 348
 - Last successful daily run: 2026-08-11
 
 ## Current issues by investment impact
 
 ### Blocks Action
 
-- Error **ISRG — Intuitive Surgical, Inc.: Intuitive Surgical full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_1f9cce545ede94cd6349|ISRG]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-11]] and the current security_research operation [[securities/security_1f9cce545ede94cd6349|Security research for ISRG on 2026-08-11]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed 25%/50%/25% earnings-multiple scenarios were USD 243.96/USD 336.59/USD 436.81 versus the US
+- Error **RXRX — Recursion Pharmaceuticals, Inc.: Recursion full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_ed7d5b616a196969c815|RXRX]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-12]] and current security_research operation [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260812|Daily report for 2026-08-12]] and cannot select a unique source operation. Current Q2 SEC and ClinicalTrials.gov evidence supports active development but cannot bound a risk-adjusted NPV. 
+- Error **ISRG — Intuitive Surgical, Inc.: Intuitive Surgical full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_1f9cce545ede94cd6349|ISRG]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-11]] and the current security_research operation [[securities/security_1f9cce545ede94cd6349|Security research for ISRG on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed 25%/50%/25% earnings-multiple scenarios were USD 243.96/USD 336.59/USD 436.81 versus the US
 - Error **PLTR — Palantir Technologies Inc.: Palantir full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_bdc2f87dadf134760c3a|PLTR]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_bdc2f87dadf134760c3a|Quick check research for PLTR on 2026-08-11]] and the current security_research operation [[securities/security_bdc2f87dadf134760c3a|Security research for PLTR on 2026-08-11]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed scenario research could not be accepted without an immutable predecessor-linked assessment.
 
 ### Affects Candidate
@@ -152,7 +153,7 @@ as_of: "2026-08-11T17:53:00Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 342 active operations.
+Showing 20 of 348 active operations.
 
 <details><summary>Active research work</summary>
 
