@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_iyY4mp_Wwf8",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@thelimitingfactor",
+    "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+    "channel_url": "https://www.youtube.com/channel/UCIFn7ONIJHyC-lMnb7Fm_jw/videos",
+    "discovered_at": "2026-08-12T15:16:55Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_iyY4mp_Wwf8",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "iyY4mp_Wwf8",
+    "video_title": "Tesla's Plasma Treatment Patent for Wet and Sticky Electrodes",
+    "video_url": "https://www.youtube.com/watch?v=iyY4mp_Wwf8"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZV8RGJRPKZFXGYTESBWN646",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=iyY4mp_Wwf8"
+  ]
+}
