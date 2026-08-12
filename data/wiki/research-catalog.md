@@ -7,8 +7,8 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_36d649fef9a7502708e8"
-as_of: "2026-08-12T02:05:55Z"
+snapshot_id: "decision_089c32bc41cbb511b776"
+as_of: "2026-08-12T08:51:57Z"
 ---
 
 # Research catalog
@@ -23,6 +23,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 ## Candidate
 
 - [ABBNY — MACD cross above signal](inbox/market-security_c120e9f26ebb6159adf9-macd_cross_above_signal-9dc4f63596a7)
+- [ABCL — Bollinger above upper](inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-7817690a642d)
 - [ABCL — Bollinger above upper](inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-e0a7bae0fbcf)
 - [ABCL — MACD cross above signal](inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee)
 - [ABCL — RSI overbought](inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-3c6cf43238c6)
@@ -113,6 +114,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [LH — RSI overbought](inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-f8935339ca1b)
 - [LH — Volume anomaly](inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-30d19f036e9a)
 - [LUNR — Bollinger above upper](inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-9aac1fea23fe)
+- [LUNR — Bollinger above upper](inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-c36a6e20bb47)
 - [LUNR — RSI oversold](inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa)
 - [LUNR — Volume anomaly](inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-a1cc3825b073)
 - [META — Bollinger below lower](inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796)
@@ -146,6 +148,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PL — MACD cross above signal](inbox/market-security_97f38b2cb2d5ef127f5a-macd_cross_above_signal-45073f63c222)
 - [PL — RSI oversold](inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484)
+- [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-a75c5f2b1699)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7)
 - [PLTR — MACD cross above signal](inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba)
@@ -436,9 +439,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-7817690a642d|ABCL — Bollinger above upper]]
-- [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960|PLS.AX — Bollinger above upper]]
-- [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-c36a6e20bb47|LUNR — Bollinger above upper]]
