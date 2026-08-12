@@ -3273,6 +3273,18 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260812]] for run `daily-20260812T151654Z`.
 
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-66b3fa4f4604]] (66b3fa4f4604).
+
+- Created candidate packet [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_above_upper-2277d0995769]] (2277d0995769).
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-e8c3cad66c33]] (e8c3cad66c33).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-ab2a64f79cf1]] (ab2a64f79cf1).
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-4d2ca04277e3]] (4d2ca04277e3).
+
+- Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-rsi_overbought-582f73bc089c]] (582f73bc089c).
+
 ## 2026-08-12 — security research — Intuitive Surgical, Inc. common stock
 
 - Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with unchanged Q2
