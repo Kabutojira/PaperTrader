@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KZ9ZJVERYZKAVXNTF2NZCECM",
+  "status": "blocked",
+  "summary": "Quick-check blocked because the immutable payload source_price_hash does not match the current deterministic market-data identity for security_6cf75bd0ec0aa2a20148; no assessment or wiki state was changed and no follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "data/operations/payloads/01KZ9ZJVERYZKAVXNTF2NZCECM.json",
+      "claim": "The payload requires source_price_hash 9facb698cf75a5f6ee94966b77920922545557b565572613841d563961a6eb9c for market date 2026-08-05.",
+      "observed_at": "2026-08-12T20:44:58Z"
+    },
+    {
+      "source": "data/market/indicators.csv",
+      "claim": "The current deterministic indicator row for security_6cf75bd0ec0aa2a20148 is as of 2026-08-12 and carries source_price_hash 603ff2ebd2ed0107c8d2967cbd01227db8dbca99a9fb1cd6c2c2a039d61bb6c7, which conflicts with the payload identity.",
+      "observed_at": "2026-08-12T20:35:16Z"
+    },
+    {
+      "source": "data/market/latest.csv",
+      "claim": "Current deterministic market data for TWST is dated 2026-08-12 with adjusted close USD 125.20999908447266.",
+      "observed_at": "2026-08-12T20:35:16Z"
+    },
+    {
+      "source": "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/agent_result.json",
+      "claim": "The bound baseline operation completed successfully for security_6cf75bd0ec0aa2a20148 on 2026-08-05.",
+      "observed_at": "2026-08-05T19:23:49Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "TWST quick-check blocked: the immutable requested price identity is stale or conflicting with current deterministic market data; no assessment or trading state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_6cf75bd0ec0aa2a20148",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory security-context receipt succeeded before assessment state was consumed.",
+      "Baseline result identity and successful status were verified.",
+      "Payload source_price_hash was compared with the current deterministic market-data identity and failed closed on mismatch.",
+      "No assessment, security, wiki, accounting, allocation, signal, order, execution, cash, portfolio, or performance state was changed.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio]."
+    ]
+  }
+}
