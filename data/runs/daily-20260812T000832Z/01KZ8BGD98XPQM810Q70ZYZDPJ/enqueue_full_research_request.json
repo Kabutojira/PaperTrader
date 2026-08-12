@@ -1,0 +1,49 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_ed7d5b616a196969c815",
+  "dedupe_key": "security_research:security_ed7d5b616a196969c815:quick-check-q2-filing:2026-08-12",
+  "prompt": "Fully reassess Recursion Pharmaceuticals after the August MACD alert and new Q2 filing materially changed the operating, pipeline and financing evidence.",
+  "inputs": {
+    "security_id": "security_ed7d5b616a196969c815",
+    "quick_check_operation_id": "01KZ8BGD98XPQM810Q70ZYZDPJ",
+    "baseline_operation_id": "01KYHW5710ENZ9WVA185W24RGA",
+    "changed_gate": "new_q2_2026_periodic_filing_materially_changes_operating_pipeline_and_financing_evidence",
+    "full_research_requested": true,
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ],
+    "market_data_date": "2026-08-04",
+    "market_data_as_of": "2026-08-05T06:59:21Z",
+    "period_start": "2026-07-07",
+    "period_end": "2026-08-04",
+    "source_price_hash": "4f57365e34659c0ce684a43729146a85c41790790b4c8dff065b3dd2af0be0ee",
+    "current_market_data_date": "2026-08-11",
+    "current_market_data_as_of": "2026-08-12T00:08:39Z",
+    "current_source_price_hash": "a9c6494b617ea91f088aa74702ecedfb0bd0cf75525d0587c31ca3d0aaf28093",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal_entered_after_material_period_decline",
+        "source_ref": "data/wiki/inbox/market-security_ed7d5b616a196969c815-macd_cross_above_signal-02a3c62e94ad.md"
+      },
+      {
+        "cause": "new_q2_filing_supersedes_q1_baseline_and_requires_scenario_complete_reassessment",
+        "source_ref": "source_rxrx_q2_2026_10q"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZ8BGD98XPQM810Q70ZYZDPJ",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZ8BGD98XPQM810Q70ZYZDPJ"
+  ],
+  "not_before": "now",
+  "deadline": "2026-08-15T12:00:00Z",
+  "source_refs": [
+    "data/wiki/inbox/market-security_ed7d5b616a196969c815-macd_cross_above_signal-02a3c62e94ad.md",
+    "data/wiki/securities/security_ed7d5b616a196969c815.md",
+    "source_rxrx_q2_2026_10q"
+  ],
+  "max_attempts": 3
+}

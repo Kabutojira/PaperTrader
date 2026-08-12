@@ -1,0 +1,101 @@
+{
+  "operation_id": "01KZ8BGD98XPQM810Q70ZYZDPJ",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Recursion Pharmaceuticals quick check for the 2026-08-04 bullish-MACD cross. RXRX fell 13.8% over the alert period to USD 3.31 and closed at USD 3.35 on August 11 with MACD still above signal, but the one-session cross is not an operating catalyst or canonical buy signal. The new Q2 Form 10-Q materially supersedes the Q1 baseline: cash including restricted cash fell to USD 556.8 million, six-month operating cash use was USD 187.0 million, REC-7735 received IND clearance, Genentech advanced one target, expense guidance improved, and likely additional capital and dilution remain material. The accepted schema-v2 assessment is Unrated / Watch, valuation-unsupported and allocation-ineligible with no canonical buy zone. Exactly one dependent full security review, 01KZSNRXMRC7GYT2RKSC8ZWB6S, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "evidence": [
+    {
+      "source": "PaperTrader deterministic 2026-08-04 alert payload and candidate packet",
+      "claim": "The immutable payload binds macd_cross_above_signal to the exact 2026-07-07 through 2026-08-04 period, a USD 3.309999942779541 adjusted close, a 13.80208289677586660529871378% period decline and canonical source-price hash 4f57365e34659c0ce684a43729146a85c41790790b4c8dff065b3dd2af0be0ee.",
+      "observed_at": "2026-08-05T06:59:21Z",
+      "source_hash": "4f57365e34659c0ce684a43729146a85c41790790b4c8dff065b3dd2af0be0ee"
+    },
+    {
+      "source": "PaperTrader current deterministic market and indicator caches",
+      "claim": "The 2026-08-11 adjusted close was USD 3.3499999046325684. MACD 0.01823706 remained above signal 0.01208458, while the one-session cross itself was no longer the current transition; the current canonical indicator source-price hash is a9c6494b617ea91f088aa74702ecedfb0bd0cf75525d0587c31ca3d0aaf28093.",
+      "observed_at": "2026-08-12T00:08:39Z",
+      "source_hash": "a9c6494b617ea91f088aa74702ecedfb0bd0cf75525d0587c31ca3d0aaf28093"
+    },
+    {
+      "source": "source_rxrx_q2_2026_10q",
+      "claim": "The new Q2 Form 10-Q reports USD 545.7 million of cash and equivalents, USD 556.8 million including restricted cash, USD 187.0 million of six-month operating cash use, a USD 131.0 million Q2 net loss, 534.1 million shares outstanding at June 30 and continued expectations of substantial losses and likely additional capital.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000098/rxrx-20260630.htm",
+      "observed_at": "2026-08-12T00:22:32Z",
+      "source_hash": "38a03be58b9c8235630fdb9b31949970aa2dac35af98e1f158940a55b8051fea"
+    },
+    {
+      "source": "Recursion Q2 2026 SEC-filed results exhibit",
+      "claim": "The SEC-filed results exhibit reports REC-7735 IND clearance, a first Genentech neuroscience target advancing into joint early discovery, November timing for additional REC-4881 Phase 2 data, reduced 2026 cash operating-expense guidance below USD 375 million and unchanged early-2028 runway guidance without additional financing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm",
+      "observed_at": "2026-08-12T00:22:32Z",
+      "source_hash": "2cb5975ba5149d213dc461133e84d53d409ebbfb8a243967f18c66408644f614"
+    },
+    {
+      "source": "assessment_5a14b66af3e0987a219e",
+      "claim": "The deterministic applier linked the new schema-v2 assessment to legacy predecessor assessment_b2dd1192ea1d1c191a2d and page hash dbd9965723d4be2169ba8ba0339cdb251a6200dca45f045749c46a5d5b97ebef. It accepted the fresh USD 3.3499999046325684 mark, unsupported biotechnology-binary valuation with no scenario values or buy-below price, quality score 58, Unrated / Watch disposition, complete relationship frontier and allocation ineligibility under valuation_unsupported.",
+      "observed_at": "2026-08-12T00:25:25Z",
+      "source_hash": "dbd9965723d4be2169ba8ba0339cdb251a6200dca45f045749c46a5d5b97ebef"
+    },
+    {
+      "source": "data/operations/payloads/01KZSNRXMRC7GYT2RKSC8ZWB6S.json",
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, the exact MACD alert period and source-price hash, the fresh current market hash, the new-Q2-filing changed gate and full_research_requested=true."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZSNRXMRC7GYT2RKSC8ZWB6S.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/enqueue_full_research_request.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/security_upsert_request.json",
+    "data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/source_rxrx_q2_2026_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ed7d5b616a196969c815.md"
+  ],
+  "operations_created": [
+    "01KZSNRXMRC7GYT2RKSC8ZWB6S"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Recursion Pharmaceuticals' August 4 bullish-MACD cross followed a 13.8% period decline, but the new Q2 filing—not momentum—is the material change: pipeline milestones advanced and expense guidance improved while losses, cash consumption, capital needs, dilution and unsupported valuation persist. RXRX remains Unrated / Watch and allocation-ineligible pending exactly one dependent full review, with no paper trade."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/source_rxrx_q2_2026_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/daily-20260812T000832Z/01KZ8BGD98XPQM810Q70ZYZDPJ/enqueue_full_research_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the single running quick_check_research row, daily-20260812T000832Z claim, live lease, immutable RXRX/XNAS/USD/equity identity, successful same-security baseline result within ten days at enqueue time, and native/controller/operation preflight identities before mutation.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the current legacy assessment, latest successful baseline result, immutable security identity, page hash, retained Q1 source, two accepted relationships and two linked ideas.",
+      "Matched the sole payload trigger, exact 2026-07-07 through 2026-08-04 period, USD 3.309999942779541 alert mark and canonical payload source-price hash 4f57365e34659c0ce684a43729146a85c41790790b4c8dff065b3dd2af0be0ee to the deterministic candidate packet and price cache.",
+      "Confirmed current canonical market state at 2026-08-12T00:08:39Z: 2026-08-11 USD 3.3499999046325684 mark, MACD above signal and current source-price hash a9c6494b617ea91f088aa74702ecedfb0bd0cf75525d0587c31ca3d0aaf28093.",
+      "Downloaded and hashed the new SEC-filed Q2 Form 10-Q and related results exhibit; the SEC submissions index identifies the August 5 Form 10-Q and results Form 8-K as later periodic operating evidence than the Q1 baseline.",
+      "Confirmed no supportable valuation or canonical buy zone was newly reached. Escalation is required because the new Q2 filing materially changes pipeline, cash-burn, share-count and financing evidence while the biotechnology-binary valuation remains unsupported.",
+      "Confirmed exactly one dependent full-review payload, 01KZSNRXMRC7GYT2RKSC8ZWB6S, contains this quick-check identity, baseline identity, every payload trigger cause, exact alert period and source-price hash, fresh current market hash, the new-Q2-filing changed gate and full_research_requested=true.",
+      "The second audited security-context receipt confirmed immutable assessment assessment_5a14b66af3e0987a219e, predecessor assessment_b2dd1192ea1d1c191a2d, schema version 2, current page-hash identity, fresh source and market/FX references, complete relationship frontier, Unrated / Watch disposition, valuation-unsupported blocker and no invented scenario values or buy zone.",
+      "Three immutable assessment requests failed without state changes while canonical FX and soft-gap values were corrected in uniquely named request files; the fourth request succeeded, and all four receipts remain represented exactly in command_audit.json and commands_run.",
+      "Strict schema validation returned OK [schema]. Queue validation returned OK [queue]. Strict repository integrity returned OK [integrity]. Strict wiki lint returned OK [wiki]. Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the fourteen canonical project CLI invocations listed in commands_run, in the same order; all final verification receipts and state-changing receipts returned exit code zero.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, fill, cash, portfolio, performance, accounting-ledger, raw-source or other security-page path changed; no issue was recorded and no operation was delegated, claimed, completed or otherwise processed."
+    ]
+  }
+}

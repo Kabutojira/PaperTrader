@@ -3243,3 +3243,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   mature-compounder valuation of USD 243.96/USD 336.59/USD 436.81. The probability-weighted USD
   338.49 value is 15.6% below market, changing the conclusion from Unrated / Watch to Sell / Avoid
   while retaining allocation ineligibility and creating no strategy, signal, order or paper trade.
+
+## 2026-08-12 — quick check — Recursion Pharmaceuticals Class A common stock
+
+- Rechecked [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]] after the
+  4 August bullish-MACD cross. RXRX had fallen 13.8% over the alert period to USD 3.31; the 11 August
+  close was USD 3.35 with MACD still above signal, but the one-session cross is not an operating
+  catalyst or canonical buy signal.
+- The new Q2 Form 10-Q materially supersedes the Q1 baseline: cash including restricted cash fell to
+  USD 556.8 million, six-month operating cash use was USD 187.0 million, REC-7735 received IND
+  clearance, Genentech advanced one target, expense guidance improved, and likely additional capital
+  and dilution remain material. Valuation remains unsupported, so RXRX is Unrated / Watch and
+  allocation-ineligible pending exactly one dependent full review; no strategy, signal, order or
+  paper trade was created.
