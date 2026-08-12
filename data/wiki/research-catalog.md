@@ -436,3 +436,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-bollinger_above_upper-7817690a642d|ABCL — Bollinger above upper]]
+- [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960|PLS.AX — Bollinger above upper]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-c36a6e20bb47|LUNR — Bollinger above upper]]
