@@ -2,13 +2,40 @@
   "entity_id": "security_6cf75bd0ec0aa2a20148",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-05T19:16:05Z",
     "baseline_completed_at": "2026-08-05T19:23:49Z",
     "baseline_operation_id": "01KYPB250GCWY1ZB0GD3QC2DBX",
     "baseline_result_path": "data/runs/daily-20260805T182233Z/01KYPB250GCWY1ZB0GD3QC2DBX/agent_result.json",
+    "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-05T22:09:27Z",
     "market_data_date": "2026-08-05",
     "period_end": "2026-08-05",
     "period_start": "2026-07-08",
+    "research_page": "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "quick_check_research:security_6cf75bd0ec0aa2a20148:76bc8a04a18b2ca56912:2026-08-05",
+        "observed_at": "2026-08-05T22:09:27Z",
+        "prompt": "Quick-check security_6cf75bd0ec0aa2a20148 after price-action alerts: bollinger_above_upper, rsi_overbought, volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-4bdd7687554e.md",
+          "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-2df36a4ac7b5.md",
+          "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_6cf75bd0ec0aa2a20148:allocation-maintenance:2026-08-05T19:16:05Z",
+        "observed_at": "2026-08-12T20:35:16Z",
+        "prompt": "Revalidate security_6cf75bd0ec0aa2a20148 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_twst_q3_2026_10q",
+          "source_twst_q3_2026_results"
+        ]
+      }
+    ],
     "security_id": "security_6cf75bd0ec0aa2a20148",
     "source_price_hash": "9facb698cf75a5f6ee94966b77920922545557b565572613841d563961a6eb9c",
     "trigger_types": [
@@ -17,13 +44,15 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Quick-check security_6cf75bd0ec0aa2a20148 after price-action alerts: bollinger_above_upper, rsi_overbought, volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+  "objective": "Quick-check security_6cf75bd0ec0aa2a20148 after price-action alerts: bollinger_above_upper, rsi_overbought, volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_6cf75bd0ec0aa2a20148 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZ9ZJVERYZKAVXNTF2NZCECM",
   "operation_type": "quick_check_research",
   "payload_version": 1,
   "source_refs": [
     "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-4bdd7687554e.md",
     "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-2df36a4ac7b5.md",
-    "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123.md"
+    "data/wiki/inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ad4f57619123.md",
+    "source_twst_q3_2026_10q",
+    "source_twst_q3_2026_results"
   ]
 }

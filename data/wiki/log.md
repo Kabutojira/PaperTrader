@@ -3293,6 +3293,38 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260812]] for run `daily-20260812T174806Z`.
 
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-2d35c037c8ed]] (2d35c037c8ed).
+
+- Created candidate packet [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_below_signal-1d02af23d7f8]] (1d02af23d7f8).
+
+- Created candidate packet [[inbox/market-security_47a0b06f6c6c478d7c1e-bollinger_above_upper-cc865e2c88cc]] (cc865e2c88cc).
+
+- Created candidate packet [[inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7]] (851a40fcbec7).
+
+- Classified [[inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7]] as `ingest`: Material volume anomaly coincides with a roughly 29.9% period return and merits durable review.
+
+- Created candidate packet [[inbox/market-security_664f93a7eaca72e76e9b-bollinger_above_upper-831fae92f32f]] (831fae92f32f).
+
+- Created candidate packet [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-ba43aa3824a2]] (ba43aa3824a2).
+
+- Created candidate packet [[inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-782d0b4401d7]] (782d0b4401d7).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-53b73afcaf15]] (53b73afcaf15).
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-6e78f99de892]] (6e78f99de892).
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-macd_cross_above_signal-fb025eeba3ad]] (fb025eeba3ad).
+
+- Classified [[inbox/market-security_ad3b1f8f59fd599f079a-macd_cross_above_signal-fb025eeba3ad]] as `ingest`: A newly entered MACD bullish crossover after a material 17.9% decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_b2116dcf976c96974d7b-macd_cross_below_signal-eb2e9d3c6474]] (eb2e9d3c6474).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-b25e28547807]] (b25e28547807).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-0be3e887e290]] (0be3e887e290).
+
+- Classified [[inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-0be3e887e290]] as `ingest`: A new MACD bullish crossover with a material 12.8% period return merits durable review.
+
 ## 2026-08-12 — security research — Intuitive Surgical, Inc. common stock
 
 - Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with unchanged Q2

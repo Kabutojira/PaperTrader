@@ -1,0 +1,52 @@
+{
+  "entity_id": "security_47a0b06f6c6c478d7c1e",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-05T18:39:11Z",
+    "baseline_completed_at": "2026-08-05T18:45:34Z",
+    "baseline_operation_id": "01KYPB2048VWN4VV7YYF4Y60TX",
+    "baseline_result_path": "data/runs/daily-20260805T182233Z/01KYPB2048VWN4VV7YYF4Y60TX/agent_result.json",
+    "full_research_requested": true,
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-12T20:35:16Z",
+    "market_data_date": "2026-08-12",
+    "period_end": "2026-08-12",
+    "period_start": "2026-07-15",
+    "research_page": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "quick_check_research:security_47a0b06f6c6c478d7c1e:2c84a00acd72c9bbf7cf:2026-08-12",
+        "observed_at": "2026-08-12T20:35:16Z",
+        "prompt": "Quick-check security_47a0b06f6c6c478d7c1e after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_47a0b06f6c6c478d7c1e:allocation-maintenance:2026-08-05T18:39:11Z",
+        "observed_at": "2026-08-12T20:35:16Z",
+        "prompt": "Revalidate security_47a0b06f6c6c478d7c1e with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_nbis_july_2026_secured_financing",
+          "source_nbis_q1_2026_financials"
+        ]
+      }
+    ],
+    "security_id": "security_47a0b06f6c6c478d7c1e",
+    "source_price_hash": "ab6c5a99d048ab40adc2c4fab5b7f9b3f949f2d349a00a5c64a936fe288a4d06",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Quick-check security_47a0b06f6c6c478d7c1e after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_47a0b06f6c6c478d7c1e with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZVTZDX0K1KX61Y923GX3GNG",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7.md",
+    "source_nbis_july_2026_secured_financing",
+    "source_nbis_q1_2026_financials"
+  ]
+}

@@ -446,3 +446,19 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-2d35c037c8ed|PYPL — RSI overbought]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_below_signal-1d02af23d7f8|SPOT — MACD cross below signal]]
+- [[inbox/market-security_47a0b06f6c6c478d7c1e-bollinger_above_upper-cc865e2c88cc|NBIS — Bollinger above upper]]
+- [[inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7|NBIS — Volume anomaly]]
+- [[inbox/market-security_664f93a7eaca72e76e9b-bollinger_above_upper-831fae92f32f|SPCX — Bollinger above upper]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-ba43aa3824a2|TWST — RSI overbought]]
+- [[inbox/market-security_6f9a1450edceb9307c9a-bollinger_above_upper-782d0b4401d7|ANET — Bollinger above upper]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-53b73afcaf15|ABCL — RSI overbought]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-6e78f99de892|LUNR — Bollinger above upper]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-macd_cross_above_signal-fb025eeba3ad|HOOD — MACD cross above signal]]
+- [[inbox/market-security_b2116dcf976c96974d7b-macd_cross_below_signal-eb2e9d3c6474|VALE — MACD cross below signal]]
+- [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-b25e28547807|VLO — Bollinger above upper]]
+- [[inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-0be3e887e290|VLO — MACD cross above signal]]

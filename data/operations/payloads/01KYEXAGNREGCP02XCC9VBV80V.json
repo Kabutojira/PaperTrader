@@ -3,14 +3,49 @@
   "entity_type": "security",
   "inputs": {
     "idea_id": "idea_energy_refining",
+    "market_data_as_of": "2026-08-12T20:35:16Z",
+    "market_data_date": "2026-08-12",
+    "period_end": "2026-08-12",
+    "period_start": "2026-07-15",
     "research_focus": "Validate identity, Q2 realized regional margins, utilization, sustaining and turnaround costs, working capital, capital returns, balance-sheet risk, valuation, and invalidation.",
-    "security_id": "security_c5a9e460d3350284d157"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_c5a9e460d3350284d157:refining-dislocation:2026-07-30",
+        "observed_at": "2026-07-26T09:50:27Z",
+        "prompt": "Research Valero after its 2026 second-quarter release as a bounded refining-margin exposure.",
+        "source": "idea_research:01KYEW1SY8ZG1BX6YQGV4SBQ28",
+        "source_refs": [
+          "https://investorvalero.com/news/news-details/2026/Valero-Energy-Corporation-to-Announce-Second-Quarter-2026-Earnings-Results-on-July-30-2026/default.aspx",
+          "https://investorvalero.com/news/news-details/2026/Valero-Energy-Reports-First-Quarter-2026-Results/default.aspx",
+          "https://www.iea.org/reports/oil-market-report-july-2026"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_c5a9e460d3350284d157:6104f2b3fe5170f9fa9c:2026-08-12",
+        "market_data_date": "2026-08-12",
+        "observed_at": "2026-08-12T20:35:16Z",
+        "prompt": "Research security_c5a9e460d3350284d157 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-0be3e887e290.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_c5a9e460d3350284d157",
+    "source_price_hash": "76e455a8b01aaa69287e92cbe95285d54edf0df6cd3d0bce27f32915bd0597a4",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Research Valero after its 2026 second-quarter release as a bounded refining-margin exposure.",
+  "objective": "Research Valero after its 2026 second-quarter release as a bounded refining-margin exposure. | Additional cause: Research security_c5a9e460d3350284d157 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KYEXAGNREGCP02XCC9VBV80V",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-0be3e887e290.md",
     "https://investorvalero.com/news/news-details/2026/Valero-Energy-Corporation-to-Announce-Second-Quarter-2026-Earnings-Results-on-July-30-2026/default.aspx",
     "https://investorvalero.com/news/news-details/2026/Valero-Energy-Reports-First-Quarter-2026-Results/default.aspx",
     "https://www.iea.org/reports/oil-market-report-july-2026"
