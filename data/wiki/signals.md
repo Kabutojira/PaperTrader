@@ -7,13 +7,13 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_699be123b40ee2c1b0b5"
-as_of: "2026-08-12T13:24:10Z"
+snapshot_id: "decision_84fc1b2f5a10e6cb5feb"
+as_of: "2026-08-12T15:28:16Z"
 ---
 
 # Signals
 
-**As of `2026-08-12T13:24:10Z`**
+**As of `2026-08-12T15:28:16Z`**
 
 ## Actionable trade signals
 
@@ -24,24 +24,6 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
-
-### VLO — Valero Energy Corporation
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-11`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-11`
-- Research status: `succeeded`
-- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
 
 ### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
@@ -70,15 +52,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-11`
-- Research status: `succeeded`
-- Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
-
 ### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 
 **Research alert — not a trade signal**
@@ -88,15 +61,6 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed one bounded full Palantir security review after the 4 August alert cluster and Q2 operating reset. Fresh retrievals confirmed the Q2 Form 10-Q and SEC-filed earnings release are unchanged: Q2 revenue was USD 1.935 billion, GAAP operating margin was 47%, operating cash flow was USD 1.216 billion, and 2026 adjusted free-cash-flow guidance is USD 4.5-4.7 billion. The unsupported legacy sensitivity was replaced with a scenario-complete mature-compounder free-cash-flow-yield valuation of USD 52.29/USD 99.24/USD 162.50 with 25%/50%/25% probabilities. At the fresh USD 175.23 mark, deterministic code derived a USD 103.3175 probability-weighted fair value, -41.04% expected return, Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one dependent idea refresh was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.
 
-### PLS.AX — PLS Group Limited
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-12`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
 ### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
 
 **Research alert — not a trade signal**
@@ -105,15 +69,6 @@ No pending orders.
 - Market date: `2026-08-11`
 - Research status: `succeeded`
 - Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
-
-### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-11`
-- Research status: `succeeded`
-- Conclusion: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
 
 ### [MP — MP Materials Corp.](securities/security_cd492d97064d8574156e)
 
@@ -129,33 +84,6 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-11`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-11`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-11`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
 - Market date: `2026-08-11`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
@@ -183,6 +111,78 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-11`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### VLO — Valero Energy Corporation
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-11`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [TX — Ternium S.A.](securities/security_2c779e81c27b78c556bb)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-11`
+- Research status: `succeeded`
+- Conclusion: Revalidated Ternium after its Q2 2026 release and the merged upper-band, overbought-RSI and volume alerts. Steel shipments, Mexican demand, margins and attributable earnings improved, while operating cash flow remained below capex after a large working-capital build and the company moved to modest net debt. A scenario-complete cyclical assessment values the ADS at USD 28 bear, USD 50 base and USD 78 bull with 25%/50%/25% probabilities. The USD 51.50 weighted value is below the USD 53.71 mark, so the canonical conclusion remains Hold / Watch with no strategy. Created exactly one dependent nearshoring-idea refresh.
+
+### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-11`
+- Research status: `succeeded`
+- Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
+
+### PLS.AX — PLS Group Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-12`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-11`
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
+
+### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-11`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-11`
+- Research status: `failed`
+- Conclusion: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Quick check research for KTOS on 2026-08-12
+
+### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
 - Market date: `2026-08-11`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned

@@ -7,8 +7,8 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_699be123b40ee2c1b0b5"
-as_of: "2026-08-12T13:24:10Z"
+snapshot_id: "decision_84fc1b2f5a10e6cb5feb"
+as_of: "2026-08-12T15:28:16Z"
 ---
 
 # Research catalog
@@ -28,6 +28,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ABCL — MACD cross above signal](inbox/market-security_7bf8f4c9cc12ae410e40-macd_cross_above_signal-fe2fa9c59fee)
 - [ABCL — RSI overbought](inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-3c6cf43238c6)
 - [ABCL — RSI overbought](inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-8c3fef6f6aed)
+- [ABCL — RSI overbought](inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-cfb498bee878)
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-2be7b5c1bf08)
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-72614a871395)
 - [ABCL — Volume anomaly](inbox/market-security_7bf8f4c9cc12ae410e40-volume_anomaly-9e9c3f80e222)
@@ -439,7 +440,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-cfb498bee878|ABCL — RSI overbought]]

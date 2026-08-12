@@ -115,3 +115,4 @@ local-youtube-20260812T090946Z-01,2026-08-12T09:10:26Z,2026-08-12T10:45:40Z,succ
 local-youtube-20260812T090946Z-02,2026-08-12T10:46:15Z,2026-08-12T12:19:04Z,succeeded,local,20,5,0,,Daily run succeeded; 20 agent operations; 0 pending-order dispositions.
 local-youtube-20260812T090946Z-03,2026-08-12T12:19:35Z,2026-08-12T12:57:35Z,succeeded,local,19,5,0,,Daily run succeeded; 19 agent operations; 0 pending-order dispositions.
 local-youtube-20260812T090946Z-04,2026-08-12T12:57:53Z,2026-08-12T13:24:10Z,succeeded,local,14,5,0,,Daily run succeeded; 14 agent operations; 0 pending-order dispositions.
+daily-20260812T151654Z,2026-08-12T15:16:54Z,2026-08-12T15:28:16Z,degraded,workflow_dispatch,1,100,1,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.
