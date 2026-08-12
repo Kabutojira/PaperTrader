@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rxrx_q2_2026_results_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm",
+  "source_type": "issuer-release-sec-exhibit",
+  "title": "Recursion Pharmaceuticals Q2 2026 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2cb5975ba5149d213dc461133e84d53d409ebbfb8a243967f18c66408644f614",
+  "related_entity_ids": "idea_ai_native_drug_discovery|idea_precision_biology_healthcare_automation|security_ed7d5b616a196969c815",
+  "checked_at": "2026-08-12T00:32:03Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "REC-4881 additional Phase 2 data are scheduled for November 2026; REC-7735 received IND clearance; 2026 cash operating-expense guidance was reduced below USD 375 million.",
+  "summary": "The SEC-filed issuer release supplies dated program milestones and management guidance. It supports candidate generation and a bounded catalyst calendar, but does not establish approval probabilities or per-share program value.",
+  "run_id": "daily-20260812T000832Z"
+}

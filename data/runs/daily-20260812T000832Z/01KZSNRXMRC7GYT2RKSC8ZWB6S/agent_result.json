@@ -1,0 +1,95 @@
+{
+  "operation_id": "01KZSNRXMRC7GYT2RKSC8ZWB6S",
+  "status": "failed",
+  "reason_code": "assessment_source_operation_ambiguous",
+  "summary": "Failed closed after exactly one bounded Recursion Pharmaceuticals full security review. Fresh SEC and ClinicalTrials.gov evidence confirms active REC-4881 and REC-1245 trials, REC-7735 IND clearance, a dated 2 November REC-4881 catalyst, lower 2026 cash operating-expense guidance, substantial losses, likely additional capital needs and dilution risk. A biotechnology-binary risk-adjusted NPV remains unsupported because program-specific success probabilities, development costs, commercial economics, partner terms, financing and fully diluted shares cannot be bounded. After correcting one request-field validation error in a new immutable request, the deterministic assessment applier rejected the assessment before state changed because the completed quick check and this full review share the same security and run identity, making source-operation provenance ambiguous. The security page and conclusions were restored to the prior hash-aligned quick-check state, the structured summary was restored while retaining an advanced audit timestamp, issue issue_0c3626b7bed0feaff5aa was recorded, and no idea or strategy follow-up was enqueued. No signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_rxrx_q2_2026_10q",
+      "claim": "The Q2 Form 10-Q reports USD 545.7 million of cash and cash equivalents at 30 June 2026, USD 187.0 million of six-month operating cash use, substantial expected future losses, likely additional capital needs, and the option to settle material Tempus data obligations in shares.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000098/rxrx-20260630.htm",
+      "observed_at": "2026-08-12T00:32:03Z",
+      "source_hash": "38a03be58b9c8235630fdb9b31949970aa2dac35af98e1f158940a55b8051fea"
+    },
+    {
+      "source": "source_rxrx_q2_2026_results_exhibit",
+      "claim": "The SEC-filed issuer exhibit reports REC-7735 IND clearance, additional REC-4881 Phase 2 data scheduled for 2 November 2026, further REC-1245 dose-escalation data expected in the second half, and 2026 cash operating-expense guidance below USD 375 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm",
+      "observed_at": "2026-08-12T00:32:03Z",
+      "source_hash": "2cb5975ba5149d213dc461133e84d53d409ebbfb8a243967f18c66408644f614"
+    },
+    {
+      "source": "source_rxrx_clinicaltrials_20260812",
+      "claim": "The current public trial registry lists REC-4881 study NCT05552755 and REC-1245 study NCT06678659 as recruiting while showing a mixed history of completed and terminated Recursion-sponsored studies; it corroborates activity but does not establish approval probabilities or commercial value.",
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.term=Recursion%20Pharmaceuticals&pageSize=100&format=json",
+      "observed_at": "2026-08-12T00:32:03Z",
+      "source_hash": "5bc2b64df36be84819db69c6e83e266695cd0e2f67bbe4a42a0ee83394ffddf1"
+    },
+    {
+      "source": "PaperTrader deterministic assessment applier",
+      "claim": "The corrected assessment upsert exited 2 with 'assessment source operation is ambiguous for this run' and changed neither security_assessments.csv nor security_assessment_history.csv because quick_check_research operation 01KZ8BGD98XPQM810Q70ZYZDPJ and security_research operation 01KZSNRXMRC7GYT2RKSC8ZWB6S are both security-review operations for this security claimed by daily-20260812T000832Z."
+    },
+    {
+      "source": "PaperTrader mandatory security context",
+      "claim": "After restoration, current assessment assessment_5a14b66af3e0987a219e remains schema version 2, predecessor-linked to assessment_b2dd1192ea1d1c191a2d and hash-aligned to current page hash dbd9965723d4be2169ba8ba0339cdb251a6200dca45f045749c46a5d5b97ebef."
+    },
+    {
+      "source": "PaperTrader issue receipt",
+      "claim": "Issue issue_0c3626b7bed0feaff5aa records the same-run assessment-provenance failure for deterministic controller repair or rescheduling."
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/issue_record_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_restore_after_assessment_failure_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_restore_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_upsert_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_2026_recheck_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_results_request.json",
+    "data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_trial_registry_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [
+    "issue_0c3626b7bed0feaff5aa"
+  ],
+  "daily_report_items": [
+    "Recursion Pharmaceuticals' full review failed closed because the deterministic assessment applier could not choose between the same-run quick check and full review as the immutable source operation. Fresh SEC and ClinicalTrials.gov evidence confirms active development, dated second-half catalysts, substantial losses, capital needs and dilution risk, but a biotechnology risk-adjusted NPV remains unsupported. The prior hash-aligned Unrated / Watch assessment remains authoritative, issue issue_0c3626b7bed0feaff5aa was recorded, and no follow-up or paper-trading state changed."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_2026_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_trial_registry_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_restore_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_restore_after_assessment_failure_request.json",
+    "papertrader issue record --request data/runs/daily-20260812T000832Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260812T000832Z with a live lease, validated payload, immutable RXRX/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after restoration; the prior quick-check assessment remains predecessor-linked and page-hash-aligned.",
+      "Retrieved, hashed and registered current SEC Form 10-Q, SEC-filed results exhibit and ClinicalTrials.gov records; the retained Q2 Form 10-Q hash was unchanged and all three sources were available with current checks.",
+      "Prepared one unsupported biotechnology-binary risk-adjusted-NPV schema-v2 assessment; after correcting one field-level validation error in a new immutable request, the deterministic applier rejected it before any assessment path changed because same-security quick and full reviews share this run identity.",
+      "Restored the security page to its exact prior hash and restored the structured security conclusion; only the audit research timestamp advanced because deterministic state forbids an older timestamp.",
+      "No idea-research or strategy follow-up was enqueued because no full assessment was accepted.",
+      "Strict schema validation, strict wiki lint, strict integrity, strict portfolio reconciliation and queue validation all passed after issue issue_0c3626b7bed0feaff5aa was recorded.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ]
+  }
+}

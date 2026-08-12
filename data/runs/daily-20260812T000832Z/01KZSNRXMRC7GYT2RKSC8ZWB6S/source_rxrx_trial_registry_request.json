@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rxrx_clinicaltrials_20260812",
+  "url": "https://clinicaltrials.gov/api/v2/studies?query.term=Recursion%20Pharmaceuticals&pageSize=100&format=json",
+  "canonical_url": "https://clinicaltrials.gov/api/v2/studies?query.term=Recursion%20Pharmaceuticals&pageSize=100&format=json",
+  "source_type": "regulator-trial-registry",
+  "title": "ClinicalTrials.gov Recursion Pharmaceuticals study registry query",
+  "publisher": "U.S. National Library of Medicine",
+  "license": "",
+  "status": "available",
+  "content_hash": "5bc2b64df36be84819db69c6e83e266695cd0e2f67bbe4a42a0ee83394ffddf1",
+  "related_entity_ids": "idea_ai_native_drug_discovery|idea_precision_biology_healthcare_automation|security_ed7d5b616a196969c815",
+  "checked_at": "2026-08-12T00:32:03Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "NCT05552755 and NCT06678659 are recruiting; several earlier Recursion-sponsored studies are completed or terminated.",
+  "summary": "The current public registry corroborates recruiting status for REC-4881 in FAP and REC-1245 in advanced cancer while showing a mixed historical development record. It does not provide commercial economics or validated approval probabilities.",
+  "run_id": "daily-20260812T000832Z"
+}

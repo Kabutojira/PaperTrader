@@ -6,6 +6,7 @@ Generated from `data/tables/issues.csv`.
 | --- | --- | --- | --- | --- |
 | error | **issue_009da4be114b9f22fa30** — Local harness operation validation failed: 01KZ9ZJVER177B5ASW4ZMQHEG3 | 2026-08-07T16:33:04Z | controller | 01KZ9ZJVER177B5ASW4ZMQHEG3 |
 | error | **issue_0acd52c371559780a934** — Rio Tinto assessment source operation is ambiguous within one run | 2026-08-03T09:27:11Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
+| error | **issue_0c3626b7bed0feaff5aa** — Recursion full assessment blocked by same-run provenance ambiguity | 2026-08-12T00:38:30Z | controller | 01KZSNRXMRC7GYT2RKSC8ZWB6S |
 | error | **issue_19022fd84871ab2ed3ab** — Hermes operation validation failed: 01KZ8BGD98T363E1NM8EPYT9TG | 2026-08-11T14:51:31Z | controller | 01KZ8BGD98T363E1NM8EPYT9TG |
 | error | **issue_1e862c198e274a99add1** — ABB assessment source operation is ambiguous within one run | 2026-08-09T23:09:55Z | controller | 01KZMBZY5RBVNJH4ZHBZ47FG2S |
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |

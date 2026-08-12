@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Recursion full assessment blocked by same-run provenance ambiguity",
+  "description": "The required schema-v2 assessment for security_ed7d5b616a196969c815 was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation 01KZ8BGD98XPQM810Q70ZYZDPJ and current security_research operation 01KZSNRXMRC7GYT2RKSC8ZWB6S claimed by run daily-20260812T000832Z and cannot select a unique source operation. Current Q2 SEC and ClinicalTrials.gov evidence supports active development but cannot bound a risk-adjusted NPV. The security page was restored to the prior hash-aligned quick-check state, the structured security conclusion is restored while retaining an advanced audit timestamp, no idea or strategy follow-up is enqueued, and the operation must fail closed until the controller schedules the full review under a distinct run or deterministic provenance selection is repaired.",
+  "owner": "controller",
+  "related_run_id": "daily-20260812T000832Z",
+  "related_operation_id": "01KZSNRXMRC7GYT2RKSC8ZWB6S"
+}
