@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_precision_biology_healthcare_automation",
+  "dedupe_key": "idea_research:idea_precision_biology_healthcare_automation:security-result:01KZRY95ZGA17F8N27YMA7G1G9",
+  "prompt": "Refresh the precision-biology and healthcare-automation idea from Intuitive Surgical's completed scenario valuation, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "seed_claim": "Intuitive Surgical's Q2 operating evidence remains strong, but the completed mature-compounder weighted and base values are below the current mark, changing the security conclusion to Sell / Avoid.",
+    "security_id": "security_1f9cce545ede94cd6349",
+    "security_research_operation_id": "01KZRY95ZGA17F8N27YMA7G1G9",
+    "security_research_result_path": "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/agent_result.json"
+  },
+  "source": "security_research:01KZRY95ZGA17F8N27YMA7G1G9",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZRY95ZGA17F8N27YMA7G1G9"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_1f9cce545ede94cd6349.md"
+  ],
+  "max_attempts": 3
+}

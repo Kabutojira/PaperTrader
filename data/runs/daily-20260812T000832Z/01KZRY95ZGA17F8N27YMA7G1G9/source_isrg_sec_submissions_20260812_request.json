@@ -1,0 +1,18 @@
+{
+  "source_id": "source_isrg_sec_submissions_20260811",
+  "url": "https://data.sec.gov/submissions/CIK0001035267.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001035267.json",
+  "source_type": "regulator_index",
+  "title": "Intuitive Surgical SEC submissions index checked 2026-08-12",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5cf393a45eb368440c4f045cdbf693522be184f09da69ad3f722f905f13804a0",
+  "related_entity_ids": "idea_precision_biology_healthcare_automation|security_1f9cce545ede94cd6349",
+  "checked_at": "2026-08-12T00:12:37Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The July 21 Q2 Form 10-Q remains the latest periodic operating filing; later filings through August 11 are a bylaw-amendment Form 8-K, ownership reports and Rule 144 notices.",
+  "summary": "The refreshed SEC index adds ownership-related records but confirms that no later periodic financial filing supersedes the Q2 operating and valuation inputs.",
+  "run_id": "daily-20260812T000832Z"
+}

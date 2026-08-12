@@ -3232,3 +3232,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-61584cc17e9e]] (61584cc17e9e).
 
 - Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-8bb72c696a2a]] (8bb72c696a2a).
+
+## 2026-08-12 — security research — Intuitive Surgical, Inc. common stock
+
+- Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with unchanged Q2
+  primary financial evidence and the USD 401.23 close. Procedure growth, recurring revenue,
+  operating leverage and net financial strength remain intact; the later Form 8-K concerns amended
+  bylaws and does not supersede the Q2 operating evidence.
+- Replaced the unsupported two-case sensitivity with a 25%/50%/25% scenario-complete
+  mature-compounder valuation of USD 243.96/USD 336.59/USD 436.81. The probability-weighted USD
+  338.49 value is 15.6% below market, changing the conclusion from Unrated / Watch to Sell / Avoid
+  while retaining allocation ineligibility and creating no strategy, signal, order or paper trade.

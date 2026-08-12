@@ -1,0 +1,109 @@
+{
+  "operation_id": "01KZRY95ZGA17F8N27YMA7G1G9",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded full Intuitive Surgical security review. Fresh SEC retrievals confirmed that the Q2 2026 Form 10-Q and earnings exhibit are unchanged; a later Form 8-K only amended bylaws. The unsupported legacy sensitivity was replaced with a scenario-complete mature-compounder valuation of USD 243.96/USD 336.59/USD 436.81 with 25%/50%/25% probabilities. At the fresh USD 401.23 mark, deterministic code derived USD 338.4875 probability-weighted fair value, -15.64% expected return, Sell / Avoid, complete research and allocation ineligibility. Exactly one dependent idea refresh was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_isrg_q2_2026_10q",
+      "claim": "The unchanged Q2 Form 10-Q reports first-half revenue of USD 5.663 billion, 32.3% GAAP operating margin, USD 419 million of stock compensation, 358.5 million diluted weighted-average shares and USD 8.626 billion of cash and investments with no financial debt.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000058/isrg-20260630.htm",
+      "observed_at": "2026-08-12T00:12:37Z",
+      "source_hash": "823e944ee199fad85e2497e27c752fbe26b164114c818207c9c0f0fb134af8d3"
+    },
+    {
+      "source": "source_isrg_q2_2026_sec_exhibit",
+      "claim": "The unchanged SEC-filed Q2 earnings exhibit reports 20% procedure growth, 11% revenue growth, 9% systems revenue growth, 13% instruments and accessories growth, 11% service growth, and a USD 40 million tariff refund that benefited GAAP gross margin by 1.7 percentage points.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000047/q226ex-991earningsrelease.htm",
+      "observed_at": "2026-08-12T00:12:37Z",
+      "source_hash": "4f4df49f94d39e25d89d380fe9a7ff9daf83201e0d42412490b709b6859d8ec5"
+    },
+    {
+      "source": "source_isrg_sec_submissions_20260811",
+      "claim": "The current SEC submissions index confirms that the Q2 Form 10-Q remains the latest periodic financial filing; the index changed for later filings but disclosed no newer periodic operating report.",
+      "url": "https://data.sec.gov/submissions/CIK0001035267.json",
+      "observed_at": "2026-08-12T00:12:37Z",
+      "source_hash": "5cf393a45eb368440c4f045cdbf693522be184f09da69ad3f722f905f13804a0"
+    },
+    {
+      "source": "source_isrg_bylaws_8k_20260727",
+      "claim": "The 27 July Form 8-K reports amended and restated bylaws effective 23 July 2026; it does not provide later operating results and is retained as a governance-monitoring item.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000063/isrg-20260723.htm",
+      "observed_at": "2026-08-12T00:12:37Z",
+      "source_hash": "1e11d2e8bfcabe6995eb9e7499d66f88a34d2cc7f7d81a3376eee3ca146b87d5"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "The identity-matched current mark is USD 401.2300109863281 for ISRG/XNAS/USD/equity on the completed 11 August session, retrieved at 2026-08-12T00:08:39Z; the current USD/EUR rate is 0.8659999966621399 at the same retrieval timestamp.",
+      "observed_at": "2026-08-12T00:08:39Z"
+    },
+    {
+      "source": "assessment_22c4de6d85879f55d22b",
+      "claim": "The immutable schema-v2 assessment links predecessor assessment_142cb893bce67464e477, this source operation/result, and page hash 36cb8a85a4a9827b19f751a13a20795d63fa29786be8b56dbaa76f842333126f. Deterministic normalization derived bear/base/bull returns of -39.1970%/-16.1105%/8.8677%, USD 338.4875 probability-weighted fair value, -15.6375% expected return, quality score 88, Sell / Avoid and allocation ineligibility under the return, payoff and margin-of-safety gates.",
+      "observed_at": "2026-08-12T00:15:50Z"
+    },
+    {
+      "source": "data/operations/payloads/01KZSN7E2GDTNSAM9Z0TVKYTS0.json",
+      "claim": "Exactly one dependent idea_research follow-up carries the completed Intuitive Surgical result identity and requires the precision-biology and healthcare-automation idea to absorb the candidate disposition, thesis, catalysts, risks, confidence and broader investable-security universe in a separate sequential operation."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZSN7E2GDTNSAM9Z0TVKYTS0.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/assessment_upsert_request.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/security_upsert_request.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_bylaws_8k_20260727_request.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_exhibit_refresh_request.json",
+    "data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_sec_submissions_20260812_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1f9cce545ede94cd6349.md"
+  ],
+  "operations_created": [
+    "01KZSN7E2GDTNSAM9Z0TVKYTS0"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Intuitive Surgical full review completed: unchanged Q2 primary evidence supports strong procedure-linked recurring economics and net financial strength, but completed 25%/50%/25% scenarios of USD 243.96/USD 336.59/USD 436.81 produce USD 338.4875 probability-weighted value versus the fresh USD 401.23 mark. Deterministic assessment changed ISRG from Unrated / Watch to Sell / Avoid, with -15.64% expected return and allocation ineligibility. No paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_1f9cce545ede94cd6349",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_exhibit_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_sec_submissions_20260812_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/source_isrg_bylaws_8k_20260727_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260812T000832Z/01KZRY95ZGA17F8N27YMA7G1G9/enqueue_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_1f9cce545ede94cd6349",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the selected row was running, claimed by daily-20260812T000832Z with a live lease, and routed sequentially to native llm-wiki plus papertrader-security-research under the trusted preflight hashes.",
+      "Consumed the mandatory audited security-context before reading or changing assessment state and confirmed immutable ISRG/XNAS/USD/equity identity, prior assessment, current page hash, one accepted linked relationship, one linked idea and the paused baseline valuation-watch strategy.",
+      "Fetched and hashed the current Q2 Form 10-Q, SEC-filed Q2 earnings exhibit, SEC submissions index and later bylaw Form 8-K; all four source records were accepted through the project CLI without storing source bodies in the repository.",
+      "Selected repository template mature_compounder and permitted method earnings_multiple; normalized revenue, GAAP operating margin, tax, net financial assets, valuation multiple and dilution across ordered 25%/50%/25% bear/base/bull cases.",
+      "Confirmed assessment assessment_22c4de6d85879f55d22b is the sole immutable version for this operation, links predecessor assessment_142cb893bce67464e477, source operation/result, schema version 2 and current page hash, and is the current projection.",
+      "Confirmed deterministic code derived complete research, quality score 88, Sell / Avoid and allocation ineligibility with no hard blocker; valuation_unsupported was resolved and every remaining threshold frontier was retained.",
+      "Confirmed exactly one matching dependent idea-research follow-up, 01KZSN7E2GDTNSAM9Z0TVKYTS0, exists for the payload-linked and accepted-relationship idea and carries this security and result identity.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the fourteen canonical PaperTrader CLI invocations listed in commands_run.",
+      "No idea page, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ]
+  }
+}

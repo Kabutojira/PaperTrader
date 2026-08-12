@@ -1,0 +1,18 @@
+{
+  "source_id": "source_isrg_bylaws_8k_20260727",
+  "url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000063/isrg-20260723.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1035267/000103526726000063/isrg-20260723.htm",
+  "source_type": "filing",
+  "title": "Intuitive Surgical July 2026 Form 8-K on amended bylaws",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1e11d2e8bfcabe6995eb9e7499d66f88a34d2cc7f7d81a3376eee3ca146b87d5",
+  "related_entity_ids": "security_1f9cce545ede94cd6349",
+  "checked_at": "2026-08-12T00:12:37Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The board amended the bylaws on July 23, including shareholder-nomination disclosures, special-meeting mechanics and a majority-of-votes-cast standard for corporate actions other than elections.",
+  "summary": "This post-Q2 governance filing does not supersede the Q2 financial inputs but corrects the prior description of all later filings as ownership reports.",
+  "run_id": "daily-20260812T000832Z"
+}
