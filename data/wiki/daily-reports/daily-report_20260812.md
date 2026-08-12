@@ -7,8 +7,8 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-report-generator
-run_id: "daily-20260812T000832Z"
-snapshot_id: "decision_6057cff497c139de2a3a"
+run_id: "daily-20260812T014817Z"
+snapshot_id: "decision_36d649fef9a7502708e8"
 ---
 
 # PaperTrader daily report — 2026-08-12
@@ -20,7 +20,7 @@ snapshot_id: "decision_6057cff497c139de2a3a"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Blocked
-- **As of:** `2026-08-12T00:40:50Z`
+- **As of:** `2026-08-12T02:05:55Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Target cash:** 10000 EUR (100%)
@@ -74,8 +74,8 @@ No actionable trade signals.
   - Research: **skipped**
   - Decision: Queue triage disposition
 - **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Bollinger Above Upper** (`2026-08-11`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
 - **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Rsi Overbought** (`2026-08-11`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
@@ -100,8 +100,7 @@ No actionable trade signals.
 
 ## Research decisions this run
 
-- **[ISRG](securities/security_1f9cce545ede94cd6349) — succeeded:** Completed exactly one bounded full Intuitive Surgical security review. Fresh SEC retrievals confirmed that the Q2 2026 Form 10-Q and earnings exhibit are unchanged; a later Form 8-K only amended bylaws. The unsupported legacy sensitivity was replaced with a scenario-complete mature-compounder valuation of USD 243.96/USD 336.59/USD 436.81 with 25%/…
-- **[RXRX](securities/security_ed7d5b616a196969c815) — succeeded:** Completed exactly one bounded Recursion Pharmaceuticals quick check for the 2026-08-04 bullish-MACD cross. RXRX fell 13.8% over the alert period to USD 3.31 and closed at USD 3.35 on August 11 with MACD still above signal, but the one-session cross is not an operating catalyst or canonical buy signal. The new Q2 Form 10-Q materially supersedes the…
+- **[RXRX](securities/security_ed7d5b616a196969c815) — succeeded:** Completed exactly one bounded Recursion Pharmaceuticals full security review. Fresh SEC and ClinicalTrials.gov retrievals matched retained hashes and confirm recruiting REC-4881 and REC-1245 studies, REC-7735 IND clearance, a 2 November REC-4881 catalyst, lower 2026 cash operating-expense guidance, substantial losses, likely additional capital nee…
 
 ## Top blocker or near miss
 
@@ -161,8 +160,7 @@ No pending orders.
 
 ### Evidence-linked narrative
 
-- Recursion Pharmaceuticals' August 4 bullish-MACD cross followed a 13.8% period decline, but the new Q2 filing—not momentum—is the material change: pipeline milestones advanced and expense guidance improved while losses, cash consumption, capital needs, dilution and unsupported valuation persist. RXRX remains Unrated / Watch and allocation-ineligib… Evidence is retained in the canonical run artifacts.
-- Intuitive Surgical full review completed: unchanged Q2 primary evidence supports strong procedure-linked recurring economics and net financial strength, but completed 25%/50%/25% scenarios of USD 243.96/USD 336.59/USD 436.81 produce USD 338.4875 probability-weighted value versus the fresh USD 401.23 mark. Deterministic assessment changed ISRG from… Evidence is retained in the canonical run artifacts.
+- Recursion Pharmaceuticals' full review corroborated active REC-4881 and REC-1245 trials, REC-7735 IND clearance and a 2 November REC-4881 catalyst, but substantial losses, capital needs, dilution and missing program-level valuation inputs keep RXRX Unrated / Watch and allocation-ineligible. Two dependent idea refreshes were queued; no paper trade… Evidence is retained in the canonical run artifacts.
 
 - [[inbox/market-security_0cf8075039299094d614-rsi_overbought-fc5bb01c2f73|KTOS — RSI overbought]]
 - [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-bb7289c15e14|SPOT — MACD cross above signal]]
@@ -186,7 +184,7 @@ No pending orders.
 - Investment data status: **degraded**
 - Operations status: **blocked**
 - Assessments: 68/68
-- Fresh-evidence assessments: 67/68
+- Fresh-evidence assessments: 68/68
 - Relationship reviews: 25/68
 - Accepted relationships: 22
 - Ready or active strategies: 0
@@ -202,6 +200,7 @@ No pending orders.
 - **affects candidate**: Hermes operation validation failed: [[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]
 - **affects candidate** — ABBNY ABB Ltd: ABB assessment source operation is ambiguous within one run
 - **affects candidate** — RBLX Roblox Corporation: Assessment source operation is ambiguous within one run
+- **affects candidate**: Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-05]]
 - **affects candidate** — LUNR Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run
 - **affects candidate** — PWR Quanta Services, Inc.: Assessment source operation is ambiguous within one run
 - **affects candidate**: Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]
@@ -311,84 +310,84 @@ No pending orders.
 
 - Report date: 2026-08-12
 - Run status: degraded
-- Generated (UTC): `2026-08-12T00:40:50Z`
+- Generated (UTC): `2026-08-12T02:05:55Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-11 | 2026-08-12T00:08:39Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[security-catalog#security-security_c5a9e460d3350284d157|VLO]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-11 | 2026-08-12T01:48:25Z | ok | — |
 
 ### Orders and executions
 
@@ -496,7 +495,7 @@ No pending orders.
 
 ### Seeking Alpha search-index leads
 
-- Schedule status: `queued`
+- Schedule status: `duplicate`
 - Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
 - Discovery status: `pending`
 
@@ -508,6 +507,7 @@ No pending orders.
 | [Source discovery for seekingalpha.com on 2026-08-12](https://seekingalpha.com/trending-analysis) | [seekingalpha.com](https://seekingalpha.com/trending-analysis) | expired | deadline elapsed |
 | [[securities/security_1f9cce545ede94cd6349|Security research for ISRG on 2026-08-12]] | [[securities/security_1f9cce545ede94cd6349|ISRG]] | succeeded | agent result:succeeded |
 | [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-12]] | [[securities/security_ed7d5b616a196969c815|RXRX]] | succeeded | agent result:succeeded |
+| [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]] | [[securities/security_ed7d5b616a196969c815|RXRX]] | succeeded | agent result:succeeded |
 
 ### Complete active queue
 
@@ -858,7 +858,8 @@ No pending orders.
 - Ready — [[inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-3c258166f023|Wiki ingest for GEV — MACD cross above signal on 2026-08-12]]
 - Ready — [[securities/security_4b61970aa8f574446819|Security research for GEV on 2026-08-12]]
 - Ready — [[ideas/idea_precision_biology_healthcare_automation|Idea research for Precision biology and healthcare automation on 2026-08-12]]
-- Ready — [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]]
+- Ready — [[ideas/idea_ai_native_drug_discovery|Idea research for AI-native drug-discovery platforms on 2026-08-12]]
+- Ready — [[ideas/idea_precision_biology_healthcare_automation|Idea research for Precision biology and healthcare automation on 2026-08-12]]
 
 ### Open issues and delivery failures
 
@@ -886,6 +887,7 @@ No pending orders.
 - Warning — [[system-status|Daily preparation degraded: RIO]]: RIO: YFTzMissingError: $RIO: possibly delisted; no timezone found
 - Warning — [[system-status|Daily preparation degraded: PYPL]]: PYPL: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: ETN]]: ETN: YFTzMissingError: $ETN: possibly delisted; no timezone found
+- Error — [[system-status|Hermes operation validation failed: Quick check research for KTOS on 2026-08-05]]: agent result schema: 'recorded source state' does not match '^\[a-f0-9\]{64}$'; agent result was written before completed change: data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-05/command\_audit.json; commands\_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/Daily report for 2026-08-12/Quick check research for KTOS on 2026-08-05/agent\_result.…
 - Warning — [[system-status|Daily preparation degraded: SOFI]]: SOFI: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: CSL]]: CSL: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: SGML]]: SGML: YFTzMissingError: $SGML: possibly delisted; no timezone found

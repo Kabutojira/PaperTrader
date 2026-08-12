@@ -7,13 +7,13 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_6057cff497c139de2a3a"
-as_of: "2026-08-12T00:40:50Z"
+snapshot_id: "decision_36d649fef9a7502708e8"
+as_of: "2026-08-12T02:05:55Z"
 ---
 
 # Signals
 
-**As of `2026-08-12T00:40:50Z`**
+**As of `2026-08-12T02:05:55Z`**
 
 ## Actionable trade signals
 
@@ -139,8 +139,8 @@ No pending orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-11`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614)
 
