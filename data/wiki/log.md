@@ -3289,6 +3289,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260812]] for run `daily-20260812T160022Z`.
 
+- Published investor decision snapshot `decision_2aba823fd1d6c871b7f6`.
+
+- Generated canonical [[daily-reports/daily-report_20260812]] for run `daily-20260812T174806Z`.
+
 ## 2026-08-12 — security research — Intuitive Surgical, Inc. common stock
 
 - Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with unchanged Q2
