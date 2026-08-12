@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_0cf8075039299094d614",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-05T16:29:53Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_0cf8075039299094d614.md",
+    "security_id": "security_0cf8075039299094d614"
+  },
+  "objective": "Revalidate security_0cf8075039299094d614 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZVHDGV04PCAYPSK8DJ9P82A",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_ktos_q2_2026_10q",
+    "source_ktos_q2_2026_results"
+  ]
+}
