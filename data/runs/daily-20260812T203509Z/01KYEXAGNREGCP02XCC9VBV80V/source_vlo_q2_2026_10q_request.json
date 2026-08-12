@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vlo_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050937/vlo-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050937/vlo-20260630.htm",
+  "source_type": "filing",
+  "title": "Valero Energy Corporation quarterly report for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "67e4f60508a5a9c810e164fe8d9bcc9b996d44d8e659cf68beb6d978d5db73a9",
+  "related_entity_ids": "security_c5a9e460d3350284d157",
+  "checked_at": "2026-08-12T20:38:52Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 refining operating income was $4.470 billion, refining margin was $6.342 billion, and throughput averaged 2.950 million barrels per day.",
+  "summary": "The filing supports realized regional margins, throughput and outage context, operating cash flow, working capital, sustaining and turnaround spending, share count, cash, debt and lease inputs for a normalized cyclical assessment.",
+  "run_id": "daily-20260812T203509Z"
+}

@@ -429,6 +429,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Texas Instruments Incorporated common stock](securities/security_83a56943e18793f685b0)
 - [Twist Bioscience Corporation common stock](securities/security_6cf75bd0ec0aa2a20148)
 - [UiPath, Inc. Class A common stock](securities/security_eca976f0076a425ea1bb)
+- [Valero Energy Corporation common stock](securities/security_c5a9e460d3350284d157)
 - [Vertiv Holdings Co Class A common stock](securities/security_cb88f9154cfeaa15e878)
 - [W&amp;T Offshore, Inc. common stock](securities/security_61567714298b9563d1a9)
 - [YASKAWA Electric Corporation Frankfurt ordinary shares](securities/security_89969b7dac39b7db5661)

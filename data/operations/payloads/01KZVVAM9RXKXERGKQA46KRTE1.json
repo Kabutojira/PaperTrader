@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_energy_refining",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_energy_refining",
+    "security_id": "security_c5a9e460d3350284d157",
+    "security_research_operation_id": "01KYEXAGNREGCP02XCC9VBV80V",
+    "security_research_result_path": "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/agent_result.json",
+    "seed_claim": "Valero's Q2 realized refining margin, throughput and cash conversion confirm capture of the product-market dislocation, but normalized downside, base and weighted values are below the USD 330.21 mark; the security remains a valuation-blocked watch."
+  },
+  "objective": "Refresh the crude-product dislocation and refining-margin idea from Valero's completed full review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01KZVVAM9RXKXERGKQA46KRTE1",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_c5a9e460d3350284d157.md"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "operation_id": "01KYEXAGNREGCP02XCC9VBV80V",
+  "status": "succeeded",
+  "summary": "Completed one full paper-only Valero security review. SEC-filed Q2 evidence confirms strong realized refining margins, throughput and cash conversion, while normalized USD 216/USD 286/USD 378 scenarios at the fresh USD 330.21 mark produce a deterministic Hold / Watch disposition with allocation ineligible. No strategy, signal, order, execution or accounting state was changed. Exactly one dependent energy-refining idea refresh was enqueued.",
+  "evidence": [
+    {
+      "source": "Valero Q2 2026 Form 10-Q",
+      "claim": "Q2 refining operating income was USD 4.470 billion, refining margin was USD 6.342 billion, throughput averaged 2.950 million barrels per day, six-month operating cash flow was USD 6.970 billion, and quarter-end cash was USD 7.874 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050937/vlo-20260630.htm",
+      "observed_at": "2026-08-12T20:38:52Z",
+      "source_hash": "67e4f60508a5a9c810e164fe8d9bcc9b996d44d8e659cf68beb6d978d5db73a9"
+    },
+    {
+      "source": "Valero Q2 2026 SEC-filed results release",
+      "claim": "Q2 adjusted operating cash flow was USD 4.5 billion, capital investments were USD 350 million including USD 290 million of sustaining, turnaround, catalyst and compliance spending, and stockholder cash returns were USD 2.6 billion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050822/a6302026exh9901earningsrel.htm",
+      "observed_at": "2026-08-12T20:38:52Z",
+      "source_hash": "cdb3595d6b4dbc05039e172fce3d40ab72e98e06f8cb0bd80c5303d461d782b6"
+    },
+    {
+      "source": "Canonical PaperTrader market and indicator state",
+      "claim": "The identity-matched VLO adjusted close was USD 330.2099914550781 as of 2026-08-12T20:35:16Z; the 2026-07-15 through 2026-08-12 return was 12.830584%, and MACD crossed above its signal line with source price hash 76e455a8b01aaa69287e92cbe95285d54edf0df6cd3d0bce27f32915bd0597a4.",
+      "observed_at": "2026-08-12T20:35:16Z",
+      "source_hash": "76e455a8b01aaa69287e92cbe95285d54edf0df6cd3d0bce27f32915bd0597a4"
+    },
+    {
+      "source": "Deterministic schema-v2 assessment",
+      "claim": "The accepted assessment derived Hold / Watch, quality score 78, allocation ineligible, USD 286.90 probability-weighted fair value, -13.1159% expected return, and exact failed gates for expected return, base return, payoff, margin of safety and pending relationship status."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZVVAM9RXKXERGKQA46KRTE1.json",
+    "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/assessment_upsert_request.json",
+    "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/enqueue_energy_refining_idea_refresh_request.json",
+    "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/security_upsert_request.json",
+    "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/source_vlo_q2_2026_10q_request.json",
+    "data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/source_vlo_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_c5a9e460d3350284d157.md"
+  ],
+  "operations_created": [
+    "01KZVVAM9RXKXERGKQA46KRTE1"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Valero Q2 research confirmed strong refining-margin capture and cash conversion, but normalized bear/base/bull values of USD 216/USD 286/USD 378 are unattractive at the USD 330.21 mark. Deterministic assessment: Hold / Watch, allocation ineligible; no paper strategy or order was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_c5a9e460d3350284d157",
+    "papertrader research source record --request data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/source_vlo_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/source_vlo_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260812T203509Z/01KYEXAGNREGCP02XCC9VBV80V/enqueue_energy_refining_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_c5a9e460d3350284d157",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict",
+    "papertrader research security-context --security-id security_c5a9e460d3350284d157"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed.",
+      "Immutable security identity matched issuer, instrument, XNYS venue, VLO provider symbol, USD currency and equity type.",
+      "Both retained primary sources were registered through audited project CLI receipts with current content hashes.",
+      "Fresh identity-matched USD market price and USD/EUR FX observations were consumed as of 2026-08-12T20:35:16Z.",
+      "Exactly one schema-v2 assessment was accepted with ordered scenarios and probabilities totaling 100; deterministic output is Hold / Watch and allocation ineligible.",
+      "Exactly one dependent idea_research follow-up was created for payload idea idea_energy_refining.",
+      "Strict wiki lint passed after the security page, research catalog and append-only log update.",
+      "No allocation, strategy, signal, order, fill, execution, cash, portfolio or performance state was changed."
+    ]
+  }
+}

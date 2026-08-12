@@ -3719,3 +3719,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   execution, competition, and valuation-risk context. Recorded the transcript hash as source
   provenance only; no entity conclusion, identity import, follow-up, assessment, strategy, signal,
   allocation, order, execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — security research — Valero Energy Corporation
+
+- Researched [[securities/security_c5a9e460d3350284d157|Valero]] against its SEC-filed Q2 2026
+  Form 10-Q, earnings release, and the 12 August market and FX refresh. Q2 realized refining margin,
+  throughput, cash conversion and liquidity confirm capture of the crude-product dislocation, but
+  normalized USD 216/USD 286/USD 378 scenarios leave the bear, base and weighted cases below the
+  USD 330.21 mark. The MACD crossover is opportunity evidence with elevated timing risk; medium
+  confidence, downside asymmetry, margin of safety and the absent accepted relationship block a
+  strategy.

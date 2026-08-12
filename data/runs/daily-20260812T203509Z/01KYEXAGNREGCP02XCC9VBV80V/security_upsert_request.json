@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c5a9e460d3350284d157",
+  "issuer_id": "issuer_949c0108d639d9d59618",
+  "company_name": "Valero Energy Corporation",
+  "instrument_name": "Valero Energy Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "VLO",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "VLO",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Energy",
+  "industry": "Oil & Gas Refining & Marketing",
+  "status": "watching",
+  "watchlist_reason": "Q2 confirms refining-margin capture and strong cash conversion, but normalized downside, base and weighted values are below the current mark; monitor crack normalization, reliability, sustaining costs and the relationship review.",
+  "research_summary": "Q2 validates margin capture, but normalized USD 216/286/378 scenarios make VLO a valuation-blocked watch at USD 330.21 despite bullish momentum.",
+  "research_page": "data/wiki/securities/security_c5a9e460d3350284d157.md",
+  "last_research_at": "2026-08-12T20:38:52Z",
+  "next_review_at": "2026-09-11T20:38:52Z",
+  "source": "source_vlo_q2_2026_10q|source_vlo_q2_2026_results"
+}
