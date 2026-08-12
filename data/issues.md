@@ -91,7 +91,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_ad9eb2e31cc57f9f4f03** — Daily preparation degraded: security_204be2a44063993de1a8 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_b04460fc941344218f71** — Daily preparation degraded: security_c120e9f26ebb6159adf9 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_b179d981c051d3993456** — Daily preparation degraded: security_d08d763780400dfbffce | 2026-07-29T16:51:20Z | deterministic-controller |  |
-| warning | **issue_b17f72c0500299df7879** — YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw | 2026-08-12T00:08:33Z | youtube-discovery |  |
+| warning | **issue_b17f72c0500299df7879** — YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw | 2026-08-12T01:48:18Z | youtube-discovery |  |
 | warning | **issue_b20b8e588a6dab63737a** — Daily preparation degraded: security_cb88f9154cfeaa15e878 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_b257fa5df338d5ef2c65** — Daily preparation degraded: security_b1f2c48e1a744f5ecf67 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_b9604572acf8d22dc6fd** — Daily preparation degraded: security_97f38b2cb2d5ef127f5a | 2026-07-29T16:51:20Z | deterministic-controller |  |

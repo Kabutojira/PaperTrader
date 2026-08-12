@@ -2,17 +2,20 @@
   "entity_id": "security_ed7d5b616a196969c815",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-12T00:22:32Z",
     "baseline_operation_id": "01KYHW5710ENZ9WVA185W24RGA",
     "changed_gate": "new_q2_2026_periodic_filing_materially_changes_operating_pipeline_and_financing_evidence",
     "current_market_data_as_of": "2026-08-12T00:08:39Z",
     "current_market_data_date": "2026-08-11",
     "current_source_price_hash": "a9c6494b617ea91f088aa74702ecedfb0bd0cf75525d0587c31ca3d0aaf28093",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-05T06:59:21Z",
     "market_data_date": "2026-08-04",
     "period_end": "2026-08-04",
     "period_start": "2026-07-07",
     "quick_check_operation_id": "01KZ8BGD98XPQM810Q70ZYZDPJ",
+    "research_page": "data/wiki/securities/security_ed7d5b616a196969c815.md",
     "research_reasons": [
       {
         "cause": "macd_cross_above_signal_entered_after_material_period_decline",
@@ -21,6 +24,15 @@
       {
         "cause": "new_q2_filing_supersedes_q1_baseline_and_requires_scenario_complete_reassessment",
         "source_ref": "source_rxrx_q2_2026_10q"
+      },
+      {
+        "dedupe_key": "security_research:security_ed7d5b616a196969c815:allocation-maintenance:2026-08-12T00:22:32Z",
+        "observed_at": "2026-08-12T01:48:25Z",
+        "prompt": "Revalidate security_ed7d5b616a196969c815 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_rxrx_q2_2026_10q"
+        ]
       }
     ],
     "security_id": "security_ed7d5b616a196969c815",
@@ -29,7 +41,7 @@
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Fully reassess Recursion Pharmaceuticals after the August MACD alert and new Q2 filing materially changed the operating, pipeline and financing evidence.",
+  "objective": "Fully reassess Recursion Pharmaceuticals after the August MACD alert and new Q2 filing materially changed the operating, pipeline and financing evidence. | Additional cause: Revalidate security_ed7d5b616a196969c815 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01KZSNRXMRC7GYT2RKSC8ZWB6S",
   "operation_type": "security_research",
   "payload_version": 1,
