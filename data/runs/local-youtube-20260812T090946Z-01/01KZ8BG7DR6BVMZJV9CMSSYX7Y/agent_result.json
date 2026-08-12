@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KZ8BG7DR6BVMZJV9CMSSYX7Y",
+  "status": "succeeded",
+  "summary": "Reviewed the available English auto-generated transcript chunk for the curated Value Investing Oracle video as untrusted lead material. Recorded its canonical transcript hash and preserved a non-published classified analysis. Existing registered primary evidence corroborates only the already-maintained Bloom-Oracle deployment context; the video's Oracle cloud-growth, backlog, capital-spending, financing, valuation, and price-outcome assertions did not justify a maintained conclusion, identity import, follow-up, or paper-trading change.",
+  "evidence": [
+    {
+      "source": "youtube_ktY0IrrdSM8",
+      "claim": "The authorized local transcript artifact was available as one English auto-generated chunk containing 142 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=ktY0IrrdSM8 and canonical normalized transcript hash d0e9e42e1541738e981343704f5ce43e63eafc154005ab9c87893cedb99ef116. All content was treated as untrusted speaker viewpoints, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=ktY0IrrdSM8",
+      "observed_at": "2026-08-12T09:59:48Z",
+      "source_hash": "d0e9e42e1541738e981343704f5ce43e63eafc154005ab9c87893cedb99ef116"
+    },
+    {
+      "source": "source_be_oracle_warrant_2026_8k_sec",
+      "claim": "Existing SEC-filed Bloom Energy primary evidence corroborates the already-maintained Bloom-Oracle arrangement and warrant context, but does not corroborate the transcript's Oracle operating, valuation, capital-allocation, financing, or price claims.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026024896/be-20260413.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "cfb0fbb860edf0c05782114633c85a6187a62c658fadd28d0c057f9acd83900c"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DR6BVMZJV9CMSSYX7Y/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DR6BVMZJV9CMSSYX7Y/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value Investing Oracle video as untrusted lead material and recorded its canonical transcript hash. Existing primary evidence only supports the already-maintained Bloom-Oracle context; Oracle valuation, cloud-growth, financing, capex, and price-outcome claims remain unverified. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DR6BVMZJV9CMSSYX7Y/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact.",
+      "Validated the controller-provided local transcript artifact as one available English auto-generated chunk containing 142 non-empty segments, with the canonical video URL and matching canonical transcript hash; the network transcript helper was not rerun.",
+      "Reviewed the entire returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Existing registered Bloom SEC evidence corroborates only the already-retained Oracle deployment context. The video's Oracle operating, backlog, capex, financing, valuation, and price claims remain opinion, prediction, or unverified detail; no independently corroborated fact changed a maintained conclusion, and no identity import or follow-up was justified.",
+      "The audited source-record command appended source_history_ff7194f7721634e883a5 and registered youtube_ktY0IrrdSM8 with publisher @Value-Investing, source type youtube_video, canonical video URL, linked existing AI-infrastructure and Bloom context, and transcript hash d0e9e42e1541738e981343704f5ce43e63eafc154005ab9c87893cedb99ef116.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

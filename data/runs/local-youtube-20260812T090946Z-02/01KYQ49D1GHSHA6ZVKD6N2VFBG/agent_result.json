@@ -1,0 +1,61 @@
+{
+  "operation_id": "01KYQ49D1GHSHA6ZVKD6N2VFBG",
+  "status": "succeeded",
+  "summary": "Reviewed all five available auto-generated English transcript chunks for the curated Couch Investor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered issuer and SEC evidence supports only the narrower maintained Intel, Alphabet, Microsoft, Amazon, Meta, SoFi, and NVIDIA operating, capital-intensity, cash-conversion, execution, competition, and valuation-risk context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_pVaKoDHW9iY",
+      "claim": "The controller-provided local transcript artifact was available as five English auto-generated-caption chunks containing 679 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=pVaKoDHW9iY and canonical normalized transcript hash 19e5f592d57c2bfda3eed233c0dcf9874e2fd229880f30f02420a1ca48d638f8. Every returned chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=pVaKoDHW9iY",
+      "observed_at": "2026-08-12T12:16:20Z",
+      "source_hash": "19e5f592d57c2bfda3eed233c0dcf9874e2fd229880f30f02420a1ca48d638f8"
+    },
+    {
+      "source": "source_intc_q2_2026_10q_sec",
+      "claim": "Existing registered Intel primary evidence supports the maintained Q2 product and foundry growth, margin recovery, capital-intensity, liquidity, cash-generation, and execution-risk context. It does not corroborate the video's market-reaction, valuation, demand-duration, or price-path assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm",
+      "observed_at": "2026-08-06T15:02:43Z"
+    },
+    {
+      "source": "source_alphabet_q2_2026_10q",
+      "claim": "Existing registered Alphabet primary evidence supports the maintained Search, YouTube, Cloud, capital-intensity, cash-conversion, and antitrust-risk context. It does not establish the video's AI-capex market-reaction, valuation, or forecast claims.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "observed_at": "2026-08-01T16:32:28Z"
+    },
+    {
+      "source": "source_sofi_q2_2026_results",
+      "claim": "Existing registered SoFi SEC-filed results support the maintained Q2 growth, profitability, deposits, capital, liquidity, and technology-platform context. They do not corroborate the speaker's valuation, price, forecast, or personal-trading claims.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+      "observed_at": "2026-08-05T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Couch Investor pre-earnings large-cap commentary as untrusted lead material and recorded its canonical transcript hash. Existing registered issuer and SEC evidence supports only narrower maintained operating and risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GHSHA6ZVKD6N2VFBG/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, and controller preflight artifact with the selected papertrader-wiki-ingest skill.",
+      "Validated the controller-provided local transcript artifact as five available English auto-generated-caption chunks containing 679 non-empty segments, with a matching canonical video URL and transcript hash in every chunk; the transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered Intel, Alphabet, Microsoft, Amazon, Meta, SoFi, and NVIDIA primary evidence supports only their existing maintained issuer contexts. The video's valuation, price, personal-trading, market-reaction, forecast, AMD roadmap, customer, and competitor assertions remain opinion or unverified lead material; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_b617c21424a11ead0453 and registered youtube_pVaKoDHW9iY with publisher @CouchInvestor, source type youtube_video, canonical video URL, related maintained issuer context, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No strategy, signal, order, fill, execution, cash, portfolio, performance, allocation-target, or allocation-history state was changed by this operation; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

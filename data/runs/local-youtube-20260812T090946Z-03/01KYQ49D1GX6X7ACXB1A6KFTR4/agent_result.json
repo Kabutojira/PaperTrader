@@ -1,0 +1,33 @@
+{
+  "operation_id": "01KYQ49D1GX6X7ACXB1A6KFTR4",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because all three parent-run anonymous transcript clients were unavailable; no metadata-only analysis or repository mutation was permitted.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ49D1GX6X7ACXB1A6KFTR4.json",
+      "claim": "The parent-run helper returned status unavailable with reason_code youtube_transcript_unavailable after exactly three bounded attempts: WEB, ANDROID, and IOS each failed with ModuleNotFoundError. No transcript chunks or segments were returned.",
+      "source_hash": "0eb90adae9391e527d8a4323f980d2020e1e70a2d56d82be57ca2bfbb866f990"
+    },
+    {
+      "source": "skills/papertrader-wiki-ingest/SKILL.md",
+      "claim": "The curated YouTube protocol requires a terminal skipped result with youtube_transcript_unavailable, no metadata-only evidence, and no structured or wiki mutations when all bounded caption attempts are unavailable."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete parent helper JSON; its unavailable response was SHA-256 checked and contained no transcript chunks or segments.",
+      "Confirmed the claimed queue row, validated YouTube payload identity, and the local harness preflight for this single sequential wiki_ingest operation.",
+      "papertrader wiki lint --strict passed; command_audit.json records exit code 0 and no changed paths.",
+      "No structured state, wiki content, transcript/media bytes, source record, follow-up operation, or trading/accounting state was changed."
+    ]
+  }
+}

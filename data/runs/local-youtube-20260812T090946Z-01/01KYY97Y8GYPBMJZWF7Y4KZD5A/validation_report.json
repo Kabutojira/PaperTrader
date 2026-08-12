@@ -1,0 +1,15 @@
+{
+  "changed_paths": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "completed_at": "2026-08-12T09:49:22Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01KYY97Y8GYPBMJZWF7Y4KZD5A",
+  "passed": true,
+  "run_id": "local-youtube-20260812T090946Z-01",
+  "validation_version": 1
+}

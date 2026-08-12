@@ -1,0 +1,25 @@
+{
+  "operation_id": "01KYQ62ZT86MGSMHX08KN8170X",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped: the parent-run anonymous transcript helper reported captions unavailable after the required three bounded client attempts.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT86MGSMHX08KN8170X.json",
+      "claim": "The helper returned status unavailable with reason_code youtube_transcript_unavailable after three attempted anonymous clients: WEB, ANDROID, and IOS."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the supplied complete helper JSON and confirmed unavailable status with the required reason code.",
+      "Performed no transcript retrieval, wiki mutation, structured-state mutation, or follow-up enqueue.",
+      "Manifest conforms to the required skipped YouTube result contract."
+    ]
+  }
+}

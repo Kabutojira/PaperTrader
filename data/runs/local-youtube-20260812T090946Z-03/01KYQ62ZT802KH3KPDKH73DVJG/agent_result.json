@@ -1,0 +1,30 @@
+{
+  "operation_id": "01KYQ62ZT802KH3KPDKH73DVJG",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-supplied anonymous transcript helper reported captions unavailable after all three bounded client attempts; no metadata-only analysis or repository mutation was performed.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT802KH3KPDKH73DVJG.json",
+      "claim": "The parent-supplied ephemeral helper result has status unavailable and reason_code youtube_transcript_unavailable after three bounded attempts: WEB, ANDROID, and IOS each reported ModuleNotFoundError.",
+      "observed_at": "2026-08-12T12:48:56Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Payload and helper-result identities match operation 01KYQ62ZT802KH3KPDKH73DVJG and video PHL1j2ti420.",
+      "Parent-supplied helper result selected the required youtube_transcript_unavailable skip branch after three bounded attempts.",
+      "No transcript, media, source record, wiki, CSV, issue, or follow-up artifact was created for this unavailable-caption operation.",
+      "papertrader wiki lint --strict passed.",
+      "agent_result.json conforms to schemas/agent_result.schema.json."
+    ]
+  }
+}

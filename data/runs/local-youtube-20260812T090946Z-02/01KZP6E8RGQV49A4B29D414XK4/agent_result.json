@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZP6E8RGQV49A4B29D414XK4",
+  "status": "succeeded",
+  "summary": "Reviewed both available English auto-generated transcript chunks for the curated Value-Investing video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. No matching maintained Otis, KONE, or Schindler entity or registered primary evidence exists in the current repository context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_NNbke4YhznQ",
+      "claim": "The controller-provided local transcript artifact was available as two English auto-generated chunks containing 221 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=NNbke4YhznQ and canonical normalized transcript hash 7470631b2b5e692b58a79154d9adb7d2fdd1bbca2b027b8ab4c10a591b48b210. Every chunk was reviewed and the repeated chunk hashes matched the canonical hash. All content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=NNbke4YhznQ",
+      "observed_at": "2026-08-12T10:53:40Z",
+      "source_hash": "7470631b2b5e692b58a79154d9adb7d2fdd1bbca2b027b8ab4c10a591b48b210"
+    },
+    {
+      "source": "maintained wiki and source registry targeted search",
+      "claim": "Targeted searches of the research catalog, maintained entity pages, source registry, and source history found no matching Otis, KONE, or Schindler entity or registered primary evidence. The video therefore supplies no independently corroborated fact that can change a maintained conclusion or establish a complete public-security identity plus bounded material causal hypothesis.",
+      "observed_at": "2026-08-12T10:53:40Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value-Investing elevator-company dividend commentary as untrusted lead material and recorded its canonical transcript hash. No matching maintained entity or registered primary evidence exists in the current repository context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KZP6E8RGQV49A4B29D414XK4/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as two available English auto-generated chunks containing 221 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Targeted maintained-content and source-registry searches found no Otis, KONE, or Schindler entity and no registered primary evidence relevant to corroborate the video. The video's company, price, valuation, cash-flow, leverage, growth, guidance, market, and personal-investment assertions remain opinion, prediction, promotional framing, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_32550bf3a0060c131059 and registered youtube_NNbke4YhznQ with publisher @Value-Investing, source type youtube_video, canonical video URL, and matching canonical transcript hash 7470631b2b5e692b58a79154d9adb7d2fdd1bbca2b027b8ab4c10a591b48b210.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md is lint-clean and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

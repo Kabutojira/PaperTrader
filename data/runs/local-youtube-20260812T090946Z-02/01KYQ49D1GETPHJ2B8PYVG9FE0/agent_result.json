@@ -1,0 +1,58 @@
+{
+  "operation_id": "01KYQ49D1GETPHJ2B8PYVG9FE0",
+  "status": "succeeded",
+  "summary": "Reviewed all nine available English auto-generated transcript chunks for the curated @allin video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered Intel, NVIDIA, and TSMC primary evidence supports only the narrower maintained operating, capital-intensity, foundry, and execution-risk context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_-ILKiOU5iAQ",
+      "claim": "The controller-provided local transcript artifact was available as nine English auto-generated chunks containing 1,480 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=-ILKiOU5iAQ and canonical normalized transcript hash d74cba9605866df2439ab0b50ed6ae659b4f412c2b96dcbe1df6c7b218201476. Every chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=-ILKiOU5iAQ",
+      "observed_at": "2026-08-12T11:54:12Z",
+      "source_hash": "d74cba9605866df2439ab0b50ed6ae659b4f412c2b96dcbe1df6c7b218201476"
+    },
+    {
+      "source": "source_intc_q2_2026_10q_sec",
+      "claim": "Existing registered Intel SEC evidence establishes the maintained Q2 product and foundry growth, margin recovery, liquidity, investment, external-foundry-revenue, and execution-risk context. It does not corroborate the video's historic management, capital-allocation, Apple, NVIDIA, TSMC, geopolitical, or valuation interpretation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000157/intc-20260627.htm",
+      "observed_at": "2026-08-06T15:02:43Z",
+      "source_hash": "23bf9b8f45c8a4412245f9919fcbf124d0aa1af3bd949af671a4cce68fc2acda"
+    },
+    {
+      "source": "source_intc_q2_2026_results_sec_ex99_1",
+      "claim": "Existing registered Intel SEC-filed issuer evidence supports the maintained current earnings, margin, liquidity, capital-intensity, and execution-risk context. It does not corroborate the video's retrospective claims, private-company Lovable assertions, forecasts, or promotional framing.",
+      "url": "https://www.sec.gov/Archives/edgar/data/50863/000005086326000155/q226earningsrelease.htm",
+      "observed_at": "2026-08-06T15:02:43Z",
+      "source_hash": "5793462254cf215b58c508b426a914e3264b8044e623b7433f7e51696caf7e7a"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated @allin Intel and Lovable commentary as untrusted lead material and recorded its canonical transcript hash. Existing registered Intel, NVIDIA, and TSMC primary evidence supports only narrower maintained operating, capital-intensity, foundry, and execution-risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GETPHJ2B8PYVG9FE0/source_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as nine available English auto-generated chunks containing 1,480 non-empty segments, with one canonical transcript hash; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered Intel primary evidence supports only the already-maintained current operating and risk facts. The video's historical causal accounts, private-company Lovable assertions, forecasts, product promotion, and investment interpretation remain opinion, retrospective, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_0bde75dcd671382f7819 and registered youtube_-ILKiOU5iAQ with publisher @allin, source type youtube_video, canonical video URL, related maintained Intel, NVIDIA, and TSMC context, and matching canonical transcript hash.",
+      "Strict wiki lint returned OK before source recording, after source recording, and after the append-only wiki log update. The command audit records exactly the four canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

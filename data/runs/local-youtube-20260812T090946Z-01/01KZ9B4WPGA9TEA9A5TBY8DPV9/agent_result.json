@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZ9B4WPGA9TEA9A5TBY8DPV9",
+  "status": "succeeded",
+  "summary": "Reviewed the available curated-video caption chunk as untrusted lead material and recorded its canonical transcript hash as provenance. The three claimed purchases are unnamed, so no issuer, instrument, venue, provider symbol, currency, or independently verifiable material causal hypothesis supports a security import or bounded research follow-up.",
+  "evidence": [
+    {
+      "source": "Curated YouTube transcript helper output",
+      "claim": "The supplied result was available as auto-generated English captions through the anonymous WEB client. Its one reviewed chunk spans 00:00:00.000 through 00:04:05.400 with 94 segments, and its top-level and per-chunk canonical transcript hashes match ee3504e5d885bb11d00c97b20c7a2235650cccde348be2e452a289753cfb8a14.",
+      "url": "https://www.youtube.com/watch?v=G3S5ZyL9U64",
+      "observed_at": "2026-08-12T10:19:33Z",
+      "source_hash": "ee3504e5d885bb11d00c97b20c7a2235650cccde348be2e452a289753cfb8a14"
+    },
+    {
+      "source": "Transcript review and registered PaperTrader security universe",
+      "claim": "The speaker presents three personal purchases only through unnamed generic financial narratives. No stable issuer or instrument identity is supplied, therefore no current primary evidence can be linked without inventing an identity; all purchase, ratio, catalyst, performance, and return assertions remain unverified speaker claims or predictions."
+    },
+    {
+      "source": "data/tables/source_registry.csv and data/tables/source_history.csv",
+      "claim": "The source was recorded exactly once for this run as youtube_G3S5ZyL9U64 with publisher @Value-Investing, canonical video URL, available status, copyrighted-transcript-not-stored license, and the canonical transcript hash."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ9B4WPGA9TEA9A5TBY8DPV9/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ9B4WPGA9TEA9A5TBY8DPV9/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZ9B4WPGA9TEA9A5TBY8DPV9/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the available helper result and matched its top-level and single chunk transcript hashes to the recorded source hash.",
+      "Reviewed the complete returned caption chunk; youtube_analysis.md records classified timestamped items, rejected promotional content, uncertainty, and the absence of follow-ups without retaining transcript content.",
+      "Confirmed no issuer or instrument identity and no independently corroborated material factual claim justified a maintained entity change, security import, or research follow-up.",
+      "Confirmed the source registry and exactly one matching source-history row use the canonical video identity, channel publisher, and transcript hash for this run.",
+      "Confirmed no transcript, audio, video, thumbnail, description, or caption chunks were retained under the repository.",
+      "papertrader wiki lint --strict passed.",
+      "Confirmed no assessment, strategy, signal, allocation, order, execution, cash, portfolio, or performance state changed."
+    ]
+  }
+}

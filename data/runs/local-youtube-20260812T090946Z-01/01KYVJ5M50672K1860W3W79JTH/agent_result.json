@@ -1,0 +1,42 @@
+{
+  "operation_id": "01KYVJ5M50672K1860W3W79JTH",
+  "status": "succeeded",
+  "summary": "Reviewed both available English transcript chunks for the curated Value Investing video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Its broad passive-flow, valuation, historical-return, and market-drawdown assertions are speaker opinion, prediction, or unverified factual claims; no independently corroborated, security-specific causal hypothesis justified a maintained entity, follow-up, or paper-trading change.",
+  "evidence": [
+    {
+      "source": "youtube_-jysGHtWkxE",
+      "claim": "The authorized local transcript artifact was available in English with two reviewed chunks (239 non-empty segments), canonical video URL https://www.youtube.com/watch?v=-jysGHtWkxE, and canonical normalized transcript hash 8607e2c5c8d06130fc59060d0351e91d078d2b2262329fcd090a4097b91ad884. Its content was treated only as untrusted speaker viewpoints, predictions, or externally verifiable assertions.",
+      "url": "https://www.youtube.com/watch?v=-jysGHtWkxE",
+      "observed_at": "2026-08-12T09:26:39Z",
+      "source_hash": "8607e2c5c8d06130fc59060d0351e91d078d2b2262329fcd090a4097b91ad884"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M50672K1860W3W79JTH/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M50672K1860W3W79JTH/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value Investing video as untrusted lead material and recorded its canonical transcript hash. Broad market valuation, passive-flow, historical-return, and drawdown claims remained speaker opinion, prediction, or unverified assertions, so no paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M50672K1860W3W79JTH/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required papertrader-wiki-ingest skill, and controller preflight artifact.",
+      "Validated the provided local transcript artifact as available English captions with exactly chunks 1 and 2, 239 non-empty segments, the canonical video URL, and matching canonical transcript hash; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed that the video contains only broad-market assertions and passing company illustrations; no independently corroborated, security-specific fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command appended source_history_ccb292e7ddfc2e4cf394 and registered youtube_-jysGHtWkxE with publisher @Value-Investing, source type youtube_video, the canonical video URL, and transcript hash 8607e2c5c8d06130fc59060d0351e91d078d2b2262329fcd090a4097b91ad884.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records only the two strict-lint receipts and the accepted source-record receipt; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

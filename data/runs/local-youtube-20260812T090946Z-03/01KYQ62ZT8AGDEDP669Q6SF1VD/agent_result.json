@@ -1,0 +1,28 @@
+{
+  "operation_id": "01KYQ62ZT8AGDEDP669Q6SF1VD",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped YouTube ingestion because the parent-provided offline transcript helper reported unavailable after all three bounded anonymous attempts. No transcript retrieval was rerun and no wiki or structured-state mutation was made.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8AGDEDP669Q6SF1VD.json",
+      "claim": "The complete parent-provided helper result reports status unavailable, reason_code youtube_transcript_unavailable, and three failed clients: WEB, ANDROID, and IOS.",
+      "url": "https://www.youtube.com/watch?v=fO5sC7qS04E"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-03/01KYQ62ZT8AGDEDP669Q6SF1VD/agent_result.json"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete parent-provided ephemeral helper JSON; its status is unavailable.",
+      "Required unavailable-transcript policy applied: no transcript retry, wiki mutation, structured mutation, or follow-up operation.",
+      "Manifest conforms to the required skipped-result fields and uses reason_code youtube_transcript_unavailable."
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYQ49D1GB9057VRBFHJ9Y1NX",
+  "status": "succeeded",
+  "summary": "Reviewed all seven available English caption chunks for the curated ConnectingODots video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Ford and Toyota are not maintained PaperTrader securities, and existing registered Tesla primary evidence supports only the narrower maintained delivery, liquidity, capital-intensity, autonomy, robotics, and execution-risk context; no video-only claim changed a conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_k77X47h6OVU",
+      "claim": "The controller-provided local transcript artifact was available as seven English non-auto-generated caption chunks with canonical video URL https://www.youtube.com/watch?v=k77X47h6OVU and canonical normalized transcript hash fd3560e304ccc13cbba2c4d89a3fca8ccaf1154044978372c31e89c83b9f2ee1. Every returned chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=k77X47h6OVU",
+      "observed_at": "2026-08-12T11:35:43Z",
+      "source_hash": "fd3560e304ccc13cbba2c4d89a3fca8ccaf1154044978372c31e89c83b9f2ee1"
+    },
+    {
+      "source": "source_tsla_q2_2026_10q",
+      "claim": "Existing registered Tesla SEC evidence establishes delivery and revenue growth, substantial liquidity, increased capital intensity, and autonomy, robotics, and execution uncertainty. It does not corroborate the video’s Ford or Toyota manufacturing, financing, governance, valuation, or corporate-intent assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "observed_at": "2026-07-29T00:00:00Z"
+    },
+    {
+      "source": "source_tsla_q2_2026_deliveries",
+      "claim": "Tesla’s registered issuer release supports the maintained delivery and energy-storage operating context, but it is not corroboration for the transcript’s claims about Ford, Toyota, Chinese competition, or their future outcomes.",
+      "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+      "observed_at": "2026-07-29T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated ConnectingODots Ford and Toyota EV-transition commentary as untrusted lead material and recorded its canonical transcript hash. Ford and Toyota are not maintained PaperTrader securities, and existing registered Tesla primary evidence supports only narrower delivery, liquidity, capital-intensity, autonomy, robotics, and execution-risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GB9057VRBFHJ9Y1NX/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as seven available English non-auto-generated caption chunks with canonical video URL and transcript hash fd3560e304ccc13cbba2c4d89a3fca8ccaf1154044978372c31e89c83b9f2ee1; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Ford and Toyota are not maintained PaperTrader securities. Existing registered Tesla SEC and issuer-release evidence supports only the maintained delivery, liquidity, capital-intensity, autonomy, robotics, and execution-risk context; the video’s manufacturing, financing, governance, valuation, and corporate-intent assertions remain opinion, prediction, speaker claim, or unverified detail. No independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_275246e349af38b7dbd4 and registered youtube_k77X47h6OVU with publisher @ConnectingODots, source type youtube_video, canonical video URL, maintained Tesla context, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK after source recording. The command audit records exactly the two canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

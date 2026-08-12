@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KZMAG4W8YX882WWPKXP630N4",
+  "status": "succeeded",
+  "summary": "Reviewed all four available English auto-generated transcript chunks for the curated CouchInvestor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered primary evidence supports only the narrower maintained Rocket Lab, Nebius, PayPal, dLocal, SoFi, Alphabet, and Meta operating and risk context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_7lE_ewagWx4",
+      "claim": "The controller-provided local transcript artifact was available as four English auto-generated chunks containing 547 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=7lE_ewagWx4 and canonical normalized transcript hash bfa596a70ea653fb5b68a2f9f0f4e2dbe9162575bb98caaea363452cb5e7df12. Every chunk was reviewed and the repeated chunk hashes matched the canonical hash. All content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=7lE_ewagWx4",
+      "observed_at": "2026-08-12T10:48:37Z",
+      "source_hash": "bfa596a70ea653fb5b68a2f9f0f4e2dbe9162575bb98caaea363452cb5e7df12"
+    },
+    {
+      "source": "source_rklb_q1_2026_10q",
+      "claim": "Existing registered Rocket Lab SEC evidence establishes launch and space-systems economics, backlog, cash use, dilution, Neutron pre-first-flight risk, and the maintained Iridium transaction context. It does not corroborate the video's price, valuation, forecast, or personal-trading assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm",
+      "observed_at": "2026-08-09T21:30:46Z",
+      "source_hash": "ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2"
+    },
+    {
+      "source": "source_nbis_q1_2026_financials",
+      "claim": "Existing registered Nebius SEC evidence establishes rapid AI-cloud growth alongside customer advances, capital intensity, secured leverage, dilution, and concentration risk. It does not corroborate the video's capacity, location, guidance, valuation, or trading inference.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331xex99d2.htm",
+      "observed_at": "2026-08-05T18:39:11Z",
+      "source_hash": "4e3eb19ae8fba85cc7a38bee65438d854b271072ff899874dda01cfbc8a77a5e"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated CouchInvestor portfolio-moves and earnings-commentary video as untrusted lead material and recorded its canonical transcript hash. Existing registered primary evidence supports only narrower Rocket Lab, Nebius, PayPal, dLocal, SoFi, Alphabet, and Meta context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KZMAG4W8YX882WWPKXP630N4/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as four available English auto-generated chunks containing 547 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered Rocket Lab and Nebius primary evidence, plus the maintained PayPal, dLocal, SoFi, Alphabet, and Meta context, supports only already-maintained operating and risk facts. The video's valuations, prices, forecasts, earnings interpretations, capacity, debt, margin, personal-investment, and other assertions remain opinion, prediction, ambiguous, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_8f04121bcc04c90a528d and registered youtube_7lE_ewagWx4 with publisher @CouchInvestor, source type youtube_video, canonical video URL, related maintained context, and matching canonical transcript hash bfa596a70ea653fb5b68a2f9f0f4e2dbe9162575bb98caaea363452cb5e7df12.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

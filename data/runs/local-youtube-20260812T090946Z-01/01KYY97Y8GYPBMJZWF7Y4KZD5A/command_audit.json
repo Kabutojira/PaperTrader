@@ -1,0 +1,102 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-12T09:47:41Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-12T09:47:40Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/source_record_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "5383679aef04c242d5e6209acfebe9847f574eab14ed7b51396fb10897fda71d",
+            196296,
+            384
+          ],
+          "before": [
+            "file",
+            "0167dbacdb5d9ad13351b4686775c82930585d58b4c12d47eea83e1854c5d0cc",
+            195717,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ff96c8a59a0b66da0bcbdebf21bf5116fe33e8c731178443f646ca67d9d26eb9",
+            105018,
+            384
+          ],
+          "before": [
+            "file",
+            "35121e8f96c6427a08e4feb8f91c81b187d537a4b0181096572825c9cf72448b",
+            104590,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/source_record_request.json",
+      "completed_at": "2026-08-12T09:47:52Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "cdfe67e66d2b150fa1c7e0e76ad7d71ba785c25bfdf326a926117f77d49a0604",
+          1097,
+          436
+        ],
+        "path": "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/source_record_request.json"
+      },
+      "started_at": "2026-08-12T09:47:52Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-12T09:48:05Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-12T09:48:04Z"
+    }
+  ],
+  "operation_id": "01KYY97Y8GYPBMJZWF7Y4KZD5A",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-youtube-20260812T090946Z-01"
+}

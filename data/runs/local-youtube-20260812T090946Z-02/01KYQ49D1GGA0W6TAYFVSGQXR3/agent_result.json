@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KYQ49D1GGA0W6TAYFVSGQXR3",
+  "status": "succeeded",
+  "summary": "Reviewed all 17 available English auto-generated transcript chunks for the curated All-In video as untrusted lead material. Recorded its canonical transcript hash and preserved a non-published classified analysis. Existing registered Alphabet and Amazon primary evidence supports only narrower maintained AI-infrastructure, capital-intensity, operating, and Anthropic-investment context; no video-only claim changed a maintained conclusion, created an import or follow-up, or changed paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_wcV0SRPFK9s",
+      "claim": "The controller-provided local transcript artifact was available as 17 English auto-generated chunks containing 2,696 non-empty timestamped segments, covering 00:00:00.000 through 01:33:42.920. Every returned chunk carried the canonical video URL and matching canonical normalized transcript hash. All content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=wcV0SRPFK9s",
+      "observed_at": "2026-08-12T12:06:48Z",
+      "source_hash": "389da2aa60675071a46a84668e1030d69a3716a041b28c3b8dace2824b268cba"
+    },
+    {
+      "source": "registered primary-source context",
+      "claim": "Targeted review of maintained AI-compute context and the registered Alphabet and Amazon SEC filings and issuer releases confirms only already-maintained operating, capital-intensity, financing, and Anthropic-investment context. It does not corroborate the transcript's model-performance, alleged distillation, regulatory, litigation, payout, price-path, or housing-policy assertions, so no maintained conclusion or complete independently verified new security hypothesis was established.",
+      "observed_at": "2026-08-12T12:06:48Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated All-In open-source-AI and New York housing commentary as untrusted lead material and recorded its canonical transcript hash. Existing registered Alphabet and Amazon primary evidence supports only narrower maintained context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGA0W6TAYFVSGQXR3/source_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as 17 available English auto-generated chunks containing 2,696 non-empty timestamped segments, with the canonical video URL and matching canonical transcript hash in every chunk; transcript retrieval was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "The transcript's open-source-AI, Anthropic/OpenAI, copyright, payout, market, and housing claims remain speaker claims, opinions, predictions, or unverified details. Registered Alphabet and Amazon SEC filing and issuer-release evidence supports only narrower already-maintained context; no independently corroborated fact changed a maintained conclusion, and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_841f960f7acafba4f7b8 and registered youtube_wcV0SRPFK9s with publisher @allin, source type youtube_video, canonical video URL, and matching canonical transcript hash 389da2aa60675071a46a84668e1030d69a3716a041b28c3b8dace2824b268cba.",
+      "Strict wiki lint returned OK before source recording and after final append-only log entry. The command audit records exactly the four canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md is lint-clean and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

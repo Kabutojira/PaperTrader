@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYQ49D1G3QX14JS5VBH76HN0",
+  "status": "succeeded",
+  "summary": "Reviewed both available English auto-generated transcript chunks for the curated DumbMoneyLive video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered Amazon and Robinhood primary evidence corroborates only the narrower maintained AI-capital-intensity and crypto-revenue context; it does not corroborate the speaker's financing, valuation, price-path, personal-trading, or forecast assertions. Sweetgreen remained an unverified passing lead. No maintained conclusion, identity import, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_6006vpLlaVw",
+      "claim": "The controller-provided local transcript artifact was available as two English auto-generated chunks containing 235 unique non-empty timestamped segments. Every returned chunk was reviewed; canonical normalization recomputed to the matching transcript SHA-256.",
+      "url": "https://www.youtube.com/watch?v=6006vpLlaVw",
+      "observed_at": "2026-08-12T11:10:22Z",
+      "source_hash": "26b04f84e234b10331a76356703bcf53d4b3b6f07079346fbd8ab63d1bd7ac16"
+    },
+    {
+      "source": "source_amzn_q2_2026_10q|source_amzn_q2_2026_results",
+      "claim": "Registered Amazon primary evidence supports the narrower maintained context of strong operating growth alongside AI infrastructure spending, negative trailing free cash flow, and higher debt. It does not establish the video's proposed financing amount, timing, valuation, or price path.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+      "observed_at": "2026-08-01T09:14:42Z"
+    },
+    {
+      "source": "source_hood_q2_2026_10q|source_hood_q2_2026_results",
+      "claim": "Registered Robinhood primary evidence corroborates a decline in Q2 cryptocurrency revenue and the maintained cyclicality context, but not the video's long-horizon dominance, valuation, or price assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm",
+      "observed_at": "2026-08-01T16:10:35Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated DumbMoneyLive Amazon, Robinhood, and Sweetgreen commentary video as untrusted lead material and recorded its canonical transcript hash. Existing registered Amazon and Robinhood evidence supports only narrower maintained context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3QX14JS5VBH76HN0/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single claimed wiki_ingest operation, matching immutable source/video/channel identities, controller preflight artifact, and papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as two available English auto-generated chunks containing 235 unique non-empty timestamped segments. Recomputed the canonical normalized hash 26b04f84e234b10331a76356703bcf53d4b3b6f07079346fbd8ab63d1bd7ac16; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered Amazon and Robinhood primary evidence corroborates only the already-maintained AI-capital-intensity, debt, free-cash-flow, crypto-revenue, and cyclicality context. The video's financing, price, valuation, competition, personal-options, and forecast claims remain opinion, prediction, or unverified detail; Sweetgreen did not meet the independently verified identity-and-hypothesis threshold. No entity change, import, or follow-up was justified.",
+      "The audited source-record command appended source_history_308cb161b3de4c80e489 and registered youtube_6006vpLlaVw with publisher @DumbMoneyLive, source type youtube_video, canonical video URL, maintained related context, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK. The command audit records exactly the two canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

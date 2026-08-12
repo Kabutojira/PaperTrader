@@ -1,0 +1,30 @@
+{
+  "operation_id": "01KYQ49D1GNN84QQ53F97HDY1P",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-supplied anonymous transcript helper reported captions unavailable after all three bounded clients; no transcript content, wiki state, structured state, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "parent-supplied ephemeral transcript helper result",
+      "claim": "Transcript retrieval was unavailable after three bounded anonymous clients: WEB, ANDROID, and IOS each reported ModuleNotFoundError. The YouTube ingest protocol requires a terminal skip without metadata-only analysis or repository-state mutation.",
+      "url": "https://www.youtube.com/watch?v=AK_aWcM-VAY"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Payload source, video, channel, and canonical URL identities were read and matched the claimed operation.",
+      "Parent-supplied ephemeral transcript result had terminal status unavailable with reason_code youtube_transcript_unavailable after exactly three bounded clients.",
+      "No transcript content was persisted and no wiki or structured-state mutation was made.",
+      "papertrader wiki lint --strict passed with no audited content changes.",
+      "Agent result conforms to the required skipped YouTube result fields and reports no changed files or follow-ups."
+    ]
+  }
+}

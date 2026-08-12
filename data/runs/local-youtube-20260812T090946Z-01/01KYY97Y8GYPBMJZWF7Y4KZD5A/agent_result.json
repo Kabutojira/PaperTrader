@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYY97Y8GYPBMJZWF7Y4KZD5A",
+  "status": "succeeded",
+  "summary": "Reviewed all five available English auto-generated transcript chunks for the curated Couch Investor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing SEC-filed evidence corroborates selected Amazon, Meta, and SoFi operating facts, but the video's Amazon infrastructure-return, Reddit, valuation, macro, and price-path claims did not justify any maintained entity conclusion, import, follow-up, strategy, signal, allocation, order, execution, cash, position, portfolio, or performance change.",
+  "evidence": [
+    {
+      "source": "youtube_DNlb0PrAdro",
+      "claim": "The authorized local transcript artifact was available in English auto-generated captions with five reviewed chunks (675 returned segments), canonical video URL https://www.youtube.com/watch?v=DNlb0PrAdro, and canonical normalized transcript hash cf14ee10db1cfb81dc326ebcfaaeeb977088113dd8679085832437aa999134e3. Its content was treated only as untrusted speaker viewpoints, predictions, or externally verifiable assertions.",
+      "url": "https://www.youtube.com/watch?v=DNlb0PrAdro",
+      "observed_at": "2026-08-12T09:44:26Z",
+      "source_hash": "cf14ee10db1cfb81dc326ebcfaaeeb977088113dd8679085832437aa999134e3"
+    },
+    {
+      "source": "source_amzn_q2_2026_10q and source_amzn_q2_2026_results",
+      "claim": "Existing SEC-filed Amazon Q2 2026 Form 10-Q and results evidence corroborates the maintained sales, operating-income, AWS-growth, capital-investment, and free-cash-flow baseline. It preserves utilization, depreciation, leverage, and infrastructure-return uncertainty rather than supporting the transcript's bullish valuation conclusion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+      "observed_at": "2026-08-01T09:14:42Z",
+      "source_hash": "3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895"
+    },
+    {
+      "source": "source_meta_q2_2026_results and source_sofi_q2_2026_results",
+      "claim": "Existing SEC-filed Meta and SoFi results support their retained operating, capital-intensity or funding, and valuation-risk context. They corroborate no video price target or long-run price-path claim, and Reddit lacked independently verified primary evidence and canonical identity in this operation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Couch Investor Amazon-and-Reddit video as untrusted lead material and recorded its canonical transcript hash. Existing SEC-filed evidence corroborates selected Amazon, Meta, and SoFi facts, while infrastructure-return, Reddit, valuation, macro, and price-path claims remain speaker opinion, prediction, or unverified detail. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GYPBMJZWF7Y4KZD5A/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact.",
+      "Validated the provided local transcript artifact as available English auto-generated captions with exactly chunks 1 through 5, 675 returned segments, the canonical video URL, and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed that selected Amazon, Meta, and SoFi facts overlap existing SEC-filed primary evidence, while Amazon infrastructure-return, Reddit, valuation, macro, and price claims are speaker opinion, prediction, or unverified details. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "Source-hash validation confirms the audited source record uses transcript hash cf14ee10db1cfb81dc326ebcfaaeeb977088113dd8679085832437aa999134e3 in both source_registry.csv and append-only source_history.csv; the accepted history ID is source_history_a7f57edb60a13e816623.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

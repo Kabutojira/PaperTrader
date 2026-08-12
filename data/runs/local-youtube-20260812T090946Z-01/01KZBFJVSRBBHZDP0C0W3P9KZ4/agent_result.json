@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KZBFJVSRBBHZDP0C0W3P9KZ4",
+  "status": "succeeded",
+  "summary": "Reviewed both available English auto-generated transcript chunks for the curated Value Investing video as untrusted lead material. Recorded its canonical transcript hash and preserved a non-published classified analysis. The broad crash forecast and the cash, value-ETF, Berkshire valuation, emerging-market, and hedging assertions did not independently corroborate a material security-specific conclusion or justify an identity import or bounded follow-up. No maintained entity or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_BPmhjXnBRNE",
+      "claim": "The authorized local transcript artifact was available as English auto-generated captions through the anonymous WEB client, with exactly two reviewed chunks, 201 non-empty segments, canonical video URL https://www.youtube.com/watch?v=BPmhjXnBRNE, and matching top-level and per-chunk canonical transcript hash f8776cdedfab7d8943da59f941c813766133d7a9124c8425b750d46819c8abb5. All transcript content was handled only as untrusted speaker claims, opinions, predictions, promotion, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=BPmhjXnBRNE",
+      "observed_at": "2026-08-12T10:29:16Z",
+      "source_hash": "f8776cdedfab7d8943da59f941c813766133d7a9124c8425b750d46819c8abb5"
+    },
+    {
+      "source": "PaperTrader maintained security and source registries",
+      "claim": "The maintained registries contain no Berkshire Hathaway, value-ETF, or identified emerging-market instrument. The video does not supply a complete independently verified public-security identity and material causal hypothesis, so no current registered primary evidence supports a maintained conclusion or security import."
+    },
+    {
+      "source": "data/tables/source_registry.csv and data/tables/source_history.csv",
+      "claim": "The audited source-record command registered youtube_BPmhjXnBRNE exactly once for this run with publisher @Value-Investing, source type youtube_video, canonical video URL, available status, copyrighted-transcript-not-stored license, and the matching canonical transcript hash."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZBFJVSRBBHZDP0C0W3P9KZ4/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZBFJVSRBBHZDP0C0W3P9KZ4/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value Investing video as untrusted lead material and recorded its canonical transcript hash. Its crash forecast and cash, value-ETF, Berkshire, emerging-market, and hedging assertions were classified as opinions, predictions, or unverified claims; no follow-up or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZBFJVSRBBHZDP0C0W3P9KZ4/source_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, required papertrader-controller and papertrader-wiki-ingest preflight hashes, and sequential local harness context for the claimed run.",
+      "Validated the supplied local transcript artifact as available English auto-generated captions with exactly two chunks and 201 non-empty segments; its canonical video URL and top-level/per-chunk transcript hashes match the recorded source hash. The network transcript helper was not rerun.",
+      "Reviewed every returned chunk and recorded timestamped classifications, retained and rejected leads, uncertainty, and the absence of follow-ups in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunks were written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed the named company and fund categories are absent from maintained security/source registrations and that no independently corroborated material security-specific fact justified an entity change, identity import, or research follow-up.",
+      "The audited source-record command registered youtube_BPmhjXnBRNE and appended source_history_43bb4ffb93c84f257520 with publisher @Value-Investing, source type youtube_video, canonical video URL, and matching canonical transcript hash.",
+      "Strict wiki lint returned OK after the source record and after the wiki-log entry. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its only structured-state delta is source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

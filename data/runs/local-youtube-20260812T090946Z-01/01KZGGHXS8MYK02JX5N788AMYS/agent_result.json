@@ -1,0 +1,65 @@
+{
+  "operation_id": "01KZGGHXS8MYK02JX5N788AMYS",
+  "status": "succeeded",
+  "summary": "Reviewed all 14 available English transcript chunks for the curated All-In video as untrusted lead material. Recorded the YouTube source with its canonical transcript hash, retained a non-published classified analysis, and logged the source review. Existing registered primary evidence corroborates only already-maintained Alphabet, Microsoft, NVIDIA, and SpaceX operating, capital-intensity, financing, and risk context; no video-only claim justified a maintained conclusion change, identity import, follow-up, strategy, signal, allocation, order, execution, cash, position, portfolio, performance, or paper trade.",
+  "evidence": [
+    {
+      "source": "youtube_muRIXCDw-k0",
+      "claim": "The authorized local transcript artifact was available in English with 14 reviewed chunks and 2,231 non-empty segments, canonical video URL https://www.youtube.com/watch?v=muRIXCDw-k0, and canonical normalized transcript hash 751addbb68d581ba97eb8752ccab156e9b36dafb4383d36cc071f7aa78818e12. All chunk hashes matched; its contents were treated only as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=muRIXCDw-k0",
+      "observed_at": "2026-08-12T10:45:00Z",
+      "source_hash": "751addbb68d581ba97eb8752ccab156e9b36dafb4383d36cc071f7aa78818e12"
+    },
+    {
+      "source": "source_alphabet_q2_2026_10q",
+      "claim": "Existing registered Alphabet primary evidence already supports the maintained Search, YouTube, Cloud, capital-intensity, cash-flow, financing, and competition context; it does not establish the video's personnel, model-ranking, product-usage, or valuation conclusions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "observed_at": "2026-08-01T16:32:28Z",
+      "source_hash": "fecfbc2683f630380b17937278ce3745eca150eb90e21a945fd6b78fe19728c7"
+    },
+    {
+      "source": "source_msft_fy2026_10k",
+      "claim": "Existing registered Microsoft primary evidence already supports the maintained Cloud, Azure, contracted-obligation, capital-intensity, cash-conversion, and OpenAI-risk context; it does not corroborate the video's token-return, model-frontier, or valuation assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "observed_at": "2026-08-06T18:51:54Z",
+      "source_hash": "4bcf2da2871acc19e32c5a62f36f6d83d6aae03cdc4aaa9a86a9a21ee8223f02"
+    },
+    {
+      "source": "source_spacex_terafab_prospectus_20260605",
+      "claim": "Existing registered SpaceX primary evidence preserves disclosed launch, connectivity, compute, funding, capacity, and execution context, but not the video's reported quarter, market-price, customer-contract, chip-financing, Starlink cash-flow, or future-capacity claims.",
+      "url": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "observed_at": "2026-08-07T09:23:01Z",
+      "source_hash": "4655a5283f60bab22e9895edc1eedef4eb76f9c75f6694d3d6b12f3a77e01d10"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZGGHXS8MYK02JX5N788AMYS/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZGGHXS8MYK02JX5N788AMYS/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated All-In video as untrusted lead material and recorded its canonical transcript hash. Existing registered primary evidence already covers the narrower Alphabet, Microsoft, NVIDIA, and SpaceX context; Airtable, policy, valuation, financing, and forecast commentary was unverified or opinion. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZGGHXS8MYK02JX5N788AMYS/source_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact.",
+      "Validated the supplied local transcript artifact as available English captions with exactly chunks 1 through 14, 2,231 non-empty segments, the canonical video URL, and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed that Alphabet, Microsoft, NVIDIA, and SpaceX discussion overlaps registered primary-source-backed maintained research; Airtable, policy, financing, valuation, price, and forecast claims are unverified or opinion. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command appended source_history_a94e29fb0ed339ec29cb and registered youtube_muRIXCDw-k0 with publisher @allin, source type youtube_video, canonical video URL, and transcript hash 751addbb68d581ba97eb8752ccab156e9b36dafb4383d36cc071f7aa78818e12.",
+      "Strict wiki lint returned OK before source recording and after the source-review log entry. The command audit records only three strict-lint receipts and the accepted source-record receipt; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

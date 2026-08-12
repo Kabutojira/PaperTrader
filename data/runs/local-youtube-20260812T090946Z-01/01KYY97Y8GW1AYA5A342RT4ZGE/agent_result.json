@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KYY97Y8GW1AYA5A342RT4ZGE",
+  "status": "succeeded",
+  "summary": "Reviewed the available two-chunk auto-generated English YouTube transcript as an untrusted Nintendo lead, recorded its canonical transcript hash, and made no maintained investment conclusion or follow-up because the prospective Japanese ordinary-share identity is outside the configured venue/currency universe.",
+  "evidence": [
+    {
+      "source": "controller-provided curated YouTube transcript",
+      "claim": "All two available chunks were reviewed; their canonical transcript hash matched the top-level hash and the source was recorded as provenance only.",
+      "url": "https://www.youtube.com/watch?v=lSx5W8a3_yQ",
+      "observed_at": "2026-08-12T09:37:12Z",
+      "source_hash": "4a86d39dbaf0619e94014462288f34e42ddb3164e679b0664de2cfb6b6f3673f"
+    },
+    {
+      "source": "Nintendo investor relations FAQ",
+      "claim": "Nintendo identifies itself as listed on the Tokyo Stock Exchange Prime Market with ticker 7974; this corroborates issuer identity only, not the video's ADR, valuation, price, or moat claims.",
+      "url": "https://www.nintendo.co.jp/ir/en/qa/qa.html",
+      "observed_at": "2026-08-12T09:40:00Z"
+    },
+    {
+      "source": "Nintendo investor relations sales data and FY2026 briefing",
+      "claim": "Issuer materials corroborate current Switch 2 platform sales context, but do not support a security-level investment conclusion from the video.",
+      "url": "https://www.nintendo.co.jp/ir/en/finance/hard_soft/index.html",
+      "observed_at": "2026-08-12T09:40:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GW1AYA5A342RT4ZGE/source-record-request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GW1AYA5A342RT4ZGE/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8GW1AYA5A342RT4ZGE/source-record-request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Reviewed every available controller-provided transcript chunk and matched the canonical transcript hash across the top-level and chunk records.",
+      "Confirmed one matching YouTube source registry row and one matching source-history row for this run using the canonical transcript hash.",
+      "Confirmed no per-video wiki page or stored transcript/media artifact exists.",
+      "Confirmed Nintendo is not a maintained security and its prospective XTKS/JPY ordinary-share identity is outside the configured watchlist universe; no import or follow-up was permitted.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "Confirmed no allocation, order, signal, execution, cash, portfolio, or performance state changed."
+    ]
+  }
+}

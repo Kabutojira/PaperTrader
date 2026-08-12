@@ -1,0 +1,32 @@
+{
+  "operation_id": "01KYQ49D1GWWHW1JFKE6VSSHB7",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped without repository mutation because the parent-supplied anonymous transcript helper reported captions unavailable after all three bounded client attempts.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ49D1GWWHW1JFKE6VSSHB7.json",
+      "claim": "The complete ephemeral helper output reports status unavailable with reason_code youtube_transcript_unavailable after three bounded attempts; WEB, ANDROID, and IOS each failed with ModuleNotFoundError. No chunks or segments were returned.",
+      "url": "https://www.youtube.com/watch?v=pVwvxybnwdg",
+      "source_hash": "0eb90adae9391e527d8a4323f980d2020e1e70a2d56d82be57ca2bfbb866f990"
+    },
+    {
+      "source": "skills/papertrader-wiki-ingest/SKILL.md",
+      "claim": "The curated YouTube protocol requires a terminal skipped result with reason_code youtube_transcript_unavailable and no metadata-only analysis or structured/wiki mutations when all bounded caption attempts are unavailable."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Parsed the complete 216-byte parent-provided transcript-helper JSON; status is unavailable and no transcript chunks or segments were returned.",
+      "Verified the skip reason matches the YouTube ingestion contract and made no structured or wiki mutation.",
+      "No transcript retrieval was rerun and no network access was used.",
+      "Result fields conform to schemas/agent_result.schema.json, including the operation ULID and skipped reason code."
+    ]
+  }
+}

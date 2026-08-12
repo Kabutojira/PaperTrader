@@ -1,0 +1,12 @@
+{
+  "changed_paths": [],
+  "completed_at": "2026-08-12T12:56:50Z",
+  "errors": [
+    "files_changed is stale or incomplete: reported=['data/runs/local-youtube-20260812T090946Z-03/01KYQ62ZT8AGDEDP669Q6SF1VD/agent_result.json'], actual=[]"
+  ],
+  "harness": "local",
+  "operation_id": "01KYQ62ZT8AGDEDP669Q6SF1VD",
+  "passed": false,
+  "run_id": "local-youtube-20260812T090946Z-03",
+  "validation_version": 1
+}

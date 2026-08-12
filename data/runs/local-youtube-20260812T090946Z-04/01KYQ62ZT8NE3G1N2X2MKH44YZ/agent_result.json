@@ -1,0 +1,26 @@
+{
+  "operation_id": "01KYQ62ZT8NE3G1N2X2MKH44YZ",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-supplied anonymous transcript helper reported captions unavailable after all three bounded client attempts; no transcript content, wiki state, structured state, or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8NE3G1N2X2MKH44YZ.json",
+      "claim": "The complete parent-supplied ephemeral helper result reports status unavailable with reason_code youtube_transcript_unavailable after three bounded anonymous clients; WEB, ANDROID, and IOS each reported ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=hObRMv6qCi0"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "The supplied ephemeral helper JSON was read completely and reports status unavailable with reason_code youtube_transcript_unavailable.",
+      "The helper detail confirms exactly three bounded caption-client attempts.",
+      "Skipped-result contract applied: no structured-state or wiki mutations, no transcript retrieval retry, and no network access."
+    ]
+  }
+}

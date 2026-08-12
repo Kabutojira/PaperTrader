@@ -1,0 +1,55 @@
+{
+  "operation_id": "01KZK35JF0GV4QT8NCXDWM6M62",
+  "status": "succeeded",
+  "summary": "Reviewed all five available English auto-generated transcript chunks for the curated CouchInvestor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered SpaceX, NVIDIA, Nebius, commercial-space, and Terafab primary evidence corroborates only the narrower maintained prospective architecture, supplier-channel, operating, capital-intensity, financing, and risk context; it does not corroborate the speaker's valuation, capacity, contract, financing, or forecast assertions. No maintained conclusion, identity import, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_Mey5z-pk5yQ",
+      "claim": "The controller-provided local transcript artifact was available as five English auto-generated chunks containing 753 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=Mey5z-pk5yQ and canonical normalized transcript hash 242fd8cc2a9b79a5a577cf4ab4a1667430e324b3c4cc644252462a0f3a2940c8. Every chunk was reviewed and the repeated chunk hashes matched the canonical hash. All content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=Mey5z-pk5yQ",
+      "observed_at": "2026-08-12T10:40:22Z",
+      "source_hash": "242fd8cc2a9b79a5a577cf4ab4a1667430e324b3c4cc644252462a0f3a2940c8"
+    },
+    {
+      "source": "source_spacex_terafab_prospectus_20260605",
+      "claim": "Existing registered SpaceX primary evidence supports a prospective Terafab architecture with continued significant third-party compute sourcing, not a finished integrated production, binding customer-volume, competitive-yield, or NVIDIA silicon-production outcome. It does not corroborate the video's captioned quarterly figures, valuation, customer agreements, acquisition, financing, spectrum, capacity, or long-range revenue claims.",
+      "url": "https://content.spacex.com/cms-assets/FINAL_Documents%20and%20Updates/SpaceX%20-%20EU%20Prospectus%20%28Approved%20by%20Bafin%29%20-%20June%205%2C%202026.pdf",
+      "observed_at": "2026-08-07T09:23:01Z",
+      "source_hash": "4655a5283f60bab22e9895edc1eedef4eb76f9c75f6694d3d6b12f3a77e01d10"
+    },
+    {
+      "source": "PaperTrader registered primary evidence",
+      "claim": "Registered NVIDIA releases establish only a product channel and prospective SpaceXAI adoption context without order economics or capacity guarantees; registered Nebius primary evidence establishes existing growth, capital-intensity, leverage, dilution, and concentration context. Neither validates the video's comparative, valuation, financing, or trading conclusions.",
+      "observed_at": "2026-08-12T10:40:22Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZK35JF0GV4QT8NCXDWM6M62/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZK35JF0GV4QT8NCXDWM6M62/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated CouchInvestor SpaceX AI-compute commentary video as untrusted lead material and recorded its canonical transcript hash. Existing registered SpaceX, NVIDIA, Nebius, commercial-space, and Terafab evidence supports only the narrower maintained prospective architecture and risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZK35JF0GV4QT8NCXDWM6M62/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as five available English auto-generated chunks containing 753 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered SpaceX, NVIDIA, Nebius, commercial-space, and Terafab primary evidence supports only the already-maintained prospective architecture, supplier-channel, operating, capital-intensity, financing, and risk context. The video's valuations, price levels, figures, capacity, contract, acquisition, financing, market-impact, and personal-investment assertions remain opinion, prediction, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_a88949e66b633d8a744f and registered youtube_Mey5z-pk5yQ with publisher @CouchInvestor, source type youtube_video, canonical video URL, related maintained context, and matching canonical transcript hash 242fd8cc2a9b79a5a577cf4ab4a1667430e324b3c4cc644252462a0f3a2940c8.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

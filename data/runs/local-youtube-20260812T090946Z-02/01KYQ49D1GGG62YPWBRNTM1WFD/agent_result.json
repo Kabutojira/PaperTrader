@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYQ49D1GGG62YPWBRNTM1WFD",
+  "status": "succeeded",
+  "summary": "Reviewed both available English human-caption transcript chunks for the curated ConnectingODots video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered PayPal SEC evidence supports only the narrower maintained Q2 payments, margin, liquidity, and execution-risk context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_Ejsft2oPCtM",
+      "claim": "The controller-provided local transcript artifact was available as two English human-caption chunks containing 154 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=Ejsft2oPCtM and canonical normalized transcript hash 56ec2115e7229b07f6f8fa886167043c5140e942d43083c4e2c7b0cab6693e03. Every chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=Ejsft2oPCtM",
+      "observed_at": "2026-08-12T12:11:40Z",
+      "source_hash": "56ec2115e7229b07f6f8fa886167043c5140e942d43083c4e2c7b0cab6693e03"
+    },
+    {
+      "source": "source_pypl_q2_2026_10q",
+      "claim": "Existing registered PayPal SEC evidence establishes the maintained Q2 payments, margin, active-account, liquidity, and execution-risk context. It does not corroborate the video's passing Honey-extension reference or its privacy, data-broker, sponsorship, browser, or consumer-remediation assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm",
+      "observed_at": "2026-08-08T13:49:45Z",
+      "source_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074"
+    },
+    {
+      "source": "source_pypl_q2_2026_results",
+      "claim": "Existing registered PayPal results furnished on Form 8-K support the maintained Q2 operating, cash-flow, and guidance context. They do not establish an issuer-specific investment implication from the video's privacy commentary or sponsor promotion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+      "observed_at": "2026-08-08T13:49:45Z",
+      "source_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated ConnectingODots AI-chat privacy commentary as untrusted lead material and recorded its canonical transcript hash. Existing registered PayPal SEC evidence supports only narrower current payments and risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GGG62YPWBRNTM1WFD/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as two available English human-caption chunks containing 154 non-empty segments, with the canonical video URL and transcript hash 56ec2115e7229b07f6f8fa886167043c5140e942d43083c4e2c7b0cab6693e03; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered PayPal SEC evidence supports only the already-maintained payments, margin, liquidity, and execution-risk facts. The video's privacy, browser, data-broker, sponsor, and passing-company assertions remain opinion, promotional, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_cf7c2ffd688acbded361 and registered youtube_Ejsft2oPCtM with publisher @ConnectingODots, source type youtube_video, canonical video URL, related maintained PayPal context, and matching canonical transcript hash.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

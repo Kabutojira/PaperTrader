@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYQ49D1G3CHJ4YE6BKXP9RX9",
+  "status": "succeeded",
+  "summary": "Reviewed both available English auto-generated transcript chunks for the curated Value-Investing Copart video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. No maintained Copart/CPRT entity or registered primary evidence exists in the current repository context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_J2ZqFVpMb5M",
+      "claim": "The controller-provided local transcript artifact was available as two English auto-generated chunks containing 278 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=J2ZqFVpMb5M and canonical normalized transcript hash 367f60de422f980500eec5cc7af06f72b607864956454eb8835308f55ba46c66. Every chunk was reviewed and the repeated chunk hashes matched the canonical hash. All content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=J2ZqFVpMb5M",
+      "observed_at": "2026-08-12T11:05:37Z",
+      "source_hash": "367f60de422f980500eec5cc7af06f72b607864956454eb8835308f55ba46c66"
+    },
+    {
+      "source": "maintained wiki and source registry targeted search",
+      "claim": "Targeted searches of the research catalog, maintained entity pages, source registry, and source history found no matching Copart/CPRT entity or registered primary evidence. The video therefore supplies no independently corroborated fact that can change a maintained conclusion or establish a complete public-security identity plus bounded material causal hypothesis.",
+      "observed_at": "2026-08-12T11:05:37Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value-Investing Copart commentary as untrusted lead material and recorded its canonical transcript hash. No maintained Copart entity or registered primary evidence exists in the current repository context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G3CHJ4YE6BKXP9RX9/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, and controller preflight artifact for papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as two available English auto-generated chunks containing 278 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Targeted maintained-content and source-registry searches found no Copart/CPRT entity and no registered primary evidence relevant to corroborate the video. The video's company, price, valuation, cash-flow, leadership, repurchase, growth, market, technology-risk, and personal-investment assertions remain opinion, prediction, promotional framing, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_0491829bf7956dd6e519 and registered youtube_J2ZqFVpMb5M with publisher @Value-Investing, source type youtube_video, canonical video URL, and matching canonical transcript hash 367f60de422f980500eec5cc7af06f72b607864956454eb8835308f55ba46c66.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md is lint-clean and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

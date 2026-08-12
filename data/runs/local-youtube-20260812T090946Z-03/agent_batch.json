@@ -1,0 +1,89 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-12T12:55:46Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 19,
+  "outcomes": [
+    {
+      "operation_id": "01KYQ49D1GJ32KP17XS3Z8DJ00",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GKPX5A7WGCV9GPG8X",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GNF94BPJNDE0ZFWSK",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GNN84QQ53F97HDY1P",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GNQZG7ZW58JW442R5",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GRCPWM612C0NAM0Z1",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GS4CXMK0S510Y67TM",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GWWHW1JFKE6VSSHB7",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GWY55GJNJNBQRCJ74",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GX6X7ACXB1A6KFTR4",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GXYX0SF93BMTNHYM8",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GYV061JMYPWWGR6E4",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ49D1GZK4Z8RANH5XP9TC0",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ62ZT801NHJJJESDKAXFKT",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ62ZT802KH3KPDKH73DVJG",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ62ZT814BHMMGYPYBHZDFG",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ62ZT86ETBZK4W0Q593CN2",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ62ZT86MGSMHX08KN8170X",
+      "status": "skipped"
+    },
+    {
+      "operation_id": "01KYQ62ZT86XNVRAADRGMGPBZW",
+      "status": "skipped"
+    }
+  ],
+  "run_id": "local-youtube-20260812T090946Z-03",
+  "started_at": "2026-08-12T12:23:22Z"
+}

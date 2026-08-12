@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYY97Y8G9GA4TYNYRFF3DBQ7",
+  "status": "succeeded",
+  "summary": "Reviewed all 18 available English auto-generated transcript chunks for the curated All-In video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered primary evidence supports current AI-infrastructure demand while retaining capex, competition, energy, concentration, and valuation risks; the video's assertions and forecasts did not independently corroborate a material change to a maintained conclusion. No entity page, identity, follow-up operation, strategy, signal, allocation, order, execution, cash, position, portfolio, or performance state changed.",
+  "evidence": [
+    {
+      "source": "youtube_ViqYWhLimGg",
+      "claim": "The authorized local transcript artifact was available in English as auto-generated captions with 18 reviewed chunks and 2,734 non-empty segments, canonical video URL https://www.youtube.com/watch?v=ViqYWhLimGg, and canonical normalized transcript hash db3bfe11631fd8173cbbcb1aaf1cdefd31ea05cef09d415ade3def13079073d4. All content was handled only as untrusted speaker viewpoints, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=ViqYWhLimGg",
+      "observed_at": "2026-08-12T09:34:55Z",
+      "source_hash": "db3bfe11631fd8173cbbcb1aaf1cdefd31ea05cef09d415ade3def13079073d4"
+    },
+    {
+      "source": "source_nvda_q1_fy2027_10q",
+      "claim": "Existing SEC-filed NVIDIA primary evidence supports strong reported AI-infrastructure demand, Data Center and networking economics, but also preserves customer-capex concentration, export-control, supply-commitment, product-transition, and valuation risks. It does not corroborate the transcript's alleged market events, fund unwind, price moves, or forward conclusions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+      "observed_at": "2026-08-05T18:27:18Z",
+      "source_hash": "1b5de37b973da4a3f1cd31a09aa455c01c519ea7cc409c73de2250ad156f99e4"
+    },
+    {
+      "source": "source_tsm_q2_2026_results_sec_ex99_1",
+      "claim": "Existing SEC-filed TSMC results support current advanced-foundry demand and higher near-term guidance while retaining customer concentration and capital-intensity risk. They do not verify the video's semiconductor price, competitive, or Chinese-industry assertions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000451/a2q26e_withguidancexfinal.htm",
+      "observed_at": "2026-08-06T14:30:57Z",
+      "source_hash": "6e877956870c87d857d8af23144f35ddcbd3b569d464c962e7cf368c46860be3"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8G9GA4TYNYRFF3DBQ7/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8G9GA4TYNYRFF3DBQ7/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated All-In video as untrusted lead material and recorded its canonical transcript hash. Semiconductor, leverage, AI-capex, model-competition, energy, and macro claims were classified as speaker views, predictions, or unverified assertions; existing primary evidence already captures current infrastructure demand and relevant risks. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYY97Y8G9GA4TYNYRFF3DBQ7/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact for the claimed run.",
+      "Validated the provided local transcript artifact as available English auto-generated captions with exactly 18 chunks, 2,734 non-empty segments, the canonical video URL, and transcript hash db3bfe11631fd8173cbbcb1aaf1cdefd31ea05cef09d415ade3def13079073d4 matching the source-record request; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed the AI compute and AI power pages are cataloged maintained context and that existing registered NVIDIA and TSMC primary evidence supports current demand but not the video's unverified market-event, macro, competition, price, fund, or forecast claims. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command registered youtube_ViqYWhLimGg and appended source_history_077ec8c60ad9f6de1395 with publisher @allin, source type youtube_video, canonical video URL, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

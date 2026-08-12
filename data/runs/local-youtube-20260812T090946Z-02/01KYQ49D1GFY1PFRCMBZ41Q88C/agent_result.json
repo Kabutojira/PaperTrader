@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYQ49D1GFY1PFRCMBZ41Q88C",
+  "status": "succeeded",
+  "summary": "Reviewed both available English auto-generated transcript chunks for the curated @DumbMoneyLive Bloom Energy video as untrusted lead material. Recorded the canonical transcript hash and retained a non-published classified analysis. Existing registered Bloom primary evidence supports only the narrower maintained operating, Oracle-partnership, material-supply-response, concentration, execution, and valuation-risk context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_u-AXyF9kY9k",
+      "claim": "The controller-provided local transcript artifact was available as two English auto-generated chunks containing 173 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=u-AXyF9kY9k and canonical normalized transcript hash e14e90015566fc567ce1c62a74c9210a41f1a9acbce7fb146f760454a59e637c. Every chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but not necessarily corroborated assertions.",
+      "url": "https://www.youtube.com/watch?v=u-AXyF9kY9k",
+      "observed_at": "2026-08-12T12:01:03Z",
+      "source_hash": "e14e90015566fc567ce1c62a74c9210a41f1a9acbce7fb146f760454a59e637c"
+    },
+    {
+      "source": "source_be_scandium_response_2026_8k_sec",
+      "claim": "Existing registered Bloom SEC evidence records the issuer's rejection of third-party accounting and scandium claims and its statement that current and future supply is not dependent on China. This is an issuer response, not independent resolution of the video's broader supply, reporting, or fraud interpretation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026047734/be-20260709.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "22baab177a0d4246f10738b6fa433c1a34022781aa3f22497a27a990a5bffa6e"
+    },
+    {
+      "source": "source_be_oracle_warrant_2026_8k_sec",
+      "claim": "Existing registered Bloom SEC evidence verifies Oracle-linked equity dilution terms. Together with the maintained Bloom research context, it supports only the narrower current Oracle deployment and warrant facts, not the video's broader counterparty-due-diligence or investment conclusion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1664703/000162828026024896/be-20260413.htm",
+      "observed_at": "2026-08-06T18:00:04Z",
+      "source_hash": "cfb0fbb860edf0c05782114633c85a6187a62c658fadd28d0c057f9acd83900c"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated @DumbMoneyLive Bloom Energy commentary as untrusted lead material and recorded its canonical transcript hash. Existing registered Bloom primary evidence supports only narrower maintained operating, Oracle-partnership, material-supply-response, concentration, execution, and valuation-risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GFY1PFRCMBZ41Q88C/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as two available English auto-generated chunks containing 173 non-empty segments, with one canonical transcript hash; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Existing registered Bloom primary evidence supports only the already-maintained current operating, Oracle, material-supply-response, concentration, execution, and valuation-risk facts. The video's short-seller characterization, Brookfield/Nebius claims, project-delay conclusion, forecasts, and personal investment interpretation remain opinion or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_70ca5de4087b929ca6e8 and registered youtube_u-AXyF9kY9k with publisher @DumbMoneyLive, source type youtube_video, canonical video URL, related maintained AI-power and Bloom context, and matching canonical transcript hash.",
+      "Strict wiki lint returned OK before source recording and after the append-only wiki log update. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

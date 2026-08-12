@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZRGTMMGDHZWVFKTYNG62PGV",
+  "status": "succeeded",
+  "summary": "Reviewed all three available English auto-generated transcript chunks for the curated Value-Investing video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Flutter is not a maintained PaperTrader security, and no current registered primary evidence in repository context established a complete independently verified identity and material causal hypothesis for import; no entity conclusion, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_AGaZ5XbmRXg",
+      "claim": "The controller-provided local transcript artifact was available as three English auto-generated chunks containing 342 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=AGaZ5XbmRXg and canonical normalized transcript hash 81a883388eff0d7f6ae24245bc01e7d5ff95ee351ee0eb2c510e45c6382d1b37. Every chunk was reviewed, each carried the matching canonical hash, and all contents were treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=AGaZ5XbmRXg",
+      "observed_at": "2026-08-12T11:00:00Z",
+      "source_hash": "81a883388eff0d7f6ae24245bc01e7d5ff95ee351ee0eb2c510e45c6382d1b37"
+    },
+    {
+      "source": "maintained wiki and source registry targeted search",
+      "claim": "Targeted searches found no maintained Flutter Entertainment security, relationship, or idea and no current registered primary evidence for Flutter or the reported Burry-position claims. Existing maintained evidence for passing company mentions does not corroborate the video's Flutter assertions. The transcript therefore did not establish a complete independently verified issuer, instrument, venue MIC, provider symbol, currency, and bounded material causal hypothesis for a security import.",
+      "observed_at": "2026-08-12T11:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value-Investing Flutter and Burry commentary as untrusted lead material and recorded its canonical transcript hash. Flutter is not a maintained PaperTrader security, and no current registered primary evidence established a complete identity-and-hypothesis basis for import; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KZRGTMMGDHZWVFKTYNG62PGV/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as three available English auto-generated chunks containing 342 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Targeted maintained-content and source-registry searches found no Flutter Entertainment entity or registered primary evidence relevant to corroborate the video. The promotional, position, market, regulatory, operating, financial, valuation, price, forecast, and personal-investment assertions remain opinion, prediction, promotional framing, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_99ddfb9e10031fbad457 and registered youtube_AGaZ5XbmRXg with publisher @Value-Investing, source type youtube_video, canonical video URL, and matching canonical transcript hash 81a883388eff0d7f6ae24245bc01e7d5ff95ee351ee0eb2c510e45c6382d1b37.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md remains lint-clean and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-12T10:45:19Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 20,
+  "outcomes": [
+    {
+      "operation_id": "01KZRK8PP09BM7F71P39FJ4A2A",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYVJ5M500XHZWKZRJCVM5S28",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYVJ5M50672K1860W3W79JTH",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYVJ5M50F5QEQCR5Z89XQMN8",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYY97Y8G9GA4TYNYRFF3DBQ7",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYY97Y8GW1AYA5A342RT4ZGE",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYY97Y8GYPBMJZWF7Y4KZD5A",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYZ0KJ30JTKRSK9BVWPJJ5YD",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ333488GK5NCZ1R73RAYYAR",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ8BG7DR6BVMZJV9CMSSYX7Y",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ8BG7DRAH794C5G2FPNBQSQ",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ8BG7DRH59EGMCM9E1A29N4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ8BG7DRPR2X4CQ53K02EJWJ",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ8BG7DRZWSV0419DNY6YHAQ",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZ9B4WPGA9TEA9A5TBY8DPV9",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZB7KVMRC3QEWE7N2JPHRAR1",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZBFJVSRBBHZDP0C0W3P9KZ4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZCFG3FRX0ZRKDMFQ9E0442Z",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZGGHXS8MYK02JX5N788AMYS",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZK35JF0GV4QT8NCXDWM6M62",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-youtube-20260812T090946Z-01",
+  "started_at": "2026-08-12T09:18:13Z"
+}

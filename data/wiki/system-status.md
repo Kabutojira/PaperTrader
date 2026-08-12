@@ -7,13 +7,13 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_089c32bc41cbb511b776"
-as_of: "2026-08-12T08:51:57Z"
+snapshot_id: "decision_699be123b40ee2c1b0b5"
+as_of: "2026-08-12T13:24:10Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-12T08:51:57Z`
+**As of:** `2026-08-12T13:24:10Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,8 +30,8 @@ as_of: "2026-08-12T08:51:57Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 349
-- Last successful daily run: 2026-08-11
+- Research backlog: 276
+- Last successful daily run: 2026-08-12
 
 ## Current issues by investment impact
 
@@ -136,6 +136,7 @@ as_of: "2026-08-12T08:51:57Z"
 - Error **Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-05]]** — commands_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
+- Error **Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files_changed is stale or incomplete: reported=['data/runs/local-youtube-20260812T090946Z-03/[Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent_result.json'], actual=[]
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]]** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/[[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]]/agent_result.json
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -154,30 +155,30 @@ as_of: "2026-08-12T08:51:57Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 349 active operations.
+Showing 20 of 276 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=9ePWIYadju4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=J2ZqFVpMb5M)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=6006vpLlaVw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=e2C_hgXiyzM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=h7XVJ64IhY4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=4JmCb5FmTA4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yUq0O-pDHCE)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=k77X47h6OVU)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yAtpMMC3aiw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=3c9iLgtDdKM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Cbbmj0dqP-M)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=-ILKiOU5iAQ)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=oyjpF7xPiC4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=u-AXyF9kY9k)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wcV0SRPFK9s)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Ejsft2oPCtM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=pVaKoDHW9iY)
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
+- Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]
+- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a|Wiki ingest for SSU.VI — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_dc7a111e297be528d96b-rsi_oversold-3b8a9ff5dca2|Wiki ingest for TSLA — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0|Wiki ingest for GEV — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508|Wiki ingest for CSL — Volume anomaly on 2026-07-30]]
+- Ready — [[inbox/market-security_fb87fac302a5446a1ced-rsi_oversold-2aef2a392f63|Wiki ingest for LAC — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_66cdcf90aac0d83e76f3-rsi_oversold-bdcd9187383f|Wiki ingest for ALB — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212|Wiki ingest for ENPH — Volume anomaly on 2026-07-30]]
+- Ready — [[inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd|Wiki ingest for PL — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_cb88f9154cfeaa15e878-bollinger_below_lower-9ce67c8474af|Wiki ingest for VRT — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_ef35e41886220d51c22c-bollinger_below_lower-f5f33a74b0ad|Wiki ingest for ASML — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_a5dc16f3f4b245e6c168-rsi_oversold-55b68c110daa|Wiki ingest for LUNR — RSI oversold on 2026-07-30]]
+- Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81|Wiki ingest for ETN — Bollinger below lower on 2026-07-30]]
+- Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea|Wiki ingest for YEC.F — RSI oversold on 2026-07-31]]
+- Ready — [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796|Wiki ingest for META — Bollinger below lower on 2026-07-31]]
 
 </details>
 

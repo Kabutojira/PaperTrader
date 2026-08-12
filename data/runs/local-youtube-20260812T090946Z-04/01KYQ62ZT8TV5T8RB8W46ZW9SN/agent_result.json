@@ -1,0 +1,28 @@
+{
+  "operation_id": "01KYQ62ZT8TV5T8RB8W46ZW9SN",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-supplied anonymous transcript helper reported captions unavailable after all three bounded client attempts; no transcript retrieval was retried and no wiki or structured state was changed.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8TV5T8RB8W46ZW9SN.json",
+      "claim": "The complete parent-supplied ephemeral helper result reports status unavailable with reason_code youtube_transcript_unavailable after three bounded anonymous clients; WEB, ANDROID, and IOS each reported ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=ihq_ngvKKmc"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete controller prompt, repository controller and wiki-ingest skills, and native llm-wiki skill.",
+      "Confirmed the claimed operation identity and YouTube payload identity match video ihq_ngvKKmc.",
+      "Read the complete ephemeral helper JSON: status=unavailable and reason_code=youtube_transcript_unavailable after three bounded attempts.",
+      "Performed no structured-state or wiki mutation, did not rerun retrieval, and did not use network.",
+      "Result manifest conforms to the required skipped-result contract; files_changed is exactly an empty array."
+    ]
+  }
+}

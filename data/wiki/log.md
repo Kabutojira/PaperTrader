@@ -3251,6 +3251,22 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260812]] for run `daily-20260812T084846Z`.
 
+- Published investor decision snapshot `decision_3df6558e05acf906b097`.
+
+- Generated canonical [[daily-reports/daily-report_20260812]] for run `local-youtube-20260812T090946Z-01`.
+
+- Published investor decision snapshot `decision_1d6bb13aa87100d2e19c`.
+
+- Generated canonical [[daily-reports/daily-report_20260812]] for run `local-youtube-20260812T090946Z-02`.
+
+- Published investor decision snapshot `decision_8bf6984cc89ee44cf06d`.
+
+- Generated canonical [[daily-reports/daily-report_20260812]] for run `local-youtube-20260812T090946Z-03`.
+
+- Published investor decision snapshot `decision_699be123b40ee2c1b0b5`.
+
+- Generated canonical [[daily-reports/daily-report_20260812]] for run `local-youtube-20260812T090946Z-04`.
+
 ## 2026-08-12 — security research — Intuitive Surgical, Inc. common stock
 
 - Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with unchanged Q2
@@ -3286,3 +3302,362 @@ This log is append-only. Rotate it by year only after the configured line thresh
   partner terms, financing, Tempus obligations, or fully diluted shares. RXRX remains Unrated /
   Watch and allocation-ineligible with no invented scenarios or buy zone; no conviction strategy,
   signal, order, allocation, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Nintendo
+
+- Reviewed the two available auto-generated English caption chunks for curated video
+  `lSx5W8a3_yQ` as untrusted lead material. Nintendo primary investor-relations material corroborates
+  the issuer's Tokyo listing and Switch 2 platform facts, but not the video's valuation, price,
+  ADR-ratio, cost, or long-term-moat assertions.
+- Recorded the transcript hash as source provenance only. Nintendo is not a maintained security, and
+  the prospective Japanese ordinary-share identity falls outside the configured permitted venue and
+  currency universe; no import, follow-up, assessment, strategy, signal, allocation, order, or paper
+  trade was created.
+
+## 2026-08-12 — curated YouTube review — AI-capex risk commentary
+
+- Reviewed all three available auto-generated English caption chunks for curated video
+  `gIYNCsp0TFY` as untrusted lead material. The speaker's bearish AI-capex, customer-concentration,
+  financing and depreciation claims about Alphabet, Amazon, Microsoft, NVIDIA and Meta are mostly
+  opinions or unverified numerical assertions.
+- Existing registered issuer/SEC evidence already preserves the narrower issuer-specific capex,
+  commitment, cash-conversion, competition and valuation risks. Recorded the transcript hash as
+  provenance only; no entity conclusion, security import, follow-up, assessment, strategy, signal,
+  allocation, order, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — AMD post-earnings commentary
+
+- Reviewed all three available auto-generated English caption chunks for curated video
+  `sDDQ5Ueg1dk` as untrusted lead material. The speaker's AMD earnings, AI-accelerator, customer,
+  PC, valuation, and price-path assertions are opinions, predictions, or unverified facts; the
+  captions also contain ambiguous terminology and an inconsistent date.
+- AMD is not a maintained PaperTrader security, and no current registered issuer or SEC primary
+  evidence established a complete identity-and-hypothesis basis for import. Recorded the transcript
+  hash as source provenance only; no entity conclusion, identity import, follow-up, assessment,
+  strategy, signal, allocation, order, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — conditional large-cap purchase commentary
+
+- Reviewed all four available auto-generated English caption chunks for curated video
+  `UryYddSqC30` as untrusted lead material. Existing registered primary evidence corroborates only
+  already-maintained high-level operating and capital-intensity facts for Nebius, Microsoft, Meta,
+  and Alphabet, not the speaker's valuation, price, forecast, or personal-trading assertions.
+- Recorded the transcript hash as source provenance only. No maintained entity conclusion, security
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Palantir post-earnings commentary
+
+- Reviewed all three available auto-generated English caption chunks for curated video
+  `JEP4vi9pW9o` as untrusted lead material. Registered SEC and issuer primary evidence corroborates
+  only the already-maintained Q2 operating and guidance facts, not the speaker's valuation,
+  market-price, forecast, analyst-expectation, technical, or personal-trading assertions.
+- Recorded the transcript hash as source provenance only. The maintained Palantir scenario assessment
+  remains Strong Sell / Avoid; no entity conclusion, security import, follow-up, assessment,
+  strategy, signal, allocation, order, execution, cash, position, portfolio, performance, or paper
+  trade was created.
+
+## 2026-08-12 — curated YouTube review — unnamed personal purchases
+
+- Reviewed the one available auto-generated English caption chunk for curated video `G3S5ZyL9U64`
+  as untrusted lead material. The speaker describes three unnamed purchases with generic value,
+  earnings-growth, dividend, return-on-equity and price-to-book framing, plus promotional and
+  personal-performance claims.
+- No issuer, instrument, venue, or independently verifiable material hypothesis is identified.
+  Recorded the transcript hash as source provenance only; no entity conclusion, security import,
+  follow-up, assessment, strategy, signal, allocation, order, execution, cash, position, portfolio,
+  performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Saronic maritime-autonomy commentary
+
+- Reviewed all nine available auto-generated English caption chunks for curated video `jfxHHglA5Eo`
+  as untrusted lead material. The host and Saronic representatives make operational, capacity, cost,
+  financing, policy, shipyard, and autonomous-maritime-system claims while promoting the company.
+- Existing registered primary evidence supports only the already-maintained broad defense-demand and
+  product-procurement context; it does not corroborate the Saronic-specific assertions. Saronic is
+  private and no complete independently verified public-security identity or bounded material
+  hypothesis was established. Recorded the transcript hash as source provenance only; no entity
+  conclusion, identity import, follow-up, assessment, strategy, signal, allocation, order, execution,
+  cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — broad crash and value commentary
+
+- Reviewed both available auto-generated English caption chunks for curated video `BPmhjXnBRNE` as
+  untrusted lead material. The speaker's crash forecast, cash positioning, value-ETF, Berkshire
+  valuation, emerging-market, and hedging assertions are opinions, predictions, or unverified facts.
+- Berkshire Hathaway and the discussed fund categories are not maintained PaperTrader securities,
+  and the transcript supplies no complete independently verified public-security identity and
+  material causal hypothesis. Recorded the transcript hash as source provenance only; no entity
+  conclusion, identity import, follow-up, assessment, strategy, signal, allocation, order,
+  execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — large-cap earnings and platform commentary
+
+- Reviewed all four available auto-generated English caption chunks for curated video
+  `sDA3wYsYjM8` as untrusted lead material. The speaker's Alphabet and Meta product, operating,
+  infrastructure, price, and valuation assertions are mixed opinion, prediction, and unverified
+  detail. The Mercado Libre, Uber, Axon, Shift4, and other company discussion is likewise
+  unverified or a passing mention.
+- Existing registered Alphabet and Meta primary evidence already preserves the narrower operating,
+  capital-intensity, cash-conversion, financing, legal, and risk context. Recorded the transcript
+  hash as source provenance only; no entity conclusion, security import, follow-up, assessment,
+  strategy, signal, allocation, order, execution, cash, position, portfolio, performance, or paper
+  trade was created.
+
+## 2026-08-12 — curated YouTube review — AI infrastructure, SpaceX, and SaaS commentary
+
+- Reviewed all 14 available auto-generated English caption chunks for curated video
+  `muRIXCDw-k0` as untrusted lead material. The discussion combines commentary, predictions, and
+  reported assertions about Alphabet, Microsoft, NVIDIA, SpaceX, Airtable, AI-compute financing,
+  and US–China data policy.
+- Existing registered primary evidence preserves only the narrower maintained issuer and SpaceX
+  operating, capital-intensity, financing, and risk context. Recorded the transcript hash as source
+  provenance only; no entity conclusion, security import, follow-up, assessment, strategy, signal,
+  allocation, order, execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — speculative SpaceX AI-compute commentary
+
+- Reviewed all five available auto-generated English caption chunks for curated video
+  `Mey5z-pk5yQ` as untrusted lead material. The speaker's SpaceX valuation, AI-compute, capacity,
+  customer-contract, financing, orbital-data-center, Terafab, and market-impact assertions are
+  opinions, predictions, or unverified details.
+- Existing registered SpaceX, NVIDIA, Nebius, commercial-space, and Terafab primary evidence
+  preserves only the narrower prospective architecture, supplier-channel, operating, capital-
+  intensity, financing, and risk context. Recorded the transcript hash as provenance only; no
+  maintained entity conclusion, identity import, follow-up, assessment, strategy, signal,
+  allocation, order, execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — elevator-company dividend commentary
+
+- Reviewed both available auto-generated English caption chunks for curated video `NNbke4YhznQ` as
+  untrusted lead material. The speaker's Otis, KONE, and Schindler service, China, cash-flow,
+  leverage, dividend, valuation, and portfolio assertions are mixed opinion, prediction, and
+  unverified detail.
+- No matching maintained entity or registered primary evidence exists in the current repository
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, security
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — portfolio moves and earnings commentary
+
+- Reviewed all four available auto-generated English caption chunks for curated video
+  `7lE_ewagWx4` as untrusted lead material. The speaker's personal portfolio, price, valuation,
+  earnings, guidance, capacity, margin, debt, and forecast assertions about payments, insurance,
+  launch, AI-cloud, memory, and platform companies are opinions, predictions, or unverified facts.
+- Existing registered primary evidence preserves only the narrower Rocket Lab, Nebius, PayPal,
+  dLocal, SoFi, Alphabet, and Meta operating and risk context. Recorded the transcript hash as
+  source provenance only; no entity conclusion, security import, follow-up, assessment, strategy,
+  signal, allocation, order, execution, cash, position, portfolio, performance, or paper trade was
+  created.
+
+## 2026-08-12 — curated YouTube review — Flutter and Burry commentary
+
+- Reviewed all three available auto-generated English caption chunks for curated video
+  `AGaZ5XbmRXg` as untrusted lead material. The speaker combines promotional broker framing,
+  reported Burry positions, broad crash predictions, and Flutter market, operating, leverage,
+  cash-flow, regulatory, valuation, and price-upside assertions.
+- Flutter is not a maintained PaperTrader security, and no current registered primary evidence in
+  the repository established a complete identity-and-hypothesis basis for import. Recorded the
+  transcript hash as source provenance only; no entity conclusion, identity import, follow-up,
+  assessment, strategy, signal, allocation, order, execution, cash, position, portfolio,
+  performance, or paper trade was created.
+## 2026-08-12 — curated YouTube review — Tesla and SpaceX operating-practice commentary
+
+- Reviewed all eight available auto-generated English caption chunks for curated video
+  `9ePWIYadju4` as untrusted lead material. The speaker's historic Tesla and SpaceX engineering,
+  manufacturing, hiring, cost, speed, automation, and management assertions are mixed opinion,
+  promotional framing, and unverified detail.
+- Existing registered Tesla primary evidence preserves only the narrower current delivery, revenue,
+  liquidity, autonomy, robotics, capital-intensity, operating-leverage, and execution-risk context.
+  Recorded the transcript hash as source provenance only; no entity conclusion, identity import,
+  follow-up, assessment, strategy, signal, allocation, order, execution, cash, position, portfolio,
+  performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Copart commentary
+
+- Reviewed both available auto-generated English caption chunks for curated video `J2ZqFVpMb5M`
+  as untrusted lead material. The speaker's Copart auction-market, growth, profitability,
+  management-transition, repurchase, technology-risk, and valuation assertions are mixed opinion,
+  prediction, and unverified detail.
+- No maintained Copart entity or registered primary evidence exists in the current repository
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, security
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Amazon, Robinhood, and Sweetgreen commentary
+
+- Reviewed both available auto-generated English caption chunks for curated video `6006vpLlaVw` as
+  untrusted lead material. The speaker's Amazon financing and price-path, Robinhood crypto and
+  long-horizon, and Sweetgreen product, competition, valuation, and short-dated-options assertions
+  are opinions, predictions, personal trading commentary, or unverified facts.
+- Existing registered Amazon and Robinhood primary evidence corroborates only the narrower
+  maintained capital-intensity and crypto-revenue context. Sweetgreen is not maintained and no
+  complete independently verified public-security identity and material causal hypothesis was
+  established. Recorded the transcript hash as source provenance only; no entity conclusion,
+  identity import, follow-up, assessment, strategy, signal, allocation, order, execution, cash,
+  position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Grantham and broad market commentary
+
+- Reviewed all three available auto-generated English caption chunks for curated video
+  `e2C_hgXiyzM` as untrusted lead material. The speaker's market-valuation, crash-risk,
+  index-investing, value-investing, historical-return, GMO, and personal-performance assertions
+  are mixed opinion, prediction, and unverified detail.
+- No maintained broad-market, GMO, Berkshire Hathaway, or fund entity with registered current
+  primary evidence supports a conclusion change. Recorded the transcript hash as source provenance
+  only; no entity conclusion, security import, follow-up, assessment, strategy, signal, allocation,
+  order, execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — SpaceX data-center commentary
+
+- Reviewed both available English caption chunks for curated video `h7XVJ64IhY4` as untrusted lead
+  material. The speaker's SpaceX data-center capacity, GPU deployment, customer, rental-revenue,
+  power, capital-spending, financing, cash-flow, and valuation assertions are mixed speaker claims,
+  opinions, predictions, and unverified details.
+- Existing registered SpaceX and NVIDIA primary evidence supports only the narrower maintained
+  AI-infrastructure, capital-intensity, prospective Terafab, product-channel, and risk context.
+  Recorded the transcript hash as source provenance only; no entity conclusion, security import,
+  follow-up, assessment, strategy, signal, allocation, order, execution, cash, position, portfolio,
+  performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Var Energi and oil-cycle commentary
+
+- Reviewed the available auto-generated English caption chunk for curated video `4JmCb5FmTA4` as
+  untrusted lead material. The speaker's oil-price, geopolitical, cash-flow, leverage, dividend,
+  valuation, and commodity-cycle assertions are mixed speaker claims, opinions, predictions, and
+  unverified details.
+- Var Energi is not a maintained PaperTrader security, and no current registered issuer or
+  regulator evidence established a complete independent identity-and-hypothesis basis for import.
+  The separate maintained refining-margin evidence does not corroborate Var Energi-specific
+  claims. Recorded the transcript hash as source provenance only; no entity conclusion, security
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Tesla Macrohard commentary
+
+- Reviewed all seven available auto-generated English caption chunks for curated video
+  `yUq0O-pDHCE` as untrusted lead material. The speaker's Macrohard, Digital Optimus, agent,
+  Cybercab, Supercharger-compute, power-grid, AI-chip, AGI, margin, and new-product assertions are
+  mixed speaker claims, opinions, predictions, and unverified details.
+- Existing registered Tesla primary evidence preserves only the narrower delivery, liquidity,
+  capital-intensity, autonomy, robotics, and execution-risk context. Recorded the transcript hash
+  as source provenance only; no entity conclusion, identity import, follow-up, assessment,
+  strategy, signal, allocation, order, execution, cash, position, portfolio, performance, or paper
+  trade was created.
+
+## 2026-08-12 — curated YouTube review — Ford and Toyota EV-transition commentary
+
+- Reviewed all seven available English caption chunks for curated video `k77X47h6OVU` as untrusted
+  lead material. The speaker's Ford, Toyota, Tesla, Chinese-competition, EV-manufacturing,
+  financing, governance, credit, valuation, and corporate-intent assertions are mixed speaker
+  claims, opinions, predictions, and unverified details.
+- Ford and Toyota are not maintained PaperTrader securities, and existing registered Tesla primary
+  evidence supports only the narrower maintained delivery, liquidity, capital-intensity, autonomy,
+  robotics, and execution-risk context. Recorded the transcript hash as source provenance only; no
+  entity conclusion, security import, follow-up, assessment, strategy, signal, allocation, order,
+  execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Alphabet capex and valuation commentary
+
+- Reviewed all three available auto-generated English caption chunks for curated video
+  `yAtpMMC3aiw` as untrusted lead material. The speaker's Alphabet operating, capital-expenditure,
+  depreciation, valuation, price-path, and portfolio-risk assertions are mixed speaker claims,
+  opinions, predictions, and externally verifiable facts.
+- Existing registered Alphabet SEC filing and issuer-release evidence corroborates only the narrower
+  maintained Q2 growth, equity-security-gain, capital-intensity, free-cash-flow, funding, and risk
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, security
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — earnings-season sell commentary
+
+- Reviewed all four available auto-generated English caption chunks for curated video `3c9iLgtDdKM`
+  as untrusted lead material. The speaker's Uber, Waymo, Netflix, Shift4, Apple, CrowdStrike,
+  PayPal, Applied Digital, Navitas, Bloom Energy, ARM, Palantir, SoFi, Micron, SK hynix, Samsung,
+  photonics, and memory-cycle assertions are mixed speaker claims, opinions, predictions, and
+  unverified details.
+- Existing registered CrowdStrike, PayPal, SoFi, and Bloom Energy primary evidence supports only
+  their narrower maintained operating and risk contexts. Recorded the transcript hash as source
+  provenance only; no entity conclusion, identity import, follow-up, assessment, strategy, signal,
+  allocation, order, execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Netflix valuation commentary
+
+- Reviewed the available auto-generated English caption chunk for curated video `Cbbmj0dqP-M` as
+  untrusted lead material. The speaker's Netflix valuation, growth, content, pricing, subscriber,
+  competition, AI, and margin-of-safety assertions are mixed speaker claims, opinions, predictions,
+  and unverified details.
+- Netflix, Disney, Comcast, Lululemon, and Nike are not maintained PaperTrader securities. Existing
+  registered Amazon SEC evidence supports only its narrower Q2 operating and capital-intensity
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, identity
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — Intel and Lovable commentary
+
+- Reviewed all nine available auto-generated English caption chunks for curated video `-ILKiOU5iAQ`
+  as untrusted lead material. The speaker's Intel, Apple, NVIDIA, TSMC, Taiwan-risk, AI-cycle,
+  quantum-computing, and Lovable assertions are mixed speaker claims, opinions, predictions, and
+  unverified details.
+- Existing registered Intel, NVIDIA, and TSMC primary evidence supports only their narrower
+  maintained operating, capital-intensity, foundry, and execution-risk context. Recorded the
+  transcript hash as source provenance only; no entity conclusion, identity import, follow-up,
+  assessment, strategy, signal, allocation, order, execution, cash, position, portfolio,
+  performance, or paper trade was created.
+## 2026-08-12 — curated YouTube review — Model Y 8L/4680 battery commentary
+
+- Reviewed both available English human-caption chunks for curated video `oyjpF7xPiC4` as untrusted
+  lead material. The speaker's Model Y 8L/4680 battery identity, capacity, energy-density,
+  charging-test, cost, and competitive-position assertions are mixed speaker claims, opinions,
+  predictions, and unverified facts.
+- Existing registered Tesla primary evidence preserves only the narrower maintained delivery, revenue,
+  liquidity, capital-intensity, autonomy, robotics, energy-storage, manufacturing, and execution-risk
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, identity
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+## 2026-08-12 — curated YouTube review — Bloom Energy commentary
+
+- Reviewed both available auto-generated English caption chunks for curated video `u-AXyF9kY9k` as
+  untrusted lead material. The speakers' scandium-supply, short-seller, customer-arrangement,
+  data-centre-delay, and investment assertions are mixed speaker claims, opinions, predictions, and
+  externally verifiable but unverified details.
+- Existing registered Bloom primary evidence corroborates only the narrower maintained operating,
+  Oracle-partnership, material-supply-response, concentration, execution, and valuation-risk
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, identity
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — open-source AI and New York housing commentary
+
+- Reviewed all 17 available auto-generated English caption chunks for curated video
+  `wcV0SRPFK9s` as untrusted lead material. The speakers' Chinese open-source-model, Anthropic and
+  OpenAI, copyright, payout, AI-investment, market, and New York housing-policy assertions are
+  mixed speaker claims, opinions, predictions, and externally verifiable but unverified details.
+- Existing registered Alphabet and Amazon SEC filing and issuer-release evidence supports only the
+  narrower maintained AI-infrastructure, capital-intensity, operating, and Anthropic-investment
+  context. Recorded the transcript hash as source provenance only; no entity conclusion, identity
+  import, follow-up, assessment, strategy, signal, allocation, order, execution, cash, position,
+  portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — AI-chat privacy commentary
+
+- Reviewed both available English human-caption chunks for curated video `Ejsft2oPCtM` as untrusted
+  lead material. The speaker's browser-extension, AI-chat privacy, data-broker, breach,
+  remediation, browser, and sponsor assertions are mixed speaker claims, opinions, predictions,
+  and externally verifiable but unverified details.
+- Existing registered PayPal SEC evidence supports only the narrower maintained Q2 payments,
+  margin, liquidity, and execution-risk context. Recorded the transcript hash as source provenance
+  only; no entity conclusion, identity import, follow-up, assessment, strategy, signal, allocation,
+  order, execution, cash, position, portfolio, performance, or paper trade was created.
+
+## 2026-08-12 — curated YouTube review — pre-earnings large-cap commentary
+
+- Reviewed all five available auto-generated English caption chunks for curated video `pVaKoDHW9iY`
+  as untrusted lead material. The speaker's AI-capex, earnings, demand, valuation, price, AMD
+  product-roadmap, customer, and future-growth assertions are mixed speaker claims, opinions,
+  predictions, and externally verifiable but unverified details.
+- Existing registered issuer and SEC evidence supports only the narrower maintained Intel, Alphabet,
+  Microsoft, Amazon, Meta, SoFi, and NVIDIA operating, capital-intensity, cash-conversion,
+  execution, competition, and valuation-risk context. Recorded the transcript hash as source
+  provenance only; no entity conclusion, identity import, follow-up, assessment, strategy, signal,
+  allocation, order, execution, cash, position, portfolio, performance, or paper trade was created.

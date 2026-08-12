@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYQ49D1GENTSWY2QD1D1RREE",
+  "status": "succeeded",
+  "summary": "Reviewed the available English auto-generated transcript chunk for the curated Value-Investing video as untrusted lead material. Recorded the canonical transcript hash and a non-published classified analysis. Netflix valuation, competition, pricing, subscriber, content, AI, and value-investing commentary supplied no independently corroborated entity-specific fact, complete public-security identity, or bounded material causal hypothesis; no maintained conclusion, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_Cbbmj0dqP-M",
+      "claim": "The controller-provided local transcript artifact was available as one English auto-generated chunk containing 136 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=Cbbmj0dqP-M and canonical normalized transcript hash b462de81e4e943b5ccb708c69f46a80dc4b07f4e8d5e0ea5c451acf62fe8c37b. The chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=Cbbmj0dqP-M",
+      "observed_at": "2026-08-12T11:49:59Z",
+      "source_hash": "b462de81e4e943b5ccb708c69f46a80dc4b07f4e8d5e0ea5c451acf62fe8c37b"
+    },
+    {
+      "source": "maintained wiki and source registry targeted search",
+      "claim": "Targeted searches found no maintained Netflix, Disney, Comcast, Lululemon, or Nike security and no current registered primary evidence relevant to corroborate a change. Amazon's registered SEC-filed evidence supports only its own Q2 operating and capital-intensity context; the video's passing Prime comparison does not alter it. No independently corroborated entity conclusion, identity import, or bounded causal follow-up was justified.",
+      "observed_at": "2026-08-12T11:49:59Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value-Investing Netflix valuation commentary as untrusted lead material and recorded its canonical transcript hash. No independently corroborated entity-specific fact or complete public-security identity was established; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GENTSWY2QD1D1RREE/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, and controller preflight artifact for papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as one available English auto-generated chunk containing 136 non-empty segments, with the canonical video URL and matching canonical transcript hash in the chunk; the network transcript helper was not rerun.",
+      "Reviewed the returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Targeted maintained-content and source-registry searches found no maintained Netflix, Disney, Comcast, Lululemon, or Nike entity with registered current primary evidence relevant to corroborate a change. Amazon's registered SEC evidence supports only its narrower maintained Q2 operating and capital-intensity context. The video's valuation, pricing, subscriber, content, competition, AI, and personal-investing assertions remain opinion, prediction, or unverified detail; no import or follow-up was justified.",
+      "The audited source-record command appended source_history_a8cb2f26d65848cf5b42 and registered youtube_Cbbmj0dqP-M with publisher @Value-Investing, source type youtube_video, canonical video URL, and matching canonical transcript hash b462de81e4e943b5ccb708c69f46a80dc4b07f4e8d5e0ea5c451acf62fe8c37b.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md is lint-clean and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

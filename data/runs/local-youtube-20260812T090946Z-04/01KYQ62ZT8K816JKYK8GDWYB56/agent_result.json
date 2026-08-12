@@ -1,0 +1,29 @@
+{
+  "operation_id": "01KYQ62ZT8K816JKYK8GDWYB56",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-provided anonymous transcript helper reported captions unavailable after all three bounded client attempts.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8K816JKYK8GDWYB56.json",
+      "claim": "The parent-provided ephemeral helper result has status unavailable, reason_code youtube_transcript_unavailable, and records three failed clients: WEB, ANDROID, and IOS.",
+      "url": "https://www.youtube.com/watch?v=w8ah_tA0yfg",
+      "observed_at": "2026-08-12T13:08:24Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Parent-provided transcript helper output read in full and confirmed unavailable after three bounded attempts.",
+      "No structured or wiki mutation, source registration, follow-up enqueue, transcript persistence, or YouTube analysis artifact was created.",
+      "papertrader wiki lint --strict passed."
+    ]
+  }
+}

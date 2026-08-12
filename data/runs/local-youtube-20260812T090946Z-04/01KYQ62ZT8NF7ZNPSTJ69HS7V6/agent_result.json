@@ -1,0 +1,31 @@
+{
+  "operation_id": "01KYQ62ZT8NF7ZNPSTJ69HS7V6",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped: the parent-supplied offline YouTube transcript helper reported captions unavailable after its three bounded anonymous client attempts; no transcript retrieval was retried and no wiki or structured state was changed.",
+  "evidence": [
+    {
+      "source": "parent-supplied ephemeral YouTube transcript helper result",
+      "claim": "status=unavailable; reason_code=youtube_transcript_unavailable; attempts=3; clients WEB, ANDROID, and IOS each failed with ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=0y28p0jqPro"
+    },
+    {
+      "source": "wiki_ingest YouTube caption-failure rule",
+      "claim": "Unavailable captions require a terminal skipped result with reason_code youtube_transcript_unavailable and no metadata-only evidence or wiki/structured mutations."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete parent-supplied transcript helper JSON; it reported unavailable after three bounded attempts.",
+      "Confirmed the claimed queue row is running for this run and operation ID.",
+      "Confirmed no transcript retrieval, wiki mutation, structured-state mutation, or follow-up operation was performed.",
+      "Agent result conforms to the required skipped-result contract with an empty operation change set."
+    ]
+  }
+}

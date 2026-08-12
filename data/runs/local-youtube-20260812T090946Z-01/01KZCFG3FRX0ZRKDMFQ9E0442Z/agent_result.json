@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZCFG3FRX0ZRKDMFQ9E0442Z",
+  "status": "succeeded",
+  "summary": "Reviewed all four available English auto-generated transcript chunks for the curated CouchInvestor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered primary evidence corroborates only already-maintained Alphabet and Meta operating and capital-intensity context; it does not corroborate the speaker's product, valuation, price, forecast, or personal-portfolio assertions. Mercado Libre, Uber, Axon, and Shift4 are not maintained securities and no complete independently verified identity-and-hypothesis basis justified import or follow-up. No maintained conclusion or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_sDA3wYsYjM8",
+      "claim": "The authorized local transcript artifact was available as four English auto-generated chunks containing 484 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=sDA3wYsYjM8 and canonical normalized transcript hash 83d4a6b8fa350b14e123a0ee8adcd36a55d8920493f42b22b833b926e12bb5be. All content was treated as untrusted speaker viewpoints, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=sDA3wYsYjM8",
+      "observed_at": "2026-08-12T10:33:32Z",
+      "source_hash": "83d4a6b8fa350b14e123a0ee8adcd36a55d8920493f42b22b833b926e12bb5be"
+    },
+    {
+      "source": "PaperTrader registered primary evidence",
+      "claim": "Alphabet Q2 2026 SEC filing and results-release records, and Meta Q2 2026 SEC filing and results-release records, corroborate only existing operating, capital-intensity, cash-conversion, financing, legal, and risk context. They do not corroborate the video's product rankings, benchmark figures, price levels, valuation, forecasts, or personal portfolio actions; no maintained conclusion or follow-up was justified.",
+      "observed_at": "2026-08-12T10:33:32Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZCFG3FRX0ZRKDMFQ9E0442Z/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZCFG3FRX0ZRKDMFQ9E0442Z/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated CouchInvestor large-cap earnings and platform commentary as untrusted lead material and recorded its canonical transcript hash. Registered primary evidence supports only already-maintained Alphabet and Meta operating and capital-intensity context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZCFG3FRX0ZRKDMFQ9E0442Z/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, local sequential harness preflight, and required papertrader-controller and papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as four available English auto-generated chunks containing 484 non-empty segments; the canonical video URL and top-level/per-chunk transcript hashes match the recorded source hash. The network transcript helper was not rerun.",
+      "Reviewed every returned chunk and recorded timestamped classifications, retained and rejected leads, uncertainty, and the absence of follow-ups in youtube_analysis.md. No transcript, media, thumbnail, full description, or caption chunks were written beneath the repository, and persisted transcript quotation is zero words.",
+      "Existing registered primary evidence for Alphabet and Meta supports only already-maintained operating and risk records. The video's product, benchmark, valuation, price, forecast, autonomous-vehicle, personal-trading, promotional, and passing-reference assertions remain opinion, prediction, or unverified detail. Mercado Libre, Uber, Axon, and Shift4 did not have a complete independently verified public-security identity and material hypothesis basis for import; no maintained conclusion, import, or follow-up was justified.",
+      "The audited source-record command appended source_history_072052c0d27c80566d22 and registered youtube_sDA3wYsYjM8 with publisher @CouchInvestor, source type youtube_video, canonical video URL, linked maintained identity IDs, and matching canonical transcript hash 83d4a6b8fa350b14e123a0ee8adcd36a55d8920493f42b22b833b926e12bb5be.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, assessment, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

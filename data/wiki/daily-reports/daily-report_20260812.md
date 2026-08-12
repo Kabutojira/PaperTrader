@@ -7,8 +7,8 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-report-generator
-run_id: "daily-20260812T084846Z"
-snapshot_id: "decision_089c32bc41cbb511b776"
+run_id: "local-youtube-20260812T090946Z-04"
+snapshot_id: "decision_699be123b40ee2c1b0b5"
 ---
 
 # PaperTrader daily report — 2026-08-12
@@ -20,7 +20,7 @@ snapshot_id: "decision_089c32bc41cbb511b776"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Blocked
-- **As of:** `2026-08-12T08:51:57Z`
+- **As of:** `2026-08-12T13:24:10Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Target cash:** 10000 EUR (100%)
@@ -286,6 +286,7 @@ No pending orders.
 - **operational only**: Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-05]]
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
 - **operational only**: Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]
+- **operational only**: Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]
 - **operational only**: Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]]
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
@@ -307,8 +308,8 @@ No pending orders.
 ### Run diagnostics
 
 - Report date: 2026-08-12
-- Run status: degraded
-- Generated (UTC): `2026-08-12T08:51:57Z`
+- Run status: succeeded
+- Generated (UTC): `2026-08-12T13:24:10Z`
 
 ### Complete market freshness
 
@@ -475,29 +476,6 @@ No pending orders.
 | — | [[securities/security_fb87fac302a5446a1ced|LAC]] | 0% | excluded | The current assessment marks the security ineligible.; Assessment confidence is below the configured minimum.; A supportable valuation is unavailable.; The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 
-### Curated YouTube discovery
-
-- Status: `degraded`
-- Operations queued: `0`
-- Channel failures: `1`
-
-| Channel | Status | Discovered | Queued | Reason |
-| --- | --- | ---: | ---: | --- |
-| @allin | succeeded | 0 | 0 | — |
-| @thelimitingfactor | succeeded | 0 | 0 | — |
-| @ConnectingODots | succeeded | 0 | 0 | — |
-| @DumbMoneyLive | succeeded | 0 | 0 | — |
-| @CouchInvestor | failed | 0 | 0 | YouTube Data API video duration is malformed |
-| @Value-Investing | succeeded | 0 | 0 | — |
-
-
-### Seeking Alpha search-index leads
-
-- Schedule status: `duplicate`
-- Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
-- Discovery status: `pending`
-
-
 ### Research-operation audit
 
 | Research operation | Entity | Disposition | Reason |
@@ -506,6 +484,79 @@ No pending orders.
 | [[securities/security_1f9cce545ede94cd6349|Security research for ISRG on 2026-08-12]] | [[securities/security_1f9cce545ede94cd6349|ISRG]] | succeeded | agent result:succeeded |
 | [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-12]] | [[securities/security_ed7d5b616a196969c815|RXRX]] | succeeded | agent result:succeeded |
 | [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]] | [[securities/security_ed7d5b616a196969c815|RXRX]] | succeeded | agent result:succeeded |
+| [Wiki ingest for Sell These Stocks Before It's Too Late on 2026-08-12](https://www.youtube.com/watch?v=pMbb5BfWUCY) | [Sell These Stocks Before It's Too Late](https://www.youtube.com/watch?v=pMbb5BfWUCY) | succeeded | agent result:succeeded |
+| [Wiki ingest for SoFi Stock: What A Joke! on 2026-08-12](https://www.youtube.com/watch?v=MsNPz0dBYDw) | [SoFi Stock: What A Joke!](https://www.youtube.com/watch?v=MsNPz0dBYDw) | succeeded | agent result:succeeded |
+| [Wiki ingest for Criticism to a Value Investing Approach To Long-Term Wealth Accumulation & Compounding! on 2026-08-12](https://www.youtube.com/watch?v=-jysGHtWkxE) | [Criticism to a Value Investing Approach To Long-Term Wealth Accumulation & Compounding!](https://www.youtube.com/watch?v=-jysGHtWkxE) | succeeded | agent result:succeeded |
+| [Wiki ingest for The Most Obvious Buy in the Market Right Now on 2026-08-12](https://www.youtube.com/watch?v=DeI6oqdIePA) | [The Most Obvious Buy in the Market Right Now](https://www.youtube.com/watch?v=DeI6oqdIePA) | succeeded | agent result:succeeded |
+| [Wiki ingest for Chip Stocks Crash, $20B Fund Margin Called, Frontier Labs: SLOW DOWN AI, Mamdani's Grocery Stores on 2026-08-12](https://www.youtube.com/watch?v=ViqYWhLimGg) | [Chip Stocks Crash, $20B Fund Margin Called, Frontier Labs: SLOW DOWN AI, Mamdani's Grocery Stores](https://www.youtube.com/watch?v=ViqYWhLimGg) | succeeded | agent result:succeeded |
+| [Wiki ingest for Nintendo is a Cool Stock/Great Moat! on 2026-08-12](https://www.youtube.com/watch?v=lSx5W8a3_yQ) | [Nintendo is a Cool Stock/Great Moat!](https://www.youtube.com/watch?v=lSx5W8a3_yQ) | succeeded | agent result:succeeded |
+| [Wiki ingest for I'm Buying the Dip on a Stock Everyone Else Is Selling Today on 2026-08-12](https://www.youtube.com/watch?v=DNlb0PrAdro) | [I'm Buying the Dip on a Stock Everyone Else Is Selling Today](https://www.youtube.com/watch?v=DNlb0PrAdro) | succeeded | agent result:succeeded |
+| [Wiki ingest for Here is The Notorious 70% US Stocks Crash Jeremy Grantham Prediction, Again! on 2026-08-12](https://www.youtube.com/watch?v=5aF6qJM8aVM) | [Here is The Notorious 70% US Stocks Crash Jeremy Grantham Prediction, Again!](https://www.youtube.com/watch?v=5aF6qJM8aVM) | succeeded | agent result:succeeded |
+| [Wiki ingest for I Just Bought $5,200 of These 3 Stocks. Here's Why on 2026-08-12](https://www.youtube.com/watch?v=MSfaIeQ0eq8) | [I Just Bought $5,200 of These 3 Stocks. Here's Why](https://www.youtube.com/watch?v=MSfaIeQ0eq8) | succeeded | agent result:succeeded |
+| [Wiki ingest for Oracle Stock Can Give You A 5X! on 2026-08-12](https://www.youtube.com/watch?v=ktY0IrrdSM8) | [Oracle Stock Can Give You A 5X!](https://www.youtube.com/watch?v=ktY0IrrdSM8) | succeeded | agent result:succeeded |
+| [Wiki ingest for GOOG, MSFT, AMZN, NVDA – INVESTING RISK AND REWARD!!! on 2026-08-12](https://www.youtube.com/watch?v=gIYNCsp0TFY) | [GOOG, MSFT, AMZN, NVDA – INVESTING RISK AND REWARD!!!](https://www.youtube.com/watch?v=gIYNCsp0TFY) | succeeded | agent result:succeeded |
+| [Wiki ingest for AMD Stock Is Crashing After Earnings. Here's Everything You Need To Know on 2026-08-12](https://www.youtube.com/watch?v=sDDQ5Ueg1dk) | [AMD Stock Is Crashing After Earnings. Here's Everything You Need To Know](https://www.youtube.com/watch?v=sDDQ5Ueg1dk) | succeeded | agent result:succeeded |
+| [Wiki ingest for 4 Stocks I'm Buying In August If This Happens on 2026-08-12](https://www.youtube.com/watch?v=UryYddSqC30) | [4 Stocks I'm Buying In August If This Happens](https://www.youtube.com/watch?v=UryYddSqC30) | succeeded | agent result:succeeded |
+| [Wiki ingest for Analysts Have Never Seen This Before on 2026-08-12](https://www.youtube.com/watch?v=JEP4vi9pW9o) | [Analysts Have Never Seen This Before](https://www.youtube.com/watch?v=JEP4vi9pW9o) | succeeded | agent result:succeeded |
+| [Wiki ingest for I Just Bought 3 Stocks! on 2026-08-12](https://www.youtube.com/watch?v=G3S5ZyL9U64) | [I Just Bought 3 Stocks!](https://www.youtube.com/watch?v=G3S5ZyL9U64) | succeeded | agent result:succeeded |
+| [Wiki ingest for China Outbuilds America 230-to-1. Saronic Has a Plan on 2026-08-12](https://www.youtube.com/watch?v=jfxHHglA5Eo) | [China Outbuilds America 230-to-1. Saronic Has a Plan](https://www.youtube.com/watch?v=jfxHHglA5Eo) | succeeded | agent result:succeeded |
+| [Wiki ingest for Everything Will Crash in The Next Crash! Even BRK or Value ETFs on 2026-08-12](https://www.youtube.com/watch?v=BPmhjXnBRNE) | [Everything Will Crash in The Next Crash! Even BRK or Value ETFs](https://www.youtube.com/watch?v=BPmhjXnBRNE) | succeeded | agent result:succeeded |
+| [Wiki ingest for This Stock Is in a League of Its Own. No Company Has Ever Done This on 2026-08-12](https://www.youtube.com/watch?v=sDA3wYsYjM8) | [This Stock Is in a League of Its Own. No Company Has Ever Done This](https://www.youtube.com/watch?v=sDA3wYsYjM8) | succeeded | agent result:succeeded |
+| [Wiki ingest for Google’s AI Brain Drain, SpaceX's Huge Quarter, Airtable’s 90% Collapse, US Data Fuels China AI on 2026-08-12](https://www.youtube.com/watch?v=muRIXCDw-k0) | [Google’s AI Brain Drain, SpaceX's Huge Quarter, Airtable’s 90% Collapse, US Data Fuels China AI](https://www.youtube.com/watch?v=muRIXCDw-k0) | succeeded | agent result:succeeded |
+| [Wiki ingest for Could This Be The Most Controversial Multibagger Stock In The Making? on 2026-08-12](https://www.youtube.com/watch?v=Mey5z-pk5yQ) | [Could This Be The Most Controversial Multibagger Stock In The Making?](https://www.youtube.com/watch?v=Mey5z-pk5yQ) | succeeded | agent result:succeeded |
+| [Wiki ingest for I Just Sold Out of a Stock Completely. Here's What I Bought Instead on 2026-08-12](https://www.youtube.com/watch?v=7lE_ewagWx4) | [I Just Sold Out of a Stock Completely. Here's What I Bought Instead](https://www.youtube.com/watch?v=7lE_ewagWx4) | succeeded | agent result:succeeded |
+| [Wiki ingest for OTIS, KONE, SCHINDLER - ELevate Your Portfolio With These Dividend Growth Stocks! on 2026-08-12](https://www.youtube.com/watch?v=NNbke4YhznQ) | [OTIS, KONE, SCHINDLER - ELevate Your Portfolio With These Dividend Growth Stocks!](https://www.youtube.com/watch?v=NNbke4YhznQ) | succeeded | agent result:succeeded |
+| [Wiki ingest for Burry's Flutter Stocks is a BUY! + Burry's Bets & Shorts on 2026-08-12](https://www.youtube.com/watch?v=AGaZ5XbmRXg) | [Burry's Flutter Stocks is a BUY! + Burry's Bets & Shorts](https://www.youtube.com/watch?v=AGaZ5XbmRXg) | succeeded | agent result:succeeded |
+| [Wiki ingest for TESLA INSIDER: Elon Musk Deleted All Defaults at Tesla & SpaceX on 2026-08-12](https://www.youtube.com/watch?v=9ePWIYadju4) | [TESLA INSIDER: Elon Musk Deleted All Defaults at Tesla & SpaceX](https://www.youtube.com/watch?v=9ePWIYadju4) | succeeded | agent result:succeeded |
+| [Wiki ingest for CPRT Copart Stock - Stock Crash Makes it a Better Buy! on 2026-08-12](https://www.youtube.com/watch?v=J2ZqFVpMb5M) | [CPRT Copart Stock - Stock Crash Makes it a Better Buy!](https://www.youtube.com/watch?v=J2ZqFVpMb5M) | succeeded | agent result:succeeded |
+| [Wiki ingest for Amazon, Robinhood & Sweetgreen: Here's Where We Stand on 2026-08-12](https://www.youtube.com/watch?v=6006vpLlaVw) | [Amazon, Robinhood & Sweetgreen: Here's Where We Stand](https://www.youtube.com/watch?v=6006vpLlaVw) | succeeded | agent result:succeeded |
+| [Wiki ingest for Jeremy Grantham vs. Joseph Carlson & CNBC Discussing Crash & Investing! My Take! AMAZING CONTENT! on 2026-08-12](https://www.youtube.com/watch?v=e2C_hgXiyzM) | [Jeremy Grantham vs. Joseph Carlson & CNBC Discussing Crash & Investing! My Take! AMAZING CONTENT!](https://www.youtube.com/watch?v=e2C_hgXiyzM) | succeeded | agent result:succeeded |
+| [Wiki ingest for SpaceX Data Center Growth: Big Revenues, But Big Spending (Colossus Update) on 2026-08-12](https://www.youtube.com/watch?v=h7XVJ64IhY4) | [SpaceX Data Center Growth: Big Revenues, But Big Spending (Colossus Update)](https://www.youtube.com/watch?v=h7XVJ64IhY4) | succeeded | agent result:succeeded |
+| [Wiki ingest for Oil Stocks After Q2 2026 / Var Energi Example on 2026-08-12](https://www.youtube.com/watch?v=4JmCb5FmTA4) | [Oil Stocks After Q2 2026 / Var Energi Example](https://www.youtube.com/watch?v=4JmCb5FmTA4) | succeeded | agent result:succeeded |
+| [Wiki ingest for Tesla's HUGE Bet Should Fail (But They are Hiding an Ace) on 2026-08-12](https://www.youtube.com/watch?v=yUq0O-pDHCE) | [Tesla's HUGE Bet Should Fail (But They are Hiding an Ace)](https://www.youtube.com/watch?v=yUq0O-pDHCE) | succeeded | agent result:succeeded |
+| [Wiki ingest for Ford & Toyota Are Betting the Farm on the SAME Desperate HAIL MARY \| Engineer Explains on 2026-08-12](https://www.youtube.com/watch?v=k77X47h6OVU) | [Ford & Toyota Are Betting the Farm on the SAME Desperate HAIL MARY \| Engineer Explains](https://www.youtube.com/watch?v=k77X47h6OVU) | succeeded | agent result:succeeded |
+| [Wiki ingest for Capex, D&A, $707 Billion in Commitments Make Google a Very RISKY Stock to Buy! on 2026-08-12](https://www.youtube.com/watch?v=yAtpMMC3aiw) | [Capex, D&A, $707 Billion in Commitments Make Google a Very RISKY Stock to Buy!](https://www.youtube.com/watch?v=yAtpMMC3aiw) | succeeded | agent result:succeeded |
+| [Wiki ingest for Time to CASH OUT! 4 Stocks to SELL Before Earnings! on 2026-08-12](https://www.youtube.com/watch?v=3c9iLgtDdKM) | [Time to CASH OUT! 4 Stocks to SELL Before Earnings!](https://www.youtube.com/watch?v=3c9iLgtDdKM) | succeeded | agent result:succeeded |
+| [Wiki ingest for Your Comments Suggest Netflix Stock is Now Fairly Priced on 2026-08-12](https://www.youtube.com/watch?v=Cbbmj0dqP-M) | [Your Comments Suggest Netflix Stock is Now Fairly Priced](https://www.youtube.com/watch?v=Cbbmj0dqP-M) | succeeded | agent result:succeeded |
+| [Wiki ingest for Former Intel CEO on What Went Wrong, What's Next + Lovable CEO on the Real Promise of Vibe Coding on 2026-08-12](https://www.youtube.com/watch?v=-ILKiOU5iAQ) | [Former Intel CEO on What Went Wrong, What's Next + Lovable CEO on the Real Promise of Vibe Coding](https://www.youtube.com/watch?v=-ILKiOU5iAQ) | succeeded | agent result:succeeded |
+| [Wiki ingest for Do Not Buy This Model Y? 4680 '8L' Battery Pack Investigated on 2026-08-12](https://www.youtube.com/watch?v=oyjpF7xPiC4) | [Do Not Buy This Model Y? 4680 '8L' Battery Pack Investigated](https://www.youtube.com/watch?v=oyjpF7xPiC4) | succeeded | agent result:succeeded |
+| [Wiki ingest for Is Bloom Energy A Scam? on 2026-08-12](https://www.youtube.com/watch?v=u-AXyF9kY9k) | [Is Bloom Energy A Scam?](https://www.youtube.com/watch?v=u-AXyF9kY9k) | succeeded | agent result:succeeded |
+| [Wiki ingest for The Fight Over Open Source AI, Anthropic's $1.5B Payout, NYC Socialists: Evictions = Violence? on 2026-08-12](https://www.youtube.com/watch?v=wcV0SRPFK9s) | [The Fight Over Open Source AI, Anthropic's $1.5B Payout, NYC Socialists: Evictions = Violence?](https://www.youtube.com/watch?v=wcV0SRPFK9s) | succeeded | agent result:succeeded |
+| [Wiki ingest for The ChatGPT & Grok Problem Their Makers Can’t Fix on 2026-08-12](https://www.youtube.com/watch?v=Ejsft2oPCtM) | [The ChatGPT & Grok Problem Their Makers Can’t Fix](https://www.youtube.com/watch?v=Ejsft2oPCtM) | succeeded | agent result:succeeded |
+| [Wiki ingest for 4 Undervalued Stocks to Load Up on Before Earnings on 2026-08-12](https://www.youtube.com/watch?v=pVaKoDHW9iY) | [4 Undervalued Stocks to Load Up on Before Earnings](https://www.youtube.com/watch?v=pVaKoDHW9iY) | succeeded | agent result:succeeded |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=9IMwRIei-Xc) | [www.youtube.com](https://www.youtube.com/watch?v=9IMwRIei-Xc) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=65IABPxBJ9M) | [www.youtube.com](https://www.youtube.com/watch?v=65IABPxBJ9M) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=a0l7VDnN1bg) | [www.youtube.com](https://www.youtube.com/watch?v=a0l7VDnN1bg) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=AK_aWcM-VAY) | [www.youtube.com](https://www.youtube.com/watch?v=AK_aWcM-VAY) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=TyMn7wknYTU) | [www.youtube.com](https://www.youtube.com/watch?v=TyMn7wknYTU) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=SuSYegb8iK0) | [www.youtube.com](https://www.youtube.com/watch?v=SuSYegb8iK0) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=OY2Sjbjd_VE) | [www.youtube.com](https://www.youtube.com/watch?v=OY2Sjbjd_VE) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=pVwvxybnwdg) | [www.youtube.com](https://www.youtube.com/watch?v=pVwvxybnwdg) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=TqNiSTeNtb0) | [www.youtube.com](https://www.youtube.com/watch?v=TqNiSTeNtb0) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=OcXcgIlJGRw) | [www.youtube.com](https://www.youtube.com/watch?v=OcXcgIlJGRw) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=-lUsDKvZJu0) | [www.youtube.com](https://www.youtube.com/watch?v=-lUsDKvZJu0) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=yG-bk8QEjsA) | [www.youtube.com](https://www.youtube.com/watch?v=yG-bk8QEjsA) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=t3RTJJ6KM_I) | [www.youtube.com](https://www.youtube.com/watch?v=t3RTJJ6KM_I) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=0umrMuUClC4) | [www.youtube.com](https://www.youtube.com/watch?v=0umrMuUClC4) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=PHL1j2ti420) | [www.youtube.com](https://www.youtube.com/watch?v=PHL1j2ti420) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=Y7p4rUCdqi0) | [www.youtube.com](https://www.youtube.com/watch?v=Y7p4rUCdqi0) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=4j9RPGLENNI) | [www.youtube.com](https://www.youtube.com/watch?v=4j9RPGLENNI) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=UIoV8rG_25s) | [www.youtube.com](https://www.youtube.com/watch?v=UIoV8rG_25s) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=TjrShuj_Zsg) | [www.youtube.com](https://www.youtube.com/watch?v=TjrShuj_Zsg) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E) | [www.youtube.com](https://www.youtube.com/watch?v=fO5sC7qS04E) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=J0bce9WQJ-g) | [www.youtube.com](https://www.youtube.com/watch?v=J0bce9WQJ-g) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=V0lFjTWx36I) | [www.youtube.com](https://www.youtube.com/watch?v=V0lFjTWx36I) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=gH4FTjDm9FQ) | [www.youtube.com](https://www.youtube.com/watch?v=gH4FTjDm9FQ) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=w8ah_tA0yfg) | [www.youtube.com](https://www.youtube.com/watch?v=w8ah_tA0yfg) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=3Amlu4y94Ho) | [www.youtube.com](https://www.youtube.com/watch?v=3Amlu4y94Ho) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=hObRMv6qCi0) | [www.youtube.com](https://www.youtube.com/watch?v=hObRMv6qCi0) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=0y28p0jqPro) | [www.youtube.com](https://www.youtube.com/watch?v=0y28p0jqPro) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=wgdxSCsmS-Q) | [www.youtube.com](https://www.youtube.com/watch?v=wgdxSCsmS-Q) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=jLICvWE7w2Q) | [www.youtube.com](https://www.youtube.com/watch?v=jLICvWE7w2Q) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=_TJFqEhxQg4) | [www.youtube.com](https://www.youtube.com/watch?v=_TJFqEhxQg4) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=i8OI8CNdZgU) | [www.youtube.com](https://www.youtube.com/watch?v=i8OI8CNdZgU) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=xTO1aQ_m44I) | [www.youtube.com](https://www.youtube.com/watch?v=xTO1aQ_m44I) | skipped | youtube transcript unavailable |
+| [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=ihq_ngvKKmc) | [www.youtube.com](https://www.youtube.com/watch?v=ihq_ngvKKmc) | skipped | youtube transcript unavailable |
 
 ### Complete active queue
 
@@ -513,56 +564,6 @@ No pending orders.
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=TqNiSTeNtb0)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wcV0SRPFK9s)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=OY2Sjbjd_VE)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=9IMwRIei-Xc)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=-ILKiOU5iAQ)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=SuSYegb8iK0)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=h7XVJ64IhY4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=pVwvxybnwdg)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=TyMn7wknYTU)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=oyjpF7xPiC4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Ejsft2oPCtM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=k77X47h6OVU)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yUq0O-pDHCE)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=9ePWIYadju4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yG-bk8QEjsA)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=u-AXyF9kY9k)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=AK_aWcM-VAY)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=t3RTJJ6KM_I)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=6006vpLlaVw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=-lUsDKvZJu0)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=65IABPxBJ9M)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=OcXcgIlJGRw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=a0l7VDnN1bg)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=3c9iLgtDdKM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=pVaKoDHW9iY)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=4JmCb5FmTA4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=yAtpMMC3aiw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Cbbmj0dqP-M)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=e2C_hgXiyzM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=J2ZqFVpMb5M)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=J0bce9WQJ-g)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=PHL1j2ti420)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=Y7p4rUCdqi0)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=wgdxSCsmS-Q)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=ihq_ngvKKmc)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=w8ah_tA0yfg)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=4j9RPGLENNI)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=3Amlu4y94Ho)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=gH4FTjDm9FQ)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=fO5sC7qS04E)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=0y28p0jqPro)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=xTO1aQ_m44I)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=0umrMuUClC4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=hObRMv6qCi0)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=V0lFjTWx36I)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=jLICvWE7w2Q)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=i8OI8CNdZgU)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=UIoV8rG_25s)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=_TJFqEhxQg4)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-29](https://www.youtube.com/watch?v=TjrShuj_Zsg)
 - Ready — [[securities/security_4b61970aa8f574446819|Opportunity research for Market alert for GEV on 2026-07-29]]
 - Ready — [[securities/security_567d0d575bbd30aaa91d|Opportunity research for Market alert for SSU.VI on 2026-07-29]]
 - Ready — [[securities/security_97f38b2cb2d5ef127f5a|Opportunity research for Market alert for PL on 2026-07-29]]
@@ -594,9 +595,6 @@ No pending orders.
 - Ready — [[inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212|Wiki ingest for ENPH — Volume anomaly on 2026-07-30]]
 - Ready — [[ideas/idea_solar_storage_grid_flexibility_reset|Idea research for Solar, storage, and grid-flexibility reset on 2026-07-30]]
 - Ready — [[ideas/idea_critical_minerals_copper|Idea research for Critical minerals and structural copper scarcity on 2026-07-30]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-31](https://www.youtube.com/watch?v=DeI6oqdIePA)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-31](https://www.youtube.com/watch?v=MsNPz0dBYDw)
-- Ready — [Wiki ingest for www.youtube.com on 2026-07-31](https://www.youtube.com/watch?v=-jysGHtWkxE)
 - Ready — [[securities/security_204be2a44063993de1a8|Opportunity research for Market alert for MSFT on 2026-07-31]]
 - Ready — [[inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9|Wiki ingest for MSFT — Volume anomaly on 2026-07-31]]
 - Ready — [[securities/security_2433a056eb0c55961fcc|Opportunity research for Market alert for AMZN on 2026-07-31]]
@@ -626,9 +624,6 @@ No pending orders.
 - Ready — [[securities/security_dc8486c1d61df62a22fd|Opportunity research for Market alert for SU on 2026-07-31]]
 - Ready — [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb|Wiki ingest for SU — MACD cross above signal on 2026-07-31]]
 - Ready — [[relationships/relationship_871e21ff73620ab8eb14|Relationship research for Critical minerals and the lithium cycle to Albemarle on 2026-07-31]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=ViqYWhLimGg)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=DNlb0PrAdro)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=lSx5W8a3_yQ)
 - Ready — [[securities/security_099561384c0f5e697727|Opportunity research for Market alert for CSIQ on 2026-08-01]]
 - Ready — [[inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd|Wiki ingest for CSIQ — MACD cross above signal on 2026-08-01]]
 - Ready — [[securities/security_18a3ab0ee6086ee85d0f|Opportunity research for Market alert for ETN on 2026-08-01]]
@@ -664,15 +659,8 @@ No pending orders.
 - Ready — [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-dcd8a733d0db|Wiki ingest for RBLX — RSI oversold on 2026-08-01]]
 - Ready — [[relationships/relationship_510158d3d515d91d5c14|Relationship research for Nearshoring and friendshoring manufacturing capacity to Ternium on 2026-08-01]]
 - Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-01]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-01](https://www.youtube.com/watch?v=5aF6qJM8aVM)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-03](https://www.youtube.com/watch?v=MSfaIeQ0eq8)
 - Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-03]]
 - Ready — [[ideas/idea_digital_attention_gaming_ecosystems|Idea research for Digital attention, gaming, and consumer ecosystems on 2026-08-03]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=sDDQ5Ueg1dk)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=JEP4vi9pW9o)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=UryYddSqC30)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=ktY0IrrdSM8)
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=gIYNCsp0TFY)
 - Ready — [[securities/security_0cf8075039299094d614|Opportunity research for Market alert for KTOS on 2026-08-05]]
 - Ready — [[inbox/market-security_0cf8075039299094d614-volume_anomaly-127ac2ec3af3|Wiki ingest for KTOS — Volume anomaly on 2026-08-05]]
 - Ready — [[securities/security_18a3ab0ee6086ee85d0f|Opportunity research for Market alert for ETN on 2026-08-05]]
@@ -734,7 +722,6 @@ No pending orders.
 - Ready — [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91|Wiki ingest for ENPH — MACD cross above signal on 2026-08-05]]
 - Ready — [[relationships/relationship_c829dae21648bb133cc7|Relationship research for AI-native drug discovery to Recursion Pharmaceuticals on 2026-08-05]]
 - Ready — [[relationships/relationship_9e7b4700174908755cbc|Relationship research for Precision biology and healthcare automation to Recursion Pharmaceuticals on 2026-08-05]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-05](https://www.youtube.com/watch?v=G3S5ZyL9U64)
 - Ready — [[ideas/idea_critical_minerals_copper|Idea research for Critical minerals and structural copper scarcity on 2026-08-05]]
 - Ready — [[ideas/idea_defense_aerospace|Relationship research for relationship between Defense and aerospace replenishment cycle and KTOS on 2026-08-05]]
 - Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Idea research for Humanoid robotics and embodied-AI component supply chain on 2026-08-05]]
@@ -758,17 +745,14 @@ No pending orders.
 - Ready — [[inbox/market-security_c9a37d277445869a8809-rsi_oversold-9dee6faa97aa|Wiki ingest for RBLX — RSI oversold on 2026-08-05]]
 - Ready — [[ideas/idea_digital_attention_gaming_ecosystems|Relationship research for relationship between Digital attention, gaming, and consumer ecosystems and CRSR on 2026-08-05]]
 - Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Relationship research for relationship between Humanoid robotics and embodied-AI component supply chain and FUC.F on 2026-08-05]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-06](https://www.youtube.com/watch?v=jfxHHglA5Eo)
 - Ready — [[securities/security_55c9ce2fdcd32dad6b8c|Opportunity research for Market alert for CRSR on 2026-08-06]]
 - Ready — [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-5244183d7674|Wiki ingest for CRSR — Volume anomaly on 2026-08-06]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-06](https://www.youtube.com/watch?v=BPmhjXnBRNE)
 - Ready — [[ideas/idea_defense_aerospace|Idea research for Defense and aerospace replenishment cycle on 2026-08-06]]
 - Ready — [[ideas/idea_critical_minerals_lithium|Idea research for Critical minerals and the lithium cycle on 2026-08-06]]
 - Ready — [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-c0eb5fe23c5e|Wiki ingest for NIB.F — Volume anomaly on 2026-08-06]]
 - Ready — [[ideas/idea_ai_infrastructure_power|Idea research for AI infrastructure and power bottlenecks on 2026-08-06]]
 - Ready — [[ideas/idea_nearshoring_friendshoring_manufacturing|Idea research for Nearshoring and friendshoring manufacturing capacity on 2026-08-06]]
 - Ready — [[ideas/idea_solar_storage_grid_flexibility_reset|Idea research for Solar, storage, and grid-flexibility reset on 2026-08-06]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-06](https://www.youtube.com/watch?v=sDA3wYsYjM8)
 - Ready — [[securities/security_0a56aa634d077fe5796f|Opportunity research for Market alert for AMAT on 2026-08-06]]
 - Ready — [[inbox/market-security_0a56aa634d077fe5796f-macd_cross_above_signal-17f2c47b5c58|Wiki ingest for AMAT — MACD cross above signal on 2026-08-06]]
 - Ready — [[securities/security_3a75fc1ccca2ee7c937a|Opportunity research for Market alert for QCOM on 2026-08-06]]
@@ -797,7 +781,6 @@ No pending orders.
 - Ready — [[relationships/relationship_297f9e36fb4e93a808e8|Relationship research for Commercial space infrastructure to Rocket Lab on 2026-08-07]]
 - Ready — [[relationships/relationship_250194f6a9e3a1817632|Relationship research for Anduril product-company disruption to Palantir Technologies on 2026-08-07]]
 - Ready — [[relationships/relationship_d9c8f578040386a487be|Relationship research for Digital attention, gaming, and consumer ecosystems to Roblox on 2026-08-07]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-08](https://www.youtube.com/watch?v=muRIXCDw-k0)
 - Ready — [[inbox/market-security_55c9ce2fdcd32dad6b8c-volume_anomaly-23e48859ad86|Wiki ingest for CRSR — Volume anomaly on 2026-08-08]]
 - Ready — [[securities/security_83a56943e18793f685b0|Opportunity research for Market alert for TXN on 2026-08-08]]
 - Ready — [[inbox/market-security_83a56943e18793f685b0-macd_cross_above_signal-d98969d607e6|Wiki ingest for TXN — MACD cross above signal on 2026-08-08]]
@@ -824,14 +807,11 @@ No pending orders.
 - Ready — [[relationships/relationship_solar_storage_grid_flnc|Relationship research for Solar, storage, and grid-flexibility reset to Fluence Energy on 2026-08-08]]
 - Ready — [[securities/security_fb87fac302a5446a1ced|Security research for LAC on 2026-08-08]]
 - Waiting — [[relationships/relationship_ad2f37b49980dbc73a08|Relationship research for Critical minerals and the lithium cycle to Lithium Americas on 2026-08-08]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-09](https://www.youtube.com/watch?v=Mey5z-pk5yQ)
 - Ready — [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-09]]
 - Ready — [[ideas/idea_ai_compute_networking_hyperscaler_monetization|Idea research for AI compute, networking, and hyperscaler monetization on 2026-08-09]]
 - Ready — [[ideas/idea_commercial_space_infrastructure|Idea research for Commercial space infrastructure and geospatial data on 2026-08-09]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-09](https://www.youtube.com/watch?v=7lE_ewagWx4)
 - Ready — [[ideas/idea_digital_finance_crypto_rails|Idea research for Digital finance and crypto rails on 2026-08-09]]
 - Ready — [[ideas/idea_humanoid_robotics_embodied_ai_components|Idea research for Humanoid robotics and embodied-AI component supply chain on 2026-08-10]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-10](https://www.youtube.com/watch?v=NNbke4YhznQ)
 - Ready — [[securities/security_3853e54c619d597dcaa1|Opportunity research for Market alert for NIB.F on 2026-08-10]]
 - Ready — [[inbox/market-security_3853e54c619d597dcaa1-volume_anomaly-815d3d6124c1|Wiki ingest for NIB.F — Volume anomaly on 2026-08-10]]
 - Ready — [[securities/security_3853e54c619d597dcaa1|Quick check research for NIB.F on 2026-08-10]]
@@ -845,9 +825,7 @@ No pending orders.
 - Ready — [[inbox/market-security_7ca095d63423c55a90e3-volume_anomaly-a33942d7e966|Wiki ingest for RKLB — Volume anomaly on 2026-08-11]]
 - Ready — [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-11]]
 - Ready — [[ideas/idea_cybersecurity_geopolitical_continuity|Idea research for Cybersecurity resilience and geopolitical continuity on 2026-08-11]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-11](https://www.youtube.com/watch?v=AGaZ5XbmRXg)
 - Ready — [[ideas/idea_anduril_product_company_disruption|Idea research for Anduril product-company disruption and future-IPO exposure on 2026-08-11]]
-- Ready — [Wiki ingest for www.youtube.com on 2026-08-11](https://www.youtube.com/watch?v=pMbb5BfWUCY)
 - Ready — [Source discovery for seekingalpha.com on 2026-08-12](https://seekingalpha.com/trending-analysis)
 - Ready — [[securities/security_2010347f1a0a5ea60f47|Opportunity research for Market alert for SPOT on 2026-08-12]]
 - Ready — [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-bb7289c15e14|Wiki ingest for SPOT — MACD cross above signal on 2026-08-12]]
@@ -904,6 +882,7 @@ No pending orders.
 - Error — [[system-status|Hermes operation validation failed: Security research for RIO on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Security research for RIO on 2026-08-05/agent\_result.json
 - Error — [[system-status|Hermes operation validation failed: Security research for ABCL on 2026-08-07]]: completed security research requires exactly one immutable assessment version
 - Warning — [[system-status|Daily preparation degraded: ALB]]: ALB: YFTzMissingError: $ALB: possibly delisted; no timezone found
+- Error — [[system-status|Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)]]: files\_changed is stale or incomplete: reported=\['data/runs/local-youtube-20260812T090946Z-03/\[Wiki ingest for www.youtube.com on 2026-08-12\](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent\_result.json'\], actual=\[\]
 - Warning — [[system-status|YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A]]: @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po\_token.html
 - Warning — [[system-status|Daily preparation degraded: ANIC.L]]: ANIC.L: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: GOOGL]]: GOOGL: price cache is empty

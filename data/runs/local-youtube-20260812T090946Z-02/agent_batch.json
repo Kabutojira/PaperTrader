@@ -1,0 +1,93 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-12T12:18:50Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 20,
+  "outcomes": [
+    {
+      "operation_id": "01KZMAG4W8YX882WWPKXP630N4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZP6E8RGQV49A4B29D414XK4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KZRGTMMGDHZWVFKTYNG62PGV",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1G2RNAXKS9RP0MY1R9",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1G3CHJ4YE6BKXP9RX9",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1G3QX14JS5VBH76HN0",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1G663ZCTKEG5CJHK7B",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1G6RHZ9VJYDV5NKPTT",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1G889B5DYTST65N0EW",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GAXYP4Y8RR9C5G3KN",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GB9057VRBFHJ9Y1NX",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GCWM22YHNBNMM75XE",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GD05JQFX2ZE5MTRWZ",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GENTSWY2QD1D1RREE",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GETPHJ2B8PYVG9FE0",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GF9JD930JH9N49P07",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GFY1PFRCMBZ41Q88C",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GGA0W6TAYFVSGQXR3",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GGG62YPWBRNTM1WFD",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01KYQ49D1GHSHA6ZVKD6N2VFBG",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-youtube-20260812T090946Z-02",
+  "started_at": "2026-08-12T10:51:50Z"
+}

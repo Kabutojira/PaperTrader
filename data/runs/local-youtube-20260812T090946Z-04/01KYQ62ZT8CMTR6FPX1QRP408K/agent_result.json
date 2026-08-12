@@ -1,0 +1,29 @@
+{
+  "operation_id": "01KYQ62ZT8CMTR6FPX1QRP408K",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped because the parent-provided anonymous transcript helper reported captions unavailable after all three bounded attempts; no transcript retrieval was retried and no wiki or structured state was changed.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8CMTR6FPX1QRP408K.json",
+      "claim": "Prepared helper result has status unavailable with reason_code youtube_transcript_unavailable after three attempts (WEB, ANDROID, and IOS), each reporting ModuleNotFoundError."
+    },
+    {
+      "source": "data/operations/payloads/01KYQ62ZT8CMTR6FPX1QRP408K.json",
+      "claim": "The selected source is curated YouTube video J0bce9WQJ-g from @allin, with the payload's requested English language order and human-caption preference."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Prepared helper JSON was parsed completely and reports status unavailable with the required youtube_transcript_unavailable reason code.",
+      "Skipped-result contract applied: no transcript retry, wiki mutation, structured mutation, follow-up, issue, or trading-state change was made.",
+      "Manifest fields conform to schemas/agent_result.schema.json; files_changed is the required empty array."
+    ]
+  }
+}

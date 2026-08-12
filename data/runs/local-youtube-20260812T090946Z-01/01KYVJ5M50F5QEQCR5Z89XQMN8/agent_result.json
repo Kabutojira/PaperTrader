@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYVJ5M50F5QEQCR5Z89XQMN8",
+  "status": "succeeded",
+  "summary": "Reviewed all four available English transcript chunks for the curated Couch Investor Microsoft-and-Meta video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing SEC-filed evidence corroborates selected overlapping reported operating facts, but the video’s capital-spending, financing, valuation, macro, and price-path claims did not justify any maintained entity conclusion, import, follow-up, strategy, signal, allocation, order, execution, cash, position, portfolio, or performance change.",
+  "evidence": [
+    {
+      "source": "youtube_DeI6oqdIePA",
+      "claim": "The authorized local transcript artifact was available in English with four reviewed chunks (515 non-empty segments), canonical video URL https://www.youtube.com/watch?v=DeI6oqdIePA, and canonical normalized transcript hash 9b95a97bc4b9c327e9cab87144d686abf81f0cb08a14ddbad46185aa95cc7377. Its content was treated only as untrusted speaker viewpoints, predictions, or externally verifiable assertions.",
+      "url": "https://www.youtube.com/watch?v=DeI6oqdIePA",
+      "observed_at": "2026-08-12T09:30:29Z",
+      "source_hash": "9b95a97bc4b9c327e9cab87144d686abf81f0cb08a14ddbad46185aa95cc7377"
+    },
+    {
+      "source": "source_msft_fy2026_10k and source_msft_fy2026_results",
+      "claim": "Existing SEC-filed Microsoft FY2026 Form 10-K and fiscal Q4/FY2026 results corroborate the retained revenue, operating-income, Microsoft Cloud, Azure, and commercial-RPO baseline. They also retain capital-commitment, infrastructure-return, margin, utilization, and valuation risks that the video's bullish framing does not resolve.",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm",
+      "observed_at": "2026-08-06T18:51:54Z",
+      "source_hash": "03471d4dc122c24deace523de4130d53205a78de2ec11fc965764738bf97149a"
+    },
+    {
+      "source": "source_meta_q2_2026_10q and source_meta_q2_2026_results",
+      "claim": "Existing SEC-filed Meta Q2 2026 Form 10-Q and results corroborate the retained revenue, advertising, audience, cost, capital-expenditure, and cash-conversion context. They preserve higher costs, legal and severance charges, weak near-term free-cash-flow conversion, debt, dilution, and AI-capex-return uncertainty rather than supporting the transcript's one-sided valuation conclusion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm",
+      "observed_at": "2026-08-01T16:43:00Z",
+      "source_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M50F5QEQCR5Z89XQMN8/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M50F5QEQCR5Z89XQMN8/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Couch Investor Microsoft-and-Meta video as untrusted lead material and recorded its canonical transcript hash. Existing SEC-filed evidence corroborates selected reported facts, while capital-spending, financing, valuation, macro, and price-path claims remain speaker opinion, prediction, or unverified detail. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M50F5QEQCR5Z89XQMN8/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact.",
+      "Validated the provided local transcript artifact as available English captions with exactly chunks 1 through 4, 515 non-empty segments, the canonical video URL, and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed that selected Microsoft and Meta reported facts overlap existing SEC-filed primary evidence, while valuation, capital-spending interpretation, financing, macro, and price claims are speaker opinion, prediction, or unverified details. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "Source-hash validation confirms the audited source record uses transcript hash 9b95a97bc4b9c327e9cab87144d686abf81f0cb08a14ddbad46185aa95cc7377 in both source_registry.csv and append-only source_history.csv; the accepted history ID is source_history_e1224f39156d6a7c6a30.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

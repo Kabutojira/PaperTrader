@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYZ0KJ30JTKRSK9BVWPJJ5YD",
+  "status": "succeeded",
+  "summary": "Reviewed both available English auto-generated transcript chunks for the curated Value Investing video as untrusted lead material. Recorded its canonical transcript hash and preserved a non-published classified analysis. The video's macro-crash forecast, historical assertions, brokerage promotion, personal anecdotes, and passing NVIDIA/ASML mentions did not independently corroborate a material security-specific conclusion or justify a bounded follow-up. No maintained entity page, identity, strategy, signal, allocation, order, execution, cash, position, portfolio, or performance state changed.",
+  "evidence": [
+    {
+      "source": "youtube_5aF6qJM8aVM",
+      "claim": "The authorized local transcript artifact was available as English auto-generated captions with exactly two reviewed chunks and 198 non-empty segments, canonical video URL https://www.youtube.com/watch?v=5aF6qJM8aVM, and canonical normalized transcript hash c8f14be43d29065635c06e6cc343685a23c5675a8b66302772684b1be6c6eb10. All content was handled only as untrusted speaker claims, opinions, predictions, promotions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=5aF6qJM8aVM",
+      "observed_at": "2026-08-12T09:50:59Z",
+      "source_hash": "c8f14be43d29065635c06e6cc343685a23c5675a8b66302772684b1be6c6eb10"
+    },
+    {
+      "source": "source_nvda_q1_fy2027_10q",
+      "claim": "Existing SEC-filed NVIDIA primary evidence supports reported AI-infrastructure demand but preserves customer-capex concentration, export-control, supply-commitment, product-transition, competition, and valuation risks. It does not corroborate the video's broad market forecast or passing-company characterization.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm",
+      "observed_at": "2026-08-05T18:27:18Z",
+      "source_hash": "1b5de37b973da4a3f1cd31a09aa455c01c519ea7cc409c73de2250ad156f99e4"
+    },
+    {
+      "source": "source_asml_q2_2026_6k",
+      "claim": "Existing SEC-filed ASML primary evidence supports reported Q2 results and raised guidance while preserving customer-concentration, cyclicality, export-control, execution, and valuation risks. It does not corroborate the video's macro forecast or passing-company characterization.",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm",
+      "observed_at": "2026-07-29T22:44:00Z",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYZ0KJ30JTKRSK9BVWPJJ5YD/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYZ0KJ30JTKRSK9BVWPJJ5YD/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value Investing video as untrusted lead material and recorded its canonical transcript hash. Its US-equity crash forecast, macro assertions, historical claims, promotion, and passing NVIDIA/ASML mentions were classified as opinions, predictions, or unverified claims; no paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYZ0KJ30JTKRSK9BVWPJJ5YD/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and local harness preflight for the claimed run.",
+      "Validated the provided local transcript artifact as available English auto-generated captions with exactly two chunks, 198 non-empty segments, the canonical video URL, and transcript hash c8f14be43d29065635c06e6cc343685a23c5675a8b66302772684b1be6c6eb10 matching the source-record request; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified investment-relevant material in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed NVIDIA and ASML are maintained, cataloged context and that existing registered SEC primary evidence supports only their reported issuer facts and known risks, not the video's macro forecast or passing-company claims. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command registered youtube_5aF6qJM8aVM and appended source_history_9c5f2c7af3506f8737f2 with publisher @Value-Investing, source type youtube_video, canonical video URL, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

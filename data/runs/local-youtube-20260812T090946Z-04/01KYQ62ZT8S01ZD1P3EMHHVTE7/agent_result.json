@@ -1,0 +1,28 @@
+{
+  "operation_id": "01KYQ62ZT8S01ZD1P3EMHHVTE7",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the controller-supplied anonymous transcript helper exhausted its three bounded client attempts without an available transcript.",
+  "evidence": [
+    {
+      "source": "controller-supplied ephemeral YouTube transcript helper result",
+      "claim": "Transcript retrieval was unavailable after three bounded anonymous clients: WEB, ANDROID, and IOS each reported ModuleNotFoundError; no transcript content was available for review.",
+      "url": "https://www.youtube.com/watch?v=i8OI8CNdZgU"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Read the complete controller prompt, repository controller and wiki-ingest skills, and native llm-wiki skill.",
+      "Confirmed the claimed operation identity and YouTube payload identity match video i8OI8CNdZgU.",
+      "Read the complete ephemeral helper JSON: status=unavailable and reason_code=youtube_transcript_unavailable after three bounded attempts.",
+      "Performed no structured-state or wiki mutation, did not rerun retrieval, and did not use network.",
+      "Result manifest conforms to the required skipped-result contract; files_changed is exactly an empty array."
+    ]
+  }
+}

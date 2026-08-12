@@ -1,0 +1,21 @@
+{
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "a06e7f220dd8c80ca0f4294045de3244e6d468d7334f517b6301a75ee61eb80d",
+    "version": "repository"
+  },
+  "harness": "local",
+  "operation_id": "01KYQ49D1GS4CXMK0S510Y67TM",
+  "operation_skill": {
+    "name": "papertrader-wiki-ingest",
+    "path": "skills/papertrader-wiki-ingest/SKILL.md",
+    "sha256": "4c0c8e536d35173631cffdf61991a441f8abf84ae92db1e3b966bd3097bd6ff3",
+    "version": "repository"
+  },
+  "operation_type": "wiki_ingest",
+  "preflight_version": 1,
+  "prompt_injection_flags": [],
+  "run_id": "local-youtube-20260812T090946Z-03",
+  "sequential": true
+}

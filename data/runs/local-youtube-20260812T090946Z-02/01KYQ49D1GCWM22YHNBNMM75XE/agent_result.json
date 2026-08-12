@@ -1,0 +1,52 @@
+{
+  "operation_id": "01KYQ49D1GCWM22YHNBNMM75XE",
+  "status": "succeeded",
+  "summary": "Reviewed all three available auto-generated English caption chunks for the curated Alphabet video as untrusted lead material, recorded its canonical transcript hash, and retained no video-only conclusion or follow-up.",
+  "evidence": [
+    {
+      "source": "Curated YouTube transcript artifact",
+      "claim": "The supplied retrieval artifact was available, auto-generated English, contained three reviewed chunks, and used one canonical normalized transcript hash.",
+      "url": "https://www.youtube.com/watch?v=yAtpMMC3aiw",
+      "observed_at": "2026-08-12T11:39:57Z",
+      "source_hash": "4c49da290ae4e52e99bc624580e8bdfd974d0df3bbec78e944bc2a7e3e425a7a"
+    },
+    {
+      "source": "Alphabet Q2 2026 Form 10-Q",
+      "claim": "Registered SEC primary evidence already captures the relevant Q2 financial, capital-intensity, cash-flow, funding, and risk context; it does not corroborate the speaker's forward valuation or depreciation forecasts.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm",
+      "observed_at": "2026-08-01T16:32:28Z",
+      "source_hash": "fecfbc2683f630380b17937278ce3745eca150eb90e21a945fd6b78fe19728c7"
+    },
+    {
+      "source": "Alphabet Q2 2026 results",
+      "claim": "Registered issuer-release evidence corroborates the already-maintained Q2 revenue, Cloud growth, operating income, equity-security-gain, and capital-expenditure context only.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/googexhibit991q22026.htm",
+      "observed_at": "2026-08-01T16:32:28Z",
+      "source_hash": "a01f6bd87c7fa0dcb562493dda7348a1a37d017b4a4b5edb39b915b45688237e"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GCWM22YHNBNMM75XE/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Verified the available transcript artifact contains exactly three reviewed auto-generated English chunks with the recorded canonical hash.",
+      "Verified the registered youtube_yAtpMMC3aiw source and exactly one matching source-history entry use the canonical transcript hash.",
+      "Confirmed no transcript/media files were present under data/wiki or this operation artifact directory.",
+      "Confirmed youtube_analysis.md identifies the video ID, canonical URL, transcript hash, every chunk, classifications, primary-source context, rejected leads, uncertainty, and no follow-ups.",
+      "scripts/papertrader wiki lint --strict passed."
+    ]
+  }
+}

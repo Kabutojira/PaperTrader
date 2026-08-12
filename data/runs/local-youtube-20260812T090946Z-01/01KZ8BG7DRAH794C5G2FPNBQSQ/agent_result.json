@@ -1,0 +1,49 @@
+{
+  "operation_id": "01KZ8BG7DRAH794C5G2FPNBQSQ",
+  "status": "succeeded",
+  "summary": "Reviewed all available curated-video caption chunks as untrusted lead material and recorded the transcript hash as provenance. Existing registered primary evidence already covers the relevant issuer-specific AI-capex and cash-conversion risks; no independently corroborated new fact or bounded follow-up was justified.",
+  "evidence": [
+    {
+      "source": "Curated YouTube transcript helper output",
+      "claim": "The supplied result was available in English and contained three reviewed chunks covering 00:00:00.000 through 00:15:15.480. Its top-level and per-chunk canonical transcript hashes matched 14e1a77bd0542c42e4aaec7e51140cf309440ca15032590981568dfc8987cc7c.",
+      "url": "https://www.youtube.com/watch?v=gIYNCsp0TFY",
+      "observed_at": "2026-08-12T10:03:25Z",
+      "source_hash": "14e1a77bd0542c42e4aaec7e51140cf309440ca15032590981568dfc8987cc7c"
+    },
+    {
+      "source": "Registered primary issuer and SEC evidence",
+      "claim": "Alphabet, Amazon, Microsoft, NVIDIA and Meta maintained pages and registered filings/releases already document issuer-specific AI infrastructure spending, commitments, cash-conversion, concentration, competition and valuation risks. They do not corroborate the video's exact aggregate figures, financing characterizations or long-term forecasts.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+    },
+    {
+      "source": "data/tables/source_registry.csv and data/tables/source_history.csv",
+      "claim": "The source was recorded exactly once for this run as youtube_gIYNCsp0TFY with publisher @Value-Investing, canonical video URL, available status, copyrighted-transcript-not-stored license, and the canonical transcript hash."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRAH794C5G2FPNBQSQ/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRAH794C5G2FPNBQSQ/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRAH794C5G2FPNBQSQ/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the available helper result and matched its top-level and all three chunk transcript hashes to the recorded source hash.",
+      "Reviewed all three transcript chunks; youtube_analysis.md classifies timestamped claims, opinions, predictions, corroboration boundaries, rejected promotional content, uncertainty, and the absence of follow-ups.",
+      "Confirmed existing registered primary evidence supports only the retained issuer-specific risk context; no maintained entity conclusion changed from the video alone.",
+      "Confirmed the source registry and exactly one matching source-history row use the canonical video identity, channel publisher, and transcript hash for this run.",
+      "Confirmed no transcript, audio, video, thumbnail, description, or caption chunks were retained under the repository.",
+      "papertrader wiki lint --strict passed.",
+      "Confirmed no security import, follow-up operation, assessment, strategy, signal, allocation, order, execution, cash, portfolio, or performance state changed."
+    ]
+  }
+}

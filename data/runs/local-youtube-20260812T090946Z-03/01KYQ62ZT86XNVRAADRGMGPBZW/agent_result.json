@@ -1,0 +1,28 @@
+{
+  "operation_id": "01KYQ62ZT86XNVRAADRGMGPBZW",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped YouTube ingestion because the parent-provided bounded anonymous transcript helper reported captions unavailable after all three configured attempts.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT86XNVRAADRGMGPBZW.json",
+      "claim": "The helper returned status unavailable with reason_code youtube_transcript_unavailable after three attempts; WEB, ANDROID, and IOS each reported ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=TjrShuj_Zsg",
+      "observed_at": "2026-08-12T09:09:46Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "parent-provided transcript helper output was read in full",
+      "unavailable caption status used the required youtube_transcript_unavailable terminal reason",
+      "no wiki, source-registry, queue, or other structured-state mutation was made",
+      "result conforms to the required skipped-result fields"
+    ]
+  }
+}

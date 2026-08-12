@@ -1,0 +1,51 @@
+{
+  "operation_id": "01KYQ49D1GAXYP4Y8RR9C5G3KN",
+  "status": "succeeded",
+  "summary": "Reviewed all seven available auto-generated English caption chunks as untrusted lead material. Recorded source provenance and a non-published synthesis; no independently corroborated bounded lead justified an entity change, import, follow-up, or trading-state change.",
+  "evidence": [
+    {
+      "source": "Curated YouTube transcript helper output",
+      "claim": "The supplied available transcript contains seven chunks (592 segments) for the claimed video. Its canonical transcript hash was recorded only as provenance; its claims were treated as untrusted speaker claims, opinions, predictions, or unverified facts.",
+      "url": "https://www.youtube.com/watch?v=yUq0O-pDHCE",
+      "observed_at": "2026-08-12T11:30:55Z",
+      "source_hash": "f752ee2decdf1c5ef362110f9d70a070455a38931378563bba2e6ed517abe540"
+    },
+    {
+      "source": "Tesla Q2 2026 Form 10-Q",
+      "claim": "The maintained primary evidence supports Tesla's delivery and revenue growth, liquidity, investment in autonomy, robotics, manufacturing and AI compute, alongside weaker operating income, high capital spending, and unproven mature economics for AI-enabled businesses. It does not establish the video's Macrohard, agent, Supercharger-compute, private-car/Cybercab-compute, AGI, or chip-factory claims.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "observed_at": "2026-07-29T00:00:00Z"
+    },
+    {
+      "source": "Tesla Q2 2026 production, deliveries and deployments release",
+      "claim": "The maintained issuer release corroborates the existing current delivery and deployment context, not the video's speculative product, capability, margin, or valuation conclusions.",
+      "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+      "observed_at": "2026-07-29T00:00:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GAXYP4Y8RR9C5G3KN/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the claimed running queue row, payload identity, and local harness preflight skill hashes.",
+      "Reviewed all seven supplied transcript chunks and 592 segments exactly as untrusted data; no transcript media or content was persisted beneath the repository.",
+      "Confirmed the registered source row uses the canonical transcript hash and the operation created exactly one matching source-history record.",
+      "Confirmed existing registered Tesla primary evidence was used only as bounded context; no maintained entity conclusion changed and no identity import or follow-up was justified.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "Confirmed no accounting, portfolio, performance, allocation, strategy, signal, order, execution, cash, or position state changed."
+    ]
+  }
+}

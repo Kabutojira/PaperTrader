@@ -16,6 +16,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | error | **issue_63954cb215f224b75cb3** — Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W | 2026-08-05T11:35:18Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
 | error | **issue_6642c41b20e1ceeabf3a** — Hermes operation validation failed: 01KYPB26Z023E3AMG9Z8KSPW9D | 2026-08-07T10:46:48Z | controller | 01KYPB26Z023E3AMG9Z8KSPW9D |
+| error | **issue_6879c5959035b43a141b** — Local harness operation validation failed: 01KYQ62ZT8AGDEDP669Q6SF1VD | 2026-08-12T12:56:50Z | controller | 01KYQ62ZT8AGDEDP669Q6SF1VD |
 | error | **issue_7f39fae50d63b862a20b** — Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N | 2026-08-09T14:23:04Z | controller | 01KZCFHHCGX1RGXKKVHNF86W7N |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | error | **issue_9f54455539f07576361c** — CrowdStrike full assessment rejected by canonical market identity | 2026-08-10T23:08:16Z | controller | 01KZPY8FCGVBRGTPP66WJS5JEC |

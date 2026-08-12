@@ -1,0 +1,26 @@
+{
+  "operation_id": "01KYQ62ZT8SS9KT1EVEXNCD4XP",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped: the parent-provided anonymous transcript helper exhausted its three bounded caption-client attempts without an available transcript. No metadata-only analysis or repository mutation was performed.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8SS9KT1EVEXNCD4XP.json",
+      "claim": "The parent-provided ephemeral helper output reports youtube_transcript_unavailable after three attempts; WEB, ANDROID, and IOS each failed with ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=xTO1aQ_m44I"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "agent_result.schema.json required fields and value patterns satisfied",
+      "Unavailable-caption protocol applied: no structured or wiki mutation",
+      "files_changed is the required empty operation change set"
+    ]
+  }
+}

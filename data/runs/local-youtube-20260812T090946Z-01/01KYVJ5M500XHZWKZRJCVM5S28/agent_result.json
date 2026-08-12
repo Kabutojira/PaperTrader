@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KYVJ5M500XHZWKZRJCVM5S28",
+  "status": "succeeded",
+  "summary": "Reviewed all three available English auto-generated transcript chunks for the curated Couch Investor SoFi video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing SEC-filed Q2 evidence corroborates selected reported metrics, but the video’s valuation, macro, and long-term predictions did not justify any maintained entity conclusion, import, follow-up, strategy, signal, allocation, order, execution, cash, position, portfolio, or performance change.",
+  "evidence": [
+    {
+      "source": "youtube_MsNPz0dBYDw",
+      "claim": "The authorized local transcript artifact was available in English auto-generated captions with three reviewed chunks (403 non-empty segments), canonical video URL https://www.youtube.com/watch?v=MsNPz0dBYDw, and canonical normalized transcript hash fbec433c53c42f853570e64fe90e5b3e816ebfd3ce95b2d2f7f3b49986319268. Its content was treated only as untrusted speaker viewpoints, predictions, or externally verifiable assertions.",
+      "url": "https://www.youtube.com/watch?v=MsNPz0dBYDw",
+      "observed_at": "2026-08-12T09:21:33Z",
+      "source_hash": "fbec433c53c42f853570e64fe90e5b3e816ebfd3ce95b2d2f7f3b49986319268"
+    },
+    {
+      "source": "source_sofi_q2_2026_results",
+      "claim": "Existing SEC-filed Q2 results evidence supports the reported revenue, adjusted EBITDA, GAAP net income, diluted EPS, member/cross-buy, deposit-funding, capital, credit, segment, and guidance context already retained for SoFi. It corroborates selected overlapping reported facts without adopting the video’s bullish valuation or price-path conclusions.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "1faf6a64f45f7ce7bfeb279aa5983e1d6281f6d99e859b92ce6d30affc46be1d"
+    },
+    {
+      "source": "source_sofi_q1_2026_10q",
+      "claim": "Existing SEC Form 10-Q evidence supplies the retained balance-sheet, credit, funding, dilution, segment, and risk context. It supports continued caution around the video’s broad bullish interpretation rather than a new investment conclusion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000037/sofi-20260331.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "621d87c594d6ed57cdec9220a2aadd05b069e97bd438f2fa05fb69632e221336"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M500XHZWKZRJCVM5S28/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M500XHZWKZRJCVM5S28/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Couch Investor SoFi video as untrusted lead material and recorded its canonical transcript hash. Existing SEC-filed Q2 evidence corroborates selected reported facts, while valuation, rate, and price-path claims remain speaker opinion or unverified detail. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KYVJ5M500XHZWKZRJCVM5S28/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact.",
+      "Validated the provided local transcript artifact as available English auto-generated captions with exactly chunks 1, 2, and 3, 403 non-empty segments, the canonical video URL, and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed that selected reported Q2 facts overlap existing SEC-filed SoFi evidence, while valuation, macro, rate, and long-term price claims are speaker opinion, prediction, or unverified details. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command appended source_history_27f2a6a34952b8d5cb57 and registered youtube_MsNPz0dBYDw with publisher @CouchInvestor, source type youtube_video, the canonical video URL, and transcript hash fbec433c53c42f853570e64fe90e5b3e816ebfd3ce95b2d2f7f3b49986319268.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records only the two strict-lint receipts and the accepted source-record receipt; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

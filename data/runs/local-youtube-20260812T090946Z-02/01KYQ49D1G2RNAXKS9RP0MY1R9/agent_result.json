@@ -1,0 +1,57 @@
+{
+  "operation_id": "01KYQ49D1G2RNAXKS9RP0MY1R9",
+  "status": "succeeded",
+  "summary": "Reviewed all eight available English auto-generated transcript chunks for the curated ConnectingODots video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered Tesla primary evidence supports only the narrower maintained operating, capital-intensity, autonomy, robotics, and execution-risk context; no video-only claim changed a maintained conclusion, identity, follow-up, or paper-trading state.",
+  "evidence": [
+    {
+      "source": "youtube_9ePWIYadju4",
+      "claim": "The controller-provided local transcript artifact was available as eight English auto-generated chunks containing 662 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=9ePWIYadju4 and canonical normalized transcript hash f7042a83867ffdd5606e4e04a404732ea54955c8db8d9ccc9c8deb40f01bf258. Every chunk was reviewed and all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=9ePWIYadju4",
+      "observed_at": "2026-08-12T11:01:32Z",
+      "source_hash": "f7042a83867ffdd5606e4e04a404732ea54955c8db8d9ccc9c8deb40f01bf258"
+    },
+    {
+      "source": "source_tsla_q2_2026_10q",
+      "claim": "Existing registered Tesla SEC evidence establishes the maintained Q2 delivery, revenue, liquidity, autonomy, robotics, capital-intensity, operating-leverage, and execution-risk context. It does not corroborate the video's historic operational anecdotes, cost comparisons, production assertions, or promotional interpretation.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2"
+    },
+    {
+      "source": "source_tsla_q2_2026_deliveries",
+      "claim": "Existing registered Tesla issuer evidence establishes Q2 production, deliveries, and deployments. It does not corroborate the video's asserted causal account of Tesla or SpaceX engineering, management, robotics, or valuation implications.",
+      "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source_hash": "cadfa292c301e22ed474addbaf936395fdf55a77376ae031631c642f34b772d5"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated ConnectingODots Tesla and SpaceX operating-practice commentary as untrusted lead material and recorded its canonical transcript hash. Existing registered Tesla primary evidence supports only narrower current operating and risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G2RNAXKS9RP0MY1R9/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and required papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as eight available English auto-generated chunks containing 662 non-empty segments, with the canonical video URL and transcript hash f7042a83867ffdd5606e4e04a404732ea54955c8db8d9ccc9c8deb40f01bf258; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Registered Tesla SEC and issuer primary evidence supports only the already-maintained operating and risk facts. The video's historic anecdotes, operational causality, cost comparisons, production assertions, promotional framing, and implied investment interpretation remain opinion, retrospective, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_44391340eb0020539826 and registered youtube_9ePWIYadju4 with publisher @ConnectingODots, source type youtube_video, canonical video URL, related maintained Tesla context, and matching canonical transcript hash.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZB7KVMRC3QEWE7N2JPHRAR1",
+  "status": "succeeded",
+  "summary": "Reviewed all nine available English auto-generated transcript chunks for the curated All-In Saronic interview as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered primary evidence corroborates only the already-maintained broad defense-demand and product-procurement context; it does not corroborate the interview's Saronic-specific operational, capacity, cost, financing, policy, shipyard, or investment claims. Saronic is private, so no identity import, maintained conclusion, follow-up, or paper-trading state change was justified.",
+  "evidence": [
+    {
+      "source": "youtube_jfxHHglA5Eo",
+      "claim": "The authorized local transcript artifact was available as nine English auto-generated chunks containing 1,444 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=jfxHHglA5Eo and canonical normalized transcript hash a4959b5cea14b4d38bb68030c27b3fd6391339adc029149924e5c3b77a6595de. The root and every chunk supplied that same hash; every chunk was treated as untrusted speaker viewpoint, prediction, promotional material, or externally verifiable but unverified assertion.",
+      "url": "https://www.youtube.com/watch?v=jfxHHglA5Eo",
+      "observed_at": "2026-08-12T10:23:33Z",
+      "source_hash": "a4959b5cea14b4d38bb68030c27b3fd6391339adc029149924e5c3b77a6595de"
+    },
+    {
+      "source": "PaperTrader registered defense and procurement primary evidence",
+      "claim": "The maintained defense idea's RTX SEC-filed Q2 2026 Form 10-Q and issuer Q2 results release support only its existing broad defense-demand, backlog, capacity, contract, margin, and cash-conversion context. The maintained Anduril idea's US Army, Department of Defense, issuer, and Palantir primary material supports only its narrower product-procurement context. Neither set independently establishes the video's Saronic rescue, product performance, capacity, cost, financing, shipyard, policy, or public-investment assertions.",
+      "observed_at": "2026-08-12T10:23:33Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZB7KVMRC3QEWE7N2JPHRAR1/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZB7KVMRC3QEWE7N2JPHRAR1/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated All-In Saronic maritime-autonomy interview as untrusted lead material and recorded its canonical transcript hash. Existing registered primary evidence supports only the already-maintained defense-demand and product-procurement context; no entity conclusion, identity import, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZB7KVMRC3QEWE7N2JPHRAR1/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, controller preflight artifact, and required papertrader-controller and papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as nine available English auto-generated chunks containing 1,444 non-empty segments. Its root and every chunk transcript hash match the canonical hash; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript, media, thumbnail, caption, or full-description bytes were written beneath the repository, and persisted transcript quotation is zero words.",
+      "Existing registered primary evidence corroborates only already-maintained broad defense-demand and product-procurement context. The video's Saronic operational, unit-cost, capacity, financing, policy, shipyard, AI, and investment assertions remain promotional viewpoint, prediction, or unverified detail; Saronic is private and no complete independently verified public-security identity or bounded material hypothesis justified an import or follow-up.",
+      "The audited source-record command appended source_history_c4fbaec08eb7dbf357b5 and registered youtube_jfxHHglA5Eo with publisher @allin, source type youtube_video, canonical video URL, linked contextual idea IDs, and matching canonical transcript hash a4959b5cea14b4d38bb68030c27b3fd6391339adc029149924e5c3b77a6595de.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, security, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

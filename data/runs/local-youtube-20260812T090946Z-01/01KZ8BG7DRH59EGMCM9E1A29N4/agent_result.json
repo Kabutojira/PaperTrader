@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZ8BG7DRH59EGMCM9E1A29N4",
+  "status": "succeeded",
+  "summary": "Reviewed all three available English auto-generated transcript chunks for the curated CouchInvestor AMD video as untrusted lead material. Recorded its canonical transcript hash and preserved a non-published classified analysis. AMD is not a maintained PaperTrader security, and no current registered primary evidence established the complete identity-and-hypothesis basis required for import; the video's earnings, AI-accelerator, PC, valuation, and price-path claims did not justify a maintained conclusion, follow-up, or paper-trading change.",
+  "evidence": [
+    {
+      "source": "youtube_sDDQ5Ueg1dk",
+      "claim": "The authorized local transcript artifact was available as three English auto-generated chunks containing 327 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=sDDQ5Ueg1dk and canonical normalized transcript hash 749307e9ebf2fa9ba58e38299f4b92a636276770da902a3b1d73aab18c22dee6. All content was treated as untrusted speaker viewpoints, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=sDDQ5Ueg1dk",
+      "observed_at": "2026-08-12T10:08:43Z",
+      "source_hash": "749307e9ebf2fa9ba58e38299f4b92a636276770da902a3b1d73aab18c22dee6"
+    },
+    {
+      "source": "PaperTrader maintained identity and source registries",
+      "claim": "The maintained wiki, securities registry, and source registry contain no AMD security identity or current AMD issuer/SEC primary-source record. Existing primary evidence for passing Palantir and Reddit mentions is unrelated to the video's AMD assertions, so it cannot corroborate them or supply the independent identity-and-hypothesis basis required for an import.",
+      "observed_at": "2026-08-12T10:08:43Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRH59EGMCM9E1A29N4/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRH59EGMCM9E1A29N4/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated CouchInvestor AMD post-earnings video as untrusted lead material and recorded its canonical transcript hash. AMD has no maintained identity or registered current primary evidence sufficient for import; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRH59EGMCM9E1A29N4/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, controller preflight artifact, and required llm-wiki and papertrader-wiki-ingest skill routing.",
+      "Validated the controller-provided local transcript artifact as three available English auto-generated chunks containing 327 non-empty segments, with the canonical video URL and transcript hash; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript, media, thumbnail, or full-description bytes were written beneath the repository, and persisted transcript quotation is zero words.",
+      "The maintained wiki, securities registry, and source registry have no AMD identity or current AMD issuer/SEC primary-source record. The video's AMD operating, product, customer, market-size, valuation, and price claims remain opinion, prediction, or unverified detail; no independently corroborated fact changed a maintained conclusion, and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_530a5523bad74f6adf1a and registered youtube_sDDQ5Ueg1dk with publisher @CouchInvestor, source type youtube_video, canonical video URL, and matching canonical transcript hash 749307e9ebf2fa9ba58e38299f4b92a636276770da902a3b1d73aab18c22dee6.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

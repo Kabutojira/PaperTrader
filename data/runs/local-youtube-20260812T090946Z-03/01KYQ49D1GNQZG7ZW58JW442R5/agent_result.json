@@ -1,0 +1,32 @@
+{
+  "operation_id": "01KYQ49D1GNQZG7ZW58JW442R5",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-provided anonymous transcript helper reported captions unavailable after all three bounded client attempts; no structured or wiki mutation was made.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ49D1GNQZG7ZW58JW442R5.json",
+      "claim": "The complete parent-provided helper output has status unavailable and reason_code youtube_transcript_unavailable after three bounded attempts: WEB, ANDROID, and IOS each reported ModuleNotFoundError.",
+      "source_hash": "0eb90adae9391e527d8a4323f980d2020e1e70a2d56d82be57ca2bfbb866f990"
+    },
+    {
+      "source": "skills/papertrader-wiki-ingest/SKILL.md",
+      "claim": "The curated YouTube protocol requires a terminal skipped result with reason_code youtube_transcript_unavailable and no metadata-only evidence or structured/wiki mutations when all bounded caption attempts are unavailable."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Parsed the complete 216-byte parent-provided transcript-helper JSON; status is unavailable and no transcript chunks or segments were returned.",
+      "Verified the skip reason matches the YouTube ingestion contract and made no structured or wiki mutation.",
+      "papertrader wiki lint --strict"
+    ]
+  }
+}

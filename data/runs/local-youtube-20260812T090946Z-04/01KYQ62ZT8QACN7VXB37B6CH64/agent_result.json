@@ -1,0 +1,26 @@
+{
+  "operation_id": "01KYQ62ZT8QACN7VXB37B6CH64",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped without repository mutations because the parent-supplied anonymous transcript helper exhausted all three bounded clients without captions.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8QACN7VXB37B6CH64.json",
+      "claim": "The parent-supplied ephemeral helper result reports status unavailable and reason_code youtube_transcript_unavailable after three bounded clients: WEB, ANDROID, and IOS; each failed with ModuleNotFoundError."
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "parent-supplied transcript helper JSON was read completely",
+      "unavailable caption outcome matched the curated YouTube terminal-skip rule",
+      "no wiki or structured-state mutation was performed",
+      "agent result conforms to the required result-field contract"
+    ]
+  }
+}

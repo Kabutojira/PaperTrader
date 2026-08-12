@@ -1,0 +1,27 @@
+{
+  "operation_id": "01KYQ62ZT814BHMMGYPYBHZDFG",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-supplied anonymous transcript helper reported captions unavailable after all three bounded client attempts. No metadata-only analysis or repository mutation was performed.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT814BHMMGYPYBHZDFG.json",
+      "claim": "Transcript helper result: status=unavailable; reason_code=youtube_transcript_unavailable; attempts=3; WEB, ANDROID, and IOS each failed with ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=Y7p4rUCdqi0"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Transcript skip contract verified: supplied helper JSON has status unavailable, reason_code youtube_transcript_unavailable, and attempts=3.",
+      "Required operation payload, trusted controller instructions, and required wiki orientation files were read.",
+      "Skip policy applied: no transcript retrieval, network access, wiki mutation, structured-state mutation, source registration, follow-up, or trading-state change was performed.",
+      "Manifest fields conform to schemas/agent_result.schema.json; the parent controller owns final schema and delta validation."
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "operation_id": "01KYQ62ZT8N4VRQR9ST8EXQ168",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped curated YouTube ingestion because the parent-provided anonymous transcript helper reported captions unavailable after all three bounded client attempts. No source, wiki, structured, follow-up, or trading mutation was made.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT8N4VRQR9ST8EXQ168.json",
+      "claim": "The ephemeral helper result has status unavailable with reason_code youtube_transcript_unavailable after three attempts; WEB, ANDROID, and IOS each reported ModuleNotFoundError.",
+      "url": "https://www.youtube.com/watch?v=3Amlu4y94Ho"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the supplied YouTube payload identity against the already-claimed running queue row.",
+      "Read the complete parent-provided transcript helper JSON; no caption chunks or segments were available to persist or analyze.",
+      "Applied the curated-YouTube unavailable-caption rule: no structured or wiki mutations and no metadata-only substitution.",
+      "papertrader wiki lint --strict passed with no content delta.",
+      "Result manifest conforms to the required skipped-result fields and excludes all controller/result artifacts from files_changed."
+    ]
+  }
+}

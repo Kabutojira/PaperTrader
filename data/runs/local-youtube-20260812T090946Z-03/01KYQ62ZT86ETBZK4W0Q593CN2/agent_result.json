@@ -1,0 +1,31 @@
+{
+  "operation_id": "01KYQ62ZT86ETBZK4W0Q593CN2",
+  "status": "skipped",
+  "reason_code": "youtube_transcript_unavailable",
+  "summary": "Skipped YouTube ingestion because the parent-provided anonymous transcript helper reported captions unavailable after all three bounded client attempts. No metadata-only analysis or repository state mutation was performed.",
+  "evidence": [
+    {
+      "source": "/tmp/papertrader-youtube-01KYQ62ZT86ETBZK4W0Q593CN2.json",
+      "claim": "The complete ephemeral helper result reports status unavailable and reason_code youtube_transcript_unavailable after three attempts: WEB, ANDROID, and IOS each failed with ModuleNotFoundError."
+    },
+    {
+      "source": "data/operations/payloads/01KYQ62ZT86ETBZK4W0Q593CN2.json",
+      "claim": "The claimed operation is the curated YouTube video 4j9RPGLENNI from @allin, requiring transcript-led analysis rather than metadata-only ingestion.",
+      "url": "https://www.youtube.com/watch?v=4j9RPGLENNI"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the supplied ephemeral transcript result is unavailable with reason_code youtube_transcript_unavailable.",
+      "Confirmed the selected queue row is running, claimed by local-youtube-20260812T090946Z-03, and names only llm-wiki and papertrader-wiki-ingest.",
+      "Applied the YouTube unavailable-caption protocol: no structured-state, wiki, source-registry, or follow-up mutation; no transcript retrieval rerun; no network access.",
+      "Validated required result fields and their schema constraints against schemas/agent_result.schema.json before writing this final manifest."
+    ]
+  }
+}

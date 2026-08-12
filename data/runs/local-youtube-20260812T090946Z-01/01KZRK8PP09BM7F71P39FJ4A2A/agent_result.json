@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KZRK8PP09BM7F71P39FJ4A2A",
+  "status": "succeeded",
+  "summary": "Reviewed all three available English transcript chunks for the curated Couch Investor video as untrusted lead material. Recorded the YouTube source using its canonical transcript hash and preserved a non-published classified analysis. The Rocket Lab discussion overlaps maintained primary-source-backed research, while AST SpaceMobile and CoreWeave were unverified passing references; no independently corroborated material fact justified an entity-page change, import, follow-up, strategy, signal, allocation, order, execution, cash, position, or performance change.",
+  "evidence": [
+    {
+      "source": "youtube_pMbb5BfWUCY",
+      "claim": "The authorized local transcript artifact was available in English with three reviewed chunks (449 segments), canonical video URL https://www.youtube.com/watch?v=pMbb5BfWUCY, and canonical normalized transcript hash a964ae6b7063638b29b3824f99cc72e9759674b2b2eeb5122a81e5b8f994b817. Its claims were treated only as untrusted speaker viewpoints, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=pMbb5BfWUCY",
+      "observed_at": "2026-08-12T09:16:19Z",
+      "source_hash": "a964ae6b7063638b29b3824f99cc72e9759674b2b2eeb5122a81e5b8f994b817"
+    },
+    {
+      "source": "source_rklb_q1_2026_10q",
+      "claim": "Existing maintained Rocket Lab research already uses primary evidence for revenue, margin, backlog limitations, operating cash use, dilution, Neutron execution risk, and the Iridium transaction; the video therefore did not independently corroborate or supersede the current Sell / Avoid conclusion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000181999426000028/rklb-20260331.htm",
+      "observed_at": "2026-08-09T21:30:46Z",
+      "source_hash": "ed5d194eea341036c3624c5916b9c97d9dc78987c773d358ef5089f9c4aebaa2"
+    },
+    {
+      "source": "source_rklb_iridium_merger_8k",
+      "claim": "Existing primary-source-backed Rocket Lab research separately preserves the signed Iridium consideration, bridge financing, leverage, dilution, closing, and integration risks that the video discussed only as lead material.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1819994/000175392626001085/g085783_8k.htm",
+      "observed_at": "2026-08-09T21:30:46Z",
+      "source_hash": "e903aa04bc77737055b83574ad9e511c49d8819c38338908ab2d5df1dfa4b1de"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZRK8PP09BM7F71P39FJ4A2A/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZRK8PP09BM7F71P39FJ4A2A/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Couch Investor video as untrusted lead material and recorded its canonical transcript hash. Its Rocket Lab discussion added no independently corroborated evidence beyond maintained primary-source-backed research; AST SpaceMobile and CoreWeave mentions were rejected as unverified passing references. No paper-trading action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZRK8PP09BM7F71P39FJ4A2A/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, claimed run, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and controller preflight artifact.",
+      "Validated the provided local transcript artifact as available English captions with exactly chunks 1, 2, and 3, 449 non-empty segments, the canonical video URL, and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed that the Rocket Lab lead overlaps primary-source-backed maintained research and that other company references are unverified passing mentions; no independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command appended source_history_df05dbaee4e934b36de4 and registered youtube_pMbb5BfWUCY with publisher @CouchInvestor, source type youtube_video, the canonical video URL, and transcript hash a964ae6b7063638b29b3824f99cc72e9759674b2b2eeb5122a81e5b8f994b817.",
+      "Strict wiki lint returned OK before this manifest. The command audit records only the two strict-lint receipts and the accepted source-record receipt; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped diff and whitespace checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

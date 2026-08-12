@@ -1,0 +1,56 @@
+{
+  "operation_id": "01KZ333488GK5NCZ1R73RAYYAR",
+  "status": "succeeded",
+  "summary": "Reviewed all five available English caption chunks for the curated CouchInvestor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered SEC primary evidence corroborates only already-maintained SoFi operating/guidance facts and Meta advertising/capital-intensity facts; it does not support the video's valuation conclusions, forecasts, or personal trading activity. Reddit, AMD, and the remaining issuer mentions were unverified or passing. No maintained entity conclusion, identity import, follow-up, strategy, signal, allocation, order, execution, cash, position, portfolio, or performance state changed.",
+  "evidence": [
+    {
+      "source": "youtube_MSfaIeQ0eq8",
+      "claim": "The controller-provided local transcript artifact was available as English captions with exactly five reviewed chunks and 736 non-empty segments, canonical video URL https://www.youtube.com/watch?v=MSfaIeQ0eq8, and canonical normalized transcript hash 180cdbad288d5e7a60dc2313f293909e1793a660df878dddaa6f8e8682a9bbe2. All content was treated only as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions; the network helper was not rerun.",
+      "url": "https://www.youtube.com/watch?v=MSfaIeQ0eq8",
+      "observed_at": "2026-08-12T09:55:40Z",
+      "source_hash": "180cdbad288d5e7a60dc2313f293909e1793a660df878dddaa6f8e8682a9bbe2"
+    },
+    {
+      "source": "source_sofi_q2_2026_results",
+      "claim": "Existing SEC-filed SoFi Q2 2026 results support reported revenue and profitability growth, deposits, capital, member/product growth, and raised guidance, while preserving credit, fair-value, dilution, regulatory, and valuation risks. They do not corroborate the transcript's undervaluation or purchase conclusion.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1818874/000181887426000050/a2026q2earningsrelease.htm",
+      "observed_at": "2026-08-05T19:50:27Z",
+      "source_hash": "1faf6a64f45f7ce7bfeb279aa5983e1d6281f6d99e859b92ce6d30affc46be1d"
+    },
+    {
+      "source": "source_meta_q2_2026_10q",
+      "claim": "Existing SEC-filed Meta Q2 evidence supports advertising growth and substantial AI infrastructure spending, while preserving cost growth, capital-intensity, cash-conversion, legal, regulatory, Reality Labs, financing, and return-on-investment risks. It does not corroborate the video's forecast of future AI-services monetization or higher share price.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+      "observed_at": "2026-08-01T16:43:00Z",
+      "source_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ333488GK5NCZ1R73RAYYAR/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ333488GK5NCZ1R73RAYYAR/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated CouchInvestor video as untrusted lead material and recorded its canonical transcript hash. The SoFi and Meta discussion was corroborated only to the limited extent of existing primary evidence; valuation, forecasts, personal trading activity, Reddit, AMD, AI-compute, and other issuer claims remained opinions, predictions, or unverified assertions. No PaperTrader action or follow-up was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZ333488GK5NCZ1R73RAYYAR/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, required llm-wiki and papertrader-wiki-ingest skills, and local harness preflight for the claimed run.",
+      "Validated the supplied local transcript artifact as available English captions with exactly five chunks, 736 non-empty segments, the canonical video URL, and transcript hash 180cdbad288d5e7a60dc2313f293909e1793a660df878dddaa6f8e8682a9bbe2 matching the source-record request; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified investment-relevant material in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Confirmed SoFi and Meta are maintained, cataloged context and that existing registered SEC primary evidence supports only the specified issuer facts and known risks, not the video's valuation conclusions or forecasts. No independently corroborated fact changed a maintained entity conclusion, and no identity import or follow-up operation was justified.",
+      "The audited source-record command registered youtube_MSfaIeQ0eq8 and appended source_history_0b64bc70784f45b44234 with publisher @CouchInvestor, source type youtube_video, canonical video URL, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK before and after the source record. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

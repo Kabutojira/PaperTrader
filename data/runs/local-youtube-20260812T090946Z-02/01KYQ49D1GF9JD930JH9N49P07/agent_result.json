@@ -1,0 +1,54 @@
+{
+  "operation_id": "01KYQ49D1GF9JD930JH9N49P07",
+  "status": "succeeded",
+  "summary": "Reviewed both available English human-caption transcript chunks for the curated Limiting Factor video as untrusted lead material. Recorded the canonical transcript hash and preserved a non-published classified analysis. Existing registered Tesla primary evidence corroborates only the narrower maintained operating, liquidity, capital-intensity, autonomy, robotics, energy-storage, manufacturing, and execution-risk context; it does not corroborate the video's Model Y 8L/4680 configuration, capacity, charging, cost, or competitive assertions. No maintained conclusion, identity import, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_oyjpF7xPiC4",
+      "claim": "The controller-provided local transcript artifact was available as two English human-caption chunks containing 158 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=oyjpF7xPiC4 and canonical normalized transcript hash bbba63a44b345022ce5ff061a2c3ead1b2ea6df4e97d1e3a517ce627daa8b201. Every chunk was reviewed and the repeated chunk hashes matched the canonical hash. All content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=oyjpF7xPiC4",
+      "observed_at": "2026-08-12T11:56:55Z",
+      "source_hash": "bbba63a44b345022ce5ff061a2c3ead1b2ea6df4e97d1e3a517ce627daa8b201"
+    },
+    {
+      "source": "source_tsla_q2_2026_10q",
+      "claim": "Existing registered Tesla primary evidence supports the maintained Q2 operating, liquidity, capital-spending, autonomy, robotics, energy-storage, manufacturing, and execution-risk context. It does not corroborate the video's Model Y 8L pack configuration, cell generation, capacity, charging curve, test conditions, consumer-preference conclusion, or cost outcome.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm",
+      "observed_at": "2026-07-29T23:44:00Z"
+    },
+    {
+      "source": "PaperTrader registered primary evidence",
+      "claim": "The maintained Tesla, Terafab, and Tesla–Terafab research supports only a bounded custom-chip and edge-compute hypothesis subject to qualification, yield, cost, capital, and commercial gates. It does not turn the video's vehicle-battery assertions into a supported Terafab outcome or a trading conclusion.",
+      "observed_at": "2026-08-12T11:56:55Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Limiting Factor Model Y 8L/4680 battery commentary video as untrusted lead material and recorded its canonical transcript hash. Existing registered Tesla primary evidence supports only the narrower maintained operating and risk context; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1GF9JD930JH9N49P07/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row and matching immutable source, video, channel, and routed-skill identities. The network transcript helper was not rerun.",
+      "Validated the controller-provided local transcript artifact as two available English human-caption chunks containing 158 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; every returned chunk was reviewed.",
+      "Classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Existing registered Tesla primary evidence supports only the already-maintained operating and risk context. The video's configuration, capacity, charging, cost, competitive, and future-performance assertions remain speaker claims, opinions, predictions, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_88022fbc382eda3e4292 and registered youtube_oyjpF7xPiC4 with publisher @thelimitingfactor, source type youtube_video, canonical video URL, related maintained context, and matching canonical transcript hash bbba63a44b345022ce5ff061a2c3ead1b2ea6df4e97d1e3a517ce627daa8b201.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs the maintained Tesla and Terafab pages and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

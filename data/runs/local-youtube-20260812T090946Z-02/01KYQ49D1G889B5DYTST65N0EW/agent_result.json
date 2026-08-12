@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYQ49D1G889B5DYTST65N0EW",
+  "status": "succeeded",
+  "summary": "Reviewed the available English auto-generated transcript chunk for the curated Value-Investing video as untrusted lead material. The canonical transcript hash was recorded with a comprehensive non-published analysis. Var Energi is not maintained and no registered issuer or regulator evidence independently establishes the required identity-and-hypothesis basis; the separate refining-margin context does not corroborate Var Energi-specific claims. No maintained conclusion, identity import, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_4JmCb5FmTA4",
+      "claim": "The controller-provided local transcript artifact was available as one English auto-generated chunk containing 79 non-empty timestamped segments. Every returned segment was reviewed; canonical normalization recomputed to the matching transcript SHA-256.",
+      "url": "https://www.youtube.com/watch?v=4JmCb5FmTA4",
+      "observed_at": "2026-08-12T11:26:57Z",
+      "source_hash": "b7bee7282ad5ae81bd6d6d86815eca1303b083a80bbaf41cdd6baf7202ec34a6"
+    },
+    {
+      "source": "data/tables/securities.csv|data/tables/source_registry.csv",
+      "claim": "No maintained Var Energi security or registered current Var Energi issuer or regulator source exists in the repository. The distinct maintained energy-refining context does not corroborate the video’s Var Energi-specific operating, capital-structure, dividend, valuation, oil-price, or supply-cycle claims.",
+      "observed_at": "2026-08-12T11:26:57Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value-Investing Var Energi and oil-cycle commentary video as untrusted lead material and recorded its canonical transcript hash. No independently verified identity-and-hypothesis basis supported an import, maintained entity change, follow-up, or paper-trading action."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G889B5DYTST65N0EW/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, controller preflight artifact, and papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as one available English auto-generated chunk containing 79 non-empty timestamped segments. Recomputed the canonical normalized hash b7bee7282ad5ae81bd6d6d86815eca1303b083a80bbaf41cdd6baf7202ec34a6; transcript retrieval was not rerun.",
+      "Reviewed the complete returned chunk and classified the investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "No maintained Var Energi identity or registered current issuer/regulator evidence established an independently verified identity-and-hypothesis basis. The separate maintained refining-margin context does not corroborate Var Energi-specific claims; no entity change, import, or follow-up was justified.",
+      "The audited source-record command appended source_history_ea129688457b3cc95dcf and registered youtube_4JmCb5FmTA4 with publisher @Value-Investing, source type youtube_video, canonical video URL, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md already catalogs every maintained page and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

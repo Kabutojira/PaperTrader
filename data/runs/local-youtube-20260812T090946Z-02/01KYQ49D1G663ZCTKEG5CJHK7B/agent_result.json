@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KYQ49D1G663ZCTKEG5CJHK7B",
+  "status": "succeeded",
+  "summary": "Reviewed all three available English auto-generated transcript chunks for the curated Value-Investing video as untrusted lead material. Recorded the canonical transcript hash and a non-published classified analysis. Broad market-timing, valuation, historical-return, and personal-investing commentary supplied no independently corroborated entity-specific fact, complete public-security identity, or bounded material causal hypothesis; no maintained conclusion, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_e2C_hgXiyzM",
+      "claim": "The controller-provided local transcript artifact was available as three English auto-generated chunks containing 333 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=e2C_hgXiyzM and canonical normalized transcript hash ef1c46c526b7351bda9d6d02b11385ba53ea26d92c81d6dc8e149f43b20b4a77. Every chunk was reviewed; all content was treated as untrusted speaker claims, opinions, predictions, or externally verifiable but unverified assertions.",
+      "url": "https://www.youtube.com/watch?v=e2C_hgXiyzM",
+      "observed_at": "2026-08-12T11:15:48Z",
+      "source_hash": "ef1c46c526b7351bda9d6d02b11385ba53ea26d92c81d6dc8e149f43b20b4a77"
+    },
+    {
+      "source": "maintained wiki and source registry targeted search",
+      "claim": "Targeted searches found no maintained broad-market, GMO, Berkshire Hathaway, or fund entity with registered current primary evidence relevant to corroborate a change. Existing maintained security evidence is issuer-specific and cannot validate the transcript's broad market forecasts, historical-return assertions, or personal-investing claims. No independently corroborated entity conclusion, identity import, or bounded causal follow-up was justified.",
+      "observed_at": "2026-08-12T11:15:48Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated Value-Investing Grantham and broad-market commentary as untrusted lead material and recorded its canonical transcript hash. No independently corroborated entity-specific fact or complete public-security identity was established; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-02/01KYQ49D1G663ZCTKEG5CJHK7B/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identities, and controller preflight artifact for papertrader-wiki-ingest routing.",
+      "Validated the controller-provided local transcript artifact as three available English auto-generated chunks containing 333 non-empty segments, with the canonical video URL and matching canonical transcript hash in every chunk; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified all investment-relevant content in youtube_analysis.md. No transcript text, media, thumbnail, full description, or transcript chunk was written beneath the repository, and persisted transcript quotation is zero words.",
+      "Targeted maintained-content and source-registry searches found no maintained broad-market, GMO, Berkshire Hathaway, or fund entity with registered current primary evidence relevant to corroborate a change. The video's market-valuation, crash, historical-return, issuer-passing-mention, and personal-investing assertions remain opinion, prediction, or unverified detail; no import or follow-up was justified.",
+      "The audited source-record command appended source_history_7027e44050fea9187126 and registered youtube_e2C_hgXiyzM with publisher @Value-Investing, source type youtube_video, canonical video URL, and matching canonical transcript hash ef1c46c526b7351bda9d6d02b11385ba53ea26d92c81d6dc8e149f43b20b4a77.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Confirmed research-catalog.md is lint-clean and log.md records this source review. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}

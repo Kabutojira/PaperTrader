@@ -1,0 +1,48 @@
+{
+  "operation_id": "01KZ8BG7DRZWSV0419DNY6YHAQ",
+  "status": "succeeded",
+  "summary": "Reviewed all three available English auto-generated transcript chunks for the curated CouchInvestor Palantir video as untrusted lead material. Recorded its canonical transcript hash and preserved a non-published classified analysis. Existing registered SEC and issuer primary evidence corroborates only the already-maintained Q2 operating and guidance facts; it does not corroborate the speaker's valuation, market-price, forecast, analyst-expectation, technical, or personal-trading assertions. No maintained conclusion, follow-up, or paper-trading state changed.",
+  "evidence": [
+    {
+      "source": "youtube_JEP4vi9pW9o",
+      "claim": "The authorized local transcript artifact was available as three English auto-generated chunks containing 479 non-empty segments, with canonical video URL https://www.youtube.com/watch?v=JEP4vi9pW9o and canonical normalized transcript hash 03b7a64e76178a08fd153f5e0e19cc0c9c8895934a10146e373092a00d568954. The root and every chunk supplied that same hash; all content was treated as untrusted speaker viewpoint, prediction, or externally verifiable but unverified assertion.",
+      "url": "https://www.youtube.com/watch?v=JEP4vi9pW9o",
+      "observed_at": "2026-08-12T10:16:17Z",
+      "source_hash": "03b7a64e76178a08fd153f5e0e19cc0c9c8895934a10146e373092a00d568954"
+    },
+    {
+      "source": "PaperTrader registered Palantir primary evidence",
+      "claim": "The maintained Palantir Q2 2026 Form 10-Q and SEC-filed Q2 earnings release corroborate only existing Q2 operating growth, profitability, cash flow, liquidity, and 2026 guidance records. They do not establish the video's market-price, analyst-consensus, technical-level, long-horizon free-cash-flow, valuation, fair-value, or personal-trading assertions; the maintained Strong Sell / Avoid conclusion therefore remains unchanged.",
+      "observed_at": "2026-08-12T10:16:17Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRZWSV0419DNY6YHAQ/source_record_request.json",
+    "data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRZWSV0419DNY6YHAQ/youtube_analysis.md",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Reviewed the curated CouchInvestor Palantir post-earnings video as untrusted lead material and recorded its canonical transcript hash. Registered SEC and issuer primary evidence supports only already-maintained Q2 operating and guidance facts; no entity conclusion, follow-up, or paper-trading action was created."
+  ],
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader research source record --request data/runs/local-youtube-20260812T090946Z-01/01KZ8BG7DRZWSV0419DNY6YHAQ/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed the single running wiki_ingest row, matching immutable source/video/channel identifiers, controller preflight artifact, and required llm-wiki and papertrader-wiki-ingest skill routing.",
+      "Validated the controller-provided local transcript artifact as three available English auto-generated chunks containing 479 non-empty segments. Its root and chunk transcript hashes match the canonical hash; the network transcript helper was not rerun.",
+      "Reviewed every returned chunk and classified the investment content in youtube_analysis.md. No transcript, media, thumbnail, or full-description bytes were written beneath the repository, and persisted transcript quotation is zero words.",
+      "Existing registered Palantir SEC and issuer evidence corroborates only already-maintained Q2 operating and guidance facts. The video's valuation, market-price, analyst-expectation, technical, forecast, partner, AI-platform, and personal-trading assertions remain opinion, prediction, or unverified detail; no independently corroborated fact changed a maintained conclusion and no import or follow-up was justified.",
+      "The audited source-record command appended source_history_9e7c89e72ac481a65f66 and registered youtube_JEP4vi9pW9o with publisher @CouchInvestor, source type youtube_video, canonical video URL, linked Palantir identity, and matching canonical transcript hash 03b7a64e76178a08fd153f5e0e19cc0c9c8895934a10146e373092a00d568954.",
+      "Strict wiki lint returned OK before and after source recording. The command audit records exactly the three canonical project CLI invocations listed in commands_run; its source-record delta is limited to source_registry.csv and source_history.csv.",
+      "Scoped checks passed. No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or other accounting state changed; no operation was delegated, claimed, terminalized, or otherwise processed."
+    ]
+  }
+}
