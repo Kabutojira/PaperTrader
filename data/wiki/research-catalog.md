@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-11"
-updated: "2026-08-11"
+updated: "2026-08-12"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_49571b86b48ab1bccf76"
 as_of: "2026-08-11T17:53:00Z"
@@ -427,3 +427,14 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0cf8075039299094d614-rsi_overbought-fc5bb01c2f73|KTOS — RSI overbought]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-bb7289c15e14|SPOT — MACD cross above signal]]
+- [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_above_upper-75b6786d3b39|SGML — Bollinger above upper]]
+- [[inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-3c258166f023|GEV — MACD cross above signal]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-3c6cf43238c6|ABCL — RSI overbought]]
+- [[inbox/market-security_95351d928b674bbdf687-macd_cross_below_signal-24c5b353c67a|DNA — MACD cross below signal]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-61584cc17e9e|LH — RSI overbought]]
+- [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-8bb72c696a2a|VLO — Bollinger above upper]]

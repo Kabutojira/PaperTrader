@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-11"
+updated: "2026-08-12"
 provenance: repository-contract
 ---
 
@@ -3210,3 +3210,25 @@ This log is append-only. Rotate it by year only after the configured line thresh
   and invalidation remain unchanged, but the legacy two-case sensitivity lacks a bull case,
   probabilities and fresh scenario inputs. ISRG is Unrated / Watch and allocation-ineligible
   pending exactly one dependent full review; no strategy, signal, order or paper trade was created.
+
+## 2026-08-12
+
+- Created candidate packet [[inbox/market-security_0cf8075039299094d614-rsi_overbought-fc5bb01c2f73]] (fc5bb01c2f73).
+
+- Created candidate packet [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-bb7289c15e14]] (bb7289c15e14).
+
+- Classified [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-bb7289c15e14]] as `ingest`: A new bullish MACD crossover with a 4.1% period return is a material market transition for the tracked security.
+
+- Created candidate packet [[inbox/market-security_4627aea1bf7d8943d3d8-bollinger_above_upper-75b6786d3b39]] (75b6786d3b39).
+
+- Created candidate packet [[inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-3c258166f023]] (3c258166f023).
+
+- Classified [[inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-3c258166f023]] as `ingest`: A newly entered MACD bullish crossover after a material 5.1% decline is a durable, security-specific market transition.
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-3c6cf43238c6]] (3c6cf43238c6).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-macd_cross_below_signal-24c5b353c67a]] (24c5b353c67a).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-61584cc17e9e]] (61584cc17e9e).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-8bb72c696a2a]] (8bb72c696a2a).
