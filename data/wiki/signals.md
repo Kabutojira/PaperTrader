@@ -7,13 +7,13 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_84fc1b2f5a10e6cb5feb"
-as_of: "2026-08-12T15:28:16Z"
+snapshot_id: "decision_3ee98c9e50d036158cba"
+as_of: "2026-08-12T16:11:33Z"
 ---
 
 # Signals
 
-**As of `2026-08-12T15:28:16Z`**
+**As of `2026-08-12T16:11:33Z`**
 
 ## Actionable trade signals
 
@@ -31,8 +31,8 @@ No pending orders.
 
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-11`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
@@ -40,8 +40,26 @@ No pending orders.
 
 - Alert: `rsi\_overbought`
 - Market date: `2026-08-11`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-12`
 - Research status: `skipped`
-- Conclusion: Queue triage disposition
+- Conclusion: bearish\_alert\_unowned
+
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-12`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
 
@@ -51,6 +69,15 @@ No pending orders.
 - Market date: `2026-08-11`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
+
+### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-11`
+- Research status: `succeeded`
+- Conclusion: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
 
 ### [PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a)
 
@@ -71,15 +98,6 @@ No pending orders.
 - Conclusion: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
 
 ### [MP — MP Materials Corp.](securities/security_cd492d97064d8574156e)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-11`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
 
 **Research alert — not a trade signal**
 
@@ -195,6 +213,15 @@ No pending orders.
 - Market date: `2026-08-11`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
+
+### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-11`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [GEV — GE Vernova Inc.](securities/security_4b61970aa8f574446819)
 
