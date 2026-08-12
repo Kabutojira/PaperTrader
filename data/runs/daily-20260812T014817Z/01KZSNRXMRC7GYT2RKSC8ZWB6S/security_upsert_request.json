@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ed7d5b616a196969c815",
+  "issuer_id": "issuer_88165717ca36e09dc586",
+  "company_name": "Recursion Pharmaceuticals, Inc.",
+  "instrument_name": "Recursion Pharmaceuticals, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "RXRX",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "RXRX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "User-requested watchlist addition; clinical and platform progress merit monitoring, but financing, dilution and valuation remain unresolved.",
+  "research_summary": "Q2 milestones and recruiting trials confirm active development, but clinical translation, commercial economics, funding, dilution and unsupported risk-adjusted NPV keep Recursion ineligible.",
+  "research_page": "data/wiki/securities/security_ed7d5b616a196969c815.md",
+  "last_research_at": "2026-08-12T01:51:17Z",
+  "next_review_at": "2026-09-11T01:51:17Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000098/rxrx-20260630.htm"
+}

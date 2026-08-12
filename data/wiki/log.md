@@ -3260,3 +3260,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   and dilution remain material. Valuation remains unsupported, so RXRX is Unrated / Watch and
   allocation-ineligible pending exactly one dependent full review; no strategy, signal, order or
   paper trade was created.
+
+## 2026-08-12 — security research — Recursion Pharmaceuticals Class A common stock
+
+- Completed the dependent full review of
+  [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]]. Fresh retrievals matched
+  the retained Q2 filing and results hashes, while ClinicalTrials.gov corroborates recruiting
+  REC-4881 and REC-1245 studies and the issuer dates additional REC-4881 data to 2 November.
+- Retained the biotechnology-binary risk-adjusted-NPV blocker because current primary evidence does
+  not bound program success probabilities, development cost and timing, commercial economics,
+  partner terms, financing, Tempus obligations, or fully diluted shares. RXRX remains Unrated /
+  Watch and allocation-ineligible with no invented scenarios or buy zone; no conviction strategy,
+  signal, order, allocation, or paper trade was created.

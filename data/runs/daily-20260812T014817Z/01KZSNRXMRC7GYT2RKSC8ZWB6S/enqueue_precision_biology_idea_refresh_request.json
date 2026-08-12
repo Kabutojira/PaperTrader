@@ -1,0 +1,22 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_precision_biology_healthcare_automation",
+  "dedupe_key": "idea_research:idea_precision_biology_healthcare_automation:security-result:01KZSNRXMRC7GYT2RKSC8ZWB6S",
+  "prompt": "Refresh the precision-biology and healthcare-automation idea from Recursion Pharmaceuticals' completed full review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "seed_claim": "Recursion's Q2 milestones and recruiting studies confirm active development, but clinical translation, commercial economics, funding, dilution and a supportable risk-adjusted NPV remain unresolved; the security remains Unrated / Watch.",
+    "security_id": "security_ed7d5b616a196969c815",
+    "security_research_operation_id": "01KZSNRXMRC7GYT2RKSC8ZWB6S",
+    "security_research_result_path": "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/agent_result.json"
+  },
+  "source": "security_research:01KZSNRXMRC7GYT2RKSC8ZWB6S",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZSNRXMRC7GYT2RKSC8ZWB6S"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/securities/security_ed7d5b616a196969c815.md"],
+  "max_attempts": 3
+}

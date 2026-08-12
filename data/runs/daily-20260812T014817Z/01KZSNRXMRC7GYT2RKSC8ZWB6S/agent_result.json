@@ -1,0 +1,102 @@
+{
+  "operation_id": "01KZSNRXMRC7GYT2RKSC8ZWB6S",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Recursion Pharmaceuticals full security review. Fresh SEC and ClinicalTrials.gov retrievals matched retained hashes and confirm recruiting REC-4881 and REC-1245 studies, REC-7735 IND clearance, a 2 November REC-4881 catalyst, lower 2026 cash operating-expense guidance, substantial losses, likely additional capital needs and dilution risk. The accepted schema-v2 assessment remains Unrated / Watch, valuation-unsupported and allocation-ineligible because program-specific probabilities, development costs, commercial economics, partner terms, financing, Tempus obligations and fully diluted shares cannot be bounded without invention. Exactly two dependent idea refreshes were enqueued for the two accepted linked ideas. No strategy, signal, order, allocation or accounting state changed.",
+  "evidence": [
+    {
+      "source": "source_rxrx_q2_2026_10q",
+      "claim": "The unchanged Q2 Form 10-Q reports USD 545.7 million of cash and equivalents, USD 556.8 million including restricted cash, USD 187.0 million of six-month operating cash use, substantial expected future losses, likely additional capital needs and material dilution exposure.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000098/rxrx-20260630.htm",
+      "observed_at": "2026-08-12T01:51:17Z",
+      "source_hash": "38a03be58b9c8235630fdb9b31949970aa2dac35af98e1f158940a55b8051fea"
+    },
+    {
+      "source": "source_rxrx_q2_2026_results_exhibit",
+      "claim": "The unchanged SEC-filed issuer release reports REC-7735 IND clearance, additional REC-4881 Phase 2 data scheduled for 2 November 2026, further REC-1245 dose-escalation data expected in the second half and 2026 cash operating-expense guidance below USD 375 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm",
+      "observed_at": "2026-08-12T01:51:17Z",
+      "source_hash": "2cb5975ba5149d213dc461133e84d53d409ebbfb8a243967f18c66408644f614"
+    },
+    {
+      "source": "source_rxrx_clinicaltrials_20260812",
+      "claim": "The unchanged public registry lists REC-4881 study NCT05552755 and REC-1245 study NCT06678659 as recruiting while showing a mixed history of completed and terminated Recursion-sponsored studies; it corroborates activity but supplies neither approval probabilities nor commercial value.",
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.term=Recursion%20Pharmaceuticals&pageSize=100&format=json",
+      "observed_at": "2026-08-12T01:51:17Z",
+      "source_hash": "5bc2b64df36be84819db69c6e83e266695cd0e2f67bbe4a42a0ee83394ffddf1"
+    },
+    {
+      "source": "PaperTrader deterministic market and FX caches",
+      "claim": "The identity-matched 2026-08-11 RXRX close is USD 3.3499999046325684 and the fresh USD-to-EUR rate is 0.8662999868392944, both retrieved at 2026-08-12T01:48:25Z. The earlier 4 August bullish MACD cross followed a 13.8% period decline and remains technical context rather than an operating catalyst."
+    },
+    {
+      "source": "assessment_76cdb2b6bd6df0f42cff",
+      "claim": "The deterministic applier accepted schema version 2, linked predecessor assessment_5a14b66af3e0987a219e, stored page hash a5b596145a0e30c393ca1355bc43d5da8690c80bce7d8bffa1349ea6aa232f1f, retained quality score 58, derived Unrated / Watch and allocation ineligibility, and left all scenario values and the buy-below price blank under valuation_unsupported.",
+      "observed_at": "2026-08-12T01:54:07Z",
+      "source_hash": "a5b596145a0e30c393ca1355bc43d5da8690c80bce7d8bffa1349ea6aa232f1f"
+    },
+    {
+      "source": "PaperTrader queue receipts",
+      "claim": "Exactly one dependent idea_research follow-up was created for idea_ai_native_drug_discovery as 01KZSTTSARF7P97T6Z28ZE6PVQ and exactly one for idea_precision_biology_healthcare_automation as 01KZSTTTA0NQF896HWHBDC8R5J; both carry this security and result identity."
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01KZSTTSARF7P97T6Z28ZE6PVQ.json",
+    "data/operations/payloads/01KZSTTTA0NQF896HWHBDC8R5J.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/enqueue_ai_drug_idea_refresh_request.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/enqueue_precision_biology_idea_refresh_request.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_upsert_request.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_2026_refresh_request.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_results_refresh_request.json",
+    "data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_trial_registry_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ed7d5b616a196969c815.md"
+  ],
+  "operations_created": [
+    "01KZSTTSARF7P97T6Z28ZE6PVQ",
+    "01KZSTTTA0NQF896HWHBDC8R5J"
+  ],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Recursion Pharmaceuticals' full review corroborated active REC-4881 and REC-1245 trials, REC-7735 IND clearance and a 2 November REC-4881 catalyst, but substantial losses, capital needs, dilution and missing program-level valuation inputs keep RXRX Unrated / Watch and allocation-ineligible. Two dependent idea refreshes were queued; no paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815",
+    "papertrader research source record --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_2026_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_q2_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/source_rxrx_trial_registry_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/enqueue_ai_drug_idea_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260812T014817Z/01KZSNRXMRC7GYT2RKSC8ZWB6S/enqueue_precision_biology_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Confirmed exactly one running security_research row claimed by daily-20260812T014817Z with a live lease, validated immutable RXRX/XNAS/USD/equity identity, successful dependency and trusted native/controller/operation preflight identities.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the current assessment, predecessor, retained sources, page hash, two accepted relationships and exactly two linked ideas.",
+      "Fresh SEC Form 10-Q, SEC-filed results exhibit and ClinicalTrials.gov retrieval hashes matched their registered content; all three source refreshes were recorded through the project CLI.",
+      "The 4 August MACD cross and exact alert period were retained as technical context; the fresh 11 August USD 3.3499999046325684 mark and 0.8662999868392944 USD/EUR rate were consumed from deterministic caches.",
+      "One malformed immutable assessment request was rejected without state change because valuation_template_rationale is forbidden for biotechnology_binary; a uniquely named corrected request succeeded.",
+      "Assessment assessment_76cdb2b6bd6df0f42cff is schema version 2, links predecessor assessment_5a14b66af3e0987a219e, this operation/result, three registered evidence sources and current page hash a5b596145a0e30c393ca1355bc43d5da8690c80bce7d8bffa1349ea6aa232f1f.",
+      "The accepted unsupported valuation contains no bear/base/bull values, probabilities, expected return, margin of safety or buy-below price; deterministic state derives Unrated / Watch, quality 58, valuation_unsupported and allocation ineligibility.",
+      "Exactly one dependent result-specific idea refresh exists for each accepted linked idea, and no conviction strategy was created because the full strategy gate did not pass.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK; the final security context confirms current source freshness, page-hash identity and assessment predecessor linkage.",
+      "No allocation targets/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed; no operation was delegated, claimed, completed or otherwise processed."
+    ]
+  }
+}
