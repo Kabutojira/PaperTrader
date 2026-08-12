@@ -7,13 +7,13 @@ tags:
 created: "2026-08-12"
 updated: "2026-08-12"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_2aba823fd1d6c871b7f6"
-as_of: "2026-08-12T17:58:28Z"
+snapshot_id: "decision_f1babc186d1971adecf3"
+as_of: "2026-08-12T20:47:46Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-12T17:58:28Z`
+**As of:** `2026-08-12T20:47:46Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,16 +21,16 @@ as_of: "2026-08-12T17:58:28Z"
 
 ## Coverage
 
-- Assessments: 68/68
-- Fresh-evidence assessments: 68/68
-- Relationship reviews: 25/68
+- Assessments: 69/69
+- Fresh-evidence assessments: 69/69
+- Relationship reviews: 25/69
 - Accepted relationships: 22
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 280
+- Research backlog: 291
 - Last successful daily run: 2026-08-12
 
 ## Current issues by investment impact
@@ -92,7 +92,7 @@ as_of: "2026-08-12T17:58:28Z"
 - Warning **GOOGL — Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]** — [[securities/security_c86bb4e75658c07142cf|GOOGL]]: price cache is empty
 - Warning **ABCL — AbCellera Biologics Inc.: Daily preparation degraded: [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]** — [[securities/security_7bf8f4c9cc12ae410e40|ABCL]]: price cache is empty
 - Warning **TXN — Texas Instruments Incorporated: Daily preparation degraded: [[securities/security_83a56943e18793f685b0|TXN]]** — [[securities/security_83a56943e18793f685b0|TXN]]: price cache is empty
-- Warning **VLO — Valero Energy Corporation: Daily preparation degraded: [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]** — [[security-catalog#security-security_c5a9e460d3350284d157|VLO]]: price cache is empty
+- Warning **VLO — Valero Energy Corporation: Daily preparation degraded: [[securities/security_c5a9e460d3350284d157|VLO]]** — [[securities/security_c5a9e460d3350284d157|VLO]]: price cache is empty
 - Warning **QCOM — QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]** — [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]: price cache is empty
 - Warning **MP — MP Materials Corp.: Daily preparation degraded: [[securities/security_cd492d97064d8574156e|MP]]** — [[securities/security_cd492d97064d8574156e|MP]]: price cache is empty
 - Warning **ANET — Arista Networks, Inc.: Daily preparation degraded: [[securities/security_6f9a1450edceb9307c9a|ANET]]** — [[securities/security_6f9a1450edceb9307c9a|ANET]]: YFTzMissingError: $ANET: possibly delisted; no timezone found
@@ -156,7 +156,7 @@ as_of: "2026-08-12T17:58:28Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 280 active operations.
+Showing 20 of 291 active operations.
 
 <details><summary>Active research work</summary>
 

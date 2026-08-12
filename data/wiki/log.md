@@ -3325,6 +3325,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_c5a9e460d3350284d157-macd_cross_above_signal-0be3e887e290]] as `ingest`: A new MACD bullish crossover with a material 12.8% period return merits durable review.
 
+- Published investor decision snapshot `decision_f1babc186d1971adecf3`.
+
+- Generated canonical [[daily-reports/daily-report_20260812]] for run `daily-20260812T203509Z`.
+
 ## 2026-08-12 — security research — Intuitive Surgical, Inc. common stock
 
 - Revalidated [[securities/security_1f9cce545ede94cd6349|Intuitive Surgical]] with unchanged Q2
