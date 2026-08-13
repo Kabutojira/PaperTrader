@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube__TcEfYlW4PA",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-13T09:26:37Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube__TcEfYlW4PA",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "_TcEfYlW4PA",
+    "video_title": "Rahm Emanuel: Trump's Foreign Policy, China, Europe's Decline, Immigration & DSA vs Democrats",
+    "video_url": "https://www.youtube.com/watch?v=_TcEfYlW4PA"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZX73T68P5ZHAXWCPHSHWEH6",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=_TcEfYlW4PA"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_1vWDUqK43LQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-13T09:26:37Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_1vWDUqK43LQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "1vWDUqK43LQ",
+    "video_title": "Forget Nvidia. This Is the New King of AI",
+    "video_url": "https://www.youtube.com/watch?v=1vWDUqK43LQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZX73T686XK883ZA6KVF6Z00",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=1vWDUqK43LQ"
+  ]
+}
