@@ -1,0 +1,27 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260813T092636Z/01KZGGJ4M0HZBD7MND83X91XEF/assessment_upsert_request.json",
+    "data/runs/daily-20260813T092636Z/01KZGGJ4M0HZBD7MND83X91XEF/followup_request.json",
+    "data/wiki/securities/security_ad3b1f8f59fd599f079a.md"
+  ],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "commands_run does not exactly match deterministic CLI audit receipts"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZGGJ4M0HZBD7MND83X91XEF",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260813T092636Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
