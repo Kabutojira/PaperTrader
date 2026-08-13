@@ -7,8 +7,8 @@ tags:
 created: "2026-08-13"
 updated: "2026-08-13"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_342034134385c10925ee"
-as_of: "2026-08-13T09:31:48Z"
+snapshot_id: "decision_0fa98ad4485405a38369"
+as_of: "2026-08-13T16:04:03Z"
 ---
 
 # Research catalog
@@ -213,6 +213,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SPOT — Volume anomaly](inbox/market-security_2010347f1a0a5ea60f47-volume_anomaly-78a51b6daf0e)
 - [SQM — MACD cross below signal](inbox/market-security_9d4049ed6669a52815d6-macd_cross_below_signal-9e986cb6222e)
 - [SQM — Volume anomaly](inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477)
+- [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-8c1924be2a50)
 - [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a)
 - [SSU.VI — MACD cross above signal](inbox/market-security_567d0d575bbd30aaa91d-macd_cross_above_signal-347a0faa1d0e)
 - [SSU.VI — Volume anomaly](inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da)
@@ -328,6 +329,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
+- [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
 
 ## Relationship
 
@@ -461,7 +463,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-8c1924be2a50|SSU.VI — Bollinger above upper]]
