@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-12"
+updated: "2026-08-13"
 provenance: repository-contract
 ---
 
@@ -3733,3 +3733,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
   USD 330.21 mark. The MACD crossover is opportunity evidence with elevated timing risk; medium
   confidence, downside asymmetry, margin of safety and the absent accepted relationship block a
   strategy.
+
+## 2026-08-13
+
+- Published investor decision snapshot `decision_342034134385c10925ee`.
+
+- Generated canonical [[daily-reports/daily-report_20260813]] for run `daily-20260813T092636Z`.

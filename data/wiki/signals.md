@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-12"
-updated: "2026-08-12"
+created: "2026-08-13"
+updated: "2026-08-13"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_f1babc186d1971adecf3"
-as_of: "2026-08-12T20:47:46Z"
+snapshot_id: "decision_342034134385c10925ee"
+as_of: "2026-08-13T09:31:48Z"
 ---
 
 # Signals
 
-**As of `2026-08-12T20:47:46Z`**
+**As of `2026-08-13T09:31:48Z`**
 
 ## Actionable trade signals
 
@@ -78,6 +78,15 @@ No pending orders.
 - Market date: `2026-08-12`
 - Research status: `succeeded`
 - Conclusion: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
+
+### PLS.AX — PLS Group Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-13`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb)
 
@@ -188,15 +197,6 @@ No pending orders.
 - Conclusion: bearish\_alert\_unowned
 
 ### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-12`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### PLS.AX — PLS Group Limited
 
 **Research alert — not a trade signal**
 
