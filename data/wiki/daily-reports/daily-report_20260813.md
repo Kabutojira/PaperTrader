@@ -166,6 +166,7 @@ No pending orders.
 
 ## 6. Research changes
 
+- [[podcasts/daily-podcast_20260813T092636Z|Daily podcast transcript]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[research-catalog|PaperTrader research catalog]]

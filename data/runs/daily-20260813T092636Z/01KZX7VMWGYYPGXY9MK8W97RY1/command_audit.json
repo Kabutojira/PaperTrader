@@ -1,0 +1,72 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-08-13T09:41:58Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-08-13T09:41:57Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict",
+      "completed_at": "2026-08-13T09:42:02Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-08-13T09:41:59Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-13T09:42:05Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-08-13T09:42:04Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "portfolio",
+        "reconcile",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader portfolio reconcile --strict",
+      "completed_at": "2026-08-13T09:42:07Z",
+      "exit_code": 0,
+      "profile": "analyst",
+      "request": null,
+      "started_at": "2026-08-13T09:42:06Z"
+    }
+  ],
+  "operation_id": "01KZX7VMWGYYPGXY9MK8W97RY1",
+  "profile": "analyst",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "routine_research_or_long_form_synthesis",
+  "run_id": "daily-20260813T092636Z"
+}
