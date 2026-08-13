@@ -2,10 +2,43 @@
   "entity_id": "security_b2116dcf976c96974d7b",
   "entity_type": "security",
   "inputs": {
-    "security_id": "security_b2116dcf976c96974d7b"
+    "market_data_as_of": "2026-08-13T23:14:07Z",
+    "market_data_date": "2026-08-13",
+    "period_end": "2026-08-13",
+    "period_start": "2026-07-16",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_b2116dcf976c96974d7b:initial-backfill:2026-07-29",
+        "observed_at": "2026-07-29T07:05:29Z",
+        "prompt": "Research VALE — Vale S.A. as an initial bounded security review.",
+        "source": "user-request:2026-07-29-unresearched-security-backfill",
+        "source_refs": []
+      },
+      {
+        "dedupe_key": "security_research:security_b2116dcf976c96974d7b:df052d1f466a105aaeab:2026-08-13",
+        "market_data_date": "2026-08-13",
+        "observed_at": "2026-08-13T23:14:07Z",
+        "prompt": "Research security_b2116dcf976c96974d7b with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
+      }
+    ],
+    "security_id": "security_b2116dcf976c96974d7b",
+    "source_price_hash": "0a9cd8379984860dd33864f86ef8ade5981ecd27116b3c477e3de310e9d66c4c",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
   },
-  "objective": "Research VALE — Vale S.A. as an initial bounded security review.",
+  "objective": "Research VALE — Vale S.A. as an initial bounded security review. | Additional cause: Research security_b2116dcf976c96974d7b with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01KYPB2KN8R1RGAPDZQ2AN9P2V",
   "operation_type": "security_research",
-  "payload_version": 1
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6.md"
+  ]
 }

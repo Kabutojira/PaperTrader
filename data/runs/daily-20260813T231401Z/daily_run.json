@@ -1,0 +1,94 @@
+{
+  "checkpoints": [
+    {
+      "index": 0,
+      "kind": "preparation",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-08-13T23:15:14Z",
+      "terminal_status": ""
+    }
+  ],
+  "completed_at": "",
+  "completion_at": "",
+  "daily_cycle_id": "daily-20260813T231401Z",
+  "daily_run_version": 2,
+  "fill_outcomes": [],
+  "final_commit_identity": "",
+  "final_commit_sha": "",
+  "finalization_at": "",
+  "finalization_commit_identity": "",
+  "maximum_operations": 20,
+  "model_budget_limit": "100",
+  "model_budget_used": "0",
+  "next_checkpoint_index": 1,
+  "operating_date": "2026-08-14",
+  "operation_count": 0,
+  "operations_accepted": [],
+  "operations_attempted": [],
+  "originating_github_run_id": "31752557775",
+  "podcast_audio_path": "",
+  "podcast_commit_identity": "",
+  "podcast_operation_id": "",
+  "podcast_page_path": "",
+  "podcast_status": "pending",
+  "podcast_text_at": "",
+  "preparation_at": "2026-08-13T23:14:07Z",
+  "preparation_errors": [],
+  "profile_limits": {
+    "analyst": {
+      "maximum_turns": 80,
+      "model": "gpt-5.6-terra",
+      "mutation_policy": "routine_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1200,
+      "weighted_cost": "2.5"
+    },
+    "deep": {
+      "maximum_turns": 160,
+      "model": "gpt-5.6-sol",
+      "mutation_policy": "full_research",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
+    },
+    "scout": {
+      "maximum_turns": 32,
+      "model": "gpt-5.6-luna",
+      "mutation_policy": "triage_only",
+      "policy_version": "profile-router-v1",
+      "reasoning_effort": "low",
+      "timeout_seconds": 600,
+      "weighted_cost": "1"
+    }
+  },
+  "queue_dispositions": [
+    "allocation_maintenance:01KZYPF0GR7ZTFDG0HBC7TY24J",
+    "allocation_maintenance:01KZYPF0GR82DRJP55XAE4X05Y",
+    "allocation_maintenance:01KZYPF0GRA32SWZ3RHSWBTVXT",
+    "allocation_maintenance:01KZYPF0GRF70DYNX3ZSZNC1QH",
+    "allocation_maintenance:01KZYPF0GRFAGJFDT0130F89HA",
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3"
+  ],
+  "remaining_operations": 20,
+  "report_path": "",
+  "research_cutoff_at": "",
+  "run_id": "daily-20260813T231401Z",
+  "snapshot_id": "",
+  "source_sha": "f7a16cf8779d5f00e3ba2f9a183e4108c8e1d97d",
+  "started_at": "2026-08-13T23:14:01Z",
+  "status": "running",
+  "trigger": "workflow_dispatch",
+  "weighted_model_budget": "100",
+  "weighted_model_budget_used": "0",
+  "workflow_attempts": [
+    {
+      "github_run_id": "31752557775",
+      "resumed_at": "2026-08-13T23:14:01Z",
+      "workflow_attempt": "1"
+    }
+  ]
+}

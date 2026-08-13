@@ -463,3 +463,20 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-93ad1c61f1bd|PYPL — RSI overbought]]
+- [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-c5cec52252b8|MSFT — RSI overbought]]
+- [[inbox/market-security_59304f90c440def31dc5-macd_cross_below_signal-2eb388dab012|RTX — MACD cross below signal]]
+- [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-eaa9fc63b095|DLO — Volume anomaly]]
+- [[inbox/market-security_9d4049ed6669a52815d6-sma_50_cross_below_200-e98a8c73fb7e|SQM — SMA 50 cross below 200]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-36d48deffcc5|LUNR — Bollinger above upper]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-sma_50_cross_below_200-a1a214873a97|LUNR — SMA 50 cross below 200]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-8cda2406695e|LUNR — Volume anomaly]]
+- [[inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6|VALE — Bollinger below lower]]
+- [[inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-c3d9bb6c0aa2|PLTR — RSI overbought]]
+- [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-eee239cddb69|VLO — Bollinger above upper]]
+- [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-3b6f15899dde|VLO — RSI overbought]]
+- [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-de21ce1ed678|PATH — RSI overbought]]
+- [[inbox/market-security_fb87fac302a5446a1ced-bollinger_above_upper-dd779388f7d9|LAC — Bollinger above upper]]

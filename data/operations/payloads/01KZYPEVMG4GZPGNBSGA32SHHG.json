@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_feZWLQ3m6Tg",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-13T23:14:02Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_feZWLQ3m6Tg",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "feZWLQ3m6Tg",
+    "video_title": "Bill Ackman Just Bought 6 New Stocks",
+    "video_url": "https://www.youtube.com/watch?v=feZWLQ3m6Tg"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZYPEVMG4GZPGNBSGA32SHHG",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=feZWLQ3m6Tg"
+  ]
+}

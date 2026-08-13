@@ -3745,3 +3745,37 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_0fa98ad4485405a38369`.
 
 - Generated canonical [[daily-reports/daily-report_20260813]] for run `daily-20260813T160024Z`.
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-93ad1c61f1bd]] (93ad1c61f1bd).
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-c5cec52252b8]] (c5cec52252b8).
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-macd_cross_below_signal-2eb388dab012]] (2eb388dab012).
+
+- Created candidate packet [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-eaa9fc63b095]] (eaa9fc63b095).
+
+- Classified [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-eaa9fc63b095]] as `ignore`: Volume anomaly is modest and lacks evidence of a material thesis-relevant market change.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-sma_50_cross_below_200-e98a8c73fb7e]] (e98a8c73fb7e).
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-36d48deffcc5]] (36d48deffcc5).
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-sma_50_cross_below_200-a1a214873a97]] (a1a214873a97).
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-8cda2406695e]] (8cda2406695e).
+
+- Classified [[inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-8cda2406695e]] as `ingest`: Material volume anomaly coincides with a 30.65% return over the review period and merits durable investigation.
+
+- Created candidate packet [[inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6]] (acc942b6f4a6).
+
+- Classified [[inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6]] as `ingest`: New Bollinger-band breach with a negative multi-week return is a material market transition for the security.
+
+- Created candidate packet [[inbox/market-security_bdc2f87dadf134760c3a-rsi_overbought-c3d9bb6c0aa2]] (c3d9bb6c0aa2).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-bollinger_above_upper-eee239cddb69]] (eee239cddb69).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-3b6f15899dde]] (3b6f15899dde).
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-de21ce1ed678]] (de21ce1ed678).
+
+- Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-bollinger_above_upper-dd779388f7d9]] (dd779388f7d9).

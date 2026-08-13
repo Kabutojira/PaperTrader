@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_a9eb9838940ef5ceaa0c",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-06T18:47:30Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_a9eb9838940ef5ceaa0c.md",
+    "security_id": "security_a9eb9838940ef5ceaa0c"
+  },
+  "objective": "Revalidate security_a9eb9838940ef5ceaa0c with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZYPF0GRF70DYNX3ZSZNC1QH",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_flnc_q3_2026_10q",
+    "source_flnc_q3_2026_earnings"
+  ]
+}
