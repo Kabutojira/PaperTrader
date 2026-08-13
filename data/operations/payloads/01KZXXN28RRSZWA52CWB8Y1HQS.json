@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_66cdcf90aac0d83e76f3",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-06T13:04:49Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_66cdcf90aac0d83e76f3.md",
+    "security_id": "security_66cdcf90aac0d83e76f3"
+  },
+  "objective": "Revalidate security_66cdcf90aac0d83e76f3 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZXXN28RRSZWA52CWB8Y1HQS",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_alb_q2_2026_10q_sec",
+    "source_alb_q2_2026_results_sec"
+  ]
+}

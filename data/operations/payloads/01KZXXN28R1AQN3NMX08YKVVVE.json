@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_59304f90c440def31dc5",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-06T12:15:24Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+    "security_id": "security_59304f90c440def31dc5"
+  },
+  "objective": "Revalidate security_59304f90c440def31dc5 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZXXN28R1AQN3NMX08YKVVVE",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_rtx_q2_2026_10q_sec",
+    "source_rtx_q2_2026_results_sec_ex99"
+  ]
+}

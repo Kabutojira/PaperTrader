@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_Yf4UOWLO4Z8",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-13T16:00:25Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_Yf4UOWLO4Z8",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "Yf4UOWLO4Z8",
+    "video_title": "3 Great Buys - Even Better Comments...",
+    "video_url": "https://www.youtube.com/watch?v=Yf4UOWLO4Z8"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01KZXXMWD8DWJ2JEV0W0K81MVW",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=Yf4UOWLO4Z8"
+  ]
+}

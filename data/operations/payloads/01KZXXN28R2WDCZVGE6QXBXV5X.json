@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_eca976f0076a425ea1bb",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-06T15:39:19Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_eca976f0076a425ea1bb.md",
+    "security_id": "security_eca976f0076a425ea1bb"
+  },
+  "objective": "Revalidate security_eca976f0076a425ea1bb with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01KZXXN28R2WDCZVGE6QXBXV5X",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_uipath_q1_fy2027_10q_sec",
+    "source_uipath_q1_fy2027_results_sec_ex99_1"
+  ]
+}
