@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vale_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm",
+  "source_type": "issuer_release",
+  "title": "Vale 2Q26 performance",
+  "publisher": "Vale S.A. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1553c444b55969e676e332513c05a4e1945d09d8d8ff58d0a03fc40f4fce96de",
+  "related_entity_ids": "security_b2116dcf976c96974d7b",
+  "checked_at": "2026-08-13T23:18:51Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Second-quarter free cash flow was US$1.505 billion, pro forma EBITDA was US$4.066 billion, and net debt was US$13.173 billion.",
+  "summary": "The current issuer release supports realized prices, segment sales, EBITDA, free cash flow, net debt, capital expenditure, shareholder distributions and operational catalysts for Vale's scenario assessment.",
+  "run_id": "daily-20260813T231401Z"
+}

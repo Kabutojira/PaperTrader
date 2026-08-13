@@ -1,0 +1,88 @@
+{
+  "operation_id": "01KYPB2KN8R1RGAPDZQ2AN9P2V",
+  "status": "succeeded",
+  "summary": "Completed the first full Vale S.A. sponsored-ADR review using current SEC-filed second-quarter production, results and IFRS evidence. The deterministic assessment is Hold / Watch and allocation-ineligible: at the USD 13.80 mark, bear/base/bull fair values are USD 9.00/USD 14.50/USD 20.00, probability-weighted expected return is 1.09%, and confidence-adjusted expected return is 0.82%. The 13 August lower-Bollinger-band breach is a timing risk rather than a supported fundamental buy signal. No strategy, signal, order, allocation, execution, cash, portfolio, fill or performance state changed.",
+  "evidence": [
+    {
+      "source": "source_vale_q2_2026_results",
+      "claim": "Vale reported second-quarter pro forma EBITDA of US$4.066 billion, free cash flow of US$1.505 billion and net debt of US$13.173 billion; sales increased year over year across iron ore, copper and nickel.",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm",
+      "observed_at": "2026-08-13T23:18:51Z",
+      "source_hash": "1553c444b55969e676e332513c05a4e1945d09d8d8ff58d0a03fc40f4fce96de"
+    },
+    {
+      "source": "source_vale_q2_2026_ifrs",
+      "claim": "Vale's interim IFRS filing reports first-half 2026 net income attributable to shareholders of US$3.268 billion and diluted earnings per share of US$0.77.",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004012/valedfifrs2q26_6k.htm",
+      "observed_at": "2026-08-13T23:18:51Z",
+      "source_hash": "a6509f92fcb05431179a6116a704a464baa30ddfb10a8cb96a317b2d5092bb4c"
+    },
+    {
+      "source": "source_vale_q2_2026_production",
+      "claim": "Vale's current production report supports improved year-over-year production and sales across its business segments and supplies the operating evidence required by the cyclical-commodity template.",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426003838/vale20260721_6k1.htm",
+      "observed_at": "2026-08-13T23:18:51Z",
+      "source_hash": "a6458ecb24e6828c2263a5225e4c049cd2e8946f61293b0474e8536d8152ef59"
+    },
+    {
+      "source": "assessment_fe094a743606836e58a0",
+      "claim": "Deterministic scenario calculation classified Vale Hold / Watch and ineligible, with 5.07% base return, 1.09% expected return, 0.82% confidence-adjusted expected return, 4.83% margin of safety, and failed expected-return, payoff and relationship gates."
+    },
+    {
+      "source": "market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6",
+      "claim": "The canonical 13 August 2026 market transition closed at USD 13.80 below the lower Bollinger band after a 6.25% five-session decline, without a configured volume anomaly."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/assessment_upsert_request.json",
+    "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/security_upsert_request.json",
+    "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_ifrs_request.json",
+    "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_production_request.json",
+    "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "VALE full review: current Q2 filings support sound operating delivery and cash generation, but deterministic USD 9.00/USD 14.50/USD 20.00 scenarios produce only 1.09% expected return at USD 13.80 with material bear downside. Hold / Watch; the lower-Bollinger breach is timing risk, not a paper-trade signal."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader research source record --request data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_ifrs_request.json",
+    "papertrader research source record --request data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_production_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory audited security-context ran before assessment-state reads or changes.",
+      "Immutable ADR identity was preserved and duplicate search found no conflicting Vale instrument identity.",
+      "Three current primary sources were registered through the project CLI with checked SEC URLs and SHA-256 hashes.",
+      "Exactly one schema-version-2 assessment history row was accepted for this operation and its page hash matches the maintained security page.",
+      "Deterministic assessment classified the security Hold / Watch and ineligible; no conviction strategy follow-up was justified.",
+      "No linked canonical ideas or accepted relationships exist, so no idea-research follow-up was required.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "Final security-context confirmed current assessment, immutable history provenance, registered sources and matching research-page hash.",
+      "No allocation, strategy, signal, order, execution, cash, portfolio, fill or performance state changed."
+    ]
+  }
+}

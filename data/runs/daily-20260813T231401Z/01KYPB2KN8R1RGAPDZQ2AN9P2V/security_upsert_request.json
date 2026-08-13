@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b2116dcf976c96974d7b",
+  "issuer_id": "issuer_a3cc545e137b5f2e3a04",
+  "company_name": "Vale S.A.",
+  "instrument_name": "Vale S.A. sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "VALE",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "VALE",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "BR",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "Diversified iron-ore and base-metals producer; monitor mid-cycle prices, Chinese steel demand, costs, production, net debt, project delivery, remediation liabilities and valuation.",
+  "research_summary": "Q2 operations and cash flow are sound, but USD 9.00/14.50/20.00 scenarios offer weak expected return and bear protection at USD 13.80; Vale remains watching.",
+  "research_page": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+  "last_research_at": "2026-08-13T23:18:51Z",
+  "next_review_at": "2026-08-27T23:18:51Z",
+  "source": "source_vale_q2_2026_ifrs|source_vale_q2_2026_production|source_vale_q2_2026_results"
+}

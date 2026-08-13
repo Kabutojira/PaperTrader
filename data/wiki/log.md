@@ -3779,3 +3779,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-de21ce1ed678]] (de21ce1ed678).
 
 - Created candidate packet [[inbox/market-security_fb87fac302a5446a1ced-bollinger_above_upper-dd779388f7d9]] (dd779388f7d9).
+
+- Researched [[securities/security_b2116dcf976c96974d7b|Vale S.A. sponsored ADR]] using current
+  second-quarter production, results and IFRS filings. Operating delivery and cash generation are
+  sound, but normalized USD 9.00/USD 14.50/USD 20.00 scenarios offer only 5.1% base upside against
+  material bear downside at the USD 13.80 mark. The Bollinger-band breach is a timing risk rather
+  than a fundamental buy signal; Vale remains watching with no paper strategy.
