@@ -7,13 +7,13 @@ tags:
 created: "2026-08-15"
 updated: "2026-08-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e985888b688a47255cc0"
-as_of: "2026-08-15T15:30:36Z"
+snapshot_id: "decision_351428386440c85c700f"
+as_of: "2026-08-15T19:26:56Z"
 ---
 
 # Signals
 
-**As of `2026-08-15T15:30:36Z`**
+**As of `2026-08-15T19:26:56Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,24 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-14`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-14`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -60,15 +78,6 @@ No pending orders.
 - Market date: `2026-08-14`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
@@ -159,15 +168,6 @@ No pending orders.
 - Market date: `2026-08-14`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-14`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 ### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
 
