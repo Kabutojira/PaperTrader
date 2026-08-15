@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube__ekDqR5sesE",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@ConnectingODots",
+    "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+    "channel_url": "https://www.youtube.com/channel/UCOOSDCjFzHfnGoV8iNLC65A/videos",
+    "discovered_at": "2026-08-15T19:22:35Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube__ekDqR5sesE",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "_ekDqR5sesE",
+    "video_title": "I Was WRONG About GM — And the Truth Is Even Worse | Engineer explains",
+    "video_url": "https://www.youtube.com/watch?v=_ekDqR5sesE"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M03E0G3RTWAQFEZYZQMY0VM8",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=_ekDqR5sesE"
+  ]
+}
