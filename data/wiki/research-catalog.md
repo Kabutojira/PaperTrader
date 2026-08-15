@@ -479,3 +479,23 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_0a56aa634d077fe5796f-volume_anomaly-b65385b22ac1|AMAT — Volume anomaly]]
+- [[inbox/market-security_0cf8075039299094d614-rsi_overbought-5c8ea6df5638|KTOS — RSI overbought]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_above_upper-f35bcb300bc1|PYPL — Bollinger above upper]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-9d92a07d6218|PYPL — RSI overbought]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-8aa859f0a1c1|SPOT — MACD cross above signal]]
+- [[inbox/market-security_4627aea1bf7d8943d3d8-volume_anomaly-0babfa75f1da|SGML — Volume anomaly]]
+- [[inbox/market-security_47a0b06f6c6c478d7c1e-bollinger_above_upper-3fc9baaf3aed|NBIS — Bollinger above upper]]
+- [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-79d3f54fce60|RTX — RSI overbought]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_above_upper-1f11f98da040|ALB — Bollinger above upper]]
+- [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_below_signal-927c2aef5b08|SCCO — MACD cross below signal]]
+- [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-6fb23bdfd26a|DLO — Volume anomaly]]
+- [[inbox/market-security_9d4049ed6669a52815d6-bollinger_above_upper-e0d66e57075c|SQM — Bollinger above upper]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-ca58f83e5ad2|LUNR — Bollinger above upper]]
+- [[inbox/market-security_b2116dcf976c96974d7b-sma_50_cross_below_200-f8a83bbb7b48|VALE — SMA 50 cross below 200]]
+- [[inbox/market-security_c86bb4e75658c07142cf-macd_cross_below_signal-1560bbcca5b8|GOOGL — MACD cross below signal]]
+- [[inbox/market-security_cd492d97064d8574156e-bollinger_above_upper-e7bd6ade9af6|MP — Bollinger above upper]]
+- [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7|META — MACD cross above signal]]

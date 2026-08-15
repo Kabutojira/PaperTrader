@@ -1,0 +1,22 @@
+{
+  "entity_id": "security_d12e746b3c9d392183cc",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-08-15T10:33:10Z",
+    "market_data_date": "2026-08-14",
+    "period_end": "2026-08-14",
+    "period_start": "2026-07-17",
+    "security_id": "security_d12e746b3c9d392183cc",
+    "source_price_hash": "6a23d2df818910dfcee1ffa9aba836a28f9b2389b70419844e6cbb234d1b9ee4",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
+  },
+  "objective": "Research security_d12e746b3c9d392183cc with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "operation_id": "01M02FQ3KGXV8XSZN4FXDYFCG2",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7.md"
+  ]
+}

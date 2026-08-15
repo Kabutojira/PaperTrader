@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_kVzYGVJ8zUk",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-15T10:33:05Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_kVzYGVJ8zUk",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "kVzYGVJ8zUk",
+    "video_title": "Anthropic's $2T IPO, Zuck's AI Manifesto, Nvidia's $500B AI Bet, Grok's Comeback",
+    "video_url": "https://www.youtube.com/watch?v=kVzYGVJ8zUk"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M02FPYQ88TCA3YVDGB8Y8DVS",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=kVzYGVJ8zUk"
+  ]
+}

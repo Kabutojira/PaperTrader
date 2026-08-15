@@ -2,12 +2,42 @@
   "entity_id": "security_715bde20b6e1e1320c1a",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-08-13T23:14:07Z",
-    "market_data_date": "2026-08-13",
-    "period_end": "2026-08-13",
+    "market_data_as_of": "2026-08-15T10:33:10Z",
+    "market_data_date": "2026-08-14",
+    "merged_input_values": {
+      "source_price_hash": [
+        "8cbae934bab409a2803e2c4640e578b0fe8b91ab941cda22b167642b0453c602",
+        "ec9075d21f186e8faaaaa3792bb97fb2d2150853778c225f443e4229d7b27d1c"
+      ]
+    },
+    "period_end": "2026-08-14",
     "period_start": "2026-07-16",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_715bde20b6e1e1320c1a:3cdd6540e9c54c3e0705:2026-08-13",
+        "observed_at": "2026-08-13T23:14:07Z",
+        "prompt": "Research security_715bde20b6e1e1320c1a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-eaa9fc63b095.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_715bde20b6e1e1320c1a:de4366578449acea7ff1:2026-08-14",
+        "market_data_date": "2026-08-14",
+        "observed_at": "2026-08-15T10:33:10Z",
+        "prompt": "Research security_715bde20b6e1e1320c1a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-6fb23bdfd26a.md"
+        ],
+        "trigger_types": [
+          "volume_anomaly"
+        ]
+      }
+    ],
     "security_id": "security_715bde20b6e1e1320c1a",
-    "source_price_hash": "8cbae934bab409a2803e2c4640e578b0fe8b91ab941cda22b167642b0453c602",
+    "source_price_hash": "ec9075d21f186e8faaaaa3792bb97fb2d2150853778c225f443e4229d7b27d1c",
     "trigger_types": [
       "volume_anomaly"
     ]
@@ -17,6 +47,7 @@
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-6fb23bdfd26a.md",
     "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-eaa9fc63b095.md"
   ]
 }
