@@ -7,8 +7,8 @@ tags:
 created: "2026-08-15"
 updated: "2026-08-15"
 provenance: deterministic-report-generator
-run_id: "daily-20260813T231401Z"
-snapshot_id: "decision_e2170c21580fa25422f1"
+run_id: "daily-20260815T103304Z"
+snapshot_id: "decision_cdf54a51343bfe4b2680"
 ---
 
 # PaperTrader daily report — 2026-08-15
@@ -20,7 +20,7 @@ snapshot_id: "decision_e2170c21580fa25422f1"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Blocked
-- **As of:** `2026-08-15T07:23:15Z`
+- **As of:** `2026-08-15T10:38:27Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Target cash:** 10000 EUR (100%)
@@ -37,80 +37,81 @@ No actionable trade signals.
 
 ## Price action alerts
 
-- **[VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157): Bollinger Above Upper** (`2026-08-13`)
+- **[VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157): Rsi Overbought** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157): Rsi Overbought** (`2026-08-13`)
+- **[VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b): Bollinger Below Lower** (`2026-08-13`)
+- **[VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b): Bollinger Below Lower** (`2026-08-14`)
   - Research: **succeeded**
   - Decision: Completed the first full Vale S.A. sponsored-ADR review using current SEC-filed second-quarter production, results and IFRS evidence. The deterministic assessment is Hold / Watch and allocation-ineligible: at the USD 13.80 mark, bear/base/bull fair values are USD 9.00/USD 14.50/USD 20.00, probability-weighted expected return is 1.09%, and confidence-adjusted expected return is 0.82%. The 13 August lower-Bollinger-band breach is a timing risk rather than a supported fundamental buy signal. No strategy, signal, order, allocation, execution, cash, portfolio, fill or performance state changed.
-- **[TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148): Rsi Overbought** (`2026-08-13`)
-  - Research: **blocked**
-  - Decision: High-priority security research is blocked. agent\_result:blocked:Quick-check blocked because the immutable payload recorded source does not match the current deterministic market-data identity for TWST; no assessment or wiki state was changed and no follow-up operation was created.
-- **[SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd): Rsi Overbought** (`2026-08-13`)
+- **[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Rsi Overbought** (`2026-08-13`)
+- **[SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8): Volume Anomaly** (`2026-08-14`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[RTX — RTX Corporation](securities/security_59304f90c440def31dc5): Rsi Overbought** (`2026-08-14`)
+  - Research: **succeeded**
+  - Decision: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Rsi Overbought** (`2026-08-14`)
   - Research: **succeeded**
   - Decision: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
-- **[PLTR — Palantir Technologies Inc.](securities/security_bdc2f87dadf134760c3a): Rsi Overbought** (`2026-08-13`)
-  - Research: **succeeded**
-  - Decision: Completed one bounded full Palantir security review after the 4 August alert cluster and Q2 operating reset. Fresh retrievals confirmed the Q2 Form 10-Q and SEC-filed earnings release are unchanged: Q2 revenue was USD 1.935 billion, GAAP operating margin was 47%, operating cash flow was USD 1.216 billion, and 2026 adjusted free-cash-flow guidance is USD 4.5-4.7 billion. The unsupported legacy sensitivity was replaced with a scenario-complete mature-compounder free-cash-flow-yield valuation of USD 52.29/USD 99.24/USD 162.50 with 25%/50%/25% probabilities. At the fresh USD 175.23 mark, deterministic code derived a USD 103.3175 probability-weighted fair value, -41.04% expected return, Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one dependent idea refresh was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.
-- **[PLS.AX — PLS Group Limited](security-catalog#security-security_8a5c43888d224de85c69): Bollinger Above Upper** (`2026-08-13`)
+- **[PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[PATH — UiPath, Inc.](securities/security_eca976f0076a425ea1bb): Rsi Overbought** (`2026-08-13`)
-  - Research: **succeeded**
-  - Decision: Completed exactly one UiPath Class A common-stock review from the fiscal Q1 2027 Form 10-Q, SEC-filed results release, and canonical 5 August 2026 market and 6 August FX state. Registered both primary sources, created the maintained security page, updated the structured security row, and wrote the first scenario-complete assessment. USD 8.50/USD 15.50/USD 26.50 bear/base/bull values produce a USD 16.50 weighted value versus USD 13.82. Deterministic state derives Buy / Initiate as the valuation label but watch-tier conviction and allocation ineligibility because bear/base payoff, expected/bear payoff, and relationship gates fail. The 4 August Bollinger and overbought-RSI transitions followed a 21.03% rally without a newer issuer filing explaining it and are adverse entry timing, not fundamental confirmation. No strategy, signal, order, follow-up operation, allocation, or accounting state changed because no idea or accepted relationship is linked and the full strategy gate failed.
-- **[NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e): Bollinger Above Upper** (`2026-08-13`)
+- **[NBIS — Nebius Group N.V.](securities/security_47a0b06f6c6c478d7c1e): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Rsi Overbought** (`2026-08-13`)
+- **[MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8): Rsi Overbought** (`2026-08-14`)
   - Research: **succeeded**
   - Decision: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
-- **[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168): Bollinger Above Upper** (`2026-08-13`)
+- **[MP — MP Materials Corp.](securities/security_cd492d97064d8574156e): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168): Volume Anomaly** (`2026-08-13`)
+- **[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168): Volume Anomaly** (`2026-08-14`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Rsi Overbought** (`2026-08-13`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
-- **[LAC — Lithium Americas Corp.](securities/security_fb87fac302a5446a1ced): Bollinger Above Upper** (`2026-08-13`)
+- **[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a): Volume Anomaly** (`2026-08-13`)
+- **[KTOS — Kratos Defense &amp; Security Solutions, Inc.](securities/security_0cf8075039299094d614): Rsi Overbought** (`2026-08-14`)
+  - Research: **skipped**
+  - Decision: bearish\_alert\_unowned
+- **[DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a): Volume Anomaly** (`2026-08-14`)
   - Research: **ready**
   - Decision: High-priority security research is ready to run.
-- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-13`)
+- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-14`)
   - Research: **skipped**
   - Decision: Queue triage disposition
-- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Rsi Overbought** (`2026-08-13`)
+- **[AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f): Volume Anomaly** (`2026-08-14`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[ALB — Albemarle Corporation](securities/security_66cdcf90aac0d83e76f3): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Bollinger Above Upper** (`2026-08-13`)
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Bollinger Above Upper** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d): Bollinger Above Upper** (`2026-08-13`)
+- **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Rsi Overbought** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6): Sma 50 Cross Below 200** (`2026-08-13`)
+- **[VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b): Sma 50 Cross Below 200** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[RTX — RTX Corporation](securities/security_59304f90c440def31dc5): Macd Cross Below Signal** (`2026-08-13`)
+- **[SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47): Macd Cross Above Signal** (`2026-08-14`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221): Macd Cross Below Signal** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168): Sma 50 Cross Below 200** (`2026-08-13`)
+- **[META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc): Macd Cross Above Signal** (`2026-08-14`)
+  - Research: **ready**
+  - Decision: High-priority security research is ready to run.
+- **[GOOGL — Alphabet Inc.](securities/security_c86bb4e75658c07142cf): Macd Cross Below Signal** (`2026-08-14`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-
-## Research decisions this run
-
-- **[VALE](securities/security_b2116dcf976c96974d7b) — succeeded:** Completed the first full Vale S.A. sponsored-ADR review using current SEC-filed second-quarter production, results and IFRS evidence. The deterministic assessment is Hold / Watch and allocation-ineligible: at the USD 13.80 mark, bear/base/bull fair values are USD 9.00/USD 14.50/USD 20.00, probability-weighted expected return is 1.09%, and confiden…
-- **[HOOD](securities/security_ad3b1f8f59fd599f079a) — failed:** retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Quick check research for HOOD on 2026-08-15
 
 ## Top blocker or near miss
 
@@ -168,14 +169,26 @@ No pending orders.
 
 ## 6. Research changes
 
-### Evidence-linked narrative
-
-- VALE full review: current Q2 filings support sound operating delivery and cash generation, but deterministic USD 9.00/USD 14.50/USD 20.00 scenarios produce only 1.09% expected return at USD 13.80 with material bear downside. Hold / Watch; the lower-Bollinger breach is timing risk, not a paper-trade signal. Evidence is retained in the canonical run artifacts.
-
+- [[inbox/market-security_0a56aa634d077fe5796f-volume_anomaly-b65385b22ac1|AMAT — Volume anomaly]]
+- [[inbox/market-security_0cf8075039299094d614-rsi_overbought-5c8ea6df5638|KTOS — RSI overbought]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_above_upper-f35bcb300bc1|PYPL — Bollinger above upper]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-9d92a07d6218|PYPL — RSI overbought]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-8aa859f0a1c1|SPOT — MACD cross above signal]]
+- [[inbox/market-security_4627aea1bf7d8943d3d8-volume_anomaly-0babfa75f1da|SGML — Volume anomaly]]
+- [[inbox/market-security_47a0b06f6c6c478d7c1e-bollinger_above_upper-3fc9baaf3aed|NBIS — Bollinger above upper]]
+- [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-79d3f54fce60|RTX — RSI overbought]]
+- [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_above_upper-1f11f98da040|ALB — Bollinger above upper]]
+- [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_below_signal-927c2aef5b08|SCCO — MACD cross below signal]]
+- [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-6fb23bdfd26a|DLO — Volume anomaly]]
+- [[inbox/market-security_9d4049ed6669a52815d6-bollinger_above_upper-e0d66e57075c|SQM — Bollinger above upper]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-ca58f83e5ad2|LUNR — Bollinger above upper]]
+- [[inbox/market-security_b2116dcf976c96974d7b-sma_50_cross_below_200-f8a83bbb7b48|VALE — SMA 50 cross below 200]]
+- [[inbox/market-security_c86bb4e75658c07142cf-macd_cross_below_signal-1560bbcca5b8|GOOGL — MACD cross below signal]]
+- [[inbox/market-security_cd492d97064d8574156e-bollinger_above_upper-e7bd6ade9af6|MP — Bollinger above upper]]
+- [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7|META — MACD cross above signal]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[research-catalog|PaperTrader research catalog]]
-- [[securities/security_b2116dcf976c96974d7b|Vale S.A. sponsored ADR]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]
@@ -192,7 +205,7 @@ No pending orders.
 - Active signals: 0
 - Pending orders: 0
 - Market-data success/failure: 72/0
-- Research alerts (not trade signals): 23
+- Research alerts (not trade signals): 25
 
 ### Current system impacts
 
@@ -289,6 +302,7 @@ No pending orders.
 - **blocks action** — PLTR Palantir Technologies Inc.: Palantir full assessment blocked by same-run provenance ambiguity
 - **operational only**: Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]
+- **operational only**: Hermes operation validation failed: [[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-12]]
 - **operational only**: Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]
 - **operational only**: Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)
 - **operational only**: Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]
@@ -314,84 +328,84 @@ No pending orders.
 
 - Report date: 2026-08-15
 - Run status: succeeded
-- Generated (UTC): `2026-08-15T07:23:15Z`
+- Generated (UTC): `2026-08-15T10:38:27Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-13 | 2026-08-13T23:14:07Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-14 | 2026-08-15T10:33:10Z | ok | — |
 
 ### Orders and executions
 
@@ -427,7 +441,7 @@ No pending orders.
 | — | [[securities/security_2dbe878dfc899d7ee867|FCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
 | — | [[securities/security_33d9c44facc75c726c7d|NVDA]] | 0% | excluded | Bear/base payoff is below threshold. |
 | — | [[securities/security_37ddcbdaad296ad831f2|COIN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_3e597863f00753e8c65c|BE]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 0% | excluded | Assessment confidence is below the configured minimum.; Accounting evidence is uncertain. Solvency risk blocks eligibility. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
@@ -435,7 +449,7 @@ No pending orders.
 | — | [[securities/security_488a9d7f7a8573597724|PWR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_4b61970aa8f574446819|GEV]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; The required market reference is stale.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_59304f90c440def31dc5|RTX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
 | — | [[securities/security_61567714298b9563d1a9|WTI]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Assessment confidence is below the configured minimum.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
@@ -448,9 +462,9 @@ No pending orders.
 | — | [[securities/security_7ca095d63423c55a90e3|RKLB]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_83a56943e18793f685b0|TXN]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_8472507d7d320aa388a7|CRWD]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
-| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_89969b7dac39b7db5661|YEC.F]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_95351d928b674bbdf687|DNA]] | 0% | excluded | The comparable assessment is stale or expired.; Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
-| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable. |
+| — | [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 0% | excluded | Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_9b0db3bc77914b23a307|CSL]] | 0% | excluded | A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
@@ -471,7 +485,7 @@ No pending orders.
 | — | [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 0% | excluded | The current assessment marks the security ineligible.; A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_cd492d97064d8574156e|MP]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_ce9b78a4d0773c950765|TSM]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold. |
-| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; The required market reference is stale.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
+| — | [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 0% | excluded | Liquidity is insufficient. A supportable valuation is unavailable.; A current accepted idea-to-security relationship is unavailable.; A supportable scenario valuation is unavailable. |
 | — | [[securities/security_d12e746b3c9d392183cc|META]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; A current accepted idea-to-security relationship is unavailable. |
 | — | [[securities/security_dc7a111e297be528d96b|TSLA]] | 0% | excluded | The effective score does not beat the configured cash hurdle. |
 | — | [[securities/security_dc8486c1d61df62a22fd|SU]] | 0% | excluded | Base-case return is below threshold.; Bear/base payoff is below threshold.; Expected/bear payoff is below threshold.; Confidence-adjusted expected return is below threshold.; Margin of safety is below threshold.; A current accepted idea-to-security relationship is unavailable. |
@@ -486,22 +500,22 @@ No pending orders.
 ### Curated YouTube discovery
 
 - Status: `succeeded`
-- Operations queued: `1`
+- Operations queued: `3`
 - Channel failures: `0`
 
 | Channel | Status | Discovered | Queued | Reason |
 | --- | --- | ---: | ---: | --- |
-| @allin | succeeded | 0 | 0 | — |
+| @allin | succeeded | 1 | 1 | — |
 | @thelimitingfactor | succeeded | 0 | 0 | — |
 | @ConnectingODots | succeeded | 0 | 0 | — |
 | @DumbMoneyLive | succeeded | 0 | 0 | — |
 | @CouchInvestor | succeeded | 1 | 1 | — |
-| @Value-Investing | succeeded | 0 | 0 | — |
+| @Value-Investing | succeeded | 1 | 1 | — |
 
 
 ### Seeking Alpha search-index leads
 
-- Schedule status: `duplicate`
+- Schedule status: `queued`
 - Access mode: `search_index`; Seeking Alpha pages and article bodies were not fetched.
 - Discovery status: `pending`
 
@@ -510,7 +524,6 @@ No pending orders.
 
 | Research operation | Entity | Disposition | Reason |
 | --- | --- | --- | --- |
-| [[securities/security_b2116dcf976c96974d7b|Security research for VALE on 2026-08-13]] | [[securities/security_b2116dcf976c96974d7b|VALE]] | succeeded | agent result:succeeded |
 | [Source discovery for seekingalpha.com on 2026-08-15](https://seekingalpha.com/trending-analysis) | [seekingalpha.com](https://seekingalpha.com/trending-analysis) | expired | deadline elapsed |
 | [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]] | [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | failed | retry exhausted:agent validation failed:Hermes operation validation failed: Quick check research for HOOD on 2026-08-15 |
 
@@ -826,6 +839,21 @@ No pending orders.
 - Ready — [[securities/security_2dbe878dfc899d7ee867|Security research for FCX on 2026-08-13]]
 - Ready — [[securities/security_3e597863f00753e8c65c|Security research for BE on 2026-08-13]]
 - Ready — [[securities/security_a9eb9838940ef5ceaa0c|Security research for FLNC on 2026-08-13]]
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=kVzYGVJ8zUk)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=541z1_TbPhA)
+- Ready — [Wiki ingest for www.youtube.com on 2026-08-15](https://www.youtube.com/watch?v=u9HihTkeuWE)
+- Ready — [Source discovery for seekingalpha.com on 2026-08-15](https://seekingalpha.com/trending-analysis)
+- Ready — [[securities/security_0a56aa634d077fe5796f|Opportunity research for Market alert for AMAT on 2026-08-15]]
+- Ready — [[inbox/market-security_0a56aa634d077fe5796f-volume_anomaly-b65385b22ac1|Wiki ingest for AMAT — Volume anomaly on 2026-08-15]]
+- Ready — [[securities/security_0a56aa634d077fe5796f|Quick check research for AMAT on 2026-08-15]]
+- Ready — [[inbox/market-security_2010347f1a0a5ea60f47-macd_cross_above_signal-8aa859f0a1c1|Wiki ingest for SPOT — MACD cross above signal on 2026-08-15]]
+- Ready — [[securities/security_4627aea1bf7d8943d3d8|Opportunity research for Market alert for SGML on 2026-08-15]]
+- Ready — [[inbox/market-security_4627aea1bf7d8943d3d8-volume_anomaly-0babfa75f1da|Wiki ingest for SGML — Volume anomaly on 2026-08-15]]
+- Ready — [[securities/security_715bde20b6e1e1320c1a|Opportunity research for Market alert for DLO on 2026-08-15]]
+- Ready — [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-6fb23bdfd26a|Wiki ingest for DLO — Volume anomaly on 2026-08-15]]
+- Ready — [[securities/security_d12e746b3c9d392183cc|Opportunity research for Market alert for META on 2026-08-15]]
+- Ready — [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7|Wiki ingest for META — MACD cross above signal on 2026-08-15]]
+- Ready — [[securities/security_d12e746b3c9d392183cc|Security research for META on 2026-08-15]]
 
 ### Open issues and delivery failures
 
@@ -868,6 +896,7 @@ No pending orders.
 - Warning — [[system-status|Daily preparation degraded: FUC.F]]: FUC.F: price cache is empty
 - Warning — [[system-status|Daily preparation degraded: TSLA]]: TSLA: price cache is empty
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: commands\_run does not exactly match deterministic CLI audit receipts
+- Error — [[system-status|Hermes operation validation failed: Quick check research for SPOT on 2026-08-12]]: commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for PWR could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for PWR on 2026-08-03 and current security\_research Security research for PWR on 2026-08-03 claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope…
 - Warning — [[system-status|Daily preparation degraded: VALE]]: VALE: price cache is empty
 - Error — [[system-status|Hermes operation validation failed: Security research for RIO on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Security research for RIO on 2026-08-05/agent\_result.json

@@ -3835,3 +3835,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7]] (3d4a3a1356c7).
 
 - Classified [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7]] as `ingest`: Material MACD bullish crossover after an 8.7% decline over the review period warrants durable security-level wiki ingestion.
+
+- Published investor decision snapshot `decision_cdf54a51343bfe4b2680`.
+
+- Generated canonical [[daily-reports/daily-report_20260815]] for run `daily-20260815T103304Z`.
