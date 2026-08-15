@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-13"
+updated: "2026-08-15"
 provenance: repository-contract
 ---
 
@@ -3785,3 +3785,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
   sound, but normalized USD 9.00/USD 14.50/USD 20.00 scenarios offer only 5.1% base upside against
   material bear downside at the USD 13.80 mark. The Bollinger-band breach is a timing risk rather
   than a fundamental buy signal; Vale remains watching with no paper strategy.
+
+## 2026-08-15
+
+- Published investor decision snapshot `decision_e2170c21580fa25422f1`.
+
+- Generated canonical [[daily-reports/daily-report_20260815]] for run `daily-20260813T231401Z`.

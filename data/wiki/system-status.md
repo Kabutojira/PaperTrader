@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-13"
-updated: "2026-08-13"
+created: "2026-08-15"
+updated: "2026-08-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0fa98ad4485405a38369"
-as_of: "2026-08-13T16:04:03Z"
+snapshot_id: "decision_e2170c21580fa25422f1"
+as_of: "2026-08-15T07:23:15Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-13T16:04:03Z`
+**As of:** `2026-08-15T07:23:15Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,17 +21,17 @@ as_of: "2026-08-13T16:04:03Z"
 
 ## Coverage
 
-- Assessments: 68/69
-- Fresh-evidence assessments: 68/69
-- Relationship reviews: 25/69
-- Accepted relationships: 22
+- Assessments: 68/70
+- Fresh-evidence assessments: 68/70
+- Relationship reviews: 19/70
+- Accepted relationships: 17
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 301
-- Last successful daily run: 2026-08-12
+- Research backlog: 310
+- Last successful daily run: 2026-08-15
 
 ## Current issues by investment impact
 
@@ -86,7 +86,7 @@ as_of: "2026-08-13T16:04:03Z"
 - Warning **RBLX — Roblox Corporation: Daily preparation degraded: [[securities/security_c9a37d277445869a8809|RBLX]]** — [[securities/security_c9a37d277445869a8809|RBLX]]: YFTzMissingError: $RBLX: possibly delisted; no timezone found
 - Warning **FUC.F — Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]** — [[securities/security_96ba305ee7cd586bc348|FUC.F]]: price cache is empty
 - Warning **TSLA — Tesla, Inc.: Daily preparation degraded: [[securities/security_dc7a111e297be528d96b|TSLA]]** — [[securities/security_dc7a111e297be528d96b|TSLA]]: price cache is empty
-- Warning **VALE — Vale S.A.: Daily preparation degraded: [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]]** — [[security-catalog#security-security_b2116dcf976c96974d7b|VALE]]: price cache is empty
+- Warning **VALE — Vale S.A.: Daily preparation degraded: [[securities/security_b2116dcf976c96974d7b|VALE]]** — [[securities/security_b2116dcf976c96974d7b|VALE]]: price cache is empty
 - Warning **ALB — Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]** — [[securities/security_66cdcf90aac0d83e76f3|ALB]]: YFTzMissingError: $ALB: possibly delisted; no timezone found
 - Warning **ANIC.L — Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]** — [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]: price cache is empty
 - Warning **GOOGL — Alphabet Inc.: Daily preparation degraded: [[securities/security_c86bb4e75658c07142cf|GOOGL]]** — [[securities/security_c86bb4e75658c07142cf|GOOGL]]: price cache is empty
@@ -134,7 +134,7 @@ as_of: "2026-08-13T16:04:03Z"
 
 ### Operational Only
 
-- Error **Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-08]]** — commands_run does not exactly match deterministic CLI audit receipts
+- Error **Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]** — operation artifact directory is not empty: /__w/PaperTrader/PaperTrader/data/runs/[[daily-reports/daily-report_20260815|Daily report for 2026-08-15]]/[[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
 - Error **Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files_changed is stale or incomplete: reported=['data/runs/local-youtube-20260812T090946Z-03/[Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent_result.json'], actual=[]
@@ -157,12 +157,11 @@ as_of: "2026-08-13T16:04:03Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 301 active operations.
+Showing 20 of 310 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
-- Ready — [[security-catalog#security-security_b2116dcf976c96974d7b|Security research for VALE on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
@@ -181,6 +180,7 @@ Showing 20 of 301 active operations.
 - Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81|Wiki ingest for ETN — Bollinger below lower on 2026-07-30]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea|Wiki ingest for YEC.F — RSI oversold on 2026-07-31]]
 - Ready — [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796|Wiki ingest for META — Bollinger below lower on 2026-07-31]]
+- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da|Wiki ingest for SSU.VI — Volume anomaly on 2026-07-31]]
 
 </details>
 
