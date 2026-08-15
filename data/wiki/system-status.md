@@ -7,13 +7,13 @@ tags:
 created: "2026-08-15"
 updated: "2026-08-15"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cdf54a51343bfe4b2680"
-as_of: "2026-08-15T10:38:27Z"
+snapshot_id: "decision_e985888b688a47255cc0"
+as_of: "2026-08-15T15:30:36Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-15T10:38:27Z`
+**As of:** `2026-08-15T15:30:36Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,16 +21,16 @@ as_of: "2026-08-15T10:38:27Z"
 
 ## Coverage
 
-- Assessments: 68/70
-- Fresh-evidence assessments: 68/70
-- Relationship reviews: 19/70
-- Accepted relationships: 17
+- Assessments: 66/70
+- Fresh-evidence assessments: 66/70
+- Relationship reviews: 14/70
+- Accepted relationships: 12
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 325
+- Research backlog: 327
 - Last successful daily run: 2026-08-15
 
 ## Current issues by investment impact
@@ -50,6 +50,7 @@ as_of: "2026-08-15T10:38:27Z"
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
+- Error **Hermes operation validation failed: [[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-12]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260815|Daily report for 2026-08-15]]/[[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-12]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
@@ -136,7 +137,6 @@ as_of: "2026-08-15T10:38:27Z"
 
 - Error **Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]** — operation artifact directory is not empty: /__w/PaperTrader/PaperTrader/data/runs/[[daily-reports/daily-report_20260815|Daily report for 2026-08-15]]/[[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
-- Error **Hermes operation validation failed: [[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-12]]** — commands_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
 - Error **Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files_changed is stale or incomplete: reported=['data/runs/local-youtube-20260812T090946Z-03/[Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent_result.json'], actual=[]
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
@@ -158,7 +158,7 @@ as_of: "2026-08-15T10:38:27Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 325 active operations.
+Showing 20 of 327 active operations.
 
 <details><summary>Active research work</summary>
 
