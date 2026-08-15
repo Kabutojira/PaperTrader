@@ -1,0 +1,33 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M03SNEP0P53Y01N1MHK35A7N.json",
+    "data/runs/daily-20260815T224204Z/01KZSMSDTRBC9SG0KKDQR4XB87/enqueue_security_research_request.json",
+    "data/runs/daily-20260815T224204Z/01KZSMSDTRBC9SG0KKDQR4XB87/enqueue_security_research_retry01_request.json",
+    "data/runs/daily-20260815T224204Z/01KZSMSDTRBC9SG0KKDQR4XB87/enqueue_security_research_retry02_request.json",
+    "data/runs/daily-20260815T224204Z/01KZSMSDTRBC9SG0KKDQR4XB87/enqueue_security_research_retry03_request.json",
+    "data/runs/daily-20260815T224204Z/01KZSMSDTRBC9SG0KKDQR4XB87/security_research_followup_payload.json",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2010347f1a0a5ea60f47.md"
+  ],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "agent result is missing or a symlink: data/runs/daily-20260815T224204Z/01KZSMSDTRBC9SG0KKDQR4XB87/agent_result.json"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZSMSDTRBC9SG0KKDQR4XB87",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260815T224204Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
