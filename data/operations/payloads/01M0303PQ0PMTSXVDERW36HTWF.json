@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_1e8fbdb0f45f2b413e00",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-08T13:49:45Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md",
+    "security_id": "security_1e8fbdb0f45f2b413e00"
+  },
+  "objective": "Revalidate security_1e8fbdb0f45f2b413e00 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0303PQ0PMTSXVDERW36HTWF",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_pypl_q2_2026_10q",
+    "source_pypl_q2_2026_results",
+    "source_pypl_sec_submissions_20260808"
+  ]
+}
