@@ -8,6 +8,15 @@
       "profile": "",
       "recorded_at": "2026-08-16T12:39:49Z",
       "terminal_status": ""
+    },
+    {
+      "index": 1,
+      "kind": "failure",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-08-16T12:42:27Z",
+      "terminal_status": ""
     }
   ],
   "completed_at": "",
@@ -22,7 +31,7 @@
   "maximum_operations": 20,
   "model_budget_limit": "100",
   "model_budget_used": "0",
-  "next_checkpoint_index": 1,
+  "next_checkpoint_index": 2,
   "operating_date": "2026-08-16",
   "operation_count": 0,
   "operations_accepted": [],
