@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-08-15"
-updated: "2026-08-15"
+created: "2026-08-16"
+updated: "2026-08-16"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e3c98b69631d6e1b4774"
-as_of: "2026-08-15T22:46:53Z"
+snapshot_id: "decision_de66ee5ef522edd01b54"
+as_of: "2026-08-16T12:42:36Z"
 ---
 
 # Performance and risk
 
-**As of `2026-08-15T22:46:53Z`**
+**As of `2026-08-16T12:42:36Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-15; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-15; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 6.67,45.00 13.33,45.00 20.00,45.00 26.67,45.00 33.33,45.00 40.00,45.00 46.67,45.00 53.33,45.00 60.00,45.00 66.67,45.00 73.33,45.00 80.00,45.00 86.67,45.00 93.33,45.00 100.00,45.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-16; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-16; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 6.25,45.00 12.50,45.00 18.75,45.00 25.00,45.00 31.25,45.00 37.50,45.00 43.75,45.00 50.00,45.00 56.25,45.00 62.50,45.00 68.75,45.00 75.00,45.00 81.25,45.00 87.50,45.00 93.75,45.00 100.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -56,6 +56,7 @@ No target allocation changes.
 | 2026-08-12 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-13 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-15 | 10000 | 10000 | 0 | 0% | 0% | 0% |
+| 2026-08-16 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 
