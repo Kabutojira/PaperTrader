@@ -1,0 +1,47 @@
+{
+  "operation_id": "01KZSMSDTRBC9SG0KKDQR4XB87",
+  "status": "failed",
+  "summary": "Bounded quick check for Spotify (security_2010347f1a0a5ea60f47) could not complete the required comparable assessment and dependent full-research enqueue within this controller turn. The mandatory security-context receipt succeeded first; current deterministic evidence shows a 2026-08-14 close of USD 512.8200073242188, above the prior USD 425.60 buy-below price, with bullish MACD crossover and no evidence in the bounded context of thesis invalidation. No permitted repository state was changed.",
+  "evidence": [
+    {
+      "source": "scripts/papertrader research security-context --security-id security_2010347f1a0a5ea60f47",
+      "claim": "Mandatory audited context succeeded before assessment-state consumption; it returned the immutable Spotify identity, prior schema-version-2 assessment, retained primary sources, no linked ideas, no accepted relationships, and no strategies.",
+      "observed_at": "2026-08-16T17:20:34Z"
+    },
+    {
+      "source": "data/market/latest.csv and data/market/indicators.csv",
+      "claim": "The current identity-matched market row is dated 2026-08-14 with close USD 512.8200073242188; the indicator row records MACD 4.90960444, signal 4.09536725, RSI 57.58565967, and source price hash 90f2b251c01a3d9a45712c182b6f054e840af5103521674e0edda004b2fe19d6.",
+      "observed_at": "2026-08-16T17:20:41Z"
+    },
+    {
+      "source": "data/wiki/securities/security_2010347f1a0a5ea60f47.md and prior assessment context",
+      "claim": "The maintained conclusion remains Hold / Watch, allocation-ineligible, medium confidence, with bear/base/bull fair values USD 330/USD 532/USD 771 and no accepted canonical relationship.",
+      "observed_at": "2026-08-16T17:20:41Z"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_2010347f1a0a5ea60f47",
+    "papertrader queue validate",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory audited security-context succeeded before assessment-state consumption.",
+      "Queue validation returned OK [queue].",
+      "Strict schema validation returned OK [schema].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No allocation, strategy, signal, order, execution, cash, portfolio, performance, or other structured state was changed.",
+      "Required comparable assessment and dependent full-research enqueue were not completed; terminal status is failed rather than silently skipped."
+    ]
+  }
+}
