@@ -7,13 +7,13 @@ tags:
 created: "2026-08-16"
 updated: "2026-08-16"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_20900101abe8589b3145"
-as_of: "2026-08-16T15:25:29Z"
+snapshot_id: "decision_41f09d602e4e0831772a"
+as_of: "2026-08-16T17:24:20Z"
 ---
 
 # Signals
 
-**As of `2026-08-16T15:25:29Z`**
+**As of `2026-08-16T17:24:20Z`**
 
 ## Actionable trade signals
 
@@ -220,8 +220,8 @@ No pending orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `failed`
+- Conclusion: Bounded quick check for Spotify (SPOT) could not complete the required comparable assessment and dependent full-research enqueue within this controller turn. The mandatory security-context receipt succeeded first; current deterministic evidence shows a 2026-08-14 close of USD 512.8200073242188, above the prior USD 425.60 buy-below price, with bullish MACD crossover and no evidence in the bounded context of thesis invalidation. No permitted repository state was changed.
 
 ### [SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221)
 

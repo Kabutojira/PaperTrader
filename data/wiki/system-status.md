@@ -7,13 +7,13 @@ tags:
 created: "2026-08-16"
 updated: "2026-08-16"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_20900101abe8589b3145"
-as_of: "2026-08-16T15:25:29Z"
+snapshot_id: "decision_41f09d602e4e0831772a"
+as_of: "2026-08-16T17:24:20Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-16T15:25:29Z`
+**As of:** `2026-08-16T17:24:20Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-16T15:25:29Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 330
+- Research backlog: 329
 - Last successful daily run: 2026-08-16
 
 ## Current issues by investment impact
@@ -136,7 +136,7 @@ as_of: "2026-08-16T15:25:29Z"
 
 - Error **Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]** — operation artifact directory is not empty: /__w/PaperTrader/PaperTrader/data/runs/[[daily-reports/daily-report_20260815|Daily report for 2026-08-15]]/[[securities/security_ad3b1f8f59fd599f079a|Quick check research for HOOD on 2026-08-15]]
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
-- Error **Hermes operation validation failed: [[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-12]]** — commands_run does not exactly match deterministic CLI audit receipts
+- Error **Hermes operation validation failed: [[securities/security_2010347f1a0a5ea60f47|Quick check research for SPOT on 2026-08-16]]** — commands_run does not exactly match deterministic CLI audit receipts
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
 - Error **Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files_changed is stale or incomplete: reported=['data/runs/local-youtube-20260812T090946Z-03/[Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent_result.json'], actual=[]
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
@@ -158,7 +158,7 @@ as_of: "2026-08-16T15:25:29Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 330 active operations.
+Showing 20 of 329 active operations.
 
 <details><summary>Active research work</summary>
 
