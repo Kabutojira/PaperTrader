@@ -7,13 +7,13 @@ tags:
 created: "2026-08-17"
 updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_4ae9990a5305746a0567"
-as_of: "2026-08-17T16:16:08Z"
+snapshot_id: "decision_ef94c2512b6db007459d"
+as_of: "2026-08-17T17:36:49Z"
 ---
 
 # Signals
 
-**As of `2026-08-17T16:16:08Z`**
+**As of `2026-08-17T17:36:49Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,24 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [SGML — Sigma Lithium Corporation](securities/security_4627aea1bf7d8943d3d8)
 
@@ -48,6 +66,24 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-17`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### ANIC.L — Agronomics Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
 - Market date: `2026-08-17`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
@@ -148,8 +184,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one full repeat review of Intuitive Machines Class A common stock. The August 13 Form 10-Q and SEC-filed earnings exhibit explain the payload-bound volume anomaly and strengthen the revenue, backlog and liquidity evidence, but negative cash generation, complex dilution and absent post-closing Goonhilly unit economics keep scenario valuation unsupported, Unrated / Watch and allocation-ineligible. No strategy, signal, order, issue or follow-up operation was created.
 
 ### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
 

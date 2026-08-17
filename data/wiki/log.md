@@ -3892,6 +3892,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-macd_cross_below_signal-19a24fa5422e]] (19a24fa5422e).
 
+- Published investor decision snapshot `decision_ef94c2512b6db007459d`.
+
+- Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T172020Z`.
+
 ## [2026-08-17T17:27:00Z] update | Intuitive Machines Q2 review and volume anomaly
 
 - Reassessed [[securities/security_a5dc16f3f4b245e6c168|Intuitive Machines]] using its August 13
