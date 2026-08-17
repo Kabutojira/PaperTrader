@@ -1,0 +1,296 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "sha256": "2c390d14b6a84d98534e7d98f72f6984f4c788aea9f869fda3cfa04135b63bcd"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+      "sha256": "f4761b1a147906f19abd98cde9b3e8ad1e3f554d62f78b3d69240a3e2173367e"
+    }
+  ],
+  "daily_cycle_id": "daily-20260817T131213Z",
+  "decision_snapshot_path": "data/runs/daily-20260817T131213Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "a6d9f441e69d512f74a45d023943e8d96d6d0339ff74a84a67178a72213761c4",
+  "generated_at": "2026-08-17T14:27:18Z",
+  "intervening_daily_cycles": [
+    "daily-20260813T160024Z",
+    "daily-20260813T231401Z",
+    "daily-20260815T103304Z",
+    "daily-20260815T151934Z",
+    "daily-20260815T192234Z",
+    "daily-20260815T224204Z",
+    "daily-20260816T123918Z",
+    "daily-20260816T152107Z",
+    "daily-20260816T172034Z",
+    "daily-20260817T010615Z",
+    "daily-20260817T131213Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260817T131213Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260817T131213Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260817.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260813T092636Z/podcast_context.json",
+    "context_sha256": "f2ddc028a4b767ef929890a26589c16cd2dfd5f20381b60460203bbf8e77729c",
+    "daily_cycle_id": "daily-20260813T092636Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260813T092636Z.md",
+    "page_sha256": "05f2232630683b051a1f593413399e83d978350d4fdfcb02c989863f5f84b9ab",
+    "research_cutoff_at": "2026-08-13T09:31:48Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260817.md",
+  "report_sha256": "1954698b70ede5d52cad5527844ac663468187c6b74f933ffc46f8c4dcd2c7da",
+  "research_cutoff_at": "2026-08-17T13:23:52Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-13T23:23:57Z",
+      "daily_cycle_id": "daily-20260813T231401Z",
+      "daily_report_items": [
+        "VALE full review: current Q2 filings support sound operating delivery and cash generation, but deterministic USD 9.00/USD 14.50/USD 20.00 scenarios produce only 1.09% expected return at USD 13.80 with material bear downside. Hold / Watch; the lower-Bollinger breach is timing risk, not a paper-trade signal."
+      ],
+      "entity_id": "security_b2116dcf976c96974d7b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Vale reported second-quarter pro forma EBITDA of US$4.066 billion, free cash flow of US$1.505 billion and net debt of US$13.173 billion; sales increased year over year across iron ore, copper and nickel.",
+          "observed_at": "2026-08-13T23:18:51Z",
+          "source": "source_vale_q2_2026_results",
+          "source_hash": "1553c444b55969e676e332513c05a4e1945d09d8d8ff58d0a03fc40f4fce96de",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm"
+        },
+        {
+          "claim": "Vale's interim IFRS filing reports first-half 2026 net income attributable to shareholders of US$3.268 billion and diluted earnings per share of US$0.77.",
+          "observed_at": "2026-08-13T23:18:51Z",
+          "source": "source_vale_q2_2026_ifrs",
+          "source_hash": "a6509f92fcb05431179a6116a704a464baa30ddfb10a8cb96a317b2d5092bb4c",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004012/valedfifrs2q26_6k.htm"
+        },
+        {
+          "claim": "Vale's current production report supports improved year-over-year production and sales across its business segments and supplies the operating evidence required by the cyclical-commodity template.",
+          "observed_at": "2026-08-13T23:18:51Z",
+          "source": "source_vale_q2_2026_production",
+          "source_hash": "a6458ecb24e6828c2263a5225e4c049cd2e8946f61293b0474e8536d8152ef59",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426003838/vale20260721_6k1.htm"
+        },
+        {
+          "claim": "Deterministic scenario calculation classified Vale Hold / Watch and ineligible, with 5.07% base return, 1.09% expected return, 0.82% confidence-adjusted expected return, 4.83% margin of safety, and failed expected-return, payoff and relationship gates.",
+          "source": "assessment_fe094a743606836e58a0"
+        },
+        {
+          "claim": "The canonical 13 August 2026 market transition closed at USD 13.80 below the lower Bollinger band after a 6.25% five-session decline, without a configured volume anomaly.",
+          "source": "market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/assessment_upsert_request.json",
+        "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/security_upsert_request.json",
+        "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_ifrs_request.json",
+        "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_production_request.json",
+        "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/source_vale_q2_2026_results_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/research-catalog.md",
+        "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+      ],
+      "operation_id": "01KYPB2KN8R1RGAPDZQ2AN9P2V",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the first full Vale S.A. sponsored-ADR review using current SEC-filed second-quarter production, results and IFRS evidence. The deterministic assessment is Hold / Watch and allocation-ineligible: at the USD 13.80 mark, bear/base/bull fair values are USD 9.00/USD 14.50/USD 20.00, probability-weighted expected return is 1.09%, and confidence-adjusted expected return is 0.82%. The 13 August lower-Bollinger-band breach is a timing risk rather than a supported fundamental buy signal. No strategy, signal, order, allocation, execution, cash, portfolio, fill or performance state changed."
+    }
+  ],
+  "run_id": "daily-20260817T131213Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-13T16:03:45Z",
+      "daily_cycle_id": "daily-20260813T160024Z",
+      "daily_report_items": [],
+      "entity_id": "security_ad3b1f8f59fd599f079a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "commands_run does not exactly match deterministic CLI audit receipts",
+          "source": "data/runs/daily-20260813T160024Z/01KZGGJ4M0HZBD7MND83X91XEF/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "commands_run does not exactly match deterministic CLI audit receipts"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZGGJ4M0HZBD7MND83X91XEF",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260813T160024Z/01KZGGJ4M0HZBD7MND83X91XEF/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-15T19:26:40Z",
+      "daily_cycle_id": "daily-20260815T192234Z",
+      "daily_report_items": [],
+      "entity_id": "security_2010347f1a0a5ea60f47",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "commands_run does not exactly match deterministic CLI audit receipts",
+          "source": "data/runs/daily-20260815T192234Z/01KZSMSDTRBC9SG0KKDQR4XB87/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "commands_run does not exactly match deterministic CLI audit receipts"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZSMSDTRBC9SG0KKDQR4XB87",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260815T192234Z/01KZSMSDTRBC9SG0KKDQR4XB87/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-16T15:25:12Z",
+      "daily_cycle_id": "daily-20260816T152107Z",
+      "daily_report_items": [],
+      "entity_id": "security_2010347f1a0a5ea60f47",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "commands_run does not exactly match deterministic CLI audit receipts",
+          "source": "data/runs/daily-20260816T152107Z/01KZSMSDTRBC9SG0KKDQR4XB87/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "commands_run does not exactly match deterministic CLI audit receipts"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZSMSDTRBC9SG0KKDQR4XB87",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260816T152107Z/01KZSMSDTRBC9SG0KKDQR4XB87/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-16T17:24:08Z",
+      "daily_cycle_id": "daily-20260816T172034Z",
+      "daily_report_items": [],
+      "entity_id": "security_2010347f1a0a5ea60f47",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Mandatory audited context succeeded before assessment-state consumption; it returned the immutable Spotify identity, prior schema-version-2 assessment, retained primary sources, no linked ideas, no accepted relationships, and no strategies.",
+          "observed_at": "2026-08-16T17:20:34Z",
+          "source": "scripts/papertrader research security-context --security-id security_2010347f1a0a5ea60f47"
+        },
+        {
+          "claim": "The current identity-matched market row is dated 2026-08-14 with close USD 512.8200073242188; the indicator row records MACD 4.90960444, signal 4.09536725, RSI 57.58565967, and source price hash 90f2b251c01a3d9a45712c182b6f054e840af5103521674e0edda004b2fe19d6.",
+          "observed_at": "2026-08-16T17:20:41Z",
+          "source": "data/market/latest.csv and data/market/indicators.csv"
+        },
+        {
+          "claim": "The maintained conclusion remains Hold / Watch, allocation-ineligible, medium confidence, with bear/base/bull fair values USD 330/USD 532/USD 771 and no accepted canonical relationship.",
+          "observed_at": "2026-08-16T17:20:41Z",
+          "source": "data/wiki/securities/security_2010347f1a0a5ea60f47.md and prior assessment context"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KZSMSDTRBC9SG0KKDQR4XB87",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260816T172034Z/01KZSMSDTRBC9SG0KKDQR4XB87/agent_result.json",
+      "status": "failed",
+      "summary": "Bounded quick check for Spotify (security_2010347f1a0a5ea60f47) could not complete the required comparable assessment and dependent full-research enqueue within this controller turn. The mandatory security-context receipt succeeded first; current deterministic evidence shows a 2026-08-14 close of USD 512.8200073242188, above the prior USD 425.60 buy-below price, with bullish MACD crossover and no evidence in the bounded context of thesis invalidation. No permitted repository state was changed."
+    },
+    {
+      "completed_at": "2026-08-17T01:18:17Z",
+      "daily_cycle_id": "daily-20260817T010615Z",
+      "daily_report_items": [],
+      "entity_id": "security_4627aea1bf7d8943d3d8",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "files_changed is stale or incomplete: reported=['data/issues.md', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/enqueue_idea_refresh_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/issue_record_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request_v2.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_financials_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_mda_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_release_request.json', 'data/tables/issues.csv', 'data/tables/securities.csv', 'data/tables/source_history.csv', 'data/tables/source_registry.csv'], actual=['data/issues.md', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/enqueue_idea_refresh_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/issue_record_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request_v2.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_financials_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_mda_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_release_request.json', 'data/tables/issues.csv', 'data/tables/securities.csv', 'data/tables/source_history.csv', 'data/tables/source_registry.csv', 'data/wiki/securities/security_4627aea1bf7d8943d3d8.md']",
+          "source": "data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "files_changed is stale or incomplete: reported=['data/issues.md', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/enqueue_idea_refresh_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/issue_record_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request_v2.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_financials_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_mda_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_release_request.json', 'data/tables/issues.csv', 'data/tables/securities.csv', 'data/tables/source_history.csv', 'data/tables/source_registry.csv'], actual=['data/issues.md', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/enqueue_idea_refresh_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/issue_record_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_restore_after_assessment_failure_request_v2.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_financials_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_mda_request.json', 'data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_release_request.json', 'data/tables/issues.csv', 'data/tables/securities.csv', 'data/tables/source_history.csv', 'data/tables/source_registry.csv', 'data/wiki/securities/security_4627aea1bf7d8943d3d8.md']"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZGT11ZGBPRBKV129FD00TH1",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260817T010615Z/01KZGT11ZGBPRBKV129FD00TH1/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-17T13:23:34Z",
+      "daily_cycle_id": "daily-20260817T131213Z",
+      "daily_report_items": [
+        "SGML security research failed closed after current Q2 sources were registered: the required assessment request was rejected for an unknown valuation template, so no new assessment, strategy, signal, or paper order was accepted."
+      ],
+      "entity_id": "security_4627aea1bf7d8943d3d8",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Q2 production reached 35.4 thousand tonnes and revenue reached USD 54.7 million, but mining and plant operations have been halted since the week of July 17 pending a regulatory agreement.",
+          "observed_at": "2026-08-17T13:15:23Z",
+          "source": "Sigma Lithium Q2 2026 MD&A",
+          "source_hash": "b98d783c0d128080eb7c09f6a2af0e96f6d3ee5cf422e1a44b790d88678c2536",
+          "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-1.htm"
+        },
+        {
+          "claim": "First-half operating cash flow was USD 27.2 million, but June unrestricted cash was USD 5.4 million, current loans and export prepayments were USD 123.4 million, suppliers were USD 60.5 million, and the working-capital deficit was USD 171.1 million.",
+          "observed_at": "2026-08-17T13:15:23Z",
+          "source": "Sigma Lithium Q2 2026 financial statements",
+          "source_hash": "69648306d653cd7caf96810ec168ea6c39e31d752c84a1e5359cadd0c187c3c5",
+          "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-2.htm"
+        },
+        {
+          "claim": "The required assessment upsert exited 2 with 'unknown valuation_template' and changed no paths. It was not retried or substituted.",
+          "source": "command_audit.json assessment receipt"
+        },
+        {
+          "claim": "The attempted security correction exited 2 with 'security update is older than current research state' and changed no paths.",
+          "source": "command_audit.json correction receipt"
+        },
+        {
+          "claim": "The current assessment remains assessment_6bc07dc1e88cfdf6de67 from the prior operation, the maintained page hash remains d6616243826cec707e2cf37dc908a86c1860a092b39e9b7b293ebd66871a3062, and no assessment version for this operation exists.",
+          "source": "final security-context receipt"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json",
+        "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/security_correction_request.json",
+        "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json",
+        "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_financials_request.json",
+        "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_mda_request.json",
+        "data/tables/securities.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "operation_id": "01KZGT11ZGBPRBKV129FD00TH1",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/agent_result.json",
+      "status": "failed",
+      "summary": "The bounded SGML review retained two current SEC-filed Q2 sources and the security upsert recorded the new evidence, including stronger Q2 operations before a July regulatory halt and a USD 171.1 million working-capital deficit. Completion failed closed because the required schema-v2 assessment request used an unknown valuation_template and the audited assessment command rejected it without changing assessment state. Per controller policy, the rejected command was not retried. The attempted security-state correction was also rejected as older than the accepted security research timestamp. The wiki page and log were restored to their prior bytes, no assessment history was appended, no follow-up operation was enqueued, and no strategy, signal, order, execution, cash, portfolio, performance, fill, or allocation state changed."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-13T09:31:48Z"
+}

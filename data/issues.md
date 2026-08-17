@@ -12,6 +12,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
 | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
 | error | **issue_3d573dd92b113a698d01** — Intuitive Machines assessment source operation is ambiguous within one run | 2026-08-08T14:23:52Z | controller | 01KZGV5E1GF4N027VZVMD02HEZ |
+| error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |
 | error | **issue_4c13a146c674a9a576a6** — Hermes operation validation failed: 01KZGGJ4M0HZBD7MND83X91XEF | 2026-08-15T07:23:01Z | controller | 01KZGGJ4M0HZBD7MND83X91XEF |
 | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
@@ -70,6 +71,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_6968cdf3d5a050da82a1** — YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_6b3c8e68ec789ffd7037** — Daily preparation degraded: security_fe4648901e7675f157fd | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_6c93f0fd88af720b0060** — Daily preparation degraded: security_c86bb4e75658c07142cf | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_6d717cbd0e518ce1a997** — Daily podcast failed: daily-20260817T131213Z | 2026-08-17T14:47:29Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |
 | warning | **issue_7473df2183611e3ab999** — YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm_jw | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_74ca76f4c9de18775121** — Daily preparation degraded: security_7bf8f4c9cc12ae410e40 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_74e89bf248810ee20ffe** — Daily preparation degraded: security_83a56943e18793f685b0 | 2026-07-29T16:51:20Z | deterministic-controller |  |
