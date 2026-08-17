@@ -3877,3 +3877,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_1413f0ba9757c841c3ac`.
 
 - Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T131213Z`.
+
+- Published investor decision snapshot `decision_4ae9990a5305746a0567`.
+
+- Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T152008Z`.

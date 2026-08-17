@@ -7,13 +7,13 @@ tags:
 created: "2026-08-17"
 updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_1413f0ba9757c841c3ac"
-as_of: "2026-08-17T13:23:52Z"
+snapshot_id: "decision_4ae9990a5305746a0567"
+as_of: "2026-08-17T16:16:08Z"
 ---
 
 # Signals
 
-**As of `2026-08-17T13:23:52Z`**
+**As of `2026-08-17T16:16:08Z`**
 
 ## Actionable trade signals
 
@@ -31,17 +31,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-14`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
-### PLS.AX — PLS Group Limited
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Research status: `failed`
+- Conclusion: retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Security research for SGML on 2026-08-17
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -51,6 +42,15 @@ No pending orders.
 - Market date: `2026-08-14`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
+
+### PLS.AX — PLS Group Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
