@@ -35,6 +35,15 @@
       "profile": "",
       "recorded_at": "2026-08-17T14:19:26Z",
       "terminal_status": ""
+    },
+    {
+      "index": 4,
+      "kind": "finalization",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-08-17T14:19:59Z",
+      "terminal_status": ""
     }
   ],
   "completed_at": "2026-08-17T13:23:52Z",
@@ -42,15 +51,15 @@
   "daily_cycle_id": "daily-20260817T131213Z",
   "daily_run_version": 2,
   "fill_outcomes": [],
-  "final_commit_identity": "daily-20260817T131213Z:checkpoint-002",
+  "final_commit_identity": "daily-20260817T131213Z:checkpoint-004",
   "final_commit_sha": "",
   "finalization_at": "2026-08-17T13:23:52Z",
-  "finalization_commit_identity": "daily-20260817T131213Z:checkpoint-002",
+  "finalization_commit_identity": "daily-20260817T131213Z:checkpoint-004",
   "finalization_status": "degraded",
   "maximum_operations": 1,
   "model_budget_limit": "100",
   "model_budget_used": "5",
-  "next_checkpoint_index": 4,
+  "next_checkpoint_index": 5,
   "operating_date": "2026-08-17",
   "operation_count": 1,
   "operations_accepted": [
