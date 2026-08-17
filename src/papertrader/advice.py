@@ -784,6 +784,49 @@ def _legacy_publication_contracts_changed(
     return True
 
 
+def _post_publication_delivery_issue_reopened(
+    repository_root: Path,
+    *,
+    as_of: datetime,
+    expected_hashes: Mapping[str, str],
+    differing: set[str],
+) -> bool:
+    """Recognize a delivery-only issue episode reopened after publication.
+
+    Delivery issues use stable latest-only rows. Reopening a resolved issue clears its
+    prior ``resolved_at``, so the current row alone can make that issue appear open at
+    an earlier snapshot cutoff. Accept the transition only when removing a bounded
+    subset of delivery rows refreshed after the cutoff reconstructs the stored issue
+    hash exactly. Every non-delivery or otherwise substantive change still fails closed.
+    """
+
+    if differing != {"issues"}:
+        return False
+    rows = _canonical_rows(repository_root, "issues", as_of=as_of)
+    projected_ids = {row["issue_id"] for row in rows}
+    candidates: list[str] = []
+    for row in read_table(repository_root, "issues"):
+        if (
+            row["issue_id"] not in projected_ids
+            or row["owner"] != "delivery"
+            or row["status"] != "open"
+        ):
+            continue
+        last_seen = parse_timestamp(row["last_seen_at"])
+        if last_seen is not None and last_seen > as_of:
+            candidates.append(row["issue_id"])
+    # The delivery boundary currently owns only a few stable issue identities. Keep
+    # reconstruction explicitly bounded so malformed input cannot cause exponential work.
+    if not candidates or len(candidates) > 8:
+        return False
+    for mask in range(1, 1 << len(candidates)):
+        removed = {issue_id for index, issue_id in enumerate(candidates) if mask & (1 << index)}
+        reconstructed = [row for row in rows if row["issue_id"] not in removed]
+        if content_hash(reconstructed) == expected_hashes.get("issues"):
+            return True
+    return False
+
+
 def _post_publication_podcast_only_changed(
     repository_root: Path,
     *,
@@ -3241,12 +3284,23 @@ def validate_advice(
                 expected_hashes=previous,
                 differing=differing,
             )
+            delivery_only = _post_publication_delivery_issue_reopened(
+                repository_root,
+                as_of=snapshot_as_of,
+                expected_hashes=previous,
+                differing=differing,
+            )
             legacy_contracts_only = _legacy_publication_contracts_changed(
                 repository_root,
                 snapshot=snapshot,
                 differing=differing,
             )
-            if not configuration_only and not podcast_only and not legacy_contracts_only:
+            if (
+                not configuration_only
+                and not podcast_only
+                and not delivery_only
+                and not legacy_contracts_only
+            ):
                 errors.append(
                     "published decision snapshot does not match current authoritative state"
                 )

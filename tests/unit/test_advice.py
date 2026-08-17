@@ -20,7 +20,7 @@ from papertrader.config import Settings
 from papertrader.dedupe import build_dedupe_key
 from papertrader.execution import ensure_initial_capital, process_order_fill
 from papertrader.investor_pages import _public_snapshot
-from papertrader.issues import record_issue
+from papertrader.issues import record_issue, resolve_issue
 from papertrader.models import MarketBar, OrderLegSpec, ReferencePrice
 from papertrader.orders import create_paper_order, create_signal
 from papertrader.portfolio import build_risk_state
@@ -1038,6 +1038,49 @@ def test_post_publication_delivery_issue_does_not_stale_decision_snapshot(
 
     assert validate_advice(sandbox_repository, strict=True) == []
     assert len(snapshot.system_impacts) == 1
+
+
+def test_post_publication_reopened_delivery_issue_does_not_stale_decision_snapshot(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    run_id = "reopened-delivery-fixture"
+    _initialize(sandbox_repository, sandbox_settings, run_id=run_id)
+    issue_id = record_issue(
+        sandbox_repository,
+        severity="warning",
+        title="Telegram podcast audio delivery unavailable",
+        description="A prior podcast audio delivery failed.",
+        owner="delivery",
+        related_run_id="prior-delivery-fixture",
+        now=NOW - timedelta(minutes=2),
+    )
+    resolve_issue(
+        sandbox_repository,
+        issue_id,
+        "The prior podcast audio was delivered.",
+        now=NOW - timedelta(minutes=1),
+    )
+    refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        as_of=NOW,
+        render_pages=False,
+    )
+
+    reopened_id = record_issue(
+        sandbox_repository,
+        severity="warning",
+        title="Telegram podcast audio delivery unavailable",
+        description="The current podcast audio draft was unavailable.",
+        owner="delivery",
+        related_run_id=run_id,
+        now=NOW + timedelta(minutes=1),
+    )
+
+    assert reopened_id == issue_id
+    assert validate_advice(sandbox_repository, strict=True) == []
 
 
 def test_legacy_post_publication_podcast_bookkeeping_does_not_stale_snapshot(
