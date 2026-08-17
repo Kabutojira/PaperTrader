@@ -1,0 +1,105 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_a5dc16f3f4b245e6c168.md",
+      "sha256": "db5766b4a9b086498b1935d58be383a96a27acf269fe8632a91f3b4dd7d97087"
+    }
+  ],
+  "daily_cycle_id": "daily-20260817T172020Z",
+  "decision_snapshot_path": "data/runs/daily-20260817T172020Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "2da0e46db465da53279f51dbe24f9415876a76866c5407fe384480d8f0cd5625",
+  "generated_at": "2026-08-17T17:44:35Z",
+  "intervening_daily_cycles": [
+    "daily-20260817T172020Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260817T172020Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260817T172020Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260817.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260817T152008Z/podcast_context.json",
+    "context_sha256": "5cd2c68280b16a5541ff8f51ec531385cc9cc5bc85eda2a707e281f81c44fc24",
+    "daily_cycle_id": "daily-20260817T152008Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260817T152008Z.md",
+    "page_sha256": "349cb8b75a26acbf5c7f4e61fb6334b94799490b5840f1ac242cf5197600b56d",
+    "research_cutoff_at": "2026-08-17T16:16:08Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260817.md",
+  "report_sha256": "b04681afab36472aa09c9a05dff97f17bceb17273ca1fa749b9152f106c7a357",
+  "research_cutoff_at": "2026-08-17T17:36:49Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-17T17:33:12Z",
+      "daily_cycle_id": "daily-20260817T172020Z",
+      "daily_report_items": [
+        "LUNR full review: Q2 revenue and backlog expanded sharply and explain the August 13 volume anomaly, but negative cash generation, complex dilution and missing Goonhilly economics keep valuation unsupported, Unrated / Watch and allocation-ineligible.",
+        "The August 14 USD 19.01 mark extended the payload period move while volume-anomaly and upper-Bollinger states remained active; no strategy, signal, order or paper trade was created."
+      ],
+      "entity_id": "security_a5dc16f3f4b245e6c168",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The latest Form 10-Q reports Q2 revenue of USD 206.168 million, gross profit before depreciation and amortization of USD 35.866 million, adjusted EBITDA of negative USD 13.799 million, quarterly free cash outflow of USD 83.867 million, cash of USD 367.354 million and long-term debt of USD 336.352 million.",
+          "observed_at": "2026-08-17T17:25:39Z",
+          "source": "source_lunr_q2_2026_10q",
+          "source_hash": "1c1a3fef0222ec2d49eec1ff1ff4ca64e830492635075c3c2bb916229c64e480",
+          "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056821/lunr-20260630.htm"
+        },
+        {
+          "claim": "The SEC-filed earnings exhibit reports record Q2 revenue, approximately USD 1.8 billion of backlog and unchanged full-year revenue guidance of USD 900 million-1 billion with positive adjusted EBITDA, supplying a current fundamental explanation for the August 13 volume anomaly.",
+          "observed_at": "2026-08-17T17:25:39Z",
+          "source": "source_lunr_q2_2026_8k_release",
+          "source_hash": "e046fe29cff85e0855033bb8f99d833e06e6b1190d97a1f97e1a5876c054def9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056476/lunr-20260630xexx991.htm"
+        },
+        {
+          "claim": "The canonical alert measured a 30.65% gain from 2026-07-16 through 2026-08-13, an August 13 close of USD 17.56 and volume of 20,567,800 as the volume-anomaly state entered.",
+          "source": "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-8cda2406695e.md"
+        },
+        {
+          "claim": "The identity-matched current LUNR mark was USD 19.010000228881836 for the August 14 completed session, with canonical USD/EUR FX of 0.8629999756813049; both were retrieved at 2026-08-17T17:20:27Z and accepted by the assessment applier.",
+          "source": "data/market/latest.csv"
+        },
+        {
+          "claim": "The mandatory repeat-review context receipt succeeded before assessment-state reads. Immutable assessment assessment_2592e75cd2fffc8e9320 links predecessor assessment_0e788678ac0857de5db8, schema version 2, this operation and expected result path, current page hash, evidence and run provenance.",
+          "source": "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/command_audit.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/assessment_upsert_request.json",
+        "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/security_upsert_request.json",
+        "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/source_lunr_q2_2026_10q_request.json",
+        "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/source_lunr_q2_2026_8k_release_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_a5dc16f3f4b245e6c168.md"
+      ],
+      "operation_id": "01KZK35RAGT3T0XEJ4DG1XVZB8",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one full repeat review of Intuitive Machines Class A common stock. The August 13 Form 10-Q and SEC-filed earnings exhibit explain the payload-bound volume anomaly and strengthen the revenue, backlog and liquidity evidence, but negative cash generation, complex dilution and absent post-closing Goonhilly unit economics keep scenario valuation unsupported, Unrated / Watch and allocation-ineligible. No strategy, signal, order, issue or follow-up operation was created."
+    }
+  ],
+  "run_id": "daily-20260817T172020Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-17T16:16:08Z"
+}

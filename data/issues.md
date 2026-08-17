@@ -30,6 +30,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_b75a39226dfa72cb49f9** — Hermes operation validation failed: 01KZ8BGD98WHFV7P2DCWX2WDQN | 2026-08-11T16:10:57Z | controller | 01KZ8BGD98WHFV7P2DCWX2WDQN |
 | error | **issue_c531340c7c3a508426ac** — Hermes operation validation failed: 01KZBHM8JGFW6R10CN34GRREZY | 2026-08-06T12:52:02Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | error | **issue_c930fec93e016f142719** — Hermes operation validation failed: 01KZ9ZJVERX5NYGBGE6Z6G7T46 | 2026-08-10T17:35:35Z | controller | 01KZ9ZJVERX5NYGBGE6Z6G7T46 |
+| error | **issue_cd9f6a9e31874e85f842** — Hermes operation validation failed: 01M08D6FXRRXXACTTEQWSRA9JQ | 2026-08-17T17:49:26Z | delivery | 01M08D6FXRRXXACTTEQWSRA9JQ |
 | error | **issue_d28f4a965952a2f0b258** — Hermes operation validation failed: 01KZ9ZJVERYZKAVXNTF2NZCECM | 2026-08-12T17:58:15Z | controller | 01KZ9ZJVERYZKAVXNTF2NZCECM |
 | error | **issue_de6f5509df14629098c4** — Coinbase assessment source operation is ambiguous within one run | 2026-08-09T22:01:17Z | controller | 01KZM7W5C8C2YW24Q3J4JNJ0MS |
 | error | **issue_def4113908890fc82c0a** — Palantir full assessment blocked by same-run provenance ambiguity | 2026-08-11T08:29:58Z | controller | 01KZQYAY286JRATAH6EKE2E9AZ |
@@ -61,6 +62,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_3cc01f918c960ecd1e86** — Daily preparation degraded: security_4627aea1bf7d8943d3d8 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_3dfbaf44b38a480a8aa4** — Daily preparation degraded: security_7ca095d63423c55a90e3 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_44fe890b2fbae8cf90a0** — Daily preparation degraded: security_1f9cce545ede94cd6349 | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_4c2f9aaf5d3651b92204** — Daily podcast failed: daily-20260817T172020Z | 2026-08-17T17:49:27Z | delivery | 01M08D6FXRRXXACTTEQWSRA9JQ |
 | warning | **issue_4cea078fdac19d342c04** — Daily preparation degraded: security_dfa34d4b9050964b465e | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_4f229989274e68b0b88e** — Daily podcast failed: daily-20260806T120804Z | 2026-08-06T12:53:17Z | delivery | 01KZBHM8JGFW6R10CN34GRREZY |
 | warning | **issue_50e28d602eb0feb06784** — Daily preparation degraded: security_6cf75bd0ec0aa2a20148 | 2026-07-29T16:51:20Z | deterministic-controller |  |
