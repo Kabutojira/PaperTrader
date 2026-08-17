@@ -3881,3 +3881,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_4ae9990a5305746a0567`.
 
 - Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T152008Z`.
+
+- Created candidate packet [[inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-469186538f68]] (469186538f68).
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5]] (3bcfd60d76b5).
+
+- Classified [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5]] as `ingest`: A newly entered MACD bullish crossover is a material indicator transition for the security and merits durable tracking despite the negative period return.
+
+- Created candidate packet [[inbox/market-security_d08d763780400dfbffce-bollinger_above_upper-0a5c0bb49ecc]] (0a5c0bb49ecc).
+
+- Created candidate packet [[inbox/market-security_fe4648901e7675f157fd-macd_cross_below_signal-19a24fa5422e]] (19a24fa5422e).
