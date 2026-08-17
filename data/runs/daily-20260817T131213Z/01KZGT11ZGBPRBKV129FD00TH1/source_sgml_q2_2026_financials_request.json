@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sgml_q2_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-2.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-2.htm",
+  "source_type": "filing_exhibit",
+  "title": "Sigma Lithium unaudited condensed interim consolidated financial statements for the six months ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "69648306d653cd7caf96810ec168ea6c39e31d752c84a1e5359cadd0c187c3c5",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_4627aea1bf7d8943d3d8",
+  "checked_at": "2026-08-17T13:15:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "As of June 30, 2026, the Company had a working capital deficiency of $171,139.",
+  "summary": "The Q2 statements show improved first-half operating cash flow but a larger working-capital deficit, limited unrestricted cash, high current debt and supplier balances, related-party exposures, and substantial going-concern uncertainty.",
+  "run_id": "daily-20260817T131213Z"
+}

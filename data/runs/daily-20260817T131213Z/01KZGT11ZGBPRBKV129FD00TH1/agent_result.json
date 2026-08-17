@@ -1,0 +1,76 @@
+{
+  "operation_id": "01KZGT11ZGBPRBKV129FD00TH1",
+  "status": "failed",
+  "reason_code": "assessment_upsert_rejected",
+  "summary": "The bounded SGML review retained two current SEC-filed Q2 sources and the security upsert recorded the new evidence, including stronger Q2 operations before a July regulatory halt and a USD 171.1 million working-capital deficit. Completion failed closed because the required schema-v2 assessment request used an unknown valuation_template and the audited assessment command rejected it without changing assessment state. Per controller policy, the rejected command was not retried. The attempted security-state correction was also rejected as older than the accepted security research timestamp. The wiki page and log were restored to their prior bytes, no assessment history was appended, no follow-up operation was enqueued, and no strategy, signal, order, execution, cash, portfolio, performance, fill, or allocation state changed.",
+  "evidence": [
+    {
+      "source": "Sigma Lithium Q2 2026 MD&A",
+      "claim": "Q2 production reached 35.4 thousand tonnes and revenue reached USD 54.7 million, but mining and plant operations have been halted since the week of July 17 pending a regulatory agreement.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-1.htm",
+      "observed_at": "2026-08-17T13:15:23Z",
+      "source_hash": "b98d783c0d128080eb7c09f6a2af0e96f6d3ee5cf422e1a44b790d88678c2536"
+    },
+    {
+      "source": "Sigma Lithium Q2 2026 financial statements",
+      "claim": "First-half operating cash flow was USD 27.2 million, but June unrestricted cash was USD 5.4 million, current loans and export prepayments were USD 123.4 million, suppliers were USD 60.5 million, and the working-capital deficit was USD 171.1 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-2.htm",
+      "observed_at": "2026-08-17T13:15:23Z",
+      "source_hash": "69648306d653cd7caf96810ec168ea6c39e31d752c84a1e5359cadd0c187c3c5"
+    },
+    {
+      "source": "command_audit.json assessment receipt",
+      "claim": "The required assessment upsert exited 2 with 'unknown valuation_template' and changed no paths. It was not retried or substituted."
+    },
+    {
+      "source": "command_audit.json correction receipt",
+      "claim": "The attempted security correction exited 2 with 'security update is older than current research state' and changed no paths."
+    },
+    {
+      "source": "final security-context receipt",
+      "claim": "The current assessment remains assessment_6bc07dc1e88cfdf6de67 from the prior operation, the maintained page hash remains d6616243826cec707e2cf37dc908a86c1860a092b39e9b7b293ebd66871a3062, and no assessment version for this operation exists."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json",
+    "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/security_correction_request.json",
+    "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json",
+    "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_financials_request.json",
+    "data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_mda_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "SGML security research failed closed after current Q2 sources were registered: the required assessment request was rejected for an unknown valuation template, so no new assessment, strategy, signal, or paper order was accepted."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8",
+    "papertrader research source record --request data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_mda_request.json",
+    "papertrader research source record --request data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_financials_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260817T131213Z/01KZGT11ZGBPRBKV129FD00TH1/security_correction_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_4627aea1bf7d8943d3d8"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "PASSED: the mandatory pre-review security-context receipt completed before assessment-state access.",
+      "PASSED: the SEC-filed Q2 MD&A and financial statements were retained through immutable source-record requests with SHA-256 identities.",
+      "FAILED: the required schema-v2 assessment was rejected because valuation_template was unknown; no assessment history row was appended.",
+      "FAILED: the security correction request was rejected as older than the accepted security research timestamp, leaving the successful security-row upsert in place without a matching accepted assessment.",
+      "PASSED: the maintained security page and wiki log were restored to their prior repository bytes.",
+      "PASSED: schema validate --strict, queue validate, wiki lint --strict, integrity --strict, and portfolio reconcile --strict returned OK.",
+      "PASSED: final security context confirmed the prior assessment and page hash remain current and no assessment version for this operation exists.",
+      "PASSED: no allocation targets/history, strategy, signal, order, execution, cash, portfolio, fill, performance, or other accounting state changed."
+    ]
+  }
+}

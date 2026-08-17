@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4627aea1bf7d8943d3d8",
+  "issuer_id": "issuer_e012f2de036ed7a1d738",
+  "company_name": "Sigma Lithium Corporation",
+  "instrument_name": "Sigma Lithium Corporation common shares",
+  "instrument_type": "equity",
+  "ticker": "SGML",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "SGML",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "Canada",
+  "sector": "Materials",
+  "industry": "Lithium Mining",
+  "status": "watching",
+  "watchlist_reason": "Q1 2026 going-concern warning, negative working capital, debt load and controls outweigh the improved Q2 production trajectory.",
+  "research_summary": "Q2 output beat guidance, but liquidity, cash conversion, controls, regulatory and valuation gaps keep SGML Unrated / Avoid pending full Q2 accounts.",
+  "research_page": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md",
+  "last_research_at": "2026-08-06T12:49:22Z",
+  "next_review_at": "2026-08-15T00:00:00Z",
+  "source": "source_sgml_aug_2026_q2_schedule|source_sgml_july_2026_update|source_sgml_q1_2026_mda"
+}

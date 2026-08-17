@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4627aea1bf7d8943d3d8",
+  "issuer_id": "issuer_e012f2de036ed7a1d738",
+  "company_name": "Sigma Lithium Corporation",
+  "instrument_name": "Sigma Lithium Corporation common shares",
+  "instrument_type": "equity",
+  "ticker": "SGML",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "SGML",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "Canada",
+  "sector": "Materials",
+  "industry": "Lithium Mining",
+  "status": "watching",
+  "watchlist_reason": "Grota do Cirilo offers lithium-cycle upside, but suspended operations, a USD 171.1 million working-capital deficit, near-term debt, going-concern uncertainty and material control weaknesses require avoidance.",
+  "research_summary": "Q2 operations and cash flow improved before a regulatory halt; solvency, accounting and unsupported-valuation blockers keep SGML Unrated / Avoid.",
+  "research_page": "data/wiki/securities/security_4627aea1bf7d8943d3d8.md",
+  "last_research_at": "2026-08-17T13:15:23Z",
+  "next_review_at": "2026-08-31T13:15:23Z",
+  "source": "source_sgml_q2_2026_financials|source_sgml_q2_2026_mda"
+}

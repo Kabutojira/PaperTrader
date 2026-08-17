@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sgml_q2_2026_mda",
+  "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426004250/ex99-1.htm",
+  "source_type": "filing_exhibit",
+  "title": "Sigma Lithium management discussion and analysis for the six months ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b98d783c0d128080eb7c09f6a2af0e96f6d3ee5cf422e1a44b790d88678c2536",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_4627aea1bf7d8943d3d8",
+  "checked_at": "2026-08-17T13:15:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Since the week started July 17, 2026, mining operations have been halted as part of a partial suspension.",
+  "summary": "The Q2 MD&A reports record quarterly revenue and improved production and costs, but also an ongoing mine and plant suspension pending a regulatory agreement, persistent material control weaknesses, and expansion timing and funding uncertainty.",
+  "run_id": "daily-20260817T131213Z"
+}
