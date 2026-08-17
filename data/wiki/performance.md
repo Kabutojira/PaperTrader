@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-08-16"
-updated: "2026-08-16"
+created: "2026-08-17"
+updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_41f09d602e4e0831772a"
-as_of: "2026-08-16T17:24:20Z"
+snapshot_id: "decision_8864a005d02d03b6bb61"
+as_of: "2026-08-17T01:18:35Z"
 ---
 
 # Performance and risk
 
-**As of `2026-08-16T17:24:20Z`**
+**As of `2026-08-17T01:18:35Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-16; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-16; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 6.25,45.00 12.50,45.00 18.75,45.00 25.00,45.00 31.25,45.00 37.50,45.00 43.75,45.00 50.00,45.00 56.25,45.00 62.50,45.00 68.75,45.00 75.00,45.00 81.25,45.00 87.50,45.00 93.75,45.00 100.00,45.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-17; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-17; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 5.88,45.00 11.76,45.00 17.65,45.00 23.53,45.00 29.41,45.00 35.29,45.00 41.18,45.00 47.06,45.00 52.94,45.00 58.82,45.00 64.71,45.00 70.59,45.00 76.47,45.00 82.35,45.00 88.24,45.00 94.12,45.00 100.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -57,6 +57,7 @@ No target allocation changes.
 | 2026-08-13 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-15 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-16 | 10000 | 10000 | 0 | 0% | 0% | 0% |
+| 2026-08-17 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 

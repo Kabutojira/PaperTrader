@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-16"
-updated: "2026-08-16"
+created: "2026-08-17"
+updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_41f09d602e4e0831772a"
-as_of: "2026-08-16T17:24:20Z"
+snapshot_id: "decision_8864a005d02d03b6bb61"
+as_of: "2026-08-17T01:18:35Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-16T17:24:20Z`
+**As of:** `2026-08-17T01:18:35Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-16T17:24:20Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 329
+- Research backlog: 332
 - Last successful daily run: 2026-08-16
 
 ## Current issues by investment impact
@@ -51,6 +51,7 @@ as_of: "2026-08-16T17:24:20Z"
 - Error **Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
+- Error **SGML — Sigma Lithium Corporation: Hermes operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-08]]** — files_changed is stale or incomplete: reported=['data/issues.md', 'data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/[[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-08]]/assessment_upsert_request.json', 'data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/[[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-08]]/enqueue_idea_refresh_request.json', 'data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/[[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-08]]/issue_record_request.json', 'data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/[[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-08]]/security_restore_after_assessment_failure_request.json', 'data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/01
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **CRWD — CrowdStrike Holdings, Inc.: CrowdStrike full assessment rejected by canonical market identity** — The required schema-v2 assessment for [[securities/security_8472507d7d320aa388a7|CRWD]] was rejected before any assessment state changed because immutable request assessment_upsert_request.json used reference price 123.87000274658203 and market timestamp 2026-08-10T22:29:57Z, while canonical data/market/latest.csv records adjusted close 225.16000366210938 retrieved at 2026-08-10T22:29:08Z. The operation contract forbids editing a used request or retrying a rejected project command, so this operation must fail close
@@ -158,7 +159,7 @@ as_of: "2026-08-16T17:24:20Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 329 active operations.
+Showing 20 of 332 active operations.
 
 <details><summary>Active research work</summary>
 

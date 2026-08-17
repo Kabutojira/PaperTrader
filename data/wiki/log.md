@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-16"
+updated: "2026-08-17"
 provenance: repository-contract
 ---
 
@@ -3865,3 +3865,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_41f09d602e4e0831772a`.
 
 - Generated canonical [[daily-reports/daily-report_20260816]] for run `daily-20260816T172034Z`.
+
+## 2026-08-17
+
+- Published investor decision snapshot `decision_8864a005d02d03b6bb61`.
+
+- Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T010615Z`.
