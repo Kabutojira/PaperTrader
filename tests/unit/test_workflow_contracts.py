@@ -23,7 +23,6 @@ HERMES_RELEASE_IMAGE = (
     "nousresearch/hermes-agent@"
     "sha256:9c841866021c54c4596849f6135717e8a4d52ba510b7f52c50aef1de1a283973"
 )
-SETUP_UV_ACTION = "astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9"
 
 
 def _workflow(path: Path) -> dict[str, object]:
@@ -570,20 +569,27 @@ def test_daily_forwards_scoped_runtime_secrets_and_auth_only_pushes_do_not_retri
     ]
 
 
-def test_hermes_runtime_bootstraps_uv_without_container_pip(repository_root: Path) -> None:
+def test_hermes_runtime_bootstraps_pinned_uv_from_container_runner(
+    repository_root: Path,
+) -> None:
     workflow = _workflow(repository_root / ".github" / "workflows" / "reusable-llm.yml")
     runtime = workflow["jobs"]["runtime"]
     install = next(
         step for step in runtime["steps"] if step["name"] == "Install pinned project runner"
     )
 
-    assert install["uses"] == SETUP_UV_ACTION
-    assert install["with"] == {
-        "version": "0.8.17",
-        "enable-cache": "false",
-        "github-token": "",
+    assert install["env"] == {
+        "UV_TOOL_BIN_DIR": "/tmp/papertrader-uv/bin",
+        "UV_TOOL_DIR": "/tmp/papertrader-uv/tools",
     }
-    assert "python3 -m pip" not in yaml.safe_dump(runtime)
+    assert install["run"] == (
+        "uv tool install --no-cache uv==0.8.17\n"
+        'test "$("$UV_TOOL_BIN_DIR/uv" --version)" = "uv 0.8.17"\n'
+        'echo "$UV_TOOL_BIN_DIR" >> "$GITHUB_PATH"\n'
+    )
+    runtime_text = yaml.safe_dump(runtime)
+    assert "astral-sh/setup-uv" not in runtime_text
+    assert "python3 -m pip" not in runtime_text
 
 
 def test_reporting_failure_state_and_pages_deployment_use_post_commit_boundaries(

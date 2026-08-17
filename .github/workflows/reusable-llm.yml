@@ -192,11 +192,13 @@ jobs:
           git config user.name "papertrader-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Install pinned project runner
-        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
-        with:
-          version: "0.8.17"
-          enable-cache: "false"
-          github-token: ""
+        env:
+          UV_TOOL_BIN_DIR: /tmp/papertrader-uv/bin
+          UV_TOOL_DIR: /tmp/papertrader-uv/tools
+        run: |
+          uv tool install --no-cache uv==0.8.17
+          test "$("$UV_TOOL_BIN_DIR/uv" --version)" = "uv 0.8.17"
+          echo "$UV_TOOL_BIN_DIR" >> "$GITHUB_PATH"
       - name: Install locked dependencies
         run: uv sync --locked --all-groups
       - name: Resolve one resumable daily cycle without mutating state
