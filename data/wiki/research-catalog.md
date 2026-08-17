@@ -7,8 +7,8 @@ tags:
 created: "2026-08-17"
 updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8864a005d02d03b6bb61"
-as_of: "2026-08-17T01:18:35Z"
+snapshot_id: "decision_1413f0ba9757c841c3ac"
+as_of: "2026-08-17T13:23:52Z"
 ---
 
 # Research catalog
@@ -173,6 +173,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PL — RSI oversold](inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960)
+- [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-48d79d4d9368)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-a75c5f2b1699)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7)
 - [PLTR — MACD cross above signal](inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba)
@@ -498,7 +499,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-48d79d4d9368|PLS.AX — Bollinger above upper]]

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-17"
 updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8864a005d02d03b6bb61"
-as_of: "2026-08-17T01:18:35Z"
+snapshot_id: "decision_1413f0ba9757c841c3ac"
+as_of: "2026-08-17T13:23:52Z"
 ---
 
 # Signals
 
-**As of `2026-08-17T01:18:35Z`**
+**As of `2026-08-17T13:23:52Z`**
 
 ## Actionable trade signals
 
@@ -33,6 +33,15 @@ No pending orders.
 - Market date: `2026-08-14`
 - Research status: `ready`
 - Conclusion: High-priority security research is ready to run.
+
+### PLS.AX — PLS Group Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
