@@ -92,6 +92,8 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.telegram.message_limit == 32768
     assert settings.podcast.tts_command == ("edge-tts",)
     assert settings.podcast.voice == "en-US-AriaNeural"
+    assert settings.podcast.operation_timeout_seconds == 1800
+    assert settings.hermes.profile("analyst").timeout_seconds == 1200
 
 
 def test_settings_require_the_pinned_edge_tts_entrypoint(
@@ -106,6 +108,24 @@ def test_settings_require_the_pinned_edge_tts_entrypoint(
     )
 
     with pytest.raises(ConfigurationError, match="must be exactly edge-tts"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
+
+
+def test_podcast_timeout_must_exceed_the_ordinary_analyst_limit(
+    sandbox_repository: Path, paper_environment: dict[str, str]
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(
+        path.read_text(encoding="utf-8").replace(
+            "operation_timeout_seconds = 1800", "operation_timeout_seconds = 1200"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigurationError, match="must exceed the analyst profile timeout"):
         load_settings(
             sandbox_repository,
             paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},

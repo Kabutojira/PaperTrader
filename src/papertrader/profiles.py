@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import Mapping
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, replace
 from pathlib import Path, PurePosixPath
 
 from papertrader.config import HermesExecutionProfile, Settings
@@ -213,6 +213,11 @@ def select_profile(
         escalation_source=escalation_source,
     )
     profile = settings.hermes.profile(route.profile)
+    if operation.operation_type == "daily_podcast":
+        profile = replace(
+            profile,
+            timeout_seconds=settings.podcast.operation_timeout_seconds,
+        )
     if profile.policy_version != route.profile_policy_version:
         raise ValueError("profile and router policy versions differ")
     return profile, route

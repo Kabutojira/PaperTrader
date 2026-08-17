@@ -290,6 +290,7 @@ class PodcastSettings:
 
     tts_command: tuple[str, ...]
     voice: str
+    operation_timeout_seconds: int
     chunk_character_limit: int
     minimum_duration_seconds: int
     maximum_duration_seconds: int
@@ -1019,19 +1020,28 @@ def _load_telegram_settings(parser: configparser.ConfigParser) -> TelegramSettin
     return settings
 
 
-def _load_podcast_settings(parser: configparser.ConfigParser) -> PodcastSettings:
+def _load_podcast_settings(
+    parser: configparser.ConfigParser, hermes: HermesSettings
+) -> PodcastSettings:
     command = tuple(shlex.split(parser.get("podcast", "tts_command")))
     if command != ("edge-tts",):
         raise ConfigurationError("podcast.tts_command must be exactly edge-tts")
     settings = PodcastSettings(
         tts_command=command,
         voice=parser.get("podcast", "voice").strip(),
+        operation_timeout_seconds=_positive_int(parser, "podcast", "operation_timeout_seconds"),
         chunk_character_limit=_positive_int(parser, "podcast", "chunk_character_limit"),
         minimum_duration_seconds=_positive_int(parser, "podcast", "minimum_duration_seconds"),
         maximum_duration_seconds=_positive_int(parser, "podcast", "maximum_duration_seconds"),
     )
     if not settings.voice:
         raise ConfigurationError("podcast.voice must not be empty")
+    if settings.operation_timeout_seconds <= hermes.profile("analyst").timeout_seconds:
+        raise ConfigurationError(
+            "podcast.operation_timeout_seconds must exceed the analyst profile timeout"
+        )
+    if settings.operation_timeout_seconds > 3600:
+        raise ConfigurationError("podcast.operation_timeout_seconds must be <= 3600")
     if settings.minimum_duration_seconds >= settings.maximum_duration_seconds:
         raise ConfigurationError("podcast duration bounds are invalid")
     return settings
@@ -1088,7 +1098,7 @@ def _load_settings_unchecked(
     hermes_auxiliary = _load_hermes_auxiliary_settings(parser, environment)
     hermes = _load_hermes_settings(parser, hermes_auxiliary, environment)
     telegram = _load_telegram_settings(parser)
-    podcast = _load_podcast_settings(parser)
+    podcast = _load_podcast_settings(parser, hermes)
 
     return Settings(
         config=parser,

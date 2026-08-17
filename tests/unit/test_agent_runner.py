@@ -197,6 +197,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
     assert command.count("--skills") == 3
     assert command[command.index("--toolsets") + 1] == "web,file,terminal"
     assert command[command.index("--max-turns") + 1] == "80"
+    assert captured["timeout"] == 1200
     child_environment = captured["environment"]
     assert isinstance(child_environment, dict)
     assert "OPENROUTER_API_KEY" not in child_environment
@@ -268,6 +269,17 @@ def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
     operation_id = _enqueue_podcast(
         sandbox_repository, sandbox_settings, run_id="podcast-contained-failure"
     )
+    captured: dict[str, int] = {}
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del cwd, environment
+        captured["timeout"] = timeout
+        return subprocess.CompletedProcess(command, hermes_returncode, "", "")
 
     status = run_one_operation(
         sandbox_repository,
@@ -281,12 +293,11 @@ def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
             ),
         },
         operation_id=operation_id,
-        executor=lambda command, cwd, environment, timeout: subprocess.CompletedProcess(
-            command, hermes_returncode, "", ""
-        ),
+        executor=execute,
     )
 
     assert status == "failed"
+    assert captured["timeout"] == 1800
     assert read_table(sandbox_repository, "operations_todo") == []
     history = read_table(sandbox_repository, "operations_history")
     assert history[0]["operation_id"] == operation_id
@@ -303,6 +314,9 @@ def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
     validation = json.loads((artifact_root / "validation_report.json").read_text())
     assert validation["passed"] is False
     assert any("agent result is missing" in error for error in validation["errors"])
+    profile_route = json.loads((artifact_root / "profile_route.json").read_text())
+    assert profile_route["profile"] == "analyst"
+    assert profile_route["timeout_seconds"] == 1800
 
 
 def test_missing_research_result_remains_a_hard_failure(
