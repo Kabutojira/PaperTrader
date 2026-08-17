@@ -288,3 +288,4 @@
 2026-08-17T14:47:29Z [daily_podcast_completed] run=daily-20260817T131213Z operation=01M081X8BGDJA34XM08JAKQFS1 Daily podcast finished with status failed.
 2026-08-17T15:20:14Z [daily_run_started] run=daily-20260817T152008Z Started sequential deterministic daily preparation.
 2026-08-17T16:16:08Z [daily_run_completed] run=daily-20260817T152008Z Completed deterministic daily run with status succeeded.
+2026-08-17T16:31:23Z [daily_podcast_completed] run=daily-20260817T152008Z operation=01M088J7S8ZY2SBRFFQCQJM72T Daily podcast finished with status succeeded.

@@ -1,0 +1,62 @@
+{
+  "operation_id": "01M088J7S8ZY2SBRFFQCQJM72T",
+  "status": "succeeded",
+  "summary": "Completed a ten-paragraph, 2,400-word research podcast around whether a cyclical miner's weak technical condition can become a durable opportunity. It synthesizes the accepted Vale review and Rio Tinto comparison, explains why Vale remains Hold / Watch and allocation-ineligible, and preserves the all-cash portfolio implication. The single audited draft-render attempt failed its initial length validation before media generation; it was not retried. The completed transcript now satisfies the required spoken-prose format and all permitted strict repository checks passed.",
+  "evidence": [
+    {
+      "source": "data/runs/daily-20260817T152008Z/podcast_context.json",
+      "source_hash": "5cd2c68280b16a5541ff8f51ec531385cc9cc5bc85eda2a707e281f81c44fc24",
+      "claim": "Frozen context version three defines the exclusive cutoff after the prior successful podcast and identifies the accepted Vale development, the Vale and Rio wiki pages, the completed decision snapshot, and the canonical daily report."
+    },
+    {
+      "source": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+      "source_hash": "f4761b1a147906f19abd98cde9b3e8ad1e3f554d62f78b3d69240a3e2173367e",
+      "claim": "Vale's accepted review supports maintained monitoring but identifies limited weighted and base-case upside, material bear downside, and unmet economic and relationship gates."
+    },
+    {
+      "source": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "source_hash": "2c390d14b6a84d98534e7d98f72f6984f4c788aea9f869fda3cfa04135b63bcd",
+      "claim": "Rio Tinto supplies the relevant diversified-miner comparison: copper delivery strengthened, but iron-ore exposure, capital intensity, and valuation constraints remain material."
+    },
+    {
+      "source": "data/runs/daily-20260817T152008Z/decision_snapshot.json",
+      "source_hash": "61ee3b61d76629d1c77fbb634fff827ebe5b86d025af92d172dc205516f0c091",
+      "claim": "The frozen decision state contains no actionable signals, no pending orders, and an all-cash model portfolio."
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260817.md",
+    "data/wiki/podcasts/daily-podcast_20260817T152008Z.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Published the frozen-cycle research podcast transcript, using Vale and Rio Tinto to explain why improved miner operations and a weak technical condition do not yet clear the required valuation and downside gates. The single audited draft render failed its initial length validation and was not retried; no persistent audio was created."
+  ],
+  "commands_run": [
+    "papertrader podcast render-draft --daily-cycle-id daily-20260817T152008Z --script-path data/wiki/podcasts/daily-podcast_20260817T152008Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Frozen context version, paths, and referenced hashes were verified before writing.",
+      "Spoken transcript formatting was verified: 2,400 words, ten prose paragraphs, no numeric glyphs, no visible link markup, no raw URLs, and no advice or trading-disclaimer language.",
+      "Exactly one audited render-draft invocation was recorded; it failed initial length validation and was not retried.",
+      "papertrader schema validate --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ]
+  }
+}

@@ -318,6 +318,10 @@ No pending orders.
 
 ## 8. Audit appendix
 
+## Podcast
+
+- [[podcasts/daily-podcast_20260817T152008Z|Research podcast transcript]]
+
 ### Run diagnostics
 
 - Report date: 2026-08-17
