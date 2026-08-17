@@ -346,6 +346,79 @@ def test_context_aggregates_intervening_cycles_with_exclusive_inclusive_boundari
     ]
 
 
+def test_context_uses_attempt_provenance_when_operation_is_retried_later(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    attempted_cycle = "daily-20260729T120000Z"
+    later_cycle = "daily-20260730T120000Z"
+    current_cycle = "daily-20260730T180000Z"
+    operation_id = "01ARZ3NDEKTSV4RRFFQ69G5FAC"
+    _cycle_manifest(
+        sandbox_repository,
+        attempted_cycle,
+        started_at="2026-07-29T11:00:00Z",
+        cutoff="2026-07-29T12:30:00Z",
+        operations=[{"operation_id": operation_id, "terminal_status": "failed"}],
+    )
+    _accepted_research(
+        sandbox_repository,
+        cycle_id=later_cycle,
+        operation_id=operation_id,
+        completed_at="2026-07-30T12:00:00Z",
+        page_path="data/wiki/ideas/retried_story.md",
+        summary="The later retry succeeded.",
+    )
+    attempt = sandbox_repository / "data" / "runs" / attempted_cycle / operation_id
+    attempt.mkdir(parents=True)
+    (attempt / "operation_history.json").write_text(
+        json.dumps(
+            {
+                "operation_history_version": 1,
+                "daily_cycle_id": attempted_cycle,
+                "operation_id": operation_id,
+                "operation_type": "idea_research",
+                "cycle_disposition": "failed",
+            }
+        ),
+        encoding="utf-8",
+    )
+    (attempt / "validation_report.json").write_text(
+        json.dumps({"errors": ["The first attempt failed validation."]}),
+        encoding="utf-8",
+    )
+    (attempt / "hermes_run.json").write_text(
+        json.dumps({"completed_at": "2026-07-29T12:15:00Z"}),
+        encoding="utf-8",
+    )
+    _cycle_manifest(
+        sandbox_repository,
+        current_cycle,
+        started_at="2026-07-30T17:00:00Z",
+        cutoff="2026-07-30T18:00:00Z",
+    )
+    unfinished = sandbox_repository / "data" / "runs" / "daily-unfinished"
+    unfinished.mkdir()
+    (unfinished / "daily_run.json").write_text(
+        json.dumps({"daily_cycle_id": "daily-unfinished", "status": "running"}),
+        encoding="utf-8",
+    )
+
+    result = enqueue_daily_podcast(
+        sandbox_repository, sandbox_settings, run_id=current_cycle, now=NOW
+    )
+    context = json.loads((sandbox_repository / result.context_path).read_text())
+
+    assert context["research_developments"] == []
+    assert [item["operation_id"] for item in context["unresolved_research_gaps"]] == [operation_id]
+    gap = context["unresolved_research_gaps"][0]
+    assert gap["daily_cycle_id"] == attempted_cycle
+    assert gap["result_path"] == (
+        f"data/runs/{attempted_cycle}/{operation_id}/validation_report.json"
+    )
+    assert gap["failure_errors"] == ["The first attempt failed validation."]
+
+
 def test_failed_podcast_is_recorded_without_requiring_audio(
     sandbox_repository: Path,
     sandbox_settings: Settings,

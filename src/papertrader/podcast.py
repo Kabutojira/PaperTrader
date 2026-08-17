@@ -95,9 +95,8 @@ def _load_object(path: Path) -> dict[str, object]:
 
 
 def _manifest_cutoff(manifest: Mapping[str, object]) -> datetime | None:
-    return parse_timestamp(
-        str(manifest.get("research_cutoff_at") or manifest.get("completed_at") or "")
-    )
+    raw = str(manifest.get("research_cutoff_at") or manifest.get("completed_at") or "").strip()
+    return parse_timestamp(raw) if raw else None
 
 
 def _regular_bytes(repository_root: Path, raw_path: str, *, label: str) -> bytes:
@@ -197,24 +196,39 @@ def _operation_result_item(
     window_start: datetime,
     cutoff: datetime,
 ) -> dict[str, object] | None:
-    histories = {
-        row["operation_id"]: row
-        for row in read_table(repository_root, "operations_history")
-        if row["claimed_by_run_id"] == run_id
-    }
-    active = {
-        row["operation_id"]: row
-        for row in read_table(repository_root, "operations_todo")
-        if row["claimed_by_run_id"] == run_id
-    }
-    row = histories.get(operation_id) or active.get(operation_id)
-    if row is None:
+    queue_matches = [
+        row
+        for table in ("operations_history", "operations_todo")
+        for row in read_table(repository_root, table)
+        if row["operation_id"] == operation_id
+    ]
+    if not queue_matches:
         raise PodcastError(f"accepted research is missing from queue state: {operation_id}")
+    if len(queue_matches) > 1:
+        raise PodcastError(f"accepted research has conflicting queue identities: {operation_id}")
+    row = queue_matches[0]
     if row["operation_type"] not in RESEARCH_OPERATION_TYPES:
         return None
-    result_path = (
-        row.get("result_path", "") or f"data/runs/{run_id}/{operation_id}/agent_result.json"
-    )
+
+    artifact_root = repository_root / "data" / "runs" / run_id / operation_id
+    attempt_history_path = artifact_root / "operation_history.json"
+    row_belongs_to_attempt = row["claimed_by_run_id"] == run_id
+    if attempt_history_path.is_file() and not attempt_history_path.is_symlink():
+        attempt_history = _load_object(attempt_history_path)
+        if (
+            attempt_history.get("operation_history_version") != 1
+            or attempt_history.get("daily_cycle_id") != run_id
+            or attempt_history.get("operation_id") != operation_id
+            or attempt_history.get("operation_type") != row["operation_type"]
+            or attempt_history.get("cycle_disposition") != accepted_item.get("terminal_status")
+        ):
+            raise PodcastError(
+                f"accepted research attempt has conflicting provenance: {operation_id}"
+            )
+    elif not row_belongs_to_attempt:
+        raise PodcastError(f"accepted research is missing run provenance: {operation_id}")
+
+    result_path = f"data/runs/{run_id}/{operation_id}/agent_result.json"
     result_file = repository_root / result_path
     validation: dict[str, object] = {}
     if result_file.is_file() and not result_file.is_symlink():
@@ -226,8 +240,8 @@ def _operation_result_item(
         raw_errors = validation.get("errors", [])
         failure_errors = raw_errors if isinstance(raw_errors, list) else []
         result = {
-            "summary": row.get("last_error", "")
-            or row.get("terminal_reason", "")
+            "summary": (row.get("last_error", "") if row_belongs_to_attempt else "")
+            or (row.get("terminal_reason", "") if row_belongs_to_attempt else "")
             or "The accepted research did not produce a valid result.",
             "evidence": [
                 {"source": result_path, "claim": str(error)}
@@ -238,13 +252,15 @@ def _operation_result_item(
             "files_changed": [],
         }
     run_artifact = _load_object(result_file.with_name("hermes_run.json"))
-    completed_at = row.get("completed_at", "") or str(run_artifact.get("completed_at", ""))
+    completed_at = (row.get("completed_at", "") if row_belongs_to_attempt else "") or str(
+        run_artifact.get("completed_at", "")
+    )
     completed = parse_timestamp(completed_at)
     if completed is None or not window_start < completed <= cutoff:
         raise PodcastError(
             f"accepted research result falls outside the frozen window: {operation_id}"
         )
-    status = row.get("terminal_status", "") or str(accepted_item.get("terminal_status", ""))
+    status = str(accepted_item.get("terminal_status", "")) or row.get("terminal_status", "")
     if status == "skipped":
         return None
     evidence = result.get("evidence", [])
@@ -257,7 +273,10 @@ def _operation_result_item(
         "entity_type": row["entity_type"],
         "entity_id": row["entity_id"],
         "status": status,
-        "summary": row.get("result_summary", "") or str(result.get("summary", "")),
+        "summary": (
+            (row.get("result_summary", "") if row_belongs_to_attempt else "")
+            or str(result.get("summary", ""))
+        ),
         "evidence": evidence if isinstance(evidence, list) else [],
         "daily_report_items": report_items if isinstance(report_items, list) else [],
         "files_changed": changed if isinstance(changed, list) else [],
