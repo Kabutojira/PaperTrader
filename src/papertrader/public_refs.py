@@ -341,7 +341,10 @@ class PublicEntityResolver:
                 r"(?=[0-9A-HJKMNP-TV-Z]{0,25}[A-HJKMNP-TV-Z])[0-9A-HJKMNP-TV-Z]{26}",
                 value,
             ):
-                return self.markdown("operation", value)
+                try:
+                    return self.markdown("operation", value)
+                except CanonicalValueError:
+                    return "unaccepted operation"
             prefix = value.split("_", maxsplit=1)[0]
             try:
                 return self.markdown(prefix, value)

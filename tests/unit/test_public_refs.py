@@ -5,8 +5,11 @@ from datetime import UTC, datetime
 from decimal import Decimal
 from pathlib import Path
 
+import pytest
+
 from papertrader.logs import record_completed_run
 from papertrader.public_refs import PublicEntityResolver
+from papertrader.utils import CanonicalValueError
 
 
 def test_humanize_resolves_prefixed_daily_run_id(sandbox_repository: Path) -> None:
@@ -77,3 +80,19 @@ def test_humanize_sanitizes_source_request_filename(sandbox_repository: Path) ->
     )
 
     assert rendered == "data/runs/example/recorded source.json"
+
+
+def test_humanize_sanitizes_rejected_operation_without_weakening_explicit_resolution(
+    sandbox_repository: Path,
+) -> None:
+    rejected_operation_id = "01M08H8C5RMJXFBKN97QDDMFRF"
+    resolver = PublicEntityResolver(sandbox_repository)
+
+    rendered = resolver.humanize(
+        f"Rejected data/operations/payloads/{rejected_operation_id}.json during validation."
+    )
+
+    assert rejected_operation_id not in rendered
+    assert "unaccepted operation" in rendered
+    with pytest.raises(CanonicalValueError, match="required public operation reference"):
+        resolver.markdown("operation", rejected_operation_id)

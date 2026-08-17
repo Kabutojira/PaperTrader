@@ -1110,6 +1110,7 @@ def run_claimed_operation(
             artifact_directory / "profile_route.json",
             prompt_path,
             preflight_path,
+            repository_root / "data" / "operations" / "operations_TODO.csv",
         )
     }
     before = snapshot_repository(repository_root)

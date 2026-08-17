@@ -447,6 +447,104 @@ def test_checkpointed_cycle_removes_rejected_delta_and_records_contained_failure
     )
 
 
+def test_rejected_structured_queue_delta_restores_claim_before_retry(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    cycle = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="b" * 40,
+        github_run_id="43",
+        workflow_attempt="1",
+        now=datetime(2026, 8, 5, 15, tzinfo=UTC),
+    )
+    subprocess.run(("git", "init"), cwd=sandbox_repository, check=True, capture_output=True)
+    subprocess.run(
+        ("git", "add", "data/operations/operations_TODO.csv"),
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        (
+            "git",
+            "-c",
+            "user.name=PaperTrader Tests",
+            "-c",
+            "user.email=papertrader-tests@example.invalid",
+            "commit",
+            "-m",
+            "seed queued operation",
+        ),
+        cwd=sandbox_repository,
+        check=True,
+        capture_output=True,
+    )
+    rejected_followup: dict[str, str] = {}
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del environment, timeout
+        followup_id, created = enqueue_operation(
+            cwd,
+            sandbox_settings,
+            operation_type="opportunity_research",
+            entity_type="opportunity",
+            entity_id="opp-sec-example-rejected-followup",
+            dedupe_key=(
+                "opportunity_research:opp-sec-example-rejected-followup:fixture:2026-08-05"
+            ),
+            prompt="Reject this follow-up with the timed-out attempt.",
+            inputs={
+                "security_id": "sec-example",
+                "trigger_type": "price_move",
+                "market_data_as_of": "2026-08-05T15:00:00Z",
+                "period_start": "2026-08-04",
+                "period_end": "2026-08-05",
+            },
+            source="test-rejected-agent-delta",
+            now=NOW,
+        )
+        assert created
+        rejected_followup["operation_id"] = followup_id
+        return subprocess.CompletedProcess(command, 124, "", "timed out")
+
+    outcome = run_cycle_operation(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=str(cycle["daily_cycle_id"]),
+        hermes_home=home,
+        environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
+        operation_id=operation_id,
+        executor=execute,
+    )
+
+    assert outcome is not None
+    assert outcome.status == "failed"
+    active = read_table(sandbox_repository, "operations_todo")
+    assert [row["operation_id"] for row in active] == [operation_id]
+    assert active[0]["status"] == "waiting"
+    assert active[0]["attempt_count"] == "1"
+    assert active[0]["claimed_by_run_id"] == ""
+    assert rejected_followup["operation_id"] not in {row["operation_id"] for row in active}
+    assert not (
+        sandbox_repository
+        / "data"
+        / "operations"
+        / "payloads"
+        / f"{rejected_followup['operation_id']}.json"
+    ).exists()
+
+
 def test_shared_budget_batch_runs_two_operations_strictly_sequentially(
     sandbox_repository: Path,
     sandbox_settings: Settings,
