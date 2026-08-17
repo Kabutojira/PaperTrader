@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_2010347f1a0a5ea60f47",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-06T15:48:55Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_2010347f1a0a5ea60f47.md",
+    "security_id": "security_2010347f1a0a5ea60f47"
+  },
+  "objective": "Revalidate security_2010347f1a0a5ea60f47 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M06M2NP8345PDBERKSEC20PZ",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_spot_q2_2026_interim_6k",
+    "source_spot_q2_2026_results_sec_ex99_1"
+  ]
+}
