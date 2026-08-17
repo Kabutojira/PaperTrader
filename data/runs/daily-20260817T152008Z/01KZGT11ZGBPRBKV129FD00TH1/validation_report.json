@@ -1,0 +1,41 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M085D4E020S10A3SKZF7DX0D.json",
+    "data/runs/daily-20260817T152008Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_request.json",
+    "data/runs/daily-20260817T152008Z/01KZGT11ZGBPRBKV129FD00TH1/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260817T152008Z/01KZGT11ZGBPRBKV129FD00TH1/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260817T152008Z/01KZGT11ZGBPRBKV129FD00TH1/security_upsert_request.json",
+    "data/runs/daily-20260817T152008Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_financials_request.json",
+    "data/runs/daily-20260817T152008Z/01KZGT11ZGBPRBKV129FD00TH1/source_sgml_q2_2026_mda_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4627aea1bf7d8943d3d8.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "post-run wiki lint: securities/security_4627aea1bf7d8943d3d8.md: broken or ambiguous wikilink [[concepts/commodity-price-volatility]]",
+    "post-run wiki lint: securities/security_4627aea1bf7d8943d3d8.md: broken or ambiguous wikilink [[concepts/lithium-supply-chain]]",
+    "post-run wiki lint: securities/security_4627aea1bf7d8943d3d8.md: broken or ambiguous wikilink [[concepts/regulatory-permitting]]"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZGT11ZGBPRBKV129FD00TH1",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260817T152008Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
