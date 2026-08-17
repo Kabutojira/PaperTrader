@@ -373,6 +373,12 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert podcast_synthesis["continue-on-error"] == "true"
     assert "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY" in podcast_synthesis["env"]
     assert "TELEGRAM_BOT_TOKEN" not in podcast_synthesis["env"]
+    synthesis_commands = podcast_synthesis["run"]
+    output_handoff = 'install -d -o hermes -g hermes -m 700 "$PAPERTRADER_PODCAST_OUTPUT_DIRECTORY"'
+    assert output_handoff in synthesis_commands
+    assert synthesis_commands.index(output_handoff) < synthesis_commands.index(
+        "papertrader agent run"
+    )
     telegram_steps = [
         step for step in runtime["steps"] if "TELEGRAM_BOT_TOKEN" in step.get("env", {})
     ]

@@ -667,7 +667,9 @@ jobs:
           PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
           PAPERTRADER_PODCAST_OUTPUT_DIRECTORY: ${{ runner.temp }}/papertrader-podcast/${{ steps.cycle.outputs.cycle_id }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-        run: uv run papertrader agent run --hermes-home "$HERMES_HOME" --run-id "$CYCLE_ID" --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast
+        run: |
+          install -d -o hermes -g hermes -m 700 "$PAPERTRADER_PODCAST_OUTPUT_DIRECTORY"
+          uv run papertrader agent run --hermes-home "$HERMES_HOME" --run-id "$CYCLE_ID" --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast
       - name: Encrypt a podcast-time OAuth refresh before its text checkpoint
         if: ${{ inputs.generate_podcast && !inputs.dry_run }}
         env:
