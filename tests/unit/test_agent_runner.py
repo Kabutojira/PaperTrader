@@ -96,7 +96,7 @@ def _enqueue_podcast(repository: Path, settings: Settings, *, run_id: str) -> st
         operation_type="daily_podcast",
         entity_type="run",
         entity_id=run_id,
-        dedupe_key=f"daily_podcast:{run_id}:text-v2",
+        dedupe_key=f"daily_podcast:{run_id}:research-v3",
         prompt="Create the completed run's daily podcast.",
         inputs={
             "run_id": run_id,
@@ -274,7 +274,12 @@ def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
         sandbox_settings,
         run_id="podcast-contained-failure",
         hermes_home=home,
-        environment={"PATH": "/usr/bin"},
+        environment={
+            "PATH": "/usr/bin",
+            "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY": str(
+                tmp_path / "papertrader-podcast" / "podcast-contained-failure"
+            ),
+        },
         operation_id=operation_id,
         executor=lambda command, cwd, environment, timeout: subprocess.CompletedProcess(
             command, hermes_returncode, "", ""
@@ -350,7 +355,12 @@ def test_podcast_validation_failure_with_partial_output_remains_hard(
             sandbox_settings,
             run_id="podcast-partial-output",
             hermes_home=home,
-            environment={"PATH": "/usr/bin"},
+            environment={
+                "PATH": "/usr/bin",
+                "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY": str(
+                    tmp_path / "papertrader-podcast" / "podcast-partial-output"
+                ),
+            },
             operation_id=operation_id,
             executor=execute,
         )

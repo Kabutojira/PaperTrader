@@ -14,6 +14,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 from papertrader.command_scope import command_allowed, normalized_command
 from papertrader.config import ConfigurationError, load_settings
 from papertrader.integrity import is_runtime_path_allowed, validate_integrity
+from papertrader.podcast import PodcastError, validate_podcast_script
 from papertrader.portfolio import reconcile_portfolio
 from papertrader.queue import Operation
 from papertrader.repository_state import RepositoryDelta, RepositorySnapshot
@@ -677,21 +678,23 @@ def _daily_podcast_text_errors(
     if page.is_symlink() or not page.is_file():
         return [*errors, "daily podcast transcript must be a regular file"]
     text = page.read_text(encoding="utf-8")
-    start_marker = "<!-- papertrader-spoken-transcript:start -->"
-    end_marker = "<!-- papertrader-spoken-transcript:end -->"
-    if text.count(start_marker) != 1 or text.count(end_marker) != 1:
-        errors.append("daily podcast requires one bounded spoken transcript")
-    else:
-        spoken = text.split(start_marker, maxsplit=1)[1].split(end_marker, maxsplit=1)[0]
-        word_count = len(re.findall(r"\b[\w'-]+\b", spoken))
-        if not 2400 <= word_count <= 3600:
-            errors.append("daily podcast spoken transcript must contain 2400-3600 words")
-        if "paper trad" not in spoken.casefold():
-            errors.append("daily podcast spoken transcript must label paper trading")
-    if operation.entity_id not in text:
-        errors.append("daily podcast transcript must identify its timestamped cycle")
+    try:
+        validate_podcast_script(text, daily_cycle_id=operation.entity_id)
+    except PodcastError as exc:
+        errors.append(str(exc))
     if re.search(r"(?i)\.(?:mp3|wav|m4a)(?:\b|[?#])", text):
         errors.append("daily podcast transcript must not contain a persistent audio link")
+    audit_entries, audit_errors = _load_command_audit(
+        repository_root, operation.claimed_by_run_id, operation.operation_id
+    )
+    errors.extend(audit_errors)
+    draft_attempts = [
+        entry
+        for entry in audit_entries
+        if _command_parts(entry)[1:3] == ("podcast", "render-draft")
+    ]
+    if len(draft_attempts) != 1:
+        errors.append("successful daily podcast must attempt audited draft rendering exactly once")
     if not isinstance(report_path, str) or report_path not in changed_paths:
         errors.append("succeeded daily podcast must link its transcript from the daily report")
     else:

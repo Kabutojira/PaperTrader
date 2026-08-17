@@ -471,6 +471,8 @@ so a locally executed cycle cannot exceed its recorded operation budget.
 
 ## Step 23 — Add profile-routed, checkpointed daily execution and ephemeral podcast audio — Planned (2026-08-04)
 
+> Podcast context, synthesis, and delivery details in this step are superseded by Step 24 below.
+
 ### Outcome
 
 The scheduled controller executes at most `MAX_OPERATIONS` queued research operations as a durable
@@ -908,3 +910,18 @@ A hosted fault-injection fixture must demonstrate this exact scenario:
   report, or transcript commits.
 - OAuth, GitHub, Telegram, deployment, brokerage, and age secrets remain within their exact existing
   purpose-bound steps and never reach Hermes tools or repository artifacts.
+
+## Step 24 — Make the podcast research-first with Hermes-owned ephemeral TTS — Complete (2026-08-17)
+
+Podcast context version three selects the most recent earlier successful transcript cutoff,
+aggregates accepted research across every intervening cycle, and freezes changed plus relevant
+linked wiki pages. New episodes are accessible narrative research programs: they explain maintained
+knowledge, avoid operation recaps and dense portfolio bookkeeping, spell out spoken quantities, and
+keep paper-trading identity only in frontmatter.
+
+Hermes now invokes one audited `podcast render-draft` command after writing the script. Edge TTS,
+chunk assembly, and validation run sequentially beneath a controller-provided runner-temp path.
+After the script checkpoint, deterministic `podcast seal-render` binds that existing audio to the
+exact committed transcript without a fallback render. Telegram sends committed spoken text and
+sealed audio independently in the same runtime job, persists only redacted retry issue state, and
+always removes all media. The former upload/download Actions-artifact handoff is removed.

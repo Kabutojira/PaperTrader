@@ -25,7 +25,9 @@ from papertrader.telegram import (
     UrllibTelegramTransport,
     deliver_committed_report,
     deliver_podcast_audio,
+    deliver_podcast_script,
     escape_markdown_v2,
+    podcast_script_messages,
     record_podcast_audio_failure,
     split_message,
     telegram_messages,
@@ -394,7 +396,7 @@ def _commit_podcast_handoff(repository: Path) -> tuple[str, Path, Path, str]:
     manifest.write_text(
         json.dumps(
             {
-                "audio_manifest_version": 1,
+                "audio_manifest_version": 2,
                 "daily_cycle_id": cycle_id,
                 "script_commit": commit,
                 "script_path": script_path,
@@ -435,6 +437,8 @@ def test_verified_ephemeral_podcast_audio_is_delivered_and_failures_are_stable(
     assert delivered.script_commit == commit
     assert transport.calls[0][1] == audio
     assert f"/blob/{commit}/data/wiki/podcasts/" in transport.calls[0][0]["caption"]
+    assert not audio.exists()
+    assert not manifest.exists()
 
     first = record_podcast_audio_failure(
         sandbox_repository,
@@ -454,6 +458,53 @@ def test_verified_ephemeral_podcast_audio_is_delivered_and_failures_are_stable(
     ]
     assert len(issues) == 1
     assert "artifact expired" in issues[0]["description"]
+
+
+def test_committed_podcast_script_preserves_paragraph_order_and_is_independent(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    commit, _, _, cycle_id = _commit_podcast_handoff(sandbox_repository)
+    script_path = "data/wiki/podcasts/daily-podcast_20260724T220000Z.md"
+    transport = _FakeTelegram([])
+
+    result = deliver_podcast_script(
+        sandbox_repository,
+        sandbox_settings,
+        commit_sha=commit,
+        script_path=script_path,
+        daily_cycle_id=cycle_id,
+        repository_url="https://github.com/example/PaperTrader",
+        token="secret-token",
+        chat_id="-123",
+        transport=transport,
+        sleeper=lambda _: None,
+    )
+
+    assert result.status == "sent"
+    rich = json.loads(transport.calls[0]["rich_message"])["markdown"]
+    assert rich.startswith("Daily portfolio review.")
+    assert f"/blob/{commit}/{script_path}" in rich
+
+
+def test_podcast_script_chunking_preserves_paragraph_boundaries() -> None:
+    first = "First paragraph stays whole because it carries enough explanatory context. " * 2
+    second = "Second paragraph also stays whole and follows the first in exact order. " * 2
+    markdown = (
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        f"{first}\n\n{second}\n"
+        "<!-- papertrader-spoken-transcript:end -->\n"
+    )
+    url = (
+        "https://github.com/example/PaperTrader/blob/"
+        + "a" * 40
+        + "/data/wiki/podcasts/daily-podcast_20260724T220000Z.md"
+    )
+    chunks = podcast_script_messages(markdown, committed_url=url, limit=180)
+
+    assert chunks[0] == first.strip()
+    assert chunks[1] == second.strip()
+    assert chunks[2].startswith("[Committed transcript]")
 
 
 def _commit_report(repository: Path) -> tuple[str, str]:

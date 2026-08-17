@@ -1021,8 +1021,8 @@ def _load_telegram_settings(parser: configparser.ConfigParser) -> TelegramSettin
 
 def _load_podcast_settings(parser: configparser.ConfigParser) -> PodcastSettings:
     command = tuple(shlex.split(parser.get("podcast", "tts_command")))
-    if not command:
-        raise ConfigurationError("podcast.tts_command must not be empty")
+    if command != ("edge-tts",):
+        raise ConfigurationError("podcast.tts_command must be exactly edge-tts")
     settings = PodcastSettings(
         tts_command=command,
         voice=parser.get("podcast", "voice").strip(),

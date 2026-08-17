@@ -108,6 +108,8 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
         "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
+        "TELEGRAM_BOT_TOKEN": "${{ secrets.TELEGRAM_BOT_TOKEN }}",
+        "TELEGRAM_CHAT_ID": "${{ secrets.TELEGRAM_CHAT_ID }}",
     }
     assert jobs["runtime"]["with"]["max_operations"] == (
         "${{ github.event_name == 'schedule' && '5' || inputs.max_operations || '5' }}"
@@ -173,8 +175,9 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "daily record-checkpoint" in text
     assert "podcast enqueue" in text
     assert "--operation-type daily_podcast" in text
-    assert "podcast render" in text
-    assert "retention-days: 1" in text
+    assert "podcast seal-render" in text
+    assert "actions/upload-artifact" not in text
+    assert "actions/download-artifact" not in text
     assert "workflow bundle create" not in text
     assert "workflow bundle apply" not in text
     assert "--yolo" not in text  # validated config and runner argv own this flag
@@ -189,9 +192,10 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         "OPENAI_OAUTH_SECRET",
         "OPENROUTER_API_KEY",
         "YOUTUBE_DATA_API",
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID",
     }
     assert "secrets.OPENAI_OAUTH_SECRET" in runtime_text
-    assert "TELEGRAM" not in runtime_text
     operation_steps = [
         step
         for step in runtime["steps"]
@@ -248,8 +252,8 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
         "${{ jobs.runtime.outputs.podcast_status }}"
     )
-    assert workflow["on"]["workflow_call"]["outputs"]["audio_render_status"]["value"] == (
-        "${{ jobs.runtime.outputs.audio_render_status }}"
+    assert workflow["on"]["workflow_call"]["outputs"]["podcast_audio_delivery_status"]["value"] == (
+        "${{ jobs.runtime.outputs.podcast_audio_delivery_status }}"
     )
     podcast_finalize = next(
         step
@@ -259,7 +263,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert podcast_finalize["id"] == "podcast_text"
     for step_name in (
         "Freeze complete cycle podcast context and enqueue text synthesis",
-        "Synthesize only the timestamped podcast transcript",
+        "Synthesize the transcript and one ephemeral audio draft",
         "Finalize text podcast and reserve its checkpoint",
     ):
         step = next(step for step in runtime["steps"] if step["name"] == step_name)
@@ -330,9 +334,26 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     podcast_synthesis = next(
         step
         for step in runtime["steps"]
-        if step["name"] == "Synthesize only the timestamped podcast transcript"
+        if step["name"] == "Synthesize the transcript and one ephemeral audio draft"
     )
     assert podcast_synthesis["continue-on-error"] == "true"
+    assert "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY" in podcast_synthesis["env"]
+    assert "TELEGRAM_BOT_TOKEN" not in podcast_synthesis["env"]
+    telegram_steps = [
+        step for step in runtime["steps"] if "TELEGRAM_BOT_TOKEN" in step.get("env", {})
+    ]
+    assert {step["name"] for step in telegram_steps} == {
+        "Deliver the exact committed podcast script",
+        "Deliver the independently sealed ephemeral podcast audio",
+    }
+    for step in telegram_steps:
+        assert step["continue-on-error"] == "true"
+        assert "always()" in step["if"]
+
+    delivery_state = next(
+        step for step in runtime["steps"] if step["name"] == "Validate podcast delivery issue state"
+    )
+    assert "always()" in delivery_state["if"]
 
 
 @pytest.mark.parametrize(
@@ -534,6 +555,8 @@ def test_daily_forwards_scoped_runtime_secrets_and_auth_only_pushes_do_not_retri
         "OPENAI_OAUTH_SECRET": "${{ secrets.OPENAI_OAUTH_SECRET }}",
         "OPENROUTER_API_KEY": "${{ secrets.OPENROUTER_API_KEY }}",
         "YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}",
+        "TELEGRAM_BOT_TOKEN": "${{ secrets.TELEGRAM_BOT_TOKEN }}",
+        "TELEGRAM_CHAT_ID": "${{ secrets.TELEGRAM_CHAT_ID }}",
     }
     assert runtime["with"]["scan_youtube"] == "true"
     assert daily["concurrency"] == {
@@ -577,10 +600,10 @@ def test_reporting_failure_state_and_pages_deployment_use_post_commit_boundaries
         "TELEGRAM_CHAT_ID",
     }
     assert "telegram deliver" in reporting_text
-    assert "telegram deliver-audio" in reporting_text
-    assert "telegram record-audio-failure" in reporting_text
-    assert "retention-days" not in reporting_text  # runtime owns the one-day upload
-    assert "Remove downloaded podcast media" in reporting_text
+    assert "telegram deliver-audio" not in reporting_text
+    assert "telegram record-audio-failure" not in reporting_text
+    assert "artifact" not in reporting_text.casefold()
+    assert "podcast" not in reporting_text.casefold()
     assert "runtime-whitelist validate --staged" in reporting_text
     assert "git rebase" in reporting_text
     assert "TELEGRAM_BOT_TOKEN" in delivery_text

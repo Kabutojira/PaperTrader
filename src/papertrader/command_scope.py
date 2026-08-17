@@ -60,6 +60,8 @@ def command_allowed(
         return True
     if _matches(command, ("issue", "record")):
         return True
+    if _matches(command, ("podcast", "render-draft")):
+        return operation_type == "daily_podcast"
     if _matches(command, ("queue", "enqueue")):
         return operation_type != "source_discovery"
     if _matches(command, ("seekingalpha", "enqueue-leads")):

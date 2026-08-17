@@ -82,7 +82,8 @@ from papertrader.podcast import (
     build_podcast_context,
     enqueue_daily_podcast,
     finalize_daily_podcast,
-    render_committed_podcast,
+    render_draft_podcast,
+    seal_podcast_render,
 )
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.profiles import RoutingContext, analyst_relationship_gate, route_profile
@@ -120,7 +121,9 @@ from papertrader.telegram import (
     committed_run_report_path,
     deliver_committed_report,
     deliver_podcast_audio,
+    deliver_podcast_script,
     record_podcast_audio_failure,
+    record_podcast_script_failure,
 )
 from papertrader.utils import (
     CanonicalValueError,
@@ -251,11 +254,14 @@ def _parser() -> argparse.ArgumentParser:
     podcast_context_build = podcast_context_commands.add_parser("build")
     podcast_context_build.add_argument("--daily-cycle-id", required=True)
     podcast_context_build.add_argument("--cutoff", required=True)
-    podcast_render = podcast_commands.add_parser("render")
-    podcast_render.add_argument("--daily-cycle-id", required=True)
-    podcast_render.add_argument("--script-commit", required=True)
-    podcast_render.add_argument("--script-path", required=True)
-    podcast_render.add_argument("--output-directory", type=Path, required=True)
+    podcast_render_draft = podcast_commands.add_parser("render-draft")
+    podcast_render_draft.add_argument("--daily-cycle-id", required=True)
+    podcast_render_draft.add_argument("--script-path", required=True)
+    podcast_seal = podcast_commands.add_parser("seal-render")
+    podcast_seal.add_argument("--daily-cycle-id", required=True)
+    podcast_seal.add_argument("--script-commit", required=True)
+    podcast_seal.add_argument("--script-path", required=True)
+    podcast_seal.add_argument("--output-directory", type=Path, required=True)
     podcast_finalize = podcast_commands.add_parser("finalize")
     podcast_finalize.add_argument("--run-id", required=True)
 
@@ -447,6 +453,15 @@ def _parser() -> argparse.ArgumentParser:
     telegram_audio_failure.add_argument("--daily-cycle-id", required=True)
     telegram_audio_failure.add_argument("--script-commit", required=True)
     telegram_audio_failure.add_argument("--error", required=True)
+    telegram_script = telegram_commands.add_parser("deliver-podcast-script")
+    telegram_script.add_argument("--commit-sha", required=True)
+    telegram_script.add_argument("--script-path", required=True)
+    telegram_script.add_argument("--daily-cycle-id", required=True)
+    telegram_script.add_argument("--repository-url", required=True)
+    telegram_script_failure = telegram_commands.add_parser("record-script-failure")
+    telegram_script_failure.add_argument("--daily-cycle-id", required=True)
+    telegram_script_failure.add_argument("--script-commit", required=True)
+    telegram_script_failure.add_argument("--error", required=True)
 
     workflow = commands.add_parser("workflow", help="handoff validated runtime patches")
     workflow_commands = workflow.add_subparsers(dest="workflow_command", required=True)
@@ -1243,11 +1258,37 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 )
             )
             return 0
-        if arguments.podcast_command == "render":
+        if arguments.podcast_command == "render-draft":
+            output_directory = os.environ.get("PAPERTRADER_PODCAST_OUTPUT_DIRECTORY", "")
+            if not output_directory:
+                raise CanonicalValueError(
+                    "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY is required for draft rendering"
+                )
             print(
                 json.dumps(
                     asdict(
-                        render_committed_podcast(
+                        render_draft_podcast(
+                            root,
+                            settings,
+                            daily_cycle_id=arguments.daily_cycle_id,
+                            script_path=arguments.script_path,
+                            output_directory=Path(output_directory),
+                            audit_run_id=os.environ.get("PAPERTRADER_AUDIT_RUN_ID", ""),
+                            audit_operation_id=os.environ.get("PAPERTRADER_AUDIT_OPERATION_ID", ""),
+                            audit_operation_type=os.environ.get(
+                                "PAPERTRADER_AUDIT_OPERATION_TYPE", ""
+                            ),
+                        )
+                    ),
+                    sort_keys=True,
+                )
+            )
+            return 0
+        if arguments.podcast_command == "seal-render":
+            print(
+                json.dumps(
+                    asdict(
+                        seal_podcast_render(
                             root,
                             settings,
                             daily_cycle_id=arguments.daily_cycle_id,
@@ -1387,14 +1428,23 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
         print(disposition)
         return 0
     if arguments.command == "telegram":
-        if arguments.telegram_command == "record-audio-failure":
-            failure_result = record_podcast_audio_failure(
+        if arguments.telegram_command == "record-script-failure":
+            failure_result = record_podcast_script_failure(
                 root,
                 daily_cycle_id=arguments.daily_cycle_id,
                 script_commit=arguments.script_commit,
                 error=arguments.error,
             )
             print(json.dumps(asdict(failure_result), sort_keys=True))
+            return 0
+        if arguments.telegram_command == "record-audio-failure":
+            audio_failure_result = record_podcast_audio_failure(
+                root,
+                daily_cycle_id=arguments.daily_cycle_id,
+                script_commit=arguments.script_commit,
+                error=arguments.error,
+            )
+            print(json.dumps(asdict(audio_failure_result), sort_keys=True))
             return 0
         if arguments.telegram_command == "deliver-audio":
             audio_delivery_result = deliver_podcast_audio(
@@ -1407,6 +1457,19 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                 chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
             )
             print(json.dumps(asdict(audio_delivery_result), sort_keys=True))
+            return 0
+        if arguments.telegram_command == "deliver-podcast-script":
+            script_delivery_result = deliver_podcast_script(
+                root,
+                settings,
+                commit_sha=arguments.commit_sha,
+                script_path=arguments.script_path,
+                daily_cycle_id=arguments.daily_cycle_id,
+                repository_url=arguments.repository_url,
+                token=os.environ.get("TELEGRAM_BOT_TOKEN", ""),
+                chat_id=os.environ.get("TELEGRAM_CHAT_ID", ""),
+            )
+            print(json.dumps(asdict(script_delivery_result), sort_keys=True))
             return 0
         report_path = (
             committed_run_report_path(

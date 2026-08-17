@@ -569,13 +569,21 @@ remains entirely deterministic.
 
 - Run exactly once as the final sequential LLM operation after the daily report, allocation, and
   decision snapshot are complete.
-- Use the deterministic completed-run context plus linked wiki pages to order the day's material
-  arguments into one coherent investor-facing sequence.
-- Write an original 2,400-3,600 word script aiming for about twenty minutes, explicitly label paper
-  trading, preserve uncertainty, and avoid duplicating merged alert causes.
-- Commit only the timestamped transcript. After that checkpoint, deterministic code reads the exact
-  committed transcript, renders and validates TTS audio sequentially outside the checkout, and
-  hands it ephemerally to Telegram. Never add audio or TTS chunks to Git or Pages.
+- Use context version three to cover accepted research after the most recent successful podcast
+  cutoff through the current cutoff, with a seven-day bootstrap when no earlier episode exists.
+  Read relevant linked maintained wiki pages and the prior transcript to explain core knowledge
+  without repeating stale narration.
+- Write an accessible, story-driven 2,400-3,600 word research program aiming for about twenty
+  minutes. Open with the strongest research question, connect mechanisms and counterarguments, and
+  keep portfolio implications brief. Spell out spoken quantities and use no numeric glyphs,
+  Markdown lists/tables, visible machine IDs, raw URLs, or spoken advice/trading disclaimers.
+- Preserve paper-trading identity only as `paper_trading: true` in frontmatter. After writing the
+  script, invoke the audited `podcast render-draft` command exactly once. A failed TTS attempt does
+  not invalidate a valid script and must never trigger a deterministic fallback render.
+- Commit only the timestamped transcript. After that checkpoint, deterministic code seals the
+  existing runner-temp audio against the exact committed script, delivers committed spoken text and
+  audio independently to Telegram, and deletes all media. Never add audio or TTS chunks to Git,
+  Pages, run artifacts, logs, or Actions artifacts.
 - The podcast may describe accepted state but may never change research conclusions, allocation,
   advice, signals, orders, fills, cash, positions, or performance.
 - Podcast queue rows and payloads are delivery-only generated state and are excluded from decision

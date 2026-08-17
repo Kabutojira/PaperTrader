@@ -12,6 +12,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections.abc import Callable, Mapping
+from contextlib import suppress
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -19,6 +20,7 @@ from typing import Protocol
 
 from papertrader.config import Settings
 from papertrader.issues import record_issue, resolve_issue
+from papertrader.podcast import PodcastError, spoken_transcript
 from papertrader.tables import read_table
 from papertrader.utils import CanonicalValueError, content_hash, stable_id
 
@@ -39,6 +41,7 @@ INVESTOR_BRIEF_START = "<!-- papertrader-investor-brief:start -->"
 INVESTOR_BRIEF_END = "<!-- papertrader-investor-brief:end -->"
 DELIVERY_ISSUE_TITLE = "Telegram delivery unavailable"
 AUDIO_DELIVERY_ISSUE_TITLE = "Telegram podcast audio delivery unavailable"
+SCRIPT_DELIVERY_ISSUE_TITLE = "Telegram podcast script delivery unavailable"
 PODCAST_PATH = re.compile(r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md$")
 
 
@@ -203,6 +206,18 @@ class TelegramAudioDeliveryResult:
     error: str
 
 
+@dataclass(frozen=True, slots=True)
+class TelegramPodcastScriptDeliveryResult:
+    status: str
+    daily_cycle_id: str
+    script_commit: str
+    script_path: str
+    chunks_sent: int
+    total_chunks: int
+    issue_id: str
+    error: str
+
+
 def record_podcast_audio_failure(
     repository_root: Path,
     *,
@@ -229,6 +244,35 @@ def record_podcast_audio_failure(
     )
     return TelegramAudioDeliveryResult(
         "failed", daily_cycle_id, script_commit, "", issue_id, safe_error
+    )
+
+
+def record_podcast_script_failure(
+    repository_root: Path,
+    *,
+    daily_cycle_id: str,
+    script_commit: str,
+    error: str,
+    now: datetime | None = None,
+) -> TelegramPodcastScriptDeliveryResult:
+    """Persist redacted retry state when committed-script delivery cannot start."""
+
+    if not RUN_ID.fullmatch(daily_cycle_id) or not COMMIT_SHA.fullmatch(script_commit):
+        raise CanonicalValueError("podcast script failure identity is invalid")
+    safe_error = " ".join(error.split())[:500]
+    if not safe_error:
+        raise CanonicalValueError("podcast script failure requires a reason")
+    issue_id = record_issue(
+        repository_root,
+        severity="warning",
+        title=SCRIPT_DELIVERY_ISSUE_TITLE,
+        description=(f"cycle={daily_cycle_id} commit={script_commit} error={safe_error}"),
+        owner="delivery",
+        related_run_id=daily_cycle_id,
+        now=now,
+    )
+    return TelegramPodcastScriptDeliveryResult(
+        "failed", daily_cycle_id, script_commit, "", 0, 0, issue_id, safe_error
     )
 
 
@@ -410,6 +454,80 @@ def _committed_report(
     return report
 
 
+def _committed_podcast_script(
+    repository_root: Path,
+    *,
+    commit_sha: str,
+    script_path: str,
+    daily_cycle_id: str,
+) -> str:
+    if not COMMIT_SHA.fullmatch(commit_sha):
+        raise CanonicalValueError("podcast script commit must contain 40 lowercase hex characters")
+    if (
+        not RUN_ID.fullmatch(daily_cycle_id)
+        or not PODCAST_PATH.fullmatch(script_path)
+        or script_path
+        != f"data/wiki/podcasts/daily-podcast_{daily_cycle_id.removeprefix('daily-')}.md"
+    ):
+        raise CanonicalValueError("podcast script identity is not canonical")
+    result = subprocess.run(
+        ["git", "show", f"{commit_sha}:{script_path}"],
+        cwd=repository_root,
+        check=False,
+        capture_output=True,
+    )
+    if result.returncode != 0:
+        raise CanonicalValueError("committed podcast script is unavailable")
+    try:
+        markdown = result.stdout.decode("utf-8")
+    except UnicodeError as exc:
+        raise CanonicalValueError("committed podcast script is not UTF-8") from exc
+    try:
+        spoken_transcript(markdown)
+    except PodcastError as exc:
+        raise CanonicalValueError(f"committed podcast script is invalid: {exc}") from exc
+    return markdown
+
+
+def podcast_script_messages(
+    markdown: str,
+    *,
+    committed_url: str,
+    limit: int,
+) -> tuple[str, ...]:
+    """Pack exact spoken paragraphs in order and append one committed-transcript link."""
+
+    if limit <= 0:
+        raise ValueError("message limit must be positive")
+    try:
+        transcript = spoken_transcript(markdown)
+    except PodcastError as exc:
+        raise CanonicalValueError(str(exc)) from exc
+    if not re.fullmatch(
+        r"https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/blob/[0-9a-f]{40}/data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md",
+        committed_url,
+    ):
+        raise CanonicalValueError("committed podcast URL is not canonical")
+    paragraphs = [value.strip() for value in re.split(r"\n\s*\n", transcript) if value.strip()]
+    paragraphs.append(f"[Committed transcript]({committed_url})")
+    chunks: list[str] = []
+    current = ""
+    for paragraph in paragraphs:
+        if len(paragraph) > limit:
+            raise CanonicalValueError(
+                "one committed podcast paragraph exceeds the Telegram message limit"
+            )
+        candidate = f"{current}\n\n{paragraph}" if current else paragraph
+        if current and len(candidate) > limit:
+            chunks.append(current)
+            current = paragraph
+        else:
+            current = candidate
+    if current:
+        chunks.append(current)
+    return tuple(chunks)
+
+
 def committed_run_report_path(repository_root: Path, *, commit_sha: str, run_id: str) -> str:
     """Resolve a completed run's canonical report from the exact selected commit."""
 
@@ -451,6 +569,14 @@ def _safe_error(error: BaseException | str, *secrets: str) -> str:
 
 def _delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
     issue_id = stable_id("issue", DELIVERY_ISSUE_TITLE.casefold(), "")
+    return next(
+        (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
+        None,
+    )
+
+
+def _podcast_script_delivery_issue(repository_root: Path) -> Mapping[str, str] | None:
+    issue_id = stable_id("issue", SCRIPT_DELIVERY_ISSUE_TITLE.casefold(), "")
     return next(
         (row for row in read_table(repository_root, "issues") if row["issue_id"] == issue_id),
         None,
@@ -604,7 +730,136 @@ def deliver_committed_report(
     )
 
 
-def deliver_podcast_audio(
+def deliver_podcast_script(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    commit_sha: str,
+    script_path: str,
+    daily_cycle_id: str,
+    repository_url: str,
+    token: str,
+    chat_id: str,
+    transport: TelegramTransport | None = None,
+    sleeper: Callable[[float], None] = time.sleep,
+    now: datetime | None = None,
+) -> TelegramPodcastScriptDeliveryResult:
+    """Deliver only exact committed spoken paragraphs with independent retry state."""
+
+    if not REPOSITORY_URL.fullmatch(repository_url):
+        raise CanonicalValueError("Telegram repository URL must identify a github.com repository")
+    markdown = _committed_podcast_script(
+        repository_root,
+        commit_sha=commit_sha,
+        script_path=script_path,
+        daily_cycle_id=daily_cycle_id,
+    )
+    committed_url = f"{repository_url}/blob/{commit_sha}/{script_path}"
+    messages = podcast_script_messages(
+        markdown,
+        committed_url=committed_url,
+        limit=settings.telegram.message_limit,
+    )
+    prior_issue = _podcast_script_delivery_issue(repository_root)
+    start_at = _resume_chunk(prior_issue, commit_sha, len(messages))
+    selected_transport = transport or UrllibTelegramTransport()
+    sent = 0
+    failure = ""
+    failed_at = start_at
+    if not token or not CHAT_ID.fullmatch(chat_id):
+        failure = "Telegram bot token and canonical chat ID are required"
+    else:
+        preflight = getattr(selected_transport, "preflight", None)
+        if callable(preflight):
+            try:
+                preflight(token, chat_id, timeout_seconds=settings.telegram.timeout_seconds)
+            except (OSError, TelegramDeliveryError, ValueError) as exc:
+                failure = _safe_error(exc, token, chat_id)
+        for index in range(start_at, len(messages)):
+            if failure:
+                break
+            failed_at = index
+            message_failure = ""
+            for attempt in range(1, settings.telegram.maximum_attempts + 1):
+                try:
+                    response = selected_transport.send(
+                        token,
+                        {
+                            "chat_id": chat_id,
+                            "rich_message": json.dumps(
+                                {"markdown": messages[index]},
+                                ensure_ascii=False,
+                                separators=(",", ":"),
+                            ),
+                        },
+                        timeout_seconds=settings.telegram.timeout_seconds,
+                    )
+                    if response.get("ok") is not True:
+                        raise TelegramDeliveryError(
+                            str(response.get("description", "Telegram rejected the script"))
+                        )
+                    sent += 1
+                    message_failure = ""
+                    break
+                except (OSError, TelegramDeliveryError, ValueError) as exc:
+                    message_failure = _safe_error(exc, token, chat_id)
+                    if attempt < settings.telegram.maximum_attempts:
+                        sleeper(float(2 ** (attempt - 1)))
+            if message_failure:
+                failure = message_failure
+                break
+    if failure:
+        issue_id = record_issue(
+            repository_root,
+            severity="warning",
+            title=SCRIPT_DELIVERY_ISSUE_TITLE,
+            description=(
+                f"cycle={daily_cycle_id} script={script_path} commit={commit_sha} "
+                f"next_chunk={failed_at} total_chunks={len(messages)} error={failure}"
+            ),
+            owner="delivery",
+            related_run_id=daily_cycle_id,
+            now=now,
+        )
+        return TelegramPodcastScriptDeliveryResult(
+            "failed",
+            daily_cycle_id,
+            commit_sha,
+            script_path,
+            sent,
+            len(messages),
+            issue_id,
+            failure,
+        )
+    issue_id = stable_id("issue", SCRIPT_DELIVERY_ISSUE_TITLE.casefold(), "")
+    issue = next(
+        (
+            row
+            for row in read_table(repository_root, "issues")
+            if row["issue_id"] == issue_id and row["status"] == "open"
+        ),
+        None,
+    )
+    if issue is not None:
+        resolve_issue(
+            repository_root,
+            issue_id,
+            f"Podcast script for {daily_cycle_id} at {commit_sha} delivered successfully.",
+            now=now,
+        )
+    return TelegramPodcastScriptDeliveryResult(
+        "sent",
+        daily_cycle_id,
+        commit_sha,
+        script_path,
+        sent,
+        len(messages),
+        issue_id,
+        "",
+    )
+
+
+def _deliver_podcast_audio(
     repository_root: Path,
     settings: Settings,
     *,
@@ -627,7 +882,7 @@ def deliver_podcast_audio(
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         raise CanonicalValueError(f"ephemeral audio manifest is invalid: {exc}") from exc
-    if not isinstance(manifest, dict) or manifest.get("audio_manifest_version") != 1:
+    if not isinstance(manifest, dict) or manifest.get("audio_manifest_version") != 2:
         raise CanonicalValueError("ephemeral audio manifest contract is invalid")
     cycle_id = manifest.get("daily_cycle_id")
     script_commit = manifest.get("script_commit")
@@ -650,6 +905,15 @@ def deliver_podcast_audio(
         raise CanonicalValueError("ephemeral podcast audio exceeds its delivery limit")
     if manifest.get("audio_size") != audio_path.stat().st_size:
         raise CanonicalValueError("ephemeral podcast audio size differs from its manifest")
+    duration = manifest.get("duration_seconds")
+    if (
+        isinstance(duration, bool)
+        or not isinstance(duration, int)
+        or not settings.podcast.minimum_duration_seconds
+        <= duration
+        <= settings.podcast.maximum_duration_seconds
+    ):
+        raise CanonicalValueError("ephemeral podcast duration is outside configured bounds")
     audio_sha = content_hash(audio_path.read_bytes())
     if manifest.get("audio_sha256") != audio_sha:
         raise CanonicalValueError("ephemeral podcast audio hash differs from its manifest")
@@ -731,3 +995,40 @@ def deliver_podcast_audio(
             now=now,
         )
     return TelegramAudioDeliveryResult("sent", cycle_id, script_commit, audio_sha, issue_id, "")
+
+
+def deliver_podcast_audio(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    manifest_path: Path,
+    audio_path: Path,
+    repository_url: str,
+    token: str,
+    chat_id: str,
+    transport: TelegramTransport | None = None,
+    sleeper: Callable[[float], None] = time.sleep,
+    now: datetime | None = None,
+) -> TelegramAudioDeliveryResult:
+    """Deliver sealed audio and immediately remove the ephemeral media handoff."""
+
+    try:
+        return _deliver_podcast_audio(
+            repository_root,
+            settings,
+            manifest_path=manifest_path,
+            audio_path=audio_path,
+            repository_url=repository_url,
+            token=token,
+            chat_id=chat_id,
+            transport=transport,
+            sleeper=sleeper,
+            now=now,
+        )
+    finally:
+        for path in (audio_path, manifest_path):
+            if path.is_file() and not path.is_symlink():
+                path.unlink(missing_ok=True)
+        if audio_path.parent == manifest_path.parent:
+            with suppress(OSError):
+                audio_path.parent.rmdir()

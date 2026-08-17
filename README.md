@@ -387,18 +387,21 @@ Podcast generation is off by default. Enable it for a manual daily run with the
 variable `GENERATE_PODCAST` to `true` for scheduled runs. An enabled non-dry daily workflow
 finishes with one priority-100 `daily_podcast` operation after the canonical report and decision
 snapshot exist. Deterministic code collects all accepted operation results for that run into
-`data/runs/<run_id>/podcast_context.json`; the podcast skill combines related alerts, orders the
-material arguments, and writes an original 2,400-3,600 word transcript under
-`data/wiki/podcasts/` using the cycle's full UTC timestamp.
+`data/runs/<run_id>/podcast_context.json`. Context version three starts exclusively after the most
+recent successful podcast cutoff, aggregates every intervening cycle through the current inclusive
+cutoff, and falls back to seven days for the first episode. It separates accepted research changes
+from relevant unresolved gaps and freezes changed wiki pages, linked background knowledge, and the
+prior transcript. The skill turns that material into an accessible 2,400-3,600 word research story
+under `data/wiki/podcasts/`, with portfolio state limited to a brief implication.
 
-Hermes receives no TTS toolset for this operation and synthesizes text only. After that transcript
-checkpoint, `papertrader podcast render` reads the exact page
-from its Git commit, uses the locked `edge-tts` backend to synthesize sequential chunks outside the
-checkout, verifies the duration and
-hashes, and passes the ephemeral MP3 manifest to isolated Telegram delivery. The
-daily report links the result. Podcast queue and payload state is delivery-only and excluded from
-decision source hashes, so this generated view cannot feed back into or invalidate the immutable
-investment snapshot.
+After writing the script, Hermes invokes the audited `podcast render-draft` command exactly once.
+Pinned Edge TTS runs sequentially only in a controller-selected runner-temp directory. Once the
+transcript checkpoint is pushed, `podcast seal-render` binds the existing MP3 to the exact committed
+script hash without synthesizing again. Deterministic Telegram steps then deliver the committed
+spoken text and sealed audio independently in the same runtime job. No media enters Git, Pages,
+logs, run artifacts, or GitHub Actions artifacts, and all temporary audio and manifests are removed
+after delivery or failure. Podcast state remains a one-way delivery view and cannot invalidate the
+immutable investment snapshot.
 
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,

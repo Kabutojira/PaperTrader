@@ -90,6 +90,26 @@ def test_settings_resolve_canonical_wiki_and_skills(
     assert settings.telegram.maximum_attempts == 3
     assert settings.telegram.timeout_seconds == 15
     assert settings.telegram.message_limit == 32768
+    assert settings.podcast.tts_command == ("edge-tts",)
+    assert settings.podcast.voice == "en-US-AriaNeural"
+
+
+def test_settings_require_the_pinned_edge_tts_entrypoint(
+    sandbox_repository: Path, paper_environment: dict[str, str]
+) -> None:
+    path = sandbox_repository / "config.ini"
+    path.write_text(
+        path.read_text(encoding="utf-8").replace(
+            "tts_command = edge-tts", "tts_command = another-renderer"
+        ),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(ConfigurationError, match="must be exactly edge-tts"):
+        load_settings(
+            sandbox_repository,
+            paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},
+        )
 
 
 def test_settings_reject_noncanonical_wiki(

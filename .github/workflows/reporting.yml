@@ -15,38 +15,6 @@ on:
         description: Runtime run ID linked to delivery state
         required: true
         type: string
-      daily_cycle_id:
-        required: false
-        default: ""
-        type: string
-      podcast_path:
-        required: false
-        default: ""
-        type: string
-      audio_artifact_name:
-        required: false
-        default: ""
-        type: string
-      audio_artifact_run_id:
-        required: false
-        default: ""
-        type: string
-      audio_path:
-        required: false
-        default: ""
-        type: string
-      audio_manifest_path:
-        required: false
-        default: ""
-        type: string
-      audio_render_status:
-        required: false
-        default: skipped
-        type: string
-      send_podcast_audio:
-        required: false
-        default: false
-        type: boolean
       send_telegram:
         description: Deliver the report and persist a retryable failure issue
         required: false
@@ -76,8 +44,6 @@ on:
       delivery_status:
         description: sent, failed, or skipped
         value: ${{ jobs.delivery.outputs.delivery_status }}
-      audio_delivery_status:
-        value: ${{ jobs.delivery.outputs.audio_delivery_status }}
   workflow_dispatch:
     inputs:
       commit_sha:
@@ -92,41 +58,6 @@ on:
         description: Runtime run ID linked to delivery state
         required: true
         type: string
-      daily_cycle_id:
-        description: Timestamped cycle owning an optional podcast retry
-        required: false
-        default: ""
-        type: string
-      podcast_path:
-        required: false
-        default: ""
-        type: string
-      audio_artifact_name:
-        required: false
-        default: ""
-        type: string
-      audio_artifact_run_id:
-        description: Workflow run containing the one-day audio artifact
-        required: false
-        default: ""
-        type: string
-      audio_path:
-        required: false
-        default: ""
-        type: string
-      audio_manifest_path:
-        required: false
-        default: ""
-        type: string
-      audio_render_status:
-        required: false
-        default: skipped
-        type: string
-      send_podcast_audio:
-        description: Retry a verified one-day podcast audio handoff
-        required: false
-        default: false
-        type: boolean
       send_telegram:
         description: Deliver the report
         required: false
@@ -155,7 +86,6 @@ jobs:
       WIKI_PATH: ${{ github.workspace }}/data/wiki
     outputs:
       delivery_status: ${{ steps.deliver.outputs.status || steps.skipped.outputs.status }}
-      audio_delivery_status: ${{ steps.deliver_audio.outputs.status || steps.audio_failure.outputs.status || steps.audio_skipped.outputs.status }}
       final_sha: ${{ steps.outcome.outputs.final_sha }}
     steps:
       - name: Check out current default-branch state without persisted credentials
@@ -168,16 +98,6 @@ jobs:
         run: python3 -m pip install --disable-pip-version-check uv==0.8.17
       - name: Install locked Python dependencies
         run: uv sync --locked --all-groups
-      - name: Download the one-day podcast audio handoff
-        id: download_audio
-        if: ${{ inputs.send_podcast_audio }}
-        continue-on-error: true
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
-        with:
-          name: ${{ inputs.audio_artifact_name }}
-          path: ${{ runner.temp }}/papertrader-podcast
-          run-id: ${{ inputs.audio_artifact_run_id || github.run_id }}
-          github-token: ${{ github.token }}
       - name: Deliver the exact committed canonical report
         id: deliver
         if: ${{ inputs.send_telegram }}
@@ -199,44 +119,6 @@ jobs:
       - name: Mark disabled delivery as skipped
         id: skipped
         if: ${{ !inputs.send_telegram }}
-        run: echo "status=skipped" >> "$GITHUB_OUTPUT"
-      - name: Deliver verified ephemeral podcast audio
-        id: deliver_audio
-        if: ${{ inputs.send_podcast_audio && steps.download_audio.outcome == 'success' }}
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          AUDIO_PATH: ${{ runner.temp }}/papertrader-podcast/${{ inputs.audio_path }}
-          AUDIO_MANIFEST_PATH: ${{ runner.temp }}/papertrader-podcast/${{ inputs.audio_manifest_path }}
-        run: |
-          set +e
-          result=$(uv run papertrader telegram deliver-audio \
-            --manifest-path "$AUDIO_MANIFEST_PATH" \
-            --audio-path "$AUDIO_PATH" \
-            --repository-url "https://github.com/${GITHUB_REPOSITORY}")
-          result_code=$?
-          set -e
-          if [ "$result_code" -ne 0 ]; then
-            uv run papertrader telegram record-audio-failure \
-              --daily-cycle-id "${{ inputs.daily_cycle_id }}" \
-              --script-commit "${{ inputs.commit_sha }}" \
-              --error "ephemeral audio artifact validation failed"
-            echo "status=failed" >> "$GITHUB_OUTPUT"
-          else
-            echo "status=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])' <<< "$result")" >> "$GITHUB_OUTPUT"
-          fi
-      - name: Record an unavailable ephemeral podcast handoff
-        id: audio_failure
-        if: ${{ inputs.audio_render_status == 'failed' || (inputs.send_podcast_audio && steps.download_audio.outcome != 'success') }}
-        run: |
-          uv run papertrader telegram record-audio-failure \
-            --daily-cycle-id "${{ inputs.daily_cycle_id }}" \
-            --script-commit "${{ inputs.commit_sha }}" \
-            --error "ephemeral podcast rendering or one-day artifact handoff failed"
-          echo "status=failed" >> "$GITHUB_OUTPUT"
-      - name: Mark disabled audio delivery as skipped
-        id: audio_skipped
-        if: ${{ !inputs.send_podcast_audio && inputs.audio_render_status != 'failed' }}
         run: echo "status=skipped" >> "$GITHUB_OUTPUT"
       - name: Validate and stage retryable delivery state
         id: state
@@ -290,6 +172,3 @@ jobs:
         env:
           DELIVERY_SHA: ${{ steps.rebase.outputs.commit_sha }}
         run: echo "final_sha=${DELIVERY_SHA:-$(git rev-parse HEAD)}" >> "$GITHUB_OUTPUT"
-      - name: Remove downloaded podcast media
-        if: ${{ always() }}
-        run: rm -rf "$RUNNER_TEMP/papertrader-podcast"

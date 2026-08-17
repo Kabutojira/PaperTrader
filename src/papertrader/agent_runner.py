@@ -816,6 +816,13 @@ def sanitized_hermes_environment(
     )
     if operation_type:
         environment["PAPERTRADER_AUDIT_OPERATION_TYPE"] = operation_type
+    if operation_type == "daily_podcast":
+        podcast_output = source.get("PAPERTRADER_PODCAST_OUTPUT_DIRECTORY", "")
+        if not podcast_output:
+            raise AgentRunError(
+                "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY is required for daily_podcast"
+            )
+        environment["PAPERTRADER_PODCAST_OUTPUT_DIRECTORY"] = podcast_output
     if profile is not None and route is not None:
         environment.update(
             {

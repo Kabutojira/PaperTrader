@@ -13,10 +13,12 @@ from papertrader.podcast import (
     PodcastError,
     enqueue_daily_podcast,
     finalize_daily_podcast,
-    render_committed_podcast,
+    render_draft_podcast,
+    seal_podcast_render,
+    validate_podcast_script,
 )
 from papertrader.queue import RunBudget, claim_next, fail_attempt, prepare_queue
-from papertrader.tables import read_table
+from papertrader.tables import append_unique, read_table
 
 NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
 
@@ -28,7 +30,20 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
 
     assert "`advice validate` is outside the `daily_podcast` command scope" in skill
     assert "never list a rejected or pre-dispatch command" in skill
-    assert "`This is paper trading, not live trading.`" in skill
+    assert "paper_trading: true" in skill
+    assert "invoke exactly once" in skill
+    assert "Do not retry a failed render" in skill
+
+
+def _script(cycle_id: str, *, extra_body: str = "") -> str:
+    paragraphs = [" ".join(["word"] * 375) for _ in range(8)]
+    return (
+        f"---\ndaily_cycle_id: {cycle_id}\npaper_trading: true\n---\n"
+        f"{extra_body}"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        + "\n\n".join(paragraphs)
+        + "\n<!-- papertrader-spoken-transcript:end -->\n"
+    )
 
 
 def _completed_manifest(repository: Path, run_id: str) -> None:
@@ -65,6 +80,128 @@ def _completed_manifest(repository: Path, run_id: str) -> None:
     )
 
 
+def _cycle_manifest(
+    repository: Path,
+    cycle_id: str,
+    *,
+    started_at: str,
+    cutoff: str,
+    podcast_status: str = "pending",
+    operations: list[dict[str, object]] | None = None,
+) -> None:
+    stamp = cycle_id.removeprefix("daily-")
+    report_date = cutoff[:10].replace("-", "")
+    report_path = f"data/wiki/daily-reports/daily-report_{report_date}.md"
+    report = repository / report_path
+    report.write_text("---\ntitle: Daily\ntype: daily-report\nstatus: maintained\n---\n")
+    run = repository / "data" / "runs" / cycle_id
+    run.mkdir(parents=True, exist_ok=True)
+    (run / "decision_snapshot.json").write_text("{}\n", encoding="utf-8")
+    page_path = (
+        f"data/wiki/podcasts/daily-podcast_{stamp}.md" if podcast_status == "succeeded" else ""
+    )
+    if page_path:
+        page = repository / page_path
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text(f"---\ndaily_cycle_id: {cycle_id}\n---\n", encoding="utf-8")
+        (run / "podcast_context.json").write_text(
+            json.dumps(
+                {
+                    "podcast_context_version": 2,
+                    "daily_cycle_id": cycle_id,
+                    "research_cutoff_at": cutoff,
+                    "page_path": page_path,
+                }
+            ),
+            encoding="utf-8",
+        )
+    (run / "daily_run.json").write_text(
+        json.dumps(
+            {
+                "daily_run_version": 2,
+                "run_id": cycle_id,
+                "daily_cycle_id": cycle_id,
+                "status": "succeeded" if podcast_status == "succeeded" else "running",
+                "started_at": started_at,
+                "research_cutoff_at": cutoff,
+                "finalization_at": cutoff,
+                "report_path": report_path,
+                "operations_accepted": operations or [],
+                "fill_outcomes": [],
+                "snapshot_id": "",
+                "podcast_status": podcast_status,
+                "podcast_operation_id": "",
+                "podcast_page_path": page_path,
+                "podcast_audio_path": "",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+
+def _accepted_research(
+    repository: Path,
+    *,
+    cycle_id: str,
+    operation_id: str,
+    completed_at: str,
+    page_path: str,
+    summary: str,
+) -> None:
+    append_unique(
+        repository,
+        "operations_history",
+        [
+            {
+                "operation_id": operation_id,
+                "created_at": completed_at,
+                "updated_at": completed_at,
+                "status": "succeeded",
+                "priority": "50",
+                "operation_type": "idea_research",
+                "entity_type": "idea",
+                "entity_id": f"idea-{operation_id[-4:]}",
+                "not_before": "",
+                "deadline": "",
+                "depends_on": "",
+                "dedupe_key": f"idea:{operation_id}",
+                "freshness_days": "0",
+                "skill_names": "llm-wiki|papertrader-idea-research",
+                "prompt": "Research one idea.",
+                "payload_path": f"data/operations/payloads/{operation_id}.json",
+                "source": "test",
+                "attempt_count": "1",
+                "max_attempts": "1",
+                "claimed_by_run_id": cycle_id,
+                "lease_expires_at": "",
+                "last_error": "",
+                "terminal_status": "succeeded",
+                "completed_at": completed_at,
+                "result_path": f"data/runs/{cycle_id}/{operation_id}/agent_result.json",
+                "result_summary": summary,
+                "terminal_reason": "agent_result:succeeded",
+            }
+        ],
+        key_columns=("operation_id",),
+    )
+    artifact = repository / "data" / "runs" / cycle_id / operation_id
+    artifact.mkdir(parents=True, exist_ok=True)
+    (artifact / "agent_result.json").write_text(
+        json.dumps(
+            {
+                "summary": summary,
+                "evidence": [{"source": page_path, "claim": summary}],
+                "daily_report_items": [summary],
+                "files_changed": [page_path],
+            }
+        ),
+        encoding="utf-8",
+    )
+    (artifact / "hermes_run.json").write_text(
+        json.dumps({"completed_at": completed_at}), encoding="utf-8"
+    )
+
+
 def test_completed_run_enqueues_one_text_only_podcast(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -84,6 +221,8 @@ def test_completed_run_enqueues_one_text_only_podcast(
     )
     assert row["operation_type"] == "daily_podcast"
     context = json.loads((sandbox_repository / result.context_path).read_text())
+    assert context["podcast_context_version"] == 3
+    assert context["window_mode"] == "seven_day_bootstrap"
     assert context["target_minutes"] == 20
     assert "audio_path" not in context
     manifest = json.loads(
@@ -92,6 +231,119 @@ def test_completed_run_enqueues_one_text_only_podcast(
     assert manifest["podcast_status"] == "queued"
     assert manifest["podcast_audio_path"] == ""
     assert _source_hashes(sandbox_repository, as_of=NOW) == hashes_before
+
+
+def test_context_selects_latest_successful_same_day_podcast_and_ignores_failures(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _cycle_manifest(
+        sandbox_repository,
+        "daily-20260729T080000Z",
+        started_at="2026-07-29T07:00:00Z",
+        cutoff="2026-07-29T08:30:00Z",
+        podcast_status="succeeded",
+    )
+    _cycle_manifest(
+        sandbox_repository,
+        "daily-20260729T100000Z",
+        started_at="2026-07-29T09:00:00Z",
+        cutoff="2026-07-29T10:30:00Z",
+        podcast_status="succeeded",
+    )
+    _cycle_manifest(
+        sandbox_repository,
+        "daily-20260729T120000Z",
+        started_at="2026-07-29T11:00:00Z",
+        cutoff="2026-07-29T12:30:00Z",
+        podcast_status="failed",
+    )
+    _completed_manifest(sandbox_repository, "podcast-current")
+
+    result = enqueue_daily_podcast(
+        sandbox_repository, sandbox_settings, run_id="podcast-current", now=NOW
+    )
+    context = json.loads((sandbox_repository / result.context_path).read_text())
+
+    assert context["window_mode"] == "since_previous_successful_podcast"
+    assert context["window_start_exclusive"] == "2026-07-29T10:30:00Z"
+    assert context["previous_successful_podcast"]["daily_cycle_id"] == ("daily-20260729T100000Z")
+
+
+def test_context_aggregates_intervening_cycles_with_exclusive_inclusive_boundaries(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    prior_id = "daily-20260727T090000Z"
+    first_id = "daily-20260728T090000Z"
+    current_id = "daily-20260730T180000Z"
+    first_operation = "01ARZ3NDEKTSV4RRFFQ69G5FAA"
+    current_operation = "01ARZ3NDEKTSV4RRFFQ69G5FAB"
+    _cycle_manifest(
+        sandbox_repository,
+        prior_id,
+        started_at="2026-07-27T08:00:00Z",
+        cutoff="2026-07-27T09:30:00Z",
+        podcast_status="succeeded",
+    )
+    idea = sandbox_repository / "data" / "wiki" / "ideas" / "idea_story.md"
+    idea.write_text("---\ntitle: Story\ntype: idea\nstatus: maintained\n---\n", encoding="utf-8")
+    concept = sandbox_repository / "data" / "wiki" / "concepts" / "concept_scale.md"
+    concept.write_text(
+        "---\ntitle: Scale\ntype: concept\nstatus: maintained\n---\n", encoding="utf-8"
+    )
+    security = sandbox_repository / "data" / "wiki" / "securities" / "security_story.md"
+    security.write_text(
+        "---\ntitle: Security\ntype: security\nstatus: maintained\n---\n"
+        "Background: [[ideas/idea_story]] and [[concepts/concept_scale]].\n",
+        encoding="utf-8",
+    )
+    _cycle_manifest(
+        sandbox_repository,
+        first_id,
+        started_at="2026-07-28T08:00:00Z",
+        cutoff="2026-07-28T10:00:00Z",
+        operations=[{"operation_id": first_operation, "terminal_status": "succeeded"}],
+    )
+    _accepted_research(
+        sandbox_repository,
+        cycle_id=first_id,
+        operation_id=first_operation,
+        completed_at="2026-07-28T09:00:00Z",
+        page_path="data/wiki/securities/security_story.md",
+        summary="A first accepted research development.",
+    )
+    _cycle_manifest(
+        sandbox_repository,
+        current_id,
+        started_at="2026-07-30T17:00:00Z",
+        cutoff="2026-07-30T18:00:00Z",
+        operations=[{"operation_id": current_operation, "terminal_status": "succeeded"}],
+    )
+    _accepted_research(
+        sandbox_repository,
+        cycle_id=current_id,
+        operation_id=current_operation,
+        completed_at="2026-07-30T18:00:00Z",
+        page_path="data/wiki/ideas/idea_story.md",
+        summary="An inclusive-cutoff accepted development.",
+    )
+
+    result = enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=current_id, now=NOW)
+    context = json.loads((sandbox_repository / result.context_path).read_text())
+
+    assert context["window_start_exclusive"] == "2026-07-27T09:30:00Z"
+    assert [item["operation_id"] for item in context["research_developments"]] == [
+        first_operation,
+        current_operation,
+    ]
+    assert [item["path"] for item in context["changed_wiki_pages"]] == [
+        "data/wiki/ideas/idea_story.md",
+        "data/wiki/securities/security_story.md",
+    ]
+    assert [item["path"] for item in context["background_wiki_pages"]] == [
+        "data/wiki/concepts/concept_scale.md"
+    ]
 
 
 def test_failed_podcast_is_recorded_without_requiring_audio(
@@ -129,25 +381,19 @@ def test_failed_podcast_is_recorded_without_requiring_audio(
     assert manifest["podcast_status"] == "failed"
 
 
-def test_podcast_render_uses_exact_committed_transcript_and_ephemeral_directory(
+def test_podcast_render_draft_uses_only_audited_runner_temp(
     sandbox_repository: Path,
     sandbox_settings: Settings,
     tmp_path: Path,
 ) -> None:
     cycle_id = "daily-20260730T180000Z"
-    commit = "a" * 40
     script_path = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
-    paragraphs = [" ".join(["word"] * 750) for _ in range(4)]
-    markdown = (
-        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
-        "<!-- papertrader-spoken-transcript:start -->\n"
-        + "\n\n".join(paragraphs)
-        + "\n<!-- papertrader-spoken-transcript:end -->\n"
-    )
+    markdown = _script(cycle_id)
+    page = sandbox_repository / script_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(markdown, encoding="utf-8")
 
     def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
-        if command[:2] == ["git", "show"]:
-            return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
         if "-show_entries" in command:
             return subprocess.CompletedProcess(command, 0, "1200\n", "")
         output = (
@@ -158,14 +404,16 @@ def test_podcast_render_uses_exact_committed_transcript_and_ephemeral_directory(
         output.write_bytes(b"assembled-audio")
         return subprocess.CompletedProcess(command, 0, "", "")
 
-    output = tmp_path / "ephemeral"
-    result = render_committed_podcast(
+    output = tmp_path / "papertrader-podcast" / cycle_id
+    result = render_draft_podcast(
         sandbox_repository,
         sandbox_settings,
         daily_cycle_id=cycle_id,
-        script_commit=commit,
         script_path=script_path,
         output_directory=output,
+        audit_run_id=cycle_id,
+        audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        audit_operation_type="daily_podcast",
         runner=fake_runner,
     )
 
@@ -182,13 +430,15 @@ def test_repository_podcast_audio_path_is_rejected(
     sandbox_settings: Settings,
 ) -> None:
     with pytest.raises(PodcastError, match="outside the checkout"):
-        render_committed_podcast(
+        render_draft_podcast(
             sandbox_repository,
             sandbox_settings,
             daily_cycle_id="daily-20260730T180000Z",
-            script_commit="a" * 40,
             script_path="data/wiki/podcasts/daily-podcast_20260730T180000Z.md",
             output_directory=sandbox_repository / "data" / "wiki" / "podcasts",
+            audit_run_id="daily-20260730T180000Z",
+            audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+            audit_operation_type="daily_podcast",
         )
 
 
@@ -198,28 +448,21 @@ def test_podcast_render_rejects_visible_machine_identity(
     tmp_path: Path,
 ) -> None:
     cycle_id = "daily-20260730T180000Z"
-    transcript = " ".join(["word"] * 2500)
-    markdown = (
-        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
-        "<!-- papertrader-spoken-transcript:start -->\n"
-        "Visible security security_1234567890abcdef1234. "
-        f"{transcript}\n"
-        "<!-- papertrader-spoken-transcript:end -->\n"
-    )
-
-    def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
-        assert command[:2] == ["git", "show"]
-        return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
+    script_path = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
+    page = sandbox_repository / script_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_script(cycle_id, extra_body="# security_1234567890abcdef1234\n\n"))
 
     with pytest.raises(PodcastError, match="exposes a machine identity"):
-        render_committed_podcast(
+        render_draft_podcast(
             sandbox_repository,
             sandbox_settings,
             daily_cycle_id=cycle_id,
-            script_commit="a" * 40,
-            script_path="data/wiki/podcasts/daily-podcast_20260730T180000Z.md",
-            output_directory=tmp_path / "podcast",
-            runner=fake_runner,
+            script_path=script_path,
+            output_directory=tmp_path / "papertrader-podcast" / cycle_id,
+            audit_run_id=cycle_id,
+            audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+            audit_operation_type="daily_podcast",
         )
 
 
@@ -230,35 +473,105 @@ def test_failed_ephemeral_render_removes_completed_chunks(
 ) -> None:
     cycle_id = "daily-20260730T180001Z"
     script_path = "data/wiki/podcasts/daily-podcast_20260730T180001Z.md"
-    paragraphs = [" ".join(["word"] * 750) for _ in range(4)]
-    markdown = (
-        f"---\ndaily_cycle_id: {cycle_id}\n---\n"
-        "<!-- papertrader-spoken-transcript:start -->\n"
-        + "\n\n".join(paragraphs)
-        + "\n<!-- papertrader-spoken-transcript:end -->\n"
-    )
+    markdown = _script(cycle_id)
+    page = sandbox_repository / script_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(markdown, encoding="utf-8")
     attempts = 0
 
     def failing_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
         nonlocal attempts
-        if command[:2] == ["git", "show"]:
-            return subprocess.CompletedProcess(command, 0, markdown.encode(), b"")
         attempts += 1
         if attempts == 1:
             Path(command[command.index("--write-media") + 1]).write_bytes(b"first-chunk")
             return subprocess.CompletedProcess(command, 0, "", "")
         return subprocess.CompletedProcess(command, 1, "", "tts failed")
 
-    output = tmp_path / "failed-render"
+    output = tmp_path / "papertrader-podcast" / cycle_id
     with pytest.raises(PodcastError, match="chunk 2"):
-        render_committed_podcast(
+        render_draft_podcast(
+            sandbox_repository,
+            sandbox_settings,
+            daily_cycle_id=cycle_id,
+            script_path=script_path,
+            output_directory=output,
+            audit_run_id=cycle_id,
+            audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+            audit_operation_type="daily_podcast",
+            runner=failing_runner,
+        )
+
+    assert list(output.iterdir()) == []
+
+
+def test_seal_detects_committed_script_hash_mismatch_without_tts(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id = "daily-20260730T180002Z"
+    script_path = "data/wiki/podcasts/daily-podcast_20260730T180002Z.md"
+    page = sandbox_repository / script_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_script(cycle_id), encoding="utf-8")
+    output = tmp_path / "papertrader-podcast" / cycle_id
+
+    def draft_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        if "-show_entries" in command:
+            return subprocess.CompletedProcess(command, 0, "1200\n", "")
+        target = (
+            Path(command[command.index("--write-media") + 1])
+            if "--write-media" in command
+            else Path(command[-1])
+        )
+        target.write_bytes(b"audio")
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    render_draft_podcast(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        script_path=script_path,
+        output_directory=output,
+        audit_run_id=cycle_id,
+        audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        audit_operation_type="daily_podcast",
+        runner=draft_runner,
+    )
+    calls: list[list[str]] = []
+
+    def seal_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        calls.append(command)
+        assert command[:2] == ["git", "show"]
+        changed = _script(cycle_id).replace("word word", "changed word", 1)
+        return subprocess.CompletedProcess(command, 0, changed.encode(), b"")
+
+    with pytest.raises(PodcastError, match="exact committed transcript"):
+        seal_podcast_render(
             sandbox_repository,
             sandbox_settings,
             daily_cycle_id=cycle_id,
             script_commit="a" * 40,
             script_path=script_path,
             output_directory=output,
-            runner=failing_runner,
+            runner=seal_runner,
         )
+    assert len(calls) == 1
+    assert all("edge-tts" not in command for command in calls)
 
-    assert list(output.iterdir()) == []
+
+@pytest.mark.parametrize(
+    "replacement,error",
+    [
+        ("word two", "numeric glyphs"),
+        ("This is paper trading, not live trading.", "disclaimers"),
+        ("- listed prose", "Markdown lists"),
+    ],
+)
+def test_spoken_script_rejects_machine_style_prose(replacement: str, error: str) -> None:
+    cycle_id = "daily-20260730T180003Z"
+    markdown = _script(cycle_id).replace("word word", replacement, 1)
+    if replacement == "word two":
+        markdown = markdown.replace("word two", "word 2", 1)
+    with pytest.raises(PodcastError, match=error):
+        validate_podcast_script(markdown, daily_cycle_id=cycle_id)

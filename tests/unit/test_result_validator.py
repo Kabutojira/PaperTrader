@@ -121,6 +121,23 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "execute_strategy",
         {"argv": ["papertrader", "order", "create-baseline", "--request", "request.json"]},
     )
+    assert _command_allowed(
+        "daily_podcast",
+        {
+            "argv": [
+                "papertrader",
+                "podcast",
+                "render-draft",
+                "--daily-cycle-id",
+                "daily-20260724T120000Z",
+            ]
+        },
+        profile="analyst",
+    )
+    assert not _command_allowed(
+        "security_research",
+        {"argv": ["papertrader", "podcast", "render-draft"]},
+    )
     for operation_type in (
         "wiki_ingest",
         "opportunity_research",

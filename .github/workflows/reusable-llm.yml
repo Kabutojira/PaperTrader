@@ -29,6 +29,10 @@ on:
         required: false
         default: false
         type: boolean
+      send_telegram:
+        required: false
+        default: false
+        type: boolean
       wiki_maintenance:
         required: false
         default: false
@@ -60,6 +64,10 @@ on:
         required: false
       YOUTUBE_DATA_API:
         required: false
+      TELEGRAM_BOT_TOKEN:
+        required: false
+      TELEGRAM_CHAT_ID:
+        required: false
     outputs:
       commit_sha:
         value: ${{ jobs.runtime.outputs.commit_sha }}
@@ -77,14 +85,10 @@ on:
         value: ${{ jobs.runtime.outputs.podcast_status }}
       podcast_path:
         value: ${{ jobs.runtime.outputs.podcast_path }}
-      audio_artifact_name:
-        value: ${{ jobs.runtime.outputs.audio_artifact_name }}
-      audio_path:
-        value: ${{ jobs.runtime.outputs.audio_path }}
-      audio_manifest_path:
-        value: ${{ jobs.runtime.outputs.audio_manifest_path }}
-      audio_render_status:
-        value: ${{ jobs.runtime.outputs.audio_render_status }}
+      podcast_script_delivery_status:
+        value: ${{ jobs.runtime.outputs.podcast_script_delivery_status }}
+      podcast_audio_delivery_status:
+        value: ${{ jobs.runtime.outputs.podcast_audio_delivery_status }}
   workflow_dispatch:
     inputs:
       operation_id:
@@ -108,6 +112,10 @@ on:
         default: true
         type: boolean
       generate_podcast:
+        required: false
+        default: false
+        type: boolean
+      send_telegram:
         required: false
         default: false
         type: boolean
@@ -167,10 +175,8 @@ jobs:
       oauth_changed: ${{ steps.outputs.outputs.oauth_changed }}
       podcast_status: ${{ steps.outputs.outputs.podcast_status }}
       podcast_path: ${{ steps.outputs.outputs.podcast_path }}
-      audio_artifact_name: ${{ steps.outputs.outputs.audio_artifact_name }}
-      audio_path: ${{ steps.outputs.outputs.audio_path }}
-      audio_manifest_path: ${{ steps.outputs.outputs.audio_manifest_path }}
-      audio_render_status: ${{ steps.outputs.outputs.audio_render_status }}
+      podcast_script_delivery_status: ${{ steps.outputs.outputs.podcast_script_delivery_status }}
+      podcast_audio_delivery_status: ${{ steps.outputs.outputs.podcast_audio_delivery_status }}
     steps:
       - name: Check out and fast-forward the target branch without persisted credentials
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -638,12 +644,13 @@ jobs:
           uv run papertrader podcast context build --daily-cycle-id "$CYCLE_ID" --cutoff "$cutoff"
           result=$(uv run papertrader podcast enqueue --run-id "$CYCLE_ID")
           echo "operation_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["operation_id"])' <<< "$result")" >> "$GITHUB_OUTPUT"
-      - name: Synthesize only the timestamped podcast transcript
+      - name: Synthesize the transcript and one ephemeral audio draft
         if: ${{ inputs.generate_podcast && !inputs.dry_run }}
         continue-on-error: true
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
+          PAPERTRADER_PODCAST_OUTPUT_DIRECTORY: ${{ runner.temp }}/papertrader-podcast/${{ steps.cycle.outputs.cycle_id }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: uv run papertrader agent run --hermes-home "$HERMES_HOME" --run-id "$CYCLE_ID" --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast
       - name: Encrypt a podcast-time OAuth refresh before its text checkpoint
@@ -689,34 +696,114 @@ jobs:
         run: |
           result=$(uv run papertrader workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "${{ steps.podcast_text.outputs.status }}" --profile analyst --target-branch "$TARGET_BRANCH")
           echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
-      - name: Render audio ephemerally from the exact pushed transcript
-        id: render_audio
+      - name: Seal the existing draft against the exact pushed transcript
+        id: seal_audio
         if: ${{ inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
         continue-on-error: true
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
         run: |
-          command -v edge-tts >/dev/null
-          command -v ffmpeg >/dev/null
           command -v ffprobe >/dev/null
           stamp="${CYCLE_ID#daily-}"
           output_directory="$RUNNER_TEMP/papertrader-podcast/$CYCLE_ID"
           script_path="data/wiki/podcasts/daily-podcast_${stamp}.md"
-          result=$(uv run papertrader podcast render --daily-cycle-id "$CYCLE_ID" --script-commit "$SCRIPT_COMMIT" --script-path "$script_path" --output-directory "$output_directory")
+          result=$(uv run papertrader podcast seal-render --daily-cycle-id "$CYCLE_ID" --script-commit "$SCRIPT_COMMIT" --script-path "$script_path" --output-directory "$output_directory")
           echo "audio_path=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["audio_path"])' <<< "$result")" >> "$GITHUB_OUTPUT"
           echo "manifest_path=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["manifest_path"])' <<< "$result")" >> "$GITHUB_OUTPUT"
           echo "script_path=$script_path" >> "$GITHUB_OUTPUT"
-      - name: Upload one-day ephemeral podcast audio handoff
-        if: ${{ steps.render_audio.outcome == 'success' }}
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
-        with:
-          name: papertrader-podcast-${{ steps.cycle.outputs.cycle_id }}
-          path: |
-            ${{ steps.render_audio.outputs.audio_path }}
-            ${{ steps.render_audio.outputs.manifest_path }}
-          if-no-files-found: error
-          retention-days: 1
+      - name: Deliver the exact committed podcast script
+        id: deliver_podcast_script
+        if: ${{ always() && inputs.send_telegram && inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+        run: |
+          stamp="${CYCLE_ID#daily-}"
+          SCRIPT_PATH="data/wiki/podcasts/daily-podcast_${stamp}.md"
+          set +e
+          result=$(uv run papertrader telegram deliver-podcast-script --commit-sha "$SCRIPT_COMMIT" --script-path "$SCRIPT_PATH" --daily-cycle-id "$CYCLE_ID" --repository-url "https://github.com/${GITHUB_REPOSITORY}")
+          result_code=$?
+          set -e
+          if [ "$result_code" -ne 0 ]; then
+            uv run papertrader telegram record-script-failure --daily-cycle-id "$CYCLE_ID" --script-commit "$SCRIPT_COMMIT" --error "committed podcast script delivery validation failed"
+            echo "status=failed" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Deliver the independently sealed ephemeral podcast audio
+        id: deliver_podcast_audio
+        if: ${{ always() && inputs.send_telegram && steps.seal_audio.outcome == 'success' }}
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+          AUDIO_PATH: ${{ steps.seal_audio.outputs.audio_path }}
+          AUDIO_MANIFEST_PATH: ${{ steps.seal_audio.outputs.manifest_path }}
+        run: |
+          set +e
+          result=$(uv run papertrader telegram deliver-audio --manifest-path "$AUDIO_MANIFEST_PATH" --audio-path "$AUDIO_PATH" --repository-url "https://github.com/${GITHUB_REPOSITORY}")
+          result_code=$?
+          set -e
+          if [ "$result_code" -ne 0 ]; then
+            uv run papertrader telegram record-audio-failure --daily-cycle-id "$CYCLE_ID" --script-commit "$SCRIPT_COMMIT" --error "sealed ephemeral podcast audio delivery validation failed"
+            echo "status=failed" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["status"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Record an unavailable Hermes audio draft
+        id: audio_failure
+        if: ${{ always() && inputs.send_telegram && inputs.generate_podcast && !inputs.dry_run && steps.podcast_text.outputs.status == 'succeeded' && steps.podcast_checkpoint.outcome == 'success' && steps.seal_audio.outcome != 'success' }}
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+          SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+        run: |
+          uv run papertrader telegram record-audio-failure --daily-cycle-id "$CYCLE_ID" --script-commit "$SCRIPT_COMMIT" --error "Hermes draft rendering or committed-script sealing failed"
+          echo "status=failed" >> "$GITHUB_OUTPUT"
+      - name: Validate podcast delivery issue state
+        id: podcast_delivery_state
+        if: ${{ always() && inputs.generate_podcast && !inputs.dry_run }}
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git add --all -- data
+          uv run papertrader runtime-whitelist validate --staged
+          uv run papertrader integrity --strict
+          uv run papertrader advice validate --strict
+          uv run papertrader wiki lint --strict
+          uv run papertrader portfolio reconcile --strict
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Commit podcast delivery issue state
+        id: podcast_delivery_commit
+        if: ${{ always() && steps.podcast_delivery_state.outputs.changed == 'true' }}
+        env:
+          SCRIPT_COMMIT: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+        run: |
+          git config user.name "papertrader-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(delivery): record podcast status ${SCRIPT_COMMIT:0:12}"
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Rebase and push podcast delivery issue state
+        id: podcast_delivery_push
+        if: ${{ always() && steps.podcast_delivery_state.outputs.changed == 'true' }}
+        env:
+          PAPERTRADER_GIT_TOKEN: ${{ github.token }}
+          TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
+        run: |
+          git fetch --no-tags origin "$TARGET_BRANCH"
+          git rebase "origin/${TARGET_BRANCH}"
+          uv run papertrader runtime-whitelist validate --base-ref "origin/${TARGET_BRANCH}" --head-ref HEAD
+          git config --local credential.helper '!f() { if test "$1" = get; then echo username=x-access-token; echo "password=$PAPERTRADER_GIT_TOKEN"; fi; }; f'
+          git push "https://github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${TARGET_BRANCH}"
+          git config --local --unset-all credential.helper
+          echo "commit_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Publish cycle outputs
         id: outputs
         if: ${{ always() }}
@@ -724,10 +811,11 @@ jobs:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           FINALIZATION_SHA: ${{ steps.finalization_checkpoint.outputs.commit_sha }}
           PODCAST_SHA: ${{ steps.podcast_checkpoint.outputs.commit_sha }}
+          PODCAST_DELIVERY_SHA: ${{ steps.podcast_delivery_push.outputs.commit_sha }}
           PODCAST_STATUS: ${{ steps.podcast_text.outputs.status }}
-          AUDIO_PATH: ${{ steps.render_audio.outputs.audio_path }}
-          AUDIO_MANIFEST_PATH: ${{ steps.render_audio.outputs.manifest_path }}
-          AUDIO_RENDER_OUTCOME: ${{ steps.render_audio.outcome }}
+          SEND_TELEGRAM: ${{ inputs.send_telegram }}
+          SCRIPT_DELIVERY_STATUS: ${{ steps.deliver_podcast_script.outputs.status }}
+          AUDIO_DELIVERY_STATUS: ${{ steps.deliver_podcast_audio.outputs.status || steps.audio_failure.outputs.status }}
         run: |
           manifest="data/runs/$CYCLE_ID/daily_run.json"
           if [ -z "$CYCLE_ID" ] || [ ! -f "$manifest" ]; then
@@ -737,32 +825,25 @@ jobs:
             echo "report_path=" >> "$GITHUB_OUTPUT"
             echo "podcast_status=skipped" >> "$GITHUB_OUTPUT"
             echo "podcast_path=" >> "$GITHUB_OUTPUT"
-            echo "audio_artifact_name=" >> "$GITHUB_OUTPUT"
-            echo "audio_render_status=skipped" >> "$GITHUB_OUTPUT"
-            echo "audio_path=" >> "$GITHUB_OUTPUT"
-            echo "audio_manifest_path=" >> "$GITHUB_OUTPUT"
+            echo "podcast_script_delivery_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "podcast_audio_delivery_status=skipped" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           report_path=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["report_path"])' "$manifest")
           podcast_path=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["podcast_page_path"])' "$manifest")
-          echo "commit_sha=${PODCAST_SHA:-$FINALIZATION_SHA}" >> "$GITHUB_OUTPUT"
+          echo "commit_sha=${PODCAST_DELIVERY_SHA:-${PODCAST_SHA:-$FINALIZATION_SHA}}" >> "$GITHUB_OUTPUT"
           echo "changed=true" >> "$GITHUB_OUTPUT"
           echo "oauth_changed=false" >> "$GITHUB_OUTPUT"
           echo "report_path=$report_path" >> "$GITHUB_OUTPUT"
           echo "podcast_status=${PODCAST_STATUS:-skipped}" >> "$GITHUB_OUTPUT"
           echo "podcast_path=$podcast_path" >> "$GITHUB_OUTPUT"
-          if [ "$AUDIO_RENDER_OUTCOME" = "success" ]; then
-            echo "audio_artifact_name=papertrader-podcast-$CYCLE_ID" >> "$GITHUB_OUTPUT"
-            echo "audio_render_status=succeeded" >> "$GITHUB_OUTPUT"
-          elif [ "$AUDIO_RENDER_OUTCOME" = "failure" ]; then
-            echo "audio_artifact_name=" >> "$GITHUB_OUTPUT"
-            echo "audio_render_status=failed" >> "$GITHUB_OUTPUT"
+          if [ "$SEND_TELEGRAM" = "true" ]; then
+            echo "podcast_script_delivery_status=${SCRIPT_DELIVERY_STATUS:-skipped}" >> "$GITHUB_OUTPUT"
+            echo "podcast_audio_delivery_status=${AUDIO_DELIVERY_STATUS:-skipped}" >> "$GITHUB_OUTPUT"
           else
-            echo "audio_artifact_name=" >> "$GITHUB_OUTPUT"
-            echo "audio_render_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "podcast_script_delivery_status=skipped" >> "$GITHUB_OUTPUT"
+            echo "podcast_audio_delivery_status=skipped" >> "$GITHUB_OUTPUT"
           fi
-          echo "audio_path=$(basename "$AUDIO_PATH")" >> "$GITHUB_OUTPUT"
-          echo "audio_manifest_path=$(basename "$AUDIO_MANIFEST_PATH")" >> "$GITHUB_OUTPUT"
       - name: Remove plaintext OAuth and all temporary media
         if: ${{ always() }}
         run: |
