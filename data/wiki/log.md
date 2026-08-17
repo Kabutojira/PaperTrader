@@ -3896,6 +3896,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T172020Z`.
 
+- Published investor decision snapshot `decision_0a8e074f6e492eda4f5f`.
+
+- Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T185232Z`.
+
 ## [2026-08-17T17:27:00Z] update | Intuitive Machines Q2 review and volume anomaly
 
 - Reassessed [[securities/security_a5dc16f3f4b245e6c168|Intuitive Machines]] using its August 13

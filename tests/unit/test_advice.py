@@ -974,6 +974,77 @@ def test_published_snapshot_tampering_is_detected(
     )
 
 
+def test_interrupted_open_cycle_can_replace_snapshot_until_finalization(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    run_id = "daily-20260724T120000Z"
+    _initialize(sandbox_repository, sandbox_settings, run_id=run_id)
+    run_directory = sandbox_repository / "data" / "runs" / run_id
+    run_directory.mkdir(parents=True)
+    manifest_path = run_directory / "daily_run.json"
+    manifest = {
+        "daily_run_version": 2,
+        "daily_cycle_id": run_id,
+        "status": "running",
+        "finalization_at": "",
+        "completion_at": "",
+    }
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    first = refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        as_of=NOW,
+        render_pages=False,
+    )
+    record_issue(
+        sandbox_repository,
+        severity="error",
+        title="Interrupted finalization fixture",
+        description="The open cycle must refresh its incomplete snapshot.",
+        owner="controller",
+        related_run_id=run_id,
+        now=NOW,
+    )
+
+    replaced = refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        as_of=NOW,
+        render_pages=False,
+    )
+
+    assert replaced.snapshot_id != first.snapshot_id
+    assert (
+        json.loads((run_directory / "decision_snapshot.json").read_text(encoding="utf-8"))[
+            "snapshot_id"
+        ]
+        == replaced.snapshot_id
+    )
+    manifest["finalization_at"] = "2026-07-24T12:00:00Z"
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+    record_issue(
+        sandbox_repository,
+        severity="error",
+        title="Completed finalization fixture",
+        description="A finalized cycle must retain its immutable snapshot.",
+        owner="controller",
+        related_run_id=run_id,
+        now=NOW + timedelta(minutes=1),
+    )
+
+    with pytest.raises(AdviceError, match="immutable decision snapshot conflicts"):
+        refresh_advice(
+            sandbox_repository,
+            sandbox_settings,
+            run_id=run_id,
+            as_of=NOW,
+            render_pages=False,
+        )
+
+
 def test_in_flight_validation_defers_only_current_source_state(
     sandbox_repository: Path,
     sandbox_settings: Settings,

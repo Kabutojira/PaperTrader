@@ -112,6 +112,38 @@ class _PostRunValidationError(AgentRunError):
         self.had_agent_delta = had_agent_delta
 
 
+def _is_retained_rejected_attempt(
+    artifact_directory: Path,
+    *,
+    run_id: str,
+    operation_id: str,
+) -> bool:
+    """Recognize controller-owned evidence from an earlier rejected attempt."""
+
+    documents: dict[str, object] = {}
+    for name in ("profile_route.json", "validation_report.json"):
+        path = artifact_directory / name
+        if path.is_symlink() or not path.is_file():
+            return False
+        try:
+            documents[name] = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return False
+    route = documents["profile_route.json"]
+    validation = documents["validation_report.json"]
+    return (
+        isinstance(route, dict)
+        and route.get("route_version") == 1
+        and route.get("run_id") == run_id
+        and route.get("operation_id") == operation_id
+        and isinstance(validation, dict)
+        and validation.get("validation_version") == 1
+        and validation.get("run_id") == run_id
+        and validation.get("operation_id") == operation_id
+        and validation.get("passed") is False
+    )
+
+
 def _restore_rejected_agent_delta(
     repository_root: Path,
     paths: Sequence[str],
@@ -992,6 +1024,16 @@ def run_claimed_operation(
     if artifact_directory.exists() and not artifact_directory.is_dir():
         raise AgentRunError(f"operation artifact path is not a directory: {artifact_directory}")
     if artifact_directory.exists() and any(artifact_directory.iterdir()):
+        if _is_retained_rejected_attempt(
+            artifact_directory,
+            run_id=run_id,
+            operation_id=operation.operation_id,
+        ):
+            raise _PostRunValidationError(
+                "operation already has a retained rejected attempt in this run",
+                contained=True,
+                had_agent_delta=False,
+            )
         raise AgentRunError(f"operation artifact directory is not empty: {artifact_directory}")
     artifact_directory.mkdir(parents=True, exist_ok=True)
     try:

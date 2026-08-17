@@ -207,7 +207,10 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert [step["id"] for step in operation_steps] == [
         f"operation_{index:02d}" for index in range(1, 21)
     ]
-    assert operation_steps[0]["if"] == "${{ fromJSON(inputs.max_operations) >= 1 }}"
+    assert operation_steps[0]["if"] == (
+        "${{ steps.cycle.outputs.needs_finalization == 'true' && "
+        "fromJSON(inputs.max_operations) >= 1 }}"
+    )
     for index, step in enumerate(operation_steps[1:], start=2):
         assert f"steps.operation_{index - 1:02d}.outputs.continue == 'true'" in step["if"]
     for step in operation_steps:
@@ -251,6 +254,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert cycle_step["env"]["RESUME_CYCLE_ID"] == (
         "${{ steps.cycle_resolution.outputs.cycle_id }}"
     )
+    assert 'echo "needs_finalization=$needs_finalization"' in cycle_step["run"]
     assert workflow["on"]["workflow_call"]["outputs"]["podcast_status"]["value"] == (
         "${{ jobs.runtime.outputs.podcast_status }}"
     )
@@ -282,7 +286,9 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         for step in runtime["steps"]
         if step["name"] == "Run weekly native llm-wiki maintenance before queued operations"
     )
-    assert maintenance_step["if"] == "${{ inputs.wiki_maintenance }}"
+    assert maintenance_step["if"] == (
+        "${{ steps.cycle.outputs.needs_finalization == 'true' && inputs.wiki_maintenance }}"
+    )
     assert "--dry-run" in maintenance_step["run"]
     assert "--provider" not in maintenance_step["run"]
     assert "--model" not in maintenance_step["run"]
@@ -294,6 +300,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         step for step in runtime["steps"] if step["name"] == "Discover curated YouTube sources"
     )
     assert discovery["uses"] == "./.github/actions/scan-youtube"
+    assert discovery["if"] == "${{ steps.cycle.outputs.needs_finalization == 'true' }}"
     assert discovery["with"]["dry_run"] == "${{ inputs.dry_run }}"
     assert discovery["env"] == {"YOUTUBE_DATA_API": "${{ secrets.YOUTUBE_DATA_API }}"}
     for step in runtime["steps"]:
@@ -303,10 +310,35 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
         step for step in runtime["steps"] if step["name"] == "Schedule Seeking Alpha discovery"
     )
     assert seekingalpha["uses"] == "./.github/actions/schedule-seekingalpha"
+    assert seekingalpha["if"] == "${{ steps.cycle.outputs.needs_finalization == 'true' }}"
     assert seekingalpha["with"]["dry_run"] == "${{ inputs.dry_run }}"
     assert runtime_steps.index("Schedule Seeking Alpha discovery") < runtime_steps.index(
         "Prepare deterministic daily state and reserve preparation checkpoint"
     )
+    prefinalization_steps = [
+        step
+        for step in runtime["steps"]
+        if step["name"].startswith("Routed research checkpoint")
+        or step["name"]
+        in {
+            "Prepare deterministic daily state and reserve preparation checkpoint",
+            "Push preparation checkpoint from the credentialed boundary",
+            "Finalize accounting, allocation, publication, and report",
+            "Push finalization checkpoint from the credentialed boundary",
+        }
+    ]
+    assert prefinalization_steps
+    assert all(
+        "steps.cycle.outputs.needs_finalization == 'true'" in step["if"]
+        for step in prefinalization_steps
+    )
+    finalized_completion = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Complete an already-finalized cycle when podcast generation is disabled"
+    )
+    assert "steps.cycle.outputs.needs_finalization == 'false'" in finalized_completion["if"]
+    assert "daily complete" in finalized_completion["run"]
     daily = _workflow(repository_root / ".github" / "workflows" / "daily.yml")
     assert daily["jobs"]["runtime"]["with"]["scan_seekingalpha"] == "true"
 

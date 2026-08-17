@@ -2976,6 +2976,26 @@ def _signal_csv_rows(snapshot: DecisionSnapshot) -> list[dict[str, object]]:
     return values
 
 
+def _open_cycle_snapshot_is_replaceable(repository_root: Path, run_id: str) -> bool:
+    """Return whether a run artifact belongs to an interrupted, unfinished cycle."""
+
+    manifest_path = repository_root / "data" / "runs" / run_id / "daily_run.json"
+    if manifest_path.is_symlink() or not manifest_path.is_file():
+        return False
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    return (
+        isinstance(manifest, dict)
+        and manifest.get("daily_run_version") == 2
+        and manifest.get("daily_cycle_id") == run_id
+        and manifest.get("status") in {"running", "degraded", "interrupted"}
+        and not manifest.get("finalization_at")
+        and not manifest.get("completion_at")
+    )
+
+
 def refresh_advice(
     repository_root: Path,
     settings: Settings,
@@ -2999,8 +3019,20 @@ def refresh_advice(
             raise AdviceError("data/runs must be a regular directory")
         run_directory.mkdir()
     if run_path.exists():
-        if run_path.is_symlink() or json.loads(run_path.read_text(encoding="utf-8")) != document:
+        if run_path.is_symlink():
             raise AdviceError("immutable decision snapshot conflicts with existing run artifact")
+        try:
+            existing_document = json.loads(run_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as exc:
+            raise AdviceError(
+                "immutable decision snapshot conflicts with existing run artifact"
+            ) from exc
+        if existing_document != document:
+            if not _open_cycle_snapshot_is_replaceable(repository_root, run_id):
+                raise AdviceError(
+                    "immutable decision snapshot conflicts with existing run artifact"
+                )
+            atomic_write_json(run_path, document, allowed_root=repository_root)
     else:
         atomic_write_json(run_path, document, allowed_root=repository_root)
     published = repository_root / "data" / "published"

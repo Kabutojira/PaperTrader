@@ -289,9 +289,11 @@ jobs:
           source_sha=$(git rev-parse HEAD)
           result=$(uv run papertrader daily resume-or-create --trigger "$RUN_TRIGGER" --source-sha "$source_sha" --github-run-id "$GITHUB_RUN_ID" --workflow-attempt "$GITHUB_RUN_ATTEMPT" --resume-cycle-id "$RESUME_CYCLE_ID")
           cycle_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["daily_cycle_id"])' <<< "$result")
+          needs_finalization=$(python3 -c 'import json,sys; print("false" if json.load(sys.stdin).get("finalization_at") else "true")' <<< "$result")
           echo "cycle_id=$cycle_id" >> "$GITHUB_OUTPUT"
+          echo "needs_finalization=$needs_finalization" >> "$GITHUB_OUTPUT"
       - name: Run weekly native llm-wiki maintenance before queued operations
-        if: ${{ inputs.wiki_maintenance }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && inputs.wiki_maintenance }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           DRY_RUN: ${{ inputs.dry_run }}
@@ -300,6 +302,7 @@ jobs:
           if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
           uv run papertrader "${arguments[@]}"
       - name: Discover curated YouTube sources
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
         uses: ./.github/actions/scan-youtube
         env:
           YOUTUBE_DATA_API: ${{ secrets.YOUTUBE_DATA_API }}
@@ -308,6 +311,7 @@ jobs:
           enabled: ${{ inputs.scan_youtube }}
           dry_run: ${{ inputs.dry_run }}
       - name: Schedule Seeking Alpha discovery
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
         uses: ./.github/actions/schedule-seekingalpha
         with:
           run_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -315,6 +319,7 @@ jobs:
           dry_run: ${{ inputs.dry_run }}
       - name: Prepare deterministic daily state and reserve preparation checkpoint
         id: preparation
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           RUN_TRIGGER: ${{ inputs.trigger }}
@@ -326,6 +331,7 @@ jobs:
           checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind preparation)
           echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
       - name: Push preparation checkpoint from the credentialed boundary
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
         env:
           GITHUB_TOKEN: ${{ !inputs.dry_run && github.token || '' }}
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
@@ -338,7 +344,7 @@ jobs:
           uv run papertrader "${arguments[@]}"
       - name: Routed research checkpoint 01
         id: operation_01
-        if: ${{ fromJSON(inputs.max_operations) >= 1 }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 1 }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -351,7 +357,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 02
         id: operation_02
-        if: ${{ fromJSON(inputs.max_operations) >= 2 && steps.operation_01.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 2 && steps.operation_01.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -364,7 +370,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 03
         id: operation_03
-        if: ${{ fromJSON(inputs.max_operations) >= 3 && steps.operation_02.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 3 && steps.operation_02.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -377,7 +383,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 04
         id: operation_04
-        if: ${{ fromJSON(inputs.max_operations) >= 4 && steps.operation_03.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 4 && steps.operation_03.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -390,7 +396,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 05
         id: operation_05
-        if: ${{ fromJSON(inputs.max_operations) >= 5 && steps.operation_04.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 5 && steps.operation_04.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -403,7 +409,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 06
         id: operation_06
-        if: ${{ fromJSON(inputs.max_operations) >= 6 && steps.operation_05.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 6 && steps.operation_05.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -416,7 +422,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 07
         id: operation_07
-        if: ${{ fromJSON(inputs.max_operations) >= 7 && steps.operation_06.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 7 && steps.operation_06.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -429,7 +435,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 08
         id: operation_08
-        if: ${{ fromJSON(inputs.max_operations) >= 8 && steps.operation_07.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 8 && steps.operation_07.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -442,7 +448,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 09
         id: operation_09
-        if: ${{ fromJSON(inputs.max_operations) >= 9 && steps.operation_08.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 9 && steps.operation_08.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -455,7 +461,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 10
         id: operation_10
-        if: ${{ fromJSON(inputs.max_operations) >= 10 && steps.operation_09.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 10 && steps.operation_09.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -468,7 +474,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 11
         id: operation_11
-        if: ${{ fromJSON(inputs.max_operations) >= 11 && steps.operation_10.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 11 && steps.operation_10.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -481,7 +487,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 12
         id: operation_12
-        if: ${{ fromJSON(inputs.max_operations) >= 12 && steps.operation_11.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 12 && steps.operation_11.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -494,7 +500,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 13
         id: operation_13
-        if: ${{ fromJSON(inputs.max_operations) >= 13 && steps.operation_12.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 13 && steps.operation_12.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -507,7 +513,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 14
         id: operation_14
-        if: ${{ fromJSON(inputs.max_operations) >= 14 && steps.operation_13.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 14 && steps.operation_13.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -520,7 +526,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 15
         id: operation_15
-        if: ${{ fromJSON(inputs.max_operations) >= 15 && steps.operation_14.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 15 && steps.operation_14.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -533,7 +539,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 16
         id: operation_16
-        if: ${{ fromJSON(inputs.max_operations) >= 16 && steps.operation_15.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 16 && steps.operation_15.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -546,7 +552,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 17
         id: operation_17
-        if: ${{ fromJSON(inputs.max_operations) >= 17 && steps.operation_16.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 17 && steps.operation_16.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -559,7 +565,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 18
         id: operation_18
-        if: ${{ fromJSON(inputs.max_operations) >= 18 && steps.operation_17.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 18 && steps.operation_17.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -572,7 +578,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 19
         id: operation_19
-        if: ${{ fromJSON(inputs.max_operations) >= 19 && steps.operation_18.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 19 && steps.operation_18.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -585,7 +591,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Routed research checkpoint 20
         id: operation_20
-        if: ${{ fromJSON(inputs.max_operations) >= 20 && steps.operation_19.outputs.continue == 'true' }}
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' && fromJSON(inputs.max_operations) >= 20 && steps.operation_19.outputs.continue == 'true' }}
         uses: ./.github/actions/checkpoint-operation
         with:
           daily_cycle_id: ${{ steps.cycle.outputs.cycle_id }}
@@ -598,6 +604,7 @@ jobs:
           openai_oauth_secret: ${{ secrets.OPENAI_OAUTH_SECRET }}
       - name: Finalize accounting, allocation, publication, and report
         id: finalization
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
         env:
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
           TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
@@ -625,6 +632,7 @@ jobs:
           uv run papertrader portfolio reconcile --strict
       - name: Push finalization checkpoint from the credentialed boundary
         id: finalization_checkpoint
+        if: ${{ steps.cycle.outputs.needs_finalization == 'true' }}
         env:
           GITHUB_TOKEN: ${{ !inputs.dry_run && github.token || '' }}
           CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
@@ -636,6 +644,11 @@ jobs:
           if [ "$DRY_RUN" = "true" ]; then arguments+=(--dry-run); fi
           result=$(uv run papertrader "${arguments[@]}")
           echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
+      - name: Complete an already-finalized cycle when podcast generation is disabled
+        if: ${{ steps.cycle.outputs.needs_finalization == 'false' && (!inputs.generate_podcast || inputs.dry_run) }}
+        env:
+          CYCLE_ID: ${{ steps.cycle.outputs.cycle_id }}
+        run: uv run papertrader daily complete --daily-cycle-id "$CYCLE_ID"
       - name: Freeze complete cycle podcast context and enqueue text synthesis
         id: podcast_enqueue
         if: ${{ inputs.generate_podcast && !inputs.dry_run }}

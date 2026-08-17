@@ -7,18 +7,18 @@ tags:
 created: "2026-08-17"
 updated: "2026-08-17"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_ef94c2512b6db007459d"
-as_of: "2026-08-17T17:36:49Z"
+snapshot_id: "decision_0a8e074f6e492eda4f5f"
+as_of: "2026-08-17T19:03:48Z"
 ---
 
 # Model portfolio
 
-**As of `2026-08-17T17:36:49Z`**
+**As of `2026-08-17T19:03:48Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-17T17:36:49Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-17T19:03:48Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-08-17T17:36:49Z</dd></div>
-<div><dt>As of</dt><dd>2026-08-17T17:36:49Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-08-17T19:03:48Z</dd></div>
+<div><dt>As of</dt><dd>2026-08-17T19:03:48Z</dd></div>
 </dl>
 
 </article>

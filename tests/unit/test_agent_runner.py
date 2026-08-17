@@ -545,6 +545,83 @@ def test_rejected_structured_queue_delta_restores_claim_before_retry(
     ).exists()
 
 
+def test_retained_rejected_attempt_is_counted_once_when_cycle_resumes(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    operation_id = _enqueue_opportunity(sandbox_repository, sandbox_settings)
+    cycle = resume_or_create_daily_cycle(
+        sandbox_repository,
+        sandbox_settings,
+        trigger="workflow_dispatch",
+        source_sha="c" * 40,
+        github_run_id="44",
+        workflow_attempt="1",
+        now=datetime(2026, 8, 6, 15, tzinfo=UTC),
+    )
+    cycle_id = str(cycle["daily_cycle_id"])
+
+    first_status = run_one_operation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=cycle_id,
+        hermes_home=home,
+        environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
+        operation_id=operation_id,
+        executor=lambda command, cwd, environment, timeout: subprocess.CompletedProcess(
+            command, 124, "", "timed out"
+        ),
+    )
+    assert first_status == "failed"
+    assert (
+        json.loads(
+            (
+                sandbox_repository
+                / "data"
+                / "runs"
+                / cycle_id
+                / operation_id
+                / "validation_report.json"
+            ).read_text(encoding="utf-8")
+        )["passed"]
+        is False
+    )
+
+    def should_not_run(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        raise AssertionError((command, cwd, environment, timeout))
+
+    outcome = run_cycle_operation(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        hermes_home=home,
+        environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
+        operation_id=operation_id,
+        executor=should_not_run,
+    )
+
+    assert outcome is not None
+    assert outcome.status == "failed"
+    manifest = json.loads(
+        (sandbox_repository / "data" / "runs" / cycle_id / "daily_run.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert manifest["operations_attempted"] == [operation_id]
+    assert manifest["operations_accepted"][0]["terminal_status"] == "failed"
+    active = read_table(sandbox_repository, "operations_todo")
+    assert active[0]["operation_id"] == operation_id
+    assert active[0]["status"] == "waiting"
+    assert active[0]["attempt_count"] == "2"
+
+
 def test_shared_budget_batch_runs_two_operations_strictly_sequentially(
     sandbox_repository: Path,
     sandbox_settings: Settings,
