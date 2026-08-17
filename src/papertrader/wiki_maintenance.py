@@ -17,6 +17,7 @@ from papertrader.agent_runner import (
     Executor,
     HermesWikiPreflight,
     _subprocess_executor,
+    configure_hermes_home,
     hermes_wiki_maintenance_command,
     preflight_wiki_maintenance,
     sanitized_hermes_environment,
@@ -499,6 +500,12 @@ def maintain_wiki(
     result_relative = result_path.relative_to(root).as_posix()
 
     try:
+        configure_hermes_home(
+            root,
+            settings,
+            hermes_home,
+            execution_profile=settings.hermes.deep,
+        )
         preflight = preflight_wiki_maintenance(
             root,
             settings,

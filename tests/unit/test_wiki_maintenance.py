@@ -28,9 +28,20 @@ from papertrader.wiki_maintenance import (
 NOW = datetime(2026, 7, 31, 12, tzinfo=UTC)
 
 
-def _hermes_home(repository: Path, settings: Settings, tmp_path: Path) -> Path:
+def _hermes_home(
+    repository: Path,
+    settings: Settings,
+    tmp_path: Path,
+    *,
+    profile_name: str = "deep",
+) -> Path:
     home = tmp_path / "hermes-profile"
-    configure_hermes_home(repository, settings, home)
+    configure_hermes_home(
+        repository,
+        settings,
+        home,
+        execution_profile=settings.hermes.profile(profile_name),
+    )
     skill = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
     skill.parent.mkdir(parents=True)
     skill.write_text(
@@ -67,7 +78,12 @@ def test_native_only_maintenance_records_report_result_and_exact_command(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
-    home = _hermes_home(sandbox_repository, sandbox_settings, tmp_path)
+    home = _hermes_home(
+        sandbox_repository,
+        sandbox_settings,
+        tmp_path,
+        profile_name="analyst",
+    )
     native_path = home / "skills" / "research" / "llm-wiki" / "SKILL.md"
     native_sha256 = content_hash(native_path.read_bytes())
     captured: dict[str, object] = {}
@@ -110,6 +126,8 @@ def test_native_only_maintenance_records_report_result_and_exact_command(
     assert command.count("--skills") == 1
     assert command[command.index("--skills") + 1] == "llm-wiki"
     assert command[command.index("--toolsets") + 1] == "file,terminal"
+    assert command[command.index("--provider") + 1] == sandbox_settings.hermes.deep.provider
+    assert command[command.index("--model") + 1] == sandbox_settings.hermes.deep.model
     assert "papertrader-controller" not in command
     prompt = command[command.index("--query") + 1]
     assert "Follow the complete built-in llm-wiki lint procedure" in prompt
