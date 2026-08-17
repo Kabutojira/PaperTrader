@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-08-08"
-provenance: "source_lunr_q1_2026_10q; source_lunr_clps_20260630; source_lunr_q2_2026_date; source_lunr_20260803_goonhilly_8k; source_lunr_sec_submissions_20260808"
+updated: "2026-08-17"
+provenance: "source_lunr_q1_2026_10q; source_lunr_clps_20260630; source_lunr_q2_2026_date; source_lunr_20260803_goonhilly_8k; source_lunr_sec_submissions_20260808; source_lunr_q2_2026_10q; source_lunr_q2_2026_8k_release"
 security_id: security_a5dc16f3f4b245e6c168
 issuer_id: issuer_0be47cd79cc6492e56b5
 confidence: medium
-next_review: "2026-08-13"
+next_review: "2026-09-16"
 ---
 
 # Intuitive Machines, Inc. Class A common stock
@@ -132,7 +132,7 @@ timing, and unresolved valuation inputs prevent allocation or a strategy. The ne
 is the **2026-08-13** Q2 release, when consolidated contribution, cash, debt, dilution, integration
 and guidance evidence may resolve the blocker. No paper strategy or signal is justified.
 
-## Changes since prior review
+## Changes since prior review at 2026-08-08
 
 - **Evidence:** all five retained source records were freshly checked. No new periodic or operating
   filing followed the August 3 acquisition Form 8-K; the August 6 ownership schedule does not alter
@@ -151,5 +151,78 @@ and guidance evidence may resolve the blocker. No paper strategy or signal is ju
   unfavorable pre-Q2 timing remain soft gaps; no blocker was resolved by repeating stale inputs.
 - **Rating and action:** unchanged at Unrated / Watch and allocation-ineligible. Review the August
   13 Q2 evidence; create no strategy, signal or paper order from this operation.
+
+## Full review at 2026-08-17
+
+The August 13 Form 10-Q and SEC-filed earnings exhibit resolve the stale-Q1 evidence gap but not the
+valuation blocker. Q2 revenue was USD 206.2 million, up from USD 50.3 million a year earlier, while
+total cost of revenue was USD 170.3 million, implying a 17.4% gross margin before depreciation and
+amortization. Operating loss was USD 47.1 million, adjusted EBITDA was negative USD 13.8 million,
+and quarterly free cash outflow was USD 83.9 million. Full-year revenue guidance remains USD 900
+million-1 billion with positive adjusted EBITDA.
+
+Backlog reached USD 1.762 billion, but its quality needs care: USD 612.8 million came with Lanteris,
+and a commercial-satellite program contributed an estimated value above USD 600 million after only
+a USD 45 million authority to proceed. Remaining performance obligations were USD 814.7 million,
+well below reported backlog. The backlog therefore supports demand and scale without proving the
+timing, margin or cash conversion of every headline award.
+
+Liquidity improved to USD 367.4 million of cash at June 30 against USD 336.4 million of long-term
+debt, but six-month free cash outflow was USD 145.8 million and the subsequent Goonhilly purchase
+used additional cash. The filing reports 173.2 million Class A and 55.7 million Class C shares at
+August 6, plus potentially dilutive awards, preferred stock, warrants and convertible notes. This
+capital structure, acquisition accounting and continuing cash use keep per-share normalization
+material rather than mechanical.
+
+## 2026-08-13 volume-anomaly review
+
+The canonical alert measured a 30.65% return from July 16 through August 13, when LUNR closed at USD
+17.56 on 20.57 million shares and entered the deterministic volume-anomaly state. The Q2 release
+that day supplies a current fundamental explanation: record quarterly revenue, a USD 1.8 billion
+headline backlog, USD 367 million of cash and unchanged full-year guidance. The next completed
+session closed at USD 19.01 on 18.86 million shares; the current indicator state retained both the
+volume anomaly and an upper-Bollinger break.
+
+This is an evidence-backed positive earnings reaction, not unexplained noise. It improves the scale
+and demand thesis, but the 41.44% rise from July 16 through August 14 also raises timing risk while
+margin, free-cash-flow and post-acquisition per-share value remain unresolved. The move is therefore
+a research-positive event and valuation risk, not a sufficient paper-trade opportunity.
+
+## Current valuation and disposition
+
+The `pre_profit_growth` template and `revenue_multiple` method remain appropriate, but a scenario
+valuation is still unsupported. The Q2 filing supplies current consolidated revenue, gross margin,
+cash burn, debt and claim counts. It does not quantify Goonhilly revenue, margins, cash acquired,
+debt assumed, working-capital and specified-capex adjustments, or integration costs after its August
+3 closing. Selecting revenue multiples and normalized diluted claims without those acquired unit
+economics would turn the new price reaction into an invented fair value rather than evidence.
+
+Status remains **watching**, with **medium** confidence, an **unsupported** valuation, and no paper
+strategy or signal. Revisit by September 16 or sooner when primary evidence supplies Goonhilly's
+economics and post-closing adjustments. Invalidate the constructive thesis on backlog conversion
+failure, fixed-price losses, liquidity erosion, integration disruption, mission failure, or dilution
+without per-share progress.
+
+## Changes since prior review
+
+- **Evidence:** the August 13 Form 10-Q and SEC-filed earnings exhibit supersede Q1 as the latest
+  financial evidence and resolve the scheduled-results gap.
+- **Market state:** the payload-bound August 13 volume anomaly coincided with the Q2 release and a
+  30.65% period gain; the August 14 close extended the period gain to 41.44% while anomaly and
+  upper-Bollinger states remained active.
+- **Facts and assumptions:** Q2 revenue, backlog, cash and full-year guidance strengthened the scale
+  and demand case. Negative adjusted EBITDA, USD 83.9 million of quarterly free cash outflow,
+  backlog/RPO differences and complex dilution keep margin and per-share assumptions conservative.
+- **Valuation inputs and outputs:** current financial and claim-count inputs improved, but missing
+  post-closing Goonhilly unit economics and adjustments still prevent bear/base/bull fair values or
+  probabilities. No scenario number was carried forward or invented.
+- **Thesis, catalysts and risks:** thesis support remains balanced at 60; business quality falls to
+  40 because acquired scale has not demonstrated durable positive economics. Backlog conversion,
+  cash generation, integration, mission execution and funded award conversion remain decisive.
+- **Blockers and gaps:** `valuation_unsupported` remains the hard blocker. Medium confidence and a
+  non-compelling, unquantified valuation remain soft gaps; the former pre-results timing gap is
+  resolved.
+- **Rating and action:** unchanged at Unrated / Watch and allocation-ineligible. The Q2 reaction is
+  fundamental rather than noise, but it does not justify a strategy, signal or paper order.
 
 See the complete [[research-catalog]] and append-only [[log]].

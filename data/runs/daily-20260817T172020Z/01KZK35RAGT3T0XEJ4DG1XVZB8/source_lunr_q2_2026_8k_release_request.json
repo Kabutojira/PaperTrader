@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lunr_q2_2026_8k_release",
+  "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056476/lunr-20260630xexx991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056476/lunr-20260630xexx991.htm",
+  "source_type": "regulator_filing_exhibit",
+  "title": "Intuitive Machines Q2 2026 earnings release, SEC-filed Exhibit 99.1",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e046fe29cff85e0855033bb8f99d833e06e6b1190d97a1f97e1a5876c054def9",
+  "related_entity_ids": "security_a5dc16f3f4b245e6c168",
+  "checked_at": "2026-08-17T17:25:39Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The release reports Q2 revenue of USD 206 million, cash of USD 367 million, backlog of USD 1.8 billion, and retains full-year revenue guidance of USD 900 million to USD 1 billion with positive adjusted EBITDA.",
+  "summary": "The SEC-filed earnings exhibit provides management's Q2 highlights, award commentary, backlog framing, and unchanged full-year outlook; the Form 10-Q remains authoritative for detailed financials and risks.",
+  "run_id": "daily-20260817T172020Z"
+}

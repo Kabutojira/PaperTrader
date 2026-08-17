@@ -1,0 +1,23 @@
+{
+  "security_id": "security_a5dc16f3f4b245e6c168",
+  "issuer_id": "issuer_0be47cd79cc6492e56b5",
+  "company_name": "Intuitive Machines, Inc.",
+  "instrument_name": "Intuitive Machines, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "LUNR",
+  "exchange_code": "NGM",
+  "venue_mic": "XNAS",
+  "provider_symbol": "LUNR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Q2 scale and backlog improved, but cash burn, acquisition integration, dilution and unsupported post-Goonhilly valuation require continued review.",
+  "research_summary": "Q2 revenue and backlog expanded sharply, but cash burn, complex dilution and missing Goonhilly economics keep scenario valuation unsupported.",
+  "research_page": "data/wiki/securities/security_a5dc16f3f4b245e6c168.md",
+  "last_research_at": "2026-08-17T17:27:00Z",
+  "next_review_at": "2026-09-16T17:27:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056821/lunr-20260630.htm"
+}

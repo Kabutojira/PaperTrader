@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lunr_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056821/lunr-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056821/lunr-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Intuitive Machines, Inc. Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1c1a3fef0222ec2d49eec1ff1ff4ca64e830492635075c3c2bb916229c64e480",
+  "related_entity_ids": "security_a5dc16f3f4b245e6c168",
+  "checked_at": "2026-08-17T17:25:39Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Q2 revenue was USD 206.168 million, quarter-end backlog USD 1.762 billion, cash USD 367.354 million, long-term debt USD 336.352 million, and six-month free cash outflow USD 145.819 million.",
+  "summary": "The Q2 Form 10-Q is the latest periodic filing and supplies current operating scale, backlog quality, cash burn, liquidity, debt, outstanding and potentially dilutive claims, acquisition costs, and Goonhilly subsequent-event terms.",
+  "run_id": "daily-20260817T172020Z"
+}

@@ -1,0 +1,76 @@
+{
+  "operation_id": "01KZK35RAGT3T0XEJ4DG1XVZB8",
+  "status": "succeeded",
+  "summary": "Completed one full repeat review of Intuitive Machines Class A common stock. The August 13 Form 10-Q and SEC-filed earnings exhibit explain the payload-bound volume anomaly and strengthen the revenue, backlog and liquidity evidence, but negative cash generation, complex dilution and absent post-closing Goonhilly unit economics keep scenario valuation unsupported, Unrated / Watch and allocation-ineligible. No strategy, signal, order, issue or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_lunr_q2_2026_10q",
+      "claim": "The latest Form 10-Q reports Q2 revenue of USD 206.168 million, gross profit before depreciation and amortization of USD 35.866 million, adjusted EBITDA of negative USD 13.799 million, quarterly free cash outflow of USD 83.867 million, cash of USD 367.354 million and long-term debt of USD 336.352 million.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056821/lunr-20260630.htm",
+      "observed_at": "2026-08-17T17:25:39Z",
+      "source_hash": "1c1a3fef0222ec2d49eec1ff1ff4ca64e830492635075c3c2bb916229c64e480"
+    },
+    {
+      "source": "source_lunr_q2_2026_8k_release",
+      "claim": "The SEC-filed earnings exhibit reports record Q2 revenue, approximately USD 1.8 billion of backlog and unchanged full-year revenue guidance of USD 900 million-1 billion with positive adjusted EBITDA, supplying a current fundamental explanation for the August 13 volume anomaly.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000162828026056476/lunr-20260630xexx991.htm",
+      "observed_at": "2026-08-17T17:25:39Z",
+      "source_hash": "e046fe29cff85e0855033bb8f99d833e06e6b1190d97a1f97e1a5876c054def9"
+    },
+    {
+      "source": "data/wiki/inbox/market-security_a5dc16f3f4b245e6c168-volume_anomaly-8cda2406695e.md",
+      "claim": "The canonical alert measured a 30.65% gain from 2026-07-16 through 2026-08-13, an August 13 close of USD 17.56 and volume of 20,567,800 as the volume-anomaly state entered."
+    },
+    {
+      "source": "data/market/latest.csv",
+      "claim": "The identity-matched current LUNR mark was USD 19.010000228881836 for the August 14 completed session, with canonical USD/EUR FX of 0.8629999756813049; both were retrieved at 2026-08-17T17:20:27Z and accepted by the assessment applier."
+    },
+    {
+      "source": "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/command_audit.json",
+      "claim": "The mandatory repeat-review context receipt succeeded before assessment-state reads. Immutable assessment assessment_2592e75cd2fffc8e9320 links predecessor assessment_0e788678ac0857de5db8, schema version 2, this operation and expected result path, current page hash, evidence and run provenance."
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/assessment_upsert_request.json",
+    "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/security_upsert_request.json",
+    "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/source_lunr_q2_2026_10q_request.json",
+    "data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/source_lunr_q2_2026_8k_release_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_a5dc16f3f4b245e6c168.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "LUNR full review: Q2 revenue and backlog expanded sharply and explain the August 13 volume anomaly, but negative cash generation, complex dilution and missing Goonhilly economics keep valuation unsupported, Unrated / Watch and allocation-ineligible.",
+    "The August 14 USD 19.01 mark extended the payload period move while volume-anomaly and upper-Bollinger states remained active; no strategy, signal, order or paper trade was created."
+  ],
+  "commands_run": [
+    "papertrader research security-context --security-id security_a5dc16f3f4b245e6c168",
+    "papertrader research source record --request data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/source_lunr_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/source_lunr_q2_2026_8k_release_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260817T172020Z/01KZK35RAGT3T0XEJ4DG1XVZB8/assessment_upsert_request_v2.json",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Mandatory security-context command completed successfully before assessment-state review.",
+      "Two current primary SEC sources were fetched, hashed and registered through audited source CLI requests with fresh 2026-08-17T17:25:39Z timestamps.",
+      "Security upsert preserved issuer, instrument, venue, provider, currency and instrument-type identity and updated only the bounded research projection.",
+      "The first assessment request was rejected without state change because a standard template cannot carry a custom rationale; a new immutable v2 request corrected that field and was accepted.",
+      "Assessment upsert accepted the identity-matched USD mark, canonical USD/EUR FX, fresh evidence, anchored 20/40/60/80/100 scores, explicit valuation_unsupported blocker and empty scenario fields.",
+      "Immutable assessment assessment_2592e75cd2fffc8e9320 links predecessor assessment_0e788678ac0857de5db8 and records schema version 2, source operation/result, current page hash, evidence and run provenance.",
+      "No payload idea IDs or accepted canonical relationships exist for this security, so the required linked-idea follow-up count is zero; the unsupported valuation prevents the strategy gate from passing.",
+      "Strict wiki lint returned OK [wiki].",
+      "Diff inspection found no changes to allocation targets/history, strategies, signals, orders, executions, cash, portfolio, fills or performance state."
+    ]
+  }
+}
