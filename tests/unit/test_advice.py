@@ -27,6 +27,7 @@ from papertrader.portfolio import build_risk_state
 from papertrader.queue import enqueue_operation
 from papertrader.tables import append_unique, read_table, write_table
 from papertrader.utils import deterministic_ulid, format_timestamp, required_decimal
+from papertrader.wiki import lint_wiki
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
@@ -830,6 +831,36 @@ def test_global_action_issue_blocks_active_recommendation(
     assert snapshot.investment_data_status == "current"
     assert snapshot.operations_status == "blocked"
     assert any(impact.impact == "blocks_action" for impact in snapshot.system_impacts)
+
+
+def test_system_status_escapes_wikilinks_embedded_in_issue_diagnostics(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    run_id = "issue-markdown-fixture"
+    _initialize(sandbox_repository, sandbox_settings, run_id=run_id)
+    record_issue(
+        sandbox_repository,
+        severity="error",
+        title="Research validation failed",
+        description=(
+            "Post-run wiki lint rejected [[concepts/missing-page]] while validating research."
+        ),
+        now=NOW,
+    )
+
+    refresh_advice(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=run_id,
+        as_of=NOW,
+    )
+
+    system_status = (sandbox_repository / "data" / "wiki" / "system-status.md").read_text(
+        encoding="utf-8"
+    )
+    assert r"\[\[concepts/missing-page\]\]" in system_status
+    assert lint_wiki(sandbox_repository / "data" / "wiki") == []
 
 
 def test_candidate_market_failure_degrades_without_blocking_cash_portfolio(

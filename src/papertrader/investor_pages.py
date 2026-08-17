@@ -1178,10 +1178,10 @@ def _system_status_page(repository_root: Path, snapshot: DecisionSnapshot, day: 
             lines.extend([f"### {_markdown(category.replace('_', ' ').title())}", ""])
             for value in values:
                 label = f"{value.ticker} — {value.company_name}: " if value.ticker else ""
-                public_title = resolver.humanize(label + value.title)
+                public_title = resolver.humanize(_markdown(label + value.title))
                 lines.append(
                     f"- {value.severity.capitalize()} **{public_title}** — "
-                    f"{resolver.humanize(value.summary)}"
+                    f"{resolver.humanize(_markdown(value.summary))}"
                 )
             lines.append("")
     else:
