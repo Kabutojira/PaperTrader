@@ -3871,3 +3871,5 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_8864a005d02d03b6bb61`.
 
 - Generated canonical [[daily-reports/daily-report_20260817]] for run `daily-20260817T010615Z`.
+
+- Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-48d79d4d9368]] (48d79d4d9368).
