@@ -192,6 +192,7 @@ No pending orders.
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[podcasts/daily-podcast_20260817T152008Z|Daily research podcast — 2026-08-17T152008Z]]
+- [[podcasts/daily-podcast_20260817T185232Z|Daily research podcast — 2026-08-17T185232Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_a5dc16f3f4b245e6c168|Intuitive Machines, Inc. Class A common stock]]
 - [[security-catalog|PaperTrader tracked securities]]

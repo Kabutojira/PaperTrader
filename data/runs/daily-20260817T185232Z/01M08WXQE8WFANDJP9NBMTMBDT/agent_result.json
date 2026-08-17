@@ -1,0 +1,68 @@
+{
+  "operation_id": "01M08WXQE8WFANDJP9NBMTMBDT",
+  "status": "succeeded",
+  "summary": "Published a 2,738-word transcript asking whether Intuitive Machines' newly demonstrated operating scale can become dependable per-share value. The episode covers record revenue, backlog quality, cash consumption, Lanteris and Goonhilly integration, dilution, the evidence-backed price rally, and the narrow all-cash portfolio implication. The required script preflight passed. The single audited draft-render attempt failed because the controller-provided output directory was not writable; it was not retried, and the valid transcript remains successful under the podcast contract.",
+  "evidence": [
+    {
+      "source": "data/runs/daily-20260817T185232Z/podcast_context.json",
+      "claim": "Frozen podcast context version three defines the exclusive prior cutoff, inclusive current cutoff, one accepted Intuitive Machines development, the current report and decision snapshot, and the prior successful podcast used for continuity.",
+      "observed_at": "2026-08-17T19:03:48Z"
+    },
+    {
+      "source": "Intuitive Machines Form 10-Q for the quarter ended June 30, 2026",
+      "claim": "The filing supports the transcript's discussion of quarterly revenue, gross profit, operating loss, free-cash-flow outflow, cash, debt, backlog, remaining performance obligations, guidance, and post-quarter share counts.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000184445226000191/lunr-20260630.htm",
+      "observed_at": "2026-08-14T00:00:00Z",
+      "source_hash": "21eb96f87fc20aa8d5000b5ad50726a53db6045d0c3b77e5190e9a6b6f7b9316"
+    },
+    {
+      "source": "Intuitive Machines second-quarter 2026 earnings release",
+      "claim": "The earnings release supports the transcript's account of record revenue, backlog growth, liquidity, and maintained full-year guidance as the fundamental explanation for the market reaction.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1844452/000184445226000189/lunr-20260813.htm",
+      "observed_at": "2026-08-13T00:00:00Z",
+      "source_hash": "28f974b38671854ff4e92e75ab3fbe7f059b12b4e3fb437309194586106edcc5"
+    },
+    {
+      "source": "data/wiki/securities/security_a5dc16f3f4b245e6c168.md",
+      "claim": "The accepted maintained research concludes that operating evidence improved and the rally had a fundamental explanation, while valuation remains unsupported pending acquisition economics, normalized cash conversion, backlog quality, and diluted claims.",
+      "source_hash": "db5766b4a9b086498b1935d58be383a96a27acf269fe8632a91f3b4dd7d97087"
+    },
+    {
+      "source": "data/runs/daily-20260817T185232Z/decision_snapshot.json",
+      "claim": "The completed decision state contains no actionable signals and remains entirely in cash, supporting the brief closing portfolio implication without changing investment state.",
+      "observed_at": "2026-08-17T19:03:48Z",
+      "source_hash": "f2d5b2e022e84e6266fe4a716fb1cdf83f5d07d49c07bba02863788cde1fa138"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260817.md",
+    "data/wiki/podcasts/daily-podcast_20260817T185232Z.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260817T185232Z --script-path data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260817T185232Z --script-path data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Frozen podcast context version three, cutoffs, referenced paths, and source hashes were confirmed before authoring.",
+      "Script preflight passed with 2,738 spoken words in five deterministic render chunks and script SHA-256 8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117.",
+      "The canonical daily report contains exactly one link to the new timestamped transcript and contains no audio link.",
+      "The single audited render-draft attempt exited with code 2 because the controller-provided output directory was not writable; command audit records no changed media path, and the attempt was not retried.",
+      "Strict schema validation passed.",
+      "Strict repository integrity validation passed.",
+      "Strict wiki lint passed.",
+      "Queue validation passed.",
+      "Strict portfolio reconciliation passed.",
+      "No research conclusion, allocation, advice, signal, order, fill, cash, execution, portfolio, or performance state was changed."
+    ]
+  }
+}

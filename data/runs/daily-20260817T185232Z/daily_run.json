@@ -35,14 +35,23 @@
       "profile": "",
       "recorded_at": "2026-08-17T19:54:52Z",
       "terminal_status": ""
+    },
+    {
+      "index": 4,
+      "kind": "podcast_text",
+      "operation_id": "01M08WXQE8WFANDJP9NBMTMBDT",
+      "operation_type": "daily_podcast",
+      "profile": "deep",
+      "recorded_at": "2026-08-17T22:26:22Z",
+      "terminal_status": "succeeded"
     }
   ],
   "completed_at": "2026-08-17T19:03:48Z",
-  "completion_at": "",
+  "completion_at": "2026-08-17T22:26:21Z",
   "daily_cycle_id": "daily-20260817T185232Z",
   "daily_run_version": 2,
   "fill_outcomes": [],
-  "final_commit_identity": "",
+  "final_commit_identity": "daily-20260817T185232Z:checkpoint-004",
   "final_commit_sha": "",
   "finalization_at": "2026-08-17T19:03:48Z",
   "finalization_commit_identity": "",
@@ -50,18 +59,18 @@
   "maximum_operations": 2,
   "model_budget_limit": "100",
   "model_budget_used": "0",
-  "next_checkpoint_index": 4,
+  "next_checkpoint_index": 5,
   "operating_date": "2026-08-17",
   "operation_count": 0,
   "operations_accepted": [],
   "operations_attempted": [],
   "originating_github_run_id": "32056390055",
   "podcast_audio_path": "",
-  "podcast_commit_identity": "",
-  "podcast_operation_id": "",
-  "podcast_page_path": "",
-  "podcast_status": "pending",
-  "podcast_text_at": "",
+  "podcast_commit_identity": "daily-20260817T185232Z:checkpoint-004",
+  "podcast_operation_id": "01M08WXQE8WFANDJP9NBMTMBDT",
+  "podcast_page_path": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+  "podcast_status": "succeeded",
+  "podcast_text_at": "2026-08-17T22:26:21Z",
   "preparation_at": "2026-08-17T18:52:38Z",
   "preparation_errors": [],
   "profile_limits": {
@@ -104,7 +113,7 @@
   "snapshot_id": "decision_0a8e074f6e492eda4f5f",
   "source_sha": "082cdcae2a23822810992b20900824acf2334e63",
   "started_at": "2026-08-17T18:52:32Z",
-  "status": "running",
+  "status": "succeeded",
   "trigger": "workflow_dispatch",
   "weighted_model_budget": "100",
   "weighted_model_budget_used": "0",
@@ -117,6 +126,11 @@
     {
       "github_run_id": "32062147567",
       "resumed_at": "2026-08-17T19:54:26Z",
+      "workflow_attempt": "1"
+    },
+    {
+      "github_run_id": "32074209616",
+      "resumed_at": "2026-08-17T22:11:59Z",
       "workflow_attempt": "1"
     }
   ]
