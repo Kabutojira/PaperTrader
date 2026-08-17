@@ -1036,9 +1036,9 @@ def _load_podcast_settings(
     )
     if not settings.voice:
         raise ConfigurationError("podcast.voice must not be empty")
-    if settings.operation_timeout_seconds <= hermes.profile("analyst").timeout_seconds:
+    if settings.operation_timeout_seconds < hermes.profile("deep").timeout_seconds:
         raise ConfigurationError(
-            "podcast.operation_timeout_seconds must exceed the analyst profile timeout"
+            "podcast.operation_timeout_seconds must not shorten the deep profile timeout"
         )
     if settings.operation_timeout_seconds > 3600:
         raise ConfigurationError("podcast.operation_timeout_seconds must be <= 3600")

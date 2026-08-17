@@ -236,7 +236,7 @@ def test_one_seeded_operation_runs_with_yolo_and_no_operational_credentials(
             assert b"auxiliary-secret-value" not in path.read_bytes()
 
 
-def test_daily_podcast_is_text_only_on_the_analyst_profile(
+def test_daily_podcast_is_text_only_on_the_deep_profile(
     sandbox_settings: Settings,
 ) -> None:
     preflight = SimpleNamespace(
@@ -245,9 +245,9 @@ def test_daily_podcast_is_text_only_on_the_analyst_profile(
         native_skill=SimpleNamespace(name="llm-wiki"),
         controller_skill=SimpleNamespace(name="papertrader-controller"),
         operation_skill=SimpleNamespace(name="papertrader-daily-podcast"),
-        profile="analyst",
+        profile="deep",
         reasoning_effort="medium",
-        maximum_turns=80,
+        maximum_turns=160,
     )
 
     command = hermes_command(sandbox_settings, preflight, "Create one daily podcast.")
@@ -315,7 +315,8 @@ def test_missing_podcast_result_without_agent_changes_is_terminally_failed(
     assert validation["passed"] is False
     assert any("agent result is missing" in error for error in validation["errors"])
     profile_route = json.loads((artifact_root / "profile_route.json").read_text())
-    assert profile_route["profile"] == "analyst"
+    assert profile_route["profile"] == "deep"
+    assert profile_route["route_reason"] == "strict_long_form_podcast_contract"
     assert profile_route["timeout_seconds"] == 1800
 
 

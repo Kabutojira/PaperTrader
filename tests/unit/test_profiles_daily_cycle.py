@@ -35,7 +35,9 @@ def test_profile_router_is_deterministic_and_promotes_sensitive_work() -> None:
     promoted = route_profile("quick_check_research", RoutingContext(current_holding=True))
     assert promoted.profile == "deep"
     assert promoted.route_reason == "portfolio_sensitive_conclusion"
-    assert route_profile("daily_podcast", RoutingContext()).profile == "analyst"
+    podcast = route_profile("daily_podcast", RoutingContext())
+    assert podcast.profile == "deep"
+    assert podcast.route_reason == "strict_long_form_podcast_contract"
     escalation = route_profile(
         "opportunity_research",
         RoutingContext(decision_change=True),

@@ -114,7 +114,7 @@ def test_settings_require_the_pinned_edge_tts_entrypoint(
         )
 
 
-def test_podcast_timeout_must_exceed_the_ordinary_analyst_limit(
+def test_podcast_timeout_must_not_shorten_the_deep_profile_limit(
     sandbox_repository: Path, paper_environment: dict[str, str]
 ) -> None:
     path = sandbox_repository / "config.ini"
@@ -125,7 +125,7 @@ def test_podcast_timeout_must_exceed_the_ordinary_analyst_limit(
         encoding="utf-8",
     )
 
-    with pytest.raises(ConfigurationError, match="must exceed the analyst profile timeout"):
+    with pytest.raises(ConfigurationError, match="must not shorten the deep profile timeout"):
         load_settings(
             sandbox_repository,
             paper_environment | {"WIKI_PATH": str(sandbox_repository / "data" / "wiki")},

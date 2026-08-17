@@ -77,6 +77,9 @@ def route_profile(
     if operation_type in {"strategy_research", "execute_strategy"}:
         selected = "deep"
         reason = "full_strategy_or_execution_decision"
+    elif operation_type == "daily_podcast":
+        selected = "deep"
+        reason = "strict_long_form_podcast_contract"
     elif operation_type == "security_research":
         # The current security contract is scenario-complete, so it always requires full authority.
         selected = "deep"
@@ -95,7 +98,6 @@ def route_profile(
             "opportunity_research",
             "idea_research",
             "relationship_research",
-            "daily_podcast",
         }:
             selected, reason = "analyst", "routine_research_or_long_form_synthesis"
         else:

@@ -174,6 +174,9 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     assert "daily record-checkpoint" in text
     assert "podcast enqueue" in text
     assert "--operation-type daily_podcast" in text
+    assert text.count("--operation-type daily_podcast --terminal-status") == 2
+    assert "profile_route.json" in text
+    assert '--profile "${{ steps.podcast_text.outputs.profile }}"' in text
     assert "podcast seal-render" in text
     assert "actions/upload-artifact" not in text
     assert "actions/download-artifact" not in text

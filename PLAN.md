@@ -735,8 +735,9 @@ refresh token is not lost merely because research failed.
 
 Refactor the queued `daily_podcast` operation into **text-only podcast synthesis**. It is a final
 operation outside the research `MAX_OPERATIONS` allowance and receives its own checkpoint commit.
-Use the analyst profile initially because the roughly 3,000-word connected narrative requires more
-long-form synthesis than a simple scout task; benchmark Luna later without changing the contract.
+Use the deep profile because the roughly 3,000-word connected narrative and its strict spoken-prose
+contract require reliable long-form synthesis. Deterministically preflight the completed script
+before consuming the operation's single ephemeral render attempt.
 
 After the finalization checkpoint:
 

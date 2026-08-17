@@ -683,8 +683,10 @@ jobs:
           PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
         run: |
           status=$(uv run papertrader podcast finalize --run-id "$CYCLE_ID")
-          checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "$status" --profile analyst)
+          profile=$(python3 -c 'import json,os,pathlib; print(json.loads((pathlib.Path("data/runs") / os.environ["CYCLE_ID"] / os.environ["PODCAST_OPERATION_ID"] / "profile_route.json").read_text())["profile"])')
+          checkpoint=$(uv run papertrader daily record-checkpoint --daily-cycle-id "$CYCLE_ID" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "$status" --profile "$profile")
           echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "profile=$profile" >> "$GITHUB_OUTPUT"
           echo "index=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["index"])' <<< "$checkpoint")" >> "$GITHUB_OUTPUT"
       - name: Push the terminal text-podcast checkpoint
         id: podcast_checkpoint
@@ -696,7 +698,7 @@ jobs:
           PODCAST_OPERATION_ID: ${{ steps.podcast_enqueue.outputs.operation_id }}
           TARGET_BRANCH: ${{ inputs.target_branch || github.event.repository.default_branch }}
         run: |
-          result=$(uv run papertrader workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "${{ steps.podcast_text.outputs.status }}" --profile analyst --target-branch "$TARGET_BRANCH")
+          result=$(uv run papertrader workflow checkpoint --daily-cycle-id "$CYCLE_ID" --checkpoint-index "$CHECKPOINT_INDEX" --kind podcast_text --operation-id "$PODCAST_OPERATION_ID" --operation-type daily_podcast --terminal-status "${{ steps.podcast_text.outputs.status }}" --profile "${{ steps.podcast_text.outputs.profile }}" --target-branch "$TARGET_BRANCH")
           echo "commit_sha=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["commit_sha"])' <<< "$result")" >> "$GITHUB_OUTPUT"
       - name: Seal the existing draft against the exact pushed transcript
         id: seal_audio

@@ -84,6 +84,7 @@ from papertrader.podcast import (
     finalize_daily_podcast,
     render_draft_podcast,
     seal_podcast_render,
+    validate_podcast_script_file,
 )
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
 from papertrader.profiles import RoutingContext, analyst_relationship_gate, route_profile
@@ -254,6 +255,9 @@ def _parser() -> argparse.ArgumentParser:
     podcast_context_build = podcast_context_commands.add_parser("build")
     podcast_context_build.add_argument("--daily-cycle-id", required=True)
     podcast_context_build.add_argument("--cutoff", required=True)
+    podcast_validate_script = podcast_commands.add_parser("validate-script")
+    podcast_validate_script.add_argument("--daily-cycle-id", required=True)
+    podcast_validate_script.add_argument("--script-path", required=True)
     podcast_render_draft = podcast_commands.add_parser("render-draft")
     podcast_render_draft.add_argument("--daily-cycle-id", required=True)
     podcast_render_draft.add_argument("--script-path", required=True)
@@ -1255,6 +1259,21 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
                     settings,
                     daily_cycle_id=arguments.daily_cycle_id,
                     cutoff=cutoff,
+                )
+            )
+            return 0
+        if arguments.podcast_command == "validate-script":
+            print(
+                json.dumps(
+                    asdict(
+                        validate_podcast_script_file(
+                            root,
+                            settings,
+                            daily_cycle_id=arguments.daily_cycle_id,
+                            script_path=arguments.script_path,
+                        )
+                    ),
+                    sort_keys=True,
                 )
             )
             return 0

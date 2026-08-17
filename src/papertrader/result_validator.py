@@ -689,12 +689,32 @@ def _daily_podcast_text_errors(
     )
     errors.extend(audit_errors)
     draft_attempts = [
-        entry
-        for entry in audit_entries
+        (index, entry)
+        for index, entry in enumerate(audit_entries)
         if _command_parts(entry)[1:3] == ("podcast", "render-draft")
     ]
     if len(draft_attempts) != 1:
         errors.append("successful daily podcast must attempt audited draft rendering exactly once")
+    expected_preflight = (
+        "papertrader",
+        "podcast",
+        "validate-script",
+        "--daily-cycle-id",
+        operation.entity_id,
+        "--script-path",
+        page_path,
+    )
+    successful_preflights = [
+        index
+        for index, entry in enumerate(audit_entries)
+        if _command_parts(entry) == expected_preflight and entry.get("exit_code") == 0
+    ]
+    if not successful_preflights:
+        errors.append("successful daily podcast requires a passing script preflight")
+    elif draft_attempts and not any(
+        index < draft_attempts[0][0] for index in successful_preflights
+    ):
+        errors.append("daily podcast script preflight must pass before draft rendering")
     if not isinstance(report_path, str) or report_path not in changed_paths:
         errors.append("succeeded daily podcast must link its transcript from the daily report")
     else:

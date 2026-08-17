@@ -16,6 +16,7 @@ from papertrader.podcast import (
     render_draft_podcast,
     seal_podcast_render,
     validate_podcast_script,
+    validate_podcast_script_file,
 )
 from papertrader.queue import RunBudget, claim_next, fail_attempt, prepare_queue
 from papertrader.tables import append_unique, read_table
@@ -32,6 +33,8 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
     assert "never list a rejected or pre-dispatch command" in skill
     assert "paper_trading: true" in skill
     assert "invoke exactly once" in skill
+    assert "podcast validate-script" in skill
+    assert "renderer before one preflight has passed" in skill
     assert "Do not retry a failed render" in skill
 
 
@@ -496,6 +499,30 @@ def test_podcast_render_draft_uses_only_audited_runner_temp(
     assert Path(result.manifest_path).is_file()
     assert not list(sandbox_repository.rglob("*.mp3"))
     assert not list(output.glob("chunk-*.mp3"))
+
+
+def test_podcast_script_preflight_uses_the_renderers_exact_text_gates(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260730T180000Z"
+    script_path = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
+    page = sandbox_repository / script_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_script(cycle_id), encoding="utf-8")
+
+    result = validate_podcast_script_file(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        script_path=script_path,
+    )
+
+    assert result.daily_cycle_id == cycle_id
+    assert result.script_path == script_path
+    assert result.word_count == 3000
+    assert 2 <= result.chunk_count <= 12
+    assert len(result.script_sha256) == 64
 
 
 def test_repository_podcast_audio_path_is_rejected(

@@ -4,6 +4,7 @@ import json
 import subprocess
 import sys
 from collections.abc import Mapping, Sequence
+from dataclasses import replace
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -15,6 +16,7 @@ from papertrader.queue import Operation, enqueue_operation
 from papertrader.result_validator import (
     _baseline_signal_followup_errors,
     _command_allowed,
+    _daily_podcast_text_errors,
     _idea_security_followup_errors,
     _path_allowed_for_operation,
     _security_assessment_result_errors,
@@ -24,6 +26,16 @@ from papertrader.result_validator import (
 from papertrader.tables import read_table, write_table
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
+
+
+def _podcast_script(cycle_id: str) -> str:
+    paragraphs = [" ".join(["word"] * 375) for _ in range(8)]
+    return (
+        f"---\ndaily_cycle_id: {cycle_id}\npaper_trading: true\n---\n"
+        "<!-- papertrader-spoken-transcript:start -->\n"
+        + "\n\n".join(paragraphs)
+        + "\n<!-- papertrader-spoken-transcript:end -->\n"
+    )
 
 
 def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
@@ -127,12 +139,29 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
             "argv": [
                 "papertrader",
                 "podcast",
+                "validate-script",
+                "--daily-cycle-id",
+                "daily-20260724T120000Z",
+            ]
+        },
+        profile="deep",
+    )
+    assert _command_allowed(
+        "daily_podcast",
+        {
+            "argv": [
+                "papertrader",
+                "podcast",
                 "render-draft",
                 "--daily-cycle-id",
                 "daily-20260724T120000Z",
             ]
         },
-        profile="analyst",
+        profile="deep",
+    )
+    assert not _command_allowed(
+        "security_research",
+        {"argv": ["papertrader", "podcast", "validate-script"]},
     )
     assert not _command_allowed(
         "security_research",
@@ -157,6 +186,103 @@ def test_agent_operation_scopes_never_own_generated_allocation_state() -> None:
         "data/wiki/research-catalog.md",
         created=False,
     )
+
+
+def test_successful_podcast_preflight_must_pass_before_the_single_render(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260724T120000Z"
+    page_path = "data/wiki/podcasts/daily-podcast_20260724T120000Z.md"
+    report_path = "data/wiki/daily-reports/daily-report_20260724.md"
+    operation_id, created = enqueue_operation(
+        sandbox_repository,
+        sandbox_settings,
+        operation_type="daily_podcast",
+        entity_type="run",
+        entity_id=cycle_id,
+        dedupe_key=f"daily_podcast:{cycle_id}:research-v3",
+        prompt="Create the completed run's daily podcast.",
+        inputs={
+            "run_id": cycle_id,
+            "context_path": f"data/runs/{cycle_id}/podcast_context.json",
+            "report_path": report_path,
+            "page_path": page_path,
+            "target_minutes": 20,
+            "target_words": 3000,
+        },
+        source="test",
+        max_attempts=1,
+        now=NOW,
+    )
+    assert created
+    operation = replace(
+        Operation.from_row(read_table(sandbox_repository, "operations_todo")[0]),
+        claimed_by_run_id=cycle_id,
+    )
+    assert operation.operation_id == operation_id
+    page = sandbox_repository / page_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_podcast_script(cycle_id), encoding="utf-8")
+    report = sandbox_repository / report_path
+    report.write_text(f"Podcast: {page.stem}\n", encoding="utf-8")
+    preflight_command = (
+        f"papertrader podcast validate-script --daily-cycle-id {cycle_id} --script-path {page_path}"
+    )
+    render_command = (
+        f"papertrader podcast render-draft --daily-cycle-id {cycle_id} --script-path {page_path}"
+    )
+
+    def audit_entry(command: str, *, exit_code: int) -> dict[str, object]:
+        return {
+            "command": command,
+            "argv": command.split(),
+            "request": None,
+            "started_at": "2026-07-24T12:00:00Z",
+            "completed_at": "2026-07-24T12:00:01Z",
+            "exit_code": exit_code,
+            "changed_paths": [],
+            "changes": [],
+            "profile": "deep",
+        }
+
+    audit_path = (
+        sandbox_repository / "data" / "runs" / cycle_id / operation_id / "command_audit.json"
+    )
+    audit_path.parent.mkdir(parents=True, exist_ok=True)
+    audit = {
+        "audit_version": 1,
+        "run_id": cycle_id,
+        "operation_id": operation_id,
+        "entries": [
+            audit_entry(preflight_command, exit_code=0),
+            audit_entry(render_command, exit_code=2),
+        ],
+        "profile": "deep",
+        "profile_policy_version": "profile-router-v1",
+        "route_reason": "strict_long_form_podcast_contract",
+    }
+    audit_path.write_text(json.dumps(audit), encoding="utf-8")
+
+    assert (
+        _daily_podcast_text_errors(
+            sandbox_repository,
+            operation=operation,
+            status="succeeded",
+            changed_paths=(report_path, page_path),
+        )
+        == []
+    )
+
+    audit["entries"] = list(reversed(audit["entries"]))
+    audit_path.write_text(json.dumps(audit), encoding="utf-8")
+    errors = _daily_podcast_text_errors(
+        sandbox_repository,
+        operation=operation,
+        status="succeeded",
+        changed_paths=(report_path, page_path),
+    )
+    assert "daily podcast script preflight must pass before draft rendering" in errors
 
 
 def _home(repository: Path, settings: Settings, tmp_path: Path) -> Path:

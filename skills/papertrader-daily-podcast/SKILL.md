@@ -56,14 +56,19 @@ background and definitions; newer accepted evidence controls current claims.
    `<!-- papertrader-spoken-transcript:start -->` and
    `<!-- papertrader-spoken-transcript:end -->`. The spoken section must contain between two
    thousand four hundred and three thousand six hundred words in at least eight prose paragraphs.
-9. After the complete script exists, invoke exactly once:
+9. After the complete script and report link exist, run the read-only deterministic preflight:
+   `scripts/papertrader podcast validate-script --daily-cycle-id <run_id> --script-path <page_path>`.
+   If it fails, correct the transcript and run the preflight again until it passes. Do not invoke
+   the renderer before one preflight has passed.
+10. After a preflight passes, invoke exactly once:
    `scripts/papertrader podcast render-draft --daily-cycle-id <run_id> --script-path <page_path>`.
    The controller supplies `PAPERTRADER_PODCAST_OUTPUT_DIRECTORY`; never print, change, replace, or
    use another output directory. Do not retry a failed render and do not invoke Edge TTS, ffmpeg, or
    ffprobe directly. A render failure does not invalidate an otherwise valid transcript.
-10. Run only permitted project checks: strict schema, integrity, wiki, queue, and portfolio checks.
+11. Run only permitted project checks: strict schema, integrity, wiki, queue, and portfolio checks.
     `advice validate` is outside the `daily_podcast` command scope. Copy `commands_run` exactly from
-    `command_audit.json`, including the single render-draft receipt. You must never list a rejected or pre-dispatch command. Write `agent_result.json` last.
+    `command_audit.json`, including every preflight and the single render-draft receipt. You must
+    never list a rejected or pre-dispatch command. Write `agent_result.json` last.
 
 ## Output contract
 
@@ -95,5 +100,7 @@ persistent audio reference, exactly one audited draft-render attempt, and all pe
 
 Finish `blocked` for conflicting frozen identities or missing committed context pages, `failed`
 when a valid script cannot be completed, and `skipped` only when the whole frozen window contains
-no audience-relevant accepted research. A valid script remains successful when its one TTS attempt
-fails. Never synthesize again and never start another operation.
+no audience-relevant accepted research. Once the final script passes deterministic preflight, the
+result is `succeeded` even when its one TTS attempt fails. Before any non-success result, remove a
+new partial transcript and restore the report to its exact original bytes; a non-success result
+must retain neither new artifact. Never synthesize again and never start another operation.

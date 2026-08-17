@@ -76,6 +76,15 @@ class PodcastAssembly:
     sha256: str
 
 
+@dataclass(frozen=True, slots=True)
+class PodcastScriptValidation:
+    daily_cycle_id: str
+    script_path: str
+    word_count: int
+    chunk_count: int
+    script_sha256: str
+
+
 def _manifest_path(repository_root: Path, run_id: str) -> Path:
     if not RUN_ID.fullmatch(run_id):
         raise PodcastError(f"invalid run_id: {run_id!r}")
@@ -661,6 +670,54 @@ def validate_podcast_script(markdown: str, *, daily_cycle_id: str) -> tuple[str,
     return transcript, len(words)
 
 
+def _validated_podcast_script_file(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    daily_cycle_id: str,
+    script_path: str,
+) -> tuple[bytes, str, int, tuple[str, ...]]:
+    """Apply the exact deterministic script gates used before draft rendering."""
+
+    if not RUN_ID.fullmatch(daily_cycle_id):
+        raise PodcastError("podcast script cycle identity is invalid")
+    expected_stamp = daily_cycle_id.removeprefix("daily-")
+    if script_path != f"data/wiki/podcasts/daily-podcast_{expected_stamp}.md":
+        raise PodcastError("podcast page path is not bound to the timestamped cycle")
+    markdown_bytes = _regular_bytes(repository_root, script_path, label="podcast draft transcript")
+    try:
+        markdown = markdown_bytes.decode("utf-8")
+    except UnicodeDecodeError as exc:
+        raise PodcastError("podcast draft transcript is not UTF-8") from exc
+    transcript, word_count = validate_podcast_script(markdown, daily_cycle_id=daily_cycle_id)
+    chunks = _transcript_chunks(transcript, settings.podcast.chunk_character_limit)
+    return markdown_bytes, transcript, word_count, chunks
+
+
+def validate_podcast_script_file(
+    repository_root: Path,
+    settings: Settings,
+    *,
+    daily_cycle_id: str,
+    script_path: str,
+) -> PodcastScriptValidation:
+    """Preflight one workspace transcript without rendering or changing repository state."""
+
+    markdown_bytes, _, word_count, chunks = _validated_podcast_script_file(
+        repository_root,
+        settings,
+        daily_cycle_id=daily_cycle_id,
+        script_path=script_path,
+    )
+    return PodcastScriptValidation(
+        daily_cycle_id=daily_cycle_id,
+        script_path=script_path,
+        word_count=word_count,
+        chunk_count=len(chunks),
+        script_sha256=content_hash(markdown_bytes),
+    )
+
+
 def assemble_podcast(
     repository_root: Path,
     request: Mapping[str, object],
@@ -773,17 +830,13 @@ def _render_draft_podcast(
         or not ULID.fullmatch(audit_operation_id)
     ):
         raise PodcastError("podcast draft rendering requires an audited daily_podcast operation")
-    expected_stamp = daily_cycle_id.removeprefix("daily-")
-    if script_path != f"data/wiki/podcasts/daily-podcast_{expected_stamp}.md":
-        raise PodcastError("podcast page path is not bound to the timestamped cycle")
     output_root = _output_root(repository_root, output_directory, daily_cycle_id)
-    markdown_bytes = _regular_bytes(repository_root, script_path, label="podcast draft transcript")
-    try:
-        markdown = markdown_bytes.decode("utf-8")
-    except UnicodeDecodeError as exc:
-        raise PodcastError("podcast draft transcript is not UTF-8") from exc
-    transcript, word_count = validate_podcast_script(markdown, daily_cycle_id=daily_cycle_id)
-    chunks = _transcript_chunks(transcript, settings.podcast.chunk_character_limit)
+    markdown_bytes, transcript, word_count, chunks = _validated_podcast_script_file(
+        repository_root,
+        settings,
+        daily_cycle_id=daily_cycle_id,
+        script_path=script_path,
+    )
     output_root.mkdir(parents=True, exist_ok=True)
     if output_root.is_symlink():
         raise PodcastError("ephemeral podcast directory must not be a symlink")
@@ -1104,6 +1157,7 @@ __all__ = [
     "PodcastAssembly",
     "PodcastEnqueueResult",
     "PodcastError",
+    "PodcastScriptValidation",
     "assemble_podcast",
     "build_podcast_context",
     "enqueue_daily_podcast",
@@ -1112,4 +1166,5 @@ __all__ = [
     "seal_podcast_render",
     "spoken_transcript",
     "validate_podcast_script",
+    "validate_podcast_script_file",
 ]
