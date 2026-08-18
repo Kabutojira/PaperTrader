@@ -1,0 +1,41 @@
+{
+  "entity_id": "security_47a0b06f6c6c478d7c1e",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYPB2048VWN4VV7YYF4Y60TX",
+    "changed_gate": "q2_operating_and_capital_inputs_invalidate_prior_scenario_set",
+    "current_market_data_as_of": "2026-08-18T20:11:34Z",
+    "current_market_data_date": "2026-08-18",
+    "current_source_price_hash": "5f3a9c95eea1bba517caba43757e5cc8860c613b285449537f8091194a08175f",
+    "full_research_requested": true,
+    "market_data_as_of": "2026-08-13T09:26:42Z",
+    "market_data_date": "2026-08-12",
+    "period_end": "2026-08-12",
+    "period_start": "2026-07-14",
+    "quick_check_operation_id": "01KZVTZDX0K1KX61Y923GX3GNG",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7.md"
+      },
+      {
+        "cause": "q2_operating_and_capital_inputs_invalidate_prior_scenario_set",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+      }
+    ],
+    "security_id": "security_47a0b06f6c6c478d7c1e",
+    "source_price_hash": "85d4aeb10adce2f60a40fc52bfc345d2d34c863a36a1307f5afaf259c88d6fd4",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess and revalue Nebius after Q2 results materially changed revenue, EBITDA, capital spending, liquidity, debt, deferred revenue, and share-count inputs while the August 12 volume anomaly left the old scenario set stale.",
+  "operation_id": "01M0B9RMZRENS1CC2T3BF65HXF",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_47a0b06f6c6c478d7c1e-volume_anomaly-851a40fcbec7.md",
+    "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm",
+    "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm"
+  ]
+}

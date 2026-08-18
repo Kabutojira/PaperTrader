@@ -1,0 +1,101 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/security_upsert_request.json",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request_v2.json",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request_v3.json",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request_v3.json",
+    "papertrader research security upsert --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request_v3.json",
+    "papertrader queue enqueue --request data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/enqueue_full_research_request_v2.json",
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Nebius' August 12 volume anomaly was an earnings-linked repricing after Q2 revenue and adjusted EBITDA accelerated, but the close subsequently eased to USD 248.43 and the Q2 filing also exposed extraordinary capex, customer-funded cash flow, leverage, concentration and valuation-denominator changes. The stale Q1 scenarios were withdrawn: NBIS is Unrated / Watch and allocation-ineligible pending exactly one dependent full review, with no paper strategy or signal created."
+  ],
+  "evidence": [
+    {
+      "claim": "The canonical alert binds the 2026-07-14 through 2026-08-12 period, a USD 257.8900146484375 adjusted close, 26.5136682158% period return and volume_anomaly at 1.9070570294 times the twenty-session average to source-price hash 851a40fcbec7f03985828271a23a81d85f326c2c2ffb28b264c21a96ad60081b. By August 18 the close was USD 248.42999267578125, 3.6682% below the alert mark; RSI 56.71782656 was neutral, MACD 16.71619268 remained above signal 16.19822208 and volume was no longer anomalous.",
+      "observed_at": "2026-08-18T20:11:34Z",
+      "source": "PaperTrader payload-bound market alert and deterministic market state",
+      "source_hash": "204f70496d770483e6fbf73c4852213432010523ab6495696425254945078a8d"
+    },
+    {
+      "claim": "Nebius reported Q2 revenue of USD 582.3 million, up 454% year over year, adjusted EBITDA of USD 236.2 million and GAAP continuing-operations net loss of USD 190.4 million. Purchases of property, equipment and intangible assets were USD 5.6574 billion, while operating cash flow included USD 4.2563 billion of customer advances and prepayments.",
+      "observed_at": "2026-08-18T20:36:26Z",
+      "source": "Nebius Q2 2026 results release filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "6251cc57958331181d98ee59ff093992d0658f8d6db5487eed7e7d397225aa03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+    },
+    {
+      "claim": "The quarterly statements confirm USD 574.9 million of Q2 AI-cloud revenue, USD 8.0421 billion cash, USD 8.5457 billion current and non-current debt, USD 7.4974 billion deferred revenue, USD 102.5 million Q2 share-based compensation and 271,855,218 issued and outstanding shares at June 30. These inputs materially supersede the Q1 evidence and require a fresh valuation rather than mechanical reuse of the prior approximately 309 million diluted-share scenario basis.",
+      "observed_at": "2026-08-18T20:36:26Z",
+      "source": "Nebius Q2 2026 unaudited condensed consolidated financial statements filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "440449e9671dc8f744e7a9cbbac86384d6eacbfded9dc3c01c95613d64c31c4c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm"
+    },
+    {
+      "claim": "The baseline completed full research for the same immutable security on 2026-08-05 and used Q1 evidence with USD 75/USD 170/USD 340 scenarios. The accepted current assessment assessment_418bcf82968e21826232 is the sole immutable version sourced from this quick check and current run, links predecessor assessment_e2c4e2fa700c110e5f32, records fresh price and FX identity, and removes scenario values rather than presenting stale Q1 sensitivities as current fair value.",
+      "source": "Baseline result 01KYPB2048VWN4VV7YYF4Y60TX and PaperTrader deterministic assessment projection"
+    },
+    {
+      "claim": "Exactly one dependent security_research operation, 01M0B9RMZRENS1CC2T3BF65HXF, carries this quick-check identity, full_research_requested=true, the volume-anomaly cause, both price hashes, the exact market period and the Q2 revaluation gate. No strategy or signal was created.",
+      "source": "PaperTrader deterministic queue projection"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0B9RMZRENS1CC2T3BF65HXF.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/enqueue_full_research_request.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/enqueue_full_research_request_v2.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/security_upsert_request.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/security_upsert_request_v2.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request_v2.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request_v3.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request_v2.json",
+    "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request_v3.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZVTZDX0K1KX61Y923GX3GNG",
+  "operations_created": [
+    "01M0B9RMZRENS1CC2T3BF65HXF"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Nebius quick check for the August 12 volume anomaly. SEC-filed Q2 evidence materially strengthened revenue growth and adjusted EBITDA but also introduced extraordinary capital spending, customer-advance funding, higher leverage, share-based compensation and a changed valuation denominator that the Q1 scenario set does not reconcile. The alert was an earnings-linked repricing event, not a validated entry condition: by August 18 the USD 248.43 close was 3.67% below the alert mark, RSI was neutral and MACD remained positive. Published immutable assessment assessment_418bcf82968e21826232 as schema-v2 Unrated / Watch, valuation-unsupported and allocation-ineligible, and created exactly one dependent full security review, 01M0B9RMZRENS1CC2T3BF65HXF. No strategy, signal, paper order, allocation or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected row was the sole running LLM operation, matched run daily-20260818T201127Z, immutable security_47a0b06f6c6c478d7c1e, quick_check_research payload and trusted preflight identities.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and confirmed baseline operation 01KYPB2048VWN4VV7YYF4Y60TX succeeded for the same security within ten days of enqueue.",
+      "Confirmed the payload's exact July 14 through August 12 market period and source-price hash 851a40fcbec7f03985828271a23a81d85f326c2c2ffb28b264c21a96ad60081b against the canonical alert packet, and confirmed current source-price hash 204f70496d770483e6fbf73c4852213432010523ab6495696425254945078a8d.",
+      "Verified the baseline thesis, stale valuation and buy zone, catalysts, risks, invalidation gates and confidence against current SEC-filed Q2 results and the exact alert period; material evidence and the explicit full_research_requested gate require escalation.",
+      "Updated the maintained security page with explicit assumption, evidence, valuation, alert, action and escalation comparisons and registered the current Q2 release and financial statements.",
+      "Confirmed assessment assessment_418bcf82968e21826232 is the sole immutable assessment version for this operation and run, links its predecessor and expected result path, uses anchored scores, records fresh price and FX identity, and contains no invented scenario values for its unsupported valuation.",
+      "Confirmed current assessment run_id is exactly daily-20260818T201127Z and current source_operation_id is exactly 01KZVTZDX0K1KX61Y923GX3GNG after the required post-upsert security-context command.",
+      "Confirmed exactly one dependent security_research operation, 01M0B9RMZRENS1CC2T3BF65HXF, carries this quick-check identity, all merged alert causes, the exact market period, both price hashes and the changed Q2 revaluation gate.",
+      "Two initial source observations carried a truncated related security ID; append-only corrected checks restored both current registry associations before assessment publication. The first security request and the first assessment retry were rejected without state changes, and uniquely named corrected requests succeeded.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation returned OK.",
+      "No allocation targets/history, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting ledger was changed by this operation."
+    ],
+    "passed": true
+  }
+}

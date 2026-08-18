@@ -4006,3 +4006,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
   after a 28.27% one-month decline, not evidence that monetization or cash conversion improved.
   Unchanged USD 28.23/USD 39.58/USD 53.00 scenarios against the higher USD 37.66 mark leave Roblox
   Hold / Watch and allocation-ineligible; no conviction strategy or signal is justified.
+
+## [2026-08-18T20:41:52Z] update | Nebius Q2 quick check and volume anomaly
+
+- Rechecked [[securities/security_47a0b06f6c6c478d7c1e|Nebius]] against its SEC-filed Q2 results
+  and the August 18 market state. Revenue and adjusted EBITDA accelerated, but extraordinary capital
+  spending, customer-funded cash flow, leverage, concentration, and changed share identities make
+  the Q1 scenario set stale. The earnings-linked volume anomaly is a repricing event rather than a
+  validated entry condition; Nebius is Unrated / Watch and allocation-ineligible pending exactly
+  one dependent full review, with no strategy or signal created.

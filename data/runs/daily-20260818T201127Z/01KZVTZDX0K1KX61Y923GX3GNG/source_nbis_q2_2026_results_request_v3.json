@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nbis_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm",
+  "source_type": "issuer_release",
+  "title": "Nebius reports second quarter 2026 financial results",
+  "publisher": "Nebius Group N.V. via the U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6251cc57958331181d98ee59ff093992d0658f8d6db5487eed7e7d397225aa03",
+  "related_entity_ids": "security_47a0b06f6c6c478d7c1e",
+  "checked_at": "2026-08-18T20:40:51Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Nebius reported Q2 revenue of USD 582.3 million, adjusted EBITDA of USD 236.2 million, and USD 5.6574 billion of purchases of property, equipment and intangible assets.",
+  "summary": "The SEC-filed issuer release reports 454% year-over-year Q2 revenue growth and positive adjusted EBITDA, alongside exceptional capital intensity, USD 102.5 million of share-based compensation, USD 8.0421 billion cash, USD 8.5457 billion debt, and 271,855,218 issued and outstanding shares at June 30.",
+  "run_id": "daily-20260818T201127Z"
+}

@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-05"
-updated: "2026-08-05"
-provenance: "source_nbis_q1_2026_financials; source_nbis_july_2026_secured_financing"
+updated: "2026-08-18"
+provenance: "source_nbis_q1_2026_financials; source_nbis_july_2026_secured_financing; source_nbis_q2_2026_results; source_nbis_q2_2026_financials"
 security_id: security_47a0b06f6c6c478d7c1e
 issuer_id: issuer_489b0bfd13a06e7d7874
 confidence: medium
-next_review: "2026-08-19"
+next_review: "2026-08-25"
 ---
 
 # Nebius Group N.V. Class A ordinary shares
@@ -38,57 +38,49 @@ cash generation is supported by customer advances, capacity is expensive and tec
 perishable, and debt, convertibles, warrants, and equity compensation can transfer growth away from
 existing shares.
 
-For the quarter ended 31 March 2026, group revenue rose 684% year over year to USD 399.0 million;
-Nebius AI cloud revenue rose 841% to USD 389.7 million. Group adjusted EBITDA improved from a USD
-53.7 million loss to USD 129.5 million, including USD 174.0 million from AI cloud, but depreciation
-of USD 212.0 million left a USD 128.0 million operating loss. The business therefore demonstrated
-utilization and operating leverage without yet demonstrating mature GAAP or free-cash-flow
-profitability.
+For the quarter ended 30 June 2026, group revenue rose 454% year over year to USD 582.3 million and
+Nebius AI cloud revenue rose 514% to USD 574.9 million. Group adjusted EBITDA improved from a USD
+21.0 million loss to positive USD 236.2 million, but continuing operations still lost USD 190.4
+million. The business demonstrated exceptional utilization and operating leverage while remaining
+capital-intensive: quarterly purchases of property, equipment, and intangible assets reached USD
+5.6574 billion.
 
 ## Evidence and decision gates
 
 | Evidence | Interpretation |
 | --- | --- |
-| Cash was USD 9.2982 billion at 31 March against USD 8.4504 billion of current and non-current debt. | Liquidity is substantial, but net cash is modest relative to the capacity program and convertible dilution must be modeled. |
-| Q1 operating cash flow was USD 2.2580 billion, including USD 3.1980 billion of customer advances; capex was USD 2.4729 billion. | Contract funding reduces near-term financing pressure, but advance-driven cash flow is not recurring free cash flow. |
-| Accounts receivable reached USD 1.4792 billion and deferred revenue reached USD 4.7781 billion. | Contracted deployment is converting into balance-sheet scale, while collection, delivery, and customer-concentration execution remain important. |
-| Q1 diluted weighted-average ordinary shares were 308,971,701 versus 258,298,911 basic weighted-average shares. | Convertibles and share awards make a fully diluted denominator essential. |
+| Q2 group revenue reached USD 582.3 million and adjusted EBITDA reached positive USD 236.2 million. | Capacity and utilization are converting into revenue and operating leverage much faster than the Q1 scenario inputs assumed. |
+| Cash was USD 8.0421 billion at 30 June against USD 8.5457 billion of current and non-current debt. | Liquidity remains substantial, but reported debt now exceeds cash and the capacity program still requires a financing-sensitive model. |
+| Q2 operating cash flow was USD 2.2461 billion while purchases of property, equipment, and intangible assets were USD 5.6574 billion. | Customer funding helps liquidity, but the quarterly investment outlay far exceeded operating cash flow and is not mature free-cash-flow evidence. |
+| Deferred revenue reached USD 5.9752 billion and Q2 share-based compensation reached USD 102.5 million. | Contract funding supports visibility, while delivery obligations and dilution remain economically material. |
+| Issued and outstanding shares were 271,855,218 at 30 June, excluding 50,185,726 treasury shares. | The old roughly 309 million diluted denominator cannot simply be carried forward without reconciling current convertibles, warrants, awards, treasury shares, and diluted share count. |
 | The 17 July facility provides about USD 775 million at SOFR plus 2.50%, due 31 October 2030, backed by deployed GPUs and contracted cash flow. | Asset-level funding can recycle capital, but adds secured leverage and depends on customer cash flows and GPU residual value. |
 | Management cited more than USD 40 billion of additional contracted revenue and delivery progress to Microsoft. | Backlog supports growth visibility, but duration, capex intensity, delivery milestones, and customer concentration prevent treating contract value as current profit. |
 
-Primary evidence is the [SEC-filed Q1 financial statements and notes](https://www.sec.gov/Archives/edgar/data/1513845/000110465926064092/nbis-20260331xex99d2.htm)
-as `source_nbis_q1_2026_financials` and the [SEC-filed 17 July financing release](https://www.sec.gov/Archives/edgar/data/1513845/000110465926084452/tm2620683d1_ex99-1.htm)
-as `source_nbis_july_2026_secured_financing`, both checked 5 August 2026.
+Current primary evidence is the [SEC-filed Q2 results release](https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm)
+as `source_nbis_q2_2026_results` and the [SEC-filed Q2 statements and notes](https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm)
+as `source_nbis_q2_2026_financials`, both checked 18 August 2026. The earlier Q1 statements and 17
+July financing release remain historical context.
 
 ## Valuation
 
-The `pre_profit_growth` template uses a 12-month `revenue_multiple`. The scenarios normalize Q1's
-rapid capacity ramp into prospective revenue, subtract or add only bounded net financial resources,
-and divide by roughly 309 million diluted shares so convertibles and awards are not ignored. They
-vary deployed capacity and utilization, revenue growth, EBITDA and cash conversion, customer
-concentration, financing cost, dilution, and the revenue multiple after another year of execution.
-Against the 4 August close of USD 225.74000549316406:
-
-| Scenario | Probability | Fair value | Assumptions |
-| --- | ---: | ---: | --- |
-| Bear | 25% | USD 75.00 | About USD 3.5 billion forward revenue at roughly 6x enterprise value/revenue; deployments slip, utilization or pricing weakens, customer advances do not repeat, capex and secured funding rise, and dilution persists. |
-| Base | 50% | USD 170.00 | About USD 5.5 billion forward revenue at roughly 9x; contracted capacity is delivered, AI-cloud adjusted EBITDA remains positive, capex financing broadly tracks deployments, and dilution is contained but material. |
-| Bull | 25% | USD 340.00 | About USD 8.0 billion forward revenue at roughly 13x; large contracts ramp on schedule, software and utilization sustain strong margins, asset-backed funding scales efficiently, and customer diversity improves. |
-
-Probability-weighted fair value is USD 188.75, 16.4% below the mark. The base case itself is 24.7%
-below the mark and the bear case implies 66.8% downside, so the required expected-return, base-upside,
-and margin-of-safety gates do not pass. Medium confidence reflects the unusually fast capacity ramp,
-limited public history in the current corporate form, uncertain contract timing and economics, and
-extreme sensitivity to revenue scale, terminal multiple, and diluted share count.
+The prior `pre_profit_growth` revenue-multiple scenarios used Q1 operating scale, the March balance
+sheet, and an approximately 309 million diluted-share denominator. Q2 materially changed every
+major valuation input: revenue and adjusted EBITDA accelerated, cash and debt changed, deferred
+revenue expanded, quarterly capital purchases exceeded USD 5.6 billion, and the reported issued,
+outstanding, treasury, convertible, warrant, and diluted-share identities require reconciliation.
+The old scenario values are therefore stale rather than comparable with the 18 August USD 248.43
+mark. This bounded quick check does not invent replacement values; valuation is unsupported until
+the dependent full review rebuilds bear, base, and bull scenarios from the Q2 evidence.
 
 ## Alert review, catalysts, and risks
 
-From 7 July through 4 August the adjusted close rose 15.65% to USD 225.74. On 4 August MACD crossed
-above its signal line with deterministic strength 0.3516; RSI was 55.27, the close remained below
-the USD 239.14 upper Bollinger band, and the latest retained operating evidence still predates the
-move. The crossover is improving momentum after a volatile drawdown and rebound, not independent
-proof that contract economics or fair value improved. At a price above the base and weighted values,
-it is timing and expectation risk rather than a paper-buy signal.
+The payload-bound 14 July through 12 August period ended at USD 257.89, up 26.51%, with volume at
+1.907 times its rolling baseline on the Q2-results date. By 18 August the close had eased 3.67% to
+USD 248.43. RSI was a neutral 56.58 and MACD remained above its signal, so the alert is an
+earnings-linked repricing with elevated expectation risk, not an independent buy signal. The Q2
+evidence materially improves the operating checklist but also confirms extraordinary capital
+intensity, leverage, customer-funding dependence, and dilution inputs that require full revaluation.
 
 Catalysts are on-schedule capacity delivery, conversion of contracted revenue into recognized
 revenue and cash margin, improved customer diversification, continued positive AI-cloud adjusted
@@ -106,19 +98,19 @@ can broaden its base.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**. Research and scenario valuation are complete, and the
-current primary evidence supports exceptional growth and improving operating economics. However,
-the USD 225.74 mark exceeds both the USD 170 base value and USD 188.75 probability-weighted value;
-modeled downside, capital intensity, concentration, dilution, medium confidence, and the absence of
-an accepted canonical relationship keep the security allocation-ineligible at Watch. Review by
-**2026-08-19**, or sooner after second-quarter results, material contract or delivery changes, a new
-financing, or a large change in diluted share count. No conviction strategy, signal, or paper order
-is justified.
+Status: **watching**, confidence **medium**, rating **Unrated / Watch**. Q2 supports exceptional
+growth and improving adjusted operating economics, but the prior scenario set is no longer a valid
+decision basis. Valuation is explicitly unsupported until the dependent full review reconciles Q2
+operating scale, capital spending, customer advances, cash, debt, contract delivery, concentration,
+and share-count dilution. This hard blocker and the absence of an accepted canonical relationship
+keep the security allocation-ineligible. Review by **2026-08-25** through the dependent full
+research operation. No strategy, signal, or paper order is justified.
 
 ## Changes since prior review
 
-- **Prior state:** this is the first structured security assessment; the mandatory context contained no prior assessment, successful result, retained source, accepted relationship, strategy, idea, or research-page hash.
-- **Facts and evidence:** the Q1 filing and July financing release establish current revenue growth, adjusted EBITDA, operating loss, cash, debt, capex, customer advances, diluted shares, secured financing, and contracted-revenue scale.
-- **Assumptions and valuation:** a new scenario-complete revenue-multiple assessment sets bear/base/bull values of USD 75/USD 170/USD 340 at 25%/50%/25%; there are no prior values to revise.
-- **Thesis, catalysts, and risks:** capacity scarcity, contracts, and a full-stack platform support the thesis, while concentration, capital intensity, customer-advance dependence, hardware obsolescence, leverage, and dilution constrain it.
-- **Blockers, gaps, rating, and action:** no hard research blocker remains. Valuation is not compelling, confidence is medium, concentration is material, and no accepted relationship exists. The initial disposition is watching with no strategy or signal.
+- **Prior state:** the 5 August assessment used Q1 evidence and a complete revenue-multiple scenario set, rated the security Sell / Avoid at USD 225.74, and was allocation-ineligible.
+- **Facts and evidence:** Q2 revenue reached USD 582.3 million, adjusted EBITDA reached USD 236.2 million, continuing operations lost USD 190.4 million, quarterly capital purchases reached USD 5.6574 billion, cash was USD 8.0421 billion, debt was USD 8.5457 billion, and deferred revenue was USD 5.9752 billion.
+- **Assumptions and valuation:** the Q2 scale, balance sheet, funding flows, capex, and share identities materially supersede the prior inputs. The old scenarios are withdrawn from current use and no replacement value is asserted by this bounded check.
+- **Thesis, catalysts, and risks:** operating growth and leverage strengthened, while concentration, capital intensity, customer-advance dependence, hardware obsolescence, secured and convertible leverage, and dilution remain decisive.
+- **Alert and action:** the August 12 volume anomaly coincided with Q2 results; the close subsequently eased to USD 248.43 with neutral RSI. The move is a possible repricing, not a validated entry condition.
+- **Blockers, gaps, rating, and escalation:** valuation is unsupported, confidence remains medium, concentration is material, and no accepted relationship exists. NBIS is Unrated / Watch, allocation-ineligible, and exactly one dependent full security review is required; no strategy or signal is created.

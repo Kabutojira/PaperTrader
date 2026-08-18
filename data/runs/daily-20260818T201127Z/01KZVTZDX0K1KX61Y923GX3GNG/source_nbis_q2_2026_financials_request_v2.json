@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nbis_q2_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm",
+  "source_type": "filing",
+  "title": "Nebius Group N.V. unaudited condensed consolidated financial statements for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "440449e9671dc8f744e7a9cbbac86384d6eacbfded9dc3c01c95613d64c31c4c",
+  "related_entity_ids": "security_47a0b06f6c6c478d7c1e",
+  "checked_at": "2026-08-18T20:36:26Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "For Q2 2026 total revenue was USD 582.3 million and Nebius AI cloud revenue was USD 574.9 million; cash was USD 8.0421 billion at June 30.",
+  "summary": "The current SEC-filed quarterly statements confirm the Q2 growth and operating leverage, but also a USD 190.4 million continuing-operations net loss, USD 5.6574 billion of quarterly capital purchases, USD 8.5457 billion of current and non-current debt, material customer-advance cash flows, and rising share-based compensation.",
+  "run_id": "daily-20260818T201127Z"
+}

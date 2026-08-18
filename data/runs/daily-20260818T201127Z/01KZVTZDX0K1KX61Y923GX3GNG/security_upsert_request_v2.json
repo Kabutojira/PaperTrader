@@ -1,0 +1,23 @@
+{
+  "security_id": "security_47a0b06f6c6c478d7c1e",
+  "issuer_id": "issuer_489b0bfd13a06e7d7874",
+  "company_name": "Nebius Group N.V.",
+  "instrument_name": "Nebius Group N.V. Class A ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "NBIS",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "NBIS",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "NL",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "AI-cloud growth and operating leverage merit monitoring, but Q2 materially changed the evidence base and the stale scenario set cannot support action pending a dependent full review.",
+  "research_summary": "Q2 growth and EBITDA strengthened, but extraordinary capex, leverage, concentration, dilution and a stale valuation leave NBIS Unrated / Watch pending full review.",
+  "research_page": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+  "last_research_at": "2026-08-18T20:36:26Z",
+  "next_review_at": "2026-08-25T20:36:26Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+}
