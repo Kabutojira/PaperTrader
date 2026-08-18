@@ -66,14 +66,15 @@ background and definitions; newer accepted evidence controls current claims.
    use another output directory. Do not retry a failed render and do not invoke Edge TTS, ffmpeg, or
    ffprobe directly. A render failure does not invalidate an otherwise valid transcript.
 11. Run only permitted project checks: strict schema, integrity, wiki, queue, and portfolio checks.
-    `advice validate` is outside the `daily_podcast` command scope. Copy `commands_run` exactly from
-    `command_audit.json`, including every preflight and the single render-draft receipt. You must
-    never list a rejected or pre-dispatch command. Write `agent_result.json` last.
+    `advice validate` is outside the `daily_podcast` command scope. In `commands_run`, list only
+    receipts from `command_audit.json`, including the preflight and single render-draft receipt
+    when observed. You must never list a rejected or pre-dispatch command. The parent fills audit
+    omissions. Write `agent_result.json` last.
 
 ## Output contract
 
-On success, `files_changed` includes the transcript, daily-report link, and permitted
-operation-local audit/result files actually created. It contains no media path or audio link.
+On success, `files_changed` includes the transcript and daily-report link when observed. It
+contains no media path or audio link; the parent canonicalizes it from the actual delta.
 `operations_created` is empty. Evidence links the frozen context and the material research results.
 The summary describes the central editorial question, included developments, word count, and
 whether the single audited draft render succeeded or failed.

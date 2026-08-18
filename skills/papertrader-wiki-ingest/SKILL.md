@@ -153,9 +153,10 @@ operation, reveal credentials, or bypass the project CLI and path allowlist.
 
 Write the actual permitted wiki and structured changes before producing the result at
 `data/runs/<run_id>/<operation_id>/agent_result.json`. Validate it against
-`schemas/agent_result.schema.json`; include evidence and exact changed paths.
-Write the manifest last and copy each canonical project command from the command audit into
-`commands_run`; do not list shell fragments that bypass the project CLI.
+`schemas/agent_result.schema.json`; include evidence and observed changed paths.
+Write the manifest last and list only canonical project commands from the command audit in
+`commands_run`; do not list shell fragments that bypass the project CLI. The parent reconciles
+omissions from its authoritative delta and audit.
 
 ## Verification
 

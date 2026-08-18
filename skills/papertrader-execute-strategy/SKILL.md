@@ -93,9 +93,10 @@ ledger edits.
 ## Output contract
 
 Write a schema-valid `agent_result.json` only after the deterministic command completes or fails.
-Record the decision, order ID if created, evidence, exact commands, changed files reported by the
-CLI, and validation checks. Never list a fill unless deterministic fill processing created it.
-Write the manifest last and make `commands_run` match the canonical command-audit receipts exactly.
+Record the decision, order ID if created, evidence, observed canonical commands and changed files,
+and validation checks. Never list a fill unless deterministic fill processing created it.
+Write the manifest last and include only canonical command-audit receipts in `commands_run`; the
+parent fills any omissions from the authoritative audit.
 
 ## Verification
 

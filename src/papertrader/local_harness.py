@@ -443,6 +443,12 @@ def finish_local_harness_operation(
             "WIKI_PATH": str((repository_root / "data" / "wiki").resolve()),
         },
     )
+    if validation.passed and validation.result is not None:
+        atomic_write_json(
+            repository_root / result_relative_path(run_id, operation_id),
+            dict(validation.result),
+            allowed_root=repository_root,
+        )
     validation_relative = Path("data") / "runs" / run_id / operation_id / "validation_report.json"
     atomic_write_json(
         repository_root / validation_relative,

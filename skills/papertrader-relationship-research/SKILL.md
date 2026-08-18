@@ -51,7 +51,8 @@ Never bypass immutable identities, CLI validation, or the paper-only boundary.
 
 Write completed allowed changes, then a schema-valid `agent_result.json` that records whether the
 edge was accepted, updated, or rejected and cites the mechanism evidence.
-Write it last with the exact sorted file delta and canonical command-audit entries.
+Write it last with observed changed paths and only canonical command-audit entries. The parent
+fills omissions from its authoritative snapshot and audit.
 
 ## Verification
 

@@ -11,6 +11,7 @@ from pathlib import Path
 import pytest
 
 from papertrader.agent_runner import AgentRunError, configure_hermes_home, run_one_operation
+from papertrader.atomic_io import atomic_write_csv
 from papertrader.config import Settings
 from papertrader.queue import Operation, enqueue_operation
 from papertrader.result_validator import (
@@ -23,7 +24,7 @@ from papertrader.result_validator import (
     _security_idea_followup_errors,
     _youtube_wiki_ingest_errors,
 )
-from papertrader.tables import read_table, write_table
+from papertrader.tables import contract_by_name, read_table, write_table
 
 NOW = datetime(2026, 7, 24, 12, tzinfo=UTC)
 
@@ -699,7 +700,7 @@ def test_completed_security_research_without_assessment_fails_closed(
         )
 
 
-def test_skipped_security_research_without_current_assessment_fails_closed(
+def test_skipped_security_research_without_current_assessment_is_safe_noop(
     sandbox_repository: Path,
     sandbox_settings: Settings,
     paper_environment: dict[str, str],
@@ -722,7 +723,108 @@ def test_skipped_security_research_without_current_assessment_fails_closed(
             "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
         },
     )
-    assert errors == ["skipped security research requires an existing current assessment"]
+    assert errors == []
+
+
+def test_unchanged_quick_check_can_reuse_fresh_existing_assessment(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    paper_environment: dict[str, str],
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    operation_id = _enqueue_security(sandbox_repository, sandbox_settings)
+    row = next(
+        row
+        for row in read_table(sandbox_repository, "operations_todo")
+        if row["operation_id"] == operation_id
+    )
+    operation = replace(Operation.from_row(row), operation_type="quick_check_research")
+    contract = contract_by_name(sandbox_repository, "security_assessments")
+    assessment = {column: "" for column in contract.columns}
+    assessment.update({"security_id": "sec-test", "run_id": "prior-research"})
+    write_table(sandbox_repository, "security_assessments", [assessment])
+    monkeypatch.setattr(
+        "papertrader.allocation._assessment_readiness_errors",
+        lambda *_args, **_kwargs: [],
+    )
+    environment = {
+        **paper_environment,
+        "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
+    }
+
+    assert (
+        _security_assessment_result_errors(
+            sandbox_repository,
+            operation=operation,
+            status="succeeded",
+            run_id="quick-check-noop",
+            environment=environment,
+            changed_paths=(),
+        )
+        == []
+    )
+    assert _security_assessment_result_errors(
+        sandbox_repository,
+        operation=operation,
+        status="succeeded",
+        run_id="quick-check-with-delta",
+        environment=environment,
+        changed_paths=("data/wiki/securities/sec-test.md",),
+    ) == ["completed security research requires this run's comparable assessment"]
+
+
+def test_state_changing_research_assessment_must_belong_to_current_operation(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    paper_environment: dict[str, str],
+) -> None:
+    operation_id = _enqueue_security(sandbox_repository, sandbox_settings)
+    operation = Operation.from_row(
+        next(
+            row
+            for row in read_table(sandbox_repository, "operations_todo")
+            if row["operation_id"] == operation_id
+        )
+    )
+    contract = contract_by_name(sandbox_repository, "security_assessments")
+    assessment = {column: "" for column in contract.columns}
+    assessment.update(
+        {
+            "security_id": "sec-test",
+            "run_id": "same-run",
+        }
+    )
+    write_table(sandbox_repository, "security_assessments", [assessment])
+    history_contract = contract_by_name(sandbox_repository, "security_assessment_history")
+    history = {column: "" for column in history_contract.columns}
+    history.update(
+        {
+            "assessment_id": "assessment_other_operation",
+            "security_id": "sec-test",
+            "run_id": "same-run",
+            "source_operation_id": "01ARZ3NDEKTSV4RRFFQ69G5FAV",
+            "source_result_path": (
+                "data/runs/same-run/01ARZ3NDEKTSV4RRFFQ69G5FAV/agent_result.json"
+            ),
+        }
+    )
+    atomic_write_csv(
+        sandbox_repository.joinpath(*history_contract.path.parts),
+        history_contract.columns,
+        [history],
+        allowed_root=sandbox_repository,
+    )
+
+    assert _security_assessment_result_errors(
+        sandbox_repository,
+        operation=operation,
+        status="succeeded",
+        run_id="same-run",
+        environment={
+            **paper_environment,
+            "WIKI_PATH": str(sandbox_repository / "data" / "wiki"),
+        },
+    ) == ["completed security research assessment source operation mismatch"]
 
 
 def test_baseline_signal_requires_one_exact_execute_strategy_followup(
@@ -839,7 +941,7 @@ def test_baseline_signal_requires_one_exact_execute_strategy_followup(
     )
 
 
-def test_stale_unchanged_file_in_manifest_fails_closed(
+def test_manifest_cannot_claim_an_unchanged_file(
     sandbox_repository: Path,
     sandbox_settings: Settings,
     tmp_path: Path,
@@ -847,7 +949,7 @@ def test_stale_unchanged_file_in_manifest_fails_closed(
     operation_id = _enqueue(sandbox_repository, sandbox_settings)
     home = _home(sandbox_repository, sandbox_settings, tmp_path)
 
-    with pytest.raises(AgentRunError, match="stale or incomplete"):
+    with pytest.raises(AgentRunError, match="claims paths absent from the actual delta"):
         run_one_operation(
             sandbox_repository,
             sandbox_settings,
@@ -856,6 +958,121 @@ def test_stale_unchanged_file_in_manifest_fails_closed(
             environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
             operation_id=operation_id,
             executor=_executor_with_change(lambda root: None, ["data/wiki/index.md"]),
+        )
+
+
+def test_controller_reconciles_omitted_bookkeeping_from_authoritative_state(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    operation_id = _enqueue(sandbox_repository, sandbox_settings)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
+    changed_path = "data/wiki/log.md"
+    audited_command = "papertrader wiki lint --strict"
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        run_id = environment["PAPERTRADER_AUDIT_RUN_ID"]
+        selected_operation = environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+        artifact = cwd / "data" / "runs" / run_id / selected_operation
+        log = cwd / changed_path
+        log.write_text(
+            log.read_text(encoding="utf-8") + "\nReconciled fixture.\n",
+            encoding="utf-8",
+        )
+        (artifact / "agent_result.json").write_text(
+            json.dumps(_manifest(selected_operation, [])), encoding="utf-8"
+        )
+        (artifact / "command_audit.json").write_text(
+            json.dumps(
+                {
+                    "audit_version": 1,
+                    "run_id": run_id,
+                    "operation_id": selected_operation,
+                    "entries": [
+                        {
+                            "command": audited_command,
+                            "argv": audited_command.split(),
+                            "request": None,
+                            "started_at": "2026-07-24T12:00:00Z",
+                            "completed_at": "2026-07-24T12:00:01Z",
+                            "exit_code": 0,
+                            "changed_paths": [],
+                            "changes": [],
+                            "profile": "",
+                        }
+                    ],
+                    "profile": "",
+                    "profile_policy_version": "profile-router-v1",
+                    "route_reason": "fixture",
+                }
+            ),
+            encoding="utf-8",
+        )
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    run_one_operation(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="reconciled-result",
+        hermes_home=home,
+        environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
+        operation_id=operation_id,
+        executor=execute,
+    )
+
+    result_path = (
+        sandbox_repository
+        / "data"
+        / "runs"
+        / "reconciled-result"
+        / operation_id
+        / "agent_result.json"
+    )
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    assert result["files_changed"] == [changed_path]
+    assert result["commands_run"] == [audited_command]
+
+
+def test_manifest_cannot_claim_an_unaudited_command(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    operation_id = _enqueue(sandbox_repository, sandbox_settings)
+    home = _home(sandbox_repository, sandbox_settings, tmp_path)
+
+    def execute(
+        command: Sequence[str],
+        cwd: Path,
+        environment: Mapping[str, str],
+        timeout: int,
+    ) -> subprocess.CompletedProcess[str]:
+        del timeout
+        selected_operation = environment["PAPERTRADER_AUDIT_OPERATION_ID"]
+        artifact = (
+            cwd / "data" / "runs" / environment["PAPERTRADER_AUDIT_RUN_ID"] / selected_operation
+        )
+        result = _manifest(selected_operation, [])
+        result["commands_run"] = ["papertrader issue record --request invented.json"]
+        (artifact / "agent_result.json").write_text(json.dumps(result), encoding="utf-8")
+        return subprocess.CompletedProcess(command, 0, "", "")
+
+    with pytest.raises(AgentRunError, match="without deterministic CLI audit receipts"):
+        run_one_operation(
+            sandbox_repository,
+            sandbox_settings,
+            run_id="invented-command",
+            hermes_home=home,
+            environment={"PATH": "/usr/bin", "OPENROUTER_API_KEY": "test-auxiliary-key"},
+            operation_id=operation_id,
+            executor=execute,
         )
 
 

@@ -90,9 +90,52 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
             text=True,
         )
         assert audited.returncode == 0, audited.stderr
-        issue_id = audited.stdout.strip()
-        audit = json.loads((artifact / "command_audit.json").read_text(encoding="utf-8"))
-        command_receipt = audit["entries"][0]["command"]
+        assert audited.stdout.strip()
+        followup_request = artifact / "followup-request.json"
+        followup_request.write_text(
+            json.dumps(
+                {
+                    "operation_type": "idea_research",
+                    "entity_type": "idea",
+                    "entity_id": "idea-integration",
+                    "dedupe_key": "idea_research:idea-integration:opportunity:2026-07-24",
+                    "prompt": "Research one bounded integration idea.",
+                    "inputs": {
+                        "idea_id": "idea-integration",
+                        "seed_claim": "A bounded follow-up from the opportunity fixture.",
+                    },
+                    "source": "integration-test",
+                    "priority": 60,
+                    "freshness_days": 30,
+                    "depends_on": [selected_operation],
+                    "not_before": "",
+                    "deadline": "",
+                    "source_refs": [],
+                    "max_attempts": 3,
+                }
+            ),
+            encoding="utf-8",
+        )
+        enqueued = subprocess.run(
+            [
+                sys.executable,
+                "-m",
+                "papertrader",
+                "--repository",
+                str(cwd),
+                "queue",
+                "enqueue",
+                "--request",
+                str(followup_request),
+            ],
+            cwd=cwd,
+            env=dict(environment),
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        assert enqueued.returncode == 0, enqueued.stderr
+        assert json.loads(enqueued.stdout)["created"] is True
         manifest = {
             "operation_id": selected_operation,
             "status": "succeeded",
@@ -104,15 +147,11 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
                     "observed_at": "2026-07-24T10:00:00Z",
                 }
             ],
-            "files_changed": [
-                "data/issues.md",
-                f"data/runs/{run_id}/{selected_operation}/issue-request.json",
-                "data/tables/issues.csv",
-            ],
+            "files_changed": [],
             "operations_created": [],
-            "issues_recorded": [issue_id],
+            "issues_recorded": [],
             "daily_report_items": [],
-            "commands_run": [command_receipt],
+            "commands_run": [],
             "validation": {"passed": True, "checks": ["evidence-linked no-follow-up"]},
         }
         (artifact / "agent_result.json").write_text(
@@ -132,7 +171,20 @@ def test_seeded_agent_operation_audits_structured_change_and_terminalizes(
         )
         == "succeeded"
     )
-    assert read_table(sandbox_repository, "operations_todo") == []
+    todo = read_table(sandbox_repository, "operations_todo")
+    assert len(todo) == 1
+    assert todo[0]["operation_type"] == "idea_research"
     history = read_table(sandbox_repository, "operations_history")
     assert history[0]["terminal_status"] == "succeeded"
     assert history[0]["result_path"].endswith("/agent_result.json")
+    artifact = sandbox_repository / "data" / "runs" / "integration-1" / operation_id
+    result = json.loads((artifact / "agent_result.json").read_text(encoding="utf-8"))
+    audit = json.loads((artifact / "command_audit.json").read_text(encoding="utf-8"))
+    validation = json.loads((artifact / "validation_report.json").read_text(encoding="utf-8"))
+    assert result["files_changed"] == validation["changed_paths"]
+    assert f"data/runs/integration-1/{operation_id}/issue-request.json" in result["files_changed"]
+    followup_request_path = f"data/runs/integration-1/{operation_id}/followup-request.json"
+    assert followup_request_path in result["files_changed"]
+    assert result["operations_created"] == [todo[0]["operation_id"]]
+    assert result["issues_recorded"] == [read_table(sandbox_repository, "issues")[0]["issue_id"]]
+    assert result["commands_run"] == [entry["command"] for entry in audit["entries"]]

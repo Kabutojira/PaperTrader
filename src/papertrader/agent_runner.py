@@ -765,7 +765,9 @@ def build_controller_prompt(
     quick_check_completion_requirement = ""
     if operation.operation_type == "quick_check_research":
         quick_check_completion_requirement = (
-            "Before writing a succeeded quick-check result, invoke "
+            "A quick check may succeed against its fresh existing assessment only when its "
+            "bounded conclusion is unchanged and it leaves no agent-owned repository delta. "
+            "If it changes any repository state, before writing a succeeded result invoke "
             "`scripts/papertrader research assessment upsert --request <unique-request-path>` "
             f"and confirm that the current assessment has run_id {run_id} and exactly one "
             f"immutable history version sourced from operation {operation.operation_id}. Writing "
@@ -804,9 +806,10 @@ def build_controller_prompt(
         "or modify `.venv`; that environment is controller-owned. The CLI rejects commands "
         "outside this operation's skill scope before dispatch. Do not retry a rejected command "
         "or substitute another invocation path. Use project CLI commands for structured state. "
-        "commands_run must equal exactly the "
-        "canonical command strings recorded in command_audit.json; do not include pytest, Python, "
-        "shell, browsing, or descriptive check entries there. Every JSON request file becomes "
+        "In commands_run, list only canonical command strings recorded in command_audit.json; do "
+        "not include pytest, Python, shell, browsing, or descriptive check entries. The parent "
+        "reconciles omitted commands and changed paths from its audit and repository snapshot, but "
+        "rejects invented entries. Every JSON request file becomes "
         "immutable after its first CLI use; "
         "write a new uniquely named request file for any correction or changed retry. Do not edit "
         "CSV files by hand. Do not touch fills, executions, cash, portfolio, or performance. Run "
@@ -1286,6 +1289,12 @@ def run_claimed_operation(
             validation_errors.append(f"Hermes timed out after {execution_profile.timeout_seconds}s")
         else:
             validation_errors.append(f"Hermes exited with status {execution.returncode}")
+    if not validation_errors and validation.result is not None:
+        atomic_write_json(
+            repository_root / result_relative_path(run_id, operation.operation_id),
+            dict(validation.result),
+            allowed_root=repository_root,
+        )
     validation_path = artifact_directory / "validation_report.json"
     if validation_path.exists():
         validation_errors.append("Hermes created the controller-owned validation report")

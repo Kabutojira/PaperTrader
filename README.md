@@ -205,9 +205,11 @@ Actions OIDC, age identity, and runtime tokens are never forwarded.
 
 Every agent-side project command creates an operation-scoped receipt in
 `data/runs/<run_id>/<operation_id>/command_audit.json`. Post-run validation compares a
-content-addressed before/after snapshot with `files_changed`, requires receipts for every structured
-change, rejects symlinks/deletions/path escapes and skill-scope violations, verifies newly created
-operations/issues, and runs strict integrity, wiki, and portfolio checks before queue completion.
+content-addressed before/after snapshot with the agent's bookkeeping claims, rejects invented
+entries, then canonicalizes changed paths, commands, operations, and issues from controller-owned
+facts. It still requires receipts for every structured change, rejects symlinks/deletions/path
+escapes and skill-scope violations, verifies downstream operation causality, and runs strict
+integrity, wiki, and portfolio checks before queue completion.
 
 ### Native wiki maintenance
 

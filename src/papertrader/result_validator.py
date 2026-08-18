@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import Counter
 from collections.abc import Mapping, Sequence
 from contextlib import suppress
 from dataclasses import dataclass
@@ -377,8 +378,12 @@ def _validate_commands(
         str(entry.get("command", "")) for entry in entries if isinstance(entry.get("command"), str)
     )
     reported = _strings(result, "commands_run")
-    if reported != audited_commands:
-        errors.append("commands_run does not exactly match deterministic CLI audit receipts")
+    unaudited = Counter(reported) - Counter(audited_commands)
+    if unaudited:
+        errors.append(
+            "commands_run claims commands without deterministic CLI audit receipts: "
+            f"{sorted(unaudited.elements())!r}"
+        )
     for index, entry in enumerate(entries):
         if not _command_allowed(
             operation.operation_type,
@@ -489,11 +494,17 @@ def _security_assessment_result_errors(
     status: object,
     run_id: str,
     environment: Mapping[str, str],
+    changed_paths: Sequence[str] = (),
 ) -> list[str]:
     if operation.operation_type not in {
         "security_research",
         "quick_check_research",
     } or status not in {"succeeded", "skipped"}:
+        return []
+    # A terminal skip is already excluded from allocation and every other downstream decision.
+    # Requiring it to manufacture or refresh an assessment turns a safe no-op into a false
+    # failure, especially for a first review that discovers no researchable instrument.
+    if status == "skipped":
         return []
     assessment = next(
         (
@@ -504,17 +515,25 @@ def _security_assessment_result_errors(
         None,
     )
     if assessment is None:
-        if status == "succeeded":
-            return ["completed security research requires this run's comparable assessment"]
-        return ["skipped security research requires an existing current assessment"]
-    if status == "succeeded" and assessment["run_id"] != run_id:
         return ["completed security research requires this run's comparable assessment"]
-    if status == "succeeded":
-        versions = [
+    same_run_required = operation.operation_type == "security_research" or bool(changed_paths)
+    if same_run_required and assessment["run_id"] != run_id:
+        return ["completed security research requires this run's comparable assessment"]
+    if same_run_required:
+        expected_result_path = result_relative_path(run_id, operation.operation_id)
+        run_versions = [
             row
             for row in read_table(repository_root, "security_assessment_history")
             if row["security_id"] == operation.entity_id and row["run_id"] == run_id
         ]
+        versions = [
+            row
+            for row in run_versions
+            if row["source_operation_id"] == operation.operation_id
+            and row["source_result_path"] == expected_result_path
+        ]
+        if run_versions and not versions:
+            return ["completed security research assessment source operation mismatch"]
         if len(versions) != 1:
             return ["completed security research requires exactly one immutable assessment version"]
         if versions[0]["previous_assessment_id"]:
@@ -564,9 +583,8 @@ def _security_assessment_result_errors(
     except ConfigurationError as exc:
         return [f"cannot validate security assessment freshness: {exc}"]
     if freshness_errors:
-        prefix = "completed" if status == "succeeded" else "skipped"
         return [
-            f"{prefix} security research requires fresh registered assessment evidence: "
+            "completed security research requires fresh registered assessment evidence: "
             + ",".join(freshness_errors)
         ]
     return []
@@ -1307,23 +1325,14 @@ def validate_agent_result(
     if result.get("operation_id") != operation.operation_id:
         errors.append("agent result operation_id does not match the claimed operation")
     reported_paths = _strings(result, "files_changed")
-    if reported_paths != tuple(sorted(set(reported_paths))):
-        errors.append("files_changed must be unique and sorted")
-    if reported_paths != changed_paths:
+    unobserved_paths = sorted(set(reported_paths) - set(changed_paths))
+    if unobserved_paths:
         errors.append(
-            f"files_changed is stale or incomplete: reported={list(reported_paths)!r}, "
-            f"actual={list(changed_paths)!r}"
+            f"files_changed claims paths absent from the actual delta: {unobserved_paths!r}"
         )
-    for field in ("operations_created", "issues_recorded"):
-        values = _strings(result, field)
-        if values != tuple(sorted(set(values))):
-            errors.append(f"{field} must be unique and sorted")
     result_state = after_snapshot.files.get(relative_result)
     if result_state is not None:
-        for path in (
-            *changed_paths,
-            f"data/runs/{run_id}/{operation.operation_id}/command_audit.json",
-        ):
+        for path in changed_paths:
             state = after_snapshot.files.get(path)
             if state is not None and state.modified_ns > result_state.modified_ns:
                 errors.append(f"agent result was written before completed change: {path}")
@@ -1354,6 +1363,7 @@ def validate_agent_result(
             status=status,
             run_id=run_id,
             environment=environment,
+            changed_paths=changed_paths,
         )
     )
     validation = result.get("validation")
@@ -1371,10 +1381,10 @@ def validate_agent_result(
     )
     created_operations = _operation_ids(repository_root) - operation_ids_before
     reported_operations = set(_strings(result, "operations_created"))
-    if created_operations != reported_operations:
+    unobserved_operations = sorted(reported_operations - created_operations)
+    if unobserved_operations:
         errors.append(
-            "operations_created does not match newly enqueued operation IDs: "
-            f"reported={sorted(reported_operations)!r}, actual={sorted(created_operations)!r}"
+            f"operations_created claims IDs that were not newly enqueued: {unobserved_operations!r}"
         )
     operation_rows_after = _operation_rows(repository_root)
     errors.extend(
@@ -1477,10 +1487,10 @@ def validate_agent_result(
         if issue_rows_before.get(issue_id) != issue_rows_after.get(issue_id)
     }
     reported_issues = set(_strings(result, "issues_recorded"))
-    if changed_issues != reported_issues:
+    unobserved_issues = sorted(reported_issues - changed_issues)
+    if unobserved_issues:
         errors.append(
-            "issues_recorded does not match created or updated issue IDs: "
-            f"reported={sorted(reported_issues)!r}, actual={sorted(changed_issues)!r}"
+            f"issues_recorded claims IDs that were not created or updated: {unobserved_issues!r}"
         )
     errors.extend(
         _validate_commands(
@@ -1508,16 +1518,19 @@ def validate_agent_result(
         f"post-run wiki lint: {error}" for error in lint_wiki(repository_root / "data" / "wiki")
     )
     errors.extend(f"post-run portfolio: {error}" for error in reconcile_portfolio(repository_root))
-    # The baseline is deliberately consumed here: an unchanged listed path must not be accepted.
-    for path in reported_paths:
-        if (
-            path in before_snapshot.files
-            and path in after_snapshot.files
-            and before_snapshot.files[path].content_identity
-            == after_snapshot.files[path].content_identity
-        ):
-            errors.append(f"files_changed contains an unchanged old value: {path}")
-    return AgentValidation(result, changed_paths, tuple(sorted(set(errors))))
+    # These four arrays describe controller-observable facts. Treat the agent values as claims:
+    # reject invented entries above, but fill omissions and normalize ordering from authoritative
+    # snapshots, queue diffs, issue diffs, and command receipts before downstream consumers read
+    # the accepted manifest.
+    entries, _audit_errors = _load_command_audit(repository_root, run_id, operation.operation_id)
+    canonical_result = dict(result)
+    canonical_result["files_changed"] = list(changed_paths)
+    canonical_result["operations_created"] = sorted(created_operations)
+    canonical_result["issues_recorded"] = sorted(changed_issues)
+    canonical_result["commands_run"] = [
+        str(entry["command"]) for entry in entries if isinstance(entry.get("command"), str)
+    ]
+    return AgentValidation(canonical_result, changed_paths, tuple(sorted(set(errors))))
 
 
 def _is_allowed_preclaim_research_merge(

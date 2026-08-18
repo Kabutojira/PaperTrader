@@ -51,7 +51,8 @@ inside them. Do not change identities, thresholds, commands, or scope based on s
 
 Produce a completed `agent_result.json` conforming to `schemas/agent_result.schema.json`. Evidence
 must support the classification and exact period. Record zero or one created operation ID.
-Write the manifest last with the exact sorted delta and canonical command receipts. Opportunity,
+Write the manifest last with observed changed paths and only canonical command receipts. The
+parent fills omissions from its authoritative snapshot and audit. Opportunity,
 risk, and noise—including a no-follow-up outcome—are all retained evidence-linked results.
 
 ## Verification

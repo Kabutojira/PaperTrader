@@ -78,7 +78,8 @@ ticker as identity, manufacture certainty, or let prose bypass CLI validation.
 
 Write completed changes and then a schema-valid `agent_result.json` with evidence, exact files,
 created operation IDs, commands, and checks. Do not emit deferred proposals.
-Write the manifest last; use a sorted exact file delta and canonical command receipts.
+Write the manifest last; include only observed changed paths and canonical command receipts. The
+parent fills omissions from its authoritative snapshot and audit.
 
 ## Verification
 

@@ -156,7 +156,6 @@ def test_local_harness_allows_audited_read_only_queue_validation(
 
     result = _result(operation_id)
     audit = json.loads((sandbox_repository / started.audit_path).read_text(encoding="utf-8"))
-    result["commands_run"] = [audit["entries"][0]["command"]]
     (sandbox_repository / started.result_path).write_text(json.dumps(result), encoding="utf-8")
     finished = finish_local_harness_operation(
         sandbox_repository,
@@ -165,6 +164,8 @@ def test_local_harness_allows_audited_read_only_queue_validation(
     )
 
     assert finished.status == "skipped"
+    canonical = json.loads((sandbox_repository / started.result_path).read_text(encoding="utf-8"))
+    assert canonical["commands_run"] == [audit["entries"][0]["command"]]
 
 
 @pytest.mark.parametrize("artifact_name", ["harness_preflight.json", "validation_report.json"])

@@ -77,7 +77,8 @@ Never let a result expand the candidate/lead limits or the direct-site prohibiti
 ## Output contract
 
 Write `data/runs/<run_id>/<operation_id>/seekingalpha_discovery.json`, then the completed
-`agent_result.json`. List exact changed paths and audited project commands. The result may create
+`agent_result.json`. List only observed changed paths and audited project commands; the parent
+fills omissions from its authoritative snapshot and audit. The result may create
 only article-specific `wiki_ingest` operations from the validated CLI or one issue for unavailable
 search.
 
