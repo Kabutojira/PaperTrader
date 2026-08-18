@@ -579,7 +579,9 @@ remains entirely deterministic.
   Markdown lists/tables, visible machine IDs, raw URLs, or spoken advice/trading disclaimers.
 - Preserve paper-trading identity only as `paper_trading: true` in frontmatter. After writing the
   script, invoke the audited `podcast render-draft` command exactly once. A failed TTS attempt does
-  not invalidate a valid script and must never trigger a deterministic fallback render.
+  not invalidate a valid script and must never trigger a deterministic fallback render. The single
+  audited render may retry a failed TTS chunk within its hard deterministic bound before it
+  declares that render failed.
 - Commit only the timestamped transcript. After that checkpoint, deterministic code seals the
   existing runner-temp audio against the exact committed script, delivers committed spoken text and
   audio independently to Telegram, and deletes all media. Never add audio or TTS chunks to Git,
