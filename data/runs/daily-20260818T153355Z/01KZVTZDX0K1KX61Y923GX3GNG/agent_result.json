@@ -1,0 +1,41 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The required pre-assessment security-context command succeeded and returned security_47a0b06f6c6c478d7c1e with current assessment assessment_e2c4e2fa700c110e5f32, baseline operation 01KYPB2048VWN4VV7YYF4Y60TX, and source price hash context available before assessment-state work.",
+      "observed_at": "2026-08-18T15:35:35Z",
+      "source": "mandatory security context"
+    },
+    {
+      "claim": "The bounded alert packet reports an entered volume anomaly for 2026-07-15 through 2026-08-12, latest adjusted close USD 259.20001220703125, approximately 29.9% period return, and source price hash ab6c5a99d048ab40adc2c4fab5b7f9b3f949f2d349a00a5c64a936fe288a4d06.",
+      "observed_at": "2026-08-12T20:35:16Z",
+      "source": "current market and alert packet"
+    },
+    {
+      "claim": "The required assessment invocation exited with code 2 and returned: the request is outside the quick_check_research skill scope. Per controller instructions, the rejected request was not retried and no full-research enqueue was invoked.",
+      "observed_at": "2026-08-18T15:36:00Z",
+      "source": "project CLI scope enforcement"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260818T153355Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request.json"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZVTZDX0K1KX61Y923GX3GNG",
+  "operations_created": [],
+  "status": "failed",
+  "summary": "Quick check could not publish its required same-run assessment because the audited project CLI rejected the assessment upsert request as outside the routed quick_check_research skill scope. No assessment, follow-up queue operation, wiki, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed.",
+      "Assessment upsert was attempted exactly once through scripts/papertrader and failed closed at routed skill-scope validation.",
+      "The required post-upsert security-context identity check could not be performed because no upsert occurred.",
+      "No assessment history/current projection, security page, queue operation, allocation, signal, order, execution, cash, portfolio, performance, or other accounting mutation was performed.",
+      "The required strict verification suite was not run because the mandatory assessment publication failed before a valid quick-check result could exist."
+    ],
+    "passed": false
+  }
+}
