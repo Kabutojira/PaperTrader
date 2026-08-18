@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-17"
-updated: "2026-08-17"
+updated: "2026-08-18"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_0a8e074f6e492eda4f5f"
 as_of: "2026-08-17T19:03:48Z"
@@ -366,6 +366,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Podcast
 
+- [Daily research podcast — 2026-08-17T185232Z](podcasts/daily-podcast_20260817T185232Z)
 - [Daily research podcast — 2026-08-17T152008Z](podcasts/daily-podcast_20260817T152008Z)
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)

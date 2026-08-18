@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-17"
+updated: "2026-08-18"
 provenance: repository-contract
 ---
 
@@ -3906,3 +3906,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
   Form 10-Q and SEC-filed earnings release. Q2 scale and backlog strengthened, but cash burn,
   dilution and missing post-closing Goonhilly economics keep valuation unsupported, Unrated / Watch,
   and allocation-ineligible; the volume anomaly was an earnings reaction, not an actionable signal.
+
+## [2026-08-18] lint | wiki maintenance 2026-W34
+
+- Inspected all 443 maintained Markdown pages for reachability, links, catalog coverage,
+  frontmatter, tags, review dates, contradictions, confidence, sourcing, source drift, size, and
+  log rotation. Added the omitted [[podcasts/daily-podcast_20260817T185232Z|17 August 2026 daily
+  research podcast]] to [[research-catalog]]. Preserved sourced conclusions and recorded stale and
+  weak-confidence findings in the bounded maintenance report.
