@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_067e654e5670ecdf7c16"
-as_of: "2026-08-18T10:45:50Z"
+snapshot_id: "decision_a3401d60caf4aaf17228"
+as_of: "2026-08-18T11:39:21Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-18T10:45:50Z`
+**As of:** `2026-08-18T11:39:21Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-18T10:45:50Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 338
+- Research backlog: 337
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -62,6 +62,7 @@ as_of: "2026-08-18T10:45:50Z"
 - Error **Hermes operation validation failed: [[securities/security_1e8fbdb0f45f2b413e00|Quick check research for PYPL on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
 - Error **RTX — RTX Corporation: RTX assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_59304f90c440def31dc5|RTX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_59304f90c440def31dc5|Quick check research for RTX on 2026-08-05]] and current security_research [[securities/security_59304f90c440def31dc5|Security research for RTX on 2026-08-06]] claimed by run [[daily-reports/daily-report_20260805|Daily report for 2026-08-05]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **PL — Planet Labs PBC: Planet Labs assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_97f38b2cb2d5ef127f5a|PL]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_97f38b2cb2d5ef127f5a|Quick check research for PL on 2026-08-09]] and current security_research [[securities/security_97f38b2cb2d5ef127f5a|Security research for PL on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
+- Error **Hermes operation validation failed: [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-18]]** — completed security research requires this run's comparable assessment
 - Warning **LAC — Lithium Americas Corp.: Daily preparation degraded: [[securities/security_fb87fac302a5446a1ced|LAC]]** — [[securities/security_fb87fac302a5446a1ced|LAC]]: YFTzMissingError: $LAC: possibly delisted; no timezone found
 - Warning **HOOD — Robinhood Markets, Inc.: Daily preparation degraded: [[securities/security_ad3b1f8f59fd599f079a|HOOD]]** — [[securities/security_ad3b1f8f59fd599f079a|HOOD]]: price cache is empty
 - Warning **CROX — Crocs, Inc.: Daily preparation degraded: [[securities/security_c150f31c30afdb4a85f9|CROX]]** — [[securities/security_c150f31c30afdb4a85f9|CROX]]: price cache is empty
@@ -134,6 +135,7 @@ as_of: "2026-08-18T10:45:50Z"
 
 ### Publication Only
 
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.
 
 ### Operational Only
@@ -150,7 +152,6 @@ as_of: "2026-08-18T10:45:50Z"
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260817|Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
-- Error **Hermes operation validation failed: [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]/[[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
@@ -168,7 +169,7 @@ as_of: "2026-08-18T10:45:50Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 338 active operations.
+Showing 20 of 337 active operations.
 
 <details><summary>Active research work</summary>
 
