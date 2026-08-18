@@ -1,5 +1,15 @@
 {
-  "checkpoints": [],
+  "checkpoints": [
+    {
+      "index": 0,
+      "kind": "preparation",
+      "operation_id": "",
+      "operation_type": "",
+      "profile": "",
+      "recorded_at": "2026-08-18T10:35:43Z",
+      "terminal_status": ""
+    }
+  ],
   "completed_at": "",
   "completion_at": "",
   "daily_cycle_id": "daily-20260818T091246Z",
@@ -12,7 +22,7 @@
   "maximum_operations": 5,
   "model_budget_limit": "100",
   "model_budget_used": "0",
-  "next_checkpoint_index": 0,
+  "next_checkpoint_index": 1,
   "operating_date": "2026-08-18",
   "operation_count": 0,
   "operations_accepted": [],
@@ -24,7 +34,7 @@
   "podcast_page_path": "",
   "podcast_status": "pending",
   "podcast_text_at": "",
-  "preparation_at": "",
+  "preparation_at": "2026-08-18T10:34:51Z",
   "preparation_errors": [],
   "profile_limits": {
     "analyst": {
@@ -55,7 +65,11 @@
       "weighted_cost": "1"
     }
   },
-  "queue_dispositions": [],
+  "queue_dispositions": [
+    "allocation_maintenance:01M0A70B7R57SNMFK4D40XP01R",
+    "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
+    "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1"
+  ],
   "remaining_operations": 5,
   "report_path": "",
   "research_cutoff_at": "",
@@ -71,6 +85,11 @@
     {
       "github_run_id": "32119618540",
       "resumed_at": "2026-08-18T09:12:46Z",
+      "workflow_attempt": "1"
+    },
+    {
+      "github_run_id": "32126808034",
+      "resumed_at": "2026-08-18T10:34:43Z",
       "workflow_attempt": "1"
     }
   ]

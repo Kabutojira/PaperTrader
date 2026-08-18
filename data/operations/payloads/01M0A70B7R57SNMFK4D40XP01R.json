@@ -1,0 +1,21 @@
+{
+  "entity_id": "security_7bf8f4c9cc12ae410e40",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-10T22:35:08Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_7bf8f4c9cc12ae410e40.md",
+    "security_id": "security_7bf8f4c9cc12ae410e40"
+  },
+  "objective": "Revalidate security_7bf8f4c9cc12ae410e40 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0A70B7R57SNMFK4D40XP01R",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_abcl635_clinicaltrials_gov",
+    "source_abcl635_phase2_2026_presentation_sec",
+    "source_abcl635_phase2_2026_results_sec",
+    "source_abcl_q2_2026_10q_sec",
+    "source_abcl_q2_2026_results_sec_ex99_1"
+  ]
+}

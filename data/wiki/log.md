@@ -3914,3 +3914,25 @@ This log is append-only. Rotate it by year only after the configured line thresh
   log rotation. Added the omitted [[podcasts/daily-podcast_20260817T185232Z|17 August 2026 daily
   research podcast]] to [[research-catalog]]. Preserved sourced conclusions and recorded stale and
   weak-confidence findings in the bounded maintenance report.
+
+## 2026-08-18
+
+- Created candidate packet [[inbox/market-security_2433a056eb0c55961fcc-macd_cross_below_signal-fd757acb6a20]] (fd757acb6a20).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_below_200-88ef784f48d2]] (88ef784f48d2).
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-sma_50_cross_below_200-863352fb9628]] (863352fb9628).
+
+- Created candidate packet [[inbox/market-security_9b0db3bc77914b23a307-macd_cross_below_signal-fe9aa8b78841]] (fe9aa8b78841).
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-bollinger_above_upper-70ca44e2ec5b]] (70ca44e2ec5b).
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-bollinger_above_upper-99b4ce93e77d]] (99b4ce93e77d).
+
+- Created candidate packet [[inbox/market-security_ad5917642acbba28c1f2-macd_cross_below_signal-846177f871ae]] (846177f871ae).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-a534ca6fc371]] (a534ca6fc371).
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-65279d506bff]] (65279d506bff).
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_below_signal-3c04ce666a27]] (3c04ce666a27).

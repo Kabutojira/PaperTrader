@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_5BWuvjGLMik",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-18T10:34:45Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_5BWuvjGLMik",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "5BWuvjGLMik",
+    "video_title": "Mass Surveillance, Police Misuse, and Who Controls Your Flock Cameras with Flock CEO, Garret Langley",
+    "video_url": "https://www.youtube.com/watch?v=5BWuvjGLMik"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0A705C8HYSHZVN53JGERPZK",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=5BWuvjGLMik"
+  ]
+}
