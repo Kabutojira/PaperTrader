@@ -1,0 +1,61 @@
+{
+  "operation_id": "01M0AB3KE0GBG64BTACDC4311H",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast because frozen context version three contains no audience-relevant accepted research between the previous successful podcast cutoff of 2026-08-17T19:03:48Z and the inclusive cutoff of 2026-08-18T11:39:21Z. The context lists no research developments, changed wiki pages, or background wiki pages; its only two unresolved items are failed attempts for the same WTI quick check, neither of which was accepted and neither can support a research narrative. No transcript or daily-report link was created, and the draft renderer was not invoked.",
+  "reason_code": "no_audience_relevant_accepted_research",
+  "evidence": [
+    {
+      "source": "data/runs/daily-20260818T113409Z/podcast_context.json",
+      "claim": "Frozen podcast context version three defines the bounded window, identifies the previous successful podcast, and contains empty research_developments, changed_wiki_pages, and background_wiki_pages arrays.",
+      "observed_at": "2026-08-18T11:46:32Z",
+      "source_hash": "112ceab480fccb457c9813cf7b0f2c54bb9229431833d8ee8d05966cd8565b9d"
+    },
+    {
+      "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "claim": "The first WTI quick-check attempt in the frozen window failed deterministic validation because the result preceded an audited change and its commands did not match the audit receipts; it is an unresolved gap rather than accepted research.",
+      "source_hash": "3b36875726f699058d33c37d5dd430e42d82b48db7149d002080f4653e9c1bf4"
+    },
+    {
+      "source": "data/runs/daily-20260818T113409Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "claim": "The retry of the same WTI quick check also failed deterministic validation because completed security research lacked this run's comparable assessment; it did not become accepted research.",
+      "source_hash": "f7583ef3502b135ef7008f035c5cfe482e643a4b928f84cbba88a1fc1ff17aa0"
+    },
+    {
+      "source": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+      "claim": "The prior successful episode already covered the latest accepted Intuitive Machines research through the exclusive start of the current frozen window.",
+      "source_hash": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117"
+    },
+    {
+      "source": "data/runs/daily-20260818T113409Z/decision_snapshot.json",
+      "claim": "The completed decision snapshot has no actionable signals and retains an all-cash portfolio, but unchanged decision state alone is not an audience-relevant accepted research development.",
+      "observed_at": "2026-08-18T11:39:21Z",
+      "source_hash": "0e7890c380946df841b0129cdeb8b18e25fcc77bf7d041eb05e49b6160f9d321"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated frozen podcast context version three, the exclusive and inclusive cutoffs, the previous-podcast identity, and every context-declared SHA-256 reference.",
+      "Confirmed both unresolved WTI records failed deterministic validation and therefore are not accepted research developments.",
+      "Confirmed the requested transcript path did not exist and left the canonical daily report byte-for-byte unchanged at SHA-256 3f372b0dbd1badd43f6fc65cd0f44ba68c10211eb77ff5a7a50654ecdbce13ae.",
+      "Applied the skill's skip rule because the whole frozen window contains no audience-relevant accepted research.",
+      "Confirmed no transcript, report link, persistent audio reference, script preflight, or draft-render attempt was produced.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ]
+  }
+}

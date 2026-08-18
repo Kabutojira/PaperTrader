@@ -43,6 +43,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0891b21bbd2baeff61d8** — Daily podcast skipped: daily-20260818T091246Z | 2026-08-18T10:57:42Z | delivery | 01M0A81KP88T937P4MD17D2Z6N |
 | warning | **issue_10ff1797ec43b252e279** — Daily preparation degraded: security_c150f31c30afdb4a85f9 | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_1148b8cf1799d04b2574** — Daily podcast skipped: daily-20260818T113409Z | 2026-08-18T11:49:08Z | delivery | 01M0AB3KE0GBG64BTACDC4311H |
 | warning | **issue_1285e87ea97cc268036a** — Daily preparation degraded: security_61567714298b9563d1a9 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_1681e7daa698c45f8006** — Daily preparation degraded: security_2dbe878dfc899d7ee867 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_1ad34e45aa4568f4a522** — Daily preparation degraded: security_715bde20b6e1e1320c1a | 2026-07-29T16:51:20Z | deterministic-controller |  |
