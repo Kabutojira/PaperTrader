@@ -3936,3 +3936,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-65279d506bff]] (65279d506bff).
 
 - Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-macd_cross_below_signal-3c04ce666a27]] (3c04ce666a27).
+
+- Published investor decision snapshot `decision_067e654e5670ecdf7c16`.
+
+- Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T091246Z`.

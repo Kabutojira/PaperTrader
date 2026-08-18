@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-17"
-updated: "2026-08-17"
+created: "2026-08-18"
+updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0a8e074f6e492eda4f5f"
-as_of: "2026-08-17T19:03:48Z"
+snapshot_id: "decision_067e654e5670ecdf7c16"
+as_of: "2026-08-18T10:45:50Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-17T19:03:48Z`
+**As of:** `2026-08-18T10:45:50Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-17T19:03:48Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 336
+- Research backlog: 338
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -132,6 +132,10 @@ as_of: "2026-08-17T19:03:48Z"
 - Warning **CRSR — Corsair Gaming, Inc.: Daily preparation degraded: [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]** — [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]]: price cache is empty
 - Warning **NVDA — NVIDIA Corporation: Daily preparation degraded: [[securities/security_33d9c44facc75c726c7d|NVDA]]** — [[securities/security_33d9c44facc75c726c7d|NVDA]]: price cache is empty
 
+### Publication Only
+
+- Warning **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.
+
 ### Operational Only
 
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260817|Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -146,7 +150,7 @@ as_of: "2026-08-17T19:03:48Z"
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260817|Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
-- Error **Hermes operation validation failed: [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]** — operation artifact directory is not empty: /__w/PaperTrader/PaperTrader/data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/[[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]
+- Error **Hermes operation validation failed: [[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]/[[securities/security_61567714298b9563d1a9|Quick check research for WTI on 2026-08-10]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
@@ -164,7 +168,7 @@ as_of: "2026-08-17T19:03:48Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 336 active operations.
+Showing 20 of 338 active operations.
 
 <details><summary>Active research work</summary>
 
