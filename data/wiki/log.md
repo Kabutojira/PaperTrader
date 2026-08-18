@@ -3967,3 +3967,25 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_8f87ae307c10a2f8ad3f`.
 
 - Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T153355Z`.
+
+- Created candidate packet [[inbox/market-security_099561384c0f5e697727-macd_cross_below_signal-0e42e162e905]] (0e42e162e905).
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-macd_cross_below_signal-17f320e99f5b]] (17f320e99f5b).
+
+- Created candidate packet [[inbox/market-security_55c9ce2fdcd32dad6b8c-macd_cross_below_signal-e5037276919b]] (e5037276919b).
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-rsi_overbought-3f7d00368c2b]] (3f7d00368c2b).
+
+- Created candidate packet [[inbox/market-security_715bde20b6e1e1320c1a-bollinger_below_lower-8d5eaca49cd0]] (8d5eaca49cd0).
+
+- Classified [[inbox/market-security_715bde20b6e1e1320c1a-bollinger_below_lower-8d5eaca49cd0]] as `ingest`: Material entry into a Bollinger-below-lower transition with a 7.65% period decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-macd_cross_below_signal-138de6a01085]] (138de6a01085).
+
+- Created candidate packet [[inbox/market-security_c9a37d277445869a8809-macd_cross_above_signal-3fd27cc32e82]] (3fd27cc32e82).
+
+- Classified [[inbox/market-security_c9a37d277445869a8809-macd_cross_above_signal-3fd27cc32e82]] as `ingest`: A validated MACD bullish crossover after a material one-month decline is a durable, decision-relevant market transition.
+
+- Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4]] (7c260893c2a4).
+
+- Classified [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4]] as `ingest`: Material Bollinger-band breach with a 15.6% decline over the measured period warrants durable review.

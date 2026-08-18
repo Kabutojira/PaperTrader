@@ -2,21 +2,53 @@
   "entity_id": "security_d12e746b3c9d392183cc",
   "entity_type": "security",
   "inputs": {
-    "market_data_as_of": "2026-08-15T10:33:10Z",
-    "market_data_date": "2026-08-14",
-    "period_end": "2026-08-14",
+    "market_data_as_of": "2026-08-18T20:11:34Z",
+    "market_data_date": "2026-08-18",
+    "merged_input_values": {
+      "source_price_hash": [
+        "6a23d2df818910dfcee1ffa9aba836a28f9b2389b70419844e6cbb234d1b9ee4",
+        "dd294385338c3cdda3f1758cd1b344a790ff9bfddb35d7dd419368378701a360"
+      ]
+    },
+    "period_end": "2026-08-18",
     "period_start": "2026-07-17",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_d12e746b3c9d392183cc:3d25696e2bdebba9c781:2026-08-14",
+        "observed_at": "2026-08-15T10:33:10Z",
+        "prompt": "Research security_d12e746b3c9d392183cc with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_d12e746b3c9d392183cc:d9dbb1162ebff3c2d58b:2026-08-18",
+        "market_data_date": "2026-08-18",
+        "observed_at": "2026-08-18T20:11:34Z",
+        "prompt": "Research security_d12e746b3c9d392183cc with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4.md"
+        ],
+        "trigger_types": [
+          "bollinger_below_lower"
+        ]
+      }
+    ],
     "security_id": "security_d12e746b3c9d392183cc",
-    "source_price_hash": "6a23d2df818910dfcee1ffa9aba836a28f9b2389b70419844e6cbb234d1b9ee4",
+    "source_price_hash": "dd294385338c3cdda3f1758cd1b344a790ff9bfddb35d7dd419368378701a360",
     "trigger_types": [
+      "bollinger_below_lower",
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Research security_d12e746b3c9d392183cc with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Research security_d12e746b3c9d392183cc with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Research security_d12e746b3c9d392183cc with high priority after price-action alerts: bollinger_below_lower; decide what changed and whether to act.",
   "operation_id": "01M02FQ3KGXV8XSZN4FXDYFCG2",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4.md",
     "data/wiki/inbox/market-security_d12e746b3c9d392183cc-macd_cross_above_signal-3d4a3a1356c7.md"
   ]
 }
