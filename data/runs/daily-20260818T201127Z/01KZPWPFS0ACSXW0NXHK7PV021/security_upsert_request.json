@@ -1,0 +1,23 @@
+{
+  "security_id": "security_c9a37d277445869a8809",
+  "issuer_id": "issuer_2cfe7452981883bfe840",
+  "company_name": "Roblox Corporation",
+  "instrument_name": "Roblox Corporation Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "RBLX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RBLX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Communication Services",
+  "industry": "Electronic Gaming & Multimedia",
+  "status": "watching",
+  "watchlist_reason": "Digital-attention and creator-platform candidate; the August 18 MACD bullish crossover is technical stabilization, while weak Q2 monetization and Q3 cash conversion remain fundamental risks.",
+  "research_summary": "Q2 engagement and net cash support Roblox, but unchanged operating risks and a USD 37.66 mark leave insufficient expected return and downside payoff.",
+  "research_page": "data/wiki/securities/security_c9a37d277445869a8809.md",
+  "last_research_at": "2026-08-18T20:23:55Z",
+  "next_review_at": "2026-09-01T20:23:55Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm"
+}

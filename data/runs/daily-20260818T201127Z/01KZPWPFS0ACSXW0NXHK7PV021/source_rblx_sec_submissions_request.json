@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rblx_sec_submissions",
+  "url": "https://data.sec.gov/submissions/CIK0001315098.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001315098.json",
+  "source_type": "regulator_feed",
+  "title": "Roblox Corporation SEC submissions index",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "187c1de401db23f3693e39375cb0f04828ae1740262d20fcb62e1bfa43fd1ca4",
+  "related_entity_ids": "security_c9a37d277445869a8809",
+  "checked_at": "2026-08-18T20:23:55Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "After the Q2 filing through August 18, the recent submissions list contained Forms 4 and 144 but no newer periodic or current report.",
+  "summary": "The SEC submissions index confirms that no newer material periodic or current report superseded Roblox's Q2 operating evidence through the assessment date.",
+  "run_id": "daily-20260818T201127Z"
+}

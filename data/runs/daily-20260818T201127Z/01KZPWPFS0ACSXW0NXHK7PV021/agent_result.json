@@ -1,0 +1,100 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_c9a37d277445869a8809",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_q2_2026_letter_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_q2_2026_10q_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict",
+    "papertrader research security-context --security-id security_c9a37d277445869a8809",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_sec_submissions_request.json",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Roblox's August 18 bullish MACD crossover is technical stabilization after a 28.27% one-month decline, not a fundamental upgrade. Unchanged USD 28.23/USD 39.58/USD 53.00 scenarios against USD 37.66 produce only 3.18% expected return and 2.39% confidence-adjusted return; Roblox remains Hold / Watch and allocation-ineligible, with no paper strategy or signal and exactly one dependent digital-attention idea refresh."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed issuer letter was re-fetched with HTTP 200 and exactly matched its registered hash. It retains the material evidence: Q2 bookings of USD 1.557 billion, withdrawn annual guidance, Q3 bookings guidance down 14-18%, and Q3 free-cash-flow guidance from negative USD 60 million to positive USD 5 million.",
+      "observed_at": "2026-08-18T20:23:55Z",
+      "source": "Roblox Q2 2026 shareholder letter",
+      "source_hash": "2d51c740b0a4a948e2bf839a70d3c2b1b02cd8ef9aaa4f4d194bbe0fc20918d4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm"
+    },
+    {
+      "claim": "The filing was re-fetched with HTTP 200 and exactly matched its registered hash. It continues to support the balance-sheet, cash-conversion, stock-compensation, dilution, safety, regulatory, and platform-risk inputs used in the assessment.",
+      "observed_at": "2026-08-18T20:23:55Z",
+      "source": "Roblox Q2 2026 Form 10-Q",
+      "source_hash": "13062b27ac41d72b98c4a537ecccb4ba0202fecd85e99bf9872855abb4fd55d4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm"
+    },
+    {
+      "claim": "The SEC submissions index showed no newer periodic or current report after the Q2 filing through August 18; only Forms 4 and 144 appeared, so no newer retained operating evidence superseded the Q2 inputs.",
+      "observed_at": "2026-08-18T20:23:55Z",
+      "source": "Roblox SEC submissions index",
+      "source_hash": "187c1de401db23f3693e39375cb0f04828ae1740262d20fcb62e1bfa43fd1ca4",
+      "url": "https://data.sec.gov/submissions/CIK0001315098.json"
+    },
+    {
+      "claim": "The immutable RBLX/XNYS/USD/equity identity had an August 18 adjusted close of USD 37.65999984741211 and a fresh USD/EUR rate of 0.8639000058174133. The payload source-price hash exactly matched the indicator row, where MACD -3.40271048 crossed above signal -3.44658466 after a 28.266667% July 21-August 18 decline.",
+      "observed_at": "2026-08-18T20:11:34Z",
+      "source": "PaperTrader deterministic market, indicator, and FX state",
+      "source_hash": "12e570cce2aa8c9f3ab428c69afc3d8d8d63d802ec77034193dd5cc414b5c4e4"
+    },
+    {
+      "claim": "Assessment assessment_350be4b7a00d7fa4f952 links predecessor assessment_88cd8bf47d6613485ad6, schema version 2, this operation/result, and page hash f33af4444f44ebe34474bca1139b2661e0753564e7ff110b5da383e07c7879ae. It derives bear/base/bull returns of -25.0398%/5.0982%/40.7329%, expected return of 3.1837%, confidence-adjusted expected return of 2.3878%, and a USD 31.664 buy-below price; the result is Hold / Watch and ineligible.",
+      "observed_at": "2026-08-18T20:26:59Z",
+      "source": "PaperTrader deterministic assessment projection"
+    },
+    {
+      "claim": "Exactly one dependent idea_research follow-up, 01M0B8X818VTAGJR84VY4FKNN4, carries idea_digital_attention_gaming_ecosystems, this security and security-review operation identity, the expected result path, and the updated security page source reference.",
+      "source": "PaperTrader deterministic queue projection"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0B8X818VTAGJR84VY4FKNN4.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/assessment_upsert_request.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/security_upsert_request.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_q2_2026_10q_recheck_request.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_q2_2026_letter_recheck_request.json",
+    "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c9a37d277445869a8809.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZPWPFS0ACSXW0NXHK7PV021",
+  "operations_created": [
+    "01M0B8X818VTAGJR84VY4FKNN4"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Roblox refresh using current deterministic market and FX state plus rechecked SEC primary evidence. The August 18 bullish MACD crossover follows a 28.27% decline from July 21 and represents technical stabilization, not a fundamental improvement. Unchanged USD 28.23/USD 39.58/USD 53.00 bear/base/bull values against the USD 37.66 mark produce a 3.18% expected return and 2.39% medium-confidence-adjusted return. Assessment assessment_350be4b7a00d7fa4f952 remains Hold / Watch and allocation-ineligible because base return, expected return, and both downside-payoff gates fail. Updated the security page and structured state, registered three source observations, and created exactly one dependent idea refresh, 01M0B8X818VTAGJR84VY4FKNN4. No strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied operation was the sole running LLM operation, claimed by daily-20260818T201127Z with a live lease, and matched the validated payload, immutable RBLX/XNYS/USD/equity identity, and trusted preflight skill hashes.",
+      "Consumed the mandatory audited prior security context before reading assessment state and retained a complete Changes since prior review section covering evidence, assumptions, scenario inputs and outputs, thesis, catalysts, risks, blockers, gaps, rating, action, and unchanged conclusions.",
+      "Re-fetched the SEC-filed Q2 shareholder letter and Form 10-Q with HTTP 200 and exact registered hashes, checked the SEC submissions index for superseding filings, and recorded all three retained source observations through the project CLI.",
+      "Confirmed the August 18 USD 37.65999984741211 mark, USD/EUR rate 0.8639000058174133, MACD crossover, exact July 21-August 18 period, and payload source-price hash against fresh deterministic market, FX, and indicator state.",
+      "Confirmed assessment assessment_350be4b7a00d7fa4f952 is the sole immutable assessment version for this operation and run, links predecessor assessment_88cd8bf47d6613485ad6, source operation/result, schema version 2, and page hash f33af4444f44ebe34474bca1139b2661e0753564e7ff110b5da383e07c7879ae, and uses only anchored scores. The first immutable assessment request was rejected before mutation for a nonempty specialized-template rationale; the corrected request used a new filename and succeeded.",
+      "Confirmed exactly one matching dependent idea-research follow-up, 01M0B8X818VTAGJR84VY4FKNN4, exists for the one payload-linked and accepted-relationship idea. The full conviction gate failed, so no strategy follow-up was created.",
+      "Strict schema validation, queue validation, strict wiki lint, strict integrity, and strict portfolio reconciliation passed. Allocation readiness remained false only for pre-existing repository-wide stale-assessment, relationship-coverage, and stale-relationship gaps; Roblox itself is current and ineligible on economic gates.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source, idea page, or other security page was changed by this operation."
+    ],
+    "passed": true
+  }
+}

@@ -3998,3 +3998,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
   concentration, the new credit facility and the missing accepted relationship keep the security
   allocation-ineligible with no conviction strategy. The volume anomaly was an earnings reaction;
   the marginal lower-Bollinger breach is a valuation opportunity with material risk, not a signal.
+
+## [2026-08-18T20:23:55Z] update | Roblox assessment refresh and MACD crossover
+
+- Reassessed [[securities/security_c9a37d277445869a8809|Roblox]] against unchanged SEC-filed Q2
+  evidence and the August 18 market state. The bullish MACD crossover is short-term stabilization
+  after a 28.27% one-month decline, not evidence that monetization or cash conversion improved.
+  Unchanged USD 28.23/USD 39.58/USD 53.00 scenarios against the higher USD 37.66 mark leave Roblox
+  Hold / Watch and allocation-ineligible; no conviction strategy or signal is justified.

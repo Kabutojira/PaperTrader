@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_digital_attention_gaming_ecosystems",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "security_id": "security_c9a37d277445869a8809",
+    "security_research_operation_id": "01KZPWPFS0ACSXW0NXHK7PV021",
+    "security_research_result_path": "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/agent_result.json",
+    "seed_claim": "Roblox's Q2 engagement and net cash still support the creator-platform mechanism, but unchanged monetization and Q3 cash-conversion risks leave the August 18 MACD crossover as technical stabilization rather than a validated buy signal."
+  },
+  "objective": "Refresh the digital attention, gaming, and consumer ecosystems idea from Roblox's August 18 assessment, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01M0B8X818VTAGJR84VY4FKNN4",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_c9a37d277445869a8809.md"
+  ]
+}

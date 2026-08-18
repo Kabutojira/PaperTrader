@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rblx_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm",
+  "source_type": "filing",
+  "title": "Roblox Corporation Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "13062b27ac41d72b98c4a537ecccb4ba0202fecd85e99bf9872855abb4fd55d4",
+  "related_entity_ids": "idea_digital_attention_gaming_ecosystems|security_c9a37d277445869a8809",
+  "checked_at": "2026-08-18T20:23:55Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30, Roblox held USD 6.084 billion of cash and investments, USD 1.009 billion of long-term debt, and reported 716.767 million weighted-average basic shares for Q2.",
+  "summary": "The unchanged Q2 filing confirms USD 2.911 billion of first-half revenue, a USD 433 million first-half net loss, USD 890 million of company-defined first-half free cash flow, substantial net cash, stock compensation and ongoing dilution, safety, regulatory and platform risks.",
+  "run_id": "daily-20260818T201127Z"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rblx_q2_2026_shareholder_letter",
+  "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm",
+  "source_type": "issuer_release",
+  "title": "Roblox Q2 2026 shareholder letter",
+  "publisher": "Roblox Corporation via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2d51c740b0a4a948e2bf839a70d3c2b1b02cd8ef9aaa4f4d194bbe0fc20918d4",
+  "related_entity_ids": "idea_digital_attention_gaming_ecosystems|security_c9a37d277445869a8809",
+  "checked_at": "2026-08-18T20:23:55Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 bookings were USD 1.557 billion; Q3 bookings guidance was USD 1.576-1.653 billion and Q3 free-cash-flow guidance was negative USD 60 million to positive USD 5 million.",
+  "summary": "The unchanged SEC-filed Q2 letter confirms continued engagement and payer growth but weaker current monetization, withdrawal of annual guidance, sharply lower Q3 bookings guidance, higher AI and safety investment, and near-zero Q3 free-cash-flow guidance.",
+  "run_id": "daily-20260818T201127Z"
+}
