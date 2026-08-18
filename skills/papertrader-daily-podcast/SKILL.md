@@ -64,7 +64,9 @@ background and definitions; newer accepted evidence controls current claims.
    `scripts/papertrader podcast render-draft --daily-cycle-id <run_id> --script-path <page_path>`.
    The controller supplies `PAPERTRADER_PODCAST_OUTPUT_DIRECTORY`; never print, change, replace, or
    use another output directory. Do not retry a failed render and do not invoke Edge TTS, ffmpeg, or
-   ffprobe directly. A render failure does not invalidate an otherwise valid transcript.
+   ffprobe directly. The one audited renderer may retry an individual failed TTS chunk within its
+   hard bound; that remains one render invocation and never starts a fallback render. A render
+   failure does not invalidate an otherwise valid transcript.
 11. Run only permitted project checks: strict schema, integrity, wiki, queue, and portfolio checks.
     `advice validate` is outside the `daily_podcast` command scope. In `commands_run`, list only
     receipts from `command_audit.json`, including the preflight and single render-draft receipt

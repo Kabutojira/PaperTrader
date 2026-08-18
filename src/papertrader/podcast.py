@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import subprocess
+import time
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
 from datetime import datetime, timedelta
@@ -33,6 +34,7 @@ MINIMUM_SCRIPT_WORDS = 2400
 MAXIMUM_SCRIPT_WORDS = 3600
 MINIMUM_DURATION_SECONDS = 16 * 60
 MAXIMUM_DURATION_SECONDS = 24 * 60
+TTS_CHUNK_MAXIMUM_ATTEMPTS = 3
 PODCAST_OUTPUT_ENV = "PAPERTRADER_PODCAST_OUTPUT_DIRECTORY"
 RESEARCH_OPERATION_TYPES = frozenset(
     {
@@ -821,6 +823,7 @@ def _render_draft_podcast(
     audit_operation_id: str,
     audit_operation_type: str,
     runner: Callable[..., Any] = subprocess.run,
+    sleeper: Callable[[float], None] = time.sleep,
 ) -> PodcastAssembly:
     """Render the workspace draft once inside an audited daily_podcast operation."""
 
@@ -854,9 +857,24 @@ def _render_draft_podcast(
             "--write-media",
             str(path),
         ]
-        rendered = runner(command, check=False, capture_output=True)
-        if rendered.returncode != 0 or not path.is_file() or path.stat().st_size == 0:
-            raise PodcastError(f"configured TTS backend failed for chunk {index}")
+        for attempt in range(1, TTS_CHUNK_MAXIMUM_ATTEMPTS + 1):
+            if path.is_symlink() or path.is_file():
+                path.unlink(missing_ok=True)
+            rendered = runner(command, check=False, capture_output=True)
+            if (
+                rendered.returncode == 0
+                and not path.is_symlink()
+                and path.is_file()
+                and path.stat().st_size > 0
+            ):
+                break
+            if attempt < TTS_CHUNK_MAXIMUM_ATTEMPTS:
+                sleeper(float(2 ** (attempt - 1)))
+        else:
+            raise PodcastError(
+                f"configured TTS backend failed for chunk {index} after "
+                f"{TTS_CHUNK_MAXIMUM_ATTEMPTS} attempts"
+            )
         chunk_paths.append(path)
     concat = output_root / "concat.txt"
     concat.write_text(
@@ -927,6 +945,7 @@ def render_draft_podcast(
     audit_operation_id: str,
     audit_operation_type: str,
     runner: Callable[..., Any] = subprocess.run,
+    sleeper: Callable[[float], None] = time.sleep,
 ) -> PodcastAssembly:
     """Render one audited draft and remove every partial media file after failure."""
 
@@ -947,6 +966,7 @@ def render_draft_podcast(
             audit_operation_id=audit_operation_id,
             audit_operation_type=audit_operation_type,
             runner=runner,
+            sleeper=sleeper,
         )
         completed = True
         return result

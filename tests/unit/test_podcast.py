@@ -588,6 +588,7 @@ def test_failed_ephemeral_render_removes_completed_chunks(
         return subprocess.CompletedProcess(command, 1, "", "tts failed")
 
     output = tmp_path / "papertrader-podcast" / cycle_id
+    delays: list[float] = []
     with pytest.raises(PodcastError, match="chunk 2"):
         render_draft_podcast(
             sandbox_repository,
@@ -599,9 +600,61 @@ def test_failed_ephemeral_render_removes_completed_chunks(
             audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
             audit_operation_type="daily_podcast",
             runner=failing_runner,
+            sleeper=delays.append,
         )
 
+    assert attempts == 4
+    assert delays == [1.0, 2.0]
     assert list(output.iterdir()) == []
+
+
+def test_transient_tts_chunk_failure_retries_within_one_draft_render(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+    tmp_path: Path,
+) -> None:
+    cycle_id = "daily-20260730T180004Z"
+    script_path = "data/wiki/podcasts/daily-podcast_20260730T180004Z.md"
+    page = sandbox_repository / script_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_script(cycle_id), encoding="utf-8")
+    tts_attempts = 0
+    delays: list[float] = []
+
+    def flaky_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        nonlocal tts_attempts
+        if "-show_entries" in command:
+            return subprocess.CompletedProcess(command, 0, "1200\n", "")
+        if "--write-media" in command:
+            tts_attempts += 1
+            target = Path(command[command.index("--write-media") + 1])
+            if tts_attempts == 1:
+                target.write_bytes(b"partial-audio")
+                return subprocess.CompletedProcess(command, 1, b"", b"temporary failure")
+            target.write_bytes(b"chunk-audio")
+            return subprocess.CompletedProcess(command, 0, b"", b"")
+        Path(command[-1]).write_bytes(b"assembled-audio")
+        return subprocess.CompletedProcess(command, 0, b"", b"")
+
+    output = tmp_path / "papertrader-podcast" / cycle_id
+    result = render_draft_podcast(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        script_path=script_path,
+        output_directory=output,
+        audit_run_id=cycle_id,
+        audit_operation_id="01ARZ3NDEKTSV4RRFFQ69G5FAV",
+        audit_operation_type="daily_podcast",
+        runner=flaky_runner,
+        sleeper=delays.append,
+    )
+
+    assert tts_attempts == 5
+    assert delays == [1.0]
+    assert Path(result.audio_path).read_bytes() == b"assembled-audio"
+    assert Path(result.manifest_path).is_file()
+    assert not list(output.glob("chunk-*.mp3"))
 
 
 def test_seal_detects_committed_script_hash_mismatch_without_tts(
