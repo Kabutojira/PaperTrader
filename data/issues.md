@@ -38,7 +38,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_e6820a7a8318aa2adbf4** — Hermes operation validation failed: 01KZ8BGD98AWXPGHS42QSJA7TG | 2026-08-08T12:35:16Z | controller | 01KZ8BGD98AWXPGHS42QSJA7TG |
 | error | **issue_e7dea4abd8cffd476a05** — RTX assessment source operation is ambiguous within one run | 2026-08-05T22:31:51Z | controller | 01KZA04098D4DF0J4SFMJK1TDD |
 | error | **issue_e96418f6e865e7193bef** — Planet Labs assessment source operation is ambiguous within one run | 2026-08-09T15:31:13Z | controller | 01KZKHKWD8T6AKQWAG73BQZJCZ |
-| error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T10:45:37Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
+| error | **issue_ff655356efa9b9e1d1a8** — Hermes operation validation failed: 01KZPWPFS0QGMTYP3PD0TRQH6K | 2026-08-18T11:39:09Z | controller | 01KZPWPFS0QGMTYP3PD0TRQH6K |
 | warning | **issue_0367496037d0e3f45ccb** — Daily preparation degraded: security_fb87fac302a5446a1ced | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0452943dbcb7cbcd404b** — Daily preparation degraded: security_ad3b1f8f59fd599f079a | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_0891b21bbd2baeff61d8** — Daily podcast skipped: daily-20260818T091246Z | 2026-08-18T10:57:42Z | delivery | 01M0A81KP88T937P4MD17D2Z6N |
