@@ -1,0 +1,18 @@
+{
+  "source_id": "source_nbis_q2_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm",
+  "source_type": "filing",
+  "title": "Nebius Group N.V. unaudited condensed consolidated financial statements for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "440449e9671dc8f744e7a9cbbac86384d6eacbfded9dc3c01c95613d64c31c4c",
+  "related_entity_ids": "security_47a0b06f6c6c478d7c1e",
+  "checked_at": "2026-08-18T23:19:57Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At June 30 cash was USD 8.0421 billion, debt was USD 8.5457 billion, and current plus non-current deferred revenue was USD 5.9752 billion.",
+  "summary": "The SEC-filed Q2 statements support a fresh revenue-multiple valuation while requiring explicit treatment of extraordinary capital intensity, net debt, customer-funded cash flow, concentration, convertibles, anti-dilutive awards and share-count dilution.",
+  "run_id": "daily-20260818T231700Z"
+}

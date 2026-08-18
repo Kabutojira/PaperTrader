@@ -64,14 +64,31 @@ July financing release remain historical context.
 
 ## Valuation
 
-The prior `pre_profit_growth` revenue-multiple scenarios used Q1 operating scale, the March balance
-sheet, and an approximately 309 million diluted-share denominator. Q2 materially changed every
-major valuation input: revenue and adjusted EBITDA accelerated, cash and debt changed, deferred
-revenue expanded, quarterly capital purchases exceeded USD 5.6 billion, and the reported issued,
-outstanding, treasury, convertible, warrant, and diluted-share identities require reconciliation.
-The old scenario values are therefore stale rather than comparable with the 18 August USD 248.43
-mark. This bounded quick check does not invent replacement values; valuation is unsupported until
-the dependent full review rebuilds bear, base, and bull scenarios from the Q2 evidence.
+The refreshed `pre_profit_growth` revenue-multiple valuation uses Q2 operating scale, USD 8.0421
+billion cash, USD 8.5457 billion current and non-current debt, and a conservative approximately 350
+million fully diluted denominator. That denominator starts with 271.9 million issued and outstanding
+shares and allows for the filing's 65.4 million anti-dilutive convertible-note shares, 10.0 million
+anti-dilutive share awards, and 2.7 million unvested Eigen AI shares. It is deliberately more
+conservative than both the reported basic share count and the old approximately 309 million Q1
+diluted weighted average.
+
+The twelve-month bear case assigns USD 75 per share to USD 4.5 billion forward revenue at about six
+times enterprise value/revenue, modest net debt and approximately 350 million diluted shares. It
+assumes deployment slippage, weaker utilization or pricing, continuing heavy capex and customer-
+advance dependence, and full modeled dilution. The USD 165 base case uses USD 6.5 billion revenue at
+about nine times, the same net-debt and diluted-share normalization, on-schedule contract conversion,
+positive adjusted EBITDA but still negative free cash flow, and no major customer diversification.
+The USD 325 bull case uses USD 10 billion revenue at about 11.5 times with the same conservative
+capital structure; it requires timely capacity delivery, sustained utilization and margins,
+efficient asset-backed funding, and improving customer breadth.
+
+Probabilities of 25% / 50% / 25% produce USD 182.50 probability-weighted fair value. Against the
+18 August USD 248.43 mark, deterministic bear/base/bull returns are -69.81% / -33.58% / 30.82%,
+expected return is -26.54%, and medium-confidence-adjusted expected return is -19.90%. The USD 132
+buy-below level applies the configured 20% discount to the USD 165 base case. This scenario set is
+supportable but highly assumption-sensitive; it values operating acceleration while explicitly
+normalizing capital intensity, net debt and dilution rather than treating contracted revenue as
+current earnings.
 
 ## Alert review, catalysts, and risks
 
@@ -98,19 +115,19 @@ can broaden its base.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, rating **Unrated / Watch**. Q2 supports exceptional
-growth and improving adjusted operating economics, but the prior scenario set is no longer a valid
-decision basis. Valuation is explicitly unsupported until the dependent full review reconciles Q2
-operating scale, capital spending, customer advances, cash, debt, contract delivery, concentration,
-and share-count dilution. This hard blocker and the absence of an accepted canonical relationship
-keep the security allocation-ineligible. Review by **2026-08-25** through the dependent full
-research operation. No strategy, signal, or paper order is justified.
+Status: **watching**, confidence **medium**, rating **Strong Sell / Avoid**. Q2 supports exceptional
+growth and improving adjusted operating economics, but USD 182.50 probability-weighted value and a
+USD 165 base case remain well below the USD 248.43 mark. Negative expected and base returns, poor
+bear/base and expected/bear payoff, negative margin of safety, and the absence of an accepted
+canonical relationship keep the security allocation-ineligible. Review by **2026-09-17**, or sooner
+after material delivery, financing, customer-concentration or dilution evidence. No conviction
+strategy, signal, or paper order is justified.
 
 ## Changes since prior review
 
-- **Prior state:** the 5 August assessment used Q1 evidence and a complete revenue-multiple scenario set, rated the security Sell / Avoid at USD 225.74, and was allocation-ineligible.
-- **Facts and evidence:** Q2 revenue reached USD 582.3 million, adjusted EBITDA reached USD 236.2 million, continuing operations lost USD 190.4 million, quarterly capital purchases reached USD 5.6574 billion, cash was USD 8.0421 billion, debt was USD 8.5457 billion, and deferred revenue was USD 5.9752 billion.
-- **Assumptions and valuation:** the Q2 scale, balance sheet, funding flows, capex, and share identities materially supersede the prior inputs. The old scenarios are withdrawn from current use and no replacement value is asserted by this bounded check.
-- **Thesis, catalysts, and risks:** operating growth and leverage strengthened, while concentration, capital intensity, customer-advance dependence, hardware obsolescence, secured and convertible leverage, and dilution remain decisive.
-- **Alert and action:** the August 12 volume anomaly coincided with Q2 results; the close subsequently eased to USD 248.43 with neutral RSI. The move is a possible repricing, not a validated entry condition.
-- **Blockers, gaps, rating, and escalation:** valuation is unsupported, confidence remains medium, concentration is material, and no accepted relationship exists. NBIS is Unrated / Watch, allocation-ineligible, and exactly one dependent full security review is required; no strategy or signal is created.
+- **Prior state:** the 18 August quick check withdrew stale Q1 scenarios, recorded Unrated / Watch at USD 248.43, and required this full review; the older 5 August review was Sell / Avoid at USD 225.74.
+- **Facts and evidence:** the full review confirms Q2 revenue of USD 582.3 million, adjusted EBITDA of USD 236.2 million, a USD 190.4 million continuing-operations loss, USD 5.6574 billion quarterly capital purchases, USD 8.0421 billion cash, USD 8.5457 billion debt, USD 5.9752 billion deferred revenue, and 271.9 million basic shares plus material convertible and award dilution.
+- **Assumptions and valuation:** valuation support is restored with conservative Q2-normalized USD 75 / USD 165 / USD 325 scenarios, replacing the old USD 75 / USD 170 / USD 340 Q1 set. The refreshed expected value is USD 182.50 and expected return is -26.54%; full modeled dilution and net debt offset faster operating growth.
+- **Thesis, catalysts, and risks:** the thesis remains that scarce AI capacity and software can support rapid growth; the evidence upgrade is real, but customer concentration, extraordinary capital intensity, customer-advance dependence, hardware obsolescence, leverage and dilution remain decisive. Catalysts and invalidation conditions are unchanged because Q2 strengthened both the growth case and its financing risks.
+- **Alert and action:** the August 12 volume anomaly remains an earnings-linked repricing rather than a buy signal. The USD 248.43 close exceeds the USD 165 base value and USD 132 buy-below level.
+- **Blockers, gaps, rating, and conclusion:** the valuation-unsupported blocker is resolved, while concentration sensitivity, medium confidence, unfavorable timing and the missing accepted relationship remain. Rating changes from Unrated / Watch to Strong Sell / Avoid, but allocation ineligibility and the conclusion that no strategy or signal is justified are unchanged.

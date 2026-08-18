@@ -1,0 +1,72 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e",
+    "papertrader research source record --request data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/source_nbis_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/source_nbis_q2_2026_financials_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_47a0b06f6c6c478d7c1e",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Nebius Q2 full review restored a supported USD 75 / USD 165 / USD 325 scenario valuation. USD 182.50 probability-weighted value remains below the USD 248.43 mark, so canonical state is Sell / Avoid and allocation-ineligible; no strategy or paper signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Nebius reported Q2 revenue of USD 582.3 million, adjusted EBITDA of USD 236.2 million, and purchases of property, equipment and intangible assets of USD 5.6574 billion, confirming both exceptional operating growth and extraordinary capital intensity.",
+      "observed_at": "2026-08-18T23:19:57Z",
+      "source": "Nebius Q2 2026 results filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "6251cc57958331181d98ee59ff093992d0658f8d6db5487eed7e7d397225aa03",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+    },
+    {
+      "claim": "At June 30, 2026, cash was USD 8.0421 billion, debt was USD 8.5457 billion, deferred revenue was USD 5.9752 billion, and issued and outstanding shares were 271.9 million before material anti-dilutive convertible-note, award and Eigen AI share effects.",
+      "observed_at": "2026-08-18T23:19:57Z",
+      "source": "Nebius Q2 2026 unaudited condensed consolidated financial statements filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "440449e9671dc8f744e7a9cbbac86384d6eacbfded9dc3c01c95613d64c31c4c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm"
+    },
+    {
+      "claim": "The identity-matched NBIS mark was USD 248.42999267578125 and the USD/EUR conversion rate was 0.863349974155426, both retrieved at 2026-08-18T23:17:07Z.",
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "Deterministic schema-v2 valuation derived USD 182.50 probability-weighted fair value, -26.53866063661023561787072477% expected return, -19.90399547745767671340304358% confidence-adjusted expected return, and USD 132 buy-below price; canonical rating is Sell, portfolio action is Avoid, and allocation eligibility is ineligible.",
+      "source": "assessment_e5ee4f0f332bc61b13fb"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/assessment_upsert_request.json",
+    "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/security_upsert_request.json",
+    "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/source_nbis_q2_2026_financials_request.json",
+    "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/source_nbis_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0B9RMZRENS1CC2T3BF65HXF",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one full Nebius Q2 2026 security review. Fresh SEC-filed results and financial statements support a conservative Q2-normalized revenue-multiple valuation of USD 75 / USD 165 / USD 325 with 25% / 50% / 25% probabilities. At the fresh USD 248.43 mark, deterministic probability-weighted value is USD 182.50, expected return is -26.54%, confidence-adjusted expected return is -19.90%, and buy-below value is USD 132. The immutable schema-v2 assessment is Sell / Avoid and allocation-ineligible because every economic return/payoff gate fails and no accepted relationship exists. No strategy, signal, paper order, follow-up operation, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-review security-context receipt succeeded before assessment state was read or changed.",
+      "Both retained SEC sources were rechecked at 2026-08-18T23:19:57Z with unchanged registered content hashes and current available status.",
+      "Security identity remained security_47a0b06f6c6c478d7c1e / NBIS / XNAS / USD with no accepted relationship or duplicate identity.",
+      "Fresh mark and FX identities were consumed from 2026-08-18T23:17:07Z canonical market data.",
+      "Assessment assessment_e5ee4f0f332bc61b13fb is schema version 2, complete, current, source-linked, page-hash-linked, and points to predecessor assessment_418bcf82968e21826232.",
+      "Scenario probabilities total 100; fair values are ordered; deterministic output is Sell / Avoid and allocation-ineligible with complete eligibility reasons.",
+      "No linked ideas or accepted relationships exist, so zero idea-research follow-ups were required; the conviction strategy gate failed and no strategy follow-up was created.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "No allocation, order, execution, cash, portfolio, performance, fill, or other operation state was changed by this routed skill."
+    ],
+    "passed": true
+  }
+}

@@ -4019,3 +4019,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
   the Q1 scenario set stale. The earnings-linked volume anomaly is a repricing event rather than a
   validated entry condition; Nebius is Unrated / Watch and allocation-ineligible pending exactly
   one dependent full review, with no strategy or signal created.
+
+## [2026-08-18T23:19:57Z] update | Nebius full Q2 revaluation
+
+- Fully reassessed [[securities/security_47a0b06f6c6c478d7c1e|Nebius Group]] after its Q2 results and
+  August volume anomaly. Rebuilt the stale Q1 valuation with Q2-normalized USD 75 / USD 165 / USD
+  325 bear/base/bull values, including net debt, convertibles, awards and capital intensity. The
+  USD 248.43 mark remains above USD 182.50 probability-weighted value, so NBIS is Strong Sell /
+  Avoid and allocation-ineligible; no conviction strategy or paper signal was created.

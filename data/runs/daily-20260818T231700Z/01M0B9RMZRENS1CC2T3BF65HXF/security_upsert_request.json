@@ -1,0 +1,23 @@
+{
+  "security_id": "security_47a0b06f6c6c478d7c1e",
+  "issuer_id": "issuer_489b0bfd13a06e7d7874",
+  "company_name": "Nebius Group N.V.",
+  "instrument_name": "Nebius Group N.V. Class A ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "NBIS",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "NBIS",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "NL",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "Exceptional AI-cloud growth is offset by extraordinary capital intensity, customer concentration, financing dependence, dilution and an unfavorable Q2-normalized valuation.",
+  "research_summary": "Q2-normalized USD 75/USD 165/USD 325 scenarios imply USD 182.50 weighted value versus USD 248.43; Strong Sell / Avoid.",
+  "research_page": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+  "last_research_at": "2026-08-18T23:19:57Z",
+  "next_review_at": "2026-09-17T23:19:57Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+}
