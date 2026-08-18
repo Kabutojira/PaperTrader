@@ -751,6 +751,10 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "`scripts/papertrader research security-context --security-id security_example`" in (
         quick_check_prompt
     )
+    assert "research assessment upsert --request <unique-request-path>" in quick_check_prompt
+    assert "Writing an assessment request file without invoking it" in quick_check_prompt
+    assert "exactly one immutable history version" in quick_check_prompt
+    assert "write an evidence-backed failed result instead of succeeded" in quick_check_prompt
 
 
 def test_environment_scrubber_drops_actions_and_broker_tokens(
