@@ -1,0 +1,35 @@
+{
+  "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+  "status": "failed",
+  "summary": "Quick check could not publish its required assessment because the audited project CLI rejected the assessment upsert request as outside the routed quick_check_research skill scope. No assessment, queue, wiki, or accounting state was changed.",
+  "evidence": [
+    {
+      "source": "mandatory security context",
+      "claim": "The required security-context command succeeded before assessment-state work and returned Rocket Lab security_7ca095d63423c55a90e3 with current assessment assessment_139572984e6c1e53af22 and baseline operation 01KZM3JQXG54MXRP9EPRNYX45A.",
+      "observed_at": "2026-08-18T12:33:58Z"
+    },
+    {
+      "source": "project CLI scope enforcement",
+      "claim": "The required assessment invocation was rejected with exit code 2: the assessment upsert request was outside the quick_check_research skill scope. Per controller instructions, the rejected request was not retried and no full-research enqueue was invoked.",
+      "observed_at": "2026-08-18T12:34:00Z"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json",
+    "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/enqueue_full_research_request.json"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader research security-context --security-id security_7ca095d63423c55a90e3"
+  ],
+  "validation": {
+    "passed": false,
+    "checks": [
+      "Mandatory pre-assessment security context passed.",
+      "Assessment publication failed closed at CLI scope validation; therefore the required post-upsert security-context identity check could not be performed.",
+      "No assessment upsert, queue enqueue, wiki edit, allocation, signal, order, execution, cash, portfolio, performance, or other accounting mutation was performed."
+    ]
+  }
+}

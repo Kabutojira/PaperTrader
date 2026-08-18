@@ -1,0 +1,27 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security-context",
+        "--security-id",
+        "security_7ca095d63423c55a90e3"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research security-context --security-id security_7ca095d63423c55a90e3",
+      "completed_at": "2026-08-18T12:33:58Z",
+      "exit_code": 0,
+      "profile": "scout",
+      "request": null,
+      "started_at": "2026-08-18T12:33:57Z"
+    }
+  ],
+  "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260818T123230Z"
+}
