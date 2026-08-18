@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a3401d60caf4aaf17228"
-as_of: "2026-08-18T11:39:21Z"
+snapshot_id: "decision_55cf1808aba2090bb57f"
+as_of: "2026-08-18T12:35:59Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-18T11:39:21Z`
+**As of:** `2026-08-18T12:35:59Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-18T11:39:21Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 337
+- Research backlog: 338
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -136,6 +136,7 @@ as_of: "2026-08-18T11:39:21Z"
 ### Publication Only
 
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.
 
 ### Operational Only
@@ -169,7 +170,7 @@ as_of: "2026-08-18T11:39:21Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 337 active operations.
+Showing 20 of 338 active operations.
 
 <details><summary>Active research work</summary>
 

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_a3401d60caf4aaf17228"
-as_of: "2026-08-18T11:39:21Z"
+snapshot_id: "decision_55cf1808aba2090bb57f"
+as_of: "2026-08-18T12:35:59Z"
 ---
 
 # Signals
 
-**As of `2026-08-18T11:39:21Z`**
+**As of `2026-08-18T12:35:59Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -71,15 +80,6 @@ No pending orders.
 - Conclusion: bearish\_alert\_unowned
 
 ### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
 
