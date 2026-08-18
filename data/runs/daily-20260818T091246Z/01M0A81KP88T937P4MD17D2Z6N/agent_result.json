@@ -1,0 +1,55 @@
+{
+  "operation_id": "01M0A81KP88T937P4MD17D2Z6N",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast because frozen context version three contains no audience-relevant accepted research between the previous successful podcast cutoff of 2026-08-17T19:03:48Z and the inclusive cutoff of 2026-08-18T10:45:50Z. The context lists no research developments, changed wiki pages, or background wiki pages; its only unresolved item is a failed quick-check result that was not accepted and cannot support a research narrative. No transcript or daily-report link was created, and the draft renderer was not invoked.",
+  "reason_code": "no_audience_relevant_accepted_research",
+  "evidence": [
+    {
+      "source": "data/runs/daily-20260818T091246Z/podcast_context.json",
+      "claim": "Frozen podcast context version three defines the bounded window, identifies the previous successful podcast, and contains empty research_developments, changed_wiki_pages, and background_wiki_pages arrays.",
+      "observed_at": "2026-08-18T10:53:01Z",
+      "source_hash": "9ea57467515a6ba9904fe6b4f37689ae01c7784e4908a1a1636175cecbe6eb41"
+    },
+    {
+      "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "claim": "The sole unresolved research item failed deterministic validation, so it is an unresolved gap rather than accepted research suitable for the podcast.",
+      "source_hash": "3b36875726f699058d33c37d5dd430e42d82b48db7149d002080f4653e9c1bf4"
+    },
+    {
+      "source": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+      "claim": "The prior successful episode already covered the latest accepted Intuitive Machines research through the exclusive start of the current frozen window.",
+      "source_hash": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117"
+    },
+    {
+      "source": "data/runs/daily-20260818T091246Z/decision_snapshot.json",
+      "claim": "The completed decision snapshot has no actionable signals and retains an all-cash portfolio, but unchanged decision state alone is not an audience-relevant accepted research development.",
+      "observed_at": "2026-08-18T10:45:50Z",
+      "source_hash": "dd4648557ad9671043662d960d90b8fbac3192f9c18eb7f456cf8d4a9afdfbb7"
+    }
+  ],
+  "files_changed": [],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [],
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated the frozen context version, cutoff window, previous-podcast identity, and referenced SHA-256 hashes.",
+      "Confirmed the requested transcript path did not exist and left the canonical daily report unchanged.",
+      "Applied the skill's skip rule because the whole frozen window contains no audience-relevant accepted research.",
+      "Confirmed no transcript, report link, persistent audio reference, or draft-render attempt was produced.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ]
+  }
+}

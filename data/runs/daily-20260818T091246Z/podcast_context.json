@@ -1,0 +1,69 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260818T091246Z",
+  "decision_snapshot_path": "data/runs/daily-20260818T091246Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "dd4648557ad9671043662d960d90b8fbac3192f9c18eb7f456cf8d4a9afdfbb7",
+  "generated_at": "2026-08-18T10:53:01Z",
+  "intervening_daily_cycles": [
+    "daily-20260818T091246Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260818T091246Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260818T091246Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260818.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260817T185232Z/podcast_context.json",
+    "context_sha256": "b3878741d8015aa5e0ab4071a53d9c2a3a37f382c866be8f8e1e7e23fcfba17d",
+    "daily_cycle_id": "daily-20260817T185232Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+    "page_sha256": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117",
+    "research_cutoff_at": "2026-08-17T19:03:48Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260818.md",
+  "report_sha256": "03380d3d0bfeac7d7e51cd607e2df7055fc3e77a10095c6ebce31906ef8cd3e3",
+  "research_cutoff_at": "2026-08-18T10:45:50Z",
+  "research_developments": [],
+  "run_id": "daily-20260818T091246Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-18T10:45:33Z",
+      "daily_cycle_id": "daily-20260818T091246Z",
+      "daily_report_items": [],
+      "entity_id": "security_61567714298b9563d1a9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result was written before completed change: data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/command_audit.json",
+          "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        },
+        {
+          "claim": "commands_run does not exactly match deterministic CLI audit receipts",
+          "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result was written before completed change: data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/command_audit.json",
+        "commands_run does not exactly match deterministic CLI audit receipts"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZPWPFS0QGMTYP3PD0TRQH6K",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-17T19:03:48Z"
+}
