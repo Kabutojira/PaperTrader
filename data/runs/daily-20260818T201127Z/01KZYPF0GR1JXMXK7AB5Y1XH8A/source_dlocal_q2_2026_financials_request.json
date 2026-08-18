@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dlocal_q2_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+  "source_type": "filing",
+  "title": "dLocal Limited Unaudited Consolidated Condensed Interim Financial Statements at June 30, 2026",
+  "publisher": "dLocal Limited",
+  "license": "",
+  "status": "available",
+  "content_hash": "3843dc6a64dd183327b47c5ac5e97e6af1e161bcd3a0a89b6bfa1de75dd18768",
+  "related_entity_ids": "security_715bde20b6e1e1320c1a",
+  "checked_at": "2026-08-18T20:14:50Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Weighted average number of common shares for calculating diluted earnings per share",
+  "summary": "The Q2 interim statements report six-month net income attributable to common shareholders of USD 96.6 million, Q2 diluted EPS of USD 0.18, Q2 diluted weighted-average shares of 295.9 million, USD 369.1 million corporate cash, and 6.9 million repurchased and cancelled Class A shares. The top ten merchants remained 61% of revenue and two merchants individually exceeded 10% of six-month revenue. The statements distinguish merchant cash from corporate liquidity and detail the repurchase, dividend, employee-plan dilution, working-capital and payment-settlement balances used in valuation normalization.",
+  "run_id": "daily-20260818T201127Z"
+}

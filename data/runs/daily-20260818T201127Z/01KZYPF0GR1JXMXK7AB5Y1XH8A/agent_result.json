@@ -1,0 +1,71 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/source_dlocal_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/source_dlocal_q2_2026_financials_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "DLocal Q2 research upgraded the economic assessment to Buy/Initiate at USD 13.64, with USD 18.70 base fair value and USD 14.96 buy-below price; allocation remains ineligible because no accepted relationship exists, so no strategy or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed Q2 release reports USD 17.7 billion TPV, USD 399.7 million revenue, USD 127.2 million gross profit, USD 64.2 million operating profit, USD 54.8 million net income and USD 68.5 million adjusted free cash flow; TPV and gross-profit guidance increased while gross profit over TPV compressed to 0.72%.",
+      "observed_at": "2026-08-18T20:14:50Z",
+      "source": "source_dlocal_q2_2026_results",
+      "source_hash": "f81e8a42107b96ca9a02592d4116de5831c64d04ba3fd01874c7770b5932b1eb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm"
+    },
+    {
+      "claim": "The Q2 interim statements verify USD 0.18 diluted EPS, 295.9 million diluted weighted-average shares, USD 369.1 million corporate cash, cancellation of 6.9 million repurchased Class A shares, 61% top-ten merchant concentration and the distinction between merchant funds and corporate liquidity.",
+      "observed_at": "2026-08-18T20:14:50Z",
+      "source": "source_dlocal_q2_2026_financials",
+      "source_hash": "3843dc6a64dd183327b47c5ac5e97e6af1e161bcd3a0a89b6bfa1de75dd18768",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm"
+    },
+    {
+      "claim": "Canonical market state at 2026-08-18T20:11:34Z marks DLO at USD 13.640000343322754 with a USD/EUR rate of 0.8639000058174133; the alert payload records a 7.65% decline over July 21-August 18 and a marginal lower-Bollinger breach after the August 13-14 earnings-volume anomaly.",
+      "observed_at": "2026-08-18T20:11:34Z",
+      "source": "data/market/latest.csv and data/market/indicators.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/assessment_upsert_request.json",
+    "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/security_upsert_request.json",
+    "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/source_dlocal_q2_2026_financials_request.json",
+    "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/source_dlocal_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZYPF0GR1JXMXK7AB5Y1XH8A",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the repeat schema-version-2 review of DLocal Limited after the August 13-14 volume anomaly and August 18 lower-Bollinger breach. Q2 TPV, revenue, gross profit, operating profit and adjusted free cash flow improved; management raised TPV and gross-profit guidance, while gross-profit-over-TPV compressed to 0.72%, top-ten merchant concentration remained 61%, and a new USD 150 million facility added deployment risk. At the fresh USD 13.64 mark, the deterministic assessment derives Buy/Initiate economics with USD 9.00/USD 18.70/USD 29.40 bear/base/bull values, 38.93% probability-weighted expected return and a USD 14.96 buy-below price. Allocation remains ineligible solely because no accepted idea-security relationship exists, so no strategy, signal, order, or paper position was created.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-review security-context receipt succeeded before assessment state was consumed.",
+      "Two current primary sources were registered with content hashes and fresh checked timestamps.",
+      "Security identity remained security_715bde20b6e1e1320c1a / DLO / XNAS / USD with no duplicate identity.",
+      "Assessment assessment_015185a947b744a29a3b is schema version 2, links predecessor assessment_fc2d1bd3bc2ac4a0e4a3, and matches research page hash 5487c1dac175d4abe5f92f4cf6454ad61f9322d2dd6396b5185e5524dea905af.",
+      "Current assessment derives Buy/Initiate economics but remains allocation-ineligible with reason relationship_pending; no strategy follow-up is allowed.",
+      "The security has no payload idea IDs and no accepted canonical relationships, so zero idea-research follow-ups is the exact required count.",
+      "Strict schema validation passed.",
+      "Queue validation passed.",
+      "Strict wiki lint passed.",
+      "Strict integrity validation passed with no allocation, order, execution, cash, portfolio, fill, or performance mutation."
+    ],
+    "passed": true
+  }
+}

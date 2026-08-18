@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-01"
-provenance: "source_dlocal_2025_20f|source_dlocal_q1_2026_financials|source_dlocal_q1_2026_results"
+updated: "2026-08-18"
+provenance: "source_dlocal_2025_20f|source_dlocal_q1_2026_financials|source_dlocal_q1_2026_results|source_dlocal_q2_2026_financials|source_dlocal_q2_2026_results"
 security_id: security_715bde20b6e1e1320c1a
 issuer_id: issuer_153eb518826ba6f3dbcd
 ticker: DLO
@@ -16,21 +16,45 @@ venue_mic: XNAS
 provider_symbol: DLO
 currency: USD
 confidence: medium
-next_review: "2026-08-31"
+next_review: "2026-09-17"
 ---
 
 # DLocal Limited Class A common shares
 
 ## Decision
 
-**Watch; no conviction strategy.** dLocal's Q1 evidence supports a strong emerging-market payment-
-infrastructure thesis: TPV grew 73% and gross profit grew 40% year over year, corporate cash rose,
-and management retained its 2026 outlook. The evidence is not uniformly positive. Gross profit over
-TPV compressed to 0.84%, adjusted free cash flow fell to USD 14.7 million, the ten largest merchants
-represented 61% of 2025 revenue, and tax, foreign-exchange, regulatory, working-capital, litigation,
-and merchant-concentration risks remain material. At USD 15.08, the base valuation has only 9.4%
-upside and a poor bear/base payoff, so the bullish moving-average crossover is not a paper-trade
-catalyst.
+**Watch; no conviction strategy.** Q2 strengthened the operating evidence: TPV grew 92%, gross
+profit grew 29%, operating profit grew 15%, adjusted free cash flow recovered to USD 68.5 million,
+and management raised TPV and gross-profit guidance. Gross profit over TPV nevertheless compressed
+again to 0.72%, the top ten merchants remained 61% of revenue, and a new USD 150 million facility
+adds capital-allocation risk. At USD 13.64, the revised base value has 37.1% upside and the mark is
+below the USD 14.96 buy-below level, but no accepted idea-security relationship exists. The
+assessment therefore remains allocation-ineligible and no conviction strategy is justified.
+
+## Changes since prior review
+
+- **Evidence:** Q2 results and interim statements supersede Q1 as the latest primary financial
+  evidence. TPV, revenue, operating profit, net income and adjusted free cash flow improved; Q2 cash
+  conversion verified management's earlier working-capital-normalization claim. Corporate cash fell
+  from USD 451.8 million to USD 369.1 million after dividends and USD 86.1 million of repurchases.
+- **Assumptions and valuation:** normalized EPS scenarios rise from USD 0.55/0.75/0.90 to USD
+  0.60/0.85/1.05. Fair values rise from USD 8.25/16.50/25.20 to USD 9.00/18.70/29.40, while
+  probabilities remain 25%/50%/25%. The lower mark and stronger earnings evidence improve the base
+  return, expected return, payoff ratios and margin of safety enough to clear the economic gates.
+- **Thesis and catalysts:** the growth and operating-leverage thesis is upgraded by faster TPV,
+  record gross profit, improved cash conversion and raised guidance. Repurchase cancellation is
+  accretive, while sustained operating leverage and execution against raised guidance are the next
+  catalysts.
+- **Risks, blockers, and gaps:** take-rate compression worsened, merchant concentration remained
+  unchanged, and the new unsecured facility introduces leverage and deployment risk. Medium
+  confidence, concentration sensitivity and take-rate normalization remain soft gaps. The absence
+  of an accepted relationship remains the decisive allocation blocker; no hard blocker is added.
+- **Rating and action:** the deterministic scenario frontier is expected to improve from Hold/Watch
+  to Buy/Initiate on economics, but allocation eligibility remains blocked by relationship status.
+  Portfolio action therefore remains no paper position and no strategy.
+- **Unchanged conclusion:** strong emerging-market payment growth does not by itself justify a
+  trade. Regulatory, tax, foreign-exchange, settlement-liquidity, litigation, concentration and
+  dilution risks still require monitoring and causal idea work must precede strategy research.
 
 ## Immutable identity
 
@@ -46,18 +70,24 @@ second issuer-instrument-venue-currency-provider identity exists in the canonica
 
 ## Alert review
 
-The canonical alert period is 2026-07-02 through 2026-07-31:
+The merged canonical alert window is 2026-07-16 through 2026-08-18:
 
-- The adjusted close ended at USD 15.08, up **1.34%** over the 20-session period.
-- The 50-day SMA reached **13.2594**, narrowly above the 200-day SMA at **13.2358**; crossover
-  strength was only **0.001786**.
-- RSI was **61.16**, neither overbought nor oversold; the close remained inside the Bollinger bands.
-- The MACD remained below its signal line and volume was not anomalous.
+- Volume became anomalous on August 13 and strengthened on August 14, when 5.07 million shares
+  traded and the 20-session return was **-2.14%**. The Q2 release on August 13 provides a current
+  primary explanation for the elevated volume.
+- The adjusted close ended at USD **13.64** on August 18, down **7.65%** over the canonical
+  Bollinger observation period from July 21.
+- The close entered fractionally below the USD **13.64002009** lower Bollinger band; trigger
+  strength was only **0.00000145**. RSI was **40.33**, not oversold.
+- The 50-day SMA remained above the 200-day SMA, but MACD was below its signal line and the
+  20-session return was **-7.65%**, so momentum evidence is mixed to adverse.
 
-This is a genuine deterministic bullish regime transition, but it is weak and internally mixed. No
-new issuer filing or release coincided with the July 31 session, so primary evidence does not support
-attributing the narrow crossover to a discrete fundamental event. It is a constructive monitoring
-signal, not independent evidence of improved fair value or a timely entry.
+The volume anomaly was an earnings reaction, while the later decline and marginal lower-band breach
+are an opportunity to re-test valuation rather than proof of deteriorating fundamentals. Q2 primary
+evidence improved growth, cash conversion and guidance, but worsening take rate and concentration
+prevent the market move from becoming an independent trade signal. The alert is a valuation
+opportunity with material risk, not noise, but it remains non-actionable without an accepted causal
+relationship.
 
 ## Business and financial evidence
 
@@ -66,19 +96,20 @@ make payouts, and settle funds across more than 60 emerging-market countries. Th
 payment methods, integrations, foreign-exchange liquidity, and operating data can compound into a
 useful network and integration advantage.
 
-Q1 2026 TPV was USD 14.1 billion, revenue was USD 335.9 million, and gross profit was USD 118.7
-million, up 73%, 55%, and 40% year over year. Reported operating profit was USD 52.8 million and
-reported net income was USD 41.9 million; excluding a USD 9.7 million prior-period tax adjustment,
-management reported USD 57.2 million operating profit and USD 51.6 million net income. Growth is
-strong, but gross profit over TPV declined from 1.05% to 0.84% as established merchants scaled and
-the mix shifted toward lower-take-rate business.
+Q2 2026 TPV was USD 17.7 billion, revenue was USD 399.7 million, and gross profit was USD 127.2
+million, up 92%, 56%, and 29% year over year. Operating profit was USD 64.2 million, net income was
+USD 54.8 million, and diluted EPS was USD 0.18. Management raised full-year TPV growth guidance to
+60-70% and gross-profit growth guidance to 25-30%, while maintaining operating-profit growth
+guidance at 27.5-32.5%. Growth is strong, but gross profit over TPV declined from 1.07% to 0.72% as
+large merchants scaled into lower pricing tiers and local-to-local volume increased.
 
-Adjusted free cash flow fell 63% year over year to USD 14.7 million because of tax-credit timing and
-higher advancement receivables. Management expects those working-capital effects to normalize, but
-that is an assumption to verify rather than cash already realized. At March 31, dLocal held USD
-815.6 million of total cash, including USD 451.8 million of corporate cash. Settlement balances are
-not all distributable corporate liquidity. Diluted weighted-average shares were 298.5 million and
-employee plans remain a source of dilution.
+Adjusted free cash flow recovered to USD 68.5 million, up 41% year over year, verifying the expected
+normalization of Q1 tax-credit and advancement-receivable timing. At June 30, dLocal held USD 794.9
+million of total cash, including USD 369.1 million of corporate cash; merchant cash is not
+distributable corporate liquidity. Q2 diluted weighted-average shares were 295.9 million. The
+company repurchased and cancelled 6.9 million Class A shares for USD 86.1 million, but employee
+plans remain dilutive. An August 12 USD 150 million unsecured facility due in 2029 provides funding
+capacity while adding leverage and capital-allocation risk.
 
 ## Thesis, contrary evidence, and invalidation
 
@@ -103,23 +134,23 @@ business growth.
 
 ## Valuation
 
-A 12-month mature-compounder earnings-multiple valuation uses the Q1 normalized diluted earnings
-run rate, 2025 audited profitability, 298.5 million diluted shares, and separately identified
-corporate cash. Scenario earnings explicitly normalize the Q1 tax adjustment, working-capital
-volatility, take-rate pressure, operating leverage, and employee-plan dilution:
+A 12-month mature-compounder earnings-multiple valuation uses Q2 diluted earnings, six-month IFRS
+profitability, 295.9 million Q2 diluted shares, separately identified corporate cash, the completed
+repurchase and the new facility. Scenario earnings normalize working-capital volatility, take-rate
+pressure, operating leverage, employee-plan dilution and capital allocation:
 
-- Bear, 25%: USD **8.25**, using USD 0.55 normalized EPS at 15x as take-rate compression,
-  merchant concentration, regulatory costs, and weak cash conversion impair growth.
-- Base, 50%: USD **16.50**, using USD 0.75 normalized EPS at 22x as TPV and gross profit grow,
-  operating leverage improves, and dilution remains contained.
-- Bull, 25%: USD **25.20**, using USD 0.90 normalized EPS at 28x as geographic expansion,
-  cash conversion, and capital returns outperform without a material regulatory setback.
+- Bear, 25%: USD **9.00**, using USD 0.60 normalized EPS at 15x as take-rate compression,
+  concentration, regulatory costs or poor credit-facility deployment impair growth.
+- Base, 50%: USD **18.70**, using USD 0.85 normalized EPS at 22x as raised guidance converts into
+  operating leverage, normalized cash conversion and contained dilution.
+- Bull, 25%: USD **29.40**, using USD 1.05 normalized EPS at 28x as expansion, cash conversion,
+  repurchases and capital deployment outperform without a material regulatory setback.
 
-Against USD 15.08, those cases imply **-45.3%**, **+9.4%**, and **+67.1%**. Probability-weighted
-fair value is USD 16.61, or about **+10.2%** before the deterministic confidence adjustment. The
-base-upside-to-bear-downside ratio is only **0.21**, and the 20% margin-of-safety buy zone is USD
-13.20. The current mark therefore fails the base-upside, payoff, and margin-of-safety gates even
-though the business evidence is constructive.
+Against USD 13.64, those cases imply approximately **-34.0%**, **+37.1%**, and **+115.5%**.
+Probability-weighted fair value is USD 18.95, or approximately **+38.9%** before the deterministic
+confidence adjustment. The base-upside-to-bear-downside ratio is approximately **1.09**, and the
+20% margin-of-safety buy-below level is USD **14.96**. The economic frontier improves materially,
+but the missing accepted relationship still prevents allocation or strategy work.
 
 ## Sources
 
@@ -129,11 +160,15 @@ though the business evidence is constructive.
   (`source_dlocal_q1_2026_results`, checked 2026-08-01).
 - [dLocal Q1 2026 interim financial statements](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm)
   (`source_dlocal_q1_2026_financials`, checked 2026-08-01).
+- [dLocal Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm)
+  (`source_dlocal_q2_2026_results`, checked 2026-08-18).
+- [dLocal Q2 2026 interim financial statements](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm)
+  (`source_dlocal_q2_2026_financials`, checked 2026-08-18).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_715bde20b6e1e1320c1a.csv`, market date 2026-07-31 and retrieved
-  2026-08-01.
+  `data/market/prices/security_715bde20b6e1e1320c1a.csv`, market date 2026-08-18 and retrieved
+  2026-08-18.
 
-Next review: **2026-08-31**, or sooner after Q2 results, a material merchant, tax, regulatory,
+Next review: **2026-09-17**, or sooner after a material merchant, tax, regulatory,
 foreign-exchange, litigation, cash-conversion, or capital-allocation development.
 
 Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and

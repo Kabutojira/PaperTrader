@@ -3989,3 +3989,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4]] (7c260893c2a4).
 
 - Classified [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4]] as `ingest`: Material Bollinger-band breach with a 15.6% decline over the measured period warrants durable review.
+
+## [2026-08-18T20:14:50Z] update | dLocal Q2 review and price alerts
+
+- Reassessed [[securities/security_715bde20b6e1e1320c1a|dLocal]] using its August 13 SEC-filed Q2
+  results and interim statements. Faster volume growth, recovered cash conversion, raised guidance
+  and a lower mark improve the scenario frontier, while take-rate compression, merchant
+  concentration, the new credit facility and the missing accepted relationship keep the security
+  allocation-ineligible with no conviction strategy. The volume anomaly was an earnings reaction;
+  the marginal lower-Bollinger breach is a valuation opportunity with material risk, not a signal.

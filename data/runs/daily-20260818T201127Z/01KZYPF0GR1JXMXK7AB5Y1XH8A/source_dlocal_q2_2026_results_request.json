@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dlocal_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+  "source_type": "issuer_release",
+  "title": "dLocal Reports Second Quarter 2026 Financial Results",
+  "publisher": "dLocal Limited",
+  "license": "",
+  "status": "available",
+  "content_hash": "f81e8a42107b96ca9a02592d4116de5831c64d04ba3fd01874c7770b5932b1eb",
+  "related_entity_ids": "security_715bde20b6e1e1320c1a",
+  "checked_at": "2026-08-18T20:14:50Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "TPV reached nearly US$18 billion (+92% year-over-year), the 7th consecutive quarter of 50%+ growth",
+  "summary": "dLocal reported Q2 2026 TPV of USD 17.7 billion, revenue of USD 399.7 million, gross profit of USD 127.2 million, operating profit of USD 64.2 million, net income of USD 54.8 million and adjusted free cash flow of USD 68.5 million. TPV, revenue and gross profit grew 92%, 56% and 29% year over year; gross profit over TPV compressed to 0.72%. Management raised 2026 TPV and gross-profit growth guidance, maintained operating-profit guidance, reported USD 369.1 million corporate cash, and disclosed 6.9 million repurchased Class A shares plus a new USD 150 million unsecured facility.",
+  "run_id": "daily-20260818T201127Z"
+}
