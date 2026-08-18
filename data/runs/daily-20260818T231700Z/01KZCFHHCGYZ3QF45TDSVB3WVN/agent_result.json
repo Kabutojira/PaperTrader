@@ -1,0 +1,62 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_3a75fc1ccca2ee7c937a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Qualcomm's August 6 bullish MACD crossover was short-term stabilization after a 16.07% measured-period decline, not a fundamental catalyst. At USD 160.39, the unchanged USD 100/160/220 scenarios produced roughly -0.24% probability-weighted return and the mark remained 25.30% above the USD 128 buy-below price. The fresh medium-confidence Hold / Watch assessment remains allocation-ineligible; no full review, strategy, signal, or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The successful baseline operation is for the same immutable security and completed on 2026-08-01, within ten days of this quick check's 2026-08-06 enqueue time. It established the fiscal Q3 thesis, USD 100/160/220 scenarios, USD 128 buy-below price, medium confidence, Hold / Watch disposition, and allocation ineligibility.",
+      "observed_at": "2026-08-18T23:37:44Z",
+      "source": "data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/agent_result.json"
+    },
+    {
+      "claim": "The canonical historical indicator row matches the payload exactly: security security_3a75fc1ccca2ee7c937a, as-of date 2026-08-06, calculated_at 2026-08-06T21:26:50Z, adjusted close USD 160.38999938964844, 20-session return -16.074513%, MACD -9.44979368 above signal -9.78883124, and source_price_hash 24baa97ab3d2b8c5a9488dbb282f59ec5584f4cc55ee0fb699dbd1efa71358bd. The crossover is a momentum stabilization signal, not evidence that an operating catalyst fired.",
+      "observed_at": "2026-08-18T23:39:00Z",
+      "source": "PaperTrader deterministic 2026-08-06 indicator state",
+      "source_hash": "24baa97ab3d2b8c5a9488dbb282f59ec5584f4cc55ee0fb699dbd1efa71358bd"
+    },
+    {
+      "claim": "The SEC submissions feed showed no new Form 10-Q, Form 10-K, or issuer results filing after the baseline fiscal Q3 evidence. Through the payload period, the only later filings were an August 3 Form 4 and Form 144; the Form 4 reported a 3,200-share sale by Heather S. Ace at USD 147.04 with 36,535 shares retained. This did not change the bounded operating thesis, valuation assumptions, catalyst checklist, or invalidation checklist. Later ownership and insider-reporting filings likewise supplied no newer operating results.",
+      "source": "SEC submissions for QUALCOMM Incorporated, CIK 0000804328",
+      "url": "https://data.sec.gov/submissions/CIK0000804328.json"
+    },
+    {
+      "claim": "At USD 160.38999938964844, the unchanged USD 100/160/220 scenarios imply bear/base/bull returns of -37.651973%, -0.243157%, and 37.165659%, with -0.243157% probability-weighted return and -0.182368% confidence-adjusted return. The mark was 25.304687% above the USD 128 buy-below price. The valuation and entry gates therefore worsened rather than clearing, while no catalyst or invalidation condition was verified.",
+      "observed_at": "2026-08-18T23:40:00Z",
+      "source": "Retained assessment assessment_a25135a378a7515add42 and deterministic scenario comparison"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KZCFHHCGYZ3QF45TDSVB3WVN",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the bounded Qualcomm quick check for the 2026-08-06 MACD cross above signal. The USD 160.39 mark represented short-term stabilization after a 16.07% measured-period decline, but it did not verify a fundamental catalyst or invalidate the fiscal Q3 thesis. The existing USD 100/160/220 scenarios imply approximately -37.65%/-0.24%/37.17% returns at that mark, with about -0.24% probability-weighted return; the mark remained 25.30% above the USD 128 buy-below price. The retained medium-confidence Hold / Watch assessment remains allocation-ineligible because valuation, downside-payoff, margin-of-safety, timing, and relationship gates do not improve. The fresh existing assessment version assessment_a25135a378a7515add42 was retained unchanged, no full review was warranted, and no agent-owned repository state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the parent supplied exactly one running quick_check_research row claimed by daily-20260818T231700Z with a live lease, one immutable security, and exactly the native llm-wiki and routed quick-check operation skills in preflight.",
+      "Ran the mandatory audited security-context command before reading assessment state and confirmed baseline operation 01KYPB1Z50955WQSMSWYR16957 succeeded for the same security, completed within ten days at enqueue time, and is bound to the stated baseline result.",
+      "Confirmed retained current assessment assessment_a25135a378a7515add42 is schema version 2, fresh through 2026-08-31, identity-matched to the maintained page hash, and sourced from the successful baseline operation.",
+      "Matched the payload trigger, exact period, market date, mark, MACD state, and source_price_hash to the canonical committed 2026-08-06 indicator state.",
+      "Checked current SEC submissions and found no later quarterly, annual, or issuer-results filing that changes the fiscal Q3 operating evidence; bounded insider and ownership filings did not alter a thesis, scenario, catalyst, risk, or invalidation gate.",
+      "Recomputed the scenario comparison at the payload mark and confirmed the buy zone was not reached, expected and base returns remained below threshold, downside payoff worsened, and no catalyst or invalidation fired.",
+      "Concluded the bullish crossover was noise for the maintained investment decision: the Hold / Watch, medium-confidence, allocation-ineligible disposition and all material assumptions remain unchanged, so the fresh existing assessment was retained without an assessment upsert.",
+      "Confirmed no full_research_requested flag, changed gate, material primary evidence, unsupported baseline, or reached buy zone required a dependent security_research operation.",
+      "papertrader schema validate --strict passed, including security, assessment, and source contracts.",
+      "papertrader queue validate passed.",
+      "papertrader integrity --strict passed, including source freshness, allocation, publication, portfolio, and accounting invariants.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader portfolio reconcile --strict passed.",
+      "Confirmed command_audit.json contains exactly the six listed successful canonical receipts in receipt order, each with no changed paths.",
+      "Confirmed no agent-owned repository delta and no changes to allocation, strategy, signal, order, fill, execution, cash, portfolio, or performance state."
+    ],
+    "passed": true
+  }
+}
