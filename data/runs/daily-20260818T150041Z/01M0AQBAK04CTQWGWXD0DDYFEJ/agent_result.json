@@ -1,0 +1,55 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three covers the exclusive cutoff 2026-08-17T19:03:48Z through the inclusive cutoff 2026-08-18T15:10:05Z; research_developments and changed_wiki_pages are empty, while all five window entries are unresolved failed-research gaps.",
+      "observed_at": "2026-08-18T15:21:20Z",
+      "source": "data/runs/daily-20260818T150041Z/podcast_context.json",
+      "source_hash": "a8f9e6ac902cb455e841bf29b24c31821c1ed7911ced18bd4a9abb85b1aad872"
+    },
+    {
+      "claim": "The previous successful podcast identity and transcript hash match the frozen context, establishing the prior research cutoff and preventing stale narration from being repeated.",
+      "observed_at": "2026-08-18T15:21:20Z",
+      "source": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+      "source_hash": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117"
+    },
+    {
+      "claim": "The current immutable decision snapshot hash matches the frozen context; it contains no actionable signals and does not supply an accepted research development that would justify a new episode.",
+      "observed_at": "2026-08-18T15:21:20Z",
+      "source": "data/runs/daily-20260818T150041Z/decision_snapshot.json",
+      "source_hash": "4ff7aba69904d5ca7e5348616f69c2c4b1b7833e91f0b6a74e185b5d477178d3"
+    },
+    {
+      "claim": "The canonical report hash matches the frozen context and records only failed research dispositions for this window, with no accepted research result to form the substance of a research-first podcast.",
+      "observed_at": "2026-08-18T15:21:20Z",
+      "source": "data/wiki/daily-reports/daily-report_20260818.md",
+      "source_hash": "b039aa34f5989100964cd4ea2967056e5ab2edc017f40ebec0fe5bb390b91d39"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0AQBAK04CTQWGWXD0DDYFEJ",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast because the frozen context window after the previous successful podcast contains no accepted research developments and therefore no audience-relevant accepted research to narrate. The five entries in the window are unresolved failed-research gaps only. No transcript or report link was created, and the draft renderer was not invoked.",
+  "validation": {
+    "checks": [
+      "Queue row was running, claimed by daily-20260818T150041Z, and had a live lease during execution.",
+      "Hermes preflight identified native llm-wiki, papertrader-controller, and papertrader-daily-podcast with content hashes and sequential execution enabled.",
+      "Payload identity, frozen context version, run ID, page path, report path, cutoff window, previous podcast identity, decision snapshot hash, report hash, and previous podcast hashes were verified.",
+      "The frozen window contains zero accepted research developments and five unresolved failed-research gaps, satisfying the bounded skip rule.",
+      "No transcript, report link, media reference, allocation state, strategy state, signal, order, accounting ledger, portfolio, or performance state was changed.",
+      "The audited draft renderer was not invoked because no valid audience-relevant script was warranted.",
+      "Strict schema, integrity, wiki lint, queue validation, and strict portfolio reconciliation all passed."
+    ],
+    "passed": true
+  }
+}
