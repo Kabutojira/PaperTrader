@@ -14,6 +14,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_3d573dd92b113a698d01** — Intuitive Machines assessment source operation is ambiguous within one run | 2026-08-08T14:23:52Z | controller | 01KZGV5E1GF4N027VZVMD02HEZ |
 | error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |
 | error | **issue_4c13a146c674a9a576a6** — Hermes operation validation failed: 01KZGGJ4M0HZBD7MND83X91XEF | 2026-08-15T07:23:01Z | controller | 01KZGGJ4M0HZBD7MND83X91XEF |
+| error | **issue_52441ba1c5c89cac50a6** — Hermes operation validation failed: 01KZQX922RR422CPWVFP4APXBZ | 2026-08-18T13:39:18Z | controller | 01KZQX922RR422CPWVFP4APXBZ |
 | error | **issue_580a89652f2497d6e61d** — Hermes operation validation failed: 01KZB8NMPGA0VTNRHAD458EN3R | 2026-08-06T10:28:41Z | delivery | 01KZB8NMPGA0VTNRHAD458EN3R |
 | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
