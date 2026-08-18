@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-01"
+updated: "2026-08-18"
 provenance: "source_meta_q2_2026_10q|source_meta_q2_2026_results"
 security_id: security_d12e746b3c9d392183cc
 issuer_id: issuer_0777ea72e7e5e9618310
@@ -16,21 +16,42 @@ venue_mic: XNAS
 provider_symbol: META
 currency: USD
 confidence: medium
-next_review: "2026-08-31"
+next_review: "2026-09-17"
 ---
 
 # Meta Platforms, Inc. Class A common stock
 
 ## Decision
 
-**Watch; no conviction strategy.** Meta's advertising engine remains unusually strong: Q2 revenue
-rose 28%, ad impressions rose 14%, average price per ad rose 12%, and Family daily active people
-reached 3.60 billion. The July 30 lower-Bollinger and volume transitions were a post-results repricing
-of rapidly rising expenses, AI capital intensity, legal charges, and weak near-term free-cash-flow
-conversion rather than evidence of a broken advertising franchise. At the fresh USD 556.71 mark, a
-bounded 12-month earnings-multiple valuation has a USD 600 base case and USD 580 probability-weighted
-value. That does not provide the required expected return, base upside, downside payoff, or margin of
-safety.
+**Watch; no conviction strategy.** Meta's Q2 advertising and audience evidence remains strong, but
+the August alerts do not show that AI capital intensity, legal exposure, Reality Labs losses, or weak
+latest free-cash-flow conversion have improved. The August 14 bullish MACD crossover was temporary
+stabilization within a decline; by August 18 the MACD histogram was negative again and the USD 543.67
+close was 0.43% below the lower Bollinger band. The unchanged USD 400 / USD 600 / USD 800 scenarios
+produce USD 580 probability-weighted value. The lower mark restores modest base upside but still
+fails confidence-adjusted expected-return and downside-payoff gates, and no accepted relationship
+exists.
+
+## Changes since prior review
+
+- **Evidence and facts:** The registered Q2 Form 10-Q and issuer results were rechecked with unchanged
+  content hashes. No new retained primary evidence changes the business conclusion. Market evidence
+  is new through August 18.
+- **Alerts and timing:** The August 14 MACD cross above signal followed an 8.69% decline from July 17,
+  but the close then fell 7.83% to USD 543.67 by August 18. The August 18 close was down 15.55% from
+  July 21 and 0.43% below the lower Bollinger band; RSI was weak but not oversold at 36.20 and volume
+  was not anomalous. This is continuing repricing and timing risk, not a stand-alone opportunity.
+- **Valuation assumptions and outputs:** Normalized EPS, multiples, probabilities, and USD 400 / USD
+  600 / USD 800 fair values are unchanged because no new fundamental evidence justifies revising
+  them. At USD 543.67, bear/base/bull returns improve to about -26.43% / +10.36% / +47.15%; expected
+  return is about 6.68% and medium-confidence-adjusted expected return about 5.01%.
+- **Thesis, catalysts, risks, blockers, and gaps:** The advertising thesis, catalysts, invalidation,
+  scores, and no-hard-blocker conclusion are unchanged. AI spending productivity, per-share cash
+  conversion, Reality Labs losses, legal and regulatory exposure, medium confidence, weak timing,
+  downside payoff, and the pending relationship remain unresolved.
+- **Rating and action:** Hold / Watch remains unchanged. The mark now clears the minimum base-upside
+  threshold by a small amount, but expected return, bear/base payoff, expected/bear payoff, and the
+  relationship gate still block allocation and conviction strategy research.
 
 ## Immutable identity
 
@@ -48,23 +69,23 @@ duplicate canonical META Class A identity exists.
 
 ## Alert review
 
-The payload's canonical observation period is 2026-07-01 through 2026-07-30:
+The payload combines two canonical transitions:
 
-- The adjusted close ended at USD 539.03, down **12.05%** over the period.
-- `bollinger_below_lower` entered with recorded strength **0.0219**.
-- `volume_anomaly` entered with recorded strength **0.3212** as July 30 volume reached 42.27 million
-  shares.
-- The canonical source-price hash is
-  `d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0`.
-- On July 31 the close recovered 3.28% to USD 556.71 on 24.20 million shares, back above the current
-  USD 546.08 lower Bollinger band; RSI remained weak but not oversold at 37.85.
+- On August 14, `macd_cross_above_signal` entered after an **8.69%** July 17–August 14 decline. The
+  USD 589.85 close and 0.0365 trigger strength indicated short-term stabilization, not recovered
+  fundamentals. Source-price hash:
+  `6a23d2df818910dfcee1ffa9aba836a28f9b2389b70419844e6cbb234d1b9ee4`.
+- On August 18, `bollinger_below_lower` entered after a **15.55%** July 21–August 18 decline. The USD
+  543.67 close was 0.43% below the USD 546.01 lower band; RSI was 36.20, the volume z-score was 1.23,
+  and the MACD histogram was negative. Source-price hash:
+  `dd294385338c3cdda3f1758cd1b344a790ff9bfddb35d7dd419368378701a360`.
 
-The move is **fundamental repricing and timing risk, not a stand-alone opportunity signal**. It
-immediately followed the July 29 results release. Primary evidence shows strong demand but also a
-55% increase in quarterly costs and expenses, USD 2.40 billion of legal charges, USD 1.18 billion of
-severance expense, USD 31.08 billion of quarterly capital expenditures, and only USD 784 million of
-quarterly free cash flow. The partial July 31 rebound and disappearance of the lower-band breach do
-not resolve those cash-conversion and reinvestment risks.
+The combined move is **continuing fundamental repricing and timing risk, not a stand-alone
+opportunity signal**. The bullish crossover did not persist, and the later lower-band breach was not
+confirmed by oversold RSI or anomalous volume. Unchanged primary evidence still pairs strong demand
+with a 55% quarterly cost increase, USD 2.40 billion of legal charges, USD 1.18 billion of severance,
+USD 31.08 billion of quarterly capital expenditures, and only USD 784 million of quarterly free cash
+flow. Price weakness alone does not resolve capital productivity or cash conversion.
 
 ## Business and financial evidence
 
@@ -133,24 +154,24 @@ capital-intensity and dilution treatment:
   monetization, messaging adds profit, capex productivity becomes visible, and regulatory outcomes
   remain manageable.
 
-Against USD 556.71, the cases imply about **-28.15%**, **+7.78%**, and **+43.71%**. Probability-
-weighted fair value is USD 580, or about **+4.18%** before the medium-confidence adjustment and
-**+3.14%** after it. The base-upside-to-bear-downside ratio is only about **0.28**, and the 20%
-margin-of-safety buy zone is USD 480. The current mark fails the expected-return, base-upside,
-downside-payoff, and margin-of-safety gates. No accepted canonical idea relationship exists, so the
+Against USD 543.67, the cases imply about **-26.43%**, **+10.36%**, and **+47.15%**. Probability-
+weighted fair value is USD 580, or about **+6.68%** before the medium-confidence adjustment and
+**+5.01%** after it. The base-upside-to-bear-downside ratio is only about **0.39**, and the 20%
+margin-of-safety buy zone remains USD 480. The current mark clears minimum base upside but fails the
+expected-return and downside-payoff gates. No accepted canonical idea relationship exists, so the
 relationship gate is also pending.
 
 ## Sources
 
 - [Meta Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm)
-  (`source_meta_q2_2026_10q`, checked 2026-08-01).
+  (`source_meta_q2_2026_10q`, rechecked 2026-08-18 with unchanged hash).
 - [Meta Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm)
-  (`source_meta_q2_2026_results`, checked 2026-08-01).
+  (`source_meta_q2_2026_results`, rechecked 2026-08-18 with unchanged hash).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_d12e746b3c9d392183cc.csv`, market date 2026-07-31 and retrieved
-  2026-08-01; the triggering payload remains anchored to market date 2026-07-30.
+  `data/market/prices/security_d12e746b3c9d392183cc.csv`, market date 2026-08-18 and retrieved
+  2026-08-18; the triggering packets remain anchored to August 14 and August 18.
 
-Next review: **2026-08-31**, or sooner after a material advertising, AI monetization, capital-
+Next review: **2026-09-17**, or sooner after a material advertising, AI monetization, capital-
 spending, cash-conversion, legal, regulatory, or Reality Labs development.
 
 Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and

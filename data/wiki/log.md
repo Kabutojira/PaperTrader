@@ -4027,3 +4027,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
   325 bear/base/bull values, including net debt, convertibles, awards and capital intensity. The
   USD 248.43 mark remains above USD 182.50 probability-weighted value, so NBIS is Strong Sell /
   Avoid and allocation-ineligible; no conviction strategy or paper signal was created.
+
+## [2026-08-18T23:28:21Z] update | Meta price-alert reassessment
+
+- Reassessed [[securities/security_d12e746b3c9d392183cc|Meta Platforms]] after its August 14 bullish
+  MACD crossover and August 18 lower-Bollinger breach. The crossover did not persist, RSI was not
+  oversold, and volume was not anomalous. Unchanged Q2 primary evidence and USD 400 / USD 600 / USD
+  800 scenarios against the lower USD 543.67 mark leave META Hold / Watch and allocation-ineligible
+  because expected-return, downside-payoff, and relationship gates still fail. No conviction
+  strategy or follow-up operation was created.

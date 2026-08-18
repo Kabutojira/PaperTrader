@@ -1,0 +1,23 @@
+{
+  "security_id": "security_d12e746b3c9d392183cc",
+  "issuer_id": "issuer_0777ea72e7e5e9618310",
+  "company_name": "Meta Platforms, Inc.",
+  "instrument_name": "Meta Platforms, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "META",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "META",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "August bullish-MACD stabilization did not persist and the later lower-Bollinger breach leaves AI capital productivity, cash conversion, Reality Labs losses, legal exposure, and advertising durability under review.",
+  "research_summary": "Unchanged Q2 evidence and USD 400/600/800 scenarios versus USD 543.67 leave META Hold/Watch; expected-return, downside-payoff, and relationship gates fail.",
+  "research_page": "data/wiki/securities/security_d12e746b3c9d392183cc.md",
+  "last_research_at": "2026-08-18T23:28:21Z",
+  "next_review_at": "2026-09-17T23:28:21Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+}

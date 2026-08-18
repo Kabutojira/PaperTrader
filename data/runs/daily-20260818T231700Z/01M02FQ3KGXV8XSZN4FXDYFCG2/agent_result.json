@@ -1,0 +1,80 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_d12e746b3c9d392183cc",
+    "papertrader research source record --request data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/source_meta_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/source_meta_q2_2026_results_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_retry02_request.json",
+    "papertrader research security-context --security-id security_d12e746b3c9d392183cc",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Meta's August 14 bullish MACD crossover did not persist before the August 18 lower-Bollinger breach. Unchanged Q2 primary evidence and USD 400 / USD 600 / USD 800 scenarios against the USD 543.67 mark produce 6.68% expected return and 5.01% confidence-adjusted expected return, leaving META Hold / Watch and allocation-ineligible; no strategy or paper signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Meta's Q2 filing reports USD 60.801 billion quarterly revenue, USD 18.775 billion operating income, USD 15.848 billion net income, USD 90.26 billion cash and marketable securities, USD 83.664 billion long-term debt, and 2.548 billion Class A and Class B shares outstanding.",
+      "observed_at": "2026-08-18T23:28:21Z",
+      "source": "Meta Q2 2026 Form 10-Q filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+    },
+    {
+      "claim": "Meta's Q2 release reports 28% revenue growth, 3.60 billion Family daily active people, 14% ad-impression growth, 12% average-price-per-ad growth, USD 31.08 billion capital expenditures, and only USD 784 million quarterly free cash flow.",
+      "observed_at": "2026-08-18T23:28:21Z",
+      "source": "Meta Q2 2026 results filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm"
+    },
+    {
+      "claim": "The identity-matched META mark was USD 543.6699829101562 and the USD/EUR conversion rate was 0.863349974155426, both retrieved at 2026-08-18T23:17:07Z. The August 14 bullish MACD crossover did not persist; by August 18 the MACD histogram was negative and the close was 0.43% below the lower Bollinger band, with RSI 36.20 and no volume anomaly.",
+      "source": "data/market/latest.csv, data/market/indicators.csv, data/market/prices/security_d12e746b3c9d392183cc.csv, and data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "Deterministic schema-v2 valuation derived USD 580 probability-weighted fair value, 6.6823658160004561772901517% expected return, 5.011774362000342132967613775% confidence-adjusted expected return, and USD 480 buy-below price; canonical rating is Hold, portfolio action is Watch, and allocation eligibility is ineligible.",
+      "source": "assessment_94ed64f1bb285f6aedb5"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_request.json",
+    "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/security_upsert_request.json",
+    "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/source_meta_q2_2026_10q_request.json",
+    "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/source_meta_q2_2026_results_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_d12e746b3c9d392183cc.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M02FQ3KGXV8XSZN4FXDYFCG2",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat security review for Meta Platforms, Inc. after the August 14 bullish MACD crossover and August 18 lower-Bollinger breach. The crossover did not persist, RSI was not oversold, volume was not anomalous, and unchanged Q2 primary evidence still shows strong advertising demand alongside high AI capital intensity, weak latest free-cash-flow conversion, Reality Labs losses, and legal exposure. At the fresh USD 543.67 mark, unchanged USD 400 / USD 600 / USD 800 scenarios derive USD 580 probability-weighted value, 6.68% expected return, and 5.01% confidence-adjusted expected return. The immutable assessment is Hold / Watch, quality score 86, and allocation-ineligible because expected-return, bear/base payoff, expected/bear payoff, and relationship gates fail. No linked idea or accepted relationship exists, so no idea follow-up was required; no conviction strategy, signal, paper order, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-review security-context receipt succeeded before assessment state was read or changed.",
+      "Both retained primary sources were rechecked at 2026-08-18T23:28:21Z with unchanged registered content hashes and current available status.",
+      "Security identity remained security_d12e746b3c9d392183cc / META / XNAS / USD with no duplicate identity, linked idea, or accepted relationship.",
+      "Fresh identity-matched mark and FX state were consumed from 2026-08-18T23:17:07Z canonical market data.",
+      "Assessment assessment_94ed64f1bb285f6aedb5 is schema version 2, complete, current, source-linked, page-hash-linked, and points to predecessor assessment_f59e367d74ea842838fb.",
+      "Scenario probabilities total 100; fair values are ordered; deterministic output is Hold / Watch and allocation-ineligible with complete eligibility reasons.",
+      "No linked ideas or accepted relationships exist, so zero idea-research follow-ups were required; the conviction strategy gate failed and no strategy follow-up was created.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "No allocation, order, execution, cash, portfolio, performance, fill, or other operation state was changed by this routed skill."
+    ],
+    "passed": true
+  }
+}
