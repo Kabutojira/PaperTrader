@@ -3994,6 +3994,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T201127Z`.
 
+- Published investor decision snapshot `decision_c4fb1f43668433aca488`.
+
+- Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T231700Z`.
+
 ## [2026-08-18T20:14:50Z] update | dLocal Q2 review and price alerts
 
 - Reassessed [[securities/security_715bde20b6e1e1320c1a|dLocal]] using its August 13 SEC-filed Q2

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_ac078aa15b48ebf0b408"
-as_of: "2026-08-18T21:02:07Z"
+snapshot_id: "decision_c4fb1f43668433aca488"
+as_of: "2026-08-18T23:51:39Z"
 ---
 
 # Signals
 
-**As of `2026-08-18T21:02:07Z`**
+**As of `2026-08-18T23:51:39Z`**
 
 ## Actionable trade signals
 
@@ -58,8 +58,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-08-18`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one repeat security review for Meta Platforms, Inc. after the August 14 bullish MACD crossover and August 18 lower-Bollinger breach. The crossover did not persist, RSI was not oversold, volume was not anomalous, and unchanged Q2 primary evidence still shows strong advertising demand alongside high AI capital intensity, weak latest free-cash-flow conversion, Reality Labs losses, and legal exposure. At the fresh USD 543.67 mark, unchanged USD 400 / USD 600 / USD 800 scenarios derive USD 580 probability-weighted value, 6.68% expected return, and 5.01% confidence-adjusted expected return. The immutable assessment is Hold / Watch, quality score 86, and allocation-ineligible because expected-return, bear/base payoff, expected/bear payoff, and relationship gates fail. No linked idea or accepted relationship exists, so no idea follow-up was required; no conviction strategy, signal, paper order, allocation, or accounting state was changed.
 
 ### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
 
