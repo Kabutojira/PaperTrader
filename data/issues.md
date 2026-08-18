@@ -47,6 +47,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_1148b8cf1799d04b2574** — Daily podcast skipped: daily-20260818T113409Z | 2026-08-18T11:49:08Z | delivery | 01M0AB3KE0GBG64BTACDC4311H |
 | warning | **issue_1285e87ea97cc268036a** — Daily preparation degraded: security_61567714298b9563d1a9 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_1681e7daa698c45f8006** — Daily preparation degraded: security_2dbe878dfc899d7ee867 | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_16c8e6cc72240d91a563** — Daily podcast skipped: daily-20260818T133603Z | 2026-08-18T13:51:35Z | delivery | 01M0AJ2T0GPG1058X61NT62RXD |
 | warning | **issue_1ad34e45aa4568f4a522** — Daily preparation degraded: security_715bde20b6e1e1320c1a | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_1bae1abd860fc0000c88** — Daily preparation degraded: FX AUD/EUR | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_1bb9022d55d25edce900** — Daily preparation degraded: security_2c779e81c27b78c556bb | 2026-07-29T16:51:20Z | deterministic-controller |  |

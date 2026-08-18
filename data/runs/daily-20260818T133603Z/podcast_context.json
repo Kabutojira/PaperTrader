@@ -1,0 +1,145 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260818T133603Z",
+  "decision_snapshot_path": "data/runs/daily-20260818T133603Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "3a82a8c85316c8475671e7f8981a39f3a1364c249aa05622ce21920995358542",
+  "generated_at": "2026-08-18T13:48:26Z",
+  "intervening_daily_cycles": [
+    "daily-20260818T091246Z",
+    "daily-20260818T113409Z",
+    "daily-20260818T123230Z",
+    "daily-20260818T133603Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260818T133603Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260818T133603Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260818.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260817T185232Z/podcast_context.json",
+    "context_sha256": "b3878741d8015aa5e0ab4071a53d9c2a3a37f382c866be8f8e1e7e23fcfba17d",
+    "daily_cycle_id": "daily-20260817T185232Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+    "page_sha256": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117",
+    "research_cutoff_at": "2026-08-17T19:03:48Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260818.md",
+  "report_sha256": "d91a8c6e880d62a57b9a09050c16ea4f69990e1b559383be1f857a025cc09a0b",
+  "research_cutoff_at": "2026-08-18T13:39:28Z",
+  "research_developments": [],
+  "run_id": "daily-20260818T133603Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-18T10:45:33Z",
+      "daily_cycle_id": "daily-20260818T091246Z",
+      "daily_report_items": [],
+      "entity_id": "security_61567714298b9563d1a9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result was written before completed change: data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/command_audit.json",
+          "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        },
+        {
+          "claim": "commands_run does not exactly match deterministic CLI audit receipts",
+          "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result was written before completed change: data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/command_audit.json",
+        "commands_run does not exactly match deterministic CLI audit receipts"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZPWPFS0QGMTYP3PD0TRQH6K",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-18T11:39:09Z",
+      "daily_cycle_id": "daily-20260818T113409Z",
+      "daily_report_items": [],
+      "entity_id": "security_61567714298b9563d1a9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "completed security research requires this run's comparable assessment",
+          "source": "data/runs/daily-20260818T113409Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "completed security research requires this run's comparable assessment"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZPWPFS0QGMTYP3PD0TRQH6K",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T113409Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "status": "failed",
+      "summary": "retry_exhausted:agent_validation_failed:issue_ff655356efa9b9e1d1a8"
+    },
+    {
+      "completed_at": "2026-08-18T12:35:40Z",
+      "daily_cycle_id": "daily-20260818T123230Z",
+      "daily_report_items": [],
+      "entity_id": "security_7ca095d63423c55a90e3",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The required security-context command succeeded before assessment-state work and returned Rocket Lab security_7ca095d63423c55a90e3 with current assessment assessment_139572984e6c1e53af22 and baseline operation 01KZM3JQXG54MXRP9EPRNYX45A.",
+          "observed_at": "2026-08-18T12:33:58Z",
+          "source": "mandatory security context"
+        },
+        {
+          "claim": "The required assessment invocation was rejected with exit code 2: the assessment upsert request was outside the quick_check_research skill scope. Per controller instructions, the rejected request was not retried and no full-research enqueue was invoked.",
+          "observed_at": "2026-08-18T12:34:00Z",
+          "source": "project CLI scope enforcement"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json",
+        "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/enqueue_full_research_request.json"
+      ],
+      "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/agent_result.json",
+      "status": "failed",
+      "summary": "Quick check could not publish its required assessment because the audited project CLI rejected the assessment upsert request as outside the routed quick_check_research skill scope. No assessment, queue, wiki, or accounting state was changed."
+    },
+    {
+      "completed_at": "2026-08-18T13:39:15Z",
+      "daily_cycle_id": "daily-20260818T133603Z",
+      "daily_report_items": [],
+      "entity_id": "security_7ca095d63423c55a90e3",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader integrity --strict', 'scripts/papertrader portfolio reconcile --strict', 'scripts/papertrader queue validate', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3', 'scripts/papertrader wiki lint --strict']",
+          "source": "data/runs/daily-20260818T133603Z/01KZQX922RR422CPWVFP4APXBZ/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader integrity --strict', 'scripts/papertrader portfolio reconcile --strict', 'scripts/papertrader queue validate', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3', 'scripts/papertrader wiki lint --strict']"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T133603Z/01KZQX922RR422CPWVFP4APXBZ/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-17T19:03:48Z"
+}

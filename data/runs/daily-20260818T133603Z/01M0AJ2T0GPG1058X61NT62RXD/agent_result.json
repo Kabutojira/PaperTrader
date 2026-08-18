@@ -1,0 +1,55 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three defines the bounded window and contains empty research_developments, changed_wiki_pages, and background_wiki_pages arrays; all four entries in unresolved_research_gaps have failed status.",
+      "observed_at": "2026-08-18T13:48:26Z",
+      "source": "data/runs/daily-20260818T133603Z/podcast_context.json",
+      "source_hash": "1d06369c47d9da1271b64b75c9307c4bf198776de7b25cd52b72449b7e16cb21"
+    },
+    {
+      "claim": "The prior successful episode already covers the latest accepted Intuitive Machines research through the exclusive start of the current frozen window.",
+      "source": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+      "source_hash": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117"
+    },
+    {
+      "claim": "The completed decision snapshot has no actionable signals and retains an all-cash portfolio; unchanged decision state and operational failures do not constitute accepted research developments for a new episode.",
+      "observed_at": "2026-08-18T13:39:28Z",
+      "source": "data/runs/daily-20260818T133603Z/decision_snapshot.json",
+      "source_hash": "3a82a8c85316c8475671e7f8981a39f3a1364c249aa05622ce21920995358542"
+    },
+    {
+      "claim": "The canonical report records failed or skipped research operations in the frozen interval and no accepted research development suitable for a new research-first narrative.",
+      "source": "data/wiki/daily-reports/daily-report_20260818.md",
+      "source_hash": "d91a8c6e880d62a57b9a09050c16ea4f69990e1b559383be1f857a025cc09a0b"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0AJ2T0GPG1058X61NT62RXD",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast because frozen context version three contains no audience-relevant accepted research between the previous successful podcast cutoff of 2026-08-17T19:03:48Z and the inclusive cutoff of 2026-08-18T13:39:28Z. The context lists no research developments, changed wiki pages, or background wiki pages; it contains only four failed quick-check results, which are unresolved gaps rather than accepted research. No transcript or daily-report link was created, and the draft renderer was not invoked.",
+  "validation": {
+    "checks": [
+      "Validated frozen context version three, the exclusive and inclusive cutoffs, the previous successful podcast identity, and every frozen top-level referenced SHA-256 hash.",
+      "Confirmed the requested transcript path did not exist and left the canonical daily report unchanged.",
+      "Applied the skill skip rule because the whole frozen window contains no audience-relevant accepted research.",
+      "Confirmed no transcript, report link, persistent audio reference, script-validation invocation, or draft-render attempt was produced.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ],
+    "passed": true
+  }
+}
