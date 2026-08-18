@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_7ca095d63423c55a90e3",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-09T21:30:46Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_7ca095d63423c55a90e3.md",
+    "security_id": "security_7ca095d63423c55a90e3"
+  },
+  "objective": "Revalidate security_7ca095d63423c55a90e3 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0AR45GGAW0YSDSYXP2HH0TK",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_iridium_q2_2026_10q",
+    "source_rklb_iridium_merger_8k",
+    "source_rklb_q1_2026_10q"
+  ]
+}
