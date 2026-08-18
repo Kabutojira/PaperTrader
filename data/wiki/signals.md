@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8f87ae307c10a2f8ad3f"
-as_of: "2026-08-18T15:37:31Z"
+snapshot_id: "decision_ac078aa15b48ebf0b408"
+as_of: "2026-08-18T21:02:07Z"
 ---
 
 # Signals
 
-**As of `2026-08-18T15:37:31Z`**
+**As of `2026-08-18T21:02:07Z`**
 
 ## Actionable trade signals
 
@@ -30,7 +30,7 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -39,43 +39,43 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-17`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
+
+### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-18`
+- Research status: `succeeded`
+- Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
+
+### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-18`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-18`
+- Research status: `succeeded`
+- Conclusion: Completed the repeat schema-version-2 review of DLocal Limited after the August 13-14 volume anomaly and August 18 lower-Bollinger breach. Q2 TPV, revenue, gross profit, operating profit and adjusted free cash flow improved; management raised TPV and gross-profit guidance, while gross-profit-over-TPV compressed to 0.72%, top-ten merchant concentration remained 61%, and a new USD 150 million facility added deployment risk. At the fresh USD 13.64 mark, the deterministic assessment derives Buy/Initiate economics with USD 9.00/USD 18.70/USD 29.40 bear/base/bull values, 38.93% probability-weighted expected return and a USD 14.96 buy-below price. Allocation remains ineligible solely because no accepted idea-security relationship exists, so no strategy, signal, order, or paper position was created.
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
@@ -84,7 +84,34 @@ No pending orders.
 **Research alert — not a trade signal**
 
 - Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
+- Market date: `2026-08-18`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-18`
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Roblox refresh using current deterministic market and FX state plus rechecked SEC primary evidence. The August 18 bullish MACD crossover follows a 28.27% decline from July 21 and represents technical stabilization, not a fundamental improvement. Unchanged USD 28.23/USD 39.58/USD 53.00 bear/base/bull values against the USD 37.66 mark produce a 3.18% expected return and 2.39% medium-confidence-adjusted return. Assessment assessment\_350be4b7a00d7fa4f952 remains Hold / Watch and allocation-ineligible because base return, expected return, and both downside-payoff gates fail. Updated the security page and structured state, registered three source observations, and created exactly one dependent idea refresh, Idea research for Digital attention, gaming, and consumer ecosystems on 2026-08-18. No strategy, signal, order, allocation, or accounting state changed.
+
+### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-18`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -97,57 +124,21 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2)
+### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-17`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a)
-
-**Research alert — not a trade signal**
-
-- Alert: `sma\_50\_cross\_below\_200`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
+### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
-
-**Research alert — not a trade signal**
-
-- Alert: `sma\_50\_cross\_below\_200`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-17`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 

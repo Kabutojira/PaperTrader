@@ -3990,6 +3990,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-7c260893c2a4]] as `ingest`: Material Bollinger-band breach with a 15.6% decline over the measured period warrants durable review.
 
+- Published investor decision snapshot `decision_ac078aa15b48ebf0b408`.
+
+- Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T201127Z`.
+
 ## [2026-08-18T20:14:50Z] update | dLocal Q2 review and price alerts
 
 - Reassessed [[securities/security_715bde20b6e1e1320c1a|dLocal]] using its August 13 SEC-filed Q2

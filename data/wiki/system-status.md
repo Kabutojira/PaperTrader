@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8f87ae307c10a2f8ad3f"
-as_of: "2026-08-18T15:37:31Z"
+snapshot_id: "decision_ac078aa15b48ebf0b408"
+as_of: "2026-08-18T21:02:07Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-18T15:37:31Z`
+**As of:** `2026-08-18T21:02:07Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-18T15:37:31Z"
 
 ## Coverage
 
-- Assessments: 66/70
-- Fresh-evidence assessments: 66/70
+- Assessments: 67/70
+- Fresh-evidence assessments: 67/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-18T15:37:31Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 339
+- Research backlog: 345
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -48,6 +48,7 @@ as_of: "2026-08-18T15:37:31Z"
 - Error **Hermes operation validation failed: [[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260811|Daily report for 2026-08-11]]/[[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]/agent_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **ABBNY — ABB Ltd: ABB assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c120e9f26ebb6159adf9|ABBNY]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c120e9f26ebb6159adf9|Quick check research for ABBNY on 2026-08-09]] and current security_research [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-10]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
+- Error **NBIS — Nebius Group N.V.: Hermes operation validation failed: [[securities/security_47a0b06f6c6c478d7c1e|Security research for NBIS on 2026-08-18]]** — post-run integrity: invalid assessment [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]: unavailable or stale evidence [Nebius reports second quarter 2026 financial results](https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm)
 - Error **Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]** — commands_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/[[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]/[[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]/assessment_upsert_request.json', 'scripts/papertrader research security-context --security-id [[securities/security_7ca095d63423c55a90e3|RKLB]]'\]
@@ -174,7 +175,7 @@ as_of: "2026-08-18T15:37:31Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 339 active operations.
+Showing 20 of 345 active operations.
 
 <details><summary>Active research work</summary>
 
