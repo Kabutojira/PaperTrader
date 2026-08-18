@@ -1,0 +1,441 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+      "sha256": "6e49566a1178ced737a481ac7f0d7cba9348a8066083d7f0916ac4f5c3b90afb"
+    },
+    {
+      "path": "data/wiki/securities/security_204be2a44063993de1a8.md",
+      "sha256": "2f89f22c93f0ed928980068e2764a1c43531130e5efa98e7005d4c6b0b177b70"
+    },
+    {
+      "path": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "sha256": "6a3ca080cdcf4453f8cbb2433fdfca2af7d1e1f0bc08d65a4c8f79adaf11ed41"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+      "sha256": "e690a75c1b3b4225130431b76e30c698c6ac88d9c676dbf20a00fff9f618c4eb"
+    },
+    {
+      "path": "data/wiki/securities/security_715bde20b6e1e1320c1a.md",
+      "sha256": "5487c1dac175d4abe5f92f4cf6454ad61f9322d2dd6396b5185e5524dea905af"
+    },
+    {
+      "path": "data/wiki/securities/security_c9a37d277445869a8809.md",
+      "sha256": "f33af4444f44ebe34474bca1139b2661e0753564e7ff110b5da383e07c7879ae"
+    }
+  ],
+  "daily_cycle_id": "daily-20260818T201127Z",
+  "decision_snapshot_path": "data/runs/daily-20260818T201127Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "4381e12fd0e314209b80008c9d9a5208c143d6ada69644c57292a01bc1314d45",
+  "generated_at": "2026-08-18T21:10:13Z",
+  "intervening_daily_cycles": [
+    "daily-20260818T091246Z",
+    "daily-20260818T113409Z",
+    "daily-20260818T123230Z",
+    "daily-20260818T133603Z",
+    "daily-20260818T150041Z",
+    "daily-20260818T153355Z",
+    "daily-20260818T201127Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260818T201127Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260818T201127Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260818.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260817T185232Z/podcast_context.json",
+    "context_sha256": "b3878741d8015aa5e0ab4071a53d9c2a3a37f382c866be8f8e1e7e23fcfba17d",
+    "daily_cycle_id": "daily-20260817T185232Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260817T185232Z.md",
+    "page_sha256": "8c22966c9a2501b1cbb8d5c108b29b57b21760f21085f70f442b46179a9e2117",
+    "research_cutoff_at": "2026-08-17T19:03:48Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260818.md",
+  "report_sha256": "044a7062c48cea61b8b30b43049884fd81d0772c2086d9e264c2d803d5aaf2ae",
+  "research_cutoff_at": "2026-08-18T21:02:07Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-18T20:21:12Z",
+      "daily_cycle_id": "daily-20260818T201127Z",
+      "daily_report_items": [
+        "DLocal Q2 research upgraded the economic assessment to Buy/Initiate at USD 13.64, with USD 18.70 base fair value and USD 14.96 buy-below price; allocation remains ineligible because no accepted relationship exists, so no strategy or paper order was created."
+      ],
+      "entity_id": "security_715bde20b6e1e1320c1a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-filed Q2 release reports USD 17.7 billion TPV, USD 399.7 million revenue, USD 127.2 million gross profit, USD 64.2 million operating profit, USD 54.8 million net income and USD 68.5 million adjusted free cash flow; TPV and gross-profit guidance increased while gross profit over TPV compressed to 0.72%.",
+          "observed_at": "2026-08-18T20:14:50Z",
+          "source": "source_dlocal_q2_2026_results",
+          "source_hash": "f81e8a42107b96ca9a02592d4116de5831c64d04ba3fd01874c7770b5932b1eb",
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm"
+        },
+        {
+          "claim": "The Q2 interim statements verify USD 0.18 diluted EPS, 295.9 million diluted weighted-average shares, USD 369.1 million corporate cash, cancellation of 6.9 million repurchased Class A shares, 61% top-ten merchant concentration and the distinction between merchant funds and corporate liquidity.",
+          "observed_at": "2026-08-18T20:14:50Z",
+          "source": "source_dlocal_q2_2026_financials",
+          "source_hash": "3843dc6a64dd183327b47c5ac5e97e6af1e161bcd3a0a89b6bfa1de75dd18768",
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm"
+        },
+        {
+          "claim": "Canonical market state at 2026-08-18T20:11:34Z marks DLO at USD 13.640000343322754 with a USD/EUR rate of 0.8639000058174133; the alert payload records a 7.65% decline over July 21-August 18 and a marginal lower-Bollinger breach after the August 13-14 earnings-volume anomaly.",
+          "observed_at": "2026-08-18T20:11:34Z",
+          "source": "data/market/latest.csv and data/market/indicators.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/assessment_upsert_request.json",
+        "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/security_upsert_request.json",
+        "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/source_dlocal_q2_2026_financials_request.json",
+        "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/source_dlocal_q2_2026_results_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+      ],
+      "operation_id": "01KZYPF0GR1JXMXK7AB5Y1XH8A",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260818T201127Z/01KZYPF0GR1JXMXK7AB5Y1XH8A/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the repeat schema-version-2 review of DLocal Limited after the August 13-14 volume anomaly and August 18 lower-Bollinger breach. Q2 TPV, revenue, gross profit, operating profit and adjusted free cash flow improved; management raised TPV and gross-profit guidance, while gross-profit-over-TPV compressed to 0.72%, top-ten merchant concentration remained 61%, and a new USD 150 million facility added deployment risk. At the fresh USD 13.64 mark, the deterministic assessment derives Buy/Initiate economics with USD 9.00/USD 18.70/USD 29.40 bear/base/bull values, 38.93% probability-weighted expected return and a USD 14.96 buy-below price. Allocation remains ineligible solely because no accepted idea-security relationship exists, so no strategy, signal, order, or paper position was created."
+    },
+    {
+      "completed_at": "2026-08-18T20:32:49Z",
+      "daily_cycle_id": "daily-20260818T201127Z",
+      "daily_report_items": [
+        "Roblox's August 18 bullish MACD crossover is technical stabilization after a 28.27% one-month decline, not a fundamental upgrade. Unchanged USD 28.23/USD 39.58/USD 53.00 scenarios against USD 37.66 produce only 3.18% expected return and 2.39% confidence-adjusted return; Roblox remains Hold / Watch and allocation-ineligible, with no paper strategy or signal and exactly one dependent digital-attention idea refresh."
+      ],
+      "entity_id": "security_c9a37d277445869a8809",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-filed issuer letter was re-fetched with HTTP 200 and exactly matched its registered hash. It retains the material evidence: Q2 bookings of USD 1.557 billion, withdrawn annual guidance, Q3 bookings guidance down 14-18%, and Q3 free-cash-flow guidance from negative USD 60 million to positive USD 5 million.",
+          "observed_at": "2026-08-18T20:23:55Z",
+          "source": "Roblox Q2 2026 shareholder letter",
+          "source_hash": "2d51c740b0a4a948e2bf839a70d3c2b1b02cd8ef9aaa4f4d194bbe0fc20918d4",
+          "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051059/ex991-robloxq22026earnin.htm"
+        },
+        {
+          "claim": "The filing was re-fetched with HTTP 200 and exactly matched its registered hash. It continues to support the balance-sheet, cash-conversion, stock-compensation, dilution, safety, regulatory, and platform-risk inputs used in the assessment.",
+          "observed_at": "2026-08-18T20:23:55Z",
+          "source": "Roblox Q2 2026 Form 10-Q",
+          "source_hash": "13062b27ac41d72b98c4a537ecccb4ba0202fecd85e99bf9872855abb4fd55d4",
+          "url": "https://www.sec.gov/Archives/edgar/data/1315098/000162828026051082/rblx-20260630.htm"
+        },
+        {
+          "claim": "The SEC submissions index showed no newer periodic or current report after the Q2 filing through August 18; only Forms 4 and 144 appeared, so no newer retained operating evidence superseded the Q2 inputs.",
+          "observed_at": "2026-08-18T20:23:55Z",
+          "source": "Roblox SEC submissions index",
+          "source_hash": "187c1de401db23f3693e39375cb0f04828ae1740262d20fcb62e1bfa43fd1ca4",
+          "url": "https://data.sec.gov/submissions/CIK0001315098.json"
+        },
+        {
+          "claim": "The immutable RBLX/XNYS/USD/equity identity had an August 18 adjusted close of USD 37.65999984741211 and a fresh USD/EUR rate of 0.8639000058174133. The payload source-price hash exactly matched the indicator row, where MACD -3.40271048 crossed above signal -3.44658466 after a 28.266667% July 21-August 18 decline.",
+          "observed_at": "2026-08-18T20:11:34Z",
+          "source": "PaperTrader deterministic market, indicator, and FX state",
+          "source_hash": "12e570cce2aa8c9f3ab428c69afc3d8d8d63d802ec77034193dd5cc414b5c4e4"
+        },
+        {
+          "claim": "Assessment assessment_350be4b7a00d7fa4f952 links predecessor assessment_88cd8bf47d6613485ad6, schema version 2, this operation/result, and page hash f33af4444f44ebe34474bca1139b2661e0753564e7ff110b5da383e07c7879ae. It derives bear/base/bull returns of -25.0398%/5.0982%/40.7329%, expected return of 3.1837%, confidence-adjusted expected return of 2.3878%, and a USD 31.664 buy-below price; the result is Hold / Watch and ineligible.",
+          "observed_at": "2026-08-18T20:26:59Z",
+          "source": "PaperTrader deterministic assessment projection"
+        },
+        {
+          "claim": "Exactly one dependent idea_research follow-up, 01M0B8X818VTAGJR84VY4FKNN4, carries idea_digital_attention_gaming_ecosystems, this security and security-review operation identity, the expected result path, and the updated security page source reference.",
+          "source": "PaperTrader deterministic queue projection"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0B8X818VTAGJR84VY4FKNN4.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/assessment_upsert_request.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/security_upsert_request.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_q2_2026_10q_recheck_request.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_q2_2026_letter_recheck_request.json",
+        "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/source_rblx_sec_submissions_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_c9a37d277445869a8809.md"
+      ],
+      "operation_id": "01KZPWPFS0ACSXW0NXHK7PV021",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260818T201127Z/01KZPWPFS0ACSXW0NXHK7PV021/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Roblox refresh using current deterministic market and FX state plus rechecked SEC primary evidence. The August 18 bullish MACD crossover follows a 28.27% decline from July 21 and represents technical stabilization, not a fundamental improvement. Unchanged USD 28.23/USD 39.58/USD 53.00 bear/base/bull values against the USD 37.66 mark produce a 3.18% expected return and 2.39% medium-confidence-adjusted return. Assessment assessment_350be4b7a00d7fa4f952 remains Hold / Watch and allocation-ineligible because base return, expected return, and both downside-payoff gates fail. Updated the security page and structured state, registered three source observations, and created exactly one dependent idea refresh, 01M0B8X818VTAGJR84VY4FKNN4. No strategy, signal, order, allocation, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-18T20:46:31Z",
+      "daily_cycle_id": "daily-20260818T201127Z",
+      "daily_report_items": [
+        "Nebius' August 12 volume anomaly was an earnings-linked repricing after Q2 revenue and adjusted EBITDA accelerated, but the close subsequently eased to USD 248.43 and the Q2 filing also exposed extraordinary capex, customer-funded cash flow, leverage, concentration and valuation-denominator changes. The stale Q1 scenarios were withdrawn: NBIS is Unrated / Watch and allocation-ineligible pending exactly one dependent full review, with no paper strategy or signal created."
+      ],
+      "entity_id": "security_47a0b06f6c6c478d7c1e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The canonical alert binds the 2026-07-14 through 2026-08-12 period, a USD 257.8900146484375 adjusted close, 26.5136682158% period return and volume_anomaly at 1.9070570294 times the twenty-session average to source-price hash 851a40fcbec7f03985828271a23a81d85f326c2c2ffb28b264c21a96ad60081b. By August 18 the close was USD 248.42999267578125, 3.6682% below the alert mark; RSI 56.71782656 was neutral, MACD 16.71619268 remained above signal 16.19822208 and volume was no longer anomalous.",
+          "observed_at": "2026-08-18T20:11:34Z",
+          "source": "PaperTrader payload-bound market alert and deterministic market state",
+          "source_hash": "204f70496d770483e6fbf73c4852213432010523ab6495696425254945078a8d"
+        },
+        {
+          "claim": "Nebius reported Q2 revenue of USD 582.3 million, up 454% year over year, adjusted EBITDA of USD 236.2 million and GAAP continuing-operations net loss of USD 190.4 million. Purchases of property, equipment and intangible assets were USD 5.6574 billion, while operating cash flow included USD 4.2563 billion of customer advances and prepayments.",
+          "observed_at": "2026-08-18T20:36:26Z",
+          "source": "Nebius Q2 2026 results release filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "6251cc57958331181d98ee59ff093992d0658f8d6db5487eed7e7d397225aa03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+        },
+        {
+          "claim": "The quarterly statements confirm USD 574.9 million of Q2 AI-cloud revenue, USD 8.0421 billion cash, USD 8.5457 billion current and non-current debt, USD 7.4974 billion deferred revenue, USD 102.5 million Q2 share-based compensation and 271,855,218 issued and outstanding shares at June 30. These inputs materially supersede the Q1 evidence and require a fresh valuation rather than mechanical reuse of the prior approximately 309 million diluted-share scenario basis.",
+          "observed_at": "2026-08-18T20:36:26Z",
+          "source": "Nebius Q2 2026 unaudited condensed consolidated financial statements filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "440449e9671dc8f744e7a9cbbac86384d6eacbfded9dc3c01c95613d64c31c4c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm"
+        },
+        {
+          "claim": "The baseline completed full research for the same immutable security on 2026-08-05 and used Q1 evidence with USD 75/USD 170/USD 340 scenarios. The accepted current assessment assessment_418bcf82968e21826232 is the sole immutable version sourced from this quick check and current run, links predecessor assessment_e2c4e2fa700c110e5f32, records fresh price and FX identity, and removes scenario values rather than presenting stale Q1 sensitivities as current fair value.",
+          "source": "Baseline result 01KYPB2048VWN4VV7YYF4Y60TX and PaperTrader deterministic assessment projection"
+        },
+        {
+          "claim": "Exactly one dependent security_research operation, 01M0B9RMZRENS1CC2T3BF65HXF, carries this quick-check identity, full_research_requested=true, the volume-anomaly cause, both price hashes, the exact market period and the Q2 revaluation gate. No strategy or signal was created.",
+          "source": "PaperTrader deterministic queue projection"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0B9RMZRENS1CC2T3BF65HXF.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/enqueue_full_research_request.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/enqueue_full_research_request_v2.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/security_upsert_request.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/security_upsert_request_v2.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request_v2.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_financials_request_v3.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request_v2.json",
+        "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/source_nbis_q2_2026_results_request_v3.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md"
+      ],
+      "operation_id": "01KZVTZDX0K1KX61Y923GX3GNG",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T201127Z/01KZVTZDX0K1KX61Y923GX3GNG/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Nebius quick check for the August 12 volume anomaly. SEC-filed Q2 evidence materially strengthened revenue growth and adjusted EBITDA but also introduced extraordinary capital spending, customer-advance funding, higher leverage, share-based compensation and a changed valuation denominator that the Q1 scenario set does not reconcile. The alert was an earnings-linked repricing event, not a validated entry condition: by August 18 the USD 248.43 close was 3.67% below the alert mark, RSI was neutral and MACD remained positive. Published immutable assessment assessment_418bcf82968e21826232 as schema-v2 Unrated / Watch, valuation-unsupported and allocation-ineligible, and created exactly one dependent full security review, 01M0B9RMZRENS1CC2T3BF65HXF. No strategy, signal, paper order, allocation or accounting state was changed."
+    }
+  ],
+  "run_id": "daily-20260818T201127Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-18T10:45:33Z",
+      "daily_cycle_id": "daily-20260818T091246Z",
+      "daily_report_items": [],
+      "entity_id": "security_61567714298b9563d1a9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result was written before completed change: data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/command_audit.json",
+          "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        },
+        {
+          "claim": "commands_run does not exactly match deterministic CLI audit receipts",
+          "source": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result was written before completed change: data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/command_audit.json",
+        "commands_run does not exactly match deterministic CLI audit receipts"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZPWPFS0QGMTYP3PD0TRQH6K",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T091246Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-18T11:39:09Z",
+      "daily_cycle_id": "daily-20260818T113409Z",
+      "daily_report_items": [],
+      "entity_id": "security_61567714298b9563d1a9",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "completed security research requires this run's comparable assessment",
+          "source": "data/runs/daily-20260818T113409Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "completed security research requires this run's comparable assessment"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZPWPFS0QGMTYP3PD0TRQH6K",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T113409Z/01KZPWPFS0QGMTYP3PD0TRQH6K/validation_report.json",
+      "status": "failed",
+      "summary": "retry_exhausted:agent_validation_failed:issue_ff655356efa9b9e1d1a8"
+    },
+    {
+      "completed_at": "2026-08-18T12:35:40Z",
+      "daily_cycle_id": "daily-20260818T123230Z",
+      "daily_report_items": [],
+      "entity_id": "security_7ca095d63423c55a90e3",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The required security-context command succeeded before assessment-state work and returned Rocket Lab security_7ca095d63423c55a90e3 with current assessment assessment_139572984e6c1e53af22 and baseline operation 01KZM3JQXG54MXRP9EPRNYX45A.",
+          "observed_at": "2026-08-18T12:33:58Z",
+          "source": "mandatory security context"
+        },
+        {
+          "claim": "The required assessment invocation was rejected with exit code 2: the assessment upsert request was outside the quick_check_research skill scope. Per controller instructions, the rejected request was not retried and no full-research enqueue was invoked.",
+          "observed_at": "2026-08-18T12:34:00Z",
+          "source": "project CLI scope enforcement"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json",
+        "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/enqueue_full_research_request.json"
+      ],
+      "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T123230Z/01KZQX922RR422CPWVFP4APXBZ/agent_result.json",
+      "status": "failed",
+      "summary": "Quick check could not publish its required assessment because the audited project CLI rejected the assessment upsert request as outside the routed quick_check_research skill scope. No assessment, queue, wiki, or accounting state was changed."
+    },
+    {
+      "completed_at": "2026-08-18T13:39:15Z",
+      "daily_cycle_id": "daily-20260818T133603Z",
+      "daily_report_items": [],
+      "entity_id": "security_7ca095d63423c55a90e3",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader integrity --strict', 'scripts/papertrader portfolio reconcile --strict', 'scripts/papertrader queue validate', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3', 'scripts/papertrader wiki lint --strict']",
+          "source": "data/runs/daily-20260818T133603Z/01KZQX922RR422CPWVFP4APXBZ/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader integrity --strict', 'scripts/papertrader portfolio reconcile --strict', 'scripts/papertrader queue validate', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3', 'scripts/papertrader wiki lint --strict']"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T133603Z/01KZQX922RR422CPWVFP4APXBZ/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    },
+    {
+      "completed_at": "2026-08-18T15:09:55Z",
+      "daily_cycle_id": "daily-20260818T150041Z",
+      "daily_report_items": [],
+      "entity_id": "security_7ca095d63423c55a90e3",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader research assessment upsert --request data/runs/daily-20260818T150041Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3']",
+          "source": "data/runs/daily-20260818T150041Z/01KZQX922RR422CPWVFP4APXBZ/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader research assessment upsert --request data/runs/daily-20260818T150041Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3']"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T150041Z/01KZQX922RR422CPWVFP4APXBZ/validation_report.json",
+      "status": "failed",
+      "summary": "retry_exhausted:agent_validation_failed:issue_52441ba1c5c89cac50a6"
+    },
+    {
+      "completed_at": "2026-08-18T15:37:17Z",
+      "daily_cycle_id": "daily-20260818T153355Z",
+      "daily_report_items": [],
+      "entity_id": "security_47a0b06f6c6c478d7c1e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The required pre-assessment security-context command succeeded and returned security_47a0b06f6c6c478d7c1e with current assessment assessment_e2c4e2fa700c110e5f32, baseline operation 01KYPB2048VWN4VV7YYF4Y60TX, and source price hash context available before assessment-state work.",
+          "observed_at": "2026-08-18T15:35:35Z",
+          "source": "mandatory security context"
+        },
+        {
+          "claim": "The bounded alert packet reports an entered volume anomaly for 2026-07-15 through 2026-08-12, latest adjusted close USD 259.20001220703125, approximately 29.9% period return, and source price hash ab6c5a99d048ab40adc2c4fab5b7f9b3f949f2d349a00a5c64a936fe288a4d06.",
+          "observed_at": "2026-08-12T20:35:16Z",
+          "source": "current market and alert packet"
+        },
+        {
+          "claim": "The required assessment invocation exited with code 2 and returned: the request is outside the quick_check_research skill scope. Per controller instructions, the rejected request was not retried and no full-research enqueue was invoked.",
+          "observed_at": "2026-08-18T15:36:00Z",
+          "source": "project CLI scope enforcement"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260818T153355Z/01KZVTZDX0K1KX61Y923GX3GNG/assessment_upsert_request.json"
+      ],
+      "operation_id": "01KZVTZDX0K1KX61Y923GX3GNG",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T153355Z/01KZVTZDX0K1KX61Y923GX3GNG/agent_result.json",
+      "status": "failed",
+      "summary": "Quick check could not publish its required same-run assessment because the audited project CLI rejected the assessment upsert request as outside the routed quick_check_research skill scope. No assessment, follow-up queue operation, wiki, or accounting state was changed."
+    },
+    {
+      "completed_at": "2026-08-18T21:01:49Z",
+      "daily_cycle_id": "daily-20260818T201127Z",
+      "daily_report_items": [],
+      "entity_id": "security_47a0b06f6c6c478d7c1e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "post-run integrity: invalid assessment security_47a0b06f6c6c478d7c1e: unavailable or stale evidence source_nbis_q2_2026_results",
+          "source": "data/runs/daily-20260818T201127Z/01M0B9RMZRENS1CC2T3BF65HXF/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "post-run integrity: invalid assessment security_47a0b06f6c6c478d7c1e: unavailable or stale evidence source_nbis_q2_2026_results"
+      ],
+      "files_changed": [],
+      "operation_id": "01M0B9RMZRENS1CC2T3BF65HXF",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260818T201127Z/01M0B9RMZRENS1CC2T3BF65HXF/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-17T19:03:48Z"
+}

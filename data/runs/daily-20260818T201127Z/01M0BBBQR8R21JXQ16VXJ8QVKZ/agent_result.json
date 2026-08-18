@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260818T201127Z --script-path data/wiki/podcasts/daily-podcast_20260818T201127Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260818T201127Z --script-path data/wiki/podcasts/daily-podcast_20260818T201127Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 3,114-word research podcast connecting DLocal, Roblox, and Nebius through the question of when improving operating evidence becomes investable; deterministic script validation passed, while the single non-retried draft-render attempt failed because edge-tts was unavailable."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three defines the exclusive prior cutoff, inclusive current cutoff, three accepted research developments, linked maintained pages, prior successful podcast, report path, page path, and completed decision snapshot.",
+      "observed_at": "2026-08-18T21:10:13Z",
+      "source": "data/runs/daily-20260818T201127Z/podcast_context.json"
+    },
+    {
+      "claim": "DLocal's accepted Q2 review supports stronger TPV, revenue, profit and adjusted free cash flow plus attractive scenario economics at the current mark, while an absent accepted idea-security relationship remains the sole allocation gate.",
+      "source": "data/wiki/securities/security_715bde20b6e1e1320c1a.md",
+      "source_hash": "5487c1dac175d4abe5f92f4cf6454ad61f9322d2dd6396b5185e5524dea905af"
+    },
+    {
+      "claim": "Roblox's accepted review treats the bullish MACD crossover after a deep decline as technical stabilization rather than a fundamental improvement because bookings guidance, cash conversion and valuation asymmetry remain weak.",
+      "source": "data/wiki/securities/security_c9a37d277445869a8809.md",
+      "source_hash": "f33af4444f44ebe34474bca1139b2661e0753564e7ff110b5da383e07c7879ae"
+    },
+    {
+      "claim": "Nebius's accepted quick check confirms extraordinary Q2 growth alongside exceptional capital spending, customer-advance funding, leverage and a changed valuation denominator, requiring withdrawal of stale scenarios and a full revaluation.",
+      "source": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+      "source_hash": "e690a75c1b3b4225130431b76e30c698c6ac88d9c676dbf20a00fff9f618c4eb"
+    },
+    {
+      "claim": "The completed decision snapshot has no actionable signals and keeps current and target portfolios entirely in cash, supporting only a brief closing portfolio implication.",
+      "source": "data/runs/daily-20260818T201127Z/decision_snapshot.json",
+      "source_hash": "4381e12fd0e314209b80008c9d9a5208c143d6ada69644c57292a01bc1314d45"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260818.md",
+    "data/wiki/podcasts/daily-podcast_20260818T201127Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0BBBQR8R21JXQ16VXJ8QVKZ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a 3,114-word research podcast centered on when improving operating evidence becomes an investable security. The episode connects DLocal's stronger payment economics but missing causal relationship, Roblox's technical stabilization without fundamental repair, and Nebius's growth alongside a valuation-breaking capital and funding shift, with brief Microsoft and NVIDIA context and an all-cash closing implication. Deterministic script validation passed. The single audited draft-render attempt failed because edge-tts was unavailable; it was not retried, and the valid transcript remains successful under the podcast contract.",
+  "validation": {
+    "checks": [
+      "Frozen podcast context version three, cutoffs, prior-podcast identity, page path, report path, linked source paths, and supplied hashes were checked.",
+      "Deterministic script validation passed with 3,114 spoken words in six render chunks and script SHA-256 4c33444c0397082f7c04600483bfb56b91228b701529b5ed837b8165e4b6943a.",
+      "The daily report contains exactly one transcript link and no audio link was added.",
+      "The audited draft renderer was invoked exactly once and failed because edge-tts was unavailable; no retry or alternative renderer was used.",
+      "Strict schema, integrity, wiki lint, queue validation, and strict portfolio reconciliation all passed.",
+      "No allocation, strategy, signal, order, fill, execution, cash, portfolio, or performance state was changed."
+    ],
+    "passed": true
+  }
+}
