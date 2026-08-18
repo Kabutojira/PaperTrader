@@ -400,6 +400,7 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     ("dry_run", "generate_podcast", "runtime_result", "podcast_status", "expected_exit"),
     [
         ("false", "true", "success", "succeeded", 0),
+        ("false", "true", "success", "skipped", 0),
         ("false", "true", "success", "failed", 1),
         ("false", "true", "success", "blocked", 1),
         ("true", "true", "success", "skipped", 0),
