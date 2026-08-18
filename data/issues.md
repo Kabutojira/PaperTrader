@@ -25,6 +25,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_6879c5959035b43a141b** — Local harness operation validation failed: 01KYQ62ZT8AGDEDP669Q6SF1VD | 2026-08-12T12:56:50Z | controller | 01KYQ62ZT8AGDEDP669Q6SF1VD |
 | error | **issue_7f39fae50d63b862a20b** — Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N | 2026-08-09T14:23:04Z | controller | 01KZCFHHCGX1RGXKKVHNF86W7N |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
+| error | **issue_86fdab0ab1792cdf5c45** — Hermes operation validation failed: 01KZGGJ4M05XRHKKRXK2WYJANM | 2026-08-18T23:51:26Z | controller | 01KZGGJ4M05XRHKKRXK2WYJANM |
 | error | **issue_9f54455539f07576361c** — CrowdStrike full assessment rejected by canonical market identity | 2026-08-10T23:08:16Z | controller | 01KZPY8FCGVBRGTPP66WJS5JEC |
 | error | **issue_a32ef908d1aab8f839d5** — Hermes operation validation failed: 01KZ8BGD98FSXHG4KQ8C6MGNW1 | 2026-08-10T09:00:48Z | controller | 01KZ8BGD98FSXHG4KQ8C6MGNW1 |
 | error | **issue_a57d145a15316065ef4b** — Intuitive Surgical full assessment blocked by same-run provenance ambiguity | 2026-08-11T17:50:40Z | controller | 01KZRY95ZGA17F8N27YMA7G1G9 |
