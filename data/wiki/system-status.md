@@ -7,14 +7,14 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55cf1808aba2090bb57f"
-as_of: "2026-08-18T12:35:59Z"
+snapshot_id: "decision_cd2f6e41ccc7800a3de7"
+as_of: "2026-08-18T13:39:28Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-18T12:35:59Z`
-**Investment data:** Degraded — review investment data gaps
+**As of:** `2026-08-18T13:39:28Z`
+**Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -34,6 +34,10 @@ as_of: "2026-08-18T12:35:59Z"
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
+
+### Blocks Portfolio
+
+- Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-11]]** — commands_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader integrity --strict', 'scripts/papertrader portfolio reconcile --strict', 'scripts/papertrader queue validate', 'scripts/papertrader research security-context --security-id [[securities/security_7ca095d63423c55a90e3|RKLB]]', 'scripts/papertrader wiki lint --strict'\]
 
 ### Blocks Action
 
@@ -135,6 +139,7 @@ as_of: "2026-08-18T12:35:59Z"
 
 ### Publication Only
 
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.

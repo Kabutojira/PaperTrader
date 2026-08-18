@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_55cf1808aba2090bb57f"
-as_of: "2026-08-18T12:35:59Z"
+snapshot_id: "decision_cd2f6e41ccc7800a3de7"
+as_of: "2026-08-18T13:39:28Z"
 ---
 
 # Signals
 
-**As of `2026-08-18T12:35:59Z`**
+**As of `2026-08-18T13:39:28Z`**
 
 ## Actionable trade signals
 
@@ -24,15 +24,6 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -65,21 +56,21 @@ No pending orders.
 
 **Research alert — not a trade signal**
 
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-17`
-- Research status: `succeeded`
-- Conclusion: Completed one full repeat review of Intuitive Machines Class A common stock. The August 13 Form 10-Q and SEC-filed earnings exhibit explain the payload-bound volume anomaly and strengthen the revenue, backlog and liquidity evidence, but negative cash generation, complex dilution and absent post-closing Goonhilly unit economics keep scenario valuation unsupported, Unrated / Watch and allocation-ineligible. No strategy, signal, order, issue or follow-up operation was created.
-
-### [LUNR — Intuitive Machines, Inc.](securities/security_a5dc16f3f4b245e6c168)
-
-**Research alert — not a trade signal**
-
 - Alert: `bollinger\_above\_upper`
 - Market date: `2026-08-17`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
 ### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
 **Research alert — not a trade signal**
 
