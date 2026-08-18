@@ -121,6 +121,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_e8012ba9cfff70e45781** — Daily preparation degraded: security_2010347f1a0a5ea60f47 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_ea600e6a0abd700bbdd4** — YouTube discovery failed for UCESLZhusAkFfsNsApnjF_Cg | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_ed85ad36a02af2fdfc33** — Daily preparation degraded: security_567d0d575bbd30aaa91d | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_f03fc3c41012d374fea9** — Daily podcast skipped: daily-20260818T123230Z | 2026-08-18T12:48:43Z | delivery | 01M0AECMRGZM8V7BR8Q8QN78SX |
 | warning | **issue_f320e056b26d54014584** — Daily preparation degraded: security_a9eb9838940ef5ceaa0c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_f9849560e317bb03afe4** — Telegram podcast audio delivery unavailable | 2026-08-17T22:26:40Z | delivery |  |
 | warning | **issue_fc3830c067fcea6132aa** — Daily preparation degraded: security_55c9ce2fdcd32dad6b8c | 2026-07-29T16:51:20Z | deterministic-controller |  |
