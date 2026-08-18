@@ -70,7 +70,7 @@ jobs:
       max_operations: ${{ github.event_name == 'schedule' && '5' || inputs.max_operations || '5' }}
       resume_cycle_id: ${{ inputs.resume_cycle_id || '' }}
       dry_run: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
-      generate_podcast: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
+      generate_podcast: ${{ github.event_name == 'schedule' || inputs.generate_podcast }}
       send_telegram: ${{ github.event_name == 'schedule' || (!inputs.dry_run && inputs.send_telegram) }}
       wiki_maintenance: >-
         ${{ (github.event_name == 'workflow_dispatch' && inputs.wiki_maintenance) ||
@@ -122,7 +122,7 @@ jobs:
       - name: Fail after publication when an enabled daily podcast failed or blocked
         env:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
-          GENERATE_PODCAST: ${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}
+          GENERATE_PODCAST: ${{ github.event_name == 'schedule' || inputs.generate_podcast }}
           PODCAST_STATUS: ${{ needs.runtime.outputs.podcast_status }}
           RUNTIME_RESULT: ${{ needs.runtime.result }}
         run: |

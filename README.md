@@ -384,11 +384,10 @@ the quick check.
 
 ## Daily podcast
 
-Podcast generation is off by default. Enable it for a manual daily run with the
-`generate_podcast` workflow-dispatch toggle, or set the GitHub Actions repository/environment
-variable `GENERATE_PODCAST` to `true` for scheduled runs. An enabled non-dry daily workflow
-finishes with one priority-100 `daily_podcast` operation after the canonical report and decision
-snapshot exist. Deterministic code collects all accepted operation results for that run into
+Every scheduled daily workflow generates the podcast. Podcast generation remains off by default
+for manual runs; enable it there with the `generate_podcast` workflow-dispatch toggle. An enabled
+non-dry daily workflow finishes with one priority-100 `daily_podcast` operation after the canonical
+report and decision snapshot exist. Deterministic code collects all accepted operation results into
 `data/runs/<run_id>/podcast_context.json`. Context version three starts exclusively after the most
 recent successful podcast cutoff, aggregates every intervening cycle through the current inclusive
 cutoff, and falls back to seven days for the first episode. It separates accepted research changes
