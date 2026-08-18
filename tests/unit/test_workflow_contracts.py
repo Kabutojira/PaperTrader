@@ -118,7 +118,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     )
     assert "vars.MAX_OPERATIONS" not in daily_text
     assert jobs["runtime"]["with"]["generate_podcast"] == (
-        "${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"
+        "${{ github.event_name == 'schedule' || inputs.generate_podcast }}"
     )
     assert jobs["runtime"]["with"]["wiki_maintenance"] == (
         "${{ (github.event_name == 'workflow_dispatch' && inputs.wiki_maintenance) || "
@@ -133,7 +133,7 @@ def test_daily_manual_inputs_schedule_and_serialized_reusable_graph(
     assert outcome["if"] == "${{ always() }}"
     outcome_step = outcome["steps"][0]
     assert outcome_step["env"]["GENERATE_PODCAST"] == (
-        "${{ inputs.generate_podcast || vars.GENERATE_PODCAST == 'true' }}"
+        "${{ github.event_name == 'schedule' || inputs.generate_podcast }}"
     )
     assert outcome_step["env"]["PODCAST_STATUS"] == "${{ needs.runtime.outputs.podcast_status }}"
     assert "validated research and report state was published" in outcome_step["run"]
