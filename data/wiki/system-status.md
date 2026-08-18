@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_db4ffd062b7b1f969b5f"
-as_of: "2026-08-18T15:10:05Z"
+snapshot_id: "decision_8f87ae307c10a2f8ad3f"
+as_of: "2026-08-18T15:37:31Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-18T15:10:05Z`
+**As of:** `2026-08-18T15:37:31Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-18T15:10:05Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 338
+- Research backlog: 339
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -88,6 +88,7 @@ as_of: "2026-08-18T15:10:05Z"
 - Warning **RBLX — Roblox Corporation: Daily preparation degraded: [[securities/security_c9a37d277445869a8809|RBLX]]** — [[securities/security_c9a37d277445869a8809|RBLX]]: YFTzMissingError: $RBLX: possibly delisted; no timezone found
 - Warning **FUC.F — Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]** — [[securities/security_96ba305ee7cd586bc348|FUC.F]]: price cache is empty
 - Warning **TSLA — Tesla, Inc.: Daily preparation degraded: [[securities/security_dc7a111e297be528d96b|TSLA]]** — [[securities/security_dc7a111e297be528d96b|TSLA]]: price cache is empty
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **VALE — Vale S.A.: Daily preparation degraded: [[securities/security_b2116dcf976c96974d7b|VALE]]** — [[securities/security_b2116dcf976c96974d7b|VALE]]: price cache is empty
 - Warning **ALB — Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]** — [[securities/security_66cdcf90aac0d83e76f3|ALB]]: YFTzMissingError: $ALB: possibly delisted; no timezone found
 - Warning **ANIC.L — Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]** — [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]: price cache is empty
@@ -173,7 +174,7 @@ as_of: "2026-08-18T15:10:05Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 338 active operations.
+Showing 20 of 339 active operations.
 
 <details><summary>Active research work</summary>
 

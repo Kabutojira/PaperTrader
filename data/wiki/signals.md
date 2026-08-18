@@ -7,13 +7,13 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_db4ffd062b7b1f969b5f"
-as_of: "2026-08-18T15:10:05Z"
+snapshot_id: "decision_8f87ae307c10a2f8ad3f"
+as_of: "2026-08-18T15:37:31Z"
 ---
 
 # Signals
 
-**As of `2026-08-18T15:10:05Z`**
+**As of `2026-08-18T15:37:31Z`**
 
 ## Actionable trade signals
 
@@ -43,6 +43,15 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-17`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
 ### [SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6)
 
 **Research alert — not a trade signal**
@@ -70,15 +79,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
 
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
 ### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
 
 **Research alert — not a trade signal**
@@ -88,21 +88,12 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce)
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
 
 **Research alert — not a trade signal**
 
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-17`
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-18`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -124,15 +115,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-17`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
-
 ### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
 
 **Research alert — not a trade signal**
@@ -152,15 +134,6 @@ No pending orders.
 - Conclusion: bearish\_alert\_unowned
 
 ### [CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-17`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### ANIC.L — Agronomics Limited
 
 **Research alert — not a trade signal**
 

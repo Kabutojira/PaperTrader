@@ -7,8 +7,8 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_db4ffd062b7b1f969b5f"
-as_of: "2026-08-18T15:10:05Z"
+snapshot_id: "decision_8f87ae307c10a2f8ad3f"
+as_of: "2026-08-18T15:37:31Z"
 ---
 
 # Research catalog
@@ -101,6 +101,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [FLNC — SMA 50 cross below 200](inbox/market-security_a9eb9838940ef5ceaa0c-sma_50_cross_below_200-ae9bff9e83c0)
 - [FLNC — Volume anomaly](inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0)
 - [FUC.F — MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502)
+- [FUC.F — MACD cross below signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8)
 - [GEV — Bollinger below lower](inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0)
 - [GEV — MACD cross above signal](inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-3c258166f023)
 - [GOOGL — MACD cross above signal](inbox/market-security_c86bb4e75658c07142cf-macd_cross_above_signal-e7c32a666d8b)
@@ -516,7 +517,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8|FUC.F — MACD cross below signal]]

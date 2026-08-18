@@ -3963,3 +3963,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T150041Z`.
 
 - Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8]] (e8a3ef9b6ba8).
+
+- Published investor decision snapshot `decision_8f87ae307c10a2f8ad3f`.
+
+- Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T153355Z`.

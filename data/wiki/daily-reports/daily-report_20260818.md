@@ -7,8 +7,8 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-report-generator
-run_id: "daily-20260818T150041Z"
-snapshot_id: "decision_db4ffd062b7b1f969b5f"
+run_id: "daily-20260818T153355Z"
+snapshot_id: "decision_8f87ae307c10a2f8ad3f"
 ---
 
 # PaperTrader daily report — 2026-08-18
@@ -20,7 +20,7 @@ snapshot_id: "decision_db4ffd062b7b1f969b5f"
 
 - **Investment data:** Degraded — review investment data gaps
 - **Operations:** Blocked
-- **As of:** `2026-08-18T15:10:05Z`
+- **As of:** `2026-08-18T15:37:31Z`
 - **Cash:** 10000 EUR (100%)
 - **Gross exposure:** 0 EUR
 - **Target cash:** 10000 EUR (100%)
@@ -43,6 +43,9 @@ No actionable trade signals.
 - **[VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157): Bollinger Above Upper** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
+- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-17`)
+  - Research: **skipped**
+  - Decision: Queue triage disposition
 - **[SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6): Bollinger Above Upper** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
@@ -52,16 +55,10 @@ No actionable trade signals.
 - **[LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67): Rsi Overbought** (`2026-08-17`)
   - Research: **skipped**
   - Decision: Queue triage disposition
-- **[ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86): Rsi Overbought** (`2026-08-17`)
-  - Research: **skipped**
-  - Decision: Queue triage disposition
 - **[ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40): Rsi Overbought** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[SSUN.VI — Samsung Electronics Co., Ltd.](securities/security_d08d763780400dfbffce): Bollinger Above Upper** (`2026-08-17`)
-  - Research: **skipped**
-  - Decision: bearish\_alert\_unowned
-- **[SSU.VI — Samsung Electronics Co., Ltd.](securities/security_567d0d575bbd30aaa91d): Bollinger Above Upper** (`2026-08-17`)
+- **[FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348): Macd Cross Below Signal** (`2026-08-18`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
 - **[TDY — Teledyne Technologies Incorporated](securities/security_ad5917642acbba28c1f2): Macd Cross Below Signal** (`2026-08-17`)
@@ -70,9 +67,6 @@ No actionable trade signals.
 - **[PL — Planet Labs PBC](securities/security_97f38b2cb2d5ef127f5a): Sma 50 Cross Below 200** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00): Macd Cross Above Signal** (`2026-08-17`)
-  - Research: **ready**
-  - Decision: High-priority security research is ready to run.
 - **[META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc): Macd Cross Below Signal** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
@@ -82,16 +76,9 @@ No actionable trade signals.
 - **[CSL — Carlisle Companies Incorporated](securities/security_9b0db3bc77914b23a307): Macd Cross Below Signal** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-- **[ANIC.L — Agronomics Limited](security-catalog#security-security_fe4648901e7675f157fd): Macd Cross Below Signal** (`2026-08-17`)
-  - Research: **skipped**
-  - Decision: bearish\_alert\_unowned
 - **[AMZN — Amazon.com, Inc.](securities/security_2433a056eb0c55961fcc): Macd Cross Below Signal** (`2026-08-17`)
   - Research: **skipped**
   - Decision: bearish\_alert\_unowned
-
-## Research decisions this run
-
-- **[RKLB](securities/security_7ca095d63423c55a90e3) — failed:** retry\_exhausted:agent\_validation\_failed:Hermes operation validation failed: Quick check research for RKLB on 2026-08-18
 
 ## Top blocker or near miss
 
@@ -151,6 +138,7 @@ No pending orders.
 
 - [[inbox/market-security_2433a056eb0c55961fcc-macd_cross_below_signal-fd757acb6a20|AMZN — MACD cross below signal]]
 - [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_below_200-88ef784f48d2|DNA — SMA 50 cross below 200]]
+- [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8|FUC.F — MACD cross below signal]]
 - [[inbox/market-security_97f38b2cb2d5ef127f5a-sma_50_cross_below_200-863352fb9628|PL — SMA 50 cross below 200]]
 - [[inbox/market-security_9b0db3bc77914b23a307-macd_cross_below_signal-fe9aa8b78841|CSL — MACD cross below signal]]
 - [[inbox/market-security_9d4049ed6669a52815d6-bollinger_above_upper-70ca44e2ec5b|SQM — Bollinger above upper]]
@@ -178,7 +166,7 @@ No pending orders.
 - Active signals: 0
 - Pending orders: 0
 - Market-data success/failure: 72/0
-- Research alerts (not trade signals): 17
+- Research alerts (not trade signals): 14
 
 ### Current system impacts
 
@@ -227,6 +215,7 @@ No pending orders.
 - **affects candidate** — RBLX Roblox Corporation: Daily preparation degraded: [[securities/security_c9a37d277445869a8809|RBLX]]
 - **affects candidate** — FUC.F Fanuc Corporation: Daily preparation degraded: [[securities/security_96ba305ee7cd586bc348|FUC.F]]
 - **affects candidate** — TSLA Tesla, Inc.: Daily preparation degraded: [[securities/security_dc7a111e297be528d96b|TSLA]]
+- **affects candidate**: Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]
 - **affects candidate** — VALE Vale S.A.: Daily preparation degraded: [[securities/security_b2116dcf976c96974d7b|VALE]]
 - **affects candidate** — ALB Albemarle Corporation: Daily preparation degraded: [[securities/security_66cdcf90aac0d83e76f3|ALB]]
 - **affects candidate** — ANIC.L Agronomics Limited: Daily preparation degraded: [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]]
@@ -313,84 +302,84 @@ No pending orders.
 
 - Report date: 2026-08-18
 - Run status: degraded
-- Generated (UTC): `2026-08-18T15:10:05Z`
+- Generated (UTC): `2026-08-18T15:37:31Z`
 
 ### Complete market freshness
 
 | Security | Price date | Retrieved at | Status | Error |
 | --- | --- | --- | --- | --- |
-| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-18 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
-| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-17 | 2026-08-18T15:06:40Z | ok | — |
+| [[securities/security_099561384c0f5e697727|CSIQ]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_0a56aa634d077fe5796f|AMAT]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_0cf8075039299094d614|KTOS]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_18a3ab0ee6086ee85d0f|ETN]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_1f9cce545ede94cd6349|ISRG]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_2010347f1a0a5ea60f47|SPOT]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_204be2a44063993de1a8|MSFT]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_22c2b9d782a62d7a9b86|ATKR]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_2433a056eb0c55961fcc|AMZN]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_2c779e81c27b78c556bb|TX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_2dbe878dfc899d7ee867|FCX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_33d9c44facc75c726c7d|NVDA]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_37ddcbdaad296ad831f2|COIN]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_3853e54c619d597dcaa1|NIB.F]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_3a75fc1ccca2ee7c937a|QCOM]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_3e597863f00753e8c65c|BE]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_4627aea1bf7d8943d3d8|SGML]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_47a0b06f6c6c478d7c1e|NBIS]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_488a9d7f7a8573597724|PWR]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_4b61970aa8f574446819|GEV]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_55c9ce2fdcd32dad6b8c|CRSR]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_567d0d575bbd30aaa91d|SSU.VI]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_59304f90c440def31dc5|RTX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_61567714298b9563d1a9|WTI]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_664f93a7eaca72e76e9b|SPCX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_66cdcf90aac0d83e76f3|ALB]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_6ad1af8d10d6276a0221|SCCO]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_6cf75bd0ec0aa2a20148|TWST]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_6f9a1450edceb9307c9a|ANET]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_715bde20b6e1e1320c1a|DLO]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_7bf8f4c9cc12ae410e40|ABCL]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_7ca095d63423c55a90e3|RKLB]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_83a56943e18793f685b0|TXN]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_8472507d7d320aa388a7|CRWD]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_89969b7dac39b7db5661|YEC.F]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_95351d928b674bbdf687|DNA]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_96ba305ee7cd586bc348|FUC.F]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_97f38b2cb2d5ef127f5a|PL]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_98470cfc01bbcde78fc2|SOFI]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_9b0db3bc77914b23a307|CSL]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_9d4049ed6669a52815d6|SQM]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_a5dc16f3f4b245e6c168|LUNR]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_a9eb9838940ef5ceaa0c|FLNC]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_ad3b1f8f59fd599f079a|HOOD]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_ad5917642acbba28c1f2|TDY]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_b1f2c48e1a744f5ecf67|LH]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_b2116dcf976c96974d7b|VALE]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_bdc2f87dadf134760c3a|PLTR]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_c120e9f26ebb6159adf9|ABBNY]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_c150f31c30afdb4a85f9|CROX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_c5a9e460d3350284d157|VLO]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_c86bb4e75658c07142cf|GOOGL]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_c9a37d277445869a8809|RBLX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_cb88f9154cfeaa15e878|VRT]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_cd492d97064d8574156e|MP]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_ce9b78a4d0773c950765|TSM]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_d08d763780400dfbffce|SSUN.VI]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_d12e746b3c9d392183cc|META]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_dc7a111e297be528d96b|TSLA]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_dc8486c1d61df62a22fd|SU]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_dfa34d4b9050964b465e|INTC]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_eca976f0076a425ea1bb|PATH]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_ed7d5b616a196969c815|RXRX]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_ef35e41886220d51c22c|ASML]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_f2b9760d847b2ba59324|ENPH]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_fb87fac302a5446a1ced|LAC]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
+| [[security-catalog#security-security_fe4648901e7675f157fd|ANIC.L]] | 2026-08-18 | 2026-08-18T15:34:02Z | ok | — |
+| [[securities/security_fe5539a7d3fd9d553bce|MSTR]] | 2026-08-17 | 2026-08-18T15:34:02Z | ok | — |
 
 ### Orders and executions
 
@@ -485,7 +474,7 @@ No pending orders.
 ### Curated YouTube discovery
 
 - Status: `succeeded`
-- Operations queued: `1`
+- Operations queued: `0`
 - Channel failures: `0`
 
 | Channel | Status | Discovered | Queued | Reason |
@@ -495,7 +484,7 @@ No pending orders.
 | @ConnectingODots | succeeded | 0 | 0 | — |
 | @DumbMoneyLive | succeeded | 0 | 0 | — |
 | @CouchInvestor | succeeded | 0 | 0 | — |
-| @Value-Investing | succeeded | 1 | 1 | — |
+| @Value-Investing | succeeded | 0 | 0 | — |
 
 
 ### Seeking Alpha search-index leads
@@ -516,6 +505,7 @@ No pending orders.
 | [[daily-reports/daily-report_20260818|Daily podcast for Daily report for 2026-08-18 on 2026-08-18]] | [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]] | skipped | no audience relevant accepted research |
 | [[daily-reports/daily-report_20260818|Daily podcast for Daily report for 2026-08-18 on 2026-08-18]] | [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]] | skipped | no audience relevant accepted research |
 | [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]] | [[securities/security_7ca095d63423c55a90e3|RKLB]] | failed | retry exhausted:agent validation failed:Hermes operation validation failed: Quick check research for RKLB on 2026-08-18 |
+| [[daily-reports/daily-report_20260818|Daily podcast for Daily report for 2026-08-18 on 2026-08-18]] | [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]] | skipped | no audience relevant accepted research |
 
 ### Complete active queue
 
@@ -857,6 +847,7 @@ No pending orders.
 - Ready — [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-18]]
 - Ready — [[securities/security_61567714298b9563d1a9|Security research for WTI on 2026-08-18]]
 - Ready — [Wiki ingest for www.youtube.com on 2026-08-18](https://www.youtube.com/watch?v=JaKyvaKzEnc)
+- Ready — [[securities/security_7ca095d63423c55a90e3|Security research for RKLB on 2026-08-18]]
 
 ### Open issues and delivery failures
 
@@ -906,6 +897,7 @@ No pending orders.
 - Warning — [[system-status|Daily preparation degraded: TSLA]]: TSLA: price cache is empty
 - Error — [[system-status|Hermes operation validation failed: Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]: commands\_run does not exactly match deterministic CLI audit receipts
 - Error — [[system-status|Hermes operation validation failed: Quick check research for SPOT on 2026-08-16]]: commands\_run does not exactly match deterministic CLI audit receipts
+- Warning — [[system-status|Daily podcast skipped: Daily report for 2026-08-18]]: Skipped the daily podcast because the frozen context window after the previous successful podcast contains no accepted research developments and therefore no audience-relevant accepted research to narrate. The five entries in the window are unresolved failed-research gaps only. No transcript or report link was created, and the draft renderer was not invoked.
 - Error — [[system-status|Assessment source operation is ambiguous within one run]]: The required schema-v2 assessment for PWR could not be written. The deterministic assessment applier found both predecessor quick\_check\_research Quick check research for PWR on 2026-08-03 and current security\_research Security research for PWR on 2026-08-03 claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope…
 - Warning — [[system-status|Daily preparation degraded: VALE]]: VALE: price cache is empty
 - Error — [[system-status|Hermes operation validation failed: Security research for RIO on 2026-08-05]]: Hermes exited with status 2; agent result is missing or a symlink: data/runs/Daily report for 2026-08-05/Security research for RIO on 2026-08-05/agent\_result.json
