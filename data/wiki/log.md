@@ -3952,3 +3952,8 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_cd2f6e41ccc7800a3de7`.
 
 - Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T133603Z`.
+
+- Completed weekly native `llm-wiki` maintenance for `wiki-maintenance:2026-W34`: inspected all 454
+  maintained Markdown pages and the raw-source inventory, confirmed zero deterministic wiki-lint
+  errors and no catalog omissions, and retained overdue-review, weak-confidence, and page-size
+  findings in the bounded maintenance report without changing sourced investment conclusions.

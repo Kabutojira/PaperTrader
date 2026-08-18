@@ -1,0 +1,60 @@
+{
+  "changed_paths": [
+    "data/runs/daily-20260818T150041Z/wiki-maintenance/wiki_maintenance_report.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-08-18T15:06:33Z",
+  "dry_run": false,
+  "followup_disposition": "report_only",
+  "hermes_run_path": "data/runs/daily-20260818T150041Z/wiki-maintenance/wiki_maintenance_run.json",
+  "iso_week": 34,
+  "iso_year": 2026,
+  "lease_expires_at": "",
+  "loaded_skills": [
+    "llm-wiki"
+  ],
+  "maintenance_identity": "wiki-maintenance:2026-W34",
+  "model": "gpt-5.6-sol",
+  "native_skill": {
+    "name": "llm-wiki",
+    "relative_path": "skills/research/llm-wiki/SKILL.md",
+    "sha256": "a37ae04745b04b8e9bbd8de37cdcbc2b2187ccafb68418e436a46ebb1e491ee5",
+    "version": "2.1.0"
+  },
+  "preflight_path": "data/runs/daily-20260818T150041Z/wiki-maintenance/wiki_maintenance_preflight.json",
+  "prompt_path": "data/runs/daily-20260818T150041Z/wiki-maintenance/wiki_maintenance_prompt.md",
+  "provider": "openai-codex",
+  "reason": "maintenance_completed",
+  "report_path": "data/runs/daily-20260818T150041Z/wiki-maintenance/wiki_maintenance_report.md",
+  "report_sha256": "bc3e664d7b618a5da4992cf9e6e1f264bc0ff28a250d597243e92e3455471abd",
+  "run_id": "daily-20260818T150041Z",
+  "started_at": "2026-08-18T15:00:42Z",
+  "status": "succeeded",
+  "toolsets": [
+    "file",
+    "terminal"
+  ],
+  "validation": [
+    {
+      "command": "uv run papertrader schema validate --strict",
+      "errors": [],
+      "passed": true
+    },
+    {
+      "command": "uv run papertrader integrity --strict",
+      "errors": [],
+      "passed": true
+    },
+    {
+      "command": "uv run papertrader wiki lint --strict",
+      "errors": [],
+      "passed": true
+    },
+    {
+      "command": "uv run papertrader advice validate --strict",
+      "errors": [],
+      "passed": true
+    }
+  ],
+  "wiki_maintenance_result_version": 1
+}
