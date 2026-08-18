@@ -1,0 +1,25 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260818T150041Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json"
+  ],
+  "effective_model": "gpt-5.6-luna",
+  "errors": [
+    "commands_run claims commands without deterministic CLI audit receipts: ['scripts/papertrader research assessment upsert --request data/runs/daily-20260818T150041Z/01KZQX922RR422CPWVFP4APXBZ/assessment_upsert_request.json', 'scripts/papertrader research security-context --security-id security_7ca095d63423c55a90e3']"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 32,
+  "mutation_policy": "triage_only",
+  "operation_id": "01KZQX922RR422CPWVFP4APXBZ",
+  "passed": false,
+  "profile": "scout",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "low",
+  "route_reason": "bounded_triage_or_quick_check",
+  "run_id": "daily-20260818T150041Z",
+  "timeout_seconds": 600,
+  "validation_version": 1,
+  "weighted_cost": "1"
+}
