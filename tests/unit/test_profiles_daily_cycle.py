@@ -32,6 +32,10 @@ def test_profile_router_is_deterministic_and_promotes_sensitive_work() -> None:
     assert route_profile("source_discovery", RoutingContext()).profile == "scout"
     assert route_profile("wiki_ingest", RoutingContext()).profile == "analyst"
     assert route_profile("security_research", RoutingContext()).profile == "deep"
+    quick_check = route_profile("quick_check_research", RoutingContext())
+    assert quick_check.profile == "deep"
+    assert quick_check.route_reason == "assessment_capable_quick_check"
+    assert profile_command_allowed(quick_check.profile, ("research", "assessment", "upsert"))
     promoted = route_profile("quick_check_research", RoutingContext(current_holding=True))
     assert promoted.profile == "deep"
     assert promoted.route_reason == "portfolio_sensitive_conclusion"

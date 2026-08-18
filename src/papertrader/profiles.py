@@ -91,8 +91,12 @@ def route_profile(
         forced = next((value for condition, value in deep_reasons if condition), "")
         if forced:
             selected, reason = "deep", forced
-        elif operation_type in {"source_discovery", "quick_check_research"}:
+        elif operation_type == "source_discovery":
             selected, reason = "scout", "bounded_triage_or_quick_check"
+        elif operation_type == "quick_check_research":
+            # A quick check may need to publish a comparable assessment in the same
+            # operation. Only the deep profile has that deterministic command authority.
+            selected, reason = "deep", "assessment_capable_quick_check"
         elif operation_type in {
             "wiki_ingest",
             "opportunity_research",
