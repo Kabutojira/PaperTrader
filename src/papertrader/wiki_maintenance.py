@@ -170,6 +170,39 @@ def _deduplicated_reason(repository_root: Path, *, identity: str, instant: datet
     return None
 
 
+def _retained_attempt_outcome(
+    repository_root: Path, *, run_id: str
+) -> WikiMaintenanceOutcome | None:
+    result_path = repository_root / "data" / "runs" / run_id / MAINTENANCE_DIRECTORY / RESULT_NAME
+    if not result_path.exists():
+        return None
+    if result_path.is_symlink() or not result_path.is_file():
+        raise WikiMaintenanceError("retained wiki-maintenance result must be a regular file")
+    try:
+        result = json.loads(result_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise WikiMaintenanceError(f"cannot read retained wiki-maintenance result: {exc}") from exc
+    if not isinstance(result, dict) or result.get("run_id") != run_id:
+        raise WikiMaintenanceError("retained wiki-maintenance result identity is invalid")
+    retained_identity = result.get("maintenance_identity")
+    if not isinstance(retained_identity, str):
+        raise WikiMaintenanceError("retained wiki-maintenance identity is invalid")
+    status = result.get("status")
+    if status not in {"dry_run", "failed", "running", "succeeded"}:
+        raise WikiMaintenanceError("retained wiki-maintenance result status is invalid")
+    report_path = result.get("report_path", "")
+    if not isinstance(report_path, str):
+        raise WikiMaintenanceError("retained wiki-maintenance report path is invalid")
+    return WikiMaintenanceOutcome(
+        retained_identity,
+        run_id,
+        "skipped",
+        f"retained_{status}_attempt",
+        report_path,
+        result_path.relative_to(repository_root).as_posix(),
+    )
+
+
 def build_wiki_maintenance_prompt(
     *,
     run_id: str,
@@ -360,6 +393,44 @@ def _validate_report(
     return errors
 
 
+def _canonicalize_report_contract(
+    report_path: Path,
+    *,
+    identity: str,
+    execution_date: str,
+    native_version: str,
+    native_sha256: str,
+) -> None:
+    """Own immutable report metadata while preserving the agent-authored findings."""
+
+    if report_path.is_symlink() or not report_path.is_file():
+        return
+    text = report_path.read_text(encoding="utf-8")
+    markers = tuple(f"\n{heading}\n" for heading in REQUIRED_REPORT_HEADINGS)
+    if any(text.count(marker) != 1 for marker in markers):
+        return
+    positions = tuple(text.index(marker) for marker in markers)
+    if positions != tuple(sorted(positions)):
+        return
+    replacements = (
+        (
+            0,
+            f"- maintenance identity: {identity}\n- execution date: {execution_date}",
+        ),
+        (
+            1,
+            f"- native llm-wiki version: {native_version}\n"
+            f"- native llm-wiki sha256: {native_sha256}",
+        ),
+        (len(markers) - 1, "Pending deterministic controller validation."),
+    )
+    for index, body in reversed(replacements):
+        start = positions[index] + len(markers[index])
+        end = positions[index + 1] if index + 1 < len(markers) else len(text)
+        text = f"{text[:start]}\n{body}\n{text[end:]}"
+    atomic_write_text(report_path, text.rstrip() + "\n", allowed_root=report_path.parents[3])
+
+
 def _validation_checks(repository_root: Path) -> tuple[ValidationCheck, ...]:
     checks: list[ValidationCheck] = []
     functions: tuple[tuple[str, Callable[[], list[str]]], ...] = (
@@ -489,6 +560,9 @@ def maintain_wiki(
     duplicate_reason = _deduplicated_reason(root, identity=identity, instant=started)
     if duplicate_reason is not None:
         return WikiMaintenanceOutcome(identity, run_id, "skipped", duplicate_reason, "", "")
+    retained_outcome = _retained_attempt_outcome(root, run_id=run_id)
+    if retained_outcome is not None:
+        return retained_outcome
 
     artifact_directory = _artifact_directory(root, run_id)
     report_path = artifact_directory / REPORT_NAME
@@ -628,6 +702,14 @@ def maintain_wiki(
         completed = subprocess.CompletedProcess(command, 126, "", "")
         execution_errors.append(f"Hermes invocation failed: {exc}")
     exited_at = ensure_utc(now()).replace(microsecond=0)
+    if completed.returncode == 0:
+        _canonicalize_report_contract(
+            report_path,
+            identity=identity,
+            execution_date=execution_date,
+            native_version=preflight.native_skill.version,
+            native_sha256=preflight.native_skill.sha256,
+        )
     after = snapshot_repository(root)
     delta = compare_snapshots(before, after)
     if completed.returncode != 0:

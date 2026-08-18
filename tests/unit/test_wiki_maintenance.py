@@ -104,10 +104,18 @@ def test_native_only_maintenance_records_report_result_and_exact_command(
             / "wiki-maintenance"
             / "wiki_maintenance_report.md"
         )
-        report.write_text(
-            _report("wiki-maintenance:2026-W31", "2.1.0", native_sha256),
-            encoding="utf-8",
+        noncanonical = (
+            _report("wiki-maintenance:2026-W31", "2.1.0", native_sha256)
+            .replace("- maintenance identity:", "- Maintenance identity:")
+            .replace("- execution date:", "- Execution date:")
+            .replace("- native llm-wiki version:", "- Native llm-wiki version:")
+            .replace("- native llm-wiki sha256:", "- Native llm-wiki sha256:")
+            .replace(
+                REPORT_VALIDATION_PLACEHOLDER,
+                "## Exact validation results\nPending deterministic controller validation.",
+            )
         )
+        report.write_text(noncanonical, encoding="utf-8")
         return subprocess.CompletedProcess(command, 0, "complete", "")
 
     outcome = maintain_wiki(
@@ -150,6 +158,8 @@ def test_native_only_maintenance_records_report_result_and_exact_command(
     assert [check["command"] for check in result["validation"]] == list(VALIDATION_COMMANDS)
     finalized_report = (sandbox_repository / outcome.report_path).read_text(encoding="utf-8")
     assert "Pending deterministic controller validation." not in finalized_report
+    assert "- maintenance identity: wiki-maintenance:2026-W31" in finalized_report
+    assert "- native llm-wiki version: 2.1.0" in finalized_report
     assert finalized_report.count("— PASSED") == 4
     assert validate_json_schemas(sandbox_repository) == []
     assert validate_wiki_maintenance_artifacts(sandbox_repository) == []
@@ -264,6 +274,18 @@ def test_forbidden_raw_source_change_fails_and_retains_machine_result(
             executor=execute,
             now=lambda: NOW,
         )
+
+    retained = maintain_wiki(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="maintenance-forbidden",
+        hermes_home=tmp_path / "missing-profile",
+        environment={"PATH": "/usr/bin"},
+        executor=lambda *args: (_ for _ in ()).throw(AssertionError("executor called")),
+        now=lambda: NOW,
+    )
+    assert retained.status == "skipped"
+    assert retained.reason == "retained_failed_attempt"
 
     result = json.loads(
         (
