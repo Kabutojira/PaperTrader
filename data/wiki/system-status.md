@@ -7,14 +7,14 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cd2f6e41ccc7800a3de7"
-as_of: "2026-08-18T13:39:28Z"
+snapshot_id: "decision_db4ffd062b7b1f969b5f"
+as_of: "2026-08-18T15:10:05Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-18T13:39:28Z`
-**Investment data:** Blocked — current exposure cannot be projected safely
+**As of:** `2026-08-18T15:10:05Z`
+**Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
@@ -35,10 +35,6 @@ as_of: "2026-08-18T13:39:28Z"
 
 ## Current issues by investment impact
 
-### Blocks Portfolio
-
-- Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-11]]** — commands_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader integrity --strict', 'scripts/papertrader portfolio reconcile --strict', 'scripts/papertrader queue validate', 'scripts/papertrader research security-context --security-id [[securities/security_7ca095d63423c55a90e3|RKLB]]', 'scripts/papertrader wiki lint --strict'\]
-
 ### Blocks Action
 
 - Error **RXRX — Recursion Pharmaceuticals, Inc.: Recursion full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_ed7d5b616a196969c815|RXRX]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-12]] and current security_research operation [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260812|Daily report for 2026-08-12]] and cannot select a unique source operation. Current Q2 SEC and ClinicalTrials.gov evidence supports active development but cannot bound a risk-adjusted NPV.
@@ -54,6 +50,7 @@ as_of: "2026-08-18T13:39:28Z"
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_0cf8075039299094d614|Quick check research for KTOS on 2026-08-12]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **LUNR — Intuitive Machines, Inc.: Intuitive Machines assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_a5dc16f3f4b245e6c168|LUNR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_a5dc16f3f4b245e6c168|Quick check research for LUNR on 2026-08-08]] and current security_research [[securities/security_a5dc16f3f4b245e6c168|Security research for LUNR on 2026-08-08]] claimed by run [[daily-reports/daily-report_20260808|Daily report for 2026-08-08]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
+- Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]** — commands_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/[[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]/[[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]/assessment_upsert_request.json', 'scripts/papertrader research security-context --security-id [[securities/security_7ca095d63423c55a90e3|RKLB]]'\]
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
@@ -139,6 +136,7 @@ as_of: "2026-08-18T13:39:28Z"
 
 ### Publication Only
 
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.

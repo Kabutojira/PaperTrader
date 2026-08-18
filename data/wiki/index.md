@@ -7,21 +7,22 @@ tags:
 created: "2026-08-18"
 updated: "2026-08-18"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cd2f6e41ccc7800a3de7"
-as_of: "2026-08-18T13:39:28Z"
+snapshot_id: "decision_db4ffd062b7b1f969b5f"
+as_of: "2026-08-18T15:10:05Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-18T13:39:28Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-08-18T15:10:05Z` · Investment data: Degraded — review investment data gaps · Operations: Blocked**
 
-## Decision blocked — do not copy actions
+## No trade — hold 100% cash
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>66/70</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="hold_cash"><span class="decision-card-label">Stance</span><strong>No trade — hold 100% cash</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>66/70</strong></article></section>
 
 ### Why
 
-- An open operational issue blocks safe portfolio publication.
+- The reconciled model portfolio is entirely cash.
+- No strategy has produced a current actionable trade signal.
 
 ## Current and target portfolio
 

@@ -3957,3 +3957,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
   maintained Markdown pages and the raw-source inventory, confirmed zero deterministic wiki-lint
   errors and no catalog omissions, and retained overdue-review, weak-confidence, and page-size
   findings in the bounded maintenance report without changing sourced investment conclusions.
+
+- Published investor decision snapshot `decision_db4ffd062b7b1f969b5f`.
+
+- Generated canonical [[daily-reports/daily-report_20260818]] for run `daily-20260818T150041Z`.
