@@ -127,6 +127,6 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_ed85ad36a02af2fdfc33** — Daily preparation degraded: security_567d0d575bbd30aaa91d | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_f03fc3c41012d374fea9** — Daily podcast skipped: daily-20260818T123230Z | 2026-08-18T12:48:43Z | delivery | 01M0AECMRGZM8V7BR8Q8QN78SX |
 | warning | **issue_f320e056b26d54014584** — Daily preparation degraded: security_a9eb9838940ef5ceaa0c | 2026-07-29T16:51:20Z | deterministic-controller |  |
-| warning | **issue_f9849560e317bb03afe4** — Telegram podcast audio delivery unavailable | 2026-08-17T22:26:40Z | delivery |  |
+| warning | **issue_f9849560e317bb03afe4** — Telegram podcast audio delivery unavailable | 2026-08-18T21:18:31Z | delivery |  |
 | warning | **issue_fc3830c067fcea6132aa** — Daily preparation degraded: security_55c9ce2fdcd32dad6b8c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_fe482d25304c03ce4d28** — Daily preparation degraded: security_33d9c44facc75c726c7d | 2026-07-29T16:51:20Z | deterministic-controller |  |
