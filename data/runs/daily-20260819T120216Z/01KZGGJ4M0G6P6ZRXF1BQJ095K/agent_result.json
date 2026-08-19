@@ -1,0 +1,108 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_cd492d97064d8574156e",
+    "papertrader research source record --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_sec_submissions_20260819_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/enqueue_full_research_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/enqueue_full_research_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v4.json",
+    "papertrader research security-context --security-id security_cd492d97064d8574156e",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "MP Materials quick check completed: Q2 production, sales and customer evidence support the vertical-integration thesis, but liquidity fell to USD 1.453 billion and the USD 56.67 mark is above the USD 42 base and USD 44.75 weighted values. The accepted assessment is Sell / Avoid and allocation-ineligible; exactly one dependent full Q2 review was queued. No paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "MP Materials reported Q2 NdPr production of 840 metric tons, NdPr sales of 1,006 metric tons, USD 108.5 million of consolidated revenue, USD 17.6 million of price-protection income, USD 28.5 million of adjusted EBITDA and a USD 20.3 million GAAP net loss; it also disclosed a new long-term gadolinium customer and continuing Independence qualification deliveries.",
+      "observed_at": "2026-08-19T12:12:53Z",
+      "source": "source_mp_q2_2026_results",
+      "source_hash": "e70e3f1cb910353ee20b80d6efa1344b5f67c2952014fb85f30b12893a144546",
+      "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000047/mpmcq22026er.htm"
+    },
+    {
+      "claim": "The Q2 Form 10-Q reports USD 1.453 billion of cash, cash equivalents and short-term investments at June 30 and 178.1 million common shares outstanding at July 31, updating the liquidity, capital-investment and dilution evidence required for valuation.",
+      "observed_at": "2026-08-19T12:12:53Z",
+      "source": "source_mp_q2_2026_10q",
+      "source_hash": "24a8ac5fa3804296fdd2c5ce1c8862a386565da7a7e4fb6329b02b426608a677",
+      "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+    },
+    {
+      "claim": "The current SEC submissions index confirms that the August 6 results Form 8-K and August 7 Form 10-Q are the latest issuer operating filings through this check.",
+      "observed_at": "2026-08-19T12:12:53Z",
+      "source": "source_mp_sec_submissions_20260819",
+      "source_hash": "d5e6f17bb1a24e7f82717f12eb30b3671d60b5d0f385c151da7079eb1b26f7d9",
+      "url": "https://data.sec.gov/submissions/CIK0001801368.json"
+    },
+    {
+      "claim": "The payload binds the July 10-August 7 volume-anomaly period and source-price hash 8247c31707aad65d91137b196b644e0e5879f12d98b089ef8e1c5f044c3c0853. The alert-period close was USD 51.11 after a 2.11% decline; the fresh August 18 close was USD 56.67 on 4.7 million shares with no active trigger, showing a results-linked repricing rather than a reached buy zone.",
+      "observed_at": "2026-08-19T12:02:23Z",
+      "source": "PaperTrader deterministic market and indicator caches",
+      "source_hash": "8247c31707aad65d91137b196b644e0e5879f12d98b089ef8e1c5f044c3c0853"
+    },
+    {
+      "claim": "The sole immutable schema-v2 assessment sourced from this operation links predecessor assessment_93a60c605666d4019f13, current page hash 4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735, the fresh USD mark and FX state, and all five retained sources. Deterministic normalization derives quality score 72, Sell / Avoid, USD 44.75 weighted fair value, -21.03% expected return and allocation ineligibility.",
+      "observed_at": "2026-08-19T12:19:27Z",
+      "source": "assessment_9409f60673dc70257720"
+    },
+    {
+      "claim": "Exactly one dependent full security review carries this quick-check identity, successful baseline identity, the volume-anomaly cause, exact market period and source-price hash, the Q2 changed gate and full_research_requested=true.",
+      "source": "data/operations/payloads/01M0CZ8BD03F2P6FPWQ5YD26GG.json"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0CZ8BD03F2P6FPWQ5YD26GG.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/enqueue_full_research_request.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/enqueue_full_research_request_v2.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/security_upsert_request.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_q2_2026_10q_request.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_q2_2026_results_request.json",
+    "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_sec_submissions_20260819_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_cd492d97064d8574156e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZGGJ4M0G6P6ZRXF1BQJ095K",
+  "operations_created": [
+    "01M0CZ8BD03F2P6FPWQ5YD26GG"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded MP Materials quick check for the August 7 volume anomaly. Current primary evidence supersedes the Q1 baseline: Q2 NdPr production was 840 metric tons, NdPr sales were 1,006 metric tons, consolidated revenue was USD 108.5 million, price-protection income was USD 17.6 million and adjusted EBITDA was USD 28.5 million, while GAAP net loss remained USD 20.3 million and cash, cash equivalents and short-term investments fell to USD 1.453 billion. The alert coincided with the Q2 release and Form 10-Q, then normalized as the mark rose to USD 56.67. Retaining the bounded USD 20/USD 42/USD 75 scenarios produces a deterministic Sell / Avoid assessment with USD 44.75 weighted fair value and USD 33.60 buy-below price. Exactly one dependent full Q2 security review, 01M0CZ8BD03F2P6FPWQ5YD26GG, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory audited security-context before assessment-state reads and confirmed baseline operation 01KYPB2PK0R0ZXAHGNGZ6X5FM8 succeeded for the same immutable MP/XNYS/USD/equity identity within ten days at enqueue time.",
+      "Verified the exact volume-anomaly cause, July 10-August 7 period, market date and canonical source-price hash; used the August 18 cache row only for the fresh current assessment.",
+      "Fetched and hashed the current Q2 results exhibit, Q2 Form 10-Q and SEC submissions index; all three source records were accepted through the project CLI and no source body was committed.",
+      "Confirmed assessment assessment_9409f60673dc70257720 is the sole immutable schema-v2 version for this operation, links predecessor assessment_93a60c605666d4019f13 and expected result path, matches page hash 4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735, and has run_id daily-20260819T120216Z.",
+      "Confirmed the Q2 evidence materially supersedes the Q1 production, liquidity, share-count and valuation inputs; full_research_requested=true and the changed gate produced exactly one dependent full review, 01M0CZ8BD03F2P6FPWQ5YD26GG.",
+      "One immutable enqueue request was rejected without state changes because an empty idea_ids array violated the payload schema; the uniquely named corrected request was accepted.",
+      "Three immutable assessment requests were rejected without state changes for a template-method mismatch, stale mark timestamp and non-canonical soft gaps; the fourth uniquely named corrected request was accepted.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, performance, accounting ledger, raw source or other security page changed."
+    ],
+    "passed": true
+  }
+}

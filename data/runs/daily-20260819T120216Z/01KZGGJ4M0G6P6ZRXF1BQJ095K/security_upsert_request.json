@@ -1,0 +1,23 @@
+{
+  "security_id": "security_cd492d97064d8574156e",
+  "issuer_id": "issuer_f55643c93c8d6d38a0f8",
+  "company_name": "MP Materials Corp.",
+  "instrument_name": "MP Materials Corp. common stock",
+  "instrument_type": "equity",
+  "ticker": "MP",
+  "exchange_code": "NYSE",
+  "venue_mic": "XNYS",
+  "provider_symbol": "MP",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Materials",
+  "industry": "Specialty Chemicals",
+  "status": "watching",
+  "watchlist_reason": "U.S. rare-earth vertical integration with government-backed price support; Q2 evidence and results-linked volume require a full valuation refresh.",
+  "research_summary": "Q2 execution supports the thesis, but lower liquidity and a USD 56.67 mark above base and weighted values retain a cash preference pending full review.",
+  "research_page": "data/wiki/securities/security_cd492d97064d8574156e.md",
+  "last_research_at": "2026-08-19T12:12:53Z",
+  "next_review_at": "2026-08-26T12:12:53Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+}

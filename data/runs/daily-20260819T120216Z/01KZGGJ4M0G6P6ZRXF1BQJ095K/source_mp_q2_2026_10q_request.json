@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mp_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "MP Materials Corp. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "24a8ac5fa3804296fdd2c5ce1c8862a386565da7a7e4fb6329b02b426608a677",
+  "related_entity_ids": "security_cd492d97064d8574156e",
+  "checked_at": "2026-08-19T12:12:53Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30, cash, cash equivalents and short-term investments were USD 1.453 billion; 178.1 million common shares were outstanding at July 31.",
+  "summary": "The Q2 filing updates liquidity, dilution, operating cash flow, capital investment and execution risks after the Q1 baseline.",
+  "run_id": "daily-20260819T120216Z"
+}

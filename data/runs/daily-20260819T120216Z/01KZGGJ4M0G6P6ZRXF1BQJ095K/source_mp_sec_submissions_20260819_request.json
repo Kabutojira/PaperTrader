@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mp_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001801368.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001801368.json",
+  "source_type": "regulator_index",
+  "title": "MP Materials SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "d5e6f17bb1a24e7f82717f12eb30b3671d60b5d0f385c151da7079eb1b26f7d9",
+  "related_entity_ids": "security_cd492d97064d8574156e",
+  "checked_at": "2026-08-19T12:12:53Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest operating filings are the August 6 results Form 8-K and August 7 Form 10-Q for the quarter ended June 30, 2026.",
+  "summary": "The current regulator index confirms that Q2 evidence supersedes the retained Q1 baseline and identifies no later operating filing through this check.",
+  "run_id": "daily-20260819T120216Z"
+}

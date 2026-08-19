@@ -4076,3 +4076,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   USD 491 scenarios and USD 293 weighted value retain Sell / Avoid and allocation ineligibility;
   exactly one dependent Terafab idea refresh is required, while no strategy or paper signal is
   justified.
+
+## [2026-08-19T12:12:53Z] update | MP Materials Q2 quick check
+
+- Rechecked [[securities/security_cd492d97064d8574156e|MP Materials]] against the exact 10 July
+  through 7 August volume-anomaly period, current market state, the Q2 Form 10-Q and SEC-hosted
+  results. Q2 revenue, NdPr sales, customer diversification and qualification progress support the
+  vertical-integration thesis, while lower cash, continuing losses, start-up costs and dilution
+  retain its risks. The USD 56.67 current mark is above the USD 42 base and USD 44.75 weighted
+  values, and the USD 33.60 buy zone remains unreached. MP stays a cash-preference watch pending
+  exactly one dependent full Q2 review; no strategy, signal, order, allocation or accounting state
+  changed.

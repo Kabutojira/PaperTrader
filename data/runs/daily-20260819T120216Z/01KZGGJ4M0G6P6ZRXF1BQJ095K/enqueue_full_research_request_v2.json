@@ -1,0 +1,44 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_cd492d97064d8574156e",
+  "dedupe_key": "security_research:security_cd492d97064d8574156e:quick-check-q2-results:2026-08-19",
+  "prompt": "Fully reassess MP Materials after Q2 operating and balance-sheet evidence superseded the Q1 baseline during a results-linked volume anomaly and post-results repricing.",
+  "inputs": {
+    "security_id": "security_cd492d97064d8574156e",
+    "quick_check_operation_id": "01KZGGJ4M0G6P6ZRXF1BQJ095K",
+    "baseline_operation_id": "01KYPB2PK0R0ZXAHGNGZ6X5FM8",
+    "changed_gate": "q2_results_superseded_q1_operating_liquidity_and_valuation_inputs",
+    "full_research_requested": true,
+    "trigger_types": ["volume_anomaly"],
+    "market_data_date": "2026-08-07",
+    "market_data_as_of": "2026-08-19T09:08:06Z",
+    "period_start": "2026-07-10",
+    "period_end": "2026-08-07",
+    "source_price_hash": "8247c31707aad65d91137b196b644e0e5879f12d98b089ef8e1c5f044c3c0853",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly_entered_during_q2_results_and_form_10q_release_period",
+        "source_ref": "data/wiki/inbox/market-security_cd492d97064d8574156e-volume_anomaly-b2fb3b93d625.md"
+      },
+      {
+        "cause": "q2_results_superseded_q1_production_liquidity_share_count_and_valuation_inputs",
+        "source_ref": "source_mp_q2_2026_results|source_mp_q2_2026_10q|source_mp_sec_submissions_20260819"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZGGJ4M0G6P6ZRXF1BQJ095K",
+  "priority": 99,
+  "freshness_days": 0,
+  "depends_on": ["01KZGGJ4M0G6P6ZRXF1BQJ095K"],
+  "not_before": "now",
+  "deadline": "2026-08-26T12:12:53Z",
+  "source_refs": [
+    "data/operations/payloads/01KZGGJ4M0G6P6ZRXF1BQJ095K.json",
+    "data/wiki/inbox/market-security_cd492d97064d8574156e-volume_anomaly-b2fb3b93d625.md",
+    "source_mp_q2_2026_results",
+    "source_mp_q2_2026_10q",
+    "source_mp_sec_submissions_20260819"
+  ],
+  "max_attempts": 3
+}
