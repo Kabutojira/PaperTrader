@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c7fc443f7bfe6fda39d2"
-as_of: "2026-08-19T13:53:52Z"
+snapshot_id: "decision_e3c35b7aa889696735bc"
+as_of: "2026-08-19T15:59:54Z"
 ---
 
 # Signals
 
-**As of `2026-08-19T13:53:52Z`**
+**As of `2026-08-19T15:59:54Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one repeat FANUC security review for the 19 August volume anomaly. Re-fetched the two retained first-quarter issuer PDFs and confirmed unchanged hashes. The Frankfurt line fell 9.028918% over 22 July through 19 August while alert-day volume reached only 1,355 shares, so the anomaly is classified as thin-market risk rather than a verified fundamental opportunity. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios at 25%/50%/25% produce EUR 36.3775 weighted fair value against the EUR 33.349998474121094 mark. Assessment assessment\_4e73de2ff48e5f482190 derives 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, Hold / Watch, and allocation ineligibility. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, accounting, idea, relationship, or follow-up operation changed.
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -88,6 +97,15 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
+### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
 ### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
 
 **Research alert — not a trade signal**
@@ -107,15 +125,6 @@ No pending orders.
 - Conclusion: bearish\_alert\_unowned
 
 ### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
 
 **Research alert — not a trade signal**
 

@@ -4083,6 +4083,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_below_signal-013189deb4ef]] (013189deb4ef).
 
+- Published investor decision snapshot `decision_e3c35b7aa889696735bc`.
+
+- Generated canonical [[daily-reports/daily-report_20260819]] for run `daily-20260819T153048Z`.
+
 ## [2026-08-19T12:05:12Z] update | Tesla comparable assessment completion
 
 - Revalidated the completed [[securities/security_dc7a111e297be528d96b|Tesla]] sum-of-parts review

@@ -7,8 +7,8 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c7fc443f7bfe6fda39d2"
-as_of: "2026-08-19T13:53:52Z"
+snapshot_id: "decision_e3c35b7aa889696735bc"
+as_of: "2026-08-19T15:59:54Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **135**
+- Immutable assessment versions: **137**
 - Securities with retained revisions: **70**
 
 ## Candidate
@@ -105,6 +105,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [FLNC — Volume anomaly](inbox/market-security_a9eb9838940ef5ceaa0c-volume_anomaly-a2e1b1a4c9f0)
 - [FUC.F — MACD cross above signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502)
 - [FUC.F — MACD cross below signal](inbox/market-security_96ba305ee7cd586bc348-macd_cross_below_signal-e8a3ef9b6ba8)
+- [FUC.F — Volume anomaly](inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56)
 - [GEV — Bollinger below lower](inbox/market-security_4b61970aa8f574446819-bollinger_below_lower-9c7be5f40cd0)
 - [GEV — MACD cross above signal](inbox/market-security_4b61970aa8f574446819-macd_cross_above_signal-3c258166f023)
 - [GOOGL — MACD cross above signal](inbox/market-security_c86bb4e75658c07142cf-macd_cross_above_signal-e7c32a666d8b)
@@ -271,6 +272,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SU — Bollinger above upper](inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-15c4988e4d0d)
 - [SU — Bollinger above upper](inbox/market-security_dc8486c1d61df62a22fd-bollinger_above_upper-885d2463351c)
 - [SU — MACD cross above signal](inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb)
+- [SU — MACD cross below signal](inbox/market-security_dc8486c1d61df62a22fd-macd_cross_below_signal-013189deb4ef)
 - [SU — RSI overbought](inbox/market-security_dc8486c1d61df62a22fd-rsi_overbought-582f73bc089c)
 - [TDY — Bollinger above upper](inbox/market-security_ad5917642acbba28c1f2-bollinger_above_upper-959e5f3f4fab)
 - [TDY — MACD cross below signal](inbox/market-security_ad5917642acbba28c1f2-macd_cross_below_signal-846177f871ae)
@@ -393,6 +395,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Daily research podcast — 2026-08-18T231700Z](podcasts/daily-podcast_20260818T231700Z)
 - [Daily research podcast — 2026-08-19T090759Z](podcasts/daily-podcast_20260819T090759Z)
 - [Daily research podcast — 2026-08-19T120216Z](podcasts/daily-podcast_20260819T120216Z)
+- [Daily research podcast — 2026-08-19T133029Z](podcasts/daily-podcast_20260819T133029Z)
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
@@ -530,8 +533,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56|FUC.F — Volume anomaly]]
-- [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_below_signal-013189deb4ef|SU — MACD cross below signal]]

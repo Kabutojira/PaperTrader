@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c7fc443f7bfe6fda39d2"
-as_of: "2026-08-19T13:53:52Z"
+snapshot_id: "decision_e3c35b7aa889696735bc"
+as_of: "2026-08-19T15:59:54Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-19T13:53:52Z` · Investment data: Degraded — review investment data gaps · Operations: Blocked**
+**As of `2026-08-19T15:59:54Z` · Investment data: Degraded — review investment data gaps · Operations: Blocked**
 
 ## No trade — hold 100% cash
 
@@ -39,8 +39,8 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 ## Top assessed near misses
 
 - **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · Bear/base payoff is below threshold.
+- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · A supportable valuation is unavailable.
 - **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · Base-case return is below threshold.
-- **[TSM — Taiwan Semiconductor Manufacturing Company Limited](securities/security_ce9b78a4d0773c950765):** Hold / Watch · expected -9.42028985507246376811594203% · Base-case return is below threshold.
 
 ## Performance, risk, and coverage
 

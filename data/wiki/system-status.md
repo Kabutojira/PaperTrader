@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c7fc443f7bfe6fda39d2"
-as_of: "2026-08-19T13:53:52Z"
+snapshot_id: "decision_e3c35b7aa889696735bc"
+as_of: "2026-08-19T15:59:54Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-19T13:53:52Z`
+**As of:** `2026-08-19T15:59:54Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -22,7 +22,7 @@ as_of: "2026-08-19T13:53:52Z"
 ## Coverage
 
 - Assessments: 67/70
-- Fresh-evidence assessments: 67/70
+- Fresh-evidence assessments: 66/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-19T13:53:52Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 343
+- Research backlog: 345
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -39,6 +39,7 @@ as_of: "2026-08-19T13:53:52Z"
 
 - Error **RXRX — Recursion Pharmaceuticals, Inc.: Recursion full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_ed7d5b616a196969c815|RXRX]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-12]] and current security_research operation [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260812|Daily report for 2026-08-12]] and cannot select a unique source operation. Current Q2 SEC and ClinicalTrials.gov evidence supports active development but cannot bound a risk-adjusted NPV.
 - Error **MP — MP Materials Corp.: MP Materials full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_cd492d97064d8574156e|MP]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_cd492d97064d8574156e|Quick check research for MP on 2026-08-19]] and current security_research operation [[securities/security_cd492d97064d8574156e|Security research for MP on 2026-08-19]] claimed by run [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]] and cannot select a unique source operation. Current Q2 SEC evidence supports a full normalized-earnings rebuild, but the operation must fail closed without a
+- Error **ASML — ASML Holding N.V.: ASML full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_ef35e41886220d51c22c|ASML]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_ef35e41886220d51c22c|Quick check research for ASML on 2026-08-19]] and current security_research operation [[securities/security_ef35e41886220d51c22c|Security research for ASML on 2026-08-19]] claimed by run [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]] and cannot select a unique source operation. Current Q2 SEC evidence supports a scenario-complete mature-compounder assessment, but the operation must fail cl
 - Error **ISRG — Intuitive Surgical, Inc.: Intuitive Surgical full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_1f9cce545ede94cd6349|ISRG]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-11]] and the current security_research operation [[securities/security_1f9cce545ede94cd6349|Security research for ISRG on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed 25%/50%/25% earnings-multiple scenarios were USD 243.96/USD 336.59/USD 436.81 versus the US
 - Error **PLTR — Palantir Technologies Inc.: Palantir full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_bdc2f87dadf134760c3a|PLTR]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_bdc2f87dadf134760c3a|Quick check research for PLTR on 2026-08-11]] and the current security_research operation [[securities/security_bdc2f87dadf134760c3a|Security research for PLTR on 2026-08-11]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed scenario research could not be accepted without an immutable predecessor-linked assessment.
 
@@ -55,7 +56,7 @@ as_of: "2026-08-19T13:53:52Z"
 - Error **RKLB — Rocket Lab Corporation: Hermes operation validation failed: [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]** — commands_run claims commands without deterministic CLI audit receipts: \['scripts/papertrader research assessment upsert --request data/runs/[[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]/[[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-18]]/assessment_upsert_request.json', 'scripts/papertrader research security-context --security-id [[securities/security_7ca095d63423c55a90e3|RKLB]]'\]
 - Error **PWR — Quanta Services, Inc.: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_488a9d7f7a8573597724|PWR]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_488a9d7f7a8573597724|Quick check research for PWR on 2026-08-03]] and current security_research [[securities/security_488a9d7f7a8573597724|Security research for PWR on 2026-08-03]] claimed by run gha-30788518712-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
 - Error **Hermes operation validation failed: [[securities/security_7bf8f4c9cc12ae410e40|Security research for ABCL on 2026-08-07]]** — completed security research requires exactly one immutable assessment version
-- Error **Hermes operation validation failed: [[securities/security_ef35e41886220d51c22c|Quick check research for ASML on 2026-08-08]]** — repeat security research page requires a Changes since prior review section
+- Error **Hermes operation validation failed: [[securities/security_ef35e41886220d51c22c|Quick check research for ASML on 2026-08-19]]** — repeat security research page requires a Changes since prior review section
 - Error **Hermes operation validation failed: [[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]** — Hermes timed out after 600s; agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260809|Daily report for 2026-08-09]]/[[securities/security_66cdcf90aac0d83e76f3|Quick check research for ALB on 2026-08-09]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment
 - Error **Hermes operation validation failed: [[securities/security_dc7a111e297be528d96b|Quick check research for TSLA on 2026-08-19]]** — repeat security research page requires a Changes since prior review section
 - Error **CRWD — CrowdStrike Holdings, Inc.: CrowdStrike full assessment rejected by canonical market identity** — The required schema-v2 assessment for [[securities/security_8472507d7d320aa388a7|CRWD]] was rejected before any assessment state changed because immutable request assessment_upsert_request.json used reference price 123.87000274658203 and market timestamp 2026-08-10T22:29:57Z, while canonical data/market/latest.csv records adjusted close 225.16000366210938 retrieved at 2026-08-10T22:29:08Z. The operation contract forbids editing a used request or retrying a rejected project command, so this operation must fail close
@@ -177,7 +178,7 @@ as_of: "2026-08-19T13:53:52Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 343 active operations.
+Showing 20 of 345 active operations.
 
 <details><summary>Active research work</summary>
 
