@@ -1,0 +1,49 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T212147Z --script-path data/wiki/podcasts/daily-podcast_20260819T221156Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Daily podcast blocked because the controller-provided transcript timestamp does not match the deterministic daily-cycle timestamp; no transcript, report link, or audio was retained."
+  ],
+  "evidence": [
+    {
+      "claim": "The frozen operation payload declares page_path data/wiki/podcasts/daily-podcast_20260819T221156Z.md for daily cycle daily-20260819T212147Z.",
+      "source": "data/operations/payloads/01M0E1FGAGY3X26KS6GJA5WH3P.json"
+    },
+    {
+      "claim": "The audited validate-script command was dispatched once and exited with code two without changing repository paths because the podcast page path was not bound to the timestamped cycle.",
+      "source": "data/runs/daily-20260819T212147Z/01M0E1FGAGY3X26KS6GJA5WH3P/command_audit.json"
+    },
+    {
+      "claim": "Frozen context version three supplied three successful accepted research developments for Twist Bioscience, Ginkgo Bioworks, and Coinbase, plus a skipped Nidec operation and unresolved Recursion gaps.",
+      "source": "data/runs/daily-20260819T212147Z/podcast_context.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260819T212147Z/01M0E1FGAGY3X26KS6GJA5WH3P/candidate_slate.json",
+    "data/runs/daily-20260819T212147Z/01M0E1FGAGY3X26KS6GJA5WH3P/editorial_outline.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0E1FGAGY3X26KS6GJA5WH3P",
+  "operations_created": [],
+  "reason_code": "podcast_page_path_cycle_conflict",
+  "status": "blocked",
+  "summary": "Blocked because the frozen payload requires data/wiki/podcasts/daily-podcast_20260819T221156Z.md while the deterministic podcast validator binds daily cycle daily-20260819T212147Z to data/wiki/podcasts/daily-podcast_20260819T212147Z.md. The required page therefore failed deterministic preflight before rendering. The candidate slate selected Twist Bioscience and Ginkgo Bioworks for one synthetic-biology-economics chapter and Coinbase for one crypto-rails chapter; Nidec was excluded as a skipped, superseded alert and Recursion as an unresolved gap rather than accepted new research. The partial transcript was removed and the daily report restored exactly, so no transcript or audio reference remains. No render-draft attempt was made. Schema, integrity, wiki, and portfolio strict checks passed.",
+  "validation": {
+    "checks": [
+      "Frozen podcast context validation was controller-confirmed before the operation.",
+      "Podcast validate-script failed: the required page path timestamp 20260819T221156Z does not match daily-cycle timestamp 20260819T212147Z.",
+      "No render-draft command was invoked because deterministic script preflight did not pass.",
+      "Partial transcript removed and daily report restored; no persistent transcript or audio reference remains.",
+      "papertrader schema validate --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ],
+    "passed": false
+  }
+}

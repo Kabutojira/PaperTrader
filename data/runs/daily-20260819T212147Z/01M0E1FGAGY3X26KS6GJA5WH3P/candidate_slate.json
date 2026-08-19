@@ -1,0 +1,40 @@
+{
+  "context_version": 3,
+  "window_start_exclusive": "2026-08-19T13:49:55Z",
+  "window_end_inclusive": "2026-08-19T21:52:09Z",
+  "candidates": [
+    {
+      "operation_id": "01M08MMN46822HN405WE6B90Q0",
+      "security": "Twist Bioscience Corporation",
+      "decision": "selected",
+      "chapter": "synthetic biology economics",
+      "reason": "New financing and a newly disclosed protein-design evaluation create a useful contrast between technical validation, liquidity, and per-share valuation."
+    },
+    {
+      "operation_id": "01M08MMNNAG5BRB386G2GRK8G9",
+      "security": "Ginkgo Bioworks Holdings, Inc.",
+      "decision": "selected",
+      "chapter": "synthetic biology economics",
+      "reason": "The same market date provides a contrasting case where a stronger price signal does not repair negative base return or severe downside."
+    },
+    {
+      "operation_id": "01M08MMP2WYZCF7F4WXBDZXDM6",
+      "security": "Coinbase Global, Inc.",
+      "decision": "selected",
+      "chapter": "crypto rails versus cyclical economics",
+      "reason": "The unchanged filing and fresh momentum crossover frame the investor-relevant distinction between durable infrastructure potential and a price far above accepted value."
+    }
+  ],
+  "excluded": [
+    {
+      "operation_id": "01M0E1FGAGY3X26KS6GJA5WH3M",
+      "security": "Nidec Corporation Frankfurt ordinary shares",
+      "reason": "The operation was skipped because its alert source identity was superseded; unchanged issuer evidence and an unsupported valuation did not create an audience-relevant accepted development."
+    },
+    {
+      "security": "Recursion Pharmaceuticals, Inc.",
+      "reason": "The frozen context identifies an unresolved valuation and provenance gap, not a new successful research development in the podcast window."
+    }
+  ],
+  "novelty_review": "The immediately prior episode covered FANUC, ASML, chart interpretation, and market microstructure. Earlier supplied podcast references contain no substantive chapter on Twist, Ginkgo, or Coinbase in the accepted window, so the selected chapters advance distinct evidence rather than repeat prior narration."
+}

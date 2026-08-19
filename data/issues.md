@@ -99,6 +99,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_8063efca3ea5402f7588** — Daily preparation degraded: security_cc4dcb8f002b61dffe00 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_82988148270c1671878b** — Daily preparation degraded: security_ce9b78a4d0773c950765 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8839071e805e6a9f69c4** — Daily preparation degraded: security_eca976f0076a425ea1bb | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_88d45f46b2b74eec63bb** — Daily podcast blocked: daily-20260819T212147Z | 2026-08-19T22:22:23Z | delivery | 01M0E1FGAGY3X26KS6GJA5WH3P |
 | warning | **issue_8a44c0f8adb3d0d2fb86** — Daily preparation degraded: security_59304f90c440def31dc5 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8ada3995ac26a38446f5** — Daily preparation degraded: security_ef35e41886220d51c22c | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_8b0b68860313ad4f9bec** — Daily preparation degraded: security_f2b9760d847b2ba59324 | 2026-07-29T16:51:20Z | deterministic-controller |  |

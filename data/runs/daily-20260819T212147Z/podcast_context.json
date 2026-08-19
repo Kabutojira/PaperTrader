@@ -1,0 +1,428 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+      "sha256": "8a9dfb5180137f187eb83ac96445a6a9f05b0d04c7efd5b46160a9e63476158e"
+    },
+    {
+      "path": "data/wiki/ideas/idea_ai_infrastructure_power.md",
+      "sha256": "5fa3fc37d47b29ae8126ce6b7323ced601848e47f6342fc5a8e4386507a669be"
+    },
+    {
+      "path": "data/wiki/ideas/idea_ai_native_drug_discovery.md",
+      "sha256": "21e709c6d3f5e394d4f9d5de8d848b126f737a82ecfc9af97928bb5c8b05ce94"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+      "sha256": "9564ec63c936fb967b8a92800eb2140e2f1fa90250a3d41f095a1924b6cbb9a3"
+    },
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    },
+    {
+      "path": "data/wiki/ideas/idea_precision_biology_healthcare_automation.md",
+      "sha256": "08789ac49f4583611977839a6f14eae0aef44071a6cb773980783a73e0d1f007"
+    },
+    {
+      "path": "data/wiki/ideas/idea_terafab_ai_industrial_stack.md",
+      "sha256": "4fbed9bf71f2141f4a84e8ad6c60b9a4d22207cb6a96c95fd22738eb18082d63"
+    },
+    {
+      "path": "data/wiki/ideas/idea_wide_bandgap_power_semiconductors.md",
+      "sha256": "80500757be2bb36cb35a88d661228d8a1b602491ba2f3732846c33846a64253f"
+    },
+    {
+      "path": "data/wiki/securities/security_ed7d5b616a196969c815.md",
+      "sha256": "a5b596145a0e30c393ca1355bc43d5da8690c80bce7d8bffa1349ea6aa232f1f"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+      "sha256": "f02f7850c60b691a79a73be197ac1f63a84e3adce79ec123bd67d0a107d5460c"
+    },
+    {
+      "path": "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md",
+      "sha256": "85d5c17a56f66eae031e701c8c09541910a84e686d273f985cbafc19abad3dc1"
+    },
+    {
+      "path": "data/wiki/securities/security_95351d928b674bbdf687.md",
+      "sha256": "3b07a308e60fa2291ddf3fe9af4e7ff93e296776bad9d3838b123e58002ba155"
+    }
+  ],
+  "daily_cycle_id": "daily-20260819T212147Z",
+  "decision_snapshot_path": "data/runs/daily-20260819T212147Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "76de13187f3a5d3fa555cbd8f2b34e4d8a11ec85d6fc5a5a6a05b9d61bbdb5bc",
+  "generated_at": "2026-08-19T22:15:14Z",
+  "intervening_daily_cycles": [
+    "daily-20260819T181717Z",
+    "daily-20260819T201740Z",
+    "daily-20260819T212147Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260819T212147Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260819T212147Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260819.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260819T153048Z/podcast_context.json",
+    "context_sha256": "e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db",
+    "daily_cycle_id": "daily-20260819T153048Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260819T153048Z.md",
+    "page_sha256": "01f83c638e1c917c521ab65f9f2bca8ade448065c6087a77ba2642118b70407e",
+    "research_cutoff_at": "2026-08-19T15:59:54Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260819.md",
+  "report_sha256": "c33e8f3dd1d418e8781674a48ccde4937970112ed4b452355ef978efd50d2697",
+  "research_cutoff_at": "2026-08-19T22:09:28Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-19T21:33:18Z",
+      "daily_cycle_id": "daily-20260819T212147Z",
+      "daily_report_items": [
+        "DNA full reassessment: USD 7.71 improves weighted scenario return to about 4.8%, but negative base return, roughly 56.8% bear downside, missing margin of safety, medium confidence and pending relationship research retain Hold / Watch and allocation ineligibility."
+      ],
+      "entity_id": "security_95351d928b674bbdf687",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The latest financial filing reports USD 302.2 million of cash, equivalents and marketable securities at 30 June 2026, including USD 47 million of restricted cash, USD 88.6 million of first-half continuing operating cash use, and ATM issuance of 3.7 million shares for USD 34.6 million net proceeds.",
+          "observed_at": "2026-08-19T21:23:58Z",
+          "source": "source_dna_q2_2026_10q",
+          "source_hash": "f4ff3f89cd228be384c2360f08bc3a4cf6acf207848a9a016b84e6b31bccc0fa",
+          "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026054298/dna-20260630.htm"
+        },
+        {
+          "claim": "The SEC-filed issuer release reports Q2 revenue of USD 20.2 million, down 48% year over year, adjusted EBITDA of negative USD 36.3 million, reaffirmed 2026 cash-burn guidance of USD 125-150 million, and autonomous-laboratory adoption activity that has not yet established recurring economics.",
+          "observed_at": "2026-08-19T21:23:58Z",
+          "source": "source_dna_q2_2026_results",
+          "source_hash": "faeeee152f48395f9278133536d3e328f796bd9447ca38c113049233f1d40cc3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026053319/ex991earningspr.htm"
+        },
+        {
+          "claim": "The immutable DNA market observation is USD 7.710000038146973 at 2026-08-19T21:21:54Z with identity-matched USD/EUR FX of 0.8562999963760376; the 22 July through 19 August period declined 1.53%, while SMA 50 crossed narrowly above SMA 200 and volume reached 1.33 times its baseline.",
+          "observed_at": "2026-08-19T21:21:54Z",
+          "source": "data/market/latest.csv and data/market/indicators.csv"
+        },
+        {
+          "claim": "Deterministic assessment v2 links predecessor assessment_28e7fa1f1a15aca9eced and derives ineligible status from bear/base returns of about negative 56.8%/negative 1.8%, medium confidence, canonical soft gaps, and the absence of an accepted relationship. The bear/base/bull values remain USD 3.33/USD 7.57/USD 16.47 at 30%/50%/20%.",
+          "source": "assessment_ca38ef934552ae9c3e55"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0DYXBDGT3M3T55PNH8YX0VG.json",
+        "data/operations/payloads/01M0DYXH905RXAH2C23MFA704Y.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/enqueue_ai_drug_relationship_request.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/enqueue_precision_biology_relationship_request.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/security_upsert_request.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/source_dna_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/source_dna_q2_2026_results_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_95351d928b674bbdf687.md"
+      ],
+      "operation_id": "01KZGGJ4M0ED9MPW6YE88PV2R4",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the full Ginkgo Bioworks security reassessment using unchanged Q2 primary evidence and the 2026-08-19 market alert. The USD 7.71 mark lifts probability-weighted expected return to about 4.8%, but base return remains negative, bear downside remains severe, margin of safety is absent, confidence is medium, and no accepted idea relationship exists. DNA remains Hold / Watch and allocation-ineligible; no strategy, signal, order, allocation, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-19T21:45:06Z",
+      "daily_cycle_id": "daily-20260819T212147Z",
+      "daily_report_items": [
+        "TWST full reassessment: the USD 327.1 million financing improves runway and the Anthropic evaluation validates a protein-design use case, but undisclosed economics and a USD 142.39 mark above every USD 41.14/USD 70.00/USD 103.97 scenario retain Strong Sell / Avoid and allocation ineligibility."
+      ],
+      "entity_id": "security_6cf75bd0ec0aa2a20148",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC filing reports 3,125,000 common shares sold at USD 96 plus full exercise of a 468,750-share underwriter option, for 3,593,750 new shares and expected net proceeds of approximately USD 327.1 million.",
+          "observed_at": "2026-08-19T21:35:23Z",
+          "source": "source_twst_aug_2026_equity_offering_8k",
+          "source_hash": "545c9a2a4031ab13238f44e4421b37dc5a04a6963a31f32f5e90413b2b40466d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1581280/000110465926091280/tm2622018d2_8k.htm"
+        },
+        {
+          "claim": "Twist disclosed that Anthropic selected it as one independent evaluator to produce AI-designed proteins at scale and test binding across 15 targets; the filing supplies no contract value, recurring-revenue commitment, margin, or downstream drug economics.",
+          "observed_at": "2026-08-19T21:35:23Z",
+          "source": "source_twst_anthropic_protein_design_8k",
+          "source_hash": "5504070d1150ce029a040141ff83914a4e18318d224ded07fbe36a20a999c6dc",
+          "url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000050/twist-20260818.htm"
+        },
+        {
+          "claim": "The latest periodic evidence remains unchanged: fiscal Q3 revenue was USD 118.4 million, gross margin was 52.8%, fiscal 2026 revenue guidance was USD 456-457 million, operating cash use remained material, and stock compensation and dilution remain central risks.",
+          "observed_at": "2026-08-19T21:35:23Z",
+          "source": "source_twst_q3_2026_10q and source_twst_q3_2026_results"
+        },
+        {
+          "claim": "The immutable market observation is USD 142.38999938964844 at 2026-08-19T21:21:54Z with identity-matched USD/EUR FX of 0.8562999963760376. The 22 July through 19 August period rose 51.14%; the final session rose 22.64% on 3,495,111 shares, with volume ratio 2.398, RSI 70.85, and an upper-Bollinger-band breach.",
+          "observed_at": "2026-08-19T21:21:54Z",
+          "source": "data/market/latest.csv and data/market/indicators.csv"
+        },
+        {
+          "claim": "Deterministic assessment schema version 2 links predecessor assessment_a74d909e79d6de48e2f0 and derives Strong Sell / Avoid, Watch tier, and allocation ineligibility. The USD 41.14/USD 70.00/USD 103.97 scenarios at 30%/50%/20% imply approximately negative 52.15% weighted return; expected-return, base-return, payoff, margin-of-safety, and relationship gates fail.",
+          "source": "assessment_9fd404694c751e0f74e2"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0DZGFQ8AWJ5GYPVG88HQDPS.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/assessment_upsert_request.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/enqueue_precision_biology_relationship_request.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/security_upsert_request.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_anthropic_protein_design_8k_request.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_aug_2026_equity_offering_8k_request.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_q3_2026_10q_refresh_request.json",
+        "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_q3_2026_results_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md"
+      ],
+      "operation_id": "01KZX73Z2GDM9BD59RDR4TJKKP",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the full Twist Bioscience reassessment using current SEC filings and the exact 2026-08-19 volume anomaly. The financing adds approximately USD 327.1 million of net liquidity and the Anthropic evaluation validates a protein-design use case, but its economics are undisclosed. At USD 142.39, all USD 41.14/USD 70.00/USD 103.97 scenarios remain below market; TWST remains Strong Sell / Avoid, Watch-tier, and allocation-ineligible. One dependent precision-biology relationship review was created; no strategy, signal, order, allocation, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-19T21:52:43Z",
+      "daily_cycle_id": "daily-20260819T212147Z",
+      "daily_report_items": [
+        "Coinbase's August 19 bullish MACD crossover followed a 3.56% decline but did not change the Q2 thesis or valuation. Unchanged USD 28/USD 87/USD 191 scenarios imply USD 90.10 weighted fair value and -43.76% expected return versus USD 160.20, retaining Strong Sell / Avoid and no paper position. One stale relationship refresh and one dependent idea refresh were requested; no strategy, signal, order, allocation or accounting state changed."
+      ],
+      "entity_id": "security_37ddcbdaad296ad831f2",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-hosted filing hash remains unchanged. Q2 net revenue was USD 1.154 billion, including USD 599 million transaction revenue, USD 555 million subscription and services revenue and USD 292 million stablecoin revenue; the filing also retains the balance-sheet, dilution, custody and 26% counterparty-concentration evidence used by the scenarios.",
+          "observed_at": "2026-08-19T21:46:56Z",
+          "source": "Coinbase Q2 2026 Form 10-Q",
+          "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+        },
+        {
+          "claim": "The current SEC submissions index shows no Coinbase periodic or current report newer than the July 30 Q2 Form 10-Q and results Form 8-K through August 19, so no newer issuer evidence changes the operating baseline.",
+          "observed_at": "2026-08-19T21:46:56Z",
+          "source": "Coinbase Global SEC submissions index",
+          "source_hash": "d33709cf8886cc9eef20cf1113cfa202cfd8124d9e5c3ea292aff1af56bae5df",
+          "url": "https://data.sec.gov/submissions/CIK0001679788.json"
+        },
+        {
+          "claim": "COIN closed at USD 160.1999969482422 on 2026-08-19 after a validated bullish MACD crossover and a -3.563688% return from 2026-07-22; fresh USD/EUR state was 0.8562999963760376 at 2026-08-19T21:21:54Z.",
+          "source": "PaperTrader deterministic market and indicator state"
+        },
+        {
+          "claim": "The accepted schema-v2 assessment links predecessor assessment_bd1fa53f07f4aab13f4c and this operation, matches research-page hash f02f7850c60b691a79a73be197ac1f63a84e3adce79ec123bd67d0a107d5460c, and derives Strong Sell / Avoid, USD 90.10 weighted fair value, -43.75780167517123953219036566% expected return and allocation ineligibility.",
+          "source": "PaperTrader deterministic assessment assessment_116f889a69d3f82535ab"
+        },
+        {
+          "claim": "Exactly one dependent stale-relationship refresh, 01M0E02FWRTKEGFP0E2BQWQE8T, and one result-specific idea refresh, 01M0E02PQG736G3882Z3K56YZS, were created; no strategy follow-up was created because the full strategy gate failed.",
+          "source": "PaperTrader queue receipts"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0E02FWRTKEGFP0E2BQWQE8T.json",
+        "data/operations/payloads/01M0E02PQG736G3882Z3K56YZS.json",
+        "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/assessment_upsert_request.json",
+        "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/enqueue_relationship_refresh_request.json",
+        "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/security_upsert_request.json",
+        "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/source_coin_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/source_coin_sec_submissions_20260819_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+      ],
+      "operation_id": "01M06M2NP86ZWCMZSW21HB9N7T",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Coinbase repeat review using the unchanged SEC-filed Q2 2026 Form 10-Q, the current SEC submissions index and fresh identity-matched market/FX state. The August 19 bullish MACD crossover followed a 3.56% decline over the exact payload period but is noise for allocation without new fundamental evidence or margin of safety. Unchanged USD 28/USD 87/USD 191 scenarios derive USD 90.10 probability-weighted fair value and -43.76% expected return versus USD 160.20, retaining Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one stale accepted-relationship refresh and one dependent digital-finance idea refresh were enqueued. No strategy, signal, order, allocation or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260819T212147Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-19T18:27:56Z",
+      "daily_cycle_id": "daily-20260819T181717Z",
+      "daily_report_items": [
+        "ASML full research failed closed: primary sources and a valuation draft were refreshed, but the required comparable assessment was rejected and no follow-up operation or trading state was created. Issue issue_f50e95ee4d3a5cc05618 requires controller reconciliation of the advanced security row against the prior canonical assessment."
+      ],
+      "entity_id": "security_ef35e41886220d51c22c",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The unchanged SEC-hosted filing reports Q2 2026 total net sales of EUR 9.3 billion, net income of EUR 2.9 billion, and raised 2026 guidance of EUR 43-45 billion sales with 54%-56% gross margin.",
+          "observed_at": "2026-08-19T18:20:35Z",
+          "source": "ASML Holding N.V. Q2 2026 Form 6-K",
+          "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef",
+          "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+        },
+        {
+          "claim": "The unchanged statements report Q2 revenue of EUR 9.3265 billion, 54.0% gross margin, EUR 2.9176 billion net income, EUR 7.58 diluted EPS, and 384.9 million diluted weighted-average shares.",
+          "observed_at": "2026-08-19T18:20:35Z",
+          "source": "ASML Holding N.V. Q2 2026 US GAAP financial statements",
+          "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d",
+          "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm"
+        },
+        {
+          "claim": "The SEC submissions index showed no later periodic operating filing after the 2026-07-15 Form 6-K through this check.",
+          "observed_at": "2026-08-19T18:20:35Z",
+          "source": "ASML Holding N.V. SEC submissions index",
+          "source_hash": "4dfe7cfb6673dc94f2f02869135ddb4a5e6632d8850ce141f77c865f32935d42",
+          "url": "https://data.sec.gov/submissions/CIK0000937966.json"
+        },
+        {
+          "claim": "The assessment command exited 2 before changing assessment state with: assessment v2 is invalid: valuation_template_rationale is allowed only for other.",
+          "source": "papertrader assessment validator"
+        },
+        {
+          "claim": "The bounded rollback request exited 2 without changing state because its prior last_research_at timestamp was older than the already advanced security row.",
+          "source": "papertrader security validator"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request.json",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request.json",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/security_rollback_request.json",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request.json",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_6k_request.json",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_financials_request.json",
+        "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_sec_submissions_request.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_ef35e41886220d51c22c.md"
+      ],
+      "operation_id": "01M0DB44Q8R22ED9WQC5ZEG526",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/agent_result.json",
+      "status": "failed",
+      "summary": "ASML primary evidence was refreshed and a scenario-complete research draft was written, but the required assessment upsert was rejected because valuation_template_rationale is valid only for the other template. The rejected command was not retried. The security row had already advanced, and a validated rollback attempt was then rejected as older research state. No assessment, follow-up operation, strategy, signal, order, allocation, or accounting state was created. Issue issue_f50e95ee4d3a5cc05618 records the partial-state reconciliation requirement, so the operation fails closed."
+    },
+    {
+      "completed_at": "2026-08-19T20:30:40Z",
+      "daily_cycle_id": "daily-20260819T201740Z",
+      "daily_report_items": [
+        "ASML full research retry failed closed: the page and security row were refreshed to the August 19 market state, but the required comparable assessment was rejected for a missing valuation_template_rationale field. The prior unsupported assessment remains canonical and no follow-up or trading state was created."
+      ],
+      "entity_id": "security_ef35e41886220d51c22c",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The audited assessment upsert exited 2 with no changed paths; the CLI reported that valuation_template_rationale was missing. The security upsert and issue record succeeded.",
+          "source": "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/command_audit.json"
+        },
+        {
+          "claim": "The post-failure context confirmed the security row now references the USD 1,751.73 review while the current canonical assessment remains assessment_e769cb597db3a1edaea7, schema version 2, valuation unsupported, from run daily-20260819T153048Z.",
+          "source": "papertrader research security-context --security-id security_ef35e41886220d51c22c"
+        },
+        {
+          "claim": "The retained SEC-filed Q2 2026 Form 6-K remains the primary source for ASML revenue, margins, guidance, bookings, demand commentary and risks used by the page's scenario analysis.",
+          "observed_at": "2026-08-19T18:20:35Z",
+          "source": "source_asml_q2_2026_6k",
+          "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef",
+          "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+        },
+        {
+          "claim": "The retained SEC-filed Q2 financial statements support the diluted-share, EPS, cash, debt, liquidity and working-capital inputs used in the attempted complete valuation.",
+          "observed_at": "2026-08-19T18:20:35Z",
+          "source": "source_asml_q2_2026_financials",
+          "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d",
+          "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm"
+        },
+        {
+          "claim": "Identity-matched deterministic market state supplied an ASML adjusted close of USD 1,751.72998046875 and USD/EUR rate of 0.8561999797821045 for the attempted assessment.",
+          "observed_at": "2026-08-19T20:17:45Z",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        },
+        {
+          "claim": "The only canonical accepted ASML relationship remains the conditional positive Terafab edge; the AI-compute pairing remains a candidate and was not represented as accepted.",
+          "source": "data/wiki/relationships/relationship_terafab_asml.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request_v2.json",
+        "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request_v2.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_ef35e41886220d51c22c.md"
+      ],
+      "operation_id": "01M0DB44Q8R22ED9WQC5ZEG526",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/agent_result.json",
+      "status": "failed",
+      "summary": "The bounded ASML retry refreshed the security page and structured security row to the 2026-08-19 USD 1,751.73 mark and retained the complete primary-evidence scenario analysis. The required schema-v2 assessment command was rejected before changing assessment state because valuation_template_rationale was omitted even though the field must be present and empty for mature_compounder. The no-retry rule prohibited a corrected second assessment invocation. A post-failure security-context receipt confirmed that the canonical assessment remains the prior unsupported version. The existing controller issue was refreshed for this run; dependent relationship and idea operations were not enqueued, and no strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-19T22:09:14Z",
+      "daily_cycle_id": "daily-20260819T212147Z",
+      "daily_report_items": [],
+      "entity_id": "security_4b61970aa8f574446819",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "agent result schema: '6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63|b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b' does not match '^[a-f0-9]{64}$'",
+          "source": "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/validation_report.json"
+        },
+        {
+          "claim": "post-run integrity: agent result data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/agent_result.json: '6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63|b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b' does not match '^[a-f0-9]{64}$'",
+          "source": "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "agent result schema: '6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63|b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b' does not match '^[a-f0-9]{64}$'",
+        "post-run integrity: agent result data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/agent_result.json: '6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63|b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b' does not match '^[a-f0-9]{64}$'"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZSMSDTRFFMGZPZT6TTZ9WFE",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-19T15:59:54Z"
+}
