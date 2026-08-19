@@ -4157,6 +4157,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-399eb4aca85f]] as `ingest`: A new volume-anomaly trigger with a material 4.24% period return warrants durable review.
 
+- Published investor decision snapshot `decision_3ed1d19aa488ae6c9ea7`.
+
+- Generated canonical [[daily-reports/daily-report_20260819]] for run `daily-20260819T201740Z`.
+
 ## [2026-08-19T12:05:12Z] update | Tesla comparable assessment completion
 
 - Revalidated the completed [[securities/security_dc7a111e297be528d96b|Tesla]] sum-of-parts review

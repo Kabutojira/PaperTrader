@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_89abdfb2e03028a767ce"
-as_of: "2026-08-19T18:28:15Z"
+snapshot_id: "decision_3ed1d19aa488ae6c9ea7"
+as_of: "2026-08-19T20:30:52Z"
 ---
 
 # Signals
 
-**As of `2026-08-19T18:28:15Z`**
+**As of `2026-08-19T20:30:52Z`**
 
 ## Actionable trade signals
 
@@ -25,6 +25,159 @@ No pending orders.
 
 ## Research alerts — not trade signals
 
+### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-19`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. agent\_result:blocked:Quick-check blocked because the immutable payload recorded source does not match the current deterministic market-data identity for TWST; no assessment or wiki state was changed and no follow-up operation was created.
+
+### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-19`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. agent\_result:blocked:Quick-check blocked because the immutable payload recorded source does not match the current deterministic market-data identity for TWST; no assessment or wiki state was changed and no follow-up operation was created.
+
+### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [SPOT — Spotify Technology S.A.](securities/security_2010347f1a0a5ea60f47)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-19`
+- Research status: `succeeded`
+- Conclusion: Classified Spotify's 2026-06-29 through 2026-07-28 upper-Bollinger transition as risk, specifically entry-timing risk with expectation noise rather than a stand-alone opportunity. The deterministic alert recorded a 10.590753% period rise, a 1.31631% upper-band exceedance, neutral-below-overbought RSI, and no abnormal-volume confirmation. Current registered primary evidence supports Spotify's operating scale, margins, cash generation, and liquidity but does not establish a cause for the move; Q2 results scheduled for August 4 are the next decisive catalyst. The maintained security review already captures this conclusion and valuation blockers, so no wiki edit or redundant follow-up was warranted.
+
+### [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [RXRX — Recursion Pharmaceuticals, Inc.](securities/security_ed7d5b616a196969c815)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-19`
+- Research status: `succeeded`
+- Conclusion: Completed one bounded PayPal quick check for the merged August 4 RSI-overbought strengthening and August 5 MACD cross below signal. Both retained Q2 SEC documents are unchanged, and the current SEC submissions index contains no later issuer operating filing. The newer August 7 canonical mark is USD 59.07 with RSI still overbought and MACD below signal. Migrated the legacy comparison to a scenario-complete mature-compounder assessment using USD 43.04/USD 64.56/USD 80.70 bear/base/bull values and 30%/50%/20% probabilities. Deterministic normalization derives USD 61.332 weighted fair value, 3.83% expected return, 9.29% base upside, 27.14% bear downside, and Hold / Watch allocation-ineligible state. No valuation or buy-zone gate was newly reached, catalyst or invalidation fired, or material primary evidence changed, so no full review or other follow-up was created. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.
+
+### [MSTR — Strategy Inc](securities/security_fe5539a7d3fd9d553bce)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [MSTR — Strategy Inc](securities/security_fe5539a7d3fd9d553bce)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
+
+### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
 ### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
 
 **Research alert — not a trade signal**
@@ -34,66 +187,12 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed exactly one repeat FANUC security review for the 19 August volume anomaly. Re-fetched the two retained first-quarter issuer PDFs and confirmed unchanged hashes. The Frankfurt line fell 9.028918% over 22 July through 19 August while alert-day volume reached only 1,355 shares, so the anomaly is classified as thin-market risk rather than a verified fundamental opportunity. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios at 25%/50%/25% produce EUR 36.3775 weighted fair value against the EUR 33.349998474121094 mark. Assessment assessment\_4e73de2ff48e5f482190 derives 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, Hold / Watch, and allocation ineligibility. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, accounting, idea, relationship, or follow-up operation changed.
 
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
 
 **Research alert — not a trade signal**
 
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
-
-### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_above\_upper`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
-
-### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-18`
-- Research status: `succeeded`
-- Conclusion: Completed one full RTX security review from current SEC-filed Q2 evidence and canonical 5 August 2026 market state. Registered the unchanged 10-Q refresh and a new SEC-filed results exhibit, updated the security page and structured security row, and replaced the prior unsupported assessment with a scenario-complete mature-compounder earnings-multiple assessment. Bear/base/bull fair values of USD 142.00/USD 179.375/USD 246.50 produce a USD 186.8125 probability-weighted value versus USD 222.30999755859375; deterministic state derives Sell / Avoid, watch-tier conviction, and allocation ineligibility. No strategy, signal, order, allocation, or accounting state changed. Enqueued exactly one dependent defense-and-aerospace idea refresh.
-
-### [META — Meta Platforms, Inc.](securities/security_d12e746b3c9d392183cc)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-08-18`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one repeat security review for Meta Platforms, Inc. after the August 14 bullish MACD crossover and August 18 lower-Bollinger breach. The crossover did not persist, RSI was not oversold, volume was not anomalous, and unchanged Q2 primary evidence still shows strong advertising demand alongside high AI capital intensity, weak latest free-cash-flow conversion, Reality Labs losses, and legal exposure. At the fresh USD 543.67 mark, unchanged USD 400 / USD 600 / USD 800 scenarios derive USD 580 probability-weighted value, 6.68% expected return, and 5.01% confidence-adjusted expected return. The immutable assessment is Hold / Watch, quality score 86, and allocation-ineligible because expected-return, bear/base payoff, expected/bear payoff, and relationship gates fail. No linked idea or accepted relationship exists, so no idea follow-up was required; no conviction strategy, signal, paper order, allocation, or accounting state was changed.
-
-### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-08-18`
-- Research status: `succeeded`
-- Conclusion: Completed the repeat schema-version-2 review of DLocal Limited after the August 13-14 volume anomaly and August 18 lower-Bollinger breach. Q2 TPV, revenue, gross profit, operating profit and adjusted free cash flow improved; management raised TPV and gross-profit guidance, while gross-profit-over-TPV compressed to 0.72%, top-ten merchant concentration remained 61%, and a new USD 150 million facility added deployment risk. At the fresh USD 13.64 mark, the deterministic assessment derives Buy/Initiate economics with USD 9.00/USD 18.70/USD 29.40 bear/base/bull values, 38.93% probability-weighted expected return and a USD 14.96 buy-below price. Allocation remains ineligible solely because no accepted idea-security relationship exists, so no strategy, signal, order, or paper position was created.
-
-### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-18`
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-19`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
@@ -106,48 +205,66 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [RBLX — Roblox Corporation](securities/security_c9a37d277445869a8809)
-
-**Research alert — not a trade signal**
-
-- Alert: `macd\_cross\_above\_signal`
-- Market date: `2026-08-18`
-- Research status: `succeeded`
-- Conclusion: Completed one bounded Roblox refresh using current deterministic market and FX state plus rechecked SEC primary evidence. The August 18 bullish MACD crossover follows a 28.27% decline from July 21 and represents technical stabilization, not a fundamental improvement. Unchanged USD 28.23/USD 39.58/USD 53.00 bear/base/bull values against the USD 37.66 mark produce a 3.18% expected return and 2.39% medium-confidence-adjusted return. Assessment assessment\_350be4b7a00d7fa4f952 remains Hold / Watch and allocation-ineligible because base return, expected return, and both downside-payoff gates fail. Updated the security page and structured state, registered three source observations, and created exactly one dependent idea refresh, Idea research for Digital attention, gaming, and consumer ecosystems on 2026-08-18. No strategy, signal, order, allocation, or accounting state changed.
-
-### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
+### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-18`
+- Market date: `2026-08-19`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
+### [DNA — Ginkgo Bioworks Holdings, Inc.](securities/security_95351d928b674bbdf687)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `sma\_50\_cross\_above\_200`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
 **Research alert — not a trade signal**
 
-- Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: bearish\_alert\_unowned
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
-### [CRSR — Corsair Gaming, Inc.](securities/security_55c9ce2fdcd32dad6b8c)
+### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-18`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [COIN — Coinbase Global, Inc.](securities/security_37ddcbdaad296ad831f2)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_above\_signal`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
+
+### [ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-19`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [AMAT — Applied Materials, Inc.](securities/security_0a56aa634d077fe5796f)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-19`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 

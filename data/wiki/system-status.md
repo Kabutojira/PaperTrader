@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_89abdfb2e03028a767ce"
-as_of: "2026-08-19T18:28:15Z"
+snapshot_id: "decision_3ed1d19aa488ae6c9ea7"
+as_of: "2026-08-19T20:30:52Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-19T18:28:15Z`
+**As of:** `2026-08-19T20:30:52Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-19T18:28:15Z"
 
 ## Coverage
 
-- Assessments: 63/70
-- Fresh-evidence assessments: 62/70
+- Assessments: 60/70
+- Fresh-evidence assessments: 59/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,14 +30,15 @@ as_of: "2026-08-19T18:28:15Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 345
+- Research backlog: 369
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
 
 ### Blocks Portfolio
 
-- Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The schema-v2 assessment for [[securities/security_ef35e41886220d51c22c|ASML]] was rejected before assessment state changed because valuation_template_rationale is permitted only with the other valuation template. Per the routed-operation command policy, the rejected assessment command was not retried. A subsequent bounded attempt to restore the prior security row through the validated security upsert command was itself rejected because the prior last_research_at timestamp is older than the newly written row; it wa
+- Error **ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
+- Warning **Daily podcast blocked: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
 
 ### Blocks Action
 
@@ -182,7 +183,7 @@ as_of: "2026-08-19T18:28:15Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 345 active operations.
+Showing 20 of 369 active operations.
 
 <details><summary>Active research work</summary>
 
