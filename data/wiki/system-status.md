@@ -7,22 +7,22 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e3c35b7aa889696735bc"
-as_of: "2026-08-19T15:59:54Z"
+snapshot_id: "decision_89abdfb2e03028a767ce"
+as_of: "2026-08-19T18:28:15Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-19T15:59:54Z`
-**Investment data:** Degraded — review investment data gaps
+**As of:** `2026-08-19T18:28:15Z`
+**Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
 **Portfolio reconciliation:** Reconciled
 
 ## Coverage
 
-- Assessments: 67/70
-- Fresh-evidence assessments: 66/70
+- Assessments: 63/70
+- Fresh-evidence assessments: 62/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -34,6 +34,10 @@ as_of: "2026-08-19T15:59:54Z"
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
+
+### Blocks Portfolio
+
+- Error **ASML — ASML Holding N.V.: ASML assessment rejected after security row update** — The schema-v2 assessment for [[securities/security_ef35e41886220d51c22c|ASML]] was rejected before assessment state changed because valuation_template_rationale is permitted only with the other valuation template. Per the routed-operation command policy, the rejected assessment command was not retried. A subsequent bounded attempt to restore the prior security row through the validated security upsert command was itself rejected because the prior last_research_at timestamp is older than the newly written row; it wa
 
 ### Blocks Action
 

@@ -7,8 +7,8 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_e3c35b7aa889696735bc"
-as_of: "2026-08-19T15:59:54Z"
+snapshot_id: "decision_89abdfb2e03028a767ce"
+as_of: "2026-08-19T18:28:15Z"
 ---
 
 # Research catalog
@@ -396,6 +396,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Daily research podcast — 2026-08-19T090759Z](podcasts/daily-podcast_20260819T090759Z)
 - [Daily research podcast — 2026-08-19T120216Z](podcasts/daily-podcast_20260819T120216Z)
 - [Daily research podcast — 2026-08-19T133029Z](podcasts/daily-podcast_20260819T133029Z)
+- [Daily research podcast — 2026-08-19T153048Z](podcasts/daily-podcast_20260819T153048Z)
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
