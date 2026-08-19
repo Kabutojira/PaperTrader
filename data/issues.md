@@ -20,6 +20,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_58242ac9c8a0a8fb3c22** — Hermes operation validation failed: 01KZSMSDTRBC9SG0KKDQR4XB87 | 2026-08-16T15:25:17Z | controller | 01KZSMSDTRBC9SG0KKDQR4XB87 |
 | error | **issue_5f32f7df9890b7b85f92** — Assessment source operation is ambiguous within one run | 2026-08-03T06:49:18Z | controller | 01KZ35CPR03SHK78B81ZSEV4JT |
 | error | **issue_63954cb215f224b75cb3** — Hermes operation validation failed: 01KZ3E6S3RNXTH5SN041P14F6W | 2026-08-05T11:35:18Z | controller | 01KZ3E6S3RNXTH5SN041P14F6W |
+| error | **issue_63d9e13d633b6c764af5** — MP Materials full assessment blocked by same-run provenance ambiguity | 2026-08-19T12:32:14Z | controller | 01M0CZ8BD03F2P6FPWQ5YD26GG |
 | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
 | error | **issue_6642c41b20e1ceeabf3a** — Hermes operation validation failed: 01KYPB26Z023E3AMG9Z8KSPW9D | 2026-08-07T10:46:48Z | controller | 01KYPB26Z023E3AMG9Z8KSPW9D |
 | error | **issue_6879c5959035b43a141b** — Local harness operation validation failed: 01KYQ62ZT8AGDEDP669Q6SF1VD | 2026-08-12T12:56:50Z | controller | 01KYQ62ZT8AGDEDP669Q6SF1VD |

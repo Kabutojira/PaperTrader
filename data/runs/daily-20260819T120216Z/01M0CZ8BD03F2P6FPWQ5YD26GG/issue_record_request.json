@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "MP Materials full assessment blocked by same-run provenance ambiguity",
+  "description": "The required schema-v2 assessment for security_cd492d97064d8574156e was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation 01KZGGJ4M0G6P6ZRXF1BQJ095K and current security_research operation 01M0CZ8BD03F2P6FPWQ5YD26GG claimed by run daily-20260819T120216Z and cannot select a unique source operation. Current Q2 SEC evidence supports a full normalized-earnings rebuild, but the operation must fail closed without an accepted assessment. The security page was restored to the prior hash-aligned quick-check state, the structured security conclusion was restored while retaining an advanced audit timestamp, and no idea or strategy follow-up was enqueued. The controller must schedule the full review under a distinct run or repair deterministic provenance selection.",
+  "owner": "controller",
+  "related_run_id": "daily-20260819T120216Z",
+  "related_operation_id": "01M0CZ8BD03F2P6FPWQ5YD26GG"
+}

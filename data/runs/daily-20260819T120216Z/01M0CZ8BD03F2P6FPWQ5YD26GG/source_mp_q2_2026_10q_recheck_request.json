@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mp_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "MP Materials Corp. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "24a8ac5fa3804296fdd2c5ce1c8862a386565da7a7e4fb6329b02b426608a677",
+  "related_entity_ids": "security_cd492d97064d8574156e",
+  "checked_at": "2026-08-19T12:24:24Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Six-month operating cash flow was USD 4.9 million and additions to property, plant and equipment were USD 307.7 million.",
+  "summary": "The unchanged Q2 filing supports a full valuation rebuild using six-month earnings, cash flow, capital investment, debt, preferred claims and common dilution.",
+  "run_id": "daily-20260819T120216Z"
+}

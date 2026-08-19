@@ -1,0 +1,91 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_cd492d97064d8574156e",
+    "papertrader research source record --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_q2_2026_10q_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_q2_2026_results_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_sec_submissions_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_restore_request.json",
+    "papertrader issue record --request data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/issue_record_request.json",
+    "papertrader schema validate --strict",
+    "papertrader research security-context --security-id security_cd492d97064d8574156e",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "MP Materials' full Q2 review failed closed because the deterministic assessment applier could not choose between the same-run quick check and full review as the immutable source operation. Current SEC evidence confirms operating progress but also first-half losses, weak underlying cash conversion and heavy construction spending. The prior hash-aligned Sell / Avoid assessment remains authoritative, issue issue_63d9e13d633b6c764af5 was recorded, and no follow-up or paper-trading state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The Q2 Form 10-Q reports first-half revenue plus price-protection income of USD 259.0 million, operating loss of USD 56.2 million, net loss of USD 28.3 million, operating cash flow of USD 4.9 million, property-and-equipment additions of USD 307.7 million, USD 1.453 billion of cash and short-term investments, USD 934.6 million of debt carrying value and USD 428.1 million of preferred liquidation preference.",
+      "observed_at": "2026-08-19T12:24:24Z",
+      "source": "source_mp_q2_2026_10q",
+      "source_hash": "24a8ac5fa3804296fdd2c5ce1c8862a386565da7a7e4fb6329b02b426608a677",
+      "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+    },
+    {
+      "claim": "The SEC-hosted issuer exhibit reports Q2 NdPr production and sales of 840 and 1,006 metric tons, consolidated revenue of USD 108.5 million, USD 17.6 million of price-protection income, USD 28.5 million of adjusted EBITDA, continued Independence qualification deliveries and a long-term gadolinium agreement.",
+      "observed_at": "2026-08-19T12:24:24Z",
+      "source": "source_mp_q2_2026_results",
+      "source_hash": "e70e3f1cb910353ee20b80d6efa1344b5f67c2952014fb85f30b12893a144546",
+      "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000047/mpmcq22026er.htm"
+    },
+    {
+      "claim": "The SEC submissions index checked on 19 August 2026 identifies the Q2 Form 10-Q filed on 7 August as the latest operating filing and shows only ownership filings afterward.",
+      "observed_at": "2026-08-19T12:24:24Z",
+      "source": "source_mp_sec_submissions_20260819",
+      "source_hash": "d5e6f17bb1a24e7f82717f12eb30b3671d60b5d0f385c151da7079eb1b26f7d9",
+      "url": "https://data.sec.gov/submissions/CIK0001801368.json"
+    },
+    {
+      "claim": "The assessment upsert exited 2 with 'assessment source operation is ambiguous for this run' and changed neither security_assessments.csv nor security_assessment_history.csv because quick_check_research operation 01KZGGJ4M0G6P6ZRXF1BQJ095K and security_research operation 01M0CZ8BD03F2P6FPWQ5YD26GG are both security-review operations for this security claimed by daily-20260819T120216Z.",
+      "source": "PaperTrader deterministic assessment applier"
+    },
+    {
+      "claim": "After restoration, current assessment assessment_9409f60673dc70257720 remains schema version 2, predecessor-linked to assessment_93a60c605666d4019f13 and hash-aligned to current page hash 4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735.",
+      "source": "PaperTrader mandatory security context"
+    },
+    {
+      "claim": "Issue issue_63d9e13d633b6c764af5 records the same-run assessment-provenance failure for deterministic controller repair or rescheduling.",
+      "source": "PaperTrader issue receipt"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/assessment_upsert_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/issue_record_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_restore_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_upsert_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_q2_2026_10q_recheck_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_q2_2026_results_recheck_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_sec_submissions_recheck_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "issues_recorded": [
+    "issue_63d9e13d633b6c764af5"
+  ],
+  "operation_id": "01M0CZ8BD03F2P6FPWQ5YD26GG",
+  "operations_created": [],
+  "reason_code": "assessment_source_operation_ambiguous",
+  "status": "failed",
+  "summary": "Failed closed after exactly one bounded MP Materials full Q2 security review. Current SEC evidence confirms continued NdPr sales, supported Materials economics, magnet qualification and customer diversification, while first-half operating losses, weak underlying cash conversion, USD 307.7 million of property-and-equipment additions, debt, preferred claims and dilution constrain common-equity value. A complete cyclical-commodity normalized-earnings rebuild was prepared, but the deterministic assessment applier rejected it before assessment state changed because the completed quick check and this full review share the same security and run identity, making source-operation provenance ambiguous. The security page and conclusions were restored to the prior hash-aligned quick-check state, the structured summary was restored while retaining an advanced audit timestamp, issue issue_63d9e13d633b6c764af5 was recorded, and no idea or strategy follow-up was enqueued. No signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260819T120216Z with a live lease, validated payload, immutable MP/XNYS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after restoration; the prior quick-check assessment remains predecessor-linked and page-hash-aligned.",
+      "Retrieved, hashed and registered the current SEC Form 10-Q, SEC-hosted results exhibit and SEC submissions index; all retained hashes were unchanged and all three sources were available with current checks.",
+      "Prepared one supported cyclical-commodity normalized-earnings schema-v2 assessment, but the deterministic applier rejected it before any assessment path changed because same-security quick and full reviews share this run identity.",
+      "Restored the security page to its exact prior hash and restored the structured security conclusion; only the audit research timestamp advanced because deterministic state forbids an older timestamp.",
+      "No idea-research or strategy follow-up was enqueued because no full assessment was accepted and the security has no linked canonical ideas or relationships.",
+      "Strict schema validation, strict wiki lint, strict integrity, strict portfolio reconciliation and queue validation all passed after issue issue_63d9e13d633b6c764af5 was recorded.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ],
+    "passed": false
+  }
+}
