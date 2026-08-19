@@ -1,0 +1,155 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_dc7a111e297be528d96b.md",
+      "sha256": "970bde425b5cb483261bf058d2db88f6e9f2270509b9c2196137c9799225032f"
+    }
+  ],
+  "daily_cycle_id": "daily-20260819T090759Z",
+  "decision_snapshot_path": "data/runs/daily-20260819T090759Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "a0083fc1585a101bd9e8175295efc99041b883498ecca446f1002cad9a1f45d9",
+  "generated_at": "2026-08-19T09:34:40Z",
+  "intervening_daily_cycles": [
+    "daily-20260819T090759Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260819T090759Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260819T090759Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260819.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260818T231700Z/podcast_context.json",
+    "context_sha256": "e6adb7aa6720b0b6d6af132bd2af93016d26ef8b6304c17796d95fdc24d1cea1",
+    "daily_cycle_id": "daily-20260818T231700Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260818T231700Z.md",
+    "page_sha256": "ccf1ae49abad018723b72ecfffba04e2e50490881a89fa21bb085f2683a709df",
+    "research_cutoff_at": "2026-08-18T23:51:39Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260819.md",
+  "report_sha256": "0439baa8a72c69c58506c67a5e86bf398f76b8d42cd66cc96c0bb4d2891eb5da",
+  "research_cutoff_at": "2026-08-19T09:26:30Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-19T09:17:04Z",
+      "daily_cycle_id": "daily-20260819T090759Z",
+      "daily_report_items": [
+        "Tesla's August 7 bullish-MACD cross stabilized the mark at USD 336.87 without a later operating filing or changed Q2 thesis. The accepted but non-binding Terafab relationship improves one gate, while the legacy two-case sensitivity remains noncanonical; TSLA is Unrated / Watch and allocation-ineligible pending exactly one full review, with no paper trade."
+      ],
+      "entity_id": "security_dc7a111e297be528d96b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The immutable payload binds macd_cross_above_signal to the 2026-07-09 through 2026-08-07 period, a USD 328.5799865722656 adjusted close, a 3.3802292980840552710490503% period return, and canonical source-price hash 326bc4f5f24582e20311d0ee50f8104e66d92089fc646214a3097b2bc28c0e96.",
+          "observed_at": "2026-08-08T11:01:36Z",
+          "source": "PaperTrader deterministic 2026-08-07 alert payload and candidate packet",
+          "source_hash": "326bc4f5f24582e20311d0ee50f8104e66d92089fc646214a3097b2bc28c0e96"
+        },
+        {
+          "claim": "The 2026-08-18 adjusted close was USD 336.8699951171875, 2.5229803651% above the alert close and 6.5841921532% above the baseline reference price. MACD -8.96571513 remained above signal -13.83827610 with a positive histogram, RSI was neutral at 46.28314340, volume was non-anomalous and no current trigger transition was active.",
+          "observed_at": "2026-08-19T09:08:06Z",
+          "source": "PaperTrader current deterministic market and indicator state",
+          "source_hash": "8b4e25d7087d8169a289e383863812273a088a470854c5307cbd166c2aa642a1"
+        },
+        {
+          "claim": "The current SEC submissions index contains no periodic operating filing or earnings release after Tesla's Q2 Form 10-Q, so no later primary operating evidence supersedes the retained Q2 assumptions.",
+          "observed_at": "2026-08-19T09:12:08Z",
+          "source": "source_tsla_sec_submissions_20260819",
+          "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+          "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+        },
+        {
+          "claim": "The accepted medium-confidence relationship adds a plausible custom-silicon supply-security and iteration channel, but the public framework remains non-binding and discloses no capacity, price, volume, capital or shareholder-return economics.",
+          "source": "data/wiki/relationships/relationship_terafab_tsla.md"
+        },
+        {
+          "claim": "The deterministic applier created exactly one schema-v2 history version for this operation and run, linked predecessor assessment_606fa913eb668f677db6 and page hash dac2affd76be1263895bcb999b294a3f003c2d55a2203acdac6ca4d6aa9c2327, and derived Unrated / Watch, valuation-unsupported status and allocation ineligibility without invented scenario values or a buy zone.",
+          "source": "PaperTrader accepted assessment assessment_360bd1c80b7c5b27422c"
+        },
+        {
+          "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, all alert causes, exact market period, payload and current price hashes, the legacy-valuation and accepted-relationship changed gate, and full_research_requested=true.",
+          "source": "data/operations/payloads/01M0CMRJ98SAV40VKBH4RJDG9J.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0CMRJ98SAV40VKBH4RJDG9J.json",
+        "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/assessment_upsert_request.json",
+        "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/enqueue_full_research_request.json",
+        "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/security_upsert_request.json",
+        "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/source_tsla_sec_submissions_20260819_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dc7a111e297be528d96b.md"
+      ],
+      "operation_id": "01KZGGJ4M05XRHKKRXK2WYJANM",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Tesla quick check for the 2026-08-07 bullish-MACD cross. TSLA rose 3.38% over the alert period to USD 328.58 and then 2.52% to USD 336.87 by August 18, while MACD remained above signal but both lines were negative, RSI was neutral and no current transition was active. The current SEC submissions index showed no later periodic operating filing or earnings release, so the Q2 thesis, catalysts, risks and invalidation remain unchanged. The accepted Terafab relationship improves the relationship frontier but remains non-binding, and the legacy two-case sensitivity lacks a bull case, explicit probabilities and current component inputs. The accepted schema-v2 assessment is therefore Unrated / Watch, valuation-unsupported and allocation-ineligible with no buy zone. Exactly one dependent full security review, 01M0CMRJ98SAV40VKBH4RJDG9J, was enqueued. No strategy, signal, order, allocation or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260819T090759Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-19T09:26:11Z",
+      "daily_cycle_id": "daily-20260819T090759Z",
+      "daily_report_items": [
+        "Tesla full review failed closed after its required assessment upsert reported an ambiguous source operation for the run; no strategy, signal, order, allocation, accounting change, or follow-up operation was created."
+      ],
+      "entity_id": "security_dc7a111e297be528d96b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The filing reports Q2 revenue of USD 28.236 billion, operating income of USD 398 million, cash and cash equivalents of USD 15.219 billion, short-term investments of USD 28.305 billion, and 3.540 billion diluted weighted-average shares; it also expects more than USD 25 billion of 2026 capital expenditures.",
+          "observed_at": "2026-08-19T09:20:13Z",
+          "source": "Tesla, Inc. Q2 2026 Form 10-Q",
+          "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+        },
+        {
+          "claim": "The identity-matched TSLA market row records an August 18 adjusted close of USD 336.8699951171875 retrieved at 2026-08-19T09:08:06Z.",
+          "observed_at": "2026-08-19T09:08:06Z",
+          "source": "data/market/latest.csv"
+        },
+        {
+          "claim": "The mandatory security-context command succeeded, source and security upserts succeeded, and the assessment upsert exited 2 without changing assessment state because the source operation was ambiguous for this run.",
+          "source": "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/command_audit.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/assessment_upsert_request.json",
+        "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/security_upsert_request.json",
+        "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/source_tsla_q2_2026_10q_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dc7a111e297be528d96b.md"
+      ],
+      "operation_id": "01M0CMRJ98SAV40VKBH4RJDG9J",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/agent_result.json",
+      "status": "failed",
+      "summary": "Tesla's Q2 filing was rechecked and the security page and structured security summary were updated with a scenario-complete USD 137/USD 272/USD 491 sum-of-parts review. The required comparable assessment was not accepted: the audited assessment upsert failed closed with 'assessment source operation is ambiguous for this run'. Per controller policy, the rejected command was not retried, no idea or strategy follow-up was created, and the operation cannot succeed without an accepted assessment."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-18T23:51:39Z"
+}

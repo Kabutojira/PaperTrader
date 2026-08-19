@@ -1,0 +1,65 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T090759Z --script-path data/wiki/podcasts/daily-podcast_20260819T090759Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260819T090759Z --script-path data/wiki/podcasts/daily-podcast_20260819T090759Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 2,535-word Tesla research podcast distinguishing technical stabilization from fundamental improvement and explaining why the non-binding Terafab relationship remains strategic optionality rather than quantified value; the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three covers the exclusive prior cutoff of 2026-08-18T23:51:39Z through the inclusive 2026-08-19T09:26:30Z cutoff and identifies Tesla as the accepted research development with a later unresolved full-assessment gap.",
+      "source": "data/runs/daily-20260819T090759Z/podcast_context.json",
+      "source_hash": "6c85180799b677781fc4f414a0b23dc91420839344f7fd07f0b727891da540ff"
+    },
+    {
+      "claim": "Tesla rose 3.38% across the alert period to USD 328.58 and later reached USD 336.87; MACD remained above signal while both lines were negative, RSI was neutral, volume was non-anomalous, and no current transition remained active.",
+      "observed_at": "2026-08-19T09:08:06Z",
+      "source": "PaperTrader deterministic market and indicator state retained in the frozen context",
+      "source_hash": "8b4e25d7087d8169a289e383863812273a088a470854c5307cbd166c2aa642a1"
+    },
+    {
+      "claim": "The accepted medium-confidence relationship gives Tesla a plausible custom-silicon supply-security and iteration channel, but the framework remains non-binding and discloses no capacity, price, volume, capital, or shareholder-return economics.",
+      "source": "data/wiki/relationships/relationship_terafab_tsla.md"
+    },
+    {
+      "claim": "The completed decision state holds one hundred percent cash with no actionable signal or pending order.",
+      "source": "data/runs/daily-20260819T090759Z/decision_snapshot.json",
+      "source_hash": "a0083fc1585a101bd9e8175295efc99041b883498ecca446f1002cad9a1f45d9"
+    },
+    {
+      "claim": "The deterministic preflight accepted the complete transcript at 2,535 spoken words in five TTS chunks with script hash b26ab8918ebb533063ccd9a3b7f6df145b13ba46d96417df0cd98e0a4af1bd9f.",
+      "source": "papertrader podcast validate-script receipt"
+    },
+    {
+      "claim": "Exactly one audited render-draft invocation succeeded and produced an ephemeral 1,113-second draft outside the repository.",
+      "source": "papertrader podcast render-draft receipt"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260819.md",
+    "data/wiki/podcasts/daily-podcast_20260819T090759Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0CNYVW0G8Z8P90RRKCZQRJ5",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created one 2,535-word research podcast asking when Tesla price stabilization reflects business improvement. The episode explains the August momentum crossover, unchanged second-quarter evidence, capital intensity, strategic optionality, and the accepted but non-binding Terafab relationship while preserving the unresolved canonical valuation gap. Added exactly one transcript link to the daily report. The deterministic script preflight passed and the single audited draft render succeeded, producing an ephemeral 1,113-second audio draft outside the repository.",
+  "validation": {
+    "checks": [
+      "Frozen context version, cutoffs, decision snapshot, report, changed Tesla page, prior context, and prior transcript identities matched their required hashes.",
+      "Deterministic podcast script preflight passed with 2,535 spoken words, five chunks, valid metadata, exact transcript markers, and no prohibited spoken formatting.",
+      "The daily report contains exactly one link to the new transcript and neither changed wiki file contains a persistent audio path or audio link.",
+      "Exactly one audited render-draft invocation occurred after the successful preflight and it succeeded.",
+      "Strict schema validation passed.",
+      "Strict integrity validation passed, including deterministic queue validation.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed without changing accounting state."
+    ],
+    "passed": true
+  }
+}

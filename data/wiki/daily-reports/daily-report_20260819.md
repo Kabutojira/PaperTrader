@@ -149,6 +149,10 @@ No pending orders.
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]
 
+### Research podcast
+
+- [[podcasts/daily-podcast_20260819T090759Z|Daily research podcast — 2026-08-19T090759Z]]
+
 ## 7. Data-quality and coverage impact
 
 - Investment data status: **degraded**
