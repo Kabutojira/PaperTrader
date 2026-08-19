@@ -1,0 +1,57 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_3853e54c619d597dcaa1",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Nidec's August 10 volume-anomaly quick check was skipped because the canonical price cache no longer reproduces the alert's source hash and now records zero volume on the alert date. All five retained issuer documents remain byte-identical, leaving NIB.F's unsupported Unrated / Watch conclusion unchanged; no full review or paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The packet binds the alert to the July 13 through August 10 period, a EUR 14.91 adjusted close, a 5.834749662866526% period return, and source-price hash 73e77b3b7c445b513b6e0b6c5aa276887585cba6289b57d65978f34a3eec7197.",
+      "observed_at": "2026-08-19T21:56:29Z",
+      "source": "PaperTrader immutable August 10 volume-anomaly packet",
+      "source_hash": "73e77b3b7c445b513b6e0b6c5aa276887585cba6289b57d65978f34a3eec7197"
+    },
+    {
+      "claim": "The current cache still reproduces the packet's exact period return and EUR 14.91 endpoint, but its bars through August 10 hash to 13a918e7043d971b2a7d015f6b938b219ecd73d449bf09a241fc2fd7cf6668f7 rather than the payload hash and now show zero August 10 volume. The full cache and August 19 indicator row hash to 44ce2b7f48f977466519fb05a620d4d8bc80fd1a1fc7f864c77dc193f4b2cc51, with volume z-score 0.48530641 and no active trigger. The historical revision therefore removes deterministic support for the queued volume anomaly.",
+      "observed_at": "2026-08-19T21:56:29Z",
+      "source": "PaperTrader canonical NIB.F price and indicator caches",
+      "source_hash": "44ce2b7f48f977466519fb05a620d4d8bc80fd1a1fc7f864c77dc193f4b2cc51"
+    },
+    {
+      "claim": "Fresh anonymous retrieval reproduced the registered SHA-256 hashes for the final accounting report, quality investigation notice, preliminary fiscal-2025 figures, annual-filing extension, and interim financial statements. No retained primary evidence changed the baseline thesis, valuation support, catalyst, invalidation, or risk checklist.",
+      "observed_at": "2026-08-19T21:56:29Z",
+      "source": "Nidec retained primary-source documents"
+    },
+    {
+      "claim": "The mandatory pre-assessment context confirmed that baseline operation 01KZC7H968FVJSE93MAANZBZJ5 succeeded on August 6 for the same immutable security and that assessment assessment_c5c44a38648ec5b41db2 remains unsupported, Unrated / Watch, and allocation-ineligible because accounting uncertainty, insufficient Frankfurt liquidity, and unsupported valuation remain hard blockers.",
+      "observed_at": "2026-08-19T21:53:09Z",
+      "source": "PaperTrader audited security context"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KZP6EDMRNMBD4C70CSBGR5B1",
+  "operations_created": [],
+  "reason_code": "alert_source_price_hash_superseded",
+  "status": "skipped",
+  "summary": "Skipped the Nidec Frankfurt quick check because deterministic source drift made the August 10 volume-anomaly binding obsolete. The immutable alert recorded source-price hash 73e77b3b7c445b513b6e0b6c5aa276887585cba6289b57d65978f34a3eec7197, but the current canonical cache reconstructed through August 10 hashes to 13a918e7043d971b2a7d015f6b938b219ecd73d449bf09a241fc2fd7cf6668f7 and now records zero August 10 volume. The current August 19 indicator state has no volume-anomaly trigger. All five retained issuer documents remain byte-identical, so no primary evidence changed the unsupported Unrated / Watch conclusion. No assessment, security, wiki, source, follow-up, strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory audited security context before reading assessment state and confirmed the baseline operation, immutable security identity, current assessment, predecessor link, page hash, retained sources, and absence of linked ideas, relationships, or strategies.",
+      "Confirmed the baseline completed within ten days of the August 10 enqueue time and was successful for security_3853e54c619d597dcaa1.",
+      "Confirmed the payload and immutable packet agree on trigger type, exact period, endpoint, period return, and source-price hash.",
+      "Recomputed the canonical economic price-content hash through August 10 and proved that it no longer matches the immutable alert binding; the revised endpoint volume is zero and the current indicator state has no volume-anomaly trigger.",
+      "Freshly retrieved all five retained issuer PDFs and confirmed each SHA-256 hash exactly matches its registered content hash.",
+      "Applied the deterministic obsolete-alert skip rule without changing any agent-owned repository state or publishing an unnecessary assessment version.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation all returned OK.",
+      "Confirmed no full-research follow-up, strategy, signal, order, allocation, execution, cash, portfolio, performance, source, security, assessment, or wiki state changed."
+    ],
+    "passed": true
+  }
+}
