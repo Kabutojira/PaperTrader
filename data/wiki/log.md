@@ -4068,3 +4068,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_43511df5ea63ce6e7382`.
 
 - Generated canonical [[daily-reports/daily-report_20260819]] for run `daily-20260819T090759Z`.
+
+## [2026-08-19T12:05:12Z] update | Tesla comparable assessment completion
+
+- Revalidated the completed [[securities/security_dc7a111e297be528d96b|Tesla]] sum-of-parts review
+  against the unchanged USD 336.87 mark and fresh USD/EUR state. The supported USD 137 / USD 272 /
+  USD 491 scenarios and USD 293 weighted value retain Sell / Avoid and allocation ineligibility;
+  exactly one dependent Terafab idea refresh is required, while no strategy or paper signal is
+  justified.

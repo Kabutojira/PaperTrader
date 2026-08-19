@@ -184,7 +184,8 @@ return, downside payoff and margin of safety do not support an entry or a convic
 - Canonical market and indicator state: `data/market/latest.csv`,
   `data/market/indicators.csv`, and
   `data/market/prices/security_dc7a111e297be528d96b.csv`, retrieved
-  `2026-08-19T09:08:06Z` for the current comparison; the immutable alert packet retains the
+  `2026-08-19T12:02:23Z` for the unchanged USD 336.87 current mark and
+  `2026-08-19T09:08:06Z` for the latest indicators; the immutable alert packet retains the
   `2026-08-08T11:01:36Z` payload observation.
 
 Next review: **2026-09-18**, or sooner after material delivery, margin, autonomy, regulatory,

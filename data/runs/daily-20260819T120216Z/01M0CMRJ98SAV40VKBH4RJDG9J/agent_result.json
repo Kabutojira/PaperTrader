@@ -1,0 +1,83 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader research security upsert --request data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/security_upsert_attempt02_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/assessment_upsert_attempt02_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/enqueue_idea_refresh_attempt02_request.json",
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Tesla's full review converted the prior unsupported quick check into a complete USD 137 / USD 272 / USD 491 scenario valuation. At USD 336.87, the deterministic result is USD 293 probability-weighted fair value, -13.02% expected return, Hold / Watch, and allocation-ineligible; the accepted Terafab relationship remains non-binding, no strategy or paper signal was created, and one dependent idea refresh was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "Tesla's Q2 2026 Form 10-Q reports quarterly automotive revenue of USD 19.878 billion, energy generation and storage revenue of USD 3.014 billion, total revenue of USD 27.997 billion, operating income of USD 0.923 billion, USD 1.066 billion six-month operating cash flow, USD 8.527 billion six-month capital expenditure, USD 36.775 billion cash and investments, and USD 2.331 billion debt principal.",
+      "observed_at": "2026-08-19T09:20:13Z",
+      "source": "Tesla Q2 2026 Form 10-Q filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    },
+    {
+      "claim": "Tesla's Q2 2026 issuer release reports 450,410 vehicles produced, 443,956 delivered, and 9.6 GWh of energy-storage deployments.",
+      "observed_at": "2026-07-29T23:44:00Z",
+      "source": "Tesla second-quarter 2026 production, deliveries and deployments release",
+      "source_hash": "cadfa292c301e22ed474addbaf936395fdf55a77376ae031631c642f34b772d5",
+      "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments"
+    },
+    {
+      "claim": "The SEC submissions index available on August 19 showed no later periodic operating filing or earnings release that superseded the Q2 evidence set.",
+      "observed_at": "2026-08-19T09:12:08Z",
+      "source": "U.S. Securities and Exchange Commission Tesla submissions index",
+      "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+      "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+    },
+    {
+      "claim": "The identity-matched TSLA mark was USD 336.8699951171875 and the USD/EUR conversion rate was 0.8615000247955322, both retrieved at 2026-08-19T12:02:23Z. The August 18 indicator state retained MACD above signal while both lines were negative, RSI was neutral, and no current transition was active.",
+      "source": "data/market/latest.csv, data/market/indicators.csv, data/market/prices/security_dc7a111e297be528d96b.csv, and data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "Deterministic schema-v2 assessment derived USD 293 probability-weighted fair value, -13.02282653636943092919037599% expected return, -9.767119902277073196892781992% confidence-adjusted expected return, and USD 217.6 buy-below price; canonical rating is Hold, portfolio action is Watch, and allocation eligibility is ineligible.",
+      "source": "assessment_05487a0deb2a28b77d47"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0CYMREGK0MA8BGGVPK92EMT.json",
+    "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/assessment_upsert_attempt02_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/enqueue_idea_refresh_attempt02_request.json",
+    "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/security_upsert_attempt02_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0CMRJ98SAV40VKBH4RJDG9J",
+  "operations_created": [
+    "01M0CYMREGK0MA8BGGVPK92EMT"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one full Tesla security review. Current Q2 primary evidence supports a scenario-complete sum-of-parts valuation of USD 137 / USD 272 / USD 491 with 25% / 50% / 25% probabilities. Against the fresh USD 336.87 mark, deterministic assessment assessment_05487a0deb2a28b77d47 derives USD 293 probability-weighted fair value, -13.02% expected return, -9.77% confidence-adjusted expected return, and a USD 217.60 buy-below price. The canonical result is Hold / Watch with quality score 72 and allocation ineligibility because expected-return, base-return, bear/base payoff, expected/bear payoff, and margin-of-safety gates fail. The accepted Terafab relationship remains plausible but non-binding and carries no current component value. Exactly one dependent idea-research follow-up was enqueued so the linked idea can absorb this accepted result. No strategy, signal, paper order, allocation, execution, cash, portfolio, performance, or fill state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-review security-context receipt succeeded before assessment state was read or changed.",
+      "The immutable identity remained security_dc7a111e297be528d96b / TSLA / XNAS / USD with no duplicate identity detected.",
+      "Registered Q2 filing, issuer-release, and current SEC-submissions evidence remained available and source-linked.",
+      "Fresh identity-matched mark and FX state from 2026-08-19T12:02:23Z were consumed.",
+      "Assessment assessment_05487a0deb2a28b77d47 is schema version 2, complete, current, source-linked, page-hash-linked, and points to predecessor assessment_360bd1c80b7c5b27422c.",
+      "Scenario probabilities total 100, fair values are ordered, and deterministic output is Hold / Watch with complete allocation-ineligibility reasons.",
+      "Exactly one dependent idea-research follow-up, 01M0CYMREGK0MA8BGGVPK92EMT, exists for the one linked accepted idea/relationship; no conviction strategy follow-up was created because the strategy gate failed.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "No allocation target/history, order, execution, cash, portfolio, performance, fill, or other accounting state was changed by this routed skill."
+    ],
+    "passed": true
+  }
+}

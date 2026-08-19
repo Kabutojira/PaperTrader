@@ -1,0 +1,19 @@
+{
+  "entity_id": "idea_terafab_ai_industrial_stack",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_terafab_ai_industrial_stack",
+    "security_id": "security_dc7a111e297be528d96b",
+    "security_research_operation_id": "01M0CMRJ98SAV40VKBH4RJDG9J",
+    "security_research_result_path": "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/agent_result.json",
+    "seed_claim": "Tesla's completed USD 137/USD 272/USD 491 sum-of-parts review retains Sell / Avoid and allocation ineligibility; the accepted Terafab edge remains plausible but non-binding and carries no current component value."
+  },
+  "objective": "Refresh the Terafab AI industrial-stack idea from Tesla's completed scenario valuation, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01M0CYMREGK0MA8BGGVPK92EMT",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/relationships/relationship_terafab_tsla.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ]
+}
