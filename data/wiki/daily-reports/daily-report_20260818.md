@@ -167,6 +167,7 @@ No pending orders.
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[podcasts/daily-podcast_20260818T201127Z|Daily research podcast — 2026-08-18T201127Z]]
+- [[podcasts/daily-podcast_20260818T231700Z|Daily research podcast — 2026-08-18T231700Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_47a0b06f6c6c478d7c1e|Nebius Group N.V. Class A ordinary shares]]
 - [[securities/security_715bde20b6e1e1320c1a|DLocal Limited Class A common shares]]

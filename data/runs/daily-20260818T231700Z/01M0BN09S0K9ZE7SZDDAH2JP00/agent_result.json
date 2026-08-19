@@ -1,0 +1,66 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260818T231700Z --script-path data/wiki/podcasts/daily-podcast_20260818T231700Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260818T231700Z --script-path data/wiki/podcasts/daily-podcast_20260818T231700Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Added the timestamped daily research podcast transcript link for the completed cycle."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen context version three defined the exclusive prior-podcast cutoff, inclusive current research cutoff, prior transcript identity, changed research pages, and current portfolio-implication sources.",
+      "source": "data/runs/daily-20260818T231700Z/podcast_context.json",
+      "source_hash": "17294a905790d8aad88590d96b996aa3122ae6d4f2c3e0cf2cd8526ee74acc57"
+    },
+    {
+      "claim": "Nebius showed exceptional revenue and adjusted operating growth, but capital intensity, debt, dilution, customer concentration, and valuation produced an avoid conclusion at the reviewed price.",
+      "source": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md"
+    },
+    {
+      "claim": "Meta's advertising engine remained strong while sharply higher costs, capital spending, Reality Labs losses, and weak free-cash-flow conversion left the downside-payoff and margin-of-safety gates unmet.",
+      "source": "data/wiki/securities/security_d12e746b3c9d392183cc.md"
+    },
+    {
+      "claim": "Qualcomm's bullish MACD transition reflected stabilization without new primary operating evidence, leaving handset weakness, margin pressure, and diversification scale as unresolved investment constraints.",
+      "source": "data/wiki/securities/security_3a75fc1ccca2ee7c937a.md"
+    },
+    {
+      "claim": "Microsoft supplied a comparison for broad enterprise artificial-intelligence distribution, strong cash generation, heavy infrastructure commitments, and a valuation that already captured much of the operating quality.",
+      "source": "data/wiki/securities/security_204be2a44063993de1a8.md"
+    },
+    {
+      "claim": "NVIDIA supplied the profitable supplier-layer comparison while still illustrating that export, concentration, supply, transition, and valuation risks can prevent a strong business from clearing an entry frontier.",
+      "source": "data/wiki/securities/security_33d9c44facc75c726c7d.md"
+    },
+    {
+      "claim": "The completed snapshot contained no actionable signals and supported a brief all-cash closing implication rather than a trade narrative.",
+      "source": "data/runs/daily-20260818T231700Z/decision_snapshot.json"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260818.md",
+    "data/wiki/podcasts/daily-podcast_20260818T231700Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0BN09S0K9ZE7SZDDAH2JP00",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a 3,076-word research podcast asking why genuine artificial-intelligence demand can still produce unattractive investments when capital recovery, customer concentration, dilution, and entry price are considered. The episode connects Nebius's restored avoid valuation, Meta's strong advertising engine but weak capital-payoff frontier, Qualcomm's non-fundamental momentum stabilization, and Microsoft/NVIDIA as stack-level comparisons. The deterministic script preflight passed with six chunks. The single audited draft-render attempt failed because edge-tts was unavailable; under the podcast contract, that does not invalidate the completed transcript.",
+  "validation": {
+    "checks": [
+      "Frozen podcast context version three, cutoff ordering, prior-podcast identity, source paths, and recorded hashes were checked before drafting.",
+      "Deterministic script preflight passed at 3,076 words, at least eight narrative paragraphs, six chunks, and script SHA-256 ccf1ae49abad018723b72ecfffba04e2e50490881a89fa21bb085f2683a709df.",
+      "The spoken section contains no numeric glyphs, Markdown headings, lists, tables, visible links, raw URLs, machine identities, or prohibited disclosure language.",
+      "The daily report contains exactly one link to the new timestamped transcript and no audio link.",
+      "Exactly one audited render-draft attempt was made; it failed because edge-tts was unavailable and was not retried.",
+      "Strict schema, integrity, wiki lint, queue validation, and portfolio reconciliation checks all passed.",
+      "No allocation, signal, order, execution, cash, portfolio, performance, queue lifecycle, or delivery state was changed by the routed operation."
+    ],
+    "passed": true
+  }
+}

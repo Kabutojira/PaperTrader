@@ -1,0 +1,228 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_204be2a44063993de1a8.md",
+      "sha256": "2f89f22c93f0ed928980068e2764a1c43531130e5efa98e7005d4c6b0b177b70"
+    },
+    {
+      "path": "data/wiki/securities/security_33d9c44facc75c726c7d.md",
+      "sha256": "6a3ca080cdcf4453f8cbb2433fdfca2af7d1e1f0bc08d65a4c8f79adaf11ed41"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md",
+      "sha256": "bb8800b16fddba385c7a77e6800b93a3aa0f4cdd9fe0c6c41b5721af43b9ac9f"
+    },
+    {
+      "path": "data/wiki/securities/security_d12e746b3c9d392183cc.md",
+      "sha256": "ac8ec8f0d243d0a63d497d322c2a3f8b8e29a846ecfc5fb4910f03302df22153"
+    }
+  ],
+  "daily_cycle_id": "daily-20260818T231700Z",
+  "decision_snapshot_path": "data/runs/daily-20260818T231700Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "324a67c15f39540af686e723f19556db00a6d740403cf7d440f8a4ba343ea0e5",
+  "generated_at": "2026-08-18T23:58:44Z",
+  "intervening_daily_cycles": [
+    "daily-20260818T231700Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260818T231700Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260818T231700Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260818.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260818T201127Z/podcast_context.json",
+    "context_sha256": "ea5a8f562972c7c3cd2424bd7b795498135b2fead66c584c90a6d820c5ab78f4",
+    "daily_cycle_id": "daily-20260818T201127Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260818T201127Z.md",
+    "page_sha256": "4c33444c0397082f7c04600483bfb56b91228b701529b5ed837b8165e4b6943a",
+    "research_cutoff_at": "2026-08-18T21:02:07Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260818.md",
+  "report_sha256": "b49232bbe3baebb52beef1721b172da6d83c3504e97caec25cb762b02101e8b8",
+  "research_cutoff_at": "2026-08-18T23:51:39Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-18T23:26:28Z",
+      "daily_cycle_id": "daily-20260818T231700Z",
+      "daily_report_items": [
+        "Nebius Q2 full review restored a supported USD 75 / USD 165 / USD 325 scenario valuation. USD 182.50 probability-weighted value remains below the USD 248.43 mark, so canonical state is Sell / Avoid and allocation-ineligible; no strategy or paper signal was created."
+      ],
+      "entity_id": "security_47a0b06f6c6c478d7c1e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Nebius reported Q2 revenue of USD 582.3 million, adjusted EBITDA of USD 236.2 million, and purchases of property, equipment and intangible assets of USD 5.6574 billion, confirming both exceptional operating growth and extraordinary capital intensity.",
+          "observed_at": "2026-08-18T23:19:57Z",
+          "source": "Nebius Q2 2026 results filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "6251cc57958331181d98ee59ff093992d0658f8d6db5487eed7e7d397225aa03",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094568/tm2622968d1_ex99-1.htm"
+        },
+        {
+          "claim": "At June 30, 2026, cash was USD 8.0421 billion, debt was USD 8.5457 billion, deferred revenue was USD 5.9752 billion, and issued and outstanding shares were 271.9 million before material anti-dilutive convertible-note, award and Eigen AI share effects.",
+          "observed_at": "2026-08-18T23:19:57Z",
+          "source": "Nebius Q2 2026 unaudited condensed consolidated financial statements filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "440449e9671dc8f744e7a9cbbac86384d6eacbfded9dc3c01c95613d64c31c4c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1513845/000110465926094844/nbis-20260812xex99d2.htm"
+        },
+        {
+          "claim": "The identity-matched NBIS mark was USD 248.42999267578125 and the USD/EUR conversion rate was 0.863349974155426, both retrieved at 2026-08-18T23:17:07Z.",
+          "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+        },
+        {
+          "claim": "Deterministic schema-v2 valuation derived USD 182.50 probability-weighted fair value, -26.53866063661023561787072477% expected return, -19.90399547745767671340304358% confidence-adjusted expected return, and USD 132 buy-below price; canonical rating is Sell, portfolio action is Avoid, and allocation eligibility is ineligible.",
+          "source": "assessment_e5ee4f0f332bc61b13fb"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/assessment_upsert_request.json",
+        "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/security_upsert_request.json",
+        "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/source_nbis_q2_2026_financials_request.json",
+        "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/source_nbis_q2_2026_results_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_47a0b06f6c6c478d7c1e.md"
+      ],
+      "operation_id": "01M0B9RMZRENS1CC2T3BF65HXF",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260818T231700Z/01M0B9RMZRENS1CC2T3BF65HXF/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one full Nebius Q2 2026 security review. Fresh SEC-filed results and financial statements support a conservative Q2-normalized revenue-multiple valuation of USD 75 / USD 165 / USD 325 with 25% / 50% / 25% probabilities. At the fresh USD 248.43 mark, deterministic probability-weighted value is USD 182.50, expected return is -26.54%, confidence-adjusted expected return is -19.90%, and buy-below value is USD 132. The immutable schema-v2 assessment is Sell / Avoid and allocation-ineligible because every economic return/payoff gate fails and no accepted relationship exists. No strategy, signal, paper order, follow-up operation, allocation, or accounting state was changed."
+    },
+    {
+      "completed_at": "2026-08-18T23:37:14Z",
+      "daily_cycle_id": "daily-20260818T231700Z",
+      "daily_report_items": [
+        "Meta's August 14 bullish MACD crossover did not persist before the August 18 lower-Bollinger breach. Unchanged Q2 primary evidence and USD 400 / USD 600 / USD 800 scenarios against the USD 543.67 mark produce 6.68% expected return and 5.01% confidence-adjusted expected return, leaving META Hold / Watch and allocation-ineligible; no strategy or paper signal was created."
+      ],
+      "entity_id": "security_d12e746b3c9d392183cc",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Meta's Q2 filing reports USD 60.801 billion quarterly revenue, USD 18.775 billion operating income, USD 15.848 billion net income, USD 90.26 billion cash and marketable securities, USD 83.664 billion long-term debt, and 2.548 billion Class A and Class B shares outstanding.",
+          "observed_at": "2026-08-18T23:28:21Z",
+          "source": "Meta Q2 2026 Form 10-Q filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+        },
+        {
+          "claim": "Meta's Q2 release reports 28% revenue growth, 3.60 billion Family daily active people, 14% ad-impression growth, 12% average-price-per-ad growth, USD 31.08 billion capital expenditures, and only USD 784 million quarterly free cash flow.",
+          "observed_at": "2026-08-18T23:28:21Z",
+          "source": "Meta Q2 2026 results filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm"
+        },
+        {
+          "claim": "The identity-matched META mark was USD 543.6699829101562 and the USD/EUR conversion rate was 0.863349974155426, both retrieved at 2026-08-18T23:17:07Z. The August 14 bullish MACD crossover did not persist; by August 18 the MACD histogram was negative and the close was 0.43% below the lower Bollinger band, with RSI 36.20 and no volume anomaly.",
+          "source": "data/market/latest.csv, data/market/indicators.csv, data/market/prices/security_d12e746b3c9d392183cc.csv, and data/market/fx/USD_EUR.csv"
+        },
+        {
+          "claim": "Deterministic schema-v2 valuation derived USD 580 probability-weighted fair value, 6.6823658160004561772901517% expected return, 5.011774362000342132967613775% confidence-adjusted expected return, and USD 480 buy-below price; canonical rating is Hold, portfolio action is Watch, and allocation eligibility is ineligible.",
+          "source": "assessment_94ed64f1bb285f6aedb5"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_request.json",
+        "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/assessment_upsert_retry02_request.json",
+        "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/security_upsert_request.json",
+        "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/source_meta_q2_2026_10q_request.json",
+        "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/source_meta_q2_2026_results_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_d12e746b3c9d392183cc.md"
+      ],
+      "operation_id": "01M02FQ3KGXV8XSZN4FXDYFCG2",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one repeat security review for Meta Platforms, Inc. after the August 14 bullish MACD crossover and August 18 lower-Bollinger breach. The crossover did not persist, RSI was not oversold, volume was not anomalous, and unchanged Q2 primary evidence still shows strong advertising demand alongside high AI capital intensity, weak latest free-cash-flow conversion, Reality Labs losses, and legal exposure. At the fresh USD 543.67 mark, unchanged USD 400 / USD 600 / USD 800 scenarios derive USD 580 probability-weighted value, 6.68% expected return, and 5.01% confidence-adjusted expected return. The immutable assessment is Hold / Watch, quality score 86, and allocation-ineligible because expected-return, bear/base payoff, expected/bear payoff, and relationship gates fail. No linked idea or accepted relationship exists, so no idea follow-up was required; no conviction strategy, signal, paper order, allocation, or accounting state was changed."
+    },
+    {
+      "completed_at": "2026-08-18T23:42:02Z",
+      "daily_cycle_id": "daily-20260818T231700Z",
+      "daily_report_items": [
+        "Qualcomm's August 6 bullish MACD crossover was short-term stabilization after a 16.07% measured-period decline, not a fundamental catalyst. At USD 160.39, the unchanged USD 100/160/220 scenarios produced roughly -0.24% probability-weighted return and the mark remained 25.30% above the USD 128 buy-below price. The fresh medium-confidence Hold / Watch assessment remains allocation-ineligible; no full review, strategy, signal, or paper order was created."
+      ],
+      "entity_id": "security_3a75fc1ccca2ee7c937a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The successful baseline operation is for the same immutable security and completed on 2026-08-01, within ten days of this quick check's 2026-08-06 enqueue time. It established the fiscal Q3 thesis, USD 100/160/220 scenarios, USD 128 buy-below price, medium confidence, Hold / Watch disposition, and allocation ineligibility.",
+          "observed_at": "2026-08-18T23:37:44Z",
+          "source": "data/runs/gha-30693087454-1/01KYPB1Z50955WQSMSWYR16957/agent_result.json"
+        },
+        {
+          "claim": "The canonical historical indicator row matches the payload exactly: security security_3a75fc1ccca2ee7c937a, as-of date 2026-08-06, calculated_at 2026-08-06T21:26:50Z, adjusted close USD 160.38999938964844, 20-session return -16.074513%, MACD -9.44979368 above signal -9.78883124, and source_price_hash 24baa97ab3d2b8c5a9488dbb282f59ec5584f4cc55ee0fb699dbd1efa71358bd. The crossover is a momentum stabilization signal, not evidence that an operating catalyst fired.",
+          "observed_at": "2026-08-18T23:39:00Z",
+          "source": "PaperTrader deterministic 2026-08-06 indicator state",
+          "source_hash": "24baa97ab3d2b8c5a9488dbb282f59ec5584f4cc55ee0fb699dbd1efa71358bd"
+        },
+        {
+          "claim": "The SEC submissions feed showed no new Form 10-Q, Form 10-K, or issuer results filing after the baseline fiscal Q3 evidence. Through the payload period, the only later filings were an August 3 Form 4 and Form 144; the Form 4 reported a 3,200-share sale by Heather S. Ace at USD 147.04 with 36,535 shares retained. This did not change the bounded operating thesis, valuation assumptions, catalyst checklist, or invalidation checklist. Later ownership and insider-reporting filings likewise supplied no newer operating results.",
+          "source": "SEC submissions for QUALCOMM Incorporated, CIK 0000804328",
+          "url": "https://data.sec.gov/submissions/CIK0000804328.json"
+        },
+        {
+          "claim": "At USD 160.38999938964844, the unchanged USD 100/160/220 scenarios imply bear/base/bull returns of -37.651973%, -0.243157%, and 37.165659%, with -0.243157% probability-weighted return and -0.182368% confidence-adjusted return. The mark was 25.304687% above the USD 128 buy-below price. The valuation and entry gates therefore worsened rather than clearing, while no catalyst or invalidation condition was verified.",
+          "observed_at": "2026-08-18T23:40:00Z",
+          "source": "Retained assessment assessment_a25135a378a7515add42 and deterministic scenario comparison"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KZCFHHCGYZ3QF45TDSVB3WVN",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T231700Z/01KZCFHHCGYZ3QF45TDSVB3WVN/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the bounded Qualcomm quick check for the 2026-08-06 MACD cross above signal. The USD 160.39 mark represented short-term stabilization after a 16.07% measured-period decline, but it did not verify a fundamental catalyst or invalidate the fiscal Q3 thesis. The existing USD 100/160/220 scenarios imply approximately -37.65%/-0.24%/37.17% returns at that mark, with about -0.24% probability-weighted return; the mark remained 25.30% above the USD 128 buy-below price. The retained medium-confidence Hold / Watch assessment remains allocation-ineligible because valuation, downside-payoff, margin-of-safety, timing, and relationship gates do not improve. The fresh existing assessment version assessment_a25135a378a7515add42 was retained unchanged, no full review was warranted, and no agent-owned repository state was changed."
+    }
+  ],
+  "run_id": "daily-20260818T231700Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-18T23:51:22Z",
+      "daily_cycle_id": "daily-20260818T231700Z",
+      "daily_report_items": [],
+      "entity_id": "security_dc7a111e297be528d96b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "repeat security research page requires a Changes since prior review section",
+          "source": "data/runs/daily-20260818T231700Z/01KZGGJ4M05XRHKKRXK2WYJANM/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "repeat security research page requires a Changes since prior review section"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZGGJ4M05XRHKKRXK2WYJANM",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260818T231700Z/01KZGGJ4M05XRHKKRXK2WYJANM/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-18T21:02:07Z"
+}
