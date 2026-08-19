@@ -1,0 +1,63 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three identifies daily-20260819T153048Z as the previous successful podcast and declares previous_context_hash 7c0e4ecf5e6eeb86d4af5001448e15eb3972ac5145853c3755ddfdf78ac611a2. It otherwise contains no accepted research developments in the bounded window and one unresolved, unaccepted ASML validation failure.",
+      "observed_at": "2026-08-19T18:40:30Z",
+      "source": "data/runs/daily-20260819T181717Z/podcast_context.json",
+      "source_hash": "0a625a39659ed42d02e875de6afe0c097b44334a9630d6d15ccf8bc3cf191a97"
+    },
+    {
+      "claim": "The referenced previous successful podcast context hashes to e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db, which conflicts with the immutable hash declared by the current frozen context.",
+      "observed_at": "2026-08-19T18:40:30Z",
+      "source": "data/runs/daily-20260819T153048Z/podcast_context.json",
+      "source_hash": "e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db"
+    },
+    {
+      "claim": "The previous successful podcast page identity and SHA-256 match the current frozen context, isolating the conflict to the referenced previous podcast context file.",
+      "observed_at": "2026-08-19T18:40:30Z",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T153048Z.md",
+      "source_hash": "01f83c638e1c917c521ab65f9f2bca8ade448065c6087a77ba2642118b70407e"
+    },
+    {
+      "claim": "The current decision snapshot SHA-256 matches the frozen context and contains no actionable signals; this does not resolve the previous-context provenance conflict.",
+      "observed_at": "2026-08-19T18:28:15Z",
+      "source": "data/runs/daily-20260819T181717Z/decision_snapshot.json",
+      "source_hash": "78b9be4796684586ce767bb1a0b19ad39e6eaa6deb8cd2d4500354d7ef36c39a"
+    },
+    {
+      "claim": "The canonical daily report SHA-256 matches the frozen context and was left byte-for-byte unchanged; no transcript link was added.",
+      "observed_at": "2026-08-19T18:40:30Z",
+      "source": "data/wiki/daily-reports/daily-report_20260819.md",
+      "source_hash": "dadf4b9f2b33bbb271a2dd7a38cf12d6b13cc38d0a691567be01b5caf8084cbf"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0DMX4B8P0QGGBFC27X4XVY1",
+  "operations_created": [],
+  "reason_code": "frozen_previous_context_hash_conflict",
+  "status": "blocked",
+  "summary": "Blocked the daily podcast before drafting because frozen context version three declares SHA-256 7c0e4ecf5e6eeb86d4af5001448e15eb3972ac5145853c3755ddfdf78ac611a2 for the previous successful podcast context, while the referenced repository file hashes to e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db. This frozen provenance conflict must be resolved deterministically before novelty review or synthesis. No transcript or daily-report link was created, script preflight and draft rendering were not invoked, and no research, portfolio, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed context_version is 3, the window starts exclusively at 2026-08-19T15:59:54Z, and the inclusive cutoff is 2026-08-19T18:25:22Z.",
+      "Confirmed the current decision snapshot, canonical report, previous podcast page, and changed ASML wiki page match their context-declared SHA-256 values.",
+      "Detected a frozen provenance conflict: data/runs/daily-20260819T153048Z/podcast_context.json hashes to e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db instead of declared 7c0e4ecf5e6eeb86d4af5001448e15eb3972ac5145853c3755ddfdf78ac611a2.",
+      "Stopped before candidate selection, drafting, transcript creation, report modification, script preflight, or draft rendering, as required for conflicting frozen provenance.",
+      "papertrader schema validate --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ],
+    "passed": false
+  }
+}

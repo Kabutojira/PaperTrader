@@ -79,6 +79,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_51e19c59b425d7011575** — Daily preparation degraded: security_c9a37d277445869a8809 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_55f958632a0f142a3925** — Daily preparation degraded: security_96ba305ee7cd586bc348 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_568a09e6aa89b220ac34** — Daily preparation degraded: security_dc7a111e297be528d96b | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_58c26bbbb3a7ba0a110d** — Daily podcast blocked: daily-20260819T181717Z | 2026-08-19T18:41:35Z | delivery | 01M0DMX4B8P0QGGBFC27X4XVY1 |
 | warning | **issue_5bfe9ea024035add4b61** — Daily podcast skipped: daily-20260818T150041Z | 2026-08-18T15:22:52Z | delivery | 01M0AQBAK04CTQWGWXD0DDYFEJ |
 | warning | **issue_5f40235a5598fc72203e** — Daily preparation degraded: security_b2116dcf976c96974d7b | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_666586697c8b2cf251b7** — Daily preparation degraded: security_66cdcf90aac0d83e76f3 | 2026-07-29T16:51:20Z | deterministic-controller |  |
