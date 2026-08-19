@@ -20,7 +20,7 @@ import yaml
 from papertrader.atomic_io import atomic_write_json, atomic_write_text
 from papertrader.config import HermesExecutionProfile, Settings
 from papertrader.issues import record_issue
-from papertrader.podcast import PodcastError, validate_podcast_context
+from papertrader.podcast import PodcastError, podcast_page_path, validate_podcast_context
 from papertrader.profiles import ProfileRoute, RoutingContext, route_profile, select_profile
 from papertrader.queue import (
     OPERATION_SKILLS,
@@ -779,13 +779,27 @@ def build_controller_prompt(
         )
     podcast_context_requirement = ""
     if operation.operation_type == "daily_podcast":
+        exact_page_requirement = ""
+        if re.fullmatch(r"daily-[0-9]{8}T[0-9]{6}Z", operation.entity_id):
+            exact_page = podcast_page_path(operation.entity_id)
+            exact_page_requirement = (
+                f"The only allowed transcript path is `{exact_page}`. It is derived from the "
+                "immutable daily cycle ID, never from the current clock, enqueue time, research "
+                "cutoff, or report time. Confirm the payload, context, and manifest all contain "
+                "this exact page_path before drafting, and write and preflight only this path. "
+            )
         podcast_context_requirement = (
             "Immediately before this operation, the deterministic controller validated the frozen "
             "podcast context, every declared repository path, and every declared SHA-256 value. "
             "Treat that validation as authoritative. Do not recompute frozen hashes with model, "
-            "shell, or Python work and do not block on a model-derived alternative hash. Block "
-            "only if a required frozen file is actually unavailable or its non-hash identity "
-            "visibly contradicts the frozen context.\n\n"
+            "shell, or Python work and do not block on a model-derived alternative hash. "
+            f"{exact_page_requirement}"
+            "If validate-script reports that a page path is not bound to the timestamped cycle, "
+            "correct the agent-authored transcript and report link to the exact frozen page_path, "
+            "then rerun preflight; that error is not a frozen-input conflict when the stored "
+            "payload, context, and manifest values agree. Block only if a required frozen file is "
+            "actually unavailable or its stored non-hash identity visibly contradicts the other "
+            "frozen inputs.\n\n"
         )
     warning = (
         f"Deterministic scanning found {len(injection_flags)} instruction-like sequence(s) in "

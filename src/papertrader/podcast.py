@@ -26,6 +26,7 @@ from papertrader.tables import read_table
 from papertrader.utils import content_hash, ensure_utc, format_timestamp, parse_timestamp, utc_now
 
 RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+DAILY_CYCLE_ID = re.compile(r"^daily-([0-9]{8}T[0-9]{6}Z)$")
 ULID = re.compile(r"^[0-9A-HJKMNP-TV-Z]{26}$")
 PODCAST_PAGE = re.compile(r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md$")
 COMMIT_SHA = re.compile(r"^[0-9a-f]{40}$")
@@ -101,6 +102,15 @@ def _manifest_path(repository_root: Path, run_id: str) -> Path:
     if not RUN_ID.fullmatch(run_id):
         raise PodcastError(f"invalid run_id: {run_id!r}")
     return repository_root / "data" / "runs" / run_id / "daily_run.json"
+
+
+def podcast_page_path(daily_cycle_id: str) -> str:
+    """Return the one transcript path bound to an immutable version-2 daily cycle."""
+
+    match = DAILY_CYCLE_ID.fullmatch(daily_cycle_id)
+    if match is None:
+        raise PodcastError("podcast page requires a timestamped daily cycle identity")
+    return f"data/wiki/podcasts/daily-podcast_{match.group(1)}.md"
 
 
 def _load_object(path: Path) -> dict[str, object]:
@@ -195,6 +205,8 @@ def validate_podcast_context(
     page_path = context.get("page_path")
     if not isinstance(page_path, str) or not PODCAST_PAGE.fullmatch(page_path):
         raise PodcastError("frozen podcast page identity is invalid")
+    if manifest.get("daily_run_version") == 2 and page_path != podcast_page_path(daily_cycle_id):
+        raise PodcastError("frozen podcast page path is not bound to the timestamped cycle")
     if manifest.get("podcast_page_path") != page_path:
         raise PodcastError("frozen podcast page conflicts with the daily manifest")
     report_path = context.get("report_path")
@@ -649,10 +661,12 @@ def enqueue_daily_podcast(
     started_at = parse_timestamp(str(manifest.get("started_at", "")))
     if started_at is None or started_at > report_date:
         raise PodcastError("daily cycle has an invalid podcast evidence window")
-    stamp = (
-        run_id.removeprefix("daily-") if version == 2 else report_date.strftime("%Y%m%dT%H%M%SZ")
-    )
-    page_path = f"data/wiki/podcasts/daily-podcast_{stamp}.md"
+    if version == 2:
+        page_path = podcast_page_path(run_id)
+        stamp = run_id.removeprefix("daily-")
+    else:
+        stamp = report_date.strftime("%Y%m%dT%H%M%SZ")
+        page_path = f"data/wiki/podcasts/daily-podcast_{stamp}.md"
     context_relative = f"data/runs/{run_id}/podcast_context.json"
     context_path = repository_root / context_relative
     prior_podcast = _successful_prior_podcast(
@@ -887,8 +901,7 @@ def _validated_podcast_script_file(
 
     if not RUN_ID.fullmatch(daily_cycle_id):
         raise PodcastError("podcast script cycle identity is invalid")
-    expected_stamp = daily_cycle_id.removeprefix("daily-")
-    if script_path != f"data/wiki/podcasts/daily-podcast_{expected_stamp}.md":
+    if script_path != podcast_page_path(daily_cycle_id):
         raise PodcastError("podcast page path is not bound to the timestamped cycle")
     markdown_bytes = _regular_bytes(repository_root, script_path, label="podcast draft transcript")
     try:
@@ -1221,8 +1234,7 @@ def seal_podcast_render(
 
     if not COMMIT_SHA.fullmatch(script_commit):
         raise PodcastError("podcast render seal requires a canonical script commit")
-    expected_stamp = daily_cycle_id.removeprefix("daily-")
-    if script_path != f"data/wiki/podcasts/daily-podcast_{expected_stamp}.md":
+    if script_path != podcast_page_path(daily_cycle_id):
         raise PodcastError("podcast page path is not bound to the timestamped cycle")
     output_root = _output_root(repository_root, output_directory, daily_cycle_id)
     draft_path = output_root / f"{daily_cycle_id}.draft-manifest.json"
@@ -1397,6 +1409,7 @@ __all__ = [
     "build_podcast_context",
     "enqueue_daily_podcast",
     "finalize_daily_podcast",
+    "podcast_page_path",
     "render_draft_podcast",
     "seal_podcast_render",
     "spoken_transcript",

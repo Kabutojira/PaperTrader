@@ -40,6 +40,9 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
     assert "Do not retry a failed render" in skill
     assert "do not independently recompute hashes" in skill
     assert "`podcast context validate` has verified" in skill
+    assert "derived only from the immutable cycle ID" in skill
+    assert "Never replace its timestamp with the current clock" in skill
+    assert "agent-authored path error is not a frozen-input conflict" in skill
 
 
 def _script(cycle_id: str, *, extra_body: str = "") -> str:
@@ -241,6 +244,74 @@ def test_completed_run_enqueues_one_text_only_podcast(
     assert manifest["podcast_status"] == "queued"
     assert manifest["podcast_audio_path"] == ""
     assert _source_hashes(sandbox_repository, as_of=NOW) == hashes_before
+
+
+def test_version_two_podcast_path_is_bound_to_cycle_not_enqueue_time(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260729T100000Z"
+    expected = "data/wiki/podcasts/daily-podcast_20260729T100000Z.md"
+    enqueue_time_path = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-29T09:00:00Z",
+        cutoff="2026-07-29T10:30:00Z",
+    )
+
+    result = enqueue_daily_podcast(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=cycle_id,
+        now=NOW,
+    )
+    context = json.loads((sandbox_repository / result.context_path).read_text())
+    payload = json.loads(
+        (
+            sandbox_repository / "data" / "operations" / "payloads" / f"{result.operation_id}.json"
+        ).read_text()
+    )
+    manifest = json.loads(
+        (sandbox_repository / "data" / "runs" / cycle_id / "daily_run.json").read_text()
+    )
+
+    assert context["page_path"] == expected
+    assert payload["inputs"]["page_path"] == expected
+    assert manifest["podcast_page_path"] == expected
+    assert context["generated_at"] == "2026-07-30T18:00:00Z"
+    assert expected != enqueue_time_path
+
+
+def test_context_validation_rejects_page_not_bound_to_cycle(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260729T100000Z"
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-29T09:00:00Z",
+        cutoff="2026-07-29T10:30:00Z",
+    )
+    result = enqueue_daily_podcast(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=cycle_id,
+        now=NOW,
+    )
+    wrong_page = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
+    context_path = sandbox_repository / result.context_path
+    context = json.loads(context_path.read_text())
+    context["page_path"] = wrong_page
+    context_path.write_text(json.dumps(context), encoding="utf-8")
+    manifest_path = sandbox_repository / "data" / "runs" / cycle_id / "daily_run.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["podcast_page_path"] = wrong_page
+    manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+
+    with pytest.raises(PodcastError, match="page path is not bound to the timestamped cycle"):
+        validate_podcast_context(sandbox_repository, daily_cycle_id=cycle_id)
 
 
 def test_context_selects_latest_successful_same_day_podcast_and_ignores_failures(

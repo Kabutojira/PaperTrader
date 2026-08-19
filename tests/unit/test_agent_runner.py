@@ -768,6 +768,10 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "deterministic controller validated the frozen podcast context" in podcast_prompt
     assert "Do not recompute frozen hashes" in podcast_prompt
     assert "do not block on a model-derived alternative hash" in podcast_prompt
+    assert "`data/wiki/podcasts/daily-podcast_20260730T180000Z.md`" in podcast_prompt
+    assert "never from the current clock, enqueue time" in podcast_prompt
+    assert "correct the agent-authored transcript and report link" in podcast_prompt
+    assert "not a frozen-input conflict" in podcast_prompt
 
 
 def test_environment_scrubber_drops_actions_and_broker_tokens(
