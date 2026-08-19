@@ -1,0 +1,138 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_cd492d97064d8574156e.md",
+      "sha256": "ddbfd34ca6734dd0a2af7bd14ac0933671b7f96622c473a25e2fcc80178a4ec4"
+    }
+  ],
+  "daily_cycle_id": "daily-20260819T133029Z",
+  "decision_snapshot_path": "data/runs/daily-20260819T133029Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "d039dfcf75fb15e0c1a1edd3c2f41421786724ac47f41e886161521801266ce2",
+  "generated_at": "2026-08-19T14:02:30Z",
+  "intervening_daily_cycles": [
+    "daily-20260819T133029Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260819T133029Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260819T133029Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260819.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260819T120216Z/podcast_context.json",
+    "context_sha256": "5d271f6b0845727f2b6f552944bbf398a0536b8b7e911194dba78f914c63cb0c",
+    "daily_cycle_id": "daily-20260819T120216Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260819T120216Z.md",
+    "page_sha256": "6108fe5479dad264e4dfa9374c098e0435d8ec64645e9767e37e69c16b189eba",
+    "research_cutoff_at": "2026-08-19T12:34:54Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260819.md",
+  "report_sha256": "1f7b857c088d4407a0d77dc889f6c1166383190463a75002154084c19c8cce1d",
+  "research_cutoff_at": "2026-08-19T13:53:52Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-19T13:42:38Z",
+      "daily_cycle_id": "daily-20260819T133029Z",
+      "daily_report_items": [
+        "MP Materials full Q2 review completed: Q2 operating progress supports the vertical-integration thesis, but high capital expenditure, prior claims and dilution constrain common-equity value. The accepted USD 18/USD 40/USD 72 scenarios produce USD 42.50 weighted fair value against the USD 56.67 mark, retaining Sell / Avoid and allocation ineligibility. No paper trade or follow-up operation was created."
+      ],
+      "entity_id": "security_cd492d97064d8574156e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "MP Materials reported Q2 NdPr production of 840 metric tons, NdPr sales of 1,006 metric tons, USD 108.5 million consolidated revenue and a USD 20.3 million GAAP net loss; segment adjusted EBITDA was USD 32.5 million for Materials and USD 7.5 million for Magnetics.",
+          "observed_at": "2026-08-19T13:32:43Z",
+          "source": "source_mp_q2_2026_results",
+          "source_hash": "f852ea1a25f2ccf4f02b63a97edaa3f406f596a29f3e0dd5036fb3eef80494c1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000047/mpmcq22026er.htm"
+        },
+        {
+          "claim": "The Q2 Form 10-Q reports USD 1.453 billion of cash, cash equivalents and short-term investments, USD 934.6 million long-term debt carrying value, USD 428.1 million preferred liquidation preference, USD 307.7 million six-month capital expenditure and 178.1 million common shares outstanding at July 31.",
+          "observed_at": "2026-08-19T13:32:43Z",
+          "source": "source_mp_q2_2026_10q",
+          "source_hash": "106e3b3756d6f065bca342c70984ee8104045e8a9f268756928b6d8e5a924149",
+          "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+        },
+        {
+          "claim": "The current SEC submissions index identifies no later operating filing superseding the August 6 results exhibit and August 7 Form 10-Q.",
+          "observed_at": "2026-08-19T13:32:43Z",
+          "source": "source_mp_sec_submissions_20260819",
+          "source_hash": "fa94c65915bb51b2894108549791ad995046371c8fc53704f839d81897687099",
+          "url": "https://data.sec.gov/submissions/CIK0001801368.json"
+        },
+        {
+          "claim": "The immutable schema-v2 assessment links predecessor assessment_9409f60673dc70257720, operation 01M0CZ8BD03F2P6FPWQ5YD26GG, the current page hash and fresh MP/XNYS/USD market and FX identity. Deterministic normalization derives USD 42.50 weighted fair value, USD 32 buy-below price, -25.00% expected return, quality score 68, Sell / Avoid and allocation ineligibility.",
+          "observed_at": "2026-08-19T13:40:13Z",
+          "source": "assessment_7795fad4cd4755e7f652"
+        },
+        {
+          "claim": "The bounded security context contains no payload idea ID and no canonical relationship for this security, so the successful full review requires no idea-research follow-up; the adverse valuation gate also precludes conviction strategy research.",
+          "source": "PaperTrader audited security context"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/assessment_upsert_request.json",
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_upsert_request.json",
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_upsert_request_v2.json",
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_record_request_q2_10q.json",
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_record_request_q2_results.json",
+        "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_record_request_sec_submissions.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_cd492d97064d8574156e.md"
+      ],
+      "operation_id": "01M0CZ8BD03F2P6FPWQ5YD26GG",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T133029Z/01M0CZ8BD03F2P6FPWQ5YD26GG/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one full MP Materials security review using current Q2 primary evidence. Rebuilt normalized-earnings scenarios from USD 20/USD 42/USD 75 to USD 18/USD 40/USD 72 after incorporating segment execution, USD 1.453 billion of liquid resources, USD 934.6 million debt, USD 428.1 million preferred liquidation preference, USD 307.7 million six-month capital expenditure and 178.1 million common shares. Deterministic assessment assessment_7795fad4cd4755e7f652 derives USD 42.50 weighted fair value and USD 32 buy-below price against the USD 56.67 mark, retaining Sell / Avoid and allocation ineligibility. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, accounting or follow-up operation changed."
+    }
+  ],
+  "run_id": "daily-20260819T133029Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-19T13:53:39Z",
+      "daily_cycle_id": "daily-20260819T133029Z",
+      "daily_report_items": [],
+      "entity_id": "security_ef35e41886220d51c22c",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "repeat security research page requires a Changes since prior review section",
+          "source": "data/runs/daily-20260819T133029Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "repeat security research page requires a Changes since prior review section"
+      ],
+      "files_changed": [],
+      "operation_id": "01KZGGJ4M0VF8Y3J1HT2F3M59N",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260819T133029Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-19T12:34:54Z"
+}

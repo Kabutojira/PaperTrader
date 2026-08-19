@@ -1,0 +1,67 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T133029Z --script-path data/wiki/podcasts/daily-podcast_20260819T133029Z.md",
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T133029Z --script-path data/wiki/podcasts/daily-podcast_20260819T133029Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260819T133029Z --script-path data/wiki/podcasts/daily-podcast_20260819T133029Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 2,436-word MP Materials research podcast explaining why genuine Q2 operating progress can coexist with a lower residual common-equity valuation after construction spending, debt, preferred claims and dilution; the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three covers the exclusive prior cutoff of 2026-08-19T12:34:54Z through the inclusive 2026-08-19T13:53:52Z cutoff and identifies the completed MP Materials full Q2 review as the accepted research development.",
+      "source": "data/runs/daily-20260819T133029Z/podcast_context.json",
+      "source_hash": "3c09460911278888d54f23d39e6b5505313bc8cb9841ee350c301f45389feb2e"
+    },
+    {
+      "claim": "MP Materials reported Q2 NdPr production of 840 metric tons, NdPr sales of 1,006 metric tons, USD 108.5 million consolidated revenue and a USD 20.3 million GAAP net loss; its filing also reports USD 1.453 billion of liquid resources, USD 934.6 million long-term debt carrying value, USD 428.1 million preferred liquidation preference, USD 307.7 million six-month capital expenditure and 178.1 million common shares outstanding.",
+      "observed_at": "2026-08-19T13:32:43Z",
+      "source": "Current primary evidence retained in the frozen context and accepted MP Materials research page",
+      "source_hash": "ddbfd34ca6734dd0a2af7bd14ac0933671b7f96622c473a25e2fcc80178a4ec4"
+    },
+    {
+      "claim": "The accepted immutable assessment derives USD 42.50 probability-weighted fair value and USD 32 buy-below price from USD 18 / USD 40 / USD 72 scenarios against the USD 56.67 mark, retaining Sell / Avoid and allocation ineligibility.",
+      "observed_at": "2026-08-19T13:40:13Z",
+      "source": "assessment_7795fad4cd4755e7f652 retained in the frozen context"
+    },
+    {
+      "claim": "The completed decision state holds one hundred percent cash with no actionable signal or pending order.",
+      "source": "data/runs/daily-20260819T133029Z/decision_snapshot.json",
+      "source_hash": "d039dfcf75fb15e0c1a1edd3c2f41421786724ac47f41e886161521801266ce2"
+    },
+    {
+      "claim": "The deterministic preflight accepted the complete transcript at 2,436 spoken words in five TTS chunks with script hash af458313c216ed19cfcbb84aef591f23ec49eccdcb0dcaa1549d9566a3a3d692.",
+      "source": "papertrader podcast validate-script receipt"
+    },
+    {
+      "claim": "Exactly one audited render-draft invocation succeeded and produced an ephemeral 1,073-second draft outside the repository.",
+      "source": "papertrader podcast render-draft receipt"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260819.md",
+    "data/wiki/podcasts/daily-podcast_20260819T133029Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0D5997GJB00Y0P2BADRDK22",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created one 2,436-word research podcast asking why stronger MP Materials operating evidence can support a lower common-equity valuation. The episode explains Q2 production and qualification progress, the capital stack, construction spending, government support, revised USD 18 / USD 40 / USD 72 scenarios, robotics optionality, and the resolved assessment-provenance gap. Added exactly one transcript link to the daily report. The deterministic script preflight passed, and the single audited draft render succeeded, producing an ephemeral 1,073-second audio draft outside the repository.",
+  "validation": {
+    "checks": [
+      "Frozen context version, exclusive and inclusive cutoffs, decision snapshot, changed MP Materials page, background idea page, prior context, and prior transcript identities matched their required hashes.",
+      "Deterministic podcast script preflight passed with 2,436 spoken words, five chunks, valid metadata, exact transcript markers, and no prohibited spoken formatting.",
+      "The daily report contains exactly one link to the new transcript, and neither changed wiki file contains a persistent audio path or audio link.",
+      "Exactly one audited render-draft invocation occurred after the successful preflight and it succeeded.",
+      "Strict schema validation passed.",
+      "Strict integrity validation passed, including deterministic queue validation.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed without changing accounting state."
+    ],
+    "passed": true
+  }
+}
