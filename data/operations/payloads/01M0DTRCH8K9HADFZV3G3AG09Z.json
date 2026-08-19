@@ -1,0 +1,15 @@
+{
+  "entity_id": "source_7d4542bc68789a440772",
+  "entity_type": "source",
+  "inputs": {
+    "source_hash": "cbd5f2e750f75d37f5abafe799f005d1623bc7cbfefc54d3e909e6c9262aaaa7",
+    "source_path": "data/wiki/inbox/market-security_8472507d7d320aa388a7-volume_anomaly-f1e0d1c0c312.md"
+  },
+  "objective": "Ingest validated candidate packet market-security_8472507d7d320aa388a7-volume_anomaly-f1e0d1c0c312.md into the wiki.",
+  "operation_id": "01M0DTRCH8K9HADFZV3G3AG09Z",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_8472507d7d320aa388a7-volume_anomaly-f1e0d1c0c312.md"
+  ]
+}

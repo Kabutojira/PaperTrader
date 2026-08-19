@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_53d1e2bcbffaaf8a0e28",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-08-19T20:17:45Z",
+    "period_end": "2026-08-19",
+    "period_start": "2026-07-22",
+    "security_id": "security_099561384c0f5e697727",
+    "trigger_type": "macd_cross_above_signal"
+  },
+  "objective": "Assess security_099561384c0f5e697727 macd_cross_above_signal transition as opportunity, risk, or noise.",
+  "operation_id": "01M0DTRCH8V91AWXCBPJ1VD9SB",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-6ce55501b381.md"
+  ]
+}

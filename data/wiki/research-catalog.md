@@ -534,3 +534,29 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-6ce55501b381|CSIQ — MACD cross above signal]]
+- [[inbox/market-security_0a56aa634d077fe5796f-macd_cross_below_signal-27040400b01a|AMAT — MACD cross below signal]]
+- [[inbox/market-security_18a3ab0ee6086ee85d0f-macd_cross_below_signal-6bb39e2b76af|ETN — MACD cross below signal]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-7fca566963cf|PYPL — RSI overbought]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-bollinger_above_upper-82c01f29797b|SPOT — Bollinger above upper]]
+- [[inbox/market-security_37ddcbdaad296ad831f2-macd_cross_above_signal-5e45fa9673d9|COIN — MACD cross above signal]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-bollinger_above_upper-e19b1570b175|TWST — Bollinger above upper]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-rsi_overbought-ad3bc75aa687|TWST — RSI overbought]]
+- [[inbox/market-security_6cf75bd0ec0aa2a20148-volume_anomaly-ce0b64d30f1e|TWST — Volume anomaly]]
+- [[inbox/market-security_6f9a1450edceb9307c9a-macd_cross_below_signal-fdaa051d535f|ANET — MACD cross below signal]]
+- [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-e3872464054d|DLO — Volume anomaly]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-b6c3cf0ee81f|ABCL — RSI overbought]]
+- [[inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-82edf66d940f|TXN — Bollinger below lower]]
+- [[inbox/market-security_83a56943e18793f685b0-macd_cross_below_signal-1c1bd368d437|TXN — MACD cross below signal]]
+- [[inbox/market-security_8472507d7d320aa388a7-macd_cross_below_signal-8001fdff6c0b|CRWD — MACD cross below signal]]
+- [[inbox/market-security_8472507d7d320aa388a7-volume_anomaly-f1e0d1c0c312|CRWD — Volume anomaly]]
+- [[inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-cb512cfc8268|DNA — SMA 50 cross above 200]]
+- [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-e59917e2508a|DNA — Volume anomaly]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-d0ff181125eb|LH — RSI overbought]]
+- [[inbox/market-security_ed7d5b616a196969c815-bollinger_above_upper-e4d683831b03|RXRX — Bollinger above upper]]
+- [[inbox/market-security_ed7d5b616a196969c815-volume_anomaly-b14430f3a3eb|RXRX — Volume anomaly]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-b2355921f168|MSTR — Bollinger above upper]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-399eb4aca85f|MSTR — Volume anomaly]]

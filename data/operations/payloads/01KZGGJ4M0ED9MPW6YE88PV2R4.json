@@ -4,14 +4,52 @@
   "inputs": {
     "assessment_state": "2026-08-07T16:30:55Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-19T20:17:45Z",
+    "market_data_date": "2026-08-19",
+    "period_end": "2026-08-19",
+    "period_start": "2026-07-22",
     "research_page": "data/wiki/securities/security_95351d928b674bbdf687.md",
-    "security_id": "security_95351d928b674bbdf687"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_95351d928b674bbdf687:allocation-maintenance:2026-08-07T16:30:55Z",
+        "observed_at": "2026-08-08T11:01:36Z",
+        "prompt": "Revalidate security_95351d928b674bbdf687 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_dna_q2_2026_10q",
+          "source_dna_q2_2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_95351d928b674bbdf687:1dcbc25f6c6f10021042:2026-08-19",
+        "market_data_date": "2026-08-19",
+        "observed_at": "2026-08-19T20:17:45Z",
+        "prompt": "Research security_95351d928b674bbdf687 with high priority after price-action alerts: sma_50_cross_above_200, volume_anomaly; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-cb512cfc8268.md",
+          "data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-e59917e2508a.md"
+        ],
+        "trigger_types": [
+          "sma_50_cross_above_200",
+          "volume_anomaly"
+        ]
+      }
+    ],
+    "security_id": "security_95351d928b674bbdf687",
+    "source_price_hash": "5018c677f51f7f5908acdc8d72f901c1c4b28a7eb9b86642fbf2e6ece20fe0f5",
+    "trigger_types": [
+      "sma_50_cross_above_200",
+      "volume_anomaly"
+    ]
   },
-  "objective": "Revalidate security_95351d928b674bbdf687 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_95351d928b674bbdf687 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_95351d928b674bbdf687 with high priority after price-action alerts: sma_50_cross_above_200, volume_anomaly; decide what changed and whether to act.",
   "operation_id": "01KZGGJ4M0ED9MPW6YE88PV2R4",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_95351d928b674bbdf687-sma_50_cross_above_200-cb512cfc8268.md",
+    "data/wiki/inbox/market-security_95351d928b674bbdf687-volume_anomaly-e59917e2508a.md",
     "source_dna_q2_2026_10q",
     "source_dna_q2_2026_results"
   ]

@@ -4,14 +4,49 @@
   "inputs": {
     "assessment_state": "2026-08-09T22:37:18Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-19T20:17:45Z",
+    "market_data_date": "2026-08-19",
+    "period_end": "2026-08-19",
+    "period_start": "2026-07-22",
     "research_page": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
-    "security_id": "security_37ddcbdaad296ad831f2"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_37ddcbdaad296ad831f2:allocation-maintenance:2026-08-09T22:37:18Z",
+        "observed_at": "2026-08-17T01:06:21Z",
+        "prompt": "Revalidate security_37ddcbdaad296ad831f2 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_coin_july_2026_management_8k",
+          "source_coin_q1_2026_10q",
+          "source_coin_q2_2026_10q"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_37ddcbdaad296ad831f2:42cfbb867d58a83a0f42:2026-08-19",
+        "market_data_date": "2026-08-19",
+        "observed_at": "2026-08-19T20:17:45Z",
+        "prompt": "Research security_37ddcbdaad296ad831f2 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_above_signal-5e45fa9673d9.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "source_price_hash": "b7dcddc6736fcd543f2ce59715444b3efa6049ddb64698eab951f810bb4a52de",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_37ddcbdaad296ad831f2 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_37ddcbdaad296ad831f2 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_37ddcbdaad296ad831f2 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M06M2NP86ZWCMZSW21HB9N7T",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_37ddcbdaad296ad831f2-macd_cross_above_signal-5e45fa9673d9.md",
     "source_coin_july_2026_management_8k",
     "source_coin_q1_2026_10q",
     "source_coin_q2_2026_10q"
