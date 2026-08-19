@@ -1,0 +1,23 @@
+{
+  "security_id": "security_96ba305ee7cd586bc348",
+  "issuer_id": "issuer_b000ffd888e42845fe36",
+  "company_name": "Fanuc Corporation",
+  "instrument_name": "Fanuc Corporation Frankfurt ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "FUC.F",
+  "exchange_code": "FRA",
+  "venue_mic": "XFRA",
+  "provider_symbol": "FUC.F",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "JP",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Humanoid robotics and embodied-AI component candidate; conventional automation growth is supported, but economic gates and thin Frankfurt-line liquidity prevent exposure.",
+  "research_summary": "Lower price improves expected return, but confidence-adjusted return, downside payoff, relationship, and thin-liquidity gates still block exposure.",
+  "research_page": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+  "last_research_at": "2026-08-19T15:33:29Z",
+  "next_review_at": "2026-09-02T15:33:29Z",
+  "source": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+}

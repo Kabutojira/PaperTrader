@@ -4112,3 +4112,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   42.50 weighted value and USD 32.00 buy-below price remain below the USD 56.67 mark, retaining Sell
   / Avoid and allocation ineligibility. No conviction strategy, signal, paper order, follow-up or
   accounting change is justified.
+
+## [2026-08-19T15:33:29Z] update | FANUC assessment refresh and volume anomaly
+
+- Reassessed [[securities/security_96ba305ee7cd586bc348|FANUC's Frankfurt ordinary shares]] against
+  unchanged first-quarter issuer evidence and the 19 August market state. The 9.03% one-month
+  decline and volume anomaly improve expected return to about 9.08%, but only 1,355 shares traded
+  and no changed issuer evidence explains the move. Unchanged EUR 24.25 / EUR 36.38 / EUR 48.50
+  scenarios retain Hold / Watch and allocation ineligibility because confidence-adjusted return,
+  base-upside, downside-payoff, relationship, and liquidity gates still fail. No strategy, signal,
+  paper order, or follow-up operation is justified.

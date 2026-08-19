@@ -1,0 +1,87 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader research source record --request data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/source_fanuc_q1_fy2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/source_fanuc_q1_fy2026_reference_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/assessment_upsert_request_v2.json",
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "FANUC full alert-driven review completed: a 9.03% one-month decline and volume anomaly improved expected return to 9.08%, but the Frankfurt line traded only 1,355 shares and unchanged issuer evidence supplied no fundamental catalyst. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios retain Hold / Watch and allocation ineligibility; no paper trade or follow-up operation was created."
+  ],
+  "evidence": [
+    {
+      "claim": "FANUC's unchanged quarterly results for the three months ended 30 June 2026 report JPY 231.035 billion net sales, JPY 53.492 billion operating income, and JPY 50.981 billion attributable net income; the PDF was retrieved again with the same hash.",
+      "observed_at": "2026-08-19T15:33:29Z",
+      "source": "source_fanuc_q1_fy2026_results",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+    },
+    {
+      "claim": "FANUC's unchanged first-quarter reference material retains evidence of FA growth in China and India, robot growth in the Americas and China, and raised full-year guidance; the PDF was retrieved again with the same hash.",
+      "observed_at": "2026-08-19T15:33:29Z",
+      "source": "source_fanuc_q1_fy2026_reference",
+      "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+    },
+    {
+      "claim": "The canonical alert covers 2026-07-22 through 2026-08-19, a -9.028918% return, a volume z-score of 2.77262889, trigger strength of 0.386314445, and source-price hash 5a80dab266490be42afb8af01ee32ecadc88b6386755c57c466dc885b1577096.",
+      "observed_at": "2026-08-19T15:30:55Z",
+      "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56.md",
+      "source_hash": "5a80dab266490be42afb8af01ee32ecadc88b6386755c57c466dc885b1577096"
+    },
+    {
+      "claim": "The immutable schema-v2 assessment links predecessor assessment_9720edf9bb377a006f6b, this operation, the current security-page hash, and the exact FUC.F/XFRA/EUR market identity. Deterministic normalization derives EUR 36.3775 probability-weighted fair value, EUR 29.104 buy-below price, 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, quality score 70, Hold / Watch, and allocation ineligibility.",
+      "observed_at": "2026-08-19T15:36:47Z",
+      "source": "assessment_4e73de2ff48e5f482190"
+    },
+    {
+      "claim": "The bounded context contains no payload idea and no accepted canonical relationship for this security, so no idea-research follow-up is required; failed economic, relationship, and liquidity gates also preclude conviction strategy research.",
+      "source": "PaperTrader audited security context"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/assessment_upsert_request.json",
+    "data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/security_upsert_request.json",
+    "data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/source_fanuc_q1_fy2026_reference_refresh_request.json",
+    "data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/source_fanuc_q1_fy2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZVTZDX08AEMJ36N81A06G62",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat FANUC security review for the 19 August volume anomaly. Re-fetched the two retained first-quarter issuer PDFs and confirmed unchanged hashes. The Frankfurt line fell 9.028918% over 22 July through 19 August while alert-day volume reached only 1,355 shares, so the anomaly is classified as thin-market risk rather than a verified fundamental opportunity. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios at 25%/50%/25% produce EUR 36.3775 weighted fair value against the EUR 33.349998474121094 mark. Assessment assessment_4e73de2ff48e5f482190 derives 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, Hold / Watch, and allocation ineligibility. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, accounting, idea, relationship, or follow-up operation changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory successful audited security context before any assessment-state read or change and confirmed the repeat-review predecessor and immutable FANUC/FUC.F/XFRA/EUR/equity identity.",
+      "Fetched and hashed both retained first-quarter issuer PDFs; their SHA-256 hashes were unchanged and fresh source observations were accepted through the project CLI.",
+      "The accepted security upsert preserved every immutable identity field and advanced the structured summary and next review through 2026-09-02.",
+      "Confirmed assessment_4e73de2ff48e5f482190 is the sole immutable assessment version sourced from this operation, links predecessor assessment_9720edf9bb377a006f6b and the expected result path, matches the current page hash, and uses exact current price and base-currency FX identity.",
+      "The first immutable assessment request was rejected without state changes because its base-currency fx_as_of did not equal the canonical accepted timestamp; the uniquely named corrected request was accepted.",
+      "Confirmed there are no payload ideas or canonical relationships requiring an idea follow-up, and the conviction strategy gate fails on confidence-adjusted return, base return, downside-payoff, relationship, and thin-venue liquidity constraints.",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting ledger, raw source, idea, relationship, or other security page changed."
+    ],
+    "passed": true
+  }
+}

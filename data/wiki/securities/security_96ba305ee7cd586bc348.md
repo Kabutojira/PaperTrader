@@ -7,12 +7,12 @@ tags:
   - research
   - risk
 created: "2026-08-05"
-updated: "2026-08-05"
+updated: "2026-08-19"
 provenance: "FANUC Corporation; deterministic market monitor"
 security_id: security_96ba305ee7cd586bc348
 issuer_id: issuer_b000ffd888e42845fe36
 confidence: medium
-next_review: "2026-08-19"
+next_review: "2026-09-02"
 sources:
   - source_fanuc_q1_fy2026_results
   - source_fanuc_q1_fy2026_reference
@@ -35,40 +35,53 @@ and not the Tokyo listing as a substitutable execution venue.
 
 ## Decision summary
 
-**Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 provides current primary
-evidence of a strong cyclical recovery: sales rose 17.7%, operating income rose 26.1%, and the
-company raised full-year guidance. The balance sheet remains exceptionally strong. However, an
-earnings-multiple assessment at the EUR 35.7400016784668 Frankfurt mark produces only EUR 36.3775
-probability-weighted value and a EUR 36.38 base case. That return does not clear the repository's
-economic gates, the Frankfurt line is thinly traded, and no accepted idea-security relationship
-currently completes the allocation gate.
+**Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 remains the latest
+retained primary operating evidence: sales rose 17.7%, operating income rose 26.1%, the company
+raised full-year guidance, and the balance sheet remained exceptionally strong. Both issuer PDFs
+were retrieved again on 19 August with unchanged hashes. At the lower EUR 33.349998474121094
+Frankfurt mark, the unchanged EUR 36.3775 probability-weighted value offers about 9.08% expected
+return and the EUR 36.38 base case offers about 9.09% upside. Those improvements still do not clear
+the confidence-adjusted expected-return, base-upside, downside-payoff, relationship, and liquidity
+gates.
 
-The 4 August bullish MACD crossover is therefore **improving technical momentum, not a verified
-fundamental opportunity**. It followed a 2.99% decline over 7 July–4 August and has very small
-positive trigger strength; the 5 August mark remains below neither a conservative buy zone nor a
-fundamentally changed scenario.
+The 19 August volume anomaly is therefore **risk and thin-market price discovery, not a verified
+fundamental opportunity**. The shares fell 9.03% over 22 July–19 August and only 1,355 shares traded
+on the alert date. No changed issuer evidence supports revising earnings or fair-value assumptions,
+and the mark remains above the EUR 29.104 conservative buy-below level.
 
 ## Changes since prior review
 
-This is the first full security review. There is no predecessor assessment or prior security page
-to revise. The review establishes the immutable identity, registers current issuer evidence,
-creates a scenario-complete valuation, and sets explicit catalysts, risks, blockers, gaps, and
-review conditions. No earlier thesis, rating, allocation action, scenario, catalyst, risk, blocker,
-or gap was silently replaced.
+Compared with assessment `assessment_9720edf9bb377a006f6b`, the issuer evidence and its hashes are
+unchanged, so the business thesis, earnings inputs, bear/base/bull fair values and 25%/50%/25%
+probabilities are unchanged. The market mark fell from EUR 35.7400016784668 to EUR
+33.349998474121094, improving expected return from about 1.78% to about 9.08% and base-case upside
+from about 1.79% to about 9.09%; the EUR 29.104 buy-below level remains unreached. The volume anomaly
+adds evidence of weak price momentum and reinforces the existing Frankfurt-liquidity gap, but it
+does not identify an issuer catalyst or invalidate the operating thesis.
+
+The rating and portfolio action remain Hold / Watch. Business quality, balance-sheet strength,
+cyclicality, China, foreign-exchange, competition, humanoid-revenue uncertainty, and the absence of
+an accepted canonical idea-security relationship are unchanged. No catalyst, hard blocker, or
+research gap was resolved; `confidence_medium`, `timing_unfavorable`, and
+`valuation_not_compelling` remain the structured soft gaps, with thin venue liquidity continuing
+as an explicit constraint. No strategy or signal is justified.
 
 ## Alert review
 
-- **Canonical trigger:** `macd_cross_above_signal`, entered on **2026-08-04**.
-- **Exact observation period:** 2026-07-07 through 2026-08-04.
-- **Period return:** -2.9943%; 4 August adjusted close: EUR 35.959999084472656.
-- **Current assessment mark:** EUR 35.7400016784668 on 2026-08-05, retrieved at
-  2026-08-05T18:22:39Z.
-- **Source-price hash:** `20c79ccb05957caa272b377ce01b842f64ca1c74fd7696606987e23ab44fb46f`.
-- **Disposition:** modestly constructive momentum but not a catalyst, valuation dislocation, or
-  standalone entry signal. The very low Frankfurt volume reinforces caution about reading the
-  crossover as broad price discovery.
+- **Canonical trigger:** `volume_anomaly`, entered on **2026-08-19**.
+- **Exact observation period:** 2026-07-22 through 2026-08-19.
+- **Period return:** -9.028918%; 19 August adjusted close: EUR 33.349998474121094.
+- **Alert-day volume:** 1,355 shares; volume z-score: 2.77262889; deterministic trigger strength:
+  0.386314445, from zero previously.
+- **Current assessment mark:** EUR 33.349998474121094 on 2026-08-19, retrieved at
+  2026-08-19T15:30:55Z.
+- **Source-price hash:** `5a80dab266490be42afb8af01ee32ecadc88b6386755c57c466dc885b1577096`.
+- **Disposition:** risk rather than opportunity. The decline is material and volume is abnormal
+  relative to this Frankfurt line, but absolute turnover remains thin and unchanged issuer evidence
+  provides no verified fundamental explanation. The alert cannot establish intrinsic value or a
+  standalone entry signal.
 
-See the deterministic packet [[inbox/market-security_96ba305ee7cd586bc348-macd_cross_above_signal-3076adb7c502]].
+See the deterministic packet [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56]].
 
 ## Current primary evidence
 
@@ -137,11 +150,13 @@ the current quarter as a permanent peak.
 | Base | 50% | EUR 36.38 | About 30x guided-equivalent earnings; raised guidance is broadly delivered, conventional automation grows, and margins remain near normalized strong levels. |
 | Bull | 25% | EUR 48.50 | About 40x guided-equivalent earnings as broad automation demand, physical-AI adoption, service mix, and margins exceed the revised plan. |
 
-Probability-weighted fair value is **EUR 36.3775**, only about **1.78%** above the EUR
-35.7400016784668 mark before confidence adjustment. The base case offers about 1.79% upside while
-the bear case implies about 32.15% downside. This fails expected-return, base-upside, payoff, and
-margin-of-safety gates. A buy zone would require a materially lower mark or materially stronger,
-primary-evidence-backed per-share earnings assumptions—not the MACD transition alone.
+Probability-weighted fair value remains **EUR 36.3775**, about **9.08%** above the EUR
+33.349998474121094 mark before confidence adjustment. The base case offers about 9.09% upside while
+the bear case implies about 27.29% downside. Medium confidence reduces the expected return below the
+canonical hurdle, and the base-upside, downside-payoff, relationship, and liquidity gates also
+remain unsatisfied. The deterministic buy-below level remains EUR 29.104. A buy zone requires a
+materially lower mark or stronger primary-evidence-backed per-share earnings assumptions—not a
+thin-market volume anomaly alone.
 
 ## Catalysts, invalidation, and review
 
@@ -155,7 +170,7 @@ The thesis is invalidated if FANUC cannot sustain competitive economics through 
 cycle, loses material control/robot share, or physical-AI investment fails to produce profitable
 commercial demand while valuation continues to price it in.
 
-Review by **2026-08-19**, or sooner upon revised guidance, material order disclosure, a large FX or
+Review by **2026-09-02**, or sooner upon revised guidance, material order disclosure, a large FX or
 price move, evidence on paid physical-AI deployments, or a change in Frankfurt trading liquidity.
 Upgrade only if fresh scenarios clear all canonical gates and the relationship evidence is
 accepted. Downgrade if earnings, margins, competitive position, or liquidity deteriorates.
@@ -168,14 +183,15 @@ accepted. Downgrade if earnings, margins, competitive position, or liquidity det
   durable advantages.
 - Balance sheet: **100** — net financial strength provides substantial downside protection.
 - Valuation: **40** — scenario expected return is below the economic hurdle.
-- Timing: **40** — weak crossover confirmation and no near-term valuation gap.
+- Timing: **40** — the 9.03% decline improved prospective return, but abnormal volume on a thin line
+  has no verified fundamental catalyst and the buy-below level remains unreached.
 - Liquidity: **40** — the Frankfurt line has material volume and spread constraints.
 - Risk penalty: **60** — cyclical, China, FX, competition, and listing-liquidity risks constrain
   sizing.
 - Confidence: **medium**.
-- Hard blockers: none; canonical soft gaps are `confidence_medium`, `timing_unfavorable`, and
+- Hard blockers: none; canonical soft gaps remain `confidence_medium`, `timing_unfavorable`, and
   `valuation_not_compelling`. The deterministic allocation frontier separately captures the
-  pending relationship, while Frankfurt liquidity and unproven humanoid revenue remain explicit
-  research risks.
+  pending relationship, while Frankfurt liquidity, the unexplained volume anomaly, and unproven
+  humanoid revenue remain explicit research risks.
 
 See the complete [[research-catalog]], current [[index]], and append-only [[log]].
