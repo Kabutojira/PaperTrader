@@ -1,6 +1,6 @@
 ---
 name: papertrader-security-research
-description: Research and value exactly one PaperTrader security using its immutable identity and primary evidence. Use for a security_research operation that must update the security wiki page and validated securities.csv state, and may enqueue strategy research only for a concrete trade candidate.
+description: Research and value exactly one PaperTrader security, discover and link plausible related ideas, and update its immutable research state using primary evidence. Use for a security_research operation that must update the security wiki page and validated securities.csv state, and may enqueue strategy research only for a concrete trade candidate.
 ---
 
 # PaperTrader security research
@@ -12,17 +12,20 @@ current security row or explicit creation identity, and a bounded research objec
 
 ## Allowed scope
 
-Read the wiki schema/homepage/catalog/log, the one security row, related
-ideas/relationships/strategies, market/FX marks, structured source records, and evidence. Write
-the one security page and necessary catalog/log changes. Update `securities.csv`,
-`security_assessments.csv`, source registry/history metadata, issues, and follow-up operations only
-through the CLI. Raw articles remain outside this skill's write scope. Never touch allocation
-targets/history, ledgers, orders, fills, portfolio, or performance.
+Read the wiki schema/homepage/catalog/log, the complete idea catalog, the one security row,
+related ideas, relationships, concepts and strategies, market/FX marks, structured source records,
+and evidence. Write the one security page and necessary catalog/log changes. Update
+`securities.csv`, `security_assessments.csv`, source registry/history metadata, issues, and
+follow-up operations only through the CLI. Raw articles remain outside this skill's write scope.
+Never touch allocation targets/history, ledgers, orders, fills, portfolio, or performance.
 
-This skill never edits an idea page directly. After a successful review it must enqueue exactly one
-`idea_research` follow-up for every idea named by the operation payload and every accepted canonical
-relationship for the security, so each idea can absorb the new security evidence in its own bounded
-operation.
+This skill never edits an idea page, relationship page, or `relationships.csv` directly. The
+security page may link accepted relationships and clearly labelled candidate ideas. Accepting,
+updating, or rejecting a causal edge belongs to one bounded `relationship_research` operation.
+After a successful review, enqueue exactly one `idea_research` follow-up for every idea named by
+the payload and every current accepted canonical relationship for the security, so those ideas can
+absorb the new security evidence in their own bounded operations. Do not enqueue an idea refresh
+for a merely proposed candidate before its relationship is accepted.
 
 Use `scripts/papertrader research source record --request <json>` for every retained evidence source,
 `scripts/papertrader research security upsert --request <json>` for the security row,
@@ -32,9 +35,9 @@ Use `scripts/papertrader research source record --request <json>` for every reta
 Once any request JSON has been passed to the CLI, it is immutable. Write a new uniquely named JSON
 artifact before retrying with corrected or changed content.
 Before any repeat review, run
-`scripts/papertrader research security-context --security-id <security_id>` and consume its current and
-previous structured assessments, latest successful result, linked research state, retained sources,
-and page hashes. Historical versions may be inspected by immutable ID with
+`scripts/papertrader research security-context --security-id <security_id>` and consume its current
+and previous structured assessments, latest successful result, linked research state, retained
+sources, and page hashes. Historical versions may be inspected by immutable ID with
 `scripts/papertrader research assessment-get --assessment-id <assessment_id>`.
 
 ## Required input
@@ -51,48 +54,75 @@ value/return, confidence adjustment, buy-below price, and margin of safety.
 An alert-driven request additionally provides `trigger_types`, `market_data_as_of`,
 `market_data_date`, the exact observation period, and `source_price_hash`. Treat those values as
 canonical measurements to explain, not calculations to replace.
-The payload may identify one `idea_id` or several `idea_ids`; also derive linked ideas from accepted
-rows in `relationships.csv` rather than relying on wiki prose alone.
+The payload may identify one `idea_id` or several `idea_ids`; also derive current linked ideas from
+accepted rows in `relationships.csv`. Treat both sets as seeds, never as the complete idea universe.
 
 ## Procedure
 
-1. Orient with schema, the results-first homepage, complete research catalog, recent log, and all
-   pages linked to the security.
+1. Orient with schema, the results-first homepage, complete research and idea catalogs, recent log,
+   structured relationship state, and all pages linked to the security.
 2. Read the bounded security context. When prior research exists, read its result artifact and
    preserve an explicit `## Changes since prior review` section in the security page. Cover changed
    facts/evidence; changed assumptions; changed bear/base/bull valuation inputs and outputs; thesis
-   upgrades/downgrades; catalysts, risks, blockers, and gaps added/resolved/unchanged; rating and
-   portfolio-action changes; and conclusions that remain unchanged with reasons. Preserve dated,
-   sourced contradictory claims and confidence instead of silently replacing them.
-3. Validate issuer/instrument/venue/currency/provider identity and search for duplicates.
+   upgrades/downgrades; catalysts, risks, blockers, and gaps added, resolved, or unchanged; rating
+   and portfolio-action changes; and conclusions that remain unchanged with reasons. Preserve
+   dated, sourced contradictory claims and confidence instead of silently replacing them.
+3. Validate issuer, instrument, venue, currency, and provider identity and search for duplicates.
 4. For an alert-driven review, verify every trigger and exact market-data date, explain what changed,
    and decide whether it is opportunity, risk, or noise before updating the broader assessment.
 5. Research business and instrument economics from current primary evidence, then register the
    bounded source metadata through the source CLI before referencing it from an assessment.
 6. State thesis, contrary evidence, catalysts, risks, and invalidation.
-7. Select exactly one valuation template from `schemas/valuation_templates.yaml` and follow its
-   primary-evidence, normalization, debt/dilution, and scenario-driver rules. Produce ordered
-   bear/base/bull cases with explicit probabilities and dated inputs, or record an unsupported
-   valuation with the exact missing evidence and no invented value. A bear return may be positive.
-   Use only the concrete 20/40/60/80/100 anchors in `schemas/research_rubrics.yaml`.
-8. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
-   configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
-9. Set confidence and next review date, update the wiki page/catalog/log, and use the security CLI
-   upsert for the short structured row summary.
-10. Before completing, use the assessment CLI to write exactly one current comparable result.
-   Supply research evidence and scenarios, never an allocation disposition. Deterministic code
-   independently derives research status, allocation eligibility, conviction tier, quality, every
-   economic gate, and the complete eligibility frontier. Never leave completed research without an
-   assessment.
-11. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
-   Baseline strategy work is enqueued later by the deterministic allocator, never by this skill.
-12. For each linked idea, enqueue exactly one `idea_research` operation whose inputs include
-   `idea_id`, `seed_claim`, this `security_id`, this `security_research_operation_id`, and the
-   expected current result path. Set `depends_on` to this security operation so the idea refresh
-   cannot run before the security result is terminally accepted. Give the follow-up a result-specific
-   dedupe key and source refs to the updated security page. Its objective must update the idea's
-   candidate disposition, thesis, catalysts, risks, confidence, and broader investable-security
-   universe from this review. Do not enqueue another security review for the same fresh result.
+7. Reconcile the existing idea graph. Read every accepted relationship row for this security and
+   the linked idea and relationship pages. Mark each edge as current, materially stale,
+   contradicted, or missing an endpoint link; do not treat payload references or wiki prose as
+   canonical relationship state.
+8. Search the complete maintained idea catalog for additional plausible relationships. Match the
+   issuer's products, customers, suppliers, cost drivers, constraints, competitive threats,
+   catalysts, risks, and value-chain position against idea mechanisms, aliases, concept links, and
+   invalidation conditions. Search beyond ideas named in the payload, current security page, or
+   accepted relationships. Retain only pairings with a specific causal transmission mechanism and
+   material exposure.
+9. Classify every evaluated security-idea pairing as exactly one of:
+   `accepted-current`, `accepted-needs-review`, `candidate`, or `rejected-no-link`. For each retained
+   pairing, state direction, mechanism, materiality, dated evidence, and what would invalidate it.
+   Preserve a concise reason for rejection so the same superficial thematic association is not
+   repeatedly proposed.
+10. Maintain a **Related ideas** or **Idea exposure map** section on the security page. Link every
+    accepted or candidate idea to its canonical `ideas/<idea_id>` page and state the relationship
+    status, direction, mechanism, and evidence status beside it. Clearly separate canonical
+    accepted edges from candidates awaiting relationship review; never present a candidate as
+    accepted or use an unexplained list of idea titles.
+11. Select exactly one valuation template from `schemas/valuation_templates.yaml` and follow its
+    primary-evidence, normalization, debt/dilution, and scenario-driver rules. Produce ordered
+    bear/base/bull cases with explicit probabilities and dated inputs, or record an unsupported
+    valuation with the exact missing evidence and no invented value. A bear return may be positive.
+    Use only the concrete 20/40/60/80/100 anchors in `schemas/research_rubrics.yaml`.
+12. Review balance-sheet strength, liquidity, fresh price and FX state, invalidation, and every
+    configured hard blocker. Soft gaps may lower rank but never conceal a hard blocker.
+13. Set confidence and next review date, update the security page/catalog/log, and use the security
+    CLI upsert for the short structured row summary.
+14. Before completing, use the assessment CLI to write exactly one current comparable result.
+    Supply research evidence and scenarios, never an allocation disposition. Deterministic code
+    independently derives research status, allocation eligibility, conviction tier, quality,
+    every economic gate, and the complete eligibility frontier. Never leave completed research
+    without an assessment.
+15. Enqueue conviction strategy research only when the unchanged full strategy gate passes.
+    Baseline strategy work is enqueued later by the deterministic allocator, never by this skill.
+16. For every plausible candidate edge that lacks a current accepted relationship, or whose
+    accepted edge is materially stale or contradicted, enqueue exactly one bounded
+    `relationship_research` operation with the immutable security and idea IDs, proposed mechanism,
+    direction, invalidation, and evidence. Set `depends_on` to this security operation, use a
+    pair-specific dedupe key, and do not enqueue review for a fresh accepted or explicitly rejected
+    edge without new evidence.
+17. For each payload idea and current accepted linked idea, enqueue exactly one `idea_research`
+    operation whose inputs include `idea_id`, `seed_claim`, this `security_id`, this
+    `security_research_operation_id`, and the expected current result path. Set `depends_on` to this
+    security operation so the idea refresh cannot run before the security result is terminally
+    accepted. Give the follow-up a result-specific dedupe key and source refs to the updated
+    security page. Its objective must update the idea's candidate disposition, thesis, catalysts,
+    risks, confidence, and broader investable-security universe from this review. Do not enqueue
+    another security review for the same fresh result.
 
 ## Source hierarchy
 
@@ -115,13 +145,16 @@ canonical project command receipts. The parent fills omissions from its snapshot
 ## Verification
 
 Before the manifest, run security/assessment CLI validation, identity dedupe, source freshness,
-price/FX freshness, and strict wiki lint. Confirm the assessment is current and that no CSV was
-hand-edited. On a repeat review, confirm the prior-context command succeeded, the page contains the
-required complete change summary, and the new immutable history row links its predecessor, source
-operation/result, schema version, and page hash. Confirm exactly one matching idea-research
-follow-up exists for every linked idea and
-list newly created IDs in `operations_created`. Make the manifest schema-conformant, write it last,
-and let the parent validate its schema and actual changed paths.
+price/FX freshness, and strict wiki lint. Confirm the complete idea catalog and existing accepted
+relationships were searched, every plausible accepted or candidate idea is linked from the
+security page with status, direction, mechanism, and evidence, rejected associations have reasons,
+and no candidate is represented as accepted. Confirm exactly one relationship-research follow-up
+exists for every plausible unaccepted, stale, or contradicted edge, and exactly one matching
+idea-research follow-up exists for every payload or current accepted idea. On a repeat review,
+confirm the prior-context command succeeded, the page contains the required complete change
+summary, and the new immutable history row links its predecessor, source operation/result, schema
+version, and page hash. List newly created IDs in `operations_created`, make the manifest
+schema-conformant, write it last, and let the parent validate its actual changed paths.
 
 ## Failure policy
 
