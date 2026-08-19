@@ -4091,3 +4091,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   values, and the USD 33.60 buy zone remains unreached. MP stays a cash-preference watch pending
   exactly one dependent full Q2 review; no strategy, signal, order, allocation or accounting state
   changed.
+
+## [2026-08-19T13:32:43Z] update | MP Materials full Q2 revaluation
+
+- Fully reassessed [[securities/security_cd492d97064d8574156e|MP Materials]] against its unchanged Q2
+  Form 10-Q, SEC-hosted results and current submissions index. The review incorporates USD 1.453
+  billion of liquid resources, USD 934.6 million debt, USD 428.1 million preferred liquidation
+  preference, USD 307.7 million six-month capital expenditure and 178.1 million common shares.
+- Rebuilt the quick-check valuation as USD 18 / USD 40 / USD 72 bear/base/bull scenarios. The USD
+  42.50 weighted value and USD 32.00 buy-below price remain below the USD 56.67 mark, retaining Sell
+  / Avoid and allocation ineligibility. No conviction strategy, signal, paper order, follow-up or
+  accounting change is justified.

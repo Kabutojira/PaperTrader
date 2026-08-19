@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mp_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001801368.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001801368.json",
+  "source_type": "regulator_index",
+  "title": "MP Materials Corp. SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "fa94c65915bb51b2894108549791ad995046371c8fc53704f839d81897687099",
+  "related_entity_ids": "security_cd492d97064d8574156e",
+  "checked_at": "2026-08-19T13:32:43Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The submissions index continues to identify the August 7, 2026 Form 10-Q and August 6, 2026 results exhibit as the latest operating filings.",
+  "summary": "Current SEC submissions identity check found no later operating filing that supersedes the Q2 evidence used for the full review.",
+  "run_id": "daily-20260819T133029Z"
+}

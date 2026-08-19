@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mp_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm",
+  "source_type": "filing",
+  "title": "MP Materials Corp. Quarterly Report for the period ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "106e3b3756d6f065bca342c70984ee8104045e8a9f268756928b6d8e5a924149",
+  "related_entity_ids": "security_cd492d97064d8574156e",
+  "checked_at": "2026-08-19T13:32:43Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 results include 840 metric tons of NdPr production, USD 108.5 million revenue and USD 20.3 million GAAP net loss; six-month capital expenditure was USD 307.7 million.",
+  "summary": "The Q2 filing confirms segment economics, USD 1.453 billion of liquid resources, USD 934.6 million long-term debt carrying value, USD 428.1 million preferred liquidation preference, high capital expenditure, start-up costs and dilution relevant to the full valuation rebuild.",
+  "run_id": "daily-20260819T133029Z"
+}
