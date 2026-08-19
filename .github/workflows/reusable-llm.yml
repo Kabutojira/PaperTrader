@@ -657,6 +657,7 @@ jobs:
         run: |
           cutoff=$(python3 -c 'import json,os,pathlib; print(json.loads((pathlib.Path("data/runs") / os.environ["CYCLE_ID"] / "daily_run.json").read_text())["research_cutoff_at"])')
           uv run papertrader podcast context build --daily-cycle-id "$CYCLE_ID" --cutoff "$cutoff"
+          uv run papertrader podcast context validate --daily-cycle-id "$CYCLE_ID"
           result=$(uv run papertrader podcast enqueue --run-id "$CYCLE_ID")
           echo "operation_id=$(python3 -c 'import json,sys; print(json.load(sys.stdin)["operation_id"])' <<< "$result")" >> "$GITHUB_OUTPUT"
       - name: Synthesize the transcript and one ephemeral audio draft

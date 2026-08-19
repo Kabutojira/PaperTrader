@@ -84,6 +84,7 @@ from papertrader.podcast import (
     finalize_daily_podcast,
     render_draft_podcast,
     seal_podcast_render,
+    validate_podcast_context,
     validate_podcast_script_file,
 )
 from papertrader.portfolio import build_risk_state, rebuild_portfolio, reconcile_portfolio
@@ -255,6 +256,8 @@ def _parser() -> argparse.ArgumentParser:
     podcast_context_build = podcast_context_commands.add_parser("build")
     podcast_context_build.add_argument("--daily-cycle-id", required=True)
     podcast_context_build.add_argument("--cutoff", required=True)
+    podcast_context_validate = podcast_context_commands.add_parser("validate")
+    podcast_context_validate.add_argument("--daily-cycle-id", required=True)
     podcast_validate_script = podcast_commands.add_parser("validate-script")
     podcast_validate_script.add_argument("--daily-cycle-id", required=True)
     podcast_validate_script.add_argument("--script-path", required=True)
@@ -1250,18 +1253,32 @@ def _dispatch(arguments: argparse.Namespace, root: Path, settings: Settings) -> 
             )
             return 0
         if arguments.podcast_command == "context":
-            cutoff = parse_timestamp(arguments.cutoff)
-            if cutoff is None:
-                raise CanonicalValueError("podcast cutoff must be a UTC timestamp")
-            print(
-                build_podcast_context(
-                    root,
-                    settings,
-                    daily_cycle_id=arguments.daily_cycle_id,
-                    cutoff=cutoff,
+            if arguments.podcast_context_command == "build":
+                cutoff = parse_timestamp(arguments.cutoff)
+                if cutoff is None:
+                    raise CanonicalValueError("podcast cutoff must be a UTC timestamp")
+                print(
+                    build_podcast_context(
+                        root,
+                        settings,
+                        daily_cycle_id=arguments.daily_cycle_id,
+                        cutoff=cutoff,
+                    )
                 )
-            )
-            return 0
+                return 0
+            if arguments.podcast_context_command == "validate":
+                print(
+                    json.dumps(
+                        asdict(
+                            validate_podcast_context(
+                                root,
+                                daily_cycle_id=arguments.daily_cycle_id,
+                            )
+                        ),
+                        sort_keys=True,
+                    )
+                )
+                return 0
         if arguments.podcast_command == "validate-script":
             print(
                 json.dumps(

@@ -16,6 +16,7 @@ from papertrader.podcast import (
     finalize_daily_podcast,
     render_draft_podcast,
     seal_podcast_render,
+    validate_podcast_context,
     validate_podcast_script,
     validate_podcast_script_file,
 )
@@ -37,6 +38,8 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
     assert "podcast validate-script" in skill
     assert "renderer before one preflight has passed" in skill
     assert "Do not retry a failed render" in skill
+    assert "do not independently recompute hashes" in skill
+    assert "`podcast context validate` has verified" in skill
 
 
 def _script(cycle_id: str, *, extra_body: str = "") -> str:
@@ -229,6 +232,9 @@ def test_completed_run_enqueues_one_text_only_podcast(
     assert context["window_mode"] == "seven_day_bootstrap"
     assert context["target_minutes"] == 20
     assert "audio_path" not in context
+    validation = validate_podcast_context(sandbox_repository, daily_cycle_id="podcast-run")
+    assert validation.context_path == result.context_path
+    assert validation.referenced_file_count == 2
     manifest = json.loads(
         (sandbox_repository / "data" / "runs" / "podcast-run" / "daily_run.json").read_text()
     )
@@ -272,6 +278,38 @@ def test_context_selects_latest_successful_same_day_podcast_and_ignores_failures
     assert context["window_mode"] == "since_previous_successful_podcast"
     assert context["window_start_exclusive"] == "2026-07-29T10:30:00Z"
     assert context["previous_successful_podcast"]["daily_cycle_id"] == ("daily-20260729T100000Z")
+
+
+def test_context_validation_rejects_tampered_prior_context(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    prior_id = "daily-20260729T100000Z"
+    _cycle_manifest(
+        sandbox_repository,
+        prior_id,
+        started_at="2026-07-29T09:00:00Z",
+        cutoff="2026-07-29T10:30:00Z",
+        podcast_status="succeeded",
+    )
+    _completed_manifest(sandbox_repository, "podcast-current")
+    result = enqueue_daily_podcast(
+        sandbox_repository,
+        sandbox_settings,
+        run_id="podcast-current",
+        now=NOW,
+    )
+
+    validation = validate_podcast_context(sandbox_repository, daily_cycle_id="podcast-current")
+    assert validation.context_path == result.context_path
+    assert validation.referenced_file_count == 4
+
+    context = json.loads((sandbox_repository / result.context_path).read_text(encoding="utf-8"))
+    prior_context = sandbox_repository / context["previous_successful_podcast"]["context_path"]
+    prior_context.write_text(prior_context.read_text(encoding="utf-8") + "\n", encoding="utf-8")
+
+    with pytest.raises(PodcastError, match="previous successful podcast context hash conflicts"):
+        validate_podcast_context(sandbox_repository, daily_cycle_id="podcast-current")
 
 
 def test_context_aggregates_intervening_cycles_with_exclusive_inclusive_boundaries(

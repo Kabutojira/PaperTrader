@@ -29,6 +29,7 @@ RUN_ID = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 ULID = re.compile(r"^[0-9A-HJKMNP-TV-Z]{26}$")
 PODCAST_PAGE = re.compile(r"^data/wiki/podcasts/daily-podcast_[0-9]{8}T[0-9]{6}Z\.md$")
 COMMIT_SHA = re.compile(r"^[0-9a-f]{40}$")
+SHA256 = re.compile(r"^[0-9a-f]{64}$")
 TRANSCRIPT_START = "<!-- papertrader-spoken-transcript:start -->"
 TRANSCRIPT_END = "<!-- papertrader-spoken-transcript:end -->"
 MINIMUM_SCRIPT_WORDS = 2400
@@ -88,6 +89,14 @@ class PodcastScriptValidation:
     script_sha256: str
 
 
+@dataclass(frozen=True, slots=True)
+class PodcastContextValidation:
+    daily_cycle_id: str
+    context_path: str
+    context_sha256: str
+    referenced_file_count: int
+
+
 def _manifest_path(repository_root: Path, run_id: str) -> Path:
     if not RUN_ID.fullmatch(run_id):
         raise PodcastError(f"invalid run_id: {run_id!r}")
@@ -128,6 +137,200 @@ def _regular_bytes(repository_root: Path, raw_path: str, *, label: str) -> bytes
     if not path.is_file():
         raise PodcastError(f"{label} is not a committed regular file: {raw_path}")
     return path.read_bytes()
+
+
+def _validate_frozen_reference(
+    repository_root: Path,
+    *,
+    raw_path: object,
+    raw_sha256: object,
+    label: str,
+) -> bytes:
+    if not isinstance(raw_path, str) or not raw_path:
+        raise PodcastError(f"{label} path is invalid")
+    if not isinstance(raw_sha256, str) or not SHA256.fullmatch(raw_sha256):
+        raise PodcastError(f"{label} hash is invalid")
+    payload = _regular_bytes(repository_root, raw_path, label=label)
+    if content_hash(payload) != raw_sha256:
+        raise PodcastError(f"{label} hash conflicts with frozen context")
+    return payload
+
+
+def validate_podcast_context(
+    repository_root: Path,
+    *,
+    daily_cycle_id: str,
+) -> PodcastContextValidation:
+    """Validate every deterministic identity and file hash before podcast inference."""
+
+    if not RUN_ID.fullmatch(daily_cycle_id):
+        raise PodcastError("podcast context cycle identity is invalid")
+    context_relative = f"data/runs/{daily_cycle_id}/podcast_context.json"
+    context_bytes = _regular_bytes(
+        repository_root, context_relative, label="frozen podcast context"
+    )
+    try:
+        context = json.loads(context_bytes.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise PodcastError("frozen podcast context is not valid UTF-8 JSON") from exc
+    if not isinstance(context, dict):
+        raise PodcastError("frozen podcast context must contain an object")
+    if context.get("podcast_context_version") != 3:
+        raise PodcastError("frozen podcast context must use version three")
+    if context.get("daily_cycle_id") != daily_cycle_id or context.get("run_id") != daily_cycle_id:
+        raise PodcastError("frozen podcast context conflicts with its cycle identity")
+
+    manifest = _load_object(_manifest_path(repository_root, daily_cycle_id))
+    manifest_id = manifest.get("daily_cycle_id") or manifest.get("run_id")
+    if manifest_id != daily_cycle_id:
+        raise PodcastError("podcast manifest conflicts with its cycle identity")
+    cutoff = parse_timestamp(str(context.get("research_cutoff_at", "")))
+    manifest_cutoff = _manifest_cutoff(manifest)
+    if cutoff is None or manifest_cutoff != cutoff:
+        raise PodcastError("frozen podcast cutoff conflicts with the daily manifest")
+    window_start = parse_timestamp(str(context.get("window_start_exclusive", "")))
+    if window_start is None or window_start >= cutoff:
+        raise PodcastError("frozen podcast window is invalid")
+
+    page_path = context.get("page_path")
+    if not isinstance(page_path, str) or not PODCAST_PAGE.fullmatch(page_path):
+        raise PodcastError("frozen podcast page identity is invalid")
+    if manifest.get("podcast_page_path") != page_path:
+        raise PodcastError("frozen podcast page conflicts with the daily manifest")
+    report_path = context.get("report_path")
+    if report_path != manifest.get("report_path"):
+        raise PodcastError("frozen podcast report conflicts with the daily manifest")
+    snapshot_path = f"data/runs/{daily_cycle_id}/decision_snapshot.json"
+    if context.get("decision_snapshot_path") != snapshot_path:
+        raise PodcastError("frozen podcast decision snapshot identity is invalid")
+
+    referenced_file_count = 0
+    _validate_frozen_reference(
+        repository_root,
+        raw_path=report_path,
+        raw_sha256=context.get("report_sha256"),
+        label="current daily report",
+    )
+    referenced_file_count += 1
+    _validate_frozen_reference(
+        repository_root,
+        raw_path=snapshot_path,
+        raw_sha256=context.get("decision_snapshot_sha256"),
+        label="current decision snapshot",
+    )
+    referenced_file_count += 1
+
+    prior = context.get("previous_successful_podcast")
+    if prior is None:
+        if context.get("window_mode") != "seven_day_bootstrap":
+            raise PodcastError("podcast without a prior episode must use bootstrap mode")
+        if window_start != cutoff - timedelta(days=7):
+            raise PodcastError("podcast bootstrap window is not exactly seven days")
+    else:
+        if not isinstance(prior, dict):
+            raise PodcastError("previous successful podcast identity is invalid")
+        prior_id = prior.get("daily_cycle_id")
+        prior_cutoff = parse_timestamp(str(prior.get("research_cutoff_at", "")))
+        prior_page = prior.get("page_path")
+        prior_context_path = prior.get("context_path")
+        if (
+            not isinstance(prior_id, str)
+            or not RUN_ID.fullmatch(prior_id)
+            or prior_id == daily_cycle_id
+            or prior_cutoff is None
+            or prior_cutoff >= cutoff
+            or not isinstance(prior_page, str)
+            or not PODCAST_PAGE.fullmatch(prior_page)
+            or prior_context_path != f"data/runs/{prior_id}/podcast_context.json"
+        ):
+            raise PodcastError("previous successful podcast identity is invalid")
+        if context.get("window_mode") != "since_previous_successful_podcast":
+            raise PodcastError("podcast with a prior episode has the wrong window mode")
+        if window_start != prior_cutoff:
+            raise PodcastError("podcast window conflicts with the prior successful cutoff")
+
+        prior_context_bytes = _validate_frozen_reference(
+            repository_root,
+            raw_path=prior_context_path,
+            raw_sha256=prior.get("context_sha256"),
+            label="previous successful podcast context",
+        )
+        _validate_frozen_reference(
+            repository_root,
+            raw_path=prior_page,
+            raw_sha256=prior.get("page_sha256"),
+            label="previous successful podcast transcript",
+        )
+        referenced_file_count += 2
+        try:
+            prior_context = json.loads(prior_context_bytes.decode("utf-8"))
+        except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+            raise PodcastError("previous successful podcast context is invalid") from exc
+        if not isinstance(prior_context, dict):
+            raise PodcastError("previous successful podcast context must contain an object")
+        if (
+            prior_context.get("daily_cycle_id", prior_context.get("run_id")) != prior_id
+            or parse_timestamp(str(prior_context.get("research_cutoff_at", ""))) != prior_cutoff
+            or prior_context.get("page_path") != prior_page
+        ):
+            raise PodcastError("previous successful podcast context has conflicting identities")
+        prior_manifest = _load_object(_manifest_path(repository_root, prior_id))
+        if (
+            (prior_manifest.get("daily_cycle_id") or prior_manifest.get("run_id")) != prior_id
+            or prior_manifest.get("podcast_status") != "succeeded"
+            or _manifest_cutoff(prior_manifest) != prior_cutoff
+            or prior_manifest.get("podcast_page_path") != prior_page
+        ):
+            raise PodcastError("previous successful podcast manifest has conflicting identities")
+
+    page_sets: list[set[str]] = []
+    for field, label in (
+        ("changed_wiki_pages", "changed wiki page"),
+        ("background_wiki_pages", "background wiki page"),
+    ):
+        raw_pages = context.get(field)
+        if not isinstance(raw_pages, list):
+            raise PodcastError(f"frozen podcast {field} must be a list")
+        seen: set[str] = set()
+        for item in raw_pages:
+            if not isinstance(item, dict):
+                raise PodcastError(f"frozen podcast {field} contains an invalid item")
+            raw_path = item.get("path")
+            if not isinstance(raw_path, str):
+                raise PodcastError(f"frozen podcast {field} contains an invalid path")
+            parts = PurePosixPath(raw_path).parts
+            if (
+                len(parts) < 4
+                or parts[:2] != ("data", "wiki")
+                or parts[2] not in RESEARCH_WIKI_DOMAINS
+                or not raw_path.endswith(".md")
+                or raw_path in seen
+            ):
+                raise PodcastError(f"frozen podcast {field} contains an invalid identity")
+            _validate_frozen_reference(
+                repository_root,
+                raw_path=raw_path,
+                raw_sha256=item.get("sha256"),
+                label=label,
+            )
+            referenced_file_count += 1
+            seen.add(raw_path)
+        page_sets.append(seen)
+    if page_sets[0] & page_sets[1]:
+        raise PodcastError("frozen podcast wiki page roles overlap")
+
+    for field in ("research_developments", "unresolved_research_gaps"):
+        if not isinstance(context.get(field), list):
+            raise PodcastError(f"frozen podcast {field} must be a list")
+    if context.get("target_minutes") != 20 or context.get("target_words") != 3000:
+        raise PodcastError("frozen podcast target length is invalid")
+
+    return PodcastContextValidation(
+        daily_cycle_id=daily_cycle_id,
+        context_path=context_relative,
+        context_sha256=content_hash(context_bytes),
+        referenced_file_count=referenced_file_count,
+    )
 
 
 def _successful_prior_podcast(
@@ -1186,6 +1389,7 @@ def finalize_daily_podcast(
 
 __all__ = [
     "PodcastAssembly",
+    "PodcastContextValidation",
     "PodcastEnqueueResult",
     "PodcastError",
     "PodcastScriptValidation",
@@ -1196,6 +1400,7 @@ __all__ = [
     "render_draft_podcast",
     "seal_podcast_render",
     "spoken_transcript",
+    "validate_podcast_context",
     "validate_podcast_script",
     "validate_podcast_script_file",
 ]

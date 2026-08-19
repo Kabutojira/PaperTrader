@@ -274,6 +274,17 @@ def test_runtime_workflow_is_sequential_whitelisted_and_secret_partitioned(
     ):
         step = next(step for step in runtime["steps"] if step["name"] == step_name)
         assert step["if"] == "${{ inputs.generate_podcast && !inputs.dry_run }}"
+    podcast_enqueue = next(
+        step
+        for step in runtime["steps"]
+        if step["name"] == "Freeze complete cycle podcast context and enqueue text synthesis"
+    )
+    context_commands = podcast_enqueue["run"]
+    context_build = 'podcast context build --daily-cycle-id "$CYCLE_ID"'
+    context_validate = 'podcast context validate --daily-cycle-id "$CYCLE_ID"'
+    assert context_build in context_commands
+    assert context_validate in context_commands
+    assert context_commands.index(context_build) < context_commands.index(context_validate)
     assert runtime["outputs"]["podcast_status"] == ("${{ steps.outputs.outputs.podcast_status }}")
     publish_outputs = next(
         step for step in runtime["steps"] if step["name"] == "Publish cycle outputs"

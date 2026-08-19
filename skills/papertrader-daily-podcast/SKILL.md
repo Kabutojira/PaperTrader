@@ -12,6 +12,12 @@ and never delegate. The podcast is PaperTrader's primary audience funnel and may
 surface most listeners ever use, so the episode must stand on its own without requiring knowledge
 of the repository, wiki, research queue, or prior episodes.
 
+The deterministic controller invokes this skill only after `podcast context validate` has verified
+the frozen context, every declared repository path, and every declared SHA-256 value. Treat that
+result as authoritative: do not independently recompute hashes or block on a model-derived
+alternative hash. If a required frozen file is actually unavailable, fail closed without inventing
+a provenance conflict.
+
 This operation may synthesize the transcript, add its daily-report link, and invoke the audited
 draft renderer once. It may not change research conclusions, structured investment state,
 accounting, allocation, signals, orders, queue state, or delivery state.
@@ -39,8 +45,8 @@ security assessments control ratings, valuation conditions, and buy-or-sell thre
 1. Read `AGENTS.md`, the full frozen context, every successful research result in the new window,
    its changed wiki pages, relevant linked idea, security, relationship, and concept pages, and the
    most recent successful podcast. Also review any additional recent podcast titles, summaries, or
-   pages supplied by the frozen context or linked catalog. Fail closed if a frozen identity, hash,
-   cutoff, or path conflicts.
+   pages supplied by the frozen context or linked catalog. Rely on the controller's deterministic
+   context validation for frozen identities, hashes, cutoffs, and paths.
 2. Build an operation-local candidate slate containing every new successful research development.
    Decide which developments are genuinely interesting to a financially curious listener by asking:
    what changed, why it matters, what tension or uncertainty it reveals, and whether it supports a
@@ -176,8 +182,9 @@ window.
 
 ## Verification
 
-Confirm context version, exclusive/inclusive cutoffs, prior-podcast identity, every referenced path
-and hash, candidate selection and chapter mapping, novelty against past episodes, exact introduction,
+Confirm the deterministic context validation passed, then confirm context version,
+exclusive/inclusive cutoffs, prior-podcast identity, candidate selection and chapter mapping,
+novelty against past episodes, exact introduction,
 teaser, chapter order, security rating endings, overall summary, exact greetings, standalone
 listener clarity, narrative formatting, word count, metadata-only paper-trading identity, report
 link, no persistent audio reference, exactly one audited draft-render attempt, and all permitted

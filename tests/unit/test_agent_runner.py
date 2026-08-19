@@ -28,6 +28,7 @@ from papertrader.agent_runner import (
 from papertrader.config import Settings
 from papertrader.daily import resume_or_create_daily_cycle
 from papertrader.dedupe import build_dedupe_key
+from papertrader.podcast import enqueue_daily_podcast
 from papertrader.queue import enqueue_operation, prepare_queue
 from papertrader.tables import read_table
 
@@ -87,36 +88,28 @@ def _enqueue_opportunity(repository: Path, settings: Settings) -> str:
 def _enqueue_podcast(repository: Path, settings: Settings, *, run_id: str) -> str:
     report = repository / "data" / "wiki" / "daily-reports" / "daily-report_20260724.md"
     report.write_text("Completed deterministic report.\n", encoding="utf-8")
-    context = repository / "data" / "runs" / run_id / "podcast_context.json"
-    context.parent.mkdir(parents=True, exist_ok=True)
-    context.write_text(json.dumps({"run_id": run_id}), encoding="utf-8")
-    operation_id, created = enqueue_operation(
-        repository,
-        settings,
-        operation_type="daily_podcast",
-        entity_type="run",
-        entity_id=run_id,
-        dedupe_key=f"daily_podcast:{run_id}:research-v3",
-        prompt="Create the completed run's daily podcast.",
-        inputs={
-            "run_id": run_id,
-            "context_path": context.relative_to(repository).as_posix(),
-            "report_path": report.relative_to(repository).as_posix(),
-            "page_path": "data/wiki/podcasts/daily-podcast_20260724T120000Z.md",
-            "target_minutes": 20,
-            "target_words": 3000,
-        },
-        source="test",
-        source_refs=(
-            context.relative_to(repository).as_posix(),
-            report.relative_to(repository).as_posix(),
+    run = repository / "data" / "runs" / run_id
+    run.mkdir(parents=True, exist_ok=True)
+    (run / "decision_snapshot.json").write_text("{}\n", encoding="utf-8")
+    (run / "daily_run.json").write_text(
+        json.dumps(
+            {
+                "daily_run_version": 1,
+                "run_id": run_id,
+                "status": "succeeded",
+                "started_at": "2026-07-24T11:00:00Z",
+                "completed_at": "2026-07-24T12:00:00Z",
+                "report_path": report.relative_to(repository).as_posix(),
+                "podcast_status": "pending",
+                "podcast_operation_id": "",
+                "podcast_page_path": "",
+                "podcast_audio_path": "",
+            }
         ),
-        priority=100,
-        max_attempts=1,
-        now=NOW,
+        encoding="utf-8",
     )
-    assert created
-    return operation_id
+    result = enqueue_daily_podcast(repository, settings, run_id=run_id, now=NOW)
+    return result.operation_id
 
 
 def _result(operation_id: str) -> dict[str, object]:
@@ -757,6 +750,20 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "Writing an assessment request file without invoking it" in quick_check_prompt
     assert "exactly one immutable history version" in quick_check_prompt
     assert "write an evidence-backed failed result instead of succeeded" in quick_check_prompt
+
+    podcast_prompt = build_controller_prompt(
+        replace(
+            operation,
+            operation_type="daily_podcast",
+            entity_type="run",
+            entity_id="daily-20260730T180000Z",
+        ),
+        run_id="daily-20260730T180000Z",
+        injection_flags=(),
+    )
+    assert "deterministic controller validated the frozen podcast context" in podcast_prompt
+    assert "Do not recompute frozen hashes" in podcast_prompt
+    assert "do not block on a model-derived alternative hash" in podcast_prompt
 
 
 def test_environment_scrubber_drops_actions_and_broker_tokens(
