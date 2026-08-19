@@ -146,6 +146,7 @@ No pending orders.
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[podcasts/daily-podcast_20260819T090759Z|Daily research podcast — 2026-08-19T090759Z]]
+- [[podcasts/daily-podcast_20260819T120216Z|Daily research podcast — 2026-08-19T120216Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_cd492d97064d8574156e|MP Materials Corp. common stock]]
 - [[securities/security_dc7a111e297be528d96b|Tesla, Inc. common stock]]

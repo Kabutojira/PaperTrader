@@ -1,0 +1,253 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_cd492d97064d8574156e.md",
+      "sha256": "4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735"
+    },
+    {
+      "path": "data/wiki/securities/security_dc7a111e297be528d96b.md",
+      "sha256": "71b054a7a09459ef540d4580069e7a8de9eb3bbb573c9789ba127cb4a6453512"
+    }
+  ],
+  "daily_cycle_id": "daily-20260819T120216Z",
+  "decision_snapshot_path": "data/runs/daily-20260819T120216Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "1dc745e2986dfdec2aa377af2c1e3e07604a65cd1c5e22a2ff70926a3d2bdfde",
+  "generated_at": "2026-08-19T12:42:03Z",
+  "intervening_daily_cycles": [
+    "daily-20260819T120216Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260819T120216Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260819T120216Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260819.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260819T090759Z/podcast_context.json",
+    "context_sha256": "6c85180799b677781fc4f414a0b23dc91420839344f7fd07f0b727891da540ff",
+    "daily_cycle_id": "daily-20260819T090759Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260819T090759Z.md",
+    "page_sha256": "b26ab8918ebb533063ccd9a3b7f6df145b13ba46d96417df0cd98e0a4af1bd9f",
+    "research_cutoff_at": "2026-08-19T09:26:30Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260819.md",
+  "report_sha256": "d9f2346faac82a722e68ae441a3350f2d3ac88ed971603608c91ea2121084ce6",
+  "research_cutoff_at": "2026-08-19T12:34:54Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-19T12:10:06Z",
+      "daily_cycle_id": "daily-20260819T120216Z",
+      "daily_report_items": [
+        "Tesla's full review converted the prior unsupported quick check into a complete USD 137 / USD 272 / USD 491 scenario valuation. At USD 336.87, the deterministic result is USD 293 probability-weighted fair value, -13.02% expected return, Hold / Watch, and allocation-ineligible; the accepted Terafab relationship remains non-binding, no strategy or paper signal was created, and one dependent idea refresh was queued."
+      ],
+      "entity_id": "security_dc7a111e297be528d96b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Tesla's Q2 2026 Form 10-Q reports quarterly automotive revenue of USD 19.878 billion, energy generation and storage revenue of USD 3.014 billion, total revenue of USD 27.997 billion, operating income of USD 0.923 billion, USD 1.066 billion six-month operating cash flow, USD 8.527 billion six-month capital expenditure, USD 36.775 billion cash and investments, and USD 2.331 billion debt principal.",
+          "observed_at": "2026-08-19T09:20:13Z",
+          "source": "Tesla Q2 2026 Form 10-Q filed with the U.S. Securities and Exchange Commission",
+          "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+        },
+        {
+          "claim": "Tesla's Q2 2026 issuer release reports 450,410 vehicles produced, 443,956 delivered, and 9.6 GWh of energy-storage deployments.",
+          "observed_at": "2026-07-29T23:44:00Z",
+          "source": "Tesla second-quarter 2026 production, deliveries and deployments release",
+          "source_hash": "cadfa292c301e22ed474addbaf936395fdf55a77376ae031631c642f34b772d5",
+          "url": "https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments"
+        },
+        {
+          "claim": "The SEC submissions index available on August 19 showed no later periodic operating filing or earnings release that superseded the Q2 evidence set.",
+          "observed_at": "2026-08-19T09:12:08Z",
+          "source": "U.S. Securities and Exchange Commission Tesla submissions index",
+          "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+          "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+        },
+        {
+          "claim": "The identity-matched TSLA mark was USD 336.8699951171875 and the USD/EUR conversion rate was 0.8615000247955322, both retrieved at 2026-08-19T12:02:23Z. The August 18 indicator state retained MACD above signal while both lines were negative, RSI was neutral, and no current transition was active.",
+          "source": "data/market/latest.csv, data/market/indicators.csv, data/market/prices/security_dc7a111e297be528d96b.csv, and data/market/fx/USD_EUR.csv"
+        },
+        {
+          "claim": "Deterministic schema-v2 assessment derived USD 293 probability-weighted fair value, -13.02282653636943092919037599% expected return, -9.767119902277073196892781992% confidence-adjusted expected return, and USD 217.6 buy-below price; canonical rating is Hold, portfolio action is Watch, and allocation eligibility is ineligible.",
+          "source": "assessment_05487a0deb2a28b77d47"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0CYMREGK0MA8BGGVPK92EMT.json",
+        "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/assessment_upsert_attempt02_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/enqueue_idea_refresh_attempt02_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/security_upsert_attempt02_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_dc7a111e297be528d96b.md"
+      ],
+      "operation_id": "01M0CMRJ98SAV40VKBH4RJDG9J",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T120216Z/01M0CMRJ98SAV40VKBH4RJDG9J/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one full Tesla security review. Current Q2 primary evidence supports a scenario-complete sum-of-parts valuation of USD 137 / USD 272 / USD 491 with 25% / 50% / 25% probabilities. Against the fresh USD 336.87 mark, deterministic assessment assessment_05487a0deb2a28b77d47 derives USD 293 probability-weighted fair value, -13.02% expected return, -9.77% confidence-adjusted expected return, and a USD 217.60 buy-below price. The canonical result is Hold / Watch with quality score 72 and allocation ineligibility because expected-return, base-return, bear/base payoff, expected/bear payoff, and margin-of-safety gates fail. The accepted Terafab relationship remains plausible but non-binding and carries no current component value. Exactly one dependent idea-research follow-up was enqueued so the linked idea can absorb this accepted result. No strategy, signal, paper order, allocation, execution, cash, portfolio, performance, or fill state changed."
+    },
+    {
+      "completed_at": "2026-08-19T12:21:42Z",
+      "daily_cycle_id": "daily-20260819T120216Z",
+      "daily_report_items": [
+        "MP Materials quick check completed: Q2 production, sales and customer evidence support the vertical-integration thesis, but liquidity fell to USD 1.453 billion and the USD 56.67 mark is above the USD 42 base and USD 44.75 weighted values. The accepted assessment is Sell / Avoid and allocation-ineligible; exactly one dependent full Q2 review was queued. No paper trade was created."
+      ],
+      "entity_id": "security_cd492d97064d8574156e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "MP Materials reported Q2 NdPr production of 840 metric tons, NdPr sales of 1,006 metric tons, USD 108.5 million of consolidated revenue, USD 17.6 million of price-protection income, USD 28.5 million of adjusted EBITDA and a USD 20.3 million GAAP net loss; it also disclosed a new long-term gadolinium customer and continuing Independence qualification deliveries.",
+          "observed_at": "2026-08-19T12:12:53Z",
+          "source": "source_mp_q2_2026_results",
+          "source_hash": "e70e3f1cb910353ee20b80d6efa1344b5f67c2952014fb85f30b12893a144546",
+          "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000047/mpmcq22026er.htm"
+        },
+        {
+          "claim": "The Q2 Form 10-Q reports USD 1.453 billion of cash, cash equivalents and short-term investments at June 30 and 178.1 million common shares outstanding at July 31, updating the liquidity, capital-investment and dilution evidence required for valuation.",
+          "observed_at": "2026-08-19T12:12:53Z",
+          "source": "source_mp_q2_2026_10q",
+          "source_hash": "24a8ac5fa3804296fdd2c5ce1c8862a386565da7a7e4fb6329b02b426608a677",
+          "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+        },
+        {
+          "claim": "The current SEC submissions index confirms that the August 6 results Form 8-K and August 7 Form 10-Q are the latest issuer operating filings through this check.",
+          "observed_at": "2026-08-19T12:12:53Z",
+          "source": "source_mp_sec_submissions_20260819",
+          "source_hash": "d5e6f17bb1a24e7f82717f12eb30b3671d60b5d0f385c151da7079eb1b26f7d9",
+          "url": "https://data.sec.gov/submissions/CIK0001801368.json"
+        },
+        {
+          "claim": "The payload binds the July 10-August 7 volume-anomaly period and source-price hash 8247c31707aad65d91137b196b644e0e5879f12d98b089ef8e1c5f044c3c0853. The alert-period close was USD 51.11 after a 2.11% decline; the fresh August 18 close was USD 56.67 on 4.7 million shares with no active trigger, showing a results-linked repricing rather than a reached buy zone.",
+          "observed_at": "2026-08-19T12:02:23Z",
+          "source": "PaperTrader deterministic market and indicator caches",
+          "source_hash": "8247c31707aad65d91137b196b644e0e5879f12d98b089ef8e1c5f044c3c0853"
+        },
+        {
+          "claim": "The sole immutable schema-v2 assessment sourced from this operation links predecessor assessment_93a60c605666d4019f13, current page hash 4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735, the fresh USD mark and FX state, and all five retained sources. Deterministic normalization derives quality score 72, Sell / Avoid, USD 44.75 weighted fair value, -21.03% expected return and allocation ineligibility.",
+          "observed_at": "2026-08-19T12:19:27Z",
+          "source": "assessment_9409f60673dc70257720"
+        },
+        {
+          "claim": "Exactly one dependent full security review carries this quick-check identity, successful baseline identity, the volume-anomaly cause, exact market period and source-price hash, the Q2 changed gate and full_research_requested=true.",
+          "source": "data/operations/payloads/01M0CZ8BD03F2P6FPWQ5YD26GG.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0CZ8BD03F2P6FPWQ5YD26GG.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/assessment_upsert_request_v4.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/enqueue_full_research_request.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/enqueue_full_research_request_v2.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/security_upsert_request.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_q2_2026_10q_request.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_q2_2026_results_request.json",
+        "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/source_mp_sec_submissions_20260819_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_cd492d97064d8574156e.md"
+      ],
+      "operation_id": "01KZGGJ4M0G6P6ZRXF1BQJ095K",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260819T120216Z/01KZGGJ4M0G6P6ZRXF1BQJ095K/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded MP Materials quick check for the August 7 volume anomaly. Current primary evidence supersedes the Q1 baseline: Q2 NdPr production was 840 metric tons, NdPr sales were 1,006 metric tons, consolidated revenue was USD 108.5 million, price-protection income was USD 17.6 million and adjusted EBITDA was USD 28.5 million, while GAAP net loss remained USD 20.3 million and cash, cash equivalents and short-term investments fell to USD 1.453 billion. The alert coincided with the Q2 release and Form 10-Q, then normalized as the mark rose to USD 56.67. Retaining the bounded USD 20/USD 42/USD 75 scenarios produces a deterministic Sell / Avoid assessment with USD 44.75 weighted fair value and USD 33.60 buy-below price. Exactly one dependent full Q2 security review, 01M0CZ8BD03F2P6FPWQ5YD26GG, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or other accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260819T120216Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-19T12:34:38Z",
+      "daily_cycle_id": "daily-20260819T120216Z",
+      "daily_report_items": [
+        "MP Materials' full Q2 review failed closed because the deterministic assessment applier could not choose between the same-run quick check and full review as the immutable source operation. Current SEC evidence confirms operating progress but also first-half losses, weak underlying cash conversion and heavy construction spending. The prior hash-aligned Sell / Avoid assessment remains authoritative, issue issue_63d9e13d633b6c764af5 was recorded, and no follow-up or paper-trading state changed."
+      ],
+      "entity_id": "security_cd492d97064d8574156e",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The Q2 Form 10-Q reports first-half revenue plus price-protection income of USD 259.0 million, operating loss of USD 56.2 million, net loss of USD 28.3 million, operating cash flow of USD 4.9 million, property-and-equipment additions of USD 307.7 million, USD 1.453 billion of cash and short-term investments, USD 934.6 million of debt carrying value and USD 428.1 million of preferred liquidation preference.",
+          "observed_at": "2026-08-19T12:24:24Z",
+          "source": "source_mp_q2_2026_10q",
+          "source_hash": "24a8ac5fa3804296fdd2c5ce1c8862a386565da7a7e4fb6329b02b426608a677",
+          "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000048/mp-20260630.htm"
+        },
+        {
+          "claim": "The SEC-hosted issuer exhibit reports Q2 NdPr production and sales of 840 and 1,006 metric tons, consolidated revenue of USD 108.5 million, USD 17.6 million of price-protection income, USD 28.5 million of adjusted EBITDA, continued Independence qualification deliveries and a long-term gadolinium agreement.",
+          "observed_at": "2026-08-19T12:24:24Z",
+          "source": "source_mp_q2_2026_results",
+          "source_hash": "e70e3f1cb910353ee20b80d6efa1344b5f67c2952014fb85f30b12893a144546",
+          "url": "https://www.sec.gov/Archives/edgar/data/1801368/000180136826000047/mpmcq22026er.htm"
+        },
+        {
+          "claim": "The SEC submissions index checked on 19 August 2026 identifies the Q2 Form 10-Q filed on 7 August as the latest operating filing and shows only ownership filings afterward.",
+          "observed_at": "2026-08-19T12:24:24Z",
+          "source": "source_mp_sec_submissions_20260819",
+          "source_hash": "d5e6f17bb1a24e7f82717f12eb30b3671d60b5d0f385c151da7079eb1b26f7d9",
+          "url": "https://data.sec.gov/submissions/CIK0001801368.json"
+        },
+        {
+          "claim": "The assessment upsert exited 2 with 'assessment source operation is ambiguous for this run' and changed neither security_assessments.csv nor security_assessment_history.csv because quick_check_research operation 01KZGGJ4M0G6P6ZRXF1BQJ095K and security_research operation 01M0CZ8BD03F2P6FPWQ5YD26GG are both security-review operations for this security claimed by daily-20260819T120216Z.",
+          "source": "PaperTrader deterministic assessment applier"
+        },
+        {
+          "claim": "After restoration, current assessment assessment_9409f60673dc70257720 remains schema version 2, predecessor-linked to assessment_93a60c605666d4019f13 and hash-aligned to current page hash 4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735.",
+          "source": "PaperTrader mandatory security context"
+        },
+        {
+          "claim": "Issue issue_63d9e13d633b6c764af5 records the same-run assessment-provenance failure for deterministic controller repair or rescheduling.",
+          "source": "PaperTrader issue receipt"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/assessment_upsert_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/issue_record_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_restore_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/security_upsert_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_q2_2026_10q_recheck_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_q2_2026_results_recheck_request.json",
+        "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/source_mp_sec_submissions_recheck_request.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "operation_id": "01M0CZ8BD03F2P6FPWQ5YD26GG",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260819T120216Z/01M0CZ8BD03F2P6FPWQ5YD26GG/agent_result.json",
+      "status": "failed",
+      "summary": "Failed closed after exactly one bounded MP Materials full Q2 security review. Current SEC evidence confirms continued NdPr sales, supported Materials economics, magnet qualification and customer diversification, while first-half operating losses, weak underlying cash conversion, USD 307.7 million of property-and-equipment additions, debt, preferred claims and dilution constrain common-equity value. A complete cyclical-commodity normalized-earnings rebuild was prepared, but the deterministic assessment applier rejected it before assessment state changed because the completed quick check and this full review share the same security and run identity, making source-operation provenance ambiguous. The security page and conclusions were restored to the prior hash-aligned quick-check state, the structured summary was restored while retaining an advanced audit timestamp, issue issue_63d9e13d633b6c764af5 was recorded, and no idea or strategy follow-up was enqueued. No signal, order, allocation or accounting state changed."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-19T09:26:30Z"
+}

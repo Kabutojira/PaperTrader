@@ -1,0 +1,65 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T120216Z --script-path data/wiki/podcasts/daily-podcast_20260819T120216Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260819T120216Z --script-path data/wiki/podcasts/daily-podcast_20260819T120216Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 2,670-word research podcast asking when strategically important vertical integration becomes shareholder value, comparing Tesla's completed scenario valuation with MP Materials' operating progress and unresolved full valuation; the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three covers the exclusive prior cutoff of 2026-08-19T09:26:30Z through the inclusive 2026-08-19T12:34:54Z cutoff and contains two accepted developments, for Tesla and MP Materials, plus one audience-relevant unresolved MP Materials full-review gap.",
+      "source": "data/runs/daily-20260819T120216Z/podcast_context.json",
+      "source_hash": "5d271f6b0845727f2b6f552944bbf398a0536b8b7e911194dba78f914c63cb0c"
+    },
+    {
+      "claim": "Tesla's accepted scenario-complete sum-of-parts assessment uses USD 137, USD 272, and USD 491 bear, base, and bull fair values with USD 293 probability-weighted value against a USD 336.87 mark, leaving expected return negative and allocation ineligible.",
+      "source": "data/runs/daily-20260819T120216Z/podcast_context.json",
+      "source_hash": "5d271f6b0845727f2b6f552944bbf398a0536b8b7e911194dba78f914c63cb0c"
+    },
+    {
+      "claim": "MP Materials' current primary evidence reports Q2 NdPr production of 840 metric tons, sales of 1,006 metric tons, USD 108.5 million revenue, USD 28.5 million adjusted EBITDA, a USD 20.3 million GAAP net loss, and USD 1.453 billion of cash and short-term investments; the retained USD 44.75 weighted value remains below the USD 56.67 mark.",
+      "source": "data/wiki/securities/security_cd492d97064d8574156e.md",
+      "source_hash": "4c1bf058b263ead843a6574d0178c205af69e746e573f886f7d824c146af7735"
+    },
+    {
+      "claim": "The completed decision state holds one hundred percent cash with no actionable signal and no pending order.",
+      "source": "data/runs/daily-20260819T120216Z/decision_snapshot.json",
+      "source_hash": "1dc745e2986dfdec2aa377af2c1e3e07604a65cd1c5e22a2ff70926a3d2bdfde"
+    },
+    {
+      "claim": "The deterministic preflight accepted the complete transcript at 2,670 spoken words in five TTS chunks with script hash 6108fe5479dad264e4dfa9374c098e0435d8ec64645e9767e37e69c16b189eba.",
+      "source": "papertrader podcast validate-script receipt"
+    },
+    {
+      "claim": "Exactly one audited render-draft invocation succeeded and produced an ephemeral 1,204-second draft outside the repository.",
+      "source": "papertrader podcast render-draft receipt"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260819.md",
+    "data/wiki/podcasts/daily-podcast_20260819T120216Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0D0NZBRQRJC8HY6W50SWR7C",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created one 2,670-word research podcast asking when strategically important vertical integration becomes shareholder value. The episode compares Tesla's completed scenario valuation with MP Materials' rare-earth and magnet-chain operating progress, connects both to capital intensity and embodied-AI optionality, and preserves the unresolved provenance-bound MP Materials full valuation without presenting it as accepted. Added exactly one transcript link to the daily report. The deterministic script preflight passed and the single audited draft render succeeded, producing an ephemeral 1,204-second audio draft outside the repository.",
+  "validation": {
+    "checks": [
+      "Frozen context version, cutoffs, decision snapshot, report, both changed security pages, background idea page, prior context, and prior transcript identities matched their required hashes.",
+      "Deterministic podcast script preflight passed with 2,670 spoken words, five chunks, valid metadata, exact transcript markers, and no prohibited spoken formatting.",
+      "The daily report contains exactly one link to the new transcript and neither changed wiki file contains a persistent audio path or audio link.",
+      "Exactly one audited render-draft invocation occurred after the successful preflight and it succeeded.",
+      "Strict schema validation passed.",
+      "Strict integrity validation passed, including deterministic queue validation.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed without changing accounting state."
+    ],
+    "passed": true
+  }
+}
