@@ -2,14 +2,17 @@
   "entity_id": "security_cd492d97064d8574156e",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-19T12:12:53Z",
     "baseline_operation_id": "01KYPB2PK0R0ZXAHGNGZ6X5FM8",
     "changed_gate": "q2_results_superseded_q1_operating_liquidity_and_valuation_inputs",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-19T09:08:06Z",
     "market_data_date": "2026-08-07",
     "period_end": "2026-08-07",
     "period_start": "2026-07-10",
     "quick_check_operation_id": "01KZGGJ4M0G6P6ZRXF1BQJ095K",
+    "research_page": "data/wiki/securities/security_cd492d97064d8574156e.md",
     "research_reasons": [
       {
         "cause": "volume_anomaly_entered_during_q2_results_and_form_10q_release_period",
@@ -18,6 +21,19 @@
       {
         "cause": "q2_results_superseded_q1_production_liquidity_share_count_and_valuation_inputs",
         "source_ref": "source_mp_q2_2026_results|source_mp_q2_2026_10q|source_mp_sec_submissions_20260819"
+      },
+      {
+        "dedupe_key": "security_research:security_cd492d97064d8574156e:allocation-maintenance:2026-08-19T12:12:53Z",
+        "observed_at": "2026-08-19T13:30:37Z",
+        "prompt": "Revalidate security_cd492d97064d8574156e with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_mp_q1_2026_10q",
+          "source_mp_q1_2026_results",
+          "source_mp_q2_2026_10q",
+          "source_mp_q2_2026_results",
+          "source_mp_sec_submissions_20260819"
+        ]
       }
     ],
     "security_id": "security_cd492d97064d8574156e",
@@ -26,13 +42,15 @@
       "volume_anomaly"
     ]
   },
-  "objective": "Fully reassess MP Materials after Q2 operating and balance-sheet evidence superseded the Q1 baseline during a results-linked volume anomaly and post-results repricing.",
+  "objective": "Fully reassess MP Materials after Q2 operating and balance-sheet evidence superseded the Q1 baseline during a results-linked volume anomaly and post-results repricing. | Additional cause: Revalidate security_cd492d97064d8574156e with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M0CZ8BD03F2P6FPWQ5YD26GG",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
     "data/operations/payloads/01KZGGJ4M0G6P6ZRXF1BQJ095K.json",
     "data/wiki/inbox/market-security_cd492d97064d8574156e-volume_anomaly-b2fb3b93d625.md",
+    "source_mp_q1_2026_10q",
+    "source_mp_q1_2026_results",
     "source_mp_q2_2026_10q",
     "source_mp_q2_2026_results",
     "source_mp_sec_submissions_20260819"
