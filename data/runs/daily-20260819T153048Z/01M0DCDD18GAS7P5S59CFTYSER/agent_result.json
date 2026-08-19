@@ -1,0 +1,70 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T153048Z --script-path data/wiki/podcasts/daily-podcast_20260819T153048Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260819T153048Z --script-path data/wiki/podcasts/daily-podcast_20260819T153048Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 2,512-word research podcast asking when a moving share price becomes information about a business, contrasting FANUC's thin-market decline with ASML's momentum reversal and unresolved accepted valuation; the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three covers the exclusive prior cutoff of 2026-08-19T13:53:52Z through the inclusive 2026-08-19T15:59:54Z cutoff, with accepted FANUC and ASML research developments plus one audience-relevant unresolved ASML full-review gap.",
+      "source": "data/runs/daily-20260819T153048Z/podcast_context.json",
+      "source_hash": "e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db"
+    },
+    {
+      "claim": "FANUC's unchanged EUR 24.25, EUR 36.38, and EUR 48.50 scenarios produce EUR 36.3775 probability-weighted value against the EUR 33.349998474121094 Frankfurt mark after a 9.03% decline, while only 1,355 alert-day shares traded and the assessment remains Hold / Watch and allocation-ineligible.",
+      "source": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+      "source_hash": "b2a825f149b4ed7d7e62955c1d83394886832c832b5571396e2415550ac908ed"
+    },
+    {
+      "claim": "ASML's current primary evidence retains strong Q2 revenue, margins, net income, installed-base economics, liquidity, and raised guidance, but its accepted valuation remains unsupported at the USD 1,802.98 mark because the legacy two-case sensitivity is noncanonical and the full-review update failed closed on ambiguous same-run source identity.",
+      "source": "data/runs/daily-20260819T153048Z/podcast_context.json",
+      "source_hash": "e15a5741e3ccb616d82843ed7ca52528e40192b57c9aa659ca88405c177f12db"
+    },
+    {
+      "claim": "The maintained embodied-AI idea distinguishes scaled conventional automation from unproven general-purpose humanoid economics and requires repeat paid deployments, uptime, customer payback, material supplier revenue, and durable margins before thematic adoption becomes an investable transmission mechanism.",
+      "source": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "source_hash": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    },
+    {
+      "claim": "The completed decision state holds one hundred percent cash with no actionable signal and no pending order.",
+      "source": "data/runs/daily-20260819T153048Z/decision_snapshot.json",
+      "source_hash": "a431fdb9aa9768f4d8986b612cbfbee746e41650d1d6b94b2907582ef9abba5a"
+    },
+    {
+      "claim": "The deterministic preflight accepted the complete transcript at 2,512 spoken words in five TTS chunks with script hash 01f83c638e1c917c521ab65f9f2bca8ade448065c6087a77ba2642118b70407e.",
+      "source": "papertrader podcast validate-script receipt"
+    },
+    {
+      "claim": "Exactly one audited render-draft invocation succeeded and produced an ephemeral 1,100-second draft outside the repository.",
+      "source": "papertrader podcast render-draft receipt"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/daily-reports/daily-report_20260819.md",
+    "data/wiki/podcasts/daily-podcast_20260819T153048Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0DCDD18GAS7P5S59CFTYSER",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created one 2,512-word research podcast asking when a moving share price becomes information about the underlying business. The episode contrasts FANUC's thinly traded Frankfurt decline with ASML's bullish momentum reversal, connects both companies to the physical-AI supply chain, and explains why unchanged evidence can improve FANUC's expected return without clearing its gates while ASML's exceptional operating quality still lacks an authoritative current valuation. Added exactly one transcript link to the daily report. The deterministic script preflight passed and the single audited draft render succeeded, producing an ephemeral 1,100-second audio draft outside the repository.",
+  "validation": {
+    "checks": [
+      "Frozen context version, exclusive and inclusive cutoffs, decision snapshot, report, both changed security pages, background idea page, prior context, and prior transcript identities matched their required hashes.",
+      "Deterministic podcast script preflight passed with 2,512 spoken words, five chunks, valid metadata, exact transcript markers, at least eight prose paragraphs, and no prohibited spoken formatting.",
+      "The daily report contains exactly one link to the new transcript and neither changed wiki file contains a persistent audio path or audio link.",
+      "Exactly one audited render-draft invocation occurred after the successful preflight and it succeeded.",
+      "Strict schema validation passed.",
+      "Strict integrity validation passed, including deterministic queue validation.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed without changing accounting state."
+    ],
+    "passed": true
+  }
+}

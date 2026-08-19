@@ -153,6 +153,7 @@ No pending orders.
 - [[podcasts/daily-podcast_20260819T090759Z|Daily research podcast — 2026-08-19T090759Z]]
 - [[podcasts/daily-podcast_20260819T120216Z|Daily research podcast — 2026-08-19T120216Z]]
 - [[podcasts/daily-podcast_20260819T133029Z|Daily research podcast — 2026-08-19T133029Z]]
+- [[podcasts/daily-podcast_20260819T153048Z|Daily research podcast — 2026-08-19T153048Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_96ba305ee7cd586bc348|Fanuc Corporation Frankfurt ordinary shares]]
 - [[securities/security_cd492d97064d8574156e|MP Materials Corp. common stock]]
