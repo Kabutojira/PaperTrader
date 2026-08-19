@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3ed1d19aa488ae6c9ea7"
-as_of: "2026-08-19T20:30:52Z"
+snapshot_id: "decision_00b210d3124542739aad"
+as_of: "2026-08-19T22:09:28Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-19T20:30:52Z`
+**As of:** `2026-08-19T22:09:28Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-19T20:30:52Z"
 
 ## Coverage
 
-- Assessments: 60/70
-- Fresh-evidence assessments: 59/70
+- Assessments: 62/70
+- Fresh-evidence assessments: 61/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-19T20:30:52Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 369
+- Research backlog: 371
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -38,6 +38,7 @@ as_of: "2026-08-19T20:30:52Z"
 ### Blocks Portfolio
 
 - Error **ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast blocked: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
 
 ### Blocks Action
@@ -161,6 +162,7 @@ as_of: "2026-08-19T20:30:52Z"
 - Error **Hermes operation validation failed: [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-17]]** — operation artifact directory is not empty: /__w/PaperTrader/PaperTrader/data/runs/[[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]/[[securities/security_4627aea1bf7d8943d3d8|Security research for SGML on 2026-08-17]]
 - Error **Local harness operation validation failed: [Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)** — files_changed is stale or incomplete: reported=\['data/runs/local-youtube-20260812T090946Z-03/[Wiki ingest for www.youtube.com on 2026-08-12](https://www.youtube.com/watch?v=fO5sC7qS04E)/agent_result.json'\], actual=\[\]
+- Error **Hermes operation validation failed: [[securities/security_4b61970aa8f574446819|Security research for GEV on 2026-08-12]]** — agent result schema: 'recorded source state\|recorded source state' does not match '^\[a-f0-9\]{64}$'; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]/[[securities/security_4b61970aa8f574446819|Security research for GEV on 2026-08-12]]/agent_result.json: 'recorded source state\|recorded source state' does not match '^\[a-f0-9\]{64}$'
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]** — Hermes exited with status 2; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260805|Daily report for 2026-08-05]]/[[daily-reports/daily-report_20260805|Daily podcast for Daily report for 2026-08-05 on 2026-08-05]]/agent_result.json
 - Error **Hermes operation validation failed: [[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]]** — Hermes timed out after 1800s; agent result is missing or a symlink: data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/[[securities/security_89969b7dac39b7db5661|Quick check research for YEC.F on 2026-08-10]]/agent_result.json
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -183,7 +185,7 @@ as_of: "2026-08-19T20:30:52Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 369 active operations.
+Showing 20 of 371 active operations.
 
 <details><summary>Active research work</summary>
 
