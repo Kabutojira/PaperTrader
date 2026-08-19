@@ -1,0 +1,23 @@
+{
+  "security_id": "security_6cf75bd0ec0aa2a20148",
+  "issuer_id": "issuer_cae5ee22a91decef8a5a",
+  "company_name": "Twist Bioscience Corporation",
+  "instrument_name": "Twist Bioscience Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "TWST",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "TWST",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "United States",
+  "sector": "Healthcare",
+  "industry": "Biotechnology",
+  "status": "watching",
+  "watchlist_reason": "Synthetic-DNA platform growth, post-offering liquidity, and an Anthropic protein-design use case; watch Q4 breakeven, repeat AI-workflow revenue, GAAP cash conversion, dilution, and valuation compression.",
+  "research_summary": "Q3 growth, improved post-offering liquidity, and an Anthropic use case are outweighed by losses, dilution, undisclosed campaign economics, and a USD 142.39 mark above every scenario value.",
+  "research_page": "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md",
+  "last_research_at": "2026-08-19T21:35:23Z",
+  "next_review_at": "2026-09-18T21:35:23Z",
+  "source": "source_twst_q3_2026_10q|source_twst_q3_2026_results|source_twst_aug_2026_equity_offering_8k|source_twst_anthropic_protein_design_8k"
+}

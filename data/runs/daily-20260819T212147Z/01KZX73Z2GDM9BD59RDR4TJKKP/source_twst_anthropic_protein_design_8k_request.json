@@ -1,0 +1,18 @@
+{
+  "source_id": "source_twst_anthropic_protein_design_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000050/twist-20260818.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000050/twist-20260818.htm",
+  "source_type": "filing",
+  "title": "Twist Bioscience Corporation disclosure of Anthropic protein-design evaluation role",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5504070d1150ce029a040141ff83914a4e18318d224ded07fbe36a20a999c6dc",
+  "related_entity_ids": "security_6cf75bd0ec0aa2a20148",
+  "checked_at": "2026-08-19T21:35:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Anthropic selected Twist as one independent evaluator to produce AI-designed proteins at scale and test binding for a campaign spanning 15 targets.",
+  "summary": "The issuer-filed Regulation FD disclosure establishes Twist's bounded evaluation role in Anthropic's protein-design campaign but provides no contract value, recurring revenue, or validated commercial economics.",
+  "run_id": "daily-20260819T212147Z"
+}

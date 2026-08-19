@@ -1,0 +1,18 @@
+{
+  "source_id": "source_twst_aug_2026_equity_offering_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1581280/000110465926091280/tm2622018d2_8k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1581280/000110465926091280/tm2622018d2_8k.htm",
+  "source_type": "filing",
+  "title": "Twist Bioscience Corporation August 2026 underwritten common-stock offering",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "545c9a2a4031ab13238f44e4421b37dc5a04a6963a31f32f5e90413b2b40466d",
+  "related_entity_ids": "security_6cf75bd0ec0aa2a20148",
+  "checked_at": "2026-08-19T21:35:23Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Twist sold 3,125,000 shares at USD 96 and the underwriters exercised an option for 468,750 additional shares; expected net proceeds were approximately USD 327.1 million.",
+  "summary": "The SEC filing documents a completed financing that materially increases cash resources while raising the common-share denominator by 3,593,750 shares.",
+  "run_id": "daily-20260819T212147Z"
+}

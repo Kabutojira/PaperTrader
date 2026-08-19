@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-05"
-updated: "2026-08-05"
-provenance: "source_twst_q3_2026_10q; source_twst_q3_2026_results"
+updated: "2026-08-19"
+provenance: "source_twst_q3_2026_10q; source_twst_q3_2026_results; source_twst_aug_2026_equity_offering_8k; source_twst_anthropic_protein_design_8k"
 security_id: security_6cf75bd0ec0aa2a20148
 issuer_id: issuer_cae5ee22a91decef8a5a
 confidence: medium
-next_review: "2026-08-19"
+next_review: "2026-09-18"
 ---
 
 # Twist Bioscience Corporation common stock
@@ -24,9 +24,8 @@ next_review: "2026-08-19"
 Twist manufactures synthetic DNA and related products for biopharma, diagnostics, research,
 industrial biology, and data applications. Its silicon-based synthesis platform addresses the same
 broader precision-biology research budgets as
-[[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]], but structured state does
-not yet establish an accepted relationship to
-[[ideas/idea_precision_biology_healthcare_automation|the maintained precision-biology idea]].
+[[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]]. Structured state does not
+yet establish an accepted idea relationship.
 
 ## Economics and thesis
 
@@ -55,39 +54,44 @@ operating loss and USD 35.1 million net loss; adjusted EBITDA was negative USD 1
 | Management expects Q4 revenue of USD 123-124 million and adjusted-EBITDA breakeven. | The next quarter is a concrete catalyst and falsifiable profitability checkpoint; adjusted EBITDA excludes substantial stock compensation. |
 
 Primary evidence is the [quarterly report filed with the SEC](https://www.sec.gov/Archives/edgar/data/1581280/000158128026000047/twst-20260630.htm)
-as `source_twst_q3_2026_10q` and the [SEC-filed fiscal Q3 results release](https://www.sec.gov/Archives/edgar/data/1581280/000158128026000044/twst-2026630xex991.htm)
-as `source_twst_q3_2026_results`, both checked 5 August 2026.
+as `source_twst_q3_2026_10q`, the [SEC-filed fiscal Q3 results release](https://www.sec.gov/Archives/edgar/data/1581280/000158128026000044/twst-2026630xex991.htm)
+as `source_twst_q3_2026_results`, the [August equity-offering filing](https://www.sec.gov/Archives/edgar/data/1581280/000110465926091280/tm2622018d2_8k.htm)
+as `source_twst_aug_2026_equity_offering_8k`, and the [Anthropic evaluation disclosure](https://www.sec.gov/Archives/edgar/data/1581280/000158128026000050/twist-20260818.htm)
+as `source_twst_anthropic_protein_design_8k`, all checked 19 August 2026.
 
 ## Valuation
 
-The `pre_profit_growth` template uses a 12-month `revenue_multiple`. At the 4 August close of USD
-99.44999694824219 and 62.707 million shares, market capitalization was about USD 6.24 billion. After
-approximately USD 167 million of cash and short-term investments less the USD 15 million future-
-revenue liability, enterprise value was about USD 6.08 billion, or 13.3 times the midpoint of fiscal
-2026 revenue guidance. The scenarios vary forward revenue growth, gross and terminal operating
-margin, cash burn, stock-compensation dilution, and the multiple after another year of execution:
+The `pre_profit_growth` template uses a 12-month `revenue_multiple`. At the 19 August close of USD
+142.38999938964844 and about 66.268 million shares after the fully exercised offering, market
+capitalization was about USD 9.43 billion. The USD 327.1 million expected net proceeds materially
+improve runway but do not create operating earnings; the scenarios add those proceeds to the prior
+liquidity base, allow for burn and obligations, and use the enlarged share count. They vary forward
+revenue growth, gross and terminal operating margin, cash burn, stock-compensation dilution, and the
+multiple after another year of execution. No value is assigned to the Anthropic evaluation without
+disclosed contract economics or evidence of repeatable revenue:
 
 | Scenario | Probability | Fair value | Assumptions |
 | --- | ---: | ---: | --- |
-| Bear | 30% | USD 38.81 | About USD 500 million of forward revenue at 5x enterprise value/revenue, USD 100 million net financial resources, and 67 million diluted shares; growth slows, adjusted breakeven slips, cash burn and dilution persist, and the premium multiple compresses. |
-| Base | 50% | USD 69.69 | About USD 550 million of forward revenue at 8x, USD 130 million net financial resources, and 65 million diluted shares; low-20s growth moderates, gross margin remains above 50%, and profitability improves gradually with continuing stock compensation. |
-| Bull | 20% | USD 105.47 | About USD 600 million of forward revenue at 11x, USD 150 million net financial resources, and 64 million diluted shares; DSPS and NGS both sustain strong growth, Q4 breakeven becomes durable positive cash economics, and dilution slows. |
+| Bear | 30% | USD 41.14 | About USD 500 million of forward revenue at 5x enterprise value/revenue, USD 380 million net financial resources, and 70 million diluted shares; growth slows, adjusted breakeven slips, cash burn and dilution persist, and the premium multiple compresses. |
+| Base | 50% | USD 70.00 | About USD 550 million of forward revenue at 8x, USD 430 million net financial resources, and 69 million diluted shares; low-20s growth moderates, gross margin remains above 50%, and profitability improves gradually with continuing stock compensation. |
+| Bull | 20% | USD 103.97 | About USD 600 million of forward revenue at 11x, USD 470 million net financial resources, and 68 million diluted shares; DSPS and NGS sustain strong growth, the Anthropic work leads to repeat business, Q4 breakeven becomes durable positive cash economics, and dilution slows. |
 
-Probability-weighted fair value is USD 67.582, 32.0% below the mark. The base case is 29.9% below
-the mark and even the bull case offers only 6.1% upside. Medium confidence reflects current SEC
+Probability-weighted fair value is about USD 68.14, 52.1% below the mark. The base case is 50.8%
+below the mark and even the bull case is 27.0% below it. Medium confidence reflects current SEC
 evidence but substantial sensitivity to the terminal multiple, the conversion of adjusted EBITDA to
-GAAP and free-cash-flow profitability, and the diluted share count.
+GAAP and free-cash-flow profitability, the use of offering proceeds, and the diluted share count.
 
 ## Alert review, catalysts, and risks
 
-From 7 July through 4 August the adjusted close rose 9.25% to USD 99.45. Twist filed its Q3 results
-before the 3 August session, when the close rose 10.39% to USD 101.06; the 4 August close then fell
-1.59%. By 4 August MACD had crossed above its signal line with deterministic strength 0.0722, RSI
-was a non-overbought 60.28, volume was not anomalous, and the close was just below the USD 99.47
-upper Bollinger band. The raised guidance and stronger growth plausibly explain the post-results
-repricing, but the crossover is confirmation of improved expectations rather than independent proof
-of fair-value upside. At a mark near the bull value and far above base and weighted values, it is an
-opportunity to monitor execution and a valuation/timing risk, not a paper-buy signal.
+From 22 July through 19 August the adjusted close rose 51.14% to USD 142.39. The 19 August session
+rose 22.64% on 3,495,111 shares, producing a deterministic volume ratio of 2.398 and newly entering
+the volume-anomaly state; the close also stood above its upper Bollinger band and RSI was overbought
+at 70.85. Twist's 18 August SEC disclosure that Anthropic selected it as one independent evaluator
+to produce and binding-test AI-designed proteins across 15 targets is timely primary evidence for
+the repricing. It validates a platform use case, not commercial scale: the filing discloses no
+contract value, recurring revenue, customer concentration, margin, or successful downstream drug
+economics. The move is therefore an opportunity to monitor conversion into repeatable revenue and a
+material valuation/timing risk, not a paper-buy signal.
 
 Catalysts are Q4 adjusted-EBITDA breakeven, sustained DSPS and NGS growth, gross-margin expansion,
 conversion to positive operating and free cash flow, broader customer adoption, and lower dilution.
@@ -104,17 +108,48 @@ or turnaround-time competitiveness.
 ## Disposition
 
 Status: **watching**, confidence **medium**. Current primary evidence supports strong growth,
-expanding gross margin, adequate liquidity, and a credible near-term breakeven checkpoint. However,
-GAAP losses, cash use, stock compensation, dilution, scenario downside, a 13.3x current-year revenue
-multiple, and the absence of an accepted canonical relationship keep the security allocation-
-ineligible at Watch. Review by **2026-08-19**, or sooner after Q4 guidance changes, a material cash
-or dilution event, or a sharp move through the scenario range. No conviction strategy, signal, or
-paper order is justified.
+expanding gross margin, a much stronger post-offering liquidity position, a credible near-term
+breakeven checkpoint, and a relevant AI-protein-design use case. However, GAAP losses, cash use,
+stock compensation, dilution, undisclosed Anthropic economics, severe scenario downside at the USD
+142.39 mark, and the absence of an accepted canonical relationship keep the security allocation-
+ineligible at Watch. Review by **2026-09-18**, or sooner after Q4 results, disclosed Anthropic
+economics, a material cash or dilution event, or a sharp move through the scenario range. No
+conviction strategy, signal, or paper order is justified.
+
+## Idea exposure map
+
+- **Candidate — [[ideas/idea_precision_biology_healthcare_automation|Precision biology and
+  healthcare automation]], positive direction.** Twist supplies synthetic-DNA and protein-production
+  inputs that can shorten design-make-test workflows; the Anthropic evaluation is dated evidence of
+  that transmission mechanism. Material recurring economics are not yet evidenced, so this remains
+  a candidate pending one relationship review, invalidated if evaluations do not convert into
+  repeatable revenue or if customers internalize the workflow.
+- **Rejected-no-link — [[ideas/idea_ai_native_drug_discovery|AI-native drug-discovery platforms]].**
+  The Anthropic campaign tests protein design, but the filing establishes neither a drug-development
+  program nor clinical, milestone, or material revenue exposure. Treating thematic adjacency as a
+  second canonical edge would overstate the current evidence.
+- The complete maintained idea catalog was reviewed. Other ideas lack a specific material causal
+  transmission mechanism to Twist's current products, customers, suppliers, costs, or catalysts.
 
 ## Changes since prior review
 
-- **Prior state:** this is the first structured security assessment; the mandatory context contained no prior assessment, successful result, retained source, accepted relationship, strategy, idea, or research-page hash.
-- **Facts and evidence:** the Q3 filing and SEC-filed release establish current segment growth, gross margin, losses, liquidity, cash burn, capital spending, stock compensation, share count, customer shipments, and raised guidance.
-- **Assumptions and valuation:** a new scenario-complete revenue-multiple assessment sets bear/base/bull values of USD 38.81/USD 69.69/USD 105.47 at 30%/50%/20%; there are no prior values to revise.
-- **Thesis, catalysts, and risks:** platform scale and operating leverage support the thesis, while unproven GAAP and cash profitability, dilution, competition, supplier dependence, and valuation constrain it.
-- **Blockers, gaps, rating, and action:** no hard research blocker remains. Valuation is not compelling, profitability and dilution need confirmation, and no accepted relationship exists. The initial disposition is watching with no strategy or signal.
+- **Facts and evidence changed:** after the prior 5 August review, Twist raised about USD 327.1
+  million net by selling 3,593,750 shares at USD 96 and disclosed its evaluator role in Anthropic's
+  15-target protein-design campaign. Q3 operating evidence and guidance are unchanged. The 19 August
+  volume anomaly coincided with a 22.64% session rise and a 51.14% return over the canonical period.
+- **Assumptions and valuation changed:** net financial resources rise materially while scenario
+  diluted shares increase to 68-70 million. Bear/base/bull values move from USD 38.81/USD 69.69/USD
+  105.47 to USD 41.14/USD 70.00/USD 103.97 at unchanged 30%/50%/20% probabilities. The higher mark,
+  not weaker operating evidence, drives expected return from about negative 32.0% to negative 52.1%.
+- **Thesis and catalysts changed:** the financing improves runway and the Anthropic work validates a
+  relevant use case. Conversion to disclosed repeat revenue joins Q4 breakeven as a catalyst.
+- **Risks changed:** immediate dilution and valuation risk increased; offering proceeds reduce
+  financing risk. Anthropic economics remain undisclosed. Existing competition, cash-conversion,
+  stock-compensation, supplier, and execution risks remain.
+- **Blockers and gaps:** no hard research blocker is added. Medium confidence, unfavorable timing,
+  inadequate margin of safety, unproven AI-workflow monetization, and no accepted relationship remain
+  gaps. A precision-biology relationship candidate is newly identified; AI-native drug discovery is
+  rejected for lack of drug-development or material economic evidence.
+- **Rating and action unchanged:** the conclusion remains Sell/Avoid and allocation-ineligible,
+  because every scenario remains below the market price despite improved liquidity. No strategy or
+  signal is justified.

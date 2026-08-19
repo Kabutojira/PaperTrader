@@ -4245,3 +4245,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   retain Hold / Watch and allocation ineligibility. Two separate candidate relationship reviews cover
   precision biology and AI-native drug discovery; no strategy, signal, paper order or accounting
   state changed.
+
+## [2026-08-19T21:35:23Z] update | Twist Bioscience financing and protein-design reassessment
+
+- Reassessed [[securities/security_6cf75bd0ec0aa2a20148|Twist Bioscience]] after its USD 327.1
+  million net common-stock financing, Anthropic protein-design evaluation disclosure, and the exact
+  22 July through 19 August volume-anomaly period. The financing improves runway while increasing
+  the share denominator; the Anthropic work validates a use case but discloses no contract economics.
+- Updated USD 41.14/USD 70.00/USD 103.97 scenarios remain wholly below the USD 142.39 mark, retaining
+  Sell / Avoid and allocation ineligibility. One precision-biology relationship candidate requires
+  separate review; AI-native drug discovery is rejected as thematic adjacency without current
+  drug-development or material-revenue evidence. No strategy, signal, paper order, allocation, or
+  accounting state changed.

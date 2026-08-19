@@ -1,0 +1,29 @@
+{
+  "entity_id": "relationship_9f3d2db7b87541a08e3b",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_twst_anthropic_protein_design_8k",
+      "source_twst_aug_2026_equity_offering_8k",
+      "source_twst_q3_2026_10q",
+      "source_twst_q3_2026_results"
+    ],
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate the edge if evaluations do not convert into repeatable material revenue, customers internalize the workflow, or Twist's platform loses cost, quality, or turnaround-time competitiveness.",
+    "proposed_mechanism": "Twist's synthetic-DNA and protein-production inputs could shorten design-make-test cycles for precision-biology customers; the Anthropic evaluation is dated use-case evidence but material recurring economics remain unproved.",
+    "relationship_id": "relationship_9f3d2db7b87541a08e3b",
+    "security_id": "security_6cf75bd0ec0aa2a20148"
+  },
+  "objective": "Review whether Twist Bioscience has a material causal relationship to precision biology and healthcare automation using current primary evidence; accept or reject the edge.",
+  "operation_id": "01M0DZGFQ8AWJ5GYPVG88HQDPS",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md",
+    "source_twst_anthropic_protein_design_8k",
+    "source_twst_aug_2026_equity_offering_8k",
+    "source_twst_q3_2026_10q",
+    "source_twst_q3_2026_results"
+  ]
+}

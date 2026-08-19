@@ -1,0 +1,89 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_6cf75bd0ec0aa2a20148",
+    "papertrader research source record --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_q3_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_q3_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_aug_2026_equity_offering_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_anthropic_protein_design_8k_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/enqueue_precision_biology_relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict --prepared-daily-cycle-id daily-20260819T212147Z",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "TWST full reassessment: the USD 327.1 million financing improves runway and the Anthropic evaluation validates a protein-design use case, but undisclosed economics and a USD 142.39 mark above every USD 41.14/USD 70.00/USD 103.97 scenario retain Strong Sell / Avoid and allocation ineligibility."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC filing reports 3,125,000 common shares sold at USD 96 plus full exercise of a 468,750-share underwriter option, for 3,593,750 new shares and expected net proceeds of approximately USD 327.1 million.",
+      "observed_at": "2026-08-19T21:35:23Z",
+      "source": "source_twst_aug_2026_equity_offering_8k",
+      "source_hash": "545c9a2a4031ab13238f44e4421b37dc5a04a6963a31f32f5e90413b2b40466d",
+      "url": "https://www.sec.gov/Archives/edgar/data/1581280/000110465926091280/tm2622018d2_8k.htm"
+    },
+    {
+      "claim": "Twist disclosed that Anthropic selected it as one independent evaluator to produce AI-designed proteins at scale and test binding across 15 targets; the filing supplies no contract value, recurring-revenue commitment, margin, or downstream drug economics.",
+      "observed_at": "2026-08-19T21:35:23Z",
+      "source": "source_twst_anthropic_protein_design_8k",
+      "source_hash": "5504070d1150ce029a040141ff83914a4e18318d224ded07fbe36a20a999c6dc",
+      "url": "https://www.sec.gov/Archives/edgar/data/1581280/000158128026000050/twist-20260818.htm"
+    },
+    {
+      "claim": "The latest periodic evidence remains unchanged: fiscal Q3 revenue was USD 118.4 million, gross margin was 52.8%, fiscal 2026 revenue guidance was USD 456-457 million, operating cash use remained material, and stock compensation and dilution remain central risks.",
+      "observed_at": "2026-08-19T21:35:23Z",
+      "source": "source_twst_q3_2026_10q and source_twst_q3_2026_results"
+    },
+    {
+      "claim": "The immutable market observation is USD 142.38999938964844 at 2026-08-19T21:21:54Z with identity-matched USD/EUR FX of 0.8562999963760376. The 22 July through 19 August period rose 51.14%; the final session rose 22.64% on 3,495,111 shares, with volume ratio 2.398, RSI 70.85, and an upper-Bollinger-band breach.",
+      "observed_at": "2026-08-19T21:21:54Z",
+      "source": "data/market/latest.csv and data/market/indicators.csv"
+    },
+    {
+      "claim": "Deterministic assessment schema version 2 links predecessor assessment_a74d909e79d6de48e2f0 and derives Strong Sell / Avoid, Watch tier, and allocation ineligibility. The USD 41.14/USD 70.00/USD 103.97 scenarios at 30%/50%/20% imply approximately negative 52.15% weighted return; expected-return, base-return, payoff, margin-of-safety, and relationship gates fail.",
+      "source": "assessment_9fd404694c751e0f74e2"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0DZGFQ8AWJ5GYPVG88HQDPS.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/assessment_upsert_request.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/enqueue_precision_biology_relationship_request.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/security_upsert_request.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_anthropic_protein_design_8k_request.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_aug_2026_equity_offering_8k_request.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_q3_2026_10q_refresh_request.json",
+    "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/source_twst_q3_2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6cf75bd0ec0aa2a20148.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZX73Z2GDM9BD59RDR4TJKKP",
+  "operations_created": [
+    "01M0DZGFQ8AWJ5GYPVG88HQDPS"
+  ],
+  "status": "succeeded",
+  "summary": "Completed the full Twist Bioscience reassessment using current SEC filings and the exact 2026-08-19 volume anomaly. The financing adds approximately USD 327.1 million of net liquidity and the Anthropic evaluation validates a protein-design use case, but its economics are undisclosed. At USD 142.39, all USD 41.14/USD 70.00/USD 103.97 scenarios remain below market; TWST remains Strong Sell / Avoid, Watch-tier, and allocation-ineligible. One dependent precision-biology relationship review was created; no strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory audited security-context receipt succeeded before repeat assessment state was consumed.",
+      "Four retained SEC source identities and hashes were registered or rechecked at 2026-08-19T21:35:23Z; assessment upsert accepted fresh source, price, FX, and immutable security identity references.",
+      "Immutable assessment assessment_9fd404694c751e0f74e2 links predecessor assessment_a74d909e79d6de48e2f0, schema version 2, source operation/result identity, research-page hash 85d5c17a56f66eae031e701c8c09541910a84e686d273f985cbafc19abad3dc1, and the current run.",
+      "The first assessment request was rejected only for unsorted evidence references and changed no paths; a new immutable v2 request corrected the ordering and succeeded.",
+      "The complete maintained idea catalog and canonical relationship state were reviewed; no accepted edge exists, the precision-biology candidate is labelled as pending and has exactly one dependent relationship-research follow-up, and AI-native drug discovery is explicitly rejected with a reason.",
+      "Strict schema validation, queue validation, strict wiki lint, prepared-cycle strict integrity, and strict portfolio reconciliation all returned OK.",
+      "Observed repository changes exclude allocation targets/history, strategies, signals, orders, executions, cash, portfolio, and performance state."
+    ],
+    "passed": true
+  }
+}
