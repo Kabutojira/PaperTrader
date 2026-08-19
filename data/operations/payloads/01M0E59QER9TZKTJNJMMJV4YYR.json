@@ -1,0 +1,27 @@
+{
+  "entity_id": "relationship_9557a64a6bb21a04a7a1",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_gev_q2_2026_10q",
+      "source_gev_q2_2026_earnings",
+      "source_gev_sec_submissions_20260819"
+    ],
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate the edge if grid and generation exposure is immaterial, projects slip or cancel, backlog fails to convert into durable margins and cash, or competitive and execution costs absorb the demand benefit.",
+    "proposed_mechanism": "GE Vernova's grid equipment and dispatchable gas generation can benefit when load growth, congestion and renewable variability raise demand for electrical infrastructure and firm capacity, while gas can also substitute for storage.",
+    "relationship_id": "relationship_9557a64a6bb21a04a7a1",
+    "security_id": "security_4b61970aa8f574446819"
+  },
+  "objective": "Review whether GE Vernova has a material causal relationship to the solar-storage-and-grid-flexibility reset using current primary evidence; accept or reject the edge.",
+  "operation_id": "01M0E59QER9TZKTJNJMMJV4YYR",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_4b61970aa8f574446819.md",
+    "source_gev_q2_2026_10q",
+    "source_gev_q2_2026_earnings",
+    "source_gev_sec_submissions_20260819"
+  ]
+}

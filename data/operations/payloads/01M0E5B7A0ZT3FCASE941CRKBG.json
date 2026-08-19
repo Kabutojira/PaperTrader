@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_ai_infrastructure_power",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "security_id": "security_4b61970aa8f574446819",
+    "security_research_operation_id": "01KZSMSDTRFFMGZPZT6TTZ9WFE",
+    "security_research_result_path": "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/agent_result.json",
+    "seed_claim": "GE Vernova's Q2 Power and Electrification evidence continues to validate the physical bottleneck mechanism, but the 11 August MACD crossover faded and USD 997.50 weighted value versus USD 987.46 leaves base upside and downside payoff below allocation gates."
+  },
+  "objective": "Refresh the AI-infrastructure-and-power-bottlenecks idea from GE Vernova's completed August market and valuation review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01M0E5B7A0ZT3FCASE941CRKBG",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ]
+}

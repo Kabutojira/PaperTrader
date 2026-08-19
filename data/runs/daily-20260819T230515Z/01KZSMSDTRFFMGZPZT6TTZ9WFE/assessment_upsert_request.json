@@ -1,0 +1,99 @@
+{
+  "security_id": "security_4b61970aa8f574446819",
+  "assessment_schema_version": "2",
+  "assessed_at": "2026-08-19T23:10:00Z",
+  "research_status": "complete",
+  "valuation_supported": true,
+  "thesis_score": "80",
+  "business_quality_score": "80",
+  "balance_sheet_score": "80",
+  "valuation_score": "40",
+  "timing_score": "40",
+  "liquidity_score": "100",
+  "risk_penalty": "60",
+  "confidence": "medium",
+  "thesis": "GE Vernova has direct positive exposure to constrained generation and grid capacity through turbine, service and electrification orders; Q2 2026 backlog, margins and cash confirm demand conversion, while the current equity price already discounts much of the favorable path.",
+  "contrary_evidence": "Q2 free cash flow benefited materially from working capital, Wind remains loss-making, capacity expansion and Prolec integration increase execution demands, and the 11 August MACD crossover lacked volume confirmation and subsequently faded.",
+  "catalysts": "Profitable backlog conversion, higher service mix, turbine-capacity delivery, Electrification margin expansion, and data-centre orders converting into revenue and recurring service cash flow.",
+  "risk_flags": [
+    "cyclical_backlog_normalization",
+    "wind_execution_and_warranty",
+    "working_capital_reversal",
+    "capacity_expansion_execution",
+    "acquisition_integration",
+    "customer_project_delays"
+  ],
+  "invalidation": "Invalidate the positive thesis if cancellations or delays rise materially, equipment margins deteriorate, Wind losses consume Power and Electrification gains, capacity expansion overruns, acquisition integration weakens cash returns, or customer over-ordering causes a backlog correction.",
+  "valuation_template": "mature_compounder",
+  "valuation_template_rationale": "",
+  "valuation_method": "free_cash_flow_yield",
+  "valuation_currency": "USD",
+  "valuation_horizon_months": "12",
+  "valuation_expires_at": "2026-09-02T23:10:00Z",
+  "scenarios": [
+    {
+      "case": "bear",
+      "fair_value": "571.58",
+      "probability_pct": "25",
+      "key_assumptions": "USD 8.0 billion normalized annual free cash flow, 18x free-cash-flow multiple, USD 10.326 billion simple net cash and 270 million diluted shares; backlog conversion slows and Wind or capacity execution absorbs part of cash generation."
+    },
+    {
+      "case": "base",
+      "fair_value": "1016.02",
+      "probability_pct": "50",
+      "key_assumptions": "USD 11.0 billion normalized annual free cash flow, 24x free-cash-flow multiple, USD 10.326 billion simple net cash and 270 million diluted shares; Power and Electrification convert backlog while working-capital benefits normalize."
+    },
+    {
+      "case": "bull",
+      "fair_value": "1386.39",
+      "probability_pct": "25",
+      "key_assumptions": "USD 13.0 billion normalized annual free cash flow, 28x free-cash-flow multiple, USD 10.326 billion simple net cash and 270 million diluted shares; service mix, data-centre demand and execution sustain premium cash conversion."
+    }
+  ],
+  "hard_blockers": [],
+  "soft_gaps": [
+    "valuation_below_hurdle",
+    "base_upside_below_hurdle",
+    "payoff_ratio_below_hurdle",
+    "timing_unconfirmed",
+    "cyclical_normalization_uncertain"
+  ],
+  "research_evidence": [
+    {
+      "claim": "The Q2 release reports USD 24.2 billion of orders, USD 176 billion of backlog, USD 5.1 billion of quarterly free cash flow and raised 2026 free-cash-flow guidance of USD 11.5-12.5 billion.",
+      "source_ids": ["source_gev_q2_2026_earnings"],
+      "observation_date": "2026-07-22",
+      "facts": "Power and Electrification demand, margin expansion and cash conversion are directly reported in the issuer release filed with the SEC."
+    },
+    {
+      "claim": "At 30 June 2026, cash and restricted cash were USD 13.120 billion, long-term borrowings were USD 2.794 billion, and Q2 diluted weighted-average shares were 270 million.",
+      "source_ids": ["source_gev_q2_2026_10q"],
+      "observation_date": "2026-06-30",
+      "facts": "The filed balance sheet and share count anchor net cash, dilution and per-share scenario valuation; the filing also defines the USD 176.284 billion remaining performance obligation base."
+    },
+    {
+      "claim": "No periodic or current report newer than the 22 July 2026 Q2 filings appeared in the SEC submissions index through 19 August 2026.",
+      "source_ids": ["source_gev_sec_submissions_20260819"],
+      "observation_date": "2026-08-19",
+      "facts": "The alert is not accompanied by a newer issuer filing in the current regulator index."
+    }
+  ],
+  "reference_price": "987.4600219726562",
+  "reference_price_currency": "USD",
+  "source_price_id": "source_price_security_4b61970aa8f574446819_20260819",
+  "source_price_hash": "3c258166f0239f69d5813b84bb85279127806ac28adebe13de21aa791a95d872",
+  "market_data_as_of": "2026-08-19T23:05:22Z",
+  "market_data_date": "2026-08-19",
+  "fx_pair": "USD_EUR",
+  "fx_rate_to_base": "0.8636",
+  "fx_as_of": "2026-08-19T23:05:22Z",
+  "source_fx_id": "source_fx_USD_EUR_20260819",
+  "source_fx_hash": "a4c162fe2dbf57b6ce7b426ea61fefb3596c2bf2abcbed6fc087698477d15146",
+  "rating": "hold",
+  "portfolio_action": "watch",
+  "upgrade_downgrade_conditions": "Upgrade only if price falls below the deterministic buy-below frontier or new primary evidence lifts normalized free cash flow without weakening downside protection; downgrade if backlog cancellations, margin compression, Wind losses, working-capital reversal or integration costs materially reduce normalized cash generation.",
+  "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+  "source_operation_id": "01KZSMSDTRFFMGZPZT6TTZ9WFE",
+  "source_result_path": "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/agent_result.json",
+  "run_id": "daily-20260819T230515Z"
+}

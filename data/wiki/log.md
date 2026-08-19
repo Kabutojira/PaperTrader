@@ -4272,3 +4272,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   Sell / Avoid and allocation ineligibility. The accepted digital-finance relationship is stale and
   requires one separate relationship review, while one dependent idea refresh will absorb this
   result. No strategy, signal, paper order, allocation or accounting state changed.
+
+## [2026-08-19T23:10:00Z] update | GE Vernova MACD and valuation refresh
+
+- Revalidated [[securities/security_4b61970aa8f574446819|GE Vernova]] against the exact 14 July
+  through 11 August bullish-MACD period, unchanged Q2 Form 10-Q and results, the current SEC
+  submissions index, the USD 987.46 mark and fresh USD/EUR state. The crossover is constructive
+  timing evidence but had faded by 19 August and no new issuer evidence changed the thesis.
+- Updated USD 571.58/USD 1,016.02/USD 1,386.39 scenarios imply about 1.02% weighted return and retain
+  Hold / Watch with allocation ineligibility. The accepted AI-infrastructure-and-power relationship
+  remains current; one dependent idea refresh will absorb this result, and one separate candidate
+  review will test the solar-storage-and-grid-flexibility mechanism. No strategy, signal, paper
+  order, allocation or accounting state changed.

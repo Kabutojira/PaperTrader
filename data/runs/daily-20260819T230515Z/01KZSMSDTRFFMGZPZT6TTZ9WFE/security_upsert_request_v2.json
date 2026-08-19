@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4b61970aa8f574446819",
+  "issuer_id": "issuer_7bca479f6eb8c69f3ffb",
+  "company_name": "GE Vernova Inc.",
+  "instrument_name": "GE Vernova Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "GEV",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "GEV",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Accepted exposure to AI infrastructure power bottlenecks; maintained for valuation and backlog-conversion monitoring.",
+  "research_summary": "Q2 demand and cash evidence remains strong, but the 11 August MACD crossover lacks volume confirmation and the USD 987.46 mark offers only 2.9% base upside with severe bear sensitivity.",
+  "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+  "last_research_at": "2026-08-19T23:10:00Z",
+  "next_review_at": "2026-09-02",
+  "source": "security_research:01KZSMSDTRFFMGZPZT6TTZ9WFE"
+}

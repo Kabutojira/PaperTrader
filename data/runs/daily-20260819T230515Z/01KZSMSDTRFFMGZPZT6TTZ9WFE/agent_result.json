@@ -1,0 +1,108 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_4b61970aa8f574446819",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_q2_2026_earnings_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_sec_submissions_20260819_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/enqueue_solar_grid_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/enqueue_ai_power_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader research security-context --security-id security_4b61970aa8f574446819",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "GE Vernova's August 11 bullish MACD crossover followed a 5.08% decline but lacked abnormal-volume confirmation, faded by August 19 and did not change the Q2 thesis. Updated USD 571.58/USD 1,016.02/USD 1,386.39 scenarios imply USD 997.5025 weighted fair value and 1.02% expected return versus USD 987.46, retaining Hold / Watch and no paper position. One accepted-idea refresh and one separate candidate-relationship review were requested; no strategy, signal, order, allocation or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-hosted release hash remains unchanged. Q2 orders were USD 17.8 billion, backlog was USD 135.7 billion, equipment backlog included 116 GW of gas-turbine slots, Power margin was 18.4%, Electrification margin was 20.5%, and management raised 2026 free-cash-flow guidance to USD 8-9 billion.",
+      "observed_at": "2026-08-19T23:10:00Z",
+      "source": "GE Vernova Q2 2026 earnings release",
+      "source_hash": "b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm"
+    },
+    {
+      "claim": "The unchanged filing supports USD 13.120 billion cash and restricted cash, USD 2.794 billion long-term borrowings, about 270 million diluted shares, USD 4.199 billion six-month operating cash flow, USD 1.309 billion capital expenditure, and the retained backlog, working-capital, Wind, acquisition and concentration risks used by the scenarios.",
+      "observed_at": "2026-08-19T23:10:00Z",
+      "source": "GE Vernova Q2 2026 Form 10-Q",
+      "source_hash": "6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000148/gev-20260630.htm"
+    },
+    {
+      "claim": "The current SEC submissions index showed no periodic or current report newer than the 22 July Q2 Form 10-Q and results Form 8-K through 19 August, so no newer issuer disclosure changed the operating baseline.",
+      "observed_at": "2026-08-19T23:10:00Z",
+      "source": "GE Vernova SEC submissions index",
+      "source_hash": "bd86de9a94fc3f0d2088acf07464a12c7354493ad7e145f055641adc3592ffe4",
+      "url": "https://data.sec.gov/submissions/CIK0001996810.json"
+    },
+    {
+      "claim": "GEV closed at USD 987.4600219726562 on 2026-08-19. The exact 14 July through 11 August payload period returned -5.077799842267966% into a bullish MACD crossover of strength 0.10459676434348353 without abnormal volume; price subsequently declined 2.4133% from the 11 August close. Fresh USD/EUR state was 0.8636000156402588 at 2026-08-19T23:05:22Z.",
+      "source": "PaperTrader deterministic market and indicator state"
+    },
+    {
+      "claim": "The accepted schema-v2 assessment links predecessor assessment_c42facd77b1b93094ee2 and this operation, matches research-page hash 92d386a9d5b1ae29711e62ba5ba8e3b67632a4971fbfa0846160058106a950ce, and derives Hold / Watch, USD 997.5025 weighted fair value, 1.0170009725843753411154833% expected return, 0.762750729438281505836612475% confidence-adjusted return, USD 812.816 buy-below price and allocation ineligibility.",
+      "observed_at": "2026-08-19T23:20:31Z",
+      "source": "PaperTrader deterministic assessment assessment_dffbe66c913b4b8e41cb"
+    },
+    {
+      "claim": "Exactly one dependent relationship candidate review, 01M0E59QER9TZKTJNJMMJV4YYR, and one result-specific accepted-idea refresh, 01M0E5B7A0ZT3FCASE941CRKBG, were created; no strategy follow-up was created because the full strategy gate failed.",
+      "source": "PaperTrader queue receipts"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0E59QER9TZKTJNJMMJV4YYR.json",
+    "data/operations/payloads/01M0E5B7A0ZT3FCASE941CRKBG.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/enqueue_ai_power_idea_refresh_request.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/enqueue_solar_grid_relationship_request.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request_v2.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request_v3.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_q2_2026_earnings_refresh_request.json",
+    "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_sec_submissions_20260819_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZSMSDTRFFMGZPZT6TTZ9WFE",
+  "operations_created": [
+    "01M0E59QER9TZKTJNJMMJV4YYR",
+    "01M0E5B7A0ZT3FCASE941CRKBG"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded GE Vernova repeat review using unchanged SEC-filed Q2 2026 results and Form 10-Q, the current SEC submissions index, and fresh identity-matched market and FX state. The 11 August bullish MACD crossover followed a 5.08% decline over the exact payload period, lacked abnormal-volume confirmation, and faded by 19 August without newer issuer evidence. Updated USD 571.58/USD 1,016.02/USD 1,386.39 scenarios derive USD 997.5025 probability-weighted fair value and 1.0170% expected return versus USD 987.46, retaining Hold / Watch, complete research and allocation ineligibility. The accepted AI-infrastructure-and-power relationship remains current. Exactly one dependent AI-power idea refresh and one bounded relationship review for the separate solar-storage-grid candidate were enqueued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260819T230515Z with a live lease, validated payload, immutable GEV/XNYS/USD/equity identity and trusted llm-wiki, controller and security-research preflight hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after applying state; assessment_dffbe66c913b4b8e41cb is schema version 2, complete, predecessor-linked to assessment_c42facd77b1b93094ee2, current-operation-linked and page-hash-aligned.",
+      "Fetched and hashed the unchanged Q2 filing and results plus the current SEC submissions index; all three retained source records are available, identity-linked and checked at the assessment timestamp.",
+      "Fresh market and FX references both resolve to 2026-08-19T23:05:22Z and match the immutable GEV/XNYS/USD identity; the exact payload alert period and source-price hash were preserved.",
+      "The complete maintained idea catalog was searched. The accepted AI-infrastructure-and-power relationship is specifically causal and current; one separate solar-storage-grid candidate has a bounded review, and rejected thematic adjacencies are documented on the security page.",
+      "Exactly one relationship-research follow-up exists for the unaccepted plausible candidate and exactly one matching idea-research follow-up exists for the accepted linked idea; both depend on this security operation.",
+      "The deterministic assessment derives Hold / Watch and exact failed expected-return, base-return, bear/base-payoff and expected/bear-payoff gates; no conviction strategy work was created.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation and queue validation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ],
+    "passed": true
+  }
+}

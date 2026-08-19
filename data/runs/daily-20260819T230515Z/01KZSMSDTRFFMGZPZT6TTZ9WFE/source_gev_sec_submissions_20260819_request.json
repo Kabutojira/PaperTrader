@@ -1,0 +1,18 @@
+{
+  "source_id": "source_gev_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001996810.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001996810.json",
+  "source_type": "regulator_index",
+  "title": "GE Vernova SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "bd86de9a94fc3f0d2088acf07464a12c7354493ad7e145f055641adc3592ffe4",
+  "related_entity_ids": "idea_ai_infrastructure_power|security_4b61970aa8f574446819",
+  "checked_at": "2026-08-19T23:10:00Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest periodic report is the Form 10-Q filed 2026-07-22 for the quarter ended 2026-06-30; the same date's Form 8-K contains the Q2 results release.",
+  "summary": "The current SEC submissions index shows no GE Vernova periodic or current report newer than the Q2 Form 10-Q and results Form 8-K through 2026-08-19.",
+  "run_id": "daily-20260819T230515Z"
+}
