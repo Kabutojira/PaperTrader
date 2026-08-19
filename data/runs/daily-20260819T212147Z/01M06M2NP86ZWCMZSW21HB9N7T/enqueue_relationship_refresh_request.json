@@ -1,0 +1,31 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_f2efab6050df0edcb762",
+  "dedupe_key": "relationship_research:relationship_f2efab6050df0edcb762:security-result:01M06M2NP86ZWCMZSW21HB9N7T",
+  "prompt": "Refresh the accepted digital-finance-and-crypto-rails relationship to Coinbase using current Q2 evidence, the completed valuation and the expired review date.",
+  "inputs": {
+    "relationship_id": "relationship_f2efab6050df0edcb762",
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Regulated trading, custody, stablecoin balances, payments, institutional products and Base activity can transmit digital-finance adoption into Coinbase transaction, stablecoin and subscription revenue, subject to cycle and concentration risk.",
+    "proposed_invalidation": "Reject or downgrade the edge if adoption remains predominantly speculative, lower rates or adverse partner terms overwhelm balance growth, fees compress structurally, custody or regulatory losses occur, or dilution prevents operating growth from reaching shareholders.",
+    "evidence_refs": [
+      "source_coin_q2_2026_10q",
+      "source_coin_sec_submissions_20260819"
+    ]
+  },
+  "source": "security_research:01M06M2NP86ZWCMZSW21HB9N7T",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M06M2NP86ZWCMZSW21HB9N7T"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+    "source_coin_q2_2026_10q",
+    "source_coin_sec_submissions_20260819"
+  ],
+  "max_attempts": 3
+}

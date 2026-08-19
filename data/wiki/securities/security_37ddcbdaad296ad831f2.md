@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-09"
-provenance: "source_coin_q1_2026_10q; source_coin_july_2026_management_8k; source_coin_q2_2026_10q"
+updated: "2026-08-19"
+provenance: "source_coin_q1_2026_10q; source_coin_july_2026_management_8k; source_coin_q2_2026_10q; source_coin_sec_submissions_20260819"
 security_id: security_37ddcbdaad296ad831f2
 issuer_id: issuer_3584c0cf729606c65538
 confidence: medium
-next_review: "2026-08-23"
+next_review: "2026-09-02"
 ---
 
 # Coinbase Global, Inc. Class A common stock
@@ -47,34 +47,50 @@ real diversified platform but not durable through-cycle economics or a decision-
 | Six-month operating cash flow was USD 380 million despite a USD 754 million net loss. | Liquidity held, but GAAP profitability and cash conversion remain volatile. |
 | One counterparty generated 26% of Q2 revenue. | Stablecoin/counterparty concentration increased from the Q1 baseline. |
 | Six-month stock compensation expense was USD 486 million. | Per-share economics differ materially from adjusted results. |
-| COIN fell 11.61% from July 2 through July 31 to USD 146.26 on 20.87 million shares. | The alert combined a lower-Bollinger breach, bearish MACD cross and volume anomaly. |
-| COIN closed at USD 153.60 on August 7 with no active deterministic trigger. | The partial recovery does not resolve the valuation bridge or establish a buy zone. |
+| COIN fell 11.61% from July 2 through July 31 to USD 146.26 on 20.87 million shares. | The earlier alert combined a lower-Bollinger breach, bearish MACD cross and volume anomaly. |
+| COIN closed at USD 160.20 on August 19, down 3.56% from July 22, while MACD crossed above its signal. | The bullish reversal is constructive timing evidence but does not resolve the valuation gap or establish a buy zone. |
+| The August 19 SEC submissions index contains no periodic or current report newer than the July 30 Q2 filings. | No new issuer evidence changes the Q2 operating or scenario assumptions. |
 
 Primary evidence: [Coinbase Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm),
 [Coinbase Q1 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm),
 and [Coinbase July 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/1679788/000167978826000080/coin-20260722.htm).
+The [current SEC submissions index](https://data.sec.gov/submissions/CIK0001679788.json) was checked
+on August 19 and shows no newer issuer operating filing.
 
 ## Changes since prior review
 
-- **Evidence:** No filing newer than the Q2 Form 10-Q was needed for this dependent review. The full
-  review consumes its revenue mix, cash, debt, custody, stock-compensation, share-count and
-  concentration disclosures rather than leaving Q2 as an unresolved escalation item.
-- **Assumptions and scenarios:** The prior review had no supportable scenario values. This review
-  introduces an explicit sum-of-parts framework with cycle-normalized transaction and recurring
-  revenue, segment multiples, a conservative net balance-sheet deduction and 282 million diluted
-  shares. Bear/base/bull fair values are USD 28/USD 87/USD 191 with 30%/50%/20% probabilities.
-- **Valuation outputs:** Probability-weighted fair value is USD 90.10 versus the USD 153.60 mark.
-  Expected, base and bear returns are all materially negative; the bull case alone is positive. The
-  `valuation_unsupported` hard blocker is resolved, but overvaluation and absent margin of safety
-  replace it as decisive economic exclusions.
-- **Thesis, catalysts and risks:** The stablecoin-rails mechanism and medium thesis confidence are
-  unchanged. Lower transaction and subscription revenue, 26% counterparty concentration, stock
-  compensation, custody obligations and debt keep residual risk severe. Catalysts and invalidation
-  conditions remain substantively unchanged and are now bounded by explicit scenarios.
-- **Gaps, rating and action:** Corporate-cash classification, cycle normalization and counterparty
-  economics remain soft gaps. Research completeness moves from unsupported to complete, while the
-  investment conclusion moves from Unrated / Watch to Sell / Avoid. Allocation remains ineligible;
-  no strategy or signal is justified.
+- **Evidence:** The Q2 Form 10-Q hash is unchanged, and the August 19 SEC submissions index shows no
+  newer issuer operating filing. The exact July 22 through August 19 market period adds a bullish
+  MACD crossover after a 3.56% decline, but no fresh fundamental catalyst.
+- **Assumptions and scenarios:** Cycle-normalized transaction and recurring revenue, segment
+  multiples, the conservative balance-sheet deductions, 282 million diluted shares and the
+  30%/50%/20% probabilities are unchanged. Bear/base/bull fair values remain USD 28/USD 87/USD 191.
+- **Valuation outputs:** The USD 160.20 mark is 4.30% above the prior USD 153.60 reference. The same
+  USD 90.10 probability-weighted fair value now implies about -43.76% expected return, with about
+  -82.52%/-45.69%/19.23% bear/base/bull returns. Every decisive valuation gate remains failed.
+- **Thesis, catalysts and risks:** The stablecoin-rails mechanism, medium confidence, catalysts,
+  invalidation and severe residual risks are unchanged. The MACD reversal is opportunity-shaped
+  timing evidence, but noise for allocation because no operating evidence or margin of safety
+  confirms it.
+- **Blockers, gaps, rating and action:** No hard blocker is added. Concentration, cycle
+  normalization, medium confidence, weak timing and absent margin of safety remain soft gaps.
+  Complete research, Strong Sell / Avoid and allocation ineligibility are unchanged; no strategy
+  or signal is justified.
+
+## Idea exposure map
+
+- **Accepted — needs review:** [[ideas/idea_digital_finance_crypto_rails|Digital finance and crypto
+  rails]] has a positive, high-sensitivity mechanism through regulated trading, custody, USDC,
+  subscriptions, institutional products and Base. Q2 evidence still supports the mechanism, but the
+  canonical relationship review date has passed and the edge needs a separate refresh for lower
+  revenue, higher counterparty concentration and the completed valuation.
+- **Candidates:** None. The complete maintained idea catalog contains no additional pairing with a
+  specific material causal transmission mechanism.
+- **Rejected — no link:** AI infrastructure and monetization, biology and healthcare, defense and
+  aerospace, digital attention and gaming, energy and critical minerals, industrial reshoring,
+  macro hedges, robotics, semiconductors, solar, space and related maintained themes are superficial
+  thematic or technology adjacency. Current primary evidence does not show material Coinbase
+  product, customer, supplier or cost-driver exposure to those mechanisms.
 
 ## Scenario valuation
 
@@ -92,10 +108,10 @@ treating payment-stablecoin cash or customer assets as distributable corporate c
 | Base | 50% | USD 2.7bn transaction revenue at 4x plus USD 2.4bn recurring revenue at 7x, less USD 3.0bn; Deribit supports mix, but cycle and concentration persist. | USD 87 |
 | Bull | 20% | USD 4.0bn transaction revenue at 6x plus USD 3.2bn recurring revenue at 10x, less USD 2.0bn; volume and stablecoin growth, margin recovery and moderated dilution. | USD 191 |
 
-At the current USD 153.60 mark, the probability-weighted value is USD 90.10. The approximately -41%
-expected return, -43% base return and -82% bear return fail the expected-return, base-return,
-downside-payoff and margin-of-safety gates. The alert cluster was therefore noise for allocation:
-it prompted useful research but did not identify an opportunity.
+At the current USD 160.20 mark, the probability-weighted value is USD 90.10. The approximately
+-43.76% expected return, -45.69% base return and -82.52% bear return fail the expected-return,
+base-return, downside-payoff and margin-of-safety gates. The August 19 bullish MACD crossover is
+therefore noise for allocation: it prompted useful research but did not identify an opportunity.
 
 ## Catalysts, risks, and invalidation
 
@@ -106,8 +122,8 @@ regulation limits products, or equity compensation absorbs per-share cash genera
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, rating **Sell**, portfolio action **Avoid**, and
-allocation eligibility **ineligible**. Review by **2026-08-23**, or earlier after material results,
+Status: **watching**, confidence **medium**, rating **Strong Sell**, portfolio action **Avoid**, and
+allocation eligibility **ineligible**. Review by **2026-09-02**, or earlier after material results,
 rate or stablecoin-partner changes, custody or regulatory events, or a price move that materially
 changes the scenario frontier. No strategy or signal is created because expected, base and bear
 returns and margin of safety fail the canonical gate. See [[research-catalog]] for the maintained

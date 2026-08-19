@@ -4257,3 +4257,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   separate review; AI-native drug discovery is rejected as thematic adjacency without current
   drug-development or material-revenue evidence. No strategy, signal, paper order, allocation, or
   accounting state changed.
+
+## [2026-08-19T21:46:56Z] update | Coinbase MACD and valuation refresh
+
+- Revalidated [[securities/security_37ddcbdaad296ad831f2|Coinbase]] against the exact 22 July through
+  19 August bullish-MACD period, the unchanged Q2 Form 10-Q, the current SEC submissions index, the
+  USD 160.20 mark and fresh USD/EUR state. The crossover is constructive timing evidence but noise
+  for allocation because no new issuer evidence or margin of safety confirms it.
+- Unchanged USD 28/USD 87/USD 191 scenarios now imply about -43.76% weighted return and retain Strong
+  Sell / Avoid and allocation ineligibility. The accepted digital-finance relationship is stale and
+  requires one separate relationship review, while one dependent idea refresh will absorb this
+  result. No strategy, signal, paper order, allocation or accounting state changed.
