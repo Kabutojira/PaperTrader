@@ -1,0 +1,51 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The controller-validated frozen context is version three, has an exclusive window start of 2026-08-19T15:59:54Z and an inclusive research cutoff of 2026-08-19T20:30:52Z, lists no research_developments, and classifies both intervening ASML results as unresolved_research_gaps with failed status.",
+      "source": "data/runs/daily-20260819T201740Z/podcast_context.json"
+    },
+    {
+      "claim": "The bounded ASML retry failed before comparable assessment state changed; the prior unsupported assessment remained canonical and no follow-up or trading state was created.",
+      "source": "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/agent_result.json"
+    },
+    {
+      "claim": "The immediately preceding successful podcast already explained ASML's strong unchanged quarterly evidence, valuation-support gap, Unrated / Watch state, and the need for one clean scenario-complete review, so repeating that unchanged conclusion would fail the novelty rule.",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T153048Z.md"
+    },
+    {
+      "claim": "The frozen decision snapshot contains no actionable signals and retains ASML as Unrated / Watch with valuation unsupported; it supplies no newly accepted development from which to build a chapter.",
+      "source": "data/runs/daily-20260819T201740Z/decision_snapshot.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0DW0CT004MYYVNSHAE9MPG5",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast because frozen context version three contains zero successful research developments in the exclusive 2026-08-19T15:59:54Z through inclusive 2026-08-19T20:30:52Z window. The only window items are two failed ASML full-review attempts, which are unresolved research gaps rather than accepted developments; ASML's operating thesis and unsupported canonical valuation were already covered in the immediately preceding successful podcast. The selected chapter slate is empty, so no transcript was created, no daily-report link was added, the spoken word count is zero, no security-rating chapter was produced, and the draft renderer was not invoked. No research, allocation, signal, order, accounting, portfolio, or delivery state changed.",
+  "validation": {
+    "checks": [
+      "Controller-validated frozen podcast context version three was consumed without recomputing any declared hash.",
+      "Candidate selection found zero successful research developments and excluded two failed ASML results as unresolved gaps.",
+      "Novelty review confirmed that the unchanged ASML thesis and valuation-support gap were covered in the immediately preceding successful podcast.",
+      "No transcript exists at data/wiki/podcasts/daily-podcast_20260819T201740Z.md and the canonical daily report was not edited.",
+      "No validate-script or render-draft command was invoked because the skip rule precluded creating a script.",
+      "Strict schema validation passed.",
+      "Strict repository integrity passed.",
+      "Strict wiki lint passed.",
+      "Queue validation passed.",
+      "Strict portfolio reconciliation passed.",
+      "No allocation targets/history, signals, orders, executions, cash, portfolio, performance, or accounting state changed."
+    ],
+    "passed": true
+  }
+}
