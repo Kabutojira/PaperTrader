@@ -4122,3 +4122,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   scenarios retain Hold / Watch and allocation ineligibility because confidence-adjusted return,
   base-upside, downside-payoff, relationship, and liquidity gates still fail. No strategy, signal,
   paper order, or follow-up operation is justified.
+
+## [2026-08-19T15:40:58Z] update | ASML MACD quick check
+
+- Rechecked [[securities/security_ef35e41886220d51c22c|ASML]] against the exact 10 July through
+  7 August bullish-MACD period, the 18 August market state, unchanged Q2 primary evidence, and the
+  newly accepted conditional Terafab relationship. The USD 1,802.98 current mark is above the old
+  USD 1,728.16 base value, while the legacy two-case sensitivity cannot satisfy the scenario-complete
+  valuation contract. ASML remains a watch with valuation and allocation eligibility withheld
+  pending exactly one dependent full review; no strategy, signal, order, allocation, or accounting
+  state changed.

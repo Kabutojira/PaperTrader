@@ -1,0 +1,92 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader research security upsert --request data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/assessment_upsert_request_v3.json",
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "ASML's August 7 bullish-MACD cross reversed part of the July decline, but unchanged Q2 evidence provides no new operating catalyst and the USD 1,802.98 current mark is above the old USD 1,728.16 base value. The accepted conditional Terafab relationship adds no disclosed tool economics, while the legacy two-case sensitivity remains noncanonical; ASML is Unrated / Watch and allocation-ineligible pending exactly one full review, with no paper trade."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable payload binds macd_cross_above_signal to the exact 2026-07-10 through 2026-08-07 period, a USD 1740.989990234375 adjusted close, a 3.00817420770014087270767079% period decline and canonical source-price hash c2f9cad28b52157dbdd5e82afff14bca748ab55d33a85f97f7ce377462d16f25.",
+      "observed_at": "2026-08-11T07:58:31Z",
+      "source": "PaperTrader deterministic 2026-08-07 alert payload and candidate packet",
+      "source_hash": "c2f9cad28b52157dbdd5e82afff14bca748ab55d33a85f97f7ce377462d16f25"
+    },
+    {
+      "claim": "The 2026-08-18 adjusted close was USD 1802.97998046875, 3.560617268455966439936643671% above the alert close and 13.38213161206592964318504823% above the baseline mark. MACD 37.10895145 remained above signal 36.14578586, RSI was 53.97689871, the close remained inside its Bollinger bands, and the indicator row had no active trigger; the canonical source-price hash is 8c36f33f012ab6d398011fbd89863974fa5a85b4e4a22b2e4747b5a22f0f8c26.",
+      "observed_at": "2026-08-19T15:30:55Z",
+      "source": "PaperTrader current deterministic market and indicator caches",
+      "source_hash": "8c36f33f012ab6d398011fbd89863974fa5a85b4e4a22b2e4747b5a22f0f8c26"
+    },
+    {
+      "claim": "The current submissions index showed no periodic operating filing or earnings release after the 2026-07-15 Q2 Form 6-K through 2026-08-19, so the retained Q2 Form 6-K and financial statements remain the latest primary operating evidence.",
+      "observed_at": "2026-08-19T15:40:58Z",
+      "source": "SEC company submissions index for ASML Holding N.V.",
+      "url": "https://data.sec.gov/submissions/CIK0000937966.json"
+    },
+    {
+      "claim": "The accepted medium-confidence Terafab relationship remains conditional on disclosed ASML tool orders, systems acceptance or measurable installed-base economics; no such evidence is currently retained.",
+      "observed_at": "2026-08-19T15:40:58Z",
+      "source": "relationship_terafab_asml"
+    },
+    {
+      "claim": "The deterministic applier linked the accepted schema-v2 assessment to legacy predecessor assessment_967e9b4adc7c4610524e and current page hash 41176fb012c3dcd76b4b4d159ea79f08ee5d3965c6b95cb404c1b508a48f92c9. It accepted the fresh USD 1802.97998046875 mark, unsupported mature-compounder earnings-multiple valuation with no invented scenario values or buy-below price, quality score 94, Unrated / Watch disposition, complete relationship frontier and allocation ineligibility under valuation_unsupported.",
+      "observed_at": "2026-08-19T15:45:34Z",
+      "source": "assessment_e769cb597db3a1edaea7",
+      "source_hash": "41176fb012c3dcd76b4b4d159ea79f08ee5d3965c6b95cb404c1b508a48f92c9"
+    },
+    {
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the baseline identity, every alert cause, the exact alert period and source-price hash, the fresh current market hash, the legacy-valuation and accepted-relationship changed gate, and full_research_requested=true.",
+      "source": "data/operations/payloads/01M0DB44Q8R22ED9WQC5ZEG526.json"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0DB44Q8R22ED9WQC5ZEG526.json",
+    "data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/assessment_upsert_request.json",
+    "data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/enqueue_full_research_request.json",
+    "data/runs/daily-20260819T153048Z/01KZGGJ4M0VF8Y3J1HT2F3M59N/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZGGJ4M0VF8Y3J1HT2F3M59N",
+  "operations_created": [
+    "01M0DB44Q8R22ED9WQC5ZEG526"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded ASML quick check for the 2026-08-07 bullish-MACD cross. ASML fell 3.01% over the alert period to USD 1,740.99, then rose 3.56% to USD 1,802.98 by August 18; MACD remained above signal, RSI was neutral, and no current trigger was active. The SEC submissions index showed no periodic operating filing or earnings release after the July 15 Q2 Form 6-K, so the Q2 operating thesis, catalysts, risks and invalidation remain unchanged. The accepted conditional Terafab relationship adds no disclosed ASML tool order or attributable economics. The legacy two-case sensitivity has no bull case, probabilities, current diluted-share bridge or refreshed scenario inputs, and its old USD 1,728.16 base value is below the current mark. The accepted schema-v2 assessment is Unrated / Watch, valuation-unsupported and allocation-ineligible with no canonical buy zone. Exactly one dependent full security review, 01M0DB44Q8R22ED9WQC5ZEG526, was enqueued. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Validated the single running quick_check_research row, daily-20260819T153048Z claim, live lease, immutable ASML/XNAS/USD/equity identity, successful same-security baseline binding within ten days at enqueue time, and native/controller/operation preflight identities before mutation.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the legacy assessment, baseline result binding, immutable security identity, page hash, retained Q2 sources, accepted Terafab relationship, linked idea and zero strategies.",
+      "Matched the sole payload trigger, exact 2026-07-10 through 2026-08-07 period, USD 1740.989990234375 alert mark and canonical payload source-price hash c2f9cad28b52157dbdd5e82afff14bca748ab55d33a85f97f7ce377462d16f25 to the deterministic candidate packet and price cache.",
+      "Confirmed current canonical market state at 2026-08-19T15:30:55Z: 2026-08-18 USD 1802.97998046875 mark, MACD above signal, neutral RSI, close inside the Bollinger bands and no active trigger; the current indicator hash is 8c36f33f012ab6d398011fbd89863974fa5a85b4e4a22b2e4747b5a22f0f8c26.",
+      "Checked the current SEC submissions index and found no later periodic operating filing or earnings release than the retained Q2 Form 6-K, so the thesis, operating catalysts, risks and invalidation remain unchanged.",
+      "Confirmed no canonical valuation or buy zone was newly reached and no operating catalyst or invalidation fired. Escalation is required because the legacy two-case sensitivity cannot support scenario-complete decisions and the canonical Terafab relationship is now accepted rather than absent.",
+      "Confirmed exactly one dependent full-review payload, 01M0DB44Q8R22ED9WQC5ZEG526, contains this quick-check identity, baseline identity, every payload trigger cause, exact alert period and source-price hash, fresh current market hash, both changed gates and full_research_requested=true.",
+      "The second audited security-context receipt confirmed exactly one immutable same-run assessment history version, assessment_e769cb597db3a1edaea7, sourced from operation 01KZGGJ4M0VF8Y3J1HT2F3M59N, with predecessor assessment_967e9b4adc7c4610524e, schema version 2, current page-hash identity, complete relationship frontier, Unrated / Watch disposition, valuation-unsupported blocker and no invented scenario values or buy zone.",
+      "Two immutable assessment requests failed without state changes while the exact current market timestamp and sorted soft-gap contract were corrected in uniquely named request files; the third request succeeded, and all three receipts are represented exactly in command_audit.json and commands_run.",
+      "Strict schema validation returned OK [schema]. Queue validation returned OK [queue]. Strict repository integrity returned OK [integrity]. Strict wiki lint returned OK [wiki]. Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the twelve canonical project CLI invocations listed in commands_run, in the same order; all final verification receipts and state-changing receipts returned exit code zero.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, fill, cash, portfolio, performance, accounting-ledger, raw-source or other security-page path changed; no issue was recorded and no operation was delegated, claimed, completed or otherwise processed."
+    ],
+    "passed": true
+  }
+}

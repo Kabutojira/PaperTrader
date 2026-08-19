@@ -1,0 +1,55 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_ef35e41886220d51c22c",
+  "dedupe_key": "security_research:security_ef35e41886220d51c22c:quick-check-canonical-valuation:2026-08-19",
+  "prompt": "Fully reassess ASML after the August MACD alert because the legacy two-case sensitivity and accepted conditional Terafab relationship cannot support the scenario-complete decision contract.",
+  "inputs": {
+    "security_id": "security_ef35e41886220d51c22c",
+    "quick_check_operation_id": "01KZGGJ4M0VF8Y3J1HT2F3M59N",
+    "baseline_operation_id": "01KYZ37KNBYA53EWR9W1EFB6V6",
+    "changed_gate": "legacy_two_case_valuation_cannot_support_schema_v2_decision_and_relationship_is_now_accepted",
+    "full_research_requested": true,
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ],
+    "market_data_date": "2026-08-07",
+    "market_data_as_of": "2026-08-11T07:58:31Z",
+    "period_start": "2026-07-10",
+    "period_end": "2026-08-07",
+    "source_price_hash": "c2f9cad28b52157dbdd5e82afff14bca748ab55d33a85f97f7ce377462d16f25",
+    "current_market_data_date": "2026-08-18",
+    "current_market_data_as_of": "2026-08-19T09:08:06Z",
+    "current_source_price_hash": "8c36f33f012ab6d398011fbd89863974fa5a85b4e4a22b2e4747b5a22f0f8c26",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal_entered_after_material_period_decline",
+        "source_ref": "data/wiki/inbox/market-security_ef35e41886220d51c22c-macd_cross_above_signal-56c54b3fee35.md"
+      },
+      {
+        "cause": "legacy_two_case_valuation_lacks_bull_case_probabilities_current_share_bridge_and_fresh_scenario_inputs",
+        "source_ref": "data/wiki/securities/security_ef35e41886220d51c22c.md"
+      },
+      {
+        "cause": "canonical_terafab_relationship_is_now_accepted_but_conditional_and_unquantified",
+        "source_ref": "data/wiki/relationships/relationship_terafab_asml.md"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZGGJ4M0VF8Y3J1HT2F3M59N",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZGGJ4M0VF8Y3J1HT2F3M59N"
+  ],
+  "not_before": "now",
+  "deadline": "2026-08-26T12:00:00Z",
+  "source_refs": [
+    "data/wiki/inbox/market-security_ef35e41886220d51c22c-macd_cross_above_signal-56c54b3fee35.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md",
+    "data/wiki/relationships/relationship_terafab_asml.md",
+    "source_asml_q2_2026_6k",
+    "source_asml_q2_2026_financials"
+  ],
+  "max_attempts": 3
+}
