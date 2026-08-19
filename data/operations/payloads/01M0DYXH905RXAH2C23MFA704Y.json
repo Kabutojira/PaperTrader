@@ -1,0 +1,25 @@
+{
+  "entity_id": "relationship_01de612ae67bdc41aaf1",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_dna_q2_2026_10q",
+      "source_dna_q2_2026_results"
+    ],
+    "idea_id": "idea_ai_native_drug_discovery",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate the edge if drug-discovery exposure is immaterial, customers internalize the workflow, or platform activity fails to produce repeatable revenue and customer outcomes.",
+    "proposed_mechanism": "Ginkgo's biological data and automated wet-lab infrastructure could supply faster design-make-test-learn loops to drug-discovery customers if those tools produce repeatable partner economics.",
+    "relationship_id": "relationship_01de612ae67bdc41aaf1",
+    "security_id": "security_95351d928b674bbdf687"
+  },
+  "objective": "Review whether Ginkgo Bioworks has a material causal relationship to AI-native drug-discovery platforms using current primary evidence; accept or reject the edge.",
+  "operation_id": "01M0DYXH905RXAH2C23MFA704Y",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_95351d928b674bbdf687.md",
+    "source_dna_q2_2026_10q",
+    "source_dna_q2_2026_results"
+  ]
+}

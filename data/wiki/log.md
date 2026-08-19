@@ -4233,3 +4233,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Supported valuation resolves the prior partial-state issue without changing Hold / Watch. One
   dependent Terafab idea refresh and one AI-compute relationship review remain the only justified
   follow-ups; no strategy, signal, paper order, allocation or accounting state changed.
+
+## [2026-08-19T21:23:58Z] update | Ginkgo Bioworks Q2 and market-alert reassessment
+
+- Revalidated [[securities/security_95351d928b674bbdf687|Ginkgo Bioworks]] against its unchanged Q2
+  Form 10-Q and SEC-filed results, the current SEC submissions index, the USD 7.71 mark and fresh
+  USD/EUR state. The narrow SMA 50/200 bullish crossover is constructive but weak timing evidence;
+  the volume anomaly is noise beside a 1.53% period decline and no current fundamental catalyst.
+- Unchanged USD 3.33/USD 7.57/USD 16.47 scenarios now imply about 4.8% weighted upside, but negative
+  base return, severe bear downside, weak payoff, absent margin of safety and no accepted relationship
+  retain Hold / Watch and allocation ineligibility. Two separate candidate relationship reviews cover
+  precision biology and AI-native drug discovery; no strategy, signal, paper order or accounting
+  state changed.

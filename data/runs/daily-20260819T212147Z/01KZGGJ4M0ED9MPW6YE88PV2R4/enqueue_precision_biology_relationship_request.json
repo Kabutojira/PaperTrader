@@ -1,0 +1,28 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_3d964abb0b825e412f7e",
+  "dedupe_key": "relationship_research:relationship_3d964abb0b825e412f7e:security-result:01KZGGJ4M0ED9MPW6YE88PV2R4",
+  "prompt": "Review whether Ginkgo Bioworks has a material causal relationship to precision biology and healthcare automation using current primary evidence; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_3d964abb0b825e412f7e",
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "security_id": "security_95351d928b674bbdf687",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Ginkgo's automated laboratories, biological data and cell-engineering workflows could reduce experiment cost and cycle time for precision-biology customers if adoption becomes repeatable revenue.",
+    "proposed_invalidation": "Reject or invalidate the edge if precision-biology customer exposure is immaterial, automation does not improve customer economics, or revenue remains non-repeatable while burn and dilution absorb the benefit.",
+    "evidence_refs": ["source_dna_q2_2026_10q", "source_dna_q2_2026_results"]
+  },
+  "source": "security_research:01KZGGJ4M0ED9MPW6YE88PV2R4",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZGGJ4M0ED9MPW6YE88PV2R4"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_95351d928b674bbdf687.md",
+    "source_dna_q2_2026_10q",
+    "source_dna_q2_2026_results"
+  ],
+  "max_attempts": 3
+}

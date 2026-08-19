@@ -1,0 +1,87 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader research source record --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/source_dna_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/source_dna_q2_2026_results_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/enqueue_precision_biology_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/enqueue_ai_drug_relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict --prepared-daily-cycle-id daily-20260819T212147Z",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "DNA full reassessment: USD 7.71 improves weighted scenario return to about 4.8%, but negative base return, roughly 56.8% bear downside, missing margin of safety, medium confidence and pending relationship research retain Hold / Watch and allocation ineligibility."
+  ],
+  "evidence": [
+    {
+      "claim": "The latest financial filing reports USD 302.2 million of cash, equivalents and marketable securities at 30 June 2026, including USD 47 million of restricted cash, USD 88.6 million of first-half continuing operating cash use, and ATM issuance of 3.7 million shares for USD 34.6 million net proceeds.",
+      "observed_at": "2026-08-19T21:23:58Z",
+      "source": "source_dna_q2_2026_10q",
+      "source_hash": "f4ff3f89cd228be384c2360f08bc3a4cf6acf207848a9a016b84e6b31bccc0fa",
+      "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026054298/dna-20260630.htm"
+    },
+    {
+      "claim": "The SEC-filed issuer release reports Q2 revenue of USD 20.2 million, down 48% year over year, adjusted EBITDA of negative USD 36.3 million, reaffirmed 2026 cash-burn guidance of USD 125-150 million, and autonomous-laboratory adoption activity that has not yet established recurring economics.",
+      "observed_at": "2026-08-19T21:23:58Z",
+      "source": "source_dna_q2_2026_results",
+      "source_hash": "faeeee152f48395f9278133536d3e328f796bd9447ca38c113049233f1d40cc3",
+      "url": "https://www.sec.gov/Archives/edgar/data/1830214/000162828026053319/ex991earningspr.htm"
+    },
+    {
+      "claim": "The immutable DNA market observation is USD 7.710000038146973 at 2026-08-19T21:21:54Z with identity-matched USD/EUR FX of 0.8562999963760376; the 22 July through 19 August period declined 1.53%, while SMA 50 crossed narrowly above SMA 200 and volume reached 1.33 times its baseline.",
+      "observed_at": "2026-08-19T21:21:54Z",
+      "source": "data/market/latest.csv and data/market/indicators.csv"
+    },
+    {
+      "claim": "Deterministic assessment v2 links predecessor assessment_28e7fa1f1a15aca9eced and derives ineligible status from bear/base returns of about negative 56.8%/negative 1.8%, medium confidence, canonical soft gaps, and the absence of an accepted relationship. The bear/base/bull values remain USD 3.33/USD 7.57/USD 16.47 at 30%/50%/20%.",
+      "source": "assessment_ca38ef934552ae9c3e55"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0DYXBDGT3M3T55PNH8YX0VG.json",
+    "data/operations/payloads/01M0DYXH905RXAH2C23MFA704Y.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/assessment_upsert_request_v4.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/enqueue_ai_drug_relationship_request.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/enqueue_precision_biology_relationship_request.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/security_upsert_request.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/source_dna_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/source_dna_q2_2026_results_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_95351d928b674bbdf687.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZGGJ4M0ED9MPW6YE88PV2R4",
+  "operations_created": [
+    "01M0DYXBDGT3M3T55PNH8YX0VG",
+    "01M0DYXH905RXAH2C23MFA704Y"
+  ],
+  "status": "succeeded",
+  "summary": "Completed the full Ginkgo Bioworks security reassessment using unchanged Q2 primary evidence and the 2026-08-19 market alert. The USD 7.71 mark lifts probability-weighted expected return to about 4.8%, but base return remains negative, bear downside remains severe, margin of safety is absent, confidence is medium, and no accepted idea relationship exists. DNA remains Hold / Watch and allocation-ineligible; no strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory audited security-context receipt succeeded before assessment state was consumed.",
+      "Registered Q2 source identities and unchanged content hashes were rechecked at 2026-08-19T21:23:58Z.",
+      "Immutable assessment assessment_ca38ef934552ae9c3e55 links predecessor assessment_28e7fa1f1a15aca9eced, schema version 2, the source operation/result identity, current research-page hash, fresh price/FX identities and the current run.",
+      "Complete maintained idea catalog and canonical relationship state were reviewed; no accepted edge exists, two evidence-backed candidates are labelled as candidates, and each has exactly one dependent relationship-research follow-up.",
+      "Schema validation, queue validation, strict wiki lint, prepared-cycle strict integrity and strict portfolio reconciliation all returned OK.",
+      "Observed repository changes exclude allocation targets/history, strategies, signals, orders, executions, cash, portfolio and performance state."
+    ],
+    "passed": true
+  }
+}
