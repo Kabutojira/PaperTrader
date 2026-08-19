@@ -2,17 +2,20 @@
   "entity_id": "security_dc7a111e297be528d96b",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-19T09:12:08Z",
     "baseline_operation_id": "01KYQCTS30ZVE5AER5K9GD2VXT",
     "changed_gate": "legacy_two_case_valuation_cannot_support_schema_v2_decision_and_terafab_relationship_is_now_accepted",
     "current_market_data_as_of": "2026-08-19T09:08:06Z",
     "current_market_data_date": "2026-08-18",
     "current_source_price_hash": "8b4e25d7087d8169a289e383863812273a088a470854c5307cbd166c2aa642a1",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-08T11:01:36Z",
     "market_data_date": "2026-08-07",
     "period_end": "2026-08-07",
     "period_start": "2026-07-09",
     "quick_check_operation_id": "01KZGGJ4M05XRHKKRXK2WYJANM",
+    "research_page": "data/wiki/securities/security_dc7a111e297be528d96b.md",
     "research_reasons": [
       {
         "cause": "macd_cross_above_signal_entered_with_positive_period_return",
@@ -25,6 +28,17 @@
       {
         "cause": "terafab_relationship_is_now_accepted_but_non_binding",
         "source_ref": "data/wiki/relationships/relationship_terafab_tsla.md"
+      },
+      {
+        "dedupe_key": "security_research:security_dc7a111e297be528d96b:allocation-maintenance:2026-08-19T09:12:08Z",
+        "observed_at": "2026-08-19T12:02:23Z",
+        "prompt": "Revalidate security_dc7a111e297be528d96b with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_tsla_q2_2026_10q",
+          "source_tsla_q2_2026_deliveries",
+          "source_tsla_sec_submissions_20260819"
+        ]
       }
     ],
     "security_id": "security_dc7a111e297be528d96b",
@@ -33,7 +47,7 @@
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Fully reassess Tesla after the bullish MACD stabilization because the legacy two-case sensitivity and newly accepted Terafab relationship cannot support the current scenario-complete decision contract.",
+  "objective": "Fully reassess Tesla after the bullish MACD stabilization because the legacy two-case sensitivity and newly accepted Terafab relationship cannot support the current scenario-complete decision contract. | Additional cause: Revalidate security_dc7a111e297be528d96b with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M0CMRJ98SAV40VKBH4RJDG9J",
   "operation_type": "security_research",
   "payload_version": 1,
