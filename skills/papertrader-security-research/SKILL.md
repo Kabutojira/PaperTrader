@@ -51,6 +51,9 @@ fresh identity-matched price/FX references; horizon and expiration; explicit blo
 the current run ID. For a supported valuation, supply bear/base/bull fair values, probabilities that
 sum exactly to 100, and concise key assumptions. Deterministic code derives all returns, expected
 value/return, confidence adjustment, buy-below price, and margin of safety.
+`valuation_template_rationale` is non-empty only when `valuation_template` is `other`. For every
+named repository template, either supply it as the empty string or omit it; the deterministic JSON
+request boundary canonicalizes that one forbidden rationale to the explicit empty CSV value.
 An alert-driven request additionally provides `trigger_types`, `market_data_as_of`,
 `market_data_date`, the exact observation period, and `source_price_hash`. Treat those values as
 canonical measurements to explain, not calculations to replace.

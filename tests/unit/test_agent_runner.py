@@ -719,6 +719,10 @@ def test_untrusted_payload_is_flagged_but_never_interpolated_into_controller_pro
     assert "Invoke repository-local `scripts/papertrader`" in prompt
     assert "Never invoke bare `papertrader`" in prompt
     assert "rejects commands outside this operation's skill scope before dispatch" in prompt
+    assert "Do not retry a pre-dispatch scope rejection" in prompt
+    assert "exits nonzero, and its audit receipt records no changed paths" in prompt
+    assert "new uniquely named request file" in prompt
+    assert "Never resubmit or edit the rejected request file" in prompt
     assert "prefix a command with `uv run`" in prompt
     assert "research security-context" not in prompt
 

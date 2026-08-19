@@ -200,6 +200,42 @@ def test_every_valuation_template_produces_reconciled_scenarios(
     assert row["research_conclusion"].startswith("Rating: Buy. Portfolio action: Initiate.")
 
 
+def test_named_template_canonicalizes_omitted_rationale_to_empty(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+    request = _request("mature_compounder", "dcf")
+    request.pop("valuation_template_rationale")
+
+    assert upsert_assessment(
+        sandbox_repository,
+        sandbox_settings,
+        request,
+        now=NOW,
+    )
+    row = read_table(sandbox_repository, "security_assessments")[0]
+    assert row["valuation_template"] == "mature_compounder"
+    assert row["valuation_template_rationale"] == ""
+
+
+def test_other_template_still_requires_explicit_rationale_field(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    _seed(sandbox_repository)
+    request = _request("other", "other")
+    request.pop("valuation_template_rationale")
+
+    with pytest.raises(ResearchStateError, match="valuation_template_rationale"):
+        upsert_assessment(
+            sandbox_repository,
+            sandbox_settings,
+            request,
+            now=NOW,
+        )
+
+
 @pytest.mark.parametrize(
     ("changes", "message"),
     [

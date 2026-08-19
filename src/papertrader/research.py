@@ -255,7 +255,19 @@ def upsert_assessment(
     columns = contract_by_name(repository_root, "security_assessments").columns
     is_v2 = raw.get("assessment_schema_version") == "2"
     if is_v2:
-        agent_values = _exact_strings(raw, ASSESSMENT_V2_AGENT_FIELDS, label="assessment_v2")
+        assessment_request = raw
+        if (
+            "valuation_template_rationale" not in raw
+            and isinstance(raw.get("valuation_template"), str)
+            and raw.get("valuation_template") != "other"
+        ):
+            # Named repository templates forbid a rationale, so its only canonical value is
+            # the empty string. Accept omission at the JSON request boundary while preserving
+            # the exact, explicit field in canonical CSV state.
+            assessment_request = {**raw, "valuation_template_rationale": ""}
+        agent_values = _exact_strings(
+            assessment_request, ASSESSMENT_V2_AGENT_FIELDS, label="assessment_v2"
+        )
         try:
             normalized_v2 = normalize_v2_assessment(repository_root, settings, agent_values)
         except (CanonicalValueError, ValuationError, ValueError) as exc:

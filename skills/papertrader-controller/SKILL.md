@@ -42,11 +42,14 @@ skill plus native `llm-wiki`; the parent controller separately preloads this con
 4. Invoke repository-local `scripts/papertrader` for structured state. Never invoke bare
    `papertrader`, `uv`, prefix a command with `uv run`, install dependencies, or modify `.venv`;
    that environment is controller-owned. The CLI rejects commands outside the routed operation's
-   skill scope before dispatch; do not retry a rejected command or substitute another invocation
-   path. The controller records each dispatched project CLI invocation and its exact content delta
-   in `command_audit.json`; `commands_run` may include only those canonical receipt command strings
-   and must not include pytest, Python, shell, browsing, or descriptive check entries. The parent
-   deterministically fills any omissions from the audit.
+   skill scope before dispatch; do not retry a pre-dispatch scope rejection or substitute another
+   invocation path. If a canonical in-scope command is dispatched, exits nonzero, and its audit
+   receipt records no changed paths, the routed skill may correct the request and invoke the same
+   canonical command with a new uniquely named request file. Never resubmit or edit the rejected
+   request file. The controller records each dispatched project CLI invocation and its exact content
+   delta in `command_audit.json`; `commands_run` may include only those canonical receipt command
+   strings and must not include pytest, Python, shell, browsing, or descriptive check entries. The
+   parent deterministically fills any omissions from the audit.
    Treat every JSON request artifact as immutable after its first CLI invocation. A correction or
    changed retry must use a new uniquely named request file; never edit or overwrite the prior file.
    Allocation-linked strategy work may change only its strategy page, CLI-owned strategy/leg row,
