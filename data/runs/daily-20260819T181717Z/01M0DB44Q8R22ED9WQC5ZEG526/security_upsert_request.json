@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ef35e41886220d51c22c",
+  "issuer_id": "issuer_cbc97be23df5c67a2971",
+  "company_name": "ASML Holding N.V.",
+  "instrument_name": "ASML Holding N.V. New York registered shares",
+  "instrument_type": "equity",
+  "ticker": "ASML",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ASML",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "NL",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment & Materials",
+  "status": "watching",
+  "watchlist_reason": "High-quality lithography franchise and AI capacity exposure; supported scenario value is near the current market price with material bear downside.",
+  "research_summary": "Q2 guidance and net liquidity support the franchise, but weighted value is only 2.14% above the USD 1,802.98 mark and the buy-below level is USD 1,454.72.",
+  "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
+  "last_research_at": "2026-08-19T18:20:35Z",
+  "next_review_at": "2026-09-18T18:20:35Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+}

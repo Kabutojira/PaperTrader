@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "ASML assessment rejected after security row update",
+  "description": "The schema-v2 assessment for security_ef35e41886220d51c22c was rejected before assessment state changed because valuation_template_rationale is permitted only with the other valuation template. Per the routed-operation command policy, the rejected assessment command was not retried. A subsequent bounded attempt to restore the prior security row through the validated security upsert command was itself rejected because the prior last_research_at timestamp is older than the newly written row; it was not retried. Refreshed source history, the updated security row and wiki research draft remain auditable, but the canonical assessment is still the prior unsupported assessment, no relationship, idea, strategy, signal, order, allocation or accounting follow-up was enqueued, and this operation must fail closed. The controller must reconcile or reschedule the security review under a fresh operation.",
+  "owner": "controller",
+  "related_run_id": "daily-20260819T181717Z",
+  "related_operation_id": "01M0DB44Q8R22ED9WQC5ZEG526"
+}

@@ -1,0 +1,85 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader research source record --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_6k_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_financials_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_sec_submissions_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/security_rollback_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader issue record --request data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request.json"
+  ],
+  "daily_report_items": [
+    "ASML full research failed closed: primary sources and a valuation draft were refreshed, but the required comparable assessment was rejected and no follow-up operation or trading state was created. Issue issue_f50e95ee4d3a5cc05618 requires controller reconciliation of the advanced security row against the prior canonical assessment."
+  ],
+  "evidence": [
+    {
+      "claim": "The unchanged SEC-hosted filing reports Q2 2026 total net sales of EUR 9.3 billion, net income of EUR 2.9 billion, and raised 2026 guidance of EUR 43-45 billion sales with 54%-56% gross margin.",
+      "observed_at": "2026-08-19T18:20:35Z",
+      "source": "ASML Holding N.V. Q2 2026 Form 6-K",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+    },
+    {
+      "claim": "The unchanged statements report Q2 revenue of EUR 9.3265 billion, 54.0% gross margin, EUR 2.9176 billion net income, EUR 7.58 diluted EPS, and 384.9 million diluted weighted-average shares.",
+      "observed_at": "2026-08-19T18:20:35Z",
+      "source": "ASML Holding N.V. Q2 2026 US GAAP financial statements",
+      "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm"
+    },
+    {
+      "claim": "The SEC submissions index showed no later periodic operating filing after the 2026-07-15 Form 6-K through this check.",
+      "observed_at": "2026-08-19T18:20:35Z",
+      "source": "ASML Holding N.V. SEC submissions index",
+      "source_hash": "4dfe7cfb6673dc94f2f02869135ddb4a5e6632d8850ce141f77c865f32935d42",
+      "url": "https://data.sec.gov/submissions/CIK0000937966.json"
+    },
+    {
+      "claim": "The assessment command exited 2 before changing assessment state with: assessment v2 is invalid: valuation_template_rationale is allowed only for other.",
+      "source": "papertrader assessment validator"
+    },
+    {
+      "claim": "The bounded rollback request exited 2 without changing state because its prior last_research_at timestamp was older than the already advanced security row.",
+      "source": "papertrader security validator"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request.json",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request.json",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/security_rollback_request.json",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request.json",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_6k_request.json",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_financials_request.json",
+    "data/runs/daily-20260819T181717Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_sec_submissions_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md"
+  ],
+  "issues_recorded": [
+    "issue_f50e95ee4d3a5cc05618"
+  ],
+  "operation_id": "01M0DB44Q8R22ED9WQC5ZEG526",
+  "operations_created": [],
+  "reason_code": "assessment_validation_failed",
+  "status": "failed",
+  "summary": "ASML primary evidence was refreshed and a scenario-complete research draft was written, but the required assessment upsert was rejected because valuation_template_rationale is valid only for the other template. The rejected command was not retried. The security row had already advanced, and a validated rollback attempt was then rejected as older research state. No assessment, follow-up operation, strategy, signal, order, allocation, or accounting state was created. Issue issue_f50e95ee4d3a5cc05618 records the partial-state reconciliation requirement, so the operation fails closed.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context command passed and was consumed.",
+      "Three retained primary sources were refreshed through audited source-record commands.",
+      "Security identity dedupe and immutable identity validation passed during security upsert.",
+      "Market price and USD/EUR references were fresh and identity-matched in the rejected assessment request.",
+      "Scenario values were ordered and probabilities totaled 100, but assessment validation failed on the non-canonical valuation_template_rationale field.",
+      "The validated rollback attempt failed the monotonic research timestamp guard and made no change.",
+      "Strict wiki lint passed.",
+      "No assessment history row or follow-up operation was created; required assessment verification did not pass.",
+      "No allocation, portfolio, cash, execution, fill, order, signal, or performance state was changed."
+    ],
+    "passed": false
+  }
+}

@@ -4136,3 +4136,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   valuation contract. ASML remains a watch with valuation and allocation eligibility withheld
   pending exactly one dependent full review; no strategy, signal, order, allocation, or accounting
   state changed.
+
+## [2026-08-19T18:20:35Z] update | ASML full scenario review
+
+- Fully reassessed [[securities/security_ef35e41886220d51c22c|ASML]] against unchanged Q2 filings,
+  the current SEC submissions index, the USD 1,802.98 mark, and fresh USD/EUR state. A complete
+  mature-compounder sensitivity now uses USD 1,190.48 / USD 1,818.39 / USD 2,413.63 bear/base/bull
+  values at 20% / 55% / 25% probabilities. The prior unsupported-valuation blocker is resolved, but
+  about 2.14% weighted return, 0.85% base upside and material bear downside retain Hold / Watch and
+  allocation ineligibility.
+- The accepted Terafab relationship remains current and unquantified. The complete idea-catalog
+  review identifies AI compute, networking and hyperscaler monetization as one specific candidate
+  edge requiring separate relationship review. No conviction strategy or paper signal is justified.
