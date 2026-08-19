@@ -1,0 +1,92 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader research source record --request data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/source_tsla_sec_submissions_20260819_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Tesla's August 7 bullish-MACD cross stabilized the mark at USD 336.87 without a later operating filing or changed Q2 thesis. The accepted but non-binding Terafab relationship improves one gate, while the legacy two-case sensitivity remains noncanonical; TSLA is Unrated / Watch and allocation-ineligible pending exactly one full review, with no paper trade."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable payload binds macd_cross_above_signal to the 2026-07-09 through 2026-08-07 period, a USD 328.5799865722656 adjusted close, a 3.3802292980840552710490503% period return, and canonical source-price hash 326bc4f5f24582e20311d0ee50f8104e66d92089fc646214a3097b2bc28c0e96.",
+      "observed_at": "2026-08-08T11:01:36Z",
+      "source": "PaperTrader deterministic 2026-08-07 alert payload and candidate packet",
+      "source_hash": "326bc4f5f24582e20311d0ee50f8104e66d92089fc646214a3097b2bc28c0e96"
+    },
+    {
+      "claim": "The 2026-08-18 adjusted close was USD 336.8699951171875, 2.5229803651% above the alert close and 6.5841921532% above the baseline reference price. MACD -8.96571513 remained above signal -13.83827610 with a positive histogram, RSI was neutral at 46.28314340, volume was non-anomalous and no current trigger transition was active.",
+      "observed_at": "2026-08-19T09:08:06Z",
+      "source": "PaperTrader current deterministic market and indicator state",
+      "source_hash": "8b4e25d7087d8169a289e383863812273a088a470854c5307cbd166c2aa642a1"
+    },
+    {
+      "claim": "The current SEC submissions index contains no periodic operating filing or earnings release after Tesla's Q2 Form 10-Q, so no later primary operating evidence supersedes the retained Q2 assumptions.",
+      "observed_at": "2026-08-19T09:12:08Z",
+      "source": "source_tsla_sec_submissions_20260819",
+      "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+      "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+    },
+    {
+      "claim": "The accepted medium-confidence relationship adds a plausible custom-silicon supply-security and iteration channel, but the public framework remains non-binding and discloses no capacity, price, volume, capital or shareholder-return economics.",
+      "source": "data/wiki/relationships/relationship_terafab_tsla.md"
+    },
+    {
+      "claim": "The deterministic applier created exactly one schema-v2 history version for this operation and run, linked predecessor assessment_606fa913eb668f677db6 and page hash dac2affd76be1263895bcb999b294a3f003c2d55a2203acdac6ca4d6aa9c2327, and derived Unrated / Watch, valuation-unsupported status and allocation ineligibility without invented scenario values or a buy zone.",
+      "source": "PaperTrader accepted assessment assessment_360bd1c80b7c5b27422c"
+    },
+    {
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, all alert causes, exact market period, payload and current price hashes, the legacy-valuation and accepted-relationship changed gate, and full_research_requested=true.",
+      "source": "data/operations/payloads/01M0CMRJ98SAV40VKBH4RJDG9J.json"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0CMRJ98SAV40VKBH4RJDG9J.json",
+    "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/assessment_upsert_request.json",
+    "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/enqueue_full_research_request.json",
+    "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/security_upsert_request.json",
+    "data/runs/daily-20260819T090759Z/01KZGGJ4M05XRHKKRXK2WYJANM/source_tsla_sec_submissions_20260819_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZGGJ4M05XRHKKRXK2WYJANM",
+  "operations_created": [
+    "01M0CMRJ98SAV40VKBH4RJDG9J"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Tesla quick check for the 2026-08-07 bullish-MACD cross. TSLA rose 3.38% over the alert period to USD 328.58 and then 2.52% to USD 336.87 by August 18, while MACD remained above signal but both lines were negative, RSI was neutral and no current transition was active. The current SEC submissions index showed no later periodic operating filing or earnings release, so the Q2 thesis, catalysts, risks and invalidation remain unchanged. The accepted Terafab relationship improves the relationship frontier but remains non-binding, and the legacy two-case sensitivity lacks a bull case, explicit probabilities and current component inputs. The accepted schema-v2 assessment is therefore Unrated / Watch, valuation-unsupported and allocation-ineligible with no buy zone. Exactly one dependent full security review, 01M0CMRJ98SAV40VKBH4RJDG9J, was enqueued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Validated the sole running quick_check_research row, daily-20260819T090759Z claim, live lease, immutable TSLA/XNAS/USD/equity identity, successful same-security baseline result within ten days at enqueue time, and native/controller/operation preflight hashes before mutation.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the current and previous assessment, latest successful baseline result, security identity, page hash, retained sources, accepted relationship, linked idea and zero strategies.",
+      "Matched the sole payload trigger, exact 2026-07-09 through 2026-08-07 period, USD 328.5799865722656 alert mark and canonical payload source-price hash to the deterministic candidate packet.",
+      "Confirmed current canonical market state at 2026-08-19T09:08:06Z: USD 336.8699951171875 mark, MACD above signal but both negative, neutral RSI, ordinary volume and no active trigger transition under current source-price hash 8b4e25d7087d8169a289e383863812273a088a470854c5307cbd166c2aa642a1.",
+      "Fetched and hashed the current SEC submissions index and confirmed it contained no later periodic operating filing or earnings release, so the Q2 thesis, catalysts, risks and invalidation remain unchanged.",
+      "Confirmed no valuation or buy zone was newly reached and no operating catalyst or invalidation fired. Escalation is required because the legacy two-case sensitivity cannot support scenario-complete decisions and the Terafab relationship is now accepted rather than absent.",
+      "Confirmed exactly one dependent security_research operation, 01M0CMRJ98SAV40VKBH4RJDG9J, contains this quick-check identity, baseline identity, all payload trigger causes, exact alert period, both price hashes, both changed gates and full_research_requested=true.",
+      "The second audited security-context receipt confirmed immutable assessment assessment_360bd1c80b7c5b27422c is the sole history version for this operation and run, links legacy predecessor assessment_606fa913eb668f677db6, uses the final page hash, records complete accepted-relationship coverage, and derives Unrated / Watch with valuation_unsupported and no invented scenarios or buy zone.",
+      "The first immutable assessment request was rejected without state changes because it used one non-canonical soft-gap value; uniquely named retry01 replaced that value with canonical valuation_not_compelling and succeeded.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned exit code zero after the permitted changes; git diff --check also returned exit code zero.",
+      "command_audit.json contains exactly the twelve canonical project CLI invocations listed in commands_run; eleven returned exit code zero and the rejected immutable assessment request returned exit code two without changing state.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, fill, cash, portfolio, performance, accounting-ledger, raw-source or other security-page path changed; no issue was recorded and no operation was delegated, claimed, completed or otherwise processed."
+    ],
+    "passed": true
+  }
+}

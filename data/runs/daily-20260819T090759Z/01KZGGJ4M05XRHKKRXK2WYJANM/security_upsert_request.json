@@ -1,0 +1,23 @@
+{
+  "security_id": "security_dc7a111e297be528d96b",
+  "issuer_id": "issuer_a1f77a81ab2e06de9e77",
+  "company_name": "Tesla, Inc.",
+  "instrument_name": "Tesla, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "TSLA",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "TSLA",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Auto Manufacturers",
+  "status": "watching",
+  "watchlist_reason": "Q2 growth and liquidity support monitoring, but operating leverage, AI-led capital intensity, unsupported canonical valuation and non-binding Terafab economics require a full review.",
+  "research_summary": "The bullish MACD stabilization did not change Q2 assumptions or establish a buy zone; TSLA is Unrated / Watch pending a scenario-complete full review.",
+  "research_page": "data/wiki/securities/security_dc7a111e297be528d96b.md",
+  "last_research_at": "2026-08-19T09:12:08Z",
+  "next_review_at": "2026-08-26T09:12:08Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+}

@@ -4040,3 +4040,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   800 scenarios against the lower USD 543.67 mark leave META Hold / Watch and allocation-ineligible
   because expected-return, downside-payoff, and relationship gates still fail. No conviction
   strategy or follow-up operation was created.
+
+## [2026-08-19T09:12:08Z] update | Tesla quick check after bullish MACD crossover
+
+- Rechecked [[securities/security_dc7a111e297be528d96b|Tesla]] against the exact July 9 through
+  August 7 alert period, current market state, the SEC submissions index, and the accepted
+  [[relationships/relationship_terafab_tsla|Terafab relationship]]. The USD 336.87 current mark is
+  2.52% above the alert close, but no later operating filing or fundamental catalyst changed Q2
+  assumptions. The legacy two-case sensitivity is not scenario-complete, so TSLA is Unrated /
+  Watch and allocation-ineligible pending exactly one dependent full review; no strategy, signal,
+  order, allocation or accounting state changed.

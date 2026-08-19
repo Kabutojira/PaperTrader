@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-29"
-updated: "2026-07-29"
-provenance: "source_tsla_q2_2026_10q|source_tsla_q2_2026_deliveries"
+updated: "2026-08-19"
+provenance: "source_tsla_q2_2026_10q|source_tsla_q2_2026_deliveries|source_tsla_sec_submissions_20260819"
 security_id: security_dc7a111e297be528d96b
 issuer_id: issuer_a1f77a81ab2e06de9e77
 ticker: TSLA
@@ -16,21 +16,21 @@ venue_mic: XNAS
 provider_symbol: TSLA
 currency: USD
 confidence: medium
-next_review: "2026-08-28"
+next_review: "2026-08-26"
 ---
 
 # Tesla, Inc. common stock
 
 ## Decision
 
-**Baseline comparison; no conviction strategy.** Tesla's Q2 filing shows strong delivery and
+**Unrated / Watch; no conviction strategy.** Tesla's Q2 filing shows strong delivery and
 revenue growth, substantial liquidity, and continuing investment in autonomy, robotics, energy
 storage, and manufacturing. Those positives are offset by a 57% year-over-year decline in
 quarterly operating income, sharply higher research and overhead spending, capital expenditures
 that nearly doubled, and a valuation still dependent on unproven AI-enabled profit pools. The
-RSI-oversold transition followed a material post-results repricing, but the bounded base case
-remains below the market mark. The alert is therefore valuation and execution risk, not a
-paper-trade signal.
+August bullish-MACD cross did not identify a fundamental catalyst or a supported buy zone. The
+legacy two-case revenue sensitivity is not a scenario-complete valuation, so the current canonical
+assessment is valuation-unsupported and allocation-ineligible pending one full review.
 
 ## Immutable identity
 
@@ -60,6 +60,36 @@ contains material mixed evidence, but it does not prove that every part of the m
 was caused by the release. The move is material because the post-results price action confirms
 that stronger volume and revenue did not remove concern about operating leverage, capital
 intensity, or the valuation assigned to future autonomy and robotics economics.
+
+### 2026-08-19 quick check of the August 7 alert
+
+The payload-bound period runs from 2026-07-09 through 2026-08-07. Adjusted close rose **3.38%** to
+USD 328.58 and MACD crossed above its signal line. By 2026-08-18 the close was USD 336.87, **2.52%**
+above the alert mark and **6.58%** above the prior review's USD 316.06 reference price. MACD remained
+above signal, but both were negative; RSI was neutral at 46.28 and no current transition was active.
+This is stabilization after the post-results selloff, not evidence that the operating or valuation
+gates improved.
+
+The SEC submissions index contained no periodic operating filing or earnings release after the Q2
+Form 10-Q through this check. The Q2 revenue, delivery, liquidity, margin, capital-intensity,
+autonomy, governance and invalidation assumptions therefore remain unchanged. A newly accepted
+[[relationships/relationship_terafab_tsla|Terafab relationship]] adds a plausible custom-silicon
+supply-security and iteration channel, but the disclosed framework is non-binding and supplies no
+capacity, price, volume or shareholder-return evidence. It changes the relationship frontier, not
+the valuation conclusion.
+
+## Changes since prior review
+
+- **Evidence and thesis:** no later operating filing supersedes Q2. The core thesis, catalysts,
+  operating risks and invalidation conditions remain unchanged.
+- **Valuation and buy zone:** the prior USD 169.26 downside and USD 264.97 base sensitivity remains
+  useful historical context, but it lacks a bull case and explicit probabilities and cannot support
+  the canonical decision contract. No supported fair-value range or buy zone is published here.
+- **Relationship gate:** Terafab-to-Tesla is now accepted at medium confidence, subject to binding
+  terms, product qualification, economics and related-party governance.
+- **Action and escalation:** the MACD alert is noise for decision support. Tesla remains Unrated /
+  Watch and allocation-ineligible; exactly one dependent full review is required to build a current
+  scenario-complete sum-of-parts valuation and absorb the accepted relationship.
 
 ## Business and financial evidence
 
@@ -111,10 +141,14 @@ already achieved mature economics:
 - Base: **8x** annualized revenue plus net cash, or about USD 264.97 per share and **13.6%
   downside**.
 
-This is a scenario range, not a precise intrinsic target. It is favorable to the equity because it
+This is a historical sensitivity, not a precise intrinsic target or a current canonical valuation.
+It is favorable to the equity because it
 uses annualized strong-quarter revenue, does not discount future capital spending, and gives a
 premium multiple to economics that remain partly unproven. The oversold decline has not created
-the configured 10% base upside or an adequate upside-to-downside ratio.
+the configured 10% base upside or an adequate upside-to-downside ratio. A full review must replace
+it with ordered bear, base and bull values, explicit probabilities, current share count and net
+cash, and separate assumptions for automotive, energy and AI-enabled optionality before any buy
+zone can be supported.
 
 ## Sources
 
@@ -122,10 +156,13 @@ the configured 10% base upside or an adequate upside-to-downside ratio.
   (`source_tsla_q2_2026_10q`, checked 2026-07-29).
 - [Tesla Q2 2026 production, deliveries and deployments](https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments)
   (`source_tsla_q2_2026_deliveries`, checked 2026-07-29).
+- [Tesla SEC submissions index](https://data.sec.gov/submissions/CIK0001318605.json)
+  (`source_tsla_sec_submissions_20260819`, checked 2026-08-19).
 - Canonical market and indicator state: `data/market/latest.csv`,
   `data/market/indicators.csv`, and
   `data/market/prices/security_dc7a111e297be528d96b.csv`, retrieved
-  `2026-07-29T16:55:24Z`.
+  `2026-08-19T09:08:06Z` for the current comparison; the immutable alert packet retains the
+  `2026-08-08T11:01:36Z` payload observation.
 
-Next review: **2026-08-28**, or sooner after material delivery, margin, autonomy, regulatory,
-capital-spending, financing, or guidance evidence.
+Next review: **2026-08-26**, through the dependent full review, or sooner after material delivery,
+margin, autonomy, regulatory, capital-spending, financing, Terafab, or guidance evidence.

@@ -1,0 +1,56 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_dc7a111e297be528d96b",
+  "dedupe_key": "security_research:security_dc7a111e297be528d96b:quick-check-canonical-valuation-and-terafab:2026-08-19",
+  "prompt": "Fully reassess Tesla after the bullish MACD stabilization because the legacy two-case sensitivity and newly accepted Terafab relationship cannot support the current scenario-complete decision contract.",
+  "inputs": {
+    "security_id": "security_dc7a111e297be528d96b",
+    "quick_check_operation_id": "01KZGGJ4M05XRHKKRXK2WYJANM",
+    "baseline_operation_id": "01KYQCTS30ZVE5AER5K9GD2VXT",
+    "changed_gate": "legacy_two_case_valuation_cannot_support_schema_v2_decision_and_terafab_relationship_is_now_accepted",
+    "full_research_requested": true,
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ],
+    "market_data_date": "2026-08-07",
+    "market_data_as_of": "2026-08-08T11:01:36Z",
+    "period_start": "2026-07-09",
+    "period_end": "2026-08-07",
+    "source_price_hash": "326bc4f5f24582e20311d0ee50f8104e66d92089fc646214a3097b2bc28c0e96",
+    "current_market_data_date": "2026-08-18",
+    "current_market_data_as_of": "2026-08-19T09:08:06Z",
+    "current_source_price_hash": "8b4e25d7087d8169a289e383863812273a088a470854c5307cbd166c2aa642a1",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal_entered_with_positive_period_return",
+        "source_ref": "data/wiki/inbox/market-security_dc7a111e297be528d96b-macd_cross_above_signal-c033345d6803.md"
+      },
+      {
+        "cause": "legacy_two_case_valuation_lacks_bull_case_probabilities_and_current_component_inputs",
+        "source_ref": "data/wiki/securities/security_dc7a111e297be528d96b.md"
+      },
+      {
+        "cause": "terafab_relationship_is_now_accepted_but_non_binding",
+        "source_ref": "data/wiki/relationships/relationship_terafab_tsla.md"
+      }
+    ]
+  },
+  "source": "quick_check_research:01KZGGJ4M05XRHKKRXK2WYJANM",
+  "priority": 97,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZGGJ4M05XRHKKRXK2WYJANM"
+  ],
+  "not_before": "now",
+  "deadline": "2026-08-26T09:12:08Z",
+  "source_refs": [
+    "data/wiki/inbox/market-security_dc7a111e297be528d96b-macd_cross_above_signal-c033345d6803.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md",
+    "data/wiki/relationships/relationship_terafab_tsla.md",
+    "source_tsla_q2_2026_10q",
+    "source_tsla_q2_2026_deliveries",
+    "source_tsla_sec_submissions_20260819"
+  ],
+  "max_attempts": 3
+}

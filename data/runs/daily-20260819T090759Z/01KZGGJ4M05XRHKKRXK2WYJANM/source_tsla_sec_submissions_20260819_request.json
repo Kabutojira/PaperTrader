@@ -1,0 +1,18 @@
+{
+  "source_id": "source_tsla_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001318605.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001318605.json",
+  "source_type": "regulator_index",
+  "title": "Tesla SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+  "related_entity_ids": "security_dc7a111e297be528d96b",
+  "checked_at": "2026-08-19T09:12:08Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest periodic operating filing remains Tesla's Q2 Form 10-Q; no later periodic operating filing or earnings release appears through this check.",
+  "summary": "The current regulator index shows no later periodic operating evidence superseding the retained Q2 filing, so the bounded thesis, catalysts, risks and invalidation assumptions remain unchanged.",
+  "run_id": "daily-20260819T090759Z"
+}
