@@ -4077,6 +4077,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260819]] for run `daily-20260819T133029Z`.
 
+- Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56]] (1bb1ee000d56).
+
+- Classified [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56]] as `ingest`: A newly entered volume anomaly coincides with a material nine-percent decline over the observed period and warrants durable security review.
+
+- Created candidate packet [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_below_signal-013189deb4ef]] (013189deb4ef).
+
 ## [2026-08-19T12:05:12Z] update | Tesla comparable assessment completion
 
 - Revalidated the completed [[securities/security_dc7a111e297be528d96b|Tesla]] sum-of-parts review

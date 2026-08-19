@@ -530,3 +530,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56|FUC.F — Volume anomaly]]
+- [[inbox/market-security_dc8486c1d61df62a22fd-macd_cross_below_signal-013189deb4ef|SU — MACD cross below signal]]

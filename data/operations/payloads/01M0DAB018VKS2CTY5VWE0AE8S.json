@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_h4DPero1j0w",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-19T15:30:49Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_h4DPero1j0w",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "h4DPero1j0w",
+    "video_title": "I Can't Stay Quiet About Meta Stock Anymore",
+    "video_url": "https://www.youtube.com/watch?v=h4DPero1j0w"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0DAB018VKS2CTY5VWE0AE8S",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=h4DPero1j0w"
+  ]
+}
