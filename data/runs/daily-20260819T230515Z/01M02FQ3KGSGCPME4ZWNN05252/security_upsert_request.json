@@ -1,0 +1,23 @@
+{
+  "security_id": "security_0a56aa634d077fe5796f",
+  "issuer_id": "issuer_0f91c69d2d38e1a7920d",
+  "company_name": "Applied Materials, Inc.",
+  "instrument_name": "Applied Materials, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "AMAT",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "AMAT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment & Materials",
+  "status": "watching",
+  "watchlist_reason": "Record fiscal Q3 growth and cash conversion merit monitoring, but export-control exposure, customer concentration, obsolete valuation inputs, and negative post-release timing prevent action.",
+  "research_summary": "Record Q3 results strengthen AMAT's operating thesis, but the negative price response and obsolete scenario inputs leave it Unrated / Watch pending a full review.",
+  "research_page": "data/wiki/securities/security_0a56aa634d077fe5796f.md",
+  "last_research_at": "2026-08-19T23:29:56Z",
+  "next_review_at": "2026-08-26T23:29:56Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+}

@@ -4284,3 +4284,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   remains current; one dependent idea refresh will absorb this result, and one separate candidate
   review will test the solar-storage-and-grid-flexibility mechanism. No strategy, signal, paper
   order, allocation or accounting state changed.
+
+## [2026-08-19T23:29:56Z] update | Applied Materials volume anomaly and Q3 catalyst
+
+- Rechecked [[securities/security_0a56aa634d077fe5796f|Applied Materials]] against the exact 17 July
+  through 14 August volume-anomaly period, the August 13 fiscal-Q3 results, the USD 496.17 August 19
+  mark and fresh USD/EUR state. Record revenue, margin, cash flow and Q4 guidance strengthen the
+  operating thesis, but the 5.12% post-release drop and later bearish MACD increase timing risk.
+- With Q3 and Q4 evidence materially beyond the prior normalized inputs, the old scenario set and
+  buy-zone comparison are no longer decision-supportable. The comparable assessment is Unrated /
+  Watch and allocation-ineligible pending exactly one dependent full review. No strategy, signal,
+  paper order, allocation or accounting state changed.

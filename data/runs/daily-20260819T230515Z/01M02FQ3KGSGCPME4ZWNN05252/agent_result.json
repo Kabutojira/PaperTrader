@@ -1,0 +1,90 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/source_amat_q3_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/source_amat_sec_submissions_20260819_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Applied Materials' August 14 volume anomaly coincided with a 5.12% post-earnings decline despite record fiscal-Q3 revenue, margin and cash flow plus strong fiscal-Q4 guidance. The new evidence made the prior normalized-EPS valuation inputs obsolete; AMAT is Unrated / Watch and allocation-ineligible pending one dependent full review, with no paper trade."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable payload binds volume_anomaly to the 2026-07-17 through 2026-08-14 period, a USD 507.17999267578125 adjusted close, a 1.199404062263477447873182400% period return, a 1.68246213 volume z-score and canonical source-price hash 3cceeb974e0b6c57f550c91e80a9e334ba43881efef448ba07d0c1e83e22edcb.",
+      "observed_at": "2026-08-18T10:34:51Z",
+      "source": "PaperTrader deterministic 2026-08-14 alert payload and candidate packet",
+      "source_hash": "3cceeb974e0b6c57f550c91e80a9e334ba43881efef448ba07d0c1e83e22edcb"
+    },
+    {
+      "claim": "Applied reported fiscal-Q3 revenue of USD 9.115 billion, GAAP operating margin of 33.7%, diluted EPS of USD 3.17 and operating cash flow of USD 3.04 billion; fiscal-Q4 guidance is USD 10.25 billion revenue plus or minus USD 500 million and non-GAAP diluted EPS of USD 4.02 plus or minus USD 0.20.",
+      "observed_at": "2026-08-19T23:29:56Z",
+      "source": "source_amat_q3_2026_results",
+      "source_hash": "1b4661e02cf221ad0aa2d855aa8042c89206b2abc70e73513a7452b3484e864a",
+      "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+    },
+    {
+      "claim": "The August 19 adjusted close was USD 496.1700134277344, 2.1708228651% below the alert close and 7.9701005403% below the baseline-review mark. RSI was neutral at 43.75188012, MACD -8.85099456 was below signal -8.28567709, volume was no longer anomalous and no current trigger transition was active.",
+      "observed_at": "2026-08-19T23:05:22Z",
+      "source": "PaperTrader current deterministic market and indicator state",
+      "source_hash": "139d5ba87aebe9c74cf0491897c81dfcdee7d488d73c79a1a18a028782553f51"
+    },
+    {
+      "claim": "The deterministic applier created exactly one schema-v2 history version for this operation and run, linked predecessor assessment_f4d21375676428ce0084, bound the final research-page hash, and derived Unrated / Watch, valuation-unsupported status and allocation ineligibility without invented replacement scenario values or a buy zone.",
+      "source": "PaperTrader accepted assessment assessment_3102e4b777989861e1b5"
+    },
+    {
+      "claim": "Exactly one dependent full security review carries this quick-check identity, the successful baseline identity, the volume-anomaly cause, exact alert period, payload and current price hashes, the fiscal-Q3 changed gate and full_research_requested=true.",
+      "source": "data/operations/payloads/01M0E5XT181SGH3F2RFGWJ4WGQ.json"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0E5XT181SGH3F2RFGWJ4WGQ.json",
+    "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/assessment_upsert_request.json",
+    "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/enqueue_full_research_request.json",
+    "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/security_upsert_request.json",
+    "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/source_amat_q3_2026_results_request.json",
+    "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/source_amat_sec_submissions_20260819_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M02FQ3KGSGCPME4ZWNN05252",
+  "operations_created": [
+    "01M0E5XT181SGH3F2RFGWJ4WGQ"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Applied Materials quick check for the 2026-08-14 volume anomaly. The alert period ended at USD 507.18 with elevated volume, while the August 13 fiscal-Q3 filing materially strengthened operating evidence: record USD 9.115 billion revenue, 33.7% GAAP operating margin, USD 3.04 billion operating cash flow and strong fiscal-Q4 guidance. The stock nevertheless fell 5.12% on August 14 and declined to USD 496.17 by August 19 with MACD below signal. Because the new results and outlook made the prior normalized-EPS scenarios obsolete, the accepted same-run assessment is Unrated / Watch, valuation-unsupported and allocation-ineligible. Exactly one dependent full security review, 01M0E5XT181SGH3F2RFGWJ4WGQ, was enqueued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Validated the sole running quick_check_research row, daily-20260819T230515Z claim, live lease, immutable AMAT/XNAS/USD/equity identity, successful same-security baseline result within ten days at enqueue time, and native/controller/operation preflight hashes before mutation.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it supplied the current and previous assessment, latest successful baseline result, security identity, page hash, retained sources and zero linked ideas, relationships or strategies.",
+      "Matched the sole payload trigger, exact 2026-07-17 through 2026-08-14 period, USD 507.17999267578125 alert mark and canonical payload source-price hash to the deterministic candidate packet.",
+      "Verified the August 13 fiscal-Q3 Form 8-K and exhibit directly from the current SEC submissions index and registered their byte hashes through the project CLI; Q3 operating evidence materially changed the baseline valuation inputs.",
+      "Confirmed current canonical market state at 2026-08-19T23:05:22Z: USD 496.1700134277344 mark, MACD below signal, neutral RSI, ordinary volume and no active trigger transition under current source-price hash 139d5ba87aebe9c74cf0491897c81dfcdee7d488d73c79a1a18a028782553f51.",
+      "Confirmed no supported valuation or buy zone was newly reached. Escalation is required because the prior normalized-EPS scenarios no longer support a current decision after Q3 results and Q4 guidance.",
+      "Confirmed exactly one dependent security_research operation, 01M0E5XT181SGH3F2RFGWJ4WGQ, contains this quick-check identity, baseline identity, all alert and changed-gate causes, exact market period, both price hashes and full_research_requested=true.",
+      "The second audited security-context receipt confirmed immutable assessment assessment_3102e4b777989861e1b5 is the sole history version for this operation and run, links predecessor assessment_f4d21375676428ce0084, uses page hash 8bc15506c8ae800df020bd42d1fec04dce66a4dfef56450a9f0711d64ca20a6c, and derives Unrated / Watch with valuation_unsupported and no invented scenarios or buy zone.",
+      "The first immutable assessment request was rejected without state changes because it included two fields outside the canonical request contract; uniquely named retry01 omitted those extra fields and succeeded.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned exit code zero after the permitted changes; git diff --check also returned exit code zero.",
+      "command_audit.json contains exactly the thirteen canonical project CLI invocations listed in commands_run; twelve returned exit code zero and the rejected immutable assessment request returned exit code two without changing state.",
+      "No idea, relationship, strategy, signal, order, allocation target/history, execution, fill, cash, portfolio, performance, accounting-ledger, raw-source or other security-page path changed; no issue was recorded and no operation was delegated, claimed, completed or otherwise processed."
+    ],
+    "passed": true
+  }
+}

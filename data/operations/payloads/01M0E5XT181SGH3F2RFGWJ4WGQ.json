@@ -1,0 +1,48 @@
+{
+  "entity_id": "security_0a56aa634d077fe5796f",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KZKCCZT5R7V6Y8NV43Y7NMP2",
+    "changed_gate": "fiscal_q3_results_and_q4_guidance_rendered_prior_valuation_inputs_obsolete",
+    "current_market_data_as_of": "2026-08-19T23:05:22Z",
+    "current_market_data_date": "2026-08-19",
+    "current_source_price_hash": "139d5ba87aebe9c74cf0491897c81dfcdee7d488d73c79a1a18a028782553f51",
+    "full_research_requested": true,
+    "market_data_as_of": "2026-08-18T10:34:51Z",
+    "market_data_date": "2026-08-14",
+    "period_end": "2026-08-14",
+    "period_start": "2026-07-17",
+    "quick_check_operation_id": "01M02FQ3KGSGCPME4ZWNN05252",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly_entered_during_negative_post_earnings_price_response",
+        "source_ref": "data/wiki/inbox/market-security_0a56aa634d077fe5796f-volume_anomaly-b65385b22ac1.md"
+      },
+      {
+        "cause": "fiscal_q3_results_and_q4_guidance_materially_changed_normalized_earnings_and_cash_flow_inputs",
+        "source_ref": "source_amat_q3_2026_results"
+      },
+      {
+        "cause": "prior_scenario_set_no_longer_supports_a_current_buy_zone_or_canonical_gate_decision",
+        "source_ref": "data/wiki/securities/security_0a56aa634d077fe5796f.md"
+      }
+    ],
+    "security_id": "security_0a56aa634d077fe5796f",
+    "source_price_hash": "3cceeb974e0b6c57f550c91e80a9e334ba43881efef448ba07d0c1e83e22edcb",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Applied Materials after fiscal-Q3 results materially changed the prior normalized earnings and cash-flow inputs while the high-volume negative price response increased timing risk.",
+  "operation_id": "01M0E5XT181SGH3F2RFGWJ4WGQ",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_0a56aa634d077fe5796f-volume_anomaly-b65385b22ac1.md",
+    "data/wiki/securities/security_0a56aa634d077fe5796f.md",
+    "source_amat_q2_2026_10q",
+    "source_amat_q2_2026_results",
+    "source_amat_q3_2026_results",
+    "source_amat_sec_submissions_20260819"
+  ]
+}
