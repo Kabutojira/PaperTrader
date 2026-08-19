@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_cbdd07edda84994325d6",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_ai_infrastructure_power",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_cbdd07edda84994325d6",
+    "security_id": "security_4b61970aa8f574446819"
+  },
+  "objective": "Review the canonical relationship from idea_ai_infrastructure_power to security_4b61970aa8f574446819 and accept or reject it with current evidence.",
+  "operation_id": "01M0E4B9TGBVXA590WV8KRWTT7",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_gev_q2_2026_10q",
+    "source_gev_q2_2026_earnings"
+  ]
+}
