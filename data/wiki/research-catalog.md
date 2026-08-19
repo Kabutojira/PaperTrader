@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-18"
-updated: "2026-08-18"
+created: "2026-08-19"
+updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c4fb1f43668433aca488"
-as_of: "2026-08-18T23:51:39Z"
+snapshot_id: "decision_43511df5ea63ce6e7382"
+as_of: "2026-08-19T09:26:30Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **131**
+- Immutable assessment versions: **132**
 - Securities with retained revisions: **70**
 
 ## Candidate
@@ -341,6 +341,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-16](daily-reports/daily-report_20260816)
 - [PaperTrader daily report — 2026-08-17](daily-reports/daily-report_20260817)
 - [PaperTrader daily report — 2026-08-18](daily-reports/daily-report_20260818)
+- [PaperTrader daily report — 2026-08-19](daily-reports/daily-report_20260819)
 
 ## Idea
 
@@ -389,6 +390,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Daily research podcast — 2026-08-17T152008Z](podcasts/daily-podcast_20260817T152008Z)
 - [Daily research podcast — 2026-08-17T185232Z](podcasts/daily-podcast_20260817T185232Z)
 - [Daily research podcast — 2026-08-18T201127Z](podcasts/daily-podcast_20260818T201127Z)
+- [Daily research podcast — 2026-08-18T231700Z](podcasts/daily-podcast_20260818T231700Z)
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
