@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_ef35e41886220d51c22c",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-19T15:40:58Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
+    "security_id": "security_ef35e41886220d51c22c"
+  },
+  "objective": "Revalidate security_ef35e41886220d51c22c with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0DYDVAG954M4ZQ6A4D5E4A8",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_asml_q2_2026_6k",
+    "source_asml_q2_2026_financials"
+  ]
+}
