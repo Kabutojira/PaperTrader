@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_def43e5b4e13577e2b99",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_def43e5b4e13577e2b99",
+    "security_id": "security_2dbe878dfc899d7ee867"
+  },
+  "objective": "Review the canonical relationship from idea_critical_minerals_copper to security_2dbe878dfc899d7ee867 and accept or reject it with current evidence.",
+  "operation_id": "01M0CME77GF19X03EW9HT2BF8Z",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_fcx_q2_2026_results_sec",
+    "source_fcx_sec_submissions_20260806"
+  ]
+}
