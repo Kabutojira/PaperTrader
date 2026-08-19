@@ -1,0 +1,44 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0E0ZKH89TZKTJNJMMJV4YYR.json",
+    "data/operations/payloads/01M0E10358ZT3FCASE941CRKBG.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/enqueue_relationship_candidate_request.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/security_upsert_request.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_q2_2026_earnings_refresh_request.json",
+    "data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/source_gev_sec_submissions_20260819_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_4b61970aa8f574446819.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [
+    "agent result schema: '6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63|b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b' does not match '^[a-f0-9]{64}$'",
+    "post-run integrity: agent result data/runs/daily-20260819T212147Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/agent_result.json: '6ce971b5ee1a4cba2c219535c6f9188d433a29812d1dce5c67d3fcd087eada63|b5e167be8b90ad129ca9b64c5485b0ee746c57c55f7bcdb0613b4f7f4b527d4b' does not match '^[a-f0-9]{64}$'"
+  ],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01KZSMSDTRFFMGZPZT6TTZ9WFE",
+  "passed": false,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260819T212147Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

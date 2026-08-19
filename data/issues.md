@@ -24,6 +24,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_64ad20c69d31e7ef47e4** — Hermes operation validation failed: 01KZGT11ZGBPRBKV129FD00TH1 | 2026-08-17T16:15:53Z | controller | 01KZGT11ZGBPRBKV129FD00TH1 |
 | error | **issue_6642c41b20e1ceeabf3a** — Hermes operation validation failed: 01KYPB26Z023E3AMG9Z8KSPW9D | 2026-08-07T10:46:48Z | controller | 01KYPB26Z023E3AMG9Z8KSPW9D |
 | error | **issue_6879c5959035b43a141b** — Local harness operation validation failed: 01KYQ62ZT8AGDEDP669Q6SF1VD | 2026-08-12T12:56:50Z | controller | 01KYQ62ZT8AGDEDP669Q6SF1VD |
+| error | **issue_6f83ca317d01cf67a0c4** — Hermes operation validation failed: 01KZSMSDTRFFMGZPZT6TTZ9WFE | 2026-08-19T22:09:18Z | controller | 01KZSMSDTRFFMGZPZT6TTZ9WFE |
 | error | **issue_70e92623d89e6dc2c99f** — Hermes operation validation failed: 01KZGGJ4M0VF8Y3J1HT2F3M59N | 2026-08-19T13:53:42Z | controller | 01KZGGJ4M0VF8Y3J1HT2F3M59N |
 | error | **issue_7f39fae50d63b862a20b** — Hermes operation validation failed: 01KZCFHHCGX1RGXKKVHNF86W7N | 2026-08-09T14:23:04Z | controller | 01KZCFHHCGX1RGXKKVHNF86W7N |
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
