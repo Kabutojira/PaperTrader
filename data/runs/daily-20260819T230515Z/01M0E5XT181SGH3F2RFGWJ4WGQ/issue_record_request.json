@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Applied Materials assessment source operation is ambiguous within one run",
+  "description": "The schema-v2 Applied Materials assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The first immutable assessment request was rejected without state changes for two non-canonical soft-gap names; retry01 corrected those names but exposed the run-level ambiguity. A bounded attempt to restore the prior security row through the validated upsert command was rejected because its prior last_research_at is older than the successfully written row. The prior unsupported canonical assessment and quick-check wiki page remain in place; refreshed source history and the newer security-row summary are auditable, but no assessment, relationship follow-up, strategy, signal, order, allocation or accounting state was created. The controller must reschedule the full review under a distinct run or repair source-operation disambiguation before retrying.",
+  "owner": "controller",
+  "related_run_id": "daily-20260819T230515Z",
+  "related_operation_id": "01M0E5XT181SGH3F2RFGWJ4WGQ"
+}

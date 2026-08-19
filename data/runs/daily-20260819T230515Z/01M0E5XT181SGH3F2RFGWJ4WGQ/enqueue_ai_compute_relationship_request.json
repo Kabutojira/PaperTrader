@@ -1,0 +1,33 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_369d56c6a0a37b28c1fa",
+  "dedupe_key": "relationship_research:relationship_369d56c6a0a37b28c1fa:security-result:01M0E5XT181SGH3F2RFGWJ4WGQ",
+  "prompt": "Review whether Applied Materials has a material causal relationship to AI compute, networking, and hyperscaler monetization using current primary evidence; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_369d56c6a0a37b28c1fa",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_0a56aa634d077fe5796f",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "AI compute expansion raises leading-edge logic, DRAM, HBM and advanced-packaging process complexity, increasing demand for Applied Materials deposition, etch, planarization, metrology and installed-base services when customer fab and packaging capacity converts into orders.",
+    "proposed_invalidation": "Reject or invalidate the edge if AI-related fab and advanced-packaging demand is immaterial to Applied Materials revenue, customer capex rolls over, or competition, export controls and pricing absorb the materials-intensity benefit.",
+    "evidence_refs": [
+      "source_amat_q2_2026_10q",
+      "source_amat_q3_2026_results",
+      "source_amat_sec_submissions_20260819"
+    ]
+  },
+  "source": "security_research:01M0E5XT181SGH3F2RFGWJ4WGQ",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M0E5XT181SGH3F2RFGWJ4WGQ"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_0a56aa634d077fe5796f.md",
+    "source_amat_q2_2026_10q",
+    "source_amat_q3_2026_results",
+    "source_amat_sec_submissions_20260819"
+  ],
+  "max_attempts": 3
+}

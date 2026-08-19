@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amat_q3_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm",
+  "source_type": "regulator_filing",
+  "title": "Applied Materials fiscal Q3 2026 results furnished on Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "1b4661e02cf221ad0aa2d855aa8042c89206b2abc70e73513a7452b3484e864a",
+  "related_entity_ids": "security_0a56aa634d077fe5796f",
+  "checked_at": "2026-08-19T23:39:52Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Fiscal Q3 revenue was USD 9.115 billion, GAAP operating margin was 33.7%, and operating cash flow was USD 3.037 billion.",
+  "summary": "Applied reported record fiscal-Q3 revenue and margins, USD 14.501 billion of cash and investments against USD 6.544 billion of debt, and fiscal-Q4 non-GAAP diluted EPS guidance of USD 4.02 plus or minus USD 0.20.",
+  "run_id": "daily-20260819T230515Z"
+}

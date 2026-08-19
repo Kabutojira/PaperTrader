@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amat_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0000006951.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000006951.json",
+  "source_type": "regulator_index",
+  "title": "Applied Materials SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "abeea8f1192e8cfa0fc1d38189141c3d34040e322d892b16bfbc7d118071e71c",
+  "related_entity_ids": "security_0a56aa634d077fe5796f",
+  "checked_at": "2026-08-19T23:39:52Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The current submissions index identifies the August 13, 2026 Form 8-K as the latest filing.",
+  "summary": "The regulator index confirms that the fiscal-Q3 results furnished on August 13 remain the latest issuer filing relevant to this full review.",
+  "run_id": "daily-20260819T230515Z"
+}

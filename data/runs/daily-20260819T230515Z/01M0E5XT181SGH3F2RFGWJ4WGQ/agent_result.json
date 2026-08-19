@@ -1,0 +1,80 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/source_q3_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/source_submissions_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/security_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/assessment_upsert_retry01_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/security_restore_request.json",
+    "papertrader issue record --request data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/issue_record_request.json",
+    "papertrader research security-context --security-id security_0a56aa634d077fe5796f",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Applied Materials full security research was blocked because the same daily run contained both its quick-check predecessor and full review, making deterministic assessment provenance ambiguous; the prior Unrated / Watch assessment remains current and no trade workflow was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The unchanged August 13 fiscal-Q3 filing reports USD 9.115 billion revenue, 33.7% GAAP operating margin, USD 3.037 billion operating cash flow, and fiscal-Q4 non-GAAP diluted EPS guidance of USD 4.02 plus or minus USD 0.20.",
+      "observed_at": "2026-08-19T23:39:52Z",
+      "source": "source_amat_q3_2026_results",
+      "source_hash": "1b4661e02cf221ad0aa2d855aa8042c89206b2abc70e73513a7452b3484e864a",
+      "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+    },
+    {
+      "claim": "The unchanged SEC submissions index identifies the August 13 Form 8-K as the latest issuer filing relevant to this review.",
+      "observed_at": "2026-08-19T23:39:52Z",
+      "source": "source_amat_sec_submissions_20260819",
+      "source_hash": "abeea8f1192e8cfa0fc1d38189141c3d34040e322d892b16bfbc7d118071e71c",
+      "url": "https://data.sec.gov/submissions/CIK0000006951.json"
+    },
+    {
+      "claim": "The corrected assessment request exited 2 with no changed paths because assessment source operation was ambiguous for this run; security-context afterward confirmed that assessment_3102e4b777989861e1b5 remains current and no assessment history row references this operation.",
+      "observed_at": "2026-08-19T23:45:52Z",
+      "source": "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/assessment_upsert_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/enqueue_ai_compute_relationship_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/issue_record_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/security_restore_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/security_upsert_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/security_upsert_retry01_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/source_q3_results_request.json",
+    "data/runs/daily-20260819T230515Z/01M0E5XT181SGH3F2RFGWJ4WGQ/source_submissions_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "issues_recorded": [
+    "issue_237eb6de59f6ab09bb98"
+  ],
+  "operation_id": "01M0E5XT181SGH3F2RFGWJ4WGQ",
+  "operations_created": [],
+  "reason_code": "assessment_source_operation_ambiguous",
+  "status": "blocked",
+  "summary": "Blocked exactly one Applied Materials security review after the deterministic schema-v2 assessment applier found both the completed quick-check predecessor and this security-research operation for the same security and run ID, making assessment provenance ambiguous. Current SEC evidence was rechecked and the security row was updated before the blocker surfaced, but no new assessment version could be accepted. The prior unsupported Unrated / Watch assessment and matching quick-check wiki page remain current. Issue issue_237eb6de59f6ab09bb98 records the resolvable controller dependency. No relationship follow-up, strategy, signal, order, allocation, execution, cash, portfolio, or performance state was created or changed.",
+  "validation": {
+    "checks": [
+      "PASS: native llm-wiki, controller, and papertrader-security-research skill hashes were verified by hermes_preflight.json.",
+      "PASS: current SEC source hashes and freshness were re-recorded without source-content drift.",
+      "PASS: security-context confirmed immutable identity, fresh USD price and FX references, no accepted relationships, and no new assessment history row for this operation.",
+      "FAIL: the mandatory schema-v2 assessment could not be accepted because two source operations for this security share daily-20260819T230515Z.",
+      "PASS: no relationship follow-up was enqueued after the assessment failure and no strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed.",
+      "PASS: strict wiki lint returned OK.",
+      "PASS: strict schema validation returned OK.",
+      "PASS: queue validation returned OK.",
+      "PASS: strict portfolio reconciliation returned OK."
+    ],
+    "passed": false
+  }
+}

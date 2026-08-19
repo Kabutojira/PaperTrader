@@ -1,0 +1,23 @@
+{
+  "security_id": "security_0a56aa634d077fe5796f",
+  "issuer_id": "issuer_0f91c69d2d38e1a7920d",
+  "company_name": "Applied Materials, Inc.",
+  "instrument_name": "Applied Materials, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "AMAT",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "AMAT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment & Materials",
+  "status": "watching",
+  "watchlist_reason": "Leading-edge logic, DRAM, advanced-packaging and installed-base service exposure, monitored against cycle, export-control, concentration and valuation risk.",
+  "research_summary": "Record fiscal-Q3 execution strengthens the thesis, but USD 496.17 exceeds USD 439 weighted and USD 448 base value; Sell/Avoid pending a materially lower entry or stronger normalized earnings.",
+  "research_page": "securities/security_0a56aa634d077fe5796f",
+  "last_research_at": "2026-08-19T23:39:52Z",
+  "next_review_at": "2026-09-18T23:39:52Z",
+  "source": "source_amat_q3_2026_results|source_amat_sec_submissions_20260819"
+}
