@@ -2,17 +2,20 @@
   "entity_id": "security_ef35e41886220d51c22c",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-08-19T15:40:58Z",
     "baseline_operation_id": "01KYZ37KNBYA53EWR9W1EFB6V6",
     "changed_gate": "legacy_two_case_valuation_cannot_support_schema_v2_decision_and_relationship_is_now_accepted",
     "current_market_data_as_of": "2026-08-19T09:08:06Z",
     "current_market_data_date": "2026-08-18",
     "current_source_price_hash": "8c36f33f012ab6d398011fbd89863974fa5a85b4e4a22b2e4747b5a22f0f8c26",
     "full_research_requested": true,
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-11T07:58:31Z",
     "market_data_date": "2026-08-07",
     "period_end": "2026-08-07",
     "period_start": "2026-07-10",
     "quick_check_operation_id": "01KZGGJ4M0VF8Y3J1HT2F3M59N",
+    "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
     "research_reasons": [
       {
         "cause": "macd_cross_above_signal_entered_after_material_period_decline",
@@ -25,6 +28,16 @@
       {
         "cause": "canonical_terafab_relationship_is_now_accepted_but_conditional_and_unquantified",
         "source_ref": "data/wiki/relationships/relationship_terafab_asml.md"
+      },
+      {
+        "dedupe_key": "security_research:security_ef35e41886220d51c22c:allocation-maintenance:2026-08-19T15:40:58Z",
+        "observed_at": "2026-08-19T18:17:24Z",
+        "prompt": "Revalidate security_ef35e41886220d51c22c with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_asml_q2_2026_6k",
+          "source_asml_q2_2026_financials"
+        ]
       }
     ],
     "security_id": "security_ef35e41886220d51c22c",
@@ -33,7 +46,7 @@
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Fully reassess ASML after the August MACD alert because the legacy two-case sensitivity and accepted conditional Terafab relationship cannot support the scenario-complete decision contract.",
+  "objective": "Fully reassess ASML after the August MACD alert because the legacy two-case sensitivity and accepted conditional Terafab relationship cannot support the scenario-complete decision contract. | Additional cause: Revalidate security_ef35e41886220d51c22c with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M0DB44Q8R22ED9WQC5ZEG526",
   "operation_type": "security_research",
   "payload_version": 1,
