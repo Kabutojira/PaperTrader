@@ -4050,3 +4050,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   assumptions. The legacy two-case sensitivity is not scenario-complete, so TSLA is Unrated /
   Watch and allocation-ineligible pending exactly one dependent full review; no strategy, signal,
   order, allocation or accounting state changed.
+
+## [2026-08-19T09:20:13Z] update | Tesla full security review
+
+- Rechecked Tesla's Q2 Form 10-Q and confirmed the SEC index still identifies it as the latest
+  operating filing. Replaced the unsupported two-case sensitivity with a scenario-complete sum of
+  parts: USD 137 / USD 272 / USD 491 bear/base/bull fair values, 25% / 50% / 25% probabilities and
+  USD 293 weighted value against a USD 336.87 mark. [[securities/security_dc7a111e297be528d96b|TSLA]]
+  changes from Unrated / Watch to Sell / Avoid: valuation is now supported, but the base case,
+  expected return, downside payoff and margin-of-safety gates remain ineligible. The accepted
+  medium-confidence [[relationships/relationship_terafab_tsla|Terafab relationship]] remains
+  unvalued because its framework is non-binding and unquantified; no strategy or paper signal was
+  created.

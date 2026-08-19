@@ -16,21 +16,23 @@ venue_mic: XNAS
 provider_symbol: TSLA
 currency: USD
 confidence: medium
-next_review: "2026-08-26"
+next_review: "2026-09-18"
 ---
 
 # Tesla, Inc. common stock
 
 ## Decision
 
-**Unrated / Watch; no conviction strategy.** Tesla's Q2 filing shows strong delivery and
-revenue growth, substantial liquidity, and continuing investment in autonomy, robotics, energy
-storage, and manufacturing. Those positives are offset by a 57% year-over-year decline in
-quarterly operating income, sharply higher research and overhead spending, capital expenditures
-that nearly doubled, and a valuation still dependent on unproven AI-enabled profit pools. The
-August bullish-MACD cross did not identify a fundamental catalyst or a supported buy zone. The
-legacy two-case revenue sensitivity is not a scenario-complete valuation, so the current canonical
-assessment is valuation-unsupported and allocation-ineligible pending one full review.
+**Rating: Sell. Portfolio action: Avoid.** A scenario-complete sum-of-parts review values Tesla at
+USD 137 / USD 272 / USD 491 per share in the bear/base/bull cases over 12 months, with 25% / 50% /
+25% probabilities and USD 293 probability-weighted value. Against the USD 336.87 mark, expected
+return is about negative 13%; the base case remains below the market price and the bear case shows
+substantial downside. Strong liquidity and real automotive, energy-storage and AI development
+capacity do not offset weak current operating leverage, exceptional capital intensity and the
+market value already assigned to AI-enabled businesses without disclosed mature economics. Avoid
+until supported component economics or a materially lower price clears the canonical return,
+payoff and margin-of-safety gates; downgrade further if demand, margins, cash conversion,
+autonomy execution, capital productivity, governance or liquidity deteriorates.
 
 ## Immutable identity
 
@@ -80,16 +82,28 @@ the valuation conclusion.
 
 ## Changes since prior review
 
-- **Evidence and thesis:** no later operating filing supersedes Q2. The core thesis, catalysts,
-  operating risks and invalidation conditions remain unchanged.
-- **Valuation and buy zone:** the prior USD 169.26 downside and USD 264.97 base sensitivity remains
-  useful historical context, but it lacks a bull case and explicit probabilities and cannot support
-  the canonical decision contract. No supported fair-value range or buy zone is published here.
-- **Relationship gate:** Terafab-to-Tesla is now accepted at medium confidence, subject to binding
-  terms, product qualification, economics and related-party governance.
-- **Action and escalation:** the MACD alert is noise for decision support. Tesla remains Unrated /
-  Watch and allocation-ineligible; exactly one dependent full review is required to build a current
-  scenario-complete sum-of-parts valuation and absorb the accepted relationship.
+- **Facts and evidence:** the Q2 Form 10-Q was rechecked on August 19 and remains the latest primary
+  operating evidence. No revenue, margin, liquidity, share-count or capital-spending fact changed
+  from the quick check, and no contradictory later filing was found.
+- **Assumptions and scenarios:** the unsupported legacy USD 169.26 / USD 264.97 two-case revenue
+  sensitivity is replaced by a current sum of parts. The new bear/base/bull values are USD 137 /
+  USD 272 / USD 491 with 25% / 50% / 25% probabilities. They separately bound annualized
+  automotive-and-services revenue, energy revenue, AI-enabled option value, USD 34.444 billion of
+  net cash and 3.540 billion diluted shares. The resulting USD 293 weighted value is below the
+  market price; no supported buy zone is reached.
+- **Thesis, catalysts and risks:** the thesis is neither upgraded nor invalidated. Vehicle and
+  energy scale plus balance-sheet capacity remain constructive; operating leverage, more than USD
+  25 billion of expected 2026 capital spending, autonomy economics, dilution, governance and
+  execution remain material risks. Margin improvement, profitable autonomy, durable energy margins
+  and productive capital conversion remain the catalysts.
+- **Blockers and gaps:** the hard `valuation_unsupported` blocker is resolved by the complete
+  scenario set. Medium confidence, unfavorable timing, a below-target margin of safety and
+  uncompelling valuation remain soft gaps. The accepted medium-confidence Terafab relationship
+  completes the relationship frontier but adds no current component value because its framework is
+  non-binding and unquantified.
+- **Rating and action:** the deterministic conclusion changes from Unrated / Watch to Sell / Avoid.
+  Allocation remains ineligible, and the prior conclusion that the MACD stabilization does not
+  justify a conviction strategy remains unchanged.
 
 ## Business and financial evidence
 
@@ -128,32 +142,41 @@ without commensurate per-share value, or liquidity weakens materially.
 
 ## Valuation
 
-At the USD 306.86 mark and 3.540 billion diluted weighted-average shares, Tesla's equity value is
-about USD 1.09 trillion. Annualizing Q2 revenue gives USD 112.944 billion. The company has about
-USD 34.444 billion of cash and short-term investments net of disclosed debt principal.
+The repository's `other` template with a `sum_of_parts` method fits because Tesla combines a
+profitable but cyclical automotive-and-services base, a growing energy segment, and pre-profit or
+economically undisclosed autonomy, robotics and AI optionality. No specialized template spans all
+three. Debt and dilution are explicit: the filing reports USD 43.524 billion of cash and short-term
+investments, USD 9.080 billion of disclosed debt principal and 3.540 billion diluted weighted-average
+shares.
 
-A bounded 12-month sensitivity applies deliberately generous revenue multiples to recognize the
-autonomy, robotics, software, and energy-storage option set without assuming those businesses have
-already achieved mature economics:
+The 12-month scenarios annualize Q2 automotive-and-services revenue of USD 25.097 billion and
+energy revenue of USD 3.139 billion. This strong-quarter annualization is deliberately transparent;
+the lower cases offset it with lower multiples and bounded option value rather than treating
+unproven AI businesses as current earnings.
 
-- Downside: **5x** annualized revenue plus net cash, or about USD 169.26 per share and **44.8%
-  downside**.
-- Base: **8x** annualized revenue plus net cash, or about USD 264.97 per share and **13.6%
-  downside**.
+- **Bear — USD 137, 25% probability.** Automotive and services receive 3x annualized revenue,
+  energy receives 4x, AI-enabled optionality receives USD 100 billion, and net cash is added.
+  Demand or margins weaken, capital spending stays above cash conversion, and autonomy and robotics
+  do not establish material profit pools.
+- **Base — USD 272, 50% probability.** Automotive and services receive 4.5x annualized revenue,
+  energy receives 6x, AI-enabled optionality receives USD 400 billion, and net cash is added.
+  Scale and energy growth persist, but operating leverage improves only gradually and AI economics
+  remain promising rather than mature.
+- **Bull — USD 491, 25% probability.** Automotive and services receive 6x annualized revenue,
+  energy receives 8x, AI-enabled optionality receives USD 1 trillion, and net cash is added.
+  Vehicle margins recover, energy compounds with durable margins, and autonomy or robotics reaches
+  safe commercial scale with demonstrable cash economics.
 
-This is a historical sensitivity, not a precise intrinsic target or a current canonical valuation.
-It is favorable to the equity because it
-uses annualized strong-quarter revenue, does not discount future capital spending, and gives a
-premium multiple to economics that remain partly unproven. The oversold decline has not created
-the configured 10% base upside or an adequate upside-to-downside ratio. A full review must replace
-it with ordered bear, base and bull values, explicit probabilities, current share count and net
-cash, and separate assumptions for automotive, energy and AI-enabled optionality before any buy
-zone can be supported.
+The probability-weighted fair value is **USD 293**. Against the August 18 adjusted close of USD
+336.87, the bear/base/bull returns are approximately **negative 59.3% / negative 19.3% / positive
+45.8%**, and expected return is approximately **negative 13.0%** before the deterministic
+confidence adjustment. The scenario set is complete but not attractive: the base case, expected
+return, downside payoff and margin of safety do not support an entry or a conviction strategy.
 
 ## Sources
 
 - [Tesla Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm)
-  (`source_tsla_q2_2026_10q`, checked 2026-07-29).
+  (`source_tsla_q2_2026_10q`, rechecked 2026-08-19).
 - [Tesla Q2 2026 production, deliveries and deployments](https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments)
   (`source_tsla_q2_2026_deliveries`, checked 2026-07-29).
 - [Tesla SEC submissions index](https://data.sec.gov/submissions/CIK0001318605.json)
@@ -164,5 +187,5 @@ zone can be supported.
   `2026-08-19T09:08:06Z` for the current comparison; the immutable alert packet retains the
   `2026-08-08T11:01:36Z` payload observation.
 
-Next review: **2026-08-26**, through the dependent full review, or sooner after material delivery,
-margin, autonomy, regulatory, capital-spending, financing, Terafab, or guidance evidence.
+Next review: **2026-09-18**, or sooner after material delivery, margin, autonomy, regulatory,
+capital-spending, financing, Terafab, governance or guidance evidence.

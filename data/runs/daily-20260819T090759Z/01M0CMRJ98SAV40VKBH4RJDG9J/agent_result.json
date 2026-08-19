@@ -1,0 +1,55 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader research source record --request data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/source_tsla_q2_2026_10q_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/assessment_upsert_request.json"
+  ],
+  "daily_report_items": [
+    "Tesla full review failed closed after its required assessment upsert reported an ambiguous source operation for the run; no strategy, signal, order, allocation, accounting change, or follow-up operation was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The filing reports Q2 revenue of USD 28.236 billion, operating income of USD 398 million, cash and cash equivalents of USD 15.219 billion, short-term investments of USD 28.305 billion, and 3.540 billion diluted weighted-average shares; it also expects more than USD 25 billion of 2026 capital expenditures.",
+      "observed_at": "2026-08-19T09:20:13Z",
+      "source": "Tesla, Inc. Q2 2026 Form 10-Q",
+      "source_hash": "80ad137ec40349c4a806e77e716c8391c6590eba2cbe8a8a1d80cbe1277034a2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+    },
+    {
+      "claim": "The identity-matched TSLA market row records an August 18 adjusted close of USD 336.8699951171875 retrieved at 2026-08-19T09:08:06Z.",
+      "observed_at": "2026-08-19T09:08:06Z",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "The mandatory security-context command succeeded, source and security upserts succeeded, and the assessment upsert exited 2 without changing assessment state because the source operation was ambiguous for this run.",
+      "source": "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/assessment_upsert_request.json",
+    "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/security_upsert_request.json",
+    "data/runs/daily-20260819T090759Z/01M0CMRJ98SAV40VKBH4RJDG9J/source_tsla_q2_2026_10q_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0CMRJ98SAV40VKBH4RJDG9J",
+  "operations_created": [],
+  "reason_code": "assessment_source_operation_ambiguous",
+  "status": "failed",
+  "summary": "Tesla's Q2 filing was rechecked and the security page and structured security summary were updated with a scenario-complete USD 137/USD 272/USD 491 sum-of-parts review. The required comparable assessment was not accepted: the audited assessment upsert failed closed with 'assessment source operation is ambiguous for this run'. Per controller policy, the rejected command was not retried, no idea or strategy follow-up was created, and the operation cannot succeed without an accepted assessment.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context receipt succeeded.",
+      "Primary Q2 filing source refresh succeeded and the identity-matched security upsert succeeded.",
+      "Scenario probabilities total 100 and fair values are ordered, but the required assessment was not accepted because the CLI reported an ambiguous source operation for this run.",
+      "No idea follow-up was enqueued because successful assessment completion was not achieved.",
+      "No strategy, signal, order, allocation target, ledger, execution, cash, portfolio, fill, or performance state was changed."
+    ],
+    "passed": false
+  }
+}
