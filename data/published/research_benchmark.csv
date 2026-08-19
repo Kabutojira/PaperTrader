@@ -1,3 +1,3 @@
 snapshot_id,as_of,policy_version,comparison_only,copy_ready,security_id,ticker,company_name,rating,weight_pct,reference_price,currency,research_page
-decision_00b210d3124542739aad,2026-08-19T22:09:28Z,equal_weight_rated_v1,true,false,security_715bde20b6e1e1320c1a,DLO,DLocal Limited,buy,25,13.640000343322754,USD,data/wiki/securities/security_715bde20b6e1e1320c1a.md
-decision_00b210d3124542739aad,2026-08-19T22:09:28Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,
+decision_89f8e2a455f76218e169,2026-08-19T23:48:56Z,equal_weight_rated_v1,true,false,security_715bde20b6e1e1320c1a,DLO,DLocal Limited,buy,25,13.640000343322754,USD,data/wiki/securities/security_715bde20b6e1e1320c1a.md
+decision_89f8e2a455f76218e169,2026-08-19T23:48:56Z,equal_weight_rated_v1,true,false,,CASH,Cash,unrated,75,1,,

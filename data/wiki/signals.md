@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_00b210d3124542739aad"
-as_of: "2026-08-19T22:09:28Z"
+snapshot_id: "decision_89f8e2a455f76218e169"
+as_of: "2026-08-19T23:48:56Z"
 ---
 
 # Signals
 
-**As of `2026-08-19T22:09:28Z`**
+**As of `2026-08-19T23:48:56Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
 
@@ -96,15 +105,6 @@ No pending orders.
 - Market date: `2026-08-19`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
-
-### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-19`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
 
 ### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
 
