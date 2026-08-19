@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import subprocess
+import sys
 import time
 from collections.abc import Callable, Mapping
 from dataclasses import dataclass
@@ -845,11 +846,17 @@ def _render_draft_podcast(
         raise PodcastError("ephemeral podcast directory must not be a symlink")
     if any(output_root.iterdir()):
         raise PodcastError("ephemeral podcast directory must start empty")
+    if settings.podcast.tts_command != ("edge-tts",):
+        raise PodcastError("configured TTS backend identity is invalid")
+    tts_python = Path(sys.executable)
+    if not tts_python.is_absolute() or not tts_python.is_file():
+        raise PodcastError("controller Python interpreter is unavailable for TTS")
+    tts_command = (str(tts_python), "-m", "edge_tts")
     chunk_paths: list[Path] = []
     for index, text in enumerate(chunks, start=1):
         path = output_root / f"chunk-{index:02d}.mp3"
         command = [
-            *settings.podcast.tts_command,
+            *tts_command,
             "--voice",
             settings.podcast.voice,
             "--text",
@@ -860,9 +867,13 @@ def _render_draft_podcast(
         for attempt in range(1, TTS_CHUNK_MAXIMUM_ATTEMPTS + 1):
             if path.is_symlink() or path.is_file():
                 path.unlink(missing_ok=True)
-            rendered = runner(command, check=False, capture_output=True)
+            try:
+                rendered = runner(command, check=False, capture_output=True)
+            except OSError:
+                rendered = None
             if (
-                rendered.returncode == 0
+                rendered is not None
+                and rendered.returncode == 0
                 and not path.is_symlink()
                 and path.is_file()
                 and path.stat().st_size > 0

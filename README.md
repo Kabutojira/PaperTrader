@@ -397,13 +397,14 @@ under `data/wiki/podcasts/`, with portfolio state limited to a brief implication
 
 After writing the script, Hermes invokes the audited `podcast render-draft` command exactly once.
 Pinned Edge TTS runs sequentially only in a controller-selected runner-temp directory, with bounded
-per-chunk retries inside that one render invocation. Once the transcript checkpoint is pushed,
-`podcast seal-render` binds the existing MP3 to the exact committed script hash without synthesizing
-again. Deterministic Telegram steps then deliver the committed spoken text and sealed audio
-independently in the same runtime job. No media enters Git, Pages, logs, run artifacts, or GitHub
-Actions artifacts, and all temporary audio and manifests are removed after delivery or failure.
-Podcast state remains a one-way delivery view and cannot invalidate the immutable investment
-snapshot.
+per-chunk retries inside that one render invocation. The renderer launches the pinned backend as a
+module of the active controller Python, so an agent terminal cannot lose or replace it through
+`PATH`. Once the transcript checkpoint is pushed, `podcast seal-render` binds the existing MP3 to
+the exact committed script hash without synthesizing again. Deterministic Telegram steps then
+deliver the committed spoken text and sealed audio independently in the same runtime job. No media
+enters Git, Pages, logs, run artifacts, or GitHub Actions artifacts, and all temporary audio and
+manifests are removed after delivery or failure. Podcast state remains a one-way delivery view and
+cannot invalidate the immutable investment snapshot.
 
 Do not hand-edit structured runtime CSVs. Use the CLI so identity, schema, atomic-write,
 paper-only, risk, and audit contracts are enforced. `executions.csv`, `cash_ledger.csv`,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import subprocess
+import sys
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -468,8 +469,10 @@ def test_podcast_render_draft_uses_only_audited_runner_temp(
     page = sandbox_repository / script_path
     page.parent.mkdir(parents=True, exist_ok=True)
     page.write_text(markdown, encoding="utf-8")
+    commands: list[list[str]] = []
 
     def fake_runner(command: list[str], **_: object) -> subprocess.CompletedProcess[object]:
+        commands.append(command)
         if "-show_entries" in command:
             return subprocess.CompletedProcess(command, 0, "1200\n", "")
         output = (
@@ -499,6 +502,9 @@ def test_podcast_render_draft_uses_only_audited_runner_temp(
     assert Path(result.manifest_path).is_file()
     assert not list(sandbox_repository.rglob("*.mp3"))
     assert not list(output.glob("chunk-*.mp3"))
+    tts_commands = [command for command in commands if "--write-media" in command]
+    assert len(tts_commands) == 4
+    assert all(command[:3] == [sys.executable, "-m", "edge_tts"] for command in tts_commands)
 
 
 def test_podcast_script_preflight_uses_the_renderers_exact_text_gates(
@@ -630,7 +636,8 @@ def test_transient_tts_chunk_failure_retries_within_one_draft_render(
             target = Path(command[command.index("--write-media") + 1])
             if tts_attempts == 1:
                 target.write_bytes(b"partial-audio")
-                return subprocess.CompletedProcess(command, 1, b"", b"temporary failure")
+                raise FileNotFoundError("bare TTS entrypoint is unavailable")
+            assert not target.exists()
             target.write_bytes(b"chunk-audio")
             return subprocess.CompletedProcess(command, 0, b"", b"")
         Path(command[-1]).write_bytes(b"assembled-audio")

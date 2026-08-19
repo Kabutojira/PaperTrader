@@ -922,8 +922,9 @@ keep paper-trading identity only in frontmatter.
 
 Hermes now invokes one audited `podcast render-draft` command after writing the script. Edge TTS,
 bounded per-chunk transport retries, chunk assembly, and validation run sequentially beneath a
-controller-provided runner-temp path. After the script checkpoint, deterministic
-`podcast seal-render` binds that existing audio to the exact committed transcript without a fallback
-render. Telegram sends committed spoken text and sealed audio independently in the same runtime job,
-persists only redacted retry issue state, and always removes all media. The former upload/download
-Actions-artifact handoff is removed.
+controller-provided runner-temp path. The backend is invoked through the controller's active Python
+module environment rather than the agent terminal's mutable `PATH`. After the script checkpoint,
+deterministic `podcast seal-render` binds that existing audio to the exact committed transcript
+without a fallback render. Telegram sends committed spoken text and sealed audio independently in
+the same runtime job, persists only redacted retry issue state, and always removes all media. The
+former upload/download Actions-artifact handoff is removed.
