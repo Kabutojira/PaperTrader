@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "ASML assessment rejected after security row update",
+  "description": "The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests were not invoked, and no strategy, signal, order, allocation or accounting state changed. A fresh operation must publish the supported assessment with valuation_template_rationale present as an empty string for the mature_compounder template, then enqueue the bounded dependent follow-ups.",
+  "owner": "controller",
+  "related_run_id": "daily-20260819T201740Z",
+  "related_operation_id": "01M0DB44Q8R22ED9WQC5ZEG526"
+}

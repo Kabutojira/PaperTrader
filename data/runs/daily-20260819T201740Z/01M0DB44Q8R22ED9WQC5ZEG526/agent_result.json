@@ -1,0 +1,78 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader research security upsert --request data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request_v2.json",
+    "papertrader issue record --request data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request_v2.json",
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "ASML full research retry failed closed: the page and security row were refreshed to the August 19 market state, but the required comparable assessment was rejected for a missing valuation_template_rationale field. The prior unsupported assessment remains canonical and no follow-up or trading state was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The audited assessment upsert exited 2 with no changed paths; the CLI reported that valuation_template_rationale was missing. The security upsert and issue record succeeded.",
+      "source": "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/command_audit.json"
+    },
+    {
+      "claim": "The post-failure context confirmed the security row now references the USD 1,751.73 review while the current canonical assessment remains assessment_e769cb597db3a1edaea7, schema version 2, valuation unsupported, from run daily-20260819T153048Z.",
+      "source": "papertrader research security-context --security-id security_ef35e41886220d51c22c"
+    },
+    {
+      "claim": "The retained SEC-filed Q2 2026 Form 6-K remains the primary source for ASML revenue, margins, guidance, bookings, demand commentary and risks used by the page's scenario analysis.",
+      "observed_at": "2026-08-19T18:20:35Z",
+      "source": "source_asml_q2_2026_6k",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+    },
+    {
+      "claim": "The retained SEC-filed Q2 financial statements support the diluted-share, EPS, cash, debt, liquidity and working-capital inputs used in the attempted complete valuation.",
+      "observed_at": "2026-08-19T18:20:35Z",
+      "source": "source_asml_q2_2026_financials",
+      "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm"
+    },
+    {
+      "claim": "Identity-matched deterministic market state supplied an ASML adjusted close of USD 1,751.72998046875 and USD/EUR rate of 0.8561999797821045 for the attempted assessment.",
+      "observed_at": "2026-08-19T20:17:45Z",
+      "source": "data/market/latest.csv and data/market/fx/USD_EUR.csv"
+    },
+    {
+      "claim": "The only canonical accepted ASML relationship remains the conditional positive Terafab edge; the AI-compute pairing remains a candidate and was not represented as accepted.",
+      "source": "data/wiki/relationships/relationship_terafab_asml.md"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request_v2.json",
+    "data/runs/daily-20260819T201740Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request_v2.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_ef35e41886220d51c22c.md"
+  ],
+  "issues_recorded": [
+    "issue_f50e95ee4d3a5cc05618"
+  ],
+  "operation_id": "01M0DB44Q8R22ED9WQC5ZEG526",
+  "operations_created": [],
+  "reason_code": "assessment_request_rejected",
+  "status": "failed",
+  "summary": "The bounded ASML retry refreshed the security page and structured security row to the 2026-08-19 USD 1,751.73 mark and retained the complete primary-evidence scenario analysis. The required schema-v2 assessment command was rejected before changing assessment state because valuation_template_rationale was omitted even though the field must be present and empty for mature_compounder. The no-retry rule prohibited a corrected second assessment invocation. A post-failure security-context receipt confirmed that the canonical assessment remains the prior unsupported version. The existing controller issue was refreshed for this run; dependent relationship and idea operations were not enqueued, and no strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or other accounting state changed.",
+  "validation": {
+    "checks": [
+      "Initial and post-failure security-context receipts succeeded and confirmed immutable security identity plus unchanged canonical assessment history.",
+      "Security upsert succeeded for security_ef35e41886220d51c22c with the fresh deterministic price and FX identity.",
+      "Assessment upsert failed before state mutation because assessment_v2 fields differed: valuation_template_rationale was missing.",
+      "No corrected assessment command was attempted after rejection, in accordance with the routed-operation no-retry rule.",
+      "Prepared follow-up requests were removed without invocation; operations_created is empty.",
+      "Strict wiki lint passed.",
+      "Strict repository integrity passed, including structured schemas and identity checks.",
+      "No allocation targets/history, orders, fills, executions, cash, portfolio, performance, or accounting state changed."
+    ],
+    "passed": false
+  }
+}

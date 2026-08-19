@@ -4218,3 +4218,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The accepted Terafab relationship remains current and unquantified. The complete idea-catalog
   review identifies AI compute, networking and hyperscaler monetization as one specific candidate
   edge requiring separate relationship review. No conviction strategy or paper signal is justified.
+
+## [2026-08-19T20:23:18Z] update | ASML assessment reconciliation
+
+- Reconciled [[securities/security_ef35e41886220d51c22c|ASML's]] full scenario review with the
+  19 August USD 1,751.73 close and 0.8561999798 USD/EUR rate. The same EUR 34 / EUR 41 / EUR 47
+  forward-EPS and 30x / 38x / 44x multiple assumptions now produce USD 1,191.31 / USD 1,819.67 /
+  USD 2,415.32 fair values. Weighted return improves to about 5.21%, but expected-return,
+  confidence-adjusted-return, base-upside, bear/base-payoff and margin-of-safety gates still fail.
+- Supported valuation resolves the prior partial-state issue without changing Hold / Watch. One
+  dependent Terafab idea refresh and one AI-compute relationship review remain the only justified
+  follow-ups; no strategy, signal, paper order, allocation or accounting state changed.
