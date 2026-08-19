@@ -1,0 +1,18 @@
+{
+  "source_id": "source_asml_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0000937966.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000937966.json",
+  "source_type": "regulator",
+  "title": "ASML Holding N.V. SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4dfe7cfb6673dc94f2f02869135ddb4a5e6632d8850ce141f77c865f32935d42",
+  "related_entity_ids": "security_ef35e41886220d51c22c",
+  "checked_at": "2026-08-19T15:49:52Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest listed ASML operating filing is the 2026-07-15 Form 6-K, accession 0001628280-26-048235; later periodic operating filings are absent through this check.",
+  "summary": "The SEC submissions index independently confirms that the retained Q2 Form 6-K remains ASML's latest periodic operating filing through 2026-08-19.",
+  "run_id": "daily-20260819T153048Z"
+}

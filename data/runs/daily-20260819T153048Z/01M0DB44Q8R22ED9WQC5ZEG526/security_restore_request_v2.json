@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ef35e41886220d51c22c",
+  "issuer_id": "issuer_cbc97be23df5c67a2971",
+  "company_name": "ASML Holding N.V.",
+  "instrument_name": "ASML Holding N.V. New York registered shares",
+  "instrument_type": "equity",
+  "ticker": "ASML",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "ASML",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "NL",
+  "sector": "Technology",
+  "industry": "Semiconductor Equipment & Materials",
+  "status": "watching",
+  "watchlist_reason": "ASML's monopoly-like lithography position and accepted conditional Terafab relationship merit monitoring, but valuation is unsupported pending a scenario-complete full review.",
+  "research_summary": "Q2 operating evidence is unchanged and the bullish MACD reversal is not an operating catalyst; valuation is unsupported pending one full review.",
+  "research_page": "data/wiki/securities/security_ef35e41886220d51c22c.md",
+  "last_research_at": "2026-08-19T15:52:23Z",
+  "next_review_at": "2026-08-26T12:00:00Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+}

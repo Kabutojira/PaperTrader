@@ -1,0 +1,18 @@
+{
+  "source_id": "source_asml_q2_2026_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm",
+  "source_type": "filing",
+  "title": "ASML Holding N.V. Q2 2026 Form 6-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef",
+  "related_entity_ids": "security_ef35e41886220d51c22c",
+  "checked_at": "2026-08-19T15:49:52Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "ASML reported Q2 2026 total net sales of EUR 9.3 billion and net income of EUR 2.9 billion, and raised its 2026 outlook to EUR 43-45 billion of sales with 54%-56% gross margin.",
+  "summary": "The current SEC-hosted filing remains available and confirms the Nasdaq-listed issuer identity, strong Q2 operating result and raised full-year outlook; it does not disclose a later operating impairment or Terafab-specific order.",
+  "run_id": "daily-20260819T153048Z"
+}

@@ -1,0 +1,97 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader research source record --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_6k_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_financials_request.json",
+    "papertrader research source record --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_sec_submissions_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/security_restore_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/security_restore_request_v2.json",
+    "papertrader issue record --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader research security-context --security-id security_ef35e41886220d51c22c",
+    "papertrader issue record --request data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_correction_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "ASML's full review failed closed because the deterministic assessment applier could not choose between the same-run quick check and full review as the immutable source operation. Current SEC evidence preserves strong Q2 economics and raised guidance, but the prior hash-aligned Unrated / Watch assessment remains authoritative. Issue issue_90ae9d86b30df118b516 was recorded, and no follow-up or paper-trading state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-hosted Q2 Form 6-K remains available and reports Q2 2026 total net sales of EUR 9.3 billion, net income of EUR 2.9 billion and raised 2026 guidance of EUR 43-45 billion of sales with 54%-56% gross margin.",
+      "observed_at": "2026-08-19T15:49:52Z",
+      "source": "source_asml_q2_2026_6k",
+      "source_hash": "a926120ff1b3fdab200f89a326aeccc7e377709d0a8968b52792dd7ce3aa77ef",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm"
+    },
+    {
+      "claim": "The filed Q2 statements report EUR 9.3265 billion of revenue, 54.0% gross margin, EUR 2.9176 billion of net income, EUR 7.58 diluted EPS, 384.9 million diluted weighted-average shares, EUR 6.6719 billion of cash, EUR 0.9096 billion of short-term investments and EUR 1.9844 billion of long-term debt.",
+      "observed_at": "2026-08-19T15:49:52Z",
+      "source": "source_asml_q2_2026_financials",
+      "source_hash": "b56eee90009801cceaadfb9725bac21d8cc3e502dbe4f3cb9e6e396b48807a8d",
+      "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/financialstatementsusgaa.htm"
+    },
+    {
+      "claim": "The SEC submissions index checked on 19 August 2026 identifies the 15 July 2026 Form 6-K as ASML's latest periodic operating filing.",
+      "observed_at": "2026-08-19T15:49:52Z",
+      "source": "source_asml_sec_submissions_20260819",
+      "source_hash": "4dfe7cfb6673dc94f2f02869135ddb4a5e6632d8850ce141f77c865f32935d42",
+      "url": "https://data.sec.gov/submissions/CIK0000937966.json"
+    },
+    {
+      "claim": "The assessment upsert exited 2 with 'assessment source operation is ambiguous for this run' and changed neither security_assessments.csv nor security_assessment_history.csv because quick_check_research operation 01KZGGJ4M0VF8Y3J1HT2F3M59N and security_research operation 01M0DB44Q8R22ED9WQC5ZEG526 are both security-review operations for this security claimed by daily-20260819T153048Z.",
+      "source": "PaperTrader deterministic assessment applier"
+    },
+    {
+      "claim": "After restoration, current assessment assessment_e769cb597db3a1edaea7 remains schema version 2, predecessor-linked to assessment_967e9b4adc7c4610524e and hash-aligned to current page hash 41176fb012c3dcd76b4b4d159ea79f08ee5d3965c6b95cb404c1b508a48f92c9.",
+      "source": "PaperTrader mandatory security context"
+    },
+    {
+      "claim": "Issue issue_90ae9d86b30df118b516 records the same-run assessment-provenance failure for deterministic controller repair or rescheduling.",
+      "source": "PaperTrader issue receipt"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/assessment_upsert_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_correction_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/issue_record_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/security_restore_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/security_restore_request_v2.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/security_upsert_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_6k_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_q2_financials_request.json",
+    "data/runs/daily-20260819T153048Z/01M0DB44Q8R22ED9WQC5ZEG526/source_asml_sec_submissions_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "issues_recorded": [
+    "issue_90ae9d86b30df118b516"
+  ],
+  "operation_id": "01M0DB44Q8R22ED9WQC5ZEG526",
+  "operations_created": [],
+  "reason_code": "assessment_source_operation_ambiguous",
+  "status": "failed",
+  "summary": "Failed closed after exactly one bounded ASML full security review. Current SEC evidence preserves ASML's exceptional lithography franchise, raised 2026 outlook, strong margins, net-cash position and conditional Terafab exposure. A complete mature-compounder earnings-multiple assessment with ordered bear, base and bull scenarios was prepared, but the deterministic assessment applier rejected it before assessment state changed because the completed quick check and this full review share the same security and run identity, making source-operation provenance ambiguous. The security page and conclusions were restored to the prior hash-aligned quick-check state, the structured summary was restored while retaining an advanced audit timestamp, issue issue_90ae9d86b30df118b516 was recorded, and no idea or strategy follow-up was enqueued. No signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260819T153048Z with a live lease, validated payload, immutable ASML/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after restoration; the prior quick-check assessment remains predecessor-linked and page-hash-aligned.",
+      "Rechecked and registered the current SEC Form 6-K, financial statements and SEC submissions index; all retained sources were available with current checks.",
+      "Prepared one supported mature-compounder earnings-multiple schema-v2 assessment, but the deterministic applier rejected it before any assessment path changed because same-security quick and full reviews share this run identity.",
+      "Restored the security page to its exact prior hash and restored the structured security conclusion; only the audit research timestamp advanced because deterministic state forbids an older timestamp.",
+      "No idea-research or strategy follow-up was enqueued because no full assessment was accepted.",
+      "Strict schema validation, strict wiki lint, strict integrity, strict portfolio reconciliation and queue validation all passed after issue issue_90ae9d86b30df118b516 was recorded.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ],
+    "passed": false
+  }
+}

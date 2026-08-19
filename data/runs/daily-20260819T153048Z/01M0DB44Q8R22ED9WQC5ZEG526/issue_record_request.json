@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "ASML full assessment blocked by same-run provenance ambiguity",
+  "description": "The required schema-v2 assessment for security_ef35e41886220d51c22c was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation 01M0DB44Q8R22ED9WQC5ZEG51F and current security_research operation 01M0DB44Q8R22ED9WQC5ZEG526 claimed by run daily-20260819T153048Z and cannot select a unique source operation. Current Q2 SEC evidence supports a scenario-complete mature-compounder assessment, but the operation must fail closed without an accepted assessment. The security page and structured conclusion were restored to the prior hash-aligned quick-check state, no idea or strategy follow-up was enqueued, and the refreshed source checks remain as audit evidence. The controller must schedule the full review under a distinct run or repair deterministic provenance selection.",
+  "owner": "controller",
+  "related_run_id": "daily-20260819T153048Z",
+  "related_operation_id": "01M0DB44Q8R22ED9WQC5ZEG526"
+}
