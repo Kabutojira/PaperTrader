@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_43511df5ea63ce6e7382"
-as_of: "2026-08-19T09:26:30Z"
+snapshot_id: "decision_ead05cf8f46d7dcfa14f"
+as_of: "2026-08-19T12:34:54Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-19T09:26:30Z`
+**As of:** `2026-08-19T12:34:54Z`
 **Investment data:** Degraded — review investment data gaps
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -30,7 +30,7 @@ as_of: "2026-08-19T09:26:30Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 343
+- Research backlog: 344
 - Last successful daily run: 2026-08-17
 
 ## Current issues by investment impact
@@ -38,6 +38,7 @@ as_of: "2026-08-19T09:26:30Z"
 ### Blocks Action
 
 - Error **RXRX — Recursion Pharmaceuticals, Inc.: Recursion full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_ed7d5b616a196969c815|RXRX]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_ed7d5b616a196969c815|Quick check research for RXRX on 2026-08-12]] and current security_research operation [[securities/security_ed7d5b616a196969c815|Security research for RXRX on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260812|Daily report for 2026-08-12]] and cannot select a unique source operation. Current Q2 SEC and ClinicalTrials.gov evidence supports active development but cannot bound a risk-adjusted NPV.
+- Error **MP — MP Materials Corp.: MP Materials full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_cd492d97064d8574156e|MP]] was rejected before assessment state changed because the deterministic assessment applier found both completed quick_check_research operation [[securities/security_cd492d97064d8574156e|Quick check research for MP on 2026-08-19]] and current security_research operation [[securities/security_cd492d97064d8574156e|Security research for MP on 2026-08-19]] claimed by run [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]] and cannot select a unique source operation. Current Q2 SEC evidence supports a full normalized-earnings rebuild, but the operation must fail closed without a
 - Error **ISRG — Intuitive Surgical, Inc.: Intuitive Surgical full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_1f9cce545ede94cd6349|ISRG]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-11]] and the current security_research operation [[securities/security_1f9cce545ede94cd6349|Security research for ISRG on 2026-08-12]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed 25%/50%/25% earnings-multiple scenarios were USD 243.96/USD 336.59/USD 436.81 versus the US
 - Error **PLTR — Palantir Technologies Inc.: Palantir full assessment blocked by same-run provenance ambiguity** — The required schema-v2 assessment for [[securities/security_bdc2f87dadf134760c3a|PLTR]] was rejected before assessment state changed because the deterministic assessment applier found both the completed quick_check_research operation [[securities/security_bdc2f87dadf134760c3a|Quick check research for PLTR on 2026-08-11]] and the current security_research operation [[securities/security_bdc2f87dadf134760c3a|Security research for PLTR on 2026-08-11]] claimed by run [[daily-reports/daily-report_20260811|Daily report for 2026-08-11]] and cannot select a unique source operation. The completed scenario research could not be accepted without an immutable predecessor-linked assessment.
 
@@ -143,7 +144,6 @@ as_of: "2026-08-19T09:26:30Z"
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260818|Daily report for 2026-08-18]]** — Committed Telegram delivery is awaiting a bounded retry.
-- Warning **Telegram podcast audio delivery unavailable** — Committed Telegram delivery is awaiting a bounded retry.
 
 ### Operational Only
 
@@ -176,7 +176,7 @@ as_of: "2026-08-19T09:26:30Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 343 active operations.
+Showing 20 of 344 active operations.
 
 <details><summary>Active research work</summary>
 

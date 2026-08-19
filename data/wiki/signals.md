@@ -7,13 +7,13 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_43511df5ea63ce6e7382"
-as_of: "2026-08-19T09:26:30Z"
+snapshot_id: "decision_ead05cf8f46d7dcfa14f"
+as_of: "2026-08-19T12:34:54Z"
 ---
 
 # Signals
 
-**As of `2026-08-19T09:26:30Z`**
+**As of `2026-08-19T12:34:54Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_overbought`
+- Market date: `2026-08-18`
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -69,15 +78,6 @@ No pending orders.
 - Market date: `2026-08-18`
 - Research status: `succeeded`
 - Conclusion: Completed the repeat schema-version-2 review of DLocal Limited after the August 13-14 volume anomaly and August 18 lower-Bollinger breach. Q2 TPV, revenue, gross profit, operating profit and adjusted free cash flow improved; management raised TPV and gross-profit guidance, while gross-profit-over-TPV compressed to 0.72%, top-ten merchant concentration remained 61%, and a new USD 150 million facility added deployment risk. At the fresh USD 13.64 mark, the deterministic assessment derives Buy/Initiate economics with USD 9.00/USD 18.70/USD 29.40 bear/base/bull values, 38.93% probability-weighted expected return and a USD 14.96 buy-below price. Allocation remains ineligible solely because no accepted idea-security relationship exists, so no strategy, signal, order, or paper position was created.
-
-### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_overbought`
-- Market date: `2026-08-18`
-- Research status: `skipped`
-- Conclusion: Queue triage disposition
 
 ### [ABCL — AbCellera Biologics Inc.](securities/security_7bf8f4c9cc12ae410e40)
 

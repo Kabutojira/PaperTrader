@@ -7,8 +7,8 @@ tags:
 created: "2026-08-19"
 updated: "2026-08-19"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_43511df5ea63ce6e7382"
-as_of: "2026-08-19T09:26:30Z"
+snapshot_id: "decision_ead05cf8f46d7dcfa14f"
+as_of: "2026-08-19T12:34:54Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **132**
+- Immutable assessment versions: **134**
 - Securities with retained revisions: **70**
 
 ## Candidate
@@ -391,6 +391,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Daily research podcast — 2026-08-17T185232Z](podcasts/daily-podcast_20260817T185232Z)
 - [Daily research podcast — 2026-08-18T201127Z](podcasts/daily-podcast_20260818T201127Z)
 - [Daily research podcast — 2026-08-18T231700Z](podcasts/daily-podcast_20260818T231700Z)
+- [Daily research podcast — 2026-08-19T090759Z](podcasts/daily-podcast_20260819T090759Z)
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
