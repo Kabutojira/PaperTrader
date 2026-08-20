@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-28"
-provenance: "source_parrot_q1_2026_business; source_parrot_fy2025_results; repository market state"
+updated: "2026-08-20"
+provenance: "source_parrot_h1_2026_results; source_parrot_shares_20260731; source_parrot_q1_2026_business; source_parrot_fy2025_results; repository market state"
 security_id: security_cc4dcb8f002b61dffe00
 issuer_id: issuer_02f43c813513608bb99c
 confidence: medium
-next_review: "2026-08-01"
+next_review: "2026-09-19"
 ---
 
 # Parrot S.A. ordinary shares
@@ -24,63 +24,128 @@ next_review: "2026-08-01"
 Parrot's share information confirms the Euronext Paris ordinary shares. This review links them to
 [[ideas/idea_sovereign_small_drone_supply_chains]].
 
-## Economics and thesis
+## Current verdict
 
-Parrot designs professional micro-drones and image-analysis products. Its 20 May 2026 issuer release
-reported Q1 revenue of EUR 27.9 million, up 52% year over year. Professional micro-UAV revenue
-doubled to EUR 21.3 million and represented 76% of the group, driven by the ANAFI UKR production
-ramp and institutional demand. Critical-infrastructure revenue declined 16% to EUR 6.6 million as
-the business shifted toward subscriptions.
+**Sell / Avoid at EUR 9.80; operating progress is real, but scenario value and liquidity do not
+support a paper position.** First-half 2026 results confirm that sovereign professional-microdrone
+demand is converting into revenue and positive recurring operating income. A supported
+pre-profit-growth valuation nevertheless produces EUR 5.48 / EUR 9.09 / EUR 14.51 bear/base/bull
+fair values, with the base and probability-weighted cases below the current mark. Thin turnover,
+program concentration, cash consumption and execution risk keep Parrot on the watchlist.
 
-The operating evidence is improving but not yet durable. The 27 March 2026 full-year release shows
-2025 revenue of EUR 79.8 million and a 75.4% gross margin, while second-half ordinary operations
-were slightly positive. Full-year ordinary operations nevertheless lost EUR 12.7 million, net loss
-was EUR 15.0 million, and operating cash outflow was EUR 7.6 million. Year-end cash was EUR 23.0
-million; the main-shareholder facility had EUR 5.0 million outstanding and was expanded to EUR 20.0
-million through February 2028. Management subsequently described Q1 as slightly profitable with no
-cash consumed. BLUE UAS approval and NSPA catalogue access are real procurement routes, but the
-releases do not disclose order values, customer concentration, or enough component-country detail
-to treat Parrot as a proven trusted-supply-chain compounder.
+The August 18 MACD cross above signal followed a 30.56% fall from EUR 13.25 on July 20 to EUR 9.20
+on August 18. By August 19 the close was EUR 9.80, still below the 50-day and 200-day averages and
+with RSI at 44.72. The crossover is therefore **noise rather than a new opportunity**: momentum
+stabilized after a sharp drawdown, but evidence and valuation did not establish favorable payoff.
 
-## Evidence and gates
+## Changes since prior review
 
-| Evidence | Interpretation |
-| --- | --- |
-| Q1 revenue rose 52%; micro-UAV revenue rose 102%. | Battlefield and institutional demand is converting into sales. |
-| Micro-UAVs were 76% of group revenue. | The desired exposure is material, but concentration has increased. |
-| Critical-infrastructure revenue fell 16%. | Subscription transition has not yet demonstrated offsetting recurring growth. |
-| 2025 gross margin was 75.4%, but ordinary operations lost EUR 12.7m and operating cash outflow was EUR 7.6m. | Attractive gross economics have not yet covered the operating and industrial ramp. |
-| Q1 was described as slightly profitable with no cash consumed. | Economics improved, but one unaudited quarter is not durable cash conversion. |
-| Year-end cash was EUR 23.0m; a shareholder facility had EUR 5.0m outstanding and was expanded to EUR 20.0m. | Liquidity supports the ramp, but external shareholder funding and working-capital needs remain relevant. |
-| Management noted longer component lead times. | Supply constraints can limit delivery and working-capital conversion. |
-| Component provenance is not sufficiently disclosed. | “Sovereign” and trusted-supplier claims remain an issuer assertion, not a validated qualification. |
+- **Facts and evidence:** H1 revenue was EUR 57.3 million, professional-microdrone revenue grew 23%,
+  photogrammetry revenue grew 4%, gross margin was 51.8%, and recurring operating income reached
+  EUR 2.0 million from a EUR 2.8 million loss a year earlier. Consolidated net income remained a
+  EUR 7.2 million loss because of discontinued-operations and non-recurring items.
+- **Cash and balance sheet:** H1 operating cash flow was negative EUR 13.6 million; inventory was
+  EUR 18.3 million and receivables EUR 11.4 million at June 30. Cash was EUR 18.8 million. A
+  shareholder-partner current account provided EUR 5 million, and an additional EUR 4 million was
+  received after period end.
+- **Share-count gap resolved:** the issuer reported 31,157,845 shares at July 31, enabling a
+  per-share valuation. The count rose from 30,940,345 at June 30, preserving dilution as a risk.
+- **Valuation:** the prior unsupported result is replaced by explicit scenarios. The EUR 9.80 mark
+  is 7.25% above base and weighted fair value; the 20% margin-of-safety buy zone is about EUR 7.27.
+- **Thesis improved, rating unchanged:** sovereign-drone exposure moved from plausible to strongly
+  evidenced, but negative base and expected returns and 44% bear downside keep it ineligible.
+- **Catalysts:** ANAFI UKR tender execution, first DGA deliveries, a South Korean tender win,
+  NATO-customer selections and Series C preparation are dated milestones.
+- **Risks and conclusion:** program concentration, procurement timing, working-capital absorption,
+  funding dependence, dilution and liquidity remain material. No strategy remains justified.
 
-Registered primary evidence: `source_parrot_q1_2026_business`,
-[Parrot Q1 2026 business](https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf),
-and `source_parrot_fy2025_results`,
-[Parrot 2025 full-year earnings](https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf).
-Both documents were retrieved and hash-checked on 2026-07-28.
+## Economics, balance sheet, and liquidity
 
-## Valuation, catalysts, and risks
+Parrot designs professional microdrones and image-analysis products with end-to-end control of
+aircraft, payload, software, communications and cloud architecture. H1 revenue reached EUR 57.3
+million, up 18%; professional-microdrone revenue was EUR 37.2 million, up 23%, and photogrammetry
+revenue was EUR 20.0 million, up 4%. Management attributed microdrone growth to European defense
+demand and its DGA framework. Gross margin improved to 51.8% from 49.1%, while recurring operating
+income turned positive at EUR 2.0 million. These figures show operating leverage but not durable
+free cash flow: operating cash flow was negative EUR 13.6 million.
 
-No supportable common-equity valuation is recorded before the July 31 half-year release. The
-repository has a fresh EUR 9.65 close for 2026-07-27, but the primary evidence does not provide a
-complete diluted-share, order-value, customer-concentration, or segment-margin bridge. The latest
-session's 30,881-share volume also indicates limited trading depth. A later model must reconcile
-those inputs with current cash, the shareholder facility, working-capital needs, and downside cases
-for procurement timing. The comparable assessment is therefore **ineligible** with the canonical
-`valuation_unsupported` blocker; its -100% downside and 0% base-upside fields are deterministic
-unsupported-valuation sentinels, not price targets.
+At June 30 Parrot reported EUR 18.8 million of cash, EUR 65.9 million of equity, EUR 5.0 million of
+non-current other liabilities associated with partner funding, and EUR 0.6 million of lease
+liabilities. This is adequate, not fortress, liquidity given cash consumption and Series C plans.
+The August 19 session traded only 20,903 shares, about EUR 205 thousand. Bounded paper sizing is
+possible, but a normal maximum position would be material relative to a routine session.
 
-Catalysts are disclosed defence order conversion, sustained positive operating cash, improving
-gross margin, auditable allied-component content, and recurring critical-infrastructure revenue.
-Invalidate if orders stay immaterial, institutional concentration rises, supply constraints absorb
-cash, trusted-source qualifications cannot be substantiated, or pricing and scale fail to produce
-durable margins.
+## Valuation
 
-## Disposition
+Template: **pre-profit growth**. Method: **revenue multiple**. Horizon: 12 months. The model uses
+the issuer's July 31 share count and EUR 13.208 million net cash: EUR 18.773 million cash less EUR
+5.000 million partner funding and EUR 0.565 million lease liabilities. All cases use 31.157845
+million shares and explicitly vary growth, margin execution, cash burn and dilution.
 
-Status: **watching**, confidence **medium**. Review by **2026-08-01**, after the scheduled July 31
-half-year results. No strategy is proposed because valuation, durable cash conversion, order
-materiality, component-origin evidence, concentration, and trading depth remain incomplete. See
-the complete [[research-catalog]] and append-only [[log]] for the wider research record.
+| Case | Probability | Revenue and multiple | Fair value | Return from EUR 9.80 |
+| --- | ---: | --- | ---: | ---: |
+| Bear | 30% | EUR 105m at 1.5x EV/revenue | EUR 5.48 | -44.09% |
+| Base | 50% | EUR 120m at 2.25x EV/revenue | EUR 9.09 | -7.25% |
+| Bull | 20% | EUR 135m at 3.25x EV/revenue | EUR 14.51 | +48.01% |
+
+The probability-weighted fair value is EUR 9.09. Bear assumes slow award conversion, margin
+reversal, cash burn and dilution. Base assumes moderated growth, near-50% gross margin and imperfect
+cash conversion. Bull requires repeat defense deliveries, margin expansion and non-destructive
+financing. The configured 20% margin-of-safety frontier is about EUR 7.27. A later review must
+refresh revenue, cash, liabilities and shares before relying on that frontier.
+
+## Catalysts, risks, and invalidation
+
+Catalysts are ANAFI UKR and DGA delivery conversion, South Korean and NATO selection processes,
+new-product growth, and financing that extends runway without destructive dilution. Risks are
+government-program concentration, procurement delays, competition, inventory and receivable cash
+absorption, partner-funding dependence, dilution and thin trading volume. Invalidate the positive
+thesis if professional-drone growth fails to convert into durable margin and cash flow, awards fail
+to become repeat deliveries, recurring operating profit reverses without timing explanation, or
+funding destroys per-share value.
+
+## Idea exposure map
+
+**Accepted-current:** [[ideas/idea_sovereign_small_drone_supply_chains|Sovereign small-drone and
+trusted-component supply chains]]. Canonical relationship
+[[relationships/relationship_7e9fd9486e494dd05bb5|relationship_7e9fd9486e494dd05bb5]] remains
+current. Direction is positive: sovereign procurement increases demand for European-controlled
+secure drones. Sensitivity is high because professional microdrones generated 65% of H1 revenue;
+invalidate if awards fail to become repeat deliveries and cash collection.
+
+**Candidate:** [[ideas/idea_defense_aerospace|Defense and aerospace replenishment cycle]]. Direction
+is positive: expanding European and NATO procurement can pull compact ISR drones into framework
+and tender awards. Materiality is supported by H1 professional-microdrone revenue and DGA activity,
+but a relationship review must distinguish broad rearmament from the accepted sovereign-component
+edge. Invalidate if defense awards remain immaterial, non-recurring or cash-negative.
+
+**Rejected-no-link:** the complete maintained idea catalog was screened. The other 24 ideas,
+including [[ideas/idea_anduril_product_company_disruption|Anduril disruption]],
+[[ideas/idea_humanoid_robotics_embodied_ai_components|embodied AI]] and
+[[ideas/idea_commercial_space_infrastructure|commercial space]], have no current primary evidence
+of a distinct material transmission mechanism to Parrot. Shared words such as autonomy, software,
+sovereignty or geopolitics are insufficient; direct drone-demand channels are classified above.
+
+## Assessment and disposition
+
+| Dimension | Score | Anchor |
+| --- | ---: | --- |
+| Thesis | 80 | H1 growth, DGA activity and tenders strongly support sovereign-drone demand. |
+| Business quality | 40 | Positive recurring income is encouraging, but economics remain narrow and program-sensitive. |
+| Balance sheet | 60 | Cash and partner funding provide adequate runway, constrained by cash consumption. |
+| Valuation | 40 | Supported weighted and base values are below the economic hurdle. |
+| Timing | 40 | The MACD crossover is weak stabilization; contract conversion remains incomplete. |
+| Liquidity | 40 | Bounded sizing is possible, but turnover and slippage are constrained. |
+| Risk penalty | 80 | Concentration, procurement, cash-burn, funding, dilution and liquidity risks are severe. |
+
+Status: **watching**, confidence **medium**. There is no hard blocker, but margin of safety, timing,
+concentration and valuation gaps constrain eligibility. Review by **2026-09-19**, or after a
+financing, material contract conversion, product launch, liquidity event or updated release. No
+strategy or signal is justified. See the complete [[research-catalog]] and append-only [[log]].
+
+## Sources
+
+- [Parrot H1 2026 results](https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf)
+- [Parrot number of shares and voting rights](https://www.parrot.com/en/corporate/number-shares-and-voting-rights)
+- [Parrot Q1 2026 business](https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_CA-T1-2026_20260520_EN_DEF.pdf)
+- [Parrot 2025 full-year earnings](https://www.parrot.com/assets/s3fs-public/document/PARROT_CP_FY-2025_20250327_EN_DEF.pdf)

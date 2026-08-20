@@ -1,0 +1,23 @@
+{
+  "security_id": "security_cc4dcb8f002b61dffe00",
+  "issuer_id": "issuer_02f43c813513608bb99c",
+  "company_name": "Parrot S.A.",
+  "instrument_name": "Parrot S.A. ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "PARRO.PA",
+  "exchange_code": "PAR",
+  "venue_mic": "XPAR",
+  "provider_symbol": "PARRO.PA",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "FR",
+  "sector": "Technology",
+  "industry": "Communication Equipment",
+  "status": "watching",
+  "watchlist_reason": "H1 professional-microdrone growth and recurring operating profit strengthen the sovereign-demand thesis, but negative base and weighted return, cash burn, concentration and thin liquidity preclude a paper position.",
+  "research_summary": "H1 progress supports sovereign-drone demand, but EUR 5.48/9.09/14.51 scenarios leave base and weighted value below EUR 9.80; Sell / Avoid.",
+  "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+  "last_research_at": "2026-08-20T07:54:58Z",
+  "next_review_at": "2026-09-19T07:54:58Z",
+  "source": "source_parrot_h1_2026_results|source_parrot_shares_20260731"
+}

@@ -1,0 +1,24 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_sovereign_small_drone_supply_chains",
+  "dedupe_key": "idea_research:idea_sovereign_small_drone_supply_chains:security-result:01M08BT9VRSPKQN2Q6FSAB61CR",
+  "prompt": "Refresh the sovereign small-drone and trusted-component supply-chain idea from Parrot's completed H1 review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_sovereign_small_drone_supply_chains",
+    "seed_claim": "Parrot's H1 professional-microdrone growth and positive recurring operating income strengthen the sovereign-demand mechanism, but cash burn, thin liquidity and scenario value below the EUR 9.80 mark leave the security Sell / Avoid and allocation-ineligible.",
+    "security_id": "security_cc4dcb8f002b61dffe00",
+    "security_research_operation_id": "01M08BT9VRSPKQN2Q6FSAB61CR",
+    "security_research_result_path": "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/agent_result.json"
+  },
+  "source": "security_research:01M08BT9VRSPKQN2Q6FSAB61CR",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M08BT9VRSPKQN2Q6FSAB61CR"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_cc4dcb8f002b61dffe00.md"
+  ],
+  "max_attempts": 3
+}

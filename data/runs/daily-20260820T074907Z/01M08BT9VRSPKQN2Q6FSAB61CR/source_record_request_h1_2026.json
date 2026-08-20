@@ -1,0 +1,18 @@
+{
+  "source_id": "source_parrot_h1_2026_results",
+  "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf",
+  "canonical_url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf",
+  "source_type": "issuer_release",
+  "title": "Parrot First-Half 2026 Results",
+  "publisher": "Parrot SA",
+  "license": "",
+  "status": "available",
+  "content_hash": "4c246f132a4192a212194381aff958e988dfbe7b6a4cce0cf79a2731989cb35d",
+  "related_entity_ids": "security_cc4dcb8f002b61dffe00",
+  "checked_at": "2026-08-20T07:54:58Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "H1 revenue was EUR 57.3 million, professional microdrone revenue rose 23%, gross margin was 51.8%, and recurring operating income was EUR 2.0 million.",
+  "summary": "The issuer's first-half release supplies current revenue mix, growth, margins, earnings, cash flow, liquidity, balance-sheet, partnership, award and outlook evidence for Parrot's full assessment.",
+  "run_id": "daily-20260820T074907Z"
+}

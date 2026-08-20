@@ -4319,3 +4319,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099]] (6fe39e436099).
 
 - Classified [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099]] as `ingest`: Strengthened volume anomaly is a material indicator transition for the identified security.
+
+## [2026-08-20] update | Parrot S.A. ordinary shares
+
+- Updated [[securities/security_cc4dcb8f002b61dffe00]] from Parrot's H1 2026 results and July 31
+  share count; replaced the unsupported valuation with EUR 5.48 / EUR 9.09 / EUR 14.51
+  bear/base/bull cases at the fresh EUR 9.80 mark.
+- Classified the August 18 MACD crossover as noise after a 30.56% drawdown; no strategy or signal
+  was justified.
+- Reconfirmed [[ideas/idea_sovereign_small_drone_supply_chains]] as accepted-current and identified
+  [[ideas/idea_defense_aerospace]] as a candidate requiring bounded relationship review.
+- Registered `source_parrot_h1_2026_results` and `source_parrot_shares_20260731`; updated the
+  comparable assessment and scheduled the required sequential idea and relationship follow-ups.

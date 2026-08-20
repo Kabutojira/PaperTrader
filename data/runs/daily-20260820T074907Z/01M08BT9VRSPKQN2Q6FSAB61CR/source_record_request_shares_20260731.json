@@ -1,0 +1,18 @@
+{
+  "source_id": "source_parrot_shares_20260731",
+  "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights",
+  "canonical_url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights",
+  "source_type": "issuer_webpage",
+  "title": "Number of shares and voting rights",
+  "publisher": "Parrot SA",
+  "license": "",
+  "status": "available",
+  "content_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+  "related_entity_ids": "security_cc4dcb8f002b61dffe00",
+  "checked_at": "2026-08-20T07:54:58Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Parrot reported 31,157,845 shares and the same number of actual and real voting rights at July 31, 2026.",
+  "summary": "The issuer's monthly share-count table supplies the current common-share denominator and confirms one share class for per-share scenario valuation.",
+  "run_id": "daily-20260820T074907Z"
+}

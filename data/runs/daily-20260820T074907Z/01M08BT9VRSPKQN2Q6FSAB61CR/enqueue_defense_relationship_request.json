@@ -1,0 +1,31 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_76e417e751f1ba32182c",
+  "dedupe_key": "relationship_research:relationship_76e417e751f1ba32182c:security-result:01M08BT9VRSPKQN2Q6FSAB61CR",
+  "prompt": "Review whether Parrot has a distinct material causal relationship to the defense and aerospace replenishment cycle using current primary evidence; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_76e417e751f1ba32182c",
+    "idea_id": "idea_defense_aerospace",
+    "security_id": "security_cc4dcb8f002b61dffe00",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Expanding European and NATO defense procurement can transmit into demand for Parrot's compact ISR drones through framework agreements and tenders, provided awards convert into repeat deliveries, margin and cash.",
+    "proposed_invalidation": "Reject or invalidate the edge if defense awards remain immaterial, non-recurring or cash-negative, if the mechanism duplicates the narrower sovereign-component edge without distinct evidence, or if competition absorbs procurement growth.",
+    "evidence_refs": [
+      "source_parrot_h1_2026_results",
+      "source_parrot_shares_20260731"
+    ]
+  },
+  "source": "security_research:01M08BT9VRSPKQN2Q6FSAB61CR",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M08BT9VRSPKQN2Q6FSAB61CR"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+    "source_parrot_h1_2026_results",
+    "source_parrot_shares_20260731"
+  ],
+  "max_attempts": 3
+}

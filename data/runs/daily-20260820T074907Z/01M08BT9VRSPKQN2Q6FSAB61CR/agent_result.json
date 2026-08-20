@@ -1,0 +1,97 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_cc4dcb8f002b61dffe00",
+    "papertrader research source record --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/source_record_request_h1_2026.json",
+    "papertrader research source record --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/source_record_request_shares_20260731.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/security_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/enqueue_defense_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/enqueue_sovereign_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_cc4dcb8f002b61dffe00",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Parrot S.A. full H1 review completed: professional-microdrone growth and positive recurring operating income strengthen the sovereign-demand thesis, but cash burn, concentration, thin liquidity and EUR 9.091 weighted value versus the EUR 9.80 mark retain deterministic Hold / Watch and allocation ineligibility. The August MACD crossover was noise; no paper strategy, signal or order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Parrot reported H1 2026 revenue of EUR 57.3 million, professional-microdrone revenue of EUR 37.2 million, photogrammetry revenue of EUR 20.0 million, 51.8% gross margin, EUR 2.0 million recurring operating income, EUR 18.8 million cash and negative EUR 13.6 million operating cash flow.",
+      "observed_at": "2026-08-20T07:54:58Z",
+      "source": "source_parrot_h1_2026_results",
+      "source_hash": "4c246f132a4192a212194381aff958e988dfbe7b6a4cce0cf79a2731989cb35d",
+      "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf"
+    },
+    {
+      "claim": "Parrot's issuer share disclosure reports 31,157,845 shares and 31,377,085 theoretical voting rights at July 31, 2026, resolving the prior per-share valuation gap while preserving dilution risk.",
+      "observed_at": "2026-08-20T07:54:58Z",
+      "source": "source_parrot_shares_20260731",
+      "source_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+      "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights"
+    },
+    {
+      "claim": "The fresh identity-matched PARRO.PA/XPAR/EUR mark is EUR 9.800000190734863 as of 2026-08-20T07:49:13Z. The August 18 MACD cross above signal followed a 30.56% decline from EUR 13.25 on July 20 to EUR 9.20 on August 18; the August 19 close remained below the 50-day and 200-day averages with RSI 44.72, supporting a noise disposition rather than an opportunity.",
+      "source": "PaperTrader canonical market state"
+    },
+    {
+      "claim": "The sole accepted schema-v2 assessment from this operation links predecessor assessment_aef9bce4a2db13cc33de, the current security-page hash, operation/result provenance, current price and base-currency FX identity. Deterministic normalization derives EUR 9.091 weighted fair value, EUR 7.272 buy-below price, -7.2347% expected return, quality score 56, Hold / Watch and allocation ineligibility.",
+      "source": "assessment_8d710a0fa8813b740807"
+    },
+    {
+      "claim": "The payload and current accepted relationship identify idea_sovereign_small_drone_supply_chains, requiring exactly one dependent idea refresh. Complete-catalog screening also found one plausible distinct candidate, idea_defense_aerospace, requiring relationship review relationship_76e417e751f1ba32182c. The adverse full strategy gate precludes conviction strategy research.",
+      "source": "PaperTrader audited security context and canonical relationship state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0F34R08CY644E0K9CY8VYH8.json",
+    "data/operations/payloads/01M0F34WWGH895CQ4XFSFWTXC7.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/assessment_upsert_request.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/enqueue_defense_relationship_request.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/enqueue_sovereign_idea_refresh_request.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/security_upsert_request.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/security_upsert_retry01_request.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/source_record_request_h1_2026.json",
+    "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/source_record_request_shares_20260731.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_cc4dcb8f002b61dffe00.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M08BT9VRSPKQN2Q6FSAB61CR",
+  "operations_created": [
+    "01M0F34R08CY644E0K9CY8VYH8",
+    "01M0F34WWGH895CQ4XFSFWTXC7"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one full Parrot S.A. security review using current H1 2026 issuer evidence, the July 31 share count and the fresh EUR 9.800000190734863 mark. Replaced the prior unsupported valuation with EUR 5.48/EUR 9.09/EUR 14.51 bear/base/bull scenarios. Deterministic assessment assessment_8d710a0fa8813b740807 derives EUR 9.091 probability-weighted fair value, EUR 7.272 buy-below price, -7.23% expected return, Hold / Watch and allocation ineligibility. The August 18 MACD crossover was classified as noise after the measured drawdown. No strategy, signal, paper order, allocation, execution, cash, portfolio, fill, performance or accounting state changed. Created one dependent relationship review for the defense-aerospace candidate and exactly one dependent idea refresh for the accepted sovereign-small-drone relationship.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory successful audited security context before assessment-state reads or changes and re-read it after updates to verify identity, predecessor, page hash, sources, relationships and the current assessment.",
+      "Fetched, hashed and registered Parrot's current H1 2026 results and July 31 share disclosure through the project CLI; both source observations are current and identity-linked.",
+      "The accepted security upsert preserved Parrot S.A. ordinary shares / PARRO.PA / XPAR / EUR / equity immutable identity and advanced its structured summary and next review through 2026-09-19.",
+      "Confirmed assessment_8d710a0fa8813b740807 is the sole accepted assessment version sourced from this operation, links predecessor assessment_aef9bce4a2db13cc33de and the expected result path, and matches the current security-page, market-data and FX identities.",
+      "One immutable security request was rejected without changed paths for an instrument-name identity mismatch; the uniquely named corrected request was accepted.",
+      "One immutable assessment request was rejected without changed paths for a canonical FX timestamp mismatch; the uniquely named corrected request was accepted.",
+      "Complete maintained-idea catalog screening classified the sovereign-small-drone edge accepted-current, defense-aerospace as the sole plausible candidate, and the remaining 24 maintained ideas rejected-no-link for lack of a distinct material transmission mechanism.",
+      "Created exactly one dependent relationship review for the plausible unaccepted defense-aerospace edge and exactly one dependent idea refresh for the payload/current accepted sovereign-small-drone idea; no duplicate or strategy follow-up was created.",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting ledger, raw source, idea, relationship or other security page changed."
+    ],
+    "passed": true
+  }
+}
