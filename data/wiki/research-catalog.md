@@ -565,3 +565,10 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_3853e54c619d597dcaa1-macd_cross_below_signal-4e470f8fbb9a|NIB.F — MACD cross below signal]]
+- [[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43|FUC.F — Bollinger below lower]]
+- [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-a7f6f5166f84|PARRO.PA — Bollinger below lower]]
+- [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-98a764a2953d|PARRO.PA — MACD cross below signal]]

@@ -4328,6 +4328,18 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260820]] for run `daily-20260820T090239Z`.
 
+- Created candidate packet [[inbox/market-security_3853e54c619d597dcaa1-macd_cross_below_signal-4e470f8fbb9a]] (4e470f8fbb9a).
+
+- Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43]] (7a90cf00ae43).
+
+- Classified [[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43]] as `ingest`: Material Bollinger lower-band breach accompanied by a 12.4% decline over the measured period merits durable review.
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-a7f6f5166f84]] (a7f6f5166f84).
+
+- Classified [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-a7f6f5166f84]] as `ingest`: A new Bollinger-band breach with a 4.5% decline is a material security-specific market transition warranting durable review.
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-98a764a2953d]] (98a764a2953d).
+
 ## [2026-08-20] update | Parrot S.A. ordinary shares
 
 - Updated [[securities/security_cc4dcb8f002b61dffe00]] from Parrot's H1 2026 results and July 31

@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_1655ac715c33506ec7da",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_defense_aerospace",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_1655ac715c33506ec7da",
+    "security_id": "security_59304f90c440def31dc5"
+  },
+  "objective": "Review the canonical relationship from idea_defense_aerospace to security_59304f90c440def31dc5 and accept or reject it with current evidence.",
+  "operation_id": "01M0FWY80RH34WZ9T4RDHGEJ97",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_rtx_q2_2026_10q_sec",
+    "source_rtx_q2_2026_results_sec_ex99"
+  ]
+}
