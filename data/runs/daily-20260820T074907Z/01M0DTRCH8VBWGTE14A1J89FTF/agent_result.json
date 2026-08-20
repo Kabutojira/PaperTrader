@@ -1,0 +1,63 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "dLocal's strengthened August 19 volume anomaly included a 4.84% rise to USD 14.30 on 7.03 million shares. A new SEC Schedule 13D/A disclosed General Atlantic's August 17 sale of 9.84 million shares at an average USD 13.60, explaining abnormal volume without issuer dilution or changed operating evidence. DLO remains below its USD 14.96 buy-below level with Medium / Watch unchanged, but stays allocation-ineligible because no accepted relationship exists; no full review or paper action was created."
+  ],
+  "evidence": [
+    {
+      "claim": "For immutable DLO/XNAS/USD equity security_715bde20b6e1e1320c1a, the identity-bound August 19 completed-session close was USD 14.300000190734863 on 7,033,900 shares. The payload source-price hash e3872464054d9bc13a3e5b357958f4304b19af9b064d17d9c42032f2cda48df5 matched the current indicator row and strengthened alert packet. The close rose 4.838708436948108% from August 18 and the exact July 23 through August 19 period gained 1.562501904978000%.",
+      "observed_at": "2026-08-20T07:49:13Z",
+      "source": "PaperTrader deterministic market and indicator state",
+      "source_hash": "e3872464054d9bc13a3e5b357958f4304b19af9b064d17d9c42032f2cda48df5"
+    },
+    {
+      "claim": "General Atlantic DO B.V. sold 9,842,559 dLocal Class A shares in open-market transactions at an average USD 13.60 on August 17, equal to approximately 5.7163% of the 172,183,455 Class A shares cited in the filing. The amendment states no material change to purpose of transaction or contracts and reports the General Atlantic reporting group still beneficially owned 36,814,136 shares, or 21.4% of the class. This is a secondary ownership transfer, not issuer dilution or new operating evidence.",
+      "observed_at": "2026-08-20T08:13:54Z",
+      "source": "dLocal SEC Schedule 13D/A filed 2026-08-19",
+      "source_hash": "919b0fc3dff45d87532c2e46c539e9547bcae0fbda2a4a3bf2c81d877f1eb157",
+      "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095014226002390/xslSCHEDULE_13D_X02/primary_doc.xml"
+    },
+    {
+      "claim": "The current submissions index showed the August 19 Schedule 13D/A and August 17 Form 144 after the August 13 Q2 Form 6-K already consumed by the baseline review. No newer periodic operating filing or issuer results release superseded the Q2 TPV, growth, take-rate, cash-conversion, balance-sheet, guidance, catalyst, risk, invalidation, or valuation assumptions.",
+      "observed_at": "2026-08-20T08:13:54Z",
+      "source": "dLocal SEC submissions index",
+      "source_hash": "e06d055b91fd29e0bb4bfb2370c041148982e54abaa52a804bb6a16cf072d6f3",
+      "url": "https://data.sec.gov/submissions/CIK0001846832.json"
+    },
+    {
+      "claim": "The fresh schema-version-2 assessment completed August 18 remains valid through September 17. Repricing its unchanged USD 9.00, USD 18.70 and USD 29.40 fair values at USD 14.300000190734863 produces bear, base and bull returns of -37.06293790239804%, 30.76922902501741% and 105.59440285216642%, and a probability-weighted fair value of USD 18.95 with 32.51748074995080% expected return. The mark remains 4.411763430916691% below the USD 14.96 buy-below level, so the buy-zone, valuation, rating and eligibility gates did not change.",
+      "observed_at": "2026-08-20T08:11:45Z",
+      "source": "PaperTrader deterministic assessment assessment_3c19e3012bc964c29faf"
+    },
+    {
+      "claim": "The ownership sale supplies a bounded primary-source explanation for abnormal trading volume but no changed operating catalyst, thesis invalidation, valuation input or decision-support gate. The valuation-supported buy zone was already reached by the baseline and remains reached; the sole allocation blocker remains the absent accepted relationship. No dependent full security review is warranted.",
+      "source": "PaperTrader quick-check disposition"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0DTRCH8VBWGTE14A1J89FTF",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded dLocal quick check for the merged August 18-19 volume-anomaly alerts. The August 19 close rose 4.84% to USD 14.30 on 7,033,900 shares and remained inside the existing USD 14.96 buy-below level. A current SEC Schedule 13D/A showed that General Atlantic sold 9,842,559 Class A shares at an average USD 13.60 on August 17; this ownership transaction explains abnormal volume but did not dilute dLocal, alter the sponsor group's disclosed purpose or contracts, or supersede the Q2 operating and valuation assumptions. Repricing the unchanged USD 9.00, USD 18.70 and USD 29.40 scenarios leaves base upside at 30.77% and probability-weighted upside at 32.52%. The fresh baseline assessment therefore remains allocation-ineligible only because no accepted relationship exists, with Medium / Watch unchanged. No full review, strategy, signal, order, allocation, accounting change, or agent-owned repository delta was created.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row claimed by daily-20260820T074907Z with a live lease, the required immutable security identity, validated payload fields, merged alert causes, and trusted preflight hashes for the native, controller, and routed skills.",
+      "Consumed the mandatory successful audited security-context receipt before reading assessment state; baseline operation 01KZYPF0GR1JXMXK7AB5Y1XH8A succeeded for the same security within ten days and its result and current page hash matched deterministic context.",
+      "Confirmed canonical market date 2026-08-19 and source-price hash e3872464054d9bc13a3e5b357958f4304b19af9b064d17d9c42032f2cda48df match the current identity-bound indicator row and strengthened merged alert cause.",
+      "Verified the bounded baseline checklist against the current SEC submissions index and definitive Schedule 13D/A: the sponsor sale changed ownership, not issuer shares, operations, valuation inputs, purpose, contracts, catalysts or invalidation conditions.",
+      "Repriced the unchanged scenario values against the fresh mark using decimal arithmetic; the price remains inside the already-reached buy zone and the absent accepted relationship remains the sole allocation blocker, so no decision-support gate changed.",
+      "Retained fresh accepted assessment assessment_3c19e3012bc964c29faf without repository mutation because the bounded conclusion is unchanged; no same-run assessment upsert or second security-context call was required.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all passed.",
+      "No agent-owned repository state, full-review operation, allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting ledger changed."
+    ],
+    "passed": true
+  }
+}
