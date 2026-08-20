@@ -1,0 +1,23 @@
+{
+  "security_id": "security_96ba305ee7cd586bc348",
+  "issuer_id": "issuer_b000ffd888e42845fe36",
+  "company_name": "Fanuc Corporation",
+  "instrument_name": "Fanuc Corporation Frankfurt ordinary shares",
+  "instrument_type": "equity",
+  "ticker": "FUC.F",
+  "exchange_code": "FRA",
+  "venue_mic": "XFRA",
+  "provider_symbol": "FUC.F",
+  "broker_symbol": "",
+  "currency": "EUR",
+  "country": "JP",
+  "sector": "Industrials",
+  "industry": "Specialty Industrial Machinery",
+  "status": "watching",
+  "watchlist_reason": "Humanoid robotics and embodied-AI component candidate; conventional automation growth is supported, but payoff, relationship, and thin Frankfurt-line liquidity gates prevent exposure.",
+  "research_summary": "Lower-Bollinger price clears raw return gates, but payoff, relationship, and thin-liquidity gates still block exposure pending full review.",
+  "research_page": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+  "last_research_at": "2026-08-20T15:44:00Z",
+  "next_review_at": "2026-09-03T15:44:00Z",
+  "source": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+}

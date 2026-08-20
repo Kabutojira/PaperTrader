@@ -1,0 +1,87 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader research security upsert --request data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "FANUC quick check completed after the 20 August lower-Bollinger entry: the EUR 32.60 mark raises expected return to 11.59%, confidence-adjusted return to 8.69%, and base upside to 11.60%, clearing three prior return gates. The canonical disposition remains Hold / Watch because bear/base and expected/bear payoff and relationship gates still fail, while only 1,355 shares traded. One dependent full security review was queued; no strategy, signal, paper order, allocation, or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The canonical 20 August alert covers 2026-07-23 through 2026-08-20, a -12.389145% return, a EUR 32.599998474121094 close below the EUR 32.84626761 lower Bollinger band, trigger strength 0.0074976292, volume z-score 2.2915429, and source-price hash 2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d.",
+      "observed_at": "2026-08-20T15:34:23Z",
+      "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md",
+      "source_hash": "2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d"
+    },
+    {
+      "claim": "FANUC's retained first-quarter results remain the current primary operating evidence and report stronger sales and operating income plus raised full-year guidance; both registered issuer-source hashes are unchanged from the baseline review.",
+      "observed_at": "2026-08-20T15:44:00Z",
+      "source": "source_fanuc_q1_fy2026_results",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+    },
+    {
+      "claim": "FANUC's retained first-quarter reference material continues to support conventional automation demand and raised guidance without a new issuer catalyst for the 20 August price move.",
+      "observed_at": "2026-08-20T15:44:00Z",
+      "source": "source_fanuc_q1_fy2026_reference",
+      "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+    },
+    {
+      "claim": "The sole same-run immutable assessment version links predecessor assessment_4e73de2ff48e5f482190, this quick-check operation, the current security-page hash, and the FUC.F/XFRA/EUR market identity. Deterministic normalization derives assessment_cc11a683fe32530dd4a5, EUR 36.3775 weighted fair value, EUR 29.104 buy-below price, 11.5874285358559318296021789% expected return, 8.690571401891948872201634175% confidence-adjusted return, Hold / Watch, and allocation ineligibility.",
+      "observed_at": "2026-08-20T15:45:46Z",
+      "source": "assessment_cc11a683fe32530dd4a5"
+    },
+    {
+      "claim": "Exactly one priority-97 dependent full security review was created with the quick-check identity, exact market period, source-price hash, lower-Bollinger trigger, and changed return-gate causes; it was queued but not executed.",
+      "observed_at": "2026-08-20T15:44:54Z",
+      "source": "01M0FXHG7GT03TE1GNSGAPY904"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0FXHG7GT03TE1GNSGAPY904.json",
+    "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/assessment_upsert_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/enqueue_full_research_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0FWY80RSD2DGA74RFGV1KHQ",
+  "operations_created": [
+    "01M0FXHG7GT03TE1GNSGAPY904"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded FANUC quick check for the 20 August lower-Bollinger entry. The EUR 32.599998474121094 mark is 12.39% below the period start and 0.75% below the lower band, but alert-day turnover remained only 1,355 shares and the two retained issuer sources supplied no changed fundamental evidence. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios produce EUR 36.3775 weighted fair value, 11.5874285358559318296021789% expected return, 8.690571401891948872201634175% confidence-adjusted return, and 11.5950972478713160596777478% base upside. Assessment assessment_cc11a683fe32530dd4a5 remains Hold / Watch and ineligible because bear/base payoff, expected/bear payoff, and relationship gates fail. Because three prior return gates changed, dependent full review 01M0FXHG7GT03TE1GNSGAPY904 was queued and not executed. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory successful audited security context before reading or changing assessment state and confirmed the baseline result, predecessor assessment, and immutable FANUC/FUC.F/XFRA/EUR/equity identity.",
+      "Confirmed the payload source-price hash and exact 2026-07-23 through 2026-08-20 market period against the deterministic lower-Bollinger alert packet.",
+      "The accepted security upsert preserved immutable identity fields and advanced the bounded research summary and next review through 2026-09-03.",
+      "The first assessment request was rejected without state changes because it contained fields outside the closed schema; the uniquely named corrected request was accepted.",
+      "The post-upsert audited security context confirmed assessment_cc11a683fe32530dd4a5 is the sole immutable history version sourced from operation 01M0FWY80RSD2DGA74RFGV1KHQ, has run_id daily-20260820T153414Z, links predecessor assessment_4e73de2ff48e5f482190, matches the current page hash, and uses the exact current market identity.",
+      "Confirmed exactly one dependent full-review payload contains this quick-check operation ID, the lower-Bollinger trigger, all bounded changed-gate causes, and dependency 01M0FWY80RSD2DGA74RFGV1KHQ; the queued operation was not claimed or executed.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting ledger, source registry/history, idea, relationship, or other security page changed."
+    ],
+    "passed": true
+  }
+}

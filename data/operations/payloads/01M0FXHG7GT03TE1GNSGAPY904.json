@@ -1,0 +1,44 @@
+{
+  "entity_id": "security_96ba305ee7cd586bc348",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KZVTZDX08AEMJ36N81A06G62",
+    "changed_gate": "lower_price_cleared_expected_confidence_adjusted_and_base_return_thresholds_and_changed_rating_to_buy",
+    "full_research_requested": true,
+    "market_data_as_of": "2026-08-20T15:34:23Z",
+    "market_data_date": "2026-08-20",
+    "period_end": "2026-08-20",
+    "period_start": "2026-07-23",
+    "quick_check_operation_id": "01M0FWY80RSD2DGA74RFGV1KHQ",
+    "research_reasons": [
+      {
+        "cause": "bollinger_below_lower_entered_after_12_39_pct_period_decline",
+        "source_ref": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md"
+      },
+      {
+        "cause": "expected_return_confidence_adjusted_return_and_base_upside_crossed_canonical_thresholds",
+        "source_ref": "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+      },
+      {
+        "cause": "buy_below_level_remains_unreached_and_payoff_relationship_and_thin_liquidity_gates_still_block_exposure",
+        "source_ref": "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+      }
+    ],
+    "security_id": "security_96ba305ee7cd586bc348",
+    "source_price_hash": "2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Fully reassess FANUC after the lower-Bollinger price decline changed raw expected-return, confidence-adjusted return, base-upside, and canonical rating thresholds while payoff, relationship, and Frankfurt-liquidity gates remain unresolved.",
+  "operation_id": "01M0FXHG7GT03TE1GNSGAPY904",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/operations/payloads/01M0FWY80RSD2DGA74RFGV1KHQ.json",
+    "data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md",
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+    "source_fanuc_q1_fy2026_reference",
+    "source_fanuc_q1_fy2026_results"
+  ]
+}

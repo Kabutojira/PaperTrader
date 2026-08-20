@@ -4396,3 +4396,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   conversion or leverage. Unchanged USD 10.43/18.78/27.12 NAV scenarios at the USD 15.78 mark retain
   Buy/Initiate as the research rating but Watch and allocation ineligibility; one dependent review
   will test the candidate solar-storage-grid relationship.
+
+## [2026-08-20T15:44:00Z] update | FANUC lower-Bollinger quick check
+
+- Rechecked [[securities/security_96ba305ee7cd586bc348|FANUC's Frankfurt ordinary shares]] after the
+  20 August lower-Bollinger entry. The EUR 32.60 mark was 0.75% below the lower band after a 12.39%
+  period decline, while the session again recorded only 1,355 shares.
+- Both retained first-quarter issuer PDFs remained byte-identical. Unchanged EUR 24.25 / EUR 36.38
+  / EUR 48.50 scenarios now clear raw expected-return, confidence-adjusted return, and base-upside
+  thresholds, changing the rating to Buy while payoff, relationship, and liquidity gates retain
+  Watch and allocation ineligibility. Exactly one dependent full security review was requested; no
+  strategy, signal, paper order, allocation, or accounting state changed.

@@ -7,12 +7,12 @@ tags:
   - research
   - risk
 created: "2026-08-05"
-updated: "2026-08-19"
+updated: "2026-08-20"
 provenance: "FANUC Corporation; deterministic market monitor"
 security_id: security_96ba305ee7cd586bc348
 issuer_id: issuer_b000ffd888e42845fe36
 confidence: medium
-next_review: "2026-09-02"
+next_review: "2026-09-03"
 sources:
   - source_fanuc_q1_fy2026_results
   - source_fanuc_q1_fy2026_reference
@@ -35,38 +35,59 @@ and not the Tokyo listing as a substitutable execution venue.
 
 ## Decision summary
 
-**Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 remains the latest
+**Buy / Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 remains the latest
 retained primary operating evidence: sales rose 17.7%, operating income rose 26.1%, the company
 raised full-year guidance, and the balance sheet remained exceptionally strong. Both issuer PDFs
-were retrieved again on 19 August with unchanged hashes. At the lower EUR 33.349998474121094
-Frankfurt mark, the unchanged EUR 36.3775 probability-weighted value offers about 9.08% expected
-return and the EUR 36.38 base case offers about 9.09% upside. Those improvements still do not clear
-the confidence-adjusted expected-return, base-upside, downside-payoff, relationship, and liquidity
-gates.
+were retrieved again on 20 August with unchanged hashes. At the lower EUR 32.599998474121094
+Frankfurt mark, the unchanged EUR 36.3775 probability-weighted value offers about 11.59% expected
+return and the EUR 36.38 base case offers about 11.60% upside. Those values newly clear the raw
+expected-return, confidence-adjusted expected-return, and base-upside thresholds, changing the
+canonical rating from Hold to Buy, but downside-payoff, relationship, and thin-liquidity gates
+continue to block exposure.
 
-The 19 August volume anomaly is therefore **risk and thin-market price discovery, not a verified
-fundamental opportunity**. The shares fell 9.03% over 22 July–19 August and only 1,355 shares traded
-on the alert date. No changed issuer evidence supports revising earnings or fair-value assumptions,
-and the mark remains above the EUR 29.104 conservative buy-below level.
+The 20 August lower-Bollinger entry is therefore a **possible entry condition requiring full
+research, not a paper-trade signal**. The shares fell 12.39% over 23 July–20 August and closed about
+0.75% below the lower band, but the EUR 32.60 session again recorded only 1,355 shares. No changed
+issuer evidence supports revising earnings or fair-value assumptions, and the mark remains about
+12.01% above the EUR 29.104 conservative buy-below level. One dependent full security review will
+reassess the changed valuation gates against current primary evidence before any strategy work.
 
 ## Changes since prior review
 
-Compared with assessment `assessment_9720edf9bb377a006f6b`, the issuer evidence and its hashes are
+Compared with assessment `assessment_4e73de2ff48e5f482190`, the issuer evidence and its hashes are
 unchanged, so the business thesis, earnings inputs, bear/base/bull fair values and 25%/50%/25%
-probabilities are unchanged. The market mark fell from EUR 35.7400016784668 to EUR
-33.349998474121094, improving expected return from about 1.78% to about 9.08% and base-case upside
-from about 1.79% to about 9.09%; the EUR 29.104 buy-below level remains unreached. The volume anomaly
-adds evidence of weak price momentum and reinforces the existing Frankfurt-liquidity gap, but it
-does not identify an issuer catalyst or invalidate the operating thesis.
+probabilities are unchanged. The market mark fell from EUR 33.349998474121094 to EUR
+32.599998474121094, improving expected return from about 9.08% to about 11.59%, confidence-adjusted
+expected return from about 6.81% to about 8.69%, and base-case upside from about 9.09% to about
+11.60%. The EUR 29.104 buy-below level remains unreached.
 
-The rating and portfolio action remain Hold / Watch. Business quality, balance-sheet strength,
-cyclicality, China, foreign-exchange, competition, humanoid-revenue uncertainty, and the absence of
-an accepted canonical idea-security relationship are unchanged. No catalyst, hard blocker, or
-research gap was resolved; `confidence_medium`, `timing_unfavorable`, and
-`valuation_not_compelling` remain the structured soft gaps, with thin venue liquidity continuing
-as an explicit constraint. No strategy or signal is justified.
+The canonical rating changes from Hold to Buy because expected and base returns now exceed 10%,
+while portfolio action remains Watch. Bear/base and expected/bear payoff ratios, the absent accepted
+canonical relationship, and Frankfurt liquidity still prevent allocation eligibility. Business
+quality, balance-sheet strength, cyclicality, China, foreign-exchange, competition,
+humanoid-revenue uncertainty, confidence, catalysts, and invalidation are unchanged. A full review
+is required because multiple decision-support thresholds changed; no strategy or signal is
+justified by this quick check.
 
 ## Alert review
+
+- **Canonical trigger:** `bollinger_below_lower`, entered on **2026-08-20**.
+- **Exact observation period:** 2026-07-23 through 2026-08-20.
+- **Period return:** -12.389145%; 20 August adjusted close: EUR 32.599998474121094.
+- **Lower Bollinger band:** EUR 32.84626761; deterministic breach strength: 0.0074976292, from zero
+  previously.
+- **Alert-day volume:** 1,355 shares; volume z-score: 2.2915429. The earlier volume anomaly remains
+  active, but absolute turnover is still thin.
+- **Current market timestamp:** 2026-08-20T15:34:23Z.
+- **Source-price hash:** `2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d`.
+- **Disposition:** possible entry condition requiring one dependent full review. The price-driven
+  rating thresholds changed, but the buy-below level was not reached, primary evidence did not
+  change, and payoff, relationship, and liquidity gates still block a strategy or signal.
+
+See the deterministic packet
+[[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43]].
+
+### Prior alert retained for context
 
 - **Canonical trigger:** `volume_anomaly`, entered on **2026-08-19**.
 - **Exact observation period:** 2026-07-22 through 2026-08-19.
@@ -150,13 +171,14 @@ the current quarter as a permanent peak.
 | Base | 50% | EUR 36.38 | About 30x guided-equivalent earnings; raised guidance is broadly delivered, conventional automation grows, and margins remain near normalized strong levels. |
 | Bull | 25% | EUR 48.50 | About 40x guided-equivalent earnings as broad automation demand, physical-AI adoption, service mix, and margins exceed the revised plan. |
 
-Probability-weighted fair value remains **EUR 36.3775**, about **9.08%** above the EUR
-33.349998474121094 mark before confidence adjustment. The base case offers about 9.09% upside while
-the bear case implies about 27.29% downside. Medium confidence reduces the expected return below the
-canonical hurdle, and the base-upside, downside-payoff, relationship, and liquidity gates also
-remain unsatisfied. The deterministic buy-below level remains EUR 29.104. A buy zone requires a
-materially lower mark or stronger primary-evidence-backed per-share earnings assumptions—not a
-thin-market volume anomaly alone.
+Probability-weighted fair value remains **EUR 36.3775**, about **11.59%** above the EUR
+32.599998474121094 mark before confidence adjustment. The base case offers about 11.60% upside while
+the bear case implies about 25.61% downside. Medium-confidence adjustment leaves about 8.69%
+expected return, newly above the configured 8% threshold. Raw expected return and base upside also
+clear their 10% thresholds, but bear/base and expected/bear payoff remain inadequate and the
+relationship and liquidity gates remain unsatisfied. The deterministic buy-below level remains EUR
+29.104, about 12.01% below the current mark. The changed thresholds require a full review but do not
+independently authorize a strategy.
 
 ## Catalysts, invalidation, and review
 
@@ -170,8 +192,10 @@ The thesis is invalidated if FANUC cannot sustain competitive economics through 
 cycle, loses material control/robot share, or physical-AI investment fails to produce profitable
 commercial demand while valuation continues to price it in.
 
-Review by **2026-09-02**, or sooner upon revised guidance, material order disclosure, a large FX or
-price move, evidence on paid physical-AI deployments, or a change in Frankfurt trading liquidity.
+Review by **2026-09-03**, with the dependent full review due sooner because the 20 August price move
+changed multiple rating and decision-support thresholds; also review upon revised guidance,
+material order disclosure, a large FX or price move, evidence on paid physical-AI deployments, or a
+change in Frankfurt trading liquidity.
 Upgrade only if fresh scenarios clear all canonical gates and the relationship evidence is
 accepted. Downgrade if earnings, margins, competitive position, or liquidity deteriorates.
 
@@ -182,9 +206,10 @@ accepted. Downgrade if earnings, margins, competitive position, or liquidity det
 - Business quality: **80** — integrated technology, installed base, margins, and resilience indicate
   durable advantages.
 - Balance sheet: **100** — net financial strength provides substantial downside protection.
-- Valuation: **40** — scenario expected return is below the economic hurdle.
-- Timing: **40** — the 9.03% decline improved prospective return, but abnormal volume on a thin line
-  has no verified fundamental catalyst and the buy-below level remains unreached.
+- Valuation: **40** — raw and confidence-adjusted expected return now clear their thresholds, but
+  downside-payoff and margin-of-safety quality remain insufficient for exposure.
+- Timing: **40** — the 12.39% decline and lower-band breach improved prospective return, but thin
+  turnover has no verified fundamental catalyst and the buy-below level remains unreached.
 - Liquidity: **40** — the Frankfurt line has material volume and spread constraints.
 - Risk penalty: **60** — cyclical, China, FX, competition, and listing-liquidity risks constrain
   sizing.
