@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "FANUC quick check found no change from the 19 August full review: the same volume anomaly and EUR 33.35 mark remain thin-market risk rather than a verified fundamental opportunity; issuer-source hashes, valuation, Hold / Watch disposition, and allocation ineligibility are unchanged, so no full-review escalation was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The mandatory context command succeeded before assessment-state reads. It binds security_96ba305ee7cd586bc348 to FANUC/FUC.F/XFRA/EUR/equity, identifies successful baseline operation 01KZVTZDX08AEMJ36N81A06G62 completed at 2026-08-19T15:38:56Z, and confirms current immutable assessment assessment_4e73de2ff48e5f482190 is fresh through 2026-09-02.",
+      "observed_at": "2026-08-20T09:31:19Z",
+      "source": "PaperTrader audited security context"
+    },
+    {
+      "claim": "The quick-check payload exactly repeats the volume_anomaly already consumed by the baseline full review: 2026-07-22 through 2026-08-19, EUR 33.349998474121094 close, -9.028918% period return, and the same immutable source-price hash.",
+      "observed_at": "2026-08-20T09:02:45Z",
+      "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56.md",
+      "source_hash": "5a80dab266490be42afb8af01ee32ecadc88b6386755c57c466dc885b1577096"
+    },
+    {
+      "claim": "The retained FANUC consolidated first-quarter results PDF was fetched again from the issuer and remained byte-identical, so the baseline operating results, raised guidance, balance-sheet evidence, and valuation inputs supported by this source are unchanged.",
+      "observed_at": "2026-08-20T09:32:11Z",
+      "source": "source_fanuc_q1_fy2026_results",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+    },
+    {
+      "claim": "The retained FANUC first-quarter reference-material PDF was fetched again from the issuer and remained byte-identical, leaving the conventional-automation demand evidence, forecast assumptions, catalysts, risks, and humanoid-revenue evidence gap unchanged.",
+      "observed_at": "2026-08-20T09:32:11Z",
+      "source": "source_fanuc_q1_fy2026_reference",
+      "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+    },
+    {
+      "claim": "At the exact alert mark, the accepted assessment retains EUR 36.3775 probability-weighted fair value, EUR 29.104 buy-below price, 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, Hold / Watch, and ineligibility from expected-return, base-upside, downside-payoff, pending-relationship, confidence, timing, valuation, and thin-liquidity constraints. No gate changed and no escalation is warranted.",
+      "observed_at": "2026-08-20T09:31:19Z",
+      "source": "assessment_4e73de2ff48e5f482190"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0F6H4R8MJWJHZSE7KD1REGJ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded FANUC quick check for the 19 August volume anomaly. The mandatory audited security context confirms that the successful full review completed on 19 August after evaluating this same immutable alert, market period, price hash, and EUR 33.349998474121094 mark. Both retained FANUC first-quarter primary-source PDFs were retrieved again on 20 August and their hashes remain unchanged. The thesis, EUR 24.25/EUR 36.38/EUR 48.50 scenarios, EUR 29.104 buy-below level, catalysts, risks, invalidation, Hold / Watch disposition, and allocation ineligibility are therefore unchanged. Assessment assessment_4e73de2ff48e5f482190 remains fresh through 2 September and comparable to the exact alert state. No full security review was requested because no valuation, buy-zone, catalyst, invalidation, evidence, or decision-support gate changed. The unchanged-conclusion path left no agent-owned repository delta and created no follow-up operation.",
+  "validation": {
+    "checks": [
+      "Confirmed the queue contains exactly one selected running quick_check_research row claimed by daily-20260820T090239Z with a live lease and the required llm-wiki and papertrader-quick-check-research skills.",
+      "Confirmed hermes_preflight.json identifies the native wiki, controller, and routed quick-check skill by path and SHA-256, with sequential execution enabled.",
+      "Consumed the mandatory successful audited security context before reading assessment state and confirmed the baseline result is successful, identity-matched, and less than ten days old.",
+      "Confirmed the payload market period, market-data timestamp, security identity, trigger, current mark, and source-price hash exactly match the baseline full review and current deterministic market files.",
+      "Re-fetched both bounded retained issuer sources; each SHA-256 exactly matches the registered and baseline hash.",
+      "Verified thesis, valuation and buy zone, catalysts, risks, invalidation, confidence, assessment assumptions, rating, portfolio action, and all decision-support gates remain unchanged; full_research_requested is absent and no escalation condition fired.",
+      "Used the permitted unchanged-conclusion path: no security page, structured assessment, source record, catalog, log, issue, or follow-up state changed, so no same-run assessment upsert was required.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting ledger, raw source, idea, relationship, or security research page changed."
+    ],
+    "passed": true
+  }
+}
