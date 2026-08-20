@@ -7,13 +7,13 @@ tags:
 created: "2026-08-20"
 updated: "2026-08-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_736a9f7eaa8e123bfc2c"
-as_of: "2026-08-20T08:34:58Z"
+snapshot_id: "decision_b14a6edae6622ef68840"
+as_of: "2026-08-20T09:44:20Z"
 ---
 
 # Signals
 
-**As of `2026-08-20T08:34:58Z`**
+**As of `2026-08-20T09:44:20Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,15 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-19`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one bounded FANUC quick check for the 19 August volume anomaly. The mandatory audited security context confirms that the successful full review completed on 19 August after evaluating this same immutable alert, market period, price hash, and EUR 33.349998474121094 mark. Both retained FANUC first-quarter primary-source PDFs were retrieved again on 20 August and their hashes remain unchanged. The thesis, EUR 24.25/EUR 36.38/EUR 48.50 scenarios, EUR 29.104 buy-below level, catalysts, risks, invalidation, Hold / Watch disposition, and allocation ineligibility are therefore unchanged. Assessment assessment\_4e73de2ff48e5f482190 remains fresh through 2 September and comparable to the exact alert state. No full security review was requested because no valuation, buy-zone, catalyst, invalidation, evidence, or decision-support gate changed. The unchanged-conclusion path left no agent-owned repository delta and created no follow-up operation.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -40,8 +49,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-08-19`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Refreshed Texas Instruments after the 2026-08-19 lower-Bollinger transition using the exact July 22-August 19 market period, unchanged SEC-filed Q2 evidence, and the current SEC submissions index. The marginal breach is risk with modest valuation improvement, not an actionable entry: unchanged USD 150/USD 256.50/USD 374 scenarios derive -3.07% expected return, -2.30% confidence-adjusted return, Hold/Watch, and allocation ineligibility at USD 267.45. Updated the security page and immutable schema-v2 assessment, refreshed three retained source records, and enqueued one dependent relationship review for the plausible US 300mm/CHIPS-to-nearshoring mechanism. No strategy, signal, order, allocation, fill, execution, cash, portfolio, or performance state changed.
 
 ### [TWST — Twist Bioscience Corporation](securities/security_6cf75bd0ec0aa2a20148)
 
@@ -94,8 +103,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-19`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed exactly one bounded Recursion Pharmaceuticals quick check without changing agent-owned repository state. The current 19 August USD 3.50 mark, 30,198,700-share session, 2.673 volume z-score and 17.45% return over the exact 22 July through 19 August period confirm the volume anomaly, but current primary evidence does not identify an operating catalyst or change the thesis. The Q2 filing and results exhibit remain byte-identical, REC-4881 and REC-1245 remain recruiting, and no newer 8-K, 10-Q or 10-K appeared in the SEC submissions index through 19 August. The fresh assessment therefore remains Unrated / Watch, valuation-unsupported and allocation-ineligible; there is still no supportable buy zone. No full security review, strategy, signal, paper order, allocation or accounting change was warranted.
 
 ### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
 
@@ -139,8 +148,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-19`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Quick-checked Ginkgo Bioworks after the strengthened 2026-08-19 volume anomaly. The identity-matched market bar and source-price hash retain the same USD 7.71 reference mark used by the fresh 2026-08-19 full assessment, and the SEC submissions index contains no later financial or operating filing. The volume increase does not change the thesis, valuation assumptions, catalysts, invalidation conditions, risks, Hold / Watch rating, or allocation ineligibility. The USD 6.056 buy-below gate was not reached, no material gate changed, and no full security-research escalation was created. The fresh accepted assessment remains assessment\_ca38ef934552ae9c3e55; this unchanged bounded conclusion leaves no agent-owned repository delta.
 
 ### [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a)
 
@@ -214,15 +223,6 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-19`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one repeat FANUC security review for the 19 August volume anomaly. Re-fetched the two retained first-quarter issuer PDFs and confirmed unchanged hashes. The Frankfurt line fell 9.028918% over 22 July through 19 August while alert-day volume reached only 1,355 shares, so the anomaly is classified as thin-market risk rather than a verified fundamental opportunity. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios at 25%/50%/25% produce EUR 36.3775 weighted fair value against the EUR 33.349998474121094 mark. Assessment assessment\_4e73de2ff48e5f482190 derives 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, Hold / Watch, and allocation ineligibility. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, accounting, idea, relationship, or follow-up operation changed.
-
 ### [ETN — Eaton Corporation plc](securities/security_18a3ab0ee6086ee85d0f)
 
 **Research alert — not a trade signal**
@@ -247,8 +247,8 @@ No pending orders.
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-19`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Refreshed Canadian Solar after the 2026-08-19 bullish-MACD transition using the exact July 22-August 19 market period, the August 13 Cobalt Solar financing, unchanged Q1 financial evidence, and the current SEC submissions index. The crossover is a weak technical opportunity marker rather than an actionable entry: unchanged USD 10.43/USD 18.78/USD 27.12 NAV scenarios at USD 15.78 derive 13.71% expected return, 10.28% confidence-adjusted expected return, Buy/Initiate, watch-tier conviction, and allocation ineligibility because both downside-payoff gates and the accepted-relationship gate fail. Updated the security page and immutable schema-v2 assessment, registered two current primary sources, and enqueued one dependent relationship review for the plausible solar-storage-grid mechanism. No strategy, signal, order, allocation, fill, execution, cash, portfolio, or performance state changed.
 
 ### [CRWD — CrowdStrike Holdings, Inc.](securities/security_8472507d7d320aa388a7)
 

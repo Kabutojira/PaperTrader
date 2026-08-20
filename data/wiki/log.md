@@ -4324,6 +4324,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260820]] for run `daily-20260820T074907Z`.
 
+- Published investor decision snapshot `decision_b14a6edae6622ef68840`.
+
+- Generated canonical [[daily-reports/daily-report_20260820]] for run `daily-20260820T090239Z`.
+
 ## [2026-08-20] update | Parrot S.A. ordinary shares
 
 - Updated [[securities/security_cc4dcb8f002b61dffe00]] from Parrot's H1 2026 results and July 31
