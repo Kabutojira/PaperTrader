@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-19"
-updated: "2026-08-19"
+updated: "2026-08-20"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_89f8e2a455f76218e169"
 as_of: "2026-08-19T23:48:56Z"
@@ -557,3 +557,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-2f38afbd04e1|COIN — Volume anomaly]]
+- [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-3d530f7f77d6|DLO — Volume anomaly]]
+- [[inbox/market-security_8472507d7d320aa388a7-volume_anomaly-a1862f6a6f89|CRWD — Volume anomaly]]
+- [[inbox/market-security_8a5c43888d224de85c69-sma_50_cross_below_200-7377f7b31f5c|PLS.AX — SMA 50 cross below 200]]
+- [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099|DNA — Volume anomaly]]

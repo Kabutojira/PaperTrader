@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_32bd3e7e6f330b753500",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-08-20T07:49:13Z",
+    "period_end": "2026-08-19",
+    "period_start": "2026-07-22",
+    "security_id": "security_8472507d7d320aa388a7",
+    "trigger_type": "volume_anomaly"
+  },
+  "objective": "Assess security_8472507d7d320aa388a7 volume_anomaly transition as opportunity, risk, or noise.",
+  "operation_id": "01M0F2AG58DY0MP3GK6A9GGM8N",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_8472507d7d320aa388a7-volume_anomaly-a1862f6a6f89.md"
+  ]
+}

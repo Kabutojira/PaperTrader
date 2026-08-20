@@ -2,21 +2,47 @@
   "entity_id": "security_cc4dcb8f002b61dffe00",
   "entity_type": "security",
   "inputs": {
+    "assessment_state": "2026-07-28T01:09:21Z",
+    "maintenance_mode": "refresh",
     "market_data_as_of": "2026-08-17T17:20:27Z",
     "market_data_date": "2026-08-17",
     "period_end": "2026-08-17",
     "period_start": "2026-07-20",
+    "research_page": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_cc4dcb8f002b61dffe00:61db6977ec534fd3d587:2026-08-17",
+        "observed_at": "2026-08-17T17:20:27Z",
+        "prompt": "Research security_cc4dcb8f002b61dffe00 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_cc4dcb8f002b61dffe00:allocation-maintenance:2026-07-28T01:09:21Z",
+        "observed_at": "2026-08-20T07:49:13Z",
+        "prompt": "Revalidate security_cc4dcb8f002b61dffe00 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_parrot_fy2025_results",
+          "source_parrot_q1_2026_business"
+        ]
+      }
+    ],
     "security_id": "security_cc4dcb8f002b61dffe00",
     "source_price_hash": "510e5a0cdb6c8ed3f6080429dbe253813184ac1791fe2aa2826b7e79676ce999",
     "trigger_types": [
       "macd_cross_above_signal"
     ]
   },
-  "objective": "Research security_cc4dcb8f002b61dffe00 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+  "objective": "Research security_cc4dcb8f002b61dffe00 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act. | Additional cause: Revalidate security_cc4dcb8f002b61dffe00 with current primary evidence and write one comparable allocation assessment.",
   "operation_id": "01M08BT9VRSPKQN2Q6FSAB61CR",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
-    "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5.md"
+    "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5.md",
+    "source_parrot_fy2025_results",
+    "source_parrot_q1_2026_business"
   ]
 }

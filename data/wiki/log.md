@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-19"
+updated: "2026-08-20"
 provenance: repository-contract
 ---
 
@@ -4299,3 +4299,23 @@ This log is append-only. Rotate it by year only after the configured line thresh
   buy-zone comparison are no longer decision-supportable. The comparable assessment is Unrated /
   Watch and allocation-ineligible pending exactly one dependent full review. No strategy, signal,
   paper order, allocation or accounting state changed.
+
+## 2026-08-20
+
+- Created candidate packet [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-2f38afbd04e1]] (2f38afbd04e1).
+
+- Classified [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-2f38afbd04e1]] as `ingest`: A newly entered volume anomaly coincides with a material multi-week decline and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-3d530f7f77d6]] (3d530f7f77d6).
+
+- Classified [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-3d530f7f77d6]] as `ingest`: A validated volume-anomaly transition strengthened materially for the tracked security and merits durable review despite the modest price return.
+
+- Created candidate packet [[inbox/market-security_8472507d7d320aa388a7-volume_anomaly-a1862f6a6f89]] (a1862f6a6f89).
+
+- Classified [[inbox/market-security_8472507d7d320aa388a7-volume_anomaly-a1862f6a6f89]] as `ingest`: A strengthened volume anomaly with a material approximately 7% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-sma_50_cross_below_200-7377f7b31f5c]] (7377f7b31f5c).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099]] (6fe39e436099).
+
+- Classified [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099]] as `ingest`: Strengthened volume anomaly is a material indicator transition for the identified security.

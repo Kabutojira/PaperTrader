@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_6ad1af8d10d6276a0221",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-07-27T23:39:45Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
+    "security_id": "security_6ad1af8d10d6276a0221"
+  },
+  "objective": "Revalidate security_6ad1af8d10d6276a0221 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0F2AG589NSB423KKJRB01Q5",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_scco_q1_2026_results"
+  ]
+}

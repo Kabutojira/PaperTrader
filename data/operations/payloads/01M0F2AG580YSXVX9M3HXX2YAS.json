@@ -1,0 +1,20 @@
+{
+  "entity_id": "security_0a56aa634d077fe5796f",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-19T23:29:56Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_0a56aa634d077fe5796f.md",
+    "security_id": "security_0a56aa634d077fe5796f"
+  },
+  "objective": "Revalidate security_0a56aa634d077fe5796f with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0F2AG580YSXVX9M3HXX2YAS",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_amat_q2_2026_10q",
+    "source_amat_q2_2026_results",
+    "source_amat_q3_2026_results",
+    "source_amat_sec_submissions_20260819"
+  ]
+}
