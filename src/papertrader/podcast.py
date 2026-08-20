@@ -166,12 +166,44 @@ def _validate_frozen_reference(
     return payload
 
 
+def _validate_frozen_daily_report(
+    repository_root: Path,
+    *,
+    raw_path: object,
+    raw_sha256: object,
+    page_path: str,
+) -> bytes:
+    """Accept the frozen report bytes or their one deterministic podcast-link mutation."""
+
+    label = "current daily report"
+    if not isinstance(raw_path, str) or not raw_path:
+        raise PodcastError(f"{label} path is invalid")
+    if not isinstance(raw_sha256, str) or not SHA256.fullmatch(raw_sha256):
+        raise PodcastError(f"{label} hash is invalid")
+    payload = _regular_bytes(repository_root, raw_path, label=label)
+    if content_hash(payload) == raw_sha256:
+        return payload
+
+    wiki_page = page_path.removeprefix("data/wiki/").removesuffix(".md")
+    stamp = PurePosixPath(page_path).stem.removeprefix("daily-podcast_")
+    display_stamp = f"{stamp[:4]}-{stamp[4:6]}-{stamp[6:]}"
+    expected_link = f"- [[{wiki_page}|Daily research podcast — {display_stamp}]]".encode()
+    lines = payload.splitlines(keepends=True)
+    matches = [index for index, line in enumerate(lines) if line.rstrip(b"\r\n") == expected_link]
+    if len(matches) == 1:
+        index = matches[0]
+        without_link = b"".join(lines[:index] + lines[index + 1 :])
+        if content_hash(without_link) == raw_sha256:
+            return payload
+    raise PodcastError(f"{label} hash conflicts with frozen context")
+
+
 def validate_podcast_context(
     repository_root: Path,
     *,
     daily_cycle_id: str,
 ) -> PodcastContextValidation:
-    """Validate every deterministic identity and file hash before podcast inference."""
+    """Validate every frozen identity, hash, and the one permitted report self-link."""
 
     if not RUN_ID.fullmatch(daily_cycle_id):
         raise PodcastError("podcast context cycle identity is invalid")
@@ -217,11 +249,11 @@ def validate_podcast_context(
         raise PodcastError("frozen podcast decision snapshot identity is invalid")
 
     referenced_file_count = 0
-    _validate_frozen_reference(
+    _validate_frozen_daily_report(
         repository_root,
         raw_path=report_path,
         raw_sha256=context.get("report_sha256"),
-        label="current daily report",
+        page_path=page_path,
     )
     referenced_file_count += 1
     _validate_frozen_reference(
@@ -1365,6 +1397,7 @@ def finalize_daily_podcast(
             or PurePosixPath(raw_page_path).stem not in report.read_text(encoding="utf-8")
         ):
             raise PodcastError("succeeded daily report lacks its transcript link")
+        validate_podcast_context(repository_root, daily_cycle_id=run_id)
     else:
         record_issue(
             repository_root,

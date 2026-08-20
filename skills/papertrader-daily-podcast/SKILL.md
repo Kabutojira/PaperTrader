@@ -137,7 +137,10 @@ than spoken section labels or Markdown headings:
 ## Artifact and rendering procedure
 
 1. Write the timestamped Markdown page at the exact frozen `page_path`, add exactly one transcript
-   link to the daily report, and never add an audio link. Do not invent or recalculate the filename.
+   link to the daily report, and never add an audio link. Use the exact deterministic report bullet
+   `- [[podcasts/daily-podcast_<YYYYMMDDTHHMMSSZ>|Daily research podcast — <YYYY-MM-DDTHHMMSSZ>]]`;
+   this is the only daily-report mutation accepted against its frozen hash. Do not invent or
+   recalculate the filename.
    Put all spoken prose between the exact markers
    `<!-- papertrader-spoken-transcript:start -->` and
    `<!-- papertrader-spoken-transcript:end -->`.

@@ -20,7 +20,7 @@ from papertrader.podcast import (
     validate_podcast_script,
     validate_podcast_script_file,
 )
-from papertrader.queue import RunBudget, claim_next, fail_attempt, prepare_queue
+from papertrader.queue import RunBudget, claim_next, complete_operation, fail_attempt, prepare_queue
 from papertrader.tables import append_unique, read_table
 
 NOW = datetime(2026, 7, 30, 18, tzinfo=UTC)
@@ -43,6 +43,7 @@ def test_podcast_skill_excludes_unscoped_advice_validation(repository_root: Path
     assert "derived only from the immutable cycle ID" in skill
     assert "Never replace its timestamp with the current clock" in skill
     assert "agent-authored path error is not a frozen-input conflict" in skill
+    assert "exact deterministic report bullet" in skill
 
 
 def _script(cycle_id: str, *, extra_body: str = "") -> str:
@@ -314,6 +315,52 @@ def test_context_validation_rejects_page_not_bound_to_cycle(
         validate_podcast_context(sandbox_repository, daily_cycle_id=cycle_id)
 
 
+def test_context_validation_accepts_only_the_exact_post_freeze_report_link(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260729T100000Z"
+    page_path = "data/wiki/podcasts/daily-podcast_20260729T100000Z.md"
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-29T09:00:00Z",
+        cutoff="2026-07-29T10:30:00Z",
+    )
+    result = enqueue_daily_podcast(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=cycle_id,
+        now=NOW,
+    )
+    context = json.loads((sandbox_repository / result.context_path).read_text())
+    report = sandbox_repository / context["report_path"]
+    frozen_report = report.read_bytes()
+    report.write_bytes(
+        frozen_report
+        + b"- [[podcasts/daily-podcast_20260729T100000Z|"
+        + "Daily research podcast — 2026-07-29T100000Z]]\n".encode()
+    )
+    page = sandbox_repository / page_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_script(cycle_id), encoding="utf-8")
+
+    context_validation = validate_podcast_context(sandbox_repository, daily_cycle_id=cycle_id)
+    script_validation = validate_podcast_script_file(
+        sandbox_repository,
+        sandbox_settings,
+        daily_cycle_id=cycle_id,
+        script_path=page_path,
+    )
+
+    assert context_validation.context_path == result.context_path
+    assert script_validation.word_count == 3000
+
+    report.write_bytes(report.read_bytes() + b"Unfrozen report mutation.\n")
+    with pytest.raises(PodcastError, match="current daily report hash conflicts"):
+        validate_podcast_context(sandbox_repository, daily_cycle_id=cycle_id)
+
+
 def test_context_selects_latest_successful_same_day_podcast_and_ignores_failures(
     sandbox_repository: Path,
     sandbox_settings: Settings,
@@ -565,6 +612,61 @@ def test_failed_podcast_is_recorded_without_requiring_audio(
         (sandbox_repository / "data" / "runs" / run_id / "daily_run.json").read_text()
     )
     assert manifest["podcast_status"] == "failed"
+
+
+def test_successful_podcast_finalization_validates_the_frozen_report_link(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260730T180000Z"
+    page_path = "data/wiki/podcasts/daily-podcast_20260730T180000Z.md"
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-30T17:00:00Z",
+        cutoff="2026-07-30T18:00:00Z",
+    )
+    enqueued = enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=cycle_id, now=NOW)
+    prepare_queue(sandbox_repository, now=NOW)
+    claimed = claim_next(
+        sandbox_repository,
+        sandbox_settings,
+        run_id=cycle_id,
+        budget=RunBudget(maximum_operations=1, maximum_cost=5),
+        operation_id=enqueued.operation_id,
+        operation_type="daily_podcast",
+        now=NOW,
+    )
+    assert claimed is not None
+    artifact = sandbox_repository / "data" / "runs" / cycle_id / enqueued.operation_id
+    artifact.mkdir(parents=True)
+    result_path = f"data/runs/{cycle_id}/{enqueued.operation_id}/agent_result.json"
+    (sandbox_repository / result_path).write_text("{}\n", encoding="utf-8")
+    complete_operation(
+        sandbox_repository,
+        operation_id=enqueued.operation_id,
+        run_id=cycle_id,
+        terminal_status="succeeded",
+        result_path=result_path,
+        result_summary="Completed the daily podcast.",
+        terminal_reason="agent_result:succeeded",
+        now=NOW,
+    )
+    page = sandbox_repository / page_path
+    page.parent.mkdir(parents=True, exist_ok=True)
+    page.write_text(_script(cycle_id), encoding="utf-8")
+    report = sandbox_repository / "data/wiki/daily-reports/daily-report_20260730.md"
+    report.write_bytes(
+        report.read_bytes()
+        + b"- [[podcasts/daily-podcast_20260730T180000Z|"
+        + "Daily research podcast — 2026-07-30T180000Z]]\n".encode()
+    )
+
+    assert finalize_daily_podcast(sandbox_repository, run_id=cycle_id, now=NOW) == "succeeded"
+
+    report.write_bytes(report.read_bytes() + b"Unfrozen report mutation.\n")
+    with pytest.raises(PodcastError, match="current daily report hash conflicts"):
+        finalize_daily_podcast(sandbox_repository, run_id=cycle_id, now=NOW)
 
 
 def test_podcast_render_draft_uses_only_audited_runner_temp(
