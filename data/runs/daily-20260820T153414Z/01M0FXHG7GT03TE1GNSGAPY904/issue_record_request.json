@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "FANUC assessment source operation is ambiguous within one run",
+  "description": "The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands, and the wiki full-review synthesis was completed. No assessment, relationship follow-up, strategy, signal, order, allocation, fill, ledger, portfolio, or performance state was created. The controller must reschedule the full review under a distinct run or repair deterministic source-operation disambiguation before retrying.",
+  "owner": "controller",
+  "related_run_id": "daily-20260820T153414Z",
+  "related_operation_id": "01M0FXHG7GT03TE1GNSGAPY904"
+}

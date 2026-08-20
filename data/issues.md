@@ -12,6 +12,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
 | error | **issue_237eb6de59f6ab09bb98** — Applied Materials assessment source operation is ambiguous within one run | 2026-08-19T23:45:43Z | controller | 01M0E5XT181SGH3F2RFGWJ4WGQ |
 | error | **issue_2acf0a010f34b5a332ee** — Hermes operation validation failed: 01M0B9RMZRENS1CC2T3BF65HXF | 2026-08-18T21:01:53Z | controller | 01M0B9RMZRENS1CC2T3BF65HXF |
+| error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |
 | error | **issue_3d573dd92b113a698d01** — Intuitive Machines assessment source operation is ambiguous within one run | 2026-08-08T14:23:52Z | controller | 01KZGV5E1GF4N027VZVMD02HEZ |
 | error | **issue_406f407472eb3a7999d9** — Hermes operation validation failed: 01M081X8BGDJA34XM08JAKQFS1 | 2026-08-17T14:47:27Z | delivery | 01M081X8BGDJA34XM08JAKQFS1 |

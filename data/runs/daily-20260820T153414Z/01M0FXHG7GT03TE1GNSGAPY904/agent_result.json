@@ -1,0 +1,79 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader research source record --request data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_reference_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/assessment_upsert_request.json",
+    "papertrader issue record --request data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/issue_record_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "FANUC full security research was blocked because the same daily run contained both its quick-check predecessor and full review, making deterministic assessment provenance ambiguous. Current evidence and the full-review wiki synthesis retain Hold / Watch; no assessment version or trade workflow was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The byte-identical quarter ended 30 June 2026 issuer results report JPY 231.035 billion sales, JPY 53.492 billion operating income, and JPY 50.981 billion attributable net income; the full review retained these inputs without revision.",
+      "observed_at": "2026-08-20T15:52:10Z",
+      "source": "source_fanuc_q1_fy2026_results",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+    },
+    {
+      "claim": "The byte-identical issuer reference material retains FY2026 guidance of JPY 948.1 billion sales, JPY 218.0 billion operating income, and JPY 198.0 billion attributable net income.",
+      "observed_at": "2026-08-20T15:52:10Z",
+      "source": "source_fanuc_q1_fy2026_reference",
+      "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+    },
+    {
+      "claim": "The canonical 23 July through 20 August alert period shows a 12.39% decline and a close about 0.75% below the lower Bollinger band at EUR 32.599998474121094; the full review classifies it as a possible entry condition but not a paper-trade signal.",
+      "observed_at": "2026-08-20T15:34:23Z",
+      "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md",
+      "source_hash": "2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d"
+    },
+    {
+      "claim": "The mandatory security-context command succeeded. The assessment upsert then exited 2 with no changed paths because assessment source operation was ambiguous for this run; current assessment assessment_cc11a683fe32530dd4a5 remains the latest immutable version and no relationship follow-up was enqueued.",
+      "observed_at": "2026-08-20T15:55:17Z",
+      "source": "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/assessment_upsert_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/enqueue_humanoid_relationship_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/issue_record_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/security_upsert_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_reference_refresh_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_results_refresh_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+  ],
+  "issues_recorded": [
+    "issue_30c07892e9981c27b153"
+  ],
+  "operation_id": "01M0FXHG7GT03TE1GNSGAPY904",
+  "operations_created": [],
+  "reason_code": "assessment_source_operation_ambiguous",
+  "status": "blocked",
+  "summary": "Blocked exactly one FANUC full security review after the deterministic schema-v2 assessment applier found both the completed quick-check predecessor and this running security-research operation for the same security and run ID, making assessment provenance ambiguous. The issuer evidence was rechecked with unchanged hashes, the security row and full-review wiki synthesis were updated, and the canonical conclusion remains Hold / Watch with no allocation eligibility. Issue issue_30c07892e9981c27b153 records the resolvable controller dependency. No assessment version, relationship follow-up, strategy, signal, paper order, allocation, execution, cash, portfolio, or performance state was created or changed.",
+  "validation": {
+    "checks": [
+      "PASS: hermes_preflight.json identifies the native llm-wiki, controller, and papertrader-security-research skills with content hashes.",
+      "PASS: the mandatory audited security-context command succeeded before assessment state was consumed.",
+      "PASS: immutable security identity remained issuer_b000ffd888e42845fe36 / XFRA / FUC.F / EUR equity and strict integrity returned OK.",
+      "PASS: both retained primary issuer PDFs were re-recorded as fresh and byte-identical to their registered hashes.",
+      "PASS: the full idea catalog and canonical relationship table were searched; there is no accepted relationship, the humanoid-robotics edge remains a candidate, and the Japan policy adjacency was rejected for no attributable causal link.",
+      "FAIL: the mandatory schema-v2 assessment could not be accepted because two source operations for this security share daily-20260820T153414Z.",
+      "PASS: no relationship follow-up was enqueued after the assessment failure and no strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed.",
+      "PASS: strict wiki lint returned OK.",
+      "PASS: strict repository integrity returned OK."
+    ],
+    "passed": false
+  }
+}

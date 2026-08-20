@@ -1,0 +1,35 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/issues.md",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/assessment_upsert_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/enqueue_humanoid_relationship_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/issue_record_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/security_upsert_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_reference_refresh_request.json",
+    "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_results_refresh_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M0FXHG7GT03TE1GNSGAPY904",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260820T153414Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

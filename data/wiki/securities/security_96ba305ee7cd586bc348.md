@@ -35,39 +35,38 @@ and not the Tokyo listing as a substitutable execution venue.
 
 ## Decision summary
 
-**Buy / Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 remains the latest
+**Hold / Watch; no paper strategy or signal.** FANUC's quarter ended 30 June 2026 remains the latest
 retained primary operating evidence: sales rose 17.7%, operating income rose 26.1%, the company
 raised full-year guidance, and the balance sheet remained exceptionally strong. Both issuer PDFs
-were retrieved again on 20 August with unchanged hashes. At the lower EUR 32.599998474121094
-Frankfurt mark, the unchanged EUR 36.3775 probability-weighted value offers about 11.59% expected
-return and the EUR 36.38 base case offers about 11.60% upside. Those values newly clear the raw
-expected-return, confidence-adjusted expected-return, and base-upside thresholds, changing the
-canonical rating from Hold to Buy, but downside-payoff, relationship, and thin-liquidity gates
-continue to block exposure.
+were retrieved again for this full review on 20 August and remain byte-identical. At the lower EUR
+32.599998474121094 Frankfurt mark, the unchanged EUR 36.3775 probability-weighted value offers about
+11.59% expected return and the EUR 36.38 base case offers about 11.60% upside. The deterministic
+assessment confirms that those raw returns do not override inadequate bear/base and expected/bear
+payoff, the absent accepted relationship, or thin Frankfurt-line liquidity.
 
-The 20 August lower-Bollinger entry is therefore a **possible entry condition requiring full
-research, not a paper-trade signal**. The shares fell 12.39% over 23 July–20 August and closed about
+The 20 August lower-Bollinger entry is therefore a **possible entry condition reviewed in full, not
+a paper-trade signal**. The shares fell 12.39% over 23 July–20 August and closed about
 0.75% below the lower band, but the EUR 32.60 session again recorded only 1,355 shares. No changed
 issuer evidence supports revising earnings or fair-value assumptions, and the mark remains about
-12.01% above the EUR 29.104 conservative buy-below level. One dependent full security review will
-reassess the changed valuation gates against current primary evidence before any strategy work.
+12.01% above the EUR 29.104 conservative buy-below level. This completed full review confirms Hold /
+Watch and allocation ineligibility; no strategy work is justified.
 
 ## Changes since prior review
 
-Compared with assessment `assessment_4e73de2ff48e5f482190`, the issuer evidence and its hashes are
-unchanged, so the business thesis, earnings inputs, bear/base/bull fair values and 25%/50%/25%
-probabilities are unchanged. The market mark fell from EUR 33.349998474121094 to EUR
-32.599998474121094, improving expected return from about 9.08% to about 11.59%, confidence-adjusted
-expected return from about 6.81% to about 8.69%, and base-case upside from about 9.09% to about
-11.60%. The EUR 29.104 buy-below level remains unreached.
+Compared with quick-check assessment `assessment_cc11a683fe32530dd4a5`, no retained primary fact,
+source hash, earnings input, scenario assumption, fair value, probability, catalyst, risk,
+invalidation, blocker, or soft gap changed. The current EUR 32.599998474121094 mark and the EUR
+24.25 / EUR 36.38 / EUR 48.50 scenarios remain unchanged, as do the approximately 11.59% expected
+return, 8.69% confidence-adjusted expected return, 11.60% base upside, and EUR 29.104 buy-below
+level. The business thesis, balance-sheet conclusion, medium confidence, and all component anchors
+also remain unchanged.
 
-The canonical rating changes from Hold to Buy because expected and base returns now exceed 10%,
-while portfolio action remains Watch. Bear/base and expected/bear payoff ratios, the absent accepted
-canonical relationship, and Frankfurt liquidity still prevent allocation eligibility. Business
-quality, balance-sheet strength, cyclicality, China, foreign-exchange, competition,
-humanoid-revenue uncertainty, confidence, catalysts, and invalidation are unchanged. A full review
-is required because multiple decision-support thresholds changed; no strategy or signal is
-justified by this quick check.
+The full review resolves the quick-check escalation without upgrading the canonical structured
+rating: **Hold / Watch** remains unchanged from `assessment_cc11a683fe32530dd4a5`. The earlier page
+prose describing a price-only Buy threshold is superseded because the deterministic canonical gate
+also retains bear/base and expected/bear payoff failures. The absent accepted relationship and thin
+Frankfurt liquidity remain unresolved. No new hard blocker was added, no gap was resolved, and no
+strategy or signal is justified.
 
 ## Alert review
 
@@ -80,9 +79,9 @@ justified by this quick check.
   active, but absolute turnover is still thin.
 - **Current market timestamp:** 2026-08-20T15:34:23Z.
 - **Source-price hash:** `2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d`.
-- **Disposition:** possible entry condition requiring one dependent full review. The price-driven
-  rating thresholds changed, but the buy-below level was not reached, primary evidence did not
-  change, and payoff, relationship, and liquidity gates still block a strategy or signal.
+- **Disposition:** possible entry condition reviewed in full. The lower price improved raw returns,
+  but the buy-below level was not reached, primary evidence did not change, and payoff,
+  relationship, and liquidity gates still block a strategy or signal.
 
 See the deterministic packet
 [[inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43]].
@@ -138,10 +137,26 @@ requiring general-purpose humanoids to reach scale. Installed-base expertise, re
 integrated controls, global support, and a fortress balance sheet support durable economics through
 a cycle.
 
-This is relevant to [[ideas/idea_humanoid_robotics_embodied_ai_components]], but only as a bounded
-candidate link. Current results demonstrate conventional automation demand and platform capability;
-they do **not** prove repeat paid humanoid deployments, humanoid-specific revenue materiality, or an
-accepted canonical relationship.
+## Idea exposure map
+
+- **Candidate — positive:** [[ideas/idea_humanoid_robotics_embodied_ai_components]]. FANUC's
+  controls, servos, robots, simulation integration, installed base, and service capability provide
+  a specific route from physical-AI adoption to product and service demand. Current FANUC results
+  demonstrate conventional automation demand and platform capability, but do **not** prove repeat
+  paid humanoid deployments or humanoid-specific revenue materiality. A separate relationship
+  review must accept or reject this edge; it is not canonical today. It would be invalidated if
+  physical-AI activity remains demonstrations, fixed automation captures the economics, or FANUC
+  cannot disclose material profitable demand.
+- **Rejected-no-link:** [[ideas/idea_japan_sanaenomics_strategic_investment]]. FANUC is a Japanese
+  automation supplier, but the maintained policy evidence identifies no funded FANUC order,
+  attributable backlog, subsidy, procurement award, or margin transmission. Nationality and broad
+  automation adjacency alone are not a causal relationship. Reconsider only after an attributable
+  funded program or issuer disclosure.
+
+The complete maintained idea catalog produced no other pairing with a security-specific causal
+transmission mechanism and material evidenced exposure. Broad AI-power, nearshoring, healthcare-
+automation, drone-component, and semiconductor themes were rejected as customer or thematic
+adjacency rather than a direct maintained FANUC earnings mechanism.
 
 ## Contrary evidence and risks
 
@@ -177,8 +192,8 @@ the bear case implies about 25.61% downside. Medium-confidence adjustment leaves
 expected return, newly above the configured 8% threshold. Raw expected return and base upside also
 clear their 10% thresholds, but bear/base and expected/bear payoff remain inadequate and the
 relationship and liquidity gates remain unsatisfied. The deterministic buy-below level remains EUR
-29.104, about 12.01% below the current mark. The changed thresholds require a full review but do not
-independently authorize a strategy.
+29.104, about 12.01% below the current mark. The completed full review therefore confirms Hold /
+Watch rather than a price-only upgrade or strategy.
 
 ## Catalysts, invalidation, and review
 
@@ -192,10 +207,8 @@ The thesis is invalidated if FANUC cannot sustain competitive economics through 
 cycle, loses material control/robot share, or physical-AI investment fails to produce profitable
 commercial demand while valuation continues to price it in.
 
-Review by **2026-09-03**, with the dependent full review due sooner because the 20 August price move
-changed multiple rating and decision-support thresholds; also review upon revised guidance,
-material order disclosure, a large FX or price move, evidence on paid physical-AI deployments, or a
-change in Frankfurt trading liquidity.
+Review by **2026-09-03**, or sooner upon revised guidance, material order disclosure, a large FX or
+price move, evidence on paid physical-AI deployments, or a change in Frankfurt trading liquidity.
 Upgrade only if fresh scenarios clear all canonical gates and the relationship evidence is
 accepted. Downgrade if earnings, margins, competitive position, or liquidity deteriorates.
 

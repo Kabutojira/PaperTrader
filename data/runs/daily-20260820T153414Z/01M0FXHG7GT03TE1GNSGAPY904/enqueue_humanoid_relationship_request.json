@@ -1,0 +1,32 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_c499491cbfad03abe88c",
+  "dedupe_key": "relationship_research:relationship_c499491cbfad03abe88c:security-result:01M0FXHG7GT03TE1GNSGAPY904",
+  "prompt": "Review whether FANUC has a material causal relationship to humanoid robotics and embodied AI through controls, servos, robots, simulation integration, installed base, and service economics; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_c499491cbfad03abe88c",
+    "idea_id": "idea_humanoid_robotics_embodied_ai_components",
+    "security_id": "security_96ba305ee7cd586bc348",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Physical-AI adoption can transmit into FANUC control, servo, robot, integration and service demand through its installed automation base, provided repeat paid deployments and attributable profitable revenue become material.",
+    "proposed_invalidation": "Reject the edge if physical-AI activity remains demonstrations, fixed automation captures the economics without incremental FANUC content, or FANUC cannot disclose material repeat paid demand and profitable revenue attribution.",
+    "evidence_refs": [
+      "source_fanuc_q1_fy2026_results",
+      "source_fanuc_q1_fy2026_reference"
+    ]
+  },
+  "source": "security_research:01M0FXHG7GT03TE1GNSGAPY904",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M0FXHG7GT03TE1GNSGAPY904"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+    "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+    "source_fanuc_q1_fy2026_results",
+    "source_fanuc_q1_fy2026_reference"
+  ],
+  "max_attempts": 3
+}

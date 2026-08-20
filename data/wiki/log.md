@@ -4407,3 +4407,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   thresholds, changing the rating to Buy while payoff, relationship, and liquidity gates retain
   Watch and allocation ineligibility. Exactly one dependent full security review was requested; no
   strategy, signal, paper order, allocation, or accounting state changed.
+
+## [2026-08-20T15:52:10Z] update | FANUC full lower-Bollinger reassessment
+
+- Completed the full review of [[securities/security_96ba305ee7cd586bc348|FANUC's Frankfurt ordinary
+  shares]] against the exact 23 July through 20 August lower-Bollinger period, the unchanged Q1
+  results and reference material, and the EUR 32.599998474121094 mark.
+- Unchanged EUR 24.25 / EUR 36.38 / EUR 48.50 scenarios retain Hold / Watch and allocation
+  ineligibility because bear/base payoff, expected/bear payoff, the absent accepted relationship,
+  and thin Frankfurt liquidity outweigh the improved raw returns. The earlier price-only Buy prose
+  is superseded by the deterministic canonical gate.
+- Retained the humanoid-robotics idea as a candidate requiring one separate relationship review and
+  rejected the Japan strategic-investment adjacency absent an attributable funded FANUC order. No
+  strategy, signal, paper order, allocation, or accounting state changed.
