@@ -7,13 +7,13 @@ tags:
 created: "2026-08-20"
 updated: "2026-08-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b14a6edae6622ef68840"
-as_of: "2026-08-20T09:44:20Z"
+snapshot_id: "decision_9124d0557ca894f31eb2"
+as_of: "2026-08-20T15:59:41Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-20T09:44:20Z`
+**As of:** `2026-08-20T15:59:41Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-20T09:44:20Z"
 
 ## Coverage
 
-- Assessments: 62/70
-- Fresh-evidence assessments: 60/70
+- Assessments: 54/70
+- Fresh-evidence assessments: 51/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-20T09:44:20Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 383
+- Research backlog: 391
 - Last successful daily run: 2026-08-20
 
 ## Current issues by investment impact
@@ -38,6 +38,7 @@ as_of: "2026-08-20T09:44:20Z"
 ### Blocks Portfolio
 
 - Error **Applied Materials assessment source operation is ambiguous within one run** — The schema-v2 Applied Materials assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The first immutable assessment request was rejected without state changes for two non-canonical soft-gap names; retry01 corrected those names but exposed the run-level ambiguity. A bounde
+- Error **FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast blocked: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -187,7 +188,7 @@ as_of: "2026-08-20T09:44:20Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 383 active operations.
+Showing 20 of 391 active operations.
 
 <details><summary>Active research work</summary>
 

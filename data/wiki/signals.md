@@ -7,13 +7,13 @@ tags:
 created: "2026-08-20"
 updated: "2026-08-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b14a6edae6622ef68840"
-as_of: "2026-08-20T09:44:20Z"
+snapshot_id: "decision_9124d0557ca894f31eb2"
+as_of: "2026-08-20T15:59:41Z"
 ---
 
 # Signals
 
-**As of `2026-08-20T09:44:20Z`**
+**As of `2026-08-20T15:59:41Z`**
 
 ## Actionable trade signals
 
@@ -25,12 +25,30 @@ No pending orders.
 
 ## Research alerts — not trade signals
 
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-20`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one bounded Parrot S.A. quick check after the 20 August lower-Bollinger transition. The identity-matched EUR 9.539999961853027 close was 0.1557% below the lower band after a 4.50% decline over 23 July through 20 August, with RSI 39.72, no volume anomaly, and a still-bearish MACD. The retained H1 issuer release remains available and the issuer share-count page is byte-identical to the registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 4.71% below market, while the EUR 7.272 buy-below level remains 23.77% below market. The thesis, catalysts, risks, invalidation, Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed.
+
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-20`
+- Research status: `blocked`
+- Conclusion: High-priority security research is blocked. agent\_result:blocked:Blocked exactly one FANUC full security review after the deterministic schema-v2 assessment applier found both the completed quick-check predecessor and this running security-research operation for the same security and run ID, making assessment provenance ambiguous. The issuer evidence was rechecked with unchanged hashes, the security row and full-review wiki synthesis were updated, and the canonical conclusion remains Hold / Watch with no allocation eligibility. Issue FANUC assessment source operation is ambiguous within one run records the resolvable controller dependency. No assessment version, relationship follow-up, strategy, signal, paper order, allocation, execution, cash, portfolio, or performance state was created or changed.
+
 ### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
 
 **Research alert — not a trade signal**
 
 - Alert: `volume\_anomaly`
-- Market date: `2026-08-19`
+- Market date: `2026-08-20`
 - Research status: `succeeded`
 - Conclusion: Completed exactly one bounded FANUC quick check for the 19 August volume anomaly. The mandatory audited security context confirms that the successful full review completed on 19 August after evaluating this same immutable alert, market period, price hash, and EUR 33.349998474121094 mark. Both retained FANUC first-quarter primary-source PDFs were retrieved again on 20 August and their hashes remain unchanged. The thesis, EUR 24.25/EUR 36.38/EUR 48.50 scenarios, EUR 29.104 buy-below level, catalysts, risks, invalidation, Hold / Watch disposition, and allocation ineligibility are therefore unchanged. Assessment assessment\_4e73de2ff48e5f482190 remains fresh through 2 September and comparable to the exact alert state. No full security review was requested because no valuation, buy-zone, catalyst, invalidation, evidence, or decision-support gate changed. The unchanged-conclusion path left no agent-owned repository delta and created no follow-up operation.
 
@@ -205,16 +223,25 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_below\_signal`
-- Market date: `2026-08-19`
+- Market date: `2026-08-20`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
-### [SU — Schneider Electric SE](securities/security_dc8486c1d61df62a22fd)
+### [NIB.F — Nidec Corporation](securities/security_3853e54c619d597dcaa1)
+
+**Research alert — not a trade signal**
+
+- Alert: `macd\_cross\_below\_signal`
+- Market date: `2026-08-20`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [TXN — Texas Instruments Incorporated](securities/security_83a56943e18793f685b0)
 
 **Research alert — not a trade signal**
 

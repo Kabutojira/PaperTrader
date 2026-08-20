@@ -4340,6 +4340,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-98a764a2953d]] (98a764a2953d).
 
+- Published investor decision snapshot `decision_9124d0557ca894f31eb2`.
+
+- Generated canonical [[daily-reports/daily-report_20260820]] for run `daily-20260820T153414Z`.
+
 ## [2026-08-20] update | Parrot S.A. ordinary shares
 
 - Updated [[securities/security_cc4dcb8f002b61dffe00]] from Parrot's H1 2026 results and July 31
