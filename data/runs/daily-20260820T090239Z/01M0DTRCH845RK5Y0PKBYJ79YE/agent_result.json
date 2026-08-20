@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_ed7d5b616a196969c815",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Recursion Pharmaceuticals' 19 August volume anomaly accompanied a 13.27% one-session gain and 17.45% period gain, but unchanged filings and recruiting trial status provide no operating catalyst. RXRX remains Unrated / Watch, valuation-unsupported and allocation-ineligible; no full review or paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The identity-matched 19 August RXRX close is USD 3.50 on 30,198,700 shares, a 13.27% one-session gain and 17.45% gain over 22 July through 19 August. The current indicator snapshot retains volume_anomaly at a 2.67327699 volume z-score. Its current source_price_hash is b92eb917fd97893e29cefcee09be1ed4468529a9b193cf244c33522c95846760; this supersedes the payload hash while preserving the same market date, trigger and bounded conclusion.",
+      "source": "PaperTrader deterministic market and indicator state",
+      "source_hash": "b92eb917fd97893e29cefcee09be1ed4468529a9b193cf244c33522c95846760"
+    },
+    {
+      "claim": "A fresh retrieval of the Q2 Form 10-Q is byte-identical to retained evidence and continues to show substantial losses, expected additional capital needs and dilution exposure; the volume move does not change those risks.",
+      "source": "source_rxrx_q2_2026_10q",
+      "source_hash": "38a03be58b9c8235630fdb9b31949970aa2dac35af98e1f158940a55b8051fea",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000098/rxrx-20260630.htm"
+    },
+    {
+      "claim": "A fresh retrieval of the SEC-filed Q2 results exhibit is byte-identical to retained evidence; REC-7735 IND clearance, the 2 November REC-4881 data catalyst, expected second-half REC-1245 data and cash operating-expense guidance remain unchanged.",
+      "source": "source_rxrx_q2_2026_results_exhibit",
+      "source_hash": "2cb5975ba5149d213dc461133e84d53d409ebbfb8a243967f18c66408644f614",
+      "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm"
+    },
+    {
+      "claim": "The current SEC submissions index through 19 August contains Forms 144 and 4 after the baseline review but no newer 8-K, 10-Q or 10-K that changes the operating thesis or explains the volume anomaly.",
+      "source": "SEC submissions index for CIK 0001601830",
+      "url": "https://data.sec.gov/submissions/CIK0001601830.json"
+    },
+    {
+      "claim": "The current registry still lists REC-4881 study NCT05552755 and REC-1245 study NCT06678659 as recruiting, with last posted updates of 5 June and 8 May 2026 respectively. The query response hash drifted since the baseline, but the two decision-relevant trial assumptions did not change and the registry still supplies no approval probabilities or commercial value.",
+      "source": "ClinicalTrials.gov Recursion Pharmaceuticals study registry query",
+      "source_hash": "d748ebfe57f0859ba07bf096130bca914362f88e1501facba64b8713ddf143e8",
+      "url": "https://clinicaltrials.gov/api/v2/studies?query.term=Recursion%20Pharmaceuticals&pageSize=100&format=json"
+    },
+    {
+      "claim": "The accepted 12 August schema-version-two assessment remains fresh through 11 September, Unrated / Watch, valuation-unsupported and allocation-ineligible, with no bear/base/bull values or buy-below price. No verified assumption changed, so the permitted unchanged quick-check path left this assessment and all repository state untouched.",
+      "source": "assessment_76cdb2b6bd6df0f42cff",
+      "source_hash": "a5b596145a0e30c393ca1355bc43d5da8690c80bce7d8bffa1349ea6aa232f1f"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0DTRCH845RK5Y0PKBYJ79YE",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Recursion Pharmaceuticals quick check without changing agent-owned repository state. The current 19 August USD 3.50 mark, 30,198,700-share session, 2.673 volume z-score and 17.45% return over the exact 22 July through 19 August period confirm the volume anomaly, but current primary evidence does not identify an operating catalyst or change the thesis. The Q2 filing and results exhibit remain byte-identical, REC-4881 and REC-1245 remain recruiting, and no newer 8-K, 10-Q or 10-K appeared in the SEC submissions index through 19 August. The fresh assessment therefore remains Unrated / Watch, valuation-unsupported and allocation-ineligible; there is still no supportable buy zone. No full security review, strategy, signal, paper order, allocation or accounting change was warranted.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row for security_ed7d5b616a196969c815, claimed by daily-20260820T090239Z with the required native wiki and quick-check skills and successful preflight identities.",
+      "Ran and consumed the mandatory audited security-context receipt before reading assessment state; it confirmed the successful baseline operation 01KZSNRXMRC7GYT2RKSC8ZWB6S, current assessment assessment_76cdb2b6bd6df0f42cff and immutable security identity.",
+      "Confirmed the baseline completed on 12 August, within the permitted ten-day quick-check window, and the baseline result belongs to the same immutable security.",
+      "Confirmed current market date 19 August and source_price_hash b92eb917fd97893e29cefcee09be1ed4468529a9b193cf244c33522c95846760; despite superseding the payload hash, the current snapshot retains the same volume-anomaly trigger and exact period conclusion.",
+      "Fresh Q2 Form 10-Q and results-exhibit hashes matched retained evidence; current SEC submissions showed no newer operating filing, and the two decision-relevant ClinicalTrials.gov studies remain recruiting.",
+      "The thesis, unsupported valuation, absent buy zone, catalysts, invalidation conditions, risks, confidence and allocation gate are unchanged. The price-and-volume move is material attention but not a verified catalyst, invalidation or entry condition.",
+      "No full_research_requested flag was set and no valuation, buy-zone, catalyst, invalidation, material-evidence or decision-support gate changed, so no dependent full security review was enqueued.",
+      "The bounded conclusion used the explicitly permitted unchanged path and left no agent-owned repository delta; therefore no assessment upsert was required or attempted.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK.",
+      "No security, source, assessment, wiki, issue, follow-up, allocation, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed; no second operation was claimed or processed."
+    ],
+    "passed": true
+  }
+}
