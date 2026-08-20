@@ -1,0 +1,23 @@
+{
+  "security_id": "security_83a56943e18793f685b0",
+  "issuer_id": "issuer_965a911bcabf04f4a40b",
+  "company_name": "Texas Instruments Incorporated",
+  "instrument_name": "Texas Instruments Incorporated common stock",
+  "instrument_type": "equity",
+  "ticker": "TXN",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "TXN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Semiconductors",
+  "status": "watching",
+  "watchlist_reason": "Broad end-market recovery, analog breadth and 300mm economics merit monitoring, but cyclicality, acquisition financing, leverage, downside asymmetry and valuation prevent action.",
+  "research_summary": "USD 150/USD 256.50/USD 374 scenarios imply slightly negative expected return at USD 267.45; the marginal lower-Bollinger breach is risk, not an entry signal.",
+  "research_page": "data/wiki/securities/security_83a56943e18793f685b0.md",
+  "last_research_at": "2026-08-20T09:10:50Z",
+  "next_review_at": "2026-09-19T09:10:50Z",
+  "source": "source_txn_q2_2026_results|source_txn_q2_2026_10q|source_txn_sec_submissions_20260820"
+}

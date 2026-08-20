@@ -4359,3 +4359,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   catalyst. The complete idea catalog yielded no causal relationship: the digital-finance theme
   explicitly distinguishes treasury exposure from operating rails. No follow-up or strategy was
   justified.
+
+## [2026-08-20T09:10:50Z] update | Texas Instruments lower-Bollinger and valuation refresh
+
+- Revalidated [[securities/security_83a56943e18793f685b0|Texas Instruments]] against the exact July
+  22 through August 19 lower-Bollinger period, unchanged Q2 Form 10-Q and results, the current SEC
+  submissions index, the USD 267.45 mark and fresh USD/EUR state. The marginal band breach is risk
+  with modest valuation improvement, not an actionable contrarian catalyst.
+- Unchanged USD 150/USD 256.50/USD 374 scenarios now imply about -3.07% weighted return and retain
+  Hold / Watch with allocation ineligibility. One separate relationship review will test whether
+  US 300mm investment and CHIPS support create a material nearshoring/friendshoring exposure; broad
+  WBG, AI-compute and AI-power adjacencies were rejected. No strategy, signal, paper order,
+  allocation or accounting state changed.

@@ -1,0 +1,34 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_46d18d09c15f569a7b04",
+  "dedupe_key": "relationship_research:relationship_46d18d09c15f569a7b04:security-result:01M0DTRCH8H390WYHAQK1SDDB0",
+  "prompt": "Review whether Texas Instruments has a material causal relationship to nearshoring and friendshoring manufacturing capacity through US 300mm investment and CHIPS support; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_46d18d09c15f569a7b04",
+    "idea_id": "idea_nearshoring_friendshoring_manufacturing",
+    "security_id": "security_83a56943e18793f685b0",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "US semiconductor incentives and economic-security priorities can support Texas Instruments' domestic 300mm capacity build, improving supply resilience, utilization and unit costs if qualified demand fills the factories.",
+    "proposed_invalidation": "Reject the edge if CHIPS support is immaterial to per-share returns, regional capacity merely duplicates global supply, utilization remains weak, fixed costs offset incentives, or customer demand does not reward domestic supply resilience.",
+    "evidence_refs": [
+      "source_txn_q2_2026_10q",
+      "source_txn_q2_2026_results",
+      "source_txn_sec_submissions_20260820"
+    ]
+  },
+  "source": "security_research:01M0DTRCH8H390WYHAQK1SDDB0",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M0DTRCH8H390WYHAQK1SDDB0"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_83a56943e18793f685b0.md",
+    "data/wiki/ideas/idea_nearshoring_friendshoring_manufacturing.md",
+    "source_txn_q2_2026_10q",
+    "source_txn_q2_2026_results",
+    "source_txn_sec_submissions_20260820"
+  ],
+  "max_attempts": 3
+}

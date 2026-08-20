@@ -1,0 +1,18 @@
+{
+  "source_id": "source_txn_sec_submissions_20260820",
+  "url": "https://data.sec.gov/submissions/CIK0000097476.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000097476.json",
+  "source_type": "regulator_index",
+  "title": "Texas Instruments SEC submissions index checked 2026-08-20",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b92c950d33086557b8323015dfab7395a8221efe280b756086d4688bf54fe35b",
+  "related_entity_ids": "security_83a56943e18793f685b0",
+  "checked_at": "2026-08-20T09:10:50Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "After the July 24 Form 10-Q, the only later filing through August 20 is a July 31 Form 4.",
+  "summary": "The current SEC submissions index shows no Texas Instruments periodic or current operating report newer than the July 24 second-quarter Form 10-Q and July 22 results Form 8-K; the sole later entry through 2026-08-20 is a Form 4.",
+  "run_id": "daily-20260820T090239Z"
+}

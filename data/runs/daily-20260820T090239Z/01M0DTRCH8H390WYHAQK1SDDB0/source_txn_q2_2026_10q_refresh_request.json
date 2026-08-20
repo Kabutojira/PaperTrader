@@ -1,0 +1,18 @@
+{
+  "source_id": "source_txn_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm",
+  "source_type": "regulator_filing",
+  "title": "Texas Instruments second-quarter 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "fae79f7e6a775bd84b54827e7cfde89fe8ea1b5e9c154537e6a5051618320553",
+  "related_entity_ids": "security_83a56943e18793f685b0",
+  "checked_at": "2026-08-20T09:10:50Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Total cash was USD 7.00 billion, inventory was USD 4.61 billion, and days of inventory declined to 196 from 222 at year-end.",
+  "summary": "The SEC filing hash is unchanged. The Form 10-Q confirms TXN/XNAS identity, USD 7.001 billion cash and short-term investments, USD 14.052 billion debt, USD 4.605 billion inventory, 196 inventory days, USD 2-3 billion expected 2026 capital expenditure and the approximately USD 7.5 billion pending Silicon Labs acquisition funded with cash and debt.",
+  "run_id": "daily-20260820T090239Z"
+}
