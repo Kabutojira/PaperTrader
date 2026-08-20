@@ -53,6 +53,15 @@
       "profile": "deep",
       "recorded_at": "2026-08-20T09:33:55Z",
       "terminal_status": "succeeded"
+    },
+    {
+      "index": 6,
+      "kind": "operation",
+      "operation_id": "01KYQCTS30Z20SHWJBWPKTZQXA",
+      "operation_type": "opportunity_research",
+      "profile": "deep",
+      "recorded_at": "2026-08-20T09:38:01Z",
+      "terminal_status": "skipped"
     }
   ],
   "completed_at": "",
@@ -66,10 +75,10 @@
   "finalization_commit_identity": "",
   "maximum_operations": 10,
   "model_budget_limit": "100",
-  "model_budget_used": "25",
-  "next_checkpoint_index": 6,
+  "model_budget_used": "30",
+  "next_checkpoint_index": 7,
   "operating_date": "2026-08-20",
-  "operation_count": 5,
+  "operation_count": 6,
   "operations_accepted": [
     {
       "auxiliary_models": {
@@ -160,6 +169,24 @@
       "terminal_status": "succeeded",
       "timeout_seconds": 1800,
       "weighted_cost": "5"
+    },
+    {
+      "auxiliary_models": {
+        "web_extract": "openai-codex:gpt-5.6-luna"
+      },
+      "checkpoint_index": 6,
+      "effective_model": "gpt-5.6-sol",
+      "escalation_source": "",
+      "maximum_turns": 160,
+      "mutation_policy": "full_research",
+      "operation_id": "01KYQCTS30Z20SHWJBWPKTZQXA",
+      "profile": "deep",
+      "profile_policy_version": "profile-router-v1",
+      "reasoning_effort": "medium",
+      "route_reason": "unsupported_prior_valuation",
+      "terminal_status": "skipped",
+      "timeout_seconds": 1800,
+      "weighted_cost": "5"
     }
   ],
   "operations_attempted": [
@@ -167,7 +194,8 @@
     "01M0DTRCH8H390WYHAQK1SDDB0",
     "01M0DTRCH8Z4FE2FP9T4NJ1XYM",
     "01M0F2AG580CK8JC3ZFYQ96RGW",
-    "01M0F6H4R8MJWJHZSE7KD1REGJ"
+    "01M0F6H4R8MJWJHZSE7KD1REGJ",
+    "01KYQCTS30Z20SHWJBWPKTZQXA"
   ],
   "originating_github_run_id": "32351099099",
   "podcast_audio_path": "",
@@ -212,7 +240,7 @@
     "01KZCFVCT82RJFGB5HESAFJB6B:blocked:dependency_unavailable:01KZ9ZJVER177B5ASW4ZMQHEG3",
     "01KZGT11ZGR8JEKWC3RXGSS544:blocked:dependency_unavailable:01KZGT11ZGBPRBKV129FD00TH1"
   ],
-  "remaining_operations": 5,
+  "remaining_operations": 4,
   "report_path": "",
   "research_cutoff_at": "",
   "run_id": "daily-20260820T090239Z",
@@ -222,7 +250,7 @@
   "status": "running",
   "trigger": "workflow_dispatch",
   "weighted_model_budget": "100",
-  "weighted_model_budget_used": "25",
+  "weighted_model_budget_used": "30",
   "workflow_attempts": [
     {
       "github_run_id": "32351099099",

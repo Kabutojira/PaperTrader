@@ -1,0 +1,45 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped the stale Samsung common-GDR lower-Bollinger opportunity as exact duplicate research: the same July 1-July 29 alert and source hash were already reviewed successfully. The 26.15% decline was not tied to an operating impairment, and seven-unit Vienna turnover plus unresolved currency, parity, liquidity, and valuation evidence kept the security watch-only and allocation-ineligible; no follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet binds security_567d0d575bbd30aaa91d to an entered bollinger_below_lower transition for 2026-07-01 through 2026-07-29, with EUR 3,220 latest close, -26.14678899082568807339449541 period return, 1.710176860570747080249783746% trigger strength, and canonical source-price hash 6eb025c45adfb61e4cb0d75f20bfdcf333ee0fbfc604998f4160f0fedb16fcdb.",
+      "observed_at": "2026-07-29T16:55:24Z",
+      "source": "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a.md",
+      "source_hash": "6eb025c45adfb61e4cb0d75f20bfdcf333ee0fbfc604998f4160f0fedb16fcdb"
+    },
+    {
+      "claim": "Succeeded operation 01KYQCTS30X75N3T3K87SY3ABS reviewed the same immutable security, trigger, exact period, market-data timestamp, source reference, and source-price hash. It found no disclosed operating impairment, classified the apparent contrarian signal as non-actionable because RSI was not oversold and only seven units traded, retained explicit liquidity and unsupported-valuation blockers, and created no strategy or follow-up.",
+      "observed_at": "2026-07-29T23:23:10Z",
+      "source": "data/operations/operations_history.csv and data/runs/local-20260729-20ops-4/01KYQCTS30X75N3T3K87SY3ABS/agent_result.json"
+    },
+    {
+      "claim": "The maintained security page preserves the completed lower-Bollinger review and subsequent primary-evidence updates. Detailed Q2 results strengthened the memory thesis without explaining the full negative alert-period return, while later review continued to find sparse Vienna turnover, no supportable instrument-level valuation, no buy zone, and no paper strategy justification.",
+      "observed_at": "2026-08-10T07:31:49Z",
+      "source": "data/wiki/securities/security_567d0d575bbd30aaa91d.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYQCTS30Z20SHWJBWPKTZQXA",
+  "operations_created": [],
+  "reason_code": "exact_duplicate_structured_history",
+  "status": "skipped",
+  "summary": "Skipped this stale opportunity review as exact duplicate work already completed against the same immutable Samsung Electronics common-GDR identity, 2026-07-01 through 2026-07-29 observation period, lower-Bollinger transition, source-price hash, and market-data timestamp. Succeeded security review 01KYQCTS30X75N3T3K87SY3ABS already classified the move: SSU.VI fell 26.15% to EUR 3,220 and closed 1.71% below its lower band, but RSI was not oversold, turnover was only seven units, and current primary evidence showed no operating impairment. It retained watch-only, allocation-ineligible status because negligible Vienna liquidity and missing KRW/EUR and same-timestamp cross-venue evidence prevented a supportable valuation. Later Q2 and quick-check reviews reaffirmed those blockers. No additional wiki update, issue, or follow-up operation was justified.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running opportunity_research row is claimed by daily-20260820T090239Z with a live lease and a payload matching operation 01KYQCTS30Z20SHWJBWPKTZQXA.",
+      "Confirmed hermes_preflight.json identifies native llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with recorded content hashes, sequential execution, and the deep profile.",
+      "Matched the immutable SSU.VI/XWBO/EUR common-GDR identity, 2026-07-01 through 2026-07-29 period, bollinger_below_lower transition, 2026-07-29T16:55:24Z timestamp, source packet, and source-price hash to succeeded structured history operation 01KYQCTS30X75N3T3K87SY3ABS.",
+      "Confirmed the completed review and maintained security page already retain the movement, primary-evidence assessment, opportunity classification, materiality decision, blockers, and no-follow-up disposition; repeating the work would add no distinct evidence or state change.",
+      "Confirmed later detailed-Q2 and bullish-MACD reviews did not reverse the watch-only, valuation-unsupported, liquidity-blocked, allocation-ineligible conclusion.",
+      "Strict wiki lint returned OK after the no-change duplicate disposition.",
+      "No wiki page, queue lifecycle state, issue state, follow-up operation, allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting path was changed by the routed operation."
+    ],
+    "passed": true
+  }
+}
