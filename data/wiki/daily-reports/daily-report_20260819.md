@@ -215,6 +215,7 @@ No pending orders.
 - [[podcasts/daily-podcast_20260819T120216Z|Daily research podcast — 2026-08-19T120216Z]]
 - [[podcasts/daily-podcast_20260819T133029Z|Daily research podcast — 2026-08-19T133029Z]]
 - [[podcasts/daily-podcast_20260819T153048Z|Daily research podcast — 2026-08-19T153048Z]]
+- [[podcasts/daily-podcast_20260819T230515Z|Daily research podcast — 2026-08-19T230515Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_0a56aa634d077fe5796f|Applied Materials, Inc. common stock]]
 - [[securities/security_37ddcbdaad296ad831f2|Coinbase Global, Inc. Class A common stock]]

@@ -1,0 +1,72 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260819T230515Z --script-path data/wiki/podcasts/daily-podcast_20260819T230515Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260819T230515Z --script-path data/wiki/podcasts/daily-podcast_20260819T230515Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2,806-word daily research podcast covering DNA, TWST, GEV, AMAT, and COIN in three standalone chapters; deterministic validation and the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Controller-validated frozen podcast context version three bound the exclusive and inclusive research window, five successful developments, prior podcast, daily report, and exact transcript path for this cycle.",
+      "source": "data/runs/daily-20260819T230515Z/podcast_context.json"
+    },
+    {
+      "claim": "The accepted Ginkgo reassessment retained Hold / Watch because the lower mark improved weighted return but did not resolve negative base return, severe bear downside, cash-burn, dilution, margin-of-safety, or relationship gaps.",
+      "source": "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/agent_result.json"
+    },
+    {
+      "claim": "The accepted Twist reassessment retained Strong Sell / Avoid because improved liquidity and the Anthropic use case did not overcome a market price above every accepted scenario value.",
+      "source": "data/runs/daily-20260819T212147Z/01KZX73Z2GDM9BD59RDR4TJKKP/agent_result.json"
+    },
+    {
+      "claim": "The accepted GE Vernova reassessment retained Hold / Watch because strong backlog and cash evidence produced only about one percent weighted expected return at the current mark.",
+      "source": "data/runs/daily-20260819T230515Z/01KZSMSDTRFFMGZPZT6TTZ9WFE/agent_result.json"
+    },
+    {
+      "claim": "The accepted Applied Materials quick check set Unrated / Watch because record fiscal-third-quarter evidence made the previous valuation inputs obsolete and required a full review rather than invented scenarios.",
+      "source": "data/runs/daily-20260819T230515Z/01M02FQ3KGSGCPME4ZWNN05252/agent_result.json"
+    },
+    {
+      "claim": "The accepted Coinbase reassessment retained Strong Sell / Avoid because a bullish momentum crossover did not change the unchanged fundamental evidence, weighted value, downside, or failed margin-of-safety gates.",
+      "source": "data/runs/daily-20260819T212147Z/01M06M2NP86ZWCMZSW21HB9N7T/agent_result.json"
+    },
+    {
+      "claim": "The deterministic preflight passed for the exact frozen transcript path with 2,806 spoken words and five rendering chunks.",
+      "source": "papertrader podcast validate-script receipt"
+    },
+    {
+      "claim": "The single audited render-draft invocation succeeded and produced ephemeral audio lasting 1,237 seconds outside the repository; no audio path or link was persisted in repository content.",
+      "source": "papertrader podcast render-draft receipt"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260819T230515Z/01M0E79X5G9FT8KW4HZ2B8YPFK/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260819.md",
+    "data/wiki/podcasts/daily-podcast_20260819T230515Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0E79X5G9FT8KW4HZ2B8YPFK",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a standalone 2,806-word podcast in three chapters: Ginkgo Bioworks and Twist Bioscience on the commercialization test for biological automation; GE Vernova and Applied Materials on physical AI bottlenecks and expectations; and Coinbase on the difference between a better chart and better economics. All five successful frozen-window research developments are covered exactly once. Routine maintenance and queue mechanics were excluded as low audience value, and the prior FANUC/ASML episode was used only for novelty control. The script states current ratings and evidence-based Buy and Sell conditions for DNA Hold / Watch, TWST Strong Sell / Avoid, GEV Hold / Watch, AMAT Unrated / Watch, and COIN Strong Sell / Avoid. Deterministic script validation passed at 2,806 words, and the single audited draft render succeeded with a duration of 1,237 seconds. No research conclusion, allocation, signal, order, accounting, portfolio, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the payload, frozen context, and daily manifest all bind data/wiki/podcasts/daily-podcast_20260819T230515Z.md.",
+      "Mapped every successful frozen-window research development to exactly one of three audience-facing chapters and excluded no accepted development.",
+      "Reviewed the prior podcast for novelty and avoided repeating its FANUC and ASML chapters.",
+      "Deterministic validate-script passed with the exact opening and closing copy, 2,806 spoken words, at least eight prose paragraphs, no numeric glyphs or forbidden Markdown in the spoken section, and five render chunks.",
+      "Every security chapter ends with the current accepted rating, reason, and supported Buy and Sell conditions or an explicit valuation evidence gap.",
+      "The daily report contains exactly one link to the new transcript, and the transcript contains no audio reference or persistent media path.",
+      "Exactly one audited render-draft invocation occurred and succeeded; its audio remained ephemeral outside Git.",
+      "Strict schema, integrity, wiki, queue, and portfolio checks all returned OK.",
+      "Observed changes exclude research conclusions, allocation targets/history, strategies, signals, orders, executions, cash, portfolio, performance, and accounting ledgers."
+    ],
+    "passed": true
+  }
+}
