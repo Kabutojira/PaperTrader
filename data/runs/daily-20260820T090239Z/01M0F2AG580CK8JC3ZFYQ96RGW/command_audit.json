@@ -1,0 +1,107 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security-context",
+        "--security-id",
+        "security_95351d928b674bbdf687"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader research security-context --security-id security_95351d928b674bbdf687",
+      "completed_at": "2026-08-20T09:28:29Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-08-20T09:28:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-08-20T09:29:29Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-08-20T09:29:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-08-20T09:29:31Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-08-20T09:29:30Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "integrity",
+        "--strict",
+        "--prepared-daily-cycle-id",
+        "daily-20260820T090239Z"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader integrity --strict --prepared-daily-cycle-id daily-20260820T090239Z",
+      "completed_at": "2026-08-20T09:29:35Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-08-20T09:29:32Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-20T09:29:38Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-08-20T09:29:37Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "portfolio",
+        "reconcile",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader portfolio reconcile --strict",
+      "completed_at": "2026-08-20T09:29:39Z",
+      "exit_code": 0,
+      "profile": "deep",
+      "request": null,
+      "started_at": "2026-08-20T09:29:39Z"
+    }
+  ],
+  "operation_id": "01M0F2AG580CK8JC3ZFYQ96RGW",
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "route_reason": "assessment_capable_quick_check",
+  "run_id": "daily-20260820T090239Z"
+}

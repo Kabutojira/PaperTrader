@@ -1,0 +1,56 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict --prepared-daily-cycle-id daily-20260820T090239Z",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "DNA quick check: the strengthened August 19 volume anomaly occurred at the unchanged USD 7.71 reference mark without later operating evidence or a changed valuation gate. Hold / Watch and allocation ineligibility remain unchanged; no full-review escalation was warranted."
+  ],
+  "evidence": [
+    {
+      "claim": "The baseline full security review succeeded on 2026-08-19T21:33:18Z for the same immutable security. It retained Hold / Watch and allocation ineligibility because base return was negative, bear downside was severe, margin of safety was absent, confidence was medium, and no accepted relationship existed.",
+      "observed_at": "2026-08-20T09:28:29Z",
+      "source": "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/agent_result.json"
+    },
+    {
+      "claim": "The current immutable assessment is schema version 2 and remains fresh through 2026-09-18. Its bear/base/bull fair values are USD 3.33, USD 7.57 and USD 16.47 at 30%, 50% and 20%; its buy-below price is USD 6.056, rating is Hold, portfolio action is Watch, and allocation eligibility is ineligible.",
+      "observed_at": "2026-08-20T09:28:29Z",
+      "source": "assessment_ca38ef934552ae9c3e55"
+    },
+    {
+      "claim": "The payload-bound 2026-08-19 market observation has source-price hash c97bc8073634faffc4c34553443c33685fa0fdb0c3860ada6eb12bb93638d362, a USD 7.710000038146973 adjusted close, 2,459,000 shares of volume, a negative 1.532566% return from 2026-07-22, and a strengthened volume anomaly. The reference mark is unchanged from the fresh baseline assessment and remains above the USD 6.056 buy-below gate.",
+      "observed_at": "2026-08-20T07:49:13Z",
+      "source": "data/market/indicators.csv and data/market/prices/security_95351d928b674bbdf687.csv",
+      "source_hash": "c97bc8073634faffc4c34553443c33685fa0fdb0c3860ada6eb12bb93638d362"
+    },
+    {
+      "claim": "The current SEC submissions index lists a 2026-08-17 Form 144 as the only filing after the 2026-08-06 Form 10-Q and the 2026-08-05 results Form 8-K. It provides no later financial or operating evidence that changes the Q2 thesis, revenue, burn, liquidity, dilution, catalyst, risk, or invalidation checklist.",
+      "observed_at": "2026-08-20T09:29:00Z",
+      "source": "https://data.sec.gov/submissions/CIK0001830214.json",
+      "url": "https://data.sec.gov/submissions/CIK0001830214.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0F2AG580CK8JC3ZFYQ96RGW",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Quick-checked Ginkgo Bioworks after the strengthened 2026-08-19 volume anomaly. The identity-matched market bar and source-price hash retain the same USD 7.71 reference mark used by the fresh 2026-08-19 full assessment, and the SEC submissions index contains no later financial or operating filing. The volume increase does not change the thesis, valuation assumptions, catalysts, invalidation conditions, risks, Hold / Watch rating, or allocation ineligibility. The USD 6.056 buy-below gate was not reached, no material gate changed, and no full security-research escalation was created. The fresh accepted assessment remains assessment_ca38ef934552ae9c3e55; this unchanged bounded conclusion leaves no agent-owned repository delta.",
+  "validation": {
+    "checks": [
+      "The mandatory audited security-context command succeeded before assessment state was consumed and confirmed the baseline operation, security identity, current assessment, assessment history, source records, page hash, and absence of accepted relationships or strategies.",
+      "Baseline operation 01KZGGJ4M0ED9MPW6YE88PV2R4 is a successful full security review completed less than ten days before this quick check and is bound to the same security.",
+      "The payload source-price hash exactly matches the canonical indicator row for security_95351d928b674bbdf687 and market date 2026-08-19.",
+      "Verified assumptions remain unchanged: Q2 revenue contraction, cash burn, liquidity and restricted cash, dilution risk, autonomous-lab adoption uncertainty, scenario values and probabilities, catalysts, risks, invalidation conditions, confidence, rating and action.",
+      "Changed assumptions: none. Valuation/buy-zone disposition: the USD 7.71 mark remains above USD 7.57 base fair value and USD 6.056 buy-below price. Escalation decision: no full security research was requested because no valuation, catalyst, invalidation, material-evidence, or decision-support gate changed.",
+      "The accepted current assessment remains assessment_ca38ef934552ae9c3e55 from the fresh baseline review; the unchanged-conclusion exception applies because this operation made no agent-owned repository change.",
+      "Strict schema validation, queue validation, prepared-cycle strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK.",
+      "No allocation, signal, order, execution, cash, portfolio, performance, source, security, assessment, wiki, issue, or follow-up state was changed."
+    ],
+    "passed": true
+  }
+}
