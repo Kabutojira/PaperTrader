@@ -1,0 +1,59 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260820T153414Z --script-path data/wiki/podcasts/daily-podcast_20260820T153414Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260820T153414Z --script-path data/wiki/podcasts/daily-podcast_20260820T153414Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Skipped the 2026-08-20T153414Z research podcast because the complete successful-development slate repeated FANUC and Parrot evidence, ratings, valuation conditions, and conclusions already covered in recent episodes; no transcript or report link was retained."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three binds the exact daily cycle, prior successful podcast, research window, report path, transcript page path, and the two successful research developments reviewed for novelty.",
+      "source": "data/runs/daily-20260820T153414Z/podcast_context.json"
+    },
+    {
+      "claim": "The FANUC quick check retained the same primary evidence, scenarios, Hold / Watch conclusion, thin Frankfurt liquidity constraint, and buy-below condition already presented in the recent factory-automation episode.",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T153048Z.md"
+    },
+    {
+      "claim": "The Parrot quick check retained the same H1 evidence, sovereign-drone mechanism, valuation, cash-conversion risks, Hold / Watch conclusion, and buy condition already presented in the recent volume-analysis episode.",
+      "source": "data/wiki/podcasts/daily-podcast_20260820T074907Z.md"
+    },
+    {
+      "claim": "The operation-local final candidate slate excludes both successful developments and records why no audience-relevant novel chapter remains.",
+      "source": "data/runs/daily-20260820T153414Z/01M0FYSV8076SG0KTC9M6PGKWQ/editorial_outline.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260820T153414Z/01M0FYSV8076SG0KTC9M6PGKWQ/editorial_outline.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0FYSV8076SG0KTC9M6PGKWQ",
+  "operations_created": [],
+  "status": "skipped",
+  "summary": "Skipped the standalone episode after the final novelty review excluded the entire frozen successful-development slate. FANUC's unchanged lower-band recheck repeated the alert, evidence, valuation, Hold / Watch rating, liquidity constraint, and rating-change conditions covered on 2026-08-19; Parrot's unchanged shallow lower-band recheck repeated the H1 evidence, sovereign-drone thesis, valuation, Hold / Watch rating, cash-conversion risks, and rating-change conditions covered earlier on 2026-08-20. An initially drafted 2,619-word comparison passed deterministic preflight and its one audited ephemeral render succeeded, but the stronger cross-episode novelty check showed that retaining it would recycle old evidence and conclusions. The draft transcript was removed and the daily report was restored to its exact original state, leaving no transcript, report link, audio reference, or persistent media artifact.",
+  "validation": {
+    "checks": [
+      "Confirmed the payload, frozen podcast context, and daily manifest all bind page_path data/wiki/podcasts/daily-podcast_20260820T153414Z.md for daily-20260820T153414Z.",
+      "Confirmed podcast context version three covers the exclusive prior cutoff 2026-08-20T15:47:59Z through the inclusive current cutoff 2026-08-20T16:05:23Z and identifies the prior successful podcast.",
+      "Created the required operation-local candidate slate in introduction, teaser, chapters, overall_summary, and greetings order and assigned every successful development a final excluded disposition.",
+      "Confirmed FANUC's thesis, evidence, valuation, Hold / Watch conclusion, and rating-change conditions substantially duplicate daily-podcast_20260819T153048Z.md.",
+      "Confirmed Parrot's thesis, evidence, valuation, Hold / Watch conclusion, and rating-change conditions substantially duplicate daily-podcast_20260820T074907Z.md.",
+      "Applied the whole-window novelty rule: no audience-relevant accepted research remained after excluding routine unchanged rechecks.",
+      "Removed the new transcript and restored the daily report to its original bytes; no transcript link, audio link, persistent media path, or partial spoken artifact remains.",
+      "The audited renderer was invoked exactly once before the final cross-episode novelty exclusion; its successful output remained ephemeral and no retry or fallback invocation occurred.",
+      "Strict schema validation returned OK [schema].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Queue validation returned OK [queue].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No research conclusion, allocation target/history, strategy, signal, order, execution, fill, cash, portfolio, performance, accounting, or delivery state changed."
+    ],
+    "passed": true
+  }
+}

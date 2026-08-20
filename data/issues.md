@@ -64,6 +64,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_1eb21ef7157dbe368e93** — YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_1f5708b70ffd1562a525** — Daily podcast skipped: daily-20260819T201740Z | 2026-08-19T20:43:44Z | delivery | 01M0DW0CT004MYYVNSHAE9MPG5 |
 | warning | **issue_20b09e9371f8d5b1c303** — Daily preparation degraded: security_22c2b9d782a62d7a9b86 | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_222d8c6c7a09731733bd** — Daily podcast skipped: daily-20260820T153414Z | 2026-08-20T16:16:33Z | delivery | 01M0FYSV8076SG0KTC9M6PGKWQ |
 | warning | **issue_2781ea8889ae33bd5a60** — YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_2873eb4075f12fa65306** — Daily preparation degraded: security_8a5c43888d224de85c69 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_2e234f6d4287b0e0f129** — Daily preparation degraded: FX USD/EUR | 2026-07-29T16:51:20Z | deterministic-controller |  |
