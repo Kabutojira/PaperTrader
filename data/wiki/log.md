@@ -4331,3 +4331,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   [[ideas/idea_defense_aerospace]] as a candidate requiring bounded relationship review.
 - Registered `source_parrot_h1_2026_results` and `source_parrot_shares_20260731`; updated the
   comparable assessment and scheduled the required sequential idea and relationship follow-ups.
+
+## [2026-08-20T08:18:16Z] update | Coinbase volume anomaly and valuation refresh
+
+- Revalidated [[securities/security_37ddcbdaad296ad831f2|Coinbase]] against the exact 22 July through
+  19 August volume-anomaly period, the unchanged Q2 Form 10-Q and SEC submissions index, the USD
+  160.20 mark and fresh USD/EUR state. The 16.805 million-share session produced a 2.315 volume
+  z-score after a 3.56% period decline, but no new issuer evidence explains or confirms the move.
+- Unchanged USD 28/USD 87/USD 191 scenarios still imply about -43.76% weighted return and retain
+  Strong Sell / Avoid and allocation ineligibility. The accepted digital-finance relationship
+  remains stale and needs separate review, while one dependent idea refresh will absorb this result.
+  No strategy, signal, paper order, allocation or accounting state changed.

@@ -1,0 +1,88 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader research source record --request data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/source_coin_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/source_coin_sec_submissions_20260820_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/enqueue_relationship_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/enqueue_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_37ddcbdaad296ad831f2",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Coinbase's August 19 volume anomaly accompanied a 3.56% decline but did not change the Q2 thesis or valuation. Unchanged USD 28/USD 87/USD 191 scenarios imply USD 90.10 weighted fair value and -43.76% expected return versus USD 160.20, retaining Strong Sell / Avoid and no paper position. One stale relationship refresh and one dependent idea refresh were requested; no strategy, signal, order, allocation or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The retained SEC-hosted filing hash is unchanged. Q2 net revenue was USD 1.154 billion, including USD 599 million transaction revenue, USD 555 million subscription and services revenue and USD 292 million stablecoin revenue; the filing retains the balance-sheet, dilution, custody and 26% counterparty-concentration evidence used by the scenarios.",
+      "observed_at": "2026-08-20T08:18:16Z",
+      "source": "Coinbase Q2 2026 Form 10-Q",
+      "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a",
+      "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+    },
+    {
+      "claim": "The SEC submissions index hash is unchanged and shows no Coinbase periodic or current report newer than the July 30 Q2 Form 10-Q and results Form 8-K; later entries through August 18 are Forms 4 and 144.",
+      "observed_at": "2026-08-20T08:18:16Z",
+      "source": "Coinbase Global SEC submissions index",
+      "source_hash": "d33709cf8886cc9eef20cf1113cfa202cfd8124d9e5c3ea292aff1af56bae5df",
+      "url": "https://data.sec.gov/submissions/CIK0001679788.json"
+    },
+    {
+      "claim": "COIN closed at USD 160.1999969482422 on 2026-08-19 after 16.805 million shares traded at a 2.31535259 volume z-score; the exact 2026-07-22 through 2026-08-19 return was -3.563688%, and fresh USD/EUR state was 0.855400025844574 at 2026-08-20T07:49:13Z.",
+      "source": "PaperTrader deterministic market and indicator state"
+    },
+    {
+      "claim": "The accepted schema-version-two assessment links predecessor assessment_116f889a69d3f82535ab and this operation, matches research-page hash 764db02cdc3ab2d62a569a4dc0b75fa212e11a5b0317acb7da8f95493241827d, and derives Strong Sell / Avoid, USD 90.10 weighted fair value, -43.75780167517123953219036566% expected return and allocation ineligibility.",
+      "source": "PaperTrader deterministic assessment assessment_4d46a3c7b9f1b56bc691"
+    },
+    {
+      "claim": "Exactly one dependent stale-relationship refresh, 01M0F46J18T30YQ0CN66NQQA34, and one result-specific idea refresh, 01M0F46KZRQCRXNP3DRQSKXAXB, were created; no strategy follow-up was created because the full strategy gate failed.",
+      "source": "PaperTrader queue receipts"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0F46J18T30YQ0CN66NQQA34.json",
+    "data/operations/payloads/01M0F46KZRQCRXNP3DRQSKXAXB.json",
+    "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/assessment_upsert_request.json",
+    "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/enqueue_relationship_refresh_request.json",
+    "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/security_upsert_request.json",
+    "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/source_coin_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/source_coin_sec_submissions_20260820_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0E4B9TG8BCV4Z5A10NQKY5A",
+  "operations_created": [
+    "01M0F46J18T30YQ0CN66NQQA34",
+    "01M0F46KZRQCRXNP3DRQSKXAXB"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Coinbase repeat review using the unchanged SEC-filed Q2 2026 Form 10-Q, an unchanged current SEC submissions index, and fresh identity-matched market and FX state. The August 19 volume anomaly accompanied a 3.56% decline over the exact payload period but adds no fundamental catalyst or margin of safety. Unchanged USD 28/USD 87/USD 191 scenarios derive USD 90.10 probability-weighted fair value and -43.76% expected return versus USD 160.20, retaining Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one stale accepted-relationship refresh and one dependent digital-finance idea refresh were enqueued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260820T074907Z with a live lease, validated payload, immutable COIN/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after applying state; assessment_4d46a3c7b9f1b56bc691 is schema version 2, complete, predecessor-linked, current-operation-linked and page-hash-aligned.",
+      "Rechecked and registered the unchanged Q2 filing and SEC submissions index; both retained source records are available, identity-linked and checked before the assessment timestamp.",
+      "Fresh market and FX references both resolve to 2026-08-20T07:49:13Z and match the immutable COIN/XNAS/USD identity.",
+      "The complete maintained idea catalog was searched. The sole accepted digital-finance relationship is specifically causal but stale, no additional candidate edge was supported, and rejected thematic adjacencies remain documented on the security page.",
+      "Exactly one current-result relationship-research follow-up exists for the stale accepted edge and exactly one matching idea-research follow-up exists for the accepted linked idea; both depend on this security operation.",
+      "The deterministic assessment derives Strong Sell / Avoid and exact failed expected-return, base-return, bear/base payoff, expected/bear payoff and margin-of-safety gates; no conviction strategy work was created.",
+      "Strict wiki lint, strict integrity, strict portfolio reconciliation, strict schema validation and queue validation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ],
+    "passed": true
+  }
+}

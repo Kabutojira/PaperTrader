@@ -1,0 +1,24 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_digital_finance_crypto_rails",
+  "dedupe_key": "idea_research:idea_digital_finance_crypto_rails:security-result:01M0E4B9TG8BCV4Z5A10NQKY5A",
+  "prompt": "Refresh the digital-finance-and-crypto-rails idea from Coinbase's completed August volume and valuation review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "seed_claim": "Coinbase's direct digital-finance mechanism remains plausible, but unchanged Q2 cyclicality, 26% counterparty concentration, dilution and USD 90.10 weighted value versus USD 160.20 keep the security allocation-ineligible; the August volume anomaly adds no fundamental catalyst.",
+    "security_id": "security_37ddcbdaad296ad831f2",
+    "security_research_operation_id": "01M0E4B9TG8BCV4Z5A10NQKY5A",
+    "security_research_result_path": "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/agent_result.json"
+  },
+  "source": "security_research:01M0E4B9TG8BCV4Z5A10NQKY5A",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M0E4B9TG8BCV4Z5A10NQKY5A"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+  ],
+  "max_attempts": 3
+}

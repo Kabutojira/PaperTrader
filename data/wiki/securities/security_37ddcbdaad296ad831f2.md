@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-08-19"
+updated: "2026-08-20"
 provenance: "source_coin_q1_2026_10q; source_coin_july_2026_management_8k; source_coin_q2_2026_10q; source_coin_sec_submissions_20260819"
 security_id: security_37ddcbdaad296ad831f2
 issuer_id: issuer_3584c0cf729606c65538
 confidence: medium
-next_review: "2026-09-02"
+next_review: "2026-09-03"
 ---
 
 # Coinbase Global, Inc. Class A common stock
@@ -48,30 +48,32 @@ real diversified platform but not durable through-cycle economics or a decision-
 | One counterparty generated 26% of Q2 revenue. | Stablecoin/counterparty concentration increased from the Q1 baseline. |
 | Six-month stock compensation expense was USD 486 million. | Per-share economics differ materially from adjusted results. |
 | COIN fell 11.61% from July 2 through July 31 to USD 146.26 on 20.87 million shares. | The earlier alert combined a lower-Bollinger breach, bearish MACD cross and volume anomaly. |
-| COIN closed at USD 160.20 on August 19, down 3.56% from July 22, while MACD crossed above its signal. | The bullish reversal is constructive timing evidence but does not resolve the valuation gap or establish a buy zone. |
-| The August 19 SEC submissions index contains no periodic or current report newer than the July 30 Q2 filings. | No new issuer evidence changes the Q2 operating or scenario assumptions. |
+| COIN closed at USD 160.20 on August 19, down 3.56% from July 22, while 16.805 million shares traded at a 2.315 volume z-score. | The newly entered volume anomaly confirms attention around the rebound but does not resolve the valuation gap or establish a buy zone. |
+| The SEC submissions index hash remained unchanged when rechecked on August 20 and contains no periodic or current report newer than the July 30 Q2 filings. | No new issuer evidence changes the Q2 operating or scenario assumptions. |
 
 Primary evidence: [Coinbase Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm),
 [Coinbase Q1 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1679788/000167978826000054/coin-20260331.htm),
 and [Coinbase July 2026 Form 8-K](https://www.sec.gov/Archives/edgar/data/1679788/000167978826000080/coin-20260722.htm).
 The [current SEC submissions index](https://data.sec.gov/submissions/CIK0001679788.json) was checked
-on August 19 and shows no newer issuer operating filing.
+again on August 20 and shows no newer issuer operating filing.
 
 ## Changes since prior review
 
-- **Evidence:** The Q2 Form 10-Q hash is unchanged, and the August 19 SEC submissions index shows no
-  newer issuer operating filing. The exact July 22 through August 19 market period adds a bullish
-  MACD crossover after a 3.56% decline, but no fresh fundamental catalyst.
+- **Evidence:** The Q2 Form 10-Q and SEC submissions-index hashes are unchanged, and the August 20
+  index check shows no newer issuer operating filing. The exact July 22 through August 19 market
+  period now records 16.805 million shares at a 2.315 volume z-score after a 3.56% decline, but no
+  fresh fundamental catalyst.
 - **Assumptions and scenarios:** Cycle-normalized transaction and recurring revenue, segment
   multiples, the conservative balance-sheet deductions, 282 million diluted shares and the
   30%/50%/20% probabilities are unchanged. Bear/base/bull fair values remain USD 28/USD 87/USD 191.
-- **Valuation outputs:** The USD 160.20 mark is 4.30% above the prior USD 153.60 reference. The same
-  USD 90.10 probability-weighted fair value now implies about -43.76% expected return, with about
-  -82.52%/-45.69%/19.23% bear/base/bull returns. Every decisive valuation gate remains failed.
+- **Valuation outputs:** The USD 160.20 reference mark and the USD 28/USD 87/USD 191 scenarios are
+  unchanged from the August 19 review. The USD 90.10 probability-weighted fair value still implies
+  about -43.76% expected return, with about -82.52%/-45.69%/19.23% bear/base/bull returns. Every
+  decisive valuation gate remains failed.
 - **Thesis, catalysts and risks:** The stablecoin-rails mechanism, medium confidence, catalysts,
-  invalidation and severe residual risks are unchanged. The MACD reversal is opportunity-shaped
-  timing evidence, but noise for allocation because no operating evidence or margin of safety
-  confirms it.
+  invalidation and severe residual risks are unchanged. The volume anomaly confirms elevated market
+  attention but is noise for allocation because no operating evidence or margin of safety confirms
+  an opportunity.
 - **Blockers, gaps, rating and action:** No hard blocker is added. Concentration, cycle
   normalization, medium confidence, weak timing and absent margin of safety remain soft gaps.
   Complete research, Strong Sell / Avoid and allocation ineligibility are unchanged; no strategy
@@ -110,8 +112,8 @@ treating payment-stablecoin cash or customer assets as distributable corporate c
 
 At the current USD 160.20 mark, the probability-weighted value is USD 90.10. The approximately
 -43.76% expected return, -45.69% base return and -82.52% bear return fail the expected-return,
-base-return, downside-payoff and margin-of-safety gates. The August 19 bullish MACD crossover is
-therefore noise for allocation: it prompted useful research but did not identify an opportunity.
+base-return, downside-payoff and margin-of-safety gates. The August 19 volume anomaly is therefore
+noise for allocation: it prompted useful research but did not identify an opportunity.
 
 ## Catalysts, risks, and invalidation
 
@@ -123,7 +125,7 @@ regulation limits products, or equity compensation absorbs per-share cash genera
 ## Disposition
 
 Status: **watching**, confidence **medium**, rating **Strong Sell**, portfolio action **Avoid**, and
-allocation eligibility **ineligible**. Review by **2026-09-02**, or earlier after material results,
+allocation eligibility **ineligible**. Review by **2026-09-03**, or earlier after material results,
 rate or stablecoin-partner changes, custody or regulatory events, or a price move that materially
 changes the scenario frontier. No strategy or signal is created because expected, base and bear
 returns and margin of safety fail the canonical gate. See [[research-catalog]] for the maintained

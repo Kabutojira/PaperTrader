@@ -1,0 +1,18 @@
+{
+  "source_id": "source_coin_sec_submissions_20260819",
+  "url": "https://data.sec.gov/submissions/CIK0001679788.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001679788.json",
+  "source_type": "regulator_index",
+  "title": "Coinbase Global SEC submissions index checked 2026-08-19",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "d33709cf8886cc9eef20cf1113cfa202cfd8124d9e5c3ea292aff1af56bae5df",
+  "related_entity_ids": "idea_digital_finance_crypto_rails|security_37ddcbdaad296ad831f2",
+  "checked_at": "2026-08-20T08:18:16Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The latest periodic report is the Form 10-Q filed 2026-07-30 for the quarter ended 2026-06-30; later entries through 2026-08-18 are Forms 4 and 144.",
+  "summary": "The SEC submissions index hash is unchanged and shows no Coinbase periodic or current report newer than the Q2 Form 10-Q and July 30 results Form 8-K through 2026-08-20.",
+  "run_id": "daily-20260820T074907Z"
+}
