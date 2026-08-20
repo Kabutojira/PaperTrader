@@ -210,6 +210,7 @@ No pending orders.
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[podcasts/daily-podcast_20260820T074907Z|Daily research podcast — 2026-08-20T074907Z]]
+- [[podcasts/daily-podcast_20260820T090239Z|Daily research podcast — 2026-08-20T090239Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_099561384c0f5e697727|Canadian Solar Inc. common shares]]
 - [[securities/security_37ddcbdaad296ad831f2|Coinbase Global, Inc. Class A common stock]]

@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260820T090239Z --script-path data/wiki/podcasts/daily-podcast_20260820T090239Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260820T090239Z --script-path data/wiki/podcasts/daily-podcast_20260820T090239Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2026-08-20T090239Z standalone research podcast covering Recursion Pharmaceuticals, Texas Instruments and Canadian Solar; the 2,921-word script passed deterministic preflight and its single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three binds the exact daily cycle, prior successful podcast, research window, report path, transcript page path and five successful research developments used for selection and exclusion.",
+      "source": "data/runs/daily-20260820T090239Z/podcast_context.json"
+    },
+    {
+      "claim": "Recursion's accepted quick check confirms the high-volume rise without a newer operating filing or changed trial evidence, retaining Unrated / Watch, unsupported valuation and allocation ineligibility.",
+      "source": "data/runs/daily-20260820T090239Z/01M0DTRCH845RK5Y0PKBYJ79YE/agent_result.json"
+    },
+    {
+      "claim": "Texas Instruments' accepted review classifies the lower-band breach as risk rather than an entry, retains Hold / Watch and the USD 205.20 buy-below condition, and identifies the domestic fabrication-to-nearshoring mechanism for separate relationship testing.",
+      "source": "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/agent_result.json"
+    },
+    {
+      "claim": "Canadian Solar's accepted review verifies Cobalt Solar financing and a bullish momentum crossover while retaining Buy / Initiate at watch-tier conviction and allocation ineligibility because downside-payoff and accepted-relationship gates remain unresolved.",
+      "source": "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/agent_result.json"
+    },
+    {
+      "claim": "The recent precision-biology episode already covered Ginkgo Bioworks' same operating evidence, valuation and Hold / Watch conclusion, supporting exclusion of its unchanged quick check from a repetitive chapter.",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T230515Z.md"
+    },
+    {
+      "claim": "The recent factory-automation episode already covered FANUC's same market alert, valuation, thin-venue risk and Hold / Watch conclusion, supporting exclusion of its unchanged quick check from a repetitive chapter.",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T153048Z.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260820T090239Z/01M0F9BDDREY0V0GY7ZSY4CBJ1/editorial_plan.md",
+    "data/wiki/daily-reports/daily-report_20260820.md",
+    "data/wiki/podcasts/daily-podcast_20260820T090239Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0F9BDDREY0V0GY7ZSY4CBJ1",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Produced a 2,921-word standalone episode with three chapters: Recursion Pharmaceuticals' unexplained high-volume rise versus clinical and valuation evidence, Texas Instruments' domestic fabrication investment versus valuation and nearshoring proof, and Canadian Solar's Cobalt Solar financing versus module economics, cash conversion and leverage. Excluded Ginkgo Bioworks and FANUC because their unchanged quick checks repeated evidence and conclusions already covered in recent episodes. The script states Recursion Unrated / Watch, Texas Instruments Hold / Watch, and Canadian Solar Buy / Initiate at watch-tier conviction but allocation-ineligible, with evidence-backed Buy and Sell conditions for each. Deterministic script preflight passed, and the single audited draft render succeeded with a 1,283-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "Confirmed the payload, frozen podcast context and daily manifest all bind page_path data/wiki/podcasts/daily-podcast_20260820T090239Z.md for daily-20260820T090239Z.",
+      "Confirmed podcast context version three covers the exclusive prior cutoff 2026-08-20T08:34:58Z through the inclusive current cutoff 2026-08-20T09:44:20Z and identifies the prior successful podcast.",
+      "Created the required operation-local editorial plan in introduction, teaser, chapters, overall_summary and greetings order, with all five successful developments selected or explicitly excluded and each selected development mapped to exactly one chapter.",
+      "Confirmed the exact required opening, teaser opening, chapter order, standalone explanations, overall synthesis and exact two-sentence greeting close.",
+      "Confirmed each security chapter ends with its current accepted rating, reason, Buy conditions and Sell conditions; Recursion explicitly identifies the missing evidence that prevents a reliable numeric Buy boundary.",
+      "Deterministic validate-script passed with 2,921 spoken words and five rendering chunks; the spoken section contains at least eight prose paragraphs and no numeric glyphs, Markdown headings, lists, tables, visible machine IDs, raw URLs or link markup.",
+      "Added exactly one deterministic transcript link to the canonical daily report and added no audio link or persistent media path.",
+      "Invoked the audited draft renderer exactly once; it succeeded with a 1,283-second ephemeral draft and no renderer retry or fallback invocation.",
+      "Strict schema validation returned OK [schema].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Queue validation returned OK [queue].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No research conclusion, allocation target/history, strategy, signal, order, execution, fill, cash, portfolio, performance, accounting or delivery state changed."
+    ],
+    "passed": true
+  }
+}

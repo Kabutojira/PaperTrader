@@ -1,0 +1,349 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_099561384c0f5e697727.md",
+      "sha256": "48217ba4f1e849f6d07a53d6916c70054cac8e289047b18013ac53106e4a4b8b"
+    },
+    {
+      "path": "data/wiki/securities/security_83a56943e18793f685b0.md",
+      "sha256": "0e1d4d3a18fff31ec73808cf965ddf3e41c87331a9345e15cc8f65c45e3104a2"
+    }
+  ],
+  "daily_cycle_id": "daily-20260820T090239Z",
+  "decision_snapshot_path": "data/runs/daily-20260820T090239Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "6dfc60d99eacfcbd05be97eb9f9f0ea1b6dffa68e687e025b7273f22b241da34",
+  "generated_at": "2026-08-20T09:52:03Z",
+  "intervening_daily_cycles": [
+    "daily-20260820T090239Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260820T090239Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260820T090239Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260820.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260820T074907Z/podcast_context.json",
+    "context_sha256": "f58ebaa0dafe61b53cd166adbb6840c465ed2cc38fbbc1884e5ddde3b6964f3f",
+    "daily_cycle_id": "daily-20260820T074907Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260820T074907Z.md",
+    "page_sha256": "a20917e3f91b6a4f7b4757a3445b23676b52e229aa90ebf41a2064317f19a70c",
+    "research_cutoff_at": "2026-08-20T08:34:58Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260820.md",
+  "report_sha256": "2d87d103bd9808d38e74586811ff0997a2ca24e49ef97653a06a60ba2bc28edb",
+  "research_cutoff_at": "2026-08-20T09:44:20Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-20T09:08:12Z",
+      "daily_cycle_id": "daily-20260820T090239Z",
+      "daily_report_items": [
+        "Recursion Pharmaceuticals' 19 August volume anomaly accompanied a 13.27% one-session gain and 17.45% period gain, but unchanged filings and recruiting trial status provide no operating catalyst. RXRX remains Unrated / Watch, valuation-unsupported and allocation-ineligible; no full review or paper trade was created."
+      ],
+      "entity_id": "security_ed7d5b616a196969c815",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The identity-matched 19 August RXRX close is USD 3.50 on 30,198,700 shares, a 13.27% one-session gain and 17.45% gain over 22 July through 19 August. The current indicator snapshot retains volume_anomaly at a 2.67327699 volume z-score. Its current source_price_hash is b92eb917fd97893e29cefcee09be1ed4468529a9b193cf244c33522c95846760; this supersedes the payload hash while preserving the same market date, trigger and bounded conclusion.",
+          "source": "PaperTrader deterministic market and indicator state",
+          "source_hash": "b92eb917fd97893e29cefcee09be1ed4468529a9b193cf244c33522c95846760"
+        },
+        {
+          "claim": "A fresh retrieval of the Q2 Form 10-Q is byte-identical to retained evidence and continues to show substantial losses, expected additional capital needs and dilution exposure; the volume move does not change those risks.",
+          "source": "source_rxrx_q2_2026_10q",
+          "source_hash": "38a03be58b9c8235630fdb9b31949970aa2dac35af98e1f158940a55b8051fea",
+          "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000098/rxrx-20260630.htm"
+        },
+        {
+          "claim": "A fresh retrieval of the SEC-filed Q2 results exhibit is byte-identical to retained evidence; REC-7735 IND clearance, the 2 November REC-4881 data catalyst, expected second-half REC-1245 data and cash operating-expense guidance remain unchanged.",
+          "source": "source_rxrx_q2_2026_results_exhibit",
+          "source_hash": "2cb5975ba5149d213dc461133e84d53d409ebbfb8a243967f18c66408644f614",
+          "url": "https://www.sec.gov/Archives/edgar/data/1601830/000160183026000097/exhibit991-q0226.htm"
+        },
+        {
+          "claim": "The current SEC submissions index through 19 August contains Forms 144 and 4 after the baseline review but no newer 8-K, 10-Q or 10-K that changes the operating thesis or explains the volume anomaly.",
+          "source": "SEC submissions index for CIK 0001601830",
+          "url": "https://data.sec.gov/submissions/CIK0001601830.json"
+        },
+        {
+          "claim": "The current registry still lists REC-4881 study NCT05552755 and REC-1245 study NCT06678659 as recruiting, with last posted updates of 5 June and 8 May 2026 respectively. The query response hash drifted since the baseline, but the two decision-relevant trial assumptions did not change and the registry still supplies no approval probabilities or commercial value.",
+          "source": "ClinicalTrials.gov Recursion Pharmaceuticals study registry query",
+          "source_hash": "d748ebfe57f0859ba07bf096130bca914362f88e1501facba64b8713ddf143e8",
+          "url": "https://clinicaltrials.gov/api/v2/studies?query.term=Recursion%20Pharmaceuticals&pageSize=100&format=json"
+        },
+        {
+          "claim": "The accepted 12 August schema-version-two assessment remains fresh through 11 September, Unrated / Watch, valuation-unsupported and allocation-ineligible, with no bear/base/bull values or buy-below price. No verified assumption changed, so the permitted unchanged quick-check path left this assessment and all repository state untouched.",
+          "source": "assessment_76cdb2b6bd6df0f42cff",
+          "source_hash": "a5b596145a0e30c393ca1355bc43d5da8690c80bce7d8bffa1349ea6aa232f1f"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0DTRCH845RK5Y0PKBYJ79YE",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T090239Z/01M0DTRCH845RK5Y0PKBYJ79YE/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Recursion Pharmaceuticals quick check without changing agent-owned repository state. The current 19 August USD 3.50 mark, 30,198,700-share session, 2.673 volume z-score and 17.45% return over the exact 22 July through 19 August period confirm the volume anomaly, but current primary evidence does not identify an operating catalyst or change the thesis. The Q2 filing and results exhibit remain byte-identical, REC-4881 and REC-1245 remain recruiting, and no newer 8-K, 10-Q or 10-K appeared in the SEC submissions index through 19 August. The fresh assessment therefore remains Unrated / Watch, valuation-unsupported and allocation-ineligible; there is still no supportable buy zone. No full security review, strategy, signal, paper order, allocation or accounting change was warranted."
+    },
+    {
+      "completed_at": "2026-08-20T09:17:43Z",
+      "daily_cycle_id": "daily-20260820T090239Z",
+      "daily_report_items": [
+        "Texas Instruments entered marginally below its lower Bollinger band on August 19 after a 9.09% July 22-August 19 decline. No new issuer operating filing explains the move; unchanged scenarios at the USD 267.45 mark derive -3.07% expected return and retain Hold/Watch with allocation ineligibility.",
+        "A single dependent relationship review was queued to test whether Texas Instruments' US 300mm investment and CHIPS support create a material nearshoring/friendshoring exposure. No strategy, signal, paper order, allocation, or accounting state changed."
+      ],
+      "entity_id": "security_83a56943e18793f685b0",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The unchanged SEC-filed Form 10-Q supports Q2 operating and balance-sheet inputs, including USD 7.001 billion cash and short-term investments, USD 14.052 billion debt, USD 4.605 billion inventory, 196 inventory days, planned capital expenditure, and the pending Silicon Labs acquisition financing.",
+          "observed_at": "2026-08-20T09:10:50Z",
+          "source": "source_txn_q2_2026_10q",
+          "source_hash": "fae79f7e6a775bd84b54827e7cfde89fe8ea1b5e9c154537e6a5051618320553",
+          "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000152/txn-20260630.htm"
+        },
+        {
+          "claim": "The unchanged SEC-hosted results release supports Q2 revenue, profit, segment growth and third-quarter guidance used in the normalized earnings scenarios.",
+          "observed_at": "2026-08-20T09:10:50Z",
+          "source": "source_txn_q2_2026_results",
+          "source_hash": "e949c034b9c0f2cc027cfc7c44e989dfe485b5088eb18a37bd09c131003c0958",
+          "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000148/q22026txnex99-eredgar.htm"
+        },
+        {
+          "claim": "The current SEC submissions index shows no newer periodic or current operating report after the July 24 Form 10-Q; the sole later filing through August 20 is a July 31 Form 4.",
+          "observed_at": "2026-08-20T09:10:50Z",
+          "source": "source_txn_sec_submissions_20260820",
+          "source_hash": "b92c950d33086557b8323015dfab7395a8221efe280b756086d4688bf54fe35b",
+          "url": "https://data.sec.gov/submissions/CIK0000097476.json"
+        },
+        {
+          "claim": "The canonical alert period runs from 2026-07-22 through 2026-08-19 and records a 9.09% decline to USD 267.45, a marginal 0.0001462 lower-band breach, RSI 40.76, price below SMA50 but above SMA200, and MACD below signal. This is classified as risk rather than an actionable opportunity.",
+          "source": "data/wiki/inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-82edf66d940f.md"
+        },
+        {
+          "claim": "Deterministic schema-v2 assessment output links predecessor assessment_1afb54951422e1361c5e and derives bear/base/bull returns of -43.91%/-4.09%/39.84%, USD 259.25 probability-weighted fair value, -3.07% expected return, -2.30% confidence-adjusted return, USD 205.20 buy-below price, Hold/Watch, and allocation ineligibility with complete reason frontiers.",
+          "source": "assessment_b5ba326e8ee93ffa570b"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0F773W8YJV2DXQNCZ7A1E8D.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/assessment_upsert_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/enqueue_nearshoring_relationship_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/security_upsert_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/source_txn_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/source_txn_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/source_txn_sec_submissions_20260820_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_83a56943e18793f685b0.md"
+      ],
+      "operation_id": "01M0DTRCH8H390WYHAQK1SDDB0",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/agent_result.json",
+      "status": "succeeded",
+      "summary": "Refreshed Texas Instruments after the 2026-08-19 lower-Bollinger transition using the exact July 22-August 19 market period, unchanged SEC-filed Q2 evidence, and the current SEC submissions index. The marginal breach is risk with modest valuation improvement, not an actionable entry: unchanged USD 150/USD 256.50/USD 374 scenarios derive -3.07% expected return, -2.30% confidence-adjusted return, Hold/Watch, and allocation ineligibility at USD 267.45. Updated the security page and immutable schema-v2 assessment, refreshed three retained source records, and enqueued one dependent relationship review for the plausible US 300mm/CHIPS-to-nearshoring mechanism. No strategy, signal, order, allocation, fill, execution, cash, portfolio, or performance state changed."
+    },
+    {
+      "completed_at": "2026-08-20T09:27:58Z",
+      "daily_cycle_id": "daily-20260820T090239Z",
+      "daily_report_items": [
+        "Canadian Solar entered a bullish MACD crossover on August 19 after a 2.47% July 22-August 19 rise. Cobalt Solar financing supports project execution, but no new quarterly evidence resolves module economics, cash conversion or leverage; unchanged scenarios at USD 15.78 derive 13.71% expected return and retain watch-tier allocation ineligibility.",
+        "A single dependent relationship review was queued to test Canadian Solar's causal exposure to the solar, storage and grid-flexibility reset. No strategy, signal, paper order, allocation, or accounting state changed."
+      ],
+      "entity_id": "security_099561384c0f5e697727",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Canadian Solar subsidiary Recurrent Energy closed approximately USD 484 million of project debt and USD 211 million of tax equity for the fully permitted, under-construction 330 MW Cobalt Solar project, with commercial operation expected by the end of 2027.",
+          "observed_at": "2026-08-20T09:20:10Z",
+          "source": "source_csiq_cobalt_20260813",
+          "source_hash": "c8a29899cce369f01fe6140ba6a78c1b985273c5e90d87f2fd44f630b73e5a52",
+          "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926095449/tm2622845d1_ex99-1.htm"
+        },
+        {
+          "claim": "The current SEC submissions index shows no Canadian Solar quarterly earnings filing newer than the May 14 first-quarter results through August 20; the newest issuer filing is the August 13 Form 6-K furnishing the Cobalt Solar financing release.",
+          "observed_at": "2026-08-20T09:20:10Z",
+          "source": "source_csiq_sec_submissions_20260820",
+          "source_hash": "da2b26b23388acfcd7b18d6aa49e0d609a169ceda22ff50fadd4b70f19742a20",
+          "url": "https://data.sec.gov/submissions/CIK0001375877.json"
+        },
+        {
+          "claim": "The canonical alert period runs from 2026-07-22 through 2026-08-19 and records a 2.47% rise to USD 15.78, MACD 0.01685 above its -0.00815 signal, RSI 54.21, and price still below the 50-day and 200-day moving averages. The transition is classified as a weak opportunity marker rather than an actionable entry.",
+          "source": "data/wiki/inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-6ce55501b381.md"
+        },
+        {
+          "claim": "Deterministic schema-v2 assessment output links predecessor assessment_c6e0cb947704a0c011a0 and derives bear/base/bull returns of -33.90%/19.01%/71.86%, USD 17.943 probability-weighted fair value, 13.71% expected return, 10.28% confidence-adjusted return, USD 15.024 buy-below price, Buy/Initiate, watch-tier conviction, and allocation ineligibility with complete reason frontiers.",
+          "source": "assessment_a4a0ea4ee734302b6c40"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0F7V8D8MTRZGEVET3HTD4AT.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/assessment_upsert_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/enqueue_solar_storage_relationship_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/security_upsert_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/security_upsert_retry01_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/source_csiq_cobalt_20260813_request.json",
+        "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/source_csiq_sec_submissions_20260820_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_099561384c0f5e697727.md"
+      ],
+      "operation_id": "01M0DTRCH8Z4FE2FP9T4NJ1XYM",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/agent_result.json",
+      "status": "succeeded",
+      "summary": "Refreshed Canadian Solar after the 2026-08-19 bullish-MACD transition using the exact July 22-August 19 market period, the August 13 Cobalt Solar financing, unchanged Q1 financial evidence, and the current SEC submissions index. The crossover is a weak technical opportunity marker rather than an actionable entry: unchanged USD 10.43/USD 18.78/USD 27.12 NAV scenarios at USD 15.78 derive 13.71% expected return, 10.28% confidence-adjusted expected return, Buy/Initiate, watch-tier conviction, and allocation ineligibility because both downside-payoff gates and the accepted-relationship gate fail. Updated the security page and immutable schema-v2 assessment, registered two current primary sources, and enqueued one dependent relationship review for the plausible solar-storage-grid mechanism. No strategy, signal, order, allocation, fill, execution, cash, portfolio, or performance state changed."
+    },
+    {
+      "completed_at": "2026-08-20T09:30:48Z",
+      "daily_cycle_id": "daily-20260820T090239Z",
+      "daily_report_items": [
+        "DNA quick check: the strengthened August 19 volume anomaly occurred at the unchanged USD 7.71 reference mark without later operating evidence or a changed valuation gate. Hold / Watch and allocation ineligibility remain unchanged; no full-review escalation was warranted."
+      ],
+      "entity_id": "security_95351d928b674bbdf687",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The baseline full security review succeeded on 2026-08-19T21:33:18Z for the same immutable security. It retained Hold / Watch and allocation ineligibility because base return was negative, bear downside was severe, margin of safety was absent, confidence was medium, and no accepted relationship existed.",
+          "observed_at": "2026-08-20T09:28:29Z",
+          "source": "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/agent_result.json"
+        },
+        {
+          "claim": "The current immutable assessment is schema version 2 and remains fresh through 2026-09-18. Its bear/base/bull fair values are USD 3.33, USD 7.57 and USD 16.47 at 30%, 50% and 20%; its buy-below price is USD 6.056, rating is Hold, portfolio action is Watch, and allocation eligibility is ineligible.",
+          "observed_at": "2026-08-20T09:28:29Z",
+          "source": "assessment_ca38ef934552ae9c3e55"
+        },
+        {
+          "claim": "The payload-bound 2026-08-19 market observation has source-price hash c97bc8073634faffc4c34553443c33685fa0fdb0c3860ada6eb12bb93638d362, a USD 7.710000038146973 adjusted close, 2,459,000 shares of volume, a negative 1.532566% return from 2026-07-22, and a strengthened volume anomaly. The reference mark is unchanged from the fresh baseline assessment and remains above the USD 6.056 buy-below gate.",
+          "observed_at": "2026-08-20T07:49:13Z",
+          "source": "data/market/indicators.csv and data/market/prices/security_95351d928b674bbdf687.csv",
+          "source_hash": "c97bc8073634faffc4c34553443c33685fa0fdb0c3860ada6eb12bb93638d362"
+        },
+        {
+          "claim": "The current SEC submissions index lists a 2026-08-17 Form 144 as the only filing after the 2026-08-06 Form 10-Q and the 2026-08-05 results Form 8-K. It provides no later financial or operating evidence that changes the Q2 thesis, revenue, burn, liquidity, dilution, catalyst, risk, or invalidation checklist.",
+          "observed_at": "2026-08-20T09:29:00Z",
+          "source": "https://data.sec.gov/submissions/CIK0001830214.json",
+          "url": "https://data.sec.gov/submissions/CIK0001830214.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0F2AG580CK8JC3ZFYQ96RGW",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T090239Z/01M0F2AG580CK8JC3ZFYQ96RGW/agent_result.json",
+      "status": "succeeded",
+      "summary": "Quick-checked Ginkgo Bioworks after the strengthened 2026-08-19 volume anomaly. The identity-matched market bar and source-price hash retain the same USD 7.71 reference mark used by the fresh 2026-08-19 full assessment, and the SEC submissions index contains no later financial or operating filing. The volume increase does not change the thesis, valuation assumptions, catalysts, invalidation conditions, risks, Hold / Watch rating, or allocation ineligibility. The USD 6.056 buy-below gate was not reached, no material gate changed, and no full security-research escalation was created. The fresh accepted assessment remains assessment_ca38ef934552ae9c3e55; this unchanged bounded conclusion leaves no agent-owned repository delta."
+    },
+    {
+      "completed_at": "2026-08-20T09:33:55Z",
+      "daily_cycle_id": "daily-20260820T090239Z",
+      "daily_report_items": [
+        "FANUC quick check found no change from the 19 August full review: the same volume anomaly and EUR 33.35 mark remain thin-market risk rather than a verified fundamental opportunity; issuer-source hashes, valuation, Hold / Watch disposition, and allocation ineligibility are unchanged, so no full-review escalation was created."
+      ],
+      "entity_id": "security_96ba305ee7cd586bc348",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The mandatory context command succeeded before assessment-state reads. It binds security_96ba305ee7cd586bc348 to FANUC/FUC.F/XFRA/EUR/equity, identifies successful baseline operation 01KZVTZDX08AEMJ36N81A06G62 completed at 2026-08-19T15:38:56Z, and confirms current immutable assessment assessment_4e73de2ff48e5f482190 is fresh through 2026-09-02.",
+          "observed_at": "2026-08-20T09:31:19Z",
+          "source": "PaperTrader audited security context"
+        },
+        {
+          "claim": "The quick-check payload exactly repeats the volume_anomaly already consumed by the baseline full review: 2026-07-22 through 2026-08-19, EUR 33.349998474121094 close, -9.028918% period return, and the same immutable source-price hash.",
+          "observed_at": "2026-08-20T09:02:45Z",
+          "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-1bb1ee000d56.md",
+          "source_hash": "5a80dab266490be42afb8af01ee32ecadc88b6386755c57c466dc885b1577096"
+        },
+        {
+          "claim": "The retained FANUC consolidated first-quarter results PDF was fetched again from the issuer and remained byte-identical, so the baseline operating results, raised guidance, balance-sheet evidence, and valuation inputs supported by this source are unchanged.",
+          "observed_at": "2026-08-20T09:32:11Z",
+          "source": "source_fanuc_q1_fy2026_results",
+          "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+          "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+        },
+        {
+          "claim": "The retained FANUC first-quarter reference-material PDF was fetched again from the issuer and remained byte-identical, leaving the conventional-automation demand evidence, forecast assumptions, catalysts, risks, and humanoid-revenue evidence gap unchanged.",
+          "observed_at": "2026-08-20T09:32:11Z",
+          "source": "source_fanuc_q1_fy2026_reference",
+          "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+          "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+        },
+        {
+          "claim": "At the exact alert mark, the accepted assessment retains EUR 36.3775 probability-weighted fair value, EUR 29.104 buy-below price, 9.0779660101879293652396556% expected return, 6.8084745076409470239297417% confidence-adjusted return, Hold / Watch, and ineligibility from expected-return, base-upside, downside-payoff, pending-relationship, confidence, timing, valuation, and thin-liquidity constraints. No gate changed and no escalation is warranted.",
+          "observed_at": "2026-08-20T09:31:19Z",
+          "source": "assessment_4e73de2ff48e5f482190"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0F6H4R8MJWJHZSE7KD1REGJ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T090239Z/01M0F6H4R8MJWJHZSE7KD1REGJ/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded FANUC quick check for the 19 August volume anomaly. The mandatory audited security context confirms that the successful full review completed on 19 August after evaluating this same immutable alert, market period, price hash, and EUR 33.349998474121094 mark. Both retained FANUC first-quarter primary-source PDFs were retrieved again on 20 August and their hashes remain unchanged. The thesis, EUR 24.25/EUR 36.38/EUR 48.50 scenarios, EUR 29.104 buy-below level, catalysts, risks, invalidation, Hold / Watch disposition, and allocation ineligibility are therefore unchanged. Assessment assessment_4e73de2ff48e5f482190 remains fresh through 2 September and comparable to the exact alert state. No full security review was requested because no valuation, buy-zone, catalyst, invalidation, evidence, or decision-support gate changed. The unchanged-conclusion path left no agent-owned repository delta and created no follow-up operation."
+    }
+  ],
+  "run_id": "daily-20260820T090239Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-20T09:44:03Z",
+      "daily_cycle_id": "daily-20260820T090239Z",
+      "daily_report_items": [
+        "Planet Labs RSI-oversold opportunity research was blocked because the immutable 2026-07-28 price-hash evidence is no longer available in canonical market data; no state changed."
+      ],
+      "entity_id": "opportunity_2261a96c6e7c60b2874b",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The candidate packet identifies security_97f38b2cb2d5ef127f5a, an entered rsi_oversold transition for 2026-06-29 through 2026-07-28, and source_price_hash 7ab9f36f1bba068eaa6d42bd40ae774f3083f26fb652c90927f5304142dcac3f.",
+          "source": "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd.md",
+          "source_hash": "54e7a4e6d3dd52f5bc20cb80b496cf6f16e8fa8eefd1d1dfe4ee8c2b7fb15b8f"
+        },
+        {
+          "claim": "The current Planet Labs indicator row is as of 2026-08-19 with a different source_price_hash, so it cannot validate the payload-bound historical observation.",
+          "source": "data/market/indicators.csv"
+        },
+        {
+          "claim": "Open issue issue_b9604572acf8d22dc6fd records that the price cache for security_97f38b2cb2d5ef127f5a is empty.",
+          "observed_at": "2026-07-29T16:51:20Z",
+          "source": "data/tables/issues.csv"
+        },
+        {
+          "claim": "The same 2026-07-28 RSI-oversold alert was already reviewed by succeeded security_research operation 01KYQCTS30FPWA0T2PXDRYYXYR; that prior result is context only and does not replace validation of this operation's immutable price input.",
+          "source": "data/operations/operations_history.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYQCTS30ZPP1CTD2NTFVPQ7Z",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260820T090239Z/01KYQCTS30ZPP1CTD2NTFVPQ7Z/agent_result.json",
+      "status": "blocked",
+      "summary": "Blocked before research because the immutable 2026-07-28 RSI-oversold observation cannot be revalidated: its source_price_hash is absent from canonical market data and the required per-security price cache is unavailable. No wiki, structured research, trading, allocation, or accounting state was changed."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-20T08:34:58Z"
+}
