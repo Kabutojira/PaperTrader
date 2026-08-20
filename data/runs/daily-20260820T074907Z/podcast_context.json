@@ -1,0 +1,347 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_anduril_product_company_disruption.md",
+      "sha256": "7d273e88cdd32e185d6f8c366e37552583aa1a472d2310652e2b723a99fe3f1c"
+    },
+    {
+      "path": "data/wiki/ideas/idea_commercial_space_infrastructure.md",
+      "sha256": "2868901712d68c7c4f601a12422bd26942a8784710ee9004818fc99cf6ba1bf9"
+    },
+    {
+      "path": "data/wiki/ideas/idea_defense_aerospace.md",
+      "sha256": "c4a49a22054f720ef34af4ccf5f063d97588253046476ed24ec986598ab4a10d"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+      "sha256": "9564ec63c936fb967b8a92800eb2140e2f1fa90250a3d41f095a1924b6cbb9a3"
+    },
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    },
+    {
+      "path": "data/wiki/ideas/idea_sovereign_small_drone_supply_chains.md",
+      "sha256": "4003955eeb3343520be4e82816c4457dd2e535f4ac8502b4568c33e6673ca250"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_37ddcbdaad296ad831f2.md",
+      "sha256": "764db02cdc3ab2d62a569a4dc0b75fa212e11a5b0317acb7da8f95493241827d"
+    },
+    {
+      "path": "data/wiki/securities/security_cc4dcb8f002b61dffe00.md",
+      "sha256": "ec594d670ba665a2e75e176370fd0aef270933832ef3ac6db0c00b55402119b1"
+    },
+    {
+      "path": "data/wiki/securities/security_fe5539a7d3fd9d553bce.md",
+      "sha256": "2a377525bc6cb03b7eeeebabcb0987a1a08f365f6b3667156a17e2c368ebde42"
+    }
+  ],
+  "daily_cycle_id": "daily-20260820T074907Z",
+  "decision_snapshot_path": "data/runs/daily-20260820T074907Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "d8ba49dedea4e9304fdb2698763c753478971e30e08df295dbb1ab59aa5b7ab2",
+  "generated_at": "2026-08-20T08:43:00Z",
+  "intervening_daily_cycles": [
+    "daily-20260820T074907Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260820T074907Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260820T074907Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260820.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260819T230515Z/podcast_context.json",
+    "context_sha256": "698c7cc54e3c800b731275211a59a9866a329c4abc3ebdf32b70595761edf847",
+    "daily_cycle_id": "daily-20260819T230515Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260819T230515Z.md",
+    "page_sha256": "34c4eb0ca7c08c8c2c1e0c0b421e59eaeb14a4138f458d3942e6ad9b51e09264",
+    "research_cutoff_at": "2026-08-19T23:48:56Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260820.md",
+  "report_sha256": "744273e11d778175903d94eae329b007912fb298b55a4285d87facc2c84dd797",
+  "research_cutoff_at": "2026-08-20T08:34:58Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-20T08:06:51Z",
+      "daily_cycle_id": "daily-20260820T074907Z",
+      "daily_report_items": [
+        "Parrot S.A. full H1 review completed: professional-microdrone growth and positive recurring operating income strengthen the sovereign-demand thesis, but cash burn, concentration, thin liquidity and EUR 9.091 weighted value versus the EUR 9.80 mark retain deterministic Hold / Watch and allocation ineligibility. The August MACD crossover was noise; no paper strategy, signal or order was created."
+      ],
+      "entity_id": "security_cc4dcb8f002b61dffe00",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Parrot reported H1 2026 revenue of EUR 57.3 million, professional-microdrone revenue of EUR 37.2 million, photogrammetry revenue of EUR 20.0 million, 51.8% gross margin, EUR 2.0 million recurring operating income, EUR 18.8 million cash and negative EUR 13.6 million operating cash flow.",
+          "observed_at": "2026-08-20T07:54:58Z",
+          "source": "source_parrot_h1_2026_results",
+          "source_hash": "4c246f132a4192a212194381aff958e988dfbe7b6a4cce0cf79a2731989cb35d",
+          "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf"
+        },
+        {
+          "claim": "Parrot's issuer share disclosure reports 31,157,845 shares and 31,377,085 theoretical voting rights at July 31, 2026, resolving the prior per-share valuation gap while preserving dilution risk.",
+          "observed_at": "2026-08-20T07:54:58Z",
+          "source": "source_parrot_shares_20260731",
+          "source_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+          "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights"
+        },
+        {
+          "claim": "The fresh identity-matched PARRO.PA/XPAR/EUR mark is EUR 9.800000190734863 as of 2026-08-20T07:49:13Z. The August 18 MACD cross above signal followed a 30.56% decline from EUR 13.25 on July 20 to EUR 9.20 on August 18; the August 19 close remained below the 50-day and 200-day averages with RSI 44.72, supporting a noise disposition rather than an opportunity.",
+          "source": "PaperTrader canonical market state"
+        },
+        {
+          "claim": "The sole accepted schema-v2 assessment from this operation links predecessor assessment_aef9bce4a2db13cc33de, the current security-page hash, operation/result provenance, current price and base-currency FX identity. Deterministic normalization derives EUR 9.091 weighted fair value, EUR 7.272 buy-below price, -7.2347% expected return, quality score 56, Hold / Watch and allocation ineligibility.",
+          "source": "assessment_8d710a0fa8813b740807"
+        },
+        {
+          "claim": "The payload and current accepted relationship identify idea_sovereign_small_drone_supply_chains, requiring exactly one dependent idea refresh. Complete-catalog screening also found one plausible distinct candidate, idea_defense_aerospace, requiring relationship review relationship_76e417e751f1ba32182c. The adverse full strategy gate precludes conviction strategy research.",
+          "source": "PaperTrader audited security context and canonical relationship state"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0F34R08CY644E0K9CY8VYH8.json",
+        "data/operations/payloads/01M0F34WWGH895CQ4XFSFWTXC7.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/assessment_upsert_request.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/enqueue_defense_relationship_request.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/enqueue_sovereign_idea_refresh_request.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/security_upsert_request.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/security_upsert_retry01_request.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/source_record_request_h1_2026.json",
+        "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/source_record_request_shares_20260731.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_cc4dcb8f002b61dffe00.md"
+      ],
+      "operation_id": "01M08BT9VRSPKQN2Q6FSAB61CR",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one full Parrot S.A. security review using current H1 2026 issuer evidence, the July 31 share count and the fresh EUR 9.800000190734863 mark. Replaced the prior unsupported valuation with EUR 5.48/EUR 9.09/EUR 14.51 bear/base/bull scenarios. Deterministic assessment assessment_8d710a0fa8813b740807 derives EUR 9.091 probability-weighted fair value, EUR 7.272 buy-below price, -7.23% expected return, Hold / Watch and allocation ineligibility. The August 18 MACD crossover was classified as noise after the measured drawdown. No strategy, signal, paper order, allocation, execution, cash, portfolio, fill, performance or accounting state changed. Created one dependent relationship review for the defense-aerospace candidate and exactly one dependent idea refresh for the accepted sovereign-small-drone relationship."
+    },
+    {
+      "completed_at": "2026-08-20T08:11:12Z",
+      "daily_cycle_id": "daily-20260820T074907Z",
+      "daily_report_items": [
+        "CrowdStrike's strengthened August 19 volume anomaly included a 5.30% one-session decline to USD 201.63, while the exact July 22-August 19 period still gained 7.01%. Current SEC submissions showed only ownership Forms 4 after the August 11 full review. All retained valuation cases remain below market and the price remains 131.67% above the USD 87.032 buy-below level, so Strong Sell / Avoid and allocation ineligibility remain unchanged; no full review or paper action was created."
+      ],
+      "entity_id": "security_8472507d7d320aa388a7",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "For immutable CRWD/XNAS/USD equity security_8472507d7d320aa388a7, the identity-matched August 19 completed-session close was USD 201.6300048828125. The merged source price hash cc96c4cb35f3e21c8a3e7175434fb9ebe62c96a21e47c6bb1d916ff1df514949 matched indicators.csv and the strengthened volume-anomaly packet. The close fell 5.302457910587875628095573130% from August 18 while the exact July 22 through August 19 period return remained 7.0109366533495834333830033%.",
+          "observed_at": "2026-08-20T07:49:13Z",
+          "source": "PaperTrader deterministic market and indicator state",
+          "source_hash": "cc96c4cb35f3e21c8a3e7175434fb9ebe62c96a21e47c6bb1d916ff1df514949"
+        },
+        {
+          "claim": "A current bounded check found only ownership Forms 4 filed on August 12, August 14, and August 18 after the August 11 baseline. No newer periodic operating filing or earnings release superseded the fiscal Q1 revenue, ARR, module-adoption, cash-flow, balance-sheet, dilution, catalyst, or invalidation inputs.",
+          "observed_at": "2026-08-20T08:08:39Z",
+          "source": "CrowdStrike SEC submissions index",
+          "source_hash": "ec8049767ed3f3438601a554eeebfa48bb5648bcd66694caab0972bc577352fa",
+          "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+        },
+        {
+          "claim": "The fresh schema-version-2 baseline assessment completed on August 11 remains valid through September 5. Repricing its unchanged USD 68.88, USD 108.79, and USD 149.76 fair values at USD 201.6300048828125 leaves bear, base, and bull returns at -65.83841772952735669316174997%, -46.04473671305576560175764778%, and -25.72534028998282430847711492%, with -45.91330786140542805128854011% probability-weighted expected return. The market price remains 131.6734130926699374942549867% above the USD 87.032 buy-below level, so no valuation, buy-zone, rating, or eligibility gate changed.",
+          "source": "PaperTrader deterministic assessment assessment_d7627fc0cfdd00f8d0eb"
+        },
+        {
+          "claim": "The high-volume selloff increases near-term timing risk but supplies no primary evidence of a changed operating catalyst or invalidation. It is not a valuation-supported entry condition. No full security review was requested because the current primary-evidence checklist and every decision-support gate remained unchanged.",
+          "source": "PaperTrader quick-check disposition"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0DTRCH8PPT6ZNMR9FR7YBZY",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T074907Z/01M0DTRCH8PPT6ZNMR9FR7YBZY/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded CrowdStrike quick check for the merged August 19 volume-anomaly alerts. The latest completed-session mark was USD 201.63 after a 5.30% one-session decline, but remained 131.67% above the USD 87.032 buy-below level; all retained bear, base, and bull fair values remained below market. The SEC submissions index through August 18 contained only ownership Forms 4 after the baseline, with no newer periodic operating evidence. The baseline thesis, valuation assumptions, catalysts, invalidation, risks, Strong Sell / Avoid rating, and allocation ineligibility therefore remain unchanged. The fresh existing assessment was retained without agent-owned repository changes, and no full review, strategy, signal, order, allocation, or accounting change was created."
+    },
+    {
+      "completed_at": "2026-08-20T08:17:13Z",
+      "daily_cycle_id": "daily-20260820T074907Z",
+      "daily_report_items": [
+        "dLocal's strengthened August 19 volume anomaly included a 4.84% rise to USD 14.30 on 7.03 million shares. A new SEC Schedule 13D/A disclosed General Atlantic's August 17 sale of 9.84 million shares at an average USD 13.60, explaining abnormal volume without issuer dilution or changed operating evidence. DLO remains below its USD 14.96 buy-below level with Medium / Watch unchanged, but stays allocation-ineligible because no accepted relationship exists; no full review or paper action was created."
+      ],
+      "entity_id": "security_715bde20b6e1e1320c1a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "For immutable DLO/XNAS/USD equity security_715bde20b6e1e1320c1a, the identity-bound August 19 completed-session close was USD 14.300000190734863 on 7,033,900 shares. The payload source-price hash e3872464054d9bc13a3e5b357958f4304b19af9b064d17d9c42032f2cda48df5 matched the current indicator row and strengthened alert packet. The close rose 4.838708436948108% from August 18 and the exact July 23 through August 19 period gained 1.562501904978000%.",
+          "observed_at": "2026-08-20T07:49:13Z",
+          "source": "PaperTrader deterministic market and indicator state",
+          "source_hash": "e3872464054d9bc13a3e5b357958f4304b19af9b064d17d9c42032f2cda48df5"
+        },
+        {
+          "claim": "General Atlantic DO B.V. sold 9,842,559 dLocal Class A shares in open-market transactions at an average USD 13.60 on August 17, equal to approximately 5.7163% of the 172,183,455 Class A shares cited in the filing. The amendment states no material change to purpose of transaction or contracts and reports the General Atlantic reporting group still beneficially owned 36,814,136 shares, or 21.4% of the class. This is a secondary ownership transfer, not issuer dilution or new operating evidence.",
+          "observed_at": "2026-08-20T08:13:54Z",
+          "source": "dLocal SEC Schedule 13D/A filed 2026-08-19",
+          "source_hash": "919b0fc3dff45d87532c2e46c539e9547bcae0fbda2a4a3bf2c81d877f1eb157",
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095014226002390/xslSCHEDULE_13D_X02/primary_doc.xml"
+        },
+        {
+          "claim": "The current submissions index showed the August 19 Schedule 13D/A and August 17 Form 144 after the August 13 Q2 Form 6-K already consumed by the baseline review. No newer periodic operating filing or issuer results release superseded the Q2 TPV, growth, take-rate, cash-conversion, balance-sheet, guidance, catalyst, risk, invalidation, or valuation assumptions.",
+          "observed_at": "2026-08-20T08:13:54Z",
+          "source": "dLocal SEC submissions index",
+          "source_hash": "e06d055b91fd29e0bb4bfb2370c041148982e54abaa52a804bb6a16cf072d6f3",
+          "url": "https://data.sec.gov/submissions/CIK0001846832.json"
+        },
+        {
+          "claim": "The fresh schema-version-2 assessment completed August 18 remains valid through September 17. Repricing its unchanged USD 9.00, USD 18.70 and USD 29.40 fair values at USD 14.300000190734863 produces bear, base and bull returns of -37.06293790239804%, 30.76922902501741% and 105.59440285216642%, and a probability-weighted fair value of USD 18.95 with 32.51748074995080% expected return. The mark remains 4.411763430916691% below the USD 14.96 buy-below level, so the buy-zone, valuation, rating and eligibility gates did not change.",
+          "observed_at": "2026-08-20T08:11:45Z",
+          "source": "PaperTrader deterministic assessment assessment_3c19e3012bc964c29faf"
+        },
+        {
+          "claim": "The ownership sale supplies a bounded primary-source explanation for abnormal trading volume but no changed operating catalyst, thesis invalidation, valuation input or decision-support gate. The valuation-supported buy zone was already reached by the baseline and remains reached; the sole allocation blocker remains the absent accepted relationship. No dependent full security review is warranted.",
+          "source": "PaperTrader quick-check disposition"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0DTRCH8VBWGTE14A1J89FTF",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T074907Z/01M0DTRCH8VBWGTE14A1J89FTF/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded dLocal quick check for the merged August 18-19 volume-anomaly alerts. The August 19 close rose 4.84% to USD 14.30 on 7,033,900 shares and remained inside the existing USD 14.96 buy-below level. A current SEC Schedule 13D/A showed that General Atlantic sold 9,842,559 Class A shares at an average USD 13.60 on August 17; this ownership transaction explains abnormal volume but did not dilute dLocal, alter the sponsor group's disclosed purpose or contracts, or supersede the Q2 operating and valuation assumptions. Repricing the unchanged USD 9.00, USD 18.70 and USD 29.40 scenarios leaves base upside at 30.77% and probability-weighted upside at 32.52%. The fresh baseline assessment therefore remains allocation-ineligible only because no accepted relationship exists, with Medium / Watch unchanged. No full review, strategy, signal, order, allocation, accounting change, or agent-owned repository delta was created."
+    },
+    {
+      "completed_at": "2026-08-20T08:23:54Z",
+      "daily_cycle_id": "daily-20260820T074907Z",
+      "daily_report_items": [
+        "Coinbase's August 19 volume anomaly accompanied a 3.56% decline but did not change the Q2 thesis or valuation. Unchanged USD 28/USD 87/USD 191 scenarios imply USD 90.10 weighted fair value and -43.76% expected return versus USD 160.20, retaining Strong Sell / Avoid and no paper position. One stale relationship refresh and one dependent idea refresh were requested; no strategy, signal, order, allocation or accounting state changed."
+      ],
+      "entity_id": "security_37ddcbdaad296ad831f2",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The retained SEC-hosted filing hash is unchanged. Q2 net revenue was USD 1.154 billion, including USD 599 million transaction revenue, USD 555 million subscription and services revenue and USD 292 million stablecoin revenue; the filing retains the balance-sheet, dilution, custody and 26% counterparty-concentration evidence used by the scenarios.",
+          "observed_at": "2026-08-20T08:18:16Z",
+          "source": "Coinbase Q2 2026 Form 10-Q",
+          "source_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm"
+        },
+        {
+          "claim": "The SEC submissions index hash is unchanged and shows no Coinbase periodic or current report newer than the July 30 Q2 Form 10-Q and results Form 8-K; later entries through August 18 are Forms 4 and 144.",
+          "observed_at": "2026-08-20T08:18:16Z",
+          "source": "Coinbase Global SEC submissions index",
+          "source_hash": "d33709cf8886cc9eef20cf1113cfa202cfd8124d9e5c3ea292aff1af56bae5df",
+          "url": "https://data.sec.gov/submissions/CIK0001679788.json"
+        },
+        {
+          "claim": "COIN closed at USD 160.1999969482422 on 2026-08-19 after 16.805 million shares traded at a 2.31535259 volume z-score; the exact 2026-07-22 through 2026-08-19 return was -3.563688%, and fresh USD/EUR state was 0.855400025844574 at 2026-08-20T07:49:13Z.",
+          "source": "PaperTrader deterministic market and indicator state"
+        },
+        {
+          "claim": "The accepted schema-version-two assessment links predecessor assessment_116f889a69d3f82535ab and this operation, matches research-page hash 764db02cdc3ab2d62a569a4dc0b75fa212e11a5b0317acb7da8f95493241827d, and derives Strong Sell / Avoid, USD 90.10 weighted fair value, -43.75780167517123953219036566% expected return and allocation ineligibility.",
+          "source": "PaperTrader deterministic assessment assessment_4d46a3c7b9f1b56bc691"
+        },
+        {
+          "claim": "Exactly one dependent stale-relationship refresh, 01M0F46J18T30YQ0CN66NQQA34, and one result-specific idea refresh, 01M0F46KZRQCRXNP3DRQSKXAXB, were created; no strategy follow-up was created because the full strategy gate failed.",
+          "source": "PaperTrader queue receipts"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0F46J18T30YQ0CN66NQQA34.json",
+        "data/operations/payloads/01M0F46KZRQCRXNP3DRQSKXAXB.json",
+        "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/assessment_upsert_request.json",
+        "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/enqueue_relationship_refresh_request.json",
+        "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/security_upsert_request.json",
+        "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/source_coin_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/source_coin_sec_submissions_20260820_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_37ddcbdaad296ad831f2.md"
+      ],
+      "operation_id": "01M0E4B9TG8BCV4Z5A10NQKY5A",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260820T074907Z/01M0E4B9TG8BCV4Z5A10NQKY5A/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Coinbase repeat review using the unchanged SEC-filed Q2 2026 Form 10-Q, an unchanged current SEC submissions index, and fresh identity-matched market and FX state. The August 19 volume anomaly accompanied a 3.56% decline over the exact payload period but adds no fundamental catalyst or margin of safety. Unchanged USD 28/USD 87/USD 191 scenarios derive USD 90.10 probability-weighted fair value and -43.76% expected return versus USD 160.20, retaining Strong Sell / Avoid, complete research and allocation ineligibility. Exactly one stale accepted-relationship refresh and one dependent digital-finance idea refresh were enqueued. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-20T08:34:44Z",
+      "daily_cycle_id": "daily-20260820T074907Z",
+      "daily_report_items": [
+        "Strategy's August 19 volume anomaly accompanied a 4.24% rise over the exact alert period but did not establish a fundamental catalyst. New August 10 and August 17 SEC filings show 840,447 bitcoin, a USD 4.80 billion reserve, continued common issuance, preferred repurchases and a small Bitcoin sale. Updated USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 weighted fair value and 0.46% expected return versus USD 104.25, retaining Hold / Watch and no paper position. No relationship, idea, or strategy follow-up was justified."
+      ],
+      "entity_id": "security_fe5539a7d3fd9d553bce",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Strategy reported 840,447 bitcoin and a USD 4.50 billion reserve as of August 9; during August 3-9 it sold 1,690 bitcoin for USD 108.6 million, sold 6,585,682 MSTR shares for USD 648.1 million and repurchased 1,152,020 STRC shares for USD 108.6 million.",
+          "observed_at": "2026-08-20T08:26:47Z",
+          "source": "Strategy Inc August 10, 2026 Form 8-K treasury update",
+          "source_hash": "b8d705f296596d777bbd7ad2e76e2482808cbf7817febf066f8e2dc43a8e1b58",
+          "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526341297/mstr-20260810.htm"
+        },
+        {
+          "claim": "Strategy reported unchanged 840,447 bitcoin and a USD 4.80 billion reserve as of August 16; during August 10-16 it sold 3,458,866 MSTR shares for USD 338.7 million and repurchased 1,388,720 STRC shares for USD 132.2 million, with no weekly Bitcoin purchase or sale.",
+          "observed_at": "2026-08-20T08:26:47Z",
+          "source": "Strategy Inc August 17, 2026 Form 8-K treasury update",
+          "source_hash": "4b4ec2e0ed97d8c8f793f99192e99259908fabc4658d788801dde74b7c7377a4",
+          "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526353240/mstr-20260817.htm"
+        },
+        {
+          "claim": "MSTR closed at USD 104.25 on 2026-08-19 after 48.67 million shares traded at a 3.752 volume z-score; the exact 2026-07-22 through 2026-08-19 adjusted-close return was 4.24%, and identity-matched market and USD/EUR state were fresh at 2026-08-20T07:49:13Z.",
+          "source": "PaperTrader deterministic market, indicator and FX state"
+        },
+        {
+          "claim": "The accepted schema-version-two assessment links predecessor assessment_9a6f9dc91435d20a6057 and this operation, matches research-page hash 2a377525bc6cb03b7eeeebabcb0987a1a08f365f6b3667156a17e2c368ebde42, and derives Hold / Watch, USD 104.731 probability-weighted fair value, 0.4613908872901678657074341% expected return, 0.346043165467625899280575575% confidence-adjusted expected return and allocation ineligibility.",
+          "source": "PaperTrader deterministic assessment assessment_7d18a6bb522b5136cdfa"
+        },
+        {
+          "claim": "No accepted relationship exists for this security. The complete maintained idea catalog was searched; digital-finance and crypto-rails was rejected because Strategy is a leveraged Bitcoin treasury rather than an operating settlement, custody, payment, stablecoin or tokenization rail, and no other maintained idea had a specific material causal mechanism.",
+          "source": "PaperTrader canonical idea and relationship state"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/assessment_upsert_request.json",
+        "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/security_upsert_request.json",
+        "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/source_mstr_aug10_2026_8k_request.json",
+        "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/source_mstr_aug17_2026_8k_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_fe5539a7d3fd9d553bce.md"
+      ],
+      "operation_id": "01M0DTRCH83ES0SSX986EF5TWQ",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded repeat review of Strategy Inc Class A common stock using the mandatory prior context, fresh August 10 and August 17 SEC Forms 8-K, and the exact August 19 volume-anomaly period. Strategy disclosed 840,447 bitcoin, a USD 4.80 billion reserve, 10,044,548 common shares issued and 2,540,740 STRC shares repurchased across the two new weekly filings. Updated USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 probability-weighted fair value and 0.46% expected return versus USD 104.25, retaining Hold / Watch and allocation ineligibility. The complete idea catalog supported no causal relationship or follow-up, and the conviction strategy gate failed. No strategy, signal, order, allocation or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260820T074907Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-19T23:48:56Z"
+}

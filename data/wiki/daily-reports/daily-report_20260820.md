@@ -210,6 +210,7 @@ No pending orders.
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]
 - [[system-status|PaperTrader system status and audit]]
+- [[podcasts/daily-podcast_20260820T074907Z|Daily research podcast — 2026-08-20T074907Z]]
 
 ## 7. Data-quality and coverage impact
 

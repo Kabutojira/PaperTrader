@@ -1,0 +1,65 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260820T074907Z --script-path data/wiki/podcasts/daily-podcast_20260820T074907Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260820T074907Z --script-path data/wiki/podcasts/daily-podcast_20260820T074907Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2026-08-20T074907Z standalone research podcast covering Parrot, dLocal and Strategy; the 2,782-word script passed deterministic preflight and its single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen podcast context version three binds the exact daily cycle, prior successful podcast, research window, report path and transcript page path used by this episode.",
+      "source": "data/runs/daily-20260820T074907Z/podcast_context.json"
+    },
+    {
+      "claim": "Parrot's accepted review supports Hold / Watch from professional-microdrone growth and positive recurring operating income, offset by cash burn, concentration, thin liquidity and weighted value below the market mark.",
+      "source": "data/runs/daily-20260820T074907Z/01M08BT9VRSPKQN2Q6FSAB61CR/agent_result.json"
+    },
+    {
+      "claim": "dLocal's accepted quick check identifies the high-volume event as General Atlantic's secondary sale rather than issuer dilution, while retaining Medium / Watch and the missing accepted relationship as the allocation blocker.",
+      "source": "data/runs/daily-20260820T074907Z/01M0DTRCH8VBWGTE14A1J89FTF/agent_result.json"
+    },
+    {
+      "claim": "Strategy's accepted review supports Hold / Watch after new filings showed a larger reserve, common issuance, preferred repurchases and a small Bitcoin sale, with negligible expected return and continued allocation ineligibility.",
+      "source": "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/agent_result.json"
+    },
+    {
+      "claim": "The immediately prior successful podcast already covered Coinbase's unchanged Q2 evidence, valuation, Strong Sell / Avoid rating and rating-change conditions, supporting exclusion of repetitive narration.",
+      "source": "data/wiki/podcasts/daily-podcast_20260819T230515Z.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260820T074907Z/01M0F5CZH0YY4KHG9TE6HZ3G7Q/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260820.md",
+    "data/wiki/podcasts/daily-podcast_20260820T074907Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0F5CZH0YY4KHG9TE6HZ3G7Q",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Produced a 2,782-word standalone episode with three chapters: Parrot's sovereign-drone operating progress versus cash conversion, dLocal's secondary sponsor sale versus issuer dilution, and Strategy's reserve growth and preferred repurchases versus common dilution. Excluded CrowdStrike as an unchanged routine check and Coinbase because the immediately prior episode already covered the same evidence, valuation and Strong Sell / Avoid conclusion without a material new advance. The episode states Parrot Hold / Watch, dLocal Medium / Watch and Strategy Hold / Watch with evidence-backed Buy and Sell conditions. Deterministic script preflight passed and the single audited draft render succeeded with a 1,171-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "Confirmed the payload, frozen podcast context and daily manifest all bind page_path data/wiki/podcasts/daily-podcast_20260820T074907Z.md for daily-20260820T074907Z.",
+      "Confirmed podcast context version three covers the exclusive prior cutoff 2026-08-19T23:48:56Z through the inclusive current cutoff 2026-08-20T08:34:58Z and identifies the prior successful podcast.",
+      "Created the required operation-local editorial outline in introduction, teaser, chapters, overall_summary and greetings order, with all five developments selected or explicitly excluded and each selected development mapped to exactly one chapter.",
+      "Confirmed the exact required opening, teaser opening, chapter order, standalone explanations, overall synthesis and exact two-sentence greeting close.",
+      "Confirmed each security chapter ends with its current accepted rating, reason, Buy conditions and Sell conditions; Strategy explicitly identifies the missing evidence that prevents a reliable numeric buy boundary.",
+      "Deterministic validate-script passed with 2,782 spoken words and five rendering chunks; the spoken section contains at least eight prose paragraphs and no numeric glyphs, Markdown headings, lists, tables, visible machine IDs, raw URLs or link markup.",
+      "Added exactly one deterministic transcript link to the canonical daily report and added no audio link or persistent media path.",
+      "Invoked the audited draft renderer exactly once; it succeeded with a 1,171-second ephemeral draft and no renderer retry or fallback invocation.",
+      "Strict schema validation returned OK [schema].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Queue validation returned OK [queue].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No research conclusion, allocation target/history, strategy, signal, order, execution, fill, cash, portfolio, performance, accounting or delivery state changed."
+    ],
+    "passed": true
+  }
+}
