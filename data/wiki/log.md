@@ -4371,3 +4371,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
   US 300mm investment and CHIPS support create a material nearshoring/friendshoring exposure; broad
   WBG, AI-compute and AI-power adjacencies were rejected. No strategy, signal, paper order,
   allocation or accounting state changed.
+
+## [2026-08-20T09:20:10Z] update | Canadian Solar MACD and project-financing refresh
+
+- Refreshed [[securities/security_099561384c0f5e697727|Canadian Solar]] after its August 19 bullish-
+  MACD crossover. Recurrent Energy's USD 695 million Cobalt Solar financing supports project
+  execution, but no newer quarterly financial filing resolves module economics, consolidated cash
+  conversion or leverage. Unchanged USD 10.43/18.78/27.12 NAV scenarios at the USD 15.78 mark retain
+  Buy/Initiate as the research rating but Watch and allocation ineligibility; one dependent review
+  will test the candidate solar-storage-grid relationship.

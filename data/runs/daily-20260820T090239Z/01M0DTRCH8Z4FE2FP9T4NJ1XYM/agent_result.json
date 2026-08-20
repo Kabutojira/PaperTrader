@@ -1,0 +1,79 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader research source record --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/source_csiq_cobalt_20260813_request.json",
+    "papertrader research source record --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/source_csiq_sec_submissions_20260820_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/security_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/enqueue_solar_storage_relationship_request.json",
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Canadian Solar entered a bullish MACD crossover on August 19 after a 2.47% July 22-August 19 rise. Cobalt Solar financing supports project execution, but no new quarterly evidence resolves module economics, cash conversion or leverage; unchanged scenarios at USD 15.78 derive 13.71% expected return and retain watch-tier allocation ineligibility.",
+    "A single dependent relationship review was queued to test Canadian Solar's causal exposure to the solar, storage and grid-flexibility reset. No strategy, signal, paper order, allocation, or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "Canadian Solar subsidiary Recurrent Energy closed approximately USD 484 million of project debt and USD 211 million of tax equity for the fully permitted, under-construction 330 MW Cobalt Solar project, with commercial operation expected by the end of 2027.",
+      "observed_at": "2026-08-20T09:20:10Z",
+      "source": "source_csiq_cobalt_20260813",
+      "source_hash": "c8a29899cce369f01fe6140ba6a78c1b985273c5e90d87f2fd44f630b73e5a52",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926095449/tm2622845d1_ex99-1.htm"
+    },
+    {
+      "claim": "The current SEC submissions index shows no Canadian Solar quarterly earnings filing newer than the May 14 first-quarter results through August 20; the newest issuer filing is the August 13 Form 6-K furnishing the Cobalt Solar financing release.",
+      "observed_at": "2026-08-20T09:20:10Z",
+      "source": "source_csiq_sec_submissions_20260820",
+      "source_hash": "da2b26b23388acfcd7b18d6aa49e0d609a169ceda22ff50fadd4b70f19742a20",
+      "url": "https://data.sec.gov/submissions/CIK0001375877.json"
+    },
+    {
+      "claim": "The canonical alert period runs from 2026-07-22 through 2026-08-19 and records a 2.47% rise to USD 15.78, MACD 0.01685 above its -0.00815 signal, RSI 54.21, and price still below the 50-day and 200-day moving averages. The transition is classified as a weak opportunity marker rather than an actionable entry.",
+      "source": "data/wiki/inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-6ce55501b381.md"
+    },
+    {
+      "claim": "Deterministic schema-v2 assessment output links predecessor assessment_c6e0cb947704a0c011a0 and derives bear/base/bull returns of -33.90%/19.01%/71.86%, USD 17.943 probability-weighted fair value, 13.71% expected return, 10.28% confidence-adjusted return, USD 15.024 buy-below price, Buy/Initiate, watch-tier conviction, and allocation ineligibility with complete reason frontiers.",
+      "source": "assessment_a4a0ea4ee734302b6c40"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0F7V8D8MTRZGEVET3HTD4AT.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/assessment_upsert_request.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/enqueue_solar_storage_relationship_request.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/security_upsert_request.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/security_upsert_retry01_request.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/source_csiq_cobalt_20260813_request.json",
+    "data/runs/daily-20260820T090239Z/01M0DTRCH8Z4FE2FP9T4NJ1XYM/source_csiq_sec_submissions_20260820_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0DTRCH8Z4FE2FP9T4NJ1XYM",
+  "operations_created": [
+    "01M0F7V8D8MTRZGEVET3HTD4AT"
+  ],
+  "status": "succeeded",
+  "summary": "Refreshed Canadian Solar after the 2026-08-19 bullish-MACD transition using the exact July 22-August 19 market period, the August 13 Cobalt Solar financing, unchanged Q1 financial evidence, and the current SEC submissions index. The crossover is a weak technical opportunity marker rather than an actionable entry: unchanged USD 10.43/USD 18.78/USD 27.12 NAV scenarios at USD 15.78 derive 13.71% expected return, 10.28% confidence-adjusted expected return, Buy/Initiate, watch-tier conviction, and allocation ineligibility because both downside-payoff gates and the accepted-relationship gate fail. Updated the security page and immutable schema-v2 assessment, registered two current primary sources, and enqueued one dependent relationship review for the plausible solar-storage-grid mechanism. No strategy, signal, order, allocation, fill, execution, cash, portfolio, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed.",
+      "Post-upsert security context confirmed current assessment assessment_a4a0ea4ee734302b6c40, predecessor assessment_c6e0cb947704a0c011a0, schema version 2, matching research-page hash 48217ba4f1e849f6d07a53d6916c70054cac8e289047b18013ac53106e4a4b8b, immutable XNAS/USD identity, fresh market/FX timestamps, and five current registered evidence sources.",
+      "The complete maintained idea catalog and canonical relationship state were searched; there were no accepted Canadian Solar relationships. One plausible unaccepted solar-storage-grid edge was queued for bounded review, while AI-power, lithium-cycle and nearshoring adjacencies were explicitly rejected with reasons.",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict repository integrity returned OK [integrity].",
+      "Git diff whitespace validation passed and observed changes exclude allocation targets/history, orders, fills, executions, cash, portfolio, and performance."
+    ],
+    "passed": true
+  }
+}

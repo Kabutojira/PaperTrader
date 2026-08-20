@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_cobalt_20260813",
+  "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926095449/tm2622845d1_ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926095449/tm2622845d1_ex99-1.htm",
+  "source_type": "issuer_release",
+  "title": "Recurrent Energy Cobalt Solar project financing announcement",
+  "publisher": "Canadian Solar Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "c8a29899cce369f01fe6140ba6a78c1b985273c5e90d87f2fd44f630b73e5a52",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-20T09:20:10Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Recurrent Energy closed USD 695 million of project financing and tax equity for the 330 MW Cobalt Solar project.",
+  "summary": "Canadian Solar subsidiary Recurrent Energy closed approximately USD 484 million of project debt and USD 211 million of tax equity for the fully permitted, under-construction 330 MW Cobalt Solar facility in California. Commercial operation is expected by the end of 2027. The financing supports project execution and reduces immediate funding uncertainty for this asset, but it does not establish parent-level free cash flow or normalized module profitability.",
+  "run_id": "daily-20260820T090239Z"
+}

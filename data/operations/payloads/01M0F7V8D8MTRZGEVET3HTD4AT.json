@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_b763448de19efed98240",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_csiq_2025_20f",
+      "source_csiq_cobalt_20260813",
+      "source_csiq_q1_2026_results"
+    ],
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or downgrade the edge if deployment growth does not improve normalized module and storage margins, storage orders slow, projects fail to monetize, capital intensity and debt absorb the value, or economic benefits remain primarily with minority-owned subsidiaries and financing counterparties.",
+    "proposed_mechanism": "Higher solar deployment, storage attachment and grid-flexibility investment can raise Canadian Solar module and e-STORAGE shipments and support Recurrent Energy project monetization, while module oversupply, cash use, leverage and minority interests may prevent industry growth from reaching common shareholders.",
+    "relationship_id": "relationship_b763448de19efed98240",
+    "security_id": "security_099561384c0f5e697727"
+  },
+  "objective": "Review whether Canadian Solar has a material causal relationship to the solar, storage and grid-flexibility reset through module and battery shipments plus project monetization; accept or reject the edge.",
+  "operation_id": "01M0F7V8D8MTRZGEVET3HTD4AT",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md",
+    "source_csiq_2025_20f",
+    "source_csiq_cobalt_20260813",
+    "source_csiq_q1_2026_results"
+  ]
+}

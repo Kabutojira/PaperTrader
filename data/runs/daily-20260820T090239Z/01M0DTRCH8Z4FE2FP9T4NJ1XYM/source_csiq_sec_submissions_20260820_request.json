@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_sec_submissions_20260820",
+  "url": "https://data.sec.gov/submissions/CIK0001375877.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001375877.json",
+  "source_type": "regulator_index",
+  "title": "Canadian Solar SEC submissions index checked 2026-08-20",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "da2b26b23388acfcd7b18d6aa49e0d609a169ceda22ff50fadd4b70f19742a20",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-20T09:20:10Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest filing through August 20 is the August 13 Form 6-K for Cobalt Solar project financing.",
+  "summary": "The SEC submissions index shows no Canadian Solar periodic earnings filing newer than the May 14 first-quarter results through 2026-08-20. The newest issuer filing is the August 13 Form 6-K furnishing the Cobalt Solar project-financing announcement; July filings concern green financing, project or corporate updates, ownership and insider reports rather than second-quarter financial results.",
+  "run_id": "daily-20260820T090239Z"
+}
