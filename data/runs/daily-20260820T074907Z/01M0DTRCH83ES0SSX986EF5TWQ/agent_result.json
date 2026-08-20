@@ -1,0 +1,81 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_fe5539a7d3fd9d553bce",
+    "papertrader research source record --request data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/source_mstr_aug10_2026_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/source_mstr_aug17_2026_8k_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/assessment_upsert_retry01_request.json",
+    "papertrader research assessment-get --assessment-id assessment_7d18a6bb522b5136cdfa",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader queue validate",
+    "papertrader research security-context --security-id security_fe5539a7d3fd9d553bce"
+  ],
+  "daily_report_items": [
+    "Strategy's August 19 volume anomaly accompanied a 4.24% rise over the exact alert period but did not establish a fundamental catalyst. New August 10 and August 17 SEC filings show 840,447 bitcoin, a USD 4.80 billion reserve, continued common issuance, preferred repurchases and a small Bitcoin sale. Updated USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 weighted fair value and 0.46% expected return versus USD 104.25, retaining Hold / Watch and no paper position. No relationship, idea, or strategy follow-up was justified."
+  ],
+  "evidence": [
+    {
+      "claim": "Strategy reported 840,447 bitcoin and a USD 4.50 billion reserve as of August 9; during August 3-9 it sold 1,690 bitcoin for USD 108.6 million, sold 6,585,682 MSTR shares for USD 648.1 million and repurchased 1,152,020 STRC shares for USD 108.6 million.",
+      "observed_at": "2026-08-20T08:26:47Z",
+      "source": "Strategy Inc August 10, 2026 Form 8-K treasury update",
+      "source_hash": "b8d705f296596d777bbd7ad2e76e2482808cbf7817febf066f8e2dc43a8e1b58",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526341297/mstr-20260810.htm"
+    },
+    {
+      "claim": "Strategy reported unchanged 840,447 bitcoin and a USD 4.80 billion reserve as of August 16; during August 10-16 it sold 3,458,866 MSTR shares for USD 338.7 million and repurchased 1,388,720 STRC shares for USD 132.2 million, with no weekly Bitcoin purchase or sale.",
+      "observed_at": "2026-08-20T08:26:47Z",
+      "source": "Strategy Inc August 17, 2026 Form 8-K treasury update",
+      "source_hash": "4b4ec2e0ed97d8c8f793f99192e99259908fabc4658d788801dde74b7c7377a4",
+      "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526353240/mstr-20260817.htm"
+    },
+    {
+      "claim": "MSTR closed at USD 104.25 on 2026-08-19 after 48.67 million shares traded at a 3.752 volume z-score; the exact 2026-07-22 through 2026-08-19 adjusted-close return was 4.24%, and identity-matched market and USD/EUR state were fresh at 2026-08-20T07:49:13Z.",
+      "source": "PaperTrader deterministic market, indicator and FX state"
+    },
+    {
+      "claim": "The accepted schema-version-two assessment links predecessor assessment_9a6f9dc91435d20a6057 and this operation, matches research-page hash 2a377525bc6cb03b7eeeebabcb0987a1a08f365f6b3667156a17e2c368ebde42, and derives Hold / Watch, USD 104.731 probability-weighted fair value, 0.4613908872901678657074341% expected return, 0.346043165467625899280575575% confidence-adjusted expected return and allocation ineligibility.",
+      "source": "PaperTrader deterministic assessment assessment_7d18a6bb522b5136cdfa"
+    },
+    {
+      "claim": "No accepted relationship exists for this security. The complete maintained idea catalog was searched; digital-finance and crypto-rails was rejected because Strategy is a leveraged Bitcoin treasury rather than an operating settlement, custody, payment, stablecoin or tokenization rail, and no other maintained idea had a specific material causal mechanism.",
+      "source": "PaperTrader canonical idea and relationship state"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/assessment_upsert_request.json",
+    "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/security_upsert_request.json",
+    "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/source_mstr_aug10_2026_8k_request.json",
+    "data/runs/daily-20260820T074907Z/01M0DTRCH83ES0SSX986EF5TWQ/source_mstr_aug17_2026_8k_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_fe5539a7d3fd9d553bce.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0DTRCH83ES0SSX986EF5TWQ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one bounded repeat review of Strategy Inc Class A common stock using the mandatory prior context, fresh August 10 and August 17 SEC Forms 8-K, and the exact August 19 volume-anomaly period. Strategy disclosed 840,447 bitcoin, a USD 4.80 billion reserve, 10,044,548 common shares issued and 2,540,740 STRC shares repurchased across the two new weekly filings. Updated USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 probability-weighted fair value and 0.46% expected return versus USD 104.25, retaining Hold / Watch and allocation ineligibility. The complete idea catalog supported no causal relationship or follow-up, and the conviction strategy gate failed. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running security_research operation claimed by daily-20260820T074907Z with a live lease, validated payload, immutable MSTR/XNAS/USD/equity identity and trusted preflight skill hashes.",
+      "Consumed the mandatory audited security context before assessment-state work and again after applying state; assessment_7d18a6bb522b5136cdfa is schema version 2, complete, predecessor-linked, current-operation-linked and page-hash-aligned.",
+      "Fetched, hashed, registered and consumed the August 10 and August 17 SEC-hosted filings; both retained source records are available, identity-linked and checked before the assessment timestamp.",
+      "Fresh market and FX references both resolve to 2026-08-20T07:49:13Z and match the immutable MSTR/XNAS/USD identity.",
+      "The exact July 22 through August 19 alert period and all trigger indicators were consumed; the anomaly was classified as material attention but not an actionable catalyst.",
+      "The complete maintained idea catalog and canonical relationship table were searched; no accepted, stale or plausible candidate edge exists, rejected thematic adjacency is documented, and therefore no relationship or idea follow-up was required.",
+      "The deterministic assessment derives Hold / Watch and exact failed expected-return, base-return, bear/base payoff, expected/bear payoff, margin-of-safety and relationship gates; no conviction strategy work was created.",
+      "Strict schema validation, strict wiki lint, strict integrity, strict portfolio reconciliation and queue validation all passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed."
+    ],
+    "passed": true
+  }
+}

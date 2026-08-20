@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mstr_aug10_2026_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526341297/mstr-20260810.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1050446/000119312526341297/mstr-20260810.htm",
+  "source_type": "regulator_filing",
+  "title": "Strategy Inc August 10, 2026 Form 8-K treasury update",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b8d705f296596d777bbd7ad2e76e2482808cbf7817febf066f8e2dc43a8e1b58",
+  "related_entity_ids": "security_fe5539a7d3fd9d553bce",
+  "checked_at": "2026-08-20T08:26:47Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "As of August 9, Strategy reported 840,447 bitcoin, a USD 4.65 billion reserve, 6,585,682 MSTR shares sold and 1,152,020 STRC shares repurchased during the week.",
+  "summary": "The filing updates Strategy's treasury and financing state through August 9, including common issuance, a 1,690-bitcoin sale, STRC repurchases and reserve growth.",
+  "run_id": "daily-20260820T074907Z"
+}

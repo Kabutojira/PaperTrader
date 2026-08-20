@@ -4342,3 +4342,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
   Strong Sell / Avoid and allocation ineligibility. The accepted digital-finance relationship
   remains stale and needs separate review, while one dependent idea refresh will absorb this result.
   No strategy, signal, paper order, allocation or accounting state changed.
+
+## [2026-08-20T08:26:47Z] update | Strategy August volume and treasury refresh
+
+- Revalidated [[securities/security_fe5539a7d3fd9d553bce|Strategy]] against the exact July 22
+  through August 19 volume-anomaly period, the August 10 and August 17 Forms 8-K, the USD 104.25
+  mark and current USD/EUR state.
+- Updated 840,447 bitcoin, USD 4.80 billion reserve, disclosed preferred repurchases and common
+  issuance in the sum-of-parts scenarios. USD 53.63/USD 107.78/USD 173.76 bear/base/bull values
+  retain Hold / Watch and allocation ineligibility.
+- Classified the 48.67 million-share August 19 session as material attention but not an actionable
+  catalyst. The complete idea catalog yielded no causal relationship: the digital-finance theme
+  explicitly distinguishes treasury exposure from operating rails. No follow-up or strategy was
+  justified.
