@@ -1,0 +1,44 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Planet Labs RSI-oversold opportunity research was blocked because the immutable 2026-07-28 price-hash evidence is no longer available in canonical market data; no state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The candidate packet identifies security_97f38b2cb2d5ef127f5a, an entered rsi_oversold transition for 2026-06-29 through 2026-07-28, and source_price_hash 7ab9f36f1bba068eaa6d42bd40ae774f3083f26fb652c90927f5304142dcac3f.",
+      "source": "data/wiki/inbox/market-security_97f38b2cb2d5ef127f5a-rsi_oversold-54e7a4e6d3dd.md",
+      "source_hash": "54e7a4e6d3dd52f5bc20cb80b496cf6f16e8fa8eefd1d1dfe4ee8c2b7fb15b8f"
+    },
+    {
+      "claim": "The current Planet Labs indicator row is as of 2026-08-19 with a different source_price_hash, so it cannot validate the payload-bound historical observation.",
+      "source": "data/market/indicators.csv"
+    },
+    {
+      "claim": "Open issue issue_b9604572acf8d22dc6fd records that the price cache for security_97f38b2cb2d5ef127f5a is empty.",
+      "observed_at": "2026-07-29T16:51:20Z",
+      "source": "data/tables/issues.csv"
+    },
+    {
+      "claim": "The same 2026-07-28 RSI-oversold alert was already reviewed by succeeded security_research operation 01KYQCTS30FPWA0T2PXDRYYXYR; that prior result is context only and does not replace validation of this operation's immutable price input.",
+      "source": "data/operations/operations_history.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYQCTS30ZPP1CTD2NTFVPQ7Z",
+  "operations_created": [],
+  "reason_code": "source_price_history_unavailable",
+  "status": "blocked",
+  "summary": "Blocked before research because the immutable 2026-07-28 RSI-oversold observation cannot be revalidated: its source_price_hash is absent from canonical market data and the required per-security price cache is unavailable. No wiki, structured research, trading, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Validated the running queue row, run ownership, live lease, payload identity, and preflight skill hashes.",
+      "Confirmed the security identity, exact requested period, packet source hash, current indicator identity mismatch, and unavailable historical price cache.",
+      "scripts/papertrader wiki lint --strict completed successfully: OK [wiki].",
+      "Confirmed no operation-scoped structured mutation, trading, allocation, ledger, portfolio, or performance change was made."
+    ],
+    "passed": true
+  }
+}
