@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-19"
+created: "2026-08-20"
 updated: "2026-08-20"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_89f8e2a455f76218e169"
-as_of: "2026-08-19T23:48:56Z"
+snapshot_id: "decision_736a9f7eaa8e123bfc2c"
+as_of: "2026-08-20T08:34:58Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **142**
+- Immutable assessment versions: **145**
 - Securities with retained revisions: **70**
 
 ## Candidate
@@ -65,6 +65,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [COIN — MACD cross above signal](inbox/market-security_37ddcbdaad296ad831f2-macd_cross_above_signal-5e45fa9673d9)
 - [COIN — MACD cross below signal](inbox/market-security_37ddcbdaad296ad831f2-macd_cross_below_signal-639eeb2b117c)
 - [COIN — Volume anomaly](inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-142854b8f43f)
+- [COIN — Volume anomaly](inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-2f38afbd04e1)
 - [CROX — Volume anomaly](inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72)
 - [CRSR — Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-c0a99ae77195)
 - [CRSR — Bollinger above upper](inbox/market-security_55c9ce2fdcd32dad6b8c-bollinger_above_upper-ef491b28d115)
@@ -78,6 +79,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [CRWD — MACD cross above signal](inbox/market-security_8472507d7d320aa388a7-macd_cross_above_signal-be6da828e2de)
 - [CRWD — MACD cross below signal](inbox/market-security_8472507d7d320aa388a7-macd_cross_below_signal-8001fdff6c0b)
 - [CRWD — RSI overbought](inbox/market-security_8472507d7d320aa388a7-rsi_overbought-9d0131f99b46)
+- [CRWD — Volume anomaly](inbox/market-security_8472507d7d320aa388a7-volume_anomaly-a1862f6a6f89)
 - [CRWD — Volume anomaly](inbox/market-security_8472507d7d320aa388a7-volume_anomaly-f1e0d1c0c312)
 - [CSIQ — Bollinger above upper](inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618)
 - [CSIQ — MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd)
@@ -89,6 +91,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [CSL — Volume anomaly](inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508)
 - [DLO — Bollinger below lower](inbox/market-security_715bde20b6e1e1320c1a-bollinger_below_lower-8d5eaca49cd0)
 - [DLO — SMA 50 cross above 200](inbox/market-security_715bde20b6e1e1320c1a-sma_50_cross_above_200-b9da98dda495)
+- [DLO — Volume anomaly](inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-3d530f7f77d6)
 - [DLO — Volume anomaly](inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-6fb23bdfd26a)
 - [DLO — Volume anomaly](inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-e3872464054d)
 - [DLO — Volume anomaly](inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-eaa9fc63b095)
@@ -99,6 +102,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [DNA — SMA 50 cross below 200](inbox/market-security_95351d928b674bbdf687-sma_50_cross_below_200-88ef784f48d2)
 - [DNA — Volume anomaly](inbox/market-security_95351d928b674bbdf687-volume_anomaly-0ee132d3f8bd)
 - [DNA — Volume anomaly](inbox/market-security_95351d928b674bbdf687-volume_anomaly-357acbb964f0)
+- [DNA — Volume anomaly](inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099)
 - [DNA — Volume anomaly](inbox/market-security_95351d928b674bbdf687-volume_anomaly-e59917e2508a)
 - [ENPH — Bollinger below lower](inbox/market-security_f2b9760d847b2ba59324-bollinger_below_lower-48b7e8fa112e)
 - [ENPH — MACD cross above signal](inbox/market-security_f2b9760d847b2ba59324-macd_cross_above_signal-74a046620f91)
@@ -205,6 +209,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-48d79d4d9368)
+- [PLS.AX — SMA 50 cross below 200](inbox/market-security_8a5c43888d224de85c69-sma_50_cross_below_200-7377f7b31f5c)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-a75c5f2b1699)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7)
 - [PLTR — MACD cross above signal](inbox/market-security_bdc2f87dadf134760c3a-macd_cross_above_signal-259956fc61ba)
@@ -367,6 +372,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-17](daily-reports/daily-report_20260817)
 - [PaperTrader daily report — 2026-08-18](daily-reports/daily-report_20260818)
 - [PaperTrader daily report — 2026-08-19](daily-reports/daily-report_20260819)
+- [PaperTrader daily report — 2026-08-20](daily-reports/daily-report_20260820)
 
 ## Idea
 
@@ -420,6 +426,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Daily research podcast — 2026-08-19T120216Z](podcasts/daily-podcast_20260819T120216Z)
 - [Daily research podcast — 2026-08-19T133029Z](podcasts/daily-podcast_20260819T133029Z)
 - [Daily research podcast — 2026-08-19T153048Z](podcasts/daily-podcast_20260819T153048Z)
+- [Daily research podcast — 2026-08-19T230515Z](podcasts/daily-podcast_20260819T230515Z)
 - [PaperTrader daily podcast — 2026-08-05T161218Z](podcasts/daily-podcast_20260805T161218Z)
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
@@ -557,11 +564,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-2f38afbd04e1|COIN — Volume anomaly]]
-- [[inbox/market-security_715bde20b6e1e1320c1a-volume_anomaly-3d530f7f77d6|DLO — Volume anomaly]]
-- [[inbox/market-security_8472507d7d320aa388a7-volume_anomaly-a1862f6a6f89|CRWD — Volume anomaly]]
-- [[inbox/market-security_8a5c43888d224de85c69-sma_50_cross_below_200-7377f7b31f5c|PLS.AX — SMA 50 cross below 200]]
-- [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099|DNA — Volume anomaly]]

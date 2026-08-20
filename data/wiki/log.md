@@ -4320,6 +4320,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_95351d928b674bbdf687-volume_anomaly-6fe39e436099]] as `ingest`: Strengthened volume anomaly is a material indicator transition for the identified security.
 
+- Published investor decision snapshot `decision_736a9f7eaa8e123bfc2c`.
+
+- Generated canonical [[daily-reports/daily-report_20260820]] for run `daily-20260820T074907Z`.
+
 ## [2026-08-20] update | Parrot S.A. ordinary shares
 
 - Updated [[securities/security_cc4dcb8f002b61dffe00]] from Parrot's H1 2026 results and July 31
