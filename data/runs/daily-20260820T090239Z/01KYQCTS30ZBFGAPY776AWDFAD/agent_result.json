@@ -1,0 +1,41 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict"
+  ],
+  "daily_report_items": [
+    "GE Vernova's 2026-07-28 lower-Bollinger alert was skipped because the same canonical event had already received a completed evidence-backed security review; no trade, strategy, order, or follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Terminal operation 01KYQCTS30EQG9J9C5K4ZB2TVC is a succeeded 2026-07-28 security_research for security_4b61970aa8f574446819 after bollinger_below_lower, completed at 2026-07-29T22:12:42Z with result path data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/agent_result.json.",
+      "source": "data/operations/operations_history.csv"
+    },
+    {
+      "claim": "The completed review recorded the 2026-07-28 USD 946 close, 14.20% period decline, 1.02% lower-band breach, normal volume, RSI 38.94, and canonical source-price hash 468a1ad56cf1a146163b86fc7a6372182c9066c9c52e34a29fc7d1290f4e9606; it concluded that the event did not justify a paper-trade opportunity.",
+      "source": "data/runs/local-20260729-20ops-4/01KYQCTS30EQG9J9C5K4ZB2TVC/agent_result.json"
+    },
+    {
+      "claim": "The maintained 2026-08-19 review reports that the retained Q2 filing and earnings release remained byte-identical and the SEC submissions index had no periodic or current report newer than the 22 July Q2 filings; the supported valuation remained allocation-ineligible and no strategy was justified.",
+      "source": "data/wiki/securities/security_4b61970aa8f574446819.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYQCTS30ZBFGAPY776AWDFAD",
+  "operations_created": [],
+  "reason_code": "duplicate_alert_already_researched",
+  "status": "skipped",
+  "summary": "Skipped as duplicate work. The exact 2026-07-28 GEV lower-Bollinger transition and canonical source-price hash were already completed by terminal security-research operation 01KYQCTS30EQG9J9C5K4ZB2TVC. That review classified the decline as post-results valuation and timing risk rather than a paper-trade opportunity, created no strategy or trade, and enqueued its bounded idea follow-up. No new primary evidence or distinct trigger was supplied here.",
+  "validation": {
+    "checks": [
+      "Payload and repository schemas passed strict validation.",
+      "The selected queue row was running, claimed by daily-20260820T090239Z, and had a live lease at verification.",
+      "Preflight skill hashes matched the checked controller and opportunity-research skill files.",
+      "Strict wiki lint passed.",
+      "Structured history and the prior result prove the alert was already researched to a terminal succeeded outcome.",
+      "No GEV position, strategy, or order exists, and no trading or accounting state was changed."
+    ],
+    "passed": true
+  }
+}
