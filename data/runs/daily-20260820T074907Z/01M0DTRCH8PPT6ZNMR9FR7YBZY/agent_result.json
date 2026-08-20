@@ -1,0 +1,55 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "CrowdStrike's strengthened August 19 volume anomaly included a 5.30% one-session decline to USD 201.63, while the exact July 22-August 19 period still gained 7.01%. Current SEC submissions showed only ownership Forms 4 after the August 11 full review. All retained valuation cases remain below market and the price remains 131.67% above the USD 87.032 buy-below level, so Strong Sell / Avoid and allocation ineligibility remain unchanged; no full review or paper action was created."
+  ],
+  "evidence": [
+    {
+      "claim": "For immutable CRWD/XNAS/USD equity security_8472507d7d320aa388a7, the identity-matched August 19 completed-session close was USD 201.6300048828125. The merged source price hash cc96c4cb35f3e21c8a3e7175434fb9ebe62c96a21e47c6bb1d916ff1df514949 matched indicators.csv and the strengthened volume-anomaly packet. The close fell 5.302457910587875628095573130% from August 18 while the exact July 22 through August 19 period return remained 7.0109366533495834333830033%.",
+      "observed_at": "2026-08-20T07:49:13Z",
+      "source": "PaperTrader deterministic market and indicator state",
+      "source_hash": "cc96c4cb35f3e21c8a3e7175434fb9ebe62c96a21e47c6bb1d916ff1df514949"
+    },
+    {
+      "claim": "A current bounded check found only ownership Forms 4 filed on August 12, August 14, and August 18 after the August 11 baseline. No newer periodic operating filing or earnings release superseded the fiscal Q1 revenue, ARR, module-adoption, cash-flow, balance-sheet, dilution, catalyst, or invalidation inputs.",
+      "observed_at": "2026-08-20T08:08:39Z",
+      "source": "CrowdStrike SEC submissions index",
+      "source_hash": "ec8049767ed3f3438601a554eeebfa48bb5648bcd66694caab0972bc577352fa",
+      "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+    },
+    {
+      "claim": "The fresh schema-version-2 baseline assessment completed on August 11 remains valid through September 5. Repricing its unchanged USD 68.88, USD 108.79, and USD 149.76 fair values at USD 201.6300048828125 leaves bear, base, and bull returns at -65.83841772952735669316174997%, -46.04473671305576560175764778%, and -25.72534028998282430847711492%, with -45.91330786140542805128854011% probability-weighted expected return. The market price remains 131.6734130926699374942549867% above the USD 87.032 buy-below level, so no valuation, buy-zone, rating, or eligibility gate changed.",
+      "source": "PaperTrader deterministic assessment assessment_d7627fc0cfdd00f8d0eb"
+    },
+    {
+      "claim": "The high-volume selloff increases near-term timing risk but supplies no primary evidence of a changed operating catalyst or invalidation. It is not a valuation-supported entry condition. No full security review was requested because the current primary-evidence checklist and every decision-support gate remained unchanged.",
+      "source": "PaperTrader quick-check disposition"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0DTRCH8PPT6ZNMR9FR7YBZY",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded CrowdStrike quick check for the merged August 19 volume-anomaly alerts. The latest completed-session mark was USD 201.63 after a 5.30% one-session decline, but remained 131.67% above the USD 87.032 buy-below level; all retained bear, base, and bull fair values remained below market. The SEC submissions index through August 18 contained only ownership Forms 4 after the baseline, with no newer periodic operating evidence. The baseline thesis, valuation assumptions, catalysts, invalidation, risks, Strong Sell / Avoid rating, and allocation ineligibility therefore remain unchanged. The fresh existing assessment was retained without agent-owned repository changes, and no full review, strategy, signal, order, allocation, or accounting change was created.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row claimed by daily-20260820T074907Z with a live lease, the required immutable security identity, validated payload fields, merged alert causes, and trusted preflight hashes for the native, controller, and routed skills.",
+      "Consumed the mandatory successful audited security-context receipt before reading assessment state; baseline operation 01KZPY8FCGVBRGTPP66WJS5JEC succeeded for the same security within ten days and its result and current page hash matched deterministic context.",
+      "Confirmed the canonical market date is 2026-08-19 and source_price_hash cc96c4cb35f3e21c8a3e7175434fb9ebe62c96a21e47c6bb1d916ff1df514949 matches the current identity-bound indicator row and strengthened merged alert cause.",
+      "Verified the bounded baseline checklist against the current SEC submissions index: no newer operating result changed the thesis, valuation inputs, buy zone, catalysts, risks, invalidation, confidence, or review assumptions.",
+      "Repriced the unchanged scenario values against the current mark using decimal arithmetic; every scenario remains below market and the buy zone was not reached, so the volume anomaly is timing risk rather than an entry condition and escalation is not warranted.",
+      "Retained the fresh accepted assessment assessment_d7627fc0cfdd00f8d0eb without repository mutation because the bounded conclusion is unchanged; no same-run assessment upsert or second security-context call was required.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation all passed.",
+      "No agent-owned repository state, allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting ledger changed."
+    ],
+    "passed": true
+  }
+}
