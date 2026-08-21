@@ -32,6 +32,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_86f9f3bc8907460da2fc** — Hermes operation validation failed: 01KZ8VJY48VNMCFW638QQJZGJH | 2026-08-05T11:40:24Z | controller | 01KZ8VJY48VNMCFW638QQJZGJH |
 | error | **issue_86fdab0ab1792cdf5c45** — Hermes operation validation failed: 01KZGGJ4M05XRHKKRXK2WYJANM | 2026-08-18T23:51:26Z | controller | 01KZGGJ4M05XRHKKRXK2WYJANM |
 | error | **issue_90ae9d86b30df118b516** — ASML full assessment blocked by same-run provenance ambiguity | 2026-08-19T15:57:37Z | controller | 01M0DB44Q8R22ED9WQC5ZEG526 |
+| error | **issue_9ee84bcffbb2b16fff50** — Vale assessment source operation is ambiguous within one run | 2026-08-21T16:25:07Z | controller | 01M0JHGJJ0CWRHV9WGRJ6C4PK0 |
 | error | **issue_9f54455539f07576361c** — CrowdStrike full assessment rejected by canonical market identity | 2026-08-10T23:08:16Z | controller | 01KZPY8FCGVBRGTPP66WJS5JEC |
 | error | **issue_a32ef908d1aab8f839d5** — Hermes operation validation failed: 01KZ8BGD98FSXHG4KQ8C6MGNW1 | 2026-08-10T09:00:48Z | controller | 01KZ8BGD98FSXHG4KQ8C6MGNW1 |
 | error | **issue_a57d145a15316065ef4b** — Intuitive Surgical full assessment blocked by same-run provenance ambiguity | 2026-08-11T17:50:40Z | controller | 01KZRY95ZGA17F8N27YMA7G1G9 |

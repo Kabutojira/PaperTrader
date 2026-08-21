@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vale_q2_2026_production",
+  "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426003838/vale20260721_6k1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426003838/vale20260721_6k1.htm",
+  "source_type": "filing",
+  "title": "Vale production and sales in 2Q26",
+  "publisher": "Vale S.A. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a6458ecb24e6828c2263a5225e4c049cd2e8946f61293b0474e8536d8152ef59",
+  "related_entity_ids": "security_b2116dcf976c96974d7b",
+  "checked_at": "2026-08-21T16:20:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Vale reported higher year-over-year production and sales across all business segments in the second quarter of 2026.",
+  "summary": "The production report supports iron-ore and base-metals volume, sales, operating execution and guidance context required by the cyclical-commodity valuation template.",
+  "run_id": "daily-20260821T153352Z"
+}

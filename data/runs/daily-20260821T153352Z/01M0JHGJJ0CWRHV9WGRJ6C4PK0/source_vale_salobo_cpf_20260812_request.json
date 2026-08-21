@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vale_salobo_cpf_20260812",
+  "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm",
+  "source_type": "issuer_release",
+  "title": "Vale Salobo CPF project execution update",
+  "publisher": "Vale S.A. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+  "related_entity_ids": "security_b2116dcf976c96974d7b",
+  "checked_at": "2026-08-21T16:20:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The project is expected to add 6 million tonnes of annual ore-processing capacity and up to approximately 30,000 tonnes of annual copper production.",
+  "summary": "Vale advanced Salobo coarse-particle flotation to execution with first-half 2028 start-up expected, approximately USD 215 million estimated capital expenditure before USD 40 million of Wheaton funding, and up to about 30,000 tonnes of annual copper plus 15,000 ounces of by-product gold.",
+  "run_id": "daily-20260821T153352Z"
+}

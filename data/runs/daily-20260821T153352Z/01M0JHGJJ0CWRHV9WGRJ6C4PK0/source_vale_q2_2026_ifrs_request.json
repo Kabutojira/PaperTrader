@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vale_q2_2026_ifrs",
+  "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004012/valedfifrs2q26_6k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004012/valedfifrs2q26_6k.htm",
+  "source_type": "filing",
+  "title": "Vale consolidated interim financial statements at June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "a6509f92fcb05431179a6116a704a464baa30ddfb10a8cb96a317b2d5092bb4c",
+  "related_entity_ids": "security_b2116dcf976c96974d7b",
+  "checked_at": "2026-08-21T16:20:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "For the first half of 2026, net income attributable to Vale shareholders was US$3.268 billion and diluted earnings per share were US$0.77.",
+  "summary": "The IFRS filing supports earnings, balance-sheet, cash-flow, liability, share-count and per-share evidence needed to assess the sponsored ADR without relying on market-data fundamentals.",
+  "run_id": "daily-20260821T153352Z"
+}

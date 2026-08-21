@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Vale assessment source operation is ambiguous within one run",
+  "description": "The schema-version-two Vale assessment could not be accepted because the deterministic research applier found both the completed quick_check_research predecessor and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The immutable assessment request exited nonzero with no changed paths. The prior assessment and its exact research-page hash were restored and remain current. Five retained primary-source records and the newer security-row summary remain auditable. One dependent copper relationship-review operation was enqueued before the deterministic blocker surfaced; it depends on this blocked operation and therefore cannot run unless the controller first resolves this review. No assessment, strategy, signal, order, allocation or accounting state was created. The controller must reschedule the full review under a distinct run or repair source-operation disambiguation before retrying.",
+  "owner": "controller",
+  "related_run_id": "daily-20260821T153352Z",
+  "related_operation_id": "01M0JHGJJ0CWRHV9WGRJ6C4PK0"
+}

@@ -1,0 +1,94 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_ifrs_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_production_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_salobo_cpf_20260812_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_fundao_municipalities_20260820_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/enqueue_copper_relationship_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/assessment_upsert_request.json",
+    "papertrader issue record --request data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/issue_record_request.json",
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Vale full security research was blocked because the same daily run contains both its quick-check predecessor and full review, making deterministic assessment provenance ambiguous. The prior Hold / Watch assessment remains current; the dependent copper relationship review cannot run while this operation remains blocked."
+  ],
+  "evidence": [
+    {
+      "claim": "Vale's second-quarter 2026 release reports USD 8.8 billion pro forma adjusted EBITDA, USD 4.4 billion pro forma free cash flow, USD 2.4 billion capital expenditure, and USD 15.1 billion expanded net debt.",
+      "observed_at": "2026-08-21T16:20:00Z",
+      "source": "source_vale_q2_2026_results",
+      "source_hash": "1553c444b55969e676e332513c05a4e1945d09d8d8ff58d0a03fc40f4fce96de",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm"
+    },
+    {
+      "claim": "Vale's Salobo update places coarse-particle flotation in execution, expects first-half 2028 start-up, estimates USD 215 million capital expenditure before USD 40 million of Wheaton funding, and targets up to about 30,000 tonnes of annual copper plus 15,000 ounces of by-product gold.",
+      "observed_at": "2026-08-21T16:20:00Z",
+      "source": "source_vale_salobo_cpf_20260812",
+      "source_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+    },
+    {
+      "claim": "Vale's 20 August Fundao update states that nineteen additional eligible municipalities joined the agreement, bringing adherence to 45 of 49.",
+      "observed_at": "2026-08-21T16:20:00Z",
+      "source": "source_vale_fundao_municipalities_20260820",
+      "source_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+    },
+    {
+      "claim": "The assessment request exited 2 with no changed paths because assessment source operation was ambiguous for this run; the post-failure security context confirmed that assessment_aca1444a4334b5a06a4f remains current and its research-page hash matches the restored page.",
+      "observed_at": "2026-08-21T16:25:22Z",
+      "source": "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0JJ3RT8VN3WHXS9F2YTW8GK.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/assessment_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/enqueue_copper_relationship_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/issue_record_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/security_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_fundao_municipalities_20260820_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_ifrs_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_production_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_results_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_salobo_cpf_20260812_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "issues_recorded": [
+    "issue_9ee84bcffbb2b16fff50"
+  ],
+  "operation_id": "01M0JHGJJ0CWRHV9WGRJ6C4PK0",
+  "operations_created": [
+    "01M0JJ3RT8VN3WHXS9F2YTW8GK"
+  ],
+  "reason_code": "assessment_source_operation_ambiguous",
+  "status": "blocked",
+  "summary": "Blocked exactly one Vale full security review because the deterministic schema-version-two assessment applier found both the completed quick-check predecessor and this running security-research operation for the same security and run ID. Five retained primary sources were re-recorded and the security-row summary was updated before the blocker surfaced, but no new assessment version could be accepted. The prior Hold / Watch assessment and its exact research-page hash remain current. Issue issue_9ee84bcffbb2b16fff50 records the resolvable controller dependency. A copper relationship review, 01M0JJ3RT8VN3WHXS9F2YTW8GK, was created before the blocker surfaced but depends on this blocked operation and therefore cannot run unless the controller resolves it. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state was created or changed.",
+  "validation": {
+    "checks": [
+      "PASS: native llm-wiki, controller, and papertrader-security-research skill hashes were verified by hermes_preflight.json.",
+      "PASS: five retained primary-source records were refreshed without source-content drift.",
+      "PASS: security-context confirmed immutable VALE ADR identity, fresh USD price and FX references, no accepted relationships, and no assessment history row for this operation.",
+      "PASS: the prior maintained research page was restored byte-for-byte and its SHA-256 matches the current immutable assessment history version.",
+      "FAIL: the mandatory schema-version-two assessment could not be accepted because two source operations for this security share daily-20260821T153352Z.",
+      "PASS: the only created follow-up depends on this blocked operation and cannot execute unless the controller resolves the dependency.",
+      "PASS: no strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed.",
+      "PASS: strict wiki lint returned OK.",
+      "PASS: strict schema validation returned OK.",
+      "PASS: queue validation returned OK.",
+      "PASS: strict portfolio reconciliation returned OK."
+    ],
+    "passed": false
+  }
+}

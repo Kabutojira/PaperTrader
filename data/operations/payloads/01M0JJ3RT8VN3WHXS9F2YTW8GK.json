@@ -1,0 +1,30 @@
+{
+  "entity_id": "relationship_f4cce8b975fa0f223cc3",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_vale_q2_2026_ifrs",
+      "source_vale_q2_2026_production",
+      "source_vale_q2_2026_results",
+      "source_vale_salobo_cpf_20260812"
+    ],
+    "idea_id": "idea_critical_minerals_copper",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate the edge if Salobo slips or underdelivers, copper remains immaterial to group cash flow, or recycling, substitution and new mine supply close the structural scarcity gap.",
+    "proposed_mechanism": "Higher copper prices and persistent concentrate scarcity can improve Vale Base Metals cash flow, while Salobo coarse-particle flotation can add up to approximately 30,000 tonnes of annual copper output; exposure is moderated because iron ore remains the dominant group driver.",
+    "relationship_id": "relationship_f4cce8b975fa0f223cc3",
+    "security_id": "security_b2116dcf976c96974d7b"
+  },
+  "objective": "Review whether Vale has a material causal relationship to critical minerals and structural copper scarcity using current primary evidence; accept or reject the edge.",
+  "operation_id": "01M0JJ3RT8VN3WHXS9F2YTW8GK",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_critical_minerals_copper.md",
+    "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+    "source_vale_q2_2026_ifrs",
+    "source_vale_q2_2026_production",
+    "source_vale_q2_2026_results",
+    "source_vale_salobo_cpf_20260812"
+  ]
+}
