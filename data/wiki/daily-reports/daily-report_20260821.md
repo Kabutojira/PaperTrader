@@ -256,6 +256,7 @@ No pending orders.
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
 - [[podcasts/daily-podcast_20260821T153352Z|PaperTrader daily research podcast — 2026-08-21T153352Z]]
+- [[podcasts/daily-podcast_20260821T221654Z|Daily research podcast — 2026-08-21T221654Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_1e8fbdb0f45f2b413e00|PayPal Holdings, Inc. common stock]]
 - [[securities/security_2dbe878dfc899d7ee867|Freeport-McMoRan Inc. common stock]]

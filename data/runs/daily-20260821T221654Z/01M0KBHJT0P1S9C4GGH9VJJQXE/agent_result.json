@@ -1,0 +1,65 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260821T221654Z --script-path data/wiki/podcasts/daily-podcast_20260821T221654Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260821T221654Z --script-path data/wiki/podcasts/daily-podcast_20260821T221654Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 2,804-word research podcast on RTX's pullback, Freeport-McMoRan's copper-linked rerating, and Labcorp's momentum and valuation tension; the single audited ephemeral draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen context version three defined the exclusive 2026-08-21T15:55:50Z cutoff, inclusive 2026-08-21T23:29:53Z cutoff, prior successful podcast, eight accepted research developments, required source paths, and exact transcript path.",
+      "source": "data/runs/daily-20260821T221654Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted RTX research found a lower-Bollinger reversal without newer operating evidence and retained the deterministic Hold / Watch disposition and USD 143.50 buy-below frontier.",
+      "source": "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/agent_result.json"
+    },
+    {
+      "claim": "Accepted Freeport-McMoRan research found a 22.46% rerating unsupported by newer operating evidence and retained Strong Sell / Avoid with a USD 37.888 buy-below frontier.",
+      "source": "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/agent_result.json"
+    },
+    {
+      "claim": "Accepted Labcorp research found constructive momentum but negative expected and base returns, retaining Hold / Watch and a USD 249.22 buy-below frontier while queuing one relationship review.",
+      "source": "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/agent_result.json"
+    },
+    {
+      "claim": "The most recent successful transcript supplied continuity and novelty control; immediate repeat coverage of Southern Copper and FANUC was excluded from the new chapter slate.",
+      "source": "data/wiki/podcasts/daily-podcast_20260821T153352Z.md"
+    },
+    {
+      "claim": "The audited script preflight passed at 2,804 words, exactly one render-draft invocation succeeded, and all five permitted strict repository gates passed.",
+      "source": "data/runs/daily-20260821T221654Z/01M0KBHJT0P1S9C4GGH9VJJQXE/command_audit.json"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260821T221654Z/01M0KBHJT0P1S9C4GGH9VJJQXE/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260821.md",
+    "data/wiki/podcasts/daily-podcast_20260821T221654Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0KBHJT0P1S9C4GGH9VJJQXE",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one standalone daily podcast from frozen context version three. The 2,804-word episode selects three audience-relevant developments: RTX's reversal from overbought momentum into a lower-band pullback, Freeport-McMoRan's unsupported copper-linked rerating, and Labcorp's improving momentum ahead of Investor Day. Coinbase, Texas Instruments, Tesla, Southern Copper, and FANUC were excluded because their checks added no audience-relevant conclusion or substantially repeated recent coverage. The episode states the current Hold / Watch rating for RTX, Strong Sell / Avoid for Freeport-McMoRan, and Hold / Watch for Labcorp, with supported Buy and Sell conditions or an explicit missing sell-price boundary. Deterministic script preflight passed at 2,804 words, and the single audited draft-render invocation succeeded with a 1,222-second ephemeral audio draft.",
+  "validation": {
+    "checks": [
+      "Payload, frozen podcast context, and daily manifest all bind the exact transcript path data/wiki/podcasts/daily-podcast_20260821T221654Z.md.",
+      "Frozen context version three, exclusive and inclusive cutoffs, and prior successful podcast identity were confirmed without recomputing controller-validated hashes.",
+      "The operation-local candidate slate maps each of eight new accepted research developments to exactly one selected chapter or one explicit novelty and audience-value exclusion.",
+      "The final episode uses the exact required introduction, teaser opening, chapter order, overall synthesis, and exact two-sentence greeting close.",
+      "Each selected security chapter ends with the current accepted rating, reason, Buy conditions, and Sell conditions; Labcorp explicitly states that no accepted standalone sell-price boundary exists.",
+      "Deterministic validate-script passed with 2,804 spoken words in the permitted range, required prose structure, and no numeric glyphs, Markdown headings, lists, tables, visible machine IDs, raw URLs, or link markup in the spoken section.",
+      "The daily report contains exactly one deterministic link to the new transcript and no audio reference.",
+      "Exactly one audited render-draft invocation occurred and succeeded; its media path is runner-temporary and absent from persistent repository artifacts.",
+      "Strict schema validation, strict integrity, strict wiki lint, queue validation, and strict portfolio reconciliation all passed.",
+      "No allocation target or history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting, or delivery state was changed."
+    ],
+    "passed": true
+  }
+}
