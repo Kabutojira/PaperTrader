@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-20"
-updated: "2026-08-20"
+created: "2026-08-21"
+updated: "2026-08-21"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9124d0557ca894f31eb2"
-as_of: "2026-08-20T15:59:41Z"
+snapshot_id: "decision_c73c7635e6af6185d9f8"
+as_of: "2026-08-21T16:28:37Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-20T15:59:41Z`
+**As of:** `2026-08-21T16:28:37Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-20T15:59:41Z"
 
 ## Coverage
 
-- Assessments: 54/70
-- Fresh-evidence assessments: 51/70
+- Assessments: 49/70
+- Fresh-evidence assessments: 45/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-20T15:59:41Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 391
+- Research backlog: 409
 - Last successful daily run: 2026-08-20
 
 ## Current issues by investment impact
@@ -39,6 +39,7 @@ as_of: "2026-08-20T15:59:41Z"
 
 - Error **Applied Materials assessment source operation is ambiguous within one run** — The schema-v2 Applied Materials assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The first immutable assessment request was rejected without state changes for two non-canonical soft-gap names; retry01 corrected those names but exposed the run-level ambiguity. A bounde
 - Error **FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
+- Error **Vale assessment source operation is ambiguous within one run** — The schema-version-two Vale assessment could not be accepted because the deterministic research applier found both the completed quick_check_research predecessor and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The immutable assessment request exited nonzero with no changed paths. The prior assessment and its exact research-page hash were restored and remain current. Five retained primary-source r
 - Error **ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast blocked: [[daily-reports/daily-report_20260819|Daily report for 2026-08-19]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -173,6 +174,7 @@ as_of: "2026-08-20T15:59:41Z"
 - Error **Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260820|Daily report for 2026-08-20]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A** — @ConnectingODots: Ejsft2oPCtM This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **Daily preparation degraded: FX USD/EUR** — FX USD/EUR: YFTzMissingError: $USDEUR=X: possibly delisted; no timezone found
 - Warning **Daily podcast failed: [[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -188,7 +190,7 @@ as_of: "2026-08-20T15:59:41Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 391 active operations.
+Showing 20 of 409 active operations.
 
 <details><summary>Active research work</summary>
 

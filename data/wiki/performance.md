@@ -4,20 +4,20 @@ type: performance
 status: maintained
 tags:
   - performance
-created: "2026-08-20"
-updated: "2026-08-20"
+created: "2026-08-21"
+updated: "2026-08-21"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9124d0557ca894f31eb2"
-as_of: "2026-08-20T15:59:41Z"
+snapshot_id: "decision_c73c7635e6af6185d9f8"
+as_of: "2026-08-21T16:28:37Z"
 ---
 
 # Performance and risk
 
-**As of `2026-08-20T15:59:41Z`**
+**As of `2026-08-21T16:28:37Z`**
 
 Current performance epoch started `2026-07-28T12:00:00Z` at **10000 EUR**. Prior audit epochs retained: **1**.
 
-<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-20; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-20; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 5.00,45.00 10.00,45.00 15.00,45.00 20.00,45.00 25.00,45.00 30.00,45.00 35.00,45.00 40.00,45.00 45.00,45.00 50.00,45.00 55.00,45.00 60.00,45.00 65.00,45.00 70.00,45.00 75.00,45.00 80.00,45.00 85.00,45.00 90.00,45.00 95.00,45.00 100.00,45.00" /></svg>
+<svg class="performance-chart" viewBox="0 0 100 100" role="img" aria-label="Equity history from 2026-07-28 to 2026-08-21; latest equity 10000."><title>Model equity history</title><desc>Equity history from 2026-07-28 to 2026-08-21; latest equity 10000.</desc><polyline fill="none" stroke="currentColor" stroke-width="2" points="0.00,45.00 4.76,45.00 9.52,45.00 14.29,45.00 19.05,45.00 23.81,45.00 28.57,45.00 33.33,45.00 38.10,45.00 42.86,45.00 47.62,45.00 52.38,45.00 57.14,45.00 61.90,45.00 66.67,45.00 71.43,45.00 76.19,45.00 80.95,45.00 85.71,45.00 90.48,45.00 95.24,45.00 100.00,45.00" /></svg>
 
 | Daily return | Cumulative return | Drawdown | Realized P/L | Unrealized P/L |
 | ---: | ---: | ---: | ---: | ---: |
@@ -61,6 +61,7 @@ No target allocation changes.
 | 2026-08-18 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-19 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 | 2026-08-20 | 10000 | 10000 | 0 | 0% | 0% | 0% |
+| 2026-08-21 | 10000 | 10000 | 0 | 0% | 0% | 0% |
 
 No external benchmark is used.
 
