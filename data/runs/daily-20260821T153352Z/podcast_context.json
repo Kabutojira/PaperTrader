@@ -1,0 +1,518 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_infrastructure_power.md",
+      "sha256": "5fa3fc37d47b29ae8126ce6b7323ced601848e47f6342fc5a8e4386507a669be"
+    },
+    {
+      "path": "data/wiki/ideas/idea_ai_native_smb_financial_operating_systems.md",
+      "sha256": "7cdaa146fbe515e90fab4830b2ad878104d2c55465d0e7a00687c58940cabd42"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+      "sha256": "6e49566a1178ced737a481ac7f0d7cba9348a8066083d7f0916ac4f5c3b90afb"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+      "sha256": "9564ec63c936fb967b8a92800eb2140e2f1fa90250a3d41f095a1924b6cbb9a3"
+    },
+    {
+      "path": "data/wiki/ideas/idea_humanoid_robotics_embodied_ai_components.md",
+      "sha256": "cd7d418b1e14535905abcdd9f502ff79b881d82421863543413d585bde3132ec"
+    },
+    {
+      "path": "data/wiki/ideas/idea_japan_sanaenomics_strategic_investment.md",
+      "sha256": "41622bbc28e18f1f1c7bcd6c81a4ec25ac3d1fe440b8dc7033a687d0556d4c61"
+    },
+    {
+      "path": "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+      "sha256": "e2dbc2576669f8f9bcf16442877ba34066ef37e102b3dbce8cd693f3a792f1cc"
+    },
+    {
+      "path": "data/wiki/ideas/idea_structural_silver_deficit.md",
+      "sha256": "6978e308ce2c1212ea4637bd2ea8de625addc9344d8b9788ecadb309991fe17f"
+    },
+    {
+      "path": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "sha256": "2c390d14b6a84d98534e7d98f72f6984f4c788aea9f869fda3cfa04135b63bcd"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md",
+      "sha256": "fc390b5938ca57403ad65f9a5ccb6c4d1ee3ed8fe77d2a26be3b7de28611d991"
+    },
+    {
+      "path": "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
+      "sha256": "35c899f31e2c8c27530f897ad19a9d6f9add11c9584001714becdb11477793ff"
+    },
+    {
+      "path": "data/wiki/securities/security_96ba305ee7cd586bc348.md",
+      "sha256": "2dff7d0013dfbe19f4421cacc27f66706e9e556dcbe363e44e3174b183e1e7ae"
+    },
+    {
+      "path": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+      "sha256": "3d2f592caf2d28e0b5dbc4faf2c165d6ee9220181506d138a2848982eedda229"
+    }
+  ],
+  "daily_cycle_id": "daily-20260821T153352Z",
+  "decision_snapshot_path": "data/runs/daily-20260821T153352Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "9abcad76e93df107392bbd3ea2863ad2935a5b5358079cfedbcae5e76161cf46",
+  "generated_at": "2026-08-21T16:36:56Z",
+  "intervening_daily_cycles": [
+    "daily-20260820T153414Z",
+    "daily-20260821T153352Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260821T153352Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260821T153352Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260821.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260820T090239Z/podcast_context.json",
+    "context_sha256": "ba4b804efa454be164fa78a44080f84bc61f0102c07d486d25e7bf319a9be6ca",
+    "daily_cycle_id": "daily-20260820T090239Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260820T090239Z.md",
+    "page_sha256": "d8e1a3ccfc98a5264e5f6c21d296c7b700141247fd65f1d419d033516e330981",
+    "research_cutoff_at": "2026-08-20T09:44:20Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260821.md",
+  "report_sha256": "f3642a02a622864fbe1455d689e176fe9319e2ff2fcd51e1afc281aead20b09d",
+  "research_cutoff_at": "2026-08-21T16:28:37Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-20T15:40:17Z",
+      "daily_cycle_id": "daily-20260820T153414Z",
+      "daily_report_items": [
+        "Parrot quick check: the 20 August lower-Bollinger breach is shallow and unconfirmed by oversold RSI or abnormal volume. At EUR 9.54, unchanged scenarios still leave base and weighted value below market and the EUR 7.272 buy-below level unreached; Hold / Watch and allocation ineligibility remain unchanged, with no full-review escalation."
+      ],
+      "entity_id": "security_cc4dcb8f002b61dffe00",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The mandatory context receipt succeeded before assessment-state reads and binds security_cc4dcb8f002b61dffe00 to Parrot S.A. ordinary shares / PARRO.PA / XPAR / EUR / equity. It confirms successful baseline operation 01M08BT9VRSPKQN2Q6FSAB61CR completed at 2026-08-20T08:06:51Z and current immutable schema-v2 assessment assessment_8d710a0fa8813b740807, fresh through 2026-09-19.",
+          "observed_at": "2026-08-20T15:36:00Z",
+          "source": "PaperTrader audited security context"
+        },
+        {
+          "claim": "The payload-bound 2026-08-20 observation exactly matches the current indicator source-price hash. The EUR 9.539999961853027 close was 0.1556715% below the lower Bollinger band after a 4.504503% decline from 2026-07-23; RSI was 39.7215, volume z-score was 0.2977, and MACD remained below signal. This is weak downside timing evidence without oversold or abnormal-volume confirmation.",
+          "observed_at": "2026-08-20T15:34:23Z",
+          "source": "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-a7f6f5166f84.md and PaperTrader canonical market state",
+          "source_hash": "7ebf8055c1781b85c43190a518a6aa5ca4828a1a4b6390d4b44b716223404670"
+        },
+        {
+          "claim": "A bounded fresh retrieval succeeded from Parrot's retained first-half 2026 issuer-release URL. The baseline review, completed only hours earlier, remains the latest decision-supporting operating evidence consumed by this quick check; no new primary evidence changed its revenue, margin, cash-flow, concentration, funding, catalyst, risk, or invalidation checklist.",
+          "observed_at": "2026-08-20T15:37:00Z",
+          "source": "source_parrot_h1_2026_results",
+          "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf"
+        },
+        {
+          "claim": "A fresh retrieval of Parrot's share-count page is byte-identical to the registered source hash, preserving the 31,157,845-share valuation denominator and the baseline dilution-risk conclusion.",
+          "observed_at": "2026-08-20T15:37:00Z",
+          "source": "source_parrot_shares_20260731",
+          "source_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+          "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights"
+        },
+        {
+          "claim": "At EUR 9.539999961853027, the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios imply approximately -42.56%/-4.72%/+52.10% returns and -4.71% probability-weighted return. The EUR 9.091 weighted fair value remains below market and the EUR 7.272 buy-below level remains 23.77% below market, so no valuation, buy-zone, catalyst, invalidation, evidence, or decision-support gate changed and no full-review escalation is warranted.",
+          "source": "assessment_8d710a0fa8813b740807 and bounded scenario comparison"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0FWY80R2DQP5T1W9RNGQCB9",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T153414Z/01M0FWY80R2DQP5T1W9RNGQCB9/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Parrot S.A. quick check after the 20 August lower-Bollinger transition. The identity-matched EUR 9.539999961853027 close was 0.1557% below the lower band after a 4.50% decline over 23 July through 20 August, with RSI 39.72, no volume anomaly, and a still-bearish MACD. The retained H1 issuer release remains available and the issuer share-count page is byte-identical to the registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 4.71% below market, while the EUR 7.272 buy-below level remains 23.77% below market. The thesis, catalysts, risks, invalidation, Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed."
+    },
+    {
+      "completed_at": "2026-08-20T15:50:08Z",
+      "daily_cycle_id": "daily-20260820T153414Z",
+      "daily_report_items": [
+        "FANUC quick check completed after the 20 August lower-Bollinger entry: the EUR 32.60 mark raises expected return to 11.59%, confidence-adjusted return to 8.69%, and base upside to 11.60%, clearing three prior return gates. The canonical disposition remains Hold / Watch because bear/base and expected/bear payoff and relationship gates still fail, while only 1,355 shares traded. One dependent full security review was queued; no strategy, signal, paper order, allocation, or accounting state changed."
+      ],
+      "entity_id": "security_96ba305ee7cd586bc348",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The canonical 20 August alert covers 2026-07-23 through 2026-08-20, a -12.389145% return, a EUR 32.599998474121094 close below the EUR 32.84626761 lower Bollinger band, trigger strength 0.0074976292, volume z-score 2.2915429, and source-price hash 2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d.",
+          "observed_at": "2026-08-20T15:34:23Z",
+          "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md",
+          "source_hash": "2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d"
+        },
+        {
+          "claim": "FANUC's retained first-quarter results remain the current primary operating evidence and report stronger sales and operating income plus raised full-year guidance; both registered issuer-source hashes are unchanged from the baseline review.",
+          "observed_at": "2026-08-20T15:44:00Z",
+          "source": "source_fanuc_q1_fy2026_results",
+          "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+          "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+        },
+        {
+          "claim": "FANUC's retained first-quarter reference material continues to support conventional automation demand and raised guidance without a new issuer catalyst for the 20 August price move.",
+          "observed_at": "2026-08-20T15:44:00Z",
+          "source": "source_fanuc_q1_fy2026_reference",
+          "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+          "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+        },
+        {
+          "claim": "The sole same-run immutable assessment version links predecessor assessment_4e73de2ff48e5f482190, this quick-check operation, the current security-page hash, and the FUC.F/XFRA/EUR market identity. Deterministic normalization derives assessment_cc11a683fe32530dd4a5, EUR 36.3775 weighted fair value, EUR 29.104 buy-below price, 11.5874285358559318296021789% expected return, 8.690571401891948872201634175% confidence-adjusted return, Hold / Watch, and allocation ineligibility.",
+          "observed_at": "2026-08-20T15:45:46Z",
+          "source": "assessment_cc11a683fe32530dd4a5"
+        },
+        {
+          "claim": "Exactly one priority-97 dependent full security review was created with the quick-check identity, exact market period, source-price hash, lower-Bollinger trigger, and changed return-gate causes; it was queued but not executed.",
+          "observed_at": "2026-08-20T15:44:54Z",
+          "source": "01M0FXHG7GT03TE1GNSGAPY904"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0FXHG7GT03TE1GNSGAPY904.json",
+        "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/assessment_upsert_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/enqueue_full_research_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/security_upsert_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+      ],
+      "operation_id": "01M0FWY80RSD2DGA74RFGV1KHQ",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260820T153414Z/01M0FWY80RSD2DGA74RFGV1KHQ/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded FANUC quick check for the 20 August lower-Bollinger entry. The EUR 32.599998474121094 mark is 12.39% below the period start and 0.75% below the lower band, but alert-day turnover remained only 1,355 shares and the two retained issuer sources supplied no changed fundamental evidence. Unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios produce EUR 36.3775 weighted fair value, 11.5874285358559318296021789% expected return, 8.690571401891948872201634175% confidence-adjusted return, and 11.5950972478713160596777478% base upside. Assessment assessment_cc11a683fe32530dd4a5 remains Hold / Watch and ineligible because bear/base payoff, expected/bear payoff, and relationship gates fail. Because three prior return gates changed, dependent full review 01M0FXHG7GT03TE1GNSGAPY904 was queued and not executed. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-21T15:52:43Z",
+      "daily_cycle_id": "daily-20260821T153352Z",
+      "daily_report_items": [
+        "PayPal's August 20 SMA 50/200 bullish crossover improved medium-term trend, but unchanged Q2 evidence, overbought extension and scenario-weighted fair value of USD 61.332 versus USD 62.30 leave PYPL Hold / Watch and allocation-ineligible. One dependent review was queued to test whether PYUSD creates a material digital-finance relationship; no paper trade was created."
+      ],
+      "entity_id": "security_1e8fbdb0f45f2b413e00",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-filed Q2 results release remained available with its unchanged content hash. It reports 10% total-payment-volume growth, USD 1.775 billion free cash flow and approximately USD 5.38 full-year non-GAAP EPS guidance, alongside operating-income and margin contraction and nearly flat active accounts.",
+          "observed_at": "2026-08-21T15:38:58Z",
+          "source": "source_pypl_q2_2026_results",
+          "source_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab",
+          "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm"
+        },
+        {
+          "claim": "The unchanged Q2 Form 10-Q supports the immutable PYPL/XNAS/USD identity, maintained financial and risk assumptions, and a specific candidate digital-finance mechanism: PayPal and Venmo customers can use PYUSD while PayPal bears evolving stablecoin regulatory obligations. The filing does not quantify material PYUSD economics.",
+          "observed_at": "2026-08-21T15:38:58Z",
+          "source": "source_pypl_q2_2026_10q",
+          "source_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074",
+          "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm"
+        },
+        {
+          "claim": "The current SEC submissions index contains no issuer operating filing after the July 28 Q2 Form 10-Q and results Form 8-K through August 21; later filings are ownership Forms 4, a planned-sale Form 144 and a Schedule 13G amendment.",
+          "observed_at": "2026-08-21T15:38:58Z",
+          "source": "source_pypl_sec_submissions_20260821",
+          "source_hash": "5bf2a4a4b6128854f81f935ace7b4a32f419be4776ca60859e1822a0da54be32",
+          "url": "https://data.sec.gov/submissions/CIK0001633917.json"
+        },
+        {
+          "claim": "The exact alert packet and canonical indicator row record an August 20 adjusted close of USD 62.29999923706055, an 11.25% July 23-August 20 return, SMA 50 of 51.6064 crossing above SMA 200 of 51.2781, RSI 74.09, MACD 2.5837 below its 2.7375 signal and upper Bollinger band near USD 62.38.",
+          "observed_at": "2026-08-21T15:34:00Z",
+          "source": "PaperTrader deterministic market and indicator caches",
+          "source_hash": "c28e4a6c3dbc381884c5813c1a406f8627602901ea719e98c5d02473512f725e"
+        },
+        {
+          "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_26b689f8e4568c69ba9b, the expected result path, page hash fc390b5938ca57403ad65f9a5ccb6c4d1ee3ed8fe77d2a26be3b7de28611d991, fresh identity-matched USD price and USD/EUR FX state, and all three retained evidence records. Deterministic normalization derives USD 61.332 weighted fair value, -1.5537708650% expected return, -1.1653281488% confidence-adjusted return, 3.6276096158% base return, Hold / Watch, allocation ineligibility and a pending relationship gate.",
+          "observed_at": "2026-08-21T15:38:58Z",
+          "source": "assessment_b9268ed231b6fb1ba7e4"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0JG3F6G4PDPRZBBV2GG5E08.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/enqueue_digital_finance_relationship_request.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/security_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/security_upsert_request_v2.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_q2_2026_10q_refresh_request.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_q2_2026_results_refresh_request.json",
+        "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_sec_submissions_20260821_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+      ],
+      "operation_id": "01M0303PQ0PMTSXVDERW36HTWF",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded alert-driven PayPal security review. The August 20 SMA 50/200 bullish crossover confirms improved medium-term trend, but RSI remains overbought and MACD remains below signal. The current SEC index contains no issuer operating filing after the unchanged July 28 Q2 Form 10-Q and results release. The unchanged USD 43.04/USD 64.56/USD 80.70 bear/base/bull values now imply -30.91%/3.63%/29.53% returns at USD 62.30, USD 61.332 weighted fair value, -1.55% expected return and Hold / Watch allocation-ineligible state. Added one candidate digital-finance relationship through PYUSD and enqueued exactly one dependent relationship review. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-21T16:05:17Z",
+      "daily_cycle_id": "daily-20260821T153352Z",
+      "daily_report_items": [
+        "Southern Copper's August 20 bullish MACD crossover followed a 9.06% measured-period rise, but record Q2 earnings were price-led while copper output declined. USD 91/USD 135/USD 187 normalized scenarios all remain below USD 198.73; deterministic output is Strong Sell / Avoid and allocation-ineligible. One silver-deficit relationship review and one copper-idea refresh were queued; no paper trade was created."
+      ],
+      "entity_id": "security_6ad1af8d10d6276a0221",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The SEC-filed issuer release reports Q2 net sales of USD 4.289 billion, net income attributable to Southern Copper of USD 1.670 billion, adjusted EBITDA of USD 2.856 billion and first-half operating cash flow of USD 3.683 billion. Quarterly copper production fell 3.5%, and the USD 0.05 per-pound net cash cost benefited from 51.4% higher by-product credits.",
+          "observed_at": "2026-08-21T15:55:50Z",
+          "source": "source_scco_q2_2026_results",
+          "source_hash": "79adb9415f6d0e59333aa22f98a23fa27d0a102fab6838b1778c38bc5f3015a8",
+          "url": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926085515/scco-20260721xex99d1.htm"
+        },
+        {
+          "claim": "The Q2 Form 10-Q confirms first-half net income attributable to Southern Copper of USD 3.2468 billion, diluted EPS of USD 3.93, copper production down 3.8%, cash and equivalents of USD 5.665 billion, long-term debt of USD 7.9944 billion, 834.3 million June shares outstanding, increased capital investment and continuing Tia Maria legal and execution risks.",
+          "observed_at": "2026-08-21T15:55:50Z",
+          "source": "source_scco_q2_2026_10q",
+          "source_hash": "e6d523150cc0f4104ee9094f4b421fd20ef9d6bd77633c4c432a30d1825f8f69",
+          "url": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926089169/scco-20260630x10q.htm"
+        },
+        {
+          "claim": "The dated SEC submissions index identifies the July 31 Q2 Form 10-Q as the latest Southern Copper operating filing through August 21, so no later issuer filing explains a new fundamental inflection during the alert period.",
+          "observed_at": "2026-08-21T15:55:50Z",
+          "source": "source_scco_sec_submissions_20260821",
+          "source_hash": "934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b",
+          "url": "https://data.sec.gov/submissions/CIK0001001838.json"
+        },
+        {
+          "claim": "The exact alert packet records an August 20 adjusted close of USD 198.72999572753906, a 9.0605% July 23-August 20 return, MACD 3.3685 crossing above its 3.2034 signal, RSI 58.39 and no upper-Bollinger breach. Fresh USD/EUR FX was 0.8561000227928162 at the matching August 21 retrieval.",
+          "observed_at": "2026-08-21T15:34:00Z",
+          "source": "PaperTrader deterministic market and indicator caches",
+          "source_hash": "23c80dda3bf3e83146e066cc8cd7830b2faf916ab16a28154deee10a8669d1dc"
+        },
+        {
+          "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_4dc9b183967daf52a108, the expected result path, page hash 35c899f31e2c8c27530f897ad19a9d6f9add11c9584001714becdb11477793ff, fresh identity-matched price and FX state, and all three retained primary sources. Deterministic normalization derives USD 132.20 probability-weighted fair value, -33.48% expected return, -25.11% confidence-adjusted expected return, Strong Sell / Avoid and allocation ineligibility.",
+          "observed_at": "2026-08-21T15:55:50Z",
+          "source": "assessment_6e055fa7e2784f575da8"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0JGWFZGXGX44YD7R91ANFYS.json",
+        "data/operations/payloads/01M0JGWHY0KZ36QNCR2WXQ35FS.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/assessment_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/enqueue_copper_idea_refresh_request.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/enqueue_silver_relationship_request.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/security_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_q2_2026_10q_request.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_q2_2026_results_request.json",
+        "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_sec_submissions_20260821_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_6ad1af8d10d6276a0221.md"
+      ],
+      "operation_id": "01M0F2AG589NSB423KKJRB01Q5",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded alert-driven Southern Copper security review. Current SEC primary evidence shows record Q2 sales, earnings and cash flow driven by strong metal prices, but quarterly copper production fell 3.5%, first-half output fell 3.8%, by-product credits materially supported net cash cost, long-term debt increased and stock dividends raised the share count. The August 20 bullish MACD crossover and 9.06% measured-period return are valuation risk rather than an actionable opportunity: USD 91/USD 135/USD 187 normalized bear/base/bull values are all below the USD 198.73 mark. Watchlist status remains watching while deterministic assessment output is Strong Sell / Avoid and allocation-ineligible. Queued one dependent structural-silver relationship review and exactly one copper-idea refresh; the overdue accepted copper relationship already has a queued canonical review. No strategy, signal, paper order, allocation, execution, cash, portfolio, fill, performance or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-21T16:16:37Z",
+      "daily_cycle_id": "daily-20260821T153352Z",
+      "daily_report_items": [
+        "Vale's August 20 volume anomaly accompanied a 4.05% measured-period decline. Current Salobo and Fundão updates support existing project and remediation catalysts without changing the through-cycle scenario set; the USD 14.23 mark exceeds the USD 13.95 weighted fair value, retaining Hold / Watch and allocation ineligibility. Exactly one dependent full review was queued; no paper strategy or signal was created."
+      ],
+      "entity_id": "security_b2116dcf976c96974d7b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Vale advanced Salobo coarse-particle flotation to execution with expected first-half 2028 start-up, six million tonnes of added annual processing capacity, up to approximately 30,000 tonnes of annual copper and 15,000 ounces of by-product gold, and approximately USD 215 million estimated capital expenditure before USD 40 million of Wheaton funding.",
+          "observed_at": "2026-08-21T16:08:00Z",
+          "source": "Vale Salobo CPF project execution update",
+          "source_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+        },
+        {
+          "claim": "Nineteen additional eligible municipalities joined the definitive Fundão agreement on August 20, bringing formal adherence to 45 of 49; joining municipalities must waive related litigation and then follow the established payment schedule.",
+          "observed_at": "2026-08-21T16:08:00Z",
+          "source": "Vale Fundão agreement municipal-adherence update",
+          "source_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+        },
+        {
+          "claim": "VALE closed August 20 at USD 14.229999542236328 after a 4.0459% decline over July 23 through August 20. The 39.7998 million-share session produced a 2.4603 volume z-score and entered the configured anomaly; the payload source-price hash exactly matches the current indicator row.",
+          "observed_at": "2026-08-21T15:34:00Z",
+          "source": "PaperTrader deterministic market and indicator state",
+          "source_hash": "cee99a1725874ee418799249c758e2d7245db6689aef0da61dda19fd0e847d69"
+        },
+        {
+          "claim": "Assessment assessment_aca1444a4334b5a06a4f is the sole immutable version sourced from this operation and run, links predecessor assessment_fe094a743606836e58a0, and derives -36.7533%/1.8974%/40.5481% bear/base/bull returns, USD 13.95 probability-weighted fair value, -1.9677% expected return, -1.4758% confidence-adjusted expected return, USD 11.60 buy-below price, and an ineligible Hold/Watch disposition.",
+          "source": "PaperTrader deterministic assessment projection"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0JHGJJ0CWRHV9WGRJ6C4PK0.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request_v2.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request_v3.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/enqueue_full_research_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/security_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/source_vale_fundao_municipalities_20260820_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/source_vale_salobo_cpf_20260812_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+      ],
+      "operation_id": "01M0JFA8J07QT484SSB2VXFH88",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Vale quick check after the August 20 volume anomaly. Current SEC-filed evidence advances Salobo coarse-particle flotation and broadens Fundão agreement adherence, supporting existing catalysts without changing the USD 9.00/USD 14.50/USD 20.00 through-cycle scenarios. The deterministic assessment at USD 14.23 derives a USD 13.95 probability-weighted fair value, -1.97% expected return, -1.48% confidence-adjusted return and Hold/Watch allocation-ineligible disposition. Registered both primary sources, updated the maintained security state, and created exactly one dependent full security review, 01M0JHGJJ0CWRHV9WGRJ6C4PK0. No strategy, signal, order, allocation, or accounting state was changed."
+    }
+  ],
+  "run_id": "daily-20260821T153352Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-20T15:59:23Z",
+      "daily_cycle_id": "daily-20260820T153414Z",
+      "daily_report_items": [
+        "FANUC full security research was blocked because the same daily run contained both its quick-check predecessor and full review, making deterministic assessment provenance ambiguous. Current evidence and the full-review wiki synthesis retain Hold / Watch; no assessment version or trade workflow was created."
+      ],
+      "entity_id": "security_96ba305ee7cd586bc348",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The byte-identical quarter ended 30 June 2026 issuer results report JPY 231.035 billion sales, JPY 53.492 billion operating income, and JPY 50.981 billion attributable net income; the full review retained these inputs without revision.",
+          "observed_at": "2026-08-20T15:52:10Z",
+          "source": "source_fanuc_q1_fy2026_results",
+          "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+          "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+        },
+        {
+          "claim": "The byte-identical issuer reference material retains FY2026 guidance of JPY 948.1 billion sales, JPY 218.0 billion operating income, and JPY 198.0 billion attributable net income.",
+          "observed_at": "2026-08-20T15:52:10Z",
+          "source": "source_fanuc_q1_fy2026_reference",
+          "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+          "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+        },
+        {
+          "claim": "The canonical 23 July through 20 August alert period shows a 12.39% decline and a close about 0.75% below the lower Bollinger band at EUR 32.599998474121094; the full review classifies it as a possible entry condition but not a paper-trade signal.",
+          "observed_at": "2026-08-20T15:34:23Z",
+          "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-bollinger_below_lower-7a90cf00ae43.md",
+          "source_hash": "2f1052c3dbcb90354f2345b90af0c18360ed77d53003108f01c8624255f1ae7d"
+        },
+        {
+          "claim": "The mandatory security-context command succeeded. The assessment upsert then exited 2 with no changed paths because assessment source operation was ambiguous for this run; current assessment assessment_cc11a683fe32530dd4a5 remains the latest immutable version and no relationship follow-up was enqueued.",
+          "observed_at": "2026-08-20T15:55:17Z",
+          "source": "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/command_audit.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/assessment_upsert_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/enqueue_humanoid_relationship_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/issue_record_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/security_upsert_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_reference_refresh_request.json",
+        "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/source_fanuc_results_refresh_request.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+      ],
+      "operation_id": "01M0FXHG7GT03TE1GNSGAPY904",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260820T153414Z/01M0FXHG7GT03TE1GNSGAPY904/agent_result.json",
+      "status": "blocked",
+      "summary": "Blocked exactly one FANUC full security review after the deterministic schema-v2 assessment applier found both the completed quick-check predecessor and this running security-research operation for the same security and run ID, making assessment provenance ambiguous. The issuer evidence was rechecked with unchanged hashes, the security row and full-review wiki synthesis were updated, and the canonical conclusion remains Hold / Watch with no allocation eligibility. Issue issue_30c07892e9981c27b153 records the resolvable controller dependency. No assessment version, relationship follow-up, strategy, signal, paper order, allocation, execution, cash, portfolio, or performance state was created or changed."
+    },
+    {
+      "completed_at": "2026-08-21T16:28:17Z",
+      "daily_cycle_id": "daily-20260821T153352Z",
+      "daily_report_items": [
+        "Vale full security research was blocked because the same daily run contains both its quick-check predecessor and full review, making deterministic assessment provenance ambiguous. The prior Hold / Watch assessment remains current; the dependent copper relationship review cannot run while this operation remains blocked."
+      ],
+      "entity_id": "security_b2116dcf976c96974d7b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Vale's second-quarter 2026 release reports USD 8.8 billion pro forma adjusted EBITDA, USD 4.4 billion pro forma free cash flow, USD 2.4 billion capital expenditure, and USD 15.1 billion expanded net debt.",
+          "observed_at": "2026-08-21T16:20:00Z",
+          "source": "source_vale_q2_2026_results",
+          "source_hash": "1553c444b55969e676e332513c05a4e1945d09d8d8ff58d0a03fc40f4fce96de",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004002/valepr2q26_6k.htm"
+        },
+        {
+          "claim": "Vale's Salobo update places coarse-particle flotation in execution, expects first-half 2028 start-up, estimates USD 215 million capital expenditure before USD 40 million of Wheaton funding, and targets up to about 30,000 tonnes of annual copper plus 15,000 ounces of by-product gold.",
+          "observed_at": "2026-08-21T16:20:00Z",
+          "source": "source_vale_salobo_cpf_20260812",
+          "source_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+        },
+        {
+          "claim": "Vale's 20 August Fundao update states that nineteen additional eligible municipalities joined the agreement, bringing adherence to 45 of 49.",
+          "observed_at": "2026-08-21T16:20:00Z",
+          "source": "source_vale_fundao_municipalities_20260820",
+          "source_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+        },
+        {
+          "claim": "The assessment request exited 2 with no changed paths because assessment source operation was ambiguous for this run; the post-failure security context confirmed that assessment_aca1444a4334b5a06a4f remains current and its research-page hash matches the restored page.",
+          "observed_at": "2026-08-21T16:25:22Z",
+          "source": "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/command_audit.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/issues.md",
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0JJ3RT8VN3WHXS9F2YTW8GK.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/assessment_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/enqueue_copper_relationship_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/issue_record_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/security_upsert_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_fundao_municipalities_20260820_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_ifrs_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_production_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_q2_2026_results_request.json",
+        "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/source_vale_salobo_cpf_20260812_request.json",
+        "data/tables/issues.csv",
+        "data/tables/securities.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "operation_id": "01M0JHGJJ0CWRHV9WGRJ6C4PK0",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260821T153352Z/01M0JHGJJ0CWRHV9WGRJ6C4PK0/agent_result.json",
+      "status": "blocked",
+      "summary": "Blocked exactly one Vale full security review because the deterministic schema-version-two assessment applier found both the completed quick-check predecessor and this running security-research operation for the same security and run ID. Five retained primary sources were re-recorded and the security-row summary was updated before the blocker surfaced, but no new assessment version could be accepted. The prior Hold / Watch assessment and its exact research-page hash remain current. Issue issue_9ee84bcffbb2b16fff50 records the resolvable controller dependency. A copper relationship review, 01M0JJ3RT8VN3WHXS9F2YTW8GK, was created before the blocker surfaced but depends on this blocked operation and therefore cannot run unless the controller resolves it. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state was created or changed."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-20T09:44:20Z"
+}

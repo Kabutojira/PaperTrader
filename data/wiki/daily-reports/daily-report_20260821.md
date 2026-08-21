@@ -171,6 +171,7 @@ No pending orders.
 - [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-26aab9bc8d3f|MSTR — Bollinger above upper]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260821T153352Z|Daily research podcast — 2026-08-21T153352Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_1e8fbdb0f45f2b413e00|PayPal Holdings, Inc. common stock]]
 - [[securities/security_6ad1af8d10d6276a0221|Southern Copper Corporation common stock]]

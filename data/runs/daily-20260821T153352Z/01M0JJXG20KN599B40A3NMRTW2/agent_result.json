@@ -1,0 +1,75 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260821T153352Z --script-path data/wiki/podcasts/daily-podcast_20260821T153352Z.md",
+    "papertrader podcast validate-script --daily-cycle-id daily-20260821T153352Z --script-path data/wiki/podcasts/daily-podcast_20260821T153352Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260821T153352Z --script-path data/wiki/podcasts/daily-podcast_20260821T153352Z.md",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published a 3,143-word standalone research podcast comparing PayPal's trend signal with valuation, Southern Copper and Vale's different copper exposures, and FANUC's automation recovery with payoff and liquidity limits. Current ratings remain PayPal Hold / Watch, Southern Copper Strong Sell / Avoid, Vale Hold / Watch, and FANUC Hold / Watch; no actionable signal or portfolio action was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The controller-validated version-three frozen context binds this operation to daily cycle daily-20260821T153352Z, transcript path data/wiki/podcasts/daily-podcast_20260821T153352Z.md, the exclusive 2026-08-20T09:02:39Z cutoff, the inclusive 2026-08-21T16:16:41Z cutoff, and the 2026-08-20T090239Z prior episode.",
+      "observed_at": "2026-08-21T16:16:41Z",
+      "source": "data/runs/daily-20260821T153352Z/podcast_context.json"
+    },
+    {
+      "claim": "PayPal remains Hold / Watch: the bullish fifty-day versus two-hundred-day crossover is offset by overbought momentum, no newer issuer operating evidence, weighted fair value below the reviewed market price, limited base upside, and poor downside payoff.",
+      "observed_at": "2026-08-21T16:03:19Z",
+      "source": "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+    },
+    {
+      "claim": "Southern Copper remains Strong Sell / Avoid after record price-led second-quarter results because copper production declined and the reviewed market price exceeded the bear, base, and bull normalized values.",
+      "observed_at": "2026-08-21T16:03:18Z",
+      "source": "data/wiki/securities/security_6ad1af8d10d6276a0221.md"
+    },
+    {
+      "claim": "Vale remains Hold / Watch: Salobo coarse-particle flotation entered execution and Fundão municipal adherence broadened, but the reviewed market price remained above weighted fair value and the new evidence did not change the through-cycle scenarios.",
+      "observed_at": "2026-08-21T16:11:42Z",
+      "source": "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+    },
+    {
+      "claim": "FANUC remains Hold / Watch despite improving orders, earnings, cash, and shareholder returns because scenario downside overwhelms modest base upside, the causal relationship remains pending, and the reviewed Frankfurt line traded only 1,355 shares.",
+      "observed_at": "2026-08-20T15:46:23Z",
+      "source": "data/wiki/securities/security_96ba305ee7cd586bc348.md"
+    },
+    {
+      "claim": "Novelty review used the most recent successful prior episode and avoided repeating its Recursion, Intel, and Fluence chapters.",
+      "observed_at": "2026-08-20T09:02:39Z",
+      "source": "data/wiki/podcasts/daily-podcast_20260820T090239Z.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260821T153352Z/01M0JJXG20KN599B40A3NMRTW2/candidate_slate.md",
+    "data/runs/daily-20260821T153352Z/01M0JJXG20KN599B40A3NMRTW2/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260821.md",
+    "data/wiki/podcasts/daily-podcast_20260821T153352Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0JJXG20KN599B40A3NMRTW2",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created one standalone 3,143-word daily research podcast with three chapters: PayPal's bullish trend versus limited valuation room; Southern Copper and Vale as contrasting copper exposures; and FANUC's real automation improvement versus weak payoff, incomplete causal evidence, and thin Frankfurt liquidity. The unchanged Parrot recheck was excluded because it supplied no audience-relevant new evidence or conclusion. The episode states the current accepted ratings and concrete Buy and Sell conditions for PayPal, Southern Copper, Vale, and FANUC, adds the deterministic transcript link to the daily report, and preserves paper-trading identity only in frontmatter. Script preflight passed with five TTS chunks, and the single audited draft render succeeded. No research conclusion, allocation, strategy, signal, order, execution, cash, portfolio, performance, queue, or delivery state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed payload, frozen context, and daily manifest all bind the exact transcript path data/wiki/podcasts/daily-podcast_20260821T153352Z.md.",
+      "Mapped each selected development to exactly one chapter and excluded the unchanged Parrot recheck for repetition and low audience value.",
+      "Confirmed the exact required introduction, teaser opening, semantic chapter order, overall summary, and exact two-sentence closing.",
+      "Confirmed every security chapter ends with each security's current rating, reason, Buy conditions, and Sell conditions.",
+      "Deterministic script preflight passed at 3,143 spoken words, five chunks, and the exact frozen daily cycle identity.",
+      "The one permitted audited draft-render invocation succeeded; no audio path or persistent audio reference was added to the repository.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No allocation targets or history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting, queue, research conclusion, or delivery state changed."
+    ],
+    "passed": true
+  }
+}
