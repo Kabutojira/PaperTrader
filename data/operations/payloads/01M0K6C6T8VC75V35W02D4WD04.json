@@ -1,0 +1,22 @@
+{
+  "entity_id": "security_ad3b1f8f59fd599f079a",
+  "entity_type": "security",
+  "inputs": {
+    "market_data_as_of": "2026-08-21T22:17:01Z",
+    "market_data_date": "2026-08-21",
+    "period_end": "2026-08-21",
+    "period_start": "2026-07-24",
+    "security_id": "security_ad3b1f8f59fd599f079a",
+    "source_price_hash": "ecd5df7f2bd95e02a6fde1d8202e8b64622432f0de8f136c8440e522cb5dd9e9",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Research security_ad3b1f8f59fd599f079a with high priority after price-action alerts: volume_anomaly; decide what changed and whether to act.",
+  "operation_id": "01M0K6C6T8VC75V35W02D4WD04",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-d8fb77d9bd9b.md"
+  ]
+}

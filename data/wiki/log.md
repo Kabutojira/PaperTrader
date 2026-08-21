@@ -4467,6 +4467,80 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Generated canonical [[daily-reports/daily-report_20260821]] for run `daily-20260821T153352Z`.
 
+- Created candidate packet [[inbox/market-security_0cf8075039299094d614-macd_cross_below_signal-1d9255c24f5a]] (1d9255c24f5a).
+
+- Created candidate packet [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-6c7213346f65]] (6c7213346f65).
+
+- Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-macd_cross_below_signal-ba1783a13894]] (ba1783a13894).
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-rsi_overbought-fe94c85da310]] (fe94c85da310).
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-bollinger_above_upper-1958a6a1e3a0]] (1958a6a1e3a0).
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-79739365a504]] (79739365a504).
+
+- Classified [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-79739365a504]] as `ingest`: Material volume anomaly coincides with a 22.46% one-month price increase and warrants durable research context.
+
+- Created candidate packet [[inbox/market-security_33d9c44facc75c726c7d-macd_cross_below_signal-bd614732a2bb]] (bd614732a2bb).
+
+- Created candidate packet [[inbox/market-security_37ddcbdaad296ad831f2-bollinger_above_upper-190ba9769ddd]] (190ba9769ddd).
+
+- Created candidate packet [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-01ddc2cec2d8]] (01ddc2cec2d8).
+
+- Classified [[inbox/market-security_37ddcbdaad296ad831f2-volume_anomaly-01ddc2cec2d8]] as `ingest`: Strengthened volume anomaly with a material 17.8% period return merits durable wiki review.
+
+- Created candidate packet [[inbox/market-security_3e597863f00753e8c65c-macd_cross_below_signal-e7362215b566]] (e7362215b566).
+
+- Created candidate packet [[inbox/market-security_488a9d7f7a8573597724-macd_cross_below_signal-ae61aa810e14]] (ae61aa810e14).
+
+- Created candidate packet [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-19de952490e0]] (19de952490e0).
+
+- Classified [[inbox/market-security_59304f90c440def31dc5-bollinger_below_lower-19de952490e0]] as `ingest`: A new Bollinger Band lower-bound breach with a negative period return is a material indicator transition for the security.
+
+- Created candidate packet [[inbox/market-security_66cdcf90aac0d83e76f3-bollinger_above_upper-01894623a7ef]] (01894623a7ef).
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-bollinger_above_upper-d78ac88cb764]] (d78ac88cb764).
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-d74e9f7d0aca]] (d74e9f7d0aca).
+
+- Classified [[inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-d74e9f7d0aca]] as `ingest`: A newly entered volume anomaly coincides with a material 20.5% one-month price increase and merits durable review.
+
+- Created candidate packet [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-d6607fa30b24]] (d6607fa30b24).
+
+- Classified [[inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-d6607fa30b24]] as `ingest`: New volume-anomaly transition coincides with a material decline over the validated period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-bollinger_above_upper-7482cca0c7ea]] (7482cca0c7ea).
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-rsi_overbought-8f72d248ab79]] (8f72d248ab79).
+
+- Created candidate packet [[inbox/market-security_a9eb9838940ef5ceaa0c-macd_cross_below_signal-05c55dfe037c]] (05c55dfe037c).
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_above_upper-372c84990e49]] (372c84990e49).
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-d8fb77d9bd9b]] (d8fb77d9bd9b).
+
+- Classified [[inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-d8fb77d9bd9b]] as `ingest`: A new volume-anomaly transition coincides with a material 13.9% price increase over the validated period.
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-107456766bcf]] (107456766bcf).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-ac48ed59972a]] (ac48ed59972a).
+
+- Created candidate packet [[inbox/market-security_b2116dcf976c96974d7b-macd_cross_above_signal-cc825853a0db]] (cc825853a0db).
+
+- Classified [[inbox/market-security_b2116dcf976c96974d7b-macd_cross_above_signal-cc825853a0db]] as `ingest`: A new MACD bullish crossover is a validated indicator transition that merits durable tracking.
+
+- Created candidate packet [[inbox/market-security_c5a9e460d3350284d157-rsi_overbought-ebdd3d305c95]] (ebdd3d305c95).
+
+- Created candidate packet [[inbox/market-security_dc7a111e297be528d96b-bollinger_above_upper-ad4c356f05a8]] (ad4c356f05a8).
+
+- Created candidate packet [[inbox/market-security_dc7a111e297be528d96b-volume_anomaly-431685472686]] (431685472686).
+
+- Classified [[inbox/market-security_dc7a111e297be528d96b-volume_anomaly-431685472686]] as `ingest`: Material volume anomaly transition with a 15.9% period return warrants durable wiki review.
+
+- Created candidate packet [[inbox/market-security_dfa34d4b9050964b465e-macd_cross_below_signal-befa0edf9030]] (befa0edf9030).
+
+- Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-9e64ca369e1d]] (9e64ca369e1d).
+
 ## [2026-08-21] update | PayPal alert-driven security review
 - Updated [[securities/security_1e8fbdb0f45f2b413e00|PayPal Holdings, Inc. common stock]] after the August 20 SMA 50/200 bullish crossover.
 - Rechecked the SEC submissions index and unchanged Q2 Form 10-Q and results filing; no newer issuer operating filing changed the maintained assumptions.

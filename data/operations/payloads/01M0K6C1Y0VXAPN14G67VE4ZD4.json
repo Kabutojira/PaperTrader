@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_J7YJYxsTL3U",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-21T22:16:56Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_J7YJYxsTL3U",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "J7YJYxsTL3U",
+    "video_title": "5 Stocks I'm Buying for the Second Half of 2026. Here's Why",
+    "video_url": "https://www.youtube.com/watch?v=J7YJYxsTL3U"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0K6C1Y0VXAPN14G67VE4ZD4",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=J7YJYxsTL3U"
+  ]
+}
