@@ -4468,3 +4468,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Rechecked the SEC submissions index and unchanged Q2 Form 10-Q and results filing; no newer issuer operating filing changed the maintained assumptions.
 - Retained Hold / Watch: USD 62.30 exceeds the USD 61.332 scenario-weighted fair value, while overbought RSI, weak payoff asymmetry, and no accepted causal relationship block escalation.
 - Added one clearly labelled candidate connection to [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]] for separate relationship review; no strategy or signal was created.
+
+## [2026-08-21] update | Southern Copper alert-driven security review
+- Updated [[securities/security_6ad1af8d10d6276a0221|Southern Copper Corporation common stock]]
+  after the August 20 bullish MACD crossover and 9.06% measured-period return.
+- Registered and reviewed the second-quarter results, Form 10-Q and dated SEC submissions index.
+  Record earnings and cash flow were price-led while copper production and Peruvian grades declined;
+  long-term debt and stock-dividend dilution also increased.
+- Replaced the prior partial comparison with USD 91 / USD 135 / USD 187 bear/base/bull normalized-
+  earnings cases. The USD 198.73 mark exceeds every scenario, so Hold / Watch and no paper-trade
+  action remain appropriate despite positive momentum.
+- Retained the accepted but overdue copper-scarcity edge and added a clearly labelled structural-
+  silver-deficit candidate for separate relationship review. No strategy, signal, paper order,
+  allocation, or accounting state changed.

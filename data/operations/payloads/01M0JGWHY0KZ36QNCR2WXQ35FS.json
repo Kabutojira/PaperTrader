@@ -1,0 +1,21 @@
+{
+  "entity_id": "idea_critical_minerals_copper",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "security_id": "security_6ad1af8d10d6276a0221",
+    "security_research_operation_id": "01M0F2AG589NSB423KKJRB01Q5",
+    "security_research_result_path": "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/agent_result.json",
+    "seed_claim": "Southern Copper's record Q2 earnings and cash flow confirm positive metal-price leverage, but lower production, by-product dependence, higher project debt and normalized scenario values below the August 20 mark do not justify exposure."
+  },
+  "objective": "Refresh the critical-minerals and structural-copper-scarcity idea from Southern Copper's completed Q2 and market-alert review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "operation_id": "01M0JGWHY0KZ36QNCR2WXQ35FS",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_critical_minerals_copper.md",
+    "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
+    "source_scco_q2_2026_10q",
+    "source_scco_q2_2026_results"
+  ]
+}

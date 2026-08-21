@@ -1,0 +1,18 @@
+{
+  "source_id": "source_scco_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926089169/scco-20260630x10q.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926089169/scco-20260630x10q.htm",
+  "source_type": "regulator_filing",
+  "title": "Southern Copper Corporation Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e6d523150cc0f4104ee9094f4b421fd20ef9d6bd77633c4c432a30d1825f8f69",
+  "related_entity_ids": "idea_critical_minerals_copper|security_6ad1af8d10d6276a0221",
+  "checked_at": "2026-08-21T15:55:50Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The filing reports first-half earnings, cash flow, production, realized-price exposure, capital investment, cash, debt, shares and project risks through June 30, 2026.",
+  "summary": "The Q2 Form 10-Q is current primary evidence for Southern Copper's financial position, production, realized prices, cash costs, debt, dilution, project program and legal and jurisdictional risks.",
+  "run_id": "daily-20260821T153352Z"
+}

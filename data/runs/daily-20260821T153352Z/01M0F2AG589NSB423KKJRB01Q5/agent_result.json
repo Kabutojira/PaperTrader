@@ -1,0 +1,95 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_6ad1af8d10d6276a0221",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_sec_submissions_20260821_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/enqueue_silver_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/enqueue_copper_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Southern Copper's August 20 bullish MACD crossover followed a 9.06% measured-period rise, but record Q2 earnings were price-led while copper output declined. USD 91/USD 135/USD 187 normalized scenarios all remain below USD 198.73; deterministic output is Strong Sell / Avoid and allocation-ineligible. One silver-deficit relationship review and one copper-idea refresh were queued; no paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed issuer release reports Q2 net sales of USD 4.289 billion, net income attributable to Southern Copper of USD 1.670 billion, adjusted EBITDA of USD 2.856 billion and first-half operating cash flow of USD 3.683 billion. Quarterly copper production fell 3.5%, and the USD 0.05 per-pound net cash cost benefited from 51.4% higher by-product credits.",
+      "observed_at": "2026-08-21T15:55:50Z",
+      "source": "source_scco_q2_2026_results",
+      "source_hash": "79adb9415f6d0e59333aa22f98a23fa27d0a102fab6838b1778c38bc5f3015a8",
+      "url": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926085515/scco-20260721xex99d1.htm"
+    },
+    {
+      "claim": "The Q2 Form 10-Q confirms first-half net income attributable to Southern Copper of USD 3.2468 billion, diluted EPS of USD 3.93, copper production down 3.8%, cash and equivalents of USD 5.665 billion, long-term debt of USD 7.9944 billion, 834.3 million June shares outstanding, increased capital investment and continuing Tia Maria legal and execution risks.",
+      "observed_at": "2026-08-21T15:55:50Z",
+      "source": "source_scco_q2_2026_10q",
+      "source_hash": "e6d523150cc0f4104ee9094f4b421fd20ef9d6bd77633c4c432a30d1825f8f69",
+      "url": "https://www.sec.gov/Archives/edgar/data/1001838/000110465926089169/scco-20260630x10q.htm"
+    },
+    {
+      "claim": "The dated SEC submissions index identifies the July 31 Q2 Form 10-Q as the latest Southern Copper operating filing through August 21, so no later issuer filing explains a new fundamental inflection during the alert period.",
+      "observed_at": "2026-08-21T15:55:50Z",
+      "source": "source_scco_sec_submissions_20260821",
+      "source_hash": "934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b",
+      "url": "https://data.sec.gov/submissions/CIK0001001838.json"
+    },
+    {
+      "claim": "The exact alert packet records an August 20 adjusted close of USD 198.72999572753906, a 9.0605% July 23-August 20 return, MACD 3.3685 crossing above its 3.2034 signal, RSI 58.39 and no upper-Bollinger breach. Fresh USD/EUR FX was 0.8561000227928162 at the matching August 21 retrieval.",
+      "observed_at": "2026-08-21T15:34:00Z",
+      "source": "PaperTrader deterministic market and indicator caches",
+      "source_hash": "23c80dda3bf3e83146e066cc8cd7830b2faf916ab16a28154deee10a8669d1dc"
+    },
+    {
+      "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_4dc9b183967daf52a108, the expected result path, page hash 35c899f31e2c8c27530f897ad19a9d6f9add11c9584001714becdb11477793ff, fresh identity-matched price and FX state, and all three retained primary sources. Deterministic normalization derives USD 132.20 probability-weighted fair value, -33.48% expected return, -25.11% confidence-adjusted expected return, Strong Sell / Avoid and allocation ineligibility.",
+      "observed_at": "2026-08-21T15:55:50Z",
+      "source": "assessment_6e055fa7e2784f575da8"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0JGWFZGXGX44YD7R91ANFYS.json",
+    "data/operations/payloads/01M0JGWHY0KZ36QNCR2WXQ35FS.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/assessment_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/enqueue_copper_idea_refresh_request.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/enqueue_silver_relationship_request.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/security_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_q2_2026_10q_request.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_q2_2026_results_request.json",
+    "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/source_scco_sec_submissions_20260821_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6ad1af8d10d6276a0221.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0F2AG589NSB423KKJRB01Q5",
+  "operations_created": [
+    "01M0JGWFZGXGX44YD7R91ANFYS",
+    "01M0JGWHY0KZ36QNCR2WXQ35FS"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded alert-driven Southern Copper security review. Current SEC primary evidence shows record Q2 sales, earnings and cash flow driven by strong metal prices, but quarterly copper production fell 3.5%, first-half output fell 3.8%, by-product credits materially supported net cash cost, long-term debt increased and stock dividends raised the share count. The August 20 bullish MACD crossover and 9.06% measured-period return are valuation risk rather than an actionable opportunity: USD 91/USD 135/USD 187 normalized bear/base/bull values are all below the USD 198.73 mark. Watchlist status remains watching while deterministic assessment output is Strong Sell / Avoid and allocation-ineligible. Queued one dependent structural-silver relationship review and exactly one copper-idea refresh; the overdue accepted copper relationship already has a queued canonical review. No strategy, signal, paper order, allocation, execution, cash, portfolio, fill, performance or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected row was the sole routed running operation, claimed by daily-20260821T153352Z with a live lease, validated alert payload and immutable SCCO/XNYS/USD/equity identity.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and used the prior assessment, prior successful result, retained sources, accepted relationship and linked page state.",
+      "Verified the exact August 20 MACD crossover, observation period and source-price hash against canonical market and indicator state; fresh price and USD/EUR FX timestamps match the assessment request.",
+      "Downloaded and hashed the current SEC-filed Q2 results, Form 10-Q and submissions index, and registered all three primary sources before assessment upsert; no source body was committed.",
+      "Searched the complete maintained idea catalog and canonical relationship table. The copper-scarcity edge is accepted but overdue and already has exactly one queued canonical review; structural silver deficit is the sole retained new candidate and received one dependent review; generic copper-demand adjacencies were explicitly rejected.",
+      "Confirmed assessment assessment_6e055fa7e2784f575da8 is the sole immutable version for this operation and links predecessor assessment_4dc9b183967daf52a108, schema version 2, expected result path, current page hash and run provenance.",
+      "Created exactly one dependent idea-research follow-up for the current accepted copper idea and no strategy follow-up because every normalized scenario is below market and deterministic return, payoff and margin-of-safety gates fail.",
+      "Strict wiki lint returned OK [wiki], strict schema validation returned OK [schema], queue validation returned OK [queue], strict repository integrity returned OK [integrity], and strict portfolio reconciliation returned OK [portfolio].",
+      "Git inspection confirmed no allocation target/history, order, execution, cash, portfolio, fill, performance or accounting ledger path changed."
+    ],
+    "passed": true
+  }
+}

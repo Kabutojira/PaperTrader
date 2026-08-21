@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-26"
-updated: "2026-07-27"
-provenance: "source_scco_q1_2026_results; deterministic market and FX caches"
+updated: "2026-08-21"
+provenance: "source_scco_q2_2026_results; source_scco_q2_2026_10q; source_scco_sec_submissions_20260821; deterministic market and FX caches"
 security_id: security_6ad1af8d10d6276a0221
 issuer_id: issuer_4a82928ad9dfe58ec4f2
 confidence: medium
-next_review: "2026-08-15"
+next_review: "2026-09-04"
 ---
 
 # Southern Copper Corporation common stock
@@ -21,7 +21,30 @@ next_review: "2026-08-15"
 - Instrument: common stock, New York Stock Exchange (`XNYS`), USD
 - Provider identity: `SCCO` / `XNYS` / `USD` / equity
 
-This review links the verified instrument to [[ideas/idea_critical_minerals_copper]].
+The immutable identity is unchanged and remains unique in the tracked-security table.
+
+## Changes since prior review
+
+- **Evidence changed:** the July 21 second-quarter results release and July 31 Form 10-Q supersede
+  the first-quarter-only evidence. The August 21 SEC submissions check found no later operating
+  filing.
+- **Operating facts changed:** second-quarter sales, net income and adjusted EBITDA reached records,
+  but quarterly copper production fell 3.5% year over year and first-half production fell 3.8%.
+  First-half operating cash flow reached USD 3.683 billion while capital investment rose to USD
+  864.7 million.
+- **Balance sheet and capital allocation changed:** June cash and equivalents were USD 5.665 billion,
+  long-term debt was USD 7.994 billion after a USD 1.25 billion project-financing note, and shares
+  outstanding rose to 834.3 million after stock dividends. Funding capacity remains adequate, but
+  debt, capital intensity and per-share dilution are more explicit constraints.
+- **Valuation assumptions changed:** the prior peak-quarter annualization is replaced by a
+  scenario-complete cyclical normalized-earnings range. Bear/base/bull fair values are USD 91,
+  USD 135 and USD 187 at 30%/50%/20% probabilities. All remain below the USD 198.73 mark.
+- **Thesis and catalysts:** long reserve life, metal-price leverage, cash generation and Tía María
+  progress remain supportive. Lower grades and volumes, dependence on by-product credits, project
+  execution, jurisdiction and valuation remain the principal counterweights.
+- **Blockers and gaps:** no hard evidence blocker remains. Medium confidence, cyclical normalization,
+  weak payoff asymmetry, an expired accepted relationship review and unfavorable timing remain soft
+  gaps. The rating remains Hold / Watch and no paper-trade action is justified.
 
 ## Economics and thesis
 
@@ -30,48 +53,86 @@ Southern Copper operates integrated mines, smelters, and refineries in Peru and 
 but concentrated jurisdictions, controlling ownership, project permissions, and by-product prices
 matter materially.
 
-The issuer's Q1 2026 results remain the latest decisive financial evidence available for this
-review. Sales rose 36.2% to USD 4.25 billion, net income rose 66.7% to USD 1.58 billion, diluted
-income per share was USD 1.92, adjusted EBITDA margin reached 63.8%, and operating cash flow was
-USD 1.69 billion. Copper production nevertheless fell 4.0%, driven by lower Peruvian grades and
-recoveries. Net cash cost was negative USD 0.11/lb only after unusually strong silver, zinc, and
-molybdenum credits; pre-credit economics are less exceptional. Capital investment was USD 441.9
-million, and the decade project program exceeds USD 20.5 billion.
+The SEC-filed second-quarter release reports record quarterly sales of USD 4.289 billion, net income
+attributable to Southern Copper of USD 1.670 billion, diluted earnings of USD 2.01 per share and an
+adjusted EBITDA margin of 66.6%. First-half operating cash flow was USD 3.683 billion. These results
+show powerful price leverage: copper sales volume fell 1.5% in the quarter while LME and COMEX price
+comparisons rose 39.8% and 30.5%, respectively.
+
+Operating transmission remains imperfect. Quarterly copper production fell 3.5% to 230,662 tonnes,
+including a 12.0% decline in Peru, and first-half copper production fell 3.8% to 461,206 tonnes due
+mainly to lower Peruvian grades. Second-quarter cash cost after by-product credits was USD 0.05 per
+pound, with the improvement driven by a 51.4% increase in those credits. First-half capital
+investment rose 56.2% to USD 864.7 million. Tía María had USD 693 million invested at June 30 and is
+targeted for initial production in the second half of 2027, but the filing retains legal, permitting,
+social and execution risks around the project program.
 
 ## Evidence and gates
 
 | Evidence | Interpretation |
 | --- | --- |
-| 51.1 Mt reserve claim and 65.6 Mt resources. | Long life, subject to price assumptions, permits, and project conversion. |
-| Production fell 4% despite record earnings. | Price and by-product credits, not volume, drove the quarter. |
-| Net cash cost was negative USD 0.11/lb after credits. | Strong downside buffer today, but highly sensitive to by-product prices. |
-| Operating cash flow rose to USD 1.69 billion; capital investment was USD 441.9 million. | Current self-funding is strong, while the project pipeline raises future capital needs. |
-| Q1 diluted income per share was USD 1.92 and 826.1 million shares were outstanding at quarter end. | Current earnings support bounded per-share scenarios, but a peak-quarter annualization must carry only medium confidence. |
+| Q2 sales, net income and adjusted EBITDA reached records while first-half operating cash flow was USD 3.683 billion. | Current metal prices are converting into earnings and cash. |
+| Q2 copper production fell 3.5%; first-half output fell 3.8% because of lower Peruvian grades. | Price, not volume, is the main earnings driver and operational recovery remains unproven. |
+| Q2 cash cost after credits was USD 0.05/lb; the improvement depended on 51.4% higher by-product credits. | Reported cost leadership is real but materially sensitive to silver, zinc and molybdenum prices. |
+| Cash was USD 5.665 billion and long-term debt USD 7.994 billion after a USD 1.25 billion project note. | Liquidity is strong, while the large project program raises fixed funding and execution exposure. |
+| Diluted EPS was USD 2.01 in Q2 and USD 3.93 for the first half; 834.3 million shares were outstanding. | Peak-price earnings require normalization and stock dividends dilute per-share comparisons. |
 
-Registered primary evidence: [Southern Copper Q1 2026 results](https://southerncoppercorp.com/wp-content/uploads/2026/04/pr260428.pdf)
-(`source_scco_q1_2026_results`). The March 2026 presentation remains supplementary context rather
-than assessment evidence.
+Registered primary evidence: [second-quarter 2026 results](https://www.sec.gov/Archives/edgar/data/1001838/000110465926085515/scco-20260721xex99d1.htm)
+(`source_scco_q2_2026_results`) and [Q2 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1001838/000110465926089169/scco-20260630x10q.htm)
+(`source_scco_q2_2026_10q`). The [dated SEC submissions index](https://data.sec.gov/submissions/CIK0001001838.json)
+(`source_scco_sec_submissions_20260821`) confirms no later operating filing through August 21.
+
+## Market alert
+
+The canonical August 20 close was USD 198.72999572753906 after a 9.0605% return from July 23. MACD
+of 3.3685 crossed above its 3.2034 signal; RSI was 58.39 and the close remained below the upper
+Bollinger band. The exact indicator row matches source-price hash
+`23c80dda3bf3e83146e066cc8cd7830b2faf916ab16a28154deee10a8669d1dc`.
+
+The move is **valuation risk rather than an actionable opportunity**. Record Q2 results and strong
+metal prices support the direction of the thesis, but they were public before the measured period
+began and no later issuer operating filing explains a fresh fundamental inflection. The bullish
+technical crossover does not repair negative scenario returns or the missing margin of safety.
 
 ## Valuation, catalysts, and risks
 
-The deterministic 2026-07-27 close is USD 179.32 with 968,432 shares traded; the same refresh has a
-USD/EUR rate of 0.8794. A deliberately bounded 12-month earnings scenario annualizes Q1 diluted
-income per share of USD 1.92. Applying 14 times to that USD 7.68 run rate gives a USD 107.52 downside
-case, 40.0% below the mark. Applying 18 times gives a USD 138.24 base case, 22.9% below the mark.
-These are comparison scenarios, not targets: Q1 benefited from strong copper and by-product prices,
-while production fell, so confidence is medium and no upside case is used for allocation eligibility.
-The valuation should be refreshed after Q2 results with a normalized metal-price deck and updated
-production, capital investment, net debt, tax, royalty, and diluted-share inputs.
+The cyclical-commodity template uses normalized earnings rather than capitalizing record spot-price
+results. The 12-month bear case applies 14 times USD 6.50 normalized EPS for USD 91, assuming copper
+and by-product prices normalize, grades remain weak and project spending rises. The base case applies
+18 times USD 7.50 for USD 135, assuming planned production stabilization and adequate self-funding.
+The bull case applies 22 times USD 8.50 for USD 187, requiring sustained metal prices, grade recovery
+and disciplined Tía María execution. Probabilities are 30%, 50% and 20%. At USD 198.73, even the bull
+case remains below market; confidence is medium because metal prices, grades, by-product credits,
+taxes, capex, debt and stock-dividend dilution create wide normalization uncertainty.
 
-Catalysts are grade recovery, disciplined Tía María execution, permitting progress, and sustained
-cash generation. Invalidate if grades do not recover, costs rise after credits normalize, projects
-are delayed or overrun, social or fiscal terms worsen, dividends outpace prudent funding, or copper
-demand and prices weaken.
+Catalysts are grade recovery, achievement of 2026 production guidance, disciplined Tía María
+execution, permitting progress, sustained cash generation and realized copper strength that survives
+normalization. Invalidate if grades do not recover, costs rise after credits normalize, projects are
+delayed or overrun, social or fiscal terms worsen, debt and dividends outpace prudent funding, or
+copper demand and prices weaken.
+
+## Idea exposure map
+
+- **Accepted-needs-review — positive:** [[ideas/idea_critical_minerals_copper|critical minerals and
+  structural copper scarcity]]. Copper is the core product, so scarcity can raise realized revenue,
+  margins, reserve value and project returns. The canonical edge is accepted but its August 15
+  review date has passed; existing queued relationship review `01KZGGJ4M0HCXGWR7Z9E9MEPZ5` should
+  test the updated production, cost, debt and project evidence.
+- **Candidate — positive:** [[ideas/idea_structural_silver_deficit|structural silver deficit]]. Silver
+  is a by-product rather than the core product, but Q2 evidence shows by-product credits materially
+  reduced reported copper cash cost. A separate relationship review must test silver attribution,
+  sensitivity and whether the mechanism is material after zinc and molybdenum are separated.
+- **Rejected-no-link:** [[ideas/idea_ai_infrastructure_power|AI infrastructure and power]],
+  [[ideas/idea_solar_storage_grid_flexibility_reset|solar, storage and grid flexibility]] and
+  [[ideas/idea_humanoid_robotics_embodied_ai_components|humanoid robotics]] can add copper demand,
+  but the issuer does not disclose decision-useful attributable exposure to those end markets; they
+  are generic demand adjacencies already captured by the copper-scarcity edge. The maintained gold,
+  lithium, uranium and industrial-policy ideas likewise lack a distinct material transmission path.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, and allocation eligibility **baseline**. Review by
-**2026-08-15** after Q2 results. Reserve life, cash generation, market liquidity, and a supportable
-bounded comparison pass the baseline evidence gate, but lower production, by-product sensitivity,
-jurisdiction, project execution, medium confidence, and both scenario values below the market block
-conviction treatment. No strategy follow-up is justified.
+Status: **watching**, confidence **medium**, and review by **2026-09-04**. Current evidence supports a
+complete comparable assessment, but lower production, by-product sensitivity, jurisdiction, debt,
+project execution, dilution and all three scenario values below market make the security allocation-
+ineligible. The August bullish MACD crossover is not a strategy catalyst. No conviction strategy,
+signal or paper order is justified.

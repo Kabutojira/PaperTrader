@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_aa2343a5250d80ca9625",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_scco_q2_2026_results",
+      "source_scco_q2_2026_10q"
+    ],
+    "idea_id": "idea_structural_silver_deficit",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if silver is financially immaterial after zinc and molybdenum are separated, production or hedging prevents price realization, deficits reverse, or higher costs, taxes and capex absorb the by-product benefit.",
+    "proposed_mechanism": "A sustained silver deficit can raise Southern Copper's silver by-product revenue credits, lower reported net copper cash cost and improve earnings and operating cash flow if silver production and attribution remain material.",
+    "relationship_id": "relationship_aa2343a5250d80ca9625",
+    "security_id": "security_6ad1af8d10d6276a0221"
+  },
+  "objective": "Review whether Southern Copper has a material causal relationship to the structural silver deficit through silver by-product revenue credits, cost attribution, realized pricing and operating cash flow; accept or reject the edge.",
+  "operation_id": "01M0JGWFZGXGX44YD7R91ANFYS",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_structural_silver_deficit.md",
+    "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
+    "source_scco_q2_2026_10q",
+    "source_scco_q2_2026_results"
+  ]
+}
