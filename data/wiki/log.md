@@ -4611,3 +4611,15 @@ This log is append-only. Rotate it by year only after the configured line thresh
   [[ideas/idea_precision_biology_healthcare_automation|precision biology and healthcare automation]]
   for a separate relationship review. No strategy, signal, paper order, allocation, or accounting
   state changed.
+
+## [2026-08-21T23:08:42Z] update | Tesla volume-anomaly quick check
+
+- Rechecked [[securities/security_dc7a111e297be528d96b|Tesla]] against the exact 24 July through 21
+  August alert period. The USD 362.86 close rose 15.92%, entered the configured volume anomaly and
+  finished above the upper Bollinger band, while RSI remained neutral.
+- The SEC submissions index hash remained unchanged with no operating filing after the Q2 Form
+  10-Q. The thesis, USD 137/USD 272/USD 491 scenarios, catalysts, risks and invalidation conditions
+  remain unchanged; the higher mark lowers expected return to about negative 19.25%.
+- Hold / Watch and allocation ineligibility remain unchanged. The move is timing and valuation risk,
+  the USD 217.60 buy-below price remains unreached, and no full review, strategy or signal was
+  created.

@@ -1,0 +1,67 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0K6C6T814ZJSAR7XJ22V41Y/source_tsla_sec_submissions_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T221654Z/01M0K6C6T814ZJSAR7XJ22V41Y/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01M0K6C6T814ZJSAR7XJ22V41Y/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_dc7a111e297be528d96b",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Tesla's August 21 volume anomaly accompanied a 15.92% measured-period rise to USD 362.86 and an upper-Bollinger-band breach. No newer SEC operating filing changed the fresh Q2 thesis or USD 137/USD 272/USD 491 scenarios; the higher mark reduces expected return to -19.25%, producing a deterministic Sell / Avoid, allocation-ineligible disposition. No full review, paper strategy, or signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "TSLA rose 15.92% from the USD 313.03 adjusted close on 2026-07-24 to USD 362.86 on 2026-08-21. The final session traded 57.81 million shares, produced a 2.75 volume z-score, entered the configured volume anomaly, and closed above the USD 360.02 upper Bollinger band while RSI remained neutral at 58.01.",
+      "observed_at": "2026-08-21T22:17:01Z",
+      "source": "PaperTrader deterministic market and indicator state",
+      "source_hash": "11bfd51b1b9f762051fec515465740b8dc6ff6b1d7dad58c25990589c6ce6276",
+      "url": "data/wiki/inbox/market-security_dc7a111e297be528d96b-volume_anomaly-431685472686.md"
+    },
+    {
+      "claim": "The Tesla SEC submissions index byte hash was unchanged at the August 21 recheck. Its recent filing list contained no periodic operating filing or earnings release newer than the Form 10-Q filed 2026-07-23.",
+      "observed_at": "2026-08-21T23:08:42Z",
+      "source": "U.S. Securities and Exchange Commission submissions index",
+      "source_hash": "4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9",
+      "url": "https://data.sec.gov/submissions/CIK0001318605.json"
+    },
+    {
+      "claim": "Assessment assessment_962be736d9385812f4cd is the sole immutable history version sourced from this operation and run, links predecessor assessment_05487a0deb2a28b77d47, and derives -62.2444%/-25.0400%/35.3139% bear/base/bull returns, USD 293 weighted fair value, -19.2526% expected return, -14.4395% confidence-adjusted expected return, USD 217.60 buy-below price, and an ineligible Sell/Avoid disposition.",
+      "source": "PaperTrader deterministic assessment projection"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260821T221654Z/01M0K6C6T814ZJSAR7XJ22V41Y/assessment_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0K6C6T814ZJSAR7XJ22V41Y/security_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0K6C6T814ZJSAR7XJ22V41Y/source_tsla_sec_submissions_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_dc7a111e297be528d96b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0K6C6T814ZJSAR7XJ22V41Y",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Tesla quick check for the August 21 volume anomaly. The USD 362.86 close was 15.92% above the July 24 period start, with a 2.75 volume z-score and an upper-Bollinger-band breach, but the current SEC submissions index was unchanged and contained no operating filing after the Q2 Form 10-Q. The Q2 thesis and USD 137/USD 272/USD 491 scenarios remain supported; deterministic assessment assessment_962be736d9385812f4cd now derives USD 293 weighted value, -19.25% expected return, -14.44% confidence-adjusted return, and a Sell / Avoid, allocation-ineligible disposition. The USD 217.60 buy-below price remains unreached. No full review was queued because no valuation assumption, buy zone, catalyst, invalidation, material primary evidence, eligibility gate, or ability of the fresh baseline to support a decision changed. No strategy, signal, order, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory audited security context before assessment work and consumed it again after publication.",
+      "Confirmed the validated payload, immutable TSLA/XNAS/USD/equity identity, successful 2026-08-19 baseline result, exact 2026-07-24 through 2026-08-21 alert period, and source-price hash 11bfd51b1b9f762051fec515465740b8dc6ff6b1d7dad58c25990589c6ce6276.",
+      "Confirmed the refreshed SEC submissions source is available, security-linked, checked at 2026-08-21T23:08:42Z, and unchanged at byte hash 4478acfc395a7ae3e1766c9f436fafe2bd17a133335cae0c69de3110a5dcfac9.",
+      "Confirmed current assessment assessment_962be736d9385812f4cd has run_id daily-20260821T221654Z, links predecessor assessment_05487a0deb2a28b77d47, and is exactly one immutable history version sourced from operation 01M0K6C6T814ZJSAR7XJ22V41Y.",
+      "Confirmed ordered bear/base/bull fair values, probabilities totaling 100, anchored component scores, current market and FX timestamps, accepted relationship coverage, and the same failed allocation gates as the baseline.",
+      "Confirmed no full review was required: the price moved farther above weighted value and buy-below price, while scenarios, evidence, catalysts, invalidation, hard blockers, eligibility, and the baseline's decision-support completeness remained unchanged.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation passed.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source, or other security page was changed by this operation."
+    ],
+    "passed": true
+  }
+}

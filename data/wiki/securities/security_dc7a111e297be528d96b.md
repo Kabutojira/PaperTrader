@@ -23,13 +23,13 @@ next_review: "2026-09-18"
 
 ## Decision
 
-**Rating: Sell. Portfolio action: Avoid.** A scenario-complete sum-of-parts review values Tesla at
+**Rating: Hold. Portfolio action: Watch.** A scenario-complete sum-of-parts review values Tesla at
 USD 137 / USD 272 / USD 491 per share in the bear/base/bull cases over 12 months, with 25% / 50% /
-25% probabilities and USD 293 probability-weighted value. Against the USD 336.87 mark, expected
-return is about negative 13%; the base case remains below the market price and the bear case shows
+25% probabilities and USD 293 probability-weighted value. Against the USD 362.86 mark, expected
+return is about negative 19%; the base case remains below the market price and the bear case shows
 substantial downside. Strong liquidity and real automotive, energy-storage and AI development
 capacity do not offset weak current operating leverage, exceptional capital intensity and the
-market value already assigned to AI-enabled businesses without disclosed mature economics. Avoid
+market value already assigned to AI-enabled businesses without disclosed mature economics. Watch
 until supported component economics or a materially lower price clears the canonical return,
 payoff and margin-of-safety gates; downgrade further if demand, margins, cash conversion,
 autonomy execution, capital productivity, governance or liquidity deteriorates.
@@ -80,11 +80,26 @@ supply-security and iteration channel, but the disclosed framework is non-bindin
 capacity, price, volume or shareholder-return evidence. It changes the relationship frontier, not
 the valuation conclusion.
 
+### 2026-08-21 quick check of the volume anomaly
+
+The payload-bound period runs from 2026-07-24 through 2026-08-21. Adjusted close rose **15.92%**
+from USD 313.03 to USD 362.86. The August 21 session traded 57.81 million shares, producing a 2.75
+volume z-score and entering the configured `volume_anomaly`; the close also finished above the USD
+360.02 upper Bollinger band, while RSI remained neutral at 58.01. This is a material technical
+rerating, but it does not establish a fundamental catalyst or improve the valuation gate.
+
+The SEC submissions index was rechecked on August 21. Its byte hash was unchanged and it contained
+no periodic operating filing or earnings release after the Q2 Form 10-Q. The Q2 thesis, scenario
+assumptions, catalysts, risks and invalidation conditions therefore remain supported by the same
+primary evidence. At the higher mark, the unchanged USD 293 weighted value implies about negative
+19.25% expected return, and the USD 217.60 buy-below price remains unreached. The alert is timing
+and valuation risk rather than a possible entry condition; no full review is warranted.
+
 ## Changes since prior review
 
-- **Facts and evidence:** the Q2 Form 10-Q was rechecked on August 19 and remains the latest primary
-  operating evidence. No revenue, margin, liquidity, share-count or capital-spending fact changed
-  from the quick check, and no contradictory later filing was found.
+- **Facts and evidence:** the SEC submissions index was rechecked on August 21 and remains unchanged;
+  the Q2 Form 10-Q is still the latest primary operating evidence. No revenue, margin, liquidity,
+  share-count or capital-spending fact changed, and no contradictory later filing was found.
 - **Assumptions and scenarios:** the unsupported legacy USD 169.26 / USD 264.97 two-case revenue
   sensitivity is replaced by a current sum of parts. The new bear/base/bull values are USD 137 /
   USD 272 / USD 491 with 25% / 50% / 25% probabilities. They separately bound annualized
@@ -101,9 +116,9 @@ the valuation conclusion.
   uncompelling valuation remain soft gaps. The accepted medium-confidence Terafab relationship
   completes the relationship frontier but adds no current component value because its framework is
   non-binding and unquantified.
-- **Rating and action:** the deterministic conclusion changes from Unrated / Watch to Sell / Avoid.
-  Allocation remains ineligible, and the prior conclusion that the MACD stabilization does not
-  justify a conviction strategy remains unchanged.
+- **Rating and action:** Hold / Watch and allocation ineligibility remain unchanged. The higher USD
+  362.86 mark worsens expected return and timing, so the volume anomaly does not justify a full
+  review, strategy or signal.
 
 ## Business and financial evidence
 
@@ -167,9 +182,9 @@ unproven AI businesses as current earnings.
   Vehicle margins recover, energy compounds with durable margins, and autonomy or robotics reaches
   safe commercial scale with demonstrable cash economics.
 
-The probability-weighted fair value is **USD 293**. Against the August 18 adjusted close of USD
-336.87, the bear/base/bull returns are approximately **negative 59.3% / negative 19.3% / positive
-45.8%**, and expected return is approximately **negative 13.0%** before the deterministic
+The probability-weighted fair value is **USD 293**. Against the August 21 adjusted close of USD
+362.86, the bear/base/bull returns are approximately **negative 62.2% / negative 25.0% / positive
+35.3%**, and expected return is approximately **negative 19.3%** before the deterministic
 confidence adjustment. The scenario set is complete but not attractive: the base case, expected
 return, downside payoff and margin of safety do not support an entry or a conviction strategy.
 
@@ -180,13 +195,11 @@ return, downside payoff and margin of safety do not support an entry or a convic
 - [Tesla Q2 2026 production, deliveries and deployments](https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments)
   (`source_tsla_q2_2026_deliveries`, checked 2026-07-29).
 - [Tesla SEC submissions index](https://data.sec.gov/submissions/CIK0001318605.json)
-  (`source_tsla_sec_submissions_20260819`, checked 2026-08-19).
+  (`source_tsla_sec_submissions_20260819`, rechecked 2026-08-21; unchanged byte hash).
 - Canonical market and indicator state: `data/market/latest.csv`,
   `data/market/indicators.csv`, and
   `data/market/prices/security_dc7a111e297be528d96b.csv`, retrieved
-  `2026-08-19T12:02:23Z` for the unchanged USD 336.87 current mark and
-  `2026-08-19T09:08:06Z` for the latest indicators; the immutable alert packet retains the
-  `2026-08-08T11:01:36Z` payload observation.
+  `2026-08-21T22:17:01Z` for the USD 362.86 current mark, indicators and payload-bound price hash.
 
 Next review: **2026-09-18**, or sooner after material delivery, margin, autonomy, regulatory,
 capital-spending, financing, Terafab, governance or guidance evidence.
