@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lh_sec_submissions_20260821",
+  "url": "https://data.sec.gov/submissions/CIK0000920148.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000920148.json",
+  "source_type": "regulator_index",
+  "title": "Labcorp Holdings Inc. SEC submissions index checked 2026-08-21",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2f9d794e497a7d8cf110f62301d5619b501563aa12236316ed0fc3118523d479",
+  "related_entity_ids": "security_b1f2c48e1a744f5ecf67",
+  "checked_at": "2026-08-21T22:54:07Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The latest substantive filings through August 21 are the August 17 Investor Day Form 8-K, August 11 leadership-change Form 8-K, and August 5 Q2 Form 10-Q.",
+  "summary": "The SEC submissions index confirms no later periodic or current report after the August 17 Investor Day notice through the research cutoff.",
+  "run_id": "daily-20260821T221654Z"
+}

@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_395eb51e8957014b2b74",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_lh_q2_2026_results",
+      "source_lh_q2_2026_10q"
+    ],
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate the edge if precision and automation offerings remain immaterial to organic growth and margins, reimbursement blocks adoption, or implementation costs absorb the customer and shareholder benefit.",
+    "proposed_mechanism": "Labcorp's diagnostics, specialty testing, Central Laboratories and advanced-technology investment can transmit validated precision-testing and laboratory-workflow adoption into volume, mix, recurring testing revenue and margins.",
+    "relationship_id": "relationship_395eb51e8957014b2b74",
+    "security_id": "security_b1f2c48e1a744f5ecf67"
+  },
+  "objective": "Review whether Labcorp has a material causal relationship to precision biology and healthcare automation using current primary evidence; accept or reject the edge.",
+  "operation_id": "01M0K8Z81G93S2C4Y3MZAR4G0Z",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_precision_biology_healthcare_automation.md",
+    "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md",
+    "source_lh_q2_2026_10q",
+    "source_lh_q2_2026_results"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lh_aug17_2026_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000185/lh-20260817.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000185/lh-20260817.htm",
+  "source_type": "filing",
+  "title": "Labcorp Holdings Inc. Form 8-K dated August 17, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e3c1fb53c06b7b231ec38eb2561d36b3258ccc1e4a69737dc134a0153da444c9",
+  "related_entity_ids": "security_b1f2c48e1a744f5ecf67",
+  "checked_at": "2026-08-21T22:54:07Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Labcorp scheduled a September 10 Investor Day covering go-forward strategy, capital deployment priorities and long-term financial outlook.",
+  "summary": "The filing establishes a near-term information catalyst but contains no long-term targets or revised financial guidance to incorporate into valuation yet.",
+  "run_id": "daily-20260821T221654Z"
+}

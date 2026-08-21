@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lh_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000175/lh-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000175/lh-20260630.htm",
+  "source_type": "filing",
+  "title": "Labcorp Holdings Inc. Form 10-Q for quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b14504954c9109ea5a3042ebf2193653849f41aa44d2c7848b67da40712f34f9",
+  "related_entity_ids": "security_b1f2c48e1a744f5ecf67",
+  "checked_at": "2026-08-21T22:54:07Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "At June 30 Labcorp reported USD 141.8 million cash, USD 5.858 billion long-term debt, and 80.9 million common shares outstanding; first-half operating cash flow was USD 637.0 million and capital expenditure USD 252.6 million.",
+  "summary": "The Q2 Form 10-Q confirms the release economics and adds balance-sheet, working-capital, acquisition, capital-spending, legal and reimbursement detail; leverage and cash conversion remain important valuation risks.",
+  "run_id": "daily-20260821T221654Z"
+}

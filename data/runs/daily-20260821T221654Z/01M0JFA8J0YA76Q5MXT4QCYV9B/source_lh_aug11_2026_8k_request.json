@@ -1,0 +1,18 @@
+{
+  "source_id": "source_lh_aug11_2026_8k",
+  "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000182/lh-20260811.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000182/lh-20260811.htm",
+  "source_type": "filing",
+  "title": "Labcorp Holdings Inc. Form 8-K dated August 11, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "71dfd66c30d239bdb124f98964a91793e552c1426d06f63597369c2a7333be7f",
+  "related_entity_ids": "security_b1f2c48e1a744f5ecf67",
+  "checked_at": "2026-08-21T22:54:07Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "Megan Bailey will resign as president of Central Laboratories and International effective September 4; Brian Caveney assumes leadership of Biopharma Laboratory Services effective September 1.",
+  "summary": "The filing discloses a senior leadership transition in the Biopharma Laboratory Services segment; it changes execution risk but provides no new financial guidance.",
+  "run_id": "daily-20260821T221654Z"
+}

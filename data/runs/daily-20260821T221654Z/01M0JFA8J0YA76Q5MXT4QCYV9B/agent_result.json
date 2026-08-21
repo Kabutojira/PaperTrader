@@ -1,0 +1,102 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_b1f2c48e1a744f5ecf67",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_aug11_2026_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_aug17_2026_8k_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_sec_submissions_20260821_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request_v3.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/enqueue_precision_biology_relationship_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Labcorp's August 20 bullish MACD transition strengthened through August 21, but refreshed Q2 valuation remains Hold/Watch and allocation-ineligible at USD 336.34; one precision-biology and healthcare-automation relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The unchanged SEC-hosted Q2 release reports USD 3.73 billion revenue, USD 4.99 adjusted EPS, and raised 2026 adjusted-EPS guidance of USD 18.10-18.55.",
+      "source": "source_lh_q2_2026_results",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000162/form8-kexhibit9912q26.htm"
+    },
+    {
+      "claim": "The Q2 Form 10-Q reports USD 141.8 million cash, USD 5.858 billion long-term debt, 80.9 million shares outstanding, USD 637.0 million first-half operating cash flow, and USD 252.6 million capital expenditure.",
+      "source": "source_lh_q2_2026_10q",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000175/lh-20260630.htm"
+    },
+    {
+      "claim": "The August 11 Form 8-K discloses Megan Bailey's September 4 resignation and Brian Caveney's September 1 assumption of Biopharma Laboratory Services leadership, adding execution-monitoring risk without changing guidance.",
+      "source": "source_lh_aug11_2026_8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000182/lh-20260811.htm"
+    },
+    {
+      "claim": "The August 17 Form 8-K schedules a September 10 Investor Day on strategy, capital deployment, and long-term financial outlook but provides no targets to incorporate yet.",
+      "source": "source_lh_aug17_2026_8k",
+      "url": "https://www.sec.gov/Archives/edgar/data/920148/000092014826000185/lh-20260817.htm"
+    },
+    {
+      "claim": "The SEC submissions index showed no later substantive periodic or current filing after the August 17 notice through the August 21 research cutoff.",
+      "source": "source_lh_sec_submissions_20260821",
+      "url": "https://data.sec.gov/submissions/CIK0000920148.json"
+    },
+    {
+      "claim": "Canonical alert data records an August 20 MACD cross above signal after a 4.23% rise from July 23 to August 20; the latest canonical August 21 mark was USD 336.3399963378906 with positive MACD, RSI 76.04, and an above-upper-band state.",
+      "source": "data/wiki/inbox/market-security_b1f2c48e1a744f5ecf67-macd_cross_above_signal-a788875b5d07.md",
+      "url": ""
+    },
+    {
+      "claim": "Deterministic schema-v2 assessment derives a USD 311.8625 probability-weighted fair value, -7.2776% expected return, -5.4582% confidence-adjusted expected return, USD 249.22 buy-below price, Hold/Watch status, and allocation ineligibility at the fresh mark.",
+      "source": "data/tables/security_assessments.csv",
+      "url": ""
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0K8Z81G93S2C4Y3MZAR4G0Z.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/enqueue_precision_biology_relationship_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/security_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_aug11_2026_8k_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_aug17_2026_8k_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_q2_2026_10q_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_sec_submissions_20260821_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0JFA8J0YA76Q5MXT4QCYV9B",
+  "operations_created": [
+    "01M0K8Z81G93S2C4Y3MZAR4G0Z"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one alert-driven Labcorp security review. The August 20 MACD cross was a genuine bullish momentum transition and the August 21 close reached USD 336.34, but refreshed Q2 and subsequent SEC evidence did not justify raising the unchanged USD 253.40/USD 311.525/USD 371.00 bear/base/bull values. Deterministic assessment remains Hold/Watch and allocation-ineligible because expected and base returns, downside payoff, margin of safety, and the accepted-relationship gate fail. Updated the security page and structured state, registered five current primary-source checks, and queued one dependent review of the plausible precision-biology and healthcare-automation relationship; no strategy work was justified.",
+  "validation": {
+    "checks": [
+      "Mandatory audited security-context lookup succeeded before repeat-assessment mutation and exposed the predecessor context.",
+      "Immutable issuer, instrument, XNYS venue, LH provider symbol, USD currency, and equity identity matched; validated security upsert succeeded.",
+      "Five retained SEC evidence records were registered or refreshed with current availability timestamps and content hashes.",
+      "Fresh canonical August 21 price and USD/EUR identity were accepted by deterministic assessment validation.",
+      "Scenario-v2 assessment accepted ordered 25/50/25 bear/base/bull cases, linked predecessor assessment_1bf1cef4a7d3b06546d3, source operation/result, and research-page hash in immutable history.",
+      "Two immutable assessment requests were rejected with no changed paths for noncanonical soft gaps and unsorted evidence; corrected immutable v3 request succeeded without weakening validation.",
+      "Complete maintained idea catalog and canonical relationship state were searched; the sole plausible unaccepted edge is explicitly labelled candidate with direction, mechanism, evidence, and invalidation on the security page.",
+      "Exactly one dependent relationship-research follow-up exists for the candidate edge; no payload or accepted canonical idea required an idea-research follow-up.",
+      "The deterministic full strategy gate did not pass, so no strategy or signal work was enqueued.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader queue validate returned OK [queue].",
+      "Observed operation delta contains no allocation target/history, order, execution, cash, portfolio, fill, or performance path."
+    ],
+    "passed": true
+  }
+}

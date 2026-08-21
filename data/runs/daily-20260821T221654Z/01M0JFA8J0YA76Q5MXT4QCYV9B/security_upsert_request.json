@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b1f2c48e1a744f5ecf67",
+  "issuer_id": "issuer_d0762758c05766ef1ab5",
+  "company_name": "Labcorp Holdings Inc.",
+  "instrument_name": "Labcorp Holdings Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "LH",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "LH",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Healthcare",
+  "industry": "Diagnostics & Research",
+  "status": "watching",
+  "watchlist_reason": "Large diagnostics and biopharma laboratory-services candidate; monitor organic growth, backlog conversion, reimbursement, leverage, cash conversion, leadership continuity, acquisitions, Investor Day and valuation.",
+  "research_summary": "Q2 strength remains, but USD 253.40/USD 311.53/USD 371.00 scenarios leave base and weighted value below the USD 336.34 mark despite bullish MACD.",
+  "research_page": "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md",
+  "last_research_at": "2026-08-21T22:54:07Z",
+  "next_review_at": "2026-09-04T22:54:07Z",
+  "source": "source_lh_q2_2026_results|source_lh_q2_2026_10q|source_lh_aug11_2026_8k|source_lh_aug17_2026_8k|source_lh_sec_submissions_20260821"
+}

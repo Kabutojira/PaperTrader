@@ -4597,3 +4597,17 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Retained USD 28/USD 87/USD 191 scenarios and Strong Sell / Avoid. The unchanged USD 90.10
   weighted value now implies about 51.69% downside, so no strategy, signal, paper order, allocation
   or accounting state changed.
+
+## [2026-08-21] update | Labcorp bullish-MACD security review
+- Updated [[securities/security_b1f2c48e1a744f5ecf67|Labcorp Holdings Inc. common stock]] after
+  the August 20 bullish MACD crossover and 4.23% measured-period rise; the August 21 mark reached
+  USD 336.34.
+- Registered the Q2 Form 10-Q, Biopharma leadership-change filing, Investor Day filing, and dated
+  SEC submissions index, and rechecked the unchanged Q2 results release. No new financial targets
+  support the technical rerating.
+- Retained USD 253.40/USD 311.53/USD 371.00 scenarios. The mark now exceeds base and weighted value,
+  leaving Labcorp Hold / Watch and allocation-ineligible despite improving momentum.
+- Added a clearly labelled candidate link to
+  [[ideas/idea_precision_biology_healthcare_automation|precision biology and healthcare automation]]
+  for a separate relationship review. No strategy, signal, paper order, allocation, or accounting
+  state changed.

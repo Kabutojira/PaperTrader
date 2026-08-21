@@ -1,0 +1,41 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0K8Z81G93S2C4Y3MZAR4G0Z.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/enqueue_precision_biology_relationship_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/security_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_aug11_2026_8k_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_aug17_2026_8k_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_q2_2026_10q_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01M0JFA8J0YA76Q5MXT4QCYV9B/source_lh_sec_submissions_20260821_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M0JFA8J0YA76Q5MXT4QCYV9B",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260821T221654Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}
