@@ -1,0 +1,57 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_83a56943e18793f685b0",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Texas Instruments' strengthened August 20 lower-Bollinger breach was rechecked against unchanged SEC primary evidence. The USD 265.60 mark modestly improves valuation but remains above the USD 205.20 buy-below level; Hold / Watch and allocation ineligibility remain unchanged, with no full-review escalation or paper action."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable alert packet binds security_83a56943e18793f685b0 to the exact 2026-07-23 through 2026-08-20 period, source price hash 0e829b05a93a1a8d391b1547ec722a31e20476390090bc9f7fb898c7af2a044e, USD 265.6000061035156 adjusted close, -6.3266% period return, and a strengthened lower-Bollinger breach. The price remains well above the USD 205.20 buy-below level and changes no decision gate.",
+      "observed_at": "2026-08-21T15:34:00Z",
+      "source": "data/wiki/inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-943760b250da.md",
+      "source_hash": "0e829b05a93a1a8d391b1547ec722a31e20476390090bc9f7fb898c7af2a044e"
+    },
+    {
+      "claim": "A current bounded recheck of the SEC submissions index returned the retained hash unchanged. The latest filing remains a July 31 Form 4; there is no periodic or current operating filing after the July 24 Form 10-Q to alter the baseline thesis, scenarios, catalysts, risks, or invalidation conditions.",
+      "observed_at": "2026-08-21T22:49:48Z",
+      "source": "source_txn_sec_submissions_20260820",
+      "source_hash": "b92c950d33086557b8323015dfab7395a8221efe280b756086d4688bf54fe35b",
+      "url": "https://data.sec.gov/submissions/CIK0000097476.json"
+    },
+    {
+      "claim": "The mandatory audited security context confirmed a fresh schema-v2 assessment sourced from the successful 2026-08-20 full review. Repricing its unchanged USD 150/USD 256.50/USD 374 scenarios at the payload's USD 265.60 mark yields approximately -43.52%/-3.43%/40.81% bear/base/bull returns, -2.39% expected return, and -1.79% confidence-adjusted return. Hold/Watch and allocation ineligibility remain unchanged, so the accepted assessment was reused and no escalation was created.",
+      "source": "assessment_b5ba326e8ee93ffa570b"
+    },
+    {
+      "claim": "The baseline full security review succeeded on 2026-08-20 for the same immutable security and retained broad end-market recovery, 300mm economics, third-quarter guidance conversion, cyclical and inventory risk, Silicon Labs financing risk, and the same valuation scenarios. It was less than ten days old when this quick check was enqueued.",
+      "source": "data/runs/daily-20260820T090239Z/01M0DTRCH8H390WYHAQK1SDDB0/agent_result.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0JFA8J0FV6JGJ2HSTDHME8K",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed a bounded Texas Instruments quick check against the exact 2026-07-23 through 2026-08-20 strengthened lower-Bollinger alert. The USD 265.60 mark modestly improves the unchanged USD 150/USD 256.50/USD 374 scenarios to -2.39% probability-weighted expected return, -1.79% confidence-adjusted return, and -3.43% base return, but does not reach the USD 205.20 buy-below level or clear any canonical valuation, payoff, margin-of-safety, confidence, or relationship gate. The SEC submissions index remains unchanged, with no operating filing after the July 24 Form 10-Q. Thesis, valuation assumptions, catalysts, risks, invalidation, Hold/Watch rating, and allocation ineligibility remain unchanged; fresh accepted assessment assessment_b5ba326e8ee93ffa570b was reused without repository mutation. No full security review, strategy, signal, order, allocation, or accounting change was warranted.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was consumed and confirmed matching immutable security, baseline operation, page hash, and current accepted assessment assessment_b5ba326e8ee93ffa570b.",
+      "Payload and candidate packet agree on security identity, trigger, exact market period, market date, market-data timestamp, and source_price_hash.",
+      "Current SEC submissions content hash matches the retained registered primary source; no newer operating filing was present.",
+      "Bounded comparison found no changed thesis, valuation or buy-zone assumption, catalyst, risk, invalidation, rating, action, eligibility gate, or decision-support gate; therefore the skill's no-delta assessment-reuse path applied and no assessment upsert was required.",
+      "Schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "Git whitespace validation passed before manifest creation; no agent-owned repository delta touched allocation, signals, orders, fills, executions, cash, portfolio, or performance."
+    ],
+    "passed": true
+  }
+}
