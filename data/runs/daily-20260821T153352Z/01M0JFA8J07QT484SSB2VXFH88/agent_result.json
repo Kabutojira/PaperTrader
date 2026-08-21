@@ -1,0 +1,88 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/source_vale_salobo_cpf_20260812_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/source_vale_fundao_municipalities_20260820_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/security_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/enqueue_full_research_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request_v3.json",
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "daily_report_items": [
+    "Vale's August 20 volume anomaly accompanied a 4.05% measured-period decline. Current Salobo and Fundão updates support existing project and remediation catalysts without changing the through-cycle scenario set; the USD 14.23 mark exceeds the USD 13.95 weighted fair value, retaining Hold / Watch and allocation ineligibility. Exactly one dependent full review was queued; no paper strategy or signal was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Vale advanced Salobo coarse-particle flotation to execution with expected first-half 2028 start-up, six million tonnes of added annual processing capacity, up to approximately 30,000 tonnes of annual copper and 15,000 ounces of by-product gold, and approximately USD 215 million estimated capital expenditure before USD 40 million of Wheaton funding.",
+      "observed_at": "2026-08-21T16:08:00Z",
+      "source": "Vale Salobo CPF project execution update",
+      "source_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+    },
+    {
+      "claim": "Nineteen additional eligible municipalities joined the definitive Fundão agreement on August 20, bringing formal adherence to 45 of 49; joining municipalities must waive related litigation and then follow the established payment schedule.",
+      "observed_at": "2026-08-21T16:08:00Z",
+      "source": "Vale Fundão agreement municipal-adherence update",
+      "source_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+    },
+    {
+      "claim": "VALE closed August 20 at USD 14.229999542236328 after a 4.0459% decline over July 23 through August 20. The 39.7998 million-share session produced a 2.4603 volume z-score and entered the configured anomaly; the payload source-price hash exactly matches the current indicator row.",
+      "observed_at": "2026-08-21T15:34:00Z",
+      "source": "PaperTrader deterministic market and indicator state",
+      "source_hash": "cee99a1725874ee418799249c758e2d7245db6689aef0da61dda19fd0e847d69"
+    },
+    {
+      "claim": "Assessment assessment_aca1444a4334b5a06a4f is the sole immutable version sourced from this operation and run, links predecessor assessment_fe094a743606836e58a0, and derives -36.7533%/1.8974%/40.5481% bear/base/bull returns, USD 13.95 probability-weighted fair value, -1.9677% expected return, -1.4758% confidence-adjusted expected return, USD 11.60 buy-below price, and an ineligible Hold/Watch disposition.",
+      "source": "PaperTrader deterministic assessment projection"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0JHGJJ0CWRHV9WGRJ6C4PK0.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/enqueue_full_research_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/security_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/source_vale_fundao_municipalities_20260820_request.json",
+    "data/runs/daily-20260821T153352Z/01M0JFA8J07QT484SSB2VXFH88/source_vale_salobo_cpf_20260812_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0JFA8J07QT484SSB2VXFH88",
+  "operations_created": [
+    "01M0JHGJJ0CWRHV9WGRJ6C4PK0"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Vale quick check after the August 20 volume anomaly. Current SEC-filed evidence advances Salobo coarse-particle flotation and broadens Fundão agreement adherence, supporting existing catalysts without changing the USD 9.00/USD 14.50/USD 20.00 through-cycle scenarios. The deterministic assessment at USD 14.23 derives a USD 13.95 probability-weighted fair value, -1.97% expected return, -1.48% confidence-adjusted return and Hold/Watch allocation-ineligible disposition. Registered both primary sources, updated the maintained security state, and created exactly one dependent full security review, 01M0JHGJJ0CWRHV9WGRJ6C4PK0. No strategy, signal, order, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied operation was the sole running LLM operation, claimed by daily-20260821T153352Z with a live lease, and matched the validated payload, immutable VALE/XNYS/USD/equity identity, successful recent baseline result, and trusted preflight skill hashes.",
+      "Consumed prior security context before assessment work and consumed it again after publication; the current assessment has run_id daily-20260821T153352Z and exactly one immutable history version sourced from operation 01M0JFA8J07QT484SSB2VXFH88.",
+      "Confirmed the payload source-price hash cee99a1725874ee418799249c758e2d7245db6689aef0da61dda19fd0e847d69 exactly matches the August 20 indicator row and retained the complete July 23 through August 20 period and volume-anomaly cause.",
+      "Registered both current SEC-filed sources before assessment publication and confirmed their available status, immutable security linkage, current check time, and byte hashes.",
+      "Confirmed assessment assessment_aca1444a4334b5a06a4f links its predecessor and expected result path, uses ordered scenarios and probabilities totaling 100, and has only permitted anchored scores.",
+      "Confirmed exactly one dependent security_research operation, 01M0JHGJJ0CWRHV9WGRJ6C4PK0, carries this quick-check identity, explicit full-research request and changed primary-evidence gate, exact alert period, trigger cause, and source-price hash.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation passed without changes from those checks.",
+      "Repository-wide allocation readiness remained false because of pre-existing stale assessments and relationship coverage gaps outside Vale; Vale's new assessment itself has fresh evidence and remains allocation-ineligible.",
+      "Two rejected assessment requests changed no repository paths; the successful uniquely named third request used the canonical current FX rate and sorted evidence references, and all three immutable audit receipts were retained.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source, or other security page was changed by this operation."
+    ],
+    "passed": true
+  }
+}

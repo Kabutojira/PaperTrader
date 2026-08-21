@@ -4481,3 +4481,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Retained the accepted but overdue copper-scarcity edge and added a clearly labelled structural-
   silver-deficit candidate for separate relationship review. No strategy, signal, paper order,
   allocation, or accounting state changed.
+
+## [2026-08-21T16:08:00Z] update | Vale volume-anomaly quick check
+
+- Rechecked [[securities/security_b2116dcf976c96974d7b|Vale]] against the exact 23 July through 20
+  August volume-anomaly period and current SEC-filed Salobo and Fundão updates. Salobo CPF execution
+  supports the copper-growth catalyst, and 45 of 49 eligible municipalities have joined the Fundão
+  agreement, but neither bounded update changes the through-cycle scenario set.
+- The USD 14.23 mark is slightly above the USD 14.20 weighted value; the USD 10.88 buy zone remains
+  unreached. Vale remains Watch and allocation-ineligible. One dependent full review is required;
+  no strategy, signal, paper order, allocation, or accounting state changed.

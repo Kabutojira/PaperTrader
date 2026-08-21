@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vale_fundao_municipalities_20260820",
+  "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm",
+  "source_type": "issuer_release",
+  "title": "Vale Fundão agreement municipal-adherence update",
+  "publisher": "Vale S.A. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+  "related_entity_ids": "security_b2116dcf976c96974d7b",
+  "checked_at": "2026-08-21T16:08:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Nineteen additional eligible municipalities joined, bringing formal adherence to 45 of 49 eligible municipalities.",
+  "summary": "Vale reported that 19 additional municipalities joined the definitive Fundão compensation and reparation agreement, bringing adherence to 45 of 49; joining municipalities must waive related litigation and receive catch-up installments before following the existing payment schedule.",
+  "run_id": "daily-20260821T153352Z"
+}

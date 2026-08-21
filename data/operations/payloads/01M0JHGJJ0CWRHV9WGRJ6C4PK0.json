@@ -1,0 +1,42 @@
+{
+  "entity_id": "security_b2116dcf976c96974d7b",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KYPB2KN8R1RGAPDZQ2AN9P2V",
+    "changed_gate": "full_research_requested_and_new_salobo_fundao_primary_evidence",
+    "market_data_as_of": "2026-08-21T15:34:00Z",
+    "market_data_date": "2026-08-20",
+    "period_end": "2026-08-20",
+    "period_start": "2026-07-23",
+    "quick_check_operation_id": "01M0JFA8J07QT484SSB2VXFH88",
+    "research_reasons": [
+      {
+        "cause": "volume_anomaly",
+        "source_ref": "data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738.md"
+      },
+      {
+        "cause": "full_research_requested",
+        "source_ref": "data/operations/payloads/01M0JFA8J07QT484SSB2VXFH88.json"
+      },
+      {
+        "cause": "new_salobo_and_fundao_primary_evidence",
+        "source_ref": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+      }
+    ],
+    "security_id": "security_b2116dcf976c96974d7b",
+    "source_price_hash": "cee99a1725874ee418799249c758e2d7245db6689aef0da61dda19fd0e847d69",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Fully reassess Vale after the bounded quick check identified current Salobo project and Fundão agreement evidence alongside the August 20 volume anomaly.",
+  "operation_id": "01M0JHGJJ0CWRHV9WGRJ6C4PK0",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/operations/payloads/01M0JFA8J07QT484SSB2VXFH88.json",
+    "data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738.md",
+    "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm",
+    "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+  ]
+}
