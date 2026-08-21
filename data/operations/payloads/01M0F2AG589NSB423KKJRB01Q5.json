@@ -4,14 +4,47 @@
   "inputs": {
     "assessment_state": "2026-07-27T23:39:45Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-21T15:34:00Z",
+    "market_data_date": "2026-08-20",
+    "period_end": "2026-08-20",
+    "period_start": "2026-07-23",
     "research_page": "data/wiki/securities/security_6ad1af8d10d6276a0221.md",
-    "security_id": "security_6ad1af8d10d6276a0221"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_6ad1af8d10d6276a0221:allocation-maintenance:2026-07-27T23:39:45Z",
+        "observed_at": "2026-08-20T07:49:13Z",
+        "prompt": "Revalidate security_6ad1af8d10d6276a0221 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_scco_q1_2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_6ad1af8d10d6276a0221:79ee328525caaaba80d4:2026-08-20",
+        "market_data_date": "2026-08-20",
+        "observed_at": "2026-08-21T15:34:00Z",
+        "prompt": "Research security_6ad1af8d10d6276a0221 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-36c1117d05aa.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_6ad1af8d10d6276a0221",
+    "source_price_hash": "23c80dda3bf3e83146e066cc8cd7830b2faf916ab16a28154deee10a8669d1dc",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_6ad1af8d10d6276a0221 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_6ad1af8d10d6276a0221 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_6ad1af8d10d6276a0221 with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01M0F2AG589NSB423KKJRB01Q5",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-36c1117d05aa.md",
     "source_scco_q1_2026_results"
   ]
 }

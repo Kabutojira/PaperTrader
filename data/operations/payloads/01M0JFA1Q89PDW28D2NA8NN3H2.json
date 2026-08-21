@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_Sij_v-mcZXQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-21T15:33:53Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_Sij_v-mcZXQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "Sij_v-mcZXQ",
+    "video_title": "Dario Defends Himself, Datacenter Panic, AI Doomer Trap, Senate Toss-Up",
+    "video_url": "https://www.youtube.com/watch?v=Sij_v-mcZXQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0JFA1Q89PDW28D2NA8NN3H2",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=Sij_v-mcZXQ"
+  ]
+}

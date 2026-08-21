@@ -1,0 +1,54 @@
+{
+  "entity_id": "security_b2116dcf976c96974d7b",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-13T23:18:51Z",
+    "baseline_completed_at": "2026-08-13T23:23:57Z",
+    "baseline_operation_id": "01KYPB2KN8R1RGAPDZQ2AN9P2V",
+    "baseline_result_path": "data/runs/daily-20260813T231401Z/01KYPB2KN8R1RGAPDZQ2AN9P2V/agent_result.json",
+    "full_research_requested": true,
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-21T15:34:00Z",
+    "market_data_date": "2026-08-20",
+    "period_end": "2026-08-20",
+    "period_start": "2026-07-23",
+    "research_page": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "quick_check_research:security_b2116dcf976c96974d7b:450448a777c7882eb7c0:2026-08-20",
+        "observed_at": "2026-08-21T15:34:00Z",
+        "prompt": "Quick-check security_b2116dcf976c96974d7b after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_b2116dcf976c96974d7b:allocation-maintenance:2026-08-13T23:18:51Z",
+        "observed_at": "2026-08-21T15:34:00Z",
+        "prompt": "Revalidate security_b2116dcf976c96974d7b with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_vale_q2_2026_ifrs",
+          "source_vale_q2_2026_production",
+          "source_vale_q2_2026_results"
+        ]
+      }
+    ],
+    "security_id": "security_b2116dcf976c96974d7b",
+    "source_price_hash": "cee99a1725874ee418799249c758e2d7245db6689aef0da61dda19fd0e847d69",
+    "trigger_types": [
+      "volume_anomaly"
+    ]
+  },
+  "objective": "Quick-check security_b2116dcf976c96974d7b after price-action alerts: volume_anomaly; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_b2116dcf976c96974d7b with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0JFA8J07QT484SSB2VXFH88",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738.md",
+    "source_vale_q2_2026_ifrs",
+    "source_vale_q2_2026_production",
+    "source_vale_q2_2026_results"
+  ]
+}

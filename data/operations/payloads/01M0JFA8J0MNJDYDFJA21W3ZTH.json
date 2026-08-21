@@ -1,0 +1,18 @@
+{
+  "entity_id": "opportunity_4c83b6c19052c9661713",
+  "entity_type": "opportunity",
+  "inputs": {
+    "market_data_as_of": "2026-08-21T15:34:00Z",
+    "period_end": "2026-08-20",
+    "period_start": "2026-07-23",
+    "security_id": "security_1e8fbdb0f45f2b413e00",
+    "trigger_type": "sma_50_cross_above_200"
+  },
+  "objective": "Assess security_1e8fbdb0f45f2b413e00 sma_50_cross_above_200 transition as opportunity, risk, or noise.",
+  "operation_id": "01M0JFA8J0MNJDYDFJA21W3ZTH",
+  "operation_type": "opportunity_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_1e8fbdb0f45f2b413e00-sma_50_cross_above_200-4e5bdddfffe8.md"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "entity_id": "relationship_2c06c102ba71bd54c3d4",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_japan_sanaenomics_strategic_investment",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_2c06c102ba71bd54c3d4",
+    "security_id": "security_96ba305ee7cd586bc348"
+  },
+  "objective": "Review the canonical relationship from idea_japan_sanaenomics_strategic_investment to security_96ba305ee7cd586bc348 and accept or reject it with current evidence.",
+  "operation_id": "01M0JFA8J057KYJGD2FBM6RGD2",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_fanuc_q1_fy2026_reference",
+    "source_fanuc_q1_fy2026_results"
+  ]
+}

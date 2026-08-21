@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-20"
+updated: "2026-08-21"
 provenance: repository-contract
 ---
 
@@ -4424,3 +4424,41 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Retained the humanoid-robotics idea as a candidate requiring one separate relationship review and
   rejected the Japan strategic-investment adjacency absent an attributable funded FANUC order. No
   strategy, signal, paper order, allocation, or accounting state changed.
+
+## 2026-08-21
+
+- Created candidate packet [[inbox/market-security_099561384c0f5e697727-macd_cross_below_signal-e5d99fca7580]] (e5d99fca7580).
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-3be72a6d2666]] (3be72a6d2666).
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-sma_50_cross_above_200-4e5bdddfffe8]] (4e5bdddfffe8).
+
+- Classified [[inbox/market-security_1e8fbdb0f45f2b413e00-sma_50_cross_above_200-4e5bdddfffe8]] as `ingest`: Material bullish SMA 50/200 crossover with an 11.25% period return merits durable security monitoring.
+
+- Created candidate packet [[inbox/market-security_2c779e81c27b78c556bb-macd_cross_below_signal-732b923d0c54]] (732b923d0c54).
+
+- Created candidate packet [[inbox/market-security_37ddcbdaad296ad831f2-bollinger_above_upper-cfeda609cca5]] (cfeda609cca5).
+
+- Created candidate packet [[inbox/market-security_4b61970aa8f574446819-macd_cross_below_signal-5f55154f8a8c]] (5f55154f8a8c).
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-36c1117d05aa]] (36c1117d05aa).
+
+- Classified [[inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-36c1117d05aa]] as `ingest`: A new MACD bullish crossover accompanied by a material 9.06% period return merits durable market-transition documentation.
+
+- Created candidate packet [[inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-943760b250da]] (943760b250da).
+
+- Classified [[inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-943760b250da]] as `ingest`: Strengthened lower-Bollinger breach with a material negative period return merits durable review.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-bollinger_above_upper-0769fc1ae2d8]] (0769fc1ae2d8).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-macd_cross_above_signal-a788875b5d07]] (a788875b5d07).
+
+- Classified [[inbox/market-security_b1f2c48e1a744f5ecf67-macd_cross_above_signal-a788875b5d07]] as `ingest`: Material bullish MACD crossover with a 14.36% period return merits durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-799473b68b7f]] (799473b68b7f).
+
+- Created candidate packet [[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738]] (d0e9c4efb738).
+
+- Classified [[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738]] as `ingest`: New volume anomaly coincides with a 4.05% decline over the period and merits durable review.
+
+- Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-26aab9bc8d3f]] (26aab9bc8d3f).
