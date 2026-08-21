@@ -1,0 +1,90 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_2dbe878dfc899d7ee867",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/source_fcx_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/source_fcx_q2_2026_10q_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/source_fcx_sec_submissions_20260821_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/enqueue_idea_refresh_request.json",
+    "papertrader research security-context --security-id security_2dbe878dfc899d7ee867",
+    "papertrader schema validate",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader allocation readiness --strict"
+  ],
+  "daily_report_items": [
+    "FCX entered a 2.9649-z-score volume anomaly after a 22.46% July 24-August 21 rise to USD 76.66. Current SEC filings do not validate the rerating; unchanged USD 32.64/USD 47.36/USD 65.12 scenarios derive Strong Sell / Avoid and no paper trade."
+  ],
+  "evidence": [
+    {
+      "claim": "The filing confirms Q2 economics, USD 9.4 billion consolidated debt, USD 4.1 billion cash, USD 2.1 billion stated net debt excluding USD 3.2 billion of PTFI downstream debt, the multi-quarter Grasberg recovery schedule, and continuing Indonesian operating-rights and export-proceeds uncertainty.",
+      "observed_at": "2026-08-21T22:32:19Z",
+      "source": "Freeport-McMoRan Form 10-Q for quarter ended June 30, 2026",
+      "source_hash": "06c40f7177c80117e8cd6340e67ca515e47d18049fdaaf98a84fc9ebac332d75",
+      "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000036/fcx-20260630.htm"
+    },
+    {
+      "claim": "The unchanged exhibit reports USD 0.74 adjusted EPS, 710 million pounds of copper sales, USD 6.17 per pound realization, USD 1.97 per pound unit net cash cost, USD 2.048 billion operating cash flow and USD 1.104 billion capital spending.",
+      "observed_at": "2026-08-21T22:32:19Z",
+      "source": "Freeport-McMoRan SEC-filed Q2 2026 results exhibit",
+      "source_hash": "9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1",
+      "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm"
+    },
+    {
+      "claim": "The August 6 Form 10-Q is the latest issuer operating filing through August 21; later ownership and planned-sale forms do not change the production, recovery or valuation evidence.",
+      "observed_at": "2026-08-21T22:32:19Z",
+      "source": "Freeport-McMoRan SEC submissions index checked 2026-08-21",
+      "source_hash": "02af3f3ffe61f8b2d86ba3a6bcbec7445562f2270a39b85b1e8460640c72ff67",
+      "url": "https://data.sec.gov/submissions/CIK0000831259.json"
+    },
+    {
+      "claim": "The identity-matched August 21 mark is USD 76.66000366210938; the July 24-August 21 return is 22.46%, volume is 28.485 million shares with a 2.9649 z-score, RSI is 69.30, and the close is above the upper Bollinger band.",
+      "observed_at": "2026-08-21T22:17:01Z",
+      "source": "data/market/prices/security_2dbe878dfc899d7ee867.csv and canonical alert payload",
+      "source_hash": "32da069b983513fb310a04b088dac01b8d01f09f24de80dc551abe49bd1d6de1"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0K7FAV0EYBC68Z0FHX5BZ6E.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/assessment_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/security_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/source_fcx_q2_2026_10q_request.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/source_fcx_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/source_fcx_sec_submissions_20260821_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZYPF0GRA32SWZ3RHSWBTVXT",
+  "operations_created": [
+    "01M0K7FAV0EYBC68Z0FHX5BZ6E"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Freeport-McMoRan security review for the August 21 volume anomaly. FCX rose 22.46% over the canonical July 24-August 21 period to USD 76.66, with 28.485 million shares traded and a 2.9649 volume z-score, but the August 6 Form 10-Q confirms rather than improves the July operating evidence and the current SEC index contains no later issuer operating filing. Retained USD 32.64/USD 47.36/USD 65.12 cyclical scenarios with 30%/50%/20% probabilities. Deterministic normalization derives USD 46.496 weighted value, negative 39.35% expected return, Strong Sell / Avoid and allocation ineligibility. Updated the maintained security page and structured security state, registered three current primary sources, appended exactly one immutable assessment linked to its predecessor, and enqueued exactly one dependent copper-idea refresh. The accepted copper relationship remains current, no additional idea edge met the material-mechanism threshold, and no strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "The mandatory pre-assessment security-context command succeeded and the post-upsert context confirms assessment assessment_6ffbd4d9a60b2870039b, predecessor assessment_133af242d4395e331a47, schema version 2, source operation/result identity, and matching current research-page hash.",
+      "Identity deduplication found exactly one FCX/XNYS/USD/equity identity for security_2dbe878dfc899d7ee867.",
+      "The current assessment uses the fresh identity-matched USD 76.66000366210938 mark and 0.8562999963760376 USD-to-EUR rate, both timestamped 2026-08-21T22:17:01Z.",
+      "All three retained assessment sources are registered as available and checked at 2026-08-21T22:32:19Z.",
+      "Exactly one immutable assessment version was created for this operation and exactly one dependent idea refresh, 01M0K7FAV0EYBC68Z0FHX5BZ6E, was enqueued for the sole current accepted linked idea.",
+      "The complete idea catalog and canonical relationship state were reviewed; the accepted copper relationship is current and no unaccepted, stale or contradicted material edge required a relationship follow-up.",
+      "Schema validation, queue validation, strict wiki lint, strict integrity, strict portfolio reconciliation and git diff whitespace validation passed.",
+      "Repository-wide allocation readiness remained false for pre-existing stale assessments and relationship gaps outside this security; no readiness error identified FCX, whose current assessment is complete and deterministically ineligible.",
+      "No strategy, signal, order, allocation target/history, execution, cash, portfolio or performance state changed."
+    ],
+    "passed": true
+  }
+}

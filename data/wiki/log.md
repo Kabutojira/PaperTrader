@@ -4577,3 +4577,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
   submissions index; no later operating filing changed guidance or explained the pullback.
 - Kept USD 142/USD 179.375/USD 246.50 scenarios and Sell / Avoid. The USD 209.91 mark remains above
   weighted and base value despite improved timing, so no paper trade was created.
+
+## [2026-08-21] update | Freeport-McMoRan volume-anomaly security review
+- Updated [[securities/security_2dbe878dfc899d7ee867|Freeport-McMoRan Inc. common stock]] after the
+  August 21 volume anomaly and 22.46% measured-period rise to USD 76.66.
+- Registered the August 6 Form 10-Q and dated SEC submissions index. The filing confirms the Q2
+  economics, Grasberg recovery schedule, balance sheet and outlook; no later operating filing
+  validates the market rerating.
+- Retained USD 32.64/USD 47.36/USD 65.12 normalized cyclical scenarios and Sell / Avoid. Every
+  scenario remains below market, so no strategy, signal, paper order, allocation or accounting
+  state changed.

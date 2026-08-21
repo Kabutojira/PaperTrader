@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fcx_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000036/fcx-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000036/fcx-20260630.htm",
+  "source_type": "filing",
+  "title": "Freeport-McMoRan Form 10-Q for quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "06c40f7177c80117e8cd6340e67ca515e47d18049fdaaf98a84fc9ebac332d75",
+  "related_entity_ids": "idea_critical_minerals_copper|security_2dbe878dfc899d7ee867",
+  "checked_at": "2026-08-21T22:32:19Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The filing reports USD 9.4 billion consolidated debt, USD 4.1 billion cash and USD 2.1 billion net debt excluding USD 3.2 billion of PTFI downstream debt.",
+  "summary": "The August 6 Form 10-Q confirms the Q2 exhibit economics, balance sheet, Grasberg recovery schedule, 2026 sales, cost, cash-flow and capital-spending outlook, IUPK application and export-proceeds uncertainty; it adds no evidence that supports the market rerating.",
+  "run_id": "daily-20260821T221654Z"
+}

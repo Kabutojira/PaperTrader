@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fcx_q2_2026_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/831259/000083125926000033/a2q2026exhibit991.htm",
+  "source_type": "filing",
+  "title": "Freeport-McMoRan Q2 2026 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9648b4b5a97527a68f711129b7183ecae140adeafd91768269df87f963ec6af1",
+  "related_entity_ids": "idea_critical_minerals_copper|security_2dbe878dfc899d7ee867",
+  "checked_at": "2026-08-21T22:32:19Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 adjusted EPS was USD 0.74, copper sales were 710 million pounds, realization was USD 6.17 per pound and unit net cash cost was USD 1.97 per pound.",
+  "summary": "The SEC-filed Q2 results exhibit is byte-for-byte unchanged and remains the operating evidence for production, sales, realized prices, unit costs, earnings, cash flow, capital spending, net debt, Grasberg recovery and Indonesian operating-rights analysis.",
+  "run_id": "daily-20260821T221654Z"
+}

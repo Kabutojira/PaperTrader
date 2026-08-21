@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_critical_minerals_copper",
+  "dedupe_key": "idea_research:idea_critical_minerals_copper:security-result:01KZYPF0GRA32SWZ3RHSWBTVXT",
+  "prompt": "Refresh the structural copper-scarcity idea from Freeport-McMoRan's completed volume-anomaly review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_copper",
+    "seed_claim": "Freeport-McMoRan's August 6 Form 10-Q confirms prior operating and recovery assumptions, while the August 21 volume-backed rise to USD 76.66 leaves all USD 32.64/USD 47.36/USD 65.12 scenarios below market; Sell / Avoid remains unchanged.",
+    "security_id": "security_2dbe878dfc899d7ee867",
+    "security_research_operation_id": "01KZYPF0GRA32SWZ3RHSWBTVXT",
+    "security_research_result_path": "data/runs/daily-20260821T221654Z/01KZYPF0GRA32SWZ3RHSWBTVXT/agent_result.json"
+  },
+  "source": "security_research:01KZYPF0GRA32SWZ3RHSWBTVXT",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZYPF0GRA32SWZ3RHSWBTVXT"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+  ],
+  "max_attempts": 3
+}

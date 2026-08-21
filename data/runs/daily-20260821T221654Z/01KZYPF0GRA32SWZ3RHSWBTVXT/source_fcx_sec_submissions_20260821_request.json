@@ -1,0 +1,18 @@
+{
+  "source_id": "source_fcx_sec_submissions_20260821",
+  "url": "https://data.sec.gov/submissions/CIK0000831259.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000831259.json",
+  "source_type": "regulator_index",
+  "title": "Freeport-McMoRan SEC submissions index checked 2026-08-21",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "02af3f3ffe61f8b2d86ba3a6bcbec7445562f2270a39b85b1e8460640c72ff67",
+  "related_entity_ids": "idea_critical_minerals_copper|security_2dbe878dfc899d7ee867",
+  "checked_at": "2026-08-21T22:32:19Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The August 6 Form 10-Q is the latest issuer operating filing after the July 23 results; later operating filings are absent through August 21.",
+  "summary": "The current SEC submissions index identifies the August 6 Form 10-Q as the latest issuer operating filing and no later operating disclosure through the August 21 market date; ownership and planned-sale forms do not change the thesis or valuation.",
+  "run_id": "daily-20260821T221654Z"
+}
