@@ -4587,3 +4587,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Retained USD 32.64/USD 47.36/USD 65.12 normalized cyclical scenarios and Sell / Avoid. Every
   scenario remains below market, so no strategy, signal, paper order, allocation or accounting
   state changed.
+
+## [2026-08-21] update | Coinbase strengthened-volume security review
+- Updated [[securities/security_37ddcbdaad296ad831f2|Coinbase Global, Inc. Class A common stock]]
+  after the August 21 volume anomaly strengthened alongside a 17.82% measured-period rise to
+  USD 186.49 and an upper-Bollinger breach.
+- Rechecked the unchanged Q2 Form 10-Q and SEC submissions index; no newer issuer operating filing
+  explains the rerating or changes the cycle-normalized assumptions.
+- Retained USD 28/USD 87/USD 191 scenarios and Strong Sell / Avoid. The unchanged USD 90.10
+  weighted value now implies about 51.69% downside, so no strategy, signal, paper order, allocation
+  or accounting state changed.

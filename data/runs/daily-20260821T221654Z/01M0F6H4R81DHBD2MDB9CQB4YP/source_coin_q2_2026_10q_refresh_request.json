@@ -1,0 +1,18 @@
+{
+  "source_id": "source_coin_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1679788/000167978826000088/coin-20260630.htm",
+  "source_type": "filing",
+  "title": "Coinbase Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "6f3db6aeb84e14d70e5376fc83e5ac6b57c10798ee8ec6fa1c9a3a249240060a",
+  "related_entity_ids": "idea_digital_finance_crypto_rails|security_37ddcbdaad296ad831f2",
+  "checked_at": "2026-08-21T22:43:18Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 net revenue was USD 1.154 billion, including USD 599 million transaction revenue, USD 555 million subscription and services revenue, and USD 292 million stablecoin revenue.",
+  "summary": "Rechecked Coinbase's Q2 2026 filing for operating mix, liquidity, debt, dilution, custody obligations and counterparty concentration; the retained SEC-hosted filing hash is unchanged.",
+  "run_id": "daily-20260821T221654Z"
+}
