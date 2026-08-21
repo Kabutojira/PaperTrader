@@ -4541,6 +4541,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-9e64ca369e1d]] (9e64ca369e1d).
 
+- Published investor decision snapshot `decision_cdd3e1e082062c31fd52`.
+
+- Generated canonical [[daily-reports/daily-report_20260821]] for run `daily-20260821T221654Z`.
+
 ## [2026-08-21] update | PayPal alert-driven security review
 - Updated [[securities/security_1e8fbdb0f45f2b413e00|PayPal Holdings, Inc. common stock]] after the August 20 SMA 50/200 bullish crossover.
 - Rechecked the SEC submissions index and unchanged Q2 Form 10-Q and results filing; no newer issuer operating filing changed the maintained assumptions.

@@ -7,13 +7,13 @@ tags:
 created: "2026-08-21"
 updated: "2026-08-21"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_c73c7635e6af6185d9f8"
-as_of: "2026-08-21T16:28:37Z"
+snapshot_id: "decision_cdd3e1e082062c31fd52"
+as_of: "2026-08-21T23:39:17Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-21T16:28:37Z`
+**As of:** `2026-08-21T23:39:17Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-21T16:28:37Z"
 
 ## Coverage
 
-- Assessments: 49/70
-- Fresh-evidence assessments: 45/70
+- Assessments: 51/70
+- Fresh-evidence assessments: 47/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-21T16:28:37Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 409
+- Research backlog: 427
 - Last successful daily run: 2026-08-20
 
 ## Current issues by investment impact
@@ -72,6 +72,7 @@ as_of: "2026-08-21T16:28:37Z"
 - Error **CRWD — CrowdStrike Holdings, Inc.: CrowdStrike full assessment rejected by canonical market identity** — The required schema-v2 assessment for [[securities/security_8472507d7d320aa388a7|CRWD]] was rejected before any assessment state changed because immutable request assessment_upsert_request.json used reference price 123.87000274658203 and market timestamp 2026-08-10T22:29:57Z, while canonical data/market/latest.csv records adjusted close 225.16000366210938 retrieved at 2026-08-10T22:29:08Z. The operation contract forbids editing a used request or retrying a rejected project command, so this operation must fail close
 - Error **Local harness operation validation failed: [[securities/security_4627aea1bf7d8943d3d8|Quick check research for SGML on 2026-08-06]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_1f9cce545ede94cd6349|Quick check research for ISRG on 2026-08-11]]** — repeat security research page requires a Changes since prior review section
+- Error **Hermes operation validation failed: [[securities/security_ad3b1f8f59fd599f079a|Security research for HOOD on 2026-08-21]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-10]]** — agent result schema: Additional properties are not allowed ('operation_id' was unexpected); agent result schema: Additional properties are not allowed ('source_ref' was unexpected); agent result schema: Additional properties are not allowed ('source_refs' was unexpected); commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260810|Daily report for 2026-08-10]]/01KZ9ZJVERX5NYGBGE6Z
 - Error **COIN — Coinbase Global, Inc.: Coinbase assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_37ddcbdaad296ad831f2|COIN]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_37ddcbdaad296ad831f2|Quick check research for COIN on 2026-08-09]] and current security_research [[securities/security_37ddcbdaad296ad831f2|Security research for COIN on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects more than one same-security source operation as ambiguous. The assessment request has no source-operation selector, so this routed operation cannot repair provenance without an out-of-scope code
 - Error **RKLB — Rocket Lab Corporation: Rocket Lab assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_7ca095d63423c55a90e3|RKLB]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_7ca095d63423c55a90e3|Quick check research for RKLB on 2026-08-09]] and current security_research [[securities/security_7ca095d63423c55a90e3|Security research for RKLB on 2026-08-09]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
@@ -190,7 +191,7 @@ as_of: "2026-08-21T16:28:37Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 409 active operations.
+Showing 20 of 427 active operations.
 
 <details><summary>Active research work</summary>
 
