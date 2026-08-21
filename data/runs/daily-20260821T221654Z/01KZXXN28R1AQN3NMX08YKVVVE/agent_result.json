@@ -1,0 +1,100 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_59304f90c440def31dc5",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/source_rtx_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/source_rtx_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/source_rtx_sec_submissions_20260821_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/enqueue_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security upsert --request data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/security_upsert_retry01_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "RTX entered its lower Bollinger band after a 1.35% measured-period decline, reversing the prior overbought condition without a new fundamental catalyst. Unchanged USD 142/USD 179.375/USD 246.50 scenarios imply USD 186.8125 weighted value versus USD 209.91; deterministic output is Hold / Watch and allocation-ineligible. One defense-and-aerospace idea refresh was queued; no paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed Q2 Form 10-Q remains RTX's latest periodic operating filing through August 21 and supports the maintained backlog, segment economics, cash, debt, share-count, fixed-price contract, and Pratt remediation analysis.",
+      "observed_at": "2026-08-21T22:21:09Z",
+      "source": "source_rtx_q2_2026_10q_sec",
+      "source_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+    },
+    {
+      "claim": "The SEC-filed Q2 results exhibit remains the latest issuer operating update and retains 2026 adjusted EPS guidance of USD 7.10-7.25 and free-cash-flow guidance of USD 8.50-8.75 billion, supporting the unchanged earnings scenario inputs.",
+      "observed_at": "2026-08-21T22:21:09Z",
+      "source": "source_rtx_q2_2026_results_sec_ex99",
+      "source_hash": "4fc01f125ed3318eb3f2e1f15d64c312bd38c0663b1c86a42ab37317124528e6",
+      "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000025/a2026-07x238xkerexhibit99.htm"
+    },
+    {
+      "claim": "The dated SEC submissions index lists the July 23 Form 10-Q and results Form 8-K as RTX's latest operating filings through August 21; later entries are Forms 4 and 144 and provide no new operating evidence explaining the pullback.",
+      "observed_at": "2026-08-21T22:21:09Z",
+      "source": "source_rtx_sec_submissions_20260821",
+      "source_hash": "64a89e4194541c25ec8b440e690ac38017849337679aa77b43ffa5e3acc6c2f6",
+      "url": "https://data.sec.gov/submissions/CIK0000101829.json"
+    },
+    {
+      "claim": "The exact July 24-August 21 packet records a USD 209.91000366210938 adjusted close, a -1.346221874133605% period return, entry 0.5627727982394442% below the lower Bollinger band, RSI 45.04160957375743, negative MACD histogram, and fresh identity-matched USD/EUR FX of 0.8562999963760376 at 2026-08-21T22:17:01Z.",
+      "observed_at": "2026-08-21T22:17:01Z",
+      "source": "PaperTrader deterministic alert, market, indicator, and FX caches",
+      "source_hash": "0aed62bc32e743a9f3f936022412688494a18458185d50988411588ba1c0a2cf"
+    },
+    {
+      "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_d7a8c8f63eb1a1be48ee, the expected result path, page hash e8d6dcd3c1901e748b430b5ac7c9cea3b480880de6487b37ba3dc6740a6804e7, three current registered sources, and fresh price/FX identity. Deterministic normalization derives USD 186.8125 probability-weighted fair value, -11.003526873016145% expected return, -8.252645154762109% confidence-adjusted expected return, USD 143.50 buy-below price, Hold / Watch, and allocation ineligibility.",
+      "observed_at": "2026-08-21T22:21:09Z",
+      "source": "assessment_1390c2b0774d36c9647c"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0K6V97R0NCNXKN173506E1K.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/assessment_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/security_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/security_upsert_retry01_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/source_rtx_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/source_rtx_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/source_rtx_sec_submissions_20260821_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZXXN28R1AQN3NMX08YKVVVE",
+  "operations_created": [
+    "01M0K6V97R0NCNXKN173506E1K"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded alert-driven RTX security review. The August 21 lower-Bollinger transition followed a 1.35% measured-period decline and reversed the prior overbought condition, but current SEC primary evidence contains no operating filing after the July 23 Q2 Form 10-Q and results Form 8-K. The mature-compounder scenarios remain USD 142.00/USD 179.375/USD 246.50 with a USD 186.8125 probability-weighted value versus the USD 209.91 mark. Deterministic output is Hold / Watch, allocation-ineligible, with negative expected and base returns; no strategy, signal, paper order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed. Refreshed exactly one dependent defense-and-aerospace idea operation; the accepted relationship already has one dependent canonical review queued.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected row was the sole routed running operation, claimed by daily-20260821T221654Z with a live lease, validated alert payload, and immutable RTX/XNYS/USD/equity identity.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and used the prior assessment, prior successful result, retained sources, accepted relationship, and linked page state.",
+      "Verified the exact lower-Bollinger trigger, market date, observation period, source-price hash, fresh mark, and USD/EUR FX identity against canonical deterministic state.",
+      "Retrieved the current SEC Q2 Form 10-Q, SEC-filed results exhibit, and dated submissions index with HTTP 200 and registered all three retained primary sources before assessment upsert; no source body was committed.",
+      "Searched the complete maintained idea catalog and canonical relationship table. The defense-and-aerospace edge remains evidence-supported but due and already has exactly one dependent canonical relationship review; no additional idea pairing had a specific material RTX transmission mechanism.",
+      "Confirmed assessment_1390c2b0774d36c9647c is the sole immutable version for this operation and links predecessor assessment_d7a8c8f63eb1a1be48ee, schema version 2, expected result path, current page hash, evidence, and run provenance.",
+      "Created exactly one dependent idea-research follow-up for the payload and accepted defense-and-aerospace idea, and no strategy follow-up because expected return, base return, payoff, and margin-of-safety gates fail.",
+      "Final strict wiki lint returned OK [wiki], strict schema validation returned OK [schema], queue validation returned OK [queue], strict repository integrity returned OK [integrity], and strict portfolio reconciliation returned OK [portfolio].",
+      "Git inspection confirmed no allocation target/history, order, execution, cash, portfolio, fill, performance, or accounting ledger path changed."
+    ],
+    "passed": true
+  }
+}

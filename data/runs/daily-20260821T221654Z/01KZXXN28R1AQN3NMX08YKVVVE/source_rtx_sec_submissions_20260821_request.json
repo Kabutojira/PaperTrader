@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rtx_sec_submissions_20260821",
+  "url": "https://data.sec.gov/submissions/CIK0000101829.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000101829.json",
+  "source_type": "regulator_index",
+  "title": "RTX Corporation SEC submissions index checked 2026-08-21",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "64a89e4194541c25ec8b440e690ac38017849337679aa77b43ffa5e3acc6c2f6",
+  "related_entity_ids": "security_59304f90c440def31dc5",
+  "checked_at": "2026-08-21T22:21:09Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The index lists the July 23 Form 10-Q and results Form 8-K as the latest RTX operating filings through August 21; later entries are Forms 4 and 144.",
+  "summary": "The dated SEC submissions index confirms that no later RTX operating filing changes the maintained Q2 evidence or explains the August lower-Bollinger transition.",
+  "run_id": "daily-20260821T221654Z"
+}

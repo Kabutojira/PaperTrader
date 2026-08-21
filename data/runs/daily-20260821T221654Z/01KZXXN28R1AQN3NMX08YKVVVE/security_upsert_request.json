@@ -1,0 +1,23 @@
+{
+  "security_id": "security_59304f90c440def31dc5",
+  "issuer_id": "issuer_7e0bd218f603cf838669",
+  "company_name": "RTX Corporation",
+  "instrument_name": "RTX Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "RTX",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "RTX",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Aerospace & Defense",
+  "status": "watching",
+  "watchlist_reason": "Funded defense and commercial backlog support continued coverage, but negative expected and base returns, weak payoff asymmetry, medium confidence, and a still-unreached buy zone make current ownership unattractive despite the lower-Bollinger pullback.",
+  "research_summary": "Unchanged Q2 evidence and USD 142/179.375/246.50 scenarios imply USD 186.8125 weighted value versus USD 209.91; Sell / Avoid despite the lower-Bollinger entry.",
+  "research_page": "data/wiki/securities/security_59304f90c440def31dc5.md",
+  "last_research_at": "2026-08-21T22:21:09Z",
+  "next_review_at": "2026-09-04T22:21:09Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm"
+}

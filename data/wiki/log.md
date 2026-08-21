@@ -4569,3 +4569,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The USD 14.23 mark is slightly above the USD 14.20 weighted value; the USD 10.88 buy zone remains
   unreached. Vale remains Watch and allocation-ineligible. One dependent full review is required;
   no strategy, signal, paper order, allocation, or accounting state changed.
+
+## [2026-08-21] update | RTX lower-Bollinger security review
+- Updated [[securities/security_59304f90c440def31dc5|RTX Corporation common stock]] after the
+  21 August lower-Bollinger entry and 1.35% measured-period decline.
+- Rechecked the unchanged Q2 Form 10-Q and SEC-filed results exhibit and retained the dated SEC
+  submissions index; no later operating filing changed guidance or explained the pullback.
+- Kept USD 142/USD 179.375/USD 246.50 scenarios and Sell / Avoid. The USD 209.91 mark remains above
+  weighted and base value despite improved timing, so no paper trade was created.

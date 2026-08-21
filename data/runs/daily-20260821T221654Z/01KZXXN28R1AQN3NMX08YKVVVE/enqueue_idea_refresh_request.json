@@ -1,0 +1,26 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_defense_aerospace",
+  "dedupe_key": "idea_research:idea_defense_aerospace:security-result:01KZXXN28R1AQN3NMX08YKVVVE",
+  "prompt": "Refresh the defense and aerospace replenishment idea from RTX's completed alert-driven review, including candidate disposition, thesis, catalysts, risks, confidence, and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_defense_aerospace",
+    "seed_claim": "RTX's unchanged Q2 evidence supports the replenishment mechanism, but USD 142.00/USD 179.375/USD 246.50 scenarios remain unattractive at the USD 209.91 mark; the lower-Bollinger transition improves timing only and Sell / Avoid remains unchanged.",
+    "security_id": "security_59304f90c440def31dc5",
+    "security_research_operation_id": "01KZXXN28R1AQN3NMX08YKVVVE",
+    "security_research_result_path": "data/runs/daily-20260821T221654Z/01KZXXN28R1AQN3NMX08YKVVVE/agent_result.json"
+  },
+  "source": "security_research:01KZXXN28R1AQN3NMX08YKVVVE",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01KZXXN28R1AQN3NMX08YKVVVE"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_59304f90c440def31dc5.md"
+  ],
+  "max_attempts": 3
+}

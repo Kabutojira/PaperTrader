@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rtx_q2_2026_results_sec_ex99",
+  "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000025/a2026-07x238xkerexhibit99.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000025/a2026-07x238xkerexhibit99.htm",
+  "source_type": "issuer_release",
+  "title": "RTX Reports Q2 2026 Results (SEC-filed Exhibit 99)",
+  "publisher": "RTX Corporation via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4fc01f125ed3318eb3f2e1f15d64c312bd38c0663b1c86a42ab37317124528e6",
+  "related_entity_ids": "idea_defense_aerospace|security_59304f90c440def31dc5",
+  "checked_at": "2026-08-21T22:21:09Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The unchanged SEC-filed Q2 results exhibit retains 2026 adjusted EPS guidance of USD 7.10-7.25 and free-cash-flow guidance of USD 8.50-8.75 billion.",
+  "summary": "The unchanged exhibit remains the latest RTX operating update and supports the maintained scenario earnings inputs and cash-delivery catalyst.",
+  "run_id": "daily-20260821T221654Z"
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_rtx_q2_2026_10q_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/101829/000010182926000027/rtx-20260630.htm",
+  "source_type": "filing",
+  "title": "RTX Corporation Q2 2026 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9f013f79edcb3e5eba91055c1da62413a58f51ba47e7380d33744949362f3ec2",
+  "related_entity_ids": "idea_defense_aerospace|security_59304f90c440def31dc5",
+  "checked_at": "2026-08-21T22:21:09Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The unchanged Q2 Form 10-Q remains the latest RTX periodic operating filing through August 21.",
+  "summary": "The filing continues to support the maintained backlog, segment economics, cash-flow, debt, share-count, fixed-price risk, and Pratt remediation analysis.",
+  "run_id": "daily-20260821T221654Z"
+}
