@@ -4623,3 +4623,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Hold / Watch and allocation ineligibility remain unchanged. The move is timing and valuation risk,
   the USD 217.60 buy-below price remains unreached, and no full review, strategy or signal was
   created.
+
+## [2026-08-21T23:17:26Z] update | Southern Copper volume-anomaly quick check
+
+- Rechecked [[securities/security_6ad1af8d10d6276a0221|Southern Copper]] against the exact 24 July
+  through 21 August alert period. The USD 216 close rose 20.48%, entered the configured volume
+  anomaly and finished above the upper Bollinger band, while RSI remained below its threshold.
+- A fresh SEC submissions retrieval matched the retained hash and showed no operating filing after
+  the Q2 Form 10-Q. The thesis, USD 91/USD 135/USD 187 scenarios, catalysts, risks and invalidation
+  conditions remain unchanged; the higher mark lowers expected return to about negative 38.80%.
+- Strong Sell / Avoid and allocation ineligibility remain unchanged. The USD 108 buy-below price
+  remains unreached, and no full review, strategy, signal or paper trade was created.

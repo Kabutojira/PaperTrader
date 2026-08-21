@@ -1,0 +1,18 @@
+{
+  "source_id": "source_scco_sec_submissions_20260821",
+  "url": "https://data.sec.gov/submissions/CIK0001001838.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001001838.json",
+  "source_type": "regulator_filing",
+  "title": "Southern Copper Corporation SEC submissions index checked 2026-08-21",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b",
+  "related_entity_ids": "security_6ad1af8d10d6276a0221",
+  "checked_at": "2026-08-21T23:17:26Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The latest periodic operating filing remains the Form 10-Q filed 2026-07-31; no later periodic or current operating report appears in the recent submissions list through this check.",
+  "summary": "The SEC submissions index hash is unchanged and contains no Southern Copper operating filing newer than the Q2 2026 Form 10-Q through 2026-08-21.",
+  "run_id": "daily-20260821T221654Z"
+}

@@ -25,26 +25,22 @@ The immutable identity is unchanged and remains unique in the tracked-security t
 
 ## Changes since prior review
 
-- **Evidence changed:** the July 21 second-quarter results release and July 31 Form 10-Q supersede
-  the first-quarter-only evidence. The August 21 SEC submissions check found no later operating
-  filing.
-- **Operating facts changed:** second-quarter sales, net income and adjusted EBITDA reached records,
-  but quarterly copper production fell 3.5% year over year and first-half production fell 3.8%.
-  First-half operating cash flow reached USD 3.683 billion while capital investment rose to USD
-  864.7 million.
-- **Balance sheet and capital allocation changed:** June cash and equivalents were USD 5.665 billion,
-  long-term debt was USD 7.994 billion after a USD 1.25 billion project-financing note, and shares
-  outstanding rose to 834.3 million after stock dividends. Funding capacity remains adequate, but
-  debt, capital intensity and per-share dilution are more explicit constraints.
-- **Valuation assumptions changed:** the prior peak-quarter annualization is replaced by a
-  scenario-complete cyclical normalized-earnings range. Bear/base/bull fair values are USD 91,
-  USD 135 and USD 187 at 30%/50%/20% probabilities. All remain below the USD 198.73 mark.
-- **Thesis and catalysts:** long reserve life, metal-price leverage, cash generation and Tía María
-  progress remain supportive. Lower grades and volumes, dependence on by-product credits, project
-  execution, jurisdiction and valuation remain the principal counterweights.
-- **Blockers and gaps:** no hard evidence blocker remains. Medium confidence, cyclical normalization,
-  weak payoff asymmetry, an expired accepted relationship review and unfavorable timing remain soft
-  gaps. The rating remains Hold / Watch and no paper-trade action is justified.
+- **Evidence unchanged:** a fresh August 21 retrieval of the SEC submissions index matched the
+  retained hash and still showed no operating filing after the July 31 Form 10-Q. The July 21
+  results release and Q2 filing therefore remain the current primary operating evidence.
+- **Market state changed:** the August 21 adjusted close rose 8.69% in one session to USD 216 and
+  20.48% from July 24. Volume reached a 2.46 z-score and the close moved above the USD 209.03 upper
+  Bollinger band; RSI remained below the configured overbought threshold at 67.33.
+- **Assumptions unchanged:** the thesis, normalized earnings, multiples, 30%/50%/20% probabilities,
+  catalysts, risks and invalidation conditions remain supported. No price-only move changes
+  production, grade, cost, project, leverage or dilution assumptions.
+- **Valuation changed only through the mark:** the unchanged USD 91/USD 135/USD 187 scenarios now
+  imply bear/base/bull returns of about -57.87%/-37.50%/-13.43%. The USD 132.20 weighted value
+  implies about -38.80%, while the USD 108 buy-below price remains unreached.
+- **Disposition unchanged:** the volume anomaly and upper-band breach strengthen timing and
+  valuation risk rather than the fundamental thesis. Strong Sell / Avoid, allocation ineligibility,
+  Hold / Watch research status and the existing review date remain appropriate; no full review,
+  strategy, signal or paper trade is justified.
 
 ## Economics and thesis
 
@@ -84,15 +80,17 @@ Registered primary evidence: [second-quarter 2026 results](https://www.sec.gov/A
 
 ## Market alert
 
-The canonical August 20 close was USD 198.72999572753906 after a 9.0605% return from July 23. MACD
-of 3.3685 crossed above its 3.2034 signal; RSI was 58.39 and the close remained below the upper
-Bollinger band. The exact indicator row matches source-price hash
-`23c80dda3bf3e83146e066cc8cd7830b2faf916ab16a28154deee10a8669d1dc`.
+The canonical August 21 adjusted close was USD 216, up 20.4752% from July 24 and 8.6902% for the
+session. Volume of 1,672,255 produced a 2.4616 z-score and entered the configured anomaly state.
+The close exceeded the USD 209.03 upper Bollinger band; RSI was 67.33, and MACD of 5.0575 remained
+above its 3.5742 signal. The exact indicator row matches source-price hash
+`7ffd15b60608a4b1ad0cbbfad463fd91a7c4fe161323bf137534449ffa26318a`.
 
-The move is **valuation risk rather than an actionable opportunity**. Record Q2 results and strong
-metal prices support the direction of the thesis, but they were public before the measured period
-began and no later issuer operating filing explains a fresh fundamental inflection. The bullish
-technical crossover does not repair negative scenario returns or the missing margin of safety.
+The move remains **valuation risk rather than an actionable opportunity**. Record Q2 results and
+strong metal prices support the direction of the thesis, but they were public before the measured
+period began and the unchanged SEC submissions index contains no later operating evidence. High
+volume and an upper-band breach do not repair negative scenario returns or the missing margin of
+safety.
 
 ## Valuation, catalysts, and risks
 
@@ -101,7 +99,7 @@ results. The 12-month bear case applies 14 times USD 6.50 normalized EPS for USD
 and by-product prices normalize, grades remain weak and project spending rises. The base case applies
 18 times USD 7.50 for USD 135, assuming planned production stabilization and adequate self-funding.
 The bull case applies 22 times USD 8.50 for USD 187, requiring sustained metal prices, grade recovery
-and disciplined Tía María execution. Probabilities are 30%, 50% and 20%. At USD 198.73, even the bull
+and disciplined Tía María execution. Probabilities are 30%, 50% and 20%. At USD 216, even the bull
 case remains below market; confidence is medium because metal prices, grades, by-product credits,
 taxes, capex, debt and stock-dividend dilution create wide normalization uncertainty.
 
@@ -134,5 +132,5 @@ copper demand and prices weaken.
 Status: **watching**, confidence **medium**, and review by **2026-09-04**. Current evidence supports a
 complete comparable assessment, but lower production, by-product sensitivity, jurisdiction, debt,
 project execution, dilution and all three scenario values below market make the security allocation-
-ineligible. The August bullish MACD crossover is not a strategy catalyst. No conviction strategy,
-signal or paper order is justified.
+ineligible. The August volume anomaly, upper-band breach and bullish MACD state are not strategy
+catalysts. No conviction strategy, signal or paper order is justified.

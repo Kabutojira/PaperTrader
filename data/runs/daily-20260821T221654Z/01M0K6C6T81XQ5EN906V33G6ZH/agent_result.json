@@ -1,0 +1,75 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_6ad1af8d10d6276a0221",
+    "papertrader research source record --request data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/source_scco_sec_submissions_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/assessment_upsert_request_v2.json",
+    "papertrader research security-context --security-id security_6ad1af8d10d6276a0221",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Southern Copper quick check: the 21 August USD 216 close entered a volume anomaly and exceeded the upper Bollinger band, but unchanged primary evidence and unchanged USD 91/USD 135/USD 187 scenarios leave the security Strong Sell / Avoid, allocation-ineligible and Hold / Watch; no full review or paper-trade follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The canonical 2026-08-21 adjusted close was USD 216, up 20.4752% from 2026-07-24 and 8.6902% for the session; volume z-score 2.4616 entered the anomaly state, the close exceeded the USD 209.03 upper Bollinger band, RSI was 67.33, and MACD remained above signal.",
+      "observed_at": "2026-08-21T22:17:01Z",
+      "source": "data/market/indicators.csv and data/market/prices/security_6ad1af8d10d6276a0221.csv",
+      "source_hash": "7ffd15b60608a4b1ad0cbbfad463fd91a7c4fe161323bf137534449ffa26318a"
+    },
+    {
+      "claim": "A fresh retrieval matched the retained content hash and showed no operating filing newer than the Form 10-Q filed 2026-07-31, so no new primary operating evidence changed the baseline assumptions.",
+      "observed_at": "2026-08-21T23:17:26Z",
+      "source": "Southern Copper SEC submissions index",
+      "source_hash": "934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b",
+      "url": "https://data.sec.gov/submissions/CIK0001001838.json"
+    },
+    {
+      "claim": "The successful full security review completed at 2026-08-21T16:05:17Z for the same immutable security and supplied the baseline thesis, valuation scenarios, catalysts, risks and invalidation conditions for this bounded repeat check.",
+      "source": "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/agent_result.json"
+    },
+    {
+      "claim": "Post-upsert context confirmed current assessment assessment_aee98b931463049c7036 has run_id daily-20260821T221654Z, source operation 01M0K6C6T81XQ5EN906V33G6ZH, matching research-page hash 71b9e71d6121ccb2d2d141099e133563882427379234babbdb5ce161c09f7b8c, and exactly one immutable history version from this operation. It deterministically retained Strong Sell / Avoid and allocation ineligibility at the USD 216 mark.",
+      "source": "papertrader research security-context --security-id security_6ad1af8d10d6276a0221"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/assessment_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/security_upsert_request.json",
+    "data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/source_scco_sec_submissions_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_6ad1af8d10d6276a0221.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0K6C6T81XQ5EN906V33G6ZH",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Southern Copper quick check for the 2026-07-24 through 2026-08-21 volume-anomaly alert. The USD 216 close was up 20.4752% over the measured period and 8.6902% in the latest session, with a 2.4616 volume z-score and an upper-Bollinger-band breach. A fresh SEC submissions retrieval matched the retained hash and found no operating filing after the Q2 Form 10-Q. The thesis, USD 91/USD 135/USD 187 scenarios, probabilities, catalysts, risks and invalidation conditions remain unchanged; deterministic returns updated for the fresh mark to -57.87%/-37.50%/-13.43%, with -38.80% probability-weighted expected return and a USD 108 buy-below price. Strong Sell / Avoid, allocation ineligibility and Hold / Watch research status remain unchanged. No full security review, strategy, signal, order, allocation or accounting change was warranted.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security context succeeded for the immutable security and validated the fresh successful baseline operation.",
+      "Payload source-price hash matched the exact current indicator row for market_data_as_of 2026-08-21T22:17:01Z.",
+      "Fresh SEC submissions retrieval matched the retained primary-source hash and source freshness was recorded.",
+      "Post-upsert security context confirmed current assessment run and operation identities, matching page hash, and exactly one same-operation immutable assessment history version.",
+      "No full-research escalation was required because the buy zone remained unreached, no catalyst or invalidation fired, primary evidence did not materially change, and the baseline continued to support the unchanged disposition.",
+      "Strict schema validation passed.",
+      "Queue validation passed.",
+      "Strict integrity validation passed.",
+      "Strict wiki lint passed.",
+      "Strict portfolio reconciliation passed.",
+      "No allocation, signal, order, execution, cash, portfolio, fill or performance state changed."
+    ],
+    "passed": true
+  }
+}
