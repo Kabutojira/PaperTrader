@@ -1,0 +1,66 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_96ba305ee7cd586bc348",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "FANUC's 21 August volume anomaly was a thin-liquidity repeat rather than a changed investment gate: the Frankfurt line closed at EUR 32.619998931884766 on 1,233 shares after a 6.96% measured-period decline. The retained issuer PDFs remained byte-identical, the EUR 29.104 buy-below level remained unreached, and Hold / Watch with allocation ineligibility remained supported. No full review, strategy, signal, paper order, allocation, or accounting change was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The canonical 2026-07-24 through 2026-08-21 alert period ended at EUR 32.619998931884766, down 6.95950469432971270585223614%, with 1,233 shares traded, a 2.16862403 volume z-score, trigger strength 0.084312015, and source-price hash 36915ed4dbcb27df723b5edeb4a7f3c2dc8e1a647cc4ddac94faea66f9fe16f2.",
+      "observed_at": "2026-08-21T22:17:01Z",
+      "source": "data/wiki/inbox/market-security_96ba305ee7cd586bc348-volume_anomaly-d6607fa30b24.md",
+      "source_hash": "36915ed4dbcb27df723b5edeb4a7f3c2dc8e1a647cc4ddac94faea66f9fe16f2"
+    },
+    {
+      "claim": "A bounded fresh retrieval of FANUC's quarter-ended 30 June 2026 results remained byte-identical to the registered primary source, so sales, earnings, guidance, balance-sheet, catalyst, risk, and invalidation assumptions did not change.",
+      "observed_at": "2026-08-21T23:25:08Z",
+      "source": "source_fanuc_q1_fy2026_results",
+      "source_hash": "255c78adf6d05bc5b66c3919e4ffe34595ef5d5ed563f4c01ceea2b61a6473b5",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/financialresult202606_e.pdf"
+    },
+    {
+      "claim": "A bounded fresh retrieval of FANUC's first-quarter FY2026 reference material remained byte-identical to the registered primary source and supplied no changed fundamental explanation for the volume anomaly.",
+      "observed_at": "2026-08-21T23:25:08Z",
+      "source": "source_fanuc_q1_fy2026_reference",
+      "source_hash": "38c9ae82fd8d91b30771f35755c93f1fe6326fe6da47156c3ed681026c5eae94",
+      "url": "https://www.fanuc.co.jp/en/ir/announce/pdf/2026/reference202606_e.pdf"
+    },
+    {
+      "claim": "At the fresh EUR 32.619998931884766 mark, the unchanged EUR 24.25/EUR 36.38/EUR 48.50 scenarios imply approximately -25.66%/11.53%/48.68% returns, EUR 36.3775 weighted value implies approximately 11.52% expected return and 8.64% confidence-adjusted return, and the EUR 29.104 buy-below level remains approximately 10.78% below market. The existing Hold / Watch and allocation-ineligible conclusion remains unchanged because payoff, relationship, and thin-liquidity constraints remain unresolved.",
+      "source": "PaperTrader audited security context and deterministic market state"
+    },
+    {
+      "claim": "The successful full baseline operation 01KZVTZDX08AEMJ36N81A06G62 completed on 2026-08-19 for this immutable security, and the current assessment remains fresh through 2026-09-03. The repeated volume anomaly did not newly reach the buy zone, fire a catalyst or invalidation, materially change primary evidence, or make the bounded baseline unable to support a decision.",
+      "source": "data/runs/daily-20260819T153048Z/01KZVTZDX08AEMJ36N81A06G62/agent_result.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0K6C6T8G38V2TKM2DHYRAAM",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded FANUC quick check for the 21 August volume anomaly. The EUR 32.619998931884766 close was 6.96% below the 24 July period start, with a 2.16862403 volume z-score but only 1,233 Frankfurt shares traded. Fresh retrievals of both retained issuer PDFs matched their registered hashes, leaving the thesis, scenarios, catalysts, risks, and invalidation unchanged. The unchanged scenarios imply about 11.52% expected return, 8.64% confidence-adjusted return, 11.53% base upside, and a EUR 29.104 buy-below level that remains unreached. Hold / Watch and allocation ineligibility remain supported by unresolved downside-payoff, relationship, and thin-liquidity constraints. Because no material gate changed and the fresh baseline remains decision-capable, no full security review was enqueued and the operation intentionally left no agent-owned repository delta. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory successful audited security context before reading assessment state and confirmed immutable FANUC/FUC.F/XFRA/EUR/equity identity.",
+      "Confirmed the payload binds successful full baseline operation 01KZVTZDX08AEMJ36N81A06G62, completed 2026-08-19 for the same security within ten days of enqueue.",
+      "Confirmed the exact 2026-07-24 through 2026-08-21 alert period, market_data_as_of 2026-08-21T22:17:01Z, volume_anomaly trigger, and source-price hash 36915ed4dbcb27df723b5edeb4a7f3c2dc8e1a647cc4ddac94faea66f9fe16f2 against canonical market and indicator state.",
+      "Fresh bounded retrievals of both retained issuer PDFs matched their registered SHA-256 hashes.",
+      "Confirmed the existing assessment remains fresh through 2026-09-03 and the bounded conclusion is unchanged; therefore the permitted no-delta quick-check path required no assessment upsert.",
+      "Confirmed no full-review escalation was warranted because no buy zone, valuation assumption, catalyst, invalidation, material primary evidence, eligibility disposition, or decision-support gate changed.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "No agent-owned repository state changed; no allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting ledger, source registry/history, wiki page, issue, or follow-up operation changed."
+    ],
+    "passed": true
+  }
+}
