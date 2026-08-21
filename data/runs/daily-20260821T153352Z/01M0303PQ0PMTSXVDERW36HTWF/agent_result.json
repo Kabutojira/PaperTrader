@@ -1,0 +1,98 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_1e8fbdb0f45f2b413e00",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_sec_submissions_20260821_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/security_upsert_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/security_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request_v3.json",
+    "papertrader queue enqueue --request data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/enqueue_digital_finance_relationship_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "PayPal's August 20 SMA 50/200 bullish crossover improved medium-term trend, but unchanged Q2 evidence, overbought extension and scenario-weighted fair value of USD 61.332 versus USD 62.30 leave PYPL Hold / Watch and allocation-ineligible. One dependent review was queued to test whether PYUSD creates a material digital-finance relationship; no paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The SEC-filed Q2 results release remained available with its unchanged content hash. It reports 10% total-payment-volume growth, USD 1.775 billion free cash flow and approximately USD 5.38 full-year non-GAAP EPS guidance, alongside operating-income and margin contraction and nearly flat active accounts.",
+      "observed_at": "2026-08-21T15:38:58Z",
+      "source": "source_pypl_q2_2026_results",
+      "source_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm"
+    },
+    {
+      "claim": "The unchanged Q2 Form 10-Q supports the immutable PYPL/XNAS/USD identity, maintained financial and risk assumptions, and a specific candidate digital-finance mechanism: PayPal and Venmo customers can use PYUSD while PayPal bears evolving stablecoin regulatory obligations. The filing does not quantify material PYUSD economics.",
+      "observed_at": "2026-08-21T15:38:58Z",
+      "source": "source_pypl_q2_2026_10q",
+      "source_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm"
+    },
+    {
+      "claim": "The current SEC submissions index contains no issuer operating filing after the July 28 Q2 Form 10-Q and results Form 8-K through August 21; later filings are ownership Forms 4, a planned-sale Form 144 and a Schedule 13G amendment.",
+      "observed_at": "2026-08-21T15:38:58Z",
+      "source": "source_pypl_sec_submissions_20260821",
+      "source_hash": "5bf2a4a4b6128854f81f935ace7b4a32f419be4776ca60859e1822a0da54be32",
+      "url": "https://data.sec.gov/submissions/CIK0001633917.json"
+    },
+    {
+      "claim": "The exact alert packet and canonical indicator row record an August 20 adjusted close of USD 62.29999923706055, an 11.25% July 23-August 20 return, SMA 50 of 51.6064 crossing above SMA 200 of 51.2781, RSI 74.09, MACD 2.5837 below its 2.7375 signal and upper Bollinger band near USD 62.38.",
+      "observed_at": "2026-08-21T15:34:00Z",
+      "source": "PaperTrader deterministic market and indicator caches",
+      "source_hash": "c28e4a6c3dbc381884c5813c1a406f8627602901ea719e98c5d02473512f725e"
+    },
+    {
+      "claim": "The sole immutable schema-v2 assessment for this operation links predecessor assessment_26b689f8e4568c69ba9b, the expected result path, page hash fc390b5938ca57403ad65f9a5ccb6c4d1ee3ed8fe77d2a26be3b7de28611d991, fresh identity-matched USD price and USD/EUR FX state, and all three retained evidence records. Deterministic normalization derives USD 61.332 weighted fair value, -1.5537708650% expected return, -1.1653281488% confidence-adjusted return, 3.6276096158% base return, Hold / Watch, allocation ineligibility and a pending relationship gate.",
+      "observed_at": "2026-08-21T15:38:58Z",
+      "source": "assessment_b9268ed231b6fb1ba7e4"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0JG3F6G4PDPRZBBV2GG5E08.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/assessment_upsert_request_v3.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/enqueue_digital_finance_relationship_request.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/security_upsert_request.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/security_upsert_request_v2.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260821T153352Z/01M0303PQ0PMTSXVDERW36HTWF/source_pypl_sec_submissions_20260821_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0303PQ0PMTSXVDERW36HTWF",
+  "operations_created": [
+    "01M0JG3F6G4PDPRZBBV2GG5E08"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded alert-driven PayPal security review. The August 20 SMA 50/200 bullish crossover confirms improved medium-term trend, but RSI remains overbought and MACD remains below signal. The current SEC index contains no issuer operating filing after the unchanged July 28 Q2 Form 10-Q and results release. The unchanged USD 43.04/USD 64.56/USD 80.70 bear/base/bull values now imply -30.91%/3.63%/29.53% returns at USD 62.30, USD 61.332 weighted fair value, -1.55% expected return and Hold / Watch allocation-ineligible state. Added one candidate digital-finance relationship through PYUSD and enqueued exactly one dependent relationship review. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected row is the sole routed running operation, claimed by daily-20260821T153352Z with a live lease, validated alert payload and immutable PYPL/XNAS/USD/equity identity.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state reads and used the current and previous structured assessment, prior successful result, retained sources and linked page hash.",
+      "Verified the exact August 20 SMA 50/200 crossover period and source-price hash against canonical market and indicator state; fresh price and USD/EUR FX retrieval timestamps match the assessment request.",
+      "Downloaded and hashed the two retained SEC documents and current SEC submissions index, refreshed the unchanged Q2 source records and registered the dated index before assessment upsert; no source body was committed.",
+      "Searched the complete maintained idea catalog and canonical relationship table. No accepted relationship exists; one specific PYUSD candidate was labelled pending, generic SMB-system and attention-ecosystem adjacency was rejected, and exactly one dependent relationship review was created.",
+      "Confirmed assessment assessment_b9268ed231b6fb1ba7e4 is the sole immutable version for this operation, links predecessor assessment_26b689f8e4568c69ba9b, schema version 2, expected result path, current page hash and current run provenance.",
+      "The first security request and first two assessment requests were dispatched, changed no paths and failed bounded validation; each immutable request was replaced by a uniquely named corrected request whose canonical invocation succeeded.",
+      "No conviction strategy follow-up was created because deterministic return, payoff, margin-of-safety and relationship gates fail. No payload or accepted idea required an idea-research follow-up.",
+      "Strict schema validation returned OK [schema], queue validation returned OK [queue], strict repository integrity returned OK [integrity], strict wiki lint returned OK [wiki], and strict portfolio reconciliation returned OK [portfolio].",
+      "Git inspection confirmed no allocation target/history, order, execution, cash, portfolio, fill, performance or accounting ledger path changed."
+    ],
+    "passed": true
+  }
+}

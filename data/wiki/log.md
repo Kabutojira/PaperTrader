@@ -4462,3 +4462,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Classified [[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-d0e9c4efb738]] as `ingest`: New volume anomaly coincides with a 4.05% decline over the period and merits durable review.
 
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-26aab9bc8d3f]] (26aab9bc8d3f).
+
+## [2026-08-21] update | PayPal alert-driven security review
+- Updated [[securities/security_1e8fbdb0f45f2b413e00|PayPal Holdings, Inc. common stock]] after the August 20 SMA 50/200 bullish crossover.
+- Rechecked the SEC submissions index and unchanged Q2 Form 10-Q and results filing; no newer issuer operating filing changed the maintained assumptions.
+- Retained Hold / Watch: USD 62.30 exceeds the USD 61.332 scenario-weighted fair value, while overbought RSI, weak payoff asymmetry, and no accepted causal relationship block escalation.
+- Added one clearly labelled candidate connection to [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]] for separate relationship review; no strategy or signal was created.

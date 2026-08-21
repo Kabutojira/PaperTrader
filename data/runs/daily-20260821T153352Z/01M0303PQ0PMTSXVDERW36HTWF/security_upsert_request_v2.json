@@ -1,0 +1,23 @@
+{
+  "security_id": "security_1e8fbdb0f45f2b413e00",
+  "issuer_id": "issuer_5c3fe75eec62fcc8cb57",
+  "company_name": "PayPal Holdings, Inc.",
+  "instrument_name": "PayPal Holdings, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "PYPL",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "PYPL",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financials",
+  "industry": "Financial Data & Stock Exchanges",
+  "status": "watching",
+  "watchlist_reason": "Alert review confirmed a bullish SMA 50/200 crossover but unchanged fundamentals, overbought extension, and weak scenario economics keep PYPL on watch.",
+  "research_summary": "Hold / Watch: trend improved, but unchanged Q2 evidence and negative scenario-weighted return do not support paper-trade escalation.",
+  "research_page": "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md",
+  "last_research_at": "2026-08-21T15:38:58Z",
+  "next_review_at": "2026-09-04T15:38:58Z",
+  "source": "source_pypl_q2_2026_10q|source_pypl_q2_2026_results|source_pypl_sec_submissions_20260821"
+}

@@ -1,0 +1,26 @@
+{
+  "entity_id": "relationship_6321145f54f54723076c",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_pypl_q2_2026_10q",
+      "source_pypl_sec_submissions_20260821"
+    ],
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if PYUSD adoption remains immaterial, partner terms prevent attractive economics, compliance costs offset revenue, or customers and merchants do not use the rail beyond speculative transfers.",
+    "proposed_mechanism": "Digital-finance adoption can transmit into PayPal through PayPal and Venmo distribution, compliance and settlement reach for PYUSD if usage produces material recurring transaction or reserve-sharing economics.",
+    "relationship_id": "relationship_6321145f54f54723076c",
+    "security_id": "security_1e8fbdb0f45f2b413e00"
+  },
+  "objective": "Review whether PayPal has a material causal relationship to digital finance and crypto rails through PYUSD distribution, PayPal and Venmo reach, compliance, settlement use, partner economics, and regulatory obligations; accept or reject the edge.",
+  "operation_id": "01M0JG3F6G4PDPRZBBV2GG5E08",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+    "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md",
+    "source_pypl_q2_2026_10q",
+    "source_pypl_sec_submissions_20260821"
+  ]
+}
