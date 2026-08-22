@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-21"
-updated: "2026-08-21"
+created: "2026-08-22"
+updated: "2026-08-22"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cdd3e1e082062c31fd52"
-as_of: "2026-08-21T23:39:17Z"
+snapshot_id: "decision_9b32fd4866d7eb8f7bda"
+as_of: "2026-08-22T16:05:49Z"
 ---
 
 # Signals
 
-**As of `2026-08-21T23:39:17Z`**
+**As of `2026-08-22T16:05:49Z`**
 
 ## Actionable trade signals
 
@@ -79,6 +79,15 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
+### [SQM — Sociedad Quimica y Minera de Chile S.A.](securities/security_9d4049ed6669a52815d6)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-21`
+- Research status: `succeeded`
+- Conclusion: Completed one bounded repeat review of SQM using the mandatory prior-security context, fresh identity-matched market and FX state, and the SEC-filed Q2 2026 release. Record lithium volume, a higher realized Novandino price and stronger earnings confirm the accepted lithium-cycle mechanism, while the 26.42% alert-period rise reduces valuation asymmetry. New USD 42/USD 77/USD 120 normalized-earnings scenarios derive USD 79 probability-weighted fair value versus the USD 81.96 mark, retaining Hold / Watch and allocation ineligibility. The immutable schema-version-2 assessment links predecessor assessment\_e23b238626d8c9fbb346, this operation and result path, registered evidence and the updated page hash. Exactly one dependent lithium-idea refresh was enqueued; the accepted relationship remains current, no additional material candidate edge was identified, and no strategy, signal, order, allocation or accounting state changed.
+
 ### [SCCO — Southern Copper Corporation](securities/security_6ad1af8d10d6276a0221)
 
 **Research alert — not a trade signal**
@@ -95,7 +104,7 @@ No pending orders.
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-21`
 - Research status: `succeeded`
-- Conclusion: Completed exactly one bounded Southern Copper quick check for the 2026-07-24 through 2026-08-21 volume-anomaly alert. The USD 216 close was up 20.4752% over the measured period and 8.6902% in the latest session, with a 2.4616 volume z-score and an upper-Bollinger-band breach. A fresh SEC submissions retrieval matched the retained hash and found no operating filing after the Q2 Form 10-Q. The thesis, USD 91/USD 135/USD 187 scenarios, probabilities, catalysts, risks and invalidation conditions remain unchanged; deterministic returns updated for the fresh mark to -57.87%/-37.50%/-13.43%, with -38.80% probability-weighted expected return and a USD 108 buy-below price. Strong Sell / Avoid, allocation ineligibility and Hold / Watch research status remain unchanged. No full security review, strategy, signal, order, allocation or accounting change was warranted.
+- Conclusion: Completed exactly one bounded Southern Copper quick check for the strengthened 2026-07-24 through 2026-08-21 volume-anomaly alert. The canonical USD 216 close and 20.4752% period return are unchanged from the successful quick check completed less than one day earlier; the refreshed provider volume strengthens the anomaly but supplies no new fundamental evidence. The thesis, USD 91/USD 135/USD 187 scenarios, probabilities, catalysts, risks, invalidation conditions, USD 108 buy-below price, Strong Sell / Avoid rating, allocation ineligibility and Hold / Watch research status remain unchanged. The fresh existing assessment assessment\_aee98b931463049c7036 remains applicable. No repository state, full security review, strategy, signal, order, allocation or accounting state was changed.
 
 ### [RTX — RTX Corporation](securities/security_59304f90c440def31dc5)
 
@@ -131,7 +140,7 @@ No pending orders.
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-21`
 - Research status: `succeeded`
-- Conclusion: Completed one bounded repeat review of Strategy Inc Class A common stock using the mandatory prior context, fresh August 10 and August 17 SEC Forms 8-K, and the exact August 19 volume-anomaly period. Strategy disclosed 840,447 bitcoin, a USD 4.80 billion reserve, 10,044,548 common shares issued and 2,540,740 STRC shares repurchased across the two new weekly filings. Updated USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 probability-weighted fair value and 0.46% expected return versus USD 104.25, retaining Hold / Watch and allocation ineligibility. The complete idea catalog supported no causal relationship or follow-up, and the conviction strategy gate failed. No strategy, signal, order, allocation or accounting state changed.
+- Conclusion: Completed exactly one bounded Strategy quick check for the strengthened August 21 volume anomaly. The USD 119.25 close was 30.09% above the July 24 period start, with a 2.0969 volume z-score and an upper-Bollinger-band breach. A fresh SEC submissions retrieval found no operating filing or treasury update after the August 17 Form 8-K, leaving the treasury thesis, catalysts, risks, invalidation and USD 53.63/USD 107.78/USD 173.76 scenarios unchanged. Deterministic assessment assessment\_2271c25af7d2a9a531a5 now derives USD 104.731 weighted fair value, -12.18% expected return, -9.13% confidence-adjusted return and a Hold / Watch, allocation-ineligible disposition. The USD 86.224 buy-below price remains unreached. No full review was queued because no scenario assumption, buy zone, catalyst, invalidation, material primary evidence, eligibility status or decision-support completeness changed. No strategy, signal, order, allocation or accounting state changed.
 
 ### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
 
@@ -157,8 +166,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed the repeat schema-version-2 review of Robinhood Markets, Inc. after the 2026-08-21 strengthened volume anomaly. HOOD rose 13.93% over the canonical 2026-07-24 through 2026-08-21 period and finished at USD 108.13 on 3.22 times average volume and above its upper Bollinger band. The SEC submissions index contained no newer operating filing after the Q2 Form 10-Q, so the rally is not attributed to an unverified catalyst and the Q2 operating thesis and USD 42.40/69.00/112.50 scenarios remain unchanged. At the fresh mark, deterministic assessment derives a USD 73.225 probability-weighted value, -32.28% raw expected return, -24.21% confidence-adjusted expected return, Sell/Avoid, and allocation ineligibility. No strategy, signal, order, fill, or accounting state was created. One dependent relationship review was enqueued for the plausible but unaccepted digital-finance and crypto-rails edge.
 
 ### [HOOD — Robinhood Markets, Inc.](securities/security_ad3b1f8f59fd599f079a)
 
@@ -168,15 +177,6 @@ No pending orders.
 - Market date: `2026-08-21`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-21`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one bounded FANUC quick check for the 21 August volume anomaly. The EUR 32.619998931884766 close was 6.96% below the 24 July period start, with a 2.16862403 volume z-score but only 1,233 Frankfurt shares traded. Fresh retrievals of both retained issuer PDFs matched their registered hashes, leaving the thesis, scenarios, catalysts, risks, and invalidation unchanged. The unchanged scenarios imply about 11.52% expected return, 8.64% confidence-adjusted return, 11.53% base upside, and a EUR 29.104 buy-below level that remains unreached. Hold / Watch and allocation ineligibility remain supported by unresolved downside-payoff, relationship, and thin-liquidity constraints. Because no material gate changed and the fresh baseline remains decision-capable, no full security review was enqueued and the operation intentionally left no agent-owned repository delta. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.
 
 ### [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867)
 
@@ -241,14 +241,23 @@ No pending orders.
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
 
+### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
+
+**Research alert — not a trade signal**
+
+- Alert: `volume\_anomaly`
+- Market date: `2026-08-21`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one bounded FANUC quick check for the 21 August volume anomaly. The EUR 32.619998931884766 close was 6.96% below the 24 July period start, with a 2.16862403 volume z-score but only 1,233 Frankfurt shares traded. Fresh retrievals of both retained issuer PDFs matched their registered hashes, leaving the thesis, scenarios, catalysts, risks, and invalidation unchanged. The unchanged scenarios imply about 11.52% expected return, 8.64% confidence-adjusted return, 11.53% base upside, and a EUR 29.104 buy-below level that remains unreached. Hold / Watch and allocation ineligibility remain supported by unresolved downside-payoff, relationship, and thin-liquidity constraints. Because no material gate changed and the fresh baseline remains decision-capable, no full security review was enqueued and the operation intentionally left no agent-owned repository delta. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.
+
 ### [VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b)
 
 **Research alert — not a trade signal**
 
 - Alert: `macd\_cross\_above\_signal`
 - Market date: `2026-08-21`
-- Research status: `ready`
-- Conclusion: High-priority security research is ready to run.
+- Research status: `succeeded`
+- Conclusion: Completed one bounded Vale quick check after the August 21 MACD bullish crossover. The exact July 24 through August 21 period declined 1.35%, while MACD crossed above its signal without new issuer evidence or a changed catalyst, invalidation, thesis, or scenario assumption. At the fresh USD 14.59 mark, the unchanged USD 9.00/USD 14.50/USD 20.00 scenarios produce USD 13.95 probability-weighted fair value, -4.39% expected return, -3.29% confidence-adjusted expected return, and a USD 11.60 buy-below price. Published assessment assessment\_9911343e7005a53ee6fd with Hold/Watch and allocation-ineligible disposition. No full-review follow-up, strategy, signal, order, allocation, or accounting state was created or changed.
 
 ### [PWR — Quanta Services, Inc.](securities/security_488a9d7f7a8573597724)
 

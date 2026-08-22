@@ -4653,6 +4653,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Classified [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5]] as `ingest`: A strengthened volume-anomaly transition coincides with a material 30.1% period return and warrants durable review.
 
+- Published investor decision snapshot `decision_9b32fd4866d7eb8f7bda`.
+
+- Generated canonical [[daily-reports/daily-report_20260822]] for run `daily-20260822T152115Z`.
+
 ## [2026-08-22T15:25:04Z] update | SQM Q2 security review
 
 - Updated [[securities/security_9d4049ed6669a52815d6|SQM]] from its SEC-filed Q2 release after

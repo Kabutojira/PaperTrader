@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-21"
+created: "2026-08-22"
 updated: "2026-08-22"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_cdd3e1e082062c31fd52"
-as_of: "2026-08-21T23:39:17Z"
+snapshot_id: "decision_9b32fd4866d7eb8f7bda"
+as_of: "2026-08-22T16:05:49Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **157**
+- Immutable assessment versions: **161**
 - Securities with retained revisions: **70**
 
 ## Candidate
@@ -206,6 +206,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [MSTR — Bollinger above upper](inbox/market-security_fe5539a7d3fd9d553bce-bollinger_above_upper-b2355921f168)
 - [MSTR — Volume anomaly](inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-1c56259a5e4e)
 - [MSTR — Volume anomaly](inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-399eb4aca85f)
+- [MSTR — Volume anomaly](inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5)
 - [NBIS — Bollinger above upper](inbox/market-security_47a0b06f6c6c478d7c1e-bollinger_above_upper-3fc9baaf3aed)
 - [NBIS — Bollinger above upper](inbox/market-security_47a0b06f6c6c478d7c1e-bollinger_above_upper-cc865e2c88cc)
 - [NBIS — MACD cross above signal](inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_above_signal-65152a0c42fe)
@@ -297,6 +298,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SCCO — Bollinger above upper](inbox/market-security_6ad1af8d10d6276a0221-bollinger_above_upper-d78ac88cb764)
 - [SCCO — MACD cross above signal](inbox/market-security_6ad1af8d10d6276a0221-macd_cross_above_signal-36c1117d05aa)
 - [SCCO — MACD cross below signal](inbox/market-security_6ad1af8d10d6276a0221-macd_cross_below_signal-927c2aef5b08)
+- [SCCO — Volume anomaly](inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f)
 - [SCCO — Volume anomaly](inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-d74e9f7d0aca)
 - [SGML — Bollinger above upper](inbox/market-security_4627aea1bf7d8943d3d8-bollinger_above_upper-2277d0995769)
 - [SGML — Bollinger above upper](inbox/market-security_4627aea1bf7d8943d3d8-bollinger_above_upper-75b6786d3b39)
@@ -322,6 +324,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [SQM — RSI overbought](inbox/market-security_9d4049ed6669a52815d6-rsi_overbought-8f72d248ab79)
 - [SQM — SMA 50 cross below 200](inbox/market-security_9d4049ed6669a52815d6-sma_50_cross_below_200-e98a8c73fb7e)
 - [SQM — Volume anomaly](inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-91ad512dd477)
+- [SQM — Volume anomaly](inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-a3da4875cd67)
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-469186538f68)
 - [SSU.VI — Bollinger above upper](inbox/market-security_567d0d575bbd30aaa91d-bollinger_above_upper-8c1924be2a50)
 - [SSU.VI — Bollinger below lower](inbox/market-security_567d0d575bbd30aaa91d-bollinger_below_lower-917454ed7e3a)
@@ -420,6 +423,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-19](daily-reports/daily-report_20260819)
 - [PaperTrader daily report — 2026-08-20](daily-reports/daily-report_20260820)
 - [PaperTrader daily report — 2026-08-21](daily-reports/daily-report_20260821)
+- [PaperTrader daily report — 2026-08-22](daily-reports/daily-report_20260822)
 
 ## Idea
 
@@ -480,6 +484,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily podcast — 2026-08-06T125642Z](podcasts/daily-podcast_20260806T125642Z)
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
 - [PaperTrader daily research podcast — 2026-08-21T153352Z](podcasts/daily-podcast_20260821T153352Z)
+- [PaperTrader daily research podcast — 2026-08-21T221654Z](podcasts/daily-podcast_20260821T221654Z)
 
 ## Relationship
 
@@ -614,9 +619,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f|SCCO — Volume anomaly]]
-- [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-a3da4875cd67|SQM — Volume anomaly]]
-- [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5|MSTR — Volume anomaly]]
