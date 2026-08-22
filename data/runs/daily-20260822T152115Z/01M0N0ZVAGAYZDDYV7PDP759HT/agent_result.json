@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_fe5539a7d3fd9d553bce",
+    "papertrader research source record --request data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/source_mstr_sec_submissions_refresh_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_fe5539a7d3fd9d553bce",
+    "papertrader research security upsert --request data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/security_upsert_retry01_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Strategy's strengthened August 21 volume anomaly accompanied a 30.09% rise over the exact July 24 through August 21 period to USD 119.25. A fresh SEC submissions check found no operating filing or treasury update after the August 17 Form 8-K. Unchanged USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 weighted fair value, -12.18% expected return and -9.13% confidence-adjusted return; Hold / Watch remains allocation-ineligible and no full review or paper action was created."
+  ],
+  "evidence": [
+    {
+      "claim": "MSTR rose 30.09% from the USD 91.67 adjusted close on 2026-07-24 to USD 119.25 on 2026-08-21. The final session traded 45.84 million shares, produced a 2.0969 volume z-score, closed above the USD 111.41 upper Bollinger band, and retained a below-threshold RSI of 66.07.",
+      "observed_at": "2026-08-22T15:21:22Z",
+      "source": "PaperTrader deterministic market and indicator state",
+      "source_hash": "1eb7bedd313449438b636142365ec263cce5ef9bd3597f6bfafeffe351d0943e",
+      "url": "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5.md"
+    },
+    {
+      "claim": "The Strategy SEC submissions index contained no operating filing or treasury update newer than the Form 8-K filed 2026-08-17 through the exact 2026-08-21 market-data date.",
+      "observed_at": "2026-08-22T15:55:59Z",
+      "source": "U.S. Securities and Exchange Commission submissions index",
+      "source_hash": "b1d71b391377c3567bb2b3e486fd420e72b17851d77ba8e0e2c16ea097bee2c9",
+      "url": "https://data.sec.gov/submissions/CIK0001050446.json"
+    },
+    {
+      "claim": "Assessment assessment_2271c25af7d2a9a531a5 is the sole immutable history version sourced from this operation and run, links predecessor assessment_7d18a6bb522b5136cdfa, and derives -55.0273%/-9.6184%/45.7107% bear/base/bull returns, USD 104.731 weighted fair value, -12.1753% expected return, -9.1314% confidence-adjusted expected return, USD 86.224 buy-below price, and an ineligible Hold/Watch disposition.",
+      "source": "PaperTrader deterministic assessment projection"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/assessment_upsert_request.json",
+    "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/security_upsert_request.json",
+    "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/security_upsert_retry01_request.json",
+    "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/source_mstr_sec_submissions_refresh_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_fe5539a7d3fd9d553bce.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0N0ZVAGAYZDDYV7PDP759HT",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Strategy quick check for the strengthened August 21 volume anomaly. The USD 119.25 close was 30.09% above the July 24 period start, with a 2.0969 volume z-score and an upper-Bollinger-band breach. A fresh SEC submissions retrieval found no operating filing or treasury update after the August 17 Form 8-K, leaving the treasury thesis, catalysts, risks, invalidation and USD 53.63/USD 107.78/USD 173.76 scenarios unchanged. Deterministic assessment assessment_2271c25af7d2a9a531a5 now derives USD 104.731 weighted fair value, -12.18% expected return, -9.13% confidence-adjusted return and a Hold / Watch, allocation-ineligible disposition. The USD 86.224 buy-below price remains unreached. No full review was queued because no scenario assumption, buy zone, catalyst, invalidation, material primary evidence, eligibility status or decision-support completeness changed. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Consumed the mandatory audited security context before assessment work and consumed it again immediately after publication.",
+      "Confirmed the validated payload, immutable MSTR/XNAS/USD/equity identity, successful 2026-08-20 baseline result, exact 2026-07-24 through 2026-08-21 alert period and source-price hash 1eb7bedd313449438b636142365ec263cce5ef9bd3597f6bfafeffe351d0943e.",
+      "Confirmed the refreshed SEC submissions source is available, security-linked, checked at 2026-08-22T15:55:59Z and contains no operating or treasury filing after the 2026-08-17 Form 8-K through the alert date.",
+      "Confirmed current assessment assessment_2271c25af7d2a9a531a5 has run_id daily-20260822T152115Z, links predecessor assessment_7d18a6bb522b5136cdfa and is exactly one immutable history version sourced from operation 01M0N0ZVAGAYZDDYV7PDP759HT.",
+      "Confirmed ordered bear/base/bull fair values, probabilities totaling 100, anchored component scores, current market and FX timestamps, unchanged relationship coverage and the deterministic Hold/Watch allocation-ineligible frontier.",
+      "Confirmed no full review was required: the price moved farther above weighted value and buy-below price while scenarios, evidence, catalysts, invalidation, hard blockers, eligibility and the baseline's decision-support completeness remained unchanged.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, raw source or other security page was changed by this operation."
+    ],
+    "passed": true
+  }
+}

@@ -4,8 +4,8 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-08"
-updated: "2026-08-20"
-provenance: "source_mstr_q2_2026_10q; source_mstr_aug3_2026_8k; source_mstr_aug10_2026_8k; source_mstr_aug17_2026_8k; deterministic market and FX caches"
+updated: "2026-08-22"
+provenance: "source_mstr_q2_2026_10q; source_mstr_aug3_2026_8k; source_mstr_aug10_2026_8k; source_mstr_aug17_2026_8k; source_mstr_sec_submissions_20260822; deterministic market and FX caches"
 security_id: security_fe5539a7d3fd9d553bce
 issuer_id: issuer_c09135a9f81a751eb0e3
 confidence: medium
@@ -28,40 +28,38 @@ relationship or strategy is linked to this security. Related system context: [[i
 
 ## Changes since prior review
 
-- **Facts and evidence changed:** the August 10 and August 17 Forms 8-K supersede the August 3
-  treasury snapshot. Strategy sold another 1,690 bitcoin, issued 10,044,548 common shares across
-  two weeks, repurchased 2,540,740 STRC preferred shares, and raised the USD reserve from USD 4.0
-  billion to USD 4.8 billion. Bitcoin holdings fell from 842,138 to 840,447. The exact new alert is
-  [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-399eb4aca85f|the 2026-08-19 volume anomaly]].
-- **Assumptions and valuation changed:** the 12-month `other` sum-of-parts keeps the prior USD
-  45,000/USD 70,000/USD 100,000 Bitcoin and USD 0.5/USD 1.0/USD 2.0 billion software assumptions,
-  but updates Bitcoin quantity, reserve, preferred claims and common shares. Bear/base/bull values
-  move from USD 52.50/USD 108.16/USD 175.99 to USD 53.63/USD 107.78/USD 173.76; probabilities remain
-  30%/50%/20%.
-- **Thesis, rating, and action:** the treasury mechanism remains supported, but the two-week mix of
-  common issuance, Bitcoin sales and preferred repurchases confirms that liquidity protection is
-  being purchased with dilution and treasury turnover. Medium confidence, **Hold / Watch**, and
-  allocation ineligibility are unchanged.
-- **Catalysts, risks, blockers, and gaps:** reserve durability improved modestly and preferred claims
-  declined, while common dilution and Bitcoin-per-share pressure increased. Catalysts, invalidation,
-  and the absence of a hard blocker are unchanged. Scenario sensitivity, incomplete fully diluted
-  share conversion detail, downside asymmetry, low margin of safety, and no accepted relationship
-  remain unresolved soft gaps.
+- **Facts and evidence:** a fresh SEC submissions-index check contains no operating filing or
+  treasury update after the August 17 Form 8-K through the exact August 21 market-data date. The
+  840,447 bitcoin holding, USD 4.8 billion reserve, disclosed claims and common-share denominator
+  therefore remain the latest primary-evidence inputs.
+- **Alert and timing:** the exact new alert is
+  [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5|the strengthened 2026-08-21 volume anomaly]].
+  Adjusted close rose 30.09% from USD 91.67 on July 24 to USD 119.25 on August 21. The last session
+  traded 45.84 million shares at a 2.0969 volume z-score; price was above the USD 111.41 upper
+  Bollinger band and RSI remained below its overbought threshold at 66.07.
+- **Assumptions and valuation:** the USD 53.63/USD 107.78/USD 173.76 bear/base/bull values and
+  30%/50%/20% probabilities remain supported. At the higher USD 119.25 mark they imply USD 104.731
+  weighted value, negative 12.18% expected return and a negative 9.13% confidence-adjusted return.
+  The unchanged USD 86.224 buy-below price remains unreached.
+- **Thesis, catalysts, risks, and action:** no catalyst or invalidation fired, no primary evidence
+  changed, and the treasury thesis and risk checklist remain unchanged. The stronger price and
+  volume move is adverse valuation and timing evidence rather than a fundamental upgrade. The
+  deterministic rating moves to **Sell / Avoid** while allocation ineligibility remains unchanged;
+  no full security review is warranted.
 
 ## Alert review: opportunity, risk, or noise?
 
-The canonical packet records entry into a volume anomaly on 2026-08-19. Adjusted close rose 4.24%
-from USD 100.01 on 2026-07-22 to USD 104.25, while the August 19 session traded 48.67 million
-shares. Deterministic indicators report a 3.752 volume z-score, 0.8546 trigger strength, neutral
-RSI of 55.74, a close above the USD 96.25 20-day average and still below the USD 145.47 200-day
-average. MACD remained negative but above its signal.
+The canonical packet records a strengthened volume anomaly on 2026-08-21. Adjusted close rose
+30.09% from USD 91.67 on 2026-07-24 to USD 119.25, while the August 21 session traded 45.84 million
+shares. Deterministic indicators report a 2.0969 volume z-score, RSI of 66.07, a close above the
+USD 98.57 20-day average and still below the USD 143.95 200-day average. The close was also above
+the USD 111.41 upper Bollinger band, and MACD was positive and above its signal.
 
-This is **material attention and event digestion, but not an independently actionable catalyst**.
-The August 19 price and volume spike followed two weekly filings that disclose more common
-issuance, a larger reserve, preferred repurchases and a small Bitcoin sale. Those facts improve
-liquidity and lower preferred claims but also increase common shares and reduce Bitcoin per share.
-No separate primary issuer filing through August 19 establishes a new operating catalyst. The
-alert is mixed timing evidence rather than a thesis upgrade or a sufficient margin of safety.
+This is **material attention and adverse valuation timing, but not an independently actionable
+catalyst**. A fresh SEC submissions-index retrieval contains no operating filing or treasury update
+after the August 17 Form 8-K through the alert period. The rise therefore does not establish changed
+holdings, claims, operating economics or a new fundamental catalyst. It moves the stock farther
+above base and weighted value and farther from the buy-below zone rather than upgrading the thesis.
 
 ## Economics and thesis
 
@@ -96,7 +94,9 @@ Registered primary evidence: [second-quarter 2026 Form 10-Q](https://www.sec.gov
 (`source_mstr_q2_2026_10q`) and [August 3, 2026 Form 8-K treasury update](https://www.sec.gov/Archives/edgar/data/1050446/000119312526329565/mstr-20260803.htm)
 (`source_mstr_aug3_2026_8k`), plus the [August 10 Form 8-K](https://www.sec.gov/Archives/edgar/data/1050446/000119312526341297/mstr-20260810.htm)
 (`source_mstr_aug10_2026_8k`) and [August 17 Form 8-K](https://www.sec.gov/Archives/edgar/data/1050446/000119312526353240/mstr-20260817.htm)
-(`source_mstr_aug17_2026_8k`).
+(`source_mstr_aug17_2026_8k`). The [SEC submissions index](https://data.sec.gov/submissions/CIK0001050446.json)
+(`source_mstr_sec_submissions_20260822`) was checked on August 22 and showed no later operating or
+treasury filing through the August 21 market-data date.
 
 ## Idea exposure map
 
@@ -130,10 +130,11 @@ software value, unchanged USD reserve, and current disclosed claims. The base va
 Bitcoin at USD 100,000 and USD 2.0 billion software value. Each scenario holds disclosed Bitcoin
 quantity and claims constant, so adverse funding needs or further dilution would make it optimistic.
 
-The USD 106.967 probability-weighted fair value implies only about 2.61% expected return from USD
-104.25; medium confidence reduces it further. Bear/base/bull returns remain sharply asymmetric.
-The current price is below weighted value but above the deterministic canonical buy-below
-level. Expected return, base upside, bear/base and expected/bear payoff, margin of safety,
+The USD 104.731 probability-weighted fair value implies negative 12.18% expected return from USD
+119.25; medium confidence reduces it to negative 9.13%. Bear/base/bull returns are approximately
+negative 55.03%, negative 9.62% and positive 45.71%. The current price is above weighted and base
+value and above the deterministic canonical buy-below level. Expected return, base upside,
+bear/base and expected/bear payoff, margin of safety,
 confidence, and accepted-relationship requirements therefore fail. This bounded comparison is not
 a Bitcoin or stock-price forecast.
 
@@ -149,7 +150,7 @@ markets access closes during a Bitcoin drawdown.
 
 ## Disposition
 
-Status: **watching**, confidence **medium**, expected rating **Hold**, portfolio action **Watch**, and
+Status: **watching**, confidence **medium**, expected rating **Sell**, portfolio action **Avoid**, and
 **allocation ineligible**. Deep liquidity and capital access do not overcome downside asymmetry,
 financing complexity, dilution, failed economic gates, and the absence of an accepted relationship.
 No conviction strategy, signal, order, or paper trade is justified. Review by **2026-09-19**, or

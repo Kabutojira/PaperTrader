@@ -4686,3 +4686,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
   and the USD 11.60 buy-below gate remains unreached, retaining Hold / Watch and ineligibility.
 - No catalyst, invalidation or valuation gate changed; no additional full review, strategy, signal
   or paper order was created.
+
+## [2026-08-22T15:55:59Z] update | Strategy volume-anomaly quick check
+
+- Rechecked [[securities/security_fe5539a7d3fd9d553bce|Strategy]] after the strengthened 24 July
+  through 21 August volume anomaly and 30.09% measured-period rise to USD 119.25.
+- A fresh SEC submissions retrieval contains no operating filing or treasury update after the
+  August 17 Form 8-K, leaving the thesis, catalysts, risks, invalidation and USD 53.63/USD
+  107.78/USD 173.76 scenarios unchanged.
+- The higher mark lowers expected return to negative 12.18%, leaves the USD 86.224 buy-below price
+  unreached and produces Sell / Avoid while allocation ineligibility remains unchanged. No full
+  review, strategy, signal or paper order was created.

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_mstr_sec_submissions_20260822",
+  "url": "https://data.sec.gov/submissions/CIK0001050446.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001050446.json",
+  "source_type": "regulator_index",
+  "title": "Strategy Inc SEC submissions index checked 2026-08-22",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b1d71b391377c3567bb2b3e486fd420e72b17851d77ba8e0e2c16ea097bee2c9",
+  "related_entity_ids": "security_fe5539a7d3fd9d553bce",
+  "checked_at": "2026-08-22T15:55:59Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The recent submissions list contains no operating filing or treasury update after the Form 8-K filed 2026-08-17 through the 2026-08-21 market-data date.",
+  "summary": "The SEC submissions index contains no operating filing or treasury update newer than Strategy's August 17 Form 8-K through the exact alert period.",
+  "run_id": "daily-20260822T152115Z"
+}

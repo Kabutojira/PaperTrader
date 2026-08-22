@@ -1,0 +1,23 @@
+{
+  "security_id": "security_fe5539a7d3fd9d553bce",
+  "issuer_id": "issuer_c09135a9f81a751eb0e3",
+  "company_name": "Strategy Inc",
+  "instrument_name": "Strategy Inc Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "MSTR",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "MSTR",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Application",
+  "status": "watching",
+  "watchlist_reason": "Bitcoin scale and capital-market access merit monitoring, but downside asymmetry, continued common dilution, preferred and debt claims, financing complexity, failed economic gates and no accepted relationship prevent action.",
+  "research_summary": "Unchanged USD 53.63/USD 107.78/USD 173.76 scenarios imply USD 104.731 weighted value versus USD 119.25 after the strengthened volume anomaly; Sell / Avoid remains allocation-ineligible.",
+  "research_page": "data/wiki/securities/security_fe5539a7d3fd9d553bce.md",
+  "last_research_at": "2026-08-22T15:55:59Z",
+  "next_review_at": "2026-09-19T08:26:47Z",
+  "source": "source_mstr_q2_2026_10q|source_mstr_aug3_2026_8k|source_mstr_aug10_2026_8k|source_mstr_aug17_2026_8k|source_mstr_sec_submissions_20260822"
+}
