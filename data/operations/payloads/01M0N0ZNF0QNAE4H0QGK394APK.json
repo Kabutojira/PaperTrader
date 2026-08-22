@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_CriOPMkVZAM",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-22T15:21:16Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_CriOPMkVZAM",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "CriOPMkVZAM",
+    "video_title": "This Is Big - Interest Rates Up, Interest Costs Up!",
+    "video_url": "https://www.youtube.com/watch?v=CriOPMkVZAM"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0N0ZNF0QNAE4H0QGK394APK",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=CriOPMkVZAM"
+  ]
+}

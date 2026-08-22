@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_f2b9760d847b2ba59324",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-09T22:47:07Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_f2b9760d847b2ba59324.md",
+    "security_id": "security_f2b9760d847b2ba59324"
+  },
+  "objective": "Revalidate security_f2b9760d847b2ba59324 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0N0ZVAGQK41AKTEY0NH6JEB",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_enph_q2_2026_10q",
+    "source_enph_q2_2026_release",
+    "source_enph_sec_submissions_20260809"
+  ]
+}

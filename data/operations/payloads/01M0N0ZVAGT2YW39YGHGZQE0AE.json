@@ -1,0 +1,21 @@
+{
+  "entity_id": "relationship_32b2b86d40c7f81ffda3",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_precision_biology_healthcare_automation",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_32b2b86d40c7f81ffda3",
+    "security_id": "security_b1f2c48e1a744f5ecf67"
+  },
+  "objective": "Review the canonical relationship from idea_precision_biology_healthcare_automation to security_b1f2c48e1a744f5ecf67 and accept or reject it with current evidence.",
+  "operation_id": "01M0N0ZVAGT2YW39YGHGZQE0AE",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_lh_aug11_2026_8k",
+    "source_lh_aug17_2026_8k",
+    "source_lh_q2_2026_10q",
+    "source_lh_q2_2026_results",
+    "source_lh_sec_submissions_20260821"
+  ]
+}

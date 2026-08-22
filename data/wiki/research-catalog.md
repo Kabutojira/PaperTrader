@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-21"
-updated: "2026-08-21"
+updated: "2026-08-22"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_cdd3e1e082062c31fd52"
 as_of: "2026-08-21T23:39:17Z"
@@ -614,3 +614,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f|SCCO — Volume anomaly]]
+- [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-a3da4875cd67|SQM — Volume anomaly]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5|MSTR — Volume anomaly]]

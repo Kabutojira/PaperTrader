@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-21"
+updated: "2026-08-22"
 provenance: repository-contract
 ---
 
@@ -4638,3 +4638,17 @@ This log is append-only. Rotate it by year only after the configured line thresh
   conditions remain unchanged; the higher mark lowers expected return to about negative 38.80%.
 - Strong Sell / Avoid and allocation ineligibility remain unchanged. The USD 108 buy-below price
   remains unreached, and no full review, strategy, signal or paper trade was created.
+
+## 2026-08-22
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f]] (aec01433fc6f).
+
+- Classified [[inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f]] as `ingest`: Material volume-anomaly strengthening with a 20.5% period return warrants durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-a3da4875cd67]] (a3da4875cd67).
+
+- Classified [[inbox/market-security_9d4049ed6669a52815d6-volume_anomaly-a3da4875cd67]] as `ingest`: Material 19.2% period return coincides with a newly entered volume anomaly and merits durable review.
+
+- Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5]] (7f83a7474bf5).
+
+- Classified [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5]] as `ingest`: A strengthened volume-anomaly transition coincides with a material 30.1% period return and warrants durable review.
