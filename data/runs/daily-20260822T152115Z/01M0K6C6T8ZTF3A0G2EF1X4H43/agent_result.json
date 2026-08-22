@@ -1,0 +1,69 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader research security upsert --request data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/assessment_upsert_request.json",
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Vale's August 21 MACD bullish crossover followed a 1.35% decline over the exact July 24 through August 21 period. No new primary evidence changed the thesis or gates; at USD 14.59, the unchanged scenarios imply USD 13.95 weighted fair value and retain Hold / Watch, allocation ineligibility, and no additional full-review follow-up or paper action."
+  ],
+  "evidence": [
+    {
+      "claim": "VALE closed August 21 at USD 14.59000015258789 after a 1.35% decline over July 24 through August 21. MACD was -0.19471 versus its -0.22785 signal and crossed above by 0.03314; RSI was neutral at 53.76. The operation retained source-price snapshot hash 5b49954a4cb3ba731451d8191e9327782d495ba4edac987ec2062a73ccdc29df.",
+      "observed_at": "2026-08-22T15:21:22Z",
+      "source": "PaperTrader immutable MACD alert packet and deterministic market state",
+      "source_hash": "5b49954a4cb3ba731451d8191e9327782d495ba4edac987ec2062a73ccdc29df"
+    },
+    {
+      "claim": "The retained current primary evidence supports the existing Salobo copper-growth catalyst but supplies no new fact in this bounded crossover check that changes the valuation scenarios or entry gate.",
+      "observed_at": "2026-08-22T15:47:54Z",
+      "source": "Vale Salobo CPF project execution update",
+      "source_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+    },
+    {
+      "claim": "The retained current primary evidence supports the existing remediation implementation conclusion but does not remove Vale's established payment, remediation, or tailings risks and supplies no changed invalidation gate.",
+      "observed_at": "2026-08-22T15:47:54Z",
+      "source": "Vale Fundao agreement municipal-adherence update",
+      "source_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+    },
+    {
+      "claim": "Assessment assessment_9911343e7005a53ee6fd is the sole immutable history version sourced from operation 01M0K6C6T8ZTF3A0G2EF1X4H43 and run daily-20260822T152115Z, links predecessor assessment_aca1444a4334b5a06a4f, and derives -38.3139%/-0.6169%/37.0802% bear/base/bull returns, USD 13.95 weighted fair value, -4.3866% expected return, -3.2899% confidence-adjusted expected return, USD 11.60 buy-below price, and an ineligible Hold/Watch disposition.",
+      "source": "PaperTrader deterministic assessment projection"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/assessment_upsert_request.json",
+    "data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0K6C6T8ZTF3A0G2EF1X4H43",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one bounded Vale quick check after the August 21 MACD bullish crossover. The exact July 24 through August 21 period declined 1.35%, while MACD crossed above its signal without new issuer evidence or a changed catalyst, invalidation, thesis, or scenario assumption. At the fresh USD 14.59 mark, the unchanged USD 9.00/USD 14.50/USD 20.00 scenarios produce USD 13.95 probability-weighted fair value, -4.39% expected return, -3.29% confidence-adjusted expected return, and a USD 11.60 buy-below price. Published assessment assessment_9911343e7005a53ee6fd with Hold/Watch and allocation-ineligible disposition. No full-review follow-up, strategy, signal, order, allocation, or accounting state was created or changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied operation was the sole selected running operation, claimed by daily-20260822T152115Z, and matched the validated quick-check payload and immutable VALE/XNYS/USD/equity identity.",
+      "Consumed security context before reading or changing assessment state and consumed it again after publication.",
+      "Confirmed current assessment run_id daily-20260822T152115Z and exactly one immutable history version, assessment_9911343e7005a53ee6fd, sourced from operation 01M0K6C6T8ZTF3A0G2EF1X4H43 with predecessor assessment_aca1444a4334b5a06a4f and the expected result path.",
+      "Confirmed the immutable alert source-price hash, exact July 24 through August 21 period, MACD crossover cause, fresh USD 14.59000015258789 mark, and current market/FX timestamps used by the accepted assessment.",
+      "Confirmed ordered bear/base/bull fair values, probabilities totaling 100, permitted anchored component scores, unchanged assumptions, and the deterministic Hold/Watch allocation-ineligible frontier.",
+      "Confirmed no valuation or buy-below gate was reached, no catalyst or invalidation fired, no material primary evidence changed, full_research_requested was false, and no additional full security review was warranted or enqueued.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint, and strict portfolio reconciliation passed.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance, accounting ledger, source registry/history, raw source, or other security page was changed by this operation."
+    ],
+    "passed": true
+  }
+}

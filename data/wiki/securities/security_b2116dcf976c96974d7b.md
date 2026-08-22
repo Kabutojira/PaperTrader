@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-13"
-updated: "2026-08-21"
+updated: "2026-08-22"
 provenance: "source_vale_q2_2026_ifrs; source_vale_q2_2026_production; source_vale_q2_2026_results; source_vale_salobo_cpf_20260812; source_vale_fundao_municipalities_20260820"
 security_id: security_b2116dcf976c96974d7b
 issuer_id: issuer_a3cc545e137b5f2e3a04
 confidence: medium
-next_review: "2026-09-20"
+next_review: "2026-09-21"
 ---
 
 # Vale S.A. sponsored ADR
@@ -23,7 +23,7 @@ next_review: "2026-09-20"
 
 This assessment compares Vale's diversified iron-ore and base-metals economics with
 [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] and addresses the deterministic
-[[inbox/market-security_b2116dcf976c96974d7b-bollinger_below_lower-acc942b6f4a6|Bollinger-band breach]].
+[[inbox/market-security_b2116dcf976c96974d7b-macd_cross_above_signal-cc825853a0db|MACD bullish crossover]].
 
 ## Economics and thesis
 
@@ -59,21 +59,18 @@ Registered primary evidence: [Vale 2Q26 performance](https://www.sec.gov/Archive
 
 ## Changes since prior review
 
-- **Primary evidence:** Vale advanced Salobo's coarse-particle-flotation project to execution, moved
-  expected start-up to the first half of 2028, reduced estimated capital expenditure to USD 215
-  million before USD 40 million of Wheaton funding, and expects up to about 30,000 tonnes of annual
-  copper output plus 15,000 ounces of by-product gold. This supports the existing copper-growth
-  catalyst but is not large enough, on this bounded check, to change the through-cycle scenarios.
-- **Remediation:** Nineteen additional eligible municipalities joined the Fundão agreement on 20
-  August, bringing adherence to 45 of 49. This improves implementation breadth but does not remove
-  the existing payment schedule or Vale's remediation and tailings risks.
-- **Thesis and risks:** The diversified iron-ore and base-metals thesis, commodity normalization,
-  net-debt, capital-intensity, and liability risks remain intact. The new project and remediation
-  evidence require a full review because the payload explicitly requests one, not because the
-  alert establishes a new valuation conclusion.
-- **Valuation and action:** The USD 9.00 / USD 14.50 / USD 20.00 scenarios remain comparable. At
-  USD 14.23, their weighted value is USD 14.20 and the USD 10.88 buy zone remains unreached. Vale
-  remains watching and allocation-ineligible; no strategy or signal is justified.
+- **Primary evidence:** The current 2Q26 financial, production, Salobo and Fundão evidence checked in
+  the 21 August quick review remains the bounded primary-source set. The MACD crossover supplies no
+  new issuer evidence and does not change any operating, balance-sheet or liability assumption.
+- **Thesis, catalysts and risks:** The diversified iron-ore and base-metals thesis, Salobo growth
+  catalyst, broader Fundão adherence, commodity normalization, net-debt, capital-intensity and
+  liability risks remain intact. No catalyst or invalidation condition fired.
+- **Market and timing:** The 21 August adjusted close rose to USD 14.59. MACD remained negative but
+  crossed above its signal by 0.03314, a short-term momentum improvement after a 1.35% decline over
+  the exact 24 July through 21 August period. This is attention evidence, not a fundamental entry.
+- **Valuation and action:** The USD 9.00 / USD 14.50 / USD 20.00 scenarios and USD 11.60 buy-below
+  price remain unchanged. Their USD 13.95 weighted value is below the new mark, so Vale remains
+  Hold / Watch and allocation-ineligible. No additional full review, strategy or signal is justified.
 
 Current additional primary evidence: [Salobo CPF execution update](https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm)
 (`source_vale_salobo_cpf_20260812`) and [Fundão municipal-adherence update](https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm)
@@ -81,18 +78,18 @@ Current additional primary evidence: [Salobo CPF execution update](https://www.s
 
 ## Alert review
 
-The 20 August close was USD 14.23 after a 4.05% decline over the exact 23 July through 20 August
-period. Volume was 39.8 million shares with a 2.4603 z-score, entering the configured anomaly, while
-RSI was neutral at 47.87 and MACD remained below its signal. The same-day Fundão release is
-constructive implementation evidence rather than an adverse catalyst and does not explain the
-negative measured-period return. The anomaly is material attention and short-term risk, not proof
-of thesis impairment or an entry condition.
+The 21 August close was USD 14.59 after a 1.35% decline over the exact 24 July through 21 August
+period. MACD was -0.19471 versus its -0.22785 signal, entering the configured bullish crossover with
+a 0.03314 spread; RSI was neutral at 53.76 and no persistent trigger remained in the latest state.
+The crossover reverses short-term momentum direction after the prior day's volume anomaly, but the
+price remains above both weighted fair value and the buy-below gate. It is attention evidence rather
+than proof of thesis improvement or an entry condition.
 
 ## Valuation, catalysts, and risks
 
 The `cyclical_commodity` template uses `mid_cycle_cash_flow`. The valuation deliberately normalizes
-rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 20 August close of USD
-14.23, the unchanged 12-month scenarios are:
+rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 21 August close of USD
+14.59, the unchanged 12-month scenarios are:
 
 | Scenario | Probability | Fair value | Assumptions |
 | --- | ---: | ---: | --- |
@@ -100,10 +97,10 @@ rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 20 
 | Base | 50% | USD 14.50 | Iron ore normalizes below the recent realized price, operational gains and base-metals growth offset part of the price decline, and recurring free cash flow supports distributions without increasing leverage. |
 | Bull | 20% | USD 20.00 | Iron ore remains resilient, S11D and other assets deliver volume and cost gains, copper projects advance, and stronger cash conversion reduces net debt while liabilities remain controlled. |
 
-Probability-weighted fair value is USD 14.20, about 0.21% below the mark; medium confidence retains
-a negative confidence-adjusted expected return. The base case offers about 1.90% upside, the bear
-case about 36.75% downside, and the USD 10.88 buy-below level is well below the current price. These outputs do not offer the
-required downside protection or margin of safety.
+Probability-weighted fair value is USD 13.95, about 4.39% below the mark; medium confidence produces
+about -3.29% confidence-adjusted expected return. The base case is about 0.62% below market, the bear
+case about 38.31% below market, and the USD 11.60 buy-below level remains well below the current
+price. These outputs do not offer the required downside protection or margin of safety.
 
 Catalysts are sustained operating delivery, S11D improvements, Bacaba and other copper milestones,
 unit-cost reduction, and net-debt reduction. Invalidate or downgrade the thesis if iron-ore demand
@@ -116,7 +113,8 @@ crowd out high-return reinvestment and liability funding.
 Status: **watching**, confidence **medium**. The current filings make valuation supportable, but the
 scenario frontier remains ineligible: expected and base returns are below the economic hurdle,
 bear/base payoff is poor, the margin of safety is below target, and no accepted causal relationship
-exists. The volume anomaly is attention and risk evidence, not a paper-trade signal. A dependent
-full review is required to absorb the new Salobo and Fundão evidence; otherwise review by
+exists. The MACD crossover is attention evidence, not a paper-trade signal, and changes no material
+gate. The existing research already identifies the Salobo and Fundão evidence for full review; this
+bounded crossover check does not justify another follow-up. Review by
 **2026-09-20** or sooner after a material iron-ore price, Chinese-demand, production, project,
 remediation, or leverage change. No strategy or signal is justified.

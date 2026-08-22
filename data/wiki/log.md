@@ -4676,3 +4676,13 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Added a clearly labelled candidate link to
   [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]] for one dependent
   relationship review; the candidate is not represented as an accepted relationship.
+
+## [2026-08-22T15:47:54Z] update | Vale MACD quick check
+
+- Rechecked [[securities/security_b2116dcf976c96974d7b|Vale]] after the 24 July through 21 August
+  MACD bullish crossover and 1.35% measured-period decline.
+- Current 2Q26, Salobo and Fundão primary evidence leaves the thesis, catalysts, risks and
+  USD 9.00/USD 14.50/USD 20.00 scenarios unchanged. At USD 14.59, weighted fair value is USD 13.95
+  and the USD 11.60 buy-below gate remains unreached, retaining Hold / Watch and ineligibility.
+- No catalyst, invalidation or valuation gate changed; no additional full review, strategy, signal
+  or paper order was created.
