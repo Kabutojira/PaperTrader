@@ -213,6 +213,7 @@ No pending orders.
 - [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5|MSTR — Volume anomaly]]
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260822T152115Z|Daily research podcast — 2026-08-22T152115Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[securities/security_9d4049ed6669a52815d6|Sociedad Quimica y Minera de Chile S.A. American depositary shares]]
 - [[securities/security_ad3b1f8f59fd599f079a|Robinhood Markets, Inc. Class A common stock]]

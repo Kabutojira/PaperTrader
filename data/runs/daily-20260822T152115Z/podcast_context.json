@@ -1,0 +1,326 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_critical_minerals_lithium.md",
+      "sha256": "90640ec837e8d3554a01aa61f0ac2e7413fdc947e36ec70042ec34f9b7bc357f"
+    },
+    {
+      "path": "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+      "sha256": "9564ec63c936fb967b8a92800eb2140e2f1fa90250a3d41f095a1924b6cbb9a3"
+    },
+    {
+      "path": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "sha256": "2c390d14b6a84d98534e7d98f72f6984f4c788aea9f869fda3cfa04135b63bcd"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+      "sha256": "a1053e9928fe93edf482aa67dd2701754dcb38d8342d9a6929c36c8122cf4c46"
+    },
+    {
+      "path": "data/wiki/securities/security_ad3b1f8f59fd599f079a.md",
+      "sha256": "94de4bb4e88381b1e6611ab9525b7c565cf46377ab2f8d0d86025f8b6fe21b6b"
+    },
+    {
+      "path": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+      "sha256": "8bf1e88f83c5ad091cc674919a1449ea2bb14a4d03ec5d6f27536cc53ea70e71"
+    },
+    {
+      "path": "data/wiki/securities/security_fe5539a7d3fd9d553bce.md",
+      "sha256": "542b435936d553fc2064ea28ef3a2fcf49e04b20d12e33b7e647d1144f2e6c48"
+    }
+  ],
+  "daily_cycle_id": "daily-20260822T152115Z",
+  "decision_snapshot_path": "data/runs/daily-20260822T152115Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "a3701941b3612baa85c910b896bebc575e2fe8fb17e418d4587219b3a6830e18",
+  "generated_at": "2026-08-22T16:13:07Z",
+  "intervening_daily_cycles": [
+    "daily-20260822T152115Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260822T152115Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260822T152115Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260822.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260821T221654Z/podcast_context.json",
+    "context_sha256": "1767d5022a7f68fcf061b0ad100c3985d398c127dd6291c49575f374e02914dc",
+    "daily_cycle_id": "daily-20260821T221654Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260821T221654Z.md",
+    "page_sha256": "7432392be6f678254edfe265c536193aacc15d5e2873248eca8db0de0731aa13",
+    "research_cutoff_at": "2026-08-21T23:39:17Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260822.md",
+  "report_sha256": "76869ef2bd25fee97b30e215a12a5f80a62754afce532a4f73dc690c177ea547",
+  "research_cutoff_at": "2026-08-22T16:05:49Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-22T15:33:45Z",
+      "daily_cycle_id": "daily-20260822T152115Z",
+      "daily_report_items": [
+        "SQM's SEC-filed Q2 results confirmed record lithium volume, a roughly USD 21.8/kg Novandino realized price and sharply stronger earnings after a 26.42% alert-period rise. New USD 42/USD 77/USD 120 normalized-earnings scenarios imply USD 79 weighted value versus USD 81.96, retaining Hold / Watch and allocation ineligibility; one dependent lithium-idea refresh was queued and no paper order or accounting state changed."
+      ],
+      "entity_id": "security_9d4049ed6669a52815d6",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The canonical alert measured 2026-07-22 through 2026-08-19: SQM closed at USD 81.95999908447266 after a 26.42080418285432% period return and traded 2,883,500 shares with a 2.5070391771150877 volume z-score.",
+          "observed_at": "2026-08-22T15:21:22Z",
+          "source": "data/operations/payloads/01KZVB8A9GR9ZCR7X7M2WJ507W.json",
+          "source_hash": "06c0c635ad6ba1d6d1796d43d3f5815b44f35991ad20403405bf397f5d7d0cd5"
+        },
+        {
+          "claim": "SQM reported Q2 revenue of USD 2.4684 billion, net income of USD 660.0 million or USD 2.31 per share, 84.1 thousand tonnes LCE of lithium sales, a Novandino realized lithium price of about USD 21.8 per kilogram, and lithium representing 78% of first-half consolidated gross profit. The release also reports USD 3.3768 billion cash, USD 5.2164 billion short- and long-term debt, and about USD 3 billion of planned 2026-2028 capex.",
+          "observed_at": "2026-08-22T15:25:04Z",
+          "source": "SQM Q2 2026 Form 6-K earnings release",
+          "source_hash": "9586302a63f8817af4d79d2a7bba4d225f5277b5b096edefe200106b8b53ff91",
+          "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000034/a6-k_2q2026earningsrelease.htm"
+        },
+        {
+          "claim": "Assessment assessment_e78b8f1c3d62e1e2d0f4 links predecessor assessment_e23b238626d8c9fbb346, schema version 2, this operation and expected result path, and page hash a1053e9928fe93edf482aa67dd2701754dcb38d8342d9a6929c36c8122cf4c46. Deterministic derivation produces USD 79 weighted fair value, -3.61151673686808579148753679% expected return, Hold / Watch, and ineligibility on expected-return, base-return, payoff and margin-of-safety gates.",
+          "source": "data/tables/security_assessment_history.csv"
+        },
+        {
+          "claim": "The one accepted canonical SQM relationship is relationship_9773364a04293a4febaf to idea_critical_minerals_lithium; it remains current through its 2026-08-31 next-review date. The complete maintained idea catalog produced no additional material candidate edge with a distinct evidence-backed mechanism.",
+          "source": "data/tables/relationships.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0N1HJPRKJZV6GFXFPEYKP03.json",
+        "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_retry02_request.json",
+        "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/enqueue_idea_refresh_request.json",
+        "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/security_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/source_sqm_q2_2026_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+      ],
+      "operation_id": "01KZVB8A9GR9ZCR7X7M2WJ507W",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded repeat review of SQM using the mandatory prior-security context, fresh identity-matched market and FX state, and the SEC-filed Q2 2026 release. Record lithium volume, a higher realized Novandino price and stronger earnings confirm the accepted lithium-cycle mechanism, while the 26.42% alert-period rise reduces valuation asymmetry. New USD 42/USD 77/USD 120 normalized-earnings scenarios derive USD 79 probability-weighted fair value versus the USD 81.96 mark, retaining Hold / Watch and allocation ineligibility. The immutable schema-version-2 assessment links predecessor assessment_e23b238626d8c9fbb346, this operation and result path, registered evidence and the updated page hash. Exactly one dependent lithium-idea refresh was enqueued; the accepted relationship remains current, no additional material candidate edge was identified, and no strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-22T15:45:27Z",
+      "daily_cycle_id": "daily-20260822T152115Z",
+      "daily_report_items": [
+        "Robinhood (HOOD): a strengthened volume anomaly accompanied a 13.93% rise to USD 108.13, but no newer SEC operating filing explains the move. Unchanged USD 42.40/69.00/112.50 scenarios now derive Sell/Avoid and allocation ineligibility; one dependent digital-finance relationship review was queued, with no strategy or paper order."
+      ],
+      "entity_id": "security_ad3b1f8f59fd599f079a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The Robinhood SEC submissions index checked on 2026-08-22 contains no operating filing after the Q2 2026 Form 10-Q; subsequent entries through 2026-08-18 are Form 4 ownership reports, so no newer primary operating disclosure supports revising the Q2 assumptions.",
+          "observed_at": "2026-08-22T15:36:50Z",
+          "source": "source_hood_sec_submissions_20260822",
+          "source_hash": "2fa4ecfc427c2a605c3074afdce19c2244c988b224bc45216aaf798a9ee7d206",
+          "url": "https://data.sec.gov/submissions/CIK0001783879.json"
+        },
+        {
+          "claim": "Canonical market evidence records a 2026-07-24 through 2026-08-21 measured period, USD 108.12999725341797 end price, 13.93% period return, 3.22 volume ratio, RSI 58.395 and a close above the upper Bollinger band.",
+          "observed_at": "2026-08-22T15:21:22Z",
+          "source": "data/wiki/inbox/market-security_ad3b1f8f59fd599f079a-volume_anomaly-d8fb77d9bd9b.md",
+          "source_hash": "d94e32cf620c456ec06bf77e54f83472f9caa9e4076cf0b4eb5714437443bc97"
+        },
+        {
+          "claim": "Robinhood's Q2 Form 10-Q remains the latest operating filing and supports the retained asset-gathering thesis while documenting transaction and crypto cyclicality, credit losses, debt, dilution, regulatory and custody risks.",
+          "observed_at": "2026-08-01T16:10:35Z",
+          "source": "source_hood_q2_2026_10q",
+          "source_hash": "454b499aaf20768afba029cc336539b37c3aa3b79aef20ab5cbced68769616fc",
+          "url": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm"
+        },
+        {
+          "claim": "The accepted immutable assessment assessment_621a27485ed1f53e5b4b links predecessor assessment_a4ecd00845b839f01296 and derives Sell/Avoid, -32.28058646077014418766834353% expected return, -24.21043984557760814075125765% confidence-adjusted expected return, and complete eligibility reason codes from the fresh USD 108.12999725341797 mark.",
+          "source": "data/tables/security_assessment_history.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0N24XV8WPTH5KAKV9VGZSBZ.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/assessment_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/assessment_upsert_retry01_request.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/assessment_upsert_retry02_request.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/enqueue_digital_finance_relationship_request.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/security_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/source_hood_sec_submissions_20260822_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_ad3b1f8f59fd599f079a.md"
+      ],
+      "operation_id": "01M0K6C6T8VC75V35W02D4WD04",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed the repeat schema-version-2 review of Robinhood Markets, Inc. after the 2026-08-21 strengthened volume anomaly. HOOD rose 13.93% over the canonical 2026-07-24 through 2026-08-21 period and finished at USD 108.13 on 3.22 times average volume and above its upper Bollinger band. The SEC submissions index contained no newer operating filing after the Q2 Form 10-Q, so the rally is not attributed to an unverified catalyst and the Q2 operating thesis and USD 42.40/69.00/112.50 scenarios remain unchanged. At the fresh mark, deterministic assessment derives a USD 73.225 probability-weighted value, -32.28% raw expected return, -24.21% confidence-adjusted expected return, Sell/Avoid, and allocation ineligibility. No strategy, signal, order, fill, or accounting state was created. One dependent relationship review was enqueued for the plausible but unaccepted digital-finance and crypto-rails edge."
+    },
+    {
+      "completed_at": "2026-08-22T15:53:48Z",
+      "daily_cycle_id": "daily-20260822T152115Z",
+      "daily_report_items": [
+        "Vale's August 21 MACD bullish crossover followed a 1.35% decline over the exact July 24 through August 21 period. No new primary evidence changed the thesis or gates; at USD 14.59, the unchanged scenarios imply USD 13.95 weighted fair value and retain Hold / Watch, allocation ineligibility, and no additional full-review follow-up or paper action."
+      ],
+      "entity_id": "security_b2116dcf976c96974d7b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "VALE closed August 21 at USD 14.59000015258789 after a 1.35% decline over July 24 through August 21. MACD was -0.19471 versus its -0.22785 signal and crossed above by 0.03314; RSI was neutral at 53.76. The operation retained source-price snapshot hash 5b49954a4cb3ba731451d8191e9327782d495ba4edac987ec2062a73ccdc29df.",
+          "observed_at": "2026-08-22T15:21:22Z",
+          "source": "PaperTrader immutable MACD alert packet and deterministic market state",
+          "source_hash": "5b49954a4cb3ba731451d8191e9327782d495ba4edac987ec2062a73ccdc29df"
+        },
+        {
+          "claim": "The retained current primary evidence supports the existing Salobo copper-growth catalyst but supplies no new fact in this bounded crossover check that changes the valuation scenarios or entry gate.",
+          "observed_at": "2026-08-22T15:47:54Z",
+          "source": "Vale Salobo CPF project execution update",
+          "source_hash": "23b0020ea311a9df8a778f872099346e794406c69d2a5090d9ee9558d8580937",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm"
+        },
+        {
+          "claim": "The retained current primary evidence supports the existing remediation implementation conclusion but does not remove Vale's established payment, remediation, or tailings risks and supplies no changed invalidation gate.",
+          "observed_at": "2026-08-22T15:47:54Z",
+          "source": "Vale Fundao agreement municipal-adherence update",
+          "source_hash": "00db0c40a4ef27ebce4b55e174350febafa50b569fb7e19f32ba0ab37af6d174",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm"
+        },
+        {
+          "claim": "Assessment assessment_9911343e7005a53ee6fd is the sole immutable history version sourced from operation 01M0K6C6T8ZTF3A0G2EF1X4H43 and run daily-20260822T152115Z, links predecessor assessment_aca1444a4334b5a06a4f, and derives -38.3139%/-0.6169%/37.0802% bear/base/bull returns, USD 13.95 weighted fair value, -4.3866% expected return, -3.2899% confidence-adjusted expected return, USD 11.60 buy-below price, and an ineligible Hold/Watch disposition.",
+          "source": "PaperTrader deterministic assessment projection"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/assessment_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/security_upsert_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+      ],
+      "operation_id": "01M0K6C6T8ZTF3A0G2EF1X4H43",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260822T152115Z/01M0K6C6T8ZTF3A0G2EF1X4H43/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Vale quick check after the August 21 MACD bullish crossover. The exact July 24 through August 21 period declined 1.35%, while MACD crossed above its signal without new issuer evidence or a changed catalyst, invalidation, thesis, or scenario assumption. At the fresh USD 14.59 mark, the unchanged USD 9.00/USD 14.50/USD 20.00 scenarios produce USD 13.95 probability-weighted fair value, -4.39% expected return, -3.29% confidence-adjusted expected return, and a USD 11.60 buy-below price. Published assessment assessment_9911343e7005a53ee6fd with Hold/Watch and allocation-ineligible disposition. No full-review follow-up, strategy, signal, order, allocation, or accounting state was created or changed."
+    },
+    {
+      "completed_at": "2026-08-22T16:02:52Z",
+      "daily_cycle_id": "daily-20260822T152115Z",
+      "daily_report_items": [
+        "Strategy's strengthened August 21 volume anomaly accompanied a 30.09% rise over the exact July 24 through August 21 period to USD 119.25. A fresh SEC submissions check found no operating filing or treasury update after the August 17 Form 8-K. Unchanged USD 53.63/USD 107.78/USD 173.76 scenarios derive USD 104.731 weighted fair value, -12.18% expected return and -9.13% confidence-adjusted return; Hold / Watch remains allocation-ineligible and no full review or paper action was created."
+      ],
+      "entity_id": "security_fe5539a7d3fd9d553bce",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "MSTR rose 30.09% from the USD 91.67 adjusted close on 2026-07-24 to USD 119.25 on 2026-08-21. The final session traded 45.84 million shares, produced a 2.0969 volume z-score, closed above the USD 111.41 upper Bollinger band, and retained a below-threshold RSI of 66.07.",
+          "observed_at": "2026-08-22T15:21:22Z",
+          "source": "PaperTrader deterministic market and indicator state",
+          "source_hash": "1eb7bedd313449438b636142365ec263cce5ef9bd3597f6bfafeffe351d0943e",
+          "url": "data/wiki/inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5.md"
+        },
+        {
+          "claim": "The Strategy SEC submissions index contained no operating filing or treasury update newer than the Form 8-K filed 2026-08-17 through the exact 2026-08-21 market-data date.",
+          "observed_at": "2026-08-22T15:55:59Z",
+          "source": "U.S. Securities and Exchange Commission submissions index",
+          "source_hash": "b1d71b391377c3567bb2b3e486fd420e72b17851d77ba8e0e2c16ea097bee2c9",
+          "url": "https://data.sec.gov/submissions/CIK0001050446.json"
+        },
+        {
+          "claim": "Assessment assessment_2271c25af7d2a9a531a5 is the sole immutable history version sourced from this operation and run, links predecessor assessment_7d18a6bb522b5136cdfa, and derives -55.0273%/-9.6184%/45.7107% bear/base/bull returns, USD 104.731 weighted fair value, -12.1753% expected return, -9.1314% confidence-adjusted expected return, USD 86.224 buy-below price, and an ineligible Hold/Watch disposition.",
+          "source": "PaperTrader deterministic assessment projection"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/assessment_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/security_upsert_request.json",
+        "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/security_upsert_retry01_request.json",
+        "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/source_mstr_sec_submissions_refresh_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_fe5539a7d3fd9d553bce.md"
+      ],
+      "operation_id": "01M0N0ZVAGAYZDDYV7PDP759HT",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Strategy quick check for the strengthened August 21 volume anomaly. The USD 119.25 close was 30.09% above the July 24 period start, with a 2.0969 volume z-score and an upper-Bollinger-band breach. A fresh SEC submissions retrieval found no operating filing or treasury update after the August 17 Form 8-K, leaving the treasury thesis, catalysts, risks, invalidation and USD 53.63/USD 107.78/USD 173.76 scenarios unchanged. Deterministic assessment assessment_2271c25af7d2a9a531a5 now derives USD 104.731 weighted fair value, -12.18% expected return, -9.13% confidence-adjusted return and a Hold / Watch, allocation-ineligible disposition. The USD 86.224 buy-below price remains unreached. No full review was queued because no scenario assumption, buy zone, catalyst, invalidation, material primary evidence, eligibility status or decision-support completeness changed. No strategy, signal, order, allocation or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-22T16:05:35Z",
+      "daily_cycle_id": "daily-20260822T152115Z",
+      "daily_report_items": [
+        "Southern Copper repeat quick check: refreshed volume strengthened the 24 July through 21 August anomaly, but the USD 216 close, fundamental evidence and USD 91/USD 135/USD 187 scenarios are unchanged from the prior successful check. Strong Sell / Avoid, allocation ineligibility and Hold / Watch remain unchanged; no full review or paper-trade follow-up was created."
+      ],
+      "entity_id": "security_6ad1af8d10d6276a0221",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The exact current indicator row and alert packet bind security_6ad1af8d10d6276a0221 to market date 2026-08-21, adjusted close USD 216, a 20.4752% return from 2026-07-24, a strengthened volume anomaly, an upper-Bollinger-band state, RSI 67.33, and payload source-price hash 4ea94b3ef46860ede02ff21770883160fc215dedd78062b346a0500f067a7053.",
+          "observed_at": "2026-08-22T15:21:22Z",
+          "source": "data/market/indicators.csv and data/wiki/inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f.md",
+          "source_hash": "4ea94b3ef46860ede02ff21770883160fc215dedd78062b346a0500f067a7053"
+        },
+        {
+          "claim": "The required baseline full security review succeeded for the same immutable security at 2026-08-21T16:05:17Z and established the thesis, normalized scenarios, catalysts, risks and invalidation checklist used for this bounded repeat check.",
+          "source": "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/agent_result.json"
+        },
+        {
+          "claim": "A successful quick check less than one day earlier already evaluated the same 2026-08-21 USD 216 close and exact alert period against fresh SEC submissions evidence. It found no operating filing after the Q2 Form 10-Q and retained the thesis, USD 91/USD 135/USD 187 scenarios, Strong Sell / Avoid disposition and no-escalation decision.",
+          "source": "data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/agent_result.json"
+        },
+        {
+          "claim": "The mandatory successful audited context receipt confirmed current assessment assessment_aee98b931463049c7036 is fresh through 2026-09-04, matches the current security page hash, retains USD 216 as its reference price, and deterministically records -57.87%/-37.50%/-13.43% bear/base/bull returns, -38.80% expected return, USD 108 buy-below, Strong Sell / Avoid and allocation ineligibility.",
+          "source": "papertrader research security-context --security-id security_6ad1af8d10d6276a0221"
+        },
+        {
+          "claim": "The retained SEC submissions index was checked at 2026-08-21T23:17:26Z, matched content hash 934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b, and showed no operating filing after the Q2 Form 10-Q; the repeated same-market-date alert adds no contrary primary evidence.",
+          "observed_at": "2026-08-21T23:17:26Z",
+          "source": "source_scco_sec_submissions_20260821",
+          "source_hash": "934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b",
+          "url": "https://data.sec.gov/submissions/CIK0001001838.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0N0ZVAGVFRGC61RZF1NV5EM",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260822T152115Z/01M0N0ZVAGVFRGC61RZF1NV5EM/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Southern Copper quick check for the strengthened 2026-07-24 through 2026-08-21 volume-anomaly alert. The canonical USD 216 close and 20.4752% period return are unchanged from the successful quick check completed less than one day earlier; the refreshed provider volume strengthens the anomaly but supplies no new fundamental evidence. The thesis, USD 91/USD 135/USD 187 scenarios, probabilities, catalysts, risks, invalidation conditions, USD 108 buy-below price, Strong Sell / Avoid rating, allocation ineligibility and Hold / Watch research status remain unchanged. The fresh existing assessment assessment_aee98b931463049c7036 remains applicable. No repository state, full security review, strategy, signal, order, allocation or accounting state was changed."
+    }
+  ],
+  "run_id": "daily-20260822T152115Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-21T23:39:17Z"
+}

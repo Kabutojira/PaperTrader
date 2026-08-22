@@ -1,0 +1,60 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260822T152115Z --script-path data/wiki/podcasts/daily-podcast_20260822T152115Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260822T152115Z --script-path data/wiki/podcasts/daily-podcast_20260822T152115Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 3,095-word daily research podcast on SQM's lithium recovery and the contrasting economics and valuation risks of Robinhood and Strategy; the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "Controller-validated frozen context version three bound the exact cycle, cutoffs, selected successful research results, prior podcast, report path and transcript path for this operation.",
+      "source": "data/runs/daily-20260822T152115Z/podcast_context.json"
+    },
+    {
+      "claim": "Accepted SQM research confirmed record lithium volume, stronger realized pricing and earnings, while normalized scenarios retained Hold/Watch after the share-price rise.",
+      "source": "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/agent_result.json"
+    },
+    {
+      "claim": "Accepted Robinhood research found no newer operating filing behind the volume rally and retained unchanged scenarios that support Sell/Avoid at the fresh mark.",
+      "source": "data/runs/daily-20260822T152115Z/01M0K6C6T8VC75V35W02D4WD04/agent_result.json"
+    },
+    {
+      "claim": "Accepted Strategy research found no newer operating or treasury filing behind the strengthened rally and retained sum-of-parts scenarios below the fresh market price.",
+      "source": "data/runs/daily-20260822T152115Z/01M0N0ZVAGAYZDDYV7PDP759HT/agent_result.json"
+    },
+    {
+      "claim": "The most recent successful podcast was reviewed for continuity and repetition control before selecting the new chapters.",
+      "source": "data/wiki/podcasts/daily-podcast_20260821T221654Z.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260822T152115Z/01M0N3YKHRA1NT0M6SPN13FT9W/candidate_slate.md",
+    "data/runs/daily-20260822T152115Z/01M0N3YKHRA1NT0M6SPN13FT9W/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260822.md",
+    "data/wiki/podcasts/daily-podcast_20260822T152115Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0N3YKHRA1NT0M6SPN13FT9W",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a standalone 3,095-word daily research podcast with two chapters: SQM's evidence-backed lithium recovery versus state take, capex and normalized valuation; and a contrast between Robinhood's operating financial platform and Strategy's leveraged Bitcoin treasury after their unsupported price-and-volume rallies. Vale was excluded because the unchanged thesis and valuation were covered in two recent episodes, and Southern Copper was excluded as an exact same-market-date repeat with no new evidence or state. The script states SQM Hold/Watch, Robinhood Sell/Avoid and Strategy Sell/Avoid, with evidence-based Buy and Sell conditions. Deterministic preflight passed with six TTS chunks. The single audited draft render succeeded, producing 1,360 seconds of ephemeral audio outside the repository. The transcript and exact daily-report link were written; no audio reference, operation, signal, order, allocation or accounting state was created.",
+  "validation": {
+    "checks": [
+      "Confirmed the running operation, validated payload, frozen context and daily manifest all bind page_path data/wiki/podcasts/daily-podcast_20260822T152115Z.md.",
+      "Mapped every selected successful research development to exactly one chapter and documented the repetition-based exclusion of Vale and Southern Copper.",
+      "Confirmed the exact introduction, required teaser opening, chapter order, security rating endings, overall synthesis and exact closing sentences.",
+      "Deterministic script preflight passed at 3,095 spoken words, at least eight prose paragraphs, six TTS chunks and no forbidden spoken formatting or numeric glyphs.",
+      "Exactly one audited render-draft invocation succeeded; all media remained ephemeral outside the repository and no audio link was written.",
+      "The daily report contains exactly the required transcript link for the frozen timestamped page.",
+      "Strict schema, integrity, wiki lint, queue validation and portfolio reconciliation checks all returned OK.",
+      "No allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting path was changed by this operation."
+    ],
+    "passed": true
+  }
+}
