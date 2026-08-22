@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_7f3c2695ece99d31c71e",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_hood_q2_2026_10q",
+      "source_hood_q2_2026_results",
+      "source_hood_sec_submissions_20260822"
+    ],
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if digital-finance activity remains immaterial to normalized earnings, regulatory or custody costs offset revenue, take rates compress structurally, or adoption remains speculative and fails to support durable recurring economics.",
+    "proposed_mechanism": "Wider regulated digital-finance adoption can transmit into Robinhood through customer activity and monetization across cryptocurrency, custody, brokerage, transaction, subscription, and adjacent financial-product distribution.",
+    "relationship_id": "relationship_7f3c2695ece99d31c71e",
+    "security_id": "security_ad3b1f8f59fd599f079a"
+  },
+  "objective": "Review whether Robinhood has a material causal relationship to digital finance and crypto rails through cryptocurrency, custody, brokerage, transaction, subscription, and adjacent financial-product distribution; accept or reject the edge.",
+  "operation_id": "01M0N24XV8WPTH5KAKV9VGZSBZ",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+    "data/wiki/securities/security_ad3b1f8f59fd599f079a.md",
+    "source_hood_q2_2026_10q",
+    "source_hood_q2_2026_results",
+    "source_hood_sec_submissions_20260822"
+  ]
+}

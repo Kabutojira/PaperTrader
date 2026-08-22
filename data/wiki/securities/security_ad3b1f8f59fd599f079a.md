@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-01"
-provenance: "source_hood_q2_2026_10q|source_hood_q2_2026_results"
+updated: "2026-08-22"
+provenance: "source_hood_q2_2026_10q|source_hood_q2_2026_results|source_hood_sec_submissions_20260822"
 security_id: security_ad3b1f8f59fd599f079a
 issuer_id: issuer_5deb5665eaa22bd5dbbe
 ticker: HOOD
@@ -16,19 +16,38 @@ venue_mic: XNAS
 provider_symbol: HOOD
 currency: USD
 confidence: medium
-next_review: "2026-08-31"
+next_review: "2026-09-21"
 ---
 
 # Robinhood Markets, Inc. Class A common stock
 
 ## Decision
 
-**Avoid at the current price; no conviction strategy.** Robinhood's Q2 evidence shows rapid asset,
-deposit, customer, subscription, transaction-revenue, and adjusted-EBITDA growth. It also shows
-material cyclicality and valuation risk: cryptocurrency revenue fell, expenses and credit-loss
-provisions increased, quarterly earnings included a large deconsolidation gain, and the stock still
-trades at about 8.2 times June book value after its decline. A bounded price-to-book valuation has a
-USD 69 base case and USD 73.23 probability-weighted value versus the USD 86.56 mark.
+**Avoid at the current price; no conviction strategy.** Robinhood's Q2 evidence still shows rapid
+asset, deposit, customer, subscription, transaction-revenue, and adjusted-EBITDA growth. It also
+shows material cyclicality and valuation risk: cryptocurrency revenue fell, expenses and
+credit-loss provisions increased, and quarterly earnings included a large deconsolidation gain.
+The 21 August volume surge carried the shares to USD 108.13, above the unchanged USD 69 base case
+and USD 73.23 probability-weighted value and close to the USD 112.50 bull case.
+
+## Changes since prior review
+
+- **Evidence:** a current SEC submissions index shows no operating filing after the Q2 Form 10-Q;
+  filings from 3 through 21 August are Forms 3, 4, and 144. The Q2 filing and results release remain
+  the latest primary operating evidence.
+- **Market evidence:** the canonical alert period changed to 24 July through 21 August. The close
+  rose 13.93% from USD 94.91 to USD 108.13, and the final session rose 13.70% on 50.23 million
+  shares, entering the configured volume anomaly. Current indicators also place the close above the
+  upper Bollinger band.
+- **Assumptions and scenarios:** June book value, normalized credit costs, funding, dilution, and
+  the USD 42.40/USD 69.00/USD 112.50 scenarios with 25%/50%/25% probabilities are unchanged because
+  no later operating filing provides a sound basis to revise them.
+- **Thesis, catalysts, risks, blockers, and gaps:** the asset-gathering and product-expansion thesis,
+  catalysts, invalidation conditions, and principal trading, crypto, credit, regulatory, custody,
+  concentration, debt, and dilution risks are unchanged. Valuation and timing gaps worsened; there
+  is still no hard blocker.
+- **Rating and action:** Sell / Avoid and allocation ineligibility are unchanged. The rally is
+  valuation and timing risk rather than primary-evidence confirmation, so no strategy is justified.
 
 ## Immutable identity
 
@@ -45,22 +64,20 @@ canonical security table.
 
 ## Alert review
 
-The payload's canonical observation period is 2026-07-01 through 2026-07-30:
+The payload's canonical observation period is 2026-07-24 through 2026-08-21:
 
-- The adjusted close fell from USD 108.65 to USD 86.60, a **20.29%** decline.
-- The July 30 close was only **0.0238%** below the lower Bollinger band, creating the recorded
-  `bollinger_below_lower` entry.
-- Robinhood released Q2 results after the July 29 close. The first post-results session fell **3.61%**
-  to USD 86.60, so the filing is relevant to the last part of the move but cannot explain the full
-  month-long decline.
-- The subsequent July 31 close was USD 86.56, above the recalculated USD 84.02 lower band. RSI was
-  **35.97**, MACD remained below its signal line, and volume was not anomalous.
+- The adjusted close rose from USD 94.91 to USD 108.13, a **13.93%** increase.
+- On 21 August the close rose **13.70%** from the prior session on 50,228,800 shares. The configured
+  volume-anomaly strength entered at 0.732882585 from zero.
+- The current deterministic indicator row records the close above the USD 102.88 upper Bollinger
+  band, RSI at 62.50, and a positive MACD histogram. These measurements describe strong momentum;
+  they do not establish a change in intrinsic value.
+- The SEC submissions index contains no operating filing after the Q2 Form 10-Q. It therefore does
+  not provide current primary evidence that explains the rally or changes the operating outlook.
 
-The alert is **risk**, not an oversold opportunity. The band breach was marginal and did not persist,
-while Q2 disclosed a weaker crypto contribution, higher costs, a doubled credit-loss provision, and
-a material non-operating gain inside reported earnings. Those facts plausibly contributed to the
-post-results reset, but the broader decline also reflects prior elevated valuation and cannot be
-assigned to one current primary-source event.
+The alert is **risk**, not an opportunity. Price and volume accelerated without a newer operating
+filing, while the mark moved materially farther above base and probability-weighted value. A market
+move alone cannot support higher book-value assumptions or multiples.
 
 ## Business and financial evidence
 
@@ -129,10 +146,27 @@ stock compensation:
 - Bull, 25%: USD **112.50**, or 9.0x USD 12.50 forward book value, as product breadth, international
   scale, asset gathering, and capital returns sustain unusually high growth and returns on equity.
 
-Against USD 86.56, the cases imply **-51.0%**, **-20.3%**, and **+30.0%**. Probability-weighted fair
-value is USD 73.23, approximately **15.4% below** the mark before the deterministic confidence
-adjustment. The 20% margin-of-safety buy zone is USD 55.20. The current mark therefore fails expected
-return, base return, downside payoff, and margin-of-safety gates.
+At the prior review's USD 86.56 mark, the cases implied **-51.0%**, **-20.3%**, and **+30.0%**.
+Probability-weighted fair value was USD 73.23, approximately **15.4% below** that mark before the
+deterministic confidence adjustment. The 20% margin-of-safety buy zone was USD 55.20.
+
+Against the current USD 108.13 mark, those unchanged cases imply approximately **-60.8%**, **-36.2%**,
+and **+4.0%**. Probability-weighted value is **32.3% below** the mark before confidence adjustment,
+and the USD 55.20 buy zone remains unreached. The higher price worsens expected return, base return,
+downside payoff, margin of safety, and timing.
+
+## Idea exposure map
+
+- **Candidate — positive but cyclical:** [[ideas/idea_digital_finance_crypto_rails|Digital finance
+  and crypto rails]]. Robinhood's cryptocurrency, custody, brokerage, transaction, subscription,
+  and adjacent financial-product distribution create a specific transmission mechanism from wider
+  regulated digital-finance adoption to customer activity and monetization. Q2 cryptocurrency
+  revenue fell 38%, however, showing material cycle sensitivity. This is not a canonical accepted
+  relationship; a separate relationship review must test materiality, regulation, custody controls,
+  take-rate durability, and invalidation.
+- Other maintained ideas were evaluated and rejected as thematic rather than causal: Robinhood has
+  no evidenced material operating transmission from AI infrastructure, power, defense, space,
+  minerals, energy, healthcare, manufacturing, nuclear, solar, or semiconductor mechanisms.
 
 ## Sources
 
@@ -140,11 +174,14 @@ return, base return, downside payoff, and margin-of-safety gates.
   (`source_hood_q2_2026_10q`, checked 2026-08-01).
 - [Robinhood Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1783879/000178387926000113/q22026robinhoodexhibit991.htm)
   (`source_hood_q2_2026_results`, checked 2026-08-01).
+- [Robinhood SEC submissions index](https://data.sec.gov/submissions/CIK0001783879.json)
+  (`source_hood_sec_submissions_20260822`, checked 2026-08-22); no operating filing after the Q2
+  Form 10-Q through the 21 August index update.
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_ad3b1f8f59fd599f079a.csv`, market date 2026-07-31 and retrieved
-  2026-08-01.
+  `data/market/prices/security_ad3b1f8f59fd599f079a.csv`, market date 2026-08-21 and retrieved
+  2026-08-22.
 
-Next review: **2026-08-31**, or sooner after a material regulatory, custody, credit, net-deposit,
+Next review: **2026-09-21**, or sooner after a material regulatory, custody, credit, net-deposit,
 capital, acquisition, product-economics, or market-structure development.
 
 Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_hood_sec_submissions_20260822",
+  "url": "https://data.sec.gov/submissions/CIK0001783879.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001783879.json",
+  "source_type": "regulator_filing",
+  "title": "Robinhood Markets, Inc. SEC submissions index checked 2026-08-22",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "2fa4ecfc427c2a605c3074afdce19c2244c988b224bc45216aaf798a9ee7d206",
+  "related_entity_ids": "idea_digital_finance_crypto_rails|security_ad3b1f8f59fd599f079a",
+  "checked_at": "2026-08-22T15:36:50Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The submissions index lists Forms 3, 4, and 144 from August 3 through August 21 and no operating filing after the Q2 Form 10-Q.",
+  "summary": "The dated SEC submissions index confirms that Robinhood had no later operating filing through August 21 to explain the volume-led rally or revise the Q2 operating evidence.",
+  "run_id": "daily-20260822T152115Z"
+}

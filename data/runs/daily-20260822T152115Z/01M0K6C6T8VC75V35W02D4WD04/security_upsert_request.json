@@ -1,0 +1,23 @@
+{
+  "security_id": "security_ad3b1f8f59fd599f079a",
+  "issuer_id": "issuer_5deb5665eaa22bd5dbbe",
+  "company_name": "Robinhood Markets, Inc.",
+  "instrument_name": "Robinhood Markets, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "HOOD",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "HOOD",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Financial Services",
+  "industry": "Capital Markets",
+  "status": "watching",
+  "watchlist_reason": "Reviewed after the 2026-08-21 volume anomaly and upper-band rally; valuation, trading and crypto cyclicality, credit, regulation, custody, concentration, debt and dilution require monitoring.",
+  "research_summary": "Q2 asset gathering and product growth remain strong, but no newer operating filing supports the volume-led rerating and the current mark exceeds base and weighted value.",
+  "research_page": "data/wiki/securities/security_ad3b1f8f59fd599f079a.md",
+  "last_research_at": "2026-08-22T15:36:50Z",
+  "next_review_at": "2026-09-21T15:36:50Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/1783879/000178387926000114/hood-20260630.htm"
+}

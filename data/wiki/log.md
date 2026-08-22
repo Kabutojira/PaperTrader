@@ -4663,3 +4663,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Replaced the unsupported valuation with USD 42/USD 77/USD 120 normalized-earnings scenarios at
   25%/50%/25%. The USD 79 weighted value is below the USD 81.96 mark, leaving SQM Hold / Watch and
   allocation-ineligible; no strategy, signal or paper order was created.
+
+## [2026-08-22T15:36:50Z] update | Robinhood volume-anomaly security review
+
+- Updated [[securities/security_ad3b1f8f59fd599f079a|Robinhood]] after the 24 July through 21
+  August volume anomaly and 13.93% measured-period rise to USD 108.13.
+- Registered the dated SEC submissions index. It contains no operating filing after the Q2 Form
+  10-Q, so no current primary evidence explains the rally or supports revised operating assumptions.
+- Retained USD 42.40/USD 69.00/USD 112.50 price-to-book scenarios. The current mark exceeds base and
+  weighted value and is close to the bull case, leaving Robinhood Sell / Avoid and
+  allocation-ineligible; no strategy, signal or paper order was created.
+- Added a clearly labelled candidate link to
+  [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]] for one dependent
+  relationship review; the candidate is not represented as an accepted relationship.
