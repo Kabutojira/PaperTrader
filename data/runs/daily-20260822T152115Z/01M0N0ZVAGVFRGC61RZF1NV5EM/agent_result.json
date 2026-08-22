@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_6ad1af8d10d6276a0221",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Southern Copper repeat quick check: refreshed volume strengthened the 24 July through 21 August anomaly, but the USD 216 close, fundamental evidence and USD 91/USD 135/USD 187 scenarios are unchanged from the prior successful check. Strong Sell / Avoid, allocation ineligibility and Hold / Watch remain unchanged; no full review or paper-trade follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The exact current indicator row and alert packet bind security_6ad1af8d10d6276a0221 to market date 2026-08-21, adjusted close USD 216, a 20.4752% return from 2026-07-24, a strengthened volume anomaly, an upper-Bollinger-band state, RSI 67.33, and payload source-price hash 4ea94b3ef46860ede02ff21770883160fc215dedd78062b346a0500f067a7053.",
+      "observed_at": "2026-08-22T15:21:22Z",
+      "source": "data/market/indicators.csv and data/wiki/inbox/market-security_6ad1af8d10d6276a0221-volume_anomaly-aec01433fc6f.md",
+      "source_hash": "4ea94b3ef46860ede02ff21770883160fc215dedd78062b346a0500f067a7053"
+    },
+    {
+      "claim": "The required baseline full security review succeeded for the same immutable security at 2026-08-21T16:05:17Z and established the thesis, normalized scenarios, catalysts, risks and invalidation checklist used for this bounded repeat check.",
+      "source": "data/runs/daily-20260821T153352Z/01M0F2AG589NSB423KKJRB01Q5/agent_result.json"
+    },
+    {
+      "claim": "A successful quick check less than one day earlier already evaluated the same 2026-08-21 USD 216 close and exact alert period against fresh SEC submissions evidence. It found no operating filing after the Q2 Form 10-Q and retained the thesis, USD 91/USD 135/USD 187 scenarios, Strong Sell / Avoid disposition and no-escalation decision.",
+      "source": "data/runs/daily-20260821T221654Z/01M0K6C6T81XQ5EN906V33G6ZH/agent_result.json"
+    },
+    {
+      "claim": "The mandatory successful audited context receipt confirmed current assessment assessment_aee98b931463049c7036 is fresh through 2026-09-04, matches the current security page hash, retains USD 216 as its reference price, and deterministically records -57.87%/-37.50%/-13.43% bear/base/bull returns, -38.80% expected return, USD 108 buy-below, Strong Sell / Avoid and allocation ineligibility.",
+      "source": "papertrader research security-context --security-id security_6ad1af8d10d6276a0221"
+    },
+    {
+      "claim": "The retained SEC submissions index was checked at 2026-08-21T23:17:26Z, matched content hash 934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b, and showed no operating filing after the Q2 Form 10-Q; the repeated same-market-date alert adds no contrary primary evidence.",
+      "observed_at": "2026-08-21T23:17:26Z",
+      "source": "source_scco_sec_submissions_20260821",
+      "source_hash": "934a5ae0b2bdef66d46e4ff64b60740621f9039e194d5bfc7a69d3295dbc399b",
+      "url": "https://data.sec.gov/submissions/CIK0001001838.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0N0ZVAGVFRGC61RZF1NV5EM",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Southern Copper quick check for the strengthened 2026-07-24 through 2026-08-21 volume-anomaly alert. The canonical USD 216 close and 20.4752% period return are unchanged from the successful quick check completed less than one day earlier; the refreshed provider volume strengthens the anomaly but supplies no new fundamental evidence. The thesis, USD 91/USD 135/USD 187 scenarios, probabilities, catalysts, risks, invalidation conditions, USD 108 buy-below price, Strong Sell / Avoid rating, allocation ineligibility and Hold / Watch research status remain unchanged. The fresh existing assessment assessment_aee98b931463049c7036 remains applicable. No repository state, full security review, strategy, signal, order, allocation or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row for the immutable security, claimed by daily-20260822T152115Z with a live lease and the required llm-wiki and papertrader-quick-check-research skills.",
+      "Confirmed preflight identity and content hashes for the native llm-wiki skill, controller skill and routed quick-check skill, with sequential execution and yolo enabled.",
+      "Consumed the mandatory successful audited security-context receipt before all assessment-state reads.",
+      "Confirmed baseline operation 01M0F2AG589NSB423KKJRB01Q5 succeeded for the same security within ten days and read its complete result.",
+      "Matched payload source-price hash 4ea94b3ef46860ede02ff21770883160fc215dedd78062b346a0500f067a7053 to the canonical current indicator row for 2026-08-21.",
+      "Compared the bounded thesis, scenarios, buy zone, catalysts, risks and invalidation gates with the same-market-date prior quick check and fresh existing assessment; only anomaly strength changed, so no decision-support gate changed.",
+      "No full-research escalation was warranted because the USD 108 buy zone remains unreached, no catalyst or invalidation fired, no material primary evidence changed, and the baseline still supports the unchanged disposition.",
+      "The unchanged conclusion left no agent-owned repository delta, so the fresh existing assessment assessment_aee98b931463049c7036 was retained without publishing a redundant immutable version.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK.",
+      "No allocation target/history, signal, order, execution, cash, portfolio, fill, performance or accounting state changed."
+    ],
+    "passed": true
+  }
+}
