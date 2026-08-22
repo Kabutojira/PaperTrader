@@ -1,0 +1,78 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_9d4049ed6669a52815d6",
+    "papertrader research source record --request data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/source_sqm_q2_2026_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_retry02_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/enqueue_idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "SQM's SEC-filed Q2 results confirmed record lithium volume, a roughly USD 21.8/kg Novandino realized price and sharply stronger earnings after a 26.42% alert-period rise. New USD 42/USD 77/USD 120 normalized-earnings scenarios imply USD 79 weighted value versus USD 81.96, retaining Hold / Watch and allocation ineligibility; one dependent lithium-idea refresh was queued and no paper order or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The canonical alert measured 2026-07-22 through 2026-08-19: SQM closed at USD 81.95999908447266 after a 26.42080418285432% period return and traded 2,883,500 shares with a 2.5070391771150877 volume z-score.",
+      "observed_at": "2026-08-22T15:21:22Z",
+      "source": "data/operations/payloads/01KZVB8A9GR9ZCR7X7M2WJ507W.json",
+      "source_hash": "06c0c635ad6ba1d6d1796d43d3f5815b44f35991ad20403405bf397f5d7d0cd5"
+    },
+    {
+      "claim": "SQM reported Q2 revenue of USD 2.4684 billion, net income of USD 660.0 million or USD 2.31 per share, 84.1 thousand tonnes LCE of lithium sales, a Novandino realized lithium price of about USD 21.8 per kilogram, and lithium representing 78% of first-half consolidated gross profit. The release also reports USD 3.3768 billion cash, USD 5.2164 billion short- and long-term debt, and about USD 3 billion of planned 2026-2028 capex.",
+      "observed_at": "2026-08-22T15:25:04Z",
+      "source": "SQM Q2 2026 Form 6-K earnings release",
+      "source_hash": "9586302a63f8817af4d79d2a7bba4d225f5277b5b096edefe200106b8b53ff91",
+      "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000034/a6-k_2q2026earningsrelease.htm"
+    },
+    {
+      "claim": "Assessment assessment_e78b8f1c3d62e1e2d0f4 links predecessor assessment_e23b238626d8c9fbb346, schema version 2, this operation and expected result path, and page hash a1053e9928fe93edf482aa67dd2701754dcb38d8342d9a6929c36c8122cf4c46. Deterministic derivation produces USD 79 weighted fair value, -3.61151673686808579148753679% expected return, Hold / Watch, and ineligibility on expected-return, base-return, payoff and margin-of-safety gates.",
+      "source": "data/tables/security_assessment_history.csv"
+    },
+    {
+      "claim": "The one accepted canonical SQM relationship is relationship_9773364a04293a4febaf to idea_critical_minerals_lithium; it remains current through its 2026-08-31 next-review date. The complete maintained idea catalog produced no additional material candidate edge with a distinct evidence-backed mechanism.",
+      "source": "data/tables/relationships.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0N1HJPRKJZV6GFXFPEYKP03.json",
+    "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_request.json",
+    "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/enqueue_idea_refresh_request.json",
+    "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/security_upsert_request.json",
+    "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/source_sqm_q2_2026_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZVB8A9GR9ZCR7X7M2WJ507W",
+  "operations_created": [
+    "01M0N1HJPRKJZV6GFXFPEYKP03"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded repeat review of SQM using the mandatory prior-security context, fresh identity-matched market and FX state, and the SEC-filed Q2 2026 release. Record lithium volume, a higher realized Novandino price and stronger earnings confirm the accepted lithium-cycle mechanism, while the 26.42% alert-period rise reduces valuation asymmetry. New USD 42/USD 77/USD 120 normalized-earnings scenarios derive USD 79 probability-weighted fair value versus the USD 81.96 mark, retaining Hold / Watch and allocation ineligibility. The immutable schema-version-2 assessment links predecessor assessment_e23b238626d8c9fbb346, this operation and result path, registered evidence and the updated page hash. Exactly one dependent lithium-idea refresh was enqueued; the accepted relationship remains current, no additional material candidate edge was identified, and no strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security context succeeded before assessment-state reads.",
+      "Current assessment is schema version 2 and links predecessor assessment_e23b238626d8c9fbb346, source operation 01KZVB8A9GR9ZCR7X7M2WJ507W, its expected result path and updated page hash a1053e9928fe93edf482aa67dd2701754dcb38d8342d9a6929c36c8122cf4c46.",
+      "Issuer, instrument, XNYS venue, USD currency and SQM provider identity remain unchanged and unique.",
+      "Fresh market and FX references share 2026-08-22T15:21:22Z and match the immutable security identity.",
+      "The security page contains a complete changes-since-prior-review section, current accepted relationship evidence, explicit rejected-no-link classifications and no candidate represented as accepted.",
+      "Exactly one dependent idea refresh exists for the payload and accepted linked idea; no relationship refresh is required because the canonical edge remains current, and no conviction strategy was enqueued because the full gate failed.",
+      "Strict schema validation, queue validation, strict wiki lint and strict integrity all returned OK.",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill or performance state changed."
+    ],
+    "passed": true
+  }
+}

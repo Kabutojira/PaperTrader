@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_critical_minerals_lithium",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "security_id": "security_9d4049ed6669a52815d6",
+    "security_research_operation_id": "01KZVB8A9GR9ZCR7X7M2WJ507W",
+    "security_research_result_path": "data/runs/daily-20260822T152115Z/01KZVB8A9GR9ZCR7X7M2WJ507W/agent_result.json",
+    "seed_claim": "SQM's Q2 lithium volume, realized pricing and earnings strengthen the direct cycle mechanism, but normalized USD 42/USD 77/USD 120 scenarios leave weighted value below the ADS mark and do not justify exposure."
+  },
+  "objective": "Refresh the critical-minerals and lithium-cycle idea from SQM's completed Q2 review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01M0N1HJPRKJZV6GFXFPEYKP03",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_9d4049ed6669a52815d6.md"
+  ]
+}

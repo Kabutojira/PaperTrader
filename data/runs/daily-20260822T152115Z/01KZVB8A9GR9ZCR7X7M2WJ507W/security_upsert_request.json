@@ -1,0 +1,23 @@
+{
+  "security_id": "security_9d4049ed6669a52815d6",
+  "issuer_id": "issuer_b9d09bec8ea0e49d27e5",
+  "company_name": "Sociedad Quimica y Minera de Chile S.A.",
+  "instrument_name": "Sociedad Quimica y Minera de Chile S.A. American depositary shares",
+  "instrument_type": "equity",
+  "ticker": "SQM",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "SQM",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CL",
+  "sector": "Basic Materials",
+  "industry": "Specialty Chemicals",
+  "status": "watching",
+  "watchlist_reason": "Cited candidate exposure in user-supplied 2026-07-26 ideas; security research pending.",
+  "research_summary": "Q2 confirms lithium-cycle earnings recovery, but normalized weighted value remains below the ADS price.",
+  "research_page": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+  "last_research_at": "2026-08-22T15:25:04Z",
+  "next_review_at": "2026-09-05T15:25:04Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000034/a6-k_2q2026earningsrelease.htm"
+}

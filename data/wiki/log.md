@@ -4652,3 +4652,14 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5]] (7f83a7474bf5).
 
 - Classified [[inbox/market-security_fe5539a7d3fd9d553bce-volume_anomaly-7f83a7474bf5]] as `ingest`: A strengthened volume-anomaly transition coincides with a material 30.1% period return and warrants durable review.
+
+## [2026-08-22T15:25:04Z] update | SQM Q2 security review
+
+- Updated [[securities/security_9d4049ed6669a52815d6|SQM]] from its SEC-filed Q2 release after
+  the 22 July through 19 August volume anomaly and 26.42% price rise.
+- Q2 lithium volume, realized pricing and earnings strengthen the accepted
+  [[ideas/idea_critical_minerals_lithium|lithium-cycle]] mechanism; Salar Futuro submission and Mt
+  Holland operations improve project evidence while capex, state take, debt and cycle risk remain.
+- Replaced the unsupported valuation with USD 42/USD 77/USD 120 normalized-earnings scenarios at
+  25%/50%/25%. The USD 79 weighted value is below the USD 81.96 mark, leaving SQM Hold / Watch and
+  allocation-ineligible; no strategy, signal or paper order was created.

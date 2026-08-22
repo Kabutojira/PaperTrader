@@ -1,0 +1,18 @@
+{
+  "source_id": "source_sqm_q2_2026_6k",
+  "url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000034/a6-k_2q2026earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/909037/000090903726000034/a6-k_2q2026earningsrelease.htm",
+  "source_type": "regulator_filing",
+  "title": "SQM Q2 2026 Form 6-K earnings release",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9586302a63f8817af4d79d2a7bba4d225f5277b5b096edefe200106b8b53ff91",
+  "related_entity_ids": "idea_critical_minerals_lithium|security_9d4049ed6669a52815d6",
+  "checked_at": "2026-08-22T15:25:04Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "SQM reported Q2 net income of USD 660.0 million, lithium sales of 84.1 thousand tonnes LCE, and a Novandino realized lithium price of about USD 21.8 per kilogram.",
+  "summary": "The SEC-filed Q2 release confirms stronger lithium price and volume transmission, a Salar Futuro submission, higher cash and debt, and a three-year USD 3 billion capex plan.",
+  "run_id": "daily-20260822T152115Z"
+}
