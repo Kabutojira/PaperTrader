@@ -1,0 +1,49 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "PWR’s stale July 29 volume-anomaly opportunity was skipped as duplicate research: completed Q2 follow-up retained Sell / Avoid / Watch, with no paper-trading action."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet records the strengthened volume-anomaly transition for immutable PWR/XNYS/USD over 2026-06-30 through 2026-07-29, with 2026-07-29 adjusted close USD 561.1400146484375, period return -0.2205630820257469086701729231, and source-price hash 15e13bbaa6aeb74847824041f1232bdc38423ad0f60f1feaf0db9c500bdde617.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source": "data/wiki/inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2.md",
+      "source_hash": "276969212fe2d18023f17c946775dd0b407059dcd3805f4e0566c2994541dc6a"
+    },
+    {
+      "claim": "Completed security-research operation 01KYRN70N0DW63KBW0WYN8QP5H reviewed the same immutable security, exact observation period, trigger, market timestamp, and source-price hash; it assessed the volume anomaly and left no actionable strategy or idea follow-up.",
+      "observed_at": "2026-07-30T05:06:26Z",
+      "source": "data/operations/operations_history.csv:237"
+    },
+    {
+      "claim": "The later completed quick check and full Q2 security review rechecked SEC-filed Q2 evidence, identified record revenue, earnings, cash flow, RPO, backlog, and raised guidance as explaining the results-day reversal, and retained PWR as ineligible Sell / Avoid / Watch at USD 667.36 under the bounded USD 417.50/USD 534.40/USD 668.00 scenarios.",
+      "observed_at": "2026-08-03T07:29:38Z",
+      "source": "data/operations/operations_history.csv:265-266"
+    },
+    {
+      "claim": "The maintained PWR page preserves the materiality conclusion, Q2 evidence, valuation and risk gates, and the explicit conclusion that neither the volume anomaly nor the bullish MACD crossover is a trade signal.",
+      "observed_at": "2026-08-03T07:23:05Z",
+      "source": "data/wiki/securities/security_488a9d7f7a8573597724.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYRN70N07XFMWWE6RCGWZ2PD",
+  "operations_created": [],
+  "reason_code": "exact_duplicate_absorbed_by_security_research",
+  "status": "skipped",
+  "summary": "Skipped duplicate opportunity research. The exact 2026-06-30 through 2026-07-29 PWR volume-anomaly observation was already completed by security-research operation 01KYRN70N0DW63KBW0WYN8QP5H, then materially superseded by the completed Q2 quick check and full review. Those accepted reviews attribute the later reversal to SEC-filed Q2 results and raised guidance, retain PWR as Sell / Avoid / Watch because valuation and eligibility gates fail, and create no strategy, signal, order, or follow-up. Repeating this stale standalone alert would duplicate completed work.",
+  "validation": {
+    "checks": [
+      "Validated the supplied queue row is running, claimed by daily-20260823T152232Z, has a live lease, names exactly llm-wiki and papertrader-opportunity-research, and matches the validated payload identity.",
+      "Confirmed the preflight identifies the required native llm-wiki, controller, and opportunity-research skills with recorded hashes and no prompt-injection flags.",
+      "Confirmed the immutable PWR/XNYS/USD identity, packet market-data timestamp, period endpoints, volume-anomaly transition, and source-price hash against canonical market data and the completed security-research result.",
+      "Confirmed the completed security-research operation and the later completed Q2 quick check/full review already cover this exact alert and its material successor; no separate follow-up is justified.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "Confirmed no execution, cash, portfolio, performance, order, signal, strategy, or other restricted accounting/trading table changed."
+    ],
+    "passed": true
+  }
+}
