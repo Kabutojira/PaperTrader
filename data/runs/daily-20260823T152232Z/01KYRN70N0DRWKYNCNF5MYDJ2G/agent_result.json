@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "Skipped the duplicate ENPH 2026-07-29 volume-anomaly opportunity review because accepted security research already classified the exact observation as risk, retained the evidence on the maintained page, and queued the single bounded solar-and-storage idea refresh. No research conclusion, strategy, signal, order, or accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable candidate records security_f2b9760d847b2ba59324, a strengthened volume anomaly for 2026-06-30 through 2026-07-29, a USD 35.06999969482422 adjusted close, a -0.2877741978193164716418542578 period return, strength 0.224750535 versus 0.18305174 previously, and the retained source-price hash.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source": "data/wiki/inbox/market-security_f2b9760d847b2ba59324-volume_anomaly-74023f863212.md",
+      "source_hash": "8fcf5d368371d4eca10e2259441ccc2709e3cbeb54d6a0c543ad3cd00c5cf358"
+    },
+    {
+      "claim": "The accepted security-research result already verified this exact trigger identity, period, market timestamp, measurements, and source-price hash. It classified the move as risk, retained the classification on the security page, kept the assessment ineligible because valuation was unsupported, created no strategy, and created exactly one dependent idea refresh.",
+      "observed_at": "2026-07-30T05:16:03Z",
+      "source": "data/operations/operations_history.csv:239 and data/runs/gha-30514477459-1/01KYRN70N0FRJ1Z01HXDJPXGFE/agent_result.json",
+      "source_hash": "8fcf5d368371d4eca10e2259441ccc2709e3cbeb54d6a0c543ad3cd00c5cf358"
+    },
+    {
+      "claim": "The time-matched SEC-filed Q2 Form 10-Q showed sequential operating improvement and resilient liquidity, but year-over-year contraction, material safe-harbor revenue, stock compensation, and a nonrecurring tariff refund prevented a normalized downside-aware valuation and did not establish a validated entry opportunity.",
+      "observed_at": "2026-07-30T05:09:37Z",
+      "source": "source_enph_q2_2026_10q",
+      "source_hash": "a8763f0f01353d7d6ee16c0af0bf75669acb31c2e54fcedddfcc6363599eddd7",
+      "url": "https://www.sec.gov/Archives/edgar/data/1463101/000146310126000081/enph-20260630.htm"
+    },
+    {
+      "claim": "The maintained page already records the exact 2026-07-29 volume-anomaly review as risk rather than a validated opportunity. Its 2026-08-09 quick check found no later operating filing through that alert period, left the thesis and unsupported valuation unchanged, and justified no full review, strategy, or paper signal.",
+      "source": "data/wiki/securities/security_f2b9760d847b2ba59324.md"
+    },
+    {
+      "claim": "Operation 01KYRQ18X8EDCTPPRX31ZJ6K96 is already queued as the single dependent refresh of idea_solar_storage_grid_flexibility_reset from the accepted ENPH alert review, so this duplicate operation must not enqueue another follow-up.",
+      "source": "data/operations/operations_TODO.csv:29"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYRN70N0DRWKYNCNF5MYDJ2G",
+  "operations_created": [],
+  "reason_code": "exact_trigger_already_researched",
+  "status": "skipped",
+  "summary": "Skipped as already completed research for the exact immutable ENPH volume-anomaly observation. Accepted operation 01KYRN70N0FRJ1Z01HXDJPXGFE verified the same security, 2026-06-30 through 2026-07-29 period, 2026-07-30T04:41:08Z market timestamp, strengthened trigger, and source-price hash, then classified the move as risk rather than a validated opportunity. Its retained evidence found mixed Q2 sequential improvement but continuing year-over-year contraction, policy-linked revenue, a nonrecurring tariff-refund margin benefit, and no supportable valuation. The maintained security page already contains that evidence-linked classification. No wiki change, issue, or follow-up was warranted: the later 2026-08-09 quick check left the thesis and valuation blocker unchanged, and the one bounded idea refresh created by the accepted review remains in the active queue.",
+  "validation": {
+    "checks": [
+      "Confirmed the sole selected queue row is running, claimed by daily-20260823T152232Z, has a lease through 2026-08-23T16:01:05Z, and names exactly llm-wiki plus papertrader-opportunity-research.",
+      "Confirmed hermes_preflight.json identifies the native llm-wiki skill, controller skill, and opportunity-research skill; the two repository skill hashes match their trusted files.",
+      "Confirmed the immutable ENPH/XNAS/USD/equity identity and both period endpoints remain present in canonical state; the historical source-price hash is retained in the immutable candidate and the accepted structured result that previously validated it.",
+      "Confirmed accepted operation 01KYRN70N0FRJ1Z01HXDJPXGFE already completed the exact security, trigger, period, timestamp, measurements, hash, primary-evidence review, materiality test, and risk classification requested here.",
+      "Confirmed the maintained security page already contains the evidence-linked classification and a later quick check left the thesis, catalysts, risks, invalidation, unsupported valuation, and non-actionable disposition unchanged.",
+      "Confirmed no ENPH position, strategy, signal, or order exists, while the accepted solar-and-storage relationship remains material and its single dependent idea refresh is already queued.",
+      "Strict wiki lint passed.",
+      "Strict repository integrity passed, including queue, source, publication, portfolio, and accounting invariants.",
+      "Confirmed command_audit.json contains exactly the two listed canonical commands, both succeeded with no changed paths.",
+      "Confirmed the payload, candidate, maintained security page, and operation artifact directory are not symlinks.",
+      "Confirmed this routed operation changed no wiki page, structured table, allocation state, strategy, signal, order, fill, execution, cash, portfolio, or performance state."
+    ],
+    "passed": true
+  }
+}
