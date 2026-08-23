@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-22"
+updated: "2026-08-23"
 provenance: repository-contract
 ---
 
@@ -4701,3 +4701,9 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - The higher mark lowers expected return to negative 12.18%, leaves the USD 86.224 buy-below price
   unreached and produces Sell / Avoid while allocation ineligibility remains unchanged. No full
   review, strategy, signal or paper order was created.
+
+## 2026-08-23
+
+- Published investor decision snapshot `decision_475a3846f19176ecd146`.
+
+- Generated canonical [[daily-reports/daily-report_20260823]] for run `daily-20260823T152232Z`.

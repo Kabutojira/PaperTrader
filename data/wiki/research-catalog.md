@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-22"
-updated: "2026-08-22"
+created: "2026-08-23"
+updated: "2026-08-23"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9b32fd4866d7eb8f7bda"
-as_of: "2026-08-22T16:05:49Z"
+snapshot_id: "decision_475a3846f19176ecd146"
+as_of: "2026-08-23T15:43:17Z"
 ---
 
 # Research catalog
@@ -424,6 +424,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-20](daily-reports/daily-report_20260820)
 - [PaperTrader daily report — 2026-08-21](daily-reports/daily-report_20260821)
 - [PaperTrader daily report — 2026-08-22](daily-reports/daily-report_20260822)
+- [PaperTrader daily report — 2026-08-23](daily-reports/daily-report_20260823)
 
 ## Idea
 
@@ -485,6 +486,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily podcast — 2026-08-13T092636Z](podcasts/daily-podcast_20260813T092636Z)
 - [PaperTrader daily research podcast — 2026-08-21T153352Z](podcasts/daily-podcast_20260821T153352Z)
 - [PaperTrader daily research podcast — 2026-08-21T221654Z](podcasts/daily-podcast_20260821T221654Z)
+- [PaperTrader daily research podcast — 2026-08-22T152115Z](podcasts/daily-podcast_20260822T152115Z)
 
 ## Relationship
 

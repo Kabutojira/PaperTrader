@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-22"
-updated: "2026-08-22"
+created: "2026-08-23"
+updated: "2026-08-23"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_9b32fd4866d7eb8f7bda"
-as_of: "2026-08-22T16:05:49Z"
+snapshot_id: "decision_475a3846f19176ecd146"
+as_of: "2026-08-23T15:43:17Z"
 ---
 
 # Signals
 
-**As of `2026-08-22T16:05:49Z`**
+**As of `2026-08-23T15:43:17Z`**
 
 ## Actionable trade signals
 
@@ -184,8 +184,8 @@ No pending orders.
 
 - Alert: `volume\_anomaly`
 - Market date: `2026-08-21`
-- Research status: `succeeded`
-- Conclusion: Completed one bounded Freeport-McMoRan security review for the August 21 volume anomaly. FCX rose 22.46% over the canonical July 24-August 21 period to USD 76.66, with 28.485 million shares traded and a 2.9649 volume z-score, but the August 6 Form 10-Q confirms rather than improves the July operating evidence and the current SEC index contains no later issuer operating filing. Retained USD 32.64/USD 47.36/USD 65.12 cyclical scenarios with 30%/50%/20% probabilities. Deterministic normalization derives USD 46.496 weighted value, negative 39.35% expected return, Strong Sell / Avoid and allocation ineligibility. Updated the maintained security page and structured security state, registered three current primary sources, appended exactly one immutable assessment linked to its predecessor, and enqueued exactly one dependent copper-idea refresh. The accepted copper relationship remains current, no additional idea edge met the material-mechanism threshold, and no strategy, signal, order, alloc
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [FCX — Freeport-McMoRan Inc.](securities/security_2dbe878dfc899d7ee867)
 
