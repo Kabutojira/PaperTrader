@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_3JP2Z34s-Ts",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-23T15:22:33Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_3JP2Z34s-Ts",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "3JP2Z34s-Ts",
+    "video_title": "The Stock I'm Closest to Buying Right Now",
+    "video_url": "https://www.youtube.com/watch?v=3JP2Z34s-Ts"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0QKEQN8CF6CSJ11ZTZNMHBM",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=3JP2Z34s-Ts"
+  ]
+}

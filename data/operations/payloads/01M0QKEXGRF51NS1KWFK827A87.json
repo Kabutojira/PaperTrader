@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_9d4049ed6669a52815d6",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-22T15:25:04Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_9d4049ed6669a52815d6.md",
+    "security_id": "security_9d4049ed6669a52815d6"
+  },
+  "objective": "Revalidate security_9d4049ed6669a52815d6 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0QKEXGRF51NS1KWFK827A87",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_sqm_mt_holland_fid_2026",
+    "source_sqm_q1_2026_6k",
+    "source_sqm_q2_2026_6k"
+  ]
+}
