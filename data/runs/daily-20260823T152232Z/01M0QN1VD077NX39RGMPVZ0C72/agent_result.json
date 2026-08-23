@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260823T152232Z --script-path data/wiki/podcasts/daily-podcast_20260823T152232Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260823T152232Z --script-path data/wiki/podcasts/daily-podcast_20260823T152232Z.md",
+    "papertrader schema validate --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader queue validate",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Published the 2,731-word daily research podcast covering Carlisle Companies, Freeport-McMoRan and Qualcomm, with current dispositions and explicit rating-change conditions; deterministic script validation and the single audited draft render succeeded."
+  ],
+  "evidence": [
+    {
+      "claim": "The controller-validated frozen context is version three, binds the immutable daily cycle and exact transcript path, defines the accepted research window, lists three successful developments, and identifies the previous successful podcast for novelty review.",
+      "source": "data/runs/daily-20260823T152232Z/podcast_context.json"
+    },
+    {
+      "claim": "Carlisle's strengthened volume anomaly was accepted as risk rather than a discrete opportunity; mixed quarterly evidence and weak valuation asymmetry had already been absorbed by the maintained research.",
+      "source": "data/runs/daily-20260823T152232Z/01KYRN70N012YRH9ZFNJE42AGR/agent_result.json"
+    },
+    {
+      "claim": "Freeport's entered volume anomaly was accepted as valuation and timing risk, while later primary-evidence review retained Sell / Avoid and allocation ineligibility.",
+      "source": "data/runs/daily-20260823T152232Z/01KYRN70N0N9697H5G77KK5SRQ/agent_result.json"
+    },
+    {
+      "claim": "Qualcomm's volume anomaly was accepted as earnings-driven risk supported by weaker handset, earnings and margin evidence; the maintained disposition remained watch and allocation-ineligible.",
+      "source": "data/runs/daily-20260823T152232Z/01KYVJ62SR01KJPGW0E3Z5ZGD6/agent_result.json"
+    },
+    {
+      "claim": "The previous successful episode covered SQM, Robinhood and Strategy, so the selected Carlisle, Freeport and Qualcomm chapters do not repeat its thesis, evidence or conclusions.",
+      "source": "data/wiki/podcasts/daily-podcast_20260822T152115Z.md"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260823T152232Z/01M0QN1VD077NX39RGMPVZ0C72/candidate_slate.md",
+    "data/runs/daily-20260823T152232Z/01M0QN1VD077NX39RGMPVZ0C72/editorial_outline.md",
+    "data/wiki/daily-reports/daily-report_20260823.md",
+    "data/wiki/podcasts/daily-podcast_20260823T152232Z.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0QN1VD077NX39RGMPVZ0C72",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Created a standalone 2,731-word podcast in three chapters covering every accepted development in the frozen window: Carlisle Companies' mixed growth, margin and cash-conversion evidence; Freeport-McMoRan's copper sensitivity versus recovery, jurisdiction and valuation risk; and Qualcomm's handset weakness versus automotive and connected-device diversification. No development was excluded for repetition or low audience value; the prior episode covered different securities. The episode states Carlisle's accepted baseline-comparison disposition and canonical-rating gap, Freeport's Sell / Avoid rating, and Qualcomm's Watch / allocation-ineligible disposition, with explicit Buy and Sell conditions for each. The script passed deterministic preflight, and the single audited draft render succeeded at 1,210 seconds. The canonical daily report now contains exactly one transcript link and no audio reference.",
+  "validation": {
+    "checks": [
+      "Confirmed the running queue row is claimed by daily-20260823T152232Z, has a live lease, and names only llm-wiki plus papertrader-daily-podcast.",
+      "Confirmed hermes_preflight.json identifies the native llm-wiki, controller and daily-podcast skills by version and content hash and binds the exact transcript path.",
+      "Confirmed the payload, frozen context and daily manifest all bind data/wiki/podcasts/daily-podcast_20260823T152232Z.md.",
+      "Mapped all three successful developments to exactly one chapter and confirmed none substantially repeats the previous successful podcast.",
+      "Confirmed the spoken transcript has the exact opening, teaser opening, chapter sequence, security disposition endings, overall synthesis and exact closing copy.",
+      "Deterministic preflight passed with 2,731 words, five TTS chunks, no numeric glyphs, Markdown headings, list lines or raw URLs in the spoken section, and exactly one daily-report transcript link.",
+      "The single audited render-draft invocation succeeded and produced 1,210 seconds of ephemeral audio outside the repository; no audio path or link was persisted in repository content.",
+      "Strict schema validation, strict integrity, strict wiki lint, queue validation and strict portfolio reconciliation passed through canonical audited project CLI receipts.",
+      "Confirmed no structured research state, allocation target or history, signal, order, fill, execution, cash, portfolio, performance, accounting, issue or follow-up operation was changed."
+    ],
+    "passed": true
+  }
+}

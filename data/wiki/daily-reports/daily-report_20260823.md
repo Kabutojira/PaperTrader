@@ -210,6 +210,7 @@ No pending orders.
 
 - [[model-portfolio|PaperTrader model portfolio]]
 - [[performance|PaperTrader performance and risk]]
+- [[podcasts/daily-podcast_20260823T152232Z|Daily research podcast — 2026-08-23T152232Z]]
 - [[research-catalog|PaperTrader research catalog]]
 - [[security-catalog|PaperTrader tracked securities]]
 - [[signals|PaperTrader signals and research alerts]]

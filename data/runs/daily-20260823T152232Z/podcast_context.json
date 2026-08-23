@@ -1,0 +1,169 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_2dbe878dfc899d7ee867.md",
+      "sha256": "cb22b1e7f2d4d7129fcc1938d2e35cc876b4dffae9a89706910fd1fb6ef28527"
+    },
+    {
+      "path": "data/wiki/securities/security_9b0db3bc77914b23a307.md",
+      "sha256": "824c7323cf7f123ceb7399f157ed6b937c52339080dee2f2eb682c43ff99dc86"
+    }
+  ],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260823T152232Z",
+  "decision_snapshot_path": "data/runs/daily-20260823T152232Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "4c5228e6989aebf5f01e20b90385f8e158a41e612f0c2a9118d88ac952d3ab5d",
+  "generated_at": "2026-08-23T15:50:28Z",
+  "intervening_daily_cycles": [
+    "daily-20260823T152232Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260823T152232Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260823T152232Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260823.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260822T152115Z/podcast_context.json",
+    "context_sha256": "5f83ff82413b07ff05ef2773e3ed7f27af886e2137ba1ae536e7daa5eeec2a1c",
+    "daily_cycle_id": "daily-20260822T152115Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260822T152115Z.md",
+    "page_sha256": "3667df9f48688b10d045ba3aa9092392b81bd1e147e99eb5f573c93f3b8e20f6",
+    "research_cutoff_at": "2026-08-22T16:05:49Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260823.md",
+  "report_sha256": "db0d2a764a82baeb1a539880ac32d6c2e82566b503d872ca2b7d5c3ce550a5d4",
+  "research_cutoff_at": "2026-08-23T15:43:17Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-23T15:27:53Z",
+      "daily_cycle_id": "daily-20260823T152232Z",
+      "daily_report_items": [
+        "Carlisle Companies' strengthened July 29 volume anomaly was classified as risk rather than a discrete opportunity or noise. The 7.78% measured-period decline and 2.70 volume z-score were material, while the after-close Q2 release showed growth alongside margin pressure, weak first-half cash conversion, leverage, and flat margin guidance. A completed full security review had already absorbed the exact alert and found only 8.6% base upside against 15.5% downside, so no duplicate wiki update or follow-up was created."
+      ],
+      "entity_id": "opportunity_2a28fb4a0f69b575d259",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The deterministic alert packet records a strengthened volume anomaly for immutable security security_9b0db3bc77914b23a307 over 2026-06-30 through 2026-07-29, with adjusted close declining from the period start to USD 334.5400085449219, a period return of -0.0777670336459768435561681599, and trigger strength increasing from 0.098151035 to 0.349626385.",
+          "observed_at": "2026-07-30T04:41:08Z",
+          "source": "data/wiki/inbox/market-security_9b0db3bc77914b23a307-volume_anomaly-454eb81d0508.md",
+          "source_hash": "3a336b352b9b41083fa16f0d0d7e26878102247f0240d24d1d44c13d90f0b019"
+        },
+        {
+          "claim": "Carlisle's SEC-filed Q2 release reports 8% revenue growth and 12% adjusted-EPS growth, but adjusted EBITDA margin declined 70 basis points as input and freight inflation outpaced pricing; first-half operating cash flow was USD 197 million, free cash flow was USD 130 million, and management changed the 2026 adjusted EBITDA margin outlook to flat. The filing was submitted after the July 29 regular session and therefore does not explain that session's move.",
+          "observed_at": "2026-07-30T04:48:36Z",
+          "source": "source_csl_q2_2026_release",
+          "source_hash": "eaddd9f8b58711b4912d80ef1a72d327f5ea85cafe345a8660320f76ed9db417",
+          "url": "https://www.sec.gov/Archives/edgar/data/790051/000079005126000033/q22026-ex991xearningsrelea.htm"
+        },
+        {
+          "claim": "A successful priority-95 security review already evaluated this exact strengthened 2026-07-29 volume anomaly and updated the maintained Carlisle page. It classified the anomaly as material attention and risk evidence, retained a baseline-comparison-only disposition, found 15.5% downside versus 8.6% base upside, and created no strategy or idea follow-up.",
+          "observed_at": "2026-07-30T04:55:23Z",
+          "source": "data/operations/operations_history.csv:235 and data/runs/gha-30514477459-1/01KYRN70N00B48SGEKW8CJHWWJ/agent_result.json"
+        },
+        {
+          "claim": "The maintained page links the immutable CSL/XNYS/USD identity to the exact alert, records July 29 volume of 1,108,300 shares and a 2.70 z-score, states that the move is material but not a discrete opportunity, and records no conviction strategy because the valuation gate failed.",
+          "observed_at": "2026-07-30T04:48:36Z",
+          "source": "data/wiki/securities/security_9b0db3bc77914b23a307.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYRN70N012YRH9ZFNJE42AGR",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260823T152232Z/01KYRN70N012YRH9ZFNJE42AGR/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified Carlisle Companies' strengthened 2026-07-29 volume anomaly as risk, not a discrete opportunity or noise. The shares declined 7.78% from 2026-06-30 through 2026-07-29 while volume reached 1,108,300 shares and a 2.70 z-score. Carlisle's after-close Q2 release cannot explain that trading session, but its margin compression, weak first-half cash conversion, leverage, and reduced margin outlook make the move material risk evidence despite revenue and adjusted-EPS growth. The exact alert was already absorbed by a successful full security review, which found only 8.6% base upside against 15.5% downside and recorded no position, accepted relationship, or strategy. The maintained security page already contains this evidence and classification, so no duplicate wiki edit or follow-up operation was warranted."
+    },
+    {
+      "completed_at": "2026-08-23T15:39:10Z",
+      "daily_cycle_id": "daily-20260823T152232Z",
+      "daily_report_items": [
+        "FCX's 2026-07-29 entered volume anomaly was classified as valuation and timing risk rather than an opportunity. The exact measured period had already received a completed security review with no contemporaneous issuer-filing explanation; later primary-evidence review retained Sell / Avoid and allocation ineligibility. No further operation, strategy, signal, or paper trade was created."
+      ],
+      "entity_id": "opportunity_1534565cc5755e3968ab",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The deterministic packet records an entered volume_anomaly transition for FCX from 2026-06-30 through 2026-07-29, with a USD 59.9900016784668 latest close, a -0.0437969763201708427459937719 measured-period return, strength 0.00020024, and source-price hash a7eb845fdc9ec53269f4648c73619c7f149dcee990fcc7f2ecb943a1fab9b1de.",
+          "observed_at": "2026-07-30T04:41:08Z",
+          "source": "data/wiki/inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190.md",
+          "source_hash": "97d02f6c8190322558f45b18ff88cb9c35c3b37f85731b4b04fa217fe4f6179f"
+        },
+        {
+          "claim": "The completed 2026-07-30 FCX security review matched this exact entered volume-anomaly trigger, period, market timestamp, and source-price hash. It found the SEC submissions index had no corporate filing after the 2026-07-23 Q2-results Form 8-K through the 2026-07-29 market date, retained a non-actionable assessment, and created no strategy or trade.",
+          "observed_at": "2026-07-30T05:20:33Z",
+          "source": "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/agent_result.json"
+        },
+        {
+          "claim": "The later August 21 maintained review retained Sell / Avoid and allocation ineligibility: the August 6 Form 10-Q confirmed rather than improved the July economics, the SEC index had no later issuer operating filing through the market date, and all retained cyclical valuation scenarios remained below the market mark.",
+          "observed_at": "2026-08-21T22:32:19Z",
+          "source": "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+        },
+        {
+          "claim": "The accepted structural-copper relationship remains an operating-economics link, but expressly states that normalized valuation can make the equity unattractive and that no strategy-research follow-up is justified while valuation gates fail.",
+          "source": "data/wiki/relationships/relationship_def43e5b4e13577e2b99.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYRN70N0N9697H5G77KK5SRQ",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260823T152232Z/01KYRN70N0N9697H5G77KK5SRQ/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified the 2026-07-29 FCX volume-anomaly transition as valuation and timing risk, not a new opportunity. The canonical packet records a 4.38% measured-period decline to USD 59.99 and an entered volume anomaly; the already-completed 2026-07-30 security review matched that exact period, source-price hash, and trigger, found no later contemporaneous issuer filing, and retained a non-actionable assessment. Later primary-evidence review through 2026-08-21 likewise retained Sell / Avoid and allocation ineligibility. No follow-up is justified because the exact alert was already covered by the completed security review and later review; no trading or accounting state changed."
+    },
+    {
+      "completed_at": "2026-08-23T15:43:03Z",
+      "daily_cycle_id": "daily-20260823T152232Z",
+      "daily_report_items": [
+        "QCOM's 2026-07-30 volume anomaly was classified as earnings-driven risk: the canonical July 1-30 decline and elevated volume aligned with SEC-filed handset, earnings, and margin weakness. The already-completed QCOM review remains watch/ineligible; no position, strategy, or further follow-up was created."
+      ],
+      "entity_id": "opportunity_d0fcbdb3867a75c0179e",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The deterministic packet identifies an entered volume-anomaly transition for security_3a75fc1ccca2ee7c937a over 2026-07-01 through 2026-07-30, with a USD 151.60000610351562 latest close, -0.1666666247284816762435279087 period return, 0.28652692 trigger strength, and source-price hash 4f05b395134950e4d47e888102074dc599b169b4df2cbc3a09ba632d4b0b9c44.",
+          "source": "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1.md",
+          "source_hash": "73cae404a6a136ed47992d5b2a9fd598c189a9c999a5e26631f0e629a4997f30"
+        },
+        {
+          "claim": "Canonical QCOM bars retain the exact period endpoints: 2026-07-01 adjusted close USD 181.9199981689453 and 2026-07-30 adjusted close USD 151.60000610351562 on 24,336,800 shares. The July 30 bar was retrieved at 2026-08-01T09:07:38Z and matches the packet's endpoint and volume.",
+          "observed_at": "2026-08-01T09:07:38Z",
+          "source": "data/market/prices/security_3a75fc1ccca2ee7c937a.csv"
+        },
+        {
+          "claim": "The existing SEC-linked QCOM review records fiscal-Q3 revenue down 4% year over year, GAAP diluted EPS down 23%, handset revenue down 20%, and QCT and QTL margin pressure, while automotive and IoT growth did not offset the near-term weakness. This contemporaneous primary evidence supports an earnings-driven risk interpretation for the post-results selloff rather than unexplained noise.",
+          "observed_at": "2026-08-01T09:27:19Z",
+          "source": "source_qcom_q3_2026_10q and source_qcom_q3_2026_results",
+          "source_hash": "3b460b26dff13a28bfda17b4676f6a2bd3686989d4fb5ffff445102fb1455224",
+          "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/qcom-20260628.htm"
+        },
+        {
+          "claim": "QCOM's current assessment is allocation-ineligible with base return, expected return, payoff, margin-of-safety, timing, confidence, and relationship constraints; the derived portfolio has no positions. The strategy table has no QCOM strategy, so the historical trigger has no live position or strategy materiality requiring escalation.",
+          "source": "data/tables/security_assessments.csv and data/tables/portfolio.csv"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYVJ62SR01KJPGW0E3Z5ZGD6",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260823T152232Z/01KYVJ62SR01KJPGW0E3Z5ZGD6/agent_result.json",
+      "status": "succeeded",
+      "summary": "Classified QCOM's 2026-07-30 volume-anomaly transition as risk, not a trade opportunity or noise. The canonical July 1-30 observation recorded a 16.666662% decline to a USD 151.600006 adjusted close on 24,336,800 shares, and Qualcomm's contemporaneous SEC-filed fiscal-Q3 evidence documented weaker revenue, earnings, handset demand, and segment margins. The existing 2026-08-01 security review already incorporated this exact trigger, retained QCOM as watch/ineligible, and created no strategy. No further follow-up is justified because there is no QCOM position or active strategy and the current assessment remains allocation-ineligible."
+    }
+  ],
+  "run_id": "daily-20260823T152232Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-22T16:05:49Z"
+}
