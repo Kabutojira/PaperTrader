@@ -1,0 +1,49 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "FCX's 2026-07-29 entered volume anomaly was classified as valuation and timing risk rather than an opportunity. The exact measured period had already received a completed security review with no contemporaneous issuer-filing explanation; later primary-evidence review retained Sell / Avoid and allocation ineligibility. No further operation, strategy, signal, or paper trade was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet records an entered volume_anomaly transition for FCX from 2026-06-30 through 2026-07-29, with a USD 59.9900016784668 latest close, a -0.0437969763201708427459937719 measured-period return, strength 0.00020024, and source-price hash a7eb845fdc9ec53269f4648c73619c7f149dcee990fcc7f2ecb943a1fab9b1de.",
+      "observed_at": "2026-07-30T04:41:08Z",
+      "source": "data/wiki/inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190.md",
+      "source_hash": "97d02f6c8190322558f45b18ff88cb9c35c3b37f85731b4b04fa217fe4f6179f"
+    },
+    {
+      "claim": "The completed 2026-07-30 FCX security review matched this exact entered volume-anomaly trigger, period, market timestamp, and source-price hash. It found the SEC submissions index had no corporate filing after the 2026-07-23 Q2-results Form 8-K through the 2026-07-29 market date, retained a non-actionable assessment, and created no strategy or trade.",
+      "observed_at": "2026-07-30T05:20:33Z",
+      "source": "data/runs/gha-30514477459-1/01KYRN70N0V0QH7E2MA773PPHC/agent_result.json"
+    },
+    {
+      "claim": "The later August 21 maintained review retained Sell / Avoid and allocation ineligibility: the August 6 Form 10-Q confirmed rather than improved the July economics, the SEC index had no later issuer operating filing through the market date, and all retained cyclical valuation scenarios remained below the market mark.",
+      "observed_at": "2026-08-21T22:32:19Z",
+      "source": "data/wiki/securities/security_2dbe878dfc899d7ee867.md"
+    },
+    {
+      "claim": "The accepted structural-copper relationship remains an operating-economics link, but expressly states that normalized valuation can make the equity unattractive and that no strategy-research follow-up is justified while valuation gates fail.",
+      "source": "data/wiki/relationships/relationship_def43e5b4e13577e2b99.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYRN70N0N9697H5G77KK5SRQ",
+  "operations_created": [],
+  "reason_code": "valuation_timing_risk_no_follow_up",
+  "status": "succeeded",
+  "summary": "Classified the 2026-07-29 FCX volume-anomaly transition as valuation and timing risk, not a new opportunity. The canonical packet records a 4.38% measured-period decline to USD 59.99 and an entered volume anomaly; the already-completed 2026-07-30 security review matched that exact period, source-price hash, and trigger, found no later contemporaneous issuer filing, and retained a non-actionable assessment. Later primary-evidence review through 2026-08-21 likewise retained Sell / Avoid and allocation ineligibility. No follow-up is justified because the exact alert was already covered by the completed security review and later review; no trading or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied queue row is running for daily-20260823T152232Z, is claimed by that run, has a live lease, and names only llm-wiki plus papertrader-opportunity-research.",
+      "Confirmed hermes_preflight.json identifies the trusted native llm-wiki, controller, and opportunity-research skills with content hashes and records sequential execution.",
+      "Oriented with SCHEMA.md, index.md, research-catalog.md, and the recent wiki log before assessing the supplied untrusted packet.",
+      "Matched the immutable FCX/XNYS/USD equity identity, 2026-06-30 through 2026-07-29 period endpoints, 2026-07-30T04:41:08Z market-data timestamp, entered trigger, and source-price hash to the deterministic packet and completed 2026-07-30 security-review artifact.",
+      "Confirmed the 2026-07-30 review and the later 2026-08-21 primary-evidence review leave no unaddressed bounded follow-up for this historical alert.",
+      "Confirmed no position exists and no strategy, signal, order, execution, cash, portfolio, performance, allocation-target, or allocation-history state was changed by this operation.",
+      "papertrader wiki lint --strict passed."
+    ],
+    "passed": true
+  }
+}
