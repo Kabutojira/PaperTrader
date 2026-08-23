@@ -1,0 +1,56 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "QCOM's 2026-07-30 volume anomaly was classified as earnings-driven risk: the canonical July 1-30 decline and elevated volume aligned with SEC-filed handset, earnings, and margin weakness. The already-completed QCOM review remains watch/ineligible; no position, strategy, or further follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet identifies an entered volume-anomaly transition for security_3a75fc1ccca2ee7c937a over 2026-07-01 through 2026-07-30, with a USD 151.60000610351562 latest close, -0.1666666247284816762435279087 period return, 0.28652692 trigger strength, and source-price hash 4f05b395134950e4d47e888102074dc599b169b4df2cbc3a09ba632d4b0b9c44.",
+      "source": "data/wiki/inbox/market-security_3a75fc1ccca2ee7c937a-volume_anomaly-73cae404a6a1.md",
+      "source_hash": "73cae404a6a136ed47992d5b2a9fd598c189a9c999a5e26631f0e629a4997f30"
+    },
+    {
+      "claim": "Canonical QCOM bars retain the exact period endpoints: 2026-07-01 adjusted close USD 181.9199981689453 and 2026-07-30 adjusted close USD 151.60000610351562 on 24,336,800 shares. The July 30 bar was retrieved at 2026-08-01T09:07:38Z and matches the packet's endpoint and volume.",
+      "observed_at": "2026-08-01T09:07:38Z",
+      "source": "data/market/prices/security_3a75fc1ccca2ee7c937a.csv"
+    },
+    {
+      "claim": "The existing SEC-linked QCOM review records fiscal-Q3 revenue down 4% year over year, GAAP diluted EPS down 23%, handset revenue down 20%, and QCT and QTL margin pressure, while automotive and IoT growth did not offset the near-term weakness. This contemporaneous primary evidence supports an earnings-driven risk interpretation for the post-results selloff rather than unexplained noise.",
+      "observed_at": "2026-08-01T09:27:19Z",
+      "source": "source_qcom_q3_2026_10q and source_qcom_q3_2026_results",
+      "source_hash": "3b460b26dff13a28bfda17b4676f6a2bd3686989d4fb5ffff445102fb1455224",
+      "url": "https://www.sec.gov/Archives/edgar/data/804328/000080432826000086/qcom-20260628.htm"
+    },
+    {
+      "claim": "QCOM's current assessment is allocation-ineligible with base return, expected return, payoff, margin-of-safety, timing, confidence, and relationship constraints; the derived portfolio has no positions. The strategy table has no QCOM strategy, so the historical trigger has no live position or strategy materiality requiring escalation.",
+      "source": "data/tables/security_assessments.csv and data/tables/portfolio.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR01KJPGW0E3Z5ZGD6",
+  "operations_created": [],
+  "reason_code": "risk_no_followup",
+  "status": "succeeded",
+  "summary": "Classified QCOM's 2026-07-30 volume-anomaly transition as risk, not a trade opportunity or noise. The canonical July 1-30 observation recorded a 16.666662% decline to a USD 151.600006 adjusted close on 24,336,800 shares, and Qualcomm's contemporaneous SEC-filed fiscal-Q3 evidence documented weaker revenue, earnings, handset demand, and segment margins. The existing 2026-08-01 security review already incorporated this exact trigger, retained QCOM as watch/ineligible, and created no strategy. No further follow-up is justified because there is no QCOM position or active strategy and the current assessment remains allocation-ineligible.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied queue row is the sole running opportunity_research operation, is claimed by daily-20260823T152232Z, and had a live lease at 2026-08-23T15:41:18Z.",
+      "Confirmed the preflight artifact identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with their required content hashes.",
+      "Validated the payload against its operation schema and matched its immutable security identity, trigger type, market-data timestamp, and exact observation period to the candidate packet and canonical QCOM price cache.",
+      "Rechecked the 2026-07-01 and 2026-07-30 period endpoints, July 30 volume, packet source-price hash, QCOM identity, and the contemporaneous SEC-linked research evidence.",
+      "Confirmed QCOM has no derived portfolio position and no strategy row, while its current assessment remains allocation-ineligible; therefore the trigger has no live strategy or position escalation path.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "scripts/papertrader integrity --strict passed.",
+      "scripts/papertrader schema validate --strict passed.",
+      "scripts/papertrader queue validate passed.",
+      "No wiki, structured research, issue, queue, trading, allocation, accounting, portfolio, performance, or generated-view state was changed by this operation."
+    ],
+    "passed": true
+  }
+}
