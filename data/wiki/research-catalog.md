@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-23"
+created: "2026-08-24"
 updated: "2026-08-24"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_475a3846f19176ecd146"
-as_of: "2026-08-23T15:43:17Z"
+snapshot_id: "decision_af2d6626c4c3640b0aa5"
+as_of: "2026-08-24T15:57:53Z"
 ---
 
 # Research catalog
@@ -222,6 +222,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [NVDA — MACD cross above signal](inbox/market-security_33d9c44facc75c726c7d-macd_cross_above_signal-8425952b966e)
 - [NVDA — MACD cross below signal](inbox/market-security_33d9c44facc75c726c7d-macd_cross_below_signal-bd614732a2bb)
 - [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8276293d6517)
+- [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0)
 - [PARRO.PA — Bollinger below lower](inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-a7f6f5166f84)
 - [PARRO.PA — MACD cross above signal](inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_above_signal-3bcfd60d76b5)
 - [PARRO.PA — MACD cross below signal](inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-98a764a2953d)
@@ -237,6 +238,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-0f061b8f1484)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-270c02b10960)
 - [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-48d79d4d9368)
+- [PLS.AX — Bollinger above upper](inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-64c211fad8b1)
 - [PLS.AX — SMA 50 cross below 200](inbox/market-security_8a5c43888d224de85c69-sma_50_cross_below_200-7377f7b31f5c)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-a75c5f2b1699)
 - [PLTR — Bollinger above upper](inbox/market-security_bdc2f87dadf134760c3a-bollinger_above_upper-b2ac3b8579e7)
@@ -425,6 +427,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-21](daily-reports/daily-report_20260821)
 - [PaperTrader daily report — 2026-08-22](daily-reports/daily-report_20260822)
 - [PaperTrader daily report — 2026-08-23](daily-reports/daily-report_20260823)
+- [PaperTrader daily report — 2026-08-24](daily-reports/daily-report_20260824)
 
 ## Idea
 
@@ -487,6 +490,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily research podcast — 2026-08-21T153352Z](podcasts/daily-podcast_20260821T153352Z)
 - [PaperTrader daily research podcast — 2026-08-21T221654Z](podcasts/daily-podcast_20260821T221654Z)
 - [PaperTrader daily research podcast — 2026-08-22T152115Z](podcasts/daily-podcast_20260822T152115Z)
+- [PaperTrader daily research podcast — 2026-08-23T152232Z](podcasts/daily-podcast_20260823T152232Z)
 
 ## Relationship
 
@@ -621,8 +625,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-64c211fad8b1|PLS.AX — Bollinger above upper]]
-- [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0|PARRO.PA — Bollinger below lower]]

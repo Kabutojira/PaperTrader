@@ -4715,3 +4715,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0]] (8aa8cc16d6a0).
 
 - Classified [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0]] as `ingest`: New downside Bollinger-band breach with a negative period return merits durable review for a potential material price-risk transition.
+
+- Published investor decision snapshot `decision_af2d6626c4c3640b0aa5`.
+
+- Generated canonical [[daily-reports/daily-report_20260824]] for run `daily-20260824T153949Z`.

@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-23"
-updated: "2026-08-23"
+created: "2026-08-24"
+updated: "2026-08-24"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_475a3846f19176ecd146"
-as_of: "2026-08-23T15:43:17Z"
+snapshot_id: "decision_af2d6626c4c3640b0aa5"
+as_of: "2026-08-24T15:57:53Z"
 ---
 
 # Signals
 
-**As of `2026-08-23T15:43:17Z`**
+**As of `2026-08-24T15:57:53Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,24 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### PLS.AX — PLS Group Limited
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_above\_upper`
+- Market date: `2026-08-24`
+- Research status: `skipped`
+- Conclusion: bearish\_alert\_unowned
+
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-24`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one bounded Parrot S.A. quick check after the 24 August lower-Bollinger transition. The identity-matched EUR 9.449999809265137 close was 0.2641% below the lower band after a 2.07% decline over 27 July through 24 August, with RSI 38.73, no volume anomaly, and bearish MACD. The retained H1 issuer release remains available and the issuer share-count page is byte-identical to the registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 3.8% below market, while the EUR 7.272 buy-below level remains 23.05% below market. The thesis, catalysts, risks, invalidation, confidence, canonical Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed.
 
 ### [VLO — Valero Energy Corporation](securities/security_c5a9e460d3350284d157)
 
@@ -240,15 +258,6 @@ No pending orders.
 - Market date: `2026-08-21`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
-
-### [FUC.F — Fanuc Corporation](securities/security_96ba305ee7cd586bc348)
-
-**Research alert — not a trade signal**
-
-- Alert: `volume\_anomaly`
-- Market date: `2026-08-21`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one bounded FANUC quick check for the 21 August volume anomaly. The EUR 32.619998931884766 close was 6.96% below the 24 July period start, with a 2.16862403 volume z-score but only 1,233 Frankfurt shares traded. Fresh retrievals of both retained issuer PDFs matched their registered hashes, leaving the thesis, scenarios, catalysts, risks, and invalidation unchanged. The unchanged scenarios imply about 11.52% expected return, 8.64% confidence-adjusted return, 11.53% base upside, and a EUR 29.104 buy-below level that remains unreached. Hold / Watch and allocation ineligibility remain supported by unresolved downside-payoff, relationship, and thin-liquidity constraints. Because no material gate changed and the fresh baseline remains decision-capable, no full security review was enqueued and the operation intentionally left no agent-owned repository delta. No strategy, signal, order, allocation, execution, cash, portfolio, fill, performance, or accounting state changed.
 
 ### [VALE — Vale S.A.](securities/security_b2116dcf976c96974d7b)
 
