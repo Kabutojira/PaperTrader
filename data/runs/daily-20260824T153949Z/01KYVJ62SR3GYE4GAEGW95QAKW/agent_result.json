@@ -1,0 +1,51 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "MSFT's July 30 volume-anomaly opportunity review is blocked because its exact source observation is stale; a fresh immutable trigger payload is required before reassessing current materiality."
+  ],
+  "evidence": [
+    {
+      "claim": "The claimed row is opportunity_research for opportunity_7de132d3ba2354ec4cf3, is running under daily-20260824T153949Z, has a live lease through 2026-08-24T16:25:02Z, and specifies freshness_days=7.",
+      "source": "data/operations/operations_TODO.csv"
+    },
+    {
+      "claim": "The payload identifies security_204be2a44063993de1a8, volume_anomaly, the exact July 1 through July 30 period, and market_data_as_of 2026-07-31T07:45:55Z.",
+      "source": "data/operations/payloads/01KYVJ62SR3GYE4GAEGW95QAKW.json"
+    },
+    {
+      "claim": "The immutable candidate packet records an entered July 30 volume anomaly for MSFT, with source_price_hash 614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c.",
+      "source": "data/wiki/inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9.md"
+    },
+    {
+      "claim": "The cache contains the source-period endpoint on 2026-07-30 and subsequently recorded MSFT bars through 2026-08-21, so the historical observation is no longer current for an August 24 opportunity decision.",
+      "source": "data/market/prices/security_204be2a44063993de1a8.csv"
+    },
+    {
+      "claim": "The current deterministic market projection identifies the latest MSFT session as 2026-08-21 and was refreshed at 2026-08-24T15:39:57Z.",
+      "source": "data/market/latest.csv"
+    },
+    {
+      "claim": "The maintained MSFT review already attributes the July 30 discontinuity to the July 29 results release and concludes that the volume-backed repricing was a timing risk rather than a fresh entry opportunity; it records no related strategy, signal, or paper order.",
+      "source": "data/wiki/securities/security_204be2a44063993de1a8.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR3GYE4GAEGW95QAKW",
+  "operations_created": [],
+  "reason_code": "stale_opportunity_observation",
+  "status": "blocked",
+  "summary": "The July 30 MSFT volume-anomaly observation cannot support a current opportunity disposition on August 24. Its source market-data timestamp is stale relative to the operation's seven-day freshness window, and the cached market state has since advanced through August 21. A fresh, immutable trigger payload is required before this review can safely classify current materiality or create a follow-up.",
+  "validation": {
+    "checks": [
+      "Validated the claimed queue row, run identity, live lease, and preflight hashes for llm-wiki, papertrader-controller, and papertrader-opportunity-research.",
+      "Validated the payload shape against the opportunity_research operation contract and confirmed immutable MSFT identity in securities.csv.",
+      "Verified the July 30 source-period endpoint and later cached MSFT observations through August 21; the source observation exceeds the row's seven-day freshness window.",
+      "Ran scripts/papertrader wiki lint --strict successfully.",
+      "Confirmed portfolio.csv has no MSFT position and no strategy row exists for the immutable MSFT security; no trading or accounting state was changed."
+    ],
+    "passed": true
+  }
+}
