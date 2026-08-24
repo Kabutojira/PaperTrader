@@ -1,0 +1,56 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict"
+  ],
+  "daily_report_items": [
+    "META's July 30 volume-anomaly opportunity was skipped as already researched: the completed security review classified the post-results move as timing and cash-conversion risk, and the later reassessment found no persisting volume anomaly. META remains Hold / Watch and allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable deterministic packet identifies security_d12e746b3c9d392183cc, an entered volume-anomaly transition on 2026-07-30, period 2026-07-01 through 2026-07-30, and source-price hash d65403f874aadc7c48ae543142923e398eaf6aefc4faa6b229af2709c1a4ddc0.",
+      "source": "data/wiki/inbox/market-security_d12e746b3c9d392183cc-volume_anomaly-5cd1c52bcbea.md",
+      "source_hash": "5cd1c52bcbea6803d8d7422b60a63ee29be44147a884a3b1cafc596b2a38db89"
+    },
+    {
+      "claim": "The completed 2026-08-01 Meta security review explicitly covered the July 30 lower-Bollinger and volume-anomaly transitions, classified the movement as a post-results fundamental repricing and timing risk, and created no strategy or idea follow-up.",
+      "observed_at": "2026-08-01T16:47:46Z",
+      "source": "data/operations/operations_history.csv:01KYPB2RHG2WF001VJFAJXH5S6"
+    },
+    {
+      "claim": "The later 2026-08-18 reassessment rechecked the registered Q2 filing and retained it as unchanged primary evidence for META's valuation and risk conclusion.",
+      "observed_at": "2026-08-18T23:28:21Z",
+      "source": "Meta Q2 2026 Form 10-Q filed with the U.S. Securities and Exchange Commission",
+      "source_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+    },
+    {
+      "claim": "The 2026-08-18 repeat review found volume was not anomalous and unchanged Q2 evidence left META Hold / Watch and allocation-ineligible; it created no strategy, signal, order, or follow-up operation.",
+      "observed_at": "2026-08-18T23:37:14Z",
+      "source": "data/runs/daily-20260818T231700Z/01M02FQ3KGXV8XSZN4FXDYFCG2/agent_result.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR10G0SY00S9X9PMK3",
+  "operations_created": [],
+  "reason_code": "already_researched",
+  "status": "skipped",
+  "summary": "Skipped duplicate opportunity research for META's 2026-07-30 volume-anomaly transition. The exact transition, 2026-07-01 through 2026-07-30 period, and canonical source-price hash were already incorporated by completed security research on 2026-08-01, and the 2026-08-18 reassessment found no persisting volume anomaly or changed primary evidence. The retained disposition is a post-results timing and cash-conversion risk, not a stand-alone opportunity; META remains Hold / Watch and allocation-ineligible. No follow-up, trading, accounting, or wiki change is justified.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied queue row is the sole running opportunity_research claim for daily-20260824T153949Z and its lease remained live through 2026-08-24T16:18:57Z.",
+      "Confirmed the preflight identifies native llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with recorded content hashes; the audited execution profile is analyst.",
+      "Matched the immutable META volume-anomaly packet's security identity, period, entered transition, and source-price hash to the completed 2026-08-01 security-research history result.",
+      "Confirmed the completed 2026-08-18 META reassessment retained unchanged primary evidence and found no volume anomaly, so no evidence-backed incremental wiki update or one bounded follow-up is warranted.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "Confirmed every audited CLI receipt changed no path and that this routed operation made no allocation, order, execution, cash, fill, portfolio, performance, or other structured-state change."
+    ],
+    "passed": true
+  }
+}
