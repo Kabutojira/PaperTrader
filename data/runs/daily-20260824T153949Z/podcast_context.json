@@ -1,0 +1,131 @@
+{
+  "background_wiki_pages": [],
+  "changed_wiki_pages": [],
+  "daily_cycle_id": "daily-20260824T153949Z",
+  "decision_snapshot_path": "data/runs/daily-20260824T153949Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "e092bd1a85c736c75b608a4619abb41fc7634f45e7a486a30506fd53682919eb",
+  "generated_at": "2026-08-24T16:05:52Z",
+  "intervening_daily_cycles": [
+    "daily-20260824T153949Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260824T153949Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260824T153949Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260824.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260823T152232Z/podcast_context.json",
+    "context_sha256": "ce4d4dce6d9c9d79cc3c2603661e153bef8244616705cd5c1af07bde90be1c60",
+    "daily_cycle_id": "daily-20260823T152232Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260823T152232Z.md",
+    "page_sha256": "ac7b6c31c79afa063fde2edbf13ed968deb7ce6936611d5389b35d713d6b5339",
+    "research_cutoff_at": "2026-08-23T15:43:17Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260824.md",
+  "report_sha256": "3a9d32e64ea85609463e1a326394034ba51fad563cfcd758b329a8de5b578e2f",
+  "research_cutoff_at": "2026-08-24T15:57:53Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-24T15:45:19Z",
+      "daily_cycle_id": "daily-20260824T153949Z",
+      "daily_report_items": [
+        "Parrot quick check: the 24 August lower-Bollinger breach remains shallow and is unconfirmed by oversold RSI or abnormal volume. At EUR 9.45, unchanged scenarios still leave base and weighted value about 3.8% below market and the EUR 7.272 buy-below level unreached; canonical Hold / Watch and allocation ineligibility remain unchanged, with no full-review escalation."
+      ],
+      "entity_id": "security_cc4dcb8f002b61dffe00",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The mandatory context receipt succeeded before assessment-state reads and binds security_cc4dcb8f002b61dffe00 to Parrot S.A. ordinary shares / PARRO.PA / XPAR / EUR / equity. It confirms successful baseline operation 01M08BT9VRSPKQN2Q6FSAB61CR completed at 2026-08-20T08:06:51Z and current immutable schema-v2 assessment assessment_8d710a0fa8813b740807, fresh through 2026-09-19.",
+          "observed_at": "2026-08-24T15:41:26Z",
+          "source": "PaperTrader audited security context"
+        },
+        {
+          "claim": "The payload-bound 2026-08-24 observation exactly matches the current indicator source-price hash. The EUR 9.449999809265137 close was 0.2641% below the EUR 9.47502701 lower Bollinger band after a 2.0725% decline from 2026-07-27; RSI was 38.7348, volume z-score was -0.0956, and MACD remained below signal. This is weak downside timing evidence without oversold or abnormal-volume confirmation.",
+          "observed_at": "2026-08-24T15:39:57Z",
+          "source": "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0.md and PaperTrader canonical market state",
+          "source_hash": "9b6cee1128dda05508d230db5e340b76a72dfcd0e5cabe0071ee158f4e058931"
+        },
+        {
+          "claim": "A bounded fresh retrieval succeeded from Parrot's retained first-half 2026 issuer-release URL. No newer decision-supporting primary evidence in the bounded retained-source checklist changed the baseline revenue, margin, cash-flow, concentration, funding, catalyst, risk, or invalidation assumptions.",
+          "observed_at": "2026-08-24T15:43:00Z",
+          "source": "source_parrot_h1_2026_results",
+          "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf"
+        },
+        {
+          "claim": "A fresh retrieval of Parrot's share-count page is byte-identical to the registered source hash, preserving the 31,157,845-share valuation denominator and the baseline dilution-risk conclusion.",
+          "observed_at": "2026-08-24T15:43:00Z",
+          "source": "source_parrot_shares_20260731",
+          "source_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+          "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights"
+        },
+        {
+          "claim": "At EUR 9.449999809265137, the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios imply approximately -42.01%/-3.81%/+53.54% returns and a -3.80% probability-weighted return. The EUR 9.091 weighted fair value remains below market and the EUR 7.272 buy-below level remains 23.05% below market, so no valuation, buy-zone, catalyst, invalidation, material-evidence, or decision-support gate changed and no full-review escalation is warranted.",
+          "source": "assessment_8d710a0fa8813b740807 and bounded scenario comparison"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0T6VA681N6WGD6JYN370PY9",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260824T153949Z/01M0T6VA681N6WGD6JYN370PY9/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Parrot S.A. quick check after the 24 August lower-Bollinger transition. The identity-matched EUR 9.449999809265137 close was 0.2641% below the lower band after a 2.07% decline over 27 July through 24 August, with RSI 38.73, no volume anomaly, and bearish MACD. The retained H1 issuer release remains available and the issuer share-count page is byte-identical to the registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 3.8% below market, while the EUR 7.272 buy-below level remains 23.05% below market. The thesis, catalysts, risks, invalidation, confidence, canonical Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed."
+    }
+  ],
+  "run_id": "daily-20260824T153949Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-24T15:57:32Z",
+      "daily_cycle_id": "daily-20260824T153949Z",
+      "daily_report_items": [
+        "MSFT's July 30 volume-anomaly opportunity review is blocked because its exact source observation is stale; a fresh immutable trigger payload is required before reassessing current materiality."
+      ],
+      "entity_id": "opportunity_7de132d3ba2354ec4cf3",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The claimed row is opportunity_research for opportunity_7de132d3ba2354ec4cf3, is running under daily-20260824T153949Z, has a live lease through 2026-08-24T16:25:02Z, and specifies freshness_days=7.",
+          "source": "data/operations/operations_TODO.csv"
+        },
+        {
+          "claim": "The payload identifies security_204be2a44063993de1a8, volume_anomaly, the exact July 1 through July 30 period, and market_data_as_of 2026-07-31T07:45:55Z.",
+          "source": "data/operations/payloads/01KYVJ62SR3GYE4GAEGW95QAKW.json"
+        },
+        {
+          "claim": "The immutable candidate packet records an entered July 30 volume anomaly for MSFT, with source_price_hash 614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c.",
+          "source": "data/wiki/inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9.md"
+        },
+        {
+          "claim": "The cache contains the source-period endpoint on 2026-07-30 and subsequently recorded MSFT bars through 2026-08-21, so the historical observation is no longer current for an August 24 opportunity decision.",
+          "source": "data/market/prices/security_204be2a44063993de1a8.csv"
+        },
+        {
+          "claim": "The current deterministic market projection identifies the latest MSFT session as 2026-08-21 and was refreshed at 2026-08-24T15:39:57Z.",
+          "source": "data/market/latest.csv"
+        },
+        {
+          "claim": "The maintained MSFT review already attributes the July 30 discontinuity to the July 29 results release and concludes that the volume-backed repricing was a timing risk rather than a fresh entry opportunity; it records no related strategy, signal, or paper order.",
+          "source": "data/wiki/securities/security_204be2a44063993de1a8.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYVJ62SR3GYE4GAEGW95QAKW",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260824T153949Z/01KYVJ62SR3GYE4GAEGW95QAKW/agent_result.json",
+      "status": "blocked",
+      "summary": "The July 30 MSFT volume-anomaly observation cannot support a current opportunity disposition on August 24. Its source market-data timestamp is stale relative to the operation's seven-day freshness window, and the cached market state has since advanced through August 21. A fresh, immutable trigger payload is required before this review can safely classify current materiality or create a follow-up."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-23T15:43:17Z"
+}

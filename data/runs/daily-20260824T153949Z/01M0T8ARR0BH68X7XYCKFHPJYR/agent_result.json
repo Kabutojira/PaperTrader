@@ -1,0 +1,63 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "The controller-validated frozen context is version three, is bound to run daily-20260824T153949Z, and identifies data/wiki/podcasts/daily-podcast_20260824T153949Z.md as the sole transcript page path; the payload and daily manifest identify that same path.",
+      "observed_at": "2026-08-24T16:00:46Z",
+      "source": "data/runs/daily-20260824T153949Z/podcast_context.json",
+      "source_hash": "e06732e3502f1ec1463c8cfe68031025be89431ae10c61c74b52e16ab306682d"
+    },
+    {
+      "claim": "The frozen window contains exactly one successful research development: an unchanged Parrot quick check. It records no changed wiki pages and states that the thesis, valuation scenarios, buy-below level, Hold / Watch disposition, allocation ineligibility, and primary evidence did not change.",
+      "observed_at": "2026-08-24T15:54:58Z",
+      "source": "data/runs/daily-20260824T153949Z/01M0T6VA681N6WGD6JYN370PY9/agent_result.json",
+      "source_hash": "637459f915cf21adebc7ff9c0104db04c872c776a9ad8fb0baf313907a8d6dc5"
+    },
+    {
+      "claim": "The earlier August twentieth episode already explains Parrot's sovereign professional-drone thesis, first-half revenue and margins, working-capital cash burn, thin liquidity, the same bear/base/bull valuation, the approximately seven-euro-and-twenty-seven-cent buy condition, Hold and Watch rating, and downgrade conditions. The current routine recheck adds no new thesis, evidence, or conclusion suitable for a distinct chapter.",
+      "source": "data/wiki/podcasts/daily-podcast_20260820T074907Z.md"
+    },
+    {
+      "claim": "The canonical daily report characterizes the Parrot development as a shallow lower-Bollinger breach without oversold RSI or abnormal volume and confirms that the scenarios, buy-below level, Hold / Watch conclusion, and allocation ineligibility remain unchanged.",
+      "observed_at": "2026-08-24T15:57:53Z",
+      "source": "data/wiki/daily-reports/daily-report_20260824.md",
+      "source_hash": "b384538fc5ac3583d898982298e5903ccfe3a9db0bc9bb3254ca8cafcf225338"
+    },
+    {
+      "claim": "The completed decision snapshot has no actionable signals and retains one hundred percent cash; unchanged portfolio state supplies no separate audience-relevant accepted research development.",
+      "observed_at": "2026-08-24T15:57:53Z",
+      "source": "data/runs/daily-20260824T153949Z/decision_snapshot.json",
+      "source_hash": "56bb0926cdc926ce957502e98b1543c8f660f503a48382fa3010b38340038d16"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0T8ARR0BH68X7XYCKFHPJYR",
+  "operations_created": [],
+  "reason_code": "no_audience_relevant_accepted_research",
+  "status": "skipped",
+  "summary": "Skipped the daily podcast after reviewing every accepted development in frozen context version three for the exclusive 2026-08-23T15:42:06Z through inclusive 2026-08-24T16:00:46Z window. The sole candidate was a routine Parrot quick check that retained the same primary evidence, thesis, valuation, Hold / Watch rating, buy condition, downgrade conditions, and allocation ineligibility already explained in the August twentieth episode. It was excluded for substantial repetition and lack of a new audience-relevant conclusion, leaving no chapter slate. No transcript, daily-report link, audio reference, script preflight, or draft-render invocation was created.",
+  "validation": {
+    "checks": [
+      "Relied on the deterministic controller's authoritative validation of frozen context version three, its exclusive and inclusive cutoffs, declared repository paths, and declared SHA-256 values.",
+      "Confirmed the payload, frozen context, and daily manifest all bind the operation to data/wiki/podcasts/daily-podcast_20260824T153949Z.md.",
+      "Reviewed the complete frozen candidate slate and excluded its sole Parrot development because it is an unchanged recheck substantially duplicating the August twentieth episode's thesis, evidence, valuation, rating, and rating-change conditions.",
+      "Applied the skill skip rule because no audience-relevant accepted research remained after the novelty review.",
+      "Confirmed the exact transcript path and transcript link were absent before completion and left the daily report unchanged.",
+      "Confirmed no transcript, report link, persistent audio reference, validate-script invocation, or draft-render attempt was produced.",
+      "papertrader schema validate --strict passed.",
+      "papertrader queue validate passed.",
+      "papertrader wiki lint --strict passed.",
+      "papertrader integrity --strict passed.",
+      "papertrader portfolio reconcile --strict passed."
+    ],
+    "passed": true
+  }
+}
