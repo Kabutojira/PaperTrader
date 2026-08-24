@@ -1,0 +1,50 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Crocs' 2026-07-30 volume-anomaly opportunity row was skipped because accepted security research had already assessed the same alert as mixed risk, with no later issuer operating filing to change that conclusion."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable packet identifies CROX, the entered volume-anomaly transition, the 2026-07-01 through 2026-07-30 period, a 2026-07-30 close of USD 123.66000366210938, 3.007 million shares of volume, 0.93041873 trigger strength, and source-price hash 6cbdf40a812232ae34a5ae4b8e69e78fc649911237e36c745488e43bfa461277.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/wiki/inbox/market-security_c150f31c30afdb4a85f9-volume_anomaly-3ecd15687b72.md",
+      "source_hash": "3ecd15687b720ccc9d07b54802974653aedad6266d19a290473d37dfca499663"
+    },
+    {
+      "claim": "Accepted security-research operation 01KYPB2MMG5E7Y3EVH2XS3MV0G was explicitly augmented for this volume-anomaly alert and completed on 2026-08-01. It verified the July 30 event against the CROX Q2 Form 10-Q and results release, recorded that the anomaly exited on July 31, and classified it as risk with mixed evidence rather than a durable opportunity; it created no strategy, signal, order, or follow-up.",
+      "observed_at": "2026-08-01T16:27:07Z",
+      "source": "data/operations/operations_history.csv:258 and data/runs/gha-30706962621-1/01KYPB2MMG5E7Y3EVH2XS3MV0G/agent_result.json"
+    },
+    {
+      "claim": "The current SEC submissions index lists the 2026-07-30 Form 10-Q and 8-K as the latest issuer operating filings; the later listed entries are Forms 4, a Schedule 13G/A, and ownership documents. No later operating filing supplied material primary evidence to reopen this historical alert.",
+      "observed_at": "2026-08-24T15:46:30Z",
+      "source": "U.S. SEC submissions index for Crocs, Inc.",
+      "url": "https://data.sec.gov/submissions/CIK0001334036.json"
+    },
+    {
+      "claim": "The canonical cache preserves the July 30 source bar and the latest completed CROX mark is 2026-08-21; current marks do not alter the already documented cause or disposition of the July 30 historical transition.",
+      "observed_at": "2026-08-24T15:39:57Z",
+      "source": "data/market/prices/security_c150f31c30afdb4a85f9.csv and data/market/latest.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR04QCNBHAYXVJHCM2",
+  "operations_created": [],
+  "reason_code": "duplicate_alert_already_researched",
+  "status": "skipped",
+  "summary": "Skipped as already researched: the accepted 2026-08-01 Crocs security review explicitly consumed this exact 2026-07-30 volume-anomaly transition, verified the related Q2 primary evidence, and concluded that the event was mixed risk rather than a durable opportunity. Current SEC submissions contain no later issuer operating filing that would justify reopening the already assessed historical trigger.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied queue row is the sole running opportunity-research claim for daily-20260824T153949Z with an unexpired lease, and its payload and preflight identify the required native, controller, and opportunity-research skills.",
+      "Confirmed CROX identity consistency across the packet, canonical security page, market cache, and current market row; verified the exact July 1 through July 30 period endpoints and retained source bar.",
+      "Confirmed structured history and the accepted prior result explicitly consumed the same July 30 volume anomaly, including its primary-source review and no-follow-up disposition.",
+      "Checked the current SEC submissions index for later issuer operating evidence and found none that changes the already completed historical-trigger conclusion.",
+      "Confirmed no wiki, structured-state, trading, accounting, allocation-target, allocation-history, portfolio, cash, execution, fill, or performance path was changed by this operation.",
+      "scripts/papertrader wiki lint --strict passed."
+    ],
+    "passed": true
+  }
+}
