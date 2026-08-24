@@ -1,0 +1,11 @@
+{
+  "deadline": "2026-08-25T00:00:00Z",
+  "discovery_date": "2026-08-24",
+  "operation_created": true,
+  "operation_id": "01M0T6V970C5BFCKC4W1RY2YNN",
+  "reason": "",
+  "run_id": "daily-20260824T153949Z",
+  "scheduled_at": "2026-08-24T15:39:56Z",
+  "seekingalpha_schedule_version": 1,
+  "status": "queued"
+}

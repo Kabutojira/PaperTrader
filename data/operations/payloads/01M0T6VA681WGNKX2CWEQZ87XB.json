@@ -1,0 +1,19 @@
+{
+  "entity_id": "relationship_9773364a04293a4febaf",
+  "entity_type": "relationship",
+  "inputs": {
+    "idea_id": "idea_critical_minerals_lithium",
+    "maintenance_mode": "refresh",
+    "relationship_id": "relationship_9773364a04293a4febaf",
+    "security_id": "security_9d4049ed6669a52815d6"
+  },
+  "objective": "Review the canonical relationship from idea_critical_minerals_lithium to security_9d4049ed6669a52815d6 and accept or reject it with current evidence.",
+  "operation_id": "01M0T6VA681WGNKX2CWEQZ87XB",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_sqm_mt_holland_fid_2026",
+    "source_sqm_q1_2026_6k",
+    "source_sqm_q2_2026_6k"
+  ]
+}

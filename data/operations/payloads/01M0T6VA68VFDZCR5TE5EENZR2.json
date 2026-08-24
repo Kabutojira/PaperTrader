@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_3a75fc1ccca2ee7c937a",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-01T09:27:19Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_3a75fc1ccca2ee7c937a.md",
+    "security_id": "security_3a75fc1ccca2ee7c937a"
+  },
+  "objective": "Revalidate security_3a75fc1ccca2ee7c937a with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0T6VA68VFDZCR5TE5EENZR2",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_qcom_q3_2026_10q",
+    "source_qcom_q3_2026_results"
+  ]
+}

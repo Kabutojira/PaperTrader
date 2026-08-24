@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_2433a056eb0c55961fcc",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-01T09:14:42Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_2433a056eb0c55961fcc.md",
+    "security_id": "security_2433a056eb0c55961fcc"
+  },
+  "objective": "Revalidate security_2433a056eb0c55961fcc with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0T6VA68PFSMJMFE6JC3CA0B",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_amzn_q2_2026_10q",
+    "source_amzn_q2_2026_results"
+  ]
+}

@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-23"
+updated: "2026-08-24"
 provenance: repository-contract
 ---
 
@@ -4707,3 +4707,11 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_475a3846f19176ecd146`.
 
 - Generated canonical [[daily-reports/daily-report_20260823]] for run `daily-20260823T152232Z`.
+
+## 2026-08-24
+
+- Created candidate packet [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-64c211fad8b1]] (64c211fad8b1).
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0]] (8aa8cc16d6a0).
+
+- Classified [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0]] as `ingest`: New downside Bollinger-band breach with a negative period return merits durable review for a potential material price-risk transition.

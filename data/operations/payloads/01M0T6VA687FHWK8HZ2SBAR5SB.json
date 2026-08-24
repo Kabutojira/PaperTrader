@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_dc8486c1d61df62a22fd",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-01T11:16:33Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_dc8486c1d61df62a22fd.md",
+    "security_id": "security_dc8486c1d61df62a22fd"
+  },
+  "objective": "Revalidate security_dc8486c1d61df62a22fd with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0T6VA687FHWK8HZ2SBAR5SB",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_schneider_fy2025_results",
+    "source_schneider_h1_2026_results"
+  ]
+}

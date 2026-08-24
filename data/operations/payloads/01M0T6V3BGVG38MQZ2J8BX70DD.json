@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_sYMrpUft-QY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-24T15:39:50Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_sYMrpUft-QY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "sYMrpUft-QY",
+    "video_title": "Tencent Stock Fairly Priced / BEST AI STOCK TO BUY!",
+    "video_url": "https://www.youtube.com/watch?v=sYMrpUft-QY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0T6V3BGVG38MQZ2J8BX70DD",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=sYMrpUft-QY"
+  ]
+}

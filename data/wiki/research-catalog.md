@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-23"
-updated: "2026-08-23"
+updated: "2026-08-24"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_475a3846f19176ecd146"
 as_of: "2026-08-23T15:43:17Z"
@@ -621,3 +621,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_8a5c43888d224de85c69-bollinger_above_upper-64c211fad8b1|PLS.AX — Bollinger above upper]]
+- [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0|PARRO.PA — Bollinger below lower]]
