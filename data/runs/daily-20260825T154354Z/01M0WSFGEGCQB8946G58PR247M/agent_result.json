@@ -1,0 +1,36 @@
+{
+  "commands_run": [],
+  "daily_report_items": [
+    "Quick check 01M0WSFGEGCQB8946G58PR247M failed before research because the mandatory security context could not be loaded due to controller credential-file permissions; no investment state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The required initial command exited with code 2 and reported Permission denied for .papertrader/credentials/openai-oauth-auth.json.age.",
+      "source": "scripts/papertrader research security-context --security-id security_715bde20b6e1e1320c1a"
+    },
+    {
+      "claim": "The encrypted OAuth state file is owned by root:root with mode 0600, so the routed operation process could not read it.",
+      "source": "filesystem permission inspection"
+    },
+    {
+      "claim": "The payload binds this quick check to security_715bde20b6e1e1320c1a and requires repeat-assessment context before assessment work.",
+      "source": "data/operations/payloads/01M0WSFGEGCQB8946G58PR247M.json"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0WSFGEGCQB8946G58PR247M",
+  "operations_created": [],
+  "reason_code": "security_context_credential_permission_denied",
+  "status": "failed",
+  "summary": "The mandatory initial security-context command could not run because the controller-owned encrypted OAuth state file was not readable by this process. No assessment state was consumed, no research conclusions were changed, no follow-up operation was created, and no agent-owned repository state was mutated.",
+  "validation": {
+    "checks": [
+      "FAILED: mandatory initial research security-context invocation exited 2 before context could be consumed.",
+      "FAILED: no successful audited receipt was available for the mandatory repeat-assessment context command.",
+      "PASSED: no assessment, security, source, wiki, issue, follow-up, allocation, signal, order, accounting, portfolio, or performance state was changed.",
+      "NOT RUN: routed skill validation commands were not reachable after the mandatory prerequisite failed."
+    ],
+    "passed": false
+  }
+}
