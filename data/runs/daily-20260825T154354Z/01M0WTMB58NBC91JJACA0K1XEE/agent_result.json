@@ -1,0 +1,49 @@
+{
+  "commands_run": [],
+  "daily_report_items": [
+    "The daily podcast novelty review excluded unchanged Parrot maintenance and substantially repeated Vale evidence, but the operation failed before a verified skip because the first required project-CLI strict gate could not read the controller-owned encrypted OAuth state file. No transcript, report link, or audio render was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Frozen context version three covers the exclusive 2026-08-23T15:43:17Z cutoff through the inclusive 2026-08-25T15:56:18Z cutoff, declares exactly two successful research developments, and binds the transcript to data/wiki/podcasts/daily-podcast_20260825T154354Z.md.",
+      "source": "data/runs/daily-20260825T154354Z/podcast_context.json"
+    },
+    {
+      "claim": "Parrot's shallow lower-Bollinger breach had no oversold or abnormal-volume confirmation and changed no thesis, scenario, catalyst, invalidation, rating, action, or allocation gate.",
+      "source": "data/runs/daily-20260824T153949Z/01M0T6VA681N6WGD6JYN370PY9/agent_result.json"
+    },
+    {
+      "claim": "Vale's elevated volume accompanied a modest measured-period rise; the filing amendment changed no underlying financial information, the scenario set and Hold / Watch disposition stayed unchanged, and the possible copper relationship remained pending.",
+      "source": "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/agent_result.json"
+    },
+    {
+      "claim": "Recent episodes already covered Vale's diversified-miner economics, iron-ore dependence, copper optionality, Salobo evidence, unchanged valuation boundaries, pending causal relationship, Hold / Watch conclusion, and the distinction between unusual volume and new valuation evidence.",
+      "source": "data/wiki/podcasts/daily-podcast_20260817T152008Z.md|data/wiki/podcasts/daily-podcast_20260821T153352Z.md|data/wiki/podcasts/daily-podcast_20260821T221654Z.md|data/wiki/podcasts/daily-podcast_20260823T152232Z.md"
+    },
+    {
+      "claim": "The first required strict gate exited with code two because access to .papertrader/credentials/openai-oauth-auth.json.age was denied; no command_audit.json receipt was created.",
+      "source": "scripts/papertrader schema validate --strict"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260825T154354Z/01M0WTMB58NBC91JJACA0K1XEE/candidate_slate.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0WTMB58NBC91JJACA0K1XEE",
+  "operations_created": [],
+  "reason_code": "project_cli_unavailable",
+  "status": "failed",
+  "summary": "Reviewed both successful developments in the frozen context. The Parrot lower-band check was excluded as routine unchanged maintenance, and the Vale volume review was excluded because its non-substantive filing amendment, unchanged Hold / Watch conclusion, copper optionality, valuation, and volume-without-new-fundamentals lesson substantially repeat recent episodes. No audience-relevant chapter survived, so no transcript, report link, outline, or render was created. The operation could not finish as a verified skip because the first required permitted strict gate failed before dispatch when scripts/papertrader could not read the controller-owned encrypted OAuth state file; no command-audit receipt was created and the remaining gates were not attempted.",
+  "validation": {
+    "checks": [
+      "Confirmed the payload, frozen context, and daily manifest all bind the only permitted page path data/wiki/podcasts/daily-podcast_20260825T154354Z.md.",
+      "Confirmed context version three, its exclusive and inclusive cutoffs, the previous successful podcast identity, and both successful research developments.",
+      "Completed candidate selection and novelty review; no development survived as an audience-relevant chapter.",
+      "Confirmed no transcript path was created and the frozen daily report was not changed by this operation.",
+      "Required strict schema validation could not start because the project CLI wrapper received a permission-denied error for the controller-owned encrypted OAuth state file.",
+      "No command-audit receipt exists, so commands_run is empty; strict queue, integrity, wiki, and portfolio checks were not attempted after the blocking pre-dispatch failure.",
+      "No renderer was invoked, and no audio, allocation, strategy, signal, order, execution, cash, portfolio, fill, or performance state was changed."
+    ],
+    "passed": false
+  }
+}

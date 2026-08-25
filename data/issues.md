@@ -69,6 +69,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_222d8c6c7a09731733bd** — Daily podcast skipped: daily-20260820T153414Z | 2026-08-20T16:16:33Z | delivery | 01M0FYSV8076SG0KTC9M6PGKWQ |
 | warning | **issue_2781ea8889ae33bd5a60** — YouTube discovery failed for UCOOSDCjFzHfnGoV8iNLC65A | 2026-07-30T06:15:52Z | youtube-discovery |  |
 | warning | **issue_2873eb4075f12fa65306** — Daily preparation degraded: security_8a5c43888d224de85c69 | 2026-07-29T16:51:20Z | deterministic-controller |  |
+| warning | **issue_2a3d496759d94bbb9188** — Daily podcast failed: daily-20260825T154354Z | 2026-08-25T16:08:09Z | delivery | 01M0WTMB58NBC91JJACA0K1XEE |
 | warning | **issue_2e234f6d4287b0e0f129** — Daily preparation degraded: FX USD/EUR | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_3135d82d86a9c902250b** — Daily preparation degraded: security_0cf8075039299094d614 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_32d1f7843dfa6f6a4bfe** — Daily preparation degraded: security_1c055eb9b2bb1f5a8ff2 | 2026-07-29T16:51:20Z | deterministic-controller |  |
