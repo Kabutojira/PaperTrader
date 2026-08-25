@@ -1,0 +1,21 @@
+{
+  "entity_id": "security_3853e54c619d597dcaa1",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-06T19:10:34Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_3853e54c619d597dcaa1.md",
+    "security_id": "security_3853e54c619d597dcaa1"
+  },
+  "objective": "Revalidate security_3853e54c619d597dcaa1 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0WSFGEGHY02VEBD9VTD3A9E",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_nidec_2026_accounting_final_report",
+    "source_nidec_2026_quality_investigation",
+    "source_nidec_fy2026_filing_extension",
+    "source_nidec_fy2026_preliminary_figures",
+    "source_nidec_h1_fy2025_financials"
+  ]
+}

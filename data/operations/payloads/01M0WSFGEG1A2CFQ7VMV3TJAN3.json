@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_c150f31c30afdb4a85f9",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-01T16:21:00Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_c150f31c30afdb4a85f9.md",
+    "security_id": "security_c150f31c30afdb4a85f9"
+  },
+  "objective": "Revalidate security_c150f31c30afdb4a85f9 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0WSFGEG1A2CFQ7VMV3TJAN3",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_crox_q2_2026_10q",
+    "source_crox_q2_2026_results"
+  ]
+}

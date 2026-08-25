@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_ad3b1f8f59fd599f079a",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-22T15:36:50Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_ad3b1f8f59fd599f079a.md",
+    "security_id": "security_ad3b1f8f59fd599f079a"
+  },
+  "objective": "Revalidate security_ad3b1f8f59fd599f079a with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M0WSFGEG21X32G98V7B6SMWK",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_hood_q2_2026_10q",
+    "source_hood_q2_2026_results",
+    "source_hood_sec_submissions_20260822"
+  ]
+}

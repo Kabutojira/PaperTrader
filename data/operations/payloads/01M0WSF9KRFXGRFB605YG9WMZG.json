@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_Xj4pTYsVSWQ",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-25T15:43:55Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_Xj4pTYsVSWQ",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "Xj4pTYsVSWQ",
+    "video_title": "Inside Trump's Science Agenda: Anti-Science Claims, Fauci's Damage, DEI & China w/ Michael Kratsios",
+    "video_url": "https://www.youtube.com/watch?v=Xj4pTYsVSWQ"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0WSF9KRFXGRFB605YG9WMZG",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=Xj4pTYsVSWQ"
+  ]
+}

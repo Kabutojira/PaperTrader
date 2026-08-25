@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_GnLtHsGM81k",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-25T15:43:55Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_GnLtHsGM81k",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "GnLtHsGM81k",
+    "video_title": "Prosus = Tencent With A BIG DISCOUNT + MORE!!!",
+    "video_url": "https://www.youtube.com/watch?v=GnLtHsGM81k"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0WSF9KR9HZS01KJ66W78Q9M",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=GnLtHsGM81k"
+  ]
+}

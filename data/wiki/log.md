@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-24"
+updated: "2026-08-25"
 provenance: repository-contract
 ---
 
@@ -4719,3 +4719,41 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Published investor decision snapshot `decision_af2d6626c4c3640b0aa5`.
 
 - Generated canonical [[daily-reports/daily-report_20260824]] for run `daily-20260824T153949Z`.
+
+## 2026-08-25
+
+- Created candidate packet [[inbox/market-security_1f9cce545ede94cd6349-macd_cross_below_signal-a36906b53cdc]] (a36906b53cdc).
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-rsi_overbought-95aa279ba52e]] (95aa279ba52e).
+
+- Created candidate packet [[inbox/market-security_47a0b06f6c6c478d7c1e-macd_cross_below_signal-36bee0f68fd7]] (36bee0f68fd7).
+
+- Created candidate packet [[inbox/market-security_715bde20b6e1e1320c1a-macd_cross_above_signal-f40fed0e1788]] (f40fed0e1788).
+
+- Classified [[inbox/market-security_715bde20b6e1e1320c1a-macd_cross_above_signal-f40fed0e1788]] as `ingest`: New MACD bullish crossover for the tracked security merits durable market-state documentation.
+
+- Created candidate packet [[inbox/market-security_7ca095d63423c55a90e3-macd_cross_below_signal-7b23bc80aab3]] (7b23bc80aab3).
+
+- Created candidate packet [[inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-b8f290fffde5]] (b8f290fffde5).
+
+- Classified [[inbox/market-security_83a56943e18793f685b0-bollinger_below_lower-b8f290fffde5]] as `ingest`: Material new downside transition: price fell 6.85% and entered below the lower Bollinger Band, warranting durable review.
+
+- Created candidate packet [[inbox/market-security_89969b7dac39b7db5661-macd_cross_below_signal-5285e64bacc0]] (5285e64bacc0).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-ebe445357714]] (ebe445357714).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-41c7e3862da4]] (41c7e3862da4).
+
+- Created candidate packet [[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6]] (5974ff93bdc6).
+
+- Classified [[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6]] as `ignore`: Volume anomaly lacks a sufficiently material price move or corroborating evidence to justify durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_c120e9f26ebb6159adf9-macd_cross_below_signal-b88c9242f90e]] (b88c9242f90e).
+
+- Created candidate packet [[inbox/market-security_cb88f9154cfeaa15e878-macd_cross_below_signal-1dc3fe0ce7f4]] (1dc3fe0ce7f4).
+
+- Created candidate packet [[inbox/market-security_ce9b78a4d0773c950765-macd_cross_below_signal-882f1813809a]] (882f1813809a).
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-84097bdf7adb]] (84097bdf7adb).
+
+- Created candidate packet [[inbox/market-security_ef35e41886220d51c22c-macd_cross_below_signal-bc89e0840ec2]] (bc89e0840ec2).
