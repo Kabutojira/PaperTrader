@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-24"
-updated: "2026-08-24"
+created: "2026-08-25"
+updated: "2026-08-25"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_af2d6626c4c3640b0aa5"
-as_of: "2026-08-24T15:57:53Z"
+snapshot_id: "decision_b27531cf89a085490c57"
+as_of: "2026-08-25T15:56:18Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-24T15:57:53Z`
+**As of:** `2026-08-25T15:56:18Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-24T15:57:53Z"
 
 ## Coverage
 
-- Assessments: 47/70
-- Fresh-evidence assessments: 44/70
+- Assessments: 46/70
+- Fresh-evidence assessments: 43/70
 - Relationship reviews: 14/70
 - Accepted relationships: 12
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-24T15:57:53Z"
 - Pending orders: 0
 - Market success/failure: 72/0
 - Candidate FX gaps: 0
-- Research backlog: 442
+- Research backlog: 456
 - Last successful daily run: 2026-08-23
 
 ## Current issues by investment impact
@@ -183,6 +183,7 @@ as_of: "2026-08-24T15:57:53Z"
 - Warning **YouTube discovery failed for UCS01CiRDAiyhR_mTHXDW23A** — @DumbMoneyLive: u-AXyF9kY9k This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **Daily podcast failed: [[daily-reports/daily-report_20260817|Daily report for 2026-08-17]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **YouTube discovery failed for UCIFn7ONIJHyC-lMnb7Fm_jw** — @thelimitingfactor: SuSYegb8iK0 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260824|Daily report for 2026-08-24]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily podcast failed: [[daily-reports/daily-report_20260806|Daily report for 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **Daily preparation degraded: FX GBP/EUR** — FX GBP/EUR: YFTzMissingError: $GBPEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrGLm-Drgv0vbbemwwHeXJw** — @CouchInvestor: YouTube Data API video duration is malformed
@@ -191,7 +192,7 @@ as_of: "2026-08-24T15:57:53Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 442 active operations.
+Showing 20 of 456 active operations.
 
 <details><summary>Active research work</summary>
 

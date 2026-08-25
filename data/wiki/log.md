@@ -4758,6 +4758,10 @@ This log is append-only. Rotate it by year only after the configured line thresh
 
 - Created candidate packet [[inbox/market-security_ef35e41886220d51c22c-macd_cross_below_signal-bc89e0840ec2]] (bc89e0840ec2).
 
+- Published investor decision snapshot `decision_b27531cf89a085490c57`.
+
+- Generated canonical [[daily-reports/daily-report_20260825]] for run `daily-20260825T154354Z`.
+
 ## [2026-08-25T15:48:11Z] update | Vale volume-anomaly security review
 
 - Updated [[securities/security_b2116dcf976c96974d7b|Vale]] after the exact 27 July through 24
