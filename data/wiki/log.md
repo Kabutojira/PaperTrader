@@ -4757,3 +4757,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-84097bdf7adb]] (84097bdf7adb).
 
 - Created candidate packet [[inbox/market-security_ef35e41886220d51c22c-macd_cross_below_signal-bc89e0840ec2]] (bc89e0840ec2).
+
+## [2026-08-25T15:48:11Z] update | Vale volume-anomaly security review
+
+- Updated [[securities/security_b2116dcf976c96974d7b|Vale]] after the exact 27 July through 24
+  August period rose 1.76% to USD 15.04 and volume entered the configured anomaly at a 2.84 z-score.
+- Registered Vale's 24 August Form 6-K/A, which adds only interactive-data Exhibit 101 and explicitly
+  leaves the original interim-financial information unchanged. The thesis, catalysts, risks and USD
+  9.00/USD 14.50/USD 20.00 scenarios remain unchanged.
+- The USD 13.95 weighted value and USD 11.60 buy-below price remain below the mark, retaining Hold /
+  Watch and allocation ineligibility with no strategy, signal or paper order.
+- Added a clearly labelled candidate link to
+  [[ideas/idea_critical_minerals_copper|critical minerals and structural copper scarcity]] for one
+  dependent relationship review; the candidate is not represented as an accepted relationship.

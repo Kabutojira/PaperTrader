@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vale_q2_2026_ifrs_amendment_20260824",
+  "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004322/valedfifrs2q26_6ka.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004322/valedfifrs2q26_6ka.htm",
+  "source_type": "filing",
+  "title": "Vale amendment to consolidated interim financial statements at June 30, 2026",
+  "publisher": "Vale S.A. via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "e74fe29ed67ba21844dd06e1b04f09361132343f12cadc8cdb082570110abb5f",
+  "related_entity_ids": "security_b2116dcf976c96974d7b",
+  "checked_at": "2026-08-25T15:48:11Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "",
+  "summary": "The August 24 Form 6-K/A adds Exhibit 101 interactive data to Vale's July 31 interim-financial filing and explicitly states that it does not amend any other information in the original filing. It therefore adds no changed operating, balance-sheet, valuation, catalyst, or risk fact.",
+  "run_id": "daily-20260825T154354Z"
+}

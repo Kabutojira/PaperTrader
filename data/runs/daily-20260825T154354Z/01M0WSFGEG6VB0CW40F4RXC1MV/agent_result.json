@@ -1,0 +1,71 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader research source record --request data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/source_vale_q2_2026_ifrs_amendment_20260824_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/enqueue_copper_relationship_request.json",
+    "papertrader research security-context --security-id security_b2116dcf976c96974d7b",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Vale's August 24 volume anomaly accompanied only a 1.76% measured-period rise and no changed issuer fact. The unchanged USD 13.95 weighted value remains below the USD 15.04 mark, retaining Hold/Watch and allocation ineligibility; one dependent copper-relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The amendment adds Exhibit 101 interactive data to the July 31 interim-financial filing and explicitly states that it does not amend any other information in the original filing; it therefore supplies no changed operating or valuation fact.",
+      "observed_at": "2026-08-25T15:48:11Z",
+      "source": "Vale Form 6-K/A filed 2026-08-24",
+      "source_hash": "e74fe29ed67ba21844dd06e1b04f09361132343f12cadc8cdb082570110abb5f",
+      "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004322/valedfifrs2q26_6ka.htm"
+    },
+    {
+      "claim": "The deterministic alert measured a 1.7591% return over 2026-07-27 through 2026-08-24, a USD 15.04 adjusted close, and a volume z-score of 2.8380 entering the configured anomaly. The modest price move without corroborating fundamental evidence is noise for valuation and action.",
+      "source": "data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6.md"
+    },
+    {
+      "claim": "Deterministic schema-version-two assessment output links predecessor assessment_9911343e7005a53ee6fd and derives USD 13.95 probability-weighted fair value, -7.247340190277% expected return, -5.435505142708% confidence-adjusted expected return, USD 11.60 buy-below, Hold/Watch, and ineligibility for the exact recorded price and FX identities.",
+      "source": "assessment_151be9a9f77cf4fa04ea"
+    },
+    {
+      "claim": "Current primary evidence supports a plausible but unaccepted positive copper-scarcity relationship through Salobo execution and broader copper growth; iron ore remains dominant, so materiality requires a separate bounded relationship review.",
+      "source": "source_vale_q2_2026_production|source_vale_q2_2026_results|source_vale_salobo_cpf_20260812"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0WSW9M832JM6B9QW2BWGRZR.json",
+    "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/assessment_upsert_request.json",
+    "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/enqueue_copper_relationship_request.json",
+    "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/security_upsert_request.json",
+    "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/source_vale_q2_2026_ifrs_amendment_20260824_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0WSFGEG6VB0CW40F4RXC1MV",
+  "operations_created": [
+    "01M0WSW9M832JM6B9QW2BWGRZR"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Vale security review for the August 24 volume anomaly. The exact July 27 through August 24 period rose 1.76% to USD 15.04 while volume entered the configured anomaly at a 2.8380 z-score. Vale's August 24 Form 6-K/A adds only interactive data and changes no prior filing information, so the thesis and USD 9.00/USD 14.50/USD 20.00 scenarios remain unchanged. Published assessment assessment_151be9a9f77cf4fa04ea: USD 13.95 weighted fair value, -7.2473% expected return, -5.4355% confidence-adjusted return, Hold/Watch, and allocation-ineligible. Added one clearly labelled critical-minerals/copper candidate and queued exactly one dependent relationship review. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment and post-write security-context receipts succeeded; the current immutable assessment links predecessor assessment_9911343e7005a53ee6fd, source operation/result, schema version two, and matching research-page hash 4a29fea25bbf5374a14f02bb8760f363c4b25ad2fd52add9396da469712c5084.",
+      "The exact alert period, market-data identity, USD reference price, USD/EUR FX identity, retained source registration, scenario ordering, probabilities totaling 100, score anchors, and complete eligibility frontier validated.",
+      "The complete maintained idea catalog and canonical relationship state were searched. No accepted relationship exists; the copper link is explicitly candidate-only, remaining ideas were rejected for lack of material mechanism, and exactly one dependent relationship review was created.",
+      "Strict schema, queue, integrity, wiki, and portfolio reconciliation checks all returned OK.",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, or performance path changed."
+    ],
+    "passed": true
+  }
+}

@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-08-13"
-updated: "2026-08-22"
-provenance: "source_vale_q2_2026_ifrs; source_vale_q2_2026_production; source_vale_q2_2026_results; source_vale_salobo_cpf_20260812; source_vale_fundao_municipalities_20260820"
+updated: "2026-08-25"
+provenance: "source_vale_q2_2026_ifrs; source_vale_q2_2026_ifrs_amendment_20260824; source_vale_q2_2026_production; source_vale_q2_2026_results; source_vale_salobo_cpf_20260812; source_vale_fundao_municipalities_20260820"
 security_id: security_b2116dcf976c96974d7b
 issuer_id: issuer_a3cc545e137b5f2e3a04
 confidence: medium
-next_review: "2026-09-21"
+next_review: "2026-09-24"
 ---
 
 # Vale S.A. sponsored ADR
@@ -23,7 +23,7 @@ next_review: "2026-09-21"
 
 This assessment compares Vale's diversified iron-ore and base-metals economics with
 [[securities/security_1c055eb9b2bb1f5a8ff2|Rio Tinto]] and addresses the deterministic
-[[inbox/market-security_b2116dcf976c96974d7b-macd_cross_above_signal-cc825853a0db|MACD bullish crossover]].
+[[inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6|24 August volume anomaly]].
 
 ## Economics and thesis
 
@@ -59,37 +59,58 @@ Registered primary evidence: [Vale 2Q26 performance](https://www.sec.gov/Archive
 
 ## Changes since prior review
 
-- **Primary evidence:** The current 2Q26 financial, production, Salobo and Fundão evidence checked in
-  the 21 August quick review remains the bounded primary-source set. The MACD crossover supplies no
-  new issuer evidence and does not change any operating, balance-sheet or liability assumption.
+- **Primary evidence:** Vale's 24 August Form 6-K/A adds only the Exhibit 101 interactive-data file to
+  the 31 July interim-financial filing and explicitly leaves all other information unchanged. The
+  current 2Q26 financial, production, Salobo and Fundão facts therefore remain the bounded operating
+  evidence; no operating, balance-sheet or liability assumption changed.
 - **Thesis, catalysts and risks:** The diversified iron-ore and base-metals thesis, Salobo growth
   catalyst, broader Fundão adherence, commodity normalization, net-debt, capital-intensity and
   liability risks remain intact. No catalyst or invalidation condition fired.
-- **Market and timing:** The 21 August adjusted close rose to USD 14.59. MACD remained negative but
-  crossed above its signal by 0.03314, a short-term momentum improvement after a 1.35% decline over
-  the exact 24 July through 21 August period. This is attention evidence, not a fundamental entry.
+- **Market and timing:** The 24 August adjusted close rose to USD 15.04, up 1.76% over the exact 27
+  July through 24 August period. Volume reached 49.76 million shares, 81.19% above the prior session,
+  and its 2.84 z-score entered the configured anomaly. The move is attention evidence, not a
+  fundamental entry, because the monthly price change is modest and the amendment is non-substantive.
 - **Valuation and action:** The USD 9.00 / USD 14.50 / USD 20.00 scenarios and USD 11.60 buy-below
-  price remain unchanged. Their USD 13.95 weighted value is below the new mark, so Vale remains
-  Hold / Watch and allocation-ineligible. No additional full review, strategy or signal is justified.
+  price remain unchanged. Their USD 13.95 weighted value is 7.25% below the new mark, so Vale remains
+  Hold / Watch and allocation-ineligible. No strategy or signal is justified.
+- **Idea graph, blockers and gaps:** No canonical relationship exists. A complete catalog search now
+  identifies [[ideas/idea_critical_minerals_copper|critical minerals and structural copper scarcity]]
+  as a plausible but unaccepted positive edge through Vale's copper growth and Salobo execution.
+  Relationship review remains a blocker; confidence, cyclical-normalization, margin-of-safety,
+  timing and valuation gaps are otherwise unchanged.
 
 Current additional primary evidence: [Salobo CPF execution update](https://www.sec.gov/Archives/edgar/data/917851/000129281426004212/vale20260812_6k.htm)
 (`source_vale_salobo_cpf_20260812`) and [Fundão municipal-adherence update](https://www.sec.gov/Archives/edgar/data/917851/000129281426004308/vale20260820_6k.htm)
-(`source_vale_fundao_municipalities_20260820`).
+(`source_vale_fundao_municipalities_20260820`). The [24 August Form 6-K/A](https://www.sec.gov/Archives/edgar/data/917851/000129281426004322/valedfifrs2q26_6ka.htm)
+(`source_vale_q2_2026_ifrs_amendment_20260824`) explicitly adds only Exhibit 101 and changes no
+other information in the original filing.
 
 ## Alert review
 
-The 21 August close was USD 14.59 after a 1.35% decline over the exact 24 July through 21 August
-period. MACD was -0.19471 versus its -0.22785 signal, entering the configured bullish crossover with
-a 0.03314 spread; RSI was neutral at 53.76 and no persistent trigger remained in the latest state.
-The crossover reverses short-term momentum direction after the prior day's volume anomaly, but the
-price remains above both weighted fair value and the buy-below gate. It is attention evidence rather
-than proof of thesis improvement or an entry condition.
+The 24 August close was USD 15.04 after a 1.76% rise over the exact 27 July through 24 August period.
+Volume reached 49,764,700 shares and its 2.8380 z-score entered the configured anomaly above 2.0.
+RSI was neutral at 59.86; MACD was -0.10994 versus a -0.20427 signal and did not create a new
+crossover. The move is noise for valuation and action: it is a modest price change with elevated
+turnover, no substantive new issuer fact, and a price still above weighted value and buy-below.
+
+## Idea exposure map
+
+- **Candidate — [[ideas/idea_critical_minerals_copper|critical minerals and structural copper
+  scarcity]] (positive):** Salobo execution and broader copper-volume growth can transmit structural
+  copper tightness into a larger base-metals contribution and cash flow. Current 2Q26 sales growth
+  and the Salobo CPF update support plausibility, but iron ore still dominates Vale's economics and
+  no canonical edge is accepted. A separate relationship review must test materiality and reject the
+  edge if copper remains immaterial to normalized value or project, cost and capital demands absorb
+  the commodity benefit.
+
+The complete idea-catalog search rejected the remaining maintained ideas for lack of a specific,
+material causal transmission mechanism to Vale's normalized economics.
 
 ## Valuation, catalysts, and risks
 
 The `cyclical_commodity` template uses `mid_cycle_cash_flow`. The valuation deliberately normalizes
-rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 21 August close of USD
-14.59, the unchanged 12-month scenarios are:
+rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 24 August close of USD
+15.04, the unchanged 12-month scenarios are:
 
 | Scenario | Probability | Fair value | Assumptions |
 | --- | ---: | ---: | --- |
@@ -97,9 +118,9 @@ rather than capitalizes the annualized 2Q26 free-cash-flow rate. Against the 21 
 | Base | 50% | USD 14.50 | Iron ore normalizes below the recent realized price, operational gains and base-metals growth offset part of the price decline, and recurring free cash flow supports distributions without increasing leverage. |
 | Bull | 20% | USD 20.00 | Iron ore remains resilient, S11D and other assets deliver volume and cost gains, copper projects advance, and stronger cash conversion reduces net debt while liabilities remain controlled. |
 
-Probability-weighted fair value is USD 13.95, about 4.39% below the mark; medium confidence produces
-about -3.29% confidence-adjusted expected return. The base case is about 0.62% below market, the bear
-case about 38.31% below market, and the USD 11.60 buy-below level remains well below the current
+Probability-weighted fair value is USD 13.95, about 7.25% below the mark. The base case is about
+3.59% below market, the bear case about 40.16% below market, and the bull case offers about 32.98%
+upside. The USD 11.60 buy-below level remains about 22.87% below the current
 price. These outputs do not offer the required downside protection or margin of safety.
 
 Catalysts are sustained operating delivery, S11D improvements, Bacaba and other copper milestones,
@@ -113,8 +134,7 @@ crowd out high-return reinvestment and liability funding.
 Status: **watching**, confidence **medium**. The current filings make valuation supportable, but the
 scenario frontier remains ineligible: expected and base returns are below the economic hurdle,
 bear/base payoff is poor, the margin of safety is below target, and no accepted causal relationship
-exists. The MACD crossover is attention evidence, not a paper-trade signal, and changes no material
-gate. The existing research already identifies the Salobo and Fundão evidence for full review; this
-bounded crossover check does not justify another follow-up. Review by
-**2026-09-20** or sooner after a material iron-ore price, Chinese-demand, production, project,
+exists. The volume anomaly is attention evidence, not a paper-trade signal, and changes no material
+gate. Review by
+**2026-09-24** or sooner after a material iron-ore price, Chinese-demand, production, project,
 remediation, or leverage change. No strategy or signal is justified.

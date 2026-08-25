@@ -1,0 +1,23 @@
+{
+  "security_id": "security_b2116dcf976c96974d7b",
+  "issuer_id": "issuer_a3cc545e137b5f2e3a04",
+  "company_name": "Vale S.A.",
+  "instrument_name": "Vale S.A. sponsored ADR",
+  "instrument_type": "equity",
+  "ticker": "VALE",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "VALE",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "BR",
+  "sector": "Basic Materials",
+  "industry": "Other Industrial Metals & Mining",
+  "status": "watching",
+  "watchlist_reason": "Diversified iron-ore and base-metals producer; monitor mid-cycle prices, Chinese steel demand, costs, production, net debt, project delivery, remediation liabilities and valuation.",
+  "research_summary": "Volume spiked but USD 15.04 remains above USD 13.95 weighted value and USD 11.60 buy-below; Hold/Watch and ineligible with no changed fundamental gate.",
+  "research_page": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+  "last_research_at": "2026-08-25T15:48:11Z",
+  "next_review_at": "2026-09-24T15:48:11Z",
+  "source": "source_vale_fundao_municipalities_20260820|source_vale_q2_2026_ifrs|source_vale_q2_2026_ifrs_amendment_20260824|source_vale_q2_2026_production|source_vale_q2_2026_results|source_vale_salobo_cpf_20260812"
+}

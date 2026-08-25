@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_e15caef7f4ff6c0b915d",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_vale_q2_2026_production",
+      "source_vale_q2_2026_results",
+      "source_vale_salobo_cpf_20260812"
+    ],
+    "idea_id": "idea_critical_minerals_copper",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if copper remains immaterial to Vale's normalized value, Salobo or other copper projects underdeliver, cost and capital demands absorb the commodity benefit, or iron-ore economics continue to dominate without meaningful diversification.",
+    "proposed_mechanism": "Structural copper tightness can transmit into Vale through Salobo execution and broader copper-volume growth, increasing the base-metals contribution and cash flow if project delivery, costs and capital requirements remain controlled.",
+    "relationship_id": "relationship_e15caef7f4ff6c0b915d",
+    "security_id": "security_b2116dcf976c96974d7b"
+  },
+  "objective": "Review whether Vale has a material causal relationship to critical minerals and structural copper scarcity through Salobo and broader copper growth; accept or reject the edge without treating iron-ore exposure as copper exposure.",
+  "operation_id": "01M0WSW9M832JM6B9QW2BWGRZR",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_critical_minerals_copper.md",
+    "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+    "source_vale_q2_2026_production",
+    "source_vale_q2_2026_results",
+    "source_vale_salobo_cpf_20260812"
+  ]
+}
