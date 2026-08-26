@@ -1,0 +1,23 @@
+{
+  "security_id": "security_715bde20b6e1e1320c1a",
+  "issuer_id": "issuer_153eb518826ba6f3dbcd",
+  "company_name": "DLocal Limited",
+  "instrument_name": "DLocal Limited Class A common shares",
+  "instrument_type": "equity",
+  "ticker": "DLO",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "DLO",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "UY",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Q2 growth, cash conversion and raised guidance remain constructive, but the mark has exited the buy zone, payoff gates weakened, and take-rate compression, concentration, new debt capacity and the absent accepted relationship require monitoring.",
+  "research_summary": "Q2 operating evidence remains constructive, but at USD 15.53 DLO is above its USD 14.96 buy-below level and fails the payoff gate; a full review is pending and allocation remains ineligible.",
+  "research_page": "data/wiki/securities/security_715bde20b6e1e1320c1a.md",
+  "last_research_at": "2026-08-26T16:35:49Z",
+  "next_review_at": "2026-09-17T20:14:50Z",
+  "source": "source_dlocal_q2_2026_financials|source_dlocal_q2_2026_results"
+}

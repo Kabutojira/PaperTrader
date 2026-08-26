@@ -1,0 +1,41 @@
+{
+  "entity_id": "security_715bde20b6e1e1320c1a",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01KZYPF0GR1JXMXK7AB5Y1XH8A",
+    "changed_gate": "buy_zone_exited_and_base_upside_to_bear_downside_below_minimum",
+    "current_market_data_as_of": "2026-08-26T16:19:41Z",
+    "current_market_data_date": "2026-08-25",
+    "current_source_price_hash": "2f9acee73518a51eb3248b34959e9b8fc03c6b87e2cc43edefc2231f625190e4",
+    "market_data_as_of": "2026-08-25T15:44:02Z",
+    "market_data_date": "2026-08-24",
+    "period_end": "2026-08-24",
+    "period_start": "2026-07-27",
+    "quick_check_operation_id": "01M0WSFGEGCQB8946G58PR247M",
+    "research_reasons": [
+      {
+        "cause": "macd_cross_above_signal",
+        "source_ref": "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-macd_cross_above_signal-f40fed0e1788.md"
+      },
+      {
+        "cause": "buy_zone_and_payoff_gate_changed",
+        "source_ref": "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+      }
+    ],
+    "security_id": "security_715bde20b6e1e1320c1a",
+    "source_price_hash": "20fbdc409af371652ab03c5ef4b96c6375858435697f0bebf171f804db7ea9ce",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
+  },
+  "objective": "Fully reassess dLocal after the bullish MACD recovery moved the mark above the existing buy-below level and caused the canonical base-upside-to-bear-downside gate to fail.",
+  "operation_id": "01M0ZF0AJG7G54J9TCADG7KFYX",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_715bde20b6e1e1320c1a-macd_cross_above_signal-f40fed0e1788.md",
+    "https://data.sec.gov/submissions/CIK0001846832.json",
+    "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+    "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm"
+  ]
+}

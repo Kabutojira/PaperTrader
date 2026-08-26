@@ -4827,3 +4827,12 @@ This log is append-only. Rotate it by year only after the configured line thresh
     [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] and
     [[ideas/idea_solar_storage_grid_flexibility_reset|solar, storage and grid flexibility reset]],
     with one dependent relationship review queued for each candidate.
+
+- Updated [[securities/security_715bde20b6e1e1320c1a|DLocal Limited Class A common shares]] for
+  quick-check operation `01M0WSFGEGCQB8946G58PR247M`.
+  - Verified the August 24 bullish MACD crossover and its persistence through August 25; no newer
+    operating filing changed the Q2 thesis, catalysts, risks or invalidation conditions.
+  - Repriced the unchanged USD 9.00/USD 18.70/USD 29.40 scenarios at USD 15.53. The mark exited the
+    USD 14.96 buy zone and the base-upside-to-bear-downside ratio fell below the canonical gate.
+  - Retained Medium / Watch and allocation ineligibility, and queued exactly one dependent full
+    security review; no strategy, signal or paper order was created.

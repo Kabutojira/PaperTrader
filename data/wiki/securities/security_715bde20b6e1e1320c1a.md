@@ -27,11 +27,30 @@ next_review: "2026-09-17"
 profit grew 29%, operating profit grew 15%, adjusted free cash flow recovered to USD 68.5 million,
 and management raised TPV and gross-profit guidance. Gross profit over TPV nevertheless compressed
 again to 0.72%, the top ten merchants remained 61% of revenue, and a new USD 150 million facility
-adds capital-allocation risk. At USD 13.64, the revised base value has 37.1% upside and the mark is
-below the USD 14.96 buy-below level, but no accepted idea-security relationship exists. The
+adds capital-allocation risk. At USD 15.53, the unchanged USD 18.70 base value has 20.4% upside, but
+the mark is 3.7% above the USD 14.96 buy-below level and the base-upside-to-bear-downside ratio no
+longer clears the canonical gate. No accepted idea-security relationship exists either. The
 assessment therefore remains allocation-ineligible and no conviction strategy is justified.
 
 ## Changes since prior review
+
+### 2026-08-26 quick check
+
+- **Alert and price:** the August 24 bullish MACD crossover followed a 1.34% gain over the exact
+  July 27-August 24 alert period. By August 25, DLO closed at USD 15.53; MACD remained above its
+  signal, RSI was neutral at 62.16 and volume was not anomalous.
+- **Primary evidence:** the current SEC submissions index contains no operating filing after the
+  August 13 Q2 Form 6-K. The August 19 Schedule 13D/A remains a secondary General Atlantic share
+  sale, not issuer dilution or changed operating evidence.
+- **Valuation and gate change:** unchanged USD 9.00/USD 18.70/USD 29.40 scenarios imply about
+  -42.0%/+20.4%/+89.3% at USD 15.53. Weighted fair value remains USD 18.95, but the mark is 3.7%
+  above the USD 14.96 buy-below level and base upside is now less than bear downside. The buy-zone
+  and payoff-gate change requires one dependent full review; it is not an entry condition.
+- **Unchanged assumptions:** Q2 growth, guidance and cash conversion still support the thesis,
+  while take-rate compression, merchant concentration, regulatory and foreign-exchange exposure,
+  litigation, settlement liquidity, dilution and capital deployment remain the principal risks.
+  No catalyst or invalidation condition fired, confidence remains medium, and the absent accepted
+  relationship remains an independent allocation blocker.
 
 - **Evidence:** Q2 results and interim statements supersede Q1 as the latest primary financial
   evidence. TPV, revenue, operating profit, net income and adjusted free cash flow improved; Q2 cash
@@ -146,11 +165,12 @@ pressure, operating leverage, employee-plan dilution and capital allocation:
 - Bull, 25%: USD **29.40**, using USD 1.05 normalized EPS at 28x as expansion, cash conversion,
   repurchases and capital deployment outperform without a material regulatory setback.
 
-Against USD 13.64, those cases imply approximately **-34.0%**, **+37.1%**, and **+115.5%**.
-Probability-weighted fair value is USD 18.95, or approximately **+38.9%** before the deterministic
-confidence adjustment. The base-upside-to-bear-downside ratio is approximately **1.09**, and the
-20% margin-of-safety buy-below level is USD **14.96**. The economic frontier improves materially,
-but the missing accepted relationship still prevents allocation or strategy work.
+Against USD 15.53, those cases imply approximately **-42.0%**, **+20.4%**, and **+89.3%**.
+Probability-weighted fair value is USD 18.95, or approximately **+22.0%** before the deterministic
+confidence adjustment. The base-upside-to-bear-downside ratio is approximately **0.49**, and the
+20% margin-of-safety buy-below level is USD **14.96**, 3.7% below the mark. The changed buy-zone
+and payoff frontiers require a full review, while the missing accepted relationship independently
+prevents allocation or strategy work.
 
 ## Sources
 
@@ -165,8 +185,8 @@ but the missing accepted relationship still prevents allocation or strategy work
 - [dLocal Q2 2026 interim financial statements](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm)
   (`source_dlocal_q2_2026_financials`, checked 2026-08-18).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_715bde20b6e1e1320c1a.csv`, market date 2026-08-18 and retrieved
-  2026-08-18.
+  `data/market/prices/security_715bde20b6e1e1320c1a.csv`, market date 2026-08-25 and retrieved
+  2026-08-26.
 
 Next review: **2026-09-17**, or sooner after a material merchant, tax, regulatory,
 foreign-exchange, litigation, cash-conversion, or capital-allocation development.

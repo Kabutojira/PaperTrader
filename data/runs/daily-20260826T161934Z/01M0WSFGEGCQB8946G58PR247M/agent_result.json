@@ -1,0 +1,87 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security upsert --request data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/enqueue_full_research_request.json",
+    "papertrader research security-context --security-id security_715bde20b6e1e1320c1a",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "dLocal's August 24 bullish-MACD crossover persisted through August 25, but the USD 15.53 close moved above the USD 14.96 buy-below level and caused the canonical payoff gates to fail. Q2 operating assumptions remain unchanged, DLO remains Medium / Watch and allocation-ineligible, and exactly one dependent full review was queued; no paper strategy, signal or order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The canonical alert packet binds macd_cross_above_signal to the exact 2026-07-27 through 2026-08-24 period, USD 15.119999885559082 adjusted close, 1.340481288488143% period return and source-price hash 20fbdc409af371652ab03c5ef4b96c6375858435697f0bebf171f804db7ea9ce.",
+      "observed_at": "2026-08-25T15:44:02Z",
+      "source": "PaperTrader payload-bound market alert",
+      "source_hash": "20fbdc409af371652ab03c5ef4b96c6375858435697f0bebf171f804db7ea9ce"
+    },
+    {
+      "claim": "On 2026-08-25 DLO closed at USD 15.529999732971191. MACD 0.1626788 remained above its 0.09599143 signal, RSI 62.16321037 was neutral, volume z-score 0.07873372 was non-anomalous, and the current source-price hash is 2f9acee73518a51eb3248b34959e9b8fc03c6b87e2cc43edefc2231f625190e4.",
+      "observed_at": "2026-08-26T16:19:41Z",
+      "source": "PaperTrader current deterministic market and indicator state",
+      "source_hash": "2f9acee73518a51eb3248b34959e9b8fc03c6b87e2cc43edefc2231f625190e4"
+    },
+    {
+      "claim": "The current SEC index contains no operating filing after the retained 2026-08-13 Q2 Form 6-K. The 2026-08-19 Schedule 13D/A remains a secondary General Atlantic transaction: 9,842,559 Class A shares sold at an average USD 13.60 on August 17, not issuer dilution or evidence changing revenue, guidance, cash conversion, catalysts or invalidation conditions.",
+      "observed_at": "2026-08-26T16:35:49Z",
+      "source": "dLocal SEC submissions index and Schedule 13D/A",
+      "url": "https://data.sec.gov/submissions/CIK0001846832.json"
+    },
+    {
+      "claim": "At USD 15.529999732971191, the unchanged USD 9.00/USD 18.70/USD 29.40 scenarios derive -42.04764871378317175092738164%/+20.4121076724727431397397737%/+89.3110142016416389469705533% returns, USD 18.95 weighted fair value, 22.0218952082009883688806798% expected return and USD 14.96 buy-below price. The assessment is the sole immutable same-run version sourced from this operation and is ineligible for bear_base_payoff_below_minimum, expected_bear_payoff_below_minimum and relationship_pending.",
+      "observed_at": "2026-08-26T16:38:40Z",
+      "source": "PaperTrader deterministic assessment assessment_463bbbc761e3beb3f963"
+    },
+    {
+      "claim": "Exactly one security_research follow-up, 01M0ZF0AJG7G54J9TCADG7KFYX, depends on this quick check and carries the quick-check identity, baseline identity, alert and current price hashes, exact alert period, bullish-MACD cause, and changed buy-zone/payoff gate.",
+      "observed_at": "2026-08-26T16:38:42Z",
+      "source": "PaperTrader dependent full-review payload"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0ZF0AJG7G54J9TCADG7KFYX.json",
+    "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/assessment_upsert_request.json",
+    "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/enqueue_full_research_request.json",
+    "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0WSFGEGCQB8946G58PR247M",
+  "operations_created": [
+    "01M0ZF0AJG7G54J9TCADG7KFYX"
+  ],
+  "reason_code": "quick_check_changed_gate_escalated",
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded dLocal quick check for the August 24 bullish-MACD crossover. The signal persisted through August 25, but the USD 15.53 close moved above the unchanged USD 14.96 buy-below level. Repricing the retained USD 9.00/USD 18.70/USD 29.40 scenarios produces -42.05%/+20.41%/+89.31% returns and a USD 18.95 probability-weighted value; the canonical bear/base and expected/bear payoff gates now fail. No newer operating filing changed the Q2 thesis, catalysts, risks or invalidation conditions. Published assessment assessment_463bbbc761e3beb3f963 for this run, retained Medium / Watch conviction and allocation ineligibility, updated the maintained security state, and created exactly one dependent full security review, 01M0ZF0AJG7G54J9TCADG7KFYX. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running quick_check_research row for security_715bde20b6e1e1320c1a, claimed by daily-20260826T161934Z with the validated immutable payload and trusted preflight skill identities.",
+      "Consumed the mandatory successful audited security-context receipt before assessment-state inspection; baseline operation 01KZYPF0GR1JXMXK7AB5Y1XH8A succeeded for the same security within ten days.",
+      "Confirmed the payload market date, exact period and source-price hash against its canonical alert packet, then confirmed the newer current market identity and source-price hash.",
+      "Verified the current SEC submissions index and retained Schedule 13D/A; no primary operating evidence changed the Q2 thesis, valuation assumptions, catalysts, risks or invalidation conditions.",
+      "Updated the maintained security page and structured security summary with the changed buy-zone and payoff disposition.",
+      "Confirmed assessment assessment_463bbbc761e3beb3f963 has run_id daily-20260826T161934Z, links predecessor assessment_015185a947b744a29a3b, matches page hash aa52725a23578068fb297cc5790850d46dd79c0006099c07b5249b3c430e09cb, and is the sole immutable history version sourced from operation 01M0WSFGEGCQB8946G58PR247M.",
+      "Confirmed exactly one dependent full-review payload contains this quick-check identity, the baseline identity, all alert causes, both source-price hashes, the exact market period and the specific changed gate.",
+      "The post-upsert security-context receipt confirmed the current assessment and immutable history identities before result creation.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK after mutation.",
+      "No allocation target/history, relationship, strategy, signal, order, fill, execution, cash, portfolio, performance or accounting-ledger state changed; no second operation was claimed or processed."
+    ],
+    "passed": true
+  }
+}
