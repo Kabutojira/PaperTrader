@@ -4,16 +4,16 @@ type: dashboard
 status: maintained
 tags:
   - dashboard
-created: "2026-08-25"
-updated: "2026-08-25"
+created: "2026-08-26"
+updated: "2026-08-26"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b27531cf89a085490c57"
-as_of: "2026-08-25T15:56:18Z"
+snapshot_id: "decision_3d10ae98570e144e3ccc"
+as_of: "2026-08-26T17:11:24Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-25T15:56:18Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-08-26T17:11:24Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
@@ -38,7 +38,7 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 ## Top assessed near misses
 
 - **[NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d):** Buy / Initiate · expected 20.7817678274164750316066337% · The comparable assessment is stale or expired.
-- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · A supportable valuation is unavailable.
+- **[ASML — ASML Holding N.V.](securities/security_ef35e41886220d51c22c):** Unrated / Watch · expected —% · The comparable assessment is stale or expired.
 - **[ANET — Arista Networks, Inc.](securities/security_6f9a1450edceb9307c9a):** Hold / Watch · expected -2.36921514407533007298622083% · The comparable assessment is stale or expired.
 
 ## Performance, risk, and coverage
@@ -47,8 +47,8 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - Running drawdown: **0%**
 - Largest position: **0%**
 - Current assessments: **46/70**
-- Relationship reviews: **14/70**
-- Accepted relationships: **12**
+- Relationship reviews: **13/70**
+- Accepted relationships: **11**
 - Market retrieval failures: **0**
 
 ## Explore
@@ -59,4 +59,4 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - [[performance|Performance and risk]]
 - [[research-catalog|Research catalog]]
 - [[system-status|System status and audit]]
-- [[daily-reports/daily-report_20260825|Daily report 2026-08-25]]
+- [[daily-reports/daily-report_20260826|Daily report 2026-08-26]]

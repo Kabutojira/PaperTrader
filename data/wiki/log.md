@@ -4836,3 +4836,7 @@ This log is append-only. Rotate it by year only after the configured line thresh
     USD 14.96 buy zone and the base-upside-to-bear-downside ratio fell below the canonical gate.
   - Retained Medium / Watch and allocation ineligibility, and queued exactly one dependent full
     security review; no strategy, signal or paper order was created.
+
+- Published investor decision snapshot `decision_3d10ae98570e144e3ccc`.
+
+- Generated canonical [[daily-reports/daily-report_20260826]] for run `daily-20260826T161934Z`.

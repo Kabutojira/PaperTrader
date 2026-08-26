@@ -4,21 +4,21 @@ type: model-portfolio
 status: maintained
 tags:
   - model-portfolio
-created: "2026-08-25"
-updated: "2026-08-25"
+created: "2026-08-26"
+updated: "2026-08-26"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_b27531cf89a085490c57"
-as_of: "2026-08-25T15:56:18Z"
+snapshot_id: "decision_3d10ae98570e144e3ccc"
+as_of: "2026-08-26T17:11:24Z"
 ---
 
 # Model portfolio
 
-**As of `2026-08-25T15:56:18Z`**
+**As of `2026-08-26T17:11:24Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-25T15:56:18Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-26T17:11:24Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-08-25T15:56:18Z</dd></div>
-<div><dt>As of</dt><dd>2026-08-25T15:56:18Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-08-26T17:11:24Z</dd></div>
+<div><dt>As of</dt><dd>2026-08-26T17:11:24Z</dd></div>
 </dl>
 
 </article>
@@ -60,7 +60,7 @@ This deterministic equal-weight benchmark is for research comparison only. It is
 
 | Security | Rating | Weight | Reference price |
 | --- | --- | ---: | ---: |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy | 25% | 13.640000343322754 USD |
+| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy | 25% | 15.529999732971191 USD |
 | Cash | Unrated | 75% | 1 — |
 
 [[index|Back to today's decision]]
