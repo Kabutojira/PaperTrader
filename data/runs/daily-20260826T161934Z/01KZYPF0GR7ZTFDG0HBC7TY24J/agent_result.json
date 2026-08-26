@@ -1,0 +1,81 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_3e597863f00753e8c65c",
+    "papertrader research source record --request data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/source_be_sec_submissions_20260826_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/enqueue_ai_power_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/enqueue_solar_flex_relationship_request.json",
+    "papertrader research assessment-get --assessment-id assessment_1fb89d83dba65a0dce97",
+    "papertrader wiki lint --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Bloom Energy's August 25 bullish MACD crossover completed a 30.33% July 28-to-August 25 rise to USD 217.45. No newer operating filing changed the thesis or USD 90/USD 180/USD 300 scenarios; USD 187.50 weighted value and -13.77% expected return retain Sell/Avoid and allocation ineligibility. Two candidate-only relationship reviews were queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic alert measured a 30.3344532014% return from the 2026-07-28 USD 166.84 close through the 2026-08-25 USD 217.45 close, with MACD crossing above signal, neutral 47.14 RSI, price below the 50-day average, and no volume anomaly.",
+      "observed_at": "2026-08-26T16:19:41Z",
+      "source": "data/wiki/inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b.md",
+      "source_hash": "51f266eb618bc4d9b6bd966566c056a61ec943518996402dbf03a2bab012107d"
+    },
+    {
+      "claim": "After the prior August 6 review, the current index lists only Forms 4 and 144 and a Schedule 13G/A through August 18. It lists no later periodic or earnings filing that changes operating evidence, guidance, valuation assumptions, catalysts or risks.",
+      "observed_at": "2026-08-26T16:24:12Z",
+      "source": "Bloom Energy Corporation SEC submissions index",
+      "source_hash": "184fc80ab7b1a335b03421e71b027befbe3d52f94e6e5d3110bcde0734adb231",
+      "url": "https://data.sec.gov/submissions/CIK0001664703.json"
+    },
+    {
+      "claim": "The retained Q2 release, Q1 Form 10-Q, Oracle warrant Form 8-K, 2025 Form 10-K and July supply-chain response continue to support rapid onsite-power demand and growth while preserving concentration, capacity, fuel, emissions, service, financing and dilution risks.",
+      "source": "source_be_2025_10k_sec|source_be_oracle_warrant_2026_8k_sec|source_be_q1_2026_10q_sec|source_be_q2_2026_results_ir|source_be_scandium_response_2026_8k_sec"
+    },
+    {
+      "claim": "Deterministic schema-version-two output links predecessor assessment_8fa467e61500541e1995 and derives USD 187.50 probability-weighted fair value, -13.7732800039% expected return, -10.3299600030% confidence-adjusted return, USD 144 buy-below price, Sell/Avoid, and allocation ineligibility at the exact USD 217.4499969482422 mark and USD/EUR FX identity.",
+      "source": "assessment_1fb89d83dba65a0dce97"
+    },
+    {
+      "claim": "The complete idea catalog and canonical relationship state contain no accepted Bloom edge. Issuer-specific evidence supports candidate-only positive mechanisms for AI infrastructure power bottlenecks and, conditionally, the grid-flexibility reset; each requires its own bounded relationship review.",
+      "source": "data/wiki/ideas/idea_ai_infrastructure_power.md|data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md|data/wiki/securities/security_3e597863f00753e8c65c.md"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0ZECXFGEBC6RZMDVGPCPNTZ.json",
+    "data/operations/payloads/01M0ZED780ZGJJGRW4GPSC4T3S.json",
+    "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/assessment_upsert_request.json",
+    "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/enqueue_ai_power_relationship_request.json",
+    "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/enqueue_solar_flex_relationship_request.json",
+    "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/security_upsert_request.json",
+    "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/source_be_sec_submissions_20260826_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_3e597863f00753e8c65c.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZYPF0GR7ZTFDG0HBC7TY24J",
+  "operations_created": [
+    "01M0ZECXFGEBC6RZMDVGPCPNTZ",
+    "01M0ZED780ZGJJGRW4GPSC4T3S"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Bloom Energy security review for the August 25 bullish MACD transition. The exact July 28 through August 25 period rose 30.33% to USD 217.45, but the current SEC index contains no newer operating filing. Unchanged USD 90/USD 180/USD 300 scenarios produce USD 187.50 weighted fair value, -13.7733% expected return, -10.3300% confidence-adjusted return, Sell/Avoid, and allocation ineligibility in assessment assessment_1fb89d83dba65a0dce97. The complete idea catalog review retained two clearly labelled candidates and queued exactly one dependent relationship review for each. No strategy, signal, order, allocation, execution, cash, portfolio or performance state changed.",
+  "validation": {
+    "checks": [
+      "The mandatory pre-assessment security-context receipt succeeded. The immutable assessment links predecessor assessment_8fa467e61500541e1995, source operation/result, schema version two, and research-page hash f6fc041fcae256fc7f20e74011d11a10485393fe7b1a48f1edfc89aaf0daef73.",
+      "The exact alert period, source-price hash, USD reference price, USD/EUR FX identity, retained source freshness, identity deduplication, scenario ordering, probabilities totaling 100, score anchors, and complete eligibility frontier validated through the project CLI.",
+      "The complete maintained idea catalog and canonical relationship state were searched. No accepted relationship exists; both retained links are explicitly candidate-only, other ideas were rejected for lack of a material issuer-specific mechanism, and exactly one dependent relationship review was created for each candidate.",
+      "Strict schema, queue, integrity, wiki and portfolio-reconciliation checks all returned OK.",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill or performance path changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "source_id": "source_be_sec_submissions_20260826",
+  "url": "https://data.sec.gov/submissions/CIK0001664703.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001664703.json",
+  "source_type": "regulator",
+  "title": "Bloom Energy Corporation SEC submissions index checked 2026-08-26",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "184fc80ab7b1a335b03421e71b027befbe3d52f94e6e5d3110bcde0734adb231",
+  "related_entity_ids": "security_3e597863f00753e8c65c",
+  "checked_at": "2026-08-26T16:24:12Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "After the prior review, the index lists Forms 4 and 144 and a Schedule 13G/A through 2026-08-18; it lists no later periodic or earnings filing.",
+  "summary": "The current SEC submissions index confirms that no newer issuer operating filing changes Bloom Energy's Q2 operating evidence, guidance, valuation assumptions, catalysts or risks.",
+  "run_id": "daily-20260826T161934Z"
+}

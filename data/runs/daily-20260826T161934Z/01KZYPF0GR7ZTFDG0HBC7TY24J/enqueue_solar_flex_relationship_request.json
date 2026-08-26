@@ -1,0 +1,24 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_bd5aef5cc8744d9ab6c5",
+  "dedupe_key": "relationship_research:relationship_bd5aef5cc8744d9ab6c5:security-result:01KZYPF0GR7ZTFDG0HBC7TY24J",
+  "prompt": "Review whether Bloom Energy has a material causal relationship to the solar, storage and grid-flexibility reset through dispatchable onsite generation; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_bd5aef5cc8744d9ab6c5",
+    "idea_id": "idea_solar_storage_grid_flexibility_reset",
+    "security_id": "security_3e597863f00753e8c65c",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Grid bottlenecks and variable renewable output can increase demand for firm onsite generation, allowing Bloom fuel cells to participate conditionally in a broader flexibility stack where rapid deployment has economic value.",
+    "proposed_invalidation": "Reject the edge if Bloom remains outside the material flexibility value chain or fuel, emissions, permitting, reliability and cost disadvantages prevent onsite fuel cells from complementing grids, solar and storage.",
+    "evidence_refs": ["source_be_2025_10k_sec", "source_be_q2_2026_results_ir"]
+  },
+  "source": "security_research:01KZYPF0GR7ZTFDG0HBC7TY24J",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZYPF0GR7ZTFDG0HBC7TY24J"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": ["data/wiki/securities/security_3e597863f00753e8c65c.md", "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md", "source_be_2025_10k_sec", "source_be_q2_2026_results_ir"],
+  "max_attempts": 3
+}

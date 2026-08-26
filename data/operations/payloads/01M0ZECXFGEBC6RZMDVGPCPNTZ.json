@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_c27d67098b31a8ea942e",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_be_2025_10k_sec",
+      "source_be_oracle_warrant_2026_8k_sec",
+      "source_be_q2_2026_results_ir"
+    ],
+    "idea_id": "idea_ai_infrastructure_power",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject the edge if deployments fail to broaden beyond concentrated customers, contracted capacity is delayed or cancelled, or fuel, emissions, reliability and cost economics erase the time-to-power advantage.",
+    "proposed_mechanism": "Grid interconnection delays can transmit into Bloom demand because modular onsite firm power may shorten time to power for AI data centers; Oracle deployment, hyperscaler approvals and Q2 growth provide issuer-specific evidence.",
+    "relationship_id": "relationship_c27d67098b31a8ea942e",
+    "security_id": "security_3e597863f00753e8c65c"
+  },
+  "objective": "Review whether Bloom Energy has a material causal relationship to AI infrastructure power bottlenecks through rapidly deployed onsite firm power; accept or reject the edge.",
+  "operation_id": "01M0ZECXFGEBC6RZMDVGPCPNTZ",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_infrastructure_power.md",
+    "data/wiki/securities/security_3e597863f00753e8c65c.md",
+    "source_be_2025_10k_sec",
+    "source_be_oracle_warrant_2026_8k_sec",
+    "source_be_q2_2026_results_ir"
+  ]
+}

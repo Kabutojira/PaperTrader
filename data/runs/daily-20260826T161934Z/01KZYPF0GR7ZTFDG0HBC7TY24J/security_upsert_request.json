@@ -1,0 +1,23 @@
+{
+  "security_id": "security_3e597863f00753e8c65c",
+  "issuer_id": "issuer_1dbb3f443520b01d8540",
+  "company_name": "Bloom Energy Corporation",
+  "instrument_name": "Bloom Energy Corporation Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "BE",
+  "exchange_code": "NYQ",
+  "venue_mic": "XNYS",
+  "provider_symbol": "BE",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Industrials",
+  "industry": "Electrical Equipment & Parts",
+  "status": "watching",
+  "watchlist_reason": "AI-driven onsite-power demand and Oracle deployment support growth, but concentration, scale-up, natural-gas policy, dilution and unfavorable scenario returns require watch-only status.",
+  "research_summary": "The August bullish MACD turn is constructive stabilization, but unchanged USD 90/180/300 scenarios imply USD 187.50 weighted value versus USD 217.45; Sell / Avoid remains.",
+  "research_page": "data/wiki/securities/security_3e597863f00753e8c65c.md",
+  "last_research_at": "2026-08-26T16:24:12Z",
+  "next_review_at": "2026-09-25T16:24:12Z",
+  "source": "https://data.sec.gov/submissions/CIK0001664703.json"
+}

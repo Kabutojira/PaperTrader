@@ -4814,3 +4814,16 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_below_signal-e43e583e63be]] (e43e583e63be).
 
 - Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-rsi_overbought-da1f6efe07c5]] (da1f6efe07c5).
+
+- Updated [[securities/security_3e597863f00753e8c65c|Bloom Energy Corporation Class A common
+  stock]] for security research operation `01KZYPF0GR7ZTFDG0HBC7TY24J`.
+  - Verified the 25 August bullish MACD crossover and +30.33% 28 July-to-25 August move; classified
+    it as constructive stabilization rather than a fundamental entry signal.
+  - Checked the current SEC submissions index: later Forms 4 and 144 and Schedule 13G/A add no
+    operating evidence, so the USD 90/USD 180/USD 300 scenarios remain unchanged.
+  - Refreshed the scenario-complete assessment at the USD 217.45 mark; weighted value is USD 187.50,
+    and the deterministic conclusion remains Sell / Avoid with no strategy, signal or paper order.
+  - Added candidate, not accepted, links to
+    [[ideas/idea_ai_infrastructure_power|AI infrastructure and power bottlenecks]] and
+    [[ideas/idea_solar_storage_grid_flexibility_reset|solar, storage and grid flexibility reset]],
+    with one dependent relationship review queued for each candidate.
