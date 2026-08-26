@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_cR8PUEiA-d0",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-26T16:19:35Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_cR8PUEiA-d0",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "cR8PUEiA-d0",
+    "video_title": "My Biggest Concern Going Into Nvidia's Earnings Tomorrow",
+    "video_url": "https://www.youtube.com/watch?v=cR8PUEiA-d0"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0ZDXAERP5ZX33Z0M0S3W7DK",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=cR8PUEiA-d0"
+  ]
+}

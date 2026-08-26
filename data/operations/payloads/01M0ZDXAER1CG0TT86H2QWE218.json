@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_q1mXnN2DANI",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-26T16:19:35Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_q1mXnN2DANI",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "q1mXnN2DANI",
+    "video_title": "Ahold Stocks Looks Much Better Now With 4% Yield!",
+    "video_url": "https://www.youtube.com/watch?v=q1mXnN2DANI"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0ZDXAER1CG0TT86H2QWE218",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=q1mXnN2DANI"
+  ]
+}

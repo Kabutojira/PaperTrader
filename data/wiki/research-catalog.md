@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-25"
-updated: "2026-08-25"
+updated: "2026-08-26"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_b27531cf89a085490c57"
 as_of: "2026-08-25T15:56:18Z"
@@ -641,3 +641,22 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-f4927e163640|RIO — Bollinger above upper]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-4961df462db5|PYPL — RSI overbought]]
+- [[inbox/market-security_2010347f1a0a5ea60f47-bollinger_above_upper-c558499f7e0d|SPOT — Bollinger above upper]]
+- [[inbox/market-security_2dbe878dfc899d7ee867-rsi_overbought-a56740502d63|FCX — RSI overbought]]
+- [[inbox/market-security_37ddcbdaad296ad831f2-bollinger_above_upper-3a812795e6fe|COIN — Bollinger above upper]]
+- [[inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b|BE — MACD cross above signal]]
+- [[inbox/market-security_6ad1af8d10d6276a0221-bollinger_above_upper-8522ff315405|SCCO — Bollinger above upper]]
+- [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-404efbce922b|ABCL — RSI overbought]]
+- [[inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-43122ecbf054|DNA — MACD cross above signal]]
+- [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_above_upper-a57ccfdda36e|HOOD — Bollinger above upper]]
+- [[inbox/market-security_bdc2f87dadf134760c3a-macd_cross_below_signal-161a33743f3b|PLTR — MACD cross below signal]]
+- [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-673e6a91061d|PARRO.PA — Bollinger below lower]]
+- [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-cc838590f6a2|PATH — RSI overbought]]
+- [[inbox/market-security_ed7d5b616a196969c815-bollinger_above_upper-f8926758e005|RXRX — Bollinger above upper]]
+- [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_below_signal-e43e583e63be|ENPH — MACD cross below signal]]
+- [[inbox/market-security_fe5539a7d3fd9d553bce-rsi_overbought-da1f6efe07c5|MSTR — RSI overbought]]

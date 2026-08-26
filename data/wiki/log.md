@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-07-24"
-updated: "2026-08-25"
+updated: "2026-08-26"
 provenance: repository-contract
 ---
 
@@ -4774,3 +4774,43 @@ This log is append-only. Rotate it by year only after the configured line thresh
 - Added a clearly labelled candidate link to
   [[ideas/idea_critical_minerals_copper|critical minerals and structural copper scarcity]] for one
   dependent relationship review; the candidate is not represented as an accepted relationship.
+
+## 2026-08-26
+
+- Created candidate packet [[inbox/market-security_1c055eb9b2bb1f5a8ff2-bollinger_above_upper-f4927e163640]] (f4927e163640).
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-rsi_overbought-4961df462db5]] (4961df462db5).
+
+- Created candidate packet [[inbox/market-security_2010347f1a0a5ea60f47-bollinger_above_upper-c558499f7e0d]] (c558499f7e0d).
+
+- Created candidate packet [[inbox/market-security_2dbe878dfc899d7ee867-rsi_overbought-a56740502d63]] (a56740502d63).
+
+- Created candidate packet [[inbox/market-security_37ddcbdaad296ad831f2-bollinger_above_upper-3a812795e6fe]] (3a812795e6fe).
+
+- Created candidate packet [[inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b]] (51f266eb618b).
+
+- Classified [[inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b]] as `ingest`: A new bullish MACD signal transition coincides with a material 30.3% period return and warrants durable review.
+
+- Created candidate packet [[inbox/market-security_6ad1af8d10d6276a0221-bollinger_above_upper-8522ff315405]] (8522ff315405).
+
+- Created candidate packet [[inbox/market-security_7bf8f4c9cc12ae410e40-rsi_overbought-404efbce922b]] (404efbce922b).
+
+- Created candidate packet [[inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-43122ecbf054]] (43122ecbf054).
+
+- Classified [[inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-43122ecbf054]] as `ignore`: Weak MACD crossover with minimal strength and a negative period return does not merit durable wiki ingestion.
+
+- Created candidate packet [[inbox/market-security_ad3b1f8f59fd599f079a-bollinger_above_upper-a57ccfdda36e]] (a57ccfdda36e).
+
+- Created candidate packet [[inbox/market-security_bdc2f87dadf134760c3a-macd_cross_below_signal-161a33743f3b]] (161a33743f3b).
+
+- Created candidate packet [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-673e6a91061d]] (673e6a91061d).
+
+- Classified [[inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-673e6a91061d]] as `ingest`: A new Bollinger lower-band breach coincides with a material negative period return and merits durable review.
+
+- Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-cc838590f6a2]] (cc838590f6a2).
+
+- Created candidate packet [[inbox/market-security_ed7d5b616a196969c815-bollinger_above_upper-f8926758e005]] (f8926758e005).
+
+- Created candidate packet [[inbox/market-security_f2b9760d847b2ba59324-macd_cross_below_signal-e43e583e63be]] (e43e583e63be).
+
+- Created candidate packet [[inbox/market-security_fe5539a7d3fd9d553bce-rsi_overbought-da1f6efe07c5]] (da1f6efe07c5).

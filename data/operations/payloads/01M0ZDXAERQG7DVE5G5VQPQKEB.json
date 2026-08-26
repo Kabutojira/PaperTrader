@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_MoB-so4Xkyw",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@thelimitingfactor",
+    "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+    "channel_url": "https://www.youtube.com/channel/UCIFn7ONIJHyC-lMnb7Fm_jw/videos",
+    "discovered_at": "2026-08-26T16:19:35Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_MoB-so4Xkyw",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "MoB-so4Xkyw",
+    "video_title": "Next Generation Geothermal // Fervo, Eavor, and Quaise",
+    "video_url": "https://www.youtube.com/watch?v=MoB-so4Xkyw"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M0ZDXAERQG7DVE5G5VQPQKEB",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=MoB-so4Xkyw"
+  ]
+}

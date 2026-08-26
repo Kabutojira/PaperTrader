@@ -1,0 +1,104 @@
+{
+  "channels": [
+    {
+      "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@allin",
+      "inspected_count": 5,
+      "issue_id": "",
+      "next_cursor": "Xj4pTYsVSWQ",
+      "operation_ids": [],
+      "previous_cursor": "Xj4pTYsVSWQ",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCIFn7ONIJHyC-lMnb7Fm_jw",
+      "discovered_video_ids": [
+        "MoB-so4Xkyw"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@thelimitingfactor",
+      "inspected_count": 2,
+      "issue_id": "",
+      "next_cursor": "MoB-so4Xkyw",
+      "operation_ids": [
+        "01M0ZDXAERQG7DVE5G5VQPQKEB"
+      ],
+      "previous_cursor": "iyY4mp_Wwf8",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCOOSDCjFzHfnGoV8iNLC65A",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@ConnectingODots",
+      "inspected_count": 3,
+      "issue_id": "",
+      "next_cursor": "_ekDqR5sesE",
+      "operation_ids": [],
+      "previous_cursor": "_ekDqR5sesE",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCS01CiRDAiyhR_mTHXDW23A",
+      "discovered_video_ids": [],
+      "duplicate_video_ids": [],
+      "handle": "@DumbMoneyLive",
+      "inspected_count": 34,
+      "issue_id": "",
+      "next_cursor": "u-AXyF9kY9k",
+      "operation_ids": [],
+      "previous_cursor": "u-AXyF9kY9k",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+      "discovered_video_ids": [
+        "cR8PUEiA-d0"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@CouchInvestor",
+      "inspected_count": 2,
+      "issue_id": "",
+      "next_cursor": "cR8PUEiA-d0",
+      "operation_ids": [
+        "01M0ZDXAERP5ZX33Z0M0S3W7DK"
+      ],
+      "previous_cursor": "3JP2Z34s-Ts",
+      "reason": "",
+      "status": "succeeded"
+    },
+    {
+      "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+      "discovered_video_ids": [
+        "q1mXnN2DANI"
+      ],
+      "duplicate_video_ids": [],
+      "handle": "@Value-Investing",
+      "inspected_count": 3,
+      "issue_id": "",
+      "next_cursor": "q1mXnN2DANI",
+      "operation_ids": [
+        "01M0ZDXAER1CG0TT86H2QWE218"
+      ],
+      "previous_cursor": "GnLtHsGM81k",
+      "reason": "",
+      "status": "succeeded"
+    }
+  ],
+  "discovered_at": "2026-08-26T16:19:35Z",
+  "discovery_provider": "youtube_data_api",
+  "failure_count": 0,
+  "operation_count": 3,
+  "regular_video_policy": "non_live_duration_over_180_seconds",
+  "run_id": "daily-20260826T161934Z",
+  "scan_bound": 50,
+  "seed_count": 5,
+  "status": "succeeded",
+  "youtube_scan_version": 2
+}

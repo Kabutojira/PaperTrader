@@ -4,14 +4,51 @@
   "inputs": {
     "assessment_state": "2026-08-06T18:00:04Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-26T16:19:41Z",
+    "market_data_date": "2026-08-25",
+    "period_end": "2026-08-25",
+    "period_start": "2026-07-28",
     "research_page": "data/wiki/securities/security_3e597863f00753e8c65c.md",
-    "security_id": "security_3e597863f00753e8c65c"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_3e597863f00753e8c65c:allocation-maintenance:2026-08-06T18:00:04Z",
+        "observed_at": "2026-08-13T23:14:07Z",
+        "prompt": "Revalidate security_3e597863f00753e8c65c with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_be_2025_10k_sec",
+          "source_be_oracle_warrant_2026_8k_sec",
+          "source_be_q1_2026_10q_sec",
+          "source_be_q2_2026_results_ir",
+          "source_be_scandium_response_2026_8k_sec"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_3e597863f00753e8c65c:4e6e170f34c54fd6a202:2026-08-25",
+        "market_data_date": "2026-08-25",
+        "observed_at": "2026-08-26T16:19:41Z",
+        "prompt": "Research security_3e597863f00753e8c65c with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b.md"
+        ],
+        "trigger_types": [
+          "macd_cross_above_signal"
+        ]
+      }
+    ],
+    "security_id": "security_3e597863f00753e8c65c",
+    "source_price_hash": "5bbe6283e87839da6c36be94030501377d873f6b6927ebd6eb51d4ff22f8d213",
+    "trigger_types": [
+      "macd_cross_above_signal"
+    ]
   },
-  "objective": "Revalidate security_3e597863f00753e8c65c with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_3e597863f00753e8c65c with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_3e597863f00753e8c65c with high priority after price-action alerts: macd_cross_above_signal; decide what changed and whether to act.",
   "operation_id": "01KZYPF0GR7ZTFDG0HBC7TY24J",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b.md",
     "source_be_2025_10k_sec",
     "source_be_oracle_warrant_2026_8k_sec",
     "source_be_q1_2026_10q_sec",
