@@ -1,0 +1,382 @@
+{
+  "background_wiki_pages": [
+    {
+      "path": "data/wiki/ideas/idea_ai_infrastructure_power.md",
+      "sha256": "5fa3fc37d47b29ae8126ce6b7323ced601848e47f6342fc5a8e4386507a669be"
+    },
+    {
+      "path": "data/wiki/ideas/idea_critical_minerals_copper.md",
+      "sha256": "b22ac332b5c4abcdc678c3ce7cf88c6fe9c506980f1a8c38511a6c9e65561b74"
+    },
+    {
+      "path": "data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md",
+      "sha256": "e2dbc2576669f8f9bcf16442877ba34066ef37e102b3dbce8cd693f3a792f1cc"
+    },
+    {
+      "path": "data/wiki/securities/security_1c055eb9b2bb1f5a8ff2.md",
+      "sha256": "2c390d14b6a84d98534e7d98f72f6984f4c788aea9f869fda3cfa04135b63bcd"
+    }
+  ],
+  "changed_wiki_pages": [
+    {
+      "path": "data/wiki/securities/security_3e597863f00753e8c65c.md",
+      "sha256": "f6fc041fcae256fc7f20e74011d11a10485393fe7b1a48f1edfc89aaf0daef73"
+    },
+    {
+      "path": "data/wiki/securities/security_715bde20b6e1e1320c1a.md",
+      "sha256": "aa52725a23578068fb297cc5790850d46dd79c0006099c07b5249b3c430e09cb"
+    },
+    {
+      "path": "data/wiki/securities/security_b2116dcf976c96974d7b.md",
+      "sha256": "4a29fea25bbf5374a14f02bb8760f363c4b25ad2fd52add9396da469712c5084"
+    }
+  ],
+  "daily_cycle_id": "daily-20260826T161934Z",
+  "decision_snapshot_path": "data/runs/daily-20260826T161934Z/decision_snapshot.json",
+  "decision_snapshot_sha256": "69389c8e204ce80900ed2cd7b1a7106e3a3b8c940f4348fe91ba98de7cf41ab8",
+  "generated_at": "2026-08-27T01:48:34Z",
+  "intervening_daily_cycles": [
+    "daily-20260824T153949Z",
+    "daily-20260825T154354Z",
+    "daily-20260826T161934Z"
+  ],
+  "page_path": "data/wiki/podcasts/daily-podcast_20260826T161934Z.md",
+  "podcast_context_version": 3,
+  "portfolio_implication_paths": [
+    "data/runs/daily-20260826T161934Z/decision_snapshot.json",
+    "data/wiki/daily-reports/daily-report_20260826.md"
+  ],
+  "previous_successful_podcast": {
+    "context_path": "data/runs/daily-20260823T152232Z/podcast_context.json",
+    "context_sha256": "ce4d4dce6d9c9d79cc3c2603661e153bef8244616705cd5c1af07bde90be1c60",
+    "daily_cycle_id": "daily-20260823T152232Z",
+    "page_path": "data/wiki/podcasts/daily-podcast_20260823T152232Z.md",
+    "page_sha256": "ac7b6c31c79afa063fde2edbf13ed968deb7ce6936611d5389b35d713d6b5339",
+    "research_cutoff_at": "2026-08-23T15:43:17Z"
+  },
+  "report_path": "data/wiki/daily-reports/daily-report_20260826.md",
+  "report_sha256": "9144f20c1818632a950ecd53107f60c3e5dc96af5d91863c71976f9a89a7215f",
+  "research_cutoff_at": "2026-08-26T17:11:24Z",
+  "research_developments": [
+    {
+      "completed_at": "2026-08-24T15:45:19Z",
+      "daily_cycle_id": "daily-20260824T153949Z",
+      "daily_report_items": [
+        "Parrot quick check: the 24 August lower-Bollinger breach remains shallow and is unconfirmed by oversold RSI or abnormal volume. At EUR 9.45, unchanged scenarios still leave base and weighted value about 3.8% below market and the EUR 7.272 buy-below level unreached; canonical Hold / Watch and allocation ineligibility remain unchanged, with no full-review escalation."
+      ],
+      "entity_id": "security_cc4dcb8f002b61dffe00",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The mandatory context receipt succeeded before assessment-state reads and binds security_cc4dcb8f002b61dffe00 to Parrot S.A. ordinary shares / PARRO.PA / XPAR / EUR / equity. It confirms successful baseline operation 01M08BT9VRSPKQN2Q6FSAB61CR completed at 2026-08-20T08:06:51Z and current immutable schema-v2 assessment assessment_8d710a0fa8813b740807, fresh through 2026-09-19.",
+          "observed_at": "2026-08-24T15:41:26Z",
+          "source": "PaperTrader audited security context"
+        },
+        {
+          "claim": "The payload-bound 2026-08-24 observation exactly matches the current indicator source-price hash. The EUR 9.449999809265137 close was 0.2641% below the EUR 9.47502701 lower Bollinger band after a 2.0725% decline from 2026-07-27; RSI was 38.7348, volume z-score was -0.0956, and MACD remained below signal. This is weak downside timing evidence without oversold or abnormal-volume confirmation.",
+          "observed_at": "2026-08-24T15:39:57Z",
+          "source": "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-8aa8cc16d6a0.md and PaperTrader canonical market state",
+          "source_hash": "9b6cee1128dda05508d230db5e340b76a72dfcd0e5cabe0071ee158f4e058931"
+        },
+        {
+          "claim": "A bounded fresh retrieval succeeded from Parrot's retained first-half 2026 issuer-release URL. No newer decision-supporting primary evidence in the bounded retained-source checklist changed the baseline revenue, margin, cash-flow, concentration, funding, catalyst, risk, or invalidation assumptions.",
+          "observed_at": "2026-08-24T15:43:00Z",
+          "source": "source_parrot_h1_2026_results",
+          "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf"
+        },
+        {
+          "claim": "A fresh retrieval of Parrot's share-count page is byte-identical to the registered source hash, preserving the 31,157,845-share valuation denominator and the baseline dilution-risk conclusion.",
+          "observed_at": "2026-08-24T15:43:00Z",
+          "source": "source_parrot_shares_20260731",
+          "source_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+          "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights"
+        },
+        {
+          "claim": "At EUR 9.449999809265137, the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios imply approximately -42.01%/-3.81%/+53.54% returns and a -3.80% probability-weighted return. The EUR 9.091 weighted fair value remains below market and the EUR 7.272 buy-below level remains 23.05% below market, so no valuation, buy-zone, catalyst, invalidation, material-evidence, or decision-support gate changed and no full-review escalation is warranted.",
+          "source": "assessment_8d710a0fa8813b740807 and bounded scenario comparison"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0T6VA681N6WGD6JYN370PY9",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260824T153949Z/01M0T6VA681N6WGD6JYN370PY9/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded Parrot S.A. quick check after the 24 August lower-Bollinger transition. The identity-matched EUR 9.449999809265137 close was 0.2641% below the lower band after a 2.07% decline over 27 July through 24 August, with RSI 38.73, no volume anomaly, and bearish MACD. The retained H1 issuer release remains available and the issuer share-count page is byte-identical to the registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 3.8% below market, while the EUR 7.272 buy-below level remains 23.05% below market. The thesis, catalysts, risks, invalidation, confidence, canonical Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed."
+    },
+    {
+      "completed_at": "2026-08-25T15:54:19Z",
+      "daily_cycle_id": "daily-20260825T154354Z",
+      "daily_report_items": [
+        "Vale's August 24 volume anomaly accompanied only a 1.76% measured-period rise and no changed issuer fact. The unchanged USD 13.95 weighted value remains below the USD 15.04 mark, retaining Hold/Watch and allocation ineligibility; one dependent copper-relationship review was queued."
+      ],
+      "entity_id": "security_b2116dcf976c96974d7b",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The amendment adds Exhibit 101 interactive data to the July 31 interim-financial filing and explicitly states that it does not amend any other information in the original filing; it therefore supplies no changed operating or valuation fact.",
+          "observed_at": "2026-08-25T15:48:11Z",
+          "source": "Vale Form 6-K/A filed 2026-08-24",
+          "source_hash": "e74fe29ed67ba21844dd06e1b04f09361132343f12cadc8cdb082570110abb5f",
+          "url": "https://www.sec.gov/Archives/edgar/data/917851/000129281426004322/valedfifrs2q26_6ka.htm"
+        },
+        {
+          "claim": "The deterministic alert measured a 1.7591% return over 2026-07-27 through 2026-08-24, a USD 15.04 adjusted close, and a volume z-score of 2.8380 entering the configured anomaly. The modest price move without corroborating fundamental evidence is noise for valuation and action.",
+          "source": "data/wiki/inbox/market-security_b2116dcf976c96974d7b-volume_anomaly-5974ff93bdc6.md"
+        },
+        {
+          "claim": "Deterministic schema-version-two assessment output links predecessor assessment_9911343e7005a53ee6fd and derives USD 13.95 probability-weighted fair value, -7.247340190277% expected return, -5.435505142708% confidence-adjusted expected return, USD 11.60 buy-below, Hold/Watch, and ineligibility for the exact recorded price and FX identities.",
+          "source": "assessment_151be9a9f77cf4fa04ea"
+        },
+        {
+          "claim": "Current primary evidence supports a plausible but unaccepted positive copper-scarcity relationship through Salobo execution and broader copper growth; iron ore remains dominant, so materiality requires a separate bounded relationship review.",
+          "source": "source_vale_q2_2026_production|source_vale_q2_2026_results|source_vale_salobo_cpf_20260812"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0WSW9M832JM6B9QW2BWGRZR.json",
+        "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/assessment_upsert_request.json",
+        "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/enqueue_copper_relationship_request.json",
+        "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/security_upsert_request.json",
+        "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/source_vale_q2_2026_ifrs_amendment_20260824_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_b2116dcf976c96974d7b.md"
+      ],
+      "operation_id": "01M0WSFGEG6VB0CW40F4RXC1MV",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260825T154354Z/01M0WSFGEG6VB0CW40F4RXC1MV/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Vale security review for the August 24 volume anomaly. The exact July 27 through August 24 period rose 1.76% to USD 15.04 while volume entered the configured anomaly at a 2.8380 z-score. Vale's August 24 Form 6-K/A adds only interactive data and changes no prior filing information, so the thesis and USD 9.00/USD 14.50/USD 20.00 scenarios remain unchanged. Published assessment assessment_151be9a9f77cf4fa04ea: USD 13.95 weighted fair value, -7.2473% expected return, -5.4355% confidence-adjusted return, Hold/Watch, and allocation-ineligible. Added one clearly labelled critical-minerals/copper candidate and queued exactly one dependent relationship review. No strategy, signal, order, allocation, execution, cash, portfolio, or performance state changed."
+    },
+    {
+      "completed_at": "2026-08-26T16:31:17Z",
+      "daily_cycle_id": "daily-20260826T161934Z",
+      "daily_report_items": [
+        "Bloom Energy's August 25 bullish MACD crossover completed a 30.33% July 28-to-August 25 rise to USD 217.45. No newer operating filing changed the thesis or USD 90/USD 180/USD 300 scenarios; USD 187.50 weighted value and -13.77% expected return retain Sell/Avoid and allocation ineligibility. Two candidate-only relationship reviews were queued."
+      ],
+      "entity_id": "security_3e597863f00753e8c65c",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The deterministic alert measured a 30.3344532014% return from the 2026-07-28 USD 166.84 close through the 2026-08-25 USD 217.45 close, with MACD crossing above signal, neutral 47.14 RSI, price below the 50-day average, and no volume anomaly.",
+          "observed_at": "2026-08-26T16:19:41Z",
+          "source": "data/wiki/inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b.md",
+          "source_hash": "51f266eb618bc4d9b6bd966566c056a61ec943518996402dbf03a2bab012107d"
+        },
+        {
+          "claim": "After the prior August 6 review, the current index lists only Forms 4 and 144 and a Schedule 13G/A through August 18. It lists no later periodic or earnings filing that changes operating evidence, guidance, valuation assumptions, catalysts or risks.",
+          "observed_at": "2026-08-26T16:24:12Z",
+          "source": "Bloom Energy Corporation SEC submissions index",
+          "source_hash": "184fc80ab7b1a335b03421e71b027befbe3d52f94e6e5d3110bcde0734adb231",
+          "url": "https://data.sec.gov/submissions/CIK0001664703.json"
+        },
+        {
+          "claim": "The retained Q2 release, Q1 Form 10-Q, Oracle warrant Form 8-K, 2025 Form 10-K and July supply-chain response continue to support rapid onsite-power demand and growth while preserving concentration, capacity, fuel, emissions, service, financing and dilution risks.",
+          "source": "source_be_2025_10k_sec|source_be_oracle_warrant_2026_8k_sec|source_be_q1_2026_10q_sec|source_be_q2_2026_results_ir|source_be_scandium_response_2026_8k_sec"
+        },
+        {
+          "claim": "Deterministic schema-version-two output links predecessor assessment_8fa467e61500541e1995 and derives USD 187.50 probability-weighted fair value, -13.7732800039% expected return, -10.3299600030% confidence-adjusted return, USD 144 buy-below price, Sell/Avoid, and allocation ineligibility at the exact USD 217.4499969482422 mark and USD/EUR FX identity.",
+          "source": "assessment_1fb89d83dba65a0dce97"
+        },
+        {
+          "claim": "The complete idea catalog and canonical relationship state contain no accepted Bloom edge. Issuer-specific evidence supports candidate-only positive mechanisms for AI infrastructure power bottlenecks and, conditionally, the grid-flexibility reset; each requires its own bounded relationship review.",
+          "source": "data/wiki/ideas/idea_ai_infrastructure_power.md|data/wiki/ideas/idea_solar_storage_grid_flexibility_reset.md|data/wiki/securities/security_3e597863f00753e8c65c.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0ZECXFGEBC6RZMDVGPCPNTZ.json",
+        "data/operations/payloads/01M0ZED780ZGJJGRW4GPSC4T3S.json",
+        "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/assessment_upsert_request.json",
+        "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/enqueue_ai_power_relationship_request.json",
+        "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/enqueue_solar_flex_relationship_request.json",
+        "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/security_upsert_request.json",
+        "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/source_be_sec_submissions_20260826_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_3e597863f00753e8c65c.md"
+      ],
+      "operation_id": "01KZYPF0GR7ZTFDG0HBC7TY24J",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed one bounded Bloom Energy security review for the August 25 bullish MACD transition. The exact July 28 through August 25 period rose 30.33% to USD 217.45, but the current SEC index contains no newer operating filing. Unchanged USD 90/USD 180/USD 300 scenarios produce USD 187.50 weighted fair value, -13.7733% expected return, -10.3300% confidence-adjusted return, Sell/Avoid, and allocation ineligibility in assessment assessment_1fb89d83dba65a0dce97. The complete idea catalog review retained two clearly labelled candidates and queued exactly one dependent relationship review for each. No strategy, signal, order, allocation, execution, cash, portfolio or performance state changed."
+    },
+    {
+      "completed_at": "2026-08-26T16:40:40Z",
+      "daily_cycle_id": "daily-20260826T161934Z",
+      "daily_report_items": [
+        "dLocal's August 24 bullish-MACD crossover persisted through August 25, but the USD 15.53 close moved above the USD 14.96 buy-below level and caused the canonical payoff gates to fail. Q2 operating assumptions remain unchanged, DLO remains Medium / Watch and allocation-ineligible, and exactly one dependent full review was queued; no paper strategy, signal or order was created."
+      ],
+      "entity_id": "security_715bde20b6e1e1320c1a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The canonical alert packet binds macd_cross_above_signal to the exact 2026-07-27 through 2026-08-24 period, USD 15.119999885559082 adjusted close, 1.340481288488143% period return and source-price hash 20fbdc409af371652ab03c5ef4b96c6375858435697f0bebf171f804db7ea9ce.",
+          "observed_at": "2026-08-25T15:44:02Z",
+          "source": "PaperTrader payload-bound market alert",
+          "source_hash": "20fbdc409af371652ab03c5ef4b96c6375858435697f0bebf171f804db7ea9ce"
+        },
+        {
+          "claim": "On 2026-08-25 DLO closed at USD 15.529999732971191. MACD 0.1626788 remained above its 0.09599143 signal, RSI 62.16321037 was neutral, volume z-score 0.07873372 was non-anomalous, and the current source-price hash is 2f9acee73518a51eb3248b34959e9b8fc03c6b87e2cc43edefc2231f625190e4.",
+          "observed_at": "2026-08-26T16:19:41Z",
+          "source": "PaperTrader current deterministic market and indicator state",
+          "source_hash": "2f9acee73518a51eb3248b34959e9b8fc03c6b87e2cc43edefc2231f625190e4"
+        },
+        {
+          "claim": "The current SEC index contains no operating filing after the retained 2026-08-13 Q2 Form 6-K. The 2026-08-19 Schedule 13D/A remains a secondary General Atlantic transaction: 9,842,559 Class A shares sold at an average USD 13.60 on August 17, not issuer dilution or evidence changing revenue, guidance, cash conversion, catalysts or invalidation conditions.",
+          "observed_at": "2026-08-26T16:35:49Z",
+          "source": "dLocal SEC submissions index and Schedule 13D/A",
+          "url": "https://data.sec.gov/submissions/CIK0001846832.json"
+        },
+        {
+          "claim": "At USD 15.529999732971191, the unchanged USD 9.00/USD 18.70/USD 29.40 scenarios derive -42.04764871378317175092738164%/+20.4121076724727431397397737%/+89.3110142016416389469705533% returns, USD 18.95 weighted fair value, 22.0218952082009883688806798% expected return and USD 14.96 buy-below price. The assessment is the sole immutable same-run version sourced from this operation and is ineligible for bear_base_payoff_below_minimum, expected_bear_payoff_below_minimum and relationship_pending.",
+          "observed_at": "2026-08-26T16:38:40Z",
+          "source": "PaperTrader deterministic assessment assessment_463bbbc761e3beb3f963"
+        },
+        {
+          "claim": "Exactly one security_research follow-up, 01M0ZF0AJG7G54J9TCADG7KFYX, depends on this quick check and carries the quick-check identity, baseline identity, alert and current price hashes, exact alert period, bullish-MACD cause, and changed buy-zone/payoff gate.",
+          "observed_at": "2026-08-26T16:38:42Z",
+          "source": "PaperTrader dependent full-review payload"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M0ZF0AJG7G54J9TCADG7KFYX.json",
+        "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/assessment_upsert_request.json",
+        "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/enqueue_full_research_request.json",
+        "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/security_upsert_request.json",
+        "data/tables/securities.csv",
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv",
+        "data/wiki/log.md",
+        "data/wiki/securities/security_715bde20b6e1e1320c1a.md"
+      ],
+      "operation_id": "01M0WSFGEGCQB8946G58PR247M",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/agent_result.json",
+      "status": "succeeded",
+      "summary": "Completed exactly one bounded dLocal quick check for the August 24 bullish-MACD crossover. The signal persisted through August 25, but the USD 15.53 close moved above the unchanged USD 14.96 buy-below level. Repricing the retained USD 9.00/USD 18.70/USD 29.40 scenarios produces -42.05%/+20.41%/+89.31% returns and a USD 18.95 probability-weighted value; the canonical bear/base and expected/bear payoff gates now fail. No newer operating filing changed the Q2 thesis, catalysts, risks or invalidation conditions. Published assessment assessment_463bbbc761e3beb3f963 for this run, retained Medium / Watch conviction and allocation ineligibility, updated the maintained security state, and created exactly one dependent full security review, 01M0ZF0AJG7G54J9TCADG7KFYX. No strategy, signal, order, allocation or accounting state changed."
+    }
+  ],
+  "run_id": "daily-20260826T161934Z",
+  "target_minutes": 20,
+  "target_words": 3000,
+  "unresolved_research_gaps": [
+    {
+      "completed_at": "2026-08-24T15:57:32Z",
+      "daily_cycle_id": "daily-20260824T153949Z",
+      "daily_report_items": [
+        "MSFT's July 30 volume-anomaly opportunity review is blocked because its exact source observation is stale; a fresh immutable trigger payload is required before reassessing current materiality."
+      ],
+      "entity_id": "opportunity_7de132d3ba2354ec4cf3",
+      "entity_type": "opportunity",
+      "evidence": [
+        {
+          "claim": "The claimed row is opportunity_research for opportunity_7de132d3ba2354ec4cf3, is running under daily-20260824T153949Z, has a live lease through 2026-08-24T16:25:02Z, and specifies freshness_days=7.",
+          "source": "data/operations/operations_TODO.csv"
+        },
+        {
+          "claim": "The payload identifies security_204be2a44063993de1a8, volume_anomaly, the exact July 1 through July 30 period, and market_data_as_of 2026-07-31T07:45:55Z.",
+          "source": "data/operations/payloads/01KYVJ62SR3GYE4GAEGW95QAKW.json"
+        },
+        {
+          "claim": "The immutable candidate packet records an entered July 30 volume anomaly for MSFT, with source_price_hash 614ab5c4bb9a35aa3ad370da5372ab26fb3d2e33257877b7f1eee33ea7901c2c.",
+          "source": "data/wiki/inbox/market-security_204be2a44063993de1a8-volume_anomaly-de9b04e0f3e9.md"
+        },
+        {
+          "claim": "The cache contains the source-period endpoint on 2026-07-30 and subsequently recorded MSFT bars through 2026-08-21, so the historical observation is no longer current for an August 24 opportunity decision.",
+          "source": "data/market/prices/security_204be2a44063993de1a8.csv"
+        },
+        {
+          "claim": "The current deterministic market projection identifies the latest MSFT session as 2026-08-21 and was refreshed at 2026-08-24T15:39:57Z.",
+          "source": "data/market/latest.csv"
+        },
+        {
+          "claim": "The maintained MSFT review already attributes the July 30 discontinuity to the July 29 results release and concludes that the volume-backed repricing was a timing risk rather than a fresh entry opportunity; it records no related strategy, signal, or paper order.",
+          "source": "data/wiki/securities/security_204be2a44063993de1a8.md"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01KYVJ62SR3GYE4GAEGW95QAKW",
+      "operation_type": "opportunity_research",
+      "result_path": "data/runs/daily-20260824T153949Z/01KYVJ62SR3GYE4GAEGW95QAKW/agent_result.json",
+      "status": "blocked",
+      "summary": "The July 30 MSFT volume-anomaly observation cannot support a current opportunity disposition on August 24. Its source market-data timestamp is stale relative to the operation's seven-day freshness window, and the cached market state has since advanced through August 21. A fresh, immutable trigger payload is required before this review can safely classify current materiality or create a follow-up."
+    },
+    {
+      "completed_at": "2026-08-25T15:55:57Z",
+      "daily_cycle_id": "daily-20260825T154354Z",
+      "daily_report_items": [
+        "Quick check 01M0WSFGEGCQB8946G58PR247M failed before research because the mandatory security context could not be loaded due to controller credential-file permissions; no investment state changed."
+      ],
+      "entity_id": "security_715bde20b6e1e1320c1a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "The required initial command exited with code 2 and reported Permission denied for .papertrader/credentials/openai-oauth-auth.json.age.",
+          "source": "scripts/papertrader research security-context --security-id security_715bde20b6e1e1320c1a"
+        },
+        {
+          "claim": "The encrypted OAuth state file is owned by root:root with mode 0600, so the routed operation process could not read it.",
+          "source": "filesystem permission inspection"
+        },
+        {
+          "claim": "The payload binds this quick check to security_715bde20b6e1e1320c1a and requires repeat-assessment context before assessment work.",
+          "source": "data/operations/payloads/01M0WSFGEGCQB8946G58PR247M.json"
+        }
+      ],
+      "failure_errors": [],
+      "files_changed": [],
+      "operation_id": "01M0WSFGEGCQB8946G58PR247M",
+      "operation_type": "quick_check_research",
+      "result_path": "data/runs/daily-20260825T154354Z/01M0WSFGEGCQB8946G58PR247M/agent_result.json",
+      "status": "failed",
+      "summary": "The mandatory initial security-context command could not run because the controller-owned encrypted OAuth state file was not readable by this process. No assessment state was consumed, no research conclusions were changed, no follow-up operation was created, and no agent-owned repository state was mutated."
+    },
+    {
+      "completed_at": "2026-08-26T17:11:04Z",
+      "daily_cycle_id": "daily-20260826T161934Z",
+      "daily_report_items": [],
+      "entity_id": "security_715bde20b6e1e1320c1a",
+      "entity_type": "security",
+      "evidence": [
+        {
+          "claim": "Hermes timed out after 1800s",
+          "source": "data/runs/daily-20260826T161934Z/01M0ZF0AJG7G54J9TCADG7KFYX/validation_report.json"
+        }
+      ],
+      "failure_errors": [
+        "Hermes timed out after 1800s"
+      ],
+      "files_changed": [],
+      "operation_id": "01M0ZF0AJG7G54J9TCADG7KFYX",
+      "operation_type": "security_research",
+      "result_path": "data/runs/daily-20260826T161934Z/01M0ZF0AJG7G54J9TCADG7KFYX/validation_report.json",
+      "status": "failed",
+      "summary": "The accepted research did not produce a valid result."
+    }
+  ],
+  "wiki_orientation_paths": [
+    "data/wiki/SCHEMA.md",
+    "data/wiki/index.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/log.md"
+  ],
+  "window_mode": "since_previous_successful_podcast",
+  "window_start_exclusive": "2026-08-23T15:43:17Z"
+}

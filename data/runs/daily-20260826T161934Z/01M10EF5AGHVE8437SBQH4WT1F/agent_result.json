@@ -1,0 +1,64 @@
+{
+  "commands_run": [
+    "papertrader podcast validate-script --daily-cycle-id daily-20260826T161934Z --script-path data/wiki/podcasts/daily-podcast_20260826T161934Z.md",
+    "papertrader podcast render-draft --daily-cycle-id daily-20260826T161934Z --script-path data/wiki/podcasts/daily-podcast_20260826T161934Z.md",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [],
+  "evidence": [
+    {
+      "claim": "Controller-validated context version three bound run daily-20260826T161934Z, page path data/wiki/podcasts/daily-podcast_20260826T161934Z.md, report path data/wiki/daily-reports/daily-report_20260826.md, an exclusive 2026-08-23T15:22:32Z cutoff, and an inclusive 2026-08-26T17:12:05Z cutoff.",
+      "source": "data/runs/daily-20260826T161934Z/podcast_context.json"
+    },
+    {
+      "claim": "Bloom Energy rose 30.33% over the accepted period to USD 217.45, while unchanged USD 90, USD 180, and USD 300 scenarios produced USD 187.50 weighted value and retained Sell / Avoid.",
+      "source": "data/runs/daily-20260826T161934Z/01KZYPF0GR7ZTFDG0HBC7TY24J/agent_result.json"
+    },
+    {
+      "claim": "dLocal closed at USD 15.53 above the USD 14.96 buy-below level, causing payoff gates to fail while accepted operating assumptions and the Medium / Watch disposition remained unchanged.",
+      "source": "data/runs/daily-20260826T161934Z/01M0WSFGEGCQB8946G58PR247M/agent_result.json"
+    },
+    {
+      "claim": "The exact frozen page path passed script validation with 2,895 spoken words and five deterministic TTS chunks before rendering.",
+      "source": "PaperTrader audited podcast validate-script receipt"
+    },
+    {
+      "claim": "Exactly one render-draft invocation succeeded and produced 1,246 seconds of ephemeral audio in the controller-provided temporary directory; no audio path or link was persisted in the repository.",
+      "source": "PaperTrader audited podcast render-draft receipt"
+    },
+    {
+      "claim": "Strict integrity returned 'published decision snapshot does not match current authoritative state'. Controller triage had moved non-podcast source-discovery operation 01M0ZDXFB0E9WHK5FRXP95189A from the active queue to expired history at 2026-08-27T01:48:38Z, after the snapshot as-of time of 2026-08-26T17:11:24Z.",
+      "source": "PaperTrader strict integrity receipt and controller-owned queue delta"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M10EF5AGHVE8437SBQH4WT1F",
+  "operations_created": [],
+  "reason_code": "strict_integrity_source_state_mismatch",
+  "status": "failed",
+  "summary": "Drafted and preflighted one 2,895-word standalone episode with chapters on Bloom Energy and dLocal. Bloom was selected as novel research; dLocal was retained only for the new buy-zone and payoff-gate change. Vale and Parrot were excluded because their window updates were unchanged, low-value, and substantially covered in earlier episodes. The exact frozen transcript path passed deterministic preflight, and the single audited draft render succeeded at 1,246 seconds. The required strict integrity gate then failed because the published decision snapshot no longer matched authoritative state: controller triage expired a non-podcast source-discovery operation after the snapshot cutoff. That controller-owned source-state mutation cannot be repaired within daily_podcast scope. In accordance with the non-success cleanup policy, the transcript, planning artifacts, and daily-report link were removed; the report was restored to its original bytes. No persistent podcast or audio reference remains.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running daily_podcast row claimed by daily-20260826T161934Z with a live lease and the required llm-wiki and papertrader-daily-podcast skills.",
+      "Confirmed hermes_preflight.json identifies the native wiki, controller, and routed daily-podcast skill by path and SHA-256 with sequential execution enabled.",
+      "Confirmed payload, frozen context, and daily manifest all bind the exact transcript path data/wiki/podcasts/daily-podcast_20260826T161934Z.md.",
+      "Reviewed every successful research result in the frozen window, its changed maintained page, linked background pages, prior episode, current daily report, and decision state.",
+      "Selected Bloom Energy and dLocal once each; excluded Vale and Parrot after novelty and audience-value review.",
+      "The refined spoken transcript passed deterministic validation at 2,895 words, at least eight prose paragraphs, exact opening and closing copy, no numeric glyphs or spoken markup, and five TTS chunks.",
+      "Exactly one audited render-draft invocation succeeded with a 1,246-second ephemeral draft.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "Strict integrity failed because the published decision snapshot did not match authoritative state after a controller-owned non-podcast queue expiration changed source state after publication.",
+      "The integrity mismatch is outside the daily_podcast write and command scope; no allocation, strategy, signal, order, execution, cash, portfolio, fill, performance, or accounting state was changed.",
+      "Before this failed result was written, the new transcript and planning artifacts were removed, the report was restored byte-for-byte, and no persistent audio reference remained."
+    ],
+    "passed": false
+  }
+}
