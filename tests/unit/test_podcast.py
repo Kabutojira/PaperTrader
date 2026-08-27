@@ -506,6 +506,54 @@ def test_context_aggregates_intervening_cycles_with_exclusive_inclusive_boundari
     ]
 
 
+def test_context_expands_pipe_delimited_wiki_evidence_sources(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    cycle_id = "daily-20260730T180000Z"
+    operation_id = "01ARZ3NDEKTSV4RRFFQ69G5FAE"
+    pages = [
+        "data/wiki/ideas/idea_first.md",
+        "data/wiki/ideas/idea_second.md",
+        "data/wiki/securities/security_story.md",
+    ]
+    for page_path in ["data/wiki/relationships/relationship_story.md", *pages]:
+        page = sandbox_repository / page_path
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text(
+            "---\ntitle: Podcast evidence\ntype: concept\nstatus: maintained\n---\n",
+            encoding="utf-8",
+        )
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-30T17:00:00Z",
+        cutoff="2026-07-30T18:00:00Z",
+        operations=[{"operation_id": operation_id, "terminal_status": "succeeded"}],
+    )
+    _accepted_research(
+        sandbox_repository,
+        cycle_id=cycle_id,
+        operation_id=operation_id,
+        completed_at="2026-07-30T17:30:00Z",
+        page_path="data/wiki/relationships/relationship_story.md",
+        summary="Accepted relationship research with several maintained-page references.",
+    )
+    result_path = (
+        sandbox_repository / "data" / "runs" / cycle_id / operation_id / "agent_result.json"
+    )
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    result["evidence"][0]["source"] = " | ".join(pages)
+    result_path.write_text(json.dumps(result), encoding="utf-8")
+
+    enqueue = enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=cycle_id, now=NOW)
+    context = json.loads((sandbox_repository / enqueue.context_path).read_text(encoding="utf-8"))
+
+    assert [item["path"] for item in context["background_wiki_pages"]] == pages
+    validation = validate_podcast_context(sandbox_repository, daily_cycle_id=cycle_id)
+    assert validation.referenced_file_count == 6
+
+
 def test_context_uses_attempt_provenance_when_operation_is_retried_later(
     sandbox_repository: Path,
     sandbox_settings: Settings,

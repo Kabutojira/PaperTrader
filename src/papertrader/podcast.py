@@ -630,11 +630,13 @@ def _wiki_context_pages(
         for evidence in raw_evidence if isinstance(raw_evidence, list) else []:
             if not isinstance(evidence, dict):
                 continue
-            raw = evidence.get("source")
-            if isinstance(raw, str) and raw.startswith("data/wiki/") and raw.endswith(".md"):
-                parts = PurePosixPath(raw).parts
-                if len(parts) >= 4 and parts[2] in BACKGROUND_WIKI_DOMAINS:
-                    evidence_paths.add(raw)
+            raw_source = evidence.get("source")
+            for raw in raw_source.split("|") if isinstance(raw_source, str) else ():
+                raw = raw.strip()
+                if raw.startswith("data/wiki/") and raw.endswith(".md"):
+                    parts = PurePosixPath(raw).parts
+                    if len(parts) >= 4 and parts[2] in BACKGROUND_WIKI_DOMAINS:
+                        evidence_paths.add(raw)
     linked_paths: set[str] = set(evidence_paths)
     for raw in sorted(changed_paths):
         text = _regular_bytes(repository_root, raw, label="accepted changed wiki page").decode(
