@@ -1,0 +1,48 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped the Schneider Electric July 30 bullish-MACD opportunity as exact duplicate research. The completed security review already tied the 2.74% July 2–30 rise and entered crossover to the H1 2026 issuer release, retained Watch / allocation-ineligible status because valuation and entry timing remained adverse, and created no trade. The current indicator has MACD below its signal; a separate queued security review owns any current-evidence refresh."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet binds Schneider Electric security_dc8486c1d61df62a22fd to an entered macd_cross_above_signal transition for 2026-07-02 through 2026-07-30, with an adjusted close of EUR 283.45001220703125, period return 0.027365054286226479633309835, trigger strength 0.2767094858885180534637187821 from previous strength 0, and source-price hash 27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/wiki/inbox/market-security_dc8486c1d61df62a22fd-macd_cross_above_signal-094629fe26cb.md",
+      "source_hash": "27b9aa3eb7e69d21b7f3b8ba0bce0a3bb59b0a0f9b8bea611a4ae7f2245979ca"
+    },
+    {
+      "claim": "Succeeded security-research operation 01KYR4K1705VG7GQANFYSR5RYW already reviewed the same July 30 bullish-MACD entry and source-price hash. It identified Schneider Electric's H1 2026 issuer release as contemporaneous primary evidence for the repricing, including record H1 revenue, stronger adjusted EBITA and cash flow, triple-digit data-centre demand, and upgraded guidance. It classified the release as a positive fundamental catalyst but an adverse valuation and entry-timing event rather than an independent paper-trade signal, with no strategy or paper-trading action.",
+      "source": "data/operations/operations_history.csv; data/runs/gha-30697153110-1/01KYR4K1705VG7GQANFYSR5RYW/agent_result.json; data/wiki/securities/security_dc8486c1d61df62a22fd.md"
+    },
+    {
+      "claim": "The current canonical record for the same SU.PA/XPAR/EUR identity is dated 2026-08-28 and retrieved at 2026-08-28T23:56:17Z. It reports MACD 4.49414304, signal 5.55631287, and histogram -1.06216983; the July 30 close of EUR 284.6000061035156 and the current August 28 close of EUR 303 are retained in the rolling price cache.",
+      "source": "data/market/indicators.csv; data/market/prices/security_dc8486c1d61df62a22fd.csv"
+    },
+    {
+      "claim": "The accepted 2026-08-01 assessment remains complete but allocation-ineligible, with negative expected and base returns, inadequate margin of safety, unfavorable timing, and a pending relationship. A separate ready security_research row 01M0T6VA687FHWK8HZ2SBAR5SB is already queued for current primary-evidence revalidation, so this skipped duplicate does not create another follow-up.",
+      "source": "data/tables/security_assessments.csv; data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR5JT754NAGZD02F5F",
+  "operations_created": [],
+  "reason_code": "exact_duplicate_structured_history",
+  "status": "skipped",
+  "summary": "Skipped as exact duplicate research. The completed Schneider Electric security review 01KYR4K1705VG7GQANFYSR5RYW already consumed this immutable security, entered bullish-MACD transition, 2026-07-02 through 2026-07-30 period, 2026-07-31T07:45:55Z market-data timestamp, source packet, and source-price hash. It linked the July 30 move to Schneider Electric's H1 2026 issuer release, classified the positive catalyst as adverse valuation and entry timing rather than an independent paper-trade opportunity, and retained Watch / allocation-ineligible status. The current deterministic indicator record shows MACD below its signal on 2026-08-28, while the assessment remains due for its separately queued security review. Repeating the completed review would add no distinct evidence or permissible state change; no follow-up is justified.",
+  "validation": {
+    "checks": [
+      "Confirmed the sole selected queue row is running, claimed by daily-20260828T235610Z, and has a live lease through 2026-08-29T00:27:14Z.",
+      "Confirmed the payload matches operation 01KYVJ62SR5JT754NAGZD02F5F, immutable opportunity opportunity_dbcb905f07e035a2d0b0, security_dc8486c1d61df62a22fd, trigger, period, and packet.",
+      "Confirmed hermes_preflight.json identifies native llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with recorded content hashes and sequential execution.",
+      "Matched the immutable identity, entered MACD transition, exact period, timestamp, packet, and source-price hash to succeeded structured-history security research 01KYR4K1705VG7GQANFYSR5RYW.",
+      "Confirmed the maintained security page retains the issuer-release explanation, classification, valuation and timing blockers, and no-action result; the current market record does not establish a new independent catalyst.",
+      "Confirmed the current canonical indicator and price records retain the SU.PA/XPAR/EUR identity and show the historical bullish crossover has reversed to MACD below signal.",
+      "Strict wiki lint returned OK [wiki].",
+      "No wiki page, queue lifecycle state, issue state, follow-up operation, allocation target/history, signal, order, fill, execution, cash, portfolio, performance, or accounting path was changed by the routed operation."
+    ],
+    "passed": true
+  }
+}
