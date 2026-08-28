@@ -1,0 +1,58 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_95351d928b674bbdf687",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict --prepared-daily-cycle-id daily-20260828T210155Z",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "DNA quick check: the weak August 25 MACD crossover occurred at USD 7.54 after a negative 2.08% alert period and did not reach the USD 6.056 buy-below gate. No later operating filing or material thesis evidence changed the fresh assessment; Hold / Watch and allocation ineligibility remain unchanged, with no full-review escalation."
+  ],
+  "evidence": [
+    {
+      "claim": "The baseline full security review succeeded on 2026-08-19T21:33:18Z for the same immutable security and retained Hold / Watch and allocation ineligibility because base return was negative, bear downside was severe, margin of safety was absent, confidence was medium, and no accepted relationship existed.",
+      "source": "data/runs/daily-20260819T212147Z/01KZGGJ4M0ED9MPW6YE88PV2R4/agent_result.json"
+    },
+    {
+      "claim": "The accepted current assessment remains schema version 2 assessment_ca38ef934552ae9c3e55, with bear/base/bull fair values of USD 3.33, USD 7.57 and USD 16.47 at 30%, 50% and 20%, a USD 6.056 buy-below price, Hold rating, Watch action and allocation-ineligible disposition.",
+      "source": "assessment_ca38ef934552ae9c3e55"
+    },
+    {
+      "claim": "The payload-bound 2026-08-25 market observation exactly matches source-price hash dc0c3326b03cbf9658e924cf3ba557fc754bbcb1208c2a5d4a2d9bbd0f7d56f7. DNA closed at USD 7.539999961853027 after a negative 2.077920% return from 2026-07-28; the MACD crossover strength was only 0.0101885 and the mark remained above the USD 6.056 buy-below gate.",
+      "observed_at": "2026-08-26T16:19:41Z",
+      "source": "data/wiki/inbox/market-security_95351d928b674bbdf687-macd_cross_above_signal-43122ecbf054.md and data/market/prices/security_95351d928b674bbdf687.csv",
+      "source_hash": "dc0c3326b03cbf9658e924cf3ba557fc754bbcb1208c2a5d4a2d9bbd0f7d56f7"
+    },
+    {
+      "claim": "The SEC submissions index through 2026-08-25 contains only a Form 144 and Form 4 after the 2026-08-17 Form 144 and the 2026-08-06 Form 10-Q. The August 24 notice covered 330 shares from restricted-stock vesting sold for tax obligations, so it supplies no later operating or financial evidence that changes the Q2 thesis, valuation, catalysts, risks or invalidation checklist.",
+      "source": "https://data.sec.gov/submissions/CIK0001830214.json",
+      "url": "https://data.sec.gov/submissions/CIK0001830214.json"
+    },
+    {
+      "claim": "Subsequent identity-matched market data through 2026-08-28 closed at USD 6.960000038146973. This remains about 14.93% above the USD 6.056 buy-below price; the alert's weak bullish timing signal did not establish a valuation entry condition or reverse any fundamental blocker.",
+      "observed_at": "2026-08-28T21:09:02Z",
+      "source": "data/market/latest.csv and data/market/indicators.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0ZDXGA89VK7N4A02XCJNFPG",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Quick-checked Ginkgo Bioworks after the 2026-08-25 MACD crossover. The payload-bound alert was weak, followed a negative exact period and remained above the accepted buy-below gate. Current SEC filings add only immaterial officer ownership transactions, not new operating evidence, while subsequent market data also remains above the buy-below price. The thesis, scenario assumptions, catalysts, invalidation conditions, risks, confidence, Hold / Watch disposition and allocation ineligibility are unchanged. No full security-research escalation was warranted, and the fresh accepted assessment remains assessment_ca38ef934552ae9c3e55 under the unchanged-conclusion exception with no agent-owned repository delta.",
+  "validation": {
+    "checks": [
+      "The mandatory audited security-context command succeeded before assessment state was consumed and confirmed the security, baseline, current assessment, immutable history, retained sources, page hash and linked state.",
+      "Baseline operation 01KZGGJ4M0ED9MPW6YE88PV2R4 is a successful full security review for the same immutable security completed less than ten days before this quick check was enqueued.",
+      "The payload source-price hash exactly matches the deterministic August 25 alert packet and its identity-matched canonical market bar.",
+      "Verified assumptions remain unchanged: Q2 revenue contraction, cash burn, liquidity and restricted cash, dilution risk, autonomous-lab adoption uncertainty, scenario values and probabilities, catalysts, risks, invalidation conditions, confidence, rating and action.",
+      "Changed assumptions: none. Valuation/buy-zone disposition: neither the USD 7.54 payload mark nor the subsequent USD 6.96 mark reached the USD 6.056 buy-below price. Escalation decision: no full security research was requested because no valuation, catalyst, invalidation, material-evidence or decision-support gate changed.",
+      "The accepted current assessment remains assessment_ca38ef934552ae9c3e55 from the fresh baseline review; the unchanged-conclusion exception applies because this operation made no agent-owned repository change.",
+      "Strict schema validation, queue validation, prepared-cycle strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK.",
+      "No allocation, strategy, signal, order, execution, cash, portfolio, performance, source, security, assessment, wiki, issue or follow-up state was changed."
+    ],
+    "passed": true
+  }
+}
