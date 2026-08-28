@@ -1,0 +1,68 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_cc4dcb8f002b61dffe00",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "Parrot quick check: the 26 August lower-Bollinger breach occurred at EUR 9.20 with RSI 34.23, bearish MACD and no abnormal-volume confirmation. Unchanged scenarios still leave base and weighted value about 1.2% below the alert-date market price and the EUR 7.272 buy zone unreached; Hold / Watch and allocation ineligibility remain unchanged, with no full-review escalation."
+  ],
+  "evidence": [
+    {
+      "claim": "The mandatory security-context receipt succeeded before assessment-state reads and binds security_cc4dcb8f002b61dffe00 to Parrot S.A. ordinary shares / PARRO.PA / XPAR / EUR / equity. It confirms successful baseline security research operation 01M08BT9VRSPKQN2Q6FSAB61CR completed at 2026-08-20T08:06:51Z and current immutable schema-v2 assessment assessment_8d710a0fa8813b740807, fresh through 2026-09-19.",
+      "observed_at": "2026-08-28T22:13:06Z",
+      "source": "PaperTrader audited security context"
+    },
+    {
+      "claim": "The payload security, market date, exact period, trigger, close and source_price_hash match the immutable candidate packet. Recalculation over the canonical price observations through 2026-08-26 confirms a EUR 9.199999809265137 close, EUR 9.34663348 lower Bollinger band, RSI 34.22938005, volume z-score -0.33875975, MACD -0.18237147 versus -0.12719372 signal, and the sole active trigger bollinger_below_lower. The rolling cache has since advanced, but the immutable payload and packet retain the exact alert-time hash binding.",
+      "observed_at": "2026-08-26T16:19:41Z",
+      "source": "data/wiki/inbox/market-security_cc4dcb8f002b61dffe00-bollinger_below_lower-673e6a91061d.md and PaperTrader canonical market state",
+      "source_hash": "8ce0b2c196e48a698b4af0204b0c6ea9c4654e2bdc3d7e8f77d9a349f7bf9356"
+    },
+    {
+      "claim": "A bounded fresh retrieval returned HTTP 200 and a valid PDF response from Parrot's retained first-half 2026 issuer-release URL. No newer primary input was introduced into the bounded baseline checklist, so the stored revenue, margin, cash-flow, concentration, funding, catalyst, risk and invalidation assumptions remain the operative evidence set.",
+      "observed_at": "2026-08-28T22:15:44Z",
+      "source": "source_parrot_h1_2026_results",
+      "url": "https://www.parrot.com/assets/s3fs-public/media-public/PARROT_CP_S1-2026_20260731_EN_DEF.pdf"
+    },
+    {
+      "claim": "A fresh retrieval of Parrot's issuer share-count page is byte-identical to the registered source, preserving the 31,157,845-share valuation denominator and the baseline dilution-risk conclusion.",
+      "observed_at": "2026-08-28T22:15:44Z",
+      "source": "source_parrot_shares_20260731",
+      "source_hash": "d50115d43d4ce086eb6ecf064088b572bf0495c712b54caf1c4996971496b35a",
+      "url": "https://www.parrot.com/en/corporate/number-shares-and-voting-rights"
+    },
+    {
+      "claim": "At the payload-bound EUR 9.199999809265137 close, unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios imply approximately -40.43%/-1.20%/+57.72% returns and a -1.18% probability-weighted return. The EUR 7.272 buy-below level remains about 20.96% below market. Even the later canonical EUR 9.09000015258789 close on 2026-08-28 only reaches base fair value and leaves the configured positive-return and margin-of-safety gates uncleared. No valuation, buy-zone, catalyst, invalidation, material-evidence, or decision-support gate changed, so no full-review escalation is warranted.",
+      "source": "assessment_8d710a0fa8813b740807 and bounded scenario comparison"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01M0ZDXGA8DTT273TA9K3VA22M",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed exactly one bounded Parrot S.A. quick check for the 26 August lower-Bollinger transition. The payload-bound EUR 9.199999809265137 close was 1.5688% below the EUR 9.34663348 lower band after a 4.96% decline over 29 July through 26 August, with RSI 34.23, no volume anomaly, and bearish MACD. The retained H1 issuer release remains publicly available and the issuer share-count page remains byte-identical to its registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 1.2% below the alert-date market price, while the EUR 7.272 buy-below level remains about 20.96% below market. The thesis, valuation assumptions, catalysts, risks, invalidation, confidence, Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one selected running quick_check_research row for security_cc4dcb8f002b61dffe00, claimed by daily-20260828T210155Z with a live lease and exactly the required llm-wiki and papertrader-quick-check-research skills.",
+      "Confirmed hermes_preflight.json identifies the native wiki, controller, and routed quick-check skill by path and SHA-256, with sequential execution enabled.",
+      "Consumed the mandatory successful audited security context before reading assessment state; the identity-matched successful full-research baseline completed less than ten days before enqueue.",
+      "Confirmed the payload identity, market date, exact period, trigger and source_price_hash match the immutable candidate packet; canonical observations through the payload date reproduce the packet's close, return, band strength and trigger state.",
+      "Verified the retained share-count source hash is unchanged and the retained H1 issuer release remains publicly retrievable; the bounded primary-source checklist supplied no changed decision-support assumption.",
+      "Verified unchanged thesis, valuation assumptions, catalysts, risks, invalidation, confidence, canonical rating/action and allocation gate. The repeated lower-band breach did not reach the buy zone or fire an escalation condition.",
+      "Accepted assessment version assessment_8d710a0fa8813b740807 remains current; the permitted unchanged-conclusion path left no security page, structured security or assessment, source record, wiki catalog or log, issue, or follow-up delta, so no same-run assessment upsert was required.",
+      "Strict schema validation returned OK [schema].",
+      "Queue validation returned OK [queue].",
+      "Strict repository integrity returned OK [integrity].",
+      "Strict wiki lint returned OK [wiki].",
+      "Strict portfolio reconciliation returned OK [portfolio].",
+      "command_audit.json contains exactly the six listed successful canonical project-CLI receipts in order, each with no changed paths.",
+      "No allocation target/history, strategy, signal, order, execution, cash, portfolio, fill, performance, accounting ledger, raw source, idea, relationship or maintained security page changed; no second operation was claimed or processed."
+    ],
+    "passed": true
+  }
+}
