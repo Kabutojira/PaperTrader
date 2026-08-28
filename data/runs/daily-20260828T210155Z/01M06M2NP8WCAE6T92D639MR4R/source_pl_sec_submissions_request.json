@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_sec_submissions_20260828",
+  "url": "https://data.sec.gov/submissions/CIK0001836833.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001836833.json",
+  "source_type": "regulator_index",
+  "title": "Planet Labs PBC SEC submissions index checked 2026-08-28",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "ed0d949894cfe5a536dd6830cc37b81b4bdb52f718a7a6459453ad30d71f0dbf",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-08-28T21:33:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The latest non-ownership filing is the 2026-07-10 Form 8-K; the 2026-06-05 Form 10-Q and 2026-06-04 results Form 8-K remain the latest financial evidence.",
+  "summary": "The current SEC submissions index shows no newer Planet operating or financial filing capable of changing the retained Q1 assumptions through the review time.",
+  "run_id": "daily-20260828T210155Z"
+}

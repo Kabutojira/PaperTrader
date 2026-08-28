@@ -15,6 +15,18 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-28T21:33:30Z] security research | Planet Labs
+
+- Reassessed [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] after a lower-Bollinger-band
+  breach and exceptional-volume transition. Fresh SEC retrieval reproduced the Q1 filing and results
+  hashes and found no newer operating filing.
+- At USD 19.98, unchanged USD 6.42/USD 14.36/USD 27.73 scenarios still imply a 26.7% weighted loss,
+  28.1% base downside and 67.9% bear downside. Sell / Avoid remains allocation-ineligible; the sharp
+  technical decline does not establish a buy zone or changed operating thesis.
+- The complete idea catalog produced one plausible unaccepted candidate:
+  [[ideas/idea_commercial_space_infrastructure|commercial space infrastructure and geospatial data]].
+  One dependent relationship review was queued; the edge remains explicitly pending.
+
 ## [2026-08-28T21:23:23Z] security research | Microsoft
 
 - Reassessed [[securities/security_204be2a44063993de1a8|Microsoft]] after the bullish 50-day SMA

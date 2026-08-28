@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_q1_fy2027_results_sec",
+  "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm",
+  "source_type": "issuer-release",
+  "title": "Planet Labs PBC Q1 fiscal 2027 results",
+  "publisher": "Planet Labs PBC via U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "b994d6e1a86c80fd8ab44ed324d04cd1a7a4be68b6b466ab4a295fbbb50832c2",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-08-28T21:33:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q1 fiscal 2027 revenue was USD 94.2 million, recurring ACV was 99%, gross margin was 54%, backlog exceeded USD 906 million, and free cash flow was negative USD 2.5 million.",
+  "summary": "Fresh retrieval reproduced the retained results-release hash; it remains the latest growth, recurrence, backlog, margin, cash-generation and guidance evidence for the scenarios.",
+  "run_id": "daily-20260828T210155Z"
+}

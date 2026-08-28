@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pl_q1_fy2027_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm",
+  "source_type": "filing",
+  "title": "Planet Labs PBC Q1 fiscal 2027 Form 10-Q",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "9d231aaadd4cefcb37654b291d06ea006f06823737afce397f49181c13a5b0b5",
+  "related_entity_ids": "security_97f38b2cb2d5ef127f5a",
+  "checked_at": "2026-08-28T21:33:30Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "At April 30, 2026, Planet reported USD 730.8 million of cash and short-term investments, USD 460 million of convertible notes, 356.4 million common shares, and material equity-award dilution.",
+  "summary": "Fresh retrieval reproduced the retained filing hash; it remains the latest balance-sheet, share-count, dilution, cash-runway and operating-economics evidence for the pre-profit-growth valuation.",
+  "run_id": "daily-20260828T210155Z"
+}

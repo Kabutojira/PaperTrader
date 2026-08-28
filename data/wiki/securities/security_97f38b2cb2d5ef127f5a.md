@@ -4,12 +4,12 @@ type: security
 status: maintained
 tags: [security, research, risk]
 created: "2026-07-29"
-updated: "2026-08-09"
-provenance: "source_pl_q1_fy2027_10q; source_pl_q1_fy2027_results_sec"
+updated: "2026-08-28"
+provenance: "source_pl_q1_fy2027_10q; source_pl_q1_fy2027_results_sec; source_pl_sec_submissions_20260828"
 security_id: security_97f38b2cb2d5ef127f5a
 issuer_id: issuer_f0de6eb64ff0330bf082
 confidence: medium
-next_review: "2026-08-23"
+next_review: "2026-09-11"
 ---
 
 # Planet Labs PBC Class A common stock
@@ -76,28 +76,44 @@ capitulation evidence.
 
 ## Changes since prior review
 
-- **Evidence:** the Q1 Form 10-Q and SEC-filed results release were rechecked at
-  `2026-08-09T20:18:35Z` and retain their registered hashes. The SEC submissions index still shows no
-  later earnings release or periodic operating filing; later ownership disclosures do not change
-  revenue, RPO, backlog, guidance, cash generation, dilution, or satellite execution.
-- **Market state:** unchanged from the quick check. MACD crossed bullish on 31 July and remained above
-  its signal on 7 August; the close recovered from USD 20.48 to USD 23.93, while RSI and volume were
-  neutral. This is a technical recovery, not new fundamental evidence.
-- **Assumptions and scenario outputs:** the unsupported USD 10.30/USD 15.34 two-case sensitivity is
-  superseded by a scenario-complete `pre_profit_growth` revenue-multiple review. New 12-month
-  bear/base/bull values are USD 6.42/USD 14.36/USD 27.73 with 30%/50%/20% probabilities. The USD
-  14.65 weighted value is about 38.8% below the USD 23.93 mark.
+- **Evidence:** fresh retrieval on 28 August reproduced the registered Q1 Form 10-Q and SEC-filed
+  results-release hashes. The current SEC submissions index lists no operating or financial filing
+  after the 10 July Form 8-K; subsequent ownership filings do not change revenue, RPO, backlog,
+  guidance, cash generation, dilution, or satellite-execution evidence.
+- **Market state:** the 28 August close of USD 19.98 is 2.44% below the 31 July close and 19.27% below
+  the 13 August interim high. It fell 5.58% in the latest session on 8.24 million shares, entered
+  below the USD 20.11 lower Bollinger band, and printed volume 3.25 times its recent baseline. The
+  sharp downside transition is a risk signal, not independent evidence that intrinsic value changed.
+- **Assumptions and scenario outputs:** the `pre_profit_growth` revenue-multiple assumptions and
+  USD 6.42/USD 14.36/USD 27.73 bear/base/bull fair values remain unchanged because there is no newer
+  operating filing. The lower mark improves all scenario returns, but the USD 14.65 weighted value
+  remains about 26.7% below market and the USD 11.49 buy zone remains about 42.5% below market.
 - **Thesis, catalysts, risks, and invalidation:** unchanged. Growth, recurring contract value, RPO,
   backlog and liquidity support the thesis; capital intensity, cash burn, government-contract
   cancellation, satellite execution, stock compensation and convertible dilution remain material.
-- **Blockers and gaps:** `valuation_unsupported` is resolved. Negative expected and base returns,
-  severe bear downside, medium confidence, no margin of safety, and the absence of an accepted
-  relationship still prevent allocation; no decisive valuation evidence remains missing.
-- **Rating and action:** the conclusion changes from **Unrated / Watch** to **Sell / Avoid** because a
-  complete valuation now demonstrates unfavorable asymmetry. No strategy, signal or paper order is
-  justified.
-- **Unchanged conclusion:** watchlist monitoring remains appropriate, and the bullish MACD recovery
-  still does not establish a buy zone or alter the operating thesis.
+- **Blockers and gaps:** no hard valuation blocker returns. Negative expected and base returns,
+  severe bear downside, medium confidence, adverse timing, no margin of safety, and the absence of
+  an accepted relationship still prevent allocation. The pending Q2 evidence remains a soft timing
+  gap rather than a basis for invented assumptions.
+- **Rating and action:** **Sell / Avoid** is unchanged. The lower price does not clear the expected-
+  return, base-return, downside-payoff, margin-of-safety, timing, confidence, or relationship gates;
+  no strategy, signal or paper order is justified.
+- **Unchanged conclusion:** watchlist monitoring remains appropriate, but neither a lower-band breach
+  nor exceptional volume establishes capitulation, a buy zone, or a changed operating thesis.
+
+## 2026-08-28 lower-band and volume-alert review
+
+From 31 July through 28 August, the adjusted close declined 2.44% from USD 20.48 to USD 19.98. The
+path was less benign than that endpoint comparison: the close fell 19.27% from its USD 24.75 interim
+high on 13 August and 5.58% in the final session. The latest close sits just below the USD 20.11
+lower Bollinger band, below the USD 22.72 50-day and USD 32.09 200-day averages, with MACD below its
+signal. Volume of 8.24 million shares was about 95% above the prior session and 3.25 times its recent
+baseline.
+
+Fresh SEC retrieval found no new operating filing capable of explaining the move or changing the
+Q1 fundamentals. The combination is therefore **price and timing risk with a technically stretched
+condition**, not verified thesis invalidation and not a sufficient opportunity. A lower price helps
+valuation mechanically, but the mark remains well above both weighted fair value and the buy zone.
 
 ## 2026-08-09 full review of the 2026-07-31 MACD alert
 
@@ -137,10 +153,25 @@ needs.
 | Base | 50% | USD 14.36 | FY2028 revenue reaches USD 540 million, a 10x multiple recognizes durable growth but continuing capital intensity, net cash is USD 270.8 million, and RSU, option and other dilution lifts shares to 395 million. |
 | Bull | 20% | USD 27.73 | FY2028 revenue reaches USD 620 million, an exceptional 18x multiple rewards sustained retention, RPO conversion and improving free cash flow, gross cash after investment is USD 680.8 million, and option, RSU and net convertible dilution lifts shares to 427 million. |
 
-The probability-weighted fair value is USD 14.65, about 38.8% below the USD 23.93 mark. The base
-case is about 40.0% below market, the bear case implies about 73.2% downside, and even the deliberately
-rich bull case offers only about 15.9% upside. Medium confidence further reduces usable expected
-return. The completed scenarios therefore establish no buy zone or margin of safety.
+The probability-weighted fair value is USD 14.65, about 26.7% below the USD 19.98 mark. The base
+case is about 28.1% below market, the bear case implies about 67.9% downside, and the deliberately
+rich bull case offers about 38.8% upside. The wider bull upside does not compensate for the weighted
+loss or bear asymmetry, and medium confidence further reduces usable expected return. The completed
+scenarios therefore still establish no current buy zone or margin of safety.
+
+## Idea exposure map
+
+- **Candidate — [[ideas/idea_commercial_space_infrastructure|Commercial space infrastructure and
+  geospatial data]]:** positive direction, awaiting relationship review. Planet's recurring imagery,
+  analytics, dedicated tasking and satellite services provide a direct mechanism by which commercial
+  and government demand can become ACV, RPO, backlog, revenue and cash flow. Materiality is supported
+  by Q1 recurrence and contract visibility; reject the edge if backlog does not convert, government
+  awards are cancelled or unfunded, satellite execution fails, or capital intensity and dilution
+  prevent per-share cash generation. This is not a canonical accepted relationship.
+- **Rejected-no-link — all other maintained ideas:** the complete catalog was checked, but no other
+  idea has both a specific causal transmission mechanism and material evidenced exposure. Generic AI,
+  defence, power, commodity, consumer, finance and industrial themes are too superficial to retain
+  without new primary evidence.
 
 ## Catalysts and invalidation
 
@@ -155,8 +186,8 @@ per-share growth.
 
 Status: **watching** with **medium** confidence and expected rating **Sell / Avoid**. The business has
 strong growth, recurrence, backlog and liquidity, but the completed scenarios show negative expected
-and base returns, severe bear downside, weak payoff ratios and no margin of safety. The MACD recovery
-is a monitoring signal rather than a paper-trade entry. Review by **2026-08-23**, or sooner after Q2
+and base returns, severe bear downside, weak payoff ratios and no margin of safety. The lower-band and
+volume alerts are monitoring signals rather than a paper-trade entry. Review by **2026-09-11**, or sooner after Q2
 results, material contract cancellation, satellite failure, guidance change, financing, dilution or
 capital-allocation news. No conviction strategy or paper signal is justified.
 

@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_7cc822376b22fcd34e38",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_pl_q1_fy2027_10q",
+      "source_pl_q1_fy2027_results_sec",
+      "source_pl_sec_submissions_20260828"
+    ],
+    "idea_id": "idea_commercial_space_infrastructure",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate the edge if backlog and RPO do not convert, government awards are cancelled or unfunded, satellite or launch failures impair service, retention weakens, or capital intensity and dilution prevent durable per-share cash generation.",
+    "proposed_mechanism": "Commercial and government demand for Earth-observation data can become recurring ACV, RPO, backlog, revenue and cash flow through Planet's imagery, analytics, dedicated tasking and satellite-services products, subject to contract conversion and satellite economics.",
+    "relationship_id": "relationship_7cc822376b22fcd34e38",
+    "security_id": "security_97f38b2cb2d5ef127f5a"
+  },
+  "objective": "Review whether Planet Labs has a material causal relationship to commercial space infrastructure and geospatial data through recurring imagery, analytics, tasking and satellite services; accept or reject the edge.",
+  "operation_id": "01M154XMSRBDR4DW1RZ63PPYPN",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_commercial_space_infrastructure.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md",
+    "source_pl_q1_fy2027_10q",
+    "source_pl_q1_fy2027_results_sec",
+    "source_pl_sec_submissions_20260828"
+  ]
+}

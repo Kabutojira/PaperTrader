@@ -1,0 +1,93 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/source_pl_q1_fy2027_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/source_pl_q1_fy2027_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/source_pl_sec_submissions_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/enqueue_commercial_space_relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a"
+  ],
+  "daily_report_items": [
+    "Planet Labs remained allocation-ineligible Sell / Avoid after entering below its lower Bollinger band on exceptional volume. At USD 19.98, unchanged USD 6.42/USD 14.36/USD 27.73 scenarios imply -28.13% base and -26.67% expected return with 67.87% bear downside; one dependent commercial-space relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "Fresh retrieval reproduced the retained Q1 fiscal 2027 Form 10-Q hash. The filing remains the latest balance-sheet and share-count evidence supporting USD 730.8 million of cash and short-term investments, USD 460 million of convertible-note principal, 356.4 million common shares and material equity-award dilution.",
+      "observed_at": "2026-08-28T21:33:30Z",
+      "source": "source_pl_q1_fy2027_10q",
+      "source_hash": "9d231aaadd4cefcb37654b291d06ea006f06823737afce397f49181c13a5b0b5",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526258304/pl-20260430.htm"
+    },
+    {
+      "claim": "Fresh retrieval reproduced the retained Q1 fiscal 2027 results-release hash. The release supports USD 94.2 million of revenue, 99% recurring ACV, 54% gross margin, backlog exceeding USD 906 million and negative USD 2.5 million of free cash flow.",
+      "observed_at": "2026-08-28T21:33:30Z",
+      "source": "source_pl_q1_fy2027_results_sec",
+      "source_hash": "b994d6e1a86c80fd8ab44ed324d04cd1a7a4be68b6b466ab4a295fbbb50832c2",
+      "url": "https://www.sec.gov/Archives/edgar/data/1836833/000119312526257401/pl-ex99_1.htm"
+    },
+    {
+      "claim": "The current SEC submissions index lists no newer operating or financial filing after the 2026-07-10 Form 8-K; the June Form 10-Q and results filing remain the latest financial evidence through the review time.",
+      "observed_at": "2026-08-28T21:33:30Z",
+      "source": "source_pl_sec_submissions_20260828",
+      "source_hash": "ed0d949894cfe5a536dd6830cc37b81b4bdb52f718a7a6459453ad30d71f0dbf",
+      "url": "https://data.sec.gov/submissions/CIK0001836833.json"
+    },
+    {
+      "claim": "Canonical market measurements show the adjusted close fell 2.44% from 2026-07-31 through 2026-08-28, 19.27% from its 2026-08-13 interim high and 5.58% in the final session. The USD 19.98 close entered below the USD 20.11 lower Bollinger band on 8.24 million shares, with volume 3.25 times baseline and MACD below its signal.",
+      "observed_at": "2026-08-28T21:09:02Z",
+      "source": "data/market/prices/security_97f38b2cb2d5ef127f5a.csv, data/market/indicators.csv and payload market alerts",
+      "source_hash": "095df14885be961d1f862eb15c72bf7b34762d32f618daaf5f0554eb9b7598ae"
+    },
+    {
+      "claim": "The post-upsert bounded context confirms assessment assessment_19f668616dcec205c4ba links predecessor assessment_f276685aa36f1341befd, schema version 2, this operation and result path, and research-page hash fe52e70edaeccdb8b7b90a9420fe012755adb78989ca07680b80143fd4a67024. It derives ineligible Sell / Avoid with -67.8679% bear, -28.1281% base, 38.7888% bull, -26.6667% expected and -20.0000% confidence-adjusted expected returns.",
+      "observed_at": "2026-08-28T21:38:24Z",
+      "source": "papertrader research security-context --security-id security_97f38b2cb2d5ef127f5a"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M154XMSRBDR4DW1RZ63PPYPN.json",
+    "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/assessment_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/enqueue_commercial_space_relationship_request.json",
+    "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/security_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/source_pl_q1_fy2027_10q_refresh_request.json",
+    "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/source_pl_q1_fy2027_results_refresh_request.json",
+    "data/runs/daily-20260828T210155Z/01M06M2NP8WCAE6T92D639MR4R/source_pl_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_97f38b2cb2d5ef127f5a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M06M2NP8WCAE6T92D639MR4R",
+  "operations_created": [
+    "01M154XMSRBDR4DW1RZ63PPYPN"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one repeat Planet Labs security review for the 2026-08-28 lower-Bollinger-band breach and exceptional-volume transition. Fresh SEC retrieval reproduced the Q1 fiscal 2027 filing and results hashes and found no newer operating or financial filing. At the canonical USD 19.98 mark, unchanged USD 6.42/USD 14.36/USD 27.73 scenarios produce -67.87%/-28.13%/+38.79% returns and a -26.67% probability-weighted return. Planet Labs improves from Strong Sell to Sell solely because of the lower mark but remains complete, allocation-ineligible and Avoid because expected return, base return, downside payoff, margin of safety and the accepted-relationship gate fail. One dependent commercial-space relationship review was queued; no strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed.",
+      "Fresh primary-source hashes were registered and post-upsert bounded context confirms source freshness, immutable identity, current price and FX timestamps.",
+      "Assessment schema version 2 was accepted with ordered scenarios, probabilities totaling 100, immutable predecessor linkage, source-operation/result provenance and matching research-page hash.",
+      "The complete maintained idea catalog and canonical relationship state were searched; one candidate is explicitly pending, one matching dependent relationship operation exists, and no payload or accepted idea required an idea follow-up.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio].",
+      "No strategy, signal, order, allocation target/history, execution, cash, portfolio, fill or performance state changed."
+    ],
+    "passed": true
+  }
+}
