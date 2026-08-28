@@ -2575,3 +2575,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Official strict wiki lint returned `OK [wiki]` before this entry; controller validation remains
   authoritative after the maintenance report is written.
 - Files updated: `log.md`.
+
+## [2026-08-28T21:43:39Z] security research | Canadian Solar
+
+- Rechecked [[securities/security_099561384c0f5e697727|CSIQ]] after its 12.86% July 31-August 28
+  decline and new lower-Bollinger-band breach using the August 27 Q2 filing.
+- Storage shipments beat guidance, but normalized margin, wider losses, working-capital cash use,
+  higher debt and delayed project sales make the move a risk signal rather than verified mean
+  reversion.
+- Updated the NAV cases to USD 10.16/USD 18.28/USD 26.41 at USD 13.14. Better price asymmetry retains
+  Buy / Initiate at Watch, but expected-to-bear payoff and the pending relationship keep Canadian
+  Solar allocation-ineligible; no strategy or paper-trading state changed.

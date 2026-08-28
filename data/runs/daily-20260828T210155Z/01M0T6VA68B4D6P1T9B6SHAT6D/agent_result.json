@@ -1,0 +1,81 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/source_csiq_q2_2026_results_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/source_csiq_sec_submissions_20260828_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/assessment_upsert_retry01_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/assessment_upsert_retry02_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "CSIQ security review succeeded: Q2 storage shipments beat guidance, but weaker module economics, wider losses, continued cash use, higher debt and delayed project sales make the 12.86% monthly decline and lower-band breach a risk signal. The USD 13.14 mark improves scenario returns and clears the USD 14.624 buy-below price, but the assessment remains Watch and allocation-ineligible while its causal relationship review is pending; no paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Canadian Solar reported Q2 2026 revenue of USD 1.2 billion, 13.9% gross margin, a USD 77 million attributable loss, negative USD 181 million quarterly operating cash flow, USD 7.1 billion total debt, strong storage shipments and delayed Recurrent Energy project sales.",
+      "observed_at": "2026-08-28T21:43:39Z",
+      "source": "source_csiq_q2_2026_results",
+      "source_hash": "6605b97860c2320eef25ce8de118377bae4138f7c7b75c9efab5d8209c429d56",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926101856/tm2623883d1_ex99-1.htm"
+    },
+    {
+      "claim": "The SEC submissions index identifies the August 27, 2026 Form 6-K containing Q2 results as Canadian Solar's newest filing through the assessment check.",
+      "observed_at": "2026-08-28T21:43:39Z",
+      "source": "source_csiq_sec_submissions_20260828",
+      "source_hash": "823d1ca5a992e7f2f1927b657965aa23505ac8daab293caf2d621f0f17aa7c21",
+      "url": "https://data.sec.gov/submissions/CIK0001375877.json"
+    },
+    {
+      "claim": "The canonical alert measured a 12.8647% adjusted-close decline from 2026-07-31 through 2026-08-28, ending at USD 13.140000343322754 below the USD 13.41853735 lower Bollinger band, with RSI 35.62 and negative MACD.",
+      "observed_at": "2026-08-28T21:09:02Z",
+      "source": "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-712b5c9567f1.md",
+      "source_hash": "8457e1b4a4af3b3de3a7fee4b02002eb029c97c81fb0d8599b08fbbe9b77730e"
+    },
+    {
+      "claim": "Immutable assessment assessment_3314317f74b3b3f3acc6 links predecessor assessment_a4a0ea4ee734302b6c40 and deterministically derives 26.7694% expected return, 20.0771% confidence-adjusted expected return, USD 14.624 buy-below price, Buy / Initiate, watch conviction and relationship_pending as the eligibility reason.",
+      "source": "data/tables/security_assessment_history.csv"
+    },
+    {
+      "claim": "The bounded candidate relationship review already exists as ready operation 01M0F7V8D8MTRZGEVET3HTD4AT, so this repeat review did not enqueue a duplicate. The payload named no idea and canonical relationships contain no accepted edge for this security, so no idea refresh was required.",
+      "source": "data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/assessment_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/assessment_upsert_retry02_request.json",
+    "data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/security_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/source_csiq_q2_2026_results_request.json",
+    "data/runs/daily-20260828T210155Z/01M0T6VA68B4D6P1T9B6SHAT6D/source_csiq_sec_submissions_20260828_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0T6VA68B4D6P1T9B6SHAT6D",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the repeat assessment of Canadian Solar Inc. common shares after the 2026-08-28 lower-Bollinger-band alert. Registered the current SEC filing index and Q2 2026 issuer results, updated the security research page and structured security row, and appended schema-v2 assessment assessment_3314317f74b3b3f3acc6 linked to its predecessor. Q2 storage execution was strong, but module contraction, normalized margin, wider losses, working-capital cash use, higher debt and delayed project sales make the decline a risk signal rather than a verified temporary dislocation. At USD 13.14, the deterministic assessment derives USD 10.16/USD 18.28/USD 26.41 bear/base/bull values, Buy / Initiate at watch conviction, and allocation ineligibility because the canonical relationship remains pending. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context receipt exited 0 before assessment state was read or changed.",
+      "Preflight identified native llm-wiki, papertrader-controller and papertrader-security-research for this operation and run.",
+      "Immutable issuer, instrument, XNAS venue, CSIQ provider symbol and USD currency identity matched the existing security row; the security upsert passed deterministic identity validation.",
+      "Both retained current sources were recorded through the project CLI before assessment use.",
+      "The schema-v2 assessment upsert validated registered evidence, exact current USD mark, fresh USD/EUR identity, ordered scenarios, probabilities totaling 100, canonical score anchors and research-page hash.",
+      "The immutable assessment history row links its predecessor, this source operation and result path, schema version 2 and the current security-page hash.",
+      "Deterministic eligibility derived complete research, Buy / Initiate, watch conviction and relationship_pending; the conviction strategy gate did not pass, so no strategy follow-up was enqueued.",
+      "The complete idea catalog and canonical relationship state were searched; one candidate edge is already covered by exactly one ready relationship-research operation, with no accepted or payload idea requiring an idea-research follow-up.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "Git diff checking found no whitespace errors in changed wiki and structured-state paths.",
+      "No allocation targets/history, orders, signals, executions, cash ledger, portfolio, fills or performance files were changed by this operation."
+    ],
+    "passed": true
+  }
+}
