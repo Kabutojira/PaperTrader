@@ -15,6 +15,18 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-28T21:23:23Z] security research | Microsoft
+
+- Reassessed [[securities/security_204be2a44063993de1a8|Microsoft]] after the bullish 50-day SMA
+  crossover above its 200-day SMA. Fresh SEC retrieval reproduced the fiscal 2026 filing and results
+  hashes exactly, and the current submissions index showed no newer operating filing.
+- At USD 513.53, unchanged USD 375/USD 500/USD 625 scenarios imply 27.0% bear downside, -2.6% base
+  and weighted return, and a USD 400 buy zone. Hold / Watch remains allocation-ineligible; bullish
+  momentum does not repair valuation, payoff, margin-of-safety or overbought-timing gates.
+- The complete idea catalog produced one plausible unaccepted candidate:
+  [[ideas/idea_ai_compute_networking_hyperscaler_monetization|AI compute, networking, and hyperscaler
+  monetization]]. One dependent relationship review was queued; the edge remains explicitly pending.
+
 ## [2026-08-28T21:13:00Z] update | dLocal full valuation review
 
 - Reassessed [[securities/security_715bde20b6e1e1320c1a|dLocal]] after the August 24 bullish MACD

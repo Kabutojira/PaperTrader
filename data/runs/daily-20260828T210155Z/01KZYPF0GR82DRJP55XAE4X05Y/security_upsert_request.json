@@ -1,0 +1,23 @@
+{
+  "security_id": "security_204be2a44063993de1a8",
+  "issuer_id": "issuer_64fbfb8d9695d940c4bb",
+  "company_name": "Microsoft Corporation",
+  "instrument_name": "Microsoft Corporation common stock",
+  "instrument_type": "equity",
+  "ticker": "MSFT",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "MSFT",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "The bullish 50/200-day moving-average crossover confirms positive momentum, but persistent overbought conditions and valuation above base fair value make entry timing adverse.",
+  "research_summary": "Fiscal 2026 cloud and AI evidence remains exceptional, but USD 513.53 exceeds USD 500 base value; overbought timing and a pending AI-compute relationship block allocation.",
+  "research_page": "data/wiki/securities/security_204be2a44063993de1a8.md",
+  "last_research_at": "2026-08-28T21:23:23Z",
+  "next_review_at": "2026-09-27T21:23:23Z",
+  "source": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+}

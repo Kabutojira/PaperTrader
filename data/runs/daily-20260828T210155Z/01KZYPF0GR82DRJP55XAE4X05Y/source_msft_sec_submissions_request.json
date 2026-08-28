@@ -1,0 +1,18 @@
+{
+  "source_id": "source_msft_sec_submissions_20260828",
+  "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0000789019.json",
+  "source_type": "regulator_index",
+  "title": "Microsoft Corporation SEC submissions index checked 2026-08-28",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "ef3d1eed787e1d32831fbebbce56e7e151dd13dcc99cf727c427627625df9cfd",
+  "related_entity_ids": "security_204be2a44063993de1a8",
+  "checked_at": "2026-08-28T21:23:23Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The recent filing index lists Forms 4 and 144 after the 2026-07-29 Form 10-K and Form 8-K.",
+  "summary": "The current SEC submissions index shows no newer Microsoft operating or financial filing after the fiscal 2026 annual report and results release.",
+  "run_id": "daily-20260828T210155Z"
+}

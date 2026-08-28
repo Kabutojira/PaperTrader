@@ -1,0 +1,33 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_db044cff42ac316e0295",
+  "dedupe_key": "relationship_research:relationship_db044cff42ac316e0295:security-result:01KZYPF0GR82DRJP55XAE4X05Y",
+  "prompt": "Review whether Microsoft has a material causal relationship to AI compute, networking, and hyperscaler monetization using current primary evidence; accept or reject the edge.",
+  "inputs": {
+    "relationship_id": "relationship_db044cff42ac316e0295",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_204be2a44063993de1a8",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "AI compute demand raises Azure infrastructure and model-service usage while Microsoft's enterprise distribution monetizes Copilot and related software; shareholder value depends on cloud and software revenue outgrowing depreciation, power, model and capacity costs.",
+    "proposed_invalidation": "Reject or invalidate the edge if AI revenue remains immaterial, Azure or Copilot monetization fails to outgrow infrastructure depreciation and power costs, utilization weakens, or competitive pricing prevents incremental cash returns.",
+    "evidence_refs": [
+      "source_msft_fy2026_10k",
+      "source_msft_fy2026_results",
+      "source_msft_sec_submissions_20260828"
+    ]
+  },
+  "source": "security_research:01KZYPF0GR82DRJP55XAE4X05Y",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01KZYPF0GR82DRJP55XAE4X05Y"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_204be2a44063993de1a8.md",
+    "source_msft_fy2026_10k",
+    "source_msft_fy2026_results",
+    "source_msft_sec_submissions_20260828"
+  ],
+  "max_attempts": 3
+}

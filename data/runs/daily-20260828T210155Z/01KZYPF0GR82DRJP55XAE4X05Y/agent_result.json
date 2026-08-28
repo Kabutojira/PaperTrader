@@ -1,0 +1,93 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_204be2a44063993de1a8",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/source_msft_fy2026_10k_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/source_msft_fy2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/source_msft_sec_submissions_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/enqueue_ai_compute_relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict",
+    "papertrader research security-context --security-id security_204be2a44063993de1a8"
+  ],
+  "daily_report_items": [
+    "Microsoft remained ineligible Hold / Watch after its bullish 50/200-day SMA crossover: at USD 513.53, unchanged USD 375/USD 500/USD 625 scenarios imply -2.63% base and weighted return and 26.98% bear downside. Fresh SEC evidence did not change the fiscal 2026 thesis; one dependent AI-compute relationship review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "Fresh retrieval reproduced the retained fiscal 2026 Form 10-K hash. The filing supports fiscal 2026 revenue of USD 331.839 billion, operating income of USD 155.237 billion, operating cash flow of USD 182.935 billion, USD 115.948 billion of property-and-equipment additions, and the balance-sheet and commitment inputs used in the review.",
+      "observed_at": "2026-08-28T21:23:23Z",
+      "source": "source_msft_fy2026_10k",
+      "source_hash": "4bcf2da2871acc19e32c5a62f36f6d83d6aae03cdc4aaa9a86a9a21ee8223f02",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+    },
+    {
+      "claim": "Fresh retrieval reproduced the retained fiscal 2026 results-release hash. The release supports Microsoft Cloud growth of 27%, Azure growth of 41% for the fiscal year and 43% for the fourth quarter, adjusted diluted EPS of USD 17.28, and commercial remaining performance obligation of USD 678 billion.",
+      "observed_at": "2026-08-28T21:23:23Z",
+      "source": "source_msft_fy2026_results",
+      "source_hash": "03471d4dc122c24deace523de4130d53205a78de2ec11fc965764738bf97149a",
+      "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-ex99_1.htm"
+    },
+    {
+      "claim": "The SEC submissions index showed only Forms 4 and 144 after Microsoft's 2026-07-29 annual-report and results filings, with no newer material operating filing through the review time.",
+      "observed_at": "2026-08-28T21:23:23Z",
+      "source": "source_msft_sec_submissions_20260828",
+      "source_hash": "ef3d1eed787e1d32831fbebbce56e7e151dd13dcc99cf727c427627625df9cfd",
+      "url": "https://data.sec.gov/submissions/CIK0000789019.json"
+    },
+    {
+      "claim": "Canonical 2026-08-28 measurements show adjusted close USD 513.530029296875, SMA 50 USD 430.54199951171877, SMA 200 USD 430.1473989868164, RSI 73.24378136536846, upper Bollinger band USD 511.67756539924474, and a newly entered bullish SMA crossover with 0.09173495161959191% strength.",
+      "observed_at": "2026-08-28T21:09:02Z",
+      "source": "data/market/indicators.csv and data/wiki/inbox/market-security_204be2a44063993de1a8-sma_50_cross_above_200-5c4deb89b97c.md",
+      "source_hash": "7be9b34e67f3083669558549694b5f7c76e54b03f90cdd4e6291ae8160203917"
+    },
+    {
+      "claim": "The post-upsert bounded context confirms assessment assessment_301d69effe13d7166fd0 links predecessor assessment_5fc8247673b8f36a8976, schema version 2, this operation and result path, and research-page hash 6bdc2f29cf45e9c7c22827a4413e68fcc64aa99765fc6d8eec8268383e691306. It derives ineligible Hold / Watch with -2.63471044047809780172186331% base and expected return, -26.97603283035857335129139748% bear return, 21.7066119494023777478476709% bull return, and the exact failed economic gates.",
+      "observed_at": "2026-08-28T21:28:36Z",
+      "source": "papertrader research security-context --security-id security_204be2a44063993de1a8"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M154B8X8QNX8SK1DJVF0E7CG.json",
+    "data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/assessment_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/enqueue_ai_compute_relationship_request.json",
+    "data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/security_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/source_msft_fy2026_10k_refresh_request.json",
+    "data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/source_msft_fy2026_results_refresh_request.json",
+    "data/runs/daily-20260828T210155Z/01KZYPF0GR82DRJP55XAE4X05Y/source_msft_sec_submissions_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_204be2a44063993de1a8.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01KZYPF0GR82DRJP55XAE4X05Y",
+  "operations_created": [
+    "01M154B8X8QNX8SK1DJVF0E7CG"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one repeat Microsoft security review for the 2026-08-28 bullish 50/200-day SMA crossover. Fresh SEC retrieval reproduced the fiscal 2026 filing and results-release hashes and found no newer operating filing. At the canonical USD 513.53 mark, unchanged USD 375/USD 500/USD 625 scenarios produce -26.98%/-2.63%/+21.71% returns and a -2.63% probability-weighted return. Microsoft remains complete but allocation-ineligible Hold / Watch because valuation, payoff, margin of safety, overbought timing, medium confidence, and the absent accepted relationship fail their gates. One dependent AI-compute relationship review was queued; no strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory pre-assessment security-context receipt succeeded before assessment state was read or changed.",
+      "Fresh primary-source hashes were registered and the post-upsert bounded context confirms source freshness, identity, current price and FX timestamps.",
+      "Assessment schema version 2 was accepted with ordered scenarios, probabilities totaling 100, immutable predecessor linkage, source operation/result provenance, and matching research-page hash.",
+      "Complete maintained idea catalog and canonical relationship state were searched; one candidate is explicitly pending, one matching dependent relationship operation exists, and no payload or accepted idea required an idea follow-up.",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader portfolio reconcile --strict returned OK [portfolio].",
+      "No strategy, signal, order, allocation target/history, execution, cash, portfolio, fill, or performance state changed."
+    ],
+    "passed": true
+  }
+}
