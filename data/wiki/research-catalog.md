@@ -679,3 +679,15 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-712b5c9567f1|CSIQ — Bollinger below lower]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_below_lower-ebe2ed8f558e|PYPL — Bollinger below lower]]
+- [[inbox/market-security_1e8fbdb0f45f2b413e00-volume_anomaly-08ee86a7d133|PYPL — Volume anomaly]]
+- [[inbox/market-security_204be2a44063993de1a8-bollinger_above_upper-639b00b70233|MSFT — Bollinger above upper]]
+- [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-c786759cd11e|MSFT — RSI overbought]]
+- [[inbox/market-security_204be2a44063993de1a8-sma_50_cross_above_200-5c4deb89b97c|MSFT — SMA 50 cross above 200]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-bollinger_below_lower-54920365b491|PL — Bollinger below lower]]
+- [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-f5a585700391|PL — Volume anomaly]]
+- [[inbox/market-security_a5dc16f3f4b245e6c168-macd_cross_below_signal-0b8ba5d24350|LUNR — MACD cross below signal]]

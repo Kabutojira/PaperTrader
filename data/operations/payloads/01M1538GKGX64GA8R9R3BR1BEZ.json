@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_P0eWBecvT-8",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-28T21:08:54Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_P0eWBecvT-8",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "P0eWBecvT-8",
+    "video_title": "ONON, LULU, NIKE, DECK, BIRK, ANTA Sector Analysis",
+    "video_url": "https://www.youtube.com/watch?v=P0eWBecvT-8"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1538GKGX64GA8R9R3BR1BEZ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=P0eWBecvT-8"
+  ]
+}

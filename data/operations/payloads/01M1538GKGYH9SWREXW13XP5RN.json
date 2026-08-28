@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_UgR-uVQnPzc",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-28T21:08:54Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_UgR-uVQnPzc",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "UgR-uVQnPzc",
+    "video_title": "Nvidia's Blowout Quarter Just Made These Stocks Massive Winners",
+    "video_url": "https://www.youtube.com/watch?v=UgR-uVQnPzc"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1538GKGYH9SWREXW13XP5RN",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=UgR-uVQnPzc"
+  ]
+}

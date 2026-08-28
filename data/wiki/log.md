@@ -30,6 +30,36 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Generated canonical [[daily-reports/daily-report_20260828]] for run `local-youtube-graph-20260828T200600Z`.
 
+- Created candidate packet [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-712b5c9567f1]] (712b5c9567f1).
+
+- Classified [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-712b5c9567f1]] as `ingest`: Material 12.9% period decline with a new Bollinger lower-band breach warrants durable review.
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_below_lower-ebe2ed8f558e]] (ebe2ed8f558e).
+
+- Classified [[inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_below_lower-ebe2ed8f558e]] as `ingest`: Material downside transition: price entered below the lower Bollinger Band after a 6.2% period decline.
+
+- Created candidate packet [[inbox/market-security_1e8fbdb0f45f2b413e00-volume_anomaly-08ee86a7d133]] (08ee86a7d133).
+
+- Classified [[inbox/market-security_1e8fbdb0f45f2b413e00-volume_anomaly-08ee86a7d133]] as `ingest`: Material volume anomaly coincides with a 6.2% one-month decline and merits durable review.
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-bollinger_above_upper-639b00b70233]] (639b00b70233).
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-rsi_overbought-c786759cd11e]] (c786759cd11e).
+
+- Created candidate packet [[inbox/market-security_204be2a44063993de1a8-sma_50_cross_above_200-5c4deb89b97c]] (5c4deb89b97c).
+
+- Classified [[inbox/market-security_204be2a44063993de1a8-sma_50_cross_above_200-5c4deb89b97c]] as `ingest`: A new 50-day SMA crossing above the 200-day SMA after a 10.5% period return is a material market transition worth recording.
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-bollinger_below_lower-54920365b491]] (54920365b491).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-bollinger_below_lower-54920365b491]] as `ingest`: New Bollinger-below-lower transition with a negative period return merits durable review.
+
+- Created candidate packet [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-f5a585700391]] (f5a585700391).
+
+- Classified [[inbox/market-security_97f38b2cb2d5ef127f5a-volume_anomaly-f5a585700391]] as `ingest`: New security-specific volume anomaly transition merits durable wiki context.
+
+- Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-macd_cross_below_signal-0b8ba5d24350]] (0b8ba5d24350).
+
 ## 2026-08-28 — Domino's defensive-consumer relationship
 
 - Accepted the medium-sensitivity, medium-confidence positive edge from defensive consumer cash-
@@ -2495,3 +2525,16 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   retaining downside-payoff, leverage, comparable-sales and franchisee-economics gates.
 - All three bounded defensive-consumer exposures are now reviewed with accepted edges; no follow-up
   operation, strategy or trading state was created.
+
+## [2026-08-28] lint | Deterministic wiki maintenance
+
+- Inspected all 618 Markdown paths under `data/wiki/` and the empty raw-source inventory without
+  network access.
+- Found no orphan pages, broken or ambiguous wikilinks, index or catalog omissions, invalid
+  frontmatter, unknown tags, raw-source hash drift, or project-size violations.
+- Preserved 54 overdue review markers, 15 low-like confidence markers, and documented
+  contradictions for bounded evidence-bearing follow-up rather than changing investment meaning
+  without current evidence.
+- Official strict wiki lint returned `OK [wiki]` before this entry; controller validation remains
+  authoritative after the maintenance report is written.
+- Files updated: `log.md`.

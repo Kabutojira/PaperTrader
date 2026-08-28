@@ -4,14 +4,48 @@
   "inputs": {
     "assessment_state": "2026-08-06T18:51:54Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-28T21:09:02Z",
+    "market_data_date": "2026-08-28",
+    "period_end": "2026-08-28",
+    "period_start": "2026-07-31",
     "research_page": "data/wiki/securities/security_204be2a44063993de1a8.md",
-    "security_id": "security_204be2a44063993de1a8"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_204be2a44063993de1a8:allocation-maintenance:2026-08-06T18:51:54Z",
+        "observed_at": "2026-08-13T23:14:07Z",
+        "prompt": "Revalidate security_204be2a44063993de1a8 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_msft_fy2026_10k",
+          "source_msft_fy2026_results"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_204be2a44063993de1a8:5494f47c478312121a14:2026-08-28",
+        "market_data_date": "2026-08-28",
+        "observed_at": "2026-08-28T21:09:02Z",
+        "prompt": "Research security_204be2a44063993de1a8 with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_204be2a44063993de1a8-sma_50_cross_above_200-5c4deb89b97c.md"
+        ],
+        "trigger_types": [
+          "sma_50_cross_above_200"
+        ]
+      }
+    ],
+    "security_id": "security_204be2a44063993de1a8",
+    "source_price_hash": "9cb8f8e137e902883dc9aae5484b9b7294c9fd72b4430d182fdf0cf8a6f25222",
+    "trigger_types": [
+      "sma_50_cross_above_200"
+    ]
   },
-  "objective": "Revalidate security_204be2a44063993de1a8 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_204be2a44063993de1a8 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_204be2a44063993de1a8 with high priority after price-action alerts: sma_50_cross_above_200; decide what changed and whether to act.",
   "operation_id": "01KZYPF0GR82DRJP55XAE4X05Y",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_204be2a44063993de1a8-sma_50_cross_above_200-5c4deb89b97c.md",
     "source_msft_fy2026_10k",
     "source_msft_fy2026_results"
   ]

@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_yfE0vGmHq1M",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-28T21:08:54Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_yfE0vGmHq1M",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "yfE0vGmHq1M",
+    "video_title": "The Most Obvious Buy In The Market Right Now",
+    "video_url": "https://www.youtube.com/watch?v=yfE0vGmHq1M"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1538GKGT94M2WSA42MHFSDR",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=yfE0vGmHq1M"
+  ]
+}

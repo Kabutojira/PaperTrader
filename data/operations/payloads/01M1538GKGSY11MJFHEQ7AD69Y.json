@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_y84ypzELP_s",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-28T21:08:54Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_y84ypzELP_s",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "y84ypzELP_s",
+    "video_title": "Eric Weinstein: The State of American Science, Breakthrough Coverups, and the Danger of Physics",
+    "video_url": "https://www.youtube.com/watch?v=y84ypzELP_s"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M1538GKGSY11MJFHEQ7AD69Y",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=y84ypzELP_s"
+  ]
+}

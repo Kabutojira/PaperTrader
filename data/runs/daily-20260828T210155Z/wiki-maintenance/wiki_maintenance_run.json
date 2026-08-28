@@ -1,0 +1,39 @@
+{
+  "command": [
+    "hermes",
+    "chat",
+    "--quiet",
+    "--yolo",
+    "--provider",
+    "openai-codex",
+    "--model",
+    "gpt-5.6-sol",
+    "--toolsets",
+    "file,terminal",
+    "--max-turns",
+    "160",
+    "--skills",
+    "llm-wiki",
+    "--query",
+    "<trusted-maintenance-prompt>"
+  ],
+  "completed_at": "2026-08-28T21:08:47Z",
+  "forwarded_environment_names": [
+    "CI",
+    "HERMES_HOME",
+    "HERMES_REDACT_SECRETS",
+    "HERMES_YOLO_MODE",
+    "HOME",
+    "LC_CTYPE",
+    "PATH",
+    "PYTHONPATH",
+    "WIKI_PATH"
+  ],
+  "maintenance_identity": "wiki-maintenance:2026-W35",
+  "returncode": 0,
+  "run_id": "daily-20260828T210155Z",
+  "started_at": "2026-08-28T21:01:57Z",
+  "stderr_sha256": "ca0fd90d52c991dd85fae9570bd118a0d0a405c42e17f2d30d9edaa30c9252ae",
+  "stdout_sha256": "bb18a0befe1ea6642025ca9d6b62026eb985e3207d3c78081bb7175dec912395",
+  "wiki_maintenance_run_version": 1
+}
