@@ -97,6 +97,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Created candidate packet [[inbox/market-security_a5dc16f3f4b245e6c168-macd_cross_below_signal-0b8ba5d24350]] (0b8ba5d24350).
 
+- Published investor decision snapshot `decision_8d2efa638c1727ad5cb1`.
+
+- Generated canonical [[daily-reports/daily-report_20260828]] for run `daily-20260828T210155Z`.
+
 ## 2026-08-28 — Domino's defensive-consumer relationship
 
 - Accepted the medium-sensitivity, medium-confidence positive edge from defensive consumer cash-

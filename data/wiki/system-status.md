@@ -7,13 +7,13 @@ tags:
 created: "2026-08-28"
 updated: "2026-08-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_835c8431827585c591dd"
-as_of: "2026-08-28T20:24:48Z"
+snapshot_id: "decision_8d2efa638c1727ad5cb1"
+as_of: "2026-08-28T22:26:33Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-28T20:24:48Z`
+**As of:** `2026-08-28T22:26:33Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,8 +21,8 @@ as_of: "2026-08-28T20:24:48Z"
 
 ## Coverage
 
-- Assessments: 52/78
-- Fresh-evidence assessments: 51/78
+- Assessments: 54/78
+- Fresh-evidence assessments: 53/78
 - Relationship reviews: 20/78
 - Accepted relationships: 19
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-28T20:24:48Z"
 - Pending orders: 0
 - Market success/failure: 80/0
 - Candidate FX gaps: 0
-- Research backlog: 470
+- Research backlog: 480
 - Last successful daily run: 2026-08-28
 
 ## Current issues by investment impact
@@ -174,7 +174,7 @@ as_of: "2026-08-28T20:24:48Z"
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260806|Daily podcast for Daily report for 2026-08-06 on 2026-08-06]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[daily-reports/daily-report_20260817|Daily podcast for Daily report for 2026-08-17 on 2026-08-17]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Error **Hermes operation validation failed: [[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]** — agent result was written before completed change: data/runs/[[daily-reports/daily-report_20260812|Daily report for 2026-08-12]]/[[securities/security_6cf75bd0ec0aa2a20148|Quick check research for TWST on 2026-08-05]]/command_audit.json; commands_run does not exactly match deterministic CLI audit receipts
-- Error **Hermes operation validation failed: [[securities/security_715bde20b6e1e1320c1a|Security research for DLO on 2026-08-26]]** — Hermes timed out after 1800s
+- Error **Hermes operation validation failed: [[securities/security_715bde20b6e1e1320c1a|Security research for DLO on 2026-08-28]]** — Hermes timed out after 1800s
 - Warning **Daily preparation degraded: FX AUD/EUR** — FX AUD/EUR: YFTzMissingError: $AUDEUR=X: possibly delisted; no timezone found
 - Warning **YouTube discovery failed for UCrTTBSUr0zhPU56UQljag5A** — @Value-Investing: 4JmCb5FmTA4 This request was detected as a bot. DO NOT OPEN AN ISSUE! See more details at https://pytubefix.readthedocs.io/en/latest/user/po_token.html
 - Warning **Daily podcast skipped: [[daily-reports/daily-report_20260820|Daily report for 2026-08-20]]** — Committed Telegram delivery is awaiting a bounded retry.
@@ -195,7 +195,7 @@ as_of: "2026-08-28T20:24:48Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 470 active operations.
+Showing 20 of 480 active operations.
 
 <details><summary>Active research work</summary>
 

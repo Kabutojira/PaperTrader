@@ -7,18 +7,18 @@ tags:
 created: "2026-08-28"
 updated: "2026-08-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_835c8431827585c591dd"
-as_of: "2026-08-28T20:24:48Z"
+snapshot_id: "decision_8d2efa638c1727ad5cb1"
+as_of: "2026-08-28T22:26:33Z"
 ---
 
 # Model portfolio
 
-**As of `2026-08-28T20:24:48Z`**
+**As of `2026-08-28T22:26:33Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-28T20:24:48Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-28T22:26:33Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-08-28T20:24:48Z</dd></div>
-<div><dt>As of</dt><dd>2026-08-28T20:24:48Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-08-28T22:26:33Z</dd></div>
+<div><dt>As of</dt><dd>2026-08-28T22:26:33Z</dd></div>
 </dl>
 
 </article>
@@ -60,12 +60,12 @@ This deterministic equal-weight benchmark is for research comparison only. It is
 
 | Security | Rating | Weight | Reference price |
 | --- | --- | ---: | ---: |
+| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy | 10% | 13.140000343322754 USD |
 | [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | Buy | 10% | 38.689998626708984 EUR |
-| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy | 10% | 15.529999732971191 USD |
-| [NVDA — NVIDIA Corporation](securities/security_33d9c44facc75c726c7d) | Buy | 10% | 218.99000549316406 USD |
+| [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy | 10% | 15.029999732971191 USD |
 | [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy | 10% | 11.989999771118164 USD |
 | [DPZ — Domino's Pizza, Inc.](securities/security_f34181f3df32080a91d1) | Buy | 10% | 332.05999755859375 USD |
-| [TCEHY — Tencent Holdings Limited](securities/security_de0d83229b369a426b99) | Buy | 10% | 56.88999938964844 USD |
+| [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00) | Buy | 10% | 53.65999984741211 USD |
 | Cash | Unrated | 40% | 1 — |
 
 [[index|Back to today's decision]]
