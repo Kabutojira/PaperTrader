@@ -1,0 +1,45 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped the Samsung common-GDR July 30 volume-anomaly opportunity as exact duplicate research: the same trigger, period, timestamp, packet, and source hash were already reviewed successfully. Record Q2 results explain the results-day rebound and relative volume, but turnover was only 56 Vienna units and the trigger cleared the next session; unresolved liquidity, currency, parity, and valuation evidence keep the event a non-actionable risk rather than a verified opportunity, with no follow-up created."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet binds security_567d0d575bbd30aaa91d to an entered volume_anomaly transition for 2026-07-02 through 2026-07-30, with EUR 3,550 latest close, -11.47132169576059850374064838% period return, trigger strength 1.04706207 from previous strength 0, and canonical source-price hash bbf89dab768e1da5522b802b83b26d5fb46d77541e04e0a6fde6f7c60f1a1f75.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/wiki/inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da.md",
+      "source_hash": "bbf89dab768e1da5522b802b83b26d5fb46d77541e04e0a6fde6f7c60f1a1f75"
+    },
+    {
+      "claim": "Succeeded security-research operation 01KYR5PTQ85N1ZCYD8JF9FVRPM consumed the identical source packet, immutable security, trigger, exact period, market-data timestamp, and source-price hash. It matched the event to Samsung's detailed Q2 release, found the relative volume spike occurred on sparse local turnover and cleared the next session, retained valuation and liquidity hard blockers, and created no strategy, signal, order, or follow-up.",
+      "source": "data/operations/operations_history.csv; data/operations/payloads/01KYR5PTQ85N1ZCYD8JF9FVRPM.json; data/runs/gha-30788518712-1/01KYR5PTQ85N1ZCYD8JF9FVRPM/agent_result.json"
+    },
+    {
+      "claim": "The maintained security page preserves the exact July 30 price-action review and classifies the event as results-driven volume within liquidity and valuation risk rather than a confirmed fundamental entry opportunity. Its August 10 quick check retains Unrated / Watch, valuation-unsupported, allocation-ineligible status with no buy zone or paper strategy justified.",
+      "observed_at": "2026-08-10T07:31:49Z",
+      "source": "data/wiki/securities/security_567d0d575bbd30aaa91d.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR4B484KXW7V8CSPR0",
+  "operations_created": [],
+  "reason_code": "exact_duplicate_structured_history",
+  "status": "skipped",
+  "summary": "Skipped this opportunity review as exact duplicate work already completed for the same immutable Samsung Electronics common-GDR identity, entered volume-anomaly transition, 2026-07-02 through 2026-07-30 period, 2026-07-31T07:45:55Z market-data timestamp, source packet, and source-price hash. Succeeded security review 01KYR5PTQ85N1ZCYD8JF9FVRPM already found that SSU.VI fell 11.47% over the period, rebounded 10.25% on July 30, and entered the anomaly on only 56 Vienna units as Samsung published detailed record Q2 results. It classified the event as results-driven volume within a liquidity and valuation risk, not a verified entry opportunity: the trigger cleared on July 31, while negligible local turnover, missing fresh KRW/EUR and same-timestamp cross-venue parity, and unsupported through-cycle valuation kept the security watch-only and allocation-ineligible. The maintained page and later quick check preserve that conclusion. No additional wiki update, issue, or follow-up operation was justified.",
+  "validation": {
+    "checks": [
+      "Confirmed exactly one running opportunity_research row is claimed by daily-20260828T210155Z with a live lease and a payload matching operation 01KYVJ62SR4B484KXW7V8CSPR0.",
+      "Confirmed hermes_preflight.json identifies native llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with recorded content hashes, sequential execution, and the deep profile.",
+      "Matched the immutable SSU.VI/XWBO/EUR common-GDR identity, entered volume_anomaly transition, 2026-07-02 through 2026-07-30 period, 2026-07-31T07:45:55Z market-data timestamp, source packet, trigger measurements, and source-price hash to succeeded structured-history operation 01KYR5PTQ85N1ZCYD8JF9FVRPM.",
+      "Confirmed the canonical price cache retains the July 2 EUR 4,010 endpoint, July 30 EUR 3,550 close and 56-unit volume, and July 31 EUR 3,650 close and eight-unit volume for the immutable provider identity.",
+      "Confirmed the completed review and maintained security page already retain the movement, current primary-evidence explanation, risk classification, materiality decision, blockers, and no-follow-up disposition; repeating the work would add no distinct evidence or state change.",
+      "Confirmed the security has no portfolio position or strategy; later review did not reverse its watch-only, valuation-unsupported, liquidity-blocked, allocation-ineligible conclusion.",
+      "Strict wiki lint returned OK after the no-change duplicate disposition.",
+      "No wiki page, queue lifecycle state, issue state, follow-up operation, allocation target/history, strategy, signal, order, fill, execution, cash, portfolio, performance, or accounting path was changed by the routed operation."
+    ],
+    "passed": true
+  }
+}
