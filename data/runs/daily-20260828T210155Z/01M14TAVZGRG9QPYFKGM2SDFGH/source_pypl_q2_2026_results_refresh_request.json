@@ -1,0 +1,18 @@
+{
+  "source_id": "source_pypl_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+  "source_type": "regulator_filing",
+  "title": "PayPal Q2 2026 results furnished on Form 8-K",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab",
+  "related_entity_ids": "security_1e8fbdb0f45f2b413e00",
+  "checked_at": "2026-08-28T21:56:53Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 total payment volume increased 10%, free cash flow was USD 1.775 billion, and full-year non-GAAP EPS guidance increased to about USD 5.38.",
+  "summary": "The unchanged SEC-filed Q2 results release remains the latest issuer operating evidence for volume, margins, active accounts, free cash flow and full-year guidance.",
+  "run_id": "daily-20260828T210155Z"
+}

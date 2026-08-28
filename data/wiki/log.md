@@ -2586,3 +2586,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Updated the NAV cases to USD 10.16/USD 18.28/USD 26.41 at USD 13.14. Better price asymmetry retains
   Buy / Initiate at Watch, but expected-to-bear payoff and the pending relationship keep Canadian
   Solar allocation-ineligible; no strategy or paper-trading state changed.
+
+## [2026-08-28T21:56:53Z] security research | PayPal Holdings
+
+- Rechecked [[securities/security_1e8fbdb0f45f2b413e00|PYPL]] after its 6.21% July 31-August 28
+  decline, lower-Bollinger-band entry and volume anomaly.
+- Unchanged Q2 filings and the current SEC index provide no new operating evidence explaining the
+  12.71% one-session decline on 2.06-times average volume, making it an unexplained risk event and
+  possible dislocation rather than a verified opportunity.
+- Unchanged USD 43.04/USD 64.56/USD 80.70 cases improve to Buy / Watch at USD 53.66, but payoff,
+  margin-of-safety, timing and pending-relationship gates keep PayPal allocation-ineligible; no
+  strategy or paper-trading state changed.

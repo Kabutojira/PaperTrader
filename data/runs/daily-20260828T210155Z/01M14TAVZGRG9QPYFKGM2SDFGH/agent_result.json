@@ -1,0 +1,95 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_1e8fbdb0f45f2b413e00",
+    "papertrader research assessment-get --assessment-id assessment_b9268ed231b6fb1ba7e4",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/source_pypl_q2_2026_10q_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/source_pypl_q2_2026_results_refresh_request.json",
+    "papertrader research source record --request data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/source_pypl_sec_submissions_20260828_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/assessment_upsert_retry01_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader research assessment-get --assessment-id assessment_2c8e04cee17905a2dec7"
+  ],
+  "daily_report_items": [
+    "PYPL security review succeeded after a 12.71% one-session decline on 2.06-times average volume and a lower-Bollinger entry. Current SEC evidence contains no new operating filing explaining the move. At USD 53.66, unchanged scenarios improve to Buy / Initiate economics at Watch conviction, but expected-to-bear payoff and the pending digital-finance relationship keep allocation ineligible; no paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "PayPal's unchanged Q2 Form 10-Q remains current primary evidence for the PYPL/XNAS/USD identity, June financial position, operating risks and PYUSD distribution through PayPal and Venmo.",
+      "observed_at": "2026-08-28T21:56:53Z",
+      "source": "source_pypl_q2_2026_10q",
+      "source_hash": "985b4f2293108227c664fc45cf26ba4c46e01ac46f2e4fbdeafd885b1ad36074",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm"
+    },
+    {
+      "claim": "The unchanged SEC-filed Q2 results remain the latest issuer operating evidence: total payment volume increased 10%, free cash flow was USD 1.775 billion, and full-year non-GAAP EPS guidance was about USD 5.38, while margins and active-account evidence constrained the thesis.",
+      "observed_at": "2026-08-28T21:56:53Z",
+      "source": "source_pypl_q2_2026_results",
+      "source_hash": "5b40f3b8dd4394a1f349b340fd3f812d8f814e6bb875b5a637d694707829adab",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm"
+    },
+    {
+      "claim": "The current SEC submissions index contains no new PayPal issuer operating filing after the July 28 Q2 Form 10-Q and results Form 8-K; later entries are ownership, planned-sale or beneficial-ownership notices and do not explain the August 28 selloff.",
+      "observed_at": "2026-08-28T21:56:53Z",
+      "source": "source_pypl_sec_submissions_20260828",
+      "source_hash": "5bf2a4a4b6128854f81f935ace7b4a32f419be4776ca60859e1822a0da54be32",
+      "url": "https://data.sec.gov/submissions/CIK0001633917.json"
+    },
+    {
+      "claim": "The canonical alert measured a 6.2052% adjusted-close decline from 2026-07-31 through 2026-08-28, ending at USD 53.65999984741211 below the USD 55.96164199 lower Bollinger band with RSI 35.00 and MACD below signal.",
+      "observed_at": "2026-08-28T21:09:02Z",
+      "source": "data/wiki/inbox/market-security_1e8fbdb0f45f2b413e00-bollinger_below_lower-ebe2ed8f558e.md",
+      "source_hash": "c51cc56918d346631627519f12460983d0d56a23d8d339d7bed04ae20d1f26b2"
+    },
+    {
+      "claim": "The August 28 session fell 12.7054% from the prior close on 36,208,248 shares, 2.0642 times the 20-session average; absent a new operating filing, the move is an unexplained risk event and possible dislocation rather than a verified opportunity.",
+      "observed_at": "2026-08-28T21:09:02Z",
+      "source": "data/wiki/inbox/market-security_1e8fbdb0f45f2b413e00-volume_anomaly-08ee86a7d133.md",
+      "source_hash": "c51cc56918d346631627519f12460983d0d56a23d8d339d7bed04ae20d1f26b2"
+    },
+    {
+      "claim": "Immutable assessment assessment_2c8e04cee17905a2dec7 links predecessor assessment_b9268ed231b6fb1ba7e4 and deterministically derives 14.2974% expected return, 10.7231% confidence-adjusted expected return, USD 51.648 buy-below price, Buy / Initiate, Watch conviction and expected_bear_payoff_below_minimum plus relationship_pending as eligibility reasons.",
+      "source": "data/tables/security_assessment_history.csv"
+    },
+    {
+      "claim": "Candidate digital-finance edge relationship_6321145f54f54723076c is already covered by exactly one ready relationship-research operation 01M0JG3F6G4PDPRZBBV2GG5E08. The payload names no idea and canonical relationships contain no accepted PayPal edge, so no idea-research follow-up was required.",
+      "source": "data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/assessment_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/security_upsert_request.json",
+    "data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/source_pypl_q2_2026_10q_refresh_request.json",
+    "data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/source_pypl_q2_2026_results_refresh_request.json",
+    "data/runs/daily-20260828T210155Z/01M14TAVZGRG9QPYFKGM2SDFGH/source_pypl_sec_submissions_20260828_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_1e8fbdb0f45f2b413e00.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14TAVZGRG9QPYFKGM2SDFGH",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed PayPal's repeat security assessment after the 2026-08-28 lower-Bollinger and volume-anomaly alerts. Current SEC evidence contains no issuer operating filing after July 28 and both Q2 documents are unchanged, so the 12.71% one-session decline on 2.06-times average volume is an unexplained risk event and possible dislocation, not verified fundamental deterioration or a confirmed opportunity. At USD 53.66, unchanged USD 43.04/USD 64.56/USD 80.70 scenarios produce Buy / Initiate economics at Watch conviction, but expected-to-bear payoff and the pending digital-finance relationship keep allocation ineligible. Immutable assessment assessment_2c8e04cee17905a2dec7 links its predecessor. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context receipt exited 0 before assessment state was read or changed.",
+      "Preflight identified native llm-wiki, papertrader-controller and papertrader-security-research for this operation and run.",
+      "Immutable issuer, instrument, XNAS venue, PYPL provider symbol and USD currency identity matched the existing row; security upsert passed deterministic identity and dedupe validation.",
+      "Both retained Q2 documents and the current SEC submissions index were recorded through the project CLI before assessment use, with current content hashes and check times.",
+      "Schema-v2 assessment upsert validated registered evidence, the exact USD mark, fresh USD/EUR identity, ordered scenarios, probabilities totaling 100, canonical score anchors and the current research-page hash.",
+      "Immutable assessment assessment_2c8e04cee17905a2dec7 links predecessor assessment_b9268ed231b6fb1ba7e4, this operation and result path, schema version 2 and research-page hash 43dacc4e512de0b8f872c4f826c6e8ca243b8af82be29d3ab6bedb552d952d43.",
+      "Deterministic eligibility derived complete research, Buy / Initiate, Watch conviction and ineligibility from expected_bear_payoff_below_minimum plus relationship_pending; the full conviction strategy gate did not pass.",
+      "The complete maintained idea catalog and canonical relationship state were searched. The one plausible candidate edge is already covered by exactly one ready relationship review, while no accepted or payload idea requires an idea refresh.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "Git diff checking found no whitespace errors and no allocation targets/history, signals, orders, executions, cash ledger, portfolio, fills or performance paths changed by this operation."
+    ],
+    "passed": true
+  }
+}

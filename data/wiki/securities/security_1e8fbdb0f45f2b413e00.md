@@ -7,8 +7,8 @@ tags:
   - research
   - risk
 created: "2026-07-29"
-updated: "2026-08-21"
-provenance: "source_pypl_q2_2026_10q|source_pypl_q2_2026_results|source_pypl_sec_submissions_20260821"
+updated: "2026-08-28"
+provenance: "source_pypl_q2_2026_10q|source_pypl_q2_2026_results|source_pypl_sec_submissions_20260828"
 security_id: security_1e8fbdb0f45f2b413e00
 issuer_id: issuer_5c3fe75eec62fcc8cb57
 ticker: PYPL
@@ -16,42 +16,44 @@ venue_mic: XNAS
 provider_symbol: PYPL
 currency: USD
 confidence: medium
-next_review: "2026-09-04"
+next_review: "2026-09-11"
 ---
 
 # PayPal Holdings, Inc. common stock
 
 ## Decision
 
-**Hold / Watch; no paper-trade escalation.** PayPal's unchanged July 28 results remain the latest
-operating evidence through the August 21 SEC check. Payment volume and free cash flow improved and
-management raised full-year non-GAAP EPS guidance, but lower operating income, contracting margins,
-nearly flat active accounts, transformation risk, and now-negative scenario-weighted return still
-constrain the thesis. The August 20 bullish 50-day/200-day moving-average crossover confirms a
-stronger medium-term trend, but an overbought RSI and MACD below signal make it a monitoring event,
-not a fundamental catalyst or an attractive entry.
+**Buy / Watch; no paper-trade escalation.** PayPal fell 12.71% in the August 28 session on 2.06
+times its 20-session average volume and entered below its lower Bollinger band. The current SEC
+index contains no new issuer operating filing after July 28, so the selloff is an unexplained risk
+event and possible dislocation, not verified fundamental deterioration or a confirmed opportunity.
+The lower USD 53.66 mark improves expected and base-case return, but bear/base and expected/bear
+payoff, margin of safety, timing, and the pending digital-finance relationship still fail the
+canonical gate.
 
 ## Changes since prior review
 
-- **Evidence:** Both retained Q2 SEC documents still match their prior content hashes. The August 21
-  SEC submissions index shows no issuer operating filing after July 28; later filings are ownership,
-  planned-sale, or beneficial-ownership notices. No current primary fact changes Q2 guidance,
-  margins, active accounts, liquidity, debt, or free cash flow.
-- **Market state:** The canonical adjusted close increased from USD 59.07 on August 7 to USD 62.30
-  on August 20. The 50-day average of USD 51.6064 crossed above the 200-day average of USD 51.2781,
-  with an 11.25% return from July 23 through August 20. RSI is overbought at 74.09 and MACD of
-  2.5837 remains below its 2.7375 signal, so trend improvement is offset by short-term extension.
+- **Evidence:** Both retained Q2 SEC documents still match their prior content hashes. The August 28
+  SEC submissions index shows no issuer operating filing after July 28; later filings remain
+  ownership, planned-sale, or beneficial-ownership notices. No current primary fact changes Q2
+  guidance, margins, active accounts, liquidity, debt, PYUSD economics, or free cash flow.
+- **Market state:** The canonical adjusted close fell from USD 61.47 on August 27 to USD 53.66 on
+  August 28, a 12.71% one-session decline, and finished 6.21% below the July 31 close. Volume of
+  36.21 million was 2.06 times the 20-session average. The close was 4.11% below the USD 55.9616
+  lower Bollinger band; RSI fell to 35.00 and MACD remained below signal.
 - **Assumptions and thesis:** The operating thesis, contrary evidence, catalysts, invalidation,
-  hard-blocker set, and medium confidence are unchanged. Timing improves from adverse to weak, but
-  there is still no dated fundamental catalyst or favorable entry condition.
+  hard-blocker set, and medium confidence are unchanged because no new operating evidence explains
+  the move. Timing remains weak: the oversold transition improves price but the high-volume selloff
+  adds event uncertainty and lacks a dated fundamental catalyst.
 - **Valuation:** The mature-compounder template, earnings-multiple method, USD 43.04/USD 64.56/USD
   80.70 scenarios, 30%/50%/20% probabilities, and underlying assumptions are unchanged. At USD
-  62.30, bear/base/bull returns deteriorate to -30.91%/+3.63%/+29.53%; probability-weighted fair
-  value remains USD 61.332 and expected return falls from +3.83% to -1.55%.
-- **Rating, action, blockers, and gaps:** Hold / Watch and allocation ineligibility are unchanged.
-  No hard blocker was added or resolved. Medium confidence, inadequate margin of safety, weak
-  timing, unattractive valuation, poor payoff asymmetry, and the absence of a current accepted
-  relationship remain decision-support gaps.
+  53.66, bear/base/bull returns improve to -19.79%/+20.31%/+50.39%; probability-weighted fair value
+  remains USD 61.332 and expected return improves from -1.55% to +14.30%.
+- **Rating, action, blockers, and gaps:** The deterministic rating improves from Hold to Buy while
+  Watch conviction and allocation ineligibility remain unchanged. No hard blocker was added or
+  resolved. Medium confidence, inadequate margin of safety, weak timing, poor payoff asymmetry, an
+  unexplained high-volume decline, and the absence of a current accepted relationship remain
+  decision-support gaps.
 - **Idea graph:** The complete idea catalog now supports one specific candidate edge to
   [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]] through PayPal and
   Venmo distribution of PYUSD. That edge is explicitly pending relationship review and is not
@@ -73,15 +75,18 @@ issuer-instrument-venue-currency-provider identity exists in the canonical secur
 
 ## Alert review
 
-From July 23 through August 20, adjusted close rose **11.25%** to **USD 62.30**. On August 20 the
-50-day moving average of **USD 51.6064** crossed above the 200-day average of **USD 51.2781** with
-deterministic trigger strength 0.006403. The exact packet and canonical indicator row share source
-price hash `c28e4a6c3dbc381884c5813c1a406f8627602901ea719e98c5d02473512f725e`.
+From July 31 through August 28, adjusted close fell **6.21%** to **USD 53.66**. The August 28 session
+itself fell **12.71%** from USD 61.47 on volume of **36.21 million**, or **2.06 times** the
+20-session average. The mark entered **4.11% below** the **USD 55.9616** lower Bollinger band; RSI
+fell to **35.00**, while MACD of **1.4215** remained below its **2.2521** signal. The two exact
+packets and canonical indicator row share source-price hash
+`c51cc56918d346631627519f12460983d0d56a23d8d339d7bed04ae20d1f26b2`.
 
-The crossover is a bullish medium-term trend transition, but RSI is **74.09**, the mark is near the
-**USD 62.38** upper Bollinger band, and MACD remains below signal. No new operating filing explains
-the move or changes a valuation assumption. The alert is therefore improved trend confirmation
-with extension risk: useful for monitoring timing, but not an independent paper-trade signal.
+No new issuer operating filing explains the decline or changes a valuation assumption. The
+lower-band entry makes price more attractive, but the simultaneous high-volume gap-down prevents
+treating a technical oversold reading as evidence that fundamental risk is transient. The move is
+therefore an **unexplained risk event and possible dislocation**, not noise, but not yet a verified
+opportunity or independent paper-trade signal.
 
 ## Business and financial evidence
 
@@ -124,36 +129,37 @@ relationship review accepts the edge.
 
 ## Valuation
 
-The USD 62.30 current mark is about 11.58 times management's approximately USD 5.38 full-year
+The USD 53.66 current mark is about 9.97 times management's approximately USD 5.38 full-year
 non-GAAP EPS guidance. A bounded 12-month mature-compounder earnings-multiple assessment uses
 30%/50%/20% bear/base/bull probabilities:
 
-- Bear: **USD 43.04** or 8x guided EPS, **-30.91%**, if margin contraction persists and branded
+- Bear: **USD 43.04** or 8x guided EPS, **-19.79%**, if margin contraction persists and branded
   checkout, transaction-margin growth, or active accounts weaken.
-- Base: **USD 64.56** or 12x guided EPS, **+3.63%**, if raised guidance is delivered but durable
+- Base: **USD 64.56** or 12x guided EPS, **+20.31%**, if raised guidance is delivered but durable
   margin and account acceleration remain unproven.
-- Bull: **USD 80.70** or 15x guided EPS, **+29.53%**, if branded checkout stabilizes, Venmo
+- Bull: **USD 80.70** or 15x guided EPS, **+50.39%**, if branded checkout stabilizes, Venmo
   monetization improves, and transaction-margin and operating-margin growth recover.
 
-The probability-weighted fair value is **USD 61.332**, a **-1.55%** expected return before the
-medium-confidence adjustment. The unchanged buy-below value of USD 51.648 is 17.10% below the
-current mark. Base upside, expected return, margin of safety, and bear/base asymmetry all remain
-below the economic gates. This supports Hold / Watch rather than a new or increased position.
+The probability-weighted fair value is **USD 61.332**, a **+14.30%** expected return before the
+medium-confidence adjustment. The unchanged buy-below value of USD 51.648 remains 3.75% below the
+current mark. Expected and base returns now clear their minimums, but bear/base and expected/bear
+payoff, margin of safety, timing, and relationship gates still fail. This supports Buy / Watch
+rather than a new or increased position.
 
 ## Sources
 
 - [PayPal Q2 2026 results furnished on Form 8-K](https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm)
-  (`source_pypl_q2_2026_results`, checked 2026-08-21; unchanged).
+  (`source_pypl_q2_2026_results`, checked 2026-08-28; unchanged).
 - [PayPal Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1633917/000163391726000082/pypl-20260630.htm)
-  (`source_pypl_q2_2026_10q`, checked 2026-08-21; unchanged).
+  (`source_pypl_q2_2026_10q`, checked 2026-08-28; unchanged).
 - [PayPal SEC submissions index](https://data.sec.gov/submissions/CIK0001633917.json)
-  (`source_pypl_sec_submissions_20260821`, checked 2026-08-21).
+  (`source_pypl_sec_submissions_20260828`, checked 2026-08-28).
 - Canonical market and indicator state:
   `data/market/latest.csv`, `data/market/indicators.csv`, and
   `data/market/prices/security_1e8fbdb0f45f2b413e00.csv`, current through
-  `2026-08-20` and retrieved `2026-08-21T15:34:00Z`.
+  `2026-08-28` and retrieved `2026-08-28T21:09:02Z`.
 
-Next review: **2026-09-04**, or sooner after material guidance, margin, stablecoin-economics,
-regulatory, credit, or capital-allocation evidence.
+Next review: **2026-09-11**, or sooner after primary evidence explaining the August 28 selloff or
+material guidance, margin, stablecoin-economics, regulatory, credit, or capital-allocation evidence.
 
 [[research-catalog|Research catalog]] · [[index|Current paper-trading decision]]
