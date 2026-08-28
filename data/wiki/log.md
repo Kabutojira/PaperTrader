@@ -15,6 +15,19 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-28T21:13:00Z] update | dLocal full valuation review
+
+- Reassessed [[securities/security_715bde20b6e1e1320c1a|dLocal]] after the August 24 bullish MACD
+  crossover and the changed buy-zone and payoff gates. Fresh SEC retrieval reproduced the retained
+  Q2 filing and results hashes, with no later issuer operating filing.
+- At the August 28 USD 15.03 mark, unchanged USD 9.00/USD 18.70/USD 29.40 scenarios improve but
+  remain outside the USD 14.96 buy zone and below the required downside-payoff frontier. The
+  security remains Buy / Initiate, Medium / Watch and allocation-ineligible; no strategy was
+  created.
+- The complete idea catalog produced one plausible unaccepted candidate:
+  [[ideas/idea_digital_finance_crypto_rails|digital finance and crypto rails]]. One dependent
+  relationship review was queued; the candidate is not represented as an accepted edge.
+
 ## 2026-08-28 — Nomad Foods defensive-consumer relationship
 
 - Accepted the high-sensitivity, medium-confidence positive edge from defensive consumer cash-return

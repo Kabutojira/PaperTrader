@@ -1,0 +1,32 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_a5d137bf462af52d7918",
+  "dedupe_key": "relationship_research:relationship_a5d137bf462af52d7918:security-result:01M0ZF0AJG7G54J9TCADG7KFYX",
+  "prompt": "Review whether dLocal has a material causal relationship to digital finance and crypto rails through emerging-market payment acceptance, payouts, settlement, local integrations and foreign-exchange infrastructure; accept or reject the edge without requiring crypto exposure.",
+  "inputs": {
+    "relationship_id": "relationship_a5d137bf462af52d7918",
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "security_id": "security_715bde20b6e1e1320c1a",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Broader regulated digital-payment adoption can increase payment acceptance, payout and settlement demand across emerging markets; dLocal can convert that demand through local licenses, payment methods, integrations and foreign-exchange liquidity into TPV, gross profit and cash flow without requiring cryptocurrency exposure.",
+    "proposed_invalidation": "Reject the edge if digital-finance adoption fails to drive material normalized earnings, pricing and merchant concentration absorb volume growth, or regulatory, settlement-liquidity, foreign-exchange, dilution and capital-allocation costs prevent durable per-share cash conversion.",
+    "evidence_refs": [
+      "source_dlocal_q2_2026_financials",
+      "source_dlocal_q2_2026_results"
+    ]
+  },
+  "source": "security_research:01M0ZF0AJG7G54J9TCADG7KFYX",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M0ZF0AJG7G54J9TCADG7KFYX"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_715bde20b6e1e1320c1a.md",
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+    "source_dlocal_q2_2026_financials",
+    "source_dlocal_q2_2026_results"
+  ],
+  "max_attempts": 3
+}

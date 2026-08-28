@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-18"
+updated: "2026-08-28"
 provenance: "source_dlocal_2025_20f|source_dlocal_q1_2026_financials|source_dlocal_q1_2026_results|source_dlocal_q2_2026_financials|source_dlocal_q2_2026_results"
 security_id: security_715bde20b6e1e1320c1a
 issuer_id: issuer_153eb518826ba6f3dbcd
@@ -16,7 +16,7 @@ venue_mic: XNAS
 provider_symbol: DLO
 currency: USD
 confidence: medium
-next_review: "2026-09-17"
+next_review: "2026-09-27"
 ---
 
 # DLocal Limited Class A common shares
@@ -27,12 +27,37 @@ next_review: "2026-09-17"
 profit grew 29%, operating profit grew 15%, adjusted free cash flow recovered to USD 68.5 million,
 and management raised TPV and gross-profit guidance. Gross profit over TPV nevertheless compressed
 again to 0.72%, the top ten merchants remained 61% of revenue, and a new USD 150 million facility
-adds capital-allocation risk. At USD 15.53, the unchanged USD 18.70 base value has 20.4% upside, but
-the mark is 3.7% above the USD 14.96 buy-below level and the base-upside-to-bear-downside ratio no
-longer clears the canonical gate. No accepted idea-security relationship exists either. The
+adds capital-allocation risk. At USD 15.03, the unchanged USD 18.70 base value has 24.4% upside, but
+the mark remains 0.5% above the USD 14.96 buy-below level and the base-upside-to-bear-downside ratio
+does not clear the canonical gate. No accepted idea-security relationship exists either. The
 assessment therefore remains allocation-ineligible and no conviction strategy is justified.
 
 ## Changes since prior review
+
+### 2026-08-28 full review
+
+- **Evidence:** the SEC submissions index still shows no issuer operating filing after the August
+  13 Q2 Form 6-K. Fresh retrieval reproduced the registered Q2 filing and results hashes exactly;
+  the August 19 Schedule 13D/A remains a secondary General Atlantic sale rather than issuer
+  dilution. The Q2 thesis, earnings inputs, catalysts and invalidation conditions are unchanged.
+- **Market and alert:** DLO closed at USD 15.03 on August 28. MACD remained above its signal and RSI
+  was neutral, but one-day, five-day and twenty-day returns were all slightly negative and volume
+  was not anomalous. The August 24 bullish crossover therefore remains a modest momentum recovery,
+  not new fundamental evidence or a trade signal.
+- **Assumptions and scenarios:** normalized EPS, multiples and probabilities remain unchanged at
+  USD 0.60/0.85/1.05, 15x/22x/28x and 25%/50%/25%. The USD 9.00/USD 18.70/USD 29.40 cases now imply
+  about -40.1%/+24.4%/+95.6%; weighted fair value remains USD 18.95 and the buy-below level remains
+  USD 14.96. Lower price improves all return frontiers from the quick check, but not enough to
+  restore the bear/base payoff or margin-of-safety gates.
+- **Thesis, catalysts, risks, blockers and gaps:** the growth and operating-leverage thesis,
+  guidance, cash-conversion catalyst, take-rate and merchant-concentration risks, debt-deployment
+  risk, medium confidence and all invalidation conditions are unchanged. The mark remains outside
+  the buy zone, payoff remains asymmetric to the downside, and an accepted causal relationship is
+  still absent.
+- **Rating and action:** Buy / Initiate remains the scenario label, but conviction stays Watch and
+  allocation remains ineligible. No strategy is warranted. A direct candidate link to digital
+  finance and payment rails now requires one bounded relationship review before it can become
+  canonical.
 
 ### 2026-08-26 quick check
 
@@ -108,6 +133,34 @@ prevent the market move from becoming an independent trade signal. The alert is 
 opportunity with material risk, not noise, but it remains non-actionable without an accepted causal
 relationship.
 
+The later bullish MACD crossover persisted through August 28: MACD was 0.2118 versus a 0.1517
+signal, while RSI was 55.0, the one-day return was -0.73%, the five-day return was -0.92%, the
+twenty-day return was -0.33%, and volume z-score was -0.50. With no newer operating filing, this is
+price normalization around the unchanged valuation rather than evidence of a changed business
+mechanism.
+
+## Idea exposure map
+
+There is no canonical accepted relationship for this security.
+
+- **Candidate — positive:** [[ideas/idea_digital_finance_crypto_rails|Digital finance and crypto
+  rails]]. dLocal's payment acceptance, payout, settlement, local-license, integration and
+  foreign-exchange infrastructure can convert broader regulated digital-payment adoption into TPV,
+  gross profit and cash flow. The Q2 filing establishes material payment economics, but the idea's
+  crypto and tokenization elements are not required and no edge is accepted until a bounded
+  relationship review tests take-rate compression, merchant concentration, regulation, settlement
+  liquidity and durable per-share cash conversion. Invalidation: digital-finance adoption fails to
+  drive material normalized earnings, pricing and concentration absorb growth, or regulatory,
+  settlement, foreign-exchange and capital-allocation costs prevent cash conversion.
+- **Rejected-no-link:** the other maintained ideas were searched across AI compute and power,
+  AI-native drug discovery and SMB systems, Anduril, broadband, commercial space, copper, lithium,
+  refining, cybersecurity, defense, defensive consumer, digital attention, product passports,
+  gold, humanoid robotics, Japan strategic investment, mobility, nearshoring, nuclear, precision
+  biology, solar and storage, sovereign drones, silver, Terafab and wide-bandgap semiconductors.
+  None has a specific material causal transmission mechanism into dLocal beyond superficial
+  technology, geography or general economic exposure; they remain `rejected-no-link` unless new
+  issuer-specific evidence appears.
+
 ## Business and financial evidence
 
 dLocal provides one API, platform, and contract through which global merchants can accept payments,
@@ -165,12 +218,12 @@ pressure, operating leverage, employee-plan dilution and capital allocation:
 - Bull, 25%: USD **29.40**, using USD 1.05 normalized EPS at 28x as expansion, cash conversion,
   repurchases and capital deployment outperform without a material regulatory setback.
 
-Against USD 15.53, those cases imply approximately **-42.0%**, **+20.4%**, and **+89.3%**.
-Probability-weighted fair value is USD 18.95, or approximately **+22.0%** before the deterministic
-confidence adjustment. The base-upside-to-bear-downside ratio is approximately **0.49**, and the
-20% margin-of-safety buy-below level is USD **14.96**, 3.7% below the mark. The changed buy-zone
-and payoff frontiers require a full review, while the missing accepted relationship independently
-prevents allocation or strategy work.
+Against USD 15.03, those cases imply approximately **-40.1%**, **+24.4%**, and **+95.6%**.
+Probability-weighted fair value is USD 18.95, or approximately **+26.1%** before the deterministic
+confidence adjustment. The base-upside-to-bear-downside ratio is approximately **0.61**, and the
+20% margin-of-safety buy-below level is USD **14.96**, 0.5% below the mark. The improved but still
+insufficient payoff and margin-of-safety frontiers, plus the missing accepted relationship,
+independently prevent allocation or strategy work.
 
 ## Sources
 
@@ -181,14 +234,14 @@ prevents allocation or strategy work.
 - [dLocal Q1 2026 interim financial statements](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm)
   (`source_dlocal_q1_2026_financials`, checked 2026-08-01).
 - [dLocal Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm)
-  (`source_dlocal_q2_2026_results`, checked 2026-08-18).
+  (`source_dlocal_q2_2026_results`, checked 2026-08-28; content hash unchanged).
 - [dLocal Q2 2026 interim financial statements](https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm)
-  (`source_dlocal_q2_2026_financials`, checked 2026-08-18).
+  (`source_dlocal_q2_2026_financials`, checked 2026-08-28; content hash unchanged).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_715bde20b6e1e1320c1a.csv`, market date 2026-08-25 and retrieved
-  2026-08-26.
+  `data/market/prices/security_715bde20b6e1e1320c1a.csv`, market date 2026-08-28 and retrieved
+  2026-08-28.
 
-Next review: **2026-09-17**, or sooner after a material merchant, tax, regulatory,
+Next review: **2026-09-27**, or sooner after a material merchant, tax, regulatory,
 foreign-exchange, litigation, cash-conversion, or capital-allocation development.
 
 Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and

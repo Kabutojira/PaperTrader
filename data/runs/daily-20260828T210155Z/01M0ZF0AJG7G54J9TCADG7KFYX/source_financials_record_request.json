@@ -1,0 +1,18 @@
+{
+  "source_id": "source_dlocal_q2_2026_financials",
+  "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+  "source_type": "filing",
+  "title": "dLocal Limited Unaudited Consolidated Condensed Interim Financial Statements at June 30, 2026",
+  "publisher": "dLocal Limited",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "3843dc6a64dd183327b47c5ac5e97e6af1e161bcd3a0a89b6bfa1de75dd18768",
+  "related_entity_ids": "security_715bde20b6e1e1320c1a",
+  "checked_at": "2026-08-28T21:13:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "The Q2 interim statements confirm TPV, revenue, gross profit, operating profit, net income, diluted shares, corporate and merchant cash, cash conversion, repurchases, employee-plan dilution and the new unsecured facility used in the scenario valuation.",
+  "run_id": "daily-20260828T210155Z"
+}
