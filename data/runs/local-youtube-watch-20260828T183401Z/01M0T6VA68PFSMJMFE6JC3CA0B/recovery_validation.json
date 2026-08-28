@@ -1,0 +1,15 @@
+{
+  "recovery_version": 1,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "operation_id": "01M0T6VA68PFSMJMFE6JC3CA0B",
+  "validated_at": "2026-08-28T19:42:53Z",
+  "passed": true,
+  "basis": "The first local-harness validation reported exactly one schema error: one evidence entry combined two valid SHA-256 values in a field restricted to a single hash. The entry was split by source without changing any claim, research state, command record, or conclusion.",
+  "checks": [
+    "each corrected evidence source_hash is exactly one lowercase SHA-256 value",
+    "the corrected manifest commands_run still exactly matches command_audit.json entries in order",
+    "the original validation reported no research-state or mutation-scope error",
+    "strict schema, queue and wiki checks had succeeded before the manifest was written",
+    "no source, assessment, relationship, strategy or trading-state mutation was repeated"
+  ]
+}

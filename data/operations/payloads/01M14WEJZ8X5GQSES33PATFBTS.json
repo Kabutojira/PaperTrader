@@ -1,0 +1,22 @@
+{
+  "entity_id": "relationship_d403f81ae5b27c9643dd",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+    ],
+    "idea_id": "idea_mobility_platform_autonomy",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or reverse the edge if autonomous fleets bypass Uber, trip growth stops producing incremental cash, or regulation, insurance, incentives, dilution and investment consume the marketplace benefit.",
+    "proposed_mechanism": "Uber can monetize demand aggregation, dispatch, payments and utilization across human-driven and autonomous supply if partners value marketplace distribution more than vertical integration.",
+    "relationship_id": "relationship_d403f81ae5b27c9643dd",
+    "security_id": "security_e4822686f60a96824b6e"
+  },
+  "objective": "Review whether Uber has a material causal relationship to mobility-platform network economics and autonomous-vehicle transition risk.",
+  "operation_id": "01M14WEJZ8X5GQSES33PATFBTS",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_mobility_platform_autonomy.md"
+  ]
+}

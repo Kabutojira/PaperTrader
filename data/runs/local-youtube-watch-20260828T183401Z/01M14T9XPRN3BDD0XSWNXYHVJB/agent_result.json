@@ -1,0 +1,97 @@
+{
+  "commands_run": [
+    "papertrader watchlist import --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/watchlist_import_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_fiserv.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_uber.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_mercadolibre.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_nomad.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_dominos.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_amazon.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_meta.json",
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/source_record_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Applied the declared screen to four curated videos and retained Ahold Delhaize, Prosus, Tencent, Fiserv, Amazon, Meta, Uber, MercadoLibre, Nomad Foods and Domino's Pizza as a ten-name research watchlist; current primary evidence already qualifies several video claims, so no video-only investment conclusion was accepted."
+  ],
+  "evidence": [
+    {
+      "claim": "The bounded caption helper returned four English auto-generated chunks on attempt 1, covering 00:00:00.080 through 00:21:55.440 with canonical normalized transcript hash ef69b7279753cc9ba5695ba088b39623bc091602b17e67557646924fadd62922. All four chunks and every segment were reviewed as untrusted leads, with zero transcript words persisted.",
+      "observed_at": "2026-08-28T18:54:09Z",
+      "source": "youtube_vmS8oB2xO9A",
+      "source_hash": "ef69b7279753cc9ba5695ba088b39623bc091602b17e67557646924fadd62922",
+      "url": "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+    },
+    {
+      "claim": "Fiserv reported Q2 2026 GAAP revenue of USD5.29 billion, declining adjusted and organic revenue, adjusted EPS down 26%, and negative-to-flat full-year organic-growth guidance; that current evidence materially qualifies the video's recovery framing.",
+      "observed_at": "2026-08-28T18:54:09Z",
+      "source": "Fiserv Q2 2026 results",
+      "url": "https://investors.fiserv.com/news-releases/news-release-details/fiserv-reports-second-quarter-2026-results"
+    },
+    {
+      "claim": "Uber reported Q2 gross bookings growth of 24%, trip growth of 18%, revenue growth of 12%, USD1.9 billion operating income and USD2.8 billion free cash flow, supporting research while not resolving autonomous-vehicle, regulatory or valuation risk.",
+      "observed_at": "2026-08-28T18:54:09Z",
+      "source": "Uber Q2 2026 results",
+      "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+    },
+    {
+      "claim": "Nomad Foods reported Q2 revenue down 3.1%, organic revenue down 2.9% and volume down 5.9%, while citing margin inflection and cash conversion; Domino's reported nearly flat U.S. and international comparable sales. Both video theses therefore require full independent valuation.",
+      "observed_at": "2026-08-28T18:54:09Z",
+      "source": "Nomad Foods and Domino's Q2 2026 results",
+      "url": "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+    },
+    {
+      "claim": "Amazon reported Q2 sales growth of 20%, operating-income growth of 43% and AWS sales growth of 37%, alongside a trailing free-cash-flow outflow as AI investment accelerated. Meta reported Q2 revenue growth of 28%, costs up 55%, operating income down 8%, only USD784 million of free cash flow and USD130–145 billion full-year capex guidance.",
+      "observed_at": "2026-08-28T18:54:09Z",
+      "source": "Amazon and Meta Q2 2026 results",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14VGSV8RMPCJSXPQN19CSSM.json",
+    "data/operations/payloads/01M14VGVSR1WXDTCCFX51T1NXT.json",
+    "data/operations/payloads/01M14VGXR85Z62D6GDJJ9XH8RH.json",
+    "data/operations/payloads/01M14VGZPRSXPKBED8XS85DJ2M.json",
+    "data/operations/payloads/01M14VH1N8WRQBZMJ6BYRG2WWG.json",
+    "data/operations/payloads/01M14VH5J8BNYBNN2K5XZSVWV0.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_amazon.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_dominos.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_fiserv.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_mercadolibre.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_meta.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_nomad.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_uber.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/source_record_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/watchlist_import_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/youtube_analysis.md",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14T9XPRN3BDD0XSWNXYHVJB",
+  "operations_created": [
+    "01M14VGSV8RMPCJSXPQN19CSSM",
+    "01M14VGVSR1WXDTCCFX51T1NXT",
+    "01M14VGXR85Z62D6GDJJ9XH8RH",
+    "01M14VGZPRSXPKBED8XS85DJ2M",
+    "01M14VH1N8WRQBZMJ6BYRG2WWG",
+    "01M14VH5J8BNYBNN2K5XZSVWV0"
+  ],
+  "status": "succeeded",
+  "summary": "Reviewed all four English auto-caption chunks for the curated quadrant video as untrusted lead material and applied the declared ranked selection. Together with the three focused videos, the research watchlist is Ahold Delhaize, Prosus, Tencent, Fiserv, Amazon, Meta, Uber, MercadoLibre, Nomad Foods and Domino's Pizza. Five new public-equity identities were imported and exactly one dependent full review was queued for each; Meta received one refresh and Amazon's catalyst merged into its existing queued review. Current issuer evidence was recorded separately from the speaker's opinions. No assessment or paper-trading state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the single running wiki_ingest row, immutable video and channel identities, sequential local preflight, and matching controller and operation-skill hashes.",
+      "Reviewed all four returned English auto-caption chunks and every segment; no transcript, media, thumbnail, full description or chunk was stored, and persisted transcript quotation is zero words.",
+      "Applied the predeclared eligibility, scoring and tie-break rules; retained only public common equities and documented every material exclusion.",
+      "Verified all five new public identities against current issuer or investor-relations records before import: FISV at XNAS, UBER at XNYS, MELI at XNAS, NOMD at XNYS and DPZ at XNAS.",
+      "Imported five new identities and enqueued exactly one priority-66 dependent security_research operation per new identity. Created one Meta refresh; Amazon's video cause merged into existing operation 01M0T6VA68PFSMJMFE6JC3CA0B.",
+      "Recorded source youtube_vmS8oB2xO9A with publisher @Value-Investing, canonical URL and matching canonical transcript hash. Strict wiki lint returned OK.",
+      "No assessment, relationship, strategy, signal, allocation target/history, order, fill, execution, cash, position, portfolio, performance or other paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "entity_id": "security_d12e746b3c9d392183cc",
+  "entity_type": "security",
+  "inputs": {
+    "research_focus": "Reassess advertising and engagement, AI monetization, infrastructure and talent spending, Reality Labs losses, free cash flow, debt, regulation and valuation; treat the video only as a lead.",
+    "security_id": "security_d12e746b3c9d392183cc",
+    "trigger": "The curated screen estimated a double-digit return for Meta; newer Q2 2026 issuer results show strong revenue but sharply higher costs and capital spending, requiring a comparable refresh."
+  },
+  "objective": "Refresh and value Meta after a curated-video double-digit-return lead and current Q2 2026 evidence.",
+  "operation_id": "01M14VH5J8BNYBNN2K5XZSVWV0",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://s21.q4cdn.com/399680738/files/doc_financials/2026/q2/Meta-06-30-2026-Exhibit-99-1-FINAL.pdf",
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+  ]
+}

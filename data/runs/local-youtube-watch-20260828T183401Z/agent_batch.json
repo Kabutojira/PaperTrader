@@ -1,0 +1,89 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-28T20:04:17Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 19,
+  "outcomes": [
+    {
+      "operation_id": "01M0T6V3BGVG38MQZ2J8BX70DD",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M0WSF9KR9HZS01KJ66W78Q9M",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M0ZDXAER1CG0TT86H2QWE218",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14W6M30G4P4Y78QF55WMN49",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14W6R00ZPN2DXT300CA7P2R",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14V3QW82X4W0JJ5WGKWCAZH",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14TXNHGPS58SRD5ZMHP5X7W",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14TPB5G360FXFGDB6549PAG",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14VGXR85Z62D6GDJJ9XH8RH",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14VGZPRSXPKBED8XS85DJ2M",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14VGSV8RMPCJSXPQN19CSSM",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14VGVSR1WXDTCCFX51T1NXT",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14VH1N8WRQBZMJ6BYRG2WWG",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14VH5J8BNYBNN2K5XZSVWV0",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14WB1P8QM5BEP0NE3F8PR2N",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14WB3MR8WA94HTF1GHP5DS4",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14WEJZ8X5GQSES33PATFBTS",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14WZXN8TRDQ5HN6ZA4ESFME",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14X8K0837TWWCR4EF1YB7W8",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "started_at": "2026-08-28T18:40:18Z"
+}

@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Domino's USD382.50 weighted value versus USD332.06 produces Buy / Initiate economics, but nearly flat comparable sales, leverage, franchisee health, downside payoff and a pending relationship keep DPZ allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Domino's reported 3.0% global retail-sales and 3.1% operating-income growth, but only 0.1% U.S. comparable-sales growth and slightly negative international comparable sales excluding currency.",
+      "observed_at": "2026-08-28T19:34:25Z",
+      "source": "source_dpz_q2_2026_10q",
+      "source_hash": "07d6ab191a940e2c55a1c124f1a210d603271c5fe43d498be00eb887661bb4dd",
+      "url": "https://www.sec.gov/Archives/edgar/data/1286681/000128668126000035/dpz-20260614.htm"
+    },
+    {
+      "claim": "DPZ closed at USD332.05999755859375 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14XY5E0D6QSJHZXK8BYD5MJ.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/idea_refresh_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_f34181f3df32080a91d1.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14VH1N8WRQBZMJ6BYRG2WWG",
+  "operations_created": [
+    "01M14XY5E0D6QSJHZXK8BYD5MJ"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Domino's research with current SEC evidence and USD270/USD380/USD500 scenarios at USD332.06, producing 15.19% expected and 11.39% confidence-adjusted return for Buy / Initiate economics. Nearly flat comparable sales, leverage, franchisee risk, downside payoff and the pending defensive-consumer relationship keep allocation ineligible. The single relationship review was preserved, exactly one idea refresh was created, and no strategy or trading state changed.",
+  "validation": {
+    "checks": [
+      "Verified DPZ/XNAS/USD identity.",
+      "Registered current SEC evidence and used fresh price/FX.",
+      "Wrote exactly one scenario-complete assessment.",
+      "Preserved exactly one candidate relationship and created exactly one required idea refresh.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

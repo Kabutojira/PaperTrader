@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_1827dc5e29f6ba308711",
+  "idea_id": "idea_digital_finance_crypto_rails",
+  "security_id": "security_4935c6e39e38273a1731",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Mercado Pago, merchant acquiring, wallets and credit can convert digital-finance adoption into payment, interest and commerce-network revenue, while logistics, advertising and marketplace density can reinforce distribution if losses, funding and regulation remain controlled.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Payment volume, acquiring, wallets and commerce continue compounding; credit losses and funding costs remain controlled; logistics density and advertising improve margins; and operating earnings convert into durable per-share cash flow.",
+  "invalidation": "Fintech becomes immaterial to normalized value; credit losses or funding overwhelm growth; regulation impairs payments or lending; currency stress destroys shareholder value; or commerce and financial ecosystems cease to reinforce one another.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_1827dc5e29f6ba308711.md",
+  "last_reviewed_at": "2026-08-28T20:13:00Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

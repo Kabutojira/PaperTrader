@@ -1,0 +1,18 @@
+{
+  "source_id": "source_meli_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/meli-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/meli-20260630.htm",
+  "source_type": "filing",
+  "title": "MercadoLibre Form 10-Q for quarter ended June 30 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "85735e1b15cc55c818ce48466da7e5ab7856ad35248db8ae1d366e45bbe75782",
+  "related_entity_ids": "security_4935c6e39e38273a1731|idea_digital_finance_crypto_rails",
+  "checked_at": "2026-08-28T20:09:00Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "MercadoLibre's filing evidence is unchanged; this compensating review preserves all accepted evidence and corrects only the displayed weighted-value arithmetic.",
+  "run_id": "local-youtube-graph-20260828T200600Z"
+}

@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14WB3MR8WA94HTF1GHP5DS4/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_c3f2e709d4a16b8532cc.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-08-28T19:59:43Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14WB3MR8WA94HTF1GHP5DS4",
+  "passed": true,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

@@ -1,0 +1,63 @@
+{
+  "commands_run": [
+    "papertrader watchlist import --request data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/watchlist_import_request.json",
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/source_record_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/security_followup_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Reviewed the curated Prosus video as untrusted lead material. Current disclosures verify the discount and buyback mechanism but correct the video's accretion and private-value framing; PRX.AS was imported identity-only and routed to one full security review."
+  ],
+  "evidence": [
+    {
+      "claim": "The bounded caption helper returned two English auto-generated chunks on attempt 1, covering 00:00:00.000 through 00:10:33.320 with canonical normalized transcript hash 72bcd386cf47f5f996c4aafddfbe7f10b5f5a779be74627ee71e1df47849479c. Both chunks and every segment were reviewed as untrusted lead data, with zero transcript words persisted.",
+      "observed_at": "2026-08-28T18:41:42Z",
+      "source": "youtube_GnLtHsGM81k",
+      "source_hash": "72bcd386cf47f5f996c4aafddfbe7f10b5f5a779be74627ee71e1df47849479c",
+      "url": "https://www.youtube.com/watch?v=GnLtHsGM81k"
+    },
+    {
+      "claim": "Prosus reported US$150.4 billion NAV and EUR61.5 NAV per share on 27 August, including a US$117.0 billion Tencent interest and US$32.8 billion of unlisted analyst/post-money values. FY26 disclosures report US$8.3 billion core headline earnings and a persistent roughly 43% holding-company discount despite substantial buybacks.",
+      "observed_at": "2026-08-28T18:41:42Z",
+      "source": "Prosus current NAV and FY26 disclosures",
+      "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    },
+    {
+      "claim": "Prosus describes an open-ended Tencent-funded repurchase programme that has repurchased about 30% of Prosus free float and produced about 18% incremental NAV-per-share accretion, contradicting the video's larger figures. Euronext identifies the EUR-denominated XAMS instrument as PRX, ISIN NL0013654783.",
+      "observed_at": "2026-08-28T18:41:42Z",
+      "source": "Prosus buyback and Euronext disclosures",
+      "url": "https://www.prosus.com/investors/share-information/share-buyback-programmes"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14TXNHGPS58SRD5ZMHP5X7W.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/security_followup_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/source_record_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/watchlist_import_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0WSF9KR9HZS01KJ66W78Q9M/youtube_analysis.md",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0WSF9KR9HZS01KJ66W78Q9M",
+  "operations_created": [
+    "01M14TXNHGPS58SRD5ZMHP5X7W"
+  ],
+  "status": "succeeded",
+  "summary": "Reviewed both English auto-generated transcript chunks for the curated Prosus video as untrusted lead material. Current Prosus disclosures verify the Amsterdam identity, Tencent exposure, NAV discount, ecosystem profitability and repurchase mechanism, while correcting the video's exaggerated accretion figures and private-asset valuation framing. Imported only the PRX.AS identity and enqueued exactly one dependent priority-66 security review. No assessment or paper-trading state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the single running wiki_ingest row, immutable Prosus video/channel identities, sequential local preflight, and matching controller and operation-skill hashes.",
+      "Reviewed both returned English auto-caption chunks and every segment; no transcript, media, thumbnail, full description, or caption chunk was stored, and persisted transcript quotation is zero words.",
+      "Verified the holding-company mechanism against current Prosus results, NAV, AGM and buyback disclosures and the instrument identity against Euronext; return forecasts remain unverified opinions for independent research.",
+      "Imported exactly one new identity, security_8b703a8adf5f864acaa4, and enqueued exactly one priority-66 dependent security_research operation, 01M14TXNHGPS58SRD5ZMHP5X7W.",
+      "Source youtube_GnLtHsGM81k was recorded with publisher @Value-Investing, the canonical video URL, source type youtube_video, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK after the source review. The maintained-page catalog required no new entry because the comprehensive synthesis is confined to the non-Quartz run artifact.",
+      "No assessment, relationship, strategy, signal, allocation target/history, order, fill, execution, cash, position, portfolio, performance, or other paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

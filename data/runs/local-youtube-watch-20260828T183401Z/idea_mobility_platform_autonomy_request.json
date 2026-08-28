@@ -1,0 +1,23 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_mobility_platform_autonomy",
+  "dedupe_key": "idea_research:idea_mobility_platform_autonomy:youtube-watchlist:2026-08-28",
+  "prompt": "Research mobility-platform network economics and autonomous-vehicle transition risk through Uber without adding more securities.",
+  "inputs": {
+    "idea_id": "idea_mobility_platform_autonomy",
+    "seed_claim": "A scaled mobility marketplace may convert trips, delivery, advertising and membership into durable cash flow, while autonomous fleets can either strengthen the network or disintermediate it depending on ownership, routing and partner economics.",
+    "security_ids": ["security_e4822686f60a96824b6e"],
+    "research_boundary": "Evaluate only the user-selected Uber identity; do not import or enqueue any additional security identity because this project run is intentionally capped."
+  },
+  "source": "user_selected_video_research_graph",
+  "priority": 65,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+  ],
+  "max_attempts": 3
+}

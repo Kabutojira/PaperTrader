@@ -1,0 +1,5 @@
+{
+  "operation_id": "01M14YPBV8VHE0KWESDGGRN6E5",
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "error": "same_run_assessment_provenance_ambiguous: correction must be reclaimed by a new sequential run so its immutable assessment has one unambiguous source operation"
+}

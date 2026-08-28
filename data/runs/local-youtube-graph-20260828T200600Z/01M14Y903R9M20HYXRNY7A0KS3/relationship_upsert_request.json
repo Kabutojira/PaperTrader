@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_2938ed6f30a7cb419822",
+  "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "security_id": "security_2433a056eb0c55961fcc",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "AWS supplies compute, model services and infrastructure to AI workloads; durable utilization and pricing can expand Amazon operating earnings, advertising and retail productivity when incremental returns exceed depreciation, financing, energy and dilution costs.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "AWS growth and margins remain strong, AI services broaden consumption, infrastructure utilization rises, retail and advertising productivity improve, and free cash flow turns positive without impairing the growth runway.",
+  "invalidation": "AI infrastructure utilization, AWS growth or margins fail to compensate for capital intensity, depreciation, financing and dilution; customer concentration or competition erodes returns; or operating cash conversion remains structurally negative.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_2938ed6f30a7cb419822.md",
+  "last_reviewed_at": "2026-08-28T20:15:00Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

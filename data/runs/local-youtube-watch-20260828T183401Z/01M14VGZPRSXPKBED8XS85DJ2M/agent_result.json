@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Uber's USD88.75 weighted value versus USD76.95 produces Buy / Initiate economics, but downside payoff, insurance, regulation, autonomy disintermediation and the pending relationship keep UBER allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Uber reported 24% bookings, 18% trips and 12% revenue growth, USD1.9 billion operating income and USD2.8 billion free cash flow, while driver classification and legal contingencies remain material.",
+      "observed_at": "2026-08-28T19:27:50Z",
+      "source": "source_uber_q2_2026_10q",
+      "source_hash": "5aa56769ca3e3d8735d1122e85269a5b9cd68fcb4bd2fa58fa6b19b65b019ffa",
+      "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+    },
+    {
+      "claim": "UBER closed at USD76.94999694824219 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14XJ5MRC2PKFQW5MT8ZWAX9.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/idea_refresh_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_e4822686f60a96824b6e.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14VGZPRSXPKBED8XS85DJ2M",
+  "operations_created": [
+    "01M14XJ5MRC2PKFQW5MT8ZWAX9"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Uber research after consuming the identity correction. Current SEC evidence and USD55/USD90/USD120 scenarios at USD76.95 produce 15.33% expected and 11.50% confidence-adjusted return, for Buy / Initiate economics. Bear payoff, insurance, regulation, autonomy disintermediation and the pending mobility relationship keep allocation ineligible. The single relationship review was preserved, exactly one idea refresh was created, and no strategy or trading state changed.",
+  "validation": {
+    "checks": [
+      "Canonical UBER/XNYS/USD identity overrode the historical ingest label.",
+      "Registered current SEC evidence and used fresh price/FX.",
+      "Wrote exactly one scenario-complete assessment.",
+      "Preserved exactly one candidate relationship and created exactly one required idea refresh.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

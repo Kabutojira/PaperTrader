@@ -1,0 +1,23 @@
+{
+  "entity_id": "relationship_f625ba3c07d49e1865ff",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_tencent_q2_2026_results"
+    ],
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject if attention and games cease to drive material economics, regulation or competition impairs monetization, AI spending persistently destroys cash, or ADR/common-share transmission becomes unreliable.",
+    "proposed_mechanism": "Tencent can convert games, Weixin attention, advertising, payments and cloud engagement into revenue, margin and cash flow, with AI improving discovery and monetization if compute returns exceed their cost.",
+    "relationship_id": "relationship_f625ba3c07d49e1865ff",
+    "security_id": "security_de0d83229b369a426b99"
+  },
+  "objective": "Review Tencent's causal relationship to digital attention, gaming and consumer ecosystems.",
+  "operation_id": "01M14X8K0837TWWCR4EF1YB7W8",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+    "data/wiki/securities/security_de0d83229b369a426b99.md"
+  ]
+}

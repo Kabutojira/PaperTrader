@@ -1,0 +1,38 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Defensive-consumer research now incorporates Domino's Buy / Initiate assessment and accepted causal edge while preserving comparable-sales, leverage and downside gates."
+  ],
+  "evidence": [
+    {
+      "claim": "Domino's accepted assessment is Buy / Initiate at USD332.06 versus USD382.50 weighted value, while downside payoff, leverage, nearly flat comparable sales and franchisee economics keep it allocation-ineligible.",
+      "source": "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/agent_result.json"
+    },
+    {
+      "claim": "The defensive-consumer relationship to Domino's is accepted with medium sensitivity and medium confidence.",
+      "source": "data/wiki/relationships/relationship_c3f2e709d4a16b8532cc.md"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14XY5E0D6QSJHZXK8BYD5MJ",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Refreshed defensive consumer cash-return resilience from Domino's completed assessment and accepted relationship. The idea now records Domino's as a reviewed Buy / Initiate exposure with USD382.50 weighted value versus USD332.06, but preserves downside-payoff, leverage, comparable-sales and franchisee-economics gates. All three bounded defensive-consumer exposures are reviewed and no follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Consumed the terminally accepted Domino's result and relationship.",
+      "Updated only the bounded idea page and append-only log.",
+      "Strict schema, queue and wiki checks passed.",
+      "Created no security, relationship, strategy or trading follow-up."
+    ],
+    "passed": true
+  }
+}

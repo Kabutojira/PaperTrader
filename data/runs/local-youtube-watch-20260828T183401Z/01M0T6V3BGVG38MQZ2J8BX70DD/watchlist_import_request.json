@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "The curated video raised a material Tencent ecosystem and AI-capital-cycle hypothesis; Tencent's current results independently verify the issuer and operating mechanism, while full valuation research remains pending.",
+  "source": "https://www.youtube.com/watch?v=sYMrpUft-QY",
+  "securities": [
+    {
+      "company_name": "Tencent Holdings Limited",
+      "instrument_name": "Tencent Holdings Limited unsponsored ADR",
+      "instrument_type": "equity",
+      "ticker": "TCEHY",
+      "exchange_code": "PNK",
+      "venue_mic": "XOTC",
+      "provider_symbol": "TCEHY",
+      "currency": "USD",
+      "country": "CN",
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information"
+    }
+  ]
+}

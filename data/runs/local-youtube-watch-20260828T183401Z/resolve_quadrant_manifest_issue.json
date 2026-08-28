@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_8f2333542c14c5fba09c",
+  "resolution": "Removed the mistyped non-mutating command from commands_run, verified that the corrected manifest exactly matches all ten canonical audit receipts in order, retained a recovery-validation artifact, and deterministically completed the reclaimed ingest operation. No research or trading-state mutation was lost or repeated."
+}

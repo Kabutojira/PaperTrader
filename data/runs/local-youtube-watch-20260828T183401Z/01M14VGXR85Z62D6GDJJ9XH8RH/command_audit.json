@@ -1,0 +1,275 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "source",
+        "record",
+        "--request",
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/source_record_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/source_history.csv",
+        "data/tables/source_registry.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "eedae3a21d529e7c54a3fddf7153fb6e1b313948a1bd1f45b26b7b52d3f1405a",
+            277724,
+            384
+          ],
+          "before": [
+            "file",
+            "a9db8c968c352b75ea4afbfb8c0293f950b9e3afc079bd03199f56c47c1325d1",
+            277325,
+            384
+          ],
+          "path": "data/tables/source_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "ecb5f5d554431188401db20a7d6b94fe381142a52f653448345fa685f072cd19",
+            146876,
+            384
+          ],
+          "before": [
+            "file",
+            "b1c3387f1500b95da9500e8f5b5d9bf4fdd1b695f7f1af1eecc1b6291ec8790a",
+            146372,
+            384
+          ],
+          "path": "data/tables/source_registry.csv"
+        }
+      ],
+      "command": "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/source_record_request.json",
+      "completed_at": "2026-08-28T19:26:22Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "21de607b2dc23bc5eb2fd281fe83cb4d2fd615a8c825e26dcc6362b4690c7736",
+          959,
+          436
+        ],
+        "path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/source_record_request.json"
+      },
+      "started_at": "2026-08-28T19:26:21Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "security",
+        "upsert",
+        "--request",
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/security_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/securities.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "109b3e790a545c7ea3f73622937e36b49a523ee0876f245e4014111465f60eaf",
+            59088,
+            384
+          ],
+          "before": [
+            "file",
+            "2db470933379d11397461626364a8c3feea2f2d83b7100d10d4daecb0578ae6e",
+            58915,
+            384
+          ],
+          "path": "data/tables/securities.csv"
+        }
+      ],
+      "command": "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/security_upsert_request.json",
+      "completed_at": "2026-08-28T19:26:23Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "e8ad904cff8d3753da0bd3cf6d42a3a0582818aa70b498795a814a7e5adecbe0",
+          999,
+          436
+        ],
+        "path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/security_upsert_request.json"
+      },
+      "started_at": "2026-08-28T19:26:23Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "assessment",
+        "upsert",
+        "--request",
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/assessment_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/security_assessment_history.csv",
+        "data/tables/security_assessments.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "d0316fbd4da206d36e76b7e5e0190de5de568dd90a694c9b20b3cbd2e50e8316",
+            402090,
+            384
+          ],
+          "before": [
+            "file",
+            "377875b117fe8e32c2c34e1c406da48f0d58eff45b24dedda45e51dedeb59c45",
+            399680,
+            384
+          ],
+          "path": "data/tables/security_assessment_history.csv"
+        },
+        {
+          "after": [
+            "file",
+            "7d8fccd85b9dfc475d2b27d33ef53d43dc2ad1fc4fce80b8679fdc18d2bcb480",
+            191410,
+            384
+          ],
+          "before": [
+            "file",
+            "dc1cb1ace05821efbd4af02dd0fbc346610f3194b2ea809fa8a2deed7b975474",
+            189292,
+            384
+          ],
+          "path": "data/tables/security_assessments.csv"
+        }
+      ],
+      "command": "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/assessment_upsert_request.json",
+      "completed_at": "2026-08-28T19:26:26Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "fbe2724191fb1dffe6f1fcd447402d66b0dccf2beed5e89541430ab961f7f210",
+          1901,
+          436
+        ],
+        "path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/assessment_upsert_request.json"
+      },
+      "started_at": "2026-08-28T19:26:25Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/relationship_request.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M14XCYN05TN2CPZRMC6Q3YFG.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "0e4ef9d56465667722c315043ada99a2906c223ded112f0419b4d0ffb9a0731e",
+            245206,
+            384
+          ],
+          "before": [
+            "file",
+            "14bcbea8ed60f4c468a8a45d9d287405ed837a7bf9353835e73779be22df2967",
+            244638,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "126375e4e7c5c1bb5b3d366b0814ac258487bf593e891fc8b885e11e22cc983a",
+            1175,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M14XCYN05TN2CPZRMC6Q3YFG.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/relationship_request.json",
+      "completed_at": "2026-08-28T19:26:28Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "c1a865eb3b828e628a1b2786cdeee96cf74edb1fddd8bbb8db001c12df85b4bd",
+          1349,
+          436
+        ],
+        "path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/relationship_request.json"
+      },
+      "started_at": "2026-08-28T19:26:27Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-08-28T19:26:30Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-28T19:26:29Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "validate"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader queue validate",
+      "completed_at": "2026-08-28T19:26:32Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-28T19:26:31Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-28T19:26:35Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-28T19:26:33Z"
+    }
+  ],
+  "operation_id": "01M14VGXR85Z62D6GDJJ9XH8RH",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-youtube-watch-20260828T183401Z"
+}

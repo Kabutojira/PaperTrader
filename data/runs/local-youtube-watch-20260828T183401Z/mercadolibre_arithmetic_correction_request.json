@@ -1,0 +1,25 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_4935c6e39e38273a1731",
+  "dedupe_key": "security_research:security_4935c6e39e38273a1731:valuation-arithmetic-correction:2026-08-28",
+  "prompt": "Correct MercadoLibre's displayed probability-weighted fair value to match its accepted USD1400/USD2200/USD3000 scenarios without changing assumptions or conclusion.",
+  "inputs": {
+    "security_id": "security_4935c6e39e38273a1731",
+    "trigger": "Post-acceptance reconciliation found that the narrative displayed USD2175 although 25%/50%/25% weights on USD1400/USD2200/USD3000 deterministically equal USD2200.",
+    "research_focus": "Consume the prior assessment, preserve its evidence, assumptions, probabilities, scores and conclusion, correct the narrative arithmetic, and append one comparable immutable assessment version documenting the correction. Do not create another relationship, idea, strategy, signal or trading operation."
+  },
+  "source": "deterministic-reconciliation",
+  "priority": 90,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M14VGSV8RMPCJSXPQN19CSSM"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_4935c6e39e38273a1731.md",
+    "data/tables/security_assessment_history.csv"
+  ],
+  "max_attempts": 3
+}

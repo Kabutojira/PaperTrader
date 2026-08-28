@@ -1,0 +1,8 @@
+{
+  "operation_id": "01M14WAZQR7NWPAESQPBYZFJWV",
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "terminal_status": "succeeded",
+  "result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14WAZQR7NWPAESQPBYZFJWV/agent_result.json",
+  "result_summary": "Accepted the evidence-backed defensive-consumer relationship to Ahold Delhaize and completed the repository-required append-only log rotation without changing trading state.",
+  "terminal_reason": "relationship_accepted_log_rotation_recovered"
+}

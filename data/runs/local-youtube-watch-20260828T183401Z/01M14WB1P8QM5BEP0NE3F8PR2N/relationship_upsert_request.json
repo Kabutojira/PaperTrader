@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_b2e1d6f8c3905a7421bb",
+  "idea_id": "idea_defensive_consumer_cash_return",
+  "security_id": "security_98a1943771da875efed5",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Branded frozen-food demand, price/mix, restructuring and working-capital discipline can stabilize Nomad Foods margins and free cash flow and preserve shareholder distributions if volume recovers and leverage declines.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Volume stabilizes, restructuring produces the stated margin inflection, free-cash-flow conversion improves, leverage declines and the dividend remains covered after brand and capacity investment.",
+  "invalidation": "Volume contraction persists; brand pricing loses elasticity; restructuring fails to improve margins; working capital or cash conversion weakens; leverage rises; or debt service and distributions absorb operating value.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_b2e1d6f8c3905a7421bb.md",
+  "last_reviewed_at": "2026-08-28T19:56:50Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

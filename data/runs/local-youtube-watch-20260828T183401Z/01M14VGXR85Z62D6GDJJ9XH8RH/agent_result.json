@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Fiserv's USD62 weighted value versus USD52.58 produces Buy / Initiate economics, but Q2 contraction, weak timing, downside payoff and a pending digital-finance relationship keep FISV allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Fiserv's filing confirms essential processing businesses while Q2 adjusted revenue and organic revenue declined and adjusted EPS fell 26%, making recovery a scenario rather than current evidence.",
+      "observed_at": "2026-08-28T19:25:00Z",
+      "source": "source_fisv_q2_2026_10q",
+      "source_hash": "7e2c1033d7085f0848d7984ee854473bcbf2633c60079bf05f86d11d0af469ae",
+      "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000031/fisv-20260630.htm"
+    },
+    {
+      "claim": "FISV closed at USD52.58000183105469 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14XCYN05TN2CPZRMC6Q3YFG.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_d202772e4e62065cd17a.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14VGXR85Z62D6GDJJ9XH8RH",
+  "operations_created": [
+    "01M14XCYN05TN2CPZRMC6Q3YFG"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Fiserv research after consuming the identity-mapping correction. Current SEC evidence and a schema-v2 assessment produce USD35/USD65/USD95 scenarios at USD52.58, 17.92% expected and 13.44% confidence-adjusted return, for Buy / Initiate economics. Severe bear downside, current contraction, timing and a pending digital-finance relationship keep allocation ineligible; exactly one relationship review was queued and no strategy or trading state changed.",
+  "validation": {
+    "checks": [
+      "Canonical FISV/XNAS/USD identity overrode the historical ingest label before research.",
+      "Registered current SEC evidence with exact source hash and used fresh price/FX.",
+      "Wrote exactly one scenario-complete assessment.",
+      "Searched the idea catalog and queued exactly one material candidate relationship.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request_v2.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request_v3.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Tencent's USD65 weighted value versus USD56.89 produces Buy / Initiate economics, but downside payoff, AI cash intensity, China/ADR risk and a pending digital-ecosystem relationship keep TCEHY allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Tencent reported 11% group revenue, 13% gross-profit and 9% non-IFRS operating-profit growth, alongside RMB52.8 billion capex, RMB13.8 billion negative free cash flow and lower net cash.",
+      "observed_at": "2026-08-28T19:23:00Z",
+      "source": "source_tencent_q2_2026_results",
+      "source_hash": "64d8d2038eeef993571b96bb3361b6f1a567d6e84157eb16af20d2fd9a095f0a",
+      "url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+    },
+    {
+      "claim": "TCEHY closed at USD56.88999938964844 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14X8K0837TWWCR4EF1YB7W8.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request_v2.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request_v3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request_v2.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request_v3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_de0d83229b369a426b99.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14TPB5G360FXFGDB6549PAG",
+  "operations_created": [
+    "01M14X8K0837TWWCR4EF1YB7W8"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Tencent TCEHY research with verified 1:1 XOTC/USD ADR identity, current Q2 evidence and one schema-v2 mature-compounder assessment. USD40/USD65/USD90 scenarios at USD56.89 produce 14.26% expected and 10.69% confidence-adjusted return, for Buy / Initiate economics. Bear payoff and the unaccepted digital-attention ecosystem relationship keep allocation ineligible; exactly one relationship review was queued and no strategy or paper-trading state changed.",
+  "validation": {
+    "checks": [
+      "Verified the immutable issuer, ADR ratio, venue, currency and provider identity.",
+      "Registered current primary results with exact source hash and used fresh price/FX.",
+      "Wrote one accepted scenario-complete assessment after correcting a future timestamp through immutable retry artifacts.",
+      "Searched the idea catalog and queued exactly one material candidate relationship.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

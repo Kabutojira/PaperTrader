@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amzn_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm",
+  "source_type": "filing",
+  "title": "Amazon.com, Inc. Form 10-Q for the quarter ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb",
+  "related_entity_ids": "security_2433a056eb0c55961fcc|idea_ai_compute_networking_hyperscaler_monetization",
+  "checked_at": "2026-08-28T19:39:15Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Amazon's Q2 filing confirms strong operating growth alongside sharply higher AI infrastructure investment, negative trailing free cash flow, leverage and dilution considerations.",
+  "run_id": "local-youtube-watch-20260828T183401Z"
+}

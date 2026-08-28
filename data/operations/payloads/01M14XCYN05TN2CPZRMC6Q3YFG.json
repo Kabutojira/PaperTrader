@@ -1,0 +1,23 @@
+{
+  "entity_id": "relationship_0716cb4d18e5af297600",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_fisv_q2_2026_10q"
+    ],
+    "idea_id": "idea_digital_finance_crypto_rails",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject if digital-finance growth is immaterial to Fiserv, clients leave, Clover stalls, pricing compresses, or debt and remediation absorb operating cash flow.",
+    "proposed_mechanism": "Bank processing, merchant acquiring, networks and Clover can convert digital-payment adoption into recurring processing revenue and cash flow if retention, growth and execution recover.",
+    "relationship_id": "relationship_0716cb4d18e5af297600",
+    "security_id": "security_d202772e4e62065cd17a"
+  },
+  "objective": "Review Fiserv's causal relationship to digital finance and payment rails without treating crypto exposure as required.",
+  "operation_id": "01M14XCYN05TN2CPZRMC6Q3YFG",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_digital_finance_crypto_rails.md",
+    "data/wiki/securities/security_d202772e4e62065cd17a.md"
+  ]
+}

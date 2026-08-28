@@ -1,0 +1,53 @@
+{
+  "entity_id": "security_4935c6e39e38273a1731",
+  "entity_type": "security",
+  "inputs": {
+    "merged_input_values": {
+      "research_focus": [
+        "Verify the current NASDAQ:FISV identity; test the Clover and 2027-2028 recovery thesis against Q2 2026 deterioration, guidance, cash conversion, leverage, client execution, competition and valuation; treat the video only as a lead.",
+        "Assess commerce, payments, logistics, advertising and credit economics across major markets; credit losses, funding, currency, regulation, competition, capital intensity and valuation."
+      ],
+      "trigger": [
+        "The curated screen presented Fiserv as an owned recovery candidate, while current Q2 2026 issuer results show revenue, organic growth and adjusted EPS declines that require an independent assessment.",
+        "Identity-mapping correction: this canonical security is MercadoLibre, not Fiserv; the video's growth and easing-credit-risk thesis requires independent verification."
+      ]
+    },
+    "research_focus": "Verify the current NASDAQ:FISV identity; test the Clover and 2027-2028 recovery thesis against Q2 2026 deterioration, guidance, cash conversion, leverage, client execution, competition and valuation; treat the video only as a lead.",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_4935c6e39e38273a1731:youtube-ef69b7279753:2026-08-28",
+        "observed_at": "2026-08-28T18:53:37Z",
+        "prompt": "Research and value Fiserv after a curated-video recovery lead and weaker current issuer results.",
+        "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+        "source_refs": [
+          "https://investors.fiserv.com/news-releases/news-release-details/fiserv-reports-second-quarter-2026-results",
+          "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_4935c6e39e38273a1731:youtube-identity-correction:2026-08-28",
+        "observed_at": "2026-08-28T19:03:46Z",
+        "prompt": "CORRECTION: research canonical security_4935c6e39e38273a1731 as MercadoLibre (MELI), disregarding the earlier Fiserv label attached by ingest ID-order mapping.",
+        "source": "controller_identity_mapping_correction",
+        "source_refs": [
+          "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+          "https://investor.mercadolibre.com/news-and-events",
+          "https://investor.mercadolibre.com/sec-filings"
+        ]
+      }
+    ],
+    "security_id": "security_4935c6e39e38273a1731",
+    "trigger": "The curated screen presented Fiserv as an owned recovery candidate, while current Q2 2026 issuer results show revenue, organic growth and adjusted EPS declines that require an independent assessment."
+  },
+  "objective": "Research and value Fiserv after a curated-video recovery lead and weaker current issuer results. | Additional cause: CORRECTION: research canonical security_4935c6e39e38273a1731 as MercadoLibre (MELI), disregarding the earlier Fiserv label attached by ingest ID-order mapping.",
+  "operation_id": "01M14VGSV8RMPCJSXPQN19CSSM",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+    "https://investor.mercadolibre.com/news-and-events",
+    "https://investor.mercadolibre.com/sec-filings",
+    "https://investors.fiserv.com/news-releases/news-release-details/fiserv-reports-second-quarter-2026-results",
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+  ]
+}

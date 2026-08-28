@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_3a49fe7041b8dc52a933",
+  "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+  "security_id": "security_d12e746b3c9d392183cc",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Meta deploys AI compute and networking to improve recommendations, engagement, advertising returns, content tools and messaging monetization; shareholder value appears only when incremental revenue and margins exceed infrastructure, talent, financing, stock-compensation and Reality Labs costs.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "AI-driven engagement and advertiser returns remain measurable, advertising and messaging revenue compound, infrastructure utilization and margins improve, capital spending normalizes, and per-share free-cash-flow conversion recovers.",
+  "invalidation": "AI investment does not produce durable engagement, advertising or messaging economics sufficient to offset capital spending, depreciation, debt and stock compensation; regulation impairs monetization; or Reality Labs and legal costs absorb the benefit.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_3a49fe7041b8dc52a933.md",
+  "last_reviewed_at": "2026-08-28T20:17:00Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

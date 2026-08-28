@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-18"
+updated: "2026-08-28"
 provenance: "source_meta_q2_2026_10q|source_meta_q2_2026_results"
 security_id: security_d12e746b3c9d392183cc
 issuer_id: issuer_0777ea72e7e5e9618310
@@ -16,42 +16,39 @@ venue_mic: XNAS
 provider_symbol: META
 currency: USD
 confidence: medium
-next_review: "2026-09-17"
+next_review: "2026-09-27"
 ---
 
 # Meta Platforms, Inc. Class A common stock
 
 ## Decision
 
-**Watch; no conviction strategy.** Meta's Q2 advertising and audience evidence remains strong, but
-the August alerts do not show that AI capital intensity, legal exposure, Reality Labs losses, or weak
-latest free-cash-flow conversion have improved. The August 14 bullish MACD crossover was temporary
-stabilization within a decline; by August 18 the MACD histogram was negative again and the USD 543.67
-close was 0.43% below the lower Bollinger band. The unchanged USD 400 / USD 600 / USD 800 scenarios
-produce USD 580 probability-weighted value. The lower mark restores modest base upside but still
-fails confidence-adjusted expected-return and downside-payoff gates, and no accepted relationship
-exists.
+**Hold / Watch; no strategy.** Meta's Q2 advertising and audience evidence remains strong, but the
+video's double-digit-return claim does not account for AI capital intensity, legal exposure,
+Reality Labs losses, or weak latest free-cash-flow conversion. At the refreshed USD 571.10 mark,
+the unchanged USD 400 / USD 600 / USD 800 scenarios produce USD 580 probability-weighted value,
+only 1.6% expected return and 5.1% base upside. Expected-return and downside-payoff gates fail, and
+the candidate AI-monetization relationship remains pending.
 
 ## Changes since prior review
 
 - **Evidence and facts:** The registered Q2 Form 10-Q and issuer results were rechecked with unchanged
-  content hashes. No new retained primary evidence changes the business conclusion. Market evidence
-  is new through August 18.
-- **Alerts and timing:** The August 14 MACD cross above signal followed an 8.69% decline from July 17,
-  but the close then fell 7.83% to USD 543.67 by August 18. The August 18 close was down 15.55% from
-  July 21 and 0.43% below the lower Bollinger band; RSI was weak but not oversold at 36.20 and volume
-  was not anomalous. This is continuing repricing and timing risk, not a stand-alone opportunity.
+  content hashes. No retained primary evidence changes the business conclusion; the new inputs are
+  the video-derived lead and market state through August 28.
+- **Alerts and timing:** The prior August 14 and August 18 alert interpretation is unchanged. The
+  later USD 571.10 mark is above the prior USD 543.67 assessment mark, reducing prospective return;
+  the video claim is neither primary evidence nor a stand-alone opportunity.
 - **Valuation assumptions and outputs:** Normalized EPS, multiples, probabilities, and USD 400 / USD
   600 / USD 800 fair values are unchanged because no new fundamental evidence justifies revising
-  them. At USD 543.67, bear/base/bull returns improve to about -26.43% / +10.36% / +47.15%; expected
-  return is about 6.68% and medium-confidence-adjusted expected return about 5.01%.
+  them. At USD 571.10, bear/base/bull returns are about -29.96% / +5.06% / +40.08%; expected return
+  is about 1.56% and medium-confidence-adjusted expected return about 1.17%.
 - **Thesis, catalysts, risks, blockers, and gaps:** The advertising thesis, catalysts, invalidation,
   scores, and no-hard-blocker conclusion are unchanged. AI spending productivity, per-share cash
   conversion, Reality Labs losses, legal and regulatory exposure, medium confidence, weak timing,
   downside payoff, and the pending relationship remain unresolved.
-- **Rating and action:** Hold / Watch remains unchanged. The mark now clears the minimum base-upside
-  threshold by a small amount, but expected return, bear/base payoff, expected/bear payoff, and the
-  relationship gate still block allocation and conviction strategy research.
+- **Rating and action:** Hold / Watch remains unchanged. Expected return, base upside, bear/base
+  payoff, expected/bear payoff, and the pending relationship still block allocation and strategy
+  research. No strategy, signal, order, or paper-trading state is created.
 
 ## Immutable identity
 
@@ -154,24 +151,23 @@ capital-intensity and dilution treatment:
   monetization, messaging adds profit, capex productivity becomes visible, and regulatory outcomes
   remain manageable.
 
-Against USD 543.67, the cases imply about **-26.43%**, **+10.36%**, and **+47.15%**. Probability-
-weighted fair value is USD 580, or about **+6.68%** before the medium-confidence adjustment and
-**+5.01%** after it. The base-upside-to-bear-downside ratio is only about **0.39**, and the 20%
-margin-of-safety buy zone remains USD 480. The current mark clears minimum base upside but fails the
-expected-return and downside-payoff gates. No accepted canonical idea relationship exists, so the
-relationship gate is also pending.
+Against USD 571.10, the cases imply about **-29.96%**, **+5.06%**, and **+40.08%**. Probability-
+weighted fair value is USD 580, or about **+1.56%** before the medium-confidence adjustment and
+**+1.17%** after it. The base-upside-to-bear-downside ratio is only about **0.17**, and the 20%
+margin-of-safety buy zone remains USD 480. The current mark fails expected-return, base-upside and
+downside-payoff gates. The canonical AI-monetization relationship is pending.
 
 ## Sources
 
 - [Meta Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm)
-  (`source_meta_q2_2026_10q`, rechecked 2026-08-18 with unchanged hash).
+  (`source_meta_q2_2026_10q`, rechecked 2026-08-28 with unchanged hash).
 - [Meta Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm)
-  (`source_meta_q2_2026_results`, rechecked 2026-08-18 with unchanged hash).
+  (`source_meta_q2_2026_results`, rechecked 2026-08-28 with unchanged hash).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_d12e746b3c9d392183cc.csv`, market date 2026-08-18 and retrieved
-  2026-08-18; the triggering packets remain anchored to August 14 and August 18.
+  `data/market/prices/security_d12e746b3c9d392183cc.csv`, retrieved `2026-08-28T19:01:02Z`; the
+  triggering packets remain anchored to August 14 and August 18.
 
-Next review: **2026-09-17**, or sooner after a material advertising, AI monetization, capital-
+Next review: **2026-09-27**, or sooner after a material advertising, AI monetization, capital-
 spending, cash-conversion, legal, regulatory, or Reality Labs development.
 
 Related navigation: [[security-catalog|Securities]], [[signals|Signals and research alerts]], and

@@ -1,0 +1,38 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Defensive-consumer cash-return research now incorporates Ahold's Hold / Watch assessment and accepted causal edge without expanding the selected universe."
+  ],
+  "evidence": [
+    {
+      "claim": "Ahold's accepted assessment is Hold / Watch at EUR30.57 versus EUR33 weighted value, with modest expected return and downside-payoff constraints.",
+      "source": "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/agent_result.json"
+    },
+    {
+      "claim": "The defensive-consumer relationship to Ahold is accepted with medium sensitivity and medium confidence.",
+      "source": "data/wiki/relationships/relationship_a1d0c5e7b2894f6310aa.md"
+    }
+  ],
+  "files_changed": [
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14WTZERPFABHR26M4HENBH9",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Refreshed defensive consumer cash-return resilience from Ahold Delhaize's completed assessment and accepted relationship. The idea now records Ahold as a reviewed Hold / Watch exposure with EUR33 weighted value versus EUR30.57 and a causal but valuation-constrained edge. The ten-security boundary was preserved and no follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Consumed the terminally accepted Ahold result and relationship.",
+      "Updated only the bounded idea page and append-only log.",
+      "Strict schema, queue and wiki checks passed.",
+      "Created no security, relationship, strategy or trading follow-up."
+    ],
+    "passed": true
+  }
+}

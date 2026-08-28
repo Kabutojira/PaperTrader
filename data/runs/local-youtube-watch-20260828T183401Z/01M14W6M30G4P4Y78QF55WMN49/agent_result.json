@@ -1,0 +1,71 @@
+{
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_ahold.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_nomad.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_dominos.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_ahold_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_nomad_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_dominos_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Created the bounded defensive consumer cash-return resilience idea. Ahold Delhaize, Nomad Foods and Domino's are candidates pending separate security and relationship reviews; current evidence is mixed and no headline yield was treated as proof."
+  ],
+  "evidence": [
+    {
+      "claim": "Ahold reported EUR23.2 billion sales, 8.6% online growth, a 3.9% underlying margin and at least EUR2.3 billion free-cash-flow guidance; its EUR0.51 interim dividend follows a 40–50% payout policy.",
+      "observed_at": "2026-08-28T19:06:00Z",
+      "source": "Ahold Delhaize Q2 2026 results and dividend policy",
+      "url": "https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/"
+    },
+    {
+      "claim": "Nomad reported revenue down 3.1%, organic revenue down 2.9%, volume down 5.9% and price/mix up 3.0%, making the proposed resilience relationship plausible but unaccepted and highly sensitive.",
+      "observed_at": "2026-08-28T19:06:00Z",
+      "source": "Nomad Foods Q2 2026 results",
+      "url": "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+    },
+    {
+      "claim": "Domino's reported 3.0% global retail-sales growth, 0.1% U.S. comparable-sales growth and 3.1% operating-income growth, supporting a franchise-cash hypothesis but not a conclusion about valuation or leverage.",
+      "observed_at": "2026-08-28T19:06:00Z",
+      "source": "Domino's Q2 2026 results",
+      "url": "https://ir.dominos.com/node/24771"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14V3QW82X4W0JJ5WGKWCAZH.json",
+    "data/operations/payloads/01M14VGVSR1WXDTCCFX51T1NXT.json",
+    "data/operations/payloads/01M14VH1N8WRQBZMJ6BYRG2WWG.json",
+    "data/operations/payloads/01M14WAZQR7NWPAESQPBYZFJWV.json",
+    "data/operations/payloads/01M14WB1P8QM5BEP0NE3F8PR2N.json",
+    "data/operations/payloads/01M14WB3MR8WA94HTF1GHP5DS4.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_ahold_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_dominos_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_nomad_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_ahold.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_dominos.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_nomad.json",
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14W6M30G4P4Y78QF55WMN49",
+  "operations_created": [
+    "01M14WAZQR7NWPAESQPBYZFJWV",
+    "01M14WB1P8QM5BEP0NE3F8PR2N",
+    "01M14WB3MR8WA94HTF1GHP5DS4"
+  ],
+  "status": "succeeded",
+  "summary": "Created one bounded defensive consumer cash-return idea after checking the complete idea and security catalogs. Classified Ahold Delhaize, Nomad Foods and Domino's as candidates with explicit mechanisms, contrary evidence and invalidation. Their existing unclaimed security reviews absorbed the idea-specific causes, and exactly one dependent relationship review was queued for each. No extra security or paper-trading state was created.",
+  "validation": {
+    "checks": [
+      "No existing maintained idea duplicated the cash-return mechanism.",
+      "The complete security catalog was searched and the explicit ten-security boundary retained only the three selected identities.",
+      "All three candidates are linked with status, direction, mechanism and evidence; none is represented as accepted.",
+      "Each existing security review absorbed one idea-specific cause and each pair has exactly one relationship review.",
+      "Strict wiki lint returned OK; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

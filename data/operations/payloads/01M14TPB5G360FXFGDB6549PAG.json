@@ -1,0 +1,18 @@
+{
+  "entity_id": "security_de0d83229b369a426b99",
+  "entity_type": "security",
+  "inputs": {
+    "research_focus": "Verify the TCEHY unsponsored ADR identity and 1:1 ordinary-share ratio; assess Tencent's games, Weixin, marketing, fintech, cloud and AI economics; reconcile accelerated compute investment and negative reported free cash flow with margins, net cash, investee value, buybacks, regulation and China/ADR risks; produce one scenario-complete assessment without treating the video as evidence.",
+    "security_id": "security_de0d83229b369a426b99",
+    "trigger": "Curated YouTube lead sYMrpUft-QY raised a material Tencent ecosystem, AI-investment, and capital-return hypothesis that requires independent full security research."
+  },
+  "objective": "Research and value Tencent Holdings Limited unsponsored ADR after a curated-video lead and current primary-source verification.",
+  "operation_id": "01M14TPB5G360FXFGDB6549PAG",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "https://depositaryreceipts.citi.com/adr/guides/pgm_d.aspx?cusip=88032Q109&pageId=15&subpageid=106",
+    "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf",
+    "https://www.youtube.com/watch?v=sYMrpUft-QY"
+  ]
+}

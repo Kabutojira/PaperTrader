@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_94788036e5b3f3838959",
+  "resolution": "Confirmed that the only scope exception was the required year-based archive of the append-only research log after strict lint detected the 5,000-line threshold. Preserved every entry at a dated boundary, cataloged both log segments, passed final schema and wiki checks, and deterministically completed the reclaimed relationship operation."
+}

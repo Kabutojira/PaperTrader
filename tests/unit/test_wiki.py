@@ -67,3 +67,28 @@ This links to [[missing-page]].
 
     assert "ideas/idea-example.md: broken or ambiguous wikilink [[missing-page]]" in errors
     assert "ideas/idea-example.md: page is missing from index.md" in errors
+
+
+def test_wiki_lint_does_not_require_retired_archive_pages_in_public_index(
+    repository_root: Path, tmp_path: Path
+) -> None:
+    wiki = tmp_path / "wiki"
+    shutil.copytree(repository_root / "data" / "wiki", wiki)
+    page = wiki / "_archive" / "retired-example.md"
+    page.write_text(
+        """---
+title: Retired example
+type: meta
+status: maintained
+tags: [meta]
+created: "2026-07-24"
+updated: "2026-07-24"
+provenance: test
+---
+
+This retired page is intentionally absent from the public index.
+""",
+        encoding="utf-8",
+    )
+
+    assert lint_wiki(wiki) == []

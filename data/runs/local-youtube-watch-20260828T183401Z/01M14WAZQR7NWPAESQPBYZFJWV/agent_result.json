@@ -1,0 +1,52 @@
+{
+  "operation_id": "01M14WAZQR7NWPAESQPBYZFJWV",
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from defensive consumer cash-return resilience to Ahold Delhaize with medium sensitivity and medium confidence. Current Q2 issuer evidence supports a direct path through recurring grocery demand, online growth, operating cash flow and covered distributions, while volume, narrow margins, leases, leverage and capital allocation remain explicit constraints. No strategy or follow-up operation was created.",
+  "evidence": [
+    {
+      "source": "source_ahold_q2_2026_results",
+      "claim": "Ahold Delhaize reported EUR23.2 billion of Q2 sales, 8.6% online growth, a 3.9% underlying margin and reiterated at least EUR2.3 billion of 2026 free cash flow, supporting a direct but conditional cash-resilience mechanism.",
+      "url": "https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/",
+      "observed_at": "2026-08-28T19:51:00Z",
+      "source_hash": "e4d35071009571c8432b9620b401a4a69a0ce93720d3b2a4a1e7c125942287d5"
+    },
+    {
+      "source": "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+      "claim": "The maintained idea defines defensive demand and durable cash conversion, not headline yield alone, as the required causal mechanism."
+    },
+    {
+      "source": "data/wiki/securities/security_e19c7fe27fbcc4cd923d.md",
+      "claim": "The current Ahold assessment is Hold / Watch and remains subject to valuation and downside gates even after the relationship is accepted."
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14WAZQR7NWPAESQPBYZFJWV/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/_archive/log-2026.md",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_a1d0c5e7b2894f6310aa.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "operations_created": [],
+  "issues_recorded": [],
+  "daily_report_items": [
+    "Accepted the medium-confidence, medium-sensitivity defensive-consumer relationship to Ahold Delhaize; the operating edge is real, but valuation, downside and cash-transmission risks leave AD at Hold / Watch."
+  ],
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14WAZQR7NWPAESQPBYZFJWV/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "validation": {
+    "passed": true,
+    "checks": [
+      "Validated exact relationship, idea and immutable security endpoints with no equivalent edge.",
+      "Recorded direction, mechanism, sensitivity, confidence, catalyst, invalidation and accepted status through the CLI.",
+      "Rotated the append-only log at a dated boundary after its configured threshold was crossed, preserving all history and catalog reachability; recovery_validation.json documents the required archive-path exception.",
+      "Final strict wiki lint and schema validation passed.",
+      "No strategy, signal, order, allocation or accounting state changed."
+    ]
+  }
+}

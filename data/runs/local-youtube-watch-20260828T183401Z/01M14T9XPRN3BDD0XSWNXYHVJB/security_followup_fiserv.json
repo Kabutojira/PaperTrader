@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_4935c6e39e38273a1731",
+  "dedupe_key": "security_research:security_4935c6e39e38273a1731:youtube-ef69b7279753:2026-08-28",
+  "prompt": "Research and value Fiserv after a curated-video recovery lead and weaker current issuer results.",
+  "inputs": {
+    "security_id": "security_4935c6e39e38273a1731",
+    "trigger": "The curated screen presented Fiserv as an owned recovery candidate, while current Q2 2026 issuer results show revenue, organic growth and adjusted EPS declines that require an independent assessment.",
+    "research_focus": "Verify the current NASDAQ:FISV identity; test the Clover and 2027-2028 recovery thesis against Q2 2026 deterioration, guidance, cash conversion, leverage, client execution, competition and valuation; treat the video only as a lead."
+  },
+  "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+    "https://investors.fiserv.com/news-releases/news-release-details/fiserv-reports-second-quarter-2026-results"
+  ],
+  "max_attempts": 3
+}

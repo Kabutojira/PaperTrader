@@ -1,0 +1,49 @@
+{
+  "agent_batch_version": 1,
+  "completed_at": "2026-08-28T20:24:19Z",
+  "estimated_cost_per_operation": "0",
+  "estimated_model_budget_used": "0",
+  "maximum_model_budget": "5",
+  "maximum_operations": 20,
+  "operation_count": 9,
+  "outcomes": [
+    {
+      "operation_id": "01M14YPBV8VHE0KWESDGGRN6E5",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14XCYN05TN2CPZRMC6Q3YFG",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14XP3M0SWH01F37P4A3KCYT",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14Y903R9M20HYXRNY7A0KS3",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14YKPWGYX8B9H2W4F5G18X2",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14WTZERPFABHR26M4HENBH9",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14XJ5MRC2PKFQW5MT8ZWAX9",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14XT1K8H8FRQBKS0GD624RM",
+      "status": "succeeded"
+    },
+    {
+      "operation_id": "01M14XY5E0D6QSJHZXK8BYD5MJ",
+      "status": "succeeded"
+    }
+  ],
+  "run_id": "local-youtube-graph-20260828T200600Z",
+  "started_at": "2026-08-28T20:10:24Z"
+}

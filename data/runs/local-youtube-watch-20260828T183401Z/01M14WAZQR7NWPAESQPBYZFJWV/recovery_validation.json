@@ -1,0 +1,15 @@
+{
+  "recovery_version": 1,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "operation_id": "01M14WAZQR7NWPAESQPBYZFJWV",
+  "validated_at": "2026-08-28T19:55:00Z",
+  "passed": true,
+  "basis": "The relationship row, page, catalog and current log are within the declared relationship-research scope and validated. The sole harness error was the archived half of the append-only log, created because strict wiki lint required year-based rotation after the 5,000-line threshold was crossed. Final schema and wiki checks passed, all history was preserved, and no trading state changed.",
+  "checks": [
+    "the accepted edge has exact immutable endpoints and all required causal fields",
+    "the final current log is below 5,000 lines and the dated 2026 archive is below the ordinary-page byte limit",
+    "the archive and current log preserve every prior entry at a dated boundary",
+    "the research catalog makes both log segments reachable",
+    "final strict wiki lint and schema validation passed"
+  ]
+}

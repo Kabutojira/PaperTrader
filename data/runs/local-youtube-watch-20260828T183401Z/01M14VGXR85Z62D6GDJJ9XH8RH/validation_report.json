@@ -1,0 +1,25 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14XCYN05TN2CPZRMC6Q3YFG.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGXR85Z62D6GDJJ9XH8RH/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_d202772e4e62065cd17a.md"
+  ],
+  "completed_at": "2026-08-28T19:27:14Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14VGXR85Z62D6GDJJ9XH8RH",
+  "passed": true,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

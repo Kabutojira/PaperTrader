@@ -1,0 +1,18 @@
+{
+  "source_id": "source_amzn_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm",
+  "source_type": "issuer_release",
+  "title": "Amazon Announces Second Quarter Results",
+  "publisher": "Amazon.com, Inc. via U.S. Securities and Exchange Commission",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895",
+  "related_entity_ids": "security_2433a056eb0c55961fcc|idea_ai_compute_networking_hyperscaler_monetization",
+  "checked_at": "2026-08-28T19:39:15Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Amazon reported Q2 sales growth of 20%, operating-income growth of 43% and AWS sales growth of 37%, while the Anthropic valuation gain made reported net income non-recurring.",
+  "run_id": "local-youtube-watch-20260828T183401Z"
+}

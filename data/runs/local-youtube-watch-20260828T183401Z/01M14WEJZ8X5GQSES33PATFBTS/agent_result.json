@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14WEJZ8X5GQSES33PATFBTS/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Uber's high-sensitivity mobility-platform and autonomy edge; current growth and cash flow support the mechanism, but autonomy disintermediation and downside risks keep UBER allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Uber reported Q2 bookings growth of 24%, trip growth of 18%, revenue growth of 12%, USD1.9 billion of operating income and USD2.8 billion of free cash flow, supporting a direct network-to-cash mechanism.",
+      "observed_at": "2026-08-28T20:00:02Z",
+      "source": "source_uber_q2_2026_10q",
+      "source_hash": "5aa56769ca3e3d8735d1122e85269a5b9cd68fcb4bd2fa58fa6b19b65b019ffa",
+      "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14WEJZ8X5GQSES33PATFBTS/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_d403f81ae5b27c9643dd.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14WEJZ8X5GQSES33PATFBTS",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from mobility-platform network economics and autonomy to Uber with high sensitivity and medium confidence. Current bookings, trips, operating income and free cash flow support a direct marketplace mechanism, while autonomy disintermediation, insurance, regulation, incentives and partner bargaining remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

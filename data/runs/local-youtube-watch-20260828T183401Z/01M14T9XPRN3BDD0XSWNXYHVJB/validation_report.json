@@ -1,0 +1,35 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M0T6VA68PFSMJMFE6JC3CA0B.json",
+    "data/operations/payloads/01M14VGSV8RMPCJSXPQN19CSSM.json",
+    "data/operations/payloads/01M14VGVSR1WXDTCCFX51T1NXT.json",
+    "data/operations/payloads/01M14VGXR85Z62D6GDJJ9XH8RH.json",
+    "data/operations/payloads/01M14VGZPRSXPKBED8XS85DJ2M.json",
+    "data/operations/payloads/01M14VH1N8WRQBZMJ6BYRG2WWG.json",
+    "data/operations/payloads/01M14VH5J8BNYBNN2K5XZSVWV0.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_amazon.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_dominos.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_fiserv.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_mercadolibre.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_meta.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_nomad.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/security_followup_uber.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/source_record_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/watchlist_import_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/youtube_analysis.md",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-08-28T18:57:11Z",
+  "errors": [
+    "commands_run claims commands without deterministic CLI audit receipts: ['papertrader source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/source_record_request.json']"
+  ],
+  "harness": "local",
+  "operation_id": "01M14T9XPRN3BDD0XSWNXYHVJB",
+  "passed": false,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

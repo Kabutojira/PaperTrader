@@ -1,0 +1,8 @@
+{
+  "operation_id": "01M14T9XPRN3BDD0XSWNXYHVJB",
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "terminal_status": "succeeded",
+  "result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14T9XPRN3BDD0XSWNXYHVJB/agent_result.json",
+  "result_summary": "Reviewed the complete curated quadrant video, applied the declared screen, imported five verified public-equity identities, and routed the ten-name watchlist to independent research without changing paper-trading state.",
+  "terminal_reason": "youtube_leads_ranked_verified_and_routed"
+}

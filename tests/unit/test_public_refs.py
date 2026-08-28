@@ -9,6 +9,7 @@ import pytest
 
 from papertrader.logs import record_completed_run
 from papertrader.public_refs import PublicEntityResolver
+from papertrader.tables import write_table
 from papertrader.utils import CanonicalValueError
 
 
@@ -96,3 +97,99 @@ def test_humanize_sanitizes_rejected_operation_without_weakening_explicit_resolu
     assert "unaccepted operation" in rendered
     with pytest.raises(CanonicalValueError, match="required public operation reference"):
         resolver.markdown("operation", rejected_operation_id)
+
+
+def test_humanize_resolves_pending_strategy_operation_through_security(
+    sandbox_repository: Path,
+) -> None:
+    operation_id = "01M14ZK4R0MKRN5KGFDGVXV3MB"
+    security_id = "security_8b703a8adf5f864acaa4"
+    strategy_id = "strategy_8caa208dfc702a2584a7"
+    write_table(
+        sandbox_repository,
+        "securities",
+        [
+            {
+                "security_id": security_id,
+                "issuer_id": "issuer_prosus_fixture",
+                "company_name": "Prosus N.V.",
+                "instrument_name": "Prosus N.V. ordinary shares",
+                "instrument_type": "equity",
+                "ticker": "PRX",
+                "exchange_code": "AMS",
+                "venue_mic": "XAMS",
+                "provider_symbol": "PRX.AS",
+                "broker_symbol": "",
+                "currency": "EUR",
+                "country": "NL",
+                "sector": "Communication Services",
+                "industry": "Internet Content & Information",
+                "status": "watching",
+                "watchlist_reason": "Fixture.",
+                "research_summary": "Fixture.",
+                "research_page": "",
+                "last_research_at": "",
+                "next_review_at": "",
+                "created_at": "2026-08-28T20:04:48Z",
+                "updated_at": "2026-08-28T20:04:48Z",
+                "source": "fixture",
+            }
+        ],
+    )
+    payload_path = f"data/operations/payloads/{operation_id}.json"
+    payload = sandbox_repository / payload_path
+    payload.parent.mkdir(parents=True, exist_ok=True)
+    payload.write_text(
+        json.dumps(
+            {
+                "operation_id": operation_id,
+                "operation_type": "strategy_research",
+                "entity_type": "strategy",
+                "entity_id": strategy_id,
+                "inputs": {"security_id": security_id, "strategy_id": strategy_id},
+            }
+        ),
+        encoding="utf-8",
+    )
+    write_table(
+        sandbox_repository,
+        "operations_todo",
+        [
+            {
+                "operation_id": operation_id,
+                "created_at": "2026-08-28T20:04:48Z",
+                "updated_at": "2026-08-28T20:04:48Z",
+                "status": "ready",
+                "priority": "55",
+                "operation_type": "strategy_research",
+                "entity_type": "strategy",
+                "entity_id": strategy_id,
+                "not_before": "",
+                "deadline": "",
+                "depends_on": "",
+                "dedupe_key": "strategy-fixture",
+                "freshness_days": "0",
+                "skill_names": "llm-wiki|papertrader-strategy-research",
+                "prompt": "Research the bounded baseline allocation target.",
+                "payload_path": payload_path,
+                "source": "fixture",
+                "attempt_count": "0",
+                "max_attempts": "3",
+                "claimed_by_run_id": "",
+                "lease_expires_at": "",
+                "last_error": "",
+            }
+        ],
+    )
+
+    resolver = PublicEntityResolver(sandbox_repository)
+    rendered = resolver.humanize(f"Queued {operation_id} after allocation planning.")
+    direct_strategy = resolver.humanize(f"Pending {strategy_id} remains research-only.")
+
+    assert operation_id not in rendered
+    assert strategy_id not in rendered
+    assert "Strategy research for strategy for PRX" in rendered
+    assert "security-catalog#security-security_8b703a8adf5f864acaa4" in rendered
+    assert strategy_id not in direct_strategy
+    assert "strategy for PRX" in direct_strategy
+    assert "security-catalog#security-security_8b703a8adf5f864acaa4" in direct_strategy

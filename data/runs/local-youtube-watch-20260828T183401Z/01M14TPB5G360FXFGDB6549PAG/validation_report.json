@@ -1,0 +1,29 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14X8K0837TWWCR4EF1YB7W8.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request_v2.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/assessment_upsert_request_v3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request_v2.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/security_upsert_request_v3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TPB5G360FXFGDB6549PAG/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_de0d83229b369a426b99.md"
+  ],
+  "completed_at": "2026-08-28T19:24:56Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14TPB5G360FXFGDB6549PAG",
+  "passed": true,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

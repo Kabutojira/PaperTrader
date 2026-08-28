@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14WZXN8TRDQ5HN6ZA4ESFME/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Prosus' high-sensitivity digital-ecosystem edge through Tencent and private platforms; discount, debt and governance risks remain explicit."
+  ],
+  "evidence": [
+    {
+      "claim": "Prosus reported USD150.4 billion of NAV and EUR61.5 NAV per share, with Tencent representing USD117.0 billion; repurchases below NAV have reduced roughly 30% of free float and added about 18% to NAV per share.",
+      "observed_at": "2026-08-28T20:01:33Z",
+      "source": "source_prosus_nav_20260827",
+      "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+      "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14WZXN8TRDQ5HN6ZA4ESFME/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_e514a92bf6c38d0754ee.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14WZXN8TRDQ5HN6ZA4ESFME",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from digital attention, gaming and consumer ecosystems to Prosus with high sensitivity and medium confidence. Tencent dominates look-through NAV and discounted repurchases provide a measurable shareholder-transmission mechanism, while private marks, debt, governance and the holding-company discount remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

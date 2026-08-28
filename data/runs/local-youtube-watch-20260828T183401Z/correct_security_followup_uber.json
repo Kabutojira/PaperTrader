@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_e4822686f60a96824b6e",
+  "dedupe_key": "security_research:security_e4822686f60a96824b6e:youtube-identity-correction:2026-08-28",
+  "prompt": "CORRECTION: research canonical security_e4822686f60a96824b6e as Uber (UBER), disregarding the earlier Nomad Foods label attached by ingest ID-order mapping.",
+  "inputs": {
+    "security_id": "security_e4822686f60a96824b6e",
+    "trigger": "Identity-mapping correction: this canonical security is Uber, not Nomad Foods; the video's explicit high-risk buy framing requires an independent risk-adjusted assessment.",
+    "research_focus": "Assess mobility, delivery, advertising and membership economics; autonomous-vehicle displacement and investment, regulation, insurance, stock compensation, capital returns, cash conversion and valuation."
+  },
+  "source": "controller_identity_mapping_correction",
+  "priority": 67,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+  ],
+  "max_attempts": 3
+}

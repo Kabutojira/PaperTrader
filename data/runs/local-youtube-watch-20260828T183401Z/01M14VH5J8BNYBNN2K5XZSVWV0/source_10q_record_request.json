@@ -1,0 +1,18 @@
+{
+  "source_id": "source_meta_q2_2026_10q",
+  "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm",
+  "source_type": "filing",
+  "title": "Meta Platforms, Inc. quarterly report for the period ended June 30, 2026",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "public-record",
+  "status": "available",
+  "content_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492",
+  "related_entity_ids": "security_d12e746b3c9d392183cc|idea_ai_compute_networking_hyperscaler_monetization",
+  "checked_at": "2026-08-28T19:45:56Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "",
+  "summary": "Meta's Q2 filing confirms strong advertising demand alongside sharply higher costs, AI capital intensity, Reality Labs losses, weak latest free-cash-flow conversion and increased debt.",
+  "run_id": "local-youtube-watch-20260828T183401Z"
+}

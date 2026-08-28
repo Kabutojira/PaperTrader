@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_d202772e4e62065cd17a",
+  "dedupe_key": "security_research:security_d202772e4e62065cd17a:youtube-identity-correction:2026-08-28",
+  "prompt": "CORRECTION: research canonical security_d202772e4e62065cd17a as Fiserv (FISV), disregarding the earlier MercadoLibre label attached by ingest ID-order mapping.",
+  "inputs": {
+    "security_id": "security_d202772e4e62065cd17a",
+    "trigger": "Identity-mapping correction: this canonical security is Fiserv, not MercadoLibre; current Q2 2026 deterioration must be tested against the video's recovery thesis.",
+    "research_focus": "Verify NASDAQ:FISV; test Clover and 2027-2028 recovery against Q2 2026 revenue, organic-growth and adjusted-EPS declines, guidance, cash conversion, leverage, client execution, competition and valuation."
+  },
+  "source": "controller_identity_mapping_correction",
+  "priority": 67,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+    "https://investors.fiserv.com/news-releases/news-release-details/fiserv-reports-second-quarter-2026-results"
+  ],
+  "max_attempts": 3
+}

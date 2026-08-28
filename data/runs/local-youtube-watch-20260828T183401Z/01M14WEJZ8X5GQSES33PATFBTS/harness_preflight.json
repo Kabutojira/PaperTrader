@@ -1,0 +1,21 @@
+{
+  "controller_skill": {
+    "name": "papertrader-controller",
+    "path": "skills/papertrader-controller/SKILL.md",
+    "sha256": "fe2967cc3c170e0a158a57b6486e61121d57d591978fae7795b6d5f47594f882",
+    "version": "repository"
+  },
+  "harness": "local",
+  "operation_id": "01M14WEJZ8X5GQSES33PATFBTS",
+  "operation_skill": {
+    "name": "papertrader-relationship-research",
+    "path": "skills/papertrader-relationship-research/SKILL.md",
+    "sha256": "e43b5d5c136ce2bbe8ad995ea6d8f45d571f7b359ecc93c305538b841242efee",
+    "version": "repository"
+  },
+  "operation_type": "relationship_research",
+  "preflight_version": 1,
+  "prompt_injection_flags": [],
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "sequential": true
+}

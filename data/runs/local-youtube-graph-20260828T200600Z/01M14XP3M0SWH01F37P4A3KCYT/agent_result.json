@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14XP3M0SWH01F37P4A3KCYT/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted MercadoLibre's high-sensitivity digital-finance edge; commerce and payments reinforce one another, while credit, funding, currencies and regulation keep MELI allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "MercadoLibre reported Q2 net revenue and financial income growth of 50% to USD10.169 billion, total payment volume of USD101 billion and GMV of USD21.9 billion, establishing material digital-finance and commerce-network exposure.",
+      "observed_at": "2026-08-28T20:13:00Z",
+      "source": "source_meli_q2_2026_10q",
+      "source_hash": "85735e1b15cc55c818ce48466da7e5ab7856ad35248db8ae1d366e45bbe75782",
+      "url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/meli-20260630.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14XP3M0SWH01F37P4A3KCYT/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_1827dc5e29f6ba308711.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14XP3M0SWH01F37P4A3KCYT",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from digital finance and payment rails to MercadoLibre with high sensitivity and medium confidence. Mercado Pago, acquiring, wallets, credit and the commerce network provide direct material exposure without requiring crypto, while losses, funding, currencies and regulation remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

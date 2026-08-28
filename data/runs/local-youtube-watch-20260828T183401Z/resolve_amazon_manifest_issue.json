@@ -1,0 +1,4 @@
+{
+  "issue_id": "issue_502df005a1befb8f5ce6",
+  "resolution": "Split the combined source-hash field into two independently attributed evidence entries, verified each contains one valid SHA-256 value, retained a recovery-validation artifact, and deterministically completed the reclaimed Amazon operation. No research or trading-state mutation was lost or repeated."
+}

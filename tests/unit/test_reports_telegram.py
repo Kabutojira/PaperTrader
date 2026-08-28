@@ -18,7 +18,7 @@ from papertrader.investor_pages import (
     ResearchDecisionView,
     investor_brief_markdown,
 )
-from papertrader.reports import NarrativeItem, generate_daily_report
+from papertrader.reports import NarrativeItem, _wiki_changes, generate_daily_report
 from papertrader.tables import read_table
 from papertrader.telegram import (
     TelegramDeliveryError,
@@ -34,6 +34,34 @@ from papertrader.telegram import (
 )
 from papertrader.utils import content_hash
 from papertrader.wiki import lint_wiki
+
+
+def test_daily_report_changes_exclude_non_public_wiki_directories(
+    sandbox_repository: Path,
+) -> None:
+    wiki_root = sandbox_repository / "data" / "wiki"
+    for directory in ("_archive", "_meta", "inbox", "raw"):
+        path = wiki_root / directory / "updated-today.md"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            "---\n"
+            f'title: "{directory} fixture"\n'
+            "type: meta\n"
+            "status: maintained\n"
+            "tags: [meta]\n"
+            'created: "2026-07-24"\n'
+            'updated: "2026-07-24"\n'
+            "provenance: fixture\n"
+            "---\n",
+            encoding="utf-8",
+        )
+
+    changes = _wiki_changes(wiki_root, date(2026, 7, 24))
+
+    assert "research-catalog" in changes
+    assert all(
+        not change.startswith(("_archive/", "_meta/", "inbox/", "raw/")) for change in changes
+    )
 
 
 def test_daily_report_matches_reference_and_registers_one_canonical_page(

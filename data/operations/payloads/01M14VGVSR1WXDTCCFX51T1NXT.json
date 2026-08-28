@@ -1,0 +1,65 @@
+{
+  "entity_id": "security_98a1943771da875efed5",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_defensive_consumer_cash_return",
+    "merged_input_values": {
+      "research_focus": [
+        "Assess mobility, delivery, advertising and membership economics; test autonomous-vehicle displacement and investment risk, regulation, insurance, stock compensation, capital returns, cash conversion and valuation; treat the video only as a lead.",
+        "Assess frozen-food brand durability, pricing and volume, restructuring execution, margins, free cash flow, leverage, dividends, retailer concentration and valuation.",
+        "Test volume, price/mix, margins, restructuring, working capital, leverage, dividend coverage and valuation."
+      ],
+      "trigger": [
+        "The curated screen called Uber a great buy while explicitly describing it as a high-risk bet; current issuer growth and cash generation justify a full risk-adjusted review.",
+        "Identity-mapping correction: this canonical security is Nomad Foods, not Uber; falling Q2 volume must be tested against the video's dividend and restructuring thesis.",
+        "Candidate positive but sensitive relationship through branded frozen-food cash flow, restructuring and distributions."
+      ]
+    },
+    "research_focus": "Assess mobility, delivery, advertising and membership economics; test autonomous-vehicle displacement and investment risk, regulation, insurance, stock compensation, capital returns, cash conversion and valuation; treat the video only as a lead.",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_98a1943771da875efed5:youtube-ef69b7279753:2026-08-28",
+        "observed_at": "2026-08-28T18:53:39Z",
+        "prompt": "Research and value Uber after a curated-video high-risk buy lead.",
+        "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+        "source_refs": [
+          "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+          "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_98a1943771da875efed5:youtube-identity-correction:2026-08-28",
+        "observed_at": "2026-08-28T19:03:49Z",
+        "prompt": "CORRECTION: research canonical security_98a1943771da875efed5 as Nomad Foods (NOMD), disregarding the earlier Uber label attached by ingest ID-order mapping.",
+        "source": "controller_identity_mapping_correction",
+        "source_refs": [
+          "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+          "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_98a1943771da875efed5:idea-defensive-consumer-cash-return:2026-08-28",
+        "observed_at": "2026-08-28T19:07:52Z",
+        "prompt": "Research Nomad Foods' causal exposure to defensive consumer cash-return resilience using current Q2 evidence.",
+        "source": "idea_research:01M14W6M30G4P4Y78QF55WMN49",
+        "source_refs": [
+          "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+          "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+        ]
+      }
+    ],
+    "security_id": "security_98a1943771da875efed5",
+    "trigger": "The curated screen called Uber a great buy while explicitly describing it as a high-risk bet; current issuer growth and cash generation justify a full risk-adjusted review."
+  },
+  "objective": "Research and value Uber after a curated-video high-risk buy lead. | Additional cause: CORRECTION: research canonical security_98a1943771da875efed5 as Nomad Foods (NOMD), disregarding the earlier Uber label attached by ingest ID-order mapping. | Additional cause: Research Nomad Foods' causal exposure to defensive consumer cash-return resilience using current Q2 evidence.",
+  "operation_id": "01M14VGVSR1WXDTCCFX51T1NXT",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+    "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/",
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+  ]
+}

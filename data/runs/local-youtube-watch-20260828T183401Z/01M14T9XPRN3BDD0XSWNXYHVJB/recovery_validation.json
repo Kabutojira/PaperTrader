@@ -1,0 +1,15 @@
+{
+  "recovery_version": 1,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "operation_id": "01M14T9XPRN3BDD0XSWNXYHVJB",
+  "validated_at": "2026-08-28T18:57:45Z",
+  "passed": true,
+  "basis": "The first local-harness validation reported exactly one error: commands_run included a mistyped, non-mutating command for which no audit receipt existed. The manifest was corrected to list exactly the ten canonical commands present in command_audit.json. All other validator checks had passed, the corrected command lists were compared in order, and the operation was deterministically reclaimed before completion.",
+  "checks": [
+    "agent_result.json commands_run exactly matches command_audit.json entries in order",
+    "the rejected command changed no repository files",
+    "the original validation reported no other errors",
+    "the operation remained within its wiki_ingest mutation scope",
+    "strict wiki lint succeeded"
+  ]
+}

@@ -159,6 +159,8 @@ def lint_wiki(wiki_root: Path) -> list[str]:
                 reachable.add(target)
                 pending.append(target)
     for key in sorted(page_keys.difference({"index"})):
+        if key.startswith("_archive/"):
+            continue
         if key not in reachable:
             errors.append(f"{key}.md: page is missing from index.md")
     return errors

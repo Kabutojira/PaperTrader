@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14WB1P8QM5BEP0NE3F8PR2N/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Nomad Foods' high-sensitivity defensive-consumer cash-return edge, while volume contraction, restructuring, leverage and cash conversion keep the security allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Nomad Foods reported Q2 revenue down 3.1%, organic revenue down 2.9%, volume down 5.9% and price/mix up 3.0%, making cash resilience plausible but explicitly conditional on volume stabilization and restructuring.",
+      "observed_at": "2026-08-28T19:56:50Z",
+      "source": "source_nomd_q2_2026_results",
+      "source_hash": "13a5be37bacbab7edcdaec5c6b998e803a218dd8dc6db6e5a27c7990473ddc35",
+      "url": "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14WB1P8QM5BEP0NE3F8PR2N/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_b2e1d6f8c3905a7421bb.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14WB1P8QM5BEP0NE3F8PR2N",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from defensive consumer cash-return resilience to Nomad Foods with high sensitivity and medium confidence. Branded frozen-food demand, price/mix, restructuring and working-capital discipline provide a direct mechanism, while current volume contraction, leverage and execution risk remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

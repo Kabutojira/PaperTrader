@@ -1,0 +1,63 @@
+{
+  "commands_run": [
+    "papertrader watchlist import --request data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/watchlist_import_request.json",
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/source_record_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/security_followup_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Reviewed the curated Ahold Delhaize video as untrusted lead material. Current disclosures verify the defensive operating and cash-flow mechanism but not the rate-only price narrative; AD.AS was imported identity-only and routed to one full security review."
+  ],
+  "evidence": [
+    {
+      "claim": "The bounded caption helper returned two English auto-generated chunks on attempt 1, covering 00:00:00.000 through 00:07:54.120 with canonical normalized transcript hash 80c44af31231efb4af063124b77b88fef4ad3fb4c5ba77aff71b4fbd86be25fb. Both chunks and every segment were reviewed as untrusted lead data, with zero transcript words persisted.",
+      "observed_at": "2026-08-28T18:45:10Z",
+      "source": "youtube_q1mXnN2DANI",
+      "source_hash": "80c44af31231efb4af063124b77b88fef4ad3fb4c5ba77aff71b4fbd86be25fb",
+      "url": "https://www.youtube.com/watch?v=q1mXnN2DANI"
+    },
+    {
+      "claim": "Ahold Delhaize reported EUR23.2 billion sales, 1.9% constant-currency growth, 8.6% online growth, a 3.9% underlying margin and EUR0.63 diluted underlying EPS, while reiterating at least EUR2.3 billion free cash flow and around EUR2.7 billion capex. These facts support a defensive cash-flow hypothesis but not a guaranteed return.",
+      "observed_at": "2026-08-28T18:45:10Z",
+      "source": "Ahold Delhaize 2026 second-quarter results",
+      "url": "https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/"
+    },
+    {
+      "claim": "The issuer confirms a EUR0.51 interim dividend under a 40–50% payout policy. Euronext identifies the EUR-denominated XAMS ordinary share as AD, ISIN NL0011794037, supporting the imported AD.AS identity.",
+      "observed_at": "2026-08-28T18:45:10Z",
+      "source": "Ahold Delhaize dividend and Euronext disclosures",
+      "url": "https://aholddelhaize.com/investors/dividends"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14V3QW82X4W0JJ5WGKWCAZH.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/security_followup_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/source_record_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/watchlist_import_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0ZDXAER1CG0TT86H2QWE218/youtube_analysis.md",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0ZDXAER1CG0TT86H2QWE218",
+  "operations_created": [
+    "01M14V3QW82X4W0JJ5WGKWCAZH"
+  ],
+  "status": "succeeded",
+  "summary": "Reviewed both English auto-generated transcript chunks for the curated Ahold Delhaize video as untrusted lead material. Current issuer disclosures corroborate the Amsterdam identity, defensive grocery mechanism, low growth, online expansion, cash-flow outlook and dividend policy, but not the video's rate-only price explanation or return forecast. Imported only the AD.AS identity and enqueued exactly one dependent priority-66 security review. No assessment or paper-trading state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the single running wiki_ingest row, immutable Ahold Delhaize video/channel identities, sequential local preflight, and matching controller and operation-skill hashes.",
+      "Reviewed both returned English auto-caption chunks and every segment; no transcript, media, thumbnail, full description, or caption chunk was stored, and persisted transcript quotation is zero words.",
+      "Verified the material operating mechanism against current Ahold Delhaize results and dividend disclosure and the instrument identity against Euronext; return forecasts and price causality remain unverified opinions for independent research.",
+      "Imported exactly one new identity, security_e19c7fe27fbcc4cd923d, and enqueued exactly one priority-66 dependent security_research operation, 01M14V3QW82X4W0JJ5WGKWCAZH.",
+      "Source youtube_q1mXnN2DANI was recorded with publisher @Value-Investing, the canonical video URL, source type youtube_video, and the matching canonical transcript hash.",
+      "Strict wiki lint returned OK after the source review. The maintained-page catalog required no new entry because the comprehensive synthesis is confined to the non-Quartz run artifact.",
+      "No assessment, relationship, strategy, signal, allocation target/history, order, fill, execution, cash, position, portfolio, performance, or other paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

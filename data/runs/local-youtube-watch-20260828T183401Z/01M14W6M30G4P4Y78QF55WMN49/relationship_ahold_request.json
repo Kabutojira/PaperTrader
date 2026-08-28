@@ -1,0 +1,7 @@
+{
+  "operation_type": "relationship_research", "entity_type": "relationship", "entity_id": "relationship_a1d0c5e7b2894f6310aa",
+  "dedupe_key": "relationship_research:idea_defensive_consumer_cash_return:security_e19c7fe27fbcc4cd923d:2026-08-28",
+  "prompt": "Review whether Ahold Delhaize has a material causal relationship to defensive consumer cash-return resilience.",
+  "inputs": {"relationship_id": "relationship_a1d0c5e7b2894f6310aa", "idea_id": "idea_defensive_consumer_cash_return", "security_id": "security_e19c7fe27fbcc4cd923d", "proposed_direction": "positive", "proposed_mechanism": "Recurring grocery demand, online growth and disciplined payout can transmit operating resilience into per-share cash returns if margins, leases and leverage remain controlled.", "proposed_invalidation": "Reject if volume and margin deteriorate, cash flow depends on underinvestment or working-capital timing, lease-adjusted leverage rises, or distributions cease to be covered.", "evidence_refs": ["https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/"]},
+  "source": "idea_research:01M14W6M30G4P4Y78QF55WMN49", "priority": 66, "freshness_days": 0, "depends_on": ["01M14V3QW82X4W0JJ5WGKWCAZH"], "not_before": "now", "deadline": "", "source_refs": ["data/wiki/ideas/idea_defensive_consumer_cash_return.md"], "max_attempts": 3
+}

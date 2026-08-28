@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_e514a92bf6c38d0754ee",
+  "idea_id": "idea_digital_attention_gaming_ecosystems",
+  "security_id": "security_8b703a8adf5f864acaa4",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Prosus receives most look-through value from Tencent's games, attention, advertising and consumer-services ecosystem plus private ecommerce platforms; the benefit reaches PRX shareholders through NAV, private-asset cash flow and repurchases executed below NAV.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Tencent and private-platform value or cash flow grows, ecommerce profitability broadens, net debt remains controlled, transparent NAV persists and discounted-share repurchases continue to increase NAV per share.",
+  "invalidation": "Tencent or private-platform economics deteriorate materially; ecosystem exposure becomes immaterial after debt; governance or cross-holding complexity prevents value transmission; net debt rises; repurchases lose accretion; or the holding-company discount widens persistently despite operating value creation.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_e514a92bf6c38d0754ee.md",
+  "last_reviewed_at": "2026-08-28T20:01:33Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

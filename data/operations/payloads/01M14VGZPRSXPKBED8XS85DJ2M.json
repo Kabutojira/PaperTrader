@@ -1,0 +1,65 @@
+{
+  "entity_id": "security_e4822686f60a96824b6e",
+  "entity_type": "security",
+  "inputs": {
+    "idea_id": "idea_mobility_platform_autonomy",
+    "merged_input_values": {
+      "research_focus": [
+        "Assess frozen-food brand durability, pricing and volume, restructuring execution, margins, free cash flow, leverage, dividends, retailer concentration and valuation; treat the video only as a lead.",
+        "Assess mobility, delivery, advertising and membership economics; autonomous-vehicle displacement and investment, regulation, insurance, stock compensation, capital returns, cash conversion and valuation.",
+        "Test mobility, delivery, advertising, membership, insurance, regulatory and autonomy economics plus cash conversion and valuation."
+      ],
+      "trigger": [
+        "The curated screen cited income and a second-half restructuring catalyst, while current issuer results show declining revenue and volume alongside an asserted margin inflection.",
+        "Identity-mapping correction: this canonical security is Uber, not Nomad Foods; the video's explicit high-risk buy framing requires an independent risk-adjusted assessment.",
+        "Candidate two-sided relationship through demand aggregation, dispatch and autonomous-fleet partnerships."
+      ]
+    },
+    "research_focus": "Assess frozen-food brand durability, pricing and volume, restructuring execution, margins, free cash flow, leverage, dividends, retailer concentration and valuation; treat the video only as a lead.",
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_e4822686f60a96824b6e:youtube-ef69b7279753:2026-08-28",
+        "observed_at": "2026-08-28T18:53:43Z",
+        "prompt": "Research and value Nomad Foods after a curated-video turnaround and income lead.",
+        "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+        "source_refs": [
+          "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/",
+          "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_e4822686f60a96824b6e:youtube-identity-correction:2026-08-28",
+        "observed_at": "2026-08-28T19:03:41Z",
+        "prompt": "CORRECTION: research canonical security_e4822686f60a96824b6e as Uber (UBER), disregarding the earlier Nomad Foods label attached by ingest ID-order mapping.",
+        "source": "controller_identity_mapping_correction",
+        "source_refs": [
+          "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+          "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_e4822686f60a96824b6e:idea-mobility-platform-autonomy:2026-08-28",
+        "observed_at": "2026-08-28T19:09:51Z",
+        "prompt": "Research Uber's causal exposure to mobility-platform network economics and autonomous-vehicle transition risk.",
+        "source": "idea_research:01M14W6R00ZPN2DXT300CA7P2R",
+        "source_refs": [
+          "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+          "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+        ]
+      }
+    ],
+    "security_id": "security_e4822686f60a96824b6e",
+    "trigger": "The curated screen cited income and a second-half restructuring catalyst, while current issuer results show declining revenue and volume alongside an asserted margin inflection."
+  },
+  "objective": "Research and value Nomad Foods after a curated-video turnaround and income lead. | Additional cause: CORRECTION: research canonical security_e4822686f60a96824b6e as Uber (UBER), disregarding the earlier Nomad Foods label attached by ingest ID-order mapping. | Additional cause: Research Uber's causal exposure to mobility-platform network economics and autonomous-vehicle transition risk.",
+  "operation_id": "01M14VGZPRSXPKBED8XS85DJ2M",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+    "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx",
+    "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/",
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+  ]
+}

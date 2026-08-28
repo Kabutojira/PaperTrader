@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-26"
-updated: "2026-08-26"
+created: "2026-08-28"
+updated: "2026-08-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3d10ae98570e144e3ccc"
-as_of: "2026-08-26T17:11:24Z"
+snapshot_id: "decision_835c8431827585c591dd"
+as_of: "2026-08-28T20:24:48Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-26T17:11:24Z`
+**As of:** `2026-08-28T20:24:48Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,17 +21,17 @@ as_of: "2026-08-26T17:11:24Z"
 
 ## Coverage
 
-- Assessments: 46/70
-- Fresh-evidence assessments: 44/70
-- Relationship reviews: 13/70
-- Accepted relationships: 11
+- Assessments: 52/78
+- Fresh-evidence assessments: 51/78
+- Relationship reviews: 20/78
+- Accepted relationships: 19
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
-- Market success/failure: 72/0
+- Market success/failure: 80/0
 - Candidate FX gaps: 0
-- Research backlog: 469
-- Last successful daily run: 2026-08-23
+- Research backlog: 470
+- Last successful daily run: 2026-08-28
 
 ## Current issues by investment impact
 
@@ -90,6 +90,7 @@ as_of: "2026-08-26T17:11:24Z"
 - Warning **GEV — GE Vernova Inc.: Daily preparation degraded: [[securities/security_4b61970aa8f574446819|GEV]]** — [[securities/security_4b61970aa8f574446819|GEV]]: YFTzMissingError: $GEV: possibly delisted; no timezone found
 - Warning **ATKR — Atkore Inc.: Daily preparation degraded: [[securities/security_22c2b9d782a62d7a9b86|ATKR]]** — [[securities/security_22c2b9d782a62d7a9b86|ATKR]]: YFTzMissingError: $ATKR: possibly delisted; no timezone found
 - Warning **PLS.AX — PLS Group Limited: Daily preparation degraded: [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]]** — [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]]: price cache is empty
+- Warning **Daily podcast failed: [[daily-reports/daily-report_20260826|Daily report for 2026-08-26]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Daily preparation degraded: [[securities/security_0cf8075039299094d614|KTOS]]** — [[securities/security_0cf8075039299094d614|KTOS]]: price cache is empty
 - Warning **RIO — Rio Tinto plc: Daily preparation degraded: [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]]** — [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]]: YFTzMissingError: $RIO: possibly delisted; no timezone found
 - Warning **PYPL — PayPal Holdings, Inc.: Daily preparation degraded: [[securities/security_1e8fbdb0f45f2b413e00|PYPL]]** — [[securities/security_1e8fbdb0f45f2b413e00|PYPL]]: price cache is empty
@@ -194,12 +195,13 @@ as_of: "2026-08-26T17:11:24Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 469 active operations.
+Showing 20 of 470 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-28]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
 - Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]
@@ -217,7 +219,6 @@ Showing 20 of 469 active operations.
 - Ready — [[inbox/market-security_18a3ab0ee6086ee85d0f-bollinger_below_lower-59836b510b81|Wiki ingest for ETN — Bollinger below lower on 2026-07-30]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-51314ebfffea|Wiki ingest for YEC.F — RSI oversold on 2026-07-31]]
 - Ready — [[inbox/market-security_d12e746b3c9d392183cc-bollinger_below_lower-4573b7d51796|Wiki ingest for META — Bollinger below lower on 2026-07-31]]
-- Ready — [[inbox/market-security_567d0d575bbd30aaa91d-volume_anomaly-58db175775da|Wiki ingest for SSU.VI — Volume anomaly on 2026-07-31]]
 
 </details>
 

@@ -1,0 +1,27 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_e19c7fe27fbcc4cd923d",
+  "dedupe_key": "security_research:security_e19c7fe27fbcc4cd923d:youtube-80c44af31231:2026-08-28",
+  "prompt": "Research and value Koninklijke Ahold Delhaize N.V. ordinary shares after a curated-video lead and current primary-source verification.",
+  "inputs": {
+    "security_id": "security_e19c7fe27fbcc4cd923d",
+    "trigger": "Curated YouTube lead q1mXnN2DANI raised a material defensive-grocery, free-cash-flow, dividend and repurchase hypothesis that requires independent full security research.",
+    "research_focus": "Verify the AD.AS/XAMS identity; assess U.S. and European comparable sales, margins, online economics, pharmacy/SNAP headwinds, labor and food inflation, lease-adjusted leverage, free cash flow, dividend coverage and buybacks; separate currency and rate sensitivity from operating fundamentals; produce one scenario-complete assessment without treating the video as evidence."
+  },
+  "source": "youtube_ingest:01M0ZDXAER1CG0TT86H2QWE218",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M0ZDXAER1CG0TT86H2QWE218"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=q1mXnN2DANI",
+    "https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/",
+    "https://aholddelhaize.com/investors/dividends",
+    "https://live.euronext.com/en/product/equities/NL0011794037-xams"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,49 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_4935c6e39e38273a1731",
+    "papertrader research source record --request data/runs/local-youtube-graph-20260828T200600Z/01M14YPBV8VHE0KWESDGGRN6E5/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14YPBV8VHE0KWESDGGRN6E5/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14YPBV8VHE0KWESDGGRN6E5/assessment_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted the compensating MercadoLibre assessment version with the correct USD2200 weighted value; rating, return and ineligibility are unchanged."
+  ],
+  "evidence": [
+    {
+      "claim": "MercadoLibre's retained Q2 filing evidence is unchanged; 25% of USD1400 plus 50% of USD2200 plus 25% of USD3000 equals the canonical USD2200 weighted fair value.",
+      "observed_at": "2026-08-28T20:09:00Z",
+      "source": "source_meli_q2_2026_10q",
+      "source_hash": "85735e1b15cc55c818ce48466da7e5ab7856ad35248db8ae1d366e45bbe75782",
+      "url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/meli-20260630.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14YPBV8VHE0KWESDGGRN6E5/assessment_upsert_request.json",
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14YPBV8VHE0KWESDGGRN6E5/security_upsert_request.json",
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14YPBV8VHE0KWESDGGRN6E5/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14YPBV8VHE0KWESDGGRN6E5",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the compensating MercadoLibre repeat review in a new sequential run with unambiguous provenance. The accepted USD1400/USD2200/USD3000 scenarios and 25%/50%/25% probabilities deterministically produce USD2200 weighted value, 13.95% expected return and the unchanged Buy / Initiate rating. Evidence, assumptions, risks, ineligibility and the single pending relationship are unchanged; no duplicate follow-up or trading state was created.",
+  "validation": {
+    "checks": [
+      "Consumed the bounded prior security context and preserved all substantive conclusions.",
+      "Rechecked the retained primary source and used unchanged fresh market/FX identity.",
+      "Appended exactly one immutable scenario-complete assessment with unambiguous source-operation provenance.",
+      "Strict schema, queue and wiki checks passed.",
+      "No duplicate relationship, idea, strategy or trading operation was created."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request_v2.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request_v3.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request_v4.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Ahold Delhaize's Q2 cash resilience supports the defensive grocery thesis, but EUR24/EUR33/EUR42 scenarios at EUR30.57 imply only 7.95% expected return and the pending relationship keeps AD at Hold / Watch."
+  ],
+  "evidence": [
+    {
+      "claim": "Ahold reported EUR23.2 billion Q2 sales, 8.6% online growth, 3.9% underlying margin and at least EUR2.3 billion full-year free-cash-flow guidance, supporting resilience while leaving U.S. and lease risks.",
+      "observed_at": "2026-08-28T19:12:00Z",
+      "source": "source_ahold_q2_2026_results",
+      "source_hash": "e4d35071009571c8432b9620b401a4a69a0ce93720d3b2a4a1e7c125942287d5",
+      "url": "https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/"
+    },
+    {
+      "claim": "AD.AS closed at EUR30.56999969482422 on 2026-08-28 and was retrieved at 2026-08-28T19:01:02Z for the XAMS/EUR identity.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14WTZERPFABHR26M4HENBH9.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request_v2.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request_v3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/assessment_upsert_request_v4.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/idea_refresh_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_e19c7fe27fbcc4cd923d.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14V3QW82X4W0JJ5WGKWCAZH",
+  "operations_created": [
+    "01M14WTZERPFABHR26M4HENBH9"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Ahold Delhaize research with verified XAMS/EUR identity, current Q2 evidence and one schema-v2 mature-compounder assessment. EUR24/EUR33/EUR42 scenarios at EUR30.57 produce 7.95% expected and 5.96% confidence-adjusted return; downside-payoff, expected-return and relationship gates fail, so the deterministic result is Hold / Watch and ineligible. The defensive consumer relationship remains a clearly labeled candidate, its review was already queued, and exactly one dependent idea refresh was created. No strategy or paper-trading state changed.",
+  "validation": {
+    "checks": [
+      "Verified the immutable AD/XAMS/EUR identity and no duplicate canonical instrument.",
+      "Registered the current primary source and used the fresh identity-matched mark.",
+      "Wrote exactly one accepted schema-v2 assessment after three immutable rejected request attempts corrected FX timing and canonical soft-gap vocabulary.",
+      "Searched the complete idea catalog; retained one candidate with mechanism and rejection reasons for superficial alternatives.",
+      "The candidate relationship already has one queued review and exactly one result-dependent idea refresh was created.",
+      "Strict schema, queue and wiki validation passed; no strategy, signal, allocation, order, fill or ledger changed."
+    ],
+    "passed": true
+  }
+}

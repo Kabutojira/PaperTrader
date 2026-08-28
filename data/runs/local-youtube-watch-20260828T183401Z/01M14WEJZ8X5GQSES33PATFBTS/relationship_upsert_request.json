@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_d403f81ae5b27c9643dd",
+  "idea_id": "idea_mobility_platform_autonomy",
+  "security_id": "security_e4822686f60a96824b6e",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Uber can monetize demand aggregation, dispatch, payments, safety, advertising and utilization across human-driven and autonomous supply if riders and fleet partners value marketplace distribution more than vertical integration.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Trip and booking growth converts to sustained free cash flow; autonomous-fleet partners use Uber distribution at attractive unit economics; insurance and incentives remain controlled; and platform take rate and engagement remain durable.",
+  "invalidation": "Autonomous fleets bypass Uber or impose uneconomic terms; trip growth stops producing incremental cash; insurance, incentives, regulation, litigation, stock compensation or fleet investments consume the marketplace benefit; or network liquidity deteriorates.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_d403f81ae5b27c9643dd.md",
+  "last_reviewed_at": "2026-08-28T20:00:02Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

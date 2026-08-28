@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "MercadoLibre's USD2200 weighted value versus USD1930.75 produces Buy / Initiate economics, but credit, funding, currency, downside payoff and a pending digital-finance relationship keep MELI allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "MercadoLibre reported USD10.169 billion net revenue and financial income, USD683 million operating income, USD101 billion TPV and USD21.9 billion GMV; rapid credit growth raises loss and funding sensitivity.",
+      "observed_at": "2026-08-28T19:30:00Z",
+      "source": "source_meli_q2_2026_10q",
+      "source_hash": "85735e1b15cc55c818ce48466da7e5ab7856ad35248db8ae1d366e45bbe75782",
+      "url": "https://www.sec.gov/Archives/edgar/data/1099590/000109959026000023/meli-20260630.htm"
+    },
+    {
+      "claim": "MELI closed at USD1930.75 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14XP3M0SWH01F37P4A3KCYT.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGSV8RMPCJSXPQN19CSSM/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_4935c6e39e38273a1731.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14VGSV8RMPCJSXPQN19CSSM",
+  "operations_created": [
+    "01M14XP3M0SWH01F37P4A3KCYT"
+  ],
+  "status": "succeeded",
+  "summary": "Completed MercadoLibre research after consuming the identity correction. Current SEC evidence and USD1400/USD2200/USD3000 scenarios at USD1930.75 produce 13.95% expected and 10.46% confidence-adjusted return, for Buy / Initiate economics. Credit, funding, currency, downside payoff and the pending digital-finance relationship keep allocation ineligible; exactly one relationship review was queued and no strategy or trading state changed.",
+  "validation": {
+    "checks": [
+      "Canonical MELI/XNAS/USD identity overrode the historical ingest label.",
+      "Registered current SEC evidence and used fresh price/FX.",
+      "Wrote exactly one scenario-complete assessment.",
+      "Searched the idea catalog and queued exactly one material candidate relationship.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_e4822686f60a96824b6e",
+  "dedupe_key": "security_research:security_e4822686f60a96824b6e:idea-mobility-platform-autonomy:2026-08-28",
+  "prompt": "Research Uber's causal exposure to mobility-platform network economics and autonomous-vehicle transition risk.",
+  "inputs": {"security_id": "security_e4822686f60a96824b6e", "idea_id": "idea_mobility_platform_autonomy", "trigger": "Candidate two-sided relationship through demand aggregation, dispatch and autonomous-fleet partnerships.", "research_focus": "Test mobility, delivery, advertising, membership, insurance, regulatory and autonomy economics plus cash conversion and valuation."},
+  "source": "idea_research:01M14W6R00ZPN2DXT300CA7P2R", "priority": 67, "freshness_days": 0,
+  "depends_on": ["01M14W6R00ZPN2DXT300CA7P2R"], "not_before": "now", "deadline": "",
+  "source_refs": ["data/wiki/ideas/idea_mobility_platform_autonomy.md", "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"], "max_attempts": 3
+}

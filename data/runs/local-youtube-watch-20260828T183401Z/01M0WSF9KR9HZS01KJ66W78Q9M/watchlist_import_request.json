@@ -1,0 +1,19 @@
+{
+  "watchlist_reason": "The curated video raised a material Prosus holding-company discount and per-share accretion hypothesis; current Prosus NAV, buyback, results, and Euronext disclosures independently verify the issuer and mechanism, while full valuation research remains pending.",
+  "source": "https://www.youtube.com/watch?v=GnLtHsGM81k",
+  "securities": [
+    {
+      "company_name": "Prosus N.V.",
+      "instrument_name": "Prosus N.V. ordinary shares N",
+      "instrument_type": "equity",
+      "ticker": "PRX",
+      "exchange_code": "AMS",
+      "venue_mic": "XAMS",
+      "provider_symbol": "PRX.AS",
+      "currency": "EUR",
+      "country": "NL",
+      "sector": "Consumer Cyclical",
+      "industry": "Internet Retail"
+    }
+  ]
+}

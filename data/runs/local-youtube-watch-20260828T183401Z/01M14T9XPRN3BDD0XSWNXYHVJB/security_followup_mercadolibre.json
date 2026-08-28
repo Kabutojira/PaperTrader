@@ -1,0 +1,24 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_d202772e4e62065cd17a",
+  "dedupe_key": "security_research:security_d202772e4e62065cd17a:youtube-ef69b7279753:2026-08-28",
+  "prompt": "Research and value MercadoLibre after a curated-video growth and credit-cycle lead.",
+  "inputs": {
+    "security_id": "security_d202772e4e62065cd17a",
+    "trigger": "The curated screen highlighted MercadoLibre's operating growth and suggested credit concerns may subside, requiring independent verification and valuation.",
+    "research_focus": "Assess commerce, payments, logistics, advertising and credit economics across major markets; test credit losses, funding, currency, regulation, competition, capital intensity and valuation; treat the video only as a lead."
+  },
+  "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+    "https://investor.mercadolibre.com/news-and-events",
+    "https://investor.mercadolibre.com/sec-filings"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_d12e746b3c9d392183cc",
+  "issuer_id": "issuer_0777ea72e7e5e9618310",
+  "company_name": "Meta Platforms, Inc.",
+  "instrument_name": "Meta Platforms, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "META",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "META",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Communication Services",
+  "industry": "Internet Content & Information",
+  "status": "watching",
+  "watchlist_reason": "Advertising and engagement durability versus AI capital productivity, cash conversion, Reality Labs losses, legal exposure, debt and valuation.",
+  "research_summary": "USD580 weighted value versus USD571.10 leaves META Hold / Watch; expected-return, downside-payoff and pending relationship gates fail despite strong advertising growth.",
+  "research_page": "data/wiki/securities/security_d12e746b3c9d392183cc.md",
+  "last_research_at": "2026-08-28T19:45:56Z",
+  "next_review_at": "2026-09-27T19:45:56Z",
+  "source": "source_meta_q2_2026_10q|source_meta_q2_2026_results"
+}

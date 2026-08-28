@@ -1,0 +1,22 @@
+{
+  "entity_id": "relationship_b2e1d6f8c3905a7421bb",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+    ],
+    "idea_id": "idea_defensive_consumer_cash_return",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject if volume contraction persists, brand pricing loses elasticity, restructuring fails, cash conversion weakens, or debt and distributions absorb operating value.",
+    "proposed_mechanism": "Branded frozen-food demand, price/mix and restructuring can preserve margins and cash returns if volume stabilizes and leverage falls.",
+    "relationship_id": "relationship_b2e1d6f8c3905a7421bb",
+    "security_id": "security_98a1943771da875efed5"
+  },
+  "objective": "Review whether Nomad Foods has a material causal relationship to defensive consumer cash-return resilience.",
+  "operation_id": "01M14WB1P8QM5BEP0NE3F8PR2N",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md"
+  ]
+}

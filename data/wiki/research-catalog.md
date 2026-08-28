@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-26"
-updated: "2026-08-26"
+created: "2026-08-28"
+updated: "2026-08-28"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_3d10ae98570e144e3ccc"
-as_of: "2026-08-26T17:11:24Z"
+snapshot_id: "decision_835c8431827585c591dd"
+as_of: "2026-08-28T20:24:48Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **164**
-- Securities with retained revisions: **70**
+- Immutable assessment versions: **175**
+- Securities with retained revisions: **78**
 
 ## Candidate
 
@@ -461,6 +461,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-24](daily-reports/daily-report_20260824)
 - [PaperTrader daily report — 2026-08-25](daily-reports/daily-report_20260825)
 - [PaperTrader daily report — 2026-08-26](daily-reports/daily-report_20260826)
+- [PaperTrader daily report — 2026-08-28](daily-reports/daily-report_20260828)
 
 ## Idea
 
@@ -476,12 +477,14 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Crude-product dislocation and refining margins](ideas/idea_energy_refining)
 - [Cybersecurity resilience and geopolitical continuity](ideas/idea_cybersecurity_geopolitical_continuity)
 - [Defense and aerospace replenishment cycle](ideas/idea_defense_aerospace)
+- [Defensive consumer cash-return resilience](ideas/idea_defensive_consumer_cash_return)
 - [Digital attention, gaming, and consumer ecosystems](ideas/idea_digital_attention_gaming_ecosystems)
 - [Digital finance and crypto rails](ideas/idea_digital_finance_crypto_rails)
 - [EU Digital Product Passport compliance infrastructure](ideas/idea_eu_digital_product_passport)
 - [Gold and cash-generative miners as a macro hedge](ideas/idea_macro_hedge_gold)
 - [Humanoid robotics and embodied-AI component supply chain](ideas/idea_humanoid_robotics_embodied_ai_components)
 - [Japan strategic-investment value chain](ideas/idea_japan_sanaenomics_strategic_investment)
+- [Mobility-platform network economics and autonomy](ideas/idea_mobility_platform_autonomy)
 - [Nearshoring and friendshoring manufacturing capacity](ideas/idea_nearshoring_friendshoring_manufacturing)
 - [Nuclear expansion and uranium fuel-cycle bottlenecks](ideas/idea_nuclear_uranium)
 - [Precision biology and healthcare automation](ideas/idea_precision_biology_healthcare_automation)
@@ -527,7 +530,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Relationship
 
+- [AI compute, networking, and hyperscaler monetization to Amazon](relationships/relationship_2938ed6f30a7cb419822)
 - [AI compute, networking, and hyperscaler monetization to Arista Networks](relationships/relationship_e5f55616b9beaf661080)
+- [AI compute, networking, and hyperscaler monetization to Meta](relationships/relationship_3a49fe7041b8dc52a933)
 - [AI compute, networking, and hyperscaler monetization to NVIDIA](relationships/relationship_ai_compute_nvda)
 - [AI infrastructure and power bottlenecks to Eaton](relationships/relationship_87b95f713a902d531f2f)
 - [AI infrastructure and power bottlenecks to GE Vernova](relationships/relationship_cbdd07edda84994325d6)
@@ -544,10 +549,18 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Critical minerals and the lithium cycle to SQM](relationships/relationship_9773364a04293a4febaf)
 - [Cybersecurity resilience and geopolitical continuity to CrowdStrike](relationships/relationship_228f56aa5d91f3688b67)
 - [Defense and aerospace replenishment cycle to RTX](relationships/relationship_1655ac715c33506ec7da)
+- [Defensive consumer cash-return resilience to Ahold Delhaize](relationships/relationship_a1d0c5e7b2894f6310aa)
+- [Defensive consumer cash-return resilience to Domino's Pizza](relationships/relationship_c3f2e709d4a16b8532cc)
+- [Defensive consumer cash-return resilience to Nomad Foods](relationships/relationship_b2e1d6f8c3905a7421bb)
+- [Digital attention, gaming, and consumer ecosystems to Prosus](relationships/relationship_e514a92bf6c38d0754ee)
 - [Digital attention, gaming, and consumer ecosystems to Roblox](relationships/relationship_d9c8f578040386a487be)
+- [Digital attention, gaming, and consumer ecosystems to Tencent](relationships/relationship_f625ba3c07d49e1865ff)
 - [Digital finance and crypto rails to Coinbase](relationships/relationship_f2efab6050df0edcb762)
+- [Digital finance and payment rails to Fiserv](relationships/relationship_0716cb4d18e5af297600)
+- [Digital finance and payment rails to MercadoLibre](relationships/relationship_1827dc5e29f6ba308711)
 - [Humanoid robotics and embodied AI to ABB](relationships/relationship_afac7205cd7e09800edf)
 - [Humanoid robotics and embodied AI to NVIDIA](relationships/relationship_humanoid_nvda)
+- [Mobility-platform network economics and autonomy to Uber](relationships/relationship_d403f81ae5b27c9643dd)
 - [Nearshoring and friendshoring manufacturing capacity to Ternium](relationships/relationship_510158d3d515d91d5c14)
 - [Precision biology and healthcare automation to Intuitive Surgical](relationships/relationship_3570e003fd90cd83d26f)
 - [Precision biology and healthcare automation to Recursion Pharmaceuticals](relationships/relationship_9e7b4700174908755cbc)
@@ -591,9 +604,11 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Crocs, Inc. common stock](securities/security_c150f31c30afdb4a85f9)
 - [CrowdStrike Holdings, Inc. Class A common stock](securities/security_8472507d7d320aa388a7)
 - [DLocal Limited Class A common shares](securities/security_715bde20b6e1e1320c1a)
+- [Domino's Pizza, Inc. common stock](securities/security_f34181f3df32080a91d1)
 - [Eaton Corporation plc ordinary shares](securities/security_18a3ab0ee6086ee85d0f)
 - [Enphase Energy, Inc. common stock](securities/security_f2b9760d847b2ba59324)
 - [Fanuc Corporation Frankfurt ordinary shares](securities/security_96ba305ee7cd586bc348)
+- [Fiserv, Inc. common stock](securities/security_d202772e4e62065cd17a)
 - [Fluence Energy, Inc. Class A common stock](securities/security_a9eb9838940ef5ceaa0c)
 - [Freeport-McMoRan Inc. common stock](securities/security_2dbe878dfc899d7ee867)
 - [GE Vernova Inc. common stock](securities/security_4b61970aa8f574446819)
@@ -601,19 +616,23 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Intel Corporation common stock](securities/security_dfa34d4b9050964b465e)
 - [Intuitive Machines, Inc. Class A common stock](securities/security_a5dc16f3f4b245e6c168)
 - [Intuitive Surgical, Inc. common stock](securities/security_1f9cce545ede94cd6349)
+- [Koninklijke Ahold Delhaize N.V. ordinary shares](securities/security_e19c7fe27fbcc4cd923d)
 - [Kratos Defense &amp; Security Solutions, Inc. common stock](securities/security_0cf8075039299094d614)
 - [Labcorp Holdings Inc. common stock](securities/security_b1f2c48e1a744f5ecf67)
 - [Lithium Americas Corp. common shares](securities/security_fb87fac302a5446a1ced)
+- [MercadoLibre, Inc. common stock](securities/security_4935c6e39e38273a1731)
 - [Meta Platforms, Inc. Class A common stock](securities/security_d12e746b3c9d392183cc)
 - [Microsoft Corporation common stock](securities/security_204be2a44063993de1a8)
 - [MP Materials Corp. common stock](securities/security_cd492d97064d8574156e)
 - [Nebius Group N.V. Class A ordinary shares](securities/security_47a0b06f6c6c478d7c1e)
 - [Nidec Corporation Frankfurt ordinary shares](securities/security_3853e54c619d597dcaa1)
+- [Nomad Foods Limited ordinary shares](securities/security_98a1943771da875efed5)
 - [NVIDIA Corporation common stock](securities/security_33d9c44facc75c726c7d)
 - [Palantir Technologies Inc. Class A common stock](securities/security_bdc2f87dadf134760c3a)
 - [Parrot S.A. ordinary shares](securities/security_cc4dcb8f002b61dffe00)
 - [PayPal Holdings, Inc. common stock](securities/security_1e8fbdb0f45f2b413e00)
 - [Planet Labs PBC Class A common stock](securities/security_97f38b2cb2d5ef127f5a)
+- [Prosus N.V. ordinary shares N](securities/security_8b703a8adf5f864acaa4)
 - [QUALCOMM Incorporated common stock](securities/security_3a75fc1ccca2ee7c937a)
 - [Quanta Services, Inc. common stock](securities/security_488a9d7f7a8573597724)
 - [Recursion Pharmaceuticals, Inc. Class A common stock](securities/security_ed7d5b616a196969c815)
@@ -634,10 +653,12 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [Strategy Inc Class A common stock](securities/security_fe5539a7d3fd9d553bce)
 - [Taiwan Semiconductor Manufacturing Company Limited sponsored ADR](securities/security_ce9b78a4d0773c950765)
 - [Teledyne Technologies Incorporated common stock](securities/security_ad5917642acbba28c1f2)
+- [Tencent Holdings Limited unsponsored ADR](securities/security_de0d83229b369a426b99)
 - [Ternium S.A. ADS](securities/security_2c779e81c27b78c556bb)
 - [Tesla, Inc. common stock](securities/security_dc7a111e297be528d96b)
 - [Texas Instruments Incorporated common stock](securities/security_83a56943e18793f685b0)
 - [Twist Bioscience Corporation common stock](securities/security_6cf75bd0ec0aa2a20148)
+- [Uber Technologies, Inc. common stock](securities/security_e4822686f60a96824b6e)
 - [UiPath, Inc. Class A common stock](securities/security_eca976f0076a425ea1bb)
 - [Vale S.A. sponsored ADR](securities/security_b2116dcf976c96974d7b)
 - [Valero Energy Corporation common stock](securities/security_c5a9e460d3350284d157)

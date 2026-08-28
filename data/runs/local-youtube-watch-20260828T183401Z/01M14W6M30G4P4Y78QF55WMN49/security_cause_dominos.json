@@ -1,0 +1,9 @@
+{
+  "operation_type": "security_research", "entity_type": "security", "entity_id": "security_f34181f3df32080a91d1",
+  "dedupe_key": "security_research:security_f34181f3df32080a91d1:idea-defensive-consumer-cash-return:2026-08-28",
+  "prompt": "Research Domino's Pizza's causal exposure to defensive consumer cash-return resilience using current Q2 evidence.",
+  "inputs": {"security_id": "security_f34181f3df32080a91d1", "idea_id": "idea_defensive_consumer_cash_return", "trigger": "Candidate positive relationship through asset-light franchise cash economics and unit growth.", "research_focus": "Test comparable sales, unit growth, franchisee economics, leverage, capital returns, input and labor sensitivity and valuation."},
+  "source": "idea_research:01M14W6M30G4P4Y78QF55WMN49", "priority": 66, "freshness_days": 0,
+  "depends_on": ["01M14W6M30G4P4Y78QF55WMN49"], "not_before": "now", "deadline": "",
+  "source_refs": ["data/wiki/ideas/idea_defensive_consumer_cash_return.md", "https://ir.dominos.com/node/24771"], "max_attempts": 3
+}

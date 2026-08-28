@@ -1,0 +1,23 @@
+{
+  "security_id": "security_2433a056eb0c55961fcc",
+  "issuer_id": "issuer_85fa8ff84ea190add8f0",
+  "company_name": "Amazon.com, Inc.",
+  "instrument_name": "Amazon.com, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "AMZN",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "AMZN",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Consumer Cyclical",
+  "industry": "Internet Retail",
+  "status": "watching",
+  "watchlist_reason": "AWS, advertising and retail operating growth; monitor AI infrastructure returns, free-cash-flow conversion, leverage, dilution and valuation.",
+  "research_summary": "USD275 weighted value versus USD256.26 improves prospective return, but limited base upside, downside payoff, AI capital intensity and a pending relationship keep AMZN at Hold / Watch.",
+  "research_page": "data/wiki/securities/security_2433a056eb0c55961fcc.md",
+  "last_research_at": "2026-08-28T19:39:15Z",
+  "next_review_at": "2026-09-27T19:39:15Z",
+  "source": "source_amzn_q2_2026_10q|source_amzn_q2_2026_results"
+}

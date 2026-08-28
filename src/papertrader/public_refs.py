@@ -150,7 +150,31 @@ class PublicEntityResolver:
 
     def _strategy(self, entity_id: str) -> HumanReference:
         row = self.tables["strategies"].get(entity_id)
-        if row is None or not row["name"]:
+        if row is None:
+            operation = next(
+                (
+                    candidate
+                    for candidate in self.operations.values()
+                    if candidate["entity_type"] == "strategy"
+                    and candidate["entity_id"] == entity_id
+                ),
+                None,
+            )
+            if operation is None:
+                raise CanonicalValueError("cannot resolve required public strategy reference")
+            try:
+                payload = json.loads((self.root / operation["payload_path"]).read_text())
+            except (OSError, json.JSONDecodeError) as exc:
+                raise CanonicalValueError(
+                    "cannot read required pending public strategy reference"
+                ) from exc
+            inputs = payload.get("inputs") if isinstance(payload, dict) else None
+            security_id = inputs.get("security_id") if isinstance(inputs, dict) else None
+            if not isinstance(security_id, str):
+                raise CanonicalValueError("pending strategy lacks human-readable security context")
+            security = self._security(security_id)
+            return HumanReference(f"strategy for {security.label}", security.target)
+        if not row["name"]:
             raise CanonicalValueError("cannot resolve required public strategy reference")
         fallback = self._security(row["security_id"]).target
         return HumanReference(row["name"], self._page(row["research_page"], fallback=fallback))
@@ -227,7 +251,7 @@ class PublicEntityResolver:
         try:
             entity = self.resolve(row["entity_type"], row["entity_id"])
         except CanonicalValueError:
-            if row["entity_type"] != "relationship":
+            if row["entity_type"] not in {"relationship", "strategy"}:
                 raise
             try:
                 payload = json.loads((self.root / row["payload_path"]).read_text())
@@ -236,17 +260,24 @@ class PublicEntityResolver:
                     "cannot resolve pending public relationship reference"
                 ) from exc
             inputs = payload.get("inputs") if isinstance(payload, dict) else None
-            idea_id = inputs.get("idea_id") if isinstance(inputs, dict) else None
             security_id = inputs.get("security_id") if isinstance(inputs, dict) else None
-            if not isinstance(idea_id, str) or not isinstance(security_id, str):
+            if not isinstance(security_id, str):
                 raise CanonicalValueError(
-                    "pending relationship lacks human-readable entity context"
+                    f"pending {row['entity_type']} lacks human-readable entity context"
                 ) from None
-            idea = self._idea(idea_id)
             security = self._security(security_id)
-            entity = HumanReference(
-                f"relationship between {idea.label} and {security.label}", idea.target
-            )
+            if row["entity_type"] == "strategy":
+                entity = HumanReference(f"strategy for {security.label}", security.target)
+            else:
+                idea_id = inputs.get("idea_id") if isinstance(inputs, dict) else None
+                if not isinstance(idea_id, str):
+                    raise CanonicalValueError(
+                        "pending relationship lacks human-readable entity context"
+                    ) from None
+                idea = self._idea(idea_id)
+                entity = HumanReference(
+                    f"relationship between {idea.label} and {security.label}", idea.target
+                )
         timestamp = parse_timestamp(row.get("completed_at") or row["created_at"])
         label = f"{row['operation_type'].replace('_', ' ').capitalize()} for {entity.label}"
         if timestamp is not None:

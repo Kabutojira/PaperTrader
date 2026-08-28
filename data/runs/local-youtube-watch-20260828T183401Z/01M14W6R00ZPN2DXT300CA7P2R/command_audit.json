@@ -1,0 +1,139 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/security_cause_uber.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M14VGZPRSXPKBED8XS85DJ2M.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "4f66507bcddf54f2b08c9ed44ec02ca6c8ffab5e5cdb4d86e7d621b8f2dee300",
+            244690,
+            384
+          ],
+          "before": [
+            "file",
+            "b7c98c5d9433014b5678f8b23572eb522fb11efe0cd167b5f0576000559796e8",
+            244532,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "192b140926f9b90855b57951b7c70597ca8a1234f1cbedb3160bda44c070177c",
+            4599,
+            384
+          ],
+          "before": [
+            "file",
+            "e63f15c88949079156ef883b3e77b01e7a100b55c802f288ccac901de3d3d1d4",
+            3487,
+            384
+          ],
+          "path": "data/operations/payloads/01M14VGZPRSXPKBED8XS85DJ2M.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/security_cause_uber.json",
+      "completed_at": "2026-08-28T19:09:51Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "c63703198549fbc33c404c460e216bfa46b9b53008dffbe0187ef3ad7d6597f2",
+          1135,
+          436
+        ],
+        "path": "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/security_cause_uber.json"
+      },
+      "started_at": "2026-08-28T19:09:50Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "queue",
+        "enqueue",
+        "--request",
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/relationship_uber_request.json"
+      ],
+      "changed_paths": [
+        "data/operations/operations_TODO.csv",
+        "data/operations/payloads/01M14WEJZ8X5GQSES33PATFBTS.json"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "dc8cc7763e99762ac192dc23ae402acd6e46e4a6cc033534f8e1b627645e0f0e",
+            245267,
+            384
+          ],
+          "before": [
+            "file",
+            "4f66507bcddf54f2b08c9ed44ec02ca6c8ffab5e5cdb4d86e7d621b8f2dee300",
+            244690,
+            384
+          ],
+          "path": "data/operations/operations_TODO.csv"
+        },
+        {
+          "after": [
+            "file",
+            "e45ebba1e1bb9db36a95c20219d2109507b97fff8c5f51a1b55a75c3ad0dd257",
+            1277,
+            384
+          ],
+          "before": null,
+          "path": "data/operations/payloads/01M14WEJZ8X5GQSES33PATFBTS.json"
+        }
+      ],
+      "command": "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/relationship_uber_request.json",
+      "completed_at": "2026-08-28T19:09:53Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "44a712e696013d0292023f8e3cbed2beffa0d5f42539d5f2d7927e70ad71ff00",
+          1453,
+          436
+        ],
+        "path": "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/relationship_uber_request.json"
+      },
+      "started_at": "2026-08-28T19:09:52Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-28T19:09:55Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-28T19:09:54Z"
+    }
+  ],
+  "operation_id": "01M14W6R00ZPN2DXT300CA7P2R",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-youtube-watch-20260828T183401Z"
+}

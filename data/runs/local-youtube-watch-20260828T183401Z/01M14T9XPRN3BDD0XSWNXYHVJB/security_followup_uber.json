@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_98a1943771da875efed5",
+  "dedupe_key": "security_research:security_98a1943771da875efed5:youtube-ef69b7279753:2026-08-28",
+  "prompt": "Research and value Uber after a curated-video high-risk buy lead.",
+  "inputs": {
+    "security_id": "security_98a1943771da875efed5",
+    "trigger": "The curated screen called Uber a great buy while explicitly describing it as a high-risk bet; current issuer growth and cash generation justify a full risk-adjusted review.",
+    "research_focus": "Assess mobility, delivery, advertising and membership economics; test autonomous-vehicle displacement and investment risk, regulation, insurance, stock compensation, capital returns, cash conversion and valuation; treat the video only as a lead."
+  },
+  "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+    "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+  ],
+  "max_attempts": 3
+}

@@ -160,3 +160,5 @@ daily-20260823T152232Z,2026-08-23T15:22:32Z,2026-08-23T15:43:17Z,succeeded,sched
 daily-20260824T153949Z,2026-08-24T15:39:49Z,2026-08-24T15:57:53Z,degraded,schedule,4,100,12.5,,Daily run degraded; 4 agent operations; 0 pending-order dispositions.
 daily-20260825T154354Z,2026-08-25T15:43:54Z,2026-08-25T15:56:18Z,degraded,schedule,2,100,10,,Daily run degraded; 2 agent operations; 0 pending-order dispositions.
 daily-20260826T161934Z,2026-08-26T16:19:34Z,2026-08-26T17:11:24Z,degraded,schedule,3,100,15,,Daily run degraded; 3 agent operations; 0 pending-order dispositions.
+local-youtube-watch-20260828T183401Z,2026-08-28T18:32:54Z,2026-08-28T20:04:48Z,succeeded,local,19,5,0,,Daily run succeeded; 19 agent operations; 0 pending-order dispositions.
+local-youtube-graph-20260828T200600Z,2026-08-28T20:08:25Z,2026-08-28T20:24:48Z,succeeded,local,9,5,0,,Daily run succeeded; 9 agent operations; 0 pending-order dispositions.

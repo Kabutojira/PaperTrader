@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_f625ba3c07d49e1865ff",
+  "idea_id": "idea_digital_attention_gaming_ecosystems",
+  "security_id": "security_de0d83229b369a426b99",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Tencent can convert games, Weixin attention, advertising, payments and cloud engagement into revenue, margins and cash flow, with AI improving discovery and monetization when incremental compute returns exceed capital and operating costs.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Games, marketing services and fintech growth remains durable; Weixin engagement and advertising monetization improve; AI spending produces measurable revenue or margin gains; cash conversion recovers; and capital returns remain covered.",
+  "invalidation": "Attention and games cease to drive material economics; regulation, content restrictions or competition impair monetization; AI spending persistently destroys cash; fintech or cloud economics weaken; or ADR and common-share transmission becomes unreliable.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_f625ba3c07d49e1865ff.md",
+  "last_reviewed_at": "2026-08-28T20:03:02Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

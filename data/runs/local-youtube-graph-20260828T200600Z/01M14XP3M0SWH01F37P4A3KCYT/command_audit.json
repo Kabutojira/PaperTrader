@@ -1,0 +1,86 @@
+{
+  "audit_version": 1,
+  "entries": [
+    {
+      "argv": [
+        "papertrader",
+        "research",
+        "relationship",
+        "upsert",
+        "--request",
+        "data/runs/local-youtube-graph-20260828T200600Z/01M14XP3M0SWH01F37P4A3KCYT/relationship_upsert_request.json"
+      ],
+      "changed_paths": [
+        "data/tables/relationships.csv"
+      ],
+      "changes": [
+        {
+          "after": [
+            "file",
+            "2aeaa50174d8b63b2327b3200131fd9ac57f56500a70b38d21b690df36a5ca0d",
+            53442,
+            384
+          ],
+          "before": [
+            "file",
+            "dba0d77b7c48b3f20bbbede5b582781ebf10148c4b2dd3b64936519343922f8c",
+            52395,
+            384
+          ],
+          "path": "data/tables/relationships.csv"
+        }
+      ],
+      "command": "papertrader research relationship upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14XP3M0SWH01F37P4A3KCYT/relationship_upsert_request.json",
+      "completed_at": "2026-08-28T20:12:44Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": {
+        "identity": [
+          "file",
+          "0018d7c7561ae0190575c5f52bf707d673cbc74687c9b4398595dc541b28efbe",
+          1287,
+          436
+        ],
+        "path": "data/runs/local-youtube-graph-20260828T200600Z/01M14XP3M0SWH01F37P4A3KCYT/relationship_upsert_request.json"
+      },
+      "started_at": "2026-08-28T20:12:43Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "schema",
+        "validate",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader schema validate --strict",
+      "completed_at": "2026-08-28T20:12:46Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-28T20:12:45Z"
+    },
+    {
+      "argv": [
+        "papertrader",
+        "wiki",
+        "lint",
+        "--strict"
+      ],
+      "changed_paths": [],
+      "changes": [],
+      "command": "papertrader wiki lint --strict",
+      "completed_at": "2026-08-28T20:12:49Z",
+      "exit_code": 0,
+      "profile": "",
+      "request": null,
+      "started_at": "2026-08-28T20:12:47Z"
+    }
+  ],
+  "operation_id": "01M14XP3M0SWH01F37P4A3KCYT",
+  "profile": "",
+  "profile_policy_version": "",
+  "route_reason": "",
+  "run_id": "local-youtube-graph-20260828T200600Z"
+}

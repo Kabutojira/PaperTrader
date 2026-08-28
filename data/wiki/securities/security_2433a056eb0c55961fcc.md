@@ -7,7 +7,7 @@ tags:
   - research
   - risk
 created: "2026-08-01"
-updated: "2026-08-01"
+updated: "2026-08-28"
 provenance: "source_amzn_q2_2026_10q|source_amzn_q2_2026_results"
 security_id: security_2433a056eb0c55961fcc
 issuer_id: issuer_85fa8ff84ea190add8f0
@@ -16,19 +16,19 @@ venue_mic: XNAS
 provider_symbol: AMZN
 currency: USD
 confidence: medium
-next_review: "2026-08-31"
+next_review: "2026-09-27"
 ---
 
 # Amazon.com, Inc. common stock
 
 ## Decision
 
-**Watch; no conviction strategy.** Amazon's Q2 2026 operating evidence is strong: consolidated
-sales grew 20%, operating income grew 43%, and AWS sales grew 37%. The July 31 repricing is
-consistent with the prior evening's results, but the USD 271.58 mark is already slightly above the
-USD 270 base case. Trailing free cash flow turned negative as AI infrastructure investment surged,
-long-term debt increased, and the scenario-weighted return is only about 1.3%. The breakout is a
-positive fundamental repricing and adverse entry timing, not a paper-trade opportunity.
+**Hold / Watch; no strategy.** Amazon's Q2 2026 operating evidence remains strong: consolidated
+sales grew 20%, operating income grew 43%, and AWS sales grew 37%. The refreshed USD 256.26 mark
+is below the USD 270 base case, but the unchanged scenarios provide only 5.4% base upside and 7.3%
+probability-weighted return. Trailing free cash flow is negative as AI infrastructure investment
+surged, long-term debt increased, and the downside payoff remains inadequate. The video mention is
+a research lead, not evidence that changes the assessment or creates a paper-trade opportunity.
 
 ## Immutable identity
 
@@ -116,56 +116,54 @@ energy, or capital-allocation failures impair per-share economics.
 
 The selected repository template is `mature_compounder`, using an `earnings_multiple` method. It
 normalizes the non-cash Anthropic gain, recurring taxes, financing costs, stock compensation,
-capital intensity, debt, and diluted shares. At USD 271.58, the shares represent roughly USD 2.93
-trillion of equity value using the July 22 share count. The 12-month scenarios are:
+capital intensity, debt, and diluted shares. The fresh reference mark is USD 256.26. The 12-month
+scenarios and operating assumptions are unchanged because the retained primary evidence is
+unchanged:
 
 - **Bear (25%): USD 200.00.** USD 8.00 normalized forward EPS at 25x; AWS growth slows, retail costs
-  rise, and AI depreciation and financing costs pressure per-share earnings. Return: **-26.4%**.
+  rise, and AI depreciation and financing costs pressure per-share earnings. Return: **-22.0%**.
 - **Base (50%): USD 270.00.** USD 9.00 normalized forward EPS at 30x; AWS and advertising remain
-  strong while AI investment absorbs cash and limits multiple expansion. Return: **-0.6%**.
+  strong while AI investment absorbs cash and limits multiple expansion. Return: **+5.4%**.
 - **Bull (25%): USD 360.00.** USD 10.00 normalized forward EPS at 36x; AWS growth and retail margins
   persist and AI infrastructure converts rapidly into durable revenue and cash flow. Return:
-  **+32.6%**.
+  **+40.5%**.
 
-The probability-weighted value is USD 275.00, for about **1.3% expected return** and **0.9%
+The probability-weighted value is USD 275.00, for about **7.3% expected return** and **5.5%
 confidence-adjusted expected return**. The configured 20% margin-of-safety buy-below price is USD
-216.00. Base upside, expected return, margin of safety, timing, and the absent accepted canonical
-relationship fail the full strategy gate. The assessment is therefore ineligible for allocation and
-does not justify conviction strategy research.
+216.00. Base upside, expected return, downside payoff, margin of safety, timing, and the pending
+canonical relationship fail the full strategy gate. The assessment remains ineligible for
+allocation and does not justify strategy research.
 
 ## Changes since prior review
 
-This is the first completed security review and first scenario-complete assessment; no prior
-security page, assessment version, rating, or portfolio action exists to overwrite or contradict.
+This repeat review consumes the bounded prior assessment and the new video-derived research lead.
 
-- **Evidence:** newly establishes the Q2 Form 10-Q, Q2 results release, July 30 and July 31 alert
-  states, fresh USD mark, and fresh USD/EUR identity.
-- **Assumptions and valuation:** newly establishes the mature-compounder earnings-multiple method,
-  operating-earnings normalization, USD 200/270/360 scenarios, 25%/50%/25% probabilities, and USD
-  216 buy zone.
-- **Thesis and contrary evidence:** newly establishes strong AWS, retail, and advertising economics,
-  offset by AI capital intensity, concentration, leverage, negative free cash flow, and dilution.
-- **Catalysts, risks, blockers, and gaps:** no hard blocker is asserted; medium confidence, weak
-  entry timing, low expected return, inadequate base upside, cash conversion, and absent accepted
-  relationship are explicit gaps.
-- **Rating and action:** the initial disposition is watch/ineligible with no paper-trade action and
-  no conviction strategy follow-up.
-- **Unchanged conclusions:** none, because there is no prior accepted review.
+- **Evidence:** the retained Q2 filing and release are unchanged; the only new deterministic input
+  is the USD 256.26 mark and corresponding USD/EUR rate retrieved on August 28.
+- **Assumptions and valuation:** the `mature_compounder` earnings-multiple method, USD 200/270/360
+  scenarios, 25%/50%/25% probabilities, and USD 216 buy zone are unchanged. Repricing lifts
+  expected return from 1.3% to 7.3%, but not enough to clear the canonical gate.
+- **Thesis and contrary evidence:** strong AWS, retail and advertising economics remain offset by
+  AI capital intensity, concentration, leverage, negative trailing free cash flow and dilution.
+- **Catalysts, risks, blockers, and gaps:** no hard blocker is asserted. Medium confidence, weak
+  timing, inadequate base upside and downside payoff, and a pending canonical relationship remain.
+- **Rating and action:** Hold / Watch and allocation-ineligible are unchanged; no strategy, signal,
+  order, or paper-trading state is created.
 
 ## Sources
 
 - [Amazon Q2 2026 Form 10-Q](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm)
-  (`source_amzn_q2_2026_10q`, checked 2026-08-01).
+  (`source_amzn_q2_2026_10q`, rechecked 2026-08-28; content unchanged).
 - [Amazon Q2 2026 results](https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm)
-  (`source_amzn_q2_2026_results`, checked 2026-08-01).
+  (`source_amzn_q2_2026_results`, rechecked 2026-08-28; content unchanged).
 - Canonical market and indicator state: `data/market/latest.csv`, `data/market/indicators.csv`, and
-  `data/market/prices/security_2433a056eb0c55961fcc.csv`, retrieved `2026-08-01T09:07:38Z`;
+  `data/market/prices/security_2433a056eb0c55961fcc.csv`, retrieved `2026-08-28T19:01:02Z`;
   USD/EUR FX was retrieved at the same time.
 - Alert packets: [[inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f|AMZN volume anomaly]],
   [[inbox/market-security_2433a056eb0c55961fcc-bollinger_above_upper-0d1101e5c09b|AMZN upper-Bollinger transition]],
   and [[inbox/market-security_2433a056eb0c55961fcc-macd_cross_above_signal-f8b94c946cb3|AMZN bullish MACD transition]].
 
-Next review: **2026-08-31**, or sooner after material AWS growth, retail-margin, AI utilization,
+Next review: **2026-09-27**, or sooner after material AWS growth, retail-margin, AI utilization,
 capital-spending, free-cash-flow, leverage, dilution, regulatory, security, or capital-allocation
 evidence.
 

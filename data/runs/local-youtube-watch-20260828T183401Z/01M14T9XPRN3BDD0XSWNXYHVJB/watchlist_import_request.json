@@ -1,0 +1,71 @@
+{
+  "watchlist_reason": "The curated 2H 2026 value-investing screen retained five independently verifiable public common equities for full research; the video is a lead only and current issuer evidence must determine each assessment.",
+  "source": "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+  "securities": [
+    {
+      "company_name": "Fiserv, Inc.",
+      "instrument_name": "Fiserv, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "FISV",
+      "exchange_code": "NASDAQ",
+      "venue_mic": "XNAS",
+      "provider_symbol": "FISV",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Technology",
+      "industry": "Information Technology Services"
+    },
+    {
+      "company_name": "Uber Technologies, Inc.",
+      "instrument_name": "Uber Technologies, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "UBER",
+      "exchange_code": "NYQ",
+      "venue_mic": "XNYS",
+      "provider_symbol": "UBER",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Technology",
+      "industry": "Software - Application"
+    },
+    {
+      "company_name": "MercadoLibre, Inc.",
+      "instrument_name": "MercadoLibre, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "MELI",
+      "exchange_code": "NMS",
+      "venue_mic": "XNAS",
+      "provider_symbol": "MELI",
+      "currency": "USD",
+      "country": "UY",
+      "sector": "Consumer Cyclical",
+      "industry": "Internet Retail"
+    },
+    {
+      "company_name": "Nomad Foods Limited",
+      "instrument_name": "Nomad Foods Limited ordinary shares",
+      "instrument_type": "equity",
+      "ticker": "NOMD",
+      "exchange_code": "NYQ",
+      "venue_mic": "XNYS",
+      "provider_symbol": "NOMD",
+      "currency": "USD",
+      "country": "GB",
+      "sector": "Consumer Defensive",
+      "industry": "Packaged Foods"
+    },
+    {
+      "company_name": "Domino's Pizza, Inc.",
+      "instrument_name": "Domino's Pizza, Inc. common stock",
+      "instrument_type": "equity",
+      "ticker": "DPZ",
+      "exchange_code": "NMS",
+      "venue_mic": "XNAS",
+      "provider_symbol": "DPZ",
+      "currency": "USD",
+      "country": "US",
+      "sector": "Consumer Cyclical",
+      "industry": "Restaurants"
+    }
+  ]
+}

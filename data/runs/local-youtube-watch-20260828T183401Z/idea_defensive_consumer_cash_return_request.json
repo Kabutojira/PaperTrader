@@ -1,0 +1,29 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_defensive_consumer_cash_return",
+  "dedupe_key": "idea_research:idea_defensive_consumer_cash_return:youtube-watchlist:2026-08-28",
+  "prompt": "Research defensive consumer cash-return resilience across Ahold Delhaize, Nomad Foods and Domino's without adding more securities.",
+  "inputs": {
+    "idea_id": "idea_defensive_consumer_cash_return",
+    "seed_claim": "Recurring grocery, frozen-food and franchise demand may support cash returns through weak volume and cost cycles, but leverage, pricing elasticity, reinvestment and valuation determine whether the mechanism reaches shareholders.",
+    "security_ids": [
+      "security_e19c7fe27fbcc4cd923d",
+      "security_98a1943771da875efed5",
+      "security_f34181f3df32080a91d1"
+    ],
+    "research_boundary": "Evaluate only the three user-selected securities; do not import or enqueue any additional security identity because this project run is intentionally capped."
+  },
+  "source": "user_selected_video_research_graph",
+  "priority": 65,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://newsroom.aholddelhaize.com/ahold-delhaize-reports-resilient-q2-2026-results-and-reiterates-guidance-for-the-year/",
+    "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/",
+    "https://ir.dominos.com/node/24771"
+  ],
+  "max_attempts": 3
+}

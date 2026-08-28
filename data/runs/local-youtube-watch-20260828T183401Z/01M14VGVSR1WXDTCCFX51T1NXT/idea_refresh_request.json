@@ -1,0 +1,5 @@
+{
+  "operation_type": "idea_research", "entity_type": "idea", "entity_id": "idea_defensive_consumer_cash_return", "dedupe_key": "idea_research:idea_defensive_consumer_cash_return:security-result:01M14VGVSR1WXDTCCFX51T1NXT", "prompt": "Refresh defensive consumer cash-return resilience from Nomad Foods' completed scenario assessment.",
+  "inputs": {"idea_id": "idea_defensive_consumer_cash_return", "seed_claim": "Nomad's USD9/USD15/USD20 scenarios at USD11.99 offer upside, but Q2 volume contraction, leverage, restructuring execution and a pending relationship keep the security ineligible.", "security_id": "security_98a1943771da875efed5", "security_research_operation_id": "01M14VGVSR1WXDTCCFX51T1NXT", "security_research_result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/agent_result.json"},
+  "source": "security_research:01M14VGVSR1WXDTCCFX51T1NXT", "priority": 66, "freshness_days": 0, "depends_on": ["01M14VGVSR1WXDTCCFX51T1NXT"], "not_before": "now", "deadline": "", "source_refs": ["data/wiki/securities/security_98a1943771da875efed5.md"], "max_attempts": 3
+}

@@ -1,0 +1,28 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14Y903R9M20HYXRNY7A0KS3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/source_10q_record_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/source_results_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2433a056eb0c55961fcc.md"
+  ],
+  "completed_at": "2026-08-28T19:42:53Z",
+  "errors": [
+    "agent result schema: 'd07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb|3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895' does not match '^[a-f0-9]{64}$'",
+    "post-run integrity: agent result data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/agent_result.json: 'd07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb|3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895' does not match '^[a-f0-9]{64}$'"
+  ],
+  "harness": "local",
+  "operation_id": "01M0T6VA68PFSMJMFE6JC3CA0B",
+  "passed": false,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

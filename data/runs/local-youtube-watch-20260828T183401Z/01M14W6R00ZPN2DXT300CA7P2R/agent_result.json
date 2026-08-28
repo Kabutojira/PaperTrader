@@ -1,0 +1,45 @@
+{
+  "commands_run": [
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/security_cause_uber.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/relationship_uber_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Created the bounded mobility-platform and autonomy idea. Uber is a two-sided candidate: current network scale and cash flow are strong, while autonomous-fleet disintermediation remains an unresolved causal risk."
+  ],
+  "evidence": [
+    {
+      "claim": "Uber reported gross bookings growth of 24%, trips growth of 18%, revenue growth of 12%, USD1.9 billion operating income and USD2.8 billion free cash flow. These support network scale but do not establish autonomy economics or fair value.",
+      "observed_at": "2026-08-28T19:10:00Z",
+      "source": "Uber Q2 2026 results",
+      "url": "https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14VGZPRSXPKBED8XS85DJ2M.json",
+    "data/operations/payloads/01M14WEJZ8X5GQSES33PATFBTS.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/relationship_uber_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/security_cause_uber.json",
+    "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14W6R00ZPN2DXT300CA7P2R",
+  "operations_created": [
+    "01M14WEJZ8X5GQSES33PATFBTS"
+  ],
+  "status": "succeeded",
+  "summary": "Created one bounded mobility-platform network economics and autonomy idea after checking the complete catalogs. Classified Uber as a candidate with a two-sided mechanism, explicit contrary evidence and invalidation. Its existing unclaimed security review absorbed the idea cause, and exactly one dependent relationship review was queued. No extra security or paper-trading state was created.",
+  "validation": {
+    "checks": [
+      "No existing maintained idea duplicated the mobility-platform autonomy mechanism.",
+      "The complete security catalog was searched and the ten-security boundary retained only Uber.",
+      "Uber is linked as a candidate with direction, mechanism and evidence; it is not represented as accepted.",
+      "The existing Uber security review absorbed one idea cause and the pair has exactly one relationship review.",
+      "Strict wiki lint returned OK; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

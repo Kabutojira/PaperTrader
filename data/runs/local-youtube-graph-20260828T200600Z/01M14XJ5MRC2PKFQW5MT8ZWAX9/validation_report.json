@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-08-28T20:21:37Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14XJ5MRC2PKFQW5MT8ZWAX9",
+  "passed": true,
+  "run_id": "local-youtube-graph-20260828T200600Z",
+  "validation_version": 1
+}

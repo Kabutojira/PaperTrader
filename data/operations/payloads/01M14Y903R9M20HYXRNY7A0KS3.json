@@ -1,0 +1,24 @@
+{
+  "entity_id": "relationship_2938ed6f30a7cb419822",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_amzn_q2_2026_10q",
+      "source_amzn_q2_2026_results"
+    ],
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject if AI infrastructure utilization, AWS growth or margins fail to compensate for capital intensity, financing costs and dilution, or if customer concentration and competition erode durable returns.",
+    "proposed_mechanism": "AWS supplies compute, model services and infrastructure to AI workloads; durable utilization and pricing can expand Amazon's operating earnings, while the benefit to shareholders depends on returns exceeding depreciation, financing and dilution costs.",
+    "relationship_id": "relationship_2938ed6f30a7cb419822",
+    "security_id": "security_2433a056eb0c55961fcc"
+  },
+  "objective": "Review Amazon's causal relationship to AI compute, networking and hyperscaler monetization.",
+  "operation_id": "01M14Y903R9M20HYXRNY7A0KS3",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md",
+    "data/wiki/securities/security_2433a056eb0c55961fcc.md"
+  ]
+}

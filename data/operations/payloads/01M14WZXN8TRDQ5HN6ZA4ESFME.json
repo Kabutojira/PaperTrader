@@ -1,0 +1,23 @@
+{
+  "entity_id": "relationship_e514a92bf6c38d0754ee",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_prosus_nav_20260827"
+    ],
+    "idea_id": "idea_digital_attention_gaming_ecosystems",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject if ecosystem exposure is immaterial after debt and discount, Tencent or private-platform economics deteriorate, or governance and capital allocation prevent operating value from reaching PRX shareholders.",
+    "proposed_mechanism": "Prosus receives most look-through value from Tencent's games and attention ecosystem and additional value from ecommerce platforms; the benefit reaches PRX holders through NAV, private-asset cash flow and discounted-share repurchases.",
+    "relationship_id": "relationship_e514a92bf6c38d0754ee",
+    "security_id": "security_8b703a8adf5f864acaa4"
+  },
+  "objective": "Review Prosus's indirect and direct causal relationship to digital attention, gaming and consumer ecosystems.",
+  "operation_id": "01M14WZXN8TRDQ5HN6ZA4ESFME",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_digital_attention_gaming_ecosystems.md",
+    "data/wiki/securities/security_8b703a8adf5f864acaa4.md"
+  ]
+}

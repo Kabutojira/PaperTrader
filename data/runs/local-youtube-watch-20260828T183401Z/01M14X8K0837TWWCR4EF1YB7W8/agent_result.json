@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14X8K0837TWWCR4EF1YB7W8/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Tencent's high-sensitivity digital-ecosystem edge; direct games, Weixin, advertising and fintech exposure is offset by AI spending, cash conversion, regulation and ADR risk."
+  ],
+  "evidence": [
+    {
+      "claim": "Tencent reported 11% group revenue growth, 13% gross-profit growth and 9% non-IFRS operating-profit growth; games were about 32% of revenue, marketing services grew 22% and fintech/business services grew 9%, while heavy capex and negative free cash flow qualify the benefit.",
+      "observed_at": "2026-08-28T20:03:02Z",
+      "source": "source_tencent_q2_2026_results",
+      "source_hash": "64d8d2038eeef993571b96bb3361b6f1a567d6e84157eb16af20d2fd9a095f0a",
+      "url": "https://www.tencent.com/wp-content/uploads/2026/08/Tencent-Announces-2026-Second-Quarter-Results.pdf"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14X8K0837TWWCR4EF1YB7W8/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_f625ba3c07d49e1865ff.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14X8K0837TWWCR4EF1YB7W8",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from digital attention, gaming and consumer ecosystems to Tencent with high sensitivity and medium confidence. Games, Weixin, advertising, payments and cloud provide direct material exposure, while regulation, competition, AI capital intensity, negative free cash flow and unsponsored-ADR transmission remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

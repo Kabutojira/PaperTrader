@@ -1,0 +1,47 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14YKPWGYX8B9H2W4F5G18X2/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Meta's high-sensitivity AI-monetization edge; strong advertising demand is offset by cost growth, capex and weak latest cash conversion, leaving META at Hold / Watch."
+  ],
+  "evidence": [
+    {
+      "claim": "Meta's Q2 filing confirms direct AI infrastructure deployment alongside heavy capital spending, debt, stock compensation, legal exposure and Reality Labs losses.",
+      "observed_at": "2026-08-28T20:17:00Z",
+      "source": "source_meta_q2_2026_10q",
+      "source_hash": "b294c4f08edb78d0700cb82c86a0141a2cef38e4f1c2bb02b16ff1ce564a8492",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+    },
+    {
+      "claim": "Meta reported Q2 revenue growth of 28%, ad-impression growth of 14% and price-per-ad growth of 12%, while costs rose 55%, operating income fell 8%, free cash flow was USD784 million and capex guidance reached USD130-145 billion.",
+      "observed_at": "2026-08-28T20:17:00Z",
+      "source": "source_meta_q2_2026_results",
+      "source_hash": "96497fb80bc902097c756499df1f673303488652aa5460cfcc567546ed6cc31c",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-06302026xexhibit991.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14YKPWGYX8B9H2W4F5G18X2/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_3a49fe7041b8dc52a933.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14YKPWGYX8B9H2W4F5G18X2",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from AI compute, networking and hyperscaler monetization to Meta with high sensitivity and medium confidence. Recommendations, engagement, advertising and messaging provide direct material exposure, while cost growth, capital spending, weak latest cash conversion, debt, dilution, regulation and Reality Labs remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

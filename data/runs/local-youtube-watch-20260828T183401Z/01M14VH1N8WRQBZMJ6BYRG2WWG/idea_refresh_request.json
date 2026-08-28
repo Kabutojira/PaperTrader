@@ -1,0 +1,5 @@
+{
+  "operation_type": "idea_research", "entity_type": "idea", "entity_id": "idea_defensive_consumer_cash_return", "dedupe_key": "idea_research:idea_defensive_consumer_cash_return:security-result:01M14VH1N8WRQBZMJ6BYRG2WWG", "prompt": "Refresh defensive consumer cash-return resilience from Domino's completed scenario assessment.",
+  "inputs": {"idea_id": "idea_defensive_consumer_cash_return", "seed_claim": "Domino's USD270/USD380/USD500 scenarios at USD332.06 offer upside, but nearly flat comparable sales, leverage, franchisee economics and a pending relationship keep the security ineligible.", "security_id": "security_f34181f3df32080a91d1", "security_research_operation_id": "01M14VH1N8WRQBZMJ6BYRG2WWG", "security_research_result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/agent_result.json"},
+  "source": "security_research:01M14VH1N8WRQBZMJ6BYRG2WWG", "priority": 66, "freshness_days": 0, "depends_on": ["01M14VH1N8WRQBZMJ6BYRG2WWG"], "not_before": "now", "deadline": "", "source_refs": ["data/wiki/securities/security_f34181f3df32080a91d1.md"], "max_attempts": 3
+}

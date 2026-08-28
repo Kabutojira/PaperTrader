@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_c3f2e709d4a16b8532cc",
+  "idea_id": "idea_defensive_consumer_cash_return",
+  "security_id": "security_f34181f3df32080a91d1",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Asset-light franchise fees, supply-chain economics and unit growth can convert recurring pizza demand into operating cash flow and shareholder returns if franchisee economics, comparable sales, debt service and reinvestment remain healthy.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Comparable sales reaccelerate, unit growth remains disciplined, franchisee cash returns improve, operating cash conversion covers debt service and reinvestment, and leverage declines without impairing distributions.",
+  "invalidation": "Comparable sales and unit economics weaken structurally; franchisees retrench; competition, food or labor costs impair store returns; leverage rises; or distributions exceed durable free cash flow after reinvestment.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_c3f2e709d4a16b8532cc.md",
+  "last_reviewed_at": "2026-08-28T19:58:32Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

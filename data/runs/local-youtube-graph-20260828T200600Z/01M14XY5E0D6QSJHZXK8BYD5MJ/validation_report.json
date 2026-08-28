@@ -1,0 +1,13 @@
+{
+  "changed_paths": [
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+    "data/wiki/log.md"
+  ],
+  "completed_at": "2026-08-28T20:24:19Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14XY5E0D6QSJHZXK8BYD5MJ",
+  "passed": true,
+  "run_id": "local-youtube-graph-20260828T200600Z",
+  "validation_version": 1
+}

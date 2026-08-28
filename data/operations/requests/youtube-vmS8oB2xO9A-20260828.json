@@ -1,0 +1,35 @@
+{
+  "operation_type": "wiki_ingest",
+  "entity_type": "source",
+  "entity_id": "youtube_vmS8oB2xO9A",
+  "dedupe_key": "wiki_ingest:youtube:UCrTTBSUr0zhPU56UQljag5A:vmS8oB2xO9A:v1",
+  "prompt": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "inputs": {
+    "source_kind": "youtube_video",
+    "source_id": "youtube_vmS8oB2xO9A",
+    "video_id": "vmS8oB2xO9A",
+    "video_title": "10 Stocks to Buy! Value Investing Quadrant Update 2H 2026",
+    "video_url": "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_handle": "@Value-Investing",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-28T18:32:01Z",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "prefer_human": true,
+    "discovery_mode": "incremental"
+  },
+  "source": "manual:user_request:2026-08-28",
+  "priority": 65,
+  "freshness_days": 0,
+  "depends_on": [],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A"
+  ],
+  "max_attempts": 3
+}

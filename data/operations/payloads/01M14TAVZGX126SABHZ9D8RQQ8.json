@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_4b61970aa8f574446819",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-19T23:10:00Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_4b61970aa8f574446819.md",
+    "security_id": "security_4b61970aa8f574446819"
+  },
+  "objective": "Revalidate security_4b61970aa8f574446819 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M14TAVZGX126SABHZ9D8RQQ8",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_gev_q2_2026_10q",
+    "source_gev_q2_2026_earnings",
+    "source_gev_sec_submissions_20260819"
+  ]
+}

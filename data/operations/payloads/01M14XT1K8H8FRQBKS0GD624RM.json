@@ -1,0 +1,18 @@
+{
+  "entity_id": "idea_defensive_consumer_cash_return",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_defensive_consumer_cash_return",
+    "security_id": "security_98a1943771da875efed5",
+    "security_research_operation_id": "01M14VGVSR1WXDTCCFX51T1NXT",
+    "security_research_result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/agent_result.json",
+    "seed_claim": "Nomad's USD9/USD15/USD20 scenarios at USD11.99 offer upside, but Q2 volume contraction, leverage, restructuring execution and a pending relationship keep the security ineligible."
+  },
+  "objective": "Refresh defensive consumer cash-return resilience from Nomad Foods' completed scenario assessment.",
+  "operation_id": "01M14XT1K8H8FRQBKS0GD624RM",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_98a1943771da875efed5.md"
+  ]
+}

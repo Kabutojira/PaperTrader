@@ -1,0 +1,5 @@
+{
+  "operation_type": "idea_research", "entity_type": "idea", "entity_id": "idea_defensive_consumer_cash_return", "dedupe_key": "idea_research:idea_defensive_consumer_cash_return:security-result:01M14V3QW82X4W0JJ5WGKWCAZH", "prompt": "Refresh defensive consumer cash-return resilience from Ahold Delhaize's completed scenario assessment and candidate disposition.",
+  "inputs": {"idea_id": "idea_defensive_consumer_cash_return", "seed_claim": "Ahold's Q2 resilience supports grocery cash generation, but the EUR24/EUR33/EUR42 scenarios at EUR30.57 provide only modest expected return and the relationship remains pending.", "security_id": "security_e19c7fe27fbcc4cd923d", "security_research_operation_id": "01M14V3QW82X4W0JJ5WGKWCAZH", "security_research_result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/agent_result.json"},
+  "source": "security_research:01M14V3QW82X4W0JJ5WGKWCAZH", "priority": 66, "freshness_days": 0, "depends_on": ["01M14V3QW82X4W0JJ5WGKWCAZH"], "not_before": "now", "deadline": "", "source_refs": ["data/wiki/securities/security_e19c7fe27fbcc4cd923d.md"], "max_attempts": 3
+}

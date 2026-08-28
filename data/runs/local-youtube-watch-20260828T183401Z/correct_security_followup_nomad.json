@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_98a1943771da875efed5",
+  "dedupe_key": "security_research:security_98a1943771da875efed5:youtube-identity-correction:2026-08-28",
+  "prompt": "CORRECTION: research canonical security_98a1943771da875efed5 as Nomad Foods (NOMD), disregarding the earlier Uber label attached by ingest ID-order mapping.",
+  "inputs": {
+    "security_id": "security_98a1943771da875efed5",
+    "trigger": "Identity-mapping correction: this canonical security is Nomad Foods, not Uber; falling Q2 volume must be tested against the video's dividend and restructuring thesis.",
+    "research_focus": "Assess frozen-food brand durability, pricing and volume, restructuring execution, margins, free cash flow, leverage, dividends, retailer concentration and valuation."
+  },
+  "source": "controller_identity_mapping_correction",
+  "priority": 67,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/runs/local-youtube-watch-20260828T183401Z/identity_mapping_correction.md",
+    "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+  ],
+  "max_attempts": 3
+}

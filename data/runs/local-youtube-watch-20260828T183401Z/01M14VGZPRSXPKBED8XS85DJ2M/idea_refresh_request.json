@@ -1,0 +1,5 @@
+{
+  "operation_type": "idea_research", "entity_type": "idea", "entity_id": "idea_mobility_platform_autonomy", "dedupe_key": "idea_research:idea_mobility_platform_autonomy:security-result:01M14VGZPRSXPKBED8XS85DJ2M", "prompt": "Refresh mobility-platform network economics and autonomy from Uber's completed scenario assessment.",
+  "inputs": {"idea_id": "idea_mobility_platform_autonomy", "seed_claim": "Uber's Q2 growth and cash generation support network scale, while USD55/USD90/USD120 scenarios at USD76.95 and unresolved autonomy transmission keep allocation ineligible.", "security_id": "security_e4822686f60a96824b6e", "security_research_operation_id": "01M14VGZPRSXPKBED8XS85DJ2M", "security_research_result_path": "data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/agent_result.json"},
+  "source": "security_research:01M14VGZPRSXPKBED8XS85DJ2M", "priority": 66, "freshness_days": 0, "depends_on": ["01M14VGZPRSXPKBED8XS85DJ2M"], "not_before": "now", "deadline": "", "source_refs": ["data/wiki/securities/security_e4822686f60a96824b6e.md"], "max_attempts": 3
+}

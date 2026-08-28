@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_f34181f3df32080a91d1",
+  "dedupe_key": "security_research:security_f34181f3df32080a91d1:youtube-ef69b7279753:2026-08-28",
+  "prompt": "Research and value Domino's Pizza after a curated-video income lead.",
+  "inputs": {
+    "security_id": "security_f34181f3df32080a91d1",
+    "trigger": "The curated screen retained Domino's as interesting and cited shareholder yield, while current issuer results show nearly flat comparable sales that require a full assessment.",
+    "research_focus": "Assess franchise economics, unit growth, comparable sales, international execution, leverage, capital returns, input and labor sensitivity, competitive positioning and valuation; treat the video only as a lead."
+  },
+  "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+    "https://ir.dominos.com/node/24771"
+  ],
+  "max_attempts": 3
+}

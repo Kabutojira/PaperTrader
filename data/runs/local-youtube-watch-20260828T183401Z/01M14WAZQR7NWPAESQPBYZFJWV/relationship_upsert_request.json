@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_a1d0c5e7b2894f6310aa",
+  "idea_id": "idea_defensive_consumer_cash_return",
+  "security_id": "security_e19c7fe27fbcc4cd923d",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Recurring grocery demand, regional scale and online density can preserve Ahold Delhaize operating cash flow through consumer and input-cost cycles; disciplined dividends and repurchases can transmit that resilience to shareholders when margins, capital spending, leases and leverage remain controlled.",
+  "sensitivity": "medium",
+  "confidence": "medium",
+  "catalyst": "Volume stabilizes, online margins improve, full-year margin and free-cash-flow guidance is delivered, lease-adjusted leverage remains controlled, and dividends or repurchases remain covered after necessary capital spending.",
+  "invalidation": "Volume and margin deteriorate persistently; price/mix damages demand; cash flow depends on underinvestment or working-capital timing; online economics remain structurally weak; lease-adjusted leverage rises; or distributions cease to be covered by durable free cash flow.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_a1d0c5e7b2894f6310aa.md",
+  "last_reviewed_at": "2026-08-28T19:51:00Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

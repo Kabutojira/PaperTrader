@@ -1,0 +1,16 @@
+{
+  "changed_paths": [
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14XCYN05TN2CPZRMC6Q3YFG/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_0716cb4d18e5af297600.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-08-28T20:11:56Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14XCYN05TN2CPZRMC6Q3YFG",
+  "passed": true,
+  "run_id": "local-youtube-graph-20260828T200600Z",
+  "validation_version": 1
+}

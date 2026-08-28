@@ -1,0 +1,61 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/idea_refresh_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Nomad Foods' USD14.20 weighted value versus USD11.99 produces Buy / Initiate economics, but volume contraction, leverage, restructuring risk, timing and the pending relationship keep NOMD allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Nomad reported Q2 revenue down 3.1%, organic revenue down 2.9%, volume down 5.9% and price/mix up 3.0%; management's margin and cash thesis remains conditional on restructuring and volume stabilization.",
+      "observed_at": "2026-08-28T19:32:10Z",
+      "source": "source_nomd_q2_2026_results",
+      "source_hash": "13a5be37bacbab7edcdaec5c6b998e803a218dd8dc6db6e5a27c7990473ddc35",
+      "url": "https://www.nomadfoods.com/news/nomad-foods-reports-second-quarter-2026-financial-results/"
+    },
+    {
+      "claim": "NOMD closed at USD11.989999771118164 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14XT1K8H8FRQBKS0GD624RM.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/idea_refresh_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_98a1943771da875efed5.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14VGVSR1WXDTCCFX51T1NXT",
+  "operations_created": [
+    "01M14XT1K8H8FRQBKS0GD624RM"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Nomad Foods research after consuming the identity correction. Current issuer evidence and USD9/USD15/USD20 scenarios at USD11.99 produce 18.43% expected and 13.82% confidence-adjusted return, for Buy / Initiate economics. Falling volume, leverage, restructuring, timing and the pending defensive-consumer relationship keep allocation ineligible. The single relationship review was preserved, exactly one idea refresh was created, and no strategy or trading state changed.",
+  "validation": {
+    "checks": [
+      "Canonical NOMD/XNYS/USD identity overrode the historical ingest label.",
+      "Registered current issuer evidence and used fresh price/FX.",
+      "Wrote exactly one scenario-complete assessment.",
+      "Preserved exactly one candidate relationship and created exactly one required idea refresh.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

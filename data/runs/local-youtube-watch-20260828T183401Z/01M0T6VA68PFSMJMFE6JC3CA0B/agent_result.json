@@ -1,0 +1,70 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_2433a056eb0c55961fcc",
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/source_10q_record_request.json",
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/source_results_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Amazon's unchanged USD275 weighted value versus a refreshed USD256.26 mark raises expected return to 7.31%, but limited base upside, downside payoff, AI capital intensity and a pending relationship retain Hold / Watch."
+  ],
+  "evidence": [
+    {
+      "claim": "Amazon's Q2 filing confirms strong operating growth alongside negative trailing free cash flow from elevated infrastructure investment.",
+      "observed_at": "2026-08-28T19:39:15Z",
+      "source": "source_amzn_q2_2026_10q",
+      "source_hash": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+    },
+    {
+      "claim": "Amazon's Q2 results report 20% sales growth, 43% operating-income growth and 37% AWS growth.",
+      "observed_at": "2026-08-28T19:39:15Z",
+      "source": "source_amzn_q2_2026_results",
+      "source_hash": "3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm"
+    },
+    {
+      "claim": "AMZN closed at USD256.260009765625 with USD/EUR 0.8632000088691711, retrieved 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14Y903R9M20HYXRNY7A0KS3.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/source_10q_record_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M0T6VA68PFSMJMFE6JC3CA0B/source_results_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_2433a056eb0c55961fcc.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M0T6VA68PFSMJMFE6JC3CA0B",
+  "operations_created": [
+    "01M14Y903R9M20HYXRNY7A0KS3"
+  ],
+  "status": "succeeded",
+  "summary": "Repeated Amazon research using the required bounded prior context, unchanged Q2 primary evidence and the fresh USD256.26 mark. The preserved USD200/USD270/USD360 scenarios now yield 7.31% expected and 5.48% confidence-adjusted return; Amazon remains Hold / Watch and allocation-ineligible because base upside, downside payoff and the canonical relationship do not clear the gate. Exactly one relationship review was enqueued, and no strategy or paper-trading state changed.",
+  "validation": {
+    "checks": [
+      "Consumed the bounded prior security context and explicitly compared the repeat review.",
+      "Rechecked both retained primary sources and used fresh price/FX identity.",
+      "Wrote one new immutable scenario-complete assessment with unchanged assumptions.",
+      "Enqueued one bounded candidate relationship review.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}

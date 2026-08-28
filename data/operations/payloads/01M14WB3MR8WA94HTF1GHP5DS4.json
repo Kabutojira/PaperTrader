@@ -1,0 +1,22 @@
+{
+  "entity_id": "relationship_c3f2e709d4a16b8532cc",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "https://ir.dominos.com/node/24771"
+    ],
+    "idea_id": "idea_defensive_consumer_cash_return",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject if comparable sales and unit economics weaken structurally, franchisees retrench, leverage rises, or distributions exceed durable free cash flow.",
+    "proposed_mechanism": "Asset-light franchise fees and unit growth can transmit recurring demand into shareholder cash returns if franchisee economics and comparable sales remain healthy.",
+    "relationship_id": "relationship_c3f2e709d4a16b8532cc",
+    "security_id": "security_f34181f3df32080a91d1"
+  },
+  "objective": "Review whether Domino's Pizza has a material causal relationship to defensive consumer cash-return resilience.",
+  "operation_id": "01M14WB3MR8WA94HTF1GHP5DS4",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md"
+  ]
+}

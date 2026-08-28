@@ -63,7 +63,13 @@ def _wiki_changes(wiki_root: Path, report_date: date) -> tuple[str, ...]:
     changes: list[str] = []
     for path in sorted(wiki_root.rglob("*.md")):
         relative = path.relative_to(wiki_root)
-        if relative.parts[0] in {"raw", "daily-reports"} or relative.name in {
+        if relative.parts[0] in {
+            "_archive",
+            "_meta",
+            "daily-reports",
+            "inbox",
+            "raw",
+        } or relative.name in {
             "SCHEMA.md",
             "index.md",
             "log.md",

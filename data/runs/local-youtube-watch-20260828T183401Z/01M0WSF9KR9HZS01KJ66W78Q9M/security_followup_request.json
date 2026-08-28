@@ -1,0 +1,28 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_8b703a8adf5f864acaa4",
+  "dedupe_key": "security_research:security_8b703a8adf5f864acaa4:youtube-72bcd386cf47:2026-08-28",
+  "prompt": "Research and value Prosus N.V. ordinary shares after a curated-video lead and current primary-source verification.",
+  "inputs": {
+    "security_id": "security_8b703a8adf5f864acaa4",
+    "trigger": "Curated YouTube lead GnLtHsGM81k raised a material Prosus holding-company discount, Tencent exposure, and repurchase-accretion hypothesis that requires independent full security research.",
+    "research_focus": "Verify the PRX.AS/XAMS identity; independently value Tencent and the consolidated/portfolio businesses; distinguish listed market values from unverified analyst valuations for private assets; reconcile debt, taxes, governance, Naspers control, capital allocation and buyback accretion; test whether the persistent holding-company discount is justified; produce one scenario-complete assessment without treating the video as evidence."
+  },
+  "source": "youtube_ingest:01M0WSF9KR9HZS01KJ66W78Q9M",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M0WSF9KR9HZS01KJ66W78Q9M"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=GnLtHsGM81k",
+    "https://www.prosus.com/investors/financial-information/results",
+    "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en",
+    "https://www.prosus.com/investors/share-information/share-buyback-programmes",
+    "https://live.euronext.com/en/product/equities/NL0013654783-XAMS"
+  ],
+  "max_attempts": 3
+}

@@ -1,0 +1,16 @@
+{
+  "relationship_id": "relationship_0716cb4d18e5af297600",
+  "idea_id": "idea_digital_finance_crypto_rails",
+  "security_id": "security_d202772e4e62065cd17a",
+  "relationship_type": "beneficiary",
+  "direction": "positive",
+  "mechanism": "Bank processing, merchant acquiring, payment networks, ecommerce and Clover can convert digital-payment adoption into recurring processing revenue and cash flow when client retention, product growth, service quality and execution are sound; crypto exposure is not required.",
+  "sensitivity": "high",
+  "confidence": "medium",
+  "catalyst": "Organic revenue returns to growth, client retention and implementations stabilize, Clover growth and service quality recover, margins and cash conversion improve, and debt declines without underinvestment.",
+  "invalidation": "Digital-finance growth is immaterial to Fiserv; clients continue to leave; Clover stalls; pricing or competition compresses margins; implementation and service failures persist; or debt, remediation and capital allocation absorb operating cash flow.",
+  "status": "accepted",
+  "research_page": "data/wiki/relationships/relationship_0716cb4d18e5af297600.md",
+  "last_reviewed_at": "2026-08-28T20:11:00Z",
+  "next_review_at": "2026-09-30T12:00:00Z"
+}

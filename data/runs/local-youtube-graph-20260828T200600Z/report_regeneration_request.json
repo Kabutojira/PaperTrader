@@ -1,0 +1,57 @@
+{
+  "run_id": "local-youtube-graph-20260828T200600Z",
+  "run_status": "succeeded",
+  "report_date": "2026-08-28",
+  "generated_at": "2026-08-28T20:24:48Z",
+  "github_report_url": "https://github.com/Kabutojira/PaperTrader/actions/runs/33024344445",
+  "narrative_items": [
+    {
+      "text": "Defensive-consumer cash-return research now incorporates Ahold's Hold / Watch assessment and accepted causal edge without expanding the selected universe.",
+      "evidence_refs": [
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14V3QW82X4W0JJ5WGKWCAZH/agent_result.json",
+        "data/wiki/relationships/relationship_a1d0c5e7b2894f6310aa.md"
+      ]
+    },
+    {
+      "text": "Accepted Fiserv's high-sensitivity digital-payment-rails edge, while organic contraction, execution, cash conversion and debt keep FISV allocation-ineligible.",
+      "evidence_refs": ["source_fisv_q2_2026_10q"]
+    },
+    {
+      "text": "Mobility-platform research now incorporates Uber's Buy / Initiate assessment and accepted causal edge while preserving downside and autonomy gates.",
+      "evidence_refs": [
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VGZPRSXPKBED8XS85DJ2M/agent_result.json",
+        "data/wiki/relationships/relationship_d403f81ae5b27c9643dd.md"
+      ]
+    },
+    {
+      "text": "Accepted MercadoLibre's high-sensitivity digital-finance edge; commerce and payments reinforce one another, while credit, funding, currencies and regulation keep MELI allocation-ineligible.",
+      "evidence_refs": ["source_meli_q2_2026_10q"]
+    },
+    {
+      "text": "Defensive-consumer research now incorporates Nomad Foods' Buy / Initiate assessment and accepted causal edge while preserving volume, leverage and downside gates.",
+      "evidence_refs": [
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VGVSR1WXDTCCFX51T1NXT/agent_result.json",
+        "data/wiki/relationships/relationship_b2e1d6f8c3905a7421bb.md"
+      ]
+    },
+    {
+      "text": "Defensive-consumer research now incorporates Domino's Buy / Initiate assessment and accepted causal edge while preserving comparable-sales, leverage and downside gates.",
+      "evidence_refs": [
+        "data/runs/local-youtube-watch-20260828T183401Z/01M14VH1N8WRQBZMJ6BYRG2WWG/agent_result.json",
+        "data/wiki/relationships/relationship_c3f2e709d4a16b8532cc.md"
+      ]
+    },
+    {
+      "text": "Accepted Amazon's high-sensitivity AI-compute edge through AWS; capital intensity, negative free cash flow and utilization risk keep AMZN at Hold / Watch.",
+      "evidence_refs": ["source_amzn_q2_2026_10q", "source_amzn_q2_2026_results"]
+    },
+    {
+      "text": "Accepted Meta's high-sensitivity AI-monetization edge; strong advertising demand is offset by cost growth, capex and weak latest cash conversion, leaving META at Hold / Watch.",
+      "evidence_refs": ["source_meta_q2_2026_10q", "source_meta_q2_2026_results"]
+    },
+    {
+      "text": "Accepted the compensating MercadoLibre assessment version with the correct USD2200 weighted value; rating, return and ineligibility are unchanged.",
+      "evidence_refs": ["source_meli_q2_2026_10q"]
+    }
+  ]
+}

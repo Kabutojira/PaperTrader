@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14WB3MR8WA94HTF1GHP5DS4/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Domino's medium-sensitivity defensive-consumer cash-return edge, while flat comparable sales, leverage and franchisee health keep the security allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Domino's reported 3.0% global retail-sales and 3.1% operating-income growth, but only 0.1% U.S. comparable-sales growth and slightly negative international comparable sales excluding currency, supporting a direct but currently weak demand-to-cash mechanism.",
+      "observed_at": "2026-08-28T19:58:32Z",
+      "source": "source_dpz_q2_2026_10q",
+      "source_hash": "07d6ab191a940e2c55a1c124f1a210d603271c5fe43d498be00eb887661bb4dd",
+      "url": "https://www.sec.gov/Archives/edgar/data/1286681/000128668126000035/dpz-20260614.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14WB3MR8WA94HTF1GHP5DS4/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_c3f2e709d4a16b8532cc.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14WB3MR8WA94HTF1GHP5DS4",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from defensive consumer cash-return resilience to Domino's Pizza with medium sensitivity and medium confidence. Franchise fees, supply-chain economics and unit growth provide a direct mechanism, while nearly flat comparable sales, franchisee health, leverage and capital allocation remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

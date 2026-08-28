@@ -1,0 +1,32 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_3a49fe7041b8dc52a933",
+  "dedupe_key": "relationship_research:idea_ai_compute_networking_hyperscaler_monetization:security_d12e746b3c9d392183cc:2026-08-28",
+  "prompt": "Review Meta's causal relationship to AI compute, networking and hyperscaler monetization.",
+  "inputs": {
+    "relationship_id": "relationship_3a49fe7041b8dc52a933",
+    "idea_id": "idea_ai_compute_networking_hyperscaler_monetization",
+    "security_id": "security_d12e746b3c9d392183cc",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Meta deploys AI compute to improve recommendations, engagement, advertising returns and new product monetization; shareholder benefit depends on incremental revenue and margins exceeding infrastructure, talent, financing and dilution costs.",
+    "proposed_invalidation": "Reject if AI investment does not produce durable engagement, advertising or messaging economics sufficient to offset capital spending, depreciation, debt, stock compensation and Reality Labs losses.",
+    "evidence_refs": [
+      "source_meta_q2_2026_10q",
+      "source_meta_q2_2026_results"
+    ]
+  },
+  "source": "security_research:01M14VH5J8BNYBNN2K5XZSVWV0",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": [
+    "01M14VH5J8BNYBNN2K5XZSVWV0"
+  ],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_d12e746b3c9d392183cc.md",
+    "data/wiki/ideas/idea_ai_compute_networking_hyperscaler_monetization.md"
+  ],
+  "max_attempts": 3
+}

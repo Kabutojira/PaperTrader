@@ -1,0 +1,19 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14VGZPRSXPKBED8XS85DJ2M.json",
+    "data/operations/payloads/01M14WEJZ8X5GQSES33PATFBTS.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/relationship_uber_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6R00ZPN2DXT300CA7P2R/security_cause_uber.json",
+    "data/wiki/ideas/idea_mobility_platform_autonomy.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-08-28T19:10:28Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14W6R00ZPN2DXT300CA7P2R",
+  "passed": true,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

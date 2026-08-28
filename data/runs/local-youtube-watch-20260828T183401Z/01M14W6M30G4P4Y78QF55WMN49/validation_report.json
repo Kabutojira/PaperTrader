@@ -1,0 +1,27 @@
+{
+  "changed_paths": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14V3QW82X4W0JJ5WGKWCAZH.json",
+    "data/operations/payloads/01M14VGVSR1WXDTCCFX51T1NXT.json",
+    "data/operations/payloads/01M14VH1N8WRQBZMJ6BYRG2WWG.json",
+    "data/operations/payloads/01M14WAZQR7NWPAESQPBYZFJWV.json",
+    "data/operations/payloads/01M14WB1P8QM5BEP0NE3F8PR2N.json",
+    "data/operations/payloads/01M14WB3MR8WA94HTF1GHP5DS4.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_ahold_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_dominos_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/relationship_nomad_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_ahold.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_dominos.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14W6M30G4P4Y78QF55WMN49/security_cause_nomad.json",
+    "data/wiki/ideas/idea_defensive_consumer_cash_return.md",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "completed_at": "2026-08-28T19:08:48Z",
+  "errors": [],
+  "harness": "local",
+  "operation_id": "01M14W6M30G4P4Y78QF55WMN49",
+  "passed": true,
+  "run_id": "local-youtube-watch-20260828T183401Z",
+  "validation_version": 1
+}

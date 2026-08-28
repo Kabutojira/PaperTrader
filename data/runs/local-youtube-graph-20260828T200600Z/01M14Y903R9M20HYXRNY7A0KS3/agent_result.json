@@ -1,0 +1,47 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14Y903R9M20HYXRNY7A0KS3/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Amazon's high-sensitivity AI-compute edge through AWS; capital intensity, negative free cash flow and utilization risk keep AMZN at Hold / Watch."
+  ],
+  "evidence": [
+    {
+      "claim": "Amazon's Q2 filing confirms direct AWS and infrastructure exposure alongside negative trailing free cash flow, USD96.3 billion of first-half cash capex and material debt and lease obligations.",
+      "observed_at": "2026-08-28T20:15:00Z",
+      "source": "source_amzn_q2_2026_10q",
+      "source_hash": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+    },
+    {
+      "claim": "Amazon reported Q2 AWS sales growth of 37%, consolidated sales growth of 20% and operating-income growth of 43%, with AWS contributing about 60% of segment operating income.",
+      "observed_at": "2026-08-28T20:15:00Z",
+      "source": "source_amzn_q2_2026_results",
+      "source_hash": "3a867450183833d4b7f4ed73d81e9492f8117cb49ea6bd1986e9ad0ecd231895",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14Y903R9M20HYXRNY7A0KS3/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_2938ed6f30a7cb419822.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14Y903R9M20HYXRNY7A0KS3",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from AI compute, networking and hyperscaler monetization to Amazon with high sensitivity and medium confidence. AWS provides direct material exposure and most segment operating profit, while capital intensity, negative free cash flow, utilization, competition, financing and dilution remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "operation_type": "security_research",
+  "entity_type": "security",
+  "entity_id": "security_2433a056eb0c55961fcc",
+  "dedupe_key": "security_research:security_2433a056eb0c55961fcc:youtube-ef69b7279753:2026-08-28",
+  "prompt": "Refresh and value Amazon after a curated-video buy lead and current Q2 2026 evidence.",
+  "inputs": {
+    "security_id": "security_2433a056eb0c55961fcc",
+    "trigger": "The curated screen called Amazon a good buy at an estimated high-single-digit return; newer Q2 2026 issuer results and AI capital spending require a comparable refresh.",
+    "research_focus": "Reassess AWS, advertising, retail margins, AI capital intensity, free cash flow, Anthropic-related non-operating effects, competition and valuation; treat the video only as a lead."
+  },
+  "source": "youtube_ingest:01M14T9XPRN3BDD0XSWNXYHVJB",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M14T9XPRN3BDD0XSWNXYHVJB"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "https://www.youtube.com/watch?v=vmS8oB2xO9A",
+    "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx"
+  ],
+  "max_attempts": 3
+}

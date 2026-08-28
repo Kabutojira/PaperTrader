@@ -372,3 +372,7 @@
 2026-08-26T16:19:41Z [daily_run_started] run=daily-20260826T161934Z Started sequential deterministic daily preparation.
 2026-08-26T17:11:24Z [daily_run_completed] run=daily-20260826T161934Z Completed deterministic daily run with status degraded.
 2026-08-27T02:00:58Z [daily_podcast_completed] run=daily-20260826T161934Z operation=01M10EF5AGHVE8437SBQH4WT1F Daily podcast finished with status failed.
+2026-08-28T18:32:54Z [daily_run_started] run=local-youtube-watch-20260828T183401Z Started sequential deterministic daily preparation.
+2026-08-28T20:04:48Z [daily_run_completed] run=local-youtube-watch-20260828T183401Z Completed deterministic daily run with status succeeded.
+2026-08-28T20:08:25Z [daily_run_started] run=local-youtube-graph-20260828T200600Z Started sequential deterministic daily preparation.
+2026-08-28T20:24:48Z [daily_run_completed] run=local-youtube-graph-20260828T200600Z Completed deterministic daily run with status succeeded.

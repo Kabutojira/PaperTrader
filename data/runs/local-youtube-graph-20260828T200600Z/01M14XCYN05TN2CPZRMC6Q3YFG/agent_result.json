@@ -1,0 +1,40 @@
+{
+  "commands_run": [
+    "papertrader research relationship upsert --request data/runs/local-youtube-graph-20260828T200600Z/01M14XCYN05TN2CPZRMC6Q3YFG/relationship_upsert_request.json",
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Accepted Fiserv's high-sensitivity digital-payment-rails edge, while organic contraction, execution, cash conversion and debt keep FISV allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "Fiserv reported Q2 GAAP revenue of USD5.29 billion, adjusted revenue down 4%, organic revenue down 5% and adjusted EPS down 26%, demonstrating material payment-rail exposure but failed current transmission into growth.",
+      "observed_at": "2026-08-28T20:11:00Z",
+      "source": "source_fisv_q2_2026_10q",
+      "source_hash": "7e2c1033d7085f0848d7984ee854473bcbf2633c60079bf05f86d11d0af469ae",
+      "url": "https://www.sec.gov/Archives/edgar/data/798354/000079835426000031/fisv-20260630.htm"
+    }
+  ],
+  "files_changed": [
+    "data/runs/local-youtube-graph-20260828T200600Z/01M14XCYN05TN2CPZRMC6Q3YFG/relationship_upsert_request.json",
+    "data/tables/relationships.csv",
+    "data/wiki/log.md",
+    "data/wiki/relationships/relationship_0716cb4d18e5af297600.md",
+    "data/wiki/research-catalog.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14XCYN05TN2CPZRMC6Q3YFG",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Accepted the positive beneficiary relationship from digital finance and payment rails to Fiserv with high sensitivity and medium confidence. Bank processing, acquiring, networks, ecommerce and Clover provide direct material exposure without requiring crypto, while current organic contraction, client execution, cash conversion and debt remain explicit constraints. No strategy or follow-up operation was created.",
+  "validation": {
+    "checks": [
+      "Validated exact immutable endpoints and relationship uniqueness.",
+      "Recorded all required causal fields through the CLI.",
+      "Strict schema and wiki checks passed.",
+      "No strategy or trading state changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "security_id": "security_4935c6e39e38273a1731",
+  "issuer_id": "issuer_252451eb3daa0c0b39b1",
+  "company_name": "MercadoLibre, Inc.",
+  "instrument_name": "MercadoLibre, Inc. common stock",
+  "instrument_type": "equity",
+  "ticker": "MELI",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "MELI",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "UY",
+  "sector": "Consumer Cyclical",
+  "industry": "Internet Retail",
+  "status": "watching",
+  "watchlist_reason": "Latin American commerce, payments, logistics, advertising and credit platform; monitor credit losses, funding, currencies, regulation, competition and valuation.",
+  "research_summary": "USD2200 weighted value versus USD1930.75 supports Buy / Initiate economics, but credit/funding risk, downside payoff and a pending relationship keep MELI ineligible.",
+  "research_page": "data/wiki/securities/security_4935c6e39e38273a1731.md",
+  "last_research_at": "2026-08-28T19:49:27Z",
+  "next_review_at": "2026-09-27T19:49:27Z",
+  "source": "source_meli_q2_2026_10q"
+}

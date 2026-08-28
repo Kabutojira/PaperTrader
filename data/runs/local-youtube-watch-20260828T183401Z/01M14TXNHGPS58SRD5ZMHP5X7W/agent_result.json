@@ -1,0 +1,65 @@
+{
+  "commands_run": [
+    "papertrader research source record --request data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/source_record_request.json",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/assessment_upsert_request.json",
+    "papertrader queue enqueue --request data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/relationship_request.json",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader wiki lint --strict",
+    "papertrader research security upsert --request data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/security_upsert_request_v2.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Prosus's EUR49 weighted look-through value versus EUR38.69 produces Buy / Initiate economics, but the unaccepted digital-ecosystem relationship keeps PRX allocation-ineligible with no strategy."
+  ],
+  "evidence": [
+    {
+      "claim": "Prosus reported US$150.4 billion NAV and EUR61.5 consensus NAV per share, dominated by US$117.0 billion Tencent value; the issuer disclaims endorsement of the US$32.8 billion analyst/post-money unlisted value.",
+      "observed_at": "2026-08-28T19:18:00Z",
+      "source": "source_prosus_nav_20260827",
+      "source_hash": "cc7e5e28e80215c617a50b48075d550b6b567d6a658ac6a2656967d871b36aee",
+      "url": "https://www.prosus.com/investors/investing-in-prosus/net-asset-value?locale=en"
+    },
+    {
+      "claim": "PRX.AS closed at EUR38.689998626708984 on 2026-08-28 and was retrieved at 2026-08-28T19:01:02Z.",
+      "observed_at": "2026-08-28T19:01:02Z",
+      "source": "canonical market state"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M14WZXN8TRDQ5HN6ZA4ESFME.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/assessment_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/relationship_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/security_upsert_request.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/security_upsert_request_v2.json",
+    "data/runs/local-youtube-watch-20260828T183401Z/01M14TXNHGPS58SRD5ZMHP5X7W/source_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/research-catalog.md",
+    "data/wiki/securities/security_8b703a8adf5f864acaa4.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M14TXNHGPS58SRD5ZMHP5X7W",
+  "operations_created": [
+    "01M14WZXN8TRDQ5HN6ZA4ESFME"
+  ],
+  "status": "succeeded",
+  "summary": "Completed Prosus research with verified XAMS/EUR identity, current issuer NAV and one schema-v2 look-through NAV assessment. EUR30/EUR52/EUR70 scenarios at EUR38.69 yield EUR49 weighted value, 26.65% expected and 19.99% medium-confidence-adjusted return. The deterministic economic rating is Buy / Initiate, but allocation remains ineligible because the digital-attention ecosystem relationship is pending; exactly one relationship review was queued and no strategy or trading state changed.",
+  "validation": {
+    "checks": [
+      "Verified immutable identity and current price.",
+      "Registered current primary NAV evidence with an exact content hash.",
+      "Used explicit private-asset, debt, tax, governance and persistent-discount adjustments in one scenario-complete assessment.",
+      "Searched the idea catalog and queued exactly one causal relationship candidate.",
+      "Reconciled narrative and structured deterministic rating before completion.",
+      "Strict schema, queue and wiki checks passed; no strategy or paper-trading state changed."
+    ],
+    "passed": true
+  }
+}
