@@ -2611,3 +2611,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9]] (2dc6ad84d3e9).
 
 - Classified [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9]] as `ingest`: Material RSI oversold transition after a sharp monthly decline warrants durable wiki review.
+
+## [2026-08-29T18:19:00Z] security research | Canadian Solar
+
+- Rechecked [[securities/security_099561384c0f5e697727|CSIQ]] after its 21.03% July 31-August 28
+  decline, 14.81% one-session fall, anomalous volume and new RSI-oversold state.
+- The SEC index and Q2 release were unchanged. The repaired USD 11.91 mark improves scenario
+  returns, but the move has no current primary-evidence explanation and remains an unresolved risk
+  event and possible dislocation rather than verified mean reversion.
+- Retained USD 10.16/USD 18.28/USD 26.41 NAV cases and Buy / Initiate at Watch; the pending causal
+  relationship keeps Canadian Solar allocation-ineligible, so no strategy or paper-trading state
+  changed.

@@ -1,0 +1,75 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader research source record --request data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/source_csiq_q2_2026_results_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/source_csiq_sec_submissions_20260829_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/assessment_upsert_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "CSIQ entered RSI oversold after a 21.03% monthly decline and a 14.81% one-session fall on anomalous volume. No newer primary filing explains the move. The unchanged NAV cases now imply 39.87% expected return, but Canadian Solar remains Watch and allocation-ineligible while its causal relationship is pending; no strategy or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The unchanged second-quarter release reports 3.1 GW of module shipments, 3.7 GWh of storage shipments, USD 1.2 billion of revenue, 13.9% normalized gross margin, a USD 77 million attributable loss, USD 181 million of operating cash use, USD 7.1 billion of total debt, and project sales deferred into the second half.",
+      "observed_at": "2026-08-29T18:19:00Z",
+      "source": "source_csiq_q2_2026_results",
+      "source_hash": "6605b97860c2320eef25ce8de118377bae4138f7c7b75c9efab5d8209c429d56",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926101856/tm2623883d1_ex99-1.htm"
+    },
+    {
+      "claim": "The SEC submissions index remained unchanged and listed the August 27, 2026 Form 6-K as Canadian Solar's newest filing through the August 29 check, providing no new filing explanation for the market move.",
+      "observed_at": "2026-08-29T18:19:00Z",
+      "source": "source_csiq_sec_submissions_20260829",
+      "source_hash": "823d1ca5a992e7f2f1927b657965aa23505ac8daab293caf2d621f0f17aa7c21",
+      "url": "https://data.sec.gov/submissions/CIK0001375877.json"
+    },
+    {
+      "claim": "The canonical alert records a July 31-August 28 adjusted-close decline of 21.03%, an August 28 close of USD 11.909090909090908, RSI of 29.6693495, an 8.50% lower-band breach, negative MACD, and source price hash 1c2834428cfe05e1f21a8ef0ecae8d4be170bc2c7ad64464847c701550f6d58d. The underlying price cache identifies the bar as yfinance:ohlc-envelope-repair.",
+      "observed_at": "2026-08-29T18:13:26Z",
+      "source": "data/wiki/inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9.md",
+      "source_hash": "1c2834428cfe05e1f21a8ef0ecae8d4be170bc2c7ad64464847c701550f6d58d"
+    },
+    {
+      "claim": "The schema-version-two assessment links predecessor assessment_3314317f74b3b3f3acc6 and derives complete but ineligible research, watch conviction, quality score 54, canonical rating buy, portfolio action initiate, 39.8721374045801654844706019% expected return, 29.90410305343512411335295142% confidence-adjusted expected return, and relationship_pending as the sole eligibility reason. Its stored research-page hash matches the updated page.",
+      "source": "assessment_fde4d193ae9f01ccb3d1"
+    },
+    {
+      "claim": "No accepted canonical relationship exists for this security. The specific solar-storage relationship candidate is already represented by active dependent relationship-research operation 01M0F7V8D8MTRZGEVET3HTD4AT, so this repeat review created no duplicate follow-up. The payload names no idea and there is no accepted linked idea, so no idea-research follow-up is required.",
+      "source": "data/tables/relationships.csv and data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/assessment_upsert_request.json",
+    "data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/security_upsert_request.json",
+    "data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/source_csiq_q2_2026_results_recheck_request.json",
+    "data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/source_csiq_sec_submissions_20260829_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M15CV078368B412WAN3HK2FE",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed one repeat assessment of Canadian Solar Inc. common shares after the canonical August 28 RSI-oversold alert. The August 29 SEC index and Q2 release were unchanged and supplied no primary-evidence explanation for the repaired USD 11.91 close, 14.81% one-session decline, anomalous volume, and RSI of 29.67. The review therefore classifies the move as an unresolved risk event and possible valuation dislocation rather than verified mean reversion. The USD 10.16/USD 18.28/USD 26.41 NAV scenarios remain unchanged; the lower mark raises deterministic expected return to 39.87% and confidence-adjusted expected return to 29.90%. The canonical result remains Buy / Initiate at watch-tier conviction but allocation-ineligible because the causal relationship is still pending. No strategy, signal, order, allocation, or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context command succeeded before assessment state was read or changed, and the prior result and predecessor assessment were consumed.",
+      "Immutable issuer, instrument, XNAS venue, CSIQ provider symbol, USD currency, and equity identity matched the canonical security row; the validated security upsert completed successfully.",
+      "Both retained current primary sources were registered through audited source-record commands with fresh timestamps and SHA-256 hashes; older retained evidence remains within the configured freshness boundary.",
+      "Assessment upsert validated schema version two, registered evidence, fresh identity-matched USD price and USD/EUR FX state, ordered scenarios, probabilities totaling 100%, anchored scores, and the complete canonical gate calculation.",
+      "Assessment assessment_fde4d193ae9f01ccb3d1 links predecessor assessment_3314317f74b3b3f3acc6, this operation and result path, schema version two, and research-page hash 7095dcb9be9b2e752ea6ba83df682cfd3520838f0871dbdcf1550a9a16d62ebd; the live page hash matched.",
+      "The complete maintained idea catalog and canonical relationship state were searched. Solar/storage remains the only plausible candidate, its bounded relationship review is already active, and three superficial associations remain explicitly rejected with reasons.",
+      "No payload idea or accepted linked idea exists, so zero idea-research follow-ups is the required exact count; no duplicate relationship operation and no strategy operation was enqueued.",
+      "Strict wiki lint passed with OK [wiki].",
+      "Observed repository changes exclude allocation targets/history, orders, signals, fills, executions, cash, portfolio, and performance state."
+    ],
+    "passed": true
+  }
+}
