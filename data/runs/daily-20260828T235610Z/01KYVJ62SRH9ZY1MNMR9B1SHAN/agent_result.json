@@ -1,0 +1,49 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Labcorp's 2026-07-30 entered volume anomaly was reviewed as unexplained technical noise: the recorded 11.1% July rise had no time-matched primary-source catalyst, and later complete research left the security allocation-ineligible with no position, accepted relationship, or strategy exposure. No follow-up was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet records an entered volume-anomaly transition on 2026-07-30, an 11.1490747330195805628358084% return from 2026-07-01 through 2026-07-30, a USD 315.5299987792969 adjusted close, and source-price hash 9c78f83e4556c3d92cc0a4e9e6bdb5ee48f713316b7fc182a6607be4663bcb5c.",
+      "source": "data/wiki/inbox/market-security_b1f2c48e1a744f5ecf67-volume_anomaly-30d19f036e9a.md",
+      "source_hash": "30d19f036e9acb5f26d312d83561c78099f91ab6f3e4d0d00fcab8b68c9d946a"
+    },
+    {
+      "claim": "The immutable identity's yfinance cache contains the required 2026-07-01 and 2026-07-30 endpoints; the latter records adjusted close USD 315.5299987792969 and volume 1,398,600, retrieved at 2026-07-31T07:45:55Z.",
+      "source": "data/market/prices/security_b1f2c48e1a744f5ecf67.csv"
+    },
+    {
+      "claim": "Registered primary evidence contains Labcorp's Q2 results, Q2 Form 10-Q, August 11 and August 17 Forms 8-K, and the SEC submissions-index check. The Q2 results release is registered after the observed July 30 bar, so it cannot establish contemporaneous causation for that transition.",
+      "source": "data/tables/source_registry.csv"
+    },
+    {
+      "claim": "The completed August 21 review retained medium-confidence, allocation-ineligible status because the USD 253.40/USD 311.53/USD 371.00 scenarios, downside payoff, margin of safety, and missing accepted relationship did not support new exposure; it identifies no accepted canonical relationship or conviction strategy.",
+      "source": "data/wiki/securities/security_b1f2c48e1a744f5ecf67.md"
+    },
+    {
+      "claim": "No current Labcorp portfolio position, relationship row, or strategy row was found in the canonical tables, so the historic technical event has no position or active-strategy materiality.",
+      "source": "data/tables/portfolio.csv; data/tables/relationships.csv; data/tables/strategies.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SRH9ZY1MNMR9B1SHAN",
+  "operations_created": [],
+  "reason_code": "unexplained_technical_noise",
+  "status": "succeeded",
+  "summary": "Classified Labcorp's entered 2026-07-30 volume anomaly as noise rather than an opportunity or a new risk. The 11.1% July price rise and elevated-volume transition are verified, but no time-matched primary source in the registered evidence explains the move. Subsequent Q2 and SEC evidence support the existing operating thesis but do not establish a new causal catalyst for the July 30 bar. Labcorp has no portfolio position, no accepted canonical relationship, and remains allocation-ineligible after its later complete review; no bounded follow-up is justified.",
+  "validation": {
+    "checks": [
+      "Confirmed the running queue row is claimed by daily-20260828T235610Z with a live lease at 2026-08-29T00:10:47Z.",
+      "Confirmed controller preflight identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with content hashes.",
+      "Validated immutable security identity, required July period endpoints, trigger transition, adjusted close, retrieval timestamp, and source-price hash from canonical market and candidate records.",
+      "Reviewed registered primary-source evidence and the maintained Labcorp research page; no time-matched primary catalyst or new materiality was established.",
+      "Confirmed no Labcorp position, relationship, or strategy rows exist and did not mutate trading, accounting, allocation, or structured state.",
+      "Ran scripts/papertrader wiki lint --strict: OK [wiki]."
+    ],
+    "passed": true
+  }
+}
