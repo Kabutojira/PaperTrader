@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-28"
-updated: "2026-08-28"
+created: "2026-08-29"
+updated: "2026-08-29"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_8d2efa638c1727ad5cb1"
-as_of: "2026-08-28T22:26:33Z"
+snapshot_id: "decision_59f4507365813354632a"
+as_of: "2026-08-29T00:16:52Z"
 ---
 
 # Signals
 
-**As of `2026-08-28T22:26:33Z`**
+**As of `2026-08-29T00:16:52Z`**
 
 ## Actionable trade signals
 
@@ -24,6 +24,24 @@ No actionable trade signals.
 No pending orders.
 
 ## Research alerts — not trade signals
+
+### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
+
+**Research alert — not a trade signal**
+
+- Alert: `bollinger\_below\_lower`
+- Market date: `2026-08-28`
+- Research status: `succeeded`
+- Conclusion: Completed exactly one bounded Parrot S.A. quick check for the 26 August lower-Bollinger transition. The payload-bound EUR 9.199999809265137 close was 1.5688% below the EUR 9.34663348 lower band after a 4.96% decline over 29 July through 26 August, with RSI 34.23, no volume anomaly, and bearish MACD. The retained H1 issuer release remains publicly available and the issuer share-count page remains byte-identical to its registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 1.2% below the alert-date market price, while the EUR 7.272 buy-below level remains about 20.96% below market. The thesis, valuation assumptions, catalysts, risks, invalidation, confidence, Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed.
+
+### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-08-28`
+- Research status: `pending`
+- Conclusion: Deterministic price alert awaits bounded research review.
 
 ### [PYPL — PayPal Holdings, Inc.](securities/security_1e8fbdb0f45f2b413e00)
 
@@ -114,24 +132,6 @@ No pending orders.
 - Market date: `2026-08-28`
 - Research status: `skipped`
 - Conclusion: Queue triage disposition
-
-### [AD — Koninklijke Ahold Delhaize N.V.](securities/security_e19c7fe27fbcc4cd923d)
-
-**Research alert — not a trade signal**
-
-- Alert: `rsi\_oversold`
-- Market date: `2026-08-28`
-- Research status: `pending`
-- Conclusion: Deterministic price alert awaits bounded research review.
-
-### [PARRO.PA — Parrot S.A.](securities/security_cc4dcb8f002b61dffe00)
-
-**Research alert — not a trade signal**
-
-- Alert: `bollinger\_below\_lower`
-- Market date: `2026-08-28`
-- Research status: `succeeded`
-- Conclusion: Completed exactly one bounded Parrot S.A. quick check for the 26 August lower-Bollinger transition. The payload-bound EUR 9.199999809265137 close was 1.5688% below the EUR 9.34663348 lower band after a 4.96% decline over 29 July through 26 August, with RSI 34.23, no volume anomaly, and bearish MACD. The retained H1 issuer release remains publicly available and the issuer share-count page remains byte-identical to its registered source. Repricing the unchanged EUR 5.48/EUR 9.09/EUR 14.51 scenarios leaves base and probability-weighted value about 1.2% below the alert-date market price, while the EUR 7.272 buy-below level remains about 20.96% below market. The thesis, valuation assumptions, catalysts, risks, invalidation, confidence, Hold / Watch disposition, and allocation ineligibility are unchanged. No full security review was requested, no assessment upsert was required under the unchanged-conclusion path, and no agent-owned repository state changed.
 
 ### [MSFT — Microsoft Corporation](securities/security_204be2a44063993de1a8)
 

@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-08-28"
+updated: "2026-08-29"
 provenance: repository-contract
 ---
 
@@ -2601,3 +2601,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Unchanged USD 43.04/USD 64.56/USD 80.70 cases improve to Buy / Watch at USD 53.66, but payoff,
   margin-of-safety, timing and pending-relationship gates keep PayPal allocation-ineligible; no
   strategy or paper-trading state changed.
+
+## 2026-08-29
+
+- Published investor decision snapshot `decision_59f4507365813354632a`.
+
+- Generated canonical [[daily-reports/daily-report_20260829]] for run `daily-20260828T235610Z`.
