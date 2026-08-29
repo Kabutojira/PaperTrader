@@ -2612,6 +2612,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Classified [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9]] as `ingest`: Material RSI oversold transition after a sharp monthly decline warrants durable wiki review.
 
+- Published investor decision snapshot `decision_dd5e0a35775ab3679193`.
+
+- Generated canonical [[daily-reports/daily-report_20260829]] for run `daily-20260829T181317Z`.
+
 ## [2026-08-29T18:19:00Z] security research | Canadian Solar
 
 - Rechecked [[securities/security_099561384c0f5e697727|CSIQ]] after its 21.03% July 31-August 28

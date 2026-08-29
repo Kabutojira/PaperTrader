@@ -7,18 +7,18 @@ tags:
 created: "2026-08-29"
 updated: "2026-08-29"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_59f4507365813354632a"
-as_of: "2026-08-29T00:16:52Z"
+snapshot_id: "decision_dd5e0a35775ab3679193"
+as_of: "2026-08-29T18:29:19Z"
 ---
 
 # Model portfolio
 
-**As of `2026-08-29T00:16:52Z`**
+**As of `2026-08-29T18:29:19Z`**
 
 Pending targets are projections; only deterministic fills change the current portfolio.
 
 <div class="model-portfolio-grid" id="model-portfolio-grid">
-<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-29T00:16:52Z" data-ticker="CASH" data-company="Cash">
+<article class="portfolio-card" data-scalable="false" data-target-weight="100" data-mark="1" data-fx="1" data-mark-currency="" data-market-data-as-of="2026-08-29T18:29:19Z" data-ticker="CASH" data-company="Cash">
 <h3>Cash</h3>
 <dl class="portfolio-card-values">
 <div><dt>Current</dt><dd>100%</dd></div>
@@ -29,8 +29,8 @@ Pending targets are projections; only deterministic fills change the current por
 <div><dt>Research action</dt><dd>Hold</dd></div>
 <div><dt>Reference mark</dt><dd>1 </dd></div>
 <div><dt>Base mark</dt><dd>1 EUR</dd></div>
-<div><dt>FX to EUR</dt><dd>1 · 2026-08-29T00:16:52Z</dd></div>
-<div><dt>As of</dt><dd>2026-08-29T00:16:52Z</dd></div>
+<div><dt>FX to EUR</dt><dd>1 · 2026-08-29T18:29:19Z</dd></div>
+<div><dt>As of</dt><dd>2026-08-29T18:29:19Z</dd></div>
 </dl>
 
 </article>
@@ -60,7 +60,7 @@ This deterministic equal-weight benchmark is for research comparison only. It is
 
 | Security | Rating | Weight | Reference price |
 | --- | --- | ---: | ---: |
-| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy | 10% | 13.140000343322754 USD |
+| [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727) | Buy | 10% | 11.909090909090908 USD |
 | [PRX — Prosus N.V.](securities/security_8b703a8adf5f864acaa4) | Buy | 10% | 38.689998626708984 EUR |
 | [DLO — DLocal Limited](securities/security_715bde20b6e1e1320c1a) | Buy | 10% | 15.029999732971191 USD |
 | [NOMD — Nomad Foods Limited](securities/security_98a1943771da875efed5) | Buy | 10% | 11.989999771118164 USD |

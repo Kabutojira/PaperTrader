@@ -7,8 +7,8 @@ tags:
 created: "2026-08-29"
 updated: "2026-08-29"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_59f4507365813354632a"
-as_of: "2026-08-29T00:16:52Z"
+snapshot_id: "decision_dd5e0a35775ab3679193"
+as_of: "2026-08-29T18:29:19Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **180**
+- Immutable assessment versions: **181**
 - Securities with retained revisions: **78**
 
 ## Candidate
@@ -98,6 +98,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [CSIQ — MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-6ce55501b381)
 - [CSIQ — MACD cross below signal](inbox/market-security_099561384c0f5e697727-macd_cross_below_signal-0e42e162e905)
 - [CSIQ — MACD cross below signal](inbox/market-security_099561384c0f5e697727-macd_cross_below_signal-e5d99fca7580)
+- [CSIQ — RSI oversold](inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9)
 - [CSL — Bollinger above upper](inbox/market-security_9b0db3bc77914b23a307-bollinger_above_upper-f603bd3a7a5e)
 - [CSL — Bollinger above upper](inbox/market-security_9b0db3bc77914b23a307-bollinger_above_upper-fff9129760cd)
 - [CSL — MACD cross below signal](inbox/market-security_9b0db3bc77914b23a307-macd_cross_below_signal-fe9aa8b78841)
@@ -689,7 +690,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9|CSIQ — RSI oversold]]
