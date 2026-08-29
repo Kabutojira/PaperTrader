@@ -1,0 +1,41 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "HOOD lower-Bollinger opportunity research blocked: source market data is stale; refresh required before assessment."
+  ],
+  "evidence": [
+    {
+      "claim": "The operation binds opportunity_c1687906281f34820e76 to security_ad3b1f8f59fd599f079a, bollinger_below_lower, period 2026-07-01 through 2026-07-30, and market_data_as_of 2026-07-31T07:45:55Z.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/operations/payloads/01KYVJ62SRMQWEK23RM9TQ0A0C.json"
+    },
+    {
+      "claim": "The immutable candidate packet records the entered lower-Bollinger transition on 2026-07-30 for the same security and period, with its source-price hash.",
+      "source": "data/wiki/inbox/market-security_ad3b1f8f59fd599f079a-bollinger_below_lower-fa5c853cd325.md",
+      "source_hash": "42a586c944852154b32039364c071135768965c971d6f17e537b28e7ecce0d91"
+    },
+    {
+      "claim": "market_data.stale_price_hours is 36; at 2026-08-29T00:15:58Z the payload's market-data timestamp is 688.5008793972222 hours old and therefore stale.",
+      "observed_at": "2026-08-29T00:15:58Z",
+      "source": "config.ini"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SRMQWEK23RM9TQ0A0C",
+  "operations_created": [],
+  "reason_code": "market_data_stale",
+  "status": "blocked",
+  "summary": "Blocked opportunity research because the immutable market-data observation is stale. The required 2026-07-31T07:45:55Z observation is 688.5008793972222 hours old at 2026-08-29T00:15:58Z, exceeding the configured 36-hour stale-price limit. The identity and 2026-07-30 source bar remain present, but a fresh deterministic market-data refresh is required before this alert can be assessed. No wiki, follow-up, trading, allocation, or accounting state was changed.",
+  "validation": {
+    "checks": [
+      "Verified claimed running queue row, run ownership, live lease, payload identity, and preflight skill hashes.",
+      "Verified the immutable HOOD identity and the 2026-07-30 source bar in the canonical price cache.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "Verified the market-data observation exceeds the configured stale-price threshold; no research conclusion may be made until refresh."
+    ],
+    "passed": true
+  }
+}
