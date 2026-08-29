@@ -1,0 +1,52 @@
+{
+  "commands_run": [
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped duplicate Sigma Lithium opportunity research for the July 30 bullish-MACD transition. The completed quick check already reviewed the same immutable alert and source-price hash, classified the mixed rebound against unresolved regulatory, accounting, solvency, and unsupported-valuation risks, and retained Unrated / Avoid with no trade. A separate queued full security review owns the current-evidence refresh."
+  ],
+  "evidence": [
+    {
+      "claim": "The deterministic packet binds Sigma Lithium security_4627aea1bf7d8943d3d8 to an entered macd_cross_above_signal transition for 2026-07-01 through 2026-07-30. The July 30 adjusted close was USD 9.589999198913574, the one-month return was -0.0909953204540854471240619165, trigger strength increased from 0 to 0.0217878989427951716863792946, and the immutable source-price hash was 58f31d2ef98dd01118e3367475028a41d8439f76da521fd7e61b06c21f4e680d.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/wiki/inbox/market-security_4627aea1bf7d8943d3d8-macd_cross_above_signal-714b4dd20b98.md",
+      "source_hash": "58f31d2ef98dd01118e3367475028a41d8439f76da521fd7e61b06c21f4e680d"
+    },
+    {
+      "claim": "Succeeded quick-check operation 01KYVJ62SRK1101MYYCE7256NF explicitly consumed this same MACD packet and source-price hash together with the later bearish SMA transition. It concluded that the mixed alert horizons did not change valuation, catalyst, invalidation, or decision-support gates; retained accounting_uncertain, solvency_risk, and valuation_unsupported blockers; and created no full-review escalation, strategy, or signal.",
+      "observed_at": "2026-08-06T18:28:23Z",
+      "source": "data/operations/operations_history.csv:01KYVJ62SRK1101MYYCE7256NF; data/operations/payloads/01KYVJ62SRK1101MYYCE7256NF.json; data/runs/local-20260806T175531Z-r2/01KYVJ62SRK1101MYYCE7256NF/agent_result.json"
+    },
+    {
+      "claim": "A time-matched July 22 issuer filing disclosed a Minas Gerais environmental notification, approximately USD 540,000 of fines, negotiations for a conduct-adjustment agreement, approximately USD 1 million of estimated adjustment capex, and partial temporary suspension of activities, while also reporting that second-quarter production beat its target. This mixed primary disclosure supports regulatory and operating risk rather than treating the technical crossover as an independent opportunity; the issuer's denials and causal narrative remain issuer claims, not independent proof of price causation.",
+      "observed_at": "2026-07-22T00:00:00Z",
+      "source": "Sigma Lithium July 2026 production and environmental-notification SEC exhibit",
+      "source_hash": "a43deef4c75a09506679316cc42e8b0c003e5a686ca19fe5e649d87d9d990736",
+      "url": "https://www.sec.gov/Archives/edgar/data/1848309/000129281426003854/ex99-1.htm"
+    },
+    {
+      "claim": "The current August 28 indicator record has MACD 0.2637305 above its 0.09030549 signal but no new transition trigger_state. Canonical assessment remains Unrated / Avoid and allocation-ineligible, with no SGML position or strategy. Ready security-research row 01M08BT9VRBPRBKV129FD00TH1 separately owns revalidation against current primary evidence, so this duplicate creates no follow-up.",
+      "source": "data/market/indicators.csv; data/tables/security_assessments.csv; data/tables/portfolio.csv; data/tables/strategies.csv; data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SR8A0XWFWERMECNXX4",
+  "operations_created": [],
+  "reason_code": "exact_duplicate_structured_history",
+  "status": "skipped",
+  "summary": "Skipped as exact duplicate research. Completed quick-check operation 01KYVJ62SRK1101MYYCE7256NF already consumed this immutable Sigma Lithium identity, entered bullish-MACD transition, 2026-07-01 through 2026-07-30 period, 2026-07-31T07:45:55Z observation, source packet, and source-price hash. Contemporaneous issuer evidence was mixed: production beat its target, but an environmental notification, fines, adjustment capex, and partial temporary suspension reinforced regulatory and operating risk. The accepted review retained Unrated / Avoid because accounting, solvency, and unsupported-valuation blockers were unchanged and created no trade. Current deterministic state contains no new transition, and a separate ready security review owns current-evidence revalidation. Repeating the completed review would add no distinct evidence or permissible state change; no follow-up is justified.",
+  "validation": {
+    "checks": [
+      "Confirmed the sole selected queue row is running, claimed by daily-20260828T235610Z, and had a live lease through 2026-08-29T00:30:14Z during verification.",
+      "Confirmed the payload matches operation 01KYVJ62SR8A0XWFWERMECNXX4, immutable opportunity opportunity_2c4484d31fe2a7007c74, security_4627aea1bf7d8943d3d8, trigger, exact period, timestamp, and source packet.",
+      "Confirmed hermes_preflight.json identifies native llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with recorded content hashes and sequential execution.",
+      "Matched the immutable identity, entered MACD transition, exact period, timestamp, packet, and source-price hash to succeeded structured-history quick check 01KYVJ62SRK1101MYYCE7256NF.",
+      "Confirmed the maintained security page retains the time-matched issuer evidence, mixed-alert classification, unresolved blockers, and no-action result; current canonical indicators do not record a new trigger transition.",
+      "Confirmed a separate ready security-research row already owns current primary-evidence revalidation, while no SGML position or strategy exists, so no bounded follow-up or wiki rewrite is warranted.",
+      "Strict wiki lint returned OK [wiki].",
+      "The audited CLI receipt changed no path, and this routed operation made no wiki, queue lifecycle, issue, follow-up, allocation target/history, signal, order, fill, execution, cash, portfolio, performance, or accounting change."
+    ],
+    "passed": true
+  }
+}
