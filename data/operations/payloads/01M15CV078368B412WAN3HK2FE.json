@@ -4,14 +4,51 @@
   "inputs": {
     "assessment_state": "2026-08-28T21:43:39Z",
     "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-29T18:13:26Z",
+    "market_data_date": "2026-08-28",
+    "period_end": "2026-08-28",
+    "period_start": "2026-07-31",
     "research_page": "data/wiki/securities/security_099561384c0f5e697727.md",
-    "security_id": "security_099561384c0f5e697727"
+    "research_reasons": [
+      {
+        "dedupe_key": "security_research:security_099561384c0f5e697727:allocation-maintenance:2026-08-28T21:43:39Z",
+        "observed_at": "2026-08-28T23:56:17Z",
+        "prompt": "Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_csiq_2025_20f",
+          "source_csiq_2026_green_notes",
+          "source_csiq_cobalt_20260813",
+          "source_csiq_q2_2026_results",
+          "source_csiq_sec_submissions_20260828"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_099561384c0f5e697727:4672cf8ff7cecbe41f6d:2026-08-28",
+        "market_data_date": "2026-08-28",
+        "observed_at": "2026-08-29T18:13:26Z",
+        "prompt": "Research security_099561384c0f5e697727 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9.md"
+        ],
+        "trigger_types": [
+          "rsi_oversold"
+        ]
+      }
+    ],
+    "security_id": "security_099561384c0f5e697727",
+    "source_price_hash": "1c2834428cfe05e1f21a8ef0ecae8d4be170bc2c7ad64464847c701550f6d58d",
+    "trigger_types": [
+      "rsi_oversold"
+    ]
   },
-  "objective": "Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment.",
+  "objective": "Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment. | Additional cause: Research security_099561384c0f5e697727 with high priority after price-action alerts: rsi_oversold; decide what changed and whether to act.",
   "operation_id": "01M15CV078368B412WAN3HK2FE",
   "operation_type": "security_research",
   "payload_version": 1,
   "source_refs": [
+    "data/wiki/inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9.md",
     "source_csiq_2025_20f",
     "source_csiq_2026_green_notes",
     "source_csiq_cobalt_20260813",

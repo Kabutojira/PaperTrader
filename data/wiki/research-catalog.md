@@ -689,3 +689,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9|CSIQ — RSI oversold]]

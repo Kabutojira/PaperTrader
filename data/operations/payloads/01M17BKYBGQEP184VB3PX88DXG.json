@@ -1,0 +1,19 @@
+{
+  "entity_id": "security_8472507d7d320aa388a7",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-11T08:01:35Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_8472507d7d320aa388a7.md",
+    "security_id": "security_8472507d7d320aa388a7"
+  },
+  "objective": "Revalidate security_8472507d7d320aa388a7 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M17BKYBGQEP184VB3PX88DXG",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_crwd_q1_2027_10q",
+    "source_crwd_q1_2027_results_exhibit",
+    "source_crwd_sec_submissions_20260811"
+  ]
+}

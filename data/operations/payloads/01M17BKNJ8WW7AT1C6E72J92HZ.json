@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_1u5dMAKl_ks",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@allin",
+    "channel_id": "UCESLZhusAkFfsNsApnjF_Cg",
+    "channel_url": "https://www.youtube.com/channel/UCESLZhusAkFfsNsApnjF_Cg/videos",
+    "discovered_at": "2026-08-29T18:13:17Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_1u5dMAKl_ks",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "1u5dMAKl_ks",
+    "video_title": "Nvidia's Historic Quarter, SaaS Comeback, Bessent vs Druck, America's Debt Crisis, Cancer Vaccine",
+    "video_url": "https://www.youtube.com/watch?v=1u5dMAKl_ks"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M17BKNJ8WW7AT1C6E72J92HZ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=1u5dMAKl_ks"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "entity_id": "security_3e597863f00753e8c65c",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-26T16:24:12Z",
+    "maintenance_mode": "refresh",
+    "research_page": "data/wiki/securities/security_3e597863f00753e8c65c.md",
+    "security_id": "security_3e597863f00753e8c65c"
+  },
+  "objective": "Revalidate security_3e597863f00753e8c65c with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M17BKYBGCKSNZ9E2WP4CAQ0Y",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "source_be_2025_10k_sec",
+    "source_be_oracle_warrant_2026_8k_sec",
+    "source_be_q1_2026_10q_sec",
+    "source_be_q2_2026_results_ir",
+    "source_be_scandium_response_2026_8k_sec",
+    "source_be_sec_submissions_20260826"
+  ]
+}

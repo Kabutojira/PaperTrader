@@ -2607,3 +2607,7 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Published investor decision snapshot `decision_59f4507365813354632a`.
 
 - Generated canonical [[daily-reports/daily-report_20260829]] for run `daily-20260828T235610Z`.
+
+- Created candidate packet [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9]] (2dc6ad84d3e9).
+
+- Classified [[inbox/market-security_099561384c0f5e697727-rsi_oversold-2dc6ad84d3e9]] as `ingest`: Material RSI oversold transition after a sharp monthly decline warrants durable wiki review.

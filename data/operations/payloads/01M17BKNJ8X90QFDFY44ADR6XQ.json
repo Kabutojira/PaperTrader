@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_mql-YVSfdnE",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-29T18:13:17Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_mql-YVSfdnE",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "mql-YVSfdnE",
+    "video_title": "Investing With the US Debt Situation...Stocks, Bonds, RE, Bitcoin, Gold...",
+    "video_url": "https://www.youtube.com/watch?v=mql-YVSfdnE"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M17BKNJ8X90QFDFY44ADR6XQ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=mql-YVSfdnE"
+  ]
+}
