@@ -1,0 +1,54 @@
+{
+  "commands_run": [
+    "papertrader schema validate --strict",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Skipped duplicate AMZN July 30 volume-anomaly opportunity research: the completed security review already consumed the immutable packet and found no contemporaneous primary explanation or paper-trade case; the current assessment remains Hold / Watch and allocation-ineligible."
+  ],
+  "evidence": [
+    {
+      "claim": "The immutable AMZN packet records an entered volume anomaly for 2026-07-01 through 2026-07-30, with a 2026-07-30 adjusted close of USD 235.50, a -2.56516219550051195028470107% period return, strength 0.98033297, and source-price hash 200396dbbd81b7ec09a5b79863cf355c888217931d18c42885ebbc2590a8917f.",
+      "observed_at": "2026-07-31T07:45:55Z",
+      "source": "data/wiki/inbox/market-security_2433a056eb0c55961fcc-volume_anomaly-e61b5356f36f.md",
+      "source_hash": "e61b5356f36f3e481f784ecb296aa8107ffabf810a1272e4d12b7153005eb7e7"
+    },
+    {
+      "claim": "The completed AMZN security review explicitly consumed the same July 30 volume-anomaly source packet and source-price hash, found the anomaly preceded the after-close Q2 results release without a contemporaneous primary filing explaining it, and created no strategy or follow-up.",
+      "observed_at": "2026-08-01T09:22:14Z",
+      "source": "data/runs/gha-30693087454-1/01KYPB1W78HSRT5KNG39B7SPBX/agent_result.json"
+    },
+    {
+      "claim": "Amazon's SEC-filed Q2 2026 Form 10-Q is identity-linked to the immutable AMZN security and was rechecked unchanged on 2026-08-28; it does not supply a contemporaneous explanation for the July 30 pre-release volume anomaly.",
+      "observed_at": "2026-08-28T19:39:15Z",
+      "source": "source_amzn_q2_2026_10q",
+      "source_hash": "d07b8a88fa442c2c55bd65b3f1d336ca16e7d1e9fda831e1063d24adea60e4eb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+    },
+    {
+      "claim": "The August 28 maintained assessment classifies the July 30 anomaly as unexplained attention rather than a trade case and retains Hold / Watch, no strategy, and allocation-ineligible status after a fresh primary-evidence review.",
+      "observed_at": "2026-08-28T19:39:15Z",
+      "source": "data/wiki/securities/security_2433a056eb0c55961fcc.md"
+    }
+  ],
+  "files_changed": [],
+  "issues_recorded": [],
+  "operation_id": "01KYVJ62SRBRYJMAQY2S1ZG2QR",
+  "operations_created": [],
+  "reason_code": "exact_duplicate_structured_history",
+  "status": "skipped",
+  "summary": "Skipped as exact duplicate research. Completed security-research operation 01KYPB1W78HSRT5KNG39B7SPBX already consumed AMZN's immutable July 30 volume-anomaly packet, exact observation period, market-data timestamp, and source-price hash. It established that the July 30 volume anomaly preceded Amazon's after-close Q2 results release, so no contemporaneous primary filing explained the move, and found no paper-trade case. The August 28 repeat review retained Hold / Watch and allocation-ineligible status. Repeating this opportunity review would add no distinct evidence or permitted state change; no follow-up is justified.",
+  "validation": {
+    "checks": [
+      "Confirmed the supplied queue row is running, claimed by daily-20260828T235610Z, and had a live lease when verified.",
+      "Confirmed preflight identifies llm-wiki 2.1.0, papertrader-controller, and papertrader-opportunity-research with the expected content hashes.",
+      "Validated the immutable payload and packet identity, AMZN/XNAS/USD security identity, period endpoints, trigger transition, and source-price hash.",
+      "Confirmed successful security-research operation 01KYPB1W78HSRT5KNG39B7SPBX already consumed this exact volume-anomaly cause and completed a primary-source review.",
+      "Confirmed the later 2026-08-28 AMZN reassessment retains Hold / Watch, no strategy, and allocation-ineligible status; no position, strategy, order, or other trading/accounting state exists for this security.",
+      "scripts/papertrader schema validate --strict passed.",
+      "scripts/papertrader wiki lint --strict passed.",
+      "git diff --check passed before the manifest; this operation made no permitted repository mutation before its required result artifact."
+    ],
+    "passed": true
+  }
+}
