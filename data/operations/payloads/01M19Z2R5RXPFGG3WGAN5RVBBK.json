@@ -1,0 +1,49 @@
+{
+  "entity_id": "security_099561384c0f5e697727",
+  "entity_type": "security",
+  "inputs": {
+    "baseline_operation_id": "01M15CV078368B412WAN3HK2FE",
+    "changed_gate": "full_research_requested_and_corrected_market_bar_materially_changed_price_and_indicator_assumptions",
+    "full_research_requested": true,
+    "market_data_as_of": "2026-08-30T18:28:27Z",
+    "market_data_date": "2026-08-28",
+    "merged_source_price_hashes": [
+      "1c2834428cfe05e1f21a8ef0ecae8d4be170bc2c7ad64464847c701550f6d58d",
+      "c8e6e6ee0984c5b2caa51e0b7ca02073e01df2365f982f9caf1b4653a3e00996"
+    ],
+    "period_end": "2026-08-28",
+    "period_start": "2026-07-31",
+    "quick_check_operation_id": "01M19YW57RFRWWS5D72J4VE2DN",
+    "research_reasons": [
+      {
+        "cause": "bollinger_below_lower",
+        "source_ref": "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md"
+      },
+      {
+        "cause": "deterministic_allocation_maintenance_refresh",
+        "source_ref": "data/wiki/securities/security_099561384c0f5e697727.md"
+      },
+      {
+        "cause": "corrected_august_28_market_bar",
+        "source_ref": "data/market/prices/security_099561384c0f5e697727.csv"
+      }
+    ],
+    "security_id": "security_099561384c0f5e697727",
+    "source_price_hash": "c8e6e6ee0984c5b2caa51e0b7ca02073e01df2365f982f9caf1b4653a3e00996",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Fully reassess Canadian Solar after the corrected August 28 market bar retained a strengthened lower-Bollinger-band breach and the payload explicitly requested full research.",
+  "operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK",
+  "operation_type": "security_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md",
+    "source_csiq_2025_20f",
+    "source_csiq_2026_green_notes",
+    "source_csiq_cobalt_20260813",
+    "source_csiq_q2_2026_results",
+    "source_csiq_sec_submissions_20260829"
+  ]
+}

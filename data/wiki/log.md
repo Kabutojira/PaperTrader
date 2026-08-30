@@ -2636,3 +2636,14 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6ce4c1776c3e]] (6ce4c1776c3e).
 
 - Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-201ca8d20f4a]] (201ca8d20f4a).
+
+## [2026-08-30T18:28:27Z] quick check | Canadian Solar
+
+- Rechecked [[securities/security_099561384c0f5e697727|CSIQ]] after the strengthened August 28
+  lower-Bollinger-band breach. The refreshed canonical bar supersedes the prior repaired USD 11.91
+  observation with an internally valid USD 13.14 close; RSI is 35.62 rather than oversold, while the
+  12.86% monthly decline, negative MACD and anomalous volume remain.
+- Retained the USD 10.16/USD 18.28/USD 26.41 NAV cases and Buy / Initiate at Watch. Expected return
+  normalizes to 26.8%, but the pending accepted-relationship gate keeps the assessment ineligible.
+- Payload-requested dependent full security review `01M19Z2R5RXPFGG3WGAN5RVBBK` was queued. No
+  strategy, signal, order, allocation or accounting state changed.

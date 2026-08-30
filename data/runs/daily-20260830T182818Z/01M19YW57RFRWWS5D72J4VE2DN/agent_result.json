@@ -1,0 +1,79 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader queue enqueue --request data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/enqueue_full_research_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/assessment_upsert_retry01_request.json",
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader schema validate --strict",
+    "papertrader queue validate",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader portfolio reconcile --strict"
+  ],
+  "daily_report_items": [
+    "CSIQ's refreshed August 28 bar corrected the prior repaired USD 11.91 observation to USD 13.14. RSI is no longer oversold, but the 12.86% monthly decline, lower-band breach, negative MACD and anomalous volume remain unexplained. Unchanged NAV cases imply 26.77% expected return; Canadian Solar remains Buy / Initiate at Watch but allocation-ineligible pending an accepted relationship, and one dependent full review was queued."
+  ],
+  "evidence": [
+    {
+      "claim": "The payload-bound canonical packet covers 2026-07-31 through 2026-08-28, records a USD 13.140000343322754 adjusted close, a 12.8647187678932523951005016% decline, a strengthened lower-Bollinger-band breach and source-price hash c8e6e6ee0984c5b2caa51e0b7ca02073e01df2365f982f9caf1b4653a3e00996.",
+      "observed_at": "2026-08-30T18:28:27Z",
+      "source": "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md",
+      "source_hash": "c8e6e6ee0984c5b2caa51e0b7ca02073e01df2365f982f9caf1b4653a3e00996"
+    },
+    {
+      "claim": "The current August 28 bar has an internally valid USD 13.14 OHLC close, 35.61557496 RSI, a USD 13.41853735 lower band, negative MACD of -0.38342582 below its -0.19233122 signal, a -6.008578% one-session return and 2.17183082 volume z-score. It supersedes the prior repaired USD 11.91 observation and removes the prior RSI-oversold condition.",
+      "observed_at": "2026-08-30T18:28:27Z",
+      "source": "data/market/latest.csv and data/market/indicators.csv",
+      "source_hash": "c8e6e6ee0984c5b2caa51e0b7ca02073e01df2365f982f9caf1b4653a3e00996"
+    },
+    {
+      "claim": "The accepted schema-version-two assessment is the sole immutable version for this operation and run, links predecessor assessment_fde4d193ae9f01ccb3d1 and the required result path, matches the maintained page hash c2311dc967d66e1bce91c500c4e1285c0ba83e69ab1c662531792d484cd04fe4, and derives Buy / Initiate, watch conviction, 26.7694030804550541462775675% expected return, 20.07705231034129060970817562% confidence-adjusted expected return and relationship_pending allocation ineligibility.",
+      "observed_at": "2026-08-30T18:34:18Z",
+      "source": "assessment_7bd82ac864ac923c2449"
+    },
+    {
+      "claim": "Exactly one dependent security_research operation carries this quick-check identity, the baseline operation, explicit full-research request, changed corrected-market-data gate, all merged research causes, both old and current price hashes, and the exact July 31-August 28 period. It depends on this quick check and remains queued for later sequential execution.",
+      "source": "data/operations/payloads/01M19Z2R5RXPFGG3WGAN5RVBBK.json"
+    },
+    {
+      "claim": "The retained current primary evidence remains unchanged: Q2 showed strong storage shipments but weak module volumes, 13.9% normalized gross margin, a USD 77 million attributable loss, operating cash use, USD 7.1 billion of debt and delayed second-half project sales; the August 29 SEC index contained no filing newer than the August 27 release.",
+      "source": "source_csiq_q2_2026_results and source_csiq_sec_submissions_20260829"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M19Z2R5RXPFGG3WGAN5RVBBK.json",
+    "data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/assessment_upsert_request.json",
+    "data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/enqueue_full_research_request.json",
+    "data/runs/daily-20260830T182818Z/01M19YW57RFRWWS5D72J4VE2DN/security_upsert_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M19YW57RFRWWS5D72J4VE2DN",
+  "operations_created": [
+    "01M19Z2R5RXPFGG3WGAN5RVBBK"
+  ],
+  "status": "succeeded",
+  "summary": "Completed one bounded Canadian Solar quick check after the strengthened August 28 lower-Bollinger-band alert. The refreshed canonical market bar supersedes the prior repaired USD 11.91 observation with an internally valid USD 13.14 close: the July 31-August 28 decline is 12.86%, RSI is 35.62 rather than oversold, the close remains 2.08% below the lower band, MACD remains negative and volume remains anomalous. No newer retained primary evidence changes the operating thesis. The USD 10.16/USD 18.28/USD 26.41 NAV scenarios remain unchanged; deterministic expected return normalizes to 26.77% and confidence-adjusted expected return to 20.08%. The assessment remains Buy / Initiate at watch-tier conviction and allocation-ineligible because the accepted relationship is pending. Because full research was explicitly requested and the corrected bar materially changed price and indicator assumptions, exactly one dependent full security review, 01M19Z2R5RXPFGG3WGAN5RVBBK, was queued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "Confirmed the selected quick_check_research row was running, claimed by daily-20260830T182818Z, bound to the required immutable security, and routed with the preloaded native wiki, controller and quick-check skills.",
+      "Consumed the mandatory successful audited security-context result before assessment-state reads and confirmed baseline operation 01M15CV078368B412WAN3HK2FE succeeded for the same security within ten days.",
+      "Matched the payload's exact July 31-August 28 period and source-price hash to the canonical packet and current market and indicator state.",
+      "Updated the maintained security page and structured security row with explicit changes to the corrected price, indicator state, valuation outputs, unchanged thesis, catalysts, risks, rating and escalation decision.",
+      "Assessment assessment_7bd82ac864ac923c2449 is current for run daily-20260830T182818Z and is exactly one immutable history version sourced from operation 01M19YW57RFRWWS5D72J4VE2DN and its expected result path; its predecessor and live page hash match.",
+      "The first immutable assessment request was rejected without state changes because timing_uncertain is not a canonical soft gap; uniquely named retry01 used timing_unfavorable and succeeded.",
+      "Exactly one dependent full-review payload contains this quick-check operation ID, all merged trigger and maintenance causes, the explicit full-research flag, corrected-market-data changed gate, exact market period and both relevant price hashes.",
+      "Strict schema validation, queue validation, strict integrity, strict wiki lint and strict portfolio reconciliation all returned OK.",
+      "No allocation targets or history, strategy, signal, order, fill, execution, cash, portfolio or performance state changed."
+    ],
+    "passed": true
+  }
+}
