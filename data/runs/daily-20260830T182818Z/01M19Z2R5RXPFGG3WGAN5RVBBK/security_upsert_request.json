@@ -1,0 +1,23 @@
+{
+  "security_id": "security_099561384c0f5e697727",
+  "issuer_id": "issuer_e699404e0c6af2dc02c3",
+  "company_name": "Canadian Solar Inc.",
+  "instrument_name": "Canadian Solar Inc. common shares",
+  "instrument_type": "equity",
+  "ticker": "CSIQ",
+  "exchange_code": "NASDAQ",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CSIQ",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "CA",
+  "sector": "Technology",
+  "industry": "Solar",
+  "status": "watching",
+  "watchlist_reason": "Global solar modules, battery storage and project development provide direct exposure to renewable deployment, with material module-cycle, leverage and cash-conversion risk.",
+  "research_summary": "At USD 13.14, CSIQ clears its buy-below price, but the unexplained lower-band breach, wider losses, cash use, debt, delayed project sales and pending relationship keep it at Watch and ineligible.",
+  "research_page": "data/wiki/securities/security_099561384c0f5e697727.md",
+  "last_research_at": "2026-08-30T18:37:00Z",
+  "next_review_at": "2026-09-29T18:37:00Z",
+  "source": "source_csiq_2025_20f|source_csiq_2026_green_notes|source_csiq_cobalt_20260813|source_csiq_q2_2026_results|source_csiq_sec_submissions_20260829"
+}

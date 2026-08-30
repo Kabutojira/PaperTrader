@@ -11,6 +11,7 @@ Generated from `data/tables/issues.csv`.
 | error | **issue_1e862c198e274a99add1** — ABB assessment source operation is ambiguous within one run | 2026-08-09T23:09:55Z | controller | 01KZMBZY5RBVNJH4ZHBZ47FG2S |
 | error | **issue_21a0449443916cc13580** — Assessment source operation is ambiguous within one run | 2026-08-03T07:48:08Z | controller | 01KZ38VCQRDKQK4SD081XKZNB3 |
 | error | **issue_237eb6de59f6ab09bb98** — Applied Materials assessment source operation is ambiguous within one run | 2026-08-19T23:45:43Z | controller | 01M0E5XT181SGH3F2RFGWJ4WGQ |
+| error | **issue_271cab67bc4cee717aed** — Canadian Solar assessment source operation is ambiguous within one run | 2026-08-30T18:42:23Z | controller | 01M19Z2R5RXPFGG3WGAN5RVBBK |
 | error | **issue_2acf0a010f34b5a332ee** — Hermes operation validation failed: 01M0B9RMZRENS1CC2T3BF65HXF | 2026-08-18T21:01:53Z | controller | 01M0B9RMZRENS1CC2T3BF65HXF |
 | error | **issue_30c07892e9981c27b153** — FANUC assessment source operation is ambiguous within one run | 2026-08-20T15:57:26Z | controller | 01M0FXHG7GT03TE1GNSGAPY904 |
 | error | **issue_35b7b23bc3b07dd61cce** — Hermes operation validation failed: 01KZ9ZJVERDMQV8A3XQQY4AD7Y | 2026-08-12T15:28:02Z | controller | 01KZ9ZJVERDMQV8A3XQQY4AD7Y |

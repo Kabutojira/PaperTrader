@@ -1,0 +1,8 @@
+{
+  "severity": "error",
+  "title": "Canadian Solar assessment source operation is ambiguous within one run",
+  "description": "The required schema-v2 full assessment for security_099561384c0f5e697727 could not be written. The deterministic assessment applier found both predecessor quick_check_research 01M19YW57RFRWWS5D72J4VE2DN and current security_research 01M19Z2R5RXPFGG3WGAN5RVBBK claimed by run daily-20260830T182818Z and rejected the immutable assessment request as having an ambiguous source operation. The request boundary exposes no source-operation selector, so this routed operation cannot repair the provenance ambiguity without an out-of-scope code or queue/history change. Fresh SEC-index and Q2-release rechecks matched their retained hashes and source history was recorded, but no full assessment, strategy, signal, order, allocation or accounting state was created. The controller must reschedule the full review under a distinct run or repair deterministic source-operation disambiguation before retrying.",
+  "owner": "controller",
+  "related_run_id": "daily-20260830T182818Z",
+  "related_operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK"
+}

@@ -1,0 +1,85 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader research source record --request data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_q2_2026_results_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_sec_submissions_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_request.json",
+    "papertrader issue record --request data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/issue_record_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_restore_request.json",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Canadian Solar full research failed closed: fresh SEC and Q2 source checks were unchanged, but the schema-v2 assessment applier could not disambiguate the quick check from the full review inside one run. The prior hash-aligned assessment remains current, issue_271cab67bc4cee717aed is open, and no paper-trading state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "The freshly retrieved Canadian Solar Q2 2026 release matched the retained content hash and continued to report USD 1.2 billion revenue, 13.9% gross margin and negative USD 181 million operating cash flow.",
+      "observed_at": "2026-08-30T18:37:00Z",
+      "source": "source_csiq_q2_2026_results",
+      "source_hash": "6605b97860c2320eef25ce8de118377bae4138f7c7b75c9efab5d8209c429d56",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926101856/tm2623883d1_ex99-1.htm"
+    },
+    {
+      "claim": "The freshly retrieved SEC submissions index matched its retained content hash and still listed the August 27, 2026 Form 6-K as Canadian Solar's newest filing.",
+      "observed_at": "2026-08-30T18:37:00Z",
+      "source": "source_csiq_sec_submissions_20260829",
+      "source_hash": "823d1ca5a992e7f2f1927b657965aa23505ac8daab293caf2d621f0f17aa7c21",
+      "url": "https://data.sec.gov/submissions/CIK0001375877.json"
+    },
+    {
+      "claim": "The canonical August 28 market state remained an adjusted USD 13.140000343322754 close after a 12.8647% period decline, below the lower Bollinger band with RSI 35.62, negative MACD and anomalous volume.",
+      "observed_at": "2026-08-30T18:28:27Z",
+      "source": "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md",
+      "source_hash": "c1709a10a057a10cf4029f82623596a4b30d41af1895533735bc360e518800ec"
+    },
+    {
+      "claim": "The assessment upsert exited 2 with no changed paths because source-operation provenance was ambiguous between quick check 01M19YW57RFRWWS5D72J4VE2DN and full review 01M19Z2R5RXPFGG3WGAN5RVBBK in the same run.",
+      "source": "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/command_audit.json"
+    },
+    {
+      "claim": "The prior current assessment assessment_7bd82ac864ac923c2449 remains the latest immutable version, still identifies the quick-check operation as its source, and its recorded research-page hash matches the restored page bytes.",
+      "source": "data/tables/security_assessment_history.csv"
+    },
+    {
+      "claim": "Exactly one existing ready relationship review, 01M0F7V8D8MTRZGEVET3HTD4AT, already covers the candidate Canadian Solar edge to the solar, storage and grid-flexibility idea; no duplicate follow-up was created.",
+      "source": "data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [
+    "data/issues.md",
+    "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_request.json",
+    "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/issue_record_request.json",
+    "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_request.json",
+    "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_restore_request.json",
+    "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_q2_2026_results_recheck_request.json",
+    "data/runs/daily-20260830T182818Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_sec_submissions_recheck_request.json",
+    "data/tables/issues.csv",
+    "data/tables/securities.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv"
+  ],
+  "issues_recorded": [
+    "issue_271cab67bc4cee717aed"
+  ],
+  "operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK",
+  "operations_created": [],
+  "status": "failed",
+  "summary": "Failed closed before accepting a new Canadian Solar full assessment. Fresh SEC submissions-index and Q2-release retrievals matched the retained hashes and were recorded, but the deterministic assessment applier found both the predecessor quick check and this full review for the same security and run, then rejected the immutable schema-v2 assessment request as provenance-ambiguous. The prior quick-check security page and assessment remain hash-aligned; the security summary was restored while retaining the auditable recheck timestamp. Issue issue_271cab67bc4cee717aed records the controller dependency. No strategy, signal, order, allocation, execution, cash, portfolio, fill or performance state changed.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context receipt exited 0 before assessment state was read or changed.",
+      "Preflight identified native llm-wiki, papertrader-controller and papertrader-security-research with matching run and operation identity.",
+      "Immutable issuer, instrument, XNAS venue, CSIQ provider symbol and USD currency identity matched the existing security state.",
+      "Fresh Q2-release and SEC-index retrievals returned HTTP 200 and reproduced their retained SHA-256 hashes; both checks were recorded through the project CLI.",
+      "The canonical market close, source-price hash and fresh USD/EUR observation matched the payload and current market state.",
+      "The required schema-v2 assessment was not accepted because the deterministic applier reported assessment source operation is ambiguous for this run; its audit receipt records exit 2 and no changed paths.",
+      "The prior quick-check security page was restored byte-for-byte and its actual SHA-256 hash matches the latest immutable assessment's recorded research_page_hash.",
+      "The complete maintained idea catalog and canonical relationship table were searched; no accepted relationship exists, and the candidate edge already has exactly one ready relationship-research operation.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "Git diff checking reported no whitespace errors.",
+      "No allocation targets/history, strategies, signals, orders, executions, cash ledger, portfolio, fills or performance files changed."
+    ],
+    "passed": false
+  }
+}
