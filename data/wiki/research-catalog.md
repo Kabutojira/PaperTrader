@@ -4,11 +4,11 @@ type: research-catalog
 status: maintained
 tags:
   - research
-created: "2026-08-29"
+created: "2026-08-30"
 updated: "2026-08-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_dd5e0a35775ab3679193"
-as_of: "2026-08-29T18:29:19Z"
+snapshot_id: "decision_d82123b9e252736f73d8"
+as_of: "2026-08-30T18:45:23Z"
 ---
 
 # Research catalog
@@ -17,7 +17,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **181**
+- Immutable assessment versions: **182**
 - Securities with retained revisions: **78**
 
 ## Candidate
@@ -65,6 +65,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ATKR — Bollinger above upper](inbox/market-security_22c2b9d782a62d7a9b86-bollinger_above_upper-eabc6069145d)
 - [ATKR — MACD cross below signal](inbox/market-security_22c2b9d782a62d7a9b86-macd_cross_below_signal-ba1783a13894)
 - [ATKR — RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-5a6018d0a619)
+- [ATKR — RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6ce4c1776c3e)
 - [BE — MACD cross above signal](inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b)
 - [BE — MACD cross above signal](inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-67248af469a1)
 - [BE — MACD cross below signal](inbox/market-security_3e597863f00753e8c65c-macd_cross_below_signal-e7362215b566)
@@ -94,6 +95,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [CRWD — Volume anomaly](inbox/market-security_8472507d7d320aa388a7-volume_anomaly-f1e0d1c0c312)
 - [CSIQ — Bollinger above upper](inbox/market-security_099561384c0f5e697727-bollinger_above_upper-50569ad33618)
 - [CSIQ — Bollinger below lower](inbox/market-security_099561384c0f5e697727-bollinger_below_lower-712b5c9567f1)
+- [CSIQ — Bollinger below lower](inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057)
 - [CSIQ — MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-50d5f6aaa5bd)
 - [CSIQ — MACD cross above signal](inbox/market-security_099561384c0f5e697727-macd_cross_above_signal-6ce55501b381)
 - [CSIQ — MACD cross below signal](inbox/market-security_099561384c0f5e697727-macd_cross_below_signal-0e42e162e905)
@@ -177,6 +179,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [LH — Bollinger above upper](inbox/market-security_b1f2c48e1a744f5ecf67-bollinger_above_upper-ed7fba71f542)
 - [LH — MACD cross above signal](inbox/market-security_b1f2c48e1a744f5ecf67-macd_cross_above_signal-a788875b5d07)
 - [LH — MACD cross below signal](inbox/market-security_b1f2c48e1a744f5ecf67-macd_cross_below_signal-138de6a01085)
+- [LH — RSI overbought](inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-201ca8d20f4a)
 - [LH — RSI overbought](inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-2e836cf4b95b)
 - [LH — RSI overbought](inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-41c7e3862da4)
 - [LH — RSI overbought](inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-61584cc17e9e)
@@ -473,6 +476,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader daily report — 2026-08-26](daily-reports/daily-report_20260826)
 - [PaperTrader daily report — 2026-08-28](daily-reports/daily-report_20260828)
 - [PaperTrader daily report — 2026-08-29](daily-reports/daily-report_20260829)
+- [PaperTrader daily report — 2026-08-30](daily-reports/daily-report_20260830)
 
 ## Idea
 
@@ -690,9 +694,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057|CSIQ — Bollinger below lower]]
-- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6ce4c1776c3e|ATKR — RSI overbought]]
-- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-201ca8d20f4a|LH — RSI overbought]]

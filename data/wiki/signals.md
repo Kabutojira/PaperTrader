@@ -4,16 +4,16 @@ type: signals
 status: maintained
 tags:
   - signals
-created: "2026-08-29"
-updated: "2026-08-29"
+created: "2026-08-30"
+updated: "2026-08-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_dd5e0a35775ab3679193"
-as_of: "2026-08-29T18:29:19Z"
+snapshot_id: "decision_d82123b9e252736f73d8"
+as_of: "2026-08-30T18:45:23Z"
 ---
 
 # Signals
 
-**As of `2026-08-29T18:29:19Z`**
+**As of `2026-08-30T18:45:23Z`**
 
 ## Actionable trade signals
 
@@ -88,14 +88,14 @@ No pending orders.
 - Research status: `succeeded`
 - Conclusion: Completed one bounded Microsoft quick check for strengthened RSI-overbought alerts. The SEC filing index shows no newer material operating filing after the fiscal 2026 annual report, and both retained sources are byte-for-byte unchanged. The close extended from the baseline USD 451.10 to USD 487.46 while RSI reached 76.10, reducing the unchanged USD 500 base and weighted value to 2.57% upside; USD 375 bear value implies 23.07% downside and the USD 400 buy zone remains unreached. The canonical result remains complete but ineligible Hold / Watch. No full review, strategy, signal, order, allocation or accounting change was justified.
 
-### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
+### [LH — Labcorp Holdings Inc.](securities/security_b1f2c48e1a744f5ecf67)
 
 **Research alert — not a trade signal**
 
-- Alert: `rsi\_oversold`
+- Alert: `rsi\_overbought`
 - Market date: `2026-08-28`
-- Research status: `succeeded`
-- Conclusion: Completed one repeat assessment of Canadian Solar Inc. common shares after the canonical August 28 RSI-oversold alert. The August 29 SEC index and Q2 release were unchanged and supplied no primary-evidence explanation for the repaired USD 11.91 close, 14.81% one-session decline, anomalous volume, and RSI of 29.67. The review therefore classifies the move as an unresolved risk event and possible valuation dislocation rather than verified mean reversion. The USD 10.16/USD 18.28/USD 26.41 NAV scenarios remain unchanged; the lower mark raises deterministic expected return to 39.87% and confidence-adjusted expected return to 29.90%. The canonical result remains Buy / Initiate at watch-tier conviction but allocation-ineligible because the causal relationship is still pending. No strategy, signal, order, allocation, or accounting state changed.
+- Research status: `skipped`
+- Conclusion: Queue triage disposition
 
 ### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
 
@@ -112,8 +112,8 @@ No pending orders.
 
 - Alert: `bollinger\_below\_lower`
 - Market date: `2026-08-28`
-- Research status: `succeeded`
-- Conclusion: Completed the repeat assessment of Canadian Solar Inc. common shares after the 2026-08-28 lower-Bollinger-band alert. Registered the current SEC filing index and Q2 2026 issuer results, updated the security research page and structured security row, and appended schema-v2 assessment assessment\_3314317f74b3b3f3acc6 linked to its predecessor. Q2 storage execution was strong, but module contraction, normalized margin, wider losses, working-capital cash use, higher debt and delayed project sales make the decline a risk signal rather than a verified temporary dislocation. At USD 13.14, the deterministic assessment derives USD 10.16/USD 18.28/USD 26.41 bear/base/bull values, Buy / Initiate at watch conviction, and allocation ineligibility because the canonical relationship remains pending. No strategy, signal, order, allocation, execution, cash, portfolio, fill, or performance state changed.
+- Research status: `ready`
+- Conclusion: High-priority security research is ready to run.
 
 ### [ATKR — Atkore Inc.](securities/security_22c2b9d782a62d7a9b86)
 
@@ -159,6 +159,15 @@ No pending orders.
 - Market date: `2026-08-28`
 - Research status: `skipped`
 - Conclusion: bearish\_alert\_unowned
+
+### [CSIQ — Canadian Solar Inc.](securities/security_099561384c0f5e697727)
+
+**Research alert — not a trade signal**
+
+- Alert: `rsi\_oversold`
+- Market date: `2026-08-28`
+- Research status: `succeeded`
+- Conclusion: Completed one repeat assessment of Canadian Solar Inc. common shares after the canonical August 28 RSI-oversold alert. The August 29 SEC index and Q2 release were unchanged and supplied no primary-evidence explanation for the repaired USD 11.91 close, 14.81% one-session decline, anomalous volume, and RSI of 29.67. The review therefore classifies the move as an unresolved risk event and possible valuation dislocation rather than verified mean reversion. The USD 10.16/USD 18.28/USD 26.41 NAV scenarios remain unchanged; the lower mark raises deterministic expected return to 39.87% and confidence-adjusted expected return to 29.90%. The canonical result remains Buy / Initiate at watch-tier conviction but allocation-ineligible because the causal relationship is still pending. No strategy, signal, order, allocation, or accounting state changed.
 
 
 ## Recently expired or completed signals

@@ -2637,6 +2637,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-201ca8d20f4a]] (201ca8d20f4a).
 
+- Published investor decision snapshot `decision_d82123b9e252736f73d8`.
+
+- Generated canonical [[daily-reports/daily-report_20260830]] for run `daily-20260830T182818Z`.
+
 ## [2026-08-30T18:28:27Z] quick check | Canadian Solar
 
 - Rechecked [[securities/security_099561384c0f5e697727|CSIQ]] after the strengthened August 28

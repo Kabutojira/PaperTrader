@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-29"
-updated: "2026-08-29"
+created: "2026-08-30"
+updated: "2026-08-30"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_dd5e0a35775ab3679193"
-as_of: "2026-08-29T18:29:19Z"
+snapshot_id: "decision_d82123b9e252736f73d8"
+as_of: "2026-08-30T18:45:23Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-29T18:29:19Z`
+**As of:** `2026-08-30T18:45:23Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -22,7 +22,7 @@ as_of: "2026-08-29T18:29:19Z"
 ## Coverage
 
 - Assessments: 52/78
-- Fresh-evidence assessments: 51/78
+- Fresh-evidence assessments: 50/78
 - Relationship reviews: 20/78
 - Accepted relationships: 19
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-29T18:29:19Z"
 - Pending orders: 0
 - Market success/failure: 79/1
 - Candidate FX gaps: 0
-- Research backlog: 484
+- Research backlog: 489
 - Last successful daily run: 2026-08-28
 
 ## Current issues by investment impact
@@ -38,6 +38,7 @@ as_of: "2026-08-29T18:29:19Z"
 ### Blocks Portfolio
 
 - Error **Applied Materials assessment source operation is ambiguous within one run** — The schema-v2 Applied Materials assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The first immutable assessment request was rejected without state changes for two non-canonical soft-gap names; retry01 corrected those names but exposed the run-level ambiguity. A bounde
+- Error **CSIQ — Canadian Solar Inc.: Canadian Solar assessment source operation is ambiguous within one run** — The required schema-v2 full assessment for [[securities/security_099561384c0f5e697727|CSIQ]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_099561384c0f5e697727|Quick check research for CSIQ on 2026-08-30]] and current security_research [[securities/security_099561384c0f5e697727|Security research for CSIQ on 2026-08-30]] claimed by run [[daily-reports/daily-report_20260830|Daily report for 2026-08-30]] and rejected the immutable assessment request as having an ambiguous source operation. The request boundary exposes no source-operation selector, so this routed operation cannot repair the provenance am
 - Error **FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **Vale assessment source operation is ambiguous within one run** — The schema-version-two Vale assessment could not be accepted because the deterministic research applier found both the completed quick_check_research predecessor and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The immutable assessment request exited nonzero with no changed paths. The prior assessment and its exact research-page hash were restored and remain current. Five retained primary-source r
 - Error **ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
@@ -195,13 +196,13 @@ as_of: "2026-08-29T18:29:19Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 484 active operations.
+Showing 20 of 489 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-29]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-30]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
 - Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]
