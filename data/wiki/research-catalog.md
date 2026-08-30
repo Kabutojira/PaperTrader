@@ -5,7 +5,7 @@ status: maintained
 tags:
   - research
 created: "2026-08-29"
-updated: "2026-08-29"
+updated: "2026-08-30"
 provenance: deterministic-decision-projection
 snapshot_id: "decision_dd5e0a35775ab3679193"
 as_of: "2026-08-29T18:29:19Z"
@@ -690,3 +690,9 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
+
+## Inbox
+
+- [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057|CSIQ — Bollinger below lower]]
+- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6ce4c1776c3e|ATKR — RSI overbought]]
+- [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-201ca8d20f4a|LH — RSI overbought]]

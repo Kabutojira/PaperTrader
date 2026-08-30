@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_PRfXq-NlJqo",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@Value-Investing",
+    "channel_id": "UCrTTBSUr0zhPU56UQljag5A",
+    "channel_url": "https://www.youtube.com/channel/UCrTTBSUr0zhPU56UQljag5A/videos",
+    "discovered_at": "2026-08-30T18:28:19Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_PRfXq-NlJqo",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "PRfXq-NlJqo",
+    "video_title": "Alibaba - Adjusting My Intrinsic Value Calculation",
+    "video_url": "https://www.youtube.com/watch?v=PRfXq-NlJqo"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M19YVXDRKQWF828SPVD3W3BQ",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=PRfXq-NlJqo"
+  ]
+}

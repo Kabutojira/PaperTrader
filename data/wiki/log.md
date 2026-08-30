@@ -6,7 +6,7 @@ tags:
   - meta
   - log
 created: "2026-08-08"
-updated: "2026-08-29"
+updated: "2026-08-30"
 provenance: repository-contract
 ---
 
@@ -2626,3 +2626,13 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 - Retained USD 10.16/USD 18.28/USD 26.41 NAV cases and Buy / Initiate at Watch; the pending causal
   relationship keeps Canadian Solar allocation-ineligible, so no strategy or paper-trading state
   changed.
+
+## 2026-08-30
+
+- Created candidate packet [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057]] (c1709a10a057).
+
+- Classified [[inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057]] as `ingest`: Material strengthened downside indicator transition with a 12.9% period decline merits durable review.
+
+- Created candidate packet [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6ce4c1776c3e]] (6ce4c1776c3e).
+
+- Created candidate packet [[inbox/market-security_b1f2c48e1a744f5ecf67-rsi_overbought-201ca8d20f4a]] (201ca8d20f4a).

@@ -1,0 +1,58 @@
+{
+  "entity_id": "security_099561384c0f5e697727",
+  "entity_type": "security",
+  "inputs": {
+    "assessment_state": "2026-08-29T18:19:00Z",
+    "baseline_completed_at": "2026-08-29T18:26:22Z",
+    "baseline_operation_id": "01M15CV078368B412WAN3HK2FE",
+    "baseline_result_path": "data/runs/daily-20260829T181317Z/01M15CV078368B412WAN3HK2FE/agent_result.json",
+    "full_research_requested": true,
+    "maintenance_mode": "refresh",
+    "market_data_as_of": "2026-08-30T18:28:27Z",
+    "market_data_date": "2026-08-28",
+    "period_end": "2026-08-28",
+    "period_start": "2026-07-31",
+    "research_page": "data/wiki/securities/security_099561384c0f5e697727.md",
+    "research_reasons": [
+      {
+        "dedupe_key": "quick_check_research:security_099561384c0f5e697727:c0409a46c38f9f0e75b9:2026-08-28",
+        "observed_at": "2026-08-30T18:28:27Z",
+        "prompt": "Quick-check security_099561384c0f5e697727 after price-action alerts: bollinger_below_lower; verify the latest research assumptions and escalate to full security research if any material gate changed.",
+        "source": "deterministic-price-alert",
+        "source_refs": [
+          "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md"
+        ]
+      },
+      {
+        "dedupe_key": "security_research:security_099561384c0f5e697727:allocation-maintenance:2026-08-29T18:19:00Z",
+        "observed_at": "2026-08-30T18:28:27Z",
+        "prompt": "Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment.",
+        "source": "deterministic-allocation-maintenance",
+        "source_refs": [
+          "source_csiq_2025_20f",
+          "source_csiq_2026_green_notes",
+          "source_csiq_cobalt_20260813",
+          "source_csiq_q2_2026_results",
+          "source_csiq_sec_submissions_20260829"
+        ]
+      }
+    ],
+    "security_id": "security_099561384c0f5e697727",
+    "source_price_hash": "c8e6e6ee0984c5b2caa51e0b7ca02073e01df2365f982f9caf1b4653a3e00996",
+    "trigger_types": [
+      "bollinger_below_lower"
+    ]
+  },
+  "objective": "Quick-check security_099561384c0f5e697727 after price-action alerts: bollinger_below_lower; verify the latest research assumptions and escalate to full security research if any material gate changed. | Additional cause: Revalidate security_099561384c0f5e697727 with current primary evidence and write one comparable allocation assessment.",
+  "operation_id": "01M19YW57RFRWWS5D72J4VE2DN",
+  "operation_type": "quick_check_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md",
+    "source_csiq_2025_20f",
+    "source_csiq_2026_green_notes",
+    "source_csiq_cobalt_20260813",
+    "source_csiq_q2_2026_results",
+    "source_csiq_sec_submissions_20260829"
+  ]
+}

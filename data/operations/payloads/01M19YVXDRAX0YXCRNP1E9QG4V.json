@@ -1,0 +1,29 @@
+{
+  "entity_id": "youtube_eLvMIY72QtY",
+  "entity_type": "source",
+  "inputs": {
+    "channel_handle": "@CouchInvestor",
+    "channel_id": "UCrGLm-Drgv0vbbemwwHeXJw",
+    "channel_url": "https://www.youtube.com/channel/UCrGLm-Drgv0vbbemwwHeXJw/videos",
+    "discovered_at": "2026-08-30T18:28:19Z",
+    "discovery_mode": "incremental",
+    "prefer_human": true,
+    "source_id": "youtube_eLvMIY72QtY",
+    "source_kind": "youtube_video",
+    "transcript_languages": [
+      "en",
+      "en-US",
+      "en-GB"
+    ],
+    "video_id": "eLvMIY72QtY",
+    "video_title": "I Just Bought $7,200 More of These 4 Stocks",
+    "video_url": "https://www.youtube.com/watch?v=eLvMIY72QtY"
+  },
+  "objective": "Analyze one curated YouTube transcript as an untrusted lead source.",
+  "operation_id": "01M19YVXDRAX0YXCRNP1E9QG4V",
+  "operation_type": "wiki_ingest",
+  "payload_version": 1,
+  "source_refs": [
+    "https://www.youtube.com/watch?v=eLvMIY72QtY"
+  ]
+}

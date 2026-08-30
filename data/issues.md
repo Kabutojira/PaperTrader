@@ -119,7 +119,7 @@ Generated from `data/tables/issues.csv`.
 | warning | **issue_989496e6d541f631fc1d** — Daily preparation degraded: security_8472507d7d320aa388a7 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_9b4cbf2dec47a2d5f28b** — Daily preparation degraded: security_9d4049ed6669a52815d6 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_a431f38470d93e962d76** — Daily preparation degraded: FX GBP/EUR | 2026-07-29T16:51:20Z | deterministic-controller |  |
-| warning | **issue_a8ebff7b7d828f3d7e93** — Daily preparation degraded: security_89969b7dac39b7db5661 | 2026-08-29T18:13:26Z | deterministic-controller |  |
+| warning | **issue_a8ebff7b7d828f3d7e93** — Daily preparation degraded: security_89969b7dac39b7db5661 | 2026-08-30T18:28:27Z | deterministic-controller |  |
 | warning | **issue_a95ee10bec8dac18764c** — Daily preparation degraded: security_d12e746b3c9d392183cc | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_acfbebf0c986cbab342f** — Daily preparation degraded: security_ed7d5b616a196969c815 | 2026-07-29T16:51:20Z | deterministic-controller |  |
 | warning | **issue_ad21944ead57ede6e2ac** — Daily preparation degraded: security_6ad1af8d10d6276a0221 | 2026-08-10T17:52:51Z | deterministic-controller |  |
