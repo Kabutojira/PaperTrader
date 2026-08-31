@@ -2823,3 +2823,17 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   long-term debt, and USD 500 million of repurchases. A 25%/50%/25% `mature_compounder` valuation of
   USD282.66/USD363.42/USD444.18 leaves only 4.86% weighted upside at the current mark. The conclusion
   remains Hold / Watch with no relationship, strategy, signal, allocation, order, or paper trade.
+
+## 2026-08-31 — CrowdStrike security research
+
+- Refreshed [[securities/security_8472507d7d320aa388a7|CrowdStrike]] from the fiscal-Q2 Form 10-Q,
+  SEC-hosted results exhibit and 31 August submissions index after a 14.05% alert-period rise and
+  bullish MACD transition. Net-new ARR accelerated 51% and guidance rose, while stock compensation,
+  acquisitions, incident risk and dilution remain material.
+- Updated the 25%/50%/25% `mature_compounder` valuation to USD72.02/USD109.85/USD151.49 at the USD231
+  mark. The weighted fair value is USD110.8025; the canonical conclusion remains Strong Sell / Avoid,
+  with no strategy, signal, allocation, order or paper trade.
+- Classified the accepted [[relationships/relationship_228f56aa5d91f3688b67|cybersecurity-continuity
+  relationship]] as needing review against material Q2 evidence and queued exactly one dependent
+  relationship refresh plus one dependent [[ideas/idea_cybersecurity_geopolitical_continuity|idea]]
+  refresh.

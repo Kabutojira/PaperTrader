@@ -1,0 +1,41 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_228f56aa5d91f3688b67",
+  "priority": "72",
+  "not_before": "2026-08-31T23:14:37Z",
+  "depends_on": "01M17BKYBGQEP184VB3PX88DXG",
+  "dedupe_key": "relationship_research:relationship_228f56aa5d91f3688b67:crwd-q2-2027:496e90560b4d:v1",
+  "freshness_days": "14",
+  "skill_names": "llm-wiki|papertrader-relationship-research",
+  "prompt": "Refresh the accepted cybersecurity-continuity relationship for CrowdStrike against material fiscal-Q2 2027 evidence.",
+  "source": "agent:security_research:01M17BKYBGQEP184VB3PX88DXG",
+  "max_attempts": "3",
+  "payload": {
+    "operation_type": "relationship_research",
+    "objective": "Review exactly one accepted idea-security edge using fiscal-Q2 evidence; update its mechanism, direction, sensitivity, confidence, catalyst, invalidation and review state without changing the idea or security assessment.",
+    "entity": {
+      "entity_type": "relationship",
+      "entity_id": "relationship_228f56aa5d91f3688b67"
+    },
+    "source_refs": [
+      "source_crwd_q2_2027_10q",
+      "source_crwd_q2_2027_results_exhibit",
+      "data/wiki/securities/security_8472507d7d320aa388a7.md"
+    ],
+    "freshness_boundary": "2026-08-26T00:00:00Z",
+    "inputs": {
+      "relationship_id": "relationship_228f56aa5d91f3688b67",
+      "idea_id": "idea_cybersecurity_geopolitical_continuity",
+      "security_id": "security_8472507d7d320aa388a7",
+      "proposed_direction": "positive",
+      "proposed_mechanism": "Persistent continuity, endpoint, identity, cloud and managed-security demand supports CrowdStrike ARR and module consolidation; Q2 net-new ARR, Falcon Flex and module adoption strengthened the transmission, while pricing, retention, trust, acquisition and dilution constrain per-share realization.",
+      "proposed_invalidation": "Invalidate if retention or module adoption weakens, bundling compresses pricing, trust failures impair renewals, competition slows platform consolidation, or rising equity and acquisition costs prevent growth from converting into per-share cash value.",
+      "evidence_reason": "Fiscal-Q2 2027 is material new primary evidence after the relationship's prior review and directly updates both the catalyst and limiting risks."
+    },
+    "constraints": {
+      "paper_only": true,
+      "max_followups": 1
+    }
+  }
+}

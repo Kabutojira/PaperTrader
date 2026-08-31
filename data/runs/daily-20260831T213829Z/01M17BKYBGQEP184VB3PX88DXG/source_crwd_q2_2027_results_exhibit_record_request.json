@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crwd_q2_2027_results_exhibit",
+  "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+  "source_type": "filing",
+  "title": "CrowdStrike fiscal Q2 2027 results exhibit",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "55bfc3ec3d51b325dcc39a3b1d23a2ef7a56d9b9d216c456a3d39b50083fdfcb",
+  "related_entity_ids": "idea_cybersecurity_geopolitical_continuity|security_8472507d7d320aa388a7",
+  "checked_at": "2026-08-31T23:11:08Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "CrowdStrike reported USD 5.84 billion ending ARR, USD 332.8 million quarterly net-new ARR, USD 377.4 million quarterly free cash flow, and raised fiscal-2027 revenue guidance to USD 5.9911-6.0111 billion.",
+  "summary": "The SEC-hosted results exhibit reports stronger net-new ARR, 25% ARR growth, 26% revenue growth, modestly broader eight-plus-module adoption and higher full-year guidance, but quarterly free-cash-flow margin and GAAP economics still require normalization.",
+  "run_id": "daily-20260831T213829Z"
+}

@@ -1,0 +1,21 @@
+{
+  "entity_id": "idea_cybersecurity_geopolitical_continuity",
+  "entity_type": "idea",
+  "inputs": {
+    "idea_id": "idea_cybersecurity_geopolitical_continuity",
+    "security_id": "security_8472507d7d320aa388a7",
+    "security_research_operation_id": "01M17BKYBGQEP184VB3PX88DXG",
+    "security_research_result_path": "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/agent_result.json",
+    "seed_claim": "CrowdStrike fiscal-Q2 net-new ARR, Falcon Flex and multi-module adoption strengthen the continuity-demand mechanism and explain the bullish MACD move, but rising equity cost and a USD 231 mark above every scenario keep the security at Strong Sell / Avoid."
+  },
+  "objective": "Refresh the cybersecurity-continuity idea from CrowdStrike's completed fiscal-Q2 alert and valuation review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "operation_id": "01M1D1YZ20QNHRKW86E9PW5Q4C",
+  "operation_type": "idea_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/securities/security_8472507d7d320aa388a7.md",
+    "source_crwd_q2_2027_10q",
+    "source_crwd_q2_2027_results_exhibit",
+    "source_crwd_sec_submissions_20260831"
+  ]
+}

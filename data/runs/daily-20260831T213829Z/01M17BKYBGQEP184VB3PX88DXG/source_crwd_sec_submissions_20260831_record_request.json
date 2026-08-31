@@ -1,0 +1,18 @@
+{
+  "source_id": "source_crwd_sec_submissions_20260831",
+  "url": "https://data.sec.gov/submissions/CIK0001535527.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001535527.json",
+  "source_type": "regulator_index",
+  "title": "CrowdStrike SEC submissions index checked 2026-08-31",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "3610901d90576f6eaa8dd7186f5036929c7b810c5de9e78e70c52fc5fc28b461",
+  "related_entity_ids": "idea_cybersecurity_geopolitical_continuity|security_8472507d7d320aa388a7",
+  "checked_at": "2026-08-31T23:11:08Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The SEC submissions index lists the August 26 fiscal-Q2 results Form 8-K, the August 27 fiscal-Q2 Form 10-Q, and no later operating filing through August 31.",
+  "summary": "The regulator index establishes that the fiscal-Q2 release and Form 10-Q are the latest operating evidence available through the review date; the only subsequent listed filing is an ownership Form 4.",
+  "run_id": "daily-20260831T213829Z"
+}

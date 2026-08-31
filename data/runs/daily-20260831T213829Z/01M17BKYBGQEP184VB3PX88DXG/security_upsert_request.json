@@ -1,0 +1,23 @@
+{
+  "security_id": "security_8472507d7d320aa388a7",
+  "issuer_id": "issuer_6fd1f9dee193dca14ae0",
+  "company_name": "CrowdStrike Holdings, Inc.",
+  "instrument_name": "CrowdStrike Holdings, Inc. Class A common stock",
+  "instrument_type": "equity",
+  "ticker": "CRWD",
+  "exchange_code": "NMS",
+  "venue_mic": "XNAS",
+  "provider_symbol": "CRWD",
+  "broker_symbol": "",
+  "currency": "USD",
+  "country": "US",
+  "sector": "Technology",
+  "industry": "Software - Infrastructure",
+  "status": "watching",
+  "watchlist_reason": "Strong cybersecurity platform economics and an accepted causal relationship merit monitoring, but every refreshed fiscal-Q2 scenario remains materially below the current mark.",
+  "research_summary": "Fiscal-Q2 net-new ARR and guidance strengthened the operating thesis, but all refreshed FCF scenarios remain below USD 231; Strong Sell / Avoid with no paper trade.",
+  "research_page": "data/wiki/securities/security_8472507d7d320aa388a7.md",
+  "last_research_at": "2026-08-31T23:14:37Z",
+  "next_review_at": "2026-09-30T23:14:37Z",
+  "source": "security_research:01M17BKYBGQEP184VB3PX88DXG"
+}

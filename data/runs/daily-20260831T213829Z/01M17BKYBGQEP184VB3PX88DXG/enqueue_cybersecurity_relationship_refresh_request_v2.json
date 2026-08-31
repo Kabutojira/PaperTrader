@@ -1,0 +1,33 @@
+{
+  "operation_type": "relationship_research",
+  "entity_type": "relationship",
+  "entity_id": "relationship_228f56aa5d91f3688b67",
+  "dedupe_key": "relationship_research:relationship_228f56aa5d91f3688b67:crwd-q2-2027:496e90560b4d:v1",
+  "prompt": "Refresh the accepted cybersecurity-continuity relationship for CrowdStrike against material fiscal-Q2 2027 evidence.",
+  "inputs": {
+    "relationship_id": "relationship_228f56aa5d91f3688b67",
+    "idea_id": "idea_cybersecurity_geopolitical_continuity",
+    "security_id": "security_8472507d7d320aa388a7",
+    "proposed_direction": "positive",
+    "proposed_mechanism": "Persistent continuity, endpoint, identity, cloud and managed-security demand supports CrowdStrike ARR and module consolidation; Q2 net-new ARR, Falcon Flex and module adoption strengthened the transmission, while pricing, retention, trust, acquisition and dilution constrain per-share realization.",
+    "proposed_invalidation": "Invalidate if retention or module adoption weakens, bundling compresses pricing, trust failures impair renewals, competition slows platform consolidation, or rising equity and acquisition costs prevent growth from converting into per-share cash value.",
+    "evidence_refs": [
+      "source_crwd_q2_2027_10q",
+      "source_crwd_q2_2027_results_exhibit"
+    ]
+  },
+  "source": "security_research:01M17BKYBGQEP184VB3PX88DXG",
+  "priority": 72,
+  "freshness_days": 0,
+  "depends_on": ["01M17BKYBGQEP184VB3PX88DXG"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_8472507d7d320aa388a7.md",
+    "data/wiki/ideas/idea_cybersecurity_geopolitical_continuity.md",
+    "data/wiki/relationships/relationship_228f56aa5d91f3688b67.md",
+    "source_crwd_q2_2027_10q",
+    "source_crwd_q2_2027_results_exhibit"
+  ],
+  "max_attempts": 3
+}

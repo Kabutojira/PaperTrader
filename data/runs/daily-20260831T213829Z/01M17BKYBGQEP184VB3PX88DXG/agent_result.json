@@ -1,0 +1,105 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_8472507d7d320aa388a7",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_q2_2027_10q_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_q2_2027_results_exhibit_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_sec_submissions_20260831_record_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/assessment_upsert_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_relationship_refresh_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_relationship_refresh_request_v2.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "CrowdStrike repeat research completed after a 14.05% rise and bullish MACD transition: fiscal-Q2 net-new ARR and guidance strengthened the operating thesis, but USD72.02/USD109.85/USD151.49 scenarios remain below the USD231 mark. The deterministic result remains Strong Sell / Avoid, Watch tier and allocation-ineligible. One dependent relationship refresh and one dependent cybersecurity-continuity idea refresh were queued; no strategy or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "The fiscal-Q2 Form 10-Q reports USD 1.470897 billion quarterly revenue, USD 5.841421 billion ending ARR, USD 332.8 million quarterly net-new ARR, USD 1.121205 billion six-month operating cash flow, USD 5.013851 billion cash, USD 746.220 million long-term debt and 1.044469 billion diluted weighted-average shares.",
+      "observed_at": "2026-08-31T23:11:08Z",
+      "source": "source_crwd_q2_2027_10q",
+      "source_hash": "496e90560b4daaf992d261dd6eba3824e808e48fb12812205046a191e41318c1",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+    },
+    {
+      "claim": "The SEC-hosted results exhibit reports 25% ARR growth, 51% quarterly net-new ARR growth, USD 377.4 million quarterly free cash flow, broader eight-plus-module adoption and raised fiscal-2027 revenue guidance of USD 5.9911-6.0111 billion.",
+      "observed_at": "2026-08-31T23:11:08Z",
+      "source": "source_crwd_q2_2027_results_exhibit",
+      "source_hash": "55bfc3ec3d51b325dcc39a3b1d23a2ef7a56d9b9d216c456a3d39b50083fdfcb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+    },
+    {
+      "claim": "The SEC submissions index lists the August 26 results Form 8-K and August 27 fiscal-Q2 Form 10-Q as the latest operating filings through August 31; the only later listed filing is an ownership Form 4.",
+      "observed_at": "2026-08-31T23:11:08Z",
+      "source": "source_crwd_sec_submissions_20260831",
+      "source_hash": "3610901d90576f6eaa8dd7186f5036929c7b810c5de9e78e70c52fc5fc28b461",
+      "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+    },
+    {
+      "claim": "Canonical market state supplies the USD 231 August 31 mark and the exact August 3 through August 31 alert period; deterministic indicator state records a 14.05% period return and bullish MACD transition with 0.3732 strength.",
+      "observed_at": "2026-08-31T21:38:36Z",
+      "source": "data/market/prices/security_8472507d7d320aa388a7.csv",
+      "source_hash": "50111a4d340baa1e6dc29429a54e3b544241063f22cf15751678af6d74789e13"
+    },
+    {
+      "claim": "Deterministic schema-version-two assessment assessment_5e7d8fe3583fb1fb090a derives USD 110.8025 weighted fair value, -52.03354978354978354978354978% expected return, -39.02516233766233766233766234% confidence-adjusted return, Strong Sell / Avoid, Watch tier and ineligibility because every economic gate fails.",
+      "source": "data/tables/security_assessments.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1D1Y9JGWJR239XAQPDP30DW.json",
+    "data/operations/payloads/01M1D1YZ20QNHRKW86E9PW5Q4C.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/assessment_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/assessment_upsert_request_v2.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_idea_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_relationship_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/enqueue_cybersecurity_relationship_refresh_request_v2.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/security_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_q2_2027_10q_record_request.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_q2_2027_results_exhibit_record_request.json",
+    "data/runs/daily-20260831T213829Z/01M17BKYBGQEP184VB3PX88DXG/source_crwd_sec_submissions_20260831_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_8472507d7d320aa388a7.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M17BKYBGQEP184VB3PX88DXG",
+  "operations_created": [
+    "01M1D1Y9JGWJR239XAQPDP30DW",
+    "01M1D1YZ20QNHRKW86E9PW5Q4C"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat assessment of CrowdStrike after the 2026-08-31 bullish MACD transition and 14.05% alert-period rise to USD 231. Current SEC primary evidence shows fiscal-Q2 revenue of USD 1.471 billion, ending ARR of USD 5.841 billion, 51% net-new ARR growth and raised fiscal-2027 guidance, alongside a lower quarterly free-cash-flow margin, USD 399.0 million of stock compensation and payroll taxes, acquisition spending and persistent incident risk. Refreshed USD 72.02/USD 109.85/USD 151.49 scenarios produce USD 110.8025 weighted fair value and a deterministic Strong Sell / Avoid, Watch-tier, allocation-ineligible assessment. Exactly one dependent relationship refresh and one dependent idea refresh were queued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "The mandatory security-context command succeeded before assessment-state access and exposed the current and predecessor assessments, successful prior result, source state and page hash.",
+      "Exactly one immutable schema-version-two assessment, assessment_5e7d8fe3583fb1fb090a, was created for this operation and links predecessor assessment_d7627fc0cfdd00f8d0eb, this operation, the required result path and page hash 360ebefabba8801f9cc1f57e50c47990e854316382e9c2ec0c89a38582ea98e5.",
+      "Immutable identity resolves to exactly one row for security_8472507d7d320aa388a7, issuer_6fd1f9dee193dca14ae0, XNAS, CRWD, USD and equity; strict integrity found no duplicate identity.",
+      "All three retained primary or regulator sources were registered available with HTTP 200 metadata and current 2026-08-31 hashes.",
+      "The assessment uses the fresh identity-matched USD 231 mark and USD/EUR rate 0.8604999780654907, both as of 2026-08-31T21:38:36Z.",
+      "Bear, base and bull probabilities total 100 and fair values are ordered; deterministic output derives complete research, Strong Sell / Avoid, Watch tier and ineligibility with all failed economic gates retained.",
+      "The complete maintained idea catalog and canonical relationship state were searched. Cybersecurity continuity is the sole accepted edge and is clearly marked accepted-needs-review; no candidate is represented as accepted, and rejected thematic associations retain reasons.",
+      "Exactly one dependent relationship-research follow-up, 01M1D1Y9JGWJR239XAQPDP30DW, exists for the materially stale accepted edge, and exactly one dependent idea-research follow-up, 01M1D1YZ20QNHRKW86E9PW5Q4C, exists for the payload and accepted idea.",
+      "Failed valuation, timing and payoff gates prevent a conviction strategy follow-up; no strategy, signal, order, allocation, execution, cash, portfolio or performance state changed.",
+      "The initial assessment and relationship enqueue requests failed without changed paths; corrected content was submitted only through new immutable request files.",
+      "Final papertrader wiki lint --strict returned OK [wiki].",
+      "Final papertrader integrity --strict returned OK [integrity].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "git diff --check returned no errors."
+    ],
+    "passed": true
+  }
+}
