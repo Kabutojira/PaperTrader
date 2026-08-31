@@ -2813,6 +2813,10 @@ boundary after the combined log crossed the configured 5,000-line threshold.
 
 - Created candidate packet [[inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-3f69e768f872]] (3f69e768f872).
 
+- Published investor decision snapshot `decision_988735610b59ea9aef33`.
+
+- Generated canonical [[daily-reports/daily-report_20260831]] for run `daily-20260831T213829Z`.
+
 ## 2026-08-31 — PLS Group security research
 
 - Created [[securities/security_8a5c43888d224de85c69|PLS Group Limited ordinary shares]]

@@ -7,8 +7,8 @@ tags:
 created: "2026-08-31"
 updated: "2026-08-31"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0a91d13794f70b4ff0fb"
-as_of: "2026-08-31T21:07:46Z"
+snapshot_id: "decision_988735610b59ea9aef33"
+as_of: "2026-08-31T23:40:41Z"
 ---
 
 # Research catalog
@@ -17,8 +17,8 @@ This is the complete maintained research and audit catalog. The homepage remains
 
 ## Assessment revision audit
 
-- Immutable assessment versions: **183**
-- Securities with retained revisions: **78**
+- Immutable assessment versions: **190**
+- Securities with retained revisions: **79**
 
 ## Candidate
 
@@ -66,6 +66,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [ATKR — Bollinger above upper](inbox/market-security_22c2b9d782a62d7a9b86-bollinger_above_upper-eabc6069145d)
 - [ATKR — MACD cross below signal](inbox/market-security_22c2b9d782a62d7a9b86-macd_cross_below_signal-ba1783a13894)
 - [ATKR — RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-5a6018d0a619)
+- [ATKR — RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6cde77c2a6b1)
 - [ATKR — RSI overbought](inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6ce4c1776c3e)
 - [BE — MACD cross above signal](inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-51f266eb618b)
 - [BE — MACD cross above signal](inbox/market-security_3e597863f00753e8c65c-macd_cross_above_signal-67248af469a1)
@@ -264,6 +265,7 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PARRO.PA — MACD cross below signal](inbox/market-security_cc4dcb8f002b61dffe00-macd_cross_below_signal-98a764a2953d)
 - [PARRO.PA — Volume anomaly](inbox/market-security_cc4dcb8f002b61dffe00-volume_anomaly-3d9ce6b8fa8c)
 - [PATH — Bollinger above upper](inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-2093136c9fdb)
+- [PATH — Bollinger above upper](inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-3f69e768f872)
 - [PATH — Bollinger above upper](inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-4b2db672f17a)
 - [PATH — Bollinger above upper](inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-dc8e14bf13a5)
 - [PATH — RSI overbought](inbox/market-security_eca976f0076a425ea1bb-rsi_overbought-62c012f4a14c)
@@ -721,8 +723,3 @@ This is the complete maintained research and audit catalog. The homepage remains
 - [PaperTrader system status and audit](system-status)
 
 [[index|Back to today's decision]]
-
-## Inbox
-
-- [[inbox/market-security_22c2b9d782a62d7a9b86-rsi_overbought-6cde77c2a6b1|ATKR — RSI overbought]]
-- [[inbox/market-security_eca976f0076a425ea1bb-bollinger_above_upper-3f69e768f872|PATH — Bollinger above upper]]

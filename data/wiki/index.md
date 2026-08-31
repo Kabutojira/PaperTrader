@@ -7,17 +7,17 @@ tags:
 created: "2026-08-31"
 updated: "2026-08-31"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0a91d13794f70b4ff0fb"
-as_of: "2026-08-31T21:07:46Z"
+snapshot_id: "decision_988735610b59ea9aef33"
+as_of: "2026-08-31T23:40:41Z"
 ---
 
 # PaperTrader
 
-**As of `2026-08-31T21:07:46Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
+**As of `2026-08-31T23:40:41Z` · Investment data: Blocked — current exposure cannot be projected safely · Operations: Blocked**
 
 ## Decision blocked — do not copy actions
 
-<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>46/78</strong></article></section>
+<section class="decision-cards" aria-label="Decision summary"><article class="decision-card" data-status="blocked"><span class="decision-card-label">Stance</span><strong>Decision blocked — do not copy actions</strong></article><article class="decision-card" data-status="cash"><span class="decision-card-label">Cash</span><strong>100%</strong></article><article class="decision-card" data-status="exposure"><span class="decision-card-label">Gross exposure</span><strong>0%</strong></article><article class="decision-card" data-status="signals"><span class="decision-card-label">Actionable signals</span><strong>0</strong></article><article class="decision-card" data-status="coverage"><span class="decision-card-label">Assessment coverage</span><strong>49/79</strong></article></section>
 
 ### Why
 
@@ -46,8 +46,8 @@ Current equity is **10000 EUR** with **100% cash**. The target retains **100% ca
 - Cumulative return: **0%**
 - Running drawdown: **0%**
 - Largest position: **0%**
-- Current assessments: **46/78**
-- Relationship reviews: **19/78**
+- Current assessments: **49/79**
+- Relationship reviews: **19/79**
 - Accepted relationships: **18**
 - Market retrieval failures: **0**
 

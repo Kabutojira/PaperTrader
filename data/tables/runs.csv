@@ -168,3 +168,4 @@ daily-20260829T181317Z,2026-08-29T18:13:17Z,2026-08-29T18:29:19Z,degraded,schedu
 daily-20260830T182818Z,2026-08-30T18:28:18Z,2026-08-30T18:45:23Z,degraded,schedule,2,100,10,,Daily run degraded; 2 agent operations; 0 pending-order dispositions.
 daily-20260831T083100Z,2026-08-31T08:31:00Z,2026-08-31T09:10:38Z,degraded,workflow_dispatch,2,100,7.5,,Daily run degraded; 2 agent operations; 0 pending-order dispositions.
 daily-20260831T204023Z,2026-08-31T20:40:23Z,2026-08-31T21:07:46Z,degraded,schedule,1,100,5,,Daily run degraded; 1 agent operations; 0 pending-order dispositions.
+daily-20260831T213829Z,2026-08-31T21:38:29Z,2026-08-31T23:40:41Z,degraded,workflow_dispatch,8,100,40,,Daily run degraded; 8 agent operations; 0 pending-order dispositions.

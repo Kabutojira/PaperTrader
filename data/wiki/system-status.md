@@ -7,13 +7,13 @@ tags:
 created: "2026-08-31"
 updated: "2026-08-31"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_0a91d13794f70b4ff0fb"
-as_of: "2026-08-31T21:07:46Z"
+snapshot_id: "decision_988735610b59ea9aef33"
+as_of: "2026-08-31T23:40:41Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-31T21:07:46Z`
+**As of:** `2026-08-31T23:40:41Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -21,16 +21,16 @@ as_of: "2026-08-31T21:07:46Z"
 
 ## Coverage
 
-- Assessments: 46/78
-- Fresh-evidence assessments: 45/78
-- Relationship reviews: 19/78
+- Assessments: 49/79
+- Fresh-evidence assessments: 48/79
+- Relationship reviews: 19/79
 - Accepted relationships: 18
 - Ready or active strategies: 0
 - Active signals: 0
 - Pending orders: 0
 - Market success/failure: 80/0
 - Candidate FX gaps: 0
-- Research backlog: 516
+- Research backlog: 520
 - Last successful daily run: 2026-08-28
 
 ## Current issues by investment impact
@@ -58,7 +58,7 @@ as_of: "2026-08-31T21:07:46Z"
 
 - Error **DNA — Ginkgo Bioworks Holdings, Inc.: Local harness operation validation failed: [[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]** — completed security research requires exactly one immutable assessment version; files_changed contains an unchanged old value: data/wiki/log.md; files_changed contains an unchanged old value: data/wiki/research-catalog.md; files_changed is stale or incomplete: reported=\['data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_request.json', 'data/runs/[[daily-reports/daily-report_20260807|Daily report for 2026-08-07]]/[[securities/security_95351d928b674bbdf687|Quick check research for DNA on 2026-08-07]]/assessment_upsert_retry01_request.json', 'data/runs/local-daily
 - Error **RIO — Rio Tinto plc: Rio Tinto assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_1c055eb9b2bb1f5a8ff2|Quick check research for RIO on 2026-08-03]] and current security_research [[securities/security_1c055eb9b2bb1f5a8ff2|Security research for RIO on 2026-08-05]] claimed by run gha-30798126914-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
-- Error **Hermes operation validation failed: [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]** — completed security research requires exactly one immutable assessment version
+- Error **Hermes operation validation failed: [[securities/security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-08-31]]** — completed security research requires exactly one immutable assessment version
 - Error **Hermes operation validation failed: [[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]** — agent result schema: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'; commands_run does not exactly match deterministic CLI audit receipts; completed security research requires this run's comparable assessment; post-run integrity: agent result data/runs/[[daily-reports/daily-report_20260811|Daily report for 2026-08-11]]/[[securities/security_18a3ab0ee6086ee85d0f|Quick check research for ETN on 2026-08-11]]/agent_result.json: 'cd57fc97df50efa0657881b253fc96d4467881b253fc96d4467881b253fc96d446' does not match '^\[a-f0-9\]{64}$'
 - Error **ABBNY — ABB Ltd: ABB assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c120e9f26ebb6159adf9|ABBNY]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c120e9f26ebb6159adf9|Quick check research for ABBNY on 2026-08-09]] and current security_research [[securities/security_c120e9f26ebb6159adf9|Security research for ABBNY on 2026-08-10]] claimed by run [[daily-reports/daily-report_20260809|Daily report for 2026-08-09]] and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope
 - Error **RBLX — Roblox Corporation: Assessment source operation is ambiguous within one run** — The required schema-v2 assessment for [[securities/security_c9a37d277445869a8809|RBLX]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_c9a37d277445869a8809|Quick check research for RBLX on 2026-08-03]] and current security_research [[securities/security_c9a37d277445869a8809|Security research for RBLX on 2026-08-03]] claimed by run gha-30793143744-1 and rejects any count greater than one as an ambiguous source operation. The assessment request has no source-operation field, so this operation cannot repair the provenance ambiguity without an out-of-scope code
@@ -91,7 +91,7 @@ as_of: "2026-08-31T21:07:46Z"
 - Warning **TX — Ternium S.A.: Daily preparation degraded: [[securities/security_2c779e81c27b78c556bb|TX]]** — [[securities/security_2c779e81c27b78c556bb|TX]]: YFTzMissingError: $TX: possibly delisted; no timezone found
 - Warning **GEV — GE Vernova Inc.: Daily preparation degraded: [[securities/security_4b61970aa8f574446819|GEV]]** — [[securities/security_4b61970aa8f574446819|GEV]]: YFTzMissingError: $GEV: possibly delisted; no timezone found
 - Warning **ATKR — Atkore Inc.: Daily preparation degraded: [[securities/security_22c2b9d782a62d7a9b86|ATKR]]** — [[securities/security_22c2b9d782a62d7a9b86|ATKR]]: YFTzMissingError: $ATKR: possibly delisted; no timezone found
-- Warning **PLS.AX — PLS Group Limited: Daily preparation degraded: [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]]** — [[security-catalog#security-security_8a5c43888d224de85c69|PLS.AX]]: price cache is empty
+- Warning **PLS.AX — PLS Group Limited: Daily preparation degraded: [[securities/security_8a5c43888d224de85c69|PLS.AX]]** — [[securities/security_8a5c43888d224de85c69|PLS.AX]]: price cache is empty
 - Warning **Daily podcast failed: [[daily-reports/daily-report_20260826|Daily report for 2026-08-26]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **KTOS — Kratos Defense &amp; Security Solutions, Inc.: Daily preparation degraded: [[securities/security_0cf8075039299094d614|KTOS]]** — [[securities/security_0cf8075039299094d614|KTOS]]: price cache is empty
 - Warning **RIO — Rio Tinto plc: Daily preparation degraded: [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]]** — [[securities/security_1c055eb9b2bb1f5a8ff2|RIO]]: YFTzMissingError: $RIO: possibly delisted; no timezone found
@@ -118,6 +118,7 @@ as_of: "2026-08-31T21:07:46Z"
 - Warning **QCOM — QUALCOMM Incorporated: Daily preparation degraded: [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]** — [[securities/security_3a75fc1ccca2ee7c937a|QCOM]]: price cache is empty
 - Warning **MP — MP Materials Corp.: Daily preparation degraded: [[securities/security_cd492d97064d8574156e|MP]]** — [[securities/security_cd492d97064d8574156e|MP]]: price cache is empty
 - Warning **ANET — Arista Networks, Inc.: Daily preparation degraded: [[securities/security_6f9a1450edceb9307c9a|ANET]]** — [[securities/security_6f9a1450edceb9307c9a|ANET]]: YFTzMissingError: $ANET: possibly delisted; no timezone found
+- Warning **Daily podcast skipped: [[daily-reports/daily-report_20260831|Daily report for 2026-08-31]]** — Committed Telegram delivery is awaiting a bounded retry.
 - Warning **PARRO.PA — Parrot S.A.: Daily preparation degraded: [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]** — [[securities/security_cc4dcb8f002b61dffe00|PARRO.PA]]: YFTzMissingError: $PARRO.PA: possibly delisted; no timezone found
 - Warning **TSM — Taiwan Semiconductor Manufacturing Company Limited: Daily preparation degraded: [[securities/security_ce9b78a4d0773c950765|TSM]]** — [[securities/security_ce9b78a4d0773c950765|TSM]]: price cache is empty
 - Warning **PATH — UiPath, Inc.: Daily preparation degraded: [[securities/security_eca976f0076a425ea1bb|PATH]]** — [[securities/security_eca976f0076a425ea1bb|PATH]]: price cache is empty
@@ -197,7 +198,7 @@ as_of: "2026-08-31T21:07:46Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 516 active operations.
+Showing 20 of 520 active operations.
 
 <details><summary>Active research work</summary>
 
