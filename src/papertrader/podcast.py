@@ -510,10 +510,10 @@ def _operation_result_item(
             "daily_report_items": [],
             "files_changed": [],
         }
-    run_artifact = _load_object(result_file.with_name("hermes_run.json"))
-    completed_at = (row.get("completed_at", "") if row_belongs_to_attempt else "") or str(
-        run_artifact.get("completed_at", "")
-    )
+    completed_at = row.get("completed_at", "") if row_belongs_to_attempt else ""
+    if not completed_at:
+        run_artifact = _load_object(result_file.with_name("hermes_run.json"))
+        completed_at = str(run_artifact.get("completed_at", ""))
     completed = parse_timestamp(completed_at)
     if completed is None or not window_start < completed <= cutoff:
         raise PodcastError(

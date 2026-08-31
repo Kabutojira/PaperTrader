@@ -506,6 +506,53 @@ def test_context_aggregates_intervening_cycles_with_exclusive_inclusive_boundari
     ]
 
 
+def test_context_uses_terminal_history_timestamp_without_hermes_run(
+    sandbox_repository: Path,
+    sandbox_settings: Settings,
+) -> None:
+    prior_id = "daily-20260729T090000Z"
+    cycle_id = "local-research-20260730T120000Z"
+    current_id = "daily-20260730T180000Z"
+    operation_id = "01ARZ3NDEKTSV4RRFFQ69G5FAF"
+    _cycle_manifest(
+        sandbox_repository,
+        prior_id,
+        started_at="2026-07-29T08:00:00Z",
+        cutoff="2026-07-29T09:30:00Z",
+        podcast_status="succeeded",
+    )
+    _cycle_manifest(
+        sandbox_repository,
+        cycle_id,
+        started_at="2026-07-30T11:00:00Z",
+        cutoff="2026-07-30T12:30:00Z",
+        operations=[{"operation_id": operation_id, "terminal_status": "succeeded"}],
+    )
+    idea = sandbox_repository / "data" / "wiki" / "ideas" / "idea_story.md"
+    idea.write_text("---\ntitle: Story\ntype: idea\nstatus: maintained\n---\n", encoding="utf-8")
+    _accepted_research(
+        sandbox_repository,
+        cycle_id=cycle_id,
+        operation_id=operation_id,
+        completed_at="2026-07-30T12:00:00Z",
+        page_path="data/wiki/ideas/idea_story.md",
+        summary="Accepted local research with canonical terminal history.",
+    )
+    (sandbox_repository / "data" / "runs" / cycle_id / operation_id / "hermes_run.json").unlink()
+    _cycle_manifest(
+        sandbox_repository,
+        current_id,
+        started_at="2026-07-30T17:00:00Z",
+        cutoff="2026-07-30T18:00:00Z",
+    )
+
+    result = enqueue_daily_podcast(sandbox_repository, sandbox_settings, run_id=current_id, now=NOW)
+    context = json.loads((sandbox_repository / result.context_path).read_text())
+
+    assert [item["operation_id"] for item in context["research_developments"]] == [operation_id]
+    assert context["research_developments"][0]["completed_at"] == "2026-07-30T12:00:00Z"
+
+
 def test_context_expands_pipe_delimited_wiki_evidence_sources(
     sandbox_repository: Path,
     sandbox_settings: Settings,
