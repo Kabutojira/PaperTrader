@@ -4,16 +4,16 @@ type: system-status
 status: maintained
 tags:
   - system-status
-created: "2026-08-30"
-updated: "2026-08-30"
+created: "2026-08-31"
+updated: "2026-08-31"
 provenance: deterministic-decision-projection
-snapshot_id: "decision_d82123b9e252736f73d8"
-as_of: "2026-08-30T18:45:23Z"
+snapshot_id: "decision_5355e07e70f81c073bbd"
+as_of: "2026-08-31T09:10:38Z"
 ---
 
 # System status and audit
 
-**As of:** `2026-08-30T18:45:23Z`
+**As of:** `2026-08-31T09:10:38Z`
 **Investment data:** Blocked — current exposure cannot be projected safely
 **Operations:** Blocked
 **Publication validation:** Snapshot and exports validated
@@ -22,7 +22,7 @@ as_of: "2026-08-30T18:45:23Z"
 ## Coverage
 
 - Assessments: 52/78
-- Fresh-evidence assessments: 50/78
+- Fresh-evidence assessments: 51/78
 - Relationship reviews: 20/78
 - Accepted relationships: 19
 - Ready or active strategies: 0
@@ -30,7 +30,7 @@ as_of: "2026-08-30T18:45:23Z"
 - Pending orders: 0
 - Market success/failure: 79/1
 - Candidate FX gaps: 0
-- Research backlog: 489
+- Research backlog: 488
 - Last successful daily run: 2026-08-28
 
 ## Current issues by investment impact
@@ -38,7 +38,7 @@ as_of: "2026-08-30T18:45:23Z"
 ### Blocks Portfolio
 
 - Error **Applied Materials assessment source operation is ambiguous within one run** — The schema-v2 Applied Materials assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The first immutable assessment request was rejected without state changes for two non-canonical soft-gap names; retry01 corrected those names but exposed the run-level ambiguity. A bounde
-- Error **CSIQ — Canadian Solar Inc.: Canadian Solar assessment source operation is ambiguous within one run** — The required schema-v2 full assessment for [[securities/security_099561384c0f5e697727|CSIQ]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_099561384c0f5e697727|Quick check research for CSIQ on 2026-08-30]] and current security_research [[securities/security_099561384c0f5e697727|Security research for CSIQ on 2026-08-30]] claimed by run [[daily-reports/daily-report_20260830|Daily report for 2026-08-30]] and rejected the immutable assessment request as having an ambiguous source operation. The request boundary exposes no source-operation selector, so this routed operation cannot repair the provenance am
+- Error **CSIQ — Canadian Solar Inc.: Canadian Solar assessment source operation is ambiguous within one run** — The required schema-v2 full assessment for [[securities/security_099561384c0f5e697727|CSIQ]] could not be written. The deterministic assessment applier found both predecessor quick_check_research [[securities/security_099561384c0f5e697727|Quick check research for CSIQ on 2026-08-30]] and current security_research [[securities/security_099561384c0f5e697727|Security research for CSIQ on 2026-08-31]] claimed by run [[daily-reports/daily-report_20260830|Daily report for 2026-08-30]] and rejected the immutable assessment request as having an ambiguous source operation. The request boundary exposes no source-operation selector, so this routed operation cannot repair the provenance am
 - Error **FANUC assessment source operation is ambiguous within one run** — The schema-v2 FANUC full-review assessment could not be accepted because the deterministic research applier found both the completed quick_check_research operation and this running security_research operation for the same security and run_id, then rejected the immutable assessment request with no assessment-state changes. The mandatory security context succeeded; both issuer PDFs were rechecked with unchanged hashes, source history and the security summary were updated through validated commands
 - Error **Vale assessment source operation is ambiguous within one run** — The schema-version-two Vale assessment could not be accepted because the deterministic research applier found both the completed quick_check_research predecessor and this running security_research operation for the same security and run_id, then rejected the assessment as having an ambiguous source operation. The immutable assessment request exited nonzero with no changed paths. The prior assessment and its exact research-page hash were restored and remain current. Five retained primary-source r
 - Error **ASML assessment rejected after security row update** — The retry operation refreshed the ASML page and security row to the 2026-08-19 USD 1,751.73 mark, but the schema-v2 assessment request was rejected before assessment state changed because valuation_template_rationale is a required field and was omitted. The routed-operation no-retry rule forbids correcting and invoking a second assessment request after this rejection. The canonical assessment therefore remains the prior unsupported version, the prepared relationship and idea follow-up requests w
@@ -128,7 +128,7 @@ as_of: "2026-08-30T18:45:23Z"
 - Warning **NBIS — Nebius Group N.V.: Daily preparation degraded: [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]** — [[securities/security_47a0b06f6c6c478d7c1e|NBIS]]: price cache is empty
 - Warning **CRWD — CrowdStrike Holdings, Inc.: Daily preparation degraded: [[securities/security_8472507d7d320aa388a7|CRWD]]** — [[securities/security_8472507d7d320aa388a7|CRWD]]: YFTzMissingError: $CRWD: possibly delisted; no timezone found
 - Warning **SQM — Sociedad Quimica y Minera de Chile S.A.: Daily preparation degraded: [[securities/security_9d4049ed6669a52815d6|SQM]]** — [[securities/security_9d4049ed6669a52815d6|SQM]]: YFTzMissingError: $SQM: possibly delisted; no timezone found
-- Warning **YEC.F — YASKAWA Electric Corporation: Daily preparation degraded: [[securities/security_89969b7dac39b7db5661|YEC.F]]** — [[securities/security_89969b7dac39b7db5661|YEC.F]]: MarketDataError: invalid OHLC range on 2026-08-21 for [[securities/security_89969b7dac39b7db5661|YEC.F]]
+- Warning **YEC.F — YASKAWA Electric Corporation: Daily preparation degraded: [[securities/security_89969b7dac39b7db5661|YEC.F]]** — [[securities/security_89969b7dac39b7db5661|YEC.F]]: MarketDataError: non-positive price on 2026-08-21 for [[securities/security_89969b7dac39b7db5661|YEC.F]]
 - Warning **META — Meta Platforms, Inc.: Daily preparation degraded: [[securities/security_d12e746b3c9d392183cc|META]]** — [[securities/security_d12e746b3c9d392183cc|META]]: price cache is empty
 - Warning **RXRX — Recursion Pharmaceuticals, Inc.: Daily preparation degraded: [[securities/security_ed7d5b616a196969c815|RXRX]]** — [[securities/security_ed7d5b616a196969c815|RXRX]]: YFTzMissingError: $RXRX: possibly delisted; no timezone found
 - Warning **SCCO — Southern Copper Corporation: Daily preparation degraded: [[securities/security_6ad1af8d10d6276a0221|SCCO]]** — [[securities/security_6ad1af8d10d6276a0221|SCCO]]: MarketDataError: provider returned no valid sessions for [[securities/security_6ad1af8d10d6276a0221|SCCO]]
@@ -196,13 +196,13 @@ as_of: "2026-08-30T18:45:23Z"
 
 ## Bounded active operation queue
 
-Showing 20 of 489 active operations.
+Showing 20 of 488 active operations.
 
 <details><summary>Active research work</summary>
 
 - Ready — [[security-catalog#security-security_8a5c43888d224de85c69|Security research for PLS.AX on 2026-07-29]]
 - Ready — [[security-catalog#security-security_fe4648901e7675f157fd|Security research for ANIC.L on 2026-07-29]]
-- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-30]]
+- Ready — [[securities/security_8b703a8adf5f864acaa4|Strategy research for strategy for PRX on 2026-08-31]]
 - Ready — [[inbox/market-security_89969b7dac39b7db5661-rsi_oversold-a3f287ad1802|Wiki ingest for YEC.F — RSI oversold on 2026-07-30]]
 - Ready — [[inbox/market-security_488a9d7f7a8573597724-volume_anomaly-276969212fe2|Wiki ingest for PWR — Volume anomaly on 2026-07-30]]
 - Ready — [[inbox/market-security_2dbe878dfc899d7ee867-volume_anomaly-97d02f6c8190|Wiki ingest for FCX — Volume anomaly on 2026-07-30]]

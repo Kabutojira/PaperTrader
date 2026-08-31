@@ -2675,3 +2675,9 @@ boundary after the combined log crossed the configured 5,000-line threshold.
   [[securities/security_ed7d5b616a196969c815|Recursion Pharmaceuticals]] with the later review dates
   already stated in their maintained dispositions. No sourced claim or investment conclusion was
   changed.
+
+## 2026-08-31
+
+- Published investor decision snapshot `decision_5355e07e70f81c073bbd`.
+
+- Generated canonical [[daily-reports/daily-report_20260831]] for run `daily-20260831T083100Z`.
