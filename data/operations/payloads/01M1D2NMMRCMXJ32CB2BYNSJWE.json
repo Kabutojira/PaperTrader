@@ -1,0 +1,28 @@
+{
+  "entity_id": "relationship_vlo_energy_refining",
+  "entity_type": "relationship",
+  "inputs": {
+    "evidence_refs": [
+      "source_vlo_q2_2026_10q",
+      "source_vlo_q2_2026_results",
+      "source_vlo_sec_submissions_20260831"
+    ],
+    "idea_id": "idea_energy_refining",
+    "proposed_direction": "positive",
+    "proposed_invalidation": "Reject or invalidate if primary evidence does not show material crack-spread transmission to realized margins and per-share cash value, or if outages, sustaining costs, compliance burdens, working-capital reversal or capital allocation consistently offset the cycle exposure.",
+    "proposed_mechanism": "Regional product cracks transmit directly through Valero's realized refining margin, throughput and cash conversion, moderated by refinery reliability, turnaround and compliance costs, working capital, sustaining investment and cycle normalization.",
+    "relationship_id": "relationship_vlo_energy_refining",
+    "security_id": "security_c5a9e460d3350284d157"
+  },
+  "objective": "Review whether Valero has a material causal relationship to crude-product dislocation and refining margins through regional crack spreads, throughput reliability and cash conversion; accept or reject the edge.",
+  "operation_id": "01M1D2NMMRCMXJ32CB2BYNSJWE",
+  "operation_type": "relationship_research",
+  "payload_version": 1,
+  "source_refs": [
+    "data/wiki/ideas/idea_energy_refining.md",
+    "data/wiki/securities/security_c5a9e460d3350284d157.md",
+    "source_vlo_q2_2026_10q",
+    "source_vlo_q2_2026_results",
+    "source_vlo_sec_submissions_20260831"
+  ]
+}

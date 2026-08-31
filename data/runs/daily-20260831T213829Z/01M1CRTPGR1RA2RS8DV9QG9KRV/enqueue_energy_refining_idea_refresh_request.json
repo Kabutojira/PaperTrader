@@ -1,0 +1,27 @@
+{
+  "operation_type": "idea_research",
+  "entity_type": "idea",
+  "entity_id": "idea_energy_refining",
+  "dedupe_key": "idea_research:idea_energy_refining:security-result:01M1CRTPGR1RA2RS8DV9QG9KRV",
+  "prompt": "Refresh the crude-product dislocation and refining-margin idea from Valero's completed bullish-MACD and valuation review, including candidate disposition, thesis, catalysts, risks, confidence and the broader investable-security universe.",
+  "inputs": {
+    "idea_id": "idea_energy_refining",
+    "seed_claim": "Valero's unchanged Q2 evidence supports strong margin capture and cash conversion, but a 16.7% alert-period rise to USD 358.92, overbought RSI and unchanged normalized scenarios worsen valuation; the security remains Hold / Watch pending relationship review.",
+    "security_id": "security_c5a9e460d3350284d157",
+    "security_research_operation_id": "01M1CRTPGR1RA2RS8DV9QG9KRV",
+    "security_research_result_path": "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/agent_result.json"
+  },
+  "source": "security_research:01M1CRTPGR1RA2RS8DV9QG9KRV",
+  "priority": 66,
+  "freshness_days": 0,
+  "depends_on": ["01M1CRTPGR1RA2RS8DV9QG9KRV"],
+  "not_before": "now",
+  "deadline": "",
+  "source_refs": [
+    "data/wiki/securities/security_c5a9e460d3350284d157.md",
+    "source_vlo_q2_2026_10q",
+    "source_vlo_q2_2026_results",
+    "source_vlo_sec_submissions_20260831"
+  ],
+  "max_attempts": 3
+}

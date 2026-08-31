@@ -1,0 +1,101 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_c5a9e460d3350284d157",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_q2_2026_10q_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_q2_2026_results_record_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_sec_submissions_20260831_record_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/assessment_upsert_retry01_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/enqueue_energy_refining_relationship_request.json",
+    "papertrader queue enqueue --request data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/enqueue_energy_refining_idea_refresh_request.json",
+    "papertrader wiki lint --strict",
+    "papertrader integrity --strict",
+    "papertrader schema validate --strict",
+    "papertrader queue validate"
+  ],
+  "daily_report_items": [
+    "Valero repeat research completed after a 16.71% rise and bullish MACD transition to USD 358.92: unchanged Q2 primary evidence continues to support strong margin capture and cash conversion, but overbought timing and unchanged USD 216/USD 286/USD 378 scenarios produce 20.07% expected downside. The deterministic result is Sell / Avoid, Watch tier and allocation-ineligible. One dependent energy-refining relationship review and one dependent idea refresh were queued; no strategy, signal or paper order was created."
+  ],
+  "evidence": [
+    {
+      "claim": "Valero's Q2 2026 Form 10-Q reports USD 4.0 billion of refining operating income, USD 2.7 billion of six-month net operating cash flow after a USD 3.7 billion working-capital use, USD 7.87 billion of cash, USD 9.1 billion of debt and USD 2.2 billion of finance leases.",
+      "observed_at": "2026-08-31T23:26:30Z",
+      "source": "source_vlo_q2_2026_10q",
+      "source_hash": "67e4f60508a5a9c810e164fe8d9bcc9b996d44d8e659cf68beb6d978d5db73a9",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050937/vlo-20260630.htm"
+    },
+    {
+      "claim": "The SEC-filed Q2 results release reports USD 12.54 adjusted EPS, 3.0 million barrels per day of refining throughput, strong regional refining margins and USD 2.6 billion of quarterly stockholder cash returns.",
+      "observed_at": "2026-08-31T23:26:30Z",
+      "source": "source_vlo_q2_2026_results",
+      "source_hash": "cdb3595d6b4dbc05039e172fce3d40ab72e98e06f8cb0bd80c5303d461d782b6",
+      "url": "https://www.sec.gov/Archives/edgar/data/1035002/000162828026050822/a6302026exh9901earningsrel.htm"
+    },
+    {
+      "claim": "The SEC submissions index lists no operating filing after the July 30 Q2 Form 10-Q and results Form 8-K through August 31; subsequent listed entries are ownership or resale notices.",
+      "observed_at": "2026-08-31T23:26:30Z",
+      "source": "source_vlo_sec_submissions_20260831",
+      "source_hash": "4900491c29336dc3b7fd5c39263a53f2897b838bd7a4cc98b869ff6fb72b7086",
+      "url": "https://data.sec.gov/submissions/CIK0001035002.json"
+    },
+    {
+      "claim": "Canonical market state supplies the USD 358.9200134277344 August 31 mark and exact August 3 through August 31 alert period; deterministic indicator state records a 16.70674944919781% period return, bullish MACD transition and overbought RSI of 70.62232894338074.",
+      "observed_at": "2026-08-31T21:38:36Z",
+      "source": "data/market/prices/security_c5a9e460d3350284d157.csv",
+      "source_hash": "8af39b77e51dc2917fce4dd361b470b699d90ce506cdf337ad8f84092dee0ee6"
+    },
+    {
+      "claim": "Deterministic schema-version-two assessment assessment_adaed7b28d89ad0b1e4d derives USD 286.90 weighted fair value, -20.06575580445726212662863037% expected return, -15.04931685334294659497147278% confidence-adjusted return, Sell / Avoid, Watch tier and ineligibility because valuation, payoff, margin-of-safety and relationship gates fail.",
+      "source": "data/tables/security_assessments.csv"
+    }
+  ],
+  "files_changed": [
+    "data/operations/operations_TODO.csv",
+    "data/operations/payloads/01M1D2NMMRCMXJ32CB2BYNSJWE.json",
+    "data/operations/payloads/01M1D2NPK85YZW0MP645KGB7GP.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/assessment_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/enqueue_energy_refining_idea_refresh_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/enqueue_energy_refining_relationship_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/security_upsert_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_q2_2026_10q_record_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_q2_2026_results_record_request.json",
+    "data/runs/daily-20260831T213829Z/01M1CRTPGR1RA2RS8DV9QG9KRV/source_vlo_sec_submissions_20260831_record_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_c5a9e460d3350284d157.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M1CRTPGR1RA2RS8DV9QG9KRV",
+  "operations_created": [
+    "01M1D2NMMRCMXJ32CB2BYNSJWE",
+    "01M1D2NPK85YZW0MP645KGB7GP"
+  ],
+  "status": "succeeded",
+  "summary": "Completed exactly one repeat assessment of Valero after the 2026-08-31 bullish MACD transition and 16.71% alert-period rise to USD 358.92. Fresh SEC retrievals reproduced the Q2 filing and results hashes and found no later operating filing, leaving the operating thesis and normalized USD 216/USD 286/USD 378 scenarios unchanged. The deterministic assessment produces USD 286.90 weighted fair value, 20.07% expected downside, Sell / Avoid, Watch tier and allocation ineligibility. Exactly one dependent energy-refining relationship review and one dependent idea refresh were queued. No strategy, signal, order, allocation or accounting state changed.",
+  "validation": {
+    "checks": [
+      "The mandatory security-context command succeeded before assessment-state access and exposed the current and predecessor assessments, successful prior result, retained source state and page hash.",
+      "Exactly one immutable schema-version-two assessment, assessment_adaed7b28d89ad0b1e4d, was created for this operation and links predecessor assessment_86009c287a3a4fa1717a, this operation, the required result path and page hash cb88477da7d116fdcb3c811117f48769ac8def846af67f585a03bc3773032143.",
+      "Immutable identity resolves to exactly one row for security_c5a9e460d3350284d157, issuer_949c0108d639d9d59618, XNYS, VLO, USD and equity; strict integrity found no duplicate identity.",
+      "Both retained primary sources and the fresh regulator index are registered available with current 2026-08-31 hashes; the filing and release hashes reproduce their prior registered content.",
+      "The assessment uses the fresh identity-matched USD 358.9200134277344 mark and USD/EUR rate 0.8604999780654907, both as of 2026-08-31T21:38:36Z.",
+      "Bear, base and bull probabilities total 100 and fair values are ordered; deterministic output derives complete research, Sell / Avoid, Watch tier and ineligibility with every failed economic gate retained.",
+      "The complete maintained idea catalog and canonical relationship state were searched. Energy refining is the sole plausible candidate and is clearly marked candidate awaiting review; no candidate is represented as accepted, and rejected thematic associations retain reasons.",
+      "Exactly one dependent relationship-research follow-up, 01M1D2NMMRCMXJ32CB2BYNSJWE, exists for the plausible unaccepted edge, and exactly one dependent idea-research follow-up, 01M1D2NPK85YZW0MP645KGB7GP, exists for the payload idea.",
+      "Failed valuation, timing, payoff, margin-of-safety and relationship gates prevent a conviction strategy follow-up; no strategy, signal, order, allocation, execution, cash, portfolio or performance state changed.",
+      "The initial assessment request failed without changed paths; corrected content was submitted only through a new immutable request file.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "papertrader integrity --strict returned OK [integrity].",
+      "papertrader schema validate --strict returned OK [schema].",
+      "papertrader queue validate returned OK [queue].",
+      "git diff --check returned no errors."
+    ],
+    "passed": true
+  }
+}

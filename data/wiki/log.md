@@ -15,6 +15,18 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-31T23:26:30Z] security research | Valero Energy
+
+- Reassessed [[securities/security_c5a9e460d3350284d157|Valero]] after the 31 August bullish MACD
+  crossover. The shares rose 16.71% from 3 August to USD 358.92 and RSI reached an overbought 70.62;
+  the move is adverse entry timing rather than a new operating catalyst.
+- Fresh retrievals reproduced the Q2 filing and results hashes, while the SEC submissions index
+  showed no later operating filing. Unchanged USD 216/USD 286/USD 378 scenarios imply a USD 286.90
+  weighted value and about 20.1% expected downside at the fresh mark.
+- Hold / Watch and allocation ineligibility remain unchanged. The complete idea catalog retained
+  [[ideas/idea_energy_refining|crude-product dislocation and refining margins]] as one unaccepted
+  causal candidate for bounded relationship review; no strategy, signal or paper order was created.
+
 ## [2026-08-31T22:56:03Z] security research | GE Vernova
 
 - Reassessed [[securities/security_4b61970aa8f574446819|GE Vernova]] after the 31 August volume

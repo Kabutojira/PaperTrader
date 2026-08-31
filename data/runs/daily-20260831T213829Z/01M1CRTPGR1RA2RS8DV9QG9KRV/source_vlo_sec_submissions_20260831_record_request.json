@@ -1,0 +1,18 @@
+{
+  "source_id": "source_vlo_sec_submissions_20260831",
+  "url": "https://data.sec.gov/submissions/CIK0001035002.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001035002.json",
+  "source_type": "regulator_index",
+  "title": "Valero Energy SEC submissions index checked 2026-08-31",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "4900491c29336dc3b7fd5c39263a53f2897b838bd7a4cc98b869ff6fb72b7086",
+  "related_entity_ids": "idea_energy_refining|security_c5a9e460d3350284d157",
+  "checked_at": "2026-08-31T23:26:30Z",
+  "http_status": "200",
+  "changed": "true",
+  "excerpt": "The submissions index lists the July 30 Form 10-Q and results Form 8-K as the latest operating filings through August 31; later entries are ownership or resale notices.",
+  "summary": "The regulator index establishes that no operating filing after the second-quarter Form 10-Q and results release superseded the retained financial evidence through the review date.",
+  "run_id": "daily-20260831T213829Z"
+}
