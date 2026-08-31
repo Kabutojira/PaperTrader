@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_sec_submissions_20260829",
+  "url": "https://data.sec.gov/submissions/CIK0001375877.json",
+  "canonical_url": "https://data.sec.gov/submissions/CIK0001375877.json",
+  "source_type": "regulator_index",
+  "title": "Canadian Solar SEC submissions index checked 2026-08-29",
+  "publisher": "U.S. Securities and Exchange Commission",
+  "license": "",
+  "status": "available",
+  "content_hash": "823d1ca5a992e7f2f1927b657965aa23505ac8daab293caf2d621f0f17aa7c21",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-31T08:45:47Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The SEC index still lists Canadian Solar's August 27, 2026 Form 6-K as its newest filing.",
+  "summary": "The freshly retrieved SEC submissions index matches its retained hash and still identifies the August 27, 2026 Form 6-K furnishing Canadian Solar's second-quarter results as the issuer's newest filing through the August 31 review. No newer operating filing changes the retained thesis or valuation evidence.",
+  "run_id": "daily-20260831T083100Z"
+}

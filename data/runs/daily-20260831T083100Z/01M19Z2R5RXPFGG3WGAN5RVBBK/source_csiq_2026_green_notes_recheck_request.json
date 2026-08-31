@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_2026_green_notes",
+  "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926086249/tm2621092d1_6k.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926086249/tm2621092d1_6k.htm",
+  "source_type": "sec_filing",
+  "title": "Canadian Solar July 2026 Green Medium Term Note Program Form 6-K",
+  "publisher": "Canadian Solar Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "285feca0e7c57ab3dcf0e5cd6d524daf795eb8197036314b9e252ba4e4e9fca5",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-31T08:45:47Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Canadian Solar registered a EUR 50 million green-note program for EMEA project development, with a parent guarantee capped at EUR 65 million.",
+  "summary": "Canadian Solar's July 23, 2026 Form 6-K discloses a EUR 50 million Green Medium Term Note Program intended to finance or refinance solar and storage facilities and general corporate purposes. The parent guarantee has maximum aggregate liability of EUR 65 million. The program adds bounded project-funding capacity but reinforces dependence on external financing and execution of project development and monetization.",
+  "run_id": "daily-20260831T083100Z"
+}

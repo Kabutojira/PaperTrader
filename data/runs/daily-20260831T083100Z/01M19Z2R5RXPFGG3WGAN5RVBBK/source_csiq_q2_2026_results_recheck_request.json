@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_q2_2026_results",
+  "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926101856/tm2623883d1_ex99-1.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926101856/tm2623883d1_ex99-1.htm",
+  "source_type": "issuer_release",
+  "title": "Canadian Solar Second Quarter 2026 Results",
+  "publisher": "Canadian Solar Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "6605b97860c2320eef25ce8de118377bae4138f7c7b75c9efab5d8209c429d56",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-31T08:45:47Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "Q2 revenue was USD 1.2 billion, gross margin was 13.9%, and operating cash flow was negative USD 181 million.",
+  "summary": "Canadian Solar reported Q2 2026 module shipments of 3.1 GW, down 60% year over year, and storage shipments of 3.7 GWh, up 73%. Revenue was USD 1.2 billion and gross margin normalized to 13.9% without the prior tariff refund. The attributable net loss widened to USD 77 million, operating cash use was USD 181 million, total debt rose to USD 7.1 billion, and planned Recurrent Energy project sales moved to the second half. June attributable equity was USD 2.755 billion. Storage execution supports the thesis, but cash conversion, leverage, module economics and project-sale timing remain material risks.",
+  "run_id": "daily-20260831T083100Z"
+}

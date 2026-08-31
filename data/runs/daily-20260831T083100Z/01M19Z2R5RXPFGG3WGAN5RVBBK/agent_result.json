@@ -1,0 +1,94 @@
+{
+  "commands_run": [
+    "papertrader research security-context --security-id security_099561384c0f5e697727",
+    "papertrader research source record --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_2025_20f_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_2026_green_notes_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_cobalt_20260813_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_q2_2026_results_recheck_request.json",
+    "papertrader research source record --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_sec_submissions_recheck_request.json",
+    "papertrader research security upsert --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_request.json",
+    "papertrader research assessment upsert --request data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_retry01_request.json",
+    "papertrader research assessment-get --assessment-id assessment_e3b684463a0aed194b14",
+    "papertrader wiki lint --strict"
+  ],
+  "daily_report_items": [
+    "Canadian Solar full research succeeded: all retained primary-source hashes were unchanged, the USD 13.14 mark preserves USD 10.16/USD 18.28/USD 26.41 NAV scenarios and Buy / Initiate at Watch tier, but the pending canonical relationship keeps the security allocation-ineligible. No strategy, signal, order or paper-accounting state changed."
+  ],
+  "evidence": [
+    {
+      "claim": "Canadian Solar's unchanged Q2 release reports USD 1.2 billion revenue, 13.9% normalized gross margin, 3.7 GWh storage shipments, 3.1 GW module shipments, a USD 77 million attributable loss and USD 181 million of operating cash use.",
+      "observed_at": "2026-08-31T08:45:47Z",
+      "source": "source_csiq_q2_2026_results",
+      "source_hash": "6605b97860c2320eef25ce8de118377bae4138f7c7b75c9efab5d8209c429d56",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926101856/tm2623883d1_ex99-1.htm"
+    },
+    {
+      "claim": "The unchanged 2025 Form 20-F remains the audited business, financing, dilution and risk baseline and identifies 67,816,724 common shares outstanding at January 31, 2026.",
+      "observed_at": "2026-08-31T08:45:47Z",
+      "source": "source_csiq_2025_20f",
+      "source_hash": "ce70a756317632aedb45029525f058e2207cecd2f787d27d68c1ece7453d0f63",
+      "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926041976/csiq-20251231x20f.htm"
+    },
+    {
+      "claim": "The freshly retrieved SEC submissions index reproduced its registered hash and still listed the August 27, 2026 Form 6-K as Canadian Solar's newest filing.",
+      "observed_at": "2026-08-31T08:45:47Z",
+      "source": "source_csiq_sec_submissions_20260829",
+      "source_hash": "823d1ca5a992e7f2f1927b657965aa23505ac8daab293caf2d621f0f17aa7c21",
+      "url": "https://data.sec.gov/submissions/CIK0001375877.json"
+    },
+    {
+      "claim": "The canonical August 28 close is USD 13.140000343322754 after a 12.8647% period decline, below the lower Bollinger band with RSI 35.62, negative MACD and anomalous volume; the move remains an unexplained risk event rather than a verified entry catalyst.",
+      "observed_at": "2026-08-31T08:41:43Z",
+      "source": "data/wiki/inbox/market-security_099561384c0f5e697727-bollinger_below_lower-c1709a10a057.md",
+      "source_hash": "c1709a10a057a10cf4029f82623596a4b30d41af1895533735bc360e518800ec"
+    },
+    {
+      "claim": "The accepted schema-v2 assessment records predecessor assessment_7bd82ac864ac923c2449, this operation as source provenance, a research-page hash of 6a0d3e4d7acc19773ef1e08c3b4d286c8896c1cba88e387edab76a59d8fd6e57, Buy / Initiate at Watch tier, and ineligibility reason relationship_pending.",
+      "source": "assessment_e3b684463a0aed194b14"
+    },
+    {
+      "claim": "Exactly one existing ready relationship review, 01M0F7V8D8MTRZGEVET3HTD4AT, already covers Canadian Solar's candidate edge to the solar, storage and grid-flexibility idea; no duplicate operation was created.",
+      "source": "data/operations/operations_TODO.csv"
+    }
+  ],
+  "files_changed": [
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_2025_20f_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_2026_green_notes_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_cobalt_20260813_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_q2_2026_results_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_sec_submissions_recheck_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "issues_recorded": [],
+  "operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK",
+  "operations_created": [],
+  "status": "succeeded",
+  "summary": "Completed the full Canadian Solar review and accepted immutable assessment assessment_e3b684463a0aed194b14, linked to predecessor assessment_7bd82ac864ac923c2449 and this operation. Fresh retrievals of all five retained primary sources reproduced their registered hashes, and the SEC index showed no operating filing newer than the August 27 Q2 release. The USD 13.14 mark preserves USD 10.16/USD 18.28/USD 26.41 bear/base/bull NAV scenarios, 26.8% expected return and 20.1% confidence-adjusted expected return. Deterministic state remains Buy / Initiate at Watch tier but allocation-ineligible because the canonical relationship is pending; no strategy, signal, allocation, order or accounting state changed. The existing relationship review 01M0F7V8D8MTRZGEVET3HTD4AT already covers the one plausible candidate edge, so no duplicate follow-up was created.",
+  "validation": {
+    "checks": [
+      "Mandatory repeat-review security-context receipt exited 0 before assessment state was read or changed.",
+      "Preflight identifies native llm-wiki, papertrader-controller and papertrader-security-research with the requested run, operation and deep profile.",
+      "All five retained primary sources returned HTTP 200, reproduced their registered hashes and were recorded through the project CLI with 2026-08-31 checks.",
+      "Immutable issuer, common-share instrument, XNAS venue, CSIQ provider symbol and USD currency matched the existing security row; the validated security upsert succeeded.",
+      "The first immutable assessment request was rejected without changed paths because its FX rate was stale; retry01 used the current canonical USD/EUR rate and succeeded.",
+      "Assessment assessment_e3b684463a0aed194b14 is schema version 2, links predecessor assessment_7bd82ac864ac923c2449 and this operation, and its recorded research-page hash matches the actual page SHA-256.",
+      "Current market and FX timestamps are 2026-08-31T08:41:43Z and passed deterministic freshness and identity checks in the accepted assessment upsert.",
+      "The complete maintained idea catalog and canonical relationship state were searched; no accepted relationship exists, and exactly one existing ready relationship review covers the one plausible candidate edge.",
+      "No payload or accepted canonical idea required an idea-research follow-up, and the relationship-pending assessment did not qualify for conviction strategy research.",
+      "papertrader wiki lint --strict returned OK [wiki].",
+      "Git diff checking reported no whitespace errors.",
+      "No allocation targets/history, strategy, signal, order, execution, cash ledger, portfolio, fill or performance state changed."
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "auxiliary_models": {
+    "web_extract": "openai-codex:gpt-5.6-luna"
+  },
+  "changed_paths": [
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/assessment_upsert_retry01_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/security_upsert_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_2025_20f_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_2026_green_notes_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_cobalt_20260813_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_q2_2026_results_recheck_request.json",
+    "data/runs/daily-20260831T083100Z/01M19Z2R5RXPFGG3WGAN5RVBBK/source_csiq_sec_submissions_recheck_request.json",
+    "data/tables/securities.csv",
+    "data/tables/security_assessment_history.csv",
+    "data/tables/security_assessments.csv",
+    "data/tables/source_history.csv",
+    "data/tables/source_registry.csv",
+    "data/wiki/log.md",
+    "data/wiki/securities/security_099561384c0f5e697727.md"
+  ],
+  "effective_model": "gpt-5.6-sol",
+  "errors": [],
+  "escalation_source": "",
+  "maximum_turns": 160,
+  "mutation_policy": "full_research",
+  "operation_id": "01M19Z2R5RXPFGG3WGAN5RVBBK",
+  "passed": true,
+  "profile": "deep",
+  "profile_policy_version": "profile-router-v1",
+  "reasoning_effort": "medium",
+  "route_reason": "scenario_complete_security_review",
+  "run_id": "daily-20260831T083100Z",
+  "timeout_seconds": 1800,
+  "validation_version": 1,
+  "weighted_cost": "5"
+}

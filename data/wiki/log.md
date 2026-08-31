@@ -15,6 +15,19 @@ provenance: repository-contract
 This append-only current log continues an earlier non-public 2026 archive, rotated at a dated entry
 boundary after the combined log crossed the configured 5,000-line threshold.
 
+## [2026-08-31T08:45:47Z] security research | Canadian Solar
+
+- Completed the full reassessment of [[securities/security_099561384c0f5e697727|Canadian Solar]].
+  All retained primary sources and the SEC submissions index returned HTTP 200 and reproduced their
+  registered hashes; no operating filing newer than August 27 changed the evidence set.
+- Preserved USD 10.16/USD 18.28/USD 26.41 NAV scenarios, medium confidence and the Buy / Initiate
+  research rating at Watch tier. Storage growth and project financing support the thesis, while
+  module weakness, negative cash conversion, USD 7.1 billion debt, delayed project sales and adverse
+  technical timing keep the security allocation-ineligible and support no paper action.
+- Kept [[ideas/idea_solar_storage_grid_flexibility_reset|solar, storage, and grid flexibility]] as a
+  candidate rather than an accepted relationship. Existing operation `01M0F7V8D8MTRZGEVET3HTD4AT`
+  already provides the one bounded relationship review, so no duplicate follow-up was created.
+
 ## [2026-08-28T21:33:30Z] security research | Planet Labs
 
 - Reassessed [[securities/security_97f38b2cb2d5ef127f5a|Planet Labs]] after a lower-Bollinger-band

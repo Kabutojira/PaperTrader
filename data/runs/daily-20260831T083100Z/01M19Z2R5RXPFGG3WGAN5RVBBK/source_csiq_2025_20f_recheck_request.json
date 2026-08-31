@@ -1,0 +1,18 @@
+{
+  "source_id": "source_csiq_2025_20f",
+  "url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926041976/csiq-20251231x20f.htm",
+  "canonical_url": "https://www.sec.gov/Archives/edgar/data/1375877/000110465926041976/csiq-20251231x20f.htm",
+  "source_type": "sec_filing",
+  "title": "Canadian Solar Inc. 2025 Annual Report on Form 20-F",
+  "publisher": "Canadian Solar Inc.",
+  "license": "",
+  "status": "available",
+  "content_hash": "ce70a756317632aedb45029525f058e2207cecd2f787d27d68c1ece7453d0f63",
+  "related_entity_ids": "security_099561384c0f5e697727",
+  "checked_at": "2026-08-31T08:45:47Z",
+  "http_status": "200",
+  "changed": "false",
+  "excerpt": "The annual report identifies 67,816,724 common shares outstanding at January 31, 2026 and details solar, storage, project and financing risks.",
+  "summary": "Canadian Solar's 2025 Form 20-F provides the audited business, financial, debt, dilution and risk baseline for the Nasdaq common shares. It identifies 67,816,724 shares outstanding at January 31, 2026 and documents module and storage manufacturing, Recurrent Energy project assets, subsidiary and minority interests, trade-policy exposure, project-sale execution, financing needs and cyclical pricing risks used in the NAV assessment.",
+  "run_id": "daily-20260831T083100Z"
+}
