@@ -120,9 +120,9 @@ def resolve_existing_daily_cycle(
 ) -> str:
     """Resolve one open cycle without mutating it.
 
-    Same-run retries always resume their cycle. A manual dispatch may also adopt the repository's
-    sole open cycle so a durable preparation checkpoint can be recovered by a fresh GitHub run.
-    Scheduled invocations retain their new-cycle behavior unless they are retries of the same run.
+    Same-run retries always resume their cycle. Cross-run recovery requires an explicit cycle ID;
+    otherwise every fresh invocation starts a new cycle. This keeps unfinished older cycles from
+    making an unrelated manual dispatch ambiguous.
     """
 
     if not TRIGGER.fullmatch(trigger):
@@ -165,11 +165,7 @@ def resolve_existing_daily_cycle(
     if owned_cycles:
         return owned_cycles[0]
 
-    if trigger != "workflow_dispatch":
-        return ""
-    if len(open_cycles) > 1:
-        raise DailyRunError("multiple open daily cycles require an explicit resume_cycle_id")
-    return next(iter(open_cycles), "")
+    return ""
 
 
 def resume_or_create_daily_cycle(

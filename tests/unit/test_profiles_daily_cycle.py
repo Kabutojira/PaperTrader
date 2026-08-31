@@ -10,7 +10,6 @@ import pytest
 from papertrader.checkpoints import CheckpointError, create_checkpoint
 from papertrader.config import Settings
 from papertrader.daily import (
-    DailyRunError,
     record_cycle_checkpoint,
     record_cycle_operation,
     resolve_existing_daily_cycle,
@@ -157,7 +156,7 @@ def test_daily_cycle_resume_consumes_original_count_and_weighted_budget(
     assert validate_daily_run_artifacts(sandbox_repository) == []
 
 
-def test_fresh_manual_run_resumes_the_only_open_cycle(
+def test_fresh_manual_run_does_not_adopt_an_open_cycle(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
@@ -170,7 +169,7 @@ def test_fresh_manual_run_resumes_the_only_open_cycle(
         workflow_attempt="1",
         now=NOW,
     )
-    cycle_id = str(cycle["daily_cycle_id"])
+    first_cycle_id = str(cycle["daily_cycle_id"])
 
     assert (
         resolve_existing_daily_cycle(
@@ -178,9 +177,9 @@ def test_fresh_manual_run_resumes_the_only_open_cycle(
             trigger="workflow_dispatch",
             github_run_id="456",
         )
-        == cycle_id
+        == ""
     )
-    resumed = resume_or_create_daily_cycle(
+    fresh = resume_or_create_daily_cycle(
         sandbox_repository,
         sandbox_settings,
         trigger="workflow_dispatch",
@@ -190,12 +189,12 @@ def test_fresh_manual_run_resumes_the_only_open_cycle(
         now=NOW + timedelta(minutes=5),
     )
 
-    assert resumed["daily_cycle_id"] == cycle_id
-    assert resumed["originating_github_run_id"] == "123"
-    assert [item["github_run_id"] for item in resumed["workflow_attempts"]] == ["123", "456"]
+    assert fresh["daily_cycle_id"] != first_cycle_id
+    assert fresh["originating_github_run_id"] == "456"
+    assert [item["github_run_id"] for item in fresh["workflow_attempts"]] == ["456"]
 
 
-def test_new_scheduled_run_does_not_adopt_an_open_cycle(
+def test_fresh_run_ignores_multiple_open_cycles_unless_resume_is_explicit(
     sandbox_repository: Path,
     sandbox_settings: Settings,
 ) -> None:
@@ -219,12 +218,23 @@ def test_new_scheduled_run_does_not_adopt_an_open_cycle(
     )
 
     assert scheduled["daily_cycle_id"] != manual["daily_cycle_id"]
-    with pytest.raises(DailyRunError, match="explicit resume_cycle_id"):
+    assert (
         resolve_existing_daily_cycle(
             sandbox_repository,
             trigger="workflow_dispatch",
             github_run_id="789",
         )
+        == ""
+    )
+    assert (
+        resolve_existing_daily_cycle(
+            sandbox_repository,
+            trigger="workflow_dispatch",
+            github_run_id="789",
+            resume_cycle_id=str(manual["daily_cycle_id"]),
+        )
+        == manual["daily_cycle_id"]
+    )
 
 
 def test_audio_extensions_are_never_runtime_paths() -> None:
